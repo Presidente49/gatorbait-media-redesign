@@ -1,0 +1,236 @@
+/* ============================================
+   GatorBait Media — LIVE Custom CSS
+   ESPN+/Athletic Dark Theme
+
+   THIS IS THE EXACT CSS CURRENTLY LIVE ON
+   www.gatorbaitmedia.com as of March 13, 2026
+
+   Saved in: Wix Dashboard → Settings → Custom Code
+   Entry: "GatorBait Dark Theme v5"
+   Placement: Head, All Pages, Essential
+   ============================================ */
+
+/* === HEADER / FOOTER VISIBILITY FIX === */
+/* Ensures header and footer render correctly across all Wix layouts */
+#SITE_HEADER,
+#SITE_FOOTER {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: auto !important;
+}
+
+#SITE_HEADER > div,
+#SITE_FOOTER > div {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    visibility: visible !important;
+}
+
+#SITE_HEADER [data-mesh-id],
+#SITE_FOOTER [data-mesh-id] {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    visibility: visible !important;
+}
+
+#SITE_HEADER [data-testid="inline-content"],
+#SITE_FOOTER [data-testid="inline-content"] {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    visibility: visible !important;
+}
+
+#SITE_HEADER [data-testid="mesh-container-content"],
+#SITE_FOOTER [data-testid="mesh-container-content"] {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+    visibility: visible !important;
+}
+
+/* === BLOG WRAPPER OVERRIDES (Critical Fix) === */
+.blog-background-color,
+.blog-header-background-color,
+.LWbAav,
+.aXOBOn,
+.Kv1aVt,
+.L5x0Fp,
+.vAU8Qm,
+.aSX36E,
+.XDcQnF,
+.WIEJ0e,
+[class*="blog-background"],
+[class*="blog-header-background"] {
+    background-color: #1a1a2e !important;
+    background: #1a1a2e !important;
+}
+
+/* === BLOG POST TEXT COLORS === */
+[data-hook="post-list-item"] h2,
+[data-hook="post-list-item"] p,
+[data-hook="post-list-item"] span,
+[data-hook="post-list-item"] a {
+    color: #ffffff !important;
+}
+
+[data-hook="post-list-item"] [data-hook="post-description"] {
+    color: #e0e0e8 !important;
+}
+
+/* === NAVIGATION === */
+nav,
+[role="navigation"] {
+    background-color: #1a1a2e !important;
+}
+
+/* === BLOG POST CARDS === */
+[data-hook="post-list-item"] {
+    background-color: #1e1e38 !important;
+    border: 1px solid #2a2a4a !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+[data-hook="post-list-item"]:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
+    border-color: #f47521 !important;
+}
+
+/* === BLOG TITLES === */
+[data-hook="post-title"] {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+[data-hook="post-title"]:hover {
+    color: #f47521 !important;
+}
+
+/* === AUTHOR / METADATA === */
+[data-hook="post-owner"],
+[data-hook="post-publish-date"],
+[data-hook="post-reading-time"] {
+    color: #a0a0b0 !important;
+    font-size: 13px !important;
+}
+
+/* === CATEGORY TAGS === */
+[data-hook="post-categories"] a {
+    color: #f47521 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+}
+
+/* === FOOTER === */
+[id*="SITE_FOOTER"] {
+    background: #16213e !important;
+    border-top: 2px solid #f47521 !important;
+}
+
+[id*="SITE_FOOTER"] span,
+[id*="SITE_FOOTER"] p,
+[id*="SITE_FOOTER"] a {
+    color: #e0e0e8 !important;
+}
+
+[id*="SITE_FOOTER"] a:hover {
+    color: #f47521 !important;
+}
+
+/* === HEADINGS (global) === */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+}
+
+/* === BODY TEXT (global) === */
+p {
+    color: #e0e0e8 !important;
+}
+
+/* === PAGE BACKGROUND === */
+body,
+[id="PAGES_CONTAINER"],
+[id*="SITE_PAGES"],
+[id*="pageBackground"],
+[id*="BACKGROUND_GROUP"] {
+    background-color: #1a1a2e !important;
+}
+
+/* === HEADER === */
+[id*="SITE_HEADER"] {
+    background: #1a1a2e !important;
+    border-bottom: 2px solid #f47521 !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
+}
+
+/* === NAVIGATION TEXT === */
+[id*="SITE_HEADER"] [data-testid="linkElement"] span,
+[id*="MENU"] span {
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-weight: 500 !important;
+}
+
+[id*="SITE_HEADER"] [data-testid="linkElement"]:hover span {
+    color: #f47521 !important;
+}
+
+/* === STRIPS / SECTIONS === */
+[id*="comp-"] > [data-mesh-id] {
+    background-color: #1a1a2e !important;
+}
+
+/* === PAGINATION === */
+[data-hook="pagination"] button,
+[data-hook="pagination"] a {
+    color: #a0a0b0 !important;
+    background: #1e1e38 !important;
+    border: 1px solid #2a2a4a !important;
+    border-radius: 4px !important;
+}
+
+[data-hook="pagination"] button:hover,
+[data-hook="pagination"] a:hover {
+    color: #ffffff !important;
+    border-color: #f47521 !important;
+}
+
+/* === FORUM / MESSAGE BOARDS === */
+[class*="forum"],
+[class*="Forum"] {
+    background-color: #1e1e38 !important;
+    color: #e0e0e8 !important;
+}
+
+/* === MEMBER AREA === */
+[class*="member"],
+[class*="profile"] {
+    background-color: #1a1a2e !important;
+    color: #ffffff !important;
+}
+
+/* === SCROLLBAR (dark theme) === */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+    background: #2a2a4a;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #f47521;
+}

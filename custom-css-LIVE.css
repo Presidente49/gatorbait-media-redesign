@@ -234,3 +234,66 @@ body,
 ::-webkit-scrollbar-thumb:hover {
     background: #f47521;
 }
+
+/* === BLOG POST PAGE (Single Article) === */
+[data-hook="post-page"],
+[data-hook="post-page"] > div {
+    background-color: #1a1a2e !important;
+}
+
+[data-hook="post"] {
+    background-color: #1e1e38 !important;
+    border: 1px solid #2a2a4a !important;
+    border-radius: 12px !important;
+}
+
+[data-hook="post"] article,
+article[data-hook="post"] {
+    background-color: #1e1e38 !important;
+}
+
+[data-hook="post"] p,
+[data-hook="post"] span,
+[data-hook="post"] li {
+    color: #e0e0e8 !important;
+}
+
+[data-hook="post"] h1,
+[data-hook="post"] h2,
+[data-hook="post"] h3 {
+    color: #ffffff !important;
+}
+
+[data-hook="post"] a {
+    color: #f47521 !important;
+}
+
+[data-hook="post"] [data-hook="user-name"],
+[data-hook="post"] [data-hook="time-ago"],
+[data-hook="post"] [class*="author"],
+[data-hook="post"] [class*="date"] {
+    color: #a0a0b0 !important;
+}
+
+[data-hook="post"] [class*="paywall"],
+[data-hook="post"] [class*="subscribe"],
+[data-hook="post"] [class*="Paywall"] {
+    background-color: #1e1e38 !important;
+    color: #e0e0e8 !important;
+}
+
+[data-hook="post-page"] article {
+    background-color: #1e1e38 !important;
+    border: 1px solid #2a2a4a !important;
+    border-radius: 12px !important;
+}
+
+[data-hook="post-page"] article:hover {
+    border-color: #f47521 !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4) !important;
+}
+
+/* All article elements site-wide */
+article {
+    background-color: #1e1e38 !important;
+}

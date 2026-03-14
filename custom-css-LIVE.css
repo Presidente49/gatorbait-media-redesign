@@ -1,17 +1,9 @@
 /* ============================================
-   GatorBait Media — LIVE Custom CSS
-   ESPN+/Athletic Dark Theme
-
-   THIS IS THE EXACT CSS CURRENTLY LIVE ON
-   www.gatorbaitmedia.com as of March 13, 2026
-
-   Saved in: Wix Dashboard → Settings → Custom Code
-   Entry: "GatorBait Dark Theme v5"
-   Placement: Head, All Pages, Essential
+   GatorBait Media — LIVE Custom CSS v6
+   ESPN+/Athletic Dark Theme — REFINED
    ============================================ */
 
 /* === HEADER / FOOTER VISIBILITY FIX === */
-/* Ensures header and footer render correctly across all Wix layouts */
 #SITE_HEADER,
 #SITE_FOOTER {
     display: block !important;
@@ -31,21 +23,9 @@
 }
 
 #SITE_HEADER [data-mesh-id],
-#SITE_FOOTER [data-mesh-id] {
-    display: block !important;
-    height: auto !important;
-    overflow: visible !important;
-    visibility: visible !important;
-}
-
+#SITE_FOOTER [data-mesh-id],
 #SITE_HEADER [data-testid="inline-content"],
-#SITE_FOOTER [data-testid="inline-content"] {
-    display: block !important;
-    height: auto !important;
-    overflow: visible !important;
-    visibility: visible !important;
-}
-
+#SITE_FOOTER [data-testid="inline-content"],
 #SITE_HEADER [data-testid="mesh-container-content"],
 #SITE_FOOTER [data-testid="mesh-container-content"] {
     display: block !important;
@@ -54,126 +34,22 @@
     visibility: visible !important;
 }
 
-/* === BLOG WRAPPER OVERRIDES (Critical Fix) === */
-.blog-background-color,
-.blog-header-background-color,
-.LWbAav,
-.aXOBOn,
-.Kv1aVt,
-.L5x0Fp,
-.vAU8Qm,
-.aSX36E,
-.XDcQnF,
-.WIEJ0e,
-[class*="blog-background"],
-[class*="blog-header-background"] {
-    background-color: #1a1a2e !important;
-    background: #1a1a2e !important;
-}
-
-/* === BLOG POST TEXT COLORS === */
-[data-hook="post-list-item"] h2,
-[data-hook="post-list-item"] p,
-[data-hook="post-list-item"] span,
-[data-hook="post-list-item"] a {
-    color: #ffffff !important;
-}
-
-[data-hook="post-list-item"] [data-hook="post-description"] {
-    color: #e0e0e8 !important;
-}
-
-/* === NAVIGATION === */
-nav,
-[role="navigation"] {
-    background-color: #1a1a2e !important;
-}
-
-/* === BLOG POST CARDS === */
-[data-hook="post-list-item"] {
-    background-color: #1e1e38 !important;
-    border: 1px solid #2a2a4a !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-[data-hook="post-list-item"]:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
-    border-color: #f47521 !important;
-}
-
-/* === BLOG TITLES === */
-[data-hook="post-title"] {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-}
-
-[data-hook="post-title"]:hover {
-    color: #f47521 !important;
-}
-
-/* === AUTHOR / METADATA === */
-[data-hook="post-owner"],
-[data-hook="post-publish-date"],
-[data-hook="post-reading-time"] {
-    color: #a0a0b0 !important;
-    font-size: 13px !important;
-}
-
-/* === CATEGORY TAGS === */
-[data-hook="post-categories"] a {
-    color: #f47521 !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    font-size: 11px !important;
-    letter-spacing: 1px !important;
-}
-
-/* === FOOTER === */
-[id*="SITE_FOOTER"] {
-    background: #16213e !important;
-    border-top: 2px solid #f47521 !important;
-}
-
-[id*="SITE_FOOTER"] span,
-[id*="SITE_FOOTER"] p,
-[id*="SITE_FOOTER"] a {
-    color: #e0e0e8 !important;
-}
-
-[id*="SITE_FOOTER"] a:hover {
-    color: #f47521 !important;
-}
-
-/* === HEADINGS (global) === */
-h1, h2, h3, h4, h5, h6 {
-    color: #ffffff !important;
-}
-
-/* === BODY TEXT (global) === */
-p {
-    color: #e0e0e8 !important;
-}
-
 /* === PAGE BACKGROUND === */
 body,
 [id="PAGES_CONTAINER"],
 [id*="SITE_PAGES"],
 [id*="pageBackground"],
 [id*="BACKGROUND_GROUP"] {
-    background-color: #1a1a2e !important;
+    background-color: #1c1f2e !important;
 }
 
 /* === HEADER === */
 [id*="SITE_HEADER"] {
-    background: #1a1a2e !important;
-    border-bottom: 2px solid #f47521 !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
+    background: linear-gradient(180deg, #1c1f2e 0%, #212438 100%) !important;
+    border-bottom: 3px solid #f47521 !important;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.5) !important;
 }
 
-/* === NAVIGATION TEXT === */
 [id*="SITE_HEADER"] [data-testid="linkElement"] span,
 [id*="MENU"] span {
     color: #ffffff !important;
@@ -186,114 +62,188 @@ body,
     color: #f47521 !important;
 }
 
-/* === STRIPS / SECTIONS === */
-[id*="comp-"] > [data-mesh-id] {
-    background-color: #1a1a2e !important;
+nav, [role="navigation"] {
+    background-color: #1c1f2e !important;
 }
 
-/* === PAGINATION === */
-[data-hook="pagination"] button,
-[data-hook="pagination"] a {
-    color: #a0a0b0 !important;
-    background: #1e1e38 !important;
-    border: 1px solid #2a2a4a !important;
-    border-radius: 4px !important;
+/* === BLOG TEXT COLOR FIX — CRITICAL === */
+.blog-text-color, .blog-text-color *,
+.blog-post-description-font,
+.blog-post-homepage-description-font,
+.blog-post-homepage-description-font *,
+.blog-post-description-font *,
+[class*="blog-text-color"],
+[class*="blog-post-description"] {
+    color: #d4d4dc !important;
 }
 
-[data-hook="pagination"] button:hover,
-[data-hook="pagination"] a:hover {
-    color: #ffffff !important;
+.blog-card-background-color,
+[class*="blog-card-background-color"] {
+    background-color: #252840 !important;
+}
+
+.blog-card-border-color,
+[class*="blog-card-border-color"] {
+    border-color: #363a52 !important;
+}
+
+.blog-background-color, .blog-header-background-color,
+[class*="blog-background"], [class*="blog-header-background"],
+.LWbAav, .aXOBOn, .Kv1aVt, .L5x0Fp, .vAU8Qm, .aSX36E, .XDcQnF, .WIEJ0e {
+    background-color: #1c1f2e !important;
+    background: #1c1f2e !important;
+}
+
+/* === BLOG POST CARDS === */
+[data-hook="post-list-item"], .post-list-item {
+    background-color: #252840 !important;
+    border: 1px solid #363a52 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+    color: #d4d4dc !important;
+}
+[data-hook="post-list-item"]:hover, .post-list-item:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(244,117,33,0.3) !important;
     border-color: #f47521 !important;
 }
+[data-hook="post-list-item"] *, .post-list-item * { color: inherit !important; }
 
-/* === FORUM / MESSAGE BOARDS === */
-[class*="forum"],
-[class*="Forum"] {
-    background-color: #1e1e38 !important;
-    color: #e0e0e8 !important;
+[data-hook="post-title"], .post-list-item [data-hook="post-title"], [data-hook="post-list-item"] h2 {
+    color: #ffffff !important; font-weight: 700 !important;
 }
+[data-hook="post-title"]:hover { color: #f47521 !important; }
 
-/* === MEMBER AREA === */
-[class*="member"],
-[class*="profile"] {
-    background-color: #1a1a2e !important;
-    color: #ffffff !important;
+[data-hook="post-description"], [data-hook="post-list-item"] p, .post-list-item p {
+    color: #d4d4dc !important;
 }
 
-/* === SCROLLBAR (dark theme) === */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: #1a1a2e;
-}
-::-webkit-scrollbar-thumb {
-    background: #2a2a4a;
-    border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #f47521;
+[data-hook="post-owner"], [data-hook="post-publish-date"], [data-hook="post-reading-time"],
+[data-hook="post-list-item"] [data-hook="post-owner"],
+.post-list-item [class*="author"], .post-list-item [class*="date"] {
+    color: #9a9ab0 !important; font-size: 13px !important;
 }
 
-/* === BLOG POST PAGE (Single Article) === */
-[data-hook="post-page"],
-[data-hook="post-page"] > div {
-    background-color: #1a1a2e !important;
+[data-hook="post-categories"] a, [data-hook="post-list-item"] [data-hook="post-categories"] a {
+    color: #f47521 !important; font-weight: 600 !important;
+    text-transform: uppercase !important; font-size: 11px !important; letter-spacing: 1px !important;
 }
 
-[data-hook="post"] {
-    background-color: #1e1e38 !important;
-    border: 1px solid #2a2a4a !important;
-    border-radius: 12px !important;
+.post-list-pro-gallery-pg-grid, [class*="post-list-pro-gallery"] { background-color: #1c1f2e !important; }
+.post-list-item-wrapper, [class*="post-list-item-wrapper"] { background-color: #252840 !important; color: #d4d4dc !important; }
+.post-list-item-wrapper *, [class*="post-list-item-wrapper"] * { color: inherit !important; }
+.post-list-item-wrapper [data-hook="post-title"], [class*="post-list-item-wrapper"] [data-hook="post-title"] { color: #ffffff !important; }
+
+[id*="comp-"] > [data-mesh-id] { background-color: #1c1f2e !important; }
+h1, h2, h3, h4, h5, h6 { color: #ffffff !important; }
+p { color: #d4d4dc !important; }
+a { color: #d4d4dc !important; }
+a:hover { color: #f47521 !important; }
+
+#SITE_FOOTER, [id*="SITE_FOOTER"] { background: #181b28 !important; border-top: 3px solid #f47521 !important; }
+#SITE_FOOTER span, #SITE_FOOTER p, #SITE_FOOTER a,
+[id*="SITE_FOOTER"] span, [id*="SITE_FOOTER"] p, [id*="SITE_FOOTER"] a { color: #d4d4dc !important; }
+[id*="SITE_FOOTER"] a:hover { color: #f47521 !important; }
+
+[data-hook="pagination"] button, [data-hook="pagination"] a {
+    color: #9a9ab0 !important; background: #252840 !important;
+    border: 1px solid #363a52 !important; border-radius: 4px !important;
+}
+[data-hook="pagination"] button:hover, [data-hook="pagination"] a:hover {
+    color: #ffffff !important; border-color: #f47521 !important; background: #2d3050 !important;
 }
 
-[data-hook="post"] article,
-article[data-hook="post"] {
-    background-color: #1e1e38 !important;
+[class*="forum"], [class*="Forum"] { background-color: #252840 !important; color: #d4d4dc !important; }
+[class*="member"], [class*="profile"] { background-color: #1c1f2e !important; color: #ffffff !important; }
+
+input, textarea, select {
+    background-color: #252840 !important; color: #ffffff !important;
+    border: 1px solid #363a52 !important; border-radius: 6px !important;
+}
+input::placeholder, textarea::placeholder { color: #9a9ab0 !important; }
+input:focus, textarea:focus, select:focus {
+    border-color: #f47521 !important; outline: none !important;
+    box-shadow: 0 0 0 2px rgba(244,117,33,0.2) !important;
 }
 
-[data-hook="post"] p,
-[data-hook="post"] span,
-[data-hook="post"] li {
-    color: #e0e0e8 !important;
+button[class*="subscribe"], [class*="Subscribe"] button, [data-hook*="subscribe"] {
+    background-color: #f47521 !important; color: #ffffff !important;
+    border: none !important; border-radius: 6px !important; font-weight: 600 !important;
 }
 
-[data-hook="post"] h1,
-[data-hook="post"] h2,
-[data-hook="post"] h3 {
-    color: #ffffff !important;
+[class*="sidebar"], [class*="Sidebar"] { background-color: #212438 !important; color: #d4d4dc !important; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1c1f2e; }
+::-webkit-scrollbar-thumb { background: #363a52; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #f47521; }
+
+/* === BLOG POST PAGE (Single Article View) === */
+[data-hook="post-page"], [data-hook="post-page"] > div { background-color: #1c1f2e !important; }
+[data-hook="post"] { background-color: #252840 !important; border: 1px solid #363a52 !important; border-radius: 12px !important; }
+[data-hook="post"] article, article[data-hook="post"] { background-color: #252840 !important; }
+[data-hook="post"] p, [data-hook="post"] span, [data-hook="post"] li { color: #d4d4dc !important; }
+[data-hook="post"] h1, [data-hook="post"] h2, [data-hook="post"] h3 { color: #ffffff !important; }
+[data-hook="post"] a { color: #f47521 !important; }
+[data-hook="post"] [data-hook="user-name"], [data-hook="post"] [data-hook="time-ago"],
+[data-hook="post"] [class*="author"], [data-hook="post"] [class*="date"] { color: #9a9ab0 !important; }
+[data-hook="post"] [class*="paywall"], [data-hook="post"] [class*="subscribe"],
+[data-hook="post"] [class*="Paywall"] { background-color: #252840 !important; color: #d4d4dc !important; }
+[data-hook="post-page"] article { background-color: #252840 !important; border: 1px solid #363a52 !important; border-radius: 12px !important; }
+article { background-color: #252840 !important; }
+
+/* === MOBILE RESPONSIVE === */
+@media screen and (max-width: 768px) {
+    [data-hook="post-list-item"], .post-list-item { margin: 8px 4px !important; border-radius: 8px !important; }
+    [data-hook="post-title"], .post-list-item [data-hook="post-title"] { font-size: 16px !important; line-height: 1.3 !important; }
+    [data-hook="post-description"], .post-list-item p { font-size: 14px !important; line-height: 1.5 !important; }
+    [id*="SITE_HEADER"] [data-testid="linkElement"] { padding: 8px 12px !important; }
+    [class*="mobile-menu"], [class*="MobileMenu"], [data-hook="mobile-menu"], [id*="MENU_AS_CONTAINER"] { background-color: #1c1f2e !important; }
+    [class*="mobile-menu"] a, [class*="MobileMenu"] a, [id*="MENU_AS_CONTAINER"] a, [id*="MENU_AS_CONTAINER"] span { color: #ffffff !important; }
+    .post-list-item-wrapper { padding: 12px !important; }
+    .post-list-pro-gallery-pg-grid { padding: 0 8px !important; }
+    #SITE_FOOTER { padding: 16px 12px !important; }
+    [class*="hero"], [class*="Hero"] { min-height: auto !important; }
+}
+@media screen and (max-width: 480px) {
+    [data-hook="post-title"], .post-list-item [data-hook="post-title"] { font-size: 15px !important; }
+    [data-hook="post-description"], .post-list-item p { font-size: 13px !important; }
+    h1 { font-size: 22px !important; }
+    h2 { font-size: 18px !important; }
+    h3 { font-size: 16px !important; }
 }
 
-[data-hook="post"] a {
-    color: #f47521 !important;
+/* === SKELETON / LOADING STATE FIX === */
+[class*="loading"], [class*="shimmer"], [class*="placeholder"] { background-color: #2d3050 !important; color: transparent !important; }
+[class*="loading"] span, [class*="shimmer"] span { background: linear-gradient(90deg, #2d3050 0%, #363a52 50%, #2d3050 100%) !important; }
+
+/* === DROPDOWN / POPOVER MENUS === */
+[class*="dropdown"], [class*="Dropdown"], [class*="popover"], [class*="Popover"] {
+    background-color: #252840 !important; border: 1px solid #363a52 !important; color: #d4d4dc !important;
+}
+[class*="dropdown"] a, [class*="Dropdown"] a { color: #d4d4dc !important; }
+[class*="dropdown"] a:hover, [class*="Dropdown"] a:hover { color: #f47521 !important; background-color: #2d3050 !important; }
+
+/* === SEARCH BAR === */
+[data-hook*="search"], [class*="search-input"], [class*="SearchInput"] {
+    background-color: #252840 !important; border: 1px solid #363a52 !important; color: #ffffff !important; border-radius: 6px !important;
 }
 
-[data-hook="post"] [data-hook="user-name"],
-[data-hook="post"] [data-hook="time-ago"],
-[data-hook="post"] [class*="author"],
-[data-hook="post"] [class*="date"] {
-    color: #a0a0b0 !important;
+/* === CATEGORY FILTER PILLS === */
+[class*="category-list"] a, [class*="CategoryList"] a, [data-hook="category-list"] a {
+    background-color: #252840 !important; color: #d4d4dc !important;
+    border: 1px solid #363a52 !important; border-radius: 20px !important; padding: 6px 16px !important;
+}
+[class*="category-list"] a:hover, [class*="CategoryList"] a:hover, [data-hook="category-list"] a:hover,
+[class*="category-list"] a[class*="active"], [class*="CategoryList"] a[class*="active"] {
+    background-color: #f47521 !important; color: #ffffff !important; border-color: #f47521 !important;
 }
 
-[data-hook="post"] [class*="paywall"],
-[data-hook="post"] [class*="subscribe"],
-[data-hook="post"] [class*="Paywall"] {
-    background-color: #1e1e38 !important;
-    color: #e0e0e8 !important;
-}
+/* === WIXUI RICH TEXT === */
+[data-hook="wix-rich-text"], [class*="rich-text"], [class*="RichText"] { color: #d4d4dc !important; }
+[data-hook="wix-rich-text"] a { color: #f47521 !important; }
 
-[data-hook="post-page"] article {
-    background-color: #1e1e38 !important;
-    border: 1px solid #2a2a4a !important;
-    border-radius: 12px !important;
-}
-
-[data-hook="post-page"] article:hover {
-    border-color: #f47521 !important;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4) !important;
-}
-
-/* All article elements site-wide */
-article {
-    background-color: #1e1e38 !important;
-}
+/* === TAG CLOUD === */
+[class*="tag-cloud"] a, [class*="TagCloud"] a, [data-hook*="tag"] a { color: #9a9ab0 !important; }
+[class*="tag-cloud"] a:hover, [class*="TagCloud"] a:hover { color: #f47521 !important; }

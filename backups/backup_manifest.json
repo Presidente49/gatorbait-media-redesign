@@ -1,0 +1,7 @@
+{
+  "backup_date": "2026-03-16T12:25:18.714422",
+  "note": "Original v4 embeds backed up by Claude Code. If Claude web or anyone breaks the site, restore from these.",
+  "css_file": "/tmp/restored_v4_css_final.txt",
+  "html_file": "/tmp/original_v4_html.txt",
+  "js_file": "/tmp/original_v4_js.txt"
+}

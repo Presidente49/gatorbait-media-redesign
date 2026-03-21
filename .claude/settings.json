@@ -2,7 +2,7 @@
   "mcpServers": {
     "claude-bridge": {
       "command": "node",
-      "args": ["/home/user/claude-bridge-mcp/dist/index.js"],
+      "args": ["/home/user/claude-bridge-mcp/node_modules/claude-bridge-mcp/server.js"],
       "env": {
         "CLAUDE_BRIDGE_SESSION": "claude-code"
       }

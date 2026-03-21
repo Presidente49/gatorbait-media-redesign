@@ -9,6 +9,7 @@
 
 const RESTREAM_AUTH_URL = 'https://api.restream.io/login';
 const RESTREAM_TOKEN_URL = 'https://api.restream.io/oauth/token';
+const DISPATCH_URL = 'https://gatorbait-dispatch.workers.dev/api/messages';
 
 export default {
   async fetch(request, env) {
@@ -77,6 +78,7 @@ async function handleCallback(url, env) {
 
   if (!tokenResponse.ok) {
     const body = await tokenResponse.text();
+    await notifyDispatch('restream', `OAuth token exchange failed (${tokenResponse.status})`);
     return new Response(
       `Token exchange failed (${tokenResponse.status}): ${body}`,
       { status: 502 }
@@ -84,6 +86,8 @@ async function handleCallback(url, env) {
   }
 
   const tokens = await tokenResponse.json();
+
+  await notifyDispatch('restream', `OAuth successful! Token received (expires in ${tokens.expires_in}s)`);
 
   return new Response(
     JSON.stringify({
@@ -97,4 +101,19 @@ async function handleCallback(url, env) {
       headers: { 'Content-Type': 'application/json' },
     }
   );
+}
+
+/**
+ * Post a status update to the GatorBait Dispatch workspace.
+ */
+async function notifyDispatch(channel, text) {
+  try {
+    await fetch(DISPATCH_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ author: 'restream-oauth-worker', channel, text }),
+    });
+  } catch {
+    // Dispatch is best-effort; don't block the main flow
+  }
 }

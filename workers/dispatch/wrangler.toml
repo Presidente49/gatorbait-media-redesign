@@ -1,0 +1,16 @@
+name = "gatorbait-dispatch"
+main = "src/index.js"
+compatibility_date = "2024-09-01"
+
+# Durable Object for persistent message storage
+[durable_objects]
+bindings = [
+  { name = "DISPATCH", class_name = "DispatchRoom" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["DispatchRoom"]
+
+# Set via `wrangler secret put DISPATCH_SECRET`
+# Used to authorize destructive operations (clear channel)

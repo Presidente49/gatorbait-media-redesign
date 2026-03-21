@@ -1,0 +1,10 @@
+name = "gatorbait-social"
+main = "src/index.js"
+compatibility_date = "2024-09-01"
+
+[vars]
+RESTREAM_REDIRECT_URI = "https://gatorbait-social.workers.dev/oauth/callback"
+
+# These must be set via `wrangler secret put`:
+#   wrangler secret put RESTREAM_CLIENT_ID
+#   wrangler secret put RESTREAM_CLIENT_SECRET

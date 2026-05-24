@@ -1,0 +1,9 @@
+GoHighLevel - The Divorce Club Sub-Account
+==========================================
+Location ID: qnUWGAHvgNtKSl7YzrWx
+URL: https://app.gohighlevel.com/v2/location/qnUWGAHvgNtKSl7YzrWx/
+API Token: pit-71b6d03d-a66b-4238-aa4c-451ccfd19705
+Integration Name: Divorce Club Automation
+Scopes: All 144 scopes (full access)
+API Version: v2.0
+Base URL: https://services.leadconnectorhq.com

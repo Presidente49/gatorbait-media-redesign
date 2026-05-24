@@ -1,0 +1,6 @@
+launch-announcement: https://files.manuscdn.com/user_upload_by_module/session_file/310519663350879209/VvRHMwehKDGTjzGe.png
+story-event-teaser: https://files.manuscdn.com/user_upload_by_module/session_file/310519663350879209/ycBGibKqwxMKVHDA.png
+realtor-target: https://files.manuscdn.com/user_upload_by_module/session_file/310519663350879209/CPqNhbhRYofHLrOS.png
+podcast-promo: https://files.manuscdn.com/user_upload_by_module/session_file/310519663350879209/DzSMRysjJwGWZFmA.png
+quote-card: https://files.manuscdn.com/user_upload_by_module/session_file/310519663350879209/jwXDmDuqulGDdhoR.png
+hero-v2: https://files.manuscdn.com/user_upload_by_module/session_file/310519663350879209/iiDkttVYacOTaafF.png

@@ -2,36 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://www.gatorbaitmedia.com/post/florida-gets-its-alignment-back-steuart-bell-sumrall-and-billy-donovan-s-new-gig</loc>
+    <loc>https://www.gatorbaitmedia.com/post/making-lists-and-checking-them-twice-on-a-wednesday</loc>
     <news:news>
       <news:publication>
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-07-08T06:54:52Z</news:publication_date>
-      <news:title>Florida Gets Its 'Alignment' Back: Steuart Bell, Sumrall and Billy Donovan's New Gig</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/buddy-martin-s-soccer-rules-quiz-amid-usa-belgium-world-cup-thriller</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-08T06:53:45Z</news:publication_date>
-      <news:title>Buddy Martin's Soccer Rules Quiz Amid USA-Belgium World Cup Thriller</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/rob-browne-ellis-johnson-gabe-coon-break-down-sec-o-line-building</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-08T06:52:43Z</news:publication_date>
-      <news:title>Rob Browne, Ellis Johnson &amp; Gabe Coon Break Down SEC O-Line Building</news:title>
+      <news:publication_date>2026-07-08T10:48:20.768000Z</news:publication_date>
+      <news:title>Making lists and checking them twice on a Wednesday</news:title>
     </news:news>
   </url>
   <url>
@@ -41,19 +19,8 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-07-08T06:30:48Z</news:publication_date>
+      <news:publication_date>2026-07-08T06:30:48.863000Z</news:publication_date>
       <news:title>Florida Gator Lowdown Recap: World Cup Fallout, College Football 27, and Counting Down to SEC Media Days</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/is-alabama-s-offensive-line-panic-justified-wes-neighbors-says-no-but-admits-the-concern</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-08T06:30:48Z</news:publication_date>
-      <news:title>Is Alabama's Offensive Line Panic Justified? Wes Neighbors Says No — But Admits the Concern</news:title>
     </news:news>
   </url>
   <url>
@@ -64,7 +31,7 @@
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>2026-07-08T02:31:56Z</news:publication_date>
-      <news:title>Sorry, I Just Can't Feel Sorry For Billy Napier</news:title>
+      <news:title>Sorry, I Just Can’t Feel Sorry For Billy Napier.</news:title>
     </news:news>
   </url>
   <url>
@@ -96,7 +63,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-07-05T12:10:01Z</news:publication_date>
+      <news:publication_date>2026-07-05T12:10:01.056000Z</news:publication_date>
       <news:title>Thoughts of the Day: July 5, 2026</news:title>
     </news:news>
   </url>
@@ -108,7 +75,7 @@
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>2026-07-05T00:10:52Z</news:publication_date>
-      <news:title>The Newest Evidence On Tebow Is The Same Old Story. And My Eyes Don't Lie.</news:title>
+      <news:title>The Newest Evidence On Tebow Is The Same Old  Story. And My Eyes Don’t Lie.</news:title>
     </news:news>
   </url>
   <url>
@@ -140,8 +107,8 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-07-02T15:53:25Z</news:publication_date>
-      <news:title>Happy Independence Day Gator Fans. Your Time To Harmonize Is Now! We Have Alignment!</news:title>
+      <news:publication_date>2026-07-02T15:53:25.735000Z</news:publication_date>
+      <news:title>Happy Independence Day Gator Fans.  Your Time To Harmonize Is Now! We Have Alignment!</news:title>
     </news:news>
   </url>
   <url>
@@ -151,7 +118,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-07-02T07:23:16Z</news:publication_date>
+      <news:publication_date>2026-07-02T07:23:16.152000Z</news:publication_date>
       <news:title>Thoughts of the Day: July 2, 2026</news:title>
     </news:news>
   </url>
@@ -195,7 +162,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-27T12:25:53Z</news:publication_date>
+      <news:publication_date>2026-06-27T12:25:53.265000Z</news:publication_date>
       <news:title>Thoughts of the Day: June 27, 2026</news:title>
     </news:news>
   </url>
@@ -206,7 +173,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-26T16:22:03Z</news:publication_date>
+      <news:publication_date>2026-06-26T16:22:03.129000Z</news:publication_date>
       <news:title>Good News For Hopeful Gator Football Fans: Brad White's Defense Is A Lot Closer To The Elevator</news:title>
     </news:news>
   </url>
@@ -217,7 +184,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-25T09:49:54Z</news:publication_date>
+      <news:publication_date>2026-06-25T09:49:54.755000Z</news:publication_date>
       <news:title>Thoughts of the Day: June 25, 2026</news:title>
     </news:news>
   </url>
@@ -261,7 +228,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-19T15:21:20Z</news:publication_date>
+      <news:publication_date>2026-06-19T15:21:20.924000Z</news:publication_date>
       <news:title>Gator Football: Keep Your Eyes On The Not-So-Secret Weapon. His Name Is Jadan Baugh #13</news:title>
     </news:news>
   </url>
@@ -272,7 +239,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-19T11:48:14Z</news:publication_date>
+      <news:publication_date>2026-06-19T11:48:14.608000Z</news:publication_date>
       <news:title>State of the Florida program: Baseball</news:title>
     </news:news>
   </url>
@@ -283,8 +250,8 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-18T20:00:30Z</news:publication_date>
-      <news:title>World Cup Distraction: Sorry, But It's The Right Time For Us. So We Take A Look.</news:title>
+      <news:publication_date>2026-06-18T20:00:30.971000Z</news:publication_date>
+      <news:title>World Cup Distraction: Sorry, But It’s The “Right Time” For Us. So We Take A Look.</news:title>
     </news:news>
   </url>
   <url>
@@ -327,7 +294,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-14T18:26:58Z</news:publication_date>
+      <news:publication_date>2026-06-14T18:26:58.681000Z</news:publication_date>
       <news:title>The Truth About The New Swamp: Who Among Us Will Be Able To Appreciate The Amenities?</news:title>
     </news:news>
   </url>
@@ -338,7 +305,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-14T11:54:33Z</news:publication_date>
+      <news:publication_date>2026-06-14T11:54:33.605000Z</news:publication_date>
       <news:title>Thoughts of the Day: June 14, 2026</news:title>
     </news:news>
   </url>
@@ -360,7 +327,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-12T12:57:59Z</news:publication_date>
+      <news:publication_date>2026-06-12T12:57:59.593000Z</news:publication_date>
       <news:title>The Future: Will A New Plan, New President And New Coaches Inspire Gator Nation? It Already Has!</news:title>
     </news:news>
   </url>
@@ -371,7 +338,7 @@
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-06-11T12:51:53Z</news:publication_date>
+      <news:publication_date>2026-06-11T12:51:53.867000Z</news:publication_date>
       <news:title>Thoughts of the Day: June 11, 2026</news:title>
     </news:news>
   </url>
@@ -384,17 +351,6 @@
       </news:publication>
       <news:publication_date>2026-06-10T11:17:18Z</news:publication_date>
       <news:title>Circumstances may have changed, but Tommy Haugh remains the same</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/college-sports-on-the-brink-after-lubbock-judge-rules-favorably-for-brendan-sorsby</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-09T05:20:17Z</news:publication_date>
-      <news:title>College sports on the brink after Lubbock judge rules favorably for Brendan Sorsby</news:title>
     </news:news>
   </url>
 </urlset>

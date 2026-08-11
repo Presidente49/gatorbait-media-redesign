@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/sumrall-happy-to-let-the-quarterback-competition-play-itself-out</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-10T21:03:57.906000Z</news:publication_date>
+      <news:title>Sumrall happy to let the quarterback competition play itself out</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/spurrier-the-ghost-that-won-t-go-away-he-still-lives-in-the-headspace-of-haters</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-10T12:27:34.927000Z</news:publication_date>
+      <news:title>Spurrier: The Ghost That Won’t Go Away. He Still Lives In The Headspace Of Haters.</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/haynes-king-s-canton-spark-offers-a-blueprint-for-florida-s-buster-faulkner</loc>
     <news:news>
       <news:publication>
@@ -527,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-12T10:27:26Z</news:publication_date>
       <news:title>Thoughts of the Day: July 12, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/how-many-ways-did-napier-get-wrong-for-four-years-let-us-ai-count-them</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-11T15:16:52Z</news:publication_date>
-      <news:title>How Many Ways Did Napier Get It Wrong For Four Years? Let Us (AI) Count Them.</news:title>
     </news:news>
   </url>
 </urlset>

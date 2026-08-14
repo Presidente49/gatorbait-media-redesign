@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/sumrall-s-right-don-t-screw-this-up</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-13T19:03:21Z</news:publication_date>
+      <news:title>Sumrall’s Right. Don’t Screw This Up.</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/florida-gators-offense-buster-faulkner-predictability</loc>
     <news:news>
       <news:publication>
@@ -538,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-15T14:22:37.553000Z</news:publication_date>
       <news:title>Gators Got A Bigger Swamp: Why Bell Is The Best Thing to Happen Since Spurrier Came Home</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/mid-summer-look-at-sec-hoops-it-s-the-gators-and-then-everybody-else</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-15T02:05:00Z</news:publication_date>
-      <news:title>Mid-summer look at SEC hoops: It's the Gators and then everybody else</news:title>
     </news:news>
   </url>
 </urlset>

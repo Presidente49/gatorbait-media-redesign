@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-august-14-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-14T09:06:55Z</news:publication_date>
+      <news:title>Thoughts of the Day: August 14, 2026</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/sumrall-s-right-don-t-screw-this-up</loc>
     <news:news>
       <news:publication>
@@ -538,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-16T11:01:32Z</news:publication_date>
       <news:title>Thoughts of the Day: July 16, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/gators-got-a-bigger-swamp-why-bell-is-the-best-thing-to-happen-since-spurrier-came-home</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-15T14:22:37.553000Z</news:publication_date>
-      <news:title>Gators Got A Bigger Swamp: Why Bell Is The Best Thing to Happen Since Spurrier Came Home</news:title>
     </news:news>
   </url>
 </urlset>

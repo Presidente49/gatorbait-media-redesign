@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/florida-auburn-just-another-football-game-or-does-it-revive-a-red-hot-rivalry</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-15T13:14:04.568000Z</news:publication_date>
+      <news:title>Florida-Auburn: Just Another Football Game, Or Does It Revive A Red Hot Rivalry?</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/with-sumrall-only-the-strong-survive</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-15T12:18:09.555000Z</news:publication_date>
+      <news:title>With Sumrall, only the strong survive</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-august-14-2026</loc>
     <news:news>
       <news:publication>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-18T03:37:16Z</news:publication_date>
       <news:title>True confessions for a July morning</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/sec-media-days-there-s-an-asterisk-hanging-over-athens-like-a-summer-thunderstorm</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-16T23:25:32.022000Z</news:publication_date>
-      <news:title>SEC Media Days: There’s An Asterisk Hanging Over Athens Like A Summer Thunderstorm</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-july-16-2026</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-16T11:01:32Z</news:publication_date>
-      <news:title>Thoughts of the Day: July 16, 2026</news:title>
     </news:news>
   </url>
 </urlset>

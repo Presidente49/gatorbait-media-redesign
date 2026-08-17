@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/jon-sumrall-didn-t-just-get-loud-in-gainesville-he-got-very-specific</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-16T21:28:20.165000Z</news:publication_date>
+      <news:title>Jon Sumrall Didn’t Just Get Loud In Gainesville — He Got Very Specific</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/for-now-all-we-can-do-is-believe</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-16T13:27:51.785000Z</news:publication_date>
+      <news:title>For now, all we can do is BELIEVE</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/florida-auburn-just-another-football-game-or-does-it-revive-a-red-hot-rivalry</loc>
     <news:news>
       <news:publication>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-19T14:37:01.071000Z</news:publication_date>
       <news:title>Gator Nation, Time To Buckle Up And Change The Pitch: Jon Sumrall Is About to Get Louder.</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-july-19-2026</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-19T09:41:53.666000Z</news:publication_date>
-      <news:title>Thoughts of the Day: July 19, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/true-confessions-for-a-july-morning</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-18T03:37:16Z</news:publication_date>
-      <news:title>True confessions for a July morning</news:title>
     </news:news>
   </url>
 </urlset>

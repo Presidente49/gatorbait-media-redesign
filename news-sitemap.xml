@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/ranking-the-20-most-entertaining-personalities-in-college-football-history</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-18T23:22:25.590000Z</news:publication_date>
+      <news:title>Ranking the 20 Most Entertaining Personalities in College Football History</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/a-few-sumrallisms-from-monday</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-18T13:37:08.024000Z</news:publication_date>
+      <news:title>A few Sumrallisms from Monday</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/no-starting-qb-just-yet-and-an-issue-at-tackle-on-the-offensive-line</loc>
     <news:news>
       <news:publication>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-21T21:31:09.873000Z</news:publication_date>
       <news:title>Gator Football: Sumrall His Admits His 'Big Mistake'</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/a-few-things-overheard-at-sec-media-days</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-21T00:47:12.751000Z</news:publication_date>
-      <news:title>A few things overheard at SEC Media Days</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/sankey-sec-has-talked-about-going-it-alone</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-20T23:59:58Z</news:publication_date>
-      <news:title>Sankey: SEC has talked about going it alone</news:title>
     </news:news>
   </url>
 </urlset>

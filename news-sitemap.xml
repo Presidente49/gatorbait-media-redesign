@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/at-long-last-tj-shanahan-s-florida-gator-dream-is-becoming-reality</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-20T02:26:10.071000Z</news:publication_date>
+      <news:title>At long last, TJ Shanahan's Florida Gator dream is becoming reality</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/gator-scrimmage-kerfuffle-i-didn-t-see-it-but-couldn-t-have-told-you-even-if-we-had</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-19T13:36:34.180000Z</news:publication_date>
+      <news:title>Gator Scrimmage Kerfuffle: I Didn’t See It. But Couldn’t Have Told You Even If We Had!</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/ranking-the-20-most-entertaining-personalities-in-college-football-history</loc>
     <news:news>
       <news:publication>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-22T21:39:50Z</news:publication_date>
       <news:title>Sumrall at SEC Media Days: There are no shortcuts</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/thoughts-from-sec-media-days-in-tampa</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-22T04:31:00Z</news:publication_date>
-      <news:title>Thoughts from SEC Media Days in Tampa</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/sumrall-his-admits-his-big-mistake-a-coach-who-nearly-coached-himself-into-a-hot-mess</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-21T21:31:09.873000Z</news:publication_date>
-      <news:title>Gator Football: Sumrall His Admits His 'Big Mistake'</news:title>
     </news:news>
   </url>
 </urlset>

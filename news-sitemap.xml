@@ -2,13 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/earning-access-to-gator-scrimmages-it-can-feel-like-cobra-and-the-mongoose</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-20T20:56:33.259000Z</news:publication_date>
+      <news:title>Earning Access To Gator Scrimmages: It Can Feel Like Cobra and the Mongoose</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/at-long-last-tj-shanahan-s-florida-gator-dream-is-becoming-reality</loc>
     <news:news>
       <news:publication>
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-08-20T02:26:10.071000Z</news:publication_date>
+      <news:publication_date>2026-08-20T02:26:10Z</news:publication_date>
       <news:title>At long last, TJ Shanahan's Florida Gator dream is becoming reality</news:title>
     </news:news>
   </url>
@@ -538,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-23T06:30:02Z</news:publication_date>
       <news:title>Players, coaches and more from SEC Media Days on Wednesday</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/sumrall-at-sec-media-days-there-are-no-shortcuts</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-22T21:39:50Z</news:publication_date>
-      <news:title>Sumrall at SEC Media Days: There are no shortcuts</news:title>
     </news:news>
   </url>
 </urlset>

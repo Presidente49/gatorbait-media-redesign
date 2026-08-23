@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/our-laura-the-intern-who-outgrew-the-room-and-became-an-espn-superstar</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-22T20:40:10.941000Z</news:publication_date>
+      <news:title>Our Laura: The Intern Who Outgrew The Room And Became An ESPN Superstar</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/the-history-of-florida-football-coaches-reads-like-a-soap-opera-plot</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-22T18:45:11.464000Z</news:publication_date>
+      <news:title>The history of Florida football coaches reads like a soap opera plot</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-august-21-2026</loc>
     <news:news>
       <news:publication>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-24T17:14:10.026000Z</news:publication_date>
       <news:title>Thoughts of the Day: July 24, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/for-danny-wuerffel-football-opened-the-door-for-a-higher-calling</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-23T20:56:46Z</news:publication_date>
-      <news:title>For Danny Wuerffel, football opened the door for a higher calling</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/gator-football-sumrall-s-day-in-tampa-very-successful-now-what-s-next</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-23T14:05:04.317000Z</news:publication_date>
-      <news:title>Gator Football: Sumrall’s Day in Tampa Very Successful. Now What's Next?</news:title>
     </news:news>
   </url>
 </urlset>

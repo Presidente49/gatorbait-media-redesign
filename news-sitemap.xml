@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/bryce-lovett-at-lt-might-be-the-missing-link-on-florida-s-offensive-line</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-24T21:43:06.241000Z</news:publication_date>
+      <news:title>Bryce Lovett at LT might be the missing link on Florida's offensive line</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/congratulations-aaron-philo-you-get-to-be-the-2026-starter-until-you-don-t</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-24T17:20:20.374000Z</news:publication_date>
+      <news:title>Congratulations, Aaron Philo. You Get To Be The 2026 Starter. Until You Don’t.</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/jadan-baugh-leads-the-contingent-of-stars-ready-to-lead-the-2026-gator</loc>
     <news:news>
       <news:publication>
@@ -527,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-27T00:38:00Z</news:publication_date>
       <news:title>A fleet of aircraft carriers makes Florida the no-brainer No. 1 basketball pick</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/urban-meyer-s-coaching-secret-to-winning-championships-was-the-power-of-love</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-26T15:31:27Z</news:publication_date>
-      <news:title>Urban Meyer's Coaching Secret To Winning Championships Was The Power of Love</news:title>
     </news:news>
   </url>
 </urlset>

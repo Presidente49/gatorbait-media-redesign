@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/gator-qb-boss-craddock-talks-of-big-freaking-dreams-and-loving-the-hbc</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-25T15:42:38.258000Z</news:publication_date>
+      <news:title>Gator QB Boss Craddock Talks Of 'Big Freaking Dreams' And Loving The HBC</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-august-25-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-25T13:04:40Z</news:publication_date>
+      <news:title>Thoughts of the Day: August 25, 2026</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/bryce-lovett-at-lt-might-be-the-missing-link-on-florida-s-offensive-line</loc>
     <news:news>
       <news:publication>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-28T14:34:22Z</news:publication_date>
       <news:title>Thoughts of the Day: July 28, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/every-revolution-begins-with-a-voice-crying-out-from-the-wilderness</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-27T16:14:53Z</news:publication_date>
-      <news:title>Every revolution begins with a voice crying out from the wilderness</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/a-fleet-of-aircraft-carriers-makes-florida-the-no-brainer-no-1-basketball-pick</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-27T00:38:00Z</news:publication_date>
-      <news:title>A fleet of aircraft carriers makes Florida the no-brainer No. 1 basketball pick</news:title>
     </news:news>
   </url>
 </urlset>

@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/gator-football-26-this-is-the-moment-of-truth-when-i-must-pick-the-number</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-27T18:01:44.735000Z</news:publication_date>
+      <news:title>Gator Football ‘26: This Is The Moment Of Truth When I Must Pick The Number.</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/the-answer-to-the-qb-question-is-aaron-philo-but-maybe-it-will-change</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-27T13:26:37.583000Z</news:publication_date>
+      <news:title>The Answer To The QB Question Is Aaron Philo. But Maybe It Will Change?</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/controversy-kiffin-and-sumrall-florida-hired-the-right-football-coach</loc>
     <news:news>
       <news:publication>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-30T11:58:52Z</news:publication_date>
       <news:title>Thoughts of the Day: July 30, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/the-nation-s-best-running-backs-somehow-escaped-the-can-t-miss-label-as-prep-stars</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-29T02:27:29Z</news:publication_date>
-      <news:title>The nation's best running backs somehow escaped the can't miss label as prep stars</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/only-gators-get-out-alive-is-it-still-going-to-be-true-in-the-new-swamp</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-29T00:56:44Z</news:publication_date>
-      <news:title>Only Gators Get Out Alive: Is It Still Going To Be True In The New Swamp?</news:title>
     </news:news>
   </url>
 </urlset>

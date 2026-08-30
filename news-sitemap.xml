@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/buddy-blog-the-curse-of-lsu-s-ill-gotten-gain-while-dawn-breaks-over-the-swamp</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-29T14:12:07Z</news:publication_date>
+      <news:title>Buddy Blog : The Curse Of LSU's Ill-Gotten Gain, While Dawn Breaks Over The Swamp</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/new-king-of-the-ville-contract-extension-maken-golden-highest-paid-gator-coach</loc>
     <news:news>
       <news:publication>
@@ -538,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-07-31T21:07:17.513000Z</news:publication_date>
       <news:title>Bristol Finally Gets Tired Of The Noise That Has Been Pissing Us Off For While.</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/sports-illustrated-ranks-aaron-philo-no-34-among-power-conference-quarterbacks</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-31T13:03:41.881000Z</news:publication_date>
-      <news:title>Sports Illustrated ranks Aaron Philo No. 34 among power conference quarterbacks</news:title>
     </news:news>
   </url>
 </urlset>

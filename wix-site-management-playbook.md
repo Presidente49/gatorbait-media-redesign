@@ -7,7 +7,7 @@
 **Meta Site ID:** 18fb3a4e-d7f6-414a-aeb9-3047db3ea115
 **Owner:** Brenden Martin (brenden@gatorbaitmedia.com)
 **Purpose:** Subscription-based college sports fan site (Florida Gators focus)
-**Sister Property:** Sidelines.live (virtual streaming studio / podcast network)
+**Podcast:** The Buddy Martin Show (self-hosted / owned distribution)
 
 ---
 
@@ -149,12 +149,12 @@
 
 ### Phase 4: Podcast/Streaming Integration (Priority: HIGH)
 
-**Current Problem:** "The Buddy Martin Show" is a separate page. No podcast presence on the homepage. Sidelines.live is not referenced.
+**Current Problem:** "The Buddy Martin Show" is a separate page. No podcast presence on the homepage.
 
 **Target State:**
 - Dedicated "Listen Now" section on homepage with latest podcast episodes
 - Embedded audio player or link to podcast platforms
-- "Powered by Sidelines.live" branding with link
+- Links to owned podcast distribution (Apple Podcasts, Spotify, YouTube)
 - Cross-promotion between podcast and article content
 
 ### Phase 5: Subscription CTA & Conversion (Priority: CRITICAL)
@@ -176,7 +176,7 @@
 - Full social links: Twitter/X, Facebook, YouTube, Instagram, Apple Podcasts, Spotify
 - Newsletter signup form
 - Copyright updated to 2026
-- Links to Sidelines.live, Terms, Privacy Policy
+- Links to Terms, Privacy Policy
 
 ---
 
@@ -234,7 +234,7 @@
 10. Connect Google Analytics 4 and Search Console
 
 ### Growth (This Month)
-11. Add Sidelines.live cross-promotion
+11. Add Buddy Martin Show cross-promotion across owned channels
 12. Create category landing pages for each sport
 13. Launch merchandise store (Wix Stores)
 14. Set up newsletter with lead magnet

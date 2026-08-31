@@ -96,6 +96,28 @@ h1, h2, h3, h4, h5, h6 {
 a       { color: var(--gb-blue) !important; }
 a:hover { color: var(--gb-orange) !important; }
 
+/* Chrome-level links (nav, footer, tags, pagination) carry no rule.
+   Underlines belong to running prose only — see the article rules,
+   which deliberately restore them inside [data-hook="post"]. Verified
+   by render: without this, category tags ship with an underline
+   struck through the solid color block. */
+[id*="SITE_HEADER"] a,
+[id*="SITE_FOOTER"] a,
+[data-hook="post-categories"] a,
+[data-hook="category-list"] a,
+[class*="category-list"] a,
+[class*="CategoryList"] a,
+[data-hook="post-list-item"] a,
+[data-hook="post-title"],
+[data-hook="post-title"] a,
+[data-hook="pagination"] a,
+[class*="tag-cloud"] a,
+[class*="TagCloud"] a,
+nav a,
+[role="navigation"] a {
+    text-decoration: none !important;
+}
+
 /* === HEADER — paper with blue/orange flag rule === */
 [id*="SITE_HEADER"] {
     background: var(--gb-paper) !important;

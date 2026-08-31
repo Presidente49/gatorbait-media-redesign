@@ -1,0 +1,227 @@
+<!--
+  GBM - Live Front Page  (BODY_END custom embed)
+
+  Renders a current-news front page from the site's own blog feed.
+
+  WHY A FEED AND NOT CATEGORIES: roughly half of newly published posts
+  go out with categoryIds empty, so any category-driven layout silently
+  drops today's work. Sorting by publish date cannot miss a post.
+
+  FAILURE POSTURE: if the feed can't be read, or returns nothing, the
+  block removes itself and the page renders exactly as it did before.
+  It never paints an empty shell.
+
+  Injected before the footer, matching the placement pattern already
+  proven by GBM - Buddy Martin Show Live Hub v1.
+-->
+<style id="gbm-front-css">
+#gbm-front{background:#0d121c;color:#fff;font-family:'Lora',Georgia,serif;border-top:4px solid #fa4616}
+#gbm-front *{box-sizing:border-box}
+.gbf-shell{max-width:1220px;margin:0 auto;padding:44px 22px}
+.gbf-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:1px solid #263044;padding-bottom:14px;margin-bottom:26px}
+.gbf-live{display:flex;align-items:center;gap:9px;font-family:'Barlow Condensed',Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#ff5a1f}
+.gbf-dot{width:8px;height:8px;border-radius:50%;background:#fa4616;box-shadow:0 0 0 4px rgba(250,70,22,.16)}
+.gbf-date{font-family:'Barlow Condensed',Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#7f8a9c}
+.gbf-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,1fr);gap:26px}
+.gbf-lead{display:block;text-decoration:none;color:inherit;background:#0b0f17;border:1px solid #263044}
+.gbf-lead:hover{border-color:#fa4616}
+.gbf-leadimg{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#111722}
+.gbf-leadbody{padding:22px}
+.gbf-kicker{display:inline-block;background:#fa4616;color:#fff;font-family:'Barlow Condensed',Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:3px 9px;margin-bottom:11px}
+.gbf-leadtitle{font-size:30px;line-height:1.12;margin:0 0 10px;color:#fff;font-weight:600}
+.gbf-leaddek{font-size:15.5px;line-height:1.55;color:#b8c0cf;margin:0}
+.gbf-meta{font-family:'Barlow Condensed',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#7f8a9c;margin-top:13px}
+.gbf-side{display:flex;flex-direction:column;gap:0}
+.gbf-sidehead{font-family:'Barlow Condensed',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#fff;border-bottom:3px solid #fa4616;padding-bottom:8px;margin-bottom:4px}
+.gbf-item{display:flex;gap:13px;padding:15px 0;border-bottom:1px solid #20293a;text-decoration:none;color:inherit}
+.gbf-item:hover .gbf-itemtitle{color:#ff5a1f}
+.gbf-itemimg{width:82px;height:60px;object-fit:cover;flex-shrink:0;background:#111722}
+.gbf-itemtitle{font-size:14.5px;line-height:1.32;color:#fff;margin:0 0 5px}
+.gbf-itemmeta{font-family:'Barlow Condensed',Arial,sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#7f8a9c}
+.gbf-capture{margin-top:30px;background:#111722;border:1px solid #263044;border-left:4px solid #fa4616;padding:24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.gbf-captitle{font-size:21px;line-height:1.2;margin:0 0 6px;color:#fff;font-weight:600}
+.gbf-capdek{font-size:14px;line-height:1.5;color:#b8c0cf;margin:0}
+.gbf-capform{display:flex;gap:0;min-width:330px}
+.gbf-capinput{flex:1;padding:13px 14px;font-family:'Barlow Condensed',Arial,sans-serif;font-size:14px;background:#0b0f17;border:1px solid #263044;border-right:0;color:#fff;min-width:0}
+.gbf-capinput::placeholder{color:#7f8a9c}
+.gbf-capinput:focus{outline:none;border-color:#fa4616}
+.gbf-capbtn{background:#fa4616;color:#fff;border:0;padding:13px 22px;font-family:'Barlow Condensed',Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.gbf-capbtn:hover{background:#ff5a1f}
+.gbf-capnote{font-family:'Barlow Condensed',Arial,sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7f8a9c;margin-top:9px}
+@media(max-width:900px){
+  .gbf-shell{padding:32px 16px}
+  .gbf-grid{grid-template-columns:1fr;gap:22px}
+  .gbf-leadtitle{font-size:23px}
+  .gbf-capture{grid-template-columns:1fr;gap:16px}
+  .gbf-capform{min-width:0;width:100%}
+  .gbf-capbtn{padding:13px 16px}
+}
+</style>
+<script>
+(function () {
+  if (window.__gbmFront) return;
+  window.__gbmFront = 1;
+
+  var FEED = '/blog-feed.xml';
+  var MAX_SIDE = 6;   // 6 balances the sidebar against the lead card at desktop width
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // Wix serves 4-5MB originals. Never reference one directly.
+  function sized(url, w, h) {
+    if (!url) return '';
+    if (url.indexOf('static.wixstatic.com') === -1) return url;
+    if (url.indexOf('/v1/') !== -1) return url;
+    return url + '/v1/fill/w_' + w + ',h_' + h + ',al_c,q_80/img.jpg';
+  }
+
+  function firstImage(item) {
+    var m = item.getElementsByTagName('enclosure')[0];
+    if (m && m.getAttribute('url')) return m.getAttribute('url');
+    var desc = text(item, 'description') + text(item, 'encoded');
+    var hit = desc.match(/<img[^>]+src=["']([^"']+)["']/i);
+    return hit ? hit[1] : '';
+  }
+
+  function text(node, tag) {
+    var el = node.getElementsByTagName(tag)[0];
+    if (!el) {
+      var all = node.getElementsByTagName('*');
+      for (var i = 0; i < all.length; i++) {
+        if (all[i].localName === tag) { el = all[i]; break; }
+      }
+    }
+    return el ? (el.textContent || '') : '';
+  }
+
+  function strip(html, len) {
+    var d = document.createElement('div');
+    d.innerHTML = html || '';
+    var t = (d.textContent || '').replace(/\s+/g, ' ').trim();
+    return t.length > len ? t.slice(0, len).replace(/\s+\S*$/, '') + '…' : t;
+  }
+
+  function when(d) {
+    if (!d) return '';
+    var then = new Date(d);
+    if (isNaN(then)) return '';
+    var mins = Math.floor((Date.now() - then) / 60000);
+    if (mins < 60) return mins <= 1 ? 'Just now' : mins + ' min ago';
+    if (mins < 1440) { var h = Math.floor(mins / 60); return h + (h === 1 ? ' hour ago' : ' hours ago'); }
+    return then.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  }
+
+  function today() {
+    return new Date().toLocaleDateString('en-US',
+      { weekday: 'long', month: 'long', day: 'numeric' });
+  }
+
+  function build(posts) {
+    var lead = posts[0];
+    var rest = posts.slice(1, 1 + MAX_SIDE);
+
+    var sideHtml = rest.map(function (p) {
+      return '<a class="gbf-item" href="' + esc(p.link) + '">' +
+        (p.img ? '<img class="gbf-itemimg" loading="lazy" alt="" src="' + esc(sized(p.img, 164, 120)) + '">' : '') +
+        '<div><p class="gbf-itemtitle">' + esc(p.title) + '</p>' +
+        '<div class="gbf-itemmeta">' + esc(when(p.date)) + '</div></div></a>';
+    }).join('');
+
+    return '' +
+      '<section id="gbm-front" aria-label="Latest from GatorBait Media"><div class="gbf-shell">' +
+        '<div class="gbf-bar">' +
+          '<div class="gbf-live"><span class="gbf-dot"></span>Latest from GatorBait</div>' +
+          '<div class="gbf-date">' + esc(today()) + '</div>' +
+        '</div>' +
+        '<div class="gbf-grid">' +
+          '<a class="gbf-lead" href="' + esc(lead.link) + '">' +
+            (lead.img ? '<img class="gbf-leadimg" alt="" src="' + esc(sized(lead.img, 1200, 675)) + '">' : '') +
+            '<div class="gbf-leadbody">' +
+              '<span class="gbf-kicker">Latest</span>' +
+              '<h2 class="gbf-leadtitle">' + esc(lead.title) + '</h2>' +
+              '<p class="gbf-leaddek">' + esc(lead.dek) + '</p>' +
+              '<div class="gbf-meta">' + esc(when(lead.date)) + '</div>' +
+            '</div>' +
+          '</a>' +
+          '<div class="gbf-side"><div class="gbf-sidehead">More Coverage</div>' + sideHtml + '</div>' +
+        '</div>' +
+        '<div class="gbf-capture">' +
+          '<div>' +
+            '<h3 class="gbf-captitle">The Gameday Digest</h3>' +
+            '<p class="gbf-capdek">Everything we publish, one email each morning. Free during football season.</p>' +
+          '</div>' +
+          '<div><form class="gbf-capform" data-gbm-capture>' +
+            '<input class="gbf-capinput" type="email" required placeholder="your@email.com" aria-label="Email address">' +
+            '<button class="gbf-capbtn" type="submit">Join</button>' +
+          '</form><div class="gbf-capnote">No spam. Unsubscribe anytime.</div></div>' +
+        '</div>' +
+      '</div></section>';
+  }
+
+  function parse(xml) {
+    var doc = new DOMParser().parseFromString(xml, 'application/xml');
+    if (doc.getElementsByTagName('parsererror').length) return [];
+    var items = doc.getElementsByTagName('item');
+    var out = [];
+    for (var i = 0; i < items.length && out.length < 12; i++) {
+      var it = items[i];
+      var title = text(it, 'title').trim();
+      var link = text(it, 'link').trim();
+      if (!title || !link) continue;
+      out.push({
+        title: title,
+        link: link,
+        date: text(it, 'pubDate').trim(),
+        img: firstImage(it),
+        dek: strip(text(it, 'description'), 190)
+      });
+    }
+    return out;
+  }
+
+  function mount(html) {
+    var anchor = document.getElementById('SITE_FOOTER') ||
+                 document.querySelector('footer');
+    if (!anchor || !anchor.parentNode) return false;
+    var wrap = document.createElement('div');
+    wrap.innerHTML = html;
+    anchor.parentNode.insertBefore(wrap, anchor);
+    wrap.addEventListener('submit', function (e) {
+      var form = e.target.closest ? e.target.closest('[data-gbm-capture]') : null;
+      if (!form) return;
+      e.preventDefault();
+      var val = form.querySelector('input').value;
+      if (!val) return;
+      form.innerHTML = '<div style="padding:13px 4px;font-family:\'Barlow Condensed\',Arial,sans-serif;' +
+        'font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#ff5a1f">' +
+        'Thanks — check your inbox.</div>';
+      document.dispatchEvent(new CustomEvent('gbm:capture', { detail: { email: val } }));
+    });
+    return true;
+  }
+
+  function start() {
+    fetch(FEED, { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
+      .then(function (xml) {
+        var posts = parse(xml);
+        if (!posts.length) return;            // stay silent rather than show a shell
+        var tries = 0;
+        var t = setInterval(function () {
+          if (mount(build(posts)) || ++tries > 60) clearInterval(t);
+        }, 250);
+      })
+      .catch(function () { /* feed unavailable — render nothing */ });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();
+</script>

@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/reasons-for-optimism-why-jon-sumrall-has-a-team-that-may-exceed-expectations</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-30T12:48:45.246000Z</news:publication_date>
+      <news:title>Reasons for optimism: Why Jon Sumrall has a team that may exceed expectations</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/buddy-blog-the-curse-of-lsu-s-ill-gotten-gain-while-dawn-breaks-over-the-swamp</loc>
     <news:news>
       <news:publication>
@@ -538,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-01T11:03:07.797000Z</news:publication_date>
       <news:title>Colorado ruling means Denzel Aberdeen gets a fifth season to play for the Gators</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/bristol-finally-gets-tired-of-the-noise-that-has-been-pissing-us-off-for-while</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-07-31T21:07:17.513000Z</news:publication_date>
-      <news:title>Bristol Finally Gets Tired Of The Noise That Has Been Pissing Us Off For While.</news:title>
     </news:news>
   </url>
 </urlset>

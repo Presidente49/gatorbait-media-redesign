@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/from-the-troy-trojans-to-the-florida-gators-an-evolution-in-style</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-01T00:03:28Z</news:publication_date>
+      <news:title>From the Troy Trojans to the Florida Gators, an evolution in style</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/florida-football-8-reasons-the-gators-could-win-8-games-this-season</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-31T16:05:05Z</news:publication_date>
+      <news:title>Florida Football: 8 Reasons the Gators could win 8 games this season.</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/there-is-nothing-like-the-season-opening-game-for-the-florida-gators</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-08-31T09:30:51.011000Z</news:publication_date>
+      <news:title>There is nothing like the season opening game for the Florida Gators</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/reasons-for-optimism-why-jon-sumrall-has-a-team-that-may-exceed-expectations</loc>
     <news:news>
       <news:publication>
@@ -516,39 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-02T20:03:57.567000Z</news:publication_date>
       <news:title>Urban Sees The Gators’ Bright Future, And Maybe He Knows Something</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/all-hell-has-broken-loose-with-the-colorado-ruling-on-5th-year-eligibility</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-02T11:04:41.240000Z</news:publication_date>
-      <news:title>All hell has broken loose with the Colorado ruling on 5th-year eligibility</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/has-florida-s-historic-quarterback-grove-gone-barren-where-s-the-next-great-one</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-02T00:14:19Z</news:publication_date>
-      <news:title>Has Florida’s Historic Quarterback Grove Gone Barren? Where's The Next Great One?</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/colorado-ruling-means-denzel-aberdeen-gets-a-fifth-season-to-play-for-the-gators</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-01T11:03:07.797000Z</news:publication_date>
-      <news:title>Colorado ruling means Denzel Aberdeen gets a fifth season to play for the Gators</news:title>
     </news:news>
   </url>
 </urlset>

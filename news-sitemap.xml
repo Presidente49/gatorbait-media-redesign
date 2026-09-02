@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/rattlesnakes-don-t-scare-sumrall-and-neither-does-his-debut-as-gator-coach</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-01T15:41:13Z</news:publication_date>
+      <news:title>Rattlesnakes Don’t Scare Sumrall, And Neither Does His Debut As Gator Coach</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-1-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-01T11:08:30Z</news:publication_date>
+      <news:title>Thoughts of the Day: September 1, 2026</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/from-the-troy-trojans-to-the-florida-gators-an-evolution-in-style</loc>
     <news:news>
       <news:publication>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-03T16:51:34Z</news:publication_date>
       <news:title>Gator Football Crystal Ball: The Entire Season Outlook In One Big Bite</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/to-meet-high-expectations-sumrall-needs-more-efficiency-from-his-offense</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-03T07:07:04Z</news:publication_date>
-      <news:title>To meet high expectations, Sumrall needs more efficiency from his offense</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/urban-sees-the-gators-bright-future-and-maybe-he-knows-something</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-02T20:03:57.567000Z</news:publication_date>
-      <news:title>Urban Sees The Gators’ Bright Future, And Maybe He Knows Something</news:title>
     </news:news>
   </url>
 </urlset>

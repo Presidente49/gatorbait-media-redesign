@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/buddy-martin-blog-the-complete-field-guide-to-joey-freshwater-s-aliases</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-03T03:40:07.385000Z</news:publication_date>
+      <news:title>Buddy Martin Blog:The Complete Field Guide to Joey Freshwater’s Aliases</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/aaron-philo-doesn-t-know-it-but-he-s-the-newest-yellow-jacket-in-orange-and-blue</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-02T19:45:05.979000Z</news:publication_date>
+      <news:title>Aaron Philo Doesn’t Know It, But He’s The Newest Yellow Jacket In Orange And Blue</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/in-buster-faulkner-s-offense-there-is-a-time-and-a-place-to-grip-it-and-rip-it</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-02T13:07:18.041000Z</news:publication_date>
+      <news:title>In Buster Faulkner's offense, there is a time and a place to grip it and rip it</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/rattlesnakes-don-t-scare-sumrall-and-neither-does-his-debut-as-gator-coach</loc>
     <news:news>
       <news:publication>
@@ -516,39 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-05T20:56:05.672000Z</news:publication_date>
       <news:title>Day One Looks And Feels Better Already For These Sumrall Gators</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/sumrall-exudes-confidence-and-trust-as-gators-begin-prep-for-2026-season</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-05T03:02:42Z</news:publication_date>
-      <news:title>Sumrall exudes confidence and trust as Gators begin prep for 2026 season</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/new-coach-jon-sumrall-lays-out-the-gators-bright-future-from-day-1</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-04T23:15:04.574000Z</news:publication_date>
-      <news:title>New Coach Jon Sumrall Lays Out The Gators' Bright Future From Day 1</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/gator-football-crystal-ball-the-entire-season-outlook-in-one-big-bite</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-03T16:51:34Z</news:publication_date>
-      <news:title>Gator Football Crystal Ball: The Entire Season Outlook In One Big Bite</news:title>
     </news:news>
   </url>
 </urlset>

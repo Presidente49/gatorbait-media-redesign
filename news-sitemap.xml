@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/florida-football-week-1-preview-florida-gators-0-0-0-0-vs-fau-owls-0-0-0-0</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-04T04:08:15Z</news:publication_date>
+      <news:title>Florida Football: Week 1 Preview Florida Gators (0-0,0-0) vs. FAU Owls (0-0,0-0)</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/the-sec-to-lane-kiffin-and-lsu-up-your-nose-with-a-rubber-hose</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-04T00:33:25Z</news:publication_date>
+      <news:title>The SEC to Lane Kiffin and LSU: "Up your nose with a rubber hose!"</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/with-or-without-denzel-aberdeen-the-gators-will-still-be-favored-to-win-it-all</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-03T14:59:13Z</news:publication_date>
+      <news:title>With or without Denzel Aberdeen, the Gators will still be favored to win it all</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/buddy-martin-blog-the-complete-field-guide-to-joey-freshwater-s-aliases</loc>
     <news:news>
       <news:publication>
@@ -516,39 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-06T10:43:55Z</news:publication_date>
       <news:title>What I Heard Buster Faulkner Say Between The Lines: Secrets About Jadan Baugh</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/florida-opens-fall-camp-strength-consistency</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-05T22:31:44.644000Z</news:publication_date>
-      <news:title>Florida Opens Fall Camp With Strength Gains, Consistency as Sumrall's Standard</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/with-faulkner-doing-the-scheming-the-uf-offense-has-a-look-of-explosiveness</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-05T21:05:37Z</news:publication_date>
-      <news:title>With Faulkner doing the scheming, the UF offense has a look of explosiveness</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/day-one-looks-and-feels-better-already-for-these-sumrall-gators</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-05T20:56:05.672000Z</news:publication_date>
-      <news:title>Day One Looks And Feels Better Already For These Sumrall Gators</news:title>
     </news:news>
   </url>
 </urlset>

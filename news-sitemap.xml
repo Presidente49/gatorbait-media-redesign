@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/opening-night-2026-in-the-swamp-butterflies-belief-and-a-new-gators-era</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-04T22:47:33.660000Z</news:publication_date>
+      <news:title>Opening Night 2026 In The Swamp: Butterflies, Belief And A New Gators Era</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/florida-football-week-1-preview-florida-gators-0-0-0-0-vs-fau-owls-0-0-0-0</loc>
     <news:news>
       <news:publication>
@@ -538,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-06T15:35:28Z</news:publication_date>
       <news:title>Gator DC Brad White wants to put a fear of God defense on the field</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/what-i-heard-buster-faulkner-say-between-the-lines-secrets-about-jadan-baugh</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-06T10:43:55Z</news:publication_date>
-      <news:title>What I Heard Buster Faulkner Say Between The Lines: Secrets About Jadan Baugh</news:title>
     </news:news>
   </url>
 </urlset>

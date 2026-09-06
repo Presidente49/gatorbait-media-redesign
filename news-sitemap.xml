@@ -2,6 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/seven-decades-later-the-swamp-still-calls-me-i-m-thrilled-to-be-coming-back</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-05T16:17:28.431000Z</news:publication_date>
+      <news:title>Seven Decades Later, The Swamp Still Calls Me. I’m Thrilled To Be Coming Back!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/you-never-forget-your-first-talking-season-is-over-now-it-s-time-to-play-football</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-05T13:21:02.439000Z</news:publication_date>
+      <news:title>You never forget your first: Talking season is over, now it's time to play football</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/opening-night-2026-in-the-swamp-butterflies-belief-and-a-new-gators-era</loc>
     <news:news>
       <news:publication>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-08T09:34:43Z</news:publication_date>
       <news:title>Through the quarterback's eyes: Aaron Philo</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/did-we-fall-in-love-with-the-new-gator-football-coach-on-the-first-date</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-08T01:17:03.870000Z</news:publication_date>
-      <news:title>Did We Fall In Love With The New Gator Football Coach On The First Date?</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/gator-dc-brad-white-wants-to-put-a-fear-of-god-defense-on-the-field</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-06T15:35:28Z</news:publication_date>
-      <news:title>Gator DC Brad White wants to put a fear of God defense on the field</news:title>
     </news:news>
   </url>
 </urlset>

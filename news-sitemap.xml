@@ -2,6 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/analyzing-the-win-over-fau-and-other-college-football-observations</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T05:45:14.088000Z</news:publication_date>
+      <news:title>Analyzing the win over FAU and other college football observations</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/post-game-analysis-florida-gators-1-0-0-0-fau-owls-0-1-0-0</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-06T18:03:19.573000Z</news:publication_date>
+      <news:title>Post Game Analysis: Florida Gators (1-0, 0-0) FAU Owls (0-1, 0-0)</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/the-swamp-is-lit-again-it-just-feels-so-right-and-welcome-back-gatorbait</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-06T15:16:41Z</news:publication_date>
+      <news:title>The Swamp Is Lit Again. It just feels so right! And Welcome Back GatorBait!</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/goal-met-gators-are-1-0-after</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-06T11:28:36Z</news:publication_date>
+      <news:title>Putting things in perspective: One game, one 66-21 win for the Florida Gators</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/seven-decades-later-the-swamp-still-calls-me-i-m-thrilled-to-be-coming-back</loc>
     <news:news>
       <news:publication>
@@ -505,50 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-10T12:27:34.927000Z</news:publication_date>
       <news:title>Spurrier: The Ghost That Won’t Go Away. He Still Lives In The Headspace Of Haters.</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/haynes-king-s-canton-spark-offers-a-blueprint-for-florida-s-buster-faulkner</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-09T13:37:07Z</news:publication_date>
-      <news:title>Haynes King’s Canton Spark Offers A Blueprint For Florida’s Buster Faulkner</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/through-the-quarterback-s-eyes-tramell-jones-jr</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-09T03:15:02Z</news:publication_date>
-      <news:title>Through the quarterback's eyes: Tramell Jones Jr.</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-august-8-2026</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-08T15:57:37Z</news:publication_date>
-      <news:title>Thoughts of the Day: August 8, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/through-the-quarterback-s-eyes-aaron-philo</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-08T09:34:43Z</news:publication_date>
-      <news:title>Through the quarterback's eyes: Aaron Philo</news:title>
     </news:news>
   </url>
 </urlset>

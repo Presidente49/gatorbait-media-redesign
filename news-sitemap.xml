@@ -2,13 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/thanks-for-staying-jadan-baugh-gives-sumrall-160-reasons-to-be-grateful</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T21:29:50.364000Z</news:publication_date>
+      <news:title>Thanks For Staying: Jadan Baugh Gives Sumrall 160 Reasons To Be Grateful</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/a-night-to-remember-in-september-and-there-are-going-to-be-more-in-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-07T13:47:56Z</news:publication_date>
+      <news:title>A Night to Remember In September. And There Are Going To Be More in 2026!</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/analyzing-the-win-over-fau-and-other-college-football-observations</loc>
     <news:news>
       <news:publication>
         <news:name>GatorBait Media</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>2026-09-07T05:45:14.088000Z</news:publication_date>
+      <news:publication_date>2026-09-07T05:45:14Z</news:publication_date>
       <news:title>Analyzing the win over FAU and other college football observations</news:title>
     </news:news>
   </url>
@@ -527,28 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-11T21:18:09Z</news:publication_date>
       <news:title>Good Call On 1966 Throwback Uniforms</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/sumrall-happy-to-let-the-quarterback-competition-play-itself-out</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-10T21:03:57Z</news:publication_date>
-      <news:title>Sumrall happy to let the quarterback competition play itself out</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/spurrier-the-ghost-that-won-t-go-away-he-still-lives-in-the-headspace-of-haters</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-10T12:27:34.927000Z</news:publication_date>
-      <news:title>Spurrier: The Ghost That Won’t Go Away. He Still Lives In The Headspace Of Haters.</news:title>
     </news:news>
   </url>
 </urlset>

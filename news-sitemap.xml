@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/another-day-in-paradise-florida-football-sankey-strikes-and-murphy-s-law</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-08T21:55:00.067000Z</news:publication_date>
+      <news:title>Another day in paradise: Florida football, Sankey strikes and Murphy's Law</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/getting-cut-down-to-size-sec-warns-lsu-nobody-s-bigger-than-the-league</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-08T21:35:45.123000Z</news:publication_date>
+      <news:title>Getting Cut Down To Size!  SEC Warns  LSU -- Nobody's Bigger Than The League.</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/for-a-first-game-gators-offensive-line-performed-at-a-very-competent-level</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-08T13:01:41Z</news:publication_date>
+      <news:title>For a first game, Gators offensive line performed at a very competent level</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/thanks-for-staying-jadan-baugh-gives-sumrall-160-reasons-to-be-grateful</loc>
     <news:news>
       <news:publication>
@@ -516,39 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-13T19:03:21Z</news:publication_date>
       <news:title>Sumrall’s Right. Don’t Screw This Up.</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/florida-gators-offense-buster-faulkner-predictability</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-12T15:21:25.974000Z</news:publication_date>
-      <news:title>My Sister Shirley Could Call It: The Real Secret Behind Cracking A Predictable Offense</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/roster-breakdown-as-pads-go-on-for-the-gators-today</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-12T05:02:52Z</news:publication_date>
-      <news:title>Florida Gators Roster breakdown as pads go on Today</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/good-call-on-1966-throwback-uniforms</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-11T21:18:09Z</news:publication_date>
-      <news:title>Good Call On 1966 Throwback Uniforms</news:title>
     </news:news>
   </url>
 </urlset>

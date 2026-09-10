@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/bring-on-those-fighting-campbell-soup-cans-but-no-resting-by-the-defense</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-09T17:40:39.291000Z</news:publication_date>
+      <news:title>Bring On Those Fighting Campbell Soup Cans! But No Resting By The Defense!</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/another-day-in-paradise-florida-football-sankey-strikes-and-murphy-s-law</loc>
     <news:news>
       <news:publication>
@@ -538,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-14T09:06:55Z</news:publication_date>
       <news:title>Thoughts of the Day: August 14, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/sumrall-s-right-don-t-screw-this-up</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-13T19:03:21Z</news:publication_date>
-      <news:title>Sumrall’s Right. Don’t Screw This Up.</news:title>
     </news:news>
   </url>
 </urlset>

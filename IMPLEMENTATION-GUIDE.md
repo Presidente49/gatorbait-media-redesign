@@ -102,7 +102,7 @@ The custom CSS handles most blog card restyling automatically. Verify:
 ### 6b. Footer Content (4 columns)
 - Column 1 - About: Logo, tagline, copyright
 - Column 2 - Quick Links: Home, Football, Basketball, Recruiting, Magazine
-- Column 3 - Podcasts: The Buddy Martin Show, Powered by Sidelines.live
+- Column 3 - Podcast: The Buddy Martin Show, Apple Podcasts, Spotify, YouTube
 - Column 4 - Connect: Social icons, Newsletter signup, Contact
 
 ### 6c. Update Copyright

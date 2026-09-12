@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/the-tale-of-two-gainesvilles</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-11T22:13:41Z</news:publication_date>
+      <news:title>The Tale Of Two Gainesvilles</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/week-2-preview-florida-gators-1-0-0-0-v-campbell-camels-2-0-0-0</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-11T14:50:45Z</news:publication_date>
+      <news:title>Week 2 Preview: Florida Gators (1-0, 0-0) v. Campbell Camels (2-0, 0-0)</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-11T12:47:22Z</news:publication_date>
+      <news:title>Light up a Camel! Nostalgia, the Gators and a game with Campbell University</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/sumrall-on-the-defense-improve-or-i-m-going-to-lose-my-mind-trying-to-help-them</loc>
     <news:news>
       <news:publication>
@@ -9,7 +42,7 @@
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>2026-09-10T12:26:25Z</news:publication_date>
-      <news:title>Sumrall on the defense: "... improve or I'm going to lose my mind trying to help them.”</news:title>
+      <news:title>Sumrall on the Florida defense: "... improve or I'm going to lose my mind trying to help them.”</news:title>
     </news:news>
   </url>
   <url>
@@ -516,39 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-16T21:28:20.165000Z</news:publication_date>
       <news:title>Jon Sumrall Didn’t Just Get Loud In Gainesville — He Got Very Specific</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/for-now-all-we-can-do-is-believe</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-16T13:27:51Z</news:publication_date>
-      <news:title>For now, all we can do is BELIEVE</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/florida-auburn-just-another-football-game-or-does-it-revive-a-red-hot-rivalry</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-15T13:14:04.568000Z</news:publication_date>
-      <news:title>Florida-Auburn: Just Another Football Game, Or Does It Revive A Red Hot Rivalry?</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/with-sumrall-only-the-strong-survive</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-15T12:18:09.555000Z</news:publication_date>
-      <news:title>With Sumrall, only the strong survive</news:title>
     </news:news>
   </url>
 </urlset>

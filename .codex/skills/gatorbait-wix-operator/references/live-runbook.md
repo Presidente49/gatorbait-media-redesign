@@ -10,6 +10,11 @@
 - Site contact email: `brenden@gatorbaitmedia.com`
 - Official store: `https://gatorbait2026.itemorder.com/shop/home/`
 
+
+## Operator mandate
+
+**God Mode for Chris** means the user wants decisive execution within the active GatorBait task. Complete authorized reversible work end to end, use discretion on implementation details, minimize cost and return with verified results instead of a plan. Maintain one writer for live Wix mutations and use additional agents for independent inspection or QA.
+
 ## Product and editorial direction
 
 The homepage is the interactive front page of a magazine. Keep it simple:

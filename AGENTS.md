@@ -12,8 +12,8 @@ All agents working in this repository must read:
 - Use one designated writer for live Wix mutations. Additional agents may inspect, research, test and review, but they must not make competing production writes.
 - Read the current Wix entity and revision before changing it.
 - Keep a rollback path and verify the public result after a live change.
-- Preserve the stable light magazine design, optimized official logo, system typography and current routes.
-- Keep the retired dark-theme embed disabled.
+- Preserve production stability, the optimized official logo and current routes. The visual design may evolve when the change strengthens newsroom hierarchy, readability or mobile presentation.
+- Keep the retired conflicting dark-theme embed disabled unless it is replaced through a tested single-theme migration with no first-paint flash.
 - Never restore first-paint fades, permanent short-interval polling, competing global themes or broad CSS selectors that affect unrelated Wix apps.
 - Use no credentials or secrets in this repository.
 - Treat generated social posts, newsletters and publishing changes as drafts unless the active user request authorizes publication.

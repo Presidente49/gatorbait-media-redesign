@@ -145,3 +145,11 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - Published category assignments for Franz Beard's September 12 Thoughts of the Day: Franz Beard - Blog and Thoughts Of The Day.
 - Published category assignments for Eddie Gilley's defensive review: Gator Football, Jon Sumrall and Eddie Gilley - Blog.
 - Created a **GatorBait Weekly** Campbell postgame email draft (campaign ID `9bd07477-8eb1-4727-a3fc-9ce114d5e86e`). Distribution status is NOT_STARTED; do not publish/send without explicit owner approval.
+
+
+## 2026-09-13 homepage postgame story sequence
+
+- Updated homepage embed `cd933ccb-8b1a-42d8-bcc1-738ba0621e8b` to revision **9**, named **GBM - Stable Magazine Cover v4**.
+- The lead remains Buddy Martin's Campbell recap.
+- The visible Inside GatorBait cards now run newest-first: Franz Beard's Sumrall analysis, Eddie Gilley's defensive review, then Franz Beard's September 12 Thoughts of the Day.
+- Public cache-busted verification confirmed all three links and article-specific image alt text.

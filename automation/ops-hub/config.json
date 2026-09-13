@@ -1,0 +1,20 @@
+{
+  "interval_seconds": 900,
+  "request_timeout_seconds": 35,
+  "dashboard_host": "127.0.0.1",
+  "dashboard_port": 8765,
+  "checks": [
+    {
+      "name": "Homepage",
+      "url": "https://www.gatorbaitmedia.com/?ops_health=1",
+      "required": ["GatorBait Media", "gbm-home-stable-boot", "GatorBait Weekly"],
+      "forbidden": ["fonts.googleapis.com/css2?family=Archivo", "background-color: #1c1f2e"]
+    },
+    {"name": "Magazine", "url": "https://www.gatorbaitmedia.com/magazine"},
+    {"name": "GatorBait TV", "url": "https://www.gatorbaitmedia.com/the-buddy-martin-show"},
+    {"name": "Membership", "url": "https://www.gatorbaitmedia.com/pricing-plans"},
+    {"name": "Policies", "url": "https://www.gatorbaitmedia.com/policies"},
+    {"name": "Contact", "url": "https://www.gatorbaitmedia.com/contact"},
+    {"name": "Merch Store", "url": "https://gatorbait2026.itemorder.com/shop/home/"}
+  ]
+}

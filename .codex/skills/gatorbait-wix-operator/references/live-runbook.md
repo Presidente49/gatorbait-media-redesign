@@ -118,4 +118,6 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - `docs/LANDING-PAGE-QC-2026-09-13.md`
 - `docs/superpowers/specs/2026-08-05-gatorbait-editorial-template-design.md`
 - `backups/gatorbait-weekly-template.html`
-\n## Automated quality control\n\n- `.github/workflows/gatorbait-production-health.yml` runs dependency-free public route and homepage-marker checks every six hours.\n- `automation/site_health_check.py` is the deterministic checker and should remain the first line of defense.\n- `.github/workflows/gatorbait-agentic-audit.md` is a manual-only, budget-capped reasoning audit compiled with GitHub Agentic Workflows. It may report verified failures through one safe issue; it must not mutate Wix, DNS, deployments, or repository files.\n
+- `docs/EDITORIAL-DESIGN-REFERENCES.md`
+
+## Automated quality control\n\n- `.github/workflows/gatorbait-production-health.yml` runs dependency-free public route and homepage-marker checks every six hours.\n- `automation/site_health_check.py` is the deterministic checker and should remain the first line of defense.\n- `.github/workflows/gatorbait-agentic-audit.md` is a manual-only, budget-capped reasoning audit compiled with GitHub Agentic Workflows. It may report verified failures through one safe issue; it must not mutate Wix, DNS, deployments, or repository files.\n

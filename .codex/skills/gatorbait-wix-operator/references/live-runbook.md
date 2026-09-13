@@ -127,3 +127,12 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - `.github/workflows/gatorbait-production-health.yml` runs dependency-free public route and homepage-marker checks every six hours.
 - `automation/site_health_check.py` is the deterministic checker and should remain the first line of defense.
 - `.github/workflows/gatorbait-agentic-audit.md` is a manual-only, budget-capped reasoning audit compiled with GitHub Agentic Workflows. It may report verified failures through one safe issue; it must not mutate Wix, DNS, deployments, or repository files.
+
+
+## 2026-09-13 compact mobile typography
+
+- Active typography embed `0709a98e-e95f-42e1-99a8-5f018ad85457` is revision **4**, named **GBM - Compact Mobile Typography v3**.
+- Mobile feed headlines are 18 px with 1.22 line height; front-page story headlines are 19–20 px; article copy is 16 px; primary drawer labels are 15 px.
+- Desktop feed headlines remain 20 px and use Georgia at weight 700. Metadata uses the native UI stack at 11.5 px.
+- The adjustment is scoped to GatorBait components and Wix Blog data hooks. It does not restore global heading selectors, remote fonts, opacity animation or polling.
+- Public verification confirmed the new stylesheet loaded, desktop hierarchy remained intact, the homepage had no horizontal overflow, and all four front-page images loaded with alt text.

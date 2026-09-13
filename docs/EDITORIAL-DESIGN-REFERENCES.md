@@ -1,0 +1,65 @@
+# Editorial design references
+
+Updated: 2026-09-13
+
+This is the design-reference shortlist for GatorBait Media. It records what to borrow and what not to install so future work does not restart the template search or replace a stable Wix site with an incompatible stack.
+
+## Decision
+
+Keep the existing Wix site and native Wix Blog as production. Do not vendor, fork, embed, or rebuild around any of the repositories below. They are reference material for layout, information hierarchy, accessibility, and editorial presentation.
+
+A repository qualifies for another review only when it solves a verified production problem that cannot be solved safely in Wix. Popularity alone is not a reason to add a dependency.
+
+## Reference shortlist
+
+| Reference | Observed GitHub activity | License | Useful patterns | Decision |
+|---|---:|---|---|---|
+| [BBC Simorgh](https://github.com/bbc/simorgh) | About 1.7k stars | No clear repository license detected | Strong accessibility, resilient article pages, restrained navigation | Study patterns only; far too large and operationally complex for this Wix site |
+| [Wagtail news template](https://github.com/wagtail/news-template) | About 188 stars; active in 2026 | BSD-3-Clause | Lead-story hierarchy, card grids, section landing pages | Best newsroom layout reference; Django/Wagtail code does not belong in Wix |
+| [Giraffe](https://github.com/AGDholo/giraffe) | About 92 stars | MIT | Compact magazine cards and responsive Vue layouts | Visual reference only; Vite/Vuetify would duplicate the live frontend |
+| [Pixel Blogger Template](https://github.com/puikinsh/Pixel-Blogger-Template) | About 191 stars | GPL-3.0 | Simple editorial density and chronological feeds | Do not copy code; Blogger and GPL are a poor fit |
+| [Wix CMS Next.js template](https://github.com/wix-incubator/wix-cms-nextjs-template) | About 43 stars | MIT | Official Wix headless CMS connection | Reconsider only if the company deliberately funds a headless rebuild |
+| [Newspack workspace](https://github.com/Automattic/newspack-workspace) | Active production publishing project | GPL | Membership and newsroom product ideas | WordPress stack; product reference only |
+
+Star counts are a dated signal, not a quality score. Verify current activity, security posture, license, and maintenance status before any future adoption.
+
+## Native Wix template references
+
+- [Sports Blog (Dynamic)](https://www.wix.com/website-template/view/html/wh-1319)
+- [Football Blog (Green)](https://www.wix.com/website-template/view/html/wh-1379)
+
+Use these to compare responsive proportions and Wix-native behavior. Do not create a replacement site or apply a template wholesale to production.
+
+## Approved GatorBait pattern
+
+1. A compact official masthead and shallow primary navigation.
+2. One dominant current story with a strong photograph.
+3. A small secondary story grid in reverse chronological order.
+4. Consistent image boxes using one landscape ratio per module.
+5. Short section labels, visible dates and accurate bylines.
+6. GatorBait TV and GatorBait Magazine as clear destinations.
+7. A short newsletter signup and compact footer.
+8. Mobile typography that fits at 390 px without clipping or horizontal scroll.
+
+## Reject by default
+
+- Full frontend-framework migrations for a styling change.
+- New font libraries, icon packs, page builders, animation packages or carousel dependencies.
+- Imported templates that create duplicate Wix apps, navigation, schemas or routes.
+- Theme code with global element selectors, first-paint fades, permanent observers or short polling intervals.
+- Repositories without a clear license when code reuse is proposed.
+- Dark broadcast-dashboard styling, pale-blue headings, category-feed pages as primary destinations, and empty content modules.
+
+## Adoption gate
+
+Before adding any repository, package, app or code bundle, record:
+
+1. The verified production problem.
+2. Why Wix-native behavior cannot solve it safely.
+3. License and maintenance evidence.
+4. Page-weight and runtime cost.
+5. Mobile and accessibility impact.
+6. Rollback procedure.
+7. Public verification after the change.
+
+If those seven items cannot be answered, do not add it.

@@ -1,0 +1,27 @@
+{
+  "automatic": [
+    "public site and store availability checks",
+    "analytics summaries",
+    "content inventory and metadata audits",
+    "customer email classification",
+    "customer reply drafts",
+    "organic social and merchandise campaign drafts",
+    "editorial calendar maintenance"
+  ],
+  "approval_required": [
+    "send a customer reply",
+    "publish or schedule public content",
+    "change Wix production",
+    "change product prices or offers",
+    "issue a refund",
+    "spend money or launch paid advertising",
+    "change DNS, account access, payment settings or memberships"
+  ],
+  "never": [
+    "store credentials in Git",
+    "invent products, prices, results, dates, bylines or customer facts",
+    "delete customer or financial records",
+    "contact third parties from an unverified identity",
+    "disable logging or human review"
+  ]
+}

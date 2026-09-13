@@ -136,3 +136,12 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - Desktop feed headlines remain 20 px and use Georgia at weight 700. Metadata uses the native UI stack at 11.5 px.
 - The adjustment is scoped to GatorBait components and Wix Blog data hooks. It does not restore global heading selectors, remote fonts, opacity animation or polling.
 - Public verification confirmed the new stylesheet loaded, desktop hierarchy remained intact, the homepage had no horizontal overflow, and all four front-page images loaded with alt text.
+
+
+## 2026-09-13 Campbell postgame publishing repair
+
+- Created Wix Blog category **Eddie Gilley - Blog** (category ID `e6afe41f-9b9f-4c0a-a3bf-7fcd54658fb7`).
+- Published category assignments for Franz Beard's Sumrall post: Gator Football, Gator Breaking News, Franz Beard - Blog and Jon Sumrall.
+- Published category assignments for Franz Beard's September 12 Thoughts of the Day: Franz Beard - Blog and Thoughts Of The Day.
+- Published category assignments for Eddie Gilley's defensive review: Gator Football, Jon Sumrall and Eddie Gilley - Blog.
+- Created a **GatorBait Weekly** Campbell postgame email draft (campaign ID `9bd07477-8eb1-4727-a3fc-9ce114d5e86e`). Distribution status is NOT_STARTED; do not publish/send without explicit owner approval.

@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/baugh-game-really-it-was-a-brown-game-gators-flatten-campbell-52-3</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-13T02:12:32.808000Z</news:publication_date>
+      <news:title>Baugh Game? Really, It Was  A Brown Game. Gators Flatten Campbell, 52-3</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/upon-further-review-maybe-the-gator-defense-wasn-t-so-atrocious</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-12T14:54:59.953000Z</news:publication_date>
+      <news:title>Upon Further Review, Maybe The Gator Defense Wasn’t So ‘Atrocious’</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-12-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-12T13:32:46Z</news:publication_date>
+      <news:title>Thoughts of the Day: September 12, 2026</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/the-tale-of-two-gainesvilles</loc>
     <news:news>
       <news:publication>
@@ -516,39 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-18T23:22:25.590000Z</news:publication_date>
       <news:title>Ranking the 20 Most Entertaining Personalities in College Football History</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/a-few-sumrallisms-from-monday</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-18T13:37:08.024000Z</news:publication_date>
-      <news:title>A few Sumrallisms from Monday</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/no-starting-qb-just-yet-and-an-issue-at-tackle-on-the-offensive-line</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-17T19:27:18.963000Z</news:publication_date>
-      <news:title>No starting QB just yet and an issue at tackle on the offensive line</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/jon-sumrall-didn-t-just-get-loud-in-gainesville-he-got-very-specific</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-16T21:28:20.165000Z</news:publication_date>
-      <news:title>Jon Sumrall Didn’t Just Get Loud In Gainesville — He Got Very Specific</news:title>
     </news:news>
   </url>
 </urlset>

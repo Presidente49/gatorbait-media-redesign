@@ -25,7 +25,7 @@ The homepage is the interactive front page of a magazine. Keep it simple:
 4. A short chronological group of current stories.
 5. Clear paths to GatorBait TV, GatorBait Magazine and membership.
 
-The visual direction is restrained editorial design: a light paper canvas, deep navy structure, Florida orange accents, strong photography and readable typography. Avoid broadcast dashboards, pale-blue category banners, empty modules, duplicate navigation and decorative clutter.
+The visual direction is a professional digital newsroom with strong photography, clear hierarchy and readable typography. Designers may change layout, color, density and editorial treatments when the result is tested on desktop and mobile. Keep one active theme, stable first paint, accurate content and accessible contrast.
 
 Feature Buddy Martin, Franz Beard, Loren and active contributors when current content supports it. Do not manufacture dates, results, author credits or photographer credits.
 
@@ -73,7 +73,7 @@ Revisions change after every successful write. Always GET the current entity bef
 | Purpose | Embed ID | Verified name on 2026-09-13 |
 |---|---|---|
 | Header, optimized logo and newsletter exit behavior | `7fee4de6-1886-475e-a3f3-b9c68161c242` | GBM - Compact Optimized Logo + Header v9 |
-| Front-page magazine styles | `3dc5a5ef-5160-4539-8e6d-1c5c4b972c78` | GBM - Fast Readable Magazine Cover v2 |
+| Front-page newsroom styles | `3dc5a5ef-5160-4539-8e6d-1c5c4b972c78` | GBM - Newsroom Front Page v3 |
 | Global typography | `0709a98e-e95f-42e1-99a8-5f018ad85457` | GBM - Fast System Typography v2 |
 | Stable first paint | `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51` | GBM - Front Page stable boot (no fade) |
 | Light theme | `c66d5b7f-c474-45b5-af4d-662ae1eaf67c` | GBM - Light Theme v1 |

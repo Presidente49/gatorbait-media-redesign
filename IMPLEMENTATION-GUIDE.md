@@ -26,10 +26,10 @@ Use the intrinsic width and height in markup to reserve space and prevent layout
 
 | Purpose | Embed ID | Current name |
 |---|---|---|
-| Header, official logo, mobile drawer and newsletter accessibility | `7fee4de6-1886-475e-a3f3-b9c68161c242` | GBM - Compact Optimized Logo + Header v8 |
+| Header, official logo, mobile drawer and newsletter accessibility | `7fee4de6-1886-475e-a3f3-b9c68161c242` | GBM - Compact Optimized Logo + Header v9 |
 | GatorBait TV, Magazine and story-image SEO | `82c4ca83-98df-4f35-9972-7345a2a71755` | GBM - TV + Magazine + News Images v7 |
-| Compact footer, social links and official logo | `f8b950c9-47ce-4390-976f-85a0f040f0c6` | GBM - Compact Optimized Logo + Social Footer v6 |
-| Direct navigation fixes | `796b7ce7-b05e-4cc6-9d90-dcf7a6626270` | Direct menu embed |
+| Compact footer, social links and official logo | `f8b950c9-47ce-4390-976f-85a0f040f0c6` | GBM - Compact Optimized Logo + Social Footer v7 |
+| TV navigation and responsive menu | `796b7ce7-b05e-4cc6-9d90-dcf7a6626270` | GBM - Desktop + Dynamic Mobile TV Menu v4 |
 | Blog feeds and article ordering | `f644781b-8be2-461d-88a9-7bff8d5fef7a` | Blog feeds embed |
 
 ## Newsletter
@@ -87,6 +87,11 @@ Test near 390 px and 430 px widths:
 - Text never uses low-contrast pale blue on white.
 - Footer and signup controls remain reachable.
 - No layout jump from late logo or image sizing.
+
+
+## Design references
+
+Use `docs/EDITORIAL-DESIGN-REFERENCES.md` before proposing a template, frontend framework, design repository, or new UI dependency. The current decision is to preserve Wix production and borrow proven newsroom layout patterns without importing another stack.
 
 ## Retired files
 

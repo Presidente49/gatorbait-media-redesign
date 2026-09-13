@@ -2,13 +2,13 @@
 
 This file is the source of truth for the live design direction. It supersedes the retired ESPN-style dark-theme instructions.
 
-## Approved direction
+## Current direction
 
-- A restrained digital magazine: white editorial canvas, deep navy structure, Florida orange accents.
+- A professional digital newsroom built around a strong lead story, clear hierarchy, Florida identity and fast reading.
 - The official GatorBait script logo from Wix Media Manager.
 - Georgia (or a comparable editorial serif) for headlines and long-form reading.
 - Arial/Helvetica for navigation, labels, forms and utility text.
-- Original photography should carry the page. Avoid broadcast-style chrome and decorative clutter.
+- Original photography should carry the page. New editorial treatments are welcome when they remain readable, responsive and stable.
 - Changes must be scoped to their page or component. Never apply global rules to every `p`, `h1`, `article` or Wix app.
 - No first-paint fades, permanent DOM polling or competing global themes.
 
@@ -58,7 +58,7 @@ Treat the homepage as the front page of a magazine:
 4. A small chronological set of current stories.
 5. Clear routes to GatorBait TV, GatorBait Magazine and membership.
 
-Do not add category banners, large pale-blue subheads, empty modules, duplicate navigation or animated loading effects.
+Avoid empty modules, duplicate navigation and animated loading effects. Layout, color, density and editorial modules may evolve when verified on desktop and mobile.
 
 ## Article template
 

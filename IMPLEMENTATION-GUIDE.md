@@ -14,10 +14,10 @@ This file is the source of truth for the live design direction. It supersedes th
 
 ## Official brand asset
 
-- Display name in Wix: `gatorbait-logo_edited_edited_edited_edited_edited_edited.png`
-- Media ID: `ae876a_b961550c20034a13937e7f6a668df8a8~mv2.png`
-- URL: `https://static.wixstatic.com/media/ae876a_b961550c20034a13937e7f6a668df8a8~mv2.png`
-- Intrinsic size: 2196 × 598
+- Display name in Wix: `GatorBait Logo - Optimized Web`
+- Media ID: `d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp`
+- URL: `https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp`
+- Intrinsic size: 900 × 241
 - Alt text: `GatorBait Media`
 
 Use the intrinsic width and height in markup to reserve space and prevent layout shift. Scale with `width:100%; height:auto`.
@@ -26,9 +26,9 @@ Use the intrinsic width and height in markup to reserve space and prevent layout
 
 | Purpose | Embed ID | Current name |
 |---|---|---|
-| Header, official logo, mobile drawer and newsletter accessibility | `7fee4de6-1886-475e-a3f3-b9c68161c242` | GBM - Official Logo + Header + Accessible Newsletter v6 |
+| Header, official logo, mobile drawer and newsletter accessibility | `7fee4de6-1886-475e-a3f3-b9c68161c242` | GBM - Compact Optimized Logo + Header v8 |
 | GatorBait TV, Magazine and story-image SEO | `82c4ca83-98df-4f35-9972-7345a2a71755` | GBM - TV + Magazine + News Images v7 |
-| Compact footer, social links and official logo | `f8b950c9-47ce-4390-976f-85a0f040f0c6` | GBM - Official Logo + Social Footer v4 |
+| Compact footer, social links and official logo | `f8b950c9-47ce-4390-976f-85a0f040f0c6` | GBM - Compact Optimized Logo + Social Footer v6 |
 | Direct navigation fixes | `796b7ce7-b05e-4cc6-9d90-dcf7a6626270` | Direct menu embed |
 | Blog feeds and article ordering | `f644781b-8be2-461d-88a9-7bff8d5fef7a` | Blog feeds embed |
 

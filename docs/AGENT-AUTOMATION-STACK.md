@@ -1,50 +1,46 @@
 # GatorBait Agent and Automation Stack
 
-## Decision
+## Production decision
 
-Use the existing Codex/Wix/GitHub operator as the production supervisor. Add external frameworks only when a recurring workflow justifies their maintenance.
+Use GitHub Actions as the deterministic control plane and [GitHub Agentic Workflows](https://github.com/github/gh-aw) as the bounded reasoning layer. Keep Wix production changes under the GatorBait Wix operator runbook.
 
-### Agent layer
+### Installed now
 
-Preferred repository: [openai/openai-agents-python](https://github.com/openai/openai-agents-python)
+- `.github/workflows/gatorbait-production-health.yml` runs dependency-free route and homepage-marker checks every six hours. It makes no model calls.
+- `automation/site_health_check.py` checks the homepage, Magazine, GatorBait TV, membership, policies, contact page and official ItemOrder store.
+- `.github/workflows/gatorbait-agentic-audit.md` is manual-only. It runs Codex through GitHub Agentic Workflows with a 500-credit per-run ceiling, eight-turn ceiling, read-only repository access and one validated issue as its only visible output.
+- `.github/workflows/gatorbait-agentic-audit.lock.yml` is compiled by gh-aw v0.88.7 in strict mode. Edit the Markdown source and recompile; never hand-edit the lockfile.
 
-Why:
+The agentic audit cannot edit the repository, call Wix APIs, change DNS, deploy, merge, send messages or expose secrets. It may create one temporary report issue only when it verifies a material failure. Otherwise it must produce a no-op.
 
-- MIT licensed.
-- Lightweight multi-agent handoffs and agents-as-tools.
-- Native tool, MCP, guardrail, human-review and tracing concepts.
-- Fits the existing OpenAI and Codex environment without introducing a second orchestration model.
+### Cost policy
 
-CrewAI remains a valid alternative for a larger role-based editorial crew. Do not install both.
+Routine health, link and marker checks stay deterministic. The agentic audit has no schedule and runs only when the owner manually dispatches it. This prevents unattended model use. Do not add a schedule to the agentic workflow without an explicit budget decision.
 
-### Automation layer
+### Authentication
 
-Preferred fully MIT repository: [activepieces/activepieces](https://github.com/activepieces/activepieces)
+The agentic audit uses the Codex runtime with the GitHub-hosted `copilot/gpt-5.3-codex` model and `copilot-requests: write`. This avoids placing an OpenAI API key in the repository. It requires GitHub Copilot inference to be available for the repository or organization.
 
-Preferred mature internal-use alternative: [n8n-io/n8n](https://github.com/n8n-io/n8n), subject to its Sustainable Use License.
+## Future additions
 
-Start with Activepieces when permissive licensing and MCP integrations matter most. Choose n8n when its larger integration and template ecosystem materially reduces implementation time.
+Use [openai/openai-agents-python](https://github.com/openai/openai-agents-python) only when GatorBait needs a custom hosted service with multi-agent handoffs. Do not add an agent framework solely for scheduled checks.
 
-## Initial automation candidates
+For cross-service editorial automation, evaluate [activepieces/activepieces](https://github.com/activepieces/activepieces) first. Consider [n8n-io/n8n](https://github.com/n8n-io/n8n) only when its integrations save enough work to justify its Sustainable Use License. Do not install both.
 
-1. New Wix article triggers metadata and image validation.
-2. Approved article produces Facebook, YouTube, Instagram and newsletter drafts.
+## Candidate workflows
+
+1. New Wix article triggers deterministic metadata and image validation.
+2. Approved article produces Facebook, YouTube, Instagram and newsletter drafts for review.
 3. New Buddy Martin Show video produces a website link and channel-specific draft copy.
 4. GatorBait Weekly assembles from verified current articles.
-5. Scheduled checks monitor homepage availability, SSL, DNS, forms, feeds, broken links and layout regressions.
-6. Failed checks create an internal alert and stop downstream publishing.
+5. Failed deterministic checks create a single deduplicated internal alert and stop downstream publishing.
 
-## Cost and safety controls
+## Safety rules
 
-- Deterministic validation runs before an LLM call.
-- Cache article data and reuse one approved summary across channels.
-- Use smaller models for classification and formatting; reserve stronger models for final editorial judgment.
-- One supervisor approves production Wix writes.
+- Reuse one approved summary across channels.
+- One supervisor controls production Wix writes.
 - Automations do not change DNS, payments, refunds, memberships or customer records.
-- Do not store credentials in GitHub. Use the automation platform's encrypted secret store.
-- Log the source URL, model, prompt version, output and publication status.
-- Stop the workflow when required metadata, attribution or image rights are uncertain.
-
-## Adoption gate
-
-Do not vendor external agent repositories or add them as Git submodules. When implementation begins, pin released package/container versions and build one workflow first: **new Wix article → validation → social drafts → approval**. Expand only after it runs reliably and demonstrates lower cost.
+- Never store credentials in tracked files.
+- Log the source URL, prompt version, output and publication status.
+- Stop when metadata, attribution or image rights are uncertain.
+- Pin released actions, containers and agent tooling.

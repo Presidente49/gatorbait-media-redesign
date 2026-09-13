@@ -21,6 +21,18 @@ Routine health, link and marker checks stay deterministic. The agentic audit has
 
 The agentic audit uses the Codex runtime with the GitHub-hosted `copilot/gpt-5.3-codex` model and `copilot-requests: write`. This avoids placing an OpenAI API key in the repository. It requires GitHub Copilot inference to be available for the repository or organization.
 
+## Local operations hub
+
+`automation/ops-hub/` is the working first release for an always-on Mac:
+
+- `ops_hub.py` performs dependency-free production and official merch-store checks every 15 minutes, writes persistent status/history and serves a local dashboard on `127.0.0.1:8765`.
+- `install-mac.sh` installs the monitor as a restart-on-login launchd service.
+- `docker-compose.yml` pins n8n 2.38.7 and binds it to `127.0.0.1:5678` for future Gmail, Wix, Metricool and model-backed workflows.
+- `policy.json` separates automatic analysis/drafting from approval-controlled publishing, financial and account actions.
+- The revenue director unifies editorial, GatorBait TV, GatorBait Weekly, subscriptions, merchandise and sponsorships into one measurable operating loop.
+
+The local release was syntax-checked and exercised against all seven production destinations on 2026-09-13; all returned HTTPS success and the dashboard reported healthy. Connector credentials must be authorized locally on the Mac and never committed.
+
 ## Future additions
 
 Use [openai/openai-agents-python](https://github.com/openai/openai-agents-python) only when GatorBait needs a custom hosted service with multi-agent handoffs. Do not add an agent framework solely for scheduled checks.

@@ -61,7 +61,7 @@ Signup dialogs need a visible 44 × 44 close control, Escape dismissal and sessi
 - GatorBait TV and The Buddy Martin Show: `/the-buddy-martin-show`
 - Membership: `/pricing-plans`
 - Policies: `/policies`
-- Contact: `/contact-form`
+- Contact: `/contact`\n- Legacy contact redirect: `/contact-form` → `/contact` (Wix SEO redirect ID `66590679-8a74-41c0-8b82-b723100ecd81`).
 
 Primary navigation should emphasize current content and destinations. Do not list every historical sport or expose category-feed pages as the main visitor experience.
 
@@ -76,12 +76,12 @@ Revisions change after every successful write. Always GET the current entity bef
 | Global typography | `0709a98e-e95f-42e1-99a8-5f018ad85457` | GBM - Fast System Typography v2 |
 | Stable first paint | `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51` | GBM - Front Page stable boot (no fade) |
 | Light theme | `c66d5b7f-c474-45b5-af4d-662ae1eaf67c` | GBM - Light Theme v1 |
-| Footer and social links | `f8b950c9-47ce-4390-976f-85a0f040f0c6` | GBM - Compact Optimized Logo + Social Footer v6 |
-| TV menu | `796b7ce7-b05e-4cc6-9d90-dcf7a6626270` | GBM - Desktop + Dynamic Mobile TV Menu v3 |
+| Footer and social links | `f8b950c9-47ce-4390-976f-85a0f040f0c6` | GBM - Compact Optimized Logo + Social Footer v7 |
+| TV menu | `796b7ce7-b05e-4cc6-9d90-dcf7a6626270` | GBM - Desktop + Dynamic Mobile TV Menu v4 |
 | TV, magazine and news images | `82c4ca83-98df-4f35-9972-7345a2a71755` | GBM - TV + Magazine + News Images v7 |
 | Newsletter labels | `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f` | GBM - Newsletter Labels v2 (bounded, no observer) |
 | Policies | `fb8963cc-9d47-4162-b00d-8a60ca5fac64` | GBM - Policies & Compliance v1 |
-| Store routing | `4409bdd9-abb2-4981-9455-46973dcc9a05` | GBM - Official ItemOrder Store v1 |
+| Store routing | `4409bdd9-abb2-4981-9455-46973dcc9a05` | GBM - Official ItemOrder Store v1 |\n| Global redirects and article metadata | `5a43ae83-690e-4933-971d-4837db00b2f3` | GBM - Site Fixer v7.1 (contact redirect) |
 
 ## Known failure patterns
 
@@ -118,3 +118,4 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - `docs/LANDING-PAGE-QC-2026-09-13.md`
 - `docs/superpowers/specs/2026-08-05-gatorbait-editorial-template-design.md`
 - `backups/gatorbait-weekly-template.html`
+\n## Automated quality control\n\n- `.github/workflows/gatorbait-production-health.yml` runs dependency-free public route and homepage-marker checks every six hours.\n- `automation/site_health_check.py` is the deterministic checker and should remain the first line of defense.\n- `.github/workflows/gatorbait-agentic-audit.md` is a manual-only, budget-capped reasoning audit compiled with GitHub Agentic Workflows. It may report verified failures through one safe issue; it must not mutate Wix, DNS, deployments, or repository files.\n

@@ -61,7 +61,8 @@ Signup dialogs need a visible 44 × 44 close control, Escape dismissal and sessi
 - GatorBait TV and The Buddy Martin Show: `/the-buddy-martin-show`
 - Membership: `/pricing-plans`
 - Policies: `/policies`
-- Contact: `/contact`\n- Legacy contact redirect: `/contact-form` → `/contact` (Wix SEO redirect ID `66590679-8a74-41c0-8b82-b723100ecd81`).
+- Contact: `/contact`
+- Legacy contact redirect: `/contact-form` → `/contact` (Wix SEO redirect ID `66590679-8a74-41c0-8b82-b723100ecd81`).
 
 Primary navigation should emphasize current content and destinations. Do not list every historical sport or expose category-feed pages as the main visitor experience.
 
@@ -81,7 +82,8 @@ Revisions change after every successful write. Always GET the current entity bef
 | TV, magazine and news images | `82c4ca83-98df-4f35-9972-7345a2a71755` | GBM - TV + Magazine + News Images v7 |
 | Newsletter labels | `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f` | GBM - Newsletter Labels v2 (bounded, no observer) |
 | Policies | `fb8963cc-9d47-4162-b00d-8a60ca5fac64` | GBM - Policies & Compliance v1 |
-| Store routing | `4409bdd9-abb2-4981-9455-46973dcc9a05` | GBM - Official ItemOrder Store v1 |\n| Global redirects and article metadata | `5a43ae83-690e-4933-971d-4837db00b2f3` | GBM - Site Fixer v7.1 (contact redirect) |
+| Store routing | `4409bdd9-abb2-4981-9455-46973dcc9a05` | GBM - Official ItemOrder Store v1 |
+| Global redirects and article metadata | `5a43ae83-690e-4933-971d-4837db00b2f3` | GBM - Site Fixer v7.1 (contact redirect) |
 
 ## Known failure patterns
 
@@ -120,4 +122,8 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - `backups/gatorbait-weekly-template.html`
 - `docs/EDITORIAL-DESIGN-REFERENCES.md`
 
-## Automated quality control\n\n- `.github/workflows/gatorbait-production-health.yml` runs dependency-free public route and homepage-marker checks every six hours.\n- `automation/site_health_check.py` is the deterministic checker and should remain the first line of defense.\n- `.github/workflows/gatorbait-agentic-audit.md` is a manual-only, budget-capped reasoning audit compiled with GitHub Agentic Workflows. It may report verified failures through one safe issue; it must not mutate Wix, DNS, deployments, or repository files.\n
+## Automated quality control
+
+- `.github/workflows/gatorbait-production-health.yml` runs dependency-free public route and homepage-marker checks every six hours.
+- `automation/site_health_check.py` is the deterministic checker and should remain the first line of defense.
+- `.github/workflows/gatorbait-agentic-audit.md` is a manual-only, budget-capped reasoning audit compiled with GitHub Agentic Workflows. It may report verified failures through one safe issue; it must not mutate Wix, DNS, deployments, or repository files.

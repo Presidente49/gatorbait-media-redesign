@@ -12,6 +12,11 @@ permissions:
   actions: read
   issues: read
   pull-requests: read
+  copilot-requests: write
+
+engine:
+  id: codex
+  model: copilot/gpt-5.3-codex
 
 max-ai-credits: 500
 max-turns: 8
@@ -34,7 +39,6 @@ safe-outputs:
   allowed-github-references: []
   create-issue:
     title-prefix: "[GatorBait quality audit] "
-    labels: [report]
     close-older-issues: true
     expires: 14d
     max: 1

@@ -33,3 +33,7 @@ This repository contains the custom CSS, JavaScript, and documentation for the G
 - **Injection**: Wix Dashboard > Settings > Custom Code > Head
 - **Entry**: GatorBait Dark Theme v5 (Essential, All Pages)
 - **Meta Site ID**: 18fb3a4e-d7f6-414a-aeb9-3047db3ea115
+
+## Codex project context
+
+Before changing the live Wix site, load [`.codex/skills/gatorbait-wix-operator/SKILL.md`](.codex/skills/gatorbait-wix-operator/SKILL.md). Its runbook records the verified production IDs, brand assets, design decisions, mobile constraints and failure patterns from the September 13, 2026 stabilization work.

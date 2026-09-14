@@ -196,9 +196,12 @@
       e.preventDefault();
       var val = form.querySelector('input').value;
       if (!val) return;
-      form.innerHTML = '<div style="padding:13px 4px;font-family:\'Barlow Condensed\',Arial,sans-serif;' +
-        'font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#ff5a1f">' +
-        'Thanks — check your inbox.</div>';
+      var ok = document.createElement('div');
+      ok.className = 'gbf-capnote';
+      ok.style.cssText = 'padding:13px 4px;font-size:14px;color:#ff5a1f;margin:0';
+      ok.textContent = 'Thanks — check your inbox.';
+      form.innerHTML = '';
+      form.appendChild(ok);
       document.dispatchEvent(new CustomEvent('gbm:capture', { detail: { email: val } }));
     });
     return true;

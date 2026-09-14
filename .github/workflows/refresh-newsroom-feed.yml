@@ -1,0 +1,41 @@
+name: Refresh standalone newsroom feed
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-newsroom-feed
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Pull newest Wix Blog posts
+        run: python automation/update_newsroom_feed.py
+
+      - name: Commit only when the story order changed
+        shell: bash
+        run: |
+          if git diff --quiet -- newsroom-preview/data/posts.json; then
+            echo 'No feed changes.'
+            exit 0
+          fi
+          git config user.name 'gatorbait-newsroom-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
+          git add newsroom-preview/data/posts.json
+          git commit -m 'data: refresh latest GatorBait stories'
+          git push

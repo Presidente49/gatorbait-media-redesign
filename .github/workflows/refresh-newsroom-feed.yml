@@ -1,6 +1,11 @@
 name: Refresh standalone newsroom feed
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/update_newsroom_feed.py'
+      - '.github/workflows/refresh-newsroom-feed.yml'
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:

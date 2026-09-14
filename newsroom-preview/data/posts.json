@@ -1,5 +1,5 @@
 {
-  "source": "Wix Blog",
+  "source": "Wix Blog RSS",
   "posts": [
     {
       "id": "10a6bddb-ce48-428f-81a0-cd2c22e6a190",
@@ -7,7 +7,7 @@
       "excerpt": "Florida and Auburn are both 2-0, but the numbers tell very different stories. The Professor digs into 1939, Jordan-Hare history, Sumrall’s 14-2 road record, Auburn’s ground game, Byrum Brown and the three numbers that could decide Saturday.",
       "url": "https://www.gatorbaitmedia.com/post/florida-auburn-by-the-numbers-2026",
       "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-14T17:15:28.449Z",
+      "firstPublishedDate": "2026-09-14T17:15:28Z",
       "minutesToRead": 7,
       "section": "Florida Football",
       "image": {
@@ -23,7 +23,7 @@
       "excerpt": "Eddie Gilley on Vernell Brown III’s record punt-return performance, Jadan Baugh’s steady numbers and what Florida must sharpen before Auburn.",
       "url": "https://www.gatorbaitmedia.com/post/what-can-vb3-do-for-you",
       "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-09-14T11:30:36.619Z",
+      "firstPublishedDate": "2026-09-14T11:30:36Z",
       "minutesToRead": 4,
       "section": "Analysis",
       "image": {
@@ -71,7 +71,7 @@
       "excerpt": "Vernell Brown III supplied three touchdowns against Campbell. His postgame comments and Jon Sumrall’s assessment frame Florida’s next test at Auburn.",
       "url": "https://www.gatorbaitmedia.com/post/brown-supplies-the-spark-as-florida-rolls-past-campbell-52-3",
       "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-13T20:40:01.874Z",
+      "firstPublishedDate": "2026-09-13T20:40:01Z",
       "minutesToRead": 2,
       "section": "Florida Football",
       "image": {
@@ -83,11 +83,11 @@
     },
     {
       "id": "117a9789-4ba4-4a86-a6b0-aa37a5fe0828",
-      "title": "Caution: Coming Up Next Is The NOT So Lovely Village On The Plains",
+      "title": "Caution: Coming Up Next Is The NOT  So Lovely Village On The Plains",
       "excerpt": "The Gators need to heed Jon Sumrall’s mandate: Stay planted. In a few days their feet will be standing in the hostile confines of Auburn.",
       "url": "https://www.gatorbaitmedia.com/post/caution-coming-up-next-is-the-not-so-lovely-village-on-the-plains",
       "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-13T16:27:40.773Z",
+      "firstPublishedDate": "2026-09-13T16:27:40Z",
       "minutesToRead": 5,
       "section": "Buddy Martin",
       "image": {
@@ -100,7 +100,7 @@
     {
       "id": "88204f04-2368-473a-86ed-d3b6870ace81",
       "title": "No sugar coating from Sumrall: Gators have to get better in a hurry",
-      "excerpt": "Florida handled Campbell, but Jon Sumrall says the Gators must improve quickly before SEC play begins at Auburn.",
+      "excerpt": "Dallas Wilson (6) gathers in a pass (UAA Photo) Ultimately, winning is what matters most not the aesthetics. The Florida Gators got their win Saturday night at The Swamp, but to call the 52-3 beatdown of the Campbell Camels anything more than expected would be sugar coating, something Jon Sumrall refused to do when he addressed the media in the south end…",
       "url": "https://www.gatorbaitmedia.com/post/no-sugar-coating-from-sumrall-gators-have-to-get-better-in-a-hurry",
       "author": "Franz Beard",
       "firstPublishedDate": "2026-09-13T13:07:28Z",
@@ -115,11 +115,11 @@
     },
     {
       "id": "2bad74a1-834a-496f-aedf-a80d9f585c92",
-      "title": "Baugh Game? Really, It Was A Brown Game. Gators Flatten Campbell, 52-3",
-      "excerpt": "Buddy Martin on Vernell Brown III’s explosive punt returns and Florida’s 52-3 win over Campbell.",
+      "title": "Baugh Game? Really, It Was  A Brown Game. Gators Flatten Campbell, 52-3",
+      "excerpt": "Brown took back-to-back punts — 64 yards, then 70 — straight to the house, the kind of double-dip that hasn’t happened for the Gators since a guy named Jacquez Green did it back in 1996. Throw in a 14-yard catch-and-run touchdown, and Brown had himself a three-touchdown afternoon and 219 punt-return yards by halftime — the second-most in a single SEC game…",
       "url": "https://www.gatorbaitmedia.com/post/baugh-game-really-it-was-a-brown-game-gators-flatten-campbell-52-3",
       "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-13T02:12:32.808Z",
+      "firstPublishedDate": "2026-09-13T02:12:32Z",
       "minutesToRead": 4,
       "section": "Buddy Martin",
       "image": {
@@ -127,6 +127,62 @@
         "width": 960,
         "height": 640,
         "alt": "Florida Gators coverage from the 52-3 win over Campbell."
+      }
+    },
+    {
+      "title": "Upon Further Review, Maybe The Gator Defense Wasn’t So ‘Atrocious’",
+      "excerpt": "The real evaluation starts next week at Auburn, where this defense opens SEC play on the road for the first time in this series since 2011.",
+      "url": "https://www.gatorbaitmedia.com/post/upon-further-review-maybe-the-gator-defense-wasn-t-so-atrocious",
+      "author": "EDDIE GILLEY",
+      "firstPublishedDate": "2026-09-12T14:54:59Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_9a5ebf6009a14abe9f748aaabf9598fb~mv2.jpeg/v1/fit/w_576,h_576,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Upon Further Review, Maybe The Gator Defense Wasn’t So ‘Atrocious’"
+      }
+    },
+    {
+      "title": "Thoughts of the Day: September 12, 2026",
+      "excerpt": "A few thoughts to jump start your Saturday morning: Tired of waiting for the NCAA to grant a waiver, Denzel Aberdeen has filed for a temporary restraining order that will allow him a fifth year of eligibility as first reported by thefieldof68.com’s Jeff Goodman. Aberdeen, who played less than 40 minutes in 12 games his freshman season at Florida, filed for…",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-12-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-09-12T13:32:46Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/a99769_0fc46edaaf9a433dbc163c8d938ea86c~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: September 12, 2026"
+      }
+    },
+    {
+      "title": "The Tale Of Two Gainesvilles",
+      "excerpt": "And it was the season of Darkness, the kind that made students reinforce their door locks, sleep with the television on, and drive home to Tampa and Jacksonville and Miami rather than risk one more night in an apartment near campus.",
+      "url": "https://www.gatorbaitmedia.com/post/the-tale-of-two-gainesvilles",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-11T22:13:41Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_bb8a40604f8747a0be69b2aeaf0e813f~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Tale Of Two Gainesvilles"
+      }
+    },
+    {
+      "title": "Week 2 Preview: Florida Gators (1-0, 0-0) v. Campbell Camels (2-0, 0-0)",
+      "excerpt": "Florida looks to fine tune all three phases as they look with a tune up against a clearly overmatched foe. By Loren Meadows, GatorBaitMedia.com Football Analyst, Host of The Gator Lowdown with Loren Meadows Florida should roll early and often Saturday evening (Chris Spears photo) Saturday evening will be the second installment of the Sumrall era at Florida…",
+      "url": "https://www.gatorbaitmedia.com/post/week-2-preview-florida-gators-1-0-0-0-v-campbell-camels-2-0-0-0",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-09-11T14:50:45Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_7f9ce6ba2d6b47c3ad901783ea0f78a8~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Week 2 Preview: Florida Gators (1-0, 0-0) v. Campbell Camels (2-0, 0-0)"
       }
     }
   ]

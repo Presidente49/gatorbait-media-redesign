@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Blood, Noise And the Plains: The Florida-Auburn Story. We Need It Every Year",
+      "excerpt": "Jon Sumrall stood at the podium Monday and told his team the truth nobody wants to hear in September: “These games count twice.” He wasn’t talking about the scoreboard — he was talking about the SEC standings that start piling up this week at Jordan-Hare.",
+      "url": "https://www.gatorbaitmedia.com/post/blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-14T21:56:40Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_5a44257742a9441dbadef605f65b541f~mv2.jpeg/v1/fit/w_612,h_498,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Blood, Noise And the Plains: The Florida-Auburn Story. We Need It Every Year"
+      }
+    },
+    {
       "id": "10a6bddb-ce48-428f-81a0-cd2c22e6a190",
       "title": "Florida–Auburn By the Numbers: Two New Coaches, One Old Rivalry",
       "excerpt": "Florida and Auburn are both 2-0, but the numbers tell very different stories. The Professor digs into 1939, Jordan-Hare history, Sumrall’s 14-2 road record, Auburn’s ground game, Byrum Brown and the three numbers that could decide Saturday.",
@@ -169,20 +183,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Tale Of Two Gainesvilles"
-      }
-    },
-    {
-      "title": "Week 2 Preview: Florida Gators (1-0, 0-0) v. Campbell Camels (2-0, 0-0)",
-      "excerpt": "Florida looks to fine tune all three phases as they look with a tune up against a clearly overmatched foe. By Loren Meadows, GatorBaitMedia.com Football Analyst, Host of The Gator Lowdown with Loren Meadows Florida should roll early and often Saturday evening (Chris Spears photo) Saturday evening will be the second installment of the Sumrall era at Florida…",
-      "url": "https://www.gatorbaitmedia.com/post/week-2-preview-florida-gators-1-0-0-0-v-campbell-camels-2-0-0-0",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-09-11T14:50:45Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_7f9ce6ba2d6b47c3ad901783ea0f78a8~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Week 2 Preview: Florida Gators (1-0, 0-0) v. Campbell Camels (2-0, 0-0)"
       }
     }
   ]

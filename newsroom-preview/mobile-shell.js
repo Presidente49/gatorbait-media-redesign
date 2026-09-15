@@ -21,6 +21,8 @@ function markup(){return ''+
 '<a data-gbm-route href="/">Front Page</a>'+
 '<a data-gbm-route href="/magazine">Magazine</a>'+
 '<a data-gbm-route href="/the-buddy-martin-show">GatorBait TV</a>'+
+'<a data-gbm-route href="/podcasts">Podcasts</a>'+
+'<a data-gbm-route href="/message-board">Message Board</a>'+
 '<a href="'+SHOP+'" target="_blank" rel="noopener">Shop</a>'+
 '<a data-gbm-route class="gbm-ms-join" href="/pricing-plans">Join GatorBait</a>'+
 '<button type="button" class="gbm-ms-account" data-gbm-account>Account &amp; preferences</button>'+

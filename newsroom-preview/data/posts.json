@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "WATCH LIVE: The Buddy Martin Show — Florida Heads to Auburn and the Road Gets Real",
+      "excerpt": "Buddy Martin is live tonight breaking down Florida's trip to Auburn, what 2-0 really means, and what's next for the Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-15T01:11:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_cf66d07b9fa9460ab50d4fac7a4f4acb~mv2.jpg/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for WATCH LIVE: The Buddy Martin Show — Florida Heads to Auburn and the Road Gets Real"
+      }
+    },
+    {
       "title": "Blood, Noise And the Plains: The Florida-Auburn Story. We Need It Every Year",
       "excerpt": "Jon Sumrall stood at the podium Monday and told his team the truth nobody wants to hear in September: “These games count twice.” He wasn’t talking about the scoreboard — he was talking about the SEC standings that start piling up this week at Jordan-Hare.",
       "url": "https://www.gatorbaitmedia.com/post/blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
@@ -169,20 +183,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Thoughts of the Day: September 12, 2026"
-      }
-    },
-    {
-      "title": "The Tale Of Two Gainesvilles",
-      "excerpt": "And it was the season of Darkness, the kind that made students reinforce their door locks, sleep with the television on, and drive home to Tampa and Jacksonville and Miami rather than risk one more night in an apartment near campus.",
-      "url": "https://www.gatorbaitmedia.com/post/the-tale-of-two-gainesvilles",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-11T22:13:41Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_bb8a40604f8747a0be69b2aeaf0e813f~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Tale Of Two Gainesvilles"
       }
     }
   ]

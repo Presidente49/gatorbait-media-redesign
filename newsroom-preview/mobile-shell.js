@@ -25,7 +25,7 @@ function markup(){return ''+
 '<a data-gbm-route href="/message-board">Message Board</a>'+
 '<a href="'+SHOP+'" target="_blank" rel="noopener">Shop</a>'+
 '<a data-gbm-route class="gbm-ms-join" href="/pricing-plans">Join GatorBait</a>'+
-'<button type="button" class="gbm-ms-account" data-gbm-account>Account &amp; preferences</button>'+
+'<a data-gbm-route href="/account/my-account">Sign In / Account</a>'+
 '<a data-gbm-route href="/contact">Contact</a>'+
 '</nav>'+
 '<div class="gbm-ms-foot">Independent Florida coverage since 1979.<br><a href="/policies">Privacy &amp; terms</a></div>'+
@@ -36,7 +36,7 @@ function build(){
  var w=document.createElement('div');w.id='gbm-mobile-shell-host';w.innerHTML=markup();
  document.body.insertBefore(w,document.body.firstChild);
  var toggle=document.getElementById('gbm-mobile-menu-toggle');if(toggle)toggle.addEventListener('click',function(){document.documentElement.classList.contains('gbm-mobile-menu-open')?close():open()});
- var root=document.getElementById('gbm-mobile-drawer-root');if(root){root.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('[data-gbm-close],.gbm-ms-close')){e.preventDefault();close();return}var a=e.target.closest&&e.target.closest('a');if(a)close();var acc=e.target.closest&&e.target.closest('[data-gbm-account]');if(acc){setTimeout(function(){if(!document.getElementById('gbm-account-modal'))location.href='/account/my-account';},180);close();}});}
+ var root=document.getElementById('gbm-mobile-drawer-root');if(root){root.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('[data-gbm-close],.gbm-ms-close')){e.preventDefault();close();return}var a=e.target.closest&&e.target.closest('a');if(a)close();});}
  active();
 }
 function sync(){if(!mq.matches)close();active();}

@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-15T21:35:13Z",
+  "updated": "2026-09-15T22:43:25Z",
   "automation": {
-    "lastChecked": "2026-09-15T21:35:13Z",
-    "lastSeenPublishedDate": "2026-09-15T01:11:18.726Z",
-    "lastSeenPostId": "168dacda-ed31-4968-b663-09e49e2859aa"
+    "lastChecked": "2026-09-15T22:43:25Z",
+    "lastSeenPublishedDate": "2026-09-15T22:36:56Z",
+    "lastSeenPostId": "58a5a108-634d-44fb-bed3-3ec8237ddc27"
   },
   "assignments": [
+    {
+      "slug": "the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare",
+      "title": "The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare",
+      "firstPublishedDate": "2026-09-15T22:36:56Z",
+      "primaryHome": "frontPage",
+      "reason": "Time-sensitive Auburn game preview and immediate defensive analysis focused on Florida's pass rush, coverage, and first SEC road test."
+    },
     {
       "slug": "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real",
       "title": "WATCH LIVE: The Buddy Martin Show — Florida Heads to Auburn and the Road Gets Real",

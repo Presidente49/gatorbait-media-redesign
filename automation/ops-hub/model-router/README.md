@@ -27,6 +27,18 @@ Public, already-published or public-repo material can use FCC free providers. Se
 
 FCC model aliases must never be described to humans as actual Anthropic Opus/Sonnet/Haiku unless the upstream model really is Anthropic. Record the actual provider/model in logs.
 
+## Ecosystem review
+
+Read `ECOSYSTEM-REVIEW.md` before expanding the router stack. It documents real-world Fable/Opus/Sonnet/Haiku mapping patterns, provider regressions seen in FCC issues, the GatorBait benchmark set, and companion-project recommendations.
+
+Near-term companion priorities are:
+
+1. **RTK** for shell-output token reduction.
+2. **ccusage** for cross-agent token/model/cost reporting.
+3. **Ollama** after the always-on Mac hardware is checked, for a private local lane.
+
+ICM is a later per-project memory pilot. Serena and Repomix require additional license/security review before integration. Langfuse is deferred until the lighter reporting stack proves insufficient.
+
 ## Install
 
 On the always-on Mac, from this directory:

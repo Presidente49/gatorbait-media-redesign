@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare",
+      "excerpt": "Brad White is calling for more physicality from his cornerbacks after a shaky start to the season, according to a report analyzing the unit’s performance through two games.",
+      "url": "https://www.gatorbaitmedia.com/post/the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-15T22:36:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_c1e8cc00a64b4aa7b79f026dc230f3e2~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare"
+      }
+    },
+    {
       "title": "WATCH LIVE: The Buddy Martin Show — Florida Heads to Auburn and the Road Gets Real",
       "excerpt": "Buddy Martin is live tonight breaking down Florida's trip to Auburn, what 2-0 really means, and what's next for the Gators.",
       "url": "https://www.gatorbaitmedia.com/post/watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real",
@@ -169,20 +183,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Upon Further Review, Maybe The Gator Defense Wasn’t So ‘Atrocious’"
-      }
-    },
-    {
-      "title": "Thoughts of the Day: September 12, 2026",
-      "excerpt": "A few thoughts to jump start your Saturday morning: Tired of waiting for the NCAA to grant a waiver, Denzel Aberdeen has filed for a temporary restraining order that will allow him a fifth year of eligibility as first reported by thefieldof68.com’s Jeff Goodman. Aberdeen, who played less than 40 minutes in 12 games his freshman season at Florida, filed for…",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-12-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-09-12T13:32:46Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/a99769_0fc46edaaf9a433dbc163c8d938ea86c~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Thoughts of the Day: September 12, 2026"
       }
     }
   ]

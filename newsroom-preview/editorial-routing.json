@@ -1,5 +1,31 @@
 {
-  "updated": "2026-09-14",
+  "updated": "2026-09-15T02:21:44Z",
+  "automation": {
+    "lastChecked": "2026-09-15T02:21:44Z",
+    "lastSeenPublishedDate": "2026-09-15T01:11:18.726Z",
+    "lastSeenPostId": "168dacda-ed31-4968-b663-09e49e2859aa"
+  },
+  "assignments": [
+    {
+      "slug": "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real",
+      "title": "WATCH LIVE: The Buddy Martin Show — Florida Heads to Auburn and the Road Gets Real",
+      "firstPublishedDate": "2026-09-15T01:11:18.726Z",
+      "primaryHome": "frontPage",
+      "reason": "Live, immediate Florida-Auburn coverage and a time-sensitive show promotion."
+    },
+    {
+      "slug": "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
+      "primaryHome": "magazine"
+    },
+    {
+      "slug": "the-tale-of-two-gainesvilles",
+      "primaryHome": "magazine"
+    },
+    {
+      "slug": "light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university",
+      "primaryHome": "magazine"
+    }
+  ],
   "magazine": [
     {
       "slug": "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
@@ -24,5 +50,10 @@
     "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
     "the-tale-of-two-gainesvilles",
     "light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university"
-  ]
+  ],
+  "latestGameGallery": {
+    "label": "CAMPBELL",
+    "status": "current",
+    "policy": "Keep exactly one most recent usable game photo set; replace this set when a newer usable GatorBait game photo set is available."
+  }
 }

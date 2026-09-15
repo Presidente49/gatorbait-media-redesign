@@ -43,21 +43,19 @@ function authorFromText(t){var n=norm(t).replace(/^by\s+/,'');return AUTHORS[n]|
 function decorateHome(){if(!home())return;var ks=document.querySelectorAll('#gbm-live .kicker');for(var i=0;i<ks.length;i++){var k=ks[i];if(k.dataset.gbmAuthor==='1')continue;var a=authorFromText(k.textContent);if(!a)continue;k.dataset.gbmAuthor='1';k.innerHTML='<a class="gbm-author-link" href="'+profile(a)+'">'+a.name+'</a>';}}
 function decoratePost(){if(!post())return;var links=document.querySelectorAll('a[href*="/profile/"]');for(var i=0;i<links.length;i++){var l=links[i];if(l.dataset.gbmWriterDone==='1')continue;var a=authorFromText(l.textContent);if(!a)continue;l.dataset.gbmWriterDone='1';l.insertAdjacentHTML('afterend','<button type="button" class="gbm-writer-alerts" data-gbm-writer="'+norm(a.name)+'">Follow / alerts</button>');break;}}
 function accountControls(){
- var tools=document.querySelector('.gbm-account-tools'),fab=document.getElementById('gbm-account-fab');
- if(home()){
-   if(fab)fab.remove();
-   if(!tools){var root=document.getElementById('gbm-live');if(root){tools=document.createElement('div');tools.className='gbm-account-tools';tools.innerHTML='<button type="button" data-gbm-account>Manage membership / cancel</button><a href="'+mail('Unsubscribe me from GatorBait Weekly','Please unsubscribe this email address from GatorBait marketing/newsletter emails.\n\nEmail to remove:')+'">Newsletter unsubscribe</a>';var f=root.querySelector('footer');if(f)root.insertBefore(tools,f);}}
- }else{
-   if(tools)tools.remove();
-   if(post()){if(!fab){fab=document.createElement('button');fab.id='gbm-account-fab';fab.type='button';fab.textContent='Account & preferences';document.body.appendChild(fab);}}
-   else if(fab)fab.remove();
- }
+ var tools=document.querySelector('.gbm-account-tools'),fab=document.getElementById('gbm-account-fab'),old=document.querySelector('.gbm-account-menu-item');
+ if(tools)tools.remove();if(fab)fab.remove();
+ var mobile=!!(window.matchMedia&&window.matchMedia('(max-width:750px)').matches);
+ if(!mobile){if(old)old.remove();return;}
+ var nav=document.querySelector('#SITE_HEADER nav');if(!nav)return;
+ var ul=nav.querySelector('ul');if(!ul)return;
+ if(!old){var li=document.createElement('li');li.className='gbm-account-menu-item';li.innerHTML='<div><button type="button" data-gbm-account>Account & preferences</button></div>';ul.appendChild(li);}
 }
 function suppressAppInvite(){var all=document.querySelectorAll('body *');for(var i=0;i<all.length;i++){var e=all[i];if(e.closest&&e.closest('#gbm-live,.gbm-modal'))continue;var t=norm(e.innerText);if(!t||t.length>220)continue;if(t.indexOf('join us in our app')>-1||t.indexOf('join our app')>-1||t.indexOf('open in app')>-1||(t.indexOf('spaces by wix')>-1&&t.indexOf('join')>-1)){var box=e;for(var j=0;j<3&&box.parentElement&&box.parentElement!==document.body;j++){var p=box.parentElement;if(norm(p.innerText).length<=320)box=p;else break;}box.style.setProperty('display','none','important');box.setAttribute('aria-hidden','true');}}}
 function route(){if(!home())document.documentElement.classList.remove('gbm-newsroom-boot','gbm-standalone-live');decorateHome();decoratePost();accountControls();suppressAppInvite();suppressNativeNewsletter();}
-document.addEventListener('click',function(e){var acc=e.target.closest&&e.target.closest('[data-gbm-account],#gbm-account-fab');if(acc){e.preventDefault();showAccount();return}var w=e.target.closest&&e.target.closest('[data-gbm-writer]');if(w){e.preventDefault();var a=AUTHORS[w.getAttribute('data-gbm-writer')];if(a)showWriter(a);}});
+document.addEventListener('click',function(e){var acc=e.target.closest&&e.target.closest('[data-gbm-account]');if(acc){e.preventDefault();showAccount();return}var w=e.target.closest&&e.target.closest('[data-gbm-writer]');if(w){e.preventDefault();var a=AUTHORS[w.getAttribute('data-gbm-writer')];if(a)showWriter(a);}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){close('gbm-news-modal');close('gbm-account-modal');close('gbm-writer-modal')}});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){route();setTimeout(showNewsletter,30000)},{once:true});else{route();setTimeout(showNewsletter,30000)}
 setInterval(route,1200);
-try{var o=new MutationObserver(function(){decorateHome();decoratePost();suppressAppInvite();suppressNativeNewsletter()});o.observe(document.documentElement,{childList:true,subtree:true});}catch(e){}
+try{var o=new MutationObserver(function(){decorateHome();decoratePost();accountControls();suppressAppInvite();suppressNativeNewsletter()});o.observe(document.documentElement,{childList:true,subtree:true});}catch(e){}
 })();

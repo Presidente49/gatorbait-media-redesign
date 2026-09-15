@@ -65,6 +65,15 @@ open http://127.0.0.1:8082/admin
 
 Configure provider credentials locally in FCC Admin. Do not commit provider keys. Start the pilot with public/repo work. `model-router/routing-policy.json` controls which data lanes may use free providers.
 
+After a provider is configured and the authenticated model check passes, make FCC persistent:
+
+```bash
+chmod +x install-fcc-launchd.sh
+./install-fcc-launchd.sh
+```
+
+That installer refuses to enable the always-on service unless FCC health and authenticated model checks are already passing.
+
 ## Initial automation lanes
 
 1. **Operations:** site, store and route health with deduplicated alerts.
@@ -86,6 +95,7 @@ Configure provider credentials locally in FCC Admin. Do not commit provider keys
 - `agents/model-router.md` — model selection and data-lane contract.
 - `model-router/README.md` — FCC operating guide.
 - `model-router/install-fcc-pinned.sh` — pinned/hardened local FCC installer.
+- `model-router/install-fcc-launchd.sh` — authenticated health-gated always-on Mac service installer.
 - `model-router/fcc.env.example` — secret-free example configuration.
 - `model-router/routing-policy.json` — provider/data classification rules.
 - `agents/revenue-director.md` — unified sports-publisher revenue loop.

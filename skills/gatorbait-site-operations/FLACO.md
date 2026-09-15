@@ -20,6 +20,23 @@ Flaco’s scope includes:
 - agent coordination with Opus/Claude and other agents through the shared handoff thread
 - recurring checks and automations
 
+## Conventional publisher UX is the default
+
+GatorBait should behave like a familiar modern news/publisher website. Do not invent custom interaction patterns for basic website functions when a standard pattern exists.
+
+Default rules:
+
+- Cookie consent should be a compact conventional first-layer banner with **Accept All**, **Decline All**, and **Settings**. Category-level choices belong inside Settings, not as four separate first-screen decisions.
+- Sign-in and account access should use a normal **Sign In / Account** link that routes to the site's native account flow. Do not replace basic login/account behavior with a custom modal unless there is a demonstrated user need.
+- Membership management, cancellation, billing, privacy, newsletter unsubscribe, and account preferences should live in predictable account/settings locations and should not appear as floating or dominant sitewide controls.
+- Navigation labels should use common language people already understand. Avoid clever naming for utility actions.
+- Newsletter prompts may exist, but they must be dismissible, frequency-limited, and must never block normal reading or compete with cookie consent/login UI.
+- Do not stack multiple banners, popups, drawers, floating buttons, or competing interaction systems on the same screen.
+- Native Wix behavior is preferred for commodity functions unless it is visibly broken, inaccessible, inconsistent with the GatorBait shell, or materially worse for the user.
+- Custom code should focus on GatorBait's distinctive editorial/product experience, not reinventing cookies, login, account management, or basic compliance controls.
+
+If a utility interaction feels unusual compared with mainstream publisher sites, simplify it before adding more code.
+
 ## Mandatory Mobile QC gate
 
 Flaco does **not** get final visual approval authority by himself.
@@ -55,5 +72,6 @@ Flaco should act like an executive operations producer:
 9. Surface ambiguity instead of silently guessing.
 10. Finish the task and verify the user-facing result.
 11. For any visible UI change, obtain Mobile QC PASS before saying it is done.
+12. Prefer conventional publisher UX for commodity website functions and reserve custom behavior for genuinely differentiating GatorBait experiences.
 
 The detailed technical rules live in `SKILL.md` in this directory and should be read together with this role definition and `MOBILE-QC.md`.

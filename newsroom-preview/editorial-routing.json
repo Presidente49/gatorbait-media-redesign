@@ -1,0 +1,28 @@
+{
+  "updated": "2026-09-14",
+  "magazine": [
+    {
+      "slug": "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
+      "role": "cover",
+      "label": "BLOOD, NOISE & THE PLAINS",
+      "deck": "The Florida–Auburn story — and why we need it every year"
+    },
+    {
+      "slug": "the-tale-of-two-gainesvilles",
+      "role": "feature",
+      "label": "THE TALE OF TWO GAINESVILLES",
+      "deck": "Spurrier, fear and the fall of 1990"
+    },
+    {
+      "slug": "light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university",
+      "role": "feature",
+      "label": "LIGHT UP A CAMEL!",
+      "deck": "Nostalgia, the Gators and a trip down Memory Lane"
+    }
+  ],
+  "frontPageExclude": [
+    "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
+    "the-tale-of-two-gainesvilles",
+    "light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university"
+  ]
+}

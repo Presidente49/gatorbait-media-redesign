@@ -3,15 +3,21 @@
 if(window.__GBM_STANDALONE_NEWSROOM__)return;
 window.__GBM_STANDALONE_NEWSROOM__=1;
 var LOGO='https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp';
+var MAGAZINE_SLUGS=[
+'blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year',
+'the-tale-of-two-gainesvilles',
+'light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university'
+];
 var lastPath='';
 function home(){var p=(location.pathname||'').replace(/\/+$/,'');return p===''||p==='/';}
 function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
 function clean(raw,max){var d=document.createElement('div');d.innerHTML=raw||'';var s=(d.textContent||'').replace(/\s+/g,' ').trim();if(s.length>max)s=s.slice(0,max).replace(/[\s,;:.!—-]+$/,'')+'…';return s;}
 function local(url){if(!url)return'#';return url.replace(/^https?:\/\/[^/]+/i,'');}
+function magazinePost(link){var slug=(link||'').replace(/^\/post\//,'').replace(/\/+$/,'');return MAGAZINE_SLUGS.indexOf(slug)>-1;}
 function dateText(d){try{return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}catch(e){return'';}}
 function creator(item){var all=item.getElementsByTagNameNS?item.getElementsByTagNameNS('*','creator'):[];if(all&&all[0])return(all[0].textContent||'GatorBait Staff').trim();var plain=item.querySelector('creator');return plain?(plain.textContent||'GatorBait Staff').trim():'GatorBait Staff';}
 function image(item){var e=item.querySelector('enclosure');if(e&&e.getAttribute('url'))return e.getAttribute('url');var nodes=item.getElementsByTagName('*');for(var i=0;i<nodes.length;i++){var n=nodes[i],name=(n.localName||n.nodeName||'').toLowerCase();if((name==='content'||name==='thumbnail')&&n.getAttribute&&n.getAttribute('url')){var u=n.getAttribute('url');if(/^https?:/i.test(u))return u;}}return'';}
-function feed(){return fetch('/blog-feed.xml?gbm='+Date.now(),{credentials:'same-origin',cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('feed '+r.status);return r.text();}).then(function(xml){var doc=new DOMParser().parseFromString(xml,'application/xml');var items=Array.prototype.slice.call(doc.querySelectorAll('item'));return items.map(function(item){function t(tag){var n=item.querySelector(tag);return n?n.textContent:'';}var raw=t('pubDate'),d=raw?new Date(raw):new Date(0);return{title:t('title').trim(),desc:t('description'),link:local(t('link').trim()),img:image(item),who:creator(item),date:d};}).filter(function(p){return p.title&&/^\/post\//.test(p.link);}).sort(function(a,b){return b.date.getTime()-a.date.getTime();}).slice(0,8);});}
+function feed(){return fetch('/blog-feed.xml?gbm='+Date.now(),{credentials:'same-origin',cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('feed '+r.status);return r.text();}).then(function(xml){var doc=new DOMParser().parseFromString(xml,'application/xml');var items=Array.prototype.slice.call(doc.querySelectorAll('item'));return items.map(function(item){function t(tag){var n=item.querySelector(tag);return n?n.textContent:'';}var raw=t('pubDate'),d=raw?new Date(raw):new Date(0);return{title:t('title').trim(),desc:t('description'),link:local(t('link').trim()),img:image(item),who:creator(item),date:d};}).filter(function(p){return p.title&&/^\/post\//.test(p.link)&&!magazinePost(p.link);}).sort(function(a,b){return b.date.getTime()-a.date.getTime();}).slice(0,8);});}
 function img(p,cls,lead){if(!p.img)return'<div class="'+cls+'"></div>';return'<div class="'+cls+'"><img '+(lead?'fetchpriority="high" loading="eager"':'loading="lazy"')+' decoding="async" src="'+esc(p.img)+'" alt="'+esc(p.title)+'"></div>';}
 function meta(p){return esc(dateText(p.date));}
 function leadMeta(p){return esc(p.who||'GatorBait Staff')+' · '+esc(dateText(p.date));}

@@ -5,23 +5,36 @@
     "content inventory and metadata audits",
     "customer email classification",
     "customer reply drafts",
-    "organic social and merchandise campaign drafts",
-    "editorial calendar maintenance"
+    "editorial calendar maintenance",
+    "research and draft routine GatorBait editorial content",
+    "classify approved-scope stories as Front Page or Magazine",
+    "publish routine organic GatorBait blog posts after editorial, brand, compliance and mobile quality gates pass",
+    "create and publish or schedule routine organic social promotion for approved GatorBait content after channel quality gates pass",
+    "prepare and send routine editorial/newsletter promotion to already-consented audiences when unsubscribe, consent and destination checks pass",
+    "generate SEO metadata, tracking tags and campaign identifiers for routine organic content",
+    "route website visitors to the most valuable verified destination such as a current YouTube show, article, membership page or store offer",
+    "measure organic campaign performance and record learnings for future editorial and marketing decisions",
+    "perform reversible low-risk production maintenance covered by an existing approved playbook and rollback path"
   ],
   "approval_required": [
-    "send a customer reply",
-    "publish or schedule public content",
-    "change Wix production",
-    "change product prices or offers",
-    "issue a refund",
+    "send a non-routine or sensitive customer reply",
+    "publish content involving legal allegations, emergencies, personnel disputes or materially uncertain facts",
+    "make a production change without an existing tested playbook or rollback path",
+    "change product prices, subscription prices, benefits, trials, cancellation rules or offers",
+    "issue a refund, credit or financial adjustment",
     "spend money or launch paid advertising",
-    "change DNS, account access, payment settings or memberships"
+    "change DNS, account access, credentials, payment settings or membership permissions",
+    "enter a new contract, sponsorship commitment or financial obligation",
+    "make a public claim about revenue, audience size, licensing, exclusivity or endorsement that cannot be verified"
   ],
   "never": [
     "store credentials in Git",
-    "invent products, prices, results, dates, bylines or customer facts",
-    "delete customer or financial records",
+    "invent products, prices, results, dates, bylines, quotes, audience numbers or customer facts",
+    "delete customer or financial records without explicit owner direction",
     "contact third parties from an unverified identity",
-    "disable logging or human review"
-  ]
+    "bypass consent, unsubscribe, accessibility, compliance, brand, editorial or mobile quality gates",
+    "silently rewrite core safety, financial or approval boundaries based on performance data",
+    "hide material membership, billing or cancellation terms"
+  ],
+  "autopilot_principle": "Brenden supplies goals and exceptions. Juice, GatorBait Agency and Flaco make routine editorial, organic marketing and operations decisions within these boundaries, learn from measured outcomes, preserve logs and rollback paths, and escalate only when an approval_required condition is triggered."
 }

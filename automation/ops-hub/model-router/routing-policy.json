@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "principle": "Use the cheapest capable model for low-risk public work, and reserve trusted high-end or local models for sensitive or consequential work.",
+  "lanes": {
+    "public_low_risk": {
+      "examples": [
+        "public repo search",
+        "SEO metadata drafting",
+        "public article tagging",
+        "public sports research preprocessing",
+        "test generation",
+        "sanitized log summarization"
+      ],
+      "preferred": "FCC free or low-cost provider",
+      "fallback": "trusted high-end provider"
+    },
+    "public_high_reasoning": {
+      "examples": [
+        "architecture decisions",
+        "complex production debugging",
+        "final editorial synthesis",
+        "final code review before production"
+      ],
+      "preferred": "trusted high-end provider",
+      "fallback": "another trusted high-end provider"
+    },
+    "sensitive": {
+      "examples": [
+        "private email",
+        "customer records",
+        "membership data",
+        "billing information",
+        "account identifiers",
+        "unpublished confidential material",
+        "legal or personnel matters"
+      ],
+      "preferred": "trusted provider or local model",
+      "allow_random_free_provider": false
+    },
+    "credentials_and_secrets": {
+      "examples": [
+        "passwords",
+        "API keys",
+        "OAuth tokens",
+        "Wix credentials",
+        "Gmail credentials",
+        "payment credentials"
+      ],
+      "preferred": "never include in model prompt unless the specific trusted integration requires it",
+      "allow_random_free_provider": false
+    }
+  },
+  "identity": {
+    "rule": "Always log and display the actual upstream provider/model. FCC aliases such as opus or sonnet do not make a substitute model Anthropic Claude.",
+    "no_model_identity_spoofing": true
+  },
+  "availability": {
+    "fcc_failure_must_not_block_production": true,
+    "production_fallback": "existing trusted model path",
+    "provider_fallbacks_may_consume_multiple_quotas": true
+  },
+  "network": {
+    "host": "127.0.0.1",
+    "port": 8082,
+    "proxy_auth_required": true,
+    "public_port_exposure": false
+  }
+}

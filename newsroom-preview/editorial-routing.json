@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-15T22:43:25Z",
+  "updated": "2026-09-16T16:10:08Z",
   "automation": {
-    "lastChecked": "2026-09-15T22:43:25Z",
-    "lastSeenPublishedDate": "2026-09-15T22:36:56Z",
-    "lastSeenPostId": "58a5a108-634d-44fb-bed3-3ec8237ddc27"
+    "lastChecked": "2026-09-16T16:10:08Z",
+    "lastSeenPublishedDate": "2026-09-16T15:24:49.695Z",
+    "lastSeenPostId": "c0e1a395-213f-4982-950c-f5f309c87acf"
   },
   "assignments": [
+    {
+      "slug": "gator-nation-get-your-game-face-on-for-basketball-coming-soon-this-is-the-best-team-todd-golden-w",
+      "title": "Gator Nation, Get Your Game Face On For Basketball, Coming Soon: This Is the Best Team Todd Golden Will Ever Have",
+      "firstPublishedDate": "2026-09-16T15:24:49.695Z",
+      "primaryHome": "frontPage",
+      "reason": "Time-sensitive preseason basketball preview and immediate season outlook built around roster statistics, schedule context, eligibility news, and a 2026-27 projection."
+    },
     {
       "slug": "the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare",
       "title": "The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare",

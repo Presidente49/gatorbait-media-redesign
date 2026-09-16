@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-16T19:32:15Z",
+  "updated": "2026-09-16T23:20:59Z",
   "automation": {
-    "lastChecked": "2026-09-16T19:32:15Z",
-    "lastSeenPublishedDate": "2026-09-16T15:24:49.695Z",
-    "lastSeenPostId": "c0e1a395-213f-4982-950c-f5f309c87acf"
+    "lastChecked": "2026-09-16T23:20:59Z",
+    "lastSeenPublishedDate": "2026-09-16T21:51:00.977Z",
+    "lastSeenPostId": "f23ced04-6e20-46ab-9812-71abd1ffae0d"
   },
   "assignments": [
+    {
+      "slug": "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
+      "title": "Personal Recollections Of “14 Days In Gainesville” And The ESPN Documentary",
+      "firstPublishedDate": "2026-09-16T21:51:00.977Z",
+      "primaryHome": "magazine",
+      "reason": "Evergreen first-person recollection and historical storytelling about Gainesville in 1990, Steve Spurrier's first opener, and the ESPN documentary; it remains readable well beyond the documentary's air date."
+    },
     {
       "slug": "gator-nation-get-your-game-face-on-for-basketball-coming-soon-this-is-the-best-team-todd-golden-w",
       "title": "Gator Nation, Get Your Game Face On For Basketball, Coming Soon: This Is the Best Team Todd Golden Will Ever Have",
@@ -48,6 +55,12 @@
       "deck": "The Florida–Auburn story — and why we need it every year"
     },
     {
+      "slug": "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
+      "role": "feature",
+      "label": "14 DAYS IN GAINESVILLE",
+      "deck": "Carlton Reese remembers fear, football and the opening of the Spurrier era in 1990"
+    },
+    {
       "slug": "the-tale-of-two-gainesvilles",
       "role": "feature",
       "label": "THE TALE OF TWO GAINESVILLES",
@@ -61,6 +74,7 @@
     }
   ],
   "frontPageExclude": [
+    "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
     "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
     "the-tale-of-two-gainesvilles",
     "light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university"

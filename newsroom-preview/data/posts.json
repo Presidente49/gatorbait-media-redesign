@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Personal Recollections Of “14 Days In Gainesville” And The ESPN Documentary",
+      "excerpt": "The documentary stated how people were carrying baseball bats and such out of paranoia, and this was no exaggeration. Everything in the documentary I already knew from having lived in Gainesville and working on the sports desk at The Gainesville Sun at that time.",
+      "url": "https://www.gatorbaitmedia.com/post/personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
+      "author": "Carlton Reese",
+      "firstPublishedDate": "2026-09-16T21:51:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_94f8137099cd4bfebadbd3f27b8a2c0b~mv2.jpeg/v1/fit/w_907,h_310,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Personal Recollections Of “14 Days In Gainesville” And The ESPN Documentary"
+      }
+    },
+    {
       "title": "Gator Nation, Get Your Game Face On For Basketball, Coming Soon: This Is the Best Team Todd Golden Will Ever Have",
       "excerpt": "If you’re looking for one of college basketball’s most loaded rosters, start in Gainesville. Buddy Martin sizes up Todd Golden’s 2026-27 Gators.",
       "url": "https://www.gatorbaitmedia.com/post/gator-nation-get-your-game-face-on-for-basketball-coming-soon-this-is-the-best-team-todd-golden-w",
@@ -167,22 +181,6 @@
         "width": 960,
         "height": 640,
         "alt": "Florida football coverage from the Campbell game and Jon Sumrall's postgame evaluation."
-      }
-    },
-    {
-      "id": "2bad74a1-834a-496f-aedf-a80d9f585c92",
-      "title": "Baugh Game? Really, It Was A Brown Game. Gators Flatten Campbell, 52-3",
-      "excerpt": "Brown returned two punts for touchdowns — 64 and 70 yards — and finished with an official Florida-record 173 punt-return yards against Campbell. He also added a 14-yard catch-and-run touchdown in the Gators’ 52-3 win.",
-      "url": "https://www.gatorbaitmedia.com/post/baugh-game-really-it-was-a-brown-game-gators-flatten-campbell-52-3",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-13T02:12:32Z",
-      "minutesToRead": 4,
-      "section": "Buddy Martin",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_8f501864ef564ecd987b269cb0171fa2~mv2.jpg",
-        "width": 960,
-        "height": 640,
-        "alt": "Florida Gators coverage from the 52-3 win over Campbell."
       }
     }
   ]

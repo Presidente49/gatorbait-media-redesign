@@ -1,6 +1,6 @@
 # Editorial design references
 
-Updated: 2026-09-13
+Updated: 2026-09-16
 
 This is the design-reference shortlist for GatorBait Media. It records what to borrow and what not to install so future work does not restart the template search or replace a stable Wix site with an incompatible stack.
 
@@ -16,12 +16,19 @@ A repository qualifies for another review only when it solves a verified product
 |---|---:|---|---|---|
 | [BBC Simorgh](https://github.com/bbc/simorgh) | About 1.7k stars | No clear repository license detected | Strong accessibility, resilient article pages, restrained navigation | Study patterns only; far too large and operationally complex for this Wix site |
 | [Wagtail news template](https://github.com/wagtail/news-template) | About 188 stars; active in 2026 | BSD-3-Clause | Lead-story hierarchy, card grids, section landing pages | Best newsroom layout reference; Django/Wagtail code does not belong in Wix |
+| [Netlify Next.js Blog Theme](https://github.com/netlify-templates/nextjs-blog-theme) | 578 stars; pushed 2026-09-15 when reviewed | MIT | Narrow readable prose column, explicit SEO component, responsive post page, previous/next continuation | Strong article-page reference; borrow the hierarchy and interaction patterns, do not install the Next.js stack into Wix |
 | [Giraffe](https://github.com/AGDholo/giraffe) | About 92 stars | MIT | Compact magazine cards and responsive Vue layouts | Visual reference only; Vite/Vuetify would duplicate the live frontend |
 | [Pixel Blogger Template](https://github.com/puikinsh/Pixel-Blogger-Template) | About 191 stars | GPL-3.0 | Simple editorial density and chronological feeds | Do not copy code; Blogger and GPL are a poor fit |
 | [Wix CMS Next.js template](https://github.com/wix-incubator/wix-cms-nextjs-template) | About 43 stars | MIT | Official Wix headless CMS connection | Reconsider only if the company deliberately funds a headless rebuild |
 | [Newspack workspace](https://github.com/Automattic/newspack-workspace) | Active production publishing project | GPL | Membership and newsroom product ideas | WordPress stack; product reference only |
 
 Star counts are a dated signal, not a quality score. Verify current activity, security posture, license, and maintenance status before any future adoption.
+
+## Daily trend review
+
+Review relevant GitHub activity regularly for useful changes in sports-publisher article design, editorial UX, SEO/schema, image/media workflows, social/email automation, analytics and low-cost newsroom tooling.
+
+The review is a discovery process, not an installation queue. A trending repository, high star count or new release is not permission to add software to production. Surface only changes that solve a real GatorBait problem, and run them through the adoption gate below before introducing any dependency or service.
 
 ## Native Wix template references
 

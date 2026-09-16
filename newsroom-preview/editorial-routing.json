@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T23:20:59Z",
+  "updated": "2026-09-16T23:31:00Z",
   "automation": {
     "lastChecked": "2026-09-16T23:20:59Z",
     "lastSeenPublishedDate": "2026-09-16T21:51:00.977Z",
@@ -49,16 +49,16 @@
   ],
   "magazine": [
     {
-      "slug": "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
-      "role": "cover",
-      "label": "BLOOD, NOISE & THE PLAINS",
-      "deck": "The Florida–Auburn story — and why we need it every year"
-    },
-    {
       "slug": "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
-      "role": "feature",
+      "role": "cover",
       "label": "14 DAYS IN GAINESVILLE",
       "deck": "Carlton Reese remembers fear, football and the opening of the Spurrier era in 1990"
+    },
+    {
+      "slug": "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
+      "role": "feature",
+      "label": "BLOOD, NOISE & THE PLAINS",
+      "deck": "The Florida–Auburn story — and why we need it every year"
     },
     {
       "slug": "the-tale-of-two-gainesvilles",
@@ -80,8 +80,8 @@
     "light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university"
   ],
   "latestGameGallery": {
-    "label": "CAMPBELL",
-    "status": "current",
-    "policy": "Keep exactly one most recent usable game photo set; replace this set when a newer usable GatorBait game photo set is available."
+    "status": "removed",
+    "removedDate": "2026-09-16",
+    "reason": "Owner requested the Magazine front-page gallery be removed rather than carried forward."
   }
 }

@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-15T22:36:56Z</news:publication_date>
+      <news:title>The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real</loc>
     <news:news>
       <news:publication>
@@ -538,17 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-25T13:04:40Z</news:publication_date>
       <news:title>Thoughts of the Day: August 25, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/bryce-lovett-at-lt-might-be-the-missing-link-on-florida-s-offensive-line</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-24T21:43:06.241000Z</news:publication_date>
-      <news:title>Bryce Lovett at LT might be the missing link on Florida's offensive line</news:title>
     </news:news>
   </url>
 </urlset>

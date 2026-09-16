@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gator Nation, Get Your Game Face On For Basketball, Coming Soon: This Is the Best Team Todd Golden Will Ever Have",
+      "excerpt": "If you’re looking for one of college basketball’s most loaded rosters, start in Gainesville. Buddy Martin sizes up Todd Golden’s 2026-27 Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/gator-nation-get-your-game-face-on-for-basketball-coming-soon-this-is-the-best-team-todd-golden-w",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-16T15:24:49Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_d01fa2f22e04402b94eb7766cb7659fd~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gator Nation, Get Your Game Face On For Basketball, Coming Soon: This Is the Best Team Todd Golden Will Ever Have"
+      }
+    },
+    {
       "title": "The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare",
       "excerpt": "Brad White is calling for more physicality from his cornerbacks after a shaky start to the season, according to a report analyzing the unit’s performance through two games.",
       "url": "https://www.gatorbaitmedia.com/post/the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare",
@@ -169,20 +183,6 @@
         "width": 960,
         "height": 640,
         "alt": "Florida Gators coverage from the 52-3 win over Campbell."
-      }
-    },
-    {
-      "title": "Upon Further Review, Maybe The Gator Defense Wasn’t So ‘Atrocious’",
-      "excerpt": "The real evaluation starts next week at Auburn, where this defense opens SEC play on the road for the first time in this series since 2011.",
-      "url": "https://www.gatorbaitmedia.com/post/upon-further-review-maybe-the-gator-defense-wasn-t-so-atrocious",
-      "author": "EDDIE GILLEY",
-      "firstPublishedDate": "2026-09-12T14:54:59Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_9a5ebf6009a14abe9f748aaabf9598fb~mv2.jpeg/v1/fit/w_576,h_576,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Upon Further Review, Maybe The Gator Defense Wasn’t So ‘Atrocious’"
       }
     }
   ]

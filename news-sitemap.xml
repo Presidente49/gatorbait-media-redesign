@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-17-2026</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-17T03:18:06Z</news:publication_date>
+      <news:title>Thoughts of the Day: September 17, 2026</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-16T21:51:00.977000Z</news:publication_date>
+      <news:title>Personal Recollections Of “14 Days In Gainesville” And The ESPN Documentary</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/gator-nation-get-your-game-face-on-for-basketball-coming-soon-this-is-the-best-team-todd-golden-w</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-16T15:24:49.695000Z</news:publication_date>
+      <news:title>Gator Nation, Get Your Game Face On For Basketball, Coming Soon: This Is the Best Team Todd Golden Will Ever Have</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare</loc>
     <news:news>
       <news:publication>
@@ -516,39 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-27T13:26:37.583000Z</news:publication_date>
       <news:title>The Answer To The QB Question Is Aaron Philo. But Maybe It Will Change?</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/controversy-kiffin-and-sumrall-florida-hired-the-right-football-coach</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-26T13:01:27.545000Z</news:publication_date>
-      <news:title>Controversy, Kiffin and Sumrall: Florida hired the right football coach</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/gator-qb-boss-craddock-talks-of-big-freaking-dreams-and-loving-the-hbc</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-25T15:42:38.258000Z</news:publication_date>
-      <news:title>Gator QB Boss Craddock Talks Of 'Big Freaking Dreams' And Loving The HBC</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-august-25-2026</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-25T13:04:40Z</news:publication_date>
-      <news:title>Thoughts of the Day: August 25, 2026</news:title>
     </news:news>
   </url>
 </urlset>

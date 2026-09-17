@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
@@ -26,6 +26,26 @@
         "conversion placement"
       ],
       "verify": ["public URL", "desktop", "390px mobile", "430px mobile"]
+    },
+    "magazine": {
+      "surfaces": ["/magazine", "digital magazine", "issue", "archive"],
+      "deterministic_gates": [
+        "newest published stories are represented",
+        "clear lead story and secondary hierarchy",
+        "author/date/image metadata present",
+        "latest issue and archive paths are explicit when enabled",
+        "video or audio modules link to owned canonical content",
+        "membership and newsletter paths are valid",
+        "mobile overflow and image aspect-ratio checks"
+      ],
+      "bounded_reasoning": [
+        "magazine-cover hierarchy",
+        "section mix",
+        "issue packaging",
+        "visual pacing",
+        "premium print-edition merchandising"
+      ],
+      "verify": ["public /magazine URL", "freshness against Wix/RSS source", "desktop", "390px mobile", "430px mobile"]
     },
     "article": {
       "surfaces": ["/post/", "article", "story"],
@@ -56,16 +76,58 @@
       "bounded_reasoning": ["subject options", "story ordering", "CTA copy"],
       "verify": ["rendered preview", "link check", "send-state confirmation"]
     },
+    "subscriber_winback": {
+      "surfaces": ["former subscriber", "lapsed member", "cancelled subscription", "win-back"],
+      "deterministic_gates": [
+        "recipient was previously subscribed and is legally contactable",
+        "current consent and suppression status checked",
+        "cancellation reason or cohort retained when available",
+        "offer terms and renewal terms are explicit",
+        "membership destination is valid",
+        "frequency cap prevents repeated nuisance contact",
+        "campaign and cohort identifiers are recorded"
+      ],
+      "bounded_reasoning": [
+        "cohort-specific message framing",
+        "content-led reason to return",
+        "discount-vs-full-price test design",
+        "subject and CTA variants"
+      ],
+      "verify": ["audience count", "suppression reconciliation", "rendered message", "destination link", "30/60/90-day retention tracking"]
+    },
     "social": {
-      "surfaces": ["Facebook", "Instagram", "X", "social"],
+      "surfaces": ["Facebook", "Instagram", "X", "YouTube", "social"],
       "deterministic_gates": [
         "destination URL valid",
         "published facts match source",
+        "rights allow commercial social use",
         "channel length/format limits",
-        "tracking identifier present when required"
+        "vertical video is 9:16 when intended for Reels/Shorts",
+        "captions and key text remain inside safe area",
+        "tracking identifier present when required",
+        "original-content requirements preserved for monetization"
       ],
-      "bounded_reasoning": ["hook", "caption", "channel adaptation"],
-      "verify": ["scheduled/published object", "destination link"]
+      "bounded_reasoning": ["hook", "caption", "channel adaptation", "clip packaging", "CTA"],
+      "verify": ["scheduled/published object", "destination link", "platform-native preview", "monetization eligibility signals"]
+    },
+    "show_clips": {
+      "surfaces": ["Restream", "recording", "clip project", "show highlights", "Shorts", "Reels"],
+      "deterministic_gates": [
+        "source recording belongs to the approved GatorBait account",
+        "show/event date and title identified",
+        "recording or storage file exists",
+        "clip project is not duplicated for the same source unless explicitly reprocessed",
+        "clip rights and guest-use rights are known",
+        "downloaded asset matches requested clip ID",
+        "canonical show or article destination exists before distribution"
+      ],
+      "bounded_reasoning": [
+        "select strongest monetizable moments",
+        "write platform-native hook and caption",
+        "decide whether clip also supports a blog block or newsletter block",
+        "choose CTA based on article/show/membership objective"
+      ],
+      "verify": ["Restream project details", "downloaded clip identity", "scheduled/published social object", "YouTube/Facebook analytics after distribution"]
     },
     "frontend": {
       "surfaces": ["CSS", "HTML", "Velo", "embed", "navigation", "form"],

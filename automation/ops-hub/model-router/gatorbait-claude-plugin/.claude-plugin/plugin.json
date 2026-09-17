@@ -1,0 +1,8 @@
+{
+  "name": "gatorbait-controller",
+  "version": "0.1.0",
+  "description": "GatorBait Media controller skills for newsroom, broadcast, magazine, social, Wix and operations work under the repository's single-controller policy.",
+  "author": {
+    "name": "GatorBait Media"
+  }
+}

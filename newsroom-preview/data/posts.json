@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: September 17, 2026",
+      "excerpt": "Steve Spurrier and Urban Meyer went 85-33-1 on the road when they coached the Gators A few thoughts to jump start your Thursday morning: In the Southeastern Conference, nothing is more terrifying than a road trip. Just ask Urban Meyer, whose 65-15 overall record from 2005-10 included a 30-11 record away from Ben Hill Griffin Stadium. At home, Meyer won…",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-17-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-09-17T03:18:06Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_4efeca4579344aa0841bd725a60f1489~mv2.jpg/v1/fit/w_1000,h_703,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: September 17, 2026"
+      }
+    },
+    {
       "title": "Personal Recollections Of “14 Days In Gainesville” And The ESPN Documentary",
       "excerpt": "The documentary stated how people were carrying baseball bats and such out of paranoia, and this was no exaggeration. Everything in the documentary I already knew from having lived in Gainesville and working on the sports desk at The Gainesville Sun at that time.",
       "url": "https://www.gatorbaitmedia.com/post/personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
@@ -165,22 +179,6 @@
         "width": 960,
         "height": 640,
         "alt": "Florida Gators football action ahead of the Auburn matchup."
-      }
-    },
-    {
-      "id": "88204f04-2368-473a-86ed-d3b6870ace81",
-      "title": "No sugar coating from Sumrall: Gators have to get better in a hurry",
-      "excerpt": "Dallas Wilson (6) gathers in a pass (UAA Photo) Ultimately, winning is what matters most not the aesthetics. The Florida Gators got their win Saturday night at The Swamp, but to call the 52-3 beatdown of the Campbell Camels anything more than expected would be sugar coating, something Jon Sumrall refused to do when he addressed the media in the south end…",
-      "url": "https://www.gatorbaitmedia.com/post/no-sugar-coating-from-sumrall-gators-have-to-get-better-in-a-hurry",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-09-13T13:07:28Z",
-      "minutesToRead": 8,
-      "section": "Franz Beard",
-      "image": {
-        "src": "https://static.wixstatic.com/media/a99769_222099421c4547caa0d6a8efd3d187ad~mv2.jpeg",
-        "width": 960,
-        "height": 640,
-        "alt": "Florida football coverage from the Campbell game and Jon Sumrall's postgame evaluation."
       }
     }
   ]

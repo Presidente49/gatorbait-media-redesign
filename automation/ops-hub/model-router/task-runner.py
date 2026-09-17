@@ -19,7 +19,7 @@ import sys
 import tarfile
 import tempfile
 import time
-from typing import Any
+from typing import Any, Optional
 
 HERE = Path(__file__).resolve().parent
 REPO_ROOT = HERE.parents[2]
@@ -42,7 +42,12 @@ def secret_like(text: str) -> bool:
     return any(pattern.search(text) for pattern in SECRET_PATTERNS)
 
 
-def choose_harness(lane: str, kind: str, explicit: str | None, policy: dict[str, Any]) -> str:
+def choose_harness(
+    lane: str,
+    kind: str,
+    explicit: Optional[str],
+    policy: dict[str, Any],
+) -> str:
     harnesses = policy["harnesses"]
     if explicit:
         if explicit not in harnesses:
@@ -63,6 +68,20 @@ def choose_harness(lane: str, kind: str, explicit: str | None, policy: dict[str,
     raise ValueError(f"unknown data lane: {lane}")
 
 
+def _extract_trusted_git_archive(tf: tarfile.TarFile, target: Path) -> None:
+    """Extract a git-created archive while rejecting traversal paths.
+
+    This avoids requiring Python 3.12's tar extraction filters while keeping the worker
+    compatible with Python 3.9+.
+    """
+    target_abs = target.resolve()
+    for member in tf.getmembers():
+        member_target = (target / member.name).resolve()
+        if os.path.commonpath([str(target_abs), str(member_target)]) != str(target_abs):
+            raise ValueError(f"unsafe archive member: {member.name}")
+    tf.extractall(target)
+
+
 def make_snapshot(source: Path, target: Path) -> str:
     """Create a disposable source snapshot. Prefer committed git state for determinism."""
     git = shutil.which("git")
@@ -78,7 +97,7 @@ def make_snapshot(source: Path, target: Path) -> str:
         if proc.returncode == 0:
             target.mkdir(parents=True, exist_ok=True)
             with tarfile.open(archive, "r") as tf:
-                tf.extractall(target, filter="data")
+                _extract_trusted_git_archive(tf, target)
             return "git_archive_head"
 
     ignore = shutil.ignore_patterns(".git", ".state", "__pycache__", ".DS_Store")
@@ -131,16 +150,36 @@ def command_for(harness: str, prompt: str, workspace: Path, max_turns: int) -> l
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--lane", choices=["public_low_risk", "public_high_reasoning", "sensitive", "credentials_and_secrets"], required=True)
-    parser.add_argument("--kind", choices=["code", "editorial", "operations", "analysis"], default="analysis")
-    parser.add_argument("--harness", choices=["claude_native", "fcc_claude", "codex_native", "fcc_codex"])
+    parser.add_argument(
+        "--lane",
+        choices=[
+            "public_low_risk",
+            "public_high_reasoning",
+            "sensitive",
+            "credentials_and_secrets",
+        ],
+        required=True,
+    )
+    parser.add_argument(
+        "--kind",
+        choices=["code", "editorial", "operations", "analysis"],
+        default="analysis",
+    )
+    parser.add_argument(
+        "--harness",
+        choices=["claude_native", "fcc_claude", "codex_native", "fcc_codex"],
+    )
     prompt_group = parser.add_mutually_exclusive_group(required=True)
     prompt_group.add_argument("--prompt")
     prompt_group.add_argument("--prompt-file")
     parser.add_argument("--working-dir", default=str(REPO_ROOT))
     parser.add_argument("--max-turns", type=int, default=8)
     parser.add_argument("--timeout", type=int, default=900)
-    parser.add_argument("--execute", action="store_true", help="Actually invoke the selected harness. Omit for a routing dry-run.")
+    parser.add_argument(
+        "--execute",
+        action="store_true",
+        help="Actually invoke the selected harness. Omit for a routing dry-run.",
+    )
     args = parser.parse_args()
 
     prompt = args.prompt
@@ -212,27 +251,31 @@ def main() -> int:
                 check=False,
             )
         except subprocess.TimeoutExpired as exc:
-            route.update({
-                "ok": False,
-                "error": "worker_timeout",
-                "timeout_seconds": args.timeout,
-                "snapshot_method": snapshot_method,
-                "elapsed_seconds": round(time.time() - started, 3),
-                "stdout": exc.stdout or "",
-                "stderr": exc.stderr or "",
-            })
+            route.update(
+                {
+                    "ok": False,
+                    "error": "worker_timeout",
+                    "timeout_seconds": args.timeout,
+                    "snapshot_method": snapshot_method,
+                    "elapsed_seconds": round(time.time() - started, 3),
+                    "stdout": exc.stdout or "",
+                    "stderr": exc.stderr or "",
+                }
+            )
             print(json.dumps(route, indent=2))
             return 5
 
-        route.update({
-            "ok": proc.returncode == 0,
-            "dry_run": False,
-            "returncode": proc.returncode,
-            "snapshot_method": snapshot_method,
-            "elapsed_seconds": round(time.time() - started, 3),
-            "stdout": proc.stdout,
-            "stderr": proc.stderr,
-        })
+        route.update(
+            {
+                "ok": proc.returncode == 0,
+                "dry_run": False,
+                "returncode": proc.returncode,
+                "snapshot_method": snapshot_method,
+                "elapsed_seconds": round(time.time() - started, 3),
+                "stdout": proc.stdout,
+                "stderr": proc.stderr,
+            }
+        )
         print(json.dumps(route, indent=2))
         return 0 if proc.returncode == 0 else 6
 

@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'automation/update_newsroom_feed.py'
+      - 'automation/update_newsroom_feed_routed.py'
+      - 'newsroom-preview/editorial-routing.json'
       - '.github/workflows/refresh-newsroom-feed.yml'
   schedule:
     - cron: '*/5 * * * *'
@@ -29,8 +31,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Pull newest Wix Blog posts and prerender homepage
-        run: python automation/update_newsroom_feed.py
+      - name: Pull newest Wix Blog posts and enforce editorial routing
+        run: python automation/update_newsroom_feed_routed.py
 
       - name: Commit only when the published story set changed
         shell: bash

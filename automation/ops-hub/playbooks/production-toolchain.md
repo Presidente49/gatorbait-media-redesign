@@ -83,6 +83,77 @@ Do not add or pay for Premiere merely because it is another professional editor.
 
 Any new paid subscription or software installation requires owner approval.
 
+## Open-source/local automation candidates
+
+### Preferred pilot: `DareDev256/fcp-mcp-server`
+
+This is the best-fit candidate discovered for connecting the controller to Final Cut Pro without turning Final Cut into another autonomous agent.
+
+Why it fits:
+
+- exposes Final Cut timeline work through MCP/FCPXML;
+- reads, edits and generates structured timelines;
+- supports markers, roles, transcript-driven work, pacing/QC and rough-cut generation;
+- can push FCPXML into a running Final Cut Pro through Apple-supported document import behavior;
+- uses non-destructive XML round-trips rather than patching the Final Cut binary;
+- MIT licensed;
+- explicitly separates structured/batch editing from creative visual judgment.
+
+Important limitation: Apple does not provide a fully programmatic Final Cut timeline export path, so a true round-trip still has a manual/export boundary unless another approved local bridge safely solves it.
+
+#### Pilot gate
+
+Do **not** connect this repo to a real GatorBait production library first.
+
+Pilot sequence:
+
+1. inspect/pin a specific release or commit;
+2. review dependencies and permissions;
+3. install only on the local Mac with owner approval;
+4. create a throwaway Final Cut library/project;
+5. test read-only FCPXML analysis first;
+6. generate one harmless duplicate/rough-cut timeline;
+7. push/import only into the throwaway library;
+8. verify the timeline manually in Final Cut;
+9. test rollback/removal and local logs;
+10. only then consider allowing the controller to use it on copies of real projects.
+
+The controller must never treat an XML write or Apple event as proof the edit is correct; rendered/timeline verification remains separate.
+
+### Secondary utility: `WyattBlue/auto-editor`
+
+Useful for deterministic mechanical editing and NLE interchange rather than editorial judgment.
+
+Useful capabilities include:
+
+- automatic silence/audio/motion-based cutting;
+- timeline generation;
+- export to Final Cut Pro;
+- export to Adobe Premiere Pro;
+- export to DaVinci Resolve and other NLEs;
+- clip-sequence output;
+- transcript/Whisper-related command-line workflows.
+
+Potential jobs for GatorBait:
+
+- mechanically clean long recordings before a manual feature edit;
+- create a rough FCP timeline from deterministic audio rules;
+- create Premiere/FCP interchange when needed;
+- batch utility work that should not consume model reasoning.
+
+Do not let auto-editor decide what is editorially important. It is a deterministic media utility behind the controller.
+
+Licensing note: repository source is public-domain/Unlicense, while packaged/current product behavior can include separate licensing or rendering limits. Confirm the exact installation/build path and current terms before adopting it operationally.
+
+### Useful references, not primary installs
+
+- **CommandPost** — mature Final Cut workflow automation and accessibility/Lua tooling; potentially useful as a reference or later bridge, but it introduces macOS Accessibility/UI-control permissions and a larger automation surface.
+- **PySceneDetect** — strong deterministic scene/cut detection library for batch analysis; useful if we later need local visual cut detection outside an NLE.
+- **Remotion** — powerful programmatic branded video generation, especially for reusable graphics/templates, but it is a separate rendering framework and has its own license considerations. Add only if we have a real repeatable graphics/video-template job that current tools do not cover.
+- **Final Cut Pro AutoCaption** — interesting FCPXML caption workflow reference; lower priority because Restream, vidIQ and Descript already cover captions well for our main social workflow.
+
+Avoid production approaches that patch or modify the Final Cut Pro application binary merely to gain deeper control. Stability across Final Cut updates is more important than maximum automation depth.
+
 ## Other production capabilities
 
 The controller may use other already-authorized tools when they clearly fit a bounded job, including image/thumbnail generation, Wix Media Manager, social publishing, analytics and local command-line media utilities when present. Their presence does not override the tool ladder or one-writer rule.
@@ -94,8 +165,10 @@ Choose the primary lane with this order:
 1. **Can Restream's waiting clip ship after metadata verification?** -> use Restream.
 2. **Would a stronger social cut materially improve a top moment?** -> vidIQ PREMIUM lane.
 3. **Does the edit depend on transcript/spoken-word precision?** -> Descript.
-4. **Does it require high-touch manual professional finishing?** -> Final Cut Pro.
-5. **Is there a proven Adobe-specific gap?** -> propose Premiere; do not install/buy automatically.
+4. **Does it require structured timeline automation or repeatable Final Cut batch work?** -> consider the pinned `fcp-mcp-server` local pilot once approved/installed.
+5. **Does it require high-touch manual professional finishing?** -> Final Cut Pro.
+6. **Is there a deterministic mechanical cut/interchange job?** -> consider `auto-editor` once approved/installed.
+7. **Is there a proven Adobe-specific gap?** -> propose Premiere; do not install/buy automatically.
 
 Prefer one tool. A chain of tools is justified only when each step has a distinct job.
 
@@ -145,4 +218,4 @@ Use tools already paid for or connected before adding a new subscription. The co
 
 ## Learning loop
 
-Track which lane produced each published asset (`RESTREAM`, `VIDIQ`, `DESCRIPT`, `FINAL_CUT`, `OTHER`) and compare performance only across reasonably similar content. Promote a tool preference after repeated evidence, not one viral result.
+Track which lane produced each published asset (`RESTREAM`, `VIDIQ`, `DESCRIPT`, `FCP_MCP`, `FINAL_CUT`, `AUTO_EDITOR`, `OTHER`) and compare performance only across reasonably similar content. Promote a tool preference after repeated evidence, not one viral result.

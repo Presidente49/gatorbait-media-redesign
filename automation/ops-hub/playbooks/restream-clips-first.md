@@ -2,7 +2,7 @@
 
 ## Objective
 
-Use Restream Clips as the default and normal clip workflow for GatorBait shows. Restream has already created the clips after the show. The controller's job is to go into the prior night's show, review the waiting clips, select the useful ones, route them to the correct social identity, publish them, verify delivery, and record what was used.
+Use Restream Clips as the default and normal clip workflow for GatorBait shows. Restream has already created the clips after the show. The controller's job is to go into the prior night's show, review the waiting clips, verify/correct the clip titles and guest names, select the useful clips, route them to the correct social identity, publish them, verify delivery, and record what was used.
 
 The normal daily workflow does **not** regenerate, re-download, re-cut or re-render the show.
 
@@ -13,16 +13,39 @@ For every completed GatorBait show from the previous night:
 1. Resolve the exact Restream show/recording.
 2. Open that show's existing Restream Clips project/batch.
 3. Inventory the clips Restream already created.
-4. Resolve guest/history context and the current game/news priority.
-5. Select only the useful clips.
-6. Confirm the owning editorial identity and correct connected destination page/channel.
-7. Check whether that exact clip has already been published to that destination.
-8. From the Restream Clips menu, publish the selected clip directly to the approved social destination(s).
-9. Verify the platform publication state or URL.
-10. Record the source clip ID, destination and publication ID/status.
-11. Reuse selected clips in the show's single recap blog post or newsletter only when useful.
+4. Verify each candidate clip title against the actual show title, segment topic and guest roster.
+5. Correct missing, misspelled or misidentified guest names before publishing.
+6. Resolve guest/history context and the current game/news priority.
+7. Select only the useful clips.
+8. Confirm the owning editorial identity and correct connected destination page/channel.
+9. Check whether that exact clip has already been published to that destination.
+10. From the Restream Clips menu, publish the selected clip directly to the approved social destination(s).
+11. Verify the platform publication state or URL.
+12. Record the source clip ID, final published title, guest identity, destination and publication ID/status.
+13. Reuse selected clips in the show's single recap blog post or newsletter only when useful.
 
 That is the default controller job. There is no clip-generation step in the normal path.
+
+## Title + guest verification gate
+
+Restream's AI-generated clip title is a **draft label**, not authoritative metadata. Before publication the controller must verify:
+
+- correct show identity;
+- correct guest name(s);
+- correct spelling and current public name;
+- whether the guest is actually speaking in or central to the clip;
+- whether the title accurately describes the clip instead of guessing from nearby transcript context;
+- whether a recurring guest/history relationship materially improves the final title or caption.
+
+Preferred evidence order:
+
+1. confirmed show guest list / AP Mode package;
+2. actual show transcript or clip transcript;
+3. Restream event/show metadata;
+4. verified guest-history record;
+5. owner recollection when clearly attributed.
+
+If the AI title omits a meaningful guest name, add it when doing so makes the title clearer. If it names the wrong person, do not publish until corrected. Never preserve an AI-generated title just because Restream created it.
 
 ## Editorial selection gate
 
@@ -65,10 +88,11 @@ If a matching publication exists, that destination for that clip is `DONE`; do n
 
 For normal post-show distribution:
 
-`Restream show -> existing Clips batch -> controller selection/context/routing -> Restream Clips Publish -> connected social destination`
+`Restream show -> existing AI Clips batch -> controller title/guest verification -> controller selection/context/routing -> Restream Clips Publish -> connected social destination`
 
 The controller owns:
 
+- title and guest-name verification;
 - which waiting clips are worth publishing;
 - guest/history framing;
 - caption/title rules;
@@ -77,7 +101,7 @@ The controller owns:
 - verification;
 - performance logging.
 
-Restream owns the normal clip creation and the direct Clips-menu publish action.
+Restream owns the normal AI highlight selection, reframing/caption creation and the direct Clips-menu publish action.
 
 ## Exception-only editing
 
@@ -98,7 +122,7 @@ Custom editing is an exception. It must not become the default morning path.
 
 Morning show-content step:
 
-`previous night's shows -> open waiting Restream Clips -> select -> contextualize -> route -> de-duplicate -> fire off from Clips menu -> verify -> record -> recap/newsletter reuse if useful`
+`previous night's shows -> open waiting Restream Clips -> verify/fix titles + guest names -> select -> contextualize -> route -> de-duplicate -> fire off from Clips menu -> verify -> record -> recap/newsletter reuse if useful`
 
 If an eligible completed show has no waiting Restream Clips, record that as an exception and decide whether custom editing is worth doing.
 
@@ -108,6 +132,8 @@ A clip lane is complete only when the controller has:
 
 - exact source show/recording;
 - exact Restream clip ID or timestamp fingerprint;
+- verified final title;
+- verified guest name(s) where relevant;
 - owning show/editorial identity;
 - destination page/channel ID;
 - publication status/URL where available;

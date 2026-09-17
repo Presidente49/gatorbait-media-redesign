@@ -17,6 +17,10 @@ services:
       N8N_PERSONALIZATION_ENABLED: "false"
     volumes:
       - gatorbait_n8n_data:/home/node/.n8n
+      # File-queue bridge to the host-side Claude/Codex worker. No model credentials
+      # or host binaries are mounted into n8n. n8n may write job JSON to /jobs/inbox
+      # and read completed result JSON from /jobs/done or /jobs/failed.
+      - ./.state/model-jobs:/jobs
 
 volumes:
   gatorbait_n8n_data:

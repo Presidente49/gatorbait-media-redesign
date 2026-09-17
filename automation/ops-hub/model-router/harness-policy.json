@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "authority": "single-controller",
+  "principle": "Use already-paid trusted capacity for high-value work, FCC capacity for bounded public work, and keep all production writes behind controller policy and external verification.",
+  "harnesses": {
+    "claude_native": {
+      "command": "claude",
+      "identity": "Native Claude Code",
+      "token_pool": "Anthropic Claude plan / applicable Agent SDK allowance when invoked headlessly",
+      "best_for": [
+        "long-context editorial synthesis",
+        "complex architecture reasoning",
+        "large repo comprehension",
+        "high-value final review",
+        "knowledge-work plugin workflows"
+      ],
+      "allowed_data_lanes": ["public_low_risk", "public_high_reasoning", "sensitive"],
+      "credentials_and_secrets": false,
+      "default_mode": "read_only_worker",
+      "production_writer": false
+    },
+    "fcc_claude": {
+      "command": "fcc-claude",
+      "identity": "Claude Code harness routed through FCC",
+      "token_pool": "actual configured FCC upstream provider",
+      "best_for": [
+        "public repo scans",
+        "metadata drafts",
+        "public research preprocessing",
+        "test generation",
+        "sanitized log summarization"
+      ],
+      "allowed_data_lanes": ["public_low_risk"],
+      "sensitive_only_when_actual_upstream_is_explicitly_trusted": true,
+      "credentials_and_secrets": false,
+      "default_mode": "read_only_worker",
+      "production_writer": false
+    },
+    "codex_native": {
+      "command": "codex",
+      "identity": "Native Codex CLI",
+      "token_pool": "locally authenticated OpenAI / ChatGPT path",
+      "best_for": [
+        "code implementation in isolated workspaces",
+        "tests and debugging",
+        "repo refactors",
+        "structured code review"
+      ],
+      "allowed_data_lanes": ["public_low_risk", "public_high_reasoning", "sensitive"],
+      "credentials_and_secrets": false,
+      "default_mode": "read_only_worker",
+      "production_writer": false
+    },
+    "fcc_codex": {
+      "command": "fcc-codex",
+      "identity": "Codex harness routed through FCC",
+      "token_pool": "actual configured FCC upstream provider; pinned FCC also supports OpenAI/ChatGPT connected-account routing when authorized locally",
+      "best_for": [
+        "public code review",
+        "test generation",
+        "repo inventory",
+        "cheap implementation alternatives in disposable workspaces"
+      ],
+      "allowed_data_lanes": ["public_low_risk"],
+      "sensitive_only_when_actual_upstream_is_explicitly_trusted": true,
+      "credentials_and_secrets": false,
+      "default_mode": "read_only_worker",
+      "production_writer": false
+    }
+  },
+  "routing": [
+    {
+      "match": "public_low_risk",
+      "preferred": ["fcc_codex", "fcc_claude"],
+      "fallback": ["codex_native", "claude_native"]
+    },
+    {
+      "match": "public_high_reasoning_code",
+      "preferred": ["codex_native", "claude_native"],
+      "fallback": ["fcc_codex"]
+    },
+    {
+      "match": "public_high_reasoning_editorial_or_long_context",
+      "preferred": ["claude_native", "codex_native"],
+      "fallback": ["fcc_claude"]
+    },
+    {
+      "match": "sensitive",
+      "preferred": ["claude_native", "codex_native"],
+      "fallback": [],
+      "random_free_provider_allowed": false
+    },
+    {
+      "match": "credentials_and_secrets",
+      "preferred": [],
+      "fallback": [],
+      "model_prompt_allowed": false
+    }
+  ],
+  "headless_worker_contract": {
+    "production_write_authorized": false,
+    "default_read_only": true,
+    "bounded_turns": true,
+    "structured_output_preferred": true,
+    "actual_model_provider_must_be_logged": true,
+    "controller_must_verify_output": true,
+    "hard_or_shared_mutations_require_controller_gate": true,
+    "do_not_trust_model_reported_sandbox_as_only_write_boundary": true
+  },
+  "knowledge_work_plugins": {
+    "upstream": "anthropics/knowledge-work-plugins",
+    "use_as": "skills_and_workflow_patterns",
+    "initial_plugins": ["operations", "marketing", "data"],
+    "productivity": "defer until its CLAUDE.md/task-memory conventions are reconciled with Ops Hub state ownership",
+    "may_override_gatorbait_policy": false
+  }
+}

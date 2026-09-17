@@ -2,33 +2,27 @@
 
 ## Objective
 
-Use Restream Clips as the default clip factory for GatorBait shows. The controller should consume the waiting clip batch Restream already created for each show, not regenerate the same work in another editor unless there is a specific editorial reason.
+Use Restream Clips as the default and normal clip workflow for GatorBait shows. Restream has already created the clips after the show. The controller's job is to go into the prior night's show, review the waiting clips, select the useful ones, route them to the correct social identity, publish them, verify delivery, and record what was used.
 
-## Default source order
+The normal daily workflow does **not** regenerate, re-download, re-cut or re-render the show.
 
-For any completed GatorBait show longer than the Restream Clips minimum:
+## Default morning action
+
+For every completed GatorBait show from the previous night:
 
 1. Resolve the exact Restream show/recording.
 2. Open that show's existing Restream Clips project/batch.
-3. Inventory the generated clips and their source IDs.
-4. Select the strongest useful clips from that waiting batch.
-5. Add guest-history, game-week/news context and destination routing.
-6. Publish or schedule only the selected clips.
-7. Record source clip ID + destination + publication ID so the same clip cannot be posted twice to the same destination.
+3. Inventory the clips Restream already created.
+4. Resolve guest/history context and the current game/news priority.
+5. Select only the useful clips.
+6. Confirm the owning editorial identity and correct connected destination page/channel.
+7. Check whether that exact clip has already been published to that destination.
+8. From the Restream Clips menu, publish the selected clip directly to the approved social destination(s).
+9. Verify the platform publication state or URL.
+10. Record the source clip ID, destination and publication ID/status.
+11. Reuse selected clips in the show's single recap blog post or newsletter only when useful.
 
-Do **not** create a second clip-generation pass by default.
-
-## Fallback editors
-
-Use vidIQ, Descript or another approved editor only when one of these is true:
-
-- Restream failed to generate a usable clip for an important moment;
-- a precise timestamp has editorial value that Restream did not select;
-- the vertical crop/captions need a custom repair;
-- the clip must be combined with another approved asset;
-- the owner explicitly requests a custom version.
-
-Fallback output must retain the same source-show identity and de-duplication record as a Restream clip.
+That is the default controller job. There is no clip-generation step in the normal path.
 
 ## Editorial selection gate
 
@@ -41,7 +35,7 @@ The controller does not publish every generated clip. For each waiting batch it 
 - debate/conversation hook;
 - evergreen hook.
 
-If the week's priority is a specific game or breaking story, timely clips related to that priority should be considered first, but unrelated high-value Buddy Martin Show history/personality clips can still run under the Buddy identity when they are genuinely strong.
+If the week's priority is a specific game or breaking story, timely clips related to that priority should be considered first. Strong Buddy Martin Show history/personality clips can still run under the Buddy identity when they are genuinely valuable.
 
 ## Guest-history pass
 
@@ -55,50 +49,69 @@ Route by editorial identity before platform defaults:
 - Buddy Martin Show guest/history/personality clips -> The Buddy Martin Show;
 - other named shows -> their approved page/channel when connected.
 
-Facebook is currently the first distribution lane because it is the largest active GatorBait audience. Other connected destinations may be added after Facebook or multiposted when appropriate.
+Facebook is currently the first distribution lane because it is the largest active GatorBait audience. Restream's Clips publish action should be the primary social delivery path for these already-created clips when the correct destination is connected there.
 
-## Facebook de-duplication gate
+## De-duplication gate
 
-Before Restream publishes to Facebook, the controller must check whether the same source clip has already been published to the same Facebook Page through Wix Social Publisher, Restream, or another approved route.
+Before Restream publishes any clip to any destination, the controller must check whether the same source clip has already been published to that exact destination through Restream, Wix Social Publisher, Metricool or another approved route.
 
 Identity key:
 
-`source_show_id + source_clip_id(or timestamp fingerprint) + destination_platform + destination_page_id`
+`source_show_id + source_clip_id(or timestamp fingerprint) + destination_platform + destination_page_or_channel_id`
 
-If a matching publication exists, Facebook for that clip is `DONE`; Restream must not post it again there. Other still-unpublished destinations can continue independently.
+If a matching publication exists, that destination for that clip is `DONE`; do not post it again. Other still-unpublished destinations may continue independently.
 
-## Restream posting behavior
+## Restream Clips is the primary publish surface
 
-Restream can publish Clips directly to supported connected destinations. Treat the Restream publish UI/API as a delivery capability, not as the source of editorial authority. The controller still owns:
+For normal post-show distribution:
 
-- clip selection;
+`Restream show -> existing Clips batch -> controller selection/context/routing -> Restream Clips Publish -> connected social destination`
+
+The controller owns:
+
+- which waiting clips are worth publishing;
 - guest/history framing;
-- caption/title approval rules;
+- caption/title rules;
 - destination identity;
 - duplicate prevention;
 - verification;
 - performance logging.
 
-Autoposting for Live Clipping must remain bounded by a minimum quality/virality threshold, a maximum clips-per-batch limit, approved destinations and brand-safe caption templates. It must never bypass the controller's destination or duplication rules.
+Restream owns the normal clip creation and the direct Clips-menu publish action.
+
+## Exception-only editing
+
+Use Descript, vidIQ or another approved editor **only** when a selected Restream clip needs a specific repair or custom treatment, such as:
+
+- unusable vertical crop;
+- caption/transcript repair;
+- precise trim needed for context;
+- combining approved assets;
+- Restream failed to create an important moment;
+- owner explicitly requests a custom version.
+
+When Descript is used, prefer the existing Restream <-> Descript integration rather than creating a manual download/upload workflow.
+
+Custom editing is an exception. It must not become the default morning path.
 
 ## Daily flow
 
 Morning show-content step:
 
-`previous night's shows -> resolve Restream project -> consume waiting Clips batch -> select -> contextualize -> route -> de-duplicate -> publish -> build/update recap -> verify -> record`
+`previous night's shows -> open waiting Restream Clips -> select -> contextualize -> route -> de-duplicate -> fire off from Clips menu -> verify -> record -> recap/newsletter reuse if useful`
 
-If Restream has no waiting clips for an eligible completed show, record that as an exception and decide whether fallback editing is worth doing.
+If an eligible completed show has no waiting Restream Clips, record that as an exception and decide whether custom editing is worth doing.
 
 ## Verification
 
 A clip lane is complete only when the controller has:
 
 - exact source show/recording;
-- exact selected clip or timestamp fingerprint;
+- exact Restream clip ID or timestamp fingerprint;
 - owning show/editorial identity;
 - destination page/channel ID;
 - publication status/URL where available;
-- recap reuse state;
+- recap/newsletter reuse state;
 - de-duplication record.
 
-A generated clip existing in Restream does not by itself mean the distribution job is complete.
+A clip existing in Restream is `READY`, not `DONE`. It becomes `DONE` for a destination only after publication is verified or intentionally skipped.

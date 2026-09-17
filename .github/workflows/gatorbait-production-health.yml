@@ -2,6 +2,12 @@ name: GatorBait production health
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - "CLAUDE.md"
+      - "automation/ops-hub/model-router/**"
+      - "automation/ops-hub/docker-compose.yml"
+      - ".github/workflows/gatorbait-production-health.yml"
   schedule:
     - cron: "17 */6 * * *"
 
@@ -9,7 +15,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: gatorbait-production-health
+  group: gatorbait-production-health-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -19,6 +25,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Test controller model routing
+        run: python3 automation/ops-hub/model-router/test_task_runner.py
 
       - name: Check production routes and brand markers
         run: python3 automation/site_health_check.py

@@ -4,6 +4,8 @@
 
 Recover former paying GatorBait customers with useful, measurable reasons to return instead of blasting the entire old list with one generic discount.
 
+This workflow is **separate from the Restream/show-clips editorial workflow**. Show clips are general publishing/distribution assets and are not automatically routed into win-back campaigns.
+
 ## Controller scope
 
 The controller may automatically:
@@ -11,7 +13,7 @@ The controller may automatically:
 - identify eligible former-subscriber cohorts from connected first-party data;
 - exclude unsubscribed/suppressed contacts and anyone without a lawful contact basis;
 - prepare audience counts and campaign drafts;
-- select current articles/shows that demonstrate renewed value;
+- select current articles/shows that demonstrate renewed value when a win-back campaign independently needs editorial proof;
 - create control/test cohorts;
 - measure visits, starts, conversions and 30/60/90-day retention.
 
@@ -53,7 +55,7 @@ Lead with product value, not guilt:
 
 ### Touch 2 — Proof of value
 
-Send only to eligible non-converters. Feature 2–3 genuinely strong current pieces or clips. The purpose is to demonstrate that GatorBait is active and useful now.
+Send only to eligible non-converters. Feature 2–3 genuinely strong current pieces selected for the campaign. Do not automatically inject the nightly clip/recap feed into this sequence.
 
 ### Touch 3 — Last bounded invitation
 

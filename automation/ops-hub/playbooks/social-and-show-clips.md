@@ -2,21 +2,22 @@
 
 ## Objective
 
-Treat every approved GatorBait live show as a source package that can create multiple monetizable, platform-native assets without requiring Brenden to manually find, download and repost every clip.
+Treat every approved GatorBait live show as a source package that produces one useful general post-show blog recap plus multiple monetizable, platform-native social assets without requiring Brenden to manually find, download and repost every clip.
+
+This workflow is **not part of subscriber win-back**. Win-back is a separate customer-recovery lane. Show clips are an editorial/distribution lane for the general GatorBait audience.
 
 The controller owns the loop. Restream, Metricool, YouTube/Facebook tools and models are subordinate capabilities.
 
 ## Revenue principle
 
-GatorBait should not publish one identical clip everywhere and call that a strategy. Each source moment becomes a small campaign with one objective:
+GatorBait should not publish one identical clip everywhere and call that a strategy. Each completed show should create a reusable editorial package:
 
-- earn qualified video views;
-- drive viewers to the full show;
-- drive readers to a related article;
-- grow GatorBait Weekly;
-- or move a high-intent audience to membership/store.
+1. one general post-show recap blog post;
+2. up to five selected clips with context;
+3. platform-native social distribution;
+4. optional normal GatorBait Weekly reuse when a clip genuinely improves the newsletter.
 
-Only one primary CTA per asset unless a platform format clearly supports more.
+The default blog destination is the recap post, not a membership/win-back campaign.
 
 ## Nightly show-to-distribution loop
 
@@ -47,7 +48,7 @@ For each candidate record:
 - title/summary if provided;
 - speaker/guest if known;
 - rights status;
-- related canonical GatorBait article/show URL if one exists.
+- related canonical full-show URL when available.
 
 ### 3. CLASSIFY — pick jobs, not "best clips"
 
@@ -61,9 +62,26 @@ Select up to five useful moments per show, with different jobs where available:
 
 Selection is reasoning work. Rights, IDs, dates, duplication and source matching are deterministic gates.
 
-### 4. PLAN — package each selected clip
+### 4. BUILD — one general recap blog post
 
-Default deliverables:
+The default editorial output is **one recap post per completed show**, not one thin post per clip.
+
+Recommended structure:
+
+- headline tied to the actual show/topic, not "5 clips you missed" clickbait;
+- 1–2 paragraph show summary;
+- embedded full show or canonical show link near the top;
+- 3–5 selected clip blocks;
+- a short paragraph of context before each clip explaining what is being discussed and why it matters;
+- guest names and relevant facts verified from the source;
+- related GatorBait stories when they genuinely add context;
+- one final path to watch the full show or continue reading.
+
+The recap should be useful even if a reader never clicks a clip. Do not turn transcripts into filler and do not manufacture a separate SEO article for every moment.
+
+### 5. PLAN — package clips for social
+
+Default social deliverables:
 
 - 9:16 vertical master for Reels/Shorts when source quality supports it;
 - burned-in readable captions or platform captions;
@@ -72,60 +90,61 @@ Default deliverables:
 - Instagram caption;
 - YouTube Shorts title/description;
 - X post only when the clip/topic belongs there;
-- related article or full-show CTA;
+- recap-blog or full-show CTA;
 - campaign ID.
 
 Do not use identical copy everywhere.
 
-### 5. ACT — distribution
+### 6. ACT — distribution
 
 Preferred execution path:
 
-`Restream MCP → local n8n MCP Client workflow → approved clip asset → Metricool/platform destination`
+`Restream MCP → local n8n MCP Client workflow → approved clip asset → Wix recap post + Metricool/platform destination`
 
 n8n's MCP Client can connect to external MCP servers. The Restream connection must be OAuth-authorized locally; do not store tokens in Git.
 
-Routine organic publishing may run automatically only inside `policy.json` and the controller's social quality gates. Sensitive claims, rights uncertainty, legal allegations, emergencies, personnel disputes, paid promotion and unapproved commercial offers escalate.
+Routine organic publishing may run automatically only inside `policy.json` and the controller's editorial/social quality gates. Sensitive claims, rights uncertainty, legal allegations, emergencies, personnel disputes, paid promotion and unapproved commercial offers escalate.
 
-### 6. REUSE — article and GatorBait Weekly
+### 7. NEWSLETTER REUSE — optional, normal editorial only
 
-After a clip is selected, the controller checks whether it strengthens an existing story/show package.
+The recap/clip workflow may contribute to the regular GatorBait Weekly newsletter, but this is optional and unrelated to win-back.
 
-Allowed outputs:
+Allowed reuse:
 
-- embed/link the clip in the related canonical article;
-- add a `Watch` block to a relevant article;
-- add a short `From GatorBait TV` block to GatorBait Weekly;
-- create a new article only when the clip contains enough verified news/context to justify a standalone story.
+- one `From GatorBait TV` block using the strongest clip or recap;
+- a short link to the recap blog post;
+- a full-show link when that is more useful.
 
-Do not create thin SEO posts around every clip.
+Do not route show clips into a former-subscriber sequence just because the content exists. A win-back campaign may later choose current editorial proof independently under its own playbook, but there is no automatic linkage between these workflows.
 
-### 7. VERIFY
+### 8. VERIFY
 
-For every published/scheduled asset verify:
+For every recap/social package verify:
 
-- correct account/channel;
+- correct Restream event/recording;
 - correct clip/source identity;
-- title/caption matches the content;
-- destination URL works;
+- recap title/date/guest names are accurate;
+- every embedded clip or link works;
+- canonical recap/full-show destination works;
 - vertical crop and caption safe area are usable;
 - rights/commercial-use status remains valid;
-- scheduled/published object exists.
+- scheduled/published platform objects exist when distribution is enabled.
 
 A model cannot certify its own edit. Verification uses platform object data and/or rendered preview.
 
-### 8. RECORD + LEARN
+### 9. RECORD + LEARN
 
 At 24 hours and 7 days, record where available:
 
-- qualified/engaged views;
+- recap pageviews and engaged time;
+- clip qualified/engaged views;
 - watch time / retention;
 - completion rate;
 - shares/comments;
-- link clicks;
+- clicks from social to recap/full show;
 - followers/subscribers gained;
 - revenue/earnings where the platform exposes it;
-- article/newsletter conversions attributable to the campaign ID.
+- newsletter clicks when the recap is reused there.
 
 Promote repeatable patterns only after enough comparable posts exist. Do not let one viral outlier rewrite the playbook.
 
@@ -133,24 +152,22 @@ Promote repeatable patterns only after enough comparable posts exist. Do not let
 
 ### Facebook
 
-Facebook Content Monetization can pay across Reels, longer video, Stories, photos and text posts, with payouts tied to eligible performance. In 2026 Meta said it is emphasizing original content, deeper engagement, longer watch time and qualified views. Therefore:
-
 - prioritize original GatorBait-owned show footage;
 - preserve enough context to make clips satisfying, not deceptive fragments;
 - test Reels and longer native video when a segment deserves both;
-- do not rely only on outbound-link posts when native video can earn directly.
+- use the recap blog as an owned destination when a click makes sense, but do not replace native video with outbound-link-only posts.
 
 ### YouTube
 
 - use compelling title/thumbnail/first seconds that immediately deliver the promised value;
 - preserve original, non-repetitious content and commercial rights;
 - use Shorts for discovery and the full show for watch-page monetization;
-- keep a link/pinned-comment path to the related full show or article when appropriate;
+- link to the recap post or full show when useful;
 - judge Shorts by engaged views and retention, not raw starts alone.
 
 ### Instagram
 
-Treat Instagram primarily as reach/community/brand unless current account monetization data proves direct revenue. Use native 9:16 creative, captions, visible human moments and clean safe-zone text. Route high-intent users toward the owned newsletter, article, show or membership page.
+Treat Instagram primarily as reach/community/brand unless current account monetization data proves direct revenue. Use native 9:16 creative, captions, visible human moments and clean safe-zone text. Route high-intent users toward the recap, full show, newsletter or membership page as context warrants.
 
 ### X
 
@@ -160,11 +177,11 @@ Use selectively for breaking context, quotes, debate and live-game/show conversa
 
 The controller should aim for a repeatable editorial rhythm rather than a rigid quota:
 
-- show nights: live promo + strongest immediate post-show clip;
-- next morning: 1–2 analysis/news clips tied to current coverage;
-- mid-day: article/column visual or quote card if it serves a real story;
+- show night: live promo + strongest immediate post-show clip;
+- next morning: publish the general recap blog post and 1–2 analysis/news clips;
+- mid-day: related article/column visual or quote card if it serves a real story;
 - afternoon/evening: second clip or discussion post based on performance and news cycle;
-- newsletter day: reuse the week's strongest clip as a `Watch` block, not as filler.
+- newsletter day: optionally reuse the week's strongest recap/clip as a normal editorial block.
 
 If there is no strong asset, publish less. Low-value volume can hurt monetization and audience trust.
 
@@ -175,10 +192,11 @@ Stop and escalate when:
 - source recording or workspace cannot be positively identified;
 - guest/content rights are uncertain;
 - clip materially changes meaning when removed from context;
+- recap would require unsupported facts or invented context;
 - platform destination is wrong or disconnected;
 - Restream returns a write action unrelated to the selected event/project;
 - repeated workflow failure reaches the controller retry bound.
 
 ## Implementation requirement
 
-Before this workflow becomes live automation, connect Restream's remote MCP endpoint to the local n8n MCP Client using OAuth and test read-only operations first. Then test one known recording end-to-end with publishing disabled. Enable automatic distribution only after the controller can prove source ID, clip ID, destination account and rollback/unschedule behavior.
+Before this workflow becomes live automation, connect Restream's remote MCP endpoint to the local n8n MCP Client using OAuth and test read-only operations first. Then test one known recording end-to-end with **recap and social publishing disabled**. Enable automatic publishing only after the controller can prove source ID, clip ID, recap destination, destination account and rollback/unschedule behavior.

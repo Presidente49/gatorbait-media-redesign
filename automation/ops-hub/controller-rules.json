@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
@@ -9,6 +9,26 @@
     "new_dependencies_require_explicit_justification": true
   },
   "profiles": {
+    "daily_ops": {
+      "surfaces": ["daily operations", "morning brief", "newsroom operations", "daily QC"],
+      "deterministic_gates": [
+        "public health checks completed before reasoning work",
+        "homepage and Magazine freshness compared with canonical Wix/RSS content",
+        "newest important article and latest show destination identified",
+        "desktop and mobile QC state recorded",
+        "open work items have one owner/next action/verification method",
+        "customer, pricing, paid-ad and account-access actions remain behind policy gates",
+        "healthy current systems may resolve to NOOP"
+      ],
+      "bounded_reasoning": [
+        "prioritize up to five material daily actions",
+        "editorial hierarchy decisions",
+        "distribution timing",
+        "revenue exception interpretation",
+        "decide which issues deserve escalation instead of more retries"
+      ],
+      "verify": ["Ops Hub status", "desktop 1365-1440px", "390px mobile", "430px mobile after changes", "current Wix/RSS story set", "end-of-day record"]
+    },
     "homepage": {
       "surfaces": ["/", "front page", "landing page"],
       "deterministic_gates": [
@@ -133,6 +153,26 @@
         "choose CTA based on recap article or full-show objective"
       ],
       "verify": ["Restream project details", "downloaded clip identity", "recap blog post draft/published object", "scheduled/published social object", "YouTube/Facebook analytics after distribution"]
+    },
+    "mobile_app": {
+      "surfaces": ["Spaces by Wix", "member app", "mobile app", "native app", "iOS", "Android"],
+      "deterministic_gates": [
+        "mobile web remains canonical public content surface",
+        "Spaces pilot is evaluated before a paid branded-app commitment",
+        "app navigation resolves to current verified editorial/business destinations",
+        "notification deep links resolve to the intended current content",
+        "membership/access state matches Wix Pricing Plans",
+        "paid app plan or app-store fees require owner approval",
+        "app does not create a duplicate editorial source of truth"
+      ],
+      "bounded_reasoning": [
+        "Spaces pilot information architecture",
+        "notification strategy",
+        "pilot cohort design",
+        "compare app retention with mobile web",
+        "decide whether a branded native app has a durable business job"
+      ],
+      "verify": ["Spaces/member-app preview", "iOS where available", "Android where available", "notification deep links", "membership state", "pilot adoption and return-use metrics"]
     },
     "frontend": {
       "surfaces": ["CSS", "HTML", "Velo", "embed", "navigation", "form"],

@@ -21,14 +21,17 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 
+from controller import evaluate_cycle
+
 
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "config.json"
 STATE_DIR = Path(os.environ.get("GBM_OPS_STATE_DIR", ROOT / ".state"))
 STATUS_PATH = STATE_DIR / "status.json"
+CONTROLLER_STATE_PATH = STATE_DIR / "controller-state.json"
 EVENTS_PATH = STATE_DIR / "events.jsonl"
 BRIEF_PATH = STATE_DIR / "latest-brief.md"
-USER_AGENT = "GatorBait-Ops-Hub/1.0 (+https://www.gatorbaitmedia.com/)"
+USER_AGENT = "GatorBait-Ops-Hub/1.1 (+https://www.gatorbaitmedia.com/)"
 
 
 @dataclass(frozen=True)
@@ -45,6 +48,16 @@ class CheckResult:
 def load_config() -> dict[str, Any]:
     with CONFIG_PATH.open(encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def read_json(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return payload if isinstance(payload, dict) else None
+    except (OSError, json.JSONDecodeError):
+        return None
 
 
 def fetch(target: dict[str, Any], timeout: int) -> CheckResult:
@@ -102,12 +115,19 @@ def write_event(payload: dict[str, Any]) -> None:
 
 
 def write_brief(payload: dict[str, Any]) -> None:
+    controller = payload.get("controller", {})
     lines = [
         "# GatorBait operations brief",
         "",
         f"Generated: {payload['checked_at']}",
         "",
         f"Overall status: **{'HEALTHY' if payload['ok'] else 'ATTENTION REQUIRED'}**",
+        "",
+        (
+            "Controller: "
+            f"**{str(controller.get('phase', 'observe')).upper()}** / "
+            f"{controller.get('decision', 'no_action')}"
+        ),
         "",
         "| Check | Result | Time | Final URL |",
         "|---|---:|---:|---|",
@@ -120,6 +140,8 @@ def write_brief(payload: dict[str, Any]) -> None:
         )
         if result["error"]:
             lines.append(f"\n- {result['name']}: {result['error']}")
+    if controller.get("reason"):
+        lines.extend(["", f"Controller reason: {controller['reason']}"])
     BRIEF_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -128,25 +150,46 @@ def run_checks(config: dict[str, Any]) -> dict[str, Any]:
     timeout = int(config.get("request_timeout_seconds", 30))
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(8, len(targets))) as pool:
         results = list(pool.map(lambda item: fetch(item, timeout), targets))
+
     now = datetime.now(timezone.utc).isoformat()
-    payload = {
+    payload: dict[str, Any] = {
         "service": "gatorbait-ops-hub",
-        "version": 1,
+        "version": 2,
         "checked_at": now,
         "ok": all(result.ok for result in results),
         "checks": [asdict(result) for result in results],
     }
+
     STATE_DIR.mkdir(parents=True, exist_ok=True)
-    previous_ok = None
-    if STATUS_PATH.exists():
-        try:
-            previous_ok = json.loads(STATUS_PATH.read_text(encoding="utf-8")).get("ok")
-        except (OSError, json.JSONDecodeError):
-            previous_ok = None
+    previous_status = read_json(STATUS_PATH)
+    previous_controller = read_json(CONTROLLER_STATE_PATH)
+    controller = evaluate_cycle(payload, previous_controller, config)
+    payload["controller"] = controller
+
     atomic_json(STATUS_PATH, payload)
+    atomic_json(CONTROLLER_STATE_PATH, controller)
     write_brief(payload)
+
+    previous_ok = previous_status.get("ok") if previous_status else None
     if previous_ok is None or previous_ok != payload["ok"] or not payload["ok"]:
         write_event({"type": "health", **payload})
+
+    previous_decision = previous_controller.get("decision") if previous_controller else None
+    previous_fingerprint = (
+        previous_controller.get("failure_fingerprint") if previous_controller else None
+    )
+    if (
+        previous_decision != controller["decision"]
+        or previous_fingerprint != controller["failure_fingerprint"]
+    ):
+        write_event(
+            {
+                "type": "controller",
+                "checked_at": now,
+                "controller": controller,
+            }
+        )
+
     return payload
 
 
@@ -165,6 +208,10 @@ def dashboard(payload: dict[str, Any]) -> str:
             "</tr>"
         )
     overall = "ALL SYSTEMS HEALTHY" if payload.get("ok") else "ATTENTION REQUIRED"
+    controller = payload.get("controller", {})
+    phase = html.escape(str(controller.get("phase", "observe")).upper())
+    decision = html.escape(str(controller.get("decision", "no_action")))
+    reason = html.escape(str(controller.get("reason", "")))
     return f"""<!doctype html>
 <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>GatorBait Operations</title>
@@ -173,24 +220,33 @@ body{{margin:0;background:#f4f1e9;color:#08132f;font:16px/1.5 -apple-system,Blin
 main{{max-width:980px;margin:auto;padding:48px 20px}}h1{{font:700 clamp(34px,6vw,64px)/1 Georgia,serif;margin:0 0 8px}}
 .bar{{height:6px;background:#fa4616;margin:24px 0}}.card{{background:white;border:1px solid #d7dce5;padding:24px;overflow:auto}}
 table{{width:100%;border-collapse:collapse}}th,td{{padding:12px;text-align:left;border-bottom:1px solid #e2e5ea}}.pass{{color:#137333;font-weight:800}}.fail{{color:#b3261e;font-weight:800}}
-a{{color:#0021a5}}small{{color:#59657b}}
+a{{color:#0021a5}}small{{color:#59657b}}.controller{{margin:18px 0;padding:14px 18px;background:#fff;border-left:5px solid #0021a5}}
 </style><main><small>LOCAL CONTROL ROOM</small><h1>GatorBait Operations</h1><div class="bar"></div>
 <h2>{overall}</h2><p>Last check: {html.escape(payload.get('checked_at','Not run yet'))}</p>
+<div class="controller"><strong>Controller:</strong> {phase} / {decision}<br><small>{reason}</small></div>
 <div class="card"><table><thead><tr><th>System</th><th>Result</th><th>HTTP</th><th>Time</th><th>Link</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div></main></html>"""
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:  # noqa: N802
-        if self.path not in ("/", "/api/status"):
+        if self.path not in ("/", "/api/status", "/api/controller"):
             self.send_error(404)
             return
-        payload = (
-            json.loads(STATUS_PATH.read_text(encoding="utf-8"))
-            if STATUS_PATH.exists()
-            else {"ok": False, "checked_at": "Not run yet", "checks": []}
-        )
-        if self.path == "/api/status":
+        payload = read_json(STATUS_PATH) or {
+            "ok": False,
+            "checked_at": "Not run yet",
+            "checks": [],
+            "controller": {
+                "architecture": "single-controller",
+                "phase": "observe",
+                "decision": "not_started",
+            },
+        }
+        if self.path == "/api/controller":
+            body = json.dumps(payload.get("controller", {})).encode()
+            content_type = "application/json"
+        elif self.path == "/api/status":
             body = json.dumps(payload).encode()
             content_type = "application/json"
         else:
@@ -217,7 +273,7 @@ def serve(config: dict[str, Any]) -> None:
     signal.signal(signal.SIGINT, request_stop)
     host = str(config.get("dashboard_host", "127.0.0.1"))
     port = int(config.get("dashboard_port", 8765))
-    interval = max(60, int(config.get("interval_seconds", 900)))
+    default_interval = max(60, int(config.get("interval_seconds", 900)))
     server = ThreadingHTTPServer((host, port), Handler)
     server.timeout = 1
     next_check = 0.0
@@ -225,8 +281,16 @@ def serve(config: dict[str, Any]) -> None:
     while not stop.is_set():
         if time.monotonic() >= next_check:
             status = run_checks(config)
-            print(f"{status['checked_at']} {'HEALTHY' if status['ok'] else 'ATTENTION'}")
-            next_check = time.monotonic() + interval
+            controller = status.get("controller", {})
+            print(
+                f"{status['checked_at']} "
+                f"{'HEALTHY' if status['ok'] else 'ATTENTION'} "
+                f"{controller.get('phase', 'observe')}/{controller.get('decision', 'no_action')}"
+            )
+            delay = max(
+                60, int(controller.get("next_check_seconds", default_interval))
+            )
+            next_check = time.monotonic() + delay
         server.handle_request()
     server.server_close()
 

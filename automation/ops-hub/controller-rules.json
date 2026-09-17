@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
@@ -85,7 +85,8 @@
         "offer terms and renewal terms are explicit",
         "membership destination is valid",
         "frequency cap prevents repeated nuisance contact",
-        "campaign and cohort identifiers are recorded"
+        "campaign and cohort identifiers are recorded",
+        "show-clips workflow is not treated as part of win-back"
       ],
       "bounded_reasoning": [
         "cohort-specific message framing",
@@ -111,7 +112,7 @@
       "verify": ["scheduled/published object", "destination link", "platform-native preview", "monetization eligibility signals"]
     },
     "show_clips": {
-      "surfaces": ["Restream", "recording", "clip project", "show highlights", "Shorts", "Reels"],
+      "surfaces": ["Restream", "recording", "clip project", "show highlights", "Shorts", "Reels", "post-show recap"],
       "deterministic_gates": [
         "source recording belongs to the approved GatorBait account",
         "show/event date and title identified",
@@ -119,15 +120,19 @@
         "clip project is not duplicated for the same source unless explicitly reprocessed",
         "clip rights and guest-use rights are known",
         "downloaded asset matches requested clip ID",
-        "canonical show or article destination exists before distribution"
+        "one general recap blog post per show is preferred over thin one-post-per-clip output",
+        "canonical recap or full-show destination exists before social distribution",
+        "win-back workflow is not a destination for show clips"
       ],
       "bounded_reasoning": [
         "select strongest monetizable moments",
-        "write platform-native hook and caption",
-        "decide whether clip also supports a blog block or newsletter block",
-        "choose CTA based on article/show/membership objective"
+        "assemble one useful general recap blog post around the selected clips",
+        "write enough context around each clip so the post stands on its own",
+        "write platform-native hook and caption for distribution",
+        "optionally choose one strongest clip for the regular newsletter",
+        "choose CTA based on recap article or full-show objective"
       ],
-      "verify": ["Restream project details", "downloaded clip identity", "scheduled/published social object", "YouTube/Facebook analytics after distribution"]
+      "verify": ["Restream project details", "downloaded clip identity", "recap blog post draft/published object", "scheduled/published social object", "YouTube/Facebook analytics after distribution"]
     },
     "frontend": {
       "surfaces": ["CSS", "HTML", "Velo", "embed", "navigation", "form"],

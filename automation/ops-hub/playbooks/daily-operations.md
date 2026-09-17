@@ -56,6 +56,21 @@ Create a short queue with only material work:
 
 Every item receives one owner, one current state, one next action and one verification method. Models may help reason about an item but do not become its owner.
 
+## Guest-history context pass
+
+GatorBait and The Buddy Martin Show have long-running relationships with many recurring guests. Do not package a known guest as a generic "special guest" when their history with Buddy Martin, Brenden Martin, GatorBait, Gator Country, the University of Florida or prior shows materially explains why the appearance matters.
+
+Before show promotion, recap writing, clip selection or social packaging:
+
+1. identify the guest's known relationship with Buddy Martin and/or Brenden Martin;
+2. note relevant GatorBait, Gator Country, University of Florida or prior-show history;
+3. distinguish owner recollection from facts that can be publicly verified;
+4. create one short `why this guest matters to us` context line;
+5. use that context when it genuinely strengthens the title, description, recap intro, clip hook or social caption;
+6. never invent a relationship or inflate a real relationship into an unsupported claim about causing the guest's later success.
+
+For recurring guests, the default assumption is that useful relationship context may exist and should be checked. The context should support the current story, not overwhelm it.
+
 ## Desktop + mobile quality control
 
 ### Daily minimum surfaces
@@ -106,6 +121,7 @@ A page is not considered verified because its HTTP response succeeded. Visual/ru
 - publish/repair the strongest current coverage;
 - refresh homepage/Magazine hierarchy when needed;
 - complete the prior night's show recap and first post-show clips;
+- resolve guest-history context for any prior-night show before packaging its clips;
 - distribute timely stories natively to social channels.
 
 ### Midday
@@ -119,6 +135,7 @@ A page is not considered verified because its HTTP response succeeded. Visual/ru
 
 - prepare show title/description/thumbnail/AP Mode package;
 - verify guest names, topics, links and scheduled destinations;
+- resolve and record the guest-history context pass before final packaging;
 - build pre-show social promotion only when the show is confirmed;
 - ensure the previous show's content package is not left half-finished.
 
@@ -129,6 +146,7 @@ Follow `social-and-show-clips.md`:
 - resolve the exact Restream recording;
 - build one useful general recap blog post;
 - select up to five worthwhile clips;
+- route each clip to the social identity that owns the content or show;
 - package native social assets;
 - record source IDs so the workflow cannot duplicate itself.
 
@@ -155,6 +173,7 @@ Record:
 - what was verified on desktop/mobile;
 - what failed and remains open;
 - what content was published/distributed;
+- which guest-history context was newly confirmed or corrected;
 - what should roll into tomorrow;
 - any measurable result worth learning from.
 
@@ -167,6 +186,7 @@ Escalate instead of looping when:
 - the same production failure survives the bounded verification attempt;
 - a Wix mutation would require an untested playbook or uncertain rollback;
 - customer consent, rights, legal claims, pricing or account access are uncertain;
+- a guest-history claim cannot be separated from rumor or unsupported attribution;
 - a mobile/desktop regression cannot be reproduced consistently;
 - a model recommendation conflicts with deterministic evidence or policy.
 
@@ -178,6 +198,7 @@ The controller's owner-facing daily brief should fit on one screen whenever poss
 - **Freshness:** homepage + Magazine current or stale.
 - **Today:** up to five material actions.
 - **Distribution:** shows/clips/social/newsletter state.
+- **Guest context:** only newly relevant relationship/history notes that affect packaging.
 - **Revenue:** only meaningful changes or exceptions.
 - **QC:** desktop/mobile pass, fail or not yet verified.
 - **Escalations:** only items needing owner action.

@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
@@ -15,6 +15,7 @@
         "public health checks completed before reasoning work",
         "homepage and Magazine freshness compared with canonical Wix/RSS content",
         "newest important article and latest show destination identified",
+        "confirmed show guests have relationship/history context resolved before packaging",
         "desktop and mobile QC state recorded",
         "open work items have one owner/next action/verification method",
         "customer, pricing, paid-ad and account-access actions remain behind policy gates",
@@ -23,11 +24,12 @@
       "bounded_reasoning": [
         "prioritize up to five material daily actions",
         "editorial hierarchy decisions",
+        "use verified guest history when it strengthens show packaging",
         "distribution timing",
         "revenue exception interpretation",
         "decide which issues deserve escalation instead of more retries"
       ],
-      "verify": ["Ops Hub status", "desktop 1365-1440px", "390px mobile", "430px mobile after changes", "current Wix/RSS story set", "end-of-day record"]
+      "verify": ["Ops Hub status", "desktop 1365-1440px", "390px mobile", "430px mobile after changes", "current Wix/RSS story set", "guest-history attribution when used", "end-of-day record"]
     },
     "homepage": {
       "surfaces": ["/", "front page", "landing page"],
@@ -125,11 +127,12 @@
         "channel length/format limits",
         "vertical video is 9:16 when intended for Reels/Shorts",
         "captions and key text remain inside safe area",
+        "destination account/page matches the owning show or editorial identity",
         "tracking identifier present when required",
         "original-content requirements preserved for monetization"
       ],
-      "bounded_reasoning": ["hook", "caption", "channel adaptation", "clip packaging", "CTA"],
-      "verify": ["scheduled/published object", "destination link", "platform-native preview", "monetization eligibility signals"]
+      "bounded_reasoning": ["hook", "caption", "channel adaptation", "clip packaging", "relationship/history framing when verified", "CTA"],
+      "verify": ["scheduled/published object", "destination link", "platform-native preview", "correct account/page identity", "monetization eligibility signals"]
     },
     "show_clips": {
       "surfaces": ["Restream", "recording", "clip project", "show highlights", "Shorts", "Reels", "post-show recap"],
@@ -139,20 +142,24 @@
         "recording or storage file exists",
         "clip project is not duplicated for the same source unless explicitly reprocessed",
         "clip rights and guest-use rights are known",
+        "guest relationship/history context is resolved before packaging recurring or known guests",
+        "public guest-history claims are verified or accurately attributed",
         "downloaded asset matches requested clip ID",
+        "destination account/page matches the owning show or editorial identity",
         "one general recap blog post per show is preferred over thin one-post-per-clip output",
         "canonical recap or full-show destination exists before social distribution",
         "win-back workflow is not a destination for show clips"
       ],
       "bounded_reasoning": [
         "select strongest monetizable moments",
+        "use verified relationship history when it makes the guest or moment more meaningful",
         "assemble one useful general recap blog post around the selected clips",
         "write enough context around each clip so the post stands on its own",
         "write platform-native hook and caption for distribution",
         "optionally choose one strongest clip for the regular newsletter",
         "choose CTA based on recap article or full-show objective"
       ],
-      "verify": ["Restream project details", "downloaded clip identity", "recap blog post draft/published object", "scheduled/published social object", "YouTube/Facebook analytics after distribution"]
+      "verify": ["Restream project details", "downloaded clip identity", "guest-history attribution when used", "recap blog post draft/published object", "correct destination account/page", "scheduled/published social object", "YouTube/Facebook analytics after distribution"]
     },
     "mobile_app": {
       "surfaces": ["Spaces by Wix", "member app", "mobile app", "native app", "iOS", "Android"],

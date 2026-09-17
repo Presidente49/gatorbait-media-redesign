@@ -4,6 +4,7 @@ if(window.__GBM_STANDALONE_NEWSROOM__)return;
 window.__GBM_STANDALONE_NEWSROOM__=1;
 var LOGO='https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp';
 var MAGAZINE_SLUGS=[
+'before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days',
 'personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary',
 'blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year',
 'the-tale-of-two-gainesvilles',

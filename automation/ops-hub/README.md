@@ -27,6 +27,16 @@ Recursion is intentionally bounded:
 - **Production mutation:** one reversible mutation per cycle, external verification, then rollback/stop or escalation on failure.
 - **Learning:** measured outcomes may suggest a reusable playbook; safety, financial and approval boundaries cannot self-modify.
 
+## Growth playbooks
+
+The controller now has bounded playbooks for the next revenue/editorial build:
+
+- `playbooks/digital-magazine-and-print.md` — web-first magazine structure, issue/archive model and a premium print-on-demand pilot.
+- `playbooks/subscriber-winback.md` — former-customer cohorting, controlled offer tests, consent/frequency gates and 30/60/90-day retention learning.
+- `playbooks/social-and-show-clips.md` — Restream recording/clip intake, platform-native packaging, Metricool/platform distribution and social monetization feedback.
+
+The Restream playbook is **designed but not yet connected**. Before live automation, the local n8n MCP Client must be OAuth-authorized to Restream and tested read-only against one known recording. No Restream credentials belong in Git.
+
 ## Test once
 
 From this directory:
@@ -110,6 +120,9 @@ That installer refuses to enable the always-on service unless FCC health and aut
 - `test_controller.py` — dependency-free controller transition tests.
 - `config.json` — monitored systems, timing and controller retry bounds.
 - `policy.json` — authoritative action boundaries and learning rules.
+- `playbooks/digital-magazine-and-print.md` — digital-magazine and POD operating plan.
+- `playbooks/subscriber-winback.md` — lapsed-customer recovery loop.
+- `playbooks/social-and-show-clips.md` — Restream-to-social/newsletter monetization loop.
 - `agents/model-router.md` — model selection and data-lane contract; the directory name is retained for compatibility.
 - `model-router/README.md` — FCC operating guide.
 - `model-router/install-fcc-pinned.sh` — pinned/hardened local FCC installer.

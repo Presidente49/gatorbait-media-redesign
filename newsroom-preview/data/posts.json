@@ -2,8 +2,36 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Remembers ‘14 Days in Gainesville’",
+      "excerpt": "Before ESPN, Gator fans knew Laura Rutledge as Laura McKeeman around the University of Florida and the Gator Country/Buddy Martin orbit. She returns to explain the Sarkisian-Holly Rowe sideline moment, while Carlton Reese revisits Gainesville in 1990.",
+      "url": "https://www.gatorbaitmedia.com/post/laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-17T14:44:43Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Remembers ‘14 Days in Gainesville’"
+      }
+    },
+    {
+      "title": "Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the Villain Role",
+      "excerpt": "Loren Meadows and Ryan Urquhart break down Florida's trip to Jordan-Hare, the Gators' road mentality and their predictions for this weekend's Florida-Auburn matchup.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-17T14:44:43Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the Villain Role"
+      }
+    },
+    {
       "title": "Thoughts of the Day: September 17, 2026",
-      "excerpt": "Steve Spurrier and Urban Meyer went 85-33-1 on the road when they coached the Gators A few thoughts to jump start your Thursday morning: In the Southeastern Conference, nothing is more terrifying than a road trip. Just ask Urban Meyer, whose 65-15 overall record from 2005-10 included a 30-11 record away from Ben Hill Griffin Stadium. At home, Meyer won…",
+      "excerpt": "Steve Spurrier and Urban Meyer went 85-33-1 on the road when they coached the Gators A few thoughts to jump start your Thursday morning: In the Southeastern Conference nothing is more terrifying than a road trip. Just ask Urban Meyer, whose 65-15 overall record from 2005-10 included a 30-11 record away from Ben Hill Griffin Stadium. At home, Meyer won 89.74…",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-17-2026",
       "author": "Franz Beard",
       "firstPublishedDate": "2026-09-17T03:18:06Z",
@@ -147,38 +175,6 @@
         "width": 3000,
         "height": 1612,
         "alt": "Florida Gators sideline during the 2026 football season at Ben Hill Griffin Stadium."
-      }
-    },
-    {
-      "id": "96e490e2-46a4-412d-8246-14c0448ee858",
-      "title": "Brown Supplies the Spark as Florida Rolls Past Campbell, 52-3",
-      "excerpt": "Vernell Brown III supplied three touchdowns against Campbell. His postgame comments and Jon Sumrall’s assessment frame Florida’s next test at Auburn.",
-      "url": "https://www.gatorbaitmedia.com/post/brown-supplies-the-spark-as-florida-rolls-past-campbell-52-3",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-13T20:40:01Z",
-      "minutesToRead": 2,
-      "section": "Florida Football",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_83315d83ba7f42bf89b7159bd9854906~mv2.jpg",
-        "width": 2000,
-        "height": 1333,
-        "alt": "Vernell Brown III, wearing No. 1, greets fans after Florida’s win over Campbell."
-      }
-    },
-    {
-      "id": "117a9789-4ba4-4a86-a6b0-aa37a5fe0828",
-      "title": "Caution: Coming Up Next Is The NOT  So Lovely Village On The Plains",
-      "excerpt": "The Gators need to heed Jon Sumrall’s mandate: Stay planted. In a few days their feet will be standing in the hostile confines of Auburn.",
-      "url": "https://www.gatorbaitmedia.com/post/caution-coming-up-next-is-the-not-so-lovely-village-on-the-plains",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-13T16:27:40Z",
-      "minutesToRead": 5,
-      "section": "Buddy Martin",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_df1d8020ab8d4b24ba07ec3fd7bc674d~mv2.jpeg",
-        "width": 960,
-        "height": 640,
-        "alt": "Florida Gators football action ahead of the Auburn matchup."
       }
     }
   ]

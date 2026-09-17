@@ -1,6 +1,6 @@
 # GatorBait Operations Hub
 
-An inexpensive local control room for the digital side of GatorBait Media. It is designed for an always-on Mac and now uses a **single-controller architecture**: deterministic checks and policy decide scope first; models and specialist workflows are bounded tools inside that controller.
+An inexpensive local control room for the digital side of GatorBait Media. It is designed for an always-on Mac and uses a **single-controller architecture**: deterministic checks and policy decide scope first; models and specialist workflows are bounded tools inside that controller.
 
 ## Working now
 
@@ -27,15 +27,30 @@ Recursion is intentionally bounded:
 - **Production mutation:** one reversible mutation per cycle, external verification, then rollback/stop or escalation on failure.
 - **Learning:** measured outcomes may suggest a reusable playbook; safety, financial and approval boundaries cannot self-modify.
 
-## Growth playbooks
+## Daily operating heartbeat
 
-The controller now has bounded playbooks for the next revenue/editorial build:
+`playbooks/daily-operations.md` is the controller's overall newsroom/business playbook. It sits above the continuous 15-minute health loop and coordinates:
 
-- `playbooks/digital-magazine-and-print.md` — web-first magazine structure, issue/archive model and a premium print-on-demand pilot.
+- morning health + freshness checks;
+- a short material-work queue;
+- desktop QC around 1365–1440 px;
+- primary mobile QC at 390 px, with 430 px after changes and 320 px as a periodic narrow regression check;
+- editorial, Magazine, show-recap, social and newsletter state;
+- membership/customer/revenue exceptions;
+- end-of-day record and learning.
+
+A healthy/current day may correctly resolve to `NOOP`; the controller should not invent maintenance work.
+
+## Growth and product playbooks
+
+- `playbooks/digital-magazine-and-print.md` — web-first magazine structure, issue/archive model and premium print-on-demand pilot.
 - `playbooks/subscriber-winback.md` — former-customer cohorting, controlled offer tests, consent/frequency gates and 30/60/90-day retention learning.
-- `playbooks/social-and-show-clips.md` — Restream recording/clip intake, platform-native packaging, Metricool/platform distribution and social monetization feedback.
+- `playbooks/social-and-show-clips.md` — Restream recording intake, one general post-show recap, platform-native clips/social and optional normal newsletter reuse.
+- `playbooks/mobile-app-strategy.md` — test the GatorBait member experience in Spaces by Wix first; move to a paid branded native app only when adoption, return use, push performance and retention demonstrate a durable business job.
 
 The Restream playbook is **designed but not yet connected**. Before live automation, the local n8n MCP Client must be OAuth-authorized to Restream and tested read-only against one known recording. No Restream credentials belong in Git.
+
+The mobile-app strategy does **not** authorize a paid app plan or app-store fees. Those remain owner decisions. The public Wix website remains the canonical editorial surface whether GatorBait uses Spaces or later launches a branded app.
 
 ## Test once
 
@@ -101,14 +116,15 @@ That installer refuses to enable the always-on service unless FCC health and aut
 
 ## Automation lanes
 
-1. **Operations:** site, store and route health with bounded verification and deduplicated state.
+1. **Operations:** daily operating heartbeat plus site, store and route health with bounded verification and deduplicated state.
 2. **Customer service:** classify incoming Gmail, retrieve approved policy language and prepare replies.
 3. **Editorial:** inventory current articles and shows, validate metadata and maintain the calendar.
 4. **Marketing:** create channel-specific drafts and queue them for distribution.
 5. **Subscriptions:** move loyal readers and viewers toward clear paid membership offers and retention.
 6. **Merchandise:** promote the official ItemOrder store and measure attributable traffic.
 7. **Revenue:** combine memberships, merchandise, video, newsletter and sponsorship performance into one brief.
-8. **Model Router:** send bounded repetitive public tasks to free/low-cost capacity and preserve trusted/local models for sensitive or consequential work.
+8. **Mobile product:** validate Spaces/member-app use, notification behavior and app-vs-mobile-web value before any branded-app commitment.
+9. **Model Router:** send bounded repetitive public tasks to free/low-cost capacity and preserve trusted/local models for sensitive or consequential work.
 
 `policy.json` is authoritative. Routine organic publishing and reversible maintenance may proceed automatically when the policy's editorial, brand, compliance, mobile QC and rollback gates are satisfied. The actions listed under `approval_required` still require owner approval.
 
@@ -120,9 +136,11 @@ That installer refuses to enable the always-on service unless FCC health and aut
 - `test_controller.py` — dependency-free controller transition tests.
 - `config.json` — monitored systems, timing and controller retry bounds.
 - `policy.json` — authoritative action boundaries and learning rules.
+- `playbooks/daily-operations.md` — overall daily operating rhythm and desktop/mobile QC.
+- `playbooks/mobile-app-strategy.md` — Spaces pilot and branded native-app decision gate.
 - `playbooks/digital-magazine-and-print.md` — digital-magazine and POD operating plan.
 - `playbooks/subscriber-winback.md` — lapsed-customer recovery loop.
-- `playbooks/social-and-show-clips.md` — Restream-to-social/newsletter monetization loop.
+- `playbooks/social-and-show-clips.md` — post-show recap and social monetization loop.
 - `agents/model-router.md` — model selection and data-lane contract; the directory name is retained for compatibility.
 - `model-router/README.md` — FCC operating guide.
 - `model-router/install-fcc-pinned.sh` — pinned/hardened local FCC installer.

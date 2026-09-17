@@ -1,4 +1,28 @@
 {
+  "controller": {
+    "architecture": "single-controller",
+    "loop": [
+      "observe",
+      "scope",
+      "classify",
+      "plan",
+      "act",
+      "verify",
+      "record",
+      "learn"
+    ],
+    "deterministic_first": true,
+    "one_production_writer": true,
+    "models_are_bounded_tools": true,
+    "verification_outside_model": true,
+    "max_mutation_attempts_per_cycle": 1,
+    "max_contract_correction_retries": 1,
+    "learning": {
+      "record_measured_outcomes": true,
+      "promote_repeated_safe_patterns_to_playbooks_only_after_review": true,
+      "never_self_modify_safety_financial_or_approval_boundaries": true
+    }
+  },
   "automatic": [
     "public site and store availability checks",
     "analytics summaries",
@@ -34,7 +58,9 @@
     "contact third parties from an unverified identity",
     "bypass consent, unsubscribe, accessibility, compliance, brand, editorial or mobile quality gates",
     "silently rewrite core safety, financial or approval boundaries based on performance data",
-    "hide material membership, billing or cancellation terms"
+    "hide material membership, billing or cancellation terms",
+    "allow a specialist model or workflow to become an independent production writer",
+    "treat a model's claim that work is fixed as verification"
   ],
-  "autopilot_principle": "Brenden supplies goals and exceptions. Juice, GatorBait Agency and Flaco make routine editorial, organic marketing and operations decisions within these boundaries, learn from measured outcomes, preserve logs and rollback paths, and escalate only when an approval_required condition is triggered."
+  "autopilot_principle": "Brenden supplies goals and exceptions. The GatorBait controller owns scope, policy, state, writes, verification and learning. Deterministic checks run first; models and specialist workflows return bounded evidence or drafts to the controller. Routine approved work may proceed inside these boundaries, while approval_required conditions escalate to Brenden."
 }

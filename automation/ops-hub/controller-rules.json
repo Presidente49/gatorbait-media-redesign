@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "architecture": "single-controller",
+  "principles": {
+    "deterministic_scope_before_model": true,
+    "smallest_rule_set_only": true,
+    "one_production_writer": true,
+    "verification_outside_model": true,
+    "new_dependencies_require_explicit_justification": true
+  },
+  "profiles": {
+    "homepage": {
+      "surfaces": ["/", "front page", "landing page"],
+      "deterministic_gates": [
+        "current lead and story chronology",
+        "required brand markers",
+        "HTTPS and route availability",
+        "no known retired dark-theme markers",
+        "no remote Archivo font regression",
+        "mobile overflow and image aspect-ratio checks"
+      ],
+      "bounded_reasoning": [
+        "editorial hierarchy",
+        "reader path clarity",
+        "visual density",
+        "conversion placement"
+      ],
+      "verify": ["public URL", "desktop", "390px mobile", "430px mobile"]
+    },
+    "article": {
+      "surfaces": ["/post/", "article", "story"],
+      "deterministic_gates": [
+        "title/byline/date accuracy",
+        "canonical URL",
+        "Article or NewsArticle schema validity",
+        "image dimensions and alt text",
+        "internal links and category assignment"
+      ],
+      "bounded_reasoning": [
+        "headline clarity",
+        "dek/excerpt quality",
+        "reading hierarchy",
+        "related-story placement"
+      ],
+      "verify": ["published article URL", "schema output", "mobile readability"]
+    },
+    "newsletter": {
+      "surfaces": ["GatorBait Weekly", "email", "newsletter"],
+      "deterministic_gates": [
+        "consented audience only",
+        "unsubscribe present",
+        "destination URLs valid",
+        "subject and sender fields populated",
+        "no prohibited legacy newsletter names"
+      ],
+      "bounded_reasoning": ["subject options", "story ordering", "CTA copy"],
+      "verify": ["rendered preview", "link check", "send-state confirmation"]
+    },
+    "social": {
+      "surfaces": ["Facebook", "Instagram", "X", "social"],
+      "deterministic_gates": [
+        "destination URL valid",
+        "published facts match source",
+        "channel length/format limits",
+        "tracking identifier present when required"
+      ],
+      "bounded_reasoning": ["hook", "caption", "channel adaptation"],
+      "verify": ["scheduled/published object", "destination link"]
+    },
+    "frontend": {
+      "surfaces": ["CSS", "HTML", "Velo", "embed", "navigation", "form"],
+      "deterministic_gates": [
+        "scoped selectors",
+        "no permanent short-interval polling",
+        "no first-paint opacity fade",
+        "no competing global themes",
+        "44px interactive controls where required",
+        "rollback path defined"
+      ],
+      "bounded_reasoning": ["UX diagnosis", "layout remedy", "accessibility review"],
+      "verify": ["public runtime", "console", "desktop", "390px mobile", "430px mobile"]
+    },
+    "analytics": {
+      "surfaces": ["analytics", "traffic", "conversion", "campaign"],
+      "deterministic_gates": [
+        "time range explicit",
+        "source coverage explicit",
+        "metric definition stable",
+        "no unsupported causal claims"
+      ],
+      "bounded_reasoning": ["trend explanation", "opportunity identification", "next experiment"],
+      "verify": ["source totals", "date window", "metric reconciliation"]
+    }
+  }
+}

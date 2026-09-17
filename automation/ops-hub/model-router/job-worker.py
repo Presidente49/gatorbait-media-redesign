@@ -16,7 +16,7 @@ import subprocess
 import sys
 import time
 import uuid
-from typing import Any
+from typing import Any, Optional
 
 HERE = Path(__file__).resolve().parent
 OPS_HUB = HERE.parent
@@ -28,7 +28,10 @@ REQUIRED_KEYS = {"lane", "prompt"}
 
 
 def ensure_dirs() -> dict[str, Path]:
-    paths = {name: QUEUE_ROOT / name for name in ("inbox", "running", "done", "failed")}
+    paths = {
+        name: QUEUE_ROOT / name
+        for name in ("inbox", "running", "done", "failed")
+    }
     for path in paths.values():
         path.mkdir(parents=True, exist_ok=True)
         try:
@@ -63,7 +66,7 @@ def write_result(path: Path, payload: dict[str, Any]) -> None:
     os.replace(temp, path)
 
 
-def claim(path: Path, running_dir: Path) -> Path | None:
+def claim(path: Path, running_dir: Path) -> Optional[Path]:
     target = running_dir / path.name
     try:
         os.replace(path, target)
@@ -160,8 +163,17 @@ def cycle() -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--once", action="store_true", help="Process at most one queued job and exit.")
-    parser.add_argument("--interval", type=float, default=2.0, help="Polling interval in seconds when running continuously.")
+    parser.add_argument(
+        "--once",
+        action="store_true",
+        help="Process at most one queued job and exit.",
+    )
+    parser.add_argument(
+        "--interval",
+        type=float,
+        default=2.0,
+        help="Polling interval in seconds when running continuously.",
+    )
     args = parser.parse_args()
 
     if args.once:

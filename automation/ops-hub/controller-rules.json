@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
@@ -15,6 +15,8 @@
         "public health checks completed before reasoning work",
         "homepage and Magazine freshness compared with canonical Wix/RSS content",
         "newest important article and latest show destination identified",
+        "eligible prior-night shows have their Restream Clips batch accounted for",
+        "Restream clip titles and guest names are verified before publishing",
         "confirmed show guests have relationship/history context resolved before packaging",
         "desktop and mobile QC state recorded",
         "open work items have one owner/next action/verification method",
@@ -24,12 +26,13 @@
       "bounded_reasoning": [
         "prioritize up to five material daily actions",
         "editorial hierarchy decisions",
+        "select useful clips from the already-generated Restream batch",
         "use verified guest history when it strengthens show packaging",
         "distribution timing",
         "revenue exception interpretation",
         "decide which issues deserve escalation instead of more retries"
       ],
-      "verify": ["Ops Hub status", "desktop 1365-1440px", "390px mobile", "430px mobile after changes", "current Wix/RSS story set", "guest-history attribution when used", "end-of-day record"]
+      "verify": ["Ops Hub status", "desktop 1365-1440px", "390px mobile", "430px mobile after changes", "current Wix/RSS story set", "Restream clip title and guest identity", "guest-history attribution when used", "end-of-day record"]
     },
     "homepage": {
       "surfaces": ["/", "front page", "landing page"],
@@ -41,12 +44,7 @@
         "no remote Archivo font regression",
         "mobile overflow and image aspect-ratio checks"
       ],
-      "bounded_reasoning": [
-        "editorial hierarchy",
-        "reader path clarity",
-        "visual density",
-        "conversion placement"
-      ],
+      "bounded_reasoning": ["editorial hierarchy", "reader path clarity", "visual density", "conversion placement"],
       "verify": ["public URL", "desktop", "390px mobile", "430px mobile"]
     },
     "magazine": {
@@ -60,41 +58,18 @@
         "membership and newsletter paths are valid",
         "mobile overflow and image aspect-ratio checks"
       ],
-      "bounded_reasoning": [
-        "magazine-cover hierarchy",
-        "section mix",
-        "issue packaging",
-        "visual pacing",
-        "premium print-edition merchandising"
-      ],
+      "bounded_reasoning": ["magazine-cover hierarchy", "section mix", "issue packaging", "visual pacing", "premium print-edition merchandising"],
       "verify": ["public /magazine URL", "freshness against Wix/RSS source", "desktop", "390px mobile", "430px mobile"]
     },
     "article": {
       "surfaces": ["/post/", "article", "story"],
-      "deterministic_gates": [
-        "title/byline/date accuracy",
-        "canonical URL",
-        "Article or NewsArticle schema validity",
-        "image dimensions and alt text",
-        "internal links and category assignment"
-      ],
-      "bounded_reasoning": [
-        "headline clarity",
-        "dek/excerpt quality",
-        "reading hierarchy",
-        "related-story placement"
-      ],
+      "deterministic_gates": ["title/byline/date accuracy", "canonical URL", "Article or NewsArticle schema validity", "image dimensions and alt text", "internal links and category assignment"],
+      "bounded_reasoning": ["headline clarity", "dek/excerpt quality", "reading hierarchy", "related-story placement"],
       "verify": ["published article URL", "schema output", "mobile readability"]
     },
     "newsletter": {
       "surfaces": ["GatorBait Weekly", "email", "newsletter"],
-      "deterministic_gates": [
-        "consented audience only",
-        "unsubscribe present",
-        "destination URLs valid",
-        "subject and sender fields populated",
-        "no prohibited legacy newsletter names"
-      ],
+      "deterministic_gates": ["consented audience only", "unsubscribe present", "destination URLs valid", "subject and sender fields populated", "no prohibited legacy newsletter names"],
       "bounded_reasoning": ["subject options", "story ordering", "CTA copy"],
       "verify": ["rendered preview", "link check", "send-state confirmation"]
     },
@@ -110,12 +85,7 @@
         "campaign and cohort identifiers are recorded",
         "show-clips workflow is not treated as part of win-back"
       ],
-      "bounded_reasoning": [
-        "cohort-specific message framing",
-        "content-led reason to return",
-        "discount-vs-full-price test design",
-        "subject and CTA variants"
-      ],
+      "bounded_reasoning": ["cohort-specific message framing", "content-led reason to return", "discount-vs-full-price test design", "subject and CTA variants"],
       "verify": ["audience count", "suppression reconciliation", "rendered message", "destination link", "30/60/90-day retention tracking"]
     },
     "social": {
@@ -135,31 +105,33 @@
       "verify": ["scheduled/published object", "destination link", "platform-native preview", "correct account/page identity", "monetization eligibility signals"]
     },
     "show_clips": {
-      "surfaces": ["Restream", "recording", "clip project", "show highlights", "Shorts", "Reels", "post-show recap"],
+      "surfaces": ["Restream Clips", "Restream", "recording", "clip project", "show highlights", "Shorts", "Reels", "post-show recap"],
       "deterministic_gates": [
         "source recording belongs to the approved GatorBait account",
         "show/event date and title identified",
-        "recording or storage file exists",
-        "clip project is not duplicated for the same source unless explicitly reprocessed",
+        "existing Restream Clips batch is the default clip source",
+        "no duplicate full-show clip-generation job is created by default",
+        "Restream AI clip title is treated as draft metadata",
+        "final clip title matches the actual segment topic",
+        "guest names are verified, correctly spelled and added when materially useful",
         "clip rights and guest-use rights are known",
         "guest relationship/history context is resolved before packaging recurring or known guests",
         "public guest-history claims are verified or accurately attributed",
-        "downloaded asset matches requested clip ID",
         "destination account/page matches the owning show or editorial identity",
+        "clip has not already been published to the same destination",
         "one general recap blog post per show is preferred over thin one-post-per-clip output",
-        "canonical recap or full-show destination exists before social distribution",
         "win-back workflow is not a destination for show clips"
       ],
       "bounded_reasoning": [
-        "select strongest monetizable moments",
+        "select strongest useful moments from the waiting Restream batch",
+        "correct AI-generated titles when guest/topic context is missing or wrong",
         "use verified relationship history when it makes the guest or moment more meaningful",
-        "assemble one useful general recap blog post around the selected clips",
-        "write enough context around each clip so the post stands on its own",
+        "assemble one useful general recap blog post around selected clips when useful",
         "write platform-native hook and caption for distribution",
         "optionally choose one strongest clip for the regular newsletter",
         "choose CTA based on recap article or full-show objective"
       ],
-      "verify": ["Restream project details", "downloaded clip identity", "guest-history attribution when used", "recap blog post draft/published object", "correct destination account/page", "scheduled/published social object", "YouTube/Facebook analytics after distribution"]
+      "verify": ["Restream project details", "Restream clip ID or timestamp fingerprint", "final clip title", "verified guest identity", "guest-history attribution when used", "correct destination account/page", "scheduled/published social object", "YouTube/Facebook analytics after distribution"]
     },
     "mobile_app": {
       "surfaces": ["Spaces by Wix", "member app", "mobile app", "native app", "iOS", "Android"],
@@ -172,36 +144,18 @@
         "paid app plan or app-store fees require owner approval",
         "app does not create a duplicate editorial source of truth"
       ],
-      "bounded_reasoning": [
-        "Spaces pilot information architecture",
-        "notification strategy",
-        "pilot cohort design",
-        "compare app retention with mobile web",
-        "decide whether a branded native app has a durable business job"
-      ],
+      "bounded_reasoning": ["Spaces pilot information architecture", "notification strategy", "pilot cohort design", "compare app retention with mobile web", "decide whether a branded native app has a durable business job"],
       "verify": ["Spaces/member-app preview", "iOS where available", "Android where available", "notification deep links", "membership state", "pilot adoption and return-use metrics"]
     },
     "frontend": {
       "surfaces": ["CSS", "HTML", "Velo", "embed", "navigation", "form"],
-      "deterministic_gates": [
-        "scoped selectors",
-        "no permanent short-interval polling",
-        "no first-paint opacity fade",
-        "no competing global themes",
-        "44px interactive controls where required",
-        "rollback path defined"
-      ],
+      "deterministic_gates": ["scoped selectors", "no permanent short-interval polling", "no first-paint opacity fade", "no competing global themes", "44px interactive controls where required", "rollback path defined"],
       "bounded_reasoning": ["UX diagnosis", "layout remedy", "accessibility review"],
       "verify": ["public runtime", "console", "desktop", "390px mobile", "430px mobile"]
     },
     "analytics": {
       "surfaces": ["analytics", "traffic", "conversion", "campaign"],
-      "deterministic_gates": [
-        "time range explicit",
-        "source coverage explicit",
-        "metric definition stable",
-        "no unsupported causal claims"
-      ],
+      "deterministic_gates": ["time range explicit", "source coverage explicit", "metric definition stable", "no unsupported causal claims"],
       "bounded_reasoning": ["trend explanation", "opportunity identification", "next experiment"],
       "verify": ["source totals", "date window", "metric reconciliation"]
     }

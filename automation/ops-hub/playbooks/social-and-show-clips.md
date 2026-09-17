@@ -2,28 +2,28 @@
 
 ## Objective
 
-Treat every approved GatorBait live show as a source package that produces one useful general post-show blog recap plus multiple monetizable, platform-native social assets without requiring Brenden to manually find, download and repost every clip.
+Turn each approved GatorBait live show into one useful owned recap plus a small set of monetizable native social clips, using the clips Restream has already created instead of regenerating the show elsewhere.
 
-This workflow is **not part of subscriber win-back**. Win-back is a separate customer-recovery lane. Show clips are an editorial/distribution lane for the general GatorBait audience.
+This workflow is **not part of subscriber win-back**. Win-back is a separate customer-recovery lane.
 
-The controller owns the loop. Restream, Metricool, YouTube/Facebook tools and models are subordinate capabilities.
+`restream-clips-first.md` is authoritative for the clip source and publish path. This playbook governs editorial selection, context, routing, owned-web reuse and measurement.
 
 ## Revenue principle
 
-GatorBait should not publish one identical clip everywhere and call that a strategy. Each completed show should create a reusable editorial package:
+Each completed show should produce only useful inventory:
 
-1. one general post-show recap blog post;
-2. up to five selected clips with context;
-3. platform-native social distribution;
-4. optional normal GatorBait Weekly reuse when a clip genuinely improves the newsletter.
+1. one general post-show recap blog post when the show merits one;
+2. a small set of selected Restream Clips;
+3. platform-native distribution, with Facebook first while it remains the largest active GatorBait audience;
+4. optional GatorBait Weekly reuse when a clip genuinely improves the newsletter.
 
-The default blog destination is the recap post, not a membership/win-back campaign.
+Do not manufacture a thin article for every clip and do not publish every AI-generated clip merely because it exists.
 
 ## Guest-history principle
 
-Many Buddy Martin Show and GatorBait guests have a real history with Buddy Martin, Brenden Martin, GatorBait, Gator Country, the University of Florida or earlier versions of the shows. That relationship is editorial context and should be resolved before packaging the guest as if they were a random interview.
+Many Buddy Martin Show and GatorBait guests have a real history with Buddy Martin, Brenden Martin, GatorBait, Gator Country, the University of Florida or earlier versions of the shows. That relationship is editorial context.
 
-For each guest, capture when known:
+For each guest, resolve when known:
 
 - relationship to Buddy Martin;
 - relationship to Brenden Martin;
@@ -35,148 +35,144 @@ For each guest, capture when known:
 
 Use the history when it creates a stronger truthful hook, intro or caption. Do not force nostalgia into every clip, and do not turn a legitimate early-career relationship into an unsupported claim that GatorBait caused the guest's later success.
 
-## Nightly show-to-distribution loop
+## Morning show-to-distribution loop
 
-### Trigger
+### 1. OBSERVE — prior night's Restream shows
 
-Preferred trigger: a completed Restream event/recording for an approved GatorBait show. A nightly schedule is acceptable as a fallback, but the workflow must de-duplicate by event/recording ID.
+For every completed approved show:
 
-### 1. OBSERVE — Restream account
+1. resolve the exact Restream event/recording;
+2. open that show's existing Restream Clips batch;
+3. confirm the correct GatorBait workspace/show identity;
+4. inventory the clips Restream's AI already created;
+5. do **not** create another full-show clipping job by default.
 
-Use the authenticated Restream MCP account to:
+### 2. VERIFY TITLES + GUESTS
 
-1. identify the relevant completed event or video-storage file;
-2. confirm show title/date and connected GatorBait workspace;
-3. list existing clip projects before creating anything;
-4. create a clip project only when the source has not already been processed, unless explicit reprocessing is requested.
+Treat every Restream AI title as draft metadata.
 
-Restream's MCP is remote and OAuth-secured. Keep confirmation enabled for Restream write tools. Reads should be preferred until the exact source is resolved.
+Before a clip can publish, verify:
 
-### 2. SCOPE — create the clip candidate set
+- actual segment topic;
+- correct show identity;
+- correct guest name(s);
+- correct spelling/current public name;
+- whether the named guest is actually speaking in or central to the clip;
+- whether a missing guest name should be added because it materially improves clarity.
 
-Retrieve clip project details and build a bounded candidate set. Do not download every generated clip by default.
+Preferred evidence order:
 
-For each candidate record:
+1. confirmed guest list / AP Mode package;
+2. show or clip transcript;
+3. Restream event metadata;
+4. verified house-history context;
+5. owner recollection when clearly attributed.
 
-- clip ID;
-- source event/recording ID;
-- duration;
-- title/summary if provided;
-- speaker/guest if known;
-- guest-history context status;
-- rights status;
-- related canonical full-show URL when available.
+If Restream omits the guest name, add it when useful. If it names the wrong person, stop and correct the title before publishing.
 
 ### 3. CONTEXT — resolve the guest relationship
 
-Before final clip selection or public copy:
+Before final public copy:
 
 1. identify the guest's relationship to Buddy, Brenden and the GatorBait/Gator Country history when known;
-2. check prior show appearances and recurring-guest status when available;
-3. verify public biographical/history claims when the caption will state them as fact;
-4. distinguish public facts from Buddy/Brenden recollection;
+2. check prior appearances/recurring-guest status;
+3. verify public biographical/history claims that will be stated as fact;
+4. distinguish public facts from owner recollection;
 5. retain one concise relationship hook only if it helps the current story.
 
 A known recurring guest should not be reduced to generic `special guest` packaging. A new guest with no meaningful house history should not be given invented history.
 
-### 4. CLASSIFY — pick jobs, not "best clips"
+### 4. CLASSIFY — select useful clips
 
-Select up to five useful moments per show, with different jobs where available:
+Select only the clips with a clear job, usually no more than a handful per show:
 
-- **News hook:** strongest timely statement or development.
-- **Analysis hook:** a sharp football/basketball take with context.
-- **Personality hook:** funny, emotional or human moment.
-- **Relationship/history hook:** a moment whose value is strengthened by the guest's real history with Buddy/Brenden/GatorBait.
-- **Debate hook:** a claim likely to prompt legitimate conversation without misleading rage-bait.
-- **Evergreen hook:** useful moment that can run later in the week.
+- **News/game hook** — strongest timely statement or development.
+- **Analysis hook** — sharp football/basketball analysis with context.
+- **Relationship/history hook** — moment strengthened by the guest's real history with Buddy/Brenden/GatorBait.
+- **Personality hook** — funny, emotional or human moment.
+- **Debate hook** — legitimate conversation starter without misleading rage-bait.
+- **Evergreen hook** — useful later in the week.
 
-Selection is reasoning work. Rights, IDs, dates, duplication, source matching, guest identity and destination-account matching are deterministic gates.
+Selection is reasoning work. Source identity, guest identity, rights, duplicate state and destination identity are deterministic gates.
 
-### 5. BUILD — one general recap blog post
+### 5. ROUTE — choose the owning identity
 
-The default editorial output is **one recap post per completed show**, not one thin post per clip.
+Route by editorial identity before platform defaults:
+
+- Florida game-week / broad GatorBait clips → **Gator Bait Media**;
+- Buddy Martin Show guest/history/personality clips → **The Buddy Martin Show**;
+- other named shows → their own approved page/channel when connected.
+
+When a destination is disconnected, stop that lane rather than silently substituting a different page/account.
+
+### 6. DE-DUPLICATE
+
+Before any publish action, check whether the exact source clip has already been sent to the exact destination through Restream, Wix Social Publisher, Metricool or another approved route.
+
+Identity key:
+
+`source_show_id + source_clip_id(or timestamp fingerprint) + destination_platform + destination_page_or_channel_id`
+
+A matching prior publication means that destination is already `DONE`.
+
+### 7. ACT — publish directly from Restream Clips
+
+Primary execution path:
+
+`Restream completed show → existing AI Clips batch → controller title/guest check → controller selection/context/routing/de-dupe → Restream Clips Publish → connected social destination`
+
+The controller should use the Clips menu's direct publish action for normal post-show social distribution.
+
+Facebook is first while it remains the largest active audience. Multipost to other approved connected destinations when appropriate, but do not duplicate Facebook posts already delivered through another route.
+
+Wix Social Publisher, Metricool and n8n are supporting/fallback delivery lanes, not the default path for Restream-created clips.
+
+### 8. BUILD — one owned recap when useful
+
+The default owned editorial output is **one recap post per completed show**, not one post per clip.
 
 Recommended structure:
 
-- headline tied to the actual show/topic, not "5 clips you missed" clickbait;
+- headline tied to the actual show/topic;
 - 1–2 paragraph show summary;
-- embedded full show or canonical show link near the top;
-- 3–5 selected clip blocks;
-- a short paragraph of context before each clip explaining what is being discussed and why it matters;
-- guest names, relationship context and relevant facts verified from the source;
+- full-show/canonical link near the top;
+- selected clip blocks;
+- short context before each clip explaining what is being discussed and why it matters;
+- verified guest names/history where useful;
 - related GatorBait stories when they genuinely add context;
-- one final path to watch the full show or continue reading.
+- final path to watch the full show or continue reading.
 
-The recap should be useful even if a reader never clicks a clip. Do not turn transcripts into filler and do not manufacture a separate SEO article for every moment.
+The recap should be useful even if a reader never clicks a clip.
 
-### 6. PLAN — package clips for social
+### 9. NEWSLETTER REUSE — optional
 
-Default social deliverables:
-
-- 9:16 vertical master for Reels/Shorts when source quality supports it;
-- burned-in readable captions or platform captions;
-- hook text that does not cover faces/score graphics;
-- Facebook caption;
-- Instagram caption;
-- YouTube Shorts title/description;
-- X post only when the clip/topic belongs there;
-- recap-blog or full-show CTA;
-- campaign ID;
-- destination account/page selected from the content identity, not merely the platform default.
-
-Use verified guest-history context when it materially improves the hook. Do not use identical copy everywhere.
-
-### Destination routing
-
-Route by **editorial identity first**:
-
-- Florida game-week / broad GatorBait editorial clips → Gator Bait Media identity unless another show identity clearly owns the segment;
-- Buddy Martin Show guest/history/personality clips → The Buddy Martin Show identity;
-- other named shows → their own connected identity when available and approved;
-- when a destination is disconnected, stop that lane rather than silently substituting a different page/account.
-
-Before publishing, verify both the platform account ID and page/channel ID. Never assume the default connected page is the correct destination.
-
-### 7. ACT — distribution
-
-Preferred execution path:
-
-`Restream MCP → local n8n MCP Client workflow → approved clip asset → Wix recap post + Metricool/platform destination`
-
-n8n's MCP Client can connect to external MCP servers. The Restream connection must be OAuth-authorized locally; do not store tokens in Git.
-
-Routine organic publishing may run automatically only inside `policy.json` and the controller's editorial/social quality gates. Sensitive claims, rights uncertainty, legal allegations, emergencies, personnel disputes, paid promotion and unapproved commercial offers escalate.
-
-### 8. NEWSLETTER REUSE — optional, normal editorial only
-
-The recap/clip workflow may contribute to the regular GatorBait Weekly newsletter, but this is optional and unrelated to win-back.
-
-Allowed reuse:
+Allowed normal editorial reuse:
 
 - one `From GatorBait TV` block using the strongest clip or recap;
-- a short link to the recap blog post;
+- a short link to the recap;
 - a full-show link when that is more useful.
 
-Do not route show clips into a former-subscriber sequence just because the content exists. A win-back campaign may later choose current editorial proof independently under its own playbook, but there is no automatic linkage between these workflows.
+There is no automatic linkage to former-subscriber win-back.
 
-### 9. VERIFY
+### 10. VERIFY
 
-For every recap/social package verify:
+For every social/recap package verify:
 
 - correct Restream event/recording;
-- correct clip/source identity;
-- recap title/date/guest names are accurate;
-- guest-history claims used publicly are verified or accurately attributed;
-- every embedded clip or link works;
-- canonical recap/full-show destination works;
-- destination account/page matches the owning show/editorial identity;
-- vertical crop and caption safe area are usable;
+- correct Restream clip ID or timestamp fingerprint;
+- final title accurately describes the segment;
+- guest names are correct when used;
+- guest-history claims are verified or accurately attributed;
+- destination page/channel matches the owning show/editorial identity;
+- clip has not already been published to that destination;
+- vertical crop/caption safe area are usable;
 - rights/commercial-use status remains valid;
-- scheduled/published platform objects exist when distribution is enabled.
+- published platform object/status exists when distribution is enabled;
+- recap/embed/link works when owned-web reuse is enabled.
 
-A model cannot certify its own edit. Verification uses platform object data and/or rendered preview.
+A model cannot certify its own edit or publication. Verification uses source/platform data and/or rendered preview.
 
-### 10. RECORD + LEARN
+### 11. RECORD + LEARN
 
 At 24 hours and 7 days, record where available:
 
@@ -185,65 +181,71 @@ At 24 hours and 7 days, record where available:
 - watch time / retention;
 - completion rate;
 - shares/comments;
-- clicks from social to recap/full show;
+- clicks to recap/full show;
 - followers/subscribers gained;
-- revenue/earnings where the platform exposes it;
-- newsletter clicks when the recap is reused there;
+- revenue/earnings where exposed;
+- newsletter clicks;
 - whether guest-history framing improved performance versus generic packaging.
 
-Promote repeatable patterns only after enough comparable posts exist. Do not let one viral outlier rewrite the playbook.
+Do not let one viral outlier rewrite the playbook.
+
+## Exception-only editing
+
+Use Descript, vidIQ or another approved editor only when the selected Restream clip needs a deliberate repair/custom version:
+
+- bad vertical crop;
+- caption/transcript repair;
+- precise trim needed for context;
+- combined approved assets;
+- Restream missed an important moment;
+- owner explicitly requests a custom version.
+
+When Descript is used, prefer the existing Restream ↔ Descript integration rather than a manual download/upload loop.
 
 ## Platform rules
 
 ### Facebook
 
+- Facebook is currently the first distribution lane;
 - prioritize original GatorBait-owned show footage;
 - preserve enough context to make clips satisfying, not deceptive fragments;
-- test Reels and longer native video when a segment deserves both;
-- route each clip to the correct Facebook page instead of relying on the default page;
-- use the recap blog as an owned destination when a click makes sense, but do not replace native video with outbound-link-only posts.
+- route to the correct Facebook page, not merely the default page;
+- do not double-post a Reel that already exists on that page.
 
 ### YouTube
 
-- use compelling title/thumbnail/first seconds that immediately deliver the promised value;
-- preserve original, non-repetitious content and commercial rights;
-- use Shorts for discovery and the full show for watch-page monetization;
-- link to the recap post or full show when useful;
+- use Shorts for discovery and full shows for watch-page monetization;
+- preserve original/non-repetitious content and rights;
+- verify title/guest identity before posting;
 - judge Shorts by engaged views and retention, not raw starts alone.
 
 ### Instagram
 
-Treat Instagram primarily as reach/community/brand unless current account monetization data proves direct revenue. Use native 9:16 creative, captions, visible human moments and clean safe-zone text. Route high-intent users toward the recap, full show, newsletter or membership page as context warrants.
+Treat Instagram primarily as reach/community/brand unless current account monetization data proves direct revenue. Use native 9:16 creative and clean safe-zone text.
 
 ### X
 
-Use selectively for breaking context, quotes, debate and live-game/show conversation. Do not spend production time forcing every clip onto X when Facebook/YouTube provide clearer monetization value.
+Use selectively for breaking context, quotes, debate and live-game/show conversation.
 
-## Weekly social rhythm
+## Daily rhythm
 
-The controller should aim for a repeatable editorial rhythm rather than a rigid quota:
+- **Show night:** live promotion as appropriate; Restream creates Clips automatically after the show.
+- **Next morning:** controller opens the waiting Restream Clips, fixes title/guest metadata, selects, contextualizes, routes, de-duplicates and publishes directly from Clips; then builds/updates the recap if useful.
+- **Midday:** inspect early performance and publish only the next useful asset.
+- **Newsletter day:** optionally reuse the strongest clip/recap as normal editorial content.
 
-- show night: live promo + strongest immediate post-show clip;
-- next morning: resolve guest-history context, publish the general recap blog post and 1–2 analysis/news clips;
-- mid-day: related article/column visual or quote card if it serves a real story;
-- afternoon/evening: second clip or discussion post based on performance and news cycle;
-- newsletter day: optionally reuse the week's strongest recap/clip as a normal editorial block.
-
-If there is no strong asset, publish less. Low-value volume can hurt monetization and audience trust.
+If there is no strong asset, publish less.
 
 ## Safety / stop conditions
 
 Stop and escalate when:
 
-- source recording or workspace cannot be positively identified;
+- source recording/workspace cannot be positively identified;
+- Restream title/guest identity cannot be verified;
 - guest/content rights are uncertain;
 - guest relationship/history cannot be stated accurately;
-- clip materially changes meaning when removed from context;
-- recap would require unsupported facts or invented context;
-- platform destination is wrong or disconnected;
-- Restream returns a write action unrelated to the selected event/project;
+- clip materially changes meaning out of context;
+- platform destination is wrong/disconnected;
+- the same clip is already published to that destination;
+- a custom edit would require an untested/risky workflow;
 - repeated workflow failure reaches the controller retry bound.
-
-## Implementation requirement
-
-Before this workflow becomes live automation, connect Restream's remote MCP endpoint to the local n8n MCP Client using OAuth and test read-only operations first. Then test one known recording end-to-end with **recap and social publishing disabled**. Enable automatic publishing only after the controller can prove source ID, clip ID, recap destination, destination account and rollback/unschedule behavior.

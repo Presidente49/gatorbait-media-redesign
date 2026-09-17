@@ -37,7 +37,8 @@ Check:
 - homepage lead/supporting order is editorially defensible;
 - Magazine current issue/Latest rail is not stale;
 - byline, date, image and destination links are correct;
-- yesterday night's completed shows have either a recap package in progress or an explicit no-recap reason.
+- yesterday night's completed shows have either a recap package in progress or an explicit no-recap reason;
+- eligible completed shows have their Restream Clips batch accounted for.
 
 Do not mechanically promote every newest story to the lead position. Freshness and editorial importance are separate decisions.
 
@@ -120,9 +121,13 @@ A page is not considered verified because its HTTP response succeeded. Visual/ru
 
 - publish/repair the strongest current coverage;
 - refresh homepage/Magazine hierarchy when needed;
-- complete the prior night's show recap and first post-show clips;
-- resolve guest-history context for any prior-night show before packaging its clips;
-- distribute timely stories natively to social channels.
+- resolve each prior night's exact Restream recording and consume its already-generated Restream Clips batch;
+- select only the strongest useful clips instead of regenerating the full show in another editor;
+- resolve guest-history context before packaging selected clips;
+- build or finish one useful recap post per completed show;
+- de-duplicate each selected clip against destinations already published;
+- publish the first useful assets to Facebook first while it remains the largest active audience, then other approved connected destinations;
+- use Descript only for clips that need custom cleanup, reframing, transcript-based editing or another deliberate repair.
 
 ### Midday
 
@@ -141,14 +146,18 @@ A page is not considered verified because its HTTP response succeeded. Visual/ru
 
 ### Post-show
 
-Follow `social-and-show-clips.md`:
+Follow `restream-clips-first.md` and `social-and-show-clips.md`:
 
 - resolve the exact Restream recording;
+- allow/use the existing Restream Clips batch as the default clip source;
+- do not create a duplicate full-show clipping job in vidIQ/Descript by default;
+- select up to five worthwhile clips from the waiting Restream batch;
+- use Descript only when a selected clip needs intentional custom editing;
 - build one useful general recap blog post;
-- select up to five worthwhile clips;
 - route each clip to the social identity that owns the content or show;
+- de-duplicate by source show + source clip/timestamp + platform + destination ID;
 - package native social assets;
-- record source IDs so the workflow cannot duplicate itself.
+- record source and publication IDs so the workflow cannot duplicate itself.
 
 ## Revenue and retention checks
 
@@ -173,6 +182,7 @@ Record:
 - what was verified on desktop/mobile;
 - what failed and remains open;
 - what content was published/distributed;
+- which Restream clip IDs/timestamp fingerprints were used and where;
 - which guest-history context was newly confirmed or corrected;
 - what should roll into tomorrow;
 - any measurable result worth learning from.
@@ -184,6 +194,7 @@ Do not promote a one-day result into a permanent rule. Reusable playbook changes
 Escalate instead of looping when:
 
 - the same production failure survives the bounded verification attempt;
+- an eligible completed show has no usable Restream Clips and fallback editing would be non-trivial;
 - a Wix mutation would require an untested playbook or uncertain rollback;
 - customer consent, rights, legal claims, pricing or account access are uncertain;
 - a guest-history claim cannot be separated from rumor or unsupported attribution;
@@ -197,7 +208,7 @@ The controller's owner-facing daily brief should fit on one screen whenever poss
 - **Status:** healthy / attention required.
 - **Freshness:** homepage + Magazine current or stale.
 - **Today:** up to five material actions.
-- **Distribution:** shows/clips/social/newsletter state.
+- **Distribution:** shows / waiting Restream Clips / Facebook / other social / newsletter state.
 - **Guest context:** only newly relevant relationship/history notes that affect packaging.
 - **Revenue:** only meaningful changes or exceptions.
 - **QC:** desktop/mobile pass, fail or not yet verified.

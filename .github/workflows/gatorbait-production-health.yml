@@ -19,7 +19,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  router-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Test controller model routing
+        run: python3 automation/ops-hub/model-router/test_task_runner.py
+
   health:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

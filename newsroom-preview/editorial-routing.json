@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-17T15:12:01Z",
+  "updated": "2026-09-17T16:25:25Z",
   "automation": {
-    "lastChecked": "2026-09-17T15:12:01Z",
-    "lastSeenPublishedDate": "2026-09-17T14:44:43.506Z",
-    "lastSeenPostId": "a161f341-f5d3-437b-beed-70c6d9d42bb7"
+    "lastChecked": "2026-09-17T16:25:25Z",
+    "lastSeenPublishedDate": "2026-09-17T15:57:09.547Z",
+    "lastSeenPostId": "0e212ef2-7c18-425c-bae3-73e6782efbf1"
   },
   "assignments": [
+    {
+      "slug": "before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days",
+      "title": "Before Laura Rutledge Was Laura Rutledge: A Flip Phone, an IFB and the Gator Country Days",
+      "firstPublishedDate": "2026-09-17T15:57:09.547Z",
+      "primaryHome": "magazine",
+      "reason": "A Buddy Martin profile and nostalgia piece centered on Laura McKeeman's early University of Florida and Gator Country years, the reps that shaped her career, and memorable broadcasting-origin stories. The current Florida-Auburn discussion is secondary; the core story remains strong and readable well beyond this week."
+    },
     {
       "slug": "laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville",
       "title": "Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Remembers ‘14 Days in Gainesville’",
@@ -76,6 +83,12 @@
       "deck": "Carlton Reese remembers fear, football and the opening of the Spurrier era in 1990"
     },
     {
+      "slug": "before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days",
+      "role": "feature",
+      "label": "BEFORE LAURA RUTLEDGE",
+      "deck": "Buddy Martin remembers Laura McKeeman’s Gator Country days, a flip phone, an IFB and the reps before ESPN"
+    },
+    {
       "slug": "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
       "role": "feature",
       "label": "BLOOD, NOISE & THE PLAINS",
@@ -95,6 +108,7 @@
     }
   ],
   "frontPageExclude": [
+    "before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days",
     "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
     "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
     "the-tale-of-two-gainesvilles",

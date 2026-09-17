@@ -1,11 +1,25 @@
 {
-  "updated": "2026-09-17T11:45:52Z",
+  "updated": "2026-09-17T15:12:01Z",
   "automation": {
-    "lastChecked": "2026-09-17T11:45:52Z",
-    "lastSeenPublishedDate": "2026-09-17T03:18:06Z",
-    "lastSeenPostId": "6609a2b8-70d7-4a41-8db7-4877b3cbc7f5"
+    "lastChecked": "2026-09-17T15:12:01Z",
+    "lastSeenPublishedDate": "2026-09-17T14:44:43.506Z",
+    "lastSeenPostId": "a161f341-f5d3-437b-beed-70c6d9d42bb7"
   },
   "assignments": [
+    {
+      "slug": "laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville",
+      "title": "Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Remembers ‘14 Days in Gainesville’",
+      "firstPublishedDate": "2026-09-17T14:44:43.506Z",
+      "primaryHome": "frontPage",
+      "reason": "A timely Buddy Martin Show recap anchored to the current Steve Sarkisian–Holly Rowe sideline controversy. Although the episode also includes Carlton Reese's evergreen Gainesville-history recollection, the primary news hook is current and episode-driven."
+    },
+    {
+      "slug": "florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role",
+      "title": "Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the Villain Role",
+      "firstPublishedDate": "2026-09-17T14:44:43.181Z",
+      "primaryHome": "frontPage",
+      "reason": "A direct Florida-Auburn game preview with road-game mentality, matchup analysis and predictions for this weekend; it is immediate, time-sensitive coverage."
+    },
     {
       "slug": "thoughts-of-the-day-september-17-2026",
       "title": "Thoughts of the Day: September 17, 2026",

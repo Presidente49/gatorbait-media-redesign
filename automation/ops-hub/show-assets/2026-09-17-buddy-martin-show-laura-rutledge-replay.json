@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "controller_profile": "show_clips",
+  "status": "READY_FOR_LIVE_REPLAY",
+  "show": {
+    "name": "The Buddy Martin Show",
+    "air_date": "2026-09-17",
+    "owner_identity": "The Buddy Martin Show"
+  },
+  "replay": {
+    "label": "Laura Rutledge — Googling IFB, Gator Country, Brenden + Buddy",
+    "guest": "Laura Rutledge",
+    "source_show_date": "2026-09-16",
+    "source_youtube_video_id": "8b7F5iyYOIk",
+    "source_url": "https://www.youtube.com/watch?v=8b7F5iyYOIk&t=320s",
+    "in_seconds": 320,
+    "out_seconds": 560,
+    "duration_seconds": 240,
+    "segment_context": "Laura recalls her early Rays live-TV assignment, having to Google what an IFB was, early WRUF mistakes, and credits Buddy Martin, Brenden Martin and Gator Country with giving her an early live internet-video platform and valuable unscripted reps.",
+    "host_toss": "Last night Laura Rutledge told us a great story about where all of this started — including the day she had to Google what an IFB was, and the early Gator Country days with Brenden and me. Let's replay it.",
+    "host_return": "That's Laura Rutledge remembering the early days — before NFL Live, before the big Saturdays, when everybody was learning in real time."
+  },
+  "live_playback": {
+    "preferred_source": "YOUTUBE_MASTER",
+    "preferred_source_reason": "The automated trim available outside Restream resolves to only 256x144 at 15 fps. Do not upscale or use that derivative on air when the original YouTube master is available.",
+    "restream_target": "Tonight's Buddy Martin Show replay/media bin",
+    "restream_ingest_status": "PENDING_RESTREAM_CONNECTION",
+    "restream_instruction": "In Restream, load last night's Buddy Martin Show and create or select the 05:20-09:20 replay segment. Title it exactly as replay.label. Verify Laura Rutledge, Buddy Martin and Brenden Martin names before adding to tonight's media/rundown.",
+    "fallback_reference_only": "https://video.wixstatic.com/video/d3cfa5_fb500bb5500c4abe8e2a6947cb8b4104/file",
+    "fallback_quality": "256x144, 15fps — REFERENCE ONLY; NOT APPROVED FOR ON-AIR PLAYBACK"
+  },
+  "verification": {
+    "guest_name_verified": true,
+    "topic_verified": true,
+    "source_timestamps_verified": true,
+    "rights": "GatorBait-owned show footage",
+    "duplicate_social_publish_check_required": false,
+    "on_air_quality_gate": "Must use original/high-resolution source or verified Restream high-res clip before playback"
+  }
+}

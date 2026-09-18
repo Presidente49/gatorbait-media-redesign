@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-18T17:54:00Z",
+  "updated": "2026-09-18T21:25:00Z",
   "automation": {
     "lastChecked": "2026-09-18T14:23:15Z",
     "lastSeenPublishedDate": "2026-09-18T13:09:17.732Z",
@@ -163,7 +163,9 @@
     "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
     "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
     "the-tale-of-two-gainesvilles",
-    "light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university"
+    "light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university",
+    "live-now-best-friday-in-football-september-18-2026",
+    "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
   ],
   "latestGameGallery": {
     "status": "removed",
@@ -196,5 +198,17 @@
       "views": 403,
       "firstPublishedDate": "2026-09-13T02:12:32.808Z"
     }
-  ]
+  ],
+  "homepage": {
+    "lead": "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast",
+    "secondary": [
+      "florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie",
+      "laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville"
+    ],
+    "hide": [
+      "live-now-best-friday-in-football-september-18-2026",
+      "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
+    ],
+    "reason": "Owner-directed landing package: Buddy Martin lead, Franz Beard and Carlton Reese secondaries; recurring live-show posts stay off the landing page."
+  }
 }

@@ -209,3 +209,22 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - Active loader `fdc2127a-845a-4d02-b711-438f1a4a86ce` is revision 12, named `GBM - Newsroom Loader v8 (verified magazine landing)`.
 - Verification caught and fixed a fail-open defect: the safety check still expected the old `.lead/.compact/.card` DOM. It now validates `.feature-lead`, `.feature-side`, `.news-card`, and `.trend-item` so the new homepage is not discarded after rendering.
 - GatorBait Weekly wording in the homepage UI layer was normalized to GatorBait Magazine.
+
+
+## 2026-09-18 mobile stability + embed consolidation
+
+- Deleted 27 disabled/retired/superseded Wix custom embeds after exact-name/state verification. Removed dark-theme experiments, old Magazine card generations, obsolete homepage patches, backups, retired article subscribe CTA, and the outage-era standalone newsroom loader. No active production embed was deleted in that pass.
+- Active newsroom loader `fdc2127a-845a-4d02-b711-438f1a4a86ce` is revision **13**, named `GBM - Newsroom Loader v9 (stable mobile no popup)`. It pins the repo UI release that removes the scheduled newsletter modal and removes the old permanent 500 ms / 1200 ms newsroom/UI polling loops.
+- Replaced remaining permanent route/layout polling with event-driven + bounded checks:
+  - `602fb362-3917-4e42-9128-57af3a504ef3` → revision **4**, `GBM - Sports Feed Cards v10 (event-driven)`
+  - `1dd74333-ee02-40da-9c93-cf8fd787c129` → revision **10**, `GBM - Magazine Digital Cover v5.4 (event-driven)`
+  - `15302fb2-44ef-4a93-a2a8-899731a6c197` → revision **2**, `GBM - Sitewide Footer Gap Guard v2 (event-driven)`
+  - `ccddc822-4ebd-4141-af10-536e58485b26` → revision **6**, `GBM - Article Nav v3 (event-driven stable footer)`
+- Bounded the final long-lived DOM observers:
+  - `4409bdd9-abb2-4981-9455-46973dcc9a05` → revision **2**, `GBM - Official ItemOrder Store v2 (bounded observer)`
+  - `14048e5a-da72-4a2c-9a8f-5e4e105aa0b` → revision **2**, `GBM - Remove Blog Follow Buttons v2 (bounded)`
+- Exact rollback snapshots are stored in:
+  - `backups/wix-embeds/2026-09-18-pre-no-polling-stability.txt`
+  - `backups/wix-embeds/2026-09-18-pre-observer-bounding.txt`
+- Verification: the active custom-embed stack no longer has unbounded short-interval polling. Remaining `setInterval` calls are bounded startup/fail-safe retries that explicitly clear themselves.
+- Important source-level debt: the native Wix fallback HTML still contains legacy `Today’s Edition` and `The Monday Chomp` content. The repo-backed newsroom hides/suppresses this for the visitor experience, but crawlers/raw native markup can still see it. Remove those native elements at the Wix page/source layer once the site is moved onto Wix Git Integration / Velo site code; do not solve this by adding another permanent DOM polling layer.

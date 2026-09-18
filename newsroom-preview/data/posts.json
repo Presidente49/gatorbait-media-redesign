@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Week 3 Preview: Florida Gators (2-0, 0-0) v. Auburn Tigers (2-0, 0-0)",
+      "excerpt": "Jon Sumrall and the Gators head to hostile territory for a historic trip to Jordan-Hare. By Loren Meadows GatorBaitMedia.com, Football Analyst, Host of The Gator Lowdown with Loren Meadows While two schools could not be more closely linked, Florida and Auburn have only met four times since 2002. The rivalry conjures names like Spurrier, Sanders, Byrum, and…",
+      "url": "https://www.gatorbaitmedia.com/post/week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-09-18T03:12:25Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/70130b_0c9934de1d8c4f43a0f7505aa16aa3e2~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Week 3 Preview: Florida Gators (2-0, 0-0) v. Auburn Tigers (2-0, 0-0)"
+      }
+    },
+    {
       "title": "Florida Gators 2026 Roster and Schedule Update: Auburn Opens SEC Play",
       "excerpt": "Updated Sept. 17, 2026 GAINESVILLE, Fla. — Florida has opened the 2026 season 2-0 and now heads into SEC play at Auburn. GatorBait has refreshed its Florida football roster and schedule information using the live University of Florida roster and the current official schedule as of Thursday, Sept. 17. The roster is now a live-season roster The current…",
       "url": "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play",
@@ -161,20 +175,6 @@
         "width": 3000,
         "height": 1612,
         "alt": "Florida Gators sideline during the 2026 football season at Ben Hill Griffin Stadium."
-      }
-    },
-    {
-      "title": "Brown Supplies the Spark as Florida Rolls Past Campbell, 52-3",
-      "excerpt": "Vernell Brown III supplied three touchdowns against Campbell. His postgame comments and Jon Sumrall’s assessment frame Florida’s next test at Auburn.",
-      "url": "https://www.gatorbaitmedia.com/post/brown-supplies-the-spark-as-florida-rolls-past-campbell-52-3",
-      "author": "GatorBaitMagazineStaff",
-      "firstPublishedDate": "2026-09-13T20:40:01Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_83315d83ba7f42bf89b7159bd9854906~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Brown Supplies the Spark as Florida Rolls Past Campbell, 52-3"
       }
     }
   ]

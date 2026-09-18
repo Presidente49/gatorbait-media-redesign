@@ -1,16 +1,30 @@
 {
-  "updated": "2026-09-18T12:25:04Z",
+  "updated": "2026-09-18T12:31:00Z",
   "automation": {
-    "lastChecked": "2026-09-18T12:25:04Z",
-    "lastSeenPublishedDate": "2026-09-18T12:25:04Z",
+    "lastChecked": "2026-09-18T12:31:00Z",
+    "lastSeenPublishedDate": "2026-09-18T12:24:18Z",
     "lastSeenPostId": "695bde20-cd39-411a-b276-beb179c8f0a4"
   },
   "assignments": [
     {
+      "slug": "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1",
+      "title": "Welcome to the Killing Fields: Why Jordan-Hare Eats Gators for Breakfast",
+      "firstPublishedDate": "2026-09-18T12:24:18Z",
+      "primaryHome": "magazine",
+      "reason": "Buddy Martin's long-form Jordan-Hare column is built around history, nostalgia, first-person perspective and enduring rivalry storytelling. Although it is timely for Auburn week, its core value remains readable after the game, so Magazine is the single primary editorial home."
+    },
+    {
+      "slug": "florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie",
+      "title": "Florida-Auburn grudge match: The only thing missing is Gordon Solie",
+      "firstPublishedDate": "2026-09-18T11:29:26Z",
+      "primaryHome": "frontPage",
+      "reason": "Franz Beard's column is built around the current Florida-Auburn matchup, Jon Sumrall, Scott Stricklin and the immediate game-week coaching storyline. Its primary value is timely analysis ahead of Saturday, so Front Page is the single primary editorial home."
+    },
+    {
       "slug": "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast",
       "title": "Welcome to the Killing Fields: Why Jordan-Hare Eats Gators for Breakfast",
       "primaryHome": "magazine",
-      "reason": "Buddy Martin's long-form Jordan-Hare column is built around history, nostalgia, first-person perspective and enduring rivalry storytelling. Although it is timely for Auburn week, its core value remains readable after the game, so Magazine is the single primary editorial home."
+      "reason": "Alias/earlier canonical slug for the same Buddy Martin long-form story; keep it Magazine-only to prevent duplicate Front Page presentation."
     },
     {
       "slug": "week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0",
@@ -97,7 +111,7 @@
   ],
   "magazine": [
     {
-      "slug": "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast",
+      "slug": "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1",
       "role": "cover",
       "label": "WELCOME TO THE KILLING FIELDS",
       "deck": "Buddy Martin on Jordan-Hare, Florida-Auburn history and the burden of winning on the Plains"
@@ -134,6 +148,7 @@
     }
   ],
   "frontPageExclude": [
+    "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1",
     "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast",
     "before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days",
     "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
@@ -144,6 +159,6 @@
   "latestGameGallery": {
     "status": "removed",
     "removedDate": "2026-09-16",
-    "reason": "Owner requested the Magazine front-page gallery be removed rather than carried forward."
+    "reason": "Owner requested the Magazine front-page gallery be removed rather than carried forward; no newer usable game photo set has appeared since."
   }
 }

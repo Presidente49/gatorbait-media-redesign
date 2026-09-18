@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 if(window.__GBM_UI_LAYER__)return;window.__GBM_UI_LAYER__=1;
-var SUPPORT='brenden@gatorademedia.com';
+var SUPPORT='brenden@gatorbaitmedia.com';
 var AUTHORS={
 'buddy martin':{name:'Buddy Martin',slug:'buddymartinshow'},
 'franz beard':{name:'Franz Beard',slug:'franz'},

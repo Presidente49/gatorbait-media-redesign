@@ -153,3 +153,12 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - The lead remains Buddy Martin's Campbell recap.
 - The visible Inside GatorBait cards now run newest-first: Franz Beard's Sumrall analysis, Eddie Gilley's defensive review, then Franz Beard's September 12 Thoughts of the Day.
 - Public cache-busted verification confirmed all three links and article-specific image alt text.
+
+
+## 2026-09-17 homepage art + mobile compact alignment
+
+- Added published Wix cover/hero art to `Florida Gators 2026 Roster and Schedule Update: Auburn Opens SEC Play` using Media Manager image `d3cfa5_1b088b6993b340859003979d846fc644~mv2.jpg`.
+- Replaced the old Rodney Dangerfield-style cover media on `The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare` with new Florida-Auburn art `d3cfa5_afff5dfb681e4070a45b775a6fa826ee~mv2.png`.
+- Updated `newsroom-preview/wix-live.css` to keep mobile Latest thumbnails and text in fixed-height aligned rows with clamped headlines at 640 px and 390 px breakpoints.
+- Active loader `fdc2127a-845a-4d02-b711-438f1a4a86ce` is revision 7, named `GBM - Newsroom Loader v5 (stable mobile)`; the former 3-second opacity boot was removed and the loader now references CSS commit `34d3254ac5f0634b90bbf6177572959552f3b612`.
+- Published-post API verification confirmed both updated stories expose custom displayed media and hero images; the loader mutation response confirmed no opacity-boot rule remains.

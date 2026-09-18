@@ -2,20 +2,6 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "Welcome to the Killing Fields: Why Jordan-Hare Eats Gators for Breakfast",
-      "excerpt": "They will genuinely, sincerely, ask if your family made the trip down all right. Then they will eat your heart out on the 50-yard line and wash it down with something served in a mason jar, all with a smile you’d swear was sincere — because, in its own strange way, it is. They don’t boo you out of that building. They just quietly consume your soul and hand…",
-      "url": "https://www.gatorbaitmedia.com/post/welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-18T12:24:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_f1ab9b12355649e6a4ca0ae3528de2a2~mv2.jpeg/v1/fit/w_231,h_179,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Welcome to the Killing Fields: Why Jordan-Hare Eats Gators for Breakfast"
-      }
-    },
-    {
       "title": "Florida-Auburn grudge match: The only thing missing is Gordon Solie",
       "excerpt": "There is this theory that has been circulating for a few months that Jon Sumrall is Florida’s football coach because athletic director Scott Stricklin got the best of the guy he once mentored. It is only a theory but one that has grown legs. It has its start back in 2008 when Scott Stricklin left Kentucky to become the senior associate athletic director at…",
       "url": "https://www.gatorbaitmedia.com/post/florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie",
@@ -169,6 +155,20 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for What Can “VB3” Do for You?"
+      }
+    },
+    {
+      "title": "Readiness, cleaning up penalties will be critical as Gators prep for Auburn",
+      "excerpt": "Franz Beard breaks down Florida's 52-3 win over Campbell, the penalties Jon Sumrall wants fixed and what the Gators must sharpen before Auburn.",
+      "url": "https://www.gatorbaitmedia.com/post/readiness-cleaning-up-penalties-will-be-critical-as-gators-prep-for-auburn",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-09-14T03:51:24Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/a99769_ef5c2a84f1bd4fa185c907b16d506660~mv2.jpeg/v1/fit/w_1000,h_659,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Readiness, cleaning up penalties will be critical as Gators prep for Auburn"
       }
     }
   ]

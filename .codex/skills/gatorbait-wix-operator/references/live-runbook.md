@@ -186,3 +186,11 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - Active custom embed `fdc2127a-845a-4d02-b711-438f1a4a86ce` is now revision 8. It loads the corrected UI JS commit and no longer suppresses the intended `#gbm-live` compliance footer in bootstrap CSS.
 - Keep the loader fail-open behavior and existing mobile breakpoints. Do not reintroduce a rule that hides both the native Wix footer and the standalone newsroom footer.
 - Still local-only: complete the multi-harness Mac bootstrap/auth/smoke-test/launchd/n8n queue activation gate before recurring model dispatch.
+
+## 2026-09-18 performance + continuous design learning
+
+- Best Friday in Football is a recurring Friday show. Its Sept. 18 article was normalized from the temporary LIVE NOW title to Best Friday in Football with Buddy Martin | September 18, 2026; the URL was preserved.
+- Front Page performance promotion is now a separate layer from primary editorial home. The current rolling seven-day top-three view leaders are stored in newsroom-preview/editorial-routing.json and surfaced through a deduplicated Trending Now module.
+- Active newsroom loader fdc2127a-845a-4d02-b711-438f1a4a86ce is revision 10, named GBM - Newsroom Loader v6 (performance + stable mobile), and loads wix-live.js commit 28b74a18a0b2a431ff8c4c9acab073122b690db1.
+- Continuous live competitor/design review is now governed by docs/CONTINUOUS-DESIGN-BENCHMARK.md.
+- Text-bearing article hero art must pass an actual 390/430 px render check; source-image review alone is not sufficient.

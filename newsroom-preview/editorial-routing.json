@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-17T20:58:07Z",
+  "updated": "2026-09-18T00:44:03Z",
   "automation": {
-    "lastChecked": "2026-09-17T20:58:07Z",
-    "lastSeenPublishedDate": "2026-09-17T15:57:09.547Z",
-    "lastSeenPostId": "0e212ef2-7c18-425c-bae3-73e6782efbf1"
+    "lastChecked": "2026-09-18T00:44:03Z",
+    "lastSeenPublishedDate": "2026-09-17T23:51:02.332Z",
+    "lastSeenPostId": "aeb4f5a5-3910-4b11-9a63-b05bac96e623"
   },
   "assignments": [
+    {
+      "slug": "florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play",
+      "title": "Florida Gators 2026 Roster and Schedule Update: Auburn Opens SEC Play",
+      "firstPublishedDate": "2026-09-17T23:51:02.332Z",
+      "primaryHome": "frontPage",
+      "reason": "A current roster-and-schedule update built around Florida's 2-0 start, the Auburn SEC opener, kickoff information, live roster names, results and upcoming schedule windows. It is reference-heavy, statistical and explicitly time-sensitive entering game week."
+    },
     {
       "slug": "before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days",
       "title": "Before Laura Rutledge Was Laura Rutledge: A Flip Phone, an IFB and the Gator Country Days",

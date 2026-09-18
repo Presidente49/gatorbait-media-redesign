@@ -2,6 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-18T03:12:25Z</news:publication_date>
+      <news:title>Week 3 Preview: Florida Gators (2-0, 0-0) v. Auburn Tigers (2-0, 0-0)</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-17T23:51:02.332000Z</news:publication_date>
+      <news:title>Florida Gators 2026 Roster and Schedule Update: Auburn Opens SEC Play</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-17T15:57:09.547000Z</news:publication_date>
+      <news:title>Before Laura Rutledge Was Laura Rutledge: A Flip Phone, an IFB and the Gainesville Days</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-17T14:44:43.506000Z</news:publication_date>
+      <news:title>Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Remembers ‘14 Days in Gainesville’</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-17T14:44:43.181000Z</news:publication_date>
+      <news:title>Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the Villain Role</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-17-2026</loc>
     <news:news>
       <news:publication>
@@ -494,61 +549,6 @@
       </news:publication>
       <news:publication_date>2026-08-30T12:48:45.246000Z</news:publication_date>
       <news:title>Reasons for optimism: Why Jon Sumrall has a team that may exceed expectations</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/buddy-blog-the-curse-of-lsu-s-ill-gotten-gain-while-dawn-breaks-over-the-swamp</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-29T14:12:07Z</news:publication_date>
-      <news:title>Buddy Blog : The Curse Of LSU's Ill-Gotten Gain, While Dawn Breaks Over The Swamp</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/new-king-of-the-ville-contract-extension-maken-golden-highest-paid-gator-coach</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-29T00:02:03.900000Z</news:publication_date>
-      <news:title>New King Of The Ville: Contract Extension Makes Golden Highest Paid Gator Coach</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-august-28-2026</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-28T12:20:49.575000Z</news:publication_date>
-      <news:title>Thoughts of the Day: August 28, 2026</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/gator-football-26-this-is-the-moment-of-truth-when-i-must-pick-the-number</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-27T18:01:44.735000Z</news:publication_date>
-      <news:title>Gator Football ‘26: This Is The Moment Of Truth When I Must Pick The Number.</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/the-answer-to-the-qb-question-is-aaron-philo-but-maybe-it-will-change</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-08-27T13:26:37.583000Z</news:publication_date>
-      <news:title>The Answer To The QB Question Is Aaron Philo. But Maybe It Will Change?</news:title>
     </news:news>
   </url>
 </urlset>

@@ -174,3 +174,15 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - Magazine build enforces unique imagery: 7 visual slots / 7 unique image URLs. Ryan Urquhart is text-only rather than duplicating art.
 - Owner direction: no Magazine gallery by default.
 - See `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md` for the repeatable controller workflow.
+
+
+## 2026-09-18 housekeeping verification
+
+- Wix public business-contact email was corrected to `brenden@gatorbaitmedia.com` with an email-only site-properties update.
+- Email Marketing account verified `ACTIVE`; the Florida-at-Auburn pregame magazine was `SENT`. Audit snapshot: 580 delivered, 90 opened, 11 clicked, 5 bounced, 0 complaints, 0 not-sent.
+- `GatorBait Story Alert — New Blog Post` automation `5006baf5-fbbf-440c-a012-a09bdbd95fc9` remains `ACTIVE`; retired generic blog-email automation `824714d4-7e31-4b1d-95b2-ccec04d788af` remains `INACTIVE`.
+- GitHub Actions runtime housekeeping merged through PR #12: checkout/setup-python are on the maintained v7 line without changing workflow cadence or production behavior.
+- `newsroom-preview/wix-live-ui.js` support address corrected to `brenden@gatorbaitmedia.com` and merged at `52aa887d42310cdd035ce7407716afe9287f35c1`.
+- Active custom embed `fdc2127a-845a-4d02-b711-438f1a4a86ce` is now revision 8. It loads the corrected UI JS commit and no longer suppresses the intended `#gbm-live` compliance footer in bootstrap CSS.
+- Keep the loader fail-open behavior and existing mobile breakpoints. Do not reintroduce a rule that hides both the native Wix footer and the standalone newsroom footer.
+- Still local-only: complete the multi-harness Mac bootstrap/auth/smoke-test/launchd/n8n queue activation gate before recurring model dispatch.

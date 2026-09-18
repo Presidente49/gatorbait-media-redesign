@@ -228,3 +228,44 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
   - `backups/wix-embeds/2026-09-18-pre-observer-bounding.txt`
 - Verification: the active custom-embed stack no longer has unbounded short-interval polling. Remaining `setInterval` calls are bounded startup/fail-safe retries that explicitly clear themselves.
 - Important source-level debt: the native Wix fallback HTML still contains legacy `Today’s Edition` and `The Monday Chomp` content. The repo-backed newsroom hides/suppresses this for the visitor experience, but crawlers/raw native markup can still see it. Remove those native elements at the Wix page/source layer once the site is moved onto Wix Git Integration / Velo site code; do not solve this by adding another permanent DOM polling layer.
+
+
+## 2026-09-18 email audience reset + legacy newsletter retirement
+
+Owner rule for GatorBait marketing email:
+- Actual site members and current paid subscribers are eligible because signup included email opt-in.
+- Never override an explicit `UNSUBSCRIBED`.
+- Never mail `BOUNCED` or `SPAM_COMPLAINT` addresses.
+- Wix `INACTIVE` deliverability is a valid but unengaged address; do not delete it as bad.
+- If a bad address belongs to an active billing/customer record Wix protects from deletion, preserve billing/access but remove every email-audience label and add `custom.gatorbait-do-not-market`.
+
+Cleanup completed:
+- Authoritative Wix member count inspected: **2,526**.
+- Active/paused paid Pricing Plans buyers inspected: **403 unique paid contacts** across **462 paid orders**.
+- Corrected **1,272** member/paid contacts from stale `NOT_SET` / `PENDING` to `SUBSCRIBED` based on the owner's signup-consent rule. All 13 bulk batches succeeded with zero failures.
+- Preserved **652 explicit unsubscribes**.
+- Initial bad-email inventory: **250** contacts = **164 BOUNCED + 86 SPAM_COMPLAINT**.
+- Permanently deleted **181** bad-email contact/member records where Wix allowed deletion.
+- **69** bad-email records remain only because Wix protects associated billing/customer dependencies. All 69 were removed from every email/newsletter audience and placed on `custom.gatorbait-do-not-market`.
+- Pre-purge audit snapshot: `backups/crm/2026-09-18-bad-email-purge-inventory.txt`.
+
+Current audience source of truth:
+- `custom.gatorbait-email-list` = **GatorBait Email List**
+- `custom.gatorbait-active-email-audience` = **GatorBait Active Email Audience**
+- Both rebuilt successfully from clean Wix subscription/deliverability state.
+- Final count on each: **1,864**.
+- Final audit on both: **0 BOUNCED/SPAM_COMPLAINT, 0 UNSUBSCRIBED, 0 do-not-market**.
+- Master status mix after rebuild: 1,334 SUBSCRIBED|VALID, 515 SUBSCRIBED|INACTIVE, 15 SUBSCRIBED|NOT_SET.
+- Story alert automation `5006baf5-fbbf-440c-a012-a09bdbd95fc9` remains ACTIVE and targets label legacy ID `e345fa8e-f66a-4e57-ad00-81707cf8dc15`, which is exactly `GatorBait Active Email Audience`. It has `sendToUnsubscribed:false`.
+
+Newsletter form:
+- Only live Wix form is `GatorBait Email List`, ID `6babfee8-147f-428a-9e14-6b72f6225835`.
+- It requires a valid email and a required explicit email-subscription checkbox.
+- Retired `Monday Chomp Email Capture` form `effa3356-f910-4403-a82e-4bf797861e15` had zero submissions and was permanently deleted from Wix, including trash.
+- New user-owned native Wix automation `fea566c1-4df6-457e-a9f0-22fe83441ae1`, `GatorBait Email List - Audience Labels`, is ACTIVE and VALID. On submission of the current form it uses Wix's native `addLabelsToContact` action to add both current audience labels automatically.
+- Wix blocked modifying the app-owned form-notification automation with `APP_DEFINED_ACTION_ADDITION_NOT_ALLOWED_EXCEPTION`; do not retry that pattern. Use the separate user-owned automation above.
+
+Legacy branding:
+- Active code references to `Monday Chomp` were removed from the header and newsletter CTA bridge.
+- `GBM - Newsletter Labels v3 (legacy blocker, bounded)` is bounded and suppresses native fallback blocks named `Monday Chomp` / `Today's Edition` without permanent polling.
+- The native Wix homepage source still physically contains legacy `Today's Edition` / `The Monday Chomp` markup. REST APIs do not expose general Wix Editor element deletion. True source deletion should be completed when the existing Editor site is connected through Wix Git Integration / CLI for Sites; do not add another permanent DOM polling workaround.

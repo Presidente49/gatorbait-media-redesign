@@ -24,7 +24,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Test controller model routing
         run: python3 automation/ops-hub/model-router/test_task_runner.py
@@ -35,7 +35,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Test controller model routing
         run: python3 automation/ops-hub/model-router/test_task_runner.py

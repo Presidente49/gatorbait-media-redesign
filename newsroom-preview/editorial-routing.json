@@ -1,11 +1,17 @@
 {
-  "updated": "2026-09-18T03:21:25Z",
+  "updated": "2026-09-18T12:25:04Z",
   "automation": {
-    "lastChecked": "2026-09-18T03:21:25Z",
-    "lastSeenPublishedDate": "2026-09-18T03:12:25Z",
-    "lastSeenPostId": "24b0c102-bcea-43e7-9dcc-4b6f4de3ff46"
+    "lastChecked": "2026-09-18T12:25:04Z",
+    "lastSeenPublishedDate": "2026-09-18T12:25:04Z",
+    "lastSeenPostId": "695bde20-cd39-411a-b276-beb179c8f0a4"
   },
   "assignments": [
+    {
+      "slug": "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast",
+      "title": "Welcome to the Killing Fields: Why Jordan-Hare Eats Gators for Breakfast",
+      "primaryHome": "magazine",
+      "reason": "Buddy Martin's long-form Jordan-Hare column is built around history, nostalgia, first-person perspective and enduring rivalry storytelling. Although it is timely for Auburn week, its core value remains readable after the game, so Magazine is the single primary editorial home."
+    },
     {
       "slug": "week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0",
       "title": "Week 3 Preview: Florida Gators (2-0, 0-0) v. Auburn Tigers (2-0, 0-0)",
@@ -91,8 +97,14 @@
   ],
   "magazine": [
     {
-      "slug": "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
+      "slug": "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast",
       "role": "cover",
+      "label": "WELCOME TO THE KILLING FIELDS",
+      "deck": "Buddy Martin on Jordan-Hare, Florida-Auburn history and the burden of winning on the Plains"
+    },
+    {
+      "slug": "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
+      "role": "feature",
       "label": "14 DAYS IN GAINESVILLE",
       "deck": "Carlton Reese remembers fear, football and the opening of the Spurrier era in 1990"
     },
@@ -122,6 +134,7 @@
     }
   ],
   "frontPageExclude": [
+    "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast",
     "before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days",
     "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
     "blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",

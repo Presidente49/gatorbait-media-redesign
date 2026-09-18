@@ -6,7 +6,9 @@ on:
     paths:
       - "CLAUDE.md"
       - "automation/ops-hub/model-router/**"
+      - "automation/ops-hub/controller-diagnostic.sh"
       - "automation/ops-hub/docker-compose.yml"
+      - "automation/site_health_check.py"
       - ".github/workflows/gatorbait-production-health.yml"
   schedule:
     - cron: "17 */6 * * *"

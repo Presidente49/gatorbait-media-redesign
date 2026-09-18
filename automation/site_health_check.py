@@ -35,9 +35,14 @@ TARGETS = (
 
 HOMEPAGE_REQUIRED = (
     "GatorBait Media",
-    "gbm-home-stable-boot",
     "d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp",
     "GatorBait Weekly",
+)
+
+HOMEPAGE_BOOT_MARKERS = (
+    "gbm-standalone-live",
+    "gbm-newsroom-boot",
+    "gbm-prepaint-v2",
 )
 
 HOMEPAGE_FORBIDDEN = (
@@ -110,6 +115,11 @@ def main() -> int:
         for marker in HOMEPAGE_REQUIRED:
             if marker.lower() not in homepage_body.lower():
                 failures.append(f"Homepage missing required marker: {marker}")
+        if not any(marker.lower() in homepage_body.lower() for marker in HOMEPAGE_BOOT_MARKERS):
+            failures.append(
+                "Homepage missing an active newsroom boot marker: "
+                + ", ".join(HOMEPAGE_BOOT_MARKERS)
+            )
         for marker in HOMEPAGE_FORBIDDEN:
             if marker.lower() in homepage_body.lower():
                 failures.append(f"Homepage contains retired marker: {marker}")

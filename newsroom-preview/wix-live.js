@@ -152,9 +152,13 @@ function unmount(){document.documentElement.classList.remove('gbm-standalone-liv
 function mount(posts){if(!home()||!posts||posts.length<4)return;var root=document.getElementById('gbm-live');if(!root){root=document.createElement('div');root.id='gbm-live';document.body.insertBefore(root,document.body.firstChild);}root.innerHTML=build(posts);document.documentElement.classList.add('gbm-standalone-live');removeAppInvite();}
 function refresh(){if(!home()){unmount();return;}feed().then(mount).catch(function(e){console.error('GatorBait newsroom feed',e);});}
 function routeCheck(){var p=location.pathname;if(p!==lastPath){lastPath=p;refresh();}removeAppInvite();}
+function installRouteWatch(){
+if(window.__GBM_ROUTE_WATCH__)return;window.__GBM_ROUTE_WATCH__=1;
+['pushState','replaceState'].forEach(function(k){var orig=history[k];if(typeof orig!=='function')return;history[k]=function(){var r=orig.apply(this,arguments);try{window.dispatchEvent(new Event('gbmroutechange'));}catch(e){}return r;};});
+}
+installRouteWatch();
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){lastPath=location.pathname;refresh();removeAppInvite();},{once:true});else{lastPath=location.pathname;refresh();removeAppInvite();}
-setInterval(routeCheck,500);
-setInterval(function(){if(home())refresh();},300000);
 window.addEventListener('popstate',routeCheck);
+window.addEventListener('gbmroutechange',routeCheck);
 try{var inviteObs=new MutationObserver(function(){removeAppInvite();});inviteObs.observe(document.documentElement,{childList:true,subtree:true});setTimeout(function(){inviteObs.disconnect();},20000);}catch(e){}
 })();

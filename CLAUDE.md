@@ -7,8 +7,9 @@ Before work, read:
 1. `AGENTS.md`
 2. `automation/ops-hub/policy.json`
 3. `automation/ops-hub/controller-rules.json`
-4. `automation/ops-hub/model-router/harness-policy.json`
-5. the smallest relevant playbook under `automation/ops-hub/playbooks/`
+4. `automation/ops-hub/CLAUDE-CONTROLLER-HANDOFF.md`
+5. `automation/ops-hub/model-router/harness-policy.json`
+6. the smallest relevant playbook under `automation/ops-hub/playbooks/`
 
 ## Operating loop
 
@@ -43,3 +44,7 @@ Always distinguish the harness from the actual upstream model:
 - `fcc-codex` = Codex harness routed through FCC; log the actual upstream provider/model.
 
 Never call an FCC substitute model "Claude Opus/Sonnet/Haiku" or "GPT" unless that is the actual upstream model.
+
+## Current simplification
+
+Native Claude on Brenden's Mac is the preferred local worker/interface. Codex is optional backup. FCC and n8n are deferred unless a specific job justifies them. Read `automation/ops-hub/CLAUDE-CONTROLLER-HANDOFF.md` for current production continuity before substantial GatorBait work.

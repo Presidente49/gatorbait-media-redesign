@@ -168,3 +168,22 @@ Do not add a sitewide autoplay or fixed floating player by default. If a persist
 ## Success criteria
 
 The redesign is successful when a mobile visitor can understand the show, know the next live time, start watching, find recent episodes/clips, and continue into GatorBait content without horizontal overflow, duplicate navigation, autoplay, or a competing frontend system.
+
+
+## Live-state normalization
+
+"LIVE NOW" is temporary distribution language, not the permanent identity of an episode or show page.
+
+After a broadcast ends:
+
+- normalize article/show titles to the recurring show name plus date or durable topic;
+- replace live CTA language with watch/replay language;
+- keep the canonical URL unless changing it has a clear editorial/SEO benefit;
+- preserve Front Page visibility when the episode remains current or is performing strongly;
+- do not let a stale LIVE NOW label determine homepage lead selection.
+
+Best Friday in Football is a recurring Friday show and follows this rule.
+
+## Continuous benchmark
+
+Before a material broadcast-page redesign, compare the current page against the live competitor set and docs/CONTINUOUS-DESIGN-BENCHMARK.md. Borrow useful hierarchy and media-discovery patterns without turning GatorBait TV into a generic streaming dashboard.

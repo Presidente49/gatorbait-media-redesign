@@ -2,20 +2,6 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "Best Friday in Football with Buddy Martin | September 18, 2026",
-      "excerpt": "Buddy Martin hosts Best Friday in Football with Pat Smith of WJOX, Franz Beard and Rob Dotson for a Friday look at Florida-Auburn and the weekend’s biggest SEC football storylines.",
-      "url": "https://www.gatorbaitmedia.com/post/live-now-best-friday-in-football-september-18-2026",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-18T13:09:17Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_022950c584d64afb8c93012f0a9acb02~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for LIVE NOW: Best Friday in Football with Buddy Martin"
-      }
-    },
-    {
       "title": "Florida-Auburn grudge match: The only thing missing is Gordon Solie",
       "excerpt": "There is this theory that has been circulating for a few months that Jon Sumrall is Florida’s football coach because athletic director Scott Stricklin got the best of the guy he once mentored. It is only a theory but one that has grown legs. It has its start back in 2008 when Scott Stricklin left Kentucky to become the senior associate athletic director at…",
       "url": "https://www.gatorbaitmedia.com/post/florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie",
@@ -128,20 +114,6 @@
       }
     },
     {
-      "title": "WATCH LIVE: The Buddy Martin Show — Florida Heads to Auburn and the Road Gets Real",
-      "excerpt": "Buddy Martin is live tonight breaking down Florida's trip to Auburn, what 2-0 really means, and what's next for the Gators.",
-      "url": "https://www.gatorbaitmedia.com/post/watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-15T01:11:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_cf66d07b9fa9460ab50d4fac7a4f4acb~mv2.jpg/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for WATCH LIVE: The Buddy Martin Show — Florida Heads to Auburn and the Road Gets Real"
-      }
-    },
-    {
       "id": "10a6bddb-ce48-428f-81a0-cd2c22e6a190",
       "title": "Florida–Auburn By the Numbers: Two New Coaches, One Old Rivalry",
       "excerpt": "Florida and Auburn are both 2-0, but the numbers tell very different stories. The Professor digs into 1939, Jordan-Hare history, Sumrall’s 14-2 road record, Auburn’s ground game, Byrum Brown and the three numbers that could decide Saturday.",
@@ -169,6 +141,34 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for What Can “VB3” Do for You?"
+      }
+    },
+    {
+      "title": "Readiness, cleaning up penalties will be critical as Gators prep for Auburn",
+      "excerpt": "Franz Beard breaks down Florida's 52-3 win over Campbell, the penalties Jon Sumrall wants fixed and what the Gators must sharpen before Auburn.",
+      "url": "https://www.gatorbaitmedia.com/post/readiness-cleaning-up-penalties-will-be-critical-as-gators-prep-for-auburn",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-09-14T03:51:24Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/a99769_ef5c2a84f1bd4fa185c907b16d506660~mv2.jpeg/v1/fit/w_1000,h_659,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Readiness, cleaning up penalties will be critical as Gators prep for Auburn"
+      }
+    },
+    {
+      "title": "Postgame Analysis: Florida Gators (2-0, 0-0) v. Campbell Camels (2-1, 0-0)",
+      "excerpt": "Loren Meadows analyzes Florida’s 52-3 win over Campbell, special teams, defense and what Aaron Philo and Jadan Baugh face next at Auburn.",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-2-0-0-0-v-campbell-camels-2-1-0-0",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-09-13T21:30:58Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_312400a6340042e480e15ec0ad58db51~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Postgame Analysis: Florida Gators (2-0, 0-0) v. Campbell Camels (2-1, 0-0)"
       }
     }
   ]

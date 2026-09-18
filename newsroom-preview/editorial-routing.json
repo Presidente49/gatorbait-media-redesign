@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-18T00:44:03Z",
+  "updated": "2026-09-18T03:21:25Z",
   "automation": {
-    "lastChecked": "2026-09-18T00:44:03Z",
-    "lastSeenPublishedDate": "2026-09-17T23:51:02.332Z",
-    "lastSeenPostId": "aeb4f5a5-3910-4b11-9a63-b05bac96e623"
+    "lastChecked": "2026-09-18T03:21:25Z",
+    "lastSeenPublishedDate": "2026-09-18T03:12:25Z",
+    "lastSeenPostId": "24b0c102-bcea-43e7-9dcc-4b6f4de3ff46"
   },
   "assignments": [
+    {
+      "slug": "week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0",
+      "title": "Week 3 Preview: Florida Gators (2-0, 0-0) v. Auburn Tigers (2-0, 0-0)",
+      "firstPublishedDate": "2026-09-18T03:12:25Z",
+      "primaryHome": "frontPage",
+      "reason": "A direct Week 3 Florida-Auburn game preview built around current personnel, matchup statistics, tactical analysis and a score prediction for Saturday at Jordan-Hare; it is immediate, time-sensitive game-week coverage."
+    },
     {
       "slug": "florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play",
       "title": "Florida Gators 2026 Roster and Schedule Update: Auburn Opens SEC Play",

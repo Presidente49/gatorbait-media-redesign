@@ -8,6 +8,8 @@ var IMAGE_FALLBACKS={
 'florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role':'https://static.wixstatic.com/media/ae876a_5a44257742a9441dbadef605f65b541f~mv2.jpeg'
 };
 var MAGAZINE_SLUGS=[
+'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1',
+'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast',
 'before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days',
 'personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary',
 'blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year',

@@ -13,20 +13,11 @@ function home(){var p=(location.pathname||'').replace(/\/+$/,'');return p===''||
 function post(){return /^\/post\//.test(location.pathname||'');}
 function profile(a){return '/profile/'+a.slug+'/profile';}
 function mail(subject,body){return 'mailto:'+SUPPORT+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body||'');}
-function storeGet(k){try{return localStorage.getItem(k)||''}catch(e){return''}}
-function storeSet(k,v){try{localStorage.setItem(k,String(v))}catch(e){}}
+
 function close(id){var e=document.getElementById(id);if(e)e.remove();}
 function modal(id,html){close(id);var w=document.createElement('div');w.id=id;w.className='gbm-modal';w.setAttribute('role','dialog');w.setAttribute('aria-modal','true');w.innerHTML=html;document.body.appendChild(w);var x=w.querySelector('.gbm-modal-close');if(x)x.focus();w.addEventListener('click',function(e){if(e.target===w)close(id)});return w;}
 function likelySignedIn(){var h=document.getElementById('SITE_HEADER');if(!h)return false;var btns=h.querySelectorAll('[data-testid="handle-button"],.wixui-login-social-bar button,.login-social-bar button');for(var i=0;i<btns.length;i++){var t=norm(btns[i].innerText||btns[i].getAttribute('aria-label'));if(t&&!/(log in|login|sign in|sign up|join)/.test(t))return true;}return false;}
-function suppressNativeNewsletter(){var boxes=document.querySelectorAll('[role="dialog"],[aria-modal="true"],[data-hook*="popup" i],[class*="lightbox" i],[class*="modal" i]');for(var i=0;i<boxes.length;i++){var b=boxes[i];if(b.id==='gbm-news-modal'||(b.closest&&b.closest('.gbm-modal')))continue;var t=norm(b.innerText);if(!t||!/(newsletter|subscribe|email address|gatorbait magazine)/.test(t))continue;b.style.setProperty('display','none','important');b.setAttribute('aria-hidden','true');}}
-function newsletterEligible(){if(!home())return false;if(likelySignedIn())return false;if(storeGet('gbmNewsletterKnownEmail')==='1')return false;var last=parseInt(storeGet('gbmNewsletterPromptAt')||'0',10)||0;if(last&&Date.now()-last<30*86400000)return false;return true;}
-function showNewsletter(){
- if(!newsletterEligible()||document.getElementById('gbm-news-modal'))return;
- var href=mail('Subscribe me to GatorBait Magazine','Please add me to GatorBait Magazine. I consent to receive marketing emails from GatorBait Media and understand I can unsubscribe at any time.\n\nMy name: ');
- var w=modal('gbm-news-modal','<div class="gbm-modal-card"><button class="gbm-modal-close" type="button" aria-label="Close">×</button><span class="gbm-modal-eyebrow">GATORBAIT MAGAZINE</span><h2>Get the latest Gators stories</h2><p>Join the GatorBait email list for new stories, show updates and breaking news. You can unsubscribe at any time.</p><div class="gbm-modal-actions"><a class="gbm-modal-btn orange" href="'+href+'">Sign up for GatorBait Magazine</a><button class="gbm-modal-btn alt gbm-no-thanks" type="button">No thanks</button></div><p class="gbm-modal-note">We will never add you to marketing email or text alerts without your choice.</p></div>');
- function dismiss(){storeSet('gbmNewsletterPromptAt',Date.now());close('gbm-news-modal');}
- w.querySelector('.gbm-modal-close').onclick=dismiss;w.querySelector('.gbm-no-thanks').onclick=dismiss;var a=w.querySelector('a');a.onclick=function(){storeSet('gbmNewsletterKnownEmail','1');storeSet('gbmNewsletterPromptAt',Date.now())};
-}
+function suppressNativeNewsletter(){var boxes=document.querySelectorAll('[role="dialog"],[aria-modal="true"],[data-hook*="popup" i],[class*="lightbox" i],[class*="modal" i]');for(var i=0;i<boxes.length;i++){var b=boxes[i];if(b.id==='gbm-news-modal'||(b.closest&&b.closest('.gbm-modal')))continue;var t=norm(b.innerText);if(!t||!/(newsletter|subscribe|email address|gatorbait magazine|gatorbait weekly|today'?s edition|todays edition)/.test(t))continue;b.style.setProperty('display','none','important');b.setAttribute('aria-hidden','true');}}
 function showAccount(){
  var cancel=mail('Cancel my GatorBait membership','Please help me cancel my GatorBait membership/subscription at the end of the current billing period.\n\nName on account:\nEmail on account:');
  var unsub=mail('Unsubscribe me from GatorBait Magazine','Please unsubscribe this email address from GatorBait marketing/newsletter emails.\n\nEmail to remove:');
@@ -55,7 +46,14 @@ function suppressAppInvite(){var all=document.querySelectorAll('body *');for(var
 function route(){if(!home())document.documentElement.classList.remove('gbm-newsroom-boot','gbm-standalone-live');decorateHome();decoratePost();accountControls();suppressAppInvite();suppressNativeNewsletter();}
 document.addEventListener('click',function(e){var acc=e.target.closest&&e.target.closest('[data-gbm-account]');if(acc){e.preventDefault();showAccount();return}var w=e.target.closest&&e.target.closest('[data-gbm-writer]');if(w){e.preventDefault();var a=AUTHORS[w.getAttribute('data-gbm-writer')];if(a)showWriter(a);}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){close('gbm-news-modal');close('gbm-account-modal');close('gbm-writer-modal')}});
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){route();setTimeout(showNewsletter,30000)},{once:true});else{route();setTimeout(showNewsletter,30000)}
-setInterval(route,1200);
-try{var o=new MutationObserver(function(){decorateHome();decoratePost();accountControls();suppressAppInvite();suppressNativeNewsletter()});o.observe(document.documentElement,{childList:true,subtree:true});}catch(e){}
+function installRouteWatch(){
+if(!window.__GBM_ROUTE_WATCH__){window.__GBM_ROUTE_WATCH__=1;['pushState','replaceState'].forEach(function(k){var orig=history[k];if(typeof orig!=='function')return;history[k]=function(){var r=orig.apply(this,arguments);try{window.dispatchEvent(new Event('gbmroutechange'));}catch(e){}return r;};});}
+}
+function routeSoon(){setTimeout(route,0);setTimeout(route,250);}
+installRouteWatch();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',route,{once:true});else route();
+window.addEventListener('popstate',routeSoon);
+window.addEventListener('gbmroutechange',routeSoon);
+[500,1500,5000,15000,30000,45000,60000].forEach(function(ms){setTimeout(function(){suppressAppInvite();suppressNativeNewsletter();},ms);});
+try{var pending=false;var o=new MutationObserver(function(){if(pending)return;pending=true;setTimeout(function(){pending=false;suppressAppInvite();suppressNativeNewsletter();},80);});o.observe(document.documentElement,{childList:true,subtree:true});setTimeout(function(){o.disconnect();},65000);}catch(e){}
 })();

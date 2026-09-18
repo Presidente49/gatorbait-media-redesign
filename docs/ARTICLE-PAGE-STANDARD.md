@@ -58,6 +58,17 @@ Every meaningful image must have:
 
 Search the Wix Media Manager before generating or sourcing a replacement image. Filenames are not reliable metadata; search likely names, subjects, event terms and existing photo-series prefixes.
 
+### Text-bearing hero art
+
+Text embedded inside hero artwork needs a stricter mobile gate than ordinary photography.
+
+- Never assume a 16:9 desktop graphic can be center-cropped safely on a phone.
+- At 390 px and 430 px, verify that headline/logo/sponsor marks embedded in the art remain fully readable.
+- If the module uses object-fit: cover, set an intentional focal position or create a mobile-safe crop.
+- If safe cropping is impossible, use a contained/full-image treatment rather than cutting off words.
+- A screenshot showing clipped text is a publication defect and should be corrected immediately.
+- The final Wix hero/cover asset and the live article render both need verification; checking the source image alone is insufficient.
+
 ## SEO and structured-data gate
 
 A post is not publication-complete until all of these are checked:
@@ -136,3 +147,8 @@ Every story has exactly one primary editorial home: **Front Page** or **Magazine
 - Do not install a Next.js/React/Vue/Django theme into production just to obtain article styling.
 - Implement the pattern with Wix-native article-page capabilities first; repo code may be used for prototypes/specs and low-risk presentation layers.
 - Production changes must preserve rollback and avoid reintroducing the blank-homepage/custom-embed failure mode documented in the September 2026 incident notes.
+
+
+## Continuous benchmark
+
+Before a material article-template change, review docs/CONTINUOUS-DESIGN-BENCHMARK.md. Article design should keep improving against current sports/news competitors without replacing Wix Blog or losing GatorBait's identity.

@@ -1,6 +1,6 @@
 # Editorial design references
 
-Updated: 2026-09-16
+Updated: 2026-09-18
 
 This is the design-reference shortlist for GatorBait Media. It records what to borrow and what not to install so future work does not restart the template search or replace a stable Wix site with an incompatible stack.
 
@@ -70,3 +70,20 @@ Before adding any repository, package, app or code bundle, record:
 7. Public verification after the change.
 
 If those seven items cannot be answered, do not add it.
+
+
+## Live competitor benchmark
+
+The repository/reference shortlist above is only one input. The controller must also compare GatorBait's live reader experience against current direct competitors.
+
+Primary live comparison set:
+
+- Gators Online / On3
+- GatorCountry
+- FloridaGators.com
+- Swamp247 / 247Sports when accessible
+- a relevant best-in-class national sports/news product for the specific pattern under review
+
+Use docs/CONTINUOUS-DESIGN-BENCHMARK.md as the standing process.
+
+The purpose is continuous product learning: identify useful current patterns in hierarchy, mobile behavior, imagery, utility modules, video, conversion and continuation. Do not copy layouts wholesale and do not add dependencies simply because a competitor uses them.

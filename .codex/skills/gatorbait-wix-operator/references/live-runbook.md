@@ -162,3 +162,15 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - Updated `newsroom-preview/wix-live.css` to keep mobile Latest thumbnails and text in fixed-height aligned rows with clamped headlines at 640 px and 390 px breakpoints.
 - Active loader `fdc2127a-845a-4d02-b711-438f1a4a86ce` is revision 7, named `GBM - Newsroom Loader v5 (stable mobile)`; the former 3-second opacity boot was removed and the loader now references CSS commit `34d3254ac5f0634b90bbf6177572959552f3b612`.
 - Published-post API verification confirmed both updated stories expose custom displayed media and hero images; the loader mutation response confirmed no opacity-boot rule remains.
+
+
+## 2026-09-18 publishing + email controller rules
+
+- Published Buddy Martin's `Welcome to the Killing Fields: Why Jordan-Hare Eats Gators for Breakfast`.
+- Replaced the plain lead image with the saved Killing Fields banner crop, Wix media `d3cfa5_e0a5961689134b0bbf2f320bd82f6e7a~mv2.png`.
+- Disabled misleading generic blog-email automation `824714d4-7e31-4b1d-95b2-ccec04d788af` at revision 14 after confirming its actual action was `triggered-emails`.
+- Rebuilt and activated `GatorBait Story Alert — New Blog Post`, automation `5006baf5-fbbf-440c-a012-a09bdbd95fc9`, revision 9. Preview against Buddy's real post passed brand, title, image and CTA checks before activation.
+- Created the Florida-Auburn GatorBait Magazine pregame draft `b8fdc1c7-5ec0-4e55-952c-594ccad59bb0`. It is DRAFT / NOT_STARTED and must not send without owner approval.
+- Magazine build enforces unique imagery: 7 visual slots / 7 unique image URLs. Ryan Urquhart is text-only rather than duplicating art.
+- Owner direction: no Magazine gallery by default.
+- See `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md` for the repeatable controller workflow.

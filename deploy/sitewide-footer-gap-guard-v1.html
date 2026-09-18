@@ -1,0 +1,32 @@
+<style id="gbm-footer-gap-guard-v1">
+html.gbm-tight-footer #SITE_PAGES_TRANSITION_GROUP,
+html.gbm-tight-footer #SITE_PAGES_TRANSITION_GROUP>div,
+html.gbm-tight-footer #SITE_PAGES_TRANSITION_GROUP>div>.wixui-page,
+html.gbm-tight-footer #SITE_PAGES,
+html.gbm-tight-footer #PAGES_CONTAINER{
+  height:auto!important;
+  min-height:0!important;
+  padding-bottom:0!important;
+  margin-bottom:0!important;
+}
+html.gbm-tight-footer #SITE_FOOTER{
+  margin-top:0!important;
+}
+</style>
+<script>(function(){
+if(window.__gbmFooterGapGuardV1)return;window.__gbmFooterGapGuardV1=1;
+function path(){return(location.pathname||'').replace(/\/+$/,'')}
+function sync(){
+  var p=path();
+  var exclude=p===''||p==='/'||/^\/account(?:\/|$)/.test(p)||/^\/(?:login|sign-in|signin)(?:\/|$)/.test(p)||/^\/_/.test(p);
+  document.documentElement.classList.toggle('gbm-tight-footer',!exclude);
+}
+sync();
+window.addEventListener('popstate',function(){setTimeout(sync,0)});
+['pushState','replaceState'].forEach(function(k){
+  var o=history[k];if(!o||o.__gbmGap)return;
+  function f(){var r=o.apply(this,arguments);setTimeout(sync,0);return r}
+  f.__gbmGap=1;history[k]=f;
+});
+setInterval(sync,1200);
+})();</script>

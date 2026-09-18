@@ -1,0 +1,82 @@
+<mjml>
+<mj-head>
+<mj-attributes>
+<mj-all font-family="Arial, Helvetica, sans-serif" />
+<mj-text color="#10131a" font-size="15px" line-height="1.55" />
+<mj-button background-color="#FA4616" color="#ffffff" font-size="12px" font-weight="800" border-radius="0px" padding="10px 0" />
+</mj-attributes>
+<mj-style inline="inline">.serif{font-family:Georgia,Times New Roman,serif!important} .kicker{letter-spacing:1.5px;text-transform:uppercase;font-weight:800}</mj-style>
+</mj-head>
+<mj-body background-color="#ece8df" width="640px">
+<mj-section background-color="#ffffff" padding="0"><mj-column>
+<mj-text padding="22px 28px 4px" font-size="34px" font-weight="900" color="#08132F" css-class="serif">GATOR<span style="color:#FA4616">BAIT</span> MAGAZINE</mj-text>
+<mj-text padding="0 28px 18px" font-size="10px" color="#6b7483" css-class="kicker">Pregame Special · Florida at Auburn · Sept. 18, 2026</mj-text>
+</mj-column></mj-section>
+<mj-section background-color="#08132F" padding="0"><mj-column>
+<mj-image padding="0" src="https://static.wixstatic.com/media/d3cfa5_e0a5961689134b0bbf2f320bd82f6e7a~mv2.png" href="https://www.gatorbaitmedia.com/post/welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast" alt="Welcome to the Killing Fields — Buddy Martin" />
+<mj-text padding="24px 28px 4px" color="#ffb28d" font-size="10px" css-class="kicker">The Lead · Buddy Martin</mj-text>
+<mj-text padding="4px 28px 4px" color="#ffffff" font-size="36px" line-height="1.05" font-weight="900" css-class="serif">Welcome to the Killing Fields</mj-text>
+<mj-text padding="4px 28px 8px" color="#ffffff" font-size="21px" font-weight="700" css-class="serif">Why Jordan-Hare Eats Gators for Breakfast</mj-text>
+<mj-text padding="6px 28px 12px" color="#dbe2ee" font-size="15px">Buddy Martin goes back through the noise, ghosts, heartbreak and weird football mythology of Jordan-Hare before Florida’s first trip to Auburn in 15 years.</mj-text>
+<mj-button align="left" padding="8px 28px 26px" href="https://www.gatorbaitmedia.com/post/welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast">READ BUDDY'S COLUMN →</mj-button>
+</mj-column></mj-section>
+<mj-section background-color="#f7f4ed" padding="24px 28px 10px"><mj-column><mj-text padding="0 0 12px" font-size="27px" font-weight="900" color="#08132F" css-class="serif">Your Auburn Pregame File</mj-text></mj-column></mj-section>
+<mj-section background-color="#f7f4ed" padding="0 28px 22px"><mj-column>
+<mj-image padding="0 0 10px" src="https://static.wixstatic.com/media/70130b_0c9934de1d8c4f43a0f7505aa16aa3e2~mv2.jpg" href="https://www.gatorbaitmedia.com/post/week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0" alt="Florida at Auburn Week 3 preview" />
+<mj-text padding="0 0 3px" font-size="9px" color="#FA4616" css-class="kicker">Loren Meadows · Week 3 Preview</mj-text>
+<mj-text padding="0 0 5px" font-size="23px" line-height="1.15" font-weight="900" color="#08132F" css-class="serif">Florida at Auburn: The Matchups That Decide Saturday Night</mj-text>
+<mj-text padding="0 0 9px" color="#555e6e">Byrum Brown, Jadan Baugh, the line of scrimmage and the pressure points inside Florida’s first SEC road test.</mj-text>
+<mj-button align="left" padding="0" href="https://www.gatorbaitmedia.com/post/week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0">READ THE PREVIEW →</mj-button>
+</mj-column></mj-section>
+<mj-section background-color="#ffffff" padding="22px 28px"><mj-column>
+<mj-image padding="0 0 10px" src="https://static.wixstatic.com/media/d3cfa5_f953a61bdcdf44cf997f83cbd7f3a657~mv2.png" href="https://www.gatorbaitmedia.com/post/florida-auburn-by-the-numbers-2026" alt="Florida Auburn By the Numbers" />
+<mj-text padding="0 0 3px" font-size="9px" color="#FA4616" css-class="kicker">By the Numbers</mj-text>
+<mj-text padding="0 0 5px" font-size="23px" line-height="1.15" font-weight="900" color="#08132F" css-class="serif">Two New Coaches, One Old Rivalry</mj-text>
+<mj-text padding="0 0 9px" color="#555e6e">Sumrall’s road record, Auburn’s ground game and the numbers that could decide Saturday night.</mj-text>
+<mj-button align="left" padding="0" href="https://www.gatorbaitmedia.com/post/florida-auburn-by-the-numbers-2026">SEE THE NUMBERS →</mj-button>
+</mj-column></mj-section>
+<mj-section background-color="#f7f4ed" padding="22px 28px"><mj-column>
+<mj-image padding="0 0 10px" src="https://static.wixstatic.com/media/d3cfa5_afff5dfb681e4070a45b775a6fa826ee~mv2.png" href="https://www.gatorbaitmedia.com/post/the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare" alt="The Trenches Don't Lie" />
+<mj-text padding="0 0 3px" font-size="9px" color="#FA4616" css-class="kicker">Defense</mj-text>
+<mj-text padding="0 0 5px" font-size="23px" line-height="1.15" font-weight="900" color="#08132F" css-class="serif">The Trenches Don’t Lie</mj-text>
+<mj-text padding="0 0 9px" color="#555e6e">Florida’s front, pass rush and secondary have nowhere to hide at Jordan-Hare.</mj-text>
+<mj-button align="left" padding="0" href="https://www.gatorbaitmedia.com/post/the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare">READ THE DEFENSE →</mj-button>
+</mj-column></mj-section>
+<mj-section background-color="#ffffff" padding="22px 28px"><mj-column>
+<mj-text padding="0 0 3px" font-size="9px" color="#FA4616" css-class="kicker">Florida Gator Lowdown</mj-text>
+<mj-text padding="0 0 5px" font-size="23px" line-height="1.15" font-weight="900" color="#08132F" css-class="serif">Ryan Urquhart: Embrace the Villain Role</mj-text>
+<mj-text padding="0 0 9px" color="#555e6e">The road mentality, the noise and why Florida has to enjoy being the bad guy Saturday night.</mj-text>
+<mj-button align="left" padding="0" href="https://www.gatorbaitmedia.com/post/florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role">READ THE LOWDOWN →</mj-button>
+</mj-column></mj-section>
+<mj-section background-color="#f7f4ed" padding="22px 28px"><mj-column>
+<mj-image padding="0 0 10px" src="https://static.wixstatic.com/media/ae876a_5a44257742a9441dbadef605f65b541f~mv2.jpeg" href="https://www.gatorbaitmedia.com/post/blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year" alt="Blood Noise and the Plains" />
+<mj-text padding="0 0 3px" font-size="9px" color="#FA4616" css-class="kicker">History</mj-text>
+<mj-text padding="0 0 5px" font-size="23px" line-height="1.15" font-weight="900" color="#08132F" css-class="serif">Blood, Noise and the Plains</mj-text>
+<mj-text padding="0 0 9px" color="#555e6e">The rivalry, the strange endings and why Florida–Auburn belongs on the schedule every year.</mj-text>
+<mj-button align="left" padding="0" href="https://www.gatorbaitmedia.com/post/blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year">READ THE HISTORY →</mj-button>
+</mj-column></mj-section>
+<mj-section background-color="#ffffff" padding="22px 28px"><mj-column>
+<mj-image padding="0 0 10px" src="https://static.wixstatic.com/media/d3cfa5_fc87899bd1064becb413c13d3f407d93~mv2.jpg" href="https://www.gatorbaitmedia.com/post/before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days" alt="Laura Rutledge feature" />
+<mj-text padding="0 0 3px" font-size="9px" color="#FA4616" css-class="kicker">Inside GatorBait Magazine</mj-text>
+<mj-text padding="0 0 5px" font-size="23px" line-height="1.15" font-weight="900" color="#08132F" css-class="serif">Before Laura Rutledge Was Laura Rutledge</mj-text>
+<mj-text padding="0 0 9px" color="#555e6e">A flip phone, an IFB, 5 a.m. radio and the Gainesville reps before ESPN.</mj-text>
+<mj-button align="left" padding="0" href="https://www.gatorbaitmedia.com/post/before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days">READ THE FEATURE →</mj-button>
+</mj-column></mj-section>
+<mj-section background-color="#f7f4ed" padding="22px 28px"><mj-column>
+<mj-image padding="0 0 10px" src="https://static.wixstatic.com/media/d3cfa5_1b088b6993b340859003979d846fc644~mv2.jpg" href="https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play" alt="Florida 2026 roster and schedule update" />
+<mj-text padding="0 0 3px" font-size="9px" color="#FA4616" css-class="kicker">Game-Week Reference</mj-text>
+<mj-text padding="0 0 5px" font-size="23px" line-height="1.15" font-weight="900" color="#08132F" css-class="serif">Florida Roster and Schedule Update</mj-text>
+<mj-text padding="0 0 9px" color="#555e6e">The live roster, Florida’s 2-0 start and the current schedule entering SEC play.</mj-text>
+<mj-button align="left" padding="0" href="https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play">OPEN THE UPDATE →</mj-button>
+</mj-column></mj-section>
+<mj-section background-color="#0021A5" padding="24px 28px"><mj-column>
+<mj-text padding="0 0 4px" font-size="9px" color="#ffb28d" css-class="kicker">GatorBait TV</mj-text>
+<mj-text padding="0 0 8px" color="#ffffff" font-size="25px" font-weight="900" css-class="serif">The Buddy Martin Show</mj-text>
+<mj-text padding="0 0 12px" color="#dbe4f4">Watch Buddy, the newest full episodes and the strongest clips from Auburn week.</mj-text>
+<mj-button align="left" padding="0" href="https://www.gatorbaitmedia.com/the-buddy-martin-show">WATCH GATORBAIT TV →</mj-button>
+</mj-column></mj-section>
+<mj-section background-color="#111111" padding="20px 28px"><mj-column>
+<mj-text align="center" padding="0" color="#aab1bd" font-size="10px" line-height="1.6"><span style="color:#ffffff;font-weight:700">GatorBait Magazine</span><br/>Florida Gators reporting, analysis and GatorBait TV since 1979.<br/>GatorBaitMedia.com · brenden@gatorbaitmedia.com<br/>1524 SE 22nd Ave · Ocala, FL 34471</mj-text>
+</mj-column></mj-section>
+</mj-body>
+</mjml>

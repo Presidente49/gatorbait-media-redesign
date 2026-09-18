@@ -194,3 +194,18 @@ For mobile, verify near 390 px and 430 px: masthead/menu separation, headline wr
 - Active newsroom loader fdc2127a-845a-4d02-b711-438f1a4a86ce is revision 10, named GBM - Newsroom Loader v6 (performance + stable mobile), and loads wix-live.js commit 28b74a18a0b2a431ff8c4c9acab073122b690db1.
 - Continuous live competitor/design review is now governed by docs/CONTINUOUS-DESIGN-BENCHMARK.md.
 - Text-bearing article hero art must pass an actual 390/430 px render check; source-image review alone is not sufficient.
+
+
+## 2026-09-18 landing-page rebuild verification
+
+- Owner-directed top package is now Buddy Martin lead, Franz Beard secondary, Carlton Reese secondary.
+- Best Friday in Football and the older Buddy Martin live-show post are explicitly excluded from the landing page.
+- Carlton/14 Days article cover and hero use Wix media `d3cfa5_66ca0317b876431b8cfcb910becc6376~mv2.png` with no faces.
+- Loren Meadows Week 3 Florida-Auburn preview cover and hero use Wix media `d3cfa5_77949cc88d0e4fb39c78f7f1c2a60728~mv2.png` with no faces.
+- Landing page JavaScript commit: `cc45f40ff1be2707f8a262a2138a0c967d0863b8`.
+- Landing page CSS commit: `ca8d374ba2764d2c83420499a04530e675c75afc`.
+- Editorial routing commit: `1f9e565817ca7174b7f7100d54cf0bc2f37b9a12`.
+- Homepage UI branding commit: `49fa2b7f9164e8ba274a87e0294ff9a5bddaacf0`.
+- Active loader `fdc2127a-845a-4d02-b711-438f1a4a86ce` is revision 12, named `GBM - Newsroom Loader v8 (verified magazine landing)`.
+- Verification caught and fixed a fail-open defect: the safety check still expected the old `.lead/.compact/.card` DOM. It now validates `.feature-lead`, `.feature-side`, `.news-card`, and `.trend-item` so the new homepage is not discarded after rendering.
+- GatorBait Weekly wording in the homepage UI layer was normalized to GatorBait Magazine.

@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
@@ -10,7 +10,12 @@
   },
   "profiles": {
     "daily_ops": {
-      "surfaces": ["daily operations", "morning brief", "newsroom operations", "daily QC"],
+      "surfaces": [
+        "daily operations",
+        "morning brief",
+        "newsroom operations",
+        "daily QC"
+      ],
       "deterministic_gates": [
         "public health checks completed before reasoning work",
         "homepage and Magazine freshness compared with canonical Wix/RSS content",
@@ -32,10 +37,23 @@
         "revenue exception interpretation",
         "decide which issues deserve escalation instead of more retries"
       ],
-      "verify": ["Ops Hub status", "desktop 1365-1440px", "390px mobile", "430px mobile after changes", "current Wix/RSS story set", "Restream clip title and guest identity", "guest-history attribution when used", "end-of-day record"]
+      "verify": [
+        "Ops Hub status",
+        "desktop 1365-1440px",
+        "390px mobile",
+        "430px mobile after changes",
+        "current Wix/RSS story set",
+        "Restream clip title and guest identity",
+        "guest-history attribution when used",
+        "end-of-day record"
+      ]
     },
     "homepage": {
-      "surfaces": ["/", "front page", "landing page"],
+      "surfaces": [
+        "/",
+        "front page",
+        "landing page"
+      ],
       "deterministic_gates": [
         "current lead and story chronology",
         "required brand markers",
@@ -44,11 +62,26 @@
         "no remote Archivo font regression",
         "mobile overflow and image aspect-ratio checks"
       ],
-      "bounded_reasoning": ["editorial hierarchy", "reader path clarity", "visual density", "conversion placement"],
-      "verify": ["public URL", "desktop", "390px mobile", "430px mobile"]
+      "bounded_reasoning": [
+        "editorial hierarchy",
+        "reader path clarity",
+        "visual density",
+        "conversion placement"
+      ],
+      "verify": [
+        "public URL",
+        "desktop",
+        "390px mobile",
+        "430px mobile"
+      ]
     },
     "magazine": {
-      "surfaces": ["/magazine", "digital magazine", "issue", "archive"],
+      "surfaces": [
+        "/magazine",
+        "digital magazine",
+        "issue",
+        "archive"
+      ],
       "deterministic_gates": [
         "newest published stories are represented",
         "clear lead story and secondary hierarchy",
@@ -58,23 +91,82 @@
         "membership and newsletter paths are valid",
         "mobile overflow and image aspect-ratio checks"
       ],
-      "bounded_reasoning": ["magazine-cover hierarchy", "section mix", "issue packaging", "visual pacing", "premium print-edition merchandising"],
-      "verify": ["public /magazine URL", "freshness against Wix/RSS source", "desktop", "390px mobile", "430px mobile"]
+      "bounded_reasoning": [
+        "magazine-cover hierarchy",
+        "section mix",
+        "issue packaging",
+        "visual pacing",
+        "premium print-edition merchandising"
+      ],
+      "verify": [
+        "public /magazine URL",
+        "freshness against Wix/RSS source",
+        "desktop",
+        "390px mobile",
+        "430px mobile"
+      ]
     },
     "article": {
-      "surfaces": ["/post/", "article", "story"],
-      "deterministic_gates": ["title/byline/date accuracy", "canonical URL", "Article or NewsArticle schema validity", "image dimensions and alt text", "internal links and category assignment"],
-      "bounded_reasoning": ["headline clarity", "dek/excerpt quality", "reading hierarchy", "related-story placement"],
-      "verify": ["published article URL", "schema output", "mobile readability"]
+      "surfaces": [
+        "/post/",
+        "article",
+        "story"
+      ],
+      "deterministic_gates": [
+        "title/byline/date accuracy",
+        "canonical URL",
+        "Article or NewsArticle schema validity",
+        "image dimensions and alt text",
+        "internal links and category assignment"
+      ],
+      "bounded_reasoning": [
+        "headline clarity",
+        "dek/excerpt quality",
+        "reading hierarchy",
+        "related-story placement"
+      ],
+      "verify": [
+        "published article URL",
+        "schema output",
+        "mobile readability"
+      ]
     },
     "newsletter": {
-      "surfaces": ["GatorBait Weekly", "email", "newsletter"],
-      "deterministic_gates": ["consented audience only", "unsubscribe present", "destination URLs valid", "subject and sender fields populated", "no prohibited legacy newsletter names"],
-      "bounded_reasoning": ["subject options", "story ordering", "CTA copy"],
-      "verify": ["rendered preview", "link check", "send-state confirmation"]
+      "surfaces": [
+        "GatorBait Weekly",
+        "email",
+        "newsletter"
+      ],
+      "deterministic_gates": [
+        "consented audience only",
+        "unsubscribe present",
+        "destination URLs valid",
+        "subject and sender fields populated",
+        "no prohibited legacy newsletter names",
+        "production single-story article alert matches the USER-origin automation defined in docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md",
+        "Wix PREINSTALLED blog-email automation remains INACTIVE",
+        "article-email automation identity is verified by automation ID + origin + message ID, never friendly name alone"
+      ],
+      "bounded_reasoning": [
+        "subject options",
+        "story ordering",
+        "CTA copy"
+      ],
+      "verify": [
+        "rendered preview",
+        "link check",
+        "send-state confirmation",
+        "live automation ID/origin/status",
+        "publishing-email playbook mapping"
+      ]
     },
     "subscriber_winback": {
-      "surfaces": ["former subscriber", "lapsed member", "cancelled subscription", "win-back"],
+      "surfaces": [
+        "former subscriber",
+        "lapsed member",
+        "cancelled subscription",
+        "win-back"
+      ],
       "deterministic_gates": [
         "recipient was previously subscribed and is legally contactable",
         "current consent and suppression status checked",
@@ -85,11 +177,28 @@
         "campaign and cohort identifiers are recorded",
         "show-clips workflow is not treated as part of win-back"
       ],
-      "bounded_reasoning": ["cohort-specific message framing", "content-led reason to return", "discount-vs-full-price test design", "subject and CTA variants"],
-      "verify": ["audience count", "suppression reconciliation", "rendered message", "destination link", "30/60/90-day retention tracking"]
+      "bounded_reasoning": [
+        "cohort-specific message framing",
+        "content-led reason to return",
+        "discount-vs-full-price test design",
+        "subject and CTA variants"
+      ],
+      "verify": [
+        "audience count",
+        "suppression reconciliation",
+        "rendered message",
+        "destination link",
+        "30/60/90-day retention tracking"
+      ]
     },
     "social": {
-      "surfaces": ["Facebook", "Instagram", "X", "YouTube", "social"],
+      "surfaces": [
+        "Facebook",
+        "Instagram",
+        "X",
+        "YouTube",
+        "social"
+      ],
       "deterministic_gates": [
         "destination URL valid",
         "published facts match source",
@@ -101,11 +210,33 @@
         "tracking identifier present when required",
         "original-content requirements preserved for monetization"
       ],
-      "bounded_reasoning": ["hook", "caption", "channel adaptation", "clip packaging", "relationship/history framing when verified", "CTA"],
-      "verify": ["scheduled/published object", "destination link", "platform-native preview", "correct account/page identity", "monetization eligibility signals"]
+      "bounded_reasoning": [
+        "hook",
+        "caption",
+        "channel adaptation",
+        "clip packaging",
+        "relationship/history framing when verified",
+        "CTA"
+      ],
+      "verify": [
+        "scheduled/published object",
+        "destination link",
+        "platform-native preview",
+        "correct account/page identity",
+        "monetization eligibility signals"
+      ]
     },
     "show_clips": {
-      "surfaces": ["Restream Clips", "Restream", "recording", "clip project", "show highlights", "Shorts", "Reels", "post-show recap"],
+      "surfaces": [
+        "Restream Clips",
+        "Restream",
+        "recording",
+        "clip project",
+        "show highlights",
+        "Shorts",
+        "Reels",
+        "post-show recap"
+      ],
       "deterministic_gates": [
         "source recording belongs to the approved GatorBait account",
         "show/event date and title identified",
@@ -131,10 +262,26 @@
         "optionally choose one strongest clip for the regular newsletter",
         "choose CTA based on recap article or full-show objective"
       ],
-      "verify": ["Restream project details", "Restream clip ID or timestamp fingerprint", "final clip title", "verified guest identity", "guest-history attribution when used", "correct destination account/page", "scheduled/published social object", "YouTube/Facebook analytics after distribution"]
+      "verify": [
+        "Restream project details",
+        "Restream clip ID or timestamp fingerprint",
+        "final clip title",
+        "verified guest identity",
+        "guest-history attribution when used",
+        "correct destination account/page",
+        "scheduled/published social object",
+        "YouTube/Facebook analytics after distribution"
+      ]
     },
     "mobile_app": {
-      "surfaces": ["Spaces by Wix", "member app", "mobile app", "native app", "iOS", "Android"],
+      "surfaces": [
+        "Spaces by Wix",
+        "member app",
+        "mobile app",
+        "native app",
+        "iOS",
+        "Android"
+      ],
       "deterministic_gates": [
         "mobile web remains canonical public content surface",
         "Spaces pilot is evaluated before a paid branded-app commitment",
@@ -144,20 +291,75 @@
         "paid app plan or app-store fees require owner approval",
         "app does not create a duplicate editorial source of truth"
       ],
-      "bounded_reasoning": ["Spaces pilot information architecture", "notification strategy", "pilot cohort design", "compare app retention with mobile web", "decide whether a branded native app has a durable business job"],
-      "verify": ["Spaces/member-app preview", "iOS where available", "Android where available", "notification deep links", "membership state", "pilot adoption and return-use metrics"]
+      "bounded_reasoning": [
+        "Spaces pilot information architecture",
+        "notification strategy",
+        "pilot cohort design",
+        "compare app retention with mobile web",
+        "decide whether a branded native app has a durable business job"
+      ],
+      "verify": [
+        "Spaces/member-app preview",
+        "iOS where available",
+        "Android where available",
+        "notification deep links",
+        "membership state",
+        "pilot adoption and return-use metrics"
+      ]
     },
     "frontend": {
-      "surfaces": ["CSS", "HTML", "Velo", "embed", "navigation", "form"],
-      "deterministic_gates": ["scoped selectors", "no permanent short-interval polling", "no first-paint opacity fade", "no competing global themes", "44px interactive controls where required", "rollback path defined"],
-      "bounded_reasoning": ["UX diagnosis", "layout remedy", "accessibility review"],
-      "verify": ["public runtime", "console", "desktop", "390px mobile", "430px mobile"]
+      "surfaces": [
+        "CSS",
+        "HTML",
+        "Velo",
+        "embed",
+        "navigation",
+        "form"
+      ],
+      "deterministic_gates": [
+        "scoped selectors",
+        "no permanent short-interval polling",
+        "no first-paint opacity fade",
+        "no competing global themes",
+        "44px interactive controls where required",
+        "rollback path defined"
+      ],
+      "bounded_reasoning": [
+        "UX diagnosis",
+        "layout remedy",
+        "accessibility review"
+      ],
+      "verify": [
+        "public runtime",
+        "console",
+        "desktop",
+        "390px mobile",
+        "430px mobile"
+      ]
     },
     "analytics": {
-      "surfaces": ["analytics", "traffic", "conversion", "campaign"],
-      "deterministic_gates": ["time range explicit", "source coverage explicit", "metric definition stable", "no unsupported causal claims"],
-      "bounded_reasoning": ["trend explanation", "opportunity identification", "next experiment"],
-      "verify": ["source totals", "date window", "metric reconciliation"]
+      "surfaces": [
+        "analytics",
+        "traffic",
+        "conversion",
+        "campaign"
+      ],
+      "deterministic_gates": [
+        "time range explicit",
+        "source coverage explicit",
+        "metric definition stable",
+        "no unsupported causal claims"
+      ],
+      "bounded_reasoning": [
+        "trend explanation",
+        "opportunity identification",
+        "next experiment"
+      ],
+      "verify": [
+        "source totals",
+        "date window",
+        "metric reconciliation"
+      ]
     }
   }
 }

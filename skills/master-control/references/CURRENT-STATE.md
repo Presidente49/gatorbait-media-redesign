@@ -164,6 +164,81 @@ Wix Social Publisher returned:
 
 Re-query before publishing because OAuth state can change.
 
+## Meta / Facebook / Instagram control plane snapshot
+
+Verified 2026-09-19:
+
+### Wix Social Publisher
+
+Facebook token status: **VALID**.
+
+Connected Facebook Page targets:
+
+- **Gator Bait Media** — page ID `192930054063033` — default target
+- **Best Fridays in Football** — page ID `101360751735365`
+- **The Buddy Martin Show** — page ID `164984480218367`
+
+Instagram token status: **INVALID**.
+
+The Wix Instagram connection currently fails with Meta OAuth error code `190`, subcode `460`, indicating the prior Facebook/Instagram session was invalidated after a password/security-session change.
+
+Generate a fresh Wix Instagram connect URL at runtime rather than storing the OAuth URL in Git.
+
+Important Wix limitation: Facebook/Instagram posts created natively on the social network are imported by Wix on a delayed sync and cannot be forced on demand. Do not use Wix alone for real-time field-post monitoring.
+
+### Windsor.ai
+
+Same Windsor user/account is used by the generic Windsor tools and the dedicated Facebook Ads namespace.
+
+Currently connected:
+
+- `facebook` = Meta Ads connector, with two connected ad-side accounts
+- `googleanalytics4`
+- `searchconsole`
+
+Available but **not yet OAuth-authorized**:
+
+- `facebook_organic` — supports organic Facebook reads plus `create_post` and `create_photo_post`
+- `instagram` — supports image/carousel/story/video posting and comment actions
+
+These two OAuth connections are the preferred immediate path for real-time organic Meta control because Windsor manages the provider OAuth/application layer.
+
+### Metricool
+
+The GatorBait Metricool brand exists, but its current network connection payload is empty. Do not treat Metricool as a live Meta source until the Facebook/Instagram networks are actually connected.
+
+### vidIQ Instagram
+
+The Buddy Martin Show Instagram handle is available through a manual/public-fallback connection only. Owner insights and publishing are unavailable through that connection. Use vidIQ for public Instagram research/reel inspection, not as the GatorBait Meta backend.
+
+### Direct Meta repo fallback
+
+If Windsor Organic cannot meet the job, the reviewed direct-Meta fallback candidates are:
+
+- Facebook Pages: `lanternrow/facebook-pages-mcp`
+  - Meta Graph API v25
+  - current 2026 release line
+  - Page/posts/insights/comments/video reads
+  - text/link/photo publishing
+- Instagram: `mcpware/instagram-mcp`
+  - official Instagram Graph API
+  - professional/business account reads
+  - media insights and publishing
+  - no scraping/private-session approach
+
+Official lower-level reference SDKs:
+
+- `facebook/facebook-python-business-sdk`
+- `facebook/facebook-nodejs-business-sdk`
+
+Do not commit Meta access tokens, app secrets, Page tokens, cookies, or system-user credentials.
+
+Do not adopt a community MCP merely because it has more tools. One reviewed Facebook MCP candidate was excluded from the production path because its own README says its tool surface has not yet been verified against a live Meta Page.
+
+Canonical playbook:
+
+`automation/ops-hub/playbooks/meta-control.md`
+
 ## Email / automation identity warning
 
 Do not trust friendly automation names or old runbook text.

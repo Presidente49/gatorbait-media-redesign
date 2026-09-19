@@ -16,16 +16,19 @@ Before a story is published:
 
 For major stories, create branded art before release when supplied art is weak. Do not use faces unless there is a real supplied/licensed photo.
 
-## 2. Automatic blog email = GatorBait Story Alert
+## 2. Automatic blog email = custom GatorBait article alert
 
-This is a single-story automatic email, not a GatorBait Magazine issue.
+This is the production single-story automatic email, not a GatorBait Magazine issue.
 
 Production automation:
-- Name: `GatorBait Story Alert — New Blog Post`
-- Automation ID: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`
+- Automation ID: `824714d4-7e31-4b1d-95b2-ccec04d788af`
+- Current Wix name: `Send notification when new blog post is published`
+- Origin: **USER** (custom workflow; this is not the Wix-preinstalled blog email)
 - Trigger: `wix_blog-new_blog_post`
-- Email action ID: `042c6c7c-f7e4-4d60-abd2-5f22fa69cf0e`
-- Audience: cleaned opted-in deliverable audience already configured on the automation.
+- Email message ID: `04550418-33d0-4564-ad25-b865f591b2c0`
+- Status: **ACTIVE** at revision 15 on Sept. 19, 2026.
+- Audience: the existing configured opted-in segment/audience. Do not broaden to unsubscribed recipients.
+- Verified analytics, Aug. 24–Sept. 19, 2026: 80,033 delivered emails, 635 unique email clicks and 4,177 attributed sessions.
 
 Required dynamic fields:
 - `${title}`
@@ -40,21 +43,22 @@ Required presentation:
 - Excerpt/deck.
 - Orange `READ THE FULL STORY →` CTA.
 - GatorBait identity and compliant business footer.
-- Never send Wix's generic `New Blog Post` treatment.
+- Never substitute the Wix-preinstalled generic blog email.
 
-Pre-activation rule: render Preview Email Content with a real current post payload and require all four checks to pass: brand, title, image and CTA.
+Pre-activation rule: validate the automation before status changes. When editing the message/template, preview with a real current post payload and require brand, title, image and CTA checks to pass.
 
-## 3. Generic blog-email workflow stays off
+## 3. Wix-preinstalled blog email stays off
 
-The workflow below was incorrectly described as a push notification but its actual action was a triggered email. It produced the unwanted generic message on Sept. 18, 2026.
+The workflow below is the Wix Blog preinstalled automation. Its friendly name was changed during troubleshooting and became misleading, but its origin and message ID identify it as the Wix-provided path.
 
-- Automation ID: `824714d4-7e31-4b1d-95b2-ccec04d788af`
-- Old name: `Send notification when new blog post is published`
-- Actual action: `triggered-emails`
-- Status: **INACTIVE**
-- Disabled at revision 14 on Sept. 18, 2026.
+- Automation ID: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`
+- Current Wix name: `GatorBait Story Alert — New Blog Post`
+- Origin: **PREINSTALLED** from Wix Blog.
+- Email message ID: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`
+- Status: **INACTIVE** at revision 10 on Sept. 19, 2026.
+- Verified analytics, Aug. 24–Sept. 19, 2026: 10 unique email clicks and 230 attributed sessions.
 
-Do not reactivate it unless its action is intentionally repurposed and previewed.
+Do not reactivate this workflow as the production article alert. The custom USER-origin workflow above is the proven distribution engine.
 
 ## 4. GatorBait Magazine = curated multi-story email
 

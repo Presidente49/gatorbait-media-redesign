@@ -1,27 +1,48 @@
-# GatorBait Media Controller Instructions
+# GatorBait Media — Master Control Entry
 
-This repository uses a **single-controller** operating model. The filename remains `AGENTS.md` for tool compatibility, but specialist models, review processes and automation lanes are subordinate tools: they return evidence, drafts or bounded recommendations to the controller and do not independently mutate production.
+This repository uses **Master Control**, a single-controller operating model.
 
-All work in this repository must read:
+The filename remains `AGENTS.md` for compatibility. Models, sub-agents, plugins, review lanes, scripts, automations, and external systems are subordinate tools. They may inspect, research, draft, test, or return bounded recommendations; they do not become peer controllers or race production writes.
 
-1. `.codex/skills/gatorbait-wix-operator/SKILL.md`
-2. `.codex/skills/gatorbait-wix-operator/references/live-runbook.md`
-3. `IMPLEMENTATION-GUIDE.md`
-4. `docs/LANDING-PAGE-QC-2026-09-13.md`
-5. `automation/ops-hub/policy.json`
+## Canonical read order
+
+For substantial GatorBait work:
+
+1. `skills/master-control/SKILL.md`
+2. `skills/master-control/references/CURRENT-STATE.md` only when current live facts matter
+3. the smallest relevant Master Control reference or specialist skill
+4. `automation/ops-hub/policy.json` and `controller-rules.json` when production mutation/automation policy matters
+5. the relevant current surface playbook/runbook
+
+Do **not** load every historical document by default.
+
+The old `wix-site-management-playbook.md` is historical design context, not current UX authority.
+
+Dated sections in long runbooks are historical evidence unless live provider state confirms them.
+
+## Truth rule
+
+When sources disagree:
+
+**live provider/API/runtime → current object/revision → Master Control current state → durable doctrine/policy → current surface playbook → historical docs/chats → model assumptions**
+
+Friendly names are not sufficient identity for automations, campaigns, embeds, or workflows.
 
 ## Production coordination
 
-- Use one designated controller/writer for live Wix mutations. Additional tools may inspect, research, test and review, but they must not make competing production writes.
-- Deterministic checks and target-specific rules run before model reasoning whenever possible.
-- Read the current Wix entity and revision before changing it.
-- Define success and rollback checks before mutation, keep a rollback path, and verify the public result independently after a live change.
-- A model or specialist saying a task is fixed is not verification.
-- Preserve production stability, the optimized official logo and current routes. The visual design may evolve when the change strengthens newsroom hierarchy, readability or mobile presentation.
-- Keep the retired conflicting dark-theme embed disabled unless it is replaced through a tested single-theme migration with no first-paint flash.
-- Never restore first-paint fades, permanent short-interval polling, competing global themes or broad CSS selectors that affect unrelated Wix apps.
-- Use no credentials or secrets in this repository.
-- Treat generated social posts, newsletters and publishing changes as drafts unless the active user request authorizes publication.
-- Record measured outcomes. Repeated safe patterns may become reviewed playbooks; they may not silently rewrite safety, financial or approval boundaries.
+- One designated controller/writer owns live mutations.
+- Read the current entity and revision before changing it.
+- Prefer deterministic checks before model reasoning.
+- Define success and rollback before mutation.
+- Make the smallest effective reversible change.
+- Verify from public/runtime/provider evidence.
+- A model saying "fixed" is not verification.
+- Prefer a shared-layer repair over repeated page-specific hacks.
+- Never restore retired competing themes, permanent rapid polling, first-paint hiding, or broad CSS selectors without a tested reason.
+- Keep credentials/secrets out of the repo.
+- Generated social/email/publication output is draft unless the active request authorizes that publication/send.
+- Measured repeated outcomes may graduate into reviewed playbooks; they do not silently rewrite money, safety, approval, or customer-data boundaries.
 
-When the user invokes **God Mode for Chris**, complete authorized reversible GatorBait work end to end with minimal cost and return verified results through the controller loop.
+## Invocation
+
+When Brenden says **Master Control**, **Controller**, **Chris**, or legacy **God Mode for Chris**, use the canonical Master Control skill and complete authorized reversible work end to end with concise updates and independent verification.

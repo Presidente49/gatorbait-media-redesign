@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-18T21:25:00Z",
+  "updated": "2026-09-19T16:14:39Z",
   "automation": {
-    "lastChecked": "2026-09-18T14:23:15Z",
-    "lastSeenPublishedDate": "2026-09-18T13:09:17.732Z",
-    "lastSeenPostId": "ea8d7ace-8579-4a82-9508-fc7ec5d1d081"
+    "lastChecked": "2026-09-19T16:14:39Z",
+    "lastSeenPublishedDate": "2026-09-19T15:31:33Z",
+    "lastSeenPostId": "d7029934-1b31-4d01-b28c-9e6443db0c0b"
   },
   "assignments": [
+    {
+      "slug": "jimbo-fisher-s-fsu-parole-hearing-could-go-either-way-how-do-gator-fans-feel",
+      "title": "Jimbo Fisher’s FSU Parole Hearing Could Go Either Way. How Do Gator Fans Feel?",
+      "firstPublishedDate": "2026-09-19T15:31:33Z",
+      "primaryHome": "frontPage",
+      "reason": "Current Florida State coaching-search analysis built around fresh reporting that FSU is considering a Jimbo Fisher return, with immediate reaction and rivalry implications for Florida fans; its news value is time-sensitive and belongs on the Front Page."
+    },
     {
       "slug": "live-now-best-friday-in-football-september-18-2026",
       "title": "Best Friday in Football with Buddy Martin | September 18, 2026",
@@ -170,7 +177,7 @@
   "latestGameGallery": {
     "status": "removed",
     "removedDate": "2026-09-16",
-    "reason": "Owner requested the Magazine front-page gallery be removed rather than carried forward; no newer usable game photo set has appeared since."
+    "reason": "No newer usable game photo set appeared among posts published through 2026-09-19T15:31:33Z; keep the Magazine gallery removed rather than accumulating galleries."
   },
   "performancePolicy": {
     "windowDays": 7,

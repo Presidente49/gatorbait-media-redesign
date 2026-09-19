@@ -112,6 +112,34 @@ Canonical playbook:
 
 `automation/ops-hub/playbooks/iphone-control.md`
 
+## Local mobile bootstrap status
+
+A one-command bootstrap is now tracked in the repo:
+
+`automation/ops-hub/install-master-control-mobile.sh`
+
+It configures the two mobile lanes:
+
+- `mac_messages_mcp` for scoped/read-only Messages attachment ingestion
+- `iphone-use` for optional real-device UI control
+
+Important status distinction:
+
+- repo/bootstrap implementation: **READY**
+- executed on Brenden's physical Mac: **NOT VERIFIED FROM CLOUD CHAT**
+- Apple permission state: must be verified locally
+- iPhone WDA/control state: must be verified locally
+
+The script is diagnostic-first and stops at Apple-required physical approval gates.
+
+Run locally from the GatorBait repo checkout:
+
+```bash
+git pull
+chmod +x automation/ops-hub/install-master-control-mobile.sh
+./automation/ops-hub/install-master-control-mobile.sh
+```
+
 ## Analytics sources verified
 
 Connected through current tooling:

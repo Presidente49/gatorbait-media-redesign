@@ -1,0 +1,29 @@
+<style id="gbm-prepaint-v2">
+html.gbm-prepaint-v2::before{content:"";position:fixed;inset:0;z-index:2147483600;background:#fff;box-shadow:inset 0 4px 0 #FA4616;pointer-events:none}
+html.gbm-prepaint-v2::after{content:"";position:fixed;inset:0;z-index:2147483601;background:transparent url('https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp') center 42%/min(300px,58vw) auto no-repeat;pointer-events:none}
+</style>
+<script>(function(){
+  var d=document.documentElement;
+  d.classList.add('gbm-prepaint-v2');
+  var released=false;
+  function routeReady(){
+    var p=(location.pathname||'').replace(/\/+$/,'');
+    var header=!!document.querySelector('#SITE_HEADER .gbm-official-logo');
+    if(p==='') return header&&d.classList.contains('gbm-standalone-live')&&!!document.getElementById('gbm-live');
+    if(p==='/magazine') return header&&d.classList.contains('gbm-magazine-live')&&!!document.getElementById('gbm-magazine-page');
+    if(p==='/tv') return header&&d.classList.contains('gbm-tv')&&!!document.getElementById('gbm-tv');
+    if(/^\/post\//.test(p)) return header&&!!document.querySelector('[data-hook="post-page"],article,#PAGES_CONTAINER');
+    if(/^\/gatorbait-media-blogs/.test(p)) return header&&!!document.querySelector('[data-hook="post-list-item"],#PAGES_CONTAINER');
+    return header&&!!document.querySelector('#PAGES_CONTAINER,#SITE_PAGES');
+  }
+  function release(){
+    if(released)return;released=true;
+    requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.remove('gbm-prepaint-v2')})});
+  }
+  function check(){if(routeReady())release()}
+  check();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',check,{once:true});
+  try{var o=new MutationObserver(check);o.observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});setTimeout(function(){o.disconnect()},4500)}catch(e){}
+  [80,160,280,450,700,950,1250,1750,2500,3250].forEach(function(ms){setTimeout(check,ms)});
+  setTimeout(release,4000);
+})();</script>

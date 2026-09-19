@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Jimbo Fisher’s FSU Parole Hearing Could  Go Either Way. How Do Gator Fans Feel?",
+      "excerpt": "Fisher, already carrying his $77.5 million settlement, has signaled he’d take supervised release for cheap something like $4-5 million against a market rate closer to $8-10 million.",
+      "url": "https://www.gatorbaitmedia.com/post/jimbo-fisher-s-fsu-parole-hearing-could-go-either-way-how-do-gator-fans-feel",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-19T15:31:33Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_17a4237bd4e9471a9ed473ca149b3996~mv2.jpeg/v1/fit/w_906,h_859,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Jimbo Fisher’s FSU Parole Hearing Could  Go Either Way. How Do Gator Fans Feel?"
+      }
+    },
+    {
       "title": "Florida-Auburn grudge match: The only thing missing is Gordon Solie",
       "excerpt": "There is this theory that has been circulating for a few months that Jon Sumrall is Florida’s football coach because athletic director Scott Stricklin got the best of the guy he once mentored. It is only a theory but one that has grown legs. It has its start back in 2008 when Scott Stricklin left Kentucky to become the senior associate athletic director at…",
       "url": "https://www.gatorbaitmedia.com/post/florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie",
@@ -155,20 +169,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Readiness, cleaning up penalties will be critical as Gators prep for Auburn"
-      }
-    },
-    {
-      "title": "Postgame Analysis: Florida Gators (2-0, 0-0) v. Campbell Camels (2-1, 0-0)",
-      "excerpt": "Loren Meadows analyzes Florida’s 52-3 win over Campbell, special teams, defense and what Aaron Philo and Jadan Baugh face next at Auburn.",
-      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-2-0-0-0-v-campbell-camels-2-1-0-0",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-09-13T21:30:58Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_312400a6340042e480e15ec0ad58db51~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Postgame Analysis: Florida Gators (2-0, 0-0) v. Campbell Camels (2-1, 0-0)"
       }
     }
   ]

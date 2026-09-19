@@ -1,4 +1,4 @@
-# Claude Controller Handoff — 2026-09-18
+# Claude Controller Handoff — 2026-09-19
 
 This is the current continuity brief for Brenden Martin's GatorBait controller work.
 
@@ -44,6 +44,7 @@ Read before substantial work:
 4. automation/ops-hub/controller-rules.json
 5. .codex/skills/gatorbait-wix-operator/references/live-runbook.md
 6. automation/ops-hub/CLAUDE-CONTROLLER-HANDOFF.md
+7. docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md when work touches article publishing, automatic article email, or GatorBait Magazine campaigns
 
 ## Completed today
 
@@ -101,16 +102,30 @@ WATCH LIVE NOW ON GATORBAIT MEDIA →
 Target:
 https://www.gatorbaitmedia.com/the-buddy-martin-show
 
-### Email automation state
-Active:
-- GatorBait Story Alert — New Blog Post
-- ID: 5006baf5-fbbf-440c-a012-a09bdbd95fc9
-- status ACTIVE
+### Email automation state — corrected Sept. 19
 
-Inactive:
-- generic blog-post email automation
+Production single-story article alert:
 - ID: 824714d4-7e31-4b1d-95b2-ccec04d788af
-- keep INACTIVE
+- current Wix name: Send notification when new blog post is published
+- origin: USER
+- status: ACTIVE
+- verified revision: 15
+- email message ID: 04550418-33d0-4564-ad25-b865f591b2c0
+- sendToUnsubscribed: false
+
+Wix-preinstalled blog automation:
+- ID: 5006baf5-fbbf-440c-a012-a09bdbd95fc9
+- current Wix name: GatorBait Story Alert — New Blog Post
+- origin: PREINSTALLED
+- status: INACTIVE
+- verified revision: 10
+- email message ID: 1dfd5091-6dbe-48ef-a919-ef0fc75a38ab
+- keep INACTIVE as the production article-alert path
+
+Important identity rule:
+- friendly names became misleading during troubleshooting;
+- identify these workflows by automation ID + origin + message ID, not name alone;
+- the canonical publishing/email mapping is `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md`.
 
 ### Controller diagnostic
 Added:

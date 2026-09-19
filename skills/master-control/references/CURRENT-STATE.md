@@ -77,6 +77,41 @@ Canonical operational playbook:
 
 `automation/ops-hub/playbooks/game-day-photo-ingest.md`
 
+## Optional iPhone device-control surface reviewed 2026-09-19
+
+Repository selected for broader device control:
+
+`leeguooooo/iphone-use`
+
+Why it is the preferred controller candidate:
+
+- actively maintained in September 2026
+- non-jailbreak path
+- USB-connected iPhone via WebDriverAgent/XCUITest
+- live screen/screenshot access
+- accessibility-tree reads
+- tap, swipe, type, launch-app and guarded multi-step actions
+- bundled MCP server
+- bearer-authenticated agent HTTP API
+- explicit human-handoff mode so the phone can be released back to Brenden instead of an agent fighting for control
+- direct WDA backend fails closed when control is unavailable
+- requires the iPhone to be trusted, unlocked/awake, Developer Mode enabled, and paired to a Mac with full Xcode
+
+Use this only when actual device interaction is required.
+
+Preferred hierarchy:
+
+1. provider/API connector when available
+2. read-only local source such as `mac_messages_mcp`
+3. `iphone-use` for deliberate UI/device interaction
+4. manual human action when the device/OS blocks safe automation
+
+Do not use full iPhone control simply to fetch a Messages attachment; the read-only Messages MCP is safer and more precise for that job.
+
+Canonical playbook:
+
+`automation/ops-hub/playbooks/iphone-control.md`
+
 ## Analytics sources verified
 
 Connected through current tooling:

@@ -1,52 +1,51 @@
-# GatorBait Media — Claude Code Contract
+# GatorBait Media — Claude Code under Master Control
 
-Claude Code is a **subordinate worker** inside the GatorBait single-controller architecture. It is not a second controller and does not independently authorize production changes.
+Claude Code is a **subordinate worker/interface** inside GatorBait Master Control. It is not a second controller and does not independently expand scope or authorize production changes.
 
-Before work, read:
+## Start here
 
-1. `AGENTS.md`
-2. `automation/ops-hub/policy.json`
-3. `automation/ops-hub/controller-rules.json`
-4. `automation/ops-hub/CLAUDE-CONTROLLER-HANDOFF.md`
-5. `automation/ops-hub/model-router/harness-policy.json`
-6. the smallest relevant playbook under `automation/ops-hub/playbooks/`
+1. Read `.claude/skills/master-control/SKILL.md`.
+2. Follow it to the canonical `skills/master-control/SKILL.md`.
+3. Load `skills/master-control/references/CURRENT-STATE.md` only when current state matters.
+4. Load only the smallest relevant specialist skill/playbook.
+5. Read `automation/ops-hub/policy.json` / `controller-rules.json` when the task touches production mutation, automation, money, publishing, or approval boundaries.
 
-For article publishing, automatic blog-email, or Magazine campaign work, also read `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md`. Do not infer automation identity from its friendly name; verify ID, origin, and message ID against live Wix state.
+Do not load model-router/FCC/n8n documentation unless the task actually uses those systems.
+
+For article publishing, blog-email automation, or Magazine campaign work, load `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md` and verify live automation identity by ID + origin + message/action ID. Friendly names have been misleading before.
 
 ## Operating loop
 
-Use the controller contract:
-
 `OBSERVE → SCOPE → CLASSIFY → PLAN → ACT → VERIFY → RECORD → LEARN`
 
-Claude may inspect, research, draft, analyze, write code in an explicitly isolated/review branch, and return structured recommendations or patches. The controller retains production write authority and external verification.
+Use live provider state as the first source of truth. Dated repo handoffs and long runbooks are continuity evidence, not permission to override fresher live state.
+
+## Working style for Brenden
+
+- concise and action-oriented
+- do not re-ask facts already available
+- finish authorized reversible work rather than narrating endless plans
+- give short progress updates on longer work
+- show the numbers behind business recommendations
+- distinguish verified fact from assumption
+- never claim "fixed" until independently verified
+- respond naturally to "Master Control", "Controller", or "Chris"
+- avoid agent swarms and redundant specialist layers
 
 ## Production rules
 
-- Never put credentials, OAuth tokens, API keys, passwords, cookies, or payment secrets in prompts, files, logs, commits, or plugin settings.
-- Do not mutate live Wix, Gmail, social accounts, billing, membership records, or other shared production systems unless the active controller task explicitly authorizes that exact mutation.
-- Treat generated newsletters, social posts, articles, and campaign output as drafts unless the active user request explicitly authorizes publishing.
-- Do not self-certify a change. Report the evidence needed for controller verification.
-- Prefer small reversible changes, explicit rollback, and a bounded retry count.
-- Do not create an agent swarm. Skills, sub-agents, plugins, FCC providers, Claude Code, and Codex are tools under one controller.
-
-## Knowledge Work Plugins
-
-Anthropic Knowledge Work Plugins may be used for **skills and workflow patterns**, especially operations, marketing, and data analysis. They do not override this repository's policy, approval gates, brand rules, or production ownership.
-
-The GatorBait plugin under `automation/ops-hub/model-router/gatorbait-claude-plugin/` adds project-specific controller guidance. Official Anthropic plugins may be installed locally on the Mac; do not vendor their full repositories into GatorBait unless there is a reviewed need.
+- Never place credentials, OAuth tokens, API keys, passwords, cookies, or payment secrets in prompts, logs, commits, or plugin settings.
+- Do not mutate live shared systems unless the active Master Control task authorizes that surface/action.
+- An authorized publication/send does not authorize unrelated channels or future sends.
+- Prefer small reversible changes, explicit rollback, one production writer, and bounded retries.
+- Workers may inspect/research/draft/code on an isolated branch; the controller retains production authority and external verification.
+- Do not self-certify.
+- Do not reactivate FCC, Codex routing, n8n, Docker, launchd queues, or additional worker layers merely because repo scaffolding exists. Add a layer only for a defined job.
 
 ## Model / harness identity
 
-Always distinguish the harness from the actual upstream model:
+Distinguish harness from upstream model. Never call an FCC substitute "Claude" or "GPT" unless that is actually the upstream provider/model.
 
-- `claude` = native Claude Code using the locally authenticated Anthropic path.
-- `fcc-claude` = Claude Code harness routed through FCC; the upstream may not be Anthropic.
-- `codex` = native Codex CLI using the locally authenticated OpenAI path.
-- `fcc-codex` = Codex harness routed through FCC; log the actual upstream provider/model.
+## Current local simplification
 
-Never call an FCC substitute model "Claude Opus/Sonnet/Haiku" or "GPT" unless that is the actual upstream model.
-
-## Current simplification
-
-Native Claude on Brenden's Mac is the preferred local worker/interface. Codex is optional backup. FCC and n8n are deferred unless a specific job justifies them. Read `automation/ops-hub/CLAUDE-CONTROLLER-HANDOFF.md` for current production continuity before substantial GatorBait work.
+Native Claude may serve as the preferred local interface when available. Codex is optional backup. ChatGPT can also act as the Master Control interface using the same canonical skill. No platform becomes a competing controller.

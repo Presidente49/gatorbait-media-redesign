@@ -11,6 +11,8 @@ Before work, read:
 5. `automation/ops-hub/model-router/harness-policy.json`
 6. the smallest relevant playbook under `automation/ops-hub/playbooks/`
 
+For article publishing, automatic blog-email, or Magazine campaign work, also read `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md`. Do not infer automation identity from its friendly name; verify ID, origin, and message ID against live Wix state.
+
 ## Operating loop
 
 Use the controller contract:

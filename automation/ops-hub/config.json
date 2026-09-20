@@ -49,5 +49,14 @@
       "name": "Merch Store",
       "url": "https://gatorbait2026.itemorder.com/shop/home/"
     }
-  ]
+  ],
+  "learning": {
+    "enabled": true,
+    "recurrence_threshold": 3,
+    "escalation_threshold": 2,
+    "max_incidents": 100,
+    "max_candidates": 20,
+    "auto_promote_to_doctrine": false,
+    "auto_authorize_production_writes": false
+  }
 }

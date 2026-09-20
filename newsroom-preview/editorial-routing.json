@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-20T08:30:12Z",
+  "updated": "2026-09-20T08:39:00Z",
   "automation": {
-    "lastChecked": "2026-09-20T08:30:12Z",
-    "lastSeenPublishedDate": "2026-09-20T07:30:31.107Z",
-    "lastSeenPostId": "cf6133a6-5d24-4a76-8344-f6b70614e563"
+    "lastChecked": "2026-09-20T08:39:00Z",
+    "lastSeenPublishedDate": "2026-09-20T08:14:12.271Z",
+    "lastSeenPostId": "064b72aa-54ac-4af4-a8ad-54fc1b019a81"
   },
   "assignments": [
+    {
+      "slug": "jon-sumrall-postgame-florida-auburn",
+      "title": "Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn",
+      "firstPublishedDate": "2026-09-20T08:14:12.271Z",
+      "primaryHome": "frontPage",
+      "reason": "An immediate postgame press-conference story after Florida's 44-39 win at Auburn, focused on Jon Sumrall's penalty critique, player toughness and 'work the cut' message. It is tied to the fresh game result and is time-sensitive Front Page coverage."
+    },
     {
       "slug": "no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win",
       "title": "No Bad Wins: Sumrall Issues Warning After Florida's Auburn Win",
@@ -249,15 +256,15 @@
   ],
   "homepage": {
     "mode": "newestFrontPageFirst",
-    "lead": "no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win",
+    "lead": "jon-sumrall-postgame-florida-auburn",
     "secondary": [
-      "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy",
-      "florida-44-auburn-39-gators-end-jordan-hare-drought"
+      "no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win",
+      "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy"
     ],
     "hide": [
       "live-now-best-friday-in-football-september-18-2026",
       "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
     ],
-    "reason": "The live controller is newest-first for Front Page-eligible stories. The newest lead is Jon Sumrall's immediate postgame warning after Florida's Auburn win, followed by Buddy Martin's immediate postgame analysis and the final game result; Magazine stories and stale live-show promos remain excluded."
+    "reason": "The live controller is newest-first for Front Page-eligible stories. The newest lead is the Sumrall postgame press-conference story, followed by the earlier immediate Sumrall warning and Buddy Martin's postgame analysis; Magazine stories and stale live-show promos remain excluded."
   }
 }

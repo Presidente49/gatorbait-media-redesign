@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-20T08:39:00Z",
+  "updated": "2026-09-20T15:41:26Z",
   "automation": {
-    "lastChecked": "2026-09-20T08:39:00Z",
-    "lastSeenPublishedDate": "2026-09-20T08:14:12.271Z",
-    "lastSeenPostId": "064b72aa-54ac-4af4-a8ad-54fc1b019a81"
+    "lastChecked": "2026-09-20T15:41:26Z",
+    "lastSeenPublishedDate": "2026-09-20T15:21:37.171Z",
+    "lastSeenPostId": "bb44d75c-0f90-44c3-8df3-365a1c3911b0"
   },
   "assignments": [
+    {
+      "slug": "florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
+      "title": "Florida Escaped Auburn, But The Yellow Flags Followed It Home",
+      "firstPublishedDate": "2026-09-20T15:21:37.171Z",
+      "primaryHome": "frontPage",
+      "reason": "Buddy Martin's column is immediate postgame analysis of Florida's 44-39 win at Auburn, built around the 16-penalty warning, fresh Sumrall, Philo and Baugh quotes and what must be corrected before the next SEC opponent. Its value is tied to the fresh game result, so Front Page is the single primary editorial home."
+    },
     {
       "slug": "jon-sumrall-postgame-florida-auburn",
       "title": "Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn",
@@ -256,15 +263,15 @@
   ],
   "homepage": {
     "mode": "newestFrontPageFirst",
-    "lead": "jon-sumrall-postgame-florida-auburn",
+    "lead": "florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
     "secondary": [
-      "no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win",
-      "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy"
+      "jon-sumrall-postgame-florida-auburn",
+      "no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win"
     ],
     "hide": [
       "live-now-best-friday-in-football-september-18-2026",
       "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
     ],
-    "reason": "The live controller is newest-first for Front Page-eligible stories. The newest lead is the Sumrall postgame press-conference story, followed by the earlier immediate Sumrall warning and Buddy Martin's postgame analysis; Magazine stories and stale live-show promos remain excluded."
+    "reason": "The live controller is newest-first for Front Page-eligible stories. The newest lead is Buddy Martin's immediate postgame yellow-flags column, followed by the Sumrall postgame press-conference story and the earlier Sumrall warning; Magazine stories and stale live-show promos remain excluded."
   }
 }

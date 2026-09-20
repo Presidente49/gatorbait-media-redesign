@@ -2,8 +2,36 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "LIVE GAME TRACKER Florida 27 Auburn 17: Baugh Breaks 33-Yard TD",
-      "excerpt": "Florida leads Auburn 27-17 at 13:34 of the third quarter after Jadan Baugh’s 33-yard touchdown capped a 3-play, 75-yard opening-half drive. Florida had 10 penalties for 83 yards at halftime.",
+      "title": "Sumrall Passed the Test. He Aced It. Next, Please! Hotty Toddy?",
+      "excerpt": "Buddy Martin on Jon Sumrall’s first SEC road win, Jadan Baugh’s 162-yard night and the unbeaten Ole Miss showdown coming to The Swamp.",
+      "url": "https://www.gatorbaitmedia.com/post/sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-20T03:45:11Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_d63fc74d2d3b43d3a26e953cbf6ea84e~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Sumrall Passed the Test. He Aced It. Next, Please! Hotty Toddy?"
+      }
+    },
+    {
+      "title": "Florida 44 Auburn 39: Gators End Jordan-Hare Drought",
+      "excerpt": "Jadan Baugh ran for 162 yards and three touchdowns as Florida survived Auburn 44-39 for its first road win over the Tigers since 1999.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-44-auburn-39-gators-end-jordan-hare-drought",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-20T03:07:30Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_0416101ae9184801ae818ad93b515814~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida 44 Auburn 39: Gators End Jordan-Hare Drought"
+      }
+    },
+    {
+      "title": "FINAL Florida 44 Auburn 39: Gators Survive 16 Penalties",
+      "excerpt": "Florida beat Auburn 44-39 at Jordan-Hare despite 16 penalties for 138 yards. Jadan Baugh ran for 162 yards and three touchdowns as the Gators survived a late Tigers rally.",
       "url": "https://www.gatorbaitmedia.com/post/live-florida-auburn-game-tracker-score-updates",
       "author": "GatorBait Staff",
       "firstPublishedDate": "2026-09-19T23:45:16Z",
@@ -139,36 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare"
-      }
-    },
-    {
-      "id": "10a6bddb-ce48-428f-81a0-cd2c22e6a190",
-      "title": "Florida–Auburn By the Numbers: Two New Coaches, One Old Rivalry",
-      "excerpt": "Florida and Auburn are both 2-0, but the numbers tell very different stories. The Professor digs into 1939, Jordan-Hare history, Sumrall’s 14-2 road record, Auburn’s ground game, Byrum Brown and the three numbers that could decide Saturday.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-auburn-by-the-numbers-2026",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-14T17:15:28Z",
-      "minutesToRead": 7,
-      "section": "Florida Football",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_f953a61bdcdf44cf997f83cbd7f3a657~mv2.png",
-        "width": 1671,
-        "height": 941,
-        "alt": "Florida vs. Auburn By the Numbers graphic featuring Florida coach Jon Sumrall, Auburn coach Alex Golesh and Jordan-Hare Stadium."
-      }
-    },
-    {
-      "title": "What Can “VB3” Do for You?",
-      "excerpt": "Eddie Gilley on Vernell Brown III’s record punt-return performance, Jadan Baugh’s steady numbers and what Florida must sharpen before Auburn.",
-      "url": "https://www.gatorbaitmedia.com/post/what-can-vb3-do-for-you",
-      "author": "EDDIE GILLEY",
-      "firstPublishedDate": "2026-09-14T11:30:36Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for What Can “VB3” Do for You?"
       }
     }
   ]

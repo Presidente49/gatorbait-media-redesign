@@ -240,3 +240,25 @@ Only promote a lesson into doctrine when it is:
 Store one-off incidents as historical evidence, not permanent commandments.
 
 When a rule becomes stale, update the rule rather than layering an exception forever.
+
+## 23. Continuous learning must stay bounded
+
+The controller should learn continuously from verified operating evidence, but learning is not the same as self-authorization.
+
+Use a compact recursive loop:
+
+**observe → verify → record → detect recurrence → review → promote → reuse**
+
+Rules:
+
+- record every health/incident cycle deterministically,
+- count separate incident episodes instead of inflating a lesson from repeated polling of one outage,
+- track recovery as evidence too,
+- surface repeated patterns as review candidates,
+- do not auto-promote candidates into doctrine,
+- do not let learned state authorize production writes, spending, destructive actions, or public communications,
+- keep the evidence store bounded so stale history does not become permanent context,
+- promote only repeated, measured, or clearly structural patterns,
+- retire or revise lessons when live evidence contradicts them.
+
+A learning loop should reduce repeated mistakes and unnecessary work, not create another autonomous controller.

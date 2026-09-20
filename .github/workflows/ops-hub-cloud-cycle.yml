@@ -1,0 +1,52 @@
+name: GatorBait ops-hub cloud cycle
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "automation/ops-hub/ops_hub.py"
+      - "automation/ops-hub/controller.py"
+      - "automation/ops-hub/learning.py"
+      - "automation/ops-hub/config.json"
+      - "automation/ops-hub/controller-rules.json"
+      - ".github/workflows/ops-hub-cloud-cycle.yml"
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ops-hub-cloud-cycle
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GBM_OPS_STATE_DIR: automation/ops-hub/cloud-state
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Run one deterministic observe/verify/learn cycle
+        working-directory: automation/ops-hub
+        run: |
+          mkdir -p "../../$GBM_OPS_STATE_DIR"
+          python3 ops_hub.py once
+        continue-on-error: true
+
+      - name: Commit updated ops state when it changed
+        shell: bash
+        run: |
+          if git diff --quiet -- automation/ops-hub/cloud-state; then
+            echo 'No ops-hub state change.'
+            exit 0
+          fi
+          git config user.name 'gatorbait-ops-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
+          git add automation/ops-hub/cloud-state
+          git commit -m 'ops: record cloud health/controller/learning cycle'
+          git push

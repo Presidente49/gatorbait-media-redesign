@@ -35,6 +35,7 @@ LEARNING_PATH = STATE_DIR / "learning.json"
 EVENTS_PATH = STATE_DIR / "events.jsonl"
 BRIEF_PATH = STATE_DIR / "latest-brief.md"
 USER_AGENT = "GatorBait-Ops-Hub/1.1 (+https://www.gatorbaitmedia.com/)"
+MAX_EVENTS = 500
 
 
 @dataclass(frozen=True)
@@ -123,8 +124,15 @@ def atomic_json(path: Path, payload: dict[str, Any]) -> None:
 
 
 def write_event(payload: dict[str, Any]) -> None:
-    with EVENTS_PATH.open("a", encoding="utf-8") as handle:
-        handle.write(json.dumps(payload, separators=(",", ":")) + "\n")
+    existing: list[str] = []
+    if EVENTS_PATH.exists():
+        existing = EVENTS_PATH.read_text(encoding="utf-8").splitlines()
+    existing.append(json.dumps(payload, separators=(",", ":")))
+    if len(existing) > MAX_EVENTS:
+        existing = existing[-MAX_EVENTS:]
+    temporary = EVENTS_PATH.with_suffix(EVENTS_PATH.suffix + ".tmp")
+    temporary.write_text("\n".join(existing) + "\n", encoding="utf-8")
+    temporary.replace(EVENTS_PATH)
 
 
 def write_brief(payload: dict[str, Any]) -> None:

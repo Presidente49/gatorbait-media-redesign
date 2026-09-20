@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Postgame Analysis: Florida Gators (3-0,1-0) v. Auburn Tigers (2-1, 0-1)",
+      "excerpt": "Florida works the cut for a key win on the road and its first in the state of Alabama since 1999. By Loren P. Meadows, GatorBaitMedia.com, Football Analyst, Host The Gator Lowdown with Loren Meadows AUBURN , AL Philo has been ready to go each week (Chris Spears photo) What We Thought: Florida came onto the plains equipped with some of the best playmakers in…",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-09-20T15:49:03Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Postgame Analysis: Florida Gators (3-0,1-0) v. Auburn Tigers (2-1, 0-1)"
+      }
+    },
+    {
       "title": "Florida Escaped Auburn, But The Yellow Flags Followed It Home",
       "excerpt": "So, yes, Florida is 3-0. Yes, Jon Sumrall has his first SEC victory as the Gators’ coach. Yes, Aaron Philo survived his first road start in a place where noise is a regional crop. Yes, Jadan Baugh is running with the authority of a man who has discovered that defenders are merely speed bumps with scholarship offers.",
       "url": "https://www.gatorbaitmedia.com/post/florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Remembers ‘14 Days in Gainesville’"
-      }
-    },
-    {
-      "title": "Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the Villain Role",
-      "excerpt": "Loren Meadows and Ryan Urquhart break down Florida's trip to Jordan-Hare, the Gators' road mentality and their predictions for this weekend's Florida-Auburn matchup.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-17T14:44:43Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the Villain Role"
       }
     }
   ]

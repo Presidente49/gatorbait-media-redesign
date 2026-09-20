@@ -87,16 +87,26 @@ function renderFooter(){
   document.body.insertAdjacentHTML('beforeend',html);
 }
 
-function loadData(baseDir){
-  baseDir=baseDir||'';
+function loadData(dataBase){
+  // dataBase: path from the CALLING page to newsroom-preview/, e.g.
+  // '../newsroom-preview/' from studio/index.html, '../../newsroom-preview/' from studio/pages/*.html.
+  if(!dataBase) throw new Error('GBStudio.loadData requires an explicit dataBase relative to the calling page');
+  function fromSnapshot(){
+    var snap=window.__GB_STUDIO_SNAPSHOT__;
+    if(!snap) throw new Error('live feed unreachable and no offline snapshot loaded');
+    return {posts:(snap.posts&&snap.posts.posts)||[],routing:snap.routing||{}};
+  }
   return Promise.all([
-    fetch(baseDir+'../newsroom-preview/data/posts.json').then(function(r){return r.json();}),
-    fetch(baseDir+'../newsroom-preview/editorial-routing.json').then(function(r){return r.json();})
+    fetch(dataBase+'data/posts.json').then(function(r){ if(!r.ok) throw new Error('posts '+r.status); return r.json(); }),
+    fetch(dataBase+'editorial-routing.json').then(function(r){ if(!r.ok) throw new Error('routing '+r.status); return r.json(); })
   ]).then(function(res){
-    var posts=res[0].posts||[];
-    var routing=res[1]||{};
-    posts.forEach(function(p){ p.slug=slugOf(p.url); });
-    return {posts:posts,routing:routing};
+    return {posts:res[0].posts||[],routing:res[1]||{}};
+  }).catch(function(err){
+    console.warn('GBStudio.loadData: live fetch failed, using offline snapshot —',err.message);
+    return fromSnapshot();
+  }).then(function(d){
+    d.posts.forEach(function(p){ p.slug=slugOf(p.url); });
+    return d;
   });
 }
 

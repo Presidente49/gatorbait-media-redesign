@@ -104,6 +104,7 @@
   </div>
 </main>
 
+<script src="assets/data-snapshot.js"></script>
 <script src="assets/shell.js"></script>
 <script>
 (function(){
@@ -116,7 +117,7 @@ function cardMedia(p,cls){
   return '<div class="'+cls+'"><img src="'+S.esc(p.image.src)+'" alt="'+S.esc(p.image.alt||p.title)+'" loading="lazy" decoding="async"></div>';
 }
 
-S.loadData().then(function(d){
+S.loadData('../newsroom-preview/').then(function(d){
   var posts=d.posts, routing=d.routing;
   var byPathOrder=posts.slice(); // already newest-first from feed
   function bySlug(s){ return S.findPost(posts,s); }

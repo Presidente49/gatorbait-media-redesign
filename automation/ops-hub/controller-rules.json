@@ -1,12 +1,15 @@
 {
-  "version": 7,
+  "version": 8,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
     "smallest_rule_set_only": true,
     "one_production_writer": true,
     "verification_outside_model": true,
-    "new_dependencies_require_explicit_justification": true
+    "new_dependencies_require_explicit_justification": true,
+    "bounded_learning_loop": true,
+    "learning_candidates_require_review": true,
+    "learning_never_self_authorizes_production_writes": true
   },
   "profiles": {
     "daily_ops": {

@@ -32,10 +32,9 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Run one deterministic observe/verify/learn cycle
-        working-directory: automation/ops-hub
         run: |
-          mkdir -p "../../$GBM_OPS_STATE_DIR"
-          python3 ops_hub.py once
+          mkdir -p "$GBM_OPS_STATE_DIR"
+          python3 automation/ops-hub/ops_hub.py once
         continue-on-error: true
 
       - name: Commit updated ops state when it changed

@@ -38,7 +38,7 @@ Desktop:
 - Recruiting
 - GatorBait TV
 - Magazine
-- SwampGas
+- GatorBait.net
 - Shop
 - Search icon
 - Saved / Watchlist
@@ -79,7 +79,7 @@ Mobile:
 6. GatorBait TV current/live module
 7. Recruiting snapshot
 8. Magazine feature/cover
-9. SwampGas trending discussions
+9. GatorBait.net trending discussions
 10. Photo/social media strip
 11. Newsletter/member CTA
 12. Footer
@@ -103,7 +103,7 @@ Rules:
 8. Readable story column
 9. Inline media where editorially relevant
 10. Related coverage
-11. Discuss this story -> relevant SwampGas thread/board
+11. Discuss this story -> relevant GatorBait.net thread/board
 12. Newsletter/join CTA
 13. Next/latest stories
 14. Footer
@@ -150,7 +150,7 @@ Expression:
 - motion can be richer here
 - still uses same typography, controls, account and navigation system
 
-## SwampGas wireframe
+## GatorBait.net wireframe
 
 ### Board index
 1. Community header
@@ -269,7 +269,7 @@ Every page must work structurally before motion or visual polish.
 3. Build one shared header/footer/navigation prototype.
 4. Build Front Page + Article first.
 5. Build TV + Magazine.
-6. Build SwampGas.
+6. Build GatorBait.net.
 7. Build Recruiting/Search/Account.
 8. Apply motion only after structural approval.
 9. Wire real Wix data/apps.

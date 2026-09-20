@@ -11,7 +11,7 @@ Primary:
 - Recruiting
 - GatorBait TV
 - Magazine
-- SwampGas
+- GatorBait.net
 - Shop
 
 Utility:
@@ -63,7 +63,7 @@ Utility:
 - archive covers
 - audio/video companions
 
-### SwampGas
+### GatorBait.net
 - board index
 - trending discussions
 - game-day thread emphasis

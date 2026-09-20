@@ -16,7 +16,7 @@ A repo is not adopted because it is popular. It is adopted only when it solves a
 | superdesigndev/superdesign-skill | MIT | product-design workflow, design-system extraction, iterative visual drafts | REFERENCE / WORKFLOW |
 | wagtail/news-template | BSD-3-Clause | newsroom hierarchy, page families, editorial IA | REFERENCE ONLY |
 | bbc/simorgh | inspect before any reuse | resilient article patterns, accessibility, internationalized editorial architecture | REFERENCE ONLY |
-| discourse/discourse | GPL-2.0 | mature community architecture and possible SwampGas backend | BACKEND CANDIDATE |
+| discourse/discourse | GPL-2.0 | mature community architecture and possible GatorBait.net backend | BACKEND CANDIDATE |
 | vidstack/player | MIT | accessible video/audio player if Wix native playback is insufficient | COMPONENT CANDIDATE |
 | greensock/GSAP | verify current license before adoption | advanced motion choreography | CONDITIONAL |
 | greensock/gsap-skills | verify current license before adoption | motion implementation patterns | REFERENCE |
@@ -41,7 +41,7 @@ Look first at:
 - BBC Simorgh
 - existing GatorBait editorial templates
 
-### Community / SwampGas
+### Community / GatorBait.net
 Look first at:
 - Discourse core
 - official Discourse themes/plugins

@@ -103,7 +103,7 @@ Column/feature contributors eligible for Magazine presentation:
 
 Magazine is a presentation/archive layer, not a second copy of the article.
 
-### SwampGas
+### GatorBait.net
 
 Blog posts do not become fake forum posts.
 
@@ -256,6 +256,6 @@ Then:
 3. GatorBait TV
 4. Magazine
 5. Search
-6. SwampGas story-to-discussion bridge
+6. GatorBait.net story-to-discussion bridge
 
 This sequence gives every later product the same canonical article layer.

@@ -10,7 +10,7 @@ var NAV_LINKS=[
   {href:'pages/recruiting.html',label:'Recruiting'},
   {href:'pages/tv.html',label:'GatorBait TV'},
   {href:'pages/magazine.html',label:'Magazine'},
-  {href:'pages/swampgas.html',label:'SwampGas'},
+  {href:'pages/gatorbait-net.html',label:'GatorBait.net'},
   {href:'https://gatorbait2026.itemorder.com/shop/home/',label:'Shop'}
 ];
 
@@ -73,7 +73,7 @@ function renderFooter(){
         '<li><a href="https://www.youtube.com/@GatorBaitMedia?sub_confirmation=1">YouTube</a></li>'+
       '</ul></div>'+
       '<div><h3>Community</h3><ul>'+
-        '<li><a href="pages/swampgas.html">SwampGas</a></li>'+
+        '<li><a href="pages/gatorbait-net.html">GatorBait.net</a></li>'+
         '<li><a href="pages/join.html">Membership</a></li>'+
       '</ul></div>'+
       '<div><h3>More</h3><ul>'+

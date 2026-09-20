@@ -53,7 +53,7 @@ Current reference/toolbox:
 - `superdesigndev/superdesign-skill` — MIT; design-system and iterative product-design workflow reference.
 - `wagtail/news-template` — BSD-3-Clause; newsroom hierarchy, page-family and editorial IA reference only.
 - `bbc/simorgh` — accessibility/resilient article architecture reference only; do not vendor wholesale.
-- `discourse/discourse` — GPL-2.0; serious community/message-board backend candidate/reference for SwampGas.
+- `discourse/discourse` — GPL-2.0; serious community/message-board backend candidate/reference for GatorBait.net.
 - `vidstack/player` — MIT; accessible video/audio player candidate if native Wix media cannot meet requirements.
 - `greensock/GSAP` / official GSAP skills — advanced motion reference; adopt only after current license/runtime verification and a demonstrated Studio limitation.
 - `Splidejs/splide` or `nolimits4web/swiper` — carousel/rail candidates only if native Studio rails are insufficient.
@@ -112,7 +112,7 @@ Primary destinations:
 - Feature
 - Photo Gallery
 - Podcasts / Listen
-- SwampGas
+- GatorBait.net
 - Board
 - Thread
 - Search
@@ -145,8 +145,8 @@ Wireframe page families before styling:
 5. Show detail
 6. Magazine
 7. Magazine issue/feature
-8. SwampGas board index
-9. SwampGas thread
+8. GatorBait.net board index
+9. GatorBait.net thread
 10. Recruiting
 11. Search
 12. Membership/account
@@ -211,7 +211,7 @@ Expression may vary by product:
 - Front Page = fast newsroom
 - Magazine = more visual/editorial
 - TV = more cinematic
-- SwampGas = denser community UI
+- GatorBait.net = denser community UI
 
 They must still share:
 - masthead;
@@ -278,7 +278,7 @@ Plan native connections for:
 
 ## Phase 8 — Community
 
-SwampGas should provide:
+GatorBait.net should provide:
 - clear board hierarchy;
 - football/recruiting/general boards;
 - trending threads;

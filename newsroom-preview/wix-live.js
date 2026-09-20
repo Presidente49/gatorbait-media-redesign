@@ -126,20 +126,18 @@ var carlton=ordered[2];
 var latest=ordered.slice(3,7);
 var trending=ordered.slice(7,12);
 
-var subscribe='mailto:brenden@gatorbaitmedia.com?subject=Subscribe%20me%20to%20GatorBait%20Magazine&body=Please%20add%20me%20to%20GatorBait%20Magazine.%20I%20consent%20to%20receive%20marketing%20emails%20and%20understand%20I%20can%20unsubscribe%20at%20any%20time.';
+var subscribe='mailto:info@gatorbaitmedia.com?subject=Subscribe%20me%20to%20GatorBait%20Magazine&body=Please%20add%20me%20to%20GatorBait%20Magazine.%20I%20consent%20to%20receive%20marketing%20emails%20and%20understand%20I%20can%20unsubscribe%20at%20any%20time.';
 var featureStage='<section class="feature-stage" aria-label="Featured stories">'+featureLead(buddy)+((franz||carlton)?'<div class="feature-stack">'+(franz?featureSide(franz):'')+(carlton?featureSide(carlton):'')+'</div>':'')+'</section>';
 
 return''+
 '<a class="skip" href="#gbm-main">Skip to stories</a>'+
-'<header class="site-header"><div class="mast"><a class="brand" href="/" aria-label="GatorBait Media home"><img src="'+LOGO+'" alt="GatorBait Media" width="900" height="241" decoding="async"></a><div class="brand-promise"><strong>OLD SCHOOL JOURNALISM</strong><span>+</span><strong>NEW TECH</strong></div><a class="support" href="/pricing-plans">JOIN GATORBAIT</a></div><nav class="primary" aria-label="Primary navigation"><a href="/" aria-current="page">News</a><a href="/magazine">Magazine</a><a href="/the-buddy-martin-show">GatorBait TV</a><a href="/the-buddy-martin-show">Buddy Martin Show</a><a href="https://gatorbait2026.itemorder.com/shop/home/">Shop</a><a class="join" href="/pricing-plans">Join</a></nav></header>'+
 '<main id="gbm-main">'+
 featureStage+
 '<section class="news-zone"><div class="latest-news"><div class="section-head"><h2>Latest News</h2><a href="/gatorbait-media-blogs">More news →</a></div><div class="latest-grid">'+latest.map(newsCard).join('')+'</div></div><aside class="trending" aria-labelledby="gbm-trending"><div class="section-head"><h2 id="gbm-trending">Trending Now</h2></div>'+trending.map(trendItem).join('')+'</aside></section>'+
 '<section class="tv-band"><div><span>GATORBAIT TV</span><h2>Watch the conversation behind the stories.</h2><p>The Buddy Martin Show, Florida Gator Lowdown, Best Friday in Football and SEC coverage.</p></div><a href="/the-buddy-martin-show">WATCH GATORBAIT TV →</a></section>'+
 '<section class="destinations" aria-label="GatorBait destinations"><a href="/the-buddy-martin-show"><span>SHOW</span><strong>The Buddy Martin Show</strong><em>Full episodes and interviews.</em></a><a href="/magazine"><span>READ</span><strong>GatorBait Magazine</strong><em>Features, history and people.</em></a><a href="https://gatorbait2026.itemorder.com/shop/home/"><span>SHOP</span><strong>Rep the Gators</strong><em>Hats, visors, shirts and more.</em></a></section>'+
 '<section class="newsletter" aria-labelledby="gbm-newsletter"><div><span>THE EMAIL EDITION</span><h2 id="gbm-newsletter">GatorBait Magazine</h2><p>Get the strongest GatorBait stories and game-week coverage in your inbox.</p></div><a href="'+subscribe+'">Get GatorBait Magazine</a></section>'+
-'</main>'+
-'<footer aria-label="GatorBait Media footer"><div class="footer-inner"><div class="footer-brand"><img src="'+LOGO+'" alt="GatorBait Media" width="900" height="241" loading="lazy" decoding="async"><p>Independent Florida Gators coverage.</p></div><div class="footer-contact"><strong>Contact</strong><a href="mailto:brenden@gatorbaitmedia.com">brenden@gatorbaitmedia.com</a><br><span>1524 SE 22nd Ave<br>Ocala, FL 34471</span></div><nav class="footer-links" aria-label="Footer links"><a href="https://www.facebook.com/gatorbaitmedia">Facebook</a><a href="https://www.youtube.com/@GatorBaitMedia?sub_confirmation=1">YouTube</a><a href="/contact">Contact</a><a href="/policies">Privacy &amp; Terms</a></nav></div><div class="footer-bottom"><div class="compliance-note">Email communications include a clear unsubscribe option. Privacy and site-use terms are available in our policies.</div><div>© 2026 GatorBait Media. All rights reserved.</div></div></footer>';
+'</main>';
 }
 
 function removeAppInvite(){
@@ -158,34 +156,8 @@ box.setAttribute('aria-hidden','true');
 }
 }
 
-function stripLegacyHomeShell(){
-if(!home())return;
-['SITE_HEADER','SITE_PAGES','SITE_FOOTER','BACKGROUND_GROUP'].forEach(function(id){
-var el=document.getElementById(id);
-if(el&&el.parentNode)el.parentNode.removeChild(el);
-});
-}
-
-function installFullNavigation(){
-if(window.__GBM_FULL_NAV__)return;
-window.__GBM_FULL_NAV__=1;
-document.addEventListener('click',function(ev){
-if(ev.defaultPrevented||ev.button!==0||ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.altKey)return;
-var a=ev.target&&ev.target.closest&&ev.target.closest('#gbm-live a[href]');
-if(!a)return;
-var href=a.getAttribute('href')||'';
-if(!href||href.charAt(0)==='#'||/^mailto:|^tel:/i.test(href))return;
-try{
-var u=new URL(a.href,location.href);
-if(u.origin!==location.origin)return;
-ev.preventDefault();
-location.assign(u.href);
-}catch(e){}
-},true);
-}
-
 function unmount(){document.documentElement.classList.remove('gbm-standalone-live');var old=document.getElementById('gbm-live');if(old)old.remove();}
-function mount(posts){if(!home()||!posts||posts.length<4)return;var root=document.getElementById('gbm-live');if(!root){root=document.createElement('div');root.id='gbm-live';document.body.insertBefore(root,document.body.firstChild);}root.innerHTML=build(posts);document.documentElement.classList.add('gbm-standalone-live');installFullNavigation();removeAppInvite();[180,500,1400].forEach(function(ms){setTimeout(stripLegacyHomeShell,ms);});}
+function mount(posts){if(!home()||!posts||posts.length<4)return;var root=document.getElementById('gbm-live');if(!root){root=document.createElement('div');root.id='gbm-live';var pages=document.getElementById('SITE_PAGES');if(pages&&pages.parentNode)pages.parentNode.insertBefore(root,pages);else document.body.insertBefore(root,document.body.firstChild);}root.innerHTML=build(posts);document.documentElement.classList.add('gbm-standalone-live');removeAppInvite();}
 function refresh(){if(!home()){unmount();return;}feed().then(mount).catch(function(e){console.error('GatorBait newsroom feed',e);});}
 function routeCheck(){var p=location.pathname;if(p!==lastPath){lastPath=p;refresh();}removeAppInvite();}
 function installRouteWatch(){

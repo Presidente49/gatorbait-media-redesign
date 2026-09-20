@@ -77,6 +77,17 @@ Primary feed:
 Secondary:
 - recruiting-tagged football stories where taxonomy supports it
 
+**Data reality check (researched 2026-09-20):** the official NCAA transfer portal
+database is member-access-only, not public. 247Sports/On3/CFB Network's
+"real-time" portal trackers run on their own reporting networks and paid data
+relationships, not a public feed — there is no legitimate free API that
+replicates "who just entered the portal right now." Do not attempt to fake a
+live tracker table with no real data source behind it. This page family is
+built from GatorBait's own `Gator Recruiting` (1,362 posts) and
+`NCAA Transfer Portal` (4 posts) Blog categories exactly as the routing above
+already says — original reporting is the actual competitive asset here, not a
+scraped table.
+
 ### GatorBait TV
 
 Primary feed:

@@ -26,6 +26,7 @@ A repo is not adopted because it is popular. It is adopted only when it solves a
 | nolimits4web/swiper | MIT, checked 2026-09-20 — large contributor base, 40k+ stars, active releases, enterprise adoption | richer touch-first media rails | CONDITIONAL — preferred over Splide if a JS rail is actually needed, purely on maintenance-risk grounds |
 | Nodlik/StPageFlip (npm: page-flip) | MIT, checked 2026-09-20 — TypeScript, zero deps, actively maintained | realistic page-turn interaction for Magazine's interactive current cover | COMPONENT CANDIDATE — only if native Studio cover motion can't deliver the effect; must stay optional/skippable per motion rules |
 | Studio-1119-Inc/wix-editor-mcp | existing internal tool lane | native Studio canvas inspection/build execution | TOOLING |
+| henrygd/ncaa-api | MIT, checked 2026-09-20 — actively maintained, self-hostable via Docker, real scores/stats/standings from ncaa.com, 5 req/sec on the public instance | real live game-result data for the Front Page hero strip (currently hardcoded static text in the studio/ prototype) | COMPONENT CANDIDATE — scores/standings only, not a transfer-portal or recruiting data source |
 
 ## What we should NOT do
 

@@ -19,7 +19,8 @@ var PREGAME_SLUGS=[
 'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast',
 'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie',
 'week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0',
-'florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role'
+'florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role',
+'florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play'
 ];
 var PERFORMANCE_SLUGS=[
 'no-sugar-coating-from-sumrall-gators-have-to-get-better-in-a-hurry',
@@ -131,12 +132,13 @@ posts.filter(function(p){return !isPregame(p.link);}).forEach(function(p){var s=
 posts.filter(function(p){return isPregame(p.link);}).forEach(function(p){var s=slug(p.link);if(trending.length<5&&!used[s]&&!trending.some(function(x){return slug(x.link)===s;}))trending.push(p);});
 
 var subscribe='mailto:brenden@gatorbaitmedia.com?subject=Subscribe%20me%20to%20GatorBait%20Magazine&body=Please%20add%20me%20to%20GatorBait%20Magazine.%20I%20consent%20to%20receive%20marketing%20emails%20and%20understand%20I%20can%20unsubscribe%20at%20any%20time.';
+var featureStage=live?'<section class="feature-stage game-mode" aria-label="Featured story">'+featureLead(buddy)+'</section>':'<section class="feature-stage" aria-label="Featured stories">'+featureLead(buddy)+'<div class="feature-stack">'+featureSide(franz)+featureSide(carlton)+'</div></section>';
 
 return''+
 '<a class="skip" href="#gbm-main">Skip to stories</a>'+
 '<header class="site-header"><div class="mast"><a class="brand" href="/" aria-label="GatorBait Media home"><img src="'+LOGO+'" alt="GatorBait Media" width="900" height="241" decoding="async"></a><div class="brand-promise"><strong>OLD SCHOOL JOURNALISM</strong><span>+</span><strong>NEW TECH</strong></div><a class="support" href="/pricing-plans">JOIN GATORBAIT</a></div><nav class="primary" aria-label="Primary navigation"><a href="/" aria-current="page">News</a><a href="/magazine">Magazine</a><a href="/the-buddy-martin-show">GatorBait TV</a><a href="/the-buddy-martin-show">Buddy Martin Show</a><a href="https://gatorbait2026.itemorder.com/shop/home/">Shop</a><a class="join" href="/pricing-plans">Join</a></nav></header>'+
 '<main id="gbm-main">'+
-'<section class="feature-stage" aria-label="Featured stories">'+featureLead(buddy)+'<div class="feature-stack">'+featureSide(franz)+featureSide(carlton)+'</div></section>'+
+featureStage+
 '<section class="news-zone"><div class="latest-news"><div class="section-head"><h2>Latest News</h2><a href="/gatorbait-media-blogs">More news →</a></div><div class="latest-grid">'+latest.map(newsCard).join('')+'</div></div><aside class="trending" aria-labelledby="gbm-trending"><div class="section-head"><h2 id="gbm-trending">Trending Now</h2></div>'+trending.map(trendItem).join('')+'</aside></section>'+
 '<section class="tv-band"><div><span>GATORBAIT TV</span><h2>Watch the conversation behind the stories.</h2><p>The Buddy Martin Show, Florida Gator Lowdown, Best Friday in Football and SEC coverage.</p></div><a href="/the-buddy-martin-show">WATCH GATORBAIT TV →</a></section>'+
 '<section class="destinations" aria-label="GatorBait destinations"><a href="/the-buddy-martin-show"><span>SHOW</span><strong>The Buddy Martin Show</strong><em>Full episodes and interviews.</em></a><a href="/magazine"><span>READ</span><strong>GatorBait Magazine</strong><em>Features, history and people.</em></a><a href="https://gatorbait2026.itemorder.com/shop/home/"><span>SHOP</span><strong>Rep the Gators</strong><em>Hats, visors, shirts and more.</em></a></section>'+

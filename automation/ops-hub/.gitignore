@@ -1,3 +1,8 @@
 .env
 .state/
 *.log
+
+# cloud-state/ is intentionally NOT ignored: it is the committed, bounded
+# state the GitHub Actions cloud cycle (.github/workflows/ops-hub-cloud-cycle.yml)
+# writes and pushes back to the repo every ~15 minutes. .state/ above stays
+# local-only for the Mac launchd install.

@@ -62,6 +62,18 @@ python3 test_learning.py
 python3 ops_hub.py once
 ```
 
+## Run in the cloud (no Mac required)
+
+`.github/workflows/ops-hub-cloud-cycle.yml` runs one deterministic `ops_hub.py once` cycle every 15 minutes on GitHub Actions and commits the resulting bounded state (`automation/ops-hub/cloud-state/`) back to `main` when it changes — the same commit-on-change pattern `refresh-newsroom-feed.yml` already uses for the live blog feed. This covers the observe/health/learning loop only:
+
+- `cloud-state/status.json`, `controller-state.json`, `learning.json`, `latest-brief.md` — same shape as the local `.state/` files, just committed instead of kept on a Mac disk.
+- `cloud-state/events.jsonl` is bounded to the most recent 500 events (oldest trimmed) so it never grows unbounded in Git history.
+- No write authority: this cycle only ever calls `evaluate_cycle`/`update_learning_state`, which never set `production_write_authorized: true` on their own. Nothing here can mutate the live Wix site, send anything, or spend money.
+- Not covered by the cloud cycle: n8n (Gmail/Wix/Metricool workflows), the FCC model router, and any actual production-write action. Those stay local-only/manual until a specific job justifies standing them up — see CLAUDE.md's rule against reactivating worker layers without a defined job.
+- Read `cloud-state/latest-brief.md` in the repo for current status instead of running a local dashboard. A live HTTP dashboard would need real hosting (a small always-on service) — not set up here; ask if you want that next.
+
+Run it manually anytime with `workflow_dispatch` from the Actions tab, or trigger a push to any of the paths listed in the workflow file.
+
 ## Run continuously on the Mac
 
 ```bash

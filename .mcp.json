@@ -7,6 +7,13 @@
     "wix-mcp-remote": {
       "type": "http",
       "url": "https://mcp.wix.com/mcp"
+    },
+    "wix-editor-local": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "github:Studio-1119-Inc/wix-editor-mcp"
+      ]
     }
   }
 }

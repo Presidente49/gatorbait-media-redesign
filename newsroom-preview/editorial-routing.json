@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-20T15:41:26Z",
+  "updated": "2026-09-20T18:01:07Z",
   "automation": {
-    "lastChecked": "2026-09-20T15:41:26Z",
-    "lastSeenPublishedDate": "2026-09-20T15:21:37.171Z",
-    "lastSeenPostId": "bb44d75c-0f90-44c3-8df3-365a1c3911b0"
+    "lastChecked": "2026-09-20T18:01:07Z",
+    "lastSeenPublishedDate": "2026-09-20T15:49:03Z",
+    "lastSeenPostId": "bbbaf285-0785-4f81-9d4a-2d4211f0d2e6"
   },
   "assignments": [
+    {
+      "slug": "postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1",
+      "title": "Postgame Analysis: Florida Gators (3-0,1-0) v. Auburn Tigers (2-1, 0-1)",
+      "firstPublishedDate": "2026-09-20T15:49:03Z",
+      "primaryHome": "frontPage",
+      "reason": "Loren Meadows' piece is immediate postgame football analysis of Florida's 44-39 SEC road win at Auburn, focused on Aaron Philo, Jadan Baugh, defensive pressure, secondary issues, penalties and the next ranked stretch. Its value is tied directly to the fresh game result, so Front Page is the single primary editorial home."
+    },
     {
       "slug": "florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
       "title": "Florida Escaped Auburn, But The Yellow Flags Followed It Home",
@@ -263,15 +270,15 @@
   ],
   "homepage": {
     "mode": "newestFrontPageFirst",
-    "lead": "florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
+    "lead": "postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1",
     "secondary": [
-      "jon-sumrall-postgame-florida-auburn",
-      "no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win"
+      "florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
+      "jon-sumrall-postgame-florida-auburn"
     ],
     "hide": [
       "live-now-best-friday-in-football-september-18-2026",
       "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
     ],
-    "reason": "The live controller is newest-first for Front Page-eligible stories. The newest lead is Buddy Martin's immediate postgame yellow-flags column, followed by the Sumrall postgame press-conference story and the earlier Sumrall warning; Magazine stories and stale live-show promos remain excluded."
+    "reason": "The live controller is newest-first for Front Page-eligible stories. The newest lead is Loren Meadows' immediate postgame analysis of Florida's 44-39 win at Auburn, followed by Buddy Martin's yellow-flags column and the Sumrall postgame press-conference story; Magazine stories and stale live-show promos remain excluded."
   }
 }

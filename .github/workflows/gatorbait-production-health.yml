@@ -2,6 +2,17 @@ name: GatorBait production health
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "automation/ops-hub/controller.py"
+      - "automation/ops-hub/learning.py"
+      - "automation/ops-hub/ops_hub.py"
+      - "automation/ops-hub/test_controller.py"
+      - "automation/ops-hub/test_learning.py"
+      - "automation/ops-hub/config.json"
+      - "automation/ops-hub/controller-rules.json"
+      - ".github/workflows/gatorbait-production-health.yml"
   pull_request:
     paths:
       - "CLAUDE.md"

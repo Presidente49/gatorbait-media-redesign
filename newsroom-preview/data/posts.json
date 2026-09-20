@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida Escaped Auburn, But The Yellow Flags Followed It Home",
+      "excerpt": "So, yes, Florida is 3-0. Yes, Jon Sumrall has his first SEC victory as the Gators’ coach. Yes, Aaron Philo survived his first road start in a place where noise is a regional crop. Yes, Jadan Baugh is running with the authority of a man who has discovered that defenders are merely speed bumps with scholarship offers.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-20T15:21:37Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_fc4264fcbf7e4c84b09fb8c5764e960d~mv2.jpg/v1/fit/w_450,h_300,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida Escaped Auburn, But The Yellow Flags Followed It Home"
+      }
+    },
+    {
       "title": "Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn",
       "excerpt": "Florida coach Jon Sumrall addresses 16 penalties, Jadan Baugh, Aaron Philo, Pat Dye and his 'work the cut' message after a 44-39 win at Auburn.",
       "url": "https://www.gatorbaitmedia.com/post/jon-sumrall-postgame-florida-auburn",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the Villain Role"
-      }
-    },
-    {
-      "title": "Thoughts of the Day: September 17, 2026",
-      "excerpt": "Steve Spurrier and Urban Meyer went 85-33-1 on the road when they coached the Gators A few thoughts to jump start your Thursday morning: In the Southeastern Conference nothing is more terrifying than a road trip. Just ask Urban Meyer, whose 65-15 overall record from 2005-10 included a 30-11 record away from Ben Hill Griffin Stadium. At home, Meyer won 89.74…",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-17-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-09-17T03:18:06Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_4efeca4579344aa0841bd725a60f1489~mv2.jpg/v1/fit/w_1000,h_703,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Thoughts of the Day: September 17, 2026"
       }
     }
   ]

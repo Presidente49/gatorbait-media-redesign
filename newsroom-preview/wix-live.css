@@ -21,6 +21,9 @@ html.gbm-standalone-live body{background:#fff!important}
 #gbm-live a:focus-visible{outline:3px solid #ff9d78;outline-offset:3px}
 #gbm-live main{max-width:1380px;margin:auto;padding:20px 24px 64px}
 #gbm-live .feature-stage{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(340px,.95fr);gap:8px;background:var(--navy);padding:8px}
+#gbm-live .feature-stage.game-mode{grid-template-columns:1fr;max-width:1180px;margin:0 auto;background:var(--navy)}
+#gbm-live .feature-stage.game-mode .feature-lead-media{aspect-ratio:16/9}
+#gbm-live .feature-stage.game-mode .feature-caption{padding:20px 24px 24px}
 #gbm-live .feature-stack{display:grid;grid-template-rows:1fr 1fr;gap:8px;min-width:0}
 #gbm-live .feature-lead,#gbm-live .feature-side{min-width:0;background:#0c1933;overflow:hidden}
 #gbm-live .feature-lead>a,#gbm-live .feature-side>a{display:block;height:100%}

@@ -26,6 +26,38 @@ This is a product-development lane. The current live GatorBait site remains prod
 11. A page is not done until navigation, responsive behavior, accessibility, performance and content wiring are verified.
 12. Publishing the Studio branch is a separate irreversible approval gate.
 
+## Repo-first rule
+
+Before inventing or coding a custom solution for any Studio feature, search current GitHub repositories first.
+
+For each feature:
+1. search for proven open-source implementations and design systems;
+2. identify the strongest maintained candidates;
+3. verify license;
+4. verify recent activity/maintenance;
+5. inspect accessibility/mobile behavior;
+6. estimate runtime/page-weight cost;
+7. decide one of: REFERENCE ONLY / ADOPT SMALL PIECE / INTEGRATE / REJECT;
+8. record the decision.
+
+Do not clone or install an entire framework simply because it looks good.
+
+Prefer:
+- native Wix Studio capability when it already solves the problem;
+- small MIT/BSD components when Studio needs help;
+- mature reference projects for IA, accessibility and community patterns.
+
+Every external repo must have a specific job.
+
+Current reference/toolbox:
+- `superdesigndev/superdesign-skill` — MIT; design-system and iterative product-design workflow reference.
+- `wagtail/news-template` — BSD-3-Clause; newsroom hierarchy, page-family and editorial IA reference only.
+- `bbc/simorgh` — accessibility/resilient article architecture reference only; do not vendor wholesale.
+- `discourse/discourse` — GPL-2.0; serious community/message-board backend candidate/reference for SwampGas.
+- `vidstack/player` — MIT; accessible video/audio player candidate if native Wix media cannot meet requirements.
+- `greensock/GSAP` / official GSAP skills — advanced motion reference; adopt only after current license/runtime verification and a demonstrated Studio limitation.
+- `Splidejs/splide` or `nolimits4web/swiper` — carousel/rail candidates only if native Studio rails are insufficient.
+
 ## Competitive benchmark
 
 Study current useful patterns from:

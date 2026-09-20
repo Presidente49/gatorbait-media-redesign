@@ -114,25 +114,15 @@ return'<a class="trend-item" href="'+esc(p.link)+'"><span class="trend-num">'+(i
 }
 
 function build(posts){
-var live=findPost(posts,LIVE_GAME_SLUG);
-if(!live){for(var li=0;li<posts.length;li++){if(/^(HALFTIME|LIVE)\s+Florida/i.test(posts[li].title||'')){live=posts[li];break;}}}
-var candidates=posts.filter(function(p){return p.img;});
-var buddy=live||findPost(posts,'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast')||candidates[0];
-
-var sidePool=posts.filter(function(p){return p!==buddy&&p.img&&(!live||!isPregame(p.link));});
-var franz=sidePool[0]||findPost(posts,'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie')||candidates.filter(function(p){return p!==buddy;})[0];
-var carlton=sidePool[1]||findPost(posts,'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville')||candidates.filter(function(p){return p!==buddy&&p!==franz;})[0];
-
-var used={};
-[buddy,franz,carlton].forEach(function(p){if(p)used[slug(p.link)]=1;});
-var latest=posts.filter(function(p){return !used[slug(p.link)]&&!isPerformance(p.link)&&(!live||!isPregame(p.link));}).slice(0,4);
-latest.forEach(function(p){used[slug(p.link)]=1;});
-var trending=posts.filter(function(p){return isPerformance(p.link)&&!used[slug(p.link)];}).slice(0,5);
-posts.filter(function(p){return !isPregame(p.link);}).forEach(function(p){var s=slug(p.link);if(trending.length<5&&!used[s]&&!trending.some(function(x){return slug(x.link)===s;}))trending.push(p);});
-posts.filter(function(p){return isPregame(p.link);}).forEach(function(p){var s=slug(p.link);if(trending.length<5&&!used[s]&&!trending.some(function(x){return slug(x.link)===s;}))trending.push(p);});
+var ordered=posts.slice().sort(function(a,b){return b.date.getTime()-a.date.getTime();});
+var buddy=ordered[0];
+var franz=ordered[1];
+var carlton=ordered[2];
+var latest=ordered.slice(3,7);
+var trending=ordered.slice(7,12);
 
 var subscribe='mailto:brenden@gatorbaitmedia.com?subject=Subscribe%20me%20to%20GatorBait%20Magazine&body=Please%20add%20me%20to%20GatorBait%20Magazine.%20I%20consent%20to%20receive%20marketing%20emails%20and%20understand%20I%20can%20unsubscribe%20at%20any%20time.';
-var featureStage=live?'<section class="feature-stage game-mode" aria-label="Featured story">'+featureLead(buddy)+'</section>':'<section class="feature-stage" aria-label="Featured stories">'+featureLead(buddy)+'<div class="feature-stack">'+featureSide(franz)+featureSide(carlton)+'</div></section>';
+var featureStage='<section class="feature-stage" aria-label="Featured stories">'+featureLead(buddy)+((franz||carlton)?'<div class="feature-stack">'+(franz?featureSide(franz):'')+(carlton?featureSide(carlton):'')+'</div>':'')+'</section>';
 
 return''+
 '<a class="skip" href="#gbm-main">Skip to stories</a>'+

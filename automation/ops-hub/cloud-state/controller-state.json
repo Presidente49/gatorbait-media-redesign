@@ -1,0 +1,12 @@
+{
+  "architecture": "single-controller",
+  "phase": "observe",
+  "decision": "no_action",
+  "reason": "deterministic checks are healthy",
+  "failed_checks": [],
+  "failure_fingerprint": "",
+  "consecutive_failed_cycles": 0,
+  "next_check_seconds": 900,
+  "model_required": false,
+  "production_write_authorized": false
+}

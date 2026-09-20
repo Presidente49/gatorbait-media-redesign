@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "enabled": true,
+  "total_cycles": 1,
+  "healthy_cycles": 1,
+  "incident_episodes": 0,
+  "incidents": {},
+  "candidates": [],
+  "last_updated": "2026-09-20T13:47:55.147441+00:00",
+  "policy": {
+    "auto_promote_to_doctrine": false,
+    "auto_authorize_production_writes": false,
+    "recurrence_threshold": 3,
+    "escalation_threshold": 2
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "updated": "2026-09-20T04:15:59Z",
+  "updated": "2026-09-20T06:17:30Z",
   "automation": {
-    "lastChecked": "2026-09-20T04:15:59Z",
+    "lastChecked": "2026-09-20T06:17:30Z",
     "lastSeenPublishedDate": "2026-09-20T03:45:11.529Z",
     "lastSeenPostId": "64f83e5e-21cd-4eb5-be5d-9565849d291b"
   },
@@ -198,9 +198,20 @@
     "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
   ],
   "latestGameGallery": {
-    "status": "removed",
-    "removedDate": "2026-09-16",
-    "reason": "No newer usable game photo set appeared among posts published through 2026-09-20T03:45:11.529Z. The final Florida-Auburn game story and Buddy Martin postgame analysis have cover art but no inline image gallery or photo set, so keep the Magazine gallery removed rather than accumulating galleries."
+    "status": "active",
+    "sourceSlug": "florida-44-auburn-39-gators-end-jordan-hare-drought",
+    "sourceTitle": "Florida 44 Auburn 39: Gators End Jordan-Hare Drought",
+    "sourceFirstPublishedDate": "2026-09-20T03:07:30.120Z",
+    "game": "Florida at Auburn",
+    "gameDate": "2026-09-19",
+    "photographer": "Chris Spears / GatorBait Media",
+    "photoCount": 3,
+    "photos": [
+      "https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg",
+      "https://static.wixstatic.com/media/d3cfa5_cac5a84a16b145b5bb20bb3575b5bb0d~mv2.jpg",
+      "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg"
+    ],
+    "reason": "The Florida-Auburn final story is the newest usable game-photo source. Wix rich content confirms two inline Chris Spears game images plus the story's Chris Spears cover image. Keep only this three-photo set as the Magazine latest-game gallery and replace it when a newer usable game set appears."
   },
   "performancePolicy": {
     "windowDays": 7,

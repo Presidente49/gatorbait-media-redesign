@@ -36,7 +36,7 @@ var MAGAZINE_SLUGS=[
 'light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university'
 ];
 var IMAGE_FALLBACKS={
-'live-florida-auburn-game-tracker-score-updates':'https://static.wixstatic.com/media/d3cfa5_f109b2417cd04f48a96604967deecf04~mv2.png',
+'live-florida-auburn-game-tracker-score-updates':'https://static.wixstatic.com/media/d3cfa5_2d10f26e5cc64514b01bbb21461c2209~mv2.png',
 'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast':'https://static.wixstatic.com/media/d3cfa5_e0a5961689134b0bbf2f320bd82f6e7a~mv2.png',
 'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie':'https://static.wixstatic.com/media/a99769_f422e2b2eb0c4fccb5400143f80a1a8e~mv2.jpeg',
 'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville':'https://static.wixstatic.com/media/d3cfa5_66ca0317b876431b8cfcb910becc6376~mv2.png',
@@ -99,7 +99,7 @@ function labelFor(p){return FEATURE_LABELS[slug(p.link)]||p.who||'GatorBait';}
 
 function featureLead(p){
 var s=slug(p.link);
-return'<article class="feature-lead"><a href="'+esc(p.link)+'">'+media(p,'feature-lead-media',true,s==='welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast')+'<div class="feature-caption"><span class="feature-label">'+esc(labelFor(p))+'</span><h1>'+esc(titleFor(p))+'</h1><p>'+esc(clean(p.desc,170))+'</p><div class="meta">'+byline(p)+'</div></div></a></article>';
+return'<article class="feature-lead"><a href="'+esc(p.link)+'">'+media(p,'feature-lead-media',true,s==='welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast'||s===LIVE_GAME_SLUG)+'<div class="feature-caption"><span class="feature-label">'+esc(labelFor(p))+'</span><h1>'+esc(titleFor(p))+'</h1><p>'+esc(clean(p.desc,170))+'</p><div class="meta">'+byline(p)+'</div></div></a></article>';
 }
 function featureSide(p){
 var s=slug(p.link);

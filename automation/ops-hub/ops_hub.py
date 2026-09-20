@@ -22,6 +22,7 @@ from pathlib import Path
 from typing import Any
 
 from controller import evaluate_cycle
+from learning import learning_summary, update_learning_state
 
 
 ROOT = Path(__file__).resolve().parent
@@ -29,6 +30,7 @@ CONFIG_PATH = ROOT / "config.json"
 STATE_DIR = Path(os.environ.get("GBM_OPS_STATE_DIR", ROOT / ".state"))
 STATUS_PATH = STATE_DIR / "status.json"
 CONTROLLER_STATE_PATH = STATE_DIR / "controller-state.json"
+LEARNING_PATH = STATE_DIR / "learning.json"
 EVENTS_PATH = STATE_DIR / "events.jsonl"
 BRIEF_PATH = STATE_DIR / "latest-brief.md"
 USER_AGENT = "GatorBait-Ops-Hub/1.1 (+https://www.gatorbaitmedia.com/)"
@@ -116,6 +118,7 @@ def write_event(payload: dict[str, Any]) -> None:
 
 def write_brief(payload: dict[str, Any]) -> None:
     controller = payload.get("controller", {})
+    learning = payload.get("learning", {})
     lines = [
         "# GatorBait operations brief",
         "",
@@ -127,6 +130,12 @@ def write_brief(payload: dict[str, Any]) -> None:
             "Controller: "
             f"**{str(controller.get('phase', 'observe')).upper()}** / "
             f"{controller.get('decision', 'no_action')}"
+        ),
+        "",
+        (
+            "Learning: "
+            f"**{learning.get('review_candidates', 0)} review candidate(s)** / "
+            f"{learning.get('tracked_incidents', 0)} tracked incident pattern(s)"
         ),
         "",
         "| Check | Result | Time | Final URL |",
@@ -163,11 +172,21 @@ def run_checks(config: dict[str, Any]) -> dict[str, Any]:
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     previous_status = read_json(STATUS_PATH)
     previous_controller = read_json(CONTROLLER_STATE_PATH)
+    previous_learning = read_json(LEARNING_PATH)
     controller = evaluate_cycle(payload, previous_controller, config)
+    learning = update_learning_state(
+        previous_learning,
+        controller,
+        previous_controller,
+        now,
+        config,
+    )
     payload["controller"] = controller
+    payload["learning"] = learning_summary(learning)
 
     atomic_json(STATUS_PATH, payload)
     atomic_json(CONTROLLER_STATE_PATH, controller)
+    atomic_json(LEARNING_PATH, learning)
     write_brief(payload)
 
     previous_ok = previous_status.get("ok") if previous_status else None
@@ -190,6 +209,26 @@ def run_checks(config: dict[str, Any]) -> dict[str, Any]:
             }
         )
 
+    previous_candidates = {
+        str(item.get("fingerprint", ""))
+        for item in (previous_learning or {}).get("candidates", [])
+        if isinstance(item, dict)
+    }
+    current_candidates = {
+        str(item.get("fingerprint", ""))
+        for item in learning.get("candidates", [])
+        if isinstance(item, dict)
+    }
+    if previous_candidates != current_candidates:
+        write_event(
+            {
+                "type": "learning",
+                "checked_at": now,
+                "summary": payload["learning"],
+                "candidates": learning.get("candidates", []),
+            }
+        )
+
     return payload
 
 
@@ -209,9 +248,12 @@ def dashboard(payload: dict[str, Any]) -> str:
         )
     overall = "ALL SYSTEMS HEALTHY" if payload.get("ok") else "ATTENTION REQUIRED"
     controller = payload.get("controller", {})
+    learning = payload.get("learning", {})
     phase = html.escape(str(controller.get("phase", "observe")).upper())
     decision = html.escape(str(controller.get("decision", "no_action")))
     reason = html.escape(str(controller.get("reason", "")))
+    learning_candidates = int(learning.get("review_candidates", 0))
+    tracked_incidents = int(learning.get("tracked_incidents", 0))
     return f"""<!doctype html>
 <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>GatorBait Operations</title>
@@ -223,14 +265,14 @@ table{{width:100%;border-collapse:collapse}}th,td{{padding:12px;text-align:left;
 a{{color:#0021a5}}small{{color:#59657b}}.controller{{margin:18px 0;padding:14px 18px;background:#fff;border-left:5px solid #0021a5}}
 </style><main><small>LOCAL CONTROL ROOM</small><h1>GatorBait Operations</h1><div class="bar"></div>
 <h2>{overall}</h2><p>Last check: {html.escape(payload.get('checked_at','Not run yet'))}</p>
-<div class="controller"><strong>Controller:</strong> {phase} / {decision}<br><small>{reason}</small></div>
+<div class="controller"><strong>Controller:</strong> {phase} / {decision}<br><small>{reason}</small><br><small>Learning: {learning_candidates} review candidate(s) from {tracked_incidents} tracked pattern(s)</small></div>
 <div class="card"><table><thead><tr><th>System</th><th>Result</th><th>HTTP</th><th>Time</th><th>Link</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div></main></html>"""
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:  # noqa: N802
-        if self.path not in ("/", "/api/status", "/api/controller"):
+        if self.path not in ("/", "/api/status", "/api/controller", "/api/learning"):
             self.send_error(404)
             return
         payload = read_json(STATUS_PATH) or {
@@ -245,6 +287,9 @@ class Handler(BaseHTTPRequestHandler):
         }
         if self.path == "/api/controller":
             body = json.dumps(payload.get("controller", {})).encode()
+            content_type = "application/json"
+        elif self.path == "/api/learning":
+            body = json.dumps(read_json(LEARNING_PATH) or {}).encode()
             content_type = "application/json"
         elif self.path == "/api/status":
             body = json.dumps(payload).encode()

@@ -37,7 +37,7 @@ var MAGAZINE_SLUGS=[
 'light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university'
 ];
 var IMAGE_FALLBACKS={
-'live-florida-auburn-game-tracker-score-updates':'https://static.wixstatic.com/media/d3cfa5_2d10f26e5cc64514b01bbb21461c2209~mv2.png',
+'live-florida-auburn-game-tracker-score-updates':'https://static.wixstatic.com/media/d3cfa5_fba223d163154615a34f00db0411ffcb~mv2.png',
 'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast':'https://static.wixstatic.com/media/d3cfa5_e0a5961689134b0bbf2f320bd82f6e7a~mv2.png',
 'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie':'https://static.wixstatic.com/media/a99769_f422e2b2eb0c4fccb5400143f80a1a8e~mv2.jpeg',
 'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville':'https://static.wixstatic.com/media/d3cfa5_66ca0317b876431b8cfcb910becc6376~mv2.png',
@@ -45,7 +45,6 @@ var IMAGE_FALLBACKS={
 'florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role':'https://static.wixstatic.com/media/ae876a_5a44257742a9441dbadef605f65b541f~mv2.jpeg'
 };
 var DISPLAY_TITLES={
-'live-florida-auburn-game-tracker-score-updates':'HALFTIME Florida 17 Auburn 17',
 'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast':'Welcome to the Killing Fields',
 'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie':'Florida-Auburn Grudge Match',
 'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville':'Carlton Reese Remembers 14 Days in Gainesville'
@@ -68,6 +67,7 @@ function isFeature(link){return FEATURE_SLUGS.indexOf(slug(link))>-1;}
 function isPerformance(link){return PERFORMANCE_SLUGS.indexOf(slug(link))>-1;}
 function isHiddenHome(link){return HIDE_HOME_SLUGS.indexOf(slug(link))>-1;}
 function isPregame(link){return PREGAME_SLUGS.indexOf(slug(link))>-1;}
+function isStaleBuddyLivePromo(p){var t=((p&&p.title)||'').toLowerCase();return t.indexOf('buddy martin')>-1&&(t.indexOf('live')>-1||t.indexOf('watch')>-1||t.indexOf('tonight')>-1||t.indexOf('9 p')>-1||t.indexOf('9pm')>-1);}
 function dateText(d){try{return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}catch(e){return'';}}
 function creator(item){var all=item.getElementsByTagNameNS?item.getElementsByTagNameNS('*','creator'):[];if(all&&all[0])return(all[0].textContent||'GatorBait Staff').trim();var plain=item.querySelector('creator');return plain?(plain.textContent||'GatorBait Staff').trim():'GatorBait Staff';}
 function image(item){var e=item.querySelector('enclosure');if(e&&e.getAttribute('url'))return e.getAttribute('url');var nodes=item.getElementsByTagName('*');for(var i=0;i<nodes.length;i++){var n=nodes[i],name=(n.localName||n.nodeName||'').toLowerCase();if((name==='content'||name==='thumbnail')&&n.getAttribute&&n.getAttribute('url')){var u=n.getAttribute('url');if(/^https?:/i.test(u))return u;}}return'';}
@@ -83,7 +83,7 @@ function t(tag){var n=item.querySelector(tag);return n?n.textContent:'';}
 var raw=t('pubDate'),d=raw?new Date(raw):new Date(0),link=local(t('link').trim()),s=slug(link),pic=image(item)||IMAGE_FALLBACKS[s]||'';
 return{title:t('title').trim(),desc:t('description'),link:link,img:pic,who:creator(item),date:d};
 }).filter(function(p){
-return p.title&&/^\/post\//.test(p.link)&&!isHiddenHome(p.link)&&(!isMagazine(p.link)||isFeature(p.link)||isPerformance(p.link));
+return p.title&&/^\/post\//.test(p.link)&&!isHiddenHome(p.link)&&!isStaleBuddyLivePromo(p)&&(!isMagazine(p.link)||isFeature(p.link)||isPerformance(p.link));
 }).sort(function(a,b){return b.date.getTime()-a.date.getTime();}).slice(0,40);
 });
 }
@@ -95,7 +95,7 @@ return'<div class="'+cls+(safe?' safe-art':'')+'"><img '+(eager?'fetchpriority="
 function meta(p){return esc(dateText(p.date));}
 function byline(p){return esc(p.who||'GatorBait Staff')+' · '+esc(dateText(p.date));}
 function findPost(posts,s){for(var i=0;i<posts.length;i++){if(slug(posts[i].link)===s)return posts[i];}return null;}
-function titleFor(p){return DISPLAY_TITLES[slug(p.link)]||p.title;}
+function titleFor(p){var s=slug(p.link);return s===LIVE_GAME_SLUG?p.title:(DISPLAY_TITLES[s]||p.title);}
 function labelFor(p){return FEATURE_LABELS[slug(p.link)]||p.who||'GatorBait';}
 
 function featureLead(p){

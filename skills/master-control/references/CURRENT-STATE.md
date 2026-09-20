@@ -301,3 +301,19 @@ Configured in the repository on 2026-09-20:
 - production rule: inspect current component IDs -> change draft -> screenshot/verify -> publish only when the active request authorizes the production change.
 - fallback: official Wix REST/MCP remains preferred for Blog, CMS, business data, media and other supported public APIs.
 - local execution/auth state: NOT YET VERIFIED from cloud chat. The local MCP client must reload the repository MCP config, then open/import the user's authenticated Wix Studio editor session.
+
+
+## Known-good game-night homepage baseline — 2026-09-19
+
+Brenden identified the late-game site state, around 9:30–10:00 p.m. ET on September 19, as the preferred production baseline.
+
+- presentation baseline commit: `d03d9d1e0350c55be03df1a8ebed0180c9a74c5d`
+- related live-tracker routing commit: `d1b6da53fa33aead25ce3354dffaadb40ce5a4cd`
+- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
+- loader revision after restoration on 2026-09-20: `35`
+- all four newsroom assets are pinned to the same baseline commit: `wix-live.css`, `wix-live-ui.css`, `wix-live.js`, and `wix-live-ui.js`
+- the newsroom JavaScript continues to fetch the live Wix `/blog-feed.xml`, so this pins the known-good presentation architecture without freezing editorial content or story chronology
+- do not mix asset refs from different commits in the production loader
+- later CSS that reintroduced the native Wix header/footer and changed mobile Latest News card geometry should not replace this baseline without an explicit, verified visual improvement
+
+When troubleshooting front-page regressions, compare against this baseline first instead of layering another override.

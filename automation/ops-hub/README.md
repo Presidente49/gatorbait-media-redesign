@@ -6,8 +6,8 @@ An inexpensive local control room for the digital side of GatorBait Media. It is
 
 - Checks the live homepage, Magazine, GatorBait TV, membership, policies, contact page and official merch store every 15 minutes.
 - Verifies HTTPS and required homepage markers.
-- Keeps persistent JSONL health history, controller state and a current Markdown brief.
-- Serves a local dashboard at `http://127.0.0.1:8765` plus read-only `/api/status` and `/api/controller` endpoints.
+- Keeps persistent JSONL health history, controller state, bounded learning evidence and a current Markdown brief.
+- Serves a local dashboard at `http://127.0.0.1:8765` plus read-only `/api/status`, `/api/controller` and `/api/learning` endpoints.
 - On a first deterministic failure, performs one short confirmation loop after 90 seconds. If the same failure persists, it escalates and returns to the normal interval instead of entering an open-ended self-healing loop.
 - Restarts automatically after Mac login when installed with launchd.
 - Includes a pinned, local-only n8n service for Gmail, Wix, Metricool and bounded AI workflows.
@@ -25,7 +25,7 @@ Recursion is intentionally bounded:
 
 - **Health failure:** one short deterministic recheck, then escalate if persistent.
 - **Production mutation:** one reversible mutation per cycle, external verification, then rollback/stop or escalation on failure.
-- **Learning:** measured outcomes may suggest a reusable playbook; safety, financial and approval boundaries cannot self-modify.
+- **Learning:** every cycle updates a compact evidence store. Separate incident episodes, recoveries and escalations are counted; repeated patterns become review candidates. Candidates never auto-promote into doctrine and never authorize production writes.
 
 ## Daily operating heartbeat
 
@@ -58,6 +58,7 @@ From this directory:
 
 ```bash
 python3 test_controller.py
+python3 test_learning.py
 python3 ops_hub.py once
 ```
 
@@ -132,8 +133,10 @@ That installer refuses to enable the always-on service unless FCC health and aut
 
 - `ops_hub.py` — local controller, monitor and dashboard.
 - `controller.py` — deterministic controller state transitions.
+- `learning.py` — bounded recurrence/recovery evidence and lesson-candidate detection.
 - `controller-rules.json` — target-specific deterministic gates and bounded reasoning scopes.
 - `test_controller.py` — dependency-free controller transition tests.
+- `test_learning.py` — dependency-free learning-loop regression tests.
 - `config.json` — monitored systems, timing and controller retry bounds.
 - `policy.json` — authoritative action boundaries and learning rules.
 - `playbooks/daily-operations.md` — overall daily operating rhythm and desktop/mobile QC.

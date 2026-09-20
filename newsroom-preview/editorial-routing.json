@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-20T06:17:30Z",
+  "updated": "2026-09-20T08:30:12Z",
   "automation": {
-    "lastChecked": "2026-09-20T06:17:30Z",
-    "lastSeenPublishedDate": "2026-09-20T03:45:11.529Z",
-    "lastSeenPostId": "64f83e5e-21cd-4eb5-be5d-9565849d291b"
+    "lastChecked": "2026-09-20T08:30:12Z",
+    "lastSeenPublishedDate": "2026-09-20T07:30:31.107Z",
+    "lastSeenPostId": "cf6133a6-5d24-4a76-8344-f6b70614e563"
   },
   "assignments": [
+    {
+      "slug": "no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win",
+      "title": "No Bad Wins: Sumrall Issues Warning After Florida's Auburn Win",
+      "firstPublishedDate": "2026-09-20T07:30:31.107Z",
+      "primaryHome": "frontPage",
+      "reason": "Immediate postgame coaching reaction and analysis after Florida's Auburn win, centered on Jon Sumrall's warning about the team's performance. It is tied directly to the just-completed game and is time-sensitive Front Page coverage."
+    },
     {
       "slug": "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy",
       "title": "Sumrall Passed the Test. He Aced It. Next, Please! Hotty Toddy?",
@@ -242,15 +249,15 @@
   ],
   "homepage": {
     "mode": "newestFrontPageFirst",
-    "lead": "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy",
+    "lead": "no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win",
     "secondary": [
-      "florida-44-auburn-39-gators-end-jordan-hare-drought",
-      "live-florida-auburn-game-tracker-score-updates"
+      "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy",
+      "florida-44-auburn-39-gators-end-jordan-hare-drought"
     ],
     "hide": [
       "live-now-best-friday-in-football-september-18-2026",
       "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
     ],
-    "reason": "The live controller is newest-first for Front Page-eligible stories. After Florida's 44-39 win at Auburn, the current lead is Buddy Martin's immediate postgame analysis, followed by the final game result and the immediately preceding game tracker; Magazine stories and stale live-show promos remain excluded."
+    "reason": "The live controller is newest-first for Front Page-eligible stories. The newest lead is Jon Sumrall's immediate postgame warning after Florida's Auburn win, followed by Buddy Martin's immediate postgame analysis and the final game result; Magazine stories and stale live-show promos remain excluded."
   }
 }

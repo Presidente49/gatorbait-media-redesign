@@ -325,7 +325,8 @@
         "no first-paint opacity fade",
         "no competing global themes",
         "44px interactive controls where required",
-        "rollback path defined"
+        "rollback path defined",
+        "for static Wix page/header/footer/component edits, prefer the locally authenticated Wix Editor MCP over runtime CSS/JS injection when available"
       ],
       "bounded_reasoning": [
         "UX diagnosis",
@@ -337,7 +338,8 @@
         "console",
         "desktop",
         "390px mobile",
-        "430px mobile"
+        "430px mobile",
+        "native Wix editor draft structure and screenshot before publish when editor-canvas changes are made"
       ]
     },
     "analytics": {

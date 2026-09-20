@@ -14,6 +14,13 @@ var HIDE_HOME_SLUGS=[
 'watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real',
 'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1'
 ];
+var LIVE_GAME_SLUG='live-florida-auburn-game-tracker-score-updates';
+var PREGAME_SLUGS=[
+'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast',
+'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie',
+'week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0',
+'florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role'
+];
 var PERFORMANCE_SLUGS=[
 'no-sugar-coating-from-sumrall-gators-have-to-get-better-in-a-hurry',
 'florida-auburn-by-the-numbers-2026',
@@ -29,6 +36,7 @@ var MAGAZINE_SLUGS=[
 'light-up-a-camel-nostalgia-the-gators-and-a-game-with-campbell-university'
 ];
 var IMAGE_FALLBACKS={
+'live-florida-auburn-game-tracker-score-updates':'https://static.wixstatic.com/media/d3cfa5_f109b2417cd04f48a96604967deecf04~mv2.png',
 'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast':'https://static.wixstatic.com/media/d3cfa5_e0a5961689134b0bbf2f320bd82f6e7a~mv2.png',
 'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie':'https://static.wixstatic.com/media/a99769_f422e2b2eb0c4fccb5400143f80a1a8e~mv2.jpeg',
 'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville':'https://static.wixstatic.com/media/d3cfa5_66ca0317b876431b8cfcb910becc6376~mv2.png',
@@ -36,11 +44,13 @@ var IMAGE_FALLBACKS={
 'florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role':'https://static.wixstatic.com/media/ae876a_5a44257742a9441dbadef605f65b541f~mv2.jpeg'
 };
 var DISPLAY_TITLES={
+'live-florida-auburn-game-tracker-score-updates':'HALFTIME Florida 17 Auburn 17',
 'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast':'Welcome to the Killing Fields',
 'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie':'Florida-Auburn Grudge Match',
 'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville':'Carlton Reese Remembers 14 Days in Gainesville'
 };
 var FEATURE_LABELS={
+'live-florida-auburn-game-tracker-score-updates':'LIVE GAME TRACKER',
 'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast':'Buddy Martin',
 'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie':'Franz Beard',
 'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville':'Carlton Reese'
@@ -56,6 +66,7 @@ function isMagazine(link){return MAGAZINE_SLUGS.indexOf(slug(link))>-1;}
 function isFeature(link){return FEATURE_SLUGS.indexOf(slug(link))>-1;}
 function isPerformance(link){return PERFORMANCE_SLUGS.indexOf(slug(link))>-1;}
 function isHiddenHome(link){return HIDE_HOME_SLUGS.indexOf(slug(link))>-1;}
+function isPregame(link){return PREGAME_SLUGS.indexOf(slug(link))>-1;}
 function dateText(d){try{return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}catch(e){return'';}}
 function creator(item){var all=item.getElementsByTagNameNS?item.getElementsByTagNameNS('*','creator'):[];if(all&&all[0])return(all[0].textContent||'GatorBait Staff').trim();var plain=item.querySelector('creator');return plain?(plain.textContent||'GatorBait Staff').trim():'GatorBait Staff';}
 function image(item){var e=item.querySelector('enclosure');if(e&&e.getAttribute('url'))return e.getAttribute('url');var nodes=item.getElementsByTagName('*');for(var i=0;i<nodes.length;i++){var n=nodes[i],name=(n.localName||n.nodeName||'').toLowerCase();if((name==='content'||name==='thumbnail')&&n.getAttribute&&n.getAttribute('url')){var u=n.getAttribute('url');if(/^https?:/i.test(u))return u;}}return'';}
@@ -102,20 +113,22 @@ return'<a class="trend-item" href="'+esc(p.link)+'"><span class="trend-num">'+(i
 }
 
 function build(posts){
-var buddy=findPost(posts,'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast');
-var franz=findPost(posts,'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie');
-var carlton=findPost(posts,'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville');
+var live=findPost(posts,LIVE_GAME_SLUG);
+if(!live){for(var li=0;li<posts.length;li++){if(/^(HALFTIME|LIVE)\s+Florida/i.test(posts[li].title||'')){live=posts[li];break;}}}
 var candidates=posts.filter(function(p){return p.img;});
-if(!buddy)buddy=candidates[0];
-if(!franz)franz=candidates.filter(function(p){return p!==buddy;})[0];
-if(!carlton)carlton=candidates.filter(function(p){return p!==buddy&&p!==franz;})[0];
+var buddy=live||findPost(posts,'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast')||candidates[0];
+
+var sidePool=posts.filter(function(p){return p!==buddy&&p.img&&(!live||!isPregame(p.link));});
+var franz=sidePool[0]||findPost(posts,'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie')||candidates.filter(function(p){return p!==buddy;})[0];
+var carlton=sidePool[1]||findPost(posts,'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville')||candidates.filter(function(p){return p!==buddy&&p!==franz;})[0];
 
 var used={};
 [buddy,franz,carlton].forEach(function(p){if(p)used[slug(p.link)]=1;});
-var latest=posts.filter(function(p){return !used[slug(p.link)]&&!isPerformance(p.link);}).slice(0,4);
+var latest=posts.filter(function(p){return !used[slug(p.link)]&&!isPerformance(p.link)&&(!live||!isPregame(p.link));}).slice(0,4);
 latest.forEach(function(p){used[slug(p.link)]=1;});
 var trending=posts.filter(function(p){return isPerformance(p.link)&&!used[slug(p.link)];}).slice(0,5);
-posts.forEach(function(p){var s=slug(p.link);if(trending.length<5&&!used[s]&&!trending.some(function(x){return slug(x.link)===s;}))trending.push(p);});
+posts.filter(function(p){return !isPregame(p.link);}).forEach(function(p){var s=slug(p.link);if(trending.length<5&&!used[s]&&!trending.some(function(x){return slug(x.link)===s;}))trending.push(p);});
+posts.filter(function(p){return isPregame(p.link);}).forEach(function(p){var s=slug(p.link);if(trending.length<5&&!used[s]&&!trending.some(function(x){return slug(x.link)===s;}))trending.push(p);});
 
 var subscribe='mailto:brenden@gatorbaitmedia.com?subject=Subscribe%20me%20to%20GatorBait%20Magazine&body=Please%20add%20me%20to%20GatorBait%20Magazine.%20I%20consent%20to%20receive%20marketing%20emails%20and%20understand%20I%20can%20unsubscribe%20at%20any%20time.';
 

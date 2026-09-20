@@ -41,12 +41,12 @@ jobs:
       - name: Commit updated ops state when it changed
         shell: bash
         run: |
-          if git diff --quiet -- automation/ops-hub/cloud-state; then
+          git add automation/ops-hub/cloud-state
+          if git diff --cached --quiet -- automation/ops-hub/cloud-state; then
             echo 'No ops-hub state change.'
             exit 0
           fi
           git config user.name 'gatorbait-ops-bot'
           git config user.email 'brenden@gatorbaitmedia.com'
-          git add automation/ops-hub/cloud-state
           git commit -m 'ops: record cloud health/controller/learning cycle'
           git push

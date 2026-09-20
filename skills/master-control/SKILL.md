@@ -87,6 +87,8 @@ Update the current-state/runbook only when the fact is durable enough to help th
 ### Learn
 Promote repeated measured outcomes into doctrine or playbooks. One anecdote does not become a universal rule.
 
+The local Ops Hub may continuously accumulate bounded evidence about recurring incidents and recoveries. It may surface review candidates automatically, but it must never auto-promote doctrine or use learned state to self-authorize production writes.
+
 ## Approval boundaries
 
 Master Control may complete authorized reversible operational work without routine re-confirmation.

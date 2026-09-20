@@ -1,18 +1,33 @@
 {
-  "updated": "2026-09-20T01:31:37Z",
+  "updated": "2026-09-20T04:15:59Z",
   "automation": {
-    "lastChecked": "2026-09-20T01:31:37Z",
-    "lastSeenPublishedDate": "2026-09-19T23:45:16.645Z",
-    "lastSeenPostId": "8a0c4b1a-cdf2-4b42-93ea-ca6705d055b6"
+    "lastChecked": "2026-09-20T04:15:59Z",
+    "lastSeenPublishedDate": "2026-09-20T03:45:11.529Z",
+    "lastSeenPostId": "64f83e5e-21cd-4eb5-be5d-9565849d291b"
   },
   "assignments": [
+    {
+      "slug": "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy",
+      "title": "Sumrall Passed the Test. He Aced It. Next, Please! Hotty Toddy?",
+      "firstPublishedDate": "2026-09-20T03:45:11.529Z",
+      "primaryHome": "frontPage",
+      "reason": "Buddy Martin's column is immediate postgame analysis of Florida's 44-39 win at Auburn and pivots directly to the upcoming unbeaten Ole Miss matchup. Its value is tied to the fresh result and next week's game, so it belongs exclusively on the Front Page."
+    },
+    {
+      "slug": "florida-44-auburn-39-gators-end-jordan-hare-drought",
+      "title": "Florida 44 Auburn 39: Gators End Jordan-Hare Drought",
+      "firstPublishedDate": "2026-09-20T03:07:30.120Z",
+      "primaryHome": "frontPage",
+      "reason": "A same-night Florida-Auburn game result with final score, statistics, player production, fourth-quarter sequence and immediate season implications. Game results are time-sensitive Front Page coverage."
+    },
     {
       "slug": "live-florida-auburn-game-tracker-score-updates",
       "title": "LIVE GAME TRACKER Florida 27 Auburn 17: Baugh Breaks 33-Yard TD",
       "firstPublishedDate": "2026-09-19T23:45:16.645Z",
       "primaryHome": "frontPage",
-      "reason": "A live Florida-Auburn score and drive tracker with continuously updated game state, penalties, turnovers and immediate in-game analysis; it is the most time-sensitive coverage on the site and belongs exclusively on the Front Page while the game is active.",
-      "contentType": "liveGameTracker"
+      "reason": "A live Florida-Auburn score and drive tracker with continuously updated game state, penalties, turnovers and immediate in-game analysis; it is time-sensitive Front Page coverage.",
+      "contentType": "liveGameTracker",
+      "liveState": "ended"
     },
     {
       "slug": "jimbo-fisher-s-fsu-parole-hearing-could-go-either-way-how-do-gator-fans-feel",
@@ -185,7 +200,7 @@
   "latestGameGallery": {
     "status": "removed",
     "removedDate": "2026-09-16",
-    "reason": "No newer usable game photo set appeared among posts published through 2026-09-19T23:45:16.645Z; the live Florida-Auburn tracker contains no inline image gallery, so keep the Magazine gallery removed rather than accumulating galleries."
+    "reason": "No newer usable game photo set appeared among posts published through 2026-09-20T03:45:11.529Z. The final Florida-Auburn game story and Buddy Martin postgame analysis have cover art but no inline image gallery or photo set, so keep the Magazine gallery removed rather than accumulating galleries."
   },
   "performancePolicy": {
     "windowDays": 7,
@@ -204,26 +219,27 @@
     {
       "slug": "florida-auburn-by-the-numbers-2026",
       "title": "Florida–Auburn By the Numbers: Two New Coaches, One Old Rivalry",
-      "views": 420,
+      "views": 427,
       "firstPublishedDate": "2026-09-14T17:15:28.449Z"
     },
     {
-      "slug": "baugh-game-really-it-was-a-brown-game-gators-flatten-campbell-52-3",
-      "title": "Baugh Game? Really, It Was A Brown Game. Gators Flatten Campbell, 52-3",
-      "views": 404,
-      "firstPublishedDate": "2026-09-13T02:12:32.808Z"
+      "slug": "caution-coming-up-next-is-the-not-so-lovely-village-on-the-plains",
+      "title": "Caution: Coming Up Next Is The NOT So Lovely Village On The Plains",
+      "views": 378,
+      "firstPublishedDate": "2026-09-13T16:27:40.773Z"
     }
   ],
   "homepage": {
-    "lead": "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast",
+    "mode": "newestFrontPageFirst",
+    "lead": "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy",
     "secondary": [
-      "florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie",
-      "laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville"
+      "florida-44-auburn-39-gators-end-jordan-hare-drought",
+      "live-florida-auburn-game-tracker-score-updates"
     ],
     "hide": [
       "live-now-best-friday-in-football-september-18-2026",
       "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
     ],
-    "reason": "Owner-directed base landing package: Buddy Martin lead, Franz Beard and Carlton Reese secondaries; recurring live-show posts stay off the landing page. During an active Florida game, the live game tracker temporarily overrides the static lead in presentation without changing its primary editorial home."
+    "reason": "The live controller is newest-first for Front Page-eligible stories. After Florida's 44-39 win at Auburn, the current lead is Buddy Martin's immediate postgame analysis, followed by the final game result and the immediately preceding game tracker; Magazine stories and stale live-show promos remain excluded."
   }
 }

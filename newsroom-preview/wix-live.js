@@ -56,6 +56,9 @@ var FEATURE_LABELS={
 'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie':'Franz Beard',
 'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville':'Carlton Reese'
 };
+var AUTHOR_OVERRIDES={
+'sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy':'Buddy Martin'
+};
 var lastPath='';
 
 function home(){var p=(location.pathname||'').replace(/\/+$/,'');return p===''||p==='/';}
@@ -71,6 +74,7 @@ function isPregame(link){return PREGAME_SLUGS.indexOf(slug(link))>-1;}
 function isStaleBuddyLivePromo(p){var t=((p&&p.title)||'').toLowerCase();return t.indexOf('buddy martin')>-1&&(t.indexOf('live')>-1||t.indexOf('watch')>-1||t.indexOf('tonight')>-1||t.indexOf('9 p')>-1||t.indexOf('9pm')>-1);}
 function dateText(d){try{return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}catch(e){return'';}}
 function creator(item){var all=item.getElementsByTagNameNS?item.getElementsByTagNameNS('*','creator'):[];if(all&&all[0])return(all[0].textContent||'GatorBait Staff').trim();var plain=item.querySelector('creator');return plain?(plain.textContent||'GatorBait Staff').trim():'GatorBait Staff';}
+function authorFor(link,who){return AUTHOR_OVERRIDES[slug(link)]||who||'GatorBait Staff';}
 function image(item){var e=item.querySelector('enclosure');if(e&&e.getAttribute('url'))return e.getAttribute('url');var nodes=item.getElementsByTagName('*');for(var i=0;i<nodes.length;i++){var n=nodes[i],name=(n.localName||n.nodeName||'').toLowerCase();if((name==='content'||name==='thumbnail')&&n.getAttribute&&n.getAttribute('url')){var u=n.getAttribute('url');if(/^https?:/i.test(u))return u;}}return'';}
 
 function feed(){
@@ -81,8 +85,8 @@ var doc=new DOMParser().parseFromString(xml,'application/xml');
 var items=Array.prototype.slice.call(doc.querySelectorAll('item'));
 return items.map(function(item){
 function t(tag){var n=item.querySelector(tag);return n?n.textContent:'';}
-var raw=t('pubDate'),d=raw?new Date(raw):new Date(0),link=local(t('link').trim()),s=slug(link),pic=image(item)||IMAGE_FALLBACKS[s]||'';
-return{title:t('title').trim(),desc:t('description'),link:link,img:pic,who:creator(item),date:d};
+var raw=t('pubDate'),d=raw?new Date(raw):new Date(0),link=local(t('link').trim()),s=slug(link),pic=image(item)||IMAGE_FALLBACKS[s]||'',who=creator(item);
+return{title:t('title').trim(),desc:t('description'),link:link,img:pic,who:authorFor(link,who),date:d};
 }).filter(function(p){
 return p.title&&/^\/post\//.test(p.link)&&!isHiddenHome(p.link)&&!isStaleBuddyLivePromo(p)&&(!isMagazine(p.link)||isFeature(p.link)||isPerformance(p.link));
 }).sort(function(a,b){return b.date.getTime()-a.date.getTime();}).slice(0,40);

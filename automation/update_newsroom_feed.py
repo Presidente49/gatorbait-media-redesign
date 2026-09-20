@@ -22,6 +22,17 @@ OUT = ROOT / "newsroom-preview" / "data" / "posts.json"
 INDEX = ROOT / "newsroom-preview" / "index.html"
 MAX_POSTS = 12
 UA = "GatorBaitNewsroomSync/1.1 (+https://www.gatorbaitmedia.com/)"
+AUTHOR_OVERRIDES = {
+    "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy": "Buddy Martin",
+}
+
+
+def post_slug(url: str) -> str:
+    return url.rstrip("/").rsplit("/", 1)[-1]
+
+
+def author_for(url: str, author: str) -> str:
+    return AUTHOR_OVERRIDES.get(post_slug(url), author)
 
 
 def clean_markup(value: str | None, limit: int = 360) -> str:
@@ -103,6 +114,7 @@ def parse_feed(payload: bytes) -> list[dict]:
             continue
         published = child_text(item, "pubDate") or child_text(item, "published") or child_text(item, "updated")
         author = child_text(item, "creator") or child_text(item, "author") or "GatorBait Staff"
+        author = author_for(link, author)
         description = child_text(item, "description") or child_text(item, "summary") or child_text(item, "content")
         image_url, width, height = first_media(item)
         posts.append(
@@ -134,6 +146,7 @@ def merge_preserving_rich_metadata(fresh: list[dict], existing: list[dict]) -> l
         result["image"] = {**post.get("image", {}), **old.get("image", {})}
         if old.get("author"):
             result["author"] = old["author"]
+        result["author"] = author_for(post["url"], result.get("author") or "GatorBait Staff")
         if old.get("section"):
             result["section"] = old["section"]
         if old.get("minutesToRead"):

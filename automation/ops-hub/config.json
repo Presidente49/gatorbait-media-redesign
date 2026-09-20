@@ -17,8 +17,13 @@
       "url": "https://www.gatorbaitmedia.com/?ops_health=1",
       "required": [
         "GatorBait Media",
-        "gbm-home-stable-boot",
+        "d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp",
         "GatorBait Weekly"
+      ],
+      "any_required": [
+        "gbm-standalone-live",
+        "gbm-newsroom-boot",
+        "gbm-prepaint-v2"
       ],
       "forbidden": [
         "fonts.googleapis.com/css2?family=Archivo",

@@ -1,11 +1,19 @@
 {
-  "updated": "2026-09-19T16:14:39Z",
+  "updated": "2026-09-20T01:31:37Z",
   "automation": {
-    "lastChecked": "2026-09-19T16:14:39Z",
-    "lastSeenPublishedDate": "2026-09-19T15:31:33Z",
-    "lastSeenPostId": "d7029934-1b31-4d01-b28c-9e6443db0c0b"
+    "lastChecked": "2026-09-20T01:31:37Z",
+    "lastSeenPublishedDate": "2026-09-19T23:45:16.645Z",
+    "lastSeenPostId": "8a0c4b1a-cdf2-4b42-93ea-ca6705d055b6"
   },
   "assignments": [
+    {
+      "slug": "live-florida-auburn-game-tracker-score-updates",
+      "title": "LIVE GAME TRACKER Florida 27 Auburn 17: Baugh Breaks 33-Yard TD",
+      "firstPublishedDate": "2026-09-19T23:45:16.645Z",
+      "primaryHome": "frontPage",
+      "reason": "A live Florida-Auburn score and drive tracker with continuously updated game state, penalties, turnovers and immediate in-game analysis; it is the most time-sensitive coverage on the site and belongs exclusively on the Front Page while the game is active.",
+      "contentType": "liveGameTracker"
+    },
     {
       "slug": "jimbo-fisher-s-fsu-parole-hearing-could-go-either-way-how-do-gator-fans-feel",
       "title": "Jimbo Fisher’s FSU Parole Hearing Could Go Either Way. How Do Gator Fans Feel?",
@@ -177,7 +185,7 @@
   "latestGameGallery": {
     "status": "removed",
     "removedDate": "2026-09-16",
-    "reason": "No newer usable game photo set appeared among posts published through 2026-09-19T15:31:33Z; keep the Magazine gallery removed rather than accumulating galleries."
+    "reason": "No newer usable game photo set appeared among posts published through 2026-09-19T23:45:16.645Z; the live Florida-Auburn tracker contains no inline image gallery, so keep the Magazine gallery removed rather than accumulating galleries."
   },
   "performancePolicy": {
     "windowDays": 7,
@@ -216,6 +224,6 @@
       "live-now-best-friday-in-football-september-18-2026",
       "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
     ],
-    "reason": "Owner-directed landing package: Buddy Martin lead, Franz Beard and Carlton Reese secondaries; recurring live-show posts stay off the landing page."
+    "reason": "Owner-directed base landing package: Buddy Martin lead, Franz Beard and Carlton Reese secondaries; recurring live-show posts stay off the landing page. During an active Florida game, the live game tracker temporarily overrides the static lead in presentation without changing its primary editorial home."
   }
 }

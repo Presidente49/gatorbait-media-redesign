@@ -46,3 +46,5 @@ Friendly names are not sufficient identity for automations, campaigns, embeds, o
 ## Invocation
 
 When Brenden says **Master Control**, **Controller**, **Chris**, or legacy **God Mode for Chris**, use the canonical Master Control skill and complete authorized reversible work end to end with concise updates and independent verification.
+
+@RTK.md

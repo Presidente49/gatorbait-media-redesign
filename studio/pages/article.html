@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title id="gb-doc-title">GatorBait Media — Studio Article Preview</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/shell.css">
+<style>
+.gb-preview-banner{ background:var(--gb-navy); color:#fff; text-align:center; font-size:.8rem; padding:6px 12px; }
+.gb-preview-banner strong{ color:var(--gb-orange); }
+
+.gb-article{ max-width:var(--gb-article-width); margin:0 auto; padding:var(--gb-space-6) var(--gb-space-4) var(--gb-space-8); }
+.gb-breadcrumb{ font-size:.82rem; color:var(--gb-ink-soft); margin-bottom:var(--gb-space-3); }
+.gb-breadcrumb a{ color:var(--gb-navy); font-weight:600; }
+.gb-article h1{ font-family:var(--gb-font-display); font-size:var(--gb-size-hero); line-height:1.1; margin:0 0 var(--gb-space-3); }
+.gb-article .gb-deck{ font-size:1.1rem; color:var(--gb-ink-soft); margin:0 0 var(--gb-space-4); }
+.gb-byline-row{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--gb-space-3); border-top:1px solid var(--gb-line); border-bottom:1px solid var(--gb-line); padding:var(--gb-space-3) 0; margin-bottom:var(--gb-space-4); }
+.gb-byline-row .gb-who{ font-weight:700; }
+.gb-article-actions{ display:flex; gap:var(--gb-space-3); }
+.gb-article-actions button{ background:var(--gb-surface); border:1px solid var(--gb-line); border-radius:999px; padding:var(--gb-space-2) var(--gb-space-4); font-size:.82rem; font-weight:600; cursor:pointer; }
+.gb-hero-media{ aspect-ratio:16/9; border-radius:var(--gb-radius-lg); overflow:hidden; background:var(--gb-line); margin-bottom:var(--gb-space-2); }
+.gb-hero-media img{ width:100%; height:100%; object-fit:cover; }
+.gb-caption{ font-size:.78rem; color:var(--gb-ink-soft); margin-bottom:var(--gb-space-5); }
+.gb-body{ font-size:1.08rem; line-height:1.7; color:var(--gb-ink); }
+.gb-body p{ margin:0 0 var(--gb-space-4); }
+.gb-canonical-note{ background:var(--gb-surface); border:1px solid var(--gb-line); border-radius:var(--gb-radius-md); padding:var(--gb-space-4); font-size:.9rem; color:var(--gb-ink-soft); margin:var(--gb-space-5) 0; }
+.gb-canonical-note a{ color:var(--gb-navy); font-weight:700; }
+.gb-discuss{ background:var(--gb-dark-bg); color:var(--gb-dark-ink); border-radius:var(--gb-radius-lg); padding:var(--gb-space-5); display:flex; align-items:center; justify-content:space-between; gap:var(--gb-space-4); flex-wrap:wrap; margin:var(--gb-space-6) 0; }
+.gb-discuss a.gb-cta{ background:var(--gb-orange); color:#fff; padding:var(--gb-space-3) var(--gb-space-5); border-radius:999px; font-weight:700; white-space:nowrap; }
+.gb-related{ margin-top:var(--gb-space-6); }
+.gb-related-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gb-space-4); }
+@media (max-width:700px){ .gb-related-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body class="gb-studio">
+<div class="gb-reading-progress" id="gb-progress"></div>
+<div class="gb-preview-banner">GatorBait Studio preview — <strong>not the production site</strong>. Article shell wired to a real GatorBait post.</div>
+
+<main id="gb-main">
+  <article class="gb-article" id="gb-article-root">
+    <div class="gb-empty-state">Loading story…</div>
+  </article>
+</main>
+
+<script src="../assets/shell.js"></script>
+<script>
+(function(){
+var S=window.GBStudio;
+S.renderMasthead('news');
+S.renderFooter();
+
+var params=new URLSearchParams(location.search);
+var slug=params.get('slug')||'jon-sumrall-postgame-florida-auburn';
+
+S.loadData('').then(function(d){
+  var posts=d.posts;
+  var post=S.findPost(posts,slug)||posts[0];
+  if(!post){
+    document.getElementById('gb-article-root').innerHTML='<div class="gb-empty-state">Story not found in this preview feed.</div>';
+    return;
+  }
+  document.getElementById('gb-doc-title').textContent=post.title+' — GatorBait Studio preview';
+  var canonical=post.url;
+  var related=posts.filter(function(p){ return p.slug!==post.slug; }).slice(0,3);
+
+  document.getElementById('gb-article-root').innerHTML=
+    '<div class="gb-breadcrumb"><a href="../index.html">Front Page</a> &rsaquo; News</div>'+
+    '<h1>'+S.esc(post.title)+'</h1>'+
+    '<p class="gb-deck">'+S.esc(post.excerpt||'')+'</p>'+
+    '<div class="gb-byline-row">'+
+      '<div><span class="gb-who">'+S.esc(post.author||'GatorBait Staff')+'</span> &middot; <span class="gb-meta">'+S.dateText(post.firstPublishedDate)+'</span></div>'+
+      '<div class="gb-article-actions"><button type="button">Save</button><button type="button">Follow author</button><button type="button">Share</button></div>'+
+    '</div>'+
+    (post.image&&post.image.src ?
+      '<div class="gb-hero-media"><img src="'+S.esc(post.image.src)+'" alt="'+S.esc(post.image.alt||post.title)+'"></div>'+
+      '<div class="gb-caption">'+S.esc(post.image.alt||'GatorBait Media')+'</div>'
+      : '')+
+    '<div class="gb-body"><p>'+S.esc(post.excerpt||'')+'</p></div>'+
+    '<div class="gb-canonical-note">This preview shows the deck and hero image pulled live from the GatorBait Wix Blog feed. Full body copy stays on the canonical article so nothing is duplicated ahead of Studio content wiring: <a href="'+S.esc(canonical)+'">Read the full story at gatorbaitmedia.com</a>.</div>'+
+    '<div class="gb-discuss"><div><strong>Discuss this story</strong><div class="gb-meta">SwampGas community bridge — backend not yet selected.</div></div><a class="gb-cta" href="swampgas.html">Discuss on SwampGas &rarr;</a></div>'+
+    '<div class="gb-related"><div class="gb-section-head"><h2>Related coverage</h2></div><div class="gb-related-grid">'+
+      related.map(function(p){
+        return '<article class="gb-card"><a href="article.html?slug='+encodeURIComponent(p.slug)+'">'+
+          (p.image&&p.image.src?'<div class="gb-card-media"><img src="'+S.esc(p.image.src)+'" alt="'+S.esc(p.title)+'" loading="lazy"></div>':'<div class="gb-card-media"></div>')+
+          '<h3>'+S.esc(p.title)+'</h3></a></article>';
+      }).join('')+
+    '</div></div>';
+
+  window.addEventListener('scroll',function(){
+    var el=document.getElementById('gb-article-root');
+    var total=el.scrollHeight-window.innerHeight;
+    var pct=total>0?Math.min(100,Math.max(0,(window.scrollY/total)*100)):0;
+    document.getElementById('gb-progress').style.width=pct+'%';
+  },{passive:true});
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+/* GatorBait Studio — shared design tokens
+   Source of truth for every Studio page family.
+   Do not fork per-page color/type values; extend tokens instead. */
+:root{
+  /* Brand */
+  --gb-orange:#FA4616;
+  --gb-orange-dim:#c93a10;
+  --gb-navy:#0021A5;
+  --gb-navy-deep:#001040;
+  --gb-white:#ffffff;
+  --gb-ink:#12161f;
+  --gb-ink-soft:#3a4150;
+  --gb-line:#e2e5ea;
+  --gb-surface:#f6f7f9;
+  --gb-surface-raised:#ffffff;
+
+  /* Broadcast/editorial dark surfaces (TV, Magazine cover, live modules) */
+  --gb-dark-bg:#050b1f;
+  --gb-dark-surface:#0b1530;
+  --gb-dark-line:#1c2748;
+  --gb-dark-ink:#eef1fb;
+  --gb-dark-ink-soft:#9aa5c4;
+
+  /* Type */
+  --gb-font-display:"Georgia","Times New Roman",serif;
+  --gb-font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --gb-font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --gb-size-hero:clamp(1.9rem,4.2vw,3.2rem);
+  --gb-size-h1:clamp(1.5rem,3vw,2.1rem);
+  --gb-size-h2:1.35rem;
+  --gb-size-h3:1.05rem;
+  --gb-size-body:1rem;
+  --gb-size-meta:0.8rem;
+  --gb-size-kicker:0.72rem;
+
+  /* Spacing scale */
+  --gb-space-1:4px;
+  --gb-space-2:8px;
+  --gb-space-3:12px;
+  --gb-space-4:16px;
+  --gb-space-5:24px;
+  --gb-space-6:32px;
+  --gb-space-7:48px;
+  --gb-space-8:64px;
+
+  /* Layout */
+  --gb-radius-sm:6px;
+  --gb-radius-md:10px;
+  --gb-radius-lg:16px;
+  --gb-rail-gap:14px;
+  --gb-max-width:1240px;
+  --gb-article-width:720px;
+
+  /* Image ratios */
+  --gb-ratio-hero:16/9;
+  --gb-ratio-card:16/10;
+  --gb-ratio-square:1/1;
+
+  /* Motion (progressive enhancement only) */
+  --gb-ease:cubic-bezier(.2,.8,.2,1);
+  --gb-dur-fast:120ms;
+  --gb-dur-base:220ms;
+  --gb-dur-slow:420ms;
+
+  /* Z-index scale */
+  --gb-z-nav:40;
+  --gb-z-drawer:50;
+  --gb-z-modal:60;
+}
+
+@media (prefers-reduced-motion: reduce){
+  :root{ --gb-dur-fast:0ms; --gb-dur-base:0ms; --gb-dur-slow:0ms; }
+}
+
+* { box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family:var(--gb-font-body);
+  color:var(--gb-ink);
+  background:var(--gb-white);
+  -webkit-font-smoothing:antialiased;
+}
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+.gb-container{ max-width:var(--gb-max-width); margin:0 auto; padding:0 var(--gb-space-4); }
+
+.gb-visually-hidden{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap;
+}
+
+.gb-skip-link{
+  position:absolute; left:var(--gb-space-3); top:-48px;
+  background:var(--gb-navy); color:var(--gb-white);
+  padding:var(--gb-space-2) var(--gb-space-4); border-radius:var(--gb-radius-sm);
+  z-index:var(--gb-z-modal); transition:top var(--gb-dur-base) var(--gb-ease);
+}
+.gb-skip-link:focus{ top:var(--gb-space-3); }
+
+:focus-visible{ outline:3px solid var(--gb-orange); outline-offset:2px; }

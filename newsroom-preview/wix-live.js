@@ -10,6 +10,7 @@ var FEATURE_SLUGS=[
 'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville'
 ];
 var HIDE_HOME_SLUGS=[
+'live-florida-auburn-game-tracker-score-updates',
 'live-now-best-friday-in-football-september-18-2026',
 'watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real',
 'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1'

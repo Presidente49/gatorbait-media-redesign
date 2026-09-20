@@ -288,3 +288,16 @@ Treat these as stale unless queried for the task:
 - member/payment counts: before financial statements
 
 Stable identifiers such as site ID and repo name can remain here unless the business migrates.
+
+
+## Native Wix Studio editor lane
+
+Configured in the repository on 2026-09-20:
+
+- MCP server name: `wix-editor-local`
+- source: `Studio-1119-Inc/wix-editor-mcp`
+- purpose: native Wix Studio/editor-canvas operations that the public Wix REST API cannot perform, including component-tree inspection, deleting static components/sections, masterPage header/footer work, navigation edits, page SEO/schema, screenshots, save and publish.
+- authentication: local browser/editor session only; no Wix cookies, tokens, or editor URL are stored in Git.
+- production rule: inspect current component IDs -> change draft -> screenshot/verify -> publish only when the active request authorizes the production change.
+- fallback: official Wix REST/MCP remains preferred for Blog, CMS, business data, media and other supported public APIs.
+- local execution/auth state: NOT YET VERIFIED from cloud chat. The local MCP client must reload the repository MCP config, then open/import the user's authenticated Wix Studio editor session.

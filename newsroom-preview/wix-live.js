@@ -158,8 +158,34 @@ box.setAttribute('aria-hidden','true');
 }
 }
 
+function stripLegacyHomeShell(){
+if(!home())return;
+['SITE_HEADER','SITE_PAGES','SITE_FOOTER','BACKGROUND_GROUP'].forEach(function(id){
+var el=document.getElementById(id);
+if(el&&el.parentNode)el.parentNode.removeChild(el);
+});
+}
+
+function installFullNavigation(){
+if(window.__GBM_FULL_NAV__)return;
+window.__GBM_FULL_NAV__=1;
+document.addEventListener('click',function(ev){
+if(ev.defaultPrevented||ev.button!==0||ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.altKey)return;
+var a=ev.target&&ev.target.closest&&ev.target.closest('#gbm-live a[href]');
+if(!a)return;
+var href=a.getAttribute('href')||'';
+if(!href||href.charAt(0)==='#'||/^mailto:|^tel:/i.test(href))return;
+try{
+var u=new URL(a.href,location.href);
+if(u.origin!==location.origin)return;
+ev.preventDefault();
+location.assign(u.href);
+}catch(e){}
+},true);
+}
+
 function unmount(){document.documentElement.classList.remove('gbm-standalone-live');var old=document.getElementById('gbm-live');if(old)old.remove();}
-function mount(posts){if(!home()||!posts||posts.length<4)return;var root=document.getElementById('gbm-live');if(!root){root=document.createElement('div');root.id='gbm-live';document.body.insertBefore(root,document.body.firstChild);}root.innerHTML=build(posts);document.documentElement.classList.add('gbm-standalone-live');removeAppInvite();}
+function mount(posts){if(!home()||!posts||posts.length<4)return;var root=document.getElementById('gbm-live');if(!root){root=document.createElement('div');root.id='gbm-live';document.body.insertBefore(root,document.body.firstChild);}root.innerHTML=build(posts);document.documentElement.classList.add('gbm-standalone-live');installFullNavigation();removeAppInvite();[180,500,1400].forEach(function(ms){setTimeout(stripLegacyHomeShell,ms);});}
 function refresh(){if(!home()){unmount();return;}feed().then(mount).catch(function(e){console.error('GatorBait newsroom feed',e);});}
 function routeCheck(){var p=location.pathname;if(p!==lastPath){lastPath=p;refresh();}removeAppInvite();}
 function installRouteWatch(){

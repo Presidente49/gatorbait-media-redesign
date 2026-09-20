@@ -1,4 +1,4 @@
-html.gbm-standalone-live #SITE_HEADER,html.gbm-standalone-live #SITE_PAGES,html.gbm-standalone-live #SITE_FOOTER{display:none!important}
+html.gbm-standalone-live #SITE_PAGES{display:none!important}
 html.gbm-standalone-live body{background:#fff!important}
 #gbm-live{--navy:#07152f;--blue:#0021a5;--orange:#fa4616;--ink:#101827;--body:#4b5563;--line:#d9dee7;--soft:#f4f6f8;position:relative;z-index:1;width:100%;margin:0;background:#fff;color:var(--ink);font:400 16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif!important}
 #gbm-live *{box-sizing:border-box}

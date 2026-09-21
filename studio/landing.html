@@ -1,0 +1,535 @@
+<title>GatorBait Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap">
+<style>
+:root{
+  --paper:#FBFAF8; --panel:#FFFFFF;
+  --ink:#11141C; --ink-2:#3A4150; --muted:#6A7080;
+  --rule:#E2DCD2; --rule-strong:#C9C1B3;
+  --orange:#FA4616; --orange-ink:#D6380D;
+  --navy:#0021A5; --show-bg:#061436; --on-dark:#F4F2EE; --on-dark-mute:#9FA9C2;
+  --display:"Newsreader","Iowan Old Style",Georgia,"Times New Roman",serif;
+  --cond:"Barlow Condensed","Oswald","Arial Narrow",Arial,sans-serif;
+  --sans:"Barlow",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B0E14; --panel:#101621;
+    --ink:#F2F0EB; --ink-2:#C6CBD6; --muted:#8E96A7;
+    --rule:#232A38; --rule-strong:#394356;
+    --orange:#FF6134; --orange-ink:#FF7A52;
+    --navy:#5F82FF; --show-bg:#070C16; --on-dark:#F2F0EB; --on-dark-mute:#98A2BA;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B0E14; --panel:#101621;
+  --ink:#F2F0EB; --ink-2:#C6CBD6; --muted:#8E96A7;
+  --rule:#232A38; --rule-strong:#394356;
+  --orange:#FF6134; --orange-ink:#FF7A52;
+  --navy:#5F82FF; --show-bg:#070C16; --on-dark:#F2F0EB; --on-dark-mute:#98A2BA;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.5;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{display:block; max-width:100%; height:auto; background:var(--rule)}
+a{color:inherit; text-decoration:none}
+:focus-visible{outline:2px solid var(--orange); outline-offset:3px}
+h1,h2,h3{margin:0; font-weight:600; text-wrap:balance}
+p{margin:0}
+
+.wrap{max-width:1240px; margin-inline:auto; padding-inline:20px}
+
+/* ---------- status bar : real record, real result, real next game ------- */
+.status{background:var(--show-bg); color:var(--on-dark)}
+.status__in{
+  display:flex; align-items:center; gap:0 26px; flex-wrap:wrap;
+  padding-block:9px;
+  font-family:var(--cond); font-size:14px; font-weight:600;
+  text-transform:uppercase; letter-spacing:.09em;
+}
+.status__team{color:var(--on-dark)}
+.status__rec{color:#FF7B4F; font-variant-numeric:tabular-nums}
+.status__i{color:var(--on-dark-mute); display:flex; gap:7px}
+.status__i b{font-weight:600; color:var(--on-dark)}
+.status__sub{
+  margin-left:auto; color:#0B0E14; background:var(--orange);
+  padding:4px 13px 3px; letter-spacing:.11em;
+}
+.status__sub:hover{background:#fff}
+
+/* ---------- masthead ---------------------------------------------------- */
+.mast{border-bottom:1px solid var(--rule); background:var(--paper)}
+.mast__in{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:20px; padding-block:22px 16px;
+}
+.mark{display:block; line-height:.82}
+.mark__word{
+  font-family:var(--cond); font-weight:700;
+  font-size:clamp(34px,6.4vw,58px); letter-spacing:-.005em; text-transform:uppercase;
+}
+.mark__word i{font-style:normal; color:var(--orange)}
+.mark__tag{
+  display:block; margin-top:9px;
+  font-family:var(--cond); font-weight:500; font-size:12px;
+  text-transform:uppercase; letter-spacing:.2em; color:var(--muted);
+}
+.mast__date{
+  font-family:var(--cond); font-size:13px; font-weight:500;
+  text-transform:uppercase; letter-spacing:.14em; color:var(--muted);
+  white-space:nowrap; padding-bottom:6px;
+}
+
+.nav{border-bottom:1px solid var(--rule); background:var(--paper)}
+.nav__in{display:flex; gap:28px; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none}
+.nav__in::-webkit-scrollbar{display:none}
+.nav__link{
+  flex:none; padding-block:12px; border-bottom:3px solid transparent;
+  margin-bottom:-1px;
+  font-family:var(--cond); font-weight:600; font-size:16px;
+  text-transform:uppercase; letter-spacing:.07em; color:var(--ink-2);
+  white-space:nowrap;
+}
+.nav__link:hover{color:var(--ink); border-bottom-color:var(--orange)}
+
+/* ---------- shared editorial furniture ---------------------------------- */
+.kicker{
+  display:inline-block; margin-bottom:8px;
+  font-family:var(--cond); font-weight:600; font-size:12.5px;
+  text-transform:uppercase; letter-spacing:.14em; color:var(--orange-ink);
+}
+.deck{margin-top:11px; color:var(--ink-2); font-size:16.5px; line-height:1.45; max-width:62ch}
+.deck--tight{margin-top:7px; font-size:15px; line-height:1.42}
+.meta{
+  margin-top:10px; font-family:var(--cond); font-size:12.5px; font-weight:500;
+  text-transform:uppercase; letter-spacing:.11em; color:var(--muted);
+}
+.link:hover{color:var(--orange-ink)}
+.frame{
+  position:relative; display:block; overflow:hidden;
+  background:
+    repeating-linear-gradient(135deg, rgba(250,70,22,.11) 0 2px, transparent 2px 10px),
+    linear-gradient(158deg, #10214C 0%, #06101F 72%);
+}
+.frame img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.frame__mark{
+  position:absolute; inset:0; display:grid; place-items:center;
+  font-family:var(--cond); font-weight:700; font-size:12px;
+  text-transform:uppercase; letter-spacing:.34em; color:rgba(255,255,255,.26);
+}
+
+.flag{
+  display:flex; align-items:baseline; gap:14px;
+  border-top:3px solid var(--ink); padding-top:9px; margin-bottom:20px;
+}
+.flag__t{
+  font-family:var(--cond); font-weight:700; font-size:20px; line-height:1;
+  text-transform:uppercase; letter-spacing:.07em;
+}
+.flag__more{
+  margin-left:auto;
+  font-family:var(--cond); font-weight:600; font-size:12.5px;
+  text-transform:uppercase; letter-spacing:.13em; color:var(--orange-ink);
+}
+.flag__more:hover{text-decoration:underline; text-underline-offset:3px}
+
+/* ---------- lead -------------------------------------------------------- */
+.topgrid{
+  display:grid; grid-template-columns:minmax(0,2.1fr) minmax(0,1fr);
+  gap:0 32px; padding-block:26px 30px;
+}
+.topgrid__side{border-left:1px solid var(--rule); padding-left:32px}
+.lead__img{width:100%; aspect-ratio:16/9}
+.lead__text{padding-top:18px}
+.lead__hed{
+  font-family:var(--display); font-weight:600;
+  font-size:clamp(31px,4.4vw,50px); line-height:1.03; letter-spacing:-.018em;
+}
+.shoulder{padding-block:18px}
+.shoulder:first-child{padding-top:0}
+.shoulder + .shoulder{border-top:1px solid var(--rule)}
+.shoulder__hed{
+  font-family:var(--display); font-weight:600;
+  font-size:22px; line-height:1.14; letter-spacing:-.011em;
+}
+
+.briefs{margin-top:24px; border-top:3px solid var(--ink); padding-top:9px}
+.briefs__flag{
+  font-family:var(--cond); font-weight:700; font-size:16px; line-height:1;
+  text-transform:uppercase; letter-spacing:.08em; margin-bottom:4px;
+}
+.brief{padding-block:13px; border-top:1px solid var(--rule)}
+.brief:first-of-type{border-top:0}
+.brief__who{
+  font-family:var(--cond); font-weight:600; font-size:11.5px;
+  text-transform:uppercase; letter-spacing:.16em; color:var(--orange-ink); margin-bottom:4px;
+}
+.brief__hed{font-family:var(--display); font-weight:500; font-size:17px; line-height:1.2; letter-spacing:-.006em}
+
+/* ---------- four-across strip ------------------------------------------- */
+.strip{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:26px}
+.strip__img{width:100%; aspect-ratio:16/9; margin-bottom:12px}
+.strip__hed{font-family:var(--display); font-weight:600; font-size:18px; line-height:1.18; letter-spacing:-.009em}
+.sec{padding-block:30px}
+.sec--rule{border-top:1px solid var(--rule)}
+
+/* ---------- main body: river + rail ------------------------------------- */
+.body{display:grid; grid-template-columns:minmax(0,1.85fr) minmax(0,1fr); gap:0 44px; padding-block:6px 34px}
+.rail{border-left:1px solid var(--rule); padding-left:44px}
+.river__item{
+  display:grid; grid-template-columns:220px minmax(0,1fr); gap:20px;
+  padding-block:22px; border-top:1px solid var(--rule);
+}
+.river__item:first-of-type{border-top:0; padding-top:0}
+.river__img{width:220px; aspect-ratio:3/2}
+.river__hed{font-family:var(--display); font-weight:600; font-size:23px; line-height:1.13; letter-spacing:-.012em}
+
+.byline{padding-block:16px; border-top:1px solid var(--rule)}
+.byline:first-of-type{border-top:0; padding-top:0}
+.byline__who{
+  font-family:var(--cond); font-weight:600; font-size:12px;
+  text-transform:uppercase; letter-spacing:.16em; color:var(--orange-ink); margin-bottom:6px;
+}
+.byline__hed{font-family:var(--display); font-weight:500; font-size:19px; line-height:1.18; letter-spacing:-.008em}
+
+/* ---------- the show ---------------------------------------------------- */
+.show{background:var(--show-bg); color:var(--on-dark); padding-block:34px 38px; margin-top:8px}
+.show .flag{border-top-color:var(--orange)}
+.show .flag__t{color:var(--on-dark)}
+.show .flag__more{color:#FF8A63}
+.show__grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px}
+.show__art{display:block; position:relative}
+.lead__art,.strip__art,.river__art,.mag__art{display:block}
+.show__img{width:100%; aspect-ratio:16/9}
+.show__play{
+  position:absolute; left:14px; bottom:14px; width:38px; height:38px;
+  background:var(--orange); display:grid; place-items:center;
+}
+.show__play::after{
+  content:""; width:0; height:0; margin-left:3px;
+  border-left:12px solid #0B0E14; border-block:7.5px solid transparent;
+}
+.show__hed{
+  margin-top:13px; font-family:var(--display); font-weight:600;
+  font-size:19px; line-height:1.17; color:var(--on-dark);
+}
+.show__hed .link:hover{color:#FF8A63}
+.show .meta{color:var(--on-dark-mute)}
+
+/* ---------- magazine ---------------------------------------------------- */
+.mag__grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:34px}
+.mag__img{width:100%; aspect-ratio:4/3; margin-bottom:14px}
+.mag__hed{font-family:var(--display); font-weight:600; font-size:25px; line-height:1.12; letter-spacing:-.013em}
+
+/* ---------- footer ------------------------------------------------------ */
+.foot{border-top:3px solid var(--ink); margin-top:14px; padding-block:30px 44px}
+.foot__grid{display:flex; flex-wrap:wrap; gap:34px 56px; align-items:flex-start}
+.foot__col h4{
+  margin:0 0 11px; font-family:var(--cond); font-weight:700; font-size:13px;
+  text-transform:uppercase; letter-spacing:.15em; color:var(--ink);
+}
+.foot__col a, .foot__col p{
+  display:block; font-size:14.5px; color:var(--muted); margin-bottom:7px; max-width:34ch;
+}
+.foot__col a:hover{color:var(--orange-ink)}
+.foot__note{
+  margin-top:32px; padding-top:18px; border-top:1px solid var(--rule);
+  font-family:var(--cond); font-size:12.5px; text-transform:uppercase;
+  letter-spacing:.12em; color:var(--muted);
+}
+
+/* ---------- responsive -------------------------------------------------- */
+@media (max-width:960px){
+  .topgrid{grid-template-columns:1fr; gap:0}
+  .topgrid__side{border-left:0; border-top:1px solid var(--rule); padding-left:0; padding-top:20px; margin-top:22px}
+  .body{grid-template-columns:1fr; gap:0}
+  .rail{border-left:0; border-top:3px solid var(--ink); padding-left:0; padding-top:20px; margin-top:26px}
+  .strip{grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px}
+  .show__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mag__grid{gap:24px}
+}
+@media (max-width:600px){
+  .status__sub{margin-left:0}
+  .mast__in{align-items:flex-start; flex-direction:column; gap:6px}
+  .mast__date{padding-bottom:0}
+  .river__item{grid-template-columns:112px minmax(0,1fr); gap:14px; padding-block:18px}
+  .river__img{width:112px}
+  .river__hed{font-size:18px}
+  .river__item .deck{display:none}
+  .strip{grid-template-columns:1fr; gap:0}
+  .strip__item{display:grid; grid-template-columns:112px minmax(0,1fr); gap:14px; padding-block:18px; border-top:1px solid var(--rule)}
+  .strip__item:first-child{border-top:0; padding-top:0}
+  .strip__art{grid-row:span 3}
+  .strip__img{width:112px; aspect-ratio:3/2; margin-bottom:0}
+  .strip__hed{font-size:17px}
+  .show__grid{grid-template-columns:1fr; gap:24px}
+  .mag__grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important; transition-duration:.01ms!important}
+}
+</style>
+
+<div class="status">
+  <div class="wrap status__in">
+    <span class="status__team">Florida</span>
+    <span class="status__rec">3-0 &middot; 1-0 SEC</span>
+    <a class="status__i" href="https://www.gatorbaitmedia.com/post/florida-44-auburn-39-gators-end-jordan-hare-drought"><b>Last</b> W 44-39 at Auburn</a>
+    <a class="status__i" href="https://www.gatorbaitmedia.com/post/sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy"><b>Next</b> Ole Miss · The Swamp</a>
+    <a class="status__sub" href="https://www.gatorbaitmedia.com/pricing-plans/subscribe">Subscribe</a>
+  </div>
+</div>
+
+<header class="mast">
+  <div class="wrap mast__in">
+    <a class="mark" href="https://www.gatorbaitmedia.com/">
+      <span class="mark__word">Gator<i>Bait</i></span>
+      <span class="mark__tag">Independent Florida Gators journalism</span>
+    </a>
+    <p class="mast__date">Sept. 21, 2026</p>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap nav__in"><a class="nav__link" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football">Football</a><a class="nav__link" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-recruiting">Recruiting</a><a class="nav__link" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-basketball">Basketball</a><a class="nav__link" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-breaking-news">Breaking</a><a class="nav__link" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gatorbait-magazine">Magazine</a><a class="nav__link" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/the-buddy-martin-show">The Buddy Martin Show</a></div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <section class="topgrid">
+      <div class="topgrid__main">
+<article class="lead">
+  <a class="lead__art" href="https://www.gatorbaitmedia.com/post/jadan-baugh-s-another-day-at-the-office-was-the-difference-against-auburn"><span class="frame lead__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/a99769_9cea463d1045446d8550ce6aa803b0d3~mv2.jpeg/v1/fill/w_760,h_428,al_c,q_78,enc_auto/file.jpeg" srcset="https://static.wixstatic.com/media/a99769_9cea463d1045446d8550ce6aa803b0d3~mv2.jpeg/v1/fill/w_760,h_428,al_c,q_78,enc_auto/file.jpeg 1x, https://static.wixstatic.com/media/a99769_9cea463d1045446d8550ce6aa803b0d3~mv2.jpeg/v1/fill/w_1520,h_856,al_c,q_68,enc_auto/file.jpeg 2x" width="760" height="428" fetchpriority="high" decoding="async" alt=""></span></a>
+  <div class="lead__text">
+    <span class="kicker">Florida 44, Auburn 39</span>
+    <h2 class="lead__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/jadan-baugh-s-another-day-at-the-office-was-the-difference-against-auburn">Jadan Baugh&#x27;s “another day at the office” was the difference against Auburn</a></h2>
+    <p class="deck">The play that best defined what Jadan Baugh called “another day at the office” came early in the fourth quarter, the Gators facing fourth-and-1 at their own 47. Everybody on both sidelines and all 88,000 screamers packed inside Jordan-Hare Stadium knew what was coming.</p>
+    <p class="meta">Sept. 21 · 9 min read</p>
+  </div>
+</article></div>
+      <aside class="topgrid__side">
+<article class="shoulder">
+  <span class="kicker">Buddy&#x27;s Blog</span>
+  <h3 class="shoulder__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/florida-escaped-auburn-but-the-yellow-flags-followed-it-home">Florida Escaped Auburn, But The Yellow Flags Followed It Home</a></h3>
+  <p class="deck deck--tight">So, yes, Florida is 3-0. Yes, Jon Sumrall has his first SEC victory as the Gators’ coach. Yes, Aaron Philo survived his first road start in a place wh…</p>
+  <p class="meta">Sept. 20 · 8 min read</p>
+</article>
+<article class="shoulder">
+  <span class="kicker">Loren Meadows</span>
+  <h3 class="shoulder__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1">Postgame Analysis: Florida Gators (3-0, 1-0) v. Auburn Tigers (2-1, 0-1)</a></h3>
+  <p class="deck deck--tight">Florida works the cut for a key win on the road and its first in the state of Alabama since 1999.…</p>
+  <p class="meta">Sept. 20 · 4 min read</p>
+</article>
+        <div class="briefs">
+          <h2 class="briefs__flag">Also this week</h2>
+          
+<article class="brief">
+  <p class="brief__who">Buddy&#x27;s Blog</p>
+  <h3 class="brief__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year">Blood, Noise And the Plains: The Florida-Auburn Story. We Need It Every Year</a></h3>
+</article>
+<article class="brief">
+  <p class="brief__who">Loren Meadows</p>
+  <h3 class="brief__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0">Week 3 Preview: Florida Gators (2-0, 0-0) v. Auburn Tigers (2-0, 0-0)</a></h3>
+</article>
+<article class="brief">
+  <p class="brief__who">Loren Meadows</p>
+  <h3 class="brief__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role">Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the Villain Role</a></h3>
+</article>
+        </div>
+      </aside>
+    </section>
+
+    <section class="sec sec--rule">
+      <div class="flag">
+        <h2 class="flag__t">Florida 44, Auburn 39</h2>
+        <a class="flag__more" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football">All football</a>
+      </div>
+      <div class="strip">
+<article class="strip__item">
+  <a class="strip__art" href="https://www.gatorbaitmedia.com/post/jon-sumrall-postgame-florida-auburn"><span class="frame strip__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/d3cfa5_51ecb6ef1570476ca7e6b0d4fd786053~mv2.png/v1/fill/w_300,h_169,al_c,q_78,enc_auto/file.png" srcset="https://static.wixstatic.com/media/d3cfa5_51ecb6ef1570476ca7e6b0d4fd786053~mv2.png/v1/fill/w_300,h_169,al_c,q_78,enc_auto/file.png 1x, https://static.wixstatic.com/media/d3cfa5_51ecb6ef1570476ca7e6b0d4fd786053~mv2.png/v1/fill/w_600,h_338,al_c,q_68,enc_auto/file.png 2x" width="300" height="169" loading="lazy" decoding="async" alt=""></span></a>
+  <a class="kicker" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football">Gator Football</a>
+  <h3 class="strip__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/jon-sumrall-postgame-florida-auburn">Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn</a></h3>
+  <p class="meta">Sept. 20 · 11 min read</p>
+</article>
+<article class="strip__item">
+  <a class="strip__art" href="https://www.gatorbaitmedia.com/post/florida-44-auburn-39-gators-end-jordan-hare-drought"><span class="frame strip__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg/v1/fill/w_300,h_169,al_c,q_78,enc_auto/file.jpg" srcset="https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg/v1/fill/w_300,h_169,al_c,q_78,enc_auto/file.jpg 1x, https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg/v1/fill/w_600,h_338,al_c,q_68,enc_auto/file.jpg 2x" width="300" height="169" loading="lazy" decoding="async" alt=""></span></a>
+  <a class="kicker" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-breaking-news">Gator Breaking News</a>
+  <h3 class="strip__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/florida-44-auburn-39-gators-end-jordan-hare-drought">Florida 44 Auburn 39: Gators End Jordan-Hare Drought</a></h3>
+  <p class="meta">Sept. 20 · 3 min read</p>
+</article>
+<article class="strip__item">
+  <a class="strip__art" href="https://www.gatorbaitmedia.com/post/no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win"><span class="frame strip__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/d3cfa5_21baad43225b4851afa6f5548200664f~mv2.jpg/v1/fill/w_300,h_169,al_c,q_78,enc_auto/file.jpg" srcset="https://static.wixstatic.com/media/d3cfa5_21baad43225b4851afa6f5548200664f~mv2.jpg/v1/fill/w_300,h_169,al_c,q_78,enc_auto/file.jpg 1x, https://static.wixstatic.com/media/d3cfa5_21baad43225b4851afa6f5548200664f~mv2.jpg/v1/fill/w_600,h_338,al_c,q_68,enc_auto/file.jpg 2x" width="300" height="169" loading="lazy" decoding="async" alt=""></span></a>
+  <a class="kicker" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football">Gator Football</a>
+  <h3 class="strip__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win">No Bad Wins: Sumrall Issues Warning After Florida&#x27;s Auburn Win</a></h3>
+  <p class="meta">Sept. 20 · 3 min read</p>
+</article>
+<article class="strip__item">
+  <a class="strip__art" href="https://www.gatorbaitmedia.com/post/live-florida-auburn-game-tracker-score-updates"><span class="frame strip__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/d3cfa5_0416101ae9184801ae818ad93b515814~mv2.png/v1/fill/w_300,h_169,al_c,q_78,enc_auto/file.png" srcset="https://static.wixstatic.com/media/d3cfa5_0416101ae9184801ae818ad93b515814~mv2.png/v1/fill/w_300,h_169,al_c,q_78,enc_auto/file.png 1x, https://static.wixstatic.com/media/d3cfa5_0416101ae9184801ae818ad93b515814~mv2.png/v1/fill/w_600,h_338,al_c,q_68,enc_auto/file.png 2x" width="300" height="169" loading="lazy" decoding="async" alt=""></span></a>
+  <span class="kicker">Game Tracker</span>
+  <h3 class="strip__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/live-florida-auburn-game-tracker-score-updates">FINAL Florida 44 Auburn 39: Gators Survive 16 Penalties</a></h3>
+  <p class="meta">Sept. 19 · 3 min read</p>
+</article></div>
+    </section>
+
+    <section class="body">
+      <div>
+        <div class="flag">
+          <h2 class="flag__t">The Latest</h2>
+          <a class="flag__more" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs">All coverage</a>
+        </div>
+        
+<article class="river__item">
+  <a class="river__art" href="https://www.gatorbaitmedia.com/post/sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy"><span class="frame river__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/d3cfa5_d63fc74d2d3b43d3a26e953cbf6ea84e~mv2.png/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.png" srcset="https://static.wixstatic.com/media/d3cfa5_d63fc74d2d3b43d3a26e953cbf6ea84e~mv2.png/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.png 1x, https://static.wixstatic.com/media/d3cfa5_d63fc74d2d3b43d3a26e953cbf6ea84e~mv2.png/v1/fill/w_440,h_294,al_c,q_68,enc_auto/file.png 2x" width="220" height="147" loading="lazy" decoding="async" alt=""></span></a>
+  <div class="river__text">
+    <span class="kicker">Buddy&#x27;s Blog</span>
+    <h3 class="river__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy">Sumrall Passed the Test. He Aced It. Next, Please! Hotty Toddy?</a></h3>
+    <p class="deck deck--tight">Buddy Martin on Jon Sumrall’s first SEC road win, Jadan Baugh’s 162-yard night and the unbeaten Ole Miss showdown coming to The Sw…</p>
+    <p class="meta">Sept. 20 · 4 min read</p>
+  </div>
+</article>
+<article class="river__item">
+  <a class="river__art" href="https://www.gatorbaitmedia.com/post/jimbo-fisher-s-fsu-parole-hearing-could-go-either-way-how-do-gator-fans-feel"><span class="frame river__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/ae876a_17a4237bd4e9471a9ed473ca149b3996~mv2.jpeg/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.jpeg" srcset="https://static.wixstatic.com/media/ae876a_17a4237bd4e9471a9ed473ca149b3996~mv2.jpeg/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.jpeg 1x, https://static.wixstatic.com/media/ae876a_17a4237bd4e9471a9ed473ca149b3996~mv2.jpeg/v1/fill/w_440,h_294,al_c,q_68,enc_auto/file.jpeg 2x" width="220" height="147" loading="lazy" decoding="async" alt=""></span></a>
+  <div class="river__text">
+    <span class="kicker">Buddy&#x27;s Blog</span>
+    <h3 class="river__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/jimbo-fisher-s-fsu-parole-hearing-could-go-either-way-how-do-gator-fans-feel">Jimbo Fisher’s FSU Parole Hearing Could Go Either Way. How Do Gator Fans Feel?</a></h3>
+    <p class="deck deck--tight">Fisher, already carrying his $77.5 million settlement, has signaled he’d take supervised release for cheap — something like $4-5 m…</p>
+    <p class="meta">Sept. 19 · 3 min read</p>
+  </div>
+</article>
+<article class="river__item">
+  <a class="river__art" href="https://www.gatorbaitmedia.com/post/welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1"><span class="frame river__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/ae876a_f1ab9b12355649e6a4ca0ae3528de2a2~mv2.jpeg/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.jpeg" srcset="https://static.wixstatic.com/media/ae876a_f1ab9b12355649e6a4ca0ae3528de2a2~mv2.jpeg/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.jpeg 1x, https://static.wixstatic.com/media/ae876a_f1ab9b12355649e6a4ca0ae3528de2a2~mv2.jpeg/v1/fill/w_440,h_294,al_c,q_68,enc_auto/file.jpeg 2x" width="220" height="147" loading="lazy" decoding="async" alt=""></span></a>
+  <div class="river__text">
+    <span class="kicker">Buddy&#x27;s Blog</span>
+    <h3 class="river__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1">Welcome to the Killing Fields: Why Jordan-Hare Eats Gators for Breakfast</a></h3>
+    <p class="deck deck--tight">They will genuinely, sincerely, ask if your family made the trip down all right. Then they will eat your heart out on the 50-yard…</p>
+    <p class="meta">Sept. 18 · 6 min read</p>
+  </div>
+</article>
+<article class="river__item">
+  <a class="river__art" href="https://www.gatorbaitmedia.com/post/florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie"><span class="frame river__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/a99769_f422e2b2eb0c4fccb5400143f80a1a8e~mv2.jpeg/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.jpeg" srcset="https://static.wixstatic.com/media/a99769_f422e2b2eb0c4fccb5400143f80a1a8e~mv2.jpeg/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.jpeg 1x, https://static.wixstatic.com/media/a99769_f422e2b2eb0c4fccb5400143f80a1a8e~mv2.jpeg/v1/fill/w_440,h_294,al_c,q_68,enc_auto/file.jpeg 2x" width="220" height="147" loading="lazy" decoding="async" alt=""></span></a>
+  <div class="river__text">
+    <span class="kicker">Franz Beard</span>
+    <h3 class="river__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie">Florida-Auburn grudge match: The only thing missing is Gordon Solie</a></h3>
+    <p class="deck deck--tight">There is this theory that has been circulating for a few months that Jon Sumrall is Florida’s football coach because athletic dire…</p>
+    <p class="meta">Sept. 18 · 8 min read</p>
+  </div>
+</article>
+<article class="river__item">
+  <a class="river__art" href="https://www.gatorbaitmedia.com/post/gator-nation-get-your-game-face-on-for-basketball-coming-soon-this-is-the-best-team-todd-golden-w"><span class="frame river__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/ae876a_d01fa2f22e04402b94eb7766cb7659fd~mv2.jpeg/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.jpeg" srcset="https://static.wixstatic.com/media/ae876a_d01fa2f22e04402b94eb7766cb7659fd~mv2.jpeg/v1/fill/w_220,h_147,al_c,q_78,enc_auto/file.jpeg 1x, https://static.wixstatic.com/media/ae876a_d01fa2f22e04402b94eb7766cb7659fd~mv2.jpeg/v1/fill/w_440,h_294,al_c,q_68,enc_auto/file.jpeg 2x" width="220" height="147" loading="lazy" decoding="async" alt=""></span></a>
+  <div class="river__text">
+    <a class="kicker" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-basketball">Gator Basketball</a>
+    <h3 class="river__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/gator-nation-get-your-game-face-on-for-basketball-coming-soon-this-is-the-best-team-todd-golden-w">Gator Nation, Get Your Game Face On For Basketball: This Is the Best Team Todd Golden Will Ever Have</a></h3>
+    <p class="deck deck--tight">If you’re looking for one of college basketball’s most loaded rosters, start in Gainesville. Buddy Martin sizes up Todd Golden’s 2…</p>
+    <p class="meta">Sept. 16 · 4 min read</p>
+  </div>
+</article>
+      </div>
+      <aside class="rail">
+        <div class="flag">
+          <h2 class="flag__t">Columnists</h2>
+        </div>
+        
+<article class="byline">
+  <p class="byline__who">Franz Beard</p>
+  <h3 class="byline__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-17-2026">Thoughts of the Day: September 17, 2026</a></h3>
+  <p class="meta">Sept. 17 · 8 min read</p>
+</article>
+<article class="byline">
+  <p class="byline__who">Eddie Gilley</p>
+  <h3 class="byline__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/what-can-vb3-do-for-you">What Can “VB3” Do for You?</a></h3>
+  <p class="meta">Sept. 14 · 4 min read</p>
+</article>
+<article class="byline">
+  <p class="byline__who">Franz Beard</p>
+  <h3 class="byline__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/readiness-cleaning-up-penalties-will-be-critical-as-gators-prep-for-auburn">Readiness, cleaning up penalties will be critical as Gators prep for Auburn</a></h3>
+  <p class="meta">Sept. 14 · 6 min read</p>
+</article>
+<article class="byline">
+  <p class="byline__who">Gatorbait Magazine</p>
+  <h3 class="byline__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/florida-auburn-by-the-numbers-2026">Florida–Auburn By the Numbers: Two New Coaches, One Old Rivalry</a></h3>
+  <p class="meta">Sept. 14 · 7 min read</p>
+</article>
+      </aside>
+    </section>
+  </div>
+
+  <section class="show">
+    <div class="wrap">
+      <div class="flag">
+        <h2 class="flag__t">The Buddy Martin Show</h2>
+        <a class="flag__more" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/the-buddy-martin-show">All episodes</a>
+      </div>
+      <div class="show__grid">
+<article class="show__item">
+  <a class="show__art" href="https://www.gatorbaitmedia.com/post/live-now-best-friday-in-football-september-18-2026"><span class="frame show__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/d3cfa5_022950c584d64afb8c93012f0a9acb02~mv2.png/v1/fill/w_340,h_191,al_c,q_78,enc_auto/file.png" srcset="https://static.wixstatic.com/media/d3cfa5_022950c584d64afb8c93012f0a9acb02~mv2.png/v1/fill/w_340,h_191,al_c,q_78,enc_auto/file.png 1x, https://static.wixstatic.com/media/d3cfa5_022950c584d64afb8c93012f0a9acb02~mv2.png/v1/fill/w_680,h_382,al_c,q_68,enc_auto/file.png 2x" width="340" height="191" loading="lazy" decoding="async" alt=""></span><span class="show__play" aria-hidden="true"></span></a>
+  <h3 class="show__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/live-now-best-friday-in-football-september-18-2026">Best Friday in Football with Buddy Martin | September 18, 2026</a></h3>
+  <p class="meta">Sept. 18 · 1 min read</p>
+</article>
+<article class="show__item">
+  <a class="show__art" href="https://www.gatorbaitmedia.com/post/laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville"><span class="frame show__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/d3cfa5_66ca0317b876431b8cfcb910becc6376~mv2.png/v1/fill/w_340,h_191,al_c,q_78,enc_auto/file.png" srcset="https://static.wixstatic.com/media/d3cfa5_66ca0317b876431b8cfcb910becc6376~mv2.png/v1/fill/w_340,h_191,al_c,q_78,enc_auto/file.png 1x, https://static.wixstatic.com/media/d3cfa5_66ca0317b876431b8cfcb910becc6376~mv2.png/v1/fill/w_680,h_382,al_c,q_68,enc_auto/file.png 2x" width="340" height="191" loading="lazy" decoding="async" alt=""></span><span class="show__play" aria-hidden="true"></span></a>
+  <h3 class="show__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville">Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Remembers ‘14 Days in Gainesville’</a></h3>
+  <p class="meta">Sept. 17 · 1 min read</p>
+</article>
+<article class="show__item">
+  <a class="show__art" href="https://www.gatorbaitmedia.com/post/the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare"><span class="frame show__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/d3cfa5_afff5dfb681e4070a45b775a6fa826ee~mv2.png/v1/fill/w_340,h_191,al_c,q_78,enc_auto/file.png" srcset="https://static.wixstatic.com/media/d3cfa5_afff5dfb681e4070a45b775a6fa826ee~mv2.png/v1/fill/w_340,h_191,al_c,q_78,enc_auto/file.png 1x, https://static.wixstatic.com/media/d3cfa5_afff5dfb681e4070a45b775a6fa826ee~mv2.png/v1/fill/w_680,h_382,al_c,q_68,enc_auto/file.png 2x" width="340" height="191" loading="lazy" decoding="async" alt=""></span><span class="show__play" aria-hidden="true"></span></a>
+  <h3 class="show__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare">The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare</a></h3>
+  <p class="meta">Sept. 15 · 6 min read</p>
+</article></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="sec">
+      <div class="flag">
+        <h2 class="flag__t">GatorBait Magazine</h2>
+        <a class="flag__more" href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gatorbait-magazine">The archive</a>
+      </div>
+      <div class="mag__grid">
+<article class="mag__item">
+  <a class="mag__art" href="https://www.gatorbaitmedia.com/post/personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary"><span class="frame mag__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/ae876a_94f8137099cd4bfebadbd3f27b8a2c0b~mv2.jpeg/v1/fill/w_400,h_300,al_c,q_78,enc_auto/file.jpeg" srcset="https://static.wixstatic.com/media/ae876a_94f8137099cd4bfebadbd3f27b8a2c0b~mv2.jpeg/v1/fill/w_400,h_300,al_c,q_78,enc_auto/file.jpeg 1x, https://static.wixstatic.com/media/ae876a_94f8137099cd4bfebadbd3f27b8a2c0b~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_68,enc_auto/file.jpeg 2x" width="400" height="300" loading="lazy" decoding="async" alt=""></span></a>
+  <h3 class="mag__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary">Personal Recollections Of “14 Days In Gainesville” And The ESPN Documentary</a></h3>
+  <p class="deck deck--tight">Everything in the documentary I already knew from having lived in Gainesville and working on the sports desk at The Gain…</p>
+  <p class="meta">Sept. 16 · 5 min read</p>
+</article>
+<article class="mag__item">
+  <a class="mag__art" href="https://www.gatorbaitmedia.com/post/before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days"><span class="frame mag__img"><span class="frame__mark" aria-hidden="true">GatorBait</span><img src="https://static.wixstatic.com/media/d3cfa5_fc87899bd1064becb413c13d3f407d93~mv2.jpg/v1/fill/w_400,h_300,al_c,q_78,enc_auto/file.jpg" srcset="https://static.wixstatic.com/media/d3cfa5_fc87899bd1064becb413c13d3f407d93~mv2.jpg/v1/fill/w_400,h_300,al_c,q_78,enc_auto/file.jpg 1x, https://static.wixstatic.com/media/d3cfa5_fc87899bd1064becb413c13d3f407d93~mv2.jpg/v1/fill/w_800,h_600,al_c,q_68,enc_auto/file.jpg 2x" width="400" height="300" loading="lazy" decoding="async" alt=""></span></a>
+  <h3 class="mag__hed"><a class="link" href="https://www.gatorbaitmedia.com/post/before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days">Before Laura Rutledge Was Laura Rutledge: A Flip Phone, an IFB and the Gainesville Days</a></h3>
+  <p class="deck deck--tight">Long before NFL Live and Monday Night Football, Laura McKeeman was a UF student taking every assignment she could get —…</p>
+  <p class="meta">Sept. 17 · 4 min read</p>
+</article></div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__col">
+        <h4>Coverage</h4>
+        <a href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football">Gator Football</a>
+        <a href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gatorbait-magazine">GatorBait Magazine</a>
+        <a href="https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/the-buddy-martin-show">The Buddy Martin Show</a>
+        <a href="https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play">2026 roster &amp; schedule</a>
+      </div>
+      <div class="foot__col">
+        <h4>Newsletter</h4>
+        <p>GatorBait Weekly &mdash; Florida coverage from our staff, once a week.</p>
+        <a href="https://www.gatorbaitmedia.com/pricing-plans/subscribe">Subscribe</a>
+      </div>
+      <div class="foot__col">
+        <h4>Newsroom</h4>
+        <p>Buddy Martin &middot; Franz Beard &middot; Loren Meadows &middot; Eddie Gilley &middot; Carlton Reese &middot; Kyle Curtis</p>
+      </div>
+      <div class="foot__col">
+        <h4>Contact</h4>
+        <a href="mailto:brenden@gatorbaitmedia.com">brenden@gatorbaitmedia.com</a>
+      </div>
+    </div>
+    <p class="foot__note">&copy; 2026 GatorBait Media &middot; Gainesville, Florida &middot; Not affiliated with the University of Florida</p>
+  </div>
+</footer>

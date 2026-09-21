@@ -1,0 +1,274 @@
+{
+  "source": "Wix Blog v3 /posts/query + /categories, site 18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+  "captured": "2026-09-21",
+  "note": "Real published GatorBait records only. No invented headlines, bylines, scores, rankings or counts.",
+  "categoryUrls": {
+    "Gator Football": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football",
+    "Gator Recruiting": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-recruiting",
+    "Gator Basketball": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-basketball",
+    "Gatorbait Magazine": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gatorbait-magazine",
+    "The Buddy Martin Show": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/the-buddy-martin-show",
+    "Gator Breaking News": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-breaking-news"
+  },
+  "status": {
+    "record": "3-0",
+    "conference": "1-0 SEC",
+    "last": "W 44-39 at Auburn",
+    "lastHref": "https://www.gatorbaitmedia.com/post/florida-44-auburn-39-gators-end-jordan-hare-drought",
+    "next": "Ole Miss · The Swamp",
+    "nextHref": "https://www.gatorbaitmedia.com/post/sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy"
+  },
+  "posts": [
+    {
+      "id": "baugh",
+      "title": "Jadan Baugh's “another day at the office” was the difference against Auburn",
+      "excerpt": "The play that best defined what Jadan Baugh called “another day at the office” came early in the fourth quarter, the Gators facing fourth-and-1 at their own 47. Everybody on both sidelines and all 88,000 screamers packed inside Jordan-Hare Stadium knew what was coming.",
+      "url": "https://www.gatorbaitmedia.com/post/jadan-baugh-s-another-day-at-the-office-was-the-difference-against-auburn",
+      "date": "2026-09-21T11:11:28Z",
+      "read": 9,
+      "cover": "https://static.wixstatic.com/media/a99769_9cea463d1045446d8550ce6aa803b0d3~mv2.jpeg",
+      "kicker": "Florida 44, Auburn 39"
+    },
+    {
+      "id": "loren-postgame",
+      "title": "Postgame Analysis: Florida Gators (3-0, 1-0) v. Auburn Tigers (2-1, 0-1)",
+      "excerpt": "Florida works the cut for a key win on the road and its first in the state of Alabama since 1999.",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1",
+      "date": "2026-09-20T15:49:03Z",
+      "read": 4,
+      "cover": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg",
+      "kicker": "Loren Meadows"
+    },
+    {
+      "id": "yellow-flags",
+      "title": "Florida Escaped Auburn, But The Yellow Flags Followed It Home",
+      "excerpt": "So, yes, Florida is 3-0. Yes, Jon Sumrall has his first SEC victory as the Gators’ coach. Yes, Aaron Philo survived his first road start in a place where noise is a regional crop.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
+      "date": "2026-09-20T15:21:37Z",
+      "read": 8,
+      "cover": "https://static.wixstatic.com/media/ae876a_fc4264fcbf7e4c84b09fb8c5764e960d~mv2.jpg",
+      "kicker": "Buddy's Blog"
+    },
+    {
+      "id": "sumrall-presser",
+      "title": "Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn",
+      "excerpt": "Florida coach Jon Sumrall addresses 16 penalties, Jadan Baugh, Aaron Philo, Pat Dye and his ‘work the cut’ message after a 44-39 win at Auburn.",
+      "url": "https://www.gatorbaitmedia.com/post/jon-sumrall-postgame-florida-auburn",
+      "date": "2026-09-20T08:14:12Z",
+      "read": 11,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_51ecb6ef1570476ca7e6b0d4fd786053~mv2.png",
+      "kicker": "Gator Football"
+    },
+    {
+      "id": "no-bad-wins",
+      "title": "No Bad Wins: Sumrall Issues Warning After Florida's Auburn Win",
+      "excerpt": "Jon Sumrall celebrated Florida's SEC road win at Auburn, then delivered a blunt warning about 16 penalties, discipline and the standard ahead for the Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win",
+      "date": "2026-09-20T07:30:31Z",
+      "read": 3,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_21baad43225b4851afa6f5548200664f~mv2.jpg",
+      "kicker": "Gator Football"
+    },
+    {
+      "id": "hotty-toddy",
+      "title": "Sumrall Passed the Test. He Aced It. Next, Please! Hotty Toddy?",
+      "excerpt": "Buddy Martin on Jon Sumrall’s first SEC road win, Jadan Baugh’s 162-yard night and the unbeaten Ole Miss showdown coming to The Swamp.",
+      "url": "https://www.gatorbaitmedia.com/post/sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy",
+      "date": "2026-09-20T03:45:11Z",
+      "read": 4,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_d63fc74d2d3b43d3a26e953cbf6ea84e~mv2.png",
+      "kicker": "Buddy's Blog"
+    },
+    {
+      "id": "drought",
+      "title": "Florida 44 Auburn 39: Gators End Jordan-Hare Drought",
+      "excerpt": "Jadan Baugh ran for 162 yards and three touchdowns as Florida survived Auburn 44-39 for its first road win over the Tigers since 1999.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-44-auburn-39-gators-end-jordan-hare-drought",
+      "date": "2026-09-20T03:07:30Z",
+      "read": 3,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg",
+      "kicker": "Gator Breaking News"
+    },
+    {
+      "id": "sixteen-penalties",
+      "title": "FINAL Florida 44 Auburn 39: Gators Survive 16 Penalties",
+      "excerpt": "Florida beat Auburn 44-39 at Jordan-Hare despite 16 penalties for 138 yards.",
+      "url": "https://www.gatorbaitmedia.com/post/live-florida-auburn-game-tracker-score-updates",
+      "date": "2026-09-19T23:45:16Z",
+      "read": 3,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_0416101ae9184801ae818ad93b515814~mv2.png",
+      "kicker": "Game Tracker"
+    },
+    {
+      "id": "jimbo",
+      "title": "Jimbo Fisher’s FSU Parole Hearing Could Go Either Way. How Do Gator Fans Feel?",
+      "excerpt": "Fisher, already carrying his $77.5 million settlement, has signaled he’d take supervised release for cheap — something like $4-5 million against a market rate closer to $8-10 million.",
+      "url": "https://www.gatorbaitmedia.com/post/jimbo-fisher-s-fsu-parole-hearing-could-go-either-way-how-do-gator-fans-feel",
+      "date": "2026-09-19T15:31:33Z",
+      "read": 3,
+      "cover": "https://static.wixstatic.com/media/ae876a_17a4237bd4e9471a9ed473ca149b3996~mv2.jpeg",
+      "kicker": "Buddy's Blog"
+    },
+    {
+      "id": "best-friday",
+      "title": "Best Friday in Football with Buddy Martin | September 18, 2026",
+      "excerpt": "Buddy Martin hosts Best Friday in Football with Pat Smith of WJOX, Franz Beard and Rob Dotson for a Friday look at Florida-Auburn and the weekend’s biggest SEC storylines.",
+      "url": "https://www.gatorbaitmedia.com/post/live-now-best-friday-in-football-september-18-2026",
+      "date": "2026-09-18T13:09:17Z",
+      "read": 1,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_022950c584d64afb8c93012f0a9acb02~mv2.png",
+      "kicker": "The Buddy Martin Show"
+    },
+    {
+      "id": "killing-fields",
+      "title": "Welcome to the Killing Fields: Why Jordan-Hare Eats Gators for Breakfast",
+      "excerpt": "They will genuinely, sincerely, ask if your family made the trip down all right. Then they will eat your heart out on the 50-yard line and wash it down with something served in a mason jar, all with a smile you’d swear was sincere — because, in its own strange way, it is.",
+      "url": "https://www.gatorbaitmedia.com/post/welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1",
+      "date": "2026-09-18T12:24:18Z",
+      "read": 6,
+      "cover": "https://static.wixstatic.com/media/ae876a_f1ab9b12355649e6a4ca0ae3528de2a2~mv2.jpeg",
+      "kicker": "Buddy's Blog"
+    },
+    {
+      "id": "gordon-solie",
+      "title": "Florida-Auburn grudge match: The only thing missing is Gordon Solie",
+      "excerpt": "There is this theory that has been circulating for a few months that Jon Sumrall is Florida’s football coach because athletic director Scott Stricklin got the best of the guy he once mentored. It is only a theory but one that has grown legs.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie",
+      "date": "2026-09-18T11:29:26Z",
+      "read": 8,
+      "cover": "https://static.wixstatic.com/media/a99769_f422e2b2eb0c4fccb5400143f80a1a8e~mv2.jpeg",
+      "kicker": "Franz Beard"
+    },
+    {
+      "id": "roster",
+      "title": "Florida Gators 2026 Roster and Schedule Update: Auburn Opens SEC Play",
+      "excerpt": "GatorBait has refreshed its Florida football roster and schedule information using the live University of Florida roster and the current official schedule.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play",
+      "date": "2026-09-17T23:51:02Z",
+      "read": 2,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_1b088b6993b340859003979d846fc644~mv2.jpg",
+      "kicker": "Reference"
+    },
+    {
+      "id": "rutledge-feature",
+      "title": "Before Laura Rutledge Was Laura Rutledge: A Flip Phone, an IFB and the Gainesville Days",
+      "excerpt": "Long before NFL Live and Monday Night Football, Laura McKeeman was a UF student taking every assignment she could get — including the day she had to Google “IFB” on a flip phone.",
+      "url": "https://www.gatorbaitmedia.com/post/before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days",
+      "date": "2026-09-17T15:57:09Z",
+      "read": 4,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_fc87899bd1064becb413c13d3f407d93~mv2.jpg",
+      "kicker": "The Buddy Martin Show"
+    },
+    {
+      "id": "rutledge-show",
+      "title": "Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Remembers ‘14 Days in Gainesville’",
+      "excerpt": "She returns to explain the Sarkisian-Holly Rowe sideline moment, while Carlton Reese revisits Gainesville in 1990.",
+      "url": "https://www.gatorbaitmedia.com/post/laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville",
+      "date": "2026-09-17T14:44:43Z",
+      "read": 1,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_66ca0317b876431b8cfcb910becc6376~mv2.png",
+      "kicker": "The Buddy Martin Show"
+    },
+    {
+      "id": "thoughts",
+      "title": "Thoughts of the Day: September 17, 2026",
+      "excerpt": "In the Southeastern Conference nothing is more terrifying than a road trip. Just ask Urban Meyer, whose 65-15 overall record from 2005-10 included a 30-11 record away from Ben Hill Griffin Stadium.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-17-2026",
+      "date": "2026-09-17T03:18:06Z",
+      "read": 8,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_4efeca4579344aa0841bd725a60f1489~mv2.jpg",
+      "kicker": "Franz Beard"
+    },
+    {
+      "id": "fourteen-days",
+      "title": "Personal Recollections Of “14 Days In Gainesville” And The ESPN Documentary",
+      "excerpt": "Everything in the documentary I already knew from having lived in Gainesville and working on the sports desk at The Gainesville Sun at that time.",
+      "url": "https://www.gatorbaitmedia.com/post/personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
+      "date": "2026-09-16T21:51:00Z",
+      "read": 5,
+      "cover": "https://static.wixstatic.com/media/ae876a_94f8137099cd4bfebadbd3f27b8a2c0b~mv2.jpeg",
+      "kicker": "Gatorbait Magazine"
+    },
+    {
+      "id": "golden",
+      "title": "Gator Nation, Get Your Game Face On For Basketball: This Is the Best Team Todd Golden Will Ever Have",
+      "excerpt": "If you’re looking for one of college basketball’s most loaded rosters, start in Gainesville. Buddy Martin sizes up Todd Golden’s 2026-27 Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/gator-nation-get-your-game-face-on-for-basketball-coming-soon-this-is-the-best-team-todd-golden-w",
+      "date": "2026-09-16T15:24:49Z",
+      "read": 4,
+      "cover": "https://static.wixstatic.com/media/ae876a_d01fa2f22e04402b94eb7766cb7659fd~mv2.jpeg",
+      "kicker": "Gator Basketball"
+    },
+    {
+      "id": "trenches",
+      "title": "The Trenches Don’t Lie: Florida’s Defense Dang Better Show Up in Jordan-Hare",
+      "excerpt": "Brad White is calling for more physicality from his cornerbacks after a shaky start to the season.",
+      "url": "https://www.gatorbaitmedia.com/post/the-trenches-don-t-lie-florida-s-defense-dag-better-show-up-in-jordan-hare",
+      "date": "2026-09-15T22:36:56Z",
+      "read": 6,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_afff5dfb681e4070a45b775a6fa826ee~mv2.png",
+      "kicker": "The Buddy Martin Show"
+    },
+    {
+      "id": "by-the-numbers",
+      "title": "Florida–Auburn By the Numbers: Two New Coaches, One Old Rivalry",
+      "excerpt": "The Professor digs into 1939, Jordan-Hare history, Sumrall’s 14-2 road record, Auburn’s ground game, Byrum Brown and the three numbers that could decide Saturday.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-auburn-by-the-numbers-2026",
+      "date": "2026-09-14T17:15:28Z",
+      "read": 7,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_f953a61bdcdf44cf997f83cbd7f3a657~mv2.png",
+      "kicker": "Gatorbait Magazine"
+    },
+    {
+      "id": "vb3",
+      "title": "What Can “VB3” Do for You?",
+      "excerpt": "Eddie Gilley on Vernell Brown III’s record punt-return performance, Jadan Baugh’s steady numbers and what Florida must sharpen before Auburn.",
+      "url": "https://www.gatorbaitmedia.com/post/what-can-vb3-do-for-you",
+      "date": "2026-09-14T11:30:36Z",
+      "read": 4,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg",
+      "kicker": "Eddie Gilley"
+    },
+    {
+      "id": "readiness",
+      "title": "Readiness, cleaning up penalties will be critical as Gators prep for Auburn",
+      "excerpt": "Franz Beard breaks down Florida's 52-3 win over Campbell, the penalties Jon Sumrall wants fixed and what the Gators must sharpen before Auburn.",
+      "url": "https://www.gatorbaitmedia.com/post/readiness-cleaning-up-penalties-will-be-critical-as-gators-prep-for-auburn",
+      "date": "2026-09-14T03:51:24Z",
+      "read": 6,
+      "cover": "https://static.wixstatic.com/media/a99769_ef5c2a84f1bd4fa185c907b16d506660~mv2.jpeg",
+      "kicker": "Franz Beard"
+    },
+    {
+      "id": "blood-noise",
+      "title": "Blood, Noise And the Plains: The Florida-Auburn Story. We Need It Every Year",
+      "excerpt": "Jon Sumrall stood at the podium Monday and told his team the truth nobody wants to hear in September: “These games count twice.”",
+      "url": "https://www.gatorbaitmedia.com/post/blood-noise-and-the-plains-the-florida-auburn-story-we-need-it-every-year",
+      "date": "2026-09-14T21:56:40Z",
+      "read": 11,
+      "cover": "https://static.wixstatic.com/media/ae876a_5a44257742a9441dbadef605f65b541f~mv2.jpeg",
+      "kicker": "Buddy's Blog"
+    },
+    {
+      "id": "week3-preview",
+      "title": "Week 3 Preview: Florida Gators (2-0, 0-0) v. Auburn Tigers (2-0, 0-0)",
+      "excerpt": "Jon Sumrall and the Gators head to hostile territory for a historic trip to Jordan-Hare.",
+      "url": "https://www.gatorbaitmedia.com/post/week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0",
+      "date": "2026-09-18T03:12:25Z",
+      "read": 6,
+      "cover": "https://static.wixstatic.com/media/d3cfa5_77949cc88d0e4fb39c78f7f1c2a60728~mv2.png",
+      "kicker": "Loren Meadows"
+    },
+    {
+      "id": "urquhart",
+      "title": "Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the Villain Role",
+      "excerpt": "Loren Meadows and Ryan Urquhart break down Florida's trip to Jordan-Hare and the Gators' road mentality.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-at-auburn-ryan-urquhart-says-the-gators-must-embrace-the-villain-role",
+      "date": "2026-09-17T14:44:43Z",
+      "read": 1,
+      "cover": null,
+      "kicker": "Loren Meadows"
+    }
+  ],
+  "rosterHref": "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play"
+}

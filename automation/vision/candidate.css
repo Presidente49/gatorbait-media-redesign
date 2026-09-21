@@ -1,8 +1,11 @@
-/* Candidate fix — NOT live. CI applies this to the real page and screenshots
-   the result so the change can be judged before any embed is edited.
-   Target: the header clip measured at 124px of content inside a 117px box.
-   #comp-mmz3w23y is the brand box. It is forced overflow:hidden while the logo
-   inside it is height:auto / max-height:none, so the logo renders at full size
-   and the box cuts it off. Let the box size to its content instead. */
-#SITE_HEADER #comp-mmz3w23y{overflow:visible!important;height:auto!important;min-height:0!important}
-#SITE_HEADER #comp-mmz3w23y h1{overflow:visible!important}
+/* No candidate under test.
+
+   A previous candidate targeted #comp-mmz3w23y (the brand box) on the theory
+   that its overflow:hidden was clipping the logo. CI applied it to the live
+   page and measured no change at all: header box 103px -> 103px, content
+   110px -> 110px, 3 findings -> 3 findings, nothing resolved.
+
+   The hypothesis was wrong. The audit measures #SITE_HEADER itself, whose
+   content is 7px taller than its box, so whatever constrains that height is
+   not the brand box. Next candidate needs to find what actually sets
+   #SITE_HEADER's height before guessing again. */

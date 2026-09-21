@@ -21,42 +21,34 @@ inference as a fact.
 
 ## 1. Findings, most urgent first
 
-### P1 — The Pages deploy took over the sitemap host. `INFERRED, high confidence`
+### P1 — WITHDRAWN. The sitemaps are fine. `VERIFIED`
 
-At 06:52 UTC today, `Deploy flagship GitHub preview with Pages` ran for the
-first time. It publishes `./flagship` as the **root** of GitHub Pages:
+**This finding was wrong and is retained here as a correction, not deleted.**
 
-```yaml
-- uses: actions/upload-pages-artifact@v4
-  with:
-    path: ./flagship
-```
+An earlier revision claimed the Pages deploy had taken over the Pages root and
+that `news-sitemap.xml` and `posts-sitemap.xml` were "almost certainly 404",
+with Google News discovery broken since 06:52. That was inferred from the
+workflow config and never measured.
 
-`flagship/` contains two files. It does not contain the sitemaps. But
-`sitemap-index.xml` still points at:
+CI fetched all three from a runner at 2026-09-21T20:06Z:
 
-```
-https://presidente49.github.io/gatorbait-media-redesign/news-sitemap.xml
-https://presidente49.github.io/gatorbait-media-redesign/posts-sitemap.xml
-```
+| URL | Status | Bytes |
+|---|---:|---:|
+| `news-sitemap.xml` | **200** | 24,479 |
+| `posts-sitemap.xml` | **200** | 8,470 |
+| `sitemap-index.xml` | **200** | 436 |
 
-Those paths were served from the repository root before this morning. They are
-almost certainly **404 now**. `news-sitemap.xml` is a Google News sitemap and
-is actively maintained — it was refreshed today ("Auto-refresh sitemap
-2026-09-21"). If it is submitted in Search Console, Google News discovery has
-been broken since this morning and nothing would have reported it.
+Nothing is broken. The deploy workflow now copies the sitemaps into the
+published tree anyway — harmless belt-and-braces, but it was not fixing a real
+fault.
 
-**Scope correction:** the homepage loader pins its assets to **jsDelivr**, not
-GitHub Pages, so this finding does *not* affect the live site. It is a
-sitemap-serving problem only.
+Related correction: jsDelivr **does** serve the fix commit. `32127d9…` returns
+200 with 13,922 bytes, and the control `d03d9d1…` returns 200 with 16,641. The
+earlier failure to load it was a 7-character commit hash in a link; jsDelivr
+needs all 40. No CDN problem existed.
 
-**Check first:** open both URLs in a browser. If they 404, confirm in Search
-Console whether either sitemap is submitted.
-
-**Fix:** copy `news-sitemap.xml`, `posts-sitemap.xml`, `sitemap-index.xml` and
-the root `index.html` into the published directory, or point the Pages
-artifact at a directory that contains both the preview and the sitemaps. One
-commit either way.
+Both corrections have the same cause: a conclusion drawn from reading
+configuration instead of making the request.
 
 ### P2 — The monitor is telling the truth: the newsroom front page is switched off. `VERIFIED`
 

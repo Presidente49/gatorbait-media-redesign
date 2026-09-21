@@ -8,6 +8,13 @@ on:
   push:
     branches:
       - 'claude/**'
+    # Only look when there is a reason to. Every run installs Chromium, so
+    # firing on routine doc and config commits burns minutes for nothing.
+    # Editing candidate.css is exactly the moment a fresh look is wanted, so it
+    # doubles as the trigger.
+    paths:
+      - 'automation/vision/**'
+      - '.github/workflows/site-vision.yml'
   workflow_dispatch:
 
 permissions:

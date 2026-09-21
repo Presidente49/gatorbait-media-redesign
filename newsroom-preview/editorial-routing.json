@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-21T13:17:22Z",
+  "updated": "2026-09-21T18:34:52Z",
   "automation": {
-    "lastChecked": "2026-09-21T13:17:22Z",
-    "lastSeenPublishedDate": "2026-09-21T11:11:28Z",
-    "lastSeenPostId": "996d23a9-3d6b-4d0a-88ce-5fbee928e327"
+    "lastChecked": "2026-09-21T18:34:52Z",
+    "lastSeenPublishedDate": "2026-09-21T18:26:20.463Z",
+    "lastSeenPostId": "2ec17e63-4db8-4d55-b1ca-a2e42655b1be"
   },
   "assignments": [
+    {
+      "slug": "the-med-school-dropout-who-made-auburn-bleed-orange-and-blue",
+      "title": "The Med School Dropout Who Made Auburn Bleed Orange and Blue",
+      "firstPublishedDate": "2026-09-21T18:26:20.463Z",
+      "primaryHome": "magazine",
+      "reason": "Buddy Martin's piece is a character-driven Emmanuel Oyebadejo profile built around his path from medical studies in England to SEC football, his Jacksonville State rise, family-centered Florida recruitment, playing through an ankle injury at Auburn and the postgame locker-room scene. Although it uses the Auburn result as its setting, its core value is biography, profile writing and long-form storytelling that remains readable beyond game week, so Magazine is the single primary editorial home."
+    },
     {
       "slug": "jadan-baugh-s-another-day-at-the-office-was-the-difference-against-auburn",
       "title": "Jadan Baugh's \"another day at the office\" was the difference against Auburn",
@@ -191,6 +198,12 @@
       "deck": "Buddy Martin on Jordan-Hare, Florida-Auburn history and the burden of winning on the Plains"
     },
     {
+      "slug": "the-med-school-dropout-who-made-auburn-bleed-orange-and-blue",
+      "role": "feature",
+      "label": "THE MED SCHOOL DROPOUT",
+      "deck": "Buddy Martin profiles Emmanuel Oyebadejo's improbable road from medical studies in England to a defining night at Jordan-Hare"
+    },
+    {
       "slug": "personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary",
       "role": "feature",
       "label": "14 DAYS IN GAINESVILLE",
@@ -222,6 +235,7 @@
     }
   ],
   "frontPageExclude": [
+    "the-med-school-dropout-who-made-auburn-bleed-orange-and-blue",
     "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast-1",
     "welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast",
     "before-laura-rutledge-was-laura-rutledge-a-flip-phone-an-ifb-and-the-gator-country-days",
@@ -246,7 +260,7 @@
       "https://static.wixstatic.com/media/d3cfa5_cac5a84a16b145b5bb20bb3575b5bb0d~mv2.jpg",
       "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg"
     ],
-    "reason": "The Florida-Auburn final story is the newest usable game-photo source. Wix rich content confirms two inline Chris Spears game images plus the story's Chris Spears cover image. Keep only this three-photo set as the Magazine latest-game gallery and replace it when a newer usable game set appears."
+    "reason": "The Florida-Auburn final story is the newest usable game-photo source. Wix rich content confirms two inline Chris Spears game images plus the story's Chris Spears cover image. The newer Emmanuel Oyebadejo profile contains only one UAA image from the same Auburn game, so it does not replace or add to the single latest-game gallery."
   },
   "performancePolicy": {
     "windowDays": 7,
@@ -286,6 +300,6 @@
       "live-now-best-friday-in-football-september-18-2026",
       "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
     ],
-    "reason": "The live controller is newest-first for Front Page-eligible stories. Franz Beard's Jadan Baugh Auburn analysis is now the newest Front Page story, followed by Loren Meadows' postgame analysis and Buddy Martin's yellow-flags column; Magazine stories and stale live-show promos remain excluded."
+    "reason": "The live controller is newest-first for Front Page-eligible stories. Buddy Martin's newly published Emmanuel Oyebadejo profile is Magazine-only and excluded from Front Page presentation, so Franz Beard's Jadan Baugh Auburn analysis remains the Front Page lead, followed by Loren Meadows' postgame analysis and Buddy Martin's yellow-flags column."
   }
 }

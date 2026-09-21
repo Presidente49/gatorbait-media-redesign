@@ -1,11 +1,18 @@
 {
-  "updated": "2026-09-20T18:01:07Z",
+  "updated": "2026-09-21T13:17:22Z",
   "automation": {
-    "lastChecked": "2026-09-20T18:01:07Z",
-    "lastSeenPublishedDate": "2026-09-20T15:49:03Z",
-    "lastSeenPostId": "bbbaf285-0785-4f81-9d4a-2d4211f0d2e6"
+    "lastChecked": "2026-09-21T13:17:22Z",
+    "lastSeenPublishedDate": "2026-09-21T11:11:28Z",
+    "lastSeenPostId": "996d23a9-3d6b-4d0a-88ce-5fbee928e327"
   },
   "assignments": [
+    {
+      "slug": "jadan-baugh-s-another-day-at-the-office-was-the-difference-against-auburn",
+      "title": "Jadan Baugh's \"another day at the office\" was the difference against Auburn",
+      "firstPublishedDate": "2026-09-21T11:11:28Z",
+      "primaryHome": "frontPage",
+      "reason": "Franz Beard's piece is immediate postgame analysis of Jadan Baugh's performance in Florida's 44-39 SEC road win at Auburn, centered on the fourth-and-1, 53-yard touchdown and fresh game context. Its value is tied directly to the just-completed game, so Front Page is the single primary editorial home."
+    },
     {
       "slug": "postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1",
       "title": "Postgame Analysis: Florida Gators (3-0,1-0) v. Auburn Tigers (2-1, 0-1)",
@@ -270,15 +277,15 @@
   ],
   "homepage": {
     "mode": "newestFrontPageFirst",
-    "lead": "postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1",
+    "lead": "jadan-baugh-s-another-day-at-the-office-was-the-difference-against-auburn",
     "secondary": [
-      "florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
-      "jon-sumrall-postgame-florida-auburn"
+      "postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1",
+      "florida-escaped-auburn-but-the-yellow-flags-followed-it-home"
     ],
     "hide": [
       "live-now-best-friday-in-football-september-18-2026",
       "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
     ],
-    "reason": "The live controller is newest-first for Front Page-eligible stories. The newest lead is Loren Meadows' immediate postgame analysis of Florida's 44-39 win at Auburn, followed by Buddy Martin's yellow-flags column and the Sumrall postgame press-conference story; Magazine stories and stale live-show promos remain excluded."
+    "reason": "The live controller is newest-first for Front Page-eligible stories. Franz Beard's Jadan Baugh Auburn analysis is now the newest Front Page story, followed by Loren Meadows' postgame analysis and Buddy Martin's yellow-flags column; Magazine stories and stale live-show promos remain excluded."
   }
 }

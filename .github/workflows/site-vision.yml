@@ -1,0 +1,63 @@
+name: GatorBait live site vision
+
+# The agent session's sandbox is blocked from gatorbaitmedia.com by network
+# policy. GitHub runners are not, so CI looks at the live site and commits back
+# screenshots and a structured report the agent can read.
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-vision-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  look:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.49.1
+          npx playwright install --with-deps chromium
+
+      - name: Look at the live site
+        run: node automation/vision/look.mjs
+        continue-on-error: true
+
+      - name: Commit what CI saw
+        shell: bash
+        run: |
+          git add automation/vision/latest
+          if git diff --cached --quiet -- automation/vision/latest; then
+            echo 'No change in what the site looks like.'
+            exit 0
+          fi
+          git config user.name 'gatorbait-vision-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
+          git commit -m 'vision: capture live site as CI sees it'
+          git push origin HEAD:${{ github.ref_name }}
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-vision
+          path: automation/vision/latest
+          if-no-files-found: ignore

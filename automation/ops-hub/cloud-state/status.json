@@ -1,7 +1,7 @@
 {
   "service": "gatorbait-ops-hub",
   "version": 2,
-  "checked_at": "2026-09-21T20:31:21.944318+00:00",
+  "checked_at": "2026-09-21T23:39:34.676917+00:00",
   "ok": false,
   "checks": [
     {
@@ -10,7 +10,7 @@
       "ok": false,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/?ops_health=1",
-      "seconds": 2.68,
+      "seconds": 0.26,
       "error": "missing one of markers: gbm-standalone-live, gbm-newsroom-boot, gbm-prepaint-v2"
     },
     {
@@ -19,7 +19,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/magazine",
-      "seconds": 3.18,
+      "seconds": 0.2,
       "error": ""
     },
     {
@@ -28,7 +28,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/the-buddy-martin-show",
-      "seconds": 3.36,
+      "seconds": 0.22,
       "error": ""
     },
     {
@@ -37,7 +37,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/pricing-plans",
-      "seconds": 2.77,
+      "seconds": 0.22,
       "error": ""
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/policies",
-      "seconds": 2.11,
+      "seconds": 0.2,
       "error": ""
     },
     {
@@ -55,7 +55,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/contact",
-      "seconds": 2.15,
+      "seconds": 0.17,
       "error": ""
     },
     {
@@ -64,7 +64,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://gatorbait2026.itemorder.com/shop/home/",
-      "seconds": 1.72,
+      "seconds": 2.33,
       "error": ""
     }
   ],
@@ -77,14 +77,14 @@
       "Homepage"
     ],
     "failure_fingerprint": "eec4e96152c4c89d",
-    "consecutive_failed_cycles": 4,
+    "consecutive_failed_cycles": 5,
     "next_check_seconds": 900,
     "model_required": false,
     "production_write_authorized": false
   },
   "learning": {
     "enabled": true,
-    "total_cycles": 9,
+    "total_cycles": 10,
     "healthy_cycles": 5,
     "incident_episodes": 2,
     "tracked_incidents": 2,

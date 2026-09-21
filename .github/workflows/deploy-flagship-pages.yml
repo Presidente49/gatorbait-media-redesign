@@ -33,6 +33,23 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Keep the sitemap host alive alongside the preview
+        # Pages publishes ./flagship as the site ROOT, which silently took over
+        # from the repo root on 2026-09-21 and stopped serving the sitemaps that
+        # sitemap-index.xml still points at - including a Google News sitemap
+        # that is still refreshed daily. Copy them into the published tree so
+        # both keep working, from the one source of truth at the repo root.
+        run: |
+          set -euo pipefail
+          for f in sitemap-index.xml news-sitemap.xml posts-sitemap.xml; do
+            if [ -f "$f" ]; then
+              cp "$f" "flagship/$f"
+              echo "published $f ($(wc -c < "$f") bytes)"
+            else
+              echo "::warning::$f missing at repo root; not published"
+            fi
+          done
+
       - name: Upload flagship site
         uses: actions/upload-pages-artifact@v4
         with:

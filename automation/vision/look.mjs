@@ -93,7 +93,31 @@ function audit() {
   return out;
 }
 
-const report = { capturedAt: new Date().toISOString(), runs: [] };
+const report = { capturedAt: new Date().toISOString(), runs: [], urlChecks: [] };
+
+// Two questions this session could not answer from its sandbox, both of which
+// changed decisions tonight. CI can just ask.
+const URL_CHECKS = [
+  // Does jsDelivr serve the fixed commit? This blocked the newsroom fix.
+  'https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@32127d938ad41b0f78517a0abdec32bf11d576ce/newsroom-preview/wix-live.js',
+  // Control: the commit that was live and working.
+  'https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@d03d9d1e0350c55be03df1a8ebed0180c9a74c5d/newsroom-preview/wix-live.js',
+  // Are the sitemaps still served? sitemap-index.xml points at these.
+  'https://presidente49.github.io/gatorbait-media-redesign/news-sitemap.xml',
+  'https://presidente49.github.io/gatorbait-media-redesign/posts-sitemap.xml',
+  'https://presidente49.github.io/gatorbait-media-redesign/sitemap-index.xml',
+];
+
+for (const url of URL_CHECKS) {
+  try {
+    const res = await fetch(url, { redirect: 'follow' });
+    const body = await res.text();
+    report.urlChecks.push({ url, status: res.status, bytes: body.length });
+  } catch (err) {
+    report.urlChecks.push({ url, status: 'ERROR', error: String(err).slice(0, 160) });
+  }
+}
+
 const browser = await chromium.launch();
 
 for (const profile of PROFILES) {
@@ -136,6 +160,11 @@ await browser.close();
 writeFileSync(`${OUT}/report.json`, JSON.stringify(report, null, 2));
 
 const lines = ['# Live site vision — ' + report.capturedAt, ''];
+lines.push('## URL checks', '', '| URL | Status | Bytes |', '|---|---:|---:|');
+for (const c of report.urlChecks) {
+  lines.push('| `' + c.url.replace('https://', '').slice(0, 78) + '` | ' + c.status + ' | ' + (c.bytes ?? '—') + ' |');
+}
+lines.push('');
 for (const r of report.runs) {
   lines.push(`## ${r.target} · ${r.profile}`);
   if (r.error) { lines.push('FAILED: ' + r.error, ''); continue; }

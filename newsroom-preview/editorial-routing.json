@@ -1,11 +1,32 @@
 {
-  "updated": "2026-09-20T08:39:00Z",
+  "updated": "2026-09-21T13:17:22Z",
   "automation": {
-    "lastChecked": "2026-09-20T08:39:00Z",
-    "lastSeenPublishedDate": "2026-09-20T08:14:12.271Z",
-    "lastSeenPostId": "064b72aa-54ac-4af4-a8ad-54fc1b019a81"
+    "lastChecked": "2026-09-21T13:17:22Z",
+    "lastSeenPublishedDate": "2026-09-21T11:11:28Z",
+    "lastSeenPostId": "996d23a9-3d6b-4d0a-88ce-5fbee928e327"
   },
   "assignments": [
+    {
+      "slug": "jadan-baugh-s-another-day-at-the-office-was-the-difference-against-auburn",
+      "title": "Jadan Baugh's \"another day at the office\" was the difference against Auburn",
+      "firstPublishedDate": "2026-09-21T11:11:28Z",
+      "primaryHome": "frontPage",
+      "reason": "Franz Beard's piece is immediate postgame analysis of Jadan Baugh's performance in Florida's 44-39 SEC road win at Auburn, centered on the fourth-and-1, 53-yard touchdown and fresh game context. Its value is tied directly to the just-completed game, so Front Page is the single primary editorial home."
+    },
+    {
+      "slug": "postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1",
+      "title": "Postgame Analysis: Florida Gators (3-0,1-0) v. Auburn Tigers (2-1, 0-1)",
+      "firstPublishedDate": "2026-09-20T15:49:03Z",
+      "primaryHome": "frontPage",
+      "reason": "Loren Meadows' piece is immediate postgame football analysis of Florida's 44-39 SEC road win at Auburn, focused on Aaron Philo, Jadan Baugh, defensive pressure, secondary issues, penalties and the next ranked stretch. Its value is tied directly to the fresh game result, so Front Page is the single primary editorial home."
+    },
+    {
+      "slug": "florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
+      "title": "Florida Escaped Auburn, But The Yellow Flags Followed It Home",
+      "firstPublishedDate": "2026-09-20T15:21:37.171Z",
+      "primaryHome": "frontPage",
+      "reason": "Buddy Martin's column is immediate postgame analysis of Florida's 44-39 win at Auburn, built around the 16-penalty warning, fresh Sumrall, Philo and Baugh quotes and what must be corrected before the next SEC opponent. Its value is tied to the fresh game result, so Front Page is the single primary editorial home."
+    },
     {
       "slug": "jon-sumrall-postgame-florida-auburn",
       "title": "Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn",
@@ -256,15 +277,15 @@
   ],
   "homepage": {
     "mode": "newestFrontPageFirst",
-    "lead": "jon-sumrall-postgame-florida-auburn",
+    "lead": "jadan-baugh-s-another-day-at-the-office-was-the-difference-against-auburn",
     "secondary": [
-      "no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win",
-      "sumrall-passed-the-test-he-aced-it-next-please-hotty-toddy"
+      "postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1",
+      "florida-escaped-auburn-but-the-yellow-flags-followed-it-home"
     ],
     "hide": [
       "live-now-best-friday-in-football-september-18-2026",
       "watch-live-the-buddy-martin-show-florida-heads-to-auburn-and-the-road-gets-real"
     ],
-    "reason": "The live controller is newest-first for Front Page-eligible stories. The newest lead is the Sumrall postgame press-conference story, followed by the earlier immediate Sumrall warning and Buddy Martin's postgame analysis; Magazine stories and stale live-show promos remain excluded."
+    "reason": "The live controller is newest-first for Front Page-eligible stories. Franz Beard's Jadan Baugh Auburn analysis is now the newest Front Page story, followed by Loren Meadows' postgame analysis and Buddy Martin's yellow-flags column; Magazine stories and stale live-show promos remain excluded."
   }
 }

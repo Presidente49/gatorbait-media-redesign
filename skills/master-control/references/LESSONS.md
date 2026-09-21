@@ -262,3 +262,24 @@ Rules:
 - retire or revise lessons when live evidence contradicts them.
 
 A learning loop should reduce repeated mistakes and unnecessary work, not create another autonomous controller.
+
+
+## 24. Preserve a known-good presentation baseline
+
+When a production surface is visually stable, pin the exact presentation revision before further experiments.
+
+For the GatorBait Front Page, do not mix CSS/JS refs from different commits, do not expose the retired Wix homepage shell underneath the newsroom surface, and do not stack new flash/jump patches over the known-good prepaint + mount sequence.
+
+Content can remain live and dynamic while presentation assets stay pinned.
+
+## 25. One trigger should have one outbound email owner
+
+Two active automations on the same `wix_blog-new_blog_post` trigger create duplicate sends, conflicting links, and attribution noise.
+
+Use stable automation IDs, not friendly names, and keep exactly one intended outbound story-alert workflow active.
+
+## 26. Dashboard-managed Google tags should not be duplicated in custom code
+
+If GA4/Google tagging is managed through Wix dashboard integrations, do not also inject manual `gtag.js`, Tag Manager, or parallel route-specific loaders.
+
+Duplicate tag layers distort analytics and complicate consent/debugging. For AdSense, keep one verified loader only; do not add parallel loaders without measured evidence.

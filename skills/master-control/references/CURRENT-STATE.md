@@ -301,3 +301,63 @@ Configured in the repository on 2026-09-20:
 - production rule: inspect current component IDs -> change draft -> screenshot/verify -> publish only when the active request authorizes the production change.
 - fallback: official Wix REST/MCP remains preferred for Blog, CMS, business data, media and other supported public APIs.
 - local execution/auth state: NOT YET VERIFIED from cloud chat. The local MCP client must reload the repository MCP config, then open/import the user's authenticated Wix Studio editor session.
+
+
+## Known-good game-night homepage baseline — 2026-09-19
+
+Brenden identified the late-game site state, around 9:30–10:00 p.m. ET on September 19, as the preferred production baseline.
+
+- presentation baseline commit: `d03d9d1e0350c55be03df1a8ebed0180c9a74c5d`
+- related live-tracker routing commit: `d1b6da53fa33aead25ce3354dffaadb40ce5a4cd`
+- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
+- loader revision after restoration on 2026-09-20: `35`
+- all four newsroom assets are pinned to the same baseline commit: `wix-live.css`, `wix-live-ui.css`, `wix-live.js`, and `wix-live-ui.js`
+- the newsroom JavaScript continues to fetch the live Wix `/blog-feed.xml`, so this pins the known-good presentation architecture without freezing editorial content or story chronology
+- do not mix asset refs from different commits in the production loader
+- later CSS that reintroduced the native Wix header/footer and changed mobile Latest News card geometry should not replace this baseline without an explicit, verified visual improvement
+
+When troubleshooting front-page regressions, compare against this baseline first instead of layering another override.
+
+
+## Production invariants added 2026-09-20
+
+### Homepage no-jump / no-old-shell rule
+
+The Front Page must keep the known-good late-game architecture from September 19.
+
+- Wix loader embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified revision `35`
+- all four newsroom assets are pinned to `d03d9d1e0350c55be03df1a8ebed0180c9a74c5d`
+- `GBM - Homepage Safe Prepaint Shield v2` remains enabled
+- on the standalone homepage, the baseline stylesheet hides the native Wix `#SITE_HEADER`, `#SITE_PAGES`, and `#SITE_FOOTER` while the newsroom surface owns the visible page
+- do not reintroduce the native Wix homepage shell/header/footer underneath the newsroom layer
+- do not mix newsroom CSS/JS revisions
+- do not add another polling/observer layer to fix a visual flash; preserve deterministic prepaint + single newsroom mount first
+- article and utility routes can continue using the native Wix shell; this rule is specifically for the standalone Front Page
+
+### One blog-post email automation
+
+Exactly one automatic email may run on the `wix_blog-new_blog_post` trigger.
+
+ACTIVE:
+- automation: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`
+- name: `GatorBait Story Alert — New Blog Post`
+- message ID: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`
+- verified revision after activation: `11`
+
+INACTIVE duplicate:
+- automation: `824714d4-7e31-4b1d-95b2-ccec04d788af`
+- name: `Send notification when new blog post is published`
+- message ID: `04550418-33d0-4564-ad25-b865f591b2c0`
+- verified revision after deactivation: `16`
+
+Before changing this flow, query live automation state by IDs. Do not let both become active.
+
+### Google tag ownership
+
+Google analytics/tag configuration is owned in the Wix dashboard. Do not add manual GA4/gtag or Tag Manager code unless Brenden explicitly changes that architecture.
+
+Disabled manual/duplicate layers:
+- `GA4 Analytics - LIVE` custom embed `78a9b413-d3c5-411e-8652-83856a790c2e` — disabled at revision `3`
+- `GBM - AdSense Auto Ads Free Routes v1` custom embed `109a8870-0fb3-4e9f-8b41-cf6c0875472d` — disabled at revision `2`
+
+The existing single `Google AdSense Auto Ads` custom embed `2da582cf-6935-4255-b248-e14add7e82a8` remains enabled at verified revision `7`; do not add a second AdSense loader.

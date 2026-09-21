@@ -35,3 +35,10 @@ Do **not** treat this endpoint as a patch-like partial update even though indivi
 ## Operations rule
 
 Future agents must read the current settings before changing the cookie banner. Never claim consent configuration is fixed solely because the app is installed; `appEnabled` and `enabled` are separate states. Do not re-enable the persistent revisit button unless Brenden explicitly requests it.
+
+
+## Revalidated 2026-09-20
+
+The complete known-good cookie-banner configuration was read from Wix and reapplied as a full settings object on 2026-09-20. Wix returned the intended configuration unchanged: app/banner enabled, all visitors, contributor acknowledgement true, Decline All enabled, policies page linked, custom navy/white theme, revisit button disabled, and the existing Accept All / Decline All / Settings / Privacy Policy controls preserved.
+
+This was a configuration normalization, not a consent bypass. Advertising and Analytics embeds remain in their proper Wix consent categories. If the banner still resurfaces after a visitor makes a choice, diagnose Wix/client consent persistence; do not solve that symptom by disabling the banner, reclassifying ad/analytics scripts as essential, or adding local-storage/CSS suppression.

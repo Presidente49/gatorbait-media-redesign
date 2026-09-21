@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-21T20:03:35.078Z",
+  "capturedAt": "2026-09-21T20:06:04.024Z",
   "runs": [
     {
       "profile": "mobile",
@@ -7,59 +7,18 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-mobile.jpg",
       "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "url": "https://www.gatorbaitmedia.com/",
       "width": 320,
       "findings": [
-        "Header content is clipped: scrollHeight 124 > clientHeight 117",
-        "1+ elements overflow horizontally",
-        "Retired branding present: Monday Chomp"
-      ],
-      "rootClasses": "(none)",
-      "hasNewsroom": false,
-      "newsroomChildren": 0,
-      "nativePagesVisible": true,
-      "header": {
-        "height": 122,
-        "cssHeight": "117.188px",
-        "overflow": "visible",
-        "scrollHeight": 124,
-        "clientHeight": 117
-      },
-      "horizontalOverflow": [
-        {
-          "tag": "div",
-          "id": null,
-          "cls": "consent-banner-buttons gRqfAK i6e3w1",
-          "left": 14,
-          "right": 336
-        }
-      ],
-      "smallTapTargets": 8,
-      "retiredBranding": [
-        "Monday Chomp"
-      ],
-      "docScrollWidth": 320
-    },
-    {
-      "profile": "mobile",
-      "target": "blog",
-      "status": 200,
-      "screenshot": "automation/vision/latest/blog-mobile.jpg",
-      "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 429 ()",
-        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
-      ],
-      "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
-      "width": 320,
-      "findings": [
         "8+ elements overflow horizontally"
       ],
-      "rootClasses": "gbm-blog gbm-tight-footer gbm-latest-clean gbm-hide-blog-follow",
-      "hasNewsroom": false,
-      "newsroomChildren": 0,
-      "nativePagesVisible": true,
+      "rootClasses": "gbm-standalone-live",
+      "hasNewsroom": true,
+      "newsroomChildren": 4,
+      "nativePagesVisible": false,
       "header": {
         "height": 0,
         "cssHeight": "auto",
@@ -68,6 +27,34 @@
         "clientHeight": 0
       },
       "horizontalOverflow": [
+        {
+          "tag": "a",
+          "id": null,
+          "cls": "skip",
+          "left": -9999,
+          "right": -9865
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 266,
+          "right": 423
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 423,
+          "right": 484
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": "join",
+          "left": 484,
+          "right": 538
+        },
         {
           "tag": "aside",
           "id": "gbm-mobile-drawer",
@@ -95,37 +82,47 @@
           "cls": null,
           "left": 345,
           "right": 513
-        },
-        {
-          "tag": "button",
-          "id": null,
-          "cls": "gbm-ms-close",
-          "left": 555,
-          "right": 599
-        },
-        {
-          "tag": "nav",
-          "id": null,
-          "cls": "gbm-ms-nav",
-          "left": 331,
-          "right": 613
-        },
-        {
-          "tag": "a",
-          "id": null,
-          "cls": null,
-          "left": 331,
-          "right": 613
-        },
-        {
-          "tag": "a",
-          "id": null,
-          "cls": null,
-          "left": 331,
-          "right": 613
         }
       ],
       "smallTapTargets": 26,
+      "retiredBranding": [],
+      "docScrollWidth": 320
+    },
+    {
+      "profile": "mobile",
+      "target": "blog",
+      "status": 200,
+      "screenshot": "automation/vision/latest/blog-mobile.jpg",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 ()",
+        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+      ],
+      "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+      "width": 320,
+      "findings": [
+        "1+ elements overflow horizontally"
+      ],
+      "rootClasses": "gbm-blog",
+      "hasNewsroom": false,
+      "newsroomChildren": 0,
+      "nativePagesVisible": true,
+      "header": {
+        "height": 0,
+        "cssHeight": "auto",
+        "overflow": "visible",
+        "scrollHeight": 0,
+        "clientHeight": 0
+      },
+      "horizontalOverflow": [
+        {
+          "tag": "div",
+          "id": null,
+          "cls": "consent-banner-buttons gRqfAK i6e3w1",
+          "left": 14,
+          "right": 336
+        }
+      ],
+      "smallTapTargets": 18,
       "retiredBranding": [],
       "docScrollWidth": 320
     },
@@ -140,7 +137,7 @@
       "url": "https://www.gatorbaitmedia.com/",
       "width": 1280,
       "findings": [
-        "Header content is clipped: scrollHeight 148 > clientHeight 144",
+        "Header content is clipped: scrollHeight 120 > clientHeight 115",
         "Retired branding present: Monday Chomp"
       ],
       "rootClasses": "(none)",
@@ -148,14 +145,14 @@
       "newsroomChildren": 0,
       "nativePagesVisible": true,
       "header": {
-        "height": 149,
-        "cssHeight": "143.938px",
+        "height": 115,
+        "cssHeight": "115.094px",
         "overflow": "visible",
-        "scrollHeight": 148,
-        "clientHeight": 144
+        "scrollHeight": 120,
+        "clientHeight": 115
       },
       "horizontalOverflow": [],
-      "smallTapTargets": 8,
+      "smallTapTargets": 13,
       "retiredBranding": [
         "Monday Chomp"
       ],
@@ -167,8 +164,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/blog-desktop.jpg",
       "consoleErrors": [
-        "pageerror: ReferenceError: wixTagManager is not defined",
-        "Failed to load resource: the server responded with a status of 429 ()"
+        "pageerror: ReferenceError: wixTagManager is not defined"
       ],
       "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
       "width": 1280,
@@ -193,6 +189,33 @@
         "Rob Browne"
       ],
       "docScrollWidth": 1280
+    }
+  ],
+  "urlChecks": [
+    {
+      "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@32127d938ad41b0f78517a0abdec32bf11d576ce/newsroom-preview/wix-live.js",
+      "status": 200,
+      "bytes": 13922
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@d03d9d1e0350c55be03df1a8ebed0180c9a74c5d/newsroom-preview/wix-live.js",
+      "status": 200,
+      "bytes": 16641
+    },
+    {
+      "url": "https://presidente49.github.io/gatorbait-media-redesign/news-sitemap.xml",
+      "status": 200,
+      "bytes": 24479
+    },
+    {
+      "url": "https://presidente49.github.io/gatorbait-media-redesign/posts-sitemap.xml",
+      "status": 200,
+      "bytes": 8470
+    },
+    {
+      "url": "https://presidente49.github.io/gatorbait-media-redesign/sitemap-index.xml",
+      "status": 200,
+      "bytes": 436
     }
   ]
 }

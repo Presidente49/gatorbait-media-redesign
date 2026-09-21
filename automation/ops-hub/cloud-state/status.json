@@ -1,7 +1,7 @@
 {
   "service": "gatorbait-ops-hub",
   "version": 2,
-  "checked_at": "2026-09-21T04:21:04.627915+00:00",
+  "checked_at": "2026-09-21T10:08:41.804533+00:00",
   "ok": false,
   "checks": [
     {
@@ -10,7 +10,7 @@
       "ok": false,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/?ops_health=1",
-      "seconds": 0.34,
+      "seconds": 0.25,
       "error": "missing markers: d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp, gatorbait weekly; missing one of markers: gbm-standalone-live, gbm-newsroom-boot, gbm-prepaint-v2"
     },
     {
@@ -19,7 +19,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/magazine",
-      "seconds": 0.28,
+      "seconds": 0.26,
       "error": ""
     },
     {
@@ -28,7 +28,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/the-buddy-martin-show",
-      "seconds": 0.35,
+      "seconds": 0.27,
       "error": ""
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/policies",
-      "seconds": 0.26,
+      "seconds": 0.3,
       "error": ""
     },
     {
@@ -55,7 +55,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/contact",
-      "seconds": 0.3,
+      "seconds": 0.29,
       "error": ""
     },
     {
@@ -64,27 +64,27 @@
       "ok": true,
       "status": 200,
       "final_url": "https://gatorbait2026.itemorder.com/shop/home/",
-      "seconds": 1.45,
+      "seconds": 2.08,
       "error": ""
     }
   ],
   "controller": {
     "architecture": "single-controller",
-    "phase": "verify",
-    "decision": "verify_again",
-    "reason": "first deterministic failure; confirm before escalation",
+    "phase": "escalate",
+    "decision": "escalate",
+    "reason": "failure persisted after bounded deterministic verification",
     "failed_checks": [
       "Homepage"
     ],
     "failure_fingerprint": "58dd26a4ed743ede",
-    "consecutive_failed_cycles": 1,
-    "next_check_seconds": 90,
+    "consecutive_failed_cycles": 2,
+    "next_check_seconds": 900,
     "model_required": false,
     "production_write_authorized": false
   },
   "learning": {
     "enabled": true,
-    "total_cycles": 6,
+    "total_cycles": 7,
     "healthy_cycles": 5,
     "incident_episodes": 1,
     "tracked_incidents": 1,

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "enabled": true,
-  "total_cycles": 7,
+  "total_cycles": 8,
   "healthy_cycles": 5,
   "incident_episodes": 1,
   "incidents": {
@@ -11,16 +11,16 @@
         "Homepage"
       ],
       "first_seen": "2026-09-21T04:21:04.627915+00:00",
-      "last_seen": "2026-09-21T10:08:41.804533+00:00",
+      "last_seen": "2026-09-21T16:28:49.118482+00:00",
       "episodes": 1,
-      "failed_cycles": 2,
+      "failed_cycles": 3,
       "escalations": 1,
       "recoveries": 0,
       "last_recovered": null
     }
   },
   "candidates": [],
-  "last_updated": "2026-09-21T10:08:41.804533+00:00",
+  "last_updated": "2026-09-21T16:28:49.118482+00:00",
   "policy": {
     "auto_promote_to_doctrine": false,
     "auto_authorize_production_writes": false,

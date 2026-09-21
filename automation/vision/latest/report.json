@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-21T20:10:20.263Z",
+  "capturedAt": "2026-09-21T20:13:27.078Z",
   "runs": [
     {
       "profile": "mobile",
@@ -26,8 +26,8 @@
           "scrollHeight": 124,
           "clientHeight": 117
         },
-        "findingsBefore": 3,
-        "findingsAfter": 3,
+        "findingsBefore": 2,
+        "findingsAfter": 2,
         "resolved": [],
         "introduced": []
       },
@@ -35,7 +35,6 @@
       "width": 320,
       "findings": [
         "Header content is clipped: scrollHeight 124 > clientHeight 117",
-        "1+ elements overflow horizontally",
         "Retired branding present: Monday Chomp"
       ],
       "rootClasses": "(none)",
@@ -58,6 +57,8 @@
           "right": 336
         }
       ],
+      "pageScrollsSideways": false,
+      "offscreenOnly": 1,
       "smallTapTargets": 8,
       "retiredBranding": [
         "Monday Chomp"
@@ -70,8 +71,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/blog-mobile.jpg",
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 429 ()",
-        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/blog-mobile-candidate.jpg",
@@ -97,7 +97,7 @@
       "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
       "width": 320,
       "findings": [
-        "1+ elements overflow horizontally"
+        "18 tap targets under 44px"
       ],
       "rootClasses": "gbm-blog",
       "hasNewsroom": false,
@@ -119,6 +119,8 @@
           "right": 336
         }
       ],
+      "pageScrollsSideways": false,
+      "offscreenOnly": 1,
       "smallTapTargets": 18,
       "retiredBranding": [],
       "docScrollWidth": 320
@@ -129,7 +131,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-desktop.jpg",
       "consoleErrors": [
-        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/home-desktop-candidate.jpg",
@@ -170,6 +172,7 @@
         "clientHeight": 144
       },
       "horizontalOverflow": [],
+      "pageScrollsSideways": false,
       "smallTapTargets": 8,
       "retiredBranding": [
         "Monday Chomp"
@@ -201,8 +204,8 @@
           "scrollHeight": 148,
           "clientHeight": 144
         },
-        "findingsBefore": 2,
-        "findingsAfter": 2,
+        "findingsBefore": 3,
+        "findingsAfter": 3,
         "resolved": [],
         "introduced": []
       },
@@ -210,6 +213,7 @@
       "width": 1280,
       "findings": [
         "Header content is clipped: scrollHeight 148 > clientHeight 144",
+        "64 tap targets under 44px",
         "Retired branding present: Rob Browne"
       ],
       "rootClasses": "gbm-blog",
@@ -224,6 +228,7 @@
         "clientHeight": 144
       },
       "horizontalOverflow": [],
+      "pageScrollsSideways": false,
       "smallTapTargets": 64,
       "retiredBranding": [
         "Rob Browne"

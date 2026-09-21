@@ -1,4 +1,4 @@
-# Live site vision — 2026-09-21T20:10:20.263Z
+# Live site vision — 2026-09-21T20:13:27.078Z
 
 ## URL checks
 
@@ -18,7 +18,6 @@ tap targets under 44px: 8
 
 **Findings**
 - Header content is clipped: scrollHeight 124 > clientHeight 117
-- 1+ elements overflow horizontally
 - Retired branding present: Monday Chomp
 
 Console errors:
@@ -27,7 +26,7 @@ Console errors:
 
 **Candidate fix applied in CI (not live)**
 - header box 117px -> 117px, content 124px -> 124px
-- findings 3 -> 3
+- findings 2 -> 2
 
 ## blog · mobile
 HTTP 200 · viewport 320px · root classes `gbm-blog`
@@ -36,11 +35,10 @@ header 0px rendered, overflow visible, content 0px
 tap targets under 44px: 18
 
 **Findings**
-- 1+ elements overflow horizontally
+- 18 tap targets under 44px
 
 Console errors:
-- `Failed to load resource: the server responded with a status of 429 ()`
-- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+- `Failed to load resource: net::ERR_NAME_NOT_RESOLVED`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
@@ -57,7 +55,7 @@ tap targets under 44px: 8
 - Retired branding present: Monday Chomp
 
 Console errors:
-- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+- `Failed to load resource: net::ERR_NAME_NOT_RESOLVED`
 
 **Candidate fix applied in CI (not live)**
 - header box 144px -> 144px, content 148px -> 148px
@@ -71,6 +69,7 @@ tap targets under 44px: 64
 
 **Findings**
 - Header content is clipped: scrollHeight 148 > clientHeight 144
+- 64 tap targets under 44px
 - Retired branding present: Rob Browne
 
 Console errors:
@@ -79,4 +78,4 @@ Console errors:
 
 **Candidate fix applied in CI (not live)**
 - header box 144px -> 144px, content 148px -> 148px
-- findings 2 -> 2
+- findings 3 -> 3

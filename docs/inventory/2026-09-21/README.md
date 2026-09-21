@@ -46,6 +46,10 @@ is actively maintained — it was refreshed today ("Auto-refresh sitemap
 2026-09-21"). If it is submitted in Search Console, Google News discovery has
 been broken since this morning and nothing would have reported it.
 
+**Scope correction:** the homepage loader pins its assets to **jsDelivr**, not
+GitHub Pages, so this finding does *not* affect the live site. It is a
+sitemap-serving problem only.
+
 **Check first:** open both URLs in a browser. If they 404, confirm in Search
 Console whether either sitemap is submitted.
 
@@ -54,45 +58,59 @@ the root `index.html` into the published directory, or point the Pages
 artifact at a directory that contains both the preview and the sitemaps. One
 commit either way.
 
-### P2 — The production monitor has been crying wolf since the outage. `VERIFIED`
+### P2 — The monitor is telling the truth: the newsroom front page is switched off. `VERIFIED`
 
-`automation/ops-hub/config.json` requires the homepage to contain **one of**:
+**This finding replaces an earlier version of this document, which claimed the
+monitor was raising a false alarm. That was wrong, and the correction matters.**
 
-```
-gbm-standalone-live   gbm-newsroom-boot   gbm-prepaint-v2
-```
+`ops-hub` requires the homepage to contain one of `gbm-standalone-live`,
+`gbm-newsroom-boot`, `gbm-prepaint-v2`, and reports it missing. The first of
+those is the marker of the **current** architecture, not an abandoned one. It
+is missing because the loader that produces it is disabled.
 
-All three are markers of the embeds that were **deliberately disabled** on
-2026-09-15 because they blanked the homepage. The monitor demands the presence
-of the thing the incident response removed, so it can never pass.
-
-Recorded state at 16:28 UTC today:
+Live embed `fdc2127a-845a-4d02-b711-438f1a4a86ce`:
 
 ```
-Overall status: ATTENTION REQUIRED
-Controller: ESCALATE
-Homepage: FAIL (200) — missing one of markers:
-  gbm-standalone-live, gbm-newsroom-boot, gbm-prepaint-v2
+name      GBM - Game Night loader + source mobile fit [SAFE MODE OFF]
+revision  36
+enabled   FALSE
+position  HEAD
 ```
 
-Every other check passes. The site is up; the monitor is wrong.
+Its 670 bytes are four asset references — `wix-live.css`, `wix-live-ui.css`,
+`wix-live.js`, `wix-live-ui.js` — served from jsDelivr, pinned to commit
+`d03d9d1e0350c55be03df1a8ebed0180c9a74c5d`. That is the repo-backed newsroom
+front page. With it off, the homepage falls back to native Wix.
 
-This is worse than having no monitor. Two **real** signals are buried in that
-same failure line:
+**This is the most likely explanation for "the site is super basic and not
+functioning correctly."**
 
-- `GatorBait Weekly` is missing from the homepage. The current newsletter name
-  does not appear on the front page.
-- Hero image `d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp` is missing,
-  which means the homepage hero changed and nobody recorded why.
+The pinned renderer is fail-open and satisfies every condition the Sept 15
+incident doc requires:
 
-**Fix:** delete the `any_required` block. Keep the two real markers and
-investigate them as genuine findings.
+```js
+function mount(posts){
+  if(!home()||!posts||posts.length<4) return;
+  root.innerHTML=build(posts);
+  document.documentElement.classList.add('gbm-standalone-live');
+}
+```
+
+Content is built first; the native site is suppressed only afterwards; any
+early return or thrown exception leaves native Wix visible. `unmount()`
+removes both the class and the root. This is not the pattern that caused the
+outage — it is the corrected version of it.
+
+**Unresolved:** the `[SAFE MODE OFF]` tag appears on 15 embeds. Something
+put this site into a deliberate safe mode and the reason is not recorded
+anywhere in this repository. Re-enabling without knowing why safe mode was
+engaged is the same class of mistake as the original outage.
 
 ### P3 — Four front pages, no source of truth. `VERIFIED`
 
 | Path | Size | Status | Consumer |
 |---|---:|---|---|
-| `newsroom-preview/index.html` | 12.7 KB | data refreshed every 5 min | the **disabled** embed `2cc2735e` |
+| `newsroom-preview/` (`wix-live.*`) | — | **production source of the live front page**, currently disabled | embed `fdc2127a` rev 36 |
 | `studio/` + `studio/landing.html` | 38.9 KB | today's build | reference only per `WIX-STUDIO-TOOLCHAIN.md` |
 | `flagship/index.html` | 28.1 KB | **publicly deployed** | GitHub Pages |
 | `flagship/front-page/index.html` | 39.8 KB | staged, awaiting deploy | GitHub Pages |
@@ -105,11 +123,11 @@ This is the mechanism behind "I don't know which version of the site is
 real." Nothing here is broken; it is unresolved. **One direction should be
 chosen and the others deleted, not left in place.**
 
-### P4 — A five-minute job feeds an audience of nobody. `VERIFIED`
+### P4 — A five-minute job feeds a renderer that is currently switched off. `VERIFIED`
 
 `refresh-newsroom-feed.yml` runs `*/5 * * * *` — **288 runs/day** — pulling
-fresh Wix Blog posts into `newsroom-preview/data/posts.json`. Its only
-consumers are the disabled embed and reference-only prototypes.
+fresh Wix Blog posts into `newsroom-preview/data/posts.json`. It feeds the production newsroom renderer — which is real, and currently
+disabled (P2).
 
 It is not useless, it is mis-wired: it is the exact live-data pipeline the new
 front page needs. `studio/build_front_page.py` currently reads a snapshot I
@@ -153,6 +171,32 @@ documented remedy — self-host a subset — keeps the design.
 Same document requires `content-visibility:auto` on below-fold sections. Not
 implemented.
 
+### P8 — There is an active owner coordination thread nobody replied to. `VERIFIED`
+
+Issue #3, *"Agent coordination thread — live newsroom / membership / author
+follow work"*, 42 comments, last updated 2026-09-20. It is addressed to
+whichever agent is working the repo, names Opus 5 explicitly, and asks for a
+reply stating branch, files touched and anything to review.
+
+Four owner requests in it are still open:
+
+1. Article bylines should be clickable and lead to a writer profile / follow
+   flow for Buddy Martin, Franz Beard and the others.
+2. **Follow on GatorBait must stay distinct from marketing consent.** Email
+   and SMS alerts are explicit opt-ins, never silently bundled into a follow
+   click.
+3. Membership UX is confusing — surface an obvious **Manage Membership /
+   Billing & Cancellation** path and make cancellation discoverable for
+   recurring plans.
+4. Do not overwrite live newsroom production files without checking the thread.
+
+Items 2 and 3 are consent and cancellation-transparency obligations, not
+features. They have been open since Sept 14.
+
+The thread also states a production source of truth that is now out of date:
+it names embed `GBM - Standalone Newsroom Live v1`, which was disabled the
+following day.
+
 ---
 
 ## 2. What is actually live right now
@@ -161,6 +205,9 @@ implemented.
 
 Wix site `18fb3a4e-d7f6-414a-aeb9-3047db3ea115`, Premium, custom domain,
 Velo enabled, 4,528 published posts across 28 categories.
+
+**Correction: the site has 41 custom embeds, not the 8 an earlier pass of
+this document listed. Only 10 are enabled.**
 
 | Custom embed | State |
 |---|---|
@@ -173,6 +220,9 @@ Velo enabled, 4,528 published posts across 28 categories.
 | Homepage Safe Prepaint Shield v2 | **OFF** — documented outage cause, permanently off |
 | GA4 Analytics LIVE | OFF |
 | Standalone Newsroom Live (`2cc2735e`) | **OFF** — outage fail-safe |
+| **Game Night / Newsroom loader (`fdc2127a`) rev 36** | **OFF** — the repo-backed front page (P2) |
+| FB Pixel ViewContent, News SEO, Smart 404, Policies, Compact Mobile Typography | ON (BODY_END) |
+| 31 further embeds | OFF, 15 of them tagged `[SAFE MODE OFF]` |
 
 ### On GitHub Pages `INFERRED`
 
@@ -222,7 +272,7 @@ updates it.** Unresolved — see open questions.
 | `docs/` | 21 | 172 K | standards, incidents, audits, Studio briefs | reference |
 | `flagship/` | 2 | 76 K | Codex prototype + today's front page | **deployed** |
 | `newsletter/` | 2 | 28 K | Sept 18 Auburn magazine email (HTML + MJML) | reference |
-| `newsroom-preview/` | 14 | 160 K | standalone newsroom + live feed | feed live, UI dead (P4) |
+| `newsroom-preview/` | 14 | 160 K | **live production front-end source** + 5-min feed | **production**, renderer disabled (P2) |
 | `skills/` | 14 | 172 K | master-control + 6 specialist skills | **live** — CLAUDE.md entrypoint |
 | `studio/` | 15 | 196 K | Studio product build + new front page | active |
 | root `*.xml`, `index.html` | 4 | 40 K | sitemap host | **broken** (P1) |

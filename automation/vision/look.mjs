@@ -70,7 +70,15 @@ function audit() {
     }
   });
   out.horizontalOverflow = overflowing;
-  if (overflowing.length) out.findings.push(`${overflowing.length}+ elements overflow horizontally`);
+  // Only a finding when it actually widens the document. An element parked
+  // past the right edge is usually a closed off-canvas drawer doing its job,
+  // and flagging those as defects is a false positive.
+  out.pageScrollsSideways = document.documentElement.scrollWidth > innerWidth + 2;
+  if (overflowing.length && out.pageScrollsSideways) {
+    out.findings.push(`${overflowing.length}+ elements push the page wider than the screen`);
+  } else if (overflowing.length) {
+    out.offscreenOnly = overflowing.length;
+  }
 
   // Tap targets smaller than the 44px guideline.
   let small = 0;
@@ -79,6 +87,7 @@ function audit() {
     if (r.width > 0 && r.height > 0 && (r.height < 44 || r.width < 24)) small++;
   });
   out.smallTapTargets = small;
+  if (small > 10) out.findings.push(`${small} tap targets under 44px`);
 
   out.retiredBranding = ['Monday Chomp', 'Quick Chomps', 'Sidelines', 'Rob Browne']
     .filter((s) => document.body.innerText.includes(s));
@@ -87,9 +96,6 @@ function audit() {
   }
 
   out.docScrollWidth = document.documentElement.scrollWidth;
-  if (document.documentElement.scrollWidth > innerWidth + 2) {
-    out.findings.push('Page scrolls horizontally');
-  }
   return out;
 }
 

@@ -21,6 +21,8 @@ from string import Template
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data", "front-page.json")
 OUT = os.path.join(HERE, "landing.html")
+PREVIEW_OUT = os.path.join(
+    os.path.dirname(HERE), "flagship", "front-page", "index.html")
 
 AP_MONTHS = {
     1: "Jan.", 2: "Feb.", 3: "March", 4: "April", 5: "May", 6: "June",
@@ -308,6 +310,26 @@ def main():
         fh.write(html)
     print("wrote %s (%d bytes)" % (OUT, len(html)))
 
+    # --- standalone document for the public GitHub Pages preview -----------
+    # The artifact build is a fragment (the viewer supplies the skeleton).
+    # Pages serves a real document, so head material moves into <head> and the
+    # page declares itself a preview: noindex plus a canonical pointing at the
+    # live site, so this copy can never compete with gatorbaitmedia.com for the
+    # same headlines.
+    head_part, body_part = html.split("<!--/head-->", 1)
+    doc = STANDALONE.substitute(
+        head=head_part.strip(),
+        body=body_part.strip(),
+        desc=escape(
+            "Florida Gators coverage from GatorBait Media — Buddy Martin, "
+            "Franz Beard, Loren Meadows and Eddie Gilley."
+        ),
+    )
+    os.makedirs(os.path.dirname(PREVIEW_OUT), exist_ok=True)
+    with open(PREVIEW_OUT, "w") as fh:
+        fh.write(doc)
+    print("wrote %s (%d bytes)" % (PREVIEW_OUT, len(doc)))
+
 
 PAGE = r"""<title>GatorBait Media</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -586,7 +608,7 @@ p{margin:0}
   *{animation-duration:.01ms!important; transition-duration:.01ms!important}
 }
 </style>
-
+<!--/head-->
 <div class="status">
   <div class="wrap status__in">
     <span class="status__team">Florida</span>
@@ -697,6 +719,33 @@ p{margin:0}
   </div>
 </footer>
 """
+
+
+STANDALONE = Template("""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="$desc">
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://www.gatorbaitmedia.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GatorBait Media">
+<meta property="og:title" content="GatorBait Media">
+<meta property="og:description" content="$desc">
+<meta property="og:url" content="https://www.gatorbaitmedia.com/">
+<meta name="theme-color" content="#061436">
+$head
+<style>
+/* the Pages document supplies what the artifact viewer would otherwise set */
+html{color-scheme:light dark}
+</style>
+</head>
+<body>
+$body
+</body>
+</html>
+""")
 
 
 if __name__ == "__main__":

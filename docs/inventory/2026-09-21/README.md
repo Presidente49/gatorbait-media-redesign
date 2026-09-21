@@ -301,6 +301,20 @@ the toolchain doc's preferred Studio workflow cannot be used yet.
 
 ---
 
+### P9 — Six scripts rewrite the homepage at once. `VERIFIED`
+
+Five enabled embeds mutate homepage structure (`SITE_PAGES` / `SITE_HEADER` /
+root classes), carrying four MutationObservers and six delayed re-injections
+between them. Enabling the newsroom loader as a sixth made the page flip
+visibly between layers; it was reverted within minutes.
+
+The native-homepage stylers and the newsroom replacement are mutually exclusive
+strategies for one surface. `CLAUDE.md` already requires one production writer.
+
+Full record: `docs/INCIDENT-2026-09-21-MULTI-WRITER-HOMEPAGE.md`.
+
+---
+
 ## 5. Recommended order of work
 
 1. Confirm and fix the sitemap host (P1). One commit. Do this first — it is

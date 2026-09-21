@@ -1,17 +1,17 @@
 {
   "service": "gatorbait-ops-hub",
   "version": 2,
-  "checked_at": "2026-09-20T23:56:11.970456+00:00",
-  "ok": true,
+  "checked_at": "2026-09-21T04:21:04.627915+00:00",
+  "ok": false,
   "checks": [
     {
       "name": "Homepage",
       "url": "https://www.gatorbaitmedia.com/?ops_health=1",
-      "ok": true,
+      "ok": false,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/?ops_health=1",
-      "seconds": 0.33,
-      "error": ""
+      "seconds": 0.34,
+      "error": "missing markers: d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp, gatorbait weekly; missing one of markers: gbm-standalone-live, gbm-newsroom-boot, gbm-prepaint-v2"
     },
     {
       "name": "Magazine",
@@ -19,7 +19,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/magazine",
-      "seconds": 0.34,
+      "seconds": 0.28,
       "error": ""
     },
     {
@@ -28,7 +28,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/the-buddy-martin-show",
-      "seconds": 0.38,
+      "seconds": 0.35,
       "error": ""
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/policies",
-      "seconds": 0.29,
+      "seconds": 0.26,
       "error": ""
     },
     {
@@ -55,7 +55,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/contact",
-      "seconds": 0.31,
+      "seconds": 0.3,
       "error": ""
     },
     {
@@ -64,28 +64,30 @@
       "ok": true,
       "status": 200,
       "final_url": "https://gatorbait2026.itemorder.com/shop/home/",
-      "seconds": 1.77,
+      "seconds": 1.45,
       "error": ""
     }
   ],
   "controller": {
     "architecture": "single-controller",
-    "phase": "observe",
-    "decision": "no_action",
-    "reason": "deterministic checks are healthy",
-    "failed_checks": [],
-    "failure_fingerprint": "",
-    "consecutive_failed_cycles": 0,
-    "next_check_seconds": 900,
+    "phase": "verify",
+    "decision": "verify_again",
+    "reason": "first deterministic failure; confirm before escalation",
+    "failed_checks": [
+      "Homepage"
+    ],
+    "failure_fingerprint": "58dd26a4ed743ede",
+    "consecutive_failed_cycles": 1,
+    "next_check_seconds": 90,
     "model_required": false,
     "production_write_authorized": false
   },
   "learning": {
     "enabled": true,
-    "total_cycles": 5,
+    "total_cycles": 6,
     "healthy_cycles": 5,
-    "incident_episodes": 0,
-    "tracked_incidents": 0,
+    "incident_episodes": 1,
+    "tracked_incidents": 1,
     "review_candidates": 0,
     "auto_promote_to_doctrine": false,
     "auto_authorize_production_writes": false

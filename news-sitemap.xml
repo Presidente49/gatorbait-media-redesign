@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-3-0-1-0-v-auburn-tigers-2-1-0-1</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-20T15:49:03Z</news:publication_date>
+      <news:title>Postgame Analysis: Florida Gators (3-0,1-0) v. Auburn Tigers (2-1, 0-1)</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/florida-escaped-auburn-but-the-yellow-flags-followed-it-home</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-20T15:21:37.171000Z</news:publication_date>
+      <news:title>Florida Escaped Auburn, But The Yellow Flags Followed It Home</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/jon-sumrall-postgame-florida-auburn</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-20T08:14:12.271000Z</news:publication_date>
+      <news:title>Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win</loc>
     <news:news>
       <news:publication>
@@ -516,39 +549,6 @@
       </news:publication>
       <news:publication_date>2026-09-04T22:47:33.660000Z</news:publication_date>
       <news:title>Opening Night 2026 In The Swamp: Butterflies, Belief And A New Gators Era</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/florida-football-week-1-preview-florida-gators-0-0-0-0-vs-fau-owls-0-0-0-0</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-04T04:08:15Z</news:publication_date>
-      <news:title>Florida Football: Week 1 Preview Florida Gators (0-0,0-0) vs. FAU Owls (0-0,0-0)</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/the-sec-to-lane-kiffin-and-lsu-up-your-nose-with-a-rubber-hose</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-04T00:33:25Z</news:publication_date>
-      <news:title>The SEC to Lane Kiffin and LSU: "Up your nose with a rubber hose!"</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/with-or-without-denzel-aberdeen-the-gators-will-still-be-favored-to-win-it-all</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-03T14:59:13Z</news:publication_date>
-      <news:title>With or without Denzel Aberdeen, the Gators will still be favored to win it all</news:title>
     </news:news>
   </url>
 </urlset>

@@ -3,7 +3,7 @@
 // structured report. This session's sandbox is blocked from the site by network
 // policy, so CI is the only way to actually see what visitors see.
 import { chromium, devices } from 'playwright';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, existsSync, readFileSync } from 'node:fs';
 
 const OUT = 'automation/vision/latest';
 mkdirSync(OUT, { recursive: true });
@@ -144,12 +144,35 @@ for (const profile of PROFILES) {
     await page.screenshot({ path: shot, type: 'jpeg', quality: 62, fullPage: false });
 
     const audited = await page.evaluate(audit);
+
+    // Candidate fixes are tried against the REAL page here, in CI, and only
+    // judged from the resulting screenshot. Nothing is applied to the site.
+    let candidate = null;
+    const CAND = 'automation/vision/candidate.css';
+    if (existsSync(CAND)) {
+      const css = readFileSync(CAND, 'utf8');
+      await page.addStyleTag({ content: css });
+      await page.waitForTimeout(1200);
+      const afterShot = `${OUT}/${target.name}-${profile.name}-candidate.jpg`;
+      await page.screenshot({ path: afterShot, type: 'jpeg', quality: 62, fullPage: false });
+      const afterAudit = await page.evaluate(audit);
+      candidate = {
+        screenshot: afterShot,
+        headerBefore: audited.header || null,
+        headerAfter: afterAudit.header || null,
+        findingsBefore: audited.findings.length,
+        findingsAfter: afterAudit.findings.length,
+        resolved: audited.findings.filter(function (f) { return !afterAudit.findings.includes(f); }),
+        introduced: afterAudit.findings.filter(function (f) { return !audited.findings.includes(f); }),
+      };
+    }
     report.runs.push({
       profile: profile.name,
       target: target.name,
       status,
       screenshot: shot,
       consoleErrors: consoleErrors.slice(0, 6),
+      candidate,
       ...audited,
     });
     await context.close();
@@ -174,6 +197,16 @@ for (const r of report.runs) {
   lines.push(`tap targets under 44px: ${r.smallTapTargets}`);
   lines.push(r.findings.length ? '\n**Findings**\n' + r.findings.map((f) => '- ' + f).join('\n') : '\nNo findings.');
   if (r.consoleErrors.length) lines.push('\nConsole errors:\n' + r.consoleErrors.map((e) => '- `' + e + '`').join('\n'));
+  if (r.candidate) {
+    const c = r.candidate;
+    lines.push('\n**Candidate fix applied in CI (not live)**');
+    if (c.headerBefore && c.headerAfter) {
+      lines.push(`- header box ${c.headerBefore.clientHeight}px -> ${c.headerAfter.clientHeight}px, content ${c.headerBefore.scrollHeight}px -> ${c.headerAfter.scrollHeight}px`);
+    }
+    lines.push(`- findings ${c.findingsBefore} -> ${c.findingsAfter}`);
+    if (c.resolved.length) lines.push('- RESOLVED: ' + c.resolved.join('; '));
+    if (c.introduced.length) lines.push('- INTRODUCED: ' + c.introduced.join('; '));
+  }
   lines.push('');
 }
 writeFileSync(`${OUT}/REPORT.md`, lines.join('\n'));

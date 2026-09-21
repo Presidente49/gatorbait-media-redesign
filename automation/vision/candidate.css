@@ -1,0 +1,8 @@
+/* Candidate fix — NOT live. CI applies this to the real page and screenshots
+   the result so the change can be judged before any embed is edited.
+   Target: the header clip measured at 124px of content inside a 117px box.
+   #comp-mmz3w23y is the brand box. It is forced overflow:hidden while the logo
+   inside it is height:auto / max-height:none, so the logo renders at full size
+   and the box cuts it off. Let the box size to its content instead. */
+#SITE_HEADER #comp-mmz3w23y{overflow:visible!important;height:auto!important;min-height:0!important}
+#SITE_HEADER #comp-mmz3w23y h1{overflow:visible!important}

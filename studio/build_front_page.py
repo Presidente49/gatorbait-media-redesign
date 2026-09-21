@@ -87,6 +87,16 @@ def meta(post):
     return '<p class="meta">%s</p>' % escape(" · ".join(bits))
 
 
+def newest_first(posts):
+    """Order any module by publication date, newest first.
+
+    GatorBait coverage tracks a game schedule, so a reader scanning any block
+    is reading a timeline. Modules are therefore never hand-ordered — the
+    selection above picks which stories appear, this decides the sequence.
+    """
+    return sorted(posts, key=lambda p: p["date"], reverse=True)
+
+
 def main():
     with open(DATA) as fh:
         d = json.load(fh)
@@ -104,6 +114,20 @@ def main():
     columns = [by_id["thoughts"], by_id["vb3"], by_id["readiness"], by_id["by-the-numbers"]]
     show = [by_id["best-friday"], by_id["rutledge-show"], by_id["trenches"]]
     magazine = [by_id["fourteen-days"], by_id["rutledge-feature"]]
+
+    shoulder = newest_first(shoulder)
+    strip = newest_first(strip)
+    river = newest_first(river)
+    briefs = newest_first(briefs)
+    columns = newest_first(columns)
+    show = newest_first(show)
+    magazine = newest_first(magazine)
+
+    # the lead must be the newest story on the page, not merely the newest in
+    # its own block — verify rather than assume
+    newest = newest_first(d["posts"])[0]
+    assert lead["date"] >= newest["date"], (
+        "lead %s is older than %s" % (lead["id"], newest["id"]))
 
     _, year = ap_date(lead["date"])
     today, _ = ap_date(d["captured"])
@@ -203,9 +227,11 @@ def main():
 <article class="brief">
   <p class="brief__who">{who}</p>
   <h3 class="brief__hed">{hed}</h3>
+  {meta}
 </article>""".format(
             who=escape(p["kicker"]),
             hed=a(p, escape(p["title"])),
+            meta=meta(p),
         )
         for p in briefs
     )
@@ -455,6 +481,7 @@ p{margin:0}
   text-transform:uppercase; letter-spacing:.16em; color:var(--orange-ink); margin-bottom:4px;
 }
 .brief__hed{font-family:var(--display); font-weight:500; font-size:17px; line-height:1.2; letter-spacing:-.006em}
+.brief .meta{margin-top:6px; font-size:11.5px}
 
 /* ---------- four-across strip ------------------------------------------- */
 .strip{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:26px}

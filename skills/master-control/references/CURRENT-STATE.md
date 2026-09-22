@@ -385,15 +385,27 @@ The existing single `Google AdSense Auto Ads` custom embed `2da582cf-6935-4255-b
 The production `/magazine` route now uses the dynamic live-issue presentation.
 
 - Wix custom embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`
-- live revision: `16`
-- name: `GBM - Magazine Live Issue v6`
+- live revision: `17`
+- name: `GBM - Magazine Live Issue v6.1 (Buddy cover)`
 - state: **ENABLED**
 - asset commit: `5667c8fee6267eaa7cd6e1554082f28fb824d2b6`
 - assets:
   - `newsroom-preview/magazine-live.css`
   - `newsroom-preview/magazine-live.js`
-- the page reads the live Wix blog feed, sorts newest-first, and builds a current cover story + cover lines + inside-the-issue cards automatically
+- the page reads the live Wix blog feed and stays current automatically
+- editorial cover rule: the newest Buddy Martin story is the Magazine cover/lead; all remaining stories continue newest-first underneath
 - no Auburn-only or September-history story set is hard-coded into the magazine
 - season reference links to the evergreen internal `Florida Gators 2026 Roster and Schedule` article
 - GatorBait TV and Store remain visible destinations
 - the approved unified mobile shell remains the mobile navigation owner on `/magazine`
+
+
+### Buddy Martin morning email — 2026-09-22
+
+- campaign ID: `85b1030d-e4db-483e-aa4e-4a2ff8d86cd0`
+- subject: `Buddy Martin: Florida–Ole Miss Week Is Here`
+- audience: `custom.gatorbait-active-email-audience`
+- campaign publish accepted by Wix Email Marketing
+- primary story: `Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All`
+- secondary Buddy story: `The Med School Dropout Who Made Auburn Bleed Orange and Blue`
+- do not duplicate this exact send unless performance review explicitly calls for a resend/non-opener campaign

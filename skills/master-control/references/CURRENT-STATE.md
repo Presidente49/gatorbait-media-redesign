@@ -423,3 +423,22 @@ The production `/magazine` route now uses the dynamic live-issue presentation.
 - Site fixer: `5a43ae83-690e-4933-971d-4837db00b2f3`, revision `15`; organization schema no longer includes the street address.
 - Newsroom loader: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, revision `49`; duplicate newsroom footer removed.
 - No enabled custom embed currently contains `1524 SE 22nd Ave` or `Ocala, FL 34471`.
+
+## Cross-chat operations sync — 2026-09-22
+
+Recent GatorBait controller/revenue/site chats were normalized into the shared control plane so future operators do not depend on chat memory.
+
+- Shared communications/QC playbook: `automation/ops-hub/playbooks/controller-communications-qc.md`.
+- Active hourly automation: **GatorBait Revenue Watch**, automation ID `6aaedfcea89081918975991d5454a402`.
+- Revenue Watch now operates as an ops workflow, not a repetitive alert. Unchanged known incidents should be maintained silently.
+- Current AdSense/GA4 monetization incident: GitHub issue **#30** — `Ops incident: AdSense Auto Ads reporting zero after confirmed traffic`.
+- Persistent technical defects use one owned work item/issue. New evidence, attempted fixes, blockers and verification results go there; duplicate issues/alerts are avoided.
+- Recursive QC contract: **observe → compare → diagnose → act once → verify primary → verify independently → record → recheck next cycle**.
+- Learning contract: count incident episodes rather than poll iterations; record recoveries; promote only repeated/measured/structural lessons after review; learned state does not expand approval boundaries.
+- Human/dashboard-only blockers must be marked **HUMAN ACTION REQUIRED** with the exact path/test/evidence needed.
+- Google tag ownership remains Wix-dashboard-first. The single enabled AdSense embed is `2da582cf-6935-4255-b248-e14add7e82a8`; the manual GA4 embed `78a9b413-d3c5-411e-8652-83856a790c2e` and old route-specific AdSense loader `109a8870-0fb3-4e9f-8b41-cf6c0875472d` remain disabled unless live state later proves otherwise.
+- Do not add another AdSense product, duplicate Google script or manual ad unit as a troubleshooting shortcut.
+- Email/social amplification remains performance-gated. Editorial instinct alone is not enough when current traffic/conversion evidence exists.
+- Brenden expressed a preference for paid-upfront membership rather than free trial, but no trial/pricing policy change has been authorized or applied from that discussion; pricing/trial/cancellation changes remain approval-required.
+- Locked homepage/mobile architecture remains authoritative. Other workflows must not override newest-first Front Page chronology, the known-good no-jump shell, or the current Magazine operating rules with a competing presentation layer.
+

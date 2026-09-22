@@ -14,6 +14,8 @@ Do not load model-router/FCC/n8n documentation unless the task actually uses tho
 
 For article publishing, blog-email automation, or Magazine campaign work, load `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md` and verify live automation identity by ID + origin + message/action ID. Friendly names have been misleading before.
 
+For homepage/front-page work, load `docs/HOMEPAGE-BASELINE-LOCK.md` before changing anything. The standalone Newsroom is the locked production default. Do not expose the old Wix shell, Today's Edition, or Monday Chomp, and do not materially alter that presentation without explicit Brenden approval.
+
 ## Operating loop
 
 `OBSERVE → SCOPE → CLASSIFY → PLAN → ACT → VERIFY → RECORD → LEARN`

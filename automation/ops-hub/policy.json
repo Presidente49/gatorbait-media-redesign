@@ -20,7 +20,32 @@
     "learning": {
       "record_measured_outcomes": true,
       "promote_repeated_safe_patterns_to_playbooks_only_after_review": true,
-      "never_self_modify_safety_financial_or_approval_boundaries": true
+      "never_self_modify_safety_financial_or_approval_boundaries": true,
+      "count_incident_episodes_not_poll_iterations": true,
+      "record_recoveries": true,
+      "reuse_verified_fix_before_new_dependency": true
+    },
+    "communications": {
+      "canonical_handoff": "automation/ops-hub/playbooks/controller-communications-qc.md",
+      "persistent_incidents_use_single_work_item": true,
+      "dedupe_repeated_unchanged_alerts": true,
+      "owner_notifications_on_material_change_or_human_blocker": true
+    },
+    "quality_control": {
+      "loop": [
+        "observe_live_state",
+        "compare_with_expected_and_previous_verified_state",
+        "diagnose",
+        "act_once_if_authorized",
+        "verify_primary",
+        "verify_independent",
+        "record_outcome",
+        "recheck_next_cycle"
+      ],
+      "max_production_mutations_per_cycle": 1,
+      "independent_post_change_verification": true,
+      "stop_on_human_or_approval_blocker": true,
+      "no_op_when_no_material_change": true
     }
   },
   "automatic": [
@@ -38,7 +63,8 @@
     "generate SEO metadata, tracking tags and campaign identifiers for routine organic content",
     "route website visitors to the most valuable verified destination such as a current YouTube show, article, membership page or store offer",
     "measure organic campaign performance and record learnings for future editorial and marketing decisions",
-    "perform reversible low-risk production maintenance covered by an existing approved playbook and rollback path"
+    "perform reversible low-risk production maintenance covered by an existing approved playbook and rollback path",
+    "maintain existing technical incident work items with fresh evidence while suppressing duplicate unchanged alerts"
   ],
   "approval_required": [
     "send a non-routine or sensitive customer reply",
@@ -61,7 +87,8 @@
     "silently rewrite core safety, financial or approval boundaries based on performance data",
     "hide material membership, billing or cancellation terms",
     "allow a specialist model or workflow to become an independent production writer",
-    "treat a model's claim that work is fixed as verification"
+    "treat a model's claim that work is fixed as verification",
+    "spam the owner with identical scheduled alerts when the underlying state has not materially changed"
   ],
-  "autopilot_principle": "Brenden supplies goals and exceptions. The GatorBait controller owns scope, policy, state, writes, verification and learning. Deterministic checks run first; models and specialist workflows return bounded evidence or drafts to the controller. Routine approved work may proceed inside these boundaries, while approval_required conditions escalate to Brenden."
+  "autopilot_principle": "Brenden supplies goals and exceptions. The GatorBait controller owns scope, policy, state, writes, verification, communications routing and bounded learning. Deterministic checks run first; models and specialist workflows return bounded evidence or drafts to the controller. Persistent defects converge on one owned work item, authorized changes get independent post-change verification, and unchanged scheduled checks may resolve to NOOP. Routine approved work may proceed inside these boundaries, while approval_required conditions escalate to Brenden."
 }

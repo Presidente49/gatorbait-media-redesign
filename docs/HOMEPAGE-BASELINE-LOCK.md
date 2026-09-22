@@ -2,7 +2,7 @@
 
 **Status:** CANONICAL DEFAULT  
 **Locked by owner:** 2026-09-22
-**Current approved refinement:** compact header spacing, 2026-09-22  
+**Current approved refinement:** compact header spacing + strict newest-first story chronology, 2026-09-22  
 **Applies to:** production homepage `/` on `gatorbaitmedia.com`
 
 ## Default production homepage
@@ -13,14 +13,14 @@ This is the default production state. It is not an experiment, temporary fallbac
 
 ### Presentation baseline
 
-- Baseline commit: `42156d3c3bee9c6a97743f6d09f9e828706e162e`
+- Baseline commit: `09e6eebadf29ad02237c8a5ceab627c07bf7da36`
 - All four newsroom presentation assets stay pinned to that same commit:
   - `newsroom-preview/wix-live.css`
   - `newsroom-preview/wix-live-ui.css`
   - `newsroom-preview/wix-live.js`
   - `newsroom-preview/wix-live-ui.js`
 - Newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-  - live verified revision after header cleanup: `42`
+  - live verified revision after chronology cleanup: `44`
   - required state: **ENABLED**
 - Homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`
   - live verified revision after restore: `17`

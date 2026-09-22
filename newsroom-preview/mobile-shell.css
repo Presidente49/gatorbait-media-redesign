@@ -1,62 +1,39 @@
-/* GatorBait unified mobile shell — repo source of truth */
-:root{--gbm-navy:#08132f;--gbm-blue:#0021a5;--gbm-orange:#fa4616;--gbm-cream:#f2efe6;--gbm-line:#d7dde7}
+/* GatorBait unified mobile shell — restored approved control */
+:root{--gbm-navy:#08132f;--gbm-blue:#0021a5;--gbm-orange:#fa4616;--gbm-line:#d7dde7}
 #gbm-mobile-shell,#gbm-mobile-drawer-root{display:none}
 @media(max-width:820px){
   html,body{max-width:100%;overflow-x:hidden}
   #SITE_HEADER{display:none!important}
-  #gbm-mobile-shell{display:flex;position:sticky;top:0;z-index:2147481500;min-height:64px;padding:8px 12px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;background:#fff;border-top:4px solid var(--gbm-orange);border-bottom:1px solid #dfe4ec;box-shadow:0 3px 12px rgba(8,19,47,.08)}
-  #gbm-mobile-shell .gbm-ms-logo{display:block;width:min(190px,54vw);line-height:0;flex:0 1 auto}
-  #gbm-mobile-shell .gbm-ms-logo img{display:block;width:100%;height:auto;max-height:48px;object-fit:contain;object-position:left center}
-  #gbm-mobile-shell .gbm-ms-trigger{appearance:none;border:1px solid #b8c1d0;background:#fff;color:var(--gbm-navy);min-width:78px;height:44px;padding:0 12px;border-radius:3px;display:flex;align-items:center;justify-content:center;gap:8px;font:900 12px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+  #gbm-mobile-shell{display:flex;position:sticky;top:0;z-index:2147481500;min-height:60px;padding:7px 10px;box-sizing:border-box;align-items:center;justify-content:space-between;gap:12px;background:#fff;border-top:4px solid var(--gbm-orange);border-bottom:1px solid #dfe4ec;box-shadow:0 3px 12px rgba(8,19,47,.08)}
+  #gbm-mobile-shell .gbm-ms-logo{display:block;width:min(180px,52vw);line-height:0;flex:0 1 auto}
+  #gbm-mobile-shell .gbm-ms-logo img{display:block;width:100%;height:auto;max-height:44px;object-fit:contain;object-position:left center}
+  #gbm-mobile-shell .gbm-ms-trigger{appearance:none;border:1px solid #b8c1d0;background:#fff;color:var(--gbm-navy);min-width:72px;height:40px;padding:0 10px;border-radius:4px;display:flex;align-items:center;justify-content:center;gap:8px;font:900 11px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
   #gbm-mobile-shell .gbm-ms-trigger:focus-visible{outline:3px solid #ffb49e;outline-offset:2px}
-  #gbm-mobile-shell .gbm-ms-bars{width:18px;height:14px;display:grid;align-content:space-between}
+  #gbm-mobile-shell .gbm-ms-bars{width:17px;height:13px;display:grid;align-content:space-between}
   #gbm-mobile-shell .gbm-ms-bars i{display:block;height:2px;background:var(--gbm-blue);border-radius:2px}
   #gbm-mobile-drawer-root{display:block;position:fixed;inset:0;z-index:2147482500;pointer-events:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
   #gbm-mobile-drawer-root .gbm-ms-backdrop{position:absolute;inset:0;background:rgba(8,19,47,.56);opacity:0;transition:opacity .2s ease}
-  #gbm-mobile-drawer-root .gbm-ms-panel{position:absolute;top:0;right:0;width:min(88vw,360px);height:100dvh;max-width:100%;box-sizing:border-box;background:#fff;transform:translateX(104%);transition:transform .24s ease;display:flex;flex-direction:column;overflow:auto;box-shadow:-18px 0 48px rgba(8,19,47,.22)}
+  #gbm-mobile-drawer-root .gbm-ms-panel{position:absolute;top:0;right:0;width:min(88vw,350px);height:100dvh;max-width:100%;box-sizing:border-box;background:#fff;transform:translateX(104%);transition:transform .24s ease;display:flex;flex-direction:column;overflow:auto;box-shadow:-18px 0 48px rgba(8,19,47,.22)}
   html.gbm-mobile-menu-open,html.gbm-mobile-menu-open body{overflow:hidden!important}
   html.gbm-mobile-menu-open #gbm-mobile-drawer-root{pointer-events:auto}
   html.gbm-mobile-menu-open #gbm-mobile-drawer-root .gbm-ms-backdrop{opacity:1}
   html.gbm-mobile-menu-open #gbm-mobile-drawer-root .gbm-ms-panel{transform:translateX(0)}
-  .gbm-ms-head{min-height:72px;padding:12px 14px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:4px solid var(--gbm-orange);border-bottom:1px solid #dfe4ec}
-  .gbm-ms-head img{display:block;width:168px;max-width:58vw;height:auto}
-  .gbm-ms-close{appearance:none;width:44px;height:44px;border:1px solid #bcc5d2;background:#fff;color:var(--gbm-navy);border-radius:50%;font:400 30px/1 Arial,sans-serif;cursor:pointer}
+  .gbm-ms-head{min-height:66px;padding:10px 14px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:4px solid var(--gbm-orange);border-bottom:1px solid #dfe4ec}
+  .gbm-ms-head img{display:block;width:158px;max-width:56vw;height:auto}
+  .gbm-ms-close{appearance:none;width:40px;height:40px;border:1px solid #bcc5d2;background:#fff;color:var(--gbm-navy);border-radius:50%;font:400 27px/1 Arial,sans-serif;cursor:pointer}
   .gbm-ms-close:focus-visible{outline:3px solid #ffb49e;outline-offset:2px}
-  .gbm-ms-nav{display:grid;padding:8px 0 0}
-  .gbm-ms-nav a,.gbm-ms-nav button{appearance:none;display:flex;align-items:center;width:100%;min-height:50px;box-sizing:border-box;padding:0 20px;border:0;border-bottom:1px solid #e4e8ef;background:#fff;color:var(--gbm-navy)!important;text-decoration:none!important;text-align:left;font:800 16px/1.15 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;cursor:pointer}
+  .gbm-ms-nav{display:grid;padding:6px 0 0}
+  .gbm-ms-nav a{appearance:none;display:flex;align-items:center;width:100%;min-height:48px;box-sizing:border-box;padding:0 20px;border:0;border-bottom:1px solid #e4e8ef;background:#fff;color:var(--gbm-navy)!important;text-decoration:none!important;text-align:left;font:800 15px/1.15 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
   .gbm-ms-nav a[aria-current="page"]{border-left:4px solid var(--gbm-orange);padding-left:16px;background:#f4f6f9}
-  .gbm-ms-nav .gbm-ms-join{margin:12px 16px 4px;width:calc(100% - 32px);min-height:48px;border:0;background:var(--gbm-orange);color:var(--gbm-navy)!important;justify-content:center;text-align:center;text-transform:uppercase;letter-spacing:.04em}
-  .gbm-ms-nav .gbm-ms-account{margin-top:8px;border-top:1px solid #d8dee8}
-  .gbm-ms-foot{margin-top:auto;padding:18px 20px 24px;color:#667085;font-size:11px;line-height:1.45}
+  .gbm-ms-nav .gbm-ms-join{margin:10px 16px 4px;width:calc(100% - 32px);min-height:44px;border:0;background:var(--gbm-orange);color:var(--gbm-navy)!important;justify-content:center;text-align:center;text-transform:uppercase;letter-spacing:.04em;border-radius:5px}
+  .gbm-ms-foot{margin-top:auto;padding:16px 20px 22px;color:#667085;font-size:11px;line-height:1.45}
   .gbm-ms-foot a{color:var(--gbm-blue)!important;text-decoration:none!important;font-weight:800}
-
-  /* Magazine mobile reset — target the actual live cover classes. */
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-cover{min-height:690px!important;margin:0!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-photo img{object-position:56% top!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-date{top:16px!important;left:16px!important;right:16px!important;font-size:9px!important;letter-spacing:.13em!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-mast{top:42px!important;left:16px!important;right:16px!important;border-top-width:5px!important;padding-top:7px!important;font-size:clamp(38px,11.5vw,52px)!important;line-height:.9!important;letter-spacing:-.05em!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-main{left:16px!important;right:16px!important;bottom:226px!important;max-width:580px!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-main small{font-size:9px!important;letter-spacing:.13em!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-main h1{margin:6px 0!important;font-size:clamp(30px,8.8vw,42px)!important;line-height:.95!important;letter-spacing:-.045em!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-main p{max-width:480px!important;font-size:14px!important;line-height:1.35!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-lines{left:16px!important;right:16px!important;bottom:72px!important;width:auto!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-lines a{min-height:48px!important;padding:8px 10px!important;border-left-width:3px!important;background:rgba(8,19,47,.78)!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-lines b{font-size:15px!important;line-height:1.08!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-lines span{font-size:10px!important;line-height:1.25!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-ref{grid-template-columns:repeat(3,1fr)!important;gap:0!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-ref a{min-height:54px!important;padding:8px 5px!important;font-size:9px!important;line-height:1.15!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-section{padding:34px 16px!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-head h2{font-size:clamp(27px,7.5vw,36px)!important}
 }
-@media(max-width:420px){
-  #gbm-mobile-shell{min-height:60px;padding:7px 10px}
-  #gbm-mobile-shell .gbm-ms-logo{width:min(172px,52vw)}
-  #gbm-mobile-shell .gbm-ms-trigger{min-width:72px;padding:0 10px}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-cover{min-height:720px!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-main{bottom:270px!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-lines{bottom:112px!important;grid-template-columns:1fr!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-lines a{min-height:42px!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-ref{grid-template-columns:1fr 1fr!important}
-  html.gbm-magazine-live #gbm-magazine-page .gbmm-ref a:last-child{grid-column:1/-1!important}
+@media(max-width:390px){
+  #gbm-mobile-shell .gbm-ms-logo{width:min(166px,50vw)}
+  #gbm-mobile-shell .gbm-ms-trigger{min-width:68px;padding:0 9px}
+  #gbm-mobile-drawer-root .gbm-ms-panel{width:min(92vw,340px)}
 }
-@media(prefers-reduced-motion:reduce){#gbm-mobile-drawer-root .gbm-ms-backdrop,#gbm-mobile-drawer-root .gbm-ms-panel{transition:none!important}}
+@media(prefers-reduced-motion:reduce){
+  #gbm-mobile-drawer-root .gbm-ms-backdrop,#gbm-mobile-drawer-root .gbm-ms-panel{transition:none!important}
+}

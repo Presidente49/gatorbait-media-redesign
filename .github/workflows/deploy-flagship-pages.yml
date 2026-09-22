@@ -1,12 +1,9 @@
-name: Deploy GatorBait Flagship Preview
+# Automatic publication belongs to the existing main-branch Pages publisher.
+# Manual recovery only: never race a second push-triggered deployment.
+# Preserve the repository-root sitemap host and all existing preview paths.
+name: Deploy GatorBait Static Pages — Manual Recovery
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "flagship/**"
-      - ".github/workflows/deploy-flagship-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -27,15 +24,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Configure Pages
         uses: actions/configure-pages@v5
-
-      - name: Upload flagship site
+      - name: Upload complete static site including sitemaps and previews
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./flagship
-
+          path: .
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

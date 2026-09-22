@@ -26,7 +26,7 @@ Production automation:
 - Origin: **USER** (custom workflow; this is not the Wix-preinstalled blog email)
 - Trigger: `wix_blog-new_blog_post`
 - Email message ID: `04550418-33d0-4564-ad25-b865f591b2c0`
-- Status: **ACTIVE** at revision 15 on Sept. 19, 2026.
+- Status: **ACTIVE** at revision 17, live-verified Sept. 22, 2026.
 - Audience: the existing configured opted-in segment/audience. Do not broaden to unsubscribed recipients.
 - Verified analytics, Aug. 24–Sept. 19, 2026: 80,033 delivered emails, 635 unique email clicks and 4,177 attributed sessions.
 
@@ -55,7 +55,7 @@ The workflow below is the Wix Blog preinstalled automation. Its friendly name wa
 - Current Wix name: `GatorBait Story Alert — New Blog Post`
 - Origin: **PREINSTALLED** from Wix Blog.
 - Email message ID: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`
-- Status: **INACTIVE** at revision 10 on Sept. 19, 2026.
+- Status: **INACTIVE** at revision 12, live-verified Sept. 22, 2026.
 - Verified analytics, Aug. 24–Sept. 19, 2026: 10 unique email clicks and 230 attributed sessions.
 
 Do not reactivate this workflow as the production article alert. The custom USER-origin workflow above is the proven distribution engine.

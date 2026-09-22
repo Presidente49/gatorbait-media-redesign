@@ -1,0 +1,27 @@
+(function(){
+'use strict';
+if(window.__GBM_MAGAZINE_LIVE_V6__)return;window.__GBM_MAGAZINE_LIVE_V6__=1;
+function on(){return /^\/magazine\/?$/.test(location.pathname||'')}
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function clean(raw,max){var d=document.createElement('div');d.innerHTML=raw||'';var s=(d.textContent||'').replace(/\s+/g,' ').trim();if(s.length>max)s=s.slice(0,max).replace(/[\s,;:.!—-]+$/,'')+'…';return s}
+function local(u){return(u||'').replace(/^https?:\/\/[^/]+/i,'')}
+function creator(item){var all=item.getElementsByTagNameNS?item.getElementsByTagNameNS('*','creator'):[];if(all&&all[0])return(all[0].textContent||'GatorBait Staff').trim();var n=item.querySelector('creator');return n?(n.textContent||'GatorBait Staff').trim():'GatorBait Staff'}
+function image(item){var e=item.querySelector('enclosure');if(e&&e.getAttribute('url'))return e.getAttribute('url');var n=item.getElementsByTagName('*');for(var i=0;i<n.length;i++){var x=n[i],name=(x.localName||x.nodeName||'').toLowerCase();if((name==='content'||name==='thumbnail')&&x.getAttribute&&x.getAttribute('url'))return x.getAttribute('url')}return''}
+function dateText(d){try{return d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}catch(e){return''}}
+function feed(){return fetch('/blog-feed.xml?gbmm='+Date.now(),{credentials:'same-origin',cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('feed '+r.status);return r.text()}).then(function(xml){var doc=new DOMParser().parseFromString(xml,'application/xml');return Array.prototype.slice.call(doc.querySelectorAll('item')).map(function(item){function t(tag){var n=item.querySelector(tag);return n?n.textContent:''}var raw=t('pubDate');return{title:t('title').trim(),desc:t('description'),link:local(t('link').trim()),img:image(item),who:creator(item),date:raw?new Date(raw):new Date(0)}}).filter(function(p){return p.title&&/^\/post\//.test(p.link)&&p.img}).sort(function(a,b){return b.date.getTime()-a.date.getTime()}).slice(0,12)})}
+function card(p){return'<a class="inside-card" href="'+esc(p.link)+'"><div class="art"><img src="'+esc(p.img)+'" alt="'+esc(p.title)+'" loading="lazy" decoding="async"></div><div class="copy"><span class="by">'+esc(p.who||'GatorBait')+'</span><h2>'+esc(p.title)+'</h2><p>'+esc(clean(p.desc,115))+'</p></div></a>'}
+function build(posts){
+ if(!on()||!posts||posts.length<4)return;
+ var lead=posts[0],lines=posts.slice(1,4),inside=posts.slice(4,10);
+ var d=new Date(),issue=d.toLocaleDateString('en-US',{month:'long',year:'numeric'}).toUpperCase();
+ var html='<div class="issue-wrap"><div class="issue-label"><span>'+esc(issue)+'</span><span>LIVE DIGITAL ISSUE</span></div><section class="cover" aria-label="GatorBait Magazine live issue"><div class="cover-top"><span>GATORBAITMEDIA.COM</span><span>FLORIDA FOOTBALL</span></div><div class="masthead">GATORBAIT</div><div class="cover-media"><img src="'+esc(lead.img)+'" alt="'+esc(lead.title)+'" fetchpriority="high" decoding="async"></div><div class="cover-lines">'+lines.map(function(p){return'<a class="cover-line" href="'+esc(p.link)+'"><b>'+esc(p.title)+'</b><span>'+esc(p.who||'GatorBait')+'</span></a>'}).join('')+'</div><a class="cover-copy" href="'+esc(lead.link)+'"><small>CURRENT COVER STORY · '+esc(lead.who||'GatorBait')+'</small><h1>'+esc(lead.title)+'</h1><p>'+esc(clean(lead.desc,160))+'</p></a></section><section class="inside"><p class="section-kicker">Inside the live issue</p><h2 class="section-title">Stories worth keeping</h2><div class="inside-grid">'+inside.map(card).join('')+'</div></section><section class="reference"><a href="/post/florida-gators-2026-roster-and-schedule"><span>Season reference</span><strong>2026 Roster &amp; Schedule</strong><em>Keep the current Gators roster and schedule one tap away.</em></a><a href="/the-buddy-martin-show"><span>Watch</span><strong>GatorBait TV</strong><em>Shows, interviews and game-week conversation.</em></a><a href="https://gatorbait2026.itemorder.com/shop/home/"><span>Store</span><strong>Rep the Gators</strong><em>Hats, visors, shirts and more.</em></a></section><footer class="mag-footer"><strong>GatorBait Magazine</strong><nav><a href="/">Front Page</a><a href="/gatorbait-media-blogs">All Stories</a><a href="https://gatorbait2026.itemorder.com/shop/home/">Store</a><a href="/policies">Privacy &amp; Terms</a></nav></footer></div>';
+ var root=document.getElementById('gbm-magazine-page');
+ if(!root){root=document.createElement('main');root.id='gbm-magazine-page';var pages=document.getElementById('SITE_PAGES');if(pages&&pages.parentNode)pages.parentNode.insertBefore(root,pages);else document.body.appendChild(root)}
+ root.innerHTML=html;document.documentElement.classList.add('gbm-magazine-live');document.title='GatorBait Magazine | Florida Gators Features & Game Week';
+}
+function clean(){if(on()){feed().then(build).catch(function(e){console.error('GatorBait magazine',e)});return}document.documentElement.classList.remove('gbm-magazine-live');var m=document.getElementById('gbm-magazine-page');if(m)m.remove()}
+function route(){[0,100,350,900].forEach(function(ms){setTimeout(clean,ms)})}
+if(on())document.documentElement.classList.add('gbm-magazine-live');
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',clean,{once:true});else clean();
+window.addEventListener('popstate',route);window.addEventListener('gbmroutechange',route);
+})();

@@ -46,7 +46,9 @@ function render(posts){
  '<div id="football">'+section('Football',football)+'</div><div id="recruiting">'+section('Recruiting',recruiting)+'</div><div id="basketball">'+section('Basketball',basketball)+'</div><div id="baseball">'+section('Baseball',baseball)+'</div>'+
  '<section class="gbm-v2-utility"><div><strong>GatorBait since 1979.</strong><span>Old-school journalism. Modern delivery.</span></div><div><a href="/pricing-plans">Join GatorBait</a><a href="'+STORE+'">Shop</a><a href="/contact">Contact</a></div></section>'+
  '</main>';
- document.body.insertBefore(root,document.body.firstChild);
+ var shellHost=document.getElementById('gbm-mobile-shell-host');
+ if(shellHost&&shellHost.parentNode)shellHost.parentNode.insertBefore(root,shellHost.nextSibling);
+ else document.body.insertBefore(root,document.body.firstChild);
  html.classList.add('gbm-v2-ready');
  document.dispatchEvent(new CustomEvent('gbm:v2-ready',{detail:{stories:posts.length}}));
 }

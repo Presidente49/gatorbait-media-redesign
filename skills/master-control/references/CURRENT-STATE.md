@@ -140,6 +140,45 @@ chmod +x automation/ops-hub/install-master-control-mobile.sh
 ./automation/ops-hub/install-master-control-mobile.sh
 ```
 
+## Shared AI memory bootstrap — 2026-09-22
+
+Selected local AI-to-AI memory layer:
+
+`dan-calin/shared-agent-memory`
+
+Why it fits the current single-controller architecture:
+
+- one project-local memory graph shared by Claude Code and Codex
+- guarded writes that reject common secret patterns
+- token-efficient `search_nodes` retrieval instead of rereading large handoffs
+- advisory file-claim coordination so parallel workers can warn before editing the same file
+- no standing daemon or hosted service required
+- GitHub remains the durable audit/policy/incident source of truth
+
+Repo bootstrap:
+
+- `automation/ops-hub/install-shared-agent-memory.sh`
+- `automation/ops-hub/install-master-control-local.sh` runs shared memory first, then the existing mobile/iPhone bootstrap
+- `.shared-memory/` is ignored by Git
+- upstream is commit-pinned in the bootstrap
+- local execution on Brenden's Mac: **NOT VERIFIED FROM CLOUD CHAT**
+
+Run from the repo root on Brenden's Mac:
+
+```bash
+git pull
+chmod +x automation/ops-hub/install-master-control-local.sh
+./automation/ops-hub/install-master-control-local.sh
+```
+
+The iPhone-control lane still stops at Apple-required physical approvals such as device trust, Developer Mode, unlock, and Xcode signing.
+
+## Lovable project handoff — 2026-09-22
+
+Brenden supplied Lovable project ID `928d7b26-41e1-451d-81c7-85817857fc6d`.
+
+The currently authenticated Lovable workspace `Brenden's Lovable` is on the free plan and currently reports zero projects. The supplied project is not yet visible to that connected account, so the invitation/magic-link acceptance remains a human browser step. Do not store or commit the magic-link token. After acceptance, re-query the project through the Lovable connector before using credits or changing the project.
+
 ## Analytics sources verified
 
 Connected through current tooling:

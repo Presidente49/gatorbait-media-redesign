@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
@@ -58,6 +58,13 @@
         "landing page"
       ],
       "deterministic_gates": [
+        "material presentation changes require explicit Brenden approval",
+        "prepaint and legacy cleanup remain bounded so no late layout jump occurs",
+        "all four newsroom presentation assets remain pinned to the same approved baseline commit",
+        "no native Wix homepage shell is exposed before or underneath the Newsroom",
+        "Today's Edition and Monday Chomp are never visible on the homepage",
+        "standalone Newsroom is the default production homepage presentation",
+        "locked homepage authority is docs/HOMEPAGE-BASELINE-LOCK.md",
         "current lead and story chronology",
         "required brand markers",
         "HTTPS and route availability",
@@ -72,6 +79,9 @@
         "conversion placement"
       ],
       "verify": [
+        "locked baseline IDs/revisions and enabled states",
+        "no Today's Edition or Monday Chomp in visible homepage",
+        "no first-paint old shell or late layout jump",
         "public URL",
         "desktop",
         "390px mobile",

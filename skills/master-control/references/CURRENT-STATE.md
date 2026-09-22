@@ -378,3 +378,22 @@ Disabled manual/duplicate layers:
 - `GBM - AdSense Auto Ads Free Routes v1` custom embed `109a8870-0fb3-4e9f-8b41-cf6c0875472d` — disabled at revision `2`
 
 The existing single `Google AdSense Auto Ads` custom embed `2da582cf-6935-4255-b248-e14add7e82a8` remains enabled at verified revision `7`; do not add a second AdSense loader.
+
+
+## Magazine live issue — 2026-09-22
+
+The production `/magazine` route now uses the dynamic live-issue presentation.
+
+- Wix custom embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`
+- live revision: `16`
+- name: `GBM - Magazine Live Issue v6`
+- state: **ENABLED**
+- asset commit: `5667c8fee6267eaa7cd6e1554082f28fb824d2b6`
+- assets:
+  - `newsroom-preview/magazine-live.css`
+  - `newsroom-preview/magazine-live.js`
+- the page reads the live Wix blog feed, sorts newest-first, and builds a current cover story + cover lines + inside-the-issue cards automatically
+- no Auburn-only or September-history story set is hard-coded into the magazine
+- season reference links to the evergreen internal `Florida Gators 2026 Roster and Schedule` article
+- GatorBait TV and Store remain visible destinations
+- the approved unified mobile shell remains the mobile navigation owner on `/magazine`

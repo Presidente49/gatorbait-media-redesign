@@ -26,6 +26,8 @@ jobs:
         run: |
           python3 automation/gazette/build_wix_bundle.py
           node --check gazette-live/homepage.js
+      - name: Inspect actual startup attribution
+        run: python3 automation/gazette/diagnose_live.py
       - name: Verify public Wix runtime
         run: python3 automation/gazette/check_public.py
       - name: Preserve verification evidence even if the gate fails

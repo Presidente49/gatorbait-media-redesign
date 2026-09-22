@@ -1,6 +1,6 @@
 {
   "phase": "live",
-  "timestamp": "2026-09-22T23:47:29.543489+00:00",
+  "timestamp": "2026-09-22T23:53:36.299538+00:00",
   "scope": "Public Wix runtime. Candidate intercepts only retired presentation assets and substitutes candidate content; live is unmodified. Device emulation is not physical iPhone testing.",
   "baselineHTTP": {
     "account/my-account": 403,
@@ -403,7 +403,7 @@
       "leadFont": "54px",
       "feedSource": "current-feed",
       "newest": "2026-09-22T16:13:41.000Z",
-      "cls": 1.0001555828832305,
+      "cls": 0.00015558288323045264,
       "canonical": "https://www.gatorbaitmedia.com/",
       "noindex": false,
       "previewCopy": false,

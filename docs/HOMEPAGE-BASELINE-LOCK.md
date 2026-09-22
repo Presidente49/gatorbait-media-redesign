@@ -13,14 +13,14 @@ This is the default production state. It is not an experiment, temporary fallbac
 
 ### Presentation baseline
 
-- Baseline commit: `bac98ea3bf4af205c79b1bc316cff17706e31645`
+- Baseline commit: `f0a2deca30b8080b10efa8216f308414b7a95636`
 - All four newsroom presentation assets stay pinned to that same commit:
   - `newsroom-preview/wix-live.css`
   - `newsroom-preview/wix-live-ui.css`
   - `newsroom-preview/wix-live.js`
   - `newsroom-preview/wix-live-ui.js`
 - Newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-  - live verified revision after inline unified mobile shell fix: `48`
+  - live verified revision after clean utility-footer restore: `49`
   - required state: **ENABLED**
 - Homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`
   - live verified revision after restore: `17`
@@ -68,3 +68,12 @@ Routine story publishing, feed refreshes, metadata updates, and editorial orderi
 ## Recovery rule
 
 If the homepage regresses, restore this baseline first rather than layering another override.
+
+
+## Footer and whitespace lock — 2026-09-22
+
+- The site uses one compact footer owner: `GBM - Universal Utility Footer v13 (no address)`, embed `f8b950c9-47ce-4390-976f-85a0f040f0c6`, live revision `22`, **ENABLED**.
+- The native Wix footer and the old duplicate newsroom footer are not visible.
+- Street address must not be rendered in the footer or organization schema.
+- `GBM - Sitewide Footer Gap Guard v3`, embed `15302fb2-44ef-4a93-a2a8-899731a6c197`, live revision `6`, **ENABLED**, owns removal of oversized blank page tails on blog/article and other non-account routes.
+- Do not reintroduce the retired Magazine-specific footer/menu.

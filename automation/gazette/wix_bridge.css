@@ -1,0 +1,56 @@
+/* Owned DOM controls visibility; Wix may replace document classes at hydration. */
+html:has(#gbm-live.gbm-gazette) #SITE_HEADER,
+html:has(#gbm-live.gbm-gazette) #SITE_PAGES,
+html:has(#gbm-live.gbm-gazette) #PAGES_CONTAINER { display:none!important; }
+html:has(#gbm-live.gbm-gazette),html:has(#gbm-live.gbm-gazette) body { height:auto!important;min-height:100vh!important; }
+html:has(#gbm-live.gbm-gazette) body { margin:0!important;background:#fffdf9!important;min-width:0!important; }
+html:has(#gbm-live.gbm-gazette) #SITE_CONTAINER,
+html:has(#gbm-live.gbm-gazette) #masterPage,
+html:has(#gbm-live.gbm-gazette) #SITE_PAGES_TRANSITION_GROUP { min-height:0!important;height:0!important;min-width:0!important;padding-block:0!important;margin-block:0!important; }
+html:has(#gbm-live.gbm-gazette) #gbm-mobile-drawer-root { overflow:hidden; }
+html:has(#gbm-live.gbm-gazette) #gbm-footer { position:relative;z-index:3;background:#08132f!important; }
+html:has(#gbm-live.gbm-gazette) #gbm-footer a { color:#fff!important; }
+#gbm-live.gbm-gazette { display:block;position:relative;z-index:2;width:100%;min-width:0;background:var(--background,#fffdf9);color:var(--foreground,#11274a);font-family:var(--font-body,Georgia,serif);line-height:1.5;text-size-adjust:100%;-webkit-text-size-adjust:100%; }
+#gbm-live.gbm-gazette *,#gbm-live.gbm-gazette *::before,#gbm-live.gbm-gazette *::after { box-sizing:border-box; }
+#gbm-live.gbm-gazette .gbm-header { position:static; }
+#gbm-live.gbm-gazette #gbgz-main { display:block;width:100%;min-width:0;padding-bottom:34px; }
+#gbm-live.gbm-gazette #gbgz-main>div { width:100%;margin-inline:auto; }
+#gbm-live.gbm-gazette h1 { margin-bottom:0; }
+#gbm-live.gbm-gazette img { display:block;max-width:100%; }
+#gbm-live.gbm-gazette [data-gbgz-image] { width:100%;height:auto;aspect-ratio:16/9;object-fit:cover; }
+#gbm-live.gbm-gazette [data-gbgz-rows] { list-style:none;margin:0;padding:0; }
+#gbm-live.gbm-gazette [data-gbgz-row-link] { min-width:0;overflow-wrap:anywhere; }
+#gbm-live.gbm-gazette [data-gbgz-row-meta] { max-width:100%;white-space:normal;overflow-wrap:anywhere; }
+#gbm-live.gbm-gazette .gbgz-more { display:inline-flex;align-items:center;min-height:44px;margin-top:12px;color:#0021a5;font:600 14px/1.4 var(--font-heading,Arial,sans-serif); }
+#gbm-live.gbm-gazette .gbm-header-inner { justify-content:center; }
+#gbm-live.gbm-gazette .gbm-desktop-nav { margin:0; }
+#gbm-live.gbm-gazette .gbm-cover-logo { width:300px;height:auto; }
+#gbm-live.gbm-gazette [data-gbgz-title] { color:#11274a; }
+@media(max-width:820px) {
+ #gbm-live.gbm-gazette .gbm-header{display:none}
+ #gbm-live.gbm-gazette #gbgz-main>div>div:first-child{padding-top:14px}
+ #gbm-live.gbm-gazette .gbm-cover-logo{display:none}
+ #gbm-live.gbm-gazette .gbm-magazine-word{margin:6px 0 12px}
+ #gbm-live.gbm-gazette [data-gbgz-title]{font-size:clamp(28px,7.2vw,34px);line-height:1.08}
+ #gbm-live.gbm-gazette .leaders{align-items:baseline}
+ #gbm-live.gbm-gazette [data-gbgz-row-link]{max-width:calc(100% - 42px)}
+ #gbm-live.gbm-gazette [data-gbgz-row-meta]{font-size:12px;line-height:1.5}
+}
+@media(prefers-reduced-motion:reduce){#gbm-live.gbm-gazette *,#gbm-live.gbm-gazette *::before,#gbm-live.gbm-gazette *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Compact Gazette proportions; retain the original cover and contents layout. */
+#gbm-live.gbm-gazette #gbgz-main>div>div:first-child{padding-top:20px}
+#gbm-live.gbm-gazette .gbm-cover-logo{width:240px}
+#gbm-live.gbm-gazette section[aria-labelledby="cover-line"]{margin-top:24px}
+#gbm-live.gbm-gazette [data-gbgz-image]{max-height:360px;object-position:center 35%}
+#gbm-live.gbm-gazette section[aria-labelledby="cover-line"]>div{padding:24px}
+#gbm-live.gbm-gazette [data-gbgz-title]{font-size:36px;line-height:1.12;max-width:32ch}
+#gbm-live.gbm-gazette section[aria-labelledby="cover-line"]>div>p:last-child{margin-top:14px}
+#gbm-live.gbm-gazette section[aria-labelledby="contents-heading"]{margin-top:28px}
+@media(max-width:820px){
+ #gbm-live.gbm-gazette section[aria-labelledby="cover-line"]{margin-top:16px}
+ #gbm-live.gbm-gazette section[aria-labelledby="cover-line"]>div{padding:16px}
+ #gbm-live.gbm-gazette [data-gbgz-title]{font-size:clamp(24px,6.2vw,28px);line-height:1.15;max-width:none}
+ #gbm-live.gbm-gazette [data-gbgz-image]{max-height:240px}
+ #gbm-live.gbm-gazette section[aria-labelledby="contents-heading"]{margin-top:24px}
+}

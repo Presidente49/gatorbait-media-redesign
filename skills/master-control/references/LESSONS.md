@@ -283,3 +283,22 @@ Use stable automation IDs, not friendly names, and keep exactly one intended out
 If GA4/Google tagging is managed through Wix dashboard integrations, do not also inject manual `gtag.js`, Tag Manager, or parallel route-specific loaders.
 
 Duplicate tag layers distort analytics and complicate consent/debugging. For AdSense, keep one verified loader only; do not add parallel loaders without measured evidence.
+
+## 27. Persistent alerts need ownership, not repetition
+
+Repeated scheduled checks of the same unresolved defect should not become repeated owner-facing alerts.
+
+Use one persistent work item with current evidence, owner, next action, verification method and blocker. Update it only when the evidence, diagnosis, action or ownership materially changes. Notify Brenden only for a meaningful state change, verified repair, material revenue change, new revenue-impacting action or a real human blocker.
+
+This turns monitoring into operations instead of notification noise.
+
+## 28. Recursive quality control must be bounded
+
+Recursive QC means re-reading live state and testing the previous outcome, not stacking patches.
+
+For a meaningful change:
+
+**observe → compare → diagnose → act once → verify primary → verify independently → record → recheck next cycle**
+
+Keep one production mutation attempt per cycle. If verification fails, record the failure and escalate or wait for the next evidence cycle rather than layering another unverified fix. Reuse verified repairs before adding dependencies or new architecture.
+

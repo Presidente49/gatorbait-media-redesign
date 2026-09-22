@@ -8,7 +8,28 @@ function local(u){return(u||'').replace(/^https?:\/\/[^/]+/i,'')}
 function creator(item){var all=item.getElementsByTagNameNS?item.getElementsByTagNameNS('*','creator'):[];if(all&&all[0])return(all[0].textContent||'GatorBait Staff').trim();var n=item.querySelector('creator');return n?(n.textContent||'GatorBait Staff').trim():'GatorBait Staff'}
 function image(item){var e=item.querySelector('enclosure');if(e&&e.getAttribute('url'))return e.getAttribute('url');var n=item.getElementsByTagName('*');for(var i=0;i<n.length;i++){var x=n[i],name=(x.localName||x.nodeName||'').toLowerCase();if((name==='content'||name==='thumbnail')&&x.getAttribute&&x.getAttribute('url'))return x.getAttribute('url')}return''}
 function dateText(d){try{return d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}catch(e){return''}}
-function feed(){return fetch('/blog-feed.xml?gbmm='+Date.now(),{credentials:'same-origin',cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('feed '+r.status);return r.text()}).then(function(xml){var doc=new DOMParser().parseFromString(xml,'application/xml');return Array.prototype.slice.call(doc.querySelectorAll('item')).map(function(item){function t(tag){var n=item.querySelector(tag);return n?n.textContent:''}var raw=t('pubDate');return{title:t('title').trim(),desc:t('description'),link:local(t('link').trim()),img:image(item),who:creator(item),date:raw?new Date(raw):new Date(0)}}).filter(function(p){return p.title&&/^\/post\//.test(p.link)&&p.img}).sort(function(a,b){return b.date.getTime()-a.date.getTime()}).slice(0,12)})}
+var feedPromise=null;
+function serialize(posts){return posts.map(function(p){return{title:p.title,desc:p.desc,link:p.link,img:p.img,who:p.who,date:p.date instanceof Date?p.date.toISOString():p.date}})}
+function hydrate(posts){return(posts||[]).map(function(p){return{title:p.title,desc:p.desc,link:p.link,img:p.img,who:p.who,date:new Date(p.date)}})}
+function cachedFeed(){try{var raw=sessionStorage.getItem('gbmmFeedV1');if(!raw)return null;var x=JSON.parse(raw);if(!x||!x.time||!x.posts||Date.now()-x.time>300000)return null;return hydrate(x.posts)}catch(e){return null}}
+function storeFeed(posts){try{sessionStorage.setItem('gbmmFeedV1',JSON.stringify({time:Date.now(),posts:serialize(posts)}))}catch(e){}}
+function feed(){
+ var cached=cachedFeed();if(cached&&cached.length>=4)return Promise.resolve(cached);
+ if(feedPromise)return feedPromise;
+ feedPromise=fetch('/blog-feed.xml',{credentials:'same-origin',cache:'default'}).then(function(r){
+   if(!r.ok)throw new Error('feed '+r.status);
+   return r.text();
+ }).then(function(xml){
+   var doc=new DOMParser().parseFromString(xml,'application/xml');
+   var posts=Array.prototype.slice.call(doc.querySelectorAll('item')).map(function(item){
+     function t(tag){var n=item.querySelector(tag);return n?n.textContent:''}
+     var raw=t('pubDate');
+     return{title:t('title').trim(),desc:t('description'),link:local(t('link').trim()),img:image(item),who:creator(item),date:raw?new Date(raw):new Date(0)}
+   }).filter(function(p){return p.title&&/^\/post\//.test(p.link)&&p.img}).sort(function(a,b){return b.date.getTime()-a.date.getTime()}).slice(0,12);
+   storeFeed(posts);return posts;
+ }).finally(function(){feedPromise=null});
+ return feedPromise;
+}
 function card(p){return'<a class="inside-card" href="'+esc(p.link)+'"><div class="art"><img src="'+esc(p.img)+'" alt="'+esc(p.title)+'" loading="lazy" decoding="async"></div><div class="copy"><span class="by">'+esc(p.who||'GatorBait')+'</span><h2>'+esc(p.title)+'</h2><p>'+esc(clean(p.desc,115))+'</p></div></a>'}
 function build(posts){
  if(!on()||!posts||posts.length<4)return;
@@ -19,9 +40,29 @@ function build(posts){
  if(!root){root=document.createElement('main');root.id='gbm-magazine-page';var pages=document.getElementById('SITE_PAGES');if(pages&&pages.parentNode)pages.parentNode.insertBefore(root,pages);else document.body.appendChild(root)}
  root.innerHTML=html;document.documentElement.classList.add('gbm-magazine-live');document.title='GatorBait Magazine | Florida Gators Features & Game Week';
 }
-function clean(){if(on()){feed().then(build).catch(function(e){console.error('GatorBait magazine',e)});return}document.documentElement.classList.remove('gbm-magazine-live');var m=document.getElementById('gbm-magazine-page');if(m)m.remove()}
-function route(){[0,100,350,900].forEach(function(ms){setTimeout(clean,ms)})}
+var lastPath='';
+function render(){
+ var here=on();
+ if(!here){
+   document.documentElement.classList.remove('gbm-magazine-live');
+   var m=document.getElementById('gbm-magazine-page');if(m)m.remove();
+   return;
+ }
+ document.documentElement.classList.add('gbm-magazine-live');
+ if(document.getElementById('gbm-magazine-page'))return;
+ feed().then(build).catch(function(e){
+   console.error('GatorBait magazine',e);
+   document.documentElement.classList.add('gbm-magazine-live');
+ });
+}
+function route(){
+ var p=location.pathname||'';
+ if(p===lastPath)return;
+ lastPath=p;
+ render();
+}
+lastPath=location.pathname||'';
 if(on())document.documentElement.classList.add('gbm-magazine-live');
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',clean,{once:true});else clean();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render,{once:true});else render();
 window.addEventListener('popstate',route);window.addEventListener('gbmroutechange',route);
 })();

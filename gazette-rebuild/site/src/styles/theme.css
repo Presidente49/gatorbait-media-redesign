@@ -1,0 +1,52 @@
+/* Small brand overlay. Gazette's original typefaces, rules, covers and contents survive. */
+:root, :root[data-theme='dark'], :root[data-theme='light'] {
+  color-scheme: light;
+  --background: #fffdf9;
+  --surface: #f3f4f0;
+  --foreground: #11274a;
+  --muted: #536278;
+  --border: #d5dbe2;
+  --primary: #0021a5;
+  --primary-hover: #071f70;
+  --on-primary: #ffffff;
+  --focus-ring: #0021a5;
+  --radius: 0;
+  --rule-heavy: 3px solid #fa4616;
+}
+html { scroll-behavior: auto; }
+body { margin: 0; }
+img { max-width: 100%; }
+.gbm-preview-note { background: #eef1f7; color: #11274a; padding: 7px 12px; text-align: center; font: 500 11px/1.4 var(--font-heading); }
+.gbm-header { position: sticky; top: 0; z-index: 40; background: var(--background); border-top: 3px solid #fa4616; border-bottom: var(--rule-hair); }
+.gbm-header-inner { position: relative; max-width: 72rem; min-height: 56px; margin: auto; padding: 5px 16px; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+.gbm-header-brand { display: block; line-height: 0; flex-shrink: 0; }
+.gbm-header-brand img { width: 160px; height: 43px; object-fit: contain; }
+.gbm-desktop-nav { display: flex; flex-wrap: wrap; margin-left: auto; gap: 0 20px; font: 500 13px/1.3 var(--font-heading); }
+.gbm-desktop-nav a, .gbm-menu nav a { min-height: 44px; display: inline-flex; align-items: center; text-decoration: none; }
+.gbm-menu { display: none; margin-left: auto; }
+.gbm-menu summary { cursor: pointer; min-height: 44px; padding: 0 12px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); list-style: none; font: 700 12px/1 var(--font-heading); }
+.gbm-menu summary::-webkit-details-marker { display: none; }
+.gbm-menu nav { position: absolute; top: 100%; right: 0; width: min(340px, 100vw); background: var(--background); border: var(--rule-hair); padding: 8px 16px; display: grid; z-index: 45; }
+.gbm-menu nav a { border-bottom: var(--rule-hair); font: 500 15px/1.3 var(--font-heading); }
+.gbm-cover-logo { display: block; width: min(360px, 75vw); height: auto; margin: 0 auto; }
+.gbm-magazine-word { display: block; margin: 8px 0 18px; font: 500 13px/1.3 var(--font-heading); letter-spacing: .22em; text-transform: uppercase; text-align: center; }
+#main > div > div:first-child { padding-top: 24px; }
+section[aria-labelledby='cover-line'] > img { width: 100%; aspect-ratio: 16/9; object-fit: cover; height: auto; max-height: 520px; }
+#cover-line { font-size: clamp(30px, 4vw, 54px); line-height: 1.06; max-width: 27ch; }
+.gbm-story-notice { color: var(--muted); font: 400 13px/1.5 var(--font-heading); border-left: 3px solid #fa4616; padding-left: 12px; }
+.gbm-read-original { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; background: #0021a5; color: white !important; font: 700 14px/1.35 var(--font-heading); text-decoration: none; }
+:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+@media(max-width: 819px) {
+  .gbm-desktop-nav { display: none; }
+  .gbm-menu { display: block; }
+  .gbm-cover-logo { width: 250px; max-width: 78vw; }
+  #cover-line { font-size: clamp(28px, 7.2vw, 34px); max-width: none; }
+  #main h1:not(:has(.gbm-cover-logo)) { font-size: clamp(30px, 7.6vw, 42px); line-height: 1.1; overflow-wrap: anywhere; }
+  .gbm-preview-note { font-size: 10px; }
+  section[aria-labelledby='cover-line'] { margin-top: 20px; }
+  section[aria-labelledby='cover-line'] > div { padding: 22px 18px; }
+  footer { margin-top: 36px !important; }
+}
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

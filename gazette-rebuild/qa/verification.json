@@ -1,0 +1,486 @@
+{
+  "tested_at": "2026-09-22T22:35:18.524290+00:00",
+  "upstream": "cee215fd3ec0b78bba6f99d3a59a033b0a5f0b48",
+  "scope": "Compiled original Gazette served on localhost. Not live Wix or physical iPhone verification.",
+  "measurements": [
+    {
+      "engine": "chromium",
+      "width": 360,
+      "client": 360,
+      "scroll": 360,
+      "h1": "46.8px",
+      "cls": 0,
+      "brokenImages": 0,
+      "sourceRequests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "client": 390,
+      "scroll": 390,
+      "h1": "50.7px",
+      "cls": 0,
+      "brokenImages": 0,
+      "sourceRequests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 430,
+      "client": 430,
+      "scroll": 430,
+      "h1": "55.9px",
+      "cls": 0,
+      "brokenImages": 0,
+      "sourceRequests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 768,
+      "client": 768,
+      "scroll": 768,
+      "h1": "99.84px",
+      "cls": 0,
+      "brokenImages": 0,
+      "sourceRequests": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "client": 1440,
+      "scroll": 1440,
+      "h1": "112px",
+      "cls": 0,
+      "brokenImages": 0,
+      "sourceRequests": []
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "client": 390,
+      "scroll": 390,
+      "h1": "50.700001px",
+      "cls": 0,
+      "brokenImages": 0,
+      "sourceRequests": []
+    },
+    {
+      "engine": "webkit",
+      "width": 430,
+      "client": 430,
+      "scroll": 430,
+      "h1": "55.900002px",
+      "cls": 0,
+      "brokenImages": 0,
+      "sourceRequests": []
+    }
+  ],
+  "checks": [
+    {
+      "check": "chromium-360 HTTP",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-360 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-360 media loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-360 no external runtime dependencies",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-360 no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-360 noindex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-360 CLS <= 0.1",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "chromium-360 menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-360 menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-390 HTTP",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-390 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-390 media loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-390 no external runtime dependencies",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-390 no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-390 noindex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-390 CLS <= 0.1",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "chromium-390 menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-390 menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-430 HTTP",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-430 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-430 media loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-430 no external runtime dependencies",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-430 no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-430 noindex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-430 CLS <= 0.1",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "chromium-430 menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-430 menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-768 HTTP",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-768 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-768 media loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-768 no external runtime dependencies",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-768 no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-768 noindex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-768 CLS <= 0.1",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "chromium-768 menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-768 menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-1440 HTTP",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-1440 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-1440 media loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-1440 no external runtime dependencies",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-1440 no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "chromium-1440 noindex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium-1440 CLS <= 0.1",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "chromium route /issues/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium route fits /issues/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium route /issues/1/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium route fits /issues/1/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium route /issues/1/story-5ebba27d78ca/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium route fits /issues/1/story-5ebba27d78ca/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium route /about/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium route fits /about/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium original Wix article preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chromium no fake checkout or login",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-390 HTTP",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-390 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-390 media loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-390 no external runtime dependencies",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "webkit-390 no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "webkit-390 noindex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-390 menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-390 menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-430 HTTP",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-430 no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-430 media loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-430 no external runtime dependencies",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "webkit-430 no JS errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "webkit-430 noindex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-430 menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit-430 menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit route /issues/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit route fits /issues/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit route /issues/1/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit route fits /issues/1/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit route /issues/1/story-5ebba27d78ca/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit route fits /issues/1/story-5ebba27d78ca/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit route /about/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit route fits /about/",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit original Wix article preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "webkit no fake checkout or login",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "public excerpts only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chronological contents",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 81,
+  "total": 81
+}

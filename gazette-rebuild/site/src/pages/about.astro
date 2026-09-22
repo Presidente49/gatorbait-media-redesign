@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const authors = await getCollection('authors');
+---
+<Base title="Our publication">
+  <article class="max-w-content mx-auto px-4 py-10 sm:py-16">
+    <p class="font-ui text-primary text-sm">GatorBait Media</p>
+    <h1 class="font-cover mt-3 text-4xl font-bold">Old-school journalism. Modern delivery.</h1>
+    <p class="mt-6">Independent Florida Gators coverage since 1979. Founded by Buddy Martin. Publisher and executive producer Brenden Martin.</p>
+    <h2 class="font-ui mt-10 border-t pt-5 text-lg font-medium">In this preview edition</h2>
+    <ul class="mt-4 space-y-3">{authors.map((author) => <li>{author.data.name}</li>)}</ul>
+    <p class="gbm-story-notice mt-8">This is a design preview built from the original Gazette theme. The excerpts and bylines come from the public GatorBait feed. Full stories, memberships, account access and checkout remain on the existing Wix site.</p>
+    <p class="mt-6"><a href="https://www.gatorbaitmedia.com/">Visit GatorBait Media →</a></p>
+    <p class="mt-4"><a href="mailto:info@gatorbaitmedia.com">info@gatorbaitmedia.com</a></p>
+  </article>
+</Base>

@@ -20,9 +20,9 @@ This is the default production state. It is not an experiment, temporary fallbac
   - `newsroom-preview/wix-live.js`
   - `newsroom-preview/wix-live-ui.js`
 - Newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-  - live verified revision: `52`
+  - live verified revision: `54`
   - required state: **ENABLED**
-- Revision 52 preserves the V1 production baseline and adds a query-parameter-only Masthead V2 preview lane (`?gbm_preview=masthead-v2`). The V2 preview is not the default homepage and does not unlock or replace the baseline until the verification gate passes.
+- Revision 54 preserves the V1 production baseline and adds a query-parameter-only Masthead V2 preview lane (`?gbm_preview=masthead-v2`). The V2 preview is not the default homepage and does not unlock or replace the baseline until the verification gate passes.
 - Homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`
   - live verified revision after restore: `17`
   - required state: **ENABLED**

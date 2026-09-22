@@ -1,82 +1,67 @@
 # GatorBait Homepage Baseline Lock
 
-**Status:** CANONICAL DEFAULT  
-**Locked by owner:** 2026-09-22
-**Current approved refinement:** compact header spacing + strict newest-first story chronology + writer-separated mobile cards + footer Store link, 2026-09-22  
-**Applies to:** production homepage `/` on `gatorbaitmedia.com`
+**Current presentation:** Original Gazette, owner-authorized September 22, 2026.  
+**Applies to:** production homepage `/` on `gatorbaitmedia.com`.  
+**Launch status:** Wix revision 55 applied and API-verified; unmodified public-browser verification tracked in issue #31.  
+**Authority:** this notice supersedes the older V1-default statements in historical snapshots, including CURRENT-STATE.md. Read live Wix state before any mutation.
 
 ## Default production homepage
 
-The GatorBait homepage is the standalone **Newsroom** presentation.
+The default is the original Gazette layout adapted to the existing Wix site. Do not restore the old Newsroom merely because a prior snapshot calls it the default. Brenden explicitly authorized the Gazette production switch and its subsequent checks.
 
-This is the default production state. It is not an experiment, temporary fallback, or design candidate.
+- Active loader: `fdc2127a-845a-4d02-b711-438f1a4a86ce`.
+- Verified revision after switch: `55`, enabled.
+- Name: `GBM - Original Gazette Live v1 (Wix business preserved)`.
+- Position/category/load behavior preserved: HEAD, ESSENTIAL, loadOnce false.
+- Gazette asset pin: `77c35c9a6e980606c40ec110522c2b31fb26385b`, `gazette-live/homepage.js`.
+- Package is derived from original MIT Gazette 1.1.4, upstream `cee215fd3ec0b78bba6f99d3a59a033b0a5f0b48`; it is not the earlier Lovable recreation or custom Masthead V2 renderer.
+- One homepage root: `#gbm-live.gbm-gazette`.
+- Original mobile shell and account styles remain inside the existing loader. No second active header or footer was added.
+- The old V2 preview bootstrap and four unconditional V1 asset tags were removed from the active loader.
+- V1 asset loading remains for native routes and explicit recovery, never beside Gazette on the normal homepage.
 
-### Presentation baseline
+## Publishing and business boundaries
 
-- Baseline commit: `f0a2deca30b8080b10efa8216f308414b7a95636`
-- All four newsroom presentation assets stay pinned to that same commit:
-  - `newsroom-preview/wix-live.css`
-  - `newsroom-preview/wix-live-ui.css`
-  - `newsroom-preview/wix-live.js`
-  - `newsroom-preview/wix-live-ui.js`
-- Newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-  - live verified revision: `54`
-  - required state: **ENABLED**
-- Revision 54 preserves the V1 production baseline and adds a query-parameter-only Masthead V2 preview lane (`?gbm_preview=masthead-v2`). The V2 preview is not the default homepage and does not unlock or replace the baseline until the verification gate passes.
-- Homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`
-  - live verified revision after restore: `17`
-  - required state: **ENABLED**
-- Legacy homepage cleanup: `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f`
-  - live verified revision after restore: `8`
-  - name: `GBM - Legacy Homepage Hard Delete v2 (prepaint bounded)`
-  - required state: **ENABLED**
+- Gazette uses `gazette-live/posts.json`, refreshed from public Wix Blog RSS by the EXISTING `refresh-newsroom-feed.yml` workflow.
+- One source read updates both the full Gazette publication feed and the existing filtered legacy Newsroom feed.
+- Existing five-minute schedule retained; no additional recurring worker. Updated data requests the same native Pages publisher because GITHUB_TOKEN commits do not trigger it automatically.
+- Homepage contents are newest-first. The magazine-style cover uses the newest verified Buddy Martin byline within seven days, or the newest post when no such article exists.
+- Article links go directly to existing canonical Wix `/post/` URLs. They do not go through preview excerpt pages.
+- `/magazine`, `/account/my-account`, `/pricing-plans`, TV, Store, email, payments and member access retain their existing owners.
+- No DNS, consent, AdSense or GA4 configuration was changed.
 
-## Non-negotiable homepage behavior
+## Stability and navigation
 
-- The Newsroom is the only visible homepage presentation.
-- The old native Wix homepage shell must not appear beneath or before the Newsroom.
-- **Today's Edition** must never be visible on the homepage.
-- **Monday Chomp** must never be visible on the homepage.
-- Do not reintroduce the native Wix homepage header/footer/content shell underneath the Newsroom.
-- Do not mix newsroom CSS/JS commits.
-- Do not add another competing homepage theme, mount, polling loop, or permanent observer.
-- Do not add first-paint opacity animations or delayed visual swaps.
-- Legacy cleanup must finish inside the bounded prepaint/startup window; it must not remove layout blocks after a reader has begun using the page.
-- Preserve a deterministic prepaint followed by one stable Newsroom mount.
-- Article and utility routes may continue using their normal Wix shell; this lock is specifically for the homepage.
-- Mobile account/login route `/account/my-account` is compacted by the unified shell layer on screens up to 820 px; mobile back-to-top controls are suppressed.
-- Legacy Wix mobile-nav CSS must not compete with the unified shell. Header embed `7fee4de6-1886-475e-a3f3-b9c68161c242` is revision 14 with obsolete `gbm-mobile-masthead-fix`, `gbm-mobile-drawer-v1`, and `gbm-mobile-nav-v2` blocks removed.
+- Only one presentation owner may mount.
+- Native homepage content must not appear under Gazette.
+- DOM ownership selectors are used because Wix can replace document classes during hydration.
+- The initial loader hides the obsolete native canvas before loading Gazette and avoids painting the footer ahead of the publication.
+- Crossing between homepage and native business/article routes uses normal document navigation, preventing overlapping V1/Gazette lifecycle handlers.
+- No permanent polling loop or new broad DOM observer is allowed.
+- No Today's Edition, Monday Chomp, bottom-menu duplication or back-to-top control should be introduced.
+- The existing unified mobile menu remains the sole mobile navigation owner.
+- Cookie/privacy choices must remain available and must not be hidden or bypassed by layout changes.
 
-## What is and is not frozen
+## Exact rollback
 
-The **presentation architecture is locked**.
+- Disabled backup embed: `dd2b9790-a520-4000-baca-0fac9f18871a`, revision `1`.
+- Name: `BACKUP - Newsroom loader revision 54 before original Gazette launch`.
+- Its HTML was verified byte-for-byte against the active loader immediately before the switch.
+- For a confirmed Gazette regression, read the CURRENT active revision, then PATCH that same active embed with the backup HTML and appropriate old name. Keep the backup disabled. Never enable both loaders.
+- On a startup failure, the new loader performs one ordinary recovery navigation using `?gbm_fallback=newsroom`. The recovery page loads the prior V1 assets and does not load Gazette, avoiding a late-script race.
+- Prior V1 assets remain pinned together at `f0a2deca30b8080b10efa8216f308414b7a95636` for recovery only.
 
-Editorial content is **not frozen**. The newsroom JavaScript may continue reading the live Wix blog feed so new stories, chronology, images, and editorial routing continue to update normally.
+## Existing shared owners retained
 
-## Change-control rule
+- Prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`, revision 17.
+- Legacy cleanup: `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f`, revision 8.
+- Native header core: `7fee4de6-1886-475e-a3f3-b9c68161c242`, revision 14.
+- Universal utility footer: `f8b950c9-47ce-4390-976f-85a0f040f0c6`, revision 22.
+- Footer-gap guard: `15302fb2-44ef-4a93-a2a8-899731a6c197`, revision 6.
+- Single AdSense embed: `2da582cf-6935-4255-b248-e14add7e82a8`, revision 7, ADVERTISING category. No claim that ad-serving/revenue is fixed by this launch.
 
-A future change that materially alters this homepage baseline requires **explicit Brenden approval for that homepage change**.
+These are dated observed revisions, not instructions to overwrite newer live changes. Street addresses must not reappear. Preserve the magazine's existing independent route, existing native article/member UX and all recovery assets.
 
-Before replacing the baseline:
+## Further changes
 
-1. Inspect current live embed revisions.
-2. Keep a rollback snapshot.
-3. Make one bounded change in draft/staging where possible.
-4. Verify desktop plus approximately 390 px and 430 px mobile.
-5. Confirm no flash, jump, old shell, Today's Edition, or Monday Chomp.
-6. Publish only after the new state is visibly better and rollback remains available.
-
-Routine story publishing, feed refreshes, metadata updates, and editorial ordering do not require unlocking the presentation baseline.
-
-## Recovery rule
-
-If the homepage regresses, restore this baseline first rather than layering another override.
-
-
-## Footer and whitespace lock — 2026-09-22
-
-- The site uses one compact footer owner: `GBM - Universal Utility Footer v13 (no address)`, embed `f8b950c9-47ce-4390-976f-85a0f040f0c6`, live revision `22`, **ENABLED**.
-- The native Wix footer and the old duplicate newsroom footer are not visible.
-- Street address must not be rendered in the footer or organization schema.
-- `GBM - Sitewide Footer Gap Guard v3`, embed `15302fb2-44ef-4a93-a2a8-899731a6c197`, live revision `6`, **ENABLED**, owns removal of oversized blank page tails on blog/article and other non-account routes.
-- Do not reintroduce the retired Magazine-specific footer/menu.
+Material changes to the approved homepage require Brenden's authorization. Routine story publishing and current feed refreshes do not. Track launch verification and residual defects in existing issue #31, not a new redesign incident. See `docs/GAZETTE-PRODUCTION-LAUNCH.md`.

@@ -18,6 +18,8 @@ Do **not** load every historical document by default.
 
 The old `wix-site-management-playbook.md` is historical design context, not current UX authority.
 
+For any homepage/front-page work, `docs/HOMEPAGE-BASELINE-LOCK.md` is the canonical presentation authority. The locked default is the standalone Newsroom homepage; do not expose the old Wix shell, Today's Edition, or Monday Chomp, and do not materially change the baseline without explicit Brenden approval.
+
 Dated sections in long runbooks are historical evidence unless live provider state confirms them.
 
 ## Truth rule

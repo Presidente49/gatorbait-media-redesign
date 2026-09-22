@@ -1,0 +1,64 @@
+name: Verify Gazette on Wix
+on:
+  push:
+    branches: [gazette-rebuild]
+    paths: ['automation/gazette/**', '.github/workflows/gazette-live-check.yml']
+permissions:
+  contents: read
+concurrency:
+  group: gazette-live-verification
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Install bounded build and browser tools
+        run: |
+          python3 -m pip install beautifulsoup4==4.13.4 tinycss2==1.4.0 playwright==1.57.0
+          python3 -m playwright install --with-deps chromium webkit
+      - name: Build original Gazette homepage package with fresh public posts
+        run: |
+          python3 automation/gazette/build_wix_bundle.py
+          node --check gazette-live/homepage.js
+      - name: Verify public Wix runtime
+        run: python3 automation/gazette/check_public.py
+      - name: Preserve verification evidence even if the gate fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gazette-runtime-evidence
+          path: |
+            .gazette-check/
+            gazette-live/
+          include-hidden-files: true
+          retention-days: 3
+      - name: Checkout isolated destination after tests
+        if: success()
+        uses: actions/checkout@v6
+        with:
+          ref: gazette-rebuild
+          path: .gazette-writer
+      - name: Save passing bundle and verification only to isolated branch
+        if: success()
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git -C .gazette-writer rev-parse HEAD)" = "$EXPECTED_SHA"
+          mkdir -p .gazette-writer/gazette-live .gazette-writer/gazette-runtime-qa
+          cp -a gazette-live/. .gazette-writer/gazette-live/
+          cp .gazette-check/verification.json .gazette-writer/gazette-runtime-qa/verification.json
+          cd .gazette-writer
+          git add gazette-live gazette-runtime-qa/verification.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if ! git diff --cached --quiet; then
+            git commit -m 'gazette: save verified Wix homepage package and public runtime evidence'
+            git push origin HEAD:gazette-rebuild
+          fi

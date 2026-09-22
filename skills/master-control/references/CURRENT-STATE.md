@@ -321,7 +321,8 @@ Canonical lock document: `docs/HOMEPAGE-BASELINE-LOCK.md`
 - do not mix asset refs, reintroduce the native Wix homepage shell, add competing themes, or add long-lived polling/observer fixes
 - legacy cleanup must finish during the bounded startup/prepaint window so readers never see a late layout removal or jump
 - materially changing this presentation baseline requires explicit Brenden approval
-- Header spacing refinement approved 2026-09-22: logo is explicitly 250 px desktop / 180 px mobile with tighter mast padding; no nav or story-layout change.\n- Homepage story routing refinement approved 2026-09-22: strict newest-first chronology from the live Wix blog feed. No stale opponent/game-week hard-coding or manual feature pinning.
+- Header spacing refinement approved 2026-09-22: logo is explicitly 250 px desktop / 180 px mobile with tighter mast padding; no nav or story-layout change.
+- Homepage story routing refinement approved 2026-09-22: strict newest-first chronology from the live Wix blog feed. No stale opponent/game-week hard-coding or manual feature pinning.
 
 When troubleshooting any front-page regression, restore this baseline first rather than layering another override.
 

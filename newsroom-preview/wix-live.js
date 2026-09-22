@@ -83,7 +83,7 @@ function t(tag){var n=item.querySelector(tag);return n?n.textContent:'';}
 var raw=t('pubDate'),d=raw?new Date(raw):new Date(0),link=local(t('link').trim()),s=slug(link),pic=image(item)||IMAGE_FALLBACKS[s]||'';
 return{title:t('title').trim(),desc:t('description'),link:link,img:pic,who:creator(item),date:d};
 }).filter(function(p){
-return p.title&&/^\/post\//.test(p.link)&&!isHiddenHome(p.link)&&!isStaleBuddyLivePromo(p)&&(!isMagazine(p.link)||isFeature(p.link)||isPerformance(p.link));
+return p.title&&/^\/post\//.test(p.link)&&!isHiddenHome(p.link)&&!isStaleBuddyLivePromo(p);
 }).sort(function(a,b){return b.date.getTime()-a.date.getTime();}).slice(0,40);
 });
 }
@@ -95,8 +95,8 @@ return'<div class="'+cls+(safe?' safe-art':'')+'"><img '+(eager?'fetchpriority="
 function meta(p){return esc(dateText(p.date));}
 function byline(p){return esc(p.who||'GatorBait Staff')+' · '+esc(dateText(p.date));}
 function findPost(posts,s){for(var i=0;i<posts.length;i++){if(slug(posts[i].link)===s)return posts[i];}return null;}
-function titleFor(p){var s=slug(p.link);return s===LIVE_GAME_SLUG?p.title:(DISPLAY_TITLES[s]||p.title);}
-function labelFor(p){return FEATURE_LABELS[slug(p.link)]||p.who||'GatorBait';}
+function titleFor(p){return p.title;}
+function labelFor(p){return p.who||'GatorBait';}
 
 function featureLead(p){
 var s=slug(p.link);
@@ -114,32 +114,22 @@ return'<a class="trend-item" href="'+esc(p.link)+'"><span class="trend-num">'+(i
 }
 
 function build(posts){
-var live=findPost(posts,LIVE_GAME_SLUG);
-if(!live){for(var li=0;li<posts.length;li++){if(/^(HALFTIME|LIVE)\s+Florida/i.test(posts[li].title||'')){live=posts[li];break;}}}
-var candidates=posts.filter(function(p){return p.img;});
-var buddy=live||findPost(posts,'welcome-to-the-killing-fields-why-jordan-hare-eats-gators-for-breakfast')||candidates[0];
-
-var sidePool=posts.filter(function(p){return p!==buddy&&p.img&&(!live||!isPregame(p.link));});
-var franz=sidePool[0]||findPost(posts,'florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie')||candidates.filter(function(p){return p!==buddy;})[0];
-var carlton=sidePool[1]||findPost(posts,'laura-rutledge-returns-to-the-buddy-martin-show-carlton-reese-remembers-14-days-in-gainesville')||candidates.filter(function(p){return p!==buddy&&p!==franz;})[0];
-
-var used={};
-[buddy,franz,carlton].forEach(function(p){if(p)used[slug(p.link)]=1;});
-var latest=posts.filter(function(p){return !used[slug(p.link)]&&!isPerformance(p.link)&&(!live||!isPregame(p.link));}).slice(0,4);
-latest.forEach(function(p){used[slug(p.link)]=1;});
-var trending=posts.filter(function(p){return isPerformance(p.link)&&!used[slug(p.link)];}).slice(0,5);
-posts.filter(function(p){return !isPregame(p.link);}).forEach(function(p){var s=slug(p.link);if(trending.length<5&&!used[s]&&!trending.some(function(x){return slug(x.link)===s;}))trending.push(p);});
-posts.filter(function(p){return isPregame(p.link);}).forEach(function(p){var s=slug(p.link);if(trending.length<5&&!used[s]&&!trending.some(function(x){return slug(x.link)===s;}))trending.push(p);});
+var ordered=posts.slice();
+var lead=ordered[0];
+var sideOne=ordered[1]||lead;
+var sideTwo=ordered[2]||sideOne;
+var latest=ordered.slice(3,7);
+var moreRecent=ordered.slice(7,12);
 
 var subscribe='mailto:brenden@gatorbaitmedia.com?subject=Subscribe%20me%20to%20GatorBait%20Magazine&body=Please%20add%20me%20to%20GatorBait%20Magazine.%20I%20consent%20to%20receive%20marketing%20emails%20and%20understand%20I%20can%20unsubscribe%20at%20any%20time.';
-var featureStage=live?'<section class="feature-stage game-mode" aria-label="Featured story">'+featureLead(buddy)+'</section>':'<section class="feature-stage" aria-label="Featured stories">'+featureLead(buddy)+'<div class="feature-stack">'+featureSide(franz)+featureSide(carlton)+'</div></section>';
+var featureStage='<section class="feature-stage" aria-label="Featured stories">'+featureLead(lead)+'<div class="feature-stack">'+featureSide(sideOne)+featureSide(sideTwo)+'</div></section>';
 
 return''+
 '<a class="skip" href="#gbm-main">Skip to stories</a>'+
 '<header class="site-header"><div class="mast"><a class="brand" href="/" aria-label="GatorBait Media home"><img src="'+LOGO+'" alt="GatorBait Media" width="900" height="241" decoding="async"></a><div class="brand-promise"><strong>OLD SCHOOL JOURNALISM</strong><span>+</span><strong>NEW TECH</strong></div><a class="support" href="/pricing-plans">JOIN GATORBAIT</a></div><nav class="primary" aria-label="Primary navigation"><a href="/" aria-current="page">News</a><a href="/magazine">Magazine</a><a href="/the-buddy-martin-show">GatorBait TV</a><a href="/the-buddy-martin-show">Buddy Martin Show</a><a href="https://gatorbait2026.itemorder.com/shop/home/">Shop</a><a class="join" href="/pricing-plans">Join</a></nav></header>'+
 '<main id="gbm-main">'+
 featureStage+
-'<section class="news-zone"><div class="latest-news"><div class="section-head"><h2>Latest News</h2><a href="/gatorbait-media-blogs">More news →</a></div><div class="latest-grid">'+latest.map(newsCard).join('')+'</div></div><aside class="trending" aria-labelledby="gbm-trending"><div class="section-head"><h2 id="gbm-trending">Trending Now</h2></div>'+trending.map(trendItem).join('')+'</aside></section>'+
+'<section class="news-zone"><div class="latest-news"><div class="section-head"><h2>Latest News</h2><a href="/gatorbait-media-blogs">More news →</a></div><div class="latest-grid">'+latest.map(newsCard).join('')+'</div></div><aside class="trending" aria-labelledby="gbm-more-recent"><div class="section-head"><h2 id="gbm-more-recent">More Recent</h2></div>'+moreRecent.map(trendItem).join('')+'</aside></section>'+
 '<section class="tv-band"><div><span>GATORBAIT TV</span><h2>Watch the conversation behind the stories.</h2><p>The Buddy Martin Show, Florida Gator Lowdown, Best Friday in Football and SEC coverage.</p></div><a href="/the-buddy-martin-show">WATCH GATORBAIT TV →</a></section>'+
 '<section class="destinations" aria-label="GatorBait destinations"><a href="/the-buddy-martin-show"><span>SHOW</span><strong>The Buddy Martin Show</strong><em>Full episodes and interviews.</em></a><a href="/magazine"><span>READ</span><strong>GatorBait Magazine</strong><em>Features, history and people.</em></a><a href="https://gatorbait2026.itemorder.com/shop/home/"><span>SHOP</span><strong>Rep the Gators</strong><em>Hats, visors, shirts and more.</em></a></section>'+
 '<section class="newsletter" aria-labelledby="gbm-newsletter"><div><span>THE EMAIL EDITION</span><h2 id="gbm-newsletter">GatorBait Magazine</h2><p>Get the strongest GatorBait stories and game-week coverage in your inbox.</p></div><a href="'+subscribe+'">Get GatorBait Magazine</a></section>'+

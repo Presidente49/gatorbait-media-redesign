@@ -1,6 +1,6 @@
 {
   "phase": "candidate",
-  "timestamp": "2026-09-22T23:16:47.594850+00:00",
+  "timestamp": "2026-09-22T23:24:08.055067+00:00",
   "scope": "Public Wix runtime. Candidate intercepts only retired presentation assets and substitutes candidate content; live is unmodified. Device emulation is not physical iPhone testing.",
   "baselineHTTP": {
     "account/my-account": 403,
@@ -339,7 +339,7 @@
       "documentClasses": "",
       "rootCount": 1,
       "rootTop": 60,
-      "rootHeight": 1595,
+      "rootHeight": 2059.75,
       "overflow": [],
       "headers": 1,
       "footerVisible": true,
@@ -366,7 +366,7 @@
       "documentClasses": "",
       "rootCount": 1,
       "rootTop": 60,
-      "rootHeight": 1595,
+      "rootHeight": 2059.75,
       "overflow": [],
       "headers": 1,
       "footerVisible": true,
@@ -393,7 +393,7 @@
       "documentClasses": "",
       "rootCount": 1,
       "rootTop": 0,
-      "rootHeight": 1364.921875,
+      "rootHeight": 1916.921875,
       "overflow": [],
       "headers": 1,
       "footerVisible": true,
@@ -403,14 +403,16 @@
       "leadFont": "54px",
       "feedSource": "current-feed",
       "newest": "2026-09-22T16:13:41.000Z",
-      "cls": 0.9481253894193673,
+      "cls": 1.0002629762249229,
       "canonical": "https://www.gatorbaitmedia.com/",
       "noindex": false,
       "previewCopy": false,
       "adLoaders": 1,
       "title": "Saturday\u2019s Bill Comes Due: Gators, Ole Miss, and \u2018The Promise\u2019 That Started It All",
       "topArticle": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027",
-      "pageErrors": []
+      "pageErrors": [
+        "wixTagManager is not defined"
+      ]
     },
     {
       "viewport": "webkit-390",
@@ -419,8 +421,8 @@
       "scroll": 320,
       "documentClasses": "",
       "rootCount": 1,
-      "rootTop": 60,
-      "rootHeight": 1692.921875,
+      "rootTop": -1692.6153564453125,
+      "rootHeight": 2062,
       "overflow": [],
       "headers": 1,
       "footerVisible": true,

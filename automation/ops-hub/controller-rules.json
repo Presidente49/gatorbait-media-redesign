@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
@@ -9,7 +9,12 @@
     "new_dependencies_require_explicit_justification": true,
     "bounded_learning_loop": true,
     "learning_candidates_require_review": true,
-    "learning_never_self_authorizes_production_writes": true
+    "learning_never_self_authorizes_production_writes": true,
+    "persistent_incidents_have_one_owner": true,
+    "duplicate_alerts_are_suppressed": true,
+    "independent_post_change_verification": true,
+    "human_blockers_are_explicit": true,
+    "reuse_verified_fix_before_new_dependency": true
   },
   "profiles": {
     "daily_ops": {
@@ -377,6 +382,40 @@
         "source totals",
         "date window",
         "metric reconciliation"
+      ]
+    },
+    "revenue_watch": {
+      "surfaces": [
+        "hourly revenue watch",
+        "AdSense publisher monetization",
+        "GA4 publisher metrics",
+        "Wix traffic and subscription revenue",
+        "Search Console",
+        "email and social attribution"
+      ],
+      "deterministic_gates": [
+        "fresh time range and source coverage are explicit on every run",
+        "GA4 processing lag is separated from Wix current traffic before conclusions",
+        "publisher_ad_impressions, publisher_ad_clicks, total_ad_revenue, ad_impression, ad_click and ad_query are checked directly",
+        "current Wix page views, sessions, visitors and paid revenue are checked directly",
+        "existing open work item is checked before creating or escalating another incident",
+        "one verified AdSense loader remains the default; duplicate Google scripts and manual ad units are not added as a diagnostic shortcut",
+        "spending, new ad products and payment-policy changes remain behind approval gates",
+        "email or social amplification requires measured traffic or conversion evidence",
+        "an unchanged known incident may resolve to NOOP for owner notification"
+      ],
+      "bounded_reasoning": [
+        "distinguish ad-serving failure from GA4 reporting lag, consent gating, AdSense site settings and product-link problems",
+        "decide whether new evidence belongs in the existing ops issue, requires a safe reversible repair, or needs HUMAN ACTION REQUIRED",
+        "calculate ads per page view only after real ad-impression data appears",
+        "identify only material revenue-impacting content, SEO, email or social actions"
+      ],
+      "verify": [
+        "primary provider metrics after any change",
+        "independent traffic/runtime evidence",
+        "existing ops issue updated only when evidence or state materially changes",
+        "verified fix recorded with exact before/after evidence",
+        "Brenden notified only for material change, verified fix, material revenue movement, new action, or human blocker"
       ]
     }
   }

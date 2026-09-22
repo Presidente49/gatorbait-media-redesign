@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "architecture": "single-controller",
   "principles": {
     "deterministic_scope_before_model": true,
@@ -58,6 +58,9 @@
         "landing page"
       ],
       "deterministic_gates": [
+        "mobile shell must remain compact: logo + Menu trigger, slide-in drawer, compact Join CTA, Store, and Sign In / Account",
+        "native Wix mobile login/header must never be visible when unified mobile shell is active",
+        "approved mobile navigation owner is the inline unified mobile shell in newsroom loader revision 48",
         "material presentation changes require explicit Brenden approval",
         "prepaint and legacy cleanup remain bounded so no late layout jump occurs",
         "all four newsroom presentation assets remain pinned to the same approved baseline commit",

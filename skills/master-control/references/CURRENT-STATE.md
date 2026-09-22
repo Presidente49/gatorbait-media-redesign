@@ -385,8 +385,8 @@ The existing single `Google AdSense Auto Ads` custom embed `2da582cf-6935-4255-b
 The production `/magazine` route now uses the dynamic live-issue presentation.
 
 - Wix custom embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`
-- live revision: `17`
-- name: `GBM - Magazine Live Issue v6.1 (Buddy cover)`
+- live revision: `19`
+- name: `GBM - Magazine Live Issue v6.3 (single-fetch stable)`
 - state: **ENABLED**
 - asset commit: `5667c8fee6267eaa7cd6e1554082f28fb824d2b6`
 - assets:
@@ -398,6 +398,7 @@ The production `/magazine` route now uses the dynamic live-issue presentation.
 - season reference links to the evergreen internal `Florida Gators 2026 Roster and Schedule` article
 - GatorBait TV and Store remain visible destinations
 - the approved unified mobile shell remains the mobile navigation owner on `/magazine`
+- single-fetch stability rule: Magazine may fetch the Wix blog feed once per page load, reuse a short session cache, and must never use burst refreshes/cache-busters that can trigger Wix 429 rate limits
 
 
 ### Buddy Martin morning email — 2026-09-22

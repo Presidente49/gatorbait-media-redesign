@@ -20,7 +20,7 @@ This is the default production state. It is not an experiment, temporary fallbac
   - `newsroom-preview/wix-live.js`
   - `newsroom-preview/wix-live-ui.js`
 - Newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-  - live verified revision after clean utility-footer restore: `49`
+  - live verified revision after mobile account stabilization: `50`
   - required state: **ENABLED**
 - Homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`
   - live verified revision after restore: `17`
@@ -43,6 +43,8 @@ This is the default production state. It is not an experiment, temporary fallbac
 - Legacy cleanup must finish inside the bounded prepaint/startup window; it must not remove layout blocks after a reader has begun using the page.
 - Preserve a deterministic prepaint followed by one stable Newsroom mount.
 - Article and utility routes may continue using their normal Wix shell; this lock is specifically for the homepage.
+- Mobile account/login route `/account/my-account` is compacted by the unified shell layer on screens up to 820 px; mobile back-to-top controls are suppressed.
+- Legacy Wix mobile-nav CSS must not compete with the unified shell. Header embed `7fee4de6-1886-475e-a3f3-b9c68161c242` is revision 14 with obsolete `gbm-mobile-masthead-fix`, `gbm-mobile-drawer-v1`, and `gbm-mobile-nav-v2` blocks removed.
 
 ## What is and is not frozen
 

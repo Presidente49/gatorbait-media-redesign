@@ -12,7 +12,8 @@ For substantial GatorBait work:
 2. `skills/master-control/references/CURRENT-STATE.md` only when current live facts matter
 3. the smallest relevant Master Control reference or specialist skill
 4. `automation/ops-hub/policy.json` and `controller-rules.json` when production mutation/automation policy matters
-5. the relevant current surface playbook/runbook
+5. `automation/ops-hub/playbooks/controller-communications-qc.md` for recurring automation handoffs, persistent incident routing, alert deduplication, recursive QC, and bounded learning
+6. the relevant current surface playbook/runbook
 
 Do **not** load every historical document by default.
 
@@ -44,6 +45,9 @@ Friendly names are not sufficient identity for automations, campaigns, embeds, o
 - Keep credentials/secrets out of the repo.
 - Generated social/email/publication output is draft unless the active request authorizes that publication/send.
 - Measured repeated outcomes may graduate into reviewed playbooks; they do not silently rewrite money, safety, approval, or customer-data boundaries.
+- Persistent defects converge on one owned work item/issue instead of spawning duplicate fixes or duplicate alerts.
+- After an authorized mutation, run primary verification plus an independent evidence check when practical; do not stack a second production patch in the same cycle.
+- Recurring automations should maintain unchanged incidents silently and notify Brenden only on material change, a verified fix, a new revenue-impacting action, or a real human blocker.
 
 ## Invocation
 

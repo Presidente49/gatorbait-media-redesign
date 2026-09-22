@@ -309,9 +309,9 @@ Brenden locked the September 19 late-game Newsroom architecture as the canonical
 
 Canonical lock document: `docs/HOMEPAGE-BASELINE-LOCK.md`
 
-- presentation baseline commit: `09e6eebadf29ad02237c8a5ceab627c07bf7da36`
+- presentation baseline commit: `f40e42d43f5192d72a249bb25d0b0d8d1f91688e`
 - related live-tracker routing commit: `d1b6da53fa33aead25ce3354dffaadb40ce5a4cd`
-- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `44`, **ENABLED**
+- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `45`, **ENABLED**
 - homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`, verified live revision `17`, **ENABLED**
 - legacy homepage cleanup: `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f`, verified live revision `8`, **ENABLED**
 - all four newsroom assets are pinned to the same baseline commit: `wix-live.css`, `wix-live-ui.css`, `wix-live.js`, and `wix-live-ui.js`
@@ -323,6 +323,7 @@ Canonical lock document: `docs/HOMEPAGE-BASELINE-LOCK.md`
 - materially changing this presentation baseline requires explicit Brenden approval
 - Header spacing refinement approved 2026-09-22: logo is explicitly 250 px desktop / 180 px mobile with tighter mast padding; no nav or story-layout change.
 - Homepage story routing refinement approved 2026-09-22: strict newest-first chronology from the live Wix blog feed. No stale opponent/game-week hard-coding or manual feature pinning.
+- Mobile story-separation refinement approved 2026-09-22: top feature stories are visibly separated by writer with a writer band before each card; footer includes a visible Store link.
 
 When troubleshooting any front-page regression, restore this baseline first rather than layering another override.
 
@@ -334,7 +335,7 @@ When troubleshooting any front-page regression, restore this baseline first rath
 The Front Page must keep the known-good late-game architecture from September 19.
 
 - Wix loader embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified revision `35`
-- all four newsroom assets are pinned to `09e6eebadf29ad02237c8a5ceab627c07bf7da36`
+- all four newsroom assets are pinned to `f40e42d43f5192d72a249bb25d0b0d8d1f91688e`
 - `GBM - Homepage Safe Prepaint Shield v2` remains enabled
 - on the standalone homepage, the baseline stylesheet hides the native Wix `#SITE_HEADER`, `#SITE_PAGES`, and `#SITE_FOOTER` while the newsroom surface owns the visible page
 - do not reintroduce the native Wix homepage shell/header/footer underneath the newsroom layer

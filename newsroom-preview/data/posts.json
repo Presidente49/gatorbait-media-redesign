@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: September 22, 2027",
+      "excerpt": "Kerwin Bell (L) and Aaron Philo A few thoughts to jump start your Tuesday afternoon: Have you taken the time to notice the similarity? If you are old enough and you remember 1984, then you probably recall a certain No. 12, a walk-on from tiny Mayo (population 1,055) where dairy cows outnumber people probably 10-1. Kerwin Bell became Florida’s starter by…",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-09-22T16:13:41Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/a99769_a56cca7d946542d6ada59ccfa96cad7f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: September 22, 2027"
+      }
+    },
+    {
       "title": "Florida After Auburn: 5 Signs Sumrall’s Gators Are Rising",
       "excerpt": "Eddie Gilley breaks down Florida’s 44-39 win at Auburn: Jon Sumrall’s edge, Jadan Baugh’s 162 yards, improved line play and the penalty problem.",
       "url": "https://www.gatorbaitmedia.com/post/florida-after-auburn-5-signs-sumrall-gators-rising",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Jimbo Fisher’s FSU Parole Hearing Could  Go Either Way. How Do Gator Fans Feel?"
-      }
-    },
-    {
-      "title": "Florida-Auburn grudge match: The only thing missing is Gordon Solie",
-      "excerpt": "There is this theory that has been circulating for a few months that Jon Sumrall is Florida’s football coach because athletic director Scott Stricklin got the best of the guy he once mentored. It is only a theory but one that has grown legs. It has its start back in 2008 when Scott Stricklin left Kentucky to become the senior associate athletic director at…",
-      "url": "https://www.gatorbaitmedia.com/post/florida-auburn-grudge-match-the-only-thing-missing-is-gordon-solie",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-09-18T11:29:26Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/a99769_f422e2b2eb0c4fccb5400143f80a1a8e~mv2.jpeg/v1/fit/w_972,h_534,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida-Auburn grudge match: The only thing missing is Gordon Solie"
       }
     }
   ]

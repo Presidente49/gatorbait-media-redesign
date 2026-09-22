@@ -49,7 +49,8 @@
     "spend money or launch paid advertising",
     "change DNS, account access, credentials, payment settings or membership permissions",
     "enter a new contract, sponsorship commitment or financial obligation",
-    "make a public claim about revenue, audience size, licensing, exclusivity or endorsement that cannot be verified"
+    "make a public claim about revenue, audience size, licensing, exclusivity or endorsement that cannot be verified",
+    "materially replace or redesign the locked production Newsroom homepage baseline"
   ],
   "never": [
     "store credentials in Git",

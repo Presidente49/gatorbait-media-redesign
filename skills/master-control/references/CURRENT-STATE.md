@@ -350,7 +350,7 @@ Canonical lock document: `docs/HOMEPAGE-BASELINE-LOCK.md`
 
 - presentation baseline commit: `f0a2deca30b8080b10efa8216f308414b7a95636`
 - related live-tracker routing commit: `d1b6da53fa33aead25ce3354dffaadb40ce5a4cd`
-- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `50`, **ENABLED**
+- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `51`, **ENABLED** (V18 adds a query-only V2 preview lane; normal production remains V1)
 - homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`, verified live revision `17`, **ENABLED**
 - legacy homepage cleanup: `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f`, verified live revision `8`, **ENABLED**
 - all four newsroom assets are pinned to the same baseline commit: `wix-live.css`, `wix-live-ui.css`, `wix-live.js`, and `wix-live-ui.js`
@@ -363,7 +363,7 @@ Canonical lock document: `docs/HOMEPAGE-BASELINE-LOCK.md`
 - Header spacing refinement approved 2026-09-22: logo is explicitly 250 px desktop / 180 px mobile with tighter mast padding; no nav or story-layout change.
 - Homepage story routing refinement approved 2026-09-22: strict newest-first chronology from the live Wix blog feed. No stale opponent/game-week hard-coding or manual feature pinning.
 - Mobile story-separation refinement approved 2026-09-22: top feature stories are visibly separated by writer with a writer band before each card; footer includes a visible Store link.
-- Mobile navigation refinement approved 2026-09-22: restore the unified mobile shell from the successful Sep. 15 version. Native Wix mobile header is hidden; mobile uses a compact masthead, slide-in drawer, compact Join button, Store link, and Sign In / Account row. Critical shell CSS/JS is inlined in the newsroom loader to prevent the native Wix mobile menu from winning during load. Revision 50 adds compact mobile styling for the `/account/my-account` login route and hides mobile back-to-top controls. Legacy competing mobile nav style blocks were removed from header embed `7fee4de6-1886-475e-a3f3-b9c68161c242`, now revision 14 (`GBM - Compact Optimized Logo + Header v12 (desktop core)`).
+- Mobile navigation refinement approved 2026-09-22: restore the unified mobile shell from the successful Sep. 15 version. Native Wix mobile header is hidden; mobile uses a compact masthead, slide-in drawer, compact Join button, Store link, and Sign In / Account row. Critical shell CSS/JS is inlined in the newsroom loader to prevent the native Wix mobile menu from winning during load. Revision 50 added compact mobile styling for the `/account/my-account` login route and mobile back-to-top suppression. Revision 51 preserves those fixes and adds the query-only Masthead V2 preview bootstrap. Legacy competing mobile nav style blocks were removed from header embed `7fee4de6-1886-475e-a3f3-b9c68161c242`, now revision 14 (`GBM - Compact Optimized Logo + Header v12 (desktop core)`).
 
 When troubleshooting any front-page regression, restore this baseline first rather than layering another override.
 
@@ -481,3 +481,49 @@ Recent GatorBait controller/revenue/site chats were normalized into the shared c
 - Brenden expressed a preference for paid-upfront membership rather than free trial, but no trial/pricing policy change has been authorized or applied from that discussion; pricing/trial/cancellation changes remain approval-required.
 - Locked homepage/mobile architecture remains authoritative. Other workflows must not override newest-first Front Page chronology, the known-good no-jump shell, or the current Magazine operating rules with a competing presentation layer.
 
+
+
+## Masthead-inspired Newsroom V2 preview lane — 2026-09-22
+
+Brenden approved immediate implementation of a Masthead-inspired GatorBait front-page direction while keeping Wix as the CMS/business engine.
+
+Architecture:
+
+- structural inspiration: `ondelva/astro-theme-masthead`
+- polish reference: restrained Fyrre-style editorial spacing
+- brand layer: traditional GatorBait orange/blue, approximately 10–15% of the visual system
+- Wix remains owner of Blog publishing, members, pricing plans, Store/eCommerce, email, existing article URLs, SEO, analytics/AdSense and consent
+- the redesign is one front-page presentation owner; do not stack another permanent theme or shell
+
+Implementation:
+
+- working branch: `masthead-wix-refresh`
+- implementation plan: `docs/MASTHEAD-WIX-REFRESH-PLAN.md`
+- tracker: GitHub issue #31
+- V2 assets:
+  - `newsroom-v2/data-adapter.js`
+  - `newsroom-v2/masthead.js`
+  - `newsroom-v2/masthead.css`
+  - `newsroom-v2/README.md`
+- pinned preview asset commit: `750d3c31e1108a159da559274f89cb4cd6b95c54`
+- V2 reads the existing Wix `/blog-feed.xml`; it does not move business logic out of Wix
+- responsive design explicitly includes 390 px and 430 px rules and keeps the existing unified mobile shell as sole mobile navigation owner
+
+Live Wix preview lane:
+
+- Newsroom loader embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
+- current revision: `51`
+- current name: `GBM - Newsroom Loader v18 (Masthead V2 preview lane)`
+- normal production homepage remains the locked V1 Newsroom by default
+- V2 activates only with query `?gbm_preview=masthead-v2`
+- preview URL: `https://www.gatorbaitmedia.com/?gbm_preview=masthead-v2`
+- the preview bootstrap sets the existing V1 renderer/UI guards before loading V2, preventing the two front-page renderers from racing
+- production promotion is **not yet performed**; the plan requires visual desktop + 390/430 verification before the one replacement switch
+
+Verification status:
+
+- JavaScript syntax checks passed before GitHub commit
+- GitHub confirmed all four V2 files exist at the pinned commit
+- Wix mutation response confirmed loader revision 51 and default V1 behavior
+- container Chromium visual capture was not reliable in the current runtime, so do not claim visual QA from it
+- a Figma QA file exists, but external Wix-page capture requires an available Playwright MCP lane; visual QA remains the outstanding gate

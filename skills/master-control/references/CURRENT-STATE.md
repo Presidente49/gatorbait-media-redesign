@@ -1,6 +1,6 @@
 # Master Control Current State
 
-**Snapshot date:** 2026-09-19  
+**Snapshot date:** 2026-09-22  
 **Purpose:** quick continuity only. This file expires by design.
 
 Before any mutation or present-tense business conclusion, re-read the authoritative live system when a connector/API is available.
@@ -303,20 +303,26 @@ Configured in the repository on 2026-09-20:
 - local execution/auth state: NOT YET VERIFIED from cloud chat. The local MCP client must reload the repository MCP config, then open/import the user's authenticated Wix Studio editor session.
 
 
-## Known-good game-night homepage baseline — 2026-09-19
+## LOCKED DEFAULT homepage baseline — newsroom
 
-Brenden identified the late-game site state, around 9:30–10:00 p.m. ET on September 19, as the preferred production baseline.
+Brenden locked the September 19 late-game Newsroom architecture as the canonical production homepage default on 2026-09-22.
+
+Canonical lock document: `docs/HOMEPAGE-BASELINE-LOCK.md`
 
 - presentation baseline commit: `d03d9d1e0350c55be03df1a8ebed0180c9a74c5d`
 - related live-tracker routing commit: `d1b6da53fa33aead25ce3354dffaadb40ce5a4cd`
-- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-- loader revision after restoration on 2026-09-20: `35`
+- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `41`, **ENABLED**
+- homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`, verified live revision `17`, **ENABLED**
+- legacy homepage cleanup: `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f`, verified live revision `8`, **ENABLED**
 - all four newsroom assets are pinned to the same baseline commit: `wix-live.css`, `wix-live-ui.css`, `wix-live.js`, and `wix-live-ui.js`
-- the newsroom JavaScript continues to fetch the live Wix `/blog-feed.xml`, so this pins the known-good presentation architecture without freezing editorial content or story chronology
-- do not mix asset refs from different commits in the production loader
-- later CSS that reintroduced the native Wix header/footer and changed mobile Latest News card geometry should not replace this baseline without an explicit, verified visual improvement
+- the Newsroom is the only visible homepage surface
+- `Today's Edition` and `Monday Chomp` must never be visible on the homepage
+- the newsroom JavaScript continues to fetch the live Wix blog feed, so presentation is locked without freezing current editorial content
+- do not mix asset refs, reintroduce the native Wix homepage shell, add competing themes, or add long-lived polling/observer fixes
+- legacy cleanup must finish during the bounded startup/prepaint window so readers never see a late layout removal or jump
+- materially changing this presentation baseline requires explicit Brenden approval
 
-When troubleshooting front-page regressions, compare against this baseline first instead of layering another override.
+When troubleshooting any front-page regression, restore this baseline first rather than layering another override.
 
 
 ## Production invariants added 2026-09-20

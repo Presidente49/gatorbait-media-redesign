@@ -1,0 +1,18 @@
+    <header class="gbm-header">
+      <div class="gbm-header-inner">
+        {nameplate && <a class="gbm-header-brand" href="/" aria-label="GatorBait Magazine"><img src="/gatorbait-logo.webp" width="900" height="241" alt="GatorBait" /></a>}
+        <nav class="gbm-desktop-nav" aria-label="Main navigation">{nav.header.map((item) => <a href={item.href}>{item.label}</a>)}</nav>
+        <details class="gbm-menu">
+          <summary>Menu <Icon name="lucide:menu" class="size-4" /></summary>
+          <nav aria-label="Mobile navigation">{nav.header.map((item) => <a href={item.href}>{item.label}</a>)}</nav>
+        </details>
+      </div>
+    </header>
+    <script>
+      document.querySelectorAll<HTMLDetailsElement>('.gbm-menu').forEach((menu) => {
+        menu.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') { menu.open = false; menu.querySelector('summary')?.focus(); }
+        });
+        menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { menu.open = false; }));
+      });
+    </script>

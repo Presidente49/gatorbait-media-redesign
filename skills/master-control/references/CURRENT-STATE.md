@@ -309,9 +309,9 @@ Brenden locked the September 19 late-game Newsroom architecture as the canonical
 
 Canonical lock document: `docs/HOMEPAGE-BASELINE-LOCK.md`
 
-- presentation baseline commit: `bac98ea3bf4af205c79b1bc316cff17706e31645`
+- presentation baseline commit: `f0a2deca30b8080b10efa8216f308414b7a95636`
 - related live-tracker routing commit: `d1b6da53fa33aead25ce3354dffaadb40ce5a4cd`
-- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `48`, **ENABLED**
+- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `49`, **ENABLED**
 - homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`, verified live revision `17`, **ENABLED**
 - legacy homepage cleanup: `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f`, verified live revision `8`, **ENABLED**
 - all four newsroom assets are pinned to the same baseline commit: `wix-live.css`, `wix-live-ui.css`, `wix-live.js`, and `wix-live-ui.js`
@@ -336,7 +336,7 @@ When troubleshooting any front-page regression, restore this baseline first rath
 The Front Page must keep the known-good late-game architecture from September 19.
 
 - Wix loader embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified revision `35`
-- all four newsroom assets are pinned to `bac98ea3bf4af205c79b1bc316cff17706e31645`
+- all four newsroom assets are pinned to `f0a2deca30b8080b10efa8216f308414b7a95636`
 - `GBM - Homepage Safe Prepaint Shield v2` remains enabled
 - on the standalone homepage, the baseline stylesheet hides the native Wix `#SITE_HEADER`, `#SITE_PAGES`, and `#SITE_FOOTER` while the newsroom surface owns the visible page
 - do not reintroduce the native Wix homepage shell/header/footer underneath the newsroom layer
@@ -385,8 +385,8 @@ The existing single `Google AdSense Auto Ads` custom embed `2da582cf-6935-4255-b
 The production `/magazine` route now uses the dynamic live-issue presentation.
 
 - Wix custom embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`
-- live revision: `20`
-- name: `GBM - Magazine Live Issue v7 (Wix self-contained)`
+- live revision: `21`
+- name: `GBM - Magazine Live Issue v6.2R (restored stable)`
 - state: **ENABLED**
 - asset commit: `5667c8fee6267eaa7cd6e1554082f28fb824d2b6`
 - assets:
@@ -411,3 +411,15 @@ The production `/magazine` route now uses the dynamic live-issue presentation.
 - primary story: `Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All`
 - secondary Buddy story: `The Med School Dropout Who Made Auburn Bleed Orange and Blue`
 - do not duplicate this exact send unless performance review explicitly calls for a resend/non-opener campaign
+
+
+## Footer and page-tail state — 2026-09-22
+
+- Magazine restored to the v6.2-style Buddy-led presentation while remaining self-contained in Wix.
+- Magazine embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`, revision `21`, **ENABLED**.
+- Magazine has no separate bottom menu/footer; the sitewide utility footer owns the bottom of the page.
+- Sitewide footer-gap guard: `15302fb2-44ef-4a93-a2a8-899731a6c197`, revision `6`, **ENABLED**.
+- Universal utility footer: `f8b950c9-47ce-4390-976f-85a0f040f0c6`, revision `22`, **ENABLED**.
+- Site fixer: `5a43ae83-690e-4933-971d-4837db00b2f3`, revision `15`; organization schema no longer includes the street address.
+- Newsroom loader: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, revision `49`; duplicate newsroom footer removed.
+- No enabled custom embed currently contains `1524 SE 22nd Ave` or `Ocala, FL 34471`.

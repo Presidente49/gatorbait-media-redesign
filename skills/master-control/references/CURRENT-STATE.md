@@ -350,7 +350,7 @@ Canonical lock document: `docs/HOMEPAGE-BASELINE-LOCK.md`
 
 - presentation baseline commit: `f0a2deca30b8080b10efa8216f308414b7a95636`
 - related live-tracker routing commit: `d1b6da53fa33aead25ce3354dffaadb40ce5a4cd`
-- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `51`, **ENABLED** (V18 adds a query-only V2 preview lane; normal production remains V1)
+- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `52`, **ENABLED** (V18 adds a query-only V2 preview lane; normal production remains V1)
 - homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`, verified live revision `17`, **ENABLED**
 - legacy homepage cleanup: `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f`, verified live revision `8`, **ENABLED**
 - all four newsroom assets are pinned to the same baseline commit: `wix-live.css`, `wix-live-ui.css`, `wix-live.js`, and `wix-live-ui.js`
@@ -505,14 +505,15 @@ Implementation:
   - `newsroom-v2/masthead.js`
   - `newsroom-v2/masthead.css`
   - `newsroom-v2/README.md`
-- pinned preview asset commit: `750d3c31e1108a159da559274f89cb4cd6b95c54`
+- pinned preview asset commit: `8f5bab7a9517dcc80a0f66c37f4f7d2e68ebd763`
 - V2 reads the existing Wix `/blog-feed.xml`; it does not move business logic out of Wix
+- category normalization maps Wix feed/category/title signals into Football, Recruiting, Basketball and Baseball for stable section routing
 - responsive design explicitly includes 390 px and 430 px rules and keeps the existing unified mobile shell as sole mobile navigation owner
 
 Live Wix preview lane:
 
 - Newsroom loader embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-- current revision: `51`
+- current revision: `52`
 - current name: `GBM - Newsroom Loader v18 (Masthead V2 preview lane)`
 - normal production homepage remains the locked V1 Newsroom by default
 - V2 activates only with query `?gbm_preview=masthead-v2`
@@ -524,6 +525,6 @@ Verification status:
 
 - JavaScript syntax checks passed before GitHub commit
 - GitHub confirmed all four V2 files exist at the pinned commit
-- Wix mutation response confirmed loader revision 51 and default V1 behavior
+- Wix mutation response confirmed loader revision 52 and default V1 behavior
 - container Chromium visual capture was not reliable in the current runtime, so do not claim visual QA from it
 - a Figma QA file exists, but external Wix-page capture requires an available Playwright MCP lane; visual QA remains the outstanding gate

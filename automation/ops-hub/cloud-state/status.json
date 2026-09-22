@@ -1,7 +1,7 @@
 {
   "service": "gatorbait-ops-hub",
   "version": 2,
-  "checked_at": "2026-09-22T17:33:13.133387+00:00",
+  "checked_at": "2026-09-22T20:29:05.321887+00:00",
   "ok": true,
   "checks": [
     {
@@ -10,7 +10,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/?ops_health=1",
-      "seconds": 0.37,
+      "seconds": 4.33,
       "error": ""
     },
     {
@@ -19,7 +19,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/magazine",
-      "seconds": 0.35,
+      "seconds": 5.23,
       "error": ""
     },
     {
@@ -28,7 +28,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/the-buddy-martin-show",
-      "seconds": 0.38,
+      "seconds": 3.91,
       "error": ""
     },
     {
@@ -37,7 +37,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/pricing-plans",
-      "seconds": 0.35,
+      "seconds": 3.85,
       "error": ""
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/policies",
-      "seconds": 0.32,
+      "seconds": 0.34,
       "error": ""
     },
     {
@@ -55,7 +55,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/contact",
-      "seconds": 0.37,
+      "seconds": 2.96,
       "error": ""
     },
     {
@@ -64,14 +64,14 @@
       "ok": true,
       "status": 200,
       "final_url": "https://gatorbait2026.itemorder.com/shop/home/",
-      "seconds": 1.97,
+      "seconds": 1.73,
       "error": ""
     }
   ],
   "controller": {
     "architecture": "single-controller",
     "phase": "observe",
-    "decision": "recovered",
+    "decision": "no_action",
     "reason": "deterministic checks are healthy",
     "failed_checks": [],
     "failure_fingerprint": "",
@@ -82,8 +82,8 @@
   },
   "learning": {
     "enabled": true,
-    "total_cycles": 13,
-    "healthy_cycles": 6,
+    "total_cycles": 14,
+    "healthy_cycles": 7,
     "incident_episodes": 3,
     "tracked_incidents": 2,
     "review_candidates": 1,

@@ -1,7 +1,7 @@
 {
   "architecture": "single-controller",
   "phase": "observe",
-  "decision": "recovered",
+  "decision": "no_action",
   "reason": "deterministic checks are healthy",
   "failed_checks": [],
   "failure_fingerprint": "",

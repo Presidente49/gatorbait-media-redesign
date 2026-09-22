@@ -13,14 +13,14 @@ This is the default production state. It is not an experiment, temporary fallbac
 
 ### Presentation baseline
 
-- Baseline commit: `f40e42d43f5192d72a249bb25d0b0d8d1f91688e`
+- Baseline commit: `bac98ea3bf4af205c79b1bc316cff17706e31645`
 - All four newsroom presentation assets stay pinned to that same commit:
   - `newsroom-preview/wix-live.css`
   - `newsroom-preview/wix-live-ui.css`
   - `newsroom-preview/wix-live.js`
   - `newsroom-preview/wix-live-ui.js`
 - Newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-  - live verified revision after writer-separation cleanup: `45`
+  - live verified revision after unified mobile shell restore: `46`
   - required state: **ENABLED**
 - Homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`
   - live verified revision after restore: `17`

@@ -1,0 +1,448 @@
+{
+  "phase": "candidate",
+  "timestamp": "2026-09-22T23:16:47.594850+00:00",
+  "scope": "Public Wix runtime. Candidate intercepts only retired presentation assets and substitutes candidate content; live is unmodified. Device emulation is not physical iPhone testing.",
+  "baselineHTTP": {
+    "account/my-account": 403,
+    "pricing-plans": 200
+  },
+  "blockedChecks": [],
+  "checks": [
+    {
+      "name": "chromium-390 homepage HTTP",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "chromium-390 single root",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-390 no horizontal overflow",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "chromium-390 one visible masthead",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "chromium-390 cover loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-390 current content",
+      "passed": true,
+      "detail": "current-feed"
+    },
+    {
+      "name": "chromium-390 populated publication",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-390 canonical preserved",
+      "passed": true,
+      "detail": "https://www.gatorbaitmedia.com/"
+    },
+    {
+      "name": "chromium-390 no preview metadata",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-390 footer follows content",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "chromium-390 no duplicate ad loader",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "chromium-390 restrained headline",
+      "passed": true,
+      "detail": "28px"
+    },
+    {
+      "name": "chromium-390 menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-390 menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-390 stable mount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "native article reachable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "native article present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "account/my-account reachable",
+      "passed": true,
+      "detail": {
+        "baseline": 403,
+        "status": 200
+      }
+    },
+    {
+      "name": "Gazette absent on account/my-account",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "pricing-plans reachable",
+      "passed": true,
+      "detail": {
+        "baseline": 200,
+        "status": 200
+      }
+    },
+    {
+      "name": "Gazette absent on pricing-plans",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-430 homepage HTTP",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "chromium-430 single root",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-430 no horizontal overflow",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "chromium-430 one visible masthead",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "chromium-430 cover loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-430 current content",
+      "passed": true,
+      "detail": "current-feed"
+    },
+    {
+      "name": "chromium-430 populated publication",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-430 canonical preserved",
+      "passed": true,
+      "detail": "https://www.gatorbaitmedia.com/"
+    },
+    {
+      "name": "chromium-430 no preview metadata",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-430 footer follows content",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "chromium-430 no duplicate ad loader",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "chromium-430 restrained headline",
+      "passed": true,
+      "detail": "28px"
+    },
+    {
+      "name": "chromium-430 menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-430 menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-430 stable mount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-1440 homepage HTTP",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "chromium-1440 single root",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-1440 no horizontal overflow",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "chromium-1440 one visible masthead",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "chromium-1440 cover loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-1440 current content",
+      "passed": true,
+      "detail": "current-feed"
+    },
+    {
+      "name": "chromium-1440 populated publication",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-1440 canonical preserved",
+      "passed": true,
+      "detail": "https://www.gatorbaitmedia.com/"
+    },
+    {
+      "name": "chromium-1440 no preview metadata",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "chromium-1440 footer follows content",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "chromium-1440 no duplicate ad loader",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "chromium-1440 stable mount",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "webkit-390 homepage HTTP",
+      "passed": true,
+      "detail": 200
+    },
+    {
+      "name": "webkit-390 single root",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "webkit-390 no horizontal overflow",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "webkit-390 one visible masthead",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "webkit-390 cover loaded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "webkit-390 current content",
+      "passed": true,
+      "detail": "current-feed"
+    },
+    {
+      "name": "webkit-390 populated publication",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "webkit-390 canonical preserved",
+      "passed": true,
+      "detail": "https://www.gatorbaitmedia.com/"
+    },
+    {
+      "name": "webkit-390 no preview metadata",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "webkit-390 footer follows content",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "webkit-390 no duplicate ad loader",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "webkit-390 restrained headline",
+      "passed": true,
+      "detail": "28px"
+    },
+    {
+      "name": "webkit-390 menu opens",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "webkit-390 menu closes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "webkit-390 stable mount",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "pages": [
+    {
+      "viewport": "chromium-390",
+      "mobileEmulation": true,
+      "client": 320,
+      "scroll": 320,
+      "documentClasses": "",
+      "rootCount": 1,
+      "rootTop": 60,
+      "rootHeight": 1595,
+      "overflow": [],
+      "headers": 1,
+      "footerVisible": true,
+      "footerGap": 0,
+      "image": true,
+      "rows": 12,
+      "leadFont": "28px",
+      "feedSource": "current-feed",
+      "newest": "2026-09-22T16:13:41.000Z",
+      "cls": 0,
+      "canonical": "https://www.gatorbaitmedia.com/",
+      "noindex": false,
+      "previewCopy": false,
+      "adLoaders": 1,
+      "title": "Saturday\u2019s Bill Comes Due: Gators, Ole Miss, and \u2018The Promise\u2019 That Started It All",
+      "topArticle": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027",
+      "pageErrors": []
+    },
+    {
+      "viewport": "chromium-430",
+      "mobileEmulation": true,
+      "client": 320,
+      "scroll": 320,
+      "documentClasses": "",
+      "rootCount": 1,
+      "rootTop": 60,
+      "rootHeight": 1595,
+      "overflow": [],
+      "headers": 1,
+      "footerVisible": true,
+      "footerGap": 0,
+      "image": true,
+      "rows": 12,
+      "leadFont": "28px",
+      "feedSource": "current-feed",
+      "newest": "2026-09-22T16:13:41.000Z",
+      "cls": 0,
+      "canonical": "https://www.gatorbaitmedia.com/",
+      "noindex": false,
+      "previewCopy": false,
+      "adLoaders": 1,
+      "title": "Saturday\u2019s Bill Comes Due: Gators, Ole Miss, and \u2018The Promise\u2019 That Started It All",
+      "topArticle": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027",
+      "pageErrors": []
+    },
+    {
+      "viewport": "chromium-1440",
+      "mobileEmulation": false,
+      "client": 1440,
+      "scroll": 1440,
+      "documentClasses": "",
+      "rootCount": 1,
+      "rootTop": 0,
+      "rootHeight": 1364.921875,
+      "overflow": [],
+      "headers": 1,
+      "footerVisible": true,
+      "footerGap": 0,
+      "image": true,
+      "rows": 12,
+      "leadFont": "54px",
+      "feedSource": "current-feed",
+      "newest": "2026-09-22T16:13:41.000Z",
+      "cls": 0.9481253894193673,
+      "canonical": "https://www.gatorbaitmedia.com/",
+      "noindex": false,
+      "previewCopy": false,
+      "adLoaders": 1,
+      "title": "Saturday\u2019s Bill Comes Due: Gators, Ole Miss, and \u2018The Promise\u2019 That Started It All",
+      "topArticle": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027",
+      "pageErrors": []
+    },
+    {
+      "viewport": "webkit-390",
+      "mobileEmulation": true,
+      "client": 320,
+      "scroll": 320,
+      "documentClasses": "",
+      "rootCount": 1,
+      "rootTop": 60,
+      "rootHeight": 1692.921875,
+      "overflow": [],
+      "headers": 1,
+      "footerVisible": true,
+      "footerGap": 0,
+      "image": true,
+      "rows": 12,
+      "leadFont": "28px",
+      "feedSource": "current-feed",
+      "newest": "2026-09-22T16:13:41.000Z",
+      "cls": 0,
+      "canonical": "https://www.gatorbaitmedia.com/",
+      "noindex": false,
+      "previewCopy": false,
+      "adLoaders": 1,
+      "title": "Saturday\u2019s Bill Comes Due: Gators, Ole Miss, and \u2018The Promise\u2019 That Started It All",
+      "topArticle": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027",
+      "pageErrors": [
+        "ResizeObserver loop completed with undelivered notifications."
+      ]
+    }
+  ],
+  "failures": [],
+  "passed": 63,
+  "total": 63
+}

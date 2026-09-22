@@ -2,7 +2,21 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "Keeping Up With Florida’s Opponents:, ”Heeerrrerre They Come!”",
+      "title": "Florida After Auburn: 5 Signs Sumrall’s Gators Are Rising",
+      "excerpt": "Eddie Gilley breaks down Florida’s 44-39 win at Auburn: Jon Sumrall’s edge, Jadan Baugh’s 162 yards, improved line play and the penalty problem.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-after-auburn-5-signs-sumrall-gators-rising",
+      "author": "EDDIE GILLEY",
+      "firstPublishedDate": "2026-09-22T12:42:05Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg/v1/fit/w_1000,h_800,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida After Auburn: 5 Signs Sumrall’s Gators Are Rising"
+      }
+    },
+    {
+      "title": "Keeping Up With Florida’s Opponents: “Heeerrrerre They Come!”",
       "excerpt": "When you look at the results, Coach Sumrall is justified in saying that the Gators had been tested more than some in the media thought. The two teams the Gators have played are off to a good start in their respective seasons.",
       "url": "https://www.gatorbaitmedia.com/post/keeping-up-with-florida-s-opponents-heeerrrerre-they-come",
       "author": "EDDIE GILLEY",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida-Auburn grudge match: The only thing missing is Gordon Solie"
-      }
-    },
-    {
-      "title": "Week 3 Preview: Florida Gators (2-0, 0-0) v. Auburn Tigers (2-0, 0-0)",
-      "excerpt": "Jon Sumrall and the Gators head to hostile territory for a historic trip to Jordan-Hare. By Loren Meadows GatorBaitMedia.com, Football Analyst, Host of The Gator Lowdown with Loren Meadows While two schools could not be more closely linked, Florida and Auburn have only met four times since 2002. The rivalry conjures names like Spurrier, Sanders, Byrum, and…",
-      "url": "https://www.gatorbaitmedia.com/post/week-3-preview-florida-gators-2-0-0-0-v-auburn-tigers-2-0-0-0",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-09-18T03:12:25Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/70130b_0c9934de1d8c4f43a0f7505aa16aa3e2~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Week 3 Preview: Florida Gators (2-0, 0-0) v. Auburn Tigers (2-0, 0-0)"
       }
     }
   ]

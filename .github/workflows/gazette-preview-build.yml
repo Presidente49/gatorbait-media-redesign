@@ -1,0 +1,82 @@
+name: Build Original Gazette Preview
+on:
+  push:
+    branches: [gazette-rebuild]
+    paths: ['gazette-rebuild/**', '.github/workflows/gazette-preview-build.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: gazette-preview-build
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.repository == 'Presidente49/gatorbait-media-redesign'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v6
+        with:
+          repository: ondelva/astro-theme-gazette
+          ref: cee215fd3ec0b78bba6f99d3a59a033b0a5f0b48
+          path: .work/gazette
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22.16.0'
+      - name: Prepare actual Gazette source and public GatorBait snapshot
+        run: python3 gazette-rebuild/prepare.py .work/gazette
+      - name: Install the upstream locked dependencies
+        run: |
+          npm install --global pnpm@10.34.5 --ignore-scripts
+          pnpm --dir .work/gazette install --frozen-lockfile
+      - name: Typecheck and compile
+        env:
+          SITE_URL: https://presidente49.github.io
+          BASE_PATH: /gatorbait-media-redesign/gazette-preview
+        run: |
+          pnpm --dir .work/gazette check
+          pnpm --dir .work/gazette build
+          python3 gazette-rebuild/finalize.py .work/gazette/dist
+      - name: Test compiled site in Chromium and WebKit
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install --with-deps chromium webkit
+          mkdir -p .work/http/gatorbait-media-redesign/gazette-preview
+          cp -a .work/gazette/dist/. .work/http/gatorbait-media-redesign/gazette-preview/
+          python3 -m http.server 4321 --bind 127.0.0.1 --directory .work/http > .work/http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+          sleep 2
+          python3 gazette-rebuild/qa.py http://127.0.0.1:4321/gatorbait-media-redesign/gazette-preview .work/gazette/dist .work/qa
+      - name: Checkout isolated destination after uncredentialed build
+        uses: actions/checkout@v6
+        with:
+          ref: gazette-rebuild
+          path: .work/writer
+      - name: Save actual installed source and verified preview to isolated branch only
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git -C .work/writer rev-parse HEAD)" = "$EXPECTED_SHA"
+          mkdir -p .work/writer/gazette-rebuild/site .work/writer/gazette-rebuild/qa .work/writer/flagship/gazette-preview
+          rsync -a --delete --exclude='.git' --exclude='.github' --exclude='node_modules' --exclude='dist' --exclude='.astro' --exclude='docs/screenshots' .work/gazette/ .work/writer/gazette-rebuild/site/
+          rsync -a --delete .work/qa/ .work/writer/gazette-rebuild/qa/
+          rsync -a --delete .work/gazette/dist/ .work/writer/flagship/gazette-preview/
+          cd .work/writer
+          git add gazette-rebuild/site gazette-rebuild/qa flagship/gazette-preview
+          git diff --cached --name-only | grep -Ev '^(gazette-rebuild/(site|qa)/|flagship/gazette-preview/)' > /tmp/gazette-unexpected || true
+          test ! -s /tmp/gazette-unexpected
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if ! git diff --cached --quiet; then
+            git commit -m 'build: install pinned Gazette source and verified GatorBait preview'
+            git push origin HEAD:gazette-rebuild
+          fi
+          echo 'Isolated source and compiled preview saved. No Wix mutation or default-site deployment.' >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,89 @@
+{
+  "scope": "In-memory source-component fixtures. Homepage activation simulated because browser navigation is blocked. Excludes real routing, network, Wix, menus, ads, accounts and physical iPhone.",
+  "checked_at_utc": "2026-09-22T21:36:41.378798+00:00",
+  "based_on_commit": "611941423dc17d349e01775c4912362e89fecb34",
+  "css_preserved_from_base": true,
+  "before": {
+    "passed": 21,
+    "total": 25
+  },
+  "after": {
+    "passed": 25,
+    "total": 25,
+    "status": "PASS"
+  },
+  "browser": "chromium",
+  "browser_version": "144.0.7559.96",
+  "source_sha256": {
+    "masthead.css": "5e94301b41a26caca9457d2dfc08b91a9068b95de260c387b0b7580071d55e3d",
+    "masthead.js": "1493b18b36d17017f2d1de5b1af6a7a865db6a9596871695a9b03b39d464b405",
+    "data-adapter.js": "06355e13ca69dfa6687c06938bc92954442f458781743f5ce2bec40c75afa492"
+  },
+  "viewports": [
+    {
+      "width": 360,
+      "scrollWidth": 360,
+      "leadFont": 30,
+      "outside": [],
+      "lead": "/post/qa-story-0",
+      "top": 60,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "leadFont": 30,
+      "outside": [],
+      "lead": "/post/qa-story-0",
+      "top": 60,
+      "errors": []
+    },
+    {
+      "width": 430,
+      "scrollWidth": 430,
+      "leadFont": 34.4,
+      "outside": [],
+      "lead": "/post/qa-story-0",
+      "top": 60,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "leadFont": 42,
+      "outside": [],
+      "lead": "/post/qa-story-0",
+      "top": 60,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "leadFont": 61.92,
+      "outside": [],
+      "lead": "/post/qa-story-0",
+      "top": 0,
+      "errors": []
+    }
+  ],
+  "fixed_checks": [
+    "no-false-writer-attribution",
+    "no-false-sport-sections",
+    "no-unmeasured-popularity",
+    "missing-adapter"
+  ],
+  "not_verified": [
+    "live Wix preview and V1 fallback",
+    "actual mobile drawer and account navigation",
+    "feed HTTP behavior and real image loading",
+    "consent and advertising",
+    "CLS under delayed resources",
+    "WebKit/Safari and physical iPhone"
+  ],
+  "environment_blockers": [
+    "Browser navigation returns ERR_BLOCKED_BY_ADMINISTRATOR, including loopback. Policies were not changed.",
+    "WebKit executable is not installed.",
+    "Direct git clone unavailable because DNS lookup failed; source obtained through connected GitHub tools."
+  ],
+  "deployment_status": "NOT_DEPLOYED"
+}

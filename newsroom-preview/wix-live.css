@@ -31,6 +31,7 @@ html.gbm-standalone-live body{background:#fff!important}
 #gbm-live .feature-stage.game-mode .feature-caption .meta{margin:0!important}
 #gbm-live .feature-stack{display:grid;grid-template-rows:1fr 1fr;gap:8px;min-width:0}
 #gbm-live .feature-lead,#gbm-live .feature-side{min-width:0;background:#0c1933;overflow:hidden}
+#gbm-live .story-writer-band{display:none}
 #gbm-live .feature-lead>a,#gbm-live .feature-side>a{display:block;height:100%}
 #gbm-live .feature-lead-media{width:100%;aspect-ratio:16/9;background:#091126;overflow:hidden}
 #gbm-live .feature-side-media{width:100%;aspect-ratio:16/7.2;background:#091126;overflow:hidden}
@@ -85,6 +86,7 @@ html.gbm-standalone-live body{background:#fff!important}
 #gbm-live .footer-contact a{color:var(--blue)!important;font-weight:800}
 #gbm-live .footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px 16px}
 #gbm-live .footer-links a{font-weight:800;color:var(--navy)!important;font-size:12px}
+#gbm-live .footer-links .footer-store{color:var(--orange)!important}
 #gbm-live .footer-bottom{max-width:1332px;margin:22px auto 0;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:18px;color:#667085;font-size:11px}
 @media(max-width:980px){
 #gbm-live .mast{grid-template-columns:minmax(190px,250px) 1fr}
@@ -102,8 +104,11 @@ html.gbm-standalone-live body{background:#fff!important}
 #gbm-live .primary{justify-content:flex-start}
 #gbm-live .primary a{font-size:11px;padding:12px 13px}
 #gbm-live main{padding:14px 12px 46px}
-#gbm-live .feature-stage{padding:5px;gap:5px}
-#gbm-live .feature-stack{grid-template-columns:1fr;gap:5px}
+#gbm-live .feature-stage{padding:0;gap:18px;background:#fff}
+#gbm-live .feature-stack{grid-template-columns:1fr;gap:18px}
+#gbm-live .feature-lead,#gbm-live .feature-side{border:1px solid #dfe4ec}
+#gbm-live .story-writer-band{display:block;background:#fff;color:var(--orange);font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;padding:11px 14px;border-bottom:4px solid var(--orange)}
+#gbm-live .feature-caption .feature-label,#gbm-live .feature-side-copy .feature-label{display:none}
 #gbm-live .feature-lead-media{aspect-ratio:16/10}
 #gbm-live .feature-side-media{aspect-ratio:16/8.5}
 #gbm-live .feature-caption{padding:14px 15px 17px}

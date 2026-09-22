@@ -1,4 +1,4 @@
-name: Refresh standalone newsroom feed
+name: Refresh GatorBait publication feeds
 
 on:
   push:
@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: refresh-newsroom-feed
@@ -25,24 +26,32 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
-
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-
-      - name: Pull newest Wix Blog posts and enforce editorial routing
+      - name: Refresh both presentations from one public Wix feed read
         run: python automation/update_newsroom_feed_routed.py
-
-      - name: Commit only when the published story set changed
+      - name: Commit changed content and request the existing Pages publisher
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
-          if git diff --quiet -- newsroom-preview/data/posts.json newsroom-preview/index.html; then
-            echo 'No newsroom changes.'
-            exit 0
+          set -euo pipefail
+          CHANGED=false
+          if ! git diff --quiet -- newsroom-preview/data/posts.json newsroom-preview/index.html gazette-live/posts.json; then
+            git config user.name 'gatorbait-newsroom-bot'
+            git config user.email 'brenden@gatorbaitmedia.com'
+            git add newsroom-preview/data/posts.json newsroom-preview/index.html gazette-live/posts.json
+            git commit -m 'data: refresh current Newsroom and Gazette stories'
+            git push
+            CHANGED=true
           fi
-          git config user.name 'gatorbait-newsroom-bot'
-          git config user.email 'brenden@gatorbaitmedia.com'
-          git add newsroom-preview/data/posts.json newsroom-preview/index.html
-          git commit -m 'data: refresh latest GatorBait stories'
-          git push
+          # GITHUB_TOKEN commits do not trigger branch-based Pages automatically.
+          # Ask the SAME native publisher to publish; no second artifact root.
+          if [ "$CHANGED" = true ] || [ "$EVENT_NAME" = push ]; then
+            gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"
+          else
+            echo 'No publication content changed. No deployment requested.'
+          fi

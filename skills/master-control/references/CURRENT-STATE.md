@@ -385,8 +385,8 @@ The existing single `Google AdSense Auto Ads` custom embed `2da582cf-6935-4255-b
 The production `/magazine` route now uses the dynamic live-issue presentation.
 
 - Wix custom embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`
-- live revision: `19`
-- name: `GBM - Magazine Live Issue v6.3 (single-fetch stable)`
+- live revision: `20`
+- name: `GBM - Magazine Live Issue v7 (Wix self-contained)`
 - state: **ENABLED**
 - asset commit: `5667c8fee6267eaa7cd6e1554082f28fb824d2b6`
 - assets:
@@ -394,11 +394,12 @@ The production `/magazine` route now uses the dynamic live-issue presentation.
   - `newsroom-preview/magazine-live.js`
 - the page reads the live Wix blog feed and stays current automatically
 - editorial cover rule: the newest Buddy Martin story is the Magazine cover/lead; all remaining stories continue newest-first underneath
+- Buddy Martin remains the cover lead in v7; current lead: `Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All`
 - no Auburn-only or September-history story set is hard-coded into the magazine
 - season reference links to the evergreen internal `Florida Gators 2026 Roster and Schedule` article
 - GatorBait TV and Store remain visible destinations
 - the approved unified mobile shell remains the mobile navigation owner on `/magazine`
-- single-fetch stability rule: Magazine may fetch the Wix blog feed once per page load, reuse a short session cache, and must never use burst refreshes/cache-busters that can trigger Wix 429 rate limits
+- stability rule: Magazine is self-contained inside Wix. Do not use client-side blog-feed requests or GitHub/CDN assets to build the page at runtime. Current article data is written into the existing Magazine embed by the controller, preventing 429/403 failures.
 
 
 ### Buddy Martin morning email — 2026-09-22

@@ -20,7 +20,7 @@ This is the default production state. It is not an experiment, temporary fallbac
   - `newsroom-preview/wix-live.js`
   - `newsroom-preview/wix-live-ui.js`
 - Newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-  - live verified revision after unified mobile shell restore: `46`
+  - live verified revision after inline unified mobile shell fix: `48`
   - required state: **ENABLED**
 - Homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`
   - live verified revision after restore: `17`

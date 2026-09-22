@@ -345,19 +345,26 @@ The Front Page must keep the known-good late-game architecture from September 19
 
 Exactly one automatic email may run on the `wix_blog-new_blog_post` trigger.
 
-ACTIVE:
-- automation: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`
-- name: `GatorBait Story Alert — New Blog Post`
-- message ID: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`
-- verified revision after activation: `11`
-
-INACTIVE duplicate:
+ACTIVE — GatorBait custom workflow:
 - automation: `824714d4-7e31-4b1d-95b2-ccec04d788af`
-- name: `Send notification when new blog post is published`
+- origin: **USER**
+- current Wix name: `Send notification when new blog post is published`
 - message ID: `04550418-33d0-4564-ad25-b865f591b2c0`
-- verified revision after deactivation: `16`
+- verified revision after activation: `17`
+- validation status before activation: **VALID**
+- uses dynamic blog fields for title, cover image, description and URL
+- `sendToUnsubscribed:false`
 
-Before changing this flow, query live automation state by IDs. Do not let both become active.
+INACTIVE — Wix-provided workflow:
+- automation: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`
+- origin: **PREINSTALLED**
+- current Wix name: `GatorBait Story Alert — New Blog Post`
+- message ID: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`
+- verified revision after deactivation: `12`
+
+Owner rule, reaffirmed 2026-09-22: use the USER-origin custom GatorBait article alert as the automated blog template. Keep the Wix PREINSTALLED blog email inactive.
+
+Before changing this flow, query live automation state by IDs + origin + message/action ID. Never rely on friendly names, and never let both become active.
 
 ### Google tag ownership
 

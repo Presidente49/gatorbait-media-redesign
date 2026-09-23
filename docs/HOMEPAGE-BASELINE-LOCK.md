@@ -2,7 +2,7 @@
 
 **Current presentation:** Original Gazette, owner-authorized September 22, 2026.  
 **Applies to:** production homepage `/` on `gatorbaitmedia.com`.  
-**Launch status:** Wix revision 56 published; 63/63 unmodified public-browser functional checks passed at 2026-09-22T23:53:36Z. Details and remaining scope limits below and in issue #31.  
+**Launch status:** Wix revision 58 published with compact cover proportions; prior revision 56 baseline: 63/63 unmodified public-browser functional checks passed at 2026-09-22T23:53:36Z. Details and remaining scope limits below and in issue #31.  
 **Authority:** this notice supersedes the older V1-default statements in historical snapshots, including CURRENT-STATE.md. Read live Wix state before any mutation.
 
 ## Default production homepage
@@ -10,10 +10,10 @@
 The default is the original Gazette layout adapted to the existing Wix site. Do not restore the old Newsroom merely because a prior snapshot calls it the default. Brenden explicitly authorized the Gazette production switch and its subsequent checks.
 
 - Active loader: `fdc2127a-845a-4d02-b711-438f1a4a86ce`.
-- Verified revision after launch stabilization: `56`, enabled.
+- Verified revision after cover repair: `58`, enabled.
 - Name: `GBM - Original Gazette Live v1 (Wix business preserved)`.
 - Position/category/load behavior preserved: HEAD, ESSENTIAL, loadOnce false.
-- Gazette asset pin: `77c35c9a6e980606c40ec110522c2b31fb26385b`, `gazette-live/homepage.js`.
+- Gazette asset pin: `bdb4154e00429c03f419ebb0320994b47c0d3f2c`, `gazette-live/homepage.js`.
 - Package is derived from original MIT Gazette 1.1.4, upstream `cee215fd3ec0b78bba6f99d3a59a033b0a5f0b48`; it is not the earlier Lovable recreation or custom Masthead V2 renderer.
 - One homepage root: `#gbm-live.gbm-gazette`.
 - Original mobile shell and account styles remain inside the existing loader. No second active header or footer was added.
@@ -85,3 +85,11 @@ These are dated observed revisions, not instructions to overwrite newer live cha
 ## Further changes
 
 Material changes to the approved homepage require Brenden's authorization. Routine story publishing and current feed refreshes do not. Track launch verification and residual defects in existing issue #31, not a new redesign incident. See `docs/GAZETTE-PRODUCTION-LAUNCH.md`.
+
+## September 23 compact cover repair
+
+Owner requested fixing the installed Gazette after reviewing the prior chat. Revision58 retains revision56 startup/background repair and changes only the Gazette bundle pin. Source and bundle saved on main; original cover/contents structure and native route owners retained. Reduced desktop cover maximum from520px to360px, headline54px to36px, logo300px to240px and cover/contents padding. Mobile headline clamp24–28px and cover maximum240px. Removed duplicated Magazine from logo accessible name.
+
+Fresh public browser at `/?gbm_check=revision58` verified final asset pin, loaded cover height360px, computed headline36px,12 story links, one root, no horizontal overflow, footer gap0. CDN SHA256 matched local bundle:73fee19094787483aec8bd5dec256d569291bb8617458a625e04a8ba7c2bfb3f. JavaScript syntax passed. Existing root browser response briefly retained revision57 from cache; fresh URL served58. No claim of new physical-iPhone or emulated-mobile QA for this sizing patch. Earlier63/63 checks belong to revision56, not58.
+
+Revision57 first sizing pass was partially overridden by more-specific original template selectors;58 uses matching original selectors. For size-only rollback, restore bundle pin77c35c9a6e980606c40ec110522c2b31fb26385b after reading current revision, keeping revision56 background repair. No DNS, financial, email, consent or Google settings changed.

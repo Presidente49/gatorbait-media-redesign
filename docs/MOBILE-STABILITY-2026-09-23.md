@@ -1,0 +1,10 @@
+# Mobile stability repair — 2026-09-23
+Published owner-requested stability and design consistency repair.
+Live revisions: loader fdc2127a-845a-4d02-b711-438f1a4a86ce 61→62; shared header 7fee4de6-1886-475e-a3f3-b9c68161c242 19→20; gap guard 15302fb2-44ef-4a93-a2a8-899731a6c197 7→8. All PATCH and publish statuses200.
+Preserved other workflow's mobile article25px and16px body update.
+Findings: closed translated mobile drawer lacked overflow containment outside homepage; sticky header lived inside a60px parent; shared article margin:auto applied to native related-story cards, shrinking one to2px wide; gap guard hid empty article children during hydration.
+Repairs: drawer clip on every route; sticky host owns masthead positioning; reserved logo dimensions; Latest added to mobile nav; article sizing scoped to main post; related cards use available grid width; no empty-placeholder DOM deletion. Footer and mobile controls now share homepage finish; iOS text auto-enlargement disabled for owned inner shell.
+Optimization: native routes load only existing UI CSS/JS, skipping retired homepage CSS/JS and its extra full-DOM observer. Recovery homepage still loads all original assets. No ad/access/business control changes.
+Verification: mobile shell fixture390/430px frame viewports returned client/scroll widths375/375 and415/415 (scrollbar occupies15px); both menus open/close correctly. Live desktop article related card290.66px versus2px before; no horizontal overflow; footer-to-page gap0 at sampled settled layout; expected2 legacy UI assets instead of4. Live sports homepage root/lead intact with no desktop overflow. Screenshot confirms related image/title restored.
+Limitations: isolated mobile shell tests, not full native Wix mobile/iPhone; no claim of measured CLS, complete site speed or ad-serving repair. Keep investigating if device-specific jumps persist.
+Sources/rollback: deploy/layout-stability/before-*.html and current-*.html; before revisions61/19/7. Read fresh revisions before rollback. QA sports-live/mobile-stability.html. Source commit8087c555368fcef6c588db5888a3b55f83b3e75e.

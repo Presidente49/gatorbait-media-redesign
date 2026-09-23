@@ -1,0 +1,90 @@
+<style id="gbm-tv-v9">
+html.gbm-tv #SITE_PAGES{display:none!important}
+#gbm-tv,#gbm-tv *{box-sizing:border-box}
+#gbm-tv{--n:#08132F;--o:#FA4616;--p:#F4F1E9;--i:#15213B;--m:#59657B;--l:#D8DEE8;position:relative;z-index:5;background:var(--p);color:var(--i);font:500 16px/1.5 Arial,sans-serif}
+#gbm-tv a{text-decoration:none!important}
+#gbm-tv .w{max-width:1200px;margin:auto;padding:0 22px 18px}
+#gbm-tv .hero{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;padding:44px 0 30px}
+#gbm-tv .k{margin:0 0 9px;color:#B8320C;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+#gbm-tv h1{margin:0;color:var(--n)!important;font:900 clamp(44px,6vw,76px)/.96 Georgia,serif!important;letter-spacing:-.045em}
+#gbm-tv .dek{max-width:730px;margin:17px 0 0;color:#38455E!important;font:500 clamp(17px,2vw,22px)/1.48 Georgia,serif!important}
+#gbm-tv .sched{display:flex;align-items:center;gap:8px;padding:11px 14px;background:#fff;border:1px solid var(--l);border-left:4px solid var(--o);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+#gbm-tv .dot{width:9px;height:9px;border-radius:50%;background:var(--o)}
+#gbm-tv .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}
+#gbm-tv .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 15px;border:2px solid var(--n);color:var(--n)!important;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+#gbm-tv .btn.main{background:var(--o);border-color:var(--o);color:#fff!important}
+#gbm-tv .btn.join{background:var(--n);color:#fff!important}
+#gbm-tv .tabs{display:flex;overflow-x:auto;border-block:1px solid var(--l);scrollbar-width:none}
+#gbm-tv .tabs::-webkit-scrollbar{display:none}
+#gbm-tv .tabs a{display:flex;align-items:center;min-height:44px;padding:0 14px;white-space:nowrap;color:#45536C!important;font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+#gbm-tv .tabs a:first-child{color:var(--n)!important;border-bottom:3px solid var(--o)}
+#gbm-tv .watch{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(250px,.65fr);margin-top:30px;background:#fff;border:1px solid var(--l);box-shadow:0 14px 34px #08132F14}
+#gbm-tv .video{position:relative;aspect-ratio:16/9;background:#050812;overflow:hidden}
+#gbm-tv iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#gbm-tv .watch .copy{padding:25px;border-left:4px solid var(--o);display:flex;flex-direction:column;justify-content:center}
+#gbm-tv .live{color:#B8320C;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+#gbm-tv h2{margin:7px 0 9px;color:var(--n)!important;font:900 clamp(28px,3vw,38px)/1 Georgia,serif!important}
+#gbm-tv .copy p{margin:0;color:var(--m)!important;font-size:14px}
+#gbm-tv .copy a{margin-top:16px;color:#0021A5!important;font-size:11px;font-weight:900;text-transform:uppercase}#gbm-tv .gbm-ytsub{display:flex!important;width:max-content!important;margin-top:10px!important}
+#gbm-tv .sec{padding-top:42px}
+#gbm-tv .head{display:flex;justify-content:space-between;align-items:end;gap:15px;border-bottom:3px solid var(--n);padding-bottom:9px;margin-bottom:17px}
+#gbm-tv .head h2{margin:0;font-size:clamp(29px,4vw,43px)!important}
+#gbm-tv .head span{font-size:10px;color:#69768C;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+#gbm-tv .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+#gbm-tv .card{background:#fff;border:1px solid var(--l);overflow:hidden}
+#gbm-tv .card .txt{padding:16px}
+#gbm-tv .card small{color:#B8320C;font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+#gbm-tv .card h3{margin:5px 0;color:var(--n)!important;font:900 23px/1.1 Georgia,serif!important}
+#gbm-tv .card p{margin:0;color:var(--m)!important;font-size:13px}
+#gbm-tv .next{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+#gbm-tv .next a{background:#fff;border-top:4px solid #0021A5;padding:18px;color:var(--n)!important;font-weight:900}
+#gbm-tv .next small{display:block;color:#B8320C;font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+#gbm-tv .about{margin-top:18px;padding:22px;background:var(--n);color:#fff}
+#gbm-tv .about strong{display:block;font:900 25px/1.1 Georgia,serif}
+#gbm-tv .about p{margin:7px 0 0;color:#D0D8E6!important}
+#gbm-tv-rail{position:fixed;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:900;display:none;align-items:center;background:#08132F;color:#fff;border-left:5px solid #FA4616;box-shadow:0 10px 28px #08132F40;font-family:Arial,sans-serif}
+#gbm-tv-rail.on{display:flex}
+#gbm-tv-rail>a{display:flex;align-items:center;gap:10px;min-height:52px;padding:8px 11px;color:#fff!important;text-decoration:none!important}
+#gbm-tv-rail small{display:block;color:#FFAB92;font-size:8px;font-weight:900;letter-spacing:.1em}
+#gbm-tv-rail b{font-size:12px}
+#gbm-tv-rail em{font-style:normal;background:#FA4616;padding:6px 8px;font-size:9px;font-weight:900}
+#gbm-tv-rail button{width:44px;height:44px;border:0;background:transparent;color:#fff;font-size:20px;cursor:pointer}
+@media(max-width:760px){#gbm-tv .w{padding:0 16px 12px}#gbm-tv .hero{grid-template-columns:1fr;gap:17px;padding:32px 0 24px}#gbm-tv h1{font-size:clamp(38px,12vw,50px)!important;line-height:.99!important}#gbm-tv .dek{font-size:17px!important}#gbm-tv .sched{justify-content:center}#gbm-tv .actions{display:grid;grid-template-columns:1fr 1fr}#gbm-tv .actions .main{grid-column:1/-1}#gbm-tv .watch{grid-template-columns:1fr;margin-top:22px}#gbm-tv .watch .copy{border-left:0;border-top:4px solid var(--o);padding:20px}#gbm-tv .grid{grid-template-columns:1fr}#gbm-tv .head{align-items:flex-start;flex-direction:column;gap:3px}#gbm-tv .next{grid-template-columns:1fr}#gbm-tv-rail{left:9px;right:9px;bottom:max(8px,env(safe-area-inset-bottom))}#gbm-tv-rail>a{flex:1;min-width:0}}
+@media(max-width:350px){#gbm-tv .actions{grid-template-columns:1fr}#gbm-tv .actions .main{grid-column:auto}#gbm-tv-rail small{display:none}}
+</style>
+<script>(function(){
+'use strict';
+var TV='/the-buddy-martin-show',Y='UCtR8b1sKFuwaRjKy5BiXRvA',C='PL1twZqsaZwxnM5F4xVYTJlia_-IIIHgKa',t=0;
+function path(){return(location.pathname||'').replace(/[/]$/,'')}
+function meta(a,k,v){var q='meta['+a+'="'+k+'"]',e=document.querySelector(q);if(!e){e=document.createElement('meta');e.setAttribute(a,k);document.head.appendChild(e)}e.setAttribute('content',v)}
+function seo(){var n='The Buddy Martin Show | GatorBait TV',d='Watch The Buddy Martin Show live and on demand: Florida Gators interviews, history, news, analysis, episodes and clips from GatorBait Media.';document.title=n;meta('name','description',d);meta('property','og:title',n);meta('property','og:description',d);meta('property','og:type','website');meta('name','twitter:card','summary_large_image');var c=document.querySelector('link[rel="canonical"]');if(!c){c=document.createElement('link');c.rel='canonical';document.head.appendChild(c)}c.href='https://www.gatorbaitmedia.com'+TV}
+function schema(){var o=document.getElementById('gbm-tv-schema');if(o)o.remove();var s=document.createElement('script');s.id='gbm-tv-schema';s.type='application/ld+json';s.textContent=JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage','name':'The Buddy Martin Show | GatorBait TV','url':'https://www.gatorbaitmedia.com'+TV,'description':'Florida Gators interviews, news, analysis, episodes and clips from Buddy Martin and GatorBait Media.','isPartOf':{'@id':'https://www.gatorbaitmedia.com/#organization'}});document.head.appendChild(s)}
+function addTV(){
+ if(path()!==TV||document.getElementById('gbm-tv'))return;
+ document.documentElement.classList.add('gbm-tv');seo();schema();
+ var e=document.createElement('main');e.id='gbm-tv';e.setAttribute('aria-label','The Buddy Martin Show on GatorBait TV');
+ e.innerHTML='<div class="w"><section class="hero"><div><p class="k">GatorBait TV · Florida since 1979</p><h1>The Buddy Martin Show</h1><p class="dek">Florida Gators conversation with the people who lived it — Buddy Martin, GatorBait voices, coaches, players and guests with their own chapters in the Gator story.</p><div class="actions"><a class="btn main" href="#gbm-watch">Watch live / latest</a><a class="btn" href="#gbm-episodes">Episodes</a><a class="btn join" href="/pricing-plans">Join GatorBait</a></div></div><div class="sched"><i class="dot"></i> Nightly <strong>9 PM ET</strong></div></section><nav class="tabs" aria-label="Show navigation"><a href="#gbm-watch">Watch</a><a href="#gbm-episodes">Episodes</a><a href="#gbm-clips">Clips</a><a href="#gbm-next">GatorBait</a><a href="#gbm-about">About</a></nav><section class="watch" id="gbm-watch"><div class="video"><iframe src="https://www.youtube.com/embed/live_stream?channel='+Y+'" title="The Buddy Martin Show live stream" loading="eager" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="copy"><span class="live">Live when we are on</span><h2>Your GatorBait TV desk</h2><p>Watch here when Buddy is live. Between broadcasts, jump into the newest full shows and clips below without leaving the GatorBait experience.</p><a href="https://www.youtube.com/@thebuddymartinshow" target="_blank" rel="noopener">Open YouTube channel →</a><a class="btn main gbm-ytsub" href="https://www.youtube.com/@thebuddymartinshow?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a></div></section><section class="sec" id="gbm-episodes"><div class="head"><h2>Latest episodes</h2><span>Full shows · Free</span></div><div class="grid"><article class="card"><div class="video"><iframe src="https://www.youtube.com/embed/videoseries?list=UUtR8b1sKFuwaRjKy5BiXRvA" title="Latest Buddy Martin Show episodes" loading="lazy" allowfullscreen></iframe></div><div class="txt"><small>The Buddy Martin Show</small><h3>Full shows and interviews</h3><p>The newest broadcasts, guests and Florida Gators conversations.</p></div></article><article class="card" id="gbm-clips"><div class="video"><iframe src="https://www.youtube.com/embed/videoseries?list='+C+'" title="Buddy Martin Show clips" loading="lazy" allowfullscreen></iframe></div><div class="txt"><small>Quick watch</small><h3>Clips worth your time</h3><p>The strongest bites, stories and moments from recent shows.</p></div></article></div></section><section class="sec" id="gbm-next"><div class="head"><h2>Keep going with GatorBait</h2><span>Watch · Read · Join</span></div><div class="next"><a href="/gatorbait-media-blogs"><small>Latest</small>Newest GatorBait stories →</a><a href="/magazine"><small>Magazine</small>Open the digital issue →</a><a href="/pricing-plans"><small>Membership</small>Join GatorBait →</a></div><div class="about" id="gbm-about"><strong>The show is part of the newsroom.</strong><p>Buddy Martin has spent decades covering Florida and the SEC. The live show connects that history with current reporting and guests who have their own chapters in the Gator story.</p></div></section></div>';
+ var f=document.getElementById('gbm-footer')||document.getElementById('SITE_FOOTER');document.body.insertBefore(e,f||null)
+}
+function postSEO(){
+ if(!/^[/]post[/]/.test(path()))return;
+ var h=document.querySelector('article h1')||document.querySelector('h1'),headline=h?(h.textContent||'').trim():'Florida Gators story',r=document.querySelector('meta[name="robots"]'),rv=r?r.content:'';
+ if(!/max-image-preview:large/i.test(rv))meta('name','robots',(rv?rv+',':'')+'max-image-preview:large,max-snippet:-1,max-video-preview:-1');
+ var imgs=document.querySelectorAll('article img'),lead=false;for(var i=0;i<imgs.length;i++){var im=imgs[i],ok=im.naturalWidth>300&&im.naturalHeight>200;if(!im.alt&&ok)im.alt=headline;if(ok&&!lead){lead=true;im.loading='eager';im.setAttribute('fetchpriority','high')}else if(ok)im.loading='lazy'}
+}
+function rail(){
+ var q=path(),ok=q===''||q==='/'||/^[/]post[/]/.test(q)||/^[/]gatorbait-media-blogs/.test(q)||q==='/magazine',e=document.getElementById('gbm-tv-rail');
+ if(!ok||q===TV||sessionStorage.getItem('gbmTvRailClosed')==='1'){if(e)e.remove();return}
+ if(e)return;e=document.createElement('aside');e.id='gbm-tv-rail';e.setAttribute('aria-label','GatorBait TV');e.innerHTML='<a href="'+TV+'"><span><small>GATORBAIT TV</small><b>Buddy Martin Show · 9 PM ET</b></span><em>WATCH</em></a><button type="button" aria-label="Dismiss GatorBait TV">×</button>';document.body.appendChild(e);
+ e.querySelector('button').onclick=function(){sessionStorage.setItem('gbmTvRailClosed','1');e.remove()};
+ function show(){e.classList.toggle('on',window.scrollY>420)}window.addEventListener('scroll',show,{passive:true});show()
+}
+function clean(){var q=path();if(q!==TV){document.documentElement.classList.remove('gbm-tv');var e=document.getElementById('gbm-tv');if(e)e.remove();var s=document.getElementById('gbm-tv-schema');if(s)s.remove()}if(q===TV){var r=document.getElementById('gbm-tv-rail');if(r)r.remove()}}
+function build(){clean();addTV();postSEO();rail()}
+function queue(){clearTimeout(t);t=setTimeout(build,60)}
+['pushState','replaceState'].forEach(function(k){var o=history[k];if(!o||o.__gbm)return;function f(){var x=o.apply(this,arguments);queue();return x}f.__gbm=1;history[k]=f});
+window.addEventListener('popstate',queue);
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){build();setTimeout(build,500);setTimeout(build,1400)},{once:true});else{build();setTimeout(build,500);setTimeout(build,1400)}
+try{var o=new MutationObserver(queue);o.observe(document.documentElement,{childList:true,subtree:true});setTimeout(function(){o.disconnect()},12000)}catch(e){}
+})();</script>
+<style id="gbm-tv-gap-fix-v2">html.gbm-tv #SITE_PAGES_TRANSITION_GROUP,html.gbm-tv #SITE_PAGES_TRANSITION_GROUP>div,html.gbm-tv #SITE_PAGES_TRANSITION_GROUP>div>.wixui-page{height:auto!important;min-height:0!important}html.gbm-tv #SITE_FOOTER{margin:0!important}</style>

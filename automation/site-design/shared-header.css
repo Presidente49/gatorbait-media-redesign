@@ -1,0 +1,37 @@
+/* Shared inner-page shell; native Wix applications retain their own content/forms. */
+html:has(#gbm-site-header) #SITE_HEADER{display:none!important}
+#gbm-site-header,#gbm-site-header *{box-sizing:border-box}
+#gbm-site-header{position:relative;z-index:20;background:#fffdf9;color:#11274a;font-family:Arial,Helvetica,sans-serif;width:100%}
+#gbm-site-header .sh-inner{max-width:1240px;margin:auto;padding:0 28px}
+#gbm-site-header .sh-brand{display:flex;align-items:center;gap:30px;padding:22px 0}
+#gbm-site-header .sh-brand img{width:250px;height:auto;display:block;max-width:100%}
+#gbm-site-header .sh-brand p{font-size:13px;line-height:1.5;border-left:1px solid #cad0d5;padding-left:24px;margin:0}
+#gbm-site-header a{color:inherit;text-decoration:none}
+#gbm-site-header a:hover{text-decoration:underline;text-underline-offset:4px}
+#gbm-site-header a:focus-visible{outline:3px solid #e84b10;outline-offset:3px}
+#gbm-site-header .sh-join{margin-left:auto;background:#11274a;color:#fff;padding:12px 18px;font-size:13px;font-weight:700}
+#gbm-site-header nav{display:flex;gap:24px;flex-wrap:wrap;border-top:3px solid #11274a;border-bottom:1px solid #c5c9ce;min-height:48px;align-items:center;font-size:13px;font-weight:700}
+#gbm-site-header nav a{padding-block:13px}
+#gbm-site-header nav [aria-current]{color:#ba3c0c}
+html:has(#gbm-site-header) [data-hook="post-page"]{background:#fffdf9!important;color:#11274a!important;border:0!important}
+html:has(#gbm-site-header) [data-hook="post-page"] [data-hook="post-title"]{font-family:Georgia,serif!important;font-size:36px!important;line-height:1.16!important;color:#11274a!important;font-weight:700!important;letter-spacing:-.025em!important}
+html:has(#gbm-site-header) [data-hook="post-page"] article{max-width:940px;margin-inline:auto}
+html:has(#gbm-site-header) #gbm-tv{background:#fffdf9!important}
+html:has(#gbm-site-header) #gbm-tv h1{font-size:46px!important;line-height:1.08!important;font-weight:700!important}
+html:has(#gbm-site-header) #gbm-tv .hero{padding-block:30px!important}
+html:has(#gbm-site-header) #gbm-tv .dek{font:16px/1.6 Arial,sans-serif!important}
+@media(max-width:820px){
+#gbm-site-header{display:none}
+html:has(#gbm-site-header) [data-hook="post-page"] [data-hook="post-title"]{font-size:28px!important;line-height:1.15!important}
+html:has(#gbm-site-header) #gbm-tv h1{font-size:30px!important}
+}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="app-title"]{font:700 36px/1.15 Georgia,serif!important;color:#11274a!important;letter-spacing:-.025em!important}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan"]>div{box-shadow:none!important;border:1px solid #cdd4dd!important;border-top:4px solid #e84b10!important;border-radius:0!important;background:#fffdf9!important}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-title"],html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-title"] span{font:700 25px/1.2 Georgia,serif!important;color:#11274a!important}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-price"]{color:#11274a!important;font:700 34px/1.2 Arial,sans-serif!important}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-cta"],html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-cta"] span{background:#11274a!important;color:white!important;border-radius:0!important;font:700 15px/1.4 Arial,sans-serif!important;min-height:44px}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="ribbon"]{background:#11274a!important;color:#fff!important;font:700 11px/1.5 Arial,sans-serif!important}
+html:has(#gbm-site-header) #comp-lii7mqeb h1,html:has(#gbm-site-header) #comp-lii7mqeb h1 span{font:700 36px/1.15 Georgia,serif!important;color:#11274a!important;letter-spacing:-.02em!important}
+html:has(#gbm-site-header) #comp-lii7mqe42{background:#fffdf9!important;color:#11274a!important}
+html:has(#gbm-site-header) #comp-lii7mqe42 button[type="submit"]{background:#11274a!important;color:#fff!important;min-height:44px!important;border-radius:0!important}
+@media(max-width:820px){html:has(#gbm-site-header) #SITE_PAGES [data-hook="app-title"],html:has(#gbm-site-header) #comp-lii7mqeb h1,html:has(#gbm-site-header) #comp-lii7mqeb h1 span{font-size:28px!important}}

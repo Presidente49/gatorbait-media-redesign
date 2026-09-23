@@ -1,7 +1,7 @@
 {
   "service": "gatorbait-ops-hub",
   "version": 2,
-  "checked_at": "2026-09-23T17:22:54.496673+00:00",
+  "checked_at": "2026-09-23T20:36:52.676887+00:00",
   "ok": true,
   "checks": [
     {
@@ -10,7 +10,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/?ops_health=1",
-      "seconds": 0.49,
+      "seconds": 2.75,
       "error": ""
     },
     {
@@ -19,7 +19,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/magazine",
-      "seconds": 0.29,
+      "seconds": 3.36,
       "error": ""
     },
     {
@@ -28,7 +28,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/the-buddy-martin-show",
-      "seconds": 0.31,
+      "seconds": 2.51,
       "error": ""
     },
     {
@@ -37,7 +37,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/pricing-plans",
-      "seconds": 0.26,
+      "seconds": 2.9,
       "error": ""
     },
     {
@@ -46,7 +46,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/policies",
-      "seconds": 0.3,
+      "seconds": 2.11,
       "error": ""
     },
     {
@@ -55,7 +55,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/contact",
-      "seconds": 0.32,
+      "seconds": 2.4,
       "error": ""
     },
     {
@@ -64,7 +64,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://gatorbait2026.itemorder.com/shop/home/",
-      "seconds": 2.01,
+      "seconds": 2.13,
       "error": ""
     }
   ],
@@ -82,8 +82,8 @@
   },
   "learning": {
     "enabled": true,
-    "total_cycles": 19,
-    "healthy_cycles": 12,
+    "total_cycles": 20,
+    "healthy_cycles": 13,
     "incident_episodes": 3,
     "tracked_incidents": 2,
     "review_candidates": 1,

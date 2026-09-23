@@ -2,6 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.gatorbaitmedia.com/post/live-now-florida-vs-ole-miss-preview-on-gator-lowdown</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-23T01:58:16.089000Z</news:publication_date>
+      <news:title>LIVE NOW: Florida vs Ole Miss Preview on Gator Lowdown</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-22T16:13:41Z</news:publication_date>
+      <news:title>Thoughts of the Day: September 22, 2027</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/florida-after-auburn-5-signs-sumrall-gators-rising</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-22T12:42:05.709000Z</news:publication_date>
+      <news:title>Florida After Auburn: 5 Signs Sumrall’s Gators Are Rising</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/saturday-s-bill-comes-due-gators-ole-miss-and-the-promise-that-started-it-all</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-22T10:59:34.613000Z</news:publication_date>
+      <news:title>Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://www.gatorbaitmedia.com/post/keeping-up-with-florida-s-opponents-heeerrrerre-they-come</loc>
+    <news:news>
+      <news:publication>
+        <news:name>GatorBait Media</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-09-22T10:23:46.278000Z</news:publication_date>
+      <news:title>Keeping Up With Florida’s Opponents: “Heeerrrerre They Come!”</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.gatorbaitmedia.com/post/the-med-school-dropout-who-made-auburn-bleed-orange-and-blue</loc>
     <news:news>
       <news:publication>
@@ -174,7 +229,7 @@
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>2026-09-17T23:51:02.332000Z</news:publication_date>
-      <news:title>Florida Gators 2026 Roster and Schedule Update: Auburn Opens SEC Play</news:title>
+      <news:title>Florida Gators 2026 Roster and Schedule</news:title>
     </news:news>
   </url>
   <url>
@@ -494,61 +549,6 @@
       </news:publication>
       <news:publication_date>2026-09-07T13:47:56Z</news:publication_date>
       <news:title>A Night to Remember In September. And There Are Going To Be More in 2026!</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/analyzing-the-win-over-fau-and-other-college-football-observations</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-07T05:45:14Z</news:publication_date>
-      <news:title>Analyzing the win over FAU and other college football observations</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/post-game-analysis-florida-gators-1-0-0-0-fau-owls-0-1-0-0</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T18:03:19.573000Z</news:publication_date>
-      <news:title>Post Game Analysis: Florida Gators (1-0, 0-0) FAU Owls (0-1, 0-0)</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/the-swamp-is-lit-again-it-just-feels-so-right-and-welcome-back-gatorbait</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T15:16:41Z</news:publication_date>
-      <news:title>The Swamp Is Lit Again. It just feels so right! And Welcome Back GatorBait!</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/goal-met-gators-are-1-0-after</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-06T11:28:36Z</news:publication_date>
-      <news:title>Putting things in perspective: One game, one 66-21 win for the Florida Gators</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.gatorbaitmedia.com/post/seven-decades-later-the-swamp-still-calls-me-i-m-thrilled-to-be-coming-back</loc>
-    <news:news>
-      <news:publication>
-        <news:name>GatorBait Media</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-09-05T16:17:28.431000Z</news:publication_date>
-      <news:title>Seven Decades Later, The Swamp Still Calls Me. I’m Thrilled To Be Coming Back!</news:title>
     </news:news>
   </url>
 </urlset>

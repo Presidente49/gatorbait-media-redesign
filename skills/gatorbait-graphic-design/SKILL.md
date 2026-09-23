@@ -24,6 +24,8 @@ The job is not to make something merely attractive. The job is to make the story
 
 For show production, AP Mode may feed the Graphic Design Artist directly when the story facts are already verified.
 
+For repeatable live-show systems, thumbnails, rankings, matchup boards, lower thirds, scorebugs, tickers and GatorBait Sports Network packages, route through `skills/gatorbait-broadcast-graphics/SKILL.md`. The broadcast skill owns the reusable show system; this skill remains the senior art-direction authority.
+
 ## External architecture references
 
 This skill is original GatorBait work, informed by public design-agent patterns rather than copied prompts.

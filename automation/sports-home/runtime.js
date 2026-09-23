@@ -5,7 +5,7 @@
 (function () {
   'use strict';
   var P = __GAZETTE_PAYLOAD__;
-  var DATA = 'https://presidente49.github.io/gatorbait-media-redesign/gazette-live/posts.json';
+  var DATA = '/blog-feed.xml';
   var doc = document.documentElement;
   function home() { return (location.pathname.replace(/\/+$/, '') || '/') === '/'; }
   if (window.__GBM_GAZETTE_RUNTIME__) { window.__GBM_GAZETTE_RUNTIME__.sync(); return; }
@@ -89,7 +89,11 @@
     // Paint bundled public headlines immediately. A feed refresh never moves a story under the reader.
     var controller = new AbortController(), timer = setTimeout(function () { controller.abort(); }, 2200);
     fetch(DATA, { signal: controller.signal, credentials: 'omit', cache: 'no-cache' }).then(function (r) {
-      if (!r.ok) throw new Error('Content response ' + r.status); return r.json();
+      if (!r.ok) throw new Error('Content response ' + r.status); return r.text().then(function(xml){
+        var feed = new DOMParser().parseFromString(xml, 'text/xml');
+        function text(n, key){var el=Array.from(n.children).find(function(c){return c.localName===key;});return el?el.textContent.trim():'';}
+        return {posts:Array.from(feed.querySelectorAll('item')).map(function(n){var enc=n.querySelector('enclosure');return {title:text(n,'title'),excerpt:text(n,'description'),author:text(n,'creator'),url:text(n,'link'),firstPublishedDate:text(n,'pubDate'),image:{src:enc?enc.getAttribute('url'):'',alt:text(n,'title')}};})};
+      });
     }).then(function (data) {
       var posts = normalize(data); if (posts.length < 3) throw new Error('Invalid current content');
       clearTimeout(timer);

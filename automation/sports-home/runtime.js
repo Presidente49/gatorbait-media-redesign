@@ -26,7 +26,8 @@
       if (!u || !p.title || !Number.isFinite(date.getTime()) || date.getTime() > Date.now() + 86400000 || seen.has(u)) return null;
       seen.add(u);
       return { title: String(p.title), url: u, author: String(p.author || 'GatorBait Staff'), date: date,
-        excerpt: String(p.excerpt || ''), image: safeUrl(p.image && p.image.src, true), alt: String(p.image && p.image.alt || p.title) };
+        excerpt: String(p.excerpt || ''), image: safeUrl(p.image && p.image.src, true), alt: String(p.image && p.image.alt || p.title),
+        portrait: !!(p.image && Number(p.image.width) > 0 && Number(p.image.height) > Number(p.image.width)) };
     }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).slice(0, 30);
   }
   function dateLabel(date) { return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/New_York' }); }
@@ -62,7 +63,7 @@
     root.innerHTML = '<a class="sh-skip" href="#sh-main">Skip to stories</a>' +
       '<header class="sh-header"><div class="sh-brand"><a href="/" aria-label="GatorBait home"><img src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp" alt="GatorBait"></a><p>Independent voices.<br><strong>Unmistakably GatorBait.</strong></p><a class="sh-join" href="/pricing-plans">Join GatorBait →</a></div><nav aria-label="GatorBait sections"><a href="/" aria-current="page">Front Page</a><a href="/gatorbait-media-blogs">Latest</a><a href="/magazine">Magazine</a><a href="/the-buddy-martin-show">GatorBait TV</a><a href="/the-buddy-martin-show#podcasts">Podcasts</a><a href="/#community">Message Board</a><a href="https://gatorbait2026.itemorder.com/shop/home/">Store</a><a href="/account/my-account">Sign in</a></nav></header>' +
       '<main id="sh-main"><div class="sh-edition"><span>FLORIDA GATORS · NEWS & OPINION</span><span id="sh-freshness">Updated ' + esc(dateLabel(posts[0].date)) + '</span></div>' +
-      '<section class="sh-front" aria-label="Front page stories"><div class="sh-feature"><article class="sh-lead"><figure>' + link(lead, photo(lead,true)) + credit + '</figure><p class="sh-kicker">The Big Read</p>' + link(lead,'<h1>' + esc(lead.title) + '</h1>') + '<p class="sh-deck">' + esc(lead.excerpt) + '</p>' + meta(lead) + '</article><div class="sh-support">' + supporting.map(support).join('') + '</div></div>' +
+      '<section class="sh-front" aria-label="Front page stories"><div class="sh-feature"><article class="sh-lead' + (lead.portrait ? ' sh-lead-portrait' : '') + '"><figure>' + link(lead, photo(lead,true)) + credit + '</figure><div class="sh-lead-copy"><p class="sh-kicker">' + (/buddy martin/i.test(lead.author) ? 'The Buddy Martin column' : 'The Big Read') + '</p>' + link(lead,'<h1>' + esc(lead.title) + '</h1>') + '<p class="sh-deck">' + esc(lead.excerpt) + '</p>' + meta(lead) + link(lead, 'Read the story <span aria-hidden="true">→</span>', 'sh-read') + '</div></article><div class="sh-support">' + supporting.map(support).join('') + '</div></div>' +
       '<aside class="sh-latest"><h2 class="sh-section-title">Latest</h2>' + others.slice(0,6).map(item).join('') + '<a class="sh-more" href="/gatorbait-media-blogs">All stories →</a></aside></section>' +
       '<section class="sh-voices" aria-label="GatorBait columnists"><div class="sh-voices-label"><p class="sh-kicker">Only at GatorBait</p><h2>The voices<br>you come for.</h2></div>' + column('Buddy Martin') + column('Franz Beard') + '</section>' +
       '<section class="sh-lower"><div><h2 class="sh-section-title">More from the newsroom</h2><div class="sh-coverage">' + others.slice(6,12).map(support).join('') + '</div></div><aside><div class="sh-magazine"><p class="sh-kicker">GatorBait Magazine</p><h2>Beyond the final score.</h2><p>The columns, characters and stories worth keeping.</p><a href="/magazine">Open the magazine →</a><a href="/pricing-plans">Explore membership →</a></div><div class="sh-watch"><p class="sh-kicker">Watch & Listen</p><h2>The Buddy Martin Show</h2><p>Gator conversation, from people who know the program.</p><a href="/the-buddy-martin-show">Watch GatorBait TV →</a><a href="/the-buddy-martin-show#podcasts">Listen to podcasts →</a></div><div class="sh-community" id="community"><p class="sh-kicker">The GatorBait community</p><h2>Keep the conversation going.</h2><p>The GatorBait Message Board is being prepared. Discussion is not open yet.</p></div></aside></section>' +
@@ -101,7 +102,7 @@
       var root = document.getElementById('gbm-live');
       if (root && posts[0].date.toISOString() !== root.getAttribute('data-gazette-newest')) {
         var freshness = document.getElementById('sh-freshness');
-        if (freshness) { freshness.textContent = ''; var a = document.createElement('a'); a.href = '/'; a.textContent = 'New stories available — refresh'; freshness.appendChild(a); }
+        if (freshness) { freshness.textContent = ''; var a = document.createElement('a'); a.href = '/'; a.textContent = 'New stories available — refresh'; a.addEventListener('click', function (event) { event.preventDefault(); event.stopPropagation(); location.reload(); }); freshness.appendChild(a); }
       } else if (root) root.setAttribute('data-gazette-source','current-feed');
     }).catch(function () { clearTimeout(timer); });
   }

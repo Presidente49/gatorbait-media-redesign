@@ -13,22 +13,22 @@ function mount(){
  var anchor=document.getElementById('gbm-mobile-shell-host')||document.getElementById('gbm-site-header');if(anchor&&anchor.parentNode===document.body)document.body.insertBefore(m,anchor.nextSibling);else document.body.insertBefore(m,document.body.firstChild);
  document.title='GatorBait Magazine | Florida Gators';
 }
-var started=false;
+var started=false, generation=0, activeController=null;
 function begin(){
- if(!on()||started)return;started=true;
- var controller=new AbortController(),timer=setTimeout(function(){controller.abort();mount();},1500);
+ if(!on()||started)return;started=true;var current=++generation;
+ var controller=new AbortController();activeController=controller;var timer=setTimeout(function(){controller.abort();if(current===generation&&on())mount();},1500);
  fetch('/blog-feed.xml',{signal:controller.signal,credentials:'omit',cache:'no-cache'}).then(function(r){if(!r.ok)throw Error('RSS unavailable');return r.text()}).then(function(xml){
-  clearTimeout(timer); if(document.getElementById('gbm-magazine-page'))return;
+  clearTimeout(timer); if(current!==generation||!on()||document.getElementById('gbm-magazine-page'))return;
   var doc=new DOMParser().parseFromString(xml,'text/xml');
   function text(node,name){var n=Array.from(node.children).find(function(c){return c.localName===name});return n?n.textContent.trim():''}
   var posts=Array.from(doc.querySelectorAll('item')).map(function(n){var enc=n.querySelector('enclosure');return{title:text(n,'title'),excerpt:text(n,'description'),url:text(n,'link'),author:text(n,'creator'),date:Date.parse(text(n,'pubDate')),image:enc?enc.getAttribute('url'):''}}).filter(function(p){return /^https:\/\/www\.gatorbaitmedia\.com\/post\//.test(p.url)&&/^https:\/\/static\.wixstatic\.com\//.test(p.image)&&Number.isFinite(p.date)&&/buddy martin|franz beard|eddie gilley|loren meadows/i.test(p.author)}).sort(function(a,b){return b.date-a.date});
   var lead=posts.find(function(p){return /buddy martin/i.test(p.author)});
   if(lead&&posts.length>=4){var other=posts.filter(function(p){return p.url!==lead.url});D={lead:lead,lines:other.slice(0,3),inside:other.slice(3,9)};}
   mount();
- }).catch(function(){clearTimeout(timer);mount()});
+ }).catch(function(){clearTimeout(timer);if(current===generation&&on())mount()});
 }
 
-function sync(){if(on()){begin();return}document.documentElement.classList.remove('gbm-magazine-live');var m=document.getElementById('gbm-magazine-page');if(m)m.remove()}
+function sync(){if(on()){begin();return}started=false;generation++;if(activeController){activeController.abort();activeController=null;}document.documentElement.classList.remove('gbm-magazine-live');var m=document.getElementById('gbm-magazine-page');if(m)m.remove()}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',begin,{once:true});else begin();
 window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
 })();

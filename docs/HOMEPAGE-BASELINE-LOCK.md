@@ -1,5 +1,25 @@
 # GatorBait Homepage Baseline Lock
 
+## Current authority — September 23, 2026
+
+Brenden corrected the Gazette homepage direction. The **free sports front page** is now the default; `/magazine` remains separate. Use Jannah Sport as layout reference and JNews as publishing feature reference, with original GatorBait implementation on Wix. See `docs/SPORTS-PUBLISHING-DIRECTION.md`.
+
+- Active loader `fdc2127a-845a-4d02-b711-438f1a4a86ce`, revision **60**, enabled; publish returned200.
+- Immutable asset: `bbad4f8e30e6d67a259e87b68899581de502853f/sports-live/homepage.js`.
+- Source `automation/sports-home/`. One homepage root `#gbm-live.gbm-sports-home`; compatibility class `gbm-gazette` preserves existing shell integration, not Gazette page design.
+- Existing mobile shell/footer/native article and business owners retained.
+- Public RSS bundled/cached stories render immediately. Background refresh is bounded and does not replace the reader's layout.
+- Latest Chris Spears Auburn photography is used; original story captions and bylines retained.
+- Desktop live Wix preview verified: loaded lead and supporting images, no horizontal overflow, canonical article navigation succeeds and sports root absent on article.
+- 390/430px isolated compiled fixtures visually inspected. These are not physical iPhone or full mobile Wix-shell tests.
+- `/message-board` currently404: main navigation points to honest `/#community` status. No forum deployment claimed.
+- Recent20 posts have empty pricingPlanIds. No paid/free assignments or subscription prices changed. Magazine paywall enforcement is outstanding.
+- AdSense incident#30 remains separate; no new ad units/scripts, and no verified revenue recovery claimed.
+- Rollback snapshot: `deploy/backups/homepage-loader-revision58.html`; current loader snapshot: `deploy/sports-home-loader-revision60.html`. Always read the live revision before restoring HTML and publishing. Do not blindly write an old revision number.
+
+## Historical Gazette launch (superseded; retained for rollback context)
+
+
 **Current presentation:** Original Gazette, owner-authorized September 22, 2026.  
 **Applies to:** production homepage `/` on `gatorbaitmedia.com`.  
 **Launch status:** Wix revision 58 published with compact cover proportions; prior revision 56 baseline: 63/63 unmodified public-browser functional checks passed at 2026-09-22T23:53:36Z. Details and remaining scope limits below and in issue #31.  

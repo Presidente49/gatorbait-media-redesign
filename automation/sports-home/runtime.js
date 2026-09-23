@@ -41,9 +41,13 @@
     var existing = document.getElementById('gbm-live');
     if (existing && existing.classList.contains('gbm-gazette')) { loading = false; return; }
     if (existing) throw new Error('Another homepage owner already mounted');
-    // Feature the newest reported story with photography; columns remain clearly bylined.
-    var lead = posts.find(function(p) { return p.image && !/buddy martin|franz beard/i.test(p.author) && Date.now() - p.date.getTime() < 7 * 86400000; }) || posts[0];
+    // Owner direction: newest Buddy column leads; supporting coverage rotates per visit.
+    var lead = posts.find(function(p) { return /buddy martin/i.test(p.author); }) || posts[0];
     var others = posts.filter(function(p) { return p.url !== lead.url; });
+    var pool = others.slice(0,6), turn = 0;
+    try { turn = Number(sessionStorage.getItem('gbm-support-turn') || 0) || 0; sessionStorage.setItem('gbm-support-turn', String(turn + 1)); } catch (_) {}
+    var offset = pool.length ? (turn * 2) % pool.length : 0;
+    var supporting = pool.slice(offset).concat(pool.slice(0,offset)).slice(0,2);
     function link(p, content, cls) { return '<a class="' + (cls || '') + '" href="' + esc(p.url) + '">' + content + '</a>'; }
     function meta(p) { return '<p class="sh-meta">' + esc(p.author) + ' · ' + esc(dateLabel(p.date)) + '</p>'; }
     function photo(p, eager) { return p.image ? '<img src="' + esc(p.image) + '" alt="' + esc(p.alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + '>' : ''; }
@@ -58,7 +62,7 @@
     root.innerHTML = '<a class="sh-skip" href="#sh-main">Skip to stories</a>' +
       '<header class="sh-header"><div class="sh-brand"><a href="/" aria-label="GatorBait home"><img src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp" alt="GatorBait"></a><p>Independent voices.<br><strong>Unmistakably GatorBait.</strong></p><a class="sh-join" href="/pricing-plans">Join GatorBait →</a></div><nav aria-label="GatorBait sections"><a href="/" aria-current="page">Front Page</a><a href="/gatorbait-media-blogs">Latest</a><a href="/magazine">Magazine</a><a href="/the-buddy-martin-show">GatorBait TV</a><a href="/the-buddy-martin-show#podcasts">Podcasts</a><a href="/#community">Message Board</a><a href="https://gatorbait2026.itemorder.com/shop/home/">Store</a><a href="/account/my-account">Sign in</a></nav></header>' +
       '<main id="sh-main"><div class="sh-edition"><span>FLORIDA GATORS · NEWS & OPINION</span><span id="sh-freshness">Updated ' + esc(dateLabel(posts[0].date)) + '</span></div>' +
-      '<section class="sh-front" aria-label="Front page stories"><div class="sh-feature"><article class="sh-lead"><figure>' + link(lead, photo(lead,true)) + credit + '</figure><p class="sh-kicker">The Big Read</p>' + link(lead,'<h1>' + esc(lead.title) + '</h1>') + '<p class="sh-deck">' + esc(lead.excerpt) + '</p>' + meta(lead) + '</article><div class="sh-support">' + others.slice(1,3).map(support).join('') + '</div></div>' +
+      '<section class="sh-front" aria-label="Front page stories"><div class="sh-feature"><article class="sh-lead"><figure>' + link(lead, photo(lead,true)) + credit + '</figure><p class="sh-kicker">The Big Read</p>' + link(lead,'<h1>' + esc(lead.title) + '</h1>') + '<p class="sh-deck">' + esc(lead.excerpt) + '</p>' + meta(lead) + '</article><div class="sh-support">' + supporting.map(support).join('') + '</div></div>' +
       '<aside class="sh-latest"><h2 class="sh-section-title">Latest</h2>' + others.slice(0,6).map(item).join('') + '<a class="sh-more" href="/gatorbait-media-blogs">All stories →</a></aside></section>' +
       '<section class="sh-voices" aria-label="GatorBait columnists"><div class="sh-voices-label"><p class="sh-kicker">Only at GatorBait</p><h2>The voices<br>you come for.</h2></div>' + column('Buddy Martin') + column('Franz Beard') + '</section>' +
       '<section class="sh-lower"><div><h2 class="sh-section-title">More from the newsroom</h2><div class="sh-coverage">' + others.slice(6,12).map(support).join('') + '</div></div><aside><div class="sh-magazine"><p class="sh-kicker">GatorBait Magazine</p><h2>Beyond the final score.</h2><p>The columns, characters and stories worth keeping.</p><a href="/magazine">Open the magazine →</a><a href="/pricing-plans">Explore membership →</a></div><div class="sh-watch"><p class="sh-kicker">Watch & Listen</p><h2>The Buddy Martin Show</h2><p>Gator conversation, from people who know the program.</p><a href="/the-buddy-martin-show">Watch GatorBait TV →</a><a href="/the-buddy-martin-show#podcasts">Listen to podcasts →</a></div><div class="sh-community" id="community"><p class="sh-kicker">The GatorBait community</p><h2>Keep the conversation going.</h2><p>The GatorBait Message Board is being prepared. Discussion is not open yet.</p></div></aside></section>' +
@@ -80,7 +84,7 @@
     if (!home() || loading || document.querySelector('#gbm-live.gbm-gazette')) return;
     loading = true;
     var initial = P.fallback, cached;
-    try { cached = JSON.parse(sessionStorage.getItem('gbm-public-feed') || 'null'); if (cached && Date.now() - cached.saved < 900000 && normalize(cached.data).length >= 3) initial = cached.data; } catch (_) {}
+    try { cached = JSON.parse(sessionStorage.getItem('gbm-public-feed') || 'null'); if (cached && Date.now() - cached.saved < 900000 && normalize(cached.data).length >= 3 && normalize(cached.data)[0].date >= normalize(P.fallback)[0].date) initial = cached.data; } catch (_) {}
     try { render(normalize(initial), initial !== P.fallback); } catch (error) { failure(error); return; }
     // Paint bundled public headlines immediately. A feed refresh never moves a story under the reader.
     var controller = new AbortController(), timer = setTimeout(function () { controller.abort(); }, 2200);

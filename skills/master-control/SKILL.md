@@ -35,6 +35,7 @@ Then load the smallest existing specialist skill required by the surface, for ex
 - `skills/gatorbait-editorial/` for editorial tasks.
 - `skills/gatorbait-community/` for community/message-board work.
 - `skills/gatorbait-graphic-design/` for GatorBait visual production.
+- `skills/gatorbait-broadcast-graphics/SKILL.md` for AP Mode, show thumbnails, rankings, matchup cards, lower thirds, scorebugs, tickers, and GatorBait Sports Network broadcast packages.
 - `automation/ops-hub/playbooks/meta-control.md` for Facebook/Instagram/Meta reads, publishing, connection repair, field-post monitoring, and paid-vs-organic routing.
 
 Do not preload every skill or historical document. Context is a budget.

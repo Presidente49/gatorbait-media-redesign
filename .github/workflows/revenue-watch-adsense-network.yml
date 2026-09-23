@@ -1,0 +1,29 @@
+name: Revenue Watch AdSense network diagnostic
+on:
+  push:
+    branches: ['ops/revenue-watch-adsense-diagnostic']
+    paths:
+      - 'automation/ops-hub/revenue_watch_adsense_network.py'
+      - '.github/workflows/revenue-watch-adsense-network.yml'
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install browser diagnostic runtime
+        run: |
+          python3 -m pip install playwright==1.57.0
+          python3 -m playwright install --with-deps chromium
+      - name: Run consent-aware live article diagnostic
+        run: python3 automation/ops-hub/revenue_watch_adsense_network.py
+      - name: Preserve evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: revenue-watch-adsense-network
+          path: .revenue-watch-adsense/
+          include-hidden-files: true
+          retention-days: 3

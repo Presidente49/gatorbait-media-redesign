@@ -1,9 +1,11 @@
 html:has(#gbm-magazine-page) #SITE_PAGES{display:none!important}
+/* The replaced Wix magazine canvas must not extend beyond its zero-height host. */
+html:has(#gbm-magazine-page) #pageBackground_nh0hy{display:none!important}
 html:has(#gbm-magazine-page) #SITE_CONTAINER,html:has(#gbm-magazine-page) #masterPage,html:has(#gbm-magazine-page) #PAGES_CONTAINER,html:has(#gbm-magazine-page) #SITE_PAGES_TRANSITION_GROUP{height:auto!important;min-height:0!important;padding-bottom:0!important;margin-bottom:0!important}
 #gbm-magazine-page,#gbm-magazine-page *{box-sizing:border-box}
 #gbm-magazine-page{--n:#11274a;--b:#0021a5;--o:#e84b10;--m:#5f6b80;--l:#d9dee7;background:#fffdf9;color:#11274a;font:15px/1.5 Arial,sans-serif;padding:24px 0 0;position:relative;z-index:3}
 #gbm-magazine-page a{color:inherit;text-decoration:none}
-#gbm-magazine-page a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(hover:hover) and (pointer:fine){#gbm-magazine-page a:hover h1,#gbm-magazine-page a:hover h3,#gbm-magazine-page a:hover b,#gbm-magazine-page a:hover strong{text-decoration:underline;text-underline-offset:4px}}
 #gbm-magazine-page a:focus-visible{outline:3px solid var(--o);outline-offset:4px}
 #gbm-magazine-page .wrap{max-width:1184px;margin:auto;padding:0 24px 40px}
 #gbm-magazine-page .issue{display:flex;justify-content:space-between;margin-bottom:12px;font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--m)}
@@ -39,7 +41,8 @@ html:has(#gbm-magazine-page) #SITE_CONTAINER,html:has(#gbm-magazine-page) #maste
 #gbm-magazine-page .wrap{padding:0 18px 30px}
 #gbm-magazine-page .cover{grid-template-columns:1fr;gap:0}
 #gbm-magazine-page .mast{font-size:23px;gap:12px;padding-block:15px;margin-bottom:18px}
-#gbm-magazine-page .mast img{width:170px}
+#gbm-magazine-page .mast img{width:min(170px,46vw);min-width:0}
+#gbm-magazine-page .mast{gap:10px;font-size:clamp(20px,5.8vw,23px)}
 #gbm-magazine-page .hero{grid-column:1;aspect-ratio:16/10;max-height:320px}
 #gbm-magazine-page .lead{grid-column:1;margin-top:18px}
 #gbm-magazine-page .lead h1{font-size:28px!important;line-height:1.15!important}

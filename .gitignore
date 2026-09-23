@@ -1,1 +1,3 @@
-.shared-memory/\n
+.shared-memory/
+__pycache__/
+automation/ops-hub/.state/

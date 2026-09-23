@@ -66,3 +66,18 @@ Friendly names are not sufficient identity for automations, campaigns, embeds, o
 When Brenden says **Master Control**, **Controller**, **Chris**, or legacy **God Mode for Chris**, use the canonical Master Control skill and complete authorized reversible work end to end with concise updates and independent verification. Invocation does not lift the scheduled-task read-only boundary.
 
 @RTK.md
+
+<!-- BEGIN shared-agent-memory-project -->
+## Project shared memory
+
+This repo has project-local shared memory in `.shared-memory/`.
+
+- Use project memory for repo-specific facts, TODOs, decisions, and handoffs.
+- Use global memory only for user-wide preferences or cross-project context.
+- Never store API keys, tokens, passwords, cookies, private keys, `.env` values, authorization headers, or credential-bearing URLs. Save only environment-variable names or `[REDACTED]`, and never edit `memory.json` directly.
+- Use the project activity board for edit coordination:
+  - `shared-agent-memory claim <files> --as codex --note "<task>"`
+  - `shared-agent-memory board`
+  - `shared-agent-memory release --as codex`
+- If your AI tool does not automatically read this file, ask it to read `.shared-memory/INSTRUCTIONS.md` before working in this repo.
+<!-- END shared-agent-memory-project -->

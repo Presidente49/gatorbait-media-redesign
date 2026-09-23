@@ -30,6 +30,14 @@ if [ ! -f "AGENTS.md" ] || [ ! -f "CLAUDE.md" ]; then
   die "Run this from the root of Presidente49/gatorbait-media-redesign."
 fi
 
+# Refuse to initialize a private operational store unless Git excludes it.
+if ! git check-ignore -q .shared-memory/memory.json; then
+  die "Private memory is not ignored by Git. Update .gitignore before installing."
+fi
+if [ -n "$(git ls-files -- .shared-memory)" ]; then
+  die "Memory files are already tracked; review them before continuing."
+fi
+
 say "Configuring shared memory MCP"
 npx --yes "$PACKAGE" install --manual
 ok "Shared memory MCP configured for detected local agents"

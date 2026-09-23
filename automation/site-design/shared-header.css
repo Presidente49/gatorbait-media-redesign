@@ -33,5 +33,5 @@ html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-cta"],html:has(#gbm-site
 html:has(#gbm-site-header) #SITE_PAGES [data-hook="ribbon"]{background:#11274a!important;color:#fff!important;font:700 11px/1.5 Arial,sans-serif!important}
 html:has(#gbm-site-header) #comp-lii7mqeb h1,html:has(#gbm-site-header) #comp-lii7mqeb h1 span{font:700 36px/1.15 Georgia,serif!important;color:#11274a!important;letter-spacing:-.02em!important}
 html:has(#gbm-site-header) #comp-lii7mqe42{background:#fffdf9!important;color:#11274a!important}
-html:has(#gbm-site-header) #comp-lii7mqe42 button[type="submit"]{background:#11274a!important;color:#fff!important;min-height:44px!important;border-radius:0!important}
+html:has(#gbm-site-header) #comp-lii7mqe42 button[data-testid="buttonElement"]{background:#11274a!important;color:#fff!important;min-height:44px!important;border-radius:0!important}
 @media(max-width:820px){html:has(#gbm-site-header) #SITE_PAGES [data-hook="app-title"],html:has(#gbm-site-header) #comp-lii7mqeb h1,html:has(#gbm-site-header) #comp-lii7mqeb h1 span{font-size:28px!important}}

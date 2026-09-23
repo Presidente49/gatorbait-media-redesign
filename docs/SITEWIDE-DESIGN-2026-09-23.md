@@ -12,7 +12,7 @@ Owner requested all connected pages to match the new sports homepage, urgently, 
 - Legacy loader's fetch interception excludes magazine stories from native Blog lists. Remove that interception; native public lists should reflect Wix's own content/access rules, not a stale hardcoded exclusion list. No paid access or publication changes.
 
 ## Owners
-- Header `7fee4de6-1886-475e-a3f3-b9c68161c242`: original14 →16 shared shell, contact/membership styles.
+- Header `7fee4de6-1886-475e-a3f3-b9c68161c242`: original14 →18 shared shell, contact/membership styles.
 - Blog `602fb362-3917-4e42-9128-57af3a504ef3`: original8 →11 final feed styling.
 - Magazine `1dd74333-ee02-40da-9c93-cf8fd787c129`: original21 →22 stable mount + magazine design.
 - TV `82c4ca83-98df-4f35-9972-7345a2a71755`: original14 disabled →15 enabled with new bounded media hub.

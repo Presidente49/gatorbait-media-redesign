@@ -2,10 +2,10 @@
 
 ## Current authority — September 23, 2026
 
-Brenden corrected the Gazette homepage direction. The **free sports front page** is now the default; `/magazine` remains separate. Use Jannah Sport as layout reference and JNews as publishing feature reference, with original GatorBait implementation on Wix. See `docs/SPORTS-PUBLISHING-DIRECTION.md`.
+Brenden corrected the Gazette homepage direction. The **free sports front page** is now the default; `/magazine` remains separate. Use Jannah Sport as layout reference and JNews as publishing feature reference, with original GatorBait implementation on Wix. See `docs/SPORTS-PUBLISHING-DIRECTION.md` and `docs/SITEWIDE-DESIGN-2026-09-23.md`. Inner pages now share the publication header; native Blog grid, magazine mount and TV hub are repaired.
 
-- Active loader `fdc2127a-845a-4d02-b711-438f1a4a86ce`, revision **60**, enabled; publish returned200.
-- Immutable asset: `bbad4f8e30e6d67a259e87b68899581de502853f/sports-live/homepage.js`.
+- Active loader `fdc2127a-845a-4d02-b711-438f1a4a86ce`, revision **61**, enabled; publish returned200.
+- Immutable asset: `81a845304c9802d8dbd88b6448337f4f89461658/sports-live/homepage.js`.
 - Source `automation/sports-home/`. One homepage root `#gbm-live.gbm-sports-home`; compatibility class `gbm-gazette` preserves existing shell integration, not Gazette page design.
 - Existing mobile shell/footer/native article and business owners retained.
 - Public RSS bundled/cached stories render immediately. Background refresh is bounded and does not replace the reader's layout.

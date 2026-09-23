@@ -7,7 +7,7 @@ Before any mutation or present-tense business conclusion, re-read the authoritat
 
 ## Latest homepage override — September 23
 
-The free sports-news homepage supersedes the Gazette cover experiment. Active Wix loader revision60 pins `bbad4f8e30e6d67a259e87b68899581de502853f/sports-live/homepage.js`. `/magazine` stays separate. See `docs/HOMEPAGE-BASELINE-LOCK.md` and `docs/SPORTS-PUBLISHING-DIRECTION.md` for evidence, source files, rollback and remaining paywall/message-board/ads work. Any older V1/rev54 or Gazette-default statements below are historical. Read live revision before writes.
+The free sports-news homepage supersedes the Gazette cover experiment. Active Wix loader revision61 pins `81a845304c9802d8dbd88b6448337f4f89461658/sports-live/homepage.js`. `/magazine` stays separate. See `docs/HOMEPAGE-BASELINE-LOCK.md` and `docs/SPORTS-PUBLISHING-DIRECTION.md` for evidence, source files, rollback and remaining paywall/message-board/ads work. Any older V1/rev54 or Gazette-default statements below are historical. Read live revision before writes.
 
 ## Production identity
 

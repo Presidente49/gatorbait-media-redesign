@@ -6,6 +6,8 @@ The filename remains `AGENTS.md` for compatibility. Models, sub-agents, plugins,
 
 ## Current owner coordination — September 23, 2026
 
+- Latest creative mandate and verified rollout: `docs/CREATIVE-DIRECTION-2026-09-23.md`. Owner authorizes controller design decisions and bounded workers; retain one production writer, distinct free homepage/Magazine, and mobile stability. Newsletter publication name is **GatorBait Magazine Newsletter**. Reuse the eight existing Wix Groups records; do not create duplicate communities. Read the stated remaining verification/access limits before claiming completion.
+
 - Canonical repository: `Presidente49/gatorbait-media-redesign`. Production Wix site: `18fb3a4e-d7f6-414a-aeb9-3047db3ea115` at `https://www.gatorbaitmedia.com/`.
 - Start with the opening and newest comments of GitHub **issue #3**, then `docs/SITEWIDE-DESIGN-AUDIT-2026-09-23.md`. These are the shared current handoff, not a new parallel control system.
 - Before local edits, verify the Git remote, working directory, branch, HEAD and uncommitted state. Compare with current main without resetting or discarding work. Do not operate in a similarly named repo or old preview checkout by assumption.

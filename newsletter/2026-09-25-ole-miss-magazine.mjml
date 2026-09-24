@@ -1,0 +1,111 @@
+<mjml>
+  <mj-head>
+    <mj-title>GatorBait Magazine — Florida vs Ole Miss</mj-title>
+    <mj-preview>Buddy Martin leads our Ole Miss week issue with The Swamp, the matchup, injuries, roster and more.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Arial, Helvetica, sans-serif" />
+      <mj-text color="#11274A" font-size="16px" line-height="1.55" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="3px" font-size="15px" font-weight="800" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#EEF1F5">
+    <mj-section background-color="#081F3D" padding="20px 24px 18px">
+      <mj-column>
+        <mj-text color="#FFFFFF" font-size="32px" line-height="1" font-weight="900" letter-spacing="-0.7px" padding="0">GATORBAIT</mj-text>
+        <mj-text color="#FA4616" font-size="12px" line-height="1.2" font-weight="800" letter-spacing="2.2px" padding="6px 0 0">MAGAZINE NEWSLETTER</mj-text>
+        <mj-text color="#D7E0EB" font-size="11px" line-height="1.3" padding="6px 0 0">OLE MISS WEEK · SEPTEMBER 25, 2026</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="26px 24px 8px">
+      <mj-column>
+        <mj-text color="#FA4616" font-size="11px" font-weight="900" letter-spacing="1.7px" padding="0 0 9px">THE BUDDY MARTIN COLUMN · COVER STORY</mj-text>
+        <mj-text color="#081F3D" font-size="35px" line-height="1.07" font-weight="900" padding="0 0 12px">The Swamp Knows Something the Big Ten Doesn’t</mj-text>
+        <mj-text color="#4B586A" font-size="18px" line-height="1.48" padding="0 0 20px">Buddy Martin on Florida–Ole Miss, The Swamp’s home-field edge and the SEC’s chance to challenge the Big Ten’s championship run.</mj-text>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_b8996f468d7c4c1cb4c359d4288b8196~mv2.png" alt="Editorial illustration: SEC and Big Ten championship rivalry at The Swamp" width="650px" padding="0" />
+        <mj-button href="https://www.gatorbaitmedia.com/post/the-swamp-knows-something-the-big-ten-doesnt?utm_source=gatorbait_magazine_newsletter" padding="20px 0 22px">READ BUDDY’S COLUMN</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="8px 24px 4px">
+      <mj-column width="50%" padding="0 10px 0 0">
+        <mj-image src="https://static.wixstatic.com/media/16b519_a7ef6b30ac954bf5962d6583bbd14b1e~mv2.jpg" alt="Florida running game at Auburn. Photo by Chris Spears / GatorBait Media." padding="0 0 10px" />
+        <mj-text color="#FA4616" font-size="10px" font-weight="900" letter-spacing="1.4px" padding="0 0 7px">FRANZ BEARD</mj-text>
+        <mj-text color="#081F3D" font-size="22px" line-height="1.18" font-weight="900" padding="0 0 8px">Keep the Ball Away From Trinidad Chambliss</mj-text>
+        <mj-text color="#566274" font-size="14px" line-height="1.5" padding="0 0 12px">Florida’s run game is the clearest path to controlling the matchup with No. 4 Ole Miss.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/the-best-way-for-the-gators-to-win-is-keep-the-ball-away-from-trinidad-chambliss?utm_source=gatorbait_magazine_newsletter" align="left" padding="0 0 18px">READ THE ANALYSIS</mj-button>
+      </mj-column>
+      <mj-column width="50%" padding="0 0 0 10px">
+        <mj-image src="https://static.wixstatic.com/media/16b519_a0c1b7e3ce9846239402069349deab8c~mv2.jpg" alt="Aaron Philo runs for a first down at Auburn. Photo by Chris Spears / GatorBait Media." padding="0 0 10px" />
+        <mj-text color="#FA4616" font-size="10px" font-weight="900" letter-spacing="1.4px" padding="0 0 7px">INSIDE THE OFFENSE</mj-text>
+        <mj-text color="#081F3D" font-size="22px" line-height="1.18" font-weight="900" padding="0 0 8px">Buster Faulkner’s Offense Is Anything But Predictable</mj-text>
+        <mj-text color="#566274" font-size="14px" line-height="1.5" padding="0 0 12px">Franz Beard breaks down the calls and trust driving Florida’s early offensive surge.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/buster-faulkner-s-offense-is-anything-but-predictable?utm_source=gatorbait_magazine_newsletter" align="left" padding="0 0 18px">GO INSIDE THE OFFENSE</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#F7F8FA" padding="22px 24px 8px">
+      <mj-column>
+        <mj-text color="#081F3D" font-size="13px" font-weight="900" letter-spacing="1.6px" padding="0 0 12px">INSIDE THIS ISSUE</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#F7F8FA" padding="0 24px 10px">
+      <mj-column width="34%" padding="0 9px 0 0">
+        <mj-image src="https://static.wixstatic.com/media/a99769_a56cca7d946542d6ada59ccfa96cad7f~mv2.jpg" alt="Kerwin Bell and Aaron Philo feature image" padding="0 0 8px" />
+        <mj-text color="#081F3D" font-size="17px" line-height="1.22" font-weight="800" padding="0 0 6px">Thoughts of the Day</mj-text>
+        <mj-text color="#596678" font-size="13px" line-height="1.45" padding="0 0 14px">Franz Beard sees echoes of Kerwin Bell in Aaron Philo’s start at Florida.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027?utm_source=gatorbait_magazine_newsletter" align="left" padding="0 0 16px">READ THOUGHTS</mj-button>
+      </mj-column>
+      <mj-column width="33%" padding="0 5px">
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg" alt="Florida sideline celebrates at Auburn. Photo by Chris Spears / GatorBait Media." padding="0 0 8px" />
+        <mj-text color="#081F3D" font-size="17px" line-height="1.22" font-weight="800" padding="0 0 6px">5 Signs Sumrall’s Gators Are Rising</mj-text>
+        <mj-text color="#596678" font-size="13px" line-height="1.45" padding="0 0 14px">Eddie Gilley on the edge, the line play, Jadan Baugh and the penalty problem.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-after-auburn-5-signs-sumrall-gators-rising?utm_source=gatorbait_magazine_newsletter" align="left" padding="0 0 16px">READ THE FIVE SIGNS</mj-button>
+      </mj-column>
+      <mj-column width="33%" padding="0 0 0 9px">
+        <mj-image src="https://static.wixstatic.com/media/ae876a_38f655a52d8b4de98bba87cc30ffa9fb~mv2.png" alt="Jadan Baugh feature image" padding="0 0 8px" />
+        <mj-text color="#081F3D" font-size="17px" line-height="1.22" font-weight="800" padding="0 0 6px">Sumrall Stayed Home. So Did His Star Running Back.</mj-text>
+        <mj-text color="#596678" font-size="13px" line-height="1.45" padding="0 0 14px">Buddy Martin on the Christmas Eve visit that helped keep Jadan Baugh at Florida.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/jon-sumrall-stayed-home-so-did-his-star-running-back-it-was-a-brilliant-choice?utm_source=gatorbait_magazine_newsletter" align="left" padding="0 0 16px">READ BUDDY</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#081F3D" padding="22px 24px">
+      <mj-column>
+        <mj-text color="#FA4616" font-size="10px" font-weight="900" letter-spacing="1.5px" padding="0 0 6px">GAME WEEK REFERENCE</mj-text>
+        <mj-text color="#FFFFFF" font-size="24px" line-height="1.15" font-weight="900" padding="0 0 8px">Florida Roster & Injury Watch Ahead of Ole Miss</mj-text>
+        <mj-text color="#D5DFEB" font-size="14px" line-height="1.5" padding="0 0 14px">Eric Singleton Jr.’s status, Ole Miss availability, Florida’s current roster snapshot and the updated 2026 schedule in one reference page.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play?utm_source=gatorbait_magazine_newsletter" align="left" padding="0">OPEN THE GAME WEEK GUIDE</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="20px 24px">
+      <mj-column>
+        <mj-text color="#FA4616" font-size="10px" font-weight="900" letter-spacing="1.5px" padding="0 0 7px">NEW TONIGHT</mj-text>
+        <mj-text color="#081F3D" font-size="21px" line-height="1.2" font-weight="900" padding="0 0 6px">The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder</mj-text>
+        <mj-text color="#596678" font-size="14px" line-height="1.5" padding="0 0 12px">Buddy’s latest column on Aaron Philo’s toughness and quiet confidence is now part of the live Magazine.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/the-cowboy-doesn-t-talk-very-often-but-his-actions-speak-even-louder?utm_source=gatorbait_magazine_newsletter" align="left" padding="0 0 10px">READ THE COWBOY</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#F7F8FA" padding="16px 24px">
+      <mj-column width="33%">
+        <mj-button href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_magazine_newsletter" background-color="#0021A5" padding="4px">OPEN MAGAZINE</mj-button>
+      </mj-column>
+      <mj-column width="33%">
+        <mj-button href="https://www.gatorbaitmedia.com/the-buddy-martin-show?utm_source=gatorbait_magazine_newsletter" background-color="#0021A5" padding="4px">GATORBAIT TV</mj-button>
+      </mj-column>
+      <mj-column width="33%">
+        <mj-button href="https://gatorbait2026.itemorder.com/shop/home/" background-color="#0021A5" padding="4px">GATORBAIT STORE</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#081F3D" padding="18px 24px">
+      <mj-column>
+        <mj-text align="center" color="#FFFFFF" font-size="13px" font-weight="800" padding="0 0 4px">GatorBaitMedia.com</mj-text>
+        <mj-text align="center" color="#AEB9C9" font-size="11px" line-height="1.5" padding="0">Old-school journalism + new tech.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

@@ -1,23 +1,11 @@
 #!/usr/bin/env python3
-"""Render a sellable, self-contained GatorBait Magazine issue.
+"""Continue the existing full-article issue builder. Draft export only.
 
-Input:  magazine/issues/<slug>/issue.json  (metadata + ordered post ids)
-        magazine/build-cache/posts/<id>.json  (normalized Blog API content)
-Output: magazine/issues/<slug>/issue.html  + a build report
-
-Product rules enforced here, not left to the layout:
-  * no outbound links anywhere - link decorations are stripped, words kept
-  * whole articles, never excerpts
-  * trailing "More From" lists and subscribe pitches removed
-  * the page must read correctly with no network and no live site
-
-Source quirks this has to survive, all observed in real posts:
-  * some articles arrive with EVERY run marked bold (36/37 in the Ole Miss lead)
-  * section headers are bold paragraphs, not HEADING nodes
-  * photo credit, deck and byline arrive as ordinary leading paragraphs
+Inputs stay frozen in the existing build-cache. No Wix writes, sends, checkout
+changes or website deployment. Body wording stays intact; web furniture and
+unapproved/duplicate photography are excluded with an explicit build receipt.
 """
 from __future__ import annotations
-
 import html
 import json
 import re
@@ -25,273 +13,101 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CACHE = ROOT / "magazine" / "build-cache" / "posts"
+CACHE = ROOT / 'magazine' / 'build-cache' / 'posts'
+CDN = 'https://static.wixstatic.com/media/'
 
-CDN = "https://static.wixstatic.com/media/"
-CREDIT_RE = re.compile(r"^\s*(uaa\s+photo|photo\b|photos\b|image\b|courtesy\b)", re.I)
-BYLINE_RE = re.compile(r"^\s*by\s+\w", re.I)
-SITE_RE = re.compile(r"^\s*gatorbait\s*media\s*\.?\s*com\s*$", re.I)
-PROMO_RE = re.compile(r"(more from|subscribe to|keep independent gator journalism)", re.I)
+def esc(value):
+    return html.escape(str(value), quote=True)
 
+def text_of(block):
+    return block.get('text', ''.join(run.get('t', '') for run in block.get('runs', [])))
 
-def esc(text: str) -> str:
-    return html.escape(text, quote=False)
+def render_text(block):
+    # Normalize accidental all-bold CMS formatting, never rewrite the prose.
+    if 'text' in block:
+        return esc(block['text'])
+    return ''.join('<em>' + esc(r.get('t', '')) + '</em>' if r.get('i') else esc(r.get('t', '')) for r in block.get('runs', []))
 
+def photo(meta, used, skipped):
+    if not meta or not meta.get('id'):
+        return ''
+    mid = meta['id']
+    if mid in used:
+        skipped.append({'id': mid, 'reason': 'already used in this issue'})
+        return ''
+    if not meta.get('credit'):
+        raise ValueError('A selected photograph has no credit: ' + mid)
+    used.add(mid)
+    return '<figure><img src="%s" width="%s" height="%s" alt="%s"><figcaption>%s</figcaption></figure>' % (
+        esc(CDN + mid), int(meta['w']), int(meta['h']), esc(meta.get('alt', '')), esc(meta['credit']))
 
-def img_url(media_id: str, width: int, height: int, quality: int = 88) -> str:
-    """Ask the Wix CDN for print-scale pixels rather than scaling a thumbnail up."""
-    if "~mv2." not in media_id:
-        return CDN + media_id
-    ext = media_id.rsplit("~mv2.", 1)[1].split("/")[0]
-    return "%s%s/v1/fill/w_%d,h_%d,al_c,q_%d,enc_auto/file.%s" % (
-        CDN, media_id, width, height, quality, ext,
-    )
-
-
-def run_text(block: dict) -> str:
-    return "".join(r.get("t", "") for r in block.get("runs", []))
-
-
-def mostly_bold(blocks: list) -> bool:
-    runs = [r for b in blocks if b["k"] != "img" for r in b.get("runs", [])]
-    if len(runs) < 4:
-        return False
-    return sum(1 for r in runs if r.get("b")) >= len(runs) * 0.8
-
-
-def render_runs(block: dict, ignore_bold: bool) -> str:
-    out = []
-    for run in block.get("runs", []):
-        piece = esc(run.get("t", ""))
-        # The link itself goes; the words stay. A citation reads as it would
-        # in print, and the issue owes nothing to a live site.
-        if run.get("i"):
-            piece = "<em>%s</em>" % piece
-        if run.get("b") and not ignore_bold:
-            piece = "<strong>%s</strong>" % piece
-        out.append(piece)
-    return "".join(out).strip()
-
-
-def looks_like_subhead(text: str) -> bool:
-    stripped = text.strip()
-    return 3 < len(stripped) <= 60 and not stripped.endswith((".", "!", "?", ":", "”", '"'))
-
-
-def build_article(art: dict, report: list, used_images: dict, cover_id: str | None = None) -> str:
-    blocks = list(art.get("blocks", []))
-    ignore_bold = mostly_bold(blocks)
-
-    hero = None
-    byline = None
-    credit = None
-    notes = []
-    images_used = []
-
-    # Hoist a leading image out of the body so it can run full measure.
-    for i, b in enumerate(blocks[:2]):
-        if b["k"] == "img":
-            hero = blocks.pop(i)
-            break
-    if hero is not None and cover_id and hero.get("id") == cover_id:
-        notes.append("hero dropped: already the issue cover")
-        hero = None
-        for i, b in enumerate(blocks):
-            if b["k"] == "img" and b.get("id") != cover_id:
-                hero = blocks.pop(i)
-                notes.append("hero promoted from first inline photograph")
-                break
-
-    if hero is None and art.get("cover") and (art.get("cover") or {}).get("id") != cover_id:
-        cov = art["cover"]
-        hero = {"k": "img", "id": cov["id"], "w": cov.get("w") or 1200, "h": cov.get("h") or 800}
-        notes.append("hero taken from cover")
-
-    # Pull byline / credit / site line out of the opening paragraphs.
-    keep = []
-    for b in blocks:
-        text = run_text(b).strip()
-        if b["k"] != "img" and len(keep) < 5:
-            if BYLINE_RE.match(text) and len(text) < 60 and byline is None:
-                byline = re.sub(r"^\s*[Bb]y\s+", "", text)
-                continue
-            if CREDIT_RE.match(text) and len(text) < 140 and credit is None:
-                credit = text
-                continue
-            if SITE_RE.match(text) or not text:
-                continue
-        keep.append(b)
-
-    # Drop the web furniture: everything from a promo subhead onward.
-    cut = None
-    for i, b in enumerate(keep):
-        text = run_text(b).strip()
-        if b["k"] != "img" and PROMO_RE.search(text) and (looks_like_subhead(text) or len(text) < 160):
-            cut = i
-            break
-    if cut is not None:
-        notes.append("dropped %d trailing promo block(s)" % (len(keep) - cut))
-        keep = keep[:cut]
-
-    parts = ['<article class="story">']
-    parts.append('<header class="story-head">')
-    parts.append('<p class="kicker">%s</p>' % esc(art.get("kicker") or "GatorBait Media"))
-    parts.append("<h2>%s</h2>" % esc(art["title"].strip()))
-    if byline:
-        parts.append('<p class="byline">By %s</p>' % esc(byline))
-    parts.append("</header>")
-
-    if hero:
-        parts.append('<figure class="hero">')
-        hero_h = max(1, round(1400 * (hero.get("h") or 2) / (hero.get("w") or 3)))
-        images_used.append({"id": hero["id"], "role": "hero", "url": img_url(hero["id"], 1400, hero_h)})
-        used_images.setdefault(hero["id"], []).append(art["title"].strip())
-        parts.append(
-            '<img src="%s" width="%d" height="%d" alt="%s">'
-            % (img_url(hero["id"], 1400, hero_h), 1400, hero_h,
-               esc((art.get("cover") or {}).get("alt") or ""))
-        )
-        if credit:
-            parts.append("<figcaption>%s</figcaption>" % esc(credit))
-        parts.append("</figure>")
-
-    parts.append('<div class="story-body">')
-    subheads = 0
-    first_para = True
-    for b in keep:
-        if b["k"] == "img":
-            h = max(1, round(900 * (b.get("h") or 2) / (b.get("w") or 3)))
-            images_used.append({"id": b["id"], "role": "inline", "url": img_url(b["id"], 900, h)})
-            used_images.setdefault(b["id"], []).append(art["title"].strip())
-            parts.append(
-                '<figure class="inline"><img src="%s" width="900" height="%d" alt=""></figure>'
-                % (img_url(b["id"], 900, h), h)
-            )
-            continue
-        text = run_text(b).strip()
-        if not text:
-            continue
-        if b["k"] == "q":
-            parts.append('<blockquote>%s</blockquote>' % render_runs(b, ignore_bold))
-            continue
-        if b["k"] == "h" or (looks_like_subhead(text) and not first_para):
-            subheads += 1
-            parts.append("<h3>%s</h3>" % esc(text))
-            continue
-        cls = ' class="lede"' if first_para else ""
-        parts.append("<p%s>%s</p>" % (cls, render_runs(b, ignore_bold)))
-        first_para = False
-    parts.append("</div></article>")
-
-    report.append({
-        "images": images_used,
-        "title": art["title"].strip(),
-        "byline": byline,
-        "credit": credit,
-        "boldNeutralised": ignore_bold,
-        "subheads": subheads,
-        "words": len(re.sub(r"\s+", " ", " ".join(run_text(b) for b in keep if b["k"] != "img")).split()),
-        "imageCount": len(images_used),
-        "notes": notes,
-    })
-    return "\n".join(parts)
-
-
-def main(issue_dir: str) -> int:
+def main(issue_dir):
     base = ROOT / issue_dir
-    meta = json.loads((base / "issue.json").read_text(encoding="utf-8"))
-
-    articles = []
-    missing = []
-    for pid in meta["posts"]:
-        path = CACHE / ("%s.json" % pid)
-        if not path.exists():
-            missing.append(pid)
-            continue
-        articles.append(json.loads(path.read_text(encoding="utf-8")))
-    if missing:
-        print("::error::missing cached article(s): %s" % ", ".join(missing))
-        return 1
-
-    report: list = []
-    used_images: dict = {}
-    cover_id = (articles[0].get("cover") or {}).get("id")
-    bodies = [build_article(a, report, used_images, cover_id) for a in articles]
-
-    contents = "\n".join(
-        '<li><span class="n">%d</span><span class="t">%s</span></li>' % (i + 1, esc(a["title"].strip()))
-        for i, a in enumerate(articles)
-    )
-    cover_art = articles[0].get("cover") or {}
-    cover_src = img_url(cover_art.get("id", ""), 1400, 1120) if cover_art.get("id") else ""
-
-    css = (ROOT / "magazine" / "issue.css").read_text(encoding="utf-8")
-    html_doc = """<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>%(title)s</title>
-<meta name="robots" content="noindex">
-<style>%(css)s</style>
-</head><body>
-<section class="cover">
-  <p class="masthead">GatorBait <span>Magazine</span></p>
-  <p class="issue-line">%(issue_line)s</p>
-  %(cover_img)s
-  <h1>%(cover_title)s</h1>
-  <p class="cover-deck">%(deck)s</p>
-  <nav class="contents"><p class="contents-title">In this issue</p><ol>%(contents)s</ol></nav>
-  <p class="colophon">%(colophon)s</p>
-</section>
+    meta = json.loads((base / 'issue.json').read_text(encoding='utf-8'))
+    articles = [json.loads((CACHE / (pid + '.json')).read_text(encoding='utf-8')) for pid in meta['posts']]
+    if len(articles) != len(set(meta['posts'])):
+        raise ValueError('Duplicate article IDs in issue')
+    report, parts, used = [], [], set()
+    skipped = []
+    cover_html = photo(meta.get('cover'), used, skipped)
+    for pid, article in zip(meta['posts'], articles):
+        title = article['title'].strip()
+        byline = meta['bylines'][pid]
+        blocks, removed = [], []
+        for b in article['blocks']:
+            if b['k'] == 'img':
+                removed.append({'type': 'image', 'id': b.get('id'), 'reason': 'issue-specific credited artwork selection replaces web art'})
+                continue
+            text = text_of(b).strip()
+            if not text:
+                continue
+            if re.match(r'^More From\b', text, re.I):
+                removed.append({'type': 'web-promotion', 'reason': 'trailing related-story and subscribe section omitted'})
+                break
+            if not blocks and (re.match(r'^By\s', text) or text == 'GatorBaitMedia.com' or text == 'BUDDY MARTIN | COLUMN'):
+                removed.append({'type': 'display-metadata', 'text': text})
+                continue
+            if text.startswith('Photo: Anthony Garro/'):
+                removed.append({'type': 'photo-credit', 'reason': 'associated low-resolution web image not selected'})
+                continue
+            blocks.append(b)
+        if not blocks:
+            raise ValueError('Empty article: ' + pid)
+        prose = ' '.join(text_of(b).strip() for b in blocks)
+        word_count = len(prose.split())
+        if word_count < meta['minimumWords'][pid]:
+            raise ValueError('Full-body completeness floor failed: ' + pid)
+        art_image = photo(meta.get('storyImages', {}).get(pid), used, skipped)
+        body, first = [], True
+        for index, b in enumerate(blocks):
+            text = text_of(b).strip()
+            if b['k'] == 'h' or text in meta.get('sourceSubheads', {}).get(pid, []):
+                body.append('<h3>%s</h3>' % esc(text))
+            elif b['k'] == 'q':
+                body.append('<blockquote>%s</blockquote>' % render_text(b))
+            else:
+                body.append('<p%s>%s</p>' % (' class="lede"' if first else '', render_text(b)))
+                first = False
+        parts.append('<article class="story" id="story-%s"><header class="story-head"><p class="kicker">%s</p><h2>%s</h2><p class="byline">By %s</p></header>%s<div class="story-body">%s</div><p class="end-sign">GATORBAIT</p></article>' % (
+            pid, esc(meta['kickers'][pid]), esc(title), esc(byline), art_image, '\n'.join(body)))
+        report.append({'id': pid, 'title': title, 'byline': byline, 'words': word_count, 'bodyBlocks': len(blocks), 'omissions': removed, 'source': article.get('source') or meta.get('sources', {}).get(pid), 'fullBodyRequired': True})
+    rows = ''.join('<li><div><span class="contents-kicker">%s</span><h3>%s</h3><p>%s</p></div><span class="folio" data-story="%s">—</span></li>' % (
+        esc(meta['kickers'][pid]), esc(a['title'].strip()), esc(meta['bylines'][pid]), pid) for pid, a in zip(meta['posts'], articles))
+    css = (ROOT / 'magazine' / 'issue.css').read_text(encoding='utf-8')
+    output = '''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>%(title)s</title><style>%(css)s</style></head><body>
+<section class="cover"><p class="masthead">GatorBait<span>MAGAZINE</span></p><p class="issue-line">%(issue)s</p><div class="cover-art">%(photo)s</div><p class="cover-author">BUDDY MARTIN</p><h1>%(coverTitle)s</h1><p class="cover-deck">%(deck)s</p><div class="cover-bottom">FOUR COMPLETE ARTICLES<span>OLE MISS WEEK</span></div></section>
+<section class="contents"><p class="kicker">THE COMPLETE READING EDITION</p><h2>Inside this issue</h2><p class="contents-intro">Original columns and football analysis from GatorBait Media, collected in one edition to keep and read offline.</p><ol>%(rows)s</ol><div class="edition-note"><h3>About this edition</h3><p>Complete article bodies are reproduced from the published GatorBait originals. Web navigation, subscription pitches and related-story lists have been removed. Reporting, rankings and odds reflect each article’s original publication, not a live update.</p><p>Editorial lead: Buddy Martin<br>Contributors: Franz Beard and Eddie Gilley<br>Photography in this review: Chris Spears</p><p class="review-note">REVIEW COPY · Not released for sale. Final editorial and photography-use approval, price and checkout delivery remain pending.</p></div></section>
 %(bodies)s
-<section class="endmark"><p>GatorBait Media &middot; Florida Gators reporting since 1979</p></section>
-</body></html>
-""" % {
-        "title": esc(meta["title"]),
-        "css": css,
-        "issue_line": esc(meta["issueLine"]),
-        "cover_img": ('<div class="cover-art"><img src="%s" width="1400" height="1120" alt=""></div>' % cover_src) if cover_src else "",
-        "cover_title": esc(meta["coverTitle"]),
-        "deck": esc(meta.get("coverDeck", "")),
-        "contents": contents,
-        "colophon": esc(meta.get("colophon", "")),
-        "bodies": "\n".join(bodies),
-    }
-
-    out = base / "issue.html"
-    out.write_text(html_doc, encoding="utf-8")
-    (base / "build-report.json").write_text(json.dumps(report, indent=1), encoding="utf-8")
-
-    # Wix serves the same asset under one id, so a repeat is a real repeat.
-    repeats = {k: v for k, v in used_images.items() if len(v) > 1}
-
-    total = sum(r["words"] for r in report)
-    print("issue: %s" % meta["title"])
-    print("wrote %s  (%d bytes)" % (out.relative_to(ROOT), out.stat().st_size))
-    print("%d articles, %d words total\n" % (len(report), total))
-    for r in report:
-        print("  %-58s %5d words  byline=%-14s subheads=%d%s"
-              % (r["title"][:58], r["words"], (r["byline"] or "-")[:14], r["subheads"],
-                 ("  [" + "; ".join(r["notes"]) + "]") if r["notes"] else ""))
-        if r["boldNeutralised"]:
-            print("      note: source marked nearly every run bold; bold ignored for this story")
-    print("\nphotography in this issue - check each one for a third-party watermark")
-    for r in report:
-        for im in r["images"]:
-            print("  %-7s %s" % (im["role"], im["url"]))
-
-    if repeats:
-        print("")
-        for k, where in repeats.items():
-            print("::error::image %s is used more than once (cover and/or %s)" % (k[:34], "; ".join(where)))
-        print("One visual slot, one image. Reusing art inside an issue reads as a mistake.")
-        return 1
-
-    if "<a " in html_doc or "href=" in html_doc:
-        print("::error::issue contains a link - it must be self-contained")
-        return 1
-    print("\nno outbound links: confirmed")
+</body></html>''' % {
+        'title': esc(meta['title']), 'css': css, 'issue': esc(meta['issueLine']), 'photo': cover_html,
+        'coverTitle': esc(meta['coverTitle']), 'deck': esc(meta['coverDeck']), 'rows': rows, 'bodies': '\n'.join(parts)}
+    if re.search(r'<a\b|\bhref\s*=', output, re.I):
+        raise ValueError('Outbound link in offline reading edition')
+    (base / 'issue.html').write_text(output, encoding='utf-8')
+    receipt = {'status': 'DRAFT_REVIEW_ONLY', 'articleCount': len(report), 'words': sum(r['words'] for r in report), 'selectedImages': sorted(used), 'skippedImages': skipped, 'articles': report, 'releaseGates': ['editorial proof', 'photography rights for separate paid issue', 'approved price', 'verified paid-download delivery']}
+    (base / 'build-report.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding='utf-8')
+    print(json.dumps({'articleCount': len(report), 'words': receipt['words'], 'images': len(used), 'status': receipt['status']}, indent=2))
     return 0
 
-
-if __name__ == "__main__":
-    sys.exit(main(sys.argv[1] if len(sys.argv) > 1 else "magazine/issues/2026-09-26-ole-miss"))
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1] if len(sys.argv) > 1 else 'magazine/issues/2026-09-26-ole-miss'))

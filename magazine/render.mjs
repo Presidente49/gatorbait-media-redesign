@@ -1,62 +1,104 @@
-// Renders the built issue to a PDF in CI, where the Wix image CDN is
-// reachable. Also captures the cover and first spread as images so the issue
-// can be reviewed without downloading anything.
+// Same Chromium export lane; no website access, deployment or paid dependency.
 import { chromium } from 'playwright';
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
 
 const dir = process.argv[2] || 'magazine/issues/2026-09-26-ole-miss';
-const page_url = 'file://' + process.cwd() + '/' + dir + '/issue.html';
-
+const htmlPath = resolve(dir, 'issue.html');
 const browser = await chromium.launch();
 const context = await browser.newContext({ viewport: { width: 1000, height: 1400 } });
 const page = await context.newPage();
 const failed = [];
-page.on('requestfailed', (r) => failed.push(r.url().slice(0, 120)));
-
-await page.goto(page_url, { waitUntil: 'networkidle', timeout: 60000 });
-await page.waitForTimeout(2500);
-
-// An empty frame must never pass as a design choice.
-const images = await page.evaluate(() =>
-  [...document.images].map((i) => ({ ok: i.complete && i.naturalWidth > 0, w: i.naturalWidth, src: i.src.slice(0, 100) }))
-);
-const loaded = images.filter((i) => i.ok).length;
-
-await page.screenshot({ path: dir + '/preview-cover.jpg', type: 'jpeg', quality: 72 });
-await page.evaluate(() => {
-  const s = document.querySelector('.story');
-  if (s) s.scrollIntoView();
-});
-await page.waitForTimeout(600);
-await page.screenshot({ path: dir + '/preview-story.jpg', type: 'jpeg', quality: 72 });
-
-const pdfPath = dir + '/issue.pdf';
-await page.pdf({
-  path: pdfPath,
+page.on('requestfailed', r => failed.push(r.url().slice(0, 180)));
+const countPages = buffer => (buffer.toString('latin1').match(/\/Type\s*\/Page\b/g) || []).length;
+const pdfOptions = {
   format: 'Letter',
   printBackground: true,
   preferCSSPageSize: true,
-});
-await browser.close();
-
-const bytes = readFileSync(pdfPath);
-// Dependency-free page count: every page object declares its type.
-const pages = (bytes.toString('latin1').match(/\/Type\s*\/Page[^s]/g) || []).length;
-
-const report = {
-  issue: dir,
-  pdfBytes: bytes.length,
-  pdfPages: pages,
-  imagesLoaded: loaded + '/' + images.length,
-  failedRequests: failed,
+  displayHeaderFooter: true,
+  headerTemplate: '<span></span>',
+  footerTemplate: '<div style="font:8px Arial;color:#526276;width:100%;padding:0 57px;display:flex;justify-content:space-between"><span>GATORBAIT MAGAZINE · REVIEW EDITION</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>'
 };
-writeFileSync(dir + '/render-report.json', JSON.stringify(report, null, 1));
-console.log(JSON.stringify(report, null, 1));
-
-if (loaded !== images.length) {
-  console.log('::error::' + (images.length - loaded) + ' image(s) failed to load - the issue would ship with empty frames');
-  process.exit(1);
-}
-if (failed.length) {
-  console.log('::warning::' + failed.length + ' request(s) failed');
+try {
+  await page.goto('file://' + htmlPath, { waitUntil: 'networkidle', timeout: 60000 });
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    await Promise.all([...document.images].map(i => i.decode()));
+  });
+  const images = await page.evaluate(() => [...document.images].map(i => ({
+    src: i.src, loaded: i.complete && i.naturalWidth > 0,
+    width: i.naturalWidth, height: i.naturalHeight, alt: i.alt
+  })));
+  if (images.some(i => !i.loaded)) throw new Error('Unloaded photograph');
+  if (new Set(images.map(i => i.src)).size !== images.length) throw new Error('Repeated photograph');
+  const ids = await page.locator('article.story').evaluateAll(nodes => nodes.map(n => n.id));
+  const pageStarts = [];
+  let nextPage = 3;
+  await page.emulateMedia({ media: 'print' });
+  for (const id of ids) {
+    await page.evaluate(id => {
+      document.body.classList.add('measure-only');
+      document.getElementById(id).classList.add('measure-target');
+    }, id);
+    const bytes = await page.pdf(pdfOptions);
+    const pages = countPages(bytes);
+    if (pages < 1) throw new Error('Empty PDF for ' + id);
+    pageStarts.push({ id, startPage: nextPage, pages });
+    nextPage += pages;
+    await page.evaluate(id => document.getElementById(id).classList.remove('measure-target'), id);
+  }
+  await page.evaluate(starts => {
+    document.body.classList.remove('measure-only');
+    for (const s of starts) {
+      document.querySelector('[data-story="' + s.id.replace('story-', '') + '"]').textContent = String(s.startPage);
+    }
+  }, pageStarts);
+  const overflow = await page.evaluate(() => [...document.querySelectorAll('.cover,.contents')].map(el => {
+    const box = el.getBoundingClientRect();
+    const bottom = Math.max(...[...el.children].map(child => child.getBoundingClientRect().bottom));
+    return { surface: el.className, contentBottom: bottom - box.top, height: box.height, ok: bottom <= box.bottom + 1 };
+  }));
+  if (overflow.some(s => !s.ok)) throw new Error('Cover/contents overflow: ' + JSON.stringify(overflow));
+  const bytes = await page.pdf({ ...pdfOptions, path: dir + '/issue.pdf' });
+  const pdfPages = countPages(bytes);
+  if (pdfPages !== nextPage - 1) throw new Error('Contents page map does not reconcile: ' + pdfPages + ' vs ' + (nextPage - 1));
+  // Embed exact artwork and fonts in the HTML for offline reading as well.
+  for (const image of images) {
+    const r = await fetch(image.src);
+    if (!r.ok) throw new Error('Artwork download failed: ' + r.status);
+    const data = Buffer.from(await r.arrayBuffer()).toString('base64');
+    const src = 'data:' + (r.headers.get('content-type') || 'image/jpeg') + ';base64,' + data;
+    await page.locator('img').evaluateAll((nodes, pair) => {
+      nodes.filter(n => n.src === pair.old).forEach(n => n.src = pair.src);
+    }, { old: image.src, src });
+  }
+  const styles = await page.locator('style').allTextContents();
+  for (let index = 0; index < styles.length; index++) {
+    let css = styles[index];
+    const urls = [...css.matchAll(/url\(['"]?([^)'"\s]+\.woff2)['"]?\)/g)];
+    for (const match of urls) {
+      const font = readFileSync(resolve(dirname(htmlPath), match[1]));
+      css = css.replace(match[0], 'url(data:font/woff2;base64,' + font.toString('base64') + ')');
+    }
+    await page.locator('style').nth(index).evaluate((el, css) => el.textContent = css, css);
+  }
+  writeFileSync(dir + '/issue.html', await page.content());
+  await page.emulateMedia({ media: 'screen' });
+  await page.locator('.cover').screenshot({ path: dir + '/preview-cover.jpg', type: 'jpeg', quality: 85 });
+  await page.locator('.contents').screenshot({ path: dir + '/preview-contents.jpg', type: 'jpeg', quality: 85 });
+  for (let i = 0; i < ids.length; i++) {
+    await page.locator('#' + ids[i]).screenshot({ path: dir + '/preview-story-' + (i + 1) + '.jpg', type: 'jpeg', quality: 82 });
+  }
+  const report = {
+    status: 'DRAFT_REVIEW_ONLY', issue: dir, pdfBytes: bytes.length, pdfPages,
+    articleCount: ids.length, pageStarts, imagesLoaded: images.length + '/' + images.length,
+    images, coverAndContentsGeometry: overflow, failedRequests: failed,
+    offlineHtml: true, textSource: 'Frozen full-article Wix reads; see build-report.json',
+    visualApproval: 'PENDING owner/editor review; build metrics do not certify photographic rights or appearance',
+    saleEnabled: false
+  };
+  writeFileSync(dir + '/render-report.json', JSON.stringify(report, null, 2));
+  console.log(JSON.stringify(report, null, 2));
+} finally {
+  await browser.close();
 }

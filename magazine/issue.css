@@ -1,143 +1,43 @@
-/* Print-first, and still no network: the display face is embedded from a
-   local file, not fetched, so the issue renders identically offline. Body
-   stays a system serif - Georgia sets long-form beautifully and costs
-   nothing. See assets/type.css for the sitewide reasoning. */
-
-@font-face{
-  font-family:"Big Shoulders";
-  src:url("../../../assets/fonts/BigShoulders-Bold.woff2") format("woff2");
-  font-weight:700; font-style:normal;
-}
-@font-face{
-  font-family:"Big Shoulders";
-  src:url("../../../assets/fonts/BigShoulders-Regular.woff2") format("woff2");
-  font-weight:400; font-style:normal;
-}
-
-@page { size: Letter; margin: 16mm 15mm 18mm; }
-
-:root{
-  /* Matches what production actually renders rather than inventing a shade.
-     #11274a is the most-used colour in the repo (172 occurrences) and is the
-     surface navy the live magazine uses; #FA4616 is Florida's official orange.
-     See docs/DESIGN-SYSTEM.md - this file previously carried its own #0A1F44,
-     which was an eighth competing navy. */
-  --navy:#11274a;
-  --orange:#FA4616;
-  --ink:#16181d;
-  --muted:#5a6272;
-  --rule:#d5d8e0;
-  --paper:#fffdf9;
-}
-
-*{box-sizing:border-box}
-html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
-body{
-  margin:0; background:var(--paper); color:var(--ink);
-  font:400 10.5pt/1.52 Georgia,"Iowan Old Style","Times New Roman",serif;
-  text-rendering:optimizeLegibility;
-}
-
-/* ---------- cover ---------- */
-.cover{
-  background:var(--navy); color:#fff; padding:22mm 14mm 16mm;
-  page-break-after:always; break-after:page; min-height:247mm;
-}
-.masthead{
-  margin:0; font:700 46pt/0.86 "Big Shoulders",Arial,sans-serif;
-  letter-spacing:-.4pt; text-transform:uppercase; color:#fff;
-}
-.masthead span{color:var(--orange)}
-.issue-line{
-  margin:5mm 0 0; padding-top:3mm; border-top:2.5pt solid var(--orange);
-  font:700 11pt/1.3 "Big Shoulders",Arial,sans-serif;
-  letter-spacing:1.6pt; text-transform:uppercase; color:#cdd6e6;
-}
-.cover-art{margin:9mm 0 7mm; border:1pt solid rgba(255,255,255,.22)}
-.cover-art img{display:block; width:100%; height:auto}
-.cover h1{
-  margin:0; font:700 42pt/1.02 "Big Shoulders",Arial,sans-serif;
-  letter-spacing:-.3pt; text-transform:uppercase; color:#fff;
-}
-.cover-deck{margin:4mm 0 0; font:italic 400 12pt/1.45 Georgia,serif; color:#c6d0e2}
-
-.contents{margin:11mm 0 0; border-top:1pt solid rgba(255,255,255,.28); padding-top:5mm}
-.contents-title{
-  margin:0 0 3mm; font:700 10pt/1 "Big Shoulders",Arial,sans-serif;
-  letter-spacing:2pt; text-transform:uppercase; color:var(--orange);
-}
-.contents ol{margin:0; padding:0; list-style:none}
-.contents li{
-  display:flex; gap:4mm; align-items:baseline;
-  padding:2.1mm 0; border-bottom:.5pt solid rgba(255,255,255,.14);
-  font-size:10pt; color:#e8edf6;
-}
-.contents .n{
-  flex:0 0 auto; width:6mm; color:var(--orange);
-  font:700 9pt/1 "Helvetica Neue",Arial,sans-serif;
-}
-.colophon{margin:9mm 0 0; font-size:8pt; line-height:1.5; color:#9fadc4}
-
-/* ---------- stories ---------- */
-.story{page-break-before:always; break-before:page}
-.story-head{border-bottom:2.5pt solid var(--navy); padding-bottom:4mm; margin-bottom:6mm}
-.kicker{
-  margin:0 0 2.5mm; font:700 9.5pt/1 "Big Shoulders",Arial,sans-serif;
-  letter-spacing:2.2pt; text-transform:uppercase; color:var(--orange);
-}
-.story-head h2{
-  margin:0; font:700 33pt/1.04 "Big Shoulders",Arial,sans-serif;
-  letter-spacing:-.2pt; color:var(--navy);
-}
-.byline{
-  margin:3mm 0 0; font:700 10pt/1 "Big Shoulders",Arial,sans-serif;
-  letter-spacing:1.4pt; text-transform:uppercase; color:var(--muted);
-}
-
-figure{margin:0 0 6mm}
-figure img{display:block; width:100%; height:auto}
-.hero{margin-bottom:7mm}
-figcaption{
-  margin-top:2mm; padding-left:2.5mm; border-left:2pt solid var(--orange);
-  font:400 8pt/1.4 "Helvetica Neue",Arial,sans-serif; color:var(--muted);
-}
-
-/* Two columns is what makes it read as a magazine rather than a printout. */
-.story-body{column-count:2; column-gap:8mm; orphans:3; widows:3}
-.story-body p{margin:0 0 3.4mm; text-align:justify; hyphens:auto}
-.story-body p.lede{font-size:11.5pt; line-height:1.5}
-.story-body p.lede::first-letter{
-  float:left; font:700 30pt/0.82 Georgia,serif; color:var(--navy);
-  margin:1mm 2mm 0 0;
-}
-.story-body h3{
-  margin:5mm 0 2.5mm; font:700 10.5pt/1.2 "Big Shoulders",Arial,sans-serif;
-  letter-spacing:1.5pt; text-transform:uppercase; color:var(--navy);
-  break-after:avoid; page-break-after:avoid;
-}
-blockquote{
-  margin:4mm 0; padding:0 0 0 4mm; border-left:2.5pt solid var(--orange);
-  font:italic 400 11pt/1.42 Georgia,serif; color:var(--navy);
-  break-inside:avoid; page-break-inside:avoid;
-}
-.inline{break-inside:avoid; page-break-inside:avoid; margin:3mm 0 4mm}
-
-.endmark{
-  page-break-before:always; break-before:page;
-  display:flex; align-items:center; justify-content:center; min-height:180mm;
-}
-.endmark p{
-  margin:0; font:700 10pt/1 "Big Shoulders",Arial,sans-serif;
-  letter-spacing:2.4pt; text-transform:uppercase; color:var(--muted);
-}
-
-/* On screen, give the cover and pages a sheet-like frame so the HTML preview
-   reads the same way the PDF will. */
-@media screen{
-  body{background:#e9ebf0; padding:18px 0}
-  .cover,.story,.endmark{
-    width:210mm; margin:0 auto 18px; padding:16mm 15mm 18mm;
-    background:var(--paper); box-shadow:0 2px 14px rgba(16,24,48,.18);
-  }
-  .cover{background:var(--navy); padding:22mm 14mm 16mm}
-}
+/* Existing print-first magazine, finished as a bounded review export. */
+@font-face{font-family:BigShoulders;src:url('../../../assets/fonts/BigShoulders-Bold.woff2') format('woff2');font-weight:700}
+@font-face{font-family:BigShoulders;src:url('../../../assets/fonts/BigShoulders-Regular.woff2') format('woff2');font-weight:400}
+@page{size:Letter;margin:14mm 15mm 18mm}
+:root{--navy:#11274a;--orange:#FA4616;--ink:#182b42;--muted:#526276;--paper:#fffdf9;--rule:#d7dee5}
+*{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 10.8pt/1.47 Georgia,'Times New Roman',serif}
+.cover{height:9.52in;background:var(--navy);color:white;padding:25pt 28pt 22pt;break-after:page;page-break-after:always;position:relative}
+.masthead{font:700 54pt/.95 BigShoulders,Arial,sans-serif;letter-spacing:-1.5pt;margin:0}
+.masthead span{display:block;color:var(--orange);font:700 13pt/1.1 BigShoulders,Arial,sans-serif;letter-spacing:7pt;margin-top:7pt}
+.issue-line{font:700 8.5pt/1.3 Arial,sans-serif;letter-spacing:1pt;text-transform:uppercase;border-top:2pt solid var(--orange);padding-top:9pt;margin:13pt 0 15pt;color:#dce5ee}
+.cover-art figure{margin:0 0 13pt}.cover-art img{height:235pt;width:100%;object-fit:contain;display:block}
+.cover-art figcaption{font:400 7.3pt/1.35 Arial,sans-serif;color:#d5dfed;margin-top:6pt;border:0;padding:0}
+.cover-author{font:700 9pt/1.2 Arial,sans-serif;letter-spacing:2pt;color:var(--orange);margin:12pt 0 6pt}
+.cover h1{font:700 44pt/1 BigShoulders,Arial,sans-serif;text-transform:uppercase;letter-spacing:-.3pt;margin:0;max-width:440pt}
+.cover-deck{font:italic 13pt/1.4 Georgia,serif;color:#e6edf3;margin:10pt 0 0;max-width:400pt}
+.cover-bottom{position:absolute;bottom:22pt;left:28pt;right:28pt;padding-top:9pt;border-top:1pt solid #607287;font:700 8pt/1.2 Arial,sans-serif;letter-spacing:1pt}.cover-bottom span{float:right;color:#e5ebf3}
+.contents{height:9.52in;break-after:page;page-break-after:always;padding:12pt 0 0}
+.kicker,.contents-kicker{font:700 8pt/1.2 Arial,sans-serif;color:var(--orange);letter-spacing:1.5pt;text-transform:uppercase;margin:0 0 8pt}
+.contents>h2{font:700 37pt/1.1 BigShoulders,Arial,sans-serif;color:var(--navy);margin:0 0 14pt}
+.contents-intro{font:400 11pt/1.5 Georgia,serif;max-width:420pt;margin:0 0 20pt}
+.contents ol{padding:0;margin:0;list-style:none;border-top:2pt solid var(--navy)}
+.contents li{display:flex;justify-content:space-between;gap:20pt;align-items:center;padding:14pt 0;border-bottom:1pt solid var(--rule)}
+.contents li h3{font:700 19pt/1.13 BigShoulders,Arial,sans-serif;margin:4pt 0;color:var(--navy);max-width:430pt}
+.contents li p{font:400 9pt/1.3 Arial,sans-serif;color:var(--muted);margin:4pt 0 0}
+.folio{font:700 24pt/1 BigShoulders,Arial,sans-serif;color:var(--orange);min-width:25pt;text-align:right}
+.edition-note{border-top:2pt solid var(--orange);padding-top:11pt;margin-top:24pt;font:400 8.7pt/1.5 Arial,sans-serif;color:var(--muted)}
+.edition-note h3{font:700 9pt/1.2 Arial,sans-serif;text-transform:uppercase;letter-spacing:1pt;margin:0 0 8pt;color:var(--navy)}
+.edition-note p{margin:0 0 8pt}.review-note{font-size:8pt!important}
+.story{break-before:page;page-break-before:always}
+.story-head{border-bottom:2pt solid var(--navy);padding:8pt 0 13pt;margin:0 0 17pt;break-inside:avoid}
+.story-head h2{font:700 31pt/1.06 BigShoulders,Arial,sans-serif;color:var(--navy);margin:0;letter-spacing:-.15pt}
+.byline{font:700 9pt/1.3 Arial,sans-serif;text-transform:uppercase;letter-spacing:1pt;color:var(--muted);margin:11pt 0 0}
+figure{margin:0 0 16pt;break-inside:avoid}figure img{width:100%;max-height:165pt;object-fit:contain;display:block}
+figcaption{font:400 8pt/1.4 Arial,sans-serif;color:var(--muted);border-left:2pt solid var(--orange);padding-left:7pt;margin:6pt 0 0}
+.story-body{column-count:2;column-gap:23pt;column-fill:auto;orphans:3;widows:3}
+.story-body p{margin:0 0 9pt;text-align:left;hyphens:auto}.story-body p.lede{font-size:11.5pt;line-height:1.45}
+.story-body h3{font:700 12.3pt/1.15 BigShoulders,Arial,sans-serif;color:var(--navy);margin:12pt 0 7pt;break-after:avoid;page-break-after:avoid}
+blockquote{font:italic 10.8pt/1.45 Georgia,serif;color:var(--navy);border-left:2pt solid var(--orange);padding-left:9pt;margin:10pt 0;orphans:3;widows:3}
+.end-sign{font:700 7pt/1.2 Arial,sans-serif;letter-spacing:2pt;color:var(--orange);text-align:right;margin:12pt 0}
+body.measure-only>.cover,body.measure-only>.contents,body.measure-only>.story:not(.measure-target){display:none!important}
+body.measure-only>.measure-target{break-before:auto;page-break-before:auto}
+@media screen{body{background:#e9edf2;padding:20px}.cover,.contents,.story{width:185.9mm;margin:0 auto 24px;box-shadow:0 2px 13px #17314a26}.contents,.story{background:var(--paper);padding:20pt}.cover{padding:25pt 28pt 22pt}.story-body{column-fill:balance}}

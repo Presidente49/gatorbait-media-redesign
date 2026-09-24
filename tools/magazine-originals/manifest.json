@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "ownerWorkItem": "Presidente49/gatorbait-media-redesign#3/5821906293",
+  "policy": "Original sources and native commands; isolated lab only; no production or sends",
+  "tools": [
+    {"name":"colorlib", "repo":"ColorlibHQ/email-templates", "sha":"3018557fe943fb1c3e3367aa52d39b2fca44f725", "license":"MIT", "licenseFile":"LICENSE-MIT", "version":"git-pinned", "role":"Complete original MJML template collection and development server"},
+    {"name":"zine", "repo":"zineland/zine", "sha":"17285efe9f9a63b79a42a738b54d4d730b8cd551", "license":"Apache-2.0", "licenseFile":"LICENSE", "version":"0.16.0", "role":"Native mobile magazine and issue generator"},
+    {"name":"baoyu-design", "repo":"JimLiu/baoyu-design", "sha":"6530033592bf7fa58bc1a5a2a2ad278da45213a9", "license":"MIT", "licenseFile":"LICENSE", "version":"1.3.0", "role":"Full original design skill, methodology, references and scaffolds"},
+    {"name":"pagedjs", "repo":"pagedjs/pagedjs", "sha":"6b0ff8089f472a17247e44671da93d2d931e656e", "license":"MIT", "licenseFile":"LICENSE.md", "version":"0.5.0-beta.2", "role":"Original paged-media engine; upstream HEAD is beta, not certified stable"},
+    {"name":"pagedjs-cli", "repo":"pagedjs/pagedjs-cli", "sha":"1fc8c8956d665347a6a105c927be405a3ac462d6", "license":"MIT", "licenseFile":"LICENSE", "version":"0.4.3", "role":"Native Paged.js PDF CLI companion; its dependency is recorded separately"},
+    {"name":"vivliostyle", "repo":"vivliostyle/vivliostyle-cli", "sha":"94065673eb83619e5468d47461a609d6c9d7b6ee", "license":"AGPL-3.0", "licenseFile":"LICENSE", "version":"11.3.3", "role":"Separate native publication/PDF option, not MIT"}
+  ],
+  "held": [{"repo":"laravelmail/magazine-news-email-template", "reason":"No license grant found in inspected root or README; no redistribution or execution in this intake."}]
+}

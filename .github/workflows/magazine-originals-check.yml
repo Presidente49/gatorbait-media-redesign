@@ -1,0 +1,51 @@
+name: Magazine original tools — isolated native checks
+on:
+  push:
+    branches: [tools/magazine-originals-20260924]
+    paths:
+      - 'tools/magazine-originals/**'
+      - '.gitmodules'
+      - '.github/workflows/magazine-originals-check.yml'
+permissions:
+  contents: read
+jobs:
+  originals:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Native host preflight
+        run: |
+          git --version
+          node --version
+          npm --version
+          cargo --version
+          google-chrome --version
+          python3 -m pip install pypdf
+      - name: Clone originals and run native build examples
+        run: python3 tools/magazine-originals/run.py run --workspace "$RUNNER_TEMP/magazine-originals"
+      - name: Record exact runtime receipt
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/magazine-originals/reports/intake.json" ]; then
+            cat "$RUNNER_TEMP/magazine-originals/reports/intake.json"
+          fi
+      - name: Preserve small test outputs and receipts only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: original-magazine-tools-validation
+          retention-days: 1
+          if-no-files-found: warn
+          path: |
+            ${{ runner.temp }}/magazine-originals/reports/*.json
+            ${{ runner.temp }}/magazine-originals/logs/*.log
+            ${{ runner.temp }}/magazine-originals/output/*.json
+            ${{ runner.temp }}/magazine-originals/output/*.pdf
+            ${{ runner.temp }}/magazine-originals/output/*.png

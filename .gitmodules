@@ -1,0 +1,18 @@
+[submodule "magazine-colorlib"]
+	path = tools/magazine-originals/upstream/colorlib
+	url = https://github.com/ColorlibHQ/email-templates.git
+[submodule "magazine-zine"]
+	path = tools/magazine-originals/upstream/zine
+	url = https://github.com/zineland/zine.git
+[submodule "magazine-baoyu-design"]
+	path = tools/magazine-originals/upstream/baoyu-design
+	url = https://github.com/JimLiu/baoyu-design.git
+[submodule "magazine-pagedjs"]
+	path = tools/magazine-originals/upstream/pagedjs
+	url = https://github.com/pagedjs/pagedjs.git
+[submodule "magazine-pagedjs-cli"]
+	path = tools/magazine-originals/upstream/pagedjs-cli
+	url = https://github.com/pagedjs/pagedjs-cli.git
+[submodule "magazine-vivliostyle"]
+	path = tools/magazine-originals/upstream/vivliostyle
+	url = https://github.com/vivliostyle/vivliostyle-cli.git

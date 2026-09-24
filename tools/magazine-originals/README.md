@@ -1,29 +1,85 @@
-# Original magazine tools — native intake, not adapters
+# Magazine Original Tools — native download and setup package
 
-Owner direction and acceptance: issue #3 comment 5821906293. This isolated library keeps complete, commit-pinned upstream repositories and their original licenses. Each `upstream/` entry is a Git submodule, not a rewritten skill summary. This branch does not deploy a site, send email, or change the accepted magazine.
+This package downloads the COMPLETE original repositories at recorded commits.
+It does not substitute rewritten prompts, imitation renderers, or summaries.
+It is the installer/test harness, not a ZIP of the vendor repositories.
 
-## Obtain originals
+Repository branch: Presidente49/gatorbait-media-redesign
+  tools/magazine-originals-20260924
+Tool folder: tools/magazine-originals
+Coordination: issue #3, original-source scope 5821906293.
 
-From a checkout of this branch, `git submodule update --init --recursive -- tools/magazine-originals/upstream` materializes all original source trees. Alternatively run `python3 tools/magazine-originals/run.py ingest --workspace /a/new/local/folder`; that clones every upstream repo and its submodules, checks the pinned HEAD and preserves the original tree. No existing directory is reset.
+## What is preserved
 
-## Install and run native examples
+Colorlib email-templates (MIT); Zine (Apache-2.0); Baoyu Design (MIT);
+Paged.js engine and Paged.js CLI (MIT); Vivliostyle CLI (AGPL-3.0).
+Full original source, documentation, licenses and submodules are cloned into
+sources/. Separate work copies hold installed dependencies and generated output.
+Originals are not reset, patched or overwritten. Existing workspaces are refused.
 
-Prerequisites: Git, Python 3.11+, Node 22.12+, Cargo/Rust and Chrome. The independent PDF checker uses pypdf. These prerequisites are not silently installed system-wide. Run `python3 tools/magazine-originals/run.py run --workspace /a/new/local/folder`. This downloads originals, makes separate build copies, runs native commands and records source revisions, real command exits, output hashes and failures.
+The code on GitHub uses commit-pinned Git submodules. GitHub's ordinary Download
+ZIP does not populate those submodules. Use this downloader or native Git:
 
-- Colorlib: original npm dependencies, original build script, all template outputs; actual templates 4/24 viewed in Chromium.
-- Zine: native Cargo installation from unchanged source, `zine new`, then `zine build`.
-- Baoyu Design: the author's recommended Vercel skills installer, full leaf skill and sibling resources, original directory integrity and actual CLI discovery. No paid/native Claude model execution is implied by installation.
-- Paged.js: original npm build and browser polyfill pagination. Its original CLI is a separate companion checkout and native PDF test. HEAD engine is beta; CLI's dependency may be a different version. Do not conceal this distinction.
-- Vivliostyle: the documented npm CLI installation, version pinned to 11.3.3, native PDF export. AGPL-3.0, not MIT. Keep the source/license available; no proprietary/network integration is approved by a local trial.
+    git -c url.https://github.com/.insteadOf=git@github.com: submodule update --init --recursive -- tools/magazine-originals/upstream
 
-All npm dependencies/lockfiles stay in work copies. `reports/intake.json` and numbered logs report real outcomes; failures are not auto-patched. Browser sandbox is not disabled. Library sources, sample outputs and native-host activation are separate stages. A test runner is ephemeral and does not install anything on Brenden's Mac.
+The HTTPS configuration is per-command for public GitHub submodules. It does not
+change account credentials or the original repositories' tracked configuration.
 
-## Use after installation
+## Native host requirements
 
-Open `.lab/work/colorlib/index.html` for the original template gallery, or run its documented `npm run dev -- --no-open` in that work directory. Use the Zine executable under `runtime/zine/bin` with its generated `work/zine-demo` project. Load the full Baoyu skill from `work/design-host/.claude/skills/baoyu-design/SKILL.md` in the actual authorized host agent and follow its original entry, methodology and appropriate built-in skills. Use Paged.js/its CLI and Vivliostyle independently; compare results before choosing an export engine.
+Git, Python 3, Node.js 22.12 or newer, npm, Cargo/Rust and Google Chrome.
+The independent PDF checker requires pypdf. No system-level dependency installer
+is run by this package. On a Mac, the existing Chrome application is detected.
+A real authenticated coding-agent session is still needed to EXECUTE the Baoyu
+skill. Installing/discovering the skill alone is not a model-generated design.
 
-This is not a substitute UI for the originals. A native host must recheck tool paths and record its own installation/first-use results. No global harness configuration, live Wix integration, member-access change or campaign send is performed.
+## Get all original sources (no package execution)
+
+    python3 run.py ingest --workspace "$HOME/Magazine-Originals-Sources"
+
+## Install and run isolated native examples
+
+    python3 run.py run --workspace "$HOME/Magazine-Originals-Lab"
+
+Use a new folder for each evidence run. This test installs packages and executes
+vendor tools in that folder. A folder is not a security sandbox. Because the
+Paged.js dependency trees have known audit findings, run the full validation only
+in a disposable, non-sensitive test runtime. Review RESULTS.md before use on a
+persistent host; source-only ingestion does not execute npm/Cargo vendor builds.
+Do not feed personal data, credentials, customer lists or paid articles into the
+technical fixtures. Native success does not certify dependency security.
+
+## Native commands and outputs
+
+Colorlib: npm ci; npm run build; its own npm run dev and generated gallery.
+All original MJML sources, image assets, scripts and sample templates are retained.
+
+Zine: cargo install --path [full source work copy] --root [private runtime];
+zine new zine-demo; zine build. Its native zine serve remains the preview command.
+
+Baoyu: original author's Vercel skills install path, skills@1.7.0, project-scoped
+target claude-code. All leaf skill files are hash-compared to the upstream original.
+Its original SKILL.md, methodology and task-specific files remain authoritative.
+
+Paged.js: original npm build with Rollup's documented --bundleConfigAsCjs option
+so its unchanged legacy JSON-import configuration works on modern Node.
+Browser test uses the original compiled paged.polyfill.js, not an imitation.
+Paged.js CLI is kept separately; its own runtime uses its separately resolved
+Paged.js dependency. Native CLI PDF and original-engine PDF are tested separately.
+
+Vivliostyle: documented @vivliostyle/cli@11.3.3 installation into a private prefix;
+native vivliostyle build on the same two-page fixture. Its source and AGPL license
+are preserved, not misrepresented as MIT or replaced by another PDF generator.
+
+Reports: reports/intake.json; numbered logs; native PDFs and screenshots in output/.
 
 ## Boundaries
 
-Do not expose a full paid issue as a public development fixture. Do not pass publisher account secrets into vendor builds. Do not upload node_modules, font binaries or credentials. Do not promote demo stock imagery or placeholder copy into GatorBait journalism. Library acquisition is not security or inbox certification. LaravelMail's unlicensed candidate stays on hold. Preserve issue #30 and all existing task schedules.
+No Wix changes, publications, sends, new recurring schedule, spending, account
+access, membership changes or production deployments. Keep a security hold on
+flagged packages. Do not use npm audit fix blindly or alter vendor code to turn a
+failure green. Sources and test artifacts are not a permanent installation on a
+separate computer. The GitHub runner is temporary; your Mac has its own setup gate.
+
+No fonts, vendor binaries, node_modules, credentials or private stories are shipped
+in this setup package. Each upstream license stays with the original downloads.

@@ -101,9 +101,50 @@ function audit() {
   out.smallTapTargets = small;
   if (small > 10) out.findings.push(`${small} tap targets under 44px`);
 
-  out.retiredBranding = ['Monday Chomp', 'Quick Chomps', 'Sidelines', 'Rob Browne']
-    .filter((s) => document.body.innerText.includes(s));
-  if (out.retiredBranding.length) {
+  // Knowing a retired name is on the page is not enough to remove it. Report
+  // WHERE: the element holding the text, so the owner can be identified.
+  // Case-sensitive on purpose - "sidelines" is an ordinary football word and
+  // matching it loosely produces false positives.
+  const RETIRED = ['Monday Chomp', 'Quick Chomps', 'Sidelines', 'Rob Browne'];
+  const retiredFound = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+  let tn;
+  while ((tn = walker.nextNode())) {
+    const parent = tn.parentElement;
+    if (!parent) continue;
+    const tag = parent.nodeName;
+    if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT') continue;
+    const value = tn.nodeValue || '';
+    for (const term of RETIRED) {
+      const at = value.indexOf(term);
+      if (at === -1) continue;
+      if (retiredFound.some((f) => f.term === term)) continue;
+      const box = parent.getBoundingClientRect();
+      retiredFound.push({
+        term,
+        tag: tag.toLowerCase(),
+        id: parent.id || null,
+        cls: (parent.className && String(parent.className).slice(0, 70)) || null,
+        // Where it sits, so a desktop-only widget is distinguishable from body copy.
+        top: Math.round(box.top + scrollY),
+        visible: box.width > 0 && box.height > 0 && getComputedStyle(parent).visibility !== 'hidden',
+        context: value.slice(Math.max(0, at - 60), at + 80).replace(/\s+/g, ' ').trim(),
+        ancestry: (() => {
+          const chain = [];
+          let el = parent;
+          for (let i = 0; i < 4 && el && el !== document.body; i++) {
+            chain.push(el.nodeName.toLowerCase() + (el.id ? '#' + el.id : '') +
+              (el.className ? '.' + String(el.className).trim().split(/\s+/)[0] : ''));
+            el = el.parentElement;
+          }
+          return chain.join(' < ');
+        })(),
+      });
+    }
+  }
+  out.retiredBranding = retiredFound.map((f) => f.term);
+  out.retiredBrandingWhere = retiredFound;
+  if (retiredFound.length) {
     out.findings.push('Retired branding present: ' + out.retiredBranding.join(', '));
   }
 
@@ -359,6 +400,13 @@ for (const r of report.runs) {
   if (r.leadImage) lines.push(`lead image ${r.leadImage.width}x${r.leadImage.height}px at y=${r.leadImage.top}`);
   if (r.imagesLoaded) lines.push(`images loaded: ${r.imagesLoaded}`);
   lines.push(r.findings.length ? '\n**Findings**\n' + r.findings.map((f) => '- ' + f).join('\n') : '\nNo findings.');
+  if (r.retiredBrandingWhere && r.retiredBrandingWhere.length) {
+    lines.push('\n**Retired branding, located**');
+    for (const f of r.retiredBrandingWhere) {
+      lines.push(`- \`${f.term}\` in \`${f.ancestry}\` at y=${f.top}, visible=${f.visible}`);
+      lines.push(`  > ${f.context}`);
+    }
+  }
   if (r.consoleErrors.length) lines.push('\nConsole errors:\n' + r.consoleErrors.map((e) => '- `' + e + '`').join('\n'));
   if (r.candidate) {
     const c = r.candidate;

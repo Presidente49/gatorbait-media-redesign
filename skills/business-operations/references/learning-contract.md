@@ -4,7 +4,7 @@ Maintain knowledge at three distinct levels; use existing version control and wo
 
 ## Upstream library
 
-Keep upstream files and MIT notices unchanged at the pinned commit. A local skill references them instead of silently rewriting them. An update proposal compares old/new versions, licensing, relevant security/maintenance changes and affected tests. Never auto-follow a moving branch or install new dependencies as part of an update. Return corrections upstream only when separately authorized and free of client information.
+Keep upstream files and their original license/NOTICE files unchanged at the reviewed version. Do not assume every project is MIT licensed. A local skill references the actual upstream instructions instead of silently rewriting them. An update proposal compares old/new versions, licensing, relevant security/maintenance changes and affected tests. Never auto-follow a moving branch or install new dependencies as part of an update. Return corrections upstream only when separately authorized and free of client information.
 
 ## Portable method
 

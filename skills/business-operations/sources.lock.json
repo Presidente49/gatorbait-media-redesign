@@ -10,6 +10,7 @@
     "license_blob": "7c48dd638a9ebed49a8ef0c0c4eea90105381cdf",
     "review_date": "2026-09-24",
     "reviewed_documents": {
+      "README.md": "92b3f28cabafc073c0dc810d4a3b434eba8d30c9",
       "skills/marketing-loops/SKILL.md": "895072416c4c53941d354e48b0bab973f94a3d83",
       "skills/marketing-loops/references/loop-orchestration.md": "eb0bfe39742df3bd750a19155553507f705dc201"
     },
@@ -20,10 +21,13 @@
   "review_limits": [
     "Selected instruction documents and license inspected; not a catalog-wide runtime security audit.",
     "No upstream hooks, CLI integrations, dependencies, provider actions or schedules executed.",
-    "Local initialization and host skill discovery require separate verification."
+    "Local initialization and host skill discovery require separate verification.",
+    "Native plugin installation is an upstream-supported alternative, not proof of matching this pin; record its actual resolved version separately."
   ],
   "portable_core": {
-    "version": "1.0.0",
-    "kind": "knowledge-and-validation-only"
+    "version": "1.1.0",
+    "kind": "knowledge-and-validation-only",
+    "catalog": "catalog/repos.json",
+    "automatic_installation": false
   }
 }

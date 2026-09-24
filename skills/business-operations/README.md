@@ -1,41 +1,56 @@
-# Portable Business Operations skill
+# Business Operations — portable skills and repository catalog
 
-One reusable method, an intact upstream specialist library, and one thin adapter per business. This is not a competing controller or a new business application.
+The agency method is reusable. Each business is a separate client profile. This directory is a self-contained knowledge plugin; it is not a new server, queue or controller. The repository currently storing it is not its business identity.
 
-## Included
+## What is here
 
-- `SKILL.md`: portable operating method.
-- `references/`: workflow and learning contracts plus a blank business profile.
-- `scripts/gate.py` and `tests/`: dependency-free structural handoff/closure checks.
-- `sources.lock.json`: exact upstream repository, commit, MIT license and review scope.
-- `.agents/marketingskills`: the complete original upstream repository as a pinned Git submodule, not rewritten fragments.
+- The original business-operations skill and handoff/learning contracts.
+- Source-specific adapter skills in `commands/`, plus `catalog` and `install-repo`.
+- `catalog/repos.json`: eight inspected installation references and the remaining source-review intake. An entry is not an installed program.
+- Three native Claude reviewer definitions in `agents/`: source-auditor, workflow-reviewer and outcome-reviewer. File-read tools only; no automatic execution or experimental team flag.
+- Dependency-free structural checks and a tracked-file repo discovery command.
 
-The small `.agents/skills/business-operations`, `.claude/skills/business-operations` and `.codex/skills/business-operations` entrypoints route to the same core. They do not duplicate the method. Only the selected task's specialist instructions are read. Installing a catalog does not activate its tools, advertising, data access or schedulers.
+Full upstream libraries remain original installs/checkouts, with their own licenses, skills and dependencies. The existing MarketingSkills submodule is a supported upstream option, not proof of native host discovery. No upstream binaries or full libraries are bundled into this export. Read `references/repository-intake.md` before any install. License metadata with incomplete review stays labeled, not treated as MIT.
 
-## Initialize in an approved checkout
+## Access in Claude Code
 
-After the existing controller has accepted this exact integration revision in the normal workflow, an authorized local worker verifies remote, branch, HEAD and dirty state without resetting anything. Initialize only this dependency:
+From an approved checkout, replace the example with the REAL absolute path:
 
 ```sh
-git -c core.hooksPath=/dev/null submodule update --init -- .agents/marketingskills
-git -C .agents/marketingskills rev-parse HEAD
+claude plugin validate /absolute/path/to/skills/business-operations
+claude --plugin-dir /absolute/path/to/skills/business-operations plugin list --json
+claude --plugin-dir /absolute/path/to/skills/business-operations
+```
+
+In that session invoke `/business-operations:catalog` or `/business-operations:install-repo`. Source adapters include `/business-operations:marketing-library`, `/business-operations:knowledge-work` and `/business-operations:wix-editor`. Use `/agents` to inspect the three named review roles. Existing unnamespaced project skill wrappers may remain; do not install a second copy under the same name. Native validation/discovery is required on the actual host; local Python tests do not replace it.
+
+For reusable user-scope access, current Claude Code supports a self-contained plugin directory in `~/.claude/skills/business-operations/` with `.claude-plugin/plugin.json`. Copy THIS directory intact only after inspecting collisions/backing up an existing installation. Do not copy a client adapter, credentials, private evidence or the enclosing client repository. Restart the intended Claude session and verify with `claude plugin list --json`; use session `--plugin-dir` if that host version does not support skills-directory plugins. These are documented host methods, not actions already performed by creating this package.
+
+Original sources have THEIR OWN installation instructions in the catalog. For MarketingSkills choose its official Claude marketplace path OR the existing pinned-submodule option; do not use both blindly. For Anthropic role plugins, reuse the existing knowledge-work install path. MCP tools and device runtimes need real installation, permissions and connection checks; a source adapter alone provides no tool access.
+
+## Access in other agents
+
+Codex and other compatible agents can read `SKILL.md` through their supported skill loader; use their native discovery mechanism, not guessed cross-agent installation flags. A connected chat can explicitly retrieve the exact versioned skill and source files. This does not install a personal/global ChatGPT plugin. No tool credentials are shared between applications automatically.
+
+## Choose the client explicitly
+
+Load the selected project's own profile, entry instructions, current owner and work item. No client is the global default. Use the blank profile for a new business. Keep client policy, accounts, private memory and metrics in that client's authorized project/provider. The supplied review roles share methodology and sanitized packets, not a global customer database. The original client controller remains the sole production writer.
+
+## Audit and verify
+
+```sh
+python3 skills/business-operations/scripts/catalog.py
+python3 skills/business-operations/scripts/catalog.py --repo marketing-library
+python3 skills/business-operations/scripts/catalog.py --scan /absolute/path/to/approved/checkout
 python3 -m unittest discover -s skills/business-operations/tests -v
 ```
 
-The submodule HEAD must equal the commit in `sources.lock.json` and the superproject gitlink. Stop on a mismatch, modified submodule, existing path collision or failed download; never overwrite or silently update to latest. Do not run `npx`, upstream install/validation scripts, or recursive unrelated submodule updates. No new paid service is needed for these Markdown files; model/API usage is still subject to the host's existing costs and permissions.
+The scanner only reads safe tracked text; candidates require review. It is not a complete history/account crawl and cannot certify no other dependencies exist. It prints repository names and evidence paths, not source lines or secret values. Scan only an authorized checkout; files with sensitive path names are skipped, not a general DLP guarantee.
 
-Local initialization is NOT proven by a remote gitlink. Start a fresh supported agent session in that checkout and ask it to identify the loaded core, chosen adapter, pinned upstream commit and current controller authority. It must read those files rather than echo a remembered claim. Record that result in the existing work item. Cloud ChatGPT may explicitly read the versioned files through a connected GitHub tool, but this package does not install a global personal ChatGPT plugin or modify another machine.
+## Completion and rollback
 
-## Apply to another business
+DISCOVERED, REVIEWED, PREPARED, INSTALLED, LOADED, CONNECTED and WORKFLOW_VERIFIED are different gates. An installation receipt belongs to a real host/client record, never a fabricated catalog flag. The receiver must acknowledge the actual artifact/version and permitted next stage. Missing host access remains OPEN.
 
-Copy the generic `skills/business-operations` directory and use the same pinned upstream dependency in the destination project's existing repo. Fill the blank profile from that business's authorized sources. Its entrypoint loads that profile, not the source company's adapter. Keep credentials and private evidence out of the portable package. Do not copy the source project's authority files or client facts. On an agent that uses a different discovery folder, point its existing skill mechanism at the same `SKILL.md`; do not invent universal host support.
+No automatic update, budget change, scheduler, sender, client mutation, native team launch or permission bypass is included. Preserve pre-install files and upstream notices; disable/remove only the exact added component through its native manager, preserving data. Session-only loading ends with that session. Do not run broad deletion commands as rollback.
 
-## Updates and rollback
-
-No auto-update. Review upstream diffs and changed permissions/dependencies, test the affected workflows, then update the gitlink and lock file together in one reviewed change. Test generic rules in more than one business context before generalizing a project result. Keep local lessons in the adapter until review supports promotion.
-
-Before adoption, rollback is simply leaving the review branch unmerged. After adoption, revert this integration as a unit through the existing controller, preserving unrelated changes and local data. Removing a tracked gitlink does not authorize deleting a locally modified checkout. Never use broad recursive deletion as rollback.
-
-## Verification limits
-
-Unit tests prove gate behavior on supplied fixtures, not real receiver identity, production repair, article delivery, revenue impact or physical-machine installation. An independently read acknowledgment and actual host discovery are separate acceptance gates. This package intentionally does not repair a missing notification transport or create another executor.
+Official host reference: https://code.claude.com/docs/en/plugins-reference . Installation and source-doc review date: September 24, 2026. Source and permission changes require renewed review.

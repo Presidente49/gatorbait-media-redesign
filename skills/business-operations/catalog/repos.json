@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-24",
+  "coverage": "Bounded intake from the current project configuration, its ecosystem/graphics references and historical discovery pointers. Not an exhaustive all-account or all-history inventory. Historical pointers are not installed dependencies.",
+  "automatic_installation": false,
+  "host_receipts": "Store real installation receipts in the selected host/client record, not this portable catalog.",
+  "repositories": [
+    {
+      "id": "marketing-library",
+      "repository": "coreyhaines31/marketingskills",
+      "kind": "skill-library",
+      "review": "INSTALL_REFERENCE_REVIEWED",
+      "review_date": "2026-09-24",
+      "source_document": "README.md",
+      "source_blob": "92b3f28cabafc073c0dc810d4a3b434eba8d30c9",
+      "source_commit": "5b2c0007766c6a1cf1d53fd8fc73e979e0821022",
+      "license": "MIT",
+      "license_evidence": "LICENSE blob 7c48dd638a9ebed49a8ef0c0c4eea90105381cdf",
+      "method": "Choose ONE upstream option: Claude plugin for native discovery, or existing pinned submodule for explicit reading. Do not install duplicate skill names through both paths.",
+      "documented_commands": [
+        "/plugin marketplace add coreyhaines31/marketingskills",
+        "/plugin install marketing-skills"
+      ],
+      "verification": [
+        "claude plugin list --json",
+        "Use plugin details and one actual original skill in a fresh session; record resolved version and location."
+      ],
+      "guardrails": [
+        "Read product-marketing context first; preserve original related-skill links and notices.",
+        "Noninteractive CLI alternative requires explicit -a claude-code; .agents alone is not native Claude discovery.",
+        "The documented marketplace resolves current upstream; it is NOT guaranteed to match the existing pinned submodule. Inspect and record the resolved source before enabling."
+      ],
+      "installation_state": "HOST_UNVERIFIED",
+      "rollback": "Preserve pre-install configuration and user data; disable only the newly added exact component through its native manager. Never remove unrelated components or client records."
+    },
+    {
+      "id": "knowledge-work",
+      "repository": "anthropics/knowledge-work-plugins",
+      "kind": "native-plugin-library",
+      "review": "INSTALL_REFERENCE_REVIEWED",
+      "review_date": "2026-09-24",
+      "source_document": "README.md",
+      "source_blob": "261e2f47e2b1701258e4bd3ec18620dc5d7c28ad",
+      "source_commit": null,
+      "license": "Apache-2.0",
+      "license_evidence": "LICENSE blob f53c679acba79cbb292961fd9fb9e87ca20eab22; retain notices and inspect any redistributed version",
+      "method": "Use upstream Claude marketplace; operations, marketing and data are verified in its actual marketplace manifest.",
+      "documented_commands": [
+        "claude plugin marketplace add anthropics/knowledge-work-plugins",
+        "claude plugin install operations@knowledge-work-plugins",
+        "claude plugin install marketing@knowledge-work-plugins",
+        "claude plugin install data@knowledge-work-plugins"
+      ],
+      "verification": [
+        "claude plugin list --json",
+        "claude plugin details operations@knowledge-work-plugins"
+      ],
+      "guardrails": [
+        "Preserve complete selected plugins, including their commands, original skills and connector declarations.",
+        "Installation does not authorize bundled external accounts; review MCP endpoints and client scope before enabling.",
+        "The full catalog remains available; do not install all partner products or duplicate another marketing execution owner."
+      ],
+      "installation_state": "HOST_UNVERIFIED",
+      "rollback": "Preserve pre-install configuration and user data; disable only the newly added exact component through its native manager. Never remove unrelated components or client records."
+    },
+    {
+      "id": "shared-memory",
+      "repository": "dan-calin/shared-agent-memory",
+      "kind": "mcp-and-cli",
+      "review": "INSTALL_REFERENCE_REVIEWED",
+      "review_date": "2026-09-24",
+      "source_document": "README.md",
+      "source_blob": "40721fe241dc2a70fcb0e6f4a987f347ec896971",
+      "source_commit": "29e96c663a43da557c25132c4d569bce9d9e6b12",
+      "license": "UNREVIEWED",
+      "license_evidence": "README claim only",
+      "method": "Upstream installer, then project-local init in EACH selected client workspace. Existing pinned bootstrap is an adaptation, not upstream verbatim.",
+      "documented_commands": [
+        "npx github:dan-calin/shared-agent-memory install",
+        "shared-agent-memory init --agents codex,claude",
+        "shared-agent-memory coordination on"
+      ],
+      "verification": [
+        "shared-agent-memory doctor",
+        "shared-agent-memory status",
+        "shared-agent-memory board"
+      ],
+      "guardrails": [
+        "Node 18+ and host MCP clients required; restart the actual clients.",
+        "Never put client-private facts into the default global memory; use project-local initialization and confirm storage paths.",
+        "Claims are advisory, not authenticated atomic locks; leave secrets out and preserve other hooks."
+      ],
+      "installation_state": "HOST_UNVERIFIED",
+      "rollback": "Preserve pre-install configuration and user data; disable only the newly added exact component through its native manager. Never remove unrelated components or client records."
+    },
+    {
+      "id": "mac-messages",
+      "repository": "carterlasalle/mac_messages_mcp",
+      "kind": "mcp",
+      "review": "INSTALL_REFERENCE_REVIEWED",
+      "review_date": "2026-09-24",
+      "source_document": "README.md",
+      "source_blob": "bdb25a74645c2bee3700576db359d95cb358cc6b",
+      "source_commit": null,
+      "license": "MIT",
+      "license_evidence": "README claim only",
+      "method": "Follow upstream macOS setup and register the actual MCP server, not just a Markdown wrapper.",
+      "documented_commands": [
+        "brew install uv",
+        "uvx --version",
+        "claude mcp add --transport stdio --scope user mac-messages -- uvx mac-messages-mcp",
+        "claude mcp get mac-messages"
+      ],
+      "verification": [
+        "Inside Claude use /mcp; run permission diagnostics before a scoped attachment read."
+      ],
+      "guardrails": [
+        "macOS, Python 3.10+, local Messages and manual Full Disk Access are prerequisites.",
+        "Server includes a SEND tool; read-only database access does not make every tool read-only.",
+        "Do not test by sending, bulk-read personal conversations, or treat device data as shared agency data."
+      ],
+      "installation_state": "HOST_UNVERIFIED",
+      "rollback": "Preserve pre-install configuration and user data; disable only the newly added exact component through its native manager. Never remove unrelated components or client records."
+    },
+    {
+      "id": "iphone-control",
+      "repository": "leeguooooo/iphone-use",
+      "kind": "device-runtime-with-native-skill",
+      "review": "INSTALL_REFERENCE_REVIEWED",
+      "review_date": "2026-09-24",
+      "source_document": "README.md",
+      "source_blob": "4eca16f5bc9911f8e35fa25920a3f7b2eda8140e",
+      "source_commit": "8188abd3ebf693c278d1d8239c0e4bdae3658076",
+      "license": "MIT",
+      "license_evidence": "README claim only",
+      "method": "The upstream installer installs its matching agent skill; reuse it rather than substituting a summary.",
+      "documented_commands": [
+        "curl -fsSL https://raw.githubusercontent.com/leeguooooo/iphone-use/main/install.sh | sh",
+        "~/.iphone-use/setup-wda.sh doctor",
+        "~/.iphone-use/setup-wda.sh",
+        "~/.iphone-use/setup-wda.sh status"
+      ],
+      "verification": [
+        "Verify installed native skill, WDA status and authorized hardware read; a healthy endpoint is not complete hardware acceptance."
+      ],
+      "guardrails": [
+        "Review installer bytes before any execution. The displayed upstream command is documentation, not executed here.",
+        "macOS 15+, full Xcode, USB trust, Developer Mode, signing and unlocked device require the user.",
+        "Pinning install.sh does NOT pin the latest release it downloads; record actual release and checksums. No auto-update or phone takeover."
+      ],
+      "installation_state": "HOST_UNVERIFIED",
+      "rollback": "Preserve pre-install configuration and user data; disable only the newly added exact component through its native manager. Never remove unrelated components or client records."
+    },
+    {
+      "id": "wix-editor",
+      "repository": "Studio-1119-Inc/wix-editor-mcp",
+      "kind": "mcp",
+      "review": "INSTALL_REFERENCE_REVIEWED",
+      "review_date": "2026-09-24",
+      "source_document": "README.md",
+      "source_blob": "293a4fef547d4678e109d21f52ce3ffdc281c96f",
+      "source_commit": null,
+      "license": "MIT",
+      "license_evidence": "README plus package.json license field, blob 8ea70c84b65ef6b566c53c88ecec4e053d0b4893; full license review before redistribution",
+      "method": "Use documented source install: npm install within a reviewed checkout; register node with its absolute server.js path.",
+      "documented_commands": [
+        "npm install"
+      ],
+      "verification": [
+        "wix_status",
+        "wix_list_pages",
+        "wix_screenshot"
+      ],
+      "guardrails": [
+        "Node >=18; manual login is a supported upstream option and is preferred over importing decrypted browser cookies.",
+        "Leave WIX_EDITOR_URL unset globally; explicitly choose the client site per session. Separate browser profiles by client.",
+        "Internal undocumented editor API can change. Draft/save is not live publication. Never publish as an install smoke test."
+      ],
+      "installation_state": "HOST_UNVERIFIED",
+      "rollback": "Preserve pre-install configuration and user data; disable only the newly added exact component through its native manager. Never remove unrelated components or client records."
+    },
+    {
+      "id": "model-gateway",
+      "repository": "Alishahryar1/free-claude-code",
+      "kind": "model-runtime",
+      "review": "INSTALL_REFERENCE_REVIEWED",
+      "review_date": "2026-09-24",
+      "source_document": "README.md",
+      "source_blob": "7924d3beaf2a59171e9c57891b72c7dcff03bc41",
+      "source_commit": "b9aa5a637e106a7bf0cee8ac34f849ae8a98d4ac",
+      "license": "MIT",
+      "license_evidence": "README claim only",
+      "method": "Retain upstream installer and the existing reviewed pin separately. Installation of a proxy is not needed to use native knowledge plugins.",
+      "documented_commands": [
+        "curl -fsSL \"https://raw.githubusercontent.com/Alishahryar1/free-claude-code/main/scripts/install.sh\" | sh",
+        "fcc-server"
+      ],
+      "verification": [
+        "Verify actual local version, loopback binding and authentication before one explicitly authorized public-data smoke test."
+      ],
+      "guardrails": [
+        "Display only until runtime review and host access; this command follows moving main. Existing pin is not a claim about the binary it installs.",
+        "No public proxy, secret export, untrusted-provider client data, automatic provider purchase or assumption that free tiers are guaranteed.",
+        "Native Claude can use skills without FCC or n8n."
+      ],
+      "installation_state": "HOST_UNVERIFIED",
+      "rollback": "Preserve pre-install configuration and user data; disable only the newly added exact component through its native manager. Never remove unrelated components or client records."
+    },
+    {
+      "id": "token-economy",
+      "repository": "rtk-ai/rtk",
+      "kind": "cli-with-host-hooks",
+      "review": "INSTALL_REFERENCE_REVIEWED",
+      "review_date": "2026-09-24",
+      "source_document": "README.md",
+      "source_blob": "4e7fa35425b90dc50ae7f1f4351ca59df80a1141",
+      "source_commit": null,
+      "license": "Apache-2.0",
+      "license_evidence": "README claim only",
+      "method": "Use upstream Homebrew option on Mac; hook initialization is a separate reviewed choice.",
+      "documented_commands": [
+        "brew install rtk",
+        "rtk --version",
+        "rtk gain"
+      ],
+      "verification": [
+        "Verify identity with rtk gain; another unrelated rtk package exists.",
+        "Compare compact and unfiltered output on a known harmless command before relying on it."
+      ],
+      "guardrails": [
+        "Optional upstream rtk init -g changes host hooks: inspect existing hooks first.",
+        "Output-token savings are not total bill savings; retain raw output for correctness checks."
+      ],
+      "installation_state": "HOST_UNVERIFIED",
+      "rollback": "Preserve pre-install configuration and user data; disable only the newly added exact component through its native manager. Never remove unrelated components or client records."
+    },
+    {
+      "id": "usage-reporting",
+      "repository": "ccusage/ccusage",
+      "kind": "cli",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "local-models",
+      "repository": "ollama/ollama",
+      "kind": "model-runtime",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "memory-alternative",
+      "repository": "rtk-ai/icm",
+      "kind": "mcp",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "semantic-code",
+      "repository": "oraios/serena",
+      "kind": "mcp",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "repo-packaging",
+      "repository": "yamadashy/repomix",
+      "kind": "cli",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "observability",
+      "repository": "langfuse/langfuse",
+      "kind": "service",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "paperclip",
+      "repository": "paperclipai/paperclip",
+      "kind": "service",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "facebook-pages",
+      "repository": "lanternrow/facebook-pages-mcp",
+      "kind": "mcp",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "instagram",
+      "repository": "mcpware/instagram-mcp",
+      "kind": "mcp",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "masthead-reference",
+      "repository": "ondelva/astro-theme-masthead",
+      "kind": "template",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "lower-thirds",
+      "repository": "UgaTEC/professional-lower-third-system",
+      "kind": "broadcast-runtime",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "football-graphics",
+      "repository": "xtv-online/football-graphics",
+      "kind": "broadcast-runtime",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "sport-streamer",
+      "repository": "JimThatcher/sport-streamer",
+      "kind": "broadcast-runtime",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "casparcg-client",
+      "repository": "crazyscot/casparcg-client",
+      "kind": "broadcast-runtime",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "wix-skills",
+      "repository": "wix/skills",
+      "kind": "skill-library",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "wix-anything",
+      "repository": "AnthonySeshat/WiXAnything",
+      "kind": "unclassified",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "wix-interact",
+      "repository": "wix/interact",
+      "kind": "unclassified",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "superdesign",
+      "repository": "superdesigndev/superdesign-skill",
+      "kind": "skill-library",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "workflow-automation",
+      "repository": "n8n-io/n8n",
+      "kind": "service",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "gazette-reference",
+      "repository": "ondelva/astro-theme-gazette",
+      "kind": "template",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "publisher-reference",
+      "repository": "bbc/simorgh",
+      "kind": "application",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    },
+    {
+      "id": "news-template",
+      "repository": "wagtail/news-template",
+      "kind": "template",
+      "review": "SOURCE_REVIEW_REQUIRED",
+      "source_document": "README.md",
+      "source_blob": null,
+      "source_commit": null,
+      "license": "UNREVIEWED",
+      "documented_commands": [],
+      "installation_state": "HOST_UNVERIFIED"
+    }
+  ],
+  "pending_policy": "SOURCE_REVIEW_REQUIRED rows are discovery pointers only. Read the original README/license/manifests and actual usage evidence before adding commands. No implicit runtime activation or replacement of an existing controller, memory, theme or scheduler. Preserve references and existing installations."
+}

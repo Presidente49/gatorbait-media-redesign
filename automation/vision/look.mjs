@@ -151,8 +151,14 @@ function audit() {
       );
     }
 
-    // On a phone the lead photo is what pushes the headline under the fold.
-    const leadImg = live.querySelector('img');
+    // The first <img> in the tree is often a 0x0 lazy placeholder, which
+    // measures nothing. Take the tallest one actually painted in the first
+    // two screens instead — that is the photograph a reader sees.
+    let leadImg = null, leadH = 0;
+    live.querySelectorAll('img').forEach((im) => {
+      const b = im.getBoundingClientRect();
+      if (b.height > leadH && b.width > 40 && b.top < innerHeight * 2) { leadH = b.height; leadImg = im; }
+    });
     if (leadImg) {
       const r = leadImg.getBoundingClientRect();
       out.leadImage = { width: Math.round(r.width), height: Math.round(r.height), top: Math.round(r.top + scrollY) };

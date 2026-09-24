@@ -15,10 +15,11 @@ on:
       - 'newsletter/**'
       - 'automation/newsletter/**'
       - '.github/workflows/newsletter-links.yml'
-  pull_request:
-    paths:
-      - 'newsletter/**'
-      - 'automation/newsletter/**'
+  # Deliberately no pull_request trigger. A pull_request paths filter matches
+  # the whole PR diff, not the new commit, so PR #29 — which adds the checker
+  # itself — re-fires this on every synchronize, including the vision bot's
+  # automated pushes. Those land as action_required and hold the PR unstable
+  # while testing nothing. Nobody here works from a fork, so push covers it.
   workflow_dispatch:
 
 permissions:

@@ -5,7 +5,20 @@
   /* Brand */
   --gb-orange:#FA4616;
   --gb-orange-dim:#c93a10;
-  --gb-navy:#0021A5;
+
+  /* Two different jobs used to share the word "navy", which is why four darks
+     drifted apart across seven stylesheets. They are named by role now.
+     --gb-brand-blue is Florida's official royal blue and belongs to the brand
+     mark and links. --gb-surface-navy is the dark editorial chrome; #11274a is
+     what production actually renders and the most-used colour in this repo.
+     Prefer the role names. See docs/DESIGN-SYSTEM.md. */
+  --gb-brand-blue:#0021A5;
+  --gb-surface-navy:#11274a;
+  --gb-surface-navy-deep:#08132f;
+
+  /* Deprecated aliases: nine studio/**.html pages still reference these.
+     Do not add new uses. */
+  --gb-navy:var(--gb-brand-blue);
   --gb-navy-deep:#001040;
   --gb-white:#ffffff;
   --gb-ink:#12161f;

@@ -11,6 +11,10 @@ mkdirSync(OUT, { recursive: true });
 const TARGETS = [
   { name: 'home', url: 'https://www.gatorbaitmedia.com/' },
   { name: 'blog', url: 'https://www.gatorbaitmedia.com/gatorbait-media-blogs' },
+  // A real article page. The blog index is a list; this is where readers
+  // actually read, and where the layout rules in docs/BLOG-LAYOUT-RULES.md
+  // have to hold.
+  { name: 'article', url: 'https://www.gatorbaitmedia.com/post/saturday-s-bill-comes-due-gators-ole-miss-and-the-promise-that-started-it-all' },
 ];
 
 // 390 and 430 are the widths the Magazine/homepage acceptance gates name.
@@ -18,8 +22,11 @@ const TARGETS = [
 // which is below every breakpoint the embeds define.
 const PROFILES = [
   { name: 'mobile', device: devices['iPhone 13'] },
-  { name: 'phone390', device: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true } },
-  { name: 'phone430', device: { viewport: { width: 430, height: 932 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true } },
+  // The user agent matters as much as the viewport: without a mobile UA, Wix
+  // serves these profiles the DESKTOP page in a narrow window and reports a
+  // 980px layout viewport. That measures nothing about the phone experience.
+  { name: 'phone390', device: { ...devices['iPhone 13'], viewport: { width: 390, height: 844 } } },
+  { name: 'phone430', device: { ...devices['iPhone 14 Pro Max'], viewport: { width: 430, height: 932 } } },
   { name: 'desktop', device: { viewport: { width: 1280, height: 900 }, deviceScaleFactor: 1 } },
 ];
 
@@ -170,6 +177,30 @@ function audit() {
     }
   }
 
+  // Line length is the single biggest readability lever on an article page.
+  // Estimate characters per line from the rendered column width and font size:
+  // an average glyph runs about half the font size in these faces.
+  const paras = [...document.querySelectorAll('p')]
+    .filter((el) => (el.textContent || '').trim().length > 180);
+  if (paras.length) {
+    const widths = paras.slice(0, 12).map((el) => {
+      const cs = getComputedStyle(el);
+      const fs = parseFloat(cs.fontSize) || 16;
+      return Math.round(el.getBoundingClientRect().width / (fs * 0.5));
+    }).sort((a, b) => a - b);
+    const measure = widths[Math.floor(widths.length / 2)];
+    out.bodyMeasure = measure;
+    out.bodyParagraphs = paras.length;
+    if (measure > 85) {
+      out.findings.push(`Body measure is ~${measure} characters per line; over 85 tires the eye`);
+    } else if (measure < 45) {
+      out.findings.push(`Body measure is ~${measure} characters per line; under 45 breaks the rhythm`);
+    }
+  }
+
+  // A phone profile that ends up in a desktop layout viewport is measuring the
+  // wrong page. Say so rather than publishing the number.
+  out.layoutViewport = innerWidth;
   out.docScrollWidth = document.documentElement.scrollWidth;
   return out;
 }
@@ -317,6 +348,7 @@ for (const r of report.runs) {
   lines.push(`newsroom mounted: ${r.hasNewsroom} (${r.newsroomChildren} children) · native pages visible: ${r.nativePagesVisible}`);
   if (r.header) lines.push(`header ${r.header.height}px rendered, overflow ${r.header.overflow}, content ${r.header.scrollHeight}px`);
   lines.push(`tap targets under 44px: ${r.smallTapTargets}`);
+  if (r.bodyMeasure) lines.push(`body measure: ~${r.bodyMeasure} characters per line across ${r.bodyParagraphs} paragraphs`);
   if (r.headlineReadable !== undefined) {
     lines.push(
       `readable story text on the first screen: ${r.headlineReadable}` +

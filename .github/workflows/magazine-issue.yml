@@ -24,20 +24,38 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Pull full article bodies
+      # Kept as a standing check on a route that does not currently work: if
+      # Wix ever starts publishing content:encoded, this stops failing and the
+      # build cache could come straight from the feed. Not a build gate.
+      - name: Probe the public feed for full bodies
+        continue-on-error: true
         run: python3 magazine/fetch_feed.py
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: npm i -D playwright@1.49.1 && npx playwright install --with-deps chromium
+
+      - name: Build the issue
+        run: python3 magazine/build_issue.py magazine/issues/2026-09-26-ole-miss
+
+      - name: Render the issue to PDF
+        run: node magazine/render.mjs magazine/issues/2026-09-26-ole-miss
 
       - name: Commit the build cache
         shell: bash
         run: |
-          git add magazine/build-cache
-          if git diff --cached --quiet -- magazine/build-cache; then
+          git add magazine/build-cache magazine/issues
+          if git diff --cached --quiet -- magazine/build-cache magazine/issues; then
             echo 'Feed unchanged.'
             exit 0
           fi
           git config user.name 'gatorbait-magazine-bot'
           git config user.email 'brenden@gatorbaitmedia.com'
-          git commit -m 'magazine: refresh article build cache from the live feed'
+          git commit -m 'magazine: rebuild issue and refresh build cache'
           for attempt in 1 2 3; do
             if git push origin HEAD:${{ github.ref_name }}; then exit 0; fi
             git fetch origin ${{ github.ref_name }}
@@ -50,6 +68,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: magazine-build-cache
-          path: magazine/build-cache
+          name: magazine-issue
+          path: |
+            magazine/build-cache
+            magazine/issues
           if-no-files-found: ignore

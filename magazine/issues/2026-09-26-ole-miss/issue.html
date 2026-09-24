@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GatorBait Magazine - Ole Miss Pregame Issue</title>
+<meta name="robots" content="noindex">
+<style>/* Print-first. No webfonts on purpose: a font request is a network call, and
+   this issue has to render identically with no network at all. System serifs
+   print well and cost nothing. */
+
+@page { size: Letter; margin: 16mm 15mm 18mm; }
+
+:root{
+  --navy:#0A1F44;
+  --orange:#FA4616;
+  --ink:#16181d;
+  --muted:#5a6272;
+  --rule:#d5d8e0;
+  --paper:#fffdf9;
+}
+
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font:400 10.5pt/1.52 Georgia,"Iowan Old Style","Times New Roman",serif;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------- cover ---------- */
+.cover{
+  background:var(--navy); color:#fff; padding:22mm 14mm 16mm;
+  page-break-after:always; break-after:page; min-height:247mm;
+}
+.masthead{
+  margin:0; font:700 34pt/0.95 Georgia,serif; letter-spacing:-.6pt; color:#fff;
+}
+.masthead span{color:var(--orange)}
+.issue-line{
+  margin:5mm 0 0; padding-top:3mm; border-top:2.5pt solid var(--orange);
+  font:700 9.5pt/1.3 "Helvetica Neue",Arial,sans-serif;
+  letter-spacing:1.6pt; text-transform:uppercase; color:#cdd6e6;
+}
+.cover-art{margin:9mm 0 7mm; border:1pt solid rgba(255,255,255,.22)}
+.cover-art img{display:block; width:100%; height:auto}
+.cover h1{
+  margin:0; font:700 27pt/1.12 Georgia,serif; letter-spacing:-.4pt; color:#fff;
+}
+.cover-deck{margin:4mm 0 0; font:italic 400 12pt/1.45 Georgia,serif; color:#c6d0e2}
+
+.contents{margin:11mm 0 0; border-top:1pt solid rgba(255,255,255,.28); padding-top:5mm}
+.contents-title{
+  margin:0 0 3mm; font:700 8.5pt/1 "Helvetica Neue",Arial,sans-serif;
+  letter-spacing:2pt; text-transform:uppercase; color:var(--orange);
+}
+.contents ol{margin:0; padding:0; list-style:none}
+.contents li{
+  display:flex; gap:4mm; align-items:baseline;
+  padding:2.1mm 0; border-bottom:.5pt solid rgba(255,255,255,.14);
+  font-size:10pt; color:#e8edf6;
+}
+.contents .n{
+  flex:0 0 auto; width:6mm; color:var(--orange);
+  font:700 9pt/1 "Helvetica Neue",Arial,sans-serif;
+}
+.colophon{margin:9mm 0 0; font-size:8pt; line-height:1.5; color:#9fadc4}
+
+/* ---------- stories ---------- */
+.story{page-break-before:always; break-before:page}
+.story-head{border-bottom:2.5pt solid var(--navy); padding-bottom:4mm; margin-bottom:6mm}
+.kicker{
+  margin:0 0 2.5mm; font:700 8pt/1 "Helvetica Neue",Arial,sans-serif;
+  letter-spacing:2.2pt; text-transform:uppercase; color:var(--orange);
+}
+.story-head h2{
+  margin:0; font:700 22pt/1.14 Georgia,serif; letter-spacing:-.35pt; color:var(--navy);
+}
+.byline{
+  margin:3mm 0 0; font:700 8.5pt/1 "Helvetica Neue",Arial,sans-serif;
+  letter-spacing:1.4pt; text-transform:uppercase; color:var(--muted);
+}
+
+figure{margin:0 0 6mm}
+figure img{display:block; width:100%; height:auto}
+.hero{margin-bottom:7mm}
+figcaption{
+  margin-top:2mm; padding-left:2.5mm; border-left:2pt solid var(--orange);
+  font:400 8pt/1.4 "Helvetica Neue",Arial,sans-serif; color:var(--muted);
+}
+
+/* Two columns is what makes it read as a magazine rather than a printout. */
+.story-body{column-count:2; column-gap:8mm; orphans:3; widows:3}
+.story-body p{margin:0 0 3.4mm; text-align:justify; hyphens:auto}
+.story-body p.lede{font-size:11.5pt; line-height:1.5}
+.story-body p.lede::first-letter{
+  float:left; font:700 30pt/0.82 Georgia,serif; color:var(--navy);
+  margin:1mm 2mm 0 0;
+}
+.story-body h3{
+  margin:5mm 0 2.5mm; font:700 8.5pt/1.25 "Helvetica Neue",Arial,sans-serif;
+  letter-spacing:1.5pt; text-transform:uppercase; color:var(--navy);
+  break-after:avoid; page-break-after:avoid;
+}
+blockquote{
+  margin:4mm 0; padding:0 0 0 4mm; border-left:2.5pt solid var(--orange);
+  font:italic 400 11pt/1.42 Georgia,serif; color:var(--navy);
+  break-inside:avoid; page-break-inside:avoid;
+}
+.inline{break-inside:avoid; page-break-inside:avoid; margin:3mm 0 4mm}
+
+.endmark{
+  page-break-before:always; break-before:page;
+  display:flex; align-items:center; justify-content:center; min-height:180mm;
+}
+.endmark p{
+  margin:0; font:700 8.5pt/1 "Helvetica Neue",Arial,sans-serif;
+  letter-spacing:2.4pt; text-transform:uppercase; color:var(--muted);
+}
+
+/* On screen, give the cover and pages a sheet-like frame so the HTML preview
+   reads the same way the PDF will. */
+@media screen{
+  body{background:#e9ebf0; padding:18px 0}
+  .cover,.story,.endmark{
+    width:210mm; margin:0 auto 18px; padding:16mm 15mm 18mm;
+    background:var(--paper); box-shadow:0 2px 14px rgba(16,24,48,.18);
+  }
+  .cover{background:var(--navy); padding:22mm 14mm 16mm}
+}
+</style>
+</head><body>
+<section class="cover">
+  <p class="masthead">GatorBait <span>Magazine</span></p>
+  <p class="issue-line">Pregame Issue No. 1 · Florida vs. No. 4 Ole Miss · September 26, 2026</p>
+  <div class="cover-art"><img src="https://static.wixstatic.com/media/ae876a_86e7dbd7d2a84b8c9ad5177ddb72e1cd~mv2.jpg/v1/fill/w_1400,h_1120,al_c,q_88,enc_auto/file.jpg" width="1400" height="1120" alt=""></div>
+  <h1>Saturday’s Bill Comes Due</h1>
+  <p class="cover-deck">Eighteen years after The Promise, Ole Miss walks back into The Swamp.</p>
+  <nav class="contents"><p class="contents-title">In this issue</p><ol><li><span class="n">1</span><span class="t">Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All</span></li></ol></nav>
+  <p class="colophon">GatorBait Media, Gainesville, Florida. Every article in this issue was reported and published by the GatorBait newsroom. This issue is complete as printed and contains no links; kickoff is Saturday at 3:30 p.m. on ABC.</p>
+</section>
+<article class="story">
+<header class="story-head">
+<p class="kicker">GatorBait Media</p>
+<h2>Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All</h2>
+<p class="byline">By Buddy Martin</p>
+</header>
+<figure class="hero">
+<img src="https://static.wixstatic.com/media/ae876a_86e7dbd7d2a84b8c9ad5177ddb72e1cd~mv2.jpg/v1/fill/w_1400,h_1120,al_c,q_88,enc_auto/file.jpg" width="1400" height="1120" alt="Tim Tebow’s Promise image featured in Florida’s Ole Miss game-week story">
+</figure>
+<div class="story-body">
+<p class="lede">I have this running debate with my podcast colleague Shane Matthews, who oddly enough is a traditionalist, but says one game doesn’t have a bearing on the history of what will happen next.</p>
+<p>I get what Shane is referencing, but if that were true, we would never be able to connect the dots, which is what tracing history is all about.</p>
+<p>So what did that time-honored phrase by philosopher George Santayana mean, when he wrote in his 1905 book “The Life of Reason: Those who cannot remember the past are condemned to repeat it?”</p>
+<p>And think about that statue of Tim Tebow, when you harken back to 18 years ago.</p>
+<p>The Florida Gators should say “thank you“ to Ole Miss Saturday for beating them 18 years ago and providing the motivation for another national championship. Now they can show their gratitude by kicking the Rebels’ ass and getting Jon Sumrall’s team over the hump in 2026.</p>
+<p>Saturday afternoon at 3:30, the No. 4 team in the country walks into The Swamp as Sumrall’s 3-0 Gators get their first real measuring stick of this season. Ole Miss comes in loaded, fresh off throttling a top-10 LSU team in Oxford, the same swagger Florida carried in 2008 right up until the moment these two teams met and the Rebels took it away from them.</p>
+<p>Ole Miss has also won the last meeting, a 34-24 beatdown in Oxford last November. There’s a debt on the table here, and it’s older than most of the players on either sideline.</p>
+<p>Eighteen years ago, on a Saturday afternoon — not a night game, a 12:30 kickoff under a September sun — Florida and Ole Miss played a game that still shapes how this program thinks about itself.</p>
+<p>Fourth-ranked, unbeaten Florida had just lost to Ole Miss, 31-30, at home, with a Kentrell Lockett blocked extra point three minutes earlier turning out to be the difference.</p>
+<p>Fourth-and-1. Ole Miss 32-yard line. Forty-one seconds left. Florida trailing 31-30. Everybody in the building — everybody in the country, for that matter — knew what was coming. Tim Tebow was getting the ball, because Tebow always got the ball in that spot, and Tebow always got the yard. Not this time. Ole Miss stacked ten men close to the line, Peria Jerry and the Rebels front collapsed the pocket before Tebow ever got started, and the most unstoppable short-yardage weapon in college football was stopped cold, short of the sticks, short of history.</p>
+<p>Jerry was Ole Miss’s senior defensive tackle on the 2008 roster and a team captain that year. On the decisive fourth-and-1 at the Ole Miss 32 with 41 seconds left, Jerry was central to the stop — he “submarined” right tackle Jason Watkins and also took out right guard Mike Pouncey, collapsing the lead blocker’s path before Tebow was dragged down. ESPN’s SEC recap stated, “Peria Jerry and a host of his Ole Miss defensive mates smothered Florida quarterback Tim Tebow on fourth-and-short to seal the 31-30 upset.”</p>
+<p>Kentrell Lockett had blocked the extra point.</p>
+<p>With 3:28 left, after Percy Harvin’s 15-yard touchdown run cut it to 31-30, Lockett broke through and blocked Jonathan Phillips’ potential game-tying extra point — his first career kick block. Urban Meyer argued Lockett had illegally jumped over the line, but officials upheld the block.</p>
+<p>My colleague back then, Brady Ackerman, in a post game streaming show, said, “Well there goes the national championship!” And I swear I said to him, “Not necessarily!“ That’s how I remember it.</p>
+<h3>What Urban Remembers</h3>
+<p>Urban Meyer walked into his own locker room that afternoon and didn’t recognize what he found. His quarterback was sitting on the floor, alone, tears running down his face. “He was pretty emotional,” Meyer would recall years later. “He was just sitting there.” Meyer just sat down on the floor next to him.</p>
+<p>“I didn’t want him to do what he did,” Meyer admitted about what came next. “I hate it when a player puts himself out there like that. People rip him if things don’t work out.” And that’s the thing about Meyer’s version of this story — he genuinely hated it in the moment, said so plainly, and yet cared enough about what his quarterback had said that he had those exact words engraved on a plaque outside the football complex before the next season even started. He hated it and made it permanent. Both things were true.</p>
+<h3>What Tebow Remembers</h3>
+<p>Tebow’s own memory is just as bare. “I sat there on the floor, leaning against Coach Meyer,” he said. “We were trying to figure out what we did wrong, what we could do better, how did this happen? I was crying. And then, my parents came in and I got emotional again.”</p>
+<p>What didn’t come out publicly until years afterward was that receiver Louis Murphy had to talk a sobbing Tebow off the floor and get him composed enough to walk to that podium at all.</p>
+<p>I was sitting about 10 feet from Tebow a few minutes later at that press conference. I’ve written a lot of sentences in my life, but I’ve never found one strong enough to describe watching a 21-year-old with his eyes still wet, his voice cracking, saying what came next.</p>
+<figure class="inline"><img src="https://static.wixstatic.com/media/ae876a_4f679c88a0874683bdff16a73a8ebb1f~mv2.jpg/v1/fill/w_900,h_1350,al_c,q_88,enc_auto/file.jpg" width="900" height="1350" alt=""></figure>
+<blockquote>“I just want to say one thing to the fans and everybody in Gator Nation. I’m sorry. Extremely sorry. We were hoping for an undefeated season. That was my goal. It’s something Florida’s never done here. But I promise you one thing: a lot of good will come out of this. You have never seen any player in the entire country play as hard as I will play the rest of this season, and you’ll never see someone push the rest of the team as hard as I will push everybody the rest of this season. You’ll never see a team play harder than we will the rest of the season. God bless.”</blockquote>
+<p>I turned to my cohort Franz Beard afterwards and said, “Did he say what I think he just said?”</p>
+<p>Standing ten feet away, I honestly didn’t know if I was watching conviction or desperation. Neither did Meyer, by his own admission. “I was really disappointed” that he gave that speech, Meyer said years later, worried a losing season would turn a raw, honest moment into a punchline.</p>
+<p>It wasn’t a punchline. Florida didn’t lose again. Ten straight wins, an SEC Championship beatdown of No. 1 Alabama, and a 24-14 dismantling of Oklahoma for the BCS national title — the second Meyer and Tebow won together in three years.</p>
+<h3>Back to Saturday</h3>
+<p>Which brings us back to 3:30 this Saturday, another day game, another shot at Ole Miss in The Swamp. Sumrall’s Gators are 3-0 for the first time since 2019, coming off a win at Auburn where Florida watched a 17-point fourth-quarter lead shrink to five before closing it out, 44-39.</p>
+<p>The Gators have opened as home favorites with a spread ranging from -2.5 to -3 points.</p>
+<p>Sumrall doesn’t talk in promises. He talks in standards — no bad wins, no days off, prove people right or wrong. But standards mean nothing until they’re tested against a team that’s better than you on paper, and a No. 4 Ole Miss team that just took down a top-10 LSU squad is exactly that test.</p>
+<p>Will that have any influence on the outcome of what happened in 2008?</p>
+<p>Nobody needs a sequel to what happened in that locker room. That story already got its ending — a crystal football in January. But there’s something fitting about Ole Miss being the team standing across the line as Sumrall tries to prove his Gators belong with the big boys again.</p>
+<p>The Rebels didn’t just beat Florida that Saturday afternoon in 2008. They handed a devastated 21-year-old the reason he needed to become the most relentless competitor this program has ever had.</p>
+<p>Whatever happens this Saturday, that debt is worth remembering — not with bitterness, but with the kind of respect you owe an opponent who, without meaning to, helped build a champion.</p>
+<p>I was there for the tears in 2008. And I’ll be there Saturday for whatever comes next.</p>
+<p>Is there real connection between 2008 and 2026? Perhaps not, but for those of us who were in both places, that emotional link will always be there, which is part of the history Tim Tebow bequeathed us. And for which Gator fans should always be eternally grateful. Turns out it was one of the greatest losses in Florida football history. Put that in your Hotty Damn Toddy!</p>
+</div></article>
+<section class="endmark"><p>GatorBait Media &middot; Florida Gators reporting since 1979</p></section>
+</body></html>

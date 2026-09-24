@@ -110,17 +110,44 @@ function audit() {
       const r = el.getBoundingClientRect();
       if (r.width < 40 || r.height < 8) return;
       if (getComputedStyle(el).visibility === 'hidden') return;
-      heads.push({ text: t.slice(0, 90), top: Math.round(r.top + scrollY), tag: el.tagName.toLowerCase() });
+      heads.push({ el, text: t.slice(0, 90), top: Math.round(r.top + scrollY), tag: el.tagName.toLowerCase() });
     });
     heads.sort((a, b) => a.top - b.top);
+    out.viewportHeight = innerHeight;
     out.firstHeadline = heads[0] || null;
-    // Fully legible, not one clipped line peeking over the edge.
-    out.headlineAboveFold = !!(heads[0] && heads[0].top + 20 <= innerHeight);
-    if (!out.headlineAboveFold) {
+
+    // Sitting inside the viewport box is not the same as being readable. The
+    // consent banner is fixed to the bottom of the screen and covers whatever
+    // is under it, so ask the page what is actually painted at that point
+    // rather than trusting the rectangle. An earlier version of this check
+    // passed a headline that the cookie wall was sitting on top of.
+    let occludedBy = null;
+    if (heads[0]) {
+      const el = heads[0].el;
+      const r = el.getBoundingClientRect();
+      const x = Math.min(innerWidth - 2, Math.max(2, r.left + r.width / 2));
+      const y = Math.min(innerHeight - 2, Math.max(2, r.top + Math.min(r.height / 2, 10)));
+      const hit = document.elementFromPoint(x, y);
+      if (hit && hit !== el && !el.contains(hit) && !hit.contains(el)) {
+        occludedBy = (hit.id && '#' + hit.id) ||
+          (hit.className && '.' + String(hit.className).trim().split(/\s+/)[0]) ||
+          hit.tagName.toLowerCase();
+      }
+      delete heads[0].el;
+    }
+    out.firstHeadlineOccludedBy = occludedBy;
+    out.headlineInViewport = !!(heads[0] && heads[0].top + 20 <= innerHeight);
+    out.headlineReadable = out.headlineInViewport && !occludedBy;
+
+    if (!heads[0]) {
+      out.findings.push('No story text rendered in the newsroom at all');
+    } else if (!out.headlineInViewport) {
       out.findings.push(
-        heads[0]
-          ? `No story text above the fold: first headline starts at ${heads[0].top}px in a ${innerHeight}px viewport`
-          : 'No story text rendered in the newsroom at all'
+        `No story text on the first screen: headline starts at ${heads[0].top}px in a ${innerHeight}px viewport`
+      );
+    } else if (occludedBy) {
+      out.findings.push(
+        `First headline is covered: it sits at ${heads[0].top}px in a ${innerHeight}px viewport but \`${occludedBy}\` is painted over it`
       );
     }
 
@@ -284,8 +311,12 @@ for (const r of report.runs) {
   lines.push(`newsroom mounted: ${r.hasNewsroom} (${r.newsroomChildren} children) · native pages visible: ${r.nativePagesVisible}`);
   if (r.header) lines.push(`header ${r.header.height}px rendered, overflow ${r.header.overflow}, content ${r.header.scrollHeight}px`);
   lines.push(`tap targets under 44px: ${r.smallTapTargets}`);
-  if (r.headlineAboveFold !== undefined) {
-    lines.push(`story text above the fold: ${r.headlineAboveFold}` + (r.firstHeadline ? ` (first headline at ${r.firstHeadline.top}px — "${r.firstHeadline.text}")` : ''));
+  if (r.headlineReadable !== undefined) {
+    lines.push(
+      `readable story text on the first screen: ${r.headlineReadable}` +
+      (r.firstHeadline ? ` (first headline at ${r.firstHeadline.top}px of ${r.viewportHeight}px — "${r.firstHeadline.text}")` : '') +
+      (r.firstHeadlineOccludedBy ? ` — covered by \`${r.firstHeadlineOccludedBy}\`` : '')
+    );
   }
   if (r.leadImage) lines.push(`lead image ${r.leadImage.width}x${r.leadImage.height}px at y=${r.leadImage.top}`);
   if (r.imagesLoaded) lines.push(`images loaded: ${r.imagesLoaded}`);

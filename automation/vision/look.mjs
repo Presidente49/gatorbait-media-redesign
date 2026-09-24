@@ -218,6 +218,28 @@ function audit() {
     }
   }
 
+  // What type is actually rendering, as opposed to what a stylesheet asks for.
+  // Reports the first family in each computed stack, weighted by how much text
+  // is set in it, so a sitewide change can be judged against reality.
+  (() => {
+    const tally = {};
+    const sample = (el, role) => {
+      if (!el) return;
+      const cs = getComputedStyle(el);
+      const fam = (cs.fontFamily || '').split(',')[0].replace(/["']/g, '').trim();
+      const len = (el.textContent || '').trim().length;
+      if (!fam || !len) return;
+      const key = role + '|' + fam + '|' + Math.round(parseFloat(cs.fontSize)) + 'px|' + cs.fontWeight;
+      tally[key] = (tally[key] || 0) + len;
+    };
+    document.querySelectorAll('h1,h2,h3').forEach((el) => sample(el, 'heading'));
+    [...document.querySelectorAll('p')].filter((el) => (el.textContent || '').trim().length > 120)
+      .slice(0, 20).forEach((el) => sample(el, 'body'));
+    out.typeInUse = Object.entries(tally)
+      .sort((a, b) => b[1] - a[1]).slice(0, 8)
+      .map(([k, chars]) => ({ spec: k, chars }));
+  })();
+
   // Line length is the single biggest readability lever on an article page.
   // Estimate characters per line from the rendered column width and font size:
   // an average glyph runs about half the font size in these faces.
@@ -389,6 +411,10 @@ for (const r of report.runs) {
   lines.push(`newsroom mounted: ${r.hasNewsroom} (${r.newsroomChildren} children) · native pages visible: ${r.nativePagesVisible}`);
   if (r.header) lines.push(`header ${r.header.height}px rendered, overflow ${r.header.overflow}, content ${r.header.scrollHeight}px`);
   lines.push(`tap targets under 44px: ${r.smallTapTargets}`);
+  if (r.typeInUse && r.typeInUse.length) {
+    lines.push('\ntype actually rendering:');
+    for (const t of r.typeInUse) lines.push('- `' + t.spec + '` (' + t.chars + ' chars)');
+  }
   if (r.bodyMeasure) lines.push(`body measure: ~${r.bodyMeasure} characters per line across ${r.bodyParagraphs} paragraphs`);
   if (r.headlineReadable !== undefined) {
     lines.push(

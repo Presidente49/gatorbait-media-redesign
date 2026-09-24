@@ -1,4 +1,4 @@
-# Live site vision — 2026-09-24T03:14:16.254Z
+# Live site vision — 2026-09-24T03:22:37.636Z
 
 ## URL checks
 
@@ -15,11 +15,14 @@ HTTP 200 · viewport 320px · root classes `gbm-gazette-live gbm-standalone-live
 newsroom mounted: true (3 children) · native pages visible: false
 header 0px rendered, overflow visible, content 0px
 tap targets under 44px: 20
+story text above the fold: true (first headline at 415px — "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!")
+lead image 0x0px at y=0
 
 **Findings**
 - 20 tap targets under 44px
 
 Console errors:
+- `Failed to load resource: the server responded with a status of 429 ()`
 - `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
 
 **Candidate fix applied in CI (not live)**
@@ -43,17 +46,93 @@ Console errors:
 - header box 0px -> 0px, content 0px -> 0px
 - findings 1 -> 1
 
+## home · phone390
+HTTP 200 · viewport 390px · root classes `gbm-gazette-live gbm-standalone-live`
+newsroom mounted: true (3 children) · native pages visible: false
+header 0px rendered, overflow visible, content 0px
+tap targets under 44px: 20
+story text above the fold: true (first headline at 415px — "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!")
+lead image 0x0px at y=0
+
+**Findings**
+- 20 tap targets under 44px
+
+Console errors:
+- `Failed to load resource: the server responded with a status of 429 ()`
+- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+
+**Candidate fix applied in CI (not live)**
+- header box 0px -> 0px, content 0px -> 0px
+- findings 1 -> 1
+
+## blog · phone390
+HTTP 200 · viewport 980px · root classes `gbm-tight-footer`
+newsroom mounted: false (0 children) · native pages visible: true
+header 0px rendered, overflow visible, content 0px
+tap targets under 44px: 49
+
+**Findings**
+- 49 tap targets under 44px
+
+Console errors:
+- `Failed to load resource: the server responded with a status of 429 ()`
+- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+
+**Candidate fix applied in CI (not live)**
+- header box 0px -> 0px, content 0px -> 0px
+- findings 1 -> 1
+
+## home · phone430
+HTTP 200 · viewport 430px · root classes `gbm-gazette-live gbm-standalone-live`
+newsroom mounted: true (3 children) · native pages visible: false
+header 0px rendered, overflow visible, content 0px
+tap targets under 44px: 16
+story text above the fold: true (first headline at 415px — "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!")
+lead image 0x0px at y=0
+
+**Findings**
+- 16 tap targets under 44px
+
+Console errors:
+- `pageerror: ReferenceError: wixTagManager is not defined`
+- `Failed to load resource: the server responded with a status of 429 ()`
+
+**Candidate fix applied in CI (not live)**
+- header box 0px -> 0px, content 0px -> 0px
+- findings 1 -> 1
+
+## blog · phone430
+HTTP 200 · viewport 980px · root classes `gbm-tight-footer`
+newsroom mounted: false (0 children) · native pages visible: true
+header 0px rendered, overflow visible, content 0px
+tap targets under 44px: 44
+
+**Findings**
+- 44 tap targets under 44px
+- Retired branding present: Rob Browne
+
+Console errors:
+- `pageerror: ReferenceError: wixTagManager is not defined`
+- `Failed to load resource: the server responded with a status of 429 ()`
+
+**Candidate fix applied in CI (not live)**
+- header box 0px -> 0px, content 0px -> 0px
+- findings 2 -> 2
+
 ## home · desktop
 HTTP 200 · viewport 1280px · root classes `gbm-gazette-live gbm-standalone-live`
 newsroom mounted: true (3 children) · native pages visible: false
 header 0px rendered, overflow visible, content 0px
-tap targets under 44px: 19
+tap targets under 44px: 14
+story text above the fold: true (first headline at 323px — "Buster Faulkner's offense is anything but predictable")
+lead image 250x67px at y=22
 
 **Findings**
-- 19 tap targets under 44px
+- 14 tap targets under 44px
 
 Console errors:
-- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+- `pageerror: ReferenceError: wixTagManager is not defined`
+- `Failed to load resource: the server responded with a status of 429 ()`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
@@ -79,6 +158,22 @@ Console errors:
 
 ## PROPOSED front page · mobile
 HTTP 200 · viewport 390px · root classes `(none)`
+newsroom mounted: false (0 children) · native pages visible: null
+tap targets under 44px: 5
+images loaded: 7/7
+
+No findings.
+
+## PROPOSED front page · phone390
+HTTP 200 · viewport 390px · root classes `(none)`
+newsroom mounted: false (0 children) · native pages visible: null
+tap targets under 44px: 5
+images loaded: 7/7
+
+No findings.
+
+## PROPOSED front page · phone430
+HTTP 200 · viewport 430px · root classes `(none)`
 newsroom mounted: false (0 children) · native pages visible: null
 tap targets under 44px: 5
 images loaded: 7/7

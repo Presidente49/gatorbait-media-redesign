@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-24T03:14:16.254Z",
+  "capturedAt": "2026-09-24T03:22:37.636Z",
   "runs": [
     {
       "profile": "mobile",
@@ -7,6 +7,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-mobile.jpg",
       "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
@@ -108,6 +109,17 @@
       "offscreenOnly": 8,
       "smallTapTargets": 20,
       "retiredBranding": [],
+      "firstHeadline": {
+        "text": "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!",
+        "top": 415,
+        "tag": "a"
+      },
+      "headlineAboveFold": true,
+      "leadImage": {
+        "width": 0,
+        "height": 0,
+        "top": 0
+      },
       "docScrollWidth": 320
     },
     {
@@ -221,12 +233,478 @@
       "docScrollWidth": 320
     },
     {
+      "profile": "phone390",
+      "target": "home",
+      "status": 200,
+      "screenshot": "automation/vision/latest/home-phone390.jpg",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 ()",
+        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+      ],
+      "candidate": {
+        "screenshot": "automation/vision/latest/home-phone390-candidate.jpg",
+        "headerBefore": {
+          "height": 0,
+          "cssHeight": "auto",
+          "overflow": "visible",
+          "scrollHeight": 0,
+          "clientHeight": 0
+        },
+        "headerAfter": {
+          "height": 0,
+          "cssHeight": "auto",
+          "overflow": "visible",
+          "scrollHeight": 0,
+          "clientHeight": 0
+        },
+        "findingsBefore": 1,
+        "findingsAfter": 1,
+        "resolved": [],
+        "introduced": []
+      },
+      "url": "https://www.gatorbaitmedia.com/",
+      "width": 390,
+      "findings": [
+        "20 tap targets under 44px"
+      ],
+      "rootClasses": "gbm-gazette-live gbm-standalone-live",
+      "hasNewsroom": true,
+      "newsroomChildren": 3,
+      "nativePagesVisible": false,
+      "header": {
+        "height": 0,
+        "cssHeight": "auto",
+        "overflow": "visible",
+        "scrollHeight": 0,
+        "clientHeight": 0
+      },
+      "horizontalOverflow": [
+        {
+          "tag": "aside",
+          "id": null,
+          "cls": "gbm-ms-panel",
+          "left": 404,
+          "right": 747
+        },
+        {
+          "tag": "div",
+          "id": null,
+          "cls": "gbm-ms-head",
+          "left": 404,
+          "right": 747
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 418,
+          "right": 576
+        },
+        {
+          "tag": "img",
+          "id": null,
+          "cls": null,
+          "left": 418,
+          "right": 576
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "cls": "gbm-ms-close",
+          "left": 693,
+          "right": 733
+        },
+        {
+          "tag": "nav",
+          "id": null,
+          "cls": "gbm-ms-nav",
+          "left": 404,
+          "right": 747
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 404,
+          "right": 747
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 404,
+          "right": 747
+        }
+      ],
+      "pageScrollsSideways": false,
+      "offscreenOnly": 8,
+      "smallTapTargets": 20,
+      "retiredBranding": [],
+      "firstHeadline": {
+        "text": "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!",
+        "top": 415,
+        "tag": "a"
+      },
+      "headlineAboveFold": true,
+      "leadImage": {
+        "width": 0,
+        "height": 0,
+        "top": 0
+      },
+      "docScrollWidth": 390
+    },
+    {
+      "profile": "phone390",
+      "target": "blog",
+      "status": 200,
+      "screenshot": "automation/vision/latest/blog-phone390.jpg",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 ()",
+        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+      ],
+      "candidate": {
+        "screenshot": "automation/vision/latest/blog-phone390-candidate.jpg",
+        "headerBefore": {
+          "height": 0,
+          "cssHeight": "auto",
+          "overflow": "visible",
+          "scrollHeight": 0,
+          "clientHeight": 0
+        },
+        "headerAfter": {
+          "height": 0,
+          "cssHeight": "auto",
+          "overflow": "visible",
+          "scrollHeight": 0,
+          "clientHeight": 0
+        },
+        "findingsBefore": 1,
+        "findingsAfter": 1,
+        "resolved": [],
+        "introduced": []
+      },
+      "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+      "width": 980,
+      "findings": [
+        "49 tap targets under 44px"
+      ],
+      "rootClasses": "gbm-tight-footer",
+      "hasNewsroom": false,
+      "newsroomChildren": 0,
+      "nativePagesVisible": true,
+      "header": {
+        "height": 0,
+        "cssHeight": "auto",
+        "overflow": "visible",
+        "scrollHeight": 0,
+        "clientHeight": 0
+      },
+      "horizontalOverflow": [
+        {
+          "tag": "aside",
+          "id": null,
+          "cls": "gbm-ms-panel",
+          "left": 994,
+          "right": 1337
+        },
+        {
+          "tag": "div",
+          "id": null,
+          "cls": "gbm-ms-head",
+          "left": 994,
+          "right": 1337
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 1008,
+          "right": 1166
+        },
+        {
+          "tag": "img",
+          "id": null,
+          "cls": null,
+          "left": 1008,
+          "right": 1166
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "cls": "gbm-ms-close",
+          "left": 1283,
+          "right": 1323
+        },
+        {
+          "tag": "nav",
+          "id": null,
+          "cls": "gbm-ms-nav",
+          "left": 994,
+          "right": 1337
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 994,
+          "right": 1337
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 994,
+          "right": 1337
+        }
+      ],
+      "pageScrollsSideways": false,
+      "offscreenOnly": 8,
+      "smallTapTargets": 49,
+      "retiredBranding": [],
+      "docScrollWidth": 980
+    },
+    {
+      "profile": "phone430",
+      "target": "home",
+      "status": 200,
+      "screenshot": "automation/vision/latest/home-phone430.jpg",
+      "consoleErrors": [
+        "pageerror: ReferenceError: wixTagManager is not defined",
+        "Failed to load resource: the server responded with a status of 429 ()"
+      ],
+      "candidate": {
+        "screenshot": "automation/vision/latest/home-phone430-candidate.jpg",
+        "headerBefore": {
+          "height": 0,
+          "cssHeight": "auto",
+          "overflow": "visible",
+          "scrollHeight": 0,
+          "clientHeight": 0
+        },
+        "headerAfter": {
+          "height": 0,
+          "cssHeight": "auto",
+          "overflow": "visible",
+          "scrollHeight": 0,
+          "clientHeight": 0
+        },
+        "findingsBefore": 1,
+        "findingsAfter": 1,
+        "resolved": [],
+        "introduced": []
+      },
+      "url": "https://www.gatorbaitmedia.com/",
+      "width": 430,
+      "findings": [
+        "16 tap targets under 44px"
+      ],
+      "rootClasses": "gbm-gazette-live gbm-standalone-live",
+      "hasNewsroom": true,
+      "newsroomChildren": 3,
+      "nativePagesVisible": false,
+      "header": {
+        "height": 0,
+        "cssHeight": "auto",
+        "overflow": "visible",
+        "scrollHeight": 0,
+        "clientHeight": 0
+      },
+      "horizontalOverflow": [
+        {
+          "tag": "aside",
+          "id": null,
+          "cls": "gbm-ms-panel",
+          "left": 444,
+          "right": 794
+        },
+        {
+          "tag": "div",
+          "id": null,
+          "cls": "gbm-ms-head",
+          "left": 444,
+          "right": 794
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 458,
+          "right": 616
+        },
+        {
+          "tag": "img",
+          "id": null,
+          "cls": null,
+          "left": 458,
+          "right": 616
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "cls": "gbm-ms-close",
+          "left": 740,
+          "right": 780
+        },
+        {
+          "tag": "nav",
+          "id": null,
+          "cls": "gbm-ms-nav",
+          "left": 444,
+          "right": 794
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 444,
+          "right": 794
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 444,
+          "right": 794
+        }
+      ],
+      "pageScrollsSideways": false,
+      "offscreenOnly": 8,
+      "smallTapTargets": 16,
+      "retiredBranding": [],
+      "firstHeadline": {
+        "text": "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!",
+        "top": 415,
+        "tag": "a"
+      },
+      "headlineAboveFold": true,
+      "leadImage": {
+        "width": 0,
+        "height": 0,
+        "top": 0
+      },
+      "docScrollWidth": 430
+    },
+    {
+      "profile": "phone430",
+      "target": "blog",
+      "status": 200,
+      "screenshot": "automation/vision/latest/blog-phone430.jpg",
+      "consoleErrors": [
+        "pageerror: ReferenceError: wixTagManager is not defined",
+        "Failed to load resource: the server responded with a status of 429 ()"
+      ],
+      "candidate": {
+        "screenshot": "automation/vision/latest/blog-phone430-candidate.jpg",
+        "headerBefore": {
+          "height": 0,
+          "cssHeight": "auto",
+          "overflow": "visible",
+          "scrollHeight": 0,
+          "clientHeight": 0
+        },
+        "headerAfter": {
+          "height": 0,
+          "cssHeight": "auto",
+          "overflow": "visible",
+          "scrollHeight": 0,
+          "clientHeight": 0
+        },
+        "findingsBefore": 2,
+        "findingsAfter": 2,
+        "resolved": [],
+        "introduced": []
+      },
+      "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+      "width": 980,
+      "findings": [
+        "44 tap targets under 44px",
+        "Retired branding present: Rob Browne"
+      ],
+      "rootClasses": "gbm-tight-footer",
+      "hasNewsroom": false,
+      "newsroomChildren": 0,
+      "nativePagesVisible": true,
+      "header": {
+        "height": 0,
+        "cssHeight": "auto",
+        "overflow": "visible",
+        "scrollHeight": 0,
+        "clientHeight": 0
+      },
+      "horizontalOverflow": [
+        {
+          "tag": "aside",
+          "id": null,
+          "cls": "gbm-ms-panel",
+          "left": 994,
+          "right": 1344
+        },
+        {
+          "tag": "div",
+          "id": null,
+          "cls": "gbm-ms-head",
+          "left": 994,
+          "right": 1344
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 1008,
+          "right": 1166
+        },
+        {
+          "tag": "img",
+          "id": null,
+          "cls": null,
+          "left": 1008,
+          "right": 1166
+        },
+        {
+          "tag": "button",
+          "id": null,
+          "cls": "gbm-ms-close",
+          "left": 1290,
+          "right": 1330
+        },
+        {
+          "tag": "nav",
+          "id": null,
+          "cls": "gbm-ms-nav",
+          "left": 994,
+          "right": 1344
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 994,
+          "right": 1344
+        },
+        {
+          "tag": "a",
+          "id": null,
+          "cls": null,
+          "left": 994,
+          "right": 1344
+        }
+      ],
+      "pageScrollsSideways": false,
+      "offscreenOnly": 8,
+      "smallTapTargets": 44,
+      "retiredBranding": [
+        "Rob Browne"
+      ],
+      "docScrollWidth": 980
+    },
+    {
       "profile": "desktop",
       "target": "home",
       "status": 200,
       "screenshot": "automation/vision/latest/home-desktop.jpg",
       "consoleErrors": [
-        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        "pageerror: ReferenceError: wixTagManager is not defined",
+        "Failed to load resource: the server responded with a status of 429 ()"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/home-desktop-candidate.jpg",
@@ -252,7 +730,7 @@
       "url": "https://www.gatorbaitmedia.com/",
       "width": 1280,
       "findings": [
-        "19 tap targets under 44px"
+        "14 tap targets under 44px"
       ],
       "rootClasses": "gbm-gazette-live gbm-standalone-live",
       "hasNewsroom": true,
@@ -276,8 +754,19 @@
       ],
       "pageScrollsSideways": false,
       "offscreenOnly": 1,
-      "smallTapTargets": 19,
+      "smallTapTargets": 14,
       "retiredBranding": [],
+      "firstHeadline": {
+        "text": "Buster Faulkner's offense is anything but predictable",
+        "top": 323,
+        "tag": "a"
+      },
+      "headlineAboveFold": true,
+      "leadImage": {
+        "width": 250,
+        "height": 67,
+        "top": 22
+      },
       "docScrollWidth": 1280
     },
     {
@@ -354,6 +843,46 @@
       "smallTapTargets": 5,
       "retiredBranding": [],
       "docScrollWidth": 390
+    },
+    {
+      "profile": "phone390",
+      "target": "PROPOSED front page",
+      "status": 200,
+      "screenshot": "automation/vision/latest/proposed-phone390.jpg",
+      "imagesLoaded": "7/7",
+      "consoleErrors": [],
+      "url": "file:///home/runner/work/gatorbait-media-redesign/gatorbait-media-redesign/flagship/front-page/index.html",
+      "width": 390,
+      "findings": [],
+      "rootClasses": "(none)",
+      "hasNewsroom": false,
+      "newsroomChildren": 0,
+      "nativePagesVisible": null,
+      "horizontalOverflow": [],
+      "pageScrollsSideways": false,
+      "smallTapTargets": 5,
+      "retiredBranding": [],
+      "docScrollWidth": 390
+    },
+    {
+      "profile": "phone430",
+      "target": "PROPOSED front page",
+      "status": 200,
+      "screenshot": "automation/vision/latest/proposed-phone430.jpg",
+      "imagesLoaded": "7/7",
+      "consoleErrors": [],
+      "url": "file:///home/runner/work/gatorbait-media-redesign/gatorbait-media-redesign/flagship/front-page/index.html",
+      "width": 430,
+      "findings": [],
+      "rootClasses": "(none)",
+      "hasNewsroom": false,
+      "newsroomChildren": 0,
+      "nativePagesVisible": null,
+      "horizontalOverflow": [],
+      "pageScrollsSideways": false,
+      "smallTapTargets": 5,
+      "retiredBranding": [],
+      "docScrollWidth": 430
     },
     {
       "profile": "desktop",

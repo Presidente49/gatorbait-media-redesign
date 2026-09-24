@@ -10,7 +10,12 @@
 @page { size: Letter; margin: 16mm 15mm 18mm; }
 
 :root{
-  --navy:#0A1F44;
+  /* Matches what production actually renders rather than inventing a shade.
+     #11274a is the most-used colour in the repo (172 occurrences) and is the
+     surface navy the live magazine uses; #FA4616 is Florida's official orange.
+     See docs/DESIGN-SYSTEM.md - this file previously carried its own #0A1F44,
+     which was an eighth competing navy. */
+  --navy:#11274a;
   --orange:#FA4616;
   --ink:#16181d;
   --muted:#5a6272;

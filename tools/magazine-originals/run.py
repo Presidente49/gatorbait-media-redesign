@@ -57,7 +57,7 @@ def main():
             if src.exists(): raise RuntimeError('Existing source destination: refusing to reset or overwrite '+str(src))
             run([git,'clone','https://github.com/'+tool['repo']+'.git',src],timeout=300)
             run([git,'checkout','--detach',tool['sha']],src)
-            run([git,'submodule','update','--init','--recursive'],src,timeout=300)
+            run([git,'-c','url.https://github.com/.insteadOf=git@github.com:','submodule','update','--init','--recursive'],src,timeout=300)
             _,head=run([git,'rev-parse','HEAD'],src)
             if head.strip()!=tool['sha']: raise RuntimeError('Source revision mismatch')
             _,status=run([git,'status','--porcelain','--untracked-files=no'],src)
@@ -74,16 +74,18 @@ def main():
             row['stage']='INGESTED_ORIGINAL'
             if args.mode=='ingest': save();continue
             work=lab/'work'/tool['name']
-            shutil.copytree(src,work,ignore=shutil.ignore_patterns('.git','node_modules','target'))
+            shutil.copytree(src,work,symlinks=True,ignore=shutil.ignore_patterns('.git','node_modules','target'))
             row['stage']='INSTALLING';save()
             name=tool['name']
             if name in ('colorlib','pagedjs','pagedjs-cli'):
                 run(['npm','ci' if (work/'package-lock.json').exists() else 'install','--no-fund'],work,timeout=600)
-                run(['npm','run','build'],work,timeout=300)
+                run(['npm','run','build']+(['--','--bundleConfigAsCjs'] if name=='pagedjs' else []),work,timeout=300)
                 code,audit=run(['npm','audit','--json'],work,allow_failure=True,timeout=90)
                 row['auditExitCode']=code
                 try: row['advisories']=json.loads(audit).get('metadata',{}).get('vulnerabilities',{})
                 except json.JSONDecodeError: row['auditStatus']='UNKNOWN: see raw log'
+                row['productionEligibility']='HOLD_REVIEW' if row.get('advisories',{}).get('total',0) or code else 'NOT_CERTIFIED_BY_AUDIT'
+                if (work/'package-lock.json').is_file(): row['lockfileSha256']=digest(work/'package-lock.json')
                 if name=='colorlib':
                     templates=sorted(p for p in work.glob('[0-9]*/index.html') if p.stat().st_size>100)
                     expected=list((work/'src').glob('[0-9]*.mjml'))
@@ -112,8 +114,7 @@ def main():
                 row['maintenanceNote']='Pinned upstream commit dates to July 2023; not a production security certificate.'
             elif name=='baoyu-design':
                 host=lab/'work'/'design-host';host.mkdir(exist_ok=True)
-                _,version=run(['npm','view','skills','version'],host,timeout=60)
-                version=version.strip()
+                version='1.7.0'
                 if not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+(?:[-+][0-9A-Za-z.-]+)?',version):raise RuntimeError('Unrecognized skills package version')
                 cli=['npx','--yes','skills@'+version]
                 run(cli+['add',src,'--skill','baoyu-design','--agent','claude-code','--yes'],host)
@@ -148,7 +149,10 @@ def main():
             if not chrome:raise RuntimeError('No sandbox-capable Chrome available')
             run(['node',HERE/'browser-test.mjs',lab/'work',lab/'output',chrome],timeout=180)
             report['browserQC']=json.loads((lab/'output'/'browser-report.json').read_text())
-        except Exception as e:report['browserQC']={'status':'BLOCKED_OR_FAILED','error':str(e)}
+        except Exception as e:
+            partial=lab/'output'/'browser-report.json'
+            report['browserQC']=json.loads(partial.read_text()) if partial.exists() else {}
+            report['browserQC'].update({'status':'BLOCKED_OR_FAILED','error':str(e)})
         try:
             from pypdf import PdfReader
             pdfs=[]

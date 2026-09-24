@@ -12,7 +12,7 @@ SPEC.loader.exec_module(gate)
 
 def fixture(project="publisher-test"):
     r = dict(project_id=project, work_item_id="existing-item", stage="prepare",
-             artifact="draft", revision="r1", sender="producer-session", receiver="review-session",
+             artifact="draft", revision="r1", scope="read-only review", sender="producer-session", receiver="review-session",
              qc={"passed": True, "evidence": "fixture-checks"})
     r["acknowledgment"] = {k:r[k] for k in gate.IDENTITY}
     r["acknowledgment"].update(verified=True, independent=True, reference="fixture-event",
@@ -76,6 +76,9 @@ class GateTests(unittest.TestCase):
 
     def test_receiver_mismatch_fails(self):
         r=fixture(); r["acknowledgment"]["receiver"]="other-session"; self.assertTrue(gate.validate(r))
+
+    def test_scope_mismatch_fails(self):
+        r=fixture(); r["acknowledgment"]["scope"]="publish and spend"; self.assertTrue(gate.validate(r))
 
     def test_reviewed_rejection(self):
         r=fixture(); r.update(terminal=True, disposition="rejected")

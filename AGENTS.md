@@ -36,6 +36,38 @@ For any homepage/front-page work, `docs/HOMEPAGE-BASELINE-LOCK.md` is the canoni
 
 Dated sections in long runbooks are historical evidence unless live provider state confirms them.
 
+## Done rule
+
+A finding is not a deliverable.
+
+Between 2026-09-20 and 2026-09-24 four separate efforts stopped one step short:
+the MIT repository review produced a table and cloned nothing; the mobile app
+produced a 131-line strategy and no code; AP Mode produced a 390-line skill and
+zero graphics; and the newsletter UTM defect was reproduced exactly, then left
+as a proposal while the attribution stayed broken. Nobody was idle. The last
+step just kept not happening.
+
+So, for every pass:
+
+1. **If you diagnosed something you are authorized to fix, fix it in the same
+   pass.** Shipping the fix is the deliverable; a comment describing it is not.
+2. **"Proposed", "recommended", "candidate", "pilot gate" and "the controller
+   should" are not completions.** If the fix is genuinely someone else's, name
+   who and what they need, in one line, and stop writing.
+3. **Research that names a tool ends with it adopted or rejected.** A shortlist
+   may not survive a second pass. "MIT, actively maintained, COMPONENT
+   CANDIDATE" is a decision deferred, not research done.
+4. **Where the check can be mechanical, write the check.** A script that exits
+   non-zero outlives any document that asks people to remember. See
+   `automation/newsletter/check-links.mjs`.
+5. **Do not open a new document to hold what a script could enforce**, and do
+   not answer a process failure with another process layer.
+
+This rule does not widen anyone's authority. The outward-facing actions stay
+where they are: sending to the list and changing the live homepage still need
+Brenden's explicit go, because those reach real readers and no toggle undoes
+them. Everything inside existing authority gets finished instead of filed.
+
 ## Truth rule
 
 When sources disagree:

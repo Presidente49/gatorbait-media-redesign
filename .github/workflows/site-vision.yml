@@ -1,0 +1,85 @@
+name: GatorBait live site vision
+
+# The agent session's sandbox is blocked from gatorbaitmedia.com by network
+# policy. GitHub runners are not, so CI looks at the live site and commits back
+# screenshots and a structured report the agent can read.
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+    # Only look when there is a reason to. Every run installs Chromium, so
+    # firing on routine doc and config commits burns minutes for nothing.
+    # Editing candidate.css is exactly the moment a fresh look is wanted, so it
+    # doubles as the trigger.
+    paths:
+      - 'automation/vision/**'
+      - '.github/workflows/site-vision.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-vision-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  look:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.49.1
+          npx playwright install --with-deps chromium
+
+      - name: Look at the live site
+        run: node automation/vision/look.mjs
+        continue-on-error: true
+
+      - name: Commit what CI saw
+        shell: bash
+        run: |
+          git add automation/vision/latest
+          if git diff --cached --quiet -- automation/vision/latest; then
+            echo 'No change in what the site looks like.'
+            exit 0
+          fi
+          git config user.name 'gatorbait-vision-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
+          git commit -m 'vision: capture live site as CI sees it'
+          # An agent push landing mid-run leaves this commit behind the remote,
+          # and the whole point of the job is the evidence it writes back. Rebase
+          # onto whatever arrived and try again; the results are a new file tree,
+          # so there is nothing for a rebase to conflict with.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:${{ github.ref_name }}; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected, rebasing onto the remote (attempt $attempt)"
+            git fetch origin ${{ github.ref_name }}
+            git rebase FETCH_HEAD || { git rebase --abort; exit 1; }
+            sleep $((attempt * 5))
+          done
+          echo "::error::could not write the capture back after 3 attempts"
+          exit 1
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-vision
+          path: automation/vision/latest
+          if-no-files-found: ignore

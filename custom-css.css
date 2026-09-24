@@ -1,3 +1,9 @@
+/* NOTE (2026-09-24): variables renamed --gb-* -> --gbdark-*.
+   This retired dark theme declared --gb-accent-orange:#f47521 in :root while
+   studio/assets/tokens.css declares --gb-orange:#FA4616. Both are global. If
+   these ever loaded on the same page the brand colour would be decided by load
+   order. The prefix is now distinct so that cannot happen. This file is not
+   loaded by anything and stays disabled; see docs/DESIGN-SYSTEM.md. */
 /* ============================================
    GatorBait Media — Custom CSS
    ESPN+/Athletic Dark Theme
@@ -12,29 +18,29 @@
 
 /* === BASE DARK THEME === */
 :root {
-    --gb-primary-bg: #1a1a2e;
-    --gb-secondary-bg: #16213e;
-    --gb-card-bg: #1e1e38;
-    --gb-card-border: #2a2a4a;
-    --gb-accent-orange: #f47521;
-    --gb-accent-blue: #0021a5;
-    --gb-text-primary: #ffffff;
-    --gb-text-secondary: #a0a0b0;
-    --gb-text-body: #e0e0e8;
-    --gb-divider: #2a2a4a;
+    --gbdark-primary-bg: #1a1a2e;
+    --gbdark-secondary-bg: #16213e;
+    --gbdark-card-bg: #1e1e38;
+    --gbdark-card-border: #2a2a4a;
+    --gbdark-accent-orange: #f47521;
+    --gbdark-accent-blue: #0021a5;
+    --gbdark-text-primary: #ffffff;
+    --gbdark-text-secondary: #a0a0b0;
+    --gbdark-text-body: #e0e0e8;
+    --gbdark-divider: #2a2a4a;
 }
 
 /* === HEADER === */
 [id*="SITE_HEADER"] {
-    background: var(--gb-primary-bg) !important;
-    border-bottom: 2px solid var(--gb-accent-orange) !important;
+    background: var(--gbdark-primary-bg) !important;
+    border-bottom: 2px solid var(--gbdark-accent-orange) !important;
     box-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
 }
 
 /* === NAVIGATION TEXT === */
 [id*="SITE_HEADER"] [data-testid="linkElement"] span,
 [id*="MENU"] span {
-    color: var(--gb-text-primary) !important;
+    color: var(--gbdark-text-primary) !important;
     font-family: 'Montserrat', 'Helvetica Neue', sans-serif !important;
     font-size: 14px !important;
     text-transform: uppercase !important;
@@ -43,7 +49,7 @@
 }
 
 [id*="SITE_HEADER"] [data-testid="linkElement"]:hover span {
-    color: var(--gb-accent-orange) !important;
+    color: var(--gbdark-accent-orange) !important;
 }
 
 /* === PAGE BACKGROUND === */
@@ -51,18 +57,18 @@
 [id*="SITE_PAGES"],
 [id*="pageBackground"],
 [id*="BACKGROUND_GROUP"] {
-    background-color: var(--gb-primary-bg) !important;
+    background-color: var(--gbdark-primary-bg) !important;
 }
 
 /* === STRIPS / SECTIONS === */
 [id*="comp-"] > [data-mesh-id] {
-    background-color: var(--gb-primary-bg) !important;
+    background-color: var(--gbdark-primary-bg) !important;
 }
 
 /* === BLOG POST CARDS === */
 [data-hook="post-list-item"] {
-    background-color: var(--gb-card-bg) !important;
-    border: 1px solid var(--gb-card-border) !important;
+    background-color: var(--gbdark-card-bg) !important;
+    border: 1px solid var(--gbdark-card-border) !important;
     border-radius: 12px !important;
     overflow: hidden !important;
     transition: transform 0.2s ease, box-shadow 0.2s ease !important;
@@ -71,7 +77,7 @@
 [data-hook="post-list-item"]:hover {
     transform: translateY(-4px) !important;
     box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
-    border-color: var(--gb-accent-orange) !important;
+    border-color: var(--gbdark-accent-orange) !important;
 }
 
 /* === BLOG POST IMAGES === */
@@ -81,7 +87,7 @@
 
 /* === BLOG TITLES === */
 [data-hook="post-title"] {
-    color: var(--gb-text-primary) !important;
+    color: var(--gbdark-text-primary) !important;
     font-family: 'Georgia', 'Times New Roman', serif !important;
     font-size: 20px !important;
     font-weight: 700 !important;
@@ -89,12 +95,12 @@
 }
 
 [data-hook="post-title"]:hover {
-    color: var(--gb-accent-orange) !important;
+    color: var(--gbdark-accent-orange) !important;
 }
 
 /* === BLOG DESCRIPTIONS === */
 [data-hook="post-description"] {
-    color: var(--gb-text-body) !important;
+    color: var(--gbdark-text-body) !important;
     font-family: 'Georgia', serif !important;
     font-size: 15px !important;
     line-height: 1.6 !important;
@@ -104,14 +110,14 @@
 [data-hook="post-owner"],
 [data-hook="post-publish-date"],
 [data-hook="post-reading-time"] {
-    color: var(--gb-text-secondary) !important;
+    color: var(--gbdark-text-secondary) !important;
     font-family: 'Montserrat', sans-serif !important;
     font-size: 13px !important;
 }
 
 /* === CATEGORY TAGS === */
 [data-hook="post-categories"] a {
-    color: var(--gb-accent-orange) !important;
+    color: var(--gbdark-accent-orange) !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
     font-size: 11px !important;
@@ -120,28 +126,28 @@
 
 /* === FOOTER === */
 [id*="SITE_FOOTER"] {
-    background: var(--gb-secondary-bg) !important;
-    border-top: 2px solid var(--gb-accent-orange) !important;
+    background: var(--gbdark-secondary-bg) !important;
+    border-top: 2px solid var(--gbdark-accent-orange) !important;
 }
 
 [id*="SITE_FOOTER"] span,
 [id*="SITE_FOOTER"] p,
 [id*="SITE_FOOTER"] a {
-    color: var(--gb-text-body) !important;
+    color: var(--gbdark-text-body) !important;
 }
 
 [id*="SITE_FOOTER"] a:hover {
-    color: var(--gb-accent-orange) !important;
+    color: var(--gbdark-accent-orange) !important;
 }
 
 /* === HEADINGS (global) === */
 h1, h2, h3, h4, h5, h6 {
-    color: var(--gb-text-primary) !important;
+    color: var(--gbdark-text-primary) !important;
 }
 
 /* === BODY TEXT (global) === */
 p {
-    color: var(--gb-text-body) !important;
+    color: var(--gbdark-text-body) !important;
 }
 
 /* === SUBSCRIBE BUTTON STYLE === */
@@ -171,30 +177,30 @@ p {
 /* === PAGINATION === */
 [data-hook="pagination"] button,
 [data-hook="pagination"] a {
-    color: var(--gb-text-secondary) !important;
-    background: var(--gb-card-bg) !important;
-    border: 1px solid var(--gb-card-border) !important;
+    color: var(--gbdark-text-secondary) !important;
+    background: var(--gbdark-card-bg) !important;
+    border: 1px solid var(--gbdark-card-border) !important;
     border-radius: 4px !important;
 }
 
 [data-hook="pagination"] button:hover,
 [data-hook="pagination"] a:hover {
-    color: var(--gb-text-primary) !important;
-    border-color: var(--gb-accent-orange) !important;
+    color: var(--gbdark-text-primary) !important;
+    border-color: var(--gbdark-accent-orange) !important;
 }
 
 /* === FORUM / MESSAGE BOARDS === */
 [class*="forum"],
 [class*="Forum"] {
-    background-color: var(--gb-card-bg) !important;
-    color: var(--gb-text-body) !important;
+    background-color: var(--gbdark-card-bg) !important;
+    color: var(--gbdark-text-body) !important;
 }
 
 /* === MEMBER AREA === */
 [class*="member"],
 [class*="profile"] {
-    background-color: var(--gb-primary-bg) !important;
-    color: var(--gb-text-primary) !important;
+    background-color: var(--gbdark-primary-bg) !important;
+    color: var(--gbdark-text-primary) !important;
 }
 
 /* === SCROLLBAR (dark theme) === */
@@ -202,12 +208,12 @@ p {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: var(--gb-primary-bg);
+    background: var(--gbdark-primary-bg);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--gb-card-border);
+    background: var(--gbdark-card-border);
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--gb-accent-orange);
+    background: var(--gbdark-accent-orange);
 }

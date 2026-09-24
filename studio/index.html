@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GatorBait Media — Studio Front Page Preview</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="GatorBait Studio redesign preview — Front Page, built on real GatorBait Media journalism. Not the production site.">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/shell.css">
+<style>
+.gb-preview-banner{ background:var(--gb-navy); color:#fff; text-align:center; font-size:.8rem; padding:6px 12px; }
+.gb-preview-banner strong{ color:var(--gb-orange); }
+
+.gb-hero-strip{ background:var(--gb-dark-bg); color:var(--gb-dark-ink); padding:var(--gb-space-2) 0; }
+.gb-hero-strip .gb-container{ display:flex; align-items:center; gap:var(--gb-space-3); font-size:.82rem; }
+.gb-live-dot{ width:8px; height:8px; border-radius:50%; background:var(--gb-orange); animation:gbpulse 1.6s var(--gb-ease) infinite; }
+@keyframes gbpulse{ 0%,100%{opacity:1;} 50%{opacity:.35;} }
+
+.gb-front-main{ max-width:var(--gb-max-width); margin:0 auto; padding:var(--gb-space-5) var(--gb-space-4) var(--gb-space-8); display:flex; flex-direction:column; gap:var(--gb-space-7); }
+
+.gb-lead-grid{ display:grid; grid-template-columns:1.6fr 1fr; gap:var(--gb-space-5); }
+.gb-lead{ position:relative; }
+.gb-lead .gb-card-media{ aspect-ratio:16/9; }
+.gb-lead h1{ font-family:var(--gb-font-display); font-size:var(--gb-size-hero); line-height:1.08; margin:var(--gb-space-3) 0 var(--gb-space-2); }
+.gb-lead p{ color:var(--gb-ink-soft); font-size:1rem; max-width:56ch; margin:0 0 var(--gb-space-2); }
+.gb-secondary-stack{ display:flex; flex-direction:column; gap:var(--gb-space-4); }
+.gb-secondary-stack .gb-card-media{ aspect-ratio:16/10; }
+@media (max-width:900px){ .gb-lead-grid{ grid-template-columns:1fr; } }
+
+.gb-news-zone{ display:grid; grid-template-columns:2.2fr 1fr; gap:var(--gb-space-6); }
+.gb-latest-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:var(--gb-space-4); }
+@media (max-width:900px){ .gb-news-zone{ grid-template-columns:1fr; } .gb-latest-grid{ grid-template-columns:1fr; } }
+.gb-trending{ background:var(--gb-surface-raised); border:1px solid var(--gb-line); border-radius:var(--gb-radius-lg); padding:var(--gb-space-4); }
+.gb-trend-item{ display:flex; gap:var(--gb-space-3); padding:var(--gb-space-2) 0; border-bottom:1px solid var(--gb-line); }
+.gb-trend-item:last-child{ border-bottom:none; }
+.gb-trend-num{ font-family:var(--gb-font-display); font-weight:700; color:var(--gb-orange); font-size:1.1rem; }
+.gb-trend-item h4{ margin:0; font-size:.92rem; line-height:1.3; }
+
+.gb-band{ border-radius:var(--gb-radius-lg); padding:var(--gb-space-6); display:flex; align-items:center; justify-content:space-between; gap:var(--gb-space-5); flex-wrap:wrap; }
+.gb-band-tv{ background:linear-gradient(120deg,var(--gb-dark-bg),var(--gb-navy-deep)); color:var(--gb-dark-ink); }
+.gb-band h2{ font-family:var(--gb-font-display); font-size:1.6rem; margin:var(--gb-space-1) 0; }
+.gb-band p{ color:var(--gb-dark-ink-soft); max-width:48ch; margin:0; }
+.gb-band a.gb-cta{ background:var(--gb-orange); color:#fff; padding:var(--gb-space-3) var(--gb-space-5); border-radius:999px; font-weight:700; white-space:nowrap; }
+
+.gb-magazine-feature{ display:grid; grid-template-columns:1fr 1fr; gap:var(--gb-space-5); background:var(--gb-dark-bg); color:var(--gb-dark-ink); border-radius:var(--gb-radius-lg); overflow:hidden; }
+.gb-magazine-feature img{ width:100%; height:100%; object-fit:cover; min-height:260px; }
+.gb-magazine-copy{ padding:var(--gb-space-6); display:flex; flex-direction:column; justify-content:center; gap:var(--gb-space-2); }
+.gb-magazine-copy h2{ font-family:var(--gb-font-display); font-size:1.8rem; margin:0; }
+@media (max-width:900px){ .gb-magazine-feature{ grid-template-columns:1fr; } }
+
+.gb-recruiting-rail .gb-card{ width:240px; }
+.gb-community-note{ display:flex; flex-direction:column; gap:var(--gb-space-2); }
+
+.gb-newsletter{ background:var(--gb-orange); color:#fff; border-radius:var(--gb-radius-lg); padding:var(--gb-space-6); display:flex; align-items:center; justify-content:space-between; gap:var(--gb-space-5); flex-wrap:wrap; }
+.gb-newsletter h2{ font-family:var(--gb-font-display); margin:0 0 var(--gb-space-1); }
+.gb-newsletter p{ margin:0; opacity:.92; max-width:48ch; }
+.gb-newsletter a{ background:#fff; color:var(--gb-orange-dim); padding:var(--gb-space-3) var(--gb-space-5); border-radius:999px; font-weight:700; }
+</style>
+</head>
+<body class="gb-studio">
+<div class="gb-preview-banner">GatorBait Studio preview — <strong>not the production site</strong>. Populated with live GatorBait journalism, read-only.</div>
+
+<main id="gb-main">
+  <div class="gb-hero-strip">
+    <div class="gb-container"><span class="gb-live-dot" aria-hidden="true"></span> Florida 44, Auburn 39 &middot; Gators end Jordan-Hare drought &middot; Next: at Ole Miss</div>
+  </div>
+
+  <div class="gb-front-main">
+    <section class="gb-lead-grid" aria-label="Top stories" id="gb-lead-grid"></section>
+
+    <section aria-label="Latest news and trending">
+      <div class="gb-section-head"><h2>Latest News</h2><a href="pages/recruiting.html">More news &rarr;</a></div>
+      <div class="gb-news-zone">
+        <div class="gb-latest-grid" id="gb-latest-grid"></div>
+        <aside class="gb-trending" id="gb-trending" aria-label="Trending now"></aside>
+      </div>
+    </section>
+
+    <section class="gb-band gb-band-tv" aria-label="GatorBait TV">
+      <div><span class="gb-kicker" style="color:var(--gb-orange)">GATORBAIT TV</span><h2>Watch the conversation behind the stories.</h2><p>The Buddy Martin Show, Florida Gator Lowdown and Best Friday in Football — full episodes and clips.</p></div>
+      <a class="gb-cta" href="pages/tv.html">Open GatorBait TV &rarr;</a>
+    </section>
+
+    <section aria-label="Recruiting snapshot">
+      <div class="gb-section-head"><h2>Recruiting</h2><a href="pages/recruiting.html">Full board &rarr;</a></div>
+      <div class="gb-rail gb-recruiting-rail" id="gb-recruiting-rail"></div>
+    </section>
+
+    <section aria-label="Magazine feature" id="gb-magazine-slot"></section>
+
+    <section aria-label="GatorBait.net community">
+      <div class="gb-section-head"><h2>GatorBait.net</h2><a href="pages/gatorbait-net.html">Visit the board &rarr;</a></div>
+      <div class="gb-empty-state gb-community-note">
+        <strong>Community backend not yet selected.</strong>
+        <span>This module will show real trending threads once a GatorBait.net backend (Discourse candidate vs. Wix-native) is chosen. No placeholder members, threads or counts are shown per Studio build rules.</span>
+      </div>
+    </section>
+
+    <section class="gb-newsletter" aria-label="Newsletter">
+      <div><h2>GatorBait Magazine</h2><p>Get the strongest GatorBait stories and game-week coverage in your inbox.</p></div>
+      <a href="mailto:info@gatorbaitmedia.com?subject=Subscribe%20me%20to%20GatorBait%20Magazine">Get GatorBait Magazine</a>
+    </section>
+  </div>
+</main>
+
+<script src="assets/data-snapshot.js"></script>
+<script src="assets/shell.js"></script>
+<script>
+(function(){
+var S=window.GBStudio;
+S.renderMasthead('news');
+S.renderFooter();
+
+function cardMedia(p,cls){
+  if(!p||!p.image||!p.image.src) return '<div class="'+cls+'" aria-hidden="true"></div>';
+  return '<div class="'+cls+'"><img src="'+S.esc(p.image.src)+'" alt="'+S.esc(p.image.alt||p.title)+'" loading="lazy" decoding="async"></div>';
+}
+
+S.loadData('../newsroom-preview/').then(function(d){
+  var posts=d.posts, routing=d.routing;
+  var byPathOrder=posts.slice(); // already newest-first from feed
+  function bySlug(s){ return S.findPost(posts,s); }
+
+  var homepage=(routing.homepage)||{};
+  var leadPost=bySlug(homepage.lead)||byPathOrder[0];
+  var secondarySlugs=homepage.secondary||[];
+  var secondaryPosts=secondarySlugs.map(bySlug).filter(Boolean);
+  var hideSlugs=(homepage.hide||[]).concat((routing.frontPageExclude||[]));
+
+  var used={}; if(leadPost) used[leadPost.slug]=1; secondaryPosts.forEach(function(p){used[p.slug]=1;});
+  var latestPool=byPathOrder.filter(function(p){ return !used[p.slug] && hideSlugs.indexOf(p.slug)===-1; });
+
+  // Lead + secondary
+  var leadHtml='';
+  if(leadPost){
+    leadHtml+='<article class="gb-lead gb-card"><a href="'+S.articleHref(leadPost.slug)+'">'+
+      cardMedia(leadPost,'gb-card-media')+
+      '<span class="gb-kicker">Front Page</span>'+
+      '<h1>'+S.esc(leadPost.title)+'</h1>'+
+      '<p>'+S.esc(leadPost.excerpt||'')+'</p>'+
+      '<div class="gb-meta">'+S.esc(leadPost.author||'GatorBait Staff')+' &middot; '+S.dateText(leadPost.firstPublishedDate)+'</div>'+
+      '</a></article>';
+  }
+  var secondaryHtml='<div class="gb-secondary-stack">'+secondaryPosts.map(function(p){
+    return '<article class="gb-card"><a href="'+S.articleHref(p.slug)+'">'+cardMedia(p,'gb-card-media')+
+      '<h3>'+S.esc(p.title)+'</h3><div class="gb-meta">'+S.dateText(p.firstPublishedDate)+'</div></a></article>';
+  }).join('')+'</div>';
+  document.getElementById('gb-lead-grid').innerHTML=leadHtml+secondaryHtml;
+
+  // Latest rail (next 4) + trending (next 5)
+  var latest=latestPool.slice(0,4);
+  var trending=latestPool.slice(4,9);
+  document.getElementById('gb-latest-grid').innerHTML=latest.map(function(p){
+    return '<article class="gb-card"><a href="'+S.articleHref(p.slug)+'">'+cardMedia(p,'gb-card-media')+
+      '<span class="gb-kicker">'+S.esc(p.author||'GatorBait')+'</span>'+
+      '<h3>'+S.esc(p.title)+'</h3><div class="gb-meta">'+S.dateText(p.firstPublishedDate)+'</div></a></article>';
+  }).join('') || '<div class="gb-empty-state">No qualifying stories in this window yet.</div>';
+
+  document.getElementById('gb-trending').innerHTML='<div class="gb-section-head"><h2>Trending Now</h2></div>'+
+    (trending.map(function(p,i){
+      return '<a class="gb-trend-item" href="'+S.articleHref(p.slug)+'"><span class="gb-trend-num">'+(i+1)+'</span><h4>'+S.esc(p.title)+'</h4></a>';
+    }).join('') || '<div class="gb-empty-state">Nothing trending yet.</div>');
+
+  // Recruiting rail: reuse Recruiting-eligible frontPage-adjacent posts (real data, filtered by title keyword until category names are wired)
+  var recruitingLike=byPathOrder.filter(function(p){ return /recruit|transfer portal|commit/i.test(p.title); });
+  document.getElementById('gb-recruiting-rail').innerHTML = recruitingLike.length
+    ? recruitingLike.slice(0,6).map(function(p){
+        return '<article class="gb-card"><a href="'+S.articleHref(p.slug)+'">'+cardMedia(p,'gb-card-media')+'<h3>'+S.esc(p.title)+'</h3></a></article>';
+      }).join('')
+    : '<div class="gb-empty-state">No current recruiting stories in this preview window — module pulls live from the Gator Recruiting category once wired.</div>';
+
+  // Magazine feature: use editorial-routing.magazine[0] (real editorial cover assignment)
+  var magEntries=routing.magazine||[];
+  var cover=magEntries[0] ? bySlug(magEntries[0].slug) : null;
+  var magSlot=document.getElementById('gb-magazine-slot');
+  if(cover && magEntries[0]){
+    magSlot.innerHTML='<div class="gb-section-head"><h2>Magazine</h2><a href="pages/magazine.html">Read the issue &rarr;</a></div>'+
+      '<a class="gb-magazine-feature" href="'+S.articleHref(cover.slug)+'">'+
+        (cover.image&&cover.image.src?'<img src="'+S.esc(cover.image.src)+'" alt="'+S.esc(cover.title)+'">':'<div></div>')+
+        '<div class="gb-magazine-copy"><span class="gb-kicker" style="color:var(--gb-orange)">'+S.esc(magEntries[0].label||'MAGAZINE')+'</span><h2>'+S.esc(cover.title)+'</h2><p>'+S.esc(magEntries[0].deck||cover.excerpt||'')+'</p></div>'+
+      '</a>';
+  } else {
+    magSlot.innerHTML='<div class="gb-empty-state">No current Magazine cover assignment in editorial-routing.json.</div>';
+  }
+});
+})();
+</script>
+</body>
+</html>

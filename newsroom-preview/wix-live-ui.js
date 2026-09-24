@@ -17,7 +17,7 @@ function mail(subject,body){return 'mailto:'+SUPPORT+'?subject='+encodeURICompon
 function close(id){var e=document.getElementById(id);if(e)e.remove();}
 function modal(id,html){close(id);var w=document.createElement('div');w.id=id;w.className='gbm-modal';w.setAttribute('role','dialog');w.setAttribute('aria-modal','true');w.innerHTML=html;document.body.appendChild(w);var x=w.querySelector('.gbm-modal-close');if(x)x.focus();w.addEventListener('click',function(e){if(e.target===w)close(id)});return w;}
 function likelySignedIn(){var h=document.getElementById('SITE_HEADER');if(!h)return false;var btns=h.querySelectorAll('[data-testid="handle-button"],.wixui-login-social-bar button,.login-social-bar button');for(var i=0;i<btns.length;i++){var t=norm(btns[i].innerText||btns[i].getAttribute('aria-label'));if(t&&!/(log in|login|sign in|sign up|join)/.test(t))return true;}return false;}
-function suppressNativeNewsletter(){var boxes=document.querySelectorAll('[role="dialog"],[aria-modal="true"],[data-hook*="popup" i],[class*="lightbox" i],[class*="modal" i]');for(var i=0;i<boxes.length;i++){var b=boxes[i];if(b.id==='gbm-news-modal'||(b.closest&&b.closest('.gbm-modal')))continue;var t=norm(b.innerText);if(!t||!/(newsletter|subscribe|email address|gatorbait magazine|gatorbait weekly|today'?s edition|todays edition)/.test(t))continue;b.style.setProperty('display','none','important');b.setAttribute('aria-hidden','true');}}
+function suppressNativeNewsletter(){var boxes=document.querySelectorAll('[role="dialog"],[aria-modal="true"],[data-hook*="popup" i],[class*="lightbox" i],[class*="modal" i]');for(var i=0;i<boxes.length;i++){var b=boxes[i];if(b.id==='gbm-news-modal'||(b.closest&&b.closest('.gbm-modal')))continue;var t=norm(b.textContent);if(!t||!/(newsletter|subscribe|email address|gatorbait magazine|gatorbait weekly|today'?s edition|todays edition)/.test(t))continue;b.style.setProperty('display','none','important');b.setAttribute('aria-hidden','true');}}
 function showAccount(){
  var cancel=mail('Cancel my GatorBait membership','Please help me cancel my GatorBait membership/subscription at the end of the current billing period.\n\nName on account:\nEmail on account:');
  var unsub=mail('Unsubscribe me from GatorBait Magazine','Please unsubscribe this email address from GatorBait marketing/newsletter emails.\n\nEmail to remove:');
@@ -42,7 +42,32 @@ function accountControls(){
  var ul=nav.querySelector('ul');if(!ul)return;
  if(!old){var li=document.createElement('li');li.className='gbm-account-menu-item';li.innerHTML='<div><button type="button" data-gbm-account>Account & preferences</button></div>';ul.appendChild(li);}
 }
-function suppressAppInvite(){var all=document.querySelectorAll('body *');for(var i=0;i<all.length;i++){var e=all[i];if(e.closest&&e.closest('#gbm-live,.gbm-modal'))continue;var t=norm(e.innerText);if(!t||t.length>220)continue;if(t.indexOf('join us in our app')>-1||t.indexOf('join our app')>-1||t.indexOf('open in app')>-1||(t.indexOf('spaces by wix')>-1&&t.indexOf('join')>-1)){var box=e;for(var j=0;j<3&&box.parentElement&&box.parentElement!==document.body;j++){var p=box.parentElement;if(norm(p.innerText).length<=320)box=p;else break;}box.style.setProperty('display','none','important');box.setAttribute('aria-hidden','true');}}}
+var gbmInviteHidden=false;
+function suppressAppInvite(){
+ if(gbmInviteHidden)return;
+ /* Walk text nodes instead of reading innerText on every element.
+    innerText is layout-dependent, so the old body-* scan forced a synchronous
+    reflow per element, thousands of times per pass. textContent and a
+    TreeWalker read the same strings without touching layout. */
+ var hit=null,n,w;
+ try{w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null);}catch(e){return;}
+ while((n=w.nextNode())){
+  var pe=n.parentElement;if(!pe)continue;
+  var tag=pe.nodeName;if(tag==='SCRIPT'||tag==='STYLE'||tag==='NOSCRIPT')continue;
+  var t=norm(n.nodeValue);if(!t||t.length>220)continue;
+  if(t.indexOf('join us in our app')>-1||t.indexOf('join our app')>-1||t.indexOf('open in app')>-1||(t.indexOf('spaces by wix')>-1&&t.indexOf('join')>-1)){hit=pe;break;}
+ }
+ if(!hit)return;
+ if(hit.closest&&hit.closest('#gbm-live,.gbm-modal'))return;
+ var box=hit;
+ for(var j=0;j<3&&box.parentElement&&box.parentElement!==document.body;j++){
+  var p=box.parentElement;
+  if(norm(p.textContent).length<=320)box=p;else break;
+ }
+ box.style.setProperty('display','none','important');
+ box.setAttribute('aria-hidden','true');
+ gbmInviteHidden=true;
+}
 function route(){if(!home())document.documentElement.classList.remove('gbm-newsroom-boot','gbm-standalone-live');decorateHome();decoratePost();accountControls();suppressAppInvite();suppressNativeNewsletter();}
 document.addEventListener('click',function(e){var acc=e.target.closest&&e.target.closest('[data-gbm-account]');if(acc){e.preventDefault();showAccount();return}var w=e.target.closest&&e.target.closest('[data-gbm-writer]');if(w){e.preventDefault();var a=AUTHORS[w.getAttribute('data-gbm-writer')];if(a)showWriter(a);}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){close('gbm-news-modal');close('gbm-account-modal');close('gbm-writer-modal')}});
@@ -54,6 +79,9 @@ installRouteWatch();
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',route,{once:true});else route();
 window.addEventListener('popstate',routeSoon);
 window.addEventListener('gbmroutechange',routeSoon);
-[500,1500,5000,15000,30000,45000,60000].forEach(function(ms){setTimeout(function(){suppressAppInvite();suppressNativeNewsletter();},ms);});
-try{var pending=false;var o=new MutationObserver(function(){if(pending)return;pending=true;setTimeout(function(){pending=false;suppressAppInvite();suppressNativeNewsletter();},80);});o.observe(document.documentElement,{childList:true,subtree:true});setTimeout(function(){o.disconnect();},65000);}catch(e){}
+/* Suppression passes stop at 3s. Hiding an element at 30s, 45s or 60s
+   reflows the page under a reader who has already started reading - that is
+   the jump, not a rendering bug. */
+[400,1200,3000].forEach(function(ms){setTimeout(function(){suppressAppInvite();suppressNativeNewsletter();},ms);});
+try{var pending=false;var o=new MutationObserver(function(){if(pending)return;pending=true;setTimeout(function(){pending=false;suppressAppInvite();suppressNativeNewsletter();},80);});o.observe(document.documentElement,{childList:true,subtree:true});setTimeout(function(){o.disconnect();},8000);}catch(e){}
 })();

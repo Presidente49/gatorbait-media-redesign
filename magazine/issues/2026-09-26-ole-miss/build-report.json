@@ -1,0 +1,128 @@
+{
+  "status": "DRAFT_REVIEW_ONLY",
+  "articleCount": 4,
+  "words": 4366,
+  "selectedImages": [
+    "16b519_a0c1b7e3ce9846239402069349deab8c~mv2.jpg",
+    "a99769_9cea463d1045446d8550ce6aa803b0d3~mv2.jpeg",
+    "d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg"
+  ],
+  "skippedImages": [],
+  "articles": [
+    {
+      "id": "0c64d821-ed4d-4ed0-826e-751b8dea9497",
+      "title": "Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All",
+      "byline": "Buddy Martin",
+      "words": 1432,
+      "bodyBlocks": 35,
+      "omissions": [
+        {
+          "type": "image",
+          "id": "ae876a_86e7dbd7d2a84b8c9ad5177ddb72e1cd~mv2.jpg",
+          "reason": "issue-specific credited artwork selection replaces web art"
+        },
+        {
+          "type": "display-metadata",
+          "text": "By Buddy Martin"
+        },
+        {
+          "type": "display-metadata",
+          "text": "GatorBaitMedia.com"
+        },
+        {
+          "type": "image",
+          "id": "ae876a_4f679c88a0874683bdff16a73a8ebb1f~mv2.jpg",
+          "reason": "issue-specific credited artwork selection replaces web art"
+        }
+      ],
+      "source": {
+        "provider": "Wix Blog v3",
+        "url": "https://www.gatorbaitmedia.com/post/saturday-s-bill-comes-due-gators-ole-miss-and-the-promise-that-started-it-all",
+        "lastPublishedDate": "2026-09-22T12:56:57.574Z",
+        "readDate": "2026-09-24",
+        "preview": false
+      },
+      "fullBodyRequired": true
+    },
+    {
+      "id": "01b509ca-d99c-4161-b72c-86fa11e17e0d",
+      "title": "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!",
+      "byline": "Buddy Martin",
+      "words": 1148,
+      "bodyBlocks": 37,
+      "omissions": [
+        {
+          "type": "display-metadata",
+          "text": "BUDDY MARTIN | COLUMN"
+        },
+        {
+          "type": "display-metadata",
+          "text": "By Buddy Martin · GatorBaitMedia.com"
+        },
+        {
+          "type": "photo-credit",
+          "reason": "associated low-resolution web image not selected"
+        },
+        {
+          "type": "web-promotion",
+          "reason": "trailing related-story and subscribe section omitted"
+        }
+      ],
+      "source": {
+        "provider": "Wix Blog v3",
+        "readDate": "2026-09-24",
+        "preview": false,
+        "firstPublishedDate": "2026-09-23T18:49:40Z",
+        "lastPublishedDate": "2026-09-24T02:49:23.067Z",
+        "url": "https://www.gatorbaitmedia.com/post/sumrall-cussing-wife-wants-him-to-stop-buddy-martin"
+      },
+      "fullBodyRequired": true
+    },
+    {
+      "id": "de9245e1-3b2c-44cd-aa40-aa601bbde0cc",
+      "title": "Buster Faulkner's offense is anything but predictable",
+      "byline": "Franz Beard",
+      "words": 1321,
+      "bodyBlocks": 16,
+      "omissions": [
+        {
+          "type": "image",
+          "id": "16b519_a0c1b7e3ce9846239402069349deab8c~mv2.jpg",
+          "reason": "issue-specific credited artwork selection replaces web art"
+        }
+      ],
+      "source": {
+        "provider": "Wix Blog v3",
+        "readDate": "2026-09-24",
+        "preview": false,
+        "firstPublishedDate": "2026-09-23T14:37:17.383Z",
+        "lastPublishedDate": "2026-09-23T14:37:17.383Z",
+        "url": "https://www.gatorbaitmedia.com/post/buster-faulkner-s-offense-is-anything-but-predictable"
+      },
+      "fullBodyRequired": true
+    },
+    {
+      "id": "906a9b26-b442-4d3a-ba99-d57a1a3b3faa",
+      "title": "Florida After Auburn: 5 Signs Sumrall’s Gators Are Rising",
+      "byline": "Eddie Gilley",
+      "words": 465,
+      "bodyBlocks": 13,
+      "omissions": [],
+      "source": {
+        "provider": "Wix Blog v3",
+        "readDate": "2026-09-24",
+        "preview": false,
+        "firstPublishedDate": "2026-09-22T12:42:05.709Z",
+        "lastPublishedDate": "2026-09-22T12:42:05.709Z",
+        "url": "https://www.gatorbaitmedia.com/post/florida-after-auburn-5-signs-sumrall-gators-rising"
+      },
+      "fullBodyRequired": true
+    }
+  ],
+  "releaseGates": [
+    "editorial proof",
+    "photography rights for separate paid issue",
+    "approved price",
+    "verified paid-download delivery"
+  ]
+}

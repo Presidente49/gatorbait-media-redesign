@@ -3,9 +3,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GatorBait Magazine - Ole Miss Pregame Issue</title>
 <meta name="robots" content="noindex">
-<style>/* Print-first. No webfonts on purpose: a font request is a network call, and
-   this issue has to render identically with no network at all. System serifs
-   print well and cost nothing. */
+<style>/* Print-first, and still no network: the display face is embedded from a
+   local file, not fetched, so the issue renders identically offline. Body
+   stays a system serif - Georgia sets long-form beautifully and costs
+   nothing. See assets/type.css for the sitewide reasoning. */
+
+@font-face{
+  font-family:"Big Shoulders";
+  src:url("../../../assets/fonts/BigShoulders-Bold.woff2") format("woff2");
+  font-weight:700; font-style:normal;
+}
+@font-face{
+  font-family:"Big Shoulders";
+  src:url("../../../assets/fonts/BigShoulders-Regular.woff2") format("woff2");
+  font-weight:400; font-style:normal;
+}
 
 @page { size: Letter; margin: 16mm 15mm 18mm; }
 
@@ -37,24 +49,26 @@ body{
   page-break-after:always; break-after:page; min-height:247mm;
 }
 .masthead{
-  margin:0; font:700 34pt/0.95 Georgia,serif; letter-spacing:-.6pt; color:#fff;
+  margin:0; font:700 46pt/0.86 "Big Shoulders",Arial,sans-serif;
+  letter-spacing:-.4pt; text-transform:uppercase; color:#fff;
 }
 .masthead span{color:var(--orange)}
 .issue-line{
   margin:5mm 0 0; padding-top:3mm; border-top:2.5pt solid var(--orange);
-  font:700 9.5pt/1.3 "Helvetica Neue",Arial,sans-serif;
+  font:700 11pt/1.3 "Big Shoulders",Arial,sans-serif;
   letter-spacing:1.6pt; text-transform:uppercase; color:#cdd6e6;
 }
 .cover-art{margin:9mm 0 7mm; border:1pt solid rgba(255,255,255,.22)}
 .cover-art img{display:block; width:100%; height:auto}
 .cover h1{
-  margin:0; font:700 27pt/1.12 Georgia,serif; letter-spacing:-.4pt; color:#fff;
+  margin:0; font:700 42pt/1.02 "Big Shoulders",Arial,sans-serif;
+  letter-spacing:-.3pt; text-transform:uppercase; color:#fff;
 }
 .cover-deck{margin:4mm 0 0; font:italic 400 12pt/1.45 Georgia,serif; color:#c6d0e2}
 
 .contents{margin:11mm 0 0; border-top:1pt solid rgba(255,255,255,.28); padding-top:5mm}
 .contents-title{
-  margin:0 0 3mm; font:700 8.5pt/1 "Helvetica Neue",Arial,sans-serif;
+  margin:0 0 3mm; font:700 10pt/1 "Big Shoulders",Arial,sans-serif;
   letter-spacing:2pt; text-transform:uppercase; color:var(--orange);
 }
 .contents ol{margin:0; padding:0; list-style:none}
@@ -73,14 +87,15 @@ body{
 .story{page-break-before:always; break-before:page}
 .story-head{border-bottom:2.5pt solid var(--navy); padding-bottom:4mm; margin-bottom:6mm}
 .kicker{
-  margin:0 0 2.5mm; font:700 8pt/1 "Helvetica Neue",Arial,sans-serif;
+  margin:0 0 2.5mm; font:700 9.5pt/1 "Big Shoulders",Arial,sans-serif;
   letter-spacing:2.2pt; text-transform:uppercase; color:var(--orange);
 }
 .story-head h2{
-  margin:0; font:700 22pt/1.14 Georgia,serif; letter-spacing:-.35pt; color:var(--navy);
+  margin:0; font:700 33pt/1.04 "Big Shoulders",Arial,sans-serif;
+  letter-spacing:-.2pt; color:var(--navy);
 }
 .byline{
-  margin:3mm 0 0; font:700 8.5pt/1 "Helvetica Neue",Arial,sans-serif;
+  margin:3mm 0 0; font:700 10pt/1 "Big Shoulders",Arial,sans-serif;
   letter-spacing:1.4pt; text-transform:uppercase; color:var(--muted);
 }
 
@@ -101,7 +116,7 @@ figcaption{
   margin:1mm 2mm 0 0;
 }
 .story-body h3{
-  margin:5mm 0 2.5mm; font:700 8.5pt/1.25 "Helvetica Neue",Arial,sans-serif;
+  margin:5mm 0 2.5mm; font:700 10.5pt/1.2 "Big Shoulders",Arial,sans-serif;
   letter-spacing:1.5pt; text-transform:uppercase; color:var(--navy);
   break-after:avoid; page-break-after:avoid;
 }
@@ -117,7 +132,7 @@ blockquote{
   display:flex; align-items:center; justify-content:center; min-height:180mm;
 }
 .endmark p{
-  margin:0; font:700 8.5pt/1 "Helvetica Neue",Arial,sans-serif;
+  margin:0; font:700 10pt/1 "Big Shoulders",Arial,sans-serif;
   letter-spacing:2.4pt; text-transform:uppercase; color:var(--muted);
 }
 

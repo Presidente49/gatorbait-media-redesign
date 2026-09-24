@@ -35,8 +35,13 @@
   --gb-dark-ink-soft:#9aa5c4;
 
   /* Type */
-  --gb-font-display:"Georgia","Times New Roman",serif;
-  --gb-font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  /* Display is now Big Shoulders; see assets/type.css for the @font-face
+     declarations, the metric-matched fallback and the reasoning. Body moved to
+     Georgia: it was previously set to the UI sans stack, which meant article
+     text and interface chrome were indistinguishable. */
+  --gb-font-display:"Big Shoulders","GB Display Fallback","Arial Narrow",Arial,sans-serif;
+  --gb-font-body:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --gb-font-ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --gb-font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
 
   --gb-size-hero:clamp(1.9rem,4.2vw,3.2rem);

@@ -1,0 +1,57 @@
+name: Newsletter link gate
+
+# Publishing & Email QC reproduced the attribution defect on 2026-09-23: the
+# MJML source carries valid XML entities (&amp;) in its UTM query strings, and
+# the Wix campaign renderer emits them literally, so a reader's browser parses
+# `amp;utm_medium` and only utm_source survives as a real UTM field.
+#
+# A finding that lives in an issue comment does not stop the next send. This
+# does: any newsletter source committed here is parsed the way a browser would
+# read it, and the job fails before anyone can schedule it.
+
+on:
+  push:
+    paths:
+      - 'newsletter/**'
+      - 'automation/newsletter/**'
+      - '.github/workflows/newsletter-links.yml'
+  pull_request:
+    paths:
+      - 'newsletter/**'
+      - 'automation/newsletter/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      # Already-sent editions are history and cannot be repaired by failing a
+      # build, so they are reported but never block. Anything unsent must pass.
+      - name: Check newsletter links
+        run: |
+          set -o pipefail
+          status=0
+          for f in newsletter/*.mjml newsletter/*.html; do
+            [ -e "$f" ] || continue
+            echo "::group::$f"
+            if node automation/newsletter/check-links.mjs "$f"; then
+              echo "PASS $f"
+            else
+              case "$f" in
+                newsletter/2026-09-23-buddy-four-story.*|newsletter/2026-09-18-*)
+                  echo "::warning file=$f::already sent — recorded, not blocking" ;;
+                *)
+                  echo "::error file=$f::unsent newsletter has broken tracking links"
+                  status=1 ;;
+              esac
+            fi
+            echo "::endgroup::"
+          done
+          exit $status

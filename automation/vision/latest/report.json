@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-24T04:00:55.322Z",
+  "capturedAt": "2026-09-24T04:09:09.434Z",
   "runs": [
     {
       "profile": "mobile",
@@ -7,6 +7,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-mobile.jpg",
       "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
@@ -124,6 +125,40 @@
         "height": 230,
         "top": 125
       },
+      "typeInUse": [
+        {
+          "spec": "heading|Georgia|19px|700",
+          "chars": 527
+        },
+        {
+          "spec": "heading|Georgia|20px|700",
+          "chars": 366
+        },
+        {
+          "spec": "body|Arial|14px|400",
+          "chars": 135
+        },
+        {
+          "spec": "heading|Georgia|23px|700",
+          "chars": 110
+        },
+        {
+          "spec": "heading|Georgia|18px|700",
+          "chars": 110
+        },
+        {
+          "spec": "heading|Georgia|31px|700",
+          "chars": 72
+        },
+        {
+          "spec": "heading|Georgia|28px|700",
+          "chars": 57
+        },
+        {
+          "spec": "heading|Arial|18px|800",
+          "chars": 28
+        }
+      ],
       "layoutViewport": 320,
       "docScrollWidth": 320
     },
@@ -236,6 +271,16 @@
       "smallTapTargets": 24,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "heading|Georgia|21px|700",
+          "chars": 284
+        },
+        {
+          "spec": "heading|Georgia|27px|700",
+          "chars": 24
+        }
+      ],
       "layoutViewport": 320,
       "docScrollWidth": 320
     },
@@ -245,6 +290,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/article-mobile.jpg",
       "consoleErrors": [
+        "[Report Only] Refused to frame 'https://www.google.com/' because an ancestor violates the following Content Security Policy directive: \"frame-ancestors 'self'\".\n",
         "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
@@ -349,6 +395,16 @@
       "smallTapTargets": 33,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "body|-apple-system|16px|400",
+          "chars": 5881
+        },
+        {
+          "spec": "heading|Georgia|25px|700",
+          "chars": 82
+        }
+      ],
       "bodyMeasure": 36,
       "bodyParagraphs": 23,
       "layoutViewport": 320,
@@ -360,6 +416,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-phone390.jpg",
       "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
@@ -476,6 +533,40 @@
         "height": 230,
         "top": 125
       },
+      "typeInUse": [
+        {
+          "spec": "heading|Georgia|19px|700",
+          "chars": 527
+        },
+        {
+          "spec": "heading|Georgia|20px|700",
+          "chars": 366
+        },
+        {
+          "spec": "body|Arial|14px|400",
+          "chars": 135
+        },
+        {
+          "spec": "heading|Georgia|23px|700",
+          "chars": 110
+        },
+        {
+          "spec": "heading|Georgia|18px|700",
+          "chars": 110
+        },
+        {
+          "spec": "heading|Georgia|31px|700",
+          "chars": 72
+        },
+        {
+          "spec": "heading|Georgia|28px|700",
+          "chars": 57
+        },
+        {
+          "spec": "heading|Arial|18px|800",
+          "chars": 28
+        }
+      ],
       "layoutViewport": 320,
       "docScrollWidth": 320
     },
@@ -485,6 +576,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/blog-phone390.jpg",
       "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
       ],
       "candidate": {
@@ -587,6 +679,16 @@
       "smallTapTargets": 24,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "heading|Georgia|21px|700",
+          "chars": 284
+        },
+        {
+          "spec": "heading|Georgia|27px|700",
+          "chars": 24
+        }
+      ],
       "layoutViewport": 320,
       "docScrollWidth": 320
     },
@@ -700,6 +802,16 @@
       "smallTapTargets": 33,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "body|-apple-system|16px|400",
+          "chars": 5881
+        },
+        {
+          "spec": "heading|Georgia|25px|700",
+          "chars": 82
+        }
+      ],
       "bodyMeasure": 36,
       "bodyParagraphs": 23,
       "layoutViewport": 320,
@@ -711,6 +823,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-phone430.jpg",
       "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
@@ -827,6 +940,40 @@
         "height": 230,
         "top": 125
       },
+      "typeInUse": [
+        {
+          "spec": "heading|Georgia|19px|700",
+          "chars": 527
+        },
+        {
+          "spec": "heading|Georgia|20px|700",
+          "chars": 366
+        },
+        {
+          "spec": "body|Arial|14px|400",
+          "chars": 135
+        },
+        {
+          "spec": "heading|Georgia|23px|700",
+          "chars": 110
+        },
+        {
+          "spec": "heading|Georgia|18px|700",
+          "chars": 110
+        },
+        {
+          "spec": "heading|Georgia|31px|700",
+          "chars": 72
+        },
+        {
+          "spec": "heading|Georgia|28px|700",
+          "chars": 57
+        },
+        {
+          "spec": "heading|Arial|18px|800",
+          "chars": 28
+        }
+      ],
       "layoutViewport": 320,
       "docScrollWidth": 320
     },
@@ -939,6 +1086,16 @@
       "smallTapTargets": 24,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "heading|Georgia|21px|700",
+          "chars": 284
+        },
+        {
+          "spec": "heading|Georgia|27px|700",
+          "chars": 24
+        }
+      ],
       "layoutViewport": 320,
       "docScrollWidth": 320
     },
@@ -949,7 +1106,7 @@
       "screenshot": "automation/vision/latest/article-phone430.jpg",
       "consoleErrors": [
         "Failed to load resource: the server responded with a status of 429 ()",
-        "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/article-phone430-candidate.jpg",
@@ -1052,6 +1209,16 @@
       "smallTapTargets": 33,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "body|-apple-system|16px|400",
+          "chars": 5881
+        },
+        {
+          "spec": "heading|Georgia|25px|700",
+          "chars": 82
+        }
+      ],
       "bodyMeasure": 36,
       "bodyParagraphs": 23,
       "layoutViewport": 320,
@@ -1132,6 +1299,40 @@
         "height": 425,
         "top": 235
       },
+      "typeInUse": [
+        {
+          "spec": "heading|Georgia|20px|700",
+          "chars": 707
+        },
+        {
+          "spec": "heading|Georgia|23px|700",
+          "chars": 637
+        },
+        {
+          "spec": "body|roboto-bold|14px|400",
+          "chars": 214
+        },
+        {
+          "spec": "body|Arial|15px|400",
+          "chars": 135
+        },
+        {
+          "spec": "heading|Georgia|31px|700",
+          "chars": 72
+        },
+        {
+          "spec": "heading|Georgia|35px|700",
+          "chars": 57
+        },
+        {
+          "spec": "heading|Arial|18px|800",
+          "chars": 28
+        },
+        {
+          "spec": "heading|Georgia|29px|700",
+          "chars": 23
+        }
+      ],
       "bodyMeasure": 0,
       "bodyParagraphs": 1,
       "layoutViewport": 1280,
@@ -1202,6 +1403,16 @@
           "ancestry": "a.blog-navigation-container-color < li < ul.LnLd_R < nav.AsxoCK"
         }
       ],
+      "typeInUse": [
+        {
+          "spec": "heading|Georgia|23px|700",
+          "chars": 751
+        },
+        {
+          "spec": "heading|Georgia|34px|700",
+          "chars": 24
+        }
+      ],
       "layoutViewport": 1280,
       "docScrollWidth": 1280
     },
@@ -1257,6 +1468,24 @@
       "smallTapTargets": 39,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "body|-apple-system|17px|400",
+          "chars": 5881
+        },
+        {
+          "spec": "heading|Georgia|36px|700",
+          "chars": 82
+        },
+        {
+          "spec": "heading|Georgia|18px|400",
+          "chars": 13
+        },
+        {
+          "spec": "heading|Georgia|16px|400",
+          "chars": 10
+        }
+      ],
       "bodyMeasure": 87,
       "bodyParagraphs": 23,
       "layoutViewport": 1280,
@@ -1281,6 +1510,36 @@
       "smallTapTargets": 5,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "heading|Newsreader|18px|600",
+          "chars": 374
+        },
+        {
+          "spec": "body|Barlow|18px|400",
+          "chars": 135
+        },
+        {
+          "spec": "body|Barlow|16px|400",
+          "chars": 130
+        },
+        {
+          "spec": "heading|Newsreader|21px|600",
+          "chars": 81
+        },
+        {
+          "spec": "heading|Newsreader|34px|700",
+          "chars": 57
+        },
+        {
+          "spec": "heading|Newsreader|24px|700",
+          "chars": 53
+        },
+        {
+          "spec": "heading|Barlow Condensed|19px|700",
+          "chars": 6
+        }
+      ],
       "layoutViewport": 390,
       "docScrollWidth": 390
     },
@@ -1303,6 +1562,36 @@
       "smallTapTargets": 5,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "heading|Newsreader|18px|600",
+          "chars": 374
+        },
+        {
+          "spec": "body|Barlow|18px|400",
+          "chars": 135
+        },
+        {
+          "spec": "body|Barlow|16px|400",
+          "chars": 130
+        },
+        {
+          "spec": "heading|Newsreader|21px|600",
+          "chars": 81
+        },
+        {
+          "spec": "heading|Newsreader|34px|700",
+          "chars": 57
+        },
+        {
+          "spec": "heading|Newsreader|24px|700",
+          "chars": 53
+        },
+        {
+          "spec": "heading|Barlow Condensed|19px|700",
+          "chars": 6
+        }
+      ],
       "layoutViewport": 390,
       "docScrollWidth": 390
     },
@@ -1325,6 +1614,36 @@
       "smallTapTargets": 5,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "heading|Newsreader|18px|600",
+          "chars": 374
+        },
+        {
+          "spec": "body|Barlow|18px|400",
+          "chars": 135
+        },
+        {
+          "spec": "body|Barlow|16px|400",
+          "chars": 130
+        },
+        {
+          "spec": "heading|Newsreader|21px|600",
+          "chars": 81
+        },
+        {
+          "spec": "heading|Newsreader|35px|700",
+          "chars": 57
+        },
+        {
+          "spec": "heading|Newsreader|24px|700",
+          "chars": 53
+        },
+        {
+          "spec": "heading|Barlow Condensed|19px|700",
+          "chars": 6
+        }
+      ],
       "layoutViewport": 430,
       "docScrollWidth": 430
     },
@@ -1347,6 +1666,36 @@
       "smallTapTargets": 3,
       "retiredBranding": [],
       "retiredBrandingWhere": [],
+      "typeInUse": [
+        {
+          "spec": "heading|Newsreader|22px|600",
+          "chars": 374
+        },
+        {
+          "spec": "body|Barlow|18px|400",
+          "chars": 135
+        },
+        {
+          "spec": "body|Barlow|16px|400",
+          "chars": 130
+        },
+        {
+          "spec": "heading|Newsreader|26px|600",
+          "chars": 81
+        },
+        {
+          "spec": "heading|Newsreader|66px|700",
+          "chars": 57
+        },
+        {
+          "spec": "heading|Newsreader|34px|700",
+          "chars": 53
+        },
+        {
+          "spec": "heading|Barlow Condensed|19px|700",
+          "chars": 6
+        }
+      ],
       "layoutViewport": 1280,
       "docScrollWidth": 1280
     }

@@ -13,8 +13,13 @@ const TARGETS = [
   { name: 'blog', url: 'https://www.gatorbaitmedia.com/gatorbait-media-blogs' },
 ];
 
+// 390 and 430 are the widths the Magazine/homepage acceptance gates name.
+// 320 stays because Wix actually serves a 320px layout to the narrowest phones,
+// which is below every breakpoint the embeds define.
 const PROFILES = [
   { name: 'mobile', device: devices['iPhone 13'] },
+  { name: 'phone390', device: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true } },
+  { name: 'phone430', device: { viewport: { width: 430, height: 932 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true } },
   { name: 'desktop', device: { viewport: { width: 1280, height: 900 }, deviceScaleFactor: 1 } },
 ];
 
@@ -93,6 +98,43 @@ function audit() {
     .filter((s) => document.body.innerText.includes(s));
   if (out.retiredBranding.length) {
     out.findings.push('Retired branding present: ' + out.retiredBranding.join(', '));
+  }
+
+  // Does a reader see journalism above the fold, or only furniture? Scoped to
+  // the rendered newsroom so header navigation cannot pass this check for it.
+  if (live && live.children.length) {
+    const heads = [];
+    live.querySelectorAll('h1,h2,h3,h4,a').forEach((el) => {
+      const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      if (t.length < 20) return;
+      const r = el.getBoundingClientRect();
+      if (r.width < 40 || r.height < 8) return;
+      if (getComputedStyle(el).visibility === 'hidden') return;
+      heads.push({ text: t.slice(0, 90), top: Math.round(r.top + scrollY), tag: el.tagName.toLowerCase() });
+    });
+    heads.sort((a, b) => a.top - b.top);
+    out.firstHeadline = heads[0] || null;
+    // Fully legible, not one clipped line peeking over the edge.
+    out.headlineAboveFold = !!(heads[0] && heads[0].top + 20 <= innerHeight);
+    if (!out.headlineAboveFold) {
+      out.findings.push(
+        heads[0]
+          ? `No story text above the fold: first headline starts at ${heads[0].top}px in a ${innerHeight}px viewport`
+          : 'No story text rendered in the newsroom at all'
+      );
+    }
+
+    // On a phone the lead photo is what pushes the headline under the fold.
+    const leadImg = live.querySelector('img');
+    if (leadImg) {
+      const r = leadImg.getBoundingClientRect();
+      out.leadImage = { width: Math.round(r.width), height: Math.round(r.height), top: Math.round(r.top + scrollY) };
+      if (r.height > innerHeight * 0.6) {
+        out.findings.push(
+          `Lead image is ${Math.round(r.height)}px tall in a ${innerHeight}px viewport (${Math.round((r.height / innerHeight) * 100)}% of the screen)`
+        );
+      }
+    }
   }
 
   out.docScrollWidth = document.documentElement.scrollWidth;
@@ -242,6 +284,10 @@ for (const r of report.runs) {
   lines.push(`newsroom mounted: ${r.hasNewsroom} (${r.newsroomChildren} children) · native pages visible: ${r.nativePagesVisible}`);
   if (r.header) lines.push(`header ${r.header.height}px rendered, overflow ${r.header.overflow}, content ${r.header.scrollHeight}px`);
   lines.push(`tap targets under 44px: ${r.smallTapTargets}`);
+  if (r.headlineAboveFold !== undefined) {
+    lines.push(`story text above the fold: ${r.headlineAboveFold}` + (r.firstHeadline ? ` (first headline at ${r.firstHeadline.top}px — "${r.firstHeadline.text}")` : ''));
+  }
+  if (r.leadImage) lines.push(`lead image ${r.leadImage.width}x${r.leadImage.height}px at y=${r.leadImage.top}`);
   if (r.imagesLoaded) lines.push(`images loaded: ${r.imagesLoaded}`);
   lines.push(r.findings.length ? '\n**Findings**\n' + r.findings.map((f) => '- ' + f).join('\n') : '\nNo findings.');
   if (r.consoleErrors.length) lines.push('\nConsole errors:\n' + r.consoleErrors.map((e) => '- `' + e + '`').join('\n'));

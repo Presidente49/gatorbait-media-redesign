@@ -1,8 +1,8 @@
 {
   "service": "gatorbait-ops-hub",
   "version": 2,
-  "checked_at": "2026-09-23T23:10:47.057002+00:00",
-  "ok": false,
+  "checked_at": "2026-09-24T01:26:04.502605+00:00",
+  "ok": true,
   "checks": [
     {
       "name": "Homepage",
@@ -10,7 +10,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/?ops_health=1",
-      "seconds": 2.62,
+      "seconds": 0.25,
       "error": ""
     },
     {
@@ -19,7 +19,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/magazine",
-      "seconds": 3.12,
+      "seconds": 0.31,
       "error": ""
     },
     {
@@ -28,7 +28,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/the-buddy-martin-show",
-      "seconds": 2.52,
+      "seconds": 0.27,
       "error": ""
     },
     {
@@ -37,7 +37,7 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/pricing-plans",
-      "seconds": 2.66,
+      "seconds": 0.32,
       "error": ""
     },
     {
@@ -46,17 +46,17 @@
       "ok": true,
       "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/policies",
-      "seconds": 2.09,
+      "seconds": 0.63,
       "error": ""
     },
     {
       "name": "Contact",
       "url": "https://www.gatorbaitmedia.com/contact",
-      "ok": false,
-      "status": 0,
+      "ok": true,
+      "status": 200,
       "final_url": "https://www.gatorbaitmedia.com/contact",
-      "seconds": 3.53,
-      "error": "HTTP Error 500: Internal Server Error"
+      "seconds": 2.2,
+      "error": ""
     },
     {
       "name": "Merch Store",
@@ -64,28 +64,26 @@
       "ok": true,
       "status": 200,
       "final_url": "https://gatorbait2026.itemorder.com/shop/home/",
-      "seconds": 1.85,
+      "seconds": 1.82,
       "error": ""
     }
   ],
   "controller": {
     "architecture": "single-controller",
-    "phase": "verify",
-    "decision": "verify_again",
-    "reason": "first deterministic failure; confirm before escalation",
-    "failed_checks": [
-      "Contact"
-    ],
-    "failure_fingerprint": "e2291113d6fecef9",
-    "consecutive_failed_cycles": 1,
-    "next_check_seconds": 90,
+    "phase": "observe",
+    "decision": "recovered",
+    "reason": "deterministic checks are healthy",
+    "failed_checks": [],
+    "failure_fingerprint": "",
+    "consecutive_failed_cycles": 0,
+    "next_check_seconds": 900,
     "model_required": false,
     "production_write_authorized": false
   },
   "learning": {
     "enabled": true,
-    "total_cycles": 21,
-    "healthy_cycles": 13,
+    "total_cycles": 22,
+    "healthy_cycles": 14,
     "incident_episodes": 4,
     "tracked_incidents": 3,
     "review_candidates": 1,

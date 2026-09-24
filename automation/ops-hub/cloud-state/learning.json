@@ -1,8 +1,8 @@
 {
   "version": 1,
   "enabled": true,
-  "total_cycles": 21,
-  "healthy_cycles": 13,
+  "total_cycles": 22,
+  "healthy_cycles": 14,
   "incident_episodes": 4,
   "incidents": {
     "58dd26a4ed743ede": {
@@ -41,8 +41,8 @@
       "episodes": 1,
       "failed_cycles": 1,
       "escalations": 0,
-      "recoveries": 0,
-      "last_recovered": null
+      "recoveries": 1,
+      "last_recovered": "2026-09-24T01:26:04.502605+00:00"
     }
   },
   "candidates": [
@@ -62,7 +62,7 @@
       "status": "review_candidate"
     }
   ],
-  "last_updated": "2026-09-23T23:10:47.057002+00:00",
+  "last_updated": "2026-09-24T01:26:04.502605+00:00",
   "policy": {
     "auto_promote_to_doctrine": false,
     "auto_authorize_production_writes": false,

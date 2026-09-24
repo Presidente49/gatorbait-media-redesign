@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-IDENTITY = ("project_id", "work_item_id", "stage", "artifact", "revision")
+IDENTITY = ("project_id", "work_item_id", "stage", "artifact", "revision", "scope")
 
 
 def _filled(value: Any) -> bool:

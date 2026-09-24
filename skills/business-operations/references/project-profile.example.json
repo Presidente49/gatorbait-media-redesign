@@ -1,0 +1,23 @@
+{
+  "profile_version": 1,
+  "project_id": "REPLACE_WITH_BUSINESS_KEY",
+  "controller": "REPLACE_WITH_EXISTING_CONTROLLER",
+  "work_item_source": "REPLACE_WITH_EXISTING_RECORD_LOCATION",
+  "authority_sources": [],
+  "existing_specialists": {},
+  "upstream_root": ".agents/marketingskills",
+  "default_mode": "read-only",
+  "authorized_actions": [],
+  "approval_required": [
+    "spending",
+    "publishing or sending without specific authority",
+    "account/access changes",
+    "pricing/payment changes",
+    "destructive data changes"
+  ],
+  "current_state_source": "REPLACE_WITH_PROVIDER_OR_CURRENT_STATE_POINTER",
+  "existing_schedule_source": "REPLACE_WITH_EXISTING_SCHEDULE_POINTER_OR_NONE",
+  "success_measure": "REPLACE_WITH_ONE_MEASURE_AND_DENOMINATOR",
+  "private_evidence_location": "REPLACE_WITH_AUTHORIZED_PRIVATE_STORE",
+  "portable_lesson_review_owner": "REPLACE_WITH_REVIEWER"
+}

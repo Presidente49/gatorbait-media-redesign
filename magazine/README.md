@@ -35,3 +35,31 @@ the opening sentence — verified on post `b3adef75`.
 The API needs credentials, which never go near CI or a commit, so the fetch is
 run from an authenticated session and the normalized result is written to
 `build-cache/posts/<id>.json`. CI then builds and renders without secrets.
+
+## Image provenance — read this before selling an issue
+
+Every build prints each photograph's URL under "photography in this issue".
+**Look at them.** The first render of the Ole Miss issue put a frame carrying a
+visible `© Tim Casey / GatorCountry.com` watermark on the cover and again as
+the lead story's hero. A competitor's copyright notice on the cover of an issue
+you charge for is a licensing problem, not a design nit, and no automated check
+can read a watermark baked into pixels. A person has to look.
+
+The build does enforce what it can:
+
+- **no outbound links** anywhere in the issue, or the build fails
+- **no image used twice** inside one issue, or the build fails — the rule from
+  `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md` §4.3
+- the cover story does not repeat the cover frame as its own hero; it opens on
+  its first inline photograph instead
+
+## Open-source worth adopting: Paged.js
+
+Chromium's `page.pdf()` paginates, but gives no page numbers, no running
+headers and no margin boxes — the things that separate a magazine from a
+printout. [Paged.js](https://github.com/pagedjs/pagedjs) (MIT, ~1.5k stars)
+polyfills the CSS Paged Media and Generated Content modules and supports all
+three. It is a build-time npm dependency running inside the CI Chromium that is
+already here: no service, no account, no recurring cost.
+[Vivliostyle](https://vivliostyle.org/) solves the same problem via a CLI and is
+the alternative if Paged.js disappoints.

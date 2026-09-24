@@ -78,7 +78,7 @@ def looks_like_subhead(text: str) -> bool:
     return 3 < len(stripped) <= 60 and not stripped.endswith((".", "!", "?", ":", "”", '"'))
 
 
-def build_article(art: dict, report: list) -> str:
+def build_article(art: dict, report: list, used_images: dict, cover_id: str | None = None) -> str:
     blocks = list(art.get("blocks", []))
     ignore_bold = mostly_bold(blocks)
 
@@ -86,13 +86,23 @@ def build_article(art: dict, report: list) -> str:
     byline = None
     credit = None
     notes = []
+    images_used = []
 
     # Hoist a leading image out of the body so it can run full measure.
     for i, b in enumerate(blocks[:2]):
         if b["k"] == "img":
             hero = blocks.pop(i)
             break
-    if hero is None and art.get("cover"):
+    if hero is not None and cover_id and hero.get("id") == cover_id:
+        notes.append("hero dropped: already the issue cover")
+        hero = None
+        for i, b in enumerate(blocks):
+            if b["k"] == "img" and b.get("id") != cover_id:
+                hero = blocks.pop(i)
+                notes.append("hero promoted from first inline photograph")
+                break
+
+    if hero is None and art.get("cover") and (art.get("cover") or {}).get("id") != cover_id:
         cov = art["cover"]
         hero = {"k": "img", "id": cov["id"], "w": cov.get("w") or 1200, "h": cov.get("h") or 800}
         notes.append("hero taken from cover")
@@ -133,10 +143,12 @@ def build_article(art: dict, report: list) -> str:
 
     if hero:
         parts.append('<figure class="hero">')
+        hero_h = max(1, round(1400 * (hero.get("h") or 2) / (hero.get("w") or 3)))
+        images_used.append({"id": hero["id"], "role": "hero", "url": img_url(hero["id"], 1400, hero_h)})
+        used_images.setdefault(hero["id"], []).append(art["title"].strip())
         parts.append(
             '<img src="%s" width="%d" height="%d" alt="%s">'
-            % (img_url(hero["id"], 1400, max(1, round(1400 * (hero.get("h") or 2) / (hero.get("w") or 3)))),
-               1400, max(1, round(1400 * (hero.get("h") or 2) / (hero.get("w") or 3))),
+            % (img_url(hero["id"], 1400, hero_h), 1400, hero_h,
                esc((art.get("cover") or {}).get("alt") or ""))
         )
         if credit:
@@ -149,6 +161,8 @@ def build_article(art: dict, report: list) -> str:
     for b in keep:
         if b["k"] == "img":
             h = max(1, round(900 * (b.get("h") or 2) / (b.get("w") or 3)))
+            images_used.append({"id": b["id"], "role": "inline", "url": img_url(b["id"], 900, h)})
+            used_images.setdefault(b["id"], []).append(art["title"].strip())
             parts.append(
                 '<figure class="inline"><img src="%s" width="900" height="%d" alt=""></figure>'
                 % (img_url(b["id"], 900, h), h)
@@ -170,13 +184,14 @@ def build_article(art: dict, report: list) -> str:
     parts.append("</div></article>")
 
     report.append({
+        "images": images_used,
         "title": art["title"].strip(),
         "byline": byline,
         "credit": credit,
         "boldNeutralised": ignore_bold,
         "subheads": subheads,
         "words": len(re.sub(r"\s+", " ", " ".join(run_text(b) for b in keep if b["k"] != "img")).split()),
-        "images": 1 if hero else 0,
+        "imageCount": len(images_used),
         "notes": notes,
     })
     return "\n".join(parts)
@@ -199,7 +214,9 @@ def main(issue_dir: str) -> int:
         return 1
 
     report: list = []
-    bodies = [build_article(a, report) for a in articles]
+    used_images: dict = {}
+    cover_id = (articles[0].get("cover") or {}).get("id")
+    bodies = [build_article(a, report, used_images, cover_id) for a in articles]
 
     contents = "\n".join(
         '<li><span class="n">%d</span><span class="t">%s</span></li>' % (i + 1, esc(a["title"].strip()))
@@ -244,6 +261,9 @@ def main(issue_dir: str) -> int:
     out.write_text(html_doc, encoding="utf-8")
     (base / "build-report.json").write_text(json.dumps(report, indent=1), encoding="utf-8")
 
+    # Wix serves the same asset under one id, so a repeat is a real repeat.
+    repeats = {k: v for k, v in used_images.items() if len(v) > 1}
+
     total = sum(r["words"] for r in report)
     print("issue: %s" % meta["title"])
     print("wrote %s  (%d bytes)" % (out.relative_to(ROOT), out.stat().st_size))
@@ -254,6 +274,18 @@ def main(issue_dir: str) -> int:
                  ("  [" + "; ".join(r["notes"]) + "]") if r["notes"] else ""))
         if r["boldNeutralised"]:
             print("      note: source marked nearly every run bold; bold ignored for this story")
+    print("\nphotography in this issue - check each one for a third-party watermark")
+    for r in report:
+        for im in r["images"]:
+            print("  %-7s %s" % (im["role"], im["url"]))
+
+    if repeats:
+        print("")
+        for k, where in repeats.items():
+            print("::error::image %s is used more than once (cover and/or %s)" % (k[:34], "; ".join(where)))
+        print("One visual slot, one image. Reusing art inside an issue reads as a mistake.")
+        return 1
+
     if "<a " in html_doc or "href=" in html_doc:
         print("::error::issue contains a link - it must be self-contained")
         return 1

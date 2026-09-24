@@ -1,12 +1,22 @@
 [
  {
+  "images": [
+   {
+    "id": "ae876a_4f679c88a0874683bdff16a73a8ebb1f~mv2.jpg",
+    "role": "hero",
+    "url": "https://static.wixstatic.com/media/ae876a_4f679c88a0874683bdff16a73a8ebb1f~mv2.jpg/v1/fill/w_1400,h_2100,al_c,q_88,enc_auto/file.jpg"
+   }
+  ],
   "title": "Saturday\u2019s Bill Comes Due: Gators, Ole Miss, and \u2018The Promise\u2019 That Started It All",
   "byline": "Buddy Martin",
   "credit": null,
   "boldNeutralised": true,
   "subheads": 3,
   "words": 1432,
-  "images": 1,
-  "notes": []
+  "imageCount": 1,
+  "notes": [
+   "hero dropped: already the issue cover",
+   "hero promoted from first inline photograph"
+  ]
  }
 ]

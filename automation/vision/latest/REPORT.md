@@ -1,4 +1,4 @@
-# Live site vision — 2026-09-24T03:22:37.636Z
+# Live site vision — 2026-09-24T03:25:53.471Z
 
 ## URL checks
 
@@ -15,19 +15,19 @@ HTTP 200 · viewport 320px · root classes `gbm-gazette-live gbm-standalone-live
 newsroom mounted: true (3 children) · native pages visible: false
 header 0px rendered, overflow visible, content 0px
 tap targets under 44px: 20
-story text above the fold: true (first headline at 415px — "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!")
+readable story text on the first screen: false (first headline at 415px of 545px — "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!") — covered by `.mQxxMq`
 lead image 0x0px at y=0
 
 **Findings**
 - 20 tap targets under 44px
+- First headline is covered: it sits at 415px in a 545px viewport but `.mQxxMq` is painted over it
 
 Console errors:
-- `Failed to load resource: the server responded with a status of 429 ()`
 - `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
-- findings 1 -> 1
+- findings 2 -> 2
 
 ## blog · mobile
 HTTP 200 · viewport 320px · root classes `gbm-tight-footer`
@@ -51,7 +51,7 @@ HTTP 200 · viewport 390px · root classes `gbm-gazette-live gbm-standalone-live
 newsroom mounted: true (3 children) · native pages visible: false
 header 0px rendered, overflow visible, content 0px
 tap targets under 44px: 20
-story text above the fold: true (first headline at 415px — "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!")
+readable story text on the first screen: true (first headline at 415px of 844px — "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!")
 lead image 0x0px at y=0
 
 **Findings**
@@ -59,7 +59,7 @@ lead image 0x0px at y=0
 
 Console errors:
 - `Failed to load resource: the server responded with a status of 429 ()`
-- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+- `Failed to load resource: net::ERR_NAME_NOT_RESOLVED`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
@@ -69,25 +69,26 @@ Console errors:
 HTTP 200 · viewport 980px · root classes `gbm-tight-footer`
 newsroom mounted: false (0 children) · native pages visible: true
 header 0px rendered, overflow visible, content 0px
-tap targets under 44px: 49
+tap targets under 44px: 44
 
 **Findings**
-- 49 tap targets under 44px
+- 44 tap targets under 44px
+- Retired branding present: Rob Browne
 
 Console errors:
+- `pageerror: ReferenceError: wixTagManager is not defined`
 - `Failed to load resource: the server responded with a status of 429 ()`
-- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
-- findings 1 -> 1
+- findings 2 -> 2
 
 ## home · phone430
 HTTP 200 · viewport 430px · root classes `gbm-gazette-live gbm-standalone-live`
 newsroom mounted: true (3 children) · native pages visible: false
 header 0px rendered, overflow visible, content 0px
 tap targets under 44px: 16
-story text above the fold: true (first headline at 415px — "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!")
+readable story text on the first screen: true (first headline at 415px of 932px — "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!")
 lead image 0x0px at y=0
 
 **Findings**
@@ -124,7 +125,7 @@ HTTP 200 · viewport 1280px · root classes `gbm-gazette-live gbm-standalone-liv
 newsroom mounted: true (3 children) · native pages visible: false
 header 0px rendered, overflow visible, content 0px
 tap targets under 44px: 14
-story text above the fold: true (first headline at 323px — "Buster Faulkner's offense is anything but predictable")
+readable story text on the first screen: true (first headline at 323px of 900px — "Buster Faulkner's offense is anything but predictable")
 lead image 250x67px at y=22
 
 **Findings**

@@ -1,4 +1,4 @@
-# Live site vision — 2026-09-24T03:54:36.286Z
+# Live site vision — 2026-09-24T04:00:55.322Z
 
 ## URL checks
 
@@ -23,7 +23,6 @@ lead image 292x230px at y=125
 - First headline is covered: it sits at 415px in a 545px viewport but `.mQxxMq` is painted over it
 
 Console errors:
-- `Failed to load resource: the server responded with a status of 429 ()`
 - `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
 
 **Candidate fix applied in CI (not live)**
@@ -78,7 +77,6 @@ lead image 292x230px at y=125
 - 20 tap targets under 44px
 
 Console errors:
-- `Failed to load resource: the server responded with a status of 429 ()`
 - `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
 
 **Candidate fix applied in CI (not live)**
@@ -95,8 +93,7 @@ tap targets under 44px: 24
 - 24 tap targets under 44px
 
 Console errors:
-- `Failed to load resource: the server responded with a status of 429 ()`
-- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+- `Failed to load resource: net::ERR_NAME_NOT_RESOLVED`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
@@ -169,7 +166,7 @@ body measure: ~36 characters per line across 23 paragraphs
 
 Console errors:
 - `Failed to load resource: the server responded with a status of 429 ()`
-- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+- `Failed to load resource: net::ERR_NAME_NOT_RESOLVED`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
@@ -179,16 +176,17 @@ Console errors:
 HTTP 200 · viewport 1280px · root classes `gbm-gazette-live gbm-standalone-live`
 newsroom mounted: true (3 children) · native pages visible: false
 header 0px rendered, overflow visible, content 0px
-tap targets under 44px: 19
+tap targets under 44px: 14
 readable story text on the first screen: true (first headline at 323px of 900px — "Buster Faulkner's offense is anything but predictable")
 lead image 340x425px at y=235
 
 **Findings**
-- 19 tap targets under 44px
+- 14 tap targets under 44px
 - Body measure is ~0 characters per line; under 45 breaks the rhythm
 
 Console errors:
-- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+- `pageerror: ReferenceError: wixTagManager is not defined`
+- `Failed to load resource: the server responded with a status of 429 ()`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
@@ -198,17 +196,23 @@ Console errors:
 HTTP 200 · viewport 1280px · root classes `gbm-tight-footer`
 newsroom mounted: false (0 children) · native pages visible: true
 header 0px rendered, overflow visible, content 0px
-tap targets under 44px: 41
+tap targets under 44px: 38
 
 **Findings**
-- 41 tap targets under 44px
+- 38 tap targets under 44px
+- Retired branding present: Rob Browne
+
+**Retired branding, located**
+- `Rob Browne` in `a.blog-navigation-container-color < li < ul.LnLd_R < nav.AsxoCK` at y=488, visible=true
+  > Rob Browne Column
 
 Console errors:
-- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
+- `pageerror: ReferenceError: wixTagManager is not defined`
+- `Failed to load resource: the server responded with a status of 429 ()`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
-- findings 1 -> 1
+- findings 2 -> 2
 
 ## article · desktop
 HTTP 200 · viewport 1280px · root classes `gbm-tight-footer`

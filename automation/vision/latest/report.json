@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-24T03:54:36.286Z",
+  "capturedAt": "2026-09-24T04:00:55.322Z",
   "runs": [
     {
       "profile": "mobile",
@@ -7,7 +7,6 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-mobile.jpg",
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
@@ -110,6 +109,7 @@
       "offscreenOnly": 8,
       "smallTapTargets": 20,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "viewportHeight": 545,
       "firstHeadline": {
         "text": "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!",
@@ -235,6 +235,7 @@
       "offscreenOnly": 8,
       "smallTapTargets": 24,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "layoutViewport": 320,
       "docScrollWidth": 320
     },
@@ -347,6 +348,7 @@
       "offscreenOnly": 8,
       "smallTapTargets": 33,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "bodyMeasure": 36,
       "bodyParagraphs": 23,
       "layoutViewport": 320,
@@ -358,7 +360,6 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-phone390.jpg",
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
@@ -460,6 +461,7 @@
       "offscreenOnly": 8,
       "smallTapTargets": 20,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "viewportHeight": 693,
       "firstHeadline": {
         "text": "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!",
@@ -483,8 +485,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/blog-phone390.jpg",
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 429 ()",
-        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/blog-phone390-candidate.jpg",
@@ -585,6 +586,7 @@
       "offscreenOnly": 8,
       "smallTapTargets": 24,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "layoutViewport": 320,
       "docScrollWidth": 320
     },
@@ -697,6 +699,7 @@
       "offscreenOnly": 8,
       "smallTapTargets": 33,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "bodyMeasure": 36,
       "bodyParagraphs": 23,
       "layoutViewport": 320,
@@ -809,6 +812,7 @@
       "offscreenOnly": 8,
       "smallTapTargets": 20,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "viewportHeight": 694,
       "firstHeadline": {
         "text": "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!",
@@ -934,6 +938,7 @@
       "offscreenOnly": 8,
       "smallTapTargets": 24,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "layoutViewport": 320,
       "docScrollWidth": 320
     },
@@ -944,7 +949,7 @@
       "screenshot": "automation/vision/latest/article-phone430.jpg",
       "consoleErrors": [
         "Failed to load resource: the server responded with a status of 429 ()",
-        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/article-phone430-candidate.jpg",
@@ -1046,6 +1051,7 @@
       "offscreenOnly": 8,
       "smallTapTargets": 33,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "bodyMeasure": 36,
       "bodyParagraphs": 23,
       "layoutViewport": 320,
@@ -1057,7 +1063,8 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-desktop.jpg",
       "consoleErrors": [
-        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        "pageerror: ReferenceError: wixTagManager is not defined",
+        "Failed to load resource: the server responded with a status of 429 ()"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/home-desktop-candidate.jpg",
@@ -1083,7 +1090,7 @@
       "url": "https://www.gatorbaitmedia.com/",
       "width": 1280,
       "findings": [
-        "19 tap targets under 44px",
+        "14 tap targets under 44px",
         "Body measure is ~0 characters per line; under 45 breaks the rhythm"
       ],
       "rootClasses": "gbm-gazette-live gbm-standalone-live",
@@ -1108,8 +1115,9 @@
       ],
       "pageScrollsSideways": false,
       "offscreenOnly": 1,
-      "smallTapTargets": 19,
+      "smallTapTargets": 14,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "viewportHeight": 900,
       "firstHeadline": {
         "text": "Buster Faulkner's offense is anything but predictable",
@@ -1135,7 +1143,8 @@
       "status": 200,
       "screenshot": "automation/vision/latest/blog-desktop.jpg",
       "consoleErrors": [
-        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+        "pageerror: ReferenceError: wixTagManager is not defined",
+        "Failed to load resource: the server responded with a status of 429 ()"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/blog-desktop-candidate.jpg",
@@ -1153,15 +1162,16 @@
           "scrollHeight": 0,
           "clientHeight": 0
         },
-        "findingsBefore": 1,
-        "findingsAfter": 1,
+        "findingsBefore": 2,
+        "findingsAfter": 2,
         "resolved": [],
         "introduced": []
       },
       "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
       "width": 1280,
       "findings": [
-        "41 tap targets under 44px"
+        "38 tap targets under 44px",
+        "Retired branding present: Rob Browne"
       ],
       "rootClasses": "gbm-tight-footer",
       "hasNewsroom": false,
@@ -1176,8 +1186,22 @@
       },
       "horizontalOverflow": [],
       "pageScrollsSideways": false,
-      "smallTapTargets": 41,
-      "retiredBranding": [],
+      "smallTapTargets": 38,
+      "retiredBranding": [
+        "Rob Browne"
+      ],
+      "retiredBrandingWhere": [
+        {
+          "term": "Rob Browne",
+          "tag": "a",
+          "id": null,
+          "cls": "blog-navigation-container-color blog-navigation-container-font  blog-n",
+          "top": 488,
+          "visible": true,
+          "context": "Rob Browne Column",
+          "ancestry": "a.blog-navigation-container-color < li < ul.LnLd_R < nav.AsxoCK"
+        }
+      ],
       "layoutViewport": 1280,
       "docScrollWidth": 1280
     },
@@ -1232,6 +1256,7 @@
       "pageScrollsSideways": false,
       "smallTapTargets": 39,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "bodyMeasure": 87,
       "bodyParagraphs": 23,
       "layoutViewport": 1280,
@@ -1255,6 +1280,7 @@
       "pageScrollsSideways": false,
       "smallTapTargets": 5,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "layoutViewport": 390,
       "docScrollWidth": 390
     },
@@ -1276,6 +1302,7 @@
       "pageScrollsSideways": false,
       "smallTapTargets": 5,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "layoutViewport": 390,
       "docScrollWidth": 390
     },
@@ -1297,6 +1324,7 @@
       "pageScrollsSideways": false,
       "smallTapTargets": 5,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "layoutViewport": 430,
       "docScrollWidth": 430
     },
@@ -1318,6 +1346,7 @@
       "pageScrollsSideways": false,
       "smallTapTargets": 3,
       "retiredBranding": [],
+      "retiredBrandingWhere": [],
       "layoutViewport": 1280,
       "docScrollWidth": 1280
     }

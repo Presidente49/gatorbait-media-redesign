@@ -1,0 +1,55 @@
+name: Magazine issue build
+
+# The agent session cannot reach gatorbaitmedia.com or the Wix image CDN; a
+# runner can. This job pulls full article bodies from the public blog feed and
+# renders the issue, so the whole pipeline is reproducible from the repo.
+
+on:
+  push:
+    paths:
+      - 'magazine/**'
+      - '.github/workflows/magazine-issue.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: magazine-issue-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull full article bodies
+        run: python3 magazine/fetch_feed.py
+
+      - name: Commit the build cache
+        shell: bash
+        run: |
+          git add magazine/build-cache
+          if git diff --cached --quiet -- magazine/build-cache; then
+            echo 'Feed unchanged.'
+            exit 0
+          fi
+          git config user.name 'gatorbait-magazine-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
+          git commit -m 'magazine: refresh article build cache from the live feed'
+          for attempt in 1 2 3; do
+            if git push origin HEAD:${{ github.ref_name }}; then exit 0; fi
+            git fetch origin ${{ github.ref_name }}
+            git rebase FETCH_HEAD || { git rebase --abort; exit 1; }
+            sleep $((attempt * 5))
+          done
+          exit 1
+
+      - name: Upload the build cache
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: magazine-build-cache
+          path: magazine/build-cache
+          if-no-files-found: ignore

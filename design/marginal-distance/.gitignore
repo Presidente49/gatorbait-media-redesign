@@ -1,0 +1,5 @@
+# The print master is 18.7 MB, and this repository is already carrying more
+# weight than it should. It is fully regenerable and deterministic - the plate
+# is drawn from a single seeded generator, so rebuilding produces the same
+# marks every time. See README.md for the two commands.
+plate.pdf

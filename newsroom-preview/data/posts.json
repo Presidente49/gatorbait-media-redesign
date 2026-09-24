@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder",
+      "excerpt": "How and why Gator Nation and Jon Sumrall have fallen in love with Florida quarterback Aaron Philo, whose toughness and quiet confidence are reshaping the Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/the-cowboy-doesn-t-talk-very-often-but-his-actions-speak-even-louder",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-24T22:02:41Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_94621f9a876c4613b986817073a62692~mv2.jpg/v1/fit/w_600,h_436,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder"
+      }
+    },
+    {
       "title": "The Swamp Knows Something the Big Ten Doesn’t",
       "excerpt": "Buddy Martin on Florida–Ole Miss, The Swamp’s home-field edge and the SEC’s chance to challenge the Big Ten’s championship run.",
       "url": "https://www.gatorbaitmedia.com/post/the-swamp-knows-something-the-big-ten-doesnt",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Postgame Analysis: Florida Gators (3-0,1-0) v. Auburn Tigers (2-1, 0-1)"
-      }
-    },
-    {
-      "title": "Florida Escaped Auburn, But The Yellow Flags Followed It Home",
-      "excerpt": "So, yes, Florida is 3-0. Yes, Jon Sumrall has his first SEC victory as the Gators’ coach. Yes, Aaron Philo survived his first road start in a place where noise is a regional crop. Yes, Jadan Baugh is running with the authority of a man who has discovered that defenders are merely speed bumps with scholarship offers.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-escaped-auburn-but-the-yellow-flags-followed-it-home",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-20T15:21:37Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_fc4264fcbf7e4c84b09fb8c5764e960d~mv2.jpg/v1/fit/w_450,h_300,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida Escaped Auburn, But The Yellow Flags Followed It Home"
       }
     }
   ]

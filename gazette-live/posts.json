@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder",
+      "excerpt": "How and why Gator Nation and Jon Sumrall have fallen in love with Florida quarterback Aaron Philo, whose toughness and quiet confidence are reshaping the Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/the-cowboy-doesn-t-talk-very-often-but-his-actions-speak-even-louder",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-24T22:02:41Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_94621f9a876c4613b986817073a62692~mv2.jpg/v1/fit/w_600,h_436,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder"
+      }
+    },
+    {
       "title": "The Swamp Knows Something the Big Ten Doesn’t",
       "excerpt": "Buddy Martin on Florida–Ole Miss, The Swamp’s home-field edge and the SEC’s chance to challenge the Big Ten’s championship run.",
       "url": "https://www.gatorbaitmedia.com/post/the-swamp-knows-something-the-big-ten-doesnt",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for FINAL Florida 44 Auburn 39: Gators Survive 16 Penalties"
-      }
-    },
-    {
-      "title": "Jimbo Fisher’s FSU Parole Hearing Could  Go Either Way. How Do Gator Fans Feel?",
-      "excerpt": "Fisher, already carrying his $77.5 million settlement, has signaled he’d take supervised release for cheap something like $4-5 million against a market rate closer to $8-10 million.",
-      "url": "https://www.gatorbaitmedia.com/post/jimbo-fisher-s-fsu-parole-hearing-could-go-either-way-how-do-gator-fans-feel",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-19T15:31:33Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_17a4237bd4e9471a9ed473ca149b3996~mv2.jpeg/v1/fit/w_906,h_859,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Jimbo Fisher’s FSU Parole Hearing Could  Go Either Way. How Do Gator Fans Feel?"
       }
     }
   ]

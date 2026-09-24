@@ -101,6 +101,11 @@ function audit() {
 
 const report = { capturedAt: new Date().toISOString(), runs: [], urlChecks: [] };
 
+// The proposed front page, rendered here because this is the only place the
+// Wix image CDN is reachable. Screenshot lands beside the live-site shots so
+// the two can be compared directly.
+const PROPOSED = 'flagship/front-page/index.html';
+
 // Two questions this session could not answer from its sandbox, both of which
 // changed decisions tonight. CI can just ask.
 const URL_CHECKS = [
@@ -185,6 +190,42 @@ for (const profile of PROFILES) {
   }
 }
 
+// --- proposed front page, same devices, real photos -----------------------
+if (existsSync(PROPOSED)) {
+  for (const profile of PROFILES) {
+    const context = await browser.newContext(profile.device);
+    const page = await context.newPage();
+    const errs = [];
+    page.on('pageerror', (e) => errs.push(String(e).slice(0, 160)));
+    try {
+      await page.goto('file://' + process.cwd() + '/' + PROPOSED, {
+        waitUntil: 'networkidle',
+        timeout: 45000,
+      });
+      await page.waitForTimeout(2500);
+      const shot = `${OUT}/proposed-${profile.name}.jpg`;
+      await page.screenshot({ path: shot, type: 'jpeg', quality: 68, fullPage: false });
+      const a = await page.evaluate(audit);
+      // Did the Wix photos actually load, or are we looking at empty frames?
+      const imgs = await page.evaluate(() =>
+        [...document.images].map((i) => ({ ok: i.complete && i.naturalWidth > 0, w: i.naturalWidth }))
+      );
+      report.runs.push({
+        profile: profile.name,
+        target: 'PROPOSED front page',
+        status: 200,
+        screenshot: shot,
+        imagesLoaded: imgs.filter((i) => i.ok).length + '/' + imgs.length,
+        consoleErrors: errs.slice(0, 4),
+        ...a,
+      });
+    } catch (err) {
+      report.runs.push({ profile: profile.name, target: 'PROPOSED front page', error: String(err).slice(0, 240) });
+    }
+    await context.close();
+  }
+}
+
 await browser.close();
 writeFileSync(`${OUT}/report.json`, JSON.stringify(report, null, 2));
 
@@ -201,6 +242,7 @@ for (const r of report.runs) {
   lines.push(`newsroom mounted: ${r.hasNewsroom} (${r.newsroomChildren} children) · native pages visible: ${r.nativePagesVisible}`);
   if (r.header) lines.push(`header ${r.header.height}px rendered, overflow ${r.header.overflow}, content ${r.header.scrollHeight}px`);
   lines.push(`tap targets under 44px: ${r.smallTapTargets}`);
+  if (r.imagesLoaded) lines.push(`images loaded: ${r.imagesLoaded}`);
   lines.push(r.findings.length ? '\n**Findings**\n' + r.findings.map((f) => '- ' + f).join('\n') : '\nNo findings.');
   if (r.consoleErrors.length) lines.push('\nConsole errors:\n' + r.consoleErrors.map((e) => '- `' + e + '`').join('\n'));
   if (r.candidate) {

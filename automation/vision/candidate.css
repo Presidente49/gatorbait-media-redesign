@@ -1,11 +1,2 @@
-/* No candidate under test.
 
-   A previous candidate targeted #comp-mmz3w23y (the brand box) on the theory
-   that its overflow:hidden was clipping the logo. CI applied it to the live
-   page and measured no change at all: header box 103px -> 103px, content
-   110px -> 110px, 3 findings -> 3 findings, nothing resolved.
-
-   The hypothesis was wrong. The audit measures #SITE_HEADER itself, whose
-   content is 7px taller than its box, so whatever constrains that height is
-   not the brand box. Next candidate needs to find what actually sets
-   #SITE_HEADER's height before guessing again. */
+/* Look at the live Gazette homepage. No candidate under test. */

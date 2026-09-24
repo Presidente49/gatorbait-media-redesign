@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-24T03:02:37.542Z",
+  "capturedAt": "2026-09-24T03:14:16.254Z",
   "runs": [
     {
       "profile": "mobile",
@@ -226,7 +226,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-desktop.jpg",
       "consoleErrors": [
-        "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/home-desktop-candidate.jpg",
@@ -333,6 +333,46 @@
       "retiredBranding": [
         "Rob Browne"
       ],
+      "docScrollWidth": 1280
+    },
+    {
+      "profile": "mobile",
+      "target": "PROPOSED front page",
+      "status": 200,
+      "screenshot": "automation/vision/latest/proposed-mobile.jpg",
+      "imagesLoaded": "7/7",
+      "consoleErrors": [],
+      "url": "file:///home/runner/work/gatorbait-media-redesign/gatorbait-media-redesign/flagship/front-page/index.html",
+      "width": 390,
+      "findings": [],
+      "rootClasses": "(none)",
+      "hasNewsroom": false,
+      "newsroomChildren": 0,
+      "nativePagesVisible": null,
+      "horizontalOverflow": [],
+      "pageScrollsSideways": false,
+      "smallTapTargets": 5,
+      "retiredBranding": [],
+      "docScrollWidth": 390
+    },
+    {
+      "profile": "desktop",
+      "target": "PROPOSED front page",
+      "status": 200,
+      "screenshot": "automation/vision/latest/proposed-desktop.jpg",
+      "imagesLoaded": "7/7",
+      "consoleErrors": [],
+      "url": "file:///home/runner/work/gatorbait-media-redesign/gatorbait-media-redesign/flagship/front-page/index.html",
+      "width": 1280,
+      "findings": [],
+      "rootClasses": "(none)",
+      "hasNewsroom": false,
+      "newsroomChildren": 0,
+      "nativePagesVisible": null,
+      "horizontalOverflow": [],
+      "pageScrollsSideways": false,
+      "smallTapTargets": 3,
+      "retiredBranding": [],
       "docScrollWidth": 1280
     }
   ],

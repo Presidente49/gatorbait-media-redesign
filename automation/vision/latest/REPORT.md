@@ -1,4 +1,4 @@
-# Live site vision — 2026-09-24T03:02:37.542Z
+# Live site vision — 2026-09-24T03:14:16.254Z
 
 ## URL checks
 
@@ -53,7 +53,7 @@ tap targets under 44px: 19
 - 19 tap targets under 44px
 
 Console errors:
-- `Failed to load resource: net::ERR_NAME_NOT_RESOLVED`
+- `Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID`
 
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
@@ -76,3 +76,19 @@ Console errors:
 **Candidate fix applied in CI (not live)**
 - header box 0px -> 0px, content 0px -> 0px
 - findings 2 -> 2
+
+## PROPOSED front page · mobile
+HTTP 200 · viewport 390px · root classes `(none)`
+newsroom mounted: false (0 children) · native pages visible: null
+tap targets under 44px: 5
+images loaded: 7/7
+
+No findings.
+
+## PROPOSED front page · desktop
+HTTP 200 · viewport 1280px · root classes `(none)`
+newsroom mounted: false (0 children) · native pages visible: null
+tap targets under 44px: 3
+images loaded: 7/7
+
+No findings.

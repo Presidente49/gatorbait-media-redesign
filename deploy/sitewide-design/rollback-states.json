@@ -1,0 +1,27 @@
+[
+  {
+    "id": "7fee4de6-1886-475e-a3f3-b9c68161c242",
+    "revision": "14",
+    "enabled": true
+  },
+  {
+    "id": "602fb362-3917-4e42-9128-57af3a504ef3",
+    "revision": "8",
+    "enabled": true
+  },
+  {
+    "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+    "revision": "21",
+    "enabled": true
+  },
+  {
+    "id": "82c4ca83-98df-4f35-9972-7345a2a71755",
+    "revision": "14",
+    "enabled": false
+  },
+  {
+    "id": "fdc2127a-845a-4d02-b711-438f1a4a86ce",
+    "revision": "60",
+    "enabled": true
+  }
+]

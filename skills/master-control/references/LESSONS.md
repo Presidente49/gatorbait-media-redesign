@@ -283,3 +283,62 @@ Use stable automation IDs, not friendly names, and keep exactly one intended out
 If GA4/Google tagging is managed through Wix dashboard integrations, do not also inject manual `gtag.js`, Tag Manager, or parallel route-specific loaders.
 
 Duplicate tag layers distort analytics and complicate consent/debugging. For AdSense, keep one verified loader only; do not add parallel loaders without measured evidence.
+
+## 27. Persistent alerts need ownership, not repetition
+
+Repeated scheduled checks of the same unresolved defect should not become repeated owner-facing alerts.
+
+Use one persistent work item with current evidence, owner, next action, verification method and blocker. Update it only when the evidence, diagnosis, action or ownership materially changes. Notify Brenden only for a meaningful state change, verified repair, material revenue change, new revenue-impacting action or a real human blocker.
+
+This turns monitoring into operations instead of notification noise.
+
+## 28. Recursive quality control must be bounded
+
+Recursive QC means re-reading live state and testing the previous outcome, not stacking patches.
+
+For a meaningful change:
+
+**observe → compare → diagnose → act once → verify primary → verify independently → record → recheck next cycle**
+
+Keep one production mutation attempt per cycle. If verification fails, record the failure and escalate or wait for the next evidence cycle rather than layering another unverified fix. Reuse verified repairs before adding dependencies or new architecture.
+
+## 29. Stabilization phase: design, operations and revenue
+
+**Owner decision recorded September 23, 2026**, not a claim of an experiment proving causation: keep recursive learning focused on design, ops and how GatorBait makes money; settle the Magazine page instead of reopening the build.
+
+Reuse the existing scheduled lanes and their cadence:
+
+- **Design Review:** Magazine is the refinement priority. Preserve the approved free sports-news homepage and shared mobile shell. Research supports a concrete defect or business hypothesis, not another theme-shopping exercise.
+- **Publishing & Email QC:** owns publication completion, freshness, canonical links, image quality and actual delivery evidence. A changed `lastPublishedDate` on the same post is not a new publication or resend trigger.
+- **Revenue Watch:** owns monetization evidence and attribution. Separate advertising revenue, membership, merchandise and sponsor revenue; unavailable channels remain unknown. Compare like-for-like periods, story age and source coverage, including costs when available.
+- **Trend Sweep:** support only these three focus areas with directly applicable maintenance/research; no generic new-stack recommendations. Existing editorial draft tasks are not cancelled by this focus decision.
+
+Each meaningful iteration records the hypothesis, source/time window, baseline, smallest proposed change, owner, primary business measure, reader/consent guardrails and outcome: retain, reject, inconclusive or verified recovery. Do not relabel observational correlation as an A/B result. Promote repeated or structural lessons only after review; retire contradicted lessons. Leave healthy state alone.
+
+Scheduled lanes remain read-only for live Wix, production assets and routing. They may research, prepare bounded proposals and record meaningful outcomes, not publish, send, deploy, change consent or self-authorize fixes. The active controller retains any authorized production write. No extra scheduler, duplicate issue or independent writer.
+
+## 30. AdSense connection, serving, consent and revenue are separate gates
+
+The September 23 incident in **issue #30** demonstrated why byte-equivalent loaders must be checked by content, not names. Disabling a duplicate reduced ownership ambiguity; it did not certify consent, all-page coverage, fill or revenue. A label such as "Verification" does not make an advertising-serving script essential.
+
+Keep Wix as the single AdSense integration owner. Evaluate coverage across eligible editorial pages, including the public Magazine surface; "can be connected to every page" is a coverage goal, not evidence that each page serves an ad. Preserve existing account, checkout, consent and premium-access promises until separately reviewed. Do not force ads into excluded surfaces or add a repo-side loader.
+
+Verify in order: current integration identity → consent behavior → public request/visible placement → actual impressions/revenue with post-change data coverage. A script or ad iframe alone does not establish a paid impression. Pre-change or stale GA4 zeros do not establish post-change failure. Track unresolved consent classification in the existing issue without repeated unchanged alerts.
+
+Google's placement controls are documented at https://support.google.com/adsense/answer/9261307 and https://support.google.com/adsense/answer/9262311. Sitewide eligibility does not guarantee fill; evaluate page groups and reader experience rather than maximizing ad count everywhere.
+
+## 31. Keep the accepted newsletter baseline; measure revenue separately
+
+Brenden accepted the September 23 curated newsletter approach. Reuse that design and **GatorBait Magazine Newsletter** identity, with Buddy leading curated packages and distinct supporting stories. Do not redesign or resend merely to rename a sent edition.
+
+Evidence is retained in issue #3, including comments 5802119540 and 5802940849. Its increasing unique engagement is a useful baseline, not proof that the template caused sales or outperforms every alternative. Preserve provider timestamps, unique-versus-total definitions, audience and delivered denominator; conflicting counts remain unresolved until reconciled.
+
+A confirmed curated newsletter is not proof of automatic Story Alert delivery. Track post ID plus workflow/message/campaign identity. Keep unavailable triggered-email results **UNVERIFIED**, never fictional failures, and do not republish or resend as a diagnostic.
+
+## 32. Magazine refinement needs a finish line
+
+Refine the existing separate Magazine implementation under `docs/CREATIVE-DIRECTION-2026-09-23.md`; no replacement homepage, new theme stack or copy of each article.
+
+Acceptance gates: current Buddy cover/lead; remaining Magazine stories newest-first; one canonical URL and primary editorial home; original photo credits and intentional portrait/landscape framing; readable mobile type; no orphan white boxes or duplicate story cards; one latest-game gallery at most; working article/Join/Store/TV paths; shared navigation/footer; and no new layout shift or overflow. Reserve intentional image/ad geometry without retaining broken-image or empty-card scaffolding. Any ad integration must pass consent and reader-experience checks through the existing Wix owner.
+
+Verify the actual public Wix runtime at desktop and 390/430px where available. Isolated fixtures do not certify the full mobile shell, and logged-out reachability does not certify authenticated membership. Once acceptance is verified, record the exact approved revision and rollback and hold it. Later design changes require a demonstrated defect or measurable business case, not novelty.

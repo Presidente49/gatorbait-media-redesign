@@ -20,45 +20,29 @@ For major stories, create branded art before release when supplied art is weak. 
 
 This is the production single-story automatic email, not a GatorBait Magazine issue.
 
-Production automation:
-- Automation ID: `824714d4-7e31-4b1d-95b2-ccec04d788af`
-- Current Wix name: `Send notification when new blog post is published`
-- Origin: **USER** (custom workflow; this is not the Wix-preinstalled blog email)
-- Trigger: `wix_blog-new_blog_post`
-- Email message ID: `04550418-33d0-4564-ad25-b865f591b2c0`
-- Status: **ACTIVE** at revision 15 on Sept. 19, 2026.
-- Audience: the existing configured opted-in segment/audience. Do not broaden to unsubscribed recipients.
-- Verified analytics, Aug. 24–Sept. 19, 2026: 80,033 delivered emails, 635 unique email clicks and 4,177 attributed sessions.
+Live routing verified September 23, 2026, 03:21 UTC:
+- Active automation: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`, revision 13.
+- Name: GatorBait Story Alert — New Blog Post.
+- Action: `042c6c7c-f7e4-4d60-abd2-5f22fa69cf0e`.
+- Message: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`.
+- Trigger: `wix_blog-new_blog_post`.
+- Existing opted-in audience label: `e345fa8e-f66a-4e57-ad00-81707cf8dc15`; sendToUnsubscribed=false.
+- This workflow has PREINSTALLED origin but its actual message is now the CUSTOM GatorBait Story Alert. Origin and friendly name do not prove template content.
+- Its preview with the scheduled Buddy article payload passed headline, photograph, excerpt, branded masthead, full-story CTA and substitution checks; no unresolved placeholders.
 
-Required dynamic fields:
-- `${title}`
-- `${coverImageUrl}`
-- `${description}`
-- `${url}`
+Required dynamic fields: `${title}`, `${coverImageUrl}`, `${description}`, `${url}`.
+Required presentation: navy/orange masthead, story image, headline, excerpt, orange READ THE FULL STORY CTA, and compliant business footer.
 
-Required presentation:
-- GatorBait navy/orange masthead.
-- Story hero image.
-- Editorial headline.
-- Excerpt/deck.
-- Orange `READ THE FULL STORY →` CTA.
-- GatorBait identity and compliant business footer.
-- Never substitute the Wix-preinstalled generic blog email.
+Pre-activation rule: validate before status changes. Before scheduling, inspect the actual live message and preview with the intended post payload. Preserve the established audience. Never substitute a generic message.
 
-Pre-activation rule: validate the automation before status changes. When editing the message/template, preview with a real current post payload and require brand, title, image and CTA checks to pass.
+## 3. Prevent duplicate sends and stale routing reversions
 
-## 3. Wix-preinstalled blog email stays off
-
-The workflow below is the Wix Blog preinstalled automation. Its friendly name was changed during troubleshooting and became misleading, but its origin and message ID identify it as the Wix-provided path.
-
-- Automation ID: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`
-- Current Wix name: `GatorBait Story Alert — New Blog Post`
-- Origin: **PREINSTALLED** from Wix Blog.
-- Email message ID: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`
-- Status: **INACTIVE** at revision 10 on Sept. 19, 2026.
-- Verified analytics, Aug. 24–Sept. 19, 2026: 10 unique email clicks and 230 attributed sessions.
-
-Do not reactivate this workflow as the production article alert. The custom USER-origin workflow above is the proven distribution engine.
+- Automation `824714d4-7e31-4b1d-95b2-ccec04d788af`, revision 20, is INACTIVE.
+- Its message is `04550418-33d0-4564-ad25-b865f591b2c0`.
+- Both workflows currently contain branded custom content. Keep only the verified production route active.
+- The September 22 instructions identifying USER origin as the only custom path are superseded by the live content inspection above. Do not flip statuses based solely on those historical instructions.
+- No automation status, audience or template was changed during the September 23 Buddy scheduling task.
+- A successful preview verifies rendering and configuration; actual delivery must be checked after publication.
 
 ## 4. GatorBait Magazine = curated multi-story email
 
@@ -110,7 +94,7 @@ Before calling a publishing/email task complete:
 - Hero and cover media point to the intended asset.
 - Permanent story URL resolves.
 - Exactly one relevant automatic email workflow is active.
-- Generic blog-email workflow remains inactive.
+- Duplicate workflow remains inactive; the active message is the verified custom template.
 - Story Alert preview passes brand/title/image/CTA checks.
 - Magazine campaign remains DRAFT until owner approval.
 - Magazine image URLs are unique.

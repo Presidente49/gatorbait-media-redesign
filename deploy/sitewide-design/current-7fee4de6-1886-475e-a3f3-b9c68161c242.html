@@ -1,0 +1,56 @@
+<style id="gbm-shared-site-design-v4">/* Shared inner-page shell; native Wix applications retain their own content/forms. */
+html:has(#gbm-site-header) #SITE_HEADER{display:none!important}
+#gbm-site-header,#gbm-site-header *{box-sizing:border-box}
+#gbm-site-header{position:relative;z-index:20;background:#fffdf9;color:#11274a;font-family:Arial,Helvetica,sans-serif;width:100%}
+#gbm-site-header .sh-inner{max-width:1240px;margin:auto;padding:0 28px}
+#gbm-site-header .sh-brand{display:flex;align-items:center;gap:30px;padding:22px 0}
+#gbm-site-header .sh-brand img{width:250px;height:auto;display:block;max-width:100%}
+#gbm-site-header .sh-brand p{font-size:13px;line-height:1.5;border-left:1px solid #cad0d5;padding-left:24px;margin:0}
+#gbm-site-header a{color:inherit;text-decoration:none}
+#gbm-site-header a:hover{text-decoration:underline;text-underline-offset:4px}
+#gbm-site-header a:focus-visible{outline:3px solid #e84b10;outline-offset:3px}
+#gbm-site-header .sh-join{margin-left:auto;background:#11274a;color:#fff;padding:12px 18px;font-size:13px;font-weight:700}
+#gbm-site-header nav{display:flex;gap:24px;flex-wrap:wrap;border-top:3px solid #11274a;border-bottom:1px solid #c5c9ce;min-height:48px;align-items:center;font-size:13px;font-weight:700}
+#gbm-site-header nav a{padding-block:13px}
+#gbm-site-header nav [aria-current]{color:#ba3c0c}
+html:has(#gbm-site-header) [data-hook="post-page"]{background:#fffdf9!important;color:#11274a!important;border:0!important}
+html:has(#gbm-site-header) [data-hook="post-page"] [data-hook="post-title"]{font-family:Georgia,serif!important;font-size:36px!important;line-height:1.16!important;color:#11274a!important;font-weight:700!important;letter-spacing:-.025em!important}
+html:has(#gbm-site-header) [data-hook="post-page"] article{max-width:940px;margin-inline:auto}
+html:has(#gbm-site-header) #gbm-tv{background:#fffdf9!important}
+html:has(#gbm-site-header) #gbm-tv h1{font-size:46px!important;line-height:1.08!important;font-weight:700!important}
+html:has(#gbm-site-header) #gbm-tv .hero{padding-block:30px!important}
+html:has(#gbm-site-header) #gbm-tv .dek{font:16px/1.6 Arial,sans-serif!important}
+@media(max-width:820px){
+#gbm-site-header{display:none}
+html:has(#gbm-site-header) [data-hook="post-page"] [data-hook="post-title"]{font-size:28px!important;line-height:1.15!important}
+html:has(#gbm-site-header) #gbm-tv h1{font-size:30px!important}
+}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="app-title"]{font:700 36px/1.15 Georgia,serif!important;color:#11274a!important;letter-spacing:-.025em!important}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan"]>div{box-shadow:none!important;border:1px solid #cdd4dd!important;border-top:4px solid #e84b10!important;border-radius:0!important;background:#fffdf9!important}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-title"],html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-title"] span{font:700 25px/1.2 Georgia,serif!important;color:#11274a!important}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-price"]{color:#11274a!important;font:700 34px/1.2 Arial,sans-serif!important}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-cta"],html:has(#gbm-site-header) #SITE_PAGES [data-hook="plan-cta"] span{background:#11274a!important;color:white!important;border-radius:0!important;font:700 15px/1.4 Arial,sans-serif!important;min-height:44px}
+html:has(#gbm-site-header) #SITE_PAGES [data-hook="ribbon"]{background:#11274a!important;color:#fff!important;font:700 11px/1.5 Arial,sans-serif!important}
+html:has(#gbm-site-header) #comp-lii7mqeb h1,html:has(#gbm-site-header) #comp-lii7mqeb h1 span{font:700 36px/1.15 Georgia,serif!important;color:#11274a!important;letter-spacing:-.02em!important}
+html:has(#gbm-site-header) #comp-lii7mqe42{background:#fffdf9!important;color:#11274a!important}
+html:has(#gbm-site-header) #comp-lii7mqe42 button[data-testid="buttonElement"]{background:#11274a!important;color:#fff!important;min-height:44px!important;border-radius:0!important}
+@media(max-width:820px){html:has(#gbm-site-header) #SITE_PAGES [data-hook="app-title"],html:has(#gbm-site-header) #comp-lii7mqeb h1,html:has(#gbm-site-header) #comp-lii7mqeb h1 span{font-size:28px!important}}
+</style><script>(function(){
+ 'use strict';
+ if(window.__GBM_SHARED_SITE_HEADER__)return;window.__GBM_SHARED_SITE_HEADER__=true;
+ var links=[['Front Page','/'],['Latest','/gatorbait-media-blogs'],['Magazine','/magazine'],['GatorBait TV','/the-buddy-martin-show'],['Podcasts','/the-buddy-martin-show#podcasts'],['Message Board','/#community'],['Store','https://gatorbait2026.itemorder.com/shop/home/'],['Sign in','/account/my-account']];
+ function sync(){
+  var p=location.pathname.replace(/\/+$/,'')||'/',old=document.getElementById('gbm-site-header');
+  if(p==='/'){if(old)old.remove();return;}
+  if(!document.body)return;
+  if(p==='/contact'){var submit=document.querySelector('#comp-lii7mqe42 button[data-testid=buttonElement]');if(submit){submit.setAttribute('aria-label','Send message');var label=submit.querySelector('span');if(label&&label.textContent.trim()==='>')label.textContent='Send message';}}
+  if(!old){old=document.createElement('header');old.id='gbm-site-header';old.innerHTML='<div class="sh-inner"><div class="sh-brand"><a href="/" aria-label="GatorBait home"><img width="900" height="241" src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp" alt="GatorBait"></a><p>Independent voices.<br><strong>Unmistakably GatorBait.</strong></p><a class="sh-join" href="/pricing-plans">Join GatorBait →</a></div><nav aria-label="GatorBait sections">'+links.map(function(l){return'<a href="'+l[1]+'">'+l[0]+'</a>'}).join('')+'</nav></div>';document.body.insertBefore(old,document.body.firstChild);}
+  old.querySelectorAll('nav a').forEach(function(a){var dest=new URL(a.href).pathname;var current=dest===p||(dest==='/gatorbait-media-blogs'&&(p.indexOf('/gatorbait-media-blogs/')===0||p.indexOf('/post/')===0));if(current)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+ }
+ function schedule(){[0,200,800,1800,4000,8000].forEach(function(ms){setTimeout(sync,ms);});}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});else schedule();
+ function watchContact(){if(location.pathname!=='/contact')return;var observer=new MutationObserver(function(){var b=document.querySelector('#comp-lii7mqe42 button[data-testid=buttonElement]');if(b&&b.getAttribute('aria-label')!=='Send message')sync();});observer.observe(document.body,{childList:true,subtree:true});setTimeout(function(){observer.disconnect();},15000);}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',watchContact,{once:true});else watchContact();
+ window.addEventListener('popstate',schedule);window.addEventListener('gbmroutechange',schedule);
+})();
+</script><style id="gbm-official-brand-v1">#SITE_HEADER #comp-mmz3w23y{width:min(250px,30vw)!important;max-width:250px!important;min-width:160px!important;overflow:visible!important}#SITE_HEADER #comp-mmz3w23y .gbm-brand-link{display:block!important;line-height:0!important}#SITE_HEADER #comp-mmz3w23y .gbm-official-logo{display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important;object-position:left center!important;transform:translateY(-4px)!important}@media(max-width:750px){#SITE_HEADER #comp-mmz3w23y{width:clamp(160px,47vw,195px)!important;max-width:calc(100vw - 112px)!important;min-width:0!important}#SITE_HEADER #comp-mmz3w23y .gbm-official-logo{max-height:none!important}}@media(max-width:370px){#SITE_HEADER #comp-mmz3w23y{width:180px!important}}.gbm-news-close{position:absolute!important;top:10px!important;right:10px!important;width:44px!important;height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;border:2px solid #08132F!important;border-radius:50%!important;background:#fff!important;color:#08132F!important;font:700 28px/1 Arial,sans-serif!important;cursor:pointer!important;z-index:2147483647!important;box-shadow:0 3px 12px #0003!important}.gbm-news-close:hover{background:#FA4616!important;color:#fff!important}.gbm-news-close:focus-visible{outline:3px solid #0021A5!important;outline-offset:3px!important}</style><script id="gbm-official-brand-script-v1">(function(){var LOGO="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp",SEL='[role="dialog"],[aria-modal="true"],[data-hook*="popup" i],[class*="lightbox" i],[class*="modal" i]';function brand(){var h=document.querySelector("#SITE_HEADER #comp-mmz3w23y");if(!h||h.querySelector(".gbm-official-logo"))return;h.innerHTML='<a class="gbm-brand-link" href="/" aria-label="GatorBait Media home"><img class="gbm-official-logo" src="'+LOGO+'" alt="GatorBait Media" width="900" height="241" decoding="async"></a>'}function rename(root){var n=(root||document).querySelectorAll("h1,h2,h3,h4,p,span,label,button");for(var i=0;i<n.length;i++){var e=n[i];if(e.children.length)continue;var t=e.textContent||"",v=t.replace(/Quick Chomps/gi,"Quick Reads").replace(/GatorBait Magazine Newsletter/gi,"GatorBait Weekly").replace(/Gatorade Magazine/gi,"GatorBait Weekly");if(v!==t)e.textContent=v}}function dismiss(box){try{sessionStorage.setItem("gbmNewsletterClosed","1")}catch(e){}var x=box.querySelector('[aria-label*="close" i],[data-hook*="close" i]');if(x&&!x.classList.contains("gbm-news-close")){x.click();return}if(box.tagName==="DIALOG"&&box.close){box.close();return}box.setAttribute("aria-hidden","true");box.style.setProperty("display","none","important")}function modal(){var n=document.querySelectorAll(SEL);for(var i=0;i<n.length;i++){var box=n[i],t=(box.innerText||"").toLowerCase();if(!/(newsletter|subscribe|email address|gatorbait weekly)/.test(t))continue;rename(box);if(sessionStorage.getItem("gbmNewsletterClosed")==="1"){dismiss(box);continue}if(getComputedStyle(box).position==="static")box.style.position="relative";if(!box.querySelector(".gbm-news-close")){var b=document.createElement("button");b.type="button";b.className="gbm-news-close";b.setAttribute("aria-label","Close newsletter");b.textContent="×";b.onclick=function(){dismiss(this.closest(SEL))};box.appendChild(b)}}}function run(){brand();rename(document);modal()}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();[600,1600,3200,5600].forEach(function(ms){setTimeout(run,ms)});document.addEventListener("keydown",function(e){if(e.key==="Escape"){var b=document.querySelector(".gbm-news-close");if(b){e.preventDefault();dismiss(b.closest(SEL))}}});try{var o=new MutationObserver(run);o.observe(document.documentElement,{childList:true,subtree:true});setTimeout(function(){o.disconnect()},12000)}catch(e){}})();</script>

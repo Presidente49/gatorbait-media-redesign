@@ -1,9 +1,13 @@
 # Master Control Current State
 
-**Snapshot date:** 2026-09-19  
+**Snapshot date:** 2026-09-23  
 **Purpose:** quick continuity only. This file expires by design.
 
 Before any mutation or present-tense business conclusion, re-read the authoritative live system when a connector/API is available.
+
+## Latest homepage override — September 23
+
+The free sports-news homepage supersedes the Gazette cover experiment. Active Wix loader revision61 pins `81a845304c9802d8dbd88b6448337f4f89461658/sports-live/homepage.js`. `/magazine` stays separate. See `docs/HOMEPAGE-BASELINE-LOCK.md` and `docs/SPORTS-PUBLISHING-DIRECTION.md` for evidence, source files, rollback and remaining paywall/message-board/ads work. Any older V1/rev54 or Gazette-default statements below are historical. Read live revision before writes.
 
 ## Production identity
 
@@ -139,6 +143,45 @@ git pull
 chmod +x automation/ops-hub/install-master-control-mobile.sh
 ./automation/ops-hub/install-master-control-mobile.sh
 ```
+
+## Shared AI memory bootstrap — 2026-09-22
+
+Selected local AI-to-AI memory layer:
+
+`dan-calin/shared-agent-memory`
+
+Why it fits the current single-controller architecture:
+
+- one project-local memory graph shared by Claude Code and Codex
+- guarded writes that reject common secret patterns
+- token-efficient `search_nodes` retrieval instead of rereading large handoffs
+- advisory file-claim coordination so parallel workers can warn before editing the same file
+- no standing daemon or hosted service required
+- GitHub remains the durable audit/policy/incident source of truth
+
+Repo bootstrap:
+
+- `automation/ops-hub/install-shared-agent-memory.sh`
+- `automation/ops-hub/install-master-control-local.sh` runs shared memory first, then the existing mobile/iPhone bootstrap
+- `.shared-memory/` is ignored by Git
+- upstream is commit-pinned in the bootstrap
+- local execution on Brenden's Mac: **NOT VERIFIED FROM CLOUD CHAT**
+
+Run from the repo root on Brenden's Mac:
+
+```bash
+git pull
+chmod +x automation/ops-hub/install-master-control-local.sh
+./automation/ops-hub/install-master-control-local.sh
+```
+
+The iPhone-control lane still stops at Apple-required physical approvals such as device trust, Developer Mode, unlock, and Xcode signing.
+
+## Lovable project handoff — 2026-09-22
+
+Brenden supplied Lovable project ID `928d7b26-41e1-451d-81c7-85817857fc6d`.
+
+The currently authenticated Lovable workspace `Brenden's Lovable` is on the free plan and currently reports zero projects. The supplied project is not yet visible to that connected account, so the invitation/magic-link acceptance remains a human browser step. Do not store or commit the magic-link token. After acceptance, re-query the project through the Lovable connector before using credits or changing the project.
 
 ## Analytics sources verified
 
@@ -303,20 +346,30 @@ Configured in the repository on 2026-09-20:
 - local execution/auth state: NOT YET VERIFIED from cloud chat. The local MCP client must reload the repository MCP config, then open/import the user's authenticated Wix Studio editor session.
 
 
-## Known-good game-night homepage baseline — 2026-09-19
+## LOCKED DEFAULT homepage baseline — newsroom
 
-Brenden identified the late-game site state, around 9:30–10:00 p.m. ET on September 19, as the preferred production baseline.
+Brenden locked the September 19 late-game Newsroom architecture as the canonical production homepage default on 2026-09-22.
 
-- presentation baseline commit: `d03d9d1e0350c55be03df1a8ebed0180c9a74c5d`
+Canonical lock document: `docs/HOMEPAGE-BASELINE-LOCK.md`
+
+- presentation baseline commit: `f0a2deca30b8080b10efa8216f308414b7a95636`
 - related live-tracker routing commit: `d1b6da53fa33aead25ce3354dffaadb40ce5a4cd`
-- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
-- loader revision after restoration on 2026-09-20: `35`
+- Wix newsroom loader custom embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified live revision `54`, **ENABLED** (V18 adds a query-only V2 preview lane; normal production remains V1)
+- homepage prepaint shield: `2f57bc6b-e05f-4a96-adf3-cb02e2b18e51`, verified live revision `17`, **ENABLED**
+- legacy homepage cleanup: `ed3718cc-5ca3-485b-a7dc-1c697afdcd5f`, verified live revision `8`, **ENABLED**
 - all four newsroom assets are pinned to the same baseline commit: `wix-live.css`, `wix-live-ui.css`, `wix-live.js`, and `wix-live-ui.js`
-- the newsroom JavaScript continues to fetch the live Wix `/blog-feed.xml`, so this pins the known-good presentation architecture without freezing editorial content or story chronology
-- do not mix asset refs from different commits in the production loader
-- later CSS that reintroduced the native Wix header/footer and changed mobile Latest News card geometry should not replace this baseline without an explicit, verified visual improvement
+- the Newsroom is the only visible homepage surface
+- `Today's Edition` and `Monday Chomp` must never be visible on the homepage
+- the newsroom JavaScript continues to fetch the live Wix blog feed, so presentation is locked without freezing current editorial content
+- do not mix asset refs, reintroduce the native Wix homepage shell, add competing themes, or add long-lived polling/observer fixes
+- legacy cleanup must finish during the bounded startup/prepaint window so readers never see a late layout removal or jump
+- materially changing this presentation baseline requires explicit Brenden approval
+- Header spacing refinement approved 2026-09-22: logo is explicitly 250 px desktop / 180 px mobile with tighter mast padding; no nav or story-layout change.
+- Homepage story routing refinement approved 2026-09-22: strict newest-first chronology from the live Wix blog feed. No stale opponent/game-week hard-coding or manual feature pinning.
+- Mobile story-separation refinement approved 2026-09-22: top feature stories are visibly separated by writer with a writer band before each card; footer includes a visible Store link.
+- Mobile navigation refinement approved 2026-09-22: restore the unified mobile shell from the successful Sep. 15 version. Native Wix mobile header is hidden; mobile uses a compact masthead, slide-in drawer, compact Join button, Store link, and Sign In / Account row. Critical shell CSS/JS is inlined in the newsroom loader to prevent the native Wix mobile menu from winning during load. Revision 50 added compact mobile styling for the `/account/my-account` login route and mobile back-to-top suppression. Revision 51 preserves those fixes and adds the query-only Masthead V2 preview bootstrap. Legacy competing mobile nav style blocks were removed from header embed `7fee4de6-1886-475e-a3f3-b9c68161c242`, now revision 14 (`GBM - Compact Optimized Logo + Header v12 (desktop core)`).
 
-When troubleshooting front-page regressions, compare against this baseline first instead of layering another override.
+When troubleshooting any front-page regression, restore this baseline first rather than layering another override.
 
 
 ## Production invariants added 2026-09-20
@@ -326,7 +379,7 @@ When troubleshooting front-page regressions, compare against this baseline first
 The Front Page must keep the known-good late-game architecture from September 19.
 
 - Wix loader embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, verified revision `35`
-- all four newsroom assets are pinned to `d03d9d1e0350c55be03df1a8ebed0180c9a74c5d`
+- all four newsroom assets are pinned to `f0a2deca30b8080b10efa8216f308414b7a95636`
 - `GBM - Homepage Safe Prepaint Shield v2` remains enabled
 - on the standalone homepage, the baseline stylesheet hides the native Wix `#SITE_HEADER`, `#SITE_PAGES`, and `#SITE_FOOTER` while the newsroom surface owns the visible page
 - do not reintroduce the native Wix homepage shell/header/footer underneath the newsroom layer
@@ -338,19 +391,26 @@ The Front Page must keep the known-good late-game architecture from September 19
 
 Exactly one automatic email may run on the `wix_blog-new_blog_post` trigger.
 
-ACTIVE:
-- automation: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`
-- name: `GatorBait Story Alert — New Blog Post`
-- message ID: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`
-- verified revision after activation: `11`
-
-INACTIVE duplicate:
+ACTIVE — GatorBait custom workflow:
 - automation: `824714d4-7e31-4b1d-95b2-ccec04d788af`
-- name: `Send notification when new blog post is published`
+- origin: **USER**
+- current Wix name: `Send notification when new blog post is published`
 - message ID: `04550418-33d0-4564-ad25-b865f591b2c0`
-- verified revision after deactivation: `16`
+- verified revision after activation: `17`
+- validation status before activation: **VALID**
+- uses dynamic blog fields for title, cover image, description and URL
+- `sendToUnsubscribed:false`
 
-Before changing this flow, query live automation state by IDs. Do not let both become active.
+INACTIVE — Wix-provided workflow:
+- automation: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`
+- origin: **PREINSTALLED**
+- current Wix name: `GatorBait Story Alert — New Blog Post`
+- message ID: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`
+- verified revision after deactivation: `12`
+
+Owner rule, reaffirmed 2026-09-22: use the USER-origin custom GatorBait article alert as the automated blog template. Keep the Wix PREINSTALLED blog email inactive.
+
+Before changing this flow, query live automation state by IDs + origin + message/action ID. Never rely on friendly names, and never let both become active.
 
 ### Google tag ownership
 
@@ -361,3 +421,117 @@ Disabled manual/duplicate layers:
 - `GBM - AdSense Auto Ads Free Routes v1` custom embed `109a8870-0fb3-4e9f-8b41-cf6c0875472d` — disabled at revision `2`
 
 The existing single `Google AdSense Auto Ads` custom embed `2da582cf-6935-4255-b248-e14add7e82a8` remains enabled at verified revision `7`; do not add a second AdSense loader.
+
+
+## Magazine live issue — 2026-09-22
+
+The production `/magazine` route now uses the dynamic live-issue presentation.
+
+- Wix custom embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`
+- live revision: `21`
+- name: `GBM - Magazine Live Issue v6.2R (restored stable)`
+- state: **ENABLED**
+- asset commit: `5667c8fee6267eaa7cd6e1554082f28fb824d2b6`
+- assets:
+  - `newsroom-preview/magazine-live.css`
+  - `newsroom-preview/magazine-live.js`
+- the page reads the live Wix blog feed and stays current automatically
+- editorial cover rule: the newest Buddy Martin story is the Magazine cover/lead; all remaining stories continue newest-first underneath
+- Buddy Martin remains the cover lead in v7; current lead: `Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All`
+- no Auburn-only or September-history story set is hard-coded into the magazine
+- season reference links to the evergreen internal `Florida Gators 2026 Roster and Schedule` article
+- GatorBait TV and Store remain visible destinations
+- the approved unified mobile shell remains the mobile navigation owner on `/magazine`
+- stability rule: Magazine is self-contained inside Wix. Do not use client-side blog-feed requests or GitHub/CDN assets to build the page at runtime. Current article data is written into the existing Magazine embed by the controller, preventing 429/403 failures.
+
+
+### Buddy Martin morning email — 2026-09-22
+
+- campaign ID: `85b1030d-e4db-483e-aa4e-4a2ff8d86cd0`
+- subject: `Buddy Martin: Florida–Ole Miss Week Is Here`
+- audience: `custom.gatorbait-active-email-audience`
+- campaign publish accepted by Wix Email Marketing
+- primary story: `Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All`
+- secondary Buddy story: `The Med School Dropout Who Made Auburn Bleed Orange and Blue`
+- do not duplicate this exact send unless performance review explicitly calls for a resend/non-opener campaign
+
+
+## Footer and page-tail state — 2026-09-22
+
+- Magazine restored to the v6.2-style Buddy-led presentation while remaining self-contained in Wix.
+- Magazine embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`, revision `21`, **ENABLED**.
+- Magazine has no separate bottom menu/footer; the sitewide utility footer owns the bottom of the page.
+- Sitewide footer-gap guard: `15302fb2-44ef-4a93-a2a8-899731a6c197`, revision `6`, **ENABLED**.
+- Universal utility footer: `f8b950c9-47ce-4390-976f-85a0f040f0c6`, revision `22`, **ENABLED**.
+- Site fixer: `5a43ae83-690e-4933-971d-4837db00b2f3`, revision `15`; organization schema no longer includes the street address.
+- Newsroom loader: `fdc2127a-845a-4d02-b711-438f1a4a86ce`, revision `49`; duplicate newsroom footer removed.
+- No enabled custom embed currently contains `1524 SE 22nd Ave` or `Ocala, FL 34471`.
+
+## Cross-chat operations sync — 2026-09-22
+
+Recent GatorBait controller/revenue/site chats were normalized into the shared control plane so future operators do not depend on chat memory.
+
+- Shared communications/QC playbook: `automation/ops-hub/playbooks/controller-communications-qc.md`.
+- Active hourly automation: **GatorBait Revenue Watch**, automation ID `6aaedfcea89081918975991d5454a402`.
+- Revenue Watch now operates as an ops workflow, not a repetitive alert. Unchanged known incidents should be maintained silently.
+- Current AdSense/GA4 monetization incident: GitHub issue **#30** — `Ops incident: AdSense Auto Ads reporting zero after confirmed traffic`.
+- Persistent technical defects use one owned work item/issue. New evidence, attempted fixes, blockers and verification results go there; duplicate issues/alerts are avoided.
+- Recursive QC contract: **observe → compare → diagnose → act once → verify primary → verify independently → record → recheck next cycle**.
+- Learning contract: count incident episodes rather than poll iterations; record recoveries; promote only repeated/measured/structural lessons after review; learned state does not expand approval boundaries.
+- Human/dashboard-only blockers must be marked **HUMAN ACTION REQUIRED** with the exact path/test/evidence needed.
+- Google tag ownership remains Wix-dashboard-first. The single enabled AdSense embed is `2da582cf-6935-4255-b248-e14add7e82a8`; the manual GA4 embed `78a9b413-d3c5-411e-8652-83856a790c2e` and old route-specific AdSense loader `109a8870-0fb3-4e9f-8b41-cf6c0875472d` remain disabled unless live state later proves otherwise.
+- Do not add another AdSense product, duplicate Google script or manual ad unit as a troubleshooting shortcut.
+- Email/social amplification remains performance-gated. Editorial instinct alone is not enough when current traffic/conversion evidence exists.
+- Brenden expressed a preference for paid-upfront membership rather than free trial, but no trial/pricing policy change has been authorized or applied from that discussion; pricing/trial/cancellation changes remain approval-required.
+- Locked homepage/mobile architecture remains authoritative. Other workflows must not override newest-first Front Page chronology, the known-good no-jump shell, or the current Magazine operating rules with a competing presentation layer.
+
+
+
+## Masthead-inspired Newsroom V2 preview lane — 2026-09-22
+
+Brenden approved immediate implementation of a Masthead-inspired GatorBait front-page direction while keeping Wix as the CMS/business engine.
+
+Architecture:
+
+- structural inspiration: `ondelva/astro-theme-masthead`
+- polish reference: restrained Fyrre-style editorial spacing
+- brand layer: traditional GatorBait orange/blue, approximately 10–15% of the visual system
+- Wix remains owner of Blog publishing, members, pricing plans, Store/eCommerce, email, existing article URLs, SEO, analytics/AdSense and consent
+- the redesign is one front-page presentation owner; do not stack another permanent theme or shell
+
+Implementation:
+
+- working branch: `masthead-wix-refresh`
+- implementation plan: `docs/MASTHEAD-WIX-REFRESH-PLAN.md`
+- tracker: GitHub issue #31
+- V2 assets:
+  - `newsroom-v2/data-adapter.js`
+  - `newsroom-v2/masthead.js`
+  - `newsroom-v2/masthead.css`
+  - `newsroom-v2/README.md`
+- pinned preview asset commit: `611941423dc17d349e01775c4912362e89fecb34`
+- V2 reads the existing Wix `/blog-feed.xml`; it does not move business logic out of Wix
+- category normalization maps Wix feed/category/title signals into Football, Recruiting, Basketball and Baseball for stable section routing
+- responsive design explicitly includes 390 px and 430 px rules and keeps the existing unified mobile shell as sole mobile navigation owner
+
+Live Wix preview lane:
+
+- Newsroom loader embed: `fdc2127a-845a-4d02-b711-438f1a4a86ce`
+- current revision: `54`
+- current name: `GBM - Newsroom Loader v18 (Masthead V2 preview lane)`
+- normal production homepage remains the locked V1 Newsroom by default
+- V2 activates only with query `?gbm_preview=masthead-v2`
+- preview URL: `https://www.gatorbaitmedia.com/?gbm_preview=masthead-v2`
+- the preview bootstrap sets the existing V1 renderer/UI guards before loading V2, preventing the two front-page renderers from racing
+- production promotion is **not yet performed**; the plan requires visual desktop + 390/430 verification before the one replacement switch
+
+Verification status:
+
+- JavaScript syntax checks passed before GitHub commit
+- GitHub confirmed all four V2 files exist at the pinned commit
+- Wix mutation response confirmed loader revision 54 and default V1 behavior
+- local Chromium CDP injection QA rendered the actual V2 CSS/renderer/data-adapter structure with representative GatorBait feed fixtures at 390 px, 430 px and 1440 px
+- QA metrics: 390 client/scroll width 390/390, lead 30 px, mobile shell top 0, V2 root top 60; 430 client/scroll width 430/430, lead 34.4 px, shell top 0/root top 60; desktop client/scroll width 1425/1425, V2 desktop header visible
+- all three QA widths rendered 4 section modules, 5 Top Stories and 10 Latest-wire items with no horizontal overflow
+- local QA also exposed and fixed two defects before promotion: V2 was initially inserted ahead of the sticky mobile shell, and base `font: ... !important` blocked the intended mobile headline sizing
+- external live Wix-page capture is still blocked by the runtime network/browser policy, so the default-production replacement has not been promoted yet

@@ -25,6 +25,7 @@ Start with this file. Then load references selectively:
 - [references/CURRENT-STATE.md](references/CURRENT-STATE.md) when current IDs, connections, traffic, campaigns, integrations, or production status matter.
 - [references/DOCTRINE.md](references/DOCTRINE.md) when the task changes product strategy, UX, editorial routing, monetization, distribution, membership, community, TV, or brand behavior.
 - [references/LESSONS.md](references/LESSONS.md) before production changes, automation work, migrations, email/social publishing, or anything that resembles a prior failure.
+- `automation/ops-hub/playbooks/controller-communications-qc.md` before recurring automation work, cross-chat handoffs, persistent incident routing, repeated alerts, or recursive QC.
 
 Then load the smallest existing specialist skill required by the surface, for example:
 
@@ -34,6 +35,7 @@ Then load the smallest existing specialist skill required by the surface, for ex
 - `skills/gatorbait-editorial/` for editorial tasks.
 - `skills/gatorbait-community/` for community/message-board work.
 - `skills/gatorbait-graphic-design/` for GatorBait visual production.
+- `skills/gatorbait-broadcast-graphics/SKILL.md` for AP Mode, show thumbnails, rankings, matchup cards, lower thirds, scorebugs, tickers, and GatorBait Sports Network broadcast packages.
 - `automation/ops-hub/playbooks/meta-control.md` for Facebook/Instagram/Meta reads, publishing, connection repair, field-post monitoring, and paid-vs-organic routing.
 
 Do not preload every skill or historical document. Context is a budget.
@@ -88,6 +90,8 @@ Update the current-state/runbook only when the fact is durable enough to help th
 Promote repeated measured outcomes into doctrine or playbooks. One anecdote does not become a universal rule.
 
 The local Ops Hub may continuously accumulate bounded evidence about recurring incidents and recoveries. It may surface review candidates automatically, but it must never auto-promote doctrine or use learned state to self-authorize production writes.
+
+For persistent incidents and recurring automations, use the shared communications/QC playbook so repeated checks converge on one owner/work item, unchanged state may resolve to NOOP, and any authorized mutation gets primary plus independent verification before the incident is considered improved.
 
 ## Approval boundaries
 

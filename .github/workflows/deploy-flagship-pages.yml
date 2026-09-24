@@ -1,12 +1,9 @@
-name: Deploy GatorBait Flagship Preview
+# Automatic publication belongs to the existing main-branch Pages publisher.
+# Manual recovery only: never race a second push-triggered deployment.
+# Preserve the repository-root sitemap host and all existing preview paths.
+name: Deploy GatorBait Static Pages — Manual Recovery
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "flagship/**"
-      - ".github/workflows/deploy-flagship-pages.yml"
   workflow_dispatch:
 
 permissions:
@@ -24,103 +21,15 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    outputs:
-      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-
       - name: Configure Pages
         uses: actions/configure-pages@v5
-
-      - name: Keep the sitemap host alive alongside the preview
-        # Pages publishes ./flagship as the site ROOT, which silently took over
-        # from the repo root on 2026-09-21 and stopped serving the sitemaps that
-        # sitemap-index.xml still points at - including a Google News sitemap
-        # that is still refreshed daily. Copy them into the published tree so
-        # both keep working, from the one source of truth at the repo root.
-        run: |
-          set -euo pipefail
-          for f in sitemap-index.xml news-sitemap.xml posts-sitemap.xml; do
-            if [ -f "$f" ]; then
-              cp "$f" "flagship/$f"
-              echo "published $f ($(wc -c < "$f") bytes)"
-            else
-              echo "::warning::$f missing at repo root; not published"
-            fi
-          done
-
-      - name: Upload flagship site
+      - name: Upload complete static site including sitemaps and previews
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./flagship
-
+          path: .
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-
-  audit:
-    name: Lighthouse budget check
-    needs: deploy
-    runs-on: ubuntu-latest
-    # The audit reports; it never decides whether the deploy succeeded. A red
-    # audit is a real finding to act on, not a broken deployment.
-    continue-on-error: true
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Install Lighthouse
-        run: npm install -g lighthouse@12
-
-      - name: Audit the deployed front page
-        env:
-          PAGE_URL: ${{ needs.deploy.outputs.page_url }}
-        run: |
-          set -euo pipefail
-
-          if [ -z "${PAGE_URL:-}" ]; then
-            echo "::error::Deploy produced no page_url; nothing to audit."
-            exit 1
-          fi
-
-          TARGET="${PAGE_URL%/}/front-page/"
-          echo "Auditing $TARGET"
-
-          # Wait for the new deployment to actually serve, rather than
-          # measuring whatever the CDN still has cached.
-          for attempt in 1 2 3 4 5 6; do
-            code=$(curl -s -o /dev/null -w '%{http_code}' "$TARGET" || echo 000)
-            echo "attempt $attempt: HTTP $code"
-            [ "$code" = "200" ] && break
-            if [ "$attempt" = "6" ]; then
-              echo "::error::$TARGET never returned 200; not auditing a page that is not being served."
-              exit 1
-            fi
-            sleep 10
-          done
-
-          # Default preset is mobile with simulated 4G throttling, which is the
-          # condition the documented budget is written against.
-          for i in 1 2 3; do
-            lighthouse "$TARGET" \
-              --quiet \
-              --output=json \
-              --output-path="run-$i.json" \
-              --chrome-flags="--headless=new --no-sandbox --disable-dev-shm-usage"
-          done
-
-          python3 automation/lighthouse/summarize.py "$TARGET" run-1.json run-2.json run-3.json
-
-      - name: Upload raw Lighthouse reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-reports
-          path: run-*.json
-          if-no-files-found: ignore

@@ -9,3 +9,7 @@ These playbooks are implementation contracts for the single GatorBait controller
 - `social-and-show-clips.md` — Restream show clips to one general recap blog post plus platform-native social and optional normal newsletter reuse.
 
 `../policy.json` remains authoritative for automatic vs approval-required actions. `../controller-rules.json` selects the deterministic gates and bounded reasoning scope before any model is used.
+
+## Shared controller handoff
+
+- `controller-communications-qc.md` — canonical cross-workflow communications, persistent-incident ownership, alert deduplication, bounded recursive QC, and learning-loop rules.

@@ -6,6 +6,8 @@ Give the single controller one repeatable daily operating rhythm for the website
 
 This playbook does not replace the 15-minute Ops Hub health loop. It adds a daily editorial/business layer on top of that continuous health monitoring.
 
+For cross-workflow ownership, repeated incidents, owner notifications, learning, and post-change verification, also follow `controller-communications-qc.md`.
+
 ## Daily controller cycle
 
 `OPEN → VERIFY → EDITORIAL → DISTRIBUTE → MONETIZE → QC → CLOSE → LEARN`
@@ -55,7 +57,7 @@ Create a short queue with only material work:
 - revenue/merchandise opportunity;
 - verified technical defect.
 
-Every item receives one owner, one current state, one next action and one verification method. Models may help reason about an item but do not become its owner.
+Every item receives one owner, one current state, one next action and one verification method. Models may help reason about an item but do not become its owner. Before creating a new item, check whether the root problem is already owned by an existing issue/work item; update that owner instead of duplicating the work.
 
 ## Guest-history context pass
 

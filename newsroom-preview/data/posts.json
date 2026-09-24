@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Swamp Knows Something the Big Ten Doesn’t",
+      "excerpt": "Buddy Martin on Florida–Ole Miss, The Swamp’s home-field edge and the SEC’s chance to challenge the Big Ten’s championship run.",
+      "url": "https://www.gatorbaitmedia.com/post/the-swamp-knows-something-the-big-ten-doesnt",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-24T12:48:46Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_b8996f468d7c4c1cb4c359d4288b8196~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Swamp Knows Something the Big Ten Doesn’t"
+      }
+    },
+    {
+      "title": "The best way for the Gators to win is keep the ball away from Trinidad Chambliss",
+      "excerpt": "Florida's running game will be key to beating Ole Miss (Photo by Chris Spears) The Ole Miss Rebels (3-0, 1-0 SEC) are the No. 4 team in the country for a reason. They have two impressive wins over ranked teams – Louisville and LSU – plus they have what is widely considered the best college football player in the country in Trinidad Chambliss. And yet the…",
+      "url": "https://www.gatorbaitmedia.com/post/the-best-way-for-the-gators-to-win-is-keep-the-ball-away-from-trinidad-chambliss",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-09-24T11:59:07Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_a7ef6b30ac954bf5962d6583bbd14b1e~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The best way for the Gators to win is keep the ball away from Trinidad Chambliss"
+      }
+    },
+    {
       "title": "Sumrall Cussing: His Wife Wants Him To Please Stop. Damn!",
       "excerpt": "Buddy Martin on Jon Sumrall’s locker-room language, his wife’s losing battle to stop it, and the tight ends powering Florida’s offense.",
       "url": "https://www.gatorbaitmedia.com/post/sumrall-cussing-wife-wants-him-to-stop-buddy-martin",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida Escaped Auburn, But The Yellow Flags Followed It Home"
-      }
-    },
-    {
-      "title": "Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn",
-      "excerpt": "Florida coach Jon Sumrall addresses 16 penalties, Jadan Baugh, Aaron Philo, Pat Dye and his 'work the cut' message after a 44-39 win at Auburn.",
-      "url": "https://www.gatorbaitmedia.com/post/jon-sumrall-postgame-florida-auburn",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-20T08:14:12Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_51ecb6ef1570476ca7e6b0d4fd786053~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn"
-      }
-    },
-    {
-      "title": "No Bad Wins: Sumrall Issues Warning After Florida's Auburn Win",
-      "excerpt": "Jon Sumrall celebrated Florida's SEC road win at Auburn, then delivered a blunt warning about 16 penalties, discipline and the standard ahead for the Gators.",
-      "url": "https://www.gatorbaitmedia.com/post/no-bad-wins-sumrall-issues-warning-after-florida-s-auburn-win",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-20T07:30:31Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_21baad43225b4851afa6f5548200664f~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for No Bad Wins: Sumrall Issues Warning After Florida's Auburn Win"
       }
     }
   ]

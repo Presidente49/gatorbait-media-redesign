@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-09-24T03:25:53.471Z",
+  "capturedAt": "2026-09-24T03:31:54.507Z",
   "runs": [
     {
       "profile": "mobile",
@@ -119,9 +119,9 @@
       "headlineInViewport": true,
       "headlineReadable": false,
       "leadImage": {
-        "width": 0,
-        "height": 0,
-        "top": 0
+        "width": 292,
+        "height": 230,
+        "top": 125
       },
       "docScrollWidth": 320
     },
@@ -241,7 +241,6 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-phone390.jpg",
       "consoleErrors": [
-        "Failed to load resource: the server responded with a status of 429 ()",
         "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
       ],
       "candidate": {
@@ -353,9 +352,9 @@
       "headlineInViewport": true,
       "headlineReadable": true,
       "leadImage": {
-        "width": 0,
-        "height": 0,
-        "top": 0
+        "width": 354,
+        "height": 230,
+        "top": 125
       },
       "docScrollWidth": 390
     },
@@ -365,8 +364,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/blog-phone390.jpg",
       "consoleErrors": [
-        "pageerror: ReferenceError: wixTagManager is not defined",
-        "Failed to load resource: the server responded with a status of 429 ()"
+        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/blog-phone390-candidate.jpg",
@@ -384,16 +382,15 @@
           "scrollHeight": 0,
           "clientHeight": 0
         },
-        "findingsBefore": 2,
-        "findingsAfter": 2,
+        "findingsBefore": 1,
+        "findingsAfter": 1,
         "resolved": [],
         "introduced": []
       },
       "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
       "width": 980,
       "findings": [
-        "44 tap targets under 44px",
-        "Retired branding present: Rob Browne"
+        "49 tap targets under 44px"
       ],
       "rootClasses": "gbm-tight-footer",
       "hasNewsroom": false,
@@ -466,10 +463,8 @@
       ],
       "pageScrollsSideways": false,
       "offscreenOnly": 8,
-      "smallTapTargets": 44,
-      "retiredBranding": [
-        "Rob Browne"
-      ],
+      "smallTapTargets": 49,
+      "retiredBranding": [],
       "docScrollWidth": 980
     },
     {
@@ -478,8 +473,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-phone430.jpg",
       "consoleErrors": [
-        "pageerror: ReferenceError: wixTagManager is not defined",
-        "Failed to load resource: the server responded with a status of 429 ()"
+        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/home-phone430-candidate.jpg",
@@ -505,7 +499,7 @@
       "url": "https://www.gatorbaitmedia.com/",
       "width": 430,
       "findings": [
-        "16 tap targets under 44px"
+        "20 tap targets under 44px"
       ],
       "rootClasses": "gbm-gazette-live gbm-standalone-live",
       "hasNewsroom": true,
@@ -578,7 +572,7 @@
       ],
       "pageScrollsSideways": false,
       "offscreenOnly": 8,
-      "smallTapTargets": 16,
+      "smallTapTargets": 20,
       "retiredBranding": [],
       "viewportHeight": 932,
       "firstHeadline": {
@@ -590,9 +584,9 @@
       "headlineInViewport": true,
       "headlineReadable": true,
       "leadImage": {
-        "width": 0,
-        "height": 0,
-        "top": 0
+        "width": 394,
+        "height": 230,
+        "top": 125
       },
       "docScrollWidth": 430
     },
@@ -715,8 +709,7 @@
       "status": 200,
       "screenshot": "automation/vision/latest/home-desktop.jpg",
       "consoleErrors": [
-        "pageerror: ReferenceError: wixTagManager is not defined",
-        "Failed to load resource: the server responded with a status of 429 ()"
+        "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
       ],
       "candidate": {
         "screenshot": "automation/vision/latest/home-desktop-candidate.jpg",
@@ -742,7 +735,7 @@
       "url": "https://www.gatorbaitmedia.com/",
       "width": 1280,
       "findings": [
-        "14 tap targets under 44px"
+        "19 tap targets under 44px"
       ],
       "rootClasses": "gbm-gazette-live gbm-standalone-live",
       "hasNewsroom": true,
@@ -766,7 +759,7 @@
       ],
       "pageScrollsSideways": false,
       "offscreenOnly": 1,
-      "smallTapTargets": 14,
+      "smallTapTargets": 19,
       "retiredBranding": [],
       "viewportHeight": 900,
       "firstHeadline": {
@@ -778,9 +771,9 @@
       "headlineInViewport": true,
       "headlineReadable": true,
       "leadImage": {
-        "width": 250,
-        "height": 67,
-        "top": 22
+        "width": 340,
+        "height": 425,
+        "top": 235
       },
       "docScrollWidth": 1280
     },

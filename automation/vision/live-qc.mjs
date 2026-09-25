@@ -25,14 +25,27 @@ const TARGETS=[
   }
 ];
 
+const IOS_UA=devices['iPhone 13'].userAgent;
+function phone(width,height){
+  return {
+    userAgent:IOS_UA,
+    viewport:{width,height},
+    screen:{width,height},
+    deviceScaleFactor:2,
+    isMobile:true,
+    hasTouch:true
+  };
+}
 const PROFILES=[
-  {name:'phone320',context:{...devices['iPhone 13'],viewport:{width:320,height:740}}},
-  {name:'phone390',context:{...devices['iPhone 13'],viewport:{width:390,height:844}}},
-  {name:'phone430',context:{...devices['iPhone 14 Pro Max'],viewport:{width:430,height:932}}},
-  {name:'desktop',context:{viewport:{width:1365,height:900},deviceScaleFactor:1}}
+  {name:'phone320',expectedWidth:320,context:phone(320,740)},
+  {name:'phone390',expectedWidth:390,context:phone(390,844)},
+  {name:'phone430',expectedWidth:430,context:phone(430,932)},
+  {name:'desktop',expectedWidth:1365,context:{viewport:{width:1365,height:900},screen:{width:1365,height:900},deviceScaleFactor:1}}
 ];
 
-function audit(target){
+function audit(input){
+  const target=input.target;
+  const requestedWidth=input.requestedWidth;
   const root=target.root?document.querySelector(target.root):null;
   const nativePages=document.querySelector('#SITE_PAGES');
   const bodyText=(document.body?.innerText||'').replace(/\s+/g,' ').trim();
@@ -68,6 +81,10 @@ function audit(target){
 
   const hard=[];
   const warnings=[];
+
+  if(Math.abs(innerWidth-requestedWidth)>4){
+    hard.push('requested '+requestedWidth+'px profile rendered '+innerWidth+'px layout viewport');
+  }
   const rootPresent=target.root?Boolean(root):true;
   const rootVisible=target.root?visible(root):true;
   if(target.root&&!rootPresent)hard.push('expected presentation root missing: '+target.root);
@@ -136,6 +153,42 @@ function audit(target){
   if(!first)hard.push('no visible headline detected');
   else if(first.top>innerHeight*1.25)warnings.push('first visible headline starts below first screen');
 
+  // Wix consent is legally required, but the first layer still needs to behave
+  // like a conventional compact publisher banner. Find the smallest visible
+  // fixed/sticky container that owns Accept All + Decline All + Settings.
+  let consent=null;
+  const candidates=[...document.querySelectorAll('body *')].filter(el=>{
+    if(!visible(el))return false;
+    const text=(el.innerText||'').replace(/\s+/g,' ').trim();
+    if(!text.includes('Accept All')||!text.includes('Decline All')||!text.includes('Settings'))return false;
+    const pos=getComputedStyle(el).position;
+    return pos==='fixed'||pos==='sticky';
+  });
+  candidates.sort((a,b)=>{
+    const ar=a.getBoundingClientRect(),br=b.getBoundingClientRect();
+    return (ar.width*ar.height)-(br.width*br.height);
+  });
+  if(candidates[0]){
+    const el=candidates[0],r=el.getBoundingClientRect();
+    consent={
+      height:Math.round(r.height),
+      top:Math.round(r.top),
+      ratio:Number((r.height/innerHeight).toFixed(3)),
+      text:(el.innerText||'').replace(/\s+/g,' ').trim().slice(0,220)
+    };
+    if(innerWidth<=600&&consent.ratio>0.35){
+      hard.push('mobile cookie consent panel consumes '+Math.round(consent.ratio*100)+'% of viewport height');
+    }
+    if(first){
+      const hs=[...document.querySelectorAll('h1,h2,h3')].filter(visible).sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top)[0];
+      if(hs){
+        const h=hs.getBoundingClientRect();
+        const overlaps=h.bottom>r.top&&h.top<r.bottom&&h.right>r.left&&h.left<r.right;
+        if(overlaps)hard.push('cookie consent panel overlaps first visible headline');
+      }
+    }
+  }
+
   let small=0;
   for(const el of document.querySelectorAll('a,button,[role="button"]')){
     if(!visible(el))continue;
@@ -156,6 +209,7 @@ function audit(target){
     visibleImages:visibleImages.slice(0,8),
     smallTapTargets:small,
     hard,
+    consent,
     warnings
   };
 }
@@ -168,8 +222,15 @@ for(const profile of PROFILES){
     const context=await browser.newContext(profile.context);
     const page=await context.newPage();
     const consoleErrors=[];
+    const networkFailures=[];
     page.on('pageerror',e=>consoleErrors.push(String(e).slice(0,220)));
     page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text().slice(0,220));});
+    page.on('requestfailed',req=>{
+      networkFailures.push({url:req.url().slice(0,260),error:req.failure()?.errorText||'request failed'});
+    });
+    page.on('response',res=>{
+      if(res.status()>=400)networkFailures.push({url:res.url().slice(0,260),status:res.status()});
+    });
     let status=null;
     try{
       const response=await page.goto(target.url,{waitUntil:'load',timeout:45000});
@@ -177,10 +238,10 @@ for(const profile of PROFILES){
       await page.waitForTimeout(8000);
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';
       await page.screenshot({path:shot,type:'jpeg',quality:70,fullPage:false});
-      const result=await page.evaluate(audit,target);
+      const result=await page.evaluate(audit,{target,requestedWidth:profile.expectedWidth});
       if(status!==200)result.hard.push('HTTP status '+status);
       report.hardFailureCount+=result.hard.length;
-      report.runs.push({target:target.name,profile:profile.name,status,screenshot:shot,consoleErrors:consoleErrors.slice(0,6),...result});
+      report.runs.push({target:target.name,profile:profile.name,requestedWidth:profile.expectedWidth,status,screenshot:shot,consoleErrors:consoleErrors.slice(0,6),networkFailures:networkFailures.slice(0,10),...result});
     }catch(error){
       report.hardFailureCount++;
       report.runs.push({target:target.name,profile:profile.name,status,error:String(error).slice(0,300),hard:['navigation/audit failed']});
@@ -196,7 +257,7 @@ for(const r of report.runs){
   lines.push('## '+r.target+' · '+r.profile);
   if(r.error){lines.push('- HARD: '+r.error,'');continue;}
   lines.push('- HTTP: '+r.status);
-  lines.push('- viewport: '+r.viewport.width+'×'+r.viewport.height+'; layout width '+r.layoutWidth);
+  lines.push('- requested/rendered viewport: '+r.requestedWidth+' / '+r.viewport.width+'×'+r.viewport.height+'; layout width '+r.layoutWidth);
   lines.push('- expected text: '+r.expectedTextPresent);
   lines.push('- presentation root: '+r.rootPresent+' / visible '+r.rootVisible);
   lines.push('- native pages visible: '+r.nativePagesVisible);
@@ -204,9 +265,11 @@ for(const r of report.runs){
   if(r.articleTitleCandidates?.length) lines.push('- article title candidate: '+JSON.stringify(r.articleTitleCandidates[0]));
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
+  if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');
   if(r.hard.length)for(const f of r.hard)lines.push('- **HARD:** '+f);
   if(r.warnings.length)for(const f of r.warnings)lines.push('- warning: '+f);
   if(r.consoleErrors.length)lines.push('- console errors recorded: '+r.consoleErrors.length);
+  if(r.networkFailures?.length)lines.push('- failed/4xx network requests recorded: '+r.networkFailures.length);
   lines.push('');
 }
 lines.push('**Hard failures: '+report.hardFailureCount+'**');

@@ -197,6 +197,34 @@ Do not bulk-merge old branches to recover one useful component.
 - **PR #5** magazine/growth playbooks are already merged; use current main copies.
 - **PR #24** Studio product work was merged to its Studio branch/base history; it is not authority to migrate production Wix.
 
+## Email audience and consent — fresh September 24 audit
+
+Full Wix population audit:
+- contacts / unique emails: **2,580 / 2,580**
+- subscription rows resolved: **2,578**; 2 have no subscription record
+- SUBSCRIBED: **1,879**
+- UNSUBSCRIBED: **670**
+- NOT_SET: **25**
+- PENDING: **4**
+- SUBSCRIBED + VALID: **1,080**
+- SUBSCRIBED + deliverability NOT_SET: **15**
+- SUBSCRIBED + INACTIVE: **758**
+- SUBSCRIBED + BOUNCED: **13**
+- SUBSCRIBED + SPAM_COMPLAINT: **13**
+- current conservative sendable gate (SUBSCRIBED + VALID/NOT_SET): **1,095**
+
+Historical claims that hundreds of contacts are currently subscription-status NOT_SET are superseded. Only 25 are currently NOT_SET, and only 4 were created in September 2026.
+
+Current Wix Forms inventory has exactly one `wix.form_app.form` schema:
+- `6babfee8-147f-428a-9e14-6b72f6225835` — **GatorBait Email List**
+- contains visible `CONTACTS_EMAIL`
+- contains visible `CONTACTS_SUBSCRIBE` boolean CHECKBOX
+- contains submit button
+
+Therefore the two Sep. 21 WIX_FORMS contacts with NOT_SET are **not evidence that the form lacks an opt-in field**; an unchecked subscribe box legitimately produces no marketing subscription. Two Sep. 21 site-member-created NOT_SET contacts likewise must not be auto-marketed without consent.
+
+The major current audience question is Wix's **758 SUBSCRIBED / INACTIVE** contacts. Do not force-send or rewrite their status based on subscription alone. Wix automatically maintains deliverability state; preserve `activeContactsOnly` and current conservative gates until a documented provider-safe re-engagement path is established.
+
 ## Open queue
 
 1. **Provider-preview duplicate-draft incident:** VERIFIED_CLOSED. One canonical draft remains.

@@ -86,6 +86,52 @@ function audit(target){
   if(visibleImages.length&&visibleImages.some(i=>!i.loaded))hard.push('visible image failed to load in first two screens');
   if(!visibleImages.length)warnings.push('no visible image detected in first two screens');
 
+  const inspected=[];
+  for(const el of document.querySelectorAll('h1,h2,h3,[data-hook],[data-testid]')){
+    const txt=(el.textContent||'').replace(/\s+/g,' ').trim();
+    if(!txt||!txt.toLowerCase().includes('the cowboy doesn')) continue;
+    const cs=getComputedStyle(el),r=el.getBoundingClientRect();
+    inspected.push({
+      tag:el.tagName.toLowerCase(),
+      id:el.id||null,
+      cls:typeof el.className==='string'?el.className.slice(0,180):null,
+      dataHook:el.getAttribute('data-hook'),
+      dataTestid:el.getAttribute('data-testid'),
+      fontSize:cs.fontSize,
+      lineHeight:cs.lineHeight,
+      fontFamily:cs.fontFamily,
+      fontWeight:cs.fontWeight,
+      width:Math.round(r.width),
+      height:Math.round(r.height),
+      top:Math.round(r.top+scrollY),
+      visible:visible(el)
+    });
+  }
+  out.articleTitleCandidates=inspected.slice(0,12);
+
+  const consentCandidates=[];
+  for(const el of document.querySelectorAll('body *')){
+    const txt=(el.textContent||'').replace(/\s+/g,' ').trim();
+    if(!txt||!txt.includes('We use cookies for site performance and analytics')) continue;
+    const cs=getComputedStyle(el),r=el.getBoundingClientRect();
+    if(!visible(el)) continue;
+    consentCandidates.push({
+      tag:el.tagName.toLowerCase(),
+      id:el.id||null,
+      cls:typeof el.className==='string'?el.className.slice(0,180):null,
+      dataHook:el.getAttribute('data-hook'),
+      dataTestid:el.getAttribute('data-testid'),
+      position:cs.position,
+      zIndex:cs.zIndex,
+      width:Math.round(r.width),
+      height:Math.round(r.height),
+      top:Math.round(r.top),
+      bottom:Math.round(innerHeight-r.bottom)
+    });
+  }
+  consentCandidates.sort((a,b)=>a.height-b.height);
+  out.consentCandidates=consentCandidates.slice(0,8);
+
   const first=headlines[0]||null;
   if(!first)hard.push('no visible headline detected');
   else if(first.top>innerHeight*1.25)warnings.push('first visible headline starts below first screen');
@@ -155,6 +201,8 @@ for(const r of report.runs){
   lines.push('- presentation root: '+r.rootPresent+' / visible '+r.rootVisible);
   lines.push('- native pages visible: '+r.nativePagesVisible);
   lines.push('- first headline: '+(r.firstHeadline?('y='+r.firstHeadline.top+' — '+r.firstHeadline.text):'NONE'));
+  if(r.articleTitleCandidates?.length) lines.push('- article title candidate: '+JSON.stringify(r.articleTitleCandidates[0]));
+  if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
   if(r.hard.length)for(const f of r.hard)lines.push('- **HARD:** '+f);
   if(r.warnings.length)for(const f of r.warnings)lines.push('- warning: '+f);

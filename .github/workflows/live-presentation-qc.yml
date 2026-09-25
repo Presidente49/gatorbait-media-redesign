@@ -1,0 +1,46 @@
+name: GatorBait live presentation QC
+
+on:
+  push:
+    paths:
+      - 'sports-live/**'
+      - 'automation/site-design/**'
+      - 'automation/vision/live-qc.mjs'
+      - '.github/workflows/live-presentation-qc.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-presentation-qc-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render-qc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.49.1
+          npx playwright install --with-deps chromium
+
+      - name: Render and audit production
+        run: node automation/vision/live-qc.mjs
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gatorbait-live-presentation-qc
+          path: build/live-site-vision
+          if-no-files-found: error

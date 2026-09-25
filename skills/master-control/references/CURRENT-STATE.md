@@ -71,14 +71,15 @@ Repo gates:
 - first automated Stack run `36081881578` completed successfully with strict MJML compile and preview artifact.
 
 Current canonical Wix release draft:
-- campaign: `5ba53901-b143-45c8-8f5d-31ff3763ef77`
+- campaign: `13f1901e-f2cd-41f7-9a68-94ba555afe56`
 - subject: **GatorBait Magazine: Florida vs Ole Miss Week**
 - state: **DRAFT / NOT_STARTED**
 - provider preview independently verified with only:
   - `a99769_9cea463d1045446d8550ce6aa803b0d3~mv2.jpeg`
   - `16b519_a0c1b7e3ce9846239402069349deab8c~mv2.jpg`
 - denied Cowboy images absent
-- two noncanonical same-title drafts were deleted after the canonical preview passed.
+- prior one-UTM canonical draft `5ba53901-b143-45c8-8f5d-31ff3763ef77` and earlier noncanonical same-title drafts were deleted only after replacement preview verification passed.
+- current provider-tracked destinations were decoded and verified with complete `utm_source=gatorbait_magazine_newsletter`, `utm_medium=email`, `utm_campaign=ole_miss_week_2026_09_25`, and unique `utm_content` across all eight article CTAs.
 
 Do not reuse older Library HTML/PDF reading-edition proofs as the send-ready campaign. They are historical design artifacts unless explicitly promoted through the current Stack.
 
@@ -183,6 +184,16 @@ A Google Drive mount is available. Top-level and likely code/download locations 
 
 ### Local computer
 Remote Desktop Commander currently returns **no connected devices**. Therefore local Mac folders, local Git clones/worktrees and local Claude/Codex session state cannot be truthfully inventoried from this cloud session yet. Do not claim local installation or local cleanup until a device connects.
+
+## Open branch / PR disposition
+
+Do not bulk-merge old branches to recover one useful component.
+
+- **PR #29 / `claude/gatorbait-studio-redesign-ysxi79` — OPEN draft / SELECTIVE SOURCE ONLY.** It contains useful isolated components (downloadable magazine builder, site-vision tooling and the original newsletter attribution checker). The attribution checker has now been selectively integrated into the canonical Newsletter Stack. The branch also contains older/stale design assumptions, generated artifacts, font files and experimental work; do not merge wholesale.
+- **PR #32 / `skills/portable-business-operations-20260924` — OPEN draft / REVIEW HOLD.** It contains a broad portable business-operations/catalog layer. Current Master Control already provides the canonical cross-harness controller and source inventory; do not merge #32 wholesale or create a second control hierarchy. Extract only a bounded capability after source/license review and a concrete need.
+- **PR #2** old magazine theme is closed/superseded; do not restore.
+- **PR #5** magazine/growth playbooks are already merged; use current main copies.
+- **PR #24** Studio product work was merged to its Studio branch/base history; it is not authority to migrate production Wix.
 
 ## Open queue
 

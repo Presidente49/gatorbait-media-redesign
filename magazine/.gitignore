@@ -1,0 +1,6 @@
+build-cache/
+issues/*/issue.html
+issues/*/issue.pdf
+issues/*/preview-*.jpg
+issues/*/build-report.json
+issues/*/render-report.json

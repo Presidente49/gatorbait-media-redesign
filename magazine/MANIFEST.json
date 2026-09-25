@@ -1,0 +1,18 @@
+{
+  "status": "REVIEW_ONLY",
+  "recoveredFrom": "PR #29 / claude/gatorbait-studio-redesign-ysxi79",
+  "recoveredDate": "2026-09-24",
+  "currentEngine": "Chromium/Playwright",
+  "bodyLayout": "two-column CSS columns",
+  "productionSend": false,
+  "pagedjs": "SECURITY_HOLD",
+  "vivliostyle": "SOURCE_REFERENCE_ONLY",
+  "inputs": "authenticated normalized Wix Blog rich-content cache + issue.json",
+  "outputs": [
+    "issue.html",
+    "issue.pdf",
+    "preview-cover.jpg",
+    "preview-contents.jpg",
+    "preview-story-N.jpg"
+  ]
+}

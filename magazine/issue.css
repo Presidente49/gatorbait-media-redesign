@@ -1,0 +1,41 @@
+/* Existing print-first magazine, finished as a bounded review export. */
+@page{size:Letter;margin:14mm 15mm 18mm}
+:root{--navy:#11274a;--orange:#FA4616;--ink:#182b42;--muted:#526276;--paper:#fffdf9;--rule:#d7dee5}
+*{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 10.8pt/1.47 Georgia,'Times New Roman',serif}
+.cover{height:9.52in;background:var(--navy);color:white;padding:25pt 28pt 22pt;break-after:page;page-break-after:always;position:relative}
+.masthead{font:700 48pt/.98 Georgia,'Times New Roman',serif;letter-spacing:-1.5pt;margin:0}
+.masthead span{display:block;color:var(--orange);font:700 11pt/1.1 Arial,sans-serif;letter-spacing:7pt;margin-top:7pt}
+.issue-line{font:700 8.5pt/1.3 Arial,sans-serif;letter-spacing:1pt;text-transform:uppercase;border-top:2pt solid var(--orange);padding-top:9pt;margin:13pt 0 15pt;color:#dce5ee}
+.cover-art figure{margin:0 0 13pt}.cover-art img{height:235pt;width:100%;object-fit:contain;display:block}
+.cover-art figcaption{font:400 7.3pt/1.35 Arial,sans-serif;color:#d5dfed;margin-top:6pt;border:0;padding:0}
+.cover-author{font:700 9pt/1.2 Arial,sans-serif;letter-spacing:2pt;color:var(--orange);margin:12pt 0 6pt}
+.cover h1{font:700 38pt/1.03 Georgia,'Times New Roman',serif;text-transform:uppercase;letter-spacing:-.3pt;margin:0;max-width:440pt}
+.cover-deck{font:italic 13pt/1.4 Georgia,serif;color:#e6edf3;margin:10pt 0 0;max-width:400pt}
+.cover-bottom{position:absolute;bottom:22pt;left:28pt;right:28pt;padding-top:9pt;border-top:1pt solid #607287;font:700 8pt/1.2 Arial,sans-serif;letter-spacing:1pt}.cover-bottom span{float:right;color:#e5ebf3}
+.contents{height:9.52in;break-after:page;page-break-after:always;padding:12pt 0 0}
+.kicker,.contents-kicker{font:700 8pt/1.2 Arial,sans-serif;color:var(--orange);letter-spacing:1.5pt;text-transform:uppercase;margin:0 0 8pt}
+.contents>h2{font:700 32pt/1.1 Georgia,'Times New Roman',serif;color:var(--navy);margin:0 0 14pt}
+.contents-intro{font:400 11pt/1.5 Georgia,serif;max-width:420pt;margin:0 0 20pt}
+.contents ol{padding:0;margin:0;list-style:none;border-top:2pt solid var(--navy)}
+.contents li{display:flex;justify-content:space-between;gap:20pt;align-items:center;padding:14pt 0;border-bottom:1pt solid var(--rule)}
+.contents li h3{font:700 18pt/1.16 Georgia,'Times New Roman',serif;margin:4pt 0;color:var(--navy);max-width:430pt}
+.contents li p{font:400 9pt/1.3 Arial,sans-serif;color:var(--muted);margin:4pt 0 0}
+.folio{font:700 24pt/1 Georgia,'Times New Roman',serif;color:var(--orange);min-width:25pt;text-align:right}
+.edition-note{border-top:2pt solid var(--orange);padding-top:11pt;margin-top:24pt;font:400 8.7pt/1.5 Arial,sans-serif;color:var(--muted)}
+.edition-note h3{font:700 9pt/1.2 Arial,sans-serif;text-transform:uppercase;letter-spacing:1pt;margin:0 0 8pt;color:var(--navy)}
+.edition-note p{margin:0 0 8pt}.review-note{font-size:8pt!important}
+.story{break-before:page;page-break-before:always}
+.story-head{border-bottom:2pt solid var(--navy);padding:8pt 0 13pt;margin:0 0 17pt;break-inside:avoid}
+.story-head h2{font:700 28pt/1.08 Georgia,'Times New Roman',serif;color:var(--navy);margin:0;letter-spacing:-.15pt}
+.byline{font:700 9pt/1.3 Arial,sans-serif;text-transform:uppercase;letter-spacing:1pt;color:var(--muted);margin:11pt 0 0}
+figure{margin:0 0 16pt;break-inside:avoid}figure img{width:100%;max-height:165pt;object-fit:contain;display:block}
+figcaption{font:400 8pt/1.4 Arial,sans-serif;color:var(--muted);border-left:2pt solid var(--orange);padding-left:7pt;margin:6pt 0 0}
+.story-body{column-count:2;column-gap:23pt;column-fill:auto;orphans:3;widows:3}
+.story-body p{margin:0 0 9pt;text-align:left;hyphens:auto}.story-body p.lede{font-size:11.5pt;line-height:1.45}
+.story-body h3{font:700 12pt/1.2 Georgia,'Times New Roman',serif;color:var(--navy);margin:12pt 0 7pt;break-after:avoid;page-break-after:avoid}
+blockquote{font:italic 10.8pt/1.45 Georgia,serif;color:var(--navy);border-left:2pt solid var(--orange);padding-left:9pt;margin:10pt 0;orphans:3;widows:3}
+.end-sign{font:700 7pt/1.2 Arial,sans-serif;letter-spacing:2pt;color:var(--orange);text-align:right;margin:12pt 0}
+body.measure-only>.cover,body.measure-only>.contents,body.measure-only>.story:not(.measure-target){display:none!important}
+body.measure-only>.measure-target{break-before:auto;page-break-before:auto}
+@media screen{body{background:#e9edf2;padding:20px}.cover,.contents,.story{width:185.9mm;margin:0 auto 24px;box-shadow:0 2px 13px #17314a26}.contents,.story{background:var(--paper);padding:20pt}.cover{padding:25pt 28pt 22pt}.story-body{column-fill:balance}}

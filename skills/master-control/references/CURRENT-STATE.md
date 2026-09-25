@@ -51,6 +51,7 @@ Production design library:
 
 Canonical GatorBait source:
 - `newsletter/templates/gatorbait-magazine-colorlib-v1.mjml`
+- visual baseline restored from the preserved September 18 Killing Fields edition: strong GatorBait masthead, cover treatment and editorial rhythm, implemented on top of the current Colorlib Brief/Stories system rather than restoring old content.
 
 Hard rules:
 - serious real/cleared game photography when photography is used
@@ -71,7 +72,7 @@ Repo gates:
 - first automated Stack run `36081881578` completed successfully with strict MJML compile and preview artifact.
 
 Current canonical Wix release draft:
-- campaign: `13f1901e-f2cd-41f7-9a68-94ba555afe56`
+- campaign: `1f750191-01aa-47e4-9dea-6fab7dd609e4`
 - subject: **GatorBait Magazine: Florida vs Ole Miss Week**
 - state: **DRAFT / NOT_STARTED**
 - provider preview independently verified with only:
@@ -80,6 +81,7 @@ Current canonical Wix release draft:
 - denied Cowboy images absent
 - prior one-UTM canonical draft `5ba53901-b143-45c8-8f5d-31ff3763ef77` and earlier noncanonical same-title drafts were deleted only after replacement preview verification passed.
 - current provider-tracked destinations were decoded and verified with complete `utm_source=gatorbait_magazine_newsletter`, `utm_medium=email`, `utm_campaign=ole_miss_week_2026_09_25`, and unique `utm_content` across all eight article CTAs.
+- restored visual baseline commit `f4305e01c3420a37513823d0b0feafe6421c4513` passed Newsletter Stack run `36085189481`; Wix replacement draft `1f750191-01aa-47e4-9dea-6fab7dd609e4` passed provider preview, two-photo and tracked-destination checks. Prior draft `13f1901e-f2cd-41f7-9a68-94ba555afe56` was deleted only after replacement verification.
 
 Do not reuse older Library HTML/PDF reading-edition proofs as the send-ready campaign. They are historical design artifacts unless explicitly promoted through the current Stack.
 

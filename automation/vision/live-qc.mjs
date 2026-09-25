@@ -197,8 +197,13 @@ function audit(input){
   }
   if(small>10)warnings.push(small+' interactive targets below 44px guideline');
 
+  const viewportMeta=document.querySelector('meta[name="viewport"]')?.getAttribute('content')||null;
   return {
     url:location.href,
+    viewportMeta,
+    screen:{width:screen.width,height:screen.height},
+    outer:{width:outerWidth,height:outerHeight},
+    visualViewport:window.visualViewport?{width:Math.round(window.visualViewport.width),height:Math.round(window.visualViewport.height),scale:window.visualViewport.scale}:null,
     viewport:{width:innerWidth,height:innerHeight},
     layoutWidth:document.documentElement.scrollWidth,
     rootPresent,
@@ -241,9 +246,34 @@ for(const profile of PROFILES){
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';
       await page.screenshot({path:shot,type:'jpeg',quality:70,fullPage:false});
       const result=await page.evaluate(audit,{target,requestedWidth:profile.expectedWidth});
+      let viewportCandidate=null;
+      if(profile.expectedWidth<=600&&Math.abs(result.viewport.width-profile.expectedWidth)>4){
+        viewportCandidate=await page.evaluate(async expectedWidth=>{
+          const meta=document.querySelector('meta[name="viewport"]');
+          const before=meta?.getAttribute('content')||null;
+          if(meta)meta.setAttribute('content','width=device-width, initial-scale=1, viewport-fit=cover');
+          await new Promise(r=>setTimeout(r,750));
+          const root=document.querySelector('#gbm-live,#gbm-magazine-page,#SITE_PAGES');
+          const rr=root?.getBoundingClientRect();
+          return {
+            expectedWidth,
+            metaBefore:before,
+            metaAfter:meta?.getAttribute('content')||null,
+            innerWidth,
+            layoutWidth:document.documentElement.scrollWidth,
+            screenWidth:screen.width,
+            visualViewportWidth:window.visualViewport?Math.round(window.visualViewport.width):null,
+            rootWidth:rr?Math.round(rr.width):null,
+            horizontalOverflow:document.documentElement.scrollWidth>innerWidth+2
+          };
+        },profile.expectedWidth);
+        const candidateShot=OUT+'/'+target.name+'-'+profile.name+'-viewport-candidate.jpg';
+        await page.screenshot({path:candidateShot,type:'jpeg',quality:70,fullPage:false});
+        viewportCandidate.screenshot=candidateShot;
+      }
       if(status!==200)result.hard.push('HTTP status '+status);
       report.hardFailureCount+=result.hard.length;
-      report.runs.push({target:target.name,profile:profile.name,requestedWidth:profile.expectedWidth,status,screenshot:shot,consoleErrors:consoleErrors.slice(0,6),networkFailures:networkFailures.slice(0,10),...result});
+      report.runs.push({target:target.name,profile:profile.name,requestedWidth:profile.expectedWidth,status,screenshot:shot,viewportCandidate,consoleErrors:consoleErrors.slice(0,6),networkFailures:networkFailures.slice(0,10),...result});
     }catch(error){
       report.hardFailureCount++;
       report.runs.push({target:target.name,profile:profile.name,status,error:String(error).slice(0,300),hard:['navigation/audit failed']});
@@ -260,6 +290,9 @@ for(const r of report.runs){
   if(r.error){lines.push('- HARD: '+r.error,'');continue;}
   lines.push('- HTTP: '+r.status);
   lines.push('- requested/rendered viewport: '+r.requestedWidth+' / '+r.viewport.width+'×'+r.viewport.height+'; layout width '+r.layoutWidth);
+  lines.push('- viewport meta: '+r.viewportMeta);
+  lines.push('- screen / visual viewport: '+r.screen.width+' / '+(r.visualViewport?r.visualViewport.width:'n/a'));
+  if(r.viewportCandidate)lines.push('- test-only device-width candidate: '+JSON.stringify(r.viewportCandidate));
   lines.push('- expected text: '+r.expectedTextPresent);
   lines.push('- presentation root: '+r.rootPresent+' / visible '+r.rootVisible);
   lines.push('- native pages visible: '+r.nativePagesVisible);

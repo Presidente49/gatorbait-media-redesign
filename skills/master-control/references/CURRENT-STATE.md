@@ -198,6 +198,27 @@ Do not bulk-merge old branches to recover one useful component.
 - **PR #5** magazine/growth playbooks are already merged; use current main copies.
 - **PR #24** Studio product work was merged to its Studio branch/base history; it is not authority to migrate production Wix.
 
+## Visual QC — current evidence
+
+Read-only GitHub Chromium QC is now part of Master Control:
+- workflow: `.github/workflows/live-presentation-qc.yml`
+- targets: homepage, public Magazine, current Buddy article
+- profiles: 320, 390, 430 and 1365 desktop
+- first strict run `36085549728` correctly failed rather than returning a false green.
+- desktop surfaces passed structural hard gates.
+- mobile evidence shows the rendered layout viewport is **320px even when 390px and 430px are requested**, and the native Wix cookie first-layer overlaps the lead headline on homepage/Magazine.
+- the cookie banner itself is native Wix consent UI; do not suppress or bypass it with custom CSS/JS.
+- test harness now records the actual viewport meta/screen/visualViewport and performs a **test-only** `width=device-width` candidate reflow when Wix renders a wider phone at 320. Candidate evidence does not mutate production.
+- minor Wix telemetry/network noise (aborted panorama/frog requests, Sentry 429, wce-frog certificate failure, GTM ORB in headless Chromium) is recorded separately and is not being treated as article/content failure without provider corroboration.
+
+Newsletter visual proof is separately verified:
+- Stack run `36085747162` = SUCCESS
+- artifact `10843558599`
+- real 390px and 1000px rendered screenshots
+- zero horizontal overflow
+- exactly two distinct images, both loaded
+- restored GatorBait/Killing Fields editorial rhythm visibly present.
+
 ## Email audience and consent — fresh September 24 audit
 
 Full Wix population audit:

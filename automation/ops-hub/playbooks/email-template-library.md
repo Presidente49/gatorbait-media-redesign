@@ -1,6 +1,6 @@
 # GatorBait Email Template Library
 
-Updated: 2026-09-20
+Updated: 2026-09-24
 
 Purpose: stop rebuilding email layouts from scratch. Prefer Wix-native reuse first, then adapt vetted open-source patterns into Wix MJML drafts or existing Wix automation emails.
 
@@ -46,6 +46,7 @@ Use:
 Why: newsletter-first layouts, table-safe HTML, strong editorial structure.
 
 Repository: https://github.com/ColorlibHQ/email-templates
+Installed/pinned upstream: `vendor/colorlib-email-templates` at `3018557fe943fb1c3e3367aa52d39b2fca44f725` (MIT). Do not fork-copy individual files when the upstream submodule can remain the source of truth.
 
 ### 3. usewaypoint/responsive-transactional-email-templates
 Free responsive transactional patterns.
@@ -97,7 +98,7 @@ Layout:
 - third story headline-only
 - optional merch row
 - footer/unsubscribe
-Source pattern: Colorlib Brief + MJML official newsletter.
+Source pattern: Colorlib **24 · Brief** editorial shell + Colorlib **04 · Stories** responsive multi-column story grid. Canonical GatorBait baseline: `newsletter/templates/gatorbait-magazine-colorlib-v1.mjml`.
 
 ### C. Welcome / Onboarding
 Use for new paid/free-trial subscribers.
@@ -144,4 +145,7 @@ Source pattern: Mailteorite reengagement or Colorlib Verge.
 - mobile-first typography
 - always preview/test before publish
 - preserve unsubscribe and privacy/compliance footer
-- use original GatorBait photography whenever available
+- use original/cleared GatorBait photography whenever available
+- Magazine baseline: serious editorial/game photography only when photography is used; no novelty/gimmick art when a real game photo is available
+- never repeat an image/media ID within one Magazine issue; text-only blocks are preferred to duplicate art
+- run the repository Newsletter Stack QC and strict MJML compile before provider preview/send

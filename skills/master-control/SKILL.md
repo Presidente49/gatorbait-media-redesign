@@ -93,6 +93,15 @@ The local Ops Hub may continuously accumulate bounded evidence about recurring i
 
 For persistent incidents and recurring automations, use the shared communications/QC playbook so repeated checks converge on one owner/work item, unchanged state may resolve to NOOP, and any authorized mutation gets primary plus independent verification before the incident is considered improved.
 
+
+## Standing owner delegation for routine operations
+
+Brenden's September 24 direction is to stop asking routine implementation questions and run the Stack. For routine GatorBait work already covered by policy and a tested playbook, Master Control chooses the implementation details and completes the work end to end.
+
+For routine editorial/newsletter operations this includes selecting the approved template family, current story mix, ordinary serious photography, ordering, consented audience slice, routine send timing, QC sequence and verification steps. Do not ask Brenden to choose among these when deterministic evidence and current playbooks are sufficient.
+
+Escalate only when the task crosses an `approval_required` boundary, rights/consent or factual uncertainty cannot be resolved, provider/account access requires the owner, money/pricing/contract terms are involved, or the bounded QC/repair cycle cannot safely close the blocker.
+
 ## Approval boundaries
 
 Master Control may complete authorized reversible operational work without routine re-confirmation.

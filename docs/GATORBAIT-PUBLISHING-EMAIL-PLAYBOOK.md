@@ -52,10 +52,32 @@ Rules:
 1. Publish required articles first so every story has a permanent live URL.
 2. Choose one lead story and one lead image.
 3. Every visual slot must use a unique image URL. If no unique usable art exists, use a text-only story block or create new art. Never reuse an image in the same issue.
-4. GatorBait Magazine issues are manually reviewed campaigns. They do not auto-send on blog publish.
+4. GatorBait Magazine issues are controller-reviewed campaigns. They do not auto-send merely because a blog post publishes, but routine Magazine sends are owned by Master Control once the Newsletter Stack gates pass.
 5. Keep the issue magazine-like: strong lead, clear hierarchy, short decks, article CTAs, GatorBait TV close.
 6. No Magazine photo gallery unless the owner explicitly asks for one. Current owner direction is **no gallery**.
-7. Do not send until the owner explicitly approves the draft.
+7. Brenden has delegated routine GatorBait Magazine release decisions to Master Control. Do not re-ask for template, story order, ordinary photo selection, audience selection, routine timing, or routine send approval when the work is inside policy. Run the Newsletter Stack and proceed. Escalate only a true approval-required condition or human/access blocker.
+
+
+## 4A. Newsletter Stack — deterministic release path
+
+For every routine GatorBait Magazine issue, Master Control runs this state machine without asking Brenden routine implementation questions:
+
+`CONTENT_READY → REPO_QC → MJML_COMPILED → PROVIDER_PREVIEW → AUDIENCE_RESOLVED → SENDER_VERIFIED → DUPLICATE_SEND_CLEAR → SENT_OR_SCHEDULED → DELIVERY_VERIFIED → RECORDED`
+
+Required gates:
+
+1. **Content:** current canonical Wix articles, no stale `LIVE NOW` promos, no invented facts, links and bylines verified.
+2. **Design:** Colorlib 24 Brief shell + Colorlib 04 Stories multi-story structure from the pinned upstream submodule.
+3. **Photography:** serious editorial/game photography when photography is used; no novelty image when a real game photo is available; no repeated photo/media ID in one issue.
+4. **Repo QC:** unique-image validator, Stack validator, strict MJML compile, compiled artifact.
+5. **Provider preview:** rendered Wix preview has brand, intended stories, CTA destinations, unsubscribe/preferences and no unresolved placeholders.
+6. **Audience:** fresh read of the full current contact/subscription state; only SUBSCRIBED + deliverable/allowed contacts; never expand consent.
+7. **Sender:** verified Buddy Martin / GatorBait sender unless the issue has an explicitly different approved identity.
+8. **Deduplication:** no matching already-distributed campaign/story package to the same audience unless an intentional resend strategy is separately justified.
+9. **Delivery:** provider state and recipient outcomes checked after send; configured/accepted is not delivered.
+10. **Record:** campaign ID, source commit, audience counts, provider timestamps and meaningful delivery/open/click/bounce outcomes recorded in the existing Master Control work item.
+
+The controller stops only on an approval-required condition, rights/consent uncertainty, provider/access blocker, or a failed QC gate it cannot safely repair in the bounded cycle.
 
 ### Magazine newsletter design baseline — September 24, 2026
 
@@ -66,7 +88,8 @@ Rules:
 - Editorial photography must be real, relevant and licensed/owned. Do not substitute novelty/gimmick artwork when serious game photography exists.
 - **Never repeat a photo in the same issue.** Uniqueness is by underlying Wix media ID when present, otherwise normalized image URL. If a story does not have unique usable art, make it text-only.
 - For the Ole Miss edition currently being corrected, use exactly two serious football photos: one Jadan Baugh game photo and one Aaron Philo game photo. The Cowboy image is excluded from the newsletter.
-- Run `node automation/newsletter/validate-unique-images.mjs <issue.mjml>` before creating or updating a Wix campaign. Any duplicate image is a hard stop.
+- Run `node automation/newsletter/run-stack-qc.mjs <issue.mjml>` and `node automation/newsletter/validate-unique-images.mjs <issue.mjml>` before creating or updating a Wix campaign. Any failure is a hard stop.
+- GitHub workflow `.github/workflows/newsletter-stack-qc.yml` compiles the real MJML with the pinned Colorlib toolchain and uploads the compiled HTML artifact. A green source commit, campaign preview, or provider acceptance is not sufficient by itself; all applicable Stack gates must pass.
 
 Current Florida-Auburn pregame campaign:
 - Campaign ID: `b8fdc1c7-5ec0-4e55-952c-594ccad59bb0`
@@ -107,7 +130,7 @@ Before calling a publishing/email task complete:
 - Exactly one relevant automatic email workflow is active.
 - Duplicate workflow remains inactive; the active message is the verified custom template.
 - Story Alert preview passes brand/title/image/CTA checks.
-- Magazine campaign remains DRAFT until owner approval.
+- Magazine campaign remains DRAFT until repository QC, provider preview, sender, consent/audience and duplicate-send gates pass. Routine sends may then proceed under the standing Master Control delegation.
 - Magazine image URLs are unique.
 - Mobile layout is checked before send.
 - Repo source/runbook are updated with any new persistent rule.

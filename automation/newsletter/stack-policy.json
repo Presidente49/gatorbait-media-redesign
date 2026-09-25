@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "template": "newsletter/templates/gatorbait-magazine-colorlib-v1.mjml",
+  "sourceLibrary": {
+    "repository": "ColorlibHQ/email-templates",
+    "commit": "3018557fe943fb1c3e3367aa52d39b2fca44f725",
+    "shell": "24 · Brief",
+    "storyGrid": "04 · Stories"
+  },
+  "photoPolicy": {
+    "minImages": 2,
+    "maxImages": 2,
+    "requireUniqueMediaIdentity": true,
+    "allowedHosts": [
+      "static.wixstatic.com"
+    ],
+    "requiredCreditMarkers": [
+      "Photo by Chris Spears",
+      "GatorBait Media",
+      "UAA Photo"
+    ],
+    "disallowedAltPatterns": [
+      "illustration",
+      "graphic",
+      "cartoon",
+      "ai-generated",
+      "render"
+    ],
+    "deniedMediaIds": [
+      "ae876a_94621f9a876c4613b986817073a62692~mv2.jpg"
+    ]
+  },
+  "contentPolicy": {
+    "rejectTitlePrefixes": [
+      "LIVE NOW:"
+    ],
+    "minimumDistinctArticleLinks": 6,
+    "allowedArticleHost": "www.gatorbaitmedia.com",
+    "requireHttps": true,
+    "rejectPlaceholderLinks": true,
+    "rejectBrokenUtmEntityPattern": true
+  }
+}

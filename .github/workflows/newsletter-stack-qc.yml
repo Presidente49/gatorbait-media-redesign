@@ -1,0 +1,72 @@
+name: GatorBait Magazine Newsletter Stack QC
+
+on:
+  push:
+    paths:
+      - 'newsletter/**'
+      - 'automation/newsletter/**'
+      - 'docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md'
+      - 'automation/ops-hub/playbooks/email-template-library.md'
+      - 'skills/master-control/SKILL.md'
+      - 'automation/ops-hub/policy.json'
+      - '.gitmodules'
+      - 'vendor/colorlib-email-templates'
+      - '.github/workflows/newsletter-stack-qc.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: newsletter-stack-qc-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  newsletter-qc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout with pinned upstream library
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify pinned Colorlib source
+        run: |
+          test -f vendor/colorlib-email-templates/LICENSE-MIT
+          test -f vendor/colorlib-email-templates/src/24.mjml
+          test -f vendor/colorlib-email-templates/src/4.mjml
+          test "$(git -C vendor/colorlib-email-templates rev-parse HEAD)" = "3018557fe943fb1c3e3367aa52d39b2fca44f725"
+
+      - name: Run GatorBait Stack QC
+        run: |
+          node automation/newsletter/validate-unique-images.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
+          node automation/newsletter/run-stack-qc.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
+
+      - name: Install upstream MJML toolchain
+        run: npm ci --prefix vendor/colorlib-email-templates
+
+      - name: Strict-compile the real newsletter
+        run: |
+          mkdir -p build/newsletter
+          vendor/colorlib-email-templates/node_modules/.bin/mjml \
+            newsletter/templates/gatorbait-magazine-colorlib-v1.mjml \
+            -o build/newsletter/gatorbait-magazine.html \
+            --config.validationLevel=strict
+          grep -qi 'GATORBAIT' build/newsletter/gatorbait-magazine.html
+          grep -qi 'MAGAZINE NEWSLETTER' build/newsletter/gatorbait-magazine.html
+          if grep -Eqi '\$\{[^}]+\}|href=["'"'"']#|&amp;utm_' build/newsletter/gatorbait-magazine.html; then
+            echo "Compiled email contains a forbidden placeholder or malformed tracking key."
+            exit 1
+          fi
+
+      - name: Save compiled preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: gatorbait-magazine-newsletter-preview
+          path: build/newsletter/gatorbait-magazine.html
+          if-no-files-found: error

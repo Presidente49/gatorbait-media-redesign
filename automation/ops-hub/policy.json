@@ -29,7 +29,8 @@
       "canonical_handoff": "automation/ops-hub/playbooks/controller-communications-qc.md",
       "persistent_incidents_use_single_work_item": true,
       "dedupe_repeated_unchanged_alerts": true,
-      "owner_notifications_on_material_change_or_human_blocker": true
+      "owner_notifications_on_material_change_or_human_blocker": true,
+      "ask_owner_only_for_approval_required_or_human_blocker": true
     },
     "quality_control": {
       "loop": [
@@ -45,7 +46,25 @@
       "max_production_mutations_per_cycle": 1,
       "independent_post_change_verification": true,
       "stop_on_human_or_approval_blocker": true,
-      "no_op_when_no_material_change": true
+      "no_op_when_no_material_change": true,
+      "newsletter_stack": {
+        "required": true,
+        "source_template": "newsletter/templates/gatorbait-magazine-colorlib-v1.mjml",
+        "source_library": "vendor/colorlib-email-templates",
+        "workflow": ".github/workflows/newsletter-stack-qc.yml",
+        "gates": [
+          "current_content",
+          "unique_serious_photography",
+          "static_repo_qc",
+          "strict_mjml_compile",
+          "provider_preview",
+          "fresh_consented_audience",
+          "verified_sender",
+          "duplicate_send_clear",
+          "provider_delivery_verification",
+          "record_outcome"
+        ]
+      }
     }
   },
   "automatic": [

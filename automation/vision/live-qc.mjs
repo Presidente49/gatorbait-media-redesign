@@ -150,6 +150,20 @@ function audit(input){
   const consentDiagnostics=consentCandidates.slice(0,8);
 
   const first=headlines[0]||null;
+  const firstHeadingEl=[...document.querySelectorAll('h1,h2,h3')].filter(visible).sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top)[0]||null;
+  const firstBodyEl=[...document.querySelectorAll('p,li')].find(el=>visible(el)&&(el.textContent||'').trim().length>80)||null;
+  const typeSample={
+    heading:firstHeadingEl?{
+      family:getComputedStyle(firstHeadingEl).fontFamily,
+      size:getComputedStyle(firstHeadingEl).fontSize,
+      weight:getComputedStyle(firstHeadingEl).fontWeight
+    }:null,
+    body:firstBodyEl?{
+      family:getComputedStyle(firstBodyEl).fontFamily,
+      size:getComputedStyle(firstBodyEl).fontSize,
+      weight:getComputedStyle(firstBodyEl).fontWeight
+    }:null
+  };
   if(!first)hard.push('no visible headline detected');
   else if(first.top>innerHeight*1.25)warnings.push('first visible headline starts below first screen');
 
@@ -211,6 +225,7 @@ function audit(input){
     nativePagesVisible:nativeVisible,
     expectedTextPresent:textMatch,
     firstHeadline:first,
+    typeSample,
     articleTitleCandidates,
     consentCandidates:consentDiagnostics,
     visibleImages:visibleImages.slice(0,8),
@@ -297,6 +312,7 @@ for(const r of report.runs){
   lines.push('- presentation root: '+r.rootPresent+' / visible '+r.rootVisible);
   lines.push('- native pages visible: '+r.nativePagesVisible);
   lines.push('- first headline: '+(r.firstHeadline?('y='+r.firstHeadline.top+' — '+r.firstHeadline.text):'NONE'));
+  if(r.typeSample)lines.push('- computed type: '+JSON.stringify(r.typeSample));
   if(r.articleTitleCandidates?.length) lines.push('- article title candidate: '+JSON.stringify(r.articleTitleCandidates[0]));
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);

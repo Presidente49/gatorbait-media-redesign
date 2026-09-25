@@ -47,7 +47,7 @@
         <mj-text color="#5d6877" font-size="17px" line-height="1.5" padding="0 0 18px">Florida–Ole Miss is a national-stage game in Gainesville. Buddy Martin writes about The Swamp, the SEC and what Saturday can say about the Gators.</mj-text>
         <mj-image src="https://static.wixstatic.com/media/a99769_9cea463d1045446d8550ce6aa803b0d3~mv2.jpeg" alt="Jadan Baugh celebrates a touchdown at Auburn. Photo by Chris Spears / GatorBait Media." padding="0 0 6px" />
         <mj-text color="#7b8796" font-size="10px" padding="0 0 14px">Jadan Baugh at Auburn · Photo by Chris Spears / GatorBait Media</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/the-swamp-knows-something-the-big-ten-doesnt?utm_source=gatorbait_magazine_newsletter" align="left" padding="0 0 18px">READ BUDDY’S COLUMN</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/the-swamp-knows-something-the-big-ten-doesnt?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=ole_miss_week_2026_09_25&#38;utm_content=buddy_swamp_lead" align="left" padding="0 0 18px">READ BUDDY’S COLUMN</mj-button>
       </mj-column>
     </mj-section>
 
@@ -56,13 +56,13 @@
         <mj-text mj-class="kicker" padding="0 0 7px">GAME PLAN</mj-text>
         <mj-text padding="0 0 8px"><span class="gb-h2">Keep the Ball Away From Trinidad Chambliss</span></mj-text>
         <mj-text color="#657181" font-size="13px" padding="0 0 11px">Franz Beard on how Florida’s run game can control the clock and the matchup against No. 4 Ole Miss.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/the-best-way-for-the-gators-to-win-is-keep-the-ball-away-from-trinidad-chambliss?utm_source=gatorbait_magazine_newsletter" align="left" padding="0">READ THE ANALYSIS</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/the-best-way-for-the-gators-to-win-is-keep-the-ball-away-from-trinidad-chambliss?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=ole_miss_week_2026_09_25&#38;utm_content=chambliss_analysis" align="left" padding="0">READ THE ANALYSIS</mj-button>
       </mj-column>
       <mj-column width="50%" padding="0 10px">
         <mj-text mj-class="kicker" padding="0 0 7px">GAME WEEK REFERENCE</mj-text>
         <mj-text padding="0 0 8px"><span class="gb-h2">Florida Roster &amp; Injury Watch</span></mj-text>
         <mj-text color="#657181" font-size="13px" padding="0 0 11px">Eric Singleton Jr., Ole Miss availability, Florida’s roster snapshot and the updated 2026 schedule.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play?utm_source=gatorbait_magazine_newsletter" align="left" padding="0">OPEN THE GUIDE</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=ole_miss_week_2026_09_25&#38;utm_content=roster_injury_guide" align="left" padding="0">OPEN THE GUIDE</mj-button>
       </mj-column>
     </mj-section>
 
@@ -73,7 +73,7 @@
         <mj-text color="#7b8796" font-size="10px" padding="0 0 12px">Aaron Philo at Auburn · Photo by Chris Spears / GatorBait Media</mj-text>
         <mj-text padding="0 0 8px"><span class="gb-h2">Buster Faulkner’s Offense Is Anything But Predictable</span></mj-text>
         <mj-text color="#5f6c7b" padding="0 0 13px">Franz Beard breaks down the calls, trust and wrinkles driving Florida’s early offensive surge.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/buster-faulkner-s-offense-is-anything-but-predictable?utm_source=gatorbait_magazine_newsletter" align="left" padding="0 0 18px">GO INSIDE THE OFFENSE</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/buster-faulkner-s-offense-is-anything-but-predictable?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=ole_miss_week_2026_09_25&#38;utm_content=buster_offense" align="left" padding="0 0 18px">GO INSIDE THE OFFENSE</mj-button>
       </mj-column>
     </mj-section>
 
@@ -86,13 +86,13 @@
         <mj-text css-class="gb-card" mj-class="meta" padding="15px 0 6px">FRANZ BEARD</mj-text>
         <mj-text padding="0 0 7px"><span class="gb-h2">Thoughts of the Day</span></mj-text>
         <mj-text color="#657181" font-size="13px" padding="0 0 10px">Kerwin Bell, Aaron Philo and a few thoughts to start the day.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027?utm_source=gatorbait_magazine_newsletter" align="left" padding="0">READ THOUGHTS</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=ole_miss_week_2026_09_25&#38;utm_content=thoughts_of_day" align="left" padding="0">READ THOUGHTS</mj-button>
       </mj-column>
       <mj-column width="50%" padding="0 10px">
         <mj-text css-class="gb-card" mj-class="meta" padding="15px 0 6px">EDDIE GILLEY</mj-text>
         <mj-text padding="0 0 7px"><span class="gb-h2">5 Signs Sumrall’s Gators Are Rising</span></mj-text>
         <mj-text color="#657181" font-size="13px" padding="0 0 10px">What Florida’s 44-39 win at Auburn revealed about the line, the edge and the penalty problem.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/florida-after-auburn-5-signs-sumrall-gators-rising?utm_source=gatorbait_magazine_newsletter" align="left" padding="0">READ THE FIVE SIGNS</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-after-auburn-5-signs-sumrall-gators-rising?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=ole_miss_week_2026_09_25&#38;utm_content=five_signs" align="left" padding="0">READ THE FIVE SIGNS</mj-button>
       </mj-column>
     </mj-section>
 
@@ -101,13 +101,13 @@
         <mj-text css-class="gb-card" mj-class="meta" padding="15px 0 6px">BUDDY MARTIN</mj-text>
         <mj-text padding="0 0 7px"><span class="gb-h2">Sumrall Stayed Home. So Did His Star Running Back.</span></mj-text>
         <mj-text color="#657181" font-size="13px" padding="0 0 10px">The Christmas Eve visit that helped keep Jadan Baugh at Florida.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/jon-sumrall-stayed-home-so-did-his-star-running-back-it-was-a-brilliant-choice?utm_source=gatorbait_magazine_newsletter" align="left" padding="0">READ BUDDY</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/jon-sumrall-stayed-home-so-did-his-star-running-back-it-was-a-brilliant-choice?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=ole_miss_week_2026_09_25&#38;utm_content=sumrall_baugh" align="left" padding="0">READ BUDDY</mj-button>
       </mj-column>
       <mj-column width="50%" padding="0 10px">
         <mj-text css-class="gb-card" mj-class="meta" padding="15px 0 6px">NEW COLUMN</mj-text>
         <mj-text padding="0 0 7px"><span class="gb-h2">The Cowboy Doesn’t Talk Very Often</span></mj-text>
         <mj-text color="#657181" font-size="13px" padding="0 0 10px">Buddy on Aaron Philo’s toughness and quiet confidence. Text only here — no repeated or novelty image.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/the-cowboy-doesn-t-talk-very-often-but-his-actions-speak-even-louder?utm_source=gatorbait_magazine_newsletter" align="left" padding="0">READ THE COLUMN</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/the-cowboy-doesn-t-talk-very-often-but-his-actions-speak-even-louder?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=ole_miss_week_2026_09_25&#38;utm_content=cowboy_text_only" align="left" padding="0">READ THE COLUMN</mj-button>
       </mj-column>
     </mj-section>
 

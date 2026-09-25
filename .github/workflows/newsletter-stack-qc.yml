@@ -46,6 +46,7 @@ jobs:
         run: |
           node automation/newsletter/validate-unique-images.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
           node automation/newsletter/run-stack-qc.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
+          node automation/newsletter/check-links.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
 
       - name: Install upstream MJML toolchain
         run: npm ci --prefix vendor/colorlib-email-templates
@@ -59,10 +60,11 @@ jobs:
             --config.validationLevel=strict
           grep -qi 'GATORBAIT' build/newsletter/gatorbait-magazine.html
           grep -qi 'MAGAZINE NEWSLETTER' build/newsletter/gatorbait-magazine.html
-          if grep -Eqi '\$\{[^}]+\}|href=["'"'"']#|&amp;utm_' build/newsletter/gatorbait-magazine.html; then
-            echo "Compiled email contains a forbidden placeholder or malformed tracking key."
+          if grep -Eqi '\$\{[^}]+\}|href=["'"'"']#' build/newsletter/gatorbait-magazine.html; then
+            echo "Compiled email contains a forbidden placeholder link."
             exit 1
           fi
+          node automation/newsletter/check-links.mjs --rendered build/newsletter/gatorbait-magazine.html
 
       - name: Save compiled preview
         uses: actions/upload-artifact@v4

@@ -89,7 +89,7 @@ The controller stops only on an approval-required condition, rights/consent unce
 - **Never repeat a photo in the same issue.** Uniqueness is by underlying Wix media ID when present, otherwise normalized image URL. If a story does not have unique usable art, make it text-only.
 - For the Ole Miss edition currently being corrected, use exactly two serious football photos: one Jadan Baugh game photo and one Aaron Philo game photo. The Cowboy image is excluded from the newsletter.
 - Run `node automation/newsletter/run-stack-qc.mjs <issue.mjml>` and `node automation/newsletter/validate-unique-images.mjs <issue.mjml>` before creating or updating a Wix campaign. Any failure is a hard stop.
-- GitHub workflow `.github/workflows/newsletter-stack-qc.yml` compiles the real MJML with the pinned Colorlib toolchain and uploads the compiled HTML artifact. A green source commit, campaign preview, or provider acceptance is not sufficient by itself; all applicable Stack gates must pass.
+- GitHub workflow `.github/workflows/newsletter-stack-qc.yml` compiles the real MJML with the pinned Colorlib toolchain and uploads the compiled HTML artifact. It also runs `automation/newsletter/check-links.mjs` against both source and compiled HTML. Every tracked article CTA must carry non-empty `utm_source`, `utm_medium`, `utm_campaign`, and `utm_content`; malformed `amp;utm_*` keys are a hard stop. A green source commit, campaign preview, or provider acceptance is not sufficient by itself; all applicable Stack gates must pass.
 
 Current Florida-Auburn pregame campaign:
 - Campaign ID: `b8fdc1c7-5ec0-4e55-952c-594ccad59bb0`

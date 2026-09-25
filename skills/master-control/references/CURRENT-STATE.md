@@ -63,6 +63,7 @@ Hard rules:
 - no duplicate campaign/send
 
 Repo gates:
+- Link-attribution gate: `automation/newsletter/check-links.mjs` now requires `utm_source`, `utm_medium`, `utm_campaign` and `utm_content` on every tracked article CTA in both source and compiled browser-visible form. Current Ole Miss campaign key: `ole_miss_week_2026_09_25`.
 - `automation/newsletter/validate-unique-images.mjs`
 - `automation/newsletter/run-stack-qc.mjs`
 - `automation/newsletter/stack-policy.json`

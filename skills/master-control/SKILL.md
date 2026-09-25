@@ -119,7 +119,7 @@ Do not infer permission to:
 - publish unrelated public communications,
 - or remove rollback paths.
 
-An active user request can authorize a specific outbound publication/send. That authorization does not expand to unrelated channels or future sends.
+Brenden's standing delegation above authorizes routine GatorBait editorial/newsletter sends that stay inside the existing automatic-policy and tested Stack gates. Outside that standing delegation, an active user request authorizes only the specific outbound publication/send it names and does not expand to unrelated channels or future non-routine sends.
 
 ## Business decision rule
 

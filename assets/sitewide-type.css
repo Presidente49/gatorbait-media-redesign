@@ -1,0 +1,59 @@
+/* GatorBait sitewide typography authority.
+ * One-family system: Barlow.
+ */
+:root{
+  --gbm-font:"Barlow",Arial,Helvetica,sans-serif;
+  --gbm-font-display:"Barlow",Arial,Helvetica,sans-serif;
+  --gbm-font-copy:"Barlow",Arial,Helvetica,sans-serif;
+  --gbm-font-ui:"Barlow",Arial,Helvetica,sans-serif;
+}
+html body{
+  font-family:var(--gbm-font)!important;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+#gbm-live,
+#gbm-live h1,#gbm-live h2,#gbm-live h3,#gbm-live h4,#gbm-live p,#gbm-live a,#gbm-live button,#gbm-live small,#gbm-live span,
+#gbm-magazine-page,
+#gbm-magazine-page h1,#gbm-magazine-page h2,#gbm-magazine-page h3,#gbm-magazine-page h4,#gbm-magazine-page p,#gbm-magazine-page a,#gbm-magazine-page button,#gbm-magazine-page small,#gbm-magazine-page span,#gbm-magazine-page strong,#gbm-magazine-page em,
+#gbm-mobile-shell,#gbm-mobile-shell *,
+#gbm-mobile-drawer-root,#gbm-mobile-drawer-root *{
+  font-family:var(--gbm-font)!important;
+}
+#SITE_HEADER [data-testid="richTextElement"],
+#SITE_HEADER nav a,#SITE_HEADER nav span,#SITE_HEADER nav button,
+#SITE_PAGES h1,#SITE_PAGES h2,#SITE_PAGES h3,#SITE_PAGES h4,#SITE_PAGES h5,#SITE_PAGES h6,
+#SITE_PAGES p,#SITE_PAGES li,#SITE_PAGES label,#SITE_PAGES button,#SITE_PAGES input,#SITE_PAGES textarea,#SITE_PAGES select,
+[data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p,
+[data-hook="post-title"],[data-hook="post-title"] *,
+[data-hook="post-owner"],[data-hook="post-publish-date"],[data-hook="post-reading-time"],
+[data-hook="post-categories"],[data-hook="time-ago"],[data-hook="time-to-read"],[data-hook="user-name"],
+[data-hook="post-category-label"] *,
+#gbm-footer,#gbm-footer *{
+  font-family:var(--gbm-font)!important;
+}
+#gbm-live h1,#gbm-live h2,#gbm-live h3,
+#gbm-magazine-page h1,#gbm-magazine-page h2,#gbm-magazine-page h3,
+#SITE_PAGES h1,#SITE_PAGES h2,#SITE_PAGES h3,
+[data-hook="post-title"],[data-hook="post-title"] *{
+  font-weight:800!important;
+  letter-spacing:-.02em!important;
+}
+#SITE_HEADER nav a,#SITE_HEADER nav span,#SITE_HEADER nav button,
+[data-hook="post-owner"],[data-hook="post-publish-date"],[data-hook="post-reading-time"],
+[data-hook="post-categories"],[data-hook="time-ago"],[data-hook="time-to-read"],[data-hook="user-name"],
+[data-hook="post-category-label"] *,
+#gbm-footer h4,#gbm-footer a{
+  font-weight:700!important;
+}
+[data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{
+  font-weight:400!important;
+  font-size:17px!important;
+  line-height:1.68!important;
+}
+@media(max-width:760px){
+  [data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{
+    font-size:16px!important;
+    line-height:1.62!important;
+  }
+}

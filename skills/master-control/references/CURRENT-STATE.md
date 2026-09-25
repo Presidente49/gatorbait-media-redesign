@@ -21,6 +21,18 @@ Canonical coordination:
 - Scheduled monitors remain read-only for live Wix/content/assets/routing.
 - Brenden has delegated routine GatorBait newsletter/editorial implementation inside the tested Stack; do not re-ask routine template/photo/order/audience/QC questions.
 
+## Site typography — current authority
+
+Sitewide typography is standardized on the **Barlow** family:
+- body/copy: Barlow 400–500
+- UI/navigation/meta: Barlow 700
+- editorial/display headlines: Barlow 800
+- canonical CSS: `assets/sitewide-type.css`
+- homepage source `sports-live/homepage.js` contains no Georgia/Times headline stack
+- live Wix typography embed mirrors this system for native blog/article/account/header/footer surfaces.
+
+Do not reintroduce Georgia, Times New Roman or Montserrat into the live presentation layer without an explicit new design decision.
+
 ## Website presentation — live provider state
 
 GitHub `main` continues to advance through normal controller/ops commits. Production presentation is pinned through immutable GitHub commits in the existing Wix embeds; a new `main` commit does not itself redeploy the site.

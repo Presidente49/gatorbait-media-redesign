@@ -57,6 +57,17 @@ Rules:
 6. No Magazine photo gallery unless the owner explicitly asks for one. Current owner direction is **no gallery**.
 7. Do not send until the owner explicitly approves the draft.
 
+### Magazine newsletter design baseline — September 24, 2026
+
+- Upstream design library: `ColorlibHQ/email-templates`, pinned in this repo at commit `3018557fe943fb1c3e3367aa52d39b2fca44f725` under `vendor/colorlib-email-templates` (MIT).
+- Use Colorlib **24 · Brief** for the editorial masthead, issue hierarchy and restrained typography.
+- Use Colorlib **04 · Stories** for responsive multi-column story packages.
+- GatorBait issue source: `newsletter/templates/gatorbait-magazine-colorlib-v1.mjml`.
+- Editorial photography must be real, relevant and licensed/owned. Do not substitute novelty/gimmick artwork when serious game photography exists.
+- **Never repeat a photo in the same issue.** Uniqueness is by underlying Wix media ID when present, otherwise normalized image URL. If a story does not have unique usable art, make it text-only.
+- For the Ole Miss edition currently being corrected, use exactly two serious football photos: one Jadan Baugh game photo and one Aaron Philo game photo. The Cowboy image is excluded from the newsletter.
+- Run `node automation/newsletter/validate-unique-images.mjs <issue.mjml>` before creating or updating a Wix campaign. Any duplicate image is a hard stop.
+
 Current Florida-Auburn pregame campaign:
 - Campaign ID: `b8fdc1c7-5ec0-4e55-952c-594ccad59bb0`
 - Title: `GatorBait Magazine: Welcome to the Killing Fields`

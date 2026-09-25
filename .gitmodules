@@ -1,0 +1,4 @@
+[submodule "vendor/colorlib-email-templates"]
+	path = vendor/colorlib-email-templates
+	url = https://github.com/ColorlibHQ/email-templates.git
+	branch = master

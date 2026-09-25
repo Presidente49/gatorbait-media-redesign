@@ -21,7 +21,7 @@ For major stories, create branded art before release when supplied art is weak. 
 This is the production single-story automatic email, not a GatorBait Magazine issue.
 
 Live routing verified September 23, 2026, 03:21 UTC:
-- Active automation: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`, revision 13.
+- Active automation: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`, revision 14 (fresh live read September 24).
 - Name: GatorBait Story Alert — New Blog Post.
 - Action: `042c6c7c-f7e4-4d60-abd2-5f22fa69cf0e`.
 - Message: `1dfd5091-6dbe-48ef-a919-ef0fc75a38ab`.
@@ -37,7 +37,7 @@ Pre-activation rule: validate before status changes. Before scheduling, inspect 
 
 ## 3. Prevent duplicate sends and stale routing reversions
 
-- Automation `824714d4-7e31-4b1d-95b2-ccec04d788af`, revision 20, is INACTIVE.
+- Automation `824714d4-7e31-4b1d-95b2-ccec04d788af`, revision 21, is INACTIVE (fresh live read September 24).
 - Its message is `04550418-33d0-4564-ad25-b865f591b2c0`.
 - Both workflows currently contain branded custom content. Keep only the verified production route active.
 - The September 22 instructions identifying USER origin as the only custom path are superseded by the live content inspection above. Do not flip statuses based solely on those historical instructions.

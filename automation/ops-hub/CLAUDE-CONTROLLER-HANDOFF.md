@@ -1,3 +1,6 @@
+> **SUPERSEDED CURRENT-STATE NOTICE — September 24, 2026**  
+> This file is a historical controller handoff and must not be used as present-tense Wix/email identity. Start with `skills/master-control/references/CURRENT-STATE.md` and issue #3. Fresh live state: Story Alert `5006baf5-fbbf-440c-a012-a09bdbd95fc9` rev14 is **ACTIVE**; duplicate `824714d4-7e31-4b1d-95b2-ccec04d788af` rev21 is **INACTIVE**. Homepage embed `fdc2127a...` is rev68 and points to `485b38a.../sports-live/homepage.js`. Historical sections below are retained as evidence only.
+
 # Claude Controller Handoff — 2026-09-19
 
 This is the current continuity brief for Brenden Martin's GatorBait controller work.

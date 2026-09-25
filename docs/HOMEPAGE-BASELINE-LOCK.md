@@ -1,12 +1,24 @@
 # GatorBait Homepage Baseline Lock
 
+## Current live pointer — September 24, 2026
+
+Fresh Wix provider read supersedes the older rev61 pointer below:
+- active homepage embed `fdc2127a-845a-4d02-b711-438f1a4a86ce` = **revision 68 / enabled**
+- current immutable homepage source = `485b38a036431c667584aa3990922772288399f3/sports-live/homepage.js`
+- separate Magazine embed `1dd74333-ee02-40da-9c93-cf8fd787c129` = **revision 26 / enabled**, pointing to the same commit's `automation/site-design/magazine.js`
+- existing `f0a2deca...` Newsroom assets are recovery/fallback assets only, not the primary homepage pointer
+- AdSense serving owner is `af338ad4-8c84-4708-8859-f1d6a0121c13` **rev2 / enabled / ADVERTISING**; legacy `2da582cf...` and fallback `109a8870...` remain disabled.
+
+The product rule remains: free sports-news homepage, separate Magazine, Buddy-led curated hierarchy, current news chronological, one visible homepage owner. Read live revisions again before any write.
+
+## Historical/current-design record below
+
 ## Current authority — September 23, 2026
 
 Brenden corrected the Gazette homepage direction. The **free sports front page** is now the default; `/magazine` remains separate. Use Jannah Sport as layout reference and JNews as publishing feature reference, with original GatorBait implementation on Wix. See `docs/SPORTS-PUBLISHING-DIRECTION.md` and `docs/SITEWIDE-DESIGN-2026-09-23.md`. Inner pages now share the publication header; native Blog grid, magazine mount and TV hub are repaired.
 
-- Active loader `fdc2127a-845a-4d02-b711-438f1a4a86ce`, revision **61**, enabled; publish returned200.
-- Immutable asset: `81a845304c9802d8dbd88b6448337f4f89461658/sports-live/homepage.js`.
-- Source `automation/sports-home/`. One homepage root `#gbm-live.gbm-sports-home`; compatibility class `gbm-gazette` preserves existing shell integration, not Gazette page design.
+- Historical September 23 checkpoint: loader revision **61** and source `81a845304c9802d8dbd88b6448337f4f89461658/sports-live/homepage.js`; superseded by the live rev68 pointer recorded above.
+- Current source file family: `sports-live/homepage.js`. One homepage root `#gbm-live.gbm-sports-home`; compatibility class `gbm-gazette` preserves existing shell integration, not Gazette page design.
 - Existing mobile shell/footer/native article and business owners retained.
 - Public RSS bundled/cached stories render immediately. Background refresh is bounded and does not replace the reader's layout.
 - Latest Chris Spears Auburn photography is used; original story captions and bylines retained.
@@ -98,7 +110,7 @@ Artifact10725137431 (`gazette-runtime-evidence`) SHA256 `dbc94873de4eb4387d63ee8
 - Native header core: `7fee4de6-1886-475e-a3f3-b9c68161c242`, revision14.
 - Universal utility footer: `f8b950c9-47ce-4390-976f-85a0f040f0c6`, revision22.
 - Footer-gap guard: `15302fb2-44ef-4a93-a2a8-899731a6c197`, revision6.
-- Single AdSense embed: `2da582cf-6935-4255-b248-e14add7e82a8`, revision7, ADVERTISING category. No claim that ad-serving/revenue is fixed by this launch.
+- Historical AdSense checkpoint: `2da582cf-6935-4255-b248-e14add7e82a8` was formerly the serving loader. It is now rev8 / disabled; current owner is the rev2 Wix-layer `af338ad4...` object recorded above. Earnings/consent verification remains separate.
 
 These are dated observed revisions, not instructions to overwrite newer live changes. Street addresses must not reappear. Preserve the magazine's existing independent route, existing native article/member UX and all recovery assets.
 

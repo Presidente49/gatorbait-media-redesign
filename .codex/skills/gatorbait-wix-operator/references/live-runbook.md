@@ -1,3 +1,6 @@
+> **CURRENT ROUTING NOTICE — September 24, 2026**  
+> This runbook is chronological history. For present-tense production identity, read `skills/master-control/references/CURRENT-STATE.md` first. Fresh live state: homepage embed `fdc2127a...` rev68 → `485b38a.../sports-live/homepage.js`; Magazine embed `1dd74333...` rev26 → `485b38a.../automation/site-design/magazine.js`; Story Alert `5006baf5...` rev14 ACTIVE; duplicate `824714d4...` rev21 INACTIVE. Dated sections below remain historical evidence.
+
 # GatorBait Media Live Runbook
 
 ## Production identity

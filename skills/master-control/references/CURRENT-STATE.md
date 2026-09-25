@@ -69,6 +69,7 @@ Repo gates:
 - `automation/newsletter/run-stack-qc.mjs`
 - `automation/newsletter/stack-policy.json`
 - `.github/workflows/newsletter-stack-qc.yml`
+- visual email proof is part of the same Stack: compiled HTML is rendered at 390px and 1000px, checked for horizontal overflow / required sections / exactly two loaded images, and screenshots are stored with the CI artifact.
 - first automated Stack run `36081881578` completed successfully with strict MJML compile and preview artifact.
 
 Current canonical Wix release draft:

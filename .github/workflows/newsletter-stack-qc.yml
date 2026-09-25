@@ -66,9 +66,18 @@ jobs:
           fi
           node automation/newsletter/check-links.mjs --rendered build/newsletter/gatorbait-magazine.html
 
-      - name: Save compiled preview
+      - name: Render mobile and desktop email proofs
+        run: |
+          google-chrome --version
+          node automation/newsletter/render-preview.mjs build/newsletter/gatorbait-magazine.html build/newsletter
+
+      - name: Save compiled preview and screenshots
         uses: actions/upload-artifact@v4
         with:
           name: gatorbait-magazine-newsletter-preview
-          path: build/newsletter/gatorbait-magazine.html
+          path: |
+            build/newsletter/gatorbait-magazine.html
+            build/newsletter/preview-mobile390.jpg
+            build/newsletter/preview-desktop1000.jpg
+            build/newsletter/preview-report.json
           if-no-files-found: error

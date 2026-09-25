@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Week 4 Preview: Florida Gators (3-0, 1-0) v. Ole Miss Rebels (3-0, 1-0)",
+      "excerpt": "The Swamp is set for shootout between one of the nation’s best and the upstart Gators. By Loren Meadows, GatorBaitMedia.com, Football Analyst and Host of The Gator Lowdown with Loren Meadows The Florida defense will have its hands full with Ole Miss on Saturday (Chris Spears photo) Florida is set to welcome the Ole Miss Rebels in a high stakes matchup…",
+      "url": "https://www.gatorbaitmedia.com/post/week-4-preview-florida-gators-3-0-1-0-v-ole-miss-rebels-3-0-1-0",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-09-25T03:20:45Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_cf457578f2f644d8ad819a988cd40684~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Week 4 Preview: Florida Gators (3-0, 1-0) v. Ole Miss Rebels (3-0, 1-0)"
+      }
+    },
+    {
       "title": "With Haugh, Condon and Chinyelu back expectations are stratospheric for UF",
       "excerpt": "Aberdeen (1), Condon (21), Chinyelu (9) and Haugh (10) will be starting for the Gators (Photo by Chris Spears) At some point the discussion always gets around to Tommy Haugh, Rueben Chinyelu and Alex Condon, the nation’s best front court a year ago, the three of them back and all with the same purpose in mind – win a second national championship in three…",
       "url": "https://www.gatorbaitmedia.com/post/with-haugh-condon-and-chinyelu-back-expectations-are-stratospheric-for-uf",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Sumrall Passed the Test. He Aced It. Next, Please! Hotty Toddy?"
-      }
-    },
-    {
-      "title": "Florida 44 Auburn 39: Gators End Jordan-Hare Drought",
-      "excerpt": "Jadan Baugh ran for 162 yards and three touchdowns as Florida survived Auburn 44-39 for its first road win over the Tigers since 1999.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-44-auburn-39-gators-end-jordan-hare-drought",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-20T03:07:30Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg/v1/fit/w_1000,h_800,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida 44 Auburn 39: Gators End Jordan-Hare Drought"
       }
     }
   ]

@@ -8,8 +8,8 @@ output is deterministic.
 """
 import json, pathlib, subprocess
 
-HOME_PIN = '485b38a036431c667584aa3990922772288399f3'   # live homepage/magazine pin (rev68/rev26)
-HOME_JS_PIN = 'afa3cff92c82d89460795ad21b699a755c360493'  # homepage renderer: live feed first (rev71)
+HOME_PIN = '813149ae106478d8878227a4bc8d15f123feff20'   # live homepage/magazine pin (rev68/rev26)
+HOME_JS_PIN = '813149ae106478d8878227a4bc8d15f123feff20'  # homepage renderer: live feed first (rev71)
 UI_PIN = 'f0a2deca30b8080b10efa8216f308414b7a95636'     # live native-route UI layer pin
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 OUT = pathlib.Path(__file__).resolve().parent

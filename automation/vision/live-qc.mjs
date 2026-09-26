@@ -312,6 +312,7 @@ for(const profile of PROFILES){
         const rp={};
         try{
           await page.waitForFunction(()=>!!window.__GBM_ROSTERS__&&typeof window.__GBM_ROSTER_UI__==='function',null,{timeout:10000}).catch(()=>{});
+          rp.probe=await page.evaluate(()=>({data:!!window.__GBM_ROSTERS__,ui:typeof window.__GBM_ROSTER_UI__,css:!!document.getElementById('gbm-roster-css'),panels:document.querySelectorAll('#gbm-rp').length,control:document.querySelector('#gbm-gd .gd-rbtn').tagName}));
           const before=page.url();
           await page.click('#gbm-gd .gd-rbtn');
           await page.waitForTimeout(700);
@@ -363,7 +364,7 @@ for(const r of report.runs){
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
   if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');
-  if(r.rosters)lines.push('- rosters panel: open '+r.rosters.open+'; tabs '+JSON.stringify(r.rosters.tabs||[])+'; No. 13 → '+JSON.stringify(r.rosters.hits13||[]));
+  if(r.rosters)lines.push('- rosters panel: open '+r.rosters.open+'; probe '+JSON.stringify(r.rosters.probe||null)+'; tabs '+JSON.stringify(r.rosters.tabs||[])+'; No. 13 → '+JSON.stringify(r.rosters.hits13||[]));
   if(r.hard.length)for(const f of r.hard)lines.push('- **HARD:** '+f);
   if(r.warnings.length)for(const f of r.warnings)lines.push('- warning: '+f);
   if(r.consoleErrors.length)lines.push('- console errors recorded: '+r.consoleErrors.length);

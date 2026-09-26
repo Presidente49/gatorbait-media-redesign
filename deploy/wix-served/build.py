@@ -86,6 +86,19 @@ BUNDLE = ('<script id="gbm-wix-served-bundle-v1">window.__GBM_UI_CSS__=' + json.
           + ';\nwindow.__GBM_UI_JS__=' + js_fn(ui_js)
           + ';\nwindow.__GBM_HOME_JS__=' + js_fn(home_js) + ';</script>')
 
+CDN = 'https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@'
+# Wix caps each custom embed at 15,000 characters, so the 30 KB homepage renderer
+# cannot be inlined. This variant keeps the pinned immutable CDN script but uses the
+# native-page fallback instead of the retired Newsroom redirect.
+boot_cdn = (BOOT.replace('gbm-gazette-bootstrap-v2', 'gbm-gazette-bootstrap-v3')
+    .replace("    var style = document.createElement('style'); style.id = 'gbm-ui-layer-css'; style.textContent = window.__GBM_UI_CSS__ || ''; document.head.appendChild(style);\n    try { if (window.__GBM_UI_JS__) window.__GBM_UI_JS__(); } catch (error) { console.warn('[GatorBait] UI layer', error); }\n",
+             "    var base = '" + CDN + UI_PIN + "/newsroom-preview/';\n    var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = base + 'wix-live-ui.css'; document.head.appendChild(link);\n    var ui = document.createElement('script'); ui.async = false; ui.src = base + 'wix-live-ui.js'; document.head.appendChild(ui);\n")
+    .replace("  var marker = document.createElement('script');\n  marker.id = 'gbm-gazette-bundle'; marker.type = 'text/plain';\n  document.head.appendChild(marker);\n  timer = setTimeout(function () { fallback('startup timeout'); }, 7000);\n  try { window.__GBM_HOME_JS__(); } catch (error) { fallback(error); }\n",
+             "  var script = document.createElement('script');\n  script.id = 'gbm-gazette-bundle';\n  script.src = '" + CDN + HOME_PIN + "/sports-live/homepage.js';\n  script.async = true; script.onerror = fallback;\n  timer = setTimeout(function () { fallback('startup timeout'); }, 7000);\n  document.head.appendChild(script);\n"))
+assert 'gbm-ui-layer-css' not in boot_cdn and '__GBM_HOME_JS__' not in boot_cdn
+home_cdn = '<!-- GBM_SPORTS_HOME_PRODUCTION_V3 src=' + HOME_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->' + STARTUP + boot_cdn + shell
+(OUT / 'homepage-embed-cdn.html').write_text(home_cdn)
+print('homepage-cdn', len(home_cdn))
 home = '<!-- GBM_SPORTS_HOME_PRODUCTION_V2_WIX_SERVED src=' + HOME_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->' + STARTUP + BUNDLE + BOOT + shell
 (OUT / 'homepage-embed.html').write_text(home)
 

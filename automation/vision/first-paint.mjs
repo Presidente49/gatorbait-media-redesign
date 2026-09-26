@@ -24,7 +24,12 @@ async function rawHtml(path) {
   const html = await res.text();
   const body = html.search(/<body[\s>]/i);
   const out = { status: res.status, bytes: html.length, bodyAt: body, markers: {} };
-  for (const m of MARKERS) { const i = html.indexOf(m); out.markers[m] = i < 0 ? 'absent' : (body >= 0 && i < body ? 'head' : 'body'); }
+  // A literal id="…" is markup the browser parses; an escaped \"… means Wix serialized it for later client-side injection.
+  for (const m of MARKERS) {
+    const i = html.indexOf('id="' + m);
+    const j = html.indexOf('\\"' + m);
+    out.markers[m] = i >= 0 ? (body >= 0 && i < body ? 'head-markup' : 'body-markup') : j >= 0 ? 'deferred' : html.includes(m) ? 'text-only' : 'absent';
+  }
   return out;
 }
 

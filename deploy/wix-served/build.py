@@ -5,6 +5,10 @@ Readers no longer fetch any GitHub/jsDelivr asset: the approved renderers are
 inlined into the existing Wix custom embeds, and stories still come from the
 site's own same-origin /blog-feed.xml. Sources are pinned commits, so the
 output is deterministic.
+
+When PATCHing these into Wix, re-send the embed's existing consent category
+(ESSENTIAL). A non-essential category makes Wix defer the embed behind the
+consent manager, and the native Wix page flashes before the custom surface.
 """
 import json, pathlib, subprocess
 

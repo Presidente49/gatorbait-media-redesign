@@ -342,3 +342,9 @@ Refine the existing separate Magazine implementation under `docs/CREATIVE-DIRECT
 Acceptance gates: current Buddy cover/lead; remaining Magazine stories newest-first; one canonical URL and primary editorial home; original photo credits and intentional portrait/landscape framing; readable mobile type; no orphan white boxes or duplicate story cards; one latest-game gallery at most; working article/Join/Store/TV paths; shared navigation/footer; and no new layout shift or overflow. Reserve intentional image/ad geometry without retaining broken-image or empty-card scaffolding. Any ad integration must pass consent and reader-experience checks through the existing Wix owner.
 
 Verify the actual public Wix runtime at desktop and 390/430px where available. Isolated fixtures do not certify the full mobile shell, and logged-out reachability does not certify authenticated membership. Once acceptance is verified, record the exact approved revision and rollback and hold it. Later design changes require a demonstrated defect or measurable business case, not novelty.
+
+## 33. Presentation embeds must stay consent category ESSENTIAL
+
+On Sept. 26, 2026 the homepage (`fdc2127a`) and Magazine (`1dd74333`) embeds were PATCHed with `embedData.category: "FUNCTIONAL"` copied from the Wix API example. Wix defers non-essential embeds until its consent manager runs, so neither was server-rendered: the native Wix homepage/Magazine and native header painted for 1-2 s on phones before the custom surface replaced them. The first-paint probe (`automation/vision/first-paint.mjs`) measured it.
+
+Every Update Custom Embed call must re-send the category read in the same GET, never a hard-coded one. First-party layout, routing and navigation code with no tracking is `ESSENTIAL`; only analytics/advertising tags use `ANALYTICS`/`ADVERTISING`.

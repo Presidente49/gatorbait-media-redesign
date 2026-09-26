@@ -1,6 +1,21 @@
 # GatorBait Homepage Baseline Lock
 
-## Current live pointer — September 24, 2026
+## Current live pointer — September 26, 2026 (fully Wix-served)
+
+Brenden authorized making the same sports-news homepage fully Wix-hosted. Design is unchanged; only the delivery changed. The homepage and its code no longer load from jsDelivr at runtime. A fresh provider read on 2026-09-26 confirms:
+- homepage core `fdc2127a…` = **revision 80**, "GBM - Sports Home v4 core (fully Wix-served)", HEAD, **ESSENTIAL**
+- homepage parts (all rev1, ESSENTIAL, enabled): styles `1255a4cf…`, backup stories `96ef5a04…`, code `622d8ece…`, inner-page UI layer `a13b04e3…`
+- source pin: `2b42f09bceadce74629315dbae4090b2fb1fe49f` (`sports-live/homepage.js`); built by `deploy/wix-served/build.py` into `deploy/wix-served/split/`
+- Magazine `1dd74333…` = revision 31, ESSENTIAL
+- rollback: PATCH `fdc2127a` with `deploy/wix-served/homepage-embed-cdn.html` (the rev79 jsDelivr loader), keeping category ESSENTIAL, then disable the four part embeds
+- verified live 2026-09-26 13:06–13:09 UTC:
+  - Live-presentation QC run 36244025010: green.
+  - First-paint probe run 36244025001: the home root paints at ~475 ms on phone and desktop, with no native Wix text before it.
+  - A public browser shows the Buddy Martin lead, a Latest section with photos, and no "Today's Edition".
+  - The only jsDelivr request left is the Barlow font stylesheet from `0709a98e`.
+- **Every Update Custom Embed call must re-send category ESSENTIAL.** FUNCTIONAL defers the embed behind consent and brings back the native flash. See LESSONS #33.
+
+## Previous live pointer — September 24, 2026
 
 Fresh Wix provider read supersedes the older rev61 pointer below:
 - active homepage embed `fdc2127a-845a-4d02-b711-438f1a4a86ce` = **revision 68 / enabled**

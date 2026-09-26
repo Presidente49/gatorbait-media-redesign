@@ -9,7 +9,7 @@ output is deterministic.
 import json, pathlib, subprocess
 
 HOME_PIN = '813149ae106478d8878227a4bc8d15f123feff20'   # live homepage/magazine pin (rev68/rev26)
-HOME_JS_PIN = '813149ae106478d8878227a4bc8d15f123feff20'  # homepage renderer: live feed first (rev71)
+HOME_JS_PIN = '99d1503b9ef8f4bdfd172b0bba24f0fcdb2bf3f9'  # homepage renderer: live feed first (rev71)
 UI_PIN = 'f0a2deca30b8080b10efa8216f308414b7a95636'     # live native-route UI layer pin
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 OUT = pathlib.Path(__file__).resolve().parent

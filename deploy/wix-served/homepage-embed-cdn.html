@@ -47,6 +47,8 @@ html:has(#gbm-gazette-bundle):not(:has(#gbm-live)) #gbm-footer{visibility:hidden
   script.id = 'gbm-gazette-bundle';
   script.src = 'https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@afa3cff92c82d89460795ad21b699a755c360493/sports-live/homepage.js';
   script.async = true; script.onerror = fallback;
+  // 7s covers only the download; once loaded the renderer paints within ~1.5s of DOMContentLoaded.
+  script.onload = function () { clearTimeout(timer); if (!done) timer = setTimeout(function () { fallback('render timeout'); }, 15000); };
   timer = setTimeout(function () { fallback('startup timeout'); }, 7000);
   document.head.appendChild(script);
 })();</script><style id="gbm-mobile-shell-critical-v2">

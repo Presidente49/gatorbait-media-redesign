@@ -18,6 +18,20 @@ For major stories, create branded art before release when supplied art is weak. 
 
 ## 2. Automatic blog email = custom GatorBait article alert
 
+**2026-09-26 18:40 UTC: production alert switched to `824714d4`.** `5006baf5` (message `1dfd5091`) was ACTIVE but had not delivered one email since 2026-08-13. Evidence: List Recipients `lastActivityDate` max 2026-08-13T19:14Z across 2,211 recipients, and nothing was sent for the four posts published after its 13:24 UTC activation. Its action has empty `dynamicParams`. `824714d4` (message `04550418`) delivered to 1,846 recipients on 2026-09-23 and maps title, cover image, description and URL. Both messages now render the same branded "Story Alert · Latest from GatorBait" design; neither says "new blog post". Final state: `824714d4` ACTIVE (rev 22, validated), `5006baf5` INACTIVE (rev 17). Keep exactly one alert ACTIVE.
+
+**ACTIVE is not proof of delivery.** Before trusting an alert, read `GET /email-marketing/v1/campaigns/{messageId}/statistics/recipients?activity=DELIVERED` and check the newest `lastActivityDate`.
+
+**Breaking-news path (one email per story):**
+1. Pause `824714d4`.
+2. Publish the post.
+3. Send a breaking campaign built from `newsletter/2026-09-26-breaking-kewan-lacy.mjml` to label `e345fa8e`.
+4. Resume `824714d4`.
+
+Editing a published post uses `PATCH /blog/v3/draft-posts/{id}` with `action: UPDATE_PUBLISH`. Pause the alert around edits as well.
+
+First use: campaign `16f70ae6` "BREAKING: Ole Miss star Kewan Lacy not expected to play vs. Florida", 2026-09-26 ~18:37 UTC, delivered 1,769, 21 bounced, 0 complaints. Sent once.
+
 **2026-09-26:** Brenden approved turning the alert back on with the branded version. `5006baf5` was validated by Wix and set **ACTIVE** (rev 15→16), with message `1dfd5091` and audience label `e345fa8e`; `824714d4` was confirmed INACTIVE. Emails go out for posts published after this point. Franz's Sept. 26 "Soothsayer" article was published while both alerts were off, so it has not been emailed.
 
 This is the production single-story automatic email, not a GatorBait Magazine issue.

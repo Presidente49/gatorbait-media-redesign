@@ -354,3 +354,15 @@ Every Update Custom Embed call must re-send the category read in the same GET, n
 On Sept. 26, 2026 the game-day "Rosters & numbers" control shipped as `<a href="https://www.gatorbaitmedia.com/_files/…pdf">` and relied on `preventDefault()` in a bubbling click listener to open the roster panel instead. The home core (`fdc2127a`) has a capture-phase click handler for no-jump navigation. It turns every same-site link to a non-home path into `location.assign()` with `stopImmediatePropagation()`. So live, the panel never opened: TinyFish's browser showed the PDF, and headless CI just downloaded it. The local fixture passed because it served the page from a test origin, which made the PDF link cross-site.
 
 Any homepage control that opens something in place must be a `<button>`. Only real navigation belongs in `<a>`. Fixtures for interactive homepage features must serve the page on `https://www.gatorbaitmedia.com/` (Playwright route) with every home part loaded, and live QC should click the control, not just find it.
+
+## 35. An ACTIVE automation is not a delivering automation; clean up after departed agents
+
+On Sept. 26, 2026 the branded story alert `5006baf5` showed ACTIVE and valid, but its message had not delivered since Aug. 13. Its action had no dynamic-parameter mapping. Brenden noticed that no alerts were going out; the status field never showed it. The fix was to switch to the proven alert `824714d4`, keeping exactly one active. Verify delivery from the message's recipient log, never from status.
+
+The same day Meta Muse (since removed) published three stories under the owner's account, with no categories. Their errors included:
+- a wrong series record (13-13-1 instead of 13-13-2);
+- a wrong NFL career length;
+- a player's 224 yards credited to the whole team;
+- unverified stats and quotes.
+
+The fix was to correct them in place with correction notes, remove what couldn't be verified, move them to the GatorBait Staff byline and Gator Football, and leave Muse's unpublished drafts unpublished. Anything an outside agent publishes gets the same editor and fact check as our own work before it stays live.

@@ -3,7 +3,18 @@ html:has(#gbm-gazette-bundle) #BACKGROUND_GROUP{display:none!important}
 html:has(#gbm-gazette-bundle) #SITE_HEADER,html:has(#gbm-gazette-bundle) #SITE_PAGES,html:has(#gbm-gazette-bundle) #PAGES_CONTAINER{display:none!important}
 html:has(#gbm-gazette-bundle) #SITE_CONTAINER,html:has(#gbm-gazette-bundle) #masterPage,html:has(#gbm-gazette-bundle) #SITE_PAGES_TRANSITION_GROUP{height:0!important;min-height:0!important;padding-block:0!important;margin-block:0!important}
 html:has(#gbm-gazette-bundle):not(:has(#gbm-live)) #gbm-footer{visibility:hidden!important}
-</style><script id="gbm-gazette-bootstrap-v3">(function () {
+</style><script id="gbm-viewport-v1">(function(){
+if(window.__GBM_VIEWPORT_V1__)return;window.__GBM_VIEWPORT_V1__=1;
+// Wix Classic mobile forces width=320 and scales its fixed 320px canvas. Our homepage and
+// Magazine are responsive, so they use the phone's real width; native Wix pages keep 320.
+var WIDE='width=device-width, initial-scale=1, viewport-fit=cover',native=null;
+function own(){var p=(location.pathname||'/').replace(/\/+$/,'')||'/';return p==='/'||p==='/magazine';}
+function sync(){var m=document.querySelector('meta[name="viewport"]');if(!m)return;var c=m.getAttribute('content');if(c!==WIDE)native=c;var want=own()?WIDE:native;if(want&&c!==want)m.setAttribute('content',want);}
+if(!window.__GBM_ROUTE_WATCH__){window.__GBM_ROUTE_WATCH__=1;['pushState','replaceState'].forEach(function(k){var orig=history[k];if(typeof orig!=='function')return;history[k]=function(){var r=orig.apply(this,arguments);try{window.dispatchEvent(new Event('gbmroutechange'));}catch(e){}return r;};});}
+sync();
+new MutationObserver(sync).observe(document.head,{subtree:true,childList:true,attributes:true,attributeFilter:['content']});
+window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script><script id="gbm-gazette-bootstrap-v3">(function () {
   'use strict';
   if (window.__GBM_GAZETTE_BOOT__) return;
   var initialHome = (location.pathname.replace(/\/+$/, '') || '/') === '/';

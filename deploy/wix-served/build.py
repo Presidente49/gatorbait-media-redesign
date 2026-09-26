@@ -29,6 +29,7 @@ mag_js = show(HOME_PIN, 'automation/site-design/magazine.js')
 ui_js = show(UI_PIN, 'newsroom-preview/wix-live-ui.js')
 ui_css = show(UI_PIN, 'newsroom-preview/wix-live-ui.css')
 shell = (OUT / 'shell-and-account.html').read_text()
+viewport = (OUT / 'viewport.html').read_text()
 
 STARTUP = '''<style id="gbm-gazette-startup-v1">
 html:has(#gbm-gazette-bundle) #BACKGROUND_GROUP{display:none!important}
@@ -97,7 +98,7 @@ boot_cdn = (BOOT.replace('gbm-gazette-bootstrap-v2', 'gbm-gazette-bootstrap-v3')
     .replace("  var marker = document.createElement('script');\n  marker.id = 'gbm-gazette-bundle'; marker.type = 'text/plain';\n  document.head.appendChild(marker);\n  timer = setTimeout(function () { fallback('startup timeout'); }, 7000);\n  try { window.__GBM_HOME_JS__(); } catch (error) { fallback(error); }\n",
              "  var script = document.createElement('script');\n  script.id = 'gbm-gazette-bundle';\n  script.src = '" + CDN + HOME_JS_PIN + "/sports-live/homepage.js';\n  script.async = true; script.onerror = fallback;\n  // 7s covers only the download; once loaded the renderer paints within ~1.5s of DOMContentLoaded.\n  script.onload = function () { clearTimeout(timer); if (!done) timer = setTimeout(function () { fallback('render timeout'); }, 15000); };\n  timer = setTimeout(function () { fallback('startup timeout'); }, 7000);\n  document.head.appendChild(script);\n"))
 assert 'gbm-ui-layer-css' not in boot_cdn and '__GBM_HOME_JS__' not in boot_cdn
-home_cdn = '<!-- GBM_SPORTS_HOME_PRODUCTION_V3 src=' + HOME_JS_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->' + STARTUP + boot_cdn + shell
+home_cdn = '<!-- GBM_SPORTS_HOME_PRODUCTION_V3 src=' + HOME_JS_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->' + STARTUP + viewport + boot_cdn + shell
 (OUT / 'homepage-embed-cdn.html').write_text(home_cdn)
 print('homepage-cdn', len(home_cdn))
 home = '<!-- GBM_SPORTS_HOME_PRODUCTION_V2_WIX_SERVED src=' + HOME_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->' + STARTUP + BUNDLE + BOOT + shell

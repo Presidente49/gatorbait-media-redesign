@@ -348,3 +348,9 @@ Verify the actual public Wix runtime at desktop and 390/430px where available. I
 On Sept. 26, 2026 the homepage (`fdc2127a`) and Magazine (`1dd74333`) embeds were PATCHed with `embedData.category: "FUNCTIONAL"` copied from the Wix API example. Wix defers non-essential embeds until its consent manager runs, so neither was server-rendered: the native Wix homepage/Magazine and native header painted for 1-2 s on phones before the custom surface replaced them. The first-paint probe (`automation/vision/first-paint.mjs`) measured it.
 
 Every Update Custom Embed call must re-send the category read in the same GET, never a hard-coded one. First-party layout, routing and navigation code with no tracking is `ESSENTIAL`; only analytics/advertising tags use `ANALYTICS`/`ADVERTISING`.
+
+## 34. Homepage controls must not be same-site links; test fixtures must use the real origin
+
+On Sept. 26, 2026 the game-day "Rosters & numbers" control shipped as `<a href="https://www.gatorbaitmedia.com/_files/…pdf">` and relied on `preventDefault()` in a bubbling click listener to open the roster panel instead. The home core (`fdc2127a`) has a capture-phase click handler for no-jump navigation. It turns every same-site link to a non-home path into `location.assign()` with `stopImmediatePropagation()`. So live, the panel never opened: TinyFish's browser showed the PDF, and headless CI just downloaded it. The local fixture passed because it served the page from a test origin, which made the PDF link cross-site.
+
+Any homepage control that opens something in place must be a `<button>`. Only real navigation belongs in `<a>`. Fixtures for interactive homepage features must serve the page on `https://www.gatorbaitmedia.com/` (Playwright route) with every home part loaded, and live QC should click the control, not just find it.

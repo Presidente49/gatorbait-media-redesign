@@ -393,3 +393,22 @@ Two cautions:
 - Never copy a competitor's framing unverified.
 
 Report: `gameday/2026-09-26-ole-miss/competitor-watch-1850Z.md`.
+
+## 38. Pasted copy gets the same fact-check as our own (Sept. 26, 2026)
+
+Brenden pasted a halftime story that was "copy-and-paste ready." Checked against ESPN's play-by-play and box score, it had these errors:
+
+- the kicker's first name (Trey instead of Patrick Durkin);
+- the time of the second Ole Miss field goal ("final play of the half" instead of 1:11 left);
+- Florida's rushing total (134 at 5.4 instead of 133 at 4.9);
+- "scored on the very next drive" (it was the same drive);
+- when Chambliss went down ("late" instead of midway through the first quarter).
+
+It also stated injuries that no source showed (Lovett to the medical tent, Brown's ankle).
+
+Our own first version had errors too:
+
+- It called the kick-catch interference "pass interference."
+- It took a single live-blog line that a backup QB played, which the play-by-play doesn't show.
+
+**The rule:** every number, name and time is checked against the play-by-play before an in-place update. Anything with no source is held back and listed for Brenden to confirm.

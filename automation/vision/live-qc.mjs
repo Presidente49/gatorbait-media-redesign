@@ -236,6 +236,26 @@ function audit(input){
   };
 }
 
+// The homepage and Magazine lead with the newest Buddy Martin post from the live feed, so the
+// expected story follows that feed; the constants above remain the fallback when it is unreachable.
+async function currentBuddyLead(){
+  try{
+    const res=await fetch('https://www.gatorbaitmedia.com/blog-feed.xml',{signal:AbortSignal.timeout(15000)});
+    if(!res.ok)return null;
+    const xml=await res.text();
+    const decode=s=>s.replace(/^<!\[CDATA\[|\]\]>$/g,'').replace(/&amp;/g,'&').replace(/&#39;|&apos;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>').trim();
+    const tag=(item,name)=>{const m=item.match(new RegExp('<'+name+'[^>]*>([\\s\\S]*?)</'+name+'>'));return m?decode(m[1]):'';};
+    const posts=[...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(m=>({title:tag(m[1],'title'),url:tag(m[1],'link'),author:tag(m[1],'dc:creator'),date:Date.parse(tag(m[1],'pubDate'))}))
+      .filter(p=>p.title&&/^https:\/\/www\.gatorbaitmedia\.com\/post\//.test(p.url)&&Number.isFinite(p.date)).sort((a,b)=>b.date-a.date);
+    return posts.find(p=>/buddy martin/i.test(p.author))||null;
+  }catch{return null;}
+}
+const lead=await currentBuddyLead();
+if(lead){
+  for(const t of TARGETS)t.expectedText=lead.title;
+  TARGETS.find(t=>t.name==='article').url=lead.url;
+}
+
 const browser=await chromium.launch();
 const report={capturedAt:new Date().toISOString(),runs:[],hardFailureCount:0};
 

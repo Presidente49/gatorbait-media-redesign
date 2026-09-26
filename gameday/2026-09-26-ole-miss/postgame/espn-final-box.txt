@@ -1,0 +1,57 @@
+== scoring plays
+1 10:53 FLA 0 7 | J. Baugh run for 4 yds, for a TD (P. Durkin KICK)
+1 9:00 FLA 0 10 | P. Durkin 49 yd FG GOOD
+2 10:13 MISS 3 10 | L. Carneiro 36 yd FG GOOD
+2 2:51 FLA 3 17 | J. Baugh run for 2 yds, for a TD (P. Durkin KICK)
+2 1:11 MISS 6 17 | L. Carneiro 46 yd FG GOOD
+3 13:03 MISS 14 17 | T. Chambliss run for 8 yds, for a TD (T. Chambliss pass to H. Fields GOOD for Two-Point Conversion)
+3 11:32 FLA 14 24 | D. Clark run for 45 yds, for a TD (P. Durkin KICK)
+3 5:21 MISS 21 24 | T. Chambliss run for 10 yds, for a TD (L. Carneiro KICK)
+3 3:45 FLA 21 31 | A. Philo run for 1 yd, for a TD (P. Durkin KICK)
+4 13:38 FLA 21 38 | D. Wilson run for 6 yds, for a TD (P. Durkin KICK)
+4 12:09 MISS 28 38 | T. Chambliss pass to D. Alexander for 2 yds, for a TD (L. Carneiro KICK)
+4 9:19 FLA 28 45 | A. Philo pass to A. Jackson for 5 yds, for a TD (P. Durkin KICK)
+4 4:00 FLA 28 52 | J. Baugh run for 2 yds, for a TD (P. Durkin KICK)
+== team stats
+MISS {'1st Downs': '25', '3rd down efficiency': '4-11', '4th down efficiency': '1-2', 'Total Yards': '426', 'Passing': '298', 'Comp/Att': '25/34', 'Yards per pass': '8.8', 'Rushing': '128', 'Rushing Attempts': '27', 'Yards per rush': '4.7', 'Penalties': '8-69', 'Turnovers': '2', 'Fumbles lost': '1', 'Interceptions thrown': '1', 'Possession': '23:01'}
+FLA {'1st Downs': '27', '3rd down efficiency': '6-10', '4th down efficiency': '0-1', 'Total Yards': '498', 'Passing': '196', 'Comp/Att': '16/23', 'Yards per pass': '8.5', 'Rushing': '302', 'Rushing Attempts': '53', 'Yards per rush': '5.7', 'Penalties': '8-92', 'Turnovers': '0', 'Fumbles lost': '0', 'Interceptions thrown': '0', 'Possession': '36:59'}
+== players
+MISS passing Trinidad Chambliss {'C/ATT': '25/34', 'YDS': '298', 'AVG': '8.8', 'TD': '1', 'INT': '1'}
+MISS rushing Trinidad Chambliss {'CAR': '7', 'YDS': '44', 'AVG': '6.3', 'TD': '2', 'LONG': '11'}
+MISS rushing Makhi Frazier {'CAR': '8', 'YDS': '42', 'AVG': '5.3', 'TD': '0', 'LONG': '16'}
+MISS rushing JT Lindsey {'CAR': '11', 'YDS': '31', 'AVG': '2.8', 'TD': '0', 'LONG': '7'}
+MISS rushing Joshua Dye {'CAR': '1', 'YDS': '11', 'AVG': '11.0', 'TD': '0', 'LONG': '11'}
+MISS receiving Deuce Alexander {'REC': '7', 'YDS': '134', 'AVG': '19.1', 'TD': '1', 'LONG': '49'}
+MISS receiving Caleb Odom {'REC': '5', 'YDS': '47', 'AVG': '9.4', 'TD': '0', 'LONG': '33'}
+MISS receiving Johntay Cook II {'REC': '4', 'YDS': '35', 'AVG': '8.8', 'TD': '0', 'LONG': '17'}
+MISS receiving Caleb Cunningham {'REC': '3', 'YDS': '28', 'AVG': '9.3', 'TD': '0', 'LONG': '14'}
+MISS fumbles Trinidad Chambliss {'FUM': '1', 'LOST': '1', 'REC': '0'}
+MISS fumbles JT Lindsey {'FUM': '1', 'LOST': '0', 'REC': '0'}
+MISS defensive Keaton Thomas {'TOT': '11', 'SOLO': '3', 'SACKS': '0', 'TFL': '0', 'PD': '1', 'QB HUR': '0', 'TD': '0'}
+MISS defensive Luke Ferrelli {'TOT': '8', 'SOLO': '3', 'SACKS': '0', 'TFL': '0', 'PD': '0', 'QB HUR': '0', 'TD': '0'}
+MISS defensive Sharif Denson {'TOT': '5', 'SOLO': '5', 'SACKS': '0', 'TFL': '0', 'PD': '0', 'QB HUR': '0', 'TD': '0'}
+MISS defensive Edwin Joseph {'TOT': '5', 'SOLO': '3', 'SACKS': '0', 'TFL': '0', 'PD': '0', 'QB HUR': '0', 'TD': '0'}
+MISS kickReturns Traylon Ray {'NO': '4', 'YDS': '76', 'AVG': '19.0', 'LONG': '23', 'TD': '0'}
+MISS kickReturns Raymond Collins {'NO': '1', 'YDS': '9', 'AVG': '9.0', 'LONG': '9', 'TD': '0'}
+MISS kicking Lucas Carneiro {'FG': '2/2', 'PCT': '100.0', 'LONG': '46', 'XP': '2/2', 'PTS': '8'}
+MISS punting Oscar Bird {'NO': '3', 'YDS': '161', 'AVG': '53.7', 'TB': '1', 'In 20': '1', 'LONG': '60'}
+FLA passing Aaron Philo {'C/ATT': '16/23', 'YDS': '196', 'AVG': '8.5', 'TD': '1', 'INT': '0'}
+FLA rushing Jadan Baugh {'CAR': '29', 'YDS': '142', 'AVG': '4.9', 'TD': '3', 'LONG': '23'}
+FLA rushing Duke Clark {'CAR': '12', 'YDS': '126', 'AVG': '10.5', 'TD': '1', 'LONG': '45'}
+FLA rushing Aaron Philo {'CAR': '6', 'YDS': '14', 'AVG': '2.3', 'TD': '1', 'LONG': '6'}
+FLA rushing Dallas Wilson {'CAR': '1', 'YDS': '6', 'AVG': '6.0', 'TD': '1', 'LONG': '6'}
+FLA receiving Eric Singleton Jr. {'REC': '1', 'YDS': '38', 'AVG': '38.0', 'TD': '0', 'LONG': '38'}
+FLA receiving Luke Harpring {'REC': '2', 'YDS': '34', 'AVG': '17.0', 'TD': '0', 'LONG': '21'}
+FLA receiving Bailey Stockton {'REC': '4', 'YDS': '33', 'AVG': '8.3', 'TD': '0', 'LONG': '14'}
+FLA receiving Amir Jackson {'REC': '2', 'YDS': '28', 'AVG': '14.0', 'TD': '1', 'LONG': '23'}
+FLA fumbles Myles Graham {'FUM': '0', 'LOST': '0', 'REC': '1'}
+FLA defensive Myles Graham {'TOT': '8', 'SOLO': '5', 'SACKS': '0', 'TFL': '0', 'PD': '0', 'QB HUR': '0', 'TD': '0'}
+FLA defensive Aaron Chiles {'TOT': '7', 'SOLO': '3', 'SACKS': '0', 'TFL': '1', 'PD': '0', 'QB HUR': '0', 'TD': '0'}
+FLA defensive Kanye Clark {'TOT': '4', 'SOLO': '4', 'SACKS': '0', 'TFL': '0', 'PD': '0', 'QB HUR': '0', 'TD': '0'}
+FLA defensive Bryce Thornton {'TOT': '4', 'SOLO': '3', 'SACKS': '0', 'TFL': '0', 'PD': '0', 'QB HUR': '0', 'TD': '0'}
+FLA interceptions DJ Coleman {'INT': '1', 'YDS': '0', 'TD': '0'}
+FLA kickReturns London Montgomery {'NO': '3', 'YDS': '128', 'AVG': '42.7', 'LONG': '74', 'TD': '0'}
+FLA kickReturns J'Vari Flowers {'NO': '1', 'YDS': '23', 'AVG': '23.0', 'LONG': '23', 'TD': '0'}
+FLA puntReturns Bailey Stockton {'NO': '1', 'YDS': '16', 'AVG': '16.0', 'LONG': '16', 'TD': '0'}
+FLA kicking Patrick Durkin {'FG': '1/1', 'PCT': '100.0', 'LONG': '49', 'XP': '7/7', 'PTS': '10'}
+FLA punting Alec Clark {'NO': '2', 'YDS': '113', 'AVG': '56.5', 'TB': '0', 'In 20': '1', 'LONG': '70'}

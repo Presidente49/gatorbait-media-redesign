@@ -1,8 +1,19 @@
 import { chromium, devices } from 'playwright';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 const OUT='build/live-site-vision';
 mkdirSync(OUT,{recursive:true});
+
+// Game-day band script as committed. Wix's CDN keeps serving older copies of the homepage for
+// several minutes after an embed update, so a mismatch is retried with a cache-busting reload
+// before it counts; if live never matches the repo, the change was not deployed.
+let EXPECTED_BAND=null;
+try{
+  const src=readFileSync('deploy/wix-served/home-gameday.html','utf8');
+  const script=src.match(/<script id="gbm-gameday-v1">([\s\S]*?)<\/script>/);
+  const until=src.match(/"until":"([^"]+)"/);
+  if(script&&until&&Date.parse(until[1])>Date.now())EXPECTED_BAND=script[1];
+}catch(_){}
 
 const TARGETS=[
   {
@@ -275,9 +286,21 @@ for(const profile of PROFILES){
     });
     let status=null;
     try{
-      const response=await page.goto(target.url,{waitUntil:'load',timeout:45000});
-      status=response?.status()??null;
+      let response=await page.goto(target.url,{waitUntil:'load',timeout:45000});
       await page.waitForTimeout(8000);
+      let staleLoads=0,bandMatches=null;
+      if(target.name==='home'&&EXPECTED_BAND){
+        const served=()=>page.evaluate(()=>{const s=document.getElementById('gbm-gameday-v1');return s?s.textContent:null;});
+        bandMatches=await served()===EXPECTED_BAND;
+        while(!bandMatches&&staleLoads<3){
+          staleLoads++;
+          await page.waitForTimeout(15000);
+          response=await page.goto(target.url+'?qc='+Date.now(),{waitUntil:'load',timeout:45000});
+          await page.waitForTimeout(8000);
+          bandMatches=await served()===EXPECTED_BAND;
+        }
+      }
+      status=response?.status()??null;
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';
       await page.screenshot({path:shot,type:'jpeg',quality:70,fullPage:false});
       const result=await page.evaluate(audit,{target,requestedWidth:profile.expectedWidth});
@@ -307,6 +330,45 @@ for(const profile of PROFILES){
         viewportCandidate.screenshot=candidateShot;
       }
       if(status!==200)result.hard.push('HTTP status '+status);
+      if(bandMatches!==null){
+        result.band={matches:bandMatches,staleLoads};
+        if(!bandMatches)result.hard.push('live game-day band differs from the repo after '+staleLoads+' cache-busting reloads (change not deployed?)');
+      }
+      // Game-day roster panel: only while the band carries the "Rosters & numbers" button.
+      if(target.name==='home'&&await page.$('#gbm-gd .gd-rbtn')){
+        const rp={};
+        try{
+          await page.waitForFunction(()=>!!window.__GBM_ROSTERS__&&typeof window.__GBM_ROSTER_UI__==='function',null,{timeout:10000}).catch(()=>{});
+          rp.probe=await page.evaluate(()=>({data:!!window.__GBM_ROSTERS__,ui:typeof window.__GBM_ROSTER_UI__,css:!!document.getElementById('gbm-roster-css'),panels:document.querySelectorAll('#gbm-rp').length,control:document.querySelector('#gbm-gd .gd-rbtn').tagName}));
+          const before=page.url();
+          await page.click('#gbm-gd .gd-rbtn');
+          await page.waitForTimeout(700);
+          rp.navigatedAway=page.url()!==before;
+          rp.open=await page.$eval('#gbm-rp',p=>!p.hidden&&p.getBoundingClientRect().height>0).catch(()=>false);
+          if(rp.open){
+            await page.fill('#gbm-rp input','13');
+            await page.waitForTimeout(400);
+            rp.hits13=await page.$$eval('#gbm-rp .rp-hit',els=>els.map(e=>e.textContent.replace(/\s+/g,' ').trim()));
+            rp.tabs=await page.$$eval('#gbm-rp [role=tab]',els=>els.map(e=>e.textContent.trim()));
+            rp.sideways=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);
+            // Availability tags (OUT/GTD): every entry in the data's "st" map must render in the team lists.
+            rp.stExpected=await page.evaluate(()=>{const R=window.__GBM_ROSTERS__;return R&&R.st?Object.keys(R.st).length:0;});
+            if(rp.stExpected){
+              rp.stShown=0;
+              for(const t of ['0','1']){await page.click('#gbm-rp [role=tab][data-t="'+t+'"]');await page.waitForTimeout(150);rp.stShown+=await page.$$eval('#gbm-rp ol .rp-st',els=>els.length);}
+              await page.click('#gbm-rp [role=tab][data-t="0"]');
+            }
+            rp.screenshot=OUT+'/home-'+profile.name+'-rosters.jpg';
+            await page.screenshot({path:rp.screenshot,type:'jpeg',quality:70,fullPage:false});
+          }
+        }catch(error){rp.error=String(error).slice(0,200);}
+        if(rp.navigatedAway)result.hard.push('Rosters button navigated away instead of opening the panel');
+        else if(!rp.open)result.hard.push('Rosters panel did not open'+(rp.error?': '+rp.error:''));
+        else if(!(rp.hits13||[]).some(h=>/\S/.test(h)))result.hard.push('Rosters number lookup returned nothing for No. 13');
+        else if(rp.sideways)result.hard.push('Rosters panel causes sideways scroll');
+        else if(rp.stExpected&&rp.stShown!==rp.stExpected)result.hard.push('Roster OUT/GTD tags: '+rp.stShown+' shown, '+rp.stExpected+' in the data');
+        result.rosters=rp;
+      }
       report.hardFailureCount+=result.hard.length;
       report.runs.push({target:target.name,profile:profile.name,requestedWidth:profile.expectedWidth,status,screenshot:shot,viewportCandidate,consoleErrors:consoleErrors.slice(0,6),networkFailures:networkFailures.slice(0,10),...result});
     }catch(error){
@@ -337,6 +399,8 @@ for(const r of report.runs){
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
   if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');
+  if(r.band)lines.push('- game-day band matches repo: '+r.band.matches+(r.band.staleLoads?' (after '+r.band.staleLoads+' stale CDN copies)':''));
+  if(r.rosters)lines.push('- rosters panel: open '+r.rosters.open+'; probe '+JSON.stringify(r.rosters.probe||null)+'; tabs '+JSON.stringify(r.rosters.tabs||[])+'; No. 13 → '+JSON.stringify(r.rosters.hits13||[])+(r.rosters.stExpected?'; OUT/GTD tags '+r.rosters.stShown+'/'+r.rosters.stExpected:''));
   if(r.hard.length)for(const f of r.hard)lines.push('- **HARD:** '+f);
   if(r.warnings.length)for(const f of r.warnings)lines.push('- warning: '+f);
   if(r.consoleErrors.length)lines.push('- console errors recorded: '+r.consoleErrors.length);

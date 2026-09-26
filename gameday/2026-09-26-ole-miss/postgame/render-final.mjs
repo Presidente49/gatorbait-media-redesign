@@ -1,0 +1,14 @@
+import { chromium } from 'playwright';
+import fs from 'fs';
+const [uf, om, sub] = process.argv.slice(2);
+const dir = '/home/user/gatorbait-media-redesign/gameday/2026-09-26-ole-miss/postgame/';
+const html = fs.readFileSync(dir + 'cover.tpl.html', 'utf8').replace('__UF__', uf).replace('__OM__', om).replace('__SUB__', sub);
+fs.writeFileSync(dir + 'cover.html', html);
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const p = await b.newPage({ viewport: { width: 1600, height: 900 }, deviceScaleFactor: 1 });
+await p.goto('file://' + dir + 'cover.html');
+await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
+const fonts = await p.evaluate(() => [...document.fonts].filter(f => f.status === 'loaded').length);
+await p.locator('.c').screenshot({ path: dir + 'final-florida-ole-miss-cover.png' });
+console.log('fonts loaded', fonts);
+await b.close();

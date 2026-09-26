@@ -342,3 +342,73 @@ Refine the existing separate Magazine implementation under `docs/CREATIVE-DIRECT
 Acceptance gates: current Buddy cover/lead; remaining Magazine stories newest-first; one canonical URL and primary editorial home; original photo credits and intentional portrait/landscape framing; readable mobile type; no orphan white boxes or duplicate story cards; one latest-game gallery at most; working article/Join/Store/TV paths; shared navigation/footer; and no new layout shift or overflow. Reserve intentional image/ad geometry without retaining broken-image or empty-card scaffolding. Any ad integration must pass consent and reader-experience checks through the existing Wix owner.
 
 Verify the actual public Wix runtime at desktop and 390/430px where available. Isolated fixtures do not certify the full mobile shell, and logged-out reachability does not certify authenticated membership. Once acceptance is verified, record the exact approved revision and rollback and hold it. Later design changes require a demonstrated defect or measurable business case, not novelty.
+
+## 33. Presentation embeds must stay consent category ESSENTIAL
+
+On Sept. 26, 2026 the homepage (`fdc2127a`) and Magazine (`1dd74333`) embeds were PATCHed with `embedData.category: "FUNCTIONAL"` copied from the Wix API example. Wix defers non-essential embeds until its consent manager runs, so neither was server-rendered: the native Wix homepage/Magazine and native header painted for 1-2 s on phones before the custom surface replaced them. The first-paint probe (`automation/vision/first-paint.mjs`) measured it.
+
+Every Update Custom Embed call must re-send the category read in the same GET, never a hard-coded one. First-party layout, routing and navigation code with no tracking is `ESSENTIAL`; only analytics/advertising tags use `ANALYTICS`/`ADVERTISING`.
+
+## 34. Homepage controls must not be same-site links; test fixtures must use the real origin
+
+On Sept. 26, 2026 the game-day "Rosters & numbers" control shipped as `<a href="https://www.gatorbaitmedia.com/_files/…pdf">` and relied on `preventDefault()` in a bubbling click listener to open the roster panel instead. The home core (`fdc2127a`) has a capture-phase click handler for no-jump navigation. It turns every same-site link to a non-home path into `location.assign()` with `stopImmediatePropagation()`. So live, the panel never opened: TinyFish's browser showed the PDF, and headless CI just downloaded it. The local fixture passed because it served the page from a test origin, which made the PDF link cross-site.
+
+Any homepage control that opens something in place must be a `<button>`. Only real navigation belongs in `<a>`. Fixtures for interactive homepage features must serve the page on `https://www.gatorbaitmedia.com/` (Playwright route) with every home part loaded, and live QC should click the control, not just find it.
+
+## 35. An ACTIVE automation is not a delivering automation; clean up after departed agents
+
+On Sept. 26, 2026 the branded story alert `5006baf5` showed ACTIVE and valid, but its message had not delivered since Aug. 13. Its action had no dynamic-parameter mapping. Brenden noticed that no alerts were going out; the status field never showed it. The fix was to switch to the proven alert `824714d4`, keeping exactly one active. Verify delivery from the message's recipient log, never from status.
+
+The same day Meta Muse (since removed) published three stories under the owner's account, with no categories. Their errors included:
+- a wrong series record (13-13-1 instead of 13-13-2);
+- a wrong NFL career length;
+- a player's 224 yards credited to the whole team;
+- unverified stats and quotes.
+
+The fix was to correct them in place with correction notes, remove what couldn't be verified, move them to the GatorBait Staff byline and Gator Football, and leave Muse's unpublished drafts unpublished. Anything an outside agent publishes gets the same editor and fact check as our own work before it stays live.
+
+## 36. A status change is an update, not a new send
+
+On Sept. 26, 2026 Kewan Lacy went from "not expected to play" (story and breaking email already out) to officially ruled out. Brenden asked whether sending again or building a Magazine cover would be redundant. It would have been. The right move:
+- Update the existing story in place: headline, lede, cover graphic and a dated update note, same URL.
+- Update the homepage band.
+- Pause the story alert while editing.
+- Send no second email.
+- Leave the Magazine cover alone. The Magazine stays Buddy-led and curated; breaking news has one primary home on the front page.
+
+Before any new email, cover or post, list what already exists for the story (post, band, email, social) and change that instead.
+
+## 37. Watch the competition from the check-ins you already have (Sept. 26, 2026)
+
+A pregame competitor sweep (13 fetches, read-only) found no contradictions with GatorBait's facts. It did find two gaps:
+
+- **Speed.** ESPN had Lacy ruled out at 9:15 a.m. ET. GatorBait published about five hours later.
+- **Stories missed:** a game-day commitment (2028 S Cyion Smith), the recruiting-visitor list, and SEC Nation in town.
+
+The competitor check now rides the existing in-game check-ins (Q1, half, Q3, final), with no new scheduler. It reports gaps to Brenden and publishes nothing without his yes.
+
+Two cautions:
+
+- Outlets disagree on basic facts. On3 has Smith as a four-star and 247 as a three-star. ESPN says Singleton "has yet to debut," which is wrong. Cite whose number you use.
+- Never copy a competitor's framing unverified.
+
+Report: `gameday/2026-09-26-ole-miss/competitor-watch-1850Z.md`.
+
+## 38. Pasted copy gets the same fact-check as our own (Sept. 26, 2026)
+
+Brenden pasted a halftime story that was "copy-and-paste ready." Checked against ESPN's play-by-play and box score, it had these errors:
+
+- the kicker's first name (Trey instead of Patrick Durkin);
+- the time of the second Ole Miss field goal ("final play of the half" instead of 1:11 left);
+- Florida's rushing total (134 at 5.4 instead of 133 at 4.9);
+- "scored on the very next drive" (it was the same drive);
+- when Chambliss went down ("late" instead of midway through the first quarter).
+
+It also stated injuries that no source showed (Lovett to the medical tent, Brown's ankle).
+
+Our own first version had errors too:
+
+- It called the kick-catch interference "pass interference."
+- It took a single live-blog line that a backup QB played, which the play-by-play doesn't show.
+
+**The rule:** every number, name and time is checked against the play-by-play before an in-place update. Anything with no source is held back and listed for Brenden to confirm.

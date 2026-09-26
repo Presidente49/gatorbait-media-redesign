@@ -88,11 +88,13 @@ for (const profile of PROFILES) {
     const ctx = await browser.newContext(profile.context);
     await ctx.addInitScript(sampler);
     const page = await ctx.newPage();
+    const external = [];
+    page.on('request', q => { if (/cdn\.jsdelivr\.net/.test(q.url())) external.push(q.url().slice(0, 140)); });
     try {
       await page.goto(BASE + r.path + '?fp=' + Date.now(), { waitUntil: 'commit', timeout: 45000 });
       await page.waitForTimeout(9500);
       const frames = await page.evaluate(() => window.__fp || []);
-      report.runs.push({ route: r.name, profile: profile.name, ...summarize(frames, r.root) });
+      report.runs.push({ route: r.name, profile: profile.name, jsdelivrRequests: external.length, ...summarize(frames, r.root) });
       await page.screenshot({ path: `${OUT}/${r.name}-${profile.name}.jpg`, type: 'jpeg', quality: 60 });
     } catch (e) {
       report.runs.push({ route: r.name, profile: profile.name, error: String(e).slice(0, 200) });

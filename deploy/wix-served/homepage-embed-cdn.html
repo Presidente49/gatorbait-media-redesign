@@ -55,7 +55,8 @@ html:has(#gbm-gazette-bundle):not(:has(#gbm-live)) #gbm-footer{visibility:hidden
 #gbm-mobile-shell,#gbm-mobile-drawer-root{display:none}
 @media(max-width:820px){
 #SITE_HEADER,#gbm-live .site-header{display:none!important}
-#gbm-mobile-shell{display:flex;position:sticky;top:0;z-index:2147481500;height:60px;padding:7px 10px;box-sizing:border-box;align-items:center;justify-content:space-between;background:#fff;border-top:4px solid #fa4616;border-bottom:1px solid #dfe4ec;box-shadow:0 3px 12px #08132f14}
+#gbm-mobile-shell-host{position:sticky;top:0;z-index:2147481500;height:60px}
+#gbm-mobile-shell{display:flex;position:relative;top:0;z-index:2147481500;height:60px;padding:7px 10px;box-sizing:border-box;align-items:center;justify-content:space-between;background:#fff;border-top:4px solid #fa4616;border-bottom:1px solid #dfe4ec;box-shadow:0 3px 12px #08132f14}
 #gbm-mobile-shell .gbm-ms-logo{display:block;width:min(180px,52vw);line-height:0}
 #gbm-mobile-shell .gbm-ms-logo img{display:block;width:100%;height:auto;max-height:44px;object-fit:contain}
 #gbm-mobile-shell .gbm-ms-trigger{border:1px solid #b8c1d0;background:#fff;color:#08132f;width:72px;height:40px;border-radius:4px;display:flex;align-items:center;justify-content:center;gap:7px;font:900 11px/1 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}

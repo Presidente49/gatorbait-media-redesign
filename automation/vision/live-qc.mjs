@@ -307,6 +307,32 @@ for(const profile of PROFILES){
         viewportCandidate.screenshot=candidateShot;
       }
       if(status!==200)result.hard.push('HTTP status '+status);
+      // Game-day roster panel: only while the band carries the "Rosters & numbers" button.
+      if(target.name==='home'&&await page.$('#gbm-gd .gd-rbtn')){
+        const rp={};
+        try{
+          await page.waitForFunction(()=>!!window.__GBM_ROSTERS__&&typeof window.__GBM_ROSTER_UI__==='function',null,{timeout:10000}).catch(()=>{});
+          const before=page.url();
+          await page.click('#gbm-gd .gd-rbtn');
+          await page.waitForTimeout(700);
+          rp.navigatedAway=page.url()!==before;
+          rp.open=await page.$eval('#gbm-rp',p=>!p.hidden&&p.getBoundingClientRect().height>0).catch(()=>false);
+          if(rp.open){
+            await page.fill('#gbm-rp input','13');
+            await page.waitForTimeout(400);
+            rp.hits13=await page.$$eval('#gbm-rp .rp-hit',els=>els.map(e=>e.textContent.replace(/\s+/g,' ').trim()));
+            rp.tabs=await page.$$eval('#gbm-rp [role=tab]',els=>els.map(e=>e.textContent.trim()));
+            rp.sideways=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);
+            rp.screenshot=OUT+'/home-'+profile.name+'-rosters.jpg';
+            await page.screenshot({path:rp.screenshot,type:'jpeg',quality:70,fullPage:false});
+          }
+        }catch(error){rp.error=String(error).slice(0,200);}
+        if(rp.navigatedAway)result.hard.push('Rosters button navigated away instead of opening the panel');
+        else if(!rp.open)result.hard.push('Rosters panel did not open'+(rp.error?': '+rp.error:''));
+        else if(!(rp.hits13||[]).some(h=>/\S/.test(h)))result.hard.push('Rosters number lookup returned nothing for No. 13');
+        else if(rp.sideways)result.hard.push('Rosters panel causes sideways scroll');
+        result.rosters=rp;
+      }
       report.hardFailureCount+=result.hard.length;
       report.runs.push({target:target.name,profile:profile.name,requestedWidth:profile.expectedWidth,status,screenshot:shot,viewportCandidate,consoleErrors:consoleErrors.slice(0,6),networkFailures:networkFailures.slice(0,10),...result});
     }catch(error){
@@ -337,6 +363,7 @@ for(const r of report.runs){
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
   if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');
+  if(r.rosters)lines.push('- rosters panel: open '+r.rosters.open+'; tabs '+JSON.stringify(r.rosters.tabs||[])+'; No. 13 → '+JSON.stringify(r.rosters.hits13||[]));
   if(r.hard.length)for(const f of r.hard)lines.push('- **HARD:** '+f);
   if(r.warnings.length)for(const f of r.warnings)lines.push('- warning: '+f);
   if(r.consoleErrors.length)lines.push('- console errors recorded: '+r.consoleErrors.length);

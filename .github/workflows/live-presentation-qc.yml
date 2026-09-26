@@ -6,6 +6,7 @@ on:
       - 'sports-live/**'
       - 'automation/site-design/**'
       - 'automation/vision/live-qc.mjs'
+      - 'deploy/wix-served/**'
       - '.github/workflows/live-presentation-qc.yml'
   workflow_dispatch:
 

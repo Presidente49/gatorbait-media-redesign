@@ -128,6 +128,9 @@ p_match = re.search(r'var P = (\{.*?\});\n', home_js, re.S)
 assert p_match, 'homepage.js payload object not found'
 payload = json.loads(p_match.group(1))
 assert set(payload) == {'css', 'fallback'}, sorted(payload)
+# Backup stories come from home-fallback.json (refresh from the Wix Blog API) when present, not the pinned snapshot.
+if (OUT / 'home-fallback.json').exists():
+    payload['fallback'] = json.loads((OUT / 'home-fallback.json').read_text())
 home_code_js = home_js.replace(p_match.group(0), 'var P = {"css": "", "fallback": window.__GBM_HOME_FALLBACK__};\n', 1)
 assert '</style' not in payload['css'].lower()
 

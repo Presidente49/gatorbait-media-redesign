@@ -10,3 +10,6 @@
   - d3cfa5_026d2a4d2be04a91b8c32317fed5f623~mv2.jpg
   - d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg
 - Magazine postgame cover: d3cfa5_fda8a01da9e94532846c680eb96e6015~mv2.jpg (in Media; not placed).
+
+## Update 23:58Z
+Brenden confirmed Chris Spears shot all of today's photos. Both photos were added to the live post in place (UPDATE_PUBLISH), with caption credit "Photo by Chris Spears/GatorBait Media": the Baugh TD dive leads, and the take-the-field shot runs before "The tone was set early." The alert automation stayed INACTIVE; no email.

@@ -6,7 +6,7 @@ By GatorBait Media Staff · Category: Gator Football · Cover: final-florida-ole
 
 GAINESVILLE — Every time No. 4 Ole Miss punched, Florida punched back harder.
 
-Jadan Baugh ran for 142 yards and three touchdowns, the Gators scored touchdowns on six straight second-half possessions, and No. 21 Florida beat the Rebels 52-28 on Saturday at Ben Hill Griffin Stadium. Florida is 4-0 and 2-0 in the SEC. Ole Miss fell to 3-1.
+Jadan Baugh ran for 142 yards and three touchdowns, the Gators scored touchdowns on six straight second-half possessions, and No. 21 Florida beat the Rebels 52-28 on Saturday at Ben Hill Griffin Stadium. Florida is 4-0 and 2-0 in the SEC, and it now leads the all-time series 14-13-1. Ole Miss fell to 3-1.
 
 ## The answer, every time
 

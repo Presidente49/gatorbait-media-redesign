@@ -29,7 +29,8 @@ def js_fn(src):
 
 
 home_js = show(HOME_PIN, 'sports-live/homepage.js')
-mag_js = show(HOME_PIN, 'automation/site-design/magazine.js')
+# Magazine carries the pre-paint hide (gbm-mq) added after HOME_PIN; build it from the working tree.
+mag_js = (ROOT / 'automation/site-design/magazine.js').read_text()
 ui_js = show(UI_PIN, 'newsroom-preview/wix-live-ui.js')
 ui_css = show(UI_PIN, 'newsroom-preview/wix-live-ui.css')
 shell = (OUT / 'shell-and-account.html').read_text()

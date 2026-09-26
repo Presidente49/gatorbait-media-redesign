@@ -4,6 +4,9 @@ _Excerpt:_ Jadan Baugh ran for three touchdowns, Florida scored touchdowns on it
 
 By GatorBait Media Staff · Category: Gator Football · Cover: final-florida-ole-miss-cover.png
 
+[Photo: Florida running back Jadan Baugh (13) dives into the end zone for a first-quarter touchdown against Ole Miss]
+_Jadan Baugh dives in from 4 yards out for Florida’s first touchdown. (Photo: [CREDIT NEEDED])_
+
 GAINESVILLE — Every time No. 4 Ole Miss punched, Florida punched back harder.
 
 Jadan Baugh ran for 142 yards and three touchdowns, the Gators scored touchdowns on their first five possessions of the second half, and No. 21 Florida beat the Rebels 52-28 on Saturday at Ben Hill Griffin Stadium. Florida is 4-0 and 2-0 in the SEC, and it now leads the all-time series 14-13-1. Ole Miss fell to 3-1.
@@ -29,6 +32,9 @@ Ole Miss played without star running back Kewan Lacy, who was ruled out before k
 Chambliss threw for 298 yards and a touchdown and ran for two more scores, and Deuce Alexander caught seven passes for 134 yards. But Florida’s defense made the plays that decided it.
 
 With Ole Miss at the Florida 40 late in the third quarter, Jayden Woods sacked Chambliss, who fumbled, and Myles Graham recovered. The Gators drove 57 yards for Wilson’s touchdown and a 38-21 lead. After Ole Miss cut it to 38-28 on Chambliss’ 2-yard touchdown pass to Alexander, Philo found Jackson to push the lead back to 17. DJ Coleman later intercepted Chambliss at the Florida 5.
+
+[Photo: The Florida Gators run onto the field at Ben Hill Griffin Stadium before kickoff against Ole Miss]
+_The Gators take the field in The Swamp before kickoff. (Photo: [CREDIT NEEDED])_
 
 The tone was set early. Aaron Chiles stuffed JT Lindsey on fourth-and-1 in the first quarter, and Patrick Durkin followed with a 49-yard field goal. Baugh scored twice before halftime, and two Lucas Carneiro field goals were all Ole Miss managed in the first 30 minutes.
 

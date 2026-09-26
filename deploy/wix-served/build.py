@@ -10,7 +10,7 @@ When PATCHing these into Wix, re-send the embed's existing consent category
 (ESSENTIAL). A non-essential category makes Wix defer the embed behind the
 consent manager, and the native Wix page flashes before the custom surface.
 """
-import json, pathlib, subprocess
+import json, pathlib, re, subprocess
 
 HOME_PIN = '2b42f09bceadce74629315dbae4090b2fb1fe49f'   # game-day reference copy
 HOME_JS_PIN = '2b42f09bceadce74629315dbae4090b2fb1fe49f'  # homepage renderer: game-day reference copy
@@ -113,3 +113,94 @@ assert '</script' not in mag_js.lower()
 mag = mag_head + '<script id="gbm-magazine-wix-served-v1">\n' + mag_js + '\n</script>'
 (OUT / 'magazine-embed.html').write_text(mag)
 print('homepage', len(home), 'magazine', len(mag))
+
+# --- Fully Wix-served homepage, split across embeds under the 15,000-character cap ---
+# Wix does not guarantee the order HEAD embeds run in, so each part announces itself
+# through window.__GBM_HOME_PART__ and the core boot starts once its parts are present.
+# A part that is still missing at DOMContentLoaded reveals the native page (never blank).
+LIMIT = 15000
+SPLIT = OUT / 'split'
+SPLIT.mkdir(exist_ok=True)
+PART = "window.__GBM_HOME_PART__&&window.__GBM_HOME_PART__();"
+
+p_match = re.search(r'var P = (\{.*?\});\n', home_js, re.S)
+assert p_match, 'homepage.js payload object not found'
+payload = json.loads(p_match.group(1))
+assert set(payload) == {'css', 'fallback'}, sorted(payload)
+home_code_js = home_js.replace(p_match.group(0), 'var P = {"css": "", "fallback": window.__GBM_HOME_FALLBACK__};\n', 1)
+assert '</style' not in payload['css'].lower()
+
+BOOT_SPLIT = '''<script id="gbm-gazette-bootstrap-v4">(function () {
+  'use strict';
+  if (window.__GBM_GAZETTE_BOOT__) return;
+  var initialHome = (location.pathname.replace(/\\/+$/, '') || '/') === '/';
+  var timer, done = false, started = false;
+  var NEED = initialHome ? ['code', 'data', 'styles'] : ['ui'];
+  function has(k) {
+    if (k === 'code') return typeof window.__GBM_HOME_JS__ === 'function';
+    if (k === 'data') return !!window.__GBM_HOME_FALLBACK__;
+    if (k === 'styles') return !!document.getElementById('gbgz-styles');
+    return typeof window.__GBM_UI_JS__ === 'function';
+  }
+  function missing() { return NEED.filter(function (k) { return !has(k); }); }
+  function ready() { done = true; clearTimeout(timer); }
+  // Failure never leaves a blank page or redirects: reveal the native Wix homepage.
+  function fallback(error) {
+    if (done || !initialHome) return;
+    done = true; clearTimeout(timer);
+    console.warn('[GatorBait] Showing native homepage', error && String(error));
+    ['gbm-live', 'gbm-gazette-bundle'].forEach(function (id) { var el = document.getElementById(id); if (el) el.remove(); });
+  }
+  window.__GBM_GAZETTE_BOOT__ = { ready: ready, fallback: fallback };
+  document.addEventListener('click', function (event) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    var a = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+    if (!a || a.hasAttribute('download') || (a.target && a.target !== '_self')) return;
+    var target; try { target = new URL(a.href, location.href); } catch (_) { return; }
+    if (target.origin !== location.origin || !/^https?:$/.test(target.protocol)) return;
+    var targetHome = (target.pathname.replace(/\\/+$/, '') || '/') === '/';
+    if (targetHome !== initialHome) { event.preventDefault(); event.stopImmediatePropagation(); location.assign(target.href); }
+  }, true);
+  function route() { if (((location.pathname.replace(/\\/+$/, '') || '/') === '/') !== initialHome) location.reload(); }
+  window.addEventListener('popstate', route);
+  window.addEventListener('gbmroutechange', route);
+  function attempt() {
+    if (started || missing().length) return;
+    started = true;
+    if (!initialHome) {
+      window.__GBM_STANDALONE_NEWSROOM__ = 0; window.__GBM_UI_LAYER__ = 0;
+      var style = document.createElement('style'); style.id = 'gbm-ui-layer-css'; style.textContent = window.__GBM_UI_CSS__ || ''; document.head.appendChild(style);
+      try { window.__GBM_UI_JS__(); } catch (error) { console.warn('[GatorBait] UI layer', error); }
+      return;
+    }
+    timer = setTimeout(function () { fallback('render timeout'); }, 15000);
+    try { window.__GBM_HOME_JS__(); } catch (error) { fallback(error); }
+  }
+  window.__GBM_HOME_PART__ = attempt;
+  if (initialHome) {
+    window.__GBM_EDITORIAL_FILTER_V1__ = 1;
+    window.__GBM_STANDALONE_NEWSROOM__ = 1;
+    window.__GBM_UI_LAYER__ = 1;
+    var marker = document.createElement('script');
+    marker.id = 'gbm-gazette-bundle'; marker.type = 'text/plain';
+    document.head.appendChild(marker);
+  }
+  attempt();
+  function last() { attempt(); if (!started) { if (initialHome) fallback('missing ' + missing().join(',')); else console.warn('[GatorBait] UI layer missing'); } }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', last, { once: true }); else last();
+})();</script>'''
+
+TAG = ' src=' + HOME_JS_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->'
+parts = {
+    'home-core.html': '<!-- GBM_HOME_CORE_V4' + TAG + STARTUP + viewport + BOOT_SPLIT + shell,
+    'home-styles.html': '<!-- GBM_HOME_STYLES_V1' + TAG + '<style id="gbgz-styles">' + payload['css'] + '</style><script>' + PART + '</script>',
+    'home-data.html': '<!-- GBM_HOME_DATA_V1' + TAG + '<script>window.__GBM_HOME_FALLBACK__=' + json.dumps(payload['fallback'], separators=(',', ':')) + ';' + PART + '</script>',
+    'home-code.html': '<!-- GBM_HOME_CODE_V1' + TAG + '<script>window.__GBM_HOME_JS__=' + js_fn(home_code_js) + ';' + PART + '</script>',
+    'ui-layer.html': '<!-- GBM_UI_LAYER_V1' + TAG + '<script>window.__GBM_UI_CSS__=' + json.dumps(ui_css) + ';window.__GBM_UI_JS__=' + js_fn(ui_js) + ';' + PART + '</script>',
+}
+for name, html in parts.items():
+    assert 'cdn.jsdelivr' not in html, name
+    assert html.lower().count('</script') == html.lower().count('<script'), name
+    assert len(html) <= LIMIT, (name, len(html))
+    (SPLIT / name).write_text(html)
+    print('split', name, len(html))

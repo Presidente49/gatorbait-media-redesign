@@ -1,8 +1,19 @@
 import { chromium, devices } from 'playwright';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 const OUT='build/live-site-vision';
 mkdirSync(OUT,{recursive:true});
+
+// Game-day band script as committed. Wix's CDN keeps serving older copies of the homepage for
+// several minutes after an embed update, so a mismatch is retried with a cache-busting reload
+// before it counts; if live never matches the repo, the change was not deployed.
+let EXPECTED_BAND=null;
+try{
+  const src=readFileSync('deploy/wix-served/home-gameday.html','utf8');
+  const script=src.match(/<script id="gbm-gameday-v1">([\s\S]*?)<\/script>/);
+  const until=src.match(/"until":"([^"]+)"/);
+  if(script&&until&&Date.parse(until[1])>Date.now())EXPECTED_BAND=script[1];
+}catch(_){}
 
 const TARGETS=[
   {
@@ -275,9 +286,21 @@ for(const profile of PROFILES){
     });
     let status=null;
     try{
-      const response=await page.goto(target.url,{waitUntil:'load',timeout:45000});
-      status=response?.status()??null;
+      let response=await page.goto(target.url,{waitUntil:'load',timeout:45000});
       await page.waitForTimeout(8000);
+      let staleLoads=0,bandMatches=null;
+      if(target.name==='home'&&EXPECTED_BAND){
+        const served=()=>page.evaluate(()=>{const s=document.getElementById('gbm-gameday-v1');return s?s.textContent:null;});
+        bandMatches=await served()===EXPECTED_BAND;
+        while(!bandMatches&&staleLoads<3){
+          staleLoads++;
+          await page.waitForTimeout(15000);
+          response=await page.goto(target.url+'?qc='+Date.now(),{waitUntil:'load',timeout:45000});
+          await page.waitForTimeout(8000);
+          bandMatches=await served()===EXPECTED_BAND;
+        }
+      }
+      status=response?.status()??null;
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';
       await page.screenshot({path:shot,type:'jpeg',quality:70,fullPage:false});
       const result=await page.evaluate(audit,{target,requestedWidth:profile.expectedWidth});
@@ -307,6 +330,10 @@ for(const profile of PROFILES){
         viewportCandidate.screenshot=candidateShot;
       }
       if(status!==200)result.hard.push('HTTP status '+status);
+      if(bandMatches!==null){
+        result.band={matches:bandMatches,staleLoads};
+        if(!bandMatches)result.hard.push('live game-day band differs from the repo after '+staleLoads+' cache-busting reloads (change not deployed?)');
+      }
       // Game-day roster panel: only while the band carries the "Rosters & numbers" button.
       if(target.name==='home'&&await page.$('#gbm-gd .gd-rbtn')){
         const rp={};
@@ -364,6 +391,7 @@ for(const r of report.runs){
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
   if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');
+  if(r.band)lines.push('- game-day band matches repo: '+r.band.matches+(r.band.staleLoads?' (after '+r.band.staleLoads+' stale CDN copies)':''));
   if(r.rosters)lines.push('- rosters panel: open '+r.rosters.open+'; probe '+JSON.stringify(r.rosters.probe||null)+'; tabs '+JSON.stringify(r.rosters.tabs||[])+'; No. 13 → '+JSON.stringify(r.rosters.hits13||[]));
   if(r.hard.length)for(const f of r.hard)lines.push('- **HARD:** '+f);
   if(r.warnings.length)for(const f of r.warnings)lines.push('- warning: '+f);

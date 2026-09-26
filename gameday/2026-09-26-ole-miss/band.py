@@ -20,7 +20,18 @@ g['away']['score']=int(T['score']['MISS']); g['home']['score']=int(T['score']['F
 g['clock']='' if a.final else q
 if a.final: g['status']='final'
 if T['state']=='in' and T['clock'] in ('0:00',) and T['period']==2: g['clock']='Half'
-g['st']=T['st']
+def _sec(v):
+    try: m,s_=v.strip().split(':'); return int(m)*60+int(s_)
+    except Exception: return -1
+prev={r[0]:r for r in g.get('st',[])}
+st=[]
+for r in T['st']:
+    r=[r[0],r[1].strip(),r[2].strip()]
+    if r[0]=='Possession' and r[0] in prev:
+        for i in (1,2):
+            if _sec(r[i])<_sec(prev[r[0]][i]): r[i]=prev[r[0]][i]
+    st.append(r)
+g['st']=st
 def fmt(dv): return dv.replace(' CAR',' car').replace(' YDS',' yds')
 ld=[]; seen={}
 order=[('FLA','rushingYards'),('FLA','passingYards'),('MISS','passingYards'),('MISS','rushingYards')]

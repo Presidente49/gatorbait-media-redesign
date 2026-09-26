@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp",
+      "excerpt": "Jadan Baugh ran for three touchdowns, Florida scored touchdowns on its first five possessions of the second half, and No. 21 Florida beat No. 4 Ole Miss 52-28 to move to 4-0.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-26T23:46:39Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_c902c8a849464c49a64841fcef37ed35~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp"
+      }
+    },
+    {
+      "title": "Baugh Punches Ole Miss Twice: Gators Lead 17-6 at the Half",
+      "excerpt": "Jadan Baugh has two touchdowns, Ole Miss lost a safety to a targeting ejection, and Florida takes a 17-6 lead into the locker room in The Swamp.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-ole-miss-halftime-baugh-gators-lead",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-26T21:31:19Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_8122d1dcae0a44409e594bdc8d726df8~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Baugh Punches Ole Miss Twice: Gators Lead 17-6 at the Half"
+      }
+    },
+    {
       "title": "Lacy-Less in The Swamp: Ole Miss Star RB Kewan Lacy Ruled Out vs. Florida",
       "excerpt": "Ole Miss ruled out All-America running back Kewan Lacy for Saturday's game at No. 21 Florida with a left shoulder injury, one of 10 Rebels out. JT Lindsey and Makhi Frazier are expected to split the carries.",
       "url": "https://www.gatorbaitmedia.com/post/kewan-lacy-not-expected-to-play-ole-miss-florida",
@@ -226,7 +254,7 @@
       }
     },
     {
-      "title": "Thoughts of the Day: September 22, 2027",
+      "title": "Thoughts of the Day: September 22, 2026",
       "excerpt": "Kerwin Bell (L) and Aaron Philo A few thoughts to jump start your Tuesday afternoon: Have you taken the time to notice the similarity? If you are old enough and you remember 1984, then you probably recall a certain No. 12, a walk-on from tiny Mayo (population 1,055) where dairy cows outnumber people probably 10-1. Kerwin Bell became Florida’s starter by…",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-22-2027",
       "author": "Franz Beard",
@@ -236,7 +264,7 @@
         "src": "https://static.wixstatic.com/media/a99769_a56cca7d946542d6ada59ccfa96cad7f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
-        "alt": "Featured image for Thoughts of the Day: September 22, 2027"
+        "alt": "Featured image for Thoughts of the Day: September 22, 2026"
       }
     },
     {
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida After Auburn: 5 Signs Sumrall’s Gators Are Rising"
-      }
-    },
-    {
-      "title": "Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All",
-      "excerpt": "Nobody needs a sequel to what happened in that locker room. That story already got its ending — a crystal football in January. But there’s something fitting about Ole Miss being the team standing across the line as Sumrall tries to prove his Gators belong with the big boys again.",
-      "url": "https://www.gatorbaitmedia.com/post/saturday-s-bill-comes-due-gators-ole-miss-and-the-promise-that-started-it-all",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-22T10:59:34Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_86e7dbd7d2a84b8c9ad5177ddb72e1cd~mv2.jpg/v1/fit/w_700,h_560,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Saturday’s Bill Comes Due: Gators, Ole Miss, and ‘The Promise’ That Started It All"
-      }
-    },
-    {
-      "title": "Keeping Up With Florida’s Opponents: “Heeerrrerre They Come!”",
-      "excerpt": "When you look at the results, Coach Sumrall is justified in saying that the Gators had been tested more than some in the media thought. The two teams the Gators have played are off to a good start in their respective seasons.",
-      "url": "https://www.gatorbaitmedia.com/post/keeping-up-with-florida-s-opponents-heeerrrerre-they-come",
-      "author": "EDDIE GILLEY",
-      "firstPublishedDate": "2026-09-22T10:23:46Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_095f981e3ddd4bf49ee2cd7f1765faa9~mv2.png/v1/fit/w_395,h_254,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Keeping Up With Florida’s Opponents: “Heeerrrerre They Come!”"
       }
     }
   ]

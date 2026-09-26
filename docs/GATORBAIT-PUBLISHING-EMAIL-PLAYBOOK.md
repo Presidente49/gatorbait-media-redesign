@@ -18,6 +18,8 @@ For major stories, create branded art before release when supplied art is weak. 
 
 ## 2. Automatic blog email = custom GatorBait article alert
 
+**2026-09-26:** Brenden approved turning the alert back on with the branded version. `5006baf5` was validated by Wix and set **ACTIVE** (rev 15→16), with message `1dfd5091` and audience label `e345fa8e`; `824714d4` was confirmed INACTIVE. Emails go out for posts published after this point. Franz's Sept. 26 "Soothsayer" article was published while both alerts were off, so it has not been emailed.
+
 This is the production single-story automatic email, not a GatorBait Magazine issue.
 
 Live routing verified September 23, 2026, 03:21 UTC:

@@ -1,4 +1,5 @@
 <style id="gbm-magazine-editorial-v7">html:has(#gbm-magazine-page) #SITE_PAGES,.gbm-mq #SITE_PAGES{display:none!important}
+.gbm-mq:not(:has(#gbm-magazine-page)) #gbm-footer{visibility:hidden}
 html:has(#gbm-magazine-page) #pageBackground_nh0hy{display:none!important}
 html:has(#gbm-magazine-page) #SITE_CONTAINER,html:has(#gbm-magazine-page) #masterPage,html:has(#gbm-magazine-page) #PAGES_CONTAINER,html:has(#gbm-magazine-page) #SITE_PAGES_TRANSITION_GROUP{height:auto!important;min-height:0!important;padding-bottom:0!important;margin-bottom:0!important}
 #gbm-magazine-page,#gbm-magazine-page *{box-sizing:border-box}
@@ -68,7 +69,7 @@ function mount(){
  H.add('gbm-magazine-live');
  if(document.getElementById('gbm-magazine-page'))return;
  var L=D.lead,m=document.createElement('main');m.id='gbm-magazine-page';
- /* Owner direction: no top subheading strips (no "LIVE DIGITAL ISSUE" / "FLORIDA FOOTBALL" bars). */
+ /* Owner: no top subheading strips. */
  m.innerHTML='<div class="wrap"><section class="cover"><div class="mast"><img src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp" width="900" height="241" alt="GatorBait"><span>Magazine</span></div><div class="hero"><img src="'+e(L.image)+'" alt="'+e(L.title)+'"></div><a class="lead" href="'+e(L.url)+'"><small>CURRENT COVER STORY · BUDDY MARTIN</small><h1>'+e(L.title)+'</h1><p>'+e(L.excerpt)+'</p></a><div class="lines">'+D.lines.map(function(p){return'<a class="line" href="'+e(p.url)+'"><b>'+e(p.title)+'</b><span>GatorBait</span></a>'}).join('')+'</div></section><section class="inside"><p class="ey">INSIDE THE ISSUE</p><h2>Stories worth keeping</h2><div class="grid">'+D.inside.map(card).join('')+'</div></section><section class="refs"><a href="/post/week-4-preview-florida-gators-3-0-1-0-v-ole-miss-rebels-3-0-1-0"><span>GAME DAY</span><strong>Florida vs. Ole Miss</strong><em>Kickoff is today in The Swamp. Predictions, matchups and everything to know before the game.</em></a><a href="/the-buddy-martin-show"><span>WATCH</span><strong>GatorBait TV</strong><em>Shows, interviews and game-week conversation.</em></a><a href="https://gatorbait2026.itemorder.com/shop/home/"><span>STORE</span><strong>Rep the Gators</strong><em>Hats, visors, shirts and more.</em></a></section></div>';
  var anchor=document.getElementById('gbm-mobile-shell-host')||document.getElementById('gbm-site-header');if(anchor&&anchor.parentNode===document.body)document.body.insertBefore(m,anchor.nextSibling);else document.body.insertBefore(m,document.body.firstChild);
  document.title='GatorBait Magazine | Florida Gators';

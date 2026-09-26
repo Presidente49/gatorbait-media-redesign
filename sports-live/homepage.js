@@ -87,9 +87,12 @@
     loading = true;
     var initial = P.fallback, cached;
     try { cached = JSON.parse(sessionStorage.getItem('gbm-public-feed') || 'null'); if (cached && Date.now() - cached.saved < 900000 && normalize(cached.data).length >= 3 && normalize(cached.data)[0].date >= normalize(P.fallback)[0].date) initial = cached.data; } catch (_) {}
-    try { render(normalize(initial), initial !== P.fallback); } catch (error) { failure(error); return; }
-    // Paint bundled public headlines immediately. A feed refresh never moves a story under the reader.
-    var controller = new AbortController(), timer = setTimeout(function () { controller.abort(); }, 2200);
+    // Paint the live same-origin feed first so the newest Buddy column leads; a recent session copy
+    // paints at once, and the bundled snapshot is only the fallback. Nothing moves once painted.
+    var painted = false;
+    function paint(data, fresh) { if (painted) return; painted = true; try { render(normalize(data), fresh); } catch (error) { failure(error); } }
+    if (initial !== P.fallback) paint(initial, true);
+    var controller = new AbortController(), timer = setTimeout(function () { controller.abort(); paint(initial, initial !== P.fallback); }, 1500);
     fetch(DATA, { signal: controller.signal, credentials: 'omit', cache: 'no-cache' }).then(function (r) {
       if (!r.ok) throw new Error('Content response ' + r.status); return r.text().then(function(xml){
         var feed = new DOMParser().parseFromString(xml, 'text/xml');
@@ -100,12 +103,13 @@
       var posts = normalize(data); if (posts.length < 3) throw new Error('Invalid current content');
       clearTimeout(timer);
       try { sessionStorage.setItem('gbm-public-feed', JSON.stringify({saved: Date.now(), data: data})); } catch (_) {}
+      if (!painted) { paint(data, true); return; }
       var root = document.getElementById('gbm-live');
       if (root && posts[0].date.toISOString() !== root.getAttribute('data-gazette-newest')) {
         var freshness = document.getElementById('sh-freshness');
         if (freshness) { freshness.textContent = ''; var a = document.createElement('a'); a.href = '/'; a.textContent = 'New stories available — refresh'; a.addEventListener('click', function (event) { event.preventDefault(); event.stopPropagation(); location.reload(); }); freshness.appendChild(a); }
       } else if (root) root.setAttribute('data-gazette-source','current-feed');
-    }).catch(function () { clearTimeout(timer); });
+    }).catch(function () { clearTimeout(timer); paint(initial, initial !== P.fallback); });
   }
 
   function sync() {

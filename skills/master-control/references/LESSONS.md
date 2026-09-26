@@ -366,3 +366,14 @@ The same day Meta Muse (since removed) published three stories under the owner's
 - unverified stats and quotes.
 
 The fix was to correct them in place with correction notes, remove what couldn't be verified, move them to the GatorBait Staff byline and Gator Football, and leave Muse's unpublished drafts unpublished. Anything an outside agent publishes gets the same editor and fact check as our own work before it stays live.
+
+## 36. A status change is an update, not a new send
+
+On Sept. 26, 2026 Kewan Lacy went from "not expected to play" (story and breaking email already out) to officially ruled out. Brenden asked whether sending again or building a Magazine cover would be redundant. It would have been. The right move:
+- Update the existing story in place: headline, lede, cover graphic and a dated update note, same URL.
+- Update the homepage band.
+- Pause the story alert while editing.
+- Send no second email.
+- Leave the Magazine cover alone. The Magazine stays Buddy-led and curated; breaking news has one primary home on the front page.
+
+Before any new email, cover or post, list what already exists for the story (post, band, email, social) and change that instead.

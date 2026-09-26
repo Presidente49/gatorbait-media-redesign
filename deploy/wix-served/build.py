@@ -9,6 +9,7 @@ output is deterministic.
 import json, pathlib, subprocess
 
 HOME_PIN = '485b38a036431c667584aa3990922772288399f3'   # live homepage/magazine pin (rev68/rev26)
+HOME_JS_PIN = 'afa3cff92c82d89460795ad21b699a755c360493'  # homepage renderer: live feed first (rev71)
 UI_PIN = 'f0a2deca30b8080b10efa8216f308414b7a95636'     # live native-route UI layer pin
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 OUT = pathlib.Path(__file__).resolve().parent
@@ -94,9 +95,9 @@ boot_cdn = (BOOT.replace('gbm-gazette-bootstrap-v2', 'gbm-gazette-bootstrap-v3')
     .replace("    var style = document.createElement('style'); style.id = 'gbm-ui-layer-css'; style.textContent = window.__GBM_UI_CSS__ || ''; document.head.appendChild(style);\n    try { if (window.__GBM_UI_JS__) window.__GBM_UI_JS__(); } catch (error) { console.warn('[GatorBait] UI layer', error); }\n",
              "    var base = '" + CDN + UI_PIN + "/newsroom-preview/';\n    var link = document.createElement('link'); link.rel = 'stylesheet'; link.href = base + 'wix-live-ui.css'; document.head.appendChild(link);\n    var ui = document.createElement('script'); ui.async = false; ui.src = base + 'wix-live-ui.js'; document.head.appendChild(ui);\n")
     .replace("  var marker = document.createElement('script');\n  marker.id = 'gbm-gazette-bundle'; marker.type = 'text/plain';\n  document.head.appendChild(marker);\n  timer = setTimeout(function () { fallback('startup timeout'); }, 7000);\n  try { window.__GBM_HOME_JS__(); } catch (error) { fallback(error); }\n",
-             "  var script = document.createElement('script');\n  script.id = 'gbm-gazette-bundle';\n  script.src = '" + CDN + HOME_PIN + "/sports-live/homepage.js';\n  script.async = true; script.onerror = fallback;\n  timer = setTimeout(function () { fallback('startup timeout'); }, 7000);\n  document.head.appendChild(script);\n"))
+             "  var script = document.createElement('script');\n  script.id = 'gbm-gazette-bundle';\n  script.src = '" + CDN + HOME_JS_PIN + "/sports-live/homepage.js';\n  script.async = true; script.onerror = fallback;\n  timer = setTimeout(function () { fallback('startup timeout'); }, 7000);\n  document.head.appendChild(script);\n"))
 assert 'gbm-ui-layer-css' not in boot_cdn and '__GBM_HOME_JS__' not in boot_cdn
-home_cdn = '<!-- GBM_SPORTS_HOME_PRODUCTION_V3 src=' + HOME_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->' + STARTUP + boot_cdn + shell
+home_cdn = '<!-- GBM_SPORTS_HOME_PRODUCTION_V3 src=' + HOME_JS_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->' + STARTUP + boot_cdn + shell
 (OUT / 'homepage-embed-cdn.html').write_text(home_cdn)
 print('homepage-cdn', len(home_cdn))
 home = '<!-- GBM_SPORTS_HOME_PRODUCTION_V2_WIX_SERVED src=' + HOME_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->' + STARTUP + BUNDLE + BOOT + shell

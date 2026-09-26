@@ -351,6 +351,13 @@ for(const profile of PROFILES){
             rp.hits13=await page.$$eval('#gbm-rp .rp-hit',els=>els.map(e=>e.textContent.replace(/\s+/g,' ').trim()));
             rp.tabs=await page.$$eval('#gbm-rp [role=tab]',els=>els.map(e=>e.textContent.trim()));
             rp.sideways=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);
+            // Availability tags (OUT/GTD): every entry in the data's "st" map must render in the team lists.
+            rp.stExpected=await page.evaluate(()=>{const R=window.__GBM_ROSTERS__;return R&&R.st?Object.keys(R.st).length:0;});
+            if(rp.stExpected){
+              rp.stShown=0;
+              for(const t of ['0','1']){await page.click('#gbm-rp [role=tab][data-t="'+t+'"]');await page.waitForTimeout(150);rp.stShown+=await page.$$eval('#gbm-rp ol .rp-st',els=>els.length);}
+              await page.click('#gbm-rp [role=tab][data-t="0"]');
+            }
             rp.screenshot=OUT+'/home-'+profile.name+'-rosters.jpg';
             await page.screenshot({path:rp.screenshot,type:'jpeg',quality:70,fullPage:false});
           }
@@ -359,6 +366,7 @@ for(const profile of PROFILES){
         else if(!rp.open)result.hard.push('Rosters panel did not open'+(rp.error?': '+rp.error:''));
         else if(!(rp.hits13||[]).some(h=>/\S/.test(h)))result.hard.push('Rosters number lookup returned nothing for No. 13');
         else if(rp.sideways)result.hard.push('Rosters panel causes sideways scroll');
+        else if(rp.stExpected&&rp.stShown!==rp.stExpected)result.hard.push('Roster OUT/GTD tags: '+rp.stShown+' shown, '+rp.stExpected+' in the data');
         result.rosters=rp;
       }
       report.hardFailureCount+=result.hard.length;
@@ -392,7 +400,7 @@ for(const r of report.runs){
   lines.push('- visible images first two screens: '+r.visibleImages.length);
   if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');
   if(r.band)lines.push('- game-day band matches repo: '+r.band.matches+(r.band.staleLoads?' (after '+r.band.staleLoads+' stale CDN copies)':''));
-  if(r.rosters)lines.push('- rosters panel: open '+r.rosters.open+'; probe '+JSON.stringify(r.rosters.probe||null)+'; tabs '+JSON.stringify(r.rosters.tabs||[])+'; No. 13 → '+JSON.stringify(r.rosters.hits13||[]));
+  if(r.rosters)lines.push('- rosters panel: open '+r.rosters.open+'; probe '+JSON.stringify(r.rosters.probe||null)+'; tabs '+JSON.stringify(r.rosters.tabs||[])+'; No. 13 → '+JSON.stringify(r.rosters.hits13||[])+(r.rosters.stExpected?'; OUT/GTD tags '+r.rosters.stShown+'/'+r.rosters.stExpected:''));
   if(r.hard.length)for(const f of r.hard)lines.push('- **HARD:** '+f);
   if(r.warnings.length)for(const f of r.warnings)lines.push('- warning: '+f);
   if(r.consoleErrors.length)lines.push('- console errors recorded: '+r.consoleErrors.length);

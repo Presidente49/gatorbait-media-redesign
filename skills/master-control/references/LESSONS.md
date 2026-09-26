@@ -377,3 +377,19 @@ On Sept. 26, 2026 Kewan Lacy went from "not expected to play" (story and breakin
 - Leave the Magazine cover alone. The Magazine stays Buddy-led and curated; breaking news has one primary home on the front page.
 
 Before any new email, cover or post, list what already exists for the story (post, band, email, social) and change that instead.
+
+## 37. Watch the competition from the check-ins you already have (Sept. 26, 2026)
+
+A pregame competitor sweep (13 fetches, read-only) found no contradictions with GatorBait's facts. It did find two gaps:
+
+- **Speed.** ESPN had Lacy ruled out at 9:15 a.m. ET. GatorBait published about five hours later.
+- **Stories missed:** a game-day commitment (2028 S Cyion Smith), the recruiting-visitor list, and SEC Nation in town.
+
+The competitor check now rides the existing in-game check-ins (Q1, half, Q3, final), with no new scheduler. It reports gaps to Brenden and publishes nothing without his yes.
+
+Two cautions:
+
+- Outlets disagree on basic facts. On3 has Smith as a four-star and 247 as a three-star. ESPN says Singleton "has yet to debut," which is wrong. Cite whose number you use.
+- Never copy a competitor's framing unverified.
+
+Report: `gameday/2026-09-26-ole-miss/competitor-watch-1850Z.md`.

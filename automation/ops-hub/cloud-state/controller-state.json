@@ -1,13 +1,11 @@
 {
   "architecture": "single-controller",
-  "phase": "escalate",
-  "decision": "escalate",
-  "reason": "failure persisted after bounded deterministic verification",
-  "failed_checks": [
-    "Homepage"
-  ],
-  "failure_fingerprint": "eec4e96152c4c89d",
-  "consecutive_failed_cycles": 4,
+  "phase": "observe",
+  "decision": "recovered",
+  "reason": "deterministic checks are healthy",
+  "failed_checks": [],
+  "failure_fingerprint": "",
+  "consecutive_failed_cycles": 0,
   "next_check_seconds": 900,
   "model_required": false,
   "production_write_authorized": false

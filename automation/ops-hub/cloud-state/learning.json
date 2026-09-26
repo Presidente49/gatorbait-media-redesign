@@ -1,8 +1,8 @@
 {
   "version": 1,
   "enabled": true,
-  "total_cycles": 35,
-  "healthy_cycles": 23,
+  "total_cycles": 36,
+  "healthy_cycles": 24,
   "incident_episodes": 5,
   "incidents": {
     "58dd26a4ed743ede": {
@@ -28,8 +28,8 @@
       "episodes": 2,
       "failed_cycles": 7,
       "escalations": 2,
-      "recoveries": 0,
-      "last_recovered": null
+      "recoveries": 1,
+      "last_recovered": "2026-09-26T13:54:21.287379+00:00"
     },
     "e2291113d6fecef9": {
       "fingerprint": "e2291113d6fecef9",
@@ -54,10 +54,10 @@
       "episodes": 2,
       "failed_cycles": 7,
       "escalations": 2,
-      "recoveries": 0,
+      "recoveries": 1,
       "first_seen": "2026-09-21T20:31:21.944318+00:00",
       "last_seen": "2026-09-26T09:44:41.089670+00:00",
-      "last_recovered": null,
+      "last_recovered": "2026-09-26T13:54:21.287379+00:00",
       "reason": "escalated 2 times after bounded verification",
       "status": "review_candidate"
     },
@@ -77,7 +77,7 @@
       "status": "review_candidate"
     }
   ],
-  "last_updated": "2026-09-26T09:44:41.089670+00:00",
+  "last_updated": "2026-09-26T13:54:21.287379+00:00",
   "policy": {
     "auto_promote_to_doctrine": false,
     "auto_authorize_production_writes": false,

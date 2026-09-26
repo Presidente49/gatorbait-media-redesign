@@ -14,6 +14,7 @@ Brenden authorized making the same sports-news homepage fully Wix-hosted. Design
   - First-paint probe run 36244025001: the home root paints at ~475 ms on phone and desktop, with no native Wix text before it.
   - A public browser shows the Buddy Martin lead, a Latest section with photos, and no "Today's Edition".
   - The only jsDelivr request left is the Barlow font stylesheet from `0709a98e`.
+- **Game day band (Sept. 26, Brenden: "make the landing page look awesome, you're in charge"):** a scoreboard band above the Buddy lead. Its CSS, data and renderer live in `deploy/wix-served/home-gameday.html`, carried by the data part `96ef5a04` (rev3). The homepage code `622d8ece` (rev2) only calls `window.__GBM_GAMEDAY_HTML__` inside a try/catch. The band hides itself after `until` (Sunday noon ET). To post a score, edit the `/*GD*/…/*GD-END*/` JSON and re-upload the data part. To remove it early, set `until` to the past. The backup list is trimmed to 9 stories to make room.
 - **Every Update Custom Embed call must re-send category ESSENTIAL.** FUNCTIONAL defers the embed behind consent and brings back the native flash. See LESSONS #33.
 
 ## Previous live pointer — September 24, 2026

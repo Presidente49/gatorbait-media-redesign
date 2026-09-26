@@ -31,6 +31,8 @@
         portrait: !!(p.image && Number(p.image.width) > 0 && Number(p.image.height) > Number(p.image.width)) };
     }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).slice(0, 30);
   }
+  // Game-day band: markup comes from the data part (window.__GBM_GAMEDAY_HTML__); a failure there never blocks the page.
+  function gameday() { try { return typeof window.__GBM_GAMEDAY_HTML__ === 'function' ? String(window.__GBM_GAMEDAY_HTML__() || '') : ''; } catch (_) { return ''; } }
   function dateLabel(date) { return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/New_York' }); }
   function failure(error) {
     loading = false;
@@ -66,7 +68,7 @@
       /* Owner direction: no top subheading bar. #sh-freshness stays as a plain empty
          div (invisible while empty) so the rare same-session refresh notice still has
          somewhere to render if a newer story arrives after the first paint. */
-      '<main id="sh-main"><div id="sh-freshness"></div>' +
+      '<main id="sh-main"><div id="sh-freshness"></div>' + gameday() +
       '<section class="sh-front" aria-label="Front page stories"><div class="sh-feature"><article class="sh-lead' + (lead.portrait ? ' sh-lead-portrait' : '') + '"><figure>' + link(lead, photo(lead,true)) + credit + '</figure><div class="sh-lead-copy"><p class="sh-kicker">' + (/buddy martin/i.test(lead.author) ? 'The Buddy Martin column' : 'The Big Read') + '</p>' + link(lead,'<h1>' + esc(lead.title) + '</h1>') + '<p class="sh-deck">' + esc(lead.excerpt) + '</p>' + meta(lead) + link(lead, 'Read the story <span aria-hidden="true">→</span>', 'sh-read') + '</div></article><div class="sh-support">' + supporting.map(support).join('') + '</div></div>' +
       '<aside class="sh-latest"><h2 class="sh-section-title">Latest</h2><div class="sh-latest-grid">' + others.slice(0,6).map(item).join('') + '</div><a class="sh-more" href="/gatorbait-media-blogs">All stories →</a></aside></section>' +
       '<section class="sh-voices" aria-label="GatorBait columnists"><div class="sh-voices-label"><p class="sh-kicker">Only at GatorBait</p><h2>The voices<br>you come for.</h2></div>' + column('Buddy Martin') + column('Franz Beard') + '</section>' +

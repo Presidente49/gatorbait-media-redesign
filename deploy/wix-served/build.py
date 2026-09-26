@@ -28,7 +28,8 @@ def js_fn(src):
     return 'function(){\n' + src + '\n}'
 
 
-home_js = show(HOME_PIN, 'sports-live/homepage.js')
+# Homepage renderer is built from the working tree (pinned base + game-day band hook).
+home_js = (ROOT / 'sports-live/homepage.js').read_text()
 # Magazine carries the pre-paint hide (gbm-mq) added after HOME_PIN; build it from the working tree.
 mag_js = (ROOT / 'automation/site-design/magazine.js').read_text()
 ui_js = show(UI_PIN, 'newsroom-preview/wix-live-ui.js')
@@ -194,11 +195,13 @@ BOOT_SPLIT = '''<script id="gbm-gazette-bootstrap-v4">(function () {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', last, { once: true }); else last();
 })();</script>'''
 
+# Game-day band module (CSS + data + renderer) rides in the data part, which the boot always waits for.
+GAMEDAY = (OUT / 'home-gameday.html').read_text().strip() if (OUT / 'home-gameday.html').exists() else ''
 TAG = ' src=' + HOME_JS_PIN[:7] + ' ui=' + UI_PIN[:7] + ' -->'
 parts = {
     'home-core.html': '<!-- GBM_HOME_CORE_V4' + TAG + STARTUP + viewport + BOOT_SPLIT + shell,
     'home-styles.html': '<!-- GBM_HOME_STYLES_V1' + TAG + '<style id="gbgz-styles">' + payload['css'] + '</style><script>' + PART + '</script>',
-    'home-data.html': '<!-- GBM_HOME_DATA_V1' + TAG + '<script>window.__GBM_HOME_FALLBACK__=' + json.dumps(payload['fallback'], separators=(',', ':')) + ';' + PART + '</script>',
+    'home-data.html': '<!-- GBM_HOME_DATA_V1' + TAG + GAMEDAY + '<script>window.__GBM_HOME_FALLBACK__=' + json.dumps(payload['fallback'], separators=(',', ':')) + ';' + PART + '</script>',
     'home-code.html': '<!-- GBM_HOME_CODE_V1' + TAG + '<script>window.__GBM_HOME_JS__=' + js_fn(home_code_js) + ';' + PART + '</script>',
     'ui-layer.html': '<!-- GBM_UI_LAYER_V1' + TAG + '<script>window.__GBM_UI_CSS__=' + json.dumps(ui_css) + ';window.__GBM_UI_JS__=' + js_fn(ui_js) + ';' + PART + '</script>',
 }

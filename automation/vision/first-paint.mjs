@@ -1,6 +1,15 @@
 // Measures whether native Wix content paints before the GatorBait custom surface on each route.
 import { chromium, devices } from 'playwright';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
+
+// Google's web-vitals (attribution build) reports CLS/FCP/LCP and which element shifted. CI-only; never shipped to the site.
+const WEB_VITALS = readFileSync('node_modules/web-vitals/dist/web-vitals.attribution.iife.js', 'utf8') + ';window.webVitals=webVitals;';
+function vitals() {
+  window.__wv = {};
+  const put = m => { const a = m.attribution || {}; window.__wv[m.name] = { value: Math.round(m.value * 1000) / 1000, target: a.largestShiftTarget || a.element || a.target || null }; };
+  const go = () => { const w = window.webVitals; if (!w) return; w.onCLS(put, { reportAllChanges: true }); w.onFCP(put); w.onLCP(put, { reportAllChanges: true }); };
+  if (window.webVitals) go(); else addEventListener('DOMContentLoaded', go, { once: true });
+}
 
 const OUT = 'build/first-paint';
 mkdirSync(OUT, { recursive: true });
@@ -87,6 +96,8 @@ for (const profile of PROFILES) {
   for (const r of ROUTES) {
     const ctx = await browser.newContext(profile.context);
     await ctx.addInitScript(sampler);
+    await ctx.addInitScript(WEB_VITALS);
+    await ctx.addInitScript(vitals);
     const page = await ctx.newPage();
     const external = [];
     page.on('request', q => { if (/cdn\.jsdelivr\.net/.test(q.url())) external.push(q.url().slice(0, 140)); });
@@ -94,7 +105,8 @@ for (const profile of PROFILES) {
       await page.goto(BASE + r.path + '?fp=' + Date.now(), { waitUntil: 'commit', timeout: 45000 });
       await page.waitForTimeout(9500);
       const frames = await page.evaluate(() => window.__fp || []);
-      report.runs.push({ route: r.name, profile: profile.name, jsdelivrRequests: external.length, ...summarize(frames, r.root) });
+      const vitalsOut = await page.evaluate(() => window.__wv || null);
+      report.runs.push({ route: r.name, profile: profile.name, jsdelivrRequests: external.length, jsdelivr: external, vitals: vitalsOut, ...summarize(frames, r.root) });
       await page.screenshot({ path: `${OUT}/${r.name}-${profile.name}.jpg`, type: 'jpeg', quality: 60 });
     } catch (e) {
       report.runs.push({ route: r.name, profile: profile.name, error: String(e).slice(0, 200) });

@@ -192,3 +192,14 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
   - Lead photo credits now render over the photo: Hannah White / UAA for Buddy's Baugh cover, and Chris Spears for his Auburn and entrance photos. The old code only credited one Auburn photo.
 - The feed confirms `dc:creator` = "Buddy Martin", so the current lead is "The Swamp Gets Its Swagger Back".
 - Repo `deploy/wix-served/split/home-code.html` is re-synced to live: line-by-line fingerprints match and the length is 13,805. It had drifted, still holding the Sept. 26 per-visit rotation and an older feed fetch.
+
+## Brenden (~16:05Z): the stats band: keep it, update it, attach the stories, make it the easy newsletter
+
+- Band embed `96ef5a04`, revision 36 → 37, published:
+  - The label reads "Postgame" after a final (it said "Game Day").
+  - New note: 4-0 (2-0 SEC), first top-five win since 2020, next at Missouri Sat. Oct. 3 at 3:30 p.m. ET.
+  - Six story buttons: Buddy Martin, Franz Beard, Loren Meadows, Carlton Reese, Game story, Sumrall presser.
+  - It stays up until Tue 04:00Z (Monday midnight ET) instead of Sunday midnight.
+- Same embed: the homepage fallback snapshot (used only if the live feed fails) went from 9 Friday–Saturday posts to the 6 newest. That dropped the embed from 14,989 to 13,372 characters, under the 15,000 cap with room to spare.
+- New `automation/newsletter/band-to-mjml.mjs` (band → newsletter) with a sample run `newsletter/2026-09-26-band-ole-miss.mjml`. All gates pass: stack-qc 0 errors, 2/2 unique images, clean UTMs, strict compile 0 errors.
+- The sample is NOT uploaded: it would repeat today's Postgame Wrap and columns emails. It's the tool for the Missouri week.

@@ -152,3 +152,20 @@ Before calling a publishing/email task complete:
 - Magazine image URLs are unique.
 - Mobile layout is checked before send.
 - Repo source/runbook are updated with any new persistent rule.
+
+## The easy send: band → newsletter (Sept. 27, 2026)
+
+The homepage game-day band (the `/*GD*/` data in `deploy/wix-served/home-gameday.html`, live in embed `96ef5a04`) is the single source for the quick game newsletter.
+
+**Steps:**
+1. Update the band: score, status, note, tracker (`st`), leaders (`ld`) and the story buttons (`links`, Buddy first).
+2. Export the linked stories' title, excerpt and cover from the Wix Blog API to `newsletter/band-stories-<date>-<opponent>.json`.
+3. Run `node automation/newsletter/band-to-mjml.mjs --stories newsletter/band-stories-<date>-<opponent>.json`.
+4. Run the gates: stack-qc, unique images, check-links, and a strict compile.
+5. Upload as a Wix DRAFT and preview it.
+6. Send only on Brenden's yes.
+
+**What the generator does automatically:**
+- Only the first two cards with credited photos get images; graphics and charts stay text-only.
+- Summaries are trimmed at a word boundary.
+- Links use raw `&`, never `&amp;utm`.

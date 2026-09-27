@@ -16,6 +16,8 @@
 ¤ [data-hook=post-hero-image]:empty{display:none}
 § [data-hook=post]>div>header::after{content:"";display:block;aspect-ratio:16/9;margin:24px -40px -24px;background:#0d2447 var(--gbm-hero,none) center/cover no-repeat}
 § [data-hook=post-hero-image]:not(:empty)~div>header::after{display:none}
+/* No landscape cover (missing, square or portrait og:image): no navy block at all. */
+html[data-gbm-nohero] [data-hook=post]>div>header::after{display:none!important}
 
 /* ---- Headline panel ---- */
 § [data-hook=post]>div>header{position:relative;z-index:1;margin:0 0 36px!important;padding:28px 40px 24px!important;background:var(--n)!important;border-top:6px solid var(--o)}

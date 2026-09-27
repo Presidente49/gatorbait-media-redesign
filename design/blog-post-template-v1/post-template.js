@@ -12,13 +12,16 @@ function vars(){
  var k='Gators Football',s=location.pathname.toLowerCase(),i,hero='';
  for(i=0;i<KICK.length;i++)if(KICK[i][0].test(s)){k=KICK[i][1];break;}
  // No slug match: a columnist's post is a column (Buddy Martin leads the editorial voice).
- var au=document.querySelector('[data-hook=post-page] [data-hook=user-name]');
- if(i===KICK.length&&au&&/buddy martin|franz beard|carlton reese/i.test(au.textContent))k='Column';
+ var au=document.querySelector('[data-hook=user-name]');
+ if(i===KICK.length&&au&&/buddy m|franz b|carlton r/i.test(au.textContent))k='Column';
  var m=document.querySelector('meta[property="og:image"]');
+ var q=function(p){return +(document.querySelector('meta[property="og:image:'+p+'"]')||{}).content},W=q('width'),Y=q('height');
+ // Only a landscape image makes a cover; a square logo cropped to 16:9 reads as a broken blue block.
+ document.documentElement.toggleAttribute('data-gbm-nohero',!(m&&m.content&&(!W||!Y||W/Y>=1.3)));
  if(m&&m.content)hero=m.content.replace(/w_\d+,h_\d+/,'w_1600,h_900').replace(/["\\]/g,function(c){return '%'+c.charCodeAt(0).toString(16);});
  var css=':root{--gbm-kicker:'+JSON.stringify(k.slice(0,40))+(hero?';--gbm-hero:url("'+hero+'")':'')+'}';
  var st=document.getElementById('gbm-post-vars');
- if(!st){st=document.createElement('style');st.id='gbm-post-vars';(document.head||document.documentElement).appendChild(st);}
+ if(!st){st=document.createElement('style');st.id='gbm-post-vars';document.head.appendChild(st);}
  if(st.textContent!==css)st.textContent=css;
 }
 function stats(){
@@ -47,7 +50,7 @@ function upnext(){
  a.querySelector('b').textContent=NEXT.opp;a.querySelector('small').textContent=NEXT.when+' \u00b7 '+NEXT.where;
  d.parentNode.insertBefore(a,d.nextSibling);
 }
-function run(){if(!isPost())return;vars();try{stats();upnext();}catch(e){console.warn('[GatorBait] post template',e);}}
+function run(){if(!isPost())return;vars();try{stats();upnext();}catch(e){console.warn(e);}}
 run();
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});
 window.addEventListener('load',run,{once:true});

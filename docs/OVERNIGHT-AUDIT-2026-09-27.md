@@ -35,6 +35,7 @@ Brenden (05:45Z): "use your new tools and deploy them to your department. Let's 
 | D4 | Live QC had no guard for the old "Today's Edition" shell, and no post-format checks | Medium | **Fixed** (commits 16d50f9, 3b7e07e, 1b74f39). A TinyFish run claimed "Today's Edition" is visible on home; QC will confirm or refute with `innerText` (hidden text excluded). | **Refuted** by QC run 67: on all 4 sizes the homepage native section is hidden and "Today's Edition" is not in visible text. The TinyFish claim was wrong. |
 | D5 | Magazine at 320px: cookie consent panel overlaps the first visible headline (QC hard fail) | Medium | Open: next in the design queue | QC run 67, magazine · phone320 |
 | D6 | Buddy post at 320px: kicker blank 8 s after load ("Column" on 390, 430 and desktop) | Low | Watching: re-checked in the next QC run | QC run 67 |
+| D7 | **Brenden (06:10Z): "giant blue thing above Buddy… just cut off his article."** The post template always drew a 16:9 cover block with a navy #0d2447 background under the headline, filled with og:image. Buddy's "The Sweet Music Chimes Again!" has no landscape cover (og:image is a square 1000×1000 graphic), so readers got a big cropped blue band. | High (live) | **Fixed** 06:14Z. Template 14a887e3 rev3, fp 2602050414 → 2970573316, 14,985/15,000. The script sets `html[data-gbm-nohero]` when og:image is missing or narrower than 1.3:1, and CSS drops the block. Landscape covers still reserve their space at first paint (no jump). | Browser test: square → none; landscape 2000×1333 → block kept; no image → none. Live QC now hard-fails if Buddy's post draws the block. |
 
 ## Web team (webmaster)
 
@@ -68,4 +69,6 @@ Source: The Buddy Martin Show channel, 50 most recent Shorts (vidIQ public list;
 - **Rollback:** delete the two nodes whose ids start `gbmshort` in each post.
 - **Found and fixed while verifying (writing lane):** the VB3 story (Eddie Gilley) ended with a truncated line, "tune in to The Buddy Martin S". It now reads "Tune in to The Buddy Martin Show."
 - **Live check:** the VB3 story shows the Watch line with the youtube.com/shorts link.
+- **06:12Z, Brenden: "Do not post urban mayer only post stuff from today or yesterday."** All 8 Short embeds were removed (16 nodes; all 8 posts republished in place). None of the channel's Shorts is from today or yesterday ET; the newest is Friday 11:51 p.m. ET. The VB3 truncation fix stays.
+- **Google Drive:** no videos created or modified since Sept. 20 (newest video in Drive: March 2026). The only Ole Miss game video on hand is Chris Spears' 8 s celebration clip (`gameday/2026-09-26-ole-miss/postgame/video/`). **Blocked:** posting to YouTube needs the Buddy Martin Show channel authorized in vidIQ (it lists no authorized channels for brenden@gatorbaitmedia.com).
 - **Proposal, not done** (homepage layout needs Brenden's yes): a Shorts rail on the homepage fed from the channel.

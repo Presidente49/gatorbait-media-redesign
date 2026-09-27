@@ -41,7 +41,7 @@ const TARGETS=[
     url:"https://www.gatorbaitmedia.com/post/the-sweet-music-chimes-again",
     root:null,
     expectedText:"Maya Angelou never sat in the press box",
-    postFormat:{unbold:true,maxInventedHeads:5,kicker:'Column'}
+    postFormat:{unbold:true,maxInventedHeads:5,kicker:'Column',noHero:true}
   },
   {
     name:'article-scores',
@@ -140,6 +140,8 @@ function audit(input){
     pf.lineHeight=ps[0]?parseFloat(getComputedStyle(ps[0]).lineHeight)||null:null;
     pf.inventedHeads=document.querySelectorAll('[data-gbm-h]').length;
     pf.kicker=getComputedStyle(document.documentElement).getPropertyValue('--gbm-kicker').trim().replace(/^"|"$/g,'');
+    const hd=document.querySelector('[data-hook=post]>div>header');pf.coverBlock=hd?getComputedStyle(hd,'::after').display!=='none':null;
+    if(target.postFormat.noHero&&pf.coverBlock)hard.push('post without a landscape image still draws the navy cover block');
     if(target.postFormat.kicker&&pf.kicker!==target.postFormat.kicker)hard.push('kicker "'+pf.kicker+'" expected "'+target.postFormat.kicker+'"');
     if(target.postFormat.unbold&&pf.bodyStrongWeight>=600)hard.push('all-bold post still renders body text bold ('+pf.bodyStrongWeight+')');
     if(!target.postFormat.unbold&&pf.bodyStrongWeight!==null&&pf.bodyStrongWeight<600)hard.push('intentional bold lines were un-bolded');

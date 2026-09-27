@@ -349,6 +349,18 @@ for(const profile of PROFILES){
           bandMatches=await served()===EXPECTED_BAND;
         }
       }
+      // Article embeds: Wix's CDN can serve an older page copy for minutes after an embed update.
+      // Retry with a cache-busting reload when the current template's markers are absent.
+      if(target.postFormat){
+        const fresh=()=>page.evaluate(({k,nh})=>{const h=document.documentElement;const kick=getComputedStyle(h).getPropertyValue('--gbm-kicker').trim().replace(/^"|"$/g,'');return Boolean(h.getAttribute('data-gbm-nr'))&&kick===k&&(!nh||h.hasAttribute('data-gbm-nohero'));},{k:target.postFormat.kicker,nh:!!target.postFormat.noHero});
+        let tries=0;
+        while(!(await fresh())&&tries<2){
+          tries++;staleLoads++;
+          await page.waitForTimeout(15000);
+          response=await page.goto(target.url+'?qc='+Date.now(),{waitUntil:'load',timeout:45000});
+          await page.waitForTimeout(8000);
+        }
+      }
       status=response?.status()??null;
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';
       await page.screenshot({path:shot,type:'jpeg',quality:70,fullPage:false});

@@ -4,7 +4,7 @@
    `html body #SITE_PAGES [data-hook=post-page]` = specificity (1,1,2), one step above the
    header embed 7fee4de6's `html:has(#gbm-site-header) [data-hook=post-page] ...` (1,1,1). */
 
-@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:optional;src:url(https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.2.5/files/barlow-condensed-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:optional;src:url(https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-800-normal.woff2) format("woff2")}
 
 §{--o:#fa4616;--n:#081b35;--b:#0021a5;--k:#1b2638;--c:"Barlow Condensed","Barlow",Arial,sans-serif;--f:"Barlow",Arial,sans-serif;background:#fff!important}
 § [data-hook=post]{background:transparent!important;border:0!important;box-shadow:none!important}

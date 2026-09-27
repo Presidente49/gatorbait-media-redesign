@@ -219,3 +219,8 @@ API notes:
 - Observed Sept. 27: Wix already skips contacts flagged BOUNCED or SPAM_COMPLAINT, even while they are SUBSCRIBED. But it never flagged the 9 chronic bouncers, so they were mailed on every send until they were suppressed by hand.
 - ExecuteWixAPI times out after 60 seconds. Fan the per-campaign calls out with Promise.all.
 - Forwarded mailboxes hide bounces from Wix. When a subscriber's host auto-forwards to a dead mailbox, Wix records DELIVERED, and the final bounce goes to brenden@ as a postmaster@outlook.com or mailer-daemon "Undeliverable" notice, because the forwarder keeps our Return-Path. So every hygiene run also searches Brenden's Gmail: `from:postmaster OR from:mailer-daemon OR subject:undeliverable newer_than:30d`. Group the notices by failed address and suppress addresses that fail on every send. Viewing a notice registers an "open" for that subscriber, since the notice carries his tracking pixel, so don't count opens that land after a notice arrives.
+
+1-hour check on the Vernell Brown story (23:25Z Sept. 27):
+- Post baa858cf is live, featured, with the correct title. 111 views, 0 likes. The metrics count 1 comment, but the comments query returns none under contextId, resourceId or any status filter. It may have been deleted or be held somewhere else; recheck at 02:25Z.
+- Breaking email ea362ae3: 1,810 delivered, 404 opened (22.3%), 64 clicked (3.5%), 14 bounced (0.77%), 0 complaints. The open rate is now on par with the Sunday Edition's 22.7%.
+- Social: not connected. No action needed.

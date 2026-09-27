@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
+      "excerpt": "Florida dominated No. 4 Ole Miss for a season-defining win, but Jon Sumrall says the Gators are still a work in progress. Loren Meadows on what he expected, what he got and what comes next.",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-09-27T13:50:06Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28"
+      }
+    },
+    {
       "title": "Beating Ole Miss was huge, but the Gators left at least 28 points on the field",
       "excerpt": "Florida beat No. 4 Ole Miss 52-28, but Franz Beard counts at least 28 points the Gators left on the field: an overthrown Vernell Brown III, an open Amir Jackson on fourth down, a 67-yard touchdown erased by a hold, and eight penalties for 92 yards.",
       "url": "https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder"
-      }
-    },
-    {
-      "title": "The Swamp Knows Something the Big Ten Doesn’t",
-      "excerpt": "Buddy Martin on Florida–Ole Miss, The Swamp’s home-field edge and the SEC’s chance to challenge the Big Ten’s championship run.",
-      "url": "https://www.gatorbaitmedia.com/post/the-swamp-knows-something-the-big-ten-doesnt",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-24T12:48:46Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_b8996f468d7c4c1cb4c359d4288b8196~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Swamp Knows Something the Big Ten Doesn’t"
       }
     }
   ]

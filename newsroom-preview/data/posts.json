@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
+      "excerpt": "Florida dominated No. 4 Ole Miss for a season-defining win, but Jon Sumrall says the Gators are still a work in progress. Loren Meadows on what he expected, what he got and what comes next.",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-09-27T13:50:06Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28"
+      }
+    },
+    {
       "title": "Beating Ole Miss was huge, but the Gators left at least 28 points on the field",
       "excerpt": "Florida beat No. 4 Ole Miss 52-28, but Franz Beard counts at least 28 points the Gators left on the field: an overthrown Vernell Brown III, an open Amir Jackson on fourth down, a 67-yard touchdown erased by a hold, and eight penalties for 92 yards.",
       "url": "https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Louis Oliver Is Today's Mr. Two Bits"
-      }
-    },
-    {
-      "title": "Baugh Runs the SEC: Florida's Junior Back Leads the League in Everything",
-      "excerpt": "Jadan Baugh leads the SEC with 458 rushing yards and the nation with eight rushing touchdowns. Now he gets No. 4 Ole Miss in The Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/baugh-runs-the-sec",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-26T17:21:31Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_43e9e321c6ee45aabfc7c2decc825504~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Baugh Runs the SEC: Florida's Junior Back Leads the League in Everything"
       }
     }
   ]

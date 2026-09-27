@@ -109,3 +109,30 @@ Cover changed to the thumbnail "Swamp Party" FINAL 52-28 (d3cfa5_a1b1d9987b2a431
 - **CFB Saturday wrap:** drafted in cfb-wrap/ with 22 games, 6 still in progress at the draft. Scheduled to refresh and publish at 05:15Z (trig_01CnjeWyu2EENbzZp6SJVJCR).
 - **Chomp Up the Charts (AP poll):** scheduled for 18:04Z Sunday (trig_01NyNPP9mzWdG49zXnxPJp1M).
 - **Postgame Wrap newsletter:** newsletter/2026-09-27-postgame-wrap-ole-miss.mjml passes every gate (strict compile, check-links, unique images, stack-qc, 390/1000). Not uploaded or sent; waiting on Brenden's go.
+
+## Update 02:10-02:25Z: Magazine fixed; full QC pass and corrections (no email)
+- **Magazine embed 1dd74333, rev33→34→35:**
+  - Hides the native August Blog Post List in every browser. Before, a `:has()` rule left it visible without `:has` support.
+  - A 4-second safety reveal means the page is never blank.
+  - The stale "Kickoff is today" link now reads "FINAL · Florida 52, Ole Miss 28" and goes to the game story.
+  - The columnist filter now includes Carlton Reese.
+  - magazine.js is synced so build.py doesn't undo the fix.
+  - A live browser pass shows no quarterback-competition, Campbell, Aug. 14 or pads-on stories, and the FINAL link is present.
+  - Rollback: magazine-fix/rollback-magazine-embed.html.
+- **QC-A corrections** (qc/QC-A.md):
+  - Halftime: Chambliss 10-of-13 for 88 yards, not 71.
+  - Halftime: "the SEC's leading rusher" changed to "one of the nation's top rushers".
+  - Halftime: the coin-toss line changed to "Ole Miss kicks off to open the game".
+  - Woods Chipper: the "blacked out" line is back in its original place in his answer.
+  - A correction note was added to halftime.
+- **QC-B corrections** (qc/QC-B.md):
+  - Carlton column: Baugh and Sumrall quotes now match ASAP word for word; the line is 3.5 points; "kept him out for a play" and "end-around" are gone; a correction note was added.
+  - Baugh Runs the SEC: "2025 Doak Walker finalist" (he was only on the watch list) and "second straight 3-TD game" are gone; a correction note was added.
+  - Mr. Two Bits: the NFL career is eight seasons (1989-96); the series was 13-13-1 going in; "Since 2009" now reads "In recent years"; the existing correction note was fixed to match.
+  - Cyion: Vols Wire is now "earlier this week".
+- **Visual QC fixes** (qc/visual/QC-VISUAL.md):
+  - The portrait scoreboard photo is now SMALL in the game story and the Cyion story. It had rendered 740x1316.
+  - The Lacy story's pointer to the removed Rosters button was deleted.
+- **Open, owner call:**
+  - Credits missing on the inline images in Mr. Two Bits, Baugh Runs and Game Day; the photographer is unknown.
+  - Pre-today covers aren't 1920x1080. They display fine.

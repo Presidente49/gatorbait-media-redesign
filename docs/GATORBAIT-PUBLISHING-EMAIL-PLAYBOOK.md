@@ -183,3 +183,17 @@ When a staff writer (Buddy Martin, Franz Beard, Loren Meadows, Carlton Reese, Ed
 5. **Breaking email** to the newsletter label e345fa8e. It's short: the red BREAKING bar, the photo, headline, 2–3 sentences, READ button, the All Access CTA, the postal address, and a campaign UTM of breaking_<slug>_<date>. Pass the subject explicitly at publish. Template: newsletter/breaking/2026-09-27-vernell-brown.mjml. This is standing authorization for BREAKING items only. Newsletters, recaps and columns still need Brenden's yes for each send.
 6. **Social:** once networks are connected in Metricool (brand 6946016, none connected as of Sept. 27), post to Facebook, X, Instagram and Threads right away with the story link. Until then, give Brenden paste-ready Facebook, X and IG copy.
 7. **Verify** the live page, the share card (og:image/title) and email delivery (DISTRIBUTED plus stats). Then tell Brenden in 3 lines: link, what went where, and anything held.
+
+### Follow-up after every breaking story (Brenden: "that means quality control, check up on articles, comments, interaction, social")
+
+Maximum share includes staying on the story. The desk checks at about 1 hour, 4 hours and the next morning:
+- **Article QC:** load the live page. Check for typos, broken links or embeds, the photo and credit, the headline on a phone (no clipping), and the share card. Fix in place if needed; never publish over unpublished edits. Add updates (official UF statement, coach comments, practice report) as a dated "Update:" line at the top, not a new duplicate post.
+- **Comments:** query Wix comments for the post (POST /comments/v1/comments/query with appId 14bcded7-0066-7c35-14d7-466cb3f09103, filter contextId=post id). Hide spam, abuse or doxxing. Flag real questions or tips for Brenden and the writer. Never argue in comments.
+- **Interaction:** post metrics (GET /blog/v3/posts/{id}/metrics: views, likes, comments) plus email stats (delivered, opened, clicked, bounced, complained). Report the numbers, not adjectives. If complaints go above 0.1% or bounces above 2%, stop further sends that day and tell Brenden.
+- **Social:** once Metricool has networks connected, read engagement and comments on the social posts. Until then, ask Brenden for screenshots only if something looks off.
+- **Report:** at most one short note per check, and only when something changed or needs a decision.
+
+Baseline, first check on the Vernell Brown story (~22:25Z Sept. 27):
+- The post had 3 views, 0 comments and 0 likes, minutes after publishing.
+- The breaking email (ea362ae3): 1,735 delivered, 60 opened, 3 clicked, 10 bounced, 0 complaints.
+- For comparison, the Sunday Edition (2ece0514): 1,811 delivered, 411 opened (22.7%), 75 clicked (4.1%), 15 bounced, 0 complaints.

@@ -197,3 +197,24 @@ Baseline, first check on the Vernell Brown story (~22:25Z Sept. 27):
 - The post had 3 views, 0 comments and 0 likes, minutes after publishing.
 - The breaking email (ea362ae3): 1,735 delivered, 60 opened, 3 clicked, 10 bounced, 0 complaints.
 - For comparison, the Sunday Edition (2ece0514): 1,811 delivered, 411 opened (22.7%), 75 clicked (4.1%), 15 bounced, 0 complaints.
+
+## List hygiene: bounces and complaints (Brenden: "Clean it", Sept. 27, 2026)
+
+Run this after a heavy send day, and at least once a month. The first run is logged in docs/OVERNIGHT-AUDIT-2026-09-27.md.
+
+1. For every send in the window, pull the BOUNCED and DELIVERED recipients: GET /email-marketing/v1/campaigns/{id}/statistics/recipients?activity=BOUNCED&paging.limit=1000, and the same with activity=DELIVERED.
+2. **Suppress** an address only if it bounced 8 or more times in the window AND had 0 deliveries. Upsert it through POST /email-marketing/v1/email-subscriptions/bulk as UNSUBSCRIBED + BOUNCED; that is Wix's own state for a hard bounce. Verify on both the subscription store and the Contacts v5 record.
+3. **Keep** these, and don't remove them:
+   - Addresses that bounce often but still take some deliveries. Put them on a watch list.
+   - The rotating Hotmail/Outlook/MSN/Live addresses that bounce 1–4 times each. That's Microsoft throttling our volume. The fix is fewer list-wide sends per day, not deleting readers.
+4. **Never auto-remove:**
+   - Staff or contributor addresses. Tell Brenden their mailbox is bouncing instead.
+   - Wix system addresses (safety.wix.com, wixsite.online).
+5. **Complaints:** count contacts whose email.deliverabilityStatus is SPAM_COMPLAINT and whose email.subscriptionStatus.status is SUBSCRIBED, using POST /contacts/v5/contacts/count. If the count is above 0, set those contacts to UNSUBSCRIBED and keep SPAM_COMPLAINT. Never re-subscribe a complainer.
+6. In the day's audit doc, log only masked addresses (first two characters plus the domain), with counts and before/after states.
+
+API notes:
+- Query Email Subscriptions returns at most 50 rows per call, even with limit 100. Chunk `$in` lists at 50, or the missing rows look like NO_RECORD.
+- Query Email Subscriptions requires an email filter. For counts by status, use Contacts v5 count/search, which can filter on email.deliverabilityStatus and email.subscriptionStatus.status.
+- Observed Sept. 27: Wix already skips contacts flagged BOUNCED or SPAM_COMPLAINT, even while they are SUBSCRIBED. But it never flagged the 9 chronic bouncers, so they were mailed on every send until they were suppressed by hand.
+- ExecuteWixAPI times out after 60 seconds. Fan the per-campaign calls out with Promise.all.

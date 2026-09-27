@@ -283,3 +283,35 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
   - Sunday Edition 2ece0514: 1,811 delivered, 425 opened, 77 clicked.
   - Breaking Brown ea362ae3: 1,800 delivered, 251 opened, 31 clicked.
   - 0 complaints today. Correction: the Brown email went out at 22:07Z = 6:07 p.m. ET, not the 7:10 p.m. I told Brenden earlier.
+- ~22:35Z **List cleanup (Brenden: "Clean it")**. I scanned all 31 campaigns sent since Aug. 1: 385 bounce records from 88 addresses. Addresses below are masked.
+  - **Removed 9 dead addresses.** Each bounced 8–29 times and had zero deliveries in all 31 sends. All were set to UNSUBSCRIBED/BOUNCED, the state Wix itself gives a hard bounce. Verified on the email-subscription store and on the Contacts v5 records. Before the change:
+    - to***@icloud.com: 29 bounces, SUBSCRIBED/VALID
+    - sk***@mac.com: 28 bounces, SUBSCRIBED/VALID
+    - in***@isaiahdammy.co.site: 21 bounces, SUBSCRIBED/VALID
+    - jd***@davismonk.com: 17 bounces, SUBSCRIBED/VALID
+    - ww***@hotmail.com: 16 bounces, SUBSCRIBED/INACTIVE
+    - mi***@alumni.ufl.edu: 14 bounces, SUBSCRIBED/NOT_SET
+    - ry***@gmail.com: 13 bounces, SUBSCRIBED/VALID
+    - sa***@gmail.com: 12 bounces, SUBSCRIBED/VALID
+    - ba***@gmail.com: 8 bounces, SUBSCRIBED/INACTIVE
+  - **Kept, on a watch list.** These bounce often but still receive some mail (bounced/delivered): bo***@techdata.com 21/7, ro***@perryappraisals.com 21/4, rs***@rwshiplett.com 19/8, jo***@gmail.com 9/2. Suppress them if they bounce on every send through Oct. 4.
+  - **Flagged, not touched:**
+    - Chris Spears' ch***@chrisspearsphotography.com bounced all 17 sends it was in and got 0 deliveries. His domain mailbox is rejecting mail; get a working address from him.
+    - te***@safety.wix.com (14 bounces, 0 deliveries) is a Wix system address, so I left it alone.
+  - **Compliance:**
+    - 14 contacts had filed spam complaints but were still SUBSCRIBED. Wix was already skipping them: none of them received today's later sends. One AOL reader got the first two sends this morning, complained, and was excluded after that.
+    - All 14 are now UNSUBSCRIBED (SPAM_COMPLAINT kept). Contacts v5 count of SPAM_COMPLAINT + SUBSCRIBED is now 0.
+    - 14 other contacts are Wix-flagged BOUNCED but still SUBSCRIBED. Wix skips them too (0 sends today), so I left them as they are.
+  - **Correction.** I told Brenden the 14–24 bounces per send were "all from the same stale addresses." That was wrong. Over Sept. 25–27, each list-wide send's bounces broke down like this:
+    - 5–7 from the 9 dead addresses
+    - 3–5 from the 6 kept or flagged addresses
+    - 5–12 from a rotating set of 63 Hotmail/Outlook/MSN/Live addresses, each of which bounced only 1–4 times
+    - 0–2 from 10 other addresses
+  - The Microsoft count peaks on the heaviest days: 12 on both the first Sept. 27 send (f8ee1c12) and the Sept. 26 breaking send (16f70ae6). That points to Microsoft throttling our volume (six list-wide sends on Sept. 27), not to dead addresses. None of those 63 were removed.
+  - **Expected effect:**
+    - Today's six sends had 114 bounces on 10,962 sent (1.04%). The 9 dead addresses caused 33 of them. Without those, the rate is about 0.74%, and a list-wide send should bounce about 8–18 instead of 14–24.
+    - Subscribed contacts: 1,850 after the cleanup.
+  - **Needs Brenden:**
+    - 709 of the 1,850 subscribed contacts (38%) are Wix-flagged INACTIVE: mail is delivered but they haven't opened or clicked across several campaigns. Proposal: send one re-engagement email, then retire anyone who doesn't respond within 30 days.
+    - Cap list-wide sends at 2 a day outside BREAKING.
+  - **Rollback for the 9:** upsert them back to SUBSCRIBED/VALID. To find the addresses again, take everyone who bounced 8+ times since Aug. 1 with 0 deliveries and match the masks above. Complainers stay unsubscribed.

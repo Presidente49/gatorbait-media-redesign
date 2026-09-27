@@ -13,3 +13,21 @@
 
 ## Update 23:58Z
 Brenden confirmed Chris Spears shot all of today's photos. Both photos were added to the live post in place (UPDATE_PUBLISH), with caption credit "Photo by Chris Spears/GatorBait Media": the Baugh TD dive leads, and the take-the-field shot runs before "The tone was set early." The alert automation stayed INACTIVE; no email.
+
+## Update 00:00Z: By the Numbers and celebration sections
+Added in place before the closer: "By the numbers" (nine ESPN-verified stats; the top-five-win line is attributed to WRUF) and "The celebration" write-up. Public check at 00:03Z shows every section plus both Chris Spears photos. The celebration video (8 s, 720x1280 MP4, prepared in the scratchpad) is not placed yet: the Ricos VIDEO node shape isn't documented or present in any recent post, and it won't be guessed on a live story.
+
+## Postgame email: SENT (Brenden: "run the stack ... get the email out")
+- Campaign f8ee1c12-b15e-4684-9ca9-c8d72ebd04fa, "FINAL: Gators run over No. 4 Ole Miss, 52-28"
+- Source: newsletter/2026-09-26-postgame-ole-miss.mjml (commit 2e65a25), the branded MJML used for Franz and Lacy
+- Gates:
+  - Strict MJML compile, 0 errors.
+  - check-links source and rendered OK (6 tracked links, clean UTMs).
+  - No overflow at 390/1000.
+  - Wix preview: headline, both photos, 2 Chris Spears credits, numbers, CTA and Buddy text present; 0 placeholders; 0 amp;utm.
+  - Tracked-link destinations decoded and verified.
+  - Unsubscribe present.
+  - Dedupe clear.
+- Audience: label e345fa8e (the established opted-in label), same send path as Franz 3cc1f9f4.
+- Provider at 00:06Z: PUBLISHED / DISTRIBUTED / SENT. Stats on first read: delivered 1,695; opened 14; clicked 2; bounced 17; complained 0; notSent 0.
+- The story-alert automation 824714d4 stays INACTIVE, so this is the game's one email.

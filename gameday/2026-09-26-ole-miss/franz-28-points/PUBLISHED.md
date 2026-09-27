@@ -30,4 +30,4 @@ Brenden: "Franz and buddies need to go out ASAP on emails from last night."
 - Gates: strict MJML compile 0 errors; check-links 6/6 clean UTMs (campaign columns_buddy_franz_2026_09_27); 2/2 unique images; no overflow at 390/1000. The Magazine-only stack-qc does not apply (same as the reaction email 6b056c3f).
 - Preview check: both headlines, both covers, both CTAs, credit, no `amp;utm`, no placeholders. The Wix opt-out footer ("change your email preferences") matches the sent 6b056c3f.
 - Dedupe was clear before create and again before publish. Alert automations were not touched.
-- After publish: distribution IN_DETECTION (Wix pre-send screening). Delivery counts to follow.
+- After publish: IN_DETECTION (Wix pre-send screening), then PUBLISHED / DISTRIBUTED. The delivered count was climbing: 1, then 28 delivered and 2 bounced a minute later. The same label reached about 1,810 on the last three sends (6b056c3f: 1,810 delivered, 584 opened).

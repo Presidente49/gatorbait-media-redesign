@@ -43,6 +43,14 @@ const TARGETS=[
     expectedText:"Maya Angelou never sat in the press box",
     postFormat:{unbold:true,maxInventedHeads:5,kicker:'Column',noHero:true}
   },
+  // Long all-caps headline on mobile (Brenden, Sept. 27: first letters of each line were clipped).
+  {
+    name:'article-chris-10-thoughts',
+    url:"https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss",
+    root:null,
+    expectedText:"The Gators want to run the football",
+    postFormat:{unbold:false,maxInventedHeads:0,kicker:'Gators Football',hero:true}
+  },
   {
     name:'article-scores',
     url:"https://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25",
@@ -141,6 +149,11 @@ function audit(input){
     pf.inventedHeads=document.querySelectorAll('[data-gbm-h]').length;
     pf.kicker=getComputedStyle(document.documentElement).getPropertyValue('--gbm-kicker').trim().replace(/^"|"$/g,'');
     const hd=document.querySelector('[data-hook=post]>div>header');pf.coverBlock=hd?getComputedStyle(hd,'::after').display!=='none':null;
+    const tt=document.querySelector('[data-hook=post-page] [data-hook=post-title]');
+    if(tt){const tr=tt.getBoundingClientRect();pf.title={left:Math.round(tr.left),right:Math.round(tr.right)};let clip=null;
+      for(let a=tt.parentElement;a&&a!==document.body;a=a.parentElement){const cs=getComputedStyle(a);if(cs.overflowX!=='visible'){const ar=a.getBoundingClientRect();if(tr.left<ar.left-1||tr.right>ar.right+1){clip={tag:a.tagName,hook:a.getAttribute('data-hook'),left:Math.round(ar.left),right:Math.round(ar.right)};break;}}}
+      pf.titleClip=clip;if(clip||tr.left<-1||tr.right>viewport+1)hard.push('post headline clipped: '+JSON.stringify({title:pf.title,clip}));}
+    if(target.postFormat.hero&&!pf.coverBlock)hard.push('landscape cover photo block missing from post header');
     if(target.postFormat.noHero&&pf.coverBlock)hard.push('post without a landscape image still draws the navy cover block');
     if(target.postFormat.kicker&&pf.kicker!==target.postFormat.kicker)hard.push('kicker "'+pf.kicker+'" expected "'+target.postFormat.kicker+'"');
     if(target.postFormat.unbold&&pf.bodyStrongWeight>=600)hard.push('all-bold post still renders body text bold ('+pf.bodyStrongWeight+')');

@@ -277,3 +277,9 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
 - ~22:15Z Sunday PM routine: published "Show-Me State of Mind: A First Look at No. 25 Missouri" (db2e38da) and switched the band to Missouri upcoming mode (rev 43). See gameday/2026-10-03-missouri/first-look/PUBLISHED.md.
 - ~22:10Z **Breaking (Brenden: "posted ASAP… max share")**: "BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III" (baa858cf, featured). Buddy's email copy (sources told GatorBait) is verbatim, plus verified context: Sumrall's postgame transcript quote and AP season stats (17-271-2). The cover is from the archive (Chris Spears Brown sideline photo 7acdfecf). Home Code 622d8ece rev 11: the Breaking pin moved from the poll story to Brown (until 2026-09-28T16:00Z). Band 96ef5a04 rev 44: the first button is "BREAKING: Brown MRI".
 - ~22:20Z Brenden: "Yes" to a breaking email, and breaking news = maximum share as standard procedure. Breaking email ea362ae3 was published to e345fa8e (subject "BREAKING: MRI confirms Grade 1 PCL sprain for Gators WR Vernell Brown III"; test to brenden@ first; content check passed). The SOP was added to GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md ("Breaking news = maximum share"), and the hourly desk routine now runs it for BREAKING staff submissions. Metricool has no social networks connected, so social copy goes to Brenden until it's connected.
+- ~22:30Z Delivery check (Brenden: "Did the emails go out?"): all 4 of today's campaigns are PUBLISHED/DISTRIBUTED/SENT.
+  - Buddy+Franz columns 2fb154ff: 1,810 delivered, 609 opened, 131 clicked.
+  - Postgame Wrap b3fa395e: 1,808 delivered, 546 opened, 83 clicked.
+  - Sunday Edition 2ece0514: 1,811 delivered, 425 opened, 77 clicked.
+  - Breaking Brown ea362ae3: 1,800 delivered, 251 opened, 31 clicked.
+  - 0 complaints today. Correction: the Brown email went out at 22:07Z = 6:07 p.m. ET, not the 7:10 p.m. I told Brenden earlier.

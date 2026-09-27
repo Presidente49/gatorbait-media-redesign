@@ -117,3 +117,34 @@ Brenden shared a screenshot showing a duplicated GatorBait logo on the front pag
 - Gmail: no new writer submissions/transcripts since the 10:55Z threshold. Newest relevant items are all from before 04:22Z (already actioned: Buddy's early column, the three ASAP transcripts, three Outlook bounce notices for a full mailbox, a TinyFish low-balance notice, a Google Account Recovery request — all previously flagged, no new action).
 - Wix drafts: top 15 by most-recently-updated are all PUBLISHED. No new or pending drafts, including Franz's `d07e9390` (published, already tag-swept).
 - Stopping the 30-minute re-arm per the routine's own end condition (past 12:30Z).
+
+## Brenden (~14:40Z): replace the front-page art, headline over the photo, "deploy the editorial division"
+
+**E1: Unfamiliar front-page art (FIXED).**
+- Cause: the front page leads with the newest story (the "Chronological lead" rule in Home Styles). The newest story was Loren Meadows' "Postgame Analysis" (`1c12e61d`, published 13:50Z). Its cover was an AI cartoon, "Florida Gator with football chasing a bear with a red jersey on.jpg" (1024 square). A second cartoon, a gator chasing a shark, was in the body.
+- Cover replaced with Chris Spears' "Gators take the field" photo (`d3cfa5_2ea58f38…`, 1620×1080, the same photo Brenden sent), credited in the alt text. The in-body cartoon was removed.
+- Editorial fixes, in place, with no email:
+  - Title "Rebel 28" became "…52, Ole Miss Rebels 28". The slug is unchanged.
+  - "Jaden Baugh" became Jadan Baugh (3 places); "Keiwan Lacy" became Kewan Lacy; "Landon Montgomery" became London Montgomery.
+  - Kick return "42" became 41, per the ESPN box score.
+  - "best offensive minds like DJ Durkin and Pete Golding" became "defensive minds".
+  - Typos: know one's, knocking of, group of five, TD's, teams.
+  - A clean excerpt replaced the byline text, and 12 tags were added.
+- Not verified, left as written and flagged for Loren: "first SEC back since Derrick Henry to score multiple TDs in five straight games" and "best win … in at least four years".
+
+**E2: Headline over photo on the front-page lead (LIVE).**
+- Home Styles embed `1255a4cf`, revision 2 → 4: an appended, scoped `gbm-hero-overlay v1` block.
+- Layout: full-bleed photo (16:10 desktop, 4:5 phone), with kicker, headline, deck (clamped), meta and link on a navy gradient at the bottom.
+- Local render check at 390px and 1280px with the production CSS: no horizontal overflow, copy flush with the photo edge.
+
+**E3: Magazine masthead double logo + cover overlay (LIVE).**
+- Brenden's 8:47 screenshot was the Magazine page. Its `.mast` repeated the GatorBait logo image under the site header.
+- Correction to D8 above: that change removed a desktop-only duplicate on the homepage (`.sh-header` is hidden at ≤820px), so it wasn't the phone view in the screenshot. This change is the actual fix for that screenshot.
+- Magazine embed `1dd74333`, revision 36 → 37, 14,769/15,000 characters:
+  - The masthead is now the text "GatorBait Magazine"; the logo image was dropped.
+  - The cover-story headline now sits over the full-width cover photo.
+- Source updated in `automation/site-design/magazine.{js,css}` and `deploy/wix-served/magazine-embed.html`. The repo copies match the live lengths.
+
+**Correction to the "Today's Edition" finding.** The TinyFish fetcher doesn't run the custom `#gbm-live` / `#gbm-magazine-page` renderers; the selectors aren't found in its output. What it reported was the native Wix layer underneath, which real browsers hide. That finding is downgraded to "unconfirmed, likely a fetch artifact"; confirming it still needs a real browser.
+
+Brenden's postgame celebration photo (800×432) was not used: its photographer is unknown and credit is required. It needs a credit before it goes on the site.

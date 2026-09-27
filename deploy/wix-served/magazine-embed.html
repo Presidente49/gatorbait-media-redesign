@@ -13,13 +13,12 @@ html:has(#gbm-magazine-page) #SITE_PAGES{display:none!important}
 #gbm-magazine-page .cover{display:grid;grid-template-columns:1.1fr 1fr;gap:0 32px;border-block:3px solid var(--n);padding:16px 0 24px}
 #gbm-magazine-page .top{grid-column:1/-1;display:flex;justify-content:space-between;font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--m)}
 #gbm-magazine-page .mast{grid-column:1/-1;display:flex;align-items:center;gap:18px;border-bottom:1px solid var(--l);padding:20px 0;margin-bottom:24px;color:var(--n);font:700 30px/1 Georgia,serif}
-#gbm-magazine-page .mast img{width:240px;height:auto;display:block}
-#gbm-magazine-page .hero{grid-column:1;aspect-ratio:4/3;background:#edf0f3;overflow:hidden;align-self:start}
-#gbm-magazine-page .hero img{display:block;width:100%;height:100%;object-fit:contain}
-#gbm-magazine-page .lead{grid-column:2;align-self:center}
-#gbm-magazine-page .lead small{color:#ba3c0c;font:700 10px/1.4 Arial,sans-serif;letter-spacing:.1em}
-#gbm-magazine-page .lead h1{margin:12px 0 16px;font:700 36px/1.1 Georgia,serif!important;letter-spacing:-.025em;color:var(--n)!important}
-#gbm-magazine-page .lead p{font:15px/1.6 Arial,sans-serif;color:var(--m);margin:0}
+#gbm-magazine-page .hero{grid-column:1/-1;grid-row:2;aspect-ratio:16/9;background:#081b35;overflow:hidden}
+#gbm-magazine-page .hero img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+#gbm-magazine-page .lead{grid-column:1/-1;grid-row:2;align-self:end;z-index:1;padding:130px 32px 26px;background:linear-gradient(180deg,#081b3500,#081b35c2 45%,#081b35f2)}
+#gbm-magazine-page .lead small{color:#ffad86;font:700 10px/1.4 Arial,sans-serif;letter-spacing:.1em}
+#gbm-magazine-page .lead h1{margin:12px 0 16px;font:700 36px/1.1 Georgia,serif!important;letter-spacing:-.025em;color:#fff!important}
+#gbm-magazine-page .lead p{font:15px/1.6 Arial,sans-serif;color:#e4eaf3;margin:0}
 #gbm-magazine-page .lines{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px;padding-top:20px;border-top:1px solid var(--l)}
 #gbm-magazine-page .line b{display:block;font:700 21px/1.2 Georgia,serif}
 #gbm-magazine-page .line span{display:none}
@@ -42,9 +41,8 @@ html:has(#gbm-magazine-page) #SITE_PAGES{display:none!important}
 #gbm-magazine-page .wrap{padding:0 18px 30px}
 #gbm-magazine-page .cover{grid-template-columns:1fr;gap:0}
 #gbm-magazine-page .mast{gap:10px;font-size:clamp(20px,5.8vw,23px);padding-block:15px;margin-bottom:18px}
-#gbm-magazine-page .mast img{width:min(170px,46vw);min-width:0}
-#gbm-magazine-page .hero{grid-column:1;aspect-ratio:16/10;max-height:320px}
-#gbm-magazine-page .lead{grid-column:1;margin-top:18px}
+#gbm-magazine-page .hero{aspect-ratio:4/5}
+#gbm-magazine-page .lead{padding:100px 18px 18px}
 #gbm-magazine-page .lead h1{font-size:clamp(22px,7vw,28px)!important;line-height:1.15!important}
 #gbm-magazine-page .lines{grid-template-columns:1fr;gap:18px}
 #gbm-magazine-page .line{border-bottom:1px solid var(--l);padding-bottom:16px}
@@ -69,7 +67,7 @@ function mount(){
  if(document.getElementById('gbm-magazine-page'))return;
  var L=D.lead,m=document.createElement('main');m.id='gbm-magazine-page';
  /* Owner: no top subheading strips. */
- m.innerHTML='<div class="wrap"><section class="cover"><div class="mast"><img src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp" width="900" height="241" alt="GatorBait"><span>Magazine</span></div><div class="hero"><img src="'+e(L.image)+'" alt="'+e(L.title)+'"></div><a class="lead" href="'+e(L.url)+'"><small>CURRENT COVER STORY · BUDDY MARTIN</small><h1>'+e(L.title)+'</h1><p>'+e(L.excerpt)+'</p></a><div class="lines">'+D.lines.map(function(p){return'<a class="line" href="'+e(p.url)+'"><b>'+e(p.title)+'</b><span>GatorBait</span></a>'}).join('')+'</div></section><section class="inside"><p class="ey">INSIDE THE ISSUE</p><h2>Stories worth keeping</h2><div class="grid">'+D.inside.map(card).join('')+'</div></section><section class="refs"><a href="/post/florida-ole-miss-final-baugh-gators-run-over-rebels"><span>FINAL</span><strong>Florida 52, Ole Miss 28</strong><em>The recap, By the Numbers and Chris Spears’ photos.</em></a><a href="/the-buddy-martin-show"><span>WATCH</span><strong>GatorBait TV</strong><em>Shows, interviews and game-week conversation.</em></a><a href="https://gatorbait2026.itemorder.com/shop/home/"><span>STORE</span><strong>Rep the Gators</strong><em>Hats, visors, shirts and more.</em></a></section></div>';
+ m.innerHTML='<div class="wrap"><section class="cover"><div class="mast"><span>GatorBait Magazine</span></div><div class="hero"><img src="'+e(L.image)+'" alt="'+e(L.title)+'"></div><a class="lead" href="'+e(L.url)+'"><small>CURRENT COVER STORY · BUDDY MARTIN</small><h1>'+e(L.title)+'</h1><p>'+e(L.excerpt)+'</p></a><div class="lines">'+D.lines.map(function(p){return'<a class="line" href="'+e(p.url)+'"><b>'+e(p.title)+'</b><span>GatorBait</span></a>'}).join('')+'</div></section><section class="inside"><p class="ey">INSIDE THE ISSUE</p><h2>Stories worth keeping</h2><div class="grid">'+D.inside.map(card).join('')+'</div></section><section class="refs"><a href="/post/florida-ole-miss-final-baugh-gators-run-over-rebels"><span>FINAL</span><strong>Florida 52, Ole Miss 28</strong><em>The recap, By the Numbers and Chris Spears’ photos.</em></a><a href="/the-buddy-martin-show"><span>WATCH</span><strong>GatorBait TV</strong><em>Shows, interviews and game-week conversation.</em></a><a href="https://gatorbait2026.itemorder.com/shop/home/"><span>STORE</span><strong>Rep the Gators</strong><em>Hats, visors, shirts and more.</em></a></section></div>';
  var anchor=document.getElementById('gbm-mobile-shell-host')||document.getElementById('gbm-site-header');if(anchor&&anchor.parentNode===document.body)document.body.insertBefore(m,anchor.nextSibling);else document.body.insertBefore(m,document.body.firstChild);
  H.add('gbm-magazine-live');document.title='GatorBait Magazine | Florida Gators';
 }

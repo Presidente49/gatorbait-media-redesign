@@ -1,7 +1,10 @@
 /* GatorBait Latest page v1 - SOURCE. Scope: Wix Blog feed pages ([data-hook=feed-page-root]): /gatorbait-media-blogs, its /page/N and /categories/*.
    The native Pro Gallery list stays in the DOM as the data source; this layout replaces it visually. */
 /* While the script is mounting (html.gbm-lp-wait, max 4s) the native list is held invisible with its space kept; on failure the class drops and the styled native list shows. */
-html.gbm-lp-wait [data-hook=feed-page-root]:not(:has(#gbm-lp)) [data-hook=post-list-pro-gallery-container]{visibility:hidden}
+/* While mounting (wait) and for as long as our layout owns this page (hold), the native list never paints. */
+html.gbm-lp-wait [data-hook=feed-page-root]:not(:has(#gbm-lp)) [data-hook=post-list-pro-gallery-container],
+html.gbm-lp-hold [data-hook=feed-page-root]:not(:has(#gbm-lp)) [data-hook=post-list-pro-gallery-container],
+html.gbm-lp-hold [data-hook=feed-page-root]:not(:has(#gbm-lp)) [data-hook=feed-pagination-container]{visibility:hidden}
 /* Hide the native list ONLY while our layout is actually in the page. If Wix re-renders and drops #gbm-lp,
    the native list comes straight back (never a blank page) until the script re-mounts. */
 [data-hook=feed-page-root]:has(#gbm-lp) [data-hook=post-list-pro-gallery-container],

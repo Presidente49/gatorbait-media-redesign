@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 if(window.__GBM_LP__)return;window.__GBM_LP__=1;
-var H=document.documentElement,timer=0,sig='';
+var H=document.documentElement,timer=0,sig='',cache={};
 function isFeed(){return !!document.querySelector('[data-hook=feed-page-root]');}
 function txt(el){return el?(el.textContent||'').replace(/\s+/g,' ').trim():'';}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
@@ -12,9 +12,14 @@ function items(){
   var w=ws[i],t=w.querySelector('[data-hook=post-title]'),a=t&&t.closest('a')||w.querySelector('a[href*="/post/"]');
   var href=a&&a.getAttribute('href');if(!href||seen[href])continue;seen[href]=1;
   var box=w.closest('[data-hook=item-container]')||w.closest('.item-link-wrapper'),img=box&&(box.querySelector('img[data-hook=gallery-item-image-img]')||box.querySelector('img'));
-  out.push({href:href,title:txt(t),img:img&&(img.currentSrc||img.getAttribute('src'))||'',cat:txt(w.querySelector('[data-hook=post-category-label]')),by:txt(w.querySelector('[data-hook=user-name]')),ago:txt(w.querySelector('[data-hook=time-ago]')),read:txt(w.querySelector('[data-hook=time-to-read]'))});
+  var ix=img&&img.getAttribute('data-idx');
+  out.push({i:ix!=null&&ix!==''?+ix:i,href:href,title:txt(t),img:img&&(img.currentSrc||img.getAttribute('src'))||'',cat:txt(w.querySelector('[data-hook=post-category-label]')),by:txt(w.querySelector('[data-hook=user-name]')),ago:txt(w.querySelector('[data-hook=time-ago]')),read:txt(w.querySelector('[data-hook=time-to-read]'))});
  }
- return out;
+ // Wix's gallery virtualizes (items leave the DOM as you scroll). Cache per page and only ever add, so scrolling
+ // can't change the list and can't trigger a rebuild (a rebuild reloads every image = flashing).
+ if(cache.key!==location.pathname)cache={key:location.pathname,by:{}};
+ out.forEach(function(x){var o=cache.by[x.href];if(!o||(!o.img&&x.img))cache.by[x.href]=x;});
+ return Object.keys(cache.by).map(function(k){return cache.by[k];}).sort(function(a,b){return a.i-b.i;});
 }
 function pageTitle(){
  var m=location.pathname.match(/\/categories\/([^/]+)/);
@@ -41,29 +46,37 @@ function pager(){
  if(!nx&&!pv)return '';
  return '<nav class="lp-pager" aria-label="More pages">'+(pv?'<a href="'+esc(pv)+'">&larr; Newer stories</a>':'<i></i>')+'<span>Page '+cur+(tot?' of '+tot:'')+'</span>'+(nx?'<a href="'+esc(nx)+'">Older stories &rarr;</a>':'<i></i>')+'</nav>';
 }
+function gal(){return document.querySelector('[data-hook=feed-page-root] [data-hook=post-list-pro-gallery-container]');}
 function mount(){
  if(!isFeed())return false;
- var list=items(),g=document.querySelector('[data-hook=feed-page-root] [data-hook=post-list-pro-gallery-container]');
+ var list=items(),g=gal();
  if(!g||!list.length||!list[0].title)return false;
  var s=location.pathname+'|'+list.map(function(x){return x.href;}).join(',')+'|'+pager();
- var root=document.getElementById('gbm-lp');
- if(root&&s===sig&&root.isConnected&&root.nextSibling===g)return true;
- if(!root){root=document.createElement('section');root.id='gbm-lp';root.setAttribute('aria-label','Latest stories');}
- root.innerHTML=build(list);
- var host=g.parentNode;if(root.parentNode!==host||root.nextSibling!==g)host.insertBefore(root,g);
- sig=s;H.classList.add('gbm-lp-on');return true;
+ var root=mount.root;
+ if(!root){root=document.createElement('section');root.id='gbm-lp';root.setAttribute('aria-label','Latest stories');mount.root=root;}
+ if(s!==sig){root.innerHTML=build(list);sig=s;}      // rebuild only when the content really changed
+ if(root.parentNode!==g.parentNode||root.nextSibling!==g)g.parentNode.insertBefore(root,g); // re-insert same node: no image reload
+ H.classList.add('gbm-lp-on','gbm-lp-hold');return true;
 }
-function tryMount(){try{return mount();}catch(e){console.warn('[GatorBait] latest page',e);H.classList.remove('gbm-lp-on');return false;}}
+function tryMount(){try{return mount();}catch(e){console.warn('[GatorBait] latest page',e);H.classList.remove('gbm-lp-hold');return false;}}
 function onFeedPath(){return /^\/gatorbait-media-blogs(\/|$)/.test(location.pathname);}
 function start(){
  clearInterval(timer);
- if(!onFeedPath()&&!isFeed()){H.classList.remove('gbm-lp-on','gbm-lp-wait');mo.disconnect();watching=0;return;}
+ if(!onFeedPath()&&!isFeed()){H.classList.remove('gbm-lp-on','gbm-lp-wait','gbm-lp-hold');mo.disconnect();watching=0;return;}
  H.classList.add('gbm-lp-wait');var t0=Date.now();watch();
  timer=setInterval(function(){var ok=tryMount();if(ok||Date.now()-t0>4000){clearInterval(timer);H.classList.remove('gbm-lp-wait');}},60);
 }
-// Wix hydrates/re-renders the blog React tree after first paint and can drop nodes it doesn't own.
-// On feed pages, watch the body and re-mount (debounced) whenever our section is missing or the list changed.
-var watching=0,mo=new MutationObserver(function(){clearTimeout(mo.t);mo.t=setTimeout(function(){if(isFeed())tryMount();else if(!onFeedPath()){mo.disconnect();watching=0;}},150);});
+// Mutation callbacks run before the next paint, so re-inserting here means a Wix re-render never paints a frame
+// without our section. Fast path when nothing changed. Watchdog: if we can't mount for 1s, drop the hold so the
+// styled native list shows (never a blank page).
+var watching=0,lastN=-1,dog=0,mo=new MutationObserver(function(){
+ if(!isFeed()){if(!onFeedPath()){mo.disconnect();watching=0;H.classList.remove('gbm-lp-hold');}return;}
+ var r=mount.root,g=gal(),n=document.querySelectorAll('[data-hook=feed-page-root] [data-hook=post-list-item]').length;
+ if(r&&g&&r.nextSibling===g&&n===lastN&&cache.key===location.pathname)return;
+ lastN=n;
+ if(tryMount()){clearTimeout(dog);dog=0;}
+ else if(!dog)dog=setTimeout(function(){dog=0;if(!(mount.root&&mount.root.isConnected))H.classList.remove('gbm-lp-hold');},1000);
+});
 function watch(){if(watching||!document.body){if(!document.body)document.addEventListener('DOMContentLoaded',watch,{once:true});return;}watching=1;mo.observe(document.body,{childList:true,subtree:true});}
 function soon(){setTimeout(start,250);setTimeout(start,1200);}
 start();

@@ -1,7 +1,7 @@
 /* GatorBait post formatting normalizer v1 - SOURCE. Companion to post template v1 (embed 14a887e3).
    Wix editor habits (spacer lines, all-bold bodies, fake headings made of big bold paragraphs) are tagged by
    normalizer.js and restyled here. "§" = html body #SITE_PAGES [data-hook=post-page] [data-hook=post-description] */
-§ [data-gbm-empty]{display:none!important}
+§ [data-gbm-empty],§ [data-breakout]:has(>[data-gbm-empty]){display:none!important}
 /* All-bold body: bold means nothing when everything is bold. Normal weight; real emphasis inside stays via em. */
 html[data-gbm-unbold] body #SITE_PAGES [data-hook=post-page] [data-hook=post-description] p :is(strong,b){font-weight:inherit!important}
 /* Fake subheads -> real subhead look (same as template h2) */

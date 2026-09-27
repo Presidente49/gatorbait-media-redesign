@@ -31,16 +31,18 @@ Per-game link format: https://www.espn.com/college-football/game/_/gameId/{id}
 | Kentucky 45, South Alabama 21 | https://www.espn.com/college-football/game/_/gameId/401864576 | |
 | Florida State 34, Central Arkansas 7 | https://www.espn.com/college-football/game/_/gameId/401858237 | |
 
-## IN PROGRESS at time of writing (NOT final; labeled in article)
+## Late finals (re-checked 05:17 UTC Sept. 27 via TinyFish, ttl 0; ESPN status "Final" on all six; details from the AP recap text in ESPN's scoreboard headlines)
 
-| State | ESPN game |
+| Score | ESPN game |
 |---|---|
-| No. 8 Alabama 35, South Carolina 18, 11:06 4th | https://www.espn.com/college-football/game/_/gameId/401856696 |
-| No. 10 LSU 21, No. 23 Texas A&M 3, 3rd | https://www.espn.com/college-football/game/_/gameId/401856702 |
-| No. 20 Oregon 20, No. 12 USC 17, 3rd | https://www.espn.com/college-football/game/_/gameId/401858469 |
-| No. 24 Mississippi State 14, No. 19 Missouri 10, halftime | https://www.espn.com/college-football/game/_/gameId/401856703 |
-| Arkansas 16, Tulsa 0, 3rd | https://www.espn.com/college-football/game/_/gameId/401856697 |
-| Missouri State 10, No. 22 SMU 0, 2nd | https://www.espn.com/college-football/game/_/gameId/401858241 |
+| No. 8 Alabama 49, South Carolina 18 | https://www.espn.com/college-football/game/_/gameId/401856696 |
+| No. 10 LSU 35, No. 23 Texas A&M 6 | https://www.espn.com/college-football/game/_/gameId/401856702 |
+| No. 20 Oregon 41, No. 12 USC 27 | https://www.espn.com/college-football/game/_/gameId/401858469 |
+| No. 24 Mississippi State 31, No. 19 Missouri 24 (Missouri led 24-17 after 3; Taylor 24-yd TD to Magee, 3:57 left) | https://www.espn.com/college-football/game/_/gameId/401856703 |
+| Arkansas 34, Tulsa 6 | https://www.espn.com/college-football/game/_/gameId/401856697 |
+| No. 22 SMU 34, Missouri State 24 | https://www.espn.com/college-football/game/_/gameId/401858241 |
+
+All 15 earlier finals re-checked in the same pull: unchanged.
 
 ## Idle
 - No. 9 BYU (bye): https://www.si.com/college/byu/football/the-byu-rooting-guide-for-the-bye-week

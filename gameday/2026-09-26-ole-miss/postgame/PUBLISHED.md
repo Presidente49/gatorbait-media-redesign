@@ -79,3 +79,11 @@ Cover changed to the thumbnail "Swamp Party" FINAL 52-28 (d3cfa5_a1b1d9987b2a431
     - Dedupe clear.
   - Label e345fa8e. Status at 01:12Z: PUBLISHED / SENDING.
   - **Bug found and fixed:** straight double quotes in `<mj-title>` and the subject caused a 500 "http2 exception" from Wix's GenerateHtml on preview. Draft baeebc32 had them; it was deleted unsent.
+
+## Update 01:48Z: presser quotes fully verified
+- UF's ASAP transcripts are now up: 171205 is Baugh and 171206 is Philo.
+- Presser story 2bb6c273 was fixed in place (no email) to match them:
+  - Baugh "We feel we left points on the board"
+  - Baugh "I tell the guys, I'm trying to put up 70, trying to put up 60."
+- These quotes already matched word for word: Baugh "I feel that no defense in the country could stop us from putting up points", Baugh "I was just so proud of him", and Philo "Makes my job pretty easy. I didn't have to do a whole lot tonight, to be honest."
+- Every quote in the story is now checked against the official transcripts. Routine trig_01KhBRuaTr8ixhnsdqN7ERqH was deleted.

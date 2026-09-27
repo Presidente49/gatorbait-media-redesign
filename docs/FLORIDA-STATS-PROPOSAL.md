@@ -51,8 +51,8 @@ A local render check used synthetic full-season data: 12 games and deliberately 
 
 | Entry point | Where | Room |
 |---|---|---|
-| "Florida by the numbers" card in the homepage right rail | home code `622d8ece` | ~1.7K characters free |
-| "Season stats" link in the game-day band's links row | band data `96ef5a04` | ~220 characters free: a link fits, a table does not |
+| "Florida by the numbers" card in the homepage right rail | home code `622d8ece` | ~1.3K characters free (13,730 at `7361c29`) |
+| "Season stats" link in the game-day band's links row | band data `96ef5a04` | **4 characters free** (14,996 at `7361c29`): nothing fits unless the band owner trims first |
 | Footer or utility link | shell/footer | |
 
 **Not recommended:**
@@ -130,18 +130,20 @@ On `main`, behavior is identical.
 **This uses one new custom embed** named "GBM - Florida Football Stats v1":
 
 - position HEAD, category `ESSENTIAL`, `loadOnce` false;
-- guarded in its own JavaScript to `/florida-football-stats`, like every other GBM surface. None of the site's 48 embeds uses `pageFilter`, and a page-filtered HEAD embed may not load on client-side navigation between inner pages.
+- guarded in its own JavaScript to `/florida-football-stats`, like every other GBM surface. None of the site's embeds uses `pageFilter`, and a page-filtered HEAD embed may not load on client-side navigation between inner pages. The site had 48 embeds at my Sept. 27 read. The game-day session has since added two, and both are route-scoped so they can't reach this page:
+  - `53e15504` (Latest page) runs only under `/gatorbait-media-blogs`;
+  - `14a887e3` (post template) runs only under `/post/`.
 
 **Size:**
 
 - 12,925 characters for a full 12-game season: 9.4K of code and CSS plus 3.6K of data. That leaves about 2K for postseason games.
 - About 4.7 KB gzipped on each page load, because Wix embeds load sitewide.
 
-It grows no existing embed. The three nearest the cap are:
+It grows no existing embed. The three nearest the cap, per the builds at `fix-native-flash-20260926` `7361c29`, are:
 
-- `96ef5a04`: 14,778 characters;
-- `1dd74333`: 14,946 characters;
-- `fdc2127a`: 14,240 characters.
+- `96ef5a04` (band and backup stories): 14,996 characters;
+- `1dd74333` (Magazine): 14,963 characters;
+- `fdc2127a` (home core): 14,240 characters.
 
 **Why not a Wix CMS collection:**
 
@@ -152,6 +154,21 @@ It grows no existing embed. The three nearest the cap are:
 Revisit a collection if writers want a sortable or filterable dashboard later.
 
 **The retired "GBM - Schedule v2" embed** (`609d814d`, disabled) is not reused or re-enabled. It is a dark-theme schedule plus starting-lineup block from the older design.
+
+## Coordination with the game-day session
+
+The "Chat analysis continuation" session owns the game-day band (`96ef5a04`) and PR #36. It also set up the cloud game-week routines recorded in `CURRENT-STATE.md` on Sept. 27. Those routines fire into that session and include:
+- Sunday band updates: the rank change, then the switch to Missouri.
+- The Oct. 3 Missouri game-day run.
+
+None of them builds season stats, so this page duplicates no work. It also writes a different object than the band.
+
+To keep one writer per surface:
+- **Band:** this proposal writes nothing to the band. A "Season stats" band link would be that session's change, made after it frees room.
+- **Interim publish:** if Brenden picks the interim path, the stats data-block patch can ride on the postgame step of the existing Oct. 3 game-day routine. That avoids a second session writing to Wix on game night. Changing that routine is Brenden's call.
+- **Option A:** the workflow is the only writer of the stats embed, and it never touches the band, home or Magazine objects.
+
+**About the saved Ole Miss box:** `gameday/2026-09-26-ole-miss/postgame/espn-final-box.txt` keeps only the top 4 players per category. It can spot-check the leaders but not full-season sums. The pipeline assumes ESPN's summary lists every player in each category. The first real run confirms that. If it doesn't hold, the receptions-vs-completions and yardage checks stop the run and nothing is written.
 
 ## Rollback
 

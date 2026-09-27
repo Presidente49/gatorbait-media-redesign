@@ -148,3 +148,39 @@ Brenden shared a screenshot showing a duplicated GatorBait logo on the front pag
 **Correction to the "Today's Edition" finding.** The TinyFish fetcher doesn't run the custom `#gbm-live` / `#gbm-magazine-page` renderers; the selectors aren't found in its output. What it reported was the native Wix layer underneath, which real browsers hide. That finding is downgraded to "unconfirmed, likely a fetch artifact"; confirming it still needs a real browser.
 
 Brenden's postgame celebration photo (800×432) was not used: its photographer is unknown and credit is required. It needs a credit before it goes on the site.
+
+## Brenden (~15:30Z): editorial/facts/copy audit of the front-page rotation, rotation check, email check
+
+**Rotation (verified from the live embed `622d8ece`):**
+- The front page is strictly chronological: `lead = posts[0]`, the next 2 are supporting, and the rails take the newest stories not already shown. No per-visit shuffle, no repeats.
+- The feed is re-read with a per-minute cache-buster, so each new post pushes everything down automatically.
+- Repo drift: `deploy/wix-served/split/home-code.html` still has the older Buddy-lead + sessionStorage-rotation logic. Live code, not the repo copy, is authoritative for lead and rotation.
+- Owner-direction conflict to raise with Brenden: CLAUDE.md says Buddy is the editorial lead across the homepage, but live is newest-first (so Loren's analysis leads right now).
+
+**Audit (14 newest posts = everything reachable from the front page):**
+- Automated sweep checked names, game facts, copy, excerpts, covers, duplicate covers and tags. No wrong scores, misspelled names, AI covers or duplicate covers remain.
+- Fixed in place, no email:
+  - Buddy `bb1d7484`: a double space.
+  - Carlton `03c7b5fe`: "Eric Singleton Jr., Vernell Brown III" on first reference.
+- Flagged, not touched: halftime `bb2287f1` has zero tags but has unpublished edits pending in Wix. Tagging it would publish those edits, so it waits for whoever is editing it.
+- False positives dropped: surname-only second references (Singleton) in the presser and Lacy stories.
+
+**Emails (Wix statistics, 15:3xZ):** all 8 sends since Sept. 25 were DISTRIBUTED, each delivering 1,807–1,816.
+
+| Send | Delivered | Opens | Clicks |
+|---|---|---|---|
+| Postgame Wrap `b3fa395e` | 1,807 | 372 | 51 |
+| Buddy+Franz columns `2fb154ff` | 1,810 | 459 | 77 |
+| Reaction `6b056c3f` | 1,810 | 619 | 150 |
+| FINAL `f8ee1c12` | 1,808 | 631 | 109 |
+
+- No email for Loren's analysis (none authorized).
+
+**Agency repo (Gatorbait-agency PR #2, commits `7dbf76d` and `1465c66`):**
+- Today's tools, filed by department:
+  - `editorial/copy-desk-audit` (scribe)
+  - `design/hero-overlay` (blueprint + webmaster)
+  - `web/embed-patch` (webmaster's first skill)
+  - `research/photo-sourcing` (scout)
+  - `marketing/email-delivery-check` (wrench)
+- Also added: `brands/gator-bait-media/editorial-desk.md` (canonical names, verified game facts, photo sources, writer submission rules) and a learnings entry.

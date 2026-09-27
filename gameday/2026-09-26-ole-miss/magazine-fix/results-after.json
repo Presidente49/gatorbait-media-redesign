@@ -1,0 +1,123 @@
+[
+ {
+  "name": "feed-390",
+  "width": 390,
+  "nativeItems": 24,
+  "nativeVisible": 0,
+  "nativeTitlesVisible": [],
+  "magazineVisible": true,
+  "cover": "THE SWEET MUSIC CHIMES AGAIN!",
+  "footerVisible": true,
+  "htmlClass": "gbm-mq gbm-magazine-live",
+  "scrollWidth": 390,
+  "blank": false
+ },
+ {
+  "name": "feed-1366",
+  "width": 1366,
+  "nativeItems": 24,
+  "nativeVisible": 0,
+  "nativeTitlesVisible": [],
+  "magazineVisible": true,
+  "cover": "THE SWEET MUSIC CHIMES AGAIN!",
+  "footerVisible": true,
+  "htmlClass": "gbm-mq gbm-magazine-live",
+  "scrollWidth": 1366,
+  "blank": false
+ },
+ {
+  "name": "timeout-390",
+  "width": 390,
+  "nativeItems": 24,
+  "nativeVisible": 0,
+  "nativeTitlesVisible": [],
+  "magazineVisible": true,
+  "cover": "The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder",
+  "footerVisible": true,
+  "htmlClass": "gbm-mq gbm-magazine-live",
+  "scrollWidth": 390,
+  "blank": false
+ },
+ {
+  "name": "timeout-1366",
+  "width": 1366,
+  "nativeItems": 24,
+  "nativeVisible": 0,
+  "nativeTitlesVisible": [],
+  "magazineVisible": true,
+  "cover": "The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder",
+  "footerVisible": true,
+  "htmlClass": "gbm-mq gbm-magazine-live",
+  "scrollWidth": 1366,
+  "blank": false
+ },
+ {
+  "name": "firstpaint-390",
+  "width": 390,
+  "nativeItems": 24,
+  "nativeVisible": 0,
+  "nativeTitlesVisible": [],
+  "magazineVisible": false,
+  "cover": null,
+  "footerVisible": false,
+  "htmlClass": "gbm-mq",
+  "scrollWidth": 390,
+  "blank": true
+ },
+ {
+  "name": "nohas-390",
+  "width": 390,
+  "nativeItems": 24,
+  "nativeVisible": 0,
+  "nativeTitlesVisible": [],
+  "magazineVisible": true,
+  "cover": "THE SWEET MUSIC CHIMES AGAIN!",
+  "footerVisible": true,
+  "htmlClass": "gbm-mq gbm-magazine-live",
+  "scrollWidth": 390,
+  "blank": false
+ },
+ {
+  "name": "nohas-1366",
+  "width": 1366,
+  "nativeItems": 24,
+  "nativeVisible": 0,
+  "nativeTitlesVisible": [],
+  "magazineVisible": true,
+  "cover": "THE SWEET MUSIC CHIMES AGAIN!",
+  "footerVisible": true,
+  "htmlClass": "gbm-mq gbm-magazine-live",
+  "scrollWidth": 1366,
+  "blank": false
+ },
+ {
+  "name": "mountfail-390",
+  "width": 390,
+  "nativeItems": 24,
+  "nativeVisible": 12,
+  "nativeTitlesVisible": [
+   "What Can “VB3” Do for You?",
+   "Light up a Camel! Nostalgia, the Gators and a game with Campbell University",
+   "Thoughts of the Day: August 14, 2026"
+  ],
+  "magazineVisible": false,
+  "cover": null,
+  "footerVisible": true,
+  "htmlClass": "gbm-mq",
+  "scrollWidth": 390,
+  "blank": false
+ },
+ {
+  "name": "spa-390",
+  "width": 390,
+  "nativeItems": 24,
+  "nativeVisible": 0,
+  "nativeTitlesVisible": [],
+  "magazineVisible": true,
+  "cover": "THE SWEET MUSIC CHIMES AGAIN!",
+  "footerVisible": true,
+  "htmlClass": "gbm-mq gbm-magazine-live",
+  "scrollWidth": 390,
+  "blank": false
+ }
+]

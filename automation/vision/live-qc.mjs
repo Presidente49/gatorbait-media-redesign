@@ -105,6 +105,9 @@ function audit(input){
   if(target.name==='home'&&rootVisible&&nativeVisible)hard.push('home custom surface and native #SITE_PAGES are both visible');
   if(target.name==='magazine'&&rootVisible&&nativeVisible)hard.push('Magazine custom surface and native #SITE_PAGES are both visible');
 
+  // Baseline lock: the old Wix shell's "Today's Edition" section must never be visible on the homepage.
+  if(target.name==='home'&&/today[’'`]s edition/i.test(bodyText))hard.push('old Wix shell "Today\'s Edition" text is visible on the homepage');
+
   const sideways=document.documentElement.scrollWidth>viewport+2;
   if(sideways)hard.push('document scrollWidth exceeds viewport');
 
@@ -234,6 +237,9 @@ function audit(input){
     rootPresent,
     rootVisible,
     nativePagesVisible:nativeVisible,
+    postNormalizer:document.documentElement.getAttribute('data-gbm-nr'),
+    postUnbold:document.documentElement.hasAttribute('data-gbm-unbold'),
+    postInventedHeads:document.querySelectorAll('[data-gbm-h]').length,
     expectedTextPresent:textMatch,
     firstHeadline:first,
     typeSample,
@@ -393,6 +399,7 @@ for(const r of report.runs){
   lines.push('- expected text: '+r.expectedTextPresent);
   lines.push('- presentation root: '+r.rootPresent+' / visible '+r.rootVisible);
   lines.push('- native pages visible: '+r.nativePagesVisible);
+  lines.push('- post normalizer: '+r.postNormalizer+' / unbold '+r.postUnbold+' / invented heads '+r.postInventedHeads);
   lines.push('- first headline: '+(r.firstHeadline?('y='+r.firstHeadline.top+' — '+r.firstHeadline.text):'NONE'));
   if(r.typeSample)lines.push('- computed type: '+JSON.stringify(r.typeSample));
   if(r.articleTitleCandidates?.length) lines.push('- article title candidate: '+JSON.stringify(r.articleTitleCandidates[0]));

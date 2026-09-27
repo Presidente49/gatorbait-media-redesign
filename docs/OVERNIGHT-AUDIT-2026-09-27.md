@@ -232,3 +232,18 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
 - Band rev 39: "No. 8 in both the AP Top 25 and the Coaches Poll … at No. 25 Missouri."
 - The separate "Chomp Up the Charts" story is still to come: trigger `trig_01EuBLBWmaYdjz8VLg2chhc2` at 18:39Z, with a different cover.
 - Unverifiable, left in the quoted AP wording: "highest ranking since 2020 and first top-10 appearance since 2021".
+
+## Brenden (~18:20Z): five Chris Spears game photos → "Chomp Up the Charts" published
+
+- Five watermarked Chris Spears photos, sent by Brenden, saved in `gameday/2026-09-26-ole-miss/photos-chris-spears/` and uploaded to Wix:
+  - Sumrall leads the Gators out (1024×652): `ce8defc3`
+  - Baugh goal-line TD dive (800×534): `47123317`
+  - Baugh end-zone TD celebration (800×500): `9b92c9cd`
+  - Postgame players, #12 (800×454): `7b396215`
+  - Sideline TD run, #1 (800×494): `7acdfecf`
+  - Players in the last two aren't named anywhere until verified.
+- "Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls" (`c658c408`) published 18:20Z under GatorBait Staff / Gator Football. No email.
+  - Cover: a new family (Sumrall walkout photo, No. 8 panel), `d3cfa5_1043f4b7…png`.
+  - Body: the two-poll graphic, the Baugh end-zone photo, and links to Buddy's column and the game story.
+  - Every number is from AP via NCAA.com and the Coaches Poll via ESPN.
+- The 18:39Z recheck trigger was deleted; the work is done.

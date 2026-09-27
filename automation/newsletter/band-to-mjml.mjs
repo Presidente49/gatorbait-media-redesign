@@ -8,6 +8,8 @@
 //        [--stories deploy/wix-served/home-fallback.json] [--campaign postgame_ole_miss_2026_09_26] [--out newsletter/X.mjml]
 //
 // --stories is a JSON file in the homepage-fallback shape ({posts:[{title,excerpt,url,author,image:{src,alt}}]}).
+// Compliance/revenue (Sept. 27): every issue carries the business postal address (CAN-SPAM) and the All Access
+// CTA; keep the CTA copy matched to the live /pricing-plans/subscribe page (7-day trial, $9.99/mo, $99/yr).
 // House rule: at most 2 editorial photos per issue, real credited photos only (graphics and charts stay text-only).
 // Each band button is matched to a story by its /post/ path; a button with no story metadata becomes a text link.
 import fs from 'node:fs';
@@ -122,9 +124,17 @@ const mjml = `<mjml lang="en" dir="ltr">
     <mj-section background-color="#FFFFFF" padding="22px 26px 0">
       <mj-column><mj-text color="#081B35" font-size="20px" font-weight="800" padding="0 0 4px">THE STORIES</mj-text><mj-divider border-color="#FA4616" border-width="3px" padding="0" /></mj-column>
     </mj-section>${cards}${lookAhead}
+    <mj-section background-color="#081B35" padding="22px 26px">
+      <mj-column>
+        <mj-text color="#FA7A45" font-size="10px" font-weight="900" letter-spacing="1.9px" padding="0 0 6px">GATORBAIT ALL ACCESS</mj-text>
+        <mj-text color="#FFFFFF" padding="0 0 6px"><span class="gb-h2">Get every GatorBait story, all season.</span></mj-text>
+        <mj-text color="#D5DFEC" font-size="14px" padding="0 0 14px">Start with a 7-day free trial, then $9.99 a month or $99 a year. Independent Florida Gators journalism from Buddy Martin, Franz Beard and the GatorBait staff.</mj-text>
+        <mj-button href="${attr(utm('/pricing-plans/subscribe', 'all_access_cta'))}" align="left" padding="0">START FREE TRIAL →</mj-button>
+      </mj-column>
+    </mj-section>
     <mj-section background-color="#FFFFFF" padding="18px 26px 24px">
       <mj-column width="40%"><mj-text padding="0" color="#003B7A" font-size="18px" font-weight="900">GATOR<span style="color:#FA4616;">BAIT</span> MEDIA</mj-text></mj-column>
-      <mj-column width="60%"><mj-text align="right" color="#667386" font-size="11px" line-height="1.55" padding="0">Florida football. All the time.<br/>GatorBaitMedia.com · Old-school journalism + new tech.</mj-text></mj-column>
+      <mj-column width="60%"><mj-text align="right" color="#667386" font-size="11px" line-height="1.55" padding="0">Florida football. All the time.<br/>GatorBaitMedia.com · Old-school journalism + new tech.<br/>GatorBait Media · 1524 SE 22nd Ave, Ocala, FL 34471</mj-text></mj-column>
     </mj-section>
   </mj-body>
 </mjml>

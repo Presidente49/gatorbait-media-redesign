@@ -315,3 +315,16 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
     - 709 of the 1,850 subscribed contacts (38%) are Wix-flagged INACTIVE: mail is delivered but they haven't opened or clicked across several campaigns. Proposal: send one re-engagement email, then retire anyone who doesn't respond within 30 days.
     - Cap list-wide sends at 2 a day outside BREAKING.
   - **Rollback for the 9:** upsert them back to SUBSCRIBED/VALID. To find the addresses again, take everyone who bounced 8+ times since Aug. 1 with 0 deliveries and match the masks above. Complainers stay unsubscribed.
+- ~22:55Z **Postmaster bounce notices (Brenden: "check the email… postmaster delivery shit").** Since Sept. 17, brenden@ has received 17 "Undeliverable" notices from postmaster@outlook.com, one per send. All 17 are for the same address.
+  - Cause, from the notice headers:
+    - The subscriber do***@coastalnow.net is hosted at Mail2World and auto-forwards every message to og***@outlook.com.
+    - That Outlook box is full. The error is "554 5.2.2 mailbox full; StorageShutoffQuotaExceeded", and its X-MS-UserLastLogonTime is 11/12/2021.
+    - Mail2World forwards with Return-Path: brenden@gatorbaitmedia.com, so Outlook sends the bounce to Brenden instead of to Wix.
+    - Wix records the message as DELIVERED to coastalnow.net, which is why the bounce scan above couldn't see it.
+  - Our authentication is fine: DKIM (d=gatorbaitmedia.com) passes and DMARC passes. The SPF softfail in the notices is the forwarder's IP, not ours.
+  - Engagement: the address had 2 "opens" in 83 sends since March 6. Both came after the bounce notice reached brenden@:
+    - The Brown open is at 22:26:24Z, the same second Brenden forwarded that notice.
+    - The Sept. 16 open is 10 minutes after that notice arrived.
+    - The notice contains the subscriber's copy of the email with its tracking pixel, so viewing the notice counts as an open for him. No real reads.
+  - Action: set to UNSUBSCRIBED/BOUNCED, verified on the subscription store and the Contacts v5 record. Subscribed total is now 1,849. I archived the 17 notice threads (INBOX and UNREAD removed, not deleted). Undo: if the subscriber fixes his forward, upsert him back to SUBSCRIBED/VALID.
+  - Separate issue, not changed: info@gatorbaitmedia.com is not a real mailbox. Brenden's Sept. 10 reply to a Wix "customer canceled their plan" notice from info@ bounced with 550 5.1.1. Any reply to mail sent from info@ bounces the same way. Fix: add info@ as an alias in Google Workspace. Brenden's call.

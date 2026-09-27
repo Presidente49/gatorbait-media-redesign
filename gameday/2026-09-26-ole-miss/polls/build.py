@@ -7,7 +7,7 @@ def ladder(title,p,sub):
         rows+=f'<div class="row{" fl" if fl else ""}"><span class="rk">{i}</span><span class="tm">{t}{f" <em>({fpv})</em>" if fpv else ""}</span><span class="rec">{rec}</span><span class="pts">{pts:,}</span></div>'
     return f'<section class="poll"><h3>{title}</h3><p class="sub">{sub}</p>{rows}</section>'
 c=d['coaches']; f=c['florida']; ap=d['ap']
-polls=ladder('AFCA Coaches Poll',c,'Top 10 · points · (first-place votes)')
+polls=ladder('Coaches Poll' if ap else 'AFCA Coaches Poll',c,'Top 10 · points · (first-place votes)')
 if ap: polls=ladder('AP Top 25',ap,'Top 10 · points · (first-place votes)')+polls
 hero_ap=f'<div class="big"><span class="n">No. {ap["florida"]["rank"]}</span><span class="l">AP Top 25</span><span class="m">up {ap["florida"]["prev"]-ap["florida"]["rank"]} · {ap["florida"]["points"]:,} pts</span></div>' if ap else ''
 html=f'''<!doctype html><meta charset="utf-8"><style>
@@ -21,11 +21,11 @@ html=f'''<!doctype html><meta charset="utf-8"><style>
 .foot{{margin-top:auto;font:500 19px/1.45 Barlow,'DejaVu Sans',sans-serif;color:#9eadc1}}.foot b{{color:#fff}}
 .right{{flex:1;padding:56px 56px;display:flex;gap:44px}}.poll{{flex:1}}
 h3{{font:800 36px/1 'Barlow Condensed','DejaVu Sans Condensed','Liberation Sans Narrow',sans-serif;text-transform:uppercase;letter-spacing:.04em}}.sub{{font:500 16px Barlow,'DejaVu Sans',sans-serif;color:#9eadc1;margin:8px 0 18px}}
-.row{{display:grid;grid-template-columns:52px 1fr 70px 90px;align-items:center;height:{64 if ap else 66}px;border-bottom:1px solid rgba(255,255,255,.14);font:700 26px/1 Barlow,'DejaVu Sans',sans-serif}}
-.rk{{font:800 34px 'Barlow Condensed','DejaVu Sans Condensed','Liberation Sans Narrow',sans-serif;color:#9eadc1}}.rec{{color:#9eadc1;font-size:20px}}.pts{{text-align:right;color:#d5dfec;font-size:22px}}.tm em{{font-style:normal;color:#9eadc1;font-size:18px}}
+.row{{display:grid;grid-template-columns:{'46px 1fr 56px 78px' if ap else '52px 1fr 70px 90px'};align-items:center;height:{64 if ap else 66}px;border-bottom:1px solid rgba(255,255,255,.14);font:700 {23 if ap else 26}px/1 Barlow,'DejaVu Sans',sans-serif}}
+.rk{{font:800 34px 'Barlow Condensed','DejaVu Sans Condensed','Liberation Sans Narrow',sans-serif;color:#9eadc1}}.rec{{color:#9eadc1;font-size:20px}}.pts{{text-align:right;color:#d5dfec;font-size:22px}}.tm{{white-space:nowrap;overflow:hidden}}.tm em{{font-style:normal;color:#9eadc1;font-size:18px}}
 .row.fl{{background:#fa4616;margin:0 -14px;padding:0 14px;border:0}}.row.fl .rk,.row.fl .rec,.row.fl .pts{{color:#fff}}
 </style><div class="left"><div class="kick">CHOMP UP THE CHARTS · WEEK 5</div><div class="wm">GATOR<b>BAIT</b> MEDIA</div>
 {hero_ap}<div class="big"><span class="n">No. {f['rank']}</span><span class="l">Coaches Poll</span><span class="m">up {f['prev']-f['rank']} spots · {f['points']:,} pts</span></div>
-<div class="foot">Florida ({f['record']}) was No. 21 in the AP poll and No. 22 in the Coaches Poll before beating No. 4 Ole Miss 52-28.<br>Next: <b>at Missouri</b> (No. {c['missouri']} Coaches), Sat., Oct. 3, 3:30 p.m. ET.<br><span style="font-size:15px">Source: {c['source']}{'; AP Top 25, Sept. 27, 2026' if ap else ''}.</span></div></div>
+<div class="foot">Florida ({f['record']}) was No. 21 in the AP poll and No. 22 in the Coaches Poll before beating No. 4 Ole Miss 52&#8209;28.<br>Next: <b>at Missouri</b> ({'No. 25 in both polls' if ap else 'No. '+str(c['missouri'])+' Coaches'}), Sat., Oct. 3, 3:30 p.m. ET.<br><span style="font-size:15px">Sources: {ap['source']+'; ' if ap else ''}{c['source']}.</span></div></div>
 <div class="right">{polls}</div>'''
 open('poll-graphic.html','w').write(html); print('ok', 'with AP' if ap else 'coaches only')

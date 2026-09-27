@@ -24,6 +24,8 @@ function items(){
 function pageTitle(){
  var m=location.pathname.match(/\/categories\/([^/]+)/);
  if(m){var n=document.querySelector('[data-hook="header-navigation__/categories/'+m[1]+'"]');return txt(n)||m[1].replace(/-/g,' ');}
+ var tg=location.pathname.match(/\/tags\/([^/]+)/);
+ if(tg){var dt=(document.title||'').split('|')[0].trim();return dt&&!/gatorbait/i.test(dt)?dt:decodeURIComponent(tg[1]).replace(/-+$/,'').replace(/-/g,' ');}
  return 'Latest';
 }
 function by(s){return '<span class="lp-by">'+(s.by?'<b>'+esc(s.by)+'</b>':'')+(s.ago?'<span>'+esc(s.ago)+'</span>':'')+(s.read?'<span>'+esc(s.read)+'</span>':'')+'</span>';}

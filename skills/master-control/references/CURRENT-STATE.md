@@ -331,3 +331,11 @@ All of these are Claude Code cloud routines that fire into the controller sessio
 - Sat Oct. 3, 9:50 a.m. ET: Missouri game day, pregame through postgame (trig_01F7ct63dJfvpqG5dVSNV5ht).
 
 Every email is still owner-approved: one postgame email per game, and any other send needs Brenden's yes.
+
+## Blog standards (2026-09-27)
+- **Every post:**
+  - Post template v1 (`14a887e3`) plus the formatting normalizer (`c91ad133`). Both run on all `/post/` pages.
+  - Keyword tags per `automation/blog-tagging/README.md`: people, opponents, Florida Gators Football, roster players. Posts with unpublished edits are skipped.
+  - Tag new posts on publish. A daily sweep covers the rest.
+- **Latest, category and tag pages:** Latest page v1 (`53e15504`), multi-column; tag pages are titled with the tag name.
+

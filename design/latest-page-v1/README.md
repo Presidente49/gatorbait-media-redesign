@@ -3,8 +3,8 @@
 A multi-column news front for the Wix Blog feed pages: `/gatorbait-media-blogs`, its `/page/N` pages and `/categories/*`. It replaces the look of Wix's Pro Gallery list without replacing the data. Wix still renders the list, which stays in the DOM as the data source. This embed reads the title, link, cover, category, author, time and read time, and draws its own layout.
 
 **Live:** embed `53e15504-76c9-4551-90fe-4defe7cad84d` "GBM - Latest page v1 (multi-column news front)"
-- Settings: HEAD, **ESSENTIAL**, loadOnce false, revision 5.
-- Size: 12,068 chars, fingerprint 1429451893.
+- Settings: HEAD, **ESSENTIAL**, loadOnce false, revision 6 (tag pages titled with the tag name).
+- Size: 12,276 chars, fingerprint 3521406364.
 - **Rollback:** disable `53e15504`. The styled native list (Sports Feed Cards `602fb362` rev15) then shows again at once.
 
 ## Layout

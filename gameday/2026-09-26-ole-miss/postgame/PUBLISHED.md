@@ -41,3 +41,18 @@ Cover changed to the thumbnail "Swamp Party" FINAL 52-28 (d3cfa5_a1b1d9987b2a431
 ## Update 00:45Z
 - Homepage dedupe live: Home Code 622d8ece rev2 -> rev3, fp 2679990181. An independent live browser pass shows no headline twice and the "Up next: Florida at Missouri" box.
 - Cover changed to the layered master v02 (d3cfa5_74c0faaa50574ad0b505ac84433f71c2~mv2.jpg). Magazine cover v02 is in Media: d3cfa5_edc269515b4043e99026e4c4db8b99d1~mv2.jpg. No email.
+
+## Update 00:40-00:50Z: Carlton Reese column, presser story, game-story links (no email)
+- **Carlton Reese column:** published 00:40:27Z as post 03c7b5fe-b688-4a78-ad2f-911018304957, "Contenders, Not Hopefuls: Florida's Rout of No. 4 Ole Miss Puts the SEC on Notice." URL: /post/carlton-reese-florida-contenders-not-hopefuls-ole-miss.
+  - Byline: Carlton Reese (cd142328). Categories: Gator Football and Carlton Reese.
+  - Cover: layered v01, d3cfa5_043359d3e2df42e9b904bb3bfd521384~mv2.jpg. Brenden had no graphic from Carlton and said to use our art.
+  - Edits to Carlton's copy: Baugh's yards changed from 144 to 142 (ESPN box: 29 carries, 142 yards, 3 TDs), plus apostrophe and typo fixes. The Muschamp/Texas and betting-line sentences run as Carlton wrote them; Brenden declined a separate check.
+- **Presser story:** published 00:44:28Z as post 2bb6c273-e733-4af6-bcf7-5b814f768967, "'It Ain't Fully Awake Yet': Sumrall Says Gators Haven't Arrived After Routing No. 4 Ole Miss." URL: /post/sumrall-postgame-press-conference-ole-miss-not-fully-awake.
+  - Byline: GatorBait Staff. Categories: Gator Football and Jon Sumrall.
+  - UF's video Abu9k2osBUQ is embedded; the video was not downloaded.
+  - Quotes come from the vidIQ transcript (presser/presser-transcript-vidiq.md). Carlton's independent Baugh and Sumrall quotes match it.
+  - Speaker names were set from context plus ESPN: Woods made the strip-sack (#0 J.Woods per ESPN); Philo was the QB. A second vidIQ pass hallucinated "Graham Mertz," who is not on the roster.
+  - Routine trig_01KhBRuaTr8ixhnsdqN7ERqH checks for the official UF transcript each hour and fixes wording in place.
+- **Game story 94127b93:** the "reaction is coming" note now links to the presser story and Carlton's column (UPDATE_PUBLISH).
+- **Public check 00:47Z:** all three pages show the correct titles, bylines, og:image covers and links.
+- **No email** for any of these. The game's one email is f8ee1c12: delivered 1,804, opened 284, clicked 36, bounced 24 at 00:45Z.

@@ -259,6 +259,43 @@ Therefore the two Sep. 21 WIX_FORMS contacts with NOT_SET are **not evidence tha
 
 The major current audience question is Wix's **758 SUBSCRIBED / INACTIVE** contacts. Do not force-send or rewrite their status based on subscription alone. Wix automatically maintains deliverability state; preserve `activeContactsOnly` and current conservative gates until a documented provider-safe re-engagement path is established.
 
+## Program facts and newsroom roster (verified Sept. 26, 2026)
+
+Know these facts without re-checking them each session.
+
+**Program**
+- Florida's head coach is **Jon Sumrall** (spelled "Jon", never "John"). He is in his first season; Billy Napier is "the previous administration."
+- Offensive coordinator: Buster Faulkner. Strength coach: Rusty Whitt (spelling taken from the presser audio; confirm before print).
+- Sumrall's running themes are "we have not arrived," "wake the beast" and "not a finished product."
+- The week of Ole Miss, Sumrall said publicly that Ole Miss had proven more (16-2 over the last year) and that he would never bet against Trinidad Chambliss. Carlton's "Vegas" line refers to this. After the game he said, "It's not asleep, but it ain't fully awake yet."
+
+**2026 season to date**
+- Florida is 4-0 (2-0 SEC) after beating No. 4 Ole Miss 52-28 on Sept. 26.
+- Next game: at Missouri, Saturday, Oct. 3, 3:30 p.m. ET.
+- Key players: RB Jadan Baugh, RB Duke Clark, QB Aaron Philo, WR Eric Singleton Jr., WR Bailey Stockton, WR Vernell Brown III, TEs Amir Jackson and Luke Harpring, edge Jayden Woods (#0), LB Aaron Chiles, S DJ Coleman, KR London Montgomery, K Patrick Durkin.
+
+**Newsroom and Wix author IDs**
+- Buddy Martin: ae876af8 (editorial lead).
+- Franz Beard: c2d49068.
+- Carlton Reese: cd142328-7f90-4a6b-906a-7963f603afb0. Its display name is "Carlton Reese," so use it for his byline. His older account d64e8755 shows as "carltonreese1306." His category is "Carlton Reese" (7600ea02).
+- Eddie Gilley: 2e74ec84.
+- Loren Meadows: c6f7996f.
+- Muse: 93d9f853. Muse's pieces are drafts only; publish them only with Brenden's yes.
+- GatorBait Staff: 16433bab.
+- Chris Spears shoots the game photos and video. Credit him as "Photo by Chris Spears/GatorBait Media."
+
+**Email audience**
+- Each Sept. 25-26 send delivered to about 1,800-1,816 people (label e345fa8e, ~1,830 targeted).
+- An "~100" figure is an early open count, not the audience size.
+
+**Video**
+- Embed UF's official YouTube video (for example, a presser). Use a Ricos HTML node with `url: https://www.youtube.com/embed/<id>?rel=0`; this shape is proven live in "Before Laura Rutledge Was Laura Rutledge."
+- Do not download or re-upload UF's video.
+
+**Transcripts**
+- vidIQ `video_watch` gives usable verbatim quotes. Its speaker names are unreliable: it has labeled the QB "Graham Mertz" or "Aaron Chiles."
+- Identify each speaker from the questions and ESPN play data. Swap in UF's official ASAP transcript when Scott Burns sends it.
+
 ## Open queue
 
 1. **Provider-preview duplicate-draft incident:** VERIFIED_CLOSED. One canonical draft remains.

@@ -72,6 +72,14 @@
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="6px 26px 18px">
       <mj-column>
+        <mj-text mj-class="kicker" padding="0 0 4px">Chris Spears</mj-text>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_chris_spears" style="color:#081B35;text-decoration:none;"><span class="gb-h3">10 Thoughts From the Sidelines: Florida 52, Ole Miss 28</span></a></mj-text>
+        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Photographer Chris Spears had the best seat in The Swamp. Ten things the sideline told him about the Florida team that ran over No. 4 Ole Miss.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_chris_spears" align="left" padding="0">READ →</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="6px 26px 18px">
+      <mj-column>
         <mj-text mj-class="kicker" padding="0 0 4px">Franz Beard</mj-text>
         <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_franz_beard" style="color:#081B35;text-decoration:none;"><span class="gb-h3">Beating Ole Miss was huge, but the Gators left at least 28 points on the field</span></a></mj-text>
         <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Florida beat No. 4 Ole Miss 52-28, but Franz Beard counts at least 28 points the Gators left on the field: an overthrown Vernell Brown III, an open Amir Jackson on fourth down, a 67-yard touchdown erased by a hold, and…</mj-text>

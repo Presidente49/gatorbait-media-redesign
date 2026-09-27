@@ -20,3 +20,8 @@ Processed-thread list for the hourly "Desk inbox" routine (`trig_01TrguYhktGZ29W
 | 1a0df03e7883ab9c | no-reply@usrmailtest.com | Lacy-Less in The Swamp … | Our own test send; skipped | none |
 | 1a0deb3b8cf6812b | no-reply@usrmailtest.com | TEST — Game Day: Florida vs. Ole Miss | Our own test send; skipped | none |
 | 1a0e3efbf2d2942c | buddymartinshow@gmail.com | Column: use before 4 | Built as a Wix DRAFT (not published), 18:1xZ. Fixes: "like it was a good old days" → "the good old days"; added the missing closing quote on Sumrall's "1-0 every week." Cover: Chris Spears' Baugh first-TD dive (first use as a cover). [CHECK] items sent to Brenden: the ESPN FPI claim (favored in all but Texas and Georgia); the Tebow quote's source and date; "within 48 hours … lock for the Top 10" is now outdated (Coaches Poll has Florida No. 8). | c377ca6a-afa5-4914-a91b-526ec4f8e9cd |
+
+## YouTube (The Buddy Martin Show, UCtR8b1sKFuwaRjKy5BiXRvA)
+
+Baseline, Sept. 27 18:45Z: no Ole Miss postgame or press conference video posted yet. Already seen, so don't embed: YqxjkqSv1jk (Auburn "NO BAD WINS" short), u2dMQ4u3yNY, s9UU8a0wC7s, 8aOQqgnVr7o, sctBnF9Om7c, u1qAJBKZW7E (all pregame).
+Target for Ole Miss press conference clips: post 2bb6c273 (Sumrall press conference story).

@@ -18,8 +18,9 @@
 § [data-hook=post]>div>header::before{content:var(--gbm-kicker,"Gators Football");display:inline-block;margin:0 0 14px;padding:7px 10px 6px;background:var(--o);color:#fff;font:800 13px/1 var(--f);letter-spacing:.14em;text-transform:uppercase}
 § [data-hook=post-title]{margin:0 0 16px!important;color:#fff!important;font:800 60px/.98 var(--c)!important;letter-spacing:-.005em!important;text-transform:uppercase;text-wrap:balance}
 § h1[data-hook=post-title]{margin:0!important}
-§ [data-hook=post-title]+div{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2)}
-§ [data-hook=post-title]+div *{color:#c8d3e3!important;font:700 13px/1.3 var(--f)!important;letter-spacing:.06em;text-transform:uppercase}
+§ [data-hook=post-title]+div{display:flex;justify-content:space-between;align-items:center;gap:8px 14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2)}
+§ [data-hook=post-title]+div>div:first-child{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+§ [data-hook=post-title]+div *{white-space:nowrap;color:#c8d3e3!important;font:700 13px/1.3 var(--f)!important;letter-spacing:.06em;text-transform:uppercase}
 § [data-hook=post-title]+div [data-hook=user-name]{color:#fff!important;font-weight:800!important}
 § [data-hook=post-title]+div [data-hook=profile-link]:hover [data-hook=user-name]{color:var(--o)!important}
 § [data-hook=post-title]+div :is([data-hook=time-ago],[data-hook=time-to-read])::before{content:"";display:inline-block;width:6px;height:6px;margin:0 10px 2px 0;background:var(--o);vertical-align:middle}
@@ -88,8 +89,9 @@
 @media(max-width:750px){
 ¤ [data-hook=post-hero-image]:empty{width:100vw;margin-inline:calc(50% - 50vw)}
 § [data-hook=post]>div>header{width:100vw;box-sizing:border-box;margin:0 calc(50% - 50vw) 26px!important;padding:20px 20px 18px!important;border-top-width:5px}
-§ [data-hook=post-title]{font-size:38px!important;line-height:1!important}
-§ [data-hook=post-title]+div{gap:6px 12px}
+§ [data-hook=post-title]{font-size:34px!important;line-height:1!important}
+§ [data-hook=post-title]+div,§ [data-hook=post-title]+div>div:first-child{gap:8px 12px}
+§ [data-hook=post-title]+div .gbm-writer-alerts{margin:0!important}
 § [data-hook=post-title]+div *{font-size:12px!important}
 § [data-hook=post-description] :is(p,li){font-size:17.5px!important;line-height:1.66!important}
 § [data-hook=rcv-block-first]+div>[data-breakout]:first-child p{font-size:19.5px!important;line-height:1.5!important}

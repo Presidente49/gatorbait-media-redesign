@@ -110,3 +110,10 @@ Brenden shared a screenshot showing a duplicated GatorBait logo on the front pag
 - A guard embed already exists for exactly this ("GBM - Legacy Homepage Hard Delete v2 (prepaint bounded)", `ed3718cc`) — it scans for an exact-text `/^Today[’']?s Edition$/i` heading plus "Read Latest" and removes it, in a timed burst up to 4s after load.
 - Not fixed here: I can't tell from a headless fetch alone whether real visitors ever see it (the guard may be clearing it within the first few seconds, before a normal person looks) or whether it's a genuine persistent leak the guard is failing to catch. Fixing the underlying native Wix block is outside what the embeds API can touch, and I don't have a real browser in this session to watch the removal happen in real time.
 - Needs: a visual QC pass with a real browser (load the homepage, watch for a flash of "Today's Edition" in the first ~4 seconds) to confirm whether this is cosmetic/transient or a persistent violation needing a native Wix Editor fix.
+
+## Overnight article watch — final check, ~13:5xZ (past 12:30Z cutoff, watch ends here)
+
+- `/home/user/gatorbait`: HEAD still `62c9e55`, matches baseline. No drift.
+- Gmail: no new writer submissions/transcripts since the 10:55Z threshold. Newest relevant items are all from before 04:22Z (already actioned: Buddy's early column, the three ASAP transcripts, three Outlook bounce notices for a full mailbox, a TinyFish low-balance notice, a Google Account Recovery request — all previously flagged, no new action).
+- Wix drafts: top 15 by most-recently-updated are all PUBLISHED. No new or pending drafts, including Franz's `d07e9390` (published, already tag-swept).
+- Stopping the 30-minute re-arm per the routine's own end condition (past 12:30Z).

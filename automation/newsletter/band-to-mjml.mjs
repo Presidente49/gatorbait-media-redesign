@@ -8,6 +8,9 @@
 //        [--stories deploy/wix-served/home-fallback.json] [--campaign postgame_ole_miss_2026_09_26] [--out newsletter/X.mjml]
 //
 // --stories is a JSON file in the homepage-fallback shape ({posts:[{title,excerpt,url,author,image:{src,alt}}]}).
+// Wix sanitizer (Sept. 27): on save it strips class/style from <span>, <a> and <td> but keeps <div style>.
+// Styled text must be a <div style> (see newsletter/2026-09-27 v4 draft 629bde6d); TODO: port the headline
+// spans and the venue cell to divs here before the next issue.
 // Compliance/revenue (Sept. 27): every issue carries the business postal address (CAN-SPAM) and the All Access
 // CTA; keep the CTA copy matched to the live /pricing-plans/subscribe page (7-day trial, $9.99/mo, $99/yr).
 // House rule: at most 2 editorial photos per issue, real credited photos only (graphics and charts stay text-only).

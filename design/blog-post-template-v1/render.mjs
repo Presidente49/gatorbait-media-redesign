@@ -34,6 +34,7 @@ for (const off of [false, true]) for (const w of [390, 1366]) {
       scrollW: document.documentElement.scrollWidth, clientW: document.documentElement.clientWidth,
       cls: +window.__cls.toFixed(4),
       heroH: Math.round(q('[data-hook=post-hero-image]').getBoundingClientRect().height),
+      h1Top: Math.round(h1.getBoundingClientRect().top), panel: (r => [Math.round(r.left), Math.round(r.width), Math.round(r.height)])(q('[data-hook=post]>div>header').getBoundingClientRect()), coverAfter: getComputedStyle(q('[data-hook=post]>div>header'), '::after').backgroundImage.slice(0, 60),
       titleFont: getComputedStyle(h1).fontFamily.split(',')[0] + ' ' + getComputedStyle(h1).fontWeight + ' ' + getComputedStyle(h1).fontSize,
       bodyFont: getComputedStyle(q('#viewer-p7')).fontSize,
       stats: document.querySelectorAll('[data-gbm-stat]').length,

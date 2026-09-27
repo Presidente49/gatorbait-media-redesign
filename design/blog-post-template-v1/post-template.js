@@ -3,13 +3,14 @@
 if(window.__GBM_POST_TPL__)return;window.__GBM_POST_TPL__=1;
 // Edit this block for the next game. The strip hides itself after `until`.
 var NEXT={opp:'at Missouri',when:'Sat., Oct. 3 \u00b7 3:30 p.m. ET',where:'Faurot Field, Columbia, Mo.',href:'/',cta:'Latest news',until:'2026-10-03T22:00:00Z'};
-var KICK=[[/commit|recruit|signee|signing/,'Recruiting'],[/basketball|hoops/,'Basketball'],[/baseball|softball/,'Diamond Gators'],[/press-conference|presser|postgame/,'Postgame'],[/column|reese-|buddy-martin/,'Column']];
+var KICK=[[/commit|recruit|signee|signing|visit|offer|prospect/,'Recruiting'],[/basketball|hoops/,'Basketball'],[/baseball|softball/,'Diamond Gators'],[/postgame/,'Postgame'],[/press-conference|presser/,'Press conference'],[/column|reese|buddy-martin|franz|chipper|opinion/,'Column'],[/breaking|injur|out-for|ruled-out/,'Breaking'],[/final|beat|rout|win-over|recap/,'Game story'],[/preview|prediction|keys-to|how-to-watch/,'Preview']];
 function isPost(){return /^\/post\//.test(location.pathname||'');}
 function vars(){
  if(!isPost())return;
- var k='Gators Football',s=location.pathname,i,hero='';
- try{var ld=document.querySelectorAll('script[type="application/ld+json"]');for(i=0;i<ld.length;i++){var j=JSON.parse(ld[i].textContent||'{}');var sec=j.articleSection||(j['@graph']&&j['@graph'][0]&&j['@graph'][0].articleSection);if(sec){k=String(Array.isArray(sec)?sec[0]:sec);s='';break;}}}catch(e){}
- for(i=0;s&&i<KICK.length;i++)if(KICK[i][0].test(s)){k=KICK[i][1];break;}
+ // Wix renders no category on post pages and the News SEO JSON-LD defaults every post to
+ // "Florida Gators", so the kicker comes from the URL slug (first match wins).
+ var k='Gators Football',s=location.pathname.toLowerCase(),i,hero='';
+ for(i=0;i<KICK.length;i++)if(KICK[i][0].test(s)){k=KICK[i][1];break;}
  var m=document.querySelector('meta[property="og:image"]');
  if(m&&m.content)hero=m.content.replace(/w_\d+,h_\d+/,'w_1600,h_900').replace(/["\\]/g,function(c){return '%'+c.charCodeAt(0).toString(16);});
  var css=':root{--gbm-kicker:'+JSON.stringify(k.slice(0,40))+(hero?';--gbm-hero:url("'+hero+'")':'')+'}';

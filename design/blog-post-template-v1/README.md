@@ -1,4 +1,32 @@
-# GatorBait post template v1 (prototype, not deployed)
+# GatorBait post template v1 (LIVE since 2026-09-27)
+
+**Live:** embed `14a887e3-38ea-4258-ae0b-7d19cf9feead`, "GBM - Post template v1 (headline first, bold article pages)"
+- Settings: HEAD, **ESSENTIAL**, loadOnce false, enabled, revision 1.
+- Size: 14,595 chars, fingerprint 3308260479.
+- Brenden approved the deploy on 2026-09-27 ("Deploy … optimize").
+- **Rollback:** disable `14a887e3`. That's one toggle, and posts return to the stock look at once. Every Update call must re-send category ESSENTIAL.
+- **Verified live on 2026-09-27** with a browser at 982px wide, on the Sumrall presser post:
+  - the kicker reads "POSTGAME";
+  - the headline is white and uppercase on navy;
+  - the cover image sits **below** the headline and byline, and no cover shows above it;
+  - there is no horizontal overflow;
+  - the "Up next: at Missouri" strip renders;
+  - Related Posts is relabeled "Related stories".
+- Not yet verified live: a phone-width view, a post with a quote block, and a post with a "By the numbers" section.
+
+**Changes made before deploying, against the prototype below:**
+1. **Headline first.** Wix renders its hero section empty. Instead, the cover (from og:image) is drawn as the 16:9 bottom of the navy headline panel (`header::after`). So:
+   - the H1 is on the first screen (y=125 at 390px, where it used to be below the cover);
+   - the cover and panel have the same width;
+   - the image box is still reserved at first paint.
+
+   If Wix ever fills its own hero, that one shows and ours hides.
+2. **Kicker from the URL slug only.** Wix shows no categories on post pages. The News SEO embed `4d3ab24a` sets `articleSection` to "Florida Gators" for every post, so reading JSON-LD would have labeled everything the same. The rules now cover Recruiting, Basketball, Diamond Gators, Postgame, Press conference, Column, Breaking, Game story and Preview, with a default of Gators Football. They were tested against 10 real slugs.
+3. **Font stays on jsDelivr.** `pageFilter` is read-only in the embeds API, so a site-wide preload would cost every page. The @font-face only downloads on pages that use it, and jsDelivr is already connected site-wide by `0709a98e`.
+
+---
+
+Original prototype notes:
 
 This prototype restyles Wix Blog article pages (`/post/...`) with a bold sports-news template. It targets the real Wix post DOM and ships as one Wix custom embed. Nothing here has been sent to Wix, and nothing has been committed.
 

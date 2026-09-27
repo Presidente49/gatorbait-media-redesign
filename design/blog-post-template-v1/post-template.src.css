@@ -9,10 +9,15 @@
 §{--o:#fa4616;--n:#081b35;--b:#0021a5;--k:#1b2638;--c:"Barlow Condensed","Barlow",Arial,sans-serif;--f:"Barlow",Arial,sans-serif;background:#fff!important}
 § [data-hook=post]{background:transparent!important;border:0!important;box-shadow:none!important}
 
-/* ---- Hero: cover image (og:image via --gbm-hero), reserved at first paint = no jump ---- */
-¤ [data-hook=post-hero-image]:empty{display:block;aspect-ratio:16/9;margin:0;background:var(--n) var(--gbm-hero,none) center/cover no-repeat}
+/* ---- Headline first, cover second. Wix renders its hero section empty (blog cover display is off),
+   so the cover (og:image via --gbm-hero) is drawn as the bottom of the headline panel instead:
+   the H1 is on the first screen, the cover lines up with the panel, and its 16:9 box is reserved
+   at first paint = no jump. If Wix ever fills its own hero, that one shows and ours steps aside. ---- */
+¤ [data-hook=post-hero-image]:empty{display:none}
+§ [data-hook=post]>div>header::after{content:"";display:block;aspect-ratio:16/9;margin:24px -40px -24px;background:#0d2447 var(--gbm-hero,none) center/cover no-repeat}
+§ [data-hook=post-hero-image]:not(:empty)~div>header::after{display:none}
 
-/* ---- Headline panel: stacked under the hero, never over it (covers carry baked-in text) ---- */
+/* ---- Headline panel ---- */
 § [data-hook=post]>div>header{position:relative;z-index:1;margin:0 0 36px!important;padding:28px 40px 24px!important;background:var(--n)!important;border-top:6px solid var(--o)}
 § [data-hook=post]>div>header>div{padding:0!important;margin:0!important;max-width:none!important}
 § [data-hook=post]>div>header::before{content:var(--gbm-kicker,"Gators Football");display:inline-block;margin:0 0 14px;padding:7px 10px 6px;background:var(--o);color:#fff;font:800 13px/1 var(--f);letter-spacing:.14em;text-transform:uppercase}
@@ -87,7 +92,7 @@
 
 /* ---- Phone (Wix mobile layout <=750px) ---- */
 @media(max-width:750px){
-¤ [data-hook=post-hero-image]:empty{width:100vw;margin-inline:calc(50% - 50vw)}
+§ [data-hook=post]>div>header::after{margin:18px -20px -18px}
 § [data-hook=post]>div>header{width:100vw;box-sizing:border-box;margin:0 calc(50% - 50vw) 26px!important;padding:20px 20px 18px!important;border-top-width:5px}
 § [data-hook=post-title]{font-size:34px!important;line-height:1!important}
 § [data-hook=post-title]+div,§ [data-hook=post-title]+div>div:first-child{gap:8px 12px}

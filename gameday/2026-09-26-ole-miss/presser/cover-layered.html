@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BarlowC;font-weight:900;font-style:normal;src:url(file:///tmp/claude-0/-home-user/fed92d52-1701-51e0-a673-f020aa6a1fc8/scratchpad/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-900-normal.woff2)}
+@font-face{font-family:BarlowC;font-weight:900;font-style:italic;src:url(file:///tmp/claude-0/-home-user/fed92d52-1701-51e0-a673-f020aa6a1fc8/scratchpad/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-900-italic.woff2)}
+@font-face{font-family:Barlow;font-weight:800;src:url(file:///tmp/claude-0/-home-user/fed92d52-1701-51e0-a673-f020aa6a1fc8/scratchpad/node_modules/@fontsource/barlow/files/barlow-latin-800-normal.woff2)}
+@font-face{font-family:Barlow;font-weight:600;src:url(file:///tmp/claude-0/-home-user/fed92d52-1701-51e0-a673-f020aa6a1fc8/scratchpad/node_modules/@fontsource/barlow/files/barlow-latin-600-normal.woff2)}
+@font-face{font-family:Barlow;font-weight:600;font-style:italic;src:url(file:///tmp/claude-0/-home-user/fed92d52-1701-51e0-a673-f020aa6a1fc8/scratchpad/node_modules/@fontsource/barlow/files/barlow-latin-600-italic.woff2)}
+html,body{margin:0}
+.c{position:relative;width:1920px;height:1080px;overflow:hidden;background:#06152b;color:#fff;font-family:Barlow,sans-serif}
+/* 1 atmosphere */
+.p1{position:absolute;inset:-60px;background:url(celebration-helmet-frame.jpg) 50% 60%/cover;filter:blur(24px) saturate(1.2) brightness(.40)}
+/* 2 editorial texture: halftone + grain */
+.p2{position:absolute;inset:0;background:radial-gradient(rgba(255,255,255,.10) 1.2px,transparent 1.6px) 0 0/9px 9px;mix-blend-mode:overlay;opacity:.7}
+.p2b{position:absolute;inset:0;opacity:.16;mix-blend-mode:overlay;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+/* 3 color plane (left, mirrored from the game master) */
+.p3{position:absolute;top:0;bottom:0;left:-220px;width:1340px;background:linear-gradient(80deg,rgba(8,21,43,.97) 45%,rgba(0,33,165,.92));transform:skewX(-9deg);transform-origin:bottom left;border-right:10px solid #fa4616;box-shadow:30px 0 60px rgba(0,0,0,.45)}
+/* 4 hero */
+.p4{position:absolute;right:70px;top:70px;width:640px;height:940px;background:url(celebration-helmet-frame.jpg) 50% 55%/cover;box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 6px #fff}
+.p4:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,21,43,0) 62%,rgba(6,21,43,.8))}
+.cap{position:absolute;right:96px;bottom:92px;text-align:right;font:800 22px/1.25 Barlow;letter-spacing:.12em;text-transform:uppercase;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.cap span{display:block;color:#ffb08c;font-size:18px}
+/* 5 secondary depth */
+.p5{position:absolute;right:590px;top:96px;width:430px;height:250px;background:url(photos/baugh-first-td-dive-q1.jpg) 56% 60%/cover;box-shadow:0 26px 60px rgba(0,0,0,.65),0 0 0 6px #fff;border-bottom:10px solid #fa4616}
+.p5 b{position:absolute;right:0;top:0;background:#081b35;color:#fff;font:800 20px/1 Barlow;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px 9px}
+/* 6 information */
+.p6{position:absolute;left:90px;top:300px;width:1000px}
+.tag{display:inline-flex;align-items:center;gap:22px;background:#fa4616;font:900 44px/1 BarlowC;letter-spacing:.22em;padding:12px 26px 9px 28px;text-transform:uppercase}
+.tag i{font-style:normal;color:#081b35;letter-spacing:.14em}
+.hd{margin-top:26px;font:italic 900 196px/.84 BarlowC;text-transform:uppercase;letter-spacing:-.01em;white-space:nowrap}
+.hd2{font:italic 900 96px/.9 BarlowC;text-transform:uppercase;white-space:nowrap}
+.hd2 span{color:#fa4616}
+.q1{margin-top:28px;font:italic 900 150px/.86 BarlowC;text-transform:uppercase;white-space:nowrap}
+.q2{font:italic 900 150px/.86 BarlowC;text-transform:uppercase;white-space:nowrap}
+.q2 span{color:#fa4616}
+.att{margin-top:30px;padding-left:24px;border-left:8px solid #fa4616;font:800 34px/1.1 Barlow;letter-spacing:.1em;text-transform:uppercase;color:#e6edf6}
+.pull{margin-top:34px;padding-left:24px;border-left:8px solid #fa4616;font:italic 600 34px/1.25 Barlow;color:#e6edf6;width:880px}
+.score{margin-top:26px;font:900 40px/1 BarlowC;letter-spacing:.1em;text-transform:uppercase;color:#aebbd0}
+.score b{color:#fff}
+/* 7 identity */
+.p7{position:absolute;left:90px;top:64px;width:300px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5))}
+/* 8 utility */
+.p8{position:absolute;left:0;right:0;bottom:0;height:62px;background:#fff;color:#081b35;display:flex;align-items:center;justify-content:space-between;padding:0 70px;font:900 28px/1 BarlowC;letter-spacing:.12em;text-transform:uppercase}
+.p8 i{font-style:normal;color:#fa4616}
+</style></head><body><div class="c">
+<div class="p1"></div><div class="p2"></div><div class="p2b"></div><div class="p3"></div>
+<div class="p4"></div><div class="cap">The Gators celebrate with the band<span>Photo: Chris Spears / GatorBait Media</span></div>
+<div class="p5"><b>Baugh: &ldquo;Our confidence is high&rdquo;</b></div>
+<div class="p6"><div class="tag">Postgame <i>Presser</i></div>
+<div class="q1">&ldquo;It ain&rsquo;t fully</div>
+<div class="q2">awake <span>yet&rdquo;</span></div>
+<div class="att">Jon Sumrall &middot; Florida head coach</div>
+<div class="score"><b>Florida 52</b> &middot; No. 4 Ole Miss 28 &middot; 4-0</div></div>
+<img class="p7" src="photos/gatorbait-logo.webp" alt="">
+<div class="p8"><span>GatorBaitMedia<i>.com</i></span><span>Postgame press conference <i>&middot;</i> Sept. 26, 2026</span></div>
+</div></body></html>

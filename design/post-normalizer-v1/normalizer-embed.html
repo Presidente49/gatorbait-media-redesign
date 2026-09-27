@@ -38,7 +38,7 @@ var nx=paras[i+1];if(nx&&/^(www\.)?gatorbaitmedia\.com$/i.test(txt(nx))){nx.setA
 if(p.hasAttribute('data-gbm-meta'))return;
 if(sz>=30&&t.length<=120){p.setAttribute('data-gbm-dek','');return;}
 if(sz>=22){p.setAttribute('data-gbm-lede','');return;}
-if(b&&t.length<=60&&t.split(' ').length<=9&&!/[.!?,;:"”’)]$/.test(t)&&!/^\d/.test(t))p.setAttribute('data-gbm-h','');
+if(unbold&&b&&t.length<=60&&t.split(' ').length<=9&&!/[.!?,;:"”’)]$/.test(t)&&!/\d/.test(t))p.setAttribute('data-gbm-h','');
 });
 if(metaEnd)metaEnd.setAttribute('data-gbm-meta-last','');
 var n=d.querySelectorAll('[data-gbm-empty],[data-gbm-h],[data-gbm-meta],[data-gbm-dek],[data-gbm-lede]').length;

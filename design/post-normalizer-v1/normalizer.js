@@ -42,7 +42,8 @@ function run(){
   if(sz>=30&&t.length<=120){p.setAttribute('data-gbm-dek','');return;}
   if(sz>=22){p.setAttribute('data-gbm-lede','');return;}
   // Short bold line with no sentence punctuation = a subhead the writer made by hand.
-  if(b&&t.length<=60&&t.split(' ').length<=9&&!/[.!?,;:"”’)]$/.test(t)&&!/^\d/.test(t))p.setAttribute('data-gbm-h','');
+  // Invented subheads only on all-bold pasted posts (Buddy's case); a line with a number is data (a score), never a subhead.
+ if(unbold&&b&&t.length<=60&&t.split(' ').length<=9&&!/[.!?,;:"”’)]$/.test(t)&&!/\d/.test(t))p.setAttribute('data-gbm-h','');
  });
  if(metaEnd)metaEnd.setAttribute('data-gbm-meta-last','');
  var n=d.querySelectorAll('[data-gbm-empty],[data-gbm-h],[data-gbm-meta],[data-gbm-dek],[data-gbm-lede]').length;

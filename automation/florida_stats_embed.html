@@ -28,7 +28,8 @@ html:has(#gbm-stats-page) #SITE_CONTAINER,html:has(#gbm-stats-page) #masterPage,
 #gbm-stats-page th:first-child,#gbm-stats-page td:first-child{text-align:left;padding-left:0}
 #gbm-stats-page th:last-child,#gbm-stats-page td:last-child{padding-right:0}
 #gbm-stats-page thead th{font:700 12px/1.3 Barlow,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#586475;border-bottom:2px solid #11274a}
-#gbm-stats-page tbody th{font-weight:600;color:#10233f}
+#gbm-stats-page tbody th{font-weight:600;color:#10233f;white-space:normal;min-width:8.5em}
+#gbm-stats-page .fs-sr{position:absolute;left:-9999px}
 #gbm-stats-page .fs-log td:nth-child(2),#gbm-stats-page .fs-log th:nth-child(2){text-align:left;white-space:normal}
 #gbm-stats-page .fs-log td:nth-child(3){font-weight:700}
 #gbm-stats-page .fs-log .fs-up td{color:#586475}
@@ -44,7 +45,7 @@ if(window.__GBM_FLSTATS_UI__)return;window.__GBM_FLSTATS_UI__=1;
 var H=document.documentElement.classList,BOX='https://www.espn.com/college-football/game/_/gameId/';
 function on(){return /^\/florida-football-stats\/?$/.test(location.pathname||'')&&!!window.__GBM_FLSTATS__}
 function e(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function table(cls,cap,head,rows){return'<div class="fs-x"><table class="'+cls+'"><caption class="fs-sr" style="position:absolute;left:-9999px">'+e(cap)+'</caption><thead><tr>'+head.map(function(h){return'<th scope="col">'+e(h)+'</th>'}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table></div>'}
+function table(cls,cap,head,rows){return'<div class="fs-x"><table class="'+cls+'"><caption class="fs-sr">'+e(cap)+'</caption><thead><tr>'+head.map(function(h){return'<th scope="col">'+e(h)+'</th>'}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table></div>'}
 function lines(rows){return rows.map(function(r){return'<tr><th scope="row">'+e(r[0])+'</th>'+r.slice(1).map(function(c){return'<td>'+e(c)+'</td>'}).join('')+'</tr>'})}
 function game(g){var res;
 if(g.r)res='<a href="'+BOX+encodeURIComponent(g.id)+'" target="_blank" rel="noopener" aria-label="'+e((g.r==='W'?'Won ':'Lost ')+g.s+', ESPN box score')+'">'+e(g.r+' '+g.s)+'</a>';
@@ -53,7 +54,7 @@ return'<tr'+(g.r?'':' class="fs-up"')+'><td>'+e(g.d)+'</td><td>'+e(g.o)+(g.n?'<s
 function html(){var S=window.__GBM_FLSTATS__,L=S.lead||{},out=[];
 out.push('<header><p class="fs-kick">Florida football · '+e(S.season)+' season</p><h1 id="fs-h">Florida Gators stats</h1><p class="fs-meta">'+(S.through?'Through '+e(S.through)+' · ':'')+'Updated '+e(S.updatedLabel)+'</p></header>');
 if(S.tiles)out.push('<div class="fs-tiles">'+S.tiles.map(function(t){return'<div class="fs-tile"><span>'+e(t[0])+'</span><b>'+e(t[1])+'</b><small>'+e(t[2])+'</small></div>'}).join('')+'</div>');
-out.push('<div class="fs-row"><section aria-labelledby="fs-g"><h2 id="fs-g">Game by game</h2>'+table('fs-log','Florida schedule and results',['Date','Opponent','Result','Record'],S.games.map(game))+'</section>');
+out.push('<div class="fs-row"><section aria-labelledby="fs-g"><h2 id="fs-g">Game by game</h2>'+table('fs-log','Florida schedule and results',['Date','Opponent','Result','Record'],S.games.map(game))+'<p class="fs-note">Kickoff times are Eastern. Each result links to its ESPN box score.</p></section>');
 if(S.teamRows)out.push('<section aria-labelledby="fs-t"><h2 id="fs-t">Team stats</h2>'+table('fs-team','Florida and opponents season team statistics',['','Florida','Opponents'],lines(S.teamRows))+'</section>');
 out.push('</div>');
 if(L.rush){var b=[['pass','Passing',['C-Att','Yds','TD','Int']],['rush','Rushing',['Car','Yds','Avg','TD','Long']],['rec','Receiving',['Rec','Yds','Avg','TD','Long']],['def','Defense',['Tkl','TFL','Sacks','Int','PD']],['kick','Kicking',['FG','Long','XP','Pts']]];

@@ -384,7 +384,7 @@ def build_snapshot(season, events, boxes_by_id, schedule_team):
             win = g['us'] > g['them']; run[0 if win else 1] += 1
             row.update({'r': 'W' if win else 'L', 's': f"{g['us']}-{g['them']}", 'rec': f'{run[0]}-{run[1]}'})
         else:
-            row.update({'t': ap_time(d) + ' ET' if g['timeValid'] else 'TBA', 'tv': g['tv']})
+            row.update({'t': ap_time(d) if g['timeValid'] else 'TBA', 'tv': g['tv']})
         log.append(row)
     data = {'v': SCHEMA, 'season': season, 'team': 'Florida', 'games': log, 'finals': [g['id'] for g in finals]}
     if finals:

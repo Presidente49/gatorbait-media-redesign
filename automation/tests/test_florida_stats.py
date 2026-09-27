@@ -54,7 +54,7 @@ class SnapshotTests(unittest.TestCase):
         self.assertEqual(log[1]['o'], 'at No. 4 Beta Tech')
         self.assertEqual(log[1]['s'], '21-24')
         self.assertEqual(log[1]['rec'], '1-1')
-        self.assertEqual((log[2]['t'], log[2]['tv']), ('3:30 p.m. ET', 'ABC'))
+        self.assertEqual((log[2]['t'], log[2]['tv']), ('3:30 p.m.', 'ABC'))
         self.assertEqual(self.s['through'], 'Sept. 12 at Beta Tech')
 
     def test_team_rows_sum_box_scores(self):

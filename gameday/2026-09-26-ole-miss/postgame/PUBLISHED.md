@@ -87,3 +87,25 @@ Cover changed to the thumbnail "Swamp Party" FINAL 52-28 (d3cfa5_a1b1d9987b2a431
   - Baugh "I tell the guys, I'm trying to put up 70, trying to put up 60."
 - These quotes already matched word for word: Baugh "I feel that no defense in the country could stop us from putting up points", Baugh "I was just so proud of him", and Philo "Makes my job pretty easy. I didn't have to do a whole lot tonight, to be honest."
 - Every quote in the story is now checked against the official transcripts. Routine trig_01KhBRuaTr8ixhnsdqN7ERqH was deleted.
+
+## Update 01:55-02:02Z: covers v02, band rev36, Woods Chipper live, scheduled work
+- **Cover audit:** four covers shared the diagonal template, and the Baugh inset appeared 3 times.
+  - Carlton column: new cover v02 d3cfa5_a0dd1ffb…, duotone editorial style using the frame at 0:00.
+  - Presser: new cover v02 d3cfa5_eee33706…, orange quote card with a strip of three frames.
+  - Both swapped in place (UPDATE_PUBLISH) and confirmed live via og:image. LESSONS #40 added.
+- **Homepage band 96ef5a04 rev35→36** (fp 207140764→3338074962, 14,989 chars, ESSENTIAL):
+  - headline "FINAL: Florida 52, No. 4 Ole Miss 28"
+  - note: first top-five win since 2020; next at Missouri
+  - 2 update lines
+  - 3 story links: game story, presser, Carlton
+  - 5-row stat tracker and 4 leaders
+  - the pregame roster PDF button removed
+  - expiry extended to 2026-09-28T04:00Z
+  - A live browser pass (TinyFish automation) shows every element.
+- **Woods Chipper:** published 01:58Z, post 8d3c0eec, /post/woods-chipper-florida-defense-special-teams-ole-miss.
+  - GatorBait Staff, Gator Football. Stat-card cover d3cfa5_1546cc59…, a new light layout family with photo frame f03.
+  - Every quote matches ASAP 171203/171204.
+  - "31 points" and "0-for-5 on third down in the first half" are GatorBait counts from the ESPN play-by-play; see woods-chipper/SOURCES.md. No email.
+- **CFB Saturday wrap:** drafted in cfb-wrap/ with 22 games, 6 still in progress at the draft. Scheduled to refresh and publish at 05:15Z (trig_01CnjeWyu2EENbzZp6SJVJCR).
+- **Chomp Up the Charts (AP poll):** scheduled for 18:04Z Sunday (trig_01NyNPP9mzWdG49zXnxPJp1M).
+- **Postgame Wrap newsletter:** newsletter/2026-09-27-postgame-wrap-ole-miss.mjml passes every gate (strict compile, check-links, unique images, stack-qc, 390/1000). Not uploaded or sent; waiting on Brenden's go.

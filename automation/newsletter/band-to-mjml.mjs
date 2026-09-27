@@ -9,8 +9,7 @@
 //
 // --stories is a JSON file in the homepage-fallback shape ({posts:[{title,excerpt,url,author,image:{src,alt}}]}).
 // Wix sanitizer (Sept. 27): on save it strips class/style from <span>, <a> and <td> but keeps <div style>.
-// Styled text must be a <div style> (see newsletter/2026-09-27 v4 draft 629bde6d); TODO: port the headline
-// spans and the venue cell to divs here before the next issue.
+// Styled text is a <div style> (hd() below).
 // Compliance/revenue (Sept. 27): every issue carries the business postal address (CAN-SPAM) and the All Access
 // CTA; keep the CTA copy matched to the live /pricing-plans/subscribe page (7-day trial, $9.99/mo, $99/yr).
 // House rule: at most 2 editorial photos per issue, real credited photos only (graphics and charts stay text-only).
@@ -50,22 +49,42 @@ const team = (t, color) => `
         <td style="padding:10px 4px;text-align:center;"><div style="font:800 15px/1.2 Inter,Arial,sans-serif;color:${color};">${esc(t.name)}</div><div style="font:700 10px/1.4 Inter,Arial,sans-serif;color:#9EADC1;letter-spacing:1px;">${t.rank ? 'NO. ' + esc(t.rank) + ' · ' : ''}${esc(t.record)}</div><div style="font:700 44px/1.1 Newsreader,Georgia,serif;color:#FFFFFF;">${t.score == null ? '–' : esc(t.score)}</div></td>`;
 
 const usedImg = new Set();
-const cards = (g.links || []).filter(l => /^\/post\//.test(l[1])).map((l, i) => {
+// Wix's sanitizer strips class/style from <span>, <a> and <td> but keeps <div style>, so styled text is a div.
+const hd = (px, lh, col, t) => `<div style="font:700 ${px}px/${lh} Newsreader,Georgia,serif;color:${col};">${t}</div>`;
+const items = (g.links || []).filter(l => /^\/post\//.test(l[1])).map(l => {
   const s = stories.find(p => pathOf(p.url) === l[1]);
   const href = utm(l[1], 'band_' + slug(l[0]));
   const img = s && s.image && s.image.src && /\bphotos?\b/i.test(s.image.alt || '') && !/graphic|stat card|charted/i.test(s.image.alt || '') && !usedImg.has(s.image.src) && usedImg.size < 2 ? s.image.src : '';
   if (img) usedImg.add(img);
-  return `
+  return { l, s, href, img };
+});
+// Magazine layout (Brenden, Sept. 27: "long and skinny"): the first two stories run full width with photos;
+// the rest pair up in two columns on desktop and stack on phones, with short excerpts.
+const full = (it, i) => `
     <mj-section background-color="#FFFFFF" padding="${i ? '6px' : '22px'} 26px 18px">
-      <mj-column>${img ? `
-        <mj-image src="${esc(img)}" alt="${esc(s.image.alt || s.title)}" href="${attr(href)}" padding="0 0 12px" />` : ''}
-        <mj-text mj-class="kicker" padding="0 0 4px">${esc(l[0])}</mj-text>
-        <mj-text padding="0 0 6px"><a href="${attr(href)}" style="color:#081B35;text-decoration:none;"><span class="${i ? 'gb-h3' : 'gb-h2'}">${esc(s ? s.title : l[0])}</span></a></mj-text>${s && s.excerpt ? `
-        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">${esc(trim(s.excerpt))}</mj-text>` : ''}
-        <mj-button href="${attr(href)}" align="left" padding="0">READ →</mj-button>
+      <mj-column>${it.img ? `
+        <mj-image src="${esc(it.img)}" alt="${esc(it.s.image.alt || it.s.title)}" href="${attr(it.href)}" padding="0 0 12px" />` : ''}
+        <mj-text mj-class="kicker" padding="0 0 4px">${esc(it.l[0])}</mj-text>
+        <mj-text padding="0 0 6px"><a href="${attr(it.href)}" style="color:#081B35;text-decoration:none;">${hd(i ? 21 : 24, 1.15, '#081B35', esc(it.s ? it.s.title : it.l[0]))}</a></mj-text>${it.s && it.s.excerpt ? `
+        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">${esc(trim(it.s.excerpt, 170))}</mj-text>` : ''}
+        <mj-button href="${attr(it.href)}" align="left" padding="0">READ →</mj-button>
       </mj-column>
     </mj-section>`;
-}).join('');
+const half = it => `
+      <mj-column width="50%" padding="0 8px 18px" vertical-align="top">
+        <mj-text mj-class="kicker" padding="0 0 4px">${esc(it.l[0])}</mj-text>
+        <mj-text padding="0 0 6px"><a href="${attr(it.href)}" style="color:#081B35;text-decoration:none;">${hd(18, 1.18, '#081B35', esc(it.s ? it.s.title : it.l[0]))}</a></mj-text>${it.s && it.s.excerpt ? `
+        <mj-text font-size="13px" line-height="1.5" color="#4B5666" padding="0 0 8px">${esc(trim(it.s.excerpt, 110))}</mj-text>` : ''}
+        <mj-button href="${attr(it.href)}" align="left" padding="0" font-size="11px" inner-padding="9px 14px">READ →</mj-button>
+      </mj-column>`;
+const rest = items.slice(2);
+let grid = '';
+for (let k = 0; k < rest.length; k += 2) grid += `
+    <mj-section background-color="#FFFFFF" padding="${k ? '0' : '8px'} 18px 4px">${half(rest[k])}${rest[k + 1] ? half(rest[k + 1]) : `
+      <mj-column width="50%" padding="0 8px"></mj-column>`}
+    </mj-section>`;
+const cards = items.slice(0, 2).map(full).join('') + (rest.length ? `
+    <mj-section background-color="#FFFFFF" padding="6px 26px 0"><mj-column><mj-divider border-color="#E1E4EA" border-width="1px" padding="0 0 10px" /><mj-text mj-class="kicker" padding="0">MORE FROM THE SWAMP</mj-text></mj-column></mj-section>` + grid : '');
 
 const nextArg = arg('--next', '');
 const [nextHead, nextBody] = nextArg.split('|');
@@ -73,7 +92,7 @@ const lookAhead = nextArg ? `
     <mj-section background-color="#FA4616" padding="20px 26px">
       <mj-column>
         <mj-text color="#FFFFFF" font-size="10px" font-weight="900" letter-spacing="1.9px" padding="0 0 6px">LOOK AHEAD</mj-text>
-        <mj-text color="#FFFFFF" padding="0 0 6px"><span class="gb-h2">${esc(nextHead)}</span></mj-text>${nextBody ? `
+        <mj-text color="#FFFFFF" padding="0 0 6px">${hd(24, 1.14, '#FFFFFF', esc(nextHead))}</mj-text>${nextBody ? `
         <mj-text color="#FFF1EA" font-size="14px" padding="0">${esc(nextBody)}</mj-text>` : ''}
       </mj-column>
     </mj-section>` : '';
@@ -109,9 +128,9 @@ const mjml = `<mjml lang="en" dir="ltr">
       <mj-column>
         <mj-text align="center" color="#FA7A45" font-size="10px" font-weight="900" letter-spacing="2px" padding="0 0 4px">${label} · ${esc(g.when)}</mj-text>
         <mj-table padding="0" width="100%"><tr>${team(g.away, '#D5DFEC')}
-        <td style="padding:10px 4px;text-align:center;color:#9EADC1;font:700 11px/1.4 Inter,Arial,sans-serif;">${esc(g.venue)}</td>${team(g.home, '#FFFFFF')}
+        <td><div style="font:700 11px/1.4 Inter,Arial,sans-serif;color:#C8D3E3;text-align:center;padding:10px 4px;">${esc(g.venue)}</div></td>${team(g.home, '#FFFFFF')}
         </tr></mj-table>
-        <mj-text align="center" color="#FFFFFF" padding="8px 0 4px"><span class="gb-h1">${esc(g.headline)}</span></mj-text>
+        <mj-text align="center" color="#FFFFFF" padding="8px 0 4px">${hd(32, 1.08, '#FFFFFF', esc(g.headline))}</mj-text>
         <mj-text align="center" color="#D5DFEC" font-size="15px" padding="0 0 16px">${esc(g.note)}</mj-text>
       </mj-column>
     </mj-section>${tracker ? `
@@ -130,7 +149,7 @@ const mjml = `<mjml lang="en" dir="ltr">
     <mj-section background-color="#081B35" padding="22px 26px">
       <mj-column>
         <mj-text color="#FA7A45" font-size="10px" font-weight="900" letter-spacing="1.9px" padding="0 0 6px">GATORBAIT ALL ACCESS</mj-text>
-        <mj-text color="#FFFFFF" padding="0 0 6px"><span class="gb-h2">Get every GatorBait story, all season.</span></mj-text>
+        <mj-text color="#FFFFFF" padding="0 0 6px">${hd(24, 1.14, '#FFFFFF', 'Get every GatorBait story, all season.')}</mj-text>
         <mj-text color="#D5DFEC" font-size="14px" padding="0 0 14px">Start with a 7-day free trial, then $9.99 a month or $99 a year. Independent Florida Gators journalism from Buddy Martin, Franz Beard and the GatorBait staff.</mj-text>
         <mj-button href="${attr(utm('/pricing-plans/subscribe', 'all_access_cta'))}" align="left" padding="0">START FREE TRIAL →</mj-button>
       </mj-column>

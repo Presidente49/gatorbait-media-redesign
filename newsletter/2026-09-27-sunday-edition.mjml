@@ -28,10 +28,10 @@
         <mj-text align="center" color="#FA7A45" font-size="10px" font-weight="900" letter-spacing="2px" padding="0 0 4px">FINAL · Saturday, Sept. 26 · 3:30 p.m. ET · ABC</mj-text>
         <mj-table padding="0" width="100%"><tr>
         <td style="padding:10px 4px;text-align:center;"><div style="font:800 15px/1.2 Inter,Arial,sans-serif;color:#D5DFEC;">Ole Miss</div><div style="font:700 10px/1.4 Inter,Arial,sans-serif;color:#9EADC1;letter-spacing:1px;">NO. 4 · 3-1</div><div style="font:700 44px/1.1 Newsreader,Georgia,serif;color:#FFFFFF;">28</div></td>
-        <td style="padding:10px 4px;text-align:center;color:#9EADC1;font:700 11px/1.4 Inter,Arial,sans-serif;">Ben Hill Griffin Stadium</td>
+        <td><div style="font:700 11px/1.4 Inter,Arial,sans-serif;color:#C8D3E3;text-align:center;padding:10px 4px;">Ben Hill Griffin Stadium</div></td>
         <td style="padding:10px 4px;text-align:center;"><div style="font:800 15px/1.2 Inter,Arial,sans-serif;color:#FFFFFF;">Florida</div><div style="font:700 10px/1.4 Inter,Arial,sans-serif;color:#9EADC1;letter-spacing:1px;">NO. 21 · 4-0</div><div style="font:700 44px/1.1 Newsreader,Georgia,serif;color:#FFFFFF;">52</div></td>
         </tr></mj-table>
-        <mj-text align="center" color="#FFFFFF" padding="8px 0 4px"><span class="gb-h1">FINAL: Florida 52, No. 4 Ole Miss 28</span></mj-text>
+        <mj-text align="center" color="#FFFFFF" padding="8px 0 4px"><div style="font:700 32px/1.08 Newsreader,Georgia,serif;color:#FFFFFF;">FINAL: Florida 52, No. 4 Ole Miss 28</div></mj-text>
         <mj-text align="center" color="#D5DFEC" font-size="15px" padding="0 0 16px">Florida is 4-0 (2-0 SEC) and No. 8 in both the AP Top 25 and the Coaches Poll after its first top-five win since 2020. Next: at No. 25 Missouri, Saturday, Oct. 3, 3:30 p.m. ET.</mj-text>
       </mj-column>
     </mj-section>
@@ -56,7 +56,7 @@
       <mj-column>
         <mj-image src="https://static.wixstatic.com/media/d3cfa5_1043f4b7772245baa5aed5f80c21669a~mv2.png" alt="Chomp up the charts: Florida is No. 8 in the AP Top 25 and the Coaches Poll. Jon Sumrall leads the Gators onto the field. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_no_8_in_both_polls" padding="0 0 12px" />
         <mj-text mj-class="kicker" padding="0 0 4px">No. 8 in both polls</mj-text>
-        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_no_8_in_both_polls" style="color:#081B35;text-decoration:none;"><span class="gb-h2">Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls</span></a></mj-text>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_no_8_in_both_polls" style="color:#081B35;text-decoration:none;"><div style="font:700 24px/1.15 Newsreader,Georgia,serif;color:#081B35;">Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls</div></a></mj-text>
         <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Florida’s 52-28 win over No. 4 Ole Miss sent the Gators up 13 spots in the AP Top 25 and 14 in the Coaches Poll. They’re No. 8 in both.</mj-text>
         <mj-button href="https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_no_8_in_both_polls" align="left" padding="0">READ →</mj-button>
       </mj-column>
@@ -65,61 +65,67 @@
       <mj-column>
         <mj-image src="https://static.wixstatic.com/media/d3cfa5_026d2a4d2be04a91b8c32317fed5f623~mv2.jpg" alt="Jadan Baugh dives for his first touchdown against Ole Miss in The Swamp. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_buddy_martin" padding="0 0 12px" />
         <mj-text mj-class="kicker" padding="0 0 4px">Buddy Martin</mj-text>
-        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_buddy_martin" style="color:#081B35;text-decoration:none;"><span class="gb-h3">Bound for the CFB Top Ten: Cue Up “Happy Days Are Here Again”</span></a></mj-text>
-        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Florida’s updated ESPN FPI projections now have the Gators favored in every remaining game except Texas and Georgia. That math comes out to 10-2 and a ticket to the playoff.</mj-text>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_buddy_martin" style="color:#081B35;text-decoration:none;"><div style="font:700 21px/1.15 Newsreader,Georgia,serif;color:#081B35;">Bound for the CFB Top Ten: Cue Up “Happy Days Are Here Again”</div></a></mj-text>
+        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Happy days are back in Gainesville, and Buddy Martin thinks they may stick around. Why Jon Sumrall isn’t buying any of it.</mj-text>
         <mj-button href="https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_buddy_martin" align="left" padding="0">READ →</mj-button>
       </mj-column>
     </mj-section>
-    <mj-section background-color="#FFFFFF" padding="6px 26px 18px">
-      <mj-column>
+    <mj-section background-color="#FFFFFF" padding="6px 26px 0"><mj-column><mj-divider border-color="#E1E4EA" border-width="1px" padding="0 0 10px" /><mj-text mj-class="kicker" padding="0">MORE FROM THE SWAMP</mj-text></mj-column></mj-section>
+    <mj-section background-color="#FFFFFF" padding="8px 18px 4px">
+      <mj-column width="50%" padding="0 8px 18px" vertical-align="top">
         <mj-text mj-class="kicker" padding="0 0 4px">Chris Spears</mj-text>
-        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_chris_spears" style="color:#081B35;text-decoration:none;"><span class="gb-h3">10 Thoughts From the Sidelines: Florida 52, Ole Miss 28</span></a></mj-text>
-        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Photographer Chris Spears had the best seat in The Swamp. Ten things the sideline told him about the Florida team that ran over No. 4 Ole Miss.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_chris_spears" align="left" padding="0">READ →</mj-button>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_chris_spears" style="color:#081B35;text-decoration:none;"><div style="font:700 18px/1.18 Newsreader,Georgia,serif;color:#081B35;">10 Thoughts From the Sidelines: Florida 52, Ole Miss 28</div></a></mj-text>
+        <mj-text font-size="13px" line-height="1.5" color="#4B5666" padding="0 0 8px">Photographer Chris Spears had the best seat in The Swamp. Ten things the sideline told him about the Florida…</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_chris_spears" align="left" padding="0" font-size="11px" inner-padding="9px 14px">READ →</mj-button>
       </mj-column>
-    </mj-section>
-    <mj-section background-color="#FFFFFF" padding="6px 26px 18px">
-      <mj-column>
+      <mj-column width="50%" padding="0 8px 18px" vertical-align="top">
         <mj-text mj-class="kicker" padding="0 0 4px">Franz Beard</mj-text>
-        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_franz_beard" style="color:#081B35;text-decoration:none;"><span class="gb-h3">Beating Ole Miss was huge, but the Gators left at least 28 points on the field</span></a></mj-text>
-        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Florida beat No. 4 Ole Miss 52-28, but Franz Beard counts at least 28 points the Gators left on the field: an overthrown Vernell Brown III, an open Amir Jackson on fourth down, a 67-yard touchdown erased by a hold, and…</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_franz_beard" align="left" padding="0">READ →</mj-button>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_franz_beard" style="color:#081B35;text-decoration:none;"><div style="font:700 18px/1.18 Newsreader,Georgia,serif;color:#081B35;">Beating Ole Miss was huge, but the Gators left at least 28 points on the field</div></a></mj-text>
+        <mj-text font-size="13px" line-height="1.5" color="#4B5666" padding="0 0 8px">Florida beat No. 4 Ole Miss 52-28, but Franz Beard counts at least 28 points the Gators left on the field: an…</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_franz_beard" align="left" padding="0" font-size="11px" inner-padding="9px 14px">READ →</mj-button>
       </mj-column>
     </mj-section>
-    <mj-section background-color="#FFFFFF" padding="6px 26px 18px">
-      <mj-column>
+    <mj-section background-color="#FFFFFF" padding="0 18px 4px">
+      <mj-column width="50%" padding="0 8px 18px" vertical-align="top">
         <mj-text mj-class="kicker" padding="0 0 4px">Loren Meadows</mj-text>
-        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_loren_meadows" style="color:#081B35;text-decoration:none;"><span class="gb-h3">Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28</span></a></mj-text>
-        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Florida dominated No. 4 Ole Miss for a season-defining win, but Jon Sumrall says the Gators are still a work in progress. Loren Meadows on what he expected, what he got and what comes next.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_loren_meadows" align="left" padding="0">READ →</mj-button>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_loren_meadows" style="color:#081B35;text-decoration:none;"><div style="font:700 18px/1.18 Newsreader,Georgia,serif;color:#081B35;">Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28</div></a></mj-text>
+        <mj-text font-size="13px" line-height="1.5" color="#4B5666" padding="0 0 8px">Florida dominated No. 4 Ole Miss for a season-defining win, but Jon Sumrall says the Gators are still a work…</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_loren_meadows" align="left" padding="0" font-size="11px" inner-padding="9px 14px">READ →</mj-button>
       </mj-column>
-    </mj-section>
-    <mj-section background-color="#FFFFFF" padding="6px 26px 18px">
-      <mj-column>
+      <mj-column width="50%" padding="0 8px 18px" vertical-align="top">
         <mj-text mj-class="kicker" padding="0 0 4px">Carlton Reese</mj-text>
-        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/carlton-reese-florida-contenders-not-hopefuls-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_carlton_reese" style="color:#081B35;text-decoration:none;"><span class="gb-h3">Contenders, Not Hopefuls: Florida’s Rout of No. 4 Ole Miss Puts the SEC on Notice</span></a></mj-text>
-        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Carlton Reese: With a 52-28 thrashing of No. 4 Ole Miss, Jon Sumrall’s Gators are no longer hoping to compete. They are a legitimate contender.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/carlton-reese-florida-contenders-not-hopefuls-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_carlton_reese" align="left" padding="0">READ →</mj-button>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/carlton-reese-florida-contenders-not-hopefuls-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_carlton_reese" style="color:#081B35;text-decoration:none;"><div style="font:700 18px/1.18 Newsreader,Georgia,serif;color:#081B35;">Contenders, Not Hopefuls: Florida’s Rout of No. 4 Ole Miss Puts the SEC on Notice</div></a></mj-text>
+        <mj-text font-size="13px" line-height="1.5" color="#4B5666" padding="0 0 8px">Carlton Reese: With a 52-28 thrashing of No. 4 Ole Miss, Jon Sumrall’s Gators are no longer hoping to…</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/carlton-reese-florida-contenders-not-hopefuls-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_carlton_reese" align="left" padding="0" font-size="11px" inner-padding="9px 14px">READ →</mj-button>
       </mj-column>
     </mj-section>
-    <mj-section background-color="#FFFFFF" padding="6px 26px 18px">
-      <mj-column>
+    <mj-section background-color="#FFFFFF" padding="0 18px 4px">
+      <mj-column width="50%" padding="0 8px 18px" vertical-align="top">
         <mj-text mj-class="kicker" padding="0 0 4px">Game story</mj-text>
-        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_game_story" style="color:#081B35;text-decoration:none;"><span class="gb-h3">Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp</span></a></mj-text>
-        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Jadan Baugh ran for three touchdowns, Florida scored touchdowns on its first five possessions of the second half, and No. 21 Florida beat No. 4 Ole Miss 52-28 to move to 4-0.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_game_story" align="left" padding="0">READ →</mj-button>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_game_story" style="color:#081B35;text-decoration:none;"><div style="font:700 18px/1.18 Newsreader,Georgia,serif;color:#081B35;">Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp</div></a></mj-text>
+        <mj-text font-size="13px" line-height="1.5" color="#4B5666" padding="0 0 8px">Jadan Baugh ran for three touchdowns, Florida scored touchdowns on its first five possessions of the second…</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=band_game_story" align="left" padding="0" font-size="11px" inner-padding="9px 14px">READ →</mj-button>
       </mj-column>
+      <mj-column width="50%" padding="0 8px"></mj-column>
     </mj-section>
     <mj-section background-color="#FA4616" padding="20px 26px">
       <mj-column>
         <mj-text color="#FFFFFF" font-size="10px" font-weight="900" letter-spacing="1.9px" padding="0 0 6px">LOOK AHEAD</mj-text>
-        <mj-text color="#FFFFFF" padding="0 0 6px"><span class="gb-h2">No. 8 Florida at No. 25 Missouri</span></mj-text>
+        <mj-text color="#FFFFFF" padding="0 0 6px"><div style="font:700 24px/1.14 Newsreader,Georgia,serif;color:#FFFFFF;">No. 8 Florida at No. 25 Missouri</div></mj-text>
         <mj-text color="#FFF1EA" font-size="14px" padding="0">Saturday, Oct. 3 · 3:30 p.m. ET · Columbia, Mo. The Gators are 4-0 (2-0 SEC).</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="22px 26px">
+      <mj-column>
+        <mj-text color="#FA7A45" font-size="10px" font-weight="900" letter-spacing="1.9px" padding="0 0 6px">GATORBAIT ALL ACCESS</mj-text>
+        <mj-text color="#FFFFFF" padding="0 0 6px"><div style="font:700 24px/1.14 Newsreader,Georgia,serif;color:#FFFFFF;">Get every GatorBait story, all season.</div></mj-text>
+        <mj-text color="#D5DFEC" font-size="14px" padding="0 0 14px">Start with a 7-day free trial, then $9.99 a month or $99 a year. Independent Florida Gators journalism from Buddy Martin, Franz Beard and the GatorBait staff.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/pricing-plans/subscribe?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=sunday_edition_2026_09_27&utm_content=all_access_cta" align="left" padding="0">START FREE TRIAL →</mj-button>
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="18px 26px 24px">
       <mj-column width="40%"><mj-text padding="0" color="#003B7A" font-size="18px" font-weight="900">GATOR<span style="color:#FA4616;">BAIT</span> MEDIA</mj-text></mj-column>
-      <mj-column width="60%"><mj-text align="right" color="#667386" font-size="11px" line-height="1.55" padding="0">Florida football. All the time.<br/>GatorBaitMedia.com · Old-school journalism + new tech.</mj-text></mj-column>
+      <mj-column width="60%"><mj-text align="right" color="#667386" font-size="11px" line-height="1.55" padding="0">Florida football. All the time.<br/>GatorBaitMedia.com · Old-school journalism + new tech.<br/>GatorBait Media · 1524 SE 22nd Ave, Ocala, FL 34471</mj-text></mj-column>
     </mj-section>
   </mj-body>
 </mjml>

@@ -285,16 +285,19 @@ Know these facts without re-checking them each session.
 - Chris Spears shoots the game photos and video. Credit him as "Photo by Chris Spears/GatorBait Media."
 
 **Email audience**
+- Never put straight double quotes in an email's `<mj-title>` or subject. On 9/26 they caused a Wix 500 from GenerateHtml on preview; use curly quotes.
 - Each Sept. 25-26 send delivered to about 1,800-1,816 people (label e345fa8e, ~1,830 targeted).
 - An "~100" figure is an early open count, not the audience size.
 
 **Video**
+- UF football's YouTube channel is **Florida Gators Football**, UCGy38_kQ5tV_e87Uhs3VCRQ. The old "Florida Gators" channel, UC97IlakvONh8RBUODRuk4mA, is stale; don't use it.
 - Embed UF's official YouTube video (for example, a presser). Use a Ricos HTML node with `url: https://www.youtube.com/embed/<id>?rel=0`; this shape is proven live in "Before Laura Rutledge Was Laura Rutledge."
 - Do not download or re-upload UF's video.
 
 **Transcripts**
 - vidIQ `video_watch` gives usable verbatim quotes. Its speaker names are unreliable: it has labeled the QB "Graham Mertz" or "Aaron Chiles."
-- Identify each speaker from the questions and ESPN play data. Swap in UF's official ASAP transcript when Scott Burns sends it.
+- Identify each speaker from the questions and ESPN play data. Swap in UF's official ASAP transcript when UF SID forwards it (e.g., Matthew H.). The transcripts live at asaptext.com/asap_media/media/1109/<event>/transcripts/<id>.html.
+- ASAP transcripts can mislabel players too: 9/26 labeled Jayden Woods "Jaden Edgecombe." Always check the roster position.
 
 ## Open queue
 

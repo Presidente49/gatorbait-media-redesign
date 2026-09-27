@@ -56,3 +56,26 @@ Cover changed to the thumbnail "Swamp Party" FINAL 52-28 (d3cfa5_a1b1d9987b2a431
 - **Game story 94127b93:** the "reaction is coming" note now links to the presser story and Carlton's column (UPDATE_PUBLISH).
 - **Public check 00:47Z:** all three pages show the correct titles, bylines, og:image covers and links.
 - **No email** for any of these. The game's one email is f8ee1c12: delivered 1,804, opened 284, clicked 36, bounced 24 at 00:45Z.
+
+## Update 00:55-01:15Z: official transcript fixes, reaction email SENT, accuracy fixes
+- **UF official ASAP transcripts:** 171203 (Sumrall) arrived via Matthew H. at 00:36Z. 171204 is labeled "Jaden Edgecombe", but Edgecombe is a 5'8" WR.
+  - That 171204 speaker is **Jayden Woods** (#0 JACK). Evidence: ESPN play-by-play credits "#0 J.Woods" with the strip-sack, and The Alligator quotes the same presser answer as Woods.
+  - Baugh and Philo transcripts have not been posted yet (171205-171212 are empty).
+- **Presser story 2bb6c273, fixed in place:**
+  - Sumrall quotes now match ASAP word for word: "We just played better today", "with outcomes", "worth losing a headset over", "nothing's torn", "to be honest with you".
+  - The "least comfortable" quote is now paraphrased, because ASAP has "least uncomfortable".
+  - The Woods quote now reads "and first instinct".
+  - The embed caption now credits Florida Gators Football on YouTube.
+- **YouTube channel:** UF football is **Florida Gators Football, UCGy38_kQ5tV_e87Uhs3VCRQ**. The old "Florida Gators" channel, UC97Ila…, stopped posting in 2022. A separate Sumrall-only cut is VVguTPt-Te8.
+- **Game story 94127b93, fixed in place:** By the Numbers said "2018" for the last top-five win, citing WRUF. It now says "2020", attributed to The Alligator and CBS Sports.
+- **Reaction email SENT:** campaign 6b056c3f-1ca1-4729-8497-a59942411230, "Sumrall: 'It ain't fully awake yet' and Carlton Reese on the Gators."
+  - Brenden said to "make sure that automation email goes." Enabling alert automation 824714d4 would not send for posts already published, so it stays INACTIVE. This campaign is the send.
+  - Gates:
+    - Strict MJML compile, 0 errors.
+    - check-links OK (6 links).
+    - No overflow at 390/1000.
+    - Preview had the headline, both covers, both CTAs and the Chris Spears credit.
+    - The Wix footer matches the sent f8ee1c12.
+    - Dedupe clear.
+  - Label e345fa8e. Status at 01:12Z: PUBLISHED / SENDING.
+  - **Bug found and fixed:** straight double quotes in `<mj-title>` and the subject caused a 500 "http2 exception" from Wix's GenerateHtml on preview. Draft baeebc32 had them; it was deleted unsent.

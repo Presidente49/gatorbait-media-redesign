@@ -62,6 +62,16 @@ const cards = (g.links || []).filter(l => /^\/post\//.test(l[1])).map((l, i) => 
     </mj-section>`;
 }).join('');
 
+const nextArg = arg('--next', '');
+const [nextHead, nextBody] = nextArg.split('|');
+const lookAhead = nextArg ? `
+    <mj-section background-color="#FA4616" padding="20px 26px">
+      <mj-column>
+        <mj-text color="#FFFFFF" font-size="10px" font-weight="900" letter-spacing="1.9px" padding="0 0 6px">LOOK AHEAD</mj-text>
+        <mj-text color="#FFFFFF" padding="0 0 6px"><span class="gb-h2">${esc(nextHead)}</span></mj-text>${nextBody ? `
+        <mj-text color="#FFF1EA" font-size="14px" padding="0">${esc(nextBody)}</mj-text>` : ''}
+      </mj-column>
+    </mj-section>` : '';
 const tracker = (g.st || []).map(r => `
           <tr style="border-bottom:1px solid #E1E4EA;"><td style="padding:8px 4px;">${esc(r[1])}</td><td style="text-align:center;padding:8px 4px;color:#6D7888;font-size:12px;">${esc(r[0])}</td><td style="text-align:right;padding:8px 4px;font-weight:800;">${esc(r[2])}</td></tr>`).join('');
 
@@ -111,7 +121,7 @@ const mjml = `<mjml lang="en" dir="ltr">
     </mj-section>` : ''}
     <mj-section background-color="#FFFFFF" padding="22px 26px 0">
       <mj-column><mj-text color="#081B35" font-size="20px" font-weight="800" padding="0 0 4px">THE STORIES</mj-text><mj-divider border-color="#FA4616" border-width="3px" padding="0" /></mj-column>
-    </mj-section>${cards}
+    </mj-section>${cards}${lookAhead}
     <mj-section background-color="#FFFFFF" padding="18px 26px 24px">
       <mj-column width="40%"><mj-text padding="0" color="#003B7A" font-size="18px" font-weight="900">GATOR<span style="color:#FA4616;">BAIT</span> MEDIA</mj-text></mj-column>
       <mj-column width="60%"><mj-text align="right" color="#667386" font-size="11px" line-height="1.55" padding="0">Florida football. All the time.<br/>GatorBaitMedia.com · Old-school journalism + new tech.</mj-text></mj-column>

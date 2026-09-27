@@ -256,3 +256,10 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
 - Sumrall's podium photo was added to the live press-conference story `2bb6c273` after his opening quotes, credited. No email.
 - The player photos are on hold until Brenden confirms who's who. The story quotes Baugh, Woods and Philo; each photo goes beside that player's section.
 - NOT used, not stored: a postgame close-up of a player whose eye black has a profanity written on it.
+
+## Sept. 27 afternoon — poll story is breaking lead; Sunday Edition drafted
+
+- Chomp Up the Charts (c658c408, published 18:20Z) pinned as front-page lead with a "Breaking" kicker until 2026-09-28T16:00Z (Home Code 622d8ece rev 10); Buddy's column resumes the lead automatically after that. Post set featured.
+- Band 96ef5a04 rev 40: first button "No. 8 in both polls"; note updated to 4-0 (2-0 SEC), No. 8 AP + Coaches, next at No. 25 Missouri Oct. 3, 3:30 p.m. ET.
+- Sunday Edition built with band-to-mjml.mjs (added --next LOOK AHEAD section). Gates: stack-qc 0 errors, UTMs clean, 2/2 real photos, strict compile 0 errors, no overflow at 390/1000. Uploaded as Wix DRAFT campaign 5f1f986e-acca-4627-acf3-d69f1fd585b6. NOT SENT — awaiting Brenden's yes.
+- Gallery inventory: ~12 credited Chris Spears Ole Miss photos on Wix; profanity close-up and uncredited Albert photo excluded. Three presser players and two game photos still need IDs.

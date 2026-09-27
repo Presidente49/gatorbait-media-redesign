@@ -425,3 +425,14 @@ Our own first version had errors too:
 - Measure text boxes for overlaps before release. The first magazine render had a two-line headline colliding with the score line.
 
 Reference masters: `gameday/2026-09-26-ole-miss/postgame/master-layered.html` (1920×1080) and `magazine-layered.html` (1080×1350).
+
+## 40. One photo, one layout per cover on a game day (Sept. 26, 2026)
+Four of the Ole Miss covers came from the same diagonal-plane template, and three of them reused the Baugh TD inset. Brenden flagged it: "same graphic over and over."
+- Before publishing any cover, build a contact sheet of the day's covers and check it.
+- No photo may appear on two covers.
+- No two consecutive covers may share a layout family. Rotate between these families:
+  - broadcast score panel (FINAL)
+  - portrait-hero diagonal (news)
+  - duotone editorial (column)
+  - solid-color quote card with filmstrip (presser)
+  - stat card (numbers)

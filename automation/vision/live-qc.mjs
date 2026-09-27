@@ -33,6 +33,22 @@ const TARGETS=[
     url:"https://www.gatorbaitmedia.com/post/the-cowboy-doesn-t-talk-very-often-but-his-actions-speak-even-louder",
     root:null,
     expectedText:"The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder"
+  },
+  // Post-format checks (normalizer embed c91ad133): an all-bold pasted Buddy column and a staff post
+  // whose bold score lines must stay body text.
+  {
+    name:'article-buddy-allbold',
+    url:"https://www.gatorbaitmedia.com/post/the-sweet-music-chimes-again",
+    root:null,
+    expectedText:"Maya Angelou never sat in the press box",
+    postFormat:{unbold:true,maxInventedHeads:5}
+  },
+  {
+    name:'article-scores',
+    url:"https://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25",
+    root:null,
+    expectedText:"No. 1 Texas 20, No. 14 Tennessee 17",
+    postFormat:{unbold:false,maxInventedHeads:0}
   }
 ];
 
@@ -107,6 +123,25 @@ function audit(input){
 
   // Baseline lock: the old Wix shell's "Today's Edition" section must never be visible on the homepage.
   if(target.name==='home'&&/today[’'`]s edition/i.test(bodyText))hard.push('old Wix shell "Today\'s Edition" text is visible on the homepage');
+
+  // Post format: measured, not eyeballed.
+  const pf={};
+  if(target.postFormat){
+    const d=document.querySelector('[data-hook=post-description]');
+    const ps=d?[...d.querySelectorAll('p')].filter(p=>visible(p)&&(p.textContent||'').trim().length>40):[];
+    const strong=ps.map(p=>p.querySelector('strong,b')).filter(Boolean)[0];
+    pf.bodyStrongWeight=strong?Number(getComputedStyle(strong).fontWeight):null;
+    pf.visibleEmptyLines=d?[...d.querySelectorAll('p,div[id^="viewer-"]')].filter(e=>!(e.textContent||'').trim()&&!e.querySelector('img,iframe,video,figure')&&e.getBoundingClientRect().height>4).length:null;
+    const gaps=[];for(let i=1;i<Math.min(ps.length,12);i++)gaps.push(Math.round(ps[i].getBoundingClientRect().top-ps[i-1].getBoundingClientRect().bottom));
+    gaps.sort((a,b)=>a-b);pf.medianParagraphGap=gaps.length?gaps[gaps.length>>1]:null;
+    pf.lineHeight=ps[0]?parseFloat(getComputedStyle(ps[0]).lineHeight)||null:null;
+    pf.inventedHeads=document.querySelectorAll('[data-gbm-h]').length;
+    if(target.postFormat.unbold&&pf.bodyStrongWeight>=600)hard.push('all-bold post still renders body text bold ('+pf.bodyStrongWeight+')');
+    if(!target.postFormat.unbold&&pf.bodyStrongWeight!==null&&pf.bodyStrongWeight<600)hard.push('intentional bold lines were un-bolded');
+    if(pf.inventedHeads>target.postFormat.maxInventedHeads)hard.push('invented subheads '+pf.inventedHeads+' > '+target.postFormat.maxInventedHeads);
+    if(pf.visibleEmptyLines>0)warnings.push(pf.visibleEmptyLines+' empty lines still take up space');
+    if(pf.medianParagraphGap!==null&&pf.lineHeight&&pf.medianParagraphGap>pf.lineHeight*1.6)warnings.push('paragraph gap '+pf.medianParagraphGap+'px exceeds 1.6 lines ('+pf.lineHeight+'px)');
+  }
 
   const sideways=document.documentElement.scrollWidth>viewport+2;
   if(sideways)hard.push('document scrollWidth exceeds viewport');
@@ -240,6 +275,7 @@ function audit(input){
     postNormalizer:document.documentElement.getAttribute('data-gbm-nr'),
     postUnbold:document.documentElement.hasAttribute('data-gbm-unbold'),
     postInventedHeads:document.querySelectorAll('[data-gbm-h]').length,
+    postFormat:pf,
     expectedTextPresent:textMatch,
     firstHeadline:first,
     typeSample,
@@ -269,7 +305,7 @@ async function currentBuddyLead(){
 }
 const lead=await currentBuddyLead();
 if(lead){
-  for(const t of TARGETS)t.expectedText=lead.title;
+  for(const t of TARGETS)if(!t.postFormat)t.expectedText=lead.title;
   TARGETS.find(t=>t.name==='article').url=lead.url;
 }
 
@@ -400,6 +436,7 @@ for(const r of report.runs){
   lines.push('- presentation root: '+r.rootPresent+' / visible '+r.rootVisible);
   lines.push('- native pages visible: '+r.nativePagesVisible);
   lines.push('- post normalizer: '+r.postNormalizer+' / unbold '+r.postUnbold+' / invented heads '+r.postInventedHeads);
+  if(r.postFormat&&Object.keys(r.postFormat).length)lines.push('- post format: '+JSON.stringify(r.postFormat));
   lines.push('- first headline: '+(r.firstHeadline?('y='+r.firstHeadline.top+' — '+r.firstHeadline.text):'NONE'));
   if(r.typeSample)lines.push('- computed type: '+JSON.stringify(r.typeSample));
   if(r.articleTitleCandidates?.length) lines.push('- article title candidate: '+JSON.stringify(r.articleTitleCandidates[0]));

@@ -2,7 +2,7 @@
 """Florida football season stats: ESPN box scores -> snapshot JSON -> Wix embed.
 
 Every number comes from ESPN. Team rows come from each game's box-score team
-totals. Player rows are the sum of ESPN's per-game player box scores. Nothing
+totals; whether a final was an SEC game comes from its box-score header. Player rows are the sum of ESPN's per-game player box scores. Nothing
 is typed by hand, and a run that fails any consistency check writes nothing,
 so the last good snapshot stays in place.
 
@@ -32,6 +32,7 @@ SRC_ESPN = 'https://www.espn.com/college-football/team/stats/_/id/57/florida-gat
 SRC_UF = 'https://floridagators.com/sports/football/stats'
 MONTHS = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.']
 DAYS = ['Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.', 'Sun.']
+TV_NAMES = {'SECN': 'SEC Network', 'SECN+': 'SEC Network+'}
 
 
 class StatsError(Exception):
@@ -121,12 +122,12 @@ def parse_event(ev):
         'opp': team_name(them['team']),
         'oppId': str(them['team'].get('id', '')),
         'rk': int(rank) if rank and int(rank) <= 25 else None,
-        'conf': bool(comp.get('conferenceCompetition')),
+        'conf': comp.get('conferenceCompetition'),  # the schedule feed often omits it; finals use the box score
         'state': typ.get('state', 'pre'),
         'final': bool(typ.get('completed')) and typ.get('state') == 'post',
         'detail': typ.get('shortDetail') or typ.get('detail') or '',
         'us': score_of(us), 'them': score_of(them),
-        'tv': next((t for t in tv if t), ''),
+        'tv': next((TV_NAMES.get(t, t) for t in tv if t), ''),
         'venue': (comp.get('venue') or {}).get('fullName', ''),
     }
 
@@ -141,6 +142,7 @@ def parse_summary(sm, event_id):
     comp = sm['header']['competitions'][0]
     score = {str(c.get('id') or c['team']['id']): score_of(c) for c in comp['competitors']}
     completed = comp.get('status', {}).get('type', {}).get('completed')
+    conf = comp.get('conferenceCompetition')
     teams = {}
     for t in sm['boxscore']['teams']:
         tid = str(t['team']['id'])
@@ -161,7 +163,7 @@ def parse_summary(sm, event_id):
             players[cat['name']] = {'rows': rows, 'totals': dict(zip(labels, cat.get('totals') or []))}
     if TEAM_ID not in teams:
         raise StatsError(f'event {event_id}: no Florida team box score')
-    return {'score': score, 'completed': completed, 'teams': teams, 'players': players}
+    return {'score': score, 'completed': completed, 'conf': conf, 'teams': teams, 'players': players}
 
 
 # ---------- checks ----------
@@ -173,6 +175,8 @@ def check_game(g, box):
         raise StatsError(f'event {eid}: schedule says final but summary is not completed')
     if box['score'].get(TEAM_ID) != g['us'] or box['score'].get(opp) != g['them']:
         raise StatsError(f'event {eid}: schedule score {g["us"]}-{g["them"]} != summary {box["score"]}')
+    if None not in (g['conf'], box['conf']) and bool(g['conf']) != bool(box['conf']):
+        raise StatsError(f'event {eid}: schedule and box score disagree on whether this is an SEC game')
     if opp not in box['teams']:
         raise StatsError(f'event {eid}: no opponent team box score')
     fl, pl = box['teams'][TEAM_ID], box['players']
@@ -246,8 +250,13 @@ def fmt_int(n):
     return f'{int(round(n)):,}'
 
 
+# Exact halves round to the even digit, as UF's official stat sheet does (2,131 / 4 = 532.8, 1,405 / 4 = 351.2).
 def fmt1(n):
     return f'{n:.1f}'
+
+
+def pct(made, att):
+    return round(100 * made / att) if att else 0
 
 
 def half(n):
@@ -311,7 +320,7 @@ def team_rows(games, boxes):
         for u in (True, False):
             c = sum(pair(side(b, g, u)['completionAttempts'])[0] for g, b in zip(games, boxes))
             a = sum(pair(side(b, g, u)['completionAttempts'])[1] for g, b in zip(games, boxes))
-            cells.append(f'{c}-{a} ({round(100 * c / a) if a else 0}%)')
+            cells.append(f'{c}-{a} ({pct(c, a)}%)')
         rows.append(['Completions-attempts'] + cells)
     if have('firstDowns'):
         rows.append(['First downs per game', fmt1(total('firstDowns', True) / n), fmt1(total('firstDowns', False) / n)])
@@ -320,7 +329,7 @@ def team_rows(games, boxes):
         for u in (True, False):
             m = sum(pair(side(b, g, u)['thirdDownEff'])[0] for g, b in zip(games, boxes))
             a = sum(pair(side(b, g, u)['thirdDownEff'])[1] for g, b in zip(games, boxes))
-            cells.append(f'{m}-{a} ({round(100 * m / a) if a else 0}%)')
+            cells.append(f'{m}-{a} ({pct(m, a)}%)')
         rows.append(['Third-down conversions'] + cells)
     if have('turnovers'):
         rows.append(['Turnovers', str(total('turnovers', True)), str(total('turnovers', False))])
@@ -331,10 +340,10 @@ def team_rows(games, boxes):
             cells.append(f'{sum(x[0] for x in p)}-{sum(x[1] for x in p)}')
         rows.append(['Penalties-yards'] + cells)
     if have('possessionTime'):
-        cells = []
-        for u in (True, False):
-            m, sec = divmod(round(total('possessionTime', u, clock) / n), 60)
-            cells.append(f'{m}:{sec:02d}')
+        # Round Florida's average and give opponents the rest, so the pair still adds up to a full game.
+        secs = [total('possessionTime', u, clock) for u in (True, False)]
+        ours = round(secs[0] / n)
+        cells = [f'{m}:{sec:02d}' for m, sec in (divmod(ours, 60), divmod(round(sum(secs) / n) - ours, 60))]
         rows.append(['Time of possession (avg.)'] + cells)
     to = (total('turnovers', False) - total('turnovers', True)) if have('turnovers') else None
     return rows, pts, to
@@ -370,6 +379,8 @@ def build_snapshot(season, events, boxes_by_id, schedule_team):
     boxes = [boxes_by_id[g['id']] for g in finals]
     for g, b in zip(finals, boxes):
         check_game(g, b)
+        if b['conf'] is not None:
+            g['conf'] = b['conf']
     w = sum(1 for g in finals if g['us'] > g['them']); l = len(finals) - w
     cw = sum(1 for g in finals if g['conf'] and g['us'] > g['them']); cl = sum(1 for g in finals if g['conf']) - cw
     summary = str((schedule_team or {}).get('recordSummary') or '')
@@ -379,7 +390,7 @@ def build_snapshot(season, events, boxes_by_id, schedule_team):
     log, run = [], [0, 0]
     for g in events:
         d = et(g['k'])
-        row = {'id': g['id'], 'k': g['k'], 'd': ap_date(d, True), 'o': opp_label(g), 'n': g['ha'] == 'n', 'c': g['conf']}
+        row = {'id': g['id'], 'k': g['k'], 'd': ap_date(d, True), 'o': opp_label(g), 'n': g['ha'] == 'n'}
         if g['final']:
             win = g['us'] > g['them']; run[0 if win else 1] += 1
             row.update({'r': 'W' if win else 'L', 's': f"{g['us']}-{g['them']}", 'rec': f'{run[0]}-{run[1]}'})
@@ -520,6 +531,8 @@ def main(argv=None):
         return 2
     new_finals = sorted(set(snap['finals']) - prev_finals)
     if changed or not out_html.exists() or out_html.read_text() != html:
+        out_json.parent.mkdir(parents=True, exist_ok=True)
+        out_html.parent.mkdir(parents=True, exist_ok=True)
         out_json.write_text(json.dumps(snap, ensure_ascii=False, indent=1, sort_keys=True) + '\n')
         out_html.write_text(html)
     print(json.dumps({'reason': reason, 'changed': changed, 'finals': len(snap['finals']), 'newFinals': new_finals,

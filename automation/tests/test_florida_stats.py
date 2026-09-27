@@ -82,6 +82,33 @@ class SnapshotTests(unittest.TestCase):
         self.assertEqual(L['defBest']['SACKS'], ['Test Backer', '2.5'])
 
 
+class ConferenceAndLabelTests(unittest.TestCase):
+    def test_conference_game_read_from_box_score_header(self):
+        # ESPN's team schedule feed can omit conferenceCompetition; the box-score header carries it.
+        sch = load('schedule-2.json')
+        for ev in sch['events']:
+            ev['competitions'][0].pop('conferenceCompetition', None)
+        sm = load('summary-9002.json')
+        sm['header']['competitions'][0]['conferenceCompetition'] = True
+        s = build({'9002': sm}, schedule=sch)
+        self.assertEqual(s['confRecord'], '0-1')
+
+    def test_schedule_and_box_score_must_agree_on_conference(self):
+        sm = load('summary-9002.json')
+        sm['header']['competitions'][0]['conferenceCompetition'] = False
+        with self.assertRaises(fs.StatsError):
+            build({'9002': sm})  # the schedule fixture marks this game as SEC
+
+    def test_sec_network_names_spelled_out(self):
+        ev = copy.deepcopy(load('schedule-2.json')['events'][2])
+        ev['competitions'][0]['broadcasts'] = [{'media': {'shortName': 'SECN+'}}]
+        self.assertEqual(fs.parse_event(ev)['tv'], 'SEC Network+')
+
+    def test_rounding_matches_official_stat_sheet(self):
+        # FloridaGators.com, Sept. 27, 2026: 2,131 and 1,405 yards in 4 games -> 532.8 and 351.2.
+        self.assertEqual((fs.fmt1(2131 / 4), fs.fmt1(1405 / 4)), ('532.8', '351.2'))
+
+
 class GuardTests(unittest.TestCase):
     def test_score_mismatch_blocks(self):
         sm = load('summary-9001.json')

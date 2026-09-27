@@ -43,6 +43,7 @@ const TARGETS=[
     expectedText:"Maya Angelou never sat in the press box",
     postFormat:{unbold:true,maxInventedHeads:5,kicker:'Column',noHero:true}
   },
+  // Phone column width is covered by embed a5452619 (post wide canvas); this target fails if body < 82% of viewport.
   // Long all-caps headline on mobile (Brenden, Sept. 27: first letters of each line were clipped).
   {
     name:'article-chris-10-thoughts',

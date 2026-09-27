@@ -9,4 +9,4 @@ Per Brenden's Sunday AM routine: "Upload newsletter/2026-09-27-postgame-wrap-ole
 - All 4 story-link slugs verified live via the Blog API before upload (game story, Buddy's "The Sweet Music Chimes Again!", Sumrall presser, Carlton Reese column, Cyion Smith commitment, Kewan Lacy injury note).
 - Preview check: headline, Scoreboard, Team Stats, Stat Leaders, Scoring Summary, By the Numbers, They Said and Read More sections all present; no `amp;utm`, no unresolved placeholders; footer matches the standard Wix opt-out footer used on prior sends.
 - Dedupe: no existing "Postgame Wrap" campaign before create.
-- Not sent. Awaiting Brenden's yes.
+- SENT: Brenden confirmed. Published at this session's request; distribution IN_DETECTION immediately after publish, checked again below.

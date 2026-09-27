@@ -34,3 +34,6 @@ Added in place before the closer: "By the numbers" (nine ESPN-verified stats; th
 
 ## Update 00:15Z
 A frame grab from the Chris Spears celebration clip (final scoreboard 52-28, 0:00 Q4) was imported as d3cfa5_cf3c6da48f1a41e48eea9484d677f784~mv2.jpg and added under "The celebration" in place. The post now has 3 photos. No email.
+
+## Update 00:20Z
+Cover changed to the thumbnail "Swamp Party" FINAL 52-28 (d3cfa5_a1b1d9987b2a431795a6f88a4bfef3d8~mv2.jpg), built from the Chris Spears celebration frame. Body intact (31 nodes, 3 photos). No email.

@@ -153,6 +153,11 @@ function audit(input){
     if(tt){const tr=tt.getBoundingClientRect();pf.title={left:Math.round(tr.left),right:Math.round(tr.right)};let clip=null;
       for(let a=tt.parentElement;a&&a!==document.body;a=a.parentElement){const cs=getComputedStyle(a);if(cs.overflowX!=='visible'){const ar=a.getBoundingClientRect();if(tr.left<ar.left-1||tr.right>ar.right+1){clip={tag:a.tagName,hook:a.getAttribute('data-hook'),left:Math.round(ar.left),right:Math.round(ar.right)};break;}}}
       pf.titleClip=clip;if(clip||tr.left<-1||tr.right>viewport+1)hard.push('post headline clipped: '+JSON.stringify({title:pf.title,clip}));}
+    const bp=document.querySelector('[data-hook=post-description] p');
+    if(bp){const br=bp.getBoundingClientRect();pf.bodyWidth=Math.round(br.width);pf.bodyLeft=Math.round(br.left);
+      pf.column=[];for(let a=bp;a&&a!==document.documentElement&&pf.column.length<24;a=a.parentElement){const cs=getComputedStyle(a),ar=a.getBoundingClientRect();
+        pf.column.push([a.tagName.toLowerCase()+(a.id?'#'+a.id:'')+(a.getAttribute('data-hook')?'[hook='+a.getAttribute('data-hook')+']':'')+(a.className&&typeof a.className==='string'?'.'+a.className.split(/\s+/).slice(0,2).join('.'):''),Math.round(ar.left),Math.round(ar.width),cs.paddingLeft+'/'+cs.paddingRight,cs.marginLeft+'/'+cs.marginRight,cs.maxWidth,cs.overflowX].join(' '));}
+      if(viewport<=600&&br.width<viewport*0.82)hard.push('article column too narrow: body '+Math.round(br.width)+'px of '+viewport+'px');}
     if(target.postFormat.hero&&!pf.coverBlock)hard.push('landscape cover photo block missing from post header');
     if(target.postFormat.noHero&&pf.coverBlock)hard.push('post without a landscape image still draws the navy cover block');
     if(target.postFormat.kicker&&pf.kicker!==target.postFormat.kicker)hard.push('kicker "'+pf.kicker+'" expected "'+target.postFormat.kicker+'"');
@@ -474,6 +479,7 @@ for(const r of report.runs){
   if(r.articleTitleCandidates?.length) lines.push('- article title candidate: '+JSON.stringify(r.articleTitleCandidates[0]));
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
+  if(r.postFormat&&r.postFormat.column)lines.push('- column chain (el left width pad mar maxw ovx):\n    '+r.postFormat.column.join('\n    '));
   if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');
   if(r.band)lines.push('- game-day band matches repo: '+r.band.matches+(r.band.staleLoads?' (after '+r.band.staleLoads+' stale CDN copies)':''));
   if(r.rosters)lines.push('- rosters panel: open '+r.rosters.open+'; probe '+JSON.stringify(r.rosters.probe||null)+'; tabs '+JSON.stringify(r.rosters.tabs||[])+'; No. 13 → '+JSON.stringify(r.rosters.hits13||[])+(r.rosters.stExpected?'; OUT/GTD tags '+r.rosters.stShown+'/'+r.rosters.stExpected:''));

@@ -25,3 +25,4 @@ Processed-thread list for the hourly "Desk inbox" routine (`trig_01TrguYhktGZ29W
 
 Baseline, Sept. 27 18:45Z: no Ole Miss postgame or press conference video posted yet. Already seen, so don't embed: YqxjkqSv1jk (Auburn "NO BAD WINS" short), u2dMQ4u3yNY, s9UU8a0wC7s, 8aOQqgnVr7o, sctBnF9Om7c, u1qAJBKZW7E (all pregame).
 Target for Ole Miss press conference clips: post 2bb6c273 (Sumrall press conference story).
+| 1a0e4dcd66fcf561 | buddymartinshow@gmail.com | Hot breaking news exclusive (Vernell Brown MRI) | PUBLISHED on Brenden's order ("posted ASAP… max share"), post baa858cf | Buddy's copy verbatim + verified context (Sumrall transcript, AP stats); cover Chris Spears 7acdfecf |

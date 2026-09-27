@@ -50,7 +50,7 @@
     // Everything else stays chronological: the next two sit beneath it, later slots take the next-newest unshown story.
     var buddy = posts.find(function(p) { return /buddy martin/i.test(p.author) && Date.now() - p.date.getTime() < 604800000; });
     // Breaking-news pin (Brenden, Sept. 27): the poll story leads until Monday noon ET, then Buddy's column leads again.
-    var BREAKING = { path: '/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls', until: Date.parse('2026-09-28T16:00:00Z') };
+    var BREAKING = { path: '/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators', until: Date.parse('2026-09-28T16:00:00Z') };
     var breaking = Date.now() < BREAKING.until ? posts.find(function(p) { return p.url.indexOf(BREAKING.path) >= 0; }) : null;
     var lead = breaking || buddy || posts[0];
     var others = posts.filter(function(p) { return p.url !== lead.url; });

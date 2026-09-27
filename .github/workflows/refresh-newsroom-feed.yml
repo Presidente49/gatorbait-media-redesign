@@ -17,7 +17,7 @@ permissions:
   pages: write
 
 concurrency:
-  group: refresh-newsroom-feed
+  group: refresh-newsroom-feed-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -31,7 +31,18 @@ jobs:
         with:
           python-version: '3.12'
       - name: Refresh both presentations from one public Wix feed read
+        if: github.ref == 'refs/heads/main'
         run: python automation/update_newsroom_feed_routed.py
+      # Florida football stats: reads ESPN only in a game window, hourly for 3 days after a final,
+      # and once a day; otherwise a no-op. A failed read or check keeps the last good snapshot
+      # and never blocks the newsroom refresh.
+      - name: Refresh Florida football stats from ESPN box scores
+        continue-on-error: true
+        env:
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && '--force' || '' }}
+        run: |
+          python -m unittest -q automation/tests/test_florida_stats.py
+          python automation/florida_stats.py $FORCE
       - name: Commit changed content and request the existing Pages publisher
         shell: bash
         env:
@@ -40,13 +51,21 @@ jobs:
         run: |
           set -euo pipefail
           CHANGED=false
+          STATS=false
+          git config user.name 'gatorbait-newsroom-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
           if ! git diff --quiet -- newsroom-preview/data/posts.json newsroom-preview/index.html gazette-live/posts.json; then
-            git config user.name 'gatorbait-newsroom-bot'
-            git config user.email 'brenden@gatorbaitmedia.com'
             git add newsroom-preview/data/posts.json newsroom-preview/index.html gazette-live/posts.json
             git commit -m 'data: refresh current Newsroom and Gazette stories'
-            git push
             CHANGED=true
+          fi
+          if [ -n "$(git status --porcelain -- deploy/wix-served/florida-stats.json deploy/wix-served/florida-stats.html)" ]; then
+            git add deploy/wix-served/florida-stats.json deploy/wix-served/florida-stats.html
+            git commit -m 'data: refresh Florida football stats from ESPN box scores'
+            STATS=true
+          fi
+          if [ "$CHANGED" = true ] || [ "$STATS" = true ]; then
+            git push
           fi
           # GITHUB_TOKEN commits do not trigger branch-based Pages automatically.
           # Ask the SAME native publisher to publish; no second artifact root.

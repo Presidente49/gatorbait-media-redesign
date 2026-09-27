@@ -41,14 +41,14 @@ const TARGETS=[
     url:"https://www.gatorbaitmedia.com/post/the-sweet-music-chimes-again",
     root:null,
     expectedText:"Maya Angelou never sat in the press box",
-    postFormat:{unbold:true,maxInventedHeads:5}
+    postFormat:{unbold:true,maxInventedHeads:5,kicker:'Column'}
   },
   {
     name:'article-scores',
     url:"https://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25",
     root:null,
     expectedText:"No. 1 Texas 20, No. 14 Tennessee 17",
-    postFormat:{unbold:false,maxInventedHeads:0}
+    postFormat:{unbold:false,maxInventedHeads:0,kicker:'Gators Football'}
   }
 ];
 
@@ -136,6 +136,8 @@ function audit(input){
     gaps.sort((a,b)=>a-b);pf.medianParagraphGap=gaps.length?gaps[gaps.length>>1]:null;
     pf.lineHeight=ps[0]?parseFloat(getComputedStyle(ps[0]).lineHeight)||null:null;
     pf.inventedHeads=document.querySelectorAll('[data-gbm-h]').length;
+    pf.kicker=getComputedStyle(document.documentElement).getPropertyValue('--gbm-kicker').trim().replace(/^"|"$/g,'');
+    if(target.postFormat.kicker&&pf.kicker!==target.postFormat.kicker)hard.push('kicker "'+pf.kicker+'" expected "'+target.postFormat.kicker+'"');
     if(target.postFormat.unbold&&pf.bodyStrongWeight>=600)hard.push('all-bold post still renders body text bold ('+pf.bodyStrongWeight+')');
     if(!target.postFormat.unbold&&pf.bodyStrongWeight!==null&&pf.bodyStrongWeight<600)hard.push('intentional bold lines were un-bolded');
     if(pf.inventedHeads>target.postFormat.maxInventedHeads)hard.push('invented subheads '+pf.inventedHeads+' > '+target.postFormat.maxInventedHeads);

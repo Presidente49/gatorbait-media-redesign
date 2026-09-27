@@ -11,6 +11,9 @@ function vars(){
  // "Florida Gators", so the kicker comes from the URL slug (first match wins).
  var k='Gators Football',s=location.pathname.toLowerCase(),i,hero='';
  for(i=0;i<KICK.length;i++)if(KICK[i][0].test(s)){k=KICK[i][1];break;}
+ // No slug match: a columnist's post is a column (Buddy Martin leads the editorial voice).
+ var au=document.querySelector('[data-hook=post-page] [data-hook=user-name]');
+ if(i===KICK.length&&au&&/buddy martin|franz beard|carlton reese/i.test(au.textContent))k='Column';
  var m=document.querySelector('meta[property="og:image"]');
  if(m&&m.content)hero=m.content.replace(/w_\d+,h_\d+/,'w_1600,h_900').replace(/["\\]/g,function(c){return '%'+c.charCodeAt(0).toString(16);});
  var css=':root{--gbm-kicker:'+JSON.stringify(k.slice(0,40))+(hero?';--gbm-hero:url("'+hero+'")':'')+'}';

@@ -412,3 +412,16 @@ Our own first version had errors too:
 - It took a single live-blog line that a backup QB played, which the play-by-play doesn't show.
 
 **The rule:** every number, name and time is checked against the play-by-play before an in-place update. Anything with no source is held back and listed for Brenden to confirm.
+
+## 39. Game graphics follow the broadcast-graphics layer standard, not flat cards (Sept. 26, 2026)
+
+**What happened:** Tonight's first postgame covers were flat navy cards: big numbers, typed "GATORBAIT" letters instead of the logo, and one photo or none. Brenden rejected them as looking "like PDFs for a PowerPoint" and asked for stacked layers and a higher standard.
+
+**The rule:** build every game graphic to `skills/gatorbait-broadcast-graphics/SKILL.md`:
+- Use its layer model: atmosphere, texture (halftone/grain), controlled color plane, authentic hero photo, a second overlapping photo for depth, information, identity, utility.
+- Use real staff photography, credited (Chris Spears).
+- Use the approved logo file (`gazette-preview/gatorbait-logo.webp`, Wix `d3cfa5_95dd8a25…`), never typed or redrawn letters.
+- One dominant story, legible at thumbnail size.
+- Measure text boxes for overlaps before release. The first magazine render had a two-line headline colliding with the score line.
+
+Reference masters: `gameday/2026-09-26-ole-miss/postgame/master-layered.html` (1920×1080) and `magazine-layered.html` (1080×1350).

@@ -439,7 +439,7 @@ def embed_data(snap):
 
 def build_embed(snap):
     tpl = TEMPLATE.read_text()
-    blob = json.dumps(embed_data(snap), ensure_ascii=False, separators=(',', ':'))
+    blob = json.dumps(embed_data(snap), ensure_ascii=False, separators=(',', ':'), sort_keys=True)
     assert '</' not in blob.lower() and '<!--' not in blob, 'data must not close the script'
     html = tpl.replace('/*FS*/null/*FS-END*/', '/*FS*/' + blob + '/*FS-END*/', 1)
     assert '/*FS*/' + blob in html, 'template data marker missing'
@@ -456,6 +456,11 @@ def fingerprint(s):
     for ch in s:
         h = (h * 31 + ord(ch)) & 0xffffffff
     return h
+
+
+def shell_fingerprint(html):
+    """Fingerprint of the embed with its data block emptied: a data-only PATCH must see this unchanged live."""
+    return fingerprint(re.sub(r'/\*FS\*/.*?/\*FS-END\*/', '/*FS*/null/*FS-END*/', html, count=1, flags=re.S))
 
 
 # ---------- scheduling ----------
@@ -494,7 +499,7 @@ def main(argv=None):
             raise SystemExit('no snapshot to build from')
         html = build_embed(prev)
         out_html.write_text(html)
-        print(json.dumps({'embed': len(html), 'fp': fingerprint(html)}))
+        print(json.dumps({'embed': len(html), 'fp': fingerprint(html), 'shellFp': shell_fingerprint(html)}))
         return 0
     season = a.season or (prev or {}).get('season') or (now.year if now.month >= 3 else now.year - 1)
     reason = 'forced' if (a.force or a.from_dir) else due(prev, now)
@@ -536,7 +541,8 @@ def main(argv=None):
         out_json.write_text(json.dumps(snap, ensure_ascii=False, indent=1, sort_keys=True) + '\n')
         out_html.write_text(html)
     print(json.dumps({'reason': reason, 'changed': changed, 'finals': len(snap['finals']), 'newFinals': new_finals,
-                      'record': snap.get('record'), 'embed': len(html), 'fp': fingerprint(html)}))
+                      'record': snap.get('record'), 'embed': len(html), 'fp': fingerprint(html),
+                      'shellFp': shell_fingerprint(html)}))
     return 0
 
 

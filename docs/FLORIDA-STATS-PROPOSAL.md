@@ -2,7 +2,70 @@
 
 **Date:** Sept. 27, 2026
 **Requested by:** Brenden, Sept. 26, after the one-off Muse "Stat Pack" for Ole Miss.
-**Status:** proposal plus branch implementation. **Nothing is deployed.** Three decisions from Brenden are needed first (see the end).
+**Status:** **The embed has been live since Sept. 27, 20:47Z. The page appears once Brenden adds the blank Wix page (one step, below).** Brenden handed the three decisions to the stats session ("do your own research and make the best decision for the company"). What was decided and done is below. The original proposal follows unchanged, for the record.
+
+## Decided and deployed (Sept. 27, 2026)
+
+| Decision | Choice | Why |
+|---|---|---|
+| Placement | Dedicated page at `/florida-football-stats`, with no homepage, band or Magazine entry point yet | Keeps the approved homepage untouched and gives writers one URL to cite. The band has 4 characters of room. |
+| Publish | **Now:** the stats session refreshes the page after each game. **Target:** option A, the workflow writes the data block using a `WIX_STATS_API_KEY` repo secret | Option A needs a Wix API key only Brenden can create. Option B would bring back the GitHub read-time dependency that PR #36 removed. |
+| First real snapshot | Fetched ESPN through the TinyFish connector | TinyFish can reach ESPN; this container still can't. |
+
+**Live object.** Custom embed `756655cf-06e2-451e-afcf-6a5606959cbc`, "GBM - Florida Football Stats v1":
+- revision 1, HEAD, ESSENTIAL, `loadOnce` false;
+- 12,997 characters, built from `deploy/wix-served/florida-stats.html` at `07387bd`. Its HTML was checked against that build (length and fingerprint 662049864) inside the create call.
+- Shell fingerprint 2083845296: everything outside the data block. A data-only update checks this first.
+- No site publish, since embeds apply without one.
+
+It changes no other embed. The site had 52 embeds before this one.
+
+**Live check (20:51Z).**
+- The embed's `#gbm-flstats-v1` tag is served on a live page (`/about`). A made-up control selector on the same fetch came back unmatched.
+- Wix's 404 page does not draw it. A browser run on `/florida-football-stats` still showed Wix's "Page Not Found." So the stats need a real page.
+
+**Brenden's one remaining step.** In the Wix Editor, add a blank page:
+- slug `florida-football-stats`;
+- hidden from the menu;
+- SEO title "Florida Gators Football Stats 2026 | GatorBait Media".
+
+Then publish. The embed then draws the page over it with nothing else to deploy. The stats session re-checks the URL at each check-in and records the live evidence in #34.
+
+**Numbers check (Sept. 27).** The pipeline's ESPN checks all passed: 4-0, 2-0 SEC. The snapshot was then compared with FloridaGators.com's official cumulative stats (2026, overall), and these match exactly:
+- points;
+- total, rushing and passing yards, and their per-game averages;
+- carries;
+- completions and attempts;
+- turnovers;
+- penalties;
+- time of possession;
+- field goals and extra points;
+- every passer's line.
+
+The only difference is the Auburn game's third-down attempts. ESPN's box has Florida 7-15 and Auburn 6-12; the official box has 7-16 and 6-13. So the season row reads 21-43 and 26-63, against the official 21-44 and 26-64. The page's source note already says ESPN totals can differ slightly from the official figures.
+
+**SEC Network.**
+- The TV column now names SEC Network and SEC Network+ in full.
+- SECSports.com's stats page renders only in the browser, so it can't be a machine source.
+- SEC Network's stats are ESPN's anyway.
+
+**Fixes found with real data:**
+- ESPN's team schedule feed leaves out `conferenceCompetition`, so the SEC record read 0-0. Finals now read the flag from the box-score header, and a disagreement with the schedule stops the run.
+- Rounding stays Python's round-half-even, which matches the official sheet: 2,131 yards / 4 = 532.8 and 1,405 / 4 = 351.2.
+- Time of possession now always adds up to a full game.
+- At 320 px, the team-stats table no longer scrolls sideways.
+- The embed's data is written with sorted keys, so `--build-only` and a fresh build produce identical bytes.
+
+Local render check on real data passed at 320, 390, 430 and 1,366 px, plus the other-route and missing-data fallbacks.
+
+**Refresh until option A exists.** After each final, the stats session:
+1. fetches ESPN's schedule and new box scores with TinyFish `fetch_content`;
+2. runs `automation/florida_stats_import.py` on the saved results;
+3. runs `automation/florida_stats.py --from-dir`, with the same checks;
+4. commits the snapshot;
+5. PATCHes only the embed's `/*FS*/…/*FS-END*/` block, after confirming the live shell fingerprint, and re-sends ESSENTIAL.
+
+**Rollback.** Disable embed `756655cf`, re-sending ESSENTIAL. Nothing else depends on it.
 
 ## What it is
 

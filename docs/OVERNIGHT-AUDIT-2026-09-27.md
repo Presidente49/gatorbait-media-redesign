@@ -38,6 +38,7 @@ Brenden (05:45Z): "use your new tools and deploy them to your department. Let's 
 
 | # | Ticket | Severity | Status | Evidence |
 |---|---|---|---|---|
+| W2 | Site YouTube link pointed to youtube.com/@GatorBaitMedia, which returns 404 (checked twice, both letter cases); the active channel is @thebuddymartinshow (UCtR8b1sKFuwaRjKy5BiXRvA) | Medium | **Fixed** 06:12Z: Utility Footer f8b950c9 rev25 (the footer's YouTube link, with its subscribe prompt) and Site Fixer 5a43ae83 rev16 (Organization `sameAs`). Rollback: swap the handle back. | Read-back shows the new link in both; the only remaining "@gatorbaitmedia" is the email address. |
 | W1 | Game-day roster embed 72189876 (13.7 KB) still loaded on every page after game day; the band no longer references it (no `rosters` key) | Low (performance) | **Fixed** 06:02Z: disabled (rev3, ESSENTIAL kept). Rollback: enable it. | Band JSON has no `rosters` key, so the button can't render. |
 
 ## SEO team (rank)
@@ -45,3 +46,24 @@ Brenden (05:45Z): "use your new tools and deploy them to your department. Let's 
 | # | Ticket | Severity | Status | Evidence |
 |---|---|---|---|---|
 | S1 | NewsArticle JSON-LD (embed 4d3ab24a) looked for the author with selectors Wix no longer renders, so named bylines (Buddy Martin, Carlton Reese, Franz Beard) fell back to Organization "GatorBait Media". It could also fire before the byline rendered, and `@id` carried query strings (e.g. `?cb=`) | Medium | **Fixed** 06:05Z, rev2, fp 3158064706 → 1016752199. It reads `[data-hook=user-name]` and waits up to 4 s for the byline. Staff bylines stay Organization. `@id` = canonical URL. `articleSection` falls back to the article kicker. Rollback: `deploy/news-seo/rollback-4d3ab24a-rev1.html`. | Browser test: Buddy → Person "Buddy Martin"; "GatorBait Staff" → Organization; a byline rendered 1.5 s late → Person "Carlton Reese"; `@id` without `?cb=1`. |
+
+## Brenden add-on (06:05Z): "we have shorts that you could take the links and add"
+
+Source: The Buddy Martin Show channel, 50 most recent Shorts (vidIQ public list; vidIQ has no authorized channel for this account). Each Short was added to the end of the story on the same topic: a bold "Watch on The Buddy Martin Show:" line linking to the Short, then a vertical 315×560 YouTube embed. The embed uses the Ricos HTML-node shape proven live in the Laura Rutledge post. Posts were updated in place (UPDATE_PUBLISH); none had pending edits. No email (both new-post automations are INACTIVE, and updates don't trigger them).
+
+| Story | Short |
+|---|---|
+| No Bad Wins: Sumrall Issues Warning After Florida's Auburn Win | YqxjkqSv1jk "NO BAD WINS: Sumrall Rips 16 Penalties" |
+| Florida Escaped Auburn, But The Yellow Flags Followed It Home | YqxjkqSv1jk |
+| Controversy, Kiffin and Sumrall: Florida hired the right football coach | WuZ4S-fubUY "Did Florida really dodge a bullet with Lane Kiffin?" |
+| Urban Sees The Gators' Bright Future | jTq2Pn7ZeBA "Urban Meyer: Florida's improved lines" |
+| Week 3 Preview: Florida v. Auburn | TzP8RJY0BKw "Can Auburn's QB handle the pressure?" |
+| Analyzing the win over FAU | z51GTfYSS0Y "Did Florida's defense let FAU throw short passes?" |
+| Getting Cut Down To Size! SEC Warns LSU | -YRbRemUOWI "What happens if LSU goes independent?" |
+| What Can "VB3" Do for You? | rLmhIOqbttc "Vernell's six catches" |
+
+- **Skipped on purpose:** Gator Bait chant and postcard-history Shorts (sensitive, need an editor's call); Terry Bradshaw, NFL and Arch Manning Shorts (no matching story).
+- **Rollback:** delete the two nodes whose ids start `gbmshort` in each post.
+- **Found and fixed while verifying (writing lane):** the VB3 story (Eddie Gilley) ended with a truncated line, "tune in to The Buddy Martin S". It now reads "Tune in to The Buddy Martin Show."
+- **Live check:** the VB3 story shows the Watch line with the youtube.com/shorts link.
+- **Proposal, not done** (homepage layout needs Brenden's yes): a Shorts rail on the homepage fed from the channel.

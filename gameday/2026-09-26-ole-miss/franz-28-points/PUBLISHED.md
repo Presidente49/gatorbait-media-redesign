@@ -22,3 +22,12 @@
 - SEC/national penalty ranks.
 
 Live check 12:31Z: title, byline Franz Beard, all fixes visible, og:image = the new cover.
+
+## Columns email (Buddy + Franz): PUBLISHED to subscribers, Sept. 27 ~13:0xZ
+Brenden: "Franz and buddies need to go out ASAP on emails from last night."
+- Campaign 2fb154ff-cf0f-4cd5-9545-bffce1e5b078, "Buddy Martin and Franz Beard on Florida 52, Ole Miss 28". Label e345fa8e.
+- Source: newsletter/2026-09-27-columns-buddy-franz.mjml. Lead: Buddy's column (bb1d7484, cover photo Hannah White / UAA Communications, credited). Second: Franz's column (d07e9390, field-diagram cover).
+- Gates: strict MJML compile 0 errors; check-links 6/6 clean UTMs (campaign columns_buddy_franz_2026_09_27); 2/2 unique images; no overflow at 390/1000. The Magazine-only stack-qc does not apply (same as the reaction email 6b056c3f).
+- Preview check: both headlines, both covers, both CTAs, credit, no `amp;utm`, no placeholders. The Wix opt-out footer ("change your email preferences") matches the sent 6b056c3f.
+- Dedupe was clear before create and again before publish. Alert automations were not touched.
+- After publish: distribution IN_DETECTION (Wix pre-send screening). Delivery counts to follow.

@@ -220,3 +220,15 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
   - Chris Spears credit added for its photo: Home Code rev 9.
   - Band rev 38: note says "up to No. 8 in the Coaches Poll", and the Buddy button now points to the new column.
 - Unverified in Buddy's copy, left as written and flagged to Brenden: the ESPN FPI "favored in all but Texas and Georgia" claim, and the source/date of Tebow's quote.
+
+## Brenden (~18:25Z): Buddy's column resent with a new AP poll paragraph
+
+- AP Week 5 verified via NCAA.com (posted 14:08 ET): Florida No. 8, 1,272 pts, up 13 from No. 21, 0 first-place votes; Ole Miss No. 9, Missouri No. 25. ESPN and the AP hub table still showed Week 4 at 18:20Z.
+- Live post `c377ca6a` updated, no email:
+  - Buddy's new AP paragraph added after the Sumrall line. "by lunchtime Monday" became "by Sunday afternoon": the poll came out Sunday.
+  - The editor's note now says No. 8 in both polls.
+  - The graphic was swapped to the two-poll version (`d3cfa5_8e4a6f23…png`, 1600×1000).
+  - The earlier fixes ("the good old days", the closing quote on Sumrall's line) are kept; the resend still had both errors.
+- Band rev 39: "No. 8 in both the AP Top 25 and the Coaches Poll … at No. 25 Missouri."
+- The separate "Chomp Up the Charts" story is still to come: trigger `trig_01EuBLBWmaYdjz8VLg2chhc2` at 18:39Z, with a different cover.
+- Unverifiable, left in the quoted AP wording: "highest ranking since 2020 and first top-10 appearance since 2021".

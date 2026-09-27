@@ -158,7 +158,8 @@ function audit(input){
     if(bp){const br=bp.getBoundingClientRect();pf.bodyWidth=Math.round(br.width);pf.bodyLeft=Math.round(br.left);
       pf.column=[];for(let a=bp;a&&a!==document.documentElement&&pf.column.length<24;a=a.parentElement){const cs=getComputedStyle(a),ar=a.getBoundingClientRect();
         pf.column.push([a.tagName.toLowerCase()+(a.id?'#'+a.id:'')+(a.getAttribute('data-hook')?'[hook='+a.getAttribute('data-hook')+']':'')+(a.className&&typeof a.className==='string'?'.'+a.className.split(/\s+/).slice(0,2).join('.'):''),Math.round(ar.left),Math.round(ar.width),cs.paddingLeft+'/'+cs.paddingRight,cs.marginLeft+'/'+cs.marginRight,cs.maxWidth,cs.overflowX].join(' '));}
-      if(viewport<=600&&br.width<viewport*0.82)hard.push('article column too narrow: body '+Math.round(br.width)+'px of '+viewport+'px');}
+      if(viewport<=600&&br.width<viewport*0.82)hard.push('article column too narrow: body '+Math.round(br.width)+'px of '+viewport+'px');
+      if(viewport>=1200&&br.width<660)hard.push('desktop article column too narrow: body '+Math.round(br.width)+'px');}
     if(target.postFormat.hero&&!pf.coverBlock)hard.push('landscape cover photo block missing from post header');
     if(target.postFormat.noHero&&pf.coverBlock)hard.push('post without a landscape image still draws the navy cover block');
     if(target.postFormat.kicker&&pf.kicker!==target.postFormat.kicker)hard.push('kicker "'+pf.kicker+'" expected "'+target.postFormat.kicker+'"');

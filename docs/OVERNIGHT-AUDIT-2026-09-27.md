@@ -93,3 +93,20 @@ GatorBait Media Facebook reels from the last day were added with rewritten title
 - **Live check:** the postgame story renders the link and the Facebook iframe.
 - **Rollback:** delete the nodes whose ids start `gbmfb`.
 - **Not possible from here:** fixing the "Jaden Ball" caption on Facebook itself needs Page access.
+
+## Brenden (live, ~13:47Z): "Double logo" fix + Today's Edition finding
+
+Brenden shared a screenshot showing a duplicated GatorBait logo on the front page (site header logo, then a second logo directly below it above the lead story). Diagnosed via the live custom embeds (Wix API), not a screenshot old enough to dismiss:
+
+**D8 — Double logo (FIXED, published):**
+- Cause: "GBM - Home Code v1 (Wix-served)" (embed `622d8ece`), the front-page renderer that mounts into `#gbm-live`, was building its own in-page `<header class="sh-header">` with a second `<img>` GatorBait wordmark, directly below the persistent site-wide header logo from "GBM - Compact Optimized Logo + Header v12" (`7fee4de6`).
+- Fix: removed the duplicate `<a><img></a>` brand lockup from Home Code v1's `sh-header`, kept the tagline, the "Join GatorBait" button and the full nav (Front Page/Latest/Magazine/TV/Podcasts/Message Board/Store/Sign in) untouched.
+- Embed `622d8ece` revision 5 → 6, category re-sent as ESSENTIAL, site published.
+- Verified: repeated live fetch after publish shows no duplicate logo image; page structure and links otherwise unchanged. Repo copies (`deploy/wix-served/split/home-code.html`, `deploy/wix-served/homepage-embed.html`) updated to match.
+
+**New finding, unresolved — "Today's Edition" heading is currently rendering live:**
+- Three independent live fetches of `https://www.gatorbaitmedia.com/` (spaced minutes apart) all show an `<h1>Today's Edition</h1>` plus "Dive into today's edition... Read Latest" ahead of the real, freshly-updated story list. This is the exact legacy heading `docs/HOMEPAGE-BASELINE-LOCK.md` and AGENTS.md say must never be exposed.
+- This is native Wix page content, not a custom embed — it does not match anything in Home Code v1's own markup (which builds its own dynamic `<h1>` per lead article, not a static "Today's Edition").
+- A guard embed already exists for exactly this ("GBM - Legacy Homepage Hard Delete v2 (prepaint bounded)", `ed3718cc`) — it scans for an exact-text `/^Today[’']?s Edition$/i` heading plus "Read Latest" and removes it, in a timed burst up to 4s after load.
+- Not fixed here: I can't tell from a headless fetch alone whether real visitors ever see it (the guard may be clearing it within the first few seconds, before a normal person looks) or whether it's a genuine persistent leak the guard is failing to catch. Fixing the underlying native Wix block is outside what the embeds API can touch, and I don't have a real browser in this session to watch the removal happen in real time.
+- Needs: a visual QC pass with a real browser (load the homepage, watch for a flash of "Today's Edition" in the first ~4 seconds) to confirm whether this is cosmetic/transient or a persistent violation needing a native Wix Editor fix.

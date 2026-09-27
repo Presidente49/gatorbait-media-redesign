@@ -247,3 +247,12 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
   - Body: the two-poll graphic, the Baugh end-zone photo, and links to Buddy's column and the game story.
   - Every number is from AP via NCAA.com and the Coaches Poll via ESPN.
 - The 18:39Z recheck trigger was deleted; the work is done.
+
+## Brenden (~18:25Z): Chris Spears press conference photos
+
+- Uploaded to Wix:
+  - Sumrall at the podium: `3d514639`
+  - Three players, not yet identified: `6a0635d5` (curly hair, blue tee), `64414424` (grey hoodie, braids), `fa7de8b0` (mustache, blue tee)
+- Sumrall's podium photo was added to the live press-conference story `2bb6c273` after his opening quotes, credited. No email.
+- The player photos are on hold until Brenden confirms who's who. The story quotes Baugh, Woods and Philo; each photo goes beside that player's section.
+- NOT used, not stored: a postgame close-up of a player whose eye black has a profanity written on it.

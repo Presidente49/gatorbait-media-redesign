@@ -72,3 +72,21 @@ Source: The Buddy Martin Show channel, 50 most recent Shorts (vidIQ public list;
 - **06:12Z, Brenden: "Do not post urban mayer only post stuff from today or yesterday."** All 8 Short embeds were removed (16 nodes; all 8 posts republished in place). None of the channel's Shorts is from today or yesterday ET; the newest is Friday 11:51 p.m. ET. The VB3 truncation fix stays.
 - **Google Drive:** no videos created or modified since Sept. 20 (newest video in Drive: March 2026). The only Ole Miss game video on hand is Chris Spears' 8 s celebration clip (`gameday/2026-09-26-ole-miss/postgame/video/`). **Blocked:** posting to YouTube needs the Buddy Martin Show channel authorized in vidIQ (it lists no authorized channels for brenden@gatorbaitmedia.com).
 - **Proposal, not done** (homepage layout needs Brenden's yes): a Shorts rail on the homepage fed from the channel.
+
+## Brenden (06:15Z): "Facebook does" (today's and yesterday's videos are on Facebook)
+
+GatorBait Media Facebook reels from the last day were added with rewritten titles. Each is a bold "Watch:" line linking to the reel, plus Facebook's public video player (267×476, Ricos HTML node). Posts were updated in place (UPDATE_PUBLISH, none had pending edits). No email.
+
+| Story | Reel | New title |
+|---|---|---|
+| Baugh Game: Gators Run Over No. 4 Ole Miss (94127b93) | 2330767687457823 | The Swamp was rocking: Gators take down No. 4 Ole Miss 52-28 |
+| CFB Saturday wrap (9fb69423) | 4342698309325942 | Field level in The Swamp after Florida 52, Ole Miss 28 |
+| It's Game Day in The Swamp (270e8172) | 2000395273993128 | 90 minutes to kickoff in The Swamp |
+| It's Game Day in The Swamp (270e8172) | 1098273142610325 | Lights out, phones up: The Swamp sings "Won't Back Down" |
+| Baugh Runs the SEC (e5686337) | 2014446072592506 | Is Jadan Baugh the best back in the country? Graham Hall of 247Sports weighs in (the Facebook caption misspells him "Jaden Ball") |
+| Week 4 Preview (558b5e49) | 1101081166186967 | Swamp noise and false starts: Graham Hall of 247Sports on Florida's home edge |
+
+- **Skipped:** Tim Tebow on SEC Nation (TV footage), the in-game "leads 38-28" clip (outdated), the "Work the Cut" coach clip (source unclear).
+- **Live check:** the postgame story renders the link and the Facebook iframe.
+- **Rollback:** delete the nodes whose ids start `gbmfb`.
+- **Not possible from here:** fixing the "Jaden Ball" caption on Facebook itself needs Page access.

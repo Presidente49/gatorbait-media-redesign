@@ -29,4 +29,10 @@ Then paste `tagger.js` into ExecuteWixAPI with `hasMutations` set true for a rea
 - Verified live on the Sumrall presser post: tags render as links to the tag pages, and `/tags/jadan-baugh` lists the posts.
 - Older archive (4,400+ posts, previous rosters): not tagged. A current-roster match would mis-tag it.
 
+**2026-09-27 10:53Z daily sweep (last 48 h, 15 posts):**
+- 1 tagged: the CFB Saturday wrap (+4 tags).
+- 13 already complete.
+- 1 skipped for unpublished edits: the halftime story.
+- The earlier 9 skips are unchanged; all still have unpublished edits.
+
 Formatting is standardized separately: `design/post-normalizer-v1/` runs on every article page. It handles spacer lines, all-bold bodies, hand-made subheads, deck/lede lines and the typed-in byline.

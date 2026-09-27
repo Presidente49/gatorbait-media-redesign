@@ -184,3 +184,11 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
   - `research/photo-sourcing` (scout)
   - `marketing/email-delivery-check` (wrench)
 - Also added: `brands/gator-bait-media/editorial-desk.md` (canonical names, verified game facts, photo sources, writer submission rules) and a learnings entry.
+
+## Brenden (~15:45Z): "Pin Buddy as the lead on the front page" (LIVE)
+
+- Home Code embed `622d8ece`, revision 6 → 8, published:
+  - Lead = Buddy Martin's newest column, provided it's under 7 days old; otherwise the newest story. Everything else stays chronological and no story repeats. The Voices rail skips the pinned column via `unseen()`.
+  - Lead photo credits now render over the photo: Hannah White / UAA for Buddy's Baugh cover, and Chris Spears for his Auburn and entrance photos. The old code only credited one Auburn photo.
+- The feed confirms `dc:creator` = "Buddy Martin", so the current lead is "The Swamp Gets Its Swagger Back".
+- Repo `deploy/wix-served/split/home-code.html` is re-synced to live: line-by-line fingerprints match and the length is 13,805. It had drifted, still holding the Sept. 26 per-visit rotation and an older feed fetch.

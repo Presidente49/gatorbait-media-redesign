@@ -319,3 +319,15 @@ Every Claude/Codex/ChatGPT GatorBait session should:
 7. update existing work items rather than inventing parallel controllers/issues
 
 Historical chats, branches and files are evidence. They do not outrank live state or this current routing snapshot.
+
+## Cloud game-week schedule (set Sept. 27, 2026; Brenden: "run all that stuff in the cloud")
+All of these are Claude Code cloud routines that fire into the controller session. No Mac, FCC or n8n dependency.
+- Sun 1:15 a.m. ET: CFB Saturday wrap refresh and publish (trig_01CnjeWyu2EENbzZp6SJVJCR).
+- Sun 8:50 a.m. ET: writer-stories QC and covers; upload the Postgame Wrap newsletter as a DRAFT and ask for a yes (trig_01FypHf2prvDbb4LXDcww7tJ).
+- Sun 2:04 p.m. ET: AP poll story "Chomp Up the Charts"; band rank update (trig_01NyNPP9mzWdG49zXnxPJp1M).
+- Sun 5:50 p.m. ET: Missouri first look; band to Missouri upcoming (trig_015kRs4KTum6Az8EvM1pJqxb).
+- Weekly Mon 1:47 p.m. ET: Monday presser and injury story (trig_01JKUBvRUZ3ptM5D3kr4V13T).
+- Weekly Thu 9:44 a.m. ET: opponent preview; weekly Magazine draft for a yes; Magazine fallback refresh (trig_011cSGMQcch48p2wpjaBrWGp).
+- Sat Oct. 3, 9:50 a.m. ET: Missouri game day, pregame through postgame (trig_01F7ct63dJfvpqG5dVSNV5ht).
+
+Every email is still owner-approved: one postgame email per game, and any other send needs Brenden's yes.

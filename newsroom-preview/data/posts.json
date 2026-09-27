@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III",
+      "excerpt": "An MRI confirmed a Grade 1 PCL sprain, the mildest grade, in Vernell Brown III’s knee, sources told GatorBait. He may not miss any games.",
+      "url": "https://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-27T22:04:07Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_7acdfecf6f3d45289bbdcc93f3ca970c~mv2.jpg/v1/fit/w_800,h_494,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III"
+      }
+    },
+    {
+      "title": "Show-Me State of Mind: A First Look at No. 25 Missouri",
+      "excerpt": "No. 8 Florida’s reward for routing Ole Miss is a trip to No. 25 Missouri, which let a fourth-quarter lead get away at Mississippi State.",
+      "url": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-27T21:53:54Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_a67ff355ad6a4d668106c2befa41b208~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Show-Me State of Mind: A First Look at No. 25 Missouri"
+      }
+    },
+    {
       "title": "10 Thoughts From the Sidelines: Florida 52, Ole Miss 28",
       "excerpt": "Photographer Chris Spears had the best seat in The Swamp. Ten things the sideline told him about the Florida team that ran over No. 4 Ole Miss.",
       "url": "https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Contenders, Not Hopefuls: Florida’s Rout of No. 4 Ole Miss Puts the SEC on Notice"
-      }
-    },
-    {
-      "title": "Commit, Then Rout: Four-Star Safety Cyion Smith Picks Florida Before 52-28 Win Over No. 4 Ole Miss",
-      "excerpt": "Blountstown four-star safety Cyion Smith committed to Florida hours before kickoff, then watched the Gators run over No. 4 Ole Miss 52-28 in The Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/cyion-smith-commits-florida-gators-2028-safety",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-27T00:30:27Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_7b723a840bd14d0faad14e63222bf04f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Commit, Then Rout: Four-Star Safety Cyion Smith Picks Florida Before 52-28 Win Over No. 4 Ole Miss"
-      }
-    },
-    {
-      "title": "Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp",
-      "excerpt": "Jadan Baugh ran for three touchdowns, Florida scored touchdowns on its first five possessions of the second half, and No. 21 Florida beat No. 4 Ole Miss 52-28 to move to 4-0.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-26T23:46:39Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c902c8a849464c49a64841fcef37ed35~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp"
       }
     }
   ]

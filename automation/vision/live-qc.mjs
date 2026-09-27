@@ -128,11 +128,14 @@ function audit(input){
   const pf={};
   if(target.postFormat){
     const d=document.querySelector('[data-hook=post-description]');
-    const ps=d?[...d.querySelectorAll('p')].filter(p=>visible(p)&&(p.textContent||'').trim().length>40):[];
+    // Body paragraphs only: skip deck/lede/byline/subhead lines the normalizer styles on purpose.
+    const ps=d?[...d.querySelectorAll('p')].filter(p=>visible(p)&&(p.textContent||'').trim().length>40&&![...p.attributes].some(a=>a.name.startsWith('data-gbm'))):[];
     const strong=ps.map(p=>p.querySelector('strong,b')).filter(Boolean)[0];
     pf.bodyStrongWeight=strong?Number(getComputedStyle(strong).fontWeight):null;
     pf.visibleEmptyLines=d?[...d.querySelectorAll('p,div[id^="viewer-"]')].filter(e=>!(e.textContent||'').trim()&&!e.querySelector('img,iframe,video,figure')&&e.getBoundingClientRect().height>4).length:null;
-    const gaps=[];for(let i=1;i<Math.min(ps.length,12);i++)gaps.push(Math.round(ps[i].getBoundingClientRect().top-ps[i-1].getBoundingClientRect().bottom));
+    // Gap between adjacent visible text blocks (any length), not between the long ones.
+    const blocks=d?[...d.querySelectorAll('p,h2,h3')].filter(e=>visible(e)&&(e.textContent||'').trim()):[];
+    const gaps=[];for(let i=1;i<Math.min(blocks.length,25);i++)gaps.push(Math.round(blocks[i].getBoundingClientRect().top-blocks[i-1].getBoundingClientRect().bottom));
     gaps.sort((a,b)=>a-b);pf.medianParagraphGap=gaps.length?gaps[gaps.length>>1]:null;
     pf.lineHeight=ps[0]?parseFloat(getComputedStyle(ps[0]).lineHeight)||null:null;
     pf.inventedHeads=document.querySelectorAll('[data-gbm-h]').length;

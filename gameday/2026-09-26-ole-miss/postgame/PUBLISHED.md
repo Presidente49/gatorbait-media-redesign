@@ -37,3 +37,7 @@ A frame grab from the Chris Spears celebration clip (final scoreboard 52-28, 0:0
 
 ## Update 00:20Z
 Cover changed to the thumbnail "Swamp Party" FINAL 52-28 (d3cfa5_a1b1d9987b2a431795a6f88a4bfef3d8~mv2.jpg), built from the Chris Spears celebration frame. Body intact (31 nodes, 3 photos). No email.
+
+## Update 00:45Z
+- Homepage dedupe live: Home Code 622d8ece rev2 -> rev3, fp 2679990181. An independent live browser pass shows no headline twice and the "Up next: Florida at Missouri" box.
+- Cover changed to the layered master v02 (d3cfa5_74c0faaa50574ad0b505ac84433f71c2~mv2.jpg). Magazine cover v02 is in Media: d3cfa5_edc269515b4043e99026e4c4db8b99d1~mv2.jpg. No email.

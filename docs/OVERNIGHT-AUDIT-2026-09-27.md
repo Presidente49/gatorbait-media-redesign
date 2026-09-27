@@ -203,3 +203,20 @@ Brenden's postgame celebration photo (800×432) was not used: its photographer i
 - Same embed: the homepage fallback snapshot (used only if the live feed fails) went from 9 Friday–Saturday posts to the 6 newest. That dropped the embed from 14,989 to 13,372 characters, under the 15,000 cap with room to spare.
 - New `automation/newsletter/band-to-mjml.mjs` (band → newsletter) with a sample run `newsletter/2026-09-26-band-ole-miss.mjml`. All gates pass: stack-qc 0 errors, 2/2 unique images, clean UTMs, strict compile 0 errors.
 - The sample is NOT uploaded: it would repeat today's Postgame Wrap and columns emails. It's the tool for the Missouri week.
+
+## Brenden (~18:10Z): "Yes publish Buddy's column now with the AP poll and the college poll… a graphic, not a plain list"
+
+- Buddy's "Bound for the CFB Top Ten: Cue Up 'Happy Days Are Here Again'" (`c377ca6a`) was PUBLISHED at 18:11Z. No email.
+  - Two confirmed typo fixes (see INBOX-DESK-LOG).
+  - Cover: Chris Spears' Baugh first-TD dive.
+  - After his "lock for the Top 10" line: an italic editor's note plus a GatorBait rankings graphic.
+- The graphic (`d3cfa5_f5746e3d…png`, 1600×900, source `gameday/2026-09-26-ole-miss/polls/`):
+  - AFCA Coaches Poll Week 5 top 10, Florida row highlighted: No. 8, up 14, 1,214 pts.
+  - The alt text carries the full top 10.
+- AP Week 5 was not out anywhere at 18:15Z (ESPN, AP hub, CBS and search all showed Week 4).
+  - The recheck at 18:39Z (`trig_01EuBLBWmaYdjz8VLg2chhc2`) swaps in a two-poll graphic, updates the editor's note, publishes the separate "Chomp Up the Charts" story and updates the band.
+- Front page:
+  - Buddy's new column is now the pinned lead.
+  - Chris Spears credit added for its photo: Home Code rev 9.
+  - Band rev 38: note says "up to No. 8 in the Coaches Poll", and the Buddy button now points to the new column.
+- Unverified in Buddy's copy, left as written and flagged to Brenden: the ESPN FPI "favored in all but Texas and Georgia" claim, and the source/date of Tebow's quote.

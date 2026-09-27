@@ -63,7 +63,7 @@
     function support(p) { return '<article>' + link(p, photo(p, false) + meta(p) + '<h2>' + esc(p.title) + '</h2>') + '</article>'; }
     function column(name) { var p = unseen(posts.filter(function(p) { return p.author.toLowerCase().indexOf(name.toLowerCase()) >= 0; }), 1)[0]; return p ? '<article><p class="sh-kicker">' + esc(name) + '</p>' + link(p, '<h3>' + esc(p.title) + '</h3>') + meta(p) + '</article>' : ''; }
     var cols = column('Buddy Martin') + column('Franz Beard'), more = unseen(others, 6);
-    var CREDITS = { 'd3cfa5_d3190d83cdfc44549b10b6bd025e57a3': 'Photo: Chris Spears', 'd3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35': 'Photo: Hannah White / UAA Communications', 'd3cfa5_2ea58f38e2da4c988ab73065cfe63130': 'Photo: Chris Spears' };
+    var CREDITS = { 'd3cfa5_d3190d83cdfc44549b10b6bd025e57a3': 'Photo: Chris Spears', 'd3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35': 'Photo: Hannah White / UAA Communications', 'd3cfa5_2ea58f38e2da4c988ab73065cfe63130': 'Photo: Chris Spears', 'd3cfa5_026d2a4d2be04a91b8c32317fed5f623': 'Photo: Chris Spears' };
     var creditKey = Object.keys(CREDITS).find(function(k) { return lead.image.indexOf(k) >= 0; });
     var credit = creditKey ? '<figcaption>' + CREDITS[creditKey] + '</figcaption>' : '';
     var root = document.createElement('div');

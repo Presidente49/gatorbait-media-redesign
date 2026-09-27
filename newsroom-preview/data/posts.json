@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Beating Ole Miss was huge, but the Gators left at least 28 points on the field",
+      "excerpt": "Florida beat No. 4 Ole Miss 52-28, but Franz Beard counts at least 28 points the Gators left on the field: an overthrown Vernell Brown III, an open Amir Jackson on fourth down, a 67-yard touchdown erased by a hold, and eight penalties for 92 yards.",
+      "url": "https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-09-27T12:29:17Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_ef56989a43bc4ebf8ffe6d6245358fef~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Beating Ole Miss was huge, but the Gators left at least 28 points on the field"
+      }
+    },
+    {
       "title": "What Happened in College Football Saturday: Gators Take Down No. 4 Ole Miss as Top 25 Shakes",
       "excerpt": "Florida beat No. 4 Ole Miss 52-28 to move to 4-0, while Wisconsin and Wake Forest pulled road upsets and No. 1 Texas and No. 2 Georgia stayed unbeaten ahead of Sunday's AP poll.",
       "url": "https://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Baugh Runs the SEC: Florida's Junior Back Leads the League in Everything"
-      }
-    },
-    {
-      "title": "It's Game Day in The Swamp: No. 21 Florida vs No. 4 Ole Miss",
-      "excerpt": "No. 21 Florida hosts No. 4 Ole Miss at 3:30 p.m. ET on ABC in a matchup of unbeaten teams. Here's what to watch in The Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/game-day-swamp-ole-miss",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-26T17:18:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_d8a874154b024d22ba10c201ecc192b0~mv2.jpg/v1/fit/w_1000,h_969,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for It's Game Day in The Swamp: No. 21 Florida vs No. 4 Ole Miss"
       }
     }
   ]

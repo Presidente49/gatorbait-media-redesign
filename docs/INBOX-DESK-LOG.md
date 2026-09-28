@@ -31,5 +31,5 @@ Brenden, Sept. 28 ~03:50Z: postgame video is on Facebook, and one was added to a
 - Facebook reel 2330767687457823 in the Baugh Game recap (94127b93).
 - Facebook reel 4342698309325942 in "What Happened in College Football Saturday" (9fb69423).
 - YouTube Abu9k2osBUQ (press conference) live in the Sumrall presser story 2bb6c273.
-- Pending, NOT live: an unpublished edit on 2bb6c273 (saved 02:45Z) swaps the top photo for YouTube Short HOWChEGrfF0. The desk must SKIP 2bb6c273 while it has unpublished changes; publishing it is Brenden's call.
+- YouTube Short HOWChEGrfF0 now live at the top of 2bb6c273: the pending 02:45Z edit was published at 03:38Z on Brenden's order ("publish it"), after confirming the draft was unchanged since review.
 | 1a0e4dcd66fcf561 | buddymartinshow@gmail.com | Hot breaking news exclusive (Vernell Brown MRI) | PUBLISHED on Brenden's order ("posted ASAP… max share"), post baa858cf | Buddy's copy verbatim + verified context (Sumrall transcript, AP stats); cover Chris Spears 7acdfecf |

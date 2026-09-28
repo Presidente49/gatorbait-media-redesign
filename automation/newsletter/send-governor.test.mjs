@@ -21,7 +21,7 @@ function campaign(hoursAgo, stats = {}, state = 'DISTRIBUTED') {
 }
 
 // Builds the governor with a fake `wix` global that answers by URL.
-async function run({ status = 'ACTIVE', campaigns = [], automations = [] } = {}) {
+async function run({ status = 'ACTIVE', campaigns = [], automations = [], countFrom = null } = {}) {
   const calls = [];
   const wix = {
     request: async ({ method, url }) => {
@@ -34,7 +34,10 @@ async function run({ status = 'ACTIVE', campaigns = [], automations = [] } = {})
       throw new Error(`unexpected ${url}`);
     },
   };
-  const governor = new Function('wix', `return (${source});`)(wix);
+  const code = countFrom
+    ? source.replace('const COUNT_FROM = null;', `const COUNT_FROM = ${JSON.stringify(countFrom)};`)
+    : source;
+  const governor = new Function('wix', `return (${code});`)(wix);
   return { result: await governor(), calls };
 }
 
@@ -56,12 +59,27 @@ test('enforces the 24-hour and 7-day caps, counting scheduled sends', async () =
   assert.equal(day.result.ok, false);
   assert.match(day.result.reasons.join(' '), /last 24 hours/);
 
-  const week = await run({ campaigns: [campaign(30), campaign(100)] });
-  assert.match(week.result.reasons.join(' '), /last 7 days/);
+  const sixInWeek = await run({ campaigns: [30, 40, 50, 60, 70, 80].map(h => campaign(h)) });
+  assert.equal(sixInWeek.result.ok, true, sixInWeek.result.reasons.join('; '));
+
+  const week = await run({ campaigns: [30, 40, 50, 60, 70, 80, 90].map(h => campaign(h)) });
+  assert.match(week.result.reasons.join(' '), /7 list send\(s\) in the last 7 days; the cap is 7/);
   assert.doesNotMatch(week.result.reasons.join(' '), /24 hours/);
 
   const scheduled = await run({ campaigns: [campaign(-5, {}, 'SCHEDULED')] });
   assert.match(scheduled.result.reasons.join(' '), /last 24 hours/);
+});
+
+test('COUNT_FROM drops earlier sends from the caps but not from the rates', async () => {
+  const heavyWeek = [3, 10, 30, 40, 50, 60, 70].map(h => campaign(h, { delivered: 1000, bounced: 30 }));
+  const policyStart = ago(2);
+  const { result } = await run({ campaigns: heavyWeek, countFrom: policyStart });
+  const reasons = result.reasons.join(' ');
+  assert.doesNotMatch(reasons, /24 hours|7 days/);
+  assert.match(reasons, /bounce rate 2\.91%/);
+
+  const after = await run({ campaigns: [campaign(1), ...heavyWeek], countFrom: policyStart });
+  assert.match(after.result.reasons.join(' '), /1 list send\(s\) in the last 24 hours counted since/);
 });
 
 test('ignores drafts, rejected sends and sends older than a week', async () => {

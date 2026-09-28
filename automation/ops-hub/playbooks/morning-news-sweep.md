@@ -4,7 +4,9 @@ Brenden, Sept. 28, 2026: "Why don't we look at the news the first thing in the m
 
 It runs every day at 6:28 a.m. ET, game day or not, in the game-day desk session. That session is the one writer for posts, the band and home code. The routine is "Morning news sweep". This is the automated form of the "Morning open → Editorial" step in `daily-operations.md`.
 
-Why it exists: on Sept. 26, ESPN had Kewan Lacy ruled out at 9:15 a.m. ET, and GatorBait published about five hours later (Lesson 37). A 7:44 a.m. Jarvis brief reads this sweep's report and tells Brenden.
+Why it exists: on Sept. 26, ESPN had Kewan Lacy ruled out at 9:15 a.m. ET, and GatorBait published about five hours later (Lesson 37).
+
+It runs right before the daily roundup, which fires into the same session at 6:32 a.m. ET and sends at 7:00. That lets the roundup carry what the sweep just published. Jarvis's 7:44 a.m. Morning Money Report reads this sweep's #34 report and tells Brenden.
 
 ## 1. Know what we already have
 - Wix Blog posts published in the last 48 hours, plus open drafts (title, slug, ID, `hasUnpublishedChanges`).
@@ -30,14 +32,14 @@ For every item, write down four things: what happened, who reports it, whether i
   - Use a credited photo (the Chris Spears archive first) or a type-led GatorBait graphic. Never AI art.
   - Tag it per `automation/blog-tagging/README.md` and set the category. The byline is GatorBait Staff unless a writer's name applies.
   - Run the copy desk: check names and numbers against `editorial-desk.md`.
-- **Breaking** (injury, transfer, commitment, suspension, coaching change, schedule change): follow the "Breaking news = maximum share" order in `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md`. The email step still has to pass the send governor.
+- **Breaking** (injury, transfer, commitment, suspension, coaching change, schedule change): follow the "Breaking news = maximum share" order in `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md`. There's no separate breaking email; the story leads the next roundup.
 - **Unconfirmed, rumor or analysis:** make a draft with [CHECK] on anything unverified, or just list it in the report.
 - **No Florida angle:** skip it.
 
 **Front page:** if a morning story is the day's lead, update the Home Code pin and the band through the fingerprinted process. Re-sync the repo copy in the same pass (Lesson 44).
 
 ## 4. Email and social
-- There's no morning email by default. Any list send runs `automation/newsletter/send-governor.js` first and goes only on `ok: true` (Lesson 48).
+- The sweep sends no email. Its stories go into the 7 a.m. daily roundup, which is the day's one list email and runs `automation/newsletter/send-governor.js` first (Lesson 48).
 - **Social:** write paste-ready copy for Brenden until Metricool has networks connected.
 
 ## 5. Report

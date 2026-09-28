@@ -7,6 +7,8 @@ on:
       - 'automation/site-design/**'
       - 'automation/vision/live-qc.mjs'
       - 'deploy/wix-served/**'
+      - 'newsroom-preview/**'
+      - 'scripts/check-typography.sh'
       - '.github/workflows/live-presentation-qc.yml'
   workflow_dispatch:
 
@@ -24,6 +26,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Barlow-only typography guard
+        run: bash scripts/check-typography.sh
 
       - name: Set up Node
         uses: actions/setup-node@v4

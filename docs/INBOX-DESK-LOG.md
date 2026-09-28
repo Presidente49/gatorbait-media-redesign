@@ -17,6 +17,7 @@ Processed-thread list for the hourly "Desk inbox" routine (`trig_01TrguYhktGZ29W
 | 1a0d8efdd0c7c32d | ScottB@gators.ufl.edu | Florida vs. Ole Miss gameday media information | Logistics, skipped | none |
 | 1a0e3784c4073f2b | reader (Yahoo) | Re: GatorBait Magazine — Postgame Wrap | Reader reply ("GO GATORS"), not a submission; skipped (16:07Z run) | none |
 | 1a0e364170a48426 | reply@e.floridagators.com | TICKETS: Beat UGA in ATL | UAA ticket marketing, not a release; skipped | none |
+| 1a0e8622b9617116 | reply@e.floridagators.com | JUST IN - Authentic Team-Issue Helmets | UAA Sportshop merch marketing, not a release; skipped | none |
 | 1a0df03e7883ab9c | no-reply@usrmailtest.com | Lacy-Less in The Swamp … | Our own test send; skipped | none |
 | 1a0deb3b8cf6812b | no-reply@usrmailtest.com | TEST — Game Day: Florida vs. Ole Miss | Our own test send; skipped | none |
 | 1a0e3efbf2d2942c | buddymartinshow@gmail.com | Column: use before 4 | Built as a Wix DRAFT (not published), 18:1xZ. Fixes: "like it was a good old days" → "the good old days"; added the missing closing quote on Sumrall's "1-0 every week." Cover: Chris Spears' Baugh first-TD dive (first use as a cover). [CHECK] items sent to Brenden: the ESPN FPI claim (favored in all but Texas and Georgia); the Tebow quote's source and date; "within 48 hours … lock for the Top 10" is now outdated (Coaches Poll has Florida No. 8). | c377ca6a-afa5-4914-a91b-526ec4f8e9cd |

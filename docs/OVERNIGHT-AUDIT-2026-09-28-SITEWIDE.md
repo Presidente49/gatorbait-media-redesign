@@ -31,3 +31,28 @@ A full-site publish run after these writes (to push the share image) rolled page
 
 ## Side finding
 - The media-hub embed links to YouTube `@thebuddymartinshow` — that is the channel's current handle (relevant to the @GatorBaitMedia rename discussion).
+
+# Copy desk + webmaster + design desk vs. competitors — Sept. 28, 2026 (~04:00Z)
+
+Brenden: "roll out copy desk and website master and design, look at competitors' sites and make sure we are not showing old blogs and old pages."
+
+## Old content (webmaster)
+- **Deleted 7 dead blog categories** (Brenden approved): Gator Golf, Gator Tennis, Gator Track & Field, Gator Women's Basketball, NCAA Transfer Portal, Kyle Curtis - Sweet Sixteen, Rob Browne Column. Newest posts in them were 2–3+ years old; they sat in the Latest page's category menu and the category sitemap. All 33 posts stay live at their URLs; 8 are now uncategorized, deliberately not re-filed (re-saving old posts risks bumping them into feeds). Backup: `docs/DELETED-CATEGORIES-2026-09-28.json`.
+- Seasonal categories left alone (Baseball, Softball, Gymnastics, Spring Football: 4–5 months since last post; they resume in season).
+- 100+ posts are still flagged "featured," back to 168+ days. No custom page reads that flag (homepage, Magazine and Latest use the feed, newest first), so bulk-unflagging would be 100+ republishes for no visible change. Not done.
+- Homepage, Magazine and Latest all order by newest; no hard-coded old posts found in the Latest page or post-template embeds.
+- Still open, needs the Wix Editor: `/event-list` renders "No events at the moment" and is indexed; add noindex there alongside the page-SEO paste (see LESSONS #47).
+
+## Copy desk (newest 12 posts)
+- Fixed: Buddy Martin's Ole Miss column (bb1d7484) had **no category**, so it was missing from Buddy's Blog and Gator Football. Added both.
+- Fixed: Postgame Analysis (1c12e61d) was filed under "Gators in The NFL." Removed that category.
+- Noted, not changed (writer's copy): Postgame Analysis opening line "season defining win" should be "season-defining."
+- No unpublished edits on any of the 12; covers, excerpts and tags present on all.
+
+## Design desk: competitor front pages (OnlyGators, Gator Country, On3 Gators Online, Gators Wire, Alligator Army, Swamp247)
+- Every live competitor leads with the newest story and dates every item; On3 uses relative time ("3h", "5h"), which reads freshest. We show "Author · September 27, 2026". Option: relative time for stories under 24 hours old.
+- Gator Country and Gators Wire post a pregame "Gator Walk" photo gallery and a postgame gallery every home game. We now have postgame galleries; a pregame one would match.
+- Gators Wire runs quick utility posts (poll moves, FPI, SP+, TV/broadcast details for the next game). We had the poll story; nobody here has posted Missouri kickoff/TV yet — an easy early post.
+- Everyone had the Cyion Smith commitment same day; so did we.
+- Share cards: OnlyGators still uses the small summary card; ours is now large-photo on every page.
+- Gator Country's own front page shows April/May items in lower sections, the same stale-section problem we just removed.

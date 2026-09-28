@@ -34,6 +34,19 @@ Brenden, Sept. 28 ~03:50Z: postgame video is on Facebook, and one was added to a
 - YouTube Short HOWChEGrfF0 now live at the top of 2bb6c273: the pending 02:45Z edit was published at 03:38Z on Brenden's order ("publish it"), after confirming the draft was unchanged since review.
 | 1a0e4dcd66fcf561 | buddymartinshow@gmail.com | Hot breaking news exclusive (Vernell Brown MRI) | PUBLISHED on Brenden's order ("posted ASAP… max share"), post baa858cf | Buddy's copy verbatim + verified context (Sumrall transcript, AP stats); cover Chris Spears 7acdfecf |
 
+## Desk inbox — Sept. 28, ~11:2xZ
+No new writer submissions or UF press releases (checked newer_than:1d against staff senders, gators.ufl.edu/ufl.edu/floridagators.com, Hutchinson, SUBMIT). The 3 threads matched are all already logged above.
+
+**YouTube:** 9 new postgame locker-room clips found (published 01:54–02:25Z Sept. 28, missed by the earlier 02:04Z/03:04Z channel-data checks):
+- Jon Sumrall ×2: "We gutted the weight room" (s_8mtJ0_dXI), "It's worth losing a headset over" (8Ulz5vBs7JQ)
+- Jadan Baugh ×4: "Green grass, honestly" (8vjhxYW5A4I), on Duke Clark "That's my little brother" (Y_kaZ8nRMyc), "My name up there with Emmitt Smith" (SOCsQgIxjhY), "No defense in the country could stop us" (si8JZVS8p1I)
+- Jayden Woods ×2: "He promised me that we would win" (Y8CMYJBtCIQ), "I kind of blacked out" on the strip-sack (qf8hQ8Kv5WA)
+- Aaron Philo ×1: "Keep the foot on the gas" (RUiWpzJU_eY)
+
+All are press-conference/postgame clips per step 7, so embedded (API only, VIDEO nodes, UPDATE_PUBLISH) under a new "Watch: More from the locker room" heading at the end of the Sumrall presser story (2bb6c273), grouped by speaker. Draft had no unpublished changes. Verified live: 10 video nodes total on the published post.
+
+Also new: 3 "Won't Back Down" tradition Shorts (P_MMMQrdhc0, 1S9TuOhzrO8, MGtQ7OubFaI, all ~05:2xZ Sept. 28) — crowd/3rd-quarter-tradition content, not a press-conference or player-quote clip, so logged here as ready for Brenden rather than auto-embedded.
+
 ## Daily roundup — Sept. 28, ~10:4xZ
 
 First run under the new one-a-day email policy (`trig_01JibZfuK6jRddgK16atrrTQ`). Stories since the last send (Vernell Brown breaking, Sept. 27 22:07Z): Chris Spears' Best Shots Vol. 2 (bc01aadb), Best Shots Vol. 1 (67bd8aca), Missouri first look (db2e38da). No Buddy Martin piece in the window, so newest-first. No Franz "thought of the day" found (no new post, no email from him in the last 24h) — left the slot out per the routine's fallback; not re-checked at 14:00Z since it would already be too late for a send blocked anyway (see below).

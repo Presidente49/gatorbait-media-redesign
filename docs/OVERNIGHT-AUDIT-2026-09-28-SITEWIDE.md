@@ -103,3 +103,15 @@ Rechecked all 13 pages live against `docs/PAGE-SEO-2026-09-28.json`. First pass:
 - `/2021-gatorbait-magazine` — still "2021 Gatorbait Magazine (Title) | GatorbaitMedia.com"
 
 Per LESSONS #47, stopping the automated re-apply here rather than retrying indefinitely. Correct wording for all 13 pages remains in `docs/PAGE-SEO-2026-09-28.json`.
+
+# Issue #34 items 2 & 3 — Search + Message Board removal, Sept. 28, 2026 ~04:2xZ
+
+Per Brenden's "Yes to all" approval on issue #34 (all-hands sync comment), implemented both items assigned to this session ("game-day desk"):
+
+- **Item 2 (Search):** header embed's nav array — the `Message Board` slot (`/#community`) was replaced in-place with `Search` pointing at `/gatorbait-media-blogs` (the Latest page, which carries Wix's native blog search). Zero net character cost (14970 → 14974 chars).
+- **Item 3 (Message Board removal):** removed the nav link and the "not open yet" community box from all three surfaces that had it:
+  - Header (`7fee4de6`, rev 26→27, 14970→14974 chars) — nav entry swapped as above.
+  - Home Code (`622d8ece`, rev 12→13, 14480→14228 chars) — removed the `<a href="/#community">Message Board</a>` nav link and the entire `.sh-community` "Discussion is not open yet" div.
+  - Sports Home core (`fdc2127a`, rev 81→82, 14240→14186 chars) — removed the `<a data-gbm-route href="/#community">Message Board</a>` nav link.
+
+All three edits confirmed live via the PATCH responses. Repo files synced (`deploy/wix-served/header-embed.html`, `deploy/wix-served/split/home-code.html`, `deploy/wix-served/split/home-core.html`). Site published so the nav changes render (embed content changes alone don't require a publish, but a removed DOM node in an already-rendered layout does). Per LESSONS #47, immediately re-applied SEO tags to all 13 static pages after the publish — this time all 13 PATCHes succeeded (confirmed correct request shape from Wix docs: `{itemSeoTags:{tags},fieldMask:'tags',publish:true}`, wrapper Claude had been missing in the earlier convergence attempts above). Live browser verification of the nav changes and a fresh SEO spot-check are in progress.

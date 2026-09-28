@@ -90,3 +90,16 @@ Not changed, needs Brenden:
 - Search: no custom search exists; what flashes is Wix's native header search before the custom header covers it. Only working search is the native one on the Latest page.
 - Newsletter signup: none on site. The Email Marketing API is still returning 401 (site owner action required), which also blocks wiring a signup to the subscriber list.
 - Message Board: nav link + "not open yet" box live in the header embed (7fee4de6, 30 chars from cap), Home Code (622d8ece) and Sports Home core (fdc2127a).
+
+# Page SEO convergence recheck — Sept. 28, 2026 ~04:14Z (scheduled)
+
+Rechecked all 13 pages live against `docs/PAGE-SEO-2026-09-28.json`. First pass: 4/13 matched (About, Contact, Buddy Martin Show, Home). Re-applied once more (API only, no site publish): 2 more converged (Magazine 2022 Archive, Latest). Final: 6/13 live, 7/13 still stale.
+
+**Still wrong, API not holding — needs the Wix Editor SEO panel:**
+- `/event-list` — still "Events | GatorBait Media | Florida Gator News"
+- `/magazine` — still "Gatorbait Magazine | Gatorbait Media"
+- `/tags` — still "Blog/Tags"
+- `/groups` — still "Groups | GatorBait Media | Florida Gator News"
+- `/2021-gatorbait-magazine` — still "2021 Gatorbait Magazine (Title) | GatorbaitMedia.com"
+
+Per LESSONS #47, stopping the automated re-apply here rather than retrying indefinitely. Correct wording for all 13 pages remains in `docs/PAGE-SEO-2026-09-28.json`.

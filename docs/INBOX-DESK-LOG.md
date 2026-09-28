@@ -56,3 +56,17 @@ Built `newsletter/2026-09-28-monday-roundup.mjml` from `templates/gatorbait-maga
 **Send governor: `ok:false`.** 4 list sends in the last 24h (cap 1), 18 in the last 7 days (cap 7) — carryover from yesterday's pre-policy game-day volume. Bounce 1.04%, complaint 0.03% (both fine). Did not send.
 
 **Action:** uploaded as Wix Email Marketing DRAFT campaign `3e89adb2-6f2c-4502-a74e-ecd10bc2f473`, subject "GatorBait Roundup — Best Shots, Vol. 2 + Missouri Next", preview verified (52,875-char rendered HTML, no broken placeholders). Ready to send once the trailing-window caps clear or Brenden approves an exception. Committed source to `fix-native-flash-20260926` (`13cc98a`).
+
+## Franz column QC + roundup add — Sept. 28, ~13:0xZ (relay from Jarvis)
+
+Franz Beard self-published "Who are these guys? Trautwein's troops in the trenches are difference makers" at 11:49Z (post `f09f92c6-3f94-4f00-90a5-f34858bcb6ee`). Copy-desk pass, fixed in place with `UPDATE_PUBLISH`, no email:
+- Trimmed the trailing space in the title.
+- Category set: Franz Beard - Blog (was empty).
+- Tags added: Franz Beard, Jon Sumrall, Jadan Baugh, Ole Miss, Florida Gators Football (was empty).
+- Cover image (Chris Spears, "9.26.26 Florida vs Ole Miss (12 of 27).jpg") had no alt text — added credited alt text.
+- Typo: "into eight place all time at UF" → "into eighth place all time at UF".
+- Draft had no unpublished changes going in; verified clean republish, no pending edits after.
+
+Added the column as "Franz's Take" — the lead item above the Chris Spears galleries — in `newsletter/2026-09-28-monday-roundup.mjml` (commit `0f6e0df`). All gates re-run clean: check-links (source + rendered), image-uniqueness (still 2/2, Franz's Take is text-only), stack-QC (8 distinct article links, up from 7).
+
+**Could not push to the live Wix draft `3e89adb2`.** The account is `SUSPENDED_AUTOLIFT` (per #34 `5870257490`), and the campaign composer update endpoint itself returns 401 "site owner action required" — not just the send path. The corrected MJML is committed and ready to push once the account clears.

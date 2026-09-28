@@ -224,3 +224,9 @@ API notes:
 - Post baa858cf is live, featured, with the correct title. 111 views, 0 likes. The metrics count 1 comment, but the comments query returns none under contextId, resourceId or any status filter. It may have been deleted or be held somewhere else; recheck at 02:25Z.
 - Breaking email ea362ae3: 1,810 delivered, 404 opened (22.3%), 64 clicked (3.5%), 14 bounced (0.77%), 0 complaints. The open rate is now on par with the Sunday Edition's 22.7%.
 - Social: not connected. No action needed.
+
+4-hour check on the Vernell Brown story (02:25Z Sept. 28):
+- Post baa858cf: still live, featured, `hasUnpublishedChanges: false`. 211 views, 0 likes. No typos, broken links or credit issues in the body; cover and alt text intact. No official UF/Sumrall update on Brown since the original story — nothing to add as an "Update:" line.
+- The "1 comment" in metrics: re-checked every status (pending/hidden/published/deleted) under both contextId and resourceId — zero rows every time, same as the 1-hour check. Treating this as a stale counter in Wix's own metrics endpoint, not a real comment; not chasing further unless it changes.
+- Breaking email ea362ae3: **could not check.** `email-marketing/v1/campaigns/*` now returns a 401 "Account authorization error - site owner action required" on every call — the same block found during tonight's department-tool audit on an unrelated campaign lookup. Confirmed it's scoped to Email Marketing only (Contacts API calls succeed). This needs Brenden to reconnect/re-approve the Email Marketing app in the Wix dashboard before any campaign stats (this one included) can be pulled again.
+- Social: Metricool has no networks connected yet (checked directly — `getBrandSettings` returns the connection-setup link). No action needed.

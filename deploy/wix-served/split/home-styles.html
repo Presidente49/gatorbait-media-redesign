@@ -117,4 +117,28 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a { color:#fff!important; }
 #gbm-live.gbm-sports-home .sh-latest{padding-left:0;border-left:0}
 #gbm-live.gbm-sports-home .sh-voices article{padding-left:0;padding-top:18px;border-left:0;border-top:1px solid #cad0d5}
 }
+
+/* Chronological lead (Sept 26): the newest story leads, usually a 16:9 news graphic, so the lead stacks and its image fills the frame. */
+#gbm-live.gbm-sports-home article.sh-lead{display:block}
+#gbm-live.gbm-sports-home article.sh-lead figure{margin:0 0 18px}
+#gbm-live.gbm-sports-home article.sh-lead img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:16/9;object-fit:cover;object-position:center 30%;background:#0b1d3a}
+
+/* gbm-hero-overlay v1: headline over photo for the lead story (Brenden, Sept. 27) */
+#gbm-live.gbm-sports-home .sh-lead{display:block!important;position:relative;overflow:hidden;background:#081b35}
+#gbm-live.gbm-sports-home .sh-lead figure{margin:0!important}
+#gbm-live.gbm-sports-home .sh-lead img,#gbm-live.gbm-sports-home .sh-lead-portrait img{width:100%;height:auto!important;max-height:none!important;aspect-ratio:16/10!important;object-fit:cover!important;object-position:center 30%;background:#081b35}
+#gbm-live.gbm-sports-home .sh-lead figcaption{position:absolute;top:10px;right:12px;z-index:2;padding:0;color:rgba(255,255,255,.85);text-shadow:0 1px 3px rgba(0,0,0,.7)}
+#gbm-live.gbm-sports-home .sh-lead-copy{position:absolute;left:0;right:0;bottom:0;z-index:1;border-top:0!important;padding:140px 30px 24px!important;background:linear-gradient(180deg,rgba(8,27,53,0) 0%,rgba(8,27,53,.74) 42%,rgba(8,27,53,.95) 100%);color:#fff}
+#gbm-live.gbm-sports-home .sh-lead-copy .sh-kicker{color:#ffad86}
+#gbm-live.gbm-sports-home .sh-lead-copy h1{color:#fff;font-size:clamp(30px,3.3vw,44px)!important;line-height:1.06!important;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+#gbm-live.gbm-sports-home .sh-lead-copy .sh-deck{color:#e4eaf3;max-width:62ch;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+#gbm-live.gbm-sports-home .sh-lead-copy .sh-meta{color:#c7d1df}
+#gbm-live.gbm-sports-home .sh-lead-copy .sh-read{color:#fff}
+@media(max-width:820px){
+#gbm-live.gbm-sports-home .sh-lead img,#gbm-live.gbm-sports-home .sh-lead-portrait img{aspect-ratio:4/5!important}
+#gbm-live.gbm-sports-home .sh-lead-copy{padding:100px 18px 16px!important}
+#gbm-live.gbm-sports-home .sh-lead-copy h1{font-size:26px!important;line-height:1.12!important}
+#gbm-live.gbm-sports-home .sh-lead-copy .sh-deck{font-size:14px;-webkit-line-clamp:2}
+#gbm-live.gbm-sports-home .sh-lead-copy .sh-read{min-height:36px}
+}
 </style><script>window.__GBM_HOME_PART__&&window.__GBM_HOME_PART__();</script>

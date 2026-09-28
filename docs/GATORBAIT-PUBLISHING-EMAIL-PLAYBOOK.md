@@ -152,3 +152,81 @@ Before calling a publishing/email task complete:
 - Magazine image URLs are unique.
 - Mobile layout is checked before send.
 - Repo source/runbook are updated with any new persistent rule.
+
+## The easy send: band → newsletter (Sept. 27, 2026)
+
+The homepage game-day band (the `/*GD*/` data in `deploy/wix-served/home-gameday.html`, live in embed `96ef5a04`) is the single source for the quick game newsletter.
+
+**Steps:**
+1. Update the band: score, status, note, tracker (`st`), leaders (`ld`) and the story buttons (`links`, Buddy first).
+2. Export the linked stories' title, excerpt and cover from the Wix Blog API to `newsletter/band-stories-<date>-<opponent>.json`.
+3. Run `node automation/newsletter/band-to-mjml.mjs --stories newsletter/band-stories-<date>-<opponent>.json`.
+4. Run the gates: stack-qc, unique images, check-links, and a strict compile.
+5. Upload as a Wix DRAFT and preview it.
+6. Send only on Brenden's yes.
+
+**What the generator does automatically:**
+- Only the first two cards with credited photos get images; graphics and charts stay text-only.
+- Summaries are trimmed at a word boundary.
+- Links use raw `&`, never `&amp;utm`.
+
+## Breaking news = maximum share (standing order, Brenden, Sept. 27, 2026)
+
+Brenden: "I want this all to be standard operating procedure. I don't need to tell you that it's maximum share."
+
+When a staff writer (Buddy Martin, Franz Beard, Loren Meadows, Carlton Reese, Eddie Gilley, Chris Spears) or Brenden sends a story marked BREAKING, or a clearly breaking item (injury/MRI result, transfer, commitment, suspension, coaching change, schedule change), the desk runs the whole package without waiting for a separate yes:
+
+1. **Publish immediately.** Use the writer's copy verbatim, headline "BREAKING: …", byline as sent. Add only verified context: our transcripts, AP/ESPN stats, and the schedule.
+2. **Copy desk:** check names and numbers against editorial-desk.md. Attribute anonymous-source claims ("sources told GatorBait"). No invented quotes or facts. If a core fact can't be sourced at all, hold the story and ask Brenden. That is the only reason to hold.
+3. **Photo:** a credited archive photo of the subject (Chris Spears first; see photos-chris-spears/CREDIT.md and SMUGMUG-GALLERY.md). Never AI art. If no real photo exists, use a type-led GatorBait graphic.
+4. **Front page:** set `featured`. Move the Home Code (622d8ece) BREAKING pin to the new post until the next day at noon ET. Make the story the first button on the band (96ef5a04), labeled "BREAKING: …".
+5. **Breaking email** to the newsletter label e345fa8e. It's short: the red BREAKING bar, the photo, headline, 2–3 sentences, READ button, the All Access CTA, the postal address, and a campaign UTM of breaking_<slug>_<date>. Pass the subject explicitly at publish. Template: newsletter/breaking/2026-09-27-vernell-brown.mjml. This is standing authorization for BREAKING items only. Newsletters, recaps and columns still need Brenden's yes for each send.
+6. **Social:** once networks are connected in Metricool (brand 6946016, none connected as of Sept. 27), post to Facebook, X, Instagram and Threads right away with the story link. Until then, give Brenden paste-ready Facebook, X and IG copy.
+7. **Verify** the live page, the share card (og:image/title) and email delivery (DISTRIBUTED plus stats). Then tell Brenden in 3 lines: link, what went where, and anything held.
+
+### Follow-up after every breaking story (Brenden: "that means quality control, check up on articles, comments, interaction, social")
+
+Maximum share includes staying on the story. The desk checks at about 1 hour, 4 hours and the next morning:
+- **Article QC:** load the live page. Check for typos, broken links or embeds, the photo and credit, the headline on a phone (no clipping), and the share card. Fix in place if needed; never publish over unpublished edits. Add updates (official UF statement, coach comments, practice report) as a dated "Update:" line at the top, not a new duplicate post.
+- **Comments:** query Wix comments for the post (POST /comments/v1/comments/query with appId 14bcded7-0066-7c35-14d7-466cb3f09103, filter contextId=post id). Hide spam, abuse or doxxing. Flag real questions or tips for Brenden and the writer. Never argue in comments.
+- **Interaction:** post metrics (GET /blog/v3/posts/{id}/metrics: views, likes, comments) plus email stats (delivered, opened, clicked, bounced, complained). Report the numbers, not adjectives. If complaints go above 0.1% or bounces above 2%, stop further sends that day and tell Brenden.
+- **Social:** once Metricool has networks connected, read engagement and comments on the social posts. Until then, ask Brenden for screenshots only if something looks off.
+- **Report:** at most one short note per check, and only when something changed or needs a decision.
+
+Baseline, first check on the Vernell Brown story (~22:25Z Sept. 27):
+- The post had 3 views, 0 comments and 0 likes, minutes after publishing.
+- The breaking email (ea362ae3): 1,735 delivered, 60 opened, 3 clicked, 10 bounced, 0 complaints.
+- For comparison, the Sunday Edition (2ece0514): 1,811 delivered, 411 opened (22.7%), 75 clicked (4.1%), 15 bounced, 0 complaints.
+
+## List hygiene: bounces and complaints (Brenden: "Clean it", Sept. 27, 2026)
+
+Run this after a heavy send day, and at least once a month. The first run is logged in docs/OVERNIGHT-AUDIT-2026-09-27.md.
+
+1. For every send in the window, pull the BOUNCED and DELIVERED recipients: GET /email-marketing/v1/campaigns/{id}/statistics/recipients?activity=BOUNCED&paging.limit=1000, and the same with activity=DELIVERED.
+2. **Suppress** an address only if it bounced 8 or more times in the window AND had 0 deliveries. Upsert it through POST /email-marketing/v1/email-subscriptions/bulk as UNSUBSCRIBED + BOUNCED; that is Wix's own state for a hard bounce. Verify on both the subscription store and the Contacts v5 record.
+3. **Keep** these, and don't remove them:
+   - Addresses that bounce often but still take some deliveries. Put them on a watch list.
+   - The rotating Hotmail/Outlook/MSN/Live addresses that bounce 1–4 times each. That's Microsoft throttling our volume. The fix is fewer list-wide sends per day, not deleting readers.
+4. **Never auto-remove:**
+   - Staff or contributor addresses. Tell Brenden their mailbox is bouncing instead.
+   - Wix system addresses (safety.wix.com, wixsite.online).
+5. **Complaints:** count contacts whose email.deliverabilityStatus is SPAM_COMPLAINT and whose email.subscriptionStatus.status is SUBSCRIBED, using POST /contacts/v5/contacts/count. If the count is above 0, set those contacts to UNSUBSCRIBED and keep SPAM_COMPLAINT. Never re-subscribe a complainer.
+6. In the day's audit doc, log only masked addresses (first two characters plus the domain), with counts and before/after states.
+
+API notes:
+- Query Email Subscriptions returns at most 50 rows per call, even with limit 100. Chunk `$in` lists at 50, or the missing rows look like NO_RECORD.
+- Query Email Subscriptions requires an email filter. For counts by status, use Contacts v5 count/search, which can filter on email.deliverabilityStatus and email.subscriptionStatus.status.
+- Observed Sept. 27: Wix already skips contacts flagged BOUNCED or SPAM_COMPLAINT, even while they are SUBSCRIBED. But it never flagged the 9 chronic bouncers, so they were mailed on every send until they were suppressed by hand.
+- ExecuteWixAPI times out after 60 seconds. Fan the per-campaign calls out with Promise.all.
+- Forwarded mailboxes hide bounces from Wix. When a subscriber's host auto-forwards to a dead mailbox, Wix records DELIVERED, and the final bounce goes to brenden@ as a postmaster@outlook.com or mailer-daemon "Undeliverable" notice, because the forwarder keeps our Return-Path. So every hygiene run also searches Brenden's Gmail: `from:postmaster OR from:mailer-daemon OR subject:undeliverable newer_than:30d`. Group the notices by failed address and suppress addresses that fail on every send. Viewing a notice registers an "open" for that subscriber, since the notice carries his tracking pixel, so don't count opens that land after a notice arrives.
+
+1-hour check on the Vernell Brown story (23:25Z Sept. 27):
+- Post baa858cf is live, featured, with the correct title. 111 views, 0 likes. The metrics count 1 comment, but the comments query returns none under contextId, resourceId or any status filter. It may have been deleted or be held somewhere else; recheck at 02:25Z.
+- Breaking email ea362ae3: 1,810 delivered, 404 opened (22.3%), 64 clicked (3.5%), 14 bounced (0.77%), 0 complaints. The open rate is now on par with the Sunday Edition's 22.7%.
+- Social: not connected. No action needed.
+
+4-hour check on the Vernell Brown story (02:25Z Sept. 28):
+- Post baa858cf: still live, featured, `hasUnpublishedChanges: false`. 211 views, 0 likes. No typos, broken links or credit issues in the body; cover and alt text intact. No official UF/Sumrall update on Brown since the original story — nothing to add as an "Update:" line.
+- The "1 comment" in metrics: re-checked every status (pending/hidden/published/deleted) under both contextId and resourceId — zero rows every time, same as the 1-hour check. Treating this as a stale counter in Wix's own metrics endpoint, not a real comment; not chasing further unless it changes.
+- Breaking email ea362ae3: **could not check.** `email-marketing/v1/campaigns/*` now returns a 401 "Account authorization error - site owner action required" on every call — the same block found during tonight's department-tool audit on an unrelated campaign lookup. Confirmed it's scoped to Email Marketing only (Contacts API calls succeed). This needs Brenden to reconnect/re-approve the Email Marketing app in the Wix dashboard before any campaign stats (this one included) can be pulled again.
+- Social: Metricool has no networks connected yet (checked directly — `getBrandSettings` returns the connection-setup link). No action needed.

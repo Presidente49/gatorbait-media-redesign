@@ -1,0 +1,39 @@
+import json
+GAME='https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels'
+PRESSER='https://www.gatorbaitmedia.com/post/sumrall-postgame-press-conference-ole-miss-not-fully-awake'
+P=lambda *s: ["p", list(s)]
+H=lambda s: ["h", s]
+body=[
+P("GAINESVILLE — Trinidad Chambliss got his yards. Florida got the plays that decided the game."),
+P("No. 21 Florida’s 52-28 win over No. 4 Ole Miss on Saturday will be remembered for ",["Jadan Baugh and Duke Clark each running for more than 100 yards",GAME],". But the Gators’ defense and special teams tipped the night. Florida scored 31 of its 52 points on possessions that began with a fourth-down stop, a takeaway or a long return. Florida had no turnovers; Ole Miss had two."),
+P("“There’s a handful of plays that swing it. And we made a lot of those critical plays tonight,” coach Jon Sumrall said ",["after the game",PRESSER],"."),
+H("Woods takes it away"),
+P("The biggest swing came late in the third quarter. Florida led 31-21, but Ole Miss had reached the Florida 40."),
+P("On first-and-10 with 2:47 left in the quarter, Jayden Woods came off the edge, sacked Chambliss for a 3-yard loss and knocked the ball loose. Myles Graham recovered at the Florida 43. The Gators went 57 yards in seven plays, and Dallas Wilson’s 6-yard touchdown run early in the fourth quarter made it 38-21."),
+P("“I just remember coming off the edge, I remember I tried to swipe. Didn’t quite hit. So I brought with a rip. Of course, like I’m taught. And then just ran the hoop,” Woods said. “And then as soon as I ran the hoop, I saw he was right there and his eyes were downfield, and first instinct is to go for the ball.”"),
+P("After that, he said, “I kind of blacked out.”"),
+P("“Our offense was doing their thing all night. So I don’t want to credit it to just one play, but it was good to give the ball back to our offense,” Woods said."),
+H("Fourth-and-1 sets the tone"),
+P("The first stop came on Ole Miss’ opening possession. Facing fourth-and-1 at its own 35, Ole Miss gave the ball to JT Lindsey, and Aaron Chiles dropped him for a 4-yard loss. Lindsey fumbled when Chiles hit him but fell on the ball, and Florida took over on downs at the Ole Miss 31."),
+P("Three plays later, Patrick Durkin made a 49-yard field goal for a 10-0 lead."),
+P("“I think that just ignited the stadium,” Sumrall said. “And unbelievable effort by our guys, Aaron Chiles and those guys that came in to make that stop.”"),
+P("Ole Miss did not score a touchdown in the first half, settling for two Lucas Carneiro field goals. By GatorBait’s count of ESPN’s play-by-play, the Rebels were 0-for-5 on third down before halftime. They finished 4-of-11."),
+P("Woods called the defense’s approach “a bend but don’t break mentality.”"),
+H("Montgomery answers"),
+P("When Ole Miss got rolling after halftime, London Montgomery answered twice."),
+P("Chambliss’ 8-yard touchdown run and two-point pass cut Florida’s lead to 17-14 early in the third quarter. Montgomery returned the kickoff 41 yards to the Florida 41, and four plays later Clark broke a 45-yard touchdown run."),
+P("After Chambliss’ 10-yard touchdown run made it 24-21, Montgomery went 74 yards to the Ole Miss 26. Three plays later, Aaron Philo scored from a yard out. Montgomery finished with three kickoff returns for 128 yards."),
+P("“The first kickoff return that we did bring out wasn’t a great one. But the next two were huge plays,” Sumrall said."),
+P("“I think we won the special teams battle,” he said. “You could tell that we put a lot of emphasis on it.”"),
+H("Stockton, Clark and Coleman"),
+P("Sumrall said Bailey Stockton took “a pretty significant shot to his back” in the first half. Midway through the fourth quarter, Stockton returned an Ole Miss punt 25 yards to the Ole Miss 44. A holding penalty moved the start back to the Florida 37, and the Gators still went 63 yards in eight plays for Baugh’s third touchdown and a 52-28 lead."),
+P("“To go out and make the play he did was very impressive,” Sumrall said."),
+P("Alec Clark punted only twice, for 113 yards. His 70-yarder late in the first half went out of bounds at the Ole Miss 2. Sumrall said the staff had hoped to force a fair catch and try a rare fair-catch kick before halftime."),
+P("DJ Coleman had the last word. With Ole Miss at the Florida 22 and 2:36 left, he intercepted Chambliss at the Florida 5."),
+H("Next: Missouri"),
+P("Florida (4-0, 2-0 SEC) plays at Missouri on Saturday, Oct. 3, at 3:30 p.m. ET in Columbia."),
+]
+A={"title":"Woods Chipper: Florida’s Defense, Special Teams Swing Win Over No. 4 Ole Miss",
+   "excerpt":"Jayden Woods’ strip-sack, an early fourth-down stop and London Montgomery’s kick returns: Florida scored 31 of its 52 points against No. 4 Ole Miss after defensive stops and big returns.",
+   "byline":"GatorBait Media Staff","category":"Gator Football","body":body}
+open('article.json','w').write(json.dumps(A,ensure_ascii=False,indent=1))

@@ -412,3 +412,69 @@ Our own first version had errors too:
 - It took a single live-blog line that a backup QB played, which the play-by-play doesn't show.
 
 **The rule:** every number, name and time is checked against the play-by-play before an in-place update. Anything with no source is held back and listed for Brenden to confirm.
+
+## 39. Game graphics follow the broadcast-graphics layer standard, not flat cards (Sept. 26, 2026)
+
+**What happened:** Tonight's first postgame covers were flat navy cards: big numbers, typed "GATORBAIT" letters instead of the logo, and one photo or none. Brenden rejected them as looking "like PDFs for a PowerPoint" and asked for stacked layers and a higher standard.
+
+**The rule:** build every game graphic to `skills/gatorbait-broadcast-graphics/SKILL.md`:
+- Use its layer model: atmosphere, texture (halftone/grain), controlled color plane, authentic hero photo, a second overlapping photo for depth, information, identity, utility.
+- Use real staff photography, credited (Chris Spears).
+- Use the approved logo file (`gazette-preview/gatorbait-logo.webp`, Wix `d3cfa5_95dd8a25…`), never typed or redrawn letters.
+- One dominant story, legible at thumbnail size.
+- Measure text boxes for overlaps before release. The first magazine render had a two-line headline colliding with the score line.
+
+Reference masters: `gameday/2026-09-26-ole-miss/postgame/master-layered.html` (1920×1080) and `magazine-layered.html` (1080×1350).
+
+## 40. One photo, one layout per cover on a game day (Sept. 26, 2026)
+Four of the Ole Miss covers came from the same diagonal-plane template, and three of them reused the Baugh TD inset. Brenden flagged it: "same graphic over and over."
+- Before publishing any cover, build a contact sheet of the day's covers and check it.
+- No photo may appear on two covers.
+- No two consecutive covers may share a layout family. Rotate between these families:
+  - broadcast score panel (FINAL)
+  - portrait-hero diagonal (news)
+  - duotone editorial (column)
+  - solid-color quote card with filmstrip (presser)
+  - stat card (numbers)
+
+## 41. A documented design rule needs periodic re-audit, not a one-time fix (Sept. 28, 2026)
+
+**What happened:** the site's own typography rule ("Do not reintroduce Georgia, Times New Roman or Montserrat") was already written down, yet Georgia had crept back into the header embed (article headlines, account/plan titles, the recent-post widget) and every Magazine headline — 11 occurrences across 2 embeds, discovered only because Brenden noticed and complained.
+
+**The rule:** a documented "don't reintroduce X" rule is not self-enforcing. Periodically grep the live header/homepage/magazine embeds for banned patterns (`Georgia`, `Times New Roman`, `Montserrat`) as part of a routine audit, the same way the embed-patch protocol greps for a selector before patching. Finding it via a user complaint means the audit didn't happen.
+
+## 42. A missing literal space next to a hidden element breaks text silently (Sept. 28, 2026)
+
+**What happened:** the homepage headline `The voices<br>you come for.` relied entirely on the `<br>` for the space between "voices" and "you." A mobile CSS rule hides that `<br>` for a one-line layout, and with no literal space character in the markup, "voices" and "you" ran together into "voicesyou" — visible only on phones, invisible in the desktop view anyone editing it would normally check.
+
+**The rule:** wherever a line break is used as the only separator between two words that might later be hidden or collapsed by responsive CSS, put a literal space next to the `<br>` too. Check any other headline in the codebase built the same way (`<br>` between two words, no space) before assuming this was the only instance.
+
+## 43. Hiding the native page container also hides Auto Ads' only placement surface (Sept. 28, 2026)
+
+**What happened:** Brenden asked why Google Ads didn't seem to be showing on the site. AdSense (`af338ad4`) has been connected and enabled the whole time — but the Homepage and Magazine embeds each set `#SITE_PAGES`/`#PAGES_CONTAINER` to `display:none!important` to kill the old native-page flash (see Lesson 34 and the homepage/magazine rebuild history). Google's Auto Ads algorithm places in-content units by scanning that same native container. A `display:none` element has no rendered box, so Auto Ads likely can't place anything in-content there — only a fixed/anchor overlay format doesn't need that space. Article pages don't hide the container and are unaffected.
+
+**The rule:** before concluding a Wix integration "isn't working," check whether a custom embed is hiding the exact DOM region that integration depends on. This applies beyond AdSense — anything Wix-native that scans or mounts into `#SITE_PAGES` (widgets, other native apps) will have the same blind spot on the Homepage and Magazine. A fix requires a deliberately-placed, visible ad slot inside the custom-rendered page, not resurrecting old ad-repositioning code that assumes a placement already happened.
+
+## 44. Re-sync the repo copy in the same pass as the live patch, not later (Sept. 28, 2026)
+
+**What happened:** three embeds were PATCHed live (font fix, headline fix, columnist rotation) and none of the repo copies were updated in that same pass. A department audit run shortly after caught the drift — `deploy/wix-served/header-embed.html`, `magazine-embed.html` and `split/home-code.html` no longer matched what was live.
+
+**The rule:** the embed-patch protocol's own step 5 ("sync the repo copy from live and confirm the byte length matches exactly") is not optional cleanup — do it as part of the same patch operation, before moving to the next task. A live PATCH without an immediate repo sync is a patch that isn't finished.
+
+## 45. A page's own live refresh can silently undo a static content edit (Sept. 28, 2026)
+
+**What happened:** a Chris Spears photo gallery was added to the Magazine's "Inside the issue" grid by editing the embed's static fallback JSON. That edit would have been thrown away the instant a real visitor loaded the page: the Magazine embed refetches `/blog-feed.xml` on every load and rebuilds the whole "inside" list from posts by five named columnists (Lesson: see the Magazine web page section in CURRENT-STATE.md) — Chris Spears isn't one of them, so the freshly-rebuilt list would never include his gallery. The static JSON edit only ever mattered for the rare case the feed fetch fails.
+
+**The rule:** before trusting that a content change to a custom embed "will show," trace what the embed's own runtime code does after the initial paint — a feed refresh, a re-render on route change, a periodic poll — and check whether that logic overwrites or filters out what was just added. A change that looks right in the object literal is not verified until the code path that actually renders it has been read.
+
+## 46. A forwarding mailbox hides its own bounces from the platform's bounce stats (Sept. 28, 2026)
+
+**What happened:** 17 "Undeliverable" notices from `postmaster@outlook.com` piled up in Brenden's personal inbox over several days, one per newsletter send, for a single subscriber. Wix's own bounce tracking never flagged this address, because the subscriber's mail host (Mail2World) accepts the message and forwards it to a full, long-abandoned Outlook mailbox — Wix sees a successful handoff and records DELIVERED. The forward carries GatorBait's own Return-Path, so the eventual bounce from Outlook comes back to Brenden's inbox, not to Wix.
+
+**The rule:** a list-hygiene pass that only checks the campaign platform's own bounce/complaint stats can miss forwarding-mailbox failures entirely. Also search the sending owner's personal inbox for `from:postmaster OR from:mailer-daemon OR subject:undeliverable` across the same date range, group by the actual failed address (found in the notice body, not the visible "to"), and suppress addresses that fail on every send. Viewing such a notice can also register as an "open" for that subscriber (the notice embeds the original email's tracking pixel) — don't count that as real engagement.
+
+## 47. A full-site publish overwrites page SEO set through the API (Sept. 28, 2026)
+
+**What happened:** Page titles, descriptions and share images for 13 static pages were written through the Item SEO Tags API (`PATCH /promote/seo/v1/item-seo-tags/STATIC_PAGE/{id}`), once with `publish: true` and once without. Both reads and the live pages confirmed the change. A later `POST /site-publisher/v1/site/publish` (made to push a sitewide share-image change) then rolled most of those pages back to their old titles and descriptions — including the Gatorade-domain contact email that had just been fixed. The API's own "saved revision" still held the new values. The rollback also landed page by page over several minutes, so back-to-back live checks disagreed with each other.
+
+**The rule:** Page-level SEO written through the API is not in the Editor's document, and a full-site publish re-renders pages from the Editor's copy. After changing page SEO through the API, don't run a site publish in the same pass. The embed-patch loop publishes the site every time, so after any embed publish, re-apply every page in `docs/PAGE-SEO-2026-09-28.json` (one `PATCH .../item-seo-tags/STATIC_PAGE/{id}` per page with `{itemSeoTags:{tags}, fieldMask:'tags', publish:true}`, fanned out with Promise.allSettled so it fits ExecuteWixAPI's 60-second limit) and verify live a few minutes later, since the rollback lands page by page. The durable fix is to paste the same titles and descriptions into each page's SEO panel in the Wix Editor once, so the Editor's copy matches.

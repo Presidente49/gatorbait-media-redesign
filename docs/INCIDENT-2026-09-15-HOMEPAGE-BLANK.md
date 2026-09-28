@@ -60,7 +60,7 @@ The site's Wix `llms.txt` was therefore replaced on 2026-09-15 with current guid
 - current newsletter = **GatorBait Weekly**
 - `The Monday Chomp` = retired legacy label
 - `Quick Chomps` = retired; use `Quick Reads`
-- canonical contact = `brenden@gatorademedia.com`
+- canonical contact = `brenden@gatorbaitmedia.com`
 - current public destinations and editorial lanes documented
 - agents instructed to prefer live Wix/API data and `llms.txt` over stale legacy markup
 

@@ -33,6 +33,31 @@ const TARGETS=[
     url:"https://www.gatorbaitmedia.com/post/the-cowboy-doesn-t-talk-very-often-but-his-actions-speak-even-louder",
     root:null,
     expectedText:"The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder"
+  },
+  // Post-format checks (normalizer embed c91ad133): an all-bold pasted Buddy column and a staff post
+  // whose bold score lines must stay body text.
+  {
+    name:'article-buddy-allbold',
+    url:"https://www.gatorbaitmedia.com/post/the-sweet-music-chimes-again",
+    root:null,
+    expectedText:"Maya Angelou never sat in the press box",
+    postFormat:{unbold:true,maxInventedHeads:5,kicker:'Column',noHero:true}
+  },
+  // Phone column width is covered by embed a5452619 (post wide canvas); this target fails if body < 82% of viewport.
+  // Long all-caps headline on mobile (Brenden, Sept. 27: first letters of each line were clipped).
+  {
+    name:'article-chris-10-thoughts',
+    url:"https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss",
+    root:null,
+    expectedText:"The Gators want to run the football",
+    postFormat:{unbold:false,maxInventedHeads:0,kicker:'Gators Football',hero:true}
+  },
+  {
+    name:'article-scores',
+    url:"https://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25",
+    root:null,
+    expectedText:"No. 1 Texas 20, No. 14 Tennessee 17",
+    postFormat:{unbold:false,maxInventedHeads:0,kicker:'Gators Football'}
   }
 ];
 
@@ -104,6 +129,46 @@ function audit(input){
   const nativeVisible=visible(nativePages);
   if(target.name==='home'&&rootVisible&&nativeVisible)hard.push('home custom surface and native #SITE_PAGES are both visible');
   if(target.name==='magazine'&&rootVisible&&nativeVisible)hard.push('Magazine custom surface and native #SITE_PAGES are both visible');
+
+  // Baseline lock: the old Wix shell's "Today's Edition" section must never be visible on the homepage.
+  if(target.name==='home'&&/today[’'`]s edition/i.test(bodyText))hard.push('old Wix shell "Today\'s Edition" text is visible on the homepage');
+
+  // Post format: measured, not eyeballed.
+  const pf={};
+  if(target.postFormat){
+    const d=document.querySelector('[data-hook=post-description]');
+    // Body paragraphs only: skip deck/lede/byline/subhead lines the normalizer styles on purpose.
+    const ps=d?[...d.querySelectorAll('p')].filter(p=>visible(p)&&(p.textContent||'').trim().length>40&&![...p.attributes].some(a=>a.name.startsWith('data-gbm'))):[];
+    const strong=ps.map(p=>p.querySelector('strong,b')).filter(Boolean)[0];
+    pf.bodyStrongWeight=strong?Number(getComputedStyle(strong).fontWeight):null;
+    pf.visibleEmptyLines=d?[...d.querySelectorAll('p,div[id^="viewer-"]')].filter(e=>!(e.textContent||'').trim()&&!e.querySelector('img,iframe,video,figure')&&e.getBoundingClientRect().height>4).length:null;
+    // Gap between adjacent visible text blocks (any length), not between the long ones.
+    const blocks=d?[...d.querySelectorAll('p,h2,h3')].filter(e=>visible(e)&&(e.textContent||'').trim()):[];
+    const gaps=[];for(let i=1;i<Math.min(blocks.length,25);i++)gaps.push(Math.round(blocks[i].getBoundingClientRect().top-blocks[i-1].getBoundingClientRect().bottom));
+    gaps.sort((a,b)=>a-b);pf.medianParagraphGap=gaps.length?gaps[gaps.length>>1]:null;
+    pf.lineHeight=ps[0]?parseFloat(getComputedStyle(ps[0]).lineHeight)||null:null;
+    pf.inventedHeads=document.querySelectorAll('[data-gbm-h]').length;
+    pf.kicker=getComputedStyle(document.documentElement).getPropertyValue('--gbm-kicker').trim().replace(/^"|"$/g,'');
+    const hd=document.querySelector('[data-hook=post]>div>header');pf.coverBlock=hd?getComputedStyle(hd,'::after').display!=='none':null;
+    const tt=document.querySelector('[data-hook=post-page] [data-hook=post-title]');
+    if(tt){const tr=tt.getBoundingClientRect();pf.title={left:Math.round(tr.left),right:Math.round(tr.right)};let clip=null;
+      for(let a=tt.parentElement;a&&a!==document.body;a=a.parentElement){const cs=getComputedStyle(a);if(cs.overflowX!=='visible'){const ar=a.getBoundingClientRect();if(tr.left<ar.left-1||tr.right>ar.right+1){clip={tag:a.tagName,hook:a.getAttribute('data-hook'),left:Math.round(ar.left),right:Math.round(ar.right)};break;}}}
+      pf.titleClip=clip;if(clip||tr.left<-1||tr.right>viewport+1)hard.push('post headline clipped: '+JSON.stringify({title:pf.title,clip}));}
+    const bp=document.querySelector('[data-hook=post-description] p');
+    if(bp){const br=bp.getBoundingClientRect();pf.bodyWidth=Math.round(br.width);pf.bodyLeft=Math.round(br.left);
+      pf.column=[];for(let a=bp;a&&a!==document.documentElement&&pf.column.length<24;a=a.parentElement){const cs=getComputedStyle(a),ar=a.getBoundingClientRect();
+        pf.column.push([a.tagName.toLowerCase()+(a.id?'#'+a.id:'')+(a.getAttribute('data-hook')?'[hook='+a.getAttribute('data-hook')+']':'')+(a.className&&typeof a.className==='string'?'.'+a.className.split(/\s+/).slice(0,2).join('.'):''),Math.round(ar.left),Math.round(ar.width),cs.paddingLeft+'/'+cs.paddingRight,cs.marginLeft+'/'+cs.marginRight,cs.maxWidth,cs.overflowX].join(' '));}
+      if(viewport<=600&&br.width<viewport*0.82)hard.push('article column too narrow: body '+Math.round(br.width)+'px of '+viewport+'px');
+      if(viewport>=1200&&br.width<660)hard.push('desktop article column too narrow: body '+Math.round(br.width)+'px');}
+    if(target.postFormat.hero&&!pf.coverBlock)hard.push('landscape cover photo block missing from post header');
+    if(target.postFormat.noHero&&pf.coverBlock)hard.push('post without a landscape image still draws the navy cover block');
+    if(target.postFormat.kicker&&pf.kicker!==target.postFormat.kicker)hard.push('kicker "'+pf.kicker+'" expected "'+target.postFormat.kicker+'"');
+    if(target.postFormat.unbold&&pf.bodyStrongWeight>=600)hard.push('all-bold post still renders body text bold ('+pf.bodyStrongWeight+')');
+    if(!target.postFormat.unbold&&pf.bodyStrongWeight!==null&&pf.bodyStrongWeight<600)hard.push('intentional bold lines were un-bolded');
+    if(pf.inventedHeads>target.postFormat.maxInventedHeads)hard.push('invented subheads '+pf.inventedHeads+' > '+target.postFormat.maxInventedHeads);
+    if(pf.visibleEmptyLines>0)warnings.push(pf.visibleEmptyLines+' empty lines still take up space');
+    if(pf.medianParagraphGap!==null&&pf.lineHeight&&pf.medianParagraphGap>pf.lineHeight*1.6)warnings.push('paragraph gap '+pf.medianParagraphGap+'px exceeds 1.6 lines ('+pf.lineHeight+'px)');
+  }
 
   const sideways=document.documentElement.scrollWidth>viewport+2;
   if(sideways)hard.push('document scrollWidth exceeds viewport');
@@ -234,6 +299,10 @@ function audit(input){
     rootPresent,
     rootVisible,
     nativePagesVisible:nativeVisible,
+    postNormalizer:document.documentElement.getAttribute('data-gbm-nr'),
+    postUnbold:document.documentElement.hasAttribute('data-gbm-unbold'),
+    postInventedHeads:document.querySelectorAll('[data-gbm-h]').length,
+    postFormat:pf,
     expectedTextPresent:textMatch,
     firstHeadline:first,
     typeSample,
@@ -263,7 +332,7 @@ async function currentBuddyLead(){
 }
 const lead=await currentBuddyLead();
 if(lead){
-  for(const t of TARGETS)t.expectedText=lead.title;
+  for(const t of TARGETS)if(!t.postFormat)t.expectedText=lead.title;
   TARGETS.find(t=>t.name==='article').url=lead.url;
 }
 
@@ -298,6 +367,18 @@ for(const profile of PROFILES){
           response=await page.goto(target.url+'?qc='+Date.now(),{waitUntil:'load',timeout:45000});
           await page.waitForTimeout(8000);
           bandMatches=await served()===EXPECTED_BAND;
+        }
+      }
+      // Article embeds: Wix's CDN can serve an older page copy for minutes after an embed update.
+      // Retry with a cache-busting reload when the current template's markers are absent.
+      if(target.postFormat){
+        const fresh=()=>page.evaluate(({k,nh})=>{const h=document.documentElement;const kick=getComputedStyle(h).getPropertyValue('--gbm-kicker').trim().replace(/^"|"$/g,'');return Boolean(h.getAttribute('data-gbm-nr'))&&kick===k&&(!nh||h.hasAttribute('data-gbm-nohero'));},{k:target.postFormat.kicker,nh:!!target.postFormat.noHero});
+        let tries=0;
+        while(!(await fresh())&&tries<2){
+          tries++;staleLoads++;
+          await page.waitForTimeout(15000);
+          response=await page.goto(target.url+'?qc='+Date.now(),{waitUntil:'load',timeout:45000});
+          await page.waitForTimeout(8000);
         }
       }
       status=response?.status()??null;
@@ -393,11 +474,14 @@ for(const r of report.runs){
   lines.push('- expected text: '+r.expectedTextPresent);
   lines.push('- presentation root: '+r.rootPresent+' / visible '+r.rootVisible);
   lines.push('- native pages visible: '+r.nativePagesVisible);
+  lines.push('- post normalizer: '+r.postNormalizer+' / unbold '+r.postUnbold+' / invented heads '+r.postInventedHeads);
+  if(r.postFormat&&Object.keys(r.postFormat).length)lines.push('- post format: '+JSON.stringify(r.postFormat));
   lines.push('- first headline: '+(r.firstHeadline?('y='+r.firstHeadline.top+' — '+r.firstHeadline.text):'NONE'));
   if(r.typeSample)lines.push('- computed type: '+JSON.stringify(r.typeSample));
   if(r.articleTitleCandidates?.length) lines.push('- article title candidate: '+JSON.stringify(r.articleTitleCandidates[0]));
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
+  if(r.postFormat&&r.postFormat.column)lines.push('- column chain (el left width pad mar maxw ovx):\n    '+r.postFormat.column.join('\n    '));
   if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');
   if(r.band)lines.push('- game-day band matches repo: '+r.band.matches+(r.band.staleLoads?' (after '+r.band.staleLoads+' stale CDN copies)':''));
   if(r.rosters)lines.push('- rosters panel: open '+r.rosters.open+'; probe '+JSON.stringify(r.rosters.probe||null)+'; tabs '+JSON.stringify(r.rosters.tabs||[])+'; No. 13 → '+JSON.stringify(r.rosters.hits13||[])+(r.rosters.stExpected?'; OUT/GTD tags '+r.rosters.stShown+'/'+r.rosters.stExpected:''));

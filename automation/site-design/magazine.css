@@ -12,13 +12,13 @@ html:has(#gbm-magazine-page) #SITE_CONTAINER,html:has(#gbm-magazine-page) #maste
 #gbm-magazine-page .cover{display:grid;grid-template-columns:1.1fr 1fr;gap:0 32px;border-block:3px solid var(--n);padding:16px 0 24px}
 #gbm-magazine-page .top{grid-column:1/-1;display:flex;justify-content:space-between;font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--m)}
 #gbm-magazine-page .mast{grid-column:1/-1;display:flex;align-items:center;gap:18px;border-bottom:1px solid var(--l);padding:20px 0;margin-bottom:24px;color:var(--n);font:700 30px/1 Georgia,serif}
-#gbm-magazine-page .mast img{width:240px;height:auto;display:block}
-#gbm-magazine-page .hero{grid-column:1;aspect-ratio:4/3;background:#edf0f3;overflow:hidden;align-self:start}
-#gbm-magazine-page .hero img{display:block;width:100%;height:100%;object-fit:contain}
-#gbm-magazine-page .lead{grid-column:2;align-self:center}
-#gbm-magazine-page .lead small{color:#ba3c0c;font:700 10px/1.4 Arial,sans-serif;letter-spacing:.1em}
-#gbm-magazine-page .lead h1{margin:12px 0 16px;font:700 36px/1.1 Georgia,serif!important;letter-spacing:-.025em;color:var(--n)!important}
-#gbm-magazine-page .lead p{font:15px/1.6 Arial,sans-serif;color:var(--m);margin:0}
+#gbm-magazine-page 
+#gbm-magazine-page .hero{grid-column:1/-1;grid-row:2;aspect-ratio:16/9;background:#081b35;overflow:hidden}
+#gbm-magazine-page .hero img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+#gbm-magazine-page .lead{grid-column:1/-1;grid-row:2;align-self:end;z-index:1;padding:130px 32px 26px;background:linear-gradient(180deg,#081b3500,#081b35c2 45%,#081b35f2)}
+#gbm-magazine-page .lead small{color:#ffad86;font:700 10px/1.4 Arial,sans-serif;letter-spacing:.1em}
+#gbm-magazine-page .lead h1{margin:12px 0 16px;font:700 36px/1.1 Georgia,serif!important;letter-spacing:-.025em;color:#fff!important}
+#gbm-magazine-page .lead p{font:15px/1.6 Arial,sans-serif;color:#e4eaf3;margin:0}
 #gbm-magazine-page .lines{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px;padding-top:20px;border-top:1px solid var(--l)}
 #gbm-magazine-page .line b{display:block;font:700 21px/1.2 Georgia,serif}
 #gbm-magazine-page .line span{display:none}
@@ -41,11 +41,11 @@ html:has(#gbm-magazine-page) #SITE_CONTAINER,html:has(#gbm-magazine-page) #maste
 #gbm-magazine-page .wrap{padding:0 18px 30px}
 #gbm-magazine-page .cover{grid-template-columns:1fr;gap:0}
 #gbm-magazine-page .mast{font-size:23px;gap:12px;padding-block:15px;margin-bottom:18px}
-#gbm-magazine-page .mast img{width:min(170px,46vw);min-width:0}
+#gbm-magazine-page 
 #gbm-magazine-page .mast{gap:10px;font-size:clamp(20px,5.8vw,23px)}
-#gbm-magazine-page .hero{grid-column:1;aspect-ratio:16/10;max-height:320px}
-#gbm-magazine-page .lead{grid-column:1;margin-top:18px}
-#gbm-magazine-page .lead h1{font-size:28px!important;line-height:1.15!important}
+#gbm-magazine-page .hero{aspect-ratio:4/5}
+#gbm-magazine-page .lead{padding:100px 18px 18px}
+#gbm-magazine-page .lead h1{font-size:clamp(22px,7vw,28px)!important;line-height:1.15!important}
 #gbm-magazine-page .lines{grid-template-columns:1fr;gap:18px}
 #gbm-magazine-page .line{border-bottom:1px solid var(--l);padding-bottom:16px}
 #gbm-magazine-page .grid{grid-template-columns:1fr;gap:22px}

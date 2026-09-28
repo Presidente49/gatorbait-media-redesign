@@ -56,3 +56,19 @@ Brenden: "roll out copy desk and website master and design, look at competitors'
 - Everyone had the Cyion Smith commitment same day; so did we.
 - Share cards: OnlyGators still uses the small summary card; ours is now large-photo on every page.
 - Gator Country's own front page shows April/May items in lower sections, the same stale-section problem we just removed.
+
+# Bounce rate + "Keep reading" block — Sept. 28, 2026 (~04:15Z)
+
+Brenden: "66 percent bounce rate is not good."
+
+## What the 66% actually is (GA4 via Windsor, last 7 days)
+- 2,526 sessions, 66.9% bounce. Earlier this month bounce ran 24–45%; it jumped to 77% on Sept. 26 and 58% on Sept. 27.
+- ~970 sessions (38%) share one fingerprint: Direct, iOS Safari at exactly 390x844 / 320x740 / 430x932, 0–3 seconds, 22 engaged total, from data-center towns (Flint Hill VA, Des Moines, Chicago, San Jose, Boydton VA, Moses Lake WA, Phoenix, Cheyenne). They arrive in bursts (208 at 15:00 on game day, 128 at 11:00 Sunday). Consistent with email link scanners opening every link in our sends. Not confirmed as Microsoft.
+- Without them: ~1,560 sessions, ~48% bounce. By channel: Organic Search 23%, Unassigned 32% (~7-min sessions), Organic Social 51% — the real target.
+- Real high-bounce landings: Soothsayer 76%, Bound for Top Ten 79%, Swagger Back 63%, Cyion Smith commit 64%. Strong: Chomp poll story 22%, Brown MRI 35%, Baugh recap 36%, Franz column 33%.
+- Tracking gap: GA4 recorded 1 session on Sept. 21 and nothing Sept. 22–24.
+
+## Built: "Keep reading" (embed `59e31550-1986-4733-8de1-400676b0e8ee`, rev 1, 3,634 chars, repo `deploy/wix-served/keep-reading.html`)
+- On `/post/*` pages, inserts a "Keep reading" block right after the story text with the 3 newest posts from `/blog-feed.xml`, never the current story, nothing older than 14 days, no "LIVE NOW:" posts. Barlow type, brand navy/orange, stacks on phones.
+- Went live only after a site publish; page SEO was re-applied from the API in the same call (LESSONS #47). Verified in a real browser run (TinyFish automation): the block shows the three newest stories on the Baugh recap. A plain HTML fetch misses it because it snapshots before the feed loads.
+- Page SEO still reads old on Contact, 2021 archive, Tags and Latest after the re-apply. The API re-apply is not holding; the Editor SEO-panel paste from `docs/PAGE-SEO-2026-09-28.json` remains the fix.

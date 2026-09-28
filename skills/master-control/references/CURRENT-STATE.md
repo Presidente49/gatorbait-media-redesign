@@ -56,13 +56,13 @@ Only Brenden lifts it, in chat or on the Control Room card. Until then, no produ
 - Thursday preview `trig_011cSGMQcch48p2wpjaBrWGp`;
 - morning news sweep `trig_01RULitPE99Ch2fcEYhxjSrj`;
 - together-repo check-ins `trig_01Mxuh4yyvLqBdfM5RLvE9sm` and `trig_01PyowBmEiK4wUP2vRYP7pve`;
-- Oct. 3 game day `trig_01F7ct63dJfvpqG5dVSNV5ht`. It's paused until the desk adds a check-#34-first guard (read-only prep while stop-work holds). Jarvis turns it back on once the guard is confirmed, before Saturday.
 
 **Still on:**
 - Jarvis ops loop;
 - Jarvis 7:44 a.m. money report (read-only);
 - monthly list cleanup, Oct. 1 (`trig_01DACQgK3zEXNwpaaVSExWwD`);
 - PR #38 check-ins;
+- Oct. 3 game day `trig_01VAAJ6y3YXfyjt9oCPrKo1X` (it replaced `trig_01F7ct63…`). It reads #34 first and does read-only prep while stop-work holds.
 - Oct. 4 stats refresh (`trig_01YK79DSouBijPKm5UmCHFcp`). It builds but doesn't PATCH while stop-work holds.
 
 ### Email
@@ -105,6 +105,13 @@ Only Brenden lifts it, in chat or on the Control Room card. Until then, no produ
   - the paywall prompt shows no price or trial.
 
   Proposed rules (gate columns, deep analysis, recruiting and Magazine features; keep news, recaps and galleries free; at most about 30% gated a week) wait on Brenden's "fix the paywall."
+
+- **Design system session, Sept. 28 at Brenden's request** (21:45–22:10Z, during stop-work; Jarvis now owns these):
+  - redirects `/message-board` → `/groups` and the About-page hashtag links → `/the-buddy-martin-show` and `/groups`;
+  - embed `78528a4b` ("How billing works" note on `/pricing-plans*`, text only);
+  - a full site publish at about 22:03Z, after which the 12 static pages' SEO was re-applied. Homepage SEO survived.
+
+  Its design system is PR #1 in Presidente49/together, Barlow only. The Back Porch Sports proposal is PR #2 there, a private artifact waiting on Brenden.
 
 ### Video
 - **UAA rules:** editorial use only; 3 minutes or less per interview clip; 10 minutes or less a day in total.

@@ -91,3 +91,11 @@ Eddie Gilley's "How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss
 **[CHECK]:** the column says Florida ran 52 times for 302 yards; Franz Beard's already-published column has it at 53 carries for 302 yards. Left both as their writers wrote them and flagged the discrepancy in the draft itself rather than silently picking one — needs a box-score check before publish.
 
 **YouTube:** Shorts checked, nothing new since the last sweep. Long-form check skipped this pass — vidIQ returned "not enough credits." Not a channel finding; will retry next run.
+
+## Added Eddie Gilley's column to the roundup (Brenden, ~17:5xZ)
+
+Added a new "More From the Swamp" item for Eddie Gilley's column, below the Franz Beard/Game story row. Rebuilt, all gates re-run clean (check-links source + rendered, image-uniqueness 2/2, stack-QC 9 distinct article links). Committed (`921d1e4`).
+
+Pushed to a new draft campaign, `a8f1ba3d-eae4-4b9b-89c7-85e72811ee13` — both `3e89adb2` and `435d6183` still return `"cannot be edited on classic web editor"` on composer update, so each content change needs a fresh draft on this MJML editor type. Preview verified: 60,636-char rendered HTML, footer and Eddie Gilley section both intact, no broken placeholders.
+
+**Open dependency, flagged rather than hidden:** Eddie Gilley's column (`48c62d0a`) is still an unpublished DRAFT. The roundup's link to it will 404 until that draft is published, which needs Brenden's go-ahead per standing policy — not done here. The send-governor hold from the last check-in (`ok:false`, stale weekly cap) still applies regardless.

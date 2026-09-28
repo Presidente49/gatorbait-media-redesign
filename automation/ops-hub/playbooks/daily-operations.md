@@ -16,6 +16,8 @@ If everything is healthy and current, the correct outcome is often `NOOP`.
 
 ## Morning open
 
+The newsroom half of the morning open runs automatically every day at 6:28 a.m. ET. See `morning-news-sweep.md`.
+
 ### 1. Verify the business is reachable
 
 Run deterministic health checks first:

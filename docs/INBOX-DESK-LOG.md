@@ -33,3 +33,13 @@ Brenden, Sept. 28 ~03:50Z: postgame video is on Facebook, and one was added to a
 - YouTube Abu9k2osBUQ (press conference) live in the Sumrall presser story 2bb6c273.
 - YouTube Short HOWChEGrfF0 now live at the top of 2bb6c273: the pending 02:45Z edit was published at 03:38Z on Brenden's order ("publish it"), after confirming the draft was unchanged since review.
 | 1a0e4dcd66fcf561 | buddymartinshow@gmail.com | Hot breaking news exclusive (Vernell Brown MRI) | PUBLISHED on Brenden's order ("posted ASAP… max share"), post baa858cf | Buddy's copy verbatim + verified context (Sumrall transcript, AP stats); cover Chris Spears 7acdfecf |
+
+## Daily roundup — Sept. 28, ~10:4xZ
+
+First run under the new one-a-day email policy (`trig_01JibZfuK6jRddgK16atrrTQ`). Stories since the last send (Vernell Brown breaking, Sept. 27 22:07Z): Chris Spears' Best Shots Vol. 2 (bc01aadb), Best Shots Vol. 1 (67bd8aca), Missouri first look (db2e38da). No Buddy Martin piece in the window, so newest-first. No Franz "thought of the day" found (no new post, no email from him in the last 24h) — left the slot out per the routine's fallback; not re-checked at 14:00Z since it would already be too late for a send blocked anyway (see below).
+
+Built `newsletter/2026-09-28-monday-roundup.mjml` from `templates/gatorbait-magazine-colorlib-v1.mjml`. Gates: check-links (source + rendered) PASS, validate-unique-images PASS (2/2 unique, both Chris Spears/credited), run-stack-qc PASS (7 distinct article links, min 6). 390/1000 overflow check: no layout overflow at either width (confirmed via layoutWidth/bodyWidth match); the check script's image/font network probes failed only due to this sandbox's outbound proxy, not the email itself — verified the images are real, current Wix CDN URLs sourced directly from the live posts' own cover images.
+
+**Send governor: `ok:false`.** 4 list sends in the last 24h (cap 1), 18 in the last 7 days (cap 7) — carryover from yesterday's pre-policy game-day volume. Bounce 1.04%, complaint 0.03% (both fine). Did not send.
+
+**Action:** uploaded as Wix Email Marketing DRAFT campaign `3e89adb2-6f2c-4502-a74e-ecd10bc2f473`, subject "GatorBait Roundup — Best Shots, Vol. 2 + Missouri Next", preview verified (52,875-char rendered HTML, no broken placeholders). Ready to send once the trailing-window caps clear or Brenden approves an exception. Committed source to `fix-native-flash-20260926` (`13cc98a`).

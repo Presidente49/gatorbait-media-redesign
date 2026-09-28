@@ -28,6 +28,14 @@
         <mj-text align="center" color="#5F6B7A" font-size="10px" font-weight="700" letter-spacing="1.7px" padding="0">MONDAY ROUNDUP · SEPTEMBER 28, 2026</mj-text>
       </mj-column>
     </mj-section>
+    <mj-section background-color="#FFFFFF" padding="4px 26px 20px">
+      <mj-column>
+        <mj-text mj-class="kicker" padding="0 0 4px">Franz's Take</mj-text>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=roundup_2026_09_28&utm_content=franzs_take" style="color:#081B35;text-decoration:none;"><div class="gb-h2" style="color:#081B35;">Who Are These Guys? Trautwein's Troops in the Trenches Are Difference Makers</div></a></mj-text>
+        <mj-text font-size="14px" color="#4B5666" padding="0 0 10px">Franz Beard: preseason rankings had Florida's O-line No. 9 in the SEC. Four games in, Phil Trautwein's no-name unit is why the Gators are averaging 260 rushing yards a game and haven't allowed a sack.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=roundup_2026_09_28&utm_content=franzs_take" align="left" padding="0">READ →</mj-button>
+      </mj-column>
+    </mj-section>
     <mj-section background-color="#FFFFFF" padding="0 26px 0">
       <mj-column><mj-text color="#081B35" font-size="20px" font-weight="800" padding="0 0 4px">THE STORIES</mj-text><mj-divider border-color="#FA4616" border-width="3px" padding="0" /></mj-column>
     </mj-section>

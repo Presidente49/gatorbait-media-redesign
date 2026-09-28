@@ -35,4 +35,9 @@ Then paste `tagger.js` into ExecuteWixAPI with `hasMutations` set true for a rea
 - 1 skipped for unpublished edits: the halftime story.
 - The earlier 9 skips are unchanged; all still have unpublished edits.
 
+**2026-09-28 10:52Z daily sweep (last 48 h, 21 posts):**
+- 6 tagged: Missouri first look (+3), 10 Thoughts From the Sidelines (+4), Chomp Up the Charts (+2), Postgame Analysis (+4), Franz Beard's 28-points column (+4), and the halftime 17-6 story — now unblocked and tagged (+15, hitting the 30-tag cap).
+- 15 already complete or nothing new to add.
+- Retried the 9 earlier skips: 1 (Laura Rutledge / Carlton Reese "14 Days in Gainesville") now has no unpublished edits, but qualifies for no tags under the current rules (no roster/opponent name or football keyword in its opening) — resolved, not re-added to the skip list. The other 8 (Urquhart/Auburn, "14 Days In Gainesville" ESPN doc piece, Auburn By the Numbers, "No sugar coating", "Putting things in perspective", "Reasons for optimism", "Day One Looks", "Sumrall exudes confidence") still have unpublished edits and remain skipped.
+
 Formatting is standardized separately: `design/post-normalizer-v1/` runs on every article page. It handles spacer lines, all-bold bodies, hand-made subheads, deck/lede lines and the typed-in byline.

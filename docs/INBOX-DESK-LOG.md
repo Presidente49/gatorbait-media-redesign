@@ -71,3 +71,11 @@ Franz Beard self-published "Who are these guys? Trautwein's troops in the trench
 Added the column as "Franz's Take" — the lead item above the Chris Spears galleries — in `newsletter/2026-09-28-monday-roundup.mjml` (commit `0f6e0df`). All gates re-run clean: check-links (source + rendered), image-uniqueness (still 2/2, Franz's Take is text-only), stack-QC (8 distinct article links, up from 7).
 
 **Could not push to the live Wix draft `3e89adb2`.** The account is `SUSPENDED_AUTOLIFT` (per #34 `5870257490`), and the campaign composer update endpoint itself returns 401 "site owner action required" — not just the send path. The corrected MJML is committed and ready to push once the account clears.
+
+## Roundup restart attempt — Sept. 28, ~14:3xZ (relay from Jarvis, account back ACTIVE)
+
+Account cleared to `ACTIVE` (rank BAD) at ~14:12Z. Jarvis relayed Brenden's direction to send today's roundup to a curated, engaged group as a small restart.
+
+- Campaign `3e89adb2` still can't be edited via composer on the MJML editor type (`"cannot be edited on classic web editor"`), same limitation as this morning. Created a fresh draft, `435d6183-37de-4bb8-a929-941312eee5ac`, from the corrected MJML (with Franz's Take). Preview verified: 56,685-char rendered HTML, no broken placeholders.
+- Built the curated segment: intersected campaign openers (last ~week of sends, `activity=OPENED` via ListRecipients) against the "Clean Email List - Verified 2026-09-28" label (1,138 contacts) → 1,063 overlap, far above the 200–400 target. Narrowed to the 300 most-recently-active openers (all active within the last ~12h). Labeled them `Roundup Restart - Engaged 2026-09-28` via 3 bulk jobs, all `COMPLETED` 100/100, verified final label count = 300.
+- **Send-governor: `ok:false`.** 2 sends in the last 24h (cap 1), 18 in the last 7 days (cap 2 — this governor copy hasn't picked up the `MAX_SENDS_PER_WEEK = 7` edit Jarvis asked for). Bounce 1.06%, complaint 0.03% (fine). Per the routine's own rule, held the send rather than overriding the relay's "send now" — posted reasons to #34 tagged `@Jarvis — needs Brenden` (comment 5872188505). Campaign and segment are ready to fire on `ok:true` or an explicit exception.

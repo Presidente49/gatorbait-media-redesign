@@ -72,3 +72,21 @@ Brenden: "66 percent bounce rate is not good."
 - On `/post/*` pages, inserts a "Keep reading" block right after the story text with the 3 newest posts from `/blog-feed.xml`, never the current story, nothing older than 14 days, no "LIVE NOW:" posts. Barlow type, brand navy/orange, stacks on phones.
 - Went live only after a site publish; page SEO was re-applied from the API in the same call (LESSONS #47). Verified in a real browser run (TinyFish automation): the block shows the three newest stories on the Baugh recap. A plain HTML fetch misses it because it snapshots before the feed loads.
 - Page SEO still reads old on Contact, 2021 archive, Tags and Latest after the re-apply. The API re-apply is not holding; the Editor SEO-panel paste from `docs/PAGE-SEO-2026-09-28.json` remains the fix.
+
+# Brenden's fan pass — Sept. 28, 2026 (~04:00Z)
+
+Fixed (live, verified):
+- Vol. 2 gallery credit "GatorBait Medias" → "Photos by Chris Spears, GatorBait Media" (my typo from building the post).
+- Franz Beard column (d07e9390): "eight penalties for -92 yards" → "92 yards"; "Ole Miss threw for 299 yards" → 298 (ESPN box score: Chambliss 25/34, 298; team passing 298). Added a dated italic "Update, Sunday" line at the top with the new polls (Florida No. 8 AP/Coaches, Missouri No. 25). His own pre-poll prediction ("somewhere between 11 and 15") left as written.
+- "By the numbers" box contrast: the post template's generic `[data-hook=post-description] :is(p,li){color:var(--k)!important}` loads later than the stat-box rule at equal specificity, so body text rendered navy on navy. Override (higher specificity) added to the Keep Reading embed (59e31550 rev 2, 3,981 chars, repo synced) because the template embed is 6 characters from its 15,000 cap. Real-browser check: light text on navy, readable.
+
+Checked, not errors:
+- Kickoff returns 41 and 74: two different returns (ESPN play-by-play: 41 to the FLA41, 74 to the OLE26), back-to-back after Ole Miss scores.
+- "No. 19 Missouri" in the Saturday results lists (Beard column, CFB Saturday wrap) was Missouri's ranking at kickoff before losing to Mississippi State.
+- Chambliss 298 is correct everywhere else.
+
+Not changed, needs Brenden:
+- Postgame Analysis slug `...-ole-miss-rebel-28`: changing a live URL breaks shared links; recommend leaving it.
+- Search: no custom search exists; what flashes is Wix's native header search before the custom header covers it. Only working search is the native one on the Latest page.
+- Newsletter signup: none on site. The Email Marketing API is still returning 401 (site owner action required), which also blocks wiring a signup to the subscriber list.
+- Message Board: nav link + "not open yet" box live in the header embed (7fee4de6, 30 chars from cap), Home Code (622d8ece) and Sports Home core (fdc2127a).

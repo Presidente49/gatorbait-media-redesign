@@ -7,6 +7,8 @@
 #gbm-kr img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#081b35}
 #gbm-kr .kr-t{display:block;padding:10px 12px 12px;font:800 17px/1.2 Barlow,Arial,sans-serif;color:#081b35}
 @media(max-width:750px){#gbm-kr{margin-inline:20px}#gbm-kr .kr-grid{grid-template-columns:1fr;gap:12px}#gbm-kr a{display:grid;grid-template-columns:110px 1fr}#gbm-kr img{height:100%;aspect-ratio:auto}#gbm-kr .kr-t{font-size:16px}}
+/* "By the numbers" box: the template's generic dark paragraph color loads later and wins at equal specificity (navy on navy). */
+html body #SITE_PAGES [data-hook=post-page] [data-hook=post-description] [data-gbm-stat] p,html body #SITE_PAGES [data-hook=post-page] [data-hook=post-description] [data-gbm-stat] p>span>span{color:#e6ecf5!important}
 </style>
 <script>(function(){
 'use strict';if(window.__GBM_KR__)return;window.__GBM_KR__=1;

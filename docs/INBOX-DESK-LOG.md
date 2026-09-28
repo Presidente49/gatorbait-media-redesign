@@ -79,3 +79,13 @@ Account cleared to `ACTIVE` (rank BAD) at ~14:12Z. Jarvis relayed Brenden's dire
 - Campaign `3e89adb2` still can't be edited via composer on the MJML editor type (`"cannot be edited on classic web editor"`), same limitation as this morning. Created a fresh draft, `435d6183-37de-4bb8-a929-941312eee5ac`, from the corrected MJML (with Franz's Take). Preview verified: 56,685-char rendered HTML, no broken placeholders.
 - Built the curated segment: intersected campaign openers (last ~week of sends, `activity=OPENED` via ListRecipients) against the "Clean Email List - Verified 2026-09-28" label (1,138 contacts) → 1,063 overlap, far above the 200–400 target. Narrowed to the 300 most-recently-active openers (all active within the last ~12h). Labeled them `Roundup Restart - Engaged 2026-09-28` via 3 bulk jobs, all `COMPLETED` 100/100, verified final label count = 300.
 - **Send-governor: `ok:false`.** 2 sends in the last 24h (cap 1), 18 in the last 7 days (cap 2 — this governor copy hasn't picked up the `MAX_SENDS_PER_WEEK = 7` edit Jarvis asked for). Bounce 1.06%, complaint 0.03% (fine). Per the routine's own rule, held the send rather than overriding the relay's "send now" — posted reasons to #34 tagged `@Jarvis — needs Brenden` (comment 5872188505). Campaign and segment are ready to fire on `ok:true` or an explicit exception.
+
+## Desk inbox — Sept. 28, ~17:0xZ
+
+| Thread ID | Sender | Subject | Action | Draft |
+|---|---|---|---|---|
+| 1a0e8ecffd26b7f4 | buddymartinshow@gmail.com | Eddie Gilley column post asap | Built as Wix DRAFT (not published) — postgame column, not itself breaking | 48c62d0a-b558-4170-8de6-78509a4f21ef |
+
+Eddie Gilley's "How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again" — five-play breakdown of the Ole Miss win (Chiles 4th-down stop, Durkin FG, Baugh's early touchdown, Hanks' third-down pass breakup, Duke Clark's 45-yard TD, the Philo-to-Singleton corner route, DJ Coleman's game-sealing pick). Writer's copy used verbatim. Cover: Chris Spears' "9.26.26 Florida vs Ole Miss (7 of 27)" (credited, unused elsewhere so far). Tags: Eddie Gilley (new), Jon Sumrall, Aaron Philo, Jadan Baugh, Duke Clark, Eric Singleton Jr., Ole Miss, Florida Gators Football. Category: Eddie Gilley - Blog.
+
+**[CHECK]:** the column says Florida ran 52 times for 302 yards; Franz Beard's already-published column has it at 53 carries for 302 yards. Left both as their writers wrote them and flagged the discrepancy in the draft itself rather than silently picking one — needs a box-score check before publish.

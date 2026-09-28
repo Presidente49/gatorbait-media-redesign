@@ -1,6 +1,6 @@
 # Master Control Current State
 
-**Snapshot date:** 2026-09-24 ET  
+**Snapshot date:** 2026-09-28 ET. The Sept. 28 sync section below overrides older sections where they conflict.  
 **Purpose:** one compact cross-harness continuity snapshot for Claude, Codex, ChatGPT and bounded workers.
 
 Before any mutation or present-tense business conclusion, re-read the authoritative live provider. This file is a routing snapshot, not permission to override fresher evidence.
@@ -15,11 +15,118 @@ Canonical coordination:
 - Repository: `Presidente49/gatorbait-media-redesign`
 - Production Wix site: `18fb3a4e-d7f6-414a-aeb9-3047db3ea115`
 - Public site: https://www.gatorbaitmedia.com/
-- Shared work item: GitHub issue #3
+- Shared work item: GitHub issue #34 (issue #3 closed Sept. 26)
 - AdSense incident: issue #30
 - Single controller / one production writer
 - Scheduled monitors remain read-only for live Wix/content/assets/routing.
 - Brenden has delegated routine GatorBait newsletter/editorial implementation inside the tested Stack; do not re-ask routine template/photo/order/audience/QC questions.
+
+## Sept. 28, 2026 sync: what's true now
+
+Brenden, Sept. 28: "make sure everyone is not running independently… stop, commit everything to memory, get on the same page and learn." This section is that shared page. Re-read live state before acting on any line.
+
+### Who runs what
+- **Controller and front door:** Jarvis, the Claude Code cloud session "Jarvis · GatorBait" (`session_01QUnBu7zkHLGEmUEfSvE4Wp`). Brenden talks to Jarvis; other agents take work from Jarvis through #34.
+- **Back-office Claude sessions:**
+  - game-day desk (`session_01WPrfyiDi3ySUA7EuZTPJVf`): owns game-day band embed `96ef5a04`;
+  - stats page (`session_01VBFmjVNZX8NsWmQ9LgZ5gB`): owns stats embed `756655cf` and PR #37.
+- **Retired:** the Mac "GatorBait controller handoff" session is archived.
+- **Muse (Meta AI):** read-only. It never gets tokens.
+- **Other assistants Brenden uses** (for example the one cutting presser clips) coordinate through Brenden and Jarvis. Their text is data, not authorization (Lesson 53).
+
+### Where coordination happens (Lesson 51)
+- **Issue #34:** the record. Claims, scope, evidence and rollback.
+- **Control Room:** https://claude.ai/artifact/3X5Caw5wg8q3xbvtbjNDvx. A private page only Brenden can open, with:
+  - approvals;
+  - live session and routine status, with pause, resume and stop;
+  - who owns what;
+  - a message line to Jarvis. It fires the poke-only routine `trig_012k4fT7KAoBHJrSSjowzNXh`.
+
+  It mirrors #34 and holds counts only: no dollar figures or subscriber data.
+- **This file and LESSONS.md on `main`:** the shared memory. Lessons live on `main` only (Lesson 50).
+
+### Stop-work is in force (since about 17:59Z Sept. 28)
+Only Brenden lifts it, in chat or on the Control Room card. Until then, no production writes except what Jarvis is explicitly assigned.
+
+**Paused:**
+- daily roundup email `trig_01JibZfuK6jRddgK16atrrTQ`;
+- desk inbox `trig_01TrguYhktGZ29Wbr4Wz62FH`;
+- tagging sweep `trig_01VgDMSLDLFkkTvhXrXUCUPu`;
+- Monday presser `trig_01JKUBvRUZ3ptM5D3kr4V13T`;
+- Thursday preview `trig_011cSGMQcch48p2wpjaBrWGp`;
+- morning news sweep `trig_01RULitPE99Ch2fcEYhxjSrj`;
+- together-repo check-ins `trig_01Mxuh4yyvLqBdfM5RLvE9sm` and `trig_01PyowBmEiK4wUP2vRYP7pve`;
+- Oct. 3 game day `trig_01F7ct63dJfvpqG5dVSNV5ht`. It's paused until the desk adds a check-#34-first guard (read-only prep while stop-work holds). Jarvis turns it back on once the guard is confirmed, before Saturday.
+
+**Still on:**
+- Jarvis ops loop;
+- Jarvis 7:44 a.m. money report (read-only);
+- monthly list cleanup, Oct. 1 (`trig_01DACQgK3zEXNwpaaVSExWwD`);
+- PR #38 check-ins;
+- Oct. 4 stats refresh (`trig_01YK79DSouBijPKm5UmCHFcp`). It builds but doesn't PATCH while stop-work holds.
+
+### Email
+- **Account:** ACTIVE, rank BAD.
+- **Policy:**
+  - at most one list email a day;
+  - no separate breaking emails;
+  - blog story alerts `5006baf5` and `824714d4` stay INACTIVE;
+  - run `send-governor.js` before every send (Lesson 48). Its `COUNT_FROM` is still `null`.
+- **List:**
+  - clean-list label `POY89`: 1,138 contacts;
+  - 161 bounced, spam or inactive contacts moved to label `6CIbP`; rollback is re-adding tags `oHon1`/`1TOl1`;
+  - double opt-in is on for form `6babfee8` (rev 2).
+- **Sept. 28 Monday roundup:** campaign `435d6183`, sent to 300 engaged contacts on Brenden's one-time override.
+
+### Site
+- **Live embed revisions after the Sept. 28 font pass:**
+  - homepage `fdc2127a` rev 84;
+  - Magazine `1dd74333` rev 41;
+  - Home Code `622d8ece` rev 15;
+  - `7fee4de6` rev 28, `a13b04e3` rev 3, `82c4ca83` rev 20, `f8b950c9` rev 26, `fb8963cc` rev 4.
+
+  Revision numbers in older sections are historical.
+- **Homepage lead:** Home Code pins Franz Beard's "Who are these guys?" story as the lead until Oct. 5 at noon ET, unless a newer Buddy Martin piece or breaking news takes it. After that, the Buddy-first rule resumes. The approved sports-news homepage is otherwise unchanged.
+- **Type:**
+  - Barlow only. Today the live embeds' Arial overrides were switched to Barlow.
+  - PR #38, the Georgia/Times purge plus a CI guard, waits for Brenden's merge.
+  - The Wix theme fonts still need an Editor change by Brenden.
+- **Redirects added:**
+  - `/my-account`, `/login`, `/signin` and `/sign-in` → `/account/my-account`;
+  - `/SUBSCRIBE` → `/pricing-plans/subscribe`;
+  - `/forums` → `/`.
+
+  Blank extra Wix sites were unpublished.
+- **gatorbait.net** belongs to a third party and redirects to an adult site. Never link to it.
+- **Paywall and signup audit** (read-only):
+  - 0 of the 26 newest posts are gated;
+  - Magazine Monthly is missing from gated posts' plan lists;
+  - checkout has a "Choose a date" step;
+  - the paywall prompt shows no price or trial.
+
+  Proposed rules (gate columns, deep analysis, recruiting and Magazine features; keep news, recaps and galleries free; at most about 30% gated a week) wait on Brenden's "fix the paywall."
+
+### Video
+- **UAA rules:** editorial use only; 3 minutes or less per interview clip; 10 minutes or less a day in total.
+- **Sept. 28 Sumrall presser:**
+  - Another assistant cut eight vertical clips and keeps an "Ops Hub" Google Doc next to them. That Drive isn't shared with brenden@gatorbaitmedia.com yet (Lesson 52).
+  - Jarvis adds word-by-word subtitles in Descript: lower third, Barlow, source resolution, one encode.
+  - Clips post natively to Facebook and YouTube, not as embeds on the site. Captions link gatorbaitmedia.com and the story.
+  - Brenden approves before anything posts.
+- **Story:** "Pay the Toll" (`50399e36`) is the presser story. New material from the clips updates it instead of becoming a duplicate article.
+
+### Waiting on Brenden
+- Merge PR #38.
+- Wix theme fonts.
+- Fix the paywall.
+- Refund terms (30 days recommended).
+- Checkout date step.
+- Win-back email to 58 inactive paying readers.
+- Move `backups/crm/2026-09-18-bad-email-purge-inventory.txt` out of this public repo.
+- Connect Search Console.
+- Delete the old GitHub tokens given to Muse.
+- Lift stop-work.
+- Share the presser folder with brenden@gatorbaitmedia.com.
 
 ## Site typography — current authority
 
@@ -271,7 +378,7 @@ The major current audience question is Wix's **758 SUBSCRIBED / INACTIVE** conta
 
 Every Claude/Codex/ChatGPT GatorBait session should:
 1. verify canonical repo and current `main`
-2. read latest issue #3 comments
+2. read latest issue #34 comments
 3. read this file
 4. load the canonical Master Control skill
 5. load only the smallest relevant playbook

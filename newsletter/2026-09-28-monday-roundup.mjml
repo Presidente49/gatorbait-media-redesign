@@ -94,6 +94,14 @@
         <mj-button href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=roundup_2026_09_28&utm_content=band_franz_beard" align="left" padding="0" font-size="11px" inner-padding="9px 14px">READ →</mj-button>
       </mj-column>
     </mj-section>
+    <mj-section background-color="#FFFFFF" padding="0 18px 4px">
+      <mj-column padding="0 8px 18px" vertical-align="top">
+        <mj-text mj-class="meta" padding="0 0 4px">Eddie Gilley</mj-text>
+        <mj-text padding="0 0 6px"><a href="https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=roundup_2026_09_28&utm_content=band_eddie_gilley" style="color:#081B35;text-decoration:none;"><div style="font:700 18px/1.18 Newsreader,Georgia,serif;color:#081B35;">How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again</div></a></mj-text>
+        <mj-text font-size="13px" line-height="1.5" color="#4B5666" padding="0 0 8px">Eddie Gilley breaks down the five plays that decided it, from a blown Ole Miss fourth-down gamble to DJ Coleman's game-sealing interception.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=roundup_2026_09_28&utm_content=band_eddie_gilley" align="left" padding="0" font-size="11px" inner-padding="9px 14px">READ →</mj-button>
+      </mj-column>
+    </mj-section>
     <mj-section background-color="#FA4616" padding="20px 26px">
       <mj-column>
         <mj-text color="#FFFFFF" font-size="10px" font-weight="900" letter-spacing="1.9px" padding="0 0 6px">LOOK AHEAD</mj-text>

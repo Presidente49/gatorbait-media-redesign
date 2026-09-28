@@ -47,10 +47,20 @@ GitHub `main` continues to advance through normal controller/ops commits. Produc
 
 ### Magazine web page
 - Wix embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`
-- revision: **26**
+- revision: **40** as of Sept. 28, 2026 (was 26 at this file's snapshot date; re-read live before trusting any revision number in this file)
 - enabled: **true**
 - source pointer: `485b38a036431c667584aa3990922772288399f3/automation/site-design/magazine.js`
 - web Magazine remains separate from the email newsletter and from the downloadable/print reading-edition experiments.
+- **The "Inside the issue" grid rebuilds itself live from `/blog-feed.xml` on every page load**, and that rebuild keeps only posts by five named authors (Buddy Martin, Franz Beard, Eddie Gilley, Loren Meadows, Carlton Reese) — see Lesson 45. Any card for anyone outside that list (Chris Spears, GatorBait Staff, a guest byline) must be captured once into a var and force-reinserted after the feed rebuild, or it silently disappears the moment the rebuild runs. A change to only the embed's static fallback JSON is not enough to verify — read the actual runtime logic, not just the data.
+
+## Session update — Sept. 27 night into Sept. 28, 2026
+
+- **Typography enforcement.** Georgia serif had crept back into the header embed (`7fee4de6`, now rev 26) and the Magazine embed (`1dd74333`) — article-page headlines, account/plan titles, the sidebar "recent post" widget, and every Magazine headline. This directly violated the "Site typography" section above. Swapped all 11 occurrences to Barlow. Re-audit both embeds for Georgia periodically; this has now recurred once.
+- **Home Code embed** (`622d8ece`, now rev 12): fixed a real headline bug — `The voices<br>you come for.` had no literal space next to the `<br>`, so a mobile rule that hides the `<br>` for a one-line layout also collapsed the words together ("voicesyou"). Also widened the "Only at GatorBait" columnist box from a hardcoded Buddy+Franz pair to a 5-name priority list (adds Loren Meadows, Carlton Reese, Eddie Gilley), so it varies with what's actually recent instead of always showing the same two names.
+- **Embed-repo drift.** All three live-patched embeds above had their repo copies (`deploy/wix-served/header-embed.html`, `magazine-embed.html`, `split/home-code.html`) go stale immediately after each live PATCH tonight — the repo was never re-synced in the same session as the patch. Re-synced all three; character length now verified to match live exactly. Re-sync the repo copy in the *same* tool call chain as any live PATCH going forward, not as a separate later step.
+- **Department audits ran for the first time** using the Sept. 27 dispersed skills (`gatorbait-agency/agency/skills-library/{editorial/copy-desk-audit,design/article-visual-qc,web/embed-patch,research/photo-sourcing,marketing/{email-delivery-check,seo-audit}}.md`). Findings: 3 posts with zero tags (tagged), one cover reused across two live posts (fixed — see photo-sourcing rule), one post correctly skipped for an in-progress unpublished edit. See `gatorbait-agency/agency/brands/gator-bait-media/outputs/log.md` for the run record.
+- **New content:** "Chris Spears' Best Shots: Florida 52, Ole Miss 28" (`67bd8aca-89e2-4098-b934-4c019b4f588e`, `/post/chris-spears-photo-gallery-florida-ole-miss`) — a 10-photo gallery post, GatorBait's first, added to the Magazine's Inside the Issue grid. Pattern for a future gallery: use only photos already identified/captioned/credited in Wix media (check `gameday/<date>/photos-chris-spears/CREDIT.md`), never the raw uncaptioned SmugMug batch without viewing each one first.
+- **Email list hygiene, Sept. 27–28:** suppressed 9 chronically-bouncing addresses (8+ bounces, 0 deliveries across 31 sends since Aug. 1) and unsubscribed 14 contacts who had filed spam complaints but were still marked SUBSCRIBED. Subscribed total: 1,849. Separately, one subscriber's mailbox forwards to a dead Outlook account under GatorBait's own Return-Path, so its bounces arrive as `postmaster@outlook.com` "Undeliverable" notices in Brenden's personal inbox rather than showing up in Wix's own bounce stats — see Lesson 46. A full list-hygiene pass now includes a Gmail NDR sweep for this reason (`docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md`).
 
 ## GatorBait Magazine Newsletter — canonical Stack
 
@@ -176,6 +186,8 @@ Issue #30 is claimed by Master Control. Remaining gates:
 2. sufficiently current/native publisher reporting for paid impressions/earnings
 
 Do not add another loader/manual unit or change consent/account/payment settings speculatively.
+
+**Root-cause finding, Sept. 28, 2026 (still open, nothing changed):** the Homepage (`fdc2127a`) and Magazine (`1dd74333`) embeds each set `#SITE_PAGES`/`#PAGES_CONTAINER` to `display:none!important` to kill the old native-page flash. Auto Ads places in-content ad units by scanning the rendered native page container; a `display:none` container has no box for it to use. Article pages don't hide that container and are unaffected. Practical read: Homepage and Magazine — the two highest-traffic pages — likely serve little beyond anchor/overlay-format ads; in-content Auto Ads units are probably confined to individual article pages. Confirming this needs the Google AdSense dashboard (impressions/RPM by URL), which isn't visible from Wix's API or this session. Do not resurrect the disabled `471ba402` ("Homepage Ad Presentation") or `109a8870` embeds to fix this — they only reposition ad units Auto Ads already placed, and can't create a placement surface Auto Ads never had. A real fix means designing one visible, intentional ad slot inside `#gbm-live`/`#gbm-magazine-page` and requesting a specific ad unit into it — a deliberate layout decision, not a diagnostic patch.
 
 ## Cross-source sweep — what exists and what does not
 

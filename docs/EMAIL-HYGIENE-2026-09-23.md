@@ -76,3 +76,19 @@ Official guidance:
 - https://support.wix.com/en/article/why-some-email-campaigns-get-bounced
 - https://support.wix.com/en/article/email-marketing-adding-recipients-to-your-campaign
 - https://support.wix.com/en/article/improving-your-email-sender-reputation
+
+## Owner-designated legacy Comps/VIPs — 2026-09-29 09:33 ET
+
+Brenden explicitly directed placing the 53 legacy offline/manual recurring accounts in a separate Comps/VIPs group. This is owner designation for operational handling, not independent proof of every historic comp rationale or VIP relationship.
+
+- Label: GatorBait - Legacy Comps and VIPs (owner designated)
+- Stable key: custom.gatorbait-legacy-comps-and-vips-owner-designated-D2VK9
+- Tag: D2VK9
+- Cohort: 53 existing contacts, 50 annual and 3 monthly legacy plans; no new entitlement or pricing plan.
+- The earlier review-only group 7yuom now contains only 2 online-payment exceptions (pending first cycle and failed payment), NOT comps.
+- Current email-pool partition supersedes the earlier four-way split: paid 291 + free 781 + former-paid 9 + legacy comps 53 + online-payment review 2 = 1,136. Comp classification does not imply email consent or permission to send.
+- Do not undo this owner designation simply because manual orders remain UNPAID. Do not mark orders paid, bill/back-bill, cancel, revoke access, change renewal settings, or initiate dunning based on that flag. No comp expiry/reason/approver other than this owner direction is known. Record future reasons only from actual evidence.
+
+Read-only first-pass audit: 53 distinct emails, all 53 linked to approved member accounts; no duplicate emails within the cohort or matching other CRM primary emails, no login-email mismatches, and no multiple current legacy orders per contact. Email subscriptions: 52 SUBSCRIBED/VALID, 1 SUBSCRIBED/NOT_SET deliverability; zero Do Not Market labels. Twenty contacts have no first/last name in the CRM name field. One still carries a legacy re-opt-in-candidates HOLD; it was not cleared. Five lack a recorded login; 7 have a login within30 days,17 within90. Lack of login, a missing name, or age of an account is NOT fraud evidence. No fraud/security certification claimed; no external email-validation uploads or private subscriber data published.
+
+Next cleanup is targeted record review: establish missing names from verified first-party records, resolve the historical re-opt-in hold before any intended marketing to that contact, check unrated deliverability without test blasts, and document known comp reasons/sponsor/optional review dates. Never auto-expire or remove a comp merely for inactivity. Existing monthly cleanup must preserve this designation and all consent/access boundaries; no duplicate scheduler was created.

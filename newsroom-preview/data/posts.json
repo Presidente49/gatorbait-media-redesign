@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: September 29, 2026",
+      "excerpt": "O-line coach Phil Trautwein and family celebrate the win over Ole Miss (Photo by Chris Spears) A few thoughts to jump start your Tuesday morning: Driving home on I-75 from Jon Sumrall’s Monday morning press conference in Gainesville, cruise control set at 77 to keep steady with the flow of traffic, I’m listening to the album “Hitman: David Foster and…",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-29-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-09-29T11:36:39Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_c0cae41f73f142ec8c32a0599593365f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: September 29, 2026"
+      }
+    },
+    {
+      "title": "Senate Passes Protect College Sports Act 77–22",
+      "excerpt": "The Senate passed the Protect College Sports Act 77–22 Monday night. What the proposal could mean for Florida, and why it is not law yet.",
+      "url": "https://www.gatorbaitmedia.com/post/senate-passes-protect-college-sports-act-florida",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-09-29T11:31:17Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_92f9918e12f941e3a9621a000db7c07d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Senate Passes Protect College Sports Act 77–22"
+      }
+    },
+    {
       "title": "Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",
       "excerpt": "Jon Sumrall wants Gator Nation to put down the poll: Florida has lost three of its last four trips to Columbia, and the coach with the raspy voice is making his team pay the toll on \"Bloody Tuesday.\"",
       "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for 10 Thoughts From the Sidelines: Florida 52, Ole Miss 28"
-      }
-    },
-    {
-      "title": "Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls",
-      "excerpt": "Florida’s 52-28 win over No. 4 Ole Miss sent the Gators up 13 spots in the AP Top 25 and 14 in the Coaches Poll. They’re No. 8 in both.",
-      "url": "https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-27T18:20:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_1043f4b7772245baa5aed5f80c21669a~mv2.png/v1/fit/w_1000,h_720,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls"
-      }
-    },
-    {
-      "title": "Bound for the CFB Top Ten: Cue Up “Happy Days Are Here Again”",
-      "excerpt": "Florida’s updated ESPN FPI projections now have the Gators favored in every remaining game except Texas and Georgia. That math comes out to 10-2 and a ticket to the playoff.",
-      "url": "https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-27T18:11:27Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_026d2a4d2be04a91b8c32317fed5f623~mv2.jpg/v1/fit/w_1000,h_838,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Bound for the CFB Top Ten: Cue Up “Happy Days Are Here Again”"
       }
     }
   ]

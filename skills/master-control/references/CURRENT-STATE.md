@@ -160,6 +160,7 @@ Only Brenden lifts it, in chat or on the Control Room card. Until then, no produ
 - **Purge file:** `backups/crm/2026-09-18-bad-email-purge-inventory.txt` is still in this public repo. Two attempts to move it (Drive upload, `git rm`) were refused by the auto-mode classifier. Brenden removes it by hand or allows it explicitly; git history keeps it either way.
 - **Control Room routing:** the message routine `trig_012k4fT7KAoBHJrSSjowzNXh` is bound to the Jarvis session. Messages on the hub dated Sept. 30 00:10–01:00Z from "Jarvis" were written by another session without Wix or GitHub tools; the approvals they cite are unconfirmed (asks stay `open`).
 - **New connectors seen Sept. 29:** Shopify, Descript `search_drive`, Idiolect writing profiles, Miro board preview. None is wired into a job yet.
+- **Group think (Sept. 29 ~7:15 p.m. ET):** `docs/GROUP-THINK-2026-09-29.md` (decisions, job inventory, FCC lane, tool swaps, branch disposition) and `automation/ops-hub/SPEND-GUARDRAILS.md`. Five FCC briefs wait in `automation/ops-hub/model-router/jobs-pending/` for Brenden's key. `ops-hub-cloud-cycle` now runs hourly. GitHub Pages (`pages-build-deployment`, active, builds `main`) serves the repo root, so the purge inventory file is reachable on the web until Brenden removes it.
 
 ## Site typography — current authority
 

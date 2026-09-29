@@ -1,0 +1,8 @@
+{
+  "id": "log-summary-cloud-state",
+  "lane": "public_low_risk",
+  "kind": "ops",
+  "prompt": "Read cloud-state/events.jsonl (public URLs and status codes only; it holds no personal data). Summarize what changed in the last 48 hours in five lines or fewer: new failures, recoveries, and any URL whose status flipped more than twice. Plain English, no jargon. Read-only.",
+  "max_turns": 4,
+  "timeout": 300
+}

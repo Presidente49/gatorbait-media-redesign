@@ -1,0 +1,8 @@
+{
+  "id": "research-prep-next-opponent",
+  "lane": "public_low_risk",
+  "kind": "research",
+  "prompt": "Florida's next football opponent is the next game listed in sports-live/scoreboard.json. From public ESPN team and game pages only (no other sources), collect 15 to 25 factual bullets for a preview: record, last three results with scores, top offensive and defensive statistical leaders, injuries listed on ESPN, and the series history line. Every bullet ends with its ESPN source URL. No opinions, no adjectives, no invented numbers. Return plain text bullets. Read-only.",
+  "max_turns": 8,
+  "timeout": 900
+}

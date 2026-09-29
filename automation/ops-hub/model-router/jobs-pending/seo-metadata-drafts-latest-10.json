@@ -1,0 +1,8 @@
+{
+  "id": "seo-metadata-drafts-latest-10",
+  "lane": "public_low_risk",
+  "kind": "editorial",
+  "prompt": "Read the 10 newest published posts listed in sports-live/posts.json (public, already live on gatorbaitmedia.com). For each, draft SEO metadata as JSON: {slug, title (<=60 chars, Title Case, no ALL CAPS), description (<=155 chars, plain English, no clickbait), og_title}. House rules: 'GatorBait Media' spelled with capital B; AP style; the writer's name in the description when it is a column. Return one JSON array. Do not modify any file and do not publish.",
+  "max_turns": 6,
+  "timeout": 600
+}

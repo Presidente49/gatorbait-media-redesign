@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",
+      "excerpt": "Jon Sumrall wants Gator Nation to put down the poll: Florida has lost three of its last four trips to Columbia, and the coach with the raspy voice is making his team pay the toll on \"Bloody Tuesday.\"",
+      "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-28T23:24:43Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'"
+      }
+    },
+    {
       "title": "Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout",
       "excerpt": "Jadan Baugh, London Montgomery and Bryce Lovett each won their first SEC weekly honor after Florida's 52-28 win over No. 4 Ole Miss.",
       "url": "https://www.gatorbaitmedia.com/post/honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-awards-after-ole-miss-rout",
@@ -31,7 +45,7 @@
     },
     {
       "title": "Who are these guys? Trautwein's troops in the trenches are difference makers",
-      "excerpt": "The guys up front helped Jadan Baugh score another TD against Ole Miss (Photo by Chris Spears) “Who are these guys?” – Paul Newman as Butch Cassidy in the classic film “Butch Cassidy and the Sundance Kid We could be asking the same question of the Florida offensive line. In their preseason analysis, the fine folks at Athlon and Phil Steele ranked Florida’s…",
+      "excerpt": "The guys up front helped Jadan Baugh score another TD against Ole Miss (Photo by Chris Spears) “Who are these guys?” – Paul Newman as Butch Cassidy in the classic film “Butch Cassidy and the Sundance Kid” We could be asking the same question of the Florida offensive line. In their preseason analysis, the fine folks at Athlon and Phil Steele ranked Florida’s…",
       "url": "https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers",
       "author": "Franz Beard",
       "firstPublishedDate": "2026-09-28T11:49:14Z",
@@ -47,7 +61,7 @@
       "title": "How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again",
       "excerpt": "Eddie Gilley breaks down the five plays that decided Florida's 52-28 rout of No. 4 Ole Miss, from a blown fourth-down gamble to DJ Coleman's game-sealing interception.",
       "url": "https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again",
-      "author": "EDDIE GILLEY",
+      "author": "Eddie Gilley",
       "firstPublishedDate": "2026-09-28T11:48:00Z",
       "section": "GatorBait",
       "image": {
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Commit, Then Rout: Four-Star Safety Cyion Smith Picks Florida Before 52-28 Win Over No. 4 Ole Miss"
-      }
-    },
-    {
-      "title": "Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp",
-      "excerpt": "Jadan Baugh ran for three touchdowns, Florida scored touchdowns on its first five possessions of the second half, and No. 21 Florida beat No. 4 Ole Miss 52-28 to move to 4-0.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-26T23:46:39Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_74c0faaa50574ad0b505ac84433f71c2~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp"
       }
     }
   ]

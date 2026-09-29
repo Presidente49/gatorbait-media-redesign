@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",
+      "excerpt": "Jon Sumrall wants Gator Nation to put down the poll: Florida has lost three of its last four trips to Columbia, and the coach with the raspy voice is making his team pay the toll on \"Bloody Tuesday.\"",
+      "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-28T23:24:43Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'"
+      }
+    },
+    {
       "title": "Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout",
       "excerpt": "Jadan Baugh, London Montgomery and Bryce Lovett each won their first SEC weekly honor after Florida's 52-28 win over No. 4 Ole Miss.",
       "url": "https://www.gatorbaitmedia.com/post/honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-awards-after-ole-miss-rout",
@@ -31,7 +45,7 @@
     },
     {
       "title": "Who are these guys? Trautwein's troops in the trenches are difference makers",
-      "excerpt": "The guys up front helped Jadan Baugh score another TD against Ole Miss (Photo by Chris Spears) “Who are these guys?” – Paul Newman as Butch Cassidy in the classic film “Butch Cassidy and the Sundance Kid We could be asking the same question of the Florida offensive line. In their preseason analysis, the fine folks at Athlon and Phil Steele ranked Florida’s…",
+      "excerpt": "The guys up front helped Jadan Baugh score another TD against Ole Miss (Photo by Chris Spears) “Who are these guys?” – Paul Newman as Butch Cassidy in the classic film “Butch Cassidy and the Sundance Kid” We could be asking the same question of the Florida offensive line. In their preseason analysis, the fine folks at Athlon and Phil Steele ranked Florida’s…",
       "url": "https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers",
       "author": "Franz Beard",
       "firstPublishedDate": "2026-09-28T11:49:14Z",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Bound for the CFB Top Ten: Cue Up “Happy Days Are Here Again”"
-      }
-    },
-    {
-      "title": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
-      "excerpt": "Florida dominated No. 4 Ole Miss for a season-defining win, but Jon Sumrall says the Gators are still a work in progress. Loren Meadows on what he expected, what he got and what comes next.",
-      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-09-27T13:50:06Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28"
       }
     }
   ]

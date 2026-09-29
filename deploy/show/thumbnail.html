@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>GatorBait show thumbnail</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700;800&family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet">
+<style>
+/* Thumbnail template: ?big=...&sub=...&photo=...&credit=...&w=1280&h=720. Rendered by render-thumbnail.cjs. */
+:root{--navy:#0021a5;--night:#07122e;--orange:#fa4616;--ink:#fff}
+*{box-sizing:border-box;margin:0}
+html,body{width:100%;height:100%;overflow:hidden;background:var(--night);font-family:Barlow,Arial,sans-serif;color:var(--ink)}
+.stage{position:relative;width:100vw;height:100vh;overflow:hidden;background:radial-gradient(120% 80% at 70% 0%,#10306e 0%,var(--navy) 45%,var(--night) 100%)}
+.photo{position:absolute;inset:0;background-size:cover;background-position:50% 25%}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,18,46,.92) 0%,rgba(7,18,46,.72) 45%,rgba(7,18,46,.15) 100%)}
+.bar{position:absolute;left:0;top:0;bottom:0;width:2.2%;background:var(--orange)}
+.copy{position:absolute;left:6%;right:8%;top:10%;bottom:12%;display:flex;flex-direction:column;justify-content:flex-end;gap:2.5vh}
+.big{font-family:"Barlow Condensed",Barlow,sans-serif;font-weight:800;font-size:19vh;line-height:.9;text-transform:uppercase;letter-spacing:.5px;text-shadow:0 4px 24px rgba(0,0,0,.6);max-width:78%}
+.sub{font-weight:700;font-size:6.2vh;line-height:1.15;color:#ffd9c9;max-width:70%}
+.mark{position:absolute;right:5%;top:7%;font-family:"Barlow Condensed",Barlow,sans-serif;font-weight:800;font-size:6vh;letter-spacing:1px;text-transform:uppercase}
+.mark span{color:var(--orange)}
+.show{position:absolute;right:5%;bottom:7%;font-weight:800;font-size:3.4vh;letter-spacing:2px;text-transform:uppercase;color:#dfe5f3}
+.credit{position:absolute;left:6%;bottom:4%;font-size:2.4vh;color:#aab4cc}
+</style></head>
+<body><div class="stage">
+  <div class="photo" id="photo"></div>
+  <div class="bar"></div>
+  <div class="mark">Gator<span>Bait</span> Media</div>
+  <div class="copy"><div class="big" id="big"></div><div class="sub" id="sub"></div></div>
+  <div class="show">The Buddy Martin Show · Live</div>
+  <div class="credit" id="credit"></div>
+</div>
+<script>
+var q=new URLSearchParams(location.search);
+document.getElementById('big').textContent=q.get('big')||'';
+document.getElementById('sub').textContent=q.get('sub')||'';
+document.getElementById('credit').textContent=q.get('credit')||'';
+var p=q.get('photo'); if(p&&/^https:\/\/(static\.wixstatic\.com|www\.gatorbaitmedia\.com)\//.test(p)) document.getElementById('photo').style.backgroundImage='url("'+p.replace(/"/g,'')+'")';
+</script></body></html>

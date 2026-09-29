@@ -56,12 +56,12 @@ function row(p){return'<a class="row" href="'+e(p.url)+'"><span class="rd" aria-
 function feat(p){return'<a class="fc" href="'+e(p.url)+'"><span class="art">'+img(p)+'</span><span class="ft"><small>'+e(who(p))+' · '+e(shortDate(p.date))+'</small><b>'+e(p.title)+'</b><em>'+e(dek(p,150))+'</em></span></a>'}
 function sec(cls,label,title,body){return'<section class="pg '+cls+'"><div class="in"><header class="sh"><p class="ey">'+label+'</p><h2>'+title+'</h2></header>'+body+'</div></section>'}
 function html(D,now){
- var L=D.lead,cr=credit(L)||'GatorBait Media',cl=/buddy martin/i.test(L.author)||COL.test(L.author||'');
+ var L=D.lead,cr=credit(L),cl=/buddy martin/i.test(L.author)||COL.test(L.author||'');
  var h='<header class="cv"><div class="cm"><div class="in"><span class="cn">GatorBait Magazine</span><span class="cd"><s> · </s>'+e(issueDate(now))+'</span><a class="cj" href="/pricing-plans/subscribe">Join</a></div></div>'
  +'<a class="cs" href="'+e(L.url)+'"><span class="ph">'+img(L,'bg').replace('loading="lazy"','loading="eager"')+img(L,'ki').replace('loading="lazy"','loading="eager" fetchpriority="high"')+'</span>'
  +'<span class="cx"><span class="in"><span class="cl">'+e(cl?'The column · '+who(L):'Cover story')+'</span>'
  +'<h1 class="'+(L.title.length>70?'long':'')+'" aria-label="'+e(L.title)+'">'+words(L.title)+'</h1>'
- +'<span class="cp">'+e(dek(L,190))+'</span><span class="cf"><i>Photo: '+e(cr)+'</i><u>'+(cl?'Read the column':'Read the story')+'</u></span></span></span></a></header>';
+ +'<span class="cp">'+e(dek(L,190))+'</span><span class="cf"><i>'+e(cr?'Photo by '+cr.replace(/,?\s*GatorBait Media$/i,'')+', GatorBait Media':'Photo: GatorBait Media')+'</i><u>'+(cl?'Read the column':'Read the story')+'</u></span></span></span></a></header>';
  if(D.cols.length)h+=sec('toc','In this issue','The columns','<div class="rows">'+D.cols.map(row).join('')+'</div>');
  if(D.feats.length)h+=sec('feat','Features','Beyond the box score','<div class="fg">'+D.feats.map(feat).join('')+'</div>');
  if(D.gallery){var g=D.gallery;h+='<section class="pg photos"><div class="in"><header class="sh"><p class="ey">Photos</p><h2>Chris Spears, on the sideline</h2></header><a class="gl" href="'+e(g.url)+'"><span class="art">'+img(g)+'</span><span class="gt"><small>Latest game gallery · '+e(shortDate(g.date))+'</small><b>'+e(g.title)+'</b><u>Open the gallery</u></span></a></div></section>'}
@@ -72,7 +72,7 @@ function html(D,now){
 }
 function fit(t){
  if(!t||!t.classList||t.tagName!=='IMG'||!t.naturalWidth)return;
- var r=t.naturalWidth/t.naturalHeight;if(r<1.2||t.naturalWidth<640)t.classList.add('ct');
+ if(t.naturalWidth/t.naturalHeight>=1)return;t.classList.add('ct');if(t.parentNode&&t.parentNode.classList&&t.classList.contains('ki'))t.parentNode.classList.add('pt');
 }
 function mount(D,now){
  if(!on())return;

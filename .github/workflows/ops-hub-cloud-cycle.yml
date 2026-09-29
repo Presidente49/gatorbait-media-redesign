@@ -12,7 +12,7 @@ on:
       - "automation/ops-hub/controller-rules.json"
       - ".github/workflows/ops-hub-cloud-cycle.yml"
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "7 * * * *"
 
 permissions:
   contents: write

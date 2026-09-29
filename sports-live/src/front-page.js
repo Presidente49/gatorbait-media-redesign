@@ -99,45 +99,57 @@
     return { post: posts[0], why: 'newest' };
   }
 
-  /* ---------- Scoreboard contract (sports-live/scoreboard.json) ---------- */
+  /* ---------- Scoreboard feed (sports-live/scoreboard.json, contract in README "Scoreboard feed") ----------
+   * { updatedAt, season, team:{name,rank,record,conf},
+   *   last:{opponent,opponentRank,home,date,status,score:{fla,opp},quarters:{fla:[],opp:[]}|null,venue,recapUrl,galleryUrl}|null,
+   *   next:{opponent,opponentRank,home,kickoffIso,tv,venue,previewUrl}|null,
+   *   schedule:[{date,opponent,opponentRank,home,status,score|null,tv,storyUrl}],
+   *   standings:[{team,confRecord,overall}], live:null|{clock,period,score:{fla,opp},possession,lastPlay} }
+   * Every field is validated on its own; anything missing or malformed keeps the bundled fact. */
   function num(v) { return typeof v === 'number' && Number.isFinite(v) ? v : null; }
   function str(v, max) { return typeof v === 'string' && v.trim() ? v.trim().slice(0, max || 80) : null; }
   function arr(v) { return Array.isArray(v) && v.length <= 8 && v.every(function (x) { return num(x) !== null; }) ? v.slice() : null; }
   function mergeGame(base, g, kind) {
     var out = Object.assign({}, base);
     if (!g || typeof g !== 'object') return out;
-    ['opponent', 'opponentAbbr', 'venue', 'tv', 'recapUrl', 'previewUrl'].forEach(function (k) { var s = str(g[k], 90); if (s) out[k] = s; });
-    if (num(g.opponentRank) !== null || g.opponentRank === null) out.opponentRank = num(g.opponentRank);
+    ['opponent', 'opponentAbbr', 'venue', 'tv'].forEach(function (k) { var s = str(g[k], 90); if (s) out[k] = s; });
+    ['recapUrl', 'previewUrl', 'galleryUrl'].forEach(function (k) { var u = safeUrl(g[k]); if (u && u.charAt(0) === '/') out[k] = u; });
+    if (g.hasOwnProperty('opponentRank') && (num(g.opponentRank) !== null || g.opponentRank === null)) out.opponentRank = num(g.opponentRank);
     if (str(g.opponentRecord, 12)) out.opponentRecord = str(g.opponentRecord, 12);
     if (typeof g.home === 'boolean') out.home = g.home;
     if (kind === 'last') {
       if (g.score && num(g.score.fla) !== null && num(g.score.opp) !== null) out.score = { fla: g.score.fla, opp: g.score.opp };
       if (g.quarters && arr(g.quarters.fla) && arr(g.quarters.opp)) out.quarters = { fla: arr(g.quarters.fla), opp: arr(g.quarters.opp) };
-      else if (g.score) out.quarters = null;
+      else if (g.hasOwnProperty('quarters')) out.quarters = null;
       if (g.stats && typeof g.stats === 'object') { var s = {}; ['totalYards', 'rushYards', 'firstDowns', 'attendance'].forEach(function (k) { if (num(g.stats[k]) !== null) s[k] = g.stats[k]; }); out.stats = s; }
       if (ymdOf(g.date)) out.date = g.date;
-    } else {
-      if (Number.isFinite(Date.parse(g.kickoffIso))) out.kickoffIso = g.kickoffIso;
-    }
+    } else if (Number.isFinite(Date.parse(g.kickoffIso))) out.kickoffIso = g.kickoffIso;
     return out;
   }
   function readScoreboard(raw) {
-    var fb = BUNDLE.scoreboard, sb = { team: Object.assign({}, fb.team), last: Object.assign({}, fb.last), next: Object.assign({}, fb.next), standings: [], live: null, source: 'bundled' };
-    if (!raw || typeof raw !== 'object') return sb;
+    var fb = BUNDLE.scoreboard, sb = { team: Object.assign({}, fb.team), last: Object.assign({}, fb.last), next: Object.assign({}, fb.next), schedule: [], standings: [], live: null, source: 'bundled' };
+    if (!raw || typeof raw !== 'object' || !raw.team) return sb;
     sb.source = 'feed';
-    if (raw.team) { if (num(raw.team.rank) !== null || raw.team.rank === null) sb.team.rank = num(raw.team.rank); if (str(raw.team.record, 12)) sb.team.record = str(raw.team.record, 12); }
-    // A new result replaces the whole last game so old quarters/stats never mix with a new score.
-    if (raw.last && str(raw.last.opponent) && raw.last.opponent !== fb.last.opponent) sb.last = mergeGame({ opponent: '', home: true }, raw.last, 'last');
+    if (raw.team.hasOwnProperty('rank') && (num(raw.team.rank) !== null || raw.team.rank === null)) sb.team.rank = num(raw.team.rank);
+    if (str(raw.team.record, 12)) sb.team.record = str(raw.team.record, 12);
+    // A different opponent replaces the whole game, so old quarters/stats never mix with a new score.
+    if (raw.last === null) sb.last = null;
+    else if (raw.last && str(raw.last.opponent) && raw.last.opponent !== fb.last.opponent) sb.last = mergeGame({ opponent: '', home: true }, raw.last, 'last');
     else sb.last = mergeGame(sb.last, raw.last, 'last');
     if (raw.next === null) sb.next = null;
     else if (raw.next && str(raw.next.opponent) && raw.next.opponent !== fb.next.opponent) sb.next = mergeGame({ opponent: '', home: false }, raw.next, 'next');
     else sb.next = mergeGame(sb.next, raw.next, 'next');
+    if (sb.next && !Number.isFinite(Date.parse(sb.next.kickoffIso))) sb.next = null;
     if (Array.isArray(raw.standings)) sb.standings = raw.standings.slice(0, 16).map(function (r) {
-      return r && str(r.team, 40) ? { team: str(r.team, 40), conf: str(r.conf, 8) || '', overall: str(r.overall, 8) || '' } : null; }).filter(Boolean);
-    if (raw.live && typeof raw.live === 'object' && raw.live.score && num(raw.live.score.fla) !== null && num(raw.live.score.opp) !== null) {
-      sb.live = { status: /^(pre|live|half|final)$/.test(raw.live.status) ? raw.live.status : 'live', clock: str(raw.live.clock, 24) || '', score: raw.live.score,
-        quarters: raw.live.quarters && arr(raw.live.quarters.fla) && arr(raw.live.quarters.opp) ? raw.live.quarters : null, drive: str(raw.live.drive, 160) || '',
-        updates: Array.isArray(raw.live.updates) ? raw.live.updates.slice(0, 4).map(function (u) { return [str(u && u[0], 20) || '', str(u && u[1], 200) || '']; }) : [] };
+      return r && str(r.team, 40) ? { team: str(r.team, 40), conf: str(r.confRecord, 8) || str(r.conf, 8) || '', overall: str(r.overall, 8) || '' } : null; }).filter(Boolean);
+    if (Array.isArray(raw.schedule)) sb.schedule = raw.schedule.slice(0, 20).map(function (g) {
+      return g && str(g.opponent, 40) && Number.isFinite(Date.parse(g.date)) ? { opponent: str(g.opponent, 40), rank: num(g.opponentRank), home: g.home === true, date: g.date, status: str(g.status, 16) || '', tv: str(g.tv, 24) || '',
+        score: g.score && num(g.score.fla) !== null && num(g.score.opp) !== null ? g.score : null } : null; }).filter(Boolean);
+    var lv = raw.live;
+    if (lv && typeof lv === 'object' && lv.score && num(lv.score.fla) !== null && num(lv.score.opp) !== null) {
+      var clk = str(lv.clock, 16) || '', per = num(lv.period);
+      sb.live = { status: /half/i.test(clk) ? 'half' : 'live', clock: (per ? (per > 4 ? 'OT' : 'Q' + per) + (clk ? ' ' : '') : '') + clk, score: { fla: lv.score.fla, opp: lv.score.opp }, quarters: null,
+        drive: (lv.possession === 'fla' ? 'Florida ball. ' : lv.possession === 'opp' ? 'Opponent ball. ' : '') + (str(lv.lastPlay, 200) || ''), updates: [] };
     }
     if (str(raw.updatedAt, 40)) sb.updatedAt = raw.updatedAt;
     return sb;
@@ -331,7 +343,11 @@
       if (l.recapUrl) scores += '<a class="fp-more" href="' + esc(l.recapUrl) + '">Read the recap <span aria-hidden="true">&nbsp;→</span></a>';
     }
     if (n) scores += '<a class="fp-next" href="' + esc(n.previewUrl || L.schedule) + '"><span>Next · ' + esc(n.tv || '') + '</span><b>' + esc(ranked(sb.team.rank, 'Florida') + (n.home ? ' vs. ' : ' at ') + ranked(n.opponentRank, n.opponent)) + '</b><span>' + esc(gameWhen(n.kickoffIso) + (n.venue ? ' · ' + n.venue : '')) + '</span>' + cd(n.kickoffIso) + '</a>';
-    if (sb.standings.length) scores += '<table class="fp-stand"><caption class="fp-sr">SEC standings</caption><thead><tr><th scope="col">SEC</th><th scope="col">Conf.</th><th scope="col">Overall</th></tr></thead><tbody>' + sb.standings.slice(0, 8).map(function (r) { return '<tr' + (/^florida$/i.test(r.team) ? ' class="fp-us"' : '') + '><td>' + esc(r.team) + '</td><td>' + esc(r.conf) + '</td><td>' + esc(r.overall) + '</td></tr>'; }).join('') + '</tbody></table>';
+    var upcoming = sb.schedule.filter(function (g) { return g.status === 'scheduled' && (!n || g.date !== n.kickoffIso); }).slice(0, 3);
+    if (upcoming.length) scores += '<table class="fp-stand"><caption class="fp-sr">Upcoming schedule</caption><thead><tr><th scope="col">Coming up</th><th scope="col">Date</th><th scope="col">TV</th></tr></thead><tbody>' + upcoming.map(function (g) {
+      var t = Date.parse(g.date), e = et(t), tba = /T0[45]:00:00/.test(g.date);
+      return '<tr><td>' + esc((g.home ? 'vs. ' : 'at ') + ranked(g.rank, g.opponent)) + '</td><td>' + esc(tba ? MONTHS[new Date(t).getUTCMonth()] + ' ' + new Date(t).getUTCDate() : MONTHS[e.mo] + ' ' + e.d) + '</td><td>' + esc(g.tv || 'TBA') + '</td></tr>'; }).join('') + '</tbody></table>';
+    if (sb.standings.length) scores += '<table class="fp-stand"><caption class="fp-sr">SEC standings</caption><thead><tr><th scope="col">SEC</th><th scope="col">Conf.</th><th scope="col">Overall</th></tr></thead><tbody>' + sb.standings.slice(0, 6).map(function (r) { return '<tr' + (/^florida$/i.test(r.team) ? ' class="fp-us"' : '') + '><td>' + esc(r.team) + '</td><td>' + esc(r.conf) + '</td><td>' + esc(r.overall) + '</td></tr>'; }).join('') + '</tbody></table>';
     scores += '<div class="fp-chips"><a href="' + esc(L.schedule) + '">Schedule</a><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.stats) + '">Stats</a><a href="' + esc(L.standings) + '">Standings</a></div>';
     var mScores = '<section class="fp-mod fp-mod-scores" aria-label="Scores and schedule"><h2>Scores &amp; Schedule · Florida ' + esc(sb.team.record || '') + '</h2>' + scores + '</section>';
     var cover = posts.find(function (p) { return p.image && !used[p.image] && !p.portrait && !isSpears(p); }) || posts.find(function (p) { return p.image; });

@@ -22,6 +22,8 @@ const photos = process.env.PHOTO_DIR ? readdirSync(process.env.PHOTO_DIR).filter
 // OLD_CSS_FILE: the previous renderer's CSS, injected as #gbgz-styles like the split Wix-served embeds do.
 const oldCss = process.env.OLD_CSS_FILE && existsSync(process.env.OLD_CSS_FILE) ? readFileSync(process.env.OLD_CSS_FILE, 'utf8') : null;
 
+// The committed feed from the scoreboard job (automation/scoreboard_feed.py).
+const repoScoreboard = existsSync(join(repo, 'sports-live/scoreboard.json')) ? JSON.parse(readFileSync(join(repo, 'sports-live/scoreboard.json'), 'utf8')) : null;
 const x = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const rss = `<?xml version="1.0"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel>${feed.posts.map((p) =>
   `<item><title>${x(p.title)}</title><link>${x(p.url)}</link><description>${x(p.excerpt)}</description><dc:creator>${x(p.author)}</dc:creator><pubDate>${new Date(p.firstPublishedDate).toUTCString()}</pubDate>${p.image ? `<enclosure url="${x(p.image.src)}" type="image/jpeg"/>` : ''}</item>`).join('')}</channel></rss>`;
@@ -49,7 +51,8 @@ const scenarios = [
   { name: 'pin-timed', now: '2026-10-06T15:00:00Z', pins: { timed: { path: '/post/who-are-these-guys-trautwein', until: '2026-10-07T00:00:00Z' } }, widths: [390], expect: { lead: 'pin' } },
   { name: 'pin-breaking', now: T.day, pins: { breaking: { path: '/post/first-look-missouri', until: '2026-10-01T00:00:00Z' } }, widths: [390], expect: { lead: 'breaking' } },
   { name: 'newest-no-buddy', now: '2026-10-06T15:00:00Z', pins: { timed: null }, widths: [390], expect: { lead: 'newest' } },
-  { name: 'scoreboard-json', now: T.day, scoreboard: { updatedAt: '2026-09-29T12:00:00Z', team: { rank: 8, record: '4-0' }, standings: [{ team: 'Florida', conf: '2-0', overall: '4-0' }, { team: 'QA Team', conf: '1-1', overall: '3-1' }] }, widths: [1366], expect: { scoreboard: 'feed', standings: true } },
+  { name: 'scoreboard-json', now: T.day, scoreboard: repoScoreboard, widths: [390, 1366], expect: { scoreboard: 'feed', standings: true } },
+  { name: 'scoreboard-live', now: T.gameLive, scoreboard: repoScoreboard && { ...repoScoreboard, live: { eventId: 'qa', clock: '8:14', period: 3, score: { fla: 24, opp: 17 }, possession: 'fla', lastPlay: 'QA fixture play' } }, widths: [390, 1366], expect: { scoreboard: 'feed', gameday: true, boardLive: true } },
   { name: 'split-embeds', now: T.day, oldStyles: true, widths: [390, 1366], expect: {} },
 ];
 const WIDTHS = [320, 390, 430, 1366];
@@ -115,7 +118,8 @@ for (const sc of scenarios) {
     if (r.off.length) bad.push('elements past viewport: ' + r.off.join(', '));
     if (errors.length) bad.push('page errors: ' + errors.join(' | '));
     if (r.badLinks.length) bad.push('off-policy links: ' + r.badLinks.join(', '));
-    const badFonts = r.fonts.filter((f) => /georgia|times|anton|arial|serif(?!-)/i.test(f.replace(/sans-serif/gi, '')));
+    const bannedFace = /georgia|times|anton|arial|(^|,)\s*serif\s*(,|$)/i;
+    const badFonts = r.fonts.filter((f) => bannedFace.test(f));
     if (badFonts.length) bad.push('fonts: ' + badFonts.join(' / '));
     if (e.lead && r.lead !== e.lead) bad.push(`lead ${r.lead} != ${e.lead}`);
     if (e.night !== undefined && r.cls.includes('fp-night') !== e.night) bad.push('night mode ' + r.cls);

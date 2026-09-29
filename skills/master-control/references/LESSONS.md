@@ -572,3 +572,13 @@ Each was reasonable alone. Together they mean nobody knows which one is true.
 - Before pitching what GatorBait is building, read the agency and redesign repo docs.
 - Every claim in a partner document cites a live read or a repo record. Internal figures are marked as approximate, and anything unproven goes in a "what we haven't proven" section.
 - Check that a handle belongs to the brand before counting its followers.
+
+## 57. No git submodules on the Pages-served branch (Sept. 29, 2026)
+
+**What happened:** Commit 634b930 (Sept. 25) added seven commit-pinned submodules for the Magazine original tools and the Colorlib email library. GitHub Pages builds `main` with a recursive submodule checkout and tars it with `--dereference`. vivliostyle-cli ships symlink loops under `tests/fixtures/glob`, so the tar never finished. Every Pages build from run 488 to run 564 was cancelled by the next request, and Pages kept serving the Sept. 25 `gazette-live/posts.json` while `sports-live/scoreboard.json` 404'd. Nobody noticed for four days because the workflow that requests the build reported success.
+
+**The rule:**
+- Nothing on `main` may be a git submodule. Pinned upstream sources are fetched at run time by `tools/fetch-pinned-sources.sh`, which verifies the same commits.
+- A Pages deploy is verified by fetching the served file and checking its date, not by the run that requested it. `pages-build-deployment` conclusion `cancelled` in a row means the build never finishes.
+- The refresh workflow's 5-minute cron actually fires a few times a day (GitHub throttles busy schedules); treat Pages feeds as hours-fresh, not minutes-fresh.
+

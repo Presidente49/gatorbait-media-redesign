@@ -9,8 +9,7 @@ on:
       - 'automation/ops-hub/playbooks/email-template-library.md'
       - 'skills/master-control/SKILL.md'
       - 'automation/ops-hub/policy.json'
-      - '.gitmodules'
-      - 'vendor/colorlib-email-templates'
+      - 'tools/fetch-pinned-sources.sh'
       - '.github/workflows/newsletter-stack-qc.yml'
   workflow_dispatch:
 
@@ -25,10 +24,11 @@ jobs:
   newsletter-qc:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout with pinned upstream library
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
+
+      - name: Fetch the pinned Colorlib library
+        run: tools/fetch-pinned-sources.sh newsletter
 
       - name: Set up Node
         uses: actions/setup-node@v4

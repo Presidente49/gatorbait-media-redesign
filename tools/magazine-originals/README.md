@@ -18,13 +18,15 @@ Full original source, documentation, licenses and submodules are cloned into
 sources/. Separate work copies hold installed dependencies and generated output.
 Originals are not reset, patched or overwritten. Existing workspaces are refused.
 
-The code on GitHub uses commit-pinned Git submodules. GitHub's ordinary Download
-ZIP does not populate those submodules. Use this downloader or native Git:
+The pinned upstream commits are listed in manifest.json. They are no longer Git
+submodules: GitHub Pages builds `main` with a recursive submodule checkout, and
+Vivliostyle's symlink-loop test fixtures made every Pages build hang from
+Sept. 25 to Sept. 29, 2026. Fetch the same commits into upstream/ with:
 
-    git -c url.https://github.com/.insteadOf=git@github.com: submodule update --init --recursive -- tools/magazine-originals/upstream
+    tools/fetch-pinned-sources.sh magazine
 
-The HTTPS configuration is per-command for public GitHub submodules. It does not
-change account credentials or the original repositories' tracked configuration.
+upstream/ is ignored by Git. The QC workflow verifies each checkout's HEAD and
+license file after fetching.
 
 ## Native host requirements
 

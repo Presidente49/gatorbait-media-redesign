@@ -171,7 +171,7 @@ GitHub `main` continues to advance through normal controller/ops commits. Produc
 Production design library:
 - upstream: `ColorlibHQ/email-templates`
 - pinned commit: `3018557fe943fb1c3e3367aa52d39b2fca44f725`
-- primary installed source: `vendor/colorlib-email-templates`
+- primary installed source: `vendor/colorlib-email-templates` (fetched by `tools/fetch-pinned-sources.sh newsletter`; not a submodule since Sept. 29, 2026)
 - **24 · Brief** = editorial shell
 - **04 · Stories** = responsive multi-column story package
 

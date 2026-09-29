@@ -46,7 +46,7 @@ Use:
 Why: newsletter-first layouts, table-safe HTML, strong editorial structure.
 
 Repository: https://github.com/ColorlibHQ/email-templates
-Installed/pinned upstream: `vendor/colorlib-email-templates` at `3018557fe943fb1c3e3367aa52d39b2fca44f725` (MIT). Do not fork-copy individual files when the upstream submodule can remain the source of truth.
+Installed/pinned upstream: `vendor/colorlib-email-templates` at `3018557fe943fb1c3e3367aa52d39b2fca44f725` (MIT), fetched by `tools/fetch-pinned-sources.sh newsletter` (it was a submodule until Sept. 29, 2026; see Lesson 57). Do not fork-copy individual files when the pinned upstream can remain the source of truth.
 
 ### 3. usewaypoint/responsive-transactional-email-templates
 Free responsive transactional patterns.

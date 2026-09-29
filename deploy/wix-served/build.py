@@ -109,3 +109,17 @@ assert '</script' not in mag_js.lower()
 mag = mag_head + '<script id="gbm-magazine-wix-served-v1">\n' + mag_js + '\n</script>'
 (OUT / 'magazine-embed.html').write_text(mag)
 print('homepage', len(home), 'magazine', len(mag))
+
+# Magazine v2 (animated cover): code lives in the repo and loads from a pinned commit, so the
+# embed stays tiny (Wix caps custom embeds at 15,000 characters). Set MAG_V2_PIN to the commit
+# that contains automation/site-design/magazine.js + magazine.css, then re-run this script.
+MAG_V2_PIN = 'MAG_V2_PIN_PLACEHOLDER'
+if len(MAG_V2_PIN) == 40:
+    base = CDN + MAG_V2_PIN + '/automation/site-design/'
+    loader = ('<!-- GBM_MAGAZINE_V2_CDN src=' + MAG_V2_PIN[:7] + ' -->'
+        '<script id="gbm-magazine-loader-v2">(function(){var b="' + base + '",l=document.createElement("link");'
+        'l.id="gbm-magazine-css";l.rel="stylesheet";l.href=b+"magazine.css";document.head.appendChild(l);'
+        'var s=document.createElement("script");s.src=b+"magazine.js";s.async=true;document.head.appendChild(s)})();</script>')
+    assert len(loader) < 15000
+    (OUT / 'magazine-embed-cdn.html').write_text(loader)
+    print('magazine-v2-cdn', len(loader))

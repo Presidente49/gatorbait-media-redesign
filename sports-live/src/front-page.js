@@ -194,8 +194,11 @@
     var q = ''; try { q = new URLSearchParams(location.search).get('gbm_fp') || ''; } catch (_) {}
     var e = et(now()), gameday = q === 'gameday' || (q !== 'day' && q !== 'night' && e.wd === 6 && gameToday(sb));
     var timeNight = e.h >= 19 || e.h < 6 || (gameday && e.h >= 17);
-    var night = q === 'night' || (q !== 'day' && (timeNight || prefersDark()));
-    return { gameday: gameday, night: night, embers: night && (q === 'night' || timeNight) };
+    // Brenden, Sept. 29: Swamp Night is the everyday look. `look: "swamp-night"` in the config keeps
+    // the night palette and embers on all day; ?gbm_fp=day still shows the daytime look for QA.
+    var always = BUNDLE.look === 'swamp-night';
+    var night = q === 'night' || (q !== 'day' && (always || timeNight || prefersDark()));
+    return { gameday: gameday, night: night, embers: night && (q === 'night' || always || timeNight) };
   }
 
   /* ---------- Markup helpers ---------- */

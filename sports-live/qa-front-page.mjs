@@ -40,10 +40,10 @@ const DESK_LIVE = { kickoff: '2026-10-03T19:30:00Z', until: '2026-10-05T04:00:00
   headline: 'QA fixture only', drive: 'QA fixture drive line', updates: [['Q3', 'QA fixture update one'], ['Q2', 'QA fixture update two']], links: [['Missouri first look', '/post/first-look-missouri-florida-gators-show-me-state-of-mind']] };
 
 const scenarios = [
-  { name: 'day-light', now: T.day, scheme: 'light', expect: { night: false, gameday: false, lead: 'buddy' } },
-  { name: 'day-dark', now: T.day, scheme: 'dark', expect: { night: true, gameday: false, lead: 'buddy', embers: false } },
+  { name: 'day-light', now: T.day, scheme: 'light', expect: { night: true, gameday: false, embers: true, lead: 'buddy' } }, // Swamp Night is the everyday look (config look: swamp-night)
+  { name: 'day-dark', now: T.day, scheme: 'dark', expect: { night: true, gameday: false, lead: 'buddy', embers: true } },
   { name: 'night', now: T.night, scheme: 'light', expect: { night: true, gameday: false, embers: true, showLive: true } },
-  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: false, gameday: true } },
+  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: true, gameday: true } },
   { name: 'gameday-live', now: T.gameLive, scheme: 'light', desk: DESK_LIVE, expect: { night: true, gameday: true, embers: true, boardLive: true } },
   { name: 'reduced-motion', now: T.night, scheme: 'light', reduced: true, expect: { night: true, embers: false, noAnimations: true } },
   { name: 'rss-down', now: T.day, scheme: 'light', rss: 500, widths: [390], expect: { lead: 'buddy' } },

@@ -146,6 +146,20 @@ Only Brenden lifts it, in chat or on the Control Room card. Until then, no produ
 - Delete the old GitHub tokens given to Muse.
 - Lift stop-work.
 - Share the presser folder with brenden@gatorbaitmedia.com.
+- Add the two blank Wix pages (`/florida-football-stats`, `/standings`) in the Editor.
+- Finish the FCC key on the Mac (card `fcc-mac-key`).
+- Decide on the four draft Wix sites and the unused apps (below).
+
+### Sept. 29 evening sync (Jarvis, about 6:45 p.m. ET)
+- **Controller:** Jarvis since about 5:05 p.m. ET (#34 comment 5899619687). Codex released its root claim. Codex's Sept. 30 8:30 a.m. Feature Rotation task may write only Home Code `622d8ece` and Magazine `1dd74333`; Jarvis reads afterward.
+- **Live embeds:** Magazine `1dd74333` rev 48 (14,918 chars, matches `deploy/magazine-urban/` on `main`, PR #47 merged); Home Code `622d8ece` rev 22; Home Styles `1255a4cf` rev 6; Latest `53e15504` rev 8; article template `14a887e3` rev 8; header `7fee4de6` rev 30; ad guard `af338ad4` rev 3; game-day band `96ef5a04` rev 45 (hidden). Header, Home Styles, Magazine and template are within 100–250 characters of the 15,000 cap.
+- **Sessions:** "Design system extraction" (`session_01Cu77eQL88aDsCSGAnQPsaF`) finished its CX audit (doc `e3b71299…`, 8 fixes live, 12 decisions for Brenden); it holds no write authority. Stats page session is blocked on a `send_later` permission prompt in Brenden's desktop app and on the blank page. Game-day desk hit its session limit. The Mac controller-handoff session is archived, so the Wix Editor MCP is unavailable until Brenden opens a new Remote Control session.
+- **Store (Catalog V1 on the production site):** six visible products (Franz Beard's *The Golden Season*, four shirts, a mug). They took real orders this year, so they stay visible. No redirects. Everything else in the order list is pricing-plan checkouts.
+- **Draft Wix sites, all Free plan, Draft, created Sept. 20, no domain:** "Gatorbait Media 1" `4d9e149d`, "My Site" `468abff9`, "My Site 1" `5c77acfa`, "Gatorbait Media" `b4032e65`. They hold no live adapters. Trashing them is Brenden's call (card `draft-sites`).
+- **Apps on the production site with no visible use:** Wix Hotels, Restaurants Menus, Restaurants Orders. Invoices, Pay Links, Events and Forms & Payments may back checkout or old records; do not remove any app without Brenden's yes and a dashboard check (card `unused-apps`).
+- **Purge file:** `backups/crm/2026-09-18-bad-email-purge-inventory.txt` is still in this public repo. Two attempts to move it (Drive upload, `git rm`) were refused by the auto-mode classifier. Brenden removes it by hand or allows it explicitly; git history keeps it either way.
+- **Control Room routing:** the message routine `trig_012k4fT7KAoBHJrSSjowzNXh` is bound to the Jarvis session. Messages on the hub dated Sept. 30 00:10–01:00Z from "Jarvis" were written by another session without Wix or GitHub tools; the approvals they cite are unconfirmed (asks stay `open`).
+- **New connectors seen Sept. 29:** Shopify, Descript `search_drive`, Idiolect writing profiles, Miro board preview. None is wired into a job yet.
 
 ## Site typography — current authority
 

@@ -1,0 +1,8 @@
+{
+  "id": "test-generation-site-health",
+  "lane": "public_low_risk",
+  "kind": "code",
+  "prompt": "In this disposable repo snapshot, read automation/site_health_check.py and its existing tests. Write additional pytest cases that cover: a URL returning 500, a redirect chain longer than 3 hops, a page missing the Barlow font-face, and a timeout. Put them in a new file next to the existing tests, matching their style. Do not change site_health_check.py. Return the new test file as a unified diff.",
+  "max_turns": 8,
+  "timeout": 900
+}

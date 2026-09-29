@@ -1,0 +1,267 @@
+[
+  {
+    "from": "/groups",
+    "status": 200,
+    "location": "",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": false,
+    "getStatus": 200,
+    "getLocation": ""
+  },
+  {
+    "from": "/2021-gatorbait-magazine",
+    "status": 200,
+    "location": "",
+    "expected": "https://www.gatorbaitmedia.com/magazine",
+    "ok": false,
+    "getStatus": 200,
+    "getLocation": ""
+  },
+  {
+    "from": "/magazine/2022",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/magazine",
+    "expected": "https://www.gatorbaitmedia.com/magazine",
+    "ok": true
+  },
+  {
+    "from": "/group/all-gator-sports/discussion",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/all-gator-sports/discussion/10df3c74-b7ad-45cf-ac8d-2a969d646c90",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/game-day-threads/discussion",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/game-day-threads/discussion/469cfd05-9617-4414-91af-fc950526b058",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gator-football-talk/discussion",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gator-football-talk/discussion/afa97563-155c-4115-a085-fecf2117e033",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gator-hoops/discussion",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gator-hoops/discussion/abaaba30-37bd-47d0-b4d2-023443ae73e7",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gatorbait-gold-vip-lounge/discussion",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gatorbait-media-group/discussion",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gatorbait-media-group/discussion/01aec2de-471f-4343-a227-c593a900cb34",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gatorbait-media-group/discussion/506e802d-1f88-4058-94c2-8715dbee2cae",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gatorbait-media-group/discussion/f5f6086f-4862-49d5-acf2-324f2fa0416a",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/recruiting-central/discussion",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/recruiting-central/discussion/6d2493fa-a1e8-4fbe-bb73-9622c03831fa",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/swamp-talk/discussion",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/the-swamp-lounge/discussion",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/the-swamp-lounge/discussion/4bac1346-fb0c-4c92-a414-446a060dfac3",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/all-gator-sports",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/game-day-threads",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gator-football-talk",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gator-hoops",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gatorbait-gold-vip-lounge",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/gatorbait-media-group",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/recruiting-central",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/swamp-talk",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/group/the-swamp-lounge",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/event-list",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+    "expected": "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+    "ok": true
+  },
+  {
+    "from": "/members",
+    "status": 301,
+    "location": "https://www.gatorbaitmedia.com/",
+    "expected": "https://www.gatorbaitmedia.com/",
+    "ok": true
+  },
+  {
+    "from": "/product-page/gb-tailgate-mug-with-a-handle",
+    "status": 200,
+    "location": "",
+    "expected": "https://gatorbait2026.itemorder.com/shop/home/",
+    "ok": true,
+    "getStatus": 301,
+    "getLocation": "https://gatorbait2026.itemorder.com/shop/home/"
+  },
+  {
+    "from": "/product-page/gb-women-s-crop-tee",
+    "status": 301,
+    "location": "https://gatorbait2026.itemorder.com/shop/home/",
+    "expected": "https://gatorbait2026.itemorder.com/shop/home/",
+    "ok": true
+  },
+  {
+    "from": "/product-page/short-sleeve-unisex-t-shirt",
+    "status": 301,
+    "location": "https://gatorbait2026.itemorder.com/shop/home/",
+    "expected": "https://gatorbait2026.itemorder.com/shop/home/",
+    "ok": true
+  },
+  {
+    "from": "/product-page/women-s-relaxed-t-shirt-no-quote",
+    "status": 301,
+    "location": "https://gatorbait2026.itemorder.com/shop/home/",
+    "expected": "https://gatorbait2026.itemorder.com/shop/home/",
+    "ok": true
+  },
+  {
+    "from": "/product-page/women-s-short-sleeve-t-shirt-with-quote-on-back",
+    "status": 301,
+    "location": "https://gatorbait2026.itemorder.com/shop/home/",
+    "expected": "https://gatorbait2026.itemorder.com/shop/home/",
+    "ok": true
+  }
+]

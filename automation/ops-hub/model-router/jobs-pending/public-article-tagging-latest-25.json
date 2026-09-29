@@ -1,0 +1,8 @@
+{
+  "id": "public-article-tagging-latest-25",
+  "lane": "public_low_risk",
+  "kind": "editorial",
+  "prompt": "Read the 25 newest published posts in sports-live/posts.json (public). Using only tags that already exist in the same file, propose tags for each post as JSON: {post_id, slug, tags: [..up to 5..], category: one of football|basketball|baseball|recruiting|magazine|show|other}. Do not invent new tags; if none fit, return an empty list. Return one JSON array. Read-only; do not modify files.",
+  "max_turns": 6,
+  "timeout": 600
+}

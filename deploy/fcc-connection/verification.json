@@ -1,0 +1,24 @@
+{
+  "verified_at_utc": "2026-09-29T04:11:43.367965+00:00",
+  "fcc_version": "free-claude-code 6.2.31",
+  "gateway_health_http": 200,
+  "models_without_auth_http": 401,
+  "models_with_auth_http": 200,
+  "listen_host": "127.0.0.1",
+  "listen_port": 8082,
+  "configured_model": "open_router/openrouter/free",
+  "advertised_model_ids": [
+    "open_router/openrouter/free"
+  ],
+  "selected_provider": "open_router",
+  "selected_provider_status": "missing_key",
+  "missing_configuration_keys": [
+    "OPENROUTER_API_KEY"
+  ],
+  "provider_completion_tested": false,
+  "native_codex_installed": false,
+  "native_claude_installed": false,
+  "config_permissions": "0600",
+  "config_directory_permissions": "0700",
+  "lifecycle": "temporary test gateway; stopped after checks"
+}

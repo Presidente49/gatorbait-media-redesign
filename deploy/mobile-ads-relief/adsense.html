@@ -1,0 +1,17 @@
+<script id="gbm-adsense-desktop-only-v1">
+(function () {
+  'use strict';
+  // Temporary mobile relief. Decide before requesting any Google ad code.
+  var smallViewport = window.matchMedia('(max-width: 820px)').matches;
+  var smallScreen = window.screen && Math.min(window.screen.width, window.screen.height) <= 820;
+  var phone = /Mobi|Android|iPhone|iPod/i.test(navigator.userAgent);
+  if (smallViewport || smallScreen || phone) return;
+  if (document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) return;
+  var script = document.createElement('script');
+  script.async = true;
+  script.crossOrigin = 'anonymous';
+  script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6592453291626199';
+  script.setAttribute('data-gbm-adsense', 'desktop-only-v1');
+  document.head.appendChild(script);
+})();
+</script>

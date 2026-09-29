@@ -1,0 +1,56 @@
+[
+  {
+    "name": "phone390",
+    "width": 390,
+    "scriptRequests": 0,
+    "pass": true
+  },
+  {
+    "name": "phone430",
+    "width": 430,
+    "scriptRequests": 0,
+    "pass": true
+  },
+  {
+    "name": "phoneDesktopMode",
+    "width": 980,
+    "scriptRequests": 0,
+    "pass": true
+  },
+  {
+    "name": "phoneLandscape",
+    "width": 932,
+    "scriptRequests": 0,
+    "pass": true
+  },
+  {
+    "name": "android",
+    "width": 412,
+    "scriptRequests": 0,
+    "pass": true
+  },
+  {
+    "name": "tablet",
+    "width": 820,
+    "scriptRequests": 0,
+    "pass": true
+  },
+  {
+    "name": "smallDesktopWindow",
+    "width": 800,
+    "scriptRequests": 0,
+    "pass": true
+  },
+  {
+    "name": "desktop",
+    "width": 1440,
+    "scriptRequests": 1,
+    "pass": true
+  },
+  {
+    "name": "laptop",
+    "width": 1366,
+    "scriptRequests": 1,
+    "pass": true
+  }
+]

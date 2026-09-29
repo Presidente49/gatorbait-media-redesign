@@ -1,0 +1,414 @@
+{
+  "id": "50399e36-c062-445b-af27-5233ea5c9a2c",
+  "title": "Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri",
+  "excerpt": "Jon Sumrall told Florida he doesn't want to hear another word about Ole Miss, and he had good news on Vernell Brown III before Saturday's trip to No. 25 Missouri.",
+  "featured": false,
+  "categoryIds": [
+    "a4577921-a2e9-41bb-8a5d-4a9c56f2eb5b"
+  ],
+  "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+  "hashtags": [],
+  "commentingEnabled": true,
+  "minutesToRead": 3,
+  "tagIds": [
+    "5263f874-d41e-43e4-bec3-4147ab6fefca",
+    "2ab92c8f-f7f4-4d04-99b3-1f88824259c6",
+    "4031c61a-8aaa-4010-a93a-0b8c08adb8f5",
+    "c3f073e4-e01e-4e66-b541-a83383717356",
+    "e3308aee-da27-4cc0-8e31-e749940e7ccf",
+    "7b36c951-363c-40bc-90b5-8457ef02c83d",
+    "dc11fd85-d502-40e5-9fc0-3e1d4b8d3170",
+    "612806f4-ad1e-4f99-b522-0fd8f6315a4c",
+    "8918a32a-cc05-4ce5-817c-1d04d469f6f3"
+  ],
+  "relatedPostIds": [],
+  "pricingPlanIds": [],
+  "language": "en",
+  "changeOrigin": "PUBLISH",
+  "contentId": "6abad3ecf3c2882f246cd412",
+  "editingSessionId": "72e63d08-bfa1-40b4-9e81-9149f7837728",
+  "richContent": {
+    "nodes": [
+      {
+        "type": "IMAGE",
+        "id": "img1",
+        "nodes": [
+          {
+            "type": "CAPTION",
+            "id": "cap1",
+            "nodes": [
+              {
+                "type": "TEXT",
+                "id": "",
+                "nodes": [],
+                "textData": {
+                  "text": "Jon Sumrall at the podium after Florida's 52-28 win over Ole Miss. Photo by Chris Spears, GatorBait Media.",
+                  "decorations": []
+                }
+              }
+            ]
+          }
+        ],
+        "imageData": {
+          "containerData": {
+            "width": {
+              "size": "CONTENT"
+            },
+            "alignment": "CENTER",
+            "textWrap": true
+          },
+          "image": {
+            "src": {
+              "id": "d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg"
+            },
+            "width": 800,
+            "height": 534
+          },
+          "caption": "Jon Sumrall at the podium after Florida's 52-28 win over Ole Miss. Photo by Chris Spears, GatorBait Media."
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "byline1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "By GatorBait Media Staff",
+              "decorations": [
+                {
+                  "type": "ITALIC",
+                  "italicData": true
+                }
+              ]
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p0",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Jon Sumrall has already moved on from the biggest win of his first season at Florida. He wants his players to do the same.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "“Told our team this morning, ‘I don’t want to hear anybody talk about that game the rest of the year,’” Sumrall said Monday, two days after No. 8 Florida ran over No. 4 Ole Miss 52-28. “If anybody brings it up in our building about what happened last week, I’m gonna be, like, livid because we have no control over that anymore. It’s gone.”",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p2",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "He started the week with the film. “I’ve helped block it out for them this morning by showing them all the bad stuff we put on tape, too,” Sumrall said. “You have to humble yourself or you will be humbled.”",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "h3",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Good news on VB3",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 3
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p4",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The best news of the day was about wide receiver Vernell Brown III.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p5",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "“VB3, nothing serious,” Sumrall said. “Relative to what you could get, we got great news after the imaging and everything; the MRI revealed nothing that is long-term.”",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p6",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Sumrall called it “the lowest-grade strain you could get” and said Brown’s status for Saturday comes down to pain tolerance and confidence. “Medically, there’s nothing that’s going to hold him other than his own readiness,” he said.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p7",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Bailey Stockton will be limited for much of the week with a sore back after what Sumrall described as “basically a car crash on the field with two guys,” though there is nothing structurally wrong. Dijon Johnson has a mild ankle injury, not a high-ankle sprain. “All of them, honestly, could be available this weekend,” Sumrall said.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p8",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Eric Singleton Jr., who made a big impact late against Ole Miss, should be close to full speed. “I think Singleton’s going to be full-go this week,” Sumrall said.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "h9",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Bloody Tuesday",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 3
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p10",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Monday was a lighter helmets day, mostly inside. Tuesday is where Sumrall will find out whether the page has really turned.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p11",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "“Tomorrow we go outside the whole time, and it’s bloody Tuesday,” he said. “It’s like you gotta pay the toll. And so, if guys are ready to go pay the toll tomorrow, and compete and be physical … I feel like alright we got a shot.”",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "h12",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Missouri starts up front",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 3
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p13",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Sumrall didn’t hide his respect for the No. 25 Tigers, especially their offensive line. “I think this is the best offensive line we’ve played,” he said. “We got our work cut out for us to win upfront this week.”",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p14",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "He also pointed to Florida’s recent history in Columbia. “The last four trips we’ve gone to Missouri we’ve lost three of them,” Sumrall said. “So if we think it’s gonna be a freaking cake walk, I don’t care if it’s homecoming or whatever, we’re in for a rude awakening.”",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p15",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Gators will lean again on quarterback Aaron Philo, whose steadiness has won over his coach. “Ever since Aaron’s arrival, he’s proved nothing but consistent, tough, dependable, reliable, great teammate,” Sumrall said.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p16",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Florida (4-0, 2-0 SEC) plays at Missouri on Saturday, Oct. 3, at 3:30 p.m. ET. Sumrall isn’t worried about the Tigers’ homecoming crowd, only about the team across the line of scrimmage.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "p17",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "“I don’t care who their homecoming king, or queen, or any of that is,” he said.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      }
+    ]
+  },
+  "status": "PUBLISHED",
+  "mostRecentContributorId": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+  "hasUnpublishedChanges": false,
+  "editedDate": "2026-09-28T20:54:04Z",
+  "firstPublishedDate": "2026-09-28T20:54:04Z",
+  "seoData": {
+    "tags": []
+  },
+  "slugs": [
+    "pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloody-tuesday-before-missouri"
+  ],
+  "createdDate": "2026-09-28T20:54:04.540Z",
+  "seoSlug": "pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloody-tuesday-before-missouri",
+  "media": {
+    "wixMedia": {
+      "image": {
+        "id": "d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg",
+        "url": "https://static.wixstatic.com/media/d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg",
+        "height": 534,
+        "width": 800,
+        "filename": "Jon Sumrall podium - Photo by Chris Spears, GatorBait Media.jpg"
+      }
+    },
+    "displayed": true,
+    "custom": true
+  },
+  "translations": []
+}

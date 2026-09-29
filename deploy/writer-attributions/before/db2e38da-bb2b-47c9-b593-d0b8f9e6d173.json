@@ -1,0 +1,391 @@
+{
+  "id": "db2e38da-bb2b-47c9-b593-d0b8f9e6d173",
+  "title": "Show-Me State of Mind: A First Look at No. 25 Missouri",
+  "excerpt": "No. 8 Florida’s reward for routing Ole Miss is a trip to No. 25 Missouri, which let a fourth-quarter lead get away at Mississippi State.",
+  "featured": false,
+  "categoryIds": [
+    "a4577921-a2e9-41bb-8a5d-4a9c56f2eb5b"
+  ],
+  "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+  "hashtags": [],
+  "commentingEnabled": true,
+  "minutesToRead": 2,
+  "tagIds": [
+    "5263f874-d41e-43e4-bec3-4147ab6fefca",
+    "2ab92c8f-f7f4-4d04-99b3-1f88824259c6",
+    "4031c61a-8aaa-4010-a93a-0b8c08adb8f5",
+    "c3f073e4-e01e-4e66-b541-a83383717356",
+    "e3308aee-da27-4cc0-8e31-e749940e7ccf",
+    "7b36c951-363c-40bc-90b5-8457ef02c83d",
+    "dc11fd85-d502-40e5-9fc0-3e1d4b8d3170",
+    "612806f4-ad1e-4f99-b522-0fd8f6315a4c"
+  ],
+  "relatedPostIds": [],
+  "pricingPlanIds": [],
+  "language": "en",
+  "changeOrigin": "PUBLISH",
+  "contentId": "6abaf54e14eeeb87d4d19c5c",
+  "editingSessionId": "ed07f58a-9863-4fb2-bb71-74ee4ac104e8",
+  "richContent": {
+    "nodes": [
+      {
+        "type": "PARAGRAPH",
+        "id": "m1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "By GatorBait Media Staff",
+              "decorations": [
+                {
+                  "type": "ITALIC",
+                  "italicData": true
+                }
+              ]
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m2",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "GAINESVILLE — The party in The Swamp lasted exactly one night. Florida is No. 8 in both polls, 4-0 and 2-0 in the SEC, and the reward is a trip to Columbia, Mo., to face a Missouri team that let one get away on Saturday night.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m3",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "No. 8 Florida plays at No. 25 Missouri on Saturday, Oct. 3, at 3:30 p.m. ET. The AP game preview lists ABC as the broadcast. It is Missouri’s homecoming.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "m4",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "What happened to Missouri",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 2
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m5",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Tigers (3-1, 0-1 SEC) led No. 24 Mississippi State 24-17 in the third quarter in Starkville and lost 31-24. Kamario Taylor led two fourth-quarter touchdown drives for the Bulldogs, the second capped by a 24-yard pass to Sanfrisco Magee with 3:57 left. Missouri’s last shot, a Hail Mary from the Mississippi State 38, was broken up in the end zone.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m6",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "“It’s life in the SEC,” Missouri coach Eli Drinkwitz said, according to the Associated Press. “That game on the road is going to be challenging. You just have to fight and find a way to win.”",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m7",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Before that, Missouri beat Arkansas-Pine Bluff 54-14, won 38-21 at Kansas and beat Troy 27-17.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "m8",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Who to watch",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 2
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m9",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Quarterback Austin Simmons is the headliner. He has thrown for 947 yards and 11 touchdowns without an interception, and he threw for 295 yards and three scores at Mississippi State. Receiver Cayden Lee had 11 catches for 156 yards and two touchdowns in that game. Running back Jamal Roberts leads the Tigers with 395 rushing yards and three touchdowns on 89 carries.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m10",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Florida brings Jadan Baugh, who has 600 rushing yards and 11 touchdowns after his fifth straight 100-yard game, and an offense averaging 53.5 points (second in FBS) and 260 rushing yards (11th), according to the AP. Missouri’s run defense is allowing 100.5 yards a game, 32nd nationally.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "brownupddb2e",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Update, Sept. 27: ",
+              "decorations": [
+                {
+                  "type": "BOLD",
+                  "fontWeightValue": 700
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "An MRI confirmed a Grade 1 PCL sprain, the mildest grade, in Vernell Brown III’s knee, sources told GatorBait. Read the latest.",
+              "decorations": [
+                {
+                  "type": "LINK",
+                  "linkData": {
+                    "link": {
+                      "url": "https://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators",
+                      "target": "SELF"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "m11",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The numbers that matter",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 2
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m12",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Penalties could decide it. Florida ranks 134th in FBS at 89.3 penalty yards a game, and Missouri is 117th at 73. Both teams are plus-4 in turnover margin. Florida has held the ball an average of 34:04, seventh in the country.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m13",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Florida opened as a 4.5-point favorite, according to the AP. DraftKings opened the Gators at 5.5 with an over/under of 56.5.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "m14",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The history",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 2
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m15",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Missouri leads the series 7-6, according to FloridaGators.com, and Florida is 2-4 on the road against the Tigers. The last meeting went to the Tigers, 33-31 at Faurot Field on Nov. 18, 2023.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m16",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "“We have not arrived,” Jon Sumrall said after the Ole Miss win. Missouri is where that gets tested: a ranked team, on the road, coming off a lead it expected to hold.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m17",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Editor’s note: More to come this week, including the full GatorBait game preview.",
+              "decorations": [
+                {
+                  "type": "ITALIC",
+                  "italicData": true
+                }
+              ]
+            }
+          }
+        ],
+        "paragraphData": {}
+      }
+    ]
+  },
+  "status": "PUBLISHED",
+  "mostRecentContributorId": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+  "hasUnpublishedChanges": false,
+  "editedDate": "2026-09-28T23:16:30Z",
+  "firstPublishedDate": "2026-09-27T21:53:54Z",
+  "seoData": {
+    "tags": []
+  },
+  "slugs": [
+    "first-look-missouri-florida-gators-show-me-state-of-mind"
+  ],
+  "createdDate": "2026-09-27T21:53:54.759Z",
+  "seoSlug": "first-look-missouri-florida-gators-show-me-state-of-mind",
+  "media": {
+    "wixMedia": {
+      "image": {
+        "id": "d3cfa5_a67ff355ad6a4d668106c2befa41b208~mv2.png",
+        "url": "https://static.wixstatic.com/media/d3cfa5_a67ff355ad6a4d668106c2befa41b208~mv2.png",
+        "height": 900,
+        "width": 1600,
+        "altText": "Show-Me State of Mind: No. 8 Florida at No. 25 Missouri, Saturday, Oct. 3, 3:30 p.m. ET. GatorBait Media graphic.",
+        "filename": "Missouri first look cover - GatorBait graphic 2026-09-27.png"
+      }
+    },
+    "displayed": true,
+    "custom": true
+  },
+  "translations": []
+}

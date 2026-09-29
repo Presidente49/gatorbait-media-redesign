@@ -1,4 +1,12 @@
-# Independent Magazine edition — September 28, 2026
+# Independent Magazine edition
+
+## Rotating editions (from September 29, 2026)
+
+The cover and lineup now live in `edition-src.json`; `build.py` only renders. To rotate: edit `edition-src.json` (new `id`, `date`, `edition`, `lead`, `cover`, `stories`, `gallery`), run `python deploy/magazine-urban/build.py` (must stay under 15,000 characters), render-check, then PATCH embed `1dd74333` with the current revision and unchanged category. The Magazine cover must differ from the homepage lead (the homepage shows the newest Buddy Martin story under 7 days old).
+
+- Sept. 29: Franz Beard, "Thoughts of the Day: September 29, 2026" (rev 45 → 46, Jarvis). Rollback: `rollback-rev45.html` is the exact rev-45 payload.
+
+## First edition — September 28, 2026
 
 Owner requested a different cover story and a substantially different, more urban look from the front page. The existing front page remains intact.
 

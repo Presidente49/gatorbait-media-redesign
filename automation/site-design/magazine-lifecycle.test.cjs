@@ -78,3 +78,11 @@ test('timeout mounts stable fallback once and late network data never replaces i
   h.resolve(0, 'late'); await settle();
   assert.equal(h.nodes.get('gbm-magazine-page'), root); assert.equal(root.innerHTML, content);
 });
+test('v2 page renders one cover, a Thursday masthead, the show panel and the archive shelf from the live feed', async () => {
+  const h = harness(); h.resolve(0, 'issue'); await settle();
+  const html = h.nodes.get('gbm-magazine-page').innerHTML;
+  assert.equal((html.match(/class="cs"/g) || []).length, 1);
+  assert.match(html, /THURSDAY, [A-Z.]+ \d+, \d{4}/);
+  assert.match(html, /UCtR8b1sKFuwaRjKy5BiXRvA\/live/); assert.match(html, /\/magazine\/2022/); assert.match(html, /\/2021-gatorbait-magazine/);
+  assert.equal((html.match(/issue 0/g) || []).length >= 1, true);
+});

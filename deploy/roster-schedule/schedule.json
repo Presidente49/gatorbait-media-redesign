@@ -1,0 +1,919 @@
+{
+  "season": 2026,
+  "sourceUrl": "https://floridagators.com/sports/football/schedule/2026",
+  "checkedDate": "2026-09-29",
+  "games": [
+    {
+      "id": 27934,
+      "date": "2026-04-11T12:00:00",
+      "time": "",
+      "conference": false,
+      "location": "",
+      "location_indicator": "H",
+      "opponent": {
+        "id": 161,
+        "title": "Orange & Blue Game",
+        "prefix": "",
+        "website": "http://www.floridagators.com/",
+        "website_label": "Orange & Blue Game on April 11, 2026 ",
+        "location": "Gainesville, FL",
+        "conference": false,
+        "mascot": "Gators",
+        "image": {
+          "filename": "Florida.png",
+          "path": "/images/logos",
+          "title": "University of Florida Logo",
+          "alt": "Florida Gators",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/Florida.png"
+        }
+      },
+      "media": {
+        "tv": "",
+        "tv_image": null,
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "",
+        "video": null,
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=5967",
+          "label": "Live audio for Football vs Orange & Blue Game on April 11, 2026 at ",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=655760",
+          "label": "Live stats for Football vs Orange & Blue Game on April 11, 2026 at ",
+          "cssClass": null
+        },
+        "tickets": null,
+        "preview": {
+          "title": "Preview",
+          "url": "/news/2026/4/7/football-blake-cox-is-o-b-game-two-bits-april-7-2026",
+          "label": "Preview for Football vs Orange & Blue Game on April 11, 2026 at ",
+          "cssClass": null
+        },
+        "gamefiles": [
+          {
+            "scheduleId": 835,
+            "gameId": 27934,
+            "gamefileRank": 1,
+            "gamefileLink": "/documents/2026/4/11/Game_Book.pdf",
+            "gamefileTitle": "Box Score (PDF)",
+            "gamefileClass": ""
+          },
+          {
+            "scheduleId": 835,
+            "gameId": 27934,
+            "gamefileRank": 2,
+            "gamefileLink": "/documents/2026/4/11/2026_Postgame_Notes___Quotes_OB.pdf",
+            "gamefileTitle": "Postgame Notes",
+            "gamefileClass": ""
+          }
+        ],
+        "custom_display_fields": []
+      },
+      "result": {
+        "status": "N",
+        "team_score": "",
+        "opponent_score": "",
+        "prescore_info": "",
+        "postscore_info": "Blue 45, Orange 42",
+        "boxscore": null,
+        "recap": null
+      },
+      "game_center_link": "/game-center/27934"
+    },
+    {
+      "id": 27903,
+      "date": "2026-09-05T19:45:00",
+      "time": "7:45 p.m. ",
+      "conference": false,
+      "location": "Gainesville, Fla.",
+      "location_indicator": "H",
+      "opponent": {
+        "id": 15,
+        "title": "Florida Atlantic",
+        "prefix": "",
+        "website": "http://www.fausports.com",
+        "website_label": "Florida Atlantic on September 5, 2026 7:45 p.m. ",
+        "location": "Boca Raton, FL",
+        "conference": false,
+        "mascot": "Owls",
+        "image": {
+          "filename": "FAU_2023.png",
+          "path": "/images/logos",
+          "title": "Florida Atlantic University Logo",
+          "alt": "Florida Atlantic University Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/FAU_2023.png"
+        }
+      },
+      "media": {
+        "tv": "SEC Network",
+        "tv_image": "/images/2024/8/8/sec-network_Yc6Qa.png",
+        "tv_image_link": "https://www.espn.com/watch/player/_/id/b1e9c0ae-8789-4092-a93c-963bd3cc3726",
+        "tv_image_caption": null,
+        "radio": "Gator Sports Network",
+        "video": {
+          "title": "Watch",
+          "url": "https://www.espn.com/watch/player/_/id/b1e9c0ae-8789-4092-a93c-963bd3cc3726",
+          "label": "Video for Football vs Florida Atlantic on September 5, 2026 at 7:45 p.m. ",
+          "cssClass": null
+        },
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6030",
+          "label": "Live audio for Football vs Florida Atlantic on September 5, 2026 at 7:45 p.m. ",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661446",
+          "label": "Live stats for Football vs Florida Atlantic on September 5, 2026 at 7:45 p.m. ",
+          "cssClass": null
+        },
+        "tickets": {
+          "title": "Tickets",
+          "url": "https://www.ticketmaster.com/florida-gators-football-vs-florida-atlantic-gainesville-florida-09-05-2026/event/2200645C21820922?utm_source=WEB&utm_medium=SCHED&utm_campaign=FB-SINGLE&camefrom=CFC_GATORS_WEB_SCHED_FB-SINGLE",
+          "label": "Tickets for Football vs Florida Atlantic on September 5, 2026 at 7:45 p.m. ",
+          "cssClass": null
+        },
+        "preview": {
+          "title": "Preview",
+          "url": "/news/2026/9/5/football-game-day-florida-vs-florida-atlantic-sept-5-2026",
+          "label": "Preview for Football vs Florida Atlantic on September 5, 2026 at 7:45 p.m. ",
+          "cssClass": null
+        },
+        "gamefiles": [
+          {
+            "scheduleId": 835,
+            "gameId": 27903,
+            "gamefileRank": 1,
+            "gamefileLink": "/documents/2026/8/31/WEEK_1_NOTES_-_MASTER_-_FAU.pdf",
+            "gamefileTitle": "Pregame Notes",
+            "gamefileClass": ""
+          },
+          {
+            "scheduleId": 835,
+            "gameId": 27903,
+            "gamefileRank": 2,
+            "gamefileLink": "/documents/2026/9/6/1_-_Week_1_-_Florida_vs._FAU_-_Postgame_Notes.pdf",
+            "gamefileTitle": "Postgame Notes",
+            "gamefileClass": ""
+          }
+        ],
+        "custom_display_fields": []
+      },
+      "result": {
+        "status": "W",
+        "team_score": "66",
+        "opponent_score": "21",
+        "prescore_info": "",
+        "postscore_info": "",
+        "boxscore": {
+          "title": "Box Score",
+          "url": "/sports/football/stats/2026/florida-atlantic/boxscore/27903",
+          "label": "Box score of Football vs Florida Atlantic on September 5, 2026 at 7:45 p.m. ",
+          "cssClass": null
+        },
+        "recap": {
+          "title": "Recap",
+          "url": "/news/2026/9/5/football-final-florida-vs-florida-atlantic-sept-5-2026",
+          "label": "Story recap for Football vs Florida Atlantic on September 5, 2026 at 7:45 p.m. ",
+          "cssClass": null
+        }
+      },
+      "game_center_link": "/game-center/27903"
+    },
+    {
+      "id": 27904,
+      "date": "2026-09-12T17:30:00",
+      "time": "5:30 p.m.",
+      "conference": false,
+      "location": "Gainesville, Fla.",
+      "location_indicator": "H",
+      "opponent": {
+        "id": 10,
+        "title": "Campbell",
+        "prefix": "",
+        "website": "http://www.gocamels.com/",
+        "website_label": "Campbell on September 12, 2026 5:30 p.m.",
+        "location": "Buies Creek, NC",
+        "conference": false,
+        "mascot": "Camels",
+        "image": {
+          "filename": "campbell_2023.png",
+          "path": "/images/logos",
+          "title": "Campbell University Logo",
+          "alt": "Campbell University Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/campbell_2023.png"
+        }
+      },
+      "media": {
+        "tv": "SEC Network+",
+        "tv_image": "/images/2024/8/8/sec-network-plus_StVtp.png",
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "Gators Sports Network",
+        "video": {
+          "title": "Watch",
+          "url": "https://www.espn.com/watch/player/_/id/e885a700-9a2b-4e54-857c-33e3d1fbbc8b",
+          "label": "Video for Football vs Campbell on September 12, 2026 at 5:30 p.m.",
+          "cssClass": null
+        },
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6032",
+          "label": "Live audio for Football vs Campbell on September 12, 2026 at 5:30 p.m.",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661447",
+          "label": "Live stats for Football vs Campbell on September 12, 2026 at 5:30 p.m.",
+          "cssClass": null
+        },
+        "tickets": {
+          "title": "Tickets",
+          "url": "https://www.ticketmaster.com/florida-gators-football-vs-campbell-university-gainesville-florida-09-12-2026/event/2200645C21870928?utm_source=WEB&utm_medium=SCHED&utm_campaign=FB-SINGLE&camefrom=CFC_GATORS_WEB_SCHED_FB-SINGLE",
+          "label": "Tickets for Football vs Campbell on September 12, 2026 at 5:30 p.m.",
+          "cssClass": null
+        },
+        "preview": null,
+        "gamefiles": [
+          {
+            "scheduleId": 835,
+            "gameId": 27904,
+            "gamefileRank": 1,
+            "gamefileLink": "/documents/2026/9/7/WEEK_2_NOTES_-_MASTER_-_CAMPBELL_-_PUBLIC.pdf",
+            "gamefileTitle": "Pregame Notes",
+            "gamefileClass": ""
+          },
+          {
+            "scheduleId": 835,
+            "gameId": 27904,
+            "gamefileRank": 2,
+            "gamefileLink": "/documents/2026/9/13/Week_2_-_Florida_vs._Campbell_-_Postgame_Notes.pdf",
+            "gamefileTitle": "Postgame Notes",
+            "gamefileClass": ""
+          }
+        ],
+        "custom_display_fields": []
+      },
+      "result": {
+        "status": "W",
+        "team_score": "52",
+        "opponent_score": "3",
+        "prescore_info": "",
+        "postscore_info": "",
+        "boxscore": {
+          "title": "Box Score",
+          "url": "/sports/football/stats/2026/campbell/boxscore/27904",
+          "label": "Box score of Football vs Campbell on September 12, 2026 at 5:30 p.m.",
+          "cssClass": null
+        },
+        "recap": {
+          "title": "Recap",
+          "url": "/news/2026/9/12/football-final-florida-vs-campbell-sept-12-2026",
+          "label": "Story recap for Football vs Campbell on September 12, 2026 at 5:30 p.m.",
+          "cssClass": null
+        }
+      },
+      "game_center_link": "/game-center/27904"
+    },
+    {
+      "id": 27905,
+      "date": "2026-09-19T19:00:00",
+      "time": "7 p.m.",
+      "conference": true,
+      "location": "Auburn, Ala.",
+      "location_indicator": "A",
+      "opponent": {
+        "id": 4,
+        "title": "Auburn",
+        "prefix": "",
+        "website": "http://www.auburntigers.com/",
+        "website_label": "Auburn on September 19, 2026 7 p.m.",
+        "location": "Auburn, AL",
+        "conference": false,
+        "mascot": "Tigers",
+        "image": {
+          "filename": "auburn_logo.png",
+          "path": "/images/logos",
+          "title": "Auburn University Logo",
+          "alt": "Auburn University Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/auburn_logo.png"
+        }
+      },
+      "media": {
+        "tv": "ESPN",
+        "tv_image": "/images/2018/9/17/ESPN_71.png",
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "Gators Sports Network",
+        "video": {
+          "title": "Watch",
+          "url": "https://www.espn.com/watch/player/_/id/f088abc8-37e3-4d35-85f5-81e60e5b96e1",
+          "label": "Video for Football at Auburn on September 19, 2026 at 7 p.m.",
+          "cssClass": null
+        },
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6033",
+          "label": "Live audio for Football at Auburn on September 19, 2026 at 7 p.m.",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661448&vislive=fla",
+          "label": "Live stats for Football at Auburn on September 19, 2026 at 7 p.m.",
+          "cssClass": null
+        },
+        "tickets": null,
+        "preview": {
+          "title": "Preview",
+          "url": "/news/2026/9/19/football-game-day-florida-at-auburn-sept-19-2026",
+          "label": "Preview for Football at Auburn on September 19, 2026 at 7 p.m.",
+          "cssClass": null
+        },
+        "gamefiles": [
+          {
+            "scheduleId": 835,
+            "gameId": 27905,
+            "gamefileRank": 1,
+            "gamefileLink": "/documents/2026/9/14/WEEK_3_NOTES_-_MASTER_-_AUBURN_-_PUBLIC.pdf",
+            "gamefileTitle": "Pregame Notes",
+            "gamefileClass": ""
+          },
+          {
+            "scheduleId": 835,
+            "gameId": 27905,
+            "gamefileRank": 2,
+            "gamefileLink": "/documents/2026/9/20/0_-_Week_3_-_Florida_vs._Auburn_-_Postgame_Notes.pdf",
+            "gamefileTitle": "Postgame Notes",
+            "gamefileClass": ""
+          }
+        ],
+        "custom_display_fields": []
+      },
+      "result": {
+        "status": "W",
+        "team_score": "44",
+        "opponent_score": "39",
+        "prescore_info": "",
+        "postscore_info": "",
+        "boxscore": {
+          "title": "Box Score",
+          "url": "/sports/football/stats/2026/auburn/boxscore/27905",
+          "label": "Box score of Football at Auburn on September 19, 2026 at 7 p.m.",
+          "cssClass": null
+        },
+        "recap": {
+          "title": "Recap",
+          "url": "/news/2026/9/19/football-final-gators-44-auburn-39-sec-opener-jon-sumrall-jadan-baugh-aaron-philo",
+          "label": "Story recap for Football at Auburn on September 19, 2026 at 7 p.m.",
+          "cssClass": null
+        }
+      },
+      "game_center_link": "/game-center/27905"
+    },
+    {
+      "id": 27906,
+      "date": "2026-09-26T15:30:00",
+      "time": "3:30 p.m.",
+      "conference": true,
+      "location": "Gainesville, Fla.",
+      "location_indicator": "H",
+      "opponent": {
+        "id": 79,
+        "title": "#4 Ole Miss",
+        "prefix": "#4",
+        "website": "http://www.olemisssports.com/",
+        "website_label": "Ole Miss on September 26, 2026 3:30 p.m.",
+        "location": "Oxford, Miss",
+        "conference": false,
+        "mascot": "Rebels",
+        "image": {
+          "filename": "olemiss_200x200_02.png",
+          "path": "/images/logos",
+          "title": "University of Mississippi Logo",
+          "alt": "University of Mississippi Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/olemiss_200x200_02.png"
+        }
+      },
+      "media": {
+        "tv": "ABC",
+        "tv_image": "/images/2018/11/12/ABC.PNG",
+        "tv_image_link": "https://www.espn.com/watch/player/_/id/de6c3291-a5a9-4cfe-9fe1-b41fae535433",
+        "tv_image_caption": null,
+        "radio": "",
+        "video": {
+          "title": "Watch",
+          "url": "https://www.espn.com/watch/player/_/id/de6c3291-a5a9-4cfe-9fe1-b41fae535433",
+          "label": "Video for Football vs Ole Miss on September 26, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6034",
+          "label": "Live audio for Football vs Ole Miss on September 26, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661449",
+          "label": "Live stats for Football vs Ole Miss on September 26, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "tickets": {
+          "title": "Tickets",
+          "url": "https://www.ticketmaster.com/florida-gators-football-vs-ole-miss-gainesville-florida-09-26-2026/event/2200645C218D0934?utm_source=WEB&utm_medium=SCHED&utm_campaign=FB-SINGLE&camefrom=CFC_GATORS_WEB_SCHED_FB-SINGLE",
+          "label": "Tickets for Football vs Ole Miss on September 26, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "preview": {
+          "title": "Preview",
+          "url": "/news/2026/9/26/football-game-day-florida-vs-ole-miss-sept-26-2026",
+          "label": "Preview for Football vs Ole Miss on September 26, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "gamefiles": [
+          {
+            "scheduleId": 835,
+            "gameId": 27906,
+            "gamefileRank": 1,
+            "gamefileLink": "/documents/2026/9/21/WEEK_4_NOTES_-_MASTER_-_OLE_MISS_-_PUBLIC.pdf",
+            "gamefileTitle": "Pregame Notes",
+            "gamefileClass": ""
+          },
+          {
+            "scheduleId": 835,
+            "gameId": 27906,
+            "gamefileRank": 2,
+            "gamefileLink": "/documents/2026/9/27/0_-_Week_4_-_Florida_vs._Ole_Miss_-_Postgame_Notes.pdf",
+            "gamefileTitle": "Postgame Notes",
+            "gamefileClass": ""
+          }
+        ],
+        "custom_display_fields": []
+      },
+      "result": {
+        "status": "W",
+        "team_score": "52",
+        "opponent_score": "28",
+        "prescore_info": "",
+        "postscore_info": "",
+        "boxscore": {
+          "title": "Box Score",
+          "url": "/sports/football/stats/2026/ole-miss/boxscore/27906",
+          "label": "Box score of Football vs Ole Miss on September 26, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "recap": null
+      },
+      "game_center_link": "/game-center/27906"
+    },
+    {
+      "id": 27907,
+      "date": "2026-10-03T15:30:00",
+      "time": "3:30 p.m.",
+      "conference": true,
+      "location": "Columbia, Mo.",
+      "location_indicator": "A",
+      "opponent": {
+        "id": 41,
+        "title": "Missouri",
+        "prefix": "",
+        "website": "http:///www.mutigers.com",
+        "website_label": "Missouri on October 3, 2026 3:30 p.m.",
+        "location": "Columbia, MO",
+        "conference": false,
+        "mascot": "Tigers",
+        "image": {
+          "filename": "mizzou.png",
+          "path": "/images/logos",
+          "title": "University of Missouri Logo",
+          "alt": "Missouri Tigers",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/mizzou.png"
+        }
+      },
+      "media": {
+        "tv": "ABC",
+        "tv_image": "/images/2018/11/12/ABC.PNG",
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "",
+        "video": {
+          "title": "Watch",
+          "url": "https://www.espn.com/watch/player/_/id/c82ced05-e39e-409b-b077-c4b3695ea2f7",
+          "label": "Video for Football at Missouri on October 3, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6035",
+          "label": "Live audio for Football at Missouri on October 3, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661450&vislive=fla",
+          "label": "Live stats for Football at Missouri on October 3, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "tickets": null,
+        "preview": null,
+        "gamefiles": [
+          {
+            "scheduleId": 835,
+            "gameId": 27907,
+            "gamefileRank": 1,
+            "gamefileLink": "/documents/2026/9/28/WEEK_5_NOTES_-_MASTER_-_MISSOURI_-_PUBLIC.pdf",
+            "gamefileTitle": "Pregame Notes",
+            "gamefileClass": ""
+          }
+        ],
+        "custom_display_fields": []
+      },
+      "result": null,
+      "game_center_link": "/game-center/27907"
+    },
+    {
+      "id": 27908,
+      "date": "2026-10-10T00:00:00",
+      "time": "12 or 12:45 p.m. ",
+      "conference": true,
+      "location": "Gainesville, Fla.",
+      "location_indicator": "H",
+      "opponent": {
+        "id": 85,
+        "title": "South Carolina",
+        "prefix": "",
+        "website": "http://www.gamecocksonline.com/",
+        "website_label": "South Carolina on October 10, 2026 12 or 12:45 p.m. ",
+        "location": "Columbia, SC",
+        "conference": false,
+        "mascot": "Gamecocks",
+        "image": {
+          "filename": "south_carolina.png",
+          "path": "/images/logos",
+          "title": "University of South Carolina Logo",
+          "alt": "University of South Carolina Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/south_carolina.png"
+        }
+      },
+      "media": {
+        "tv": "ABC or SEC Network ",
+        "tv_image": null,
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "",
+        "video": null,
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6036",
+          "label": "Live audio for Football vs South Carolina on October 10, 2026 at 12 or 12:45 p.m. ",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661451",
+          "label": "Live stats for Football vs South Carolina on October 10, 2026 at 12 or 12:45 p.m. ",
+          "cssClass": null
+        },
+        "tickets": {
+          "title": "Tickets",
+          "url": "https://www.ticketmaster.com/florida-gators-football-vs-univ-of-gainesville-florida-10-10-2026/event/2200645C21920948?utm_source=WEB&utm_medium=SCHED&utm_campaign=FB-SINGLE&camefrom=CFC_GATORS_WEB_SCHED_FB-SINGLE",
+          "label": "Tickets for Football vs South Carolina on October 10, 2026 at 12 or 12:45 p.m. ",
+          "cssClass": null
+        },
+        "preview": null,
+        "gamefiles": [],
+        "custom_display_fields": []
+      },
+      "result": null,
+      "game_center_link": "/game-center/27908"
+    },
+    {
+      "id": 27909,
+      "date": "2026-10-17T00:00:00",
+      "time": "Early (12-1 p.m.)",
+      "conference": true,
+      "location": "Austin, Texas",
+      "location_indicator": "A",
+      "opponent": {
+        "id": 149,
+        "title": "Texas",
+        "prefix": "",
+        "website": "https://texaslonghorns.com/",
+        "website_label": "Texas on October 17, 2026 Early (12-1 p.m.)",
+        "location": "Austin, TX",
+        "conference": false,
+        "mascot": "Longhorns",
+        "image": {
+          "filename": "texas_200x200.png",
+          "path": "/images/logos",
+          "title": "University of Texas Logo",
+          "alt": "University of Texas Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/texas_200x200.png"
+        }
+      },
+      "media": {
+        "tv": "",
+        "tv_image": null,
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "",
+        "video": null,
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6037",
+          "label": "Live audio for Football at Texas on October 17, 2026 at Early (12-1 p.m.)",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661452&vislive=fla",
+          "label": "Live stats for Football at Texas on October 17, 2026 at Early (12-1 p.m.)",
+          "cssClass": null
+        },
+        "tickets": null,
+        "preview": null,
+        "gamefiles": [],
+        "custom_display_fields": []
+      },
+      "result": null,
+      "game_center_link": "/game-center/27909"
+    },
+    {
+      "id": 27910,
+      "date": "2026-10-31T15:30:00",
+      "time": "3:30 p.m.",
+      "conference": true,
+      "location": "Atlanta, Ga.",
+      "location_indicator": "N",
+      "opponent": {
+        "id": 23,
+        "title": "Georgia",
+        "prefix": "",
+        "website": "http://www.georgiadogs.com/",
+        "website_label": "Georgia on October 31, 2026 3:30 p.m.",
+        "location": "Athens, Ga.",
+        "conference": false,
+        "mascot": "Bulldogs",
+        "image": {
+          "filename": "Georgia.png",
+          "path": "/images/logos",
+          "title": "University of Georgia Logo",
+          "alt": "University of Georgia Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/Georgia.png"
+        }
+      },
+      "media": {
+        "tv": "ABC",
+        "tv_image": "/images/2018/9/17/ABC.png",
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "",
+        "video": null,
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6038",
+          "label": "Live audio for Football vs Georgia on October 31, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661453&vislive=fla",
+          "label": "Live stats for Football vs Georgia on October 31, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "tickets": {
+          "title": "Tickets",
+          "url": "https://am.ticketmaster.com/gators/en/buy/ism/RkIyNjA4R0E=?utm_source=WEB&utm_medium=SCHED&utm_campaign=FB-SINGLE&camefrom=CFC_GATORS_WEB_SCHED_FB-SINGLE",
+          "label": "Tickets for Football vs Georgia on October 31, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "preview": null,
+        "gamefiles": [],
+        "custom_display_fields": []
+      },
+      "result": null,
+      "game_center_link": "/game-center/27910"
+    },
+    {
+      "id": 27911,
+      "date": "2026-11-07T00:00:00",
+      "time": "Flex (3:30-4:30 p.m. or 6-8 p.m.)",
+      "conference": true,
+      "location": "Gainesville, Fla.",
+      "location_indicator": "H",
+      "opponent": {
+        "id": 173,
+        "title": "Oklahoma",
+        "prefix": "",
+        "website": "http://www.soonersports.com",
+        "website_label": "Oklahoma on November 7, 2026 Flex (3:30-4:30 p.m. or 6-8 p.m.)",
+        "location": "Norman, OK",
+        "conference": false,
+        "mascot": "Sooners",
+        "image": {
+          "filename": "Oklahoma_site_logo.png",
+          "path": "/images/logos",
+          "title": "University of Oklahoma Logo",
+          "alt": "University of Oklahoma Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/Oklahoma_site_logo.png"
+        }
+      },
+      "media": {
+        "tv": "",
+        "tv_image": null,
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "",
+        "video": null,
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6039",
+          "label": "Live audio for Football vs Oklahoma on November 7, 2026 at Flex (3:30-4:30 p.m. or 6-8 p.m.)",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661454",
+          "label": "Live stats for Football vs Oklahoma on November 7, 2026 at Flex (3:30-4:30 p.m. or 6-8 p.m.)",
+          "cssClass": null
+        },
+        "tickets": {
+          "title": "Tickets",
+          "url": "https://www.ticketmaster.com/florida-gators-football-vs-oklahoma-sooners-gainesville-florida-11-07-2026/event/2200645C2197098A?utm_source=WEB&utm_medium=SCHED&utm_campaign=FB-SINGLE&camefrom=CFC_GATORS_WEB_SCHED_FB-SINGLE",
+          "label": "Tickets for Football vs Oklahoma on November 7, 2026 at Flex (3:30-4:30 p.m. or 6-8 p.m.)",
+          "cssClass": null
+        },
+        "preview": null,
+        "gamefiles": [],
+        "custom_display_fields": []
+      },
+      "result": null,
+      "game_center_link": "/game-center/27911"
+    },
+    {
+      "id": 27912,
+      "date": "2026-11-14T00:00:00",
+      "time": "Night (6-8 p.m.)",
+      "conference": true,
+      "location": "Lexington, Ky.",
+      "location_indicator": "A",
+      "opponent": {
+        "id": 32,
+        "title": "Kentucky",
+        "prefix": "",
+        "website": "https://ukathletics.com/",
+        "website_label": "Kentucky on November 14, 2026 Night (6-8 p.m.)",
+        "location": "Lexington, KY",
+        "conference": false,
+        "mascot": "Wildcats",
+        "image": {
+          "filename": "Kentucky.png",
+          "path": "/images/logos",
+          "title": "University of Kentucky Logo",
+          "alt": "University of Kentucky Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/Kentucky.png"
+        }
+      },
+      "media": {
+        "tv": "",
+        "tv_image": null,
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "",
+        "video": null,
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6040",
+          "label": "Live audio for Football at Kentucky on November 14, 2026 at Night (6-8 p.m.)",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661455&vislive=fla",
+          "label": "Live stats for Football at Kentucky on November 14, 2026 at Night (6-8 p.m.)",
+          "cssClass": null
+        },
+        "tickets": null,
+        "preview": null,
+        "gamefiles": [],
+        "custom_display_fields": []
+      },
+      "result": null,
+      "game_center_link": "/game-center/27912"
+    },
+    {
+      "id": 27913,
+      "date": "2026-11-21T00:00:00",
+      "time": "Early (12-1 p.m.)",
+      "conference": true,
+      "location": "Gainesville, Fla.",
+      "location_indicator": "H",
+      "opponent": {
+        "id": 90,
+        "title": "Vanderbilt",
+        "prefix": "",
+        "website": "http://www.vucommodores.com/",
+        "website_label": "Vanderbilt on November 21, 2026 Early (12-1 p.m.)",
+        "location": "Nashville, TN",
+        "conference": false,
+        "mascot": "Commodores",
+        "image": {
+          "filename": "Vanderbilt.png",
+          "path": "/images/logos",
+          "title": "Vanderbilt University Logo",
+          "alt": "Vanderbilt University Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/Vanderbilt.png"
+        }
+      },
+      "media": {
+        "tv": "",
+        "tv_image": null,
+        "tv_image_link": "",
+        "tv_image_caption": null,
+        "radio": "",
+        "video": null,
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6041",
+          "label": "Live audio for Football vs Vanderbilt on November 21, 2026 at Early (12-1 p.m.)",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661456",
+          "label": "Live stats for Football vs Vanderbilt on November 21, 2026 at Early (12-1 p.m.)",
+          "cssClass": null
+        },
+        "tickets": {
+          "title": "Tickets",
+          "url": "https://www.ticketmaster.com/florida-gators-football-vs-vanderbilt-commodores-gainesville-florida-11-21-2026/event/2200645C219C0A2B?utm_source=WEB&utm_medium=SCHED&utm_campaign=FB-SINGLE&camefrom=CFC_GATORS_WEB_SCHED_FB-SINGLE",
+          "label": "Tickets for Football vs Vanderbilt on November 21, 2026 at Early (12-1 p.m.)",
+          "cssClass": null
+        },
+        "preview": null,
+        "gamefiles": [],
+        "custom_display_fields": []
+      },
+      "result": null,
+      "game_center_link": "/game-center/27913"
+    },
+    {
+      "id": 27914,
+      "date": "2026-11-27T15:30:00",
+      "time": "3:30 p.m.",
+      "conference": false,
+      "location": "Tallahassee, Fla.",
+      "location_indicator": "A",
+      "opponent": {
+        "id": 22,
+        "title": "Florida State",
+        "prefix": "",
+        "website": "http://www.seminoles.com/",
+        "website_label": "Florida State on November 27, 2026 3:30 p.m.",
+        "location": "Tallahassee, FL",
+        "conference": false,
+        "mascot": "Seminoles",
+        "image": {
+          "filename": "Florida-State.png",
+          "path": "/images/logos",
+          "title": "Florida State University Logo",
+          "alt": "Florida State University Logo",
+          "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/logos/Florida-State.png"
+        }
+      },
+      "media": {
+        "tv": "ABC",
+        "tv_image": "/images/2018/11/12/ABC.PNG",
+        "tv_image_link": "",
+        "tv_image_caption": "ABC",
+        "radio": "",
+        "video": null,
+        "audio": {
+          "title": "Listen",
+          "url": "/showcase?Live=6042",
+          "label": "Live audio for Football at Florida State on November 27, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "stats": {
+          "title": "Live stats",
+          "url": "https://stats.statbroadcast.com/broadcast/?id=661457&vislive=fla",
+          "label": "Live stats for Football at Florida State on November 27, 2026 at 3:30 p.m.",
+          "cssClass": null
+        },
+        "tickets": null,
+        "preview": null,
+        "gamefiles": [],
+        "custom_display_fields": []
+      },
+      "result": null,
+      "game_center_link": "/game-center/27914"
+    }
+  ]
+}

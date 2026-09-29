@@ -1,0 +1,13 @@
+{
+  "postId": "aeb4f5a5-3910-4b11-9a63-b05bac96e623",
+  "canonicalUrl": "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play",
+  "title": "Florida Football: 2026 Roster & Schedule",
+  "excerpt": "Florida\u2019s full 2026 football roster, game results and upcoming schedule. A permanent GatorBait season guide, checked against official UF sources.",
+  "author": "Brenden Martin",
+  "sourceCheckedDate": "2026-09-29",
+  "rosterCount": 117,
+  "regularSeasonGames": 12,
+  "nativeHtmlCharacters": 21247,
+  "scope": "Replace this existing guide body and title; preserve its canonical slug, originalPublishedDate, categoryIds, tagIds, media and other metadata unless separately reviewed.",
+  "anchors": "HTML ids schedule and roster are source intent. Verify converted Ricos heading node IDs and public DOM IDs before wiring deep links. Default both cards to canonical URL if anchors cannot be verified."
+}

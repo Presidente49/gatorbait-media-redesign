@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "checks": {
+    "title": true,
+    "author": true,
+    "originalDate": true,
+    "slug": true,
+    "cleanPublished": true,
+    "textLinksTables": true,
+    "exactNodes": false
+  },
+  "guideId": "aeb4f5a5-3910-4b11-9a63-b05bac96e623",
+  "editedDate": "2026-09-29T04:16:00Z",
+  "firstPublishedDate": "2026-09-17T23:51:02Z",
+  "insertId": "360c9265-3d33-4c5f-99d3-71ac79d011aa",
+  "insertRevision": "4",
+  "insertVerified": true,
+  "verification": {
+    "nativeTables": 15,
+    "playerRows": 117,
+    "scheduleRows": 12,
+    "totalRowsIncludingHeaders": 144,
+    "desktopOverflow": false,
+    "tableRowPixels": 46.390625,
+    "magazineCardHeadingColor": "rgb(255, 250, 240)",
+    "rosterJumpVerified": true,
+    "scheduleJumpVerified": true,
+    "actualMobileBrowserTested": false,
+    "sourceMetadataCorrected": true
+  },
+  "publicMagazine": "https://www.gatorbaitmedia.com/magazine?guide=20260929-r4",
+  "publicGuide": "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play?guide=20260929-r3#schedule"
+}

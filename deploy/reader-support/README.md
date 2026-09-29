@@ -9,6 +9,10 @@ Owner request: a sitewide Support GatorBait button, optional contributions, and 
 - `header-link.js` adds a link to existing desktop and mobile header owners. It is inert by default. It does not replace menus, create a competing header, load a payment SDK, make network calls, collect data or open a checkout.
 - Do not activate the module or publish a checkout before the release gates below pass. A JS flag is a deployment guard, not evidence of provider approval.
 
+## Preview validation
+
+Isolated Chromium checks passed at 1440, 768, 390 and 320px: no horizontal overflow, functional menu/keyboard return, 44px header controls, amount thresholds, current-member note, disabled checkout and no external requests. The header module passed default-inert, off-origin rejection and duplicate-protection checks. Screenshots were visually reviewed. These checks do not verify live Wix behavior or payment/member fulfillment.
+
 ## Live evidence
 
 - Shared desktop header `7fee4de6-1886-475e-a3f3-b9c68161c242`, revision **30**, enabled, **14,993 / 15,000 characters**. Exact snapshot: `header-before.json`. There is insufficient room for an appended CTA module in that payload; consolidate or use a bounded support-only module after review. Do not truncate existing code.

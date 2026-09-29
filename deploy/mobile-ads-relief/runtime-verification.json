@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-29",
+  "method": "Unmodified public cloud browser DOM after live Wix PATCH",
+  "device": "Desktop only",
+  "homepage": {
+    "url": "https://www.gatorbaitmedia.com/",
+    "guardPresent": true,
+    "adLoaderCount": 1,
+    "adLoaderMarker": "desktop-only-v1",
+    "homeRootCount": 1,
+    "horizontalOverflow": false,
+    "viewportWidth": 1363,
+    "adIframeObserved": true
+  },
+  "article": {
+    "url": "https://www.gatorbaitmedia.com/post/senate-passes-protect-college-sports-act-florida",
+    "guardPresent": true,
+    "adLoaderCount": 1,
+    "adLoaderMarker": "desktop-only-v1",
+    "articlePresent": true,
+    "horizontalOverflow": false
+  },
+  "limitations": [
+    "Mobile guard covered by isolated mocked-environment tests, not actual phone rendering",
+    "No measured page-speed or revenue improvement claim",
+    "Consent transitions not retested",
+    "Already-open pages can retain ads until fresh navigation"
+  ]
+}

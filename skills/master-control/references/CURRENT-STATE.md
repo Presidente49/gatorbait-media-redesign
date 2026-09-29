@@ -7,6 +7,18 @@ Before any mutation or present-tense business conclusion, re-read the authoritat
 
 ## Truth and coordination
 
+### September 29 mobile ad relief — current override
+
+Brenden directly requested repair of oversized Google ads and slowdown on phones.
+The existing AdSense embed `af338ad4-8c84-4708-8859-f1d6a0121c13` is now revision
+**3**, enabled, ADVERTISING. It skips loading Google ad code on phones and
+screens/viewports at or below 820px; desktop retains one async serving loader.
+This is a temporary mobile ad pause, not smaller replacement inventory. Do not
+restore the old unconditional loader through routine reconciliation. Exact code,
+rollback and verification limits: `deploy/mobile-ads-relief/`. Issue #30 remains
+open for account-side mobile placements. No site publish or other embeds changed.
+This direct ad-only request does not resume other stopped tasks.
+
 Truth order:
 
 **live provider/API/runtime → current object/revision → this snapshot → durable Master Control policy → current surface playbook → historical branches/chats/files → assumptions**

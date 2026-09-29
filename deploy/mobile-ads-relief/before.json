@@ -1,0 +1,13 @@
+{
+  "id": "af338ad4-8c84-4708-8859-f1d6a0121c13",
+  "revision": "2",
+  "name": "AdSense Verification",
+  "enabled": true,
+  "loadOnce": false,
+  "domain": "gatorbaitmedia.com",
+  "position": "HEAD",
+  "embedData": {
+    "category": "ADVERTISING",
+    "html": "<script async src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6592453291626199\" crossorigin=\"anonymous\"></script>"
+  }
+}

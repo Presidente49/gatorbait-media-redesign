@@ -233,7 +233,7 @@
   function mastHtml() {
     return '<header class="fp-mast"><div class="fp-wrap"><p class="fp-date"><span>' + esc(dateline()) + '</span><span>Gainesville, Fla.</span></p>' +
       '<a class="fp-wordmark" href="/" aria-label="GatorBait Media home">GatorBait<small>Media</small></a>' +
-      '<div class="fp-mast-right"><a class="fp-signin" href="' + esc(L.signin) + '">Sign in</a><a class="fp-btn" href="' + esc(L.subscribe) + '"><span class="fp-cta-long">Start 7-Day Free Trial</span><span class="fp-cta-short">Free Trial</span> <span aria-hidden="true">→</span></a></div></div></header>';
+      '<div class="fp-mast-right"><a class="fp-signin" href="' + esc(L.signin) + '">Sign in</a><a class="fp-btn" href="' + esc(L.subscribe) + '"><span class="fp-cta-long">Join All Access</span><span class="fp-cta-short">Join</span> <span aria-hidden="true">→</span></a></div></div></header>';
   }
   function bugHtml(sb, gs) {
     var lastA = '', nextA = '';

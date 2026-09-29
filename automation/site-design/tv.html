@@ -44,6 +44,7 @@ function loadVideo(id,title,muted){
  var f=document.createElement('iframe');
  f.src='https://www.youtube.com/embed/'+(id||'videoseries?list=UUtR8b1sKFuwaRjKy5BiXRvA')+(id?'?':'&')+'autoplay=1&mute='+(muted?'1':'0')+'&playsinline=1&rel=0';
  f.title=title;
+ var direct=m.querySelector('.mh-direct');if(direct){direct.href=id?'https://www.youtube.com/watch?v='+encodeURIComponent(id):'https://www.youtube.com/@thebuddymartinshow/videos';direct.textContent=id?'Open this show on YouTube →':'Open the latest shows on YouTube →';}
  var label=m.querySelector('.mh-selection');if(label)label.textContent=id?'Selected broadcast: '+title:'Latest broadcast playlist · Check the live link for current live status';
  f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
  f.referrerPolicy='strict-origin-when-cross-origin';
@@ -51,11 +52,12 @@ function loadVideo(id,title,muted){
  player.replaceChildren(f);
 }
 var selection=document.createElement('p');selection.className='mh-selection mh-player-note';selection.setAttribute('role','status');m.querySelector('.mh-links').before(selection);
+var direct=document.createElement('a');direct.className='mh-direct';direct.target='_blank';direct.rel='noopener';m.querySelector('.mh-links').prepend(direct);
 loadVideo('', 'The Buddy Martin Show — latest broadcast', false);
 var strip=document.createElement('section');
 strip.className='mh-filmstrip';
 strip.setAttribute('aria-label','Browse selected broadcasts');
-strip.innerHTML='<div class="mh-strip-heading"><h2>Selected shows</h2><button type="button" class="mh-return">Return to latest show</button><a href="https://www.youtube.com/@thebuddymartinshow/shorts" target="_blank" rel="noopener">Browse Shorts →</a></div><p class="mh-player-note">Watch with sound. If your browser pauses automatic playback, tap Play. The player opens the latest broadcast playlist. Swipe below for selected shows, including earlier previews.</p><div class="mh-strip" tabindex="0" aria-label="Selected shows, scroll horizontally"></div>';
+strip.innerHTML='<div class="mh-strip-heading"><h2>Selected shows</h2><button type="button" class="mh-return">Return to latest show</button><a href="https://www.youtube.com/@thebuddymartinshow/shorts" target="_blank" rel="noopener">Browse Shorts →</a></div><p class="mh-player-note">Watch with sound. If your browser pauses automatic playback, tap Play. If the player cannot load, use the YouTube link beside it. The player opens the latest broadcast playlist. Swipe below for selected shows, including earlier previews.</p><div class="mh-strip" tabindex="0" aria-label="Selected shows, scroll horizontally"></div>';
 var videos=[
  ['qWBazfq_4Mc',"Meltdown Monday: Florida’s 52-28 Statement Win + Shane Matthews"],
  ['u2dMQ4u3yNY','Ole Miss vs Florida Preview Can the Gators Own the Swamp'],

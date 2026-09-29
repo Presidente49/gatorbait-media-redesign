@@ -1,0 +1,158 @@
+{
+  "$comment": "Front Page 2026 editorial config. Bundled into sports-live/homepage.js by sports-live/build-front-page.mjs. Pins may also be overridden at runtime by window.__GBM_HOME_PINS__ = {breaking:{path,until}, timed:{path,until}} (same shape).",
+  "look": "swamp-night",
+  "pins": {
+    "breaking": null,
+    "timed": {
+      "path": "/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers",
+      "until": "2026-10-05T16:00:00Z",
+      "note": "Franz Beard lead until Oct. 5 noon ET unless a newer Buddy Martin piece or a breaking pin takes it (CURRENT-STATE Sept. 28 sync)."
+    }
+  },
+  "quotes": {
+    "/post/put-down-the-poll-gators-missouri-is-waiting": {
+      "text": "You have to humble yourself, or you will be humbled.",
+      "who": "Jon Sumrall",
+      "context": "to his team Monday, after the \"not our standard\" tape from the Ole Miss win. From Buddy Martin's column."
+    }
+  },
+  "credits": {
+    "d3cfa5_d3190d83cdfc44549b10b6bd025e57a3": "Photo by Chris Spears, GatorBait Media",
+    "d3cfa5_2ea58f38e2da4c988ab73065cfe63130": "Photo by Chris Spears, GatorBait Media",
+    "d3cfa5_026d2a4d2be04a91b8c32317fed5f623": "Photo by Chris Spears, GatorBait Media",
+    "d3cfa5_1043f4b7772245baa5aed5f80c21669a": "Photo by Chris Spears, GatorBait Media",
+    "d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b": "Photo by Chris Spears, GatorBait Media",
+    "16b519_a0e407bedc46487ca71033fc8351d0fe": "Photo by Chris Spears, GatorBait Media",
+    "d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35": "Photo: Hannah White / UAA Communications"
+  },
+  "columnists": [
+    {
+      "name": "Buddy Martin",
+      "initials": "BM",
+      "href": "/gatorbait-media-blogs/tags/buddy-martin"
+    },
+    {
+      "name": "Franz Beard",
+      "initials": "FB",
+      "href": "/gatorbait-media-blogs/tags/franz-beard"
+    },
+    {
+      "name": "Loren Meadows",
+      "initials": "LM",
+      "href": "/gatorbait-media-blogs/tags/loren-meadows"
+    },
+    {
+      "name": "Chris Spears",
+      "initials": "CS",
+      "href": null
+    }
+  ],
+  "links": {
+    "subscribe": "/pricing-plans/subscribe",
+    "signin": "/account/my-account",
+    "latest": "/gatorbait-media-blogs",
+    "magazine": "/magazine",
+    "show": "/the-buddy-martin-show",
+    "podcasts": "/the-buddy-martin-show#podcasts",
+    "store": "https://gatorbait2026.itemorder.com/shop/home/",
+    "schedule": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+    "roster": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+    "stats": "/florida-football-stats",
+    "standings": "/standings",
+    "newsletter": "/magazine",
+    "youtubeLive": "https://www.youtube.com/channel/UCtR8b1sKFuwaRjKy5BiXRvA/live",
+    "youtubeChannel": "https://www.youtube.com/channel/UCtR8b1sKFuwaRjKy5BiXRvA",
+    "facebook": "https://www.facebook.com/thebuddymartinshow"
+  },
+  "show": {
+    "days": [
+      1,
+      3,
+      4
+    ],
+    "hour": 21,
+    "minutes": 60,
+    "episode": {
+      "id": "8b7F5iyYOIk",
+      "title": "Laura Rutledge on The Buddy Martin Show",
+      "date": "2026-09-16"
+    }
+  },
+  "clips": [
+    {
+      "id": "TzP8RJY0BKw",
+      "title": "Auburn quarterback pressure"
+    },
+    {
+      "id": "oiSC0-a3tho",
+      "title": "Auburn crowd noise"
+    }
+  ],
+  "galleries": [
+    {
+      "title": "Chris Spears' Best Shots, Vol. 2: Florida 52, Ole Miss 28",
+      "url": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28",
+      "image": "https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+      "date": "2026-09-28T02:06:00Z"
+    },
+    {
+      "title": "Chris Spears Photo Gallery: Florida vs. Ole Miss",
+      "url": "https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss",
+      "image": "https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+      "date": "2026-09-28T01:49:00Z"
+    }
+  ],
+  "scoreboard": {
+    "updatedAt": "2026-09-28T12:00:00Z",
+    "team": {
+      "name": "Florida",
+      "abbr": "FLA",
+      "rank": 8,
+      "record": "4-0"
+    },
+    "last": {
+      "opponent": "Ole Miss",
+      "opponentAbbr": "MISS",
+      "opponentRank": 4,
+      "home": true,
+      "score": {
+        "fla": 52,
+        "opp": 28
+      },
+      "quarters": {
+        "fla": [
+          10,
+          7,
+          14,
+          21
+        ],
+        "opp": [
+          0,
+          6,
+          15,
+          7
+        ]
+      },
+      "stats": {
+        "totalYards": 498,
+        "rushYards": 302,
+        "firstDowns": 27,
+        "attendance": 90683
+      },
+      "date": "2026-09-26",
+      "venue": "Ben Hill Griffin Stadium, Gainesville, Fla.",
+      "recapUrl": "/post/florida-ole-miss-final-baugh-gators-run-over-rebels"
+    },
+    "next": {
+      "opponent": "Missouri",
+      "opponentAbbr": "MIZ",
+      "opponentRank": 25,
+      "home": false,
+      "kickoffIso": "2026-10-03T19:30:00Z",
+      "tv": "ABC",
+      "venue": "Memorial Stadium, Columbia, Mo.",
+      "previewUrl": "/post/first-look-missouri-florida-gators-show-me-state-of-mind"
+    },
+    "standings": []
+  }
+}

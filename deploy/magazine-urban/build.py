@@ -75,6 +75,7 @@ P=_slim(copy.deepcopy(D))
 js='''<script id="gbm-magazine-urban-runtime-v1">(function(){
 if(window.__GBMM_URBAN_V1__)return;window.__GBMM_URBAN_V1__=1;
 var D=__DATA__;
+window.__GBM_MAG_EDITION__=D;document.dispatchEvent(new Event('gbm:magazine-edition'));
 function on(){return /^\\/magazine\\/?$/.test(location.pathname||'')}
 var H=document.documentElement.classList;if(on())H.add('gbm-mq');
 function im(i){return 'https://static.wixstatic.com/media/'+i+'/v1/fit/w_1000,h_1000,al_c,q_80/file.png'}

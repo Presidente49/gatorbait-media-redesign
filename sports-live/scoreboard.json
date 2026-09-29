@@ -1,0 +1,278 @@
+{
+ "updatedAt": "2026-09-29T02:17:33Z",
+ "season": 2026,
+ "team": {
+  "name": "Florida",
+  "rank": 8,
+  "record": "4-0",
+  "conf": "2-0"
+ },
+ "last": {
+  "eventId": "401856699",
+  "opponent": "Ole Miss",
+  "opponentRank": 4,
+  "home": true,
+  "date": "2026-09-26T19:30:00Z",
+  "status": "final",
+  "score": {
+   "fla": 52,
+   "opp": 28
+  },
+  "quarters": {
+   "fla": [
+    10,
+    7,
+    14,
+    21
+   ],
+   "opp": [
+    0,
+    6,
+    15,
+    7
+   ]
+  },
+  "venue": "Ben Hill Griffin Stadium",
+  "recapUrl": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+  "galleryUrl": "https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss"
+ },
+ "next": {
+  "eventId": "401856708",
+  "opponent": "Missouri",
+  "opponentRank": 25,
+  "home": false,
+  "kickoffIso": "2026-10-03T19:30:00Z",
+  "tv": "ABC",
+  "venue": "Memorial Stadium",
+  "previewUrl": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"
+ },
+ "schedule": [
+  {
+   "eventId": "401856637",
+   "date": "2026-09-05T23:45:00Z",
+   "opponent": "Florida Atlantic",
+   "opponentRank": null,
+   "home": true,
+   "status": "final",
+   "score": {
+    "fla": 66,
+    "opp": 21
+   },
+   "tv": "SEC Network",
+   "storyUrl": null
+  },
+  {
+   "eventId": "401856672",
+   "date": "2026-09-12T21:30:00Z",
+   "opponent": "Campbell",
+   "opponentRank": null,
+   "home": true,
+   "status": "final",
+   "score": {
+    "fla": 52,
+    "opp": 3
+   },
+   "tv": "SEC Network+",
+   "storyUrl": null
+  },
+  {
+   "eventId": "401856687",
+   "date": "2026-09-19T23:00:00Z",
+   "opponent": "Auburn",
+   "opponentRank": null,
+   "home": false,
+   "status": "final",
+   "score": {
+    "fla": 44,
+    "opp": 39
+   },
+   "tv": "ESPN",
+   "storyUrl": null
+  },
+  {
+   "eventId": "401856699",
+   "date": "2026-09-26T19:30:00Z",
+   "opponent": "Ole Miss",
+   "opponentRank": 4,
+   "home": true,
+   "status": "final",
+   "score": {
+    "fla": 52,
+    "opp": 28
+   },
+   "tv": "ABC",
+   "storyUrl": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28"
+  },
+  {
+   "eventId": "401856708",
+   "date": "2026-10-03T19:30:00Z",
+   "opponent": "Missouri",
+   "opponentRank": 25,
+   "home": false,
+   "status": "scheduled",
+   "score": null,
+   "tv": "ABC",
+   "storyUrl": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"
+  },
+  {
+   "eventId": "401856714",
+   "date": "2026-10-10T04:00:00Z",
+   "opponent": "South Carolina",
+   "opponentRank": null,
+   "home": true,
+   "status": "scheduled",
+   "score": null,
+   "tv": null,
+   "storyUrl": null
+  },
+  {
+   "eventId": "401856724",
+   "date": "2026-10-17T04:00:00Z",
+   "opponent": "Texas",
+   "opponentRank": 1,
+   "home": false,
+   "status": "scheduled",
+   "score": null,
+   "tv": null,
+   "storyUrl": null
+  },
+  {
+   "eventId": "401856734",
+   "date": "2026-10-31T19:30:00Z",
+   "opponent": "Georgia",
+   "opponentRank": 2,
+   "home": false,
+   "status": "scheduled",
+   "score": null,
+   "tv": "ABC",
+   "storyUrl": null
+  },
+  {
+   "eventId": "401856739",
+   "date": "2026-11-07T05:00:00Z",
+   "opponent": "Oklahoma",
+   "opponentRank": null,
+   "home": true,
+   "status": "scheduled",
+   "score": null,
+   "tv": null,
+   "storyUrl": null
+  },
+  {
+   "eventId": "401856884",
+   "date": "2026-11-14T05:00:00Z",
+   "opponent": "Kentucky",
+   "opponentRank": 24,
+   "home": false,
+   "status": "scheduled",
+   "score": null,
+   "tv": null,
+   "storyUrl": null
+  },
+  {
+   "eventId": "401856748",
+   "date": "2026-11-21T05:00:00Z",
+   "opponent": "Vanderbilt",
+   "opponentRank": null,
+   "home": true,
+   "status": "scheduled",
+   "score": null,
+   "tv": null,
+   "storyUrl": null
+  },
+  {
+   "eventId": "401856759",
+   "date": "2026-11-27T20:30:00Z",
+   "opponent": "Florida State",
+   "opponentRank": null,
+   "home": false,
+   "status": "scheduled",
+   "score": null,
+   "tv": "ABC",
+   "storyUrl": null
+  }
+ ],
+ "standings": [
+  {
+   "team": "Alabama",
+   "confRecord": "2-0",
+   "overall": "4-0"
+  },
+  {
+   "team": "Florida",
+   "confRecord": "2-0",
+   "overall": "4-0"
+  },
+  {
+   "team": "Georgia",
+   "confRecord": "2-0",
+   "overall": "4-0"
+  },
+  {
+   "team": "Mississippi State",
+   "confRecord": "2-0",
+   "overall": "4-0"
+  },
+  {
+   "team": "Texas",
+   "confRecord": "1-0",
+   "overall": "4-0"
+  },
+  {
+   "team": "Auburn",
+   "confRecord": "1-1",
+   "overall": "3-1"
+  },
+  {
+   "team": "Kentucky",
+   "confRecord": "1-1",
+   "overall": "3-1"
+  },
+  {
+   "team": "LSU",
+   "confRecord": "1-1",
+   "overall": "3-1"
+  },
+  {
+   "team": "Ole Miss",
+   "confRecord": "1-1",
+   "overall": "3-1"
+  },
+  {
+   "team": "Missouri",
+   "confRecord": "0-1",
+   "overall": "3-1"
+  },
+  {
+   "team": "Tennessee",
+   "confRecord": "0-1",
+   "overall": "3-1"
+  },
+  {
+   "team": "Vanderbilt",
+   "confRecord": "0-1",
+   "overall": "3-1"
+  },
+  {
+   "team": "Arkansas",
+   "confRecord": "0-1",
+   "overall": "2-2"
+  },
+  {
+   "team": "Oklahoma",
+   "confRecord": "0-1",
+   "overall": "2-2"
+  },
+  {
+   "team": "South Carolina",
+   "confRecord": "0-2",
+   "overall": "2-2"
+  },
+  {
+   "team": "Texas A&M",
+   "confRecord": "0-2",
+   "overall": "2-2"
+  }
+ ],
+ "live": null
+}

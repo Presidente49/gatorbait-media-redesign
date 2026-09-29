@@ -55,3 +55,51 @@ jobs:
           else
             echo 'No publication content changed. No deployment requested.'
           fi
+
+  # Scoreboard feed for the front page. Same workflow and 5-minute tick as the job above, no second scheduler.
+  # Runs after `refresh` (never in parallel) so both jobs push to main one at a time, and runs even if
+  # `refresh` failed. The script decides whether ESPN is worth reading: hourly, or every tick from an hour
+  # before kickoff to five hours after. It refuses to write a file that fails validate_scoreboard.py.
+  scoreboard:
+    needs: refresh
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Refresh sports-live/scoreboard.json from ESPN's public JSON
+        # An ESPN outage or a rejected payload keeps the last good file and must not fail the newsroom feed.
+        continue-on-error: true
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          FORCE=""
+          if [ "$EVENT_NAME" = workflow_dispatch ] || [ "$EVENT_NAME" = push ]; then FORCE="--force"; fi
+          python automation/scoreboard_feed.py $FORCE
+      - name: Validate, commit if changed, and request the existing Pages publisher
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python automation/validate_scoreboard.py sports-live/scoreboard.json
+          if git diff --quiet -- sports-live/scoreboard.json && [ -z "$(git ls-files --others --exclude-standard -- sports-live/scoreboard.json)" ]; then
+            echo 'Scoreboard unchanged. No deployment requested.'
+            exit 0
+          fi
+          git config user.name 'gatorbait-newsroom-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
+          git add sports-live/scoreboard.json
+          git commit -m 'data: refresh Florida scoreboard'
+          pushed=false
+          for i in 1 2 3; do
+            if git push; then pushed=true; break; fi
+            git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          done
+          [ "$pushed" = true ] || { echo 'push failed after 3 tries; scoreboard not published' >&2; exit 1; }
+          gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"

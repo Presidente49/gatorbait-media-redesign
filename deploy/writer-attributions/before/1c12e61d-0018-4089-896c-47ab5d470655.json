@@ -1,0 +1,566 @@
+{
+  "id": "1c12e61d-0018-4089-896c-47ab5d470655",
+  "title": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
+  "excerpt": "Florida dominated No. 4 Ole Miss for a season-defining win, but Jon Sumrall says the Gators are still a work in progress. Loren Meadows on what he expected, what he got and what comes next.",
+  "featured": false,
+  "categoryIds": [
+    "60909101-f3bb-4691-8e65-5f16e0b7a7aa",
+    "1658bcf6-adb1-4c24-84db-9dc6781a5cae",
+    "5c245018-4a8f-48e2-b84c-4ef4cdeb8e7e",
+    "82cb2af6-e021-4a22-9df4-e06d6bd683ab",
+    "a4577921-a2e9-41bb-8a5d-4a9c56f2eb5b",
+    "efd83e9e-d932-4f4e-9ff4-8c5cb5945caa"
+  ],
+  "memberId": "c6f7996f-a5f3-4b00-ac07-4e883fa9a4b4",
+  "hashtags": [],
+  "commentingEnabled": true,
+  "minutesToRead": 4,
+  "tagIds": [
+    "5263f874-d41e-43e4-bec3-4147ab6fefca",
+    "2ab92c8f-f7f4-4d04-99b3-1f88824259c6",
+    "4031c61a-8aaa-4010-a93a-0b8c08adb8f5",
+    "c3f073e4-e01e-4e66-b541-a83383717356",
+    "c7ea8400-d9cb-4e05-b616-ba7b30a3b626",
+    "82309d34-651b-477f-ad6b-534ca8b6d639",
+    "e3308aee-da27-4cc0-8e31-e749940e7ccf",
+    "612806f4-ad1e-4f99-b522-0fd8f6315a4c",
+    "54ddea12-c5bb-42e4-9194-fe976cd85e73",
+    "8090a7a5-6c22-4846-b50d-15d883a13625",
+    "0667055b-6170-4e2f-884e-621405aec1a1",
+    "52a79d43-d5dd-4f30-a8f8-0401df067a93",
+    "1a5b82d2-b58b-4f25-be04-bc5fc8432b00",
+    "e169e744-ab2e-424f-81aa-9c5256b635c6",
+    "3c9f4444-72c2-4b8d-8e64-350927a8b382",
+    "2bb2fae5-9f76-42f1-9b12-52ccbaf77837"
+  ],
+  "relatedPostIds": [],
+  "pricingPlanIds": [],
+  "language": "en",
+  "changeOrigin": "PUBLISH",
+  "contentId": "6ab932f84bed781cf0714a13",
+  "editingSessionId": "bde2e029-c185-4886-a5e2-d604b8ecff82",
+  "richContent": {
+    "nodes": [
+      {
+        "type": "PARAGRAPH",
+        "id": "7vehy1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Gators dominate Ole Miss for a season defining win, but Sumrall notes the Gators are still a work in progress.",
+              "decorations": [
+                {
+                  "type": "FONT_SIZE",
+                  "fontSizeData": {
+                    "unit": "PX",
+                    "value": 24
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "51szt5",
+        "nodes": [],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "znu5y7",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "By Loren Meadows, ",
+              "decorations": []
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "GatorBaitMedia.com",
+              "decorations": [
+                {
+                  "type": "LINK",
+                  "linkData": {
+                    "link": {
+                      "url": "http://GatorBaitMedia.com",
+                      "target": "BLANK",
+                      "rel": {
+                        "noreferrer": true
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "UNDERLINE"
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": ", Football Analyst, Host of the Gator Lowdown with Loren Meadows",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "m8qe3405",
+        "nodes": [],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "6evsy415",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "What We Thought:",
+              "decorations": [
+                {
+                  "type": "BOLD",
+                  "fontWeightValue": 700
+                },
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": " This was billed as a matchup between two of the nation’s best players in Trinidad Chambliss and Jadan Baugh. Chambliss had been nearly flawless early this season and had played his way into the conversation as the Heisman front runner after knocking off Lane Kiffin and LSU a week ago. Florida countered with Jadan Baugh, who joined Emmitt Smith and Fred Taylor as the only Florida back to have four straight 100-yard rushing games in Florida history.",
+              "decorations": [
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "v65ts442",
+        "nodes": [],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "eqb40418",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "While Florida had played well through three early season wins, the defense had not played to the same level of an offense that was averaging 54 points per game and averaging over seven plays of 20 yards or more to begin the year. Defensively there were concerns for the Gators in particularly in the secondary where they had surrendered 231 yards per game and facing the nation’s eighth ranked pass offense would make life even tougher for a secondary that was under construction. ",
+              "decorations": [
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "nf7u9460",
+        "nodes": [],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "riefj420",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "With all that said Ole Miss would win a scoring fest as the Gators would play well but ultimately fall in a close contest that would lend itself to the fact that the Gators were improved but not ready to stand toe to toe with the SEC’s best.",
+              "decorations": [
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "nwa25478",
+        "nodes": [],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "4jmic422",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "What We Got:",
+              "decorations": [
+                {
+                  "type": "BOLD",
+                  "fontWeightValue": 700
+                },
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": " One of the most important things that a man does as he matures is admit when he was wrong (that’s me). If Ole Miss and Chambliss were supposed to continue their march to the top of the polls and the Heisman podium someone forgot to give Florida the memo. From the  opening bell the Gators continued their “work the cut” mentality in systematically breaking down Ole Miss in all three phases to bring home a huge win in front of a raucous crowd of over 90,000.",
+              "decorations": [
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "25hcm425",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Jadan Baugh was sensational again rushing for 142 yards on 29 carries and three touchdowns. Baugh is now the first SEC back since Derrick Henry to score multiple TDs in five straight games (and we know how that year finished). His compadre Duke Clark was nearly as impressive averaging 10.5 yards per rush for 126 yards and a touchdown. What was lost on the win was how the Florida special teams made an impact with kickoff returns by London Montgomery of 41 yards and 74 yards on back to back opportunities after Ole Miss scores brought the deficit to three. Bailey Stockton would also add a gritty 25 yard return to complete the day for the Gators special teams units that have been great in kick coverage as well. To complete the success of all three phases, Aaron Philo was sharp again completing almost 70 percent of his passes for 196 yards and a touchdown. Philo has now gone all four games without an interception that can be attributed to his own error. ",
+              "decorations": [
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "x8xr0498",
+        "nodes": [],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "5thv9427",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The defense, that was the greatest area of concern was better than the score may show making life hard on an Ole Miss offense playing without top back Kewan Lacy. Florida held the Ole Miss offense to 4 of 11 on third downs while limiting the run game and forcing Chambliss into two turnovers. While Florida would only sack Chambliss once they constantly pressured the Heisman favorite and forced him to move off his spots to force errant throws on key downs. Without Lacy the Ole Miss offense was held to 128 rushing yards which exceeded its average (114) but forced the offense to play in a one dimensional space the defensive coordinator Brad White loves to scheme around. ",
+              "decorations": [
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "68m4k516",
+        "nodes": [],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "bragy429",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Skinny:",
+              "decorations": [
+                {
+                  "type": "BOLD",
+                  "fontWeightValue": 700
+                },
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": " When Jon Sumrall was hired, he supposedly asked Florida AD Scott Stricklin if it would be possible for him to hire another Group of Five coach from Louisiana. Regardless of the answer, this seems to be a match made in heaven for the Florida program. After the game Sumrall noted that while this is the best win for the Gators in at least four years, his team is still a work in progress. Putting a 50 spot on the number four team in the country is “not our best football.” Sumrall’s demeanor and the play of his team bring back Spurrier excitement with Meyer toughness. Teams that show up and execute at a high level, make enough plays on defense, and find a way to affect the game on special teams when no one’s looking. The offense is multilayered in a physical run game, explosive passing game, and creative enough to keep even the best defensive minds like DJ Durkin and Pete Golding off balance. The defense, that was the center of negativity among observers (including me) has found a way to make enough plays when it matters including eight takeaways in four games. At this pace the Gators would double their total from 2025 which would have put the Gators in the Top 15 nationally last season.",
+              "decorations": [
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "7odf5535",
+        "nodes": [],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xbd92432",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "After “working the cut” against Auburn and the “so what, now what” motto against Ole Miss, it will be interesting to see what the intensely motivated Sumrall brings to the table as his team gets ready for yet another Top 25 matchup. One thing is for certain this team has learned to turn the page during games and most importantly in their weekly preparations resonates in any successful program. The most important thing is that Florida’s coaches and players feel truly blessed to be in Gainesville and believe in the plan. That more than anything may be the key to this team’s resurgence.",
+              "decorations": [
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xuirj553",
+        "nodes": [],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "s28u4570",
+        "nodes": [],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "3v7va434",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Final Score: Florida Gators 52 Ole Miss Rebels 28 (Prediction Ole Miss 38 Florida 35)",
+              "decorations": [
+                {
+                  "type": "COLOR",
+                  "colorData": {
+                    "foreground": "rgb(0, 0, 0)"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "style": {},
+        "paragraphData": {
+          "textStyle": {
+            "textAlignment": "AUTO"
+          }
+        }
+      }
+    ],
+    "documentStyle": {}
+  },
+  "status": "PUBLISHED",
+  "mostRecentContributorId": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+  "hasUnpublishedChanges": false,
+  "editedDate": "2026-09-28T10:54:02Z",
+  "firstPublishedDate": "2026-09-27T13:50:06Z",
+  "seoData": {
+    "tags": [],
+    "settings": {
+      "preventAutoRedirect": false,
+      "keywords": []
+    }
+  },
+  "slugs": [
+    "postgame-analysis-florida-gators-52-ole-miss-rebel-28"
+  ],
+  "createdDate": "2026-09-27T13:45:53.585Z",
+  "seoSlug": "postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+  "media": {
+    "wixMedia": {
+      "image": {
+        "id": "d3cfa5_9b92c9cd699d46a7a5c56db9a21317e5~mv2.jpg",
+        "url": "https://static.wixstatic.com/media/d3cfa5_9b92c9cd699d46a7a5c56db9a21317e5~mv2.jpg",
+        "height": 500,
+        "width": 800,
+        "altText": "Jadan Baugh celebrates in the end zone after a touchdown against Ole Miss. Photo by Chris Spears, GatorBait Media.",
+        "filename": "baugh-td-end-zone-celebration.jpg"
+      }
+    },
+    "displayed": true,
+    "custom": true
+  },
+  "previewTextParagraph": 1,
+  "translations": []
+}

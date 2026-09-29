@@ -1,0 +1,453 @@
+{
+  "count": 58,
+  "chris": [
+    {
+      "id": "41080090-2159-467d-99ee-4737ad4c758d",
+      "nickname": "Chris Spears"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "d0567063-f873-407b-a849-81d9c7b19c89",
+      "title": "Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Award",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-28T20:56:09.429Z",
+      "bylines": [
+        "By GatorBait Media Staff"
+      ]
+    },
+    {
+      "id": "50399e36-c062-445b-af27-5233ea5c9a2c",
+      "title": "Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-28T20:54:04.859Z",
+      "bylines": [
+        "By GatorBait Media Staff"
+      ]
+    },
+    {
+      "id": "bc01aadb-663b-4b07-ae10-492f15977b23",
+      "title": "Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-28T02:06:47.067Z",
+      "bylines": []
+    },
+    {
+      "id": "67bd8aca-89e2-4098-b934-4c019b4f588e",
+      "title": "Chris Spears' Best Shots: Florida 52, Ole Miss 28",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-28T01:49:57.678Z",
+      "bylines": []
+    },
+    {
+      "id": "baa858cf-14b9-465e-b2b8-2368eb0f9926",
+      "title": "BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell B",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-27T22:04:07.340Z",
+      "bylines": [
+        "By GatorBait Staff"
+      ]
+    },
+    {
+      "id": "db2e38da-bb2b-47c9-b593-d0b8f9e6d173",
+      "title": "Show-Me State of Mind: A First Look at No. 25 Missouri",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-27T21:53:54.985Z",
+      "bylines": [
+        "By GatorBait Media Staff"
+      ]
+    },
+    {
+      "id": "b03c2ea6-f405-454e-922f-72a30488c1c4",
+      "title": "10 Thoughts From the Sidelines: Florida 52, Ole Miss 28",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-27T18:39:36.536Z",
+      "bylines": [
+        "Column | By Chris Spears, GatorBait Media"
+      ]
+    },
+    {
+      "id": "c658c408-15f6-4589-85a2-07be31e0ae99",
+      "title": "Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-27T18:20:18.029Z",
+      "bylines": []
+    },
+    {
+      "id": "9fb69423-fde5-462e-9275-06b99c55fb18",
+      "title": "What Happened in College Football Saturday: Gators Take Down No. ",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-27T05:25:16.423Z",
+      "bylines": [
+        "By GatorBait Media Staff"
+      ]
+    },
+    {
+      "id": "8d3c0eec-6f6f-4131-a675-39bc08a2a81d",
+      "title": "Woods Chipper: Florida’s Defense, Special Teams Swing Win Over No",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-27T01:58:05.731Z",
+      "bylines": []
+    },
+    {
+      "id": "2bb6c273-e733-4af6-bcf7-5b814f768967",
+      "title": "‘It Ain’t Fully Awake Yet’: Sumrall Says Gators Haven’t Arrived A",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-27T00:44:28Z",
+      "bylines": []
+    },
+    {
+      "id": "e010110a-fd4e-444b-b22b-e894ef6adca1",
+      "title": "Commit, Then Rout: Four-Star Safety Cyion Smith Picks Florida Bef",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-27T00:30:27.077Z",
+      "bylines": []
+    },
+    {
+      "id": "94127b93-7c14-42f3-896b-9b99d6d9bc09",
+      "title": "Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-26T23:46:39.777Z",
+      "bylines": []
+    },
+    {
+      "id": "bb2287f1-7037-4087-ae9b-34ff7dcfe266",
+      "title": "Baugh Punches Ole Miss Twice: Gators Lead 17-6 at the Half",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-26T21:31:19.083Z",
+      "bylines": []
+    },
+    {
+      "id": "d62e1c46-170a-4204-a155-2faf03627a89",
+      "title": "Lacy-Less in The Swamp: Ole Miss Star RB Kewan Lacy Ruled Out vs.",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-26T18:14:42.613Z",
+      "bylines": []
+    },
+    {
+      "id": "6ece9e4d-d58f-4fc3-b017-f1578e685142",
+      "title": "Louis Oliver Is Today's Mr. Two Bits",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-26T17:22:56Z",
+      "bylines": []
+    },
+    {
+      "id": "e5686337-ed54-42d6-965a-907032eb466d",
+      "title": "Baugh Runs the SEC: Florida's Junior Back Leads the League in Eve",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-26T17:21:31Z",
+      "bylines": []
+    },
+    {
+      "id": "270e8172-6330-4d7e-b8e5-5e473f4144c7",
+      "title": "It's Game Day in The Swamp: No. 21 Florida vs No. 4 Ole Miss",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-26T17:18:47Z",
+      "bylines": []
+    },
+    {
+      "id": "40e8c3e9-5445-4266-bf40-07aa8e31834e",
+      "title": "LIVE NOW: Florida vs Ole Miss Preview on Gator Lowdown",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-23T01:58:16.089Z",
+      "bylines": []
+    },
+    {
+      "id": "064b72aa-54ac-4af4-a8ad-54fc1b019a81",
+      "title": "Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-20T08:14:12.271Z",
+      "bylines": [
+        "By GatorBait Staff"
+      ]
+    },
+    {
+      "id": "cf6133a6-5d24-4a76-8344-f6b70614e563",
+      "title": "No Bad Wins: Sumrall Issues Warning After Florida's Auburn Win",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-20T07:30:31.107Z",
+      "bylines": []
+    },
+    {
+      "id": "3aeddf16-3d68-429a-8ec5-bef29b225f3d",
+      "title": "Florida 44 Auburn 39: Gators End Jordan-Hare Drought",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-20T03:07:30.120Z",
+      "bylines": []
+    },
+    {
+      "id": "8a0c4b1a-cdf2-4b42-93ea-ca6705d055b6",
+      "title": "FINAL Florida 44 Auburn 39: Gators Survive 16 Penalties",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-19T23:45:16.645Z",
+      "bylines": []
+    },
+    {
+      "id": "ea8d7ace-8579-4a82-9508-fc7ec5d1d081",
+      "title": "Best Friday in Football with Buddy Martin | September 18, 2026",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-18T13:09:17.732Z",
+      "bylines": []
+    },
+    {
+      "id": "aeb4f5a5-3910-4b11-9a63-b05bac96e623",
+      "title": "Florida Roster and Injury Watch Ahead of Ole Miss",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-17T23:51:02.332Z",
+      "bylines": [
+        "By GatorBait Staff"
+      ]
+    },
+    {
+      "id": "a161f341-f5d3-437b-beed-70c6d9d42bb7",
+      "title": "Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Re",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-17T14:44:43.506Z",
+      "bylines": []
+    },
+    {
+      "id": "ff634071-5ee7-4c9f-985a-ba197369733f",
+      "title": "Florida at Auburn: Ryan Urquhart Says the Gators Must Embrace the",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-17T14:44:43.181Z",
+      "bylines": []
+    },
+    {
+      "id": "168dacda-ed31-4968-b663-09e49e2859aa",
+      "title": "WATCH LIVE: The Buddy Martin Show — Florida Heads to Auburn and t",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-15T01:11:18.726Z",
+      "bylines": []
+    },
+    {
+      "id": "10a6bddb-ce48-428f-81a0-cd2c22e6a190",
+      "title": "Florida–Auburn By the Numbers: Two New Coaches, One Old Rivalry",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-09-14T17:15:28.449Z",
+      "bylines": []
+    },
+    {
+      "id": "96e490e2-46a4-412d-8246-14c0448ee858",
+      "title": "Brown Supplies the Spark as Florida Rolls Past Campbell, 52-3",
+      "memberId": "fade11f0-405c-4425-bbab-111e5350dcdb",
+      "date": "2026-09-13T20:40:01Z",
+      "bylines": []
+    },
+    {
+      "id": "e948c4d3-a68c-407e-8d44-335b58de0639",
+      "title": "New King Of The Ville: Contract Extension Makes Golden Highest Pa",
+      "memberId": "fade11f0-405c-4425-bbab-111e5350dcdb",
+      "date": "2026-08-29T00:02:03.900Z",
+      "bylines": [
+        "By GatorBait News Sources "
+      ]
+    },
+    {
+      "id": "ab64ba51-dd3d-48df-a695-57ee0a06c502",
+      "title": "Florida Opens Fall Camp With Strength Gains, Consistency as Sumra",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2026-08-05T22:31:44.644Z",
+      "bylines": [
+        "By GatorBait Media Staff"
+      ]
+    },
+    {
+      "id": "82068537-2aa7-4615-910c-1332678bed05",
+      "title": "Todd Golden Named SEC Coach of the Year - He's Just Getting Start",
+      "memberId": "fade11f0-405c-4425-bbab-111e5350dcdb",
+      "date": "2026-03-10T02:07:36.055Z",
+      "bylines": [
+        " By GatorBaitMedia.com  Staff"
+      ]
+    },
+    {
+      "id": "0569345d-77df-4709-a2d1-33111be4a819",
+      "title": "Franz Beard's Florida Gators Coverage: The Latest Scoop You Can't",
+      "memberId": "fade11f0-405c-4425-bbab-111e5350dcdb",
+      "date": "2026-03-04T17:28:49.606Z",
+      "bylines": []
+    },
+    {
+      "id": "f403b1d1-db3f-45ed-9d81-7253649a4e1c",
+      "title": "Winds Of Change: The Orange And Blue Take On A Yellow Hue.",
+      "memberId": "fade11f0-405c-4425-bbab-111e5350dcdb",
+      "date": "2025-12-17T03:26:17.787Z",
+      "bylines": [
+        "By GATORBAIT.com Staff"
+      ]
+    },
+    {
+      "id": "d0e16f66-ecef-40ba-9890-f28ab3b1f081",
+      "title": "Sumrall Off To A Good Start, But Can He Do Two Jobs Well At Once?",
+      "memberId": "fade11f0-405c-4425-bbab-111e5350dcdb",
+      "date": "2025-12-09T14:06:21.117Z",
+      "bylines": [
+        " By GatorBaitMedia.com",
+        "By pairing White and Faulkner with at least one retained assistant in Chatman and moving on from several offensive position coaches, he is signaling both a fresh start and a willin"
+      ]
+    },
+    {
+      "id": "59e6e458-00b5-444d-b3a4-dc4c8cc1d4da",
+      "title": "Walter Clayton's Promise: From Lake Wales To Gator Greatness",
+      "memberId": "fade11f0-405c-4425-bbab-111e5350dcdb",
+      "date": "2025-03-20T13:10:09.534Z",
+      "bylines": [
+        "By GatorBait Magazine Staff "
+      ]
+    },
+    {
+      "id": "01b65e62-650c-4e04-956f-7d28e6b7ba40",
+      "title": "Gators' Eleventh-Hour Heroics Overturn Alabama in SEC Tournament ",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-05-25T03:03:37.153Z",
+      "bylines": [
+        " By GATORBAIT NEWS SERVICES"
+      ]
+    },
+    {
+      "id": "a8e70fb7-df8a-46e1-a902-2944b0de5947",
+      "title": "Florida-Georgia Secured In Jax — For Now",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-05-24T21:47:42.035Z",
+      "bylines": []
+    },
+    {
+      "id": "5dde37bc-fd1d-44f7-9056-798b986d3a81",
+      "title": "On Deck for Gators?",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-05-21T23:43:14.565Z",
+      "bylines": []
+    },
+    {
+      "id": "be04591e-056a-464f-818b-f0d3f6673cbe",
+      "title": "Hat Trick for Gator Baseball",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-05-14T22:40:31.359Z",
+      "bylines": []
+    },
+    {
+      "id": "8ace3df0-40c5-48c5-9bd1-bd41fdabcb2a",
+      "title": "Big Pickup From The Portal: 6-6, 300-pound Hudson",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-05-13T22:44:29.517Z",
+      "bylines": []
+    },
+    {
+      "id": "7825f353-db5d-4724-aa32-76e451bdad2f",
+      "title": "SPECIAL REPORT On Florida Football: Can Napier Lead Gators Back T",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-04-20T23:35:37.283Z",
+      "bylines": [
+        "By ART E. FISHAL\nGainesville Intelligencer\nSpecial Guest Commentator\nGatorBaitMedia.com\n",
+        "\nBy leveraging the transfer portal, NIL opportunities, and strong relationships with high school coaches, he can build a talented and competitive team that can compete with the top"
+      ]
+    },
+    {
+      "id": "70fa09e5-c3fb-429a-8d68-06efa48605ff",
+      "title": "Billy Napier Post Game Press Conference Transcript Orange and Blu",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-04-14T03:00:54.761Z",
+      "bylines": []
+    },
+    {
+      "id": "a4bd2bf9-b2d8-45a5-8f6f-8e17c6b6198b",
+      "title": "(Video) Gator Football Spring Practice",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-03-16T20:38:07.851Z",
+      "bylines": []
+    },
+    {
+      "id": "4d5b5f86-c242-4a30-bcfa-8390333913b4",
+      "title": "Florida Gators: Keary Colbert Leaves for Denver",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-02-23T20:28:13.113Z",
+      "bylines": []
+    },
+    {
+      "id": "ded823ff-032c-4fa0-9ef5-3fab3164e6dc",
+      "title": "Austin Armstrong: Snap Shot",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-02-23T01:52:06.809Z",
+      "bylines": []
+    },
+    {
+      "id": "7f3fab21-2382-4fb4-b5be-e362d11aa87e",
+      "title": "Florida Gators Breaking News: DC Patrick Toney Leaving",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2023-02-22T20:11:31.635Z",
+      "bylines": []
+    },
+    {
+      "id": "dc14f775-256c-4727-95a6-d399391fcc02",
+      "title": "Merry Christmas From GatorBait ",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2022-12-25T14:39:28.835Z",
+      "bylines": []
+    },
+    {
+      "id": "03a95814-5ae0-42fb-82d4-8ea9eba74e93",
+      "title": "GatorBait Magazine 11.24.22",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2022-11-24T19:06:36.359Z",
+      "bylines": []
+    },
+    {
+      "id": "26ef45ee-87e0-4b6a-a1c7-e9cd10d404c5",
+      "title": "Join us, We Won't Back Down and Neither Should YOU!",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2022-11-14T16:17:34.232Z",
+      "bylines": []
+    },
+    {
+      "id": "db2f0d2e-beb8-471a-812e-581255d954db",
+      "title": "Orange and Blue Blood Post-Game Show UF vs A&M",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2022-11-06T14:58:24.094Z",
+      "bylines": []
+    },
+    {
+      "id": "512c8aab-c006-496e-a27a-be2914ed4854",
+      "title": "FLORIDA FLASHBACK: Remembering David Little, Which Shouldn’t Be D",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2020-07-23T23:10:29.426Z",
+      "bylines": [
+        "BY PHIL HUBER"
+      ]
+    },
+    {
+      "id": "5f34dfc4-6c2b-41f1-af9b-5cb3045994af",
+      "title": "MY TAKE: How It All Started in the '70s for this Florida Gators F",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2020-06-25T22:59:07.937Z",
+      "bylines": []
+    },
+    {
+      "id": "7d7974e8-620b-47c9-91ec-306129aa80d1",
+      "title": "Florida Gators Featured in New HBO College Football Series",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2019-09-18T18:58:14.747Z",
+      "bylines": []
+    },
+    {
+      "id": "ab12ef31-e4af-4ee4-981b-66634c04ff14",
+      "title": "Feleipe Franks Post Game Interview Florida Beats Miami 24-20",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2019-08-25T06:33:35.254Z",
+      "bylines": []
+    },
+    {
+      "id": "ed0d3185-f431-4c35-8401-7d71ce72afcd",
+      "title": "Dan Mullen Addresses John Huggins Departure & Gators Culture",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2019-08-13T03:01:00.469Z",
+      "bylines": []
+    },
+    {
+      "id": "6a625afb-11fb-4907-8452-754048a39ef2",
+      "title": "Buddy Martin's Blog: What was I thinking? Why would a senior citi",
+      "memberId": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "date": "2019-08-09T20:56:52.804Z",
+      "bylines": []
+    }
+  ]
+}

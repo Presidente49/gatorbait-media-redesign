@@ -1,0 +1,345 @@
+{
+  "mode": "DRY_RUN",
+  "ready": [
+    {
+      "id": "d0567063-f873-407b-a849-81d9c7b19c89",
+      "title": "Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T20:56:30Z",
+      "fields": [
+        "id",
+        "memberId",
+        "excerpt",
+        "richContent"
+      ]
+    },
+    {
+      "id": "50399e36-c062-445b-af27-5233ea5c9a2c",
+      "title": "Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T20:54:04Z",
+      "fields": [
+        "id",
+        "memberId",
+        "richContent"
+      ]
+    },
+    {
+      "id": "bc01aadb-663b-4b07-ae10-492f15977b23",
+      "title": "Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T11:42:42Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "67bd8aca-89e2-4098-b934-4c019b4f588e",
+      "title": "Chris Spears' Best Shots: Florida 52, Ole Miss 28",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T13:37:30Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "baa858cf-14b9-465e-b2b8-2368eb0f9926",
+      "title": "BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T01:17:29Z",
+      "fields": [
+        "id",
+        "memberId",
+        "richContent"
+      ]
+    },
+    {
+      "id": "db2e38da-bb2b-47c9-b593-d0b8f9e6d173",
+      "title": "Show-Me State of Mind: A First Look at No. 25 Missouri",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T23:16:30Z",
+      "fields": [
+        "id",
+        "memberId",
+        "richContent"
+      ]
+    },
+    {
+      "id": "b03c2ea6-f405-454e-922f-72a30488c1c4",
+      "title": "10 Thoughts From the Sidelines: Florida 52, Ole Miss 28",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "41080090-2159-467d-99ee-4737ad4c758d",
+      "editedDate": "2026-09-28T10:54:01Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "c658c408-15f6-4589-85a2-07be31e0ae99",
+      "title": "Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T10:54:01Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "9fb69423-fde5-462e-9275-06b99c55fb18",
+      "title": "What Happened in College Football Saturday: Gators Take Down No. 4 Ole Miss as Top 25 Shakes",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T21:00:06Z",
+      "fields": [
+        "id",
+        "memberId",
+        "richContent"
+      ]
+    },
+    {
+      "id": "8d3c0eec-6f6f-4131-a675-39bc08a2a81d",
+      "title": "Woods Chipper: Florida’s Defense, Special Teams Swing Win Over No. 4 Ole Miss",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:09:43Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "2bb6c273-e733-4af6-bcf7-5b814f768967",
+      "title": "‘It Ain’t Fully Awake Yet’: Sumrall Says Gators Haven’t Arrived After Routing No. 4 Ole Miss",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T11:26:18Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "e010110a-fd4e-444b-b22b-e894ef6adca1",
+      "title": "Commit, Then Rout: Four-Star Safety Cyion Smith Picks Florida Before 52-28 Win Over No. 4 Ole Miss",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:10:35Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "94127b93-7c14-42f3-896b-9b99d6d9bc09",
+      "title": "Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T06:13:09Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "bb2287f1-7037-4087-ae9b-34ff7dcfe266",
+      "title": "Baugh Punches Ole Miss Twice: Gators Lead 17-6 at the Half",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-28T23:16:55Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "d62e1c46-170a-4204-a155-2faf03627a89",
+      "title": "Lacy-Less in The Swamp: Ole Miss Star RB Kewan Lacy Ruled Out vs. Florida",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:10:36Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "6ece9e4d-d58f-4fc3-b017-f1578e685142",
+      "title": "Louis Oliver Is Today's Mr. Two Bits",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:10:36Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "e5686337-ed54-42d6-965a-907032eb466d",
+      "title": "Baugh Runs the SEC: Florida's Junior Back Leads the League in Everything",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T06:13:10Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "270e8172-6330-4d7e-b8e5-5e473f4144c7",
+      "title": "It's Game Day in The Swamp: No. 21 Florida vs No. 4 Ole Miss",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T06:13:09Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "40e8c3e9-5445-4266-bf40-07aa8e31834e",
+      "title": "LIVE NOW: Florida vs Ole Miss Preview on Gator Lowdown",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:10:43Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "064b72aa-54ac-4af4-a8ad-54fc1b019a81",
+      "title": "Jon Sumrall: No Bad Wins, Work the Cut After Florida Beats Auburn",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:10:48Z",
+      "fields": [
+        "id",
+        "memberId",
+        "richContent"
+      ]
+    },
+    {
+      "id": "cf6133a6-5d24-4a76-8344-f6b70614e563",
+      "title": "No Bad Wins: Sumrall Issues Warning After Florida's Auburn Win",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T06:10:13Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "3aeddf16-3d68-429a-8ec5-bef29b225f3d",
+      "title": "Florida 44 Auburn 39: Gators End Jordan-Hare Drought",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:10:50Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "8a0c4b1a-cdf2-4b42-93ea-ca6705d055b6",
+      "title": "FINAL Florida 44 Auburn 39: Gators Survive 16 Penalties",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:11:19Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "ea8d7ace-8579-4a82-9508-fc7ec5d1d081",
+      "title": "Best Friday in Football with Buddy Martin | September 18, 2026",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:11:20Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "a161f341-f5d3-437b-beed-70c6d9d42bb7",
+      "title": "Laura Rutledge Returns to The Buddy Martin Show; Carlton Reese Remembers ‘14 Days in Gainesville’",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:11:24Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "168dacda-ed31-4968-b663-09e49e2859aa",
+      "title": "WATCH LIVE: The Buddy Martin Show — Florida Heads to Auburn and the Road Gets Real",
+      "from": "16433bab-ee11-4e09-9f6c-cac7a12ec042",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:11:25Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "96e490e2-46a4-412d-8246-14c0448ee858",
+      "title": "Brown Supplies the Spark as Florida Rolls Past Campbell, 52-3",
+      "from": "fade11f0-405c-4425-bbab-111e5350dcdb",
+      "to": "93d9f853-336f-4a8e-bcfa-4c621ff96db9",
+      "editedDate": "2026-09-27T05:11:27Z",
+      "fields": [
+        "id",
+        "memberId"
+      ]
+    },
+    {
+      "id": "1c12e61d-0018-4089-896c-47ab5d470655",
+      "title": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
+      "from": "c6f7996f-a5f3-4b00-ac07-4e883fa9a4b4",
+      "to": "c6f7996f-a5f3-4b00-ac07-4e883fa9a4b4",
+      "editedDate": "2026-09-28T10:54:02Z",
+      "fields": [
+        "id",
+        "richContent"
+      ]
+    },
+    {
+      "id": "bb1d7484-5c32-433c-b4e6-5760e5433874",
+      "title": "The Swamp Gets Its Swagger Back And Welcomes The Folks From The Grove In Rude Fashion",
+      "from": "ae876af8-9478-4613-8f0b-5218ad33fdc9",
+      "to": "ae876af8-9478-4613-8f0b-5218ad33fdc9",
+      "editedDate": "2026-09-28T23:16:10Z",
+      "fields": [
+        "id",
+        "richContent"
+      ]
+    }
+  ],
+  "held": [
+    {
+      "id": "aeb4f5a5-3910-4b11-9a63-b05bac96e623",
+      "status": "DEFER_TO_ROSTER"
+    },
+    {
+      "id": "ff634071-5ee7-4c9f-985a-ba197369733f",
+      "status": "HOLD_EXISTING_UNPUBLISHED_EDITS"
+    },
+    {
+      "id": "10a6bddb-ce48-428f-81a0-cd2c22e6a190",
+      "status": "HOLD_EXISTING_UNPUBLISHED_EDITS"
+    }
+  ]
+}

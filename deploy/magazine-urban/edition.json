@@ -1,0 +1,52 @@
+{
+  "date": "September 28, 2026",
+  "edition": "The Trenches Edition",
+  "lead": {
+    "title": "Who are these guys? Trautwein's troops in the trenches are difference makers",
+    "url": "https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers",
+    "image": "https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+    "label": "Cover story",
+    "short": "Who are these guys?",
+    "deck": "Franz Beard on the offensive line turning Florida’s ground game into a statement."
+  },
+  "stories": [
+    {
+      "title": "The Swamp Gets Its Swagger Back And Welcomes The Folks From The Grove In Rude Fashion",
+      "url": "https://www.gatorbaitmedia.com/post/the-swamp-gets-its-swagger-back-and-welcomes-the-folks-from-the-grove-in-rude-fashion",
+      "image": "https://static.wixstatic.com/media/d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+      "label": "By Buddy Martin",
+      "short": "Swagger is back",
+      "credit": "Hannah White / UAA Communications"
+    },
+    {
+      "title": "How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again",
+      "url": "https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again",
+      "image": "https://static.wixstatic.com/media/16b519_5d3a0f33184d44d2b887fe9581207f72~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+      "label": "By Eddie Gilley",
+      "short": "Five plays. One statement."
+    },
+    {
+      "title": "10 Thoughts From the Sidelines: Florida 52, Ole Miss 28",
+      "url": "https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss",
+      "image": "https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+      "label": "By Chris Spears",
+      "short": "A different view of The Swamp",
+      "credit": "Chris Spears"
+    },
+    {
+      "title": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+      "image": "https://static.wixstatic.com/media/d3cfa5_9b92c9cd699d46a7a5c56db9a21317e5~mv2.jpg/v1/fit/w_800,h_500,al_c,q_80/file.png",
+      "label": "By Loren Meadows",
+      "short": "Still a work in progress"
+    }
+  ],
+  "gallery": {
+    "title": "Chris Spears' Best Shots: Florida 52, Ole Miss 28",
+    "url": "https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss",
+    "image": "https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",
+    "label": "Photo essay",
+    "short": "The Swamp, through his lens",
+    "deck": "Chris Spears had the sideline for all of it. His best photos from The Swamp as Florida ran over No. 4 Ole Miss, 52-28."
+  }
+}

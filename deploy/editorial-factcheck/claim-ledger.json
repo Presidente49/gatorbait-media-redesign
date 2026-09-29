@@ -1,0 +1,391 @@
+{
+  "reviewDate": "2026-09-28 America/New_York / 2026-09-29 UTC",
+  "status": "BOUNDED_REVIEW_NOT_WHOLE_SITE_CERTIFICATION",
+  "scope": "Triaged the 20 newest RSS items. Examined selected Magazine articles and six recent Staff article bodies, concentrating on material game claims. Independent primary evidence was used; RSS was not used to corroborate itself. Live corrections remain the controller’s responsibility.",
+  "sources": {
+    "ufGame": {
+      "url": "https://floridagators.com/game-center/27906",
+      "ref": "turn10view0",
+      "type": "official event record"
+    },
+    "ufBox": {
+      "url": "https://floridagators.com/sports/football/stats/2026/ole-miss/boxscore/27906",
+      "ref": "turn11view0",
+      "type": "official box score and play-by-play"
+    },
+    "ufAwards": {
+      "url": "https://floridagators.com/news/2026/9/28/football-gators-trio-secures-sec-weekly-honors",
+      "ref": "turn16view0",
+      "type": "official dated award release; historical-date typo independently detected"
+    },
+    "ufFreshman2024": {
+      "url": "https://floridagators.com/news/2024/10/21/football-baugh-earns-sec-freshman-of-the-week-for-historic-performance-against-kentucky",
+      "ref": "turn19view0",
+      "type": "official historical award release"
+    },
+    "ufSouthCarolina2022": {
+      "url": "https://floridagators.com/sports/football/stats/2022/south-carolina/boxscore/24868",
+      "ref": "turn19search3",
+      "type": "official historical box score"
+    },
+    "ufSchedule2022": {
+      "url": "https://floridagators.com/sports/football/schedule/2022",
+      "ref": "turn19view1",
+      "type": "official historical schedule"
+    },
+    "ufTrautwein": {
+      "url": "https://floridagators.com/news/2026/1/6/football-florida-welcomes-back-phil-trautwein-as-offensive-line-coach",
+      "ref": "turn16search2",
+      "type": "official appointment announcement"
+    },
+    "ufBaughBio": {
+      "url": "https://floridagators.com/sports/football/roster/jadan--baugh/18251",
+      "ref": "turn22search2",
+      "type": "official player bio"
+    },
+    "ufBaughClark": {
+      "url": "https://floridagators.com/news/2026/9/27/football-baugh-and-clark-running-mates-jadan-baugh-duke-clark-florida-gators-jon-sumrall",
+      "ref": "turn22view3",
+      "type": "official reporting"
+    },
+    "ufSeries": {
+      "url": "https://floridagators.com/sports/football/opponent-history/university-of-mississippi/79",
+      "ref": "turn22search0",
+      "type": "official series history"
+    },
+    "oleMissSeries": {
+      "url": "https://d2mvzuao0kv8nb.cloudfront.net/news/2026/9/26/football-postgame-notes-vs-florida",
+      "ref": "turn22search4",
+      "type": "opponent official postgame notes"
+    },
+    "apPoll": {
+      "url": "https://apnews.com/article/94f9b825315c6a7347a9aeba66c79c43",
+      "ref": "turn17news18",
+      "type": "poll publisher"
+    },
+    "byuPoll": {
+      "url": "https://byucougars.com/news/2026/09/27/football-stays-in-top-10-following-bye-week",
+      "ref": "turn14view1",
+      "type": "independent university release on dated polls"
+    },
+    "postgameTranscript": {
+      "url": "https://insidethegators.com/2026/09/26/watch-read-i-didnt-come-here-for-us-to-be-average/",
+      "ref": "turn20view3",
+      "type": "published press-conference transcript, not audio independently replayed"
+    },
+    "recruitProfile": {
+      "url": "https://www.on3.com/db/cyion-smith-242617/",
+      "ref": "turn21view1",
+      "type": "ranking service's player profile"
+    },
+    "recruitReporting": {
+      "url": "https://www.si.com/college/florida/football/2028-4-star-s-cyion-smith-commits-to-gators-during-visit-01m3fgbb6a6e",
+      "ref": "turn21view0",
+      "type": "dated reporting with athlete's post and original interview link"
+    },
+    "mondayInjuryReporting": {
+      "url": "https://www.saturdaydownsouth.com/news/college-football/jon-sumrall-provides-injury-update-on-vernell-brown-ahead-of-week-5/",
+      "ref": "turn21search9",
+      "type": "independent report of coach statement; not proof of exact PCL diagnosis"
+    }
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "stories": [
+        "Magazine edition",
+        "all Ole Miss game recaps"
+      ],
+      "claim": "Florida beat then-No. 4 Ole Miss 52–28 in Gainesville on September 26, 2026; Florida became 4–0 overall and 2–0 in the SEC.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufGame",
+        "ufBox"
+      ]
+    },
+    {
+      "id": "C02",
+      "stories": [
+        "Who are these guys?"
+      ],
+      "claim": "Florida had 302 rushing yards on 53 attempts and 196 passing yards on 23 attempts, with no sacks allowed.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufGame",
+        "ufBox"
+      ]
+    },
+    {
+      "id": "C03",
+      "stories": [
+        "Who are these guys?"
+      ],
+      "claim": "Phil Trautwein is Florida’s offensive line coach, hired by Jon Sumrall.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufTrautwein"
+      ]
+    },
+    {
+      "id": "C04",
+      "stories": [
+        "Honor Roll",
+        "10 Thoughts",
+        "Postgame Analysis",
+        "Swagger Back"
+      ],
+      "claim": "Baugh: 29 carries, 142 yards, three rushing touchdowns. Clark: 12 carries, 126 yards, one rushing touchdown.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufBox",
+        "ufAwards"
+      ]
+    },
+    {
+      "id": "C05",
+      "stories": [
+        "Honor Roll"
+      ],
+      "claim": "All three award recipients earned their first career SEC weekly honor.",
+      "status": "CONFLICTING_CORRECTION_STAGED",
+      "sources": [
+        "ufAwards",
+        "ufFreshman2024"
+      ],
+      "resolution": "This is Baugh’s first Offensive Player award, not his first weekly award; he won Freshman of the Week in 2024."
+    },
+    {
+      "id": "C06",
+      "stories": [
+        "Honor Roll"
+      ],
+      "claim": "Florida’s 374-yard rushing game against South Carolina occurred November 11, 2022.",
+      "status": "CONFLICTING_CORRECTION_STAGED",
+      "sources": [
+        "ufAwards",
+        "ufSouthCarolina2022",
+        "ufSchedule2022"
+      ],
+      "resolution": "The date is November 12, 2022. The current UF award release repeats the wrong day; the contemporary box score and schedule establish the correct date."
+    },
+    {
+      "id": "C07",
+      "stories": [
+        "Honor Roll"
+      ],
+      "claim": "The September 28 weekly awards went to Baugh for offense, Montgomery for special teams and Lovett for offensive line.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufAwards"
+      ]
+    },
+    {
+      "id": "C08",
+      "stories": [
+        "Honor Roll",
+        "10 Thoughts"
+      ],
+      "claim": "Montgomery: three kick returns, 128 yards, 74-yard long. Lovett: 69 snaps and an 85.1 PFF pass-blocking grade.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufBox",
+        "ufAwards"
+      ],
+      "note": "PFF grading is attributed to UF’s release; proprietary PFF data was not independently audited."
+    },
+    {
+      "id": "C09",
+      "stories": [
+        "10 Thoughts",
+        "Who are these guys?",
+        "Swagger Back"
+      ],
+      "claim": "Baugh reached five consecutive 100-yard rushing games, joining Emmitt Smith and Fred Taylor.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufBaughClark"
+      ]
+    },
+    {
+      "id": "C10",
+      "stories": [
+        "Postgame Analysis"
+      ],
+      "claim": "Before Ole Miss, only Baugh, Emmitt Smith and Fred Taylor had four consecutive 100-yard rushing games.",
+      "status": "CONFLICTING_CORRECTION_STAGED",
+      "sources": [
+        "ufBaughBio",
+        "ufBaughClark"
+      ],
+      "resolution": "The official bio calls Baugh the fourth player with four consecutive 100-yard games. Simplify the sentence to his entering streak; five consecutive games has a different historical comparison."
+    },
+    {
+      "id": "C11",
+      "stories": [
+        "Swagger Back"
+      ],
+      "claim": "Chambliss threw yet another touchdown pass to make it 38–28.",
+      "status": "CONFLICTING_CORRECTION_STAGED",
+      "sources": [
+        "ufBox"
+      ],
+      "resolution": "Only one passing touchdown; replace “yet another” with “a.”"
+    },
+    {
+      "id": "C12",
+      "stories": [
+        "Postgame Analysis"
+      ],
+      "claim": "Stockton had a 25-yard punt return.",
+      "status": "NEEDS_QUALIFICATION",
+      "sources": [
+        "ufBox"
+      ],
+      "resolution": "The play-by-play records 25 yards before a holding penalty; the statistical summary credits 16. Add penalty context when editing, rather than calling the raw play description false."
+    },
+    {
+      "id": "C13",
+      "stories": [
+        "10 Thoughts",
+        "Woods Chipper",
+        "EddieGilley fiveplays"
+      ],
+      "claim": "Woods forced a fumble on a sack, recovered by Myles Graham; DJ Coleman intercepted a pass at the Florida 5 in the fourth quarter.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufBox"
+      ]
+    },
+    {
+      "id": "C14",
+      "stories": [
+        "10 Thoughts",
+        "Woods Chipper"
+      ],
+      "claim": "Florida scored touchdowns on its first five second-half possessions.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufBox"
+      ]
+    },
+    {
+      "id": "C15",
+      "stories": [
+        "Swagger Back"
+      ],
+      "claim": "Florida leads the Ole Miss series 14–13–1 after the game.",
+      "status": "VERIFIED",
+      "sources": [
+        "ufSeries",
+        "oleMissSeries"
+      ]
+    },
+    {
+      "id": "C16",
+      "stories": [
+        "Chomp Up the Charts",
+        "Magazine supportingcopy"
+      ],
+      "claim": "On September 27, Florida ranked No. 8 in AP and Coaches polls, rising 13 and 14 places respectively.",
+      "status": "VERIFIED",
+      "sources": [
+        "apPoll",
+        "byuPoll"
+      ]
+    },
+    {
+      "id": "C17",
+      "stories": [
+        "Commit, Then Rout"
+      ],
+      "claim": "Cyion Smith committed to Florida September 26: Blountstown, class of 2028, safety, 6 feet 2, 175 pounds; Industry No. 279 overall and No. 30 safety.",
+      "status": "VERIFIED",
+      "sources": [
+        "recruitProfile",
+        "recruitReporting"
+      ],
+      "note": "Ratings are a dated snapshot and may change. Interview quotations and the 70-prospect attendance claim were not fully audited."
+    },
+    {
+      "id": "C18",
+      "stories": [
+        "MRI Confirms Grade1PCL",
+        "10 Thoughts injuryupdate"
+      ],
+      "claim": "An MRI confirmed a Grade 1 PCL sprain, according to confidential GatorBait sources.",
+      "status": "UNVERIFIED_CONFIDENTIAL_SOURCE",
+      "sources": [
+        "mondayInjuryReporting",
+        "postgameTranscript"
+      ],
+      "resolution": "Public coach reporting supports favorable imaging and a non-long-term injury, but not the exact PCL diagnosis or grade. The editor must verify private source evidence. Do not call the claim false or independently verified based on this search."
+    },
+    {
+      "id": "C19",
+      "stories": [
+        "Pay the Toll"
+      ],
+      "claim": "The exact Monday Sumrall quotations about Tuesday practice and multiple injury updates.",
+      "status": "PARTIALLY_VERIFIED",
+      "sources": [
+        "mondayInjuryReporting"
+      ],
+      "resolution": "An independent report corroborates the favorable MRI statement. The full Monday recording or transcript was not reviewed; all quotations are not certified."
+    },
+    {
+      "id": "C20",
+      "stories": [
+        "10 Thoughts",
+        "Woods Chipper",
+        "It Ain't Fully Awake Yet"
+      ],
+      "claim": "Saturday Sumrall and Woods quotations about Duke Clark, critical plays, the fumble, knee concerns and program progress.",
+      "status": "PARTIALLY_VERIFIED",
+      "sources": [
+        "postgameTranscript"
+      ],
+      "resolution": "A retrieved press-conference transcript matches the checked Duke Clark, knee, critical-play and program-progress remarks and Woods’ recovery description. Original audio was not played and every quotation was not exhaustively compared."
+    },
+    {
+      "id": "C21",
+      "stories": [
+        "Who are these guys?"
+      ],
+      "claim": "Every national offense ranking, career-record position, preseason publication rating, remaining opponent record and historical movie quotation in the cover column.",
+      "status": "NOT_FULLY_CHECKED",
+      "sources": [],
+      "resolution": "Core game facts are verified. These ancillary claims need further dated evidence; do not label the whole column triple-checked."
+    },
+    {
+      "id": "C22",
+      "stories": [
+        "What Happened in College Football Saturday"
+      ],
+      "claim": "The full Top 25 roundup’s results and upsets.",
+      "status": "NOT_FULLY_CHECKED",
+      "sources": [],
+      "resolution": "The Florida result is verified; other games were not audited claim by claim."
+    },
+    {
+      "id": "C23",
+      "stories": [
+        "Bound for the CFB Top Ten"
+      ],
+      "claim": "FPI forecasts imply a 10–2 record and playoff place.",
+      "status": "NOT_FULLY_CHECKED",
+      "sources": [],
+      "resolution": "A model projection or opinion does not guarantee an outcome. The dated FPI inputs were not verified."
+    },
+    {
+      "id": "C24",
+      "stories": [
+        "10 Thoughts",
+        "ChrisSpearsgalleries"
+      ],
+      "claim": "A generic native Staff account does not establish that an article lacks a named writer or photographer.",
+      "status": "VERIFIED_FROM_NATIVE_ARTICLE",
+      "sources": [],
+      "resolution": "The 10 Thoughts body explicitly credits Chris Spears. Galleries credit his photography. Preserve these named credits; the webmaster owns the account-attribution audit."
+    }
+  ]
+}

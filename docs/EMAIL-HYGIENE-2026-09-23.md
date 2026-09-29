@@ -1,5 +1,7 @@
 # Email hygiene and sender policy — 2026-09-23
 
+> Historical baseline. For current audience handling, read the September 29 addendum below and live issue #34 before acting.
+
 ## Verified changes
 Three currently BOUNCED addresses were set UNSUBSCRIBED, preserving deliverability flags and all CRM/member/order records. Bulk results: 3 successes, 0 failures. No recipients were resubscribed. No test blast.
 
@@ -23,3 +25,54 @@ Sending-domain query for gatorbaitmedia.com failed 428 SENDER_DETAILS_DO_NOT_EXI
 - Inspect bounce and complaint outcomes after sends. No full-list reactivation or deliverability claim based on sender address alone.
 - Compare like audiences and time windows; recent campaign performance is not an A/B test of Gmail vs domain.
 - Keep the native unsubscribe footer and avoid manual HTML changes that remove compliance controls.
+
+## Current operating addendum — 2026-09-29
+
+**The September 23 sections above are historical evidence, not current automation instructions.** Do not activate a sender from this document. Read live Wix and issue #34; both automatic story senders were subsequently disabled. This addendum changes audience hygiene/classification only, not send authority, billing, membership access, consent, or the send governor.
+
+### Reconciled email cohorts
+
+Owner authorized list cleaning and simplification of legacy subscription labels. Audited all 2,583 CRM contacts and all 1,644 pricing-plan orders. The approved canonical email pool remains bounded to 1,136 contacts, not all contacts, all members, or all paying customers. These are **email-cohort counts**, not financial subscriber totals.
+
+| Role | Stable label key | Tag | Verified count |
+| --- | --- | --- | ---: |
+| Email-eligible reference pool; not permission to send all | custom.gatorbait-active-email-audience | oHon1 | 1,136 |
+| Paid email readers | custom.gatorbait-paid-subscribers | FiVde | 291 |
+| Free email readers | custom.gatorbait-nonpaid-email-subscribers-R6Ye0 | R6Ye0 | 781 |
+| Former paid email readers | custom.gatorbait-former-paid-subscribers-reengagement-5m4kd | 5m4kd | 9 |
+| Active access, payment status unclear — review only | custom.review-active-access-payment-status-unclear-7yuom | 7yuom | 55 |
+
+The four classifications partition the reference pool exactly: no overlaps, missing contacts, or contacts outside the reference pool. All 1,136 had current SUBSCRIBED consent, VALID or NOT_SET deliverability, and no Do Not Market label at verification. NOT_SET **deliverability** is distinct from NOT_SET **consent**, which is excluded. Recheck before every authorized campaign; a saved label is not continuing consent or send permission.
+
+Current paid classification requires a positive-price paid order with current access. Preserve next-payment-date cancellation access until its verified end date. Other current access, pending/paused or ambiguous entitlement is review-only, not automatically free or former paid. Former paid requires historical paid-order evidence and no current access. Do not overwrite system/pricingPlans labels, actual orders, billing, member permissions or subscription consent. Retain historical enrollment labels as provenance, not audience selectors.
+
+Old Good Emails and Clean Email List display names now start LEGACY and point to the canonical pool. September 28/29 send cohorts and engaged-reader lists start SNAPSHOT; do not reuse them without fresh checks. Do Not Market is EXCLUDE; inactive/re-opt-in lists are HOLD. Names changed, stable keys/tags preserved. No labels or customer records were deleted.
+
+### Mandatory lookup and QC safeguards
+
+- Use explicit email batches of **30 or fewer** for email-subscription queries. A request of 100 returned only 50 even with a larger requested limit; attempting offset paging did not resolve the filtered coverage problem.
+- Verify every requested email has a returned subscription record. Individually recheck missing records; unresolved records mean UNKNOWN and halt classification changes for affected contacts. Never treat partial/missing API results as proof of absent consent.
+- Keep membership/payment classification, marketing consent, deliverability and engagement as separate dimensions. Being paid does not imply opted in. A no-open record does not establish an invalid address.
+- Exclude current BOUNCED, SPAM_COMPLAINT and INACTIVE deliverability, unsubscribed/pending/not-set consent, and Do Not Market. Never clear suppression or resubscribe as cleanup. Preserve customer and order records.
+- A historical campaign bounce alone is not a confirmed hard bounce. The four September 29 bounced recipients still reported SUBSCRIBED/VALID; the available campaign report did not identify hard versus soft failures. Do not permanently suppress those four from that evidence alone.
+- Before mutation, retain exact prior/next label membership privately and calculate a bounded diff. Use exact IDs, not broad cleanup filters. No customer emails or contact IDs in public GitHub.
+- Verify both completed bulk-job outcomes AND independent contact membership. A completed job is not sufficient: the new review label initially failed to appear despite success; one bounded add-only repair was independently verified with 55/55 assignments and no failures.
+- Update Label's current schema requires nested `{ label: { key, displayName } }`. The older top-level displayName example returned 400. Prefer schema over stale examples, and allow only one evidence-based contract correction.
+- Do not enlarge the pool or combine paid/free/former/review lists merely because they are email-eligible. Preserve current owner-approved audience, rolling-24h/7-day governor, verified sender and unsubscribe/footer checks.
+
+### September 29 recovery record
+
+An incomplete subscription lookup was incorrectly interpreted as absent consent, removing audience labels from 659 contacts. This was disclosed and stopped. No contacts, memberships, billing, consent or email delivery were changed. A complete 30-email-batch audit returned 2,581 subscription records for 2,583 CRM addresses (two unresolved records were excluded). Current eligible records were reconciled, rather than blindly restoring obsolete flags; six recovery jobs completed without failures.
+
+Independent post-recovery checks covered all 1,147 relevant email addresses with zero missing. The six repaired audience labels had no currently ineligible records. Subsequent owner-authorized reclassification changed 67 contacts, renamed 13 custom label displays and created the review-only label. Final partition is 291 + 781 + 9 + 55 = 1,136, verified from fresh contact queries. No claim of an exact historical rollback.
+
+### Delivery and ongoing maintenance
+
+This morning's existing campaign `0c20bbab-0cf1-44df-adec-c20822f32035` was owner-authorized elsewhere and distributed September 29 at 07:45:45 ET. Latest verified snapshot: 451 delivered, 202 unique opens, 48 unique clicks, 4 bounces, 0 complaints; total mailsSent 456. The SENT-recipient endpoint returned 455 records, so do not silently reconcile that reporting discrepancy. Account ACTIVE, internal rank BAD. A green builder/quality badge is not exposed by the checked API and has not been visually verified; no reputation-recovery claim.
+
+Existing Newsletter Release Check must reread these cohorts and the morning send receipt before considering any future release. Its timing, send authority and audience cap are not expanded by this cleanup. No new cleanup scheduler was created. CURRENT-STATE records Claude monthly cleanup trigger `trig_01DACQgK3zEXNwpaaVSExWwD`; it was not callable from this session and is not independently verified or updated. Route its policy refresh through existing issue #34, not a duplicate scheduler.
+
+Official guidance:
+- https://support.wix.com/en/article/why-some-email-campaigns-get-bounced
+- https://support.wix.com/en/article/email-marketing-adding-recipients-to-your-campaign
+- https://support.wix.com/en/article/improving-your-email-sender-reputation

@@ -133,6 +133,13 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-lead h1{font-size:clamp(40px,11.5vw,54px);line-height:.94;text-transform:uppercase;color:var(--fp-ink)}
 #gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(34px,9.6vw,46px)}
 #gbm-live.fp26 .fp-w{display:inline-block}
+/* Phones: kicker and headline first, then the photo, then the dek and byline, so the headline sits high on the screen and clear of Wix's cookie panel (live QC, Sept. 29). */
+@media(max-width:820px){
+#gbm-live.fp26 .fp-lead-copy{display:contents}
+#gbm-live.fp26 .fp-lead-copy>*{order:3}
+#gbm-live.fp26 .fp-lead-copy>.fp-kick,#gbm-live.fp26 .fp-lead-copy>h1{order:1}
+#gbm-live.fp26 .fp-lead-photo{order:2}
+}
 #gbm-live.fp26 .fp-dek{font:700 20px/1.2 var(--fp-cond);color:var(--fp-ink)}
 #gbm-live.fp26 .fp-by{font:700 12px/1.4 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--fp-ink)}
 #gbm-live.fp26 .fp-by span{color:var(--fp-ink-2);font-weight:600;letter-spacing:.06em;margin-left:8px}

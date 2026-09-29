@@ -1,0 +1,361 @@
+{
+  "createdAt": "2026-09-29T03:40:00Z",
+  "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+  "redirects": [
+    {
+      "from": "/groups",
+      "to": "/",
+      "id": "2c8bd562-5303-4db4-b0f7-9e81d2c53466"
+    },
+    {
+      "from": "/2021-gatorbait-magazine",
+      "to": "/magazine",
+      "id": "c80cbae1-edfb-452e-8db0-c3e194de4b9b"
+    },
+    {
+      "from": "/magazine/2022",
+      "to": "/magazine",
+      "id": "6a181771-f037-4cc8-998e-07d7e5d56e53"
+    },
+    {
+      "from": "/group/all-gator-sports/discussion",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "6392cf1d-049f-4115-bc86-f556ac5380ea",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/all-gator-sports/discussion/10df3c74-b7ad-45cf-ac8d-2a969d646c90",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "ad5d522a-d5e7-4952-90ae-cc97ed0aff24",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/game-day-threads/discussion",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "890a0f8f-ee1b-4a84-a52f-b63a21ea0d0a",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/game-day-threads/discussion/469cfd05-9617-4414-91af-fc950526b058",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "ae8a51bd-ceae-4db7-8728-73149418e079",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gator-football-talk/discussion",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "f3df140b-b78b-4283-a2f2-ec79def9fd97",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gator-football-talk/discussion/afa97563-155c-4115-a085-fecf2117e033",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "af065814-5193-4348-b63f-47d41ec20538",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gator-hoops/discussion",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "a3e1d55a-7308-4baf-9e59-a31be1b93ad6",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gator-hoops/discussion/abaaba30-37bd-47d0-b4d2-023443ae73e7",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "d609b474-015d-4168-828f-56ba3b0548ef",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gatorbait-gold-vip-lounge/discussion",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "f75065db-434f-454b-9592-0913d5ba8539",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gatorbait-media-group/discussion",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "08295edc-63d3-4884-abd3-875dc033ad6d",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gatorbait-media-group/discussion/01aec2de-471f-4343-a227-c593a900cb34",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "8c33adae-1bbe-46b7-aa9e-8bc289e677bc",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gatorbait-media-group/discussion/506e802d-1f88-4058-94c2-8715dbee2cae",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "73ffb9f5-1431-4092-8dc7-dcaaeb36f3e4",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gatorbait-media-group/discussion/f5f6086f-4862-49d5-acf2-324f2fa0416a",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "40cd60bd-8271-48d1-b5ce-2404b8c289ac",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/recruiting-central/discussion",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "23b286e4-5945-4550-8706-b36e9e95a6e0",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/recruiting-central/discussion/6d2493fa-a1e8-4fbe-bb73-9622c03831fa",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "8b7b56a4-fdb2-46e8-9448-ba53fee9b92e",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/swamp-talk/discussion",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "bd6fd0f7-dce0-4602-8df9-1861b139abf3",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/the-swamp-lounge/discussion",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "d2030b77-b51c-4e08-89a4-f29523a126d2",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/the-swamp-lounge/discussion/4bac1346-fb0c-4c92-a414-446a060dfac3",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "b972613c-3177-492c-b9ce-be32a71cd74e",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/all-gator-sports",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "3b35b142-1fdf-4005-ba53-0504ec239205",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/game-day-threads",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "6d64b260-c0c2-4409-b8e1-dc0cb35dcb6d",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gator-football-talk",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "6f46633f-908e-469a-a951-e868ef2465d3",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gator-hoops",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "282ccad4-1b59-4b4d-949e-dc4a684f7c86",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gatorbait-gold-vip-lounge",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "a739b09d-3463-41a7-acbb-062c9a521bbf",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/gatorbait-media-group",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "c4230428-d967-4ba4-80c3-382d85cc48d0",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/recruiting-central",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "19f5b878-5376-4989-a506-efcc11db4c8d",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/swamp-talk",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "935dee74-99d6-4f78-a8ad-19da014645af",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/group/the-swamp-lounge",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "f7d4c1fe-9e5d-4165-9da8-2f1130a7af7e",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/event-list",
+      "to": "/the-buddy-martin-show",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "744f00b4-6e10-486c-b088-d2b3c7f0fde2",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/members",
+      "to": "/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "e8b18d5e-f8e1-4996-8371-29446a285abc",
+      "createdDate": "2026-09-29T03:39:06.937Z"
+    },
+    {
+      "from": "/product-page/gb-tailgate-mug-with-a-handle",
+      "to": "https://gatorbait2026.itemorder.com/shop/home/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "a4d89db1-78a8-45cc-b195-ae588c3477d8",
+      "createdDate": "2026-09-29T03:39:56.052Z"
+    },
+    {
+      "from": "/product-page/gb-women-s-crop-tee",
+      "to": "https://gatorbait2026.itemorder.com/shop/home/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "5ec37835-44c8-43f8-94f1-e1c194a254ba",
+      "createdDate": "2026-09-29T03:39:56.052Z"
+    },
+    {
+      "from": "/product-page/short-sleeve-unisex-t-shirt",
+      "to": "https://gatorbait2026.itemorder.com/shop/home/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "d8dc3c07-c248-4885-b8ac-b9bff6f2ea02",
+      "createdDate": "2026-09-29T03:39:56.052Z"
+    },
+    {
+      "from": "/product-page/women-s-relaxed-t-shirt-no-quote",
+      "to": "https://gatorbait2026.itemorder.com/shop/home/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "dfd37f94-f302-4fda-887d-8af88d0fdea9",
+      "createdDate": "2026-09-29T03:39:56.052Z"
+    },
+    {
+      "from": "/product-page/women-s-short-sleeve-t-shirt-with-quote-on-back",
+      "to": "https://gatorbait2026.itemorder.com/shop/home/",
+      "options": {
+        "groupRedirect": false
+      },
+      "source": "REDIRECTOR",
+      "id": "0229e709-2906-4ff1-a051-b4f54cedcf1f",
+      "createdDate": "2026-09-29T03:39:56.052Z"
+    }
+  ]
+}

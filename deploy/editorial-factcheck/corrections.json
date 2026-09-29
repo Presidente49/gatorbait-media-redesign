@@ -1,0 +1,46 @@
+[
+  {
+    "postId": "d0567063-f873-407b-a849-81d9c7b19c89",
+    "title": "Honor Roll",
+    "replacements": [
+      {
+        "before": "It's the first career SEC weekly honor for all three.",
+        "after": "It is Baugh’s first SEC Offensive Player of the Week award and the first SEC weekly honor for Montgomery and Lovett.",
+        "claimId": "C05"
+      },
+      {
+        "before": "Nov. 11, 2022",
+        "after": "Nov. 12, 2022",
+        "claimId": "C06"
+      }
+    ],
+    "excerptCandidate": {
+      "beforeFromRss": "Jadan Baugh, London Montgomery and Bryce Lovett each won their first SEC weekly honor after Florida's 52-28 win over No. 4 Ole Miss.",
+      "after": "Jadan Baugh earned his first SEC Offensive Player of the Week award, while London Montgomery and Bryce Lovett received their first SEC weekly honors after Florida’s 52-28 win over No. 4 Ole Miss.",
+      "precondition": "Read and exactly match the native excerpt before mutation; this original was observed in the current RSS description.",
+      "claimId": "C05"
+    }
+  },
+  {
+    "postId": "1c12e61d-0018-4089-896c-47ab5d470655",
+    "title": "Postgame Analysis",
+    "replacements": [
+      {
+        "before": "who joined Emmitt Smith and Fred Taylor as the only Florida back to have four straight 100-yard rushing games in Florida history.",
+        "after": "who entered the game with four straight 100-yard rushing games.",
+        "claimId": "C10"
+      }
+    ]
+  },
+  {
+    "postId": "bb1d7484-5c32-433c-b4e6-5760e5433874",
+    "title": "The Swamp Gets Its Swagger Back",
+    "replacements": [
+      {
+        "before": "he threw yet another touchdown pass to make it 38-28",
+        "after": "he threw a touchdown pass to make it 38-28",
+        "claimId": "C11"
+      }
+    ]
+  }
+]

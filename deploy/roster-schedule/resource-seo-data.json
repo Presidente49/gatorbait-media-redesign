@@ -1,0 +1,97 @@
+{
+  "tags": [
+    {
+      "type": "title",
+      "children": "Florida Football: 2026 Roster & Schedule | GatorBait",
+      "custom": false,
+      "disabled": false
+    },
+    {
+      "type": "meta",
+      "props": {
+        "name": "description",
+        "content": "Florida’s full 2026 football roster, game results and upcoming schedule. A permanent GatorBait season guide, checked against official UF sources."
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+    },
+    {
+      "type": "link",
+      "props": {
+        "rel": "canonical",
+        "href": "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+    },
+    {
+      "type": "meta",
+      "props": {
+        "property": "og:title",
+        "content": "Florida Football: 2026 Roster & Schedule"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+    },
+    {
+      "type": "meta",
+      "props": {
+        "property": "og:description",
+        "content": "Florida’s full 2026 football roster, game results and upcoming schedule. A permanent GatorBait season guide, checked against official UF sources."
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+    },
+    {
+      "type": "meta",
+      "props": {
+        "property": "og:image",
+        "content": "https://static.wixstatic.com/media/16b519_a7ef6b30ac954bf5962d6583bbd14b1e~mv2.jpg"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+    },
+    {
+      "type": "meta",
+      "props": {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+    },
+    {
+      "type": "meta",
+      "props": {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+    }
+  ],
+  "settings": {
+    "preventAutoRedirect": false,
+    "keywords": [
+      {
+        "term": "Florida Gators roster",
+        "isMain": true
+      },
+      {
+        "term": "2026 Florida football schedule",
+        "isMain": false
+      },
+      {
+        "term": "Florida football results",
+        "isMain": false
+      }
+    ]
+  }
+}

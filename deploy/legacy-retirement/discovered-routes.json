@@ -1,0 +1,122 @@
+{
+  "site": "https://www.gatorbaitmedia.com",
+  "observedAt": "2026-09-29T03:37:52.221189+00:00",
+  "sourceSitemaps": {
+    "group-lists-sitemap.xml": [
+      "https://www.gatorbaitmedia.com/group/game-day-threads/discussion",
+      "https://www.gatorbaitmedia.com/group/swamp-talk/discussion",
+      "https://www.gatorbaitmedia.com/group/the-swamp-lounge/discussion",
+      "https://www.gatorbaitmedia.com/group/gator-football-talk/discussion",
+      "https://www.gatorbaitmedia.com/group/recruiting-central/discussion",
+      "https://www.gatorbaitmedia.com/group/gator-hoops/discussion",
+      "https://www.gatorbaitmedia.com/group/gatorbait-gold-vip-lounge/discussion",
+      "https://www.gatorbaitmedia.com/group/all-gator-sports/discussion",
+      "https://www.gatorbaitmedia.com/group/gatorbait-media-group/discussion"
+    ],
+    "group-posts-sitemap.xml": [
+      "https://www.gatorbaitmedia.com/group/gator-football-talk/discussion/afa97563-155c-4115-a085-fecf2117e033",
+      "https://www.gatorbaitmedia.com/group/gatorbait-media-group/discussion/f5f6086f-4862-49d5-acf2-324f2fa0416a",
+      "https://www.gatorbaitmedia.com/group/all-gator-sports/discussion/10df3c74-b7ad-45cf-ac8d-2a969d646c90",
+      "https://www.gatorbaitmedia.com/group/game-day-threads/discussion/469cfd05-9617-4414-91af-fc950526b058",
+      "https://www.gatorbaitmedia.com/group/the-swamp-lounge/discussion/4bac1346-fb0c-4c92-a414-446a060dfac3",
+      "https://www.gatorbaitmedia.com/group/gatorbait-media-group/discussion/506e802d-1f88-4058-94c2-8715dbee2cae",
+      "https://www.gatorbaitmedia.com/group/gatorbait-media-group/discussion/01aec2de-471f-4343-a227-c593a900cb34",
+      "https://www.gatorbaitmedia.com/group/recruiting-central/discussion/6d2493fa-a1e8-4fbe-bb73-9622c03831fa",
+      "https://www.gatorbaitmedia.com/group/gator-hoops/discussion/abaaba30-37bd-47d0-b4d2-023443ae73e7"
+    ],
+    "pages-sitemap.xml": [
+      "https://www.gatorbaitmedia.com/event-list",
+      "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+      "https://www.gatorbaitmedia.com/contact",
+      "https://www.gatorbaitmedia.com/2021-gatorbait-magazine",
+      "https://www.gatorbaitmedia.com/about",
+      "https://www.gatorbaitmedia.com",
+      "https://www.gatorbaitmedia.com/magazine",
+      "https://www.gatorbaitmedia.com/policies",
+      "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+      "https://www.gatorbaitmedia.com/projects",
+      "https://www.gatorbaitmedia.com/magazine/2022",
+      "https://www.gatorbaitmedia.com/tags",
+      "https://www.gatorbaitmedia.com/members",
+      "https://www.gatorbaitmedia.com/groups"
+    ],
+    "store-products-sitemap.xml": [
+      "https://www.gatorbaitmedia.com/product-page/women-s-short-sleeve-t-shirt-with-quote-on-back",
+      "https://www.gatorbaitmedia.com/product-page/gb-tailgate-mug-with-a-handle",
+      "https://www.gatorbaitmedia.com/product-page/short-sleeve-unisex-t-shirt",
+      "https://www.gatorbaitmedia.com/product-page/gb-women-s-crop-tee",
+      "https://www.gatorbaitmedia.com/product-page/the-golden-season-by-franz-beard",
+      "https://www.gatorbaitmedia.com/product-page/women-s-relaxed-t-shirt-no-quote"
+    ],
+    "store-categories-sitemap.xml": [
+      "https://www.gatorbaitmedia.com/category/all-products",
+      "https://www.gatorbaitmedia.com/category/accessories",
+      "https://www.gatorbaitmedia.com/category/apparel",
+      "https://www.gatorbaitmedia.com/category/womens-collection"
+    ]
+  },
+  "requestedLegacyRoutes": [
+    "/projects",
+    "/magazine/2022",
+    "/2021-gatorbait-magazine",
+    "/groups",
+    "/group/*",
+    "/event-list",
+    "/members"
+  ],
+  "currentRequiredRoutes": [
+    "/",
+    "/gatorbait-media-blogs",
+    "/post/*",
+    "/magazine",
+    "/the-buddy-martin-show",
+    "/pricing-plans",
+    "/account/my-account",
+    "/contact",
+    "/policies"
+  ],
+  "notes": [
+    "Read-only discovery; no redirects or deletions performed.",
+    "Preserve account/my-account and pricing-plans checkout. /members directory is distinct from authenticated account routes.",
+    "Existing groups records are backend community data; retiring public routes does not authorize deleting records or members.",
+    "Existing canonical post URLs and Blog category/tag/pagination routes are functional archives, not legacy shell pages.",
+    "Native Wix Store product/category URLs below remain listed in current sitemaps; these are legacy merchandise candidates because the active store links use ItemOrder. Sitemap presence alone is not a verified HTTP product-page response. No about/tags retirement classification made.",
+    "The Golden Season book product may be a distinct active offer rather than migrated apparel. Do not automatically retire the book or native checkout without verifying current sales/delivery dependency."
+  ],
+  "exactGroupRoutes": [
+    "/group/all-gator-sports/discussion",
+    "/group/all-gator-sports/discussion/10df3c74-b7ad-45cf-ac8d-2a969d646c90",
+    "/group/game-day-threads/discussion",
+    "/group/game-day-threads/discussion/469cfd05-9617-4414-91af-fc950526b058",
+    "/group/gator-football-talk/discussion",
+    "/group/gator-football-talk/discussion/afa97563-155c-4115-a085-fecf2117e033",
+    "/group/gator-hoops/discussion",
+    "/group/gator-hoops/discussion/abaaba30-37bd-47d0-b4d2-023443ae73e7",
+    "/group/gatorbait-gold-vip-lounge/discussion",
+    "/group/gatorbait-media-group/discussion",
+    "/group/gatorbait-media-group/discussion/01aec2de-471f-4343-a227-c593a900cb34",
+    "/group/gatorbait-media-group/discussion/506e802d-1f88-4058-94c2-8715dbee2cae",
+    "/group/gatorbait-media-group/discussion/f5f6086f-4862-49d5-acf2-324f2fa0416a",
+    "/group/recruiting-central/discussion",
+    "/group/recruiting-central/discussion/6d2493fa-a1e8-4fbe-bb73-9622c03831fa",
+    "/group/swamp-talk/discussion",
+    "/group/the-swamp-lounge/discussion",
+    "/group/the-swamp-lounge/discussion/4bac1346-fb0c-4c92-a414-446a060dfac3"
+  ],
+  "nativeStoreRoutesForRetirementReview": [
+    "/category/accessories",
+    "/category/all-products",
+    "/category/apparel",
+    "/category/womens-collection",
+    "/product-page/gb-tailgate-mug-with-a-handle",
+    "/product-page/gb-women-s-crop-tee",
+    "/product-page/short-sleeve-unisex-t-shirt",
+    "/product-page/the-golden-season-by-franz-beard",
+    "/product-page/women-s-relaxed-t-shirt-no-quote",
+    "/product-page/women-s-short-sleeve-t-shirt-with-quote-on-back"
+  ],
+  "currentExternalStore": "https://gatorbait2026.itemorder.com/shop/home/",
+  "nativeStoreExceptionsRequiringReview": [
+    "/product-page/the-golden-season-by-franz-beard"
+  ]
+}

@@ -16,6 +16,20 @@ Before a story is published:
 
 For major stories, create branded art before release when supplied art is weak. Do not use faces unless there is a real supplied/licensed photo.
 
+### Attribution and fact verification — owner direction, September 28, 2026
+
+Brenden confirmed that his otherwise unnamed or generic Staff AI-assisted writing should credit **Brenden Martin**. This is an authorship instruction, not evidence that an article's factual claims are correct. Preserve genuine named writers, reporting contributions and separate photographer credits. Read the existing body, captions and source notes before replacing a generic native author record; an inline named byline takes precedence over a generic Staff account. Keep the native author, visible byline, cards and structured metadata consistent. Do not relabel Chris Spears' photographs or firsthand reporting as someone else's work.
+
+Use three recorded editorial passes before publication or material republication:
+
+1. **Source check:** identify the material claims and attach dated primary evidence. Check names, roles, dates, scores, records, rankings, injury descriptions and recruiting status against the correct event and season. Use official box scores for game statistics, dated poll releases for rankings, the original interview/transcript for quotations, and the actual ranking service for recruiting ratings. Keep reporting, inference and predictions distinct.
+2. **Independent check:** a separate reviewer cross-checks important numbers, chronology, superlatives and quotations using an independent record where practical. Multiple sites repeating one release are one source. Recompute arithmetic and compare historical claims with the original game record; even official releases can contain typos. Quote checks require the exact words, speaker and context; a related article is not proof of an unexamined quote.
+3. **Final copy and public check:** reconcile headline, deck, body, author account, inline credits, captions, alt text and article metadata. Confirm the final canonical page and record which claims passed, were corrected or remain unresolved. Preserve rollback and correction notes; the controller is the sole live writer.
+
+For injury or confidential-source claims, record the reporter's evidence privately and obtain editorial verification. A public search failing to corroborate a claim does not prove it false, and an AI-generated statement that "sources said" is not source evidence. Do not label an unresolved claim independently verified or promote it as confirmed in new summaries. Resolve, qualify or remove unsupported material before publishing new copy.
+
+These are publishing requirements, not a claim that an automatic fact-check service is installed or that every archived story has passed. The bounded September 28 review and exact correction evidence are recorded in `deploy/editorial-factcheck/README.md` and `claim-ledger.json`.
+
 ## 2. Automatic blog email = custom GatorBait article alert
 
 This is the production single-story automatic email, not a GatorBait Magazine issue.

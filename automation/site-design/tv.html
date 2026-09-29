@@ -1,10 +1,10 @@
 <style id="gbm-media-hub-v1">
-html:has(#gbm-media-hub) #SITE_PAGES{display:none!important}
+html:has(#gbm-media-hub) #SITE_CONTAINER,html:has(#gbm-media-hub) #SITE_PAGES,html:has(#gbm-media-hub) #SITE_FOOTER{display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
 html:has(#gbm-media-hub) #SITE_CONTAINER,html:has(#gbm-media-hub) #masterPage,html:has(#gbm-media-hub) #PAGES_CONTAINER,html:has(#gbm-media-hub) #SITE_PAGES_TRANSITION_GROUP{height:auto!important;min-height:0!important;margin-bottom:0!important;padding-bottom:0!important}
 #gbm-media-hub,#gbm-media-hub *{box-sizing:border-box}
-#gbm-media-hub{background:#fffdf9;color:#11274a;font:15px/1.6 Arial,sans-serif;padding:30px 24px 44px;position:relative;z-index:3}
+#gbm-media-hub{background:#fffdf9;color:#11274a;font:15px/1.6 Barlow,sans-serif;padding:30px 24px 44px;position:relative;z-index:3}
 #gbm-media-hub .mh-wrap{max-width:1184px;margin:auto}
-#gbm-media-hub h1,#gbm-media-hub h2{font-family:Georgia,serif;letter-spacing:-.025em;line-height:1.12}
+#gbm-media-hub h1,#gbm-media-hub h2{font-family:"Barlow Condensed",Barlow,Arial,sans-serif;letter-spacing:-.025em;line-height:1.12}
 #gbm-media-hub h1{font-size:42px;margin:8px 0 16px}
 #gbm-media-hub h2{font-size:30px;margin:8px 0 16px}
 #gbm-media-hub .mh-kicker{color:#ba3c0c;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
@@ -12,7 +12,7 @@ html:has(#gbm-media-hub) #SITE_CONTAINER,html:has(#gbm-media-hub) #masterPage,ht
 #gbm-media-hub .mh-watch{display:grid;grid-template-columns:1.8fr 1fr;gap:30px;border-block:1px solid #ccd3dc;padding:26px 0}
 #gbm-media-hub .mh-player{aspect-ratio:16/9;background:#11274a;display:grid;place-items:center;color:#fff;min-width:0}
 #gbm-media-hub .mh-player iframe{width:100%;height:100%;border:0;aspect-ratio:16/9}
-#gbm-media-hub button,#gbm-media-hub .mh-button{font:700 14px/1.4 Arial,sans-serif;cursor:pointer;border:0;min-height:48px;padding:14px 20px;background:#e84b10;color:#fff;display:inline-block;text-decoration:none}
+#gbm-media-hub button,#gbm-media-hub .mh-button{font:700 14px/1.4 Barlow,sans-serif;cursor:pointer;border:0;min-height:48px;padding:14px 20px;background:#e84b10;color:#fff;display:inline-block;text-decoration:none}
 #gbm-media-hub a{color:inherit;text-underline-offset:4px}
 #gbm-media-hub a:focus-visible,#gbm-media-hub button:focus-visible{outline:3px solid #e84b10;outline-offset:4px}
 #gbm-media-hub .mh-links a{display:block;padding:10px 0;font-weight:700;font-size:14px}
@@ -21,13 +21,65 @@ html:has(#gbm-media-hub) #SITE_CONTAINER,html:has(#gbm-media-hub) #masterPage,ht
 #gbm-media-hub .mh-programs p{color:#586475}
 #gbm-media-hub .mh-related{display:flex;gap:24px;flex-wrap:wrap;border-top:1px solid #ccd3dc;margin-top:32px;padding-top:20px;font-size:14px;font-weight:700}
 @media(max-width:820px){#gbm-media-hub{padding:22px 18px 30px}#gbm-media-hub h1{font-size:30px}#gbm-media-hub h2{font-size:25px}#gbm-media-hub .mh-watch,#gbm-media-hub .mh-programs{grid-template-columns:1fr;gap:22px}}
-</style>
+#gbm-media-hub .mh-filmstrip{padding:22px 0;border-bottom:1px solid #ccd3dc}
+#gbm-media-hub .mh-strip-heading{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+#gbm-media-hub .mh-strip-heading h2{font-size:22px;margin:0 auto 0 0}
+#gbm-media-hub .mh-strip-heading button{font-size:13px;padding:10px 14px;min-height:44px}
+#gbm-media-hub .mh-strip-heading a{font-size:14px;font-weight:700}
+#gbm-media-hub .mh-player-note{font-size:13px;color:#586475;margin:12px 0}
+#gbm-media-hub .mh-strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 2px 14px}
+#gbm-media-hub .mh-video-card{flex:0 0 224px;scroll-snap-align:start;text-decoration:none}
+#gbm-media-hub .mh-video-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#11274a}
+#gbm-media-hub .mh-video-card span{display:block;font-size:14px;line-height:1.4;font-weight:600;padding:9px 0}
+#gbm-media-hub .mh-video-card:hover span{text-decoration:underline}
+@media(max-width:600px){#gbm-media-hub .mh-video-card{flex-basis:72vw}}
+#gbm-media-hub .mh-card-visual{aspect-ratio:16/9;background:#11274a;border-bottom:3px solid #e84b10;display:grid;place-items:center}#gbm-media-hub .mh-card-visual [hidden]{display:none!important}#gbm-media-hub .mh-card-fallback{color:white;font-size:21px;padding:20px;text-align:center}#gbm-media-hub button.mh-video-card{background:transparent;color:#11274a;padding:0;border:0;text-align:left;white-space:normal;min-height:0;font:inherit}</style>
 <script>(function(){
 'use strict';if(window.__GBM_MEDIA_HUB__)return;window.__GBM_MEDIA_HUB__=1;
 function sync(){var on=/^\/the-buddy-martin-show\/?$/.test(location.pathname),old=document.getElementById('gbm-media-hub');if(!on){if(old)old.remove();return}if(old||!document.body)return;
-var m=document.createElement('main');m.id='gbm-media-hub';m.innerHTML='<div class="mh-wrap"><p class="mh-kicker">GatorBait TV</p><h1>The conversation continues here.</h1><p class="mh-deck">The Buddy Martin Show, Florida Gator Lowdown and GatorBait voices. Watch the shows and explore the conversations behind the reporting.</p><section class="mh-watch"><div class="mh-player"><button type="button" id="gbm-load-episodes">▶ Load the episode player</button></div><div><p class="mh-kicker">The Buddy Martin Show</p><h2>Gators. Guests. Perspective.</h2><p>Full broadcasts and interviews from Buddy Martin and the GatorBait team.</p><div class="mh-links"><a href="https://www.youtube.com/@thebuddymartinshow/videos" target="_blank" rel="noopener">Browse full shows on YouTube →</a><a href="https://www.youtube.com/@thebuddymartinshow/live" target="_blank" rel="noopener">Check the live broadcast →</a><a href="https://www.youtube.com/@thebuddymartinshow/shorts" target="_blank" rel="noopener">Watch clips →</a></div></div></section><div class="mh-programs"><section><p class="mh-kicker">Florida Gator Lowdown</p><h2>With Loren Meadows</h2><p>Football analysis and Gator conversation from the Lowdown team.</p><a href="https://www.youtube.com/@thebuddymartinshow/videos" target="_blank" rel="noopener">Explore the show archive →</a></section><section id="podcasts"><p class="mh-kicker">Podcasts & conversations</p><h2>Find your next conversation.</h2><p>Explore the available show playlists and full-length conversations from GatorBait.</p><a href="https://www.youtube.com/@thebuddymartinshow/playlists" target="_blank" rel="noopener">Browse show playlists →</a></section></div><nav class="mh-related" aria-label="Keep exploring"><a href="/gatorbait-media-blogs">Latest stories →</a><a href="/magazine">GatorBait Magazine →</a><a href="/pricing-plans">Membership →</a><a href="/contact">Contact the newsroom →</a></nav></div>';
+var m=document.createElement('main');m.id='gbm-media-hub';m.innerHTML='<div class="mh-wrap"><p class="mh-kicker">GatorBait TV</p><h1>The conversation continues here.</h1><p class="mh-deck">The Buddy Martin Show, Florida Gator Lowdown and GatorBait voices. Watch the shows and explore the conversations behind the reporting.</p><section class="mh-watch"><div class="mh-player"><button type="button" id="gbm-load-episodes">▶ Load the episode player</button></div><div><p class="mh-kicker">The Buddy Martin Show</p><h2>Gators. Guests. Perspective.</h2><p>Full broadcasts and interviews from Buddy Martin and the GatorBait team.</p><p class="mh-schedule"><strong>Regular showtimes</strong><br>Buddy: Monday, Wednesday and Thursday at 9 p.m. ET.<br>Lowdown: Tuesday at 9 p.m. ET.</p><p>Check the live broadcast for today’s status. Watch previous shows between broadcasts.</p><div class="mh-links"><a href="https://www.youtube.com/@thebuddymartinshow/videos" target="_blank" rel="noopener">Browse full shows on YouTube →</a><a href="https://www.youtube.com/@thebuddymartinshow/live" target="_blank" rel="noopener">Check the live broadcast →</a><a href="https://www.youtube.com/@thebuddymartinshow/shorts" target="_blank" rel="noopener">Watch clips →</a></div></div></section><div class="mh-programs"><section><p class="mh-kicker">Florida Gator Lowdown</p><h2>With Loren Meadows</h2><p>Football analysis and Gator conversation from the Lowdown team.</p><a href="https://www.youtube.com/@thebuddymartinshow/videos" target="_blank" rel="noopener">Explore the show archive →</a></section><section id="podcasts"><p class="mh-kicker">Podcasts & conversations</p><h2>Watch the latest. Listen to the archive.</h2><p>Current broadcasts and video playlists are on YouTube. The Apple Podcasts archive contains older audio episodes.</p><div class="mh-links"><a href="https://www.youtube.com/@thebuddymartinshow/playlists" target="_blank" rel="noopener">Video playlists on YouTube →</a><a href="https://podcasts.apple.com/us/podcast/the-buddy-martin-show/id1321645302" target="_blank" rel="noopener">Audio archive on Apple Podcasts →</a></div></section></div><nav class="mh-related" aria-label="Keep exploring"><a href="/gatorbait-media-blogs">Latest stories →</a><a href="/magazine">GatorBait Magazine →</a><a href="/pricing-plans">Membership →</a><a href="/contact">Contact the newsroom →</a></nav></div>';
 var anchor=document.getElementById('gbm-mobile-shell-host')||document.getElementById('gbm-site-header');if(anchor&&anchor.parentNode===document.body)document.body.insertBefore(m,anchor.nextSibling);else document.body.insertBefore(m,document.body.firstChild);
-m.querySelector('button').addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube.com/embed/videoseries?list=UUtR8b1sKFuwaRjKy5BiXRvA';f.title='Buddy Martin Show episodes';f.allow='encrypted-media; picture-in-picture';f.allowFullscreen=true;this.parentNode.replaceChildren(f);});
+var player=m.querySelector('.mh-player');
+function loadVideo(id,title,muted){
+ var f=document.createElement('iframe');
+ f.src='https://www.youtube.com/embed/'+(id||'videoseries?list=UUtR8b1sKFuwaRjKy5BiXRvA')+(id?'?':'&')+'autoplay=1&mute='+(muted?'1':'0')+'&playsinline=1&rel=0';
+ f.title=title;
+ var direct=m.querySelector('.mh-direct');if(direct){direct.href=id?'https://www.youtube.com/watch?v='+encodeURIComponent(id):'https://www.youtube.com/@thebuddymartinshow/videos';direct.textContent=id?'Open this show on YouTube →':'Open the latest shows on YouTube →';}
+ var label=m.querySelector('.mh-selection');if(label)label.textContent=id?'Selected broadcast: '+title:'Latest broadcast playlist · Check the live link for current live status';
+ f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+ f.referrerPolicy='strict-origin-when-cross-origin';
+ f.allowFullscreen=true;
+ player.replaceChildren(f);
+}
+var selection=document.createElement('p');selection.className='mh-selection mh-player-note';selection.setAttribute('role','status');m.querySelector('.mh-links').before(selection);
+var direct=document.createElement('a');direct.className='mh-direct';direct.target='_blank';direct.rel='noopener';m.querySelector('.mh-links').prepend(direct);
+loadVideo('', 'The Buddy Martin Show — latest broadcast', false);
+var strip=document.createElement('section');
+strip.className='mh-filmstrip';
+strip.setAttribute('aria-label','Browse selected broadcasts');
+strip.innerHTML='<div class="mh-strip-heading"><h2>Selected shows</h2><button type="button" class="mh-return">Return to latest show</button><a href="https://www.youtube.com/@thebuddymartinshow/shorts" target="_blank" rel="noopener">Browse Shorts →</a></div><p class="mh-player-note">Watch with sound. If your browser pauses automatic playback, tap Play. If the player cannot load, use the YouTube link beside it. The player opens the latest broadcast playlist. Swipe below for selected shows, including earlier previews.</p><div class="mh-strip" tabindex="0" aria-label="Selected shows, scroll horizontally"></div>';
+var videos=[
+ ['qWBazfq_4Mc',"Meltdown Monday: Florida’s 52-28 Statement Win + Shane Matthews"],
+ ['u2dMQ4u3yNY','Ole Miss vs Florida Preview Can the Gators Own the Swamp'],
+ ['s9UU8a0wC7s','Does The Swamp Know Something the Big Ten Doesn’t?'],
+ ['8aOQqgnVr7o','Would You Lay The 3.5 Points And Take Florida?'],
+ ['sctBnF9Om7c','No. 21 Florida vs No. 4 Ole Miss Preview'],
+ ['u1qAJBKZW7E','Are These Handicappers On Drugs?']
+];
+videos.forEach(function(v){
+ var a=document.createElement('button');a.type='button';
+ a.className='mh-video-card';
+ var img=document.createElement('img');
+ img.src='https://i.ytimg.com/vi/'+v[0]+'/hqdefault.jpg';
+ img.alt='';
+ img.width=320;img.height=180;img.loading='lazy';
+ var label=document.createElement('span');label.textContent=v[1];
+ var visual=document.createElement('div');visual.className='mh-card-visual';var fallback=document.createElement('span');fallback.className='mh-card-fallback';fallback.textContent='▶ GatorBait TV';fallback.hidden=true;img.onerror=function(){img.hidden=true;fallback.hidden=false;};visual.append(img,fallback);a.append(visual,label);
+ a.addEventListener('click',function(ev){if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;ev.preventDefault();loadVideo(v[0],v[1],false);player.scrollIntoView({behavior:'smooth',block:'center'});});
+ strip.querySelector('.mh-strip').appendChild(a);
+});
+strip.querySelector('.mh-return').addEventListener('click',function(){loadVideo('','The Buddy Martin Show — latest broadcast',false);player.scrollIntoView({behavior:'smooth',block:'center'});});
+m.querySelector('.mh-watch').after(strip);
 }
 function schedule(){[0,250,900,1800].forEach(function(ms){setTimeout(sync,ms);});}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});else schedule();window.addEventListener('popstate',schedule);window.addEventListener('gbmroutechange',schedule);
 })();</script>

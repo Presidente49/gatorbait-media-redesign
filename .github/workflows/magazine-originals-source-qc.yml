@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'tools/magazine-originals/**'
-      - '.gitmodules'
+      - 'tools/fetch-pinned-sources.sh'
       - '.github/workflows/magazine-originals-source-qc.yml'
   workflow_dispatch:
 
@@ -19,11 +19,13 @@ jobs:
   source-qc:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source pins only
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
           persist-credentials: false
+
+      - name: Fetch the pinned original sources
+        run: tools/fetch-pinned-sources.sh magazine
 
       - name: Verify original source pins and licenses
         shell: bash

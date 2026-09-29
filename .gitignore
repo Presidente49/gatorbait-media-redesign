@@ -1,3 +1,8 @@
 .shared-memory/
 __pycache__/
 automation/ops-hub/.state/
+
+# Pinned upstream sources are fetched at run time by tools/fetch-pinned-sources.sh
+# (they were git submodules until Sept. 29, 2026; see that script for why).
+tools/magazine-originals/upstream/
+vendor/colorlib-email-templates/

@@ -47,7 +47,9 @@ const PROFILES=[
   {name:'phone320',expectedWidth:320,context:phone(320,740)},
   {name:'phone390',expectedWidth:390,context:phone(390,844)},
   {name:'phone430',expectedWidth:430,context:phone(430,932)},
-  {name:'desktop',expectedWidth:1365,context:{viewport:{width:1365,height:900},screen:{width:1365,height:900},deviceScaleFactor:1}}
+  // A real Chrome UA: with the default HeadlessChrome UA, Wix answered with an older cached snapshot for a
+  // while after an embed update (Sept. 30), which real browsers did not get.
+  {name:'desktop',expectedWidth:1365,context:{userAgent:devices['Desktop Chrome'].userAgent,viewport:{width:1365,height:900},screen:{width:1365,height:900},deviceScaleFactor:1}}
 ];
 
 function audit(input){
@@ -107,7 +109,8 @@ function audit(input){
   }
   if(target.name==='home-gameday'&&rootPresent){
     const tn=document.querySelector('.fp-tunnel');
-    if(!tn)hard.push('game-day tunnel missing');
+    const stamped=Boolean(document.querySelector('#gbm-live')?.getAttribute('data-fp-build'));
+    if(!tn){if(stamped)hard.push('game-day tunnel missing');else warnings.push('game-day tunnel missing on an unstamped build (before rev 28)');}
     else{
       const cd=tn.querySelector('[data-fp-count]');
       if(tn.dataset.phase==='pre'&&!/\d/.test(cd?.textContent||''))warnings.push('tunnel countdown empty');

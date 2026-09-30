@@ -14,9 +14,12 @@ const OUT = 'build/live-shots';
 mkdirSync(OUT, { recursive: true });
 const url = 'https://www.gatorbaitmedia.com' + path;
 const IOS_UA = devices['iPhone 13'].userAgent;
+// A real Chrome UA on desktop: with the default HeadlessChrome UA, Wix answered with an older cached
+// snapshot for a while after an embed update (Sept. 30), which real browsers did not get.
+const DESKTOP_UA = devices['Desktop Chrome'].userAgent;
 const profile = (w) => w < 800
   ? { userAgent: IOS_UA, viewport: { width: w, height: w < 360 ? 740 : w < 410 ? 844 : 932 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }
-  : { viewport: { width: w, height: 900 }, deviceScaleFactor: 1 };
+  : { userAgent: DESKTOP_UA, viewport: { width: w, height: 900 }, deviceScaleFactor: 1 };
 
 const browser = await chromium.launch();
 const metrics = { url, selector, at: new Date().toISOString(), shots: [] };

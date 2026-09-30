@@ -59,8 +59,17 @@ for (const w of widths) {
             return { cls: (k.className || k.tagName).toString().slice(0, 40), x: Math.round(b.left), y: Math.round(b.top), w: Math.round(b.width), h: Math.round(b.height), font: c.fontFamily.slice(0, 60), size: c.fontSize };
           });
           const track = el.querySelector('.track');
+          // Story pages: the Wix header, the Share button and the Story Kit strip, so a phone layout fault can be read without guessing.
+          let story = null;
+          if (document.querySelector('[data-story-kit]') || document.querySelector('[data-share]')) {
+            const rect = (n) => { if (!n) return null; const b = n.getBoundingClientRect(), c = getComputedStyle(n); return { x: Math.round(b.left), y: Math.round(b.top + scrollY), w: Math.round(b.width), h: Math.round(b.height), opacity: c.opacity, vis: c.visibility, size: c.fontSize, text: (n.textContent || '').trim().slice(0, 60) }; };
+            const row = document.querySelector('.gbm-kit-row'), chips = row ? [...row.children] : [];
+            story = { h1: rect(document.querySelector('h1')), share: rect(document.querySelector('[data-share]')), strip: rect(document.querySelector('[data-story-kit="strip"]')),
+              row: row ? { scrollLeft: row.scrollLeft, scrollWidth: row.scrollWidth, clientWidth: row.clientWidth, dir: getComputedStyle(row).direction, justify: getComputedStyle(row).justifyContent } : null,
+              firstChip: rect(chips[0]), lastChip: rect(chips[chips.length - 1]), more: rect(document.querySelector('[data-story-kit="more"]')), links: [...document.querySelectorAll('a.gbm-kit-link')].map((a) => a.getAttribute('data-term')), scrollX };
+          }
           return { x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height), bg: cs.backgroundColor, font: cs.fontFamily.slice(0, 60), kids,
-            track: track ? { scrollWidth: track.scrollWidth, clientWidth: track.clientWidth, scrollLeft: track.scrollLeft } : null, docScrollWidth: document.documentElement.scrollWidth, innerWidth };
+            track: track ? { scrollWidth: track.scrollWidth, clientWidth: track.clientWidth, scrollLeft: track.scrollLeft } : null, story, docScrollWidth: document.documentElement.scrollWidth, innerWidth };
         }, selector);
         await page.screenshot({ path: `${OUT}/view-${w}.jpg`, type: 'jpeg', quality: 70 });
         await found.screenshot({ path: `${OUT}/element-${w}.jpg`, type: 'jpeg', quality: 75 }).catch((e) => { m.elementShot = String(e).slice(0, 120); });

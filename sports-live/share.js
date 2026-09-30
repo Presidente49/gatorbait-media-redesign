@@ -296,16 +296,16 @@
   var LINKS = { roster: GUIDE + '#roster', schedule: GUIDE + '#schedule', stats: SITE + '/florida-football-stats', road: SITE + '/#gbm-road', show: SITE + '/the-buddy-martin-show' };
   var NICK = { Missouri: 'Tigers', Georgia: 'Bulldogs', Texas: 'Longhorns', 'South Carolina': 'Gamecocks', Kentucky: 'Wildcats', Tennessee: 'Volunteers', LSU: 'Tigers', Auburn: 'Tigers', 'Ole Miss': 'Rebels', Vanderbilt: 'Commodores', 'Texas A&M': 'Aggies', Alabama: 'Crimson Tide', Arkansas: 'Razorbacks', 'Mississippi State': 'Bulldogs', Oklahoma: 'Sooners', 'Florida State': 'Seminoles' };
   var MAX_LINKS = 5;
-  var CSS = '.gbm-kit{display:block;box-sizing:border-box;max-width:100%;min-width:0;margin:10px 0 18px;padding:0;font:15px/1.3 "Barlow","Barlow Condensed",sans-serif;color:#0021a5}' +
+  var CSS = '.gbm-kit{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;margin:10px 0 18px;padding:0;text-align:left;direction:ltr;font:15px/1.3 "Barlow","Barlow Condensed",sans-serif;color:#0021a5}' +
     '.gbm-kit-k{display:block;margin:0 0 6px;font:800 12px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fa4616}' +
-    '.gbm-kit-row{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 4px;margin:0;list-style:none}.gbm-kit-row::-webkit-scrollbar{display:none}' +
+    '.gbm-kit-row{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:8px;width:100%;max-width:100%;box-sizing:border-box;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 4px;margin:0;list-style:none}.gbm-kit-row::-webkit-scrollbar{display:none}' +
     '.gbm-kit-chip{display:inline-flex;flex:0 0 auto;align-items:center;min-height:44px;padding:0 14px;border:1px solid #0021a5;border-radius:999px;background:#fff;color:#0021a5;font:700 15px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;white-space:nowrap}' +
     '.gbm-kit-chip:hover,.gbm-kit-chip:focus-visible{background:#0021a5;color:#fff;outline:2px solid #fa4616;outline-offset:2px}' +
     '.gbm-kit-chip.lead{background:#fa4616;border-color:#fa4616;color:#fff;text-transform:none;letter-spacing:.02em;font-weight:800}.gbm-kit-chip.lead:hover,.gbm-kit-chip.lead:focus-visible{background:#0021a5;border-color:#0021a5}' +
     '.gbm-kit-chip.last{text-transform:none;letter-spacing:.02em}' +
     '@media(min-width:900px){.gbm-kit-row{flex-wrap:wrap;overflow:visible}}' +
     'a.gbm-kit-link,a.gbm-kit-link:visited{color:#0021a5;text-decoration:underline;text-decoration-color:#fa4616;text-decoration-thickness:2px;text-underline-offset:2px}a.gbm-kit-link:hover{color:#fa4616}' +
-    '.gbm-kit-more{display:block;box-sizing:border-box;max-width:100%;margin:28px 0 8px;padding:16px 0 0;border-top:3px solid #fa4616;font:15px/1.35 "Barlow","Barlow Condensed",sans-serif;color:#0021a5}' +
+    '.gbm-kit-more{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;text-align:left;margin:28px 0 8px;padding:16px 0 0;border-top:3px solid #fa4616;font:15px/1.35 "Barlow","Barlow Condensed",sans-serif;color:#0021a5}' +
     '.gbm-kit-more h3{margin:0 0 12px;font:800 22px/1.1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.02em;text-transform:uppercase;color:#0021a5}' +
     '.gbm-kit-cards{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:700px){.gbm-kit-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}' +
     '.gbm-kit-card{display:flex;flex-direction:column;justify-content:center;gap:4px;box-sizing:border-box;min-height:64px;padding:12px 14px;border:1px solid #0021a5;border-left:6px solid #fa4616;border-radius:8px;background:#fff;color:#0021a5;text-decoration:none}' +
@@ -442,7 +442,8 @@
     if (document.querySelector('[data-story-kit="more"]')) return;
     var b = body(); if (!b) return;
     var ps = paragraphs(b), last = ps[ps.length - 1]; if (!last) return;
-    while (last.parentNode && last.parentNode !== b) last = last.parentNode; // Wix wraps each paragraph; land after the whole block
+    // Wix wraps each paragraph in its own block; land right after that block so the cards share the text column's gutters.
+    if (last.parentNode && last.parentNode !== b && last.parentNode.children.length === 1) last = last.parentNode;
     var m = el('aside', { 'class': 'gbm-kit-more', 'data-story-kit': 'more', 'aria-label': 'Keep up with the Gators' },
       '<h3>Keep up with the Gators</h3><div class="gbm-kit-cards">' + card(LINKS.roster, 'Roster & Schedule', 'The 2026 season guide: who is on the field and who is next.') + card(LINKS.stats, 'Florida Stats', 'The numbers behind every Gators game, updated all season.') + card(LINKS.road, 'The Road Ahead', 'Results so far and the road to Atlanta, on the front page.') + '</div>');
     last.insertAdjacentElement('afterend', m);

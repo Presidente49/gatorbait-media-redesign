@@ -17,6 +17,7 @@ const read = (p) => readFileSync(join(repo, p), 'utf8');
 
 const css = read('sports-live/src/front-page.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
 const runtime = read('sports-live/src/front-page.js');
+const share = read('sports-live/src/share.js');
 const config = JSON.parse(read('sports-live/front-page.config.json'));
 const feed = JSON.parse(read('gazette-live/posts.json'));
 
@@ -38,7 +39,7 @@ if (repoScoreboard && Array.isArray(repoScoreboard.schedule)) {
 }
 // Build stamp: the page exposes it as data-fp-build, so live QC and screenshots prove which build actually ran
 // (Wix edges served an older embed revision for a while after a PATCH on Sept. 30).
-const build = createHash('sha1').update(css + runtime + JSON.stringify(cfg)).digest('hex').slice(0, 8);
+const build = createHash('sha1').update(css + runtime + share + JSON.stringify(cfg)).digest('hex').slice(0, 8);
 const bundle = { snapshot: newest, build, ...cfg, posts };
 
 const js = `/* GatorBait Front Page 2026: magazine front page, broadcast layer, Swamp Night palette, hub.
@@ -51,6 +52,8 @@ const js = `/* GatorBait Front Page 2026: magazine front page, broadcast layer, 
   var CSS = ${JSON.stringify(css)};
   var BUNDLE = ${JSON.stringify(bundle)};
 ${runtime}})();
+/* Share GatorBait (sports-live/src/share.js): one-tap share cards; standalone copy in sports-live/share.js for blog post pages. */
+${share}
 `;
 
 // Fixture: the real loader's mobile-shell critical CSS, a shell host stub and the built renderer inline.
@@ -73,7 +76,7 @@ ${[['Day', 'day'], ['Swamp Night', 'night'], ['Game day', 'gameday']].map(([labe
 </body></html>
 `;
 
-const outputs = { 'sports-live/homepage.js': js, 'sports-live/frame.html': frame, 'sports-live/qa.html': qa };
+const outputs = { 'sports-live/homepage.js': js, 'sports-live/share.js': share, 'sports-live/frame.html': frame, 'sports-live/qa.html': qa };
 if (process.argv.includes('--check')) {
   const stale = Object.entries(outputs).filter(([p, s]) => read(p) !== s).map(([p]) => p);
   if (stale.length) { console.error('Out of date; run node sports-live/build-front-page.mjs:', stale.join(', ')); process.exit(1); }

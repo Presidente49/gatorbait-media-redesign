@@ -99,3 +99,21 @@ Added a new "More From the Swamp" item for Eddie Gilley's column, below the Fran
 Pushed to a new draft campaign, `a8f1ba3d-eae4-4b9b-89c7-85e72811ee13` — both `3e89adb2` and `435d6183` still return `"cannot be edited on classic web editor"` on composer update, so each content change needs a fresh draft on this MJML editor type. Preview verified: 60,636-char rendered HTML, footer and Eddie Gilley section both intact, no broken placeholders.
 
 **Open dependency, flagged rather than hidden:** Eddie Gilley's column (`48c62d0a`) is still an unpublished DRAFT. The roundup's link to it will 404 until that draft is published, which needs Brenden's go-ahead per standing policy — not done here. The send-governor hold from the last check-in (`ok:false`, stale weekly cap) still applies regardless.
+
+## Desk inbox catch-up — Sept. 30, ~22:1xZ (covering the Sept. 28 stop-work → Sept. 30 lift gap)
+
+Stop-work was in force Sept. 28 ~18:15Z–Sept. 30 ~17:00Z (lifted by Brenden, #34 `5915890201`); this session did no writes in that window. Catching up now on `newer_than:2d` against staff/UF senders.
+
+| Thread ID | Sender | Subject | Action | Draft/Post |
+|---|---|---|---|---|
+| 1a0ea518de83f5c9 | buddymartinshow@gmail.com | Buddy column ("Put Down the Poll, Gators...") | Already published/handled elsewhere (Jarvis put it in the Sept. 29 Magazine edition, #34 `5890357888`); no draft needed from this desk | none |
+| 1a0ee8b1b8b53c45 | buddymartinshow@gmail.com | Denzel (Aberdeen injunction story) | Already published and patched by another session (Codex), #34 `5897970401` onward; one-writer-per-object rule — not touched here | none |
+| 1a0f227cac913831 | buddymartinshow@gmail.com | Buddy Martin column (Faulkner) | Buddy self-published directly (post `0753a25b`); Jarvis already did the copy-desk fix pass, #34 `5914030606`/`5914058239` — no draft needed | none |
+| 1a0ea83557aea9d9 | buddymartinshow@gmail.com (fwd) | Fwd: Wix Email Marketing account notice | Not a submission; Brenden already replied "already been done with" — skip | none |
+| 1a0f45717d97ef0b | reply@e.floridagators.com | The Swamp is Back | UAA ticket marketing, not a release; skip | none |
+| 1a0eec283a9f764c | reply@e.floridagators.com | Get Your Gator Growl Tickets | UAA ticket marketing, not a release; skip | none |
+| 1a0ed790de06383a | reply@e.floridagators.com | Online Only: $3 Tickets | UAA ticket marketing, not a release; skip | none |
+
+No new UF press releases from gators.ufl.edu/ufl.edu or any "Hutchinson" sender in the window. **YouTube:** direct RSS fetch is blocked from this sandbox (same limitation logged Sept. 28); not a channel finding, will retry next run via vidIQ if credits allow.
+
+Nothing here needed a new write from this desk — every genuine submission in the gap was already caught and handled by another session while this one was stopped.

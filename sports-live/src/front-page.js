@@ -74,7 +74,7 @@
       var key = (image.match(/media\/([0-9a-f]+_[0-9a-f]+)/) || [])[1] || '';
       if (BUNDLE.credits[key]) credit = BUNDLE.credits[key];
       return { title: String(p.title).trim(), url: u, path: path(u), author: String(p.author || 'GatorBait Staff'), date: date, excerpt: raw,
-        cap: cap, credit: credit, image: image, key: key, alt: String(p.image && p.image.alt || p.title),
+        cap: cap, credit: credit, image: image, key: key, alt: String(p.image && p.image.alt || p.title), cover: (BUNDLE.covers || []).indexOf(key) >= 0,
         portrait: !!(p.image && Number(p.image.width) > 0 && Number(p.image.height) > Number(p.image.width)) };
     }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).slice(0, 30);
   }
@@ -289,7 +289,7 @@
   }
   function photoBlock(p, eager, cls) {
     if (!p.image) return '';
-    return '<figure class="' + (cls || '') + '">' + link(p.url, img(p.image, p.alt, eager), 'fp-frame' + (p.portrait ? ' fp-portrait' : ''), ' tabindex="-1" aria-hidden="true"') +
+    return '<figure class="' + (cls || '') + '">' + link(p.url, img(p.image, p.alt, eager), 'fp-frame' + (p.portrait ? ' fp-portrait' : '') + (p.cover ? ' fp-cover' : ''), ' tabindex="-1" aria-hidden="true"') +
       ((p.cap || p.credit) ? '<figcaption class="fp-cap"><span>' + esc(p.cap) + '</span>' + (p.credit ? '<b>' + esc(p.credit) + '</b>' : '') + '</figcaption>' : '') + '</figure>';
   }
   function leadHtml(lead, why) {
@@ -446,9 +446,10 @@
     var cover = posts.find(function (p) { return p.image && !used[p.image] && !p.portrait && !isSpears(p); }) || posts.find(function (p) { return p.image; });
     var mMag = '<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><div class="fp-mag-copy"><h2>The Thursday Magazine</h2><p class="fp-ex">The columns, characters and photographs worth keeping. The cover lives on the Magazine, not here.</p><div class="fp-actions"><a class="fp-btn" href="' + esc(L.magazine) + '">Open the Magazine <span aria-hidden="true">→</span></a></div></div>' +
       (cover ? '<a class="fp-cover" href="' + esc(L.magazine) + '" aria-label="GatorBait Magazine">' + img(cover.image, '', false) + '<span class="fp-cover-mh">GatorBait<small>Magazine · Thursday</small></span><span class="fp-cover-t"><em>' + esc(cover.author) + '</em>' + esc(splitTitle(cover.title).h) + '</span></a>' : '') + '</section>';
-    var mNews = '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
+    // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
+    var mNews = window.GBM_CAPTURE ? window.GBM_CAPTURE.html('home') : '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
     return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show, clips and photos. Everything GatorBait, in one place.</p></div><div class="fp-hub-grid">' +
-      mLatest + mScores + mShow + mClips + mPhotos + mMag + mNews + '</div></div></section>';
+      mLatest + mScores + mShow + (window.GBM_CAPTURE ? mNews : '') + mClips + mPhotos + mMag + (window.GBM_CAPTURE ? '' : mNews) + '</div></div></section>';
   }
 
   /* ---------- Live bits: countdowns, count-up, show status, embers ---------- */

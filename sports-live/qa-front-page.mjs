@@ -33,6 +33,48 @@ const askRec = JSON.parse(readFileSync(join(repo, 'deploy/dept-ideas/ai/recorded
 const CORS = { 'access-control-allow-origin': 'https://www.gatorbaitmedia.com', 'access-control-allow-methods': 'GET,POST,OPTIONS', 'access-control-allow-headers': 'content-type' };
 const jsonRes = (body, status = 200) => ({ status, contentType: 'application/json', headers: CORS, body: JSON.stringify(body) });
 
+// GatorBait Magazine signup (sports-live/src/capture.js): a stand-in for www.wixapis.com's visitor token and Wix Forms
+// Create Submission. mode 'ok' accepts; 'no-source-field' rejects the signup_source key like a form without that field
+// (UNKNOWN_VALUE_ERROR), then accepts the resend; 'down' fails both. Every request is recorded for the checks.
+const WIX_CORS = { 'access-control-allow-origin': 'https://www.gatorbaitmedia.com', 'access-control-allow-methods': 'POST,OPTIONS', 'access-control-allow-headers': 'authorization,content-type' };
+function wixStub(route, u, mode, log) {
+  const req = route.request();
+  if (req.method() === 'OPTIONS') return route.fulfill({ status: 204, headers: WIX_CORS, body: '' });
+  const body = JSON.parse(req.postData() || '{}');
+  log.push({ path: u.pathname, body, auth: req.headers()['authorization'] || '' });
+  const res = (status, j) => route.fulfill({ status, contentType: 'application/json', headers: WIX_CORS, body: JSON.stringify(j) });
+  if (mode === 'down') return res(503, { message: 'unavailable' });
+  if (u.pathname === '/oauth2/token') return body.grantType === 'anonymous' && body.clientId ? res(200, { access_token: 'OauthNG.JWS.qa-visitor', token_type: 'Bearer', expires_in: 14400, refresh_token: 'JWS.qa' }) : res(400, { message: 'bad grant' });
+  if (u.pathname === '/form-submission-service/v4/submissions') {
+    const v = (body.submission || {}).submissions || {};
+    if (mode === 'no-source-field' && 'signup_source' in v) return res(400, { message: 'validation', details: { validationError: { fieldViolations: [{ field: 'submission.submissions', description: 'UNKNOWN_VALUE_ERROR', data: { errorPath: 'signup_source', errorType: 'UNKNOWN_VALUE_ERROR' } }] } } });
+    return res(200, { submission: { id: 'qa-sub', formId: body.submission.formId, namespace: 'wix.form_app.form', status: 'CONFIRMED', submissions: v } });
+  }
+  return res(404, { message: 'not found' });
+}
+const FORM_ID = '6babfee8-147f-428a-9e14-6b72f6225835';
+// Fill and send one capture card; returns the recorded requests that the click caused.
+async function signUp(page, sel, log, { email = 'reader@example.com', consent = true } = {}) {
+  const from = log.length;
+  await page.fill(sel + ' input[type=email]', email);
+  if (consent) await page.check(sel + ' input[name=consent]');
+  await page.click(sel + ' .gbc-b');
+  await page.waitForFunction((s) => { const b = document.querySelector(s); return b && b.getAttribute('data-state') !== 'sending'; }, sel, { timeout: 5000 }).catch(() => {});
+  await page.waitForTimeout(150);
+  return log.slice(from);
+}
+function checkSignup(reqs, source, bad, phase, { tagged = true } = {}) {
+  const subs = reqs.filter((r) => r.path === '/form-submission-service/v4/submissions');
+  const last = subs[subs.length - 1];
+  if (!last) { bad.push(`${phase}no submission sent`); return; }
+  const v = last.body.submission.submissions || {};
+  if (last.body.submission.formId !== FORM_ID) bad.push(`${phase}formId ${last.body.submission.formId}`);
+  if (v.email_gatorbait !== 'reader@example.com' || v.subscribe_gatorbait !== true) bad.push(`${phase}submission values ${JSON.stringify(v)}`);
+  if (tagged ? v.signup_source !== source : 'signup_source' in v) bad.push(`${phase}signup_source ${JSON.stringify(v.signup_source)} (want ${tagged ? source : 'none'})`);
+  if (!/^OauthNG\.JWS\.qa-visitor$/.test(last.auth)) bad.push(`${phase}submission not sent with the visitor token`);
+  if (Object.keys(v).some((k) => !['email_gatorbait', 'subscribe_gatorbait', 'signup_source'].includes(k))) bad.push(`${phase}stray keys ${Object.keys(v)}`);
+}
+
 // The committed feed from the scoreboard job (automation/scoreboard_feed.py).
 const repoScoreboard = existsSync(join(repo, 'sports-live/scoreboard.json')) ? JSON.parse(readFileSync(join(repo, 'sports-live/scoreboard.json'), 'utf8')) : null;
 const x = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
@@ -81,6 +123,12 @@ const scenarios = [
   { name: 'endpoints-gameday', now: T.gameLive, endpoints: EP, scoreboard: repoScoreboard && { ...repoScoreboard, live: { eventId: 'qa', clock: '8:14', period: 3, score: { fla: 24, opp: 17 }, possession: 'fla', lastPlay: 'QA fixture play' } }, widths: [390, 1366], expect: { gameday: true, tunnel: 'live', modules: 'call ask stands', call: '49', callState: 'locked', askTrivia: true, askAfter: 'fp-tunnel', stands: true, stable: true, lowLeadOk: true } },
   // No endpoints.json (404): nothing mounts, no placeholder, nothing moves.
   { name: 'endpoints-404', now: T.gameLive, endpoints: 404, scoreboard: repoScoreboard, expect: { gameday: true, modules: 'none', noModules: true, stable: true } },
+  // GatorBait Magazine signup from the hub: consent gate, a tagged submission, the thank-you state after reload.
+  { name: 'capture-home', now: T.day, widths: [320, 390, 1366], expect: { signup: 'tagged' } },
+  // The form has no signup_source field yet: Wix rejects the key, the module resends once without it.
+  { name: 'capture-home-untagged', now: T.day, wix: 'no-source-field', widths: [390], expect: { signup: 'untagged' } },
+  { name: 'capture-home-down', now: T.day, wix: 'down', widths: [390], expect: { signupDown: true } },
+  { name: 'capture-home-joined', now: T.day, joined: true, widths: [390, 1366], expect: {} },
 ];
 const WIDTHS = [320, 390, 430, 1366];
 const only = (list) => process.env.QA_ONLY ? list.filter((sc) => sc.name.startsWith(process.env.QA_ONLY)) : list;
@@ -94,6 +142,8 @@ for (const sc of only(scenarios)) {
     const errors = [];
     page.on('pageerror', (e) => errors.push(String(e)));
     let photoTurn = 0;
+    const wixLog = [];
+    if (sc.joined) await page.addInitScript(() => { try { localStorage.setItem('gbm-capture-joined', '1'); } catch (_) {} });
     await ctx.route('**/*', (route) => {
       const u = new URL(route.request().url());
       if (u.hostname === 'www.gatorbaitmedia.com' && u.pathname === '/') {
@@ -123,6 +173,7 @@ for (const sc of only(scenarios)) {
         return route.fulfill(jsonRes({ error: 'not found' }, 404));
       }
       if (u.hostname === 'www.gatorbaitmedia.com' && u.pathname === '/_functions/standsToken') return route.fulfill({ status: 404, body: '' }); // no Velo bridge in the fixture: the room shows "Sign in to chat"
+      if (u.hostname === 'www.wixapis.com') return wixStub(route, u, sc.wix || 'ok', wixLog);
       if (u.hostname === 'cdn.jsdelivr.net' && u.pathname.includes('@tsparticles/slim@3.9.1')) return tsp ? route.fulfill({ contentType: 'application/javascript', body: tsp }) : route.abort();
       if (u.pathname.includes('95dd8a25863b4556b7ba6398fcfd0316')) return route.fulfill({ contentType: 'image/png', body: png1 });
       if (u.hostname === 'static.wixstatic.com' || u.hostname === 'i.ytimg.com') return route.fulfill({ contentType: 'image/jpeg', body: photos.length ? photos[photoTurn++ % photos.length] : png1 });
@@ -198,6 +249,13 @@ for (const sc of only(scenarios)) {
         ask: !!document.querySelector('.fp-ask'), askPrev: document.querySelector('.fp-ask')?.previousElementSibling?.className || '', askTrivia: document.querySelector('.fp-ask-tq')?.textContent || '', askOpts: document.querySelectorAll('.fp-ask-opt').length,
         stands: !!document.querySelector('#gbm-stands .gbs'), standsIn: !!document.querySelector('.fp-tunnel .fp-tn-cta + #gbm-stands .gbs'), standsCount: document.querySelector('#gbm-stands [data-gbs=count]')?.textContent || '', standsQuiet: document.querySelector('#gbm-stands .gbs')?.dataset.quiet || '',
         globals: { call: window.__GBM_CALL_API__ || '', ask: window.__GBM_ASK_URL__ || '', stands: window.__GBM_STANDS__ ? window.__GBM_STANDS__.api + ' ' + window.__GBM_STANDS__.room : '' },
+        capture: (() => {
+          const c = document.querySelectorAll('[data-gbm-capture]'), home = document.querySelector('#gbm-live .fp-hub-grid > [data-gbm-capture="home"]'), show = document.querySelector('#gbm-live .fp-mod-show');
+          const b = home && home.getBoundingClientRect(), consent = home && home.querySelector('input[name=consent]');
+          return { count: c.length, home: !!home, state: home ? home.getAttribute('data-state') : '', afterShow: !!(home && show && (show.compareDocumentPosition(home) & 4)), oldNews: document.querySelectorAll('#gbm-live .fp-mod-news').length,
+            w: b ? Math.round(b.width) : 0, left: b ? Math.round(b.left) : 0, checked: consent ? consent.checked : null, privacy: home ? (home.querySelector('a[href$="/policies"]') || {}).href || '' : '',
+            text: home ? home.textContent.replace(/\s+/g, ' ') : '', css: document.querySelectorAll('#gbm-capture-css').length, bar: document.querySelectorAll('#gbc-bar').length };
+        })(),
       };
     });
     const e = sc.expect, bad = [];
@@ -250,6 +308,33 @@ for (const sc of only(scenarios)) {
     if (e.stands === true && (!r.stands || !r.standsIn || r.standsCount !== 'Sign in to chat' || r.globals.stands !== EP.stands + ' game-2026-10-03')) bad.push(`The Stands: in tunnel=${r.standsIn} count="${r.standsCount}" cfg="${r.globals.stands}"`);
     if (e.stands === false && r.stands) bad.push('The Stands mounted outside game day');
     if (e.stable && jumps.length) bad.push('layout jump: ' + jumps.join(', '));
+    // GatorBait Magazine signup in the hub: exactly one, after the show module, replacing the old link-only email module;
+    // unchecked consent, privacy link, value line; no slide-up on the homepage.
+    const cap = r.capture;
+    if (!cap.home || cap.count !== 1 || !cap.afterShow || cap.oldNews || cap.css !== 1 || cap.bar) bad.push(`capture module count=${cap.count} home=${cap.home} afterShow=${cap.afterShow} oldNews=${cap.oldNews} css=${cap.css} bar=${cap.bar}`);
+    else if (sc.joined ? cap.state !== 'joined' || !/on the GatorBait Magazine list/.test(cap.text) : cap.state !== 'ready' || cap.checked !== false || cap.privacy !== 'https://www.gatorbaitmedia.com/policies' || !/Buddy Martin's columns, the game-week package and Chris Spears' photos/.test(cap.text) || !/One email a day at most/.test(cap.text)) bad.push(`capture module state=${cap.state} consent=${cap.checked} privacy=${cap.privacy}`);
+    if (cap.w > r.vw || cap.left < 0) bad.push(`capture module ${cap.w}px at x ${cap.left}`);
+    if (e.signup) {
+      // No consent, no request; then a real signup tagged "home"; a reload shows the thank-you line.
+      const none = await signUp(page, '[data-gbm-capture="home"]', wixLog, { consent: false });
+      const msg = await page.textContent('[data-gbm-capture="home"] .gbc-m');
+      if (none.length || !/Check the box/.test(msg)) bad.push(`signup without consent sent ${none.length} requests, message "${msg}"`);
+      const reqs = await signUp(page, '[data-gbm-capture="home"]', wixLog);
+      checkSignup(reqs, 'home', bad, 'home signup: ', { tagged: e.signup !== 'untagged' });
+      if (e.signup === 'untagged' && reqs.filter((q) => q.path.includes('submissions')).length !== 2) bad.push('home signup: expected one resend without signup_source');
+      const done = await page.evaluate(() => ({ state: document.querySelector('[data-gbm-capture="home"]').getAttribute('data-state'), msg: document.querySelector('[data-gbm-capture="home"] .gbc-m').textContent, joined: localStorage.getItem('gbm-capture-joined') }));
+      if (done.state !== 'done' || !/check your inbox/.test(done.msg) || !done.joined) bad.push(`home signup: ${JSON.stringify(done)}`);
+      const scrollW = await page.evaluate(() => document.documentElement.scrollWidth);
+      if (scrollW > r.vw) bad.push(`home signup: overflow ${scrollW}`);
+      await page.reload({ waitUntil: 'load' }); await page.waitForSelector('#gbm-live.fp26', { timeout: 8000 }).catch(() => {}); await page.waitForTimeout(1800);
+      const again = await page.evaluate(() => (document.querySelector('[data-gbm-capture="home"]') || {}).getAttribute?.('data-state'));
+      if (again !== 'joined') bad.push('home signup: reload state ' + again);
+    }
+    if (e.signupDown) {
+      const reqs = await signUp(page, '[data-gbm-capture="home"]', wixLog);
+      const st = await page.evaluate(() => ({ state: document.querySelector('[data-gbm-capture="home"]').getAttribute('data-state'), msg: document.querySelector('[data-gbm-capture="home"] .gbc-m').textContent, joined: localStorage.getItem('gbm-capture-joined') }));
+      if (!reqs.length || st.state !== 'ready' || !/didn't go through/.test(st.msg) || st.joined) bad.push(`signup with Wix down: ${JSON.stringify(st)}`);
+    }
     const tag = `${sc.name}@${width}`;
     console.log((bad.length ? 'FAIL ' : 'ok   ') + tag.padEnd(26) + ` lead=${r.lead} cls="${r.cls.replace('gbm-gazette gbm-sports-home fp26 ', '')}" h1=${r.h1Top} cd="${r.cd}"` + (r.tunnelOpp ? ` tunnel=${r.tunnelPhase}:${r.tunnelOpp.name}[${r.tunnelOpp.line}]` : '') + (sc.endpoints ? ` modules=${r.modules} call=${r.call ? r.callState + ':' + r.callCount : '-'} ask=${r.ask ? 'after ' + r.askPrev.split(' ')[0] : '-'} stands=${r.stands ? r.standsCount : '-'}` : '') + ` ${bad.join('; ')}`);
     if (bad.length) failures.push(tag + ': ' + bad.join('; '));
@@ -273,22 +358,111 @@ const storyScenarios = [
   // scoreboard.json down: the strip still mounts with the five guide links, no live chips, and no opponent link.
   { name: 'story-feed-down', path: '/post/qa-story-kit-fixture', widths: [390], mounted: true, scoreboard: 404, chips: STORY_CHIPS.slice(2), links: STORY_LINKS.slice(0, 2), sweep: 'static' },
   { name: 'story-not-post', path: '/blog-qa-story-kit-fixture', widths: [390], mounted: false },
+  // GatorBait Magazine signup on story pages (sports-live/src/capture.js). The slide-up waits 45 s live; QA shortens it.
+  // Signup from the mid-article card, tagged story-inline; the other card steps back and no slide-up follows.
+  { name: 'story-capture-inline', path: '/post/qa-story-kit-fixture', widths: [320, 390, 1366], mounted: true, capture: 'inline' },
+  // 50% scroll brings the slide-up; it steps aside while the Share sheet is open, signs up as story-slideup.
+  { name: 'story-capture-slideup', path: '/post/qa-story-kit-fixture', widths: [320, 390, 430, 1366], mounted: true, capture: 'slideup', delayMs: 60000 },
+  // The timer alone (no scroll) brings it; the close button and Escape remember the dismissal for 14 days.
+  { name: 'story-capture-timer', path: '/post/qa-story-kit-fixture', widths: [390], height: 420, mounted: true, capture: 'timer', delayMs: 1500 },
+  // Already signed up in this browser: no story cards, no slide-up; the rest of the kit is unchanged.
+  { name: 'story-capture-joined', path: '/post/qa-story-kit-fixture', widths: [390], mounted: true, joined: true, capture: 'joined', delayMs: 800 },
 ];
+// Story-page capture behaviour after the kit checks: inline signup, slide-up by scroll (and the Share sheet), by timer, dismissal memory.
+async function captureFlow(page, sc, bad, wixLog, read) {
+  const barState = () => page.evaluate(() => { const b = document.querySelector('#gbc-bar'); if (!b) return 'none'; const r = b.getBoundingClientRect(); return (b.classList.contains('aside') ? 'aside' : b.classList.contains('on') ? 'on' : 'off') + (b.classList.contains('on') && !b.classList.contains('aside') && r.bottom > innerHeight + 1 ? '-offscreen' : ''); });
+  const vwOk = async (phase) => { const o = await page.evaluate(() => ({ w: document.documentElement.scrollWidth, vw: document.documentElement.clientWidth, bar: (() => { const b = document.querySelector('#gbc-bar .gbc'); if (!b) return null; const r = b.getBoundingClientRect(); return [Math.round(r.left), Math.round(r.right)]; })(), fonts: [...new Set([...document.querySelectorAll('#gbc-bar, #gbc-bar *')].map((e) => getComputedStyle(e).fontFamily))] })); if (o.w > o.vw || (o.bar && (o.bar[0] < 0 || o.bar[1] > o.vw))) bad.push(`${phase}overflow page ${o.w}/${o.vw} bar ${o.bar}`); const bf = o.fonts.filter((f) => /georgia|times|anton|arial|(^|,)\s*serif\s*(,|$)/i.test(f)); if (bf.length) bad.push(`${phase}bar fonts ${bf}`); };
+  if (sc.capture === 'inline') {
+    await page.evaluate(() => document.querySelector('[data-gbm-capture="story-inline"]').scrollIntoView({ block: 'center' }));
+    const reqs = await signUp(page, '[data-gbm-capture="story-inline"]', wixLog);
+    checkSignup(reqs, 'story-inline', bad, 'inline signup: ');
+    const st = await page.evaluate(() => ({ state: document.querySelector('[data-gbm-capture="story-inline"]').getAttribute('data-state'), endHidden: document.querySelector('[data-gbm-capture="story-end"]').hidden, joined: localStorage.getItem('gbm-capture-joined') }));
+    if (st.state !== 'done' || !st.endHidden || !st.joined) bad.push(`inline signup: ${JSON.stringify(st)}`);
+    await page.evaluate(() => scrollTo(0, document.body.scrollHeight)); await page.waitForTimeout(1300);
+    if ((await barState()) !== 'none') bad.push('slide-up shown after the reader signed up');
+    await vwOk('inline signup: ');
+  }
+  if (sc.capture === 'slideup') {
+    // Wix puts comments, related posts and the footer under a story; stand in for them so the reader can leave both cards behind.
+    await page.evaluate(() => { const f = document.createElement('div'); f.id = 'qa-below'; f.style.height = '1600px'; document.body.appendChild(f); });
+    // Park the reader past the halfway mark: the bar comes up unless a signup card is in view.
+    await page.evaluate(() => { const h = document.documentElement.scrollHeight - innerHeight; scrollTo(0, Math.ceil(h * 0.55)); });
+    await page.waitForTimeout(400);
+    let st = await barState();
+    const cardsVisible = await page.evaluate(() => [...document.querySelectorAll('[data-gbm-capture="story-inline"],[data-gbm-capture="story-end"]')].some((c) => { const b = c.getBoundingClientRect(); return b.bottom > 0 && b.top < innerHeight; }));
+    if (cardsVisible) { // a card in view holds the bar back; step past the end card, where nothing but the footer is left
+      if (st !== 'none') bad.push('slide-up shown while a signup card was in view');
+      await page.evaluate(() => { const e = document.querySelector('[data-gbm-capture="story-end"]'); scrollTo(0, e.getBoundingClientRect().bottom + scrollY + 5); });
+      await page.waitForTimeout(1300); st = await barState();
+    }
+    if (st !== 'on') bad.push('slide-up after 50% scroll: ' + st);
+    await vwOk('slide-up: ');
+    // The Share sheet opens over everything; the bar steps aside and comes back when it closes.
+    await page.click('[data-share]');
+    await page.waitForTimeout(1300);
+    const share = await page.evaluate(() => !!document.querySelector('#gbm-share.on'));
+    if (!share) bad.push('the Share sheet did not open (native share?), so the aside check did not run');
+    const aside = await barState();
+    if (share && aside !== 'aside') bad.push('slide-up not aside while the Share sheet is open: ' + aside);
+    const z = await page.evaluate(() => { const b = document.querySelector('#gbc-bar'), sh = document.querySelector('#gbm-share'); return b && sh ? [Number(getComputedStyle(b).zIndex), Number(getComputedStyle(sh).zIndex)] : [0, 0]; });
+    if (share && !(z[0] < z[1])) bad.push('slide-up z-index ' + z.join(' vs '));
+    await page.keyboard.press('Escape'); await page.evaluate(() => { const v = document.getElementById('gbm-share-veil'); if (document.querySelector('#gbm-share.on') && v) v.click(); });
+    await page.waitForTimeout(1300);
+    if ((await barState()) !== 'on' && share) bad.push('slide-up did not return after the Share sheet closed: ' + (await barState()));
+    if (!(await page.$('#gbc-bar input[type=email]'))) { bad.push('slide-up never mounted'); return; }
+    const reqs = await signUp(page, '#gbc-bar', wixLog);
+    checkSignup(reqs, 'story-slideup', bad, 'slide-up signup: ');
+    const done = await page.evaluate(() => document.querySelector('#gbc-bar [data-gbm-capture]').getAttribute('data-state'));
+    if (done !== 'done') bad.push('slide-up signup state ' + done);
+    await vwOk('slide-up done: ');
+  }
+  if (sc.capture === 'timer') {
+    await page.evaluate(() => scrollTo(0, 0));
+    await page.waitForTimeout(1500);
+    const st = await barState();
+    if (st !== 'on') bad.push('slide-up after the timer: ' + st);
+    await page.click('#gbc-bar .gbc-x'); await page.waitForTimeout(500);
+    const closed = await barState(), memo = await page.evaluate(() => localStorage.getItem('gbm-capture-dismissed'));
+    if (closed !== 'off' || !memo) bad.push(`dismiss: bar ${closed}, remembered ${memo}`);
+    // A new page view inside 14 days: no bar, whatever the scroll or the wait.
+    await page.reload({ waitUntil: 'load' }); await page.waitForSelector('[data-story-kit="strip"]', { timeout: 8000 }).catch(() => {});
+    await page.evaluate(() => scrollTo(0, document.body.scrollHeight)); await page.waitForTimeout(2600);
+    if ((await barState()) !== 'none') bad.push('slide-up came back inside the 14-day quiet period');
+    const r2 = await read(); if (r2.cap.inline !== 1 || r2.cap.end !== 1) bad.push('dismissing the bar removed the story cards');
+    // 15 days later it may return.
+    await page.evaluate(() => localStorage.setItem('gbm-capture-dismissed', String(Date.now() - 15 * 864e5)));
+    await page.reload({ waitUntil: 'load' }); await page.waitForTimeout(400); await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(2400);
+    if ((await barState()) !== 'on') bad.push('slide-up did not return after 14 days: ' + (await barState()));
+    await page.keyboard.press('Escape'); await page.waitForTimeout(300);
+    if ((await barState()) !== 'off') bad.push('Escape did not close the slide-up');
+  }
+  if (sc.capture === 'joined') {
+    await page.evaluate(() => scrollTo(0, document.body.scrollHeight)); await page.waitForTimeout(1600);
+    if ((await barState()) !== 'none') bad.push('slide-up shown to a signed-up reader');
+    if (wixLog.length) bad.push('requests sent for a signed-up reader');
+  }
+}
 for (const sc of only(storyScenarios)) {
   for (const width of sc.widths) {
-    const ctx = await browser.newContext({ viewport: { width, height: width > 800 ? 900 : 844 }, deviceScaleFactor: 1 });
+    const ctx = await browser.newContext({ viewport: { width, height: sc.height || (width > 800 ? 900 : 844) }, deviceScaleFactor: 1 });
     const page = await ctx.newPage();
     const errors = [];
     page.on('pageerror', (e) => errors.push(String(e)));
+    const wixLog = [];
     await ctx.route('**/*', (route) => {
       const u = new URL(route.request().url());
+      if (u.hostname === 'www.wixapis.com') return wixStub(route, u, sc.wix || 'ok', wixLog);
       if (u.hostname === 'www.gatorbaitmedia.com' && u.pathname === sc.path) return route.fulfill({ contentType: 'text/html', body: storyFixture });
       if (u.hostname === 'www.gatorbaitmedia.com' && u.pathname === '/_qa/share.js') return route.fulfill({ contentType: 'application/javascript', body: shareJs });
       if (u.hostname === 'presidente49.github.io' && u.pathname.endsWith('/sports-live/scoreboard.json')) return repoScoreboard && sc.scoreboard !== 404 ? route.fulfill({ contentType: 'application/json', body: JSON.stringify(repoScoreboard) }) : route.fulfill({ status: 404, body: '' });
       if (u.hostname === 'presidente49.github.io' && u.pathname.endsWith('/gazette-live/posts.json')) return route.fulfill({ contentType: 'application/json', body: JSON.stringify(feed) });
       return route.abort();
     });
-    await page.addInitScript((now) => { window.__GBM_FP_NOW__ = Date.parse(now); }, T.day);
+    await page.addInitScript(({ now, delayMs, joined }) => {
+      window.__GBM_FP_NOW__ = Date.parse(now);
+      window.__GBM_CAPTURE_CFG__ = { delayMs: delayMs || 60000 };
+      if (joined) try { localStorage.setItem('gbm-capture-joined', '1'); } catch (_) {}
+    }, { now: T.day, delayMs: sc.delayMs, joined: !!sc.joined });
     await page.goto('https://www.gatorbaitmedia.com' + sc.path, { waitUntil: 'load' });
     if (sc.mounted) await page.waitForSelector(sc.scoreboard === 404 ? '[data-story-kit="strip"]' : '[data-story-kit="strip"][data-kit-live]', { timeout: 8000 }).catch(() => {});
     await page.waitForTimeout(1200);
@@ -312,13 +486,24 @@ for (const sc of only(storyScenarios)) {
         links: body ? [...body.querySelectorAll('a.gbm-kit-link')].map((a) => [a.getAttribute('data-term'), a.getAttribute('href'), a.textContent]) : [],
         linkedAll: body ? body.getAttribute('data-story-kit-linked') : '', existing: (document.getElementById('qa-existing') || {}).innerHTML,
         inSkipped: document.querySelectorAll('h1 .gbm-kit-link, h2 .gbm-kit-link, figcaption .gbm-kit-link, [data-hook="post-metadata"] .gbm-kit-link, blockquote .gbm-kit-link, a a').length,
-        bodyText: body ? body.textContent.replace(/\s+/g, ' ').trim() : '',
+        bodyText: body ? (() => { const c = body.cloneNode(true); c.querySelectorAll('[data-gbm-capture]').forEach((n) => n.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); })() : '',
+        cap: (() => {
+          const inl = document.querySelectorAll('[data-gbm-capture="story-inline"]'), end = document.querySelectorAll('[data-gbm-capture="story-end"]');
+          // The inline card follows the 4th prose paragraph (longer than 60 characters, not the byline, not a quote).
+          const prose = body ? [...body.querySelectorAll('p')].filter((p) => { const t = p.textContent.replace(/\s+/g, ' ').trim(); return t.length > 60 && !p.closest('blockquote,figure,[data-story-kit]') && !/^(By\s+[A-Z]|[—–-]\s)/.test(t); }) : [];
+          const i = inl[0], prev = i && i.previousElementSibling;
+          return { inline: inl.length, end: end.length, endInMore: !!document.querySelector('[data-story-kit="more"] > [data-gbm-capture="story-end"]'),
+            afterFourth: !!(prev && prose[3] && prev.contains(prose[3])), inBody: !!(i && body && body.contains(i)),
+            checked: [...document.querySelectorAll('[data-gbm-capture] input[name=consent]')].some((c) => c.checked),
+            bar: document.querySelectorAll('#gbc-bar').length, barOn: !!document.querySelector('#gbc-bar.on'), barAside: !!document.querySelector('#gbc-bar.aside'),
+            css: document.querySelectorAll('#gbm-capture-css').length };
+        })(),
         mores: document.querySelectorAll('[data-story-kit="more"]').length, cards: document.querySelectorAll('[data-story-kit="more"] .gbm-kit-card').length,
         moreAfterLast: !!more && !!ps.length && more.previousElementSibling !== null && more.previousElementSibling.contains(ps[ps.length - 1]),
         moreTitle: more ? more.querySelector('h3').textContent : '',
       };
     });
-    const bodyTextOf = () => page.evaluate(() => document.querySelector('[data-hook="post-description"]').textContent.replace(/\s+/g, ' ').trim());
+    const bodyTextOf = () => page.evaluate(() => { const c = document.querySelector('[data-hook="post-description"]').cloneNode(true); c.querySelectorAll('[data-gbm-capture]').forEach((n) => n.remove()); return c.textContent.replace(/\s+/g, ' ').trim(); });
     const check = (r, bad, phase) => {
       if (r.scrollW > r.vw) bad.push(`${phase}horizontal overflow ${r.scrollW}>${r.vw}`);
       if (r.off.length) bad.push(`${phase}elements past viewport: ` + r.off.join(', '));
@@ -336,6 +521,11 @@ for (const sc of only(storyScenarios)) {
       if (r.existing !== 'schedule' || r.inSkipped) bad.push(`${phase}existing link "${r.existing}", links in skipped zones ${r.inSkipped}`);
       if (r.mores !== 1 || r.cards !== 3 || !r.moreAfterLast || r.moreTitle !== 'Keep up with the Gators') bad.push(`${phase}cards block ${r.mores}x${r.cards} afterLast=${r.moreAfterLast} "${r.moreTitle}"`);
       if (r.css !== 1) bad.push(`${phase}css tags ${r.css}`);
+      const c = r.cap;
+      if (sc.joined) { if (c.inline || c.end || c.bar) bad.push(`${phase}signed-up reader still sees capture: inline ${c.inline}, end ${c.end}, bar ${c.bar}`); }
+      else if (!sc.capture) { /* the original kit scenarios: the cards must be there once */ if (c.inline !== 1 || c.end !== 1) bad.push(`${phase}capture cards inline ${c.inline}, end ${c.end}`); }
+      if (!sc.joined && (c.inline !== 1 || !c.inBody || !c.afterFourth || c.end !== 1 || !c.endInMore || c.css !== 1)) bad.push(`${phase}capture inline=${c.inline} inBody=${c.inBody} afterFourth=${c.afterFourth} end=${c.end} inMore=${c.endInMore} css=${c.css}`);
+      if (c.checked) bad.push(`${phase}a consent box starts checked`);
     };
     const bad = [];
     let r = await read();
@@ -355,12 +545,14 @@ for (const sc of only(storyScenarios)) {
       check(r, bad, 'after wipe: ');
       if ((await bodyTextOf()).replace(/Keep up with the Gators.*$/, '').trim() !== before.replace(/Keep up with the Gators.*$/, '').trim()) bad.push('after wipe: body text changed');
       // Extra mount calls are no-ops.
-      await page.evaluate(() => { window.__GBM_KIT_RUNTIME__.mount(); window.__GBM_KIT_RUNTIME__.mount(); });
+      await page.evaluate(() => { window.__GBM_KIT_RUNTIME__.mount(); window.__GBM_KIT_RUNTIME__.mount(); const b = document.querySelector('[data-hook="post-description"]'); window.GBM_CAPTURE.mountStory({ body: b, paras: [...b.querySelectorAll('p')] }); });
       r = await read();
       check(r, bad, 'after remount: ');
+      if (!sc.capture && (r.cap.bar || r.cap.barOn)) bad.push('slide-up showed with no scroll and before its delay');
+      await captureFlow(page, sc, bad, wixLog, read);
     } else if (r.runtime || r.kitNodes || r.css) bad.push(`kit mounted off /post/: runtime=${r.runtime} nodes=${r.kitNodes} css=${r.css}`);
     const tag = `${sc.name}@${width}`;
-    console.log((bad.length ? 'FAIL ' : 'ok   ') + tag.padEnd(26) + ` strips=${r.strips} chips=${r.chips.length} links=${r.links.length} cards=${r.cards} ${bad.join('; ')}`);
+    console.log((bad.length ? 'FAIL ' : 'ok   ') + tag.padEnd(26) + ` strips=${r.strips} chips=${r.chips.length} links=${r.links.length} cards=${r.cards} capture=${r.cap ? r.cap.inline + '/' + r.cap.end : '-'} ${bad.join('; ')}`);
     if (bad.length) failures.push(tag + ': ' + bad.join('; '));
     if (shots && sc.mounted) await page.screenshot({ path: join(shots, `story-${width}.png`), fullPage: true });
     await ctx.close();

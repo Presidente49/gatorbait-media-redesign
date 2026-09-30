@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Builds sports-live/homepage.js (Front Page 2026) and its fixtures from:
-//   sports-live/src/front-page.css, sports-live/src/front-page.js, sports-live/src/share.js, sports-live/src/story-kit.js,
+//   sports-live/src/front-page.css, sports-live/src/front-page.js, sports-live/src/share.js, sports-live/src/capture.js, sports-live/src/story-kit.js,
 //   the fan modules sports-live/src/{make-the-call.js,make-the-call.css,ask-gatorbait.js,the-stands.js}
 //   (mounted only when deploy/cloudflare/endpoints.json names their Workers),
 //   sports-live/front-page.config.json and the newest stories in gazette-live/posts.json.
@@ -20,9 +20,9 @@ const read = (p) => readFileSync(join(repo, p), 'utf8');
 const minCss = (p) => read(p).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
 const css = minCss('sports-live/src/front-page.css') + '\n' + minCss('sports-live/src/make-the-call.css');
 const runtime = read('sports-live/src/front-page.js');
-// Story pages: Share GatorBait, then the Story Kit (guide strip, first-mention links, "Keep up with the Gators"); both ship in
+// Story pages: Share GatorBait, the Magazine signup (capture.js), then the Story Kit (guide strip, first-mention links, "Keep up with the Gators"); both ship in
 // the standalone sports-live/share.js that the blog post embed loads and ride along in homepage.js (the kit exits off /post/).
-const share = read('sports-live/src/share.js') + '\n/* GatorBait Story Kit (sports-live/src/story-kit.js): guide strip, first-mention links and the Keep up with the Gators cards on /post/ pages only. */\n' + read('sports-live/src/story-kit.js');
+const share = read('sports-live/src/share.js') + '\n/* GatorBait Capture (sports-live/src/capture.js): the "Get GatorBait Magazine free" signup for story pages and the homepage hub. */\n' + read('sports-live/src/capture.js') + '\n/* GatorBait Story Kit (sports-live/src/story-kit.js): guide strip, first-mention links and the Keep up with the Gators cards on /post/ pages only. */\n' + read('sports-live/src/story-kit.js');
 // Fan modules: each an IIFE that only defines window.GBM_CALL / GBM_ASK / GBM_STANDS; front-page.js mounts them after paint.
 const modules = ['make-the-call', 'ask-gatorbait', 'the-stands'].map((m) => `/* ${m} (sports-live/src/${m}.js) */\n` + read(`sports-live/src/${m}.js`)).join('\n');
 const MAX_JS = 260 * 1024;

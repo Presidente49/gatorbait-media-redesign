@@ -92,6 +92,11 @@ function audit(input){
 
   const nativeVisible=visible(nativePages);
   if(target.name==='home'&&rootVisible&&nativeVisible)hard.push('home custom surface and native #SITE_PAGES are both visible');
+  if(target.name==='home'&&rootPresent){
+    const road=document.querySelector('#gbm-road');
+    if(!road)warnings.push('season band #gbm-road not rendered');
+    else if(road.querySelectorAll('.g').length<3)warnings.push('season band has '+road.querySelectorAll('.g').length+' games');
+  }
   if(target.name==='magazine'&&rootVisible&&nativeVisible)hard.push('Magazine custom surface and native #SITE_PAGES are both visible');
 
   const sideways=document.documentElement.scrollWidth>viewport+2;

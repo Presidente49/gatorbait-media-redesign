@@ -6,7 +6,7 @@
 //   --check exits 1 if the committed outputs differ from a fresh build. The bundled story snapshot
 //   follows gazette-live/posts.json, which the feed workflow refreshes every 5 minutes, so run
 //   --check right after a rebuild, not as a standing CI gate.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -26,6 +26,15 @@ const posts = feed.posts.slice(0, 16).map((p) => ({
 }));
 const newest = posts.map((p) => p.firstPublishedDate).sort().pop();
 const { $comment, ...cfg } = config;
+// Bundle the season schedule from the scoreboard job's feed, so The Road Ahead band paints even when the
+// live scoreboard fetch misses the 1.5 s paint budget (phones did on Sept. 30); the fetch then patches it.
+const repoScoreboard = existsSync(join(repo, 'sports-live/scoreboard.json')) ? JSON.parse(read('sports-live/scoreboard.json')) : null;
+if (repoScoreboard && Array.isArray(repoScoreboard.schedule)) {
+  cfg.scoreboard = { ...cfg.scoreboard, schedule: repoScoreboard.schedule.slice(0, 20).map((g) => ({
+    date: g.date, opponent: g.opponent, opponentRank: g.opponentRank ?? null, home: g.home === true, status: g.status || '',
+    score: g.score && Number.isFinite(g.score.fla) && Number.isFinite(g.score.opp) ? { fla: g.score.fla, opp: g.score.opp } : null, tv: g.tv || '', storyUrl: g.storyUrl || '',
+  })) };
+}
 const bundle = { snapshot: newest, ...cfg, posts };
 
 const js = `/* GatorBait Front Page 2026: magazine front page, broadcast layer, Swamp Night palette, hub.

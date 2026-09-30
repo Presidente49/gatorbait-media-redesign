@@ -1,5 +1,5 @@
 {
-  "commit": "cfe4b4b349e2549dda27f468341cc6c565f7901f",
-  "updated": "2026-09-30T13:09:26.154Z",
-  "note": "Tunnel opponent record (PR #79) and fan-module mounts from deploy/cloudflare/endpoints.json (PR #80). Previous: 9f166e2c8a7b36c6aab601b7c5949ed1333ad79f. Pre-Share: 729e645f374d3830f13ab7d80cc1301d81d3bd90."
+  "commit": "499dca9f8d65fd746c117b39260ea08184e0416f",
+  "updated": "2026-09-30T15:40:00Z",
+  "note": "Eddie Gilley on the Columnists rail (PR #82). Rollback: cfe4b4b349e2549dda27f468341cc6c565f7901f."
 }

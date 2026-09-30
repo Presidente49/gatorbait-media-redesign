@@ -1,47 +1,48 @@
-# Game Week Partner
+# Ask Gator Nation
 
-## 1) The idea (two sentences)
+## The idea
 
-Sell one sponsor per Florida game week a single labeled tag that rides the three places Gator Nation already checks: The Tunnel game-day opener on Saturday, the next-game card in The Road Ahead all week, and a live mention on the Wednesday Buddy Martin Show's "Bloody Tuesday Report." Eight game weeks remain (ESPN schedule), with Texas and Georgia weeks priced as premium, and the whole thing is text in the page's own type, so it adds one line to the homepage without touching its look.
+A five-minute AI-run conversation, not a form, where Gators fans tell GatorBait what they are watching for in Missouri week, what they want more of from the site, and the one question they would put to Buddy Martin. It runs on Perspective AI, embeds on the homepage and in GatorBait Weekly, and its themes feed Juice's Friday package and a Wednesday "Ask Gator Nation" segment on The Buddy Martin Show. One local partner, chosen from businesses that already sponsor Gators media, puts its name beside it for the rest of the season.
 
-## 2) Why readers or revenue care
+Round one's Game Week Partner was a CSS mockup of a sponsor tag. It is gone. This is a listening product that produces editorial material every week whether or not a partner is sold, and it gives a partner something fans actually use.
 
-- Revenue: doctrine ranks direct local/regional sponsorship and Buddy Martin Show sponsorship third and fourth in the revenue stack, above the newsletter and merchandise, yet neither has a packaged, dated inventory unit a local business can buy in one email. A game week is a unit a sports bar, dealer or credit union already understands.
-- Timing: Florida is 4-0 and No. 8 after beating No. 4 Ole Miss 52-28 (ESPN), the first 4-0 start since 2019 (gatorbaitmedia.com), with ESPN's FPI favoring the Gators in every remaining game except Texas and Georgia (gatorbaitmedia.com). Demand for anything Gators will not be higher than the next five weeks.
-- Readers: nothing new to load and nothing that jumps. The tag is one text line in the existing pill row and one text line on one card. Readers get a clearly labeled sponsor, and the show gets a recurring Wednesday segment ("what Bloody Tuesday told Buddy") that stands on its own even with no sponsor sold.
-- Different from Jarvis's work: The Road Ahead and The Tunnel are the product; this is the first way to monetize them without altering them.
+## Why it matters
 
-## 3) How it is built (what the sponsor gets, where it appears, effort)
+- GatorBait has no first-party fan research. Editorial calls (more recruiting? more Buddy? more galleries?) are guesses. Ask Gator Nation turns them into weekly evidence with quotes, without a survey form nobody finishes.
+- The show gets a standing segment with real fan questions by first name, which is Buddy as editorial lead across homepage, Magazine and show (Brenden's standing direction), with one canonical home and no duplicated articles.
+- Timing: Florida is 4-0, No. 8, coming off 52-28 over No. 4 Ole Miss, and plays at No. 25 Missouri on Sat., Oct. 3, 3:30 p.m. ET on ABC (ESPN via `sports-live/scoreboard.json`). Interest is at a season high and eight game weeks remain.
+- Partners: the ten prospects in `prospects.md` already buy Gators-adjacent media through Gators Sports Properties, Florida Athletics or ESPN WRUF. They do not need the category explained; they need an inventory unit that is not a banner.
+- Data respect: first name and optional email only, no list building without a separate opt-in, no transcripts to partners.
 
-What the sponsor gets:
-- Saturday: "Game week partner · Name" as a ghost pill beside the "Game day" pill at the top of The Tunnel, visible across countdown, live and final states.
-- Sunday through kickoff: the same one-line tag on the `.g.nx` next-game card in The Road Ahead.
-- Wednesday: a live verbal mention from Buddy at the top of the Bloody Tuesday Report segment plus one lower-third card on the YouTube and Facebook stream.
-- Optional: a linked fan offer for that week (watch-party special, game-day discount).
+## Evidence
 
-Where it appears in the code (proposal only, no edits made):
-- `sports-live/front-page.config.json`: add an optional `partner` object, e.g. `{ "name": "", "url": "", "from": "<ISO>", "until": "<ISO>" }`, next to `pins`, so it expires on its own like a timed pin.
-- `sports-live/src/front-page.js`: `tunnelHtml()` appends one `<span class="fp-pill fp-ghost">` when a partner is active; `roadHtml()` appends one `<div class="sub">` line to the `nx` card. Both are escaped strings, no script, no image, no network call, so Core Web Vitals and the no-jump architecture are untouched.
-- `sports-live/qa-front-page.mjs`: one assertion that the tag renders only inside the window and never on a finished game.
-- Show: a reusable lower-third in the existing broadcast-graphics style (Barlow Condensed, Swamp Night colors) with the sponsor name swapped per week.
+Tool calls made this session, in order:
 
-Effort: about 30 lines of JS/CSS and one QA case, plus one lower-third template. Selling it is the real work: the pitch page, the email template and the target list in this folder are ready once the rate card is filled.
+1. `mcp__Perspective_AI__workspace_get_default`: `workspace_id: null`, `onboarding_url` returned (twice, before and after the usage-limit reset).
+2. `mcp__Perspective_AI__agent_template_search` (research agents, sports media fan listening): 26 matches; nearest templates `marketing-focus-group` and `customer-interview`, with live demos. Custom brief used instead.
+3. `mcp__Perspective_AI__perspective_create` (research, full brief in `perspective.md` section 3): **refused**, `status: "onboarding_required"`, message: "This account has no workspace yet. Give the user this link to finish setting up … Once they confirm they're done, retry the tool." No perspective ID exists; none is claimed.
+4. `mcp__Exa__agent_run`: run ID `agent_run_5835ed8e5a62443483e9977b7162c291`, medium effort, 12 searches, `completed`, `schema_satisfied`; returned 10 businesses with source URLs.
+5. `mcp__Exa__web_fetch_exa`: one batched fetch of all 10 source URLs. Nine confirmed on the page text; UF Health's quoted claim did not appear in the fetched excerpt and is flagged. Exa's `website` column was shifted by one row and was corrected by hand.
+6. `mcp__Gmail__create_draft`: draft ID `r-1050504623129466129`, message ID `1a0f0be2d0681dc1`, thread `1a0f0be2d0681dc1`, no recipient, not sent. Plain-voice partner note from Brenden.
+7. `mcp__Google_Calendar__list_events` (Sept. 30–Oct. 8): calendar readable (owner, America/New_York), no events in the window, so no conflict with a Wednesday segment.
+8. `mcp__PostHog__exec` (`call project-get {}`, next listening tool per brief rule 6): **denied** by the auto-mode permission classifier ("Exfil Scouting"). `search survey` succeeded (`survey-create`, `survey-launch`, `surveys-responses-list` exist). Not pursued further; a denial is not to be worked around.
 
-## 4) What it needs from Brenden
+Files: `perspective.md` (refusal record, onboarding link, verbatim brief, four-call runbook, insight flow), `prospects.md` (10 cited prospects), `preview.html` (real outputs only: brief, draft ID, prospect table, onboarding link).
 
-- Rates for a standard week, premium weeks (Texas, Georgia, FSU) and multi-week/season bundles; the page has `[Brenden: fill]` blanks for each.
-- Any audience figures he is willing to state publicly; none exist in published stories, so the page leaves that blank rather than inventing one.
-- Contact phone/email for the close line.
-- Buddy's sign-off on a standing Wednesday "Bloody Tuesday Report" segment and on reading one sponsor line.
-- Master Control authorization for the additive front-page change (config field plus two render lines) and for the QA run; the homepage look is locked and this idea does not change it, but the change is still a production edit.
-- A decision on labeling wording ("Game week partner" vs. "Presented by") for consistency with existing sponsorship labeling.
+## What it needs from Brenden
 
-## 5) Risks
+1. Sign in once at the Perspective onboarding link in `perspective.md` (about two minutes). Then say "done" and the four calls in `perspective.md` section 2 produce the live interview, the preview link and the embed snippets; no further design work.
+2. Approve the Wednesday "Ask Gator Nation" segment with Buddy (two or three fan questions by first name).
+3. Authorize, through Master Control, the homepage widget placement (a single embed div below The Road Ahead; the homepage look is locked, so this is an additive module, not a redesign) and the newsletter card.
+4. Address and send, or edit, Gmail draft `r-1050504623129466129`; start with Meldon Law or the Gainesville/Ocala BMW Dealers per the fit ranking.
+5. Decide the label wording: "Ask Gator Nation, with [Partner]" is the recommendation.
 
-- Trust: a sponsor line next to editorial can look like influence. Mitigation: fixed "Game week partner" label, no sponsor input on stories, and the tag never appears on injury or news items.
-- Homepage lock: even one added line is a change to the locked Front Page 2026 presentation and needs explicit approval; ship behind an empty config field so nothing renders until a partner is sold.
-- Term drift: "Bloody Tuesday" is Jon Sumrall's phrase for practice. If he stops using it, the segment name should follow; keep the config label editable.
-- Unsold weeks: an empty tag must never render. The expiry window handles that; QA should assert it.
-- Category conflicts: two competing businesses in adjacent weeks, or a category that conflicts with an existing display-ad relationship. Brenden should keep a simple exclusivity rule per category.
-- Show dependency: the Wednesday read depends on the live show airing; if a show is skipped, the make-good is the following Monday show, stated up front in the agreement.
-- Numbers: the pitch cites only ESPN and gatorbaitmedia.com stories. If Brenden fills audience blanks, those figures need a source he can defend to a sponsor.
+## Risks
+
+- Perspective quota: real conversations count toward the workspace plan; preview conversations do not. Check the plan after onboarding before the newsletter link goes out.
+- Low response in week one: the segment still runs on whatever comes in; three good questions are enough for air.
+- Privacy drift: a partner will ask for the emails. The answer is no; the weekly theme summary is the deliverable, stated in the agreement.
+- Editorial independence: the partner's name sits beside the module, never inside the questions or the show answers.
+- Homepage lock: the widget is additive and must be approved as a production edit; it ships behind a config flag so nothing renders until approved.
+- Prospect freshness: two entries (Davis Automotive, 2017; Gator Collective, 2022) need a current-status check before contact; UF Health's claim is unconfirmed.
+- The Gmail draft says the module is opening "this week." If onboarding slips past Missouri week, change it to South Carolina week (Oct. 10) before sending.

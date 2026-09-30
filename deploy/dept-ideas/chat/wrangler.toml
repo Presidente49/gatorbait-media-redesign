@@ -4,7 +4,7 @@
 name = "the-stands"
 main = "worker.mjs"
 compatibility_date = "2025-09-01"
-workers_dev = false
+workers_dev = true
 
 [vars]
 DEV_TOKENS = "1"

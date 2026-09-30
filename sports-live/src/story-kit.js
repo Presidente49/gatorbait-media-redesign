@@ -11,6 +11,8 @@
  *      Tigers") become links to the same destinations. Whole words, case-insensitive, at most 5 per story.
  *   3. "Keep up with the Gators": three cards (Roster & Schedule, Florida Stats, The Road Ahead) after the
  *      last body paragraph.
+ *   4. The "Get GatorBait Magazine free" signup (window.GBM_CAPTURE, sports-live/src/capture.js) mid-article and
+ *      inside the Keep up block; the kit only tells it where the body, its paragraphs and the block are.
  * Wix re-renders the post after hydration and drops early inserts, so a MutationObserver re-mounts what is
  * gone; every step is guarded by [data-story-kit] and never duplicates.
  * What it never does: it writes nothing to Wix, edits no article text (links wrap existing words in place),
@@ -186,7 +188,13 @@
   function mount() {
     if (document.getElementById('gbm-live')) return;
     if (!document.getElementById('gbm-story-kit-css')) document.head.appendChild(el('style', { id: 'gbm-story-kit-css' }, CSS));
-    mountStrip(); mountLinks(); mountMore();
+    mountStrip(); mountLinks(); mountMore(); mountCapture();
+  }
+  // 4. GatorBait Magazine signup (sports-live/src/capture.js): a card after the 4th prose paragraph and one inside
+  // "Keep up with the Gators". The capture module owns the markup, the submit and its own no-duplicate guards.
+  function mountCapture() {
+    var b = body(); if (!b || !window.GBM_CAPTURE) return;
+    try { window.GBM_CAPTURE.mountStory({ body: b, paras: paragraphs(b), more: document.querySelector('[data-story-kit="more"]') }); } catch (_) {}
   }
   window.__GBM_KIT_RUNTIME__ = { version: VERSION, mount: mount, links: LINKS };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, { once: true }); else mount();

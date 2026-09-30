@@ -251,4 +251,10 @@
   document.addEventListener('gbm:gazette-ready', mount);
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, { once: true }); else mount();
   var tries = 0, retry = setInterval(function () { mount(); if (++tries > 8 || document.querySelector('[data-share]')) clearInterval(retry); }, 500);
+  // Wix blog pages hydrate late: watch for the headline for up to 90 s, then stop.
+  if ('MutationObserver' in window && !document.querySelector('[data-share]')) {
+    var mo = new MutationObserver(function () { if (document.querySelector('[data-share]')) { mo.disconnect(); return; } mount(); });
+    mo.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(function () { mo.disconnect(); }, 90000);
+  }
 })();

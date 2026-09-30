@@ -12,7 +12,8 @@ const selector = process.argv[3] === undefined ? '#gbm-road' : process.argv[3];
 const widths = (process.argv[4] || '390,1365').split(',').map(Number).filter(Boolean);
 const OUT = 'build/live-shots';
 mkdirSync(OUT, { recursive: true });
-const url = 'https://www.gatorbaitmedia.com' + path;
+// deploy/covers/*.html renders a story cover from the checkout instead of the live site (the query carries the copy).
+const url = /^deploy\/covers\//.test(path) ? 'file://' + process.cwd() + '/' + path : 'https://www.gatorbaitmedia.com' + path;
 const IOS_UA = devices['iPhone 13'].userAgent;
 // A real Chrome UA on desktop: with the default HeadlessChrome UA, Wix answered with an older cached
 // snapshot for a while after an embed update (Sept. 30), which real browsers did not get.
@@ -34,6 +35,8 @@ for (const w of widths) {
     m.http = res && res.status();
     await page.waitForSelector('#gbm-live.fp26', { timeout: 15000 }).catch(() => { m.note = 'front page root not seen in 15s'; });
     await page.waitForTimeout(3500);
+    // Cover renders: wait for web fonts and the photo before shooting.
+    if (url.startsWith('file://')) { await page.evaluate(() => document.fonts.ready).catch(() => {}); await page.waitForTimeout(2500); }
     // Which build ran: the loader's pinned commit as served in the HTML, and the renderer's own build stamp.
     Object.assign(m, await page.evaluate(() => ({
       loaderSrc: (document.documentElement.outerHTML.match(/front-page-2026 src=([0-9a-f]+)/) || [])[1] || null,

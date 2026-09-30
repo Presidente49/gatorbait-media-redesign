@@ -101,6 +101,7 @@ async function run(width, opts = {}) {
     // Reset the crowd for the next width so every run starts at 48.
     env.DB._raw.exec('DELETE FROM picks WHERE rowid > 48');
   }
+  await page.waitForTimeout(1200); // let the bar transitions (0.9 s) settle so the shot shows the final widths
   await page.screenshot({ path: join(shots, `call-${tag.replace('@', '-')}.png`), fullPage: true });
   console.log((bad.length ? 'FAIL ' : 'ok   ') + tag.padEnd(16) + ` h=${Math.round(r.h)} count=${r.count} avg=${r.avg} fla=${r.fla} state=${r.state} lock="${r.lock}" ${bad.join('; ')}`);
   if (bad.length) failures.push(tag + ': ' + bad.join('; '));

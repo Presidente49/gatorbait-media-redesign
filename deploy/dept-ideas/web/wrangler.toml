@@ -1,0 +1,18 @@
+# Make the Call Worker. NOT deployed by the web desk; Jarvis deploys (TOOLS.md). `wrangler dev --local` runs it
+# against a local SQLite copy of the schema; `--remote` would hit the real dev D1 below.
+name = "gatorbait-make-the-call"
+main = "worker.mjs"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+[vars]
+# Local-only origins for wrangler dev / the Playwright fixture. Production leaves this empty.
+DEV_ORIGINS = "http://localhost:8788,http://127.0.0.1:8788"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "gatorbait-dev-make-the-call"
+database_id = "9d7f90bc-8b98-4182-a4b0-69ab0e9ddc7b"
+
+[observability]
+enabled = true

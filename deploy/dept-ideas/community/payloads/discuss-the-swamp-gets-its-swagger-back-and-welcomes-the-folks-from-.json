@@ -1,0 +1,28 @@
+{
+  "kind": "group-feed-post",
+  "target": {
+    "groupId": "74041d23-8785-41f7-8715-7f5562804685",
+    "slug": "gator-football-talk",
+    "name": "Gator Football Talk",
+    "privacyStatus": "PUBLIC",
+    "accessRestriction": null
+  },
+  "post": {
+    "contentType": "PLAIN_TEXT",
+    "pinned": false,
+    "text": "DISCUSS: The Swamp Gets Its Swagger Back And Welcomes The Folks From The Grove In Rude Fashion\nFlorida 52, Ole Miss 28. Buddy Martin on the Swamp's swagger, Jadan Baugh's historic day, and a 4-0 start for the first time since 2019.\nhttps://www.gatorbaitmedia.com/post/the-swamp-gets-its-swagger-back-and-welcomes-the-folks-from-the-grove-in-rude-fashion\nBy Buddy Martin. Read it on GatorBait, then talk about it here. One thread per story; GatorBot posts the link, people post the takes.",
+    "links": [
+      {
+        "label": "Story",
+        "title": "The Swamp Gets Its Swagger Back And Welcomes The Folks From The Grove In Rude Fashion",
+        "url": "https://www.gatorbaitmedia.com/post/the-swamp-gets-its-swagger-back-and-welcomes-the-folks-from-the-grove-in-rude-fashion"
+      }
+    ]
+  },
+  "story": {
+    "author": "Buddy Martin",
+    "firstPublishedDate": "2026-09-27T04:44:52Z",
+    "section": "GatorBait"
+  },
+  "schemaNote": "NOT FOUND in the public REST spec on 2026-09-30 (three ranked SearchWixRESTDocumentation queries and a lightIndex scan for feed|social-groups|posts returned only Comments/Moderation resources). Group feed posts are created in the Groups app UI, or by Velo, or by the Comments API for replies; GatorBot therefore emits a handoff payload for the feed post and a fully validated API payload for rules."
+}

@@ -1,0 +1,122 @@
+{
+ "tool": "mcp__OpenRush__inspect_domain",
+ "args": {
+  "domain": "gatorbaitmedia.com"
+ },
+ "provenance": {
+  "source_class": "search_index",
+  "method": "indexed",
+  "observed_at": "2026-09-30T05:14:28.076560Z",
+  "confidence": 0.7
+ },
+ "result": {
+  "resolved_target": "www.gatorbaitmedia.com",
+  "organic_keywords": 132,
+  "top_3_keywords": 6,
+  "top_10_keywords": 18,
+  "estimated_organic_traffic_per_month": 691,
+  "movement": {
+   "new": 86,
+   "up": 26,
+   "down": 12,
+   "lost": 45
+  },
+  "intent_mix": {
+   "informational": 0.56,
+   "commercial": 0.08,
+   "navigational": 0.32,
+   "transactional": 0.04
+  },
+  "top_keywords": [
+   {
+    "keyword": "florida gators football recruiting news",
+    "position": 16,
+    "monthly_volume": 2900,
+    "url": "/gatorbait-media-blogs/categories/gator-recruiting"
+   },
+   {
+    "keyword": "florida recruiting news",
+    "position": 13,
+    "monthly_volume": 2900,
+    "url": "/gatorbait-media-blogs/categories/gator-recruiting"
+   },
+   {
+    "keyword": "gatorbait",
+    "position": 4,
+    "monthly_volume": 2900,
+    "url": "/about"
+   },
+   {
+    "keyword": "gators football recruiting news",
+    "position": 14,
+    "monthly_volume": 2900,
+    "url": "/gatorbait-media-blogs/categories/gator-recruiting"
+   },
+   {
+    "keyword": "gator recruiting",
+    "position": 14,
+    "monthly_volume": 1600
+   },
+   {
+    "keyword": "gatorbait247",
+    "position": 13,
+    "monthly_volume": 1300,
+    "url": "/gatorbait-media-blogs/categories/gator-football"
+   },
+   {
+    "keyword": "florida gator track",
+    "position": 18,
+    "monthly_volume": 1000
+   },
+   {
+    "keyword": "florida gators track",
+    "position": 18,
+    "monthly_volume": 1000
+   },
+   {
+    "keyword": "florida gator track and field",
+    "position": 20,
+    "monthly_volume": 880
+   },
+   {
+    "keyword": "gator recruiting news",
+    "position": 12,
+    "monthly_volume": 720
+   }
+  ],
+  "top_pages": [],
+  "likely_competitors": [
+   {
+    "competitor": "alligatorarmy.com",
+    "shared_keywords": 16,
+    "avg_position": 14.75,
+    "organic_keywords": 312
+   },
+   {
+    "competitor": "insidethegators.com",
+    "shared_keywords": 14,
+    "avg_position": 17.29,
+    "organic_keywords": 314
+   },
+   {
+    "competitor": "hightopsport.com",
+    "shared_keywords": 13,
+    "avg_position": 29.77,
+    "organic_keywords": 226
+   },
+   {
+    "competitor": "floridagatorsbaseball.com",
+    "shared_keywords": 9,
+    "avg_position": 21.33,
+    "organic_keywords": 151
+   },
+   {
+    "competitor": "gator-football.com",
+    "shared_keywords": 8,
+    "avg_position": 50.75,
+    "organic_keywords": 109
+   }
+  ],
+  "data_freshness_note": "132 indexed keyword(s). The median candidate competitor indexes 133,825 keywords, 1014x this target; keyword-overlap competitor ranking is unreliable at that gap."
+ }
+}

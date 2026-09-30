@@ -1,0 +1,28 @@
+{
+  "kind": "group-feed-post",
+  "target": {
+    "groupId": "74041d23-8785-41f7-8715-7f5562804685",
+    "slug": "gator-football-talk",
+    "name": "Gator Football Talk",
+    "privacyStatus": "PUBLIC",
+    "accessRestriction": null
+  },
+  "post": {
+    "contentType": "PLAIN_TEXT",
+    "pinned": false,
+    "text": "DISCUSS: Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28\nA second batch of Chris Spears’ work from The Swamp as the Gators put away Ole Miss 52-28 — pregame, the pass rush, the sideline and the celebration after. Photos by Chris Spears, GatorBait Media The Swamp glows before Florida's SEC showdown with Ole Miss. Photo by Chris Spears, GatorBait Media Florida's offense goes through pregame warmups. Photo by Chris…\nhttps://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28\nBy Brenden Martin. Read it on GatorBait, then talk about it here. One thread per story; GatorBot posts the link, people post the takes.",
+    "links": [
+      {
+        "label": "Story",
+        "title": "Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28",
+        "url": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28"
+      }
+    ]
+  },
+  "story": {
+    "author": "Brenden Martin",
+    "firstPublishedDate": "2026-09-28T02:06:47Z",
+    "section": "GatorBait"
+  },
+  "schemaNote": "NOT FOUND in the public REST spec on 2026-09-30 (three ranked SearchWixRESTDocumentation queries and a lightIndex scan for feed|social-groups|posts returned only Comments/Moderation resources). Group feed posts are created in the Groups app UI, or by Velo, or by the Comments API for replies; GatorBot therefore emits a handoff payload for the feed post and a fully validated API payload for rules."
+}

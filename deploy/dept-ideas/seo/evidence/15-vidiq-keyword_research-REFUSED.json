@@ -1,0 +1,10 @@
+{
+ "tool": "mcp__vidIQ_for_Claude__vidiq_keyword_research",
+ "args": {
+  "keyword": "Florida Gators Missouri",
+  "mode": "research",
+  "country": "US"
+ },
+ "result": "ERROR",
+ "refusal_verbatim": "Not enough credits. This tool costs 5 credits. No credits were charged. If the connected vidIQ account is not the one you expected, reconnect the vidIQ integration and sign in with the intended account. Get more credits: https://app.vidiq.com/checkout/boost-lite-1"
+}

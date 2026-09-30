@@ -1,0 +1,120 @@
+{
+  "generatedAt": "2026-09-30T12:00:00.000Z",
+  "scoreboardUpdatedAt": "2026-09-29T02:17:33Z",
+  "feedNewest": "2026-09-29T20:19:43Z",
+  "homepageValid": true,
+  "errors": [],
+  "embedChars": 11237,
+  "wixEmbedMax": 15000,
+  "budget": 12000,
+  "articles": [
+    {
+      "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
+      "author": "Buddy Martin",
+      "game": "Florida Gators at No. 25 Missouri",
+      "startDate": "2026-10-03T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1517
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-awards-after-ole-miss-rout",
+      "author": "Brenden Martin",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1583
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloody-tuesday-before-missouri",
+      "author": "Brenden Martin",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1591
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again",
+      "author": "Eddie Gilley",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1574
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28",
+      "author": "Brenden Martin",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1492
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss",
+      "author": "Brenden Martin",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1464
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind",
+      "author": "Brenden Martin",
+      "game": "Florida Gators at No. 25 Missouri",
+      "startDate": "2026-10-03T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1312
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss",
+      "author": "Chris Spears",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1504
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+      "author": "Loren Meadows",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1570
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss",
+      "author": "Franz Beard",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1593
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25",
+      "author": "Brenden Martin",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1542
+    },
+    {
+      "url": "https://www.gatorbaitmedia.com/post/woods-chipper-florida-defense-special-teams-ole-miss",
+      "author": "Brenden Martin",
+      "game": "No. 4 Ole Miss at Florida Gators",
+      "startDate": "2026-09-26T19:30:00Z",
+      "valid": true,
+      "errors": [],
+      "tagChars": 1512
+    }
+  ]
+}

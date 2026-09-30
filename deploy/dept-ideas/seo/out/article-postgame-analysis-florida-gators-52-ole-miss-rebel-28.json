@@ -1,0 +1,62 @@
+{
+  "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+  "author": "Loren Meadows",
+  "wixSeoTag": {
+    "type": "script",
+    "props": {
+      "type": "application/ld+json"
+    },
+    "children": "{\"@context\":\"https://schema.org\",\"@type\":\"SportsEvent\",\"@id\":\"https://www.gatorbaitmedia.com/#game-401856699\",\"name\":\"No. 4 Ole Miss at Florida Gators\",\"startDate\":\"2026-09-26T19:30:00Z\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"homeTeam\":{\"@type\":\"SportsTeam\",\"@id\":\"https://www.gatorbaitmedia.com/#florida-gators\",\"name\":\"Florida Gators\"},\"awayTeam\":{\"@type\":\"SportsTeam\",\"name\":\"Ole Miss\"},\"sameAs\":\"https://www.espn.com/college-football/game/_/gameId/401856699\",\"sport\":\"American Football\",\"organizer\":{\"@type\":\"SportsOrganization\",\"@id\":\"https://www.gatorbaitmedia.com/#sec\",\"name\":\"Southeastern Conference\"},\"location\":{\"@type\":\"Place\",\"@id\":\"https://www.gatorbaitmedia.com/#ben-hill-griffin-stadium\",\"name\":\"Ben Hill Griffin Stadium\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Gainesville\",\"addressRegion\":\"FL\",\"addressCountry\":\"US\"}},\"description\":\"Final: Florida 52, Ole Miss 28. Florida won.\",\"subjectOf\":{\"@type\":\"NewsArticle\",\"@id\":\"https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28\",\"url\":\"https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28\",\"headline\":\"Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28\",\"datePublished\":\"2026-09-27T13:50:06Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Loren Meadows\",\"url\":\"https://www.gatorbaitmedia.com/gatorbait-media-blogs/tags/loren-meadows\"},\"image\":\"https://static.wixstatic.com/media/d3cfa5_9b92c9cd699d46a7a5c56db9a21317e5~mv2.jpg/v1/fit/w_800,h_500,al_c,q_80/file.png\"}}",
+    "custom": true,
+    "disabled": false
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "@id": "https://www.gatorbaitmedia.com/#game-401856699",
+    "name": "No. 4 Ole Miss at Florida Gators",
+    "startDate": "2026-09-26T19:30:00Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "homeTeam": {
+      "@type": "SportsTeam",
+      "@id": "https://www.gatorbaitmedia.com/#florida-gators",
+      "name": "Florida Gators"
+    },
+    "awayTeam": {
+      "@type": "SportsTeam",
+      "name": "Ole Miss"
+    },
+    "sameAs": "https://www.espn.com/college-football/game/_/gameId/401856699",
+    "sport": "American Football",
+    "organizer": {
+      "@type": "SportsOrganization",
+      "@id": "https://www.gatorbaitmedia.com/#sec",
+      "name": "Southeastern Conference"
+    },
+    "location": {
+      "@type": "Place",
+      "@id": "https://www.gatorbaitmedia.com/#ben-hill-griffin-stadium",
+      "name": "Ben Hill Griffin Stadium",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Gainesville",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      }
+    },
+    "description": "Final: Florida 52, Ole Miss 28. Florida won.",
+    "subjectOf": {
+      "@type": "NewsArticle",
+      "@id": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+      "headline": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
+      "datePublished": "2026-09-27T13:50:06Z",
+      "author": {
+        "@type": "Person",
+        "name": "Loren Meadows",
+        "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/tags/loren-meadows"
+      },
+      "image": "https://static.wixstatic.com/media/d3cfa5_9b92c9cd699d46a7a5c56db9a21317e5~mv2.jpg/v1/fit/w_800,h_500,al_c,q_80/file.png"
+    }
+  }
+}

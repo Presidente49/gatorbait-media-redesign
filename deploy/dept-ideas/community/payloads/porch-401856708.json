@@ -1,0 +1,40 @@
+{
+  "kind": "group-feed-post",
+  "target": {
+    "groupId": "a6400ba5-8553-44a6-b627-c8cb3377c171",
+    "slug": "gatorbait-gold-vip-lounge",
+    "name": "GatorBait Gold VIP Lounge",
+    "privacyStatus": "PRIVATE",
+    "accessRestriction": "ADMIN_APPROVAL"
+  },
+  "post": {
+    "contentType": "PLAIN_TEXT",
+    "pinned": true,
+    "text": "BUDDY'S PORCH, Missouri week: ask before the show.\nDrop your questions here. Buddy reads the Porch before The Buddy Martin Show, live Mondays, Wednesdays and Thursdays at 9 p.m. ET on YouTube and Facebook, and takes the best ones on air.\nStart with his column: Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time' https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time\n\nThis is the members' room. GatorBot opens the call; Buddy answers on the show, not in the thread. Questions that get answered are listed in the game thread on Thursday.\nPosted by GatorBot (automated).",
+    "links": [
+      {
+        "label": "Column",
+        "title": "Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",
+        "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time"
+      }
+    ]
+  },
+  "gating": {
+    "today": "GatorBait Gold VIP Lounge is PRIVATE with accessRestriction ADMIN_APPROVAL (real read).",
+    "proposed": "Switch accessRestriction to PAID_PLANS in the Groups dashboard and attach the current buyable plans (ids in evidence/plans.json). No prices change."
+  },
+  "lifecycle": {
+    "opens": {
+      "localDate": "2026-09-29",
+      "localTime": "09:00",
+      "timeZone": "America/New_York"
+    },
+    "closes": "after Thursday's show",
+    "eventId": "401856708"
+  },
+  "sources": [
+    "gazette-live/posts.json",
+    "evidence/groups.snapshot.json"
+  ],
+  "schemaNote": "NOT FOUND in the public REST spec on 2026-09-30 (three ranked SearchWixRESTDocumentation queries and a lightIndex scan for feed|social-groups|posts returned only Comments/Moderation resources). Group feed posts are created in the Groups app UI, or by Velo, or by the Comments API for replies; GatorBot therefore emits a handoff payload for the feed post and a fully validated API payload for rules."
+}

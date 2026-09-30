@@ -1,0 +1,138 @@
+{
+ "tool": "mcp__OpenRush__inspect_page",
+ "args": {
+  "url": "https://www.gatorbaitmedia.com/"
+ },
+ "provenance": {
+  "source_class": "search_index",
+  "method": "indexed",
+  "observed_at": "2026-09-30T05:14:27.211775Z",
+  "confidence": 0.7
+ },
+ "result": {
+  "organic_keywords": 24,
+  "estimated_organic_traffic_per_month": 120,
+  "top_keywords": [
+   {
+    "keyword": "gator bait and tackle",
+    "position": 18,
+    "monthly_volume": 390
+   },
+   {
+    "keyword": "gator bait tackle",
+    "position": 29,
+    "monthly_volume": 390
+   },
+   {
+    "keyword": "gator bait melrose",
+    "position": 31,
+    "monthly_volume": 320
+   },
+   {
+    "keyword": "florida gator sites",
+    "position": 43,
+    "monthly_volume": 260
+   },
+   {
+    "keyword": "florida gators websites",
+    "position": 41,
+    "monthly_volume": 260
+   },
+   {
+    "keyword": "gator blog",
+    "position": 19,
+    "monthly_volume": 260
+   },
+   {
+    "keyword": "gator blogs",
+    "position": 16,
+    "monthly_volume": 260
+   },
+   {
+    "keyword": "gatorbait 2",
+    "position": 33,
+    "monthly_volume": 260
+   },
+   {
+    "keyword": "gatorbait net message boards",
+    "position": 6,
+    "monthly_volume": 260
+   },
+   {
+    "keyword": "gatorbait.net message boards",
+    "position": 9,
+    "monthly_volume": 260
+   },
+   {
+    "keyword": "gator media",
+    "position": 7,
+    "monthly_volume": 210
+   },
+   {
+    "keyword": "gatorbait media",
+    "position": 1,
+    "monthly_volume": 210
+   },
+   {
+    "keyword": "gator bait melrose fl",
+    "position": 25,
+    "monthly_volume": 170
+   },
+   {
+    "keyword": "cast of gator bait",
+    "position": 45,
+    "monthly_volume": 140
+   },
+   {
+    "keyword": "gator bait cast",
+    "position": 26,
+    "monthly_volume": 140
+   },
+   {
+    "keyword": "gatorbait net 247",
+    "position": 23,
+    "monthly_volume": 110
+   },
+   {
+    "keyword": "gator bait football",
+    "position": 2,
+    "monthly_volume": 90
+   },
+   {
+    "keyword": "gatorbait football",
+    "position": 2,
+    "monthly_volume": 90
+   },
+   {
+    "keyword": "gator advertising",
+    "position": 43,
+    "monthly_volume": 50
+   },
+   {
+    "keyword": "gator bait shop",
+    "position": 26,
+    "monthly_volume": 50
+   },
+   {
+    "keyword": "what is gator bait",
+    "position": 58,
+    "monthly_volume": 50
+   },
+   {
+    "keyword": "beef lung gator bait",
+    "position": 27,
+    "monthly_volume": 30
+   },
+   {
+    "keyword": "gator bytes",
+    "position": 20,
+    "monthly_volume": 30
+   },
+   {
+    "keyword": "gator press",
+    "position": 13,
+    "monthly_volume": 30
+   }
+  ]
+ }
+}

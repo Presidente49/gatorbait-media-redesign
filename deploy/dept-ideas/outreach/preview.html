@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ask Gator Nation</title>
+<meta name="description" content="Real outputs from the round-two Outreach build: the Perspective AI interview brief and refusal, the Gmail draft ID, and the cited partner prospect list.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;600&display=swap">
+<style>
+:root{--navy:#07122e;--orange:#fa4616;--ink:#f3f5fa;--dim:rgba(243,245,250,.72);--line:rgba(243,245,250,.14);--card:rgba(243,245,250,.06)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--navy);color:var(--ink);font:400 16px/1.5 Barlow,system-ui,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 48px}
+h1,h2{font-family:"Barlow Condensed",Barlow,sans-serif;text-transform:uppercase;margin:0}
+h1{font-size:clamp(40px,10vw,60px);font-weight:800;line-height:.92;padding:28px 0 8px}
+h1 span{color:var(--orange)}
+h2{font-size:14px;font-weight:800;letter-spacing:.14em;color:var(--orange);margin:28px 0 8px}
+p{margin:0 0 10px}
+.k{display:inline-block;background:var(--orange);color:var(--navy);font:800 12px/1 "Barlow Condensed";text-transform:uppercase;letter-spacing:.14em;padding:7px 10px;border-radius:3px;margin-top:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:10px 0}
+.dim{color:var(--dim);font-size:14px}
+code{font:600 13px/1.4 ui-monospace,Menlo,monospace;background:rgba(0,0,0,.3);padding:2px 5px;border-radius:3px;word-break:break-all}
+a{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+th,td{text-align:left;vertical-align:top;padding:7px 6px;border-bottom:1px solid var(--line)}
+th{font-family:"Barlow Condensed";text-transform:uppercase;letter-spacing:.08em;color:var(--dim);font-weight:600}
+.warn{border-color:var(--orange)}
+blockquote{margin:0;padding:0 0 0 14px;border-left:3px solid var(--orange);color:var(--dim);font-size:15px}
+@media(max-width:480px){table{font-size:13px}td:nth-child(4),th:nth-child(4){display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="k">Outreach, round two</span>
+<h1>Ask <span>Gator Nation</span></h1>
+<p class="dim">A five-minute AI-run fan conversation for Missouri week, on the site and in the newsletter; themes go to Juice and The Buddy Martin Show; one local partner beside it. Everything on this page is a real tool output from Sept. 30, 2026. Nothing below is invented.</p>
+
+<h2>1. The live interview: one sign-in away</h2>
+<div class="card warn">
+<p><strong>Perspective AI refused <code>perspective_create</code> with <code>status: "onboarding_required"</code>.</strong> The account for brenden@gatorbaitmedia.com has no workspace yet, so no perspective ID, preview link or embed snippet exists. This page links the onboarding step, not a fake interview.</p>
+<p><a href="https://getperspective.ai/signin?callbackUrl=https%3A%2F%2Fgetperspective.ai%2Fresearch%2Fwelcome%3Finvite%3Dfalse%26discover%3Dfalse%26callbackUrl%3Dhttps%253A%252F%252Fgetperspective.ai%252Fresearch%26login_hint%3Dbrenden%2540gatorbaitmedia.com&amp;login_hint=brenden%40gatorbaitmedia.com">Finish Perspective onboarding (Brenden, about two minutes)</a></p>
+<p class="dim">After that, four calls (<code>perspective_create</code> → <code>perspective_await_job</code> → <code>perspective_get_preview_link</code> → <code>perspective_get_embed_options</code>) return the preview URL and the <code>widget</code> and <code>card</code> snippets. Runbook in <code>perspective.md</code>.</p>
+<p class="dim">What a Perspective interview feels like (Perspective's own public demo, not ours): <a href="https://getperspective.ai/interview/Xsud61wv">customer-interview live demo</a>.</p>
+</div>
+
+<h2>2. The brief that was sent (verbatim)</h2>
+<div class="card">
+<blockquote>"Ask Gator Nation" — a short, respectful listening interview for readers of GatorBait Media (gatorbaitmedia.com), an independent Florida Gators sports-news site with columnist Buddy Martin and The Buddy Martin Show. Audience: Florida Gators football fans. Context: Florida is 4-0 and ranked No. 8 after beating No. 4 Ole Miss 52-28, and plays at No. 25 Missouri on Saturday, Oct. 3 (3:30 p.m. ET, ABC). Goals: (1) hear what fans think about Missouri game week: their biggest worry, the matchup they are watching, their confidence; (2) learn what they want more of from GatorBait: game previews, postgame analysis, recruiting, Buddy Martin's columns, the show, photo galleries, the newsletter; (3) surface one question they would ask Buddy Martin on the show. Keep it to 5 to 7 minutes, conversational, warm, no hype. Collect only a first name and an optional email at the end (for a reply from the newsroom), nothing else; no phone, address, age or other personal data. Tone: plain, curious, respectful of the fan's time. Output should give the editorial team themes, quotes, and the fan's question for the show.</blockquote>
+<p class="dim">Game facts: ESPN via <code>sports-live/scoreboard.json</code>, updated 2026-09-29T02:17:33Z.</p>
+</div>
+
+<h2>3. Where the answers go</h2>
+<div class="card">
+<table>
+<tr><th>When</th><th>Who</th><th>What</th><th>Tool</th></tr>
+<tr><td>Sun.</td><td>Agency</td><td>Share link on the homepage module and in GatorBait Weekly, tagged <code>source=homepage</code> / <code>source=newsletter</code></td><td>Perspective embed</td></tr>
+<tr><td>Mon.–Wed.</td><td>Fans</td><td>5–7 minute conversations, first name + optional email only</td><td>Perspective interviewer</td></tr>
+<tr><td>Wed. noon</td><td>Agency</td><td>Themes, quotes, top three fan questions</td><td><code>read_insights</code></td></tr>
+<tr><td>Wed. 9 p.m. ET</td><td>Buddy</td><td>"Ask Gator Nation" segment on the show, questions by first name</td><td>show rundown</td></tr>
+<tr><td>Thu.</td><td>Juice</td><td>"What Gator Nation told us" item in the Friday package; assignments from the themes</td><td>editorial package</td></tr>
+<tr><td>Fri.</td><td>Agency</td><td>Partner gets the one-paragraph theme summary; no emails, no transcripts</td><td>email</td></tr>
+</table>
+</div>
+
+<h2>4. Partner note: Gmail draft, not sent</h2>
+<div class="card">
+<p>Draft ID <code>r-1050504623129466129</code> (message <code>1a0f0be2d0681dc1</code>), no recipient, in Brenden's plain voice. Subject: <em>Ask Gator Nation: a Missouri-week idea for you</em>. Brenden addresses and sends it, or edits it, from Gmail.</p>
+</div>
+
+<h2>5. Ten prospects who already sponsor Gators media (public facts, cited)</h2>
+<div class="card">
+<p class="dim">From Exa run <code>agent_run_5835ed8e5a62443483e9977b7162c291</code>, every source fetched and checked. No contact names or emails; websites only. Full table with evidence lines in <code>prospects.md</code>.</p>
+<table>
+<tr><th>#</th><th>Business</th><th>Already sponsors</th><th>Source</th></tr>
+<tr><td>1</td><td>Meldon Law, Gainesville</td><td>Official law firm partner of the Florida Gators (since 2020); Law Talk Live on 97.3 FM WSKY</td><td><a href="https://www.meldonlaw.com/community/florida-gators-partnership/">meldonlaw.com</a></td></tr>
+<tr><td>2</td><td>Gainesville / Ocala BMW Dealers</td><td>Proud Luxury Vehicle Partner; BMW Broadcast Plaza with live Gators Sports Network pregame show (extended Oct. 2024)</td><td><a href="https://www.learfield.com/2024/10/university-of-florida-athletics-signs-multi-year-partnership-extension-with-bmw/">learfield.com</a></td></tr>
+<tr><td>3</td><td>Davis Automotive Group, Gainesville/Ocala</td><td>Official Hometown Automotive Partner of the Florida Gators (2017; confirm current)</td><td><a href="https://brncf.com/florida-gators-and-davis-automotive-group-announce-new-partnership/">brncf.com</a></td></tr>
+<tr><td>4</td><td>Tower Hill Insurance, Gainesville</td><td>Florida Athletics partner for Goodwill Gators and Gators Experience (Aug. 2025)</td><td><a href="https://floridagators.com/news/2025/8/23/general-florida-blue-and-tower-hill-insurance-partner-with-florida-athletics-to-support-goodwill-gators-and-gators-experience-programs">floridagators.com</a></td></tr>
+<tr><td>5</td><td>GFL Environmental, Gainesville hauling</td><td>Official Sustainability Partner of the University of Florida Gators</td><td><a href="https://gflenv.com/gainesville-hauling/greengame/">gflenv.com</a></td></tr>
+<tr><td>6</td><td>Gainesville Neon &amp; Signs</td><td>Gators Sports Properties partner; built the 2025 basketball championship banner</td><td><a href="https://www.linkedin.com/posts/gators-sports-properties_gainesville-gogators-florida-activity-7399137323835113472-XRCC">Gators Sports Properties post</a></td></tr>
+<tr><td>7</td><td>Quality Plumbing of Gainesville</td><td>Florida Gators basketball sponsor via Learfield Gators Sports Properties (March 2025)</td><td><a href="https://www.linkedin.com/posts/johntullsportsmarketing_sportsbiz-gratitude-floridagators-activity-7308954558729203713-wuc7">LinkedIn post</a></td></tr>
+<tr><td>8</td><td>Gainesville Prosthetics</td><td>Title sponsor, Road To The World Cup on ESPN WRUF 98.1/850 (from April 2026)</td><td><a href="https://www.linkedin.com/feed/update/urn:li:activity:7444352865097138177">show announcement</a></td></tr>
+<tr><td>9</td><td>Gator Collective</td><td>Official partner of the Florida Gators per Gators Sports Properties (Feb. 2022; confirm current)</td><td><a href="https://www.wruf.com/headlines/2022/02/03/gator-collective-partners-with-uf/">wruf.com</a></td></tr>
+<tr><td>10</td><td>UF Health Orthopaedics and Sports Medicine</td><td>Claimed official health care provider of the Gators; not confirmed in the fetched excerpt</td><td><a href="https://ufhealth.org/specialties/orthopaedic-surgery/gainesville">ufhealth.org</a></td></tr>
+</table>
+</div>
+
+<h2>6. Also tried</h2>
+<div class="card">
+<p class="dim">PostHog surveys (next listening tool on the list): <code>call project-get {}</code> was denied by the permission classifier; <code>search survey</code> confirmed <code>survey-create</code> exists. Not pursued further. Google Calendar read (Sept. 30–Oct. 8): no events, so a Wednesday segment has no conflict.</p>
+</div>
+</div>
+</body>
+</html>

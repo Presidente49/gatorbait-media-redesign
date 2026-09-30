@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-09-30T09:36:18.221Z",
+  "mode": "dry-run",
+  "postingPolicy": "Nothing here was sent. Rules payloads are valid CreateOrReplaceAllRules bodies. Feed-post payloads are handoff bodies because the public REST spec exposes no Groups feed-create endpoint; they are posted from the Groups dashboard or a Velo backend by the production owner.",
+  "proposedRoutine": {
+    "name": "gatorbot-bloody-tuesday",
+    "cron": "CRON_TZ=America/New_York 50 8 * * 2",
+    "prompt": "Run node deploy/dept-ideas/community/gatorbot.mjs, attach payloads/ to the community issue for Jarvis. Do not post."
+  },
+  "counts": {
+    "gameThread": 1,
+    "porch": 1,
+    "discuss": 20,
+    "rules": 3
+  },
+  "files": [
+    "game-thread-401856708.json",
+    "porch-401856708.json",
+    "discuss-denzel-aberdeen-florida-temporary-injunction-2026.json",
+    "discuss-thoughts-of-the-day-september-29-2026.json",
+    "discuss-senate-passes-protect-college-sports-act-florida.json",
+    "discuss-put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-n.json",
+    "discuss-honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-aw.json",
+    "discuss-pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloo.json",
+    "discuss-who-are-these-guys-trautwein-s-troops-in-the-trenches-are-di.json",
+    "discuss-how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-m.json",
+    "discuss-chris-spears-best-shots-vol-2-florida-52-ole-miss-28.json",
+    "discuss-chris-spears-photo-gallery-florida-ole-miss.json",
+    "discuss-breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators.json",
+    "discuss-first-look-missouri-florida-gators-show-me-state-of-mind.json",
+    "discuss-chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss.json",
+    "discuss-chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-poll.json",
+    "discuss-bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again.json",
+    "discuss-postgame-analysis-florida-gators-52-ole-miss-rebel-28.json",
+    "discuss-franz-beard-gators-left-28-points-on-the-field-ole-miss.json",
+    "discuss-college-football-saturday-week-4-wrap-gators-ole-miss-top-25.json",
+    "discuss-the-swamp-gets-its-swagger-back-and-welcomes-the-folks-from-.json",
+    "discuss-woods-chipper-florida-defense-special-teams-ole-miss.json",
+    "rules-game-day-threads.json",
+    "rules-gator-football-talk.json",
+    "rules-gatorbait-gold-vip-lounge.json"
+  ],
+  "validation": {
+    "problems": 0,
+    "checks": [
+      "groupId GUID and present in real snapshot",
+      "privacyStatus/accessRestriction/allowPolicy/contentType in spec enums",
+      "text 1..20,480 chars",
+      "canonical gatorbaitmedia.com links only",
+      "no dollar figures",
+      "rules body matches CreateOrReplaceAllRulesRequest"
+    ]
+  }
+}

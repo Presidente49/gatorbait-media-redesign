@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Gators Game Graph preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1f3a;--ink:#f4f6fa;--mute:#b7c3d6;--acc:#fa4616;--card:#122a4c;--line:#2a4670}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Barlow,sans-serif;padding:24px 16px}
+h1,h2{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:0 0 8px}h1{font-size:40px}h2{font-size:24px;margin-top:32px}
+p{max-width:820px;color:var(--mute)}.k{color:var(--acc)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;max-width:960px}.t{background:var(--card);border:1px solid var(--line);padding:12px}.t b{display:block;font:700 34px/1 "Barlow Condensed",sans-serif}.t span{font-size:13px;color:var(--mute)}
+table{border-collapse:collapse;width:100%;max-width:960px;font-size:14px}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--mute);font-weight:600}
+pre{background:#06132a;border:1px solid var(--line);padding:12px;overflow:auto;font:13px/1.4 ui-monospace,monospace;max-width:960px;color:#dfe7f5}
+small{color:var(--mute)}
+</style></head><body>
+<h1>Gators Game Graph</h1>
+<p>Real audit numbers from OpenRush (Sept. 30, 2026) and the JSON-LD that <code>structured-data.mjs</code> generated from <code>gazette-live/posts.json</code> and <code>sports-live/scoreboard.json</code> (ESPN feed updated 2026-09-29T02:17:33Z). Read-only; nothing on Wix was changed.</p>
+
+<h2>Site audit (audit_site, 20 of 2,001 pages, crawl, confidence 0.9)</h2>
+<div class="tiles">
+<div class="t"><b>87.5</b><span>on-page score</span></div>
+<div class="t"><b>0 / 3 / 7</b><span>high / medium / low issues</span></div>
+<div class="t"><b>14 of 20</b><span>pages with multiple H1s, homepage included</span></div>
+<div class="t"><b>132</b><span>indexed keywords (6 top-3, 18 top-10)</span></div>
+<div class="t"><b>24</b><span>homepage keywords; top term "gator bait and tackle"</span></div>
+<div class="t"><b>0</b><span>keywords for Buddy's Missouri column, 30 h after publish</span></div>
+<div class="t"><b>7</b><span>Google AI Overview citations (Sept. 10-19 corpus)</span></div>
+</div>
+<p>Served homepage HTML (TinyFish, live fetch) opens with <span class="k">&lt;h1&gt;Today's Edition&lt;/h1&gt;</span> and the old shell copy; the Front Page 2026 renderer is injected by JavaScript, so that is what a non-rendering crawler indexes.</p>
+
+<h2>Live SERPs (inspect_serp, confidence 0.95)</h2>
+<table><tr><th>Query</th><th>Top organic</th><th>Features</th><th>GatorBait</th></tr>
+<tr><td>Florida Gators football news</td><td>gatorsports.com, reddit, floridagators.com, Yahoo, hailfloridahail, YouTube, gatorswire</td><td>top stories, perspectives, video, PAA</td><td>absent</td></tr>
+<tr><td>Buddy Martin</td><td>YouTube show, Facebook show, a Mopar drag racer, a 2019 obituary, X, gatorcountry.com (2008)</td><td>knowledge graph, video</td><td>absent</td></tr>
+<tr><td>Buddy Martin Gators</td><td>X profile, <b>gatorbaitmedia.com/about</b>, LinkedIn, Facebook, YouTube, Muck Rack</td><td>video, PAA</td><td>No. 2, About page, 2019 snippet</td></tr>
+<tr><td>Gators Missouri</td><td>floridagators.com gallery, youth-baseball "Missouri Gators", basketball replay</td><td><b>AI Overview about alligators</b></td><td>absent</td></tr>
+<tr><td>Florida Missouri football game</td><td>floridagators.com, <b>ESPN game 401856708</b>, Ticketmaster, mutigers.com, Winsipedia, YouTube, SeatGeek</td><td>top stories, PAA (channel, odds)</td><td>absent</td></tr>
+</table>
+<p>Demand (research_keywords): "florida football" 823,000 searches in Sept. 2025 vs. a 301,000 average; "florida gators football schedule" 301,000 in Sept. 2025 vs. 90,500.</p>
+
+<h2>Generated: article SportsEvent for Buddy's Missouri column</h2>
+<p><code>out/article-put-down-the-poll-....json</code>, 1,517 chars as a Wix <code>seoData.tags</code> script entry. A SportsEvent, not a second NewsArticle (Wix already renders one). ESPN id 401856708 matches the id in the live SERP above.</p>
+<pre>{"@context":"https://schema.org","@type":"SportsEvent",
+ "@id":"https://www.gatorbaitmedia.com/#game-401856708",
+ "name":"Florida Gators at No. 25 Missouri",
+ "startDate":"2026-10-03T19:30:00Z",
+ "eventStatus":"https://schema.org/EventScheduled",
+ "homeTeam":{"@type":"SportsTeam","name":"Missouri"},
+ "awayTeam":{"@type":"SportsTeam","@id":"https://www.gatorbaitmedia.com/#florida-gators","name":"Florida Gators"},
+ "sameAs":"https://www.espn.com/college-football/game/_/gameId/401856708",
+ "sport":"American Football",
+ "organizer":{"@type":"SportsOrganization","@id":"https://www.gatorbaitmedia.com/#sec","name":"Southeastern Conference"},
+ "location":{"@type":"Place","name":"Memorial Stadium"},
+ "description":"Kickoff Saturday, Oct 3, 3:30 PM ET on ABC.",
+ "subjectOf":{"@type":"NewsArticle",
+   "@id":"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
+   "url":"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
+   "headline":"Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",
+   "datePublished":"2026-09-28T23:24:43Z",
+   "author":{"@type":"Person","name":"Buddy Martin","url":"https://www.gatorbaitmedia.com/gatorbait-media-blogs/tags/buddy-martin"},
+   "image":"https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png"}}</pre>
+
+<h2>Generated: homepage HEAD embed</h2>
+<p><code>out/homepage-embed.html</code>, <b>11,237 chars</b> against the 15,000-char Wix custom embed limit. Seven graph nodes: NewsMediaOrganization, WebSite, SportsTeam, SEC, Ben Hill Griffin Stadium, a CollectionPage whose ItemList leads with Buddy Martin then newest-first, and the 12-game schedule as SportsEvent nodes. Excerpt of the schedule list:</p>
+<pre>{"@type":"ItemList","@id":"https://www.gatorbaitmedia.com/#schedule-2026","name":"Florida Gators 2026 football schedule","numberOfItems":12,"itemListElement":[
+ {"@type":"ListItem","position":4,"item":{"@type":"SportsEvent","@id":"https://www.gatorbaitmedia.com/#game-401856699","name":"No. 4 Ole Miss at Florida Gators","startDate":"2026-09-26T19:30:00Z","eventStatus":"https://schema.org/EventScheduled","homeTeam":{"@id":"https://www.gatorbaitmedia.com/#florida-gators"},"awayTeam":{"@type":"SportsTeam","name":"Ole Miss"},"sameAs":"https://www.espn.com/college-football/game/_/gameId/401856699","location":{"@id":"https://www.gatorbaitmedia.com/#ben-hill-griffin-stadium"},"description":"Final: Florida 52, Ole Miss 28. Florida won.","subjectOf":{"@id":"https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28"}}},
+ {"@type":"ListItem","position":6,"item":{"@type":"SportsEvent","@id":"https://www.gatorbaitmedia.com/#game-401856714","name":"South Carolina at Florida Gators","startDate":"2026-10-10", ...}}  <- date-only: ESPN has no kickoff yet
+ ...]}</pre>
+<p><small>Tests: <code>node --test deploy/dept-ideas/seo/structured-data.test.mjs</code>, 10 pass, 0 fail (Node 22). Full evidence in <code>deploy/dept-ideas/seo/evidence/</code> and <code>audit.md</code>. vidIQ refused for lack of credits; no Search Console connection exists in OpenRush, so no measured clicks are shown.</small></p>
+</body></html>

@@ -1,0 +1,287 @@
+{
+  "show": {
+    "weekday": "Wed",
+    "date": "2026-09-30",
+    "label": "Wed., Sept. 30, 9 p.m. ET"
+  },
+  "game": {
+    "opponent": "Missouri",
+    "opponentRank": 25,
+    "home": false,
+    "kickoffIso": "2026-10-03T19:30:00Z",
+    "tv": "ABC",
+    "venue": "Memorial Stadium",
+    "record": "4-0",
+    "rank": 8,
+    "previewUrl": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind",
+    "remaining": [
+      "South Carolina",
+      "Texas",
+      "Georgia",
+      "Oklahoma",
+      "Kentucky",
+      "Vanderbilt",
+      "Florida State"
+    ]
+  },
+  "onAir": [
+    {
+      "id": "a1f0c1e2-0011-4c1e-9a1b-000000000011",
+      "handle": "PalatkaPete",
+      "question": "Jadan Baugh got SEC Offensive Player of the Week. Is he now the best back in the SEC, and does Missouri's front have an answer?",
+      "bucket": "Missouri",
+      "score": 28,
+      "asked": 1,
+      "askedBy": [
+        "PalatkaPete"
+      ],
+      "matched": [
+        "jadan",
+        "baugh",
+        "sec",
+        "offensive",
+        "player",
+        "week",
+        "now",
+        "best",
+        "back",
+        "missouri",
+        "front"
+      ],
+      "story": {
+        "title": "Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout",
+        "url": "https://www.gatorbaitmedia.com/post/honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-awards-after-ole-miss-rout",
+        "author": "Brenden Martin"
+      },
+      "createdDate": "2026-09-29T21:01:05Z",
+      "reasons": []
+    },
+    {
+      "id": "a1f0c1e2-0003-4c1e-9a1b-000000000003",
+      "handle": "GatorGranny",
+      "question": "How much does Vernell Brown III's PCL sprain change the passing game at Missouri if he sits?",
+      "bucket": "Injuries",
+      "score": 27,
+      "asked": 3,
+      "askedBy": [
+        "GatorGranny",
+        "GatorGranny",
+        "TebowTime15"
+      ],
+      "matched": [
+        "vernell",
+        "brown",
+        "iii",
+        "pcl",
+        "sprain",
+        "pass",
+        "game",
+        "missouri"
+      ],
+      "story": {
+        "title": "BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III",
+        "url": "https://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators",
+        "author": "Brenden Martin"
+      },
+      "createdDate": "2026-09-29T15:11:09Z",
+      "reasons": []
+    },
+    {
+      "id": "a1f0c1e2-0006-4c1e-9a1b-000000000006",
+      "handle": "ChompChompChi",
+      "question": "Trautwein's offensive line looked like the best unit on the field against Ole Miss. Is that line good enough to hold up at Texas and Georgia?",
+      "bucket": "Road ahead",
+      "score": 25,
+      "asked": 1,
+      "askedBy": [
+        "ChompChompChi"
+      ],
+      "matched": [
+        "trautwein",
+        "offensive",
+        "line",
+        "look",
+        "best",
+        "field",
+        "against",
+        "ole",
+        "mis",
+        "good",
+        "hold",
+        "texa",
+        "georgia"
+      ],
+      "story": {
+        "title": "Who are these guys? Trautwein's troops in the trenches are difference makers",
+        "url": "https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers",
+        "author": "Franz Beard"
+      },
+      "createdDate": "2026-09-29T17:20:00Z",
+      "reasons": []
+    },
+    {
+      "id": "a1f0c1e2-0013-4c1e-9a1b-000000000013",
+      "handle": "StarkeStan",
+      "question": "Franz says the Gators left 28 points on the field against Ole Miss. Does that worry you more or less going into a 3:30 kickoff at Missouri on ABC?",
+      "bucket": "Missouri",
+      "score": 25,
+      "asked": 1,
+      "askedBy": [
+        "StarkeStan"
+      ],
+      "matched": [
+        "franz",
+        "say",
+        "gator",
+        "left",
+        "point",
+        "field",
+        "against",
+        "ole",
+        "mis",
+        "go",
+        "missouri"
+      ],
+      "story": {
+        "title": "Beating Ole Miss was huge, but the Gators left at least 28 points on the field",
+        "url": "https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss",
+        "author": "Franz Beard"
+      },
+      "createdDate": "2026-09-30T00:12:19Z",
+      "reasons": []
+    },
+    {
+      "id": "a1f0c1e2-0010-4c1e-9a1b-000000000010",
+      "handle": "TallyGator",
+      "question": "With Denzel Aberdeen cleared under the injunction, does the basketball news change anything for the football program's NIL push?",
+      "bucket": "Other",
+      "score": 19,
+      "asked": 1,
+      "askedBy": [
+        "TallyGator"
+      ],
+      "matched": [
+        "denzel",
+        "aberdeen",
+        "clear",
+        "under",
+        "injunction",
+        "new",
+        "football"
+      ],
+      "story": {
+        "title": "Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction",
+        "url": "https://www.gatorbaitmedia.com/post/denzel-aberdeen-florida-temporary-injunction-2026",
+        "author": "GatorBait Staff"
+      },
+      "createdDate": "2026-09-29T20:15:38Z",
+      "reasons": []
+    },
+    {
+      "id": "a1f0c1e2-0001-4c1e-9a1b-000000000001",
+      "handle": "SwampRat88",
+      "question": "Buddy, Florida has lost three of its last four in Columbia. What is different about this team on the road after the Auburn escape?",
+      "bucket": "Road ahead",
+      "score": 18,
+      "asked": 1,
+      "askedBy": [
+        "SwampRat88"
+      ],
+      "matched": [
+        "buddy",
+        "florida",
+        "lost",
+        "three",
+        "last",
+        "four",
+        "columbia",
+        "team",
+        "road"
+      ],
+      "story": {
+        "title": "Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",
+        "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
+        "author": "Buddy Martin"
+      },
+      "createdDate": "2026-09-29T14:02:11Z",
+      "reasons": []
+    },
+    {
+      "id": "a1f0c1e2-0002-4c1e-9a1b-000000000002",
+      "handle": "OrangeAndBlueOG",
+      "question": "Is Sumrall's 'put down the poll' talk real, or is he protecting a 4-0 team from the No. 8 ranking?",
+      "bucket": "Poll and playoff",
+      "score": 13,
+      "asked": 1,
+      "askedBy": [
+        "OrangeAndBlueOG"
+      ],
+      "matched": [
+        "sumrall",
+        "put",
+        "poll",
+        "protect",
+        "team",
+        "rank"
+      ],
+      "story": {
+        "title": "Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",
+        "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
+        "author": "Buddy Martin"
+      },
+      "createdDate": "2026-09-29T14:40:53Z",
+      "reasons": []
+    }
+  ],
+  "backup": [],
+  "review": [
+    {
+      "id": "a1f0c1e2-0009-4c1e-9a1b-000000000009",
+      "handle": "OcalaOrange",
+      "question": "Go Gators!!",
+      "bucket": "Other",
+      "score": 3,
+      "asked": 1,
+      "askedBy": [
+        "OcalaOrange"
+      ],
+      "matched": [
+        "gator"
+      ],
+      "story": null,
+      "createdDate": "2026-09-29T19:30:00Z",
+      "reasons": [
+        "too short to be a question",
+        "not phrased as a question"
+      ]
+    },
+    {
+      "id": "a1f0c1e2-0014-4c1e-9a1b-000000000014",
+      "handle": "ArcherRoadAndy",
+      "question": "WHY DOES THE DEFENSE KEEP GIVING UP FOURTH QUARTER POINTS??? MISSOURI WILL EAT US ALIVE",
+      "bucket": "Missouri",
+      "score": 17,
+      "asked": 1,
+      "askedBy": [
+        "ArcherRoadAndy"
+      ],
+      "matched": [
+        "defense",
+        "keep",
+        "fourth",
+        "quarter",
+        "point",
+        "missouri"
+      ],
+      "story": {
+        "title": "Show-Me State of Mind: A First Look at No. 25 Missouri",
+        "url": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind",
+        "author": "Brenden Martin"
+      },
+      "createdDate": "2026-09-30T01:40:00Z",
+      "reasons": [
+        "all caps"
+      ]
+    }
+  ]
+}

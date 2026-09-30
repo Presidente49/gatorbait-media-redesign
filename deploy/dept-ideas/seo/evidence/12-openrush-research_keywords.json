@@ -1,0 +1,38 @@
+{
+ "tool": "mcp__OpenRush__research_keywords",
+ "args": {
+  "seed": "florida gators football",
+  "mode": "ideas",
+  "limit": 40,
+  "min_volume": 500
+ },
+ "provenance": {
+  "source_class": "search_index",
+  "observed_at": "2026-09-30T05:15:02.233948Z",
+  "confidence": 0.7
+ },
+ "result": {
+  "returned": 38,
+  "gators_rows": [
+   {
+    "keyword": "florida football",
+    "monthly_volume": 301000,
+    "sep_2025": 823000,
+    "aug_2026": 33100
+   },
+   {
+    "keyword": "gator football",
+    "monthly_volume": 246000,
+    "sep_2025": 823000,
+    "aug_2026": 90500
+   },
+   {
+    "keyword": "florida gators football schedule",
+    "monthly_volume": 90500,
+    "sep_2025": 301000,
+    "aug_2026": 135000
+   }
+  ],
+  "note": "'ideas' mode returned mostly other programs (college football, alabama football, ...); only three Gators rows cleared the 500 floor. Money columns stripped."
+ }
+}

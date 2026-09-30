@@ -1,0 +1,25 @@
+{
+ "tool": "mcp__Wix__SearchWixRESTDocumentation",
+ "args": {
+  "searchTerm": "custom embed embedData html maximum length size limit characters"
+ },
+ "result": {
+  "method": "Update Custom Embed PATCH https://www.wixapis.com/embeds/v1/custom-embeds/{customEmbed.id}",
+  "docs": "https://dev.wix.com/docs/api-reference/business-management/custom-embeds/update-custom-embed",
+  "embedData.html": "Maximum length is 15000 characters.",
+  "position_values": [
+   "HEAD",
+   "BODY_START",
+   "BODY_END"
+  ],
+  "category_values": [
+   "ESSENTIAL",
+   "FUNCTIONAL",
+   "ANALYTICS",
+   "ADVERTISING",
+   "DATA_TO_THIRD_PARTY"
+  ],
+  "requires": "id + current revision",
+  "pageFilter": "field exists on the entity (response shape) for page-scoped embeds"
+ }
+}

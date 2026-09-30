@@ -1,0 +1,70 @@
+{
+ "tool": "mcp__OpenRush__inspect_serp",
+ "args": {
+  "query": "Buddy Martin"
+ },
+ "provenance": {
+  "source_class": "live_serp",
+  "method": "observed",
+  "observed_at": "2026-09-30T05:14:28.545010Z",
+  "confidence": 0.95
+ },
+ "result": {
+  "features_present": [
+   "organic",
+   "people_also_ask",
+   "video",
+   "perspectives",
+   "knowledge_graph"
+  ],
+  "organic": [
+   [
+    1,
+    "www.youtube.com",
+    "https://www.youtube.com/@TheBuddyMartinShow/podcasts"
+   ],
+   [
+    2,
+    "www.facebook.com",
+    "https://www.facebook.com/TheBuddyMartinShow/posts/1699150075551728/"
+   ],
+   [
+    3,
+    "www.forbbodiesonly.com",
+    "(Mopar drag racer Buddy Martin, 90th birthday thread)"
+   ],
+   [
+    4,
+    "www.golocalprov.com",
+    "(2019 obituary, a different Buddy Martin)"
+   ],
+   [
+    5,
+    "x.com",
+    "https://x.com/buddyshow/status/1981416619613315410"
+   ],
+   [
+    6,
+    "www.gatorcountry.com",
+    "https://www.gatorcountry.com/florida-gators-football/buddy_martin_named_exec_editor_of_gator_country/ (2008)"
+   ],
+   [
+    7,
+    "www.youtube.com",
+    "https://www.youtube.com/watch?v=mkL_Yeop8U4"
+   ],
+   [
+    8,
+    "x.com",
+    "https://x.com/buddyshow/status/2078997008627454439"
+   ],
+   [
+    9,
+    "www.youtube.com",
+    "https://www.youtube.com/watch?v=gSGOCCFRc34"
+   ]
+  ],
+  "gatorbaitmedia_in_top_9": false,
+  "note": "The only publisher result is gatorcountry.com's 2008 hiring post; the knowledge graph entity is present but no gatorbaitmedia.com URL ranks."
+ }
+}

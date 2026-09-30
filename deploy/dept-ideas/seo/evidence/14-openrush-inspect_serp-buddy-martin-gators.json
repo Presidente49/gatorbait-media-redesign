@@ -1,0 +1,71 @@
+{
+ "tool": "mcp__OpenRush__inspect_serp",
+ "args": {
+  "query": "Buddy Martin Gators"
+ },
+ "provenance": {
+  "source_class": "live_serp",
+  "method": "observed",
+  "observed_at": "2026-09-30T09:45:49.922552Z",
+  "confidence": 0.95
+ },
+ "result": {
+  "features_present": [
+   "organic",
+   "people_also_ask",
+   "video",
+   "related_searches"
+  ],
+  "organic": [
+   [
+    1,
+    "x.com",
+    "https://x.com/buddyshow?lang=en"
+   ],
+   [
+    2,
+    "www.gatorbaitmedia.com",
+    "https://www.gatorbaitmedia.com/about"
+   ],
+   [
+    3,
+    "www.linkedin.com",
+    "https://www.linkedin.com/in/buddy-martin-89806311"
+   ],
+   [
+    4,
+    "www.facebook.com",
+    "https://www.facebook.com/TheBuddyMartinShow/"
+   ],
+   [
+    5,
+    "www.youtube.com",
+    "https://www.youtube.com/channel/UCtR8b1sKFuwaRjKy5BiXRvA"
+   ],
+   [
+    6,
+    "muckrack.com",
+    "https://muckrack.com/buddy-martin/articles"
+   ],
+   [
+    7,
+    "www.facebook.com",
+    "https://www.facebook.com/Buddymartinshow/"
+   ],
+   [
+    8,
+    "www.instagram.com",
+    "https://www.instagram.com/thebuddymartinshow/"
+   ],
+   [
+    9,
+    "www.youtube.com",
+    "(The Buddy Martin Show Podcast playlist)"
+   ]
+  ],
+  "gatorbaitmedia_position": 2,
+  "gatorbaitmedia_url": "https://www.gatorbaitmedia.com/about",
+  "snippet_shown": "I'm Buddy Martin, editor and publisher of the new Gator Bait Magazine. effective July 10, 2019.",
+  "note": "The About page, not a column or the columnist tag page, is what ranks; its 2019 snippet is stale. Subscriber-count text in the YouTube snippet stripped."
+ }
+}

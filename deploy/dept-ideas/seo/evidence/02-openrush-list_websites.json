@@ -1,0 +1,11 @@
+{
+ "tool": "mcp__OpenRush__list_websites",
+ "args": {},
+ "result": {
+  "websites": [],
+  "ad_accounts": [],
+  "connection_required": true,
+  "message": "Nothing is connected on this account yet. Connect Google Search Console, Google Analytics, or Google Ads in the OpenRush dashboard (https://openrush.com/dashboard/connections) to use search performance, website analytics, ad performance, and the other owned-data tools."
+ },
+ "consequence": "get_search_performance was not called; no measured clicks/impressions are available through OpenRush until Search Console is connected."
+}

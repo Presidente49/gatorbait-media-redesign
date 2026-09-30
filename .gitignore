@@ -6,3 +6,8 @@ automation/ops-hub/.state/
 # (they were git submodules until Sept. 29, 2026; see that script for why).
 tools/magazine-originals/upstream/
 vendor/colorlib-email-templates/
+# raw ESPN JSON cache pulled by the research scout; regenerate with scout.mjs
+deploy/dept-ideas/research/espn/
+# wrangler local state from department tests
+deploy/dept-ideas/**/.wrangler/
+deploy/dept-ideas/**/node_modules/

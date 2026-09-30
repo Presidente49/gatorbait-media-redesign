@@ -1,0 +1,30 @@
+PASS  GET /health  -> 20 stories, 16 scoreboard, 15 history, 16 trivia
+PASS  OPTIONS preflight from gatorbaitmedia.com  -> https://www.gatorbaitmedia.com
+PASS  POST /ask from a foreign origin is refused  -> status 403
+PASS  DEV_ORIGINS allows a local origin  -> http://localhost:8788
+PASS  retrieve() ranks the scoreboard "next game" doc first  -> sb:next:9.25, story:put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time:4.27, story:postgame-analysis-florida-gators-52-ole-miss-rebel-28:3.76, story:bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again:2.45, hist:swamp:2.39
+PASS  prompt contains only the numbered sources + the grounding rule
+PASS  history retrieval: Heisman 2007 -> Tebow fact
+PASS  story retrieval: injury question -> MRI story  -> story:breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators
+PASS  POST /ask "When is the next game?"  -> Florida's next game is on the road at No. 25 Missouri on Saturday, Oct. 3, 2026 at 3:30 p.… | source: Next game: at Missouri
+PASS  POST /ask "Who won the Heisman for Florida?"  -> Danny Wuerffel won the Heisman Trophy in 1996, the same season Florida won its first natio… | source: Heisman Trophy Danny Wuerffel 1996
+PASS  POST /ask "How did the Ole Miss game go?"  -> How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again. Eddie… | source: How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again
+PASS  POST /ask "What is the injury news?"  -> BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III. An MRI confirme… | source: BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III
+PASS  POST /ask "How many national championships does Florida have?"  -> Florida won the 2008 BCS National Championship, beating Oklahoma 24-14 on Jan. 8, 2009, in… | source: national championship 2008
+PASS  number guard rejects "412 yards" (not in any source)  -> unsourced-number
+PASS  model refusal is passed through as a refusal
+PASS  off-topic question refused with NO model call  -> no-sources; top hit coverage 0.33
+PASS  guardAnswer accepts figures that are in the sources
+PASS  too-short question -> 400
+PASS  GET /trivia/today  -> How many football SEC championships does Florida recognize?
+PASS  same question all day (KV trivia:2026-09-30)  -> t-sec-count
+PASS  streak from yesterday carries into today  -> streak 2
+PASS  POST /trivia/answer correct -> streak 3 + share line  -> Gator Trivia, Sept. 30: Correct. Streak: 3 days. Play at gatorbaitmedia.com/ask
+PASS  second answer the same day does not change the result
+PASS  wrong answer (other visitor) -> streak 0  -> Gator Trivia, Sept. 30: Missed it. Streak: 0 days. Play at gatorbaitmedia.com/ask
+PASS  out-of-range choice -> 400
+PASS  9th /ask in a minute from one IP -> 429  -> Retry-After 60
+PASS  a different IP is unaffected
+PASS  KV keys never contain a raw IP
+
+28 passed, 0 failed. Model calls made to the stub: 17. KV keys: 18.

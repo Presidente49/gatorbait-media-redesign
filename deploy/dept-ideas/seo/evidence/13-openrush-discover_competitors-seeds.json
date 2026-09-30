@@ -1,0 +1,71 @@
+{
+ "tool": "mcp__OpenRush__discover_competitors",
+ "args": {
+  "seed_keywords": [
+   "Florida Gators football news",
+   "Florida Missouri football game",
+   "Gators football recruiting news",
+   "Florida Gators schedule",
+   "Florida Gators score"
+  ],
+  "limit": 10
+ },
+ "provenance": {
+  "source_class": "search_index",
+  "observed_at": "2026-09-30T05:15:01.344616Z",
+  "confidence": 0.7
+ },
+ "result": [
+  {
+   "competitor": "espn.com",
+   "shared": 4,
+   "avg_position": 4.0
+  },
+  {
+   "competitor": "cbssports.com",
+   "shared": 4,
+   "avg_position": 21.5
+  },
+  {
+   "competitor": "floridagators.com",
+   "shared": 3,
+   "avg_position": 2.0
+  },
+  {
+   "competitor": "gatorsports.com",
+   "shared": 3,
+   "avg_position": 7.67
+  },
+  {
+   "competitor": "247sports.com",
+   "shared": 3,
+   "avg_position": 9.67
+  },
+  {
+   "competitor": "on3.com",
+   "shared": 3,
+   "avg_position": 13.0
+  },
+  {
+   "competitor": "gatorswire.usatoday.com",
+   "shared": 3,
+   "avg_position": 12.0
+  },
+  {
+   "competitor": "foxsports.com",
+   "shared": 3,
+   "avg_position": 18.67
+  },
+  {
+   "competitor": "si.com",
+   "shared": 3,
+   "avg_position": 20.33
+  },
+  {
+   "competitor": "nytimes.com",
+   "shared": 3,
+   "avg_position": 23.0
+  }
+ ],
+ "note": "6 global platform/UGC domains excluded by the tool. gatorbaitmedia.com does not appear."
+}

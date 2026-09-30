@@ -1,0 +1,125 @@
+{
+ "asks": [
+  {
+   "q": "When is the next game?",
+   "answer": "Florida's next game is on the road at No. 25 Missouri on Saturday, Oct. 3, 2026 at 3:30 p.m. ET on ABC, Memorial Stadium. [1]",
+   "grounded": true,
+   "sources": [
+    {
+     "title": "Next game: at Missouri",
+     "url": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind",
+     "type": "scoreboard"
+    }
+   ]
+  },
+  {
+   "q": "Who won the Heisman for Florida?",
+   "answer": "Danny Wuerffel won the Heisman Trophy in 1996, the same season Florida won its first national championship. [1]",
+   "grounded": true,
+   "sources": [
+    {
+     "title": "Heisman Trophy Danny Wuerffel 1996",
+     "url": "https://www.heisman.com/heisman-winners/",
+     "type": "history"
+    }
+   ]
+  },
+  {
+   "q": "How did the Ole Miss game go?",
+   "answer": "How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again. Eddie Gilley breaks down the five plays that decided Florida's 52-28 rout of No. 4 Ole Miss, from a blown fourth-down gamble to DJ Coleman's game-sealing interception. [1]",
+   "grounded": true,
+   "sources": [
+    {
+     "title": "How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again",
+     "url": "https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again",
+     "type": "story"
+    }
+   ]
+  },
+  {
+   "q": "What is the injury news?",
+   "answer": "BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III. An MRI confirmed a Grade 1 PCL sprain, the mildest grade, in Vernell Brown III’s knee, sources told GatorBait. He may not miss any games. [1]",
+   "grounded": true,
+   "sources": [
+    {
+     "title": "BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III",
+     "url": "https://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators",
+     "type": "story"
+    }
+   ]
+  },
+  {
+   "q": "How many national championships does Florida have?",
+   "answer": "Florida won the 2008 BCS National Championship, beating Oklahoma 24-14 on Jan. 8, 2009, in Miami. Tim Tebow was the quarterback and Urban Meyer the head coach. It is Florida's third and most recent football national title. [1]",
+   "grounded": true,
+   "sources": [
+    {
+     "title": "national championship 2008",
+     "url": "https://floridagators.com/sports/football/history",
+     "type": "history"
+    }
+   ]
+  },
+  {
+   "q": "How many yards did Lagway throw for against Ole Miss?",
+   "answer": "I don't have that in GatorBait's stories, the ESPN scoreboard feed or our Gators history file yet, so I won't guess. Try the schedule, a recent story or a Gators history question.",
+   "grounded": false,
+   "refused": "unsourced-number",
+   "sources": [
+    {
+     "title": "How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again",
+     "url": "https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again",
+     "type": "story"
+    },
+    {
+     "title": "Chris Spears' Best Shots: Florida 52, Ole Miss 28",
+     "url": "https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss",
+     "type": "story"
+    }
+   ]
+  },
+  {
+   "q": "Best pizza in Gainesville?",
+   "answer": "I don't have that in GatorBait's stories, the ESPN scoreboard feed or our Gators history file yet, so I won't guess. Try the schedule, a recent story or a Gators history question.",
+   "grounded": false,
+   "refused": "no-sources",
+   "sources": []
+  }
+ ],
+ "trivia": {
+  "today": {
+   "date": "2026-09-30",
+   "label": "Sept. 30",
+   "id": "t-sec-count",
+   "q": "How many football SEC championships does Florida recognize?",
+   "options": [
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine"
+   ],
+   "answered": null,
+   "streak": 0
+  },
+  "answer": {
+   "correct": true,
+   "alreadyAnswered": false,
+   "choice": 2,
+   "answer": 2,
+   "why": "1991, 1993, 1994, 1995, 1996, 2000, 2006 and 2008.",
+   "url": null,
+   "streak": 3,
+   "share": "Gator Trivia, Sept. 30: Correct. Streak: 3 days. Play at gatorbaitmedia.com/ask"
+  },
+  "wrong": {
+   "correct": false,
+   "alreadyAnswered": false,
+   "choice": 3,
+   "answer": 2,
+   "why": "1991, 1993, 1994, 1995, 1996, 2000, 2006 and 2008.",
+   "url": null,
+   "streak": 0,
+   "share": "Gator Trivia, Sept. 30: Missed it. Streak: 0 days. Play at gatorbaitmedia.com/ask"
+  }
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "tool": "mcp__TinyFish__fetch_content",
+ "args": {
+  "urls": [
+   "https://www.gatorbaitmedia.com/"
+  ],
+  "format": "html",
+  "page_metadata": true,
+  "ttl": 0
+ },
+ "result": {
+  "title": "GatorBait Media | Florida Gators News, Recruiting & Analysis",
+  "canonical": "https://www.gatorbaitmedia.com",
+  "generator": "Wix.com Website Builder",
+  "og_type": "website",
+  "first_h1_in_served_html": "Today’s Edition",
+  "served_body_copy": "Dive into today's edition featuring the latest insights for Florida Gators fans... your trusted source since 1980.",
+  "h2s_in_served_html": [
+   "Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction",
+   "Thoughts of the Day: September 29, 2026",
+   "Senate Passes Protect College Sports Act 77–22",
+   "Put Down the Poll, Gators. Missouri Is Waiting...",
+   "Honor Roll: Baugh, Montgomery and Lovett...",
+   "Pay the Toll: Sumrall Buries the Ole Miss Win..."
+  ],
+  "latency_ms": 430,
+  "note": "Scripts are stripped by the fetcher, so JSON-LD presence cannot be read here. The Front Page 2026 renderer is injected by the Home Code loader at runtime; a non-rendering crawler sees the Wix shell above."
+ }
+}

@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Make the Call: front-page module preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="../../../sports-live/src/front-page.css">
+<link rel="stylesheet" href="module.css">
+<style>body{margin:0;background:#07122e}#gbm-live.fp26 .stub{background:#07122e;color:#aab4cc;font:600 13px/1.5 "Barlow",sans-serif;padding:18px var(--fp-pad);max-width:1440px;margin:0 auto}#gbm-live.fp26 .stub b{display:block;color:#f3f5fb;font:800 22px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;margin-bottom:6px}</style>
+</head><body>
+<div id="gbm-live" class="gbm-gazette gbm-sports-home fp26 fp-night" data-theme="dark">
+<div class="stub"><b>The Road Ahead sits here</b>Live band in sports-live/frame.html. This fixture shows the Make the Call module that mounts directly under it.</div>
+<div id="mount"></div>
+<div class="stub">The Hub follows. Preview data: without <code>?gbm_api=live</code> the API is an in-page replay of the Worker's recorded response from test-worker.mjs (real numbers from the local D1 run); picks you make here change the replay only. With <code>?gbm_api=live</code> (qa-module.mjs) every request goes to the real Worker code on the in-memory D1.</div>
+</div>
+<script>
+// The scoreboard's next game exactly as sports-live/scoreboard.json (ESPN) had it on Sept. 29: this is what front-page.js hands the module.
+var SB = { team: { name: 'Florida', rank: 8, record: '4-0' }, next: { eventId: '401856708', opponent: 'Missouri', opponentRank: 25, home: false, kickoffIso: '2026-10-03T19:30:00Z', tv: 'ABC', venue: 'Memorial Stadium' } };
+// Recorded Worker output (GET /v1/game/401856708 after test-worker.mjs's 49 accepted picks). Replaced by test-worker.mjs between the markers.
+var RECORDED = /*recorded*/{"gameId":"401856708","away":"Florida","home":"Missouri","flaHome":false,"kickoff":"2026-10-03T19:30:00Z","locked":false,"final":null,"count":49,"avg":{"fla":27,"opp":20},"flaShare":0.7551020408163265,"bins":[{"key":"fla14","label":"Florida by 14+","n":17,"share":0.3469387755102041},{"key":"fla7","label":"Florida by 7-13","n":13,"share":0.2653061224489796},{"key":"fla1","label":"Florida by 1-6","n":7,"share":0.14285714285714285},{"key":"opp1","label":"Missouri by 1-6","n":6,"share":0.12244897959183673},{"key":"opp7","label":"Missouri by 7-13","n":2,"share":0.04081632653061224},{"key":"opp14","label":"Missouri by 14+","n":4,"share":0.08163265306122448}],"top":{"fla":34,"opp":20,"n":6},"serverTime":"2026-09-30T20:00:00Z"}/*/recorded*/;
+if (!/gbm_api=live/.test(location.search) && RECORDED) (function () {
+  var S = RECORDED, mine = null, real = window.fetch;
+  window.__GBM_CALL_API__ = 'https://replay.invalid/v1';
+  function reply(status, j) { return Promise.resolve(new Response(JSON.stringify(j), { status: status, headers: { 'content-type': 'application/json' } })); }
+  function recount() { S.bins.forEach(function (b) { b.share = S.count ? b.n / S.count : 0; }); }
+  window.fetch = function (u, o) {
+    if (String(u).indexOf(window.__GBM_CALL_API__) !== 0) return real.apply(this, arguments);
+    S.locked = Date.now() >= Date.parse(S.kickoff);
+    if (!o || o.method !== 'POST') return reply(200, S);
+    var b = JSON.parse(o.body);
+    if (S.locked) return reply(409, { error: 'locked' });
+    if (b.fla === b.opp) return reply(422, { error: 'no ties: pick a winner' });
+    var k = GBM_CALL.bin(b.fla, b.opp);
+    if (mine) { S.bins.forEach(function (x) { if (x.key === GBM_CALL.bin(mine.fla, mine.opp)) x.n--; }); } else S.count++;
+    S.bins.forEach(function (x) { if (x.key === k) x.n++; });
+    var was = mine; mine = b; recount();
+    return reply(was ? 200 : 201, Object.assign({ ok: true, yours: b }, S));
+  };
+})();
+</script>
+<script src="module.js"></script>
+<script>
+(function () {
+  var g = GBM_CALL.game(SB), root = document.getElementById('gbm-live'), m = document.getElementById('mount');
+  m.outerHTML = g ? GBM_CALL.html(g) : '<p class="stub">No next game in the scoreboard feed: the module renders nothing.</p>';
+  try { GBM_CALL.init(root); } catch (e) { console.error(e); }
+})();
+</script>
+</body></html>

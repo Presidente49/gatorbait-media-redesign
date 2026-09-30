@@ -1,0 +1,39 @@
+[
+  {
+    "id": "a1f0c1e2-0007-4c1e-9a1b-000000000007",
+    "handle": "BullGatorBill",
+    "reasons": [
+      "contains a phone number",
+      "not phrased as a question"
+    ]
+  },
+  {
+    "id": "a1f0c1e2-0008-4c1e-9a1b-000000000008",
+    "handle": "LakeCityLarry",
+    "reasons": [
+      "profanity (damn)",
+      "hostile wording (clown)"
+    ]
+  },
+  {
+    "id": "a1f0c1e2-0012-4c1e-9a1b-000000000012",
+    "handle": "VeroBeachVic",
+    "reasons": [
+      "contains an email address"
+    ]
+  },
+  {
+    "id": "a1f0c1e2-0015-4c1e-9a1b-000000000015",
+    "handle": "PendingPaul",
+    "reasons": [
+      "status PENDING"
+    ]
+  },
+  {
+    "id": "a1f0c1e2-0016-4c1e-9a1b-000000000016",
+    "handle": "QuietQuinn",
+    "reasons": [
+      "no consent to read on air"
+    ]
+  }
+]

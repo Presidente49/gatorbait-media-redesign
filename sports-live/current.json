@@ -1,5 +1,5 @@
 {
-  "commit": "8e364abaa679f9b15cdf6426b03e6c6bf4c96bd6",
-  "updated": "2026-09-30T16:15:00Z",
-  "note": "Story Kit on /post/ pages (PR #83): guide strip, first-mention links, Keep up with the Gators. Rollback: 499dca9f8d65fd746c117b39260ea08184e0416f."
+  "commit": "6dc26d993c23b756152ade7eb29d654a3b281b4d",
+  "updated": "2026-09-30T16:45:00Z",
+  "note": "Story Kit phone fix (PR #85): cards inside the paragraph block, strip guards. Rollback: 8e364abaa679f9b15cdf6426b03e6c6bf4c96bd6 (Story Kit) or 499dca9f8d65fd746c117b39260ea08184e0416f (before it)."
 }

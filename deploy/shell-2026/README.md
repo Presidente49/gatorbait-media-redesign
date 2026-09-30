@@ -155,3 +155,6 @@ The TinyFish wallet is now below zero, so no more pages were fetched. Rows marke
 5. **Homepage native text:** the server-rendered homepage still carries the old "Today's Edition … since 1980" copy, which crawlers read. Replace it with a one-line description or delete it in the Editor.
 6. **ItemOrder dashboard** (not Wix): if ItemOrder lets the store header or logo link to a site, set it to `https://www.gatorbaitmedia.com/`. We can't put a back link on their site ourselves.
 7. **Groups**: delete the two spam posts and turn on post approval.
+
+## Sept. 30 evening: header-v3 (speed)
+`header-v2.html` was rebuilt from `src/header.src.html` after the speed audit: the desktop logo is the 500 px Wix cut (26 KB instead of 200 KB), the brand script observes `body` with a 100 ms debounce instead of every mutation on `<html>` for 12 s, and the contact watcher is rAF-coalesced. 14,120 chars, djb2 3139560855. The body that was live as rev 31 (13,880 / 2936686448) is kept verbatim at `deploy/speed-2026/embeds/7fee4de6-live.html`. Shell QA 353/353 before and after. Deploy notes and the other embeds: `deploy/speed-2026/embeds/INDEX.md`.

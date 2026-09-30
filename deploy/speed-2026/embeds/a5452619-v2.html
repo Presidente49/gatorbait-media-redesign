@@ -1,0 +1,24 @@
+<style id="gbm-post-read-v1">html body #SITE_PAGES [data-hook=post-page] [data-hook=post-description] :is(p,li){font-weight:500!important;color:#0f1a2c!important}@media(min-width:751px){html body #SITE_PAGES [data-hook=post-page] [data-hook=post-description] div:has(>p){padding-left:0!important;padding-right:0!important}}</style>
+<script id="gbm-post-wide-v1">(function(){
+if(window.__GBM_POST_WIDE__)return;window.__GBM_POST_WIDE__=1;
+// Article pages run at the phone's real width (gbm-viewport-v1), but Wix Classic still lays the
+// blog out on its fixed 320px canvas, centered: a skinny column (Brenden, Sept. 27). Widen every
+// ancestor of the post root that is narrower than the screen. Phones only, /post/ pages only.
+var q=0,mo=null,off=0,root=null;
+function on(){return document.documentElement.classList.contains('gbm-native-wide')&&innerWidth<=750;}
+function fit(){q=0;if(!on())return;
+var r=document.querySelector('[data-hook=post-page-root]');if(!r)return;
+for(var a=r;a&&a!==document.body;a=a.parentElement){if(a.getBoundingClientRect().width<innerWidth-2){var s=a.style;
+s.setProperty('width','100%','important');s.setProperty('max-width','none','important');s.setProperty('left','0','important');
+s.setProperty('margin-left','0','important');s.setProperty('margin-right','0','important');}}}
+function later(){if(!q)q=requestAnimationFrame(fit);}
+// v2 (speed-2026): watch the Wix page container instead of the whole document, only while html.gbm-native-wide is set
+// (fdc2127a sets it on /post/ only) and only at phone width; each arm stops after 60 s. An attribute-only observer on
+// <html> plus resize and load re-arm it, so client-side navigation into a story still widens the column.
+function stop(){if(mo)mo.disconnect();clearTimeout(off);}
+function arm(){stop();later();if(!on())return;root=document.getElementById('SITE_CONTAINER')||document.getElementById('SITE_PAGES')||document.body;
+if(!root){document.addEventListener('DOMContentLoaded',arm,{once:true});return;}
+if(!mo)mo=new MutationObserver(later);mo.observe(root,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});off=setTimeout(stop,60000);}
+new MutationObserver(arm).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+addEventListener('resize',arm);addEventListener('load',arm);arm();
+})();</script>

@@ -1,0 +1,16 @@
+<style id="gbm-post-read-v1">html body #SITE_PAGES [data-hook=post-page] [data-hook=post-description] :is(p,li){font-weight:500!important;color:#0f1a2c!important}@media(min-width:751px){html body #SITE_PAGES [data-hook=post-page] [data-hook=post-description] div:has(>p){padding-left:0!important;padding-right:0!important}}</style>
+<script id="gbm-post-wide-v1">(function(){
+if(window.__GBM_POST_WIDE__)return;window.__GBM_POST_WIDE__=1;
+// Article pages run at the phone's real width (gbm-viewport-v1), but Wix Classic still lays the
+// blog out on its fixed 320px canvas, centered: a skinny column (Brenden, Sept. 27). Widen every
+// ancestor of the post root that is narrower than the screen. Phones only, /post/ pages only.
+var q=0;
+function fit(){q=0;var h=document.documentElement;if(!h.classList.contains('gbm-native-wide')||innerWidth>750)return;
+var r=document.querySelector('[data-hook=post-page-root]');if(!r)return;
+for(var a=r;a&&a!==document.body;a=a.parentElement){if(a.getBoundingClientRect().width<innerWidth-2){var s=a.style;
+s.setProperty('width','100%','important');s.setProperty('max-width','none','important');s.setProperty('left','0','important');
+s.setProperty('margin-left','0','important');s.setProperty('margin-right','0','important');}}}
+function later(){if(!q)q=requestAnimationFrame(fit);}
+new MutationObserver(later).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});
+addEventListener('resize',later);addEventListener('load',later);later();
+})();</script>

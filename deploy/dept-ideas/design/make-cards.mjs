@@ -2,6 +2,8 @@
 /**
  * make-cards.mjs — GatorBait "Game Week" matchup card feed.
  *
+ * Weekly loop: node make-cards.mjs --write  ->  autofill-design(autofillDesign)  ->  export-design(exportDesign)
+ *
  * Reads sports-live/scoreboard.json (ESPN-sourced, refreshed by the game-day desk)
  * and emits the exact request bodies the Canva MCP tools need, so the desk can
  * regenerate the weekly card with one call and no hand-typed facts.
@@ -11,11 +13,11 @@
  *   node deploy/dept-ideas/design/make-cards.mjs --design DXXXX  # include autofill + export bodies for a tagged design
  *
  * Output keys:
- *   fields          the seven card lines (AP style, ET, uppercase), source of truth for every path below
- *   createDesign    body for mcp__Canva__create-design   (works today; see PITCH.md Evidence for the design ID it produced)
- *   autofillDesign  body for mcp__Canva__autofill-design (needs a design/brand template whose text
- *                   elements are tagged with these field labels; see PITCH.md "What it needs from Brenden")
- *   exportDesign    body for mcp__Canva__export-design   (PNG, 1080x1350, lossless)
+ *   fields          the seven card lines (headline is one element with a line break) (AP style, ET, uppercase), source of truth for every path below
+ *   createDesign    body for mcp__Canva__create-design   (works today; it produced template DAHWqVhJoqU on 2026-09-30)
+ *   autofillDesign  body for mcp__Canva__autofill-design (works today against DAHWqVhJoqU, whose text
+ *                   elements are tagged with these field labels; produced DAHWqlZYYnA on 2026-09-30)
+ *   exportDesign    body for mcp__Canva__export-design   (PNG, native 1080x1440, lossless; pass --export <id>)
  *
  * No network. No git. Facts come only from scoreboard.json.
  */
@@ -29,6 +31,8 @@ const args = process.argv.slice(2);
 const opt = (k) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : null; };
 const src = opt('--scoreboard') || resolve(repo, 'sports-live', 'scoreboard.json');
 const sb = JSON.parse(readFileSync(src, 'utf8'));
+/* Tagged Canva template (7 autofill fields), created 2026-09-30. Override with --design <id>. */
+const TEMPLATE_ID = 'DAHWqVhJoqU';
 
 /* ---------- Time (America/New_York), mirrors sports-live/src/front-page.js ---------- */
 const TZ = 'America/New_York';
@@ -56,8 +60,7 @@ const oppRecord = n.opponentRecord || record(n.opponent);
 
 const fields = {
   kicker: 'GAME WEEK',
-  headline_1: fla.toUpperCase(),
-  headline_2: `${n.home ? 'VS. ' : 'AT '}${opp}`.toUpperCase(),
+  headline: `${fla}\n${n.home ? 'vs. ' : 'at '}${opp}`.toUpperCase(),
   records: [sb.team.record, oppRecord].filter(Boolean).join(' · '),
   when: (whenLine(n.kickoffIso) + (n.tv ? ` · ${n.tv}` : '')).toUpperCase(),
   venue: (n.venue || '').toUpperCase(),
@@ -67,7 +70,7 @@ const fields = {
 const slug = `${et(n.kickoffIso).ymd}_matchup_florida-${n.opponent.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
 /* ---------- Tool bodies ---------- */
-const lines = ['kicker', 'headline_1', 'headline_2', 'records', 'when', 'venue', 'last_week', 'footer'].filter((k) => fields[k]);
+const lines = ['kicker', 'headline', 'records', 'when', 'venue', 'last_week', 'footer'].filter((k) => fields[k]);
 const createDesign = {
   format: 'Instagram Post (Portrait)',
   brief: [
@@ -76,17 +79,17 @@ const createDesign = {
     'No photos, no stock images, no logos, no icons, no sparks, no glow, no gradients, no decorative shapes other than the single orange bar.',
     'Clean left-aligned typographic layout in this exact order, top to bottom, each line as its own separate text element:',
     '',
-    ...lines.map((k, i) => `${i + 1}. ${k === 'headline_1' ? 'Large dominant headline line one: ' : k === 'headline_2' ? 'Headline line two: ' : k === 'kicker' ? 'Small kicker at top: ' : k === 'footer' ? 'Small footer line at the very bottom: ' : k === 'last_week' ? 'Small line just above the orange bar: ' : 'Medium line: '}${fields[k]}`),
+    ...lines.map((k, i) => `${i + 1}. ${k === 'headline' ? 'Large dominant headline on two lines: ' : k === 'kicker' ? 'Small kicker at top: ' : k === 'footer' ? 'Small footer line at the very bottom: ' : k === 'last_week' ? 'Small line just above the orange bar: ' : 'Medium line: '}${fields[k].replace('\n', ' / ')}`),
     '',
     'Strong hierarchy, generous negative space, the headline dominates. Use the exact wording above verbatim and do not add any other text.',
   ].join('\n'),
 };
 const autofillDesign = {
-  design_id: opt('--design') || '<tagged design or brand template id>',
+  design_id: opt('--design') || TEMPLATE_ID,
   title: `GatorBait Game Week — ${fla} ${n.home ? 'vs.' : 'at'} ${opp}`,
   data: Object.fromEntries(lines.map((k) => [k, { type: 'text', text: fields[k] }])),
 };
-const exportDesign = { design_id: opt('--design') || '<design id>', format: { type: 'png', width: 1080, height: 1350, lossless: true } };
+const exportDesign = { design_id: opt('--export') || '<design id returned by autofill-design>', format: { type: 'png', lossless: true } }; // native 1080x1440
 
 const out = { generatedFrom: src.replace(repo + '/', ''), scoreboardUpdatedAt: sb.updatedAt, eventId: n.eventId, slug, fields, createDesign, autofillDesign, exportDesign };
 if (args.includes('--write')) {

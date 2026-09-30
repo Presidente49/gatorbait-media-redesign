@@ -1,0 +1,60 @@
+{
+  "generatedFrom": "sports-live/scoreboard.json",
+  "scoreboardUpdatedAt": "2026-09-29T02:17:33Z",
+  "eventId": "401856708",
+  "slug": "2026-10-03_matchup_florida-missouri",
+  "fields": {
+    "kicker": "GAME WEEK",
+    "headline": "NO. 8 FLORIDA\nAT NO. 25 MISSOURI",
+    "records": "4-0 · 3-1",
+    "when": "SATURDAY, OCT. 3 · 3:30 P.M. ET · ABC",
+    "venue": "MEMORIAL STADIUM",
+    "last_week": "LAST WEEK: FLORIDA 52, NO. 4 OLE MISS 28",
+    "footer": "GATORBAITMEDIA.COM"
+  },
+  "createDesign": {
+    "format": "Instagram Post (Portrait)",
+    "brief": "A 1080 x 1350 portrait college football weekly matchup card for GatorBait Media, sports-editorial style, not a generic sports template.\nSolid dark navy background (#07122E) with one bold orange (#FA4616) horizontal accent bar; all text white; every text element in the font Barlow Condensed (fallback Barlow), heavy weight, uppercase, tight leading.\nNo photos, no stock images, no logos, no icons, no sparks, no glow, no gradients, no decorative shapes other than the single orange bar.\nClean left-aligned typographic layout in this exact order, top to bottom, each line as its own separate text element:\n\n1. Small kicker at top: GAME WEEK\n2. Large dominant headline on two lines: NO. 8 FLORIDA / AT NO. 25 MISSOURI\n3. Medium line: 4-0 · 3-1\n4. Medium line: SATURDAY, OCT. 3 · 3:30 P.M. ET · ABC\n5. Medium line: MEMORIAL STADIUM\n6. Small line just above the orange bar: LAST WEEK: FLORIDA 52, NO. 4 OLE MISS 28\n7. Small footer line at the very bottom: GATORBAITMEDIA.COM\n\nStrong hierarchy, generous negative space, the headline dominates. Use the exact wording above verbatim and do not add any other text."
+  },
+  "autofillDesign": {
+    "design_id": "DAHWqVhJoqU",
+    "title": "GatorBait Game Week — No. 8 Florida at No. 25 Missouri",
+    "data": {
+      "kicker": {
+        "type": "text",
+        "text": "GAME WEEK"
+      },
+      "headline": {
+        "type": "text",
+        "text": "NO. 8 FLORIDA\nAT NO. 25 MISSOURI"
+      },
+      "records": {
+        "type": "text",
+        "text": "4-0 · 3-1"
+      },
+      "when": {
+        "type": "text",
+        "text": "SATURDAY, OCT. 3 · 3:30 P.M. ET · ABC"
+      },
+      "venue": {
+        "type": "text",
+        "text": "MEMORIAL STADIUM"
+      },
+      "last_week": {
+        "type": "text",
+        "text": "LAST WEEK: FLORIDA 52, NO. 4 OLE MISS 28"
+      },
+      "footer": {
+        "type": "text",
+        "text": "GATORBAITMEDIA.COM"
+      }
+    }
+  },
+  "exportDesign": {
+    "design_id": "<design id returned by autofill-design>",
+    "format": {
+      "type": "png",
+      "lossless": true
+    }
+  }
+}

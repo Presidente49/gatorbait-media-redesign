@@ -1,67 +1,53 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Billboards — GatorBait Design</title>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Game Week Cards</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;600&display=swap">
 <style>
-:root{--n:#07122e;--n2:#0b1d4a;--b:#0021a5;--o:#fa4616;--ink:#f3f5fa;--mut:#b9c4dc;--c:"Barlow Condensed","Barlow",sans-serif;--s:"Barlow",sans-serif}
-*{box-sizing:border-box}html,body{margin:0}
-body{background:radial-gradient(80% 60% at 100% 0,rgba(250,70,22,.14),transparent 60%),radial-gradient(70% 70% at 0 100%,#10306e,transparent 65%),var(--n);color:var(--ink);font:400 16px/1.5 var(--s);-webkit-text-size-adjust:100%}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1200px;margin:0 auto;padding:22px 16px 40px}
-.k{display:flex;align-items:center;gap:10px;font:700 12px/1.3 var(--c);letter-spacing:.16em;text-transform:uppercase;color:#a9bbff}.k::before{content:"";width:22px;height:2px;background:var(--o)}
-h1{margin:8px 0 6px;font:800 clamp(52px,15vw,120px)/.86 var(--c);text-transform:uppercase;letter-spacing:-.01em}h1 span{color:var(--o)}
-.dek{max-width:640px;margin:0 0 22px;font:700 clamp(17px,4.6vw,22px)/1.25 var(--c);color:var(--mut)}.dek b{color:#fff}
-.wall{display:grid;gap:14px;grid-template-columns:1fr}
-@media(min-width:600px){.wall{grid-template-columns:1fr 1fr}.wrap{padding-inline:24px}}
-@media(min-width:960px){.wall{grid-template-columns:1fr 1fr 1fr;gap:20px}}
-.b{--i:0;position:relative;display:grid;grid-template-rows:auto 1fr auto;gap:12px;aspect-ratio:4/5;padding:18px;overflow:hidden;isolation:isolate;border-bottom:4px solid var(--o);background:var(--n2);color:#fff;box-shadow:0 20px 40px rgba(0,0,0,.35)}
-.b::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.14) 50%,transparent 58%);transform:translateX(-130%)}
-.top,.bot{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:8px;font:700 11px/1.2 var(--c);letter-spacing:.14em;text-transform:uppercase}
-.tag{padding:5px 8px;background:var(--o);color:#fff;font-weight:800}
-.r{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--b);color:#fff;font:800 14px/1 var(--c);box-shadow:0 0 0 2px var(--n2),0 0 0 4px var(--o)}
-.h{position:relative;z-index:1;align-self:end;margin:0;font:800 clamp(34px,9.4vw,46px)/.9 var(--c);text-transform:uppercase;letter-spacing:-.01em;text-wrap:balance;text-shadow:0 2px 20px rgba(0,0,0,.35)}
-@media(min-width:600px){.h{font-size:clamp(30px,3.6vw,44px)}}
-.by{font:600 12px/1.3 var(--s);letter-spacing:.02em;color:var(--mut)}.by b{color:#fff;font-weight:700}
-.sh{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 10px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45);font-weight:800}.sh::after{content:"↗";color:var(--o)}
-/* variants */
-.col{background:linear-gradient(118deg,transparent 0 60%,var(--o) 60% 61.4%,transparent 61.4%),radial-gradient(60% 50% at 100% 100%,rgba(250,70,22,.35),transparent 70%),var(--n2)}
-.num{background:linear-gradient(180deg,var(--b),#00187a)}
-.num .big{position:absolute;right:-6px;bottom:-24px;z-index:0;font:800 min(72vw,330px)/1 var(--c);color:rgba(255,255,255,.1);letter-spacing:-.04em}
-.num .h{font-size:clamp(28px,7.6vw,38px)}.num .h i{font-style:normal;color:#ffb08f}
-.fin{background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.09) 1px,transparent 1.5px) 0 0/6px 6px,#040b1f}
-.sc{position:relative;z-index:1;display:grid;gap:4px;align-content:end}
-.sc .t{font:800 clamp(56px,17vw,84px)/.9 var(--c);letter-spacing:-.02em;font-variant-numeric:tabular-nums}.sc .t s{text-decoration:none;color:var(--mut);font-size:.72em}.sc .t em{font-style:normal;color:var(--o);font-size:.5em;margin:0 4px}
-.sc .m{font:800 15px/1 var(--c);letter-spacing:.06em;text-transform:uppercase;color:#c8d3ef}.sc .m b{color:#fff}
-.q{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;height:74px;margin-top:8px;border-bottom:1px solid rgba(255,255,255,.2)}
-.q div{display:grid;grid-template-columns:1fr 1fr;gap:3px;align-items:end;position:relative;padding-bottom:16px}
-.q div::after{content:attr(data-q);position:absolute;left:0;right:0;bottom:0;font:700 10px/1 var(--c);letter-spacing:.12em;color:var(--mut);text-align:center}
-.q i{display:block;height:calc(var(--h) * 1%);min-height:2px;background:var(--o);transform-origin:bottom}.q i+i{background:rgba(185,196,220,.45)}
-.brk{background:linear-gradient(160deg,#ff5a2a,var(--o) 55%,#c93409);color:#fff}.brk .tag{background:#fff;color:var(--o)}.brk .r{box-shadow:0 0 0 2px var(--o),0 0 0 4px #fff}.brk .by,.brk .top,.brk .bot{color:#fff}
-.mag{background:var(--ink);color:#111629;border-bottom-color:var(--b)}.mag .h{color:var(--b);text-shadow:none}.mag .h::before{content:"\201C";color:var(--o)}.mag .h::after{content:"\201D";color:var(--o)}.mag .by{color:#454d5e}.mag .by b{color:#111629}.mag .r{box-shadow:0 0 0 2px var(--ink),0 0 0 4px var(--o)}.mag .sh{box-shadow:inset 0 0 0 1px rgba(17,22,41,.4)}
-.gal{background:linear-gradient(90deg,#040b1f 0 10px,#0b1d4a 10px 16px,#040b1f 16px 22px) 0 0/22px 14px repeat-x,linear-gradient(90deg,#040b1f 0 10px,#0b1d4a 10px 16px,#040b1f 16px 22px) 0 100%/22px 14px repeat-x,linear-gradient(180deg,#040b1f 14px,#0f1e44 14px calc(100% - 14px),#040b1f calc(100% - 14px))}
-.gal .fr{position:absolute;inset:44px 18px 60px;z-index:0;border:1px solid rgba(255,255,255,.25);background:radial-gradient(50% 40% at 50% 60%,rgba(250,70,22,.55),transparent 70%),linear-gradient(180deg,#0b1d4a,#07122e)}
-.gal .fr::before{content:"";position:absolute;left:12%;right:12%;bottom:18%;height:2px;background:rgba(255,255,255,.35);box-shadow:0 -22px 0 rgba(255,255,255,.14),0 -44px 0 rgba(255,255,255,.08)}
-.nx .h{font-size:clamp(30px,8vw,40px)}.nx .h span{display:block;color:var(--o)}
-.foot{margin-top:26px;padding-top:14px;border-top:1px solid rgba(255,255,255,.18);font:400 12px/1.55 var(--s);color:var(--mut)}.foot b{color:#fff}
-@media(prefers-reduced-motion:no-preference){
-.b{animation:up .8s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i) * 90ms)}
-.b::after{transition:transform 1s cubic-bezier(.2,.7,.2,1)}.b:hover::after,.b:focus-visible::after{transform:translateX(130%)}
-.b:hover{transform:translateY(-4px);transition:transform .25s}
-.q i{animation:grow .9s .6s cubic-bezier(.2,.7,.2,1) both}
-.num .big{animation:drift 14s ease-in-out infinite alternate}
-}
-@keyframes up{from{transform:translateY(18px);opacity:.001}to{transform:none;opacity:1}}
-@keyframes grow{from{transform:scaleY(0)}}
-@keyframes drift{to{transform:translate(-10px,-14px)}}
-</style></head><body><div class="wrap">
-<p class="k">Design department · Idea No. 1 · Type-only card system</p>
-<h1>Bill<span>boards</span></h1>
-<p class="dek"><b>Every headline becomes a poster.</b> One CSS template turns a title, a byline and a number into Swamp Night artwork for stories with no art, the Magazine contents page and a tap-to-save share card.</p>
-<div class="wall">
-<a class="b col" style="--i:0" href="https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time"><div class="top"><span class="tag">Column</span><span class="r">BM</span></div><h2 class="h">Put down the poll, Gators. Missouri is waiting.</h2><div class="bot"><span class="by"><b>Buddy Martin</b> · Editorial lead</span><span class="sh">Save</span></div></a>
-<a class="b fin" style="--i:1" href="https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again"><div class="top"><span class="tag">Final</span><span>Sept. 26 · The Swamp</span></div><div class="sc"><div class="m"><b>No. 8 Florida</b> vs. No. 4 Ole Miss</div><div class="t">52<em>–</em><s>28</s></div><div class="q"><div data-q="Q1"><i style="--h:48"></i><i style="--h:0"></i></div><div data-q="Q2"><i style="--h:33"></i><i style="--h:29"></i></div><div data-q="Q3"><i style="--h:67"></i><i style="--h:71"></i></div><div data-q="Q4"><i style="--h:100"></i><i style="--h:33"></i></div></div></div><div class="bot"><span class="by"><b>Eddie Gilley</b> · Five plays that decided it</span><span class="sh">Save</span></div></a>
-<a class="b num" style="--i:2" href="https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls"><div class="top"><span class="tag">By the number</span><span>AP Top 25</span></div><div class="big" aria-hidden="true">13</div><h2 class="h">Florida climbed <i>13 spots</i> to No. 8 after the Ole Miss rout</h2><div class="bot"><span class="by"><b>Brenden Martin</b> · Chomp up the charts</span><span class="sh">Save</span></div></a>
-<a class="b mag" style="--i:3" href="https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers"><div class="top"><span class="tag">Magazine</span><span class="r">FB</span></div><h2 class="h">Who are these guys?</h2><div class="bot"><span class="by"><b>Franz Beard</b> · Trautwein's troops in the trenches</span><span class="sh">Save</span></div></a>
-<a class="b gal" style="--i:4" href="https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss"><div class="fr" aria-hidden="true"></div><div class="top"><span class="tag">Sideline</span><span class="r">CS</span></div><h2 class="h">10 thoughts from the sidelines</h2><div class="bot"><span class="by"><b>Chris Spears</b> · Florida 52, Ole Miss 28</span><span class="sh">Save</span></div></a>
-<a class="b brk nx" style="--i:5" href="https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"><div class="top"><span class="tag">Up next</span><span>Week 6 · ABC</span></div><h2 class="h">At No. 25 Missouri <span>Sat., Oct. 3 · 3:30 p.m. ET</span></h2><div class="bot"><span class="by"><b>Memorial Stadium</b> · Show-Me State of Mind</span><span class="sh">Save</span></div></a>
+:root{--navy:#07122e;--orange:#fa4616;--paper:#f7f4ee;--ink:#111629;--ink2:#454d5e;--rule:#c9c5bb}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--paper:#07122e;--ink:#f3f5fa;--ink2:#b9c4dc;--rule:#26386b}}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 Barlow,sans-serif;padding:24px 16px}
+h1,h2{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:-.005em;margin:0 0 8px}
+h1{font-size:40px;line-height:.9}h2{font-size:22px;margin-top:28px}
+.k{font:700 12px/1.3 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));max-width:1100px}
+figure{margin:0}figure img{width:100%;height:auto;display:block;background:var(--navy)}
+figcaption{font-size:13px;color:var(--ink2);padding-top:6px}
+code,pre{font:13px/1.45 ui-monospace,Menlo,monospace}pre{background:#0b1d4a;color:#e6edf6;padding:14px;overflow:auto;border-left:4px solid var(--orange)}
+table{border-collapse:collapse;width:100%;max-width:820px;font-size:14px}td,th{text-align:left;padding:6px 8px;border-bottom:1px solid var(--rule);vertical-align:top}th{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.08em}
+a{color:inherit}small{color:var(--ink2)}
+</style></head><body>
+<p class="k">Design department, round two</p>
+<h1>Game Week Cards</h1>
+<p>Real Canva output. Template <code>DAHWqVhJoqU</code> (seven autofill fields) and this week's card <code>DAHWqlZYYnA</code>, both filled from <code>sports-live/scoreboard.json</code> by <code>make-cards.mjs</code>. Renders below are the images Canva returned after each edit (450x600); the full 1080x1440 PNG exports succeeded but their signed download links expire the same day and are blocked from this container.</p>
+
+<div class="grid">
+<figure><img src="exports/2026-10-03_matchup_florida-missouri_canva-render_v01.png" width="450" height="600" alt="Navy card: GAME WEEK / NO. 8 FLORIDA AT NO. 25 MISSOURI / 4-0 · 3-1 / SATURDAY, OCT. 3 · 3:30 P.M. ET · ABC / MEMORIAL STADIUM / LAST WEEK: FLORIDA 52, NO. 4 OLE MISS 28 / orange bar / GATORBAITMEDIA.COM">
+<figcaption><b>v01, committed.</b> Canva render of <code>DAHWqVhJoqU</code> after replace_text, autofill tagging, navy rect layered to back.</figcaption></figure>
+<figure><img src="exports/2026-10-03_matchup_florida-missouri_canva-render_v00-ghost-text.png" width="450" height="600" alt="Same card before the fix, with faint ghost text behind the headline">
+<figcaption><b>v00, rejected.</b> Same design before the background fix: the AI-generated page background was a baked image carrying the old lowercase copy (ghost text behind the headline and last-week line). Fixed with one full-page #07122E shape sent to back.</figcaption></figure>
 </div>
-<p class="foot"><b>Sources.</b> Score, quarters, rank, record and kickoff: ESPN via sports-live/scoreboard.json. AP poll jump of 13 spots: gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls. Every card links to its published story. Hover or focus a card for the light sweep; motion is off under reduced-motion settings.</p>
-</div></body></html>
+
+<h2>The dataset, from the feed</h2>
+<table><tr><th>Field</th><th>Value (this week)</th><th>Source in scoreboard.json</th></tr>
+<tr><td>kicker</td><td>GAME WEEK</td><td>constant</td></tr>
+<tr><td>headline</td><td>NO. 8 FLORIDA ⏎ AT NO. 25 MISSOURI</td><td>team.rank, team.name, next.home, next.opponentRank, next.opponent</td></tr>
+<tr><td>records</td><td>4-0 · 3-1</td><td>team.record, standings[team=next.opponent].overall</td></tr>
+<tr><td>when</td><td>SATURDAY, OCT. 3 · 3:30 P.M. ET · ABC</td><td>next.kickoffIso (America/New_York, AP months), next.tv</td></tr>
+<tr><td>venue</td><td>MEMORIAL STADIUM</td><td>next.venue</td></tr>
+<tr><td>last_week</td><td>LAST WEEK: FLORIDA 52, NO. 4 OLE MISS 28</td><td>last.score, last.opponentRank, last.opponent (only when last.status = final)</td></tr>
+<tr><td>footer</td><td>GATORBAITMEDIA.COM</td><td>constant</td></tr></table>
+<p><small>Feed updatedAt 2026-09-29T02:17:33Z, event 401856708. Full payload: <code>cards/2026-10-03_matchup_florida-missouri.json</code>.</small></p>
+
+<h2>Weekly loop (three calls)</h2>
+<pre>node deploy/dept-ideas/design/make-cards.mjs --write
+# 1. mcp__Canva__autofill-design   ← out.autofillDesign  (design_id DAHWqVhJoqU + 7 text fields)  → new design id
+# 2. mcp__Canva__export-design     ← out.exportDesign    (that id, png, lossless)                  → signed PNG URL
+# Proven 2026-09-30: autofill job 1476664b-84ab-4159-89a3-6cd70d94df40 → DAHWqlZYYnA
+#                    export   job a236169f-200a-42af-bca8-9bebe0705815 → success</pre>
+
+<h2>Canva objects created (private, safe to delete)</h2>
+<table><tr><th>ID</th><th>What</th><th>Links</th></tr>
+<tr><td>DAHWqVhJoqU</td><td>Tagged template, 1080x1440, 7 text fields</td><td><a href="https://www.canva.com/d/_ngaRYp3r_DQHE8">edit</a> · <a href="https://www.canva.com/d/sYd4XyEat8p7m1P">view</a></td></tr>
+<tr><td>DAHWqlZYYnA</td><td>Autofill output, this week's card</td><td><a href="https://www.canva.com/d/eWYZMy6ecjhJAp2">edit</a> · <a href="https://www.canva.com/d/GALYpAJiBc1bnNX">view</a></td></tr></table>
+<p><small>Not verified: font name (read-design reports fontRef YAEp6dEg5M8 only). Page is 3:4, not 4:5; resize before feed use.</small></p>
+</body></html>

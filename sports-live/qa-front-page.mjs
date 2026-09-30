@@ -116,7 +116,7 @@ for (const sc of scenarios) {
         showLive: document.querySelector('.fp-show')?.getAttribute('data-live') === '1', standings: !!document.querySelector('.fp-stand'),
         anims: document.getAnimations().filter((a) => a.playState === 'running').length, oldMedia: document.getElementById('gbgz-styles')?.media ?? null,
         cd: document.querySelector('[data-fp-count]')?.textContent || '', ids: document.querySelectorAll('#gbm-live').length,
-        road: document.querySelectorAll('#gbm-road').length, roadCards: document.querySelectorAll('#gbm-road .g').length, roadWins: document.querySelectorAll('#gbm-road .g.w').length,
+        road: document.querySelectorAll('#gbm-road').length, shareBtns: document.querySelectorAll('[data-share]').length, shareMin: Math.min.apply(null, [].slice.call(document.querySelectorAll('[data-share]')).map(function (b) { return b.getBoundingClientRect().height; }).concat([99])), roadCards: document.querySelectorAll('#gbm-road .g').length, roadWins: document.querySelectorAll('#gbm-road .g.w').length,
         roadLinks: document.querySelectorAll('#gbm-road a.g[href]').length, roadRank: !!document.querySelector('#gbm-road .rk'), roadNext: (document.querySelector('#gbm-road .g.nx .op') || {}).textContent || '',
         tunnel: !!document.querySelector('.fp-tunnel'), tunnelPhase: document.querySelector('.fp-tunnel')?.dataset.phase || '', tunnelCd: document.querySelector('.fp-tunnel [data-fp-count]')?.textContent || '',
         tunnelScore: document.querySelector('.fp-tunnel [data-tn=away]')?.textContent || '', tunnelStories: document.querySelectorAll('.fp-tunnel .fp-tn-stories a').length,
@@ -146,6 +146,7 @@ for (const sc of scenarios) {
     if (e.noAnimations && r.anims) bad.push(r.anims + ' running animations under reduced motion');
     if (e.scoreboard && r.sbSource !== e.scoreboard) bad.push('scoreboard source ' + r.sbSource);
     if (e.standings && !r.standings) bad.push('standings missing');
+    if (e.road === 1 && (r.shareBtns < 1 || r.shareMin < 44)) bad.push(`share buttons ${r.shareBtns}, min height ${r.shareMin}`);
     if (e.road !== undefined && r.road !== e.road) bad.push(`season band count ${r.road} != ${e.road}`);
     if (e.roadCards !== undefined && r.roadCards !== e.roadCards) bad.push(`season band cards ${r.roadCards} != ${e.roadCards}`);
     if (e.roadWins !== undefined && r.roadWins !== e.roadWins) bad.push(`season band wins ${r.roadWins} != ${e.roadWins}`);

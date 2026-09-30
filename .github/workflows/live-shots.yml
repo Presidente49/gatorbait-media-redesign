@@ -7,7 +7,8 @@ name: GatorBait live screenshots
 #   - workflow_dispatch with inputs (needs Actions write access), or
 #   - push a branch named shots/<anything> carrying automation/vision/live-shots.request.json,
 #     e.g. {"path":"/","selector":"#gbm-road","widths":"390,1365"} (works from a GitHub App
-#     that can push but cannot dispatch workflows).
+#     that can push but cannot dispatch workflows). Add "perf":"1" to also measure load performance
+#     under phone throttling (metrics.json gets a perf block per width).
 # Read-only against the site; writes nothing but that branch.
 
 on:
@@ -27,6 +28,10 @@ on:
       widths:
         description: 'Comma list of viewport widths'
         default: '390,1365'
+        required: false
+      perf:
+        description: 'Set to 1 to also measure load performance'
+        default: ''
         required: false
 
 permissions:
@@ -55,19 +60,20 @@ jobs:
           IN_PATH: ${{ github.event.inputs.path }}
           IN_SELECTOR: ${{ github.event.inputs.selector }}
           IN_WIDTHS: ${{ github.event.inputs.widths }}
+          IN_PERF: ${{ github.event.inputs.perf }}
         run: |
           node -e '
             const fs = require("fs");
-            let r = { path: process.env.IN_PATH, selector: process.env.IN_SELECTOR, widths: process.env.IN_WIDTHS };
+            let r = { path: process.env.IN_PATH, selector: process.env.IN_SELECTOR, widths: process.env.IN_WIDTHS, perf: process.env.IN_PERF };
             const f = "automation/vision/live-shots.request.json";
             if (process.env.GITHUB_EVENT_NAME === "push" && fs.existsSync(f)) r = JSON.parse(fs.readFileSync(f, "utf8"));
-            const path = r.path || "/", selector = r.selector === undefined ? "#gbm-road" : r.selector, widths = r.widths || "390,1365";
+            const path = r.path || "/", selector = r.selector === undefined ? "#gbm-road" : r.selector, widths = r.widths || "390,1365", perf = String(r.perf || "") === "1" ? "1" : "";
             // A path under deploy/covers/ is a repo file rendered from the checkout (file://), not the site.
             if (!/^\/[\w\-./?=&%#+]*$/.test(path) && !/^deploy\/covers\/[\w\-.]+\.html(\?[\w\-.~%+=&]*)?$/.test(path)) throw new Error("bad path");
             if (!/^[\d,]+$/.test(widths)) throw new Error("bad widths");
             if (!/^[\w\-#.\[\]=:" ]*$/.test(selector)) throw new Error("bad selector");
-            fs.appendFileSync(process.env.GITHUB_OUTPUT, `path=${path}\nselector=${selector}\nwidths=${widths}\n`);
-            console.log({ path, selector, widths });
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `path=${path}\nselector=${selector}\nwidths=${widths}\nperf=${perf}\n`);
+            console.log({ path, selector, widths, perf });
           '
 
       - name: Install Playwright Chromium
@@ -76,6 +82,8 @@ jobs:
           npx playwright install --with-deps chromium
 
       - name: Shoot production
+        env:
+          PERF: ${{ steps.req.outputs.perf }}
         run: node automation/vision/live-shots.mjs "${{ steps.req.outputs.path }}" "${{ steps.req.outputs.selector }}" "${{ steps.req.outputs.widths }}"
 
       - name: Publish to qa/live-shots
@@ -87,5 +95,5 @@ jobs:
           git config user.name "gatorbait-live-shots"
           git config user.email "actions@users.noreply.github.com"
           git add -A
-          git commit -q -m "live shots: ${{ steps.req.outputs.path }} ${{ steps.req.outputs.selector }} ${{ steps.req.outputs.widths }} (run ${{ github.run_id }})"
+          git commit -q -m "live shots: ${{ steps.req.outputs.path }} ${{ steps.req.outputs.selector }} ${{ steps.req.outputs.widths }}${{ steps.req.outputs.perf == '1' && ' perf' || '' }} (run ${{ github.run_id }})"
           git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" qa/live-shots

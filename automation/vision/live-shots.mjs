@@ -3,13 +3,17 @@
 //   path      page path on www.gatorbaitmedia.com, query allowed (default "/")
 //   selector  element to scroll into view and capture on its own (default "#gbm-road"; "" for none)
 //   widths    comma list (default "390,1365"); widths under 800 use an iPhone profile
-// Output: build/live-shots/<name>.jpg plus metrics.json (bounding boxes, computed fonts, scroll state).
+//   PERF=1    also measure load performance under Lighthouse-like throttling (phone: 1.6 Mbps, 150 ms RTT,
+//             4x CPU slowdown; desktop: 10 Mbps, 40 ms, no CPU slowdown): TTFB, FCP, LCP, CLS, long tasks,
+//             when our front page root and story button appeared, and every request grouped by host.
+// Output: build/live-shots/<name>.jpg plus metrics.json (bounding boxes, computed fonts, scroll state, perf).
 import { chromium, devices } from 'playwright';
 import { mkdirSync, writeFileSync } from 'node:fs';
 
 const path = process.argv[2] || '/';
 const selector = process.argv[3] === undefined ? '#gbm-road' : process.argv[3];
 const widths = (process.argv[4] || '390,1365').split(',').map(Number).filter(Boolean);
+const PERF = process.env.PERF === '1';
 const OUT = 'build/live-shots';
 mkdirSync(OUT, { recursive: true });
 // deploy/covers/*.html renders a story cover from the checkout instead of the live site (the query carries the copy).
@@ -31,10 +35,53 @@ for (const w of widths) {
   page.on('pageerror', (e) => errors.push(String(e).slice(0, 200)));
   const m = { width: w, errors };
   try {
+    if (PERF) {
+      const cdp = await ctx.newCDPSession(page);
+      await cdp.send('Network.enable');
+      const phone = w < 800;
+      await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: phone ? 150 : 40, downloadThroughput: (phone ? 1.6 : 10) * 1024 * 1024 / 8, uploadThroughput: (phone ? 0.75 : 10) * 1024 * 1024 / 8 });
+      await cdp.send('Emulation.setCPUThrottlingRate', { rate: phone ? 4 : 1 });
+      await page.addInitScript(() => {
+        const P = (window.__gbmPerf = { lcp: null, cls: 0, longTasks: [], fpRootAt: null, shareAt: null, fcp: null });
+        try { new PerformanceObserver((l) => { for (const e of l.getEntries()) P.lcp = { t: Math.round(e.startTime), size: e.size, url: (e.url || '').slice(0, 120), tag: e.element ? e.element.tagName + (e.element.className ? '.' + String(e.element.className).slice(0, 40) : '') : null }; }).observe({ type: 'largest-contentful-paint', buffered: true }); } catch (_) {}
+        try { new PerformanceObserver((l) => { for (const e of l.getEntries()) if (!e.hadRecentInput) P.cls += e.value; }).observe({ type: 'layout-shift', buffered: true }); } catch (_) {}
+        try { new PerformanceObserver((l) => { for (const e of l.getEntries()) P.longTasks.push([Math.round(e.startTime), Math.round(e.duration)]); }).observe({ type: 'longtask', buffered: true }); } catch (_) {}
+        try { new PerformanceObserver((l) => { for (const e of l.getEntries()) if (e.name === 'first-contentful-paint') P.fcp = Math.round(e.startTime); }).observe({ type: 'paint', buffered: true }); } catch (_) {}
+        const mo = new MutationObserver(() => {
+          if (P.fpRootAt === null && document.querySelector('#gbm-live.fp26')) P.fpRootAt = Math.round(performance.now());
+          if (P.shareAt === null && document.querySelector('[data-share]')) P.shareAt = Math.round(performance.now());
+          if (P.fpRootAt !== null && P.shareAt !== null) mo.disconnect();
+        });
+        document.addEventListener('DOMContentLoaded', () => mo.observe(document.documentElement, { childList: true, subtree: true }));
+      });
+    }
     const res = await page.goto(url, { waitUntil: 'load', timeout: 60000 });
     m.http = res && res.status();
     await page.waitForSelector('#gbm-live.fp26', { timeout: 15000 }).catch(() => { m.note = 'front page root not seen in 15s'; });
     await page.waitForTimeout(3500);
+    if (PERF) {
+      await page.waitForTimeout(6500);
+      m.perf = await page.evaluate(() => {
+        const P = window.__gbmPerf || {}, nav = performance.getEntriesByType('navigation')[0] || {};
+        const res = performance.getEntriesByType('resource');
+        const byHost = {};
+        for (const r of res) {
+          let h = 'other'; try { h = new URL(r.name).host; } catch (_) {}
+          const b = byHost[h] || (byHost[h] = { n: 0, bytes: 0, ms: 0 });
+          b.n++; b.bytes += r.transferSize || 0; b.ms += Math.round(r.duration);
+        }
+        const kind = (r) => r.initiatorType === 'script' || /\.m?js(\?|$)/.test(r.name) ? 'script' : r.initiatorType === 'css' || r.initiatorType === 'link' && /\.css|fonts\.googleapis/.test(r.name) ? 'css' : /fonts\.gstatic|\.woff2?(\?|$)/.test(r.name) ? 'font' : r.initiatorType === 'img' || /\.(avif|webp|jpe?g|png|gif|svg)(\?|$)|wixstatic\.com\/media/.test(r.name) ? 'image' : r.initiatorType === 'fetch' || r.initiatorType === 'xmlhttprequest' ? 'fetch' : 'other';
+        const byKind = {};
+        for (const r of res) { const k = kind(r), b = byKind[k] || (byKind[k] = { n: 0, bytes: 0 }); b.n++; b.bytes += r.transferSize || 0; }
+        const top = [...res].sort((a, b) => (b.transferSize || 0) - (a.transferSize || 0)).slice(0, 15).map((r) => ({ url: r.name.replace(/^https?:\/\//, '').slice(0, 110), kind: kind(r), bytes: r.transferSize || 0, start: Math.round(r.startTime), ms: Math.round(r.duration) }));
+        const ours = res.filter((r) => /githubusercontent|jsdelivr|presidente49\.github\.io|fonts\.g/.test(r.name)).map((r) => ({ url: r.name.replace(/^https?:\/\//, '').slice(0, 110), bytes: r.transferSize || 0, start: Math.round(r.startTime), ms: Math.round(r.duration) }));
+        const tbt = (P.longTasks || []).reduce((a, [, d]) => a + Math.max(0, d - 50), 0);
+        return { ttfb: Math.round(nav.responseStart || 0), domContentLoaded: Math.round(nav.domContentLoadedEventEnd || 0), load: Math.round(nav.loadEventEnd || 0), fcp: P.fcp, lcp: P.lcp, cls: Math.round((P.cls || 0) * 1000) / 1000,
+          longTasks: (P.longTasks || []).length, longTaskMs: (P.longTasks || []).reduce((a, [, d]) => a + d, 0), tbt: Math.round(tbt), fpRootAt: P.fpRootAt, shareAt: P.shareAt,
+          requests: res.length, bytes: res.reduce((a, r) => a + (r.transferSize || 0), 0), byKind, byHost: Object.fromEntries(Object.entries(byHost).sort((a, b) => b[1].bytes - a[1].bytes).slice(0, 20)), top, ours,
+          scripts: document.scripts.length, inlineScriptChars: [...document.scripts].filter((x) => !x.src).reduce((a, x) => a + x.textContent.length, 0), styles: document.querySelectorAll('style').length, inlineStyleChars: [...document.querySelectorAll('style')].reduce((a, x) => a + x.textContent.length, 0), images: document.images.length, lazyImages: [...document.images].filter((i) => i.loading === 'lazy').length, domNodes: document.getElementsByTagName('*').length };
+      });
+    }
     // Cover renders: wait for web fonts and the photo before shooting.
     if (url.startsWith('file://')) { await page.evaluate(() => document.fonts.ready).catch(() => {}); await page.waitForTimeout(2500); }
     // Which build ran: the loader's pinned commit as served in the HTML, and the renderer's own build stamp.

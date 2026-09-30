@@ -150,6 +150,8 @@ Only Brenden lifts it, in chat or on the Control Room card. Until then, no produ
 - Finish the FCC key on the Mac (card `fcc-mac-key`).
 - Decide on the four draft Wix sites and the unused apps (below).
 
+**HOMEPAGE LOOK IS LOCKED (Brenden, Sept. 29 late evening).** Front Page 2026 with Swamp Night, Home Code `622d8ece` rev 24. No design change without his explicit yes; see `docs/HOMEPAGE-BASELINE-LOCK.md`.
+
 ### If Jarvis hits its usage limit (Sept. 29, 8:30 p.m. ET)
 Brenden asked to consolidate onto FCC. FCC has no provider key yet (card `fcc-mac-key`), so nothing can run there today. Until it does:
 - **Safe on any model, read-only:** the five briefs in `automation/ops-hub/model-router/jobs-pending/`; the daily Money Board row; health reads.

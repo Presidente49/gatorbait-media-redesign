@@ -1,0 +1,8 @@
+{
+  "id": "dept-writing-one-cool-thing",
+  "lane": "public_low_risk",
+  "kind": "editorial",
+  "prompt": "Writing director: one new recurring column or package (name, format, first-issue outline from published GatorBait stories) that fits Buddy Martin's voice and the Magazine. Context: GatorBait Media, independent Florida Gators coverage. Rules: read-only; public material only (published site pages, ESPN, FloridaGators.com); no subscriber, member, billing or email-list data; no credentials; Barlow only; AP style; every stat cites ESPN or FloridaGators.com. The homepage look (Front Page 2026, Swamp Night) is LOCKED; propose additive ideas only, never edits to the live site. Task: come up with your department's ONE cool, forward-thinking new thing that would really add to what we have, ranked for excitement and low cost to build in the free repo. Return exactly: (1) the idea in two sentences, (2) why readers or revenue care, (3) a self-contained preview file or draft (HTML for design/web, text for writing/social/outreach) under 12,000 characters, (4) what it needs from Brenden, (5) risks. The reference example is deploy/season-road/ (The Road Ahead season band).",
+  "max_turns": 8,
+  "timeout": 900
+}

@@ -39,6 +39,7 @@ for (const w of widths) {
       loaderSrc: (document.documentElement.outerHTML.match(/front-page-2026 src=([0-9a-f]+)/) || [])[1] || null,
       fpBuild: document.querySelector('#gbm-live')?.getAttribute('data-fp-build') || null,
       fpVersion: document.querySelector('#gbm-live')?.getAttribute('data-fp') || null,
+      probe: { shareTag: !!document.getElementById('gbm-share-bundle'), shareCommit: document.getElementById('gbm-share-bundle')?.getAttribute('data-commit') || null, shareRuntime: !!window.__GBM_SHARE_RUNTIME__, shareMarker: /GBM_SHARE_V1/.test(document.documentElement.innerHTML), h1s: document.querySelectorAll('h1').length, h1Header: !!document.querySelector('article h1, [data-hook="post-title"], h1')?.closest('header'), gbmLive: !!document.getElementById('gbm-live'), shareBtns: document.querySelectorAll('[data-share]').length, ua: navigator.userAgent.slice(0, 80) },
     })));
     await page.screenshot({ path: `${OUT}/top-${w}.jpg`, type: 'jpeg', quality: 70 });
     if (selector) {

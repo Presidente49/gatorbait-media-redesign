@@ -99,6 +99,10 @@ the debounced brand observer). `deploy/shell-2026/qa/results.json` and `shots/` 
 Re-run: `NODE_PATH=<dir with playwright+esbuild> PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers node deploy/speed-2026/embeds/qa/embed-qa.mjs`
 (optionally `<id8> …`), `node deploy/speed-2026/embeds/qa/syntax-check.mjs`, `node deploy/speed-2026/embeds/make-v2.mjs`.
 
+## 4a. Deployed Sept. 30, 6:35–6:50 p.m. ET (Jarvis)
+
+All nine PATCHes went through with the rev + djb2 guard; the API echoed the new body length and hash for each. New revisions (the rollback needs these): fb8963cc **5**, 5ab10e7b **2**, 4d3ab24a **5**, c91ad133 **5**, a5452619 **3**, 5a43ae83 **19**, a13b04e3 **4**, 7fee4de6 **32**, fdc2127a **86**. Records in #34 (two comments). Live verification: `shots/perf-story-after`, `shots/shell-v3-home`, `shots/shell-v3-story` (results in `deploy/speed-2026/`).
+
 ## 4. PATCH order for Jarvis
 
 Endpoint (from https://dev.wix.com/docs/api-reference/business-management/custom-embeds/update-custom-embed):

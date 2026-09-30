@@ -1,5 +1,5 @@
 {
-  "commit": "499dca9f8d65fd746c117b39260ea08184e0416f",
-  "updated": "2026-09-30T15:40:00Z",
-  "note": "Eddie Gilley on the Columnists rail (PR #82). Rollback: cfe4b4b349e2549dda27f468341cc6c565f7901f."
+  "commit": "8e364abaa679f9b15cdf6426b03e6c6bf4c96bd6",
+  "updated": "2026-09-30T16:15:00Z",
+  "note": "Story Kit on /post/ pages (PR #83): guide strip, first-mention links, Keep up with the Gators. Rollback: 499dca9f8d65fd746c117b39260ea08184e0416f."
 }

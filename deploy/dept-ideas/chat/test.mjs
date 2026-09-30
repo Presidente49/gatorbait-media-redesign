@@ -6,7 +6,7 @@
  * Usage: NODE_PATH=<scratchpad>/node_modules node test.mjs [--harness] */
 import { spawn } from 'node:child_process';
 import http from 'node:http';
-import { readFileSync, writeFileSync, mkdirSync, statSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, rmSync, statSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { dirname, join, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -30,6 +30,7 @@ let mode = process.argv.includes('--harness') ? 'harness' : 'wrangler', wrangler
 
 /* ---------- servers ---------- */
 async function startWrangler() {
+  rmSync(join(here, '.wrangler'), { recursive: true, force: true }); // fresh Durable Object storage every run
   const bin = join(process.env.NODE_PATH || '', '..', 'node_modules', '.bin', 'wrangler'), b2 = join(process.env.NODE_PATH || 'node_modules', '.bin', 'wrangler');
   const w = existsSync(b2) ? b2 : bin;
   wrangler = spawn(w, ['dev', '--config', 'wrangler.toml', '--ip', '127.0.0.1', '--port', '8787', '--log-level', 'info'], { cwd: here, env: { ...process.env, WRANGLER_SEND_METRICS: 'false', CI: '1', NO_COLOR: '1', FORCE_COLOR: '0' } });
@@ -100,8 +101,10 @@ try {
   const sysIs = (p, re) => p.waitForFunction((s) => new RegExp(s).test(document.querySelector('[data-gbs="sys"]').textContent), re, { timeout: 8000 }).then(() => true, () => false);
   await send(A, 'Go Gators');
   check('kickoff lock: reader blocked for the first five minutes', await sysIs(A, 'Members only for the first 5 minutes'), await A.textContent('[data-gbs="sys"]'));
-  const opened = await mod({ cmd: 'scoreboard', sb: withKick(new Date(Date.now() - 600000).toISOString()) });
-  check('lock lifts ten minutes after kickoff', opened.room.open && !opened.room.lock);
+  const lifted = await mod({ cmd: 'scoreboard', sb: withKick(new Date(Date.now() - 600000).toISOString()) });
+  check('lock lifts ten minutes after kickoff', lifted.room.open && !lifted.room.lock);
+  await mod({ cmd: 'scoreboard', sb }); const opened = await mod({ cmd: 'forceOpen', on: true }); // real scoreboard.json on the strip, room held open by the desk
+  check('desk can hold the room open with the real scoreboard on the strip', opened.room.open && opened.room.why === 'forced' && opened.room.kickoff === '2026-10-03T19:30:00.000Z');
   await send(A, 'Go Gators. Columbia is loud tonight.');
   const seenByB = await B.waitForSelector('.gbs-p:has-text("Columbia is loud tonight")', { timeout: 8000 }).then(() => true, () => false);
   check('reader post fans out to the other browser', seenByB);
@@ -140,7 +143,7 @@ try {
   check('bad token refused at the socket', bad !== 'connected', bad);
   const linkTry = c3.inbox.length; c3.ws.send(JSON.stringify({ t: 'msg', text: 'see www.example.com' })); await sleep(800);
   check('links from readers refused', c3.inbox.slice(linkTry).some((o) => o.t === 'err' && o.code === 'link'));
-  const closed = await mod({ cmd: 'scoreboard', sb });
+  const closed = await mod({ cmd: 'forceOpen', on: false });
   check(`real scoreboard restored: room ${closed.room.open ? 'open (' + closed.room.why + ' window now)' : 'closed until game day'}`, closed.room.kickoff === '2026-10-03T19:30:00.000Z');
   await A.waitForFunction((open) => document.querySelector('.gbs').getAttribute('data-quiet') === (open ? '0' : 'closed'), closed.room.open, { timeout: 8000 }).catch(() => { });
   if (!closed.room.open) { await A.screenshot({ path: join(here, 'shots/stands-390-quiet.png') }); await B.screenshot({ path: join(here, 'shots/stands-1365-quiet.png') }); say('saved shots/stands-390-quiet.png and shots/stands-1365-quiet.png (countdown to kickoff, no empty feed)'); }
@@ -148,7 +151,7 @@ try {
   for (const c of [c3, c4, staff]) c.ws.close();
 } catch (e) { check('run completed without an exception', false, e.stack || String(e)); }
 check('no browser console errors', errors.length === 0, errors.join(' | ').slice(0, 400));
-await browser.close(); statik.close(); if (harnessServer) harnessServer.close(); if (wrangler) { try { wrangler.kill('SIGTERM'); } catch (_) { } }
+await browser.close(); statik.close(); rmSync(join(here, '.wrangler'), { recursive: true, force: true }); if (harnessServer) harnessServer.close(); if (wrangler) { try { wrangler.kill('SIGTERM'); } catch (_) { } }
 const shots = ['stands-390-live.png', 'stands-1365-live.png', 'stands-390-quiet.png', 'stands-1365-quiet.png'].filter((f) => existsSync(join(here, 'shots', f))).map((f) => `- shots/${f} (${statSync(join(here, 'shots', f)).size.toLocaleString('en-US')} bytes)`);
 const ver = (p) => { try { return require(join(process.env.NODE_PATH || 'node_modules', p, 'package.json')).version; } catch (_) { return '?'; } };
 writeFileSync(join(here, 'TEST.md'), `# The Stands — local test run\n\n- Date: ${new Date().toISOString()}\n- Mode: ${mode === 'wrangler' ? 'wrangler dev (workerd, SQLite-backed Durable Object), local only, nothing deployed' : 'ws harness (node `ws` server running the same RoomCore); wrangler dev was not usable in this container'}\n- Versions: node ${process.version}, wrangler ${ver('wrangler')}, workerd ${ver('workerd')}, playwright ${ver('playwright')}, ws ${ver('ws')}\n- Result: ${pass} passed, ${fail} failed\n\n## Screenshots\n\n${shots.join('\n')}\n\n## Console output\n\n\`\`\`\n${log.join('\n')}\n\`\`\`\n${wlog.length ? '\n## wrangler output (trimmed)\n\n```\n' + wlog.join('').replace(/\u001b\[[0-9;]*m/g, '').split('\n').filter((l) => l.trim()).slice(0, 25).join('\n') + '\n```\n' : ''}`);

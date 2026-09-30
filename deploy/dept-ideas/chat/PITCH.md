@@ -1,60 +1,49 @@
-# The Stands — a live chat room for game days and show nights
+# The Stands
 
-## 1) The idea (two sentences)
+## The idea
 
-The Stands is a phone-first chat room that opens 30 minutes before kickoff inside The Tunnel on the homepage and 30 minutes before Buddy goes live on the show page, with the live score strip on top, a Member badge for paid Wix members, slow mode, a word filter and one-tap reporting. When nobody is talking it never looks empty: the room shows the score, the kickoff countdown and the next show time instead of a blank feed.
+The Stands is a live chat room for game days and show nights, built as a Cloudflare Worker with one Durable Object per room and a client written in the front-page renderer's style, so it drops into The Tunnel on the homepage and onto the show page. The score strip sits on top, paid Wix members get a Member badge and skip slow mode, and the rules live on the server: slow mode, a word filter, member-only mode, a five-minute members-only lock at kickoff read from `sports-live/scoreboard.json`, one-tap reporting (three reports hide a post until a moderator rules) and a 200-message ring buffer. When the room is closed or nobody has talked in ten minutes, readers see the score, the countdown to kickoff and the next show, never an empty feed.
 
-## 2) Why readers or revenue care
+This is working code with a passing local test, not a mockup; the screenshots in `shots/` are the real client talking to the real Worker under `wrangler dev`.
 
-- Game day is the one time readers are on the site and on a second screen at the same time; today The Tunnel gives them a countdown, a score and a link out (`sports-live/src/front-page.js`, `tunnelHtml`). A room keeps them on gatorbaitmedia.com for the length of the game instead of a 20-second check.
-- Show nights already send people off-site: the show module's buttons are "Watch on YouTube" and "Facebook" (`front-page.config.json`, `links.youtubeLive`, `links.facebook`). A room on `/the-buddy-martin-show` gives the audience a reason to open the show page, and gives Buddy a producer screen of reader questions to read on air.
-- The Member badge is the first visible perk of a paid plan that costs nothing to fulfil. `docs/HOMEPAGE-BASELINE-LOCK.md` records that Magazine paywall enforcement is still outstanding; a badge and no-wait posting are perks that work before the paywall does.
-- The calendar is favorable: Florida is 4-0 and No. 8, off a 52-28 win over No. 4 Ole Miss, with No. 25 Missouri Saturday, then No. 1 Texas (Oct. 17) and No. 2 Georgia (Oct. 31) (`sports-live/scoreboard.json`, built from ESPN's public JSON per `README.md`). Three top-25 games in five weeks is the best window this site will get to form a habit.
-- Measurable: posts per game, unique posters per game, and sign-ins that start from the room's "sign in to chat" button. The kill criterion is in section 5.
+## Why it matters
 
-## 3) How it is built (engine choice with the trade-off, files, embed size, hosting cost per month honestly, hours to launch)
+- Game day is the one time readers are on gatorbaitmedia.com and a second screen at once. The Tunnel (`sports-live/src/front-page.js`, `tunnelHtml`) gives them a countdown, a score and a link out; a room keeps them for the whole game.
+- Show nights send people off-site by design: the show module's buttons are "Watch on YouTube" and "Facebook" (`front-page.config.json`, `links`). A room on `/the-buddy-martin-show` gives Buddy reader questions to read on air and the audience a reason to open the show page.
+- The Member badge and no-wait posting are the first visible perks of a paid plan that cost nothing to fulfil, and they work before Magazine paywall enforcement, which `docs/HOMEPAGE-BASELINE-LOCK.md` records as outstanding.
+- The calendar: Florida is 4-0 and No. 8, off a 52-28 win over No. 4 Ole Miss, with No. 25 Missouri Saturday (Oct. 3, 3:30 p.m. ET, ABC), then No. 1 Texas (Oct. 17) and No. 2 Georgia (Oct. 31), all from `sports-live/scoreboard.json`, which `README.md` says is built from ESPN's public JSON.
+- It is measurable from day one: the state endpoint and moderator queue report posts, hidden posts and people in the room per window.
 
-**Engine: (c) a small custom room on Cloudflare Workers + Durable Objects, embedded through the existing Wix custom-embed loader, signed in through Wix Members.**
+## Evidence
 
-Why not (a) YouTube live chat: it is free and moderated by YouTube's tools, but it only exists while a stream is live, so there is nothing on Saturday when no show streams; posting requires a Google sign-in, not a GatorBait one; the embed (`youtube.com/live_chat?v=…&embed_domain=…`) is YouTube's UI, so no Swamp Night palette, no Member badge, no score strip, and YouTube can change or block the embed at will. Facebook has no embeddable chat at all. Keep (a) as the zero-cost fallback for show nights only if (c) is not approved.
+Tool calls made (read-only; nothing deployed, nothing created in the account):
 
-Why not (b) Wix: Wix Chat is a one-to-one business-to-visitor widget, not a room. Wix Forum and Groups are threaded pages, not real time, and they render Wix's own DOM outside the owned `#gbm-live` container, which is what the unified mobile shell and the no-jump architecture depend on. Neither can sit inside The Tunnel.
+1. `mcp__Cloudflare_Developer_Platform__workers_list` (no arguments), Sept. 30. Result: `{"workers":[],"count":0}`. The Cloudflare account is reachable from this workspace and holds no Workers yet, so `the-stands` would be the first; deploying it is the controller's call.
+2. `wrangler dev` (wrangler 4.144.0, workerd 1.20260926.1) run locally from `deploy/dept-ideas/chat/wrangler.toml` against `worker.mjs`, with a SQLite-backed Durable Object, on 127.0.0.1:8787. Wrangler's `Request.cf` proxy warning is cosmetic; the Worker ran.
+3. `node test.mjs` (Playwright 1.56.1, Chromium, `ws` 8.22.0): two browser contexts, a phone at 390 by 844 and a desktop at 1365 by 800, plus three raw WebSocket clients, drove the room. Result in `TEST.md`: 21 passed, 0 failed, no console errors. Proved in order: lock window from the real scoreboard (2026-10-03T19:30Z to 19:35Z); a reader one minute after a simulated kickoff refused ("Members only for the first 5 minutes after kickoff"); lock lifts at ten minutes; desk holds the room open with the real scoreboard on the strip; posts fan out with the Member badge; a second reader post inside 30 seconds refused and the input locked; "damn" masked to "d***" server-side; one-tap report; three reports hide the post everywhere and the moderator queue lists it; member-only mode blocks readers; 210 more posts leave exactly 200; bad token gets HTTP 401; a reader's link refused; with no desk override the room is closed until game day and shows the countdown with no input.
 
-Why (c): one Durable Object per room ("game-2026-10-03", "show-2026-10-07") holds the WebSocket connections and the last 200 messages; the Worker verifies a short-lived token, fans messages out and applies slow mode, member-only mode and the word list server-side, so a modified client cannot skip them. The Cloudflare Developer Platform connector is already attached to this workspace (visible in this session's tool list; not called, read-only pass). Trade-off: we own moderation, uptime and abuse handling ourselves, with no vendor doing it for us.
+Files in `deploy/dept-ideas/chat/`:
 
-Sign-in: the embed calls a Velo HTTP function (`/_functions/standsToken`) on the same domain, which reads the current member through `wix-members-backend` and the member's active plan through `wix-pricing-plans-backend`, then returns a 10-minute HMAC token with `{memberId, displayName, tier}`. The secret lives in Wix Secrets Manager and as a Worker secret; nothing is written into the embed. Assumption to verify in a one-hour spike: that the HTTP function sees the caller's member session. If it does not, the documented fallback is Velo page code posting the token to the embed with `postMessage`.
+- `worker.mjs` (14.8 KB): routes `/room/{game|show}-YYYY-MM-DD/{ws,state,mod}` and dev-only `/token`; `RoomCore` (every rule, no Cloudflare API in it); `StandsRoom` (Durable Object adapter, WebSocket Hibernation API, storage); HMAC tokens; game and show windows.
+- `client.js` (15.8 KB): the embed, one owned root, CSS injected once, paint once then patch in place, reconnect with backoff, quiet state with countdown, Barlow and Barlow Condensed, Swamp Night palette.
+- `test.mjs` (about 15.7 KB), `test-page.html`, `wrangler.toml` (dev values only, labeled; production secrets go in with `wrangler secret put`).
+- `TEST.md`: the console output of the run. `shots/stands-390-live.png`, `stands-1365-live.png`, `stands-390-quiet.png`, `stands-1365-quiet.png`: real screenshots from the run.
+- `preview.html`: the four screenshots and the test result, under 12,000 characters.
 
-Score strip: on the homepage the room subscribes to the same `sb` object `patchTunnel` already updates in place; on the show page, which has no renderer, the embed reads the published `scoreboard.json` from the GitHub Pages origin the frame already uses (`sports-live/frame.html`, `PAGES`). Quiet state: the room renders the countdown to `next.kickoffIso`, the last final and the next show time from the same data, so an empty room is a scoreboard, not a void.
+Rerun: `NODE_PATH=<scratchpad>/node_modules node deploy/dept-ideas/chat/test.mjs` (add `--harness` to run the same `RoomCore` under a plain `ws` server if wrangler is unavailable).
 
-Placement: in `tunnelHtml`, one `<div id="gbm-stands">` under the CTA row, shown on game day only through a `front-page.config.json` flag (`stands.gameday: true`); on `/the-buddy-martin-show`, one custom embed at body end, shown Mondays, Wednesdays and Thursdays from 8:30 p.m. ET until an hour after the show ends. Outside those windows the embed renders nothing, so the pages look exactly as they do today.
+## What it needs from Brenden
 
-Files (all on a branch, no live writes):
-- `sports-live/src/stands.js` and `sports-live/src/stands.css`, about 12 KB together, a straight port of `preview.html` (which is 11,204 characters, self-contained except Google Fonts).
-- `workers/stands/src/index.ts` (Worker + Durable Object, about 300 lines), `workers/stands/wrangler.toml`.
-- `wix/velo/http-functions.js` addition for `standsToken`, recorded in the repo and deployed by the controller.
-- `sports-live/src/front-page.js`: one line in `tunnelHtml`; `front-page.config.json`: one flag.
-- `workers/stands/words.txt`: the filter list, plain text, editable without a deploy through KV.
-- Moderator view: `/mod` route on the Worker, password-protected behind Cloudflare Access (free for up to 50 users), with the report queue, delete, timeout, slow-mode seconds and member-only toggle.
+- A yes on the name and on Cloudflare as the home. The controller then runs `wrangler deploy` with `TOKEN_SECRET` and `MOD_KEY` as secrets and `SCOREBOARD_URL` pointed at the Pages copy of `scoreboard.json`; `DEV_TOKENS` stays unset in production.
+- The sign-in bridge: a Velo HTTP function (`/_functions/standsToken`) that reads the current member with `wix-members-backend`, checks for an active plan with `wix-pricing-plans-backend`, and returns a ten-minute token signed with the same secret. `verifyToken` in `worker.mjs` is the contract. One hour to confirm the function sees the member session; the fallback is page code posting the token to the embed.
+- Placement: one `<div id="gbm-stands">` under the CTA row in `tunnelHtml`, behind a `front-page.config.json` flag, and one custom embed on the show page, both the existing loader pattern, rendering nothing outside the open windows.
+- One named moderator per window with the mod key, and a one-paragraph set of room rules. No moderator on duty, the room stays closed and shows the countdown.
+- Which surface first. Recommendation: the Wednesday, Oct. 7 show as the dress rehearsal, then The Tunnel for South Carolina on Oct. 10 (`scoreboard.json`, time TBA). Saturday at Missouri is too soon to do it properly.
 
-Embed size: the Wix custom embed is the same pointer loader pattern as Home Code, about 700 to 1,100 characters (Home Code is 1,063 characters today per `deploy/dept-ideas/web/PITCH.md`), far under the 15,000-character limit. The chat UI is not in the embed.
+## Risks
 
-Hosting cost per month, honestly: Cloudflare's free plan includes Workers and SQLite-backed Durable Objects with a daily request allowance in the 100,000 range, and WebSocket messages under the Hibernation API are metered at 20 incoming messages per request while outgoing fan-out is not metered; that is from Cloudflare's published pricing as I know it, not fetched in this pass, and it must be confirmed in the dashboard before launch. At a few hundred readers posting for four hours the room stays inside the free plan: $0. If it outgrows that, Workers Paid is $5 per month base. Cloudflare Access for the mod page: $0 at our seat count. Wix: no new app, $0. Total: $0 expected, $5 ceiling.
-
-Hours to launch: Worker + Durable Object 8; embed UI port and quiet state 6; Wix Members token bridge 4 plus a 1-hour spike; moderation tools and report queue 6; Tunnel and show-page integration 4; QA on the mobile shell, no-jump check at 390 px and reduced motion 4. About 33 hours of one worker. Saturday's Missouri game (Oct. 3) is three days out and is not a realistic first run; the honest target is the South Carolina home game Oct. 10 (`scoreboard.json`, time TBA), with a dress rehearsal on the Wednesday, Oct. 7 show.
-
-## 4) What it needs from Brenden
-
-- A yes on engine (c) and on the name. "The Stands" is the recommendation; it reads on the homepage as a place, not a feature.
-- One named moderator per window (a staff account on the mod page) and a one-paragraph set of room rules. Without a human on duty the room does not open.
-- The badge rule: any active paid plan shows "Member"; staff accounts show "GatorBait". Confirm, or name the plans that count.
-- Which surface goes first. Recommendation: the show page on Oct. 7, because Buddy can read questions on air and the audience is already gathered; The Tunnel on Oct. 10.
-- Approval for the controller to assign the Cloudflare Worker, the Velo HTTP function and the two embeds as production slots. Nothing in this folder touches the live site.
-- The kill criterion (section 5), agreed up front so the room is folded quietly if it does not take.
-
-## 5) Risks (moderation, abuse, legal, dead-room risk)
-
-- Moderation: a 9 p.m. room with a small staff is the real cost. Mitigations: member-only mode for the first five minutes after kickoff and at the show open, slow mode at 30 seconds by default, server-side filter, one-tap report that hides a post at three reports until a mod rules, and a single "close the room" switch. If no mod is on duty the room shows the quiet state, not an unmoderated feed.
-- Abuse: spam, slurs, harassment of players and coaches, and links. Defaults: no links from non-members, no images, 240 characters, sign-in required to post, rate limit per member and per IP at the Worker. A word list is weak on its own; the report queue and a human are the control.
-- Legal: user content on a news site is generally covered by Section 230 in the U.S., but that is not a substitute for rules and takedowns. Keep the data minimal (member ID, display name, message, timestamp), retain seven days, no DMs, no under-13 accounts (COPPA), and have counsel look once at the room rules and at Florida's minors online statutes. Defamation of a named player by a poster is the likeliest complaint; delete on report and log it.
-- Dead-room risk, the biggest one: a room with four posts an hour looks worse than no room. Mitigations built in: open only in scheduled windows, the quiet state shows scores and the countdown instead of an empty feed, staff seeds three posts at open, Buddy mentions the room on air and a mod reads a question back. Kill criterion: fewer than 30 posts from fewer than 10 unique posters per game across the first three windows, and the room is folded and the embed removed, with nothing else on the page changed.
-- Platform: Wix hydration can replace document classes; the room must live inside the owned `#gbm-live` DOM like The Tunnel and be QA'd on the mobile shell so nothing jumps. A Cloudflare outage degrades to the quiet state, never to a broken Tunnel.
+- Moderation is the real cost. The defaults (kickoff lock, 30-second slow mode, server-side filter, three-report auto-hide, close switch) reduce the load but do not replace a person. The word list is a starter list and is weak on its own.
+- Abuse: harassment of players and coaches, spam and doxxing. Sign-in is required to post, links are members-only, 240 characters, no images, no direct messages. Rate limits per IP at the edge are not in this build yet.
+- Legal: user content on a news site; Section 230 covers hosting in the U.S. but not carelessness. Keep the data minimal (member ID, display name, message, timestamp), no under-13 accounts, and have counsel read the room rules once.
+- Dead room: the biggest risk. The room opens only in windows, the quiet state shows the score and countdown instead of an empty feed, and staff seeds three posts at open. Kill criterion, agreed up front: fewer than 30 posts from fewer than 10 people per window across the first three windows, and the embed comes out with nothing else on the page changed.
+- Platform: the module lives inside the owned `#gbm-live` DOM like The Tunnel and must be checked on the mobile shell so nothing jumps. A Cloudflare outage degrades to the closed state, never a broken Tunnel. The game-day desk should push `scoreboard.json` with the `scoreboard` mod command on the tick it commits the file; the Durable Object's own fetch is the fallback.

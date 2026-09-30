@@ -427,6 +427,16 @@
     try { document.dispatchEvent(new CustomEvent('gbm:capture', { detail: detail })); } catch (_) {}
     try { if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: 'gbm_capture', gbm_capture_source: source, gbm_capture_outcome: outcome }); } catch (_) {}
   }
+  // Probe (never creates a contact): a page opened with ?gbm_capture=probe mints a visitor token and sends an empty
+  // submission (no email, no consent). Wix validates only after CORS and the token pass, so a 400 here proves the
+  // path works end to end without a contact. The result lands on <html data-gbm-capture-probe> for live shots.
+  if (/[?&]gbm_capture=probe(&|$)/.test(location.search)) {
+    token().then(function (tok) {
+      return fetch(API + '/form-submission-service/v4/submissions', { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json', Authorization: tok }, body: JSON.stringify({ submission: { formId: CFG.formId, submissions: {} } }) })
+        .then(function (r) { return r.text().then(function (t) { return { token: true, status: r.status, text: t.slice(0, 220) }; }); });
+    }).catch(function (e) { return { token: false, error: String(e).slice(0, 140) }; })
+      .then(function (res) { document.documentElement.setAttribute('data-gbm-capture-probe', JSON.stringify(res)); });
+  }
   function say(box, text, tone) { var m = box.querySelector('.gbc-m'); if (m) { m.textContent = text; if (tone) m.setAttribute('data-tone', tone); else m.removeAttribute('data-tone'); } }
   function onSubmit(ev) {
     var form = ev.target, box = form && form.closest && form.closest('[data-gbm-capture]');

@@ -46,6 +46,11 @@ const DESK_LIVE = { kickoff: '2026-10-03T19:30:00Z', until: '2026-10-05T04:00:00
   away: { name: 'Florida', rank: 8, record: '4-0', score: 24, quarters: [7, 10, 7] }, home: { name: 'Missouri', rank: 25, record: '3-1', score: 17, quarters: [3, 7, 7] },
   headline: 'QA fixture only', drive: 'QA fixture drive line', updates: [['Q3', 'QA fixture update one'], ['Q2', 'QA fixture update two']], links: [['Missouri first look', '/post/first-look-missouri-florida-gators-show-me-state-of-mind']] };
 
+const BUDDY_NEWEST = Math.max(...feed.posts.filter((p) => /buddy martin/i.test(p.author)).map((p) => Date.parse(p.firstPublishedDate)));
+const LATE = new Date(BUDDY_NEWEST + 8 * 86400000).toISOString();
+const LATE_PLUS_DAY = new Date(BUDDY_NEWEST + 9 * 86400000).toISOString();
+const NEWEST_OTHER_PATH = new URL(feed.posts.find((p) => !/buddy martin/i.test(p.author)).url).pathname;
+
 const scenarios = [
   { name: 'day-light', now: T.day, scheme: 'light', expect: { night: true, gameday: false, embers: true, lead: 'buddy', road: 1, roadCards: 12, roadWins: 4 } }, // Swamp Night is the everyday look (config look: swamp-night); band from the bundled schedule
   { name: 'day-dark', now: T.day, scheme: 'dark', expect: { night: true, gameday: false, lead: 'buddy', embers: true } },
@@ -55,9 +60,10 @@ const scenarios = [
   { name: 'reduced-motion', now: T.night, scheme: 'light', reduced: true, expect: { night: true, embers: false, noAnimations: true } },
   { name: 'rss-down', now: T.day, scheme: 'light', rss: 500, widths: [390], expect: { lead: 'buddy' } },
   { name: 'all-feeds-down', now: T.day, scheme: 'light', rss: 500, pages: 500, widths: [390], expect: {} },
-  { name: 'pin-timed', now: '2026-10-06T15:00:00Z', pins: { timed: { path: '/post/who-are-these-guys-trautwein', until: '2026-10-07T00:00:00Z' } }, widths: [390], expect: { lead: 'pin' } },
+  // Lead-rule scenarios derive their clock from the bundled feed: 8 days after Buddy's newest piece, so no Buddy column is fresh and the rule falls to the pin, then to the newest story.
+  { name: 'pin-timed', now: LATE, pins: { timed: { path: NEWEST_OTHER_PATH, until: LATE_PLUS_DAY } }, widths: [390], expect: { lead: 'pin' } },
   { name: 'pin-breaking', now: T.day, pins: { breaking: { path: '/post/first-look-missouri', until: '2026-10-01T00:00:00Z' } }, widths: [390], expect: { lead: 'breaking' } },
-  { name: 'newest-no-buddy', now: '2026-10-06T15:00:00Z', pins: { timed: null }, widths: [390], expect: { lead: 'newest' } },
+  { name: 'newest-no-buddy', now: LATE, pins: { timed: null }, widths: [390], expect: { lead: 'newest' } },
   { name: 'scoreboard-json', now: T.day, scoreboard: repoScoreboard, widths: [390, 1366], expect: { scoreboard: 'feed', standings: true, road: 1, roadCards: 12, roadLinks: 2, roadRank: true } },
   // Feed lands after the 1.5 s paint budget (phones did on Sept. 30): the band paints from the bundle, then swaps off screen to the fresh result.
   { name: 'scoreboard-late', now: T.day, scoreboardDelay: 2200, scoreboard: repoScoreboard && { ...repoScoreboard, schedule: repoScoreboard.schedule.map((g) => g.opponent === 'Missouri' ? { ...g, status: 'final', score: { fla: 31, opp: 24 } } : g) }, widths: [390, 1366], expect: { scoreboard: 'feed', road: 1, roadCards: 12, roadWins: 5 } },

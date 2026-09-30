@@ -4,7 +4,7 @@
  *
  * Input: a JSON file in the shape returned by Wix Forms
  *   POST https://www.wixapis.com/form-submission-service/v4/submissions/namespace/query
- *   body { "query": { "filter": { "namespace": "wix.form_app.form", "formId": "<Ask Buddy form id>" },
+ *   body { "query": { "filter": { "namespace": "wix.form_app.form", "formId": "8ab68d60-d973-4cf4-bbd5-47dcdbf94774" },
  *                     "sort": [{ "fieldName": "createdDate", "order": "DESC" }],
  *                     "cursorPaging": { "limit": 100 } } }
  *   (schema read via mcp__Wix__ReadFullDocsMethodSchema; each submission carries

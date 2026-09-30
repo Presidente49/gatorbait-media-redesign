@@ -16,7 +16,7 @@
   var C = { navy: '#07122e', blue: '#0021a5', orange: '#fa4616', ink: '#f3f5fa', muted: '#b9c4dc', win: '#7ef0a6' };
   var SHOW = { name: 'The Buddy Martin Show', path: '/the-buddy-martin-show', when: 'Mondays, Wednesdays and Thursdays at 9 p.m. ET', days: [1, 3, 4], hour: 21 };
   var CSS = '.gbm-share-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:0;border-radius:6px;background:#fa4616;color:#fff;font:800 15px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}' +
-    '.gbm-share-btn.ghost{background:transparent;border:1px solid #2b3f80;color:#f3f5fa}.gbm-share-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}' +
+    '.gbm-share-btn.ghost{background:transparent;border:1px solid #2b3f80;color:#f3f5fa}.gbm-share-btn span{white-space:nowrap}.gbm-share-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}' +
     '#gbm-share-veil{position:fixed;inset:0;background:rgba(3,8,24,.72);z-index:9998}' +
     '#gbm-share{position:fixed;left:0;right:0;bottom:0;z-index:9999;max-width:480px;margin:0 auto;background:#0b1a44;color:#f3f5fa;border-radius:18px 18px 0 0;padding:12px 16px calc(20px + env(safe-area-inset-bottom));font:16px/1.4 "Barlow",sans-serif;transform:translateY(105%);transition:transform .25s}' +
     '#gbm-share.on{transform:none}#gbm-share i{display:block;width:40px;height:4px;border-radius:2px;background:#2b3f80;margin:0 auto 10px}' +
@@ -237,9 +237,10 @@
   function mount() {
     if (!document.getElementById('gbm-share-css')) document.head.appendChild(el('style', { id: 'gbm-share-css' }, CSS));
     var road = document.querySelector('#gbm-road .hd'), tn = document.querySelector('.fp-tunnel .fp-tn-cta'), show = document.querySelector('.fp-show .fp-actions');
-    if (road && !road.querySelector('[data-share]')) road.appendChild(button('season', 'Share the season'));
+    var narrow = window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
+    if (road && !road.querySelector('[data-share]')) road.appendChild(button('season', narrow ? 'Share' : 'Share the season'));
+    if (show && !show.querySelector('[data-share]')) show.appendChild(button('show', narrow ? 'Share' : 'Share the show', true));
     if (tn && !tn.querySelector('[data-share]')) tn.appendChild(button('tunnel', 'Share', true));
-    if (show && !show.querySelector('[data-share]')) show.appendChild(button('show', 'Share the show', true));
     // Blog post page: canonical /post/ URL and a headline, no homepage root.
     if (!document.getElementById('gbm-live') && safePost(location.href) && !document.getElementById('gbm-share-btn')) {
       var h = document.querySelector('article h1, [data-hook="post-title"], h1'), host = h && (h.closest('header') || h.parentNode);

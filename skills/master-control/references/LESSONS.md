@@ -607,3 +607,16 @@ Each was reasonable alone. Together they mean nobody knows which one is true.
 
 ## Lesson 60: Wix blog pages re-render the post header after hydration (Sept. 30)
 A button appended to the story headline's header from a HEAD embed was present in the first paint and gone by the screenshot, with the module loaded, initialized and the headline in place. Wix's React hydration re-renders the header subtree, dropping foreign nodes, so a one-shot insert (or an observer that stops once it has seen its element) silently loses. On `/post/` pages keep a throttled MutationObserver alive for the page's life and re-insert when the element is missing. Prove mounts on production with the live-shots probe (script tag, runtime flag, headline count, button count), not with the fixture over file://, which cannot render. Desktop and phone profiles can still disagree for 30 to 100 minutes after an embed change because of the edge cache.
+
+## Lesson 61: A foreign node's intrinsic width can widen a Wix header column (Sept. 30)
+
+**What happened:** The Story Kit added a horizontally scrolling chip row (`white-space: nowrap`, `overflow-x: auto`) under the Share button on story pages. The QA fixture passed at every width, but the live site at 320 and 390 showed Wix's post header column at 1,385 px, centered: the title, the Share button and the strip were clipped on both sides and the chips looked scrolled. The row's unbreakable content width had flowed up into the header's intrinsic size; a plain fixture does not reproduce that.
+
+**The rule:** Anything inserted into Wix's header or body must contribute zero intrinsic width: `contain: inline-size` on the wrapper, and `width: 0; min-width: 100%` on any scroll container. Verify with the live-shots geometry probe (the `story` object in metrics.json: h1, share, strip, row) at 320/390/430 before calling a story-page change done; a JPEG alone hides which element grew.
+
+## Lesson 62: Story covers render in the live-shots workflow, not in the container (Sept. 30)
+
+**What happened:** Brenden did not like a transparent cutout PNG on Buddy's column and wanted a cover built on Chris Spears' photography. The cloud container cannot reach static.wixstatic.com, so nothing here can composite a Wix photo.
+
+**The rule:** `deploy/covers/template.html` takes the photo id, cutout, kicker, headline, dek and credit as query parameters. Push a `shots/<name>` branch whose request path is `deploy/covers/template.html?<query>` with selector `#cover` at 1600; the workflow renders it from the checkout and publishes `element-1600.jpg` to `qa/live-shots`. Upload from the raw.githubusercontent.com URL with UploadImageToWixSite, set it as the post cover via draft-posts PATCH UPDATE_PUBLISH, keep a copy in `deploy/covers/out/`. Credit under the wordmark, never over the photographer's watermark.
+

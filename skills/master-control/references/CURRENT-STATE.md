@@ -1,5 +1,12 @@
 # Master Control Current State
 
+## Sept. 30, ~2 p.m. ET: Story pages overhauled, covers, columnists, copy desk (Jarvis)
+- Homepage build pointer `sports-live/current.json` → `eece061` (PRs #82, #83, #85, #86). Story pages (`/post/`, embed `f285a38c` follows the pointer) carry the Story Kit: GatorBait Guide strip after the Share button, first-mention links to the roster/schedule/stats pages, "Keep up with the Gators" cards. Verified by live shots at 320/390/430/1365 (run 36746107824, Lesson 61). Eddie Gilley is on the homepage Columnists rail. Rollback: pointer → `499dca9` (before the Story Kit) or `cfe4b4b` (before Eddie).
+- Buddy Martin's Faulkner column `0753a25b`: body un-bolded, five copy fixes, Baugh's average corrected from ESPN, tags fixed, and a new layered cover (`d3cfa5_56a64986…`) from the story-cover renderer (`deploy/covers/`, Lesson 62).
+- New routine: hourly copy desk `trig_019J7WB6KNvin4Swma9ut7KM` (7 a.m.–11 p.m. ET) fixes formatting, captions and tags on writer-published posts and checks game numbers against ESPN.
+- Skill `skills/gatorbait-site-operations/SKILL.md` now carries #34 claims, stop-work, no site publish and the hard lines (PR #87, after the design-system session's handoff).
+- Waiting on Brenden (Control Room asks): Cloudflare deploy of the three fan modules (no Workers exist yet), Ask Buddy form placement, Game Threads and Porch posts (no Groups feed API), Metricool network connections, vidIQ credits, Perspective onboarding, approval to create The Morning After routine (classifier-blocked), plus the cleanup list (draft sites, unused apps, Stores V1 product pages).
+
 ## Sept. 30, ~9:15 a.m. ET: Tunnel record, fan-module mounts, Game Graph (Jarvis)
 - Homepage build pointer `sports-live/current.json` → `cfe4b4b` (deploy commit 85272eb). The Tunnel shows the opponent record ("No. 25 · 3-1", from `scoreboard.json` `next.opponentRecord`, ESPN summary). Make the Call, Ask GatorBait and The Stands are bundled but mount only once `deploy/cloudflare/endpoints.json` exists on Pages with the three Worker URLs; the Workers deploy from Brenden's Mac (`wrangler login` + `deploy`). Verified by live shots run 36719666693 (build `3699f7f3`, 390 and 1365). Rollback: pointer → `9f166e2`.
 - New homepage-only embed `1261f2b9-3dbf-4a2b-96e7-a13063534398` "GBM - Gators Game Graph v1 (homepage JSON-LD)" (HEAD, ESSENTIAL, rev 1, `deploy/seo-2026/home-game-graph-v1.html`). Refreshed by the Tuesday routine. Rollback: disable it.

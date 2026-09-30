@@ -1,1886 +1,422 @@
 /* GatorBait Front Page 2026: magazine front page, broadcast layer, Swamp Night palette, hub.
- * BUILT FILE: edit sports-live/src/front-page.{css,js} or sports-live/front-page.config.json,
- * then run: node sports-live/build-front-page.mjs
- * Bundled story snapshot: 2026-09-30T14:25:44Z (fallback only; live stories come from /blog-feed.xml).
+ * BUILT, MINIFIED FILE: edit sports-live/src/front-page.{css,js} or sports-live/front-page.config.json,
+ * then run: NODE_PATH=<dir with esbuild> node sports-live/build-front-page.mjs
+ * Bundled story snapshot: 2026-09-30T14:25:44Z (fallback only; live stories come from /blog-feed.xml). Build d36f32c7.
  */
-/* make-the-call (sports-live/src/make-the-call.js) */
-/* Make the Call: front-page module (score picks + live crowd distribution) for the section under The Road Ahead.
- * Source of record: deploy/dept-ideas/web/module.js (worker.mjs there is the API contract). This copy is bundled into
- * sports-live/homepage.js by build-front-page.mjs; front-page.js mounts it after first paint once
- * deploy/cloudflare/endpoints.json names a `call` Worker (window.__GBM_CALL_API__ = call + '/v1').
- * Same conventions as front-page.js: one IIFE, string markup with esc(), paint once from data the page already has
- * (the scoreboard's `next` game), then the Worker feed only changes values in place. Storage: one random token in
- * localStorage (no name, no email, no Wix member data).
- *   var game = GBM_CALL.game(sb);            // from readScoreboard()'s object; null without an ESPN event id
- *   el.insertAdjacentHTML('afterend', GBM_CALL.html(game)); GBM_CALL.init(root);
- */
-(function () {
-  'use strict';
-  var VERSION = 'make-the-call.1';
-  // Read at request time: the bundle evaluates before front-page.js learns the Worker URL from endpoints.json.
-  function api() { return String(window.__GBM_CALL_API__ || 'https://gatorbait-make-the-call.workers.dev/v1').replace(/\/+$/, ''); }
-  var TZ = 'America/New_York';
-  var MONTHS = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
-  var WDS = ['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.'];
-  var WD = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
-  var BINS = [['fla14', 'Florida by 14+'], ['fla7', 'Florida by 7-13'], ['fla1', 'Florida by 1-6'], ['opp1', '{opp} by 1-6'], ['opp7', '{opp} by 7-13'], ['opp14', '{opp} by 14+']];
-  var sessionToken = '';
-
-  function now() { var t = Number(window.__GBM_FP_NOW__); return Number.isFinite(t) && t > 0 ? t : Date.now(); }
-  function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function et(ms) {
-    var o = {};
-    new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date(ms)).forEach(function (p) { o[p.type] = p.value; });
-    return { wd: WD[o.weekday], h: Number(o.hour) % 24, m: Number(o.minute), mo: Number(o.month) - 1, d: Number(o.day) };
-  }
-  function gameWhen(iso) { var t = Date.parse(iso); if (!Number.isFinite(t)) return ''; var e = et(t), h = e.h % 12 || 12; return WDS[e.wd] + ', ' + MONTHS[e.mo] + ' ' + e.d + ' · ' + h + (e.m ? ':' + String(e.m).padStart(2, '0') : '') + (e.h < 12 ? ' a.m.' : ' p.m.') + ' ET'; }
-  function ranked(rank, name) { return (rank ? 'No. ' + rank + ' ' : '') + name; }
-  function rand() { try { if (crypto.randomUUID) return crypto.randomUUID().replace(/-/g, ''); var a = new Uint8Array(16); crypto.getRandomValues(a); return Array.prototype.map.call(a, function (b) { return ('0' + b.toString(16)).slice(-2); }).join(''); } catch (_) { return String(Math.random()).slice(2) + String(Date.now()); } }
-  function token() { try { var t = localStorage.getItem('gbm-call-token'); if (!/^[A-Za-z0-9_-]{16,64}$/.test(t || '')) { t = rand(); localStorage.setItem('gbm-call-token', t); } return t; } catch (_) { return sessionToken || (sessionToken = rand()); } }
-  function remember(id, pick) { try { if (pick) localStorage.setItem('gbm-call-' + id, JSON.stringify(pick)); else return JSON.parse(localStorage.getItem('gbm-call-' + id) || 'null'); } catch (_) {} return null; }
-  function bin(fla, opp) { var m = fla - opp; return m >= 14 ? 'fla14' : m >= 7 ? 'fla7' : m >= 1 ? 'fla1' : m >= -6 ? 'opp1' : m >= -13 ? 'opp7' : 'opp14'; }
-
-  /* The game comes from the scoreboard object front-page.js already holds (readScoreboard(raw)); the ESPN event id keys the Worker. */
-  function callGame(sb) {
-    var n = sb && sb.next; if (!n || !/^\d{6,12}$/.test(String(n.eventId || '')) || !Number.isFinite(Date.parse(n.kickoffIso))) return null;
-    return { id: String(n.eventId), opponent: String(n.opponent || ''), opponentRank: n.opponentRank || null, flaRank: sb.team && sb.team.rank || null, home: n.home === true, kickoff: n.kickoffIso, tv: n.tv || '', venue: n.venue || '' };
-  }
-  function callHtml(g) {
-    var opp = g.opponent, locked = now() >= Date.parse(g.kickoff), mine = remember(g.id);
-    function team(key, name, rank) { return '<div class="tm"><label for="gc-' + key + '"><small>' + esc(key === 'fla' ? (g.home ? 'Home' : 'Away') : (g.home ? 'Away' : 'Home')) + '</small>' + esc(ranked(rank, name)) + '</label><div class="step"><button type="button" data-t="' + key + '" data-d="-1" aria-label="' + esc(name) + ' minus one">−</button><input id="gc-' + key + '" name="' + key + '" type="number" inputmode="numeric" pattern="[0-9]*" min="0" max="99" placeholder="0" autocomplete="off"' + (mine ? ' value="' + esc(mine[key]) + '"' : '') + '><button type="button" data-t="' + key + '" data-d="1" aria-label="' + esc(name) + ' plus one">+</button></div></div>'; }
-    var fla = team('fla', 'Florida', g.flaRank), oth = team('opp', opp, g.opponentRank);
-    return '<section id="gbm-call" aria-label="Make the Call: pick the score" data-state="' + (locked ? 'locked' : mine ? 'set' : 'pick') + '" data-game="' + esc(g.id) + '" data-kickoff="' + esc(g.kickoff) + '" data-loaded="0" data-v="' + VERSION + '"><div class="wrap">' +
-      '<div class="hd"><div><p class="kick">Fan module · Make the Call</p><h2>Call <span>the score</span></h2></div><p class="mt"><b>' + esc(ranked(g.flaRank, 'Florida') + (g.home ? ' vs. ' : ' at ') + ranked(g.opponentRank, opp)) + '</b>' + esc(gameWhen(g.kickoff) + (g.tv ? ' · ' + g.tv : '')) + '</p></div>' +
-      '<div class="grid"><form class="pick" novalidate>' + (g.home ? oth + fla : fla + oth) +
-      '<div class="row"><button class="go" type="submit"' + (locked ? ' disabled' : '') + '>' + (locked ? 'Picks are locked' : mine ? 'Update my call' : 'Lock my call') + '</button><p class="msg" role="status" aria-live="polite"' + (mine ? '>Your call: Florida ' + esc(mine.fla) + ', ' + esc(opp) + ' ' + esc(mine.opp) : '>') + '</p></div>' +
-      '<p class="fine">One call per device, changeable until kickoff. No account, no email, nothing shared.</p></form>' +
-      '<div class="crowd" aria-label="Gator Nation\'s call"><h3>Gator Nation says <span data-c="tag">' + (locked ? 'Locked' : 'Live') + '</span></h3>' +
-      '<div class="stats"><div><b data-c="count">—</b><span>calls in</span></div><div><b data-c="avg">—</b><span>crowd score</span></div><div><b data-c="fla">—</b><span>pick Florida</span></div></div>' +
-      '<ul class="bins">' + BINS.map(function (b) { return '<li data-bin="' + b[0] + '" class="' + (b[0].indexOf('opp') === 0 ? 'opp' : '') + (mine && bin(mine.fla, mine.opp) === b[0] ? ' mine' : '') + '"><span class="lb">' + esc(b[1].replace('{opp}', opp)) + '</span><span class="bar"><i></i></span><b data-n="' + b[0] + '">–</b></li>'; }).join('') + '</ul>' +
-      '<p class="lock"><span data-c="lock">' + (locked ? 'Picks locked at kickoff' : 'Locks at kickoff') + '</span><span data-c="top"></span></p></div></div></div></section>';
-  }
-
-  /* After paint: fetch the crowd, wire the form, tick the lock line. Values only; the boxes were reserved in callHtml. */
-  function initCall(root) {
-    var S = root.querySelector('#gbm-call'); if (!S || S.__gbmCall) return; S.__gbmCall = true;
-    var id = S.getAttribute('data-game'), kick = Date.parse(S.getAttribute('data-kickoff'));
-    var form = S.querySelector('form'), go = S.querySelector('.go'), msg = S.querySelector('.msg'), inFla = S.querySelector('#gc-fla'), inOpp = S.querySelector('#gc-opp');
-    var oppName = (S.querySelector('[data-bin=opp14] .lb').textContent || '').replace(/ by 14\+$/, '');
-    function put(sel, v) { var el = S.querySelector('[data-c="' + sel + '"]'); if (el && el.textContent !== String(v)) el.textContent = String(v); }
-    function say(text, kind) { msg.textContent = text || ''; if (kind) msg.setAttribute('data-kind', kind); else msg.removeAttribute('data-kind'); }
-    function locked() { return now() >= kick; }
-    function lockUI() { S.setAttribute('data-state', 'locked'); go.disabled = true; go.textContent = 'Picks are locked'; inFla.disabled = inOpp.disabled = true; S.querySelectorAll('.step button').forEach(function (b) { b.disabled = true; }); put('tag', 'Locked'); put('lock', 'Picks locked at kickoff'); }
-    function show(d) {
-      if (!d || typeof d !== 'object') return;
-      var n = Number(d.count) || 0, mine = remember(id);
-      put('count', n ? n.toLocaleString('en-US') : '0');
-      put('avg', d.avg ? d.avg.fla + '–' + d.avg.opp : '—');
-      put('fla', typeof d.flaShare === 'number' ? Math.round(d.flaShare * 100) + '%' : '—');
-      (d.bins || []).forEach(function (b) { var li = S.querySelector('[data-bin="' + b.key + '"]'); if (!li) return; var i = li.querySelector('.bar i'), c = li.querySelector('b'); if (i) i.style.width = Math.round((b.share || 0) * 100) + '%'; if (c) c.textContent = String(b.n || 0); li.classList.toggle('mine', !!(mine && bin(mine.fla, mine.opp) === b.key)); });
-      put('top', d.top && n >= 5 ? 'Most common call: Florida ' + d.top.fla + ', ' + oppName + ' ' + d.top.opp : n && n < 5 ? 'Early returns' : '');
-      if (d.locked && !locked()) { kick = now(); }
-      if (d.locked) lockUI();
-      S.setAttribute('data-loaded', '1');
-    }
-    function tick() {
-      if (locked()) { lockUI(); return; }
-      var ms = kick - now(); put('lock', 'Locks at kickoff · ' + Math.floor(ms / 864e5) + 'd ' + Math.floor(ms % 864e5 / 36e5) + 'h ' + Math.floor(ms % 36e5 / 6e4) + 'm');
-    }
-    function req(method, path, body) {
-      var c = new AbortController(), t = setTimeout(function () { c.abort(); }, 4000);
-      // text/plain keeps the POST a "simple" CORS request: no preflight round trip on game day.
-      return fetch(api() + path, { method: method, signal: c.signal, credentials: 'omit', cache: 'no-store', headers: body ? { 'content-type': 'text/plain;charset=UTF-8' } : {}, body: body ? JSON.stringify(body) : undefined })
-        .then(function (r) { clearTimeout(t); return r.json().then(function (j) { return { status: r.status, json: j }; }); });
-    }
-    function clamp(v) { v = parseInt(v, 10); return Number.isFinite(v) ? Math.max(0, Math.min(99, v)) : null; }
-    S.querySelectorAll('.step button').forEach(function (b) {
-      b.addEventListener('click', function () { var inp = b.getAttribute('data-t') === 'fla' ? inFla : inOpp, v = clamp(inp.value); inp.value = Math.max(0, Math.min(99, (v == null ? 0 : v) + Number(b.getAttribute('data-d')))); say(''); });
-    });
-    form.addEventListener('submit', function (ev) {
-      ev.preventDefault();
-      if (locked()) { lockUI(); say('Kickoff has passed. Picks are locked.', 'err'); return; }
-      var fla = clamp(inFla.value), o = clamp(inOpp.value);
-      if (fla === null || o === null) { say('Enter both scores, 0 to 99.', 'err'); return; }
-      if (fla === o) { say('No ties. Pick a winner.', 'err'); return; }
-      go.disabled = true; say('Sending…');
-      req('POST', '/pick', { gameId: id, fla: fla, opp: o, token: token() }).then(function (r) {
-        go.disabled = false;
-        if (r.status === 200 || r.status === 201) { remember(id, { fla: fla, opp: o }); S.setAttribute('data-state', 'set'); go.textContent = 'Update my call'; say('Your call: Florida ' + fla + ', ' + oppName + ' ' + o + (r.status === 201 ? ' · counted' : ' · updated')); show(r.json); }
-        else if (r.status === 409) { lockUI(); say('Kickoff has passed. Picks are locked.', 'err'); }
-        else if (r.status === 429) say('Easy. Try again in a minute.', 'err');
-        else say((r.json && r.json.error) || 'Could not send your call. Try again.', 'err');
-      }).catch(function () { go.disabled = false; say('No connection. Try again.', 'err'); });
-    });
-    tick(); if (S.__tick) clearInterval(S.__tick); S.__tick = setInterval(function () { if (!S.isConnected) { clearInterval(S.__tick); return; } tick(); }, 30000);
-    req('GET', '/game/' + id).then(function (r) { if (r.status === 200) show(r.json); else S.setAttribute('data-loaded', 'err'); }).catch(function () { S.setAttribute('data-loaded', 'err'); });
-  }
-  window.GBM_CALL = { version: VERSION, game: callGame, html: callHtml, init: initCall, bin: bin };
-})();
-
-/* ask-gatorbait (sports-live/src/ask-gatorbait.js) */
-/* Ask GatorBait client. Source of record: deploy/dept-ideas/ai/client.js (worker.mjs there is the API contract).
- * This copy is bundled into sports-live/homepage.js and exposes window.GBM_ASK.mount(afterEl): front-page.js calls it
- * after first paint once deploy/cloudflare/endpoints.json names an `ask` Worker (window.__GBM_ASK_URL__). Without an
- * anchor it falls back to the standalone rule: after The Tunnel, else #gbm-ask, else the end of #gbm-live.
- * Barlow / Barlow Condensed only, Swamp Night tokens (--fp-*) with fallbacks. Phone-first: one column at 320/390/430,
- * two columns from 900px. JSON to the Worker, no cookies, no account.
- * window.__GBM_ASK_TRANSPORT__(path, body) may replace fetch (preview.html uses recorded answers). */
-(function () {
-  'use strict';
-  // Read at request time: the bundle evaluates before front-page.js learns the Worker URL from endpoints.json.
-  function api() { return String(window.__GBM_ASK_URL__ || 'https://ask-gatorbait.gatorbaitmedia.workers.dev').replace(/\/+$/, ''); }
-  var FONTS = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap';
-  var SUGGEST = ['When is the next game?', 'Who won the Heisman for Florida?', 'How did the Ole Miss game go?', 'What is the injury news?'];
-  var CSS = '#gbm-live .fp-ask,.fp-ask{--ask-band:var(--fp-band,#07122e);--ask-card:var(--fp-card,#0e2257);--ask-chip:var(--fp-chip,#16295e);--ask-ink:var(--fp-ink,#f3f5fa);--ask-ink-2:var(--fp-ink-2,#b9c4dc);--ask-link:var(--fp-link,#a9bbff);--ask-navy:var(--fp-navy,#0021a5);--ask-orange:var(--fp-orange,#fa4616);--ask-rule:var(--fp-rule,#26386b);--ask-cond:var(--fp-cond,"Barlow Condensed","Barlow",sans-serif);--ask-sans:var(--fp-sans,"Barlow",sans-serif);--ask-pad:var(--fp-pad,16px);background:var(--ask-band);color:var(--ask-ink);font:400 16px/1.45 var(--ask-sans);border-top:6px solid var(--ask-orange);padding:22px var(--ask-pad) 30px;-webkit-font-smoothing:antialiased}' +
-    '.fp-ask *{box-sizing:border-box}.fp-ask-in{max-width:980px;margin:0 auto;display:grid;gap:16px}.fp-ask-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px}' +
-    '.fp-ask-kicker{margin:0;font:700 12px/1.3 var(--ask-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--ask-orange)}.fp-ask-title{margin:0;font:800 30px/1 var(--ask-cond);letter-spacing:-.01em;text-transform:uppercase}.fp-ask-sub{margin:4px 0 0;font-size:14px;color:var(--ask-ink-2)}' +
-    '.fp-ask-tabs{display:flex;gap:6px;padding:0;margin:0;list-style:none}.fp-ask-tab{flex:1;min-height:44px;border:1px solid var(--ask-rule);border-radius:10px;background:var(--ask-chip);color:var(--ask-ink);font:700 15px/1 var(--ask-cond);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.fp-ask-tab[aria-selected=true]{background:var(--ask-orange);border-color:var(--ask-orange);color:#fff}' +
-    '.fp-ask-grid{display:grid;gap:16px}.fp-ask-pane{display:none;background:var(--ask-card);border:1px solid var(--ask-rule);border-radius:14px;padding:16px;min-width:0}.fp-ask-pane[data-on]{display:grid;gap:12px;align-content:start}' +
-    '.fp-ask-chips{display:flex;flex-wrap:wrap;gap:6px}.fp-ask-chip{border:1px solid var(--ask-rule);border-radius:999px;background:var(--ask-chip);color:var(--ask-ink);font:500 13px/1 var(--ask-sans);padding:10px 14px;min-height:44px;cursor:pointer}' +
-    '.fp-ask-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}.fp-ask-input{min-height:46px;width:100%;border:1px solid var(--ask-rule);border-radius:10px;background:var(--ask-band);color:var(--ask-ink);font:400 16px/1.3 var(--ask-sans);padding:10px 12px}.fp-ask-input::placeholder{color:var(--ask-ink-2)}' +
-    '.fp-ask-btn{min-height:46px;border:0;border-radius:10px;background:var(--ask-orange);color:#fff;font:700 15px/1 var(--ask-cond);letter-spacing:.08em;text-transform:uppercase;padding:0 16px;cursor:pointer}.fp-ask-btn[disabled]{opacity:.6;cursor:wait}' +
-    '.fp-ask-log{display:grid;gap:10px;margin:0;padding:0;list-style:none}.fp-ask-q{justify-self:end;max-width:92%;background:var(--ask-navy);color:#fff;border-radius:14px 14px 3px 14px;padding:9px 13px;font-weight:500}.fp-ask-a{max-width:100%;background:var(--ask-band);border:1px solid var(--ask-rule);border-radius:14px 14px 14px 3px;padding:11px 13px}.fp-ask-a p{margin:0}.fp-ask-a[data-refused] p{color:var(--ask-ink-2)}' +
-    '.fp-ask-src{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:4px;font-size:13px}.fp-ask-src a{color:var(--ask-link);text-decoration:none;font-weight:600}.fp-ask-src a:hover{text-decoration:underline}.fp-ask-src span{color:var(--ask-ink-2);font:700 10px/1.6 var(--ask-cond);letter-spacing:.12em;text-transform:uppercase;margin-right:6px}' +
-    '.fp-ask-foot{margin:0;font-size:12px;color:var(--ask-ink-2)}' +
-    '.fp-ask-tq{margin:0;font:600 19px/1.3 var(--ask-sans)}.fp-ask-tmeta{display:flex;justify-content:space-between;gap:8px;font:700 12px/1.3 var(--ask-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--ask-ink-2)}.fp-ask-streak{color:var(--ask-orange)}' +
-    '.fp-ask-opts{display:grid;gap:8px;margin:0;padding:0;list-style:none}.fp-ask-opt{width:100%;min-height:46px;text-align:left;border:1px solid var(--ask-rule);border-radius:10px;background:var(--ask-band);color:var(--ask-ink);font:500 16px/1.3 var(--ask-sans);padding:10px 12px;cursor:pointer}.fp-ask-opt[data-right]{border-color:#2fbf71;box-shadow:inset 0 0 0 1px #2fbf71}.fp-ask-opt[data-wrong]{border-color:var(--ask-orange);color:var(--ask-ink-2)}.fp-ask-opt[disabled]{cursor:default}' +
-    '.fp-ask-res{display:grid;gap:8px;border-top:1px solid var(--ask-rule);padding-top:12px}.fp-ask-res p{margin:0}.fp-ask-verdict{font:800 22px/1 var(--ask-cond);text-transform:uppercase}.fp-ask-share{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}.fp-ask-share code{font:500 13px/1.4 var(--ask-sans);color:var(--ask-ink-2);word-break:break-word}' +
-    '.fp-ask-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}' +
-    '@media(min-width:900px){#gbm-live .fp-ask,.fp-ask{padding-top:30px}.fp-ask-title{font-size:38px}.fp-ask-tabs{display:none}.fp-ask-grid{grid-template-columns:3fr 2fr;gap:24px}.fp-ask-pane{display:grid;gap:12px;align-content:start;padding:20px}}' +
-    '@media(prefers-reduced-motion:no-preference){.fp-ask-a{animation:fpAskIn .25s ease-out}@keyframes fpAskIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}}';
-
-  function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function safeUrl(value) {
-    try { var u = new URL(String(value), 'https://www.gatorbaitmedia.com'); if (u.protocol !== 'https:') return ''; return /^(www\.)?(gatorbaitmedia\.com|floridagators\.com|ncaa\.com|heisman\.com|secsports\.com|ufl\.edu)$/.test(u.hostname) ? u.href : ''; } catch (_) { return ''; }
-  }
-  function call(path, body) {
-    if (typeof window.__GBM_ASK_TRANSPORT__ === 'function') return Promise.resolve(window.__GBM_ASK_TRANSPORT__(path, body));
-    return fetch(api() + path, body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : { method: 'GET' })
-      .then(function (r) { return r.json().then(function (j) { if (r.status === 429) j.error = 'Easy, Gator. Give it a minute and ask again.'; return j; }); });
-  }
-  function el(html) { var t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild; }
-
-  function mount(afterEl) {
-    if (window.__GBM_ASK_MOUNTED__ || document.querySelector('.fp-ask')) return null; window.__GBM_ASK_MOUNTED__ = true;
-    if (!document.getElementById('gbm-ask-styles')) { var s = document.createElement('style'); s.id = 'gbm-ask-styles'; s.textContent = CSS; document.head.appendChild(s); }
-    if (!document.querySelector('link[href^="https://fonts.googleapis.com/css2?family=Barlow"]')) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l); }
-    var sec = el('<section class="fp-ask" aria-labelledby="fp-ask-title">' +
-      '<div class="fp-ask-in"><div class="fp-ask-head"><div><p class="fp-ask-kicker">Free · No account · Our stories only</p><h2 class="fp-ask-title" id="fp-ask-title">Ask GatorBait</h2><p class="fp-ask-sub">Answers come only from GatorBait stories, the ESPN scoreboard feed and our Gators history file. No guessing.</p></div></div>' +
-      '<ul class="fp-ask-tabs" role="tablist"><li><button class="fp-ask-tab" role="tab" aria-selected="true" data-tab="ask">Ask</button></li><li><button class="fp-ask-tab" role="tab" aria-selected="false" data-tab="trivia">Gator Trivia</button></li></ul>' +
-      '<div class="fp-ask-grid"><div class="fp-ask-pane" data-on data-pane="ask" role="tabpanel"><div class="fp-ask-chips">' + SUGGEST.map(function (q) { return '<button class="fp-ask-chip" type="button">' + esc(q) + '</button>'; }).join('') + '</div>' +
-      '<ol class="fp-ask-log" aria-live="polite"></ol><form class="fp-ask-form"><label class="fp-ask-live" for="fp-ask-input">Ask a Gators question</label><input class="fp-ask-input" id="fp-ask-input" type="text" maxlength="280" autocomplete="off" placeholder="Ask about the schedule, a story or Gators history"><button class="fp-ask-btn" type="submit">Ask</button></form>' +
-      '<p class="fp-ask-foot">Answers cite the story or feed they came from. If it is not in our material, it says so.</p></div>' +
-      '<div class="fp-ask-pane" data-pane="trivia" role="tabpanel"><div class="fp-ask-tmeta"><span>Gator Trivia · <span class="fp-ask-tdate"></span></span><span class="fp-ask-streak"></span></div><p class="fp-ask-tq">Loading today\'s question…</p><ol class="fp-ask-opts"></ol><div class="fp-ask-res" hidden></div><p class="fp-ask-foot">One question a day, new at midnight ET. Keep the streak.</p></div></div></div></section>');
-    var root = document.getElementById('gbm-live'), tunnel = root && root.querySelector('.fp-tunnel'), slot = document.getElementById('gbm-ask');
-    if (afterEl && afterEl.parentNode) afterEl.parentNode.insertBefore(sec, afterEl.nextSibling);
-    else if (tunnel && tunnel.parentNode) tunnel.parentNode.insertBefore(sec, tunnel.nextSibling); else if (slot) slot.appendChild(sec); else if (root) root.appendChild(sec); else document.body.appendChild(sec);
-    wire(sec);
-    return sec;
-  }
-
-  function wire(sec) {
-    var log = sec.querySelector('.fp-ask-log'), form = sec.querySelector('.fp-ask-form'), input = sec.querySelector('.fp-ask-input'), btn = sec.querySelector('.fp-ask-btn');
-    sec.querySelectorAll('.fp-ask-tab').forEach(function (t) {
-      t.addEventListener('click', function () {
-        sec.querySelectorAll('.fp-ask-tab').forEach(function (x) { x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
-        sec.querySelectorAll('.fp-ask-pane').forEach(function (p) { if (p.getAttribute('data-pane') === t.getAttribute('data-tab')) p.setAttribute('data-on', ''); else p.removeAttribute('data-on'); });
-      });
-    });
-    sec.querySelectorAll('.fp-ask-chip').forEach(function (c) { c.addEventListener('click', function () { input.value = c.textContent; ask(); }); });
-    form.addEventListener('submit', function (e) { e.preventDefault(); ask(); });
-    function ask() {
-      var q = input.value.replace(/\s+/g, ' ').trim(); if (q.length < 3 || btn.disabled) return;
-      btn.disabled = true; input.value = '';
-      log.appendChild(el('<li class="fp-ask-q">' + esc(q) + '</li>'));
-      var a = el('<li class="fp-ask-a"><p>Checking the desk…</p></li>'); log.appendChild(a); a.scrollIntoView({ block: 'nearest' });
-      call('/ask', { q: q }).then(function (r) {
-        if (r.error) { a.setAttribute('data-refused', ''); a.innerHTML = '<p>' + esc(r.error) + '</p>'; return; }
-        if (!r.grounded) a.setAttribute('data-refused', '');
-        var srcs = (r.sources || []).filter(function (s) { return safeUrl(s.url); });
-        a.innerHTML = '<p>' + esc(String(r.answer || '').replace(/\s*\[\d+\]/g, '')) + '</p>' + (srcs.length ? '<ul class="fp-ask-src">' + srcs.map(function (s) { return '<li><span>' + esc(s.type === 'story' ? 'Story' : s.type === 'scoreboard' ? 'Scoreboard' : 'History') + '</span><a href="' + esc(safeUrl(s.url)) + '">' + esc(s.title) + '</a></li>'; }).join('') + '</ul>' : '');
-      }).catch(function () { a.setAttribute('data-refused', ''); a.innerHTML = '<p>The desk is offline for a moment. Try again shortly.</p>'; })
-        .then(function () { btn.disabled = false; });
-    }
-    trivia(sec);
-  }
-
-  function trivia(sec) {
-    var q = sec.querySelector('.fp-ask-tq'), opts = sec.querySelector('.fp-ask-opts'), res = sec.querySelector('.fp-ask-res'), date = sec.querySelector('.fp-ask-tdate'), streak = sec.querySelector('.fp-ask-streak');
-    function paintStreak(n) { streak.textContent = n > 0 ? 'Streak: ' + n + ' day' + (n === 1 ? '' : 's') : 'Start a streak'; }
-    function paintResult(t, r) {
-      opts.querySelectorAll('.fp-ask-opt').forEach(function (b, i) { b.disabled = true; if (i === r.answer) b.setAttribute('data-right', ''); else if (i === r.choice) b.setAttribute('data-wrong', ''); });
-      res.hidden = false; paintStreak(r.streak);
-      var link = r.url && safeUrl(r.url) ? ' <a class="fp-ask-src" style="display:inline" href="' + esc(safeUrl(r.url)) + '">Read the story</a>' : '';
-      res.innerHTML = '<p class="fp-ask-verdict">' + (r.correct ? 'Correct.' : 'Not this time.') + '</p><p>' + esc(r.why) + link + '</p><div class="fp-ask-share"><code>' + esc(r.share) + '</code><button class="fp-ask-btn" type="button">Share</button></div>';
-      res.querySelector('button').addEventListener('click', function () {
-        var text = r.share;
-        if (navigator.share) navigator.share({ text: text }).catch(function () {});
-        else if (navigator.clipboard) navigator.clipboard.writeText(text).then(function () { res.querySelector('button').textContent = 'Copied'; });
-      });
-    }
-    call('/trivia/today').then(function (t) {
-      if (!t || !t.q) { q.textContent = 'No question yet today. Check back soon.'; return; }
-      date.textContent = t.label || t.date; paintStreak(t.streak || 0); q.textContent = t.q;
-      opts.innerHTML = t.options.map(function (o) { return '<li><button class="fp-ask-opt" type="button">' + esc(o) + '</button></li>'; }).join('');
-      opts.querySelectorAll('.fp-ask-opt').forEach(function (b, i) {
-        b.addEventListener('click', function () {
-          opts.querySelectorAll('.fp-ask-opt').forEach(function (x) { x.disabled = true; });
-          call('/trivia/answer', { choice: i }).then(function (r) { if (r.error) { q.textContent = r.error; return; } paintResult(t, r); });
-        });
-      });
-      if (t.answered) paintResult(t, { correct: t.answered.correct, choice: t.answered.choice, answer: t.answered.answer, why: t.answered.why, streak: t.streak, share: t.answered.share, url: null });
-    }).catch(function () { q.textContent = 'Trivia is offline for a moment.'; });
-  }
-
-  window.GBM_ASK = { mount: mount };
-})();
-
-/* the-stands (sports-live/src/the-stands.js) */
-/* The Stands: client for the GatorBait live chat room. Source of record: deploy/dept-ideas/chat/client.js (worker.mjs
- * there is the contract). This copy is bundled into sports-live/homepage.js and exposes window.GBM_STANDS.mount(config):
- * front-page.js calls it inside The Tunnel on game day once deploy/cloudflare/endpoints.json names a `stands` Worker
- * (the same config is mirrored to window.__GBM_STANDS__). Same conventions as front-page.js: one owned root, CSS
- * injected once, paint once then patch in place (no jump), Barlow / Barlow Condensed, Swamp Night palette. Config:
- *   { api: 'https://stands.example.workers.dev', room: 'game-2026-10-03', mount: '#gbm-stands' | element,
- *     token: '<signed token>' | tokenUrl: '/_functions/standsToken', signin: '/account/my-account' }
- * Outside an open window the room shows the score, the kickoff countdown and the next show, never an empty feed. */
-(function () {
-  'use strict';
-  window.GBM_STANDS = { mount: boot };
-  function boot(config) {
-  var C = config || window.__GBM_STANDS__ || {}, VERSION = 'stands-2026.1', TZ = 'America/New_York', RING = 200;
-  var MONTHS = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'], WDS = ['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.'];
-  var mount = C.mount && C.mount.nodeType === 1 ? C.mount : document.querySelector(C.mount || '#gbm-stands'); if (!mount || mount.getAttribute('data-stands')) return null;
-  mount.setAttribute('data-stands', VERSION);
-  function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function now() { var t = Number(window.__GBM_FP_NOW__); return Number.isFinite(t) && t > 0 ? t : Date.now(); }
-  function et(ms) { var o = {}; new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date(ms)).forEach(function (p) { o[p.type] = p.value; }); return { wd: { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[o.weekday], mo: Number(o.month) - 1, d: Number(o.day), h: Number(o.hour) % 24, m: Number(o.minute) }; }
-  function clock(ms) { var e = et(ms), h = e.h % 12 || 12; return h + ':' + String(e.m).padStart(2, '0') + (e.h < 12 ? ' a.m.' : ' p.m.'); }
-  function gameWhen(iso) { var t = Date.parse(iso); if (!Number.isFinite(t)) return ''; var e = et(t); return WDS[e.wd] + ', ' + MONTHS[e.mo] + ' ' + e.d + ' · ' + clock(t) + ' ET'; }
-  function ranked(rank, name) { return (rank ? 'No. ' + rank + ' ' : '') + name; }
-  function pad(x) { return (x < 10 ? '0' : '') + x; }
-
-  var CSS = '.gbs{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fa;--mut:#b9c4dc;--c:"Barlow Condensed","Barlow",sans-serif;--s:"Barlow",sans-serif;display:flex;flex-direction:column;width:100%;max-width:980px;margin:0 auto;height:min(78vh,640px);min-height:420px;background:#040b1f;color:var(--ink);font:16px/1.45 var(--s);border-top:3px solid var(--o);text-align:left}' +
-    '.gbs *{box-sizing:border-box}.gbs-strip{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:6px 10px;padding:10px 12px;background:radial-gradient(80% 100% at 50% 0,rgba(0,33,165,.6),transparent 70%);border-bottom:1px solid rgba(255,255,255,.12)}' +
-    '.gbs-t{display:grid;gap:3px;min-width:0}.gbs-t small{font:700 10px/1 var(--c);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f}.gbs-t b{font:800 22px/1 var(--c);text-transform:uppercase;overflow-wrap:anywhere}.gbs-t.h{text-align:right}' +
-    '.gbs-sc{display:flex;gap:8px;align-items:baseline;font:800 36px/1 var(--c);font-variant-numeric:tabular-nums}.gbs-sc i{color:var(--o);font-style:normal;font-size:.6em}' +
-    '.gbs-clk{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:0;font:700 11px/1 var(--c);letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}' +
-    '.gbs-clk em{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;background:#c8102e;color:#fff;font-style:normal;font-weight:800}.gbs-clk em::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff}.gbs-clk em.off{background:var(--b)}' +
-    '.gbs-hd{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;font:800 14px/1 var(--c);letter-spacing:.12em;text-transform:uppercase}.gbs-hd span{font:600 12px/1 var(--s);letter-spacing:0;text-transform:none;color:var(--mut)}' +
-    '.gbs-sys{margin:0 12px 8px;padding:8px 10px;background:rgba(0,33,165,.35);border-left:3px solid var(--o);font:600 12px/1.4 var(--s);color:var(--mut)}.gbs-sys:empty{display:none}' +
-    '.gbs-feed{flex:1;overflow-y:auto;padding:4px 12px 8px;display:flex;flex-direction:column;gap:10px;min-height:0}' +
-    '.gbs-p{display:grid;grid-template-columns:1fr auto;gap:2px 8px;text-align:left}.gbs-who,.gbs-p p{grid-column:1}.gbs-who{display:flex;gap:6px;align-items:center;font:700 12px/1 var(--c);letter-spacing:.1em;text-transform:uppercase;color:#c8d3ef}.gbs-who time{font:600 10px/1 var(--s);letter-spacing:0;text-transform:none;color:var(--mut)}' +
-    '.gbs-bd{padding:3px 5px;border-radius:2px;background:var(--o);color:#fff;font:800 9px/1 var(--c);letter-spacing:.1em}.gbs-bd.s{background:var(--b)}.gbs-p p{margin:0;font-size:15px;overflow-wrap:anywhere}' +
-    '.gbs-rp{grid-column:2;grid-row:1/3;align-self:start;width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:none;color:var(--mut);font:800 12px/1 var(--c);cursor:pointer}.gbs-rp.on{background:var(--o);border-color:var(--o);color:#fff}' +
-    '.gbs-slow{display:flex;justify-content:space-between;gap:8px;padding:0 12px 6px;font:600 11px/1.3 var(--s);color:var(--mut)}' +
-    '.gbs-in{display:flex;gap:8px;padding:8px 12px 12px;border-top:1px solid rgba(255,255,255,.12)}.gbs-in input{flex:1;min-width:0;min-height:44px;padding:0 12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:var(--ink);font:400 15px var(--s)}.gbs-in input:disabled{opacity:.6}' +
-    '.gbs-in button,.gbs-in a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:0;background:var(--o);color:#fff;font:800 15px/1 var(--c);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}' +
-    '.gbs-quiet{display:none;flex:1;align-content:center;gap:10px;padding:24px 16px;text-align:center}.gbs-quiet h3{margin:0;font:800 30px/1 var(--c);text-transform:uppercase;color:var(--ink)}.gbs-quiet p{margin:0;font-size:14px;color:var(--mut)}.gbs-quiet b{color:var(--ink)}' +
-    '.gbs-cd{display:flex;justify-content:center;gap:12px;font:800 44px/1 var(--c);font-variant-numeric:tabular-nums}.gbs-cd span{display:grid}.gbs-cd i{font:700 10px/1 var(--c);letter-spacing:.14em;color:#ffb08f;font-style:normal}' +
-    '.gbs[data-quiet="1"] .gbs-quiet,.gbs[data-quiet="closed"] .gbs-quiet{display:grid}.gbs[data-quiet="1"] .gbs-feed,.gbs[data-quiet="closed"] .gbs-feed,.gbs[data-quiet="closed"] .gbs-sys,.gbs[data-quiet="closed"] .gbs-slow,.gbs[data-quiet="closed"] .gbs-in{display:none}' +
-    '@media(min-width:821px){.gbs-t b{font-size:28px}.gbs-sc{font-size:44px}.gbs-p p{font-size:16px}}';
-  if (!document.getElementById('gbs-css')) { var st = document.createElement('style'); st.id = 'gbs-css'; st.textContent = CSS; document.head.appendChild(st); }
-
-  mount.innerHTML = '<section class="gbs" data-quiet="0" aria-label="The Stands, GatorBait live chat"><div class="gbs-strip" data-gbs="strip"></div>' +
-    '<div class="gbs-hd">The Stands <span data-gbs="count">Connecting</span></div><p class="gbs-sys" data-gbs="sys"></p><div class="gbs-feed" data-gbs="feed" aria-live="polite"></div><div class="gbs-quiet" data-gbs="quiet"></div>' +
-    '<div class="gbs-slow"><span data-gbs="slow">Slow mode</span><span>Members: no wait</span></div>' +
-    '<form class="gbs-in" data-gbs="form"><input data-gbs="msg" maxlength="240" autocomplete="off" placeholder="Say something, Gators" aria-label="Message"><button type="submit">Send</button></form></section>';
-  var root = mount.firstChild, you = null, room = null, settings = { slow: 30, memberOnly: false }, sock = null, tries = 0, wait = 0, waitTimer = 0, lastMsg = 0, seen = {};
-  function q(k) { return root.querySelector('[data-gbs="' + k + '"]'); }
-  function put(k, text) { var el = q(k); if (el && el.textContent !== text) el.textContent = text; }
-
-  /* ---------- strip: live score when the desk has one, otherwise the next game ---------- */
-  function strip() {
-    var el = q('strip'), r = room || {}, lv = r.live, tm = r.team || {}, n = r.next, html;
-    if (lv && lv.away && lv.home) {
-      html = side(lv.away) + '<span class="gbs-sc"><b>' + esc(lv.away.score == null ? 0 : lv.away.score) + '</b><i>–</i><b>' + esc(lv.home.score == null ? 0 : lv.home.score) + '</b></span>' + side(lv.home, true) +
-        '<p class="gbs-clk"><em>' + esc(lv.status === 'final' ? 'Final' : 'Live') + '</em><span>' + esc(lv.clock || '') + '</span>' + (n && n.tv ? '<span>' + esc(n.tv) + '</span>' : '') + '</p>';
-    } else if (n) {
-      var fla = { name: 'Florida', rank: tm.rank, record: tm.record }, opp = { name: n.opponent, rank: n.rank };
-      html = side(n.home ? opp : fla) + '<span class="gbs-sc"><i>' + (n.home ? 'vs.' : 'at') + '</i></span>' + side(n.home ? fla : opp, true) +
-        '<p class="gbs-clk"><em class="' + (r.open ? '' : 'off') + '">' + esc(r.open ? 'Room open' : 'Next game') + '</em><span>' + esc(gameWhen(r.kickoff)) + '</span>' + (n.tv ? '<span>' + esc(n.tv) + '</span>' : '') + '</p>';
-    } else html = '<p class="gbs-clk"><em class="off">The Stands</em><span>GatorBait live chat</span></p>';
-    if (el.innerHTML !== html) el.innerHTML = html;
-    function side(s, h) { return '<span class="gbs-t' + (h ? ' h' : '') + '"><small>' + esc([s.rank ? 'No. ' + s.rank : '', s.record || ''].filter(Boolean).join(' · ') || ' ') + '</small><b>' + esc(s.name) + '</b></span>'; }
-  }
-  /* ---------- quiet state: no open room, or nothing said in ten minutes ---------- */
-  function quiet() {
-    // Closed: score and countdown only. Open but idle (nothing said in ten minutes): the same panel above the input, so the first poster is never staring at an empty feed.
-    var r = room || {}, k = Date.parse(r.kickoff), on = !r.open ? 'closed' : now() - lastMsg > 600000 && !q('feed').children.length ? '1' : '0';
-    root.setAttribute('data-quiet', on); if (on === '0') return;
-    var s = Number.isFinite(k) ? Math.max(0, Math.floor((k - now()) / 1000)) : 0, l = r.last, n = r.next;
-    var html = '<h3>' + (r.open ? 'Quiet in here' : 'The room opens on game day') + '</h3>' +
-      (s > 0 ? '<p>Kickoff in</p><div class="gbs-cd"><span>' + pad(Math.floor(s / 86400)) + '<i>days</i></span><span>' + pad(Math.floor(s / 3600) % 24) + '<i>hrs</i></span><span>' + pad(Math.floor(s / 60) % 60) + '<i>min</i></span><span>' + pad(s % 60) + '<i>sec</i></span></div>' : '') +
-      (n ? '<p><b>' + esc(ranked(r.team && r.team.rank, 'Florida') + (n.home ? ' vs. ' : ' at ') + ranked(n.rank, n.opponent)) + '</b><br>' + esc(gameWhen(r.kickoff) + (n.tv ? ' · ' + n.tv : '')) + '</p>' : '') +
-      (l && l.score ? '<p>Last: Florida ' + esc(l.score.fla) + ', ' + esc(ranked(l.rank, l.opponent)) + ' ' + esc(l.score.opp) + (l.date ? ' (' + esc(MONTHS[et(Date.parse(l.date)).mo] + ' ' + et(Date.parse(l.date)).d) + ')' : '') + '</p>' : '') +
-      '<p>The Buddy Martin Show: Mondays, Wednesdays and Thursdays at 9 p.m. ET. The room opens 30 minutes before kickoff and showtime.</p>';
-    var el = q('quiet'); if (el.innerHTML !== html) el.innerHTML = html;
-  }
-  /* ---------- feed: append only, ring of RING, stay pinned to the bottom unless the reader scrolled up ---------- */
-  function post(m) {
-    if (seen[m.id]) return; seen[m.id] = 1; lastMsg = Math.max(lastMsg, m.ts || now());
-    var feed = q('feed'), el = document.createElement('div'), mine = you && m.name === you.name;
-    el.className = 'gbs-p'; el.setAttribute('data-id', m.id);
-    el.innerHTML = '<div class="gbs-who">' + esc(m.name) + (m.tier === 'member' ? '<i class="gbs-bd">Member</i>' : m.tier === 'staff' ? '<i class="gbs-bd s">GatorBait</i>' : '') + '<time>' + esc(clock(m.ts || now())) + '</time></div><p>' + esc(m.text) + '</p>' +
-      (mine ? '' : '<button class="gbs-rp" type="button" title="Report this post" aria-label="Report this post">!</button>');
-    var near = feed.scrollHeight - feed.scrollTop - feed.clientHeight < 80;
-    feed.appendChild(el); while (feed.children.length > RING) feed.removeChild(feed.firstChild);
-    if (near || mine) feed.scrollTop = feed.scrollHeight;
-    quiet();
-  }
-  q('feed').addEventListener('click', function (e) {
-    var b = e.target.closest('.gbs-rp'); if (!b || !sock || sock.readyState !== 1) return;
-    sock.send(JSON.stringify({ t: 'report', id: b.closest('.gbs-p').getAttribute('data-id') })); b.classList.add('on'); b.textContent = '✓'; b.disabled = true;
-  });
-  function slowLine() { var priv = you && (you.tier === 'member' || you.tier === 'staff'); put('slow', wait > 0 ? 'Slow mode: next post in ' + wait + ' s' : settings.memberOnly ? 'Members only right now' : settings.slow > 0 ? 'Slow mode: one post every ' + settings.slow + ' seconds' + (priv ? ' (not for you)' : '') : 'Slow mode off'); q('msg').disabled = wait > 0; }
-  function holdFor(secs) { clearInterval(waitTimer); wait = secs; slowLine(); waitTimer = setInterval(function () { wait--; if (wait <= 0) { wait = 0; clearInterval(waitTimer); } slowLine(); }, 1000); }
-  q('form').addEventListener('submit', function (e) {
-    e.preventDefault(); var v = q('msg').value.trim(); if (!v || wait > 0 || !sock || sock.readyState !== 1) return;
-    sock.send(JSON.stringify({ t: 'msg', text: v })); q('msg').value = '';
-  });
-
-  /* ---------- socket: token from config or the Velo function, reconnect with backoff ---------- */
-  function token(cb) {
-    if (C.token) return cb(C.token);
-    if (!C.tokenUrl) return cb('');
-    var same = /^\//.test(C.tokenUrl) || C.tokenUrl.indexOf(location.origin + '/') === 0; // the Velo function is same-origin and needs the member cookie
-    fetch(C.tokenUrl, { credentials: same ? 'include' : 'omit' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) { cb(j && j.token || ''); }).catch(function () { cb(''); });
-  }
-  function signin() {
-    put('count', 'Sign in to chat');
-    var f = q('form'); f.innerHTML = '<a href="' + esc(C.signin || '/account/my-account') + '">Sign in to chat</a>';
-  }
-  function connect() {
-    if (!root.isConnected) return; // the front page removed its root (route change): no reconnects
-    token(function (tk) {
-      if (!root.isConnected) return;
-      if (!tk) return signin();
-      var base = String(C.api || '').replace(/^http/, 'ws').replace(/\/$/, '');
-      var ws = new WebSocket(base + '/room/' + encodeURIComponent(C.room || 'game') + '/ws?token=' + encodeURIComponent(tk));
-      sock = ws;
-      ws.onopen = function () { tries = 0; };
-      ws.onmessage = function (e) {
-        var o; try { o = JSON.parse(e.data); } catch (_) { return; }
-        if (o.t === 'welcome') { you = o.you; settings = o.settings; room = o.room; (o.msgs || []).forEach(post); strip(); quiet(); slowLine(); put('count', 'Signed in as ' + you.name); }
-        else if (o.t === 'msg') post(o.m);
-        else if (o.t === 'sys') put('sys', o.text);
-        else if (o.t === 'err') { put('sys', o.text); if (o.code === 'slow' && o.wait) holdFor(o.wait); }
-        else if (o.t === 'del') { var el = q('feed').querySelector('[data-id="' + o.id + '"]'); if (el) el.remove(); }
-        else if (o.t === 'count') put('count', (you ? you.name + ' · ' : '') + o.n + ' in the room');
-        else if (o.t === 'room') { room = o.room; settings = o.settings; strip(); quiet(); slowLine(); }
-      };
-      ws.onclose = function () { sock = null; put('count', 'Reconnecting'); setTimeout(connect, Math.min(30000, 1000 * Math.pow(2, tries++))); };
-      ws.onerror = function () { try { ws.close(); } catch (_) { } };
-    });
-  }
-  connect();
-  var keep = setInterval(function () { if (!root.isConnected) { clearInterval(keep); clearInterval(idle); if (sock) try { sock.close(); } catch (_) {} return; } quiet(); if (sock && sock.readyState === 1) sock.send('{"t":"ping"}'); }, 1000 * 15);
-  var idle = setInterval(function () { if (root.getAttribute('data-quiet') === '1') quiet(); }, 1000);
-  return root;
-  }
-})();
-
-(function () {
-  'use strict';
-  var CSS = "html:has(#gbm-live.gbm-gazette) #SITE_HEADER,\nhtml:has(#gbm-live.gbm-gazette) #SITE_PAGES,\nhtml:has(#gbm-live.gbm-gazette) #PAGES_CONTAINER{display:none!important}\nhtml:has(#gbm-live.gbm-gazette),html:has(#gbm-live.gbm-gazette) body{height:auto!important;min-height:100vh!important}\nhtml:has(#gbm-live.gbm-gazette) body{margin:0!important;background:#f7f4ee!important;min-width:0!important}\nhtml:has(#gbm-live.fp-night) body{background:#07122e!important}\nhtml:has(#gbm-live.gbm-gazette) #SITE_CONTAINER,\nhtml:has(#gbm-live.gbm-gazette) #masterPage,\nhtml:has(#gbm-live.gbm-gazette) #SITE_PAGES_TRANSITION_GROUP{min-height:0!important;height:0!important;min-width:0!important;padding-block:0!important;margin-block:0!important}\nhtml:has(#gbm-live.gbm-gazette) #gbm-mobile-drawer-root{overflow:hidden}\nhtml:has(#gbm-live.gbm-gazette) #gbm-footer{position:relative;z-index:3;background:#08132f!important}\nhtml:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}\n#gbm-live.fp26{\n--fp-paper:#f7f4ee;--fp-surface:#fffdf9;--fp-hub:#ece6da;--fp-ink:#111629;--fp-ink-2:#454d5e;--fp-rule:#c9c5bb;--fp-rule-strong:#111629;\n--fp-link:#0021a5;--fp-mast:#0021a5;--fp-mast-ink:#fff;--fp-band:#07122e;--fp-band-ink:#fff;--fp-card:#fffdf9;--fp-chip:#e4ddcf;\n--fp-navy:#0021a5;--fp-orange:#fa4616;--fp-cond:\"Barlow Condensed\",\"Barlow\",sans-serif;--fp-sans:\"Barlow\",sans-serif;\n--fp-pad:16px;\ndisplay:block;position:relative;z-index:2;width:100%;min-width:0;overflow-x:clip;\nbackground:var(--fp-paper);color:var(--fp-ink);font-family:var(--fp-sans);font-size:16px;line-height:1.5;\ntext-size-adjust:100%;-webkit-text-size-adjust:100%\n}\n#gbm-live.fp26.fp-night{\n--fp-paper:#07122e;--fp-surface:#0b1d4a;--fp-hub:#0b1d4a;--fp-ink:#f3f5fa;--fp-ink-2:#b9c4dc;--fp-rule:#26386b;--fp-rule-strong:#9fb0d8;\n--fp-link:#a9bbff;--fp-mast:#0b1d4a;--fp-band:#040b1f;--fp-card:#0e2257;--fp-chip:#16295e\n}\n#gbm-live.fp26 *,#gbm-live.fp26 *::before,#gbm-live.fp26 *::after{box-sizing:border-box}\n#gbm-live.fp26 a{color:inherit;text-decoration:none}\n#gbm-live.fp26 a:focus-visible,#gbm-live.fp26 button:focus-visible{outline:3px solid var(--fp-orange);outline-offset:3px}\n@media(hover:hover) and (pointer:fine){#gbm-live.fp26 a:hover .fp-hl,#gbm-live.fp26 a.fp-hl:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}}\n#gbm-live.fp26 h1,#gbm-live.fp26 h2,#gbm-live.fp26 h3,#gbm-live.fp26 h4,#gbm-live.fp26 p,#gbm-live.fp26 figure,#gbm-live.fp26 blockquote,#gbm-live.fp26 ul,#gbm-live.fp26 ol{margin:0;padding:0}\n#gbm-live.fp26 ul,#gbm-live.fp26 ol{list-style:none}\n#gbm-live.fp26 img{display:block;max-width:100%;width:100%;height:auto}\n#gbm-live.fp26 h1,#gbm-live.fp26 h2,#gbm-live.fp26 h3,#gbm-live.fp26 h4{font-family:var(--fp-cond);font-weight:800;letter-spacing:-.005em;overflow-wrap:break-word;text-wrap:balance}\n#gbm-live.fp26 .fp-wrap{width:100%;max-width:1440px;margin:0 auto;padding-inline:var(--fp-pad)}\n#gbm-live.fp26 .fp-skip{position:absolute;left:-10000px;top:0}\n#gbm-live.fp26 .fp-skip:focus{left:16px;top:8px;z-index:20;background:#fff;color:#111629;padding:10px 14px}\n#gbm-live.fp26 .fp-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}\n#gbm-live.fp26 .fp-kick{display:flex;align-items:center;gap:10px;font:700 12px/1.3 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--fp-link)}\n#gbm-live.fp26 .fp-kick::before{content:\"\";flex:0 0 22px;height:2px;background:var(--fp-orange)}\n#gbm-live.fp26 .fp-meta{font:600 12px/1.4 var(--fp-sans);letter-spacing:.02em;color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-cap{font:500 12px/1.4 var(--fp-sans);color:var(--fp-ink-2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;padding-top:6px}\n#gbm-live.fp26 .fp-cap b{font-weight:700;color:var(--fp-ink)}\n#gbm-live.fp26 .fp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;background:var(--fp-orange);color:#fff;font:800 15px/1 var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}\n#gbm-live.fp26 .fp-btn.fp-ghost{background:transparent;color:var(--fp-ink);box-shadow:inset 0 0 0 2px currentColor}\n#gbm-live.fp26 .fp-more{display:inline-flex;align-items:center;min-height:44px;font:800 14px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:var(--fp-link);border-bottom:2px solid var(--fp-orange)}\n#gbm-live.fp26 .fp-num{font-variant-numeric:tabular-nums}\n#gbm-live.fp26 .fp-ticker{display:flex;align-items:stretch;height:38px;background:var(--fp-band);color:var(--fp-band-ink);font:700 13px/38px var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;overflow:hidden}\n#gbm-live.fp26 .fp-tk-tag{flex:0 0 auto;display:flex;align-items:center;padding:0 12px;background:var(--fp-orange);color:#fff;font-weight:800;letter-spacing:.14em}\n#gbm-live.fp26 .fp-tk-view{position:relative;flex:1 1 auto;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}\n#gbm-live.fp26 .fp-tk-track{display:flex;width:max-content}\n#gbm-live.fp26 .fp-tk-list{display:flex;flex:0 0 auto;padding-left:16px}\n#gbm-live.fp26 .fp-tk-list li{display:flex;align-items:center;white-space:nowrap;padding-right:28px}\n#gbm-live.fp26 .fp-tk-list li::after{content:\"\";width:5px;height:5px;margin-left:28px;background:var(--fp-orange);transform:rotate(45deg)}\n#gbm-live.fp26 .fp-tk-list b{color:#ffb08f;margin-right:8px}\n#gbm-live.fp26 .fp-tk-list a{display:inline-block;max-width:70vw;overflow:hidden;text-overflow:ellipsis}\n#gbm-live.fp26 .fp-mast{background:var(--fp-mast);color:var(--fp-mast-ink);position:relative;overflow:hidden}\n#gbm-live.fp26 .fp-mast .fp-wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:6px 16px;padding-top:14px;padding-bottom:12px}\n#gbm-live.fp26 .fp-date{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px;font:700 11px/1.3 var(--fp-cond);letter-spacing:.16em;text-transform:uppercase;color:#dfe5ff}\n#gbm-live.fp26 .fp-wordmark{display:flex;align-items:baseline;gap:10px;min-width:0;color:#fff;font:800 clamp(40px,13vw,68px)/.86 var(--fp-cond);letter-spacing:-.01em;text-transform:uppercase}\n#gbm-live.fp26 .fp-wordmark small{font:700 11px/1 var(--fp-sans);letter-spacing:.34em;color:#c9d3ff}\n#gbm-live.fp26 .fp-mast-right{display:flex;align-items:center;gap:14px;padding-bottom:4px}\n#gbm-live.fp26 .fp-signin{display:none;font:700 13px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:#fff;min-height:44px;align-items:center}\n#gbm-live.fp26 .fp-mast .fp-btn{min-height:40px;padding:0 12px;font-size:14px}\n#gbm-live.fp26 .fp-cta-long{display:none}\n#gbm-live.fp26 .fp-nav{background:var(--fp-paper);border-bottom:4px double var(--fp-rule-strong)}\n#gbm-live.fp26 .fp-nav .fp-wrap{display:flex;align-items:center;gap:16px;min-height:52px}\n#gbm-live.fp26 .fp-links{display:none}\n#gbm-live.fp26 .fp-bug{display:flex;align-items:stretch;flex:1 1 auto;min-width:0;margin-inline:calc(var(--fp-pad) * -1);font-family:var(--fp-cond);text-transform:uppercase}\n#gbm-live.fp26 .fp-bug>a{display:flex;align-items:center;gap:8px;min-width:0;min-height:52px;padding:6px 10px}\n#gbm-live.fp26 .fp-bug-last{flex:0 0 auto;background:var(--fp-navy);color:#fff}\n#gbm-live.fp26 .fp-bug-next{flex:1 1 auto;background:var(--fp-surface);color:var(--fp-ink);border-left:4px solid var(--fp-orange);justify-content:space-between}\n#gbm-live.fp26 .fp-bug-tag{font:800 11px/1 var(--fp-cond);letter-spacing:.14em;padding:5px 6px;background:rgba(255,255,255,.14)}\n#gbm-live.fp26 .fp-bug-next .fp-bug-tag{background:var(--fp-orange);color:#fff}\n#gbm-live.fp26 .fp-bug-last .fp-bug-tag[data-state=live]{background:#c8102e}\n#gbm-live.fp26 .fp-bug-team{display:flex;align-items:baseline;gap:5px;font:800 15px/1 var(--fp-cond);letter-spacing:.04em;white-space:nowrap}\n#gbm-live.fp26 .fp-bug-team strong{font-size:22px;font-weight:800;letter-spacing:0}\n#gbm-live.fp26 .fp-bug-team.fp-lose strong{opacity:.7}\n#gbm-live.fp26 .fp-bug-match{min-width:0;font:800 14px/1.1 var(--fp-cond);letter-spacing:.03em}\n#gbm-live.fp26 .fp-bug-match small{display:block;font:600 11px/1.2 var(--fp-cond);letter-spacing:.08em;color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-cd{display:flex;align-items:baseline;gap:1px;font:800 20px/1 var(--fp-cond);font-variant-numeric:tabular-nums;white-space:nowrap}\n#gbm-live.fp26 .fp-cd b{display:inline-block;min-width:.55em;text-align:center;font-weight:800}\n#gbm-live.fp26 .fp-cd i{font-style:normal;font-size:11px;letter-spacing:.06em;color:var(--fp-ink-2);margin:0 4px 0 1px}\n#gbm-live.fp26 .fp-cd .fp-cd-s{display:none}\n#gbm-live.fp26 .fp-board{background:#040b1f;color:#fff;border-bottom:4px solid var(--fp-orange);position:relative;overflow:hidden}\n#gbm-live.fp26 .fp-board::before{content:\"\";position:absolute;inset:0;background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.08) 1px,transparent 1.5px) 0 0/6px 6px;pointer-events:none}\n#gbm-live.fp26 .fp-board .fp-wrap{position:relative;display:grid;gap:12px;padding-block:14px 16px}\n#gbm-live.fp26 .fp-board-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font:700 12px/1.3 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:#c8d3ef}\n#gbm-live.fp26 .fp-pill{background:var(--fp-orange);color:#fff;padding:5px 9px;font-weight:800;letter-spacing:.16em}\n#gbm-live.fp26 .fp-status{padding:4px 9px;border:1px solid rgba(255,255,255,.35);color:#fff;font-weight:800;font-variant-numeric:tabular-nums}\n#gbm-live.fp26 .fp-status[data-state=live]{background:#c8102e;border-color:#c8102e}\n#gbm-live.fp26 .fp-status[data-state=final]{background:#fff;color:#040b1f;border-color:#fff}\n#gbm-live.fp26 .fp-line{width:100%;border-collapse:collapse;font:800 15px/1 var(--fp-cond);font-variant-numeric:tabular-nums;table-layout:fixed}\n#gbm-live.fp26 .fp-line th,#gbm-live.fp26 .fp-line td{padding:8px 2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.12)}\n#gbm-live.fp26 .fp-line thead th{font:700 11px/1 var(--fp-cond);letter-spacing:.12em;color:#9fb0d8}\n#gbm-live.fp26 .fp-line .fp-lt{width:44%;text-align:left}\n#gbm-live.fp26 .fp-line tbody .fp-lt{font-size:20px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}\n#gbm-live.fp26 .fp-line tbody .fp-lt small{font:600 11px/1 var(--fp-cond);letter-spacing:.06em;color:#9fb0d8;margin-left:6px}\n#gbm-live.fp26 .fp-line .fp-tot{font-size:26px;color:#fff;background:rgba(250,70,22,.16)}\n#gbm-live.fp26 .fp-drive{font:600 14px/1.4 var(--fp-sans);color:#dfe6f7}\n#gbm-live.fp26 .fp-drive b{font:800 12px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f;margin-right:8px}\n#gbm-live.fp26 .fp-board-latest{display:grid;gap:0;border-top:1px solid rgba(255,255,255,.18)}\n#gbm-live.fp26 .fp-board-latest li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);font:500 14px/1.4 var(--fp-sans);color:#e6edf6}\n#gbm-live.fp26 .fp-board-latest b{font:800 12px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:#ffb08f;margin-right:8px}\n#gbm-live.fp26 .fp-board-links{display:flex;flex-wrap:wrap;gap:8px}\n#gbm-live.fp26 .fp-board-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;font:800 13px/1 var(--fp-cond);letter-spacing:.08em;text-transform:uppercase;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}\n#gbm-live.fp26 .fp-board-links a:first-child{background:var(--fp-orange);box-shadow:none}\n#gbm-live.fp26 main{display:block;padding-bottom:0}\n#gbm-live.fp26 .fp-lead{position:relative;display:grid;gap:16px;padding-top:18px;isolation:isolate}\n#gbm-live.fp26 #fp-embers{position:absolute;inset:0 calc(var(--fp-pad) * -1);z-index:-1;pointer-events:none;overflow:hidden}\n#gbm-live.fp26 #fp-embers canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}\n#gbm-live.fp26 .fp-night-glow{display:none}\n#gbm-live.fp26.fp-embers-on .fp-night-glow{display:block;position:absolute;right:0;bottom:-10%;width:70%;height:70%;z-index:-2;background:radial-gradient(closest-side,rgba(250,70,22,.28),transparent);pointer-events:none}\n#gbm-live.fp26 .fp-lead-photo{min-width:0}\n#gbm-live.fp26 .fp-frame{position:relative;display:block;overflow:hidden;aspect-ratio:3/2;background:var(--fp-chip)}\n#gbm-live.fp26 .fp-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}\n#gbm-live.fp26 .fp-frame.fp-cover{aspect-ratio:16/9;background:#07122e}\n#gbm-live.fp26 .fp-frame.fp-cover img{object-fit:contain;object-position:50% 50%;animation:none!important}\n#gbm-live.fp26 .fp-frame.fp-portrait img{object-fit:contain}\n#gbm-live.fp26 .fp-lead-copy{min-width:0;display:grid;gap:12px;align-content:start}\n#gbm-live.fp26 .fp-lead h1{font-size:clamp(40px,11.5vw,54px);line-height:.94;text-transform:uppercase;color:var(--fp-ink)}\n#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(34px,9.6vw,46px)}\n#gbm-live.fp26 .fp-w{display:inline-block}\n@media(max-width:820px){\n#gbm-live.fp26 .fp-lead-copy{display:contents}\n#gbm-live.fp26 .fp-lead-copy>*{order:3}\n#gbm-live.fp26 .fp-lead-copy>.fp-kick,#gbm-live.fp26 .fp-lead-copy>h1{order:1}\n#gbm-live.fp26 .fp-lead-photo{order:2}\n}\n#gbm-live.fp26 .fp-dek{font:700 20px/1.2 var(--fp-cond);color:var(--fp-ink)}\n#gbm-live.fp26 .fp-by{font:700 12px/1.4 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--fp-ink)}\n#gbm-live.fp26 .fp-by span{color:var(--fp-ink-2);font-weight:600;letter-spacing:.06em;margin-left:8px}\n#gbm-live.fp26 .fp-body{font:400 16px/1.6 var(--fp-sans);color:var(--fp-ink)}\n#gbm-live.fp26 .fp-body::first-letter{float:left;font:800 64px/.8 var(--fp-cond);color:var(--fp-navy);padding:6px 8px 0 0}\n#gbm-live.fp26.fp-night .fp-body::first-letter{color:var(--fp-orange)}\n#gbm-live.fp26 .fp-quote{display:grid;gap:10px;margin-top:24px;padding:20px 0;border-block:1px solid var(--fp-rule-strong)}\n#gbm-live.fp26 .fp-quote blockquote{font:800 30px/1.02 var(--fp-cond);text-transform:uppercase;color:var(--fp-navy)}\n#gbm-live.fp26.fp-night .fp-quote blockquote{color:#fff}\n#gbm-live.fp26 .fp-quote blockquote::before{content:\"\\201C\";color:var(--fp-orange)}\n#gbm-live.fp26 .fp-quote blockquote::after{content:\"\\201D\";color:var(--fp-orange)}\n#gbm-live.fp26 .fp-quote cite{font:500 13px/1.45 var(--fp-sans);font-style:normal;color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-quote cite b{display:block;font:800 13px/1.3 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--fp-ink)}\n#gbm-live.fp26 .fp-second{display:grid;gap:24px;padding-block:24px}\n#gbm-live.fp26 .fp-feature{display:grid;gap:10px;align-content:start;min-width:0}\n#gbm-live.fp26 .fp-feature .fp-frame{aspect-ratio:16/10}\n#gbm-live.fp26 .fp-feature h2{font-size:32px;line-height:.98;text-transform:uppercase}\n#gbm-live.fp26 .fp-feature p.fp-ex{font:400 15px/1.55 var(--fp-sans);color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-list{min-width:0;border-top:3px solid var(--fp-rule-strong)}\n#gbm-live.fp26 .fp-list li{border-bottom:1px solid var(--fp-rule)}\n#gbm-live.fp26 .fp-list a{display:grid;gap:6px;padding:14px 0}\n#gbm-live.fp26 .fp-list h3{font-size:22px;line-height:1.02;text-transform:uppercase}\n#gbm-live.fp26 .fp-list p.fp-ex{font:400 14px/1.45 var(--fp-sans);color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-rail{min-width:0}\n#gbm-live.fp26 .fp-rail h2,#gbm-live.fp26 .fp-mod h2{font:800 14px/1 var(--fp-cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fp-ink);padding:12px 0 10px;border-top:3px solid var(--fp-rule-strong)}\n#gbm-live.fp26 .fp-col{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--fp-rule)}\n#gbm-live.fp26 .fp-roundel{grid-row:span 2;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--fp-navy);color:#fff;font:800 16px/1 var(--fp-cond);letter-spacing:.04em;box-shadow:0 0 0 2px var(--fp-paper),0 0 0 4px var(--fp-orange)}\n#gbm-live.fp26 .fp-col-name{font:800 14px/1.2 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--fp-ink);align-self:end}\n#gbm-live.fp26 .fp-col-story{font:500 14px/1.35 var(--fp-sans);color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-hub{background:var(--fp-hub);border-top:6px solid var(--fp-navy);padding-block:22px 32px}\n#gbm-live.fp26.fp-night .fp-hub{border-top-color:var(--fp-orange)}\n#gbm-live.fp26 .fp-hub-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;margin-bottom:16px}\n#gbm-live.fp26 .fp-hub-head h2{font:800 40px/.9 var(--fp-cond);text-transform:uppercase;color:var(--fp-ink)}\n#gbm-live.fp26 .fp-hub-head p{font:600 13px/1.4 var(--fp-sans);color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-hub-grid{display:grid;gap:16px}\n#gbm-live.fp26 .fp-mod{min-width:0;background:var(--fp-card);padding:0 16px 16px;display:flex;flex-direction:column;gap:10px}\n#gbm-live.fp26 .fp-mod h2{border-top-color:var(--fp-navy)}\n#gbm-live.fp26.fp-night .fp-mod h2{border-top-color:var(--fp-orange)}\n#gbm-live.fp26 .fp-latest li{border-bottom:1px solid var(--fp-rule)}\n#gbm-live.fp26 .fp-latest a{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;padding:10px 0;align-items:start}\n#gbm-live.fp26 .fp-latest time{font:700 12px/1.3 var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;color:var(--fp-link);padding-top:2px}\n#gbm-live.fp26 .fp-latest h3{font:700 17px/1.15 var(--fp-cond);letter-spacing:0;text-transform:none}\n#gbm-live.fp26 .fp-latest .fp-meta{margin-top:3px}\n#gbm-live.fp26 .fp-show-when{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:800 22px/1.05 var(--fp-cond);text-transform:uppercase;color:var(--fp-ink)}\n#gbm-live.fp26 .fp-live-dot{display:none;width:10px;height:10px;border-radius:50%;background:#c8102e}\n#gbm-live.fp26 .fp-show[data-live=\"1\"] .fp-live-dot{display:inline-block}\n#gbm-live.fp26 .fp-actions{display:flex;flex-wrap:wrap;gap:8px}\n#gbm-live.fp26 .fp-vid{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;align-items:center}\n#gbm-live.fp26 .fp-vid .fp-frame{aspect-ratio:16/9}\n#gbm-live.fp26 .fp-vid b{display:block;font:700 16px/1.15 var(--fp-cond)}\n#gbm-live.fp26 .fp-vid span{font:600 12px/1.3 var(--fp-sans);color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-play{position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:var(--fp-orange)}\n#gbm-live.fp26 .fp-play::after{content:\"\";position:absolute;left:13px;top:10px;border:7px solid transparent;border-left:11px solid #fff;border-right:0}\n#gbm-live.fp26 .fp-clips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}\n#gbm-live.fp26 .fp-clip .fp-frame{aspect-ratio:9/12}\n#gbm-live.fp26 .fp-clip b{display:block;margin-top:6px;font:700 15px/1.15 var(--fp-cond)}\n#gbm-live.fp26 .fp-photos{display:grid;gap:12px}\n#gbm-live.fp26 .fp-photo>b{display:block;margin-top:6px;font:700 17px/1.1 var(--fp-cond);text-transform:uppercase}\n#gbm-live.fp26 .fp-score-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font:800 13px/1.2 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-mini{width:100%;border-collapse:collapse;font:800 15px/1 var(--fp-cond);font-variant-numeric:tabular-nums;table-layout:fixed}\n#gbm-live.fp26 .fp-mini th,#gbm-live.fp26 .fp-mini td{padding:6px 2px;text-align:center;border-bottom:1px solid var(--fp-rule)}\n#gbm-live.fp26 .fp-mini thead th{font:700 11px/1 var(--fp-cond);letter-spacing:.1em;color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-mini .fp-lt{width:34%;text-align:left;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}\n#gbm-live.fp26 .fp-mini .fp-tot{font-size:19px;color:var(--fp-navy)}\n#gbm-live.fp26.fp-night .fp-mini .fp-tot{color:#fff}\n#gbm-live.fp26 .fp-tape{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}\n#gbm-live.fp26 .fp-tape div{border-bottom:3px solid var(--fp-orange);padding-bottom:6px}\n#gbm-live.fp26 .fp-tape strong{display:block;font:800 34px/1 var(--fp-cond);font-variant-numeric:tabular-nums;color:var(--fp-ink)}\n#gbm-live.fp26 .fp-tape span{font:700 11px/1.2 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-next{display:grid;gap:4px;padding:10px 12px;background:var(--fp-navy);color:#fff}\n#gbm-live.fp26 .fp-next b{font:800 20px/1.05 var(--fp-cond);text-transform:uppercase}\n#gbm-live.fp26 .fp-next span{font:600 13px/1.35 var(--fp-sans);color:#dfe5ff}\n#gbm-live.fp26 .fp-next .fp-cd i{color:#c9d3ff}\n#gbm-live.fp26 .fp-stand{width:100%;border-collapse:collapse;font:700 14px/1.2 var(--fp-cond);font-variant-numeric:tabular-nums}\n#gbm-live.fp26 .fp-stand td,#gbm-live.fp26 .fp-stand th{padding:5px 2px;border-bottom:1px solid var(--fp-rule);text-align:right}\n#gbm-live.fp26 .fp-stand td:first-child,#gbm-live.fp26 .fp-stand th:first-child{text-align:left}\n#gbm-live.fp26 .fp-stand tr.fp-us td{color:var(--fp-link);font-weight:800}\n#gbm-live.fp26 .fp-chips{display:flex;flex-wrap:wrap;gap:8px}\n#gbm-live.fp26 .fp-chips a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;background:var(--fp-chip);font:800 13px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:var(--fp-ink)}\n#gbm-live.fp26 .fp-mod p.fp-ex{font:500 15px/1.5 var(--fp-sans);color:var(--fp-ink-2)}\n#gbm-live.fp26 .fp-mag{display:grid;grid-template-columns:minmax(0,1fr) 128px;gap:14px;align-items:center;background:#07122e;color:#fff}\n#gbm-live.fp26 .fp-mag h2{color:#fff;border-top-color:var(--fp-orange)!important}\n#gbm-live.fp26 .fp-mag p.fp-ex{color:#c8d3ef}\n#gbm-live.fp26 .fp-mag-copy{display:flex;flex-direction:column;gap:10px;min-width:0}\n#gbm-live.fp26 .fp-cover{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;background:#0021a5;box-shadow:0 10px 24px rgba(0,0,0,.35);align-self:center}\n#gbm-live.fp26 .fp-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}\n#gbm-live.fp26 .fp-cover::after{content:\"\";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,33,165,.9) 0,rgba(0,33,165,0) 32%,rgba(4,11,31,0) 50%,rgba(4,11,31,.92) 100%)}\n#gbm-live.fp26 .fp-cover-mh{position:absolute;z-index:1;left:8px;right:8px;top:6px;font:800 19px/.9 var(--fp-cond);text-transform:uppercase}\n#gbm-live.fp26 .fp-cover-mh small{display:block;font:700 7px/1.4 var(--fp-sans);letter-spacing:.2em}\n#gbm-live.fp26 .fp-cover-t{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;position:absolute;z-index:1;left:8px;right:8px;bottom:8px;font:800 14px/.95 var(--fp-cond);text-transform:uppercase;color:#fff}\n#gbm-live.fp26 .fp-cover-t em{display:block;font-style:normal;font-size:9px;letter-spacing:.14em;color:#ffb08f;margin-bottom:3px}\n#gbm-live.fp26 #sh-freshness:not(:empty){padding:10px 0;font:700 14px/1.3 var(--fp-sans)}\n#gbm-live.fp26 #sh-freshness a{color:var(--fp-link);text-decoration:underline;text-underline-offset:3px}\n@media(min-width:600px){\n#gbm-live.fp26{--fp-pad:24px}\n#gbm-live.fp26 .fp-cta-long{display:inline}\n#gbm-live.fp26 .fp-cta-short{display:none}\n#gbm-live.fp26 .fp-cd .fp-cd-s{display:inline-flex}\n#gbm-live.fp26 .fp-hub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}\n#gbm-live.fp26 .fp-mod-latest{grid-row:span 2}\n#gbm-live.fp26 .fp-mag{grid-column:1/-1;grid-template-columns:minmax(0,1fr) 170px}\n#gbm-live.fp26 .fp-photos{grid-template-columns:repeat(2,minmax(0,1fr))}\n#gbm-live.fp26 .fp-second{grid-template-columns:repeat(2,minmax(0,1fr))}\n#gbm-live.fp26 .fp-rail{grid-column:1/-1}\n#gbm-live.fp26 .fp-rail-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}\n#gbm-live.fp26 .fp-col:last-child:nth-child(odd){grid-column:1/-1}\n}\n@media(min-width:821px){\n#gbm-live.fp26{--fp-pad:32px}\n#gbm-live.fp26 .fp-mast .fp-wrap{padding-top:18px;padding-bottom:16px}\n#gbm-live.fp26 .fp-date{grid-column:1;justify-content:flex-start;gap:16px}\n#gbm-live.fp26 .fp-wordmark{grid-column:1;font-size:clamp(72px,8.4vw,120px)}\n#gbm-live.fp26 .fp-wordmark small{font-size:13px}\n#gbm-live.fp26 .fp-mast-right{grid-column:2;grid-row:1/3;align-self:start}\n#gbm-live.fp26 .fp-signin{display:inline-flex}\n#gbm-live.fp26 .fp-mast .fp-btn{min-height:44px;padding:0 18px;font-size:15px}\n#gbm-live.fp26 .fp-nav .fp-wrap{min-height:56px;gap:20px}\n#gbm-live.fp26 .fp-links{display:flex;align-items:center;gap:22px;flex:1 1 auto;min-width:0;overflow:hidden;font:800 14px/1 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase}\n#gbm-live.fp26 .fp-links a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap}\n#gbm-live.fp26 .fp-links a[aria-current]{color:var(--fp-orange);box-shadow:inset 0 -3px 0 var(--fp-orange)}\n#gbm-live.fp26 .fp-bug{flex:0 1 auto;margin:0}\n#gbm-live.fp26 .fp-bug>a{min-height:44px;padding:4px 12px}\n#gbm-live.fp26 .fp-bug-next{flex:0 1 auto;gap:14px}\n#gbm-live.fp26 .fp-board .fp-wrap{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:32px;align-items:start}\n#gbm-live.fp26 .fp-board-top,#gbm-live.fp26 .fp-board-links{grid-column:1/-1}\n#gbm-live.fp26 .fp-line tbody .fp-lt{font-size:26px}\n#gbm-live.fp26 .fp-line .fp-tot{font-size:34px}\n#gbm-live.fp26 .fp-line td{font-size:20px}\n#gbm-live.fp26 .fp-board-side{grid-column:2;grid-row:2/4;display:grid;gap:10px;align-content:start}\n#gbm-live.fp26 .fp-lead{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding-top:28px;align-items:start}\n#gbm-live.fp26 .fp-lead-photo{grid-column:1/8}\n#gbm-live.fp26 .fp-lead-copy{grid-column:8/13;gap:14px}\n#gbm-live.fp26 .fp-lead h1{font-size:clamp(56px,6.2vw,88px)}\n#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(48px,5vw,70px)}\n#gbm-live.fp26 .fp-dek{font-size:22px}\n#gbm-live.fp26 .fp-quote{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center;margin-top:32px;padding:26px 0}\n#gbm-live.fp26 .fp-quote blockquote{grid-column:2/9;font-size:44px}\n#gbm-live.fp26 .fp-quote figcaption{grid-column:9/13}\n#gbm-live.fp26 .fp-second{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding-block:32px}\n#gbm-live.fp26 .fp-feature{grid-column:1/5}\n#gbm-live.fp26 .fp-list{grid-column:5/9}\n#gbm-live.fp26 .fp-rail{grid-column:9/13}\n#gbm-live.fp26 .fp-rail-cols{display:block}\n#gbm-live.fp26 .fp-hub-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}\n#gbm-live.fp26 .fp-mod-latest{grid-column:1/5;grid-row:span 2}\n#gbm-live.fp26 .fp-mod-scores{grid-column:5/9;grid-row:span 2}\n#gbm-live.fp26 .fp-mod-show{grid-column:9/13}\n#gbm-live.fp26 .fp-mod-clips{grid-column:9/13}\n#gbm-live.fp26 .fp-mod-photos{grid-column:1/6}\n#gbm-live.fp26 .fp-mag{grid-column:6/10;grid-template-columns:minmax(0,1fr) 120px}\n#gbm-live.fp26 .fp-mod-news{grid-column:10/13}\n#gbm-live.fp26 .fp-photos{grid-template-columns:repeat(2,minmax(0,1fr))}\n#gbm-live.fp26 .fp-hub-head h2{font-size:56px}\n}\n@media(min-width:821px) and (max-width:1439px){#gbm-live.fp26 .fp-nav .fp-cd .fp-cd-s{display:none}#gbm-live.fp26 .fp-links{gap:16px}}\n@media(min-width:1100px){\n#gbm-live.fp26{--fp-pad:64px}\n}\n@media(max-width:599px){\n#gbm-live.fp26 .fp-bug-last:has(+ .fp-bug-next){display:none}\n#gbm-live.fp26 .fp-bug-match{flex:1 1 auto;white-space:nowrap;overflow:hidden}\n#gbm-live.fp26 .fp-bug-match small{overflow:hidden;text-overflow:ellipsis}\n}\n@media(max-width:429px){#gbm-live.fp26 .fp-wordmark small{display:none}}\n@media(max-width:374px){#gbm-live.fp26 .fp-date span+span{display:none}#gbm-live.fp26 .fp-mast .fp-btn{padding:0 10px;font-size:13px;gap:5px}}\n@media(min-width:821px) and (max-width:1099px){\n#gbm-live.fp26 .fp-links a:nth-child(n+4):not(:last-child){display:none}\n}\n@media(min-width:821px) and (max-width:899px){#gbm-live.fp26 .fp-links a:nth-child(3):not(:last-child){display:none}}\n@media(min-width:1100px) and (max-width:1279px){#gbm-live.fp26 .fp-links a:nth-child(4){display:none}}\n@media(max-width:360px){\n#gbm-live.fp26 .fp-bug-team{font-size:13px}\n#gbm-live.fp26 .fp-bug-team strong{font-size:19px}\n#gbm-live.fp26 .fp-bug>a{padding:6px 8px;gap:6px}\n#gbm-live.fp26 .fp-cd{font-size:17px}\n#gbm-live.fp26 .fp-bug-match{font-size:12px}\n#gbm-live.fp26 .fp-vid{grid-template-columns:96px minmax(0,1fr)}\n#gbm-live.fp26 .fp-mag{grid-template-columns:minmax(0,1fr) 100px}\n}\n@media(prefers-reduced-motion:no-preference){\n#gbm-live.fp26 .fp-wordmark{animation:fpSettle .9s cubic-bezier(.2,.7,.2,1) both}\n#gbm-live.fp26 .fp-lead-photo .fp-frame img{animation:fpBurns 22s ease-in-out infinite alternate;transform-origin:60% 40%}\n#gbm-live.fp26 .fp-lead h1 .fp-w{animation:fpWord .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 55ms + 120ms)}\n#gbm-live.fp26 .fp-tk-track{animation:fpTicker var(--fp-tk-dur,60s) linear infinite}\n#gbm-live.fp26 .fp-ticker:hover .fp-tk-track,#gbm-live.fp26 .fp-ticker:focus-within .fp-tk-track{animation-play-state:paused}\n#gbm-live.fp26 .fp-cd b.fp-flip{animation:fpFlip .42s cubic-bezier(.3,.7,.3,1)}\n#gbm-live.fp26 .fp-show[data-live=\"1\"] .fp-live-dot{animation:fpPulse 1.4s ease-in-out infinite}\n#gbm-live.fp26 .fp-cover{transition:transform .25s ease,box-shadow .25s ease}\n#gbm-live.fp26 a:hover .fp-cover,#gbm-live.fp26 .fp-cover:hover{transform:translateY(-6px);box-shadow:0 18px 32px rgba(0,0,0,.45)}\n}\n@media(prefers-reduced-motion:reduce){\n#gbm-live.fp26 .fp-tk-view{overflow-x:auto;-webkit-mask-image:none;mask-image:none}\n#gbm-live.fp26 .fp-tk-dup{display:none}\n}\n@keyframes fpSettle{from{transform:translateY(12px);opacity:.001}to{transform:none;opacity:1}}\n@keyframes fpBurns{from{transform:scale(1)}to{transform:scale(1.06) translate(-1%,-1%)}}\n@keyframes fpWord{from{transform:translateY(.35em);opacity:.001}to{transform:none;opacity:1}}\n@keyframes fpTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}\n@keyframes fpFlip{0%{transform:rotateX(90deg);opacity:.2}100%{transform:none;opacity:1}}\n@keyframes fpPulse{50%{opacity:.25}}\n#gbm-live.fp26 #gbm-road{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;background:radial-gradient(70% 90% at 100% 100%,rgba(250,70,22,.16),transparent 70%),radial-gradient(90% 100% at 0% 0%,#10306e,transparent 65%),var(--n);color:var(--ink);font-family:var(--fp-sans);padding:28px 0 26px;overflow:hidden;position:relative}\n#gbm-live.fp26 #gbm-road *{box-sizing:border-box}\n#gbm-live.fp26 #gbm-road .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:0 var(--fp-pad) 14px;max-width:1440px;margin:0 auto}\n#gbm-live.fp26 #gbm-road h2{font:800 clamp(30px,6vw,52px)/.92 var(--fp-cond);text-transform:uppercase;margin:0}\n#gbm-live.fp26 #gbm-road h2 span{color:var(--o)}\n#gbm-live.fp26 #gbm-road .rec{flex:0 0 auto;white-space:nowrap;font:700 14px var(--fp-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);text-align:right}\n#gbm-live.fp26 #gbm-road .rec b{display:block;font:800 34px/1 var(--fp-cond);color:var(--ink);letter-spacing:0}\n#gbm-live.fp26 #gbm-road .track{position:relative;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:var(--fp-pad);padding:26px var(--fp-pad) 12px;max-width:1440px;margin:0 auto;scrollbar-width:none}\n#gbm-live.fp26 #gbm-road .track::-webkit-scrollbar{display:none}\n#gbm-live.fp26 #gbm-road .line{position:absolute;left:var(--fp-pad);right:var(--fp-pad);top:12px;height:3px;background:rgba(255,255,255,.12);border-radius:3px}\n#gbm-live.fp26 #gbm-road .line i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--b),var(--o));box-shadow:0 0 14px var(--o);border-radius:3px;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}\n#gbm-live.fp26 #gbm-road .g{position:relative;flex:0 0 156px;scroll-snap-align:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 12px 12px;min-height:168px;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:inherit}\n#gbm-live.fp26 #gbm-road .g::before{content:\"\";position:absolute;left:14px;top:-19px;width:13px;height:13px;border-radius:50%;background:var(--n);border:3px solid rgba(255,255,255,.35)}\n#gbm-live.fp26 #gbm-road .g.w::before{background:var(--o);border-color:var(--o);box-shadow:0 0 10px var(--o)}\n#gbm-live.fp26 #gbm-road .g.nx{border-color:var(--o);background:rgba(250,70,22,.12)}\n#gbm-live.fp26 #gbm-road .g.nx::before{background:var(--o);border-color:#fff;animation:gbmp 1.6s ease-in-out infinite}\n#gbm-live.fp26 #gbm-road .g.boss{border-color:rgba(255,90,60,.55)}\n#gbm-live.fp26 #gbm-road .dt{font:700 11px var(--fp-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}\n#gbm-live.fp26 #gbm-road .op{overflow-wrap:anywhere;font:800 22px/1 var(--fp-cond);text-transform:uppercase}\n#gbm-live.fp26 #gbm-road .rk{color:var(--o);font-size:14px;margin-right:3px}\n#gbm-live.fp26 #gbm-road .sc{white-space:nowrap;font:800 30px/1 var(--fp-cond);margin-top:auto}\n#gbm-live.fp26 #gbm-road .bar{height:5px;border-radius:5px;background:rgba(255,255,255,.12);overflow:hidden}\n#gbm-live.fp26 #gbm-road .bar i{display:block;height:100%;width:0;background:var(--o);transition:width 1.2s .3s cubic-bezier(.2,.7,.2,1)}\n#gbm-live.fp26 #gbm-road .sub{font:600 12px var(--fp-sans);color:var(--mut)}\n#gbm-live.fp26 #gbm-road .cd{white-space:nowrap;font:800 22px var(--fp-cond);color:#fff;letter-spacing:.04em}\n@keyframes gbmp{50%{box-shadow:0 0 0 7px rgba(250,70,22,.25)}}\n@media(prefers-reduced-motion:reduce){#gbm-live.fp26 #gbm-road .line i,#gbm-live.fp26 #gbm-road .bar i{transition:none}#gbm-live.fp26 #gbm-road .g.nx::before{animation:none}}\n#gbm-live.fp26 .fp-tunnel{position:relative;isolation:isolate;overflow:hidden;background:#040b1f;color:#fff;border-bottom:4px solid var(--fp-orange);display:grid;align-items:center;min-height:min(72vh,540px)}\n#gbm-live.fp26 .fp-tn-scene{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}\n#gbm-live.fp26 .fp-tn-scene::before{content:\"\";position:absolute;inset:-25%;background:repeating-conic-gradient(from 0deg at 50% 44%,rgba(255,255,255,.05) 0 1.4deg,transparent 1.4deg 11deg);opacity:.9}\n#gbm-live.fp26 .fp-tn-ring{position:absolute;left:50%;top:44%;width:180vw;max-width:2300px;aspect-ratio:2/1;border:1px solid rgba(255,255,255,.16);border-radius:18%/30%;transform:translate(-50%,-50%) scale(var(--s));opacity:var(--o);box-shadow:0 0 30px rgba(0,33,165,.25) inset}\n#gbm-live.fp26 .fp-tn-ring:nth-child(1){--s:.1;--o:.95}\n#gbm-live.fp26 .fp-tn-ring:nth-child(2){--s:.2;--o:.8}\n#gbm-live.fp26 .fp-tn-ring:nth-child(3){--s:.33;--o:.65}\n#gbm-live.fp26 .fp-tn-ring:nth-child(4){--s:.5;--o:.5}\n#gbm-live.fp26 .fp-tn-ring:nth-child(5){--s:.72;--o:.36}\n#gbm-live.fp26 .fp-tn-ring:nth-child(6){--s:1;--o:.24}\n#gbm-live.fp26 .fp-tn-light{position:absolute;left:50%;top:44%;width:42vw;max-width:440px;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,244,230,.95),rgba(250,70,22,.6) 38%,rgba(250,70,22,0) 72%);filter:blur(12px);opacity:.85}\n#gbm-live.fp26 .fp-tunnel[data-phase=live] .fp-tn-light,#gbm-live.fp26 .fp-tunnel[data-phase=half] .fp-tn-light{background:radial-gradient(closest-side,rgba(255,236,236,.95),rgba(200,16,46,.65) 38%,rgba(200,16,46,0) 72%)}\n#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-light{background:radial-gradient(closest-side,rgba(255,255,255,.95),rgba(169,187,255,.5) 38%,rgba(169,187,255,0) 72%)}\n#gbm-live.fp26 .fp-tn-floor{position:absolute;left:-30%;right:-30%;bottom:-3%;height:40%;transform:perspective(600px) rotateX(58deg);transform-origin:50% 0;background:linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0/48px 100%,linear-gradient(0deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0/100% 32px,linear-gradient(180deg,transparent,rgba(0,33,165,.4));-webkit-mask-image:linear-gradient(180deg,transparent,#000 40%);mask-image:linear-gradient(180deg,transparent,#000 40%)}\n#gbm-live.fp26 .fp-tunnel::after{content:\"\";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(70% 60% at 50% 62%,rgba(4,11,31,.7),rgba(4,11,31,0) 70%)}\n#gbm-live.fp26 .fp-tn-wrap{position:relative;display:grid;gap:16px;justify-items:center;text-align:center;padding-block:30px 26px}\n#gbm-live.fp26 .fp-tn-top{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 12px;margin:0;font:700 12px/1.3 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:#c8d3ef}\n#gbm-live.fp26 .fp-tn-match{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px 14px;width:100%;max-width:980px;margin:0;font-size:16px;font-weight:400;letter-spacing:0;text-wrap:wrap}\n#gbm-live.fp26 .fp-tn-team{display:grid;gap:6px;min-width:0}\n#gbm-live.fp26 .fp-tn-team small{font:700 12px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f}\n#gbm-live.fp26 .fp-tn-team b{font:800 clamp(30px,8.6vw,84px)/.9 var(--fp-cond);text-transform:uppercase;letter-spacing:-.01em;overflow-wrap:anywhere;text-shadow:0 2px 24px rgba(0,0,0,.5)}\n#gbm-live.fp26 .fp-tn-vs{font:800 clamp(14px,3vw,22px)/1 var(--fp-cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fp-orange)}\n#gbm-live.fp26 .fp-tn-mid{display:grid;gap:8px;justify-items:center}\n#gbm-live.fp26 .fp-tn-pre,#gbm-live.fp26 .fp-tn-kick,#gbm-live.fp26 .fp-tn-live,#gbm-live.fp26 .fp-tn-final{display:none;gap:8px;justify-items:center}\n#gbm-live.fp26 .fp-tunnel[data-phase=pre] .fp-tn-pre,#gbm-live.fp26 .fp-tunnel[data-phase=kick] .fp-tn-kick,#gbm-live.fp26 .fp-tunnel[data-phase=live] .fp-tn-live,#gbm-live.fp26 .fp-tunnel[data-phase=half] .fp-tn-live,#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-final{display:grid}\n#gbm-live.fp26 .fp-tn-label{margin:0;font:700 13px/1 var(--fp-cond);letter-spacing:.18em;text-transform:uppercase;color:#c8d3ef}\n#gbm-live.fp26 .fp-tunnel .fp-cd{font-size:clamp(34px,11vw,96px);gap:4px;flex-wrap:wrap;justify-content:center;max-width:100%;text-shadow:0 2px 24px rgba(0,0,0,.5)}\n#gbm-live.fp26 .fp-tunnel .fp-cd b{min-width:.56em}\n#gbm-live.fp26 .fp-tunnel .fp-cd i{font-size:clamp(12px,2.6vw,18px);letter-spacing:.1em;color:#ffb08f;margin:0 10px 0 3px}\n#gbm-live.fp26 .fp-tunnel .fp-cd .fp-cd-s{display:inline-flex}\n#gbm-live.fp26 .fp-tn-score{display:flex;align-items:baseline;gap:12px;font:800 clamp(60px,15vw,124px)/1 var(--fp-cond);font-variant-numeric:tabular-nums;text-shadow:0 2px 24px rgba(0,0,0,.5)}\n#gbm-live.fp26 .fp-tn-score span{color:var(--fp-orange);font-size:.6em}\n#gbm-live.fp26 .fp-tn-clock{display:inline-flex;align-items:center;gap:8px;margin:0;padding:6px 10px;background:#c8102e;font:800 13px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase}\n#gbm-live.fp26 .fp-tn-clock::before{content:\"\";width:8px;height:8px;border-radius:50%;background:#fff}\n#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-clock{background:#fff;color:#040b1f}\n#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-clock::before{background:var(--fp-orange)}\n#gbm-live.fp26 .fp-tn-drive{margin:0;max-width:640px;font:600 15px/1.45 var(--fp-sans);color:#dfe6f7}\n#gbm-live.fp26 .fp-tn-drive b{font:800 12px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f;margin-right:8px}\n#gbm-live.fp26 .fp-tn-kick p{margin:0;font:800 clamp(28px,7vw,56px)/1 var(--fp-cond);text-transform:uppercase;text-shadow:0 2px 24px rgba(0,0,0,.5)}\n#gbm-live.fp26 .fp-tn-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}\n#gbm-live.fp26 .fp-tn-cta .fp-ghost{color:#fff}\n#gbm-live.fp26 .fp-tn-stories{list-style:none;margin:6px 0 0;padding:14px 0 0;width:100%;max-width:980px;display:grid;gap:10px;border-top:1px solid rgba(255,255,255,.18);text-align:left}\n#gbm-live.fp26 .fp-tn-stories a{display:grid;gap:3px;color:#fff;font:700 15px/1.3 var(--fp-sans)}\n#gbm-live.fp26 .fp-tn-stories span{font:600 12px/1.3 var(--fp-sans);letter-spacing:.02em;color:#c8d3ef}\n@media(min-width:600px){#gbm-live.fp26 .fp-tn-stories{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 24px}}\n@media(max-width:359px){#gbm-live.fp26 .fp-tn-stories li:nth-child(n+3){display:none}}\n@media(min-width:821px){#gbm-live.fp26 .fp-tunnel{min-height:min(70vh,600px)}#gbm-live.fp26 .fp-tn-wrap{gap:20px;padding-block:40px 34px}#gbm-live.fp26 .fp-tn-match{gap:8px 28px}}\n@media(prefers-reduced-motion:no-preference){\n#gbm-live.fp26 .fp-tn-ring{animation:fpTnRun 7.2s linear infinite;animation-delay:calc(var(--d) * -1.2s)}\n#gbm-live.fp26 .fp-tn-ring:nth-child(1){--d:0}#gbm-live.fp26 .fp-tn-ring:nth-child(2){--d:1}#gbm-live.fp26 .fp-tn-ring:nth-child(3){--d:2}#gbm-live.fp26 .fp-tn-ring:nth-child(4){--d:3}#gbm-live.fp26 .fp-tn-ring:nth-child(5){--d:4}#gbm-live.fp26 .fp-tn-ring:nth-child(6){--d:5}\n#gbm-live.fp26 .fp-tn-light{animation:fpTnGlow 3.2s ease-in-out infinite}\n#gbm-live.fp26 .fp-tn-scene::before{animation:fpTnSweep 90s linear infinite;transform-origin:50% 44%}\n#gbm-live.fp26 .fp-tn-clock::before{animation:fpPulse 1.2s ease-in-out infinite}\n}\n@keyframes fpTnRun{from{transform:translate(-50%,-50%) scale(.06);opacity:0}12%{opacity:.95}to{transform:translate(-50%,-50%) scale(1.15);opacity:0}}\n@keyframes fpTnGlow{50%{opacity:1;filter:blur(16px)}}\n@keyframes fpTnSweep{to{transform:rotate(360deg)}}\n#gbm-live.fp26 .fp-hub-grid>.fp-ask{grid-column:1/-1;border-radius:14px;min-width:0}\n#gbm-live.fp26 #gbm-stands{width:100%;max-width:980px;min-width:0}\n#gbm-live.fp26 #gbm-stands:empty{display:none}\n@media(min-width:600px){#gbm-live.fp26 .fp-hub-grid>.fp-ask{grid-row:3}}\n#gbm-live.fp26 #gbm-call{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;--line:rgba(255,255,255,.14);background:radial-gradient(80% 90% at 0% 100%,rgba(0,33,165,.5),transparent 70%),var(--n);color:var(--ink);font-family:var(--fp-sans);padding:26px 0 28px;border-top:1px solid var(--line);position:relative;overflow:hidden}\n#gbm-live.fp26 #gbm-call *{box-sizing:border-box}\n#gbm-live.fp26 #gbm-call .wrap{max-width:1440px;margin:0 auto;padding:0 var(--fp-pad)}\n#gbm-live.fp26 #gbm-call .hd{display:grid;gap:8px;margin-bottom:16px}\n#gbm-live.fp26 #gbm-call .kick{font:700 12px/1.3 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f;display:flex;align-items:center;gap:10px}\n#gbm-live.fp26 #gbm-call .kick::before{content:\"\";flex:0 0 22px;height:2px;background:var(--o)}\n#gbm-live.fp26 #gbm-call h2{font:800 clamp(30px,6vw,52px)/.92 var(--fp-cond);text-transform:uppercase;margin:0}\n#gbm-live.fp26 #gbm-call h2 span{color:var(--o)}\n#gbm-live.fp26 #gbm-call .mt{font:700 14px/1.35 var(--fp-sans);color:var(--mut);letter-spacing:.02em}\n#gbm-live.fp26 #gbm-call .mt b{color:var(--ink);font:800 16px/1.3 var(--fp-cond);text-transform:uppercase;letter-spacing:.04em;display:block}\n#gbm-live.fp26 #gbm-call .grid{display:grid;gap:18px}\n#gbm-live.fp26 #gbm-call .pick{display:grid;gap:10px;align-content:start}\n#gbm-live.fp26 #gbm-call .tm{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;min-height:52px;border-bottom:1px solid var(--line)}\n#gbm-live.fp26 #gbm-call .tm label{font:800 22px/1 var(--fp-cond);text-transform:uppercase;letter-spacing:.02em;min-width:0;overflow-wrap:anywhere}\n#gbm-live.fp26 #gbm-call .tm label small{display:block;font:700 11px/1.3 var(--fp-sans);letter-spacing:.1em;color:var(--mut);margin-bottom:2px}\n#gbm-live.fp26 #gbm-call .step{display:flex;align-items:stretch;gap:0;flex:0 0 auto}\n#gbm-live.fp26 #gbm-call .step button{width:44px;height:44px;padding:0;margin:0;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:var(--ink);font:800 24px/1 var(--fp-cond);cursor:pointer;-webkit-tap-highlight-color:transparent}\n#gbm-live.fp26 #gbm-call .step button:first-child{border-radius:8px 0 0 8px}\n#gbm-live.fp26 #gbm-call .step button:last-child{border-radius:0 8px 8px 0}\n#gbm-live.fp26 #gbm-call .step input{width:56px;height:44px;margin:0;padding:0;border:1px solid rgba(255,255,255,.3);border-inline:0;background:#fff;color:var(--n);font:800 26px/1 var(--fp-cond);font-variant-numeric:tabular-nums;text-align:center;border-radius:0;-moz-appearance:textfield;appearance:textfield}\n#gbm-live.fp26 #gbm-call .step input::-webkit-outer-spin-button,#gbm-live.fp26 #gbm-call .step input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}\n#gbm-live.fp26 #gbm-call .step input::placeholder{color:#9aa3b8}\n#gbm-live.fp26 #gbm-call .step input:focus-visible,#gbm-live.fp26 #gbm-call .step button:focus-visible{outline:3px solid var(--o);outline-offset:2px;position:relative;z-index:1}\n#gbm-live.fp26 #gbm-call .row{display:grid;gap:8px;padding-top:4px}\n#gbm-live.fp26 #gbm-call .go{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border:0;background:var(--o);color:#fff;font:800 16px/1 var(--fp-cond);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:8px;width:100%}\n#gbm-live.fp26 #gbm-call .go:disabled{background:rgba(255,255,255,.14);color:var(--mut);cursor:default}\n#gbm-live.fp26 #gbm-call .msg{min-height:22px;margin:0;font:700 15px/1.4 var(--fp-sans);color:#fff}\n#gbm-live.fp26 #gbm-call .msg[data-kind=err]{color:#ffb08f}\n#gbm-live.fp26 #gbm-call .fine{margin:0;font:500 12px/1.4 var(--fp-sans);color:var(--mut)}\n#gbm-live.fp26 #gbm-call[data-state=locked] .step button,#gbm-live.fp26 #gbm-call[data-state=locked] .step input{opacity:.5}\n#gbm-live.fp26 #gbm-call .crowd{display:grid;gap:14px;align-content:start;padding:16px 14px 14px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px}\n#gbm-live.fp26 #gbm-call .crowd h3{margin:0;font:800 13px/1 var(--fp-cond);letter-spacing:.2em;text-transform:uppercase;color:var(--mut);display:flex;justify-content:space-between;gap:8px}\n#gbm-live.fp26 #gbm-call .crowd h3 span{color:#ffb08f;letter-spacing:.1em}\n#gbm-live.fp26 #gbm-call .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}\n#gbm-live.fp26 #gbm-call .stats div{border-bottom:3px solid var(--o);padding-bottom:6px;min-width:0}\n#gbm-live.fp26 #gbm-call .stats b{display:block;height:34px;font:800 32px/34px var(--fp-cond);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}\n#gbm-live.fp26 #gbm-call .stats span{display:block;font:700 10px/1.2 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}\n#gbm-live.fp26 #gbm-call .bins{list-style:none;margin:0;padding:0;display:grid;gap:6px}\n#gbm-live.fp26 #gbm-call .bins li{display:grid;grid-template-columns:104px minmax(0,1fr) 30px;align-items:center;gap:8px;height:26px}\n#gbm-live.fp26 #gbm-call .bins .lb{font:700 12px/1 var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}\n#gbm-live.fp26 #gbm-call .bins li.mine .lb{color:#fff}\n#gbm-live.fp26 #gbm-call .bins li.mine .lb::before{content:\"\";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--o);margin:0 5px 1px 0;vertical-align:middle}\n#gbm-live.fp26 #gbm-call .bins li.mine b{color:#ffb08f}\n#gbm-live.fp26 #gbm-call .bins .bar{position:relative;height:12px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden}\n#gbm-live.fp26 #gbm-call .bins .bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--b),var(--o));border-radius:6px;transition:width .9s cubic-bezier(.2,.7,.2,1)}\n#gbm-live.fp26 #gbm-call .bins li.opp .bar i{background:linear-gradient(90deg,#3a4770,#8391b8)}\n#gbm-live.fp26 #gbm-call .bins b{font:800 15px/1 var(--fp-cond);font-variant-numeric:tabular-nums;text-align:right}\n#gbm-live.fp26 #gbm-call .lock{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;margin:0;min-height:20px;font:600 12px/1.4 var(--fp-sans);color:var(--mut)}\n#gbm-live.fp26 #gbm-call .lock b{color:#fff;font-weight:700}\n@media(min-width:600px){\n#gbm-live.fp26 #gbm-call .hd{grid-template-columns:minmax(0,1fr) auto;align-items:end}\n#gbm-live.fp26 #gbm-call .mt{text-align:right}\n#gbm-live.fp26 #gbm-call .grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start}\n#gbm-live.fp26 #gbm-call .go{width:auto;min-width:200px}\n#gbm-live.fp26 #gbm-call .bins li{grid-template-columns:124px minmax(0,1fr) 36px}\n}\n@media(min-width:821px){\n#gbm-live.fp26 #gbm-call{padding:34px 0 36px}\n#gbm-live.fp26 #gbm-call .grid{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:32px}\n#gbm-live.fp26 #gbm-call .crowd{padding:20px 22px 18px}\n#gbm-live.fp26 #gbm-call .stats b{font-size:40px;height:40px;line-height:40px}\n#gbm-live.fp26 #gbm-call .bins li{height:30px}\n}\n@media(max-width:359px){\n#gbm-live.fp26 #gbm-call .stats{gap:6px}\n#gbm-live.fp26 #gbm-call .stats b{font-size:26px}\n#gbm-live.fp26 #gbm-call .bins li{grid-template-columns:92px minmax(0,1fr) 26px;gap:6px}\n#gbm-live.fp26 #gbm-call .bins .lb{font-size:11px;letter-spacing:.02em}\n}\n@media(prefers-reduced-motion:reduce){#gbm-live.fp26 #gbm-call .bins .bar i{transition:none}}";
-  var BUNDLE = {"snapshot":"2026-09-30T14:25:44Z","build":"d5315808","look":"swamp-night","pins":{"breaking":null,"timed":{"path":"/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers","until":"2026-10-05T16:00:00Z","note":"Franz Beard lead until Oct. 5 noon ET unless a newer Buddy Martin piece or a breaking pin takes it (CURRENT-STATE Sept. 28 sync)."}},"quotes":{"/post/put-down-the-poll-gators-missouri-is-waiting":{"text":"You have to humble yourself, or you will be humbled.","who":"Jon Sumrall","context":"to his team Monday, after the \"not our standard\" tape from the Ole Miss win. From Buddy Martin's column."}},"$covers":"Rendered story covers (deploy/covers) carry their own type, so the front page shows them whole (16:9, contain, no crop, no Ken Burns) instead of cropping. Add the media id when a cover is set on a post.","covers":["d3cfa5_56a64986c874417c9a8299fae22649ed"],"credits":{"d3cfa5_56a64986c874417c9a8299fae22649ed":"Photo by Chris Spears, GatorBait Media · Faulkner: UAA","d3cfa5_d3190d83cdfc44549b10b6bd025e57a3":"Photo by Chris Spears, GatorBait Media","d3cfa5_2ea58f38e2da4c988ab73065cfe63130":"Photo by Chris Spears, GatorBait Media","d3cfa5_026d2a4d2be04a91b8c32317fed5f623":"Photo by Chris Spears, GatorBait Media","d3cfa5_1043f4b7772245baa5aed5f80c21669a":"Photo by Chris Spears, GatorBait Media","d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b":"Photo by Chris Spears, GatorBait Media","16b519_a0e407bedc46487ca71033fc8351d0fe":"Photo by Chris Spears, GatorBait Media","d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35":"Photo: Hannah White / UAA Communications"},"columnists":[{"name":"Buddy Martin","initials":"BM","href":"/gatorbait-media-blogs/tags/buddy-martin"},{"name":"Franz Beard","initials":"FB","href":"/gatorbait-media-blogs/tags/franz-beard"},{"name":"Loren Meadows","initials":"LM","href":"/gatorbait-media-blogs/tags/loren-meadows"},{"name":"Eddie Gilley","initials":"EG","href":"/gatorbait-media-blogs/tags/eddie-gilley"},{"name":"Chris Spears","initials":"CS","href":null}],"links":{"subscribe":"/pricing-plans/subscribe","signin":"/account/my-account","latest":"/gatorbait-media-blogs","magazine":"/magazine","show":"/the-buddy-martin-show","podcasts":"/the-buddy-martin-show#podcasts","store":"https://gatorbait2026.itemorder.com/shop/home/","schedule":"/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule","roster":"/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster","stats":"/florida-football-stats","standings":"/standings","newsletter":"/magazine","youtubeLive":"https://www.youtube.com/channel/UCtR8b1sKFuwaRjKy5BiXRvA/live","youtubeChannel":"https://www.youtube.com/channel/UCtR8b1sKFuwaRjKy5BiXRvA","facebook":"https://www.facebook.com/thebuddymartinshow"},"show":{"days":[1,3,4],"hour":21,"minutes":60,"episode":{"id":"8b7F5iyYOIk","title":"Laura Rutledge on The Buddy Martin Show","date":"2026-09-16"}},"clips":[{"id":"TzP8RJY0BKw","title":"Auburn quarterback pressure"},{"id":"oiSC0-a3tho","title":"Auburn crowd noise"}],"galleries":[{"title":"Chris Spears' Best Shots, Vol. 2: Florida 52, Ole Miss 28","url":"https://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28","image":"https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png","date":"2026-09-28T02:06:00Z"},{"title":"Chris Spears Photo Gallery: Florida vs. Ole Miss","url":"https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss","image":"https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png","date":"2026-09-28T01:49:00Z"}],"scoreboard":{"updatedAt":"2026-09-28T12:00:00Z","team":{"name":"Florida","abbr":"FLA","rank":8,"record":"4-0"},"last":{"opponent":"Ole Miss","opponentAbbr":"MISS","opponentRank":4,"home":true,"score":{"fla":52,"opp":28},"quarters":{"fla":[10,7,14,21],"opp":[0,6,15,7]},"stats":{"totalYards":498,"rushYards":302,"firstDowns":27,"attendance":90683},"date":"2026-09-26","venue":"Ben Hill Griffin Stadium, Gainesville, Fla.","recapUrl":"/post/florida-ole-miss-final-baugh-gators-run-over-rebels"},"next":{"opponent":"Missouri","opponentAbbr":"MIZ","opponentRank":25,"home":false,"kickoffIso":"2026-10-03T19:30:00Z","tv":"ABC","venue":"Memorial Stadium, Columbia, Mo.","previewUrl":"/post/first-look-missouri-florida-gators-show-me-state-of-mind","opponentRecord":"3-1","eventId":"401856708"},"standings":[],"schedule":[{"date":"2026-09-05T23:45:00Z","opponent":"Florida Atlantic","opponentRank":null,"home":true,"status":"final","score":{"fla":66,"opp":21},"tv":"SEC Network","storyUrl":""},{"date":"2026-09-12T21:30:00Z","opponent":"Campbell","opponentRank":null,"home":true,"status":"final","score":{"fla":52,"opp":3},"tv":"SEC Network+","storyUrl":""},{"date":"2026-09-19T23:00:00Z","opponent":"Auburn","opponentRank":null,"home":false,"status":"final","score":{"fla":44,"opp":39},"tv":"ESPN","storyUrl":""},{"date":"2026-09-26T19:30:00Z","opponent":"Ole Miss","opponentRank":4,"home":true,"status":"final","score":{"fla":52,"opp":28},"tv":"ABC","storyUrl":"https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28"},{"date":"2026-10-03T19:30:00Z","opponent":"Missouri","opponentRank":25,"home":false,"status":"scheduled","score":null,"tv":"ABC","storyUrl":"https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"},{"date":"2026-10-10T04:00:00Z","opponent":"South Carolina","opponentRank":null,"home":true,"status":"scheduled","score":null,"tv":"","storyUrl":""},{"date":"2026-10-17T04:00:00Z","opponent":"Texas","opponentRank":1,"home":false,"status":"scheduled","score":null,"tv":"","storyUrl":""},{"date":"2026-10-31T19:30:00Z","opponent":"Georgia","opponentRank":2,"home":false,"status":"scheduled","score":null,"tv":"ABC","storyUrl":""},{"date":"2026-11-07T05:00:00Z","opponent":"Oklahoma","opponentRank":null,"home":true,"status":"scheduled","score":null,"tv":"","storyUrl":""},{"date":"2026-11-14T05:00:00Z","opponent":"Kentucky","opponentRank":24,"home":false,"status":"scheduled","score":null,"tv":"","storyUrl":""},{"date":"2026-11-21T05:00:00Z","opponent":"Vanderbilt","opponentRank":null,"home":true,"status":"scheduled","score":null,"tv":"","storyUrl":""},{"date":"2026-11-27T20:30:00Z","opponent":"Florida State","opponentRank":null,"home":false,"status":"scheduled","score":null,"tv":"ABC","storyUrl":""}]},"posts":[{"title":"The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”","excerpt":"I’ll be honest. This guy could turn out to be brilliant. Maybe even Steve Spurrier brilliant. But I’d never put him above the Head Ball Coach, or even in the same paragraph. Faulkner has to earn that.","url":"https://www.gatorbaitmedia.com/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it","author":"Buddy Martin","firstPublishedDate":"2026-09-30T14:25:44Z","image":{"src":"https://static.wixstatic.com/media/ae876a_b8f5f91b591148208d23919fd45072e8~mv2.png/v1/fit/w_672,h_715,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”"}},{"title":"Thoughts of the Day: September 30, 2026","excerpt":"Why are these guys smiling? (UAA Photo) A few thoughts to jump start your Wednesday morning: To paraphrase Steve Spurrier, God smiled on the Gators Tuesday. First, Alachua County judge George Wright issued a temporary restraining order against the NCAA that will allow Denzel Aberdeen a fifth year of eligibility. While ","url":"https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-30-2026","author":"Franz Beard","firstPublishedDate":"2026-09-30T13:48:39Z","image":{"src":"https://static.wixstatic.com/media/a99769_d6cc8efa8cfb4c0b8ad6ee7c8eb9768f~mv2.jpg/v1/fit/w_689,h_708,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Thoughts of the Day: September 30, 2026"}},{"title":"Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction","excerpt":"Denzel Aberdeen wins a temporary injunction allowing him to play for Florida in 2026–27. What the ruling means for the Gators and their backcourt.","url":"https://www.gatorbaitmedia.com/post/denzel-aberdeen-florida-temporary-injunction-2026","author":"GatorBaitMagazineStaff","firstPublishedDate":"2026-09-29T20:19:43Z","image":{"src":"https://static.wixstatic.com/media/d3cfa5_cefbed4d0c2a46988a3929e5d0b85807~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction"}},{"title":"Thoughts of the Day: September 29, 2026","excerpt":"O-line coach Phil Trautwein and family celebrate the win over Ole Miss (Photo by Chris Spears) A few thoughts to jump start your Tuesday morning: Driving home on I-75 from Jon Sumrall’s Monday morning press conference in Gainesville, cruise control set at 77 to keep steady with the flow of traffic, I’m listening to the","url":"https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-29-2026","author":"Franz Beard","firstPublishedDate":"2026-09-29T11:36:39Z","image":{"src":"https://static.wixstatic.com/media/16b519_c0cae41f73f142ec8c32a0599593365f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Thoughts of the Day: September 29, 2026"}},{"title":"Senate Passes Protect College Sports Act 77–22","excerpt":"The Senate passed the Protect College Sports Act 77–22 Monday night. What the proposal could mean for Florida, and why it is not law yet.","url":"https://www.gatorbaitmedia.com/post/senate-passes-protect-college-sports-act-florida","author":"GatorBait Staff","firstPublishedDate":"2026-09-29T11:31:17Z","image":{"src":"https://static.wixstatic.com/media/ae876a_92f9918e12f941e3a9621a000db7c07d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Senate Passes Protect College Sports Act 77–22"}},{"title":"Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'","excerpt":"Jon Sumrall wants Gator Nation to put down the poll: Florida has lost three of its last four trips to Columbia, and the coach with the raspy voice is making his team pay the toll on \"Bloody Tuesday.\"","url":"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time","author":"Buddy Martin","firstPublishedDate":"2026-09-28T23:24:43Z","image":{"src":"https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'"}},{"title":"Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout","excerpt":"Jadan Baugh earned his first SEC Offensive Player of the Week award, while London Montgomery and Bryce Lovett received their first SEC weekly honors after Florida’s 52-28 win over No. 4 Ole Miss.","url":"https://www.gatorbaitmedia.com/post/honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-awards-after-ole-miss-rout","author":"Brenden Martin","firstPublishedDate":"2026-09-28T20:56:09Z","image":{"src":"https://static.wixstatic.com/media/d3cfa5_52f12f29b57540dcb22edd0fa545ceb1~mv2.jpg/v1/fit/w_800,h_500,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout"}},{"title":"Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri","excerpt":"Jon Sumrall told Florida he doesn't want to hear another word about Ole Miss, and he had good news on Vernell Brown III before Saturday's trip to No. 25 Missouri.","url":"https://www.gatorbaitmedia.com/post/pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloody-tuesday-before-missouri","author":"Brenden Martin","firstPublishedDate":"2026-09-28T20:54:04Z","image":{"src":"https://static.wixstatic.com/media/d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri"}},{"title":"Who are these guys? Trautwein's troops in the trenches are difference makers","excerpt":"The guys up front helped Jadan Baugh score another TD against Ole Miss (Photo by Chris Spears) “Who are these guys?” – Paul Newman as Butch Cassidy in the classic film “Butch Cassidy and the Sundance Kid” We could be asking the same question of the Florida offensive line. In their preseason analysis, the fine folks at ","url":"https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers","author":"Franz Beard","firstPublishedDate":"2026-09-28T11:49:14Z","image":{"src":"https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Who are these guys? Trautwein's troops in the trenches are difference makers"}},{"title":"How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again","excerpt":"Eddie Gilley breaks down the five plays that decided Florida's 52-28 rout of No. 4 Ole Miss, from a blown fourth-down gamble to DJ Coleman's game-sealing interception.","url":"https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again","author":"Eddie Gilley","firstPublishedDate":"2026-09-28T11:48:00Z","image":{"src":"https://static.wixstatic.com/media/16b519_5d3a0f33184d44d2b887fe9581207f72~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again"}},{"title":"Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28","excerpt":"A second batch of Chris Spears’ work from The Swamp as the Gators put away Ole Miss 52-28 — pregame, the pass rush, the sideline and the celebration after. Photos by Chris Spears, GatorBait Media The Swamp glows before Florida's SEC showdown with Ole Miss. Photo by Chris Spears, GatorBait Media Florida's offense goes t","url":"https://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28","author":"Brenden Martin","firstPublishedDate":"2026-09-28T02:06:47Z","image":{"src":"https://static.wixstatic.com/media/16b519_9e6aad749e564c33ab69f6e7e19e9560~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28"}},{"title":"Chris Spears' Best Shots: Florida 52, Ole Miss 28","excerpt":"Chris Spears had the sideline for all of it. His best photos from The Swamp as Florida ran over No. 4 Ole Miss, 52-28.","url":"https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss","author":"Brenden Martin","firstPublishedDate":"2026-09-28T01:49:57Z","image":{"src":"https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Chris Spears' Best Shots: Florida 52, Ole Miss 28"}},{"title":"BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III","excerpt":"An MRI confirmed a Grade 1 PCL sprain, the mildest grade, in Vernell Brown III’s knee, sources told GatorBait. He may not miss any games.","url":"https://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators","author":"Brenden Martin","firstPublishedDate":"2026-09-27T22:04:07Z","image":{"src":"https://static.wixstatic.com/media/d3cfa5_7acdfecf6f3d45289bbdcc93f3ca970c~mv2.jpg/v1/fit/w_800,h_494,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III"}},{"title":"Show-Me State of Mind: A First Look at No. 25 Missouri","excerpt":"No. 8 Florida’s reward for routing Ole Miss is a trip to No. 25 Missouri, which let a fourth-quarter lead get away at Mississippi State.","url":"https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind","author":"Brenden Martin","firstPublishedDate":"2026-09-27T21:53:54Z","image":{"src":"https://static.wixstatic.com/media/d3cfa5_a67ff355ad6a4d668106c2befa41b208~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Show-Me State of Mind: A First Look at No. 25 Missouri"}},{"title":"10 Thoughts From the Sidelines: Florida 52, Ole Miss 28","excerpt":"Photographer Chris Spears had the best seat in The Swamp. Ten things the sideline told him about the Florida team that ran over No. 4 Ole Miss.","url":"https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss","author":"Chris Spears","firstPublishedDate":"2026-09-27T18:39:36Z","image":{"src":"https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for 10 Thoughts From the Sidelines: Florida 52, Ole Miss 28"}},{"title":"Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls","excerpt":"Florida’s 52-28 win over No. 4 Ole Miss sent the Gators up 13 spots in the AP Top 25 and 14 in the Coaches Poll. They’re No. 8 in both.","url":"https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls","author":"Brenden Martin","firstPublishedDate":"2026-09-27T18:20:18Z","image":{"src":"https://static.wixstatic.com/media/d3cfa5_1043f4b7772245baa5aed5f80c21669a~mv2.png/v1/fit/w_1000,h_720,al_c,q_80/file.png","width":1600,"height":900,"alt":"Featured image for Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls"}}]};
-  /* Runtime for GatorBait Front Page 2026. CSS and BUNDLE are injected by build-front-page.mjs.
-   * Contract kept from the previous renderer: one root #gbm-live.gbm-gazette.gbm-sports-home,
-   * window.__GBM_GAZETTE_RUNTIME__ {sync, ready}, __GBM_GAZETTE_BOOT__.ready/fallback, the
-   * gbm:gazette-ready event, the 15-minute session feed cache and paint-once (no jump). */
-  var VERSION = 'front-page-2026.1';
-  var PAGES = 'https://presidente49.github.io/gatorbait-media-redesign/';
-  var RSS = '/blog-feed.xml';
-  var TZ = 'America/New_York';
-  var TSP = 'https://cdn.jsdelivr.net/npm/@tsparticles/slim@3.9.1/tsparticles.slim.bundle.min.js';
-  var FONTS = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap';
-  var DAY = 86400000;
-  var doc = document.documentElement;
-  var L = BUNDLE.links;
-  function home() { return (location.pathname.replace(/\/+$/, '') || '/') === '/'; }
-  if (window.__GBM_GAZETTE_RUNTIME__) { window.__GBM_GAZETTE_RUNTIME__.sync(); return; }
-  var loading = false, tickTimer = 0, particles = null, io = null;
-
-  function now() { var t = Number(window.__GBM_FP_NOW__); return Number.isFinite(t) && t > 0 ? t : Date.now(); }
-  function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function reduced() { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (_) { return false; } }
-  function prefersDark() { try { return matchMedia('(prefers-color-scheme: dark)').matches; } catch (_) { return false; } }
-  // Links: our own site paths, our YouTube/Facebook, the store. Nothing else renders.
-  function safeUrl(value, kind) {
-    try {
-      var u = new URL(String(value), 'https://www.gatorbaitmedia.com');
-      if (u.protocol !== 'https:' || u.username || u.password) return '';
-      if (kind === 'image') return u.hostname === 'static.wixstatic.com' || u.hostname === 'i.ytimg.com' ? u.href : '';
-      if (kind === 'post') return /^(www\.)?gatorbaitmedia\.com$/.test(u.hostname) && u.pathname.indexOf('/post/') === 0 ? u.href : '';
-      if (/^(www\.)?gatorbaitmedia\.com$/.test(u.hostname)) return u.pathname + u.search + u.hash;
-      if (/^(www\.youtube\.com|www\.facebook\.com|gatorbait2026\.itemorder\.com)$/.test(u.hostname)) return u.href;
-      return '';
-    } catch (_) { return ''; }
-  }
-  function path(url) { try { return new URL(url, 'https://www.gatorbaitmedia.com').pathname; } catch (_) { return ''; } }
-
-  /* ---------- Time (America/New_York) ---------- */
-  var MONTHS = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
-  var WD = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
-  var WDS = ['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.'];
-  function et(ms) {
-    var o = {};
-    new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false })
-      .formatToParts(new Date(ms)).forEach(function (p) { o[p.type] = p.value; });
-    return { wd: WD[o.weekday], h: Number(o.hour) % 24, m: Number(o.minute), ymd: o.year + '-' + o.month + '-' + o.day, y: Number(o.year), mo: Number(o.month) - 1, d: Number(o.day) };
-  }
-  function ymdOf(v) { if (/^\d{4}-\d{2}-\d{2}$/.test(String(v || ''))) return String(v); var t = Date.parse(v); return Number.isFinite(t) ? et(t).ymd : ''; }
-  function clock(ms) { var e = et(ms), h = e.h % 12 || 12; return h + (e.m ? ':' + String(e.m).padStart(2, '0') : '') + (e.h < 12 ? ' a.m.' : ' p.m.'); }
-  function shortDate(ms) { var e = et(ms); return MONTHS[e.mo] + ' ' + e.d; }
-  function gameWhen(iso) { var t = Date.parse(iso); if (!Number.isFinite(t)) return ''; var e = et(t); return WDS[e.wd] + ', ' + MONTHS[e.mo] + ' ' + e.d + ' · ' + clock(t) + ' ET'; }
-  function ago(date) {
-    var mins = Math.max(0, Math.round((now() - date.getTime()) / 60000));
-    if (mins < 60) return mins <= 1 ? 'Now' : mins + 'm';
-    if (mins < 24 * 60) return Math.round(mins / 60) + 'h';
-    return shortDate(date.getTime());
-  }
-  function dateline() {
-    var d = new Date(now());
-    return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: TZ });
-  }
-
-  /* ---------- Stories ---------- */
-  function normalize(data) {
-    var seen = new Set(), t = now();
-    return (data && Array.isArray(data.posts) ? data.posts : []).map(function (p) {
-      var u = safeUrl(p.url, 'post'), date = new Date(p.firstPublishedDate);
-      if (!u || !p.title || !Number.isFinite(date.getTime()) || date.getTime() > t + DAY || seen.has(u)) return null;
-      if (/^LIVE NOW:/i.test(String(p.title)) && t - date.getTime() > 21600000) return null;
-      seen.add(u);
-      var raw = String(p.excerpt || '').replace(/\s+/g, ' ').trim(), cap = '', credit = '';
-      // Franz-style excerpts open with the photo caption: "Caption (Photo by Chris Spears) Story..."
-      var m = raw.match(/^(.{8,220}?)\s*\(((?:UAA )?Photo(?: by)?[^)]{0,60}|[^)]{0,40} photo)\)\s*(.*)$/i);
-      if (m) { cap = m[1]; credit = /spears/i.test(m[2]) ? 'Photo by Chris Spears, GatorBait Media' : m[2].replace(/^photo:?\s*/i, 'Photo: '); raw = m[3]; }
-      var image = safeUrl(p.image && p.image.src, 'image');
-      var key = (image.match(/media\/([0-9a-f]+_[0-9a-f]+)/) || [])[1] || '';
-      if (BUNDLE.credits[key]) credit = BUNDLE.credits[key];
-      return { title: String(p.title).trim(), url: u, path: path(u), author: String(p.author || 'GatorBait Staff'), date: date, excerpt: raw,
-        cap: cap, credit: credit, image: image, key: key, alt: String(p.image && p.image.alt || p.title), cover: (BUNDLE.covers || []).indexOf(key) >= 0,
-        portrait: !!(p.image && Number(p.image.width) > 0 && Number(p.image.height) > Number(p.image.width)) };
-    }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).slice(0, 30);
-  }
-  function isSpears(p) { return /chris spears/i.test(p.author) || /^chris spears/i.test(p.title); }
-  function byColumnist(p, name) { return name === 'Chris Spears' ? isSpears(p) : p.author.toLowerCase().indexOf(name.toLowerCase()) >= 0; }
-
-  // Home Code lead rule: breaking pin > timed pin (unless a newer Buddy piece) > newest Buddy <= 7 days > newest.
-  function pickLead(posts) {
-    var t = now(), pins = {}, extra = window.__GBM_HOME_PINS__;
-    ['breaking', 'timed'].forEach(function (k) { pins[k] = extra && extra.hasOwnProperty(k) ? extra[k] : BUNDLE.pins[k]; });
-    function find(pin) {
-      if (!pin || !pin.path) return null;
-      if (pin.until && !(t < Date.parse(pin.until))) return null;
-      return posts.find(function (p) { return p.path.indexOf(pin.path) === 0; }) || null;
-    }
-    var breaking = find(pins.breaking);
-    if (breaking) return { post: breaking, why: 'breaking' };
-    var buddy = posts.find(function (p) { return /buddy martin/i.test(p.author) && t - p.date.getTime() < 7 * DAY; });
-    var timed = find(pins.timed);
-    if (timed && !(buddy && buddy.date > timed.date)) return { post: timed, why: 'pin' };
-    if (buddy) return { post: buddy, why: 'buddy' };
-    return { post: posts[0], why: 'newest' };
-  }
-
-  /* ---------- Scoreboard feed (sports-live/scoreboard.json, contract in README "Scoreboard feed") ----------
-   * { updatedAt, season, team:{name,rank,record,conf},
-   *   last:{opponent,opponentRank,home,date,status,score:{fla,opp},quarters:{fla:[],opp:[]}|null,venue,recapUrl,galleryUrl}|null,
-   *   next:{opponent,opponentRank,home,kickoffIso,tv,venue,previewUrl}|null,
-   *   schedule:[{date,opponent,opponentRank,home,status,score|null,tv,storyUrl}],
-   *   standings:[{team,confRecord,overall}], live:null|{clock,period,score:{fla,opp},possession,lastPlay} }
-   * Every field is validated on its own; anything missing or malformed keeps the bundled fact. */
-  function num(v) { return typeof v === 'number' && Number.isFinite(v) ? v : null; }
-  function str(v, max) { return typeof v === 'string' && v.trim() ? v.trim().slice(0, max || 80) : null; }
-  function arr(v) { return Array.isArray(v) && v.length <= 8 && v.every(function (x) { return num(x) !== null; }) ? v.slice() : null; }
-  function mergeGame(base, g, kind) {
-    var out = Object.assign({}, base);
-    if (!g || typeof g !== 'object') return out;
-    ['opponent', 'opponentAbbr', 'venue', 'tv'].forEach(function (k) { var s = str(g[k], 90); if (s) out[k] = s; });
-    ['recapUrl', 'previewUrl', 'galleryUrl'].forEach(function (k) { var u = safeUrl(g[k]); if (u && u.charAt(0) === '/') out[k] = u; });
-    if (g.hasOwnProperty('opponentRank') && (num(g.opponentRank) !== null || g.opponentRank === null)) out.opponentRank = num(g.opponentRank);
-    if (str(g.opponentRecord, 12)) out.opponentRecord = str(g.opponentRecord, 12);
-    if (typeof g.home === 'boolean') out.home = g.home;
-    if (kind === 'last') {
-      if (g.score && num(g.score.fla) !== null && num(g.score.opp) !== null) out.score = { fla: g.score.fla, opp: g.score.opp };
-      if (g.quarters && arr(g.quarters.fla) && arr(g.quarters.opp)) out.quarters = { fla: arr(g.quarters.fla), opp: arr(g.quarters.opp) };
-      else if (g.hasOwnProperty('quarters')) out.quarters = null;
-      if (g.stats && typeof g.stats === 'object') { var s = {}; ['totalYards', 'rushYards', 'firstDowns', 'attendance'].forEach(function (k) { if (num(g.stats[k]) !== null) s[k] = g.stats[k]; }); out.stats = s; }
-      if (ymdOf(g.date)) out.date = g.date;
-    } else {
-      if (Number.isFinite(Date.parse(g.kickoffIso))) out.kickoffIso = g.kickoffIso;
-      if (/^\d{6,12}$/.test(String(g.eventId || ''))) out.eventId = String(g.eventId); // ESPN event id: keys Make the Call
-    }
-    return out;
-  }
-  // Season rows keep the feed's field names (opponentRank, storyUrl) so the band and the hub read one shape; `rank` stays as an alias.
-  function normSchedule(list) {
-    return Array.isArray(list) ? list.slice(0, 20).map(function (g) {
-      if (!g || !str(g.opponent, 40) || !Number.isFinite(Date.parse(g.date))) return null;
-      var rank = num(g.opponentRank);
-      return { opponent: str(g.opponent, 40), opponentRank: rank, rank: rank, home: g.home === true, date: g.date, status: str(g.status, 16) || '', tv: str(g.tv, 24) || '',
-        score: g.score && num(g.score.fla) !== null && num(g.score.opp) !== null ? { fla: g.score.fla, opp: g.score.opp } : null, storyUrl: str(g.storyUrl, 300) || '' };
-    }).filter(Boolean) : [];
-  }
-  function readScoreboard(raw) {
-    var fb = BUNDLE.scoreboard, sb = { team: Object.assign({}, fb.team), last: Object.assign({}, fb.last), next: Object.assign({}, fb.next), schedule: normSchedule(fb.schedule), standings: [], live: null, source: 'bundled' };
-    if (!raw || typeof raw !== 'object' || !raw.team) return sb;
-    sb.source = 'feed';
-    if (raw.team.hasOwnProperty('rank') && (num(raw.team.rank) !== null || raw.team.rank === null)) sb.team.rank = num(raw.team.rank);
-    if (str(raw.team.record, 12)) sb.team.record = str(raw.team.record, 12);
-    // A different opponent replaces the whole game, so old quarters/stats never mix with a new score.
-    if (raw.last === null) sb.last = null;
-    else if (raw.last && str(raw.last.opponent) && raw.last.opponent !== fb.last.opponent) sb.last = mergeGame({ opponent: '', home: true }, raw.last, 'last');
-    else sb.last = mergeGame(sb.last, raw.last, 'last');
-    if (raw.next === null) sb.next = null;
-    else if (raw.next && str(raw.next.opponent) && raw.next.opponent !== fb.next.opponent) sb.next = mergeGame({ opponent: '', home: false }, raw.next, 'next');
-    else sb.next = mergeGame(sb.next, raw.next, 'next');
-    if (sb.next && !Number.isFinite(Date.parse(sb.next.kickoffIso))) sb.next = null;
-    if (Array.isArray(raw.standings)) sb.standings = raw.standings.slice(0, 16).map(function (r) {
-      return r && str(r.team, 40) ? { team: str(r.team, 40), conf: str(r.confRecord, 8) || str(r.conf, 8) || '', overall: str(r.overall, 8) || '' } : null; }).filter(Boolean);
-    if (Array.isArray(raw.schedule) && normSchedule(raw.schedule).length) sb.schedule = normSchedule(raw.schedule);
-    var lv = raw.live;
-    if (lv && typeof lv === 'object' && lv.score && num(lv.score.fla) !== null && num(lv.score.opp) !== null) {
-      var clk = str(lv.clock, 16) || '', per = num(lv.period);
-      sb.live = { status: /half/i.test(clk) ? 'half' : 'live', clock: (per ? (per > 4 ? 'OT' : 'Q' + per) + (clk ? ' ' : '') : '') + clk, score: { fla: lv.score.fla, opp: lv.score.opp }, quarters: null,
-        drive: (lv.possession === 'fla' ? 'Florida ball. ' : lv.possession === 'opp' ? 'Opponent ball. ' : '') + (str(lv.lastPlay, 200) || ''), updates: [] };
-    }
-    if (str(raw.updatedAt, 40)) sb.updatedAt = raw.updatedAt;
-    return sb;
-  }
-  function abbr(name, given) { return given || ({ Florida: 'FLA', 'Ole Miss': 'MISS', Missouri: 'MIZ', Georgia: 'UGA', Tennessee: 'TENN', LSU: 'LSU', Kentucky: 'UK' })[name] || String(name || '').slice(0, 4).toUpperCase(); }
-  function ranked(rank, name) { return (rank ? 'No. ' + rank + ' ' : '') + name; }
-
-  // Game state for the score bug and the Saturday stadium board. Desk data (window.__GBM_GAMEDAY__) wins.
-  function gameState(sb) {
-    var t = now(), gd = window.__GBM_GAMEDAY__, n = sb.next, l = sb.last;
-    if (gd && gd.away && gd.home && !(t > Date.parse(gd.until)) && Number.isFinite(Date.parse(gd.kickoff))) {
-      var k = Date.parse(gd.kickoff), phase = gd.status === 'final' ? 'final' : t < k ? 'pre' : gd.status === 'half' ? 'half' : 'live';
-      function side(s) { return { name: String(s.name || ''), abbr: abbr(s.name), rank: num(s.rank), record: str(s.record, 12) || '', score: num(s.score), q: arr(s.quarters) || [] }; }
-      return { src: 'desk', phase: phase, kickoff: k, clock: str(gd.clock, 24) || '', away: side(gd.away), home: side(gd.home), when: str(gd.when, 90) || gameWhen(gd.kickoff),
-        venue: str(gd.venue, 90) || '', drive: str(gd.drive, 160) || (Array.isArray(gd.ld) ? gd.ld.map(String).join(' · ').slice(0, 200) : ''),
-        updates: (gd.updates || []).slice(0, 4).map(function (u) { return [String(u[0] || ''), String(u[1] || '')]; }),
-        links: (gd.links || []).filter(function (x) { return x && /^\/post\//.test(x[1]); }).slice(0, 4), headline: str(gd.headline, 120) || '' };
-    }
-    var fla = { name: 'Florida', abbr: 'FLA', rank: sb.team.rank, record: sb.team.record };
-    if (n && Number.isFinite(Date.parse(n.kickoffIso))) {
-      var kk = Date.parse(n.kickoffIso), opp = { name: n.opponent, abbr: abbr(n.opponent, n.opponentAbbr), rank: n.opponentRank, record: n.opponentRecord || '' };
-      var live = sb.live, ph = live ? live.status : t < kk ? 'pre' : 'live';
-      if (live || t < kk + 5 * 3600000) {
-        var fq = live && live.quarters ? live.quarters.fla : [], oq = live && live.quarters ? live.quarters.opp : [];
-        var F = Object.assign({}, fla, { score: live ? live.score.fla : null, q: fq }), O = Object.assign({}, opp, { score: live ? live.score.opp : null, q: oq });
-        return { src: 'scoreboard', phase: ph, kickoff: kk, clock: live ? live.clock : '', away: n.home ? O : F, home: n.home ? F : O, when: gameWhen(n.kickoffIso) + (n.tv ? ' · ' + n.tv : ''),
-          venue: n.venue || '', drive: live ? live.drive : '', updates: live ? live.updates : [], links: n.previewUrl ? [['Preview', n.previewUrl]] : [], headline: '' };
-      }
-    }
-    if (l && l.score && ymdOf(l.date) === et(t).ymd) {
-      var o2 = { name: l.opponent, abbr: abbr(l.opponent, l.opponentAbbr), rank: l.opponentRank, record: l.opponentRecord || '', score: l.score.opp, q: l.quarters ? l.quarters.opp : [] };
-      var f2 = Object.assign({}, fla, { score: l.score.fla, q: l.quarters ? l.quarters.fla : [] });
-      return { src: 'scoreboard', phase: 'final', kickoff: 0, clock: '', away: l.home ? o2 : f2, home: l.home ? f2 : o2, when: '', venue: l.venue || '', drive: '', updates: [], links: l.recapUrl ? [['Recap', l.recapUrl]] : [], headline: '' };
-    }
-    return null;
-  }
-  function gameToday(sb) {
-    var today = et(now()).ymd, gd = window.__GBM_GAMEDAY__;
-    return [sb.next && sb.next.kickoffIso, sb.last && sb.last.date, gd && gd.kickoff].some(function (d) { return d && ymdOf(d) === today; });
-  }
-  function modes(sb) {
-    var q = ''; try { q = new URLSearchParams(location.search).get('gbm_fp') || ''; } catch (_) {}
-    var e = et(now()), gameday = q === 'gameday' || (q !== 'day' && q !== 'night' && e.wd === 6 && gameToday(sb));
-    var timeNight = e.h >= 19 || e.h < 6 || (gameday && e.h >= 17);
-    // Brenden, Sept. 29: Swamp Night is the everyday look. `look: "swamp-night"` in the config keeps
-    // the night palette and embers on all day; ?gbm_fp=day still shows the daytime look for QA.
-    var always = BUNDLE.look === 'swamp-night';
-    var night = q === 'night' || (q !== 'day' && (always || timeNight || prefersDark()));
-    return { gameday: gameday, night: night, embers: night && (q === 'night' || always || timeNight) };
-  }
-
-  /* ---------- Markup helpers ---------- */
-  function link(href, content, cls, extra) { return href ? '<a' + (cls ? ' class="' + cls + '"' : '') + ' href="' + esc(href) + '"' + (extra || '') + '>' + content + '</a>' : '<span' + (cls ? ' class="' + cls + '"' : '') + '>' + content + '</span>'; }
-  function img(src, alt, eager, w, h) { return src ? '<img src="' + esc(src) + '" alt="' + esc(alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + ' width="' + (w || 1000) + '" height="' + (h || 667) + '">' : ''; }
-  function by(p) { return '<p class="fp-meta">' + esc(p.author) + ' · ' + esc(shortDate(p.date.getTime())) + '</p>'; }
-  function kicker(p, why) {
-    if (why === 'breaking') return 'Breaking';
-    if (/buddy martin/i.test(p.author)) return 'The Column · Buddy Martin';
-    if (isSpears(p)) return 'Photographs · Chris Spears';
-    return p.author && !/staff/i.test(p.author) ? p.author : 'Top story';
-  }
-  // Long headlines split at a sentence boundary: the first sentences lead, the rest becomes the dek.
-  function splitTitle(title) {
-    var parts = title.match(/[^.!?]+[.!?]+['’"”]?\s*|[^.!?]+$/g) || [title], head = '';
-    while (parts.length && (head + parts[0]).trim().length <= 56) head += parts.shift();
-    if (!head.trim() || !parts.length) return { h: title, dek: '' };
-    return { h: head.trim(), dek: parts.join('').trim() };
-  }
-  function words(text) { return esc(text).split(/\s+/).map(function (w, i) { return '<span class="fp-w" style="--i:' + i + '">' + w + '</span>'; }).join(' '); }
-  function cd(iso) { return '<span class="fp-cd" data-fp-count="' + esc(iso) + '" aria-label="Countdown to kickoff"></span>'; }
-  function fmtNum(n) { return Number(n).toLocaleString('en-US'); }
-
-  /* ---------- Zones ---------- */
-  function tickerHtml(posts, sb, gs) {
-    var items = [];
-    if (gs && gs.phase !== 'pre') items.push('<li><b>' + (gs.phase === 'final' ? 'Final' : 'Live') + '</b>' + esc(gs.away.name + ' ' + (gs.away.score == null ? '' : gs.away.score) + ', ' + gs.home.name + ' ' + (gs.home.score == null ? '' : gs.home.score)) + '</li>');
-    else if (sb.last && sb.last.score) items.push('<li><b>Final</b>' + link(sb.last.recapUrl, esc((sb.last.score.fla > sb.last.score.opp ? 'Florida ' + sb.last.score.fla + ', ' + sb.last.opponent + ' ' + sb.last.score.opp : sb.last.opponent + ' ' + sb.last.score.opp + ', Florida ' + sb.last.score.fla))) + '</li>');
-    if (gs) gs.updates.slice(0, 2).forEach(function (u) { items.push('<li><b>' + esc(u[0]) + '</b>' + esc(u[1]) + '</li>'); });
-    if (sb.next) items.push('<li><b>Next</b>' + link(sb.next.previewUrl, esc(ranked(sb.team.rank, 'Florida') + (sb.next.home ? ' vs. ' : ' at ') + ranked(sb.next.opponentRank, sb.next.opponent) + ' · ' + gameWhen(sb.next.kickoffIso) + (sb.next.tv ? ' · ' + sb.next.tv : ''))) + '</li>');
-    posts.slice(0, 8).forEach(function (p) { items.push('<li><b>' + esc(ago(p.date)) + '</b>' + link(p.url, esc(p.title)) + '</li>'); });
-    var list = items.join('');
-    return '<div class="fp-ticker" role="region" aria-label="Latest headlines and scores"><span class="fp-tk-tag">Latest</span><div class="fp-tk-view"><div class="fp-tk-track" style="--fp-tk-dur:' + Math.max(40, items.length * 7) + 's"><ul class="fp-tk-list">' + list + '</ul><ul class="fp-tk-list fp-tk-dup" aria-hidden="true">' + list.replace(/<a /g, '<a tabindex="-1" ') + '</ul></div></div></div>';
-  }
-  function mastHtml() {
-    return '<header class="fp-mast"><div class="fp-wrap"><p class="fp-date"><span>' + esc(dateline()) + '</span><span>Gainesville, Fla.</span></p>' +
-      '<a class="fp-wordmark" href="/" aria-label="GatorBait Media home">GatorBait<small>Media</small></a>' +
-      '<div class="fp-mast-right"><a class="fp-signin" href="' + esc(L.signin) + '">Sign in</a><a class="fp-btn" href="' + esc(L.subscribe) + '"><span class="fp-cta-long">Join All Access</span><span class="fp-cta-short">Join</span> <span aria-hidden="true">→</span></a></div></div></header>';
-  }
-  function bugHtml(sb, gs) {
-    var lastA = '', nextA = '';
-    if (gs && gs.phase !== 'pre') {
-      lastA = '<a class="fp-bug-last" href="' + esc((gs.links[0] && gs.links[0][1]) || L.schedule) + '"><span class="fp-bug-tag" data-state="' + (gs.phase === 'final' ? 'final' : 'live') + '">' + (gs.phase === 'final' ? 'Final' : gs.phase === 'half' ? 'Half' : 'Live') + '</span>' +
-        team(gs.away) + team(gs.home) + '</a>';
-    } else if (sb.last && sb.last.score) {
-      var w = sb.last.score.fla >= sb.last.score.opp;
-      lastA = '<a class="fp-bug-last" href="' + esc(sb.last.recapUrl || L.schedule) + '" aria-label="Final: Florida ' + sb.last.score.fla + ', ' + esc(sb.last.opponent) + ' ' + sb.last.score.opp + '"><span class="fp-bug-tag">Final</span>' +
-        '<span class="fp-bug-team' + (w ? '' : ' fp-lose') + '">FLA <strong class="fp-num">' + sb.last.score.fla + '</strong></span><span class="fp-bug-team' + (w ? ' fp-lose' : '') + '">' + esc(abbr(sb.last.opponent, sb.last.opponentAbbr)) + ' <strong class="fp-num">' + sb.last.score.opp + '</strong></span></a>';
-    }
-    if (sb.next && (!gs || gs.phase === 'pre')) {
-      nextA = '<a class="fp-bug-next" href="' + esc(sb.next.previewUrl || L.schedule) + '"><span class="fp-bug-tag">Next</span><span class="fp-bug-match">' + (sb.next.home ? 'vs. ' : 'at ') + esc(ranked(sb.next.opponentRank, abbr(sb.next.opponent, sb.next.opponentAbbr))) +
-        '<small>' + esc(gameWhen(sb.next.kickoffIso).replace(/^(\w+\.), \w+\.? \d+ · /, '$1 ') + (sb.next.tv ? ' · ' + sb.next.tv : '')) + '</small></span>' + cd(sb.next.kickoffIso) + '</a>';
-    }
-    return '<div class="fp-bug" aria-label="Scoreboard">' + lastA + nextA + '</div>';
-    function team(s) { return '<span class="fp-bug-team">' + esc(s.abbr) + ' <strong class="fp-num">' + (s.score == null ? '–' : esc(s.score)) + '</strong></span>'; }
-  }
-  function navHtml(sb, gs) {
-    return '<nav class="fp-nav" aria-label="GatorBait sections"><div class="fp-wrap"><div class="fp-links"><a href="/" aria-current="page">Front Page</a><a href="' + esc(L.latest) + '">Latest</a><a href="' + esc(L.magazine) + '">Magazine</a><a href="#fp-columnists">Columnists</a><a href="' + esc(L.show) + '">TV &amp; Podcasts</a><a href="' + esc(L.schedule) + '">Scores</a><a class="fp-store" href="' + esc(L.store) + '" target="_blank" rel="noopener" aria-label="Shop GatorBait gear (opens in a new tab)">Store <span aria-hidden="true">↗</span></a></div>' + bugHtml(sb, gs) + '</div></nav>';
-  }
-  function lineTable(gs, cls) {
-    var n = Math.max(4, gs.away.q.length, gs.home.q.length), head = '', i;
-    for (i = 0; i < n; i++) head += '<th scope="col">' + (i < 4 ? i + 1 : 'OT' + (i > 4 ? i - 3 : '')) + '</th>';
-    function row(s) {
-      var cells = ''; for (var j = 0; j < n; j++) cells += '<td>' + (s.q[j] == null ? '–' : esc(s.q[j])) + '</td>';
-      return '<tr><th scope="row" class="fp-lt">' + esc(cls === 'fp-mini' ? s.abbr : s.name) + (cls === 'fp-line' ? '<small>' + esc((s.rank ? 'No. ' + s.rank + ' · ' : '') + s.record) + '</small>' : '') + '</th>' + cells + '<td class="fp-tot fp-num">' + (s.score == null ? '–' : esc(s.score)) + '</td></tr>';
-    }
-    return '<table class="' + cls + '"><thead><tr><th class="fp-lt" scope="col"><span class="fp-sr">Team</span></th>' + head + '<th scope="col">T</th></tr></thead><tbody>' + row(gs.away) + row(gs.home) + '</tbody></table>';
-  }
-  function boardHtml(gs) {
-    if (!gs) return '';
-    var status = gs.phase === 'pre' ? cd(new Date(gs.kickoff).toISOString()) : esc(gs.phase === 'final' ? 'Final' : gs.phase === 'half' ? 'Halftime' : 'Live' + (gs.clock ? ' · ' + gs.clock : ''));
-    return '<section class="fp-board" aria-label="Game day scoreboard"><div class="fp-wrap"><div class="fp-board-top"><span class="fp-pill">Game Day</span><span>' + esc(gs.when) + '</span>' + (gs.venue ? '<span>' + esc(gs.venue) + '</span>' : '') +
-      '<span class="fp-status" data-state="' + (gs.phase === 'pre' ? 'pre' : gs.phase === 'final' ? 'final' : 'live') + '">' + (gs.phase === 'pre' ? 'Kickoff in ' : '') + status + '</span></div>' +
-      lineTable(gs, 'fp-line') +
-      '<div class="fp-board-side">' + (gs.drive ? '<p class="fp-drive"><b>Drive</b>' + esc(gs.drive) + '</p>' : gs.headline ? '<p class="fp-drive"><b>Up next</b>' + esc(gs.headline) + '</p>' : '') +
-      (gs.updates.length ? '<ul class="fp-board-latest" aria-label="Latest game updates">' + gs.updates.map(function (u) { return '<li><b>' + esc(u[0]) + '</b>' + esc(u[1]) + '</li>'; }).join('') + '</ul>' : '') + '</div>' +
-      (gs.links.length ? '<div class="fp-board-links">' + gs.links.map(function (l) { return '<a href="' + esc(l[1]) + '">' + esc(l[0]) + '</a>'; }).join('') + '</div>' : '') + '</div></section>';
-  }
-  function photoBlock(p, eager, cls) {
-    if (!p.image) return '';
-    return '<figure class="' + (cls || '') + '">' + link(p.url, img(p.image, p.alt, eager), 'fp-frame' + (p.portrait ? ' fp-portrait' : '') + (p.cover ? ' fp-cover' : ''), ' tabindex="-1" aria-hidden="true"') +
-      ((p.cap || p.credit) ? '<figcaption class="fp-cap"><span>' + esc(p.cap) + '</span>' + (p.credit ? '<b>' + esc(p.credit) + '</b>' : '') + '</figcaption>' : '') + '</figure>';
-  }
-  function leadHtml(lead, why) {
-    var s = splitTitle(lead.title);
-    return '<section class="fp-lead" aria-label="Lead story"><div id="fp-embers" aria-hidden="true"></div><div class="fp-night-glow" aria-hidden="true"></div>' + photoBlock(lead, true, 'fp-lead-photo') +
-      '<div class="fp-lead-copy"><p class="fp-kick">' + esc(kicker(lead, why)) + '</p><h1 data-len="' + (s.h.length > 60 ? 'long' : 'short') + '">' + link(lead.url, words(s.h), 'fp-hl') + '</h1>' +
-      (s.dek ? '<p class="fp-dek">' + esc(s.dek) + '</p>' : '') + '<p class="fp-by">By ' + esc(lead.author) + '<span>' + esc(shortDate(lead.date.getTime())) + '</span></p>' +
-      (lead.excerpt ? '<p class="fp-body">' + esc(lead.excerpt) + '</p>' : '') + '<a class="fp-more" href="' + esc(lead.url) + '">Continue reading <span aria-hidden="true">&nbsp;→</span></a></div></section>';
-  }
-  function quoteHtml(lead, posts) {
-    var q = null, t = now();
-    Object.keys(BUNDLE.quotes).some(function (k) { if (lead.path.indexOf(k) === 0) { q = BUNDLE.quotes[k]; return true; } return false; });
-    if (!q) posts.some(function (p) { return Object.keys(BUNDLE.quotes).some(function (k) { if (p.path.indexOf(k) === 0 && t - p.date.getTime() < 7 * DAY) { q = Object.assign({ url: p.url }, BUNDLE.quotes[k]); return true; } return false; }); });
-    if (!q) return '';
-    return '<figure class="fp-quote"><blockquote>' + esc(q.text) + '</blockquote><figcaption><cite><b>' + esc(q.who) + '</b>' + esc(q.context) + '</cite></figcaption></figure>';
-  }
-  function secondHtml(feature, list, cols) {
-    return '<section class="fp-second" aria-label="More top stories">' +
-      (feature ? '<article class="fp-feature">' + photoBlock(feature, false) + '<p class="fp-kick">' + esc(kicker(feature)) + '</p>' + link(feature.url, '<h2 class="fp-hl">' + esc(feature.title) + '</h2>') + (feature.excerpt ? '<p class="fp-ex">' + esc(feature.excerpt.slice(0, 220)) + (feature.excerpt.length > 220 ? '…' : '') + '</p>' : '') + by(feature) + '</article>' : '') +
-      '<ol class="fp-list" aria-label="Top stories">' + list.map(function (p) { return '<li>' + link(p.url, '<h3 class="fp-hl">' + esc(p.title) + '</h3>' + (p.excerpt ? '<p class="fp-ex">' + esc(p.excerpt.slice(0, 120)) + (p.excerpt.length > 120 ? '…' : '') + '</p>' : '') + by(p)) + '</li>'; }).join('') + '</ol>' +
-      '<aside class="fp-rail" id="fp-columnists" aria-label="Columnists"><h2>Columnists</h2><div class="fp-rail-cols">' + cols + '</div></aside></section>';
-  }
-  function columnistsHtml(posts) {
-    return BUNDLE.columnists.map(function (c) {
-      var p = posts.find(function (x) { return byColumnist(x, c.name); });
-      var page = safeUrl(c.href) || (p && p.url) || L.latest;
-      return '<div class="fp-col">' + link(page, esc(c.initials), 'fp-roundel', ' aria-hidden="true" tabindex="-1"') + link(page, esc(c.name), 'fp-col-name') +
-        (p ? link(p.url, esc(p.title), 'fp-col-story') : '<span class="fp-col-story">Latest columns</span>') + '</div>';
-    }).join('');
-  }
-  function showNext() {
-    var cfg = BUNDLE.show, t = now(), e = et(t), mins = e.h * 60 + e.m, start = cfg.hour * 60;
-    if (cfg.days.indexOf(e.wd) >= 0 && mins >= start && mins < start + cfg.minutes) return { live: true, label: 'Live now' };
-    for (var d = 0; d < 8; d++) {
-      var wd = (e.wd + d) % 7;
-      if (cfg.days.indexOf(wd) >= 0 && (d > 0 || mins < start)) return { live: false, label: (d === 0 ? 'Tonight' : d === 1 ? 'Tomorrow' : WDS[wd]) + ', ' + (cfg.hour % 12 || 12) + ' p.m. ET' };
-    }
-    return { live: false, label: '' };
-  }
-  /* ---------- The Road Ahead: season band under the lead ---------- */
-  function roadHtml(sb) {
-    var games = (sb.schedule || []).slice(0, 14);
-    if (games.length < 3) return '';
-    var W = 0, Ls = 0, nx = -1, fm = new Intl.DateTimeFormat('en-US', { timeZone: TZ, month: 'short', day: 'numeric' });
-    var cards = games.map(function (g, i) {
-      var fin = g.status === 'final' && g.score, win = fin && g.score.fla > g.score.opp;
-      if (fin) { if (win) W++; else Ls++; } else if (nx < 0) nx = i;
-      var top = '<div class="dt">' + esc(fm.format(new Date(g.date))) + ' · ' + (g.home ? 'Home' : 'Away') + '</div><div class="op">' + (g.opponentRank ? '<span class="rk">No. ' + g.opponentRank + '</span>' : '') + esc(g.opponent) + '</div>', body;
-      if (fin) body = '<div class="sc">' + (win ? 'W ' : 'L ') + g.score.fla + '–' + g.score.opp + '</div><div class="bar"><i data-w="' + Math.max(6, Math.min(100, Math.round((g.score.fla - g.score.opp) / 40 * 100))) + '"></i></div><div class="sub">' + esc(g.tv || 'Final') + '</div>';
-      else if (i === nx) body = '<div class="cd" data-k="' + esc(g.date) + '">…</div><div class="sub">to kickoff' + (g.tv ? ' · ' + esc(g.tv) : '') + '</div>';
-      else body = '<div class="sub" style="margin-top:auto">' + esc(g.tv || 'Kickoff TBA') + '</div>';
-      var cls = 'g' + (win ? ' w' : '') + (i === nx ? ' nx' : '') + (g.opponentRank && g.opponentRank <= 5 && !fin ? ' boss' : '');
-      var url = g.storyUrl ? safeUrl(g.storyUrl, 'post') : '';
-      return (url ? '<a href="' + esc(url) + '"' : '<div') + ' class="' + cls + '" role="listitem">' + top + body + (url ? '</a>' : '</div>');
-    }).join('');
-    var sig = games.map(function (g) { return g.date + ':' + g.status + ':' + (g.score ? g.score.fla + '-' + g.score.opp : ''); }).join('|');
-    return '<section id="gbm-road" aria-label="Florida season road" data-sig="' + esc(sig) + '"><div class="hd"><h2>The road <span>ahead</span></h2><div class="rec"><b>' + W + '–' + Ls + '</b>' + (sb.team && sb.team.season ? esc(sb.team.season) : '2026') + ' record</div></div><div class="track" id="gr-track" role="list"><div class="line"><i id="gr-line"></i></div>' + cards + '</div></section>';
-  }
-  function initRoad(root) {
-    var T = root.querySelector('#gr-track'); if (!T) return;
-    var L = T.querySelector('.line'), nodes = Array.prototype.slice.call(T.querySelectorAll('.g')), nxEl = T.querySelector('.g.nx');
-    function tick() {
-      var c = T.querySelector('.cd'); if (!c) return;
-      var ms = new Date(c.getAttribute('data-k')) - now(); if (ms <= 0) { c.textContent = 'Live'; return; }
-      c.textContent = Math.floor(ms / 864e5) + 'd ' + Math.floor(ms % 864e5 / 36e5) + 'h ' + Math.floor(ms % 36e5 / 6e4) + 'm';
-    }
-    tick(); if (root.__gbmRoadTick) clearInterval(root.__gbmRoadTick); root.__gbmRoadTick = setInterval(tick, 30000);
-    function run() {
-      var upto = nxEl || nodes[nodes.length - 1]; if (!upto) return;
-      var pad = parseFloat(getComputedStyle(T).paddingLeft) || 16;
-      // The rail spans the whole scroll width; the glow ends at the next game's dot (14px in, 13px wide).
-      L.style.right = 'auto'; L.style.width = (T.scrollWidth - 2 * pad) + 'px';
-      L.firstChild.style.width = Math.max(0, upto.offsetLeft + 20.5 - pad) + 'px';
-      T.querySelectorAll('.bar i').forEach(function (b) { b.style.width = b.getAttribute('data-w') + '%'; });
-      // Phones: keep the last result and the next game in view together; wider tracks stay at the start.
-      var prev = nxEl && nodes[nodes.indexOf(nxEl) - 1];
-      if (nxEl && nxEl.offsetLeft + nxEl.offsetWidth > T.clientWidth) T.scrollLeft = Math.max(0, (prev || nxEl).offsetLeft - pad);
-    }
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { run(); o.disconnect(); } }, { threshold: .25 }).observe(T); else run();
-  }
-
-  /* ---------- The Tunnel: game-day opener (Brenden, Sept. 30: "tunnel") ----------
-   * Renders all three states (countdown, live score, final) and shows one by data-phase, so the feed can
-   * move it from pre to live to final in place. Stories about the opponent ride below, never the lead. */
-  function tunnelHtml(gs, sb, posts, leadUrl) {
-    if (!gs || !gs.away || !gs.home) return '';
-    var phase = gs.phase === 'half' ? 'half' : gs.phase, opp = gs.away.name === 'Florida' ? gs.home : gs.away;
-    function team(s) { return '<span class="fp-tn-team"><small>' + esc([s.rank ? 'No. ' + s.rank : '', s.record || ''].filter(Boolean).join(' · ') || ' ') + '</small><b>' + esc(s.name) + '</b></span>'; }
-    var re = new RegExp(String(opp.name || '').replace(/[.*+?^${}()|[\]\\]/g, '\\  function hubHtml(latest, sb, posts, used) {'), 'i');
-    var about = posts.filter(function (p) { return p.url !== leadUrl && re.test(p.title + ' ' + (p.excerpt || '')); }).slice(0, 3);
-    var first = gs.links[0], primary = first ? [first[0], first[1]] : sb.next && sb.next.previewUrl ? ['Game preview', sb.next.previewUrl] : sb.last && sb.last.recapUrl && gs.phase === 'final' ? ['Read the recap', sb.last.recapUrl] : ['Scores & schedule', L.schedule];
-    var when = gs.when || '', score = '<div class="fp-tn-score"><b data-tn="away">' + (gs.away.score == null ? '0' : esc(gs.away.score)) + '</b><span>–</span><b data-tn="home">' + (gs.home.score == null ? '0' : esc(gs.home.score)) + '</b></div>';
-    return '<section class="fp-tunnel" data-phase="' + esc(phase) + '" aria-label="Game day: ' + esc(gs.away.name + ' at ' + gs.home.name) + '">' +
-      '<div class="fp-tn-scene" aria-hidden="true"><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><b class="fp-tn-light"></b><u class="fp-tn-floor"></u></div>' +
-      '<div class="fp-wrap fp-tn-wrap"><p class="fp-tn-top"><span class="fp-pill">Game day</span>' + (when ? '<span>' + esc(when) + '</span>' : '') + (gs.venue ? '<span>' + esc(gs.venue) + '</span>' : '') + '</p>' +
-      '<h2 class="fp-tn-match">' + team(gs.away) + '<span class="fp-tn-vs">at</span>' + team(gs.home) + '</h2>' +
-      '<div class="fp-tn-mid">' +
-        '<div class="fp-tn-pre"><p class="fp-tn-label">Kickoff in</p>' + (gs.kickoff ? cd(new Date(gs.kickoff).toISOString()) : '') + '</div>' +
-        '<div class="fp-tn-kick"><p>Out of the tunnel</p><p class="fp-tn-label">Kickoff' + (when ? ' · ' + esc(when.replace(/^[^·]*·\s*/, '')) : '') + '</p></div>' +
-        '<div class="fp-tn-live">' + score + '<p class="fp-tn-clock" data-tn="clock">' + esc(gs.phase === 'half' ? 'Halftime' : gs.clock || 'Live') + '</p>' + (gs.drive ? '<p class="fp-tn-drive"><b>Drive</b><span data-tn="drive">' + esc(gs.drive) + '</span></p>' : '<p class="fp-tn-drive" hidden><b>Drive</b><span data-tn="drive"></span></p>') + '</div>' +
-        '<div class="fp-tn-final">' + score.replace(/data-tn="(away|home)"/g, 'data-tn="$1-final"') + '<p class="fp-tn-clock">Final</p></div>' +
-      '</div>' +
-      '<div class="fp-tn-cta"><a class="fp-btn" href="' + esc(primary[1]) + '">' + esc(primary[0]) + '</a><a class="fp-btn fp-ghost" href="#gbm-road">The road ahead</a></div>' +
-      (about.length ? '<ul class="fp-tn-stories" aria-label="More on ' + esc(opp.name) + '">' + about.map(function (p) { return '<li><a href="' + esc(p.url) + '">' + esc(p.title) + '<span>' + esc(p.author + ' · ' + shortDate(p.date.getTime())) + '</span></a></li>'; }).join('') + '</ul>' : '') +
-      '</div></section>';
-  }
-  // Feed updates after paint: phase, score, clock and drive change in place; nothing moves.
-  function patchTunnel(root, sb) {
-    var t = root.querySelector('.fp-tunnel'); if (!t) return;
-    var gs = gameState(sb); if (!gs || !gs.away || !gs.home) return;
-    var phase = gs.phase, cur = t.getAttribute('data-phase');
-    if (phase === 'pre' && (cur === 'kick' || cur === 'live' || cur === 'half' || cur === 'final')) phase = cur === 'kick' ? 'kick' : cur;
-    function put(sel, v) { var el = t.querySelector('[data-tn="' + sel + '"]'); if (el && v != null && el.textContent !== String(v)) el.textContent = String(v); }
-    put('away', gs.away.score == null ? '0' : gs.away.score); put('home', gs.home.score == null ? '0' : gs.home.score);
-    put('away-final', gs.away.score == null ? '0' : gs.away.score); put('home-final', gs.home.score == null ? '0' : gs.home.score);
-    put('clock', gs.phase === 'half' ? 'Halftime' : gs.clock || 'Live');
-    var d = t.querySelector('.fp-tn-drive'); if (d) { put('drive', gs.drive || ''); d.hidden = !gs.drive; }
-    if (phase !== cur) t.setAttribute('data-phase', phase);
-  }
-  function hubHtml(latest, sb, posts, used) {
-    var sn = showNext(), ep = BUNDLE.show.episode;
-    var mLatest = '<section class="fp-mod fp-mod-latest" aria-label="Latest stories"><h2>Latest</h2><ol class="fp-latest">' + latest.map(function (p) {
-      return '<li>' + link(p.url, '<time datetime="' + p.date.toISOString() + '">' + esc(ago(p.date)) + '</time><div><h3 class="fp-hl">' + esc(p.title) + '</h3><p class="fp-meta">' + esc(p.author) + '</p></div>') + '</li>'; }).join('') +
-      '</ol><a class="fp-more" href="' + esc(L.latest) + '">All stories <span aria-hidden="true">&nbsp;→</span></a></section>';
-    var mShow = '<section class="fp-mod fp-mod-show fp-show" data-live="' + (sn.live ? 1 : 0) + '" aria-label="The Buddy Martin Show"><h2>The Buddy Martin Show</h2><p class="fp-show-when"><span class="fp-live-dot" aria-hidden="true"></span><span data-fp-show>' + esc(sn.live ? 'Live now' : 'Next live: ' + sn.label) + '</span></p>' +
-      '<p class="fp-ex">Mondays, Wednesdays and Thursdays at 9 p.m. ET.</p><div class="fp-actions"><a class="fp-btn" href="' + esc(L.youtubeLive) + '" rel="noopener">Watch on YouTube</a><a class="fp-btn fp-ghost" href="' + esc(L.facebook) + '" rel="noopener">Facebook</a></div>' +
-      (ep ? '<a class="fp-vid" href="https://www.youtube.com/watch?v=' + esc(ep.id) + '" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + ep.id + '/hqdefault.jpg', '', false, 480, 360) + '<span class="fp-play"></span></span><span><b>' + esc(ep.title) + '</b><span>From the show · ' + esc(shortDate(Date.parse(ep.date + 'T16:00:00Z'))) + '</span></span></a>' : '') +
-      '<a class="fp-more" href="' + esc(L.show) + '">GatorBait TV &amp; podcasts <span aria-hidden="true">&nbsp;→</span></a></section>';
-    var mClips = BUNDLE.clips.length ? '<section class="fp-mod fp-mod-clips" aria-label="Clips"><h2>Clips</h2><div class="fp-clips">' + BUNDLE.clips.slice(0, 2).map(function (c) {
-      return '<a class="fp-clip" href="https://www.youtube.com/shorts/' + esc(c.id) + '" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + c.id + '/hqdefault.jpg', '', false, 480, 360) + '<span class="fp-play"></span></span><b>' + esc(c.title) + '</b></a>'; }).join('') +
-      '</div><a class="fp-more" href="' + esc(L.youtubeChannel) + '" rel="noopener">More on YouTube <span aria-hidden="true">&nbsp;→</span></a></section>' : '';
-    var gal = posts.filter(function (p) { return p.image && /spears/i.test(p.title + ' ' + p.author) && /(photo|galler|best shots)/i.test(p.title); }).slice(0, 2)
-      .map(function (p) { return { title: p.title, url: p.url, image: p.image }; });
-    if (!gal.length) gal = BUNDLE.galleries.slice(0, 2);
-    var mPhotos = '<section class="fp-mod fp-mod-photos" aria-label="Photographs"><h2>Photos · Chris Spears</h2><div class="fp-photos">' + gal.map(function (g) {
-      return '<a class="fp-photo" href="' + esc(g.url) + '"><span class="fp-frame">' + img(g.image, g.title, false) + '</span><span class="fp-cap"><b>Photo by Chris Spears, GatorBait Media</b></span><b>' + esc(g.title) + '</b></a>'; }).join('') + '</div></section>';
-    var l = sb.last, n = sb.next, scores = '';
-    if (l && l.score) {
-      var F = { abbr: 'FLA', score: l.score.fla, q: l.quarters ? l.quarters.fla : [] }, O = { abbr: abbr(l.opponent, l.opponentAbbr), score: l.score.opp, q: l.quarters ? l.quarters.opp : [] };
-      scores += '<div class="fp-score-head"><span>Final · ' + esc(ranked(l.opponentRank, l.opponent)) + '</span><span>' + esc(ymdOf(l.date) ? MONTHS[Number(ymdOf(l.date).slice(5, 7)) - 1] + ' ' + Number(ymdOf(l.date).slice(8)) : '') + '</span></div>' +
-        lineTable({ away: l.home ? O : F, home: l.home ? F : O }, 'fp-mini');
-      var st = l.stats || {}, tape = [['totalYards', 'Total yards'], ['rushYards', 'Rushing yards'], ['firstDowns', 'First downs'], ['attendance', 'In The Swamp']].filter(function (x) { return st[x[0]] != null; });
-      if (tape.length) scores += '<div class="fp-tape">' + tape.map(function (x) { return '<div><strong data-fp-num="' + st[x[0]] + '">' + fmtNum(st[x[0]]) + '</strong><span>' + (x[0] === 'attendance' && !l.home ? 'Attendance' : x[1]) + '</span></div>'; }).join('') + '</div>';
-      if (l.recapUrl) scores += '<a class="fp-more" href="' + esc(l.recapUrl) + '">Read the recap <span aria-hidden="true">&nbsp;→</span></a>';
-    }
-    if (n) scores += '<a class="fp-next" href="' + esc(n.previewUrl || L.schedule) + '"><span>Next · ' + esc(n.tv || '') + '</span><b>' + esc(ranked(sb.team.rank, 'Florida') + (n.home ? ' vs. ' : ' at ') + ranked(n.opponentRank, n.opponent)) + '</b><span>' + esc(gameWhen(n.kickoffIso) + (n.venue ? ' · ' + n.venue : '')) + '</span>' + cd(n.kickoffIso) + '</a>';
-    var upcoming = sb.schedule.filter(function (g) { return g.status === 'scheduled' && (!n || g.date !== n.kickoffIso); }).slice(0, 3);
-    if (upcoming.length) scores += '<table class="fp-stand"><caption class="fp-sr">Upcoming schedule</caption><thead><tr><th scope="col">Coming up</th><th scope="col">Date</th><th scope="col">TV</th></tr></thead><tbody>' + upcoming.map(function (g) {
-      var t = Date.parse(g.date), e = et(t), tba = /T0[45]:00:00/.test(g.date);
-      return '<tr><td>' + esc((g.home ? 'vs. ' : 'at ') + ranked(g.rank, g.opponent)) + '</td><td>' + esc(tba ? MONTHS[new Date(t).getUTCMonth()] + ' ' + new Date(t).getUTCDate() : MONTHS[e.mo] + ' ' + e.d) + '</td><td>' + esc(g.tv || 'TBA') + '</td></tr>'; }).join('') + '</tbody></table>';
-    if (sb.standings.length) scores += '<table class="fp-stand"><caption class="fp-sr">SEC standings</caption><thead><tr><th scope="col">SEC</th><th scope="col">Conf.</th><th scope="col">Overall</th></tr></thead><tbody>' + sb.standings.slice(0, 6).map(function (r) { return '<tr' + (/^florida$/i.test(r.team) ? ' class="fp-us"' : '') + '><td>' + esc(r.team) + '</td><td>' + esc(r.conf) + '</td><td>' + esc(r.overall) + '</td></tr>'; }).join('') + '</tbody></table>';
-    scores += '<div class="fp-chips"><a href="' + esc(L.schedule) + '">Schedule</a><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.stats) + '">Stats</a><a href="' + esc(L.standings) + '">Standings</a></div>';
-    var mScores = '<section class="fp-mod fp-mod-scores" aria-label="Scores and schedule"><h2>Scores &amp; Schedule · Florida ' + esc(sb.team.record || '') + '</h2>' + scores + '</section>';
-    var cover = posts.find(function (p) { return p.image && !used[p.image] && !p.portrait && !isSpears(p); }) || posts.find(function (p) { return p.image; });
-    var mMag = '<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><div class="fp-mag-copy"><h2>The Thursday Magazine</h2><p class="fp-ex">The columns, characters and photographs worth keeping. The cover lives on the Magazine, not here.</p><div class="fp-actions"><a class="fp-btn" href="' + esc(L.magazine) + '">Open the Magazine <span aria-hidden="true">→</span></a></div></div>' +
-      (cover ? '<a class="fp-cover" href="' + esc(L.magazine) + '" aria-label="GatorBait Magazine">' + img(cover.image, '', false) + '<span class="fp-cover-mh">GatorBait<small>Magazine · Thursday</small></span><span class="fp-cover-t"><em>' + esc(cover.author) + '</em>' + esc(splitTitle(cover.title).h) + '</span></a>' : '') + '</section>';
-    // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
-    var mNews = window.GBM_CAPTURE ? window.GBM_CAPTURE.html('home') : '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
-    return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show, clips and photos. Everything GatorBait, in one place.</p></div><div class="fp-hub-grid">' +
-      mLatest + mScores + mShow + (window.GBM_CAPTURE ? mNews : '') + mClips + mPhotos + mMag + (window.GBM_CAPTURE ? '' : mNews) + '</div></div></section>';
-  }
-
-  /* ---------- Live bits: countdowns, count-up, show status, embers ---------- */
-  function renderCountdowns(root) {
-    var t = now();
-    root.querySelectorAll('[data-fp-count]').forEach(function (el) {
-      var k = Date.parse(el.getAttribute('data-fp-count')), s = Math.max(0, Math.floor((k - t) / 1000));
-      var parts = [[Math.floor(s / 86400), 'd'], [Math.floor(s / 3600) % 24, 'h'], [Math.floor(s / 60) % 60, 'm'], [s % 60, 's']];
-      if (!el.firstChild) el.innerHTML = parts.map(function (p, i) { return '<span' + (i === 3 ? ' class="fp-cd-s"' : '') + '><b></b><b></b><i>' + p[1] + '</i></span>'; }).join('');
-      var bs = el.querySelectorAll('b');
-      parts.forEach(function (p, i) {
-        var two = String(p[0]).padStart(2, '0');
-        [0, 1].forEach(function (j) { var b = bs[i * 2 + j]; if (b && b.textContent !== two[j]) { var first = !b.textContent; b.textContent = two[j]; if (!first) { b.classList.remove('fp-flip'); void b.offsetWidth; b.classList.add('fp-flip'); } } });
-      });
-      el.hidden = s === 0;
-      if (s === 0) { var tn = el.closest('.fp-tunnel'); if (tn && tn.getAttribute('data-phase') === 'pre') tn.setAttribute('data-phase', 'kick'); }
-      el.setAttribute('aria-label', parts[0][0] + ' days ' + parts[1][0] + ' hours ' + parts[2][0] + ' minutes to kickoff');
-    });
-    var show = root.querySelector('.fp-show');
-    if (show) { var sn = showNext(), label = sn.live ? 'Live now' : 'Next live: ' + sn.label, sp = show.querySelector('[data-fp-show]'); if (sp && sp.textContent !== label) sp.textContent = label; show.setAttribute('data-live', sn.live ? '1' : '0'); }
-  }
-  function startTicking(root) {
-    stopTicking();
-    renderCountdowns(root);
-    if (!root.querySelector('[data-fp-count]') && !root.querySelector('.fp-show')) return;
-    tickTimer = setInterval(function () { if (!document.hidden && root.isConnected) renderCountdowns(root); if (!root.isConnected) stopTicking(); }, 1000);
-  }
-  function stopTicking() { if (tickTimer) clearInterval(tickTimer); tickTimer = 0; }
-  function countUp(root) {
-    if (reduced() || !('IntersectionObserver' in window)) return;
-    io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return; io.unobserve(en.target);
-        var el = en.target, end = Number(el.getAttribute('data-fp-num')), t0 = performance.now();
-        (function step(ts) { var k = Math.min(1, (ts - t0) / 900), v = Math.round(end * (1 - Math.pow(1 - k, 3))); el.textContent = fmtNum(v); if (k < 1) requestAnimationFrame(step); })(t0);
-      });
-    }, { threshold: 0.6 });
-    root.querySelectorAll('[data-fp-num]').forEach(function (el) { io.observe(el); });
-  }
-  function embers(root) {
-    if (reduced() || !root.classList.contains('fp-embers-on')) return;
-    var opts = { fullScreen: { enable: false }, fpsLimit: 40, detectRetina: true, pauseOnBlur: true, pauseOnOutsideViewport: true, background: { color: 'transparent' },
-      particles: { number: { value: innerWidth < 700 ? 45 : 80 }, color: { value: ['#fa4616', '#ff7a3d', '#ffb27a'] }, shape: { type: 'circle' },
-        opacity: { value: { min: 0.15, max: 0.75 }, animation: { enable: true, speed: 0.6, sync: false } }, size: { value: { min: 0.8, max: 2.6 } },
-        move: { enable: true, direction: 'top', speed: { min: 0.3, max: 1.1 }, random: true, straight: false, outModes: { default: 'out' } } } };
-    function go() {
-      if (!root.isConnected || !window.tsParticles || !document.getElementById('fp-embers')) return;
-      window.tsParticles.load({ id: 'fp-embers', options: opts }).then(function (c) { particles = c; if (document.hidden && c) c.pause(); }).catch(function () {});
-    }
-    if (window.tsParticles) { go(); return; }
-    var s = document.getElementById('gbm-fp-tsparticles');
-    if (!s) { s = document.createElement('script'); s.id = 'gbm-fp-tsparticles'; s.src = TSP; s.async = true; s.crossOrigin = 'anonymous'; document.head.appendChild(s); }
-    s.addEventListener('load', go, { once: true });
-  }
-  document.addEventListener('visibilitychange', function () {
-    if (!particles) return;
-    try { if (document.hidden) particles.pause(); else particles.play(); } catch (_) {}
-  });
-  function ensureFonts() {
-    if (!document.getElementById('gbm-fp-fonts')) {
-      var l = document.createElement('link'); l.id = 'gbm-fp-fonts'; l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l);
-    }
-    if (!document.fonts || !document.fonts.load) return Promise.resolve();
-    return Promise.race([Promise.all([document.fonts.load('800 88px "Barlow Condensed"'), document.fonts.load('400 16px "Barlow"')]).catch(function () {}),
-      new Promise(function (r) { setTimeout(r, 900); })]);
-  }
-
-  /* ---------- Render ---------- */
-  function failure(error) {
-    loading = false;
-    if (window.__GBM_GAZETTE_BOOT__ && window.__GBM_GAZETTE_BOOT__.fallback) window.__GBM_GAZETTE_BOOT__.fallback(error);
-    else console.error('[GatorBait front page]', error);
-  }
-  function render(posts, fresh, sb) {
-    if (!home()) { loading = false; return; }
-    if (posts.length < 3) throw new Error('Insufficient public stories');
-    var existing = document.getElementById('gbm-live');
-    if (existing && existing.classList.contains('gbm-gazette')) { loading = false; return; }
-    if (existing) throw new Error('Another homepage owner already mounted');
-    var picked = pickLead(posts), lead = picked.post, shown = {}, used = {};
-    shown[lead.url] = 1; if (lead.image) used[lead.image] = 1;
-    function take(list, n, test) { var out = []; list.forEach(function (p) { if (out.length < n && !shown[p.url] && (!test || test(p))) { shown[p.url] = 1; if (p.image) used[p.image] = 1; out.push(p); } }); return out; }
-    // Secondary feature: newest columnist story with a photo (Franz first), then any story with a photo.
-    var feature = take(posts, 1, function (p) { return p.image && /franz beard/i.test(p.author); })[0] ||
-      take(posts, 1, function (p) { return p.image && !/staff/i.test(p.author) && !isSpears(p); })[0] || take(posts, 1, function (p) { return !!p.image; })[0];
-    var list = take(posts, 4, function (p) { return !isSpears(p) || !/(photo|galler|best shots)/i.test(p.title); });
-    var cols = columnistsHtml(posts);
-    var latest = take(posts, 8);
-    var gs = gameState(sb), mode = modes(sb);
-    lastSb = sb;
-    var root = document.createElement('div');
-    root.id = 'gbm-live';
-    root.className = 'gbm-gazette gbm-sports-home fp26' + (mode.night ? ' fp-night' : ' fp-day') + (mode.gameday ? ' fp-gameday' : '') + (mode.embers ? ' fp-embers-on' : '');
-    root.setAttribute('data-theme', mode.night ? 'dark' : 'light');
-    root.setAttribute('data-fp', VERSION);
-    root.setAttribute('data-fp-build', String(BUNDLE.build || ''));
-    root.setAttribute('data-fp-lead', picked.why);
-    root.setAttribute('data-fp-scoreboard', sb.source);
-    root.setAttribute('data-gazette-source', fresh ? 'current-feed' : 'last-known-feed');
-    root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
-    root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
-      (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
-      '<main id="sh-main"><div class="fp-wrap"><div id="sh-freshness"></div>' + leadHtml(lead, picked.why) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
-      roadHtml(sb) + hubHtml(latest, sb, posts, used) + '</main>';
-    if (!document.getElementById('gbm-fp26-styles')) {
-      var style = document.createElement('style'); style.id = 'gbm-fp26-styles'; style.textContent = CSS; document.head.appendChild(style);
-    }
-    // The split Wix-served embeds still inject the old renderer's #gbgz-styles; switch it off, keep the element.
-    var old = document.getElementById('gbgz-styles'); if (old && old.media !== 'not all') old.media = 'not all';
-    var shell = document.getElementById('gbm-mobile-shell-host');
-    if (shell && shell.parentNode) shell.parentNode.insertBefore(root, shell.nextSibling);
-    else document.body.insertBefore(root, document.body.firstChild);
-    doc.classList.add('gbm-gazette-live', 'gbm-standalone-live');
-    try { initRoad(root); } catch (_) {}
-    loading = false;
-    window.__GBM_GAZETTE_RUNTIME__.ready = true;
-    if (window.__GBM_GAZETTE_BOOT__ && window.__GBM_GAZETTE_BOOT__.ready) window.__GBM_GAZETTE_BOOT__.ready();
-    requestAnimationFrame(function () { requestAnimationFrame(function () { doc.classList.remove('gbm-prepaint-v2'); }); });
-    startTicking(root); countUp(root); embers(root);
-    document.dispatchEvent(new CustomEvent('gbm:gazette-ready', { detail: { stories: posts.length, fresh: fresh, lead: picked.why, version: VERSION } }));
-    setTimeout(function () { loadModules(root); }, 50); // after first paint, never before it
-  }
-  // After paint the scoreboard can only change values in place (never structure), so nothing moves.
-  function patchScores(raw) {
-    var root = document.getElementById('gbm-live'); if (!root || !root.classList.contains('fp26')) return;
-    var sb = readScoreboard(raw);
-    lastSb = sb;
-    root.setAttribute('data-fp-scoreboard', sb.source);
-    if (sb.next) root.querySelectorAll('[data-fp-count]').forEach(function (el) { if (el.getAttribute('data-fp-count') !== sb.next.kickoffIso && Date.parse(sb.next.kickoffIso) > now()) { el.setAttribute('data-fp-count', sb.next.kickoffIso); el.innerHTML = ''; } });
-    renderCountdowns(root);
-    patchRoad(root, sb);
-    patchTunnel(root, sb);
-  }
-  // The season band is the one block allowed to change after paint: it sits below the fold, so a band that the
-  // feed adds or refreshes only swaps while it is off screen (same card count keeps the same height).
-  function patchRoad(root, sb) {
-    var html = roadHtml(sb); if (!html) return;
-    var tmp = document.createElement('div'); tmp.innerHTML = html;
-    var fresh = tmp.firstChild, cur = root.querySelector('#gbm-road'), hub = root.querySelector('.fp-hub');
-    var anchor = cur || hub; if (!fresh || !anchor) return;
-    var box = anchor.getBoundingClientRect(); if (box.bottom > 0 && box.top < innerHeight + 120) return;
-    if (cur) {
-      if (cur.getAttribute('data-sig') === fresh.getAttribute('data-sig') || cur.querySelectorAll('.g').length !== fresh.querySelectorAll('.g').length) return;
-      cur.parentNode.replaceChild(fresh, cur);
-    } else hub.parentNode.insertBefore(fresh, hub);
-    try { initRoad(root); } catch (_) {}
-  }
-
-  /* ---------- Fan modules: Make the Call, Ask GatorBait, The Stands ----------
-   * Bundled from sports-live/src/{make-the-call,ask-gatorbait,the-stands}.js. Their Workers exist only once
-   * deploy/cloudflare/endpoints.json on Pages names them ({call, ask, stands}); it is read after first paint and a
-   * missing file or field mounts nothing: no placeholder, no reserved box. A module enters the page only while its
-   * anchor is off screen (patchRoad's rule) and any scroll offset it causes above the viewport is paid back, so
-   * nothing the reader is looking at moves. */
-  var ENDPOINTS = PAGES + 'deploy/cloudflare/endpoints.json';
-  var lastSb = null, modulesDone = false;
-  function endpointUrl(v) {
-    try {
-      var u = new URL(String(v || ''));
-      if (u.protocol !== 'https:' || u.username || u.password || u.search || u.hash) return '';
-      return /(^|\.)(workers\.dev|gatorbaitmedia\.com)$/.test(u.hostname) ? u.href.replace(/\/+$/, '') : '';
-    } catch (_) { return ''; }
-  }
-  function offScreen(el) { var b = el.getBoundingClientRect(); return b.bottom <= 0 || b.top >= innerHeight; }
-  // Insert `make()`'s node relative to `ref` only while `ref` is out of view; until then, retry on scroll/resize.
-  function mountQuiet(ref, make) {
-    var armed = false;
-    function go() {
-      if (!ref.isConnected) { off(); return; }
-      if (!offScreen(ref)) { arm(); return; }
-      off();
-      var probe = document.elementFromPoint(Math.floor(innerWidth / 2), Math.floor(innerHeight / 2));
-      probe = probe && (probe.closest('section,article,main,nav,header,footer') || probe);
-      var before = probe ? probe.getBoundingClientRect().top : 0;
-      try { make(); } catch (_) { return; }
-      var d = probe ? probe.getBoundingClientRect().top - before : 0; // browsers with scroll anchoring already give 0
-      if (Math.abs(d) > 0.5) scrollBy(0, d);
-    }
-    var pending = 0;
-    function onMove() { if (!pending) pending = requestAnimationFrame(function () { pending = 0; go(); }); }
-    function arm() { if (armed) return; armed = true; addEventListener('scroll', onMove, { passive: true }); addEventListener('resize', onMove); }
-    function off() { if (!armed) return; armed = false; removeEventListener('scroll', onMove); removeEventListener('resize', onMove); }
-    go();
-  }
-  function mountModules(root, ep) {
-    var sb = lastSb, gs = sb && gameState(sb), mode = sb && modes(sb), tunnel = root.querySelector('.fp-tunnel');
-    if (ep.call && window.GBM_CALL && sb && !root.querySelector('#gbm-call')) {
-      var game = GBM_CALL.game(sb), road = root.querySelector('#gbm-road'), hub = root.querySelector('.fp-hub');
-      if (game && (road || hub)) {
-        window.__GBM_CALL_API__ = ep.call + '/v1';
-        mountQuiet(road || hub, function () { (road || hub).insertAdjacentHTML(road ? 'afterend' : 'beforebegin', GBM_CALL.html(game)); GBM_CALL.init(root); });
-      }
-    }
-    if (ep.ask && window.GBM_ASK && !root.querySelector('.fp-ask')) {
-      var after = mode && mode.gameday && tunnel ? tunnel : root.querySelector('.fp-mod-show');
-      if (after) { window.__GBM_ASK_URL__ = ep.ask; mountQuiet(after, function () { GBM_ASK.mount(after); }); }
-    }
-    if (ep.stands && window.GBM_STANDS && mode && mode.gameday && tunnel && gs && gs.kickoff && !root.querySelector('#gbm-stands')) {
-      var cta = tunnel.querySelector('.fp-tn-cta');
-      var cfg = { api: ep.stands, room: 'game-' + et(gs.kickoff).ymd, mount: '#gbm-stands', tokenUrl: ep.standsToken || '/_functions/standsToken', signin: L.signin };
-      if (cta) { window.__GBM_STANDS__ = cfg; mountQuiet(cta, function () { var host = document.createElement('div'); host.id = 'gbm-stands'; cta.parentNode.insertBefore(host, cta.nextSibling); GBM_STANDS.mount(Object.assign({}, cfg, { mount: host })); }); }
-    }
-  }
-  function loadModules(root) {
-    if (modulesDone) return; modulesDone = true;
-    fetchJson(ENDPOINTS + '?t=' + Math.floor(Date.now() / 60000), 800).then(function (j) {
-      if (!j || typeof j !== 'object' || !root.isConnected) return;
-      var ep = { call: endpointUrl(j.call), ask: endpointUrl(j.ask), stands: endpointUrl(j.stands), standsToken: typeof j.standsToken === 'string' && /^\/[\w\/-]*$/.test(j.standsToken) ? j.standsToken : '' };
-      root.setAttribute('data-fp-modules', ['call', 'ask', 'stands'].filter(function (k) { return ep[k]; }).join(' ') || 'none');
-      if (ep.call || ep.ask || ep.stands) mountModules(root, ep);
-    }).catch(function () { if (root.isConnected) root.setAttribute('data-fp-modules', 'none'); });
-  }
-
-  function fetchJson(url, ms) {
-    var c = new AbortController(), t = setTimeout(function () { c.abort(); }, ms);
-    return fetch(url, { signal: c.signal, credentials: 'omit', cache: 'no-store' }).then(function (r) { clearTimeout(t); if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); });
-  }
-  function fetchRss() {
-    var c = new AbortController(), t = setTimeout(function () { c.abort(); }, 4000);
-    return fetch(RSS + '?t=' + Math.floor(Date.now() / 60000), { signal: c.signal, credentials: 'omit', cache: 'no-store' }).then(function (r) {
-      clearTimeout(t); if (!r.ok) throw new Error('Content response ' + r.status);
-      return r.text().then(function (xml) {
-        var feed = new DOMParser().parseFromString(xml, 'text/xml');
-        function text(n, key) { var el = Array.from(n.children).find(function (c) { return c.localName === key; }); return el ? el.textContent.trim() : ''; }
-        return { posts: Array.from(feed.querySelectorAll('item')).map(function (n) { var enc = n.querySelector('enclosure'); return { title: text(n, 'title'), excerpt: text(n, 'description'), author: text(n, 'creator'), url: text(n, 'link'), firstPublishedDate: text(n, 'pubDate'), image: { src: enc ? enc.getAttribute('url') : '', alt: text(n, 'title') } }; }) };
-      });
-    });
-  }
-  function start() {
-    if (!home() || loading || document.querySelector('#gbm-live.gbm-gazette')) return;
-    loading = true;
-    // Fallback: the bundled snapshot, or the Wix-served data part when it is newer.
-    var fallback = { posts: BUNDLE.posts }, wixData = window.__GBM_HOME_FALLBACK__, cached;
-    try { if (wixData && normalize(wixData).length >= 3 && normalize(wixData)[0].date > normalize(fallback)[0].date) fallback = wixData; } catch (_) {}
-    var initial = fallback;
-    try { cached = JSON.parse(sessionStorage.getItem('gbm-public-feed') || 'null'); if (cached && Date.now() - cached.saved < 900000 && normalize(cached.data).length >= 3 && normalize(cached.data)[0].date >= normalize(fallback)[0].date) initial = cached.data; } catch (_) {}
-    var painted = false, scoreRaw, scoreDone = false, fontsDone = false, feedData = null, deadline = false;
-    function paint(data, fresh) {
-      if (painted) return; painted = true;
-      try { render(normalize(data), fresh, readScoreboard(scoreRaw)); } catch (error) { failure(error); }
-    }
-    function maybePaint() {
-      if (painted || !fontsDone) return;
-      if (feedData && (scoreDone || deadline)) paint(feedData, true);
-      else if (deadline) paint(initial, initial !== fallback);
-    }
-    ensureFonts().then(function () { fontsDone = true; maybePaint(); });
-    // Same 1.5 s budget as the previous renderer: paint once with the best data in hand, never repaint.
-    var timer = setTimeout(function () { deadline = true; fontsDone = true; maybePaint(); }, 1500);
-    if (initial !== fallback) feedData = initial;
-    fetchJson(PAGES + 'sports-live/scoreboard.json?t=' + Math.floor(Date.now() / 60000), 2500).then(function (raw) {
-      if (!painted) { scoreRaw = raw; scoreDone = true; maybePaint(); } else patchScores(raw);
-    }).catch(function () { scoreDone = true; maybePaint(); });
-    fetchRss().catch(function () { return fetchJson(PAGES + 'gazette-live/posts.json', 3000); }).then(function (data) {
-      var posts = normalize(data); if (posts.length < 3) throw new Error('Invalid current content');
-      try { sessionStorage.setItem('gbm-public-feed', JSON.stringify({ saved: Date.now(), data: data })); } catch (_) {}
-      if (!painted) { feedData = data; maybePaint(); return; }
-      var root = document.getElementById('gbm-live');
-      if (root && posts[0].date.toISOString() !== root.getAttribute('data-gazette-newest')) {
-        var freshness = document.getElementById('sh-freshness');
-        if (freshness) { freshness.textContent = ''; var a = document.createElement('a'); a.href = '/'; a.textContent = 'New stories available — refresh'; a.addEventListener('click', function (event) { event.preventDefault(); event.stopPropagation(); location.reload(); }); freshness.appendChild(a); }
-      } else if (root) root.setAttribute('data-gazette-source', 'current-feed');
-    }).catch(function () { clearTimeout(timer); deadline = true; fontsDone = true; maybePaint(); });
-  }
-
-  function sync() {
-    if (!home()) {
-      var root = document.querySelector('#gbm-live.gbm-gazette'); if (root) root.remove();
-      stopTicking(); if (io) { io.disconnect(); io = null; }
-      if (particles) { try { particles.destroy(); } catch (_) {} particles = null; }
-      doc.classList.remove('gbm-gazette-live', 'gbm-standalone-live');
-      window.__GBM_GAZETTE_RUNTIME__.ready = false;
-      modulesDone = false;
-    } else start();
-  }
-  window.__GBM_GAZETTE_RUNTIME__ = { sync: sync, ready: false, version: VERSION };
-  window.addEventListener('popstate', sync);
-  window.addEventListener('gbmroutechange', sync);
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true }); else start();
-})();
-/* Share GatorBait (sports-live/src/share.js) + Story Kit (sports-live/src/story-kit.js): standalone copy in sports-live/share.js for blog post pages. */
-/* GatorBait Share 2026: one-tap share cards for stories, The Road Ahead, The Tunnel and the show.
- * Drop-in module in the Front Page 2026 style (sports-live/src/front-page.js). Standalone: it adds a
- * Share button to the homepage modules the runtime paints (#gbm-road, .fp-tunnel, .fp-show) and to a
- * Wix blog post page, draws a 1200x630 card on the device with Canvas from the live feeds
- * (gazette-live/posts.json, sports-live/scoreboard.json), then calls the Web Share API with the PNG
- * attached, or opens an in-page sheet: Copy link, Post on X, Facebook, Save image.
- * Every shared URL carries utm_source=gatorbait_share, utm_medium, utm_campaign.
- * Test hooks: window.__GBM_SHARE__ {posts, scoreboard, now} pre-seeds data; window.__GBM_SHARE_RUNTIME__
- * exposes {version, open(kind), card(kind) -> Promise<dataURL>, mount()}. Nothing here writes to Wix. */
-(function () {
-  'use strict';
-  var VERSION = 'share-2026.1';
-  var PAGES = 'https://presidente49.github.io/gatorbait-media-redesign/';
-  var SITE = 'https://www.gatorbaitmedia.com';
-  var TZ = 'America/New_York';
-  var C = { navy: '#07122e', blue: '#0021a5', orange: '#fa4616', ink: '#f3f5fa', muted: '#b9c4dc', win: '#7ef0a6' };
-  var SHOW = { name: 'The Buddy Martin Show', path: '/the-buddy-martin-show', when: 'Mondays, Wednesdays and Thursdays at 9 p.m. ET', days: [1, 3, 4], hour: 21 };
-  var CSS = '.gbm-share-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:0;border-radius:6px;background:#fa4616;color:#fff;font:800 15px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}' +
-    '.gbm-share-btn.ghost{background:transparent;border:1px solid #2b3f80;color:#f3f5fa}.gbm-share-btn span{white-space:nowrap}.gbm-share-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}' +
-    '#gbm-share-veil{position:fixed;inset:0;background:rgba(3,8,24,.72);z-index:9998}' +
-    '#gbm-share{position:fixed;left:0;right:0;bottom:0;z-index:9999;max-width:480px;margin:0 auto;background:#0b1a44;color:#f3f5fa;border-radius:18px 18px 0 0;padding:12px 16px calc(20px + env(safe-area-inset-bottom));font:16px/1.4 "Barlow",sans-serif;transform:translateY(105%);transition:transform .25s}' +
-    '#gbm-share.on{transform:none}#gbm-share i{display:block;width:40px;height:4px;border-radius:2px;background:#2b3f80;margin:0 auto 10px}' +
-    '#gbm-share canvas{width:100%;height:auto;display:block;border-radius:10px;background:#07122e}' +
-    '#gbm-share p{margin:10px 0;font-size:13px;color:#b9c4dc;white-space:pre-wrap;word-break:break-word}' +
-    '#gbm-share .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}#gbm-share .g .gbm-share-btn{justify-content:center;font:600 15px "Barlow",sans-serif;text-transform:none;letter-spacing:0;border-radius:10px}' +
-    '#gbm-share .g .w{grid-column:1/-1}#gbm-share-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:10000;background:#fa4616;color:#fff;padding:10px 16px;border-radius:999px;font:600 15px "Barlow",sans-serif;opacity:0;transition:opacity .2s;pointer-events:none}' +
-    '@media(min-width:900px){#gbm-share{bottom:auto;top:50%;transform:translate(0,-45%);opacity:0;border-radius:18px;transition:opacity .2s}#gbm-share.on{transform:translateY(-50%);opacity:1}}' +
-    '@media(prefers-reduced-motion:reduce){#gbm-share{transition:none}}';
-  var ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>';
-  if (window.__GBM_SHARE_RUNTIME__) { window.__GBM_SHARE_RUNTIME__.mount(); return; }
-
-  var seed = window.__GBM_SHARE__ || {};
-  var data = { posts: seed.posts || null, scoreboard: seed.scoreboard || null };
-  var cur = 'story', cv = null, ctx = null, opened = false;
-  function now() { var t = Number(seed.now ? Date.parse(seed.now) : window.__GBM_FP_NOW__); return Number.isFinite(t) && t > 0 ? t : Date.now(); }
-  function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function el(tag, attrs, html) { var e = document.createElement(tag); Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); }); if (html != null) e.innerHTML = html; return e; }
-
-  /* ---------- Time (America/New_York), AP style ---------- */
-  var MONTHS = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
-  var WDS = ['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.'];
-  function et(ms) {
-    var o = {};
-    new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: false }).formatToParts(new Date(ms)).forEach(function (p) { o[p.type] = p.value; });
-    return { wd: { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[o.weekday], mo: Number(o.month) - 1, d: Number(o.day), h: Number(o.hour) % 24, m: Number(o.minute) };
-  }
-  function clock(ms) { var e = et(ms), h = e.h % 12 || 12; return h + (e.m ? ':' + String(e.m).padStart(2, '0') : '') + (e.h < 12 ? ' a.m.' : ' p.m.'); }
-  function gameWhen(iso) { var t = Date.parse(iso); if (!Number.isFinite(t)) return ''; var e = et(t); return WDS[e.wd] + ', ' + MONTHS[e.mo] + ' ' + e.d + ', ' + clock(t) + ' ET'; }
-  function left(iso) {
-    var ms = Date.parse(iso) - now(); if (!Number.isFinite(ms) || ms <= 0) return '';
-    return Math.floor(ms / 864e5) + 'd ' + Math.floor(ms % 864e5 / 36e5) + 'h ' + Math.floor(ms % 36e5 / 6e4) + 'm';
-  }
-  function showNext() {
-    var t = now(), e = et(t);
-    for (var i = 0; i < 8; i++) { var d = (e.wd + i) % 7; if (SHOW.days.indexOf(d) >= 0 && (i > 0 || e.h < SHOW.hour)) return WDS[d] + ' 9 p.m. ET'; }
-    return '9 p.m. ET';
-  }
-
-  /* ---------- Data: the same feeds the homepage uses, fetched once, on first tap ---------- */
-  function fetchJson(url, ms) {
-    var ctl = 'AbortController' in window ? new AbortController() : null, timer = ctl && setTimeout(function () { ctl.abort(); }, ms);
-    return fetch(url, { signal: ctl && ctl.signal, credentials: 'omit' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).finally(function () { if (timer) clearTimeout(timer); });
-  }
-  function load() {
-    var jobs = [];
-    if (!data.scoreboard) jobs.push(fetchJson(PAGES + 'sports-live/scoreboard.json?t=' + Math.floor(now() / 60000), 3000).then(function (s) { data.scoreboard = s; }).catch(function () {}));
-    if (!data.posts) {
-      var cached = null; try { cached = JSON.parse(sessionStorage.getItem('gbm-public-feed') || 'null'); } catch (_) {}
-      if (cached && cached.data && cached.data.posts) data.posts = cached.data.posts;
-      else jobs.push(fetchJson(PAGES + 'gazette-live/posts.json', 3000).then(function (p) { data.posts = p.posts || []; }).catch(function () {}));
-    }
-    return Promise.all(jobs);
-  }
-  // The story headline: the first h1 that is actually laid out. The hidden native Wix header keeps an h1
-  // ("GatorBait Media") ahead of the post in DOM order, and a button appended beside it is display:none.
-  function headline() {
-    var pick = null, list = document.querySelectorAll('h1'), i, n;
-    for (i = 0; i < list.length; i++) {
-      n = list[i];
-      if (!n.getClientRects().length) continue;
-      if (n.getAttribute('data-hook') === 'post-title' || n.closest('article')) return n;
-      if (!pick) pick = n;
-    }
-    return pick;
-  }
-  function safePost(u) { try { var x = new URL(String(u), SITE); return /^(www\.)?gatorbaitmedia\.com$/.test(x.hostname) && x.pathname.indexOf('/post/') === 0 ? SITE + x.pathname : ''; } catch (_) { return ''; } }
-  // The story on a Wix blog post page: canonical URL, headline, byline. Falls back to the feed's newest story on the homepage.
-  function storyOf() {
-    var canon = document.querySelector('link[rel="canonical"]'), url = safePost(canon ? canon.href : location.href);
-    var h = headline(), by = document.querySelector('[data-hook="user-name"], [rel="author"]');
-    var feed = (data.posts || []).filter(function (p) { return safePost(p.url); });
-    var match = url && feed.filter(function (p) { return safePost(p.url) === url; })[0];
-    if (!url && feed.length) match = feed[0];
-    if (match) return { title: match.title, author: match.author || '', url: safePost(match.url), kicker: kickerFor(match) };
-    if (!url) return null;
-    return { title: (h && h.textContent || document.title).trim(), author: (by && by.textContent || '').trim(), url: url, kicker: 'GatorBait' };
-  }
-  function kickerFor(p) { var d = Date.parse(p.firstPublishedDate); return Number.isFinite(d) ? 'GatorBait · ' + MONTHS[et(d).mo] + ' ' + et(d).d : 'GatorBait'; }
-  function season() {
-    var sb = data.scoreboard || {}, games = (sb.schedule || []).filter(function (g) { return g.status === 'final' && g.score; });
-    var W = 0, Ls = 0, rows = games.map(function (g) { var w = g.score.fla > g.score.opp; if (w) W++; else Ls++; return { w: w, s: g.score.fla + '-' + g.score.opp, o: (g.opponentRank ? 'No. ' + g.opponentRank + ' ' : '') + (g.home ? '' : 'at ') + g.opponent }; });
-    var n = sb.next || null;
-    return { rec: sb.team && sb.team.record || W + '-' + Ls, rank: sb.team && sb.team.rank, rows: rows, next: n && { opp: (n.opponentRank ? 'No. ' + n.opponentRank + ' ' : '') + n.opponent, home: n.home, when: gameWhen(n.kickoffIso), tv: n.tv || '', kick: n.kickoffIso, url: safePost(n.previewUrl) }, last: sb.last || null, live: sb.live || null };
-  }
-  // The Tunnel's three states: countdown before kickoff, live score, final. Same object the homepage uses.
-  function tunnel() {
-    var s = season(), n = s.next, l = s.last, lv = s.live;
-    if (lv && lv.score) return { phase: 'live', a: 'Florida', b: n ? n.opp : 'Opponent', fa: lv.score.fla, fb: lv.score.opp, clock: (lv.period ? 'Q' + lv.period + ' ' : '') + (lv.clock || 'Live'), when: n ? n.when : '', tv: n ? n.tv : '' };
-    if (n && left(n.kick)) return { phase: 'pre', a: 'Florida', b: n.opp, home: n.home, cd: left(n.kick), when: n.when, tv: n.tv, url: n.url };
-    if (l && l.score) return { phase: 'final', a: 'Florida', b: (l.opponentRank ? 'No. ' + l.opponentRank + ' ' : '') + l.opponent, home: l.home, fa: l.score.fla, fb: l.score.opp, when: gameWhen(l.date), url: safePost(l.recapUrl) };
-    return null;
-  }
-
-  /* ---------- Share text and tagged URLs ---------- */
-  function utm(kind, medium, base) {
-    var u = new URL(base || SITE + '/');
-    u.searchParams.set('utm_source', 'gatorbait_share'); u.searchParams.set('utm_medium', medium); u.searchParams.set('utm_campaign', kind);
-    if (kind === 'season') u.hash = 'gbm-road';
-    return u.href;
-  }
-  function payload(kind, medium) {
-    var s = season(), t, st;
-    if (kind === 'story') { st = storyOf(); return st ? { text: st.title + ' — ' + (st.author ? st.author + ' on ' : '') + 'GatorBait', url: utm(kind, medium, st.url) } : null; }
-    if (kind === 'season') return { text: 'Florida ' + s.rec + (s.rank ? ', No. ' + s.rank : '') + (s.next ? '. Next: ' + (s.next.home ? 'vs. ' : 'at ') + s.next.opp + ', ' + s.next.when + (s.next.tv ? ', ' + s.next.tv : '') : '') + '. The Road Ahead on GatorBait', url: utm(kind, medium) };
-    if (kind === 'tunnel') {
-      t = tunnel(); if (!t) return null;
-      if (t.phase === 'pre') return { text: 'Kickoff in ' + t.cd + ': Florida ' + (t.home ? 'vs. ' : 'at ') + t.b + ', ' + t.when + (t.tv ? ', ' + t.tv : '') + '. The Tunnel on GatorBait', url: utm(kind, medium, t.url || undefined) };
-      if (t.phase === 'live') return { text: 'Live: Florida ' + t.fa + ', ' + t.b + ' ' + t.fb + ', ' + t.clock + '. Follow on GatorBait', url: utm(kind, medium) };
-      return { text: 'Final: Florida ' + t.fa + ', ' + t.b + ' ' + t.fb + '. The recap on GatorBait', url: utm(kind, medium, t.url || undefined) };
-    }
-    return { text: SHOW.name + ', next live ' + showNext() + '. Watch on GatorBait', url: utm(kind, medium, SITE + SHOW.path) };
-  }
-
-  /* ---------- The card: 1200x630, Swamp Night, drawn on the device ---------- */
-  function F(w, px, color) { ctx.font = w + ' ' + px + 'px "Barlow Condensed","Barlow",sans-serif'; ctx.fillStyle = color; }
-  function wrap(s, x, y, w, lh, max) {
-    var words = String(s).split(' '), line = '', lines = [];
-    for (var i = 0; i < words.length; i++) { var t = line + words[i] + ' '; if (ctx.measureText(t).width > w && line) { lines.push(line); line = words[i] + ' '; } else line = t; }
-    lines.push(line);
-    if (lines.length > max) { lines = lines.slice(0, max); lines[max - 1] = lines[max - 1].replace(/\s+$/, '').replace(/[.,;:]?$/, '…'); }
-    lines.forEach(function (l, i) { ctx.fillText(l.replace(/\s+$/, ''), x, y + i * lh); });
-    return y + lines.length * lh;
-  }
-  function frame(footer) {
-    ctx.fillStyle = C.navy; ctx.fillRect(0, 0, 1200, 630);
-    ctx.fillStyle = C.blue; ctx.beginPath(); ctx.moveTo(860, 0); ctx.lineTo(1200, 0); ctx.lineTo(1200, 630); ctx.lineTo(700, 630); ctx.closePath(); ctx.fill();
-    ctx.fillStyle = C.orange; ctx.fillRect(0, 0, 18, 630);
-    F(800, 34, C.orange); ctx.fillText('GATORBAIT', 70, 80); F(600, 26, C.muted); ctx.fillText('Independent Florida Gators coverage', 290, 80);
-    F(600, 28, C.muted); var f = footer; while (ctx.measureText(f).width > 1060 && f.length > 8) f = f.slice(0, -2).replace(/…$/, '') + '…'; ctx.fillText(f, 70, 585);
-  }
-  function scoreLine(t, y) {
-    F(800, 150, C.ink); ctx.fillText(String(t.fa), 70, y); var w = ctx.measureText(String(t.fa)).width;
-    F(600, 44, C.muted); ctx.fillText('FLORIDA', 70, y + 50);
-    F(800, 150, C.ink); ctx.fillText(String(t.fb), 70 + w + 90, y); F(600, 44, C.muted); ctx.fillText(t.b.toUpperCase(), 70 + w + 90, y + 50);
-  }
-  function draw(kind) {
-    var s = season(), t, st;
-    if (kind === 'story') {
-      st = storyOf(); if (!st) return false;
-      frame(st.url.replace(/^https:\/\/www\./, ''));
-      F(600, 32, C.orange); ctx.fillText(st.kicker.toUpperCase(), 70, 180);
-      F(800, st.title.length > 70 ? 74 : 88, C.ink); var y = wrap(st.title, 70, 270, 1000, st.title.length > 70 ? 80 : 94, 3);
-      F(600, 36, C.muted); if (st.author) ctx.fillText('By ' + st.author, 70, Math.min(y + 8, 540));
-      return true;
-    }
-    if (kind === 'season') {
-      frame('gatorbaitmedia.com   ·   Source: ESPN');
-      F(800, 190, C.ink); ctx.fillText(s.rec, 70, 300); F(800, 54, C.orange); ctx.fillText((s.rank ? 'NO. ' + s.rank + ' ' : '') + 'FLORIDA', 70, 360);
-      F(600, 40, C.ink); s.rows.slice(-5).forEach(function (r, i) { ctx.fillStyle = r.w ? C.win : C.orange; ctx.fillText(r.w ? 'W' : 'L', 560, 185 + i * 56); ctx.fillStyle = C.ink; ctx.fillText(r.s + '  ' + r.o, 620, 185 + i * 56); });
-      F(600, 34, C.muted); if (s.next) wrap('Next: ' + (s.next.home ? 'vs. ' : 'at ') + s.next.opp + '  ·  ' + s.next.when + (s.next.tv ? ', ' + s.next.tv : ''), 70, 450, 1060, 40, 2);
-      return true;
-    }
-    if (kind === 'tunnel') {
-      t = tunnel(); if (!t) return false;
-      frame('gatorbaitmedia.com   ·   Source: ESPN');
-      if (t.phase === 'pre') {
-        F(800, 190, C.ink); ctx.fillText(s.rec, 70, 300); F(800, 54, C.orange); ctx.fillText((s.rank ? 'NO. ' + s.rank + ' ' : '') + 'FLORIDA', 70, 360);
-        F(600, 34, C.muted); ctx.fillText('KICKOFF IN', 620, 190); F(800, 120, C.orange); ctx.fillText(t.cd, 620, 310);
-        F(600, 40, C.ink); wrap('Florida ' + (t.home ? 'vs. ' : 'at ') + t.b, 620, 380, 520, 44, 2); F(600, 34, C.muted); ctx.fillText(t.when + (t.tv ? ', ' + t.tv : ''), 70, 450);
-      } else {
-        F(600, 34, t.phase === 'live' ? C.orange : C.muted); ctx.fillText(t.phase === 'live' ? 'LIVE  ·  ' + t.clock.toUpperCase() : 'FINAL', 70, 180);
-        scoreLine(t, 340); F(600, 34, C.muted); ctx.fillText(t.when, 70, 470);
-      }
-      return true;
-    }
-    frame('gatorbaitmedia.com' + SHOW.path);
-    F(600, 32, C.orange); ctx.fillText('GATORBAIT TV & PODCASTS', 70, 180); F(800, 96, C.ink); wrap(SHOW.name, 70, 290, 1000, 100, 2);
-    F(600, 40, C.ink); ctx.fillText('Next live: ' + showNext(), 70, 420); F(600, 34, C.muted); ctx.fillText(SHOW.when, 70, 470);
-    return true;
-  }
-  function ready() { return document.fonts && document.fonts.load ? Promise.all([document.fonts.load('800 80px "Barlow Condensed"'), document.fonts.load('600 40px "Barlow Condensed"')]).catch(function () {}) : Promise.resolve(); }
-  function canvas() { if (!cv) { cv = el('canvas', { width: 1200, height: 630 }); ctx = cv.getContext('2d'); } return cv; }
-  function card(kind) { canvas(); return load().then(ready).then(function () { return draw(kind) ? cv.toDataURL('image/png') : ''; }); }
-  function file(cb) { cv.toBlob(function (b) { cb(b ? new File([b], 'gatorbait-' + cur + '.png', { type: 'image/png' }) : null); }, 'image/png'); }
-
-  /* ---------- The sheet: native share first, in-page fallback always available ---------- */
-  function track(kind, medium) {
-    try { document.dispatchEvent(new CustomEvent('gbm:share', { detail: { kind: kind, medium: medium } })); } catch (_) {}
-    try { if (typeof window.gtag === 'function') window.gtag('event', 'share', { method: medium, content_type: kind, item_id: (payload(kind, medium) || {}).url }); } catch (_) {}
-  }
-  function toast(msg) { var t = document.getElementById('gbm-share-toast') || document.body.appendChild(el('div', { id: 'gbm-share-toast', role: 'status' })); t.textContent = msg; t.style.opacity = '1'; setTimeout(function () { t.style.opacity = '0'; }, 1600); }
-  function sheet() {
-    var s = document.getElementById('gbm-share'); if (s) return s;
-    document.body.appendChild(el('div', { id: 'gbm-share-veil', hidden: '' }));
-    s = el('div', { id: 'gbm-share', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Share' }, '<i></i>');
-    s.appendChild(canvas()); s.appendChild(el('p', { id: 'gbm-share-text' }));
-    s.appendChild(el('div', { 'class': 'g' }, '<button type="button" class="gbm-share-btn" data-act="native">Share…</button><button type="button" class="gbm-share-btn ghost" data-act="copy">Copy link</button><button type="button" class="gbm-share-btn ghost" data-act="x">Post on X</button><button type="button" class="gbm-share-btn ghost" data-act="facebook">Facebook</button><button type="button" class="gbm-share-btn ghost w" data-act="save">Save image</button><button type="button" class="gbm-share-btn ghost w" data-act="close">Close</button>'));
-    s.addEventListener('click', function (e) { var b = e.target.closest('[data-act]'); if (b) act(b.getAttribute('data-act')); });
-    document.getElementById('gbm-share-veil').addEventListener('click', close);
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && opened) close(); });
-    document.body.appendChild(s); return s;
-  }
-  function open(kind) {
-    cur = kind; var s = sheet();
-    return card(kind).then(function (png) {
-      var p = payload(kind, 'native'); if (!png || !p) { toast('Nothing to share yet'); return false; }
-      document.getElementById('gbm-share-text').textContent = p.text + '\n' + p.url;
-      document.getElementById('gbm-share-veil').hidden = false; s.classList.add('on'); opened = true;
-      return true;
-    });
-  }
-  function close() { var s = document.getElementById('gbm-share'); if (s) s.classList.remove('on'); var v = document.getElementById('gbm-share-veil'); if (v) v.hidden = true; opened = false; }
-  function act(a) {
-    var p;
-    if (a === 'close') return close();
-    if (a === 'copy') { p = payload(cur, 'copy'); track(cur, 'copy'); var txt = p.text + ' ' + p.url; return (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function () { toast('Link copied'); }, function () { window.prompt('Copy this link', txt); }); }
-    if (a === 'x' || a === 'facebook') {
-      p = payload(cur, a); track(cur, a);
-      var href = a === 'x' ? 'https://x.com/intent/post?text=' + encodeURIComponent(p.text) + '&url=' + encodeURIComponent(p.url) : 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(p.url);
-      return window.open(href, '_blank', 'noopener,width=600,height=560');
-    }
-    if (a === 'save') { track(cur, 'image'); return file(function (f) { if (!f) return; var link = el('a', { href: URL.createObjectURL(f), download: f.name }); document.body.appendChild(link); link.click(); link.remove(); toast('Image saved'); }); }
-    if (a === 'native') {
-      if (!navigator.share) return act('copy');
-      p = payload(cur, 'native'); track(cur, 'native');
-      return file(function (f) {
-        var d = { title: 'GatorBait', text: p.text, url: p.url };
-        if (f && navigator.canShare && navigator.canShare({ files: [f] })) d.files = [f];
-        navigator.share(d).then(close).catch(function () {});
-      });
-    }
-  }
-
-  /* ---------- Mount: one button per surface, only where that surface exists ---------- */
-  function button(kind, label, ghost) {
-    var b = el('button', { type: 'button', 'class': 'gbm-share-btn' + (ghost ? ' ghost' : ''), 'data-share': kind, 'aria-label': label }, ICON + '<span>' + esc(label) + '</span>');
-    b.addEventListener('click', function () { open(kind); }); return b;
-  }
-  function mount() {
-    if (!document.getElementById('gbm-share-css')) document.head.appendChild(el('style', { id: 'gbm-share-css' }, CSS));
-    var road = document.querySelector('#gbm-road .hd'), tn = document.querySelector('.fp-tunnel .fp-tn-cta'), show = document.querySelector('.fp-show .fp-actions');
-    var narrow = window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
-    if (road && !road.querySelector('[data-share]')) road.appendChild(button('season', narrow ? 'Share' : 'Share the season'));
-    if (show && !show.querySelector('[data-share]')) show.appendChild(button('show', narrow ? 'Share' : 'Share the show', true));
-    if (tn && !tn.querySelector('[data-share]')) tn.appendChild(button('tunnel', 'Share', true));
-    // Blog post page: canonical /post/ URL and a headline, no homepage root.
-    if (!document.getElementById('gbm-live') && safePost(location.href) && !document.getElementById('gbm-share-btn')) {
-      var h = headline(), host = h && (h.closest('header') || h.parentNode);
-      if (host) { var b = button('story', 'Share this story'); b.id = 'gbm-share-btn'; b.style.margin = '12px 0'; host.appendChild(b); }
-    }
-  }
-  window.__GBM_SHARE_RUNTIME__ = { version: VERSION, open: open, card: card, payload: payload, mount: mount };
-  document.addEventListener('gbm:gazette-ready', mount);
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, { once: true }); else mount();
-  var tries = 0, retry = setInterval(function () { mount(); if (++tries > 8 || document.querySelector('[data-share]')) clearInterval(retry); }, 500);
-  // Wix blog pages hydrate late and React re-renders the post header, which drops a button inserted early.
-  // On story pages keep watching for the page's life and re-insert when it is gone; on the homepage stop once mounted.
-  if ('MutationObserver' in window) {
-    var post = !document.getElementById('gbm-live') && !!safePost(location.href), queued = false;
-    var mo = new MutationObserver(function () {
-      if (queued) return; queued = true;
-      requestAnimationFrame(function () { queued = false; if (document.querySelector('[data-share]')) { if (!post) mo.disconnect(); return; } mount(); });
-    });
-    mo.observe(document.documentElement, { childList: true, subtree: true });
-    if (!post) setTimeout(function () { mo.disconnect(); }, 90000);
-  }
-})();
-
-/* GatorBait Capture (sports-live/src/capture.js): the "Get GatorBait Magazine free" signup for story pages and the homepage hub. */
-/* GatorBait Capture 2026: "Get GatorBait Magazine free" signup for story pages and the homepage hub.
- * One component, four placements, each tagged with its source:
- *   home           the hub module the Front Page renderer paints (front-page.js calls GBM_CAPTURE.html('home'));
- *   story-inline   mid-article, after the 4th prose paragraph (stories with 6+ prose paragraphs only);
- *   story-end      folded into the Story Kit's "Keep up with the Gators" block;
- *   story-slideup  a small bar that slides up on /post/ pages after 50% scroll or 45 s.
- * Where a signup goes: the site's existing Wix form "GatorBait Email List" (6babfee8-...), which already holds the
- * email field, the unchecked CONTACTS_SUBSCRIBE consent box with DOUBLE_CONFIRMATION, and the user automation that
- * adds the list's audience labels. The browser mints an anonymous visitor token from the site's headless OAuth
- * client (POST https://www.wixapis.com/oauth2/token, grantType "anonymous"; a client ID is public, no secret) and
- * calls Wix Forms' Create Submission (POST /form-submission-service/v4/submissions) as that visitor. Wix then sends
- * its own confirmation email; nobody is subscribed until they click it. Evidence: deploy/capture-2026/README.md.
- * Consent: the checkbox starts unchecked and nothing is sent until the reader checks it; the submission carries
- * subscribe_gatorbait: true only because the reader said yes. A hidden honeypot drops bot fills without a request.
- * Source tagging: every submission tries to carry signup_source (home | story-inline | story-end | story-slideup).
- * Until that hidden field exists on the form, Wix rejects the key as UNKNOWN_VALUE_ERROR and the module resends
- * once without it (and remembers that for the page view). A "gbm:capture" DOM event and a dataLayer push (when a
- * dataLayer exists) record source and outcome either way.
- * Memory (localStorage, every access in try/catch): gbm-capture-joined (signed up here: no slide-up, no story cards,
- * the home module shows its thank-you line) and gbm-capture-dismissed (slide-up closed: quiet for 14 days).
- * The slide-up never covers the Share sheet (#gbm-share.on): it sits below it and steps aside while the sheet is open.
- * Test hooks: window.__GBM_CAPTURE_CFG__ {clientId, formId, sourceField, delayMs} overrides the defaults;
- * window.GBM_CAPTURE exposes {version, html(source), mountStory(ctx), state()}. Nothing here edits a Wix page. */
-(function () {
-  'use strict';
-  if (window.GBM_CAPTURE) return;
-  var VERSION = 'capture-2026.1';
-  var SITE = 'https://www.gatorbaitmedia.com';
-  var API = 'https://www.wixapis.com';
-  var seed = window.__GBM_CAPTURE_CFG__ || {};
-  var CFG = {
-    clientId: seed.clientId || '1565816d-bbbc-45c1-b82a-31f10d3e2c71', // headless OAuth client on site 18fb3a4e (public ID)
-    formId: seed.formId || '6babfee8-147f-428a-9e14-6b72f6225835', // "GatorBait Email List", double opt-in
-    emailField: 'email_gatorbait', consentField: 'subscribe_gatorbait',
-    sourceField: seed.sourceField === undefined ? 'signup_source' : seed.sourceField,
-    delayMs: Number(seed.delayMs) > 0 ? Number(seed.delayMs) : 45000,
-    quietDays: 14,
-  };
-  var PRIVACY = SITE + '/policies';
-  var K_JOINED = 'gbm-capture-joined', K_DISMISSED = 'gbm-capture-dismissed', K_TOKEN = 'gbm-capture-token';
-  function now() { return Date.now(); } // real clock on purpose: the 45 s timer and the 14-day memory follow the reader, not a test's pinned date
-  function get(store, k) { try { return window[store].getItem(k); } catch (_) { return null; } }
-  function put(store, k, v) { try { window[store].setItem(k, v); } catch (_) {} }
-  function joined() { return !!get('localStorage', K_JOINED); }
-  function quiet() { var t = Number(get('localStorage', K_DISMISSED)); return Number.isFinite(t) && t > 0 && now() - t < CFG.quietDays * 864e5; }
-  function onPost() { return String(location.pathname).indexOf('/post/') === 0; }
-
-  // Barlow only; navy #0021a5, orange #fa4616. The :is(#gbm-live,html) prefix carries an id's weight so the homepage's
-  // #gbm-live.fp26 heading and link rules never restyle the card, and it still matches on story pages.
-  var P = ':is(#gbm-live,html) ';
-  var CSS = [
-    P + '.gbc{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;contain:inline-size;margin:24px 0;padding:18px 16px 16px;border-radius:12px;background:#0021a5;color:#fff;text-align:left;direction:ltr;font:500 16px/1.4 "Barlow",sans-serif;border-top:6px solid #fa4616}',
-    P + '.gbc *{box-sizing:border-box}' + P + '.gbc input,' + P + '.gbc button{font-family:"Barlow",sans-serif}',
-    P + '.gbc .gbc-k{display:block;margin:0 0 6px;padding:0;border:0;font:800 12px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#ffb27a}',
-    P + '.gbc .gbc-h{margin:0 0 6px;padding:0;border:0;font:800 26px/1.05 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.01em;text-transform:none;color:#fff;overflow-wrap:break-word}',
-    P + '.gbc .gbc-v{margin:0 0 12px;padding:0;font:500 16px/1.4 "Barlow",sans-serif;color:#e8ecf8}',
-    P + '.gbc form{margin:0;padding:0}',
-    P + '.gbc .gbc-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}',
-    P + '.gbc .gbc-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}',
-    P + '.gbc input[type=email]{flex:1 1 180px;min-width:0;width:100%;height:48px;margin:0;padding:0 12px;border:2px solid #fff;border-radius:8px;background:#fff;color:#0b1a44;font:500 17px/1 "Barlow",sans-serif}',
-    P + '.gbc input[type=email]:focus{outline:3px solid #fa4616;outline-offset:1px}',
-    P + '.gbc .gbc-b{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin:0;padding:0 18px;border:0;border-radius:8px;background:#fa4616;color:#fff;font:800 17px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap}',
-    P + '.gbc .gbc-b:hover,' + P + '.gbc .gbc-b:focus-visible{background:#fff;color:#0021a5;outline:2px solid #fa4616;outline-offset:2px}',
-    P + '.gbc .gbc-b[disabled]{opacity:.7;cursor:progress}',
-    P + '.gbc .gbc-c{display:flex;align-items:flex-start;gap:10px;min-height:44px;margin:0 0 6px;padding:2px 0;font:500 15px/1.35 "Barlow",sans-serif;color:#fff;cursor:pointer}',
-    P + '.gbc .gbc-c input{flex:0 0 auto;width:22px;height:22px;margin:0;accent-color:#fa4616;cursor:pointer}',
-    P + '.gbc .gbc-p{margin:0;padding:0;font:500 13px/1.4 "Barlow",sans-serif;color:#c9d3ee}',
-    P + '.gbc a,' + P + '.gbc a:visited{color:#fff;text-decoration:underline;text-decoration-color:#fa4616;text-underline-offset:2px}',
-    P + '.gbc .gbc-m{margin:8px 0 0;padding:0;font:700 15px/1.35 "Barlow",sans-serif;color:#fff}.gbc .gbc-m:empty{display:none}',
-    P + '.gbc .gbc-m[data-tone=err]{color:#ffd2c2}',
-    P + '.gbc .gbc-hp{display:none}',
-    P + '.gbc[data-state=done] .gbc-f>:not(.gbc-m){display:none}' + P + '.gbc[data-state=done] .gbc-m{margin:0;font:700 17px/1.35 "Barlow",sans-serif}',
-    P + '.gbc.gbc-joined{padding:14px 16px}' + P + '.gbc.gbc-joined .gbc-h{font-size:22px;margin:0}',
-    // Homepage hub: right under the show on phones, a full row under it on tablets, and on desktop the old email
-    // module's slot (last in the grid, columns 10-12 beside the Magazine), so no other module moves.
-    '#gbm-live.fp26 .fp-hub-grid>.fp-mod-capture{margin:0;border-radius:0}',
-    '@media(min-width:600px){#gbm-live.fp26 .fp-hub-grid>.fp-mod-capture{grid-column:1/-1}}',
-    '@media(min-width:821px){#gbm-live.fp26 .fp-hub-grid>.fp-mod-capture{grid-column:10/13;order:1}}',
-    // Slide-up bar: fixed, transform-only (no layout shift), under the Share sheet's layers (9998/9999).
-    '#gbc-bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;justify-content:center;padding:0 8px calc(8px + env(safe-area-inset-bottom));pointer-events:none;transform:translateY(110%);transition:transform .3s ease;visibility:hidden}',
-    '#gbc-bar.on{transform:none;visibility:visible}#gbc-bar.aside{transform:translateY(110%);visibility:hidden}',
-    '#gbc-bar .gbc{pointer-events:auto;position:relative;max-width:560px;margin:0;padding:12px 12px 10px;border-top-width:4px;box-shadow:0 -6px 24px rgba(3,8,24,.35)}',
-    '#gbc-bar .gbc .gbc-k{display:none}#gbc-bar .gbc .gbc-h{font-size:22px;margin:0 0 2px;padding-right:44px}#gbc-bar .gbc .gbc-v{font-size:14px;margin:0 0 8px;padding-right:44px}',
-    '#gbc-bar .gbc .gbc-row{flex-wrap:nowrap;margin:0 0 6px}#gbc-bar .gbc input[type=email]{flex:1 1 120px;height:44px}#gbc-bar .gbc .gbc-b{min-height:44px;padding:0 14px;font-size:16px}',
-    '#gbc-bar .gbc .gbc-c{font-size:14px;margin:0 0 2px;min-height:40px}#gbc-bar .gbc .gbc-c input{width:20px;height:20px}#gbc-bar .gbc .gbc-p{font-size:12px}',
-    '#gbc-bar .gbc-x{position:absolute;top:4px;right:4px;width:44px;height:44px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#fff;font:700 26px/1 "Barlow",sans-serif;cursor:pointer}',
-    '#gbc-bar .gbc-x:focus-visible,#gbc-bar .gbc-x:hover{outline:2px solid #fa4616;background:rgba(255,255,255,.12)}',
-    '@media(prefers-reduced-motion:reduce){#gbc-bar{transition:none}}',
-  ].join('');
-  function css() {
-    if (document.getElementById('gbm-capture-css')) return;
-    var s = document.createElement('style'); s.id = 'gbm-capture-css'; s.textContent = CSS;
-    (document.head || document.documentElement).appendChild(s);
-  }
-
-  /* ---------- The component ---------- */
-  var COPY = {
-    kicker: 'Free · GatorBait Magazine',
-    head: 'Get GatorBait Magazine free',
-    value: "Buddy Martin's columns, the game-week package and Chris Spears' photos in your inbox. One email a day at most.",
-    consent: 'Yes, email me GatorBait Magazine and GatorBait Media news about the Florida Gators. I can unsubscribe anytime.',
-    fine: "We'll email you a link to confirm.",
-    button: 'Sign up free',
-    sending: 'Signing you up…',
-    done: 'Almost done: check your inbox for an email from GatorBait Media and tap the link to confirm.',
-    badEmail: 'Enter a valid email address.',
-    noConsent: 'Check the box to say yes to GatorBait emails.',
-    failed: "That didn't go through. Try again in a minute.",
-    joined: "You're on the GatorBait Magazine list",
-    joinedLine: 'Thanks for reading. Watch your inbox for the next issue.',
-  };
-  var SOURCES = { home: 1, 'story-inline': 1, 'story-end': 1, 'story-slideup': 1 };
-  function html(source, opts) {
-    css();
-    source = SOURCES[source] ? source : 'home';
-    var home = source === 'home', tag = home ? 'section' : 'aside', o = opts || {};
-    var cls = 'gbc' + (home ? ' fp-mod-capture' : '') + (o.extra ? ' ' + o.extra : '');
-    var attrs = ' data-gbm-capture="' + source + '"' + (home ? '' : ' data-story-kit="capture"') + ' aria-label="GatorBait Magazine signup"';
-    if (home && joined()) return '<' + tag + ' class="' + cls + ' gbc-joined"' + attrs + ' data-state="joined"><p class="gbc-k">' + COPY.kicker + '</p><h2 class="gbc-h">' + COPY.joined + '</h2><p class="gbc-v" style="margin:6px 0 0">' + COPY.joinedLine + '</p></' + tag + '>';
-    var id = 'gbc-' + source;
-    return '<' + tag + ' class="' + cls + '"' + attrs + ' data-state="ready">' + (o.close ? '<button type="button" class="gbc-x" aria-label="Close">×</button>' : '') +
-      '<p class="gbc-k">' + COPY.kicker + '</p><' + (home ? 'h2' : 'h3') + ' class="gbc-h">' + COPY.head + '</' + (home ? 'h2' : 'h3') + '>' +
-      '<p class="gbc-v">' + (o.short ? 'Buddy Martin, the game-week package, Chris Spears’ photos. One email a day at most.' : COPY.value) + '</p>' +
-      '<form class="gbc-f" novalidate><label class="gbc-l" for="' + id + '-e">Email address</label>' +
-      '<div class="gbc-row"><input type="email" id="' + id + '-e" name="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" required><button class="gbc-b" type="submit">' + COPY.button + '</button></div>' +
-      '<label class="gbc-c"><input type="checkbox" name="consent" value="yes"><span>' + COPY.consent + '</span></label>' +
-      '<div class="gbc-hp" aria-hidden="true"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>' +
-      '<p class="gbc-p">' + COPY.fine + ' <a href="' + PRIVACY + '">Privacy policy</a></p>' +
-      '<p class="gbc-m" role="status" aria-live="polite"></p></form></' + tag + '>';
-  }
-  function node(source, opts) { var t = document.createElement('div'); t.innerHTML = html(source, opts); return t.firstChild; }
-
-  /* ---------- Submitting: visitor token, then Create Submission ---------- */
-  var sourceFieldOk = true, busy = false;
-  function token() {
-    try { var c = JSON.parse(get('sessionStorage', K_TOKEN) || 'null'); if (c && c.t && c.x > Date.now() + 60000) return Promise.resolve(c.t); } catch (_) {}
-    return fetch(API + '/oauth2/token', { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ clientId: CFG.clientId, grantType: 'anonymous' }) })
-      .then(function (r) { if (!r.ok) throw new Error('token ' + r.status); return r.json(); })
-      .then(function (j) { if (!j || !j.access_token) throw new Error('token'); put('sessionStorage', K_TOKEN, JSON.stringify({ t: j.access_token, x: Date.now() + (Number(j.expires_in) || 14400) * 1000 })); return j.access_token; });
-  }
-  function submitOnce(tok, email, source, withSource) {
-    var values = {}; values[CFG.emailField] = email; values[CFG.consentField] = true;
-    if (withSource && CFG.sourceField) values[CFG.sourceField] = source;
-    return fetch(API + '/form-submission-service/v4/submissions', { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json', Authorization: tok }, body: JSON.stringify({ submission: { formId: CFG.formId, submissions: values } }) })
-      .then(function (r) { return r.text().then(function (t) { return { ok: r.ok, status: r.status, text: t }; }); });
-  }
-  function submit(email, source) {
-    return token().then(function (tok) {
-      var tagged = sourceFieldOk && !!CFG.sourceField;
-      return submitOnce(tok, email, source, tagged).then(function (res) {
-        // The form has no signup_source field yet: Wix names the stray key; resend once without it.
-        if (!res.ok && tagged && /UNKNOWN_VALUE_ERROR|signup_source/.test(res.text) && res.status < 500) { sourceFieldOk = false; return submitOnce(tok, email, source, false).then(function (r2) { r2.tagged = false; return r2; }); }
-        if (!res.ok && res.status === 401) { put('sessionStorage', K_TOKEN, ''); }
-        res.tagged = tagged; return res;
-      });
-    });
-  }
-  function report(source, outcome, tagged) {
-    var detail = { source: source, outcome: outcome, tagged: !!tagged, version: VERSION };
-    try { document.dispatchEvent(new CustomEvent('gbm:capture', { detail: detail })); } catch (_) {}
-    try { if (Array.isArray(window.dataLayer)) window.dataLayer.push({ event: 'gbm_capture', gbm_capture_source: source, gbm_capture_outcome: outcome }); } catch (_) {}
-  }
-  // Probe (never creates a contact): a page opened with ?gbm_capture=probe mints a visitor token and sends an empty
-  // submission (no email, no consent). Wix validates only after CORS and the token pass, so a 400 here proves the
-  // path works end to end without a contact. The result lands on <html data-gbm-capture-probe> for live shots.
-  if (/[?&]gbm_capture=probe(&|$)/.test(location.search)) {
-    token().then(function (tok) {
-      return fetch(API + '/form-submission-service/v4/submissions', { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json', Authorization: tok }, body: JSON.stringify({ submission: { formId: CFG.formId, submissions: {} } }) })
-        .then(function (r) { return r.text().then(function (t) { return { token: true, status: r.status, text: t.slice(0, 220) }; }); });
-    }).catch(function (e) { return { token: false, error: String(e).slice(0, 140) }; })
-      .then(function (res) { document.documentElement.setAttribute('data-gbm-capture-probe', JSON.stringify(res)); });
-  }
-  function say(box, text, tone) { var m = box.querySelector('.gbc-m'); if (m) { m.textContent = text; if (tone) m.setAttribute('data-tone', tone); else m.removeAttribute('data-tone'); } }
-  function onSubmit(ev) {
-    var form = ev.target, box = form && form.closest && form.closest('[data-gbm-capture]');
-    if (!box || !form.classList.contains('gbc-f')) return;
-    ev.preventDefault();
-    if (busy || box.getAttribute('data-state') === 'done') return;
-    var source = box.getAttribute('data-gbm-capture'), email = String(form.email.value || '').trim(), hp = form.company && form.company.value;
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 254) { say(box, COPY.badEmail, 'err'); form.email.focus(); return; }
-    if (!form.consent.checked) { say(box, COPY.noConsent, 'err'); form.consent.focus(); return; }
-    if (hp) { box.setAttribute('data-state', 'done'); say(box, COPY.done); return; } // bot fill: no request
-    busy = true; box.setAttribute('data-state', 'sending'); say(box, COPY.sending);
-    var btn = form.querySelector('.gbc-b'); if (btn) btn.disabled = true;
-    submit(email, source).then(function (res) {
-      busy = false; if (btn) btn.disabled = false;
-      if (!res.ok) throw new Error('submission ' + res.status);
-      put('localStorage', K_JOINED, String(now()));
-      box.setAttribute('data-state', 'done'); say(box, COPY.done);
-      report(source, 'submitted', res.tagged);
-      if (box.closest('#gbc-bar')) setTimeout(function () { hideBar(false); }, 6000); else hideBar(false);
-      // Other story cards on the page step back once the reader is signed up (the one that took the email stays).
-      [].slice.call(document.querySelectorAll('[data-gbm-capture]')).forEach(function (o) { if (o !== box && o.getAttribute('data-gbm-capture') !== 'home' && !o.closest('#gbc-bar')) o.hidden = true; });
-    }).catch(function () {
-      busy = false; if (btn) btn.disabled = false;
-      box.setAttribute('data-state', 'ready'); say(box, COPY.failed, 'err');
-      report(source, 'failed', false);
-    });
-  }
-
-  /* ---------- Story pages: inline card after the 4th prose paragraph, and inside "Keep up with the Gators" ---------- */
-  function prose(ps) {
-    return ps.filter(function (p) {
-      var t = String(p.textContent || '').replace(/\s+/g, ' ').trim();
-      return t.length > 60 && !p.closest('blockquote,figure,figcaption,[data-story-kit]') && !/^(By\s+[A-Z]|[—–-]\s)/.test(t);
-    });
-  }
-  // Insert without moving what the reader sees: if the anchor is above the viewport, pay the new height back.
-  function insertQuiet(anchor, el) {
-    var above = anchor.getBoundingClientRect().bottom < 0;
-    anchor.insertAdjacentElement('afterend', el);
-    if (above) { var h = el.getBoundingClientRect().height + 48; if (h > 0) scrollBy(0, h); }
-  }
-  function mountStory(ctx) {
-    if (!onPost() || joined() || !ctx || !ctx.body) return;
-    css();
-    if (!document.querySelector('[data-gbm-capture="story-inline"]')) {
-      var ps = prose(ctx.paras || []);
-      if (ps.length >= 6) {
-        var a = ps[3];
-        if (a.parentNode && a.parentNode !== ctx.body && a.parentNode.children.length === 1) a = a.parentNode;
-        insertQuiet(a, node('story-inline'));
-      }
-    }
-    var more = ctx.more || document.querySelector('[data-story-kit="more"]');
-    if (more && !more.querySelector('[data-gbm-capture="story-end"]')) more.appendChild(node('story-end', { extra: 'gbc-end' }));
-    watchBar();
-  }
-
-  /* ---------- Slide-up bar (story pages) ---------- */
-  var t0 = now(), barShown = false, barTimer = 0;
-  function shareOpen() { var s = document.getElementById('gbm-share'); return !!(s && s.classList.contains('on')); }
-  function cardInView() {
-    return [].slice.call(document.querySelectorAll('[data-gbm-capture="story-inline"],[data-gbm-capture="story-end"]')).some(function (c) {
-      var b = c.getBoundingClientRect(); return !c.hidden && b.height && b.bottom > 0 && b.top < innerHeight;
-    }) || (document.activeElement && document.activeElement.closest && !!document.activeElement.closest('[data-gbm-capture]:not(#gbc-bar *)'));
-  }
-  function scrolled() { var h = document.documentElement.scrollHeight - innerHeight; return h > 0 && scrollY / h >= 0.5; }
-  function bar() { return document.getElementById('gbc-bar'); }
-  function hideBar(remember) {
-    var b = bar(); if (!b) return;
-    b.classList.remove('on');
-    if (remember) put('localStorage', K_DISMISSED, String(now()));
-  }
-  function showBar() {
-    if (barShown) return; barShown = true; css();
-    var b = document.createElement('div'); b.id = 'gbc-bar';
-    b.innerHTML = html('story-slideup', { close: true, short: true });
-    document.body.appendChild(b);
-    b.querySelector('.gbc-x').addEventListener('click', function () { hideBar(true); });
-    requestAnimationFrame(function () { requestAnimationFrame(function () { if (!shareOpen()) b.classList.add('on'); }); });
-    report('story-slideup', 'shown', false);
-  }
-  function tick() {
-    if (!onPost()) return;
-    var b = bar();
-    // Once up, the bar steps aside for the Share sheet and while a signup card is on screen (never two forms in view).
-    if (b) { var inBar = document.activeElement && b.contains(document.activeElement); b.classList.toggle('aside', shareOpen() || (!inBar && cardInView())); if (!b.isConnected) document.body.appendChild(b); return; }
-    if (barShown || joined() || quiet() || shareOpen() || cardInView()) return;
-    if (scrolled() || now() - t0 >= CFG.delayMs) showBar();
-  }
-  function watchBar() {
-    if (barTimer) return;
-    barTimer = setInterval(tick, 1000);
-    addEventListener('scroll', function () { tick(); }, { passive: true });
-    document.addEventListener('keydown', function (e) { var b = bar(); if (e.key === 'Escape' && b && b.classList.contains('on') && !b.classList.contains('aside') && !shareOpen()) hideBar(true); });
-  }
-
-  document.addEventListener('submit', onSubmit, true);
-  window.GBM_CAPTURE = {
-    version: VERSION, html: html, mountStory: mountStory,
-    state: function () { return { joined: joined(), quiet: quiet(), barShown: barShown, sourceFieldOk: sourceFieldOk, cfg: { clientId: CFG.clientId, formId: CFG.formId, sourceField: CFG.sourceField, delayMs: CFG.delayMs } }; },
-  };
-  if (onPost()) watchBar();
-})();
-
-/* GatorBait Story Kit (sports-live/src/story-kit.js): guide strip, first-mention links and the Keep up with the Gators cards on /post/ pages only. */
-/* GatorBait Story Kit 2026: keeps every story pointed back at the things we built here.
- * Drop-in module in the Share GatorBait style (sports-live/src/share.js); appended after it in both
- * sports-live/share.js (blog post pages) and sports-live/homepage.js. It runs ONLY on Wix blog post pages
- * (location.pathname starts with /post/) and does three reversible, DOM-only things:
- *   1. GatorBait Guide strip: one compact row right after the Share button (share.js's [data-share]):
- *      a live "Next: at No. 25 Missouri · Sat., Oct. 3 · 3:30 p.m. ET" chip and, after a final,
- *      "Last: W 52-28 vs. No. 4 Ole Miss" (both from sports-live/scoreboard.json, 3 s timeout, silent on
- *      failure), then Roster, Schedule, Stats, The Road Ahead, The Buddy Martin Show.
- *   2. First-mention links in the article body: the first plain-text "roster", "schedule", "depth chart",
- *      "stats"/"statistics" and the next opponent's name (with its nickname when it follows, e.g. "Missouri
- *      Tigers") become links to the same destinations. Whole words, case-insensitive, at most 5 per story.
- *   3. "Keep up with the Gators": three cards (Roster & Schedule, Florida Stats, The Road Ahead) after the
- *      last body paragraph.
- *   4. The "Get GatorBait Magazine free" signup (window.GBM_CAPTURE, sports-live/src/capture.js) mid-article and
- *      inside the Keep up block; the kit only tells it where the body, its paragraphs and the block are.
- * Wix re-renders the post after hydration and drops early inserts, so a MutationObserver re-mounts what is
- * gone; every step is guarded by [data-story-kit] and never duplicates.
- * What it never does: it writes nothing to Wix, edits no article text (links wrap existing words in place),
- * never touches text inside existing links, headings, captions, bylines or quote attributions, and stays off
- * the homepage (#gbm-live) and every non-/post/ path.
- * Test hooks: window.__GBM_KIT__ {scoreboard, now} pre-seeds data; window.__GBM_KIT_RUNTIME__ exposes
- * {version, mount(), links}. */
-(function () {
-  'use strict';
-  if (String(location.pathname).indexOf('/post/') !== 0) return;
-  var VERSION = 'story-kit-2026.1';
-  var PAGES = 'https://presidente49.github.io/gatorbait-media-redesign/';
-  var SITE = 'https://www.gatorbaitmedia.com';
-  var TZ = 'America/New_York';
-  var GUIDE = SITE + '/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play';
-  var LINKS = { roster: GUIDE + '#roster', schedule: GUIDE + '#schedule', stats: SITE + '/florida-football-stats', road: SITE + '/#gbm-road', show: SITE + '/the-buddy-martin-show' };
-  var NICK = { Missouri: 'Tigers', Georgia: 'Bulldogs', Texas: 'Longhorns', 'South Carolina': 'Gamecocks', Kentucky: 'Wildcats', Tennessee: 'Volunteers', LSU: 'Tigers', Auburn: 'Tigers', 'Ole Miss': 'Rebels', Vanderbilt: 'Commodores', 'Texas A&M': 'Aggies', Alabama: 'Crimson Tide', Arkansas: 'Razorbacks', 'Mississippi State': 'Bulldogs', Oklahoma: 'Sooners', 'Florida State': 'Seminoles' };
-  var MAX_LINKS = 5;
-  var CSS = '.gbm-kit{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;contain:inline-size;margin:10px 0 18px;padding:0;text-align:left;direction:ltr;font:15px/1.3 "Barlow","Barlow Condensed",sans-serif;color:#0021a5}' +
-    '.gbm-kit-k{display:block;margin:0 0 6px;font:800 12px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fa4616}' +
-    '.gbm-kit-row{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:8px;width:0;min-width:100%;max-width:100%;box-sizing:border-box;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 4px;margin:0;list-style:none}.gbm-kit-row::-webkit-scrollbar{display:none}' +
-    '.gbm-kit-chip{display:inline-flex;flex:0 0 auto;align-items:center;min-height:44px;padding:0 14px;border:1px solid #0021a5;border-radius:999px;background:#fff;color:#0021a5;font:700 15px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;white-space:nowrap}' +
-    '.gbm-kit-chip:hover,.gbm-kit-chip:focus-visible{background:#0021a5;color:#fff;outline:2px solid #fa4616;outline-offset:2px}' +
-    '.gbm-kit-chip.lead{background:#fa4616;border-color:#fa4616;color:#fff;text-transform:none;letter-spacing:.02em;font-weight:800}.gbm-kit-chip.lead:hover,.gbm-kit-chip.lead:focus-visible{background:#0021a5;border-color:#0021a5}' +
-    '.gbm-kit-chip.last{text-transform:none;letter-spacing:.02em}' +
-    '@media(min-width:900px){.gbm-kit-row{flex-wrap:wrap;overflow:visible}}' +
-    'a.gbm-kit-link,a.gbm-kit-link:visited{color:#0021a5;text-decoration:underline;text-decoration-color:#fa4616;text-decoration-thickness:2px;text-underline-offset:2px}a.gbm-kit-link:hover{color:#fa4616}' +
-    '.gbm-kit-more{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;text-align:left;margin:28px 0 8px;padding:16px 0 0;border-top:3px solid #fa4616;font:15px/1.35 "Barlow","Barlow Condensed",sans-serif;color:#0021a5}' +
-    '.gbm-kit-more h3{margin:0 0 12px;font:800 22px/1.1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.02em;text-transform:uppercase;color:#0021a5}' +
-    '.gbm-kit-cards{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:700px){.gbm-kit-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}' +
-    '.gbm-kit-card{display:flex;flex-direction:column;justify-content:center;gap:4px;box-sizing:border-box;min-height:64px;padding:12px 14px;border:1px solid #0021a5;border-left:6px solid #fa4616;border-radius:8px;background:#fff;color:#0021a5;text-decoration:none}' +
-    '.gbm-kit-card b{font:800 18px/1.1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.03em;text-transform:uppercase}.gbm-kit-card span{font:500 14px/1.35 "Barlow",sans-serif;color:#1c2a5c}' +
-    '.gbm-kit-card:hover,.gbm-kit-card:focus-visible{background:#0021a5;color:#fff;outline:2px solid #fa4616;outline-offset:2px}.gbm-kit-card:hover span,.gbm-kit-card:focus-visible span{color:#f3f5fa}';
-  if (window.__GBM_KIT_RUNTIME__) { window.__GBM_KIT_RUNTIME__.mount(); return; }
-
-  var seed = window.__GBM_KIT__ || {};
-  var data = { scoreboard: seed.scoreboard || null }, loading = null;
-  function now() { var t = Number(seed.now ? Date.parse(seed.now) : window.__GBM_FP_NOW__); return Number.isFinite(t) && t > 0 ? t : Date.now(); }
-  function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function el(tag, attrs, html) { var e = document.createElement(tag); Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); }); if (html != null) e.innerHTML = html; return e; }
-  function safePost(u) { try { var x = new URL(String(u), SITE); return /^(www\.)?gatorbaitmedia\.com$/.test(x.hostname) && x.pathname.indexOf('/post/') === 0 ? SITE + x.pathname : ''; } catch (_) { return ''; } }
-
-  /* ---------- Time (America/New_York), AP style: "Sat., Oct. 3 · 3:30 p.m. ET" ---------- */
-  var MONTHS = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
-  var WDS = ['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.'];
-  function et(ms) {
-    var o = {};
-    new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: false }).formatToParts(new Date(ms)).forEach(function (p) { o[p.type] = p.value; });
-    return { wd: { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[o.weekday], mo: Number(o.month) - 1, d: Number(o.day), h: Number(o.hour) % 24, m: Number(o.minute) };
-  }
-  function clock(ms) { var e = et(ms), h = e.h % 12 || 12; return h + (e.m ? ':' + String(e.m).padStart(2, '0') : '') + (e.h < 12 ? ' a.m.' : ' p.m.'); }
-  function gameWhen(iso) { var t = Date.parse(iso); if (!Number.isFinite(t)) return ''; var e = et(t); return WDS[e.wd] + ', ' + MONTHS[e.mo] + ' ' + e.d + ' · ' + clock(t) + ' ET'; }
-  function oppName(g) { return (g.opponentRank ? 'No. ' + g.opponentRank + ' ' : '') + g.opponent; }
-
-  /* ---------- Data: the scoreboard feed the homepage uses, fetched once, silent on failure ---------- */
-  function fetchJson(url, ms) {
-    var ctl = 'AbortController' in window ? new AbortController() : null, timer = ctl && setTimeout(function () { ctl.abort(); }, ms);
-    return fetch(url, { signal: ctl && ctl.signal, credentials: 'omit' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).finally(function () { if (timer) clearTimeout(timer); });
-  }
-  function load() {
-    if (!loading) loading = data.scoreboard ? Promise.resolve() : fetchJson(PAGES + 'sports-live/scoreboard.json?t=' + Math.floor(now() / 60000), 3000).then(function (s) { data.scoreboard = s; }).catch(function () {});
-    return loading;
-  }
-  // Next game: skipped once its kickoff is more than five hours gone (the feed refreshes it after the final).
-  function nextGame() {
-    var n = data.scoreboard && data.scoreboard.next, k = n && Date.parse(n.kickoffIso || n.kickoff);
-    return n && n.opponent && Number.isFinite(k) && k + 5 * 36e5 > now() ? { name: oppName(n), opponent: String(n.opponent), home: n.home === true, when: gameWhen(n.kickoffIso || n.kickoff), tv: n.tv || '', url: safePost(n.previewUrl) || LINKS.schedule } : null;
-  }
-  function lastGame() {
-    var l = data.scoreboard && data.scoreboard.last, s = l && l.score;
-    return s && Number.isFinite(s.fla) && Number.isFinite(s.opp) && (!l.status || l.status === 'final') ? { line: (s.fla > s.opp ? 'W ' : s.fla < s.opp ? 'L ' : 'T ') + s.fla + '-' + s.opp + (l.home === true ? ' vs. ' : ' at ') + oppName(l), url: safePost(l.recapUrl) || LINKS.schedule } : null;
-  }
-
-  /* ---------- Where things live on a Wix post page ---------- */
-  function shareButton() { return document.querySelector('#gbm-share-btn, [data-share="story"]'); }
-  function textOf(n) { return String(n.textContent || '').replace(/\s+/g, ' ').trim(); }
-  // The rich-content body: Wix's post-description hook first, then the older class, then the common ancestor of the article's paragraphs.
-  function body() {
-    if (document.getElementById('gbm-live')) return null;
-    var b = document.querySelector('[data-hook="post-description"]') || document.querySelector('.blog-post-page-content, [data-hook="post-content"]');
-    if (!b) {
-      var ps = [].slice.call(document.querySelectorAll('article p, main p')).filter(function (p) { return textOf(p).length > 40 && !p.closest('[data-story-kit]'); });
-      if (ps.length >= 2) { b = ps[0].parentNode; while (b && b !== document.body && !b.contains(ps[ps.length - 1])) b = b.parentNode; }
-      if (b === document.body) b = null;
-    }
-    return b && b.querySelector('p') ? b : null;
-  }
-  function paragraphs(b) { return [].slice.call(b.querySelectorAll('p')).filter(function (p) { return textOf(p) && !p.closest('[data-story-kit]'); }); }
-
-  /* ---------- 1. GatorBait Guide strip ---------- */
-  function chip(cls, href, text, title) { return '<a class="gbm-kit-chip' + (cls ? ' ' + cls : '') + '" href="' + esc(href) + '"' + (title ? ' title="' + esc(title) + '"' : '') + '>' + esc(text) + '</a>'; }
-  function strip() {
-    var s = el('nav', { 'class': 'gbm-kit', 'data-story-kit': 'strip', 'aria-label': 'GatorBait Guide' },
-      '<span class="gbm-kit-k">GatorBait Guide</span><div class="gbm-kit-row">' + chip('', LINKS.roster, 'Roster') + chip('', LINKS.schedule, 'Schedule') + chip('', LINKS.stats, 'Stats') + chip('', LINKS.road, 'The Road Ahead') + chip('', LINKS.show, 'The Buddy Martin Show') + '</div>');
-    return s;
-  }
-  // The live chips lead the row once the feed lands; nothing else in the row moves (it scrolls sideways on phones).
-  function chips(s) {
-    if (!data.scoreboard || s.getAttribute('data-kit-live')) return;
-    var n = nextGame(), l = lastGame(), html = '';
-    if (n) html += chip('lead', n.url, 'Next: ' + (n.home ? 'vs. ' : 'at ') + n.name + ' · ' + n.when, n.tv ? 'Florida ' + (n.home ? 'vs. ' : 'at ') + n.name + ', ' + n.when + ', ' + n.tv : '');
-    if (l) html += chip('last', l.url, 'Last: ' + l.line);
-    s.setAttribute('data-kit-live', n || l ? 'on' : 'none');
-    if (html) s.querySelector('.gbm-kit-row').insertAdjacentHTML('afterbegin', html);
-  }
-  function mountStrip() {
-    var btn = shareButton(), s = document.querySelector('[data-story-kit="strip"]');
-    if (!btn) return; // the strip waits for share.js's button, which itself waits for Wix's post header
-    if (!s) { s = strip(); btn.insertAdjacentElement('afterend', s); }
-    else if (s.previousElementSibling !== btn) btn.insertAdjacentElement('afterend', s); // Wix re-rendered the header around it
-    chips(s);
-  }
-
-  /* ---------- 2. First-mention links ---------- */
-  var SKIP = 'a,h1,h2,h3,h4,h5,h6,figcaption,figure,cite,blockquote footer,button,code,pre,script,style,[data-story-kit],[data-hook*="user"],[data-hook*="byline"],[data-hook*="metadata"],[rel="author"]';
-  function terms() {
-    var t = [{ id: 'roster', re: 'roster', href: LINKS.roster }, { id: 'schedule', re: 'schedule', href: LINKS.schedule }, { id: 'depth-chart', re: 'depth\\s+chart', href: LINKS.roster }, { id: 'stats', re: 'stat(?:istic)?s', href: LINKS.stats }];
-    var n = nextGame(), nick = n && NICK[n.opponent];
-    if (n) t.push({ id: 'opponent', re: n.opponent.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + (nick ? '(?:\\s+' + nick + ')?' : ''), href: n.url });
-    return t;
-  }
-  // Skips: anything already linked, headings, captions, quote attributions (cite/footer or a dash-led line) and bylines
-  // (a short block that opens "By Buddy Martin"; "By the time…" is prose and stays eligible).
-  function skippable(node, b) {
-    var p = node.parentNode; if (!p || p.nodeType !== 1 || p.closest(SKIP)) return true;
-    var block = p.closest('p,li,div,blockquote') || p;
-    if (block !== b && /^(By\s+[A-Z]|[—–-]\s)/.test(textOf(block)) && textOf(block).length < 160) return true;
-    return /^\s*[—–]/.test(node.nodeValue);
-  }
-  function textNodes(b) {
-    var out = [], w = document.createTreeWalker(b, NodeFilter.SHOW_TEXT, null, false), n;
-    while ((n = w.nextNode())) if (/\S/.test(n.nodeValue) && !skippable(n, b)) out.push(n);
-    return out;
-  }
-  function linkTerm(b, t) {
-    var re = new RegExp('(^|[^A-Za-z0-9])(' + t.re + ')(?![A-Za-z0-9])', 'i'), nodes = textNodes(b);
-    for (var i = 0; i < nodes.length; i++) {
-      var m = re.exec(nodes[i].nodeValue); if (!m) continue;
-      var start = m.index + m[1].length, mid = nodes[i].splitText(start); mid.splitText(m[2].length);
-      var a = el('a', { 'class': 'gbm-kit-link', 'data-story-kit': 'link', 'data-term': t.id, href: t.href });
-      mid.parentNode.insertBefore(a, mid); a.appendChild(mid);
-      return true;
-    }
-    return false;
-  }
-  function mountLinks() {
-    var b = body(); if (!b) return;
-    // One sweep for the static terms; the opponent's name gets its own once the feed has landed ("static" -> "all"). After that
-    // the body is left alone until Wix replaces the node, which clears the mark.
-    var done = [].slice.call(b.querySelectorAll('a.gbm-kit-link')).map(function (a) { return a.getAttribute('data-term'); }), swept = b.getAttribute('data-story-kit-linked') || '';
-    terms().forEach(function (t) {
-      if (done.length >= MAX_LINKS || done.indexOf(t.id) >= 0) return;
-      if (swept && (t.id !== 'opponent' || swept === 'all')) return;
-      if (linkTerm(b, t)) done.push(t.id);
-    });
-    b.setAttribute('data-story-kit-linked', data.scoreboard ? 'all' : 'static');
-  }
-
-  /* ---------- 3. Keep up with the Gators ---------- */
-  function card(href, title, blurb) { return '<a class="gbm-kit-card" href="' + esc(href) + '"><b>' + esc(title) + '</b><span>' + esc(blurb) + '</span></a>'; }
-  function mountMore() {
-    if (document.querySelector('[data-story-kit="more"]')) return;
-    var b = body(); if (!b) return;
-    var ps = paragraphs(b), last = ps[ps.length - 1]; if (!last) return;
-    // Wix wraps each paragraph in its own block; land right after that block so the cards share the text column's gutters.
-    if (last.parentNode && last.parentNode !== b && last.parentNode.children.length === 1) last = last.parentNode;
-    var m = el('aside', { 'class': 'gbm-kit-more', 'data-story-kit': 'more', 'aria-label': 'Keep up with the Gators' },
-      '<h3>Keep up with the Gators</h3><div class="gbm-kit-cards">' + card(LINKS.roster, 'Roster & Schedule', 'The 2026 season guide: who is on the field and who is next.') + card(LINKS.stats, 'Florida Stats', 'The numbers behind every Gators game, updated all season.') + card(LINKS.road, 'The Road Ahead', 'Results so far and the road to Atlanta, on the front page.') + '</div>');
-    last.insertAdjacentElement('afterend', m);
-  }
-
-  /* ---------- Mount: idempotent, re-run by the observer whenever Wix re-renders ---------- */
-  function mount() {
-    if (document.getElementById('gbm-live')) return;
-    if (!document.getElementById('gbm-story-kit-css')) document.head.appendChild(el('style', { id: 'gbm-story-kit-css' }, CSS));
-    mountStrip(); mountLinks(); mountMore(); mountCapture();
-  }
-  // 4. GatorBait Magazine signup (sports-live/src/capture.js): a card after the 4th prose paragraph and one inside
-  // "Keep up with the Gators". The capture module owns the markup, the submit and its own no-duplicate guards.
-  function mountCapture() {
-    var b = body(); if (!b || !window.GBM_CAPTURE) return;
-    try { window.GBM_CAPTURE.mountStory({ body: b, paras: paragraphs(b), more: document.querySelector('[data-story-kit="more"]') }); } catch (_) {}
-  }
-  window.__GBM_KIT_RUNTIME__ = { version: VERSION, mount: mount, links: LINKS };
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, { once: true }); else mount();
-  load().then(mount);
-  var tries = 0, retry = setInterval(function () { mount(); if (++tries > 16 || (document.querySelector('[data-story-kit="strip"]') && document.querySelector('[data-story-kit="more"]'))) clearInterval(retry); }, 500);
-  if ('MutationObserver' in window) {
-    var queued = false, mo = new MutationObserver(function () {
-      if (queued) return; queued = true;
-      requestAnimationFrame(function () { queued = false; mount(); });
-    });
-    mo.observe(document.documentElement, { childList: true, subtree: true });
-  }
-})();
-
+(function(){"use strict";var Te=`html:has(#gbm-live.gbm-gazette) #SITE_HEADER,
+html:has(#gbm-live.gbm-gazette) #SITE_PAGES,
+html:has(#gbm-live.gbm-gazette) #PAGES_CONTAINER{display:none!important}
+html:has(#gbm-live.gbm-gazette),html:has(#gbm-live.gbm-gazette) body{height:auto!important;min-height:100vh!important}
+html:has(#gbm-live.gbm-gazette) body{margin:0!important;background:#f7f4ee!important;min-width:0!important}
+html:has(#gbm-live.fp-night) body{background:#07122e!important}
+html:has(#gbm-live.gbm-gazette) #SITE_CONTAINER,
+html:has(#gbm-live.gbm-gazette) #masterPage,
+html:has(#gbm-live.gbm-gazette) #SITE_PAGES_TRANSITION_GROUP{min-height:0!important;height:0!important;min-width:0!important;padding-block:0!important;margin-block:0!important}
+html:has(#gbm-live.gbm-gazette) #gbm-mobile-drawer-root{overflow:hidden}
+html:has(#gbm-live.gbm-gazette) #gbm-footer{position:relative;z-index:3;background:#08132f!important}
+html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
+#gbm-live.fp26{
+--fp-paper:#f7f4ee;--fp-surface:#fffdf9;--fp-hub:#ece6da;--fp-ink:#111629;--fp-ink-2:#454d5e;--fp-rule:#c9c5bb;--fp-rule-strong:#111629;
+--fp-link:#0021a5;--fp-mast:#0021a5;--fp-mast-ink:#fff;--fp-band:#07122e;--fp-band-ink:#fff;--fp-card:#fffdf9;--fp-chip:#e4ddcf;
+--fp-navy:#0021a5;--fp-orange:#fa4616;--fp-cond:"Barlow Condensed","Barlow",sans-serif;--fp-sans:"Barlow",sans-serif;
+--fp-pad:16px;
+display:block;position:relative;z-index:2;width:100%;min-width:0;overflow-x:clip;
+background:var(--fp-paper);color:var(--fp-ink);font-family:var(--fp-sans);font-size:16px;line-height:1.5;
+text-size-adjust:100%;-webkit-text-size-adjust:100%
+}
+#gbm-live.fp26.fp-night{
+--fp-paper:#07122e;--fp-surface:#0b1d4a;--fp-hub:#0b1d4a;--fp-ink:#f3f5fa;--fp-ink-2:#b9c4dc;--fp-rule:#26386b;--fp-rule-strong:#9fb0d8;
+--fp-link:#a9bbff;--fp-mast:#0b1d4a;--fp-band:#040b1f;--fp-card:#0e2257;--fp-chip:#16295e
+}
+#gbm-live.fp26 *,#gbm-live.fp26 *::before,#gbm-live.fp26 *::after{box-sizing:border-box}
+#gbm-live.fp26 a{color:inherit;text-decoration:none}
+#gbm-live.fp26 a:focus-visible,#gbm-live.fp26 button:focus-visible{outline:3px solid var(--fp-orange);outline-offset:3px}
+@media(hover:hover) and (pointer:fine){#gbm-live.fp26 a:hover .fp-hl,#gbm-live.fp26 a.fp-hl:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}}
+#gbm-live.fp26 h1,#gbm-live.fp26 h2,#gbm-live.fp26 h3,#gbm-live.fp26 h4,#gbm-live.fp26 p,#gbm-live.fp26 figure,#gbm-live.fp26 blockquote,#gbm-live.fp26 ul,#gbm-live.fp26 ol{margin:0;padding:0}
+#gbm-live.fp26 ul,#gbm-live.fp26 ol{list-style:none}
+#gbm-live.fp26 img{display:block;max-width:100%;width:100%;height:auto}
+#gbm-live.fp26 h1,#gbm-live.fp26 h2,#gbm-live.fp26 h3,#gbm-live.fp26 h4{font-family:var(--fp-cond);font-weight:800;letter-spacing:-.005em;overflow-wrap:break-word;text-wrap:balance}
+#gbm-live.fp26 .fp-wrap{width:100%;max-width:1440px;margin:0 auto;padding-inline:var(--fp-pad)}
+#gbm-live.fp26 .fp-skip{position:absolute;left:-10000px;top:0}
+#gbm-live.fp26 .fp-skip:focus{left:16px;top:8px;z-index:20;background:#fff;color:#111629;padding:10px 14px}
+#gbm-live.fp26 .fp-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#gbm-live.fp26 .fp-kick{display:flex;align-items:center;gap:10px;font:700 12px/1.3 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--fp-link)}
+#gbm-live.fp26 .fp-kick::before{content:"";flex:0 0 22px;height:2px;background:var(--fp-orange)}
+#gbm-live.fp26 .fp-meta{font:600 12px/1.4 var(--fp-sans);letter-spacing:.02em;color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-cap{font:500 12px/1.4 var(--fp-sans);color:var(--fp-ink-2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;padding-top:6px}
+#gbm-live.fp26 .fp-cap b{font-weight:700;color:var(--fp-ink)}
+#gbm-live.fp26 .fp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;background:var(--fp-orange);color:#fff;font:800 15px/1 var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+#gbm-live.fp26 .fp-btn.fp-ghost{background:transparent;color:var(--fp-ink);box-shadow:inset 0 0 0 2px currentColor}
+#gbm-live.fp26 .fp-more{display:inline-flex;align-items:center;min-height:44px;font:800 14px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:var(--fp-link);border-bottom:2px solid var(--fp-orange)}
+#gbm-live.fp26 .fp-num{font-variant-numeric:tabular-nums}
+#gbm-live.fp26 .fp-ticker{display:flex;align-items:stretch;height:38px;background:var(--fp-band);color:var(--fp-band-ink);font:700 13px/38px var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;overflow:hidden}
+#gbm-live.fp26 .fp-tk-tag{flex:0 0 auto;display:flex;align-items:center;padding:0 12px;background:var(--fp-orange);color:#fff;font-weight:800;letter-spacing:.14em}
+#gbm-live.fp26 .fp-tk-view{position:relative;flex:1 1 auto;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
+#gbm-live.fp26 .fp-tk-track{display:flex;width:max-content}
+#gbm-live.fp26 .fp-tk-list{display:flex;flex:0 0 auto;padding-left:16px}
+#gbm-live.fp26 .fp-tk-list li{display:flex;align-items:center;white-space:nowrap;padding-right:28px}
+#gbm-live.fp26 .fp-tk-list li::after{content:"";width:5px;height:5px;margin-left:28px;background:var(--fp-orange);transform:rotate(45deg)}
+#gbm-live.fp26 .fp-tk-list b{color:#ffb08f;margin-right:8px}
+#gbm-live.fp26 .fp-tk-list a{display:inline-block;max-width:70vw;overflow:hidden;text-overflow:ellipsis}
+#gbm-live.fp26 .fp-mast{background:var(--fp-mast);color:var(--fp-mast-ink);position:relative;overflow:hidden}
+#gbm-live.fp26 .fp-mast .fp-wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:6px 16px;padding-top:14px;padding-bottom:12px}
+#gbm-live.fp26 .fp-date{grid-column:1/-1;display:flex;justify-content:space-between;gap:12px;font:700 11px/1.3 var(--fp-cond);letter-spacing:.16em;text-transform:uppercase;color:#dfe5ff}
+#gbm-live.fp26 .fp-wordmark{display:flex;align-items:baseline;gap:10px;min-width:0;color:#fff;font:800 clamp(40px,13vw,68px)/.86 var(--fp-cond);letter-spacing:-.01em;text-transform:uppercase}
+#gbm-live.fp26 .fp-wordmark small{font:700 11px/1 var(--fp-sans);letter-spacing:.34em;color:#c9d3ff}
+#gbm-live.fp26 .fp-mast-right{display:flex;align-items:center;gap:14px;padding-bottom:4px}
+#gbm-live.fp26 .fp-signin{display:none;font:700 13px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:#fff;min-height:44px;align-items:center}
+#gbm-live.fp26 .fp-mast .fp-btn{min-height:40px;padding:0 12px;font-size:14px}
+#gbm-live.fp26 .fp-cta-long{display:none}
+#gbm-live.fp26 .fp-nav{background:var(--fp-paper);border-bottom:4px double var(--fp-rule-strong)}
+#gbm-live.fp26 .fp-nav .fp-wrap{display:flex;align-items:center;gap:16px;min-height:52px}
+#gbm-live.fp26 .fp-links{display:none}
+#gbm-live.fp26 .fp-bug{display:flex;align-items:stretch;flex:1 1 auto;min-width:0;margin-inline:calc(var(--fp-pad) * -1);font-family:var(--fp-cond);text-transform:uppercase}
+#gbm-live.fp26 .fp-bug>a{display:flex;align-items:center;gap:8px;min-width:0;min-height:52px;padding:6px 10px}
+#gbm-live.fp26 .fp-bug-last{flex:0 0 auto;background:var(--fp-navy);color:#fff}
+#gbm-live.fp26 .fp-bug-next{flex:1 1 auto;background:var(--fp-surface);color:var(--fp-ink);border-left:4px solid var(--fp-orange);justify-content:space-between}
+#gbm-live.fp26 .fp-bug-tag{font:800 11px/1 var(--fp-cond);letter-spacing:.14em;padding:5px 6px;background:rgba(255,255,255,.14)}
+#gbm-live.fp26 .fp-bug-next .fp-bug-tag{background:var(--fp-orange);color:#fff}
+#gbm-live.fp26 .fp-bug-last .fp-bug-tag[data-state=live]{background:#c8102e}
+#gbm-live.fp26 .fp-bug-team{display:flex;align-items:baseline;gap:5px;font:800 15px/1 var(--fp-cond);letter-spacing:.04em;white-space:nowrap}
+#gbm-live.fp26 .fp-bug-team strong{font-size:22px;font-weight:800;letter-spacing:0}
+#gbm-live.fp26 .fp-bug-team.fp-lose strong{opacity:.7}
+#gbm-live.fp26 .fp-bug-match{min-width:0;font:800 14px/1.1 var(--fp-cond);letter-spacing:.03em}
+#gbm-live.fp26 .fp-bug-match small{display:block;font:600 11px/1.2 var(--fp-cond);letter-spacing:.08em;color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-cd{display:flex;align-items:baseline;gap:1px;font:800 20px/1 var(--fp-cond);font-variant-numeric:tabular-nums;white-space:nowrap}
+#gbm-live.fp26 .fp-cd b{display:inline-block;min-width:.55em;text-align:center;font-weight:800}
+#gbm-live.fp26 .fp-cd i{font-style:normal;font-size:11px;letter-spacing:.06em;color:var(--fp-ink-2);margin:0 4px 0 1px}
+#gbm-live.fp26 .fp-cd .fp-cd-s{display:none}
+#gbm-live.fp26 .fp-board{background:#040b1f;color:#fff;border-bottom:4px solid var(--fp-orange);position:relative;overflow:hidden}
+#gbm-live.fp26 .fp-board::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.08) 1px,transparent 1.5px) 0 0/6px 6px;pointer-events:none}
+#gbm-live.fp26 .fp-board .fp-wrap{position:relative;display:grid;gap:12px;padding-block:14px 16px}
+#gbm-live.fp26 .fp-board-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font:700 12px/1.3 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:#c8d3ef}
+#gbm-live.fp26 .fp-pill{background:var(--fp-orange);color:#fff;padding:5px 9px;font-weight:800;letter-spacing:.16em}
+#gbm-live.fp26 .fp-status{padding:4px 9px;border:1px solid rgba(255,255,255,.35);color:#fff;font-weight:800;font-variant-numeric:tabular-nums}
+#gbm-live.fp26 .fp-status[data-state=live]{background:#c8102e;border-color:#c8102e}
+#gbm-live.fp26 .fp-status[data-state=final]{background:#fff;color:#040b1f;border-color:#fff}
+#gbm-live.fp26 .fp-line{width:100%;border-collapse:collapse;font:800 15px/1 var(--fp-cond);font-variant-numeric:tabular-nums;table-layout:fixed}
+#gbm-live.fp26 .fp-line th,#gbm-live.fp26 .fp-line td{padding:8px 2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.12)}
+#gbm-live.fp26 .fp-line thead th{font:700 11px/1 var(--fp-cond);letter-spacing:.12em;color:#9fb0d8}
+#gbm-live.fp26 .fp-line .fp-lt{width:44%;text-align:left}
+#gbm-live.fp26 .fp-line tbody .fp-lt{font-size:20px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gbm-live.fp26 .fp-line tbody .fp-lt small{font:600 11px/1 var(--fp-cond);letter-spacing:.06em;color:#9fb0d8;margin-left:6px}
+#gbm-live.fp26 .fp-line .fp-tot{font-size:26px;color:#fff;background:rgba(250,70,22,.16)}
+#gbm-live.fp26 .fp-drive{font:600 14px/1.4 var(--fp-sans);color:#dfe6f7}
+#gbm-live.fp26 .fp-drive b{font:800 12px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f;margin-right:8px}
+#gbm-live.fp26 .fp-board-latest{display:grid;gap:0;border-top:1px solid rgba(255,255,255,.18)}
+#gbm-live.fp26 .fp-board-latest li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);font:500 14px/1.4 var(--fp-sans);color:#e6edf6}
+#gbm-live.fp26 .fp-board-latest b{font:800 12px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:#ffb08f;margin-right:8px}
+#gbm-live.fp26 .fp-board-links{display:flex;flex-wrap:wrap;gap:8px}
+#gbm-live.fp26 .fp-board-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;font:800 13px/1 var(--fp-cond);letter-spacing:.08em;text-transform:uppercase;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
+#gbm-live.fp26 .fp-board-links a:first-child{background:var(--fp-orange);box-shadow:none}
+#gbm-live.fp26 main{display:block;padding-bottom:0}
+#gbm-live.fp26 .fp-lead{position:relative;display:grid;gap:16px;padding-top:18px;isolation:isolate}
+#gbm-live.fp26 #fp-embers{position:absolute;inset:0 calc(var(--fp-pad) * -1);z-index:-1;pointer-events:none;overflow:hidden}
+#gbm-live.fp26 #fp-embers canvas{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+#gbm-live.fp26 .fp-night-glow{display:none}
+#gbm-live.fp26.fp-embers-on .fp-night-glow{display:block;position:absolute;right:0;bottom:-10%;width:70%;height:70%;z-index:-2;background:radial-gradient(closest-side,rgba(250,70,22,.28),transparent);pointer-events:none}
+#gbm-live.fp26 .fp-lead-photo{min-width:0}
+#gbm-live.fp26 .fp-frame{position:relative;display:block;overflow:hidden;aspect-ratio:3/2;background:var(--fp-chip)}
+#gbm-live.fp26 .fp-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+#gbm-live.fp26 .fp-frame.fp-cover{aspect-ratio:16/9;background:#07122e}
+#gbm-live.fp26 .fp-frame.fp-cover img{object-fit:contain;object-position:50% 50%;animation:none!important}
+#gbm-live.fp26 .fp-frame.fp-portrait img{object-fit:contain}
+#gbm-live.fp26 .fp-lead-copy{min-width:0;display:grid;gap:12px;align-content:start}
+#gbm-live.fp26 .fp-lead h1{font-size:clamp(40px,11.5vw,54px);line-height:.94;text-transform:uppercase;color:var(--fp-ink)}
+#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(34px,9.6vw,46px)}
+#gbm-live.fp26 .fp-w{display:inline-block}
+@media(max-width:820px){
+#gbm-live.fp26 .fp-lead-copy{display:contents}
+#gbm-live.fp26 .fp-lead-copy>*{order:3}
+#gbm-live.fp26 .fp-lead-copy>.fp-kick,#gbm-live.fp26 .fp-lead-copy>h1{order:1}
+#gbm-live.fp26 .fp-lead-photo{order:2}
+}
+#gbm-live.fp26 .fp-dek{font:700 20px/1.2 var(--fp-cond);color:var(--fp-ink)}
+#gbm-live.fp26 .fp-by{font:700 12px/1.4 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--fp-ink)}
+#gbm-live.fp26 .fp-by span{color:var(--fp-ink-2);font-weight:600;letter-spacing:.06em;margin-left:8px}
+#gbm-live.fp26 .fp-body{font:400 16px/1.6 var(--fp-sans);color:var(--fp-ink)}
+#gbm-live.fp26 .fp-body::first-letter{float:left;font:800 64px/.8 var(--fp-cond);color:var(--fp-navy);padding:6px 8px 0 0}
+#gbm-live.fp26.fp-night .fp-body::first-letter{color:var(--fp-orange)}
+#gbm-live.fp26 .fp-quote{display:grid;gap:10px;margin-top:24px;padding:20px 0;border-block:1px solid var(--fp-rule-strong)}
+#gbm-live.fp26 .fp-quote blockquote{font:800 30px/1.02 var(--fp-cond);text-transform:uppercase;color:var(--fp-navy)}
+#gbm-live.fp26.fp-night .fp-quote blockquote{color:#fff}
+#gbm-live.fp26 .fp-quote blockquote::before{content:"\\201C";color:var(--fp-orange)}
+#gbm-live.fp26 .fp-quote blockquote::after{content:"\\201D";color:var(--fp-orange)}
+#gbm-live.fp26 .fp-quote cite{font:500 13px/1.45 var(--fp-sans);font-style:normal;color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-quote cite b{display:block;font:800 13px/1.3 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--fp-ink)}
+#gbm-live.fp26 .fp-second{display:grid;gap:24px;padding-block:24px}
+#gbm-live.fp26 .fp-feature{display:grid;gap:10px;align-content:start;min-width:0}
+#gbm-live.fp26 .fp-feature .fp-frame{aspect-ratio:16/10}
+#gbm-live.fp26 .fp-feature h2{font-size:32px;line-height:.98;text-transform:uppercase}
+#gbm-live.fp26 .fp-feature p.fp-ex{font:400 15px/1.55 var(--fp-sans);color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-list{min-width:0;border-top:3px solid var(--fp-rule-strong)}
+#gbm-live.fp26 .fp-list li{border-bottom:1px solid var(--fp-rule)}
+#gbm-live.fp26 .fp-list a{display:grid;gap:6px;padding:14px 0}
+#gbm-live.fp26 .fp-list h3{font-size:22px;line-height:1.02;text-transform:uppercase}
+#gbm-live.fp26 .fp-list p.fp-ex{font:400 14px/1.45 var(--fp-sans);color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-rail{min-width:0}
+#gbm-live.fp26 .fp-rail h2,#gbm-live.fp26 .fp-mod h2{font:800 14px/1 var(--fp-cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fp-ink);padding:12px 0 10px;border-top:3px solid var(--fp-rule-strong)}
+#gbm-live.fp26 .fp-col{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--fp-rule)}
+#gbm-live.fp26 .fp-roundel{grid-row:span 2;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:var(--fp-navy);color:#fff;font:800 16px/1 var(--fp-cond);letter-spacing:.04em;box-shadow:0 0 0 2px var(--fp-paper),0 0 0 4px var(--fp-orange)}
+#gbm-live.fp26 .fp-col-name{font:800 14px/1.2 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--fp-ink);align-self:end}
+#gbm-live.fp26 .fp-col-story{font:500 14px/1.35 var(--fp-sans);color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-hub{background:var(--fp-hub);border-top:6px solid var(--fp-navy);padding-block:22px 32px}
+#gbm-live.fp26.fp-night .fp-hub{border-top-color:var(--fp-orange)}
+#gbm-live.fp26 .fp-hub-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;margin-bottom:16px}
+#gbm-live.fp26 .fp-hub-head h2{font:800 40px/.9 var(--fp-cond);text-transform:uppercase;color:var(--fp-ink)}
+#gbm-live.fp26 .fp-hub-head p{font:600 13px/1.4 var(--fp-sans);color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-hub-grid{display:grid;gap:16px}
+#gbm-live.fp26 .fp-mod{min-width:0;background:var(--fp-card);padding:0 16px 16px;display:flex;flex-direction:column;gap:10px}
+#gbm-live.fp26 .fp-mod h2{border-top-color:var(--fp-navy)}
+#gbm-live.fp26.fp-night .fp-mod h2{border-top-color:var(--fp-orange)}
+#gbm-live.fp26 .fp-latest li{border-bottom:1px solid var(--fp-rule)}
+#gbm-live.fp26 .fp-latest a{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;padding:10px 0;align-items:start}
+#gbm-live.fp26 .fp-latest time{font:700 12px/1.3 var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;color:var(--fp-link);padding-top:2px}
+#gbm-live.fp26 .fp-latest h3{font:700 17px/1.15 var(--fp-cond);letter-spacing:0;text-transform:none}
+#gbm-live.fp26 .fp-latest .fp-meta{margin-top:3px}
+#gbm-live.fp26 .fp-show-when{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font:800 22px/1.05 var(--fp-cond);text-transform:uppercase;color:var(--fp-ink)}
+#gbm-live.fp26 .fp-live-dot{display:none;width:10px;height:10px;border-radius:50%;background:#c8102e}
+#gbm-live.fp26 .fp-show[data-live="1"] .fp-live-dot{display:inline-block}
+#gbm-live.fp26 .fp-actions{display:flex;flex-wrap:wrap;gap:8px}
+#gbm-live.fp26 .fp-vid{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;align-items:center}
+#gbm-live.fp26 .fp-vid .fp-frame{aspect-ratio:16/9}
+#gbm-live.fp26 .fp-vid b{display:block;font:700 16px/1.15 var(--fp-cond)}
+#gbm-live.fp26 .fp-vid span{font:600 12px/1.3 var(--fp-sans);color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-play{position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:var(--fp-orange)}
+#gbm-live.fp26 .fp-play::after{content:"";position:absolute;left:13px;top:10px;border:7px solid transparent;border-left:11px solid #fff;border-right:0}
+#gbm-live.fp26 .fp-clips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#gbm-live.fp26 .fp-clip .fp-frame{aspect-ratio:9/12}
+#gbm-live.fp26 .fp-clip b{display:block;margin-top:6px;font:700 15px/1.15 var(--fp-cond)}
+#gbm-live.fp26 .fp-photos{display:grid;gap:12px}
+#gbm-live.fp26 .fp-photo>b{display:block;margin-top:6px;font:700 17px/1.1 var(--fp-cond);text-transform:uppercase}
+#gbm-live.fp26 .fp-score-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font:800 13px/1.2 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-mini{width:100%;border-collapse:collapse;font:800 15px/1 var(--fp-cond);font-variant-numeric:tabular-nums;table-layout:fixed}
+#gbm-live.fp26 .fp-mini th,#gbm-live.fp26 .fp-mini td{padding:6px 2px;text-align:center;border-bottom:1px solid var(--fp-rule)}
+#gbm-live.fp26 .fp-mini thead th{font:700 11px/1 var(--fp-cond);letter-spacing:.1em;color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-mini .fp-lt{width:34%;text-align:left;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gbm-live.fp26 .fp-mini .fp-tot{font-size:19px;color:var(--fp-navy)}
+#gbm-live.fp26.fp-night .fp-mini .fp-tot{color:#fff}
+#gbm-live.fp26 .fp-tape{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#gbm-live.fp26 .fp-tape div{border-bottom:3px solid var(--fp-orange);padding-bottom:6px}
+#gbm-live.fp26 .fp-tape strong{display:block;font:800 34px/1 var(--fp-cond);font-variant-numeric:tabular-nums;color:var(--fp-ink)}
+#gbm-live.fp26 .fp-tape span{font:700 11px/1.2 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-next{display:grid;gap:4px;padding:10px 12px;background:var(--fp-navy);color:#fff}
+#gbm-live.fp26 .fp-next b{font:800 20px/1.05 var(--fp-cond);text-transform:uppercase}
+#gbm-live.fp26 .fp-next span{font:600 13px/1.35 var(--fp-sans);color:#dfe5ff}
+#gbm-live.fp26 .fp-next .fp-cd i{color:#c9d3ff}
+#gbm-live.fp26 .fp-stand{width:100%;border-collapse:collapse;font:700 14px/1.2 var(--fp-cond);font-variant-numeric:tabular-nums}
+#gbm-live.fp26 .fp-stand td,#gbm-live.fp26 .fp-stand th{padding:5px 2px;border-bottom:1px solid var(--fp-rule);text-align:right}
+#gbm-live.fp26 .fp-stand td:first-child,#gbm-live.fp26 .fp-stand th:first-child{text-align:left}
+#gbm-live.fp26 .fp-stand tr.fp-us td{color:var(--fp-link);font-weight:800}
+#gbm-live.fp26 .fp-chips{display:flex;flex-wrap:wrap;gap:8px}
+#gbm-live.fp26 .fp-chips a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;background:var(--fp-chip);font:800 13px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:var(--fp-ink)}
+#gbm-live.fp26 .fp-mod p.fp-ex{font:500 15px/1.5 var(--fp-sans);color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-mag{display:grid;grid-template-columns:minmax(0,1fr) 128px;gap:14px;align-items:center;background:#07122e;color:#fff}
+#gbm-live.fp26 .fp-mag h2{color:#fff;border-top-color:var(--fp-orange)!important}
+#gbm-live.fp26 .fp-mag p.fp-ex{color:#c8d3ef}
+#gbm-live.fp26 .fp-mag-copy{display:flex;flex-direction:column;gap:10px;min-width:0}
+#gbm-live.fp26 .fp-cover{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;background:#0021a5;box-shadow:0 10px 24px rgba(0,0,0,.35);align-self:center}
+#gbm-live.fp26 .fp-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#gbm-live.fp26 .fp-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,33,165,.9) 0,rgba(0,33,165,0) 32%,rgba(4,11,31,0) 50%,rgba(4,11,31,.92) 100%)}
+#gbm-live.fp26 .fp-cover-mh{position:absolute;z-index:1;left:8px;right:8px;top:6px;font:800 19px/.9 var(--fp-cond);text-transform:uppercase}
+#gbm-live.fp26 .fp-cover-mh small{display:block;font:700 7px/1.4 var(--fp-sans);letter-spacing:.2em}
+#gbm-live.fp26 .fp-cover-t{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;position:absolute;z-index:1;left:8px;right:8px;bottom:8px;font:800 14px/.95 var(--fp-cond);text-transform:uppercase;color:#fff}
+#gbm-live.fp26 .fp-cover-t em{display:block;font-style:normal;font-size:9px;letter-spacing:.14em;color:#ffb08f;margin-bottom:3px}
+#gbm-live.fp26 #sh-freshness:not(:empty){padding:10px 0;font:700 14px/1.3 var(--fp-sans)}
+#gbm-live.fp26 #sh-freshness a{color:var(--fp-link);text-decoration:underline;text-underline-offset:3px}
+@media(min-width:600px){
+#gbm-live.fp26{--fp-pad:24px}
+#gbm-live.fp26 .fp-cta-long{display:inline}
+#gbm-live.fp26 .fp-cta-short{display:none}
+#gbm-live.fp26 .fp-cd .fp-cd-s{display:inline-flex}
+#gbm-live.fp26 .fp-hub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#gbm-live.fp26 .fp-mod-latest{grid-row:span 2}
+#gbm-live.fp26 .fp-mag{grid-column:1/-1;grid-template-columns:minmax(0,1fr) 170px}
+#gbm-live.fp26 .fp-photos{grid-template-columns:repeat(2,minmax(0,1fr))}
+#gbm-live.fp26 .fp-second{grid-template-columns:repeat(2,minmax(0,1fr))}
+#gbm-live.fp26 .fp-rail{grid-column:1/-1}
+#gbm-live.fp26 .fp-rail-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+#gbm-live.fp26 .fp-col:last-child:nth-child(odd){grid-column:1/-1}
+}
+@media(min-width:821px){
+#gbm-live.fp26{--fp-pad:32px}
+#gbm-live.fp26 .fp-mast .fp-wrap{padding-top:18px;padding-bottom:16px}
+#gbm-live.fp26 .fp-date{grid-column:1;justify-content:flex-start;gap:16px}
+#gbm-live.fp26 .fp-wordmark{grid-column:1;font-size:clamp(72px,8.4vw,120px)}
+#gbm-live.fp26 .fp-wordmark small{font-size:13px}
+#gbm-live.fp26 .fp-mast-right{grid-column:2;grid-row:1/3;align-self:start}
+#gbm-live.fp26 .fp-signin{display:inline-flex}
+#gbm-live.fp26 .fp-mast .fp-btn{min-height:44px;padding:0 18px;font-size:15px}
+#gbm-live.fp26 .fp-nav .fp-wrap{min-height:56px;gap:20px}
+#gbm-live.fp26 .fp-links{display:flex;align-items:center;gap:22px;flex:1 1 auto;min-width:0;overflow:hidden;font:800 14px/1 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase}
+#gbm-live.fp26 .fp-links a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap}
+#gbm-live.fp26 .fp-links a[aria-current]{color:var(--fp-orange);box-shadow:inset 0 -3px 0 var(--fp-orange)}
+#gbm-live.fp26 .fp-bug{flex:0 1 auto;margin:0}
+#gbm-live.fp26 .fp-bug>a{min-height:44px;padding:4px 12px}
+#gbm-live.fp26 .fp-bug-next{flex:0 1 auto;gap:14px}
+#gbm-live.fp26 .fp-board .fp-wrap{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);column-gap:32px;align-items:start}
+#gbm-live.fp26 .fp-board-top,#gbm-live.fp26 .fp-board-links{grid-column:1/-1}
+#gbm-live.fp26 .fp-line tbody .fp-lt{font-size:26px}
+#gbm-live.fp26 .fp-line .fp-tot{font-size:34px}
+#gbm-live.fp26 .fp-line td{font-size:20px}
+#gbm-live.fp26 .fp-board-side{grid-column:2;grid-row:2/4;display:grid;gap:10px;align-content:start}
+#gbm-live.fp26 .fp-lead{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding-top:28px;align-items:start}
+#gbm-live.fp26 .fp-lead-photo{grid-column:1/8}
+#gbm-live.fp26 .fp-lead-copy{grid-column:8/13;gap:14px}
+#gbm-live.fp26 .fp-lead h1{font-size:clamp(56px,6.2vw,88px)}
+#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(48px,5vw,70px)}
+#gbm-live.fp26 .fp-dek{font-size:22px}
+#gbm-live.fp26 .fp-quote{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center;margin-top:32px;padding:26px 0}
+#gbm-live.fp26 .fp-quote blockquote{grid-column:2/9;font-size:44px}
+#gbm-live.fp26 .fp-quote figcaption{grid-column:9/13}
+#gbm-live.fp26 .fp-second{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding-block:32px}
+#gbm-live.fp26 .fp-feature{grid-column:1/5}
+#gbm-live.fp26 .fp-list{grid-column:5/9}
+#gbm-live.fp26 .fp-rail{grid-column:9/13}
+#gbm-live.fp26 .fp-rail-cols{display:block}
+#gbm-live.fp26 .fp-hub-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+#gbm-live.fp26 .fp-mod-latest{grid-column:1/5;grid-row:span 2}
+#gbm-live.fp26 .fp-mod-scores{grid-column:5/9;grid-row:span 2}
+#gbm-live.fp26 .fp-mod-show{grid-column:9/13}
+#gbm-live.fp26 .fp-mod-clips{grid-column:9/13}
+#gbm-live.fp26 .fp-mod-photos{grid-column:1/6}
+#gbm-live.fp26 .fp-mag{grid-column:6/10;grid-template-columns:minmax(0,1fr) 120px}
+#gbm-live.fp26 .fp-mod-news{grid-column:10/13}
+#gbm-live.fp26 .fp-photos{grid-template-columns:repeat(2,minmax(0,1fr))}
+#gbm-live.fp26 .fp-hub-head h2{font-size:56px}
+}
+@media(min-width:821px) and (max-width:1439px){#gbm-live.fp26 .fp-nav .fp-cd .fp-cd-s{display:none}#gbm-live.fp26 .fp-links{gap:16px}}
+@media(min-width:1100px){
+#gbm-live.fp26{--fp-pad:64px}
+}
+@media(max-width:599px){
+#gbm-live.fp26 .fp-bug-last:has(+ .fp-bug-next){display:none}
+#gbm-live.fp26 .fp-bug-match{flex:1 1 auto;white-space:nowrap;overflow:hidden}
+#gbm-live.fp26 .fp-bug-match small{overflow:hidden;text-overflow:ellipsis}
+}
+@media(max-width:429px){#gbm-live.fp26 .fp-wordmark small{display:none}}
+@media(max-width:374px){#gbm-live.fp26 .fp-date span+span{display:none}#gbm-live.fp26 .fp-mast .fp-btn{padding:0 10px;font-size:13px;gap:5px}}
+@media(min-width:821px) and (max-width:1099px){
+#gbm-live.fp26 .fp-links a:nth-child(n+4):not(:last-child){display:none}
+}
+@media(min-width:821px) and (max-width:899px){#gbm-live.fp26 .fp-links a:nth-child(3):not(:last-child){display:none}}
+@media(min-width:1100px) and (max-width:1279px){#gbm-live.fp26 .fp-links a:nth-child(4){display:none}}
+@media(max-width:360px){
+#gbm-live.fp26 .fp-bug-team{font-size:13px}
+#gbm-live.fp26 .fp-bug-team strong{font-size:19px}
+#gbm-live.fp26 .fp-bug>a{padding:6px 8px;gap:6px}
+#gbm-live.fp26 .fp-cd{font-size:17px}
+#gbm-live.fp26 .fp-bug-match{font-size:12px}
+#gbm-live.fp26 .fp-vid{grid-template-columns:96px minmax(0,1fr)}
+#gbm-live.fp26 .fp-mag{grid-template-columns:minmax(0,1fr) 100px}
+}
+@media(prefers-reduced-motion:no-preference){
+#gbm-live.fp26 .fp-wordmark{animation:fpSettle .9s cubic-bezier(.2,.7,.2,1) both}
+#gbm-live.fp26 .fp-lead-photo .fp-frame img{animation:fpBurns 22s ease-in-out infinite alternate;transform-origin:60% 40%}
+#gbm-live.fp26 .fp-lead h1 .fp-w{animation:fpWord .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 55ms + 120ms)}
+#gbm-live.fp26 .fp-tk-track{animation:fpTicker var(--fp-tk-dur,60s) linear infinite}
+#gbm-live.fp26 .fp-ticker:hover .fp-tk-track,#gbm-live.fp26 .fp-ticker:focus-within .fp-tk-track{animation-play-state:paused}
+#gbm-live.fp26 .fp-cd b.fp-flip{animation:fpFlip .42s cubic-bezier(.3,.7,.3,1)}
+#gbm-live.fp26 .fp-show[data-live="1"] .fp-live-dot{animation:fpPulse 1.4s ease-in-out infinite}
+#gbm-live.fp26 .fp-cover{transition:transform .25s ease,box-shadow .25s ease}
+#gbm-live.fp26 a:hover .fp-cover,#gbm-live.fp26 .fp-cover:hover{transform:translateY(-6px);box-shadow:0 18px 32px rgba(0,0,0,.45)}
+}
+@media(prefers-reduced-motion:reduce){
+#gbm-live.fp26 .fp-tk-view{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+#gbm-live.fp26 .fp-tk-dup{display:none}
+}
+@keyframes fpSettle{from{transform:translateY(12px);opacity:.001}to{transform:none;opacity:1}}
+@keyframes fpBurns{from{transform:scale(1)}to{transform:scale(1.06) translate(-1%,-1%)}}
+@keyframes fpWord{from{transform:translateY(.35em);opacity:.001}to{transform:none;opacity:1}}
+@keyframes fpTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes fpFlip{0%{transform:rotateX(90deg);opacity:.2}100%{transform:none;opacity:1}}
+@keyframes fpPulse{50%{opacity:.25}}
+#gbm-live.fp26 #gbm-road{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;background:radial-gradient(70% 90% at 100% 100%,rgba(250,70,22,.16),transparent 70%),radial-gradient(90% 100% at 0% 0%,#10306e,transparent 65%),var(--n);color:var(--ink);font-family:var(--fp-sans);padding:28px 0 26px;overflow:hidden;position:relative}
+#gbm-live.fp26 #gbm-road *{box-sizing:border-box}
+#gbm-live.fp26 #gbm-road .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:0 var(--fp-pad) 14px;max-width:1440px;margin:0 auto}
+#gbm-live.fp26 #gbm-road h2{font:800 clamp(30px,6vw,52px)/.92 var(--fp-cond);text-transform:uppercase;margin:0}
+#gbm-live.fp26 #gbm-road h2 span{color:var(--o)}
+#gbm-live.fp26 #gbm-road .rec{flex:0 0 auto;white-space:nowrap;font:700 14px var(--fp-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);text-align:right}
+#gbm-live.fp26 #gbm-road .rec b{display:block;font:800 34px/1 var(--fp-cond);color:var(--ink);letter-spacing:0}
+#gbm-live.fp26 #gbm-road .track{position:relative;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:var(--fp-pad);padding:26px var(--fp-pad) 12px;max-width:1440px;margin:0 auto;scrollbar-width:none}
+#gbm-live.fp26 #gbm-road .track::-webkit-scrollbar{display:none}
+#gbm-live.fp26 #gbm-road .line{position:absolute;left:var(--fp-pad);right:var(--fp-pad);top:12px;height:3px;background:rgba(255,255,255,.12);border-radius:3px}
+#gbm-live.fp26 #gbm-road .line i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--b),var(--o));box-shadow:0 0 14px var(--o);border-radius:3px;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+#gbm-live.fp26 #gbm-road .g{position:relative;flex:0 0 156px;scroll-snap-align:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 12px 12px;min-height:168px;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:inherit}
+#gbm-live.fp26 #gbm-road .g::before{content:"";position:absolute;left:14px;top:-19px;width:13px;height:13px;border-radius:50%;background:var(--n);border:3px solid rgba(255,255,255,.35)}
+#gbm-live.fp26 #gbm-road .g.w::before{background:var(--o);border-color:var(--o);box-shadow:0 0 10px var(--o)}
+#gbm-live.fp26 #gbm-road .g.nx{border-color:var(--o);background:rgba(250,70,22,.12)}
+#gbm-live.fp26 #gbm-road .g.nx::before{background:var(--o);border-color:#fff;animation:gbmp 1.6s ease-in-out infinite}
+#gbm-live.fp26 #gbm-road .g.boss{border-color:rgba(255,90,60,.55)}
+#gbm-live.fp26 #gbm-road .dt{font:700 11px var(--fp-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+#gbm-live.fp26 #gbm-road .op{overflow-wrap:anywhere;font:800 22px/1 var(--fp-cond);text-transform:uppercase}
+#gbm-live.fp26 #gbm-road .rk{color:var(--o);font-size:14px;margin-right:3px}
+#gbm-live.fp26 #gbm-road .sc{white-space:nowrap;font:800 30px/1 var(--fp-cond);margin-top:auto}
+#gbm-live.fp26 #gbm-road .bar{height:5px;border-radius:5px;background:rgba(255,255,255,.12);overflow:hidden}
+#gbm-live.fp26 #gbm-road .bar i{display:block;height:100%;width:0;background:var(--o);transition:width 1.2s .3s cubic-bezier(.2,.7,.2,1)}
+#gbm-live.fp26 #gbm-road .sub{font:600 12px var(--fp-sans);color:var(--mut)}
+#gbm-live.fp26 #gbm-road .cd{white-space:nowrap;font:800 22px var(--fp-cond);color:#fff;letter-spacing:.04em}
+@keyframes gbmp{50%{box-shadow:0 0 0 7px rgba(250,70,22,.25)}}
+@media(prefers-reduced-motion:reduce){#gbm-live.fp26 #gbm-road .line i,#gbm-live.fp26 #gbm-road .bar i{transition:none}#gbm-live.fp26 #gbm-road .g.nx::before{animation:none}}
+#gbm-live.fp26 .fp-tunnel{position:relative;isolation:isolate;overflow:hidden;background:#040b1f;color:#fff;border-bottom:4px solid var(--fp-orange);display:grid;align-items:center;min-height:min(72vh,540px)}
+#gbm-live.fp26 .fp-tn-scene{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+#gbm-live.fp26 .fp-tn-scene::before{content:"";position:absolute;inset:-25%;background:repeating-conic-gradient(from 0deg at 50% 44%,rgba(255,255,255,.05) 0 1.4deg,transparent 1.4deg 11deg);opacity:.9}
+#gbm-live.fp26 .fp-tn-ring{position:absolute;left:50%;top:44%;width:180vw;max-width:2300px;aspect-ratio:2/1;border:1px solid rgba(255,255,255,.16);border-radius:18%/30%;transform:translate(-50%,-50%) scale(var(--s));opacity:var(--o);box-shadow:0 0 30px rgba(0,33,165,.25) inset}
+#gbm-live.fp26 .fp-tn-ring:nth-child(1){--s:.1;--o:.95}
+#gbm-live.fp26 .fp-tn-ring:nth-child(2){--s:.2;--o:.8}
+#gbm-live.fp26 .fp-tn-ring:nth-child(3){--s:.33;--o:.65}
+#gbm-live.fp26 .fp-tn-ring:nth-child(4){--s:.5;--o:.5}
+#gbm-live.fp26 .fp-tn-ring:nth-child(5){--s:.72;--o:.36}
+#gbm-live.fp26 .fp-tn-ring:nth-child(6){--s:1;--o:.24}
+#gbm-live.fp26 .fp-tn-light{position:absolute;left:50%;top:44%;width:42vw;max-width:440px;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,244,230,.95),rgba(250,70,22,.6) 38%,rgba(250,70,22,0) 72%);filter:blur(12px);opacity:.85}
+#gbm-live.fp26 .fp-tunnel[data-phase=live] .fp-tn-light,#gbm-live.fp26 .fp-tunnel[data-phase=half] .fp-tn-light{background:radial-gradient(closest-side,rgba(255,236,236,.95),rgba(200,16,46,.65) 38%,rgba(200,16,46,0) 72%)}
+#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-light{background:radial-gradient(closest-side,rgba(255,255,255,.95),rgba(169,187,255,.5) 38%,rgba(169,187,255,0) 72%)}
+#gbm-live.fp26 .fp-tn-floor{position:absolute;left:-30%;right:-30%;bottom:-3%;height:40%;transform:perspective(600px) rotateX(58deg);transform-origin:50% 0;background:linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0/48px 100%,linear-gradient(0deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0/100% 32px,linear-gradient(180deg,transparent,rgba(0,33,165,.4));-webkit-mask-image:linear-gradient(180deg,transparent,#000 40%);mask-image:linear-gradient(180deg,transparent,#000 40%)}
+#gbm-live.fp26 .fp-tunnel::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(70% 60% at 50% 62%,rgba(4,11,31,.7),rgba(4,11,31,0) 70%)}
+#gbm-live.fp26 .fp-tn-wrap{position:relative;display:grid;gap:16px;justify-items:center;text-align:center;padding-block:30px 26px}
+#gbm-live.fp26 .fp-tn-top{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 12px;margin:0;font:700 12px/1.3 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:#c8d3ef}
+#gbm-live.fp26 .fp-tn-match{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px 14px;width:100%;max-width:980px;margin:0;font-size:16px;font-weight:400;letter-spacing:0;text-wrap:wrap}
+#gbm-live.fp26 .fp-tn-team{display:grid;gap:6px;min-width:0}
+#gbm-live.fp26 .fp-tn-team small{font:700 12px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f}
+#gbm-live.fp26 .fp-tn-team b{font:800 clamp(30px,8.6vw,84px)/.9 var(--fp-cond);text-transform:uppercase;letter-spacing:-.01em;overflow-wrap:anywhere;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+#gbm-live.fp26 .fp-tn-vs{font:800 clamp(14px,3vw,22px)/1 var(--fp-cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fp-orange)}
+#gbm-live.fp26 .fp-tn-mid{display:grid;gap:8px;justify-items:center}
+#gbm-live.fp26 .fp-tn-pre,#gbm-live.fp26 .fp-tn-kick,#gbm-live.fp26 .fp-tn-live,#gbm-live.fp26 .fp-tn-final{display:none;gap:8px;justify-items:center}
+#gbm-live.fp26 .fp-tunnel[data-phase=pre] .fp-tn-pre,#gbm-live.fp26 .fp-tunnel[data-phase=kick] .fp-tn-kick,#gbm-live.fp26 .fp-tunnel[data-phase=live] .fp-tn-live,#gbm-live.fp26 .fp-tunnel[data-phase=half] .fp-tn-live,#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-final{display:grid}
+#gbm-live.fp26 .fp-tn-label{margin:0;font:700 13px/1 var(--fp-cond);letter-spacing:.18em;text-transform:uppercase;color:#c8d3ef}
+#gbm-live.fp26 .fp-tunnel .fp-cd{font-size:clamp(34px,11vw,96px);gap:4px;flex-wrap:wrap;justify-content:center;max-width:100%;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+#gbm-live.fp26 .fp-tunnel .fp-cd b{min-width:.56em}
+#gbm-live.fp26 .fp-tunnel .fp-cd i{font-size:clamp(12px,2.6vw,18px);letter-spacing:.1em;color:#ffb08f;margin:0 10px 0 3px}
+#gbm-live.fp26 .fp-tunnel .fp-cd .fp-cd-s{display:inline-flex}
+#gbm-live.fp26 .fp-tn-score{display:flex;align-items:baseline;gap:12px;font:800 clamp(60px,15vw,124px)/1 var(--fp-cond);font-variant-numeric:tabular-nums;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+#gbm-live.fp26 .fp-tn-score span{color:var(--fp-orange);font-size:.6em}
+#gbm-live.fp26 .fp-tn-clock{display:inline-flex;align-items:center;gap:8px;margin:0;padding:6px 10px;background:#c8102e;font:800 13px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase}
+#gbm-live.fp26 .fp-tn-clock::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-clock{background:#fff;color:#040b1f}
+#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-clock::before{background:var(--fp-orange)}
+#gbm-live.fp26 .fp-tn-drive{margin:0;max-width:640px;font:600 15px/1.45 var(--fp-sans);color:#dfe6f7}
+#gbm-live.fp26 .fp-tn-drive b{font:800 12px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f;margin-right:8px}
+#gbm-live.fp26 .fp-tn-kick p{margin:0;font:800 clamp(28px,7vw,56px)/1 var(--fp-cond);text-transform:uppercase;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+#gbm-live.fp26 .fp-tn-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+#gbm-live.fp26 .fp-tn-cta .fp-ghost{color:#fff}
+#gbm-live.fp26 .fp-tn-stories{list-style:none;margin:6px 0 0;padding:14px 0 0;width:100%;max-width:980px;display:grid;gap:10px;border-top:1px solid rgba(255,255,255,.18);text-align:left}
+#gbm-live.fp26 .fp-tn-stories a{display:grid;gap:3px;color:#fff;font:700 15px/1.3 var(--fp-sans)}
+#gbm-live.fp26 .fp-tn-stories span{font:600 12px/1.3 var(--fp-sans);letter-spacing:.02em;color:#c8d3ef}
+@media(min-width:600px){#gbm-live.fp26 .fp-tn-stories{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 24px}}
+@media(max-width:359px){#gbm-live.fp26 .fp-tn-stories li:nth-child(n+3){display:none}}
+@media(min-width:821px){#gbm-live.fp26 .fp-tunnel{min-height:min(70vh,600px)}#gbm-live.fp26 .fp-tn-wrap{gap:20px;padding-block:40px 34px}#gbm-live.fp26 .fp-tn-match{gap:8px 28px}}
+@media(prefers-reduced-motion:no-preference){
+#gbm-live.fp26 .fp-tn-ring{animation:fpTnRun 7.2s linear infinite;animation-delay:calc(var(--d) * -1.2s)}
+#gbm-live.fp26 .fp-tn-ring:nth-child(1){--d:0}#gbm-live.fp26 .fp-tn-ring:nth-child(2){--d:1}#gbm-live.fp26 .fp-tn-ring:nth-child(3){--d:2}#gbm-live.fp26 .fp-tn-ring:nth-child(4){--d:3}#gbm-live.fp26 .fp-tn-ring:nth-child(5){--d:4}#gbm-live.fp26 .fp-tn-ring:nth-child(6){--d:5}
+#gbm-live.fp26 .fp-tn-light{animation:fpTnGlow 3.2s ease-in-out infinite}
+#gbm-live.fp26 .fp-tn-scene::before{animation:fpTnSweep 90s linear infinite;transform-origin:50% 44%}
+#gbm-live.fp26 .fp-tn-clock::before{animation:fpPulse 1.2s ease-in-out infinite}
+}
+@keyframes fpTnRun{from{transform:translate(-50%,-50%) scale(.06);opacity:0}12%{opacity:.95}to{transform:translate(-50%,-50%) scale(1.15);opacity:0}}
+@keyframes fpTnGlow{50%{opacity:1;filter:blur(16px)}}
+@keyframes fpTnSweep{to{transform:rotate(360deg)}}
+#gbm-live.fp26 .fp-hub-grid>.fp-ask{grid-column:1/-1;border-radius:14px;min-width:0}
+#gbm-live.fp26 #gbm-stands{width:100%;max-width:980px;min-width:0}
+#gbm-live.fp26 #gbm-stands:empty{display:none}
+@media(min-width:600px){#gbm-live.fp26 .fp-hub-grid>.fp-ask{grid-row:3}}`,L={snapshot:"2026-09-30T14:25:44Z",build:"d36f32c7",look:"swamp-night",pins:{breaking:null,timed:{path:"/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers",until:"2026-10-05T16:00:00Z",note:"Franz Beard lead until Oct. 5 noon ET unless a newer Buddy Martin piece or a breaking pin takes it (CURRENT-STATE Sept. 28 sync)."}},quotes:{"/post/put-down-the-poll-gators-missouri-is-waiting":{text:"You have to humble yourself, or you will be humbled.",who:"Jon Sumrall",context:`to his team Monday, after the "not our standard" tape from the Ole Miss win. From Buddy Martin's column.`}},$covers:"Rendered story covers (deploy/covers) carry their own type, so the front page shows them whole (16:9, contain, no crop, no Ken Burns) instead of cropping. Add the media id when a cover is set on a post.",covers:["d3cfa5_56a64986c874417c9a8299fae22649ed"],credits:{d3cfa5_56a64986c874417c9a8299fae22649ed:"Photo by Chris Spears, GatorBait Media · Faulkner: UAA",d3cfa5_d3190d83cdfc44549b10b6bd025e57a3:"Photo by Chris Spears, GatorBait Media",d3cfa5_2ea58f38e2da4c988ab73065cfe63130:"Photo by Chris Spears, GatorBait Media",d3cfa5_026d2a4d2be04a91b8c32317fed5f623:"Photo by Chris Spears, GatorBait Media",d3cfa5_1043f4b7772245baa5aed5f80c21669a:"Photo by Chris Spears, GatorBait Media",d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b:"Photo by Chris Spears, GatorBait Media","16b519_a0e407bedc46487ca71033fc8351d0fe":"Photo by Chris Spears, GatorBait Media",d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35:"Photo: Hannah White / UAA Communications"},columnists:[{name:"Buddy Martin",initials:"BM",href:"/gatorbait-media-blogs/tags/buddy-martin"},{name:"Franz Beard",initials:"FB",href:"/gatorbait-media-blogs/tags/franz-beard"},{name:"Loren Meadows",initials:"LM",href:"/gatorbait-media-blogs/tags/loren-meadows"},{name:"Eddie Gilley",initials:"EG",href:"/gatorbait-media-blogs/tags/eddie-gilley"},{name:"Chris Spears",initials:"CS",href:null}],links:{subscribe:"/pricing-plans/subscribe",signin:"/account/my-account",latest:"/gatorbait-media-blogs",magazine:"/magazine",show:"/the-buddy-martin-show",podcasts:"/the-buddy-martin-show#podcasts",store:"https://gatorbait2026.itemorder.com/shop/home/",schedule:"/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",roster:"/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",stats:"/florida-football-stats",standings:"/standings",newsletter:"/magazine",youtubeLive:"https://www.youtube.com/channel/UCtR8b1sKFuwaRjKy5BiXRvA/live",youtubeChannel:"https://www.youtube.com/channel/UCtR8b1sKFuwaRjKy5BiXRvA",facebook:"https://www.facebook.com/thebuddymartinshow"},show:{days:[1,3,4],hour:21,minutes:60,episode:{id:"8b7F5iyYOIk",title:"Laura Rutledge on The Buddy Martin Show",date:"2026-09-16"}},clips:[{id:"TzP8RJY0BKw",title:"Auburn quarterback pressure"},{id:"oiSC0-a3tho",title:"Auburn crowd noise"}],galleries:[{title:"Chris Spears' Best Shots, Vol. 2: Florida 52, Ole Miss 28",url:"https://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28",image:"https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",date:"2026-09-28T02:06:00Z"},{title:"Chris Spears Photo Gallery: Florida vs. Ole Miss",url:"https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss",image:"https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",date:"2026-09-28T01:49:00Z"}],scoreboard:{updatedAt:"2026-09-28T12:00:00Z",team:{name:"Florida",abbr:"FLA",rank:8,record:"4-0"},last:{opponent:"Ole Miss",opponentAbbr:"MISS",opponentRank:4,home:!0,score:{fla:52,opp:28},quarters:{fla:[10,7,14,21],opp:[0,6,15,7]},stats:{totalYards:498,rushYards:302,firstDowns:27,attendance:90683},date:"2026-09-26",venue:"Ben Hill Griffin Stadium, Gainesville, Fla.",recapUrl:"/post/florida-ole-miss-final-baugh-gators-run-over-rebels"},next:{opponent:"Missouri",opponentAbbr:"MIZ",opponentRank:25,home:!1,kickoffIso:"2026-10-03T19:30:00Z",tv:"ABC",venue:"Memorial Stadium, Columbia, Mo.",previewUrl:"/post/first-look-missouri-florida-gators-show-me-state-of-mind",opponentRecord:"3-1",eventId:"401856708"},standings:[],schedule:[{date:"2026-09-05T23:45:00Z",opponent:"Florida Atlantic",opponentRank:null,home:!0,status:"final",score:{fla:66,opp:21},tv:"SEC Network",storyUrl:""},{date:"2026-09-12T21:30:00Z",opponent:"Campbell",opponentRank:null,home:!0,status:"final",score:{fla:52,opp:3},tv:"SEC Network+",storyUrl:""},{date:"2026-09-19T23:00:00Z",opponent:"Auburn",opponentRank:null,home:!1,status:"final",score:{fla:44,opp:39},tv:"ESPN",storyUrl:""},{date:"2026-09-26T19:30:00Z",opponent:"Ole Miss",opponentRank:4,home:!0,status:"final",score:{fla:52,opp:28},tv:"ABC",storyUrl:"https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28"},{date:"2026-10-03T19:30:00Z",opponent:"Missouri",opponentRank:25,home:!1,status:"scheduled",score:null,tv:"ABC",storyUrl:"https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"},{date:"2026-10-10T04:00:00Z",opponent:"South Carolina",opponentRank:null,home:!0,status:"scheduled",score:null,tv:"",storyUrl:""},{date:"2026-10-17T04:00:00Z",opponent:"Texas",opponentRank:1,home:!1,status:"scheduled",score:null,tv:"",storyUrl:""},{date:"2026-10-31T19:30:00Z",opponent:"Georgia",opponentRank:2,home:!1,status:"scheduled",score:null,tv:"ABC",storyUrl:""},{date:"2026-11-07T05:00:00Z",opponent:"Oklahoma",opponentRank:null,home:!0,status:"scheduled",score:null,tv:"",storyUrl:""},{date:"2026-11-14T05:00:00Z",opponent:"Kentucky",opponentRank:24,home:!1,status:"scheduled",score:null,tv:"",storyUrl:""},{date:"2026-11-21T05:00:00Z",opponent:"Vanderbilt",opponentRank:null,home:!0,status:"scheduled",score:null,tv:"",storyUrl:""},{date:"2026-11-27T20:30:00Z",opponent:"Florida State",opponentRank:null,home:!1,status:"scheduled",score:null,tv:"ABC",storyUrl:""}]},posts:[{title:"The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”",excerpt:"I’ll be honest. This guy could turn out to be brilliant. Maybe even Steve Spurrier brilliant. But I’d never put him above the Head Ball Coach, or even in the same paragraph. Faulkner has to earn that.",url:"https://www.gatorbaitmedia.com/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it",author:"Buddy Martin",firstPublishedDate:"2026-09-30T14:25:44Z",image:{src:"https://static.wixstatic.com/media/ae876a_b8f5f91b591148208d23919fd45072e8~mv2.png/v1/fit/w_672,h_715,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”"}},{title:"Thoughts of the Day: September 30, 2026",excerpt:"Why are these guys smiling? (UAA Photo) A few thoughts to jump start your Wednesday morning: To paraphrase Steve Spurrier, God smiled on the Gators Tuesday. First, Alachua County judge George Wright issued a temporary restraining order against the NCAA that will allow Denzel Aberdeen a fifth year of eligibility. While ",url:"https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-30-2026",author:"Franz Beard",firstPublishedDate:"2026-09-30T13:48:39Z",image:{src:"https://static.wixstatic.com/media/a99769_d6cc8efa8cfb4c0b8ad6ee7c8eb9768f~mv2.jpg/v1/fit/w_689,h_708,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Thoughts of the Day: September 30, 2026"}},{title:"Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction",excerpt:"Denzel Aberdeen wins a temporary injunction allowing him to play for Florida in 2026–27. What the ruling means for the Gators and their backcourt.",url:"https://www.gatorbaitmedia.com/post/denzel-aberdeen-florida-temporary-injunction-2026",author:"GatorBaitMagazineStaff",firstPublishedDate:"2026-09-29T20:19:43Z",image:{src:"https://static.wixstatic.com/media/d3cfa5_cefbed4d0c2a46988a3929e5d0b85807~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction"}},{title:"Thoughts of the Day: September 29, 2026",excerpt:"O-line coach Phil Trautwein and family celebrate the win over Ole Miss (Photo by Chris Spears) A few thoughts to jump start your Tuesday morning: Driving home on I-75 from Jon Sumrall’s Monday morning press conference in Gainesville, cruise control set at 77 to keep steady with the flow of traffic, I’m listening to the",url:"https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-29-2026",author:"Franz Beard",firstPublishedDate:"2026-09-29T11:36:39Z",image:{src:"https://static.wixstatic.com/media/16b519_c0cae41f73f142ec8c32a0599593365f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Thoughts of the Day: September 29, 2026"}},{title:"Senate Passes Protect College Sports Act 77–22",excerpt:"The Senate passed the Protect College Sports Act 77–22 Monday night. What the proposal could mean for Florida, and why it is not law yet.",url:"https://www.gatorbaitmedia.com/post/senate-passes-protect-college-sports-act-florida",author:"GatorBait Staff",firstPublishedDate:"2026-09-29T11:31:17Z",image:{src:"https://static.wixstatic.com/media/ae876a_92f9918e12f941e3a9621a000db7c07d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Senate Passes Protect College Sports Act 77–22"}},{title:"Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",excerpt:'Jon Sumrall wants Gator Nation to put down the poll: Florida has lost three of its last four trips to Columbia, and the coach with the raspy voice is making his team pay the toll on "Bloody Tuesday."',url:"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",author:"Buddy Martin",firstPublishedDate:"2026-09-28T23:24:43Z",image:{src:"https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'"}},{title:"Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout",excerpt:"Jadan Baugh earned his first SEC Offensive Player of the Week award, while London Montgomery and Bryce Lovett received their first SEC weekly honors after Florida’s 52-28 win over No. 4 Ole Miss.",url:"https://www.gatorbaitmedia.com/post/honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-awards-after-ole-miss-rout",author:"Brenden Martin",firstPublishedDate:"2026-09-28T20:56:09Z",image:{src:"https://static.wixstatic.com/media/d3cfa5_52f12f29b57540dcb22edd0fa545ceb1~mv2.jpg/v1/fit/w_800,h_500,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout"}},{title:"Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri",excerpt:"Jon Sumrall told Florida he doesn't want to hear another word about Ole Miss, and he had good news on Vernell Brown III before Saturday's trip to No. 25 Missouri.",url:"https://www.gatorbaitmedia.com/post/pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloody-tuesday-before-missouri",author:"Brenden Martin",firstPublishedDate:"2026-09-28T20:54:04Z",image:{src:"https://static.wixstatic.com/media/d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri"}},{title:"Who are these guys? Trautwein's troops in the trenches are difference makers",excerpt:"The guys up front helped Jadan Baugh score another TD against Ole Miss (Photo by Chris Spears) “Who are these guys?” – Paul Newman as Butch Cassidy in the classic film “Butch Cassidy and the Sundance Kid” We could be asking the same question of the Florida offensive line. In their preseason analysis, the fine folks at ",url:"https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers",author:"Franz Beard",firstPublishedDate:"2026-09-28T11:49:14Z",image:{src:"https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Who are these guys? Trautwein's troops in the trenches are difference makers"}},{title:"How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again",excerpt:"Eddie Gilley breaks down the five plays that decided Florida's 52-28 rout of No. 4 Ole Miss, from a blown fourth-down gamble to DJ Coleman's game-sealing interception.",url:"https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again",author:"Eddie Gilley",firstPublishedDate:"2026-09-28T11:48:00Z",image:{src:"https://static.wixstatic.com/media/16b519_5d3a0f33184d44d2b887fe9581207f72~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again"}},{title:"Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28",excerpt:"A second batch of Chris Spears’ work from The Swamp as the Gators put away Ole Miss 52-28 — pregame, the pass rush, the sideline and the celebration after. Photos by Chris Spears, GatorBait Media The Swamp glows before Florida's SEC showdown with Ole Miss. Photo by Chris Spears, GatorBait Media Florida's offense goes t",url:"https://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28",author:"Brenden Martin",firstPublishedDate:"2026-09-28T02:06:47Z",image:{src:"https://static.wixstatic.com/media/16b519_9e6aad749e564c33ab69f6e7e19e9560~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28"}},{title:"Chris Spears' Best Shots: Florida 52, Ole Miss 28",excerpt:"Chris Spears had the sideline for all of it. His best photos from The Swamp as Florida ran over No. 4 Ole Miss, 52-28.",url:"https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss",author:"Brenden Martin",firstPublishedDate:"2026-09-28T01:49:57Z",image:{src:"https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Chris Spears' Best Shots: Florida 52, Ole Miss 28"}},{title:"BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III",excerpt:"An MRI confirmed a Grade 1 PCL sprain, the mildest grade, in Vernell Brown III’s knee, sources told GatorBait. He may not miss any games.",url:"https://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators",author:"Brenden Martin",firstPublishedDate:"2026-09-27T22:04:07Z",image:{src:"https://static.wixstatic.com/media/d3cfa5_7acdfecf6f3d45289bbdcc93f3ca970c~mv2.jpg/v1/fit/w_800,h_494,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III"}},{title:"Show-Me State of Mind: A First Look at No. 25 Missouri",excerpt:"No. 8 Florida’s reward for routing Ole Miss is a trip to No. 25 Missouri, which let a fourth-quarter lead get away at Mississippi State.",url:"https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind",author:"Brenden Martin",firstPublishedDate:"2026-09-27T21:53:54Z",image:{src:"https://static.wixstatic.com/media/d3cfa5_a67ff355ad6a4d668106c2befa41b208~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Show-Me State of Mind: A First Look at No. 25 Missouri"}},{title:"10 Thoughts From the Sidelines: Florida 52, Ole Miss 28",excerpt:"Photographer Chris Spears had the best seat in The Swamp. Ten things the sideline told him about the Florida team that ran over No. 4 Ole Miss.",url:"https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss",author:"Chris Spears",firstPublishedDate:"2026-09-27T18:39:36Z",image:{src:"https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for 10 Thoughts From the Sidelines: Florida 52, Ole Miss 28"}},{title:"Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls",excerpt:"Florida’s 52-28 win over No. 4 Ole Miss sent the Gators up 13 spots in the AP Top 25 and 14 in the Coaches Poll. They’re No. 8 in both.",url:"https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls",author:"Brenden Martin",firstPublishedDate:"2026-09-27T18:20:18Z",image:{src:"https://static.wixstatic.com/media/d3cfa5_1043f4b7772245baa5aed5f80c21669a~mv2.png/v1/fit/w_1000,h_720,al_c,q_80/file.png",width:1600,height:900,alt:"Featured image for Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls"}}]},ne="front-page-2026.1",te="https://presidente49.github.io/gatorbait-media-redesign/",S="/blog-feed.xml",ae="America/New_York",Be="https://cdn.jsdelivr.net/npm/@tsparticles/slim@3.9.1/tsparticles.slim.bundle.min.js",Ae="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap",re=864e5,W=document.documentElement,T=L.links;function J(){return(location.pathname.replace(/\/+$/,"")||"/")==="/"}if(window.__GBM_GAZETTE_RUNTIME__){window.__GBM_GAZETTE_RUNTIME__.sync();return}var v=!1,pe=0,K=null,C=null;function R(){var e=Number(window.__GBM_FP_NOW__);return Number.isFinite(e)&&e>0?e:Date.now()}function i(e){return String(e==null?"":e).replace(/[&<>"']/g,function(t){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[t]})}function D(){try{return matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){return!1}}function ge(){try{return matchMedia("(prefers-color-scheme: dark)").matches}catch(e){return!1}}function le(e,t){try{var a=new URL(String(e),"https://www.gatorbaitmedia.com");return a.protocol!=="https:"||a.username||a.password?"":t==="image"?a.hostname==="static.wixstatic.com"||a.hostname==="i.ytimg.com"?a.href:"":t==="post"?/^(www\.)?gatorbaitmedia\.com$/.test(a.hostname)&&a.pathname.indexOf("/post/")===0?a.href:"":/^(www\.)?gatorbaitmedia\.com$/.test(a.hostname)?a.pathname+a.search+a.hash:/^(www\.youtube\.com|www\.facebook\.com|gatorbait2026\.itemorder\.com)$/.test(a.hostname)?a.href:""}catch(n){return""}}function Se(e){try{return new URL(e,"https://www.gatorbaitmedia.com").pathname}catch(t){return""}}var ie=["Jan.","Feb.","March","April","May","June","July","Aug.","Sept.","Oct.","Nov.","Dec."],he={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},ye=["Sun.","Mon.","Tue.","Wed.","Thu.","Fri.","Sat."];function Y(e){var t={};return new Intl.DateTimeFormat("en-US",{timeZone:ae,weekday:"short",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:!1}).formatToParts(new Date(e)).forEach(function(a){t[a.type]=a.value}),{wd:he[t.weekday],h:Number(t.hour)%24,m:Number(t.minute),ymd:t.year+"-"+t.month+"-"+t.day,y:Number(t.year),mo:Number(t.month)-1,d:Number(t.day)}}function fe(e){if(/^\d{4}-\d{2}-\d{2}$/.test(String(e||"")))return String(e);var t=Date.parse(e);return Number.isFinite(t)?Y(t).ymd:""}function X(e){var t=Y(e),a=t.h%12||12;return a+(t.m?":"+String(t.m).padStart(2,"0"):"")+(t.h<12?" a.m.":" p.m.")}function $(e){var t=Y(e);return ie[t.mo]+" "+t.d}function be(e){var t=Date.parse(e);if(!Number.isFinite(t))return"";var a=Y(t);return ye[a.wd]+", "+ie[a.mo]+" "+a.d+" · "+X(t)+" ET"}function ke(e){var t=Math.max(0,Math.round((R()-e.getTime())/6e4));return t<60?t<=1?"Now":t+"m":t<1440?Math.round(t/60)+"h":$(e.getTime())}function Me(){var e=new Date(R());return e.toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",year:"numeric",timeZone:ae})}function Z(e){var t=new Set,a=R();return(e&&Array.isArray(e.posts)?e.posts:[]).map(function(n){var o=le(n.url,"post"),s=new Date(n.firstPublishedDate);if(!o||!n.title||!Number.isFinite(s.getTime())||s.getTime()>a+re||t.has(o)||/^LIVE NOW:/i.test(String(n.title))&&a-s.getTime()>216e5)return null;t.add(o);var f=String(n.excerpt||"").replace(/\s+/g," ").trim(),g="",l="",x=f.match(/^(.{8,220}?)\s*\(((?:UAA )?Photo(?: by)?[^)]{0,60}|[^)]{0,40} photo)\)\s*(.*)$/i);x&&(g=x[1],l=/spears/i.test(x[2])?"Photo by Chris Spears, GatorBait Media":x[2].replace(/^photo:?\s*/i,"Photo: "),f=x[3]);var w=le(n.image&&n.image.src,"image"),y=(w.match(/media\/([0-9a-f]+_[0-9a-f]+)/)||[])[1]||"";return L.credits[y]&&(l=L.credits[y]),{title:String(n.title).trim(),url:o,path:Se(o),author:String(n.author||"GatorBait Staff"),date:s,excerpt:f,cap:g,credit:l,image:w,key:y,alt:String(n.image&&n.image.alt||n.title),cover:(L.covers||[]).indexOf(y)>=0,portrait:!!(n.image&&Number(n.image.width)>0&&Number(n.image.height)>Number(n.image.width))}}).filter(Boolean).sort(function(n,o){return o.date-n.date}).slice(0,30)}function Q(e){return/chris spears/i.test(e.author)||/^chris spears/i.test(e.title)}function E(e,t){return t==="Chris Spears"?Q(e):e.author.toLowerCase().indexOf(t.toLowerCase())>=0}function ve(e){var t=R(),a={},n=window.__GBM_HOME_PINS__;["breaking","timed"].forEach(function(l){a[l]=n&&n.hasOwnProperty(l)?n[l]:L.pins[l]});function o(l){return!l||!l.path||l.until&&!(t<Date.parse(l.until))?null:e.find(function(x){return x.path.indexOf(l.path)===0})||null}var s=o(a.breaking);if(s)return{post:s,why:"breaking"};var f=e.find(function(l){return/buddy martin/i.test(l.author)&&t-l.date.getTime()<7*re}),g=o(a.timed);return g&&!(f&&f.date>g.date)?{post:g,why:"pin"}:f?{post:f,why:"buddy"}:{post:e[0],why:"newest"}}function q(e){return typeof e=="number"&&Number.isFinite(e)?e:null}function I(e,t){return typeof e=="string"&&e.trim()?e.trim().slice(0,t||80):null}function xe(e){return Array.isArray(e)&&e.length<=8&&e.every(function(t){return q(t)!==null})?e.slice():null}function me(e,t,a){var n=Object.assign({},e);if(!t||typeof t!="object")return n;if(["opponent","opponentAbbr","venue","tv"].forEach(function(s){var f=I(t[s],90);f&&(n[s]=f)}),["recapUrl","previewUrl","galleryUrl"].forEach(function(s){var f=le(t[s]);f&&f.charAt(0)==="/"&&(n[s]=f)}),t.hasOwnProperty("opponentRank")&&(q(t.opponentRank)!==null||t.opponentRank===null)&&(n.opponentRank=q(t.opponentRank)),I(t.opponentRecord,12)&&(n.opponentRecord=I(t.opponentRecord,12)),typeof t.home=="boolean"&&(n.home=t.home),a==="last"){if(t.score&&q(t.score.fla)!==null&&q(t.score.opp)!==null&&(n.score={fla:t.score.fla,opp:t.score.opp}),t.quarters&&xe(t.quarters.fla)&&xe(t.quarters.opp)?n.quarters={fla:xe(t.quarters.fla),opp:xe(t.quarters.opp)}:t.hasOwnProperty("quarters")&&(n.quarters=null),t.stats&&typeof t.stats=="object"){var o={};["totalYards","rushYards","firstDowns","attendance"].forEach(function(s){q(t.stats[s])!==null&&(o[s]=t.stats[s])}),n.stats=o}fe(t.date)&&(n.date=t.date)}else Number.isFinite(Date.parse(t.kickoffIso))&&(n.kickoffIso=t.kickoffIso),/^\d{6,12}$/.test(String(t.eventId||""))&&(n.eventId=String(t.eventId));return n}function ce(e){return Array.isArray(e)?e.slice(0,20).map(function(t){if(!t||!I(t.opponent,40)||!Number.isFinite(Date.parse(t.date)))return null;var a=q(t.opponentRank);return{opponent:I(t.opponent,40),opponentRank:a,rank:a,home:t.home===!0,date:t.date,status:I(t.status,16)||"",tv:I(t.tv,24)||"",score:t.score&&q(t.score.fla)!==null&&q(t.score.opp)!==null?{fla:t.score.fla,opp:t.score.opp}:null,storyUrl:I(t.storyUrl,300)||""}}).filter(Boolean):[]}function _e(e){var t=L.scoreboard,a={team:Object.assign({},t.team),last:Object.assign({},t.last),next:Object.assign({},t.next),schedule:ce(t.schedule),standings:[],live:null,source:"bundled"};if(!e||typeof e!="object"||!e.team)return a;a.source="feed",e.team.hasOwnProperty("rank")&&(q(e.team.rank)!==null||e.team.rank===null)&&(a.team.rank=q(e.team.rank)),I(e.team.record,12)&&(a.team.record=I(e.team.record,12)),e.last===null?a.last=null:e.last&&I(e.last.opponent)&&e.last.opponent!==t.last.opponent?a.last=me({opponent:"",home:!0},e.last,"last"):a.last=me(a.last,e.last,"last"),e.next===null?a.next=null:e.next&&I(e.next.opponent)&&e.next.opponent!==t.next.opponent?a.next=me({opponent:"",home:!1},e.next,"next"):a.next=me(a.next,e.next,"next"),a.next&&!Number.isFinite(Date.parse(a.next.kickoffIso))&&(a.next=null),Array.isArray(e.standings)&&(a.standings=e.standings.slice(0,16).map(function(f){return f&&I(f.team,40)?{team:I(f.team,40),conf:I(f.confRecord,8)||I(f.conf,8)||"",overall:I(f.overall,8)||""}:null}).filter(Boolean)),Array.isArray(e.schedule)&&ce(e.schedule).length&&(a.schedule=ce(e.schedule));var n=e.live;if(n&&typeof n=="object"&&n.score&&q(n.score.fla)!==null&&q(n.score.opp)!==null){var o=I(n.clock,16)||"",s=q(n.period);a.live={status:/half/i.test(o)?"half":"live",clock:(s?(s>4?"OT":"Q"+s)+(o?" ":""):"")+o,score:{fla:n.score.fla,opp:n.score.opp},quarters:null,drive:(n.possession==="fla"?"Florida ball. ":n.possession==="opp"?"Opponent ball. ":"")+(I(n.lastPlay,200)||""),updates:[]}}return I(e.updatedAt,40)&&(a.updatedAt=e.updatedAt),a}function oe(e,t){return t||{Florida:"FLA","Ole Miss":"MISS",Missouri:"MIZ",Georgia:"UGA",Tennessee:"TENN",LSU:"LSU",Kentucky:"UK"}[e]||String(e||"").slice(0,4).toUpperCase()}function V(e,t){return(e?"No. "+e+" ":"")+t}function d(e){var t=R(),a=window.__GBM_GAMEDAY__,n=e.next,o=e.last;if(a&&a.away&&a.home&&!(t>Date.parse(a.until))&&Number.isFinite(Date.parse(a.kickoff))){let ee=function(O){return{name:String(O.name||""),abbr:oe(O.name),rank:q(O.rank),record:I(O.record,12)||"",score:q(O.score),q:xe(O.quarters)||[]}};var s=Date.parse(a.kickoff),f=a.status==="final"?"final":t<s?"pre":a.status==="half"?"half":"live";return{src:"desk",phase:f,kickoff:s,clock:I(a.clock,24)||"",away:ee(a.away),home:ee(a.home),when:I(a.when,90)||be(a.kickoff),venue:I(a.venue,90)||"",drive:I(a.drive,160)||(Array.isArray(a.ld)?a.ld.map(String).join(" · ").slice(0,200):""),updates:(a.updates||[]).slice(0,4).map(function(O){return[String(O[0]||""),String(O[1]||"")]}),links:(a.links||[]).filter(function(O){return O&&/^\/post\//.test(O[1])}).slice(0,4),headline:I(a.headline,120)||""}}var g={name:"Florida",abbr:"FLA",rank:e.team.rank,record:e.team.record};if(n&&Number.isFinite(Date.parse(n.kickoffIso))){var l=Date.parse(n.kickoffIso),x={name:n.opponent,abbr:oe(n.opponent,n.opponentAbbr),rank:n.opponentRank,record:n.opponentRecord||""},w=e.live,y=w?w.status:t<l?"pre":"live";if(w||t<l+5*36e5){var F=w&&w.quarters?w.quarters.fla:[],k=w&&w.quarters?w.quarters.opp:[],j=Object.assign({},g,{score:w?w.score.fla:null,q:F}),B=Object.assign({},x,{score:w?w.score.opp:null,q:k});return{src:"scoreboard",phase:y,kickoff:l,clock:w?w.clock:"",away:n.home?B:j,home:n.home?j:B,when:be(n.kickoffIso)+(n.tv?" · "+n.tv:""),venue:n.venue||"",drive:w?w.drive:"",updates:w?w.updates:[],links:n.previewUrl?[["Preview",n.previewUrl]]:[],headline:""}}}if(o&&o.score&&fe(o.date)===Y(t).ymd){var z={name:o.opponent,abbr:oe(o.opponent,o.opponentAbbr),rank:o.opponentRank,record:o.opponentRecord||"",score:o.score.opp,q:o.quarters?o.quarters.opp:[]},H=Object.assign({},g,{score:o.score.fla,q:o.quarters?o.quarters.fla:[]});return{src:"scoreboard",phase:"final",kickoff:0,clock:"",away:o.home?z:H,home:o.home?H:z,when:"",venue:o.venue||"",drive:"",updates:[],links:o.recapUrl?[["Recap",o.recapUrl]]:[],headline:""}}return null}function u(e){var t=Y(R()).ymd,a=window.__GBM_GAMEDAY__;return[e.next&&e.next.kickoffIso,e.last&&e.last.date,a&&a.kickoff].some(function(n){return n&&fe(n)===t})}function b(e){var t="";try{t=new URLSearchParams(location.search).get("gbm_fp")||""}catch(g){}var a=Y(R()),n=t==="gameday"||t!=="day"&&t!=="night"&&a.wd===6&&u(e),o=a.h>=19||a.h<6||n&&a.h>=17,s=L.look==="swamp-night",f=t==="night"||t!=="day"&&(s||o||ge());return{gameday:n,night:f,embers:f&&(t==="night"||s||o)}}function _(e,t,a,n){return e?"<a"+(a?' class="'+a+'"':"")+' href="'+i(e)+'"'+(n||"")+">"+t+"</a>":"<span"+(a?' class="'+a+'"':"")+">"+t+"</span>"}var G=/^(https:\/\/static\.wixstatic\.com\/media\/[^\/?#]+)(?:\/v1\/[^?#]*)?(?:[?#].*)?$/;function U(e,t,a){var n=G.exec(String(e||""));return n?n[1]+"/v1/fit/w_"+t+",h_"+a+",al_c,q_80,enc_auto/gatorbait.jpg":""}function P(e,t,a,n,o){if(!e)return"";var s=n||1e3,f=o||667,g=U(e,s,f),l=g?[480,800,1200].map(function(x){return U(e,x,Math.round(x*f/s))+" "+x+"w"}).join(", "):"";return'<img src="'+i(g||e)+'"'+(l?' srcset="'+i(l)+'" sizes="(max-width: 700px) 100vw, 60vw" data-fp-orig="'+i(e)+'"':"")+' alt="'+i(t)+'" loading="'+(a?"eager":"lazy")+'" decoding="async"'+(a?' fetchpriority="high"':"")+' width="'+s+'" height="'+f+'">'}function ue(e){e.addEventListener("error",function(t){var a=t.target,n=a&&a.tagName==="IMG"&&a.getAttribute("data-fp-orig");n&&(a.removeAttribute("data-fp-orig"),a.removeAttribute("srcset"),a.removeAttribute("sizes"),a.src=n)},!0)}function we(e){return'<p class="fp-meta">'+i(e.author)+" · "+i($(e.date.getTime()))+"</p>"}function Oe(e,t){return t==="breaking"?"Breaking":/buddy martin/i.test(e.author)?"The Column · Buddy Martin":Q(e)?"Photographs · Chris Spears":e.author&&!/staff/i.test(e.author)?e.author:"Top story"}function Ce(e){for(var t=e.match(/[^.!?]+[.!?]+['’"”]?\s*|[^.!?]+$/g)||[e],a="";t.length&&(a+t[0]).trim().length<=56;)a+=t.shift();return!a.trim()||!t.length?{h:e,dek:""}:{h:a.trim(),dek:t.join("").trim()}}function Ne(e){return i(e).split(/\s+/).map(function(t,a){return'<span class="fp-w" style="--i:'+a+'">'+t+"</span>"}).join(" ")}function p(e){return'<span class="fp-cd" data-fp-count="'+i(e)+'" aria-label="Countdown to kickoff"></span>'}function r(e){return Number(e).toLocaleString("en-US")}function c(e,t,a){var n=[];a&&a.phase!=="pre"?n.push("<li><b>"+(a.phase==="final"?"Final":"Live")+"</b>"+i(a.away.name+" "+(a.away.score==null?"":a.away.score)+", "+a.home.name+" "+(a.home.score==null?"":a.home.score))+"</li>"):t.last&&t.last.score&&n.push("<li><b>Final</b>"+_(t.last.recapUrl,i(t.last.score.fla>t.last.score.opp?"Florida "+t.last.score.fla+", "+t.last.opponent+" "+t.last.score.opp:t.last.opponent+" "+t.last.score.opp+", Florida "+t.last.score.fla))+"</li>"),a&&a.updates.slice(0,2).forEach(function(s){n.push("<li><b>"+i(s[0])+"</b>"+i(s[1])+"</li>")}),t.next&&n.push("<li><b>Next</b>"+_(t.next.previewUrl,i(V(t.team.rank,"Florida")+(t.next.home?" vs. ":" at ")+V(t.next.opponentRank,t.next.opponent)+" · "+be(t.next.kickoffIso)+(t.next.tv?" · "+t.next.tv:"")))+"</li>"),e.slice(0,8).forEach(function(s){n.push("<li><b>"+i(ke(s.date))+"</b>"+_(s.url,i(s.title))+"</li>")});var o=n.join("");return'<div class="fp-ticker" role="region" aria-label="Latest headlines and scores"><span class="fp-tk-tag">Latest</span><div class="fp-tk-view"><div class="fp-tk-track" style="--fp-tk-dur:'+Math.max(40,n.length*7)+'s"><ul class="fp-tk-list">'+o+'</ul><ul class="fp-tk-list fp-tk-dup" aria-hidden="true">'+o.replace(/<a /g,'<a tabindex="-1" ')+"</ul></div></div></div>"}function m(){return'<header class="fp-mast"><div class="fp-wrap"><p class="fp-date"><span>'+i(Me())+'</span><span>Gainesville, Fla.</span></p><a class="fp-wordmark" href="/" aria-label="GatorBait Media home">GatorBait<small>Media</small></a><div class="fp-mast-right"><a class="fp-signin" href="'+i(T.signin)+'">Sign in</a><a class="fp-btn" href="'+i(T.subscribe)+'"><span class="fp-cta-long">Join All Access</span><span class="fp-cta-short">Join</span> <span aria-hidden="true">→</span></a></div></div></header>'}function A(e,t){var a="",n="";if(t&&t.phase!=="pre")a='<a class="fp-bug-last" href="'+i(t.links[0]&&t.links[0][1]||T.schedule)+'"><span class="fp-bug-tag" data-state="'+(t.phase==="final"?"final":"live")+'">'+(t.phase==="final"?"Final":t.phase==="half"?"Half":"Live")+"</span>"+s(t.away)+s(t.home)+"</a>";else if(e.last&&e.last.score){var o=e.last.score.fla>=e.last.score.opp;a='<a class="fp-bug-last" href="'+i(e.last.recapUrl||T.schedule)+'" aria-label="Final: Florida '+e.last.score.fla+", "+i(e.last.opponent)+" "+e.last.score.opp+'"><span class="fp-bug-tag">Final</span><span class="fp-bug-team'+(o?"":" fp-lose")+'">FLA <strong class="fp-num">'+e.last.score.fla+'</strong></span><span class="fp-bug-team'+(o?" fp-lose":"")+'">'+i(oe(e.last.opponent,e.last.opponentAbbr))+' <strong class="fp-num">'+e.last.score.opp+"</strong></span></a>"}return e.next&&(!t||t.phase==="pre")&&(n='<a class="fp-bug-next" href="'+i(e.next.previewUrl||T.schedule)+'"><span class="fp-bug-tag">Next</span><span class="fp-bug-match">'+(e.next.home?"vs. ":"at ")+i(V(e.next.opponentRank,oe(e.next.opponent,e.next.opponentAbbr)))+"<small>"+i(be(e.next.kickoffIso).replace(/^(\w+\.), \w+\.? \d+ · /,"$1 ")+(e.next.tv?" · "+e.next.tv:""))+"</small></span>"+p(e.next.kickoffIso)+"</a>"),'<div class="fp-bug" aria-label="Scoreboard">'+a+n+"</div>";function s(f){return'<span class="fp-bug-team">'+i(f.abbr)+' <strong class="fp-num">'+(f.score==null?"–":i(f.score))+"</strong></span>"}}function M(e,t){return'<nav class="fp-nav" aria-label="GatorBait sections"><div class="fp-wrap"><div class="fp-links"><a href="/" aria-current="page">Front Page</a><a href="'+i(T.latest)+'">Latest</a><a href="'+i(T.magazine)+'">Magazine</a><a href="#fp-columnists">Columnists</a><a href="'+i(T.show)+'">TV &amp; Podcasts</a><a href="'+i(T.schedule)+'">Scores</a><a class="fp-store" href="'+i(T.store)+'" target="_blank" rel="noopener" aria-label="Shop GatorBait gear (opens in a new tab)">Store <span aria-hidden="true">↗</span></a></div>'+A(e,t)+"</div></nav>"}function N(e,t){var a=Math.max(4,e.away.q.length,e.home.q.length),n="",o;for(o=0;o<a;o++)n+='<th scope="col">'+(o<4?o+1:"OT"+(o>4?o-3:""))+"</th>";function s(f){for(var g="",l=0;l<a;l++)g+="<td>"+(f.q[l]==null?"–":i(f.q[l]))+"</td>";return'<tr><th scope="row" class="fp-lt">'+i(t==="fp-mini"?f.abbr:f.name)+(t==="fp-line"?"<small>"+i((f.rank?"No. "+f.rank+" · ":"")+f.record)+"</small>":"")+"</th>"+g+'<td class="fp-tot fp-num">'+(f.score==null?"–":i(f.score))+"</td></tr>"}return'<table class="'+t+'"><thead><tr><th class="fp-lt" scope="col"><span class="fp-sr">Team</span></th>'+n+'<th scope="col">T</th></tr></thead><tbody>'+s(e.away)+s(e.home)+"</tbody></table>"}function de(e){if(!e)return"";var t=e.phase==="pre"?p(new Date(e.kickoff).toISOString()):i(e.phase==="final"?"Final":e.phase==="half"?"Halftime":"Live"+(e.clock?" · "+e.clock:""));return'<section class="fp-board" aria-label="Game day scoreboard"><div class="fp-wrap"><div class="fp-board-top"><span class="fp-pill">Game Day</span><span>'+i(e.when)+"</span>"+(e.venue?"<span>"+i(e.venue)+"</span>":"")+'<span class="fp-status" data-state="'+(e.phase==="pre"?"pre":e.phase==="final"?"final":"live")+'">'+(e.phase==="pre"?"Kickoff in ":"")+t+"</span></div>"+N(e,"fp-line")+'<div class="fp-board-side">'+(e.drive?'<p class="fp-drive"><b>Drive</b>'+i(e.drive)+"</p>":e.headline?'<p class="fp-drive"><b>Up next</b>'+i(e.headline)+"</p>":"")+(e.updates.length?'<ul class="fp-board-latest" aria-label="Latest game updates">'+e.updates.map(function(a){return"<li><b>"+i(a[0])+"</b>"+i(a[1])+"</li>"}).join("")+"</ul>":"")+"</div>"+(e.links.length?'<div class="fp-board-links">'+e.links.map(function(a){return'<a href="'+i(a[1])+'">'+i(a[0])+"</a>"}).join("")+"</div>":"")+"</div></section>"}function se(e,t,a){return e.image?'<figure class="'+(a||"")+'">'+_(e.url,P(e.image,e.alt,t),"fp-frame"+(e.portrait?" fp-portrait":"")+(e.cover?" fp-cover":""),' tabindex="-1" aria-hidden="true"')+(e.cap||e.credit?'<figcaption class="fp-cap"><span>'+i(e.cap)+"</span>"+(e.credit?"<b>"+i(e.credit)+"</b>":"")+"</figcaption>":"")+"</figure>":""}function Ee(e,t){var a=Ce(e.title);return'<section class="fp-lead" aria-label="Lead story"><div id="fp-embers" aria-hidden="true"></div><div class="fp-night-glow" aria-hidden="true"></div>'+se(e,!0,"fp-lead-photo")+'<div class="fp-lead-copy"><p class="fp-kick">'+i(Oe(e,t))+'</p><h1 data-len="'+(a.h.length>60?"long":"short")+'">'+_(e.url,Ne(a.h),"fp-hl")+"</h1>"+(a.dek?'<p class="fp-dek">'+i(a.dek)+"</p>":"")+'<p class="fp-by">By '+i(e.author)+"<span>"+i($(e.date.getTime()))+"</span></p>"+(e.excerpt?'<p class="fp-body">'+i(e.excerpt)+"</p>":"")+'<a class="fp-more" href="'+i(e.url)+'">Continue reading <span aria-hidden="true">&nbsp;→</span></a></div></section>'}function Ge(e,t){var a=null,n=R();return Object.keys(L.quotes).some(function(o){return e.path.indexOf(o)===0?(a=L.quotes[o],!0):!1}),a||t.some(function(o){return Object.keys(L.quotes).some(function(s){return o.path.indexOf(s)===0&&n-o.date.getTime()<7*re?(a=Object.assign({url:o.url},L.quotes[s]),!0):!1})}),a?'<figure class="fp-quote"><blockquote>'+i(a.text)+"</blockquote><figcaption><cite><b>"+i(a.who)+"</b>"+i(a.context)+"</cite></figcaption></figure>":""}function Le(e,t,a){return'<section class="fp-second" aria-label="More top stories">'+(e?'<article class="fp-feature">'+se(e,!1)+'<p class="fp-kick">'+i(Oe(e))+"</p>"+_(e.url,'<h2 class="fp-hl">'+i(e.title)+"</h2>")+(e.excerpt?'<p class="fp-ex">'+i(e.excerpt.slice(0,220))+(e.excerpt.length>220?"…":"")+"</p>":"")+we(e)+"</article>":"")+'<ol class="fp-list" aria-label="Top stories">'+t.map(function(n){return"<li>"+_(n.url,'<h3 class="fp-hl">'+i(n.title)+"</h3>"+(n.excerpt?'<p class="fp-ex">'+i(n.excerpt.slice(0,120))+(n.excerpt.length>120?"…":"")+"</p>":"")+we(n))+"</li>"}).join("")+'</ol><aside class="fp-rail" id="fp-columnists" aria-label="Columnists"><h2>Columnists</h2><div class="fp-rail-cols">'+a+"</div></aside></section>"}function Re(e){return L.columnists.map(function(t){var a=e.find(function(o){return E(o,t.name)}),n=le(t.href)||a&&a.url||T.latest;return'<div class="fp-col">'+_(n,i(t.initials),"fp-roundel",' aria-hidden="true" tabindex="-1"')+_(n,i(t.name),"fp-col-name")+(a?_(a.url,i(a.title),"fp-col-story"):'<span class="fp-col-story">Latest columns</span>')+"</div>"}).join("")}function Ye(){var e=L.show,t=R(),a=Y(t),n=a.h*60+a.m,o=e.hour*60;if(e.days.indexOf(a.wd)>=0&&n>=o&&n<o+e.minutes)return{live:!0,label:"Live now"};for(var s=0;s<8;s++){var f=(a.wd+s)%7;if(e.days.indexOf(f)>=0&&(s>0||n<o))return{live:!1,label:(s===0?"Tonight":s===1?"Tomorrow":ye[f])+", "+(e.hour%12||12)+" p.m. ET"}}return{live:!1,label:""}}function $e(e){var t=(e.schedule||[]).slice(0,14);if(t.length<3)return"";var a=0,n=0,o=-1,s=new Intl.DateTimeFormat("en-US",{timeZone:ae,month:"short",day:"numeric"}),f=t.map(function(l,x){var w=l.status==="final"&&l.score,y=w&&l.score.fla>l.score.opp;w?y?a++:n++:o<0&&(o=x);var F='<div class="dt">'+i(s.format(new Date(l.date)))+" · "+(l.home?"Home":"Away")+'</div><div class="op">'+(l.opponentRank?'<span class="rk">No. '+l.opponentRank+"</span>":"")+i(l.opponent)+"</div>",k;w?k='<div class="sc">'+(y?"W ":"L ")+l.score.fla+"–"+l.score.opp+'</div><div class="bar"><i data-w="'+Math.max(6,Math.min(100,Math.round((l.score.fla-l.score.opp)/40*100)))+'"></i></div><div class="sub">'+i(l.tv||"Final")+"</div>":x===o?k='<div class="cd" data-k="'+i(l.date)+'">…</div><div class="sub">to kickoff'+(l.tv?" · "+i(l.tv):"")+"</div>":k='<div class="sub" style="margin-top:auto">'+i(l.tv||"Kickoff TBA")+"</div>";var j="g"+(y?" w":"")+(x===o?" nx":"")+(l.opponentRank&&l.opponentRank<=5&&!w?" boss":""),B=l.storyUrl?le(l.storyUrl,"post"):"";return(B?'<a href="'+i(B)+'"':"<div")+' class="'+j+'" role="listitem">'+F+k+(B?"</a>":"</div>")}).join(""),g=t.map(function(l){return l.date+":"+l.status+":"+(l.score?l.score.fla+"-"+l.score.opp:"")}).join("|");return'<section id="gbm-road" aria-label="Florida season road" data-sig="'+i(g)+'"><div class="hd"><h2>The road <span>ahead</span></h2><div class="rec"><b>'+a+"–"+n+"</b>"+(e.team&&e.team.season?i(e.team.season):"2026")+' record</div></div><div class="track" id="gr-track" role="list"><div class="line"><i id="gr-line"></i></div>'+f+"</div></section>"}function Ve(e){var t=e.querySelector("#gr-track");if(!t)return;var a=t.querySelector(".line"),n=Array.prototype.slice.call(t.querySelectorAll(".g")),o=t.querySelector(".g.nx");function s(){var g=t.querySelector(".cd");if(g){var l=new Date(g.getAttribute("data-k"))-R();if(l<=0){g.textContent="Live";return}g.textContent=Math.floor(l/864e5)+"d "+Math.floor(l%864e5/36e5)+"h "+Math.floor(l%36e5/6e4)+"m"}}s(),e.__gbmRoadTick&&clearInterval(e.__gbmRoadTick),e.__gbmRoadTick=setInterval(s,3e4);function f(){var g=o||n[n.length-1];if(g){var l=parseFloat(getComputedStyle(t).paddingLeft)||16;a.style.right="auto",a.style.width=t.scrollWidth-2*l+"px",a.firstChild.style.width=Math.max(0,g.offsetLeft+20.5-l)+"px",t.querySelectorAll(".bar i").forEach(function(w){w.style.width=w.getAttribute("data-w")+"%"});var x=o&&n[n.indexOf(o)-1];o&&o.offsetLeft+o.offsetWidth>t.clientWidth&&(t.scrollLeft=Math.max(0,(x||o).offsetLeft-l))}}"IntersectionObserver"in window?new IntersectionObserver(function(g,l){g[0].isIntersecting&&(f(),l.disconnect())},{threshold:.25}).observe(t):f()}function Qe(e,t,a,n){if(!e||!e.away||!e.home)return"";var o=e.phase==="half"?"half":e.phase,s=e.away.name==="Florida"?e.home:e.away;function f(k){return'<span class="fp-tn-team"><small>'+i([k.rank?"No. "+k.rank:"",k.record||""].filter(Boolean).join(" · ")||" ")+"</small><b>"+i(k.name)+"</b></span>"}var g=new RegExp(String(s.name||"").replace(/[.*+?^${}()|[\]\\]/g,"\\  function hubHtml(latest, sb, posts, used) {"),"i"),l=a.filter(function(k){return k.url!==n&&g.test(k.title+" "+(k.excerpt||""))}).slice(0,3),x=e.links[0],w=x?[x[0],x[1]]:t.next&&t.next.previewUrl?["Game preview",t.next.previewUrl]:t.last&&t.last.recapUrl&&e.phase==="final"?["Read the recap",t.last.recapUrl]:["Scores & schedule",T.schedule],y=e.when||"",F='<div class="fp-tn-score"><b data-tn="away">'+(e.away.score==null?"0":i(e.away.score))+'</b><span>–</span><b data-tn="home">'+(e.home.score==null?"0":i(e.home.score))+"</b></div>";return'<section class="fp-tunnel" data-phase="'+i(o)+'" aria-label="Game day: '+i(e.away.name+" at "+e.home.name)+'"><div class="fp-tn-scene" aria-hidden="true"><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><b class="fp-tn-light"></b><u class="fp-tn-floor"></u></div><div class="fp-wrap fp-tn-wrap"><p class="fp-tn-top"><span class="fp-pill">Game day</span>'+(y?"<span>"+i(y)+"</span>":"")+(e.venue?"<span>"+i(e.venue)+"</span>":"")+'</p><h2 class="fp-tn-match">'+f(e.away)+'<span class="fp-tn-vs">at</span>'+f(e.home)+'</h2><div class="fp-tn-mid"><div class="fp-tn-pre"><p class="fp-tn-label">Kickoff in</p>'+(e.kickoff?p(new Date(e.kickoff).toISOString()):"")+'</div><div class="fp-tn-kick"><p>Out of the tunnel</p><p class="fp-tn-label">Kickoff'+(y?" · "+i(y.replace(/^[^·]*·\s*/,"")):"")+'</p></div><div class="fp-tn-live">'+F+'<p class="fp-tn-clock" data-tn="clock">'+i(e.phase==="half"?"Halftime":e.clock||"Live")+"</p>"+(e.drive?'<p class="fp-tn-drive"><b>Drive</b><span data-tn="drive">'+i(e.drive)+"</span></p>":'<p class="fp-tn-drive" hidden><b>Drive</b><span data-tn="drive"></span></p>')+'</div><div class="fp-tn-final">'+F.replace(/data-tn="(away|home)"/g,'data-tn="$1-final"')+'<p class="fp-tn-clock">Final</p></div></div><div class="fp-tn-cta"><a class="fp-btn" href="'+i(w[1])+'">'+i(w[0])+'</a><a class="fp-btn fp-ghost" href="#gbm-road">The road ahead</a></div>'+(l.length?'<ul class="fp-tn-stories" aria-label="More on '+i(s.name)+'">'+l.map(function(k){return'<li><a href="'+i(k.url)+'">'+i(k.title)+"<span>"+i(k.author+" · "+$(k.date.getTime()))+"</span></a></li>"}).join("")+"</ul>":"")+"</div></section>"}function et(e,t){var a=e.querySelector(".fp-tunnel");if(!a)return;var n=d(t);if(!n||!n.away||!n.home)return;var o=n.phase,s=a.getAttribute("data-phase");o==="pre"&&(s==="kick"||s==="live"||s==="half"||s==="final")&&(o=s==="kick"?"kick":s);function f(l,x){var w=a.querySelector('[data-tn="'+l+'"]');w&&x!=null&&w.textContent!==String(x)&&(w.textContent=String(x))}f("away",n.away.score==null?"0":n.away.score),f("home",n.home.score==null?"0":n.home.score),f("away-final",n.away.score==null?"0":n.away.score),f("home-final",n.home.score==null?"0":n.home.score),f("clock",n.phase==="half"?"Halftime":n.clock||"Live");var g=a.querySelector(".fp-tn-drive");g&&(f("drive",n.drive||""),g.hidden=!n.drive),o!==s&&a.setAttribute("data-phase",o)}function tt(e,t,a,n){var o=Ye(),s=L.show.episode,f='<section class="fp-mod fp-mod-latest" aria-label="Latest stories"><h2>Latest</h2><ol class="fp-latest">'+e.map(function(h){return"<li>"+_(h.url,'<time datetime="'+h.date.toISOString()+'">'+i(ke(h.date))+'</time><div><h3 class="fp-hl">'+i(h.title)+'</h3><p class="fp-meta">'+i(h.author)+"</p></div>")+"</li>"}).join("")+'</ol><a class="fp-more" href="'+i(T.latest)+'">All stories <span aria-hidden="true">&nbsp;→</span></a></section>',g='<section class="fp-mod fp-mod-show fp-show" data-live="'+(o.live?1:0)+'" aria-label="The Buddy Martin Show"><h2>The Buddy Martin Show</h2><p class="fp-show-when"><span class="fp-live-dot" aria-hidden="true"></span><span data-fp-show>'+i(o.live?"Live now":"Next live: "+o.label)+'</span></p><p class="fp-ex">Mondays, Wednesdays and Thursdays at 9 p.m. ET.</p><div class="fp-actions"><a class="fp-btn" href="'+i(T.youtubeLive)+'" rel="noopener">Watch on YouTube</a><a class="fp-btn fp-ghost" href="'+i(T.facebook)+'" rel="noopener">Facebook</a></div>'+(s?'<a class="fp-vid" href="https://www.youtube.com/watch?v='+i(s.id)+'" rel="noopener"><span class="fp-frame">'+P("https://i.ytimg.com/vi/"+s.id+"/hqdefault.jpg","",!1,480,360)+'<span class="fp-play"></span></span><span><b>'+i(s.title)+"</b><span>From the show · "+i($(Date.parse(s.date+"T16:00:00Z")))+"</span></span></a>":"")+'<a class="fp-more" href="'+i(T.show)+'">GatorBait TV &amp; podcasts <span aria-hidden="true">&nbsp;→</span></a></section>',l=L.clips.length?'<section class="fp-mod fp-mod-clips" aria-label="Clips"><h2>Clips</h2><div class="fp-clips">'+L.clips.slice(0,2).map(function(h){return'<a class="fp-clip" href="https://www.youtube.com/shorts/'+i(h.id)+'" rel="noopener"><span class="fp-frame">'+P("https://i.ytimg.com/vi/"+h.id+"/hqdefault.jpg","",!1,480,360)+'<span class="fp-play"></span></span><b>'+i(h.title)+"</b></a>"}).join("")+'</div><a class="fp-more" href="'+i(T.youtubeChannel)+'" rel="noopener">More on YouTube <span aria-hidden="true">&nbsp;→</span></a></section>':"",x=a.filter(function(h){return h.image&&/spears/i.test(h.title+" "+h.author)&&/(photo|galler|best shots)/i.test(h.title)}).slice(0,2).map(function(h){return{title:h.title,url:h.url,image:h.image}});x.length||(x=L.galleries.slice(0,2));var w='<section class="fp-mod fp-mod-photos" aria-label="Photographs"><h2>Photos · Chris Spears</h2><div class="fp-photos">'+x.map(function(h){return'<a class="fp-photo" href="'+i(h.url)+'"><span class="fp-frame">'+P(h.image,h.title,!1)+'</span><span class="fp-cap"><b>Photo by Chris Spears, GatorBait Media</b></span><b>'+i(h.title)+"</b></a>"}).join("")+"</div></section>",y=t.last,F=t.next,k="";if(y&&y.score){var j={abbr:"FLA",score:y.score.fla,q:y.quarters?y.quarters.fla:[]},B={abbr:oe(y.opponent,y.opponentAbbr),score:y.score.opp,q:y.quarters?y.quarters.opp:[]};k+='<div class="fp-score-head"><span>Final · '+i(V(y.opponentRank,y.opponent))+"</span><span>"+i(fe(y.date)?ie[Number(fe(y.date).slice(5,7))-1]+" "+Number(fe(y.date).slice(8)):"")+"</span></div>"+N({away:y.home?B:j,home:y.home?j:B},"fp-mini");var z=y.stats||{},H=[["totalYards","Total yards"],["rushYards","Rushing yards"],["firstDowns","First downs"],["attendance","In The Swamp"]].filter(function(h){return z[h[0]]!=null});H.length&&(k+='<div class="fp-tape">'+H.map(function(h){return'<div><strong data-fp-num="'+z[h[0]]+'">'+r(z[h[0]])+"</strong><span>"+(h[0]==="attendance"&&!y.home?"Attendance":h[1])+"</span></div>"}).join("")+"</div>"),y.recapUrl&&(k+='<a class="fp-more" href="'+i(y.recapUrl)+'">Read the recap <span aria-hidden="true">&nbsp;→</span></a>')}F&&(k+='<a class="fp-next" href="'+i(F.previewUrl||T.schedule)+'"><span>Next · '+i(F.tv||"")+"</span><b>"+i(V(t.team.rank,"Florida")+(F.home?" vs. ":" at ")+V(F.opponentRank,F.opponent))+"</b><span>"+i(be(F.kickoffIso)+(F.venue?" · "+F.venue:""))+"</span>"+p(F.kickoffIso)+"</a>");var ee=t.schedule.filter(function(h){return h.status==="scheduled"&&(!F||h.date!==F.kickoffIso)}).slice(0,3);ee.length&&(k+='<table class="fp-stand"><caption class="fp-sr">Upcoming schedule</caption><thead><tr><th scope="col">Coming up</th><th scope="col">Date</th><th scope="col">TV</th></tr></thead><tbody>'+ee.map(function(h){var Ke=Date.parse(h.date),Xe=Y(Ke),ht=/T0[45]:00:00/.test(h.date);return"<tr><td>"+i((h.home?"vs. ":"at ")+V(h.rank,h.opponent))+"</td><td>"+i(ht?ie[new Date(Ke).getUTCMonth()]+" "+new Date(Ke).getUTCDate():ie[Xe.mo]+" "+Xe.d)+"</td><td>"+i(h.tv||"TBA")+"</td></tr>"}).join("")+"</tbody></table>"),t.standings.length&&(k+='<table class="fp-stand"><caption class="fp-sr">SEC standings</caption><thead><tr><th scope="col">SEC</th><th scope="col">Conf.</th><th scope="col">Overall</th></tr></thead><tbody>'+t.standings.slice(0,6).map(function(h){return"<tr"+(/^florida$/i.test(h.team)?' class="fp-us"':"")+"><td>"+i(h.team)+"</td><td>"+i(h.conf)+"</td><td>"+i(h.overall)+"</td></tr>"}).join("")+"</tbody></table>"),k+='<div class="fp-chips"><a href="'+i(T.schedule)+'">Schedule</a><a href="'+i(T.roster)+'">Roster</a><a href="'+i(T.stats)+'">Stats</a><a href="'+i(T.standings)+'">Standings</a></div>';var O='<section class="fp-mod fp-mod-scores" aria-label="Scores and schedule"><h2>Scores &amp; Schedule · Florida '+i(t.team.record||"")+"</h2>"+k+"</section>",Ie=a.find(function(h){return h.image&&!n[h.image]&&!h.portrait&&!Q(h)})||a.find(function(h){return h.image}),qe='<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><div class="fp-mag-copy"><h2>The Thursday Magazine</h2><p class="fp-ex">The columns, characters and photographs worth keeping. The cover lives on the Magazine, not here.</p><div class="fp-actions"><a class="fp-btn" href="'+i(T.magazine)+'">Open the Magazine <span aria-hidden="true">→</span></a></div></div>'+(Ie?'<a class="fp-cover" href="'+i(T.magazine)+'" aria-label="GatorBait Magazine">'+P(Ie.image,"",!1)+'<span class="fp-cover-mh">GatorBait<small>Magazine · Thursday</small></span><span class="fp-cover-t"><em>'+i(Ie.author)+"</em>"+i(Ce(Ie.title).h)+"</span></a>":"")+"</section>",Fe=window.GBM_CAPTURE?window.GBM_CAPTURE.html("home"):'<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="'+i(T.newsletter)+'">Sign up <span aria-hidden="true">→</span></a></div></section>';return'<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show, clips and photos. Everything GatorBait, in one place.</p></div><div class="fp-hub-grid">'+f+O+g+(window.GBM_CAPTURE?Fe:"")+l+w+qe+(window.GBM_CAPTURE?"":Fe)+"</div></div></section>"}function Pe(e){var t=R();e.querySelectorAll("[data-fp-count]").forEach(function(f){var g=Date.parse(f.getAttribute("data-fp-count")),l=Math.max(0,Math.floor((g-t)/1e3)),x=[[Math.floor(l/86400),"d"],[Math.floor(l/3600)%24,"h"],[Math.floor(l/60)%60,"m"],[l%60,"s"]];f.firstChild||(f.innerHTML=x.map(function(F,k){return"<span"+(k===3?' class="fp-cd-s"':"")+"><b></b><b></b><i>"+F[1]+"</i></span>"}).join(""));var w=f.querySelectorAll("b");if(x.forEach(function(F,k){var j=String(F[0]).padStart(2,"0");[0,1].forEach(function(B){var z=w[k*2+B];if(z&&z.textContent!==j[B]){var H=!z.textContent;z.textContent=j[B],H||(z.classList.remove("fp-flip"),z.offsetWidth,z.classList.add("fp-flip"))}})}),f.hidden=l===0,l===0){var y=f.closest(".fp-tunnel");y&&y.getAttribute("data-phase")==="pre"&&y.setAttribute("data-phase","kick")}f.setAttribute("aria-label",x[0][0]+" days "+x[1][0]+" hours "+x[2][0]+" minutes to kickoff")});var a=e.querySelector(".fp-show");if(a){var n=Ye(),o=n.live?"Live now":"Next live: "+n.label,s=a.querySelector("[data-fp-show]");s&&s.textContent!==o&&(s.textContent=o),a.setAttribute("data-live",n.live?"1":"0")}}function at(e){ze(),Pe(e),!(!e.querySelector("[data-fp-count]")&&!e.querySelector(".fp-show"))&&(pe=setInterval(function(){!document.hidden&&e.isConnected&&Pe(e),e.isConnected||ze()},1e3))}function ze(){pe&&clearInterval(pe),pe=0}function nt(e){D()||!("IntersectionObserver"in window)||(C=new IntersectionObserver(function(t){t.forEach(function(a){if(a.isIntersecting){C.unobserve(a.target);var n=a.target,o=Number(n.getAttribute("data-fp-num")),s=performance.now();(function f(g){var l=Math.min(1,(g-s)/900),x=Math.round(o*(1-Math.pow(1-l,3)));n.textContent=r(x),l<1&&requestAnimationFrame(f)})(s)}})},{threshold:.6}),e.querySelectorAll("[data-fp-num]").forEach(function(t){C.observe(t)}))}function rt(e){if(D()||!e.classList.contains("fp-embers-on"))return;var t={fullScreen:{enable:!1},fpsLimit:40,detectRetina:!0,pauseOnBlur:!0,pauseOnOutsideViewport:!0,background:{color:"transparent"},particles:{number:{value:innerWidth<700?45:80},color:{value:["#fa4616","#ff7a3d","#ffb27a"]},shape:{type:"circle"},opacity:{value:{min:.15,max:.75},animation:{enable:!0,speed:.6,sync:!1}},size:{value:{min:.8,max:2.6}},move:{enable:!0,direction:"top",speed:{min:.3,max:1.1},random:!0,straight:!1,outModes:{default:"out"}}}};function a(){!e.isConnected||!window.tsParticles||!document.getElementById("fp-embers")||window.tsParticles.load({id:"fp-embers",options:t}).then(function(s){K=s,document.hidden&&s&&s.pause()}).catch(function(){})}if(window.tsParticles){a();return}var n=navigator.connection||{};if(!(n.saveData||/(^|[^4-9])[23]g$/.test(String(n.effectiveType||"")))){var o=window.requestIdleCallback||function(s){return setTimeout(s,300)};setTimeout(function(){o(function(){if(e.isConnected){var s=document.getElementById("gbm-fp-tsparticles");s||(s=document.createElement("script"),s.id="gbm-fp-tsparticles",s.src=Be,s.async=!0,s.crossOrigin="anonymous",document.head.appendChild(s)),window.tsParticles?a():s.addEventListener("load",a,{once:!0})}},{timeout:1200})},1e3)}}document.addEventListener("visibilitychange",function(){if(K)try{document.hidden?K.pause():K.play()}catch(e){}});function it(){if(!document.getElementById("gbm-fp-fonts")&&!document.querySelector('link[rel="stylesheet"][href*="Barlow+Condensed"]')){var e=document.createElement("link");e.id="gbm-fp-fonts",e.rel="stylesheet",e.href=Ae,document.head.appendChild(e)}return!document.fonts||!document.fonts.load?Promise.resolve():Promise.race([Promise.all([document.fonts.load('800 88px "Barlow Condensed"'),document.fonts.load('400 16px "Barlow"')]).catch(function(){}),new Promise(function(t){setTimeout(t,900)})])}function ot(e){v=!1,window.__GBM_GAZETTE_BOOT__&&window.__GBM_GAZETTE_BOOT__.fallback?window.__GBM_GAZETTE_BOOT__.fallback(e):console.error("[GatorBait front page]",e)}function st(e,t,a){if(!J()){v=!1;return}if(e.length<3)throw new Error("Insufficient public stories");var n=document.getElementById("gbm-live");if(n&&n.classList.contains("gbm-gazette")){v=!1;return}if(n)throw new Error("Another homepage owner already mounted");var o=ve(e),s=o.post,f={},g={};f[s.url]=1,s.image&&(g[s.image]=1);function l(O,Ie,qe){var Fe=[];return O.forEach(function(h){Fe.length<Ie&&!f[h.url]&&(!qe||qe(h))&&(f[h.url]=1,h.image&&(g[h.image]=1),Fe.push(h))}),Fe}var x=l(e,1,function(O){return O.image&&/franz beard/i.test(O.author)})[0]||l(e,1,function(O){return O.image&&!/staff/i.test(O.author)&&!Q(O)})[0]||l(e,1,function(O){return!!O.image})[0],w=l(e,4,function(O){return!Q(O)||!/(photo|galler|best shots)/i.test(O.title)}),y=Re(e),F=l(e,8),k=d(a),j=b(a);De=a;var B=document.createElement("div");if(B.id="gbm-live",B.className="gbm-gazette gbm-sports-home fp26"+(j.night?" fp-night":" fp-day")+(j.gameday?" fp-gameday":"")+(j.embers?" fp-embers-on":""),B.setAttribute("data-theme",j.night?"dark":"light"),B.setAttribute("data-fp",ne),B.setAttribute("data-fp-build",String(L.build||"")),B.setAttribute("data-fp-lead",o.why),B.setAttribute("data-fp-scoreboard",a.source),B.setAttribute("data-gazette-source",t?"current-feed":"last-known-feed"),B.setAttribute("data-gazette-newest",e[0].date.toISOString()),B.innerHTML='<a class="fp-skip" href="#sh-main">Skip to stories</a>'+c(e,a,k)+m()+M(a,k)+(j.gameday?Qe(k,a,e,s.url)+(k&&k.phase!=="pre"?de(k):""):"")+'<main id="sh-main"><div class="fp-wrap"><div id="sh-freshness"></div>'+Ee(s,o.why)+Ge(s,e)+Le(x,w,y)+"</div>"+$e(a)+tt(F,a,e,g)+"</main>",!document.getElementById("gbm-fp26-styles")){var z=document.createElement("style");z.id="gbm-fp26-styles",z.textContent=Te,document.head.appendChild(z)}var H=document.getElementById("gbgz-styles");H&&H.media!=="not all"&&(H.media="not all");var ee=document.getElementById("gbm-mobile-shell-host");ee&&ee.parentNode?ee.parentNode.insertBefore(B,ee.nextSibling):document.body.insertBefore(B,document.body.firstChild),W.classList.add("gbm-gazette-live","gbm-standalone-live");try{Ve(B)}catch(O){}try{ue(B)}catch(O){}v=!1,window.__GBM_GAZETTE_RUNTIME__.ready=!0,window.__GBM_GAZETTE_BOOT__&&window.__GBM_GAZETTE_BOOT__.ready&&window.__GBM_GAZETTE_BOOT__.ready(),requestAnimationFrame(function(){requestAnimationFrame(function(){W.classList.remove("gbm-prepaint-v2")})}),at(B),nt(B),rt(B),document.dispatchEvent(new CustomEvent("gbm:gazette-ready",{detail:{stories:e.length,fresh:t,lead:o.why,version:ne}})),setTimeout(function(){mt(B)},50)}function pt(e){var t=document.getElementById("gbm-live");if(!(!t||!t.classList.contains("fp26"))){var a=_e(e);De=a,t.setAttribute("data-fp-scoreboard",a.source),a.next&&t.querySelectorAll("[data-fp-count]").forEach(function(n){n.getAttribute("data-fp-count")!==a.next.kickoffIso&&Date.parse(a.next.kickoffIso)>R()&&(n.setAttribute("data-fp-count",a.next.kickoffIso),n.innerHTML="")}),Pe(t),lt(t,a),et(t,a)}}function lt(e,t){var a=$e(t);if(a){var n=document.createElement("div");n.innerHTML=a;var o=n.firstChild,s=e.querySelector("#gbm-road"),f=e.querySelector(".fp-hub"),g=s||f;if(!(!o||!g)){var l=g.getBoundingClientRect();if(!(l.bottom>0&&l.top<innerHeight+120)){if(s){if(s.getAttribute("data-sig")===o.getAttribute("data-sig")||s.querySelectorAll(".g").length!==o.querySelectorAll(".g").length)return;s.parentNode.replaceChild(o,s)}else f.parentNode.insertBefore(o,f);try{Ve(e)}catch(x){}}}}}var ft=te+"deploy/cloudflare/endpoints.json",De=null,je=!1;function Ue(e){try{var t=new URL(String(e||""));return t.protocol!=="https:"||t.username||t.password||t.search||t.hash?"":/(^|\.)(workers\.dev|gatorbaitmedia\.com)$/.test(t.hostname)?t.href.replace(/\/+$/,""):""}catch(a){return""}}function ct(e){var t=e.getBoundingClientRect();return t.bottom<=0||t.top>=innerHeight}function We(e,t){var a=!1;function n(){if(!e.isConnected){g();return}if(!ct(e)){f();return}g();var l=document.elementFromPoint(Math.floor(innerWidth/2),Math.floor(innerHeight/2));l=l&&(l.closest("section,article,main,nav,header,footer")||l);var x=l?l.getBoundingClientRect().top:0;try{t()}catch(y){return}var w=l?l.getBoundingClientRect().top-x:0;Math.abs(w)>.5&&scrollBy(0,w)}var o=0;function s(){o||(o=requestAnimationFrame(function(){o=0,n()}))}function f(){a||(a=!0,addEventListener("scroll",s,{passive:!0}),addEventListener("resize",s))}function g(){a&&(a=!1,removeEventListener("scroll",s),removeEventListener("resize",s))}n()}function dt(e,t){var a=De,n=a&&d(a),o=a&&b(a),s=e.querySelector(".fp-tunnel");if(t.call&&window.GBM_CALL&&a&&!e.querySelector("#gbm-call")){var f=GBM_CALL.game(a),g=e.querySelector("#gbm-road"),l=e.querySelector(".fp-hub");f&&(g||l)&&(window.__GBM_CALL_API__=t.call+"/v1",We(g||l,function(){(g||l).insertAdjacentHTML(g?"afterend":"beforebegin",GBM_CALL.html(f)),GBM_CALL.init(e)}))}if(t.ask&&window.GBM_ASK&&!e.querySelector(".fp-ask")){var x=o&&o.gameday&&s?s:e.querySelector(".fp-mod-show");x&&(window.__GBM_ASK_URL__=t.ask,We(x,function(){GBM_ASK.mount(x)}))}if(t.stands&&window.GBM_STANDS&&o&&o.gameday&&s&&n&&n.kickoff&&!e.querySelector("#gbm-stands")){var w=s.querySelector(".fp-tn-cta"),y={api:t.stands,room:"game-"+Y(n.kickoff).ymd,mount:"#gbm-stands",tokenUrl:t.standsToken||"/_functions/standsToken",signin:T.signin};w&&(window.__GBM_STANDS__=y,We(w,function(){var F=document.createElement("div");F.id="gbm-stands",w.parentNode.insertBefore(F,w.nextSibling),GBM_STANDS.mount(Object.assign({},y,{mount:F}))}))}}function mt(e){je||(je=!0,Ze(ft+"?t="+Math.floor(Date.now()/6e4),800).then(function(t){if(!(!t||typeof t!="object"||!e.isConnected)){var a={call:Ue(t.call),ask:Ue(t.ask),stands:Ue(t.stands),standsToken:typeof t.standsToken=="string"&&/^\/[\w\/-]*$/.test(t.standsToken)?t.standsToken:""};e.setAttribute("data-fp-modules",["call","ask","stands"].filter(function(n){return a[n]}).join(" ")||"none"),(a.call||a.ask||a.stands)&&ut().then(function(){e.isConnected&&dt(e,a)}).catch(function(){})}}).catch(function(){e.isConnected&&e.setAttribute("data-fp-modules","none")}))}function ut(){return window.GBM_CALL&&window.GBM_ASK&&window.GBM_STANDS?Promise.resolve():new Promise(function(e,t){var a=document.getElementById("gbm-fp26-fan");if(a){a.addEventListener("load",e,{once:!0}),a.addEventListener("error",t,{once:!0});return}var n=document.getElementById("gbm-fp26-bundle"),o=n&&n.src||document.currentScript&&document.currentScript.src||"",s=/\/sports-live\/homepage\.js/.test(o)?o.replace(/\/sports-live\/homepage\.js.*$/,"/sports-live/fan-modules.js"):te+"sports-live/fan-modules.js",f=document.createElement("script");f.id="gbm-fp26-fan",f.async=!0,f.src=s,f.onload=e,f.onerror=function(){f.remove(),t(new Error("fan modules failed to load"))},document.head.appendChild(f)})}function Ze(e,t){var a=new AbortController,n=setTimeout(function(){a.abort()},t);return fetch(e,{signal:a.signal,credentials:"omit",cache:"no-store"}).then(function(o){if(clearTimeout(n),!o.ok)throw new Error(e+" "+o.status);return o.json()})}function gt(){var e=new AbortController,t=setTimeout(function(){e.abort()},4e3);return fetch(S+"?t="+Math.floor(Date.now()/6e4),{signal:e.signal,credentials:"omit",cache:"no-store"}).then(function(a){if(clearTimeout(t),!a.ok)throw new Error("Content response "+a.status);return a.text().then(function(n){var o=new DOMParser().parseFromString(n,"text/xml");function s(f,g){var l=Array.from(f.children).find(function(x){return x.localName===g});return l?l.textContent.trim():""}return{posts:Array.from(o.querySelectorAll("item")).map(function(f){var g=f.querySelector("enclosure");return{title:s(f,"title"),excerpt:s(f,"description"),author:s(f,"creator"),url:s(f,"link"),firstPublishedDate:s(f,"pubDate"),image:{src:g?g.getAttribute("url"):"",alt:s(f,"title")}}})}})})}function He(){if(!J()||v||document.querySelector("#gbm-live.gbm-gazette"))return;v=!0;var e={posts:L.posts},t=window.__GBM_HOME_FALLBACK__,a;try{t&&Z(t).length>=3&&Z(t)[0].date>Z(e)[0].date&&(e=t)}catch(k){}var n=e;try{a=JSON.parse(sessionStorage.getItem("gbm-public-feed")||"null"),a&&Date.now()-a.saved<9e5&&Z(a.data).length>=3&&Z(a.data)[0].date>=Z(e)[0].date&&(n=a.data)}catch(k){}var o=!1,s,f=!1,g=!1,l=null,x=!1;function w(k,j){if(!o){o=!0;try{st(Z(k),j,_e(s))}catch(B){ot(B)}}}function y(){o||!g||(l&&(f||x)?w(l,!0):x&&w(n,n!==e))}it().then(function(){g=!0,y()});var F=setTimeout(function(){x=!0,g=!0,y()},1500);n!==e&&(l=n),Ze(te+"sports-live/scoreboard.json?t="+Math.floor(Date.now()/6e4),2500).then(function(k){o?pt(k):(s=k,f=!0,y())}).catch(function(){f=!0,y()}),gt().catch(function(){return Ze(te+"gazette-live/posts.json",3e3)}).then(function(k){var j=Z(k);if(j.length<3)throw new Error("Invalid current content");try{sessionStorage.setItem("gbm-public-feed",JSON.stringify({saved:Date.now(),data:k}))}catch(ee){}if(!o){l=k,y();return}var B=document.getElementById("gbm-live");if(B&&j[0].date.toISOString()!==B.getAttribute("data-gazette-newest")){var z=document.getElementById("sh-freshness");if(z){z.textContent="";var H=document.createElement("a");H.href="/",H.textContent="New stories available — refresh",H.addEventListener("click",function(ee){ee.preventDefault(),ee.stopPropagation(),location.reload()}),z.appendChild(H)}}else B&&B.setAttribute("data-gazette-source","current-feed")}).catch(function(){clearTimeout(F),x=!0,g=!0,y()})}function Je(){if(J())He();else{var e=document.querySelector("#gbm-live.gbm-gazette");if(e&&e.remove(),ze(),C&&(C.disconnect(),C=null),K){try{K.destroy()}catch(t){}K=null}W.classList.remove("gbm-gazette-live","gbm-standalone-live"),window.__GBM_GAZETTE_RUNTIME__.ready=!1,je=!1}}window.__GBM_GAZETTE_RUNTIME__={sync:Je,ready:!1,version:ne},window.addEventListener("popstate",Je),window.addEventListener("gbmroutechange",Je),document.readyState==="loading"?document.addEventListener("DOMContentLoaded",He,{once:!0}):He()})(),(function(){"use strict";var Te="share-2026.1",L="https://presidente49.github.io/gatorbait-media-redesign/",ne="https://www.gatorbaitmedia.com",te="America/New_York",S={navy:"#07122e",blue:"#0021a5",orange:"#fa4616",ink:"#f3f5fa",muted:"#b9c4dc",win:"#7ef0a6"},ae={name:"The Buddy Martin Show",path:"/the-buddy-martin-show",when:"Mondays, Wednesdays and Thursdays at 9 p.m. ET",days:[1,3,4],hour:21},Be='.gbm-share-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:0;border-radius:6px;background:#fa4616;color:#fff;font:800 15px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}.gbm-share-btn.ghost{background:transparent;border:1px solid #2b3f80;color:#f3f5fa}.gbm-share-btn span{white-space:nowrap}.gbm-share-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}#gbm-share-veil{position:fixed;inset:0;background:rgba(3,8,24,.72);z-index:9998}#gbm-share{position:fixed;left:0;right:0;bottom:0;z-index:9999;max-width:480px;margin:0 auto;background:#0b1a44;color:#f3f5fa;border-radius:18px 18px 0 0;padding:12px 16px calc(20px + env(safe-area-inset-bottom));font:16px/1.4 "Barlow",sans-serif;transform:translateY(105%);transition:transform .25s}#gbm-share.on{transform:none}#gbm-share i{display:block;width:40px;height:4px;border-radius:2px;background:#2b3f80;margin:0 auto 10px}#gbm-share canvas{width:100%;height:auto;display:block;border-radius:10px;background:#07122e}#gbm-share p{margin:10px 0;font-size:13px;color:#b9c4dc;white-space:pre-wrap;word-break:break-word}#gbm-share .g{display:grid;grid-template-columns:1fr 1fr;gap:8px}#gbm-share .g .gbm-share-btn{justify-content:center;font:600 15px "Barlow",sans-serif;text-transform:none;letter-spacing:0;border-radius:10px}#gbm-share .g .w{grid-column:1/-1}#gbm-share-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:10000;background:#fa4616;color:#fff;padding:10px 16px;border-radius:999px;font:600 15px "Barlow",sans-serif;opacity:0;transition:opacity .2s;pointer-events:none}@media(min-width:900px){#gbm-share{bottom:auto;top:50%;transform:translate(0,-45%);opacity:0;border-radius:18px;transition:opacity .2s}#gbm-share.on{transform:translateY(-50%);opacity:1}}@media(prefers-reduced-motion:reduce){#gbm-share{transition:none}}',Ae='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>';if(window.__GBM_SHARE_RUNTIME__){window.__GBM_SHARE_RUNTIME__.mount();return}var re=window.__GBM_SHARE__||{},W={posts:re.posts||null,scoreboard:re.scoreboard||null},T="story",J=null,v=null,pe=!1;function K(){var p=Number(re.now?Date.parse(re.now):window.__GBM_FP_NOW__);return Number.isFinite(p)&&p>0?p:Date.now()}function C(p){return String(p==null?"":p).replace(/[&<>"']/g,function(r){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[r]})}function R(p,r,c){var m=document.createElement(p);return Object.keys(r||{}).forEach(function(A){m.setAttribute(A,r[A])}),c!=null&&(m.innerHTML=c),m}var i=["Jan.","Feb.","March","April","May","June","July","Aug.","Sept.","Oct.","Nov.","Dec."],D=["Sun.","Mon.","Tue.","Wed.","Thu.","Fri.","Sat."];function ge(p){var r={};return new Intl.DateTimeFormat("en-US",{timeZone:te,weekday:"short",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit",hour12:!1}).formatToParts(new Date(p)).forEach(function(c){r[c.type]=c.value}),{wd:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[r.weekday],mo:Number(r.month)-1,d:Number(r.day),h:Number(r.hour)%24,m:Number(r.minute)}}function le(p){var r=ge(p),c=r.h%12||12;return c+(r.m?":"+String(r.m).padStart(2,"0"):"")+(r.h<12?" a.m.":" p.m.")}function Se(p){var r=Date.parse(p);if(!Number.isFinite(r))return"";var c=ge(r);return D[c.wd]+", "+i[c.mo]+" "+c.d+", "+le(r)+" ET"}function ie(p){var r=Date.parse(p)-K();return!Number.isFinite(r)||r<=0?"":Math.floor(r/864e5)+"d "+Math.floor(r%864e5/36e5)+"h "+Math.floor(r%36e5/6e4)+"m"}function he(){for(var p=K(),r=ge(p),c=0;c<8;c++){var m=(r.wd+c)%7;if(ae.days.indexOf(m)>=0&&(c>0||r.h<ae.hour))return D[m]+" 9 p.m. ET"}return"9 p.m. ET"}function ye(p,r){var c="AbortController"in window?new AbortController:null,m=c&&setTimeout(function(){c.abort()},r);return fetch(p,{signal:c&&c.signal,credentials:"omit"}).then(function(A){if(!A.ok)throw new Error(A.status);return A.json()}).finally(function(){m&&clearTimeout(m)})}function Y(){var p=[];if(W.scoreboard||p.push(ye(L+"sports-live/scoreboard.json?t="+Math.floor(K()/6e4),3e3).then(function(c){W.scoreboard=c}).catch(function(){})),!W.posts){var r=null;try{r=JSON.parse(sessionStorage.getItem("gbm-public-feed")||"null")}catch(c){}r&&r.data&&r.data.posts?W.posts=r.data.posts:p.push(ye(L+"gazette-live/posts.json",3e3).then(function(c){W.posts=c.posts||[]}).catch(function(){}))}return Promise.all(p)}function fe(){var p=null,r=document.querySelectorAll("h1"),c,m;for(c=0;c<r.length;c++)if(m=r[c],!!m.getClientRects().length){if(m.getAttribute("data-hook")==="post-title"||m.closest("article"))return m;p||(p=m)}return p}function X(p){try{var r=new URL(String(p),ne);return/^(www\.)?gatorbaitmedia\.com$/.test(r.hostname)&&r.pathname.indexOf("/post/")===0?ne+r.pathname:""}catch(c){return""}}function $(){var p=document.querySelector('link[rel="canonical"]'),r=X(p?p.href:location.href),c=fe(),m=document.querySelector('[data-hook="user-name"], [rel="author"]'),A=(W.posts||[]).filter(function(N){return X(N.url)}),M=r&&A.filter(function(N){return X(N.url)===r})[0];return!r&&A.length&&(M=A[0]),M?{title:M.title,author:M.author||"",url:X(M.url),kicker:be(M)}:r?{title:(c&&c.textContent||document.title).trim(),author:(m&&m.textContent||"").trim(),url:r,kicker:"GatorBait"}:null}function be(p){var r=Date.parse(p.firstPublishedDate);return Number.isFinite(r)?"GatorBait · "+i[ge(r).mo]+" "+ge(r).d:"GatorBait"}function ke(){var p=W.scoreboard||{},r=(p.schedule||[]).filter(function(N){return N.status==="final"&&N.score}),c=0,m=0,A=r.map(function(N){var de=N.score.fla>N.score.opp;return de?c++:m++,{w:de,s:N.score.fla+"-"+N.score.opp,o:(N.opponentRank?"No. "+N.opponentRank+" ":"")+(N.home?"":"at ")+N.opponent}}),M=p.next||null;return{rec:p.team&&p.team.record||c+"-"+m,rank:p.team&&p.team.rank,rows:A,next:M&&{opp:(M.opponentRank?"No. "+M.opponentRank+" ":"")+M.opponent,home:M.home,when:Se(M.kickoffIso),tv:M.tv||"",kick:M.kickoffIso,url:X(M.previewUrl)},last:p.last||null,live:p.live||null}}function Me(){var p=ke(),r=p.next,c=p.last,m=p.live;return m&&m.score?{phase:"live",a:"Florida",b:r?r.opp:"Opponent",fa:m.score.fla,fb:m.score.opp,clock:(m.period?"Q"+m.period+" ":"")+(m.clock||"Live"),when:r?r.when:"",tv:r?r.tv:""}:r&&ie(r.kick)?{phase:"pre",a:"Florida",b:r.opp,home:r.home,cd:ie(r.kick),when:r.when,tv:r.tv,url:r.url}:c&&c.score?{phase:"final",a:"Florida",b:(c.opponentRank?"No. "+c.opponentRank+" ":"")+c.opponent,home:c.home,fa:c.score.fla,fb:c.score.opp,when:Se(c.date),url:X(c.recapUrl)}:null}function Z(p,r,c){var m=new URL(c||ne+"/");return m.searchParams.set("utm_source","gatorbait_share"),m.searchParams.set("utm_medium",r),m.searchParams.set("utm_campaign",p),p==="season"&&(m.hash="gbm-road"),m.href}function Q(p,r){var c=ke(),m,A;return p==="story"?(A=$(),A?{text:A.title+" — "+(A.author?A.author+" on ":"")+"GatorBait",url:Z(p,r,A.url)}:null):p==="season"?{text:"Florida "+c.rec+(c.rank?", No. "+c.rank:"")+(c.next?". Next: "+(c.next.home?"vs. ":"at ")+c.next.opp+", "+c.next.when+(c.next.tv?", "+c.next.tv:""):"")+". The Road Ahead on GatorBait",url:Z(p,r)}:p==="tunnel"?(m=Me(),m?m.phase==="pre"?{text:"Kickoff in "+m.cd+": Florida "+(m.home?"vs. ":"at ")+m.b+", "+m.when+(m.tv?", "+m.tv:"")+". The Tunnel on GatorBait",url:Z(p,r,m.url||void 0)}:m.phase==="live"?{text:"Live: Florida "+m.fa+", "+m.b+" "+m.fb+", "+m.clock+". Follow on GatorBait",url:Z(p,r)}:{text:"Final: Florida "+m.fa+", "+m.b+" "+m.fb+". The recap on GatorBait",url:Z(p,r,m.url||void 0)}:null):{text:ae.name+", next live "+he()+". Watch on GatorBait",url:Z(p,r,ne+ae.path)}}function E(p,r,c){v.font=p+" "+r+'px "Barlow Condensed","Barlow",sans-serif',v.fillStyle=c}function ve(p,r,c,m,A,M){for(var N=String(p).split(" "),de="",se=[],Ee=0;Ee<N.length;Ee++){var Ge=de+N[Ee]+" ";v.measureText(Ge).width>m&&de?(se.push(de),de=N[Ee]+" "):de=Ge}return se.push(de),se.length>M&&(se=se.slice(0,M),se[M-1]=se[M-1].replace(/\s+$/,"").replace(/[.,;:]?$/,"…")),se.forEach(function(Le,Re){v.fillText(Le.replace(/\s+$/,""),r,c+Re*A)}),c+se.length*A}function q(p){v.fillStyle=S.navy,v.fillRect(0,0,1200,630),v.fillStyle=S.blue,v.beginPath(),v.moveTo(860,0),v.lineTo(1200,0),v.lineTo(1200,630),v.lineTo(700,630),v.closePath(),v.fill(),v.fillStyle=S.orange,v.fillRect(0,0,18,630),E(800,34,S.orange),v.fillText("GATORBAIT",70,80),E(600,26,S.muted),v.fillText("Independent Florida Gators coverage",290,80),E(600,28,S.muted);for(var r=p;v.measureText(r).width>1060&&r.length>8;)r=r.slice(0,-2).replace(/…$/,"")+"…";v.fillText(r,70,585)}function I(p,r){E(800,150,S.ink),v.fillText(String(p.fa),70,r);var c=v.measureText(String(p.fa)).width;E(600,44,S.muted),v.fillText("FLORIDA",70,r+50),E(800,150,S.ink),v.fillText(String(p.fb),70+c+90,r),E(600,44,S.muted),v.fillText(p.b.toUpperCase(),70+c+90,r+50)}function xe(p){var r=ke(),c,m;if(p==="story"){if(m=$(),!m)return!1;q(m.url.replace(/^https:\/\/www\./,"")),E(600,32,S.orange),v.fillText(m.kicker.toUpperCase(),70,180),E(800,m.title.length>70?74:88,S.ink);var A=ve(m.title,70,270,1e3,m.title.length>70?80:94,3);return E(600,36,S.muted),m.author&&v.fillText("By "+m.author,70,Math.min(A+8,540)),!0}return p==="season"?(q("gatorbaitmedia.com   ·   Source: ESPN"),E(800,190,S.ink),v.fillText(r.rec,70,300),E(800,54,S.orange),v.fillText((r.rank?"NO. "+r.rank+" ":"")+"FLORIDA",70,360),E(600,40,S.ink),r.rows.slice(-5).forEach(function(M,N){v.fillStyle=M.w?S.win:S.orange,v.fillText(M.w?"W":"L",560,185+N*56),v.fillStyle=S.ink,v.fillText(M.s+"  "+M.o,620,185+N*56)}),E(600,34,S.muted),r.next&&ve("Next: "+(r.next.home?"vs. ":"at ")+r.next.opp+"  ·  "+r.next.when+(r.next.tv?", "+r.next.tv:""),70,450,1060,40,2),!0):p==="tunnel"?(c=Me(),c?(q("gatorbaitmedia.com   ·   Source: ESPN"),c.phase==="pre"?(E(800,190,S.ink),v.fillText(r.rec,70,300),E(800,54,S.orange),v.fillText((r.rank?"NO. "+r.rank+" ":"")+"FLORIDA",70,360),E(600,34,S.muted),v.fillText("KICKOFF IN",620,190),E(800,120,S.orange),v.fillText(c.cd,620,310),E(600,40,S.ink),ve("Florida "+(c.home?"vs. ":"at ")+c.b,620,380,520,44,2),E(600,34,S.muted),v.fillText(c.when+(c.tv?", "+c.tv:""),70,450)):(E(600,34,c.phase==="live"?S.orange:S.muted),v.fillText(c.phase==="live"?"LIVE  ·  "+c.clock.toUpperCase():"FINAL",70,180),I(c,340),E(600,34,S.muted),v.fillText(c.when,70,470)),!0):!1):(q("gatorbaitmedia.com"+ae.path),E(600,32,S.orange),v.fillText("GATORBAIT TV & PODCASTS",70,180),E(800,96,S.ink),ve(ae.name,70,290,1e3,100,2),E(600,40,S.ink),v.fillText("Next live: "+he(),70,420),E(600,34,S.muted),v.fillText(ae.when,70,470),!0)}function me(){return document.fonts&&document.fonts.load?Promise.all([document.fonts.load('800 80px "Barlow Condensed"'),document.fonts.load('600 40px "Barlow Condensed"')]).catch(function(){}):Promise.resolve()}function ce(){return J||(J=R("canvas",{width:1200,height:630}),v=J.getContext("2d")),J}function _e(p){return ce(),Y().then(me).then(function(){return xe(p)?J.toDataURL("image/png"):""})}function oe(p){J.toBlob(function(r){p(r?new File([r],"gatorbait-"+T+".png",{type:"image/png"}):null)},"image/png")}function V(p,r){try{document.dispatchEvent(new CustomEvent("gbm:share",{detail:{kind:p,medium:r}}))}catch(c){}try{typeof window.gtag=="function"&&window.gtag("event","share",{method:r,content_type:p,item_id:(Q(p,r)||{}).url})}catch(c){}}function d(p){var r=document.getElementById("gbm-share-toast")||document.body.appendChild(R("div",{id:"gbm-share-toast",role:"status"}));r.textContent=p,r.style.opacity="1",setTimeout(function(){r.style.opacity="0"},1600)}function u(){var p=document.getElementById("gbm-share");return p||(document.body.appendChild(R("div",{id:"gbm-share-veil",hidden:""})),p=R("div",{id:"gbm-share",role:"dialog","aria-modal":"true","aria-label":"Share"},"<i></i>"),p.appendChild(ce()),p.appendChild(R("p",{id:"gbm-share-text"})),p.appendChild(R("div",{class:"g"},'<button type="button" class="gbm-share-btn" data-act="native">Share…</button><button type="button" class="gbm-share-btn ghost" data-act="copy">Copy link</button><button type="button" class="gbm-share-btn ghost" data-act="x">Post on X</button><button type="button" class="gbm-share-btn ghost" data-act="facebook">Facebook</button><button type="button" class="gbm-share-btn ghost w" data-act="save">Save image</button><button type="button" class="gbm-share-btn ghost w" data-act="close">Close</button>')),p.addEventListener("click",function(r){var c=r.target.closest("[data-act]");c&&G(c.getAttribute("data-act"))}),document.getElementById("gbm-share-veil").addEventListener("click",_),document.addEventListener("keydown",function(r){r.key==="Escape"&&pe&&_()}),document.body.appendChild(p),p)}function b(p){T=p;var r=u();return _e(p).then(function(c){var m=Q(p,"native");return!c||!m?(d("Nothing to share yet"),!1):(document.getElementById("gbm-share-text").textContent=m.text+`
+`+m.url,document.getElementById("gbm-share-veil").hidden=!1,r.classList.add("on"),pe=!0,!0)})}function _(){var p=document.getElementById("gbm-share");p&&p.classList.remove("on");var r=document.getElementById("gbm-share-veil");r&&(r.hidden=!0),pe=!1}function G(p){var r;if(p==="close")return _();if(p==="copy"){r=Q(T,"copy"),V(T,"copy");var c=r.text+" "+r.url;return(navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(function(){d("Link copied")},function(){window.prompt("Copy this link",c)})}if(p==="x"||p==="facebook"){r=Q(T,p),V(T,p);var m=p==="x"?"https://x.com/intent/post?text="+encodeURIComponent(r.text)+"&url="+encodeURIComponent(r.url):"https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(r.url);return window.open(m,"_blank","noopener,width=600,height=560")}if(p==="save")return V(T,"image"),oe(function(A){if(A){var M=R("a",{href:URL.createObjectURL(A),download:A.name});document.body.appendChild(M),M.click(),M.remove(),d("Image saved")}});if(p==="native")return navigator.share?(r=Q(T,"native"),V(T,"native"),oe(function(A){var M={title:"GatorBait",text:r.text,url:r.url};A&&navigator.canShare&&navigator.canShare({files:[A]})&&(M.files=[A]),navigator.share(M).then(_).catch(function(){})})):G("copy")}function U(p,r,c){var m=R("button",{type:"button",class:"gbm-share-btn"+(c?" ghost":""),"data-share":p,"aria-label":r},Ae+"<span>"+C(r)+"</span>");return m.addEventListener("click",function(){b(p)}),m}function P(){document.getElementById("gbm-share-css")||document.head.appendChild(R("style",{id:"gbm-share-css"},Be));var p=document.querySelector("#gbm-road .hd"),r=document.querySelector(".fp-tunnel .fp-tn-cta"),c=document.querySelector(".fp-show .fp-actions"),m=window.matchMedia&&window.matchMedia("(max-width: 600px)").matches;if(p&&!p.querySelector("[data-share]")&&p.appendChild(U("season",m?"Share":"Share the season")),c&&!c.querySelector("[data-share]")&&c.appendChild(U("show",m?"Share":"Share the show",!0)),r&&!r.querySelector("[data-share]")&&r.appendChild(U("tunnel","Share",!0)),!document.getElementById("gbm-live")&&X(location.href)&&!document.getElementById("gbm-share-btn")){var A=fe(),M=A&&(A.closest("header")||A.parentNode);if(M){var N=U("story","Share this story");N.id="gbm-share-btn",N.style.margin="12px 0",M.appendChild(N)}}}window.__GBM_SHARE_RUNTIME__={version:Te,open:b,card:_e,payload:Q,mount:P},document.addEventListener("gbm:gazette-ready",P),document.readyState==="loading"?document.addEventListener("DOMContentLoaded",P,{once:!0}):P();var ue=0,we=setInterval(function(){P(),(++ue>8||document.querySelector("[data-share]"))&&clearInterval(we)},500);if("MutationObserver"in window){var Oe=!document.getElementById("gbm-live")&&!!X(location.href),Ce=!1,Ne=new MutationObserver(function(){Ce||(Ce=!0,requestAnimationFrame(function(){if(Ce=!1,document.querySelector("[data-share]")){Oe||Ne.disconnect();return}P()}))});Ne.observe(document.documentElement,{childList:!0,subtree:!0}),Oe||setTimeout(function(){Ne.disconnect()},9e4)}})(),(function(){"use strict";if(window.GBM_CAPTURE)return;var Te="capture-2026.1",L="https://www.gatorbaitmedia.com",ne="https://www.wixapis.com",te=window.__GBM_CAPTURE_CFG__||{},S={clientId:te.clientId||"1565816d-bbbc-45c1-b82a-31f10d3e2c71",formId:te.formId||"6babfee8-147f-428a-9e14-6b72f6225835",emailField:"email_gatorbait",consentField:"subscribe_gatorbait",sourceField:te.sourceField===void 0?"signup_source":te.sourceField,delayMs:Number(te.delayMs)>0?Number(te.delayMs):45e3,quietDays:14},ae=L+"/policies",Be="gbm-capture-joined",Ae="gbm-capture-dismissed",re="gbm-capture-token";function W(){return Date.now()}function T(d,u){try{return window[d].getItem(u)}catch(b){return null}}function J(d,u,b){try{window[d].setItem(u,b)}catch(_){}}function v(){return!!T("localStorage",Be)}function pe(){var d=Number(T("localStorage",Ae));return Number.isFinite(d)&&d>0&&W()-d<S.quietDays*864e5}function K(){return String(location.pathname).indexOf("/post/")===0}var C=":is(#gbm-live,html) ",R=[C+'.gbc{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;contain:inline-size;margin:24px 0;padding:18px 16px 16px;border-radius:12px;background:#0021a5;color:#fff;text-align:left;direction:ltr;font:500 16px/1.4 "Barlow",sans-serif;border-top:6px solid #fa4616}',C+".gbc *{box-sizing:border-box}"+C+".gbc input,"+C+'.gbc button{font-family:"Barlow",sans-serif}',C+'.gbc .gbc-k{display:block;margin:0 0 6px;padding:0;border:0;font:800 12px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#ffb27a}',C+'.gbc .gbc-h{margin:0 0 6px;padding:0;border:0;font:800 26px/1.05 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.01em;text-transform:none;color:#fff;overflow-wrap:break-word}',C+'.gbc .gbc-v{margin:0 0 12px;padding:0;font:500 16px/1.4 "Barlow",sans-serif;color:#e8ecf8}',C+".gbc form{margin:0;padding:0}",C+".gbc .gbc-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}",C+".gbc .gbc-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}",C+'.gbc input[type=email]{flex:1 1 180px;min-width:0;width:100%;height:48px;margin:0;padding:0 12px;border:2px solid #fff;border-radius:8px;background:#fff;color:#0b1a44;font:500 17px/1 "Barlow",sans-serif}',C+".gbc input[type=email]:focus{outline:3px solid #fa4616;outline-offset:1px}",C+'.gbc .gbc-b{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin:0;padding:0 18px;border:0;border-radius:8px;background:#fa4616;color:#fff;font:800 17px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap}',C+".gbc .gbc-b:hover,"+C+".gbc .gbc-b:focus-visible{background:#fff;color:#0021a5;outline:2px solid #fa4616;outline-offset:2px}",C+".gbc .gbc-b[disabled]{opacity:.7;cursor:progress}",C+'.gbc .gbc-c{display:flex;align-items:flex-start;gap:10px;min-height:44px;margin:0 0 6px;padding:2px 0;font:500 15px/1.35 "Barlow",sans-serif;color:#fff;cursor:pointer}',C+".gbc .gbc-c input{flex:0 0 auto;width:22px;height:22px;margin:0;accent-color:#fa4616;cursor:pointer}",C+'.gbc .gbc-p{margin:0;padding:0;font:500 13px/1.4 "Barlow",sans-serif;color:#c9d3ee}',C+".gbc a,"+C+".gbc a:visited{color:#fff;text-decoration:underline;text-decoration-color:#fa4616;text-underline-offset:2px}",C+'.gbc .gbc-m{margin:8px 0 0;padding:0;font:700 15px/1.35 "Barlow",sans-serif;color:#fff}.gbc .gbc-m:empty{display:none}',C+".gbc .gbc-m[data-tone=err]{color:#ffd2c2}",C+".gbc .gbc-hp{display:none}",C+".gbc[data-state=done] .gbc-f>:not(.gbc-m){display:none}"+C+'.gbc[data-state=done] .gbc-m{margin:0;font:700 17px/1.35 "Barlow",sans-serif}',C+".gbc.gbc-joined{padding:14px 16px}"+C+".gbc.gbc-joined .gbc-h{font-size:22px;margin:0}","#gbm-live.fp26 .fp-hub-grid>.fp-mod-capture{margin:0;border-radius:0}","@media(min-width:600px){#gbm-live.fp26 .fp-hub-grid>.fp-mod-capture{grid-column:1/-1}}","@media(min-width:821px){#gbm-live.fp26 .fp-hub-grid>.fp-mod-capture{grid-column:10/13;order:1}}","#gbc-bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;display:flex;justify-content:center;padding:0 8px calc(8px + env(safe-area-inset-bottom));pointer-events:none;transform:translateY(110%);transition:transform .3s ease;visibility:hidden}","#gbc-bar.on{transform:none;visibility:visible}#gbc-bar.aside{transform:translateY(110%);visibility:hidden}","#gbc-bar .gbc{pointer-events:auto;position:relative;max-width:560px;margin:0;padding:12px 12px 10px;border-top-width:4px;box-shadow:0 -6px 24px rgba(3,8,24,.35)}","#gbc-bar .gbc .gbc-k{display:none}#gbc-bar .gbc .gbc-h{font-size:22px;margin:0 0 2px;padding-right:44px}#gbc-bar .gbc .gbc-v{font-size:14px;margin:0 0 8px;padding-right:44px}","#gbc-bar .gbc .gbc-row{flex-wrap:nowrap;margin:0 0 6px}#gbc-bar .gbc input[type=email]{flex:1 1 120px;height:44px}#gbc-bar .gbc .gbc-b{min-height:44px;padding:0 14px;font-size:16px}","#gbc-bar .gbc .gbc-c{font-size:14px;margin:0 0 2px;min-height:40px}#gbc-bar .gbc .gbc-c input{width:20px;height:20px}#gbc-bar .gbc .gbc-p{font-size:12px}",'#gbc-bar .gbc-x{position:absolute;top:4px;right:4px;width:44px;height:44px;margin:0;padding:0;border:0;border-radius:8px;background:transparent;color:#fff;font:700 26px/1 "Barlow",sans-serif;cursor:pointer}',"#gbc-bar .gbc-x:focus-visible,#gbc-bar .gbc-x:hover{outline:2px solid #fa4616;background:rgba(255,255,255,.12)}","@media(prefers-reduced-motion:reduce){#gbc-bar{transition:none}}"].join("");function i(){if(!document.getElementById("gbm-capture-css")){var d=document.createElement("style");d.id="gbm-capture-css",d.textContent=R,(document.head||document.documentElement).appendChild(d)}}var D={kicker:"Free · GatorBait Magazine",head:"Get GatorBait Magazine free",value:"Buddy Martin's columns, the game-week package and Chris Spears' photos in your inbox. One email a day at most.",consent:"Yes, email me GatorBait Magazine and GatorBait Media news about the Florida Gators. I can unsubscribe anytime.",fine:"We'll email you a link to confirm.",button:"Sign up free",sending:"Signing you up…",done:"Almost done: check your inbox for an email from GatorBait Media and tap the link to confirm.",badEmail:"Enter a valid email address.",noConsent:"Check the box to say yes to GatorBait emails.",failed:"That didn't go through. Try again in a minute.",joined:"You're on the GatorBait Magazine list",joinedLine:"Thanks for reading. Watch your inbox for the next issue."},ge={home:1,"story-inline":1,"story-end":1,"story-slideup":1};function le(d,u){i(),d=ge[d]?d:"home";var b=d==="home",_=b?"section":"aside",G=u||{},U="gbc"+(b?" fp-mod-capture":"")+(G.extra?" "+G.extra:""),P=' data-gbm-capture="'+d+'"'+(b?"":' data-story-kit="capture"')+' aria-label="GatorBait Magazine signup"';if(b&&v())return"<"+_+' class="'+U+' gbc-joined"'+P+' data-state="joined"><p class="gbc-k">'+D.kicker+'</p><h2 class="gbc-h">'+D.joined+'</h2><p class="gbc-v" style="margin:6px 0 0">'+D.joinedLine+"</p></"+_+">";var ue="gbc-"+d;return"<"+_+' class="'+U+'"'+P+' data-state="ready">'+(G.close?'<button type="button" class="gbc-x" aria-label="Close">×</button>':"")+'<p class="gbc-k">'+D.kicker+"</p><"+(b?"h2":"h3")+' class="gbc-h">'+D.head+"</"+(b?"h2":"h3")+'><p class="gbc-v">'+(G.short?"Buddy Martin, the game-week package, Chris Spears’ photos. One email a day at most.":D.value)+'</p><form class="gbc-f" novalidate><label class="gbc-l" for="'+ue+'-e">Email address</label><div class="gbc-row"><input type="email" id="'+ue+'-e" name="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" required><button class="gbc-b" type="submit">'+D.button+'</button></div><label class="gbc-c"><input type="checkbox" name="consent" value="yes"><span>'+D.consent+'</span></label><div class="gbc-hp" aria-hidden="true"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div><p class="gbc-p">'+D.fine+' <a href="'+ae+'">Privacy policy</a></p><p class="gbc-m" role="status" aria-live="polite"></p></form></'+_+">"}function Se(d,u){var b=document.createElement("div");return b.innerHTML=le(d,u),b.firstChild}var ie=!0,he=!1;function ye(){try{var d=JSON.parse(T("sessionStorage",re)||"null");if(d&&d.t&&d.x>Date.now()+6e4)return Promise.resolve(d.t)}catch(u){}return fetch(ne+"/oauth2/token",{method:"POST",credentials:"omit",headers:{"Content-Type":"application/json"},body:JSON.stringify({clientId:S.clientId,grantType:"anonymous"})}).then(function(u){if(!u.ok)throw new Error("token "+u.status);return u.json()}).then(function(u){if(!u||!u.access_token)throw new Error("token");return J("sessionStorage",re,JSON.stringify({t:u.access_token,x:Date.now()+(Number(u.expires_in)||14400)*1e3})),u.access_token})}function Y(d,u,b,_){var G={};return G[S.emailField]=u,G[S.consentField]=!0,_&&S.sourceField&&(G[S.sourceField]=b),fetch(ne+"/form-submission-service/v4/submissions",{method:"POST",credentials:"omit",headers:{"Content-Type":"application/json",Authorization:d},body:JSON.stringify({submission:{formId:S.formId,submissions:G}})}).then(function(U){return U.text().then(function(P){return{ok:U.ok,status:U.status,text:P}})})}function fe(d,u){return ye().then(function(b){var _=ie&&!!S.sourceField;return Y(b,d,u,_).then(function(G){return!G.ok&&_&&/UNKNOWN_VALUE_ERROR|signup_source/.test(G.text)&&G.status<500?(ie=!1,Y(b,d,u,!1).then(function(U){return U.tagged=!1,U})):(!G.ok&&G.status===401&&J("sessionStorage",re,""),G.tagged=_,G)})})}function X(d,u,b){var _={source:d,outcome:u,tagged:!!b,version:Te};try{document.dispatchEvent(new CustomEvent("gbm:capture",{detail:_}))}catch(G){}try{Array.isArray(window.dataLayer)&&window.dataLayer.push({event:"gbm_capture",gbm_capture_source:d,gbm_capture_outcome:u})}catch(G){}}/[?&]gbm_capture=probe(&|$)/.test(location.search)&&ye().then(function(d){return fetch(ne+"/form-submission-service/v4/submissions",{method:"POST",credentials:"omit",headers:{"Content-Type":"application/json",Authorization:d},body:JSON.stringify({submission:{formId:S.formId,submissions:{}}})}).then(function(u){return u.text().then(function(b){return{token:!0,status:u.status,text:b.slice(0,220)}})})}).catch(function(d){return{token:!1,error:String(d).slice(0,140)}}).then(function(d){document.documentElement.setAttribute("data-gbm-capture-probe",JSON.stringify(d))});function $(d,u,b){var _=d.querySelector(".gbc-m");_&&(_.textContent=u,b?_.setAttribute("data-tone",b):_.removeAttribute("data-tone"))}function be(d){var u=d.target,b=u&&u.closest&&u.closest("[data-gbm-capture]");if(!(!b||!u.classList.contains("gbc-f"))&&(d.preventDefault(),!(he||b.getAttribute("data-state")==="done"))){var _=b.getAttribute("data-gbm-capture"),G=String(u.email.value||"").trim(),U=u.company&&u.company.value;if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(G)||G.length>254){$(b,D.badEmail,"err"),u.email.focus();return}if(!u.consent.checked){$(b,D.noConsent,"err"),u.consent.focus();return}if(U){b.setAttribute("data-state","done"),$(b,D.done);return}he=!0,b.setAttribute("data-state","sending"),$(b,D.sending);var P=u.querySelector(".gbc-b");P&&(P.disabled=!0),fe(G,_).then(function(ue){if(he=!1,P&&(P.disabled=!1),!ue.ok)throw new Error("submission "+ue.status);J("localStorage",Be,String(W())),b.setAttribute("data-state","done"),$(b,D.done),X(_,"submitted",ue.tagged),b.closest("#gbc-bar")?setTimeout(function(){ce(!1)},6e3):ce(!1),[].slice.call(document.querySelectorAll("[data-gbm-capture]")).forEach(function(we){we!==b&&we.getAttribute("data-gbm-capture")!=="home"&&!we.closest("#gbc-bar")&&(we.hidden=!0)})}).catch(function(){he=!1,P&&(P.disabled=!1),b.setAttribute("data-state","ready"),$(b,D.failed,"err"),X(_,"failed",!1)})}}function ke(d){return d.filter(function(u){var b=String(u.textContent||"").replace(/\s+/g," ").trim();return b.length>60&&!u.closest("blockquote,figure,figcaption,[data-story-kit]")&&!/^(By\s+[A-Z]|[—–-]\s)/.test(b)})}function Me(d,u){var b=d.getBoundingClientRect().bottom<0;if(d.insertAdjacentElement("afterend",u),b){var _=u.getBoundingClientRect().height+48;_>0&&scrollBy(0,_)}}function Z(d){if(!(!K()||v()||!d||!d.body)){if(i(),!document.querySelector('[data-gbm-capture="story-inline"]')){var u=ke(d.paras||[]);if(u.length>=6){var b=u[3];b.parentNode&&b.parentNode!==d.body&&b.parentNode.children.length===1&&(b=b.parentNode),Me(b,Se("story-inline"))}}var _=d.more||document.querySelector('[data-story-kit="more"]');_&&!_.querySelector('[data-gbm-capture="story-end"]')&&_.appendChild(Se("story-end",{extra:"gbc-end"})),V()}}var Q=W(),E=!1,ve=0;function q(){var d=document.getElementById("gbm-share");return!!(d&&d.classList.contains("on"))}function I(){return[].slice.call(document.querySelectorAll('[data-gbm-capture="story-inline"],[data-gbm-capture="story-end"]')).some(function(d){var u=d.getBoundingClientRect();return!d.hidden&&u.height&&u.bottom>0&&u.top<innerHeight})||document.activeElement&&document.activeElement.closest&&!!document.activeElement.closest("[data-gbm-capture]:not(#gbc-bar *)")}function xe(){var d=document.documentElement.scrollHeight-innerHeight;return d>0&&scrollY/d>=.5}function me(){return document.getElementById("gbc-bar")}function ce(d){var u=me();u&&(u.classList.remove("on"),d&&J("localStorage",Ae,String(W())))}function _e(){if(!E){E=!0,i();var d=document.createElement("div");d.id="gbc-bar",d.innerHTML=le("story-slideup",{close:!0,short:!0}),document.body.appendChild(d),d.querySelector(".gbc-x").addEventListener("click",function(){ce(!0)}),requestAnimationFrame(function(){requestAnimationFrame(function(){q()||d.classList.add("on")})}),X("story-slideup","shown",!1)}}function oe(){if(K()){var d=me();if(d){var u=document.activeElement&&d.contains(document.activeElement);d.classList.toggle("aside",q()||!u&&I()),d.isConnected||document.body.appendChild(d);return}E||v()||pe()||q()||I()||(xe()||W()-Q>=S.delayMs)&&_e()}}function V(){ve||(ve=setInterval(oe,1e3),addEventListener("scroll",function(){oe()},{passive:!0}),document.addEventListener("keydown",function(d){var u=me();d.key==="Escape"&&u&&u.classList.contains("on")&&!u.classList.contains("aside")&&!q()&&ce(!0)}))}document.addEventListener("submit",be,!0),window.GBM_CAPTURE={version:Te,html:le,mountStory:Z,state:function(){return{joined:v(),quiet:pe(),barShown:E,sourceFieldOk:ie,cfg:{clientId:S.clientId,formId:S.formId,sourceField:S.sourceField,delayMs:S.delayMs}}}},K()&&V()})();

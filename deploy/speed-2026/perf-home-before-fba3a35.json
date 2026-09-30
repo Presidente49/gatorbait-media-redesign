@@ -1,0 +1,621 @@
+{
+ "url": "https://www.gatorbaitmedia.com/",
+ "selector": "",
+ "at": "2026-09-30T18:15:34.360Z",
+ "shots": [
+  {
+   "width": 390,
+   "errors": [],
+   "http": 200,
+   "perf": {
+    "ttfb": 261,
+    "domContentLoaded": 6847,
+    "load": 28128,
+    "fcp": 1057,
+    "lcp": {
+     "t": 27949,
+     "size": 71913,
+     "url": "https://static.wixstatic.com/media/d3cfa5_56a64986c874417c9a8299fae22649ed~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.pn",
+     "tag": "IMG"
+    },
+    "cls": 0.001,
+    "longTasks": 19,
+    "longTaskMs": 3058,
+    "tbt": 2108,
+    "fpRootAt": 8021,
+    "shareAt": 8021,
+    "requests": 180,
+    "bytes": 4066365,
+    "byKind": {
+     "fetch": {
+      "n": 14,
+      "bytes": 56622
+     },
+     "script": {
+      "n": 109,
+      "bytes": 1459575
+     },
+     "image": {
+      "n": 14,
+      "bytes": 2430198
+     },
+     "css": {
+      "n": 5,
+      "bytes": 48050
+     },
+     "other": {
+      "n": 38,
+      "bytes": 71920
+     }
+    },
+    "byHost": {
+     "static.wixstatic.com": {
+      "n": 12,
+      "bytes": 2430198,
+      "ms": 53765
+     },
+     "static.parastorage.com": {
+      "n": 100,
+      "bytes": 999422,
+      "ms": 87189
+     },
+     "www.gatorbaitmedia.com": {
+      "n": 6,
+      "bytes": 209630,
+      "ms": 9132
+     },
+     "connect.facebook.net": {
+      "n": 2,
+      "bytes": 207354,
+      "ms": 9138
+     },
+     "cdn.jsdelivr.net": {
+      "n": 4,
+      "bytes": 134749,
+      "ms": 6056
+     },
+     "siteassets.parastorage.com": {
+      "n": 6,
+      "bytes": 71920,
+      "ms": 3790
+     },
+     "cf06bdf3-5bab-4f20-b165-97fb723dac6a.wixappcloud.com": {
+      "n": 3,
+      "bytes": 11224,
+      "ms": 1490
+     },
+     "fonts.googleapis.com": {
+      "n": 2,
+      "bytes": 1868,
+      "ms": 434
+     },
+     "presidente49.github.io": {
+      "n": 3,
+      "bytes": 0,
+      "ms": 1137
+     },
+     "panorama.wixapps.net": {
+      "n": 21,
+      "bytes": 0,
+      "ms": 7097
+     },
+     "frog.wix.com": {
+      "n": 13,
+      "bytes": 0,
+      "ms": 3912
+     },
+     "browser.sentry-cdn.com": {
+      "n": 2,
+      "bytes": 0,
+      "ms": 3419
+     },
+     "www.googletagmanager.com": {
+      "n": 2,
+      "bytes": 0,
+      "ms": 8409
+     },
+     "serverless.parastorage.com": {
+      "n": 1,
+      "bytes": 0,
+      "ms": 395
+     },
+     "sentry-next.wixpress.com": {
+      "n": 1,
+      "bytes": 0,
+      "ms": 356
+     },
+     "www.google-analytics.com": {
+      "n": 1,
+      "bytes": 0,
+      "ms": 276
+     },
+     "www.facebook.com": {
+      "n": 1,
+      "bytes": 0,
+      "ms": 559
+     }
+    },
+    "top": [
+     {
+      "url": "static.wixstatic.com/media/a99769_d6cc8efa8cfb4c0b8ad6ee7c8eb9768f~mv2.jpg/v1/fit/w_689,h_708,al_c,q_80/file.p",
+      "kind": "image",
+      "bytes": 1018320,
+      "start": 8103,
+      "ms": 20021
+     },
+     {
+      "url": "static.wixstatic.com/media/d3cfa5_56a64986c874417c9a8299fae22649ed~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.",
+      "kind": "image",
+      "bytes": 974776,
+      "start": 8040,
+      "ms": 19869
+     },
+     {
+      "url": "static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp",
+      "kind": "image",
+      "bytes": 200374,
+      "start": 901,
+      "ms": 4015
+     },
+     {
+      "url": "static.parastorage.com/services/communities-blog-ooi/1.3347.0/PostListViewerWidgetNoCss.bundle.min.js",
+      "kind": "script",
+      "bytes": 179920,
+      "start": 5244,
+      "ms": 7411
+     },
+     {
+      "url": "www.gatorbaitmedia.com/_partials/wix-thunderbolt/dist/clientWorker.e689d007.bundle.min.js",
+      "kind": "script",
+      "bytes": 165382,
+      "start": 5429,
+      "ms": 6646
+     },
+     {
+      "url": "connect.facebook.net/en_US/fbevents.js",
+      "kind": "script",
+      "bytes": 112940,
+      "start": 11598,
+      "ms": 6427
+     },
+     {
+      "url": "static.parastorage.com/services/adsense-editor-ooi/1.119.0/adsenseViewerWidget.bundle.min.js",
+      "kind": "script",
+      "bytes": 98815,
+      "start": 12128,
+      "ms": 5655
+     },
+     {
+      "url": "connect.facebook.net/signals/config/387220995516628?v=2.9.412&r=stable&domain=www.gatorbaitmedia.com&im=1&hme=",
+      "kind": "script",
+      "bytes": 94414,
+      "start": 18353,
+      "ms": 2711
+     },
+     {
+      "url": "static.wixstatic.com/media/d3cfa5_cefbed4d0c2a46988a3929e5d0b85807~mv2.png/v1/fill/w_1120,h_840,fp_0.50_0.50,q",
+      "kind": "image",
+      "bytes": 93957,
+      "start": 1078,
+      "ms": 2944
+     },
+     {
+      "url": "static.wixstatic.com/media/d3cfa5_56a64986c874417c9a8299fae22649ed~mv2.jpg/v1/fill/w_1120,h_840,fp_0.50_0.50,q",
+      "kind": "image",
+      "bytes": 70863,
+      "start": 1076,
+      "ms": 2616
+     },
+     {
+      "url": "cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@fba3a358a79bffc8853baf20dc499a4a1f9c7638/sports-live",
+      "kind": "script",
+      "bytes": 67282,
+      "start": 773,
+      "ms": 2348
+     },
+     {
+      "url": "static.parastorage.com/services/wix-thunderbolt/dist/main.a3ce3501.bundle.min.js",
+      "kind": "script",
+      "bytes": 57988,
+      "start": 5243,
+      "ms": 1825
+     },
+     {
+      "url": "static.parastorage.com/services/wix-thunderbolt/dist/group_6.bb82e4a9.chunk.min.js",
+      "kind": "script",
+      "bytes": 57615,
+      "start": 7303,
+      "ms": 3313
+     },
+     {
+      "url": "static.wixstatic.com/media/a99769_d6cc8efa8cfb4c0b8ad6ee7c8eb9768f~mv2.jpg/v1/fill/w_689,h_517,fp_0.50_0.50,q_",
+      "kind": "image",
+      "bytes": 54861,
+      "start": 1077,
+      "ms": 2293
+     },
+     {
+      "url": "static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.217fbd8f.bundle.min.js",
+      "kind": "script",
+      "bytes": 44525,
+      "start": 5243,
+      "ms": 1610
+     }
+    ],
+    "ours": [
+     {
+      "url": "presidente49.github.io/gatorbait-media-redesign/sports-live/current.json?t=29846535",
+      "bytes": 0,
+      "start": 556,
+      "ms": 212
+     },
+     {
+      "url": "cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@fba3a358a79bffc8853baf20dc499a4a1f9c7638/sports-live",
+      "bytes": 67282,
+      "start": 773,
+      "ms": 2348
+     },
+     {
+      "url": "cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@a4b4648e1f18a4fe6490f80bb9b3e08291dbe7a3/assets/site",
+      "bytes": 1002,
+      "start": 5245,
+      "ms": 186
+     },
+     {
+      "url": "fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;800&display=swap",
+      "bytes": 854,
+      "start": 5245,
+      "ms": 258
+     },
+     {
+      "url": "fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&disp",
+      "bytes": 1014,
+      "start": 6829,
+      "ms": 176
+     },
+     {
+      "url": "cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-800-normal.woff2",
+      "bytes": 22764,
+      "start": 6831,
+      "ms": 1168
+     },
+     {
+      "url": "presidente49.github.io/gatorbait-media-redesign/sports-live/scoreboard.json?t=29846535",
+      "bytes": 0,
+      "start": 6832,
+      "ms": 187
+     },
+     {
+      "url": "cdn.jsdelivr.net/npm/@tsparticles/slim@3.9.1/tsparticles.slim.bundle.min.js",
+      "bytes": 43701,
+      "start": 8019,
+      "ms": 2354
+     },
+     {
+      "url": "presidente49.github.io/gatorbait-media-redesign/deploy/cloudflare/endpoints.json?t=29846535",
+      "bytes": 0,
+      "start": 8126,
+      "ms": 738
+     }
+    ],
+    "scripts": 131,
+    "inlineScriptChars": 1425155,
+    "styles": 55,
+    "inlineStyleChars": 596485,
+    "images": 15,
+    "lazyImages": 7,
+    "domNodes": 1199
+   },
+   "loaderSrc": "4cc4ad3",
+   "fpBuild": "d5315808",
+   "fpVersion": "front-page-2026.1"
+  },
+  {
+   "width": 1365,
+   "errors": [],
+   "http": 200,
+   "perf": {
+    "ttfb": 76,
+    "domContentLoaded": 1030,
+    "load": 4602,
+    "fcp": 210,
+    "lcp": {
+     "t": 4577,
+     "size": 284631,
+     "url": "https://static.wixstatic.com/media/d3cfa5_56a64986c874417c9a8299fae22649ed~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.pn",
+     "tag": "IMG"
+    },
+    "cls": 0.103,
+    "longTasks": 5,
+    "longTaskMs": 550,
+    "tbt": 300,
+    "fpRootAt": 1424,
+    "shareAt": 1424,
+    "requests": 172,
+    "bytes": 3979120,
+    "byKind": {
+     "fetch": {
+      "n": 13,
+      "bytes": 56660
+     },
+     "image": {
+      "n": 18,
+      "bytes": 2344515
+     },
+     "other": {
+      "n": 29,
+      "bytes": 71002
+     },
+     "css": {
+      "n": 5,
+      "bytes": 48008
+     },
+     "script": {
+      "n": 107,
+      "bytes": 1458935
+     }
+    },
+    "byHost": {
+     "static.wixstatic.com": {
+      "n": 18,
+      "bytes": 2344515,
+      "ms": 8373
+     },
+     "static.parastorage.com": {
+      "n": 98,
+      "bytes": 998785,
+      "ms": 14456
+     },
+     "www.gatorbaitmedia.com": {
+      "n": 6,
+      "bytes": 209668,
+      "ms": 2049
+     },
+     "connect.facebook.net": {
+      "n": 2,
+      "bytes": 207351,
+      "ms": 1167
+     },
+     "cdn.jsdelivr.net": {
+      "n": 4,
+      "bytes": 134749,
+      "ms": 877
+     },
+     "siteassets.parastorage.com": {
+      "n": 6,
+      "bytes": 71002,
+      "ms": 810
+     },
+     "cf06bdf3-5bab-4f20-b165-97fb723dac6a.wixappcloud.com": {
+      "n": 3,
+      "bytes": 11224,
+      "ms": 541
+     },
+     "fonts.googleapis.com": {
+      "n": 2,
+      "bytes": 1826,
+      "ms": 146
+     },
+     "presidente49.github.io": {
+      "n": 3,
+      "bytes": 0,
+      "ms": 262
+     },
+     "frog.wix.com": {
+      "n": 13,
+      "bytes": 0,
+      "ms": 736
+     },
+     "panorama.wixapps.net": {
+      "n": 9,
+      "bytes": 0,
+      "ms": 735
+     },
+     "browser.sentry-cdn.com": {
+      "n": 2,
+      "bytes": 0,
+      "ms": 430
+     },
+     "www.googletagmanager.com": {
+      "n": 2,
+      "bytes": 0,
+      "ms": 1163
+     },
+     "serverless.parastorage.com": {
+      "n": 1,
+      "bytes": 0,
+      "ms": 152
+     },
+     "www.google-analytics.com": {
+      "n": 1,
+      "bytes": 0,
+      "ms": 86
+     },
+     "www.facebook.com": {
+      "n": 1,
+      "bytes": 0,
+      "ms": 74
+     },
+     "wce-frog.wix.com": {
+      "n": 1,
+      "bytes": 0,
+      "ms": 95
+     }
+    },
+    "top": [
+     {
+      "url": "static.wixstatic.com/media/a99769_d6cc8efa8cfb4c0b8ad6ee7c8eb9768f~mv2.jpg/v1/fit/w_689,h_708,al_c,q_80/file.p",
+      "kind": "image",
+      "bytes": 1018320,
+      "start": 1572,
+      "ms": 2900
+     },
+     {
+      "url": "static.wixstatic.com/media/d3cfa5_56a64986c874417c9a8299fae22649ed~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.",
+      "kind": "image",
+      "bytes": 974776,
+      "start": 1425,
+      "ms": 2982
+     },
+     {
+      "url": "static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp",
+      "kind": "image",
+      "bytes": 200374,
+      "start": 172,
+      "ms": 600
+     },
+     {
+      "url": "static.parastorage.com/services/communities-blog-ooi/1.3347.0/PostListViewerWidgetNoCss.bundle.min.js",
+      "kind": "script",
+      "bytes": 179920,
+      "start": 806,
+      "ms": 1087
+     },
+     {
+      "url": "www.gatorbaitmedia.com/_partials/wix-thunderbolt/dist/clientWorker.e689d007.bundle.min.js",
+      "kind": "script",
+      "bytes": 165382,
+      "start": 854,
+      "ms": 995
+     },
+     {
+      "url": "connect.facebook.net/en_US/fbevents.js",
+      "kind": "script",
+      "bytes": 112940,
+      "start": 2209,
+      "ms": 805
+     },
+     {
+      "url": "static.parastorage.com/services/adsense-editor-ooi/1.119.0/adsenseViewerWidget.bundle.min.js",
+      "kind": "script",
+      "bytes": 98815,
+      "start": 806,
+      "ms": 628
+     },
+     {
+      "url": "connect.facebook.net/signals/config/387220995516628?v=2.9.412&r=stable&domain=www.gatorbaitmedia.com&hme=a4c28",
+      "kind": "script",
+      "bytes": 94411,
+      "start": 3073,
+      "ms": 362
+     },
+     {
+      "url": "cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@fba3a358a79bffc8853baf20dc499a4a1f9c7638/sports-live",
+      "kind": "script",
+      "bytes": 67282,
+      "start": 205,
+      "ms": 426
+     },
+     {
+      "url": "static.parastorage.com/services/wix-thunderbolt/dist/main.a3ce3501.bundle.min.js",
+      "kind": "script",
+      "bytes": 57988,
+      "start": 806,
+      "ms": 337
+     },
+     {
+      "url": "static.parastorage.com/services/wix-thunderbolt/dist/group_6.bb82e4a9.chunk.min.js",
+      "kind": "script",
+      "bytes": 57615,
+      "start": 1185,
+      "ms": 459
+     },
+     {
+      "url": "static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.217fbd8f.bundle.min.js",
+      "kind": "script",
+      "bytes": 44525,
+      "start": 806,
+      "ms": 255
+     },
+     {
+      "url": "cdn.jsdelivr.net/npm/@tsparticles/slim@3.9.1/tsparticles.slim.bundle.min.js",
+      "kind": "script",
+      "bytes": 43701,
+      "start": 1423,
+      "ms": 248
+     },
+     {
+      "url": "static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js",
+      "kind": "script",
+      "bytes": 43206,
+      "start": 806,
+      "ms": 216
+     },
+     {
+      "url": "siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397",
+      "kind": "other",
+      "bytes": 37853,
+      "start": 210,
+      "ms": 274
+     }
+    ],
+    "ours": [
+     {
+      "url": "presidente49.github.io/gatorbait-media-redesign/sports-live/current.json?t=29846536",
+      "bytes": 0,
+      "start": 107,
+      "ms": 85
+     },
+     {
+      "url": "cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@fba3a358a79bffc8853baf20dc499a4a1f9c7638/sports-live",
+      "bytes": 67282,
+      "start": 205,
+      "ms": 426
+     },
+     {
+      "url": "cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@a4b4648e1f18a4fe6490f80bb9b3e08291dbe7a3/assets/site",
+      "bytes": 1002,
+      "start": 807,
+      "ms": 43
+     },
+     {
+      "url": "fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;800&display=swap",
+      "bytes": 840,
+      "start": 807,
+      "ms": 99
+     },
+     {
+      "url": "fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&disp",
+      "bytes": 986,
+      "start": 1028,
+      "ms": 47
+     },
+     {
+      "url": "cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-800-normal.woff2",
+      "bytes": 22764,
+      "start": 1029,
+      "ms": 160
+     },
+     {
+      "url": "presidente49.github.io/gatorbait-media-redesign/sports-live/scoreboard.json?t=29846536",
+      "bytes": 0,
+      "start": 1029,
+      "ms": 68
+     },
+     {
+      "url": "cdn.jsdelivr.net/npm/@tsparticles/slim@3.9.1/tsparticles.slim.bundle.min.js",
+      "bytes": 43701,
+      "start": 1423,
+      "ms": 248
+     },
+     {
+      "url": "presidente49.github.io/gatorbait-media-redesign/deploy/cloudflare/endpoints.json?t=29846536",
+      "bytes": 0,
+      "start": 1585,
+      "ms": 109
+     }
+    ],
+    "scripts": 131,
+    "inlineScriptChars": 1425250,
+    "styles": 54,
+    "inlineStyleChars": 623298,
+    "images": 19,
+    "lazyImages": 7,
+    "domNodes": 1320
+   },
+   "loaderSrc": "4cc4ad3",
+   "fpBuild": "d5315808",
+   "fpVersion": "front-page-2026.1"
+  }
+ ]
+}

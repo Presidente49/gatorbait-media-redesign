@@ -1,5 +1,5 @@
 {
-  "commit": "fba3a358a79bffc8853baf20dc499a4a1f9c7638",
-  "updated": "2026-09-30T18:02:00Z",
-  "note": "PR #95: story Share button and Guide strip mount beside the first visible h1 (the hidden native header h1 came first after header rev 31). Rollback: 9653d739c147b2ae7ed753786d8f16bf3c68e863."
+  "commit": "dc747be29042e0838ee322e8a47ee7be3c316be6",
+  "updated": "2026-09-30T21:40:00Z",
+  "note": "PR #99 speed cut: Wix images re-cut with enc_auto + srcset, fan modules in a lazy chunk, minified bundles, embers deferred. Rollback: fba3a358a79bffc8853baf20dc499a4a1f9c7638."
 }

@@ -6,6 +6,7 @@
 //   --check exits 1 if the committed outputs differ from a fresh build. The bundled story snapshot
 //   follows gazette-live/posts.json, which the feed workflow refreshes every 5 minutes, so run
 //   --check right after a rebuild, not as a standing CI gate.
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -35,7 +36,10 @@ if (repoScoreboard && Array.isArray(repoScoreboard.schedule)) {
     score: g.score && Number.isFinite(g.score.fla) && Number.isFinite(g.score.opp) ? { fla: g.score.fla, opp: g.score.opp } : null, tv: g.tv || '', storyUrl: g.storyUrl || '',
   })) };
 }
-const bundle = { snapshot: newest, ...cfg, posts };
+// Build stamp: the page exposes it as data-fp-build, so live QC and screenshots prove which build actually ran
+// (Wix edges served an older embed revision for a while after a PATCH on Sept. 30).
+const build = createHash('sha1').update(css + runtime + JSON.stringify(cfg)).digest('hex').slice(0, 8);
+const bundle = { snapshot: newest, build, ...cfg, posts };
 
 const js = `/* GatorBait Front Page 2026: magazine front page, broadcast layer, Swamp Night palette, hub.
  * BUILT FILE: edit sports-live/src/front-page.{css,js} or sports-live/front-page.config.json,

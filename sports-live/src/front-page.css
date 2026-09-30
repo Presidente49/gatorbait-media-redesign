@@ -303,6 +303,8 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-photos{grid-template-columns:repeat(2,minmax(0,1fr))}
 #gbm-live.fp26 .fp-hub-head h2{font-size:56px}
 }
+/* Laptop widths: with both score bugs up, the nav's countdown seconds pushed the Store link out of view at 1365px. */
+@media(min-width:821px) and (max-width:1439px){#gbm-live.fp26 .fp-nav .fp-cd .fp-cd-s{display:none}}
 @media(min-width:1100px){
 #gbm-live.fp26{--fp-pad:64px}
 }
@@ -379,3 +381,65 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 #gbm-road .cd{white-space:nowrap;font:800 22px var(--fp-cond);color:#fff;letter-spacing:.04em}
 @keyframes gbmp{50%{box-shadow:0 0 0 7px rgba(250,70,22,.25)}}
 @media(prefers-reduced-motion:reduce){#gbm-live.fp26 #gbm-road .line i,#gbm-live.fp26 #gbm-road .bar i{transition:none}#gbm-live.fp26 #gbm-road .g.nx::before{animation:none}}
+
+/* ---------- The Tunnel: game-day opener (Brenden, Sept. 30: "tunnel") ----------
+   Saturday game days only (or ?gbm_fp=gameday). Six rings converge on the light at the end of the tunnel;
+   a perspective field floor sits under it. Pre-game carries the big countdown, live the score and clock,
+   final the result. Barlow Condensed display, Swamp Night palette. All motion off under reduced motion. */
+#gbm-live.fp26 .fp-tunnel{position:relative;isolation:isolate;overflow:hidden;background:#040b1f;color:#fff;border-bottom:4px solid var(--fp-orange);display:grid;align-items:center;min-height:min(72vh,540px)}
+#gbm-live.fp26 .fp-tn-scene{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+#gbm-live.fp26 .fp-tn-scene::before{content:"";position:absolute;inset:-25%;background:repeating-conic-gradient(from 0deg at 50% 44%,rgba(255,255,255,.05) 0 1.4deg,transparent 1.4deg 11deg);opacity:.9}
+#gbm-live.fp26 .fp-tn-ring{position:absolute;left:50%;top:44%;width:180vw;max-width:2300px;aspect-ratio:2/1;border:1px solid rgba(255,255,255,.16);border-radius:18%/30%;transform:translate(-50%,-50%) scale(var(--s));opacity:var(--o);box-shadow:0 0 30px rgba(0,33,165,.25) inset}
+#gbm-live.fp26 .fp-tn-ring:nth-child(1){--s:.1;--o:.95}
+#gbm-live.fp26 .fp-tn-ring:nth-child(2){--s:.2;--o:.8}
+#gbm-live.fp26 .fp-tn-ring:nth-child(3){--s:.33;--o:.65}
+#gbm-live.fp26 .fp-tn-ring:nth-child(4){--s:.5;--o:.5}
+#gbm-live.fp26 .fp-tn-ring:nth-child(5){--s:.72;--o:.36}
+#gbm-live.fp26 .fp-tn-ring:nth-child(6){--s:1;--o:.24}
+#gbm-live.fp26 .fp-tn-light{position:absolute;left:50%;top:44%;width:42vw;max-width:440px;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,244,230,.95),rgba(250,70,22,.6) 38%,rgba(250,70,22,0) 72%);filter:blur(12px);opacity:.85}
+#gbm-live.fp26 .fp-tunnel[data-phase=live] .fp-tn-light,#gbm-live.fp26 .fp-tunnel[data-phase=half] .fp-tn-light{background:radial-gradient(closest-side,rgba(255,236,236,.95),rgba(200,16,46,.65) 38%,rgba(200,16,46,0) 72%)}
+#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-light{background:radial-gradient(closest-side,rgba(255,255,255,.95),rgba(169,187,255,.5) 38%,rgba(169,187,255,0) 72%)}
+#gbm-live.fp26 .fp-tn-floor{position:absolute;left:-30%;right:-30%;bottom:-3%;height:40%;transform:perspective(600px) rotateX(58deg);transform-origin:50% 0;background:linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0/48px 100%,linear-gradient(0deg,rgba(255,255,255,.08) 1px,transparent 1px) 0 0/100% 32px,linear-gradient(180deg,transparent,rgba(0,33,165,.4));-webkit-mask-image:linear-gradient(180deg,transparent,#000 40%);mask-image:linear-gradient(180deg,transparent,#000 40%)}
+#gbm-live.fp26 .fp-tunnel::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(70% 60% at 50% 62%,rgba(4,11,31,.7),rgba(4,11,31,0) 70%)}
+#gbm-live.fp26 .fp-tn-wrap{position:relative;display:grid;gap:16px;justify-items:center;text-align:center;padding-block:30px 26px}
+#gbm-live.fp26 .fp-tn-top{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 12px;margin:0;font:700 12px/1.3 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:#c8d3ef}
+/* The matchup is the section's heading (an h2), so the first headline on a game day is the tunnel, not the lead under it. */
+#gbm-live.fp26 .fp-tn-match{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px 14px;width:100%;max-width:980px;margin:0;font-size:16px;font-weight:400;letter-spacing:0;text-wrap:wrap}
+#gbm-live.fp26 .fp-tn-team{display:grid;gap:6px;min-width:0}
+#gbm-live.fp26 .fp-tn-team small{font:700 12px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f}
+#gbm-live.fp26 .fp-tn-team b{font:800 clamp(30px,8.6vw,84px)/.9 var(--fp-cond);text-transform:uppercase;letter-spacing:-.01em;overflow-wrap:anywhere;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+#gbm-live.fp26 .fp-tn-vs{font:800 clamp(14px,3vw,22px)/1 var(--fp-cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fp-orange)}
+#gbm-live.fp26 .fp-tn-mid{display:grid;gap:8px;justify-items:center}
+#gbm-live.fp26 .fp-tn-pre,#gbm-live.fp26 .fp-tn-kick,#gbm-live.fp26 .fp-tn-live,#gbm-live.fp26 .fp-tn-final{display:none;gap:8px;justify-items:center}
+#gbm-live.fp26 .fp-tunnel[data-phase=pre] .fp-tn-pre,#gbm-live.fp26 .fp-tunnel[data-phase=kick] .fp-tn-kick,#gbm-live.fp26 .fp-tunnel[data-phase=live] .fp-tn-live,#gbm-live.fp26 .fp-tunnel[data-phase=half] .fp-tn-live,#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-final{display:grid}
+#gbm-live.fp26 .fp-tn-label{margin:0;font:700 13px/1 var(--fp-cond);letter-spacing:.18em;text-transform:uppercase;color:#c8d3ef}
+#gbm-live.fp26 .fp-tunnel .fp-cd{font-size:clamp(34px,11vw,96px);gap:4px;flex-wrap:wrap;justify-content:center;max-width:100%;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+#gbm-live.fp26 .fp-tunnel .fp-cd b{min-width:.56em}
+#gbm-live.fp26 .fp-tunnel .fp-cd i{font-size:clamp(12px,2.6vw,18px);letter-spacing:.1em;color:#ffb08f;margin:0 10px 0 3px}
+#gbm-live.fp26 .fp-tunnel .fp-cd .fp-cd-s{display:inline-flex}
+#gbm-live.fp26 .fp-tn-score{display:flex;align-items:baseline;gap:12px;font:800 clamp(60px,15vw,124px)/1 var(--fp-cond);font-variant-numeric:tabular-nums;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+#gbm-live.fp26 .fp-tn-score span{color:var(--fp-orange);font-size:.6em}
+#gbm-live.fp26 .fp-tn-clock{display:inline-flex;align-items:center;gap:8px;margin:0;padding:6px 10px;background:#c8102e;font:800 13px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase}
+#gbm-live.fp26 .fp-tn-clock::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-clock{background:#fff;color:#040b1f}
+#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-clock::before{background:var(--fp-orange)}
+#gbm-live.fp26 .fp-tn-drive{margin:0;max-width:640px;font:600 15px/1.45 var(--fp-sans);color:#dfe6f7}
+#gbm-live.fp26 .fp-tn-drive b{font:800 12px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f;margin-right:8px}
+#gbm-live.fp26 .fp-tn-kick p{margin:0;font:800 clamp(28px,7vw,56px)/1 var(--fp-cond);text-transform:uppercase;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+#gbm-live.fp26 .fp-tn-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+#gbm-live.fp26 .fp-tn-cta .fp-ghost{color:#fff}
+#gbm-live.fp26 .fp-tn-stories{list-style:none;margin:6px 0 0;padding:14px 0 0;width:100%;max-width:980px;display:grid;gap:10px;border-top:1px solid rgba(255,255,255,.18);text-align:left}
+#gbm-live.fp26 .fp-tn-stories a{display:grid;gap:3px;color:#fff;font:700 15px/1.3 var(--fp-sans)}
+#gbm-live.fp26 .fp-tn-stories span{font:600 12px/1.3 var(--fp-sans);letter-spacing:.02em;color:#c8d3ef}
+@media(min-width:600px){#gbm-live.fp26 .fp-tn-stories{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 24px}}
+@media(min-width:821px){#gbm-live.fp26 .fp-tunnel{min-height:min(70vh,600px)}#gbm-live.fp26 .fp-tn-wrap{gap:20px;padding-block:40px 34px}#gbm-live.fp26 .fp-tn-match{gap:8px 28px}}
+@media(prefers-reduced-motion:no-preference){
+#gbm-live.fp26 .fp-tn-ring{animation:fpTnRun 7.2s linear infinite;animation-delay:calc(var(--d) * -1.2s)}
+#gbm-live.fp26 .fp-tn-ring:nth-child(1){--d:0}#gbm-live.fp26 .fp-tn-ring:nth-child(2){--d:1}#gbm-live.fp26 .fp-tn-ring:nth-child(3){--d:2}#gbm-live.fp26 .fp-tn-ring:nth-child(4){--d:3}#gbm-live.fp26 .fp-tn-ring:nth-child(5){--d:4}#gbm-live.fp26 .fp-tn-ring:nth-child(6){--d:5}
+#gbm-live.fp26 .fp-tn-light{animation:fpTnGlow 3.2s ease-in-out infinite}
+#gbm-live.fp26 .fp-tn-scene::before{animation:fpTnSweep 90s linear infinite;transform-origin:50% 44%}
+#gbm-live.fp26 .fp-tn-clock::before{animation:fpPulse 1.2s ease-in-out infinite}
+}
+@keyframes fpTnRun{from{transform:translate(-50%,-50%) scale(.06);opacity:0}12%{opacity:.95}to{transform:translate(-50%,-50%) scale(1.15);opacity:0}}
+@keyframes fpTnGlow{50%{opacity:1;filter:blur(16px)}}
+@keyframes fpTnSweep{to{transform:rotate(360deg)}}

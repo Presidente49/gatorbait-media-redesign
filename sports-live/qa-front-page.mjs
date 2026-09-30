@@ -43,8 +43,8 @@ const scenarios = [
   { name: 'day-light', now: T.day, scheme: 'light', expect: { night: true, gameday: false, embers: true, lead: 'buddy', road: 1, roadCards: 12, roadWins: 4 } }, // Swamp Night is the everyday look (config look: swamp-night); band from the bundled schedule
   { name: 'day-dark', now: T.day, scheme: 'dark', expect: { night: true, gameday: false, lead: 'buddy', embers: true } },
   { name: 'night', now: T.night, scheme: 'light', expect: { night: true, gameday: false, embers: true, showLive: true } },
-  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: true, gameday: true, road: 1 } },
-  { name: 'gameday-live', now: T.gameLive, scheme: 'light', desk: DESK_LIVE, expect: { night: true, gameday: true, embers: true, boardLive: true } },
+  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: true, gameday: true, road: 1, tunnel: 'pre' } },
+  { name: 'gameday-live', now: T.gameLive, scheme: 'light', desk: DESK_LIVE, expect: { night: true, gameday: true, embers: true, boardLive: true, tunnel: 'live', tunnelScore: '24' } },
   { name: 'reduced-motion', now: T.night, scheme: 'light', reduced: true, expect: { night: true, embers: false, noAnimations: true } },
   { name: 'rss-down', now: T.day, scheme: 'light', rss: 500, widths: [390], expect: { lead: 'buddy' } },
   { name: 'all-feeds-down', now: T.day, scheme: 'light', rss: 500, pages: 500, widths: [390], expect: {} },
@@ -54,7 +54,7 @@ const scenarios = [
   { name: 'scoreboard-json', now: T.day, scoreboard: repoScoreboard, widths: [390, 1366], expect: { scoreboard: 'feed', standings: true, road: 1, roadCards: 12, roadLinks: 2, roadRank: true } },
   // Feed lands after the 1.5 s paint budget (phones did on Sept. 30): the band paints from the bundle, then swaps off screen to the fresh result.
   { name: 'scoreboard-late', now: T.day, scoreboardDelay: 2200, scoreboard: repoScoreboard && { ...repoScoreboard, schedule: repoScoreboard.schedule.map((g) => g.opponent === 'Missouri' ? { ...g, status: 'final', score: { fla: 31, opp: 24 } } : g) }, widths: [390, 1366], expect: { scoreboard: 'feed', road: 1, roadCards: 12, roadWins: 5 } },
-  { name: 'scoreboard-live', now: T.gameLive, scoreboard: repoScoreboard && { ...repoScoreboard, live: { eventId: 'qa', clock: '8:14', period: 3, score: { fla: 24, opp: 17 }, possession: 'fla', lastPlay: 'QA fixture play' } }, widths: [390, 1366], expect: { scoreboard: 'feed', gameday: true, boardLive: true } },
+  { name: 'scoreboard-live', now: T.gameLive, scoreboard: repoScoreboard && { ...repoScoreboard, live: { eventId: 'qa', clock: '8:14', period: 3, score: { fla: 24, opp: 17 }, possession: 'fla', lastPlay: 'QA fixture play' } }, widths: [390, 1366], expect: { scoreboard: 'feed', gameday: true, boardLive: true, tunnel: 'live', tunnelScore: '24' } },
   { name: 'split-embeds', now: T.day, oldStyles: true, widths: [390, 1366], expect: {} },
 ];
 const WIDTHS = [320, 390, 430, 1366];
@@ -100,7 +100,7 @@ for (const sc of scenarios) {
       const vw = document.documentElement.clientWidth;
       const off = [];
       if (root) for (const el of root.querySelectorAll('*')) {
-        if (el.closest('.fp-tk-view,#fp-embers,.fp-sr,.fp-skip,#gr-track')) continue; // #gr-track scrolls sideways by design
+        if (el.closest('.fp-tk-view,#fp-embers,.fp-sr,.fp-skip,#gr-track,.fp-tn-scene')) continue; // #gr-track scrolls sideways by design; the tunnel scene is clipped by its section
         const b = el.getBoundingClientRect();
         if (b.width && (b.right > vw + 1 || b.left < -1)) off.push(el.className || el.tagName);
       }
@@ -118,6 +118,8 @@ for (const sc of scenarios) {
         cd: document.querySelector('[data-fp-count]')?.textContent || '', ids: document.querySelectorAll('#gbm-live').length,
         road: document.querySelectorAll('#gbm-road').length, roadCards: document.querySelectorAll('#gbm-road .g').length, roadWins: document.querySelectorAll('#gbm-road .g.w').length,
         roadLinks: document.querySelectorAll('#gbm-road a.g[href]').length, roadRank: !!document.querySelector('#gbm-road .rk'), roadNext: (document.querySelector('#gbm-road .g.nx .op') || {}).textContent || '',
+        tunnel: !!document.querySelector('.fp-tunnel'), tunnelPhase: document.querySelector('.fp-tunnel')?.dataset.phase || '', tunnelCd: document.querySelector('.fp-tunnel [data-fp-count]')?.textContent || '',
+        tunnelScore: document.querySelector('.fp-tunnel [data-tn=away]')?.textContent || '', tunnelStories: document.querySelectorAll('.fp-tunnel .fp-tn-stories a').length,
       };
     });
     const e = sc.expect, bad = [];
@@ -132,7 +134,11 @@ for (const sc of scenarios) {
     if (e.lead && r.lead !== e.lead) bad.push(`lead ${r.lead} != ${e.lead}`);
     if (e.night !== undefined && r.cls.includes('fp-night') !== e.night) bad.push('night mode ' + r.cls);
     if (e.gameday !== undefined && r.cls.includes('fp-gameday') !== e.gameday) bad.push('gameday mode ' + r.cls);
-    if (e.gameday && !r.board) bad.push('game-day board missing');
+    if (e.gameday && !r.tunnel) bad.push('game-day tunnel missing');
+    if (e.gameday && !r.board && r.tunnelPhase !== 'pre') bad.push('game-day board missing');
+    if (e.tunnel && r.tunnelPhase !== e.tunnel) bad.push(`tunnel phase ${r.tunnelPhase} != ${e.tunnel}`);
+    if (e.tunnel === 'pre' && !/\d/.test(r.tunnelCd)) bad.push('tunnel countdown empty');
+    if (e.tunnelScore !== undefined && r.tunnelScore !== e.tunnelScore) bad.push(`tunnel away score ${r.tunnelScore} != ${e.tunnelScore}`);
     if (e.boardLive && r.boardState !== 'live') bad.push('board not live: ' + r.boardState);
     if (e.embers === true && tsp && !r.embers) bad.push('ember canvas missing');
     if (e.embers === false && r.embers) bad.push('embers should be off');

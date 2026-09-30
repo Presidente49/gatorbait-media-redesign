@@ -15,6 +15,7 @@ SITE = 'https://www.gatorbaitmedia.com/'
 STATUSES = {'scheduled', 'in-progress', 'final', 'postponed', 'canceled'}
 ISO = re.compile(r'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$')
 RECORD = re.compile(r'^\d+-\d+(-\d+)?$')
+OPP_RECORD = re.compile(r'^\d+-\d+$')  # opponentRecord: optional, '3-1' or null
 
 
 def _int(v):
@@ -74,6 +75,10 @@ class _V:
     def record(self, v, path):
         if not (isinstance(v, str) and RECORD.match(v)):
             self.err(path, f'must look like 4-0, got {v!r}')
+
+    def opp_record(self, v, path):
+        if v is not None and not (isinstance(v, str) and OPP_RECORD.match(v)):
+            self.err(path, f'must be null or look like 3-1, got {v!r}')
 
     def link(self, v, path):
         if v is None:
@@ -137,10 +142,12 @@ def validate(doc):
         v.link(last.get('galleryUrl'), 'last.galleryUrl')
 
     nxt = doc.get('next')
-    if nxt is not None and v.obj(nxt, 'next', ('eventId', 'opponent', 'opponentRank', 'home', 'kickoffIso', 'tv', 'venue', 'previewUrl')):
+    if nxt is not None and v.obj(nxt, 'next', ('eventId', 'opponent', 'opponentRank', 'home', 'kickoffIso', 'tv', 'venue', 'previewUrl'),
+                                 optional=('opponentRecord',)):
         v.string(nxt.get('eventId'), 'next.eventId')
         v.string(nxt.get('opponent'), 'next.opponent')
         v.rank(nxt.get('opponentRank'), 'next.opponentRank')
+        v.opp_record(nxt.get('opponentRecord'), 'next.opponentRecord')
         v.boolean(nxt.get('home'), 'next.home')
         v.iso(nxt.get('kickoffIso'), 'next.kickoffIso')
         v.string(nxt.get('tv'), 'next.tv', nullable=True)
@@ -154,7 +161,7 @@ def validate(doc):
         seen, prev_date = set(), ''
         for i, g in enumerate(sched):
             p = f'schedule[{i}]'
-            if not v.obj(g, p, ('eventId', 'date', 'opponent', 'opponentRank', 'home', 'status', 'score', 'tv', 'storyUrl')):
+            if not v.obj(g, p, ('eventId', 'date', 'opponent', 'opponentRank', 'home', 'status', 'score', 'tv', 'storyUrl'), optional=('opponentRecord',)):
                 continue
             v.string(g.get('eventId'), f'{p}.eventId')
             if g.get('eventId') in seen:
@@ -166,6 +173,7 @@ def validate(doc):
             prev_date = g.get('date') if isinstance(g.get('date'), str) else prev_date
             v.string(g.get('opponent'), f'{p}.opponent')
             v.rank(g.get('opponentRank'), f'{p}.opponentRank')
+            v.opp_record(g.get('opponentRecord'), f'{p}.opponentRecord')
             v.boolean(g.get('home'), f'{p}.home')
             if g.get('status') not in STATUSES:
                 v.err(f'{p}.status', f'must be one of {sorted(STATUSES)}, got {g.get("status")!r}')

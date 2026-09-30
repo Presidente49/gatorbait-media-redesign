@@ -36,6 +36,10 @@ if (repoScoreboard && Array.isArray(repoScoreboard.schedule)) {
     date: g.date, opponent: g.opponent, opponentRank: g.opponentRank ?? null, home: g.home === true, status: g.status || '',
     score: g.score && Number.isFinite(g.score.fla) && Number.isFinite(g.score.opp) ? { fla: g.score.fla, opp: g.score.opp } : null, tv: g.tv || '', storyUrl: g.storyUrl || '',
   })) };
+  // The Tunnel prints the opponent's record under its name (front-page.js reads next.opponentRecord). The feed's value
+  // rides in the bundle only for the same opponent the config names, so a stale config never wears another team's record.
+  const nx = repoScoreboard.next, cn = cfg.scoreboard.next;
+  if (nx && cn && nx.opponent === cn.opponent && /^\d+-\d+$/.test(String(nx.opponentRecord || ''))) cfg.scoreboard.next = { ...cn, opponentRecord: nx.opponentRecord };
 }
 // Build stamp: the page exposes it as data-fp-build, so live QC and screenshots prove which build actually ran
 // (Wix edges served an older embed revision for a while after a PATCH on Sept. 30).

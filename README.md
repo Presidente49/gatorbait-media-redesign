@@ -52,13 +52,13 @@ Live URL once merged: `https://presidente49.github.io/gatorbait-media-redesign/s
 ```
 { updatedAt, season, team:{name,rank,record,conf},
   last:{eventId,opponent,opponentRank,home,date,status:"final",score:{fla,opp},quarters:{fla:[..],opp:[..]}|null,venue,recapUrl,galleryUrl},
-  next:{eventId,opponent,opponentRank,home,kickoffIso,tv,venue,previewUrl},
-  schedule:[{eventId,date,opponent,opponentRank,home,status,score:{fla,opp}|null,tv,storyUrl}],
+  next:{eventId,opponent,opponentRank,opponentRecord?,home,kickoffIso,tv,venue,previewUrl},
+  schedule:[{eventId,date,opponent,opponentRank,opponentRecord?,home,status,score:{fla,opp}|null,tv,storyUrl}],
   standings:[{team,confRecord,overall}],           // SEC, best conference record first
   live: null | {eventId,clock,period,score:{fla,opp},possession:"fla"|"opp"|null,lastPlay} }
 ```
 
-`status` is `scheduled`, `in-progress`, `final`, `postponed` or `canceled`. `next` is the first game not yet final, so during a game it is the game in progress. `last`, `next` and `live` are `null` when they don't apply. Ranks are AP (1-25) or `null`. For a game with no set time, ESPN sends a placeholder kickoff (04:00Z or 05:00Z); the feed passes it through.
+`opponentRecord` is optional: the opponent's overall record as `"3-1"` or `null`. On `next` it is the current record from ESPN's pregame summary (The Tunnel prints it under the opponent's name); on a `schedule` row ESPN supplies it only once that game is final, and it is the record after that game. `status` is `scheduled`, `in-progress`, `final`, `postponed` or `canceled`. `next` is the first game not yet final, so during a game it is the game in progress. `last`, `next` and `live` are `null` when they don't apply. Ranks are AP (1-25) or `null`. For a game with no set time, ESPN sends a placeholder kickoff (04:00Z or 05:00Z); the feed passes it through.
 
 Commands:
 

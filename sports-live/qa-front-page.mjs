@@ -43,7 +43,7 @@ const scenarios = [
   { name: 'day-light', now: T.day, scheme: 'light', expect: { night: true, gameday: false, embers: true, lead: 'buddy', road: 1, roadCards: 12, roadWins: 4 } }, // Swamp Night is the everyday look (config look: swamp-night); band from the bundled schedule
   { name: 'day-dark', now: T.day, scheme: 'dark', expect: { night: true, gameday: false, lead: 'buddy', embers: true } },
   { name: 'night', now: T.night, scheme: 'light', expect: { night: true, gameday: false, embers: true, showLive: true } },
-  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: true, gameday: true, road: 1, tunnel: 'pre' } },
+  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: true, gameday: true, road: 1, tunnel: 'pre', tunnelOpp: 'Missouri', tunnelOppRecord: '3-1' } }, // record from the bundled scoreboard.json (next.opponentRecord, fed by The Scout)
   { name: 'gameday-live', now: T.gameLive, scheme: 'light', desk: DESK_LIVE, expect: { night: true, gameday: true, embers: true, boardLive: true, tunnel: 'live', tunnelScore: '24' } },
   { name: 'reduced-motion', now: T.night, scheme: 'light', reduced: true, expect: { night: true, embers: false, noAnimations: true } },
   { name: 'rss-down', now: T.day, scheme: 'light', rss: 500, widths: [390], expect: { lead: 'buddy' } },
@@ -120,6 +120,8 @@ for (const sc of scenarios) {
         roadLinks: document.querySelectorAll('#gbm-road a.g[href]').length, roadRank: !!document.querySelector('#gbm-road .rk'), roadNext: (document.querySelector('#gbm-road .g.nx .op') || {}).textContent || '',
         tunnel: !!document.querySelector('.fp-tunnel'), tunnelPhase: document.querySelector('.fp-tunnel')?.dataset.phase || '', tunnelCd: document.querySelector('.fp-tunnel [data-fp-count]')?.textContent || '',
         tunnelScore: document.querySelector('.fp-tunnel [data-tn=away]')?.textContent || '', tunnelStories: document.querySelectorAll('.fp-tunnel .fp-tn-stories a').length,
+        // The opponent's line in the Tunnel matchup: <small>No. 25 · 3-1</small><b>Missouri</b>; the record is the last ' · ' part.
+        tunnelOpp: [...document.querySelectorAll('.fp-tunnel .fp-tn-match .fp-tn-team')].map((t) => ({ name: t.querySelector('b')?.textContent || '', line: t.querySelector('small')?.textContent || '' })).find((t) => t.name !== 'Florida') || null,
       };
     });
     const e = sc.expect, bad = [];
@@ -139,6 +141,8 @@ for (const sc of scenarios) {
     if (e.tunnel && r.tunnelPhase !== e.tunnel) bad.push(`tunnel phase ${r.tunnelPhase} != ${e.tunnel}`);
     if (e.tunnel === 'pre' && !/\d/.test(r.tunnelCd)) bad.push('tunnel countdown empty');
     if (e.tunnelScore !== undefined && r.tunnelScore !== e.tunnelScore) bad.push(`tunnel away score ${r.tunnelScore} != ${e.tunnelScore}`);
+    if (e.tunnelOpp && (r.tunnelOpp || {}).name !== e.tunnelOpp) bad.push(`tunnel opponent ${JSON.stringify(r.tunnelOpp)} != ${e.tunnelOpp}`);
+    if (e.tunnelOppRecord !== undefined && ((r.tunnelOpp || {}).line || '').split(' · ').pop() !== e.tunnelOppRecord) bad.push(`tunnel opponent record "${(r.tunnelOpp || {}).line}" lacks ${e.tunnelOppRecord}`);
     if (e.boardLive && r.boardState !== 'live') bad.push('board not live: ' + r.boardState);
     if (e.embers === true && tsp && !r.embers) bad.push('ember canvas missing');
     if (e.embers === false && r.embers) bad.push('embers should be off');
@@ -155,7 +159,7 @@ for (const sc of scenarios) {
     if (sc.oldStyles && oldCss && r.oldMedia !== 'not all') bad.push('old #gbgz-styles still active');
     if (width < 800 && r.h1Top > r.vh * 1.6) bad.push(`lead headline too low (${r.h1Top}px)`);
     const tag = `${sc.name}@${width}`;
-    console.log((bad.length ? 'FAIL ' : 'ok   ') + tag.padEnd(26) + ` lead=${r.lead} cls="${r.cls.replace('gbm-gazette gbm-sports-home fp26 ', '')}" h1=${r.h1Top} cd="${r.cd}" ${bad.join('; ')}`);
+    console.log((bad.length ? 'FAIL ' : 'ok   ') + tag.padEnd(26) + ` lead=${r.lead} cls="${r.cls.replace('gbm-gazette gbm-sports-home fp26 ', '')}" h1=${r.h1Top} cd="${r.cd}"` + (r.tunnelOpp ? ` tunnel=${r.tunnelPhase}:${r.tunnelOpp.name}[${r.tunnelOpp.line}]` : '') + ` ${bad.join('; ')}`);
     if (bad.length) failures.push(tag + ': ' + bad.join('; '));
     if (shots && !sc.pins && !sc.rss) {
       await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { scrollTo(0, y); await new Promise((r) => setTimeout(r, 60)); } scrollTo(0, 0); });

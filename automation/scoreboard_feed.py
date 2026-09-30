@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Scoreboard feed: ESPN public JSON -> sports-live/scoreboard.json for the front page.
 
-Reads Florida's ESPN schedule, the SEC standings and (for the last final and any live game) the game
-summary. Story links come only from our own posts (gazette-live/posts.json); an ESPN or SEC link is
+Reads Florida's ESPN schedule, the SEC standings and (for the last final, the next game and any live game)
+the game summary; the next game's pregame summary supplies the opponent's current record. Story links come only from our own posts (gazette-live/posts.json); an ESPN or SEC link is
 never emitted. The output is checked by validate_scoreboard.py before it is written, so a bad run keeps
 the last good file. No Wix writes happen here.
 
@@ -102,6 +102,15 @@ def record_of(c, kind):
     return None
 
 
+OVERALL = re.compile(r'^\d+-\d+$')
+
+
+def overall_of(c):
+    """A competitor's overall record as the feed emits it ('3-1'), or None when ESPN sends none or a tie/odd form."""
+    r = record_of(c, 'total')
+    return r if isinstance(r, str) and OVERALL.match(r) else None
+
+
 STATE_STATUS = {'pre': 'scheduled', 'in': 'in-progress', 'post': 'final'}
 
 
@@ -129,6 +138,9 @@ def parse_event(ev):
         'status': status, 'score': {'fla': a, 'opp': b} if a is not None and b is not None else None,
         'tv': tv, 'venue': (comp.get('venue') or {}).get('fullName'),
         'flaConf': record_of(us, 'vsconf'),
+        # ESPN puts the opponent's overall record on a schedule row only once that game is final (the record after it);
+        # for the next game it comes from the pregame summary instead (see build()).
+        'opponentRecord': overall_of(them),
     }
 
 
@@ -154,7 +166,7 @@ def parse_summary(sm):
     out = {'state': (comp.get('status') or {}).get('type', {}).get('state'), 'teams': {}}
     for c in comp['competitors']:
         ls = [int(float(x.get('displayValue', x.get('value', 0)))) for x in c.get('linescores') or []]
-        out['teams'][str(c.get('id') or c['team']['id'])] = {'score': score_of(c), 'lines': ls}
+        out['teams'][str(c.get('id') or c['team']['id'])] = {'score': score_of(c), 'lines': ls, 'record': overall_of(c)}
     st = comp.get('status') or {}
     out['clock'], out['period'] = st.get('displayClock'), st.get('period')
     sit = sm.get('situation') or {}
@@ -286,14 +298,21 @@ def build(schedule, standings, summaries, posts_doc, prev, now):
     out['next'] = None
     if upcoming:
         g = upcoming[0]
-        out['next'] = {'eventId': g['eventId'], 'opponent': g['opponent'], 'opponentRank': g['opponentRank'], 'home': g['home'],
-                       'kickoffIso': g['date'], 'tv': g['tv'], 'venue': g['venue'], 'previewUrl': find_story(g, posts, 'preview')}
+        # The Tunnel prints this under the opponent's name. ESPN's pregame summary carries the current record; a schedule
+        # row carries one only for an in-progress or final game. If the summary read failed, keep what we had for this game.
+        sm = summaries.get(g['eventId'])
+        opp_rec = next((t.get('record') for k, t in (sm or {}).get('teams', {}).items() if k != TEAM_ID), None) or g['opponentRecord']
+        if not opp_rec and prev and (prev.get('next') or {}).get('eventId') == g['eventId']:
+            opp_rec = prev['next'].get('opponentRecord')
+        g['opponentRecord'] = opp_rec if isinstance(opp_rec, str) and OVERALL.match(opp_rec) else None
+        out['next'] = {'eventId': g['eventId'], 'opponent': g['opponent'], 'opponentRank': g['opponentRank'], 'opponentRecord': g['opponentRecord'],
+                       'home': g['home'], 'kickoffIso': g['date'], 'tv': g['tv'], 'venue': g['venue'], 'previewUrl': find_story(g, posts, 'preview')}
 
     sched = []
     for g in events:
         story = find_story(g, posts, 'recap') if g['status'] == 'final' else find_story(g, posts, 'preview') if g['status'] == 'scheduled' else None
         sched.append({'eventId': g['eventId'], 'date': g['date'], 'opponent': g['opponent'], 'opponentRank': g['opponentRank'],
-                      'home': g['home'], 'status': g['status'], 'score': g['score'], 'tv': g['tv'], 'storyUrl': story})
+                      'opponentRecord': g['opponentRecord'], 'home': g['home'], 'status': g['status'], 'score': g['score'], 'tv': g['tv'], 'storyUrl': story})
     out['schedule'] = sched
     out['standings'] = [{k: r[k] for k in ('team', 'confRecord', 'overall')} for r in stand]
 
@@ -375,6 +394,9 @@ def main(argv=None):
         finals = [g for g in events if g['status'] == 'final']
         if finals:
             need.append(max(finals, key=lambda g: g['date'])['eventId'])
+        upcoming = sorted((g for g in events if g['status'] in ('scheduled', 'in-progress')), key=lambda g: g['date'])
+        if upcoming:
+            need.append(upcoming[0]['eventId'])  # pregame summary: the next opponent's current record for The Tunnel
         summaries = {}
         for eid in dict.fromkeys(need):
             try:

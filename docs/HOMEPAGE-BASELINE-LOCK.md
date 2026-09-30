@@ -1,5 +1,24 @@
 # GatorBait Homepage Baseline Lock
 
+## LOCKED LOOK — Sept. 29, 2026 (supersedes everything below)
+
+Brenden, Sept. 29 late evening: "I'm very happy with the website right now as it is. I really think it's time to lock this look."
+
+**The approved look is Front Page 2026 with Swamp Night as the everyday look.**
+- Home Code embed `622d8ece-df55-44fc-9e4a-3f580804743b` rev **24**: a 521-character loader pinned to `main` commit `2c4f4f5` (`sports-live/homepage.js`), djb2 hash 4048599828. Live QC run 36644613421 passed at 320/390/430/desktop.
+- Magazine `1dd74333` rev **48** (14,918 chars, hash 3146292927), separate from the homepage.
+- Unchanged owners: loader `fdc2127a`, Home Styles `1255a4cf`, header `7fee4de6` rev 30, ad guard `af338ad4` rev 3.
+
+**What "locked" means**
+- No design, layout, palette, motion or hierarchy change without Brenden's explicit yes in chat or on the Control Room. That includes tests, "small improvements" and anything a scheduled task proposes.
+- Allowed without asking: story content that flows through the existing lead rule and feeds, the Magazine edition rotation from `deploy/magazine-urban/edition-src.json`, and a rollback if the live QC goes red.
+- Codex's daily Feature Rotation may write Magazine `1dd74333` only. It must not write Home Code `622d8ece`.
+- A live QC failure gets a fix that restores the approved look, not a redesign.
+- Rollback to the pre-Front-Page state: `deploy/front-page-2026/home-code-rev22.html`, one PATCH (see `deploy/front-page-2026/README.md`).
+- The ops loop's "small reversible tested improvements" allowance does not apply to the homepage while this lock holds.
+
+---
+
 ## Current live pointer — September 24, 2026
 
 Fresh Wix provider read supersedes the older rev61 pointer below:

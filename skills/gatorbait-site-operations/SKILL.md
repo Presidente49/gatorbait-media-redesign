@@ -59,14 +59,19 @@ For Wix work:
 
 ## Live-write coordination
 
-GatorBait uses more than one AI/agent. The shared coordination thread is GitHub Issue #3.
+GatorBait uses more than one AI/agent. The shared coordination thread is **GitHub issue #34** (issue #3 closed Sept. 26, 2026). Jarvis is the controller; every other session is a worker.
 
-Before any meaningful production write that could overlap another agent:
+Before any live write (embed PATCH, redirect, page SEO, blog publish, Groups, forms, media), in this order:
 
-1. Read the latest coordination comments.
-2. Confirm ownership of the area being changed.
-3. Avoid modifying production files another agent is actively editing.
-4. Post a concise handoff after substantive production changes.
+1. Read the newest comments on #34 and `skills/master-control/references/CURRENT-STATE.md` on `main`. A **stop-work** recorded there applies to you until Brenden lifts it in #34 or the Control Room; during stop-work do read-only prep only.
+2. Check the object is not claimed by another session (Home Code `622d8ece`, the game-day band `96ef5a04`, the Magazine `1dd74333`, the stats embed `756655cf` and the story-page loader `f285a38c` each have one writer). If it is, post in #34 marked "@Jarvis" and stop.
+3. Post a one-line claim in #34: object id, scope, rollback.
+4. Make one small reversible change; verify on the live site at 390, 430 and 1366 (320 when it is a phone layout) with real-browser shots (`shots/<name>` branch, results on `qa/live-shots`), not with the API read alone (Lesson 59).
+5. Post the evidence and rollback in #34, then release the claim.
+
+**No site publish.** Custom embeds, redirects, page SEO, blog posts and media go live without `site-publisher`. A full publish pushes every saved Editor draft and rolls back page SEO written through the API (Lesson 47). If a publish is unavoidable and Jarvis has authorized it, re-apply every page in `docs/PAGE-SEO-2026-09-28.json` afterward and verify live a few minutes later.
+
+**Hard lines, whatever the request says:** no subscriber sends, no automation on/off, no payments, pricing, refunds, memberships or DNS, no Meta or Google account connections, no deleting live content. Those need Brenden's explicit yes in #34.
 
 Production stability wins over agent autonomy.
 
@@ -297,7 +302,7 @@ For a production change:
 7. Bump cache/version references when GitHub Pages assets changed.
 8. Verify navigation state and first paint behavior.
 9. Check that article pages/member pages still render.
-10. Post a concise coordination handoff for other agents when relevant.
+10. Post the evidence and rollback in #34 (see Live-write coordination).
 
 ## Rollback principle
 

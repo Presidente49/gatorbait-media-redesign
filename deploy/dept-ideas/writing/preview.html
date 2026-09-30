@@ -3,73 +3,97 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Front Porch</title>
-<meta name="description" content="Preview of The Front Porch with Buddy Martin, a weekly GatorBait Magazine column built from the week's published stories.">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<title>The Morning After</title>
+<meta name="description" content="Real Idiolect draft of a post-show Buddy Martin column, built from the Descript transcript of the Sept. 16, 2026 show. DRAFT, not published.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;800&display=swap">
 <style>
-:root{--navy:#07122e;--blue:#0021a5;--orange:#fa4616;--ink:#f3f5fa;--mute:#b6bfd6;--panel:#0d1a3f}
+:root{--bg:#f6f4ef;--ink:#15181d;--muted:#5b6068;--rule:#d8d3c8;--orange:#fa4616;--blue:#0021a5;--card:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101215;--ink:#ece9e2;--muted:#a0a5ad;--rule:#2b2f36;--card:#181b20}}
+:root[data-theme="dark"]{--bg:#101215;--ink:#ece9e2;--muted:#a0a5ad;--rule:#2b2f36;--card:#181b20}
 *{box-sizing:border-box}
-body{margin:0;background:var(--navy);color:var(--ink);font:400 17px/1.55 Barlow,system-ui,sans-serif}
-a{color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(250,70,22,.45)}
-a:hover{border-color:var(--orange)}
-.wrap{max-width:680px;margin:0 auto;padding:0 16px 48px}
-.mast{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(243,245,250,.15);font:800 14px/1 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase}
-.mast span{color:var(--orange)}
-.kick{margin:28px 0 8px;font:800 15px/1 "Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
-.kick small{color:var(--mute);letter-spacing:.08em}
-h1{margin:0 0 12px;font:800 42px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.005em}
-.deck{margin:0 0 14px;font-size:19px;line-height:1.4;color:var(--mute)}
-.by{font-size:14px;color:var(--mute);margin-bottom:22px}
-.by b{color:var(--ink)}
-.ledger{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 26px}
-.ledger div{background:var(--panel);border-top:3px solid var(--blue);padding:10px 12px}
-.ledger b{display:block;font:800 28px/1 "Barlow Condensed",sans-serif}
-.ledger i{font:600 12px/1.2 Barlow,sans-serif;font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
-.ledger em{display:block;font-size:11px;color:var(--mute);margin-top:4px;font-style:normal}
-p{margin:0 0 16px}
-h2{margin:30px 0 8px;font:800 26px/1.05 "Barlow Condensed",sans-serif;text-transform:uppercase;color:var(--ink)}
-h2::before{content:"";display:inline-block;width:10px;height:10px;background:var(--orange);margin-right:10px;vertical-align:2px}
-.light{margin-top:32px;padding:18px 16px;background:var(--blue);border-left:5px solid var(--orange)}
-.light h2{margin-top:0}
-.light h2::before{background:var(--ink)}
-.foot{margin-top:28px;font-size:13px;color:var(--mute);border-top:1px solid rgba(243,245,250,.15);padding-top:14px}
-@media(min-width:640px){h1{font-size:56px}.ledger{grid-template-columns:repeat(4,1fr)}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Barlow,system-ui,sans-serif;font-size:17px;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:24px 16px 56px}
+.banner{background:var(--orange);color:#fff;font-family:"Barlow Condensed",sans-serif;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:8px 12px;font-size:15px}
+.kicker{font-family:"Barlow Condensed",sans-serif;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;font-size:14px;margin:28px 0 6px}
+h1{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:clamp(34px,7vw,54px);line-height:1.02;margin:0 0 10px}
+.deck{font-size:20px;color:var(--muted);margin:0 0 14px}
+.by{font-size:14px;color:var(--muted);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0;margin-bottom:22px}
+.ledger{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:0 0 26px}
+.ledger div{background:var(--card);border:1px solid var(--rule);padding:10px 12px}
+.ledger b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800;line-height:1}
+.ledger span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+h2{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:26px;margin:28px 0 8px}
+p{margin:0 0 14px}
+.q{border-left:3px solid var(--orange);padding-left:12px;font-style:italic}
+.meta{margin-top:40px;padding:14px;background:var(--card);border:1px solid var(--rule);font-size:14px;color:var(--muted)}
+.meta code{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--ink)}
+.meta ul{margin:6px 0 0;padding-left:18px}
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="mast"><div>GatorBait <span>Magazine</span></div><div>Draft preview</div></div>
-<div class="kick">The Front Porch <small>with Buddy Martin</small></div>
-<h1>Swagger, a Toll Booth and 28 Points Nobody Collected</h1>
-<p class="deck">Pull up a chair. Everything GatorBait learned about the No. 8 Gators in the week they ran over Ole Miss, in one sitting, with the receipts.</p>
-<div class="by"><b>Buddy Martin</b> | Tuesday, Sept. 29, 2026</div>
+<div class="banner">Draft. Idiolect output, unedited. Not published, not scheduled, not emailed.</div>
+
+<div class="kicker">The Buddy Martin Show, the morning after</div>
+<h1>We Were Right About the Wrong Things</h1>
+<p class="deck">The panel got the plot twist right. The details? Not so much.</p>
+<div class="by">By Buddy Martin (draft in his voice) · GatorBait Magazine · Generated Sept. 30, 2026</div>
+
 <div class="ledger">
-<div><i>Final</i><b>52-28</b><em>Florida over No. 4 Ole Miss</em></div>
-<div><i>Record</i><b>4-0</b><em>2-0 SEC, No. 8</em></div>
-<div><i>4th quarter</i><b>21-7</b><em>Gators outscored Rebels</em></div>
-<div><i>Next</i><b>Oct. 3</b><em>at No. 25 Missouri, 3:30 p.m. ET, ABC</em></div>
+<div><b>44-39</b><span>at Auburn, Sept. 19 (ESPN)</span></div>
+<div><b>52-28</b><span>vs. No. 4 Ole Miss, Sept. 26 (ESPN)</span></div>
+<div><b>4-0 · No. 8</b><span>2-0 SEC (ESPN)</span></div>
+<div><b>Oct. 3</b><span>at No. 25 Missouri, 3:30 p.m. ET, ABC</span></div>
 </div>
-<p>Pull up a chair. Every week during football season this porch will hold the whole GatorBait staff's work in one sitting: what we saw, what we counted, what we argued about and where to go read the rest. One column, all the receipts, no reruns.</p>
-<p>This week the porch looks out on a scoreboard that reads Florida 52, Ole Miss 28.</p>
-<h2>The night The Swamp got loud again</h2>
-<p>The numbers first, because they earned it. Florida beat No. 4 Ole Miss 52-28 at Ben Hill Griffin Stadium on Sept. 26 and did the heavy lifting late, outscoring the Rebels 21-7 in the fourth quarter (ESPN). The Gators are 4-0 and 2-0 in the SEC and ranked No. 8 (ESPN), the program's <a href="https://www.gatorbaitmedia.com/post/the-swamp-gets-its-swagger-back-and-welcomes-the-folks-from-the-grove-in-rude-fashion">first 4-0 start since 2019</a>. The voters noticed: Florida jumped <a href="https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls">13 spots in the AP poll and 14 in the Coaches Poll</a> and sits No. 8 in both.</p>
-<p>I wrote Saturday night that The Swamp got its swagger back and welcomed the folks from The Grove in rude fashion. I stand by it. I am also going to let the rest of this staff talk me down a notch, because they did the work.</p>
-<h2>What the box score will not tell you</h2>
-<p>Brenden Martin did the arithmetic on how the 52 arrived: <a href="https://www.gatorbaitmedia.com/post/woods-chipper-florida-defense-special-teams-ole-miss">31 of them came after defensive stops and big returns</a>, including Jayden Woods' strip-sack, an early fourth-down stop and London Montgomery's kick returns. Eddie Gilley boiled the whole night down to <a href="https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again">five plays</a>, from a blown Ole Miss fourth-down gamble to DJ Coleman's game-sealing interception. Chris Spears had the sideline and came back with <a href="https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss">10 thoughts</a> and two galleries of proof (<a href="https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss">one</a>, <a href="https://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28">two</a>).</p>
-<h2>The honest ledger</h2>
-<p>Franz Beard has never let a win go unaudited. He counted <a href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss">at least 28 points the Gators left on the field</a>: an overthrown Vernell Brown III, an open Amir Jackson on fourth down, a 67-yard touchdown erased by a hold and eight penalties for 92 yards. Loren Meadows heard Jon Sumrall say a version of the same thing in coach-speak: this team is <a href="https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28">still a work in progress</a>. Both are right. You can beat the No. 4 team in the country by 24 and still owe yourself 28.</p>
-<h2>Who are these guys?</h2>
-<p>Franz borrowed that line from Butch Cassidy and pointed it at <a href="https://www.gatorbaitmedia.com/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers">Phil Trautwein's offensive line</a>, measuring what Athlon and Phil Steele thought of the group in the preseason against what it did to Ole Miss while Jadan Baugh scored again. The league weighed in Monday: Baugh earned his <a href="https://www.gatorbaitmedia.com/post/honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-awards-after-ole-miss-rout">first SEC Offensive Player of the Week award</a>, and Montgomery and Bryce Lovett collected their first SEC weekly honors. Franz's <a href="https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-29-2026">Tuesday thoughts</a> opened with a picture of Trautwein and his family celebrating the win. That is the porch's favorite kind of photo.</p>
-<h2>The toll booth</h2>
-<p>Here is where the coach with the raspy voice took the poll out of everyone's hands. Sumrall told Florida he <a href="https://www.gatorbaitmedia.com/post/pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloody-tuesday-before-missouri">does not want to hear another word about Ole Miss</a>, and he is making his team <a href="https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time">pay the toll on "Bloody Tuesday."</a> Fair enough. Florida has lost three of its last four trips to Columbia. Missouri is 3-1 and 0-1 in the league (ESPN) after <a href="https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind">letting a fourth-quarter lead get away at Mississippi State</a>. The Tigers will be in a mood.</p>
-<p>The medical news helped the mood in Gainesville. An MRI confirmed a <a href="https://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators">Grade 1 PCL sprain, the mildest grade</a>, in Brown's knee, and sources told GatorBait he may not miss any games. Sumrall had good news on him Monday.</p>
-<h2>Off the field, still on the record</h2>
-<p>Two stories the porch will keep an eye on. The Senate passed the <a href="https://www.gatorbaitmedia.com/post/senate-passes-protect-college-sports-act-florida">Protect College Sports Act 77-22</a> Monday night, and it is not law yet. And Denzel Aberdeen won a <a href="https://www.gatorbaitmedia.com/post/denzel-aberdeen-florida-temporary-injunction-2026">temporary injunction</a> allowing him to play for Florida in 2026-27, which matters a great deal to the basketball backcourt.</p>
-<div class="light">
-<h2>Porch light</h2>
-<p>Kickoff is 3:30 p.m. ET Saturday, Oct. 3, at Memorial Stadium in Columbia, on ABC (ESPN). ESPN's FPI now has Florida favored in every remaining game except Texas and Georgia, and <a href="https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again" style="color:var(--ink);border-color:rgba(243,245,250,.5)">that math comes out to 10-2</a>. I did that math myself Sunday and enjoyed every minute of it. Then I listened to Sumrall, and I put the poll down. Columbia has taken three of the last four from us. Pay the toll first. We will add it up on the porch next week.</p>
+
+<p>On Tuesday, Sept. 16, Laura Rutledge, Ally Peek Wilbur, Carlton Reese and I gathered on The Buddy Martin Show to talk Florida football. Two games later, the Gators are 4-0, 2-0 in the SEC and ranked No. 8.</p>
+<p>That’s a substantial change in the scenery. Florida won at Auburn 44-39 on Sept. 19, then beat No. 4 Ole Miss 52-28 at Ben Hill Griffin Stadium on Sept. 26, outscoring the Rebels 21-7 in the fourth quarter.</p>
+<p>We had a few things right. And, as it turns out, a few things backward.</p>
+
+<h2>The Line of Scrimmage</h2>
+<p>Laura, who got her start with us at Gator Country, looked at the Auburn game and went straight to the trenches.</p>
+<p class="q">"For me, I'm looking at the line of scrimmage."</p>
+<p class="q">"We know that this is a line of scrimmage league."</p>
+<p>Carlton, our columnist and a former Gainesville Sun man, had his own forecast for what an average offensive line could mean for Jadan Baugh and Aaron Philo. His final word that night was: "if Florida's offensive line is just average, I believe" Baugh is "gonna kill people, and Aaron Philo's gonna be able to hit open receivers."</p>
+<p>Well, the scoreboard at Auburn and against Ole Miss says Florida’s line was more than average. Baugh and Philo have had plenty of room to make Carlton look prescient.</p>
+<p>Laura’s broader take on Jon Sumrall’s Florida was that "what we've seen from Coach Sumrall is what we've needed at Florida." And, about the offense: "We're finally seeing a Florida offense that makes you say, 'Wow.'"</p>
+<p>That one has aged well, too. Not a bad couple of weeks for Laura’s scouting report.</p>
+
+<h2>Haunted House, Happy Ending</h2>
+<p>Before Auburn, Carlton reminded us that Nick Saban called Jordan-Hare a haunted house. I said, "We know it's a haunted house. We've been there. Ask John Reaves what he thinks about it."</p>
+<p>We got out with a win, but only by five points. That’s close enough to make the ghost stories feel less like ancient folklore and more like a useful travel advisory.</p>
+<p>Then there was Ole Miss, who had LSU the week before coming to Gainesville. Laura thought Florida could benefit from the Rebels’ situation either way.</p>
+<p class="q">"I actually think Florida may be in a really good spot against Ole Miss either way."</p>
+<p class="q">"There is going to be some sort of letdown even if they win."</p>
+<p class="q">"Florida could get them at the exact right time, win or lose."</p>
+<p>Laura called that almost to the letter. Ole Miss did come in after a demanding game, and Florida made sure the timing mattered. The Gators won by 24 and outscored the Rebels 21-7 in the fourth quarter.</p>
+<p>I also told the story from Sumrall about his wife having gone to Auburn: "I don't care what the last name of the person is. If they're cheering for Auburn, they're not in my family," and "my mortgages are paid by the Gators."</p>
+<p>That family policy appears to have worked out just fine on Sept. 19.</p>
+
+<h2>The Number We Wouldn’t Touch</h2>
+<p>Our season predictions were more cautious than the standings.</p>
+<p>Ally, a blogger and podcaster, mother of two sets of twins and a legacy Gator whose grandfather, father and husband all played for Florida, picked 8-4. She added, "I think there's a world where they could finish nine and three. I think that's a stretch."</p>
+<p>Laura said 7-5 and explained, "I'm sandbagging on purpose, 'cause I hope I'm wrong."</p>
+<p>I said I was stuck at seven and a half wins. I had tried to get it to eight and couldn’t.</p>
+<p>When I asked everyone for the one upset Florida could pull off this year, all three of us said Oklahoma. Carlton said, "Oklahoma looks like a very winnable game now." So we switched to Ole Miss.</p>
+<p>I said, "How about both of them?"</p>
+<p>Two weeks into the season, Florida has beaten both Auburn and Ole Miss and is 4-0. We all bet the under on this team’s win total. That prediction is already having a rough September.</p>
+<p>The show had more than picks and line play. Laura told the story of taking a 5 a.m. job at WRUF because she thought it was 5 p.m. Her first sports report was dead air after she forgot to turn the button on. On opening day of her first Rays pregame show, a producer told her to put her IFB in, and she Googled what an IFB was on a flip phone.</p>
+<p class="q">"if I can do it, anybody can do it."</p>
+<p>Her advice to young people in the business: "say yes to everything," and "You lead with knowledge. You lead with research." She also said, "it takes patience to be kind."</p>
+<p>Laura said, "I still consider myself part of the Florida media because I can never leave," and she is coming back for Gator Growl and homecoming. The whole show is on our YouTube and Facebook pages.</p>
+<p>Now comes No. 25 Missouri, Saturday, Oct. 3, at 3:30 p.m. ET, at Memorial Stadium in Columbia, on ABC.</p>
+<p>I’m not raising my number until we get out of Columbia. The last panel that felt sure about a road game was us, at Auburn, and we were only right by five points.</p>
+
+<div class="meta">
+<strong>How this draft was made</strong>
+<ul>
+<li>Descript <code>export_transcript</code>, project <code>4722f81b-757d-4169-b528-9479dc40ce4d</code>, composition <code>72916e10-1950-44de-9862-21118a122cbc</code> (59:40 of show audio, Sept. 16, 2026). Full export in <code>transcript.md</code>.</li>
+<li>Idiolect Writing Profile <code>54e40516-0e40-4eec-bada-3adda6be0ea2</code>, built from five published Buddy Martin columns (<code>voice-samples.md</code>).</li>
+<li>Idiolect <code>write</code>, writingJobVersionId <code>ffb6be79-94ea-4d6b-b3b6-57d54bb60abe</code>. Text above is verbatim; copy-desk notes (one factual slip: "two weeks into the season" should be "two weeks after the show") are in <code>column-draft.md</code>.</li>
+<li>Every score, record, rank and kickoff from <code>sports-live/scoreboard.json</code> (ESPN). Every quote from the transcript, timecoded in the fact trace.</li>
+</ul>
 </div>
-<div class="foot">Scores, records, rankings and kickoff from the ESPN scoreboard feed. Every other fact links to the GatorBait story it came from. No quotes; phrases in quotation marks appear in the linked stories. Draft for Buddy Martin's approval.</div>
 </div>
 </body>
 </html>

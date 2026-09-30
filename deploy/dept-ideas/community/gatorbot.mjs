@@ -54,12 +54,11 @@ const GUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 // Bloody Tuesday = the Tuesday of game week, 9 a.m. ET. Close = when the recap posts.
 function tuesdayBefore(kickIso) {
-  const d = new Date(kickIso);
-  const dow = Number(fmt(kickIso, { weekday: "short" }) === "Sat" ? 6 : new Date(fmt(kickIso, { year: "numeric", month: "2-digit", day: "2-digit" })).getUTCDay());
+  const DOW = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  const dow = DOW[fmt(kickIso, { weekday: "short" })];
   const back = ((dow - 2) + 7) % 7 || 7;
-  const t = new Date(d.getTime() - back * 86400000);
-  const ymd = fmt(t.toISOString(), { year: "numeric", month: "2-digit", day: "2-digit" }); // MM/DD/YYYY
-  const [m, dd, y] = ymd.split("/");
+  const t = new Date(new Date(kickIso).getTime() - back * 86400000);
+  const [m, dd, y] = fmt(t.toISOString(), { year: "numeric", month: "2-digit", day: "2-digit" }).split("/");
   return { localDate: `${y}-${m}-${dd}`, localTime: "09:00", timeZone: ET };
 }
 
@@ -152,7 +151,7 @@ const porch = {
   post: { contentType: "PLAIN_TEXT", pinned: true, text: porchText, links: buddyCol ? [{ label: "Column", title: buddyCol.title, url: buddyCol.url }] : [] },
   gating: {
     today: `${T.porch.name} is ${T.porch.privacyStatus} with accessRestriction ${T.porch.accessRestriction} (real read).`,
-    proposed: "Switch accessRestriction to PAID_PLANS in the Groups dashboard and attach the current buyable plans (ids in payloads/plans.json). No prices change.",
+    proposed: "Switch accessRestriction to PAID_PLANS in the Groups dashboard and attach the current buyable plans (ids in evidence/plans.json). No prices change.",
   },
   lifecycle: { opens: tuesdayBefore(nx.kickoffIso), closes: "after Thursday's show", eventId: nx.eventId },
   sources: ["gazette-live/posts.json", "evidence/groups.snapshot.json"],

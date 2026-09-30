@@ -3,136 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Game Threads Mockup</title>
-<meta name="description" content="Mockup of the GatorBait Game Threads board on Missouri week: thread list, the open game thread, Buddy's pinned post and the members-only marker.">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<title>Game Threads Evidence</title>
+<meta name="description" content="Real Wix Groups state on gatorbaitmedia.com (read Sept. 30, 2026) and the GatorBot dry-run payloads for Missouri week.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#07122e;--blue:#0021a5;--orange:#fa4616;--ink:#f3f5fa;--mute:#b9c4dc;--panel:#0d1a3f;--line:rgba(243,245,250,.14)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--navy);color:var(--ink);font:400 16px/1.5 Barlow,system-ui,sans-serif}
-a{color:var(--orange);text-decoration:none}
-.wrap{max-width:640px;margin:0 auto;padding:0 16px 40px}
-.mock{background:var(--orange);color:var(--navy);font:800 12px/1.2 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:7px 12px}
-.mast{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font:800 14px/1 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase}
-.mast span{color:var(--orange)}
-.mast small{color:var(--mute);letter-spacing:.08em}
-.k{font:800 13px/1 "Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
-h1{margin:22px 0 4px;font:800 38px/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
-.sub{margin:0 0 16px;color:var(--mute);font-size:15px}
-.tabs{display:flex;gap:6px;margin:0 0 14px;overflow-x:auto}
-.tabs span{flex:none;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font:600 13px/1 Barlow,sans-serif;color:var(--mute)}
-.tabs .on{background:var(--blue);border-color:var(--blue);color:var(--ink)}
-.list{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
-.list li{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
-.list li.open{background:linear-gradient(90deg,rgba(0,33,165,.35),transparent)}
-.wk{font:800 22px/1 "Barlow Condensed",sans-serif;color:var(--mute);text-align:center}
-.list li.open .wk{color:var(--orange)}
-.t{font:600 16px/1.2 Barlow,sans-serif}
-.m{display:block;font-size:12.5px;color:var(--mute);margin-top:3px}
-.st{font:800 11px/1 "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:6px 8px;border:1px solid var(--line);border-radius:3px;color:var(--mute);white-space:nowrap}
-.st.live{border-color:var(--orange);color:var(--orange)}
-.st.soon{border-color:var(--blue);color:var(--ink)}
-.th{margin-top:30px;padding-top:18px;border-top:3px solid var(--orange)}
-.th h2{margin:6px 0 4px;font:800 30px/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
-.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
-.strip div{background:var(--panel);border-top:3px solid var(--blue);padding:8px 10px}
-.strip b{display:block;font:800 22px/1 "Barlow Condensed",sans-serif}
-.strip i{font:600 11px/1.2 Barlow,sans-serif;font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
-.src{font-size:12px;color:var(--mute);margin:0 0 16px}
-.post{padding:14px 0;border-bottom:1px solid var(--line)}
-.who{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mute);margin-bottom:6px;flex-wrap:wrap}
-.av{width:28px;height:28px;border-radius:50%;background:var(--blue);display:inline-grid;place-items:center;font:800 13px/1 "Barlow Condensed",sans-serif;color:var(--ink)}
-.who b{color:var(--ink);font-weight:600}
-.badge{font:800 10px/1 "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:4px 6px;border-radius:3px;background:var(--orange);color:var(--navy)}
-.badge.staff{background:var(--ink)}
-.post p{margin:0 0 8px}
-.acts{font-size:12.5px;color:var(--mute)}
-.acts span{margin-right:14px}
-.pin{background:var(--blue);border-left:5px solid var(--orange);padding:14px 14px 12px;margin:14px 0 4px}
-.pin .k{color:var(--ink)}
-.pin .av{background:var(--navy)}
-.porch{background:var(--panel);border:1px dashed var(--orange);padding:14px;margin:14px 0}
-.porch h3{margin:0 0 6px;font:800 22px/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
-.porch p{margin:0 0 10px;font-size:14.5px;color:var(--mute)}
-.btn{display:inline-block;background:var(--orange);color:var(--navy);font:800 14px/1 "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:11px 14px;border-radius:3px}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.reply{display:flex;gap:8px;margin-top:16px}
-.reply div{flex:1;border:1px solid var(--line);border-radius:3px;padding:11px 12px;color:var(--mute);font-size:14px}
-.foot{margin-top:26px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--mute)}
-@media(min-width:600px){h1{font-size:48px}.th h2{font-size:36px}}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--ink);font:400 15px/1.5 Barlow,system-ui,sans-serif}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px 40px}
+.tag{background:var(--orange);color:var(--navy);font:800 12px/1.2 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:7px 12px}
+h1{margin:22px 0 4px;font:800 36px/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
+h2{margin:26px 0 8px;font:800 22px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;color:var(--orange)}
+.sub{color:var(--mute);margin:0 0 12px;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font:800 11px/1 "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:6px 4px;border-bottom:1px solid var(--line)}
+td{padding:7px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+td b{font-weight:600}
+.pub{color:var(--ink)}.priv{color:var(--orange)}
+.k{display:block;font-size:11px;color:var(--mute)}
+pre{background:var(--panel);border-left:4px solid var(--blue);padding:12px;white-space:pre-wrap;word-break:break-word;font:400 13px/1.45 Barlow,sans-serif;margin:0 0 10px}
+pre.pin{border-color:var(--orange)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.grid div{background:var(--panel);border-top:3px solid var(--blue);padding:8px 10px}
+.grid b{display:block;font:800 24px/1 "Barlow Condensed",sans-serif}.grid i{font:600 11px/1.2 Barlow,sans-serif;font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+ul{margin:0;padding-left:18px;font-size:13.5px}li{margin:0 0 4px}
+.foot{margin-top:24px;padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--mute)}
+@media(min-width:600px){h1{font-size:46px}}
 </style>
 </head>
 <body>
-<div class="mock">Mockup for review. Not live. All handles and posts are fictional.</div>
+<div class="tag">Real reads and dry-run output. Nothing was posted to Wix.</div>
 <div class="wrap">
-<div class="mast"><div>GatorBait <span>Game Threads</span></div><small>Sign in</small></div>
+<h1>Game Threads + GatorBot</h1>
+<p class="sub">Site 18fb3a4e-d7f6-414a-aeb9-3047db3ea115. Groups read Sept. 30, 2026, via mcp__Wix__ExecuteWixAPI, GET /social-groups-proxy/groups/v2/groups. No member names read.</p>
 
-<div class="k">Missouri week</div>
-<h1>Game Threads</h1>
-<p class="sub">One thread per Florida game. Opens on Bloody Tuesday, closes after the recap. Read free; post with a GatorBait account.</p>
+<h2>The nine groups on production</h2>
+<table>
+<tr><th>Group</th><th>Privacy</th><th>Members</th><th>Last activity</th></tr>
+<tr><td><b>Game Day Threads</b><span class="k">1b1232f0-0dca-47ad-b500-cf12c9a3da41</span></td><td class="pub">PUBLIC</td><td>1</td><td>March 16</td></tr>
+<tr><td><b>Gator Football Talk</b><span class="k">74041d23-8785-41f7-8715-7f5562804685</span></td><td class="pub">PUBLIC</td><td>1</td><td>March 16</td></tr>
+<tr><td><b>Recruiting Central</b><span class="k">7b8950ba-2fec-470a-a9c9-3aeaf85989bb</span></td><td class="pub">PUBLIC</td><td>1</td><td>March 16</td></tr>
+<tr><td><b>Gator Hoops</b><span class="k">75976f5e-289c-493d-b7ab-ebc869b49e61</span></td><td class="pub">PUBLIC</td><td>1</td><td>March 16</td></tr>
+<tr><td><b>All Gator Sports</b><span class="k">40bb6c39-cf82-4b35-a7fc-6ae0124393b3</span></td><td class="pub">PUBLIC</td><td>1</td><td>March 16</td></tr>
+<tr><td><b>The Swamp Lounge</b><span class="k">73291075-3751-42b5-b877-ec5ec9349045</span></td><td class="pub">PUBLIC</td><td>1</td><td>March 16</td></tr>
+<tr><td><b>GatorBait Gold VIP Lounge</b><span class="k">a6400ba5-8553-44a6-b627-c8cb3377c171</span></td><td class="priv">PRIVATE, ADMIN_APPROVAL</td><td>1</td><td>March 16</td></tr>
+<tr><td><b>Swamp Talk</b><span class="k">590d01c2-5170-4fb8-8f26-2ec65e40b8ab</span></td><td class="priv">PRIVATE, ADMIN_APPROVAL</td><td>1</td><td>Sept. 25</td></tr>
+<tr><td><b>GatorBait Media Group</b><span class="k">13047ff1-a8e1-4765-9823-dbe7abc346dd</span></td><td class="pub">PUBLIC</td><td>4</td><td>Feb. 10</td></tr>
+</table>
+<p class="sub">All nine: aiSpamProtectionEnabled true, allowedToCreatePosts ALL_MEMBERS, rules [] on every group read. Every last-activity date equals the creation minute except GatorBait Media Group.</p>
 
-<div class="tabs"><span class="on">2026 football</span><span>Hoops</span><span>Buddy's Porch</span><span>House rules</span></div>
+<h2>GatorBot dry run, Missouri week</h2>
+<div class="grid"><div><b>1</b><i>Game thread</i></div><div><b>20</b><i>Discuss posts</i></div><div><b>3</b><i>Rules payloads</i></div></div>
+<p class="sub">node deploy/dept-ideas/community/gatorbot.mjs. Inputs: sports-live/scoreboard.json (ESPN), gazette-live/posts.json, evidence/groups.snapshot.json. Output: payloads/.</p>
 
-<ul class="list">
-<li class="open"><div class="wk">5</div><div><div class="t">Florida at No. 25 Missouri</div><span class="m">Sat., Oct. 3, 3:30 p.m. ET, ABC. Opened Tuesday.</span></div><span class="st live">Open</span></li>
-<li><div class="wk">6</div><div><div class="t">Week 6 opponent</div><span class="m">Opens Tuesday after the Missouri recap posts.</span></div><span class="st soon">Next</span></li>
-<li><div class="wk">4</div><div><div class="t">Florida 52, No. 4 Ole Miss 28</div><span class="m">Sept. 26. Closed after the recap and gallery.</span></div><span class="st">Archived</span></li>
-<li><div class="wk">2</div><div><div class="t">Florida 52, Campbell 3</div><span class="m">Sept. 12. Closed.</span></div><span class="st">Archived</span></li>
-<li><div class="wk">1</div><div><div class="t">Florida 66, Florida Atlantic 21</div><span class="m">Sept. 5. Closed.</span></div><span class="st">Archived</span></li>
+<h2>payloads/game-thread-401856708.json</h2>
+<p class="sub">Target Game Day Threads. Opens 2026-09-29 09:00 America/New_York. Closes when the recap posts.</p>
+<pre class="pin">GAME THREAD: No. 8 Florida (4-0) at No. 25 Missouri
+Kickoff Sat., Oct. 3, 3:30 p.m. ET, ABC. Memorial Stadium.
+Last week: Florida 52, No. 4 Ole Miss 28.
+
+This thread opened on Bloody Tuesday and closes when the recap posts. Read free; post with a GatorBait account. House rules are pinned in the group.
+Preview: Show-Me State of Mind: A First Look at No. 25 Missouri https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind
+Last week: Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28 https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28
+
+Record, ranking, kickoff and TV: ESPN via the GatorBait scoreboard feed (updated 2026-09-29T02:17:33Z).
+Posted by GatorBot (automated). Staff replies are signed by name.</pre>
+
+<h2>payloads/porch-401856708.json</h2>
+<p class="sub">Target GatorBait Gold VIP Lounge (PRIVATE). Proposed: accessRestriction PAID_PLANS with the buyable plans attached.</p>
+<pre>BUDDY'S PORCH, Missouri week: ask before the show.
+Drop your questions here. Buddy reads the Porch before The Buddy Martin Show, live Mondays, Wednesdays and Thursdays at 9 p.m. ET on YouTube and Facebook, and takes the best ones on air.
+Start with his column: Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time' https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time
+
+This is the members' room. GatorBot opens the call; Buddy answers on the show, not in the thread. Questions that get answered are listed in the game thread on Thursday.
+Posted by GatorBot (automated).</pre>
+
+<h2>Discuss-this-story routing (20 real stories since Sept. 25)</h2>
+<ul>
+<li>Game Day Threads: Show-Me State of Mind (Brenden Martin); Pay the Toll: Sumrall Braces for 'Bloody Tuesday' (Brenden Martin); Put Down the Poll, Gators (Buddy Martin).</li>
+<li>Gator Football Talk: the other 17, including Denzel Aberdeen injunction (Staff), Vernell Brown III MRI (Brenden Martin), Trautwein's trenches (Franz Beard), the 52-28 recap (Loren Meadows), Eddie Gilley's pick story, Chris Spears' galleries and 10 Thoughts.</li>
+<li>Recruiting Central, Gator Hoops, All Gator Sports: none this week; routing is keyword-based and idle rooms get nothing rather than filler.</li>
 </ul>
 
-<section class="th">
-<div class="k">Week 5 thread. Open</div>
-<h2>Florida at No. 25 Missouri</h2>
-<div class="strip">
-<div><b>4-0</b><i>Florida record</i></div>
-<div><b>No. 8</b><i>Florida ranking</i></div>
-<div><b>3:30</b><i>p.m. ET, ABC</i></div>
-</div>
-<p class="src">Record, ranking, kickoff and TV: ESPN, via the GatorBait scoreboard feed (sports-live/scoreboard.json, updated Sept. 29).</p>
+<h2>payloads/rules-*.json (PUT /social-groups/v2/rules/{groupId})</h2>
+<pre>Real fans, real names optional, real respect
+No rumors as fact
+No doxxing, no harassment
+Keep paid content paid
+No spam, no promo
+One game, one thread
+Staff decisions are final</pre>
+<p class="sub">Body validated against CreateOrReplaceAllRulesRequest (rules[].title, description, max 100). Three targets: Game Day Threads, Gator Football Talk, Gold VIP Lounge. Owner: Jarvis.</p>
 
-<div class="pin">
-<div class="k">Pinned by staff</div>
-<div class="who"><span class="av">BM</span><b>Buddy Martin</b><span class="badge staff">Editorial lead</span><span>Tue. 9:12 a.m.</span></div>
-<p>Sample text for the mockup. Thread's open. My column on why the poll doesn't matter this week is on the site. Members, drop your questions on the Porch below and I'll take the best ones on Wednesday's show at 9 p.m. ET.</p>
-<div class="acts"><span>Read the column</span><span>Preview: First Look at Missouri</span></div>
-</div>
-
-<div class="porch">
-<div class="k">Members only</div>
-<h3>Buddy's Porch: Ask before the show</h3>
-<p>Questions posted here go to Buddy before The Buddy Martin Show, live Mondays, Wednesdays and Thursdays at 9 p.m. ET. Included with any paid GatorBait plan.</p>
-<span class="btn">Ask Buddy</span> <span class="btn ghost">See plans</span>
-</div>
-
-<div class="post">
-<div class="who"><span class="av">S</span><b>SwampRat84</b><span class="badge">Member</span><span>Tue. 10:40 a.m.</span></div>
-<p>Sumrall's "Bloody Tuesday" line from the presser is the whole week in two words. Nobody on this roster needs a poll to get up for Columbia.</p>
-<div class="acts"><span>Reply</span><span>Like 14</span></div>
-</div>
-
-<div class="post">
-<div class="who"><span class="av">O</span><b>OrangeAndBlue352</b><span>Tue. 11:05 a.m.</span></div>
-<p>Grade 1 PCL sprain for Vernell Brown III per the site's MRI story. Anyone expect him to go, or is this a wait-till-warmups deal?</p>
-<div class="acts"><span>Reply</span><span>Like 9</span></div>
-</div>
-
-<div class="post">
-<div class="who"><span class="av">T</span><b>TebowEraTailgate</b><span class="badge">Member</span><span>Tue. 12:31 p.m.</span></div>
-<p>Asked Buddy on the Porch whether the O-line keeps the Ole Miss push going on the road. Franz's trenches piece has me believing.</p>
-<div class="acts"><span>Reply</span><span>Like 6</span></div>
-</div>
-
-<div class="post">
-<div class="who"><span class="av">H</span><b>HoopsFirst</b><span>Tue. 1:14 p.m.</span></div>
-<p>3:30 on ABC. Setting the tailgate for noon. Who's driving up?</p>
-<div class="acts"><span>Reply</span><span>Like 3</span></div>
-</div>
-
-<div class="reply"><div>Add to the thread. Sign in to post.</div><span class="btn">Post</span></div>
-</section>
-
-<p class="foot">Mockup only. Scores, record, ranking, kickoff and TV from ESPN via the GatorBait scoreboard feed; story references from gatorbaitmedia.com posts of Sept. 28 and 29, 2026. Handles are fictional. Buddy's post is sample copy pending his approval. No prices shown; plan gating uses existing GatorBait pricing plans.</p>
+<p class="foot">Stats: ESPN via sports-live/scoreboard.json. Stories: gazette-live/posts.json. Groups and plans: Wix REST, read only. The public REST spec has no Groups feed-create endpoint (three doc searches and an index scan), so feed posts are handoff payloads; rules payloads are API-valid. No prices, orders, subscriber counts or member names in this folder.</p>
 </div>
 </body>
 </html>

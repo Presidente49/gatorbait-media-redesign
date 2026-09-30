@@ -1,0 +1,16 @@
+{
+  "source": "mcp__Wix__ExecuteWixAPI, POST https://www.wixapis.com/pricing-plans/v3/plans/query (read only; prices, variants and orders stripped before saving)",
+  "docsUrl": "https://dev.wix.com/docs/api-reference/business-solutions/pricing-plans/plans-v3/query-plans",
+  "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+  "readAt": "2026-09-30",
+  "totalPlans": 18,
+  "buyablePublicPlans": [
+    { "id": "ae41ee7a-c4c2-4bc0-bb73-df1c242ec14a", "name": "ALL ACCESS ANNUAL", "slug": "all-access-annual", "perkMentionsChat": "Subscriber chat room" },
+    { "id": "fd37a730-da58-4f56-8c43-22fc3556a503", "name": "ALL ACCESS MONTHLY", "slug": "all-access-monthly-1" },
+    { "id": "4349d910-f017-4598-a8d3-1fc73ee6f991", "name": "MAGAZINE ANNUAL", "slug": "magazine-annual-2" },
+    { "id": "fb3b8e0e-6765-4b7d-9052-a9dd65c27460", "name": "MAGAZINE MONTHLY", "slug": "magazine-monthly-1" }
+  ],
+  "buyablePrivatePlan": { "id": "af2c283a-f1ef-41c2-9275-6098c1f095be", "name": "GATORBAIT GOLD", "slug": "gatorbait-gold-vip", "perkMentions": ["VIP-only live chat room, game day threads with staff", "Monthly AMA with Buddy Martin"] },
+  "legacyPerksPromisingForums": ["GNK Members Deal: Access to the Forums", "Mobile Subscriber: Forums & Threads, Groups", "GATORBAIT GOLD (2019): Special insider forums"],
+  "note": "Perks are marketing copy already on the plans. Whether any plan currently delivers a chat room or forum is not verified here; the Groups read shows no member activity in any group since creation."
+}

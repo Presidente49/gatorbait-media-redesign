@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T09:34:23.129Z",
+  "generatedAt": "2026-09-30T09:36:18.221Z",
   "mode": "dry-run",
   "postingPolicy": "Nothing here was sent. Rules payloads are valid CreateOrReplaceAllRules bodies. Feed-post payloads are handoff bodies because the public REST spec exposes no Groups feed-create endpoint; they are posted from the Groups dashboard or a Velo backend by the production owner.",
   "proposedRoutine": {

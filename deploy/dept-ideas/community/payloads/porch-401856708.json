@@ -21,7 +21,7 @@
   },
   "gating": {
     "today": "GatorBait Gold VIP Lounge is PRIVATE with accessRestriction ADMIN_APPROVAL (real read).",
-    "proposed": "Switch accessRestriction to PAID_PLANS in the Groups dashboard and attach the current buyable plans (ids in payloads/plans.json). No prices change."
+    "proposed": "Switch accessRestriction to PAID_PLANS in the Groups dashboard and attach the current buyable plans (ids in evidence/plans.json). No prices change."
   },
   "lifecycle": {
     "opens": {

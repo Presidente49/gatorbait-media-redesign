@@ -291,7 +291,7 @@ if(lead){
 let expectedLoader=null;
 try{
   const readme=readFileSync('deploy/front-page-2026/README.md','utf8');
-  const revs=[...readme.matchAll(/^- rev \d+: loader pinned to ([0-9a-f]{7,})/gm)];
+  const revs=[...readme.matchAll(/^- rev \d+:.*?home-code-loader-([0-9a-f]{7,})\.html/gm)];
   if(revs.length)expectedLoader=revs[revs.length-1][1];
 }catch{}
 

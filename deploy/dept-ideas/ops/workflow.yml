@@ -1,0 +1,69 @@
+# Proposed file: .github/workflows/kickoff-watch.yml
+name: GatorBait kickoff watch
+
+# Saturday game-day watchdog for the homepage. Every 10 minutes from an hour before kickoff to
+# five hours after (the same window automation/scoreboard_feed.py uses) it reads what a reader
+# gets, over plain HTTPS: the homepage HTML, the Pages build pointer (sports-live/current.json),
+# the front-page bundle at that commit on jsDelivr, and scoreboard.json freshness. No browser,
+# no model tokens, no Wix API. Outside the window the script exits in about a second.
+# It comments on issue #34 only when a check fails (one comment per failure signature per game,
+# plus one recovery note), never on success. Read-only against the site.
+
+on:
+  schedule:
+    # UTC. Saturday 15:00 through Sunday 07:50 covers a noon ET kickoff through five hours after
+    # a 10:30 p.m. ET kickoff. Months 8-12 and 1 are the season and bowl month. The script gates
+    # the real window from scoreboard.json, so most ticks are one-second no-ops.
+    - cron: '*/10 15-23 * 8-12,1 6'
+    - cron: '*/10 0-7 * 8-12,1 0'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Run the checks outside a game window'
+        type: boolean
+        default: false
+      post:
+        description: 'Comment on issue #34 when a check fails (off prints the comment in the log only)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  # issues: write is the one write, and only to add a comment to #34 when a check fails.
+  # Drop it to run in no-write mode: the run still turns red and GitHub emails the failure.
+  issues: write
+
+concurrency:
+  group: kickoff-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out the pointer, scoreboard and script only
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            sports-live
+            deploy/front-page-2026
+            automation
+          sparse-checkout-cone-mode: true
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Read production the way a reader does
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WATCH_ISSUE: '34'
+          IN_FORCE: ${{ github.event.inputs.force }}
+          IN_POST: ${{ github.event.inputs.post }}
+        run: |
+          FLAGS=""
+          if [ "$GITHUB_EVENT_NAME" = schedule ] || [ "$IN_POST" = true ]; then FLAGS="$FLAGS --post"; fi
+          if [ "$IN_FORCE" = true ]; then FLAGS="$FLAGS --force"; fi
+          node automation/kickoff-watch.mjs $FLAGS

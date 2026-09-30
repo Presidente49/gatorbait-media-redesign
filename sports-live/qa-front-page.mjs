@@ -303,6 +303,7 @@ for (const sc of only(storyScenarios)) {
       const more = document.querySelector('[data-story-kit="more"]'), ps = body ? [...body.querySelectorAll('p')].filter((p) => !p.closest('[data-story-kit]')) : [];
       return {
         scrollW: document.documentElement.scrollWidth, vw, off: off.slice(0, 5), fonts: [...fonts],
+        h1W: Math.round((document.querySelector('h1') || document.body).getBoundingClientRect().width), stripW: strip ? Math.round(strip.getBoundingClientRect().width) : 0, stripX: strip ? Math.round(strip.getBoundingClientRect().left) : 0,
         runtime: !!window.__GBM_KIT_RUNTIME__, kitNodes: document.querySelectorAll('[data-story-kit]').length, css: document.querySelectorAll('#gbm-story-kit-css').length,
         strips: document.querySelectorAll('[data-story-kit="strip"]').length, afterShare: !!strip && !!strip.previousElementSibling && strip.previousElementSibling.matches('[data-share]'),
         shareBtns: document.querySelectorAll('[data-share]').length,
@@ -321,6 +322,8 @@ for (const sc of only(storyScenarios)) {
     const check = (r, bad, phase) => {
       if (r.scrollW > r.vw) bad.push(`${phase}horizontal overflow ${r.scrollW}>${r.vw}`);
       if (r.off.length) bad.push(`${phase}elements past viewport: ` + r.off.join(', '));
+      // Wix's post header is a grid item: an unbreakable chip row must not widen it (production at 390 showed a 1,385 px header).
+      if (r.h1W > r.vw || r.stripW > r.vw || r.stripX < 0) bad.push(`${phase}header widened: h1 ${r.h1W}, strip ${r.stripW} at x ${r.stripX} (viewport ${r.vw})`);
       const badFonts = r.fonts.filter((f) => /georgia|times|anton|arial|(^|,)\s*serif\s*(,|$)/i.test(f));
       if (badFonts.length) bad.push(`${phase}fonts: ` + badFonts.join(' / '));
       if (r.strips !== 1 || !r.afterShare) bad.push(`${phase}strip count ${r.strips}, after share button ${r.afterShare}`);

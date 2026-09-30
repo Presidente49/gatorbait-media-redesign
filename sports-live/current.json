@@ -1,5 +1,5 @@
 {
-  "commit": "9653d739c147b2ae7ed753786d8f16bf3c68e863",
-  "updated": "2026-09-30T19:05:00Z",
-  "note": "Shell 2026 (PR #94): homepage Store link opens in a new tab and stays visible at every desktop width. Rollback: 677d5c3ec4f8983b6cd75f9b3016b11271be75f4."
+  "commit": "fba3a358a79bffc8853baf20dc499a4a1f9c7638",
+  "updated": "2026-09-30T18:02:00Z",
+  "note": "PR #95: story Share button and Guide strip mount beside the first visible h1 (the hidden native header h1 came first after header rev 31). Rollback: 9653d739c147b2ae7ed753786d8f16bf3c68e863."
 }

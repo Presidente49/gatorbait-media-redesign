@@ -348,3 +348,32 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 @keyframes fpTicker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes fpFlip{0%{transform:rotateX(90deg);opacity:.2}100%{transform:none;opacity:1}}
 @keyframes fpPulse{50%{opacity:.25}}
+/* ---------- The Road Ahead: additive season band (Brenden, Sept. 29) ---------- */
+/* Layout: one horizontal snap-scroll ribbon; a glowing route draws to the current game. Barlow only. Night palette. */
+#gbm-live.fp26 #gbm-road{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;background:radial-gradient(120% 120% at 80% 0%,#10306e 0%,var(--n) 60%);color:var(--ink);font-family:var(--fp-sans);padding:28px 0 26px;overflow:hidden;position:relative}
+#gbm-live.fp26 #gbm-road *{box-sizing:border-box}
+#gbm-live.fp26 #gbm-road .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:0 20px 14px;max-width:1240px;margin:0 auto}
+#gbm-live.fp26 #gbm-road h2{font:800 clamp(30px,6vw,52px)/.92 var(--fp-cond);text-transform:uppercase;margin:0}
+#gbm-live.fp26 #gbm-road h2 span{color:var(--o)}
+#gbm-live.fp26 #gbm-road .rec{font:700 14px var(--fp-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);text-align:right}
+#gbm-live.fp26 #gbm-road .rec b{display:block;font:800 34px/1 var(--fp-cond);color:var(--ink);letter-spacing:0}
+#gbm-live.fp26 #gbm-road .track{position:relative;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:20px;padding:26px 20px 12px;max-width:1240px;margin:0 auto;scrollbar-width:none}
+#gbm-live.fp26 #gbm-road .track::-webkit-scrollbar{display:none}
+#gbm-live.fp26 #gbm-road .line{position:absolute;left:20px;right:20px;top:39px;height:3px;background:rgba(255,255,255,.12);border-radius:3px}
+#gbm-live.fp26 #gbm-road .line i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--b),var(--o));box-shadow:0 0 14px var(--o);border-radius:3px;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+#gbm-live.fp26 #gbm-road .g{position:relative;flex:0 0 156px;scroll-snap-align:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 12px 12px;min-height:168px;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:inherit}
+#gbm-live.fp26 #gbm-road .g::before{content:"";position:absolute;left:14px;top:-19px;width:13px;height:13px;border-radius:50%;background:var(--n);border:3px solid rgba(255,255,255,.35)}
+#gbm-live.fp26 #gbm-road .g.w::before{background:var(--o);border-color:var(--o);box-shadow:0 0 10px var(--o)}
+#gbm-live.fp26 #gbm-road .g.nx{border-color:var(--o);background:rgba(250,70,22,.12)}
+#gbm-live.fp26 #gbm-road .g.nx::before{background:var(--o);border-color:#fff;animation:gbmp 1.6s ease-in-out infinite}
+#gbm-live.fp26 #gbm-road .g.boss{border-color:rgba(255,90,60,.55)}
+#gbm-live.fp26 #gbm-road .dt{font:700 11px var(--fp-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+#gbm-live.fp26 #gbm-road .op{overflow-wrap:anywhere;font:800 22px/1 var(--fp-cond);text-transform:uppercase}
+#gbm-live.fp26 #gbm-road .rk{color:var(--o);font-size:14px;margin-right:3px}
+#gbm-live.fp26 #gbm-road .sc{white-space:nowrap;font:800 30px/1 var(--fp-cond);margin-top:auto}
+#gbm-live.fp26 #gbm-road .bar{height:5px;border-radius:5px;background:rgba(255,255,255,.12);overflow:hidden}
+#gbm-live.fp26 #gbm-road .bar i{display:block;height:100%;width:0;background:var(--o);transition:width 1.2s .3s cubic-bezier(.2,.7,.2,1)}
+#gbm-live.fp26 #gbm-road .sub{font:600 12px var(--fp-sans);color:var(--mut)}
+#gbm-live.fp26 #gbm-road .cd{white-space:nowrap;font:800 22px var(--fp-cond);color:#fff;letter-spacing:.04em}
+@keyframes gbmp{50%{box-shadow:0 0 0 7px rgba(250,70,22,.25)}}
+@media(prefers-reduced-motion:reduce){#gbm-live.fp26 #gbm-road .line i,#gbm-live.fp26 #gbm-road .bar i{transition:none}#gbm-live.fp26 #gbm-road .g.nx::before{animation:none}}

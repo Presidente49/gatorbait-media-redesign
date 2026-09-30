@@ -1,6 +1,10 @@
 # GatorBait Homepage Baseline Lock
 
-## LOCKED LOOK — Sept. 29, 2026 (supersedes everything below)
+## LOOK LOCK LIFTED — Sept. 29, 2026, later that night
+
+Brenden: "I didn't lock anything, you can do anything you want." The lock below is withdrawn; design changes are Jarvis's call again, still small, reversible, tested at 320/390/430/desktop, and recorded in #34 with a rollback. First change under this: The Road Ahead season band (Home Code rev 25).
+
+## (Withdrawn) LOCKED LOOK — Sept. 29, 2026
 
 Brenden, Sept. 29 late evening: "I'm very happy with the website right now as it is. I really think it's time to lock this look."
 

@@ -150,6 +150,14 @@ Only Brenden lifts it, in chat or on the Control Room card. Until then, no produ
 - Finish the FCC key on the Mac (card `fcc-mac-key`).
 - Decide on the four draft Wix sites and the unused apps (below).
 
+### If Jarvis hits its usage limit (Sept. 29, 8:30 p.m. ET)
+Brenden asked to consolidate onto FCC. FCC has no provider key yet (card `fcc-mac-key`), so nothing can run there today. Until it does:
+- **Safe on any model, read-only:** the five briefs in `automation/ops-hub/model-router/jobs-pending/`; the daily Money Board row; health reads.
+- **Claude only, never FCC:** anything touching Wix embeds, email, members, billing, DNS, accounts, or the Control Room's approvals.
+- **Live state to protect:** homepage = Home Code `622d8ece` rev 24 (rollback `deploy/front-page-2026/home-code-rev22.html`); Magazine `1dd74333` rev 48. Codex's Sept. 30 8:30 a.m. rotation may write Magazine only, not `622d8ece`.
+- **Open on Brenden:** delete the purge file on GitHub, FCC key, draft sites, unused apps, branch cleanup, blank pages (or tap "Jarvis, add them"), Money Board connections (vidIQ, Metricool, Wix Payments ID), Restream reconnect.
+- **Wake path:** Control Room https://claude.ai/artifact/3X5Caw5wg8q3xbvtbjNDvx (Tell Jarvis / Show tab) fires routine `trig_012k4fT7KAoBHJrSSjowzNXh` into the Jarvis session; the 2-hour ops loop and 7:44 a.m. money report keep running.
+
 ### Sept. 29 evening sync (Jarvis, about 6:45 p.m. ET)
 - **Controller:** Jarvis since about 5:05 p.m. ET (#34 comment 5899619687). Codex released its root claim. Codex's Sept. 30 8:30 a.m. Feature Rotation task may write only Home Code `622d8ece` and Magazine `1dd74333`; Jarvis reads afterward.
 - **Homepage (Sept. 29 ~7:45 p.m. ET):** Front Page 2026 with Swamp Night as the everyday look. Home Code `622d8ece` rev **24** is a 521-char loader pinned to `main` commit 2c4f4f5 (`sports-live/homepage.js`, built from `sports-live/src/front-page.*` and `front-page.config.json`, `look: "swamp-night"`). Live QC run 36644613421 passed at 320/390/430/desktop. Rollback: `deploy/front-page-2026/home-code-rev22.html`, one PATCH. Codex's Feature Rotation must not write `622d8ece`; the renderer holds its own lead rule and Magazine module.

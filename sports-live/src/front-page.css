@@ -304,7 +304,7 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-hub-head h2{font-size:56px}
 }
 /* Laptop widths: with both score bugs up, the nav's countdown seconds pushed the Store link out of view at 1365px. */
-@media(min-width:821px) and (max-width:1439px){#gbm-live.fp26 .fp-nav .fp-cd .fp-cd-s{display:none}}
+@media(min-width:821px) and (max-width:1439px){#gbm-live.fp26 .fp-nav .fp-cd .fp-cd-s{display:none}#gbm-live.fp26 .fp-links{gap:16px}}
 @media(min-width:1100px){
 #gbm-live.fp26{--fp-pad:64px}
 }

@@ -53,7 +53,8 @@ function apTime(iso) { const p = Object.fromEntries(ET.formatToParts(new Date(is
 const num = v => { const n = typeof v === 'object' && v ? v.displayValue ?? v.value : v; return n == null || n === '' ? null : Number(n); };
 const rank = c => { const r = c?.curatedRank?.current ?? c?.rank; return r && r >= 1 && r <= 25 ? +r : null; };
 const NAMES = {}; // ESPN team id -> location, learned from documents that carry it; lastFive and scoringPlays objects carry only displayName
-const loc = t => t?.location || (t?.id && NAMES[String(t.id)]) || t?.displayName || '';
+const KNOWN = []; // opponent names from sports-live/scoreboard.json, for ESPN objects that carry only displayName
+const loc = t => t?.location || (t?.id && NAMES[String(t.id)]) || KNOWN.find(n => String(t?.displayName || '').startsWith(n + ' ')) || t?.displayName || '';
 const learn = t => { if (t?.id && t?.location) NAMES[String(t.id)] = t.location; };
 const rec = (c, type) => (c.record || c.records || []).find(r => r.type === type)?.summary ?? null;
 const ranked = (r, n) => (r ? `No. ${r} ` : '') + n;
@@ -65,6 +66,7 @@ async function main() {
   const sb = JSON.parse(fs.readFileSync(scoreboardPath, 'utf8'));
   if (!sb.next?.eventId || !sb.next.opponent) fail('scoreboard.json has no next game');
   const season = sb.season, nextId = String(sb.next.eventId);
+  KNOWN.push(...sb.schedule.map(g => g.opponent));
   const S = {}; // sources: short key -> ESPN URL
   const src = (key, url) => { S[key] = url; return key; };
   const U = {
@@ -129,7 +131,7 @@ async function main() {
     return { opponent: g.opponent, florida: say(g.opponent, f.score?.fla, f.score?.opp, f.home, f.status, f.date), [opp.toLowerCase()]: say(g.opponent, g.score?.opp, g.score?.them, g.home, g.status, g.date), sources: ['S3', 'scoreboard.json'] };
   });
 
-  const lastFive = Object.fromEntries((nextSum.lastFiveGames || []).map(x => [String(x.team.id) === oppId ? 'opp' : 'fla', x.events.map(e => ({ eventId: e.id, result: e.gameResult, score: e.score, opponent: loc(e.opponent), date: e.gameDate, at: e.atVs === '@' }))]));
+  const lastFive = Object.fromEntries((nextSum.lastFiveGames || []).map(x => [String(x.team.id) === oppId ? 'opp' : 'fla', x.events.map(e => ({ eventId: e.id, result: e.gameResult, score: e.score, opponent: loc(e.opponent), date: e.gameDate, at: e.atVs === '@', source: 'S1' }))]));
   const pred = nextSum.predictor || {};
   const out = {
     generatedAt: new Date().toISOString(), season, feedUpdatedAt: sb.updatedAt, dataMode: args['from-dir'] ? 'saved-espn-json' : 'live-espn',
@@ -138,7 +140,7 @@ async function main() {
       predictor: pred.homeTeam ? { opp: num(String(pred.homeTeam.id) === oppId ? pred.homeTeam.gameProjection : pred.awayTeam.gameProjection), fla: num(String(pred.homeTeam.id) === FLA ? pred.homeTeam.gameProjection : pred.awayTeam.gameProjection), label: pred.header } : null, source: 'S1' },
     opponent: { id: oppId, name: opp, displayName: oppC.team.displayName, rank: team.rank ?? rank(oppC), record, conf: rec(oppC, 'vsconf'), standing: team.standingSummary || null, color: team.color || null, sources: ['S2', 'S1'] },
     florida: { rank: flaDoc.team.rank ?? rank(flaC), record: flaDoc.team.record?.items?.find(i => i.type === 'total')?.summary, conf: rec(flaC, 'vsconf'), standing: flaDoc.team.standingSummary || null, sources: ['S5', 'S1'] },
-    results: games, pointsFor: finals.reduce((a, g) => a + g.score.opp, 0), pointsAgainst: finals.reduce((a, g) => a + g.score.them, 0), perGame, leaders, lastGame, lastFive, commonOpponents: common,
+    results: games, pointsFor: finals.reduce((a, g) => a + g.score.opp, 0), pointsAgainst: finals.reduce((a, g) => a + g.score.them, 0), pointsSource: 'S3', perGame, leaders, lastGame, lastFive, commonOpponents: common,
     seriesHistory: null, notes: [
       'seriesHistory is null: the ESPN site API documents read here carry no head-to-head history; add it only from a source on the allowed list.',
       'opponentRank on results rows is the rank ESPN attaches to the row when read, not the rank at kickoff.',
@@ -194,7 +196,7 @@ function html(d) {
   const o = d.opponent, g = d.game, N = o.name, lg = d.lastGame, s = k => `<sup><a href="#${k}">${k}</a></sup>`;
   const tile = (label, a, b, k) => `<div class="t"><small>${label}</small><b>${a}</b><i>Florida ${b}</i>${s(k)}</div>`;
   const rows = d.results.map(r => `<tr${r.eventId === g.eventId ? ' class="nx"' : ''}><td>${apDate(r.date)}</td><td>${esc(ranked(r.opponentRank, r.opponent))}</td><td>${r.neutral ? 'N' : r.home ? 'H' : 'A'}</td><td class="r${r.result === 'W' ? ' w' : r.result === 'L' ? ' l' : ''}">${r.status === 'final' ? `${r.result} ${r.score.opp}-${r.score.them}` : esc(r.tv || '')}</td></tr>`).join('');
-  const lead = (obj, k) => Object.entries(obj).map(([key, v]) => `<li><span>${LEAD[key] || key}</span><b>${esc(v.name)}${v.pos ? ', ' + v.pos : ''}</b><em>${esc(v.line)}</em>${s(k)}</li>`).join('');
+  const lead = (obj, k) => Object.entries(obj).map(([key, v]) => `<li><span>${LEAD[key] || key}</span><b>${esc(v.name)}${v.pos ? ', ' + v.pos : ''}${s(k)}</b><em>${esc(v.line)}</em></li>`).join('');
   const stats = Object.entries(lg.teamStats).map(([k, v]) => `<tr><td>${STAT_LABEL[k]}</td><td class="r">${esc(v.opp)}</td><td class="r">${esc(v.them)}</td></tr>`).join('');
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Scout: ${esc(N)}</title>
@@ -217,7 +219,7 @@ function html(d) {
 <table><tr><td></td><td class="r">${esc(N)}</td><td class="r">${esc(lg.opponent)}</td></tr>${stats}</table>
 <ul>${lead(lg.leaders.opp, 'S4')}</ul>
 <h2>Common opponents</h2>
-${d.commonOpponents.length ? '<ul>' + d.commonOpponents.map(x => `<li><span>${esc(x.opponent)}</span><b>Florida ${esc(x.florida)}</b><em>${esc(N)} ${esc(x[N.toLowerCase()])}</em>${s('S3')}</li>`).join('') + '</ul>' : '<p class="dek">None.</p>'}
+${d.commonOpponents.length ? '<ul>' + d.commonOpponents.map(x => `<li><span>${esc(x.opponent)}</span><b>Florida ${esc(x.florida)}${s('S3')}</b><em>${esc(N)} ${esc(x[N.toLowerCase()])}</em></li>`).join('') + '</ul>' : '<p class="dek">None.</p>'}
 <h2>Sources</h2>
 <p class="src">${Object.entries(d.sources).map(([k, u]) => `<span id="${k}">[${k}] <a href="${esc(u)}">${esc(u)}</a></span>`).join('<br>')}<br>Florida results: sports-live/scoreboard.json (ESPN via automation/scoreboard_feed.py). Series history: not in these ESPN documents, omitted.</p>
 </main></body></html>

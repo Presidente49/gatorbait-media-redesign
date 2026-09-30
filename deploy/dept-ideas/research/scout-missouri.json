@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-09-30T09:37:14.472Z",
+ "generatedAt": "2026-09-30T09:38:59.871Z",
  "season": 2026,
  "feedUpdatedAt": "2026-09-29T02:17:33Z",
  "dataMode": "saved-espn-json",
@@ -256,6 +256,7 @@
  ],
  "pointsFor": 143,
  "pointsAgainst": 83,
+ "pointsSource": "S3",
  "perGame": {
   "totalPointsPerGame": {
    "opp": 35.8,
@@ -591,7 +592,8 @@
     "score": "13-7",
     "opponent": "Virginia Cavaliers",
     "date": "2025-12-28T00:30Z",
-    "at": false
+    "at": false,
+    "source": "S1"
    },
    {
     "eventId": "401856663",
@@ -599,7 +601,8 @@
     "score": "54-14",
     "opponent": "Arkansas-Pine Bluff",
     "date": "2026-09-04T00:00Z",
-    "at": false
+    "at": false,
+    "source": "S1"
    },
    {
     "eventId": "401856678",
@@ -607,7 +610,8 @@
     "score": "38-21",
     "opponent": "Kansas",
     "date": "2026-09-12T00:00Z",
-    "at": true
+    "at": true,
+    "source": "S1"
    },
    {
     "eventId": "401856689",
@@ -615,7 +619,8 @@
     "score": "27-17",
     "opponent": "Troy",
     "date": "2026-09-19T23:00Z",
-    "at": false
+    "at": false,
+    "source": "S1"
    },
    {
     "eventId": "401856703",
@@ -623,7 +628,8 @@
     "score": "31-24",
     "opponent": "Mississippi State",
     "date": "2026-09-26T23:45Z",
-    "at": true
+    "at": true,
+    "source": "S1"
    }
   ],
   "fla": [
@@ -631,33 +637,37 @@
     "eventId": "401752785",
     "result": "W",
     "score": "40-21",
-    "opponent": "Florida State Seminoles",
+    "opponent": "Florida State",
     "date": "2025-11-29T21:30Z",
-    "at": false
+    "at": false,
+    "source": "S1"
    },
    {
     "eventId": "401856637",
     "result": "W",
     "score": "66-21",
-    "opponent": "Florida Atlantic Owls",
+    "opponent": "Florida Atlantic",
     "date": "2026-09-05T23:45Z",
-    "at": false
+    "at": false,
+    "source": "S1"
    },
    {
     "eventId": "401856672",
     "result": "W",
     "score": "52-3",
-    "opponent": "Campbell Fighting Camels",
+    "opponent": "Campbell",
     "date": "2026-09-12T21:30Z",
-    "at": false
+    "at": false,
+    "source": "S1"
    },
    {
     "eventId": "401856687",
     "result": "W",
     "score": "44-39",
-    "opponent": "Auburn Tigers",
+    "opponent": "Auburn",
     "date": "2026-09-19T23:00Z",
-    "at": true
+    "at": true,
+    "source": "S1"
    },
    {
     "eventId": "401856699",
@@ -665,7 +675,8 @@
     "score": "52-28",
     "opponent": "Ole Miss",
     "date": "2026-09-26T19:30Z",
-    "at": false
+    "at": false,
+    "source": "S1"
    }
   ]
  },

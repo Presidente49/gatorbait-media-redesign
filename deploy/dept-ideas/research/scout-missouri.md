@@ -2,7 +2,7 @@
 
 No. 8 Florida (4-0, 2-0 SEC) [S5][S1] at No. 25 Missouri (3-1, 0-1 SEC, 10th in SEC) [S2][S1], Oct. 3, 3:30 p.m. ET, Memorial Stadium, Columbia, MO, ABC [S1].
 
-Built 2026-09-30 09:37Z from ESPN JSON saved in espn/; Florida results from sports-live/scoreboard.json (updated 2026-09-29T02:17:33Z). Bracketed keys are the sources listed at the end.
+Built 2026-09-30 09:38Z from ESPN JSON saved in espn/; Florida results from sports-live/scoreboard.json (updated 2026-09-29T02:17:33Z). Bracketed keys are the sources listed at the end.
 
 ## Results (3-1) [S3]
 
@@ -104,7 +104,7 @@ Scoring:
 ## Last five, both teams [S1]
 
 - Missouri: L 13-7 vs. Virginia Cavaliers (Dec. 27); W 54-14 vs. Arkansas-Pine Bluff (Sept. 3); W 38-21 at Kansas (Sept. 11); W 27-17 vs. Troy (Sept. 19); L 31-24 at Mississippi State (Sept. 26)
-- Florida: W 40-21 vs. Florida State Seminoles (Nov. 29); W 66-21 vs. Florida Atlantic Owls (Sept. 5); W 52-3 vs. Campbell Fighting Camels (Sept. 12); W 44-39 at Auburn Tigers (Sept. 19); W 52-28 vs. Ole Miss (Sept. 26)
+- Florida: W 40-21 vs. Florida State (Nov. 29); W 66-21 vs. Florida Atlantic (Sept. 5); W 52-3 vs. Campbell (Sept. 12); W 44-39 at Auburn (Sept. 19); W 52-28 vs. Ole Miss (Sept. 26)
 
 ## ESPN Matchup Predictor [S1]
 

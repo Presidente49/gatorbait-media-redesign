@@ -1,51 +1,59 @@
-# The Ledger — Research dept. idea
+# The Scout
 
-## 1) The idea (two sentences)
+## The idea
 
-The Ledger is Florida's playoff resume as a live page: one line per game with opponent rank at kickoff, site, score and margin, followed by a quarter strip for the last final, a "what Saturday adds" line for the next opponent and a Gauntlet block that totals the record of every remaining SEC opponent. Every figure is drawn from ESPN's public scoreboard as already saved in `sports-live/scoreboard.json`, and every figure carries its source line.
+The Scout is a script, not a page: `deploy/dept-ideas/research/scout.mjs` reads the next opponent from `sports-live/scoreboard.json`, pulls five ESPN public JSON documents (the pregame summary, the opponent's team record, the opponent's schedule, the opponent's last completed game, Florida's team record), cross-checks them against each other and writes a scouting sheet in which every number carries the URL it came from. It ran for real on Missouri (Oct. 3) and produced `scout-missouri.json` (the data), `scout-missouri.md` (the desk copy) and `preview.html` (the same sheet in the Swamp Night look). Round one's Ledger restyled numbers already in the repo; this makes new numbers from ESPN and proves where each came from.
 
-## 2) Why readers or revenue care
+What the sheet holds for Missouri, all cited: No. 25, 3-1, 0-1 SEC, 10th in the SEC; every result with site, score and margin (143 points for, 83 against); season per-game offense and defense side by side with Florida (Missouri 35.8 points and 418.8 yards a game, 20.8 and 318.5 allowed; Florida 53.5 and 532.8, 22.8 and 351.3 allowed); season leaders (Austin Simmons 70 of 107 for 947 yards and 11 touchdowns, Jamal Roberts 395 rushing yards, Cayden Lee 27 catches for 412 yards, Daeden Hopkins six sacks); the 31-24 loss at Mississippi State by quarter (0-10-14-0), team stats, game leaders and every scoring play; five common opponents with Florida (Ole Miss, Texas, Georgia, Kentucky, Oklahoma) and how each team fared or when each plays them; ESPN's Matchup Predictor (Florida 70.2 percent); kickoff, venue, TV and the forecast at read time. Series history is not in the ESPN documents, so the sheet says so instead of sourcing it elsewhere.
 
-- It answers the question Gator fans are asking every Sunday from Oct. 3 on: what does this win (or loss) do to the resume? Nobody else in the Florida market renders that as a single, sourced page that updates itself.
-- It is a natural companion to Buddy Martin's poll and playoff columns and to Brenden's Sunday "Chomp Up the Charts" pieces, so it deepens the primary editorial home instead of competing with it. The page links out to those stories; it does not duplicate them.
-- It is a repeat-visit surface. Readers return after every game to see the line change, which is the cheapest traffic GatorBait can earn: no new writing, no new photos, no send.
-- Different from Jarvis's two features: The Road Ahead shows where the season is going; The Tunnel opens game day. The Ledger shows what the season has already proven and what the next result is worth.
-- Verified today from the feed (`sports-live/scoreboard.json`, updated 2026-09-29T02:17Z): 214-91 in points, +30.8 average margin, one win over a ranked team (No. 4 Ole Miss), one SEC road win (Auburn), remaining SEC opponents a combined 21-7 (.750), Texas and Georgia both on the road 14 days apart.
+The script refuses to write if the pieces disagree: the record computed from the schedule must equal ESPN's record, the schedule's points must equal ESPN's per-game averages, and the last game's line score must add up to its final. That is the same discipline as `automation/scoreboard_feed.py`.
 
-## 3) How it is built (files, data endpoints, refresh cadence, effort in hours)
+## Why it matters
 
-**Files (all new, none touching the live homepage):**
-- `deploy/dept-ideas/research/preview.html` — the prototype in this folder, 8,277 characters, CSS only, Barlow and Barlow Condensed from Google Fonts, Swamp Night palette.
-- If approved: `sports-live/src/ledger.js` (a renderer that reads the existing JSON and fills the same page structure) and a `ledger` entry in `sports-live/front-page.config.json`, built by the existing `sports-live/build-front-page.mjs` and checked by `sports-live/qa-front-page.mjs`. No new scheduler, no new repo, no new renderer stack.
+- It feeds writers before it feeds readers. Buddy Martin's Monday column and the Friday "first look" today are written from memory and ESPN tabs. The sheet gives the desk a sourced number set in one file the morning after each game, with the cross-checks already done.
+- It feeds the homepage without touching it. The Tunnel already renders an opponent record under the opponent's name (`front-page.js` reads `next.opponentRecord`), but the feed never emits that field, so the line is blank on game day. The Scout produces exactly that string, plus a small block The Road Ahead can show under each remaining opponent.
+- It repeats for free. Same script, next opponent, every week; it adds the opponent's team, schedule and one summary document to what the scoreboard job already reads.
+- It is honest about limits. Ranks on schedule rows are ESPN's at read time, not at kickoff, and the sheet says so on the row.
 
-**Data already in the repo (used in the preview):**
-- `sports-live/scoreboard.json`: `team` (rank, record, conference record), `schedule` (event IDs, dates, opponent rank at kickoff, home/away, final scores, TV), `last.quarters` (Ole Miss only), `standings` (SEC overall and conference records).
-- `gazette-live/posts.json`: story links, which is the only place links come from; no ESPN or SEC links are emitted, matching the existing feed rule.
+Proposed feed addition (shape only; `front-page.js` is not edited here, and `validate_scoreboard.py` rejects unknown keys, so both the validator and the feed need a controller-assigned change):
 
-**ESPN public endpoints it reads once live (same host the feed already uses, `site.api.espn.com/apis/site/v2/sports/football/college-football/`):**
-- `teams/57/schedule?season=2026&seasontype=2` — Florida's schedule, results, opponent ranks. Already read by `automation/scoreboard_feed.py`.
-- `summary?event=<eventId>` for each final (401856637, 401856672, 401856687, 401856699, then 401856708 after Saturday) — quarter scores and box score. The feed today keeps quarters only for the last final; The Ledger asks the feed to keep the `quarters` array on every final so the quarter strip and a first-half/second-half pattern can cover the whole season.
-- `scoreboard?groups=8&week=<n>` — SEC results by week, used only to refresh the Gauntlet block's opponent records between Florida games.
-- `.../apis/v2/sports/football/college-football/standings?group=8&season=2026` — SEC standings. Already read by the feed.
-- `teams/57` — Florida's current rank and record, as a cross-check on the schedule payload.
+```
+next.opponentRecord: "3-1"                       // string; front-page.js already reads it for the Tunnel line
+next.scout: { record, conf, standing, ppg, oppPpg, ypg, oppYpg,
+              leaders: { pass, rush, rec },        // each { name, pos, line }
+              last: { opponent, result, score, date },
+              common: [{ opponent, fla, opp }], asOf, sources: [url, ...] }
+schedule[i].opponentRecord: "3-1"                 // Road Ahead card subline; null when unknown
+```
 
-**Refresh cadence:** none new. The scoreboard job in `.github/workflows/refresh-newsroom-feed.yml` already runs on a five-minute tick and polls from one hour before kickoff to five hours after; The Ledger re-renders whenever that file changes. The only feed change is a small one in `automation/scoreboard_feed.py` to retain quarter arrays for all finals, validated by `automation/validate_scoreboard.py`.
+The Tunnel needs zero code for `opponentRecord`. The Road Ahead needs one line in `roadHtml` to print `g.opponentRecord` under the opponent, and the Tunnel's "More on Missouri" list could take a one-line strip from `next.scout` (points per game, top passer, last result). Both are small and reversible.
 
-**Effort:** about 6 hours total. Renderer and config, 3 hours; feed change plus a fixture test in `automation/tests/test_scoreboard_feed.py`, 1.5 hours; QA at 390 and 1440 pixels through the existing QA script, 1 hour; source-line copy review, 0.5 hours.
+## Evidence
 
-## 4) What it needs from Brenden
+Tool calls, in order:
 
-1. A yes or no on the concept and the name (The Ledger, or a house name Brenden prefers).
-2. Where it lives: a section on the free sports-news homepage below The Road Ahead, or its own page linked from the homepage. The recommendation is its own page with a one-line homepage teaser, so the homepage baseline lock is untouched.
-3. Approval to make the small feed change (retain `quarters` on every final). It is read-only against ESPN and adds no request volume; the summary calls already happen.
-4. A ruling on the wording "playoff resume." AP style keeps "resume" without accents; if Brenden prefers "ledger" or "case" throughout, the copy changes in one place.
-5. A controller assignment under issue #3 before any of the above touches `sports-live/` or the homepage. Nothing here is deployed; the preview lives only in this folder.
+1. `mcp__Exa__web_fetch_exa` on `https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142`: refused, `CRAWL_UNEXPECTED_CONTENT_TYPE` (Exa will not return JSON bodies). Switched to TinyFish per the brief.
+2. `mcp__TinyFish__get_wallet`: balance negative, auto-reload unconfigured; fetch is metered per URL, so only two fetch calls were made.
+3. `mcp__TinyFish__fetch_content`, three URLs in one call (tool result ID `mcp-TinyFish-fetch_content-1790745284466`, 473,336 characters, `errors: []`): `teams/142` (2,369 ms), `teams/142/schedule?season=2026&seasontype=2` (2,660 ms), `summary?event=401856708` (2,565 ms).
+4. `mcp__TinyFish__fetch_content`, two URLs in one call (tool result ID `mcp-TinyFish-fetch_content-1790745339875`, 638,836 characters, `errors: []`): `summary?event=401856703` (393 ms), `teams/57` (238 ms).
+5. `node scout.mjs --from-dir espn --html` from the saved responses: `{"opponent":"Missouri","record":"3-1","rank":25,"games":12,"finals":4,"lastGame":"L 24-31 at Mississippi State","common":["Ole Miss","Texas","Georgia","Kentucky","Oklahoma"]}`. All three consistency checks passed.
+6. Playwright render of `preview.html` at 390 and 1365 px: no horizontal overflow (see report).
 
-## 5) Risks
+Files in this folder: `scout.mjs` (about 26 KB), `scout-missouri.json` (15 KB), `scout-missouri.md` (6 KB), `preview.html` (8.7 KB, under the 12,000-character cap), and `espn/` holding the five raw ESPN responses exactly as fetched (team-142 19 KB, team-57 19 KB, schedule-142-2026 287 KB, summary-401856708 110 KB, summary-401856703 550 KB) so the run can be repeated offline and audited.
 
-- **Rank drift.** Opponent rank at kickoff is what the resume should record, but the feed stores ESPN's current rank on the schedule row. Once a game is final the row's rank must be frozen; the renderer should write it to a small `resume` block in the JSON the first time a game goes final, and the source line should say "rank at kickoff."
-- **ESPN endpoint changes.** The site API is public but undocumented. Mitigation already exists: `validate_scoreboard.py` refuses to write a bad file, so the last good Ledger stays up.
-- **Quarter data is thin today.** Only the Ole Miss game carries quarters in the repo, so the half-by-half pattern is a one-game sample until the feed change ships. The preview says so plainly rather than inferring a trend.
-- **Missouri's rank can move before kickoff.** The "what Saturday adds" line is stated as of the feed timestamp and labeled that way; the copy should never promise "a second ranked win" as a certainty.
-- **Overlap with columns.** Buddy Martin already writes the playoff-path column. The Ledger must link to his pieces and never restate his projections (the ESPN FPI numbers in his Sept. 27 column are not in the feed and are not shown here).
-- **Scope creep.** The obvious next asks (opponent box scores, FPI, SP+) each add endpoints or paid sources. Keep The Ledger to the three public endpoints above until it has run through the Texas and Georgia stretch.
+Live mode (`node scout.mjs --save-dir espn --html`) uses Node's `fetch` against the same URLs; it cannot run from this container because direct HTTP to ESPN is blocked here, which is why the saved-response mode exists and is the mode the evidence above used.
+
+## What it needs from Brenden
+
+1. A yes on the name and on where the desk copy goes: a Monday file in the repo (`deploy/dept-ideas/research/scout-<opponent>.md`, or a `sports-live/scout/` folder if promoted), or pasted into the writers' channel.
+2. A controller assignment under issue #3 for the feed change: `opponentRecord` on `next` and `schedule[]`, the optional `next.scout` block, the matching `validate_scoreboard.py` rule and a fixture test. Proposed cadence: the existing scoreboard job runs it once after each Florida final and once Thursday morning; no new scheduler. Proposed prompt for the routine, not created here: "run `node deploy/dept-ideas/research/scout.mjs --save-dir espn` and commit the outputs if the consistency checks pass."
+3. A ruling on the Matchup Predictor and forecast lines: keep them in the desk copy only, or allow them on the homepage strip. The recommendation is desk copy only.
+4. Whether series history should be added from FloridaGators.com game notes (allowed source) as a hand-maintained field, since ESPN's documents do not carry it.
+
+## Risks
+
+- ESPN's site API is public but undocumented. The script fails closed (exit 2, nothing written) on any missing field or failed cross-check, so a bad week leaves last week's sheet in place.
+- Ranks on schedule rows drift. The sheet labels them "at read time"; a promoted version should freeze the rank when a game goes final, as the round-one Ledger also noted.
+- The `lastFiveGames` and `scoringPlays` objects name teams by display name only; the script resolves them through the ids it has seen and the feed's opponent list, and falls back to ESPN's display name (mascot included) for teams outside both, such as last season's Virginia game.
+- Season leaders come from the pregame summary, which ESPN refreshes on its own schedule; the `asOf` stamp and the feed's `updatedAt` are both in the JSON so a stale read is visible.
+- The raw `espn/` folder is about 1 MB. If that is too heavy for the repo, keep only `scout-*.json` and re-fetch on demand; the script does not need the raw files once the sheet is written.

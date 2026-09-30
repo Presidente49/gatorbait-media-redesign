@@ -55,3 +55,14 @@ Rollback: point `sports-live/current.json` back to fba3a35.
 3. **Story pages:** quiet our embeds' document-wide observers and polls (Site Fixer, Inner Page UI layer, normalizer, wide canvas, roster links, News SEO, FB ViewContent, header): scope them to the post container and disconnect when done. Each is one embed PATCH with its `-live.html` as rollback.
 4. **Wix side, Brenden only:** limit the 19 route-specific embeds to their pages (Settings → Custom code → Choose specific pages; `pageFilter` is read-only in the API, so this is dashboard-only and saves ~90–110 KB of parsed code on every page); Site Speed report and Search Console vitals; uninstall Hotels, Restaurants x2, Events; Blog settings (comments default, related posts, gallery list layout); GTM container contents (possible GA4 double-fire with the gtag embed).
 5. **SEO** (`external-audit.md` section 3): story meta descriptions at 155 chars, Person author in the native JSON-LD, category page titles, the homepage "Today's Edition" heading (Editor, Brenden), sitemap index response time.
+
+## Story pages after the embed round (Sept. 30 evening)
+
+| Story page | Phone 390 before → after | Desktop 1365 before → after |
+|---|---|---|
+| Total blocking time | 7.7 s → 3.8–4.2 s | 426 → 264–320 ms |
+| Long tasks | 166 → 23–28 | 5 → 2–4 |
+| Header logo | 200 KB → 26 KB | same |
+| Server response (canonical URL) | 0.24 s → 0.25 s | 0.07 s → 0.04 s |
+
+Runs 36784080732, 36786080882 and 36786422843; the nine embed revisions are in `embeds/INDEX.md`. A fresh query-string URL costs Wix a 3–4 s server render the first time; canonical URLs do not. PR #104 fixed a mount regression that showed only on those slow loads.

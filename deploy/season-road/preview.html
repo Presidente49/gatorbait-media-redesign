@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Road Ahead preview</title><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet"><style>body{margin:0;background:#0b1220;font-family:Barlow,Arial,sans-serif;color:#e8edf5}.p{max-width:1240px;margin:0 auto;padding:16px 20px;font-size:14px;color:#aab4cc}</style></head><body><div class="p">Preview only. Nothing on the live site has changed.</div><!-- GBM Season Road: additive band. Preview only until Brenden approves placement. Data: ESPN via sports-live/scoreboard.json. -->
+<!-- GBM Season Road: additive band. Preview only until Brenden approves placement. Data: ESPN via sports-live/scoreboard.json. -->
+<!-- GBM Season Road: additive band. Preview only until Brenden approves placement. Data: ESPN via sports-live/scoreboard.json. -->
+<section id="gbm-road" aria-label="Florida season road">
+<style>
+/* Layout: one horizontal snap-scroll ribbon; a glowing route draws to the current game. Barlow only. Night palette. */
+#gbm-road{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;background:radial-gradient(120% 120% at 80% 0%,#10306e 0%,var(--n) 60%);color:var(--ink);font-family:Barlow,Arial,sans-serif;padding:28px 0 26px;overflow:hidden;position:relative}
+#gbm-road *{box-sizing:border-box}
+#gbm-road .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:0 20px 14px;max-width:1240px;margin:0 auto}
+#gbm-road h2{font:800 clamp(30px,6vw,52px)/.92 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase;margin:0}
+#gbm-road h2 span{color:var(--o)}
+#gbm-road .rec{font:700 14px Barlow,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);text-align:right}
+#gbm-road .rec b{display:block;font:800 34px/1 "Barlow Condensed",Barlow,sans-serif;color:var(--ink);letter-spacing:0}
+#gbm-road .track{position:relative;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:20px;padding:26px 20px 12px;max-width:1240px;margin:0 auto;scrollbar-width:none}
+#gbm-road .track::-webkit-scrollbar{display:none}
+#gbm-road .line{position:absolute;left:20px;right:20px;top:39px;height:3px;background:rgba(255,255,255,.12);border-radius:3px}
+#gbm-road .line i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--b),var(--o));box-shadow:0 0 14px var(--o);border-radius:3px;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+#gbm-road .g{position:relative;flex:0 0 156px;scroll-snap-align:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 12px 12px;min-height:168px;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:inherit}
+#gbm-road .g::before{content:"";position:absolute;left:14px;top:-19px;width:13px;height:13px;border-radius:50%;background:var(--n);border:3px solid rgba(255,255,255,.35)}
+#gbm-road .g.w::before{background:var(--o);border-color:var(--o);box-shadow:0 0 10px var(--o)}
+#gbm-road .g.nx{border-color:var(--o);background:rgba(250,70,22,.12)}
+#gbm-road .g.nx::before{background:var(--o);border-color:#fff;animation:gbmp 1.6s ease-in-out infinite}
+#gbm-road .g.boss{border-color:rgba(255,90,60,.55)}
+#gbm-road .dt{font:700 11px Barlow,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+#gbm-road .op{overflow-wrap:anywhere;font:800 22px/1 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase}
+#gbm-road .rk{color:var(--o);font-size:14px;margin-right:3px}
+#gbm-road .sc{white-space:nowrap;font:800 30px/1 "Barlow Condensed",Barlow,sans-serif;margin-top:auto}
+#gbm-road .bar{height:5px;border-radius:5px;background:rgba(255,255,255,.12);overflow:hidden}
+#gbm-road .bar i{display:block;height:100%;width:0;background:var(--o);transition:width 1.2s .3s cubic-bezier(.2,.7,.2,1)}
+#gbm-road .sub{font:600 12px Barlow,sans-serif;color:var(--mut)}
+#gbm-road .cd{white-space:nowrap;font:800 22px "Barlow Condensed",Barlow,sans-serif;color:#fff;letter-spacing:.04em}
+@keyframes gbmp{50%{box-shadow:0 0 0 7px rgba(250,70,22,.25)}}
+@media(prefers-reduced-motion:reduce){#gbm-road .line i,#gbm-road .bar i{transition:none}#gbm-road .g.nx::before{animation:none}}
+</style>
+<div class="hd"><h2>The road <span>ahead</span></h2><div class="rec" id="gr-rec"></div></div>
+<div class="track" id="gr-track" role="list"><div class="line"><i id="gr-line"></i></div></div>
+<script>
+(function(){
+var G=[["2026-09-05T23:45:00Z","Florida Atlantic",0,1,"final",66,21,"SEC Network",""],["2026-09-12T21:30:00Z","Campbell",0,1,"final",52,3,"SEC Network+",""],["2026-09-19T23:00:00Z","Auburn",0,0,"final",44,39,"ESPN",""],["2026-09-26T19:30:00Z","Ole Miss",4,1,"final",52,28,"ABC","https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28"],["2026-10-03T19:30:00Z","Missouri",25,0,"scheduled",null,null,"ABC","https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"],["2026-10-10T04:00:00Z","South Carolina",0,1,"scheduled",null,null,"",""],["2026-10-17T04:00:00Z","Texas",1,0,"scheduled",null,null,"",""],["2026-10-31T19:30:00Z","Georgia",2,0,"scheduled",null,null,"ABC",""],["2026-11-07T05:00:00Z","Oklahoma",0,1,"scheduled",null,null,"",""],["2026-11-14T05:00:00Z","Kentucky",24,0,"scheduled",null,null,"",""],["2026-11-21T05:00:00Z","Vanderbilt",0,1,"scheduled",null,null,"",""],["2026-11-27T20:30:00Z","Florida State",0,0,"scheduled",null,null,"ABC",""]];
+var T=document.getElementById('gr-track'),L=document.getElementById('gr-line'),W=0,Ls=0,nx=-1,nodes=[];
+var fmt=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',month:'short',day:'numeric'});
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+G.forEach(function(g,i){
+  var fin=g[4]==='final',win=fin&&g[5]>g[6];
+  if(fin&&win)W++;else if(fin)Ls++;
+  if(!fin&&nx<0)nx=i;
+  var a=document.createElement(g[8]?'a':'div');
+  if(g[8])a.href=g[8];
+  a.className='g'+(win?' w':'')+(i===nx?' nx':'')+(g[2]&&g[2]<=5&&!fin?' boss':'');
+  a.setAttribute('role','listitem');
+  var top='<div class="dt">'+fmt.format(new Date(g[0]))+' · '+(g[3]?'Home':'Away')+'</div><div class="op">'+(g[2]?'<span class="rk">No. '+g[2]+'</span>':'')+esc(g[1])+'</div>';
+  var body;
+  if(fin){var m=Math.min(100,Math.round((g[5]-g[6])/40*100));body='<div class="sc">'+(win?'W ':'L ')+g[5]+'–'+g[6]+'</div><div class="bar"><i data-w="'+Math.max(6,m)+'"></i></div><div class="sub">'+(g[7]||'Final')+'</div>'}
+  else if(i===nx){body='<div class="cd" data-k="'+g[0]+'">…</div><div class="sub">to kickoff'+(g[7]?' · '+esc(g[7]):'')+'</div>'}
+  else body='<div class="sub" style="margin-top:auto">'+(g[7]?esc(g[7]):'Kickoff TBA')+'</div>';
+  a.innerHTML=top+body;T.appendChild(a);nodes.push(a);
+});
+document.getElementById('gr-rec').innerHTML='<b>'+W+'–'+Ls+'</b>2026 record';
+function tick(){var c=T.querySelector('.cd');if(!c)return;var ms=new Date(c.dataset.k)-new Date();if(ms<=0){c.textContent='Live';return}var d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);c.textContent=d+'d '+h+'h '+m+'m'}
+tick();setInterval(tick,30000);
+function run(){
+  T.querySelector('.line').style.right='auto';T.querySelector('.line').style.width=(T.scrollWidth-40)+'px';
+  var upto=nodes[Math.min(nx<0?nodes.length-1:nx,nodes.length-1)];
+  L.style.width=(upto.offsetLeft+upto.offsetWidth/2-20)+'px';
+  T.querySelectorAll('.bar i').forEach(function(b){b.style.width=b.dataset.w+'%'});
+  if(nx>0&&T.scrollWidth>T.clientWidth)T.scrollTo({left:Math.max(0,nodes[nx].offsetLeft-32),behavior:'auto'});
+}
+if('IntersectionObserver' in window){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){run();o.disconnect()}},{threshold:.25}).observe(T)}else run();
+})();
+</script>
+</section>
+</body></html>

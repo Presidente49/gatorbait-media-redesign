@@ -1,5 +1,5 @@
 {
-  "commit": "3c3942b2e15a9e4c4c8a0fc5b6125c3001faf9e9",
-  "updated": "2026-09-30T17:45:00Z",
-  "note": "Rendered covers show whole on the front page (PR #92). Rollback: eece061f391fc7dffc92e60efd7d9a68148764dd."
+  "commit": "677d5c3ec4f8983b6cd75f9b3016b11271be75f4",
+  "updated": "2026-09-30T18:35:00Z",
+  "note": "Newsletter signup on story pages and the homepage hub (PR #93). Rollback: 3c3942b2e15a9e4c4c8a0fc5b6125c3001faf9e9."
 }

@@ -1,0 +1,54 @@
+{
+  "url": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind",
+  "author": "Brenden Martin",
+  "wixSeoTag": {
+    "type": "script",
+    "props": {
+      "type": "application/ld+json"
+    },
+    "children": "{\"@context\":\"https://schema.org\",\"@type\":\"SportsEvent\",\"@id\":\"https://www.gatorbaitmedia.com/#game-401856708\",\"name\":\"Florida Gators at No. 25 Missouri\",\"sport\":\"American Football\",\"startDate\":\"2026-10-03T19:30:00Z\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"homeTeam\":{\"@type\":\"SportsTeam\",\"name\":\"Missouri\"},\"awayTeam\":{\"@type\":\"SportsTeam\",\"@id\":\"https://www.gatorbaitmedia.com/#florida-gators\",\"name\":\"Florida Gators\"},\"organizer\":{\"@type\":\"SportsOrganization\",\"@id\":\"https://www.gatorbaitmedia.com/#sec\",\"name\":\"Southeastern Conference\"},\"sameAs\":\"https://www.espn.com/college-football/game/_/gameId/401856708\",\"location\":{\"@type\":\"Place\",\"name\":\"Memorial Stadium\"},\"description\":\"Kickoff Saturday, Oct 3, 3:30 PM ET on ABC.\",\"subjectOf\":{\"@type\":\"NewsArticle\",\"@id\":\"https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind\",\"url\":\"https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind\",\"headline\":\"Show-Me State of Mind: A First Look at No. 25 Missouri\",\"datePublished\":\"2026-09-27T21:53:54Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Brenden Martin\"},\"image\":\"https://static.wixstatic.com/media/d3cfa5_a67ff355ad6a4d668106c2befa41b208~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png\"}}",
+    "custom": true,
+    "disabled": false
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "@id": "https://www.gatorbaitmedia.com/#game-401856708",
+    "name": "Florida Gators at No. 25 Missouri",
+    "sport": "American Football",
+    "startDate": "2026-10-03T19:30:00Z",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "homeTeam": {
+      "@type": "SportsTeam",
+      "name": "Missouri"
+    },
+    "awayTeam": {
+      "@type": "SportsTeam",
+      "@id": "https://www.gatorbaitmedia.com/#florida-gators",
+      "name": "Florida Gators"
+    },
+    "organizer": {
+      "@type": "SportsOrganization",
+      "@id": "https://www.gatorbaitmedia.com/#sec",
+      "name": "Southeastern Conference"
+    },
+    "sameAs": "https://www.espn.com/college-football/game/_/gameId/401856708",
+    "location": {
+      "@type": "Place",
+      "name": "Memorial Stadium"
+    },
+    "description": "Kickoff Saturday, Oct 3, 3:30 PM ET on ABC.",
+    "subjectOf": {
+      "@type": "NewsArticle",
+      "@id": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind",
+      "url": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind",
+      "headline": "Show-Me State of Mind: A First Look at No. 25 Missouri",
+      "datePublished": "2026-09-27T21:53:54Z",
+      "author": {
+        "@type": "Person",
+        "name": "Brenden Martin"
+      },
+      "image": "https://static.wixstatic.com/media/d3cfa5_a67ff355ad6a4d668106c2befa41b208~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png"
+    }
+  }
+}

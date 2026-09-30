@@ -1,0 +1,50 @@
+{
+  "url": "https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again",
+  "author": "Buddy Martin",
+  "wixSeoTag": {
+    "type": "script",
+    "props": {
+      "type": "application/ld+json"
+    },
+    "children": "{\"@context\":\"https://schema.org\",\"@type\":\"SportsEvent\",\"@id\":\"https://www.gatorbaitmedia.com/#game-401856724\",\"name\":\"Florida Gators at No. 1 Texas\",\"sport\":\"American Football\",\"startDate\":\"2026-10-17\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"homeTeam\":{\"@type\":\"SportsTeam\",\"name\":\"Texas\"},\"awayTeam\":{\"@type\":\"SportsTeam\",\"@id\":\"https://www.gatorbaitmedia.com/#florida-gators\",\"name\":\"Florida Gators\"},\"organizer\":{\"@type\":\"SportsOrganization\",\"@id\":\"https://www.gatorbaitmedia.com/#sec\",\"name\":\"Southeastern Conference\"},\"sameAs\":\"https://www.espn.com/college-football/game/_/gameId/401856724\",\"subjectOf\":{\"@type\":\"NewsArticle\",\"@id\":\"https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again\",\"url\":\"https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again\",\"headline\":\"Bound for the CFB Top Ten: Cue Up “Happy Days Are Here Again”\",\"datePublished\":\"2026-09-27T18:11:27Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Buddy Martin\",\"url\":\"https://www.gatorbaitmedia.com/gatorbait-media-blogs/tags/buddy-martin\"},\"image\":\"https://static.wixstatic.com/media/d3cfa5_026d2a4d2be04a91b8c32317fed5f623~mv2.jpg/v1/fit/w_1000,h_838,al_c,q_80/file.png\"}}",
+    "custom": true,
+    "disabled": false
+  },
+  "jsonld": {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "@id": "https://www.gatorbaitmedia.com/#game-401856724",
+    "name": "Florida Gators at No. 1 Texas",
+    "sport": "American Football",
+    "startDate": "2026-10-17",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "homeTeam": {
+      "@type": "SportsTeam",
+      "name": "Texas"
+    },
+    "awayTeam": {
+      "@type": "SportsTeam",
+      "@id": "https://www.gatorbaitmedia.com/#florida-gators",
+      "name": "Florida Gators"
+    },
+    "organizer": {
+      "@type": "SportsOrganization",
+      "@id": "https://www.gatorbaitmedia.com/#sec",
+      "name": "Southeastern Conference"
+    },
+    "sameAs": "https://www.espn.com/college-football/game/_/gameId/401856724",
+    "subjectOf": {
+      "@type": "NewsArticle",
+      "@id": "https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again",
+      "url": "https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again",
+      "headline": "Bound for the CFB Top Ten: Cue Up “Happy Days Are Here Again”",
+      "datePublished": "2026-09-27T18:11:27Z",
+      "author": {
+        "@type": "Person",
+        "name": "Buddy Martin",
+        "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/tags/buddy-martin"
+      },
+      "image": "https://static.wixstatic.com/media/d3cfa5_026d2a4d2be04a91b8c32317fed5f623~mv2.jpg/v1/fit/w_1000,h_838,al_c,q_80/file.png"
+    }
+  }
+}

@@ -22,7 +22,10 @@ export const EMBED_BUDGET = 12000; // our own ceiling, leaves headroom for the H
 const ORG_ID = `${SITE}/#organization`;
 const SITE_ID = `${SITE}/#website`;
 const TEAM_ID = `${SITE}/#florida-gators`;
-const HOME_VENUE = { '@type': 'Place', name: 'Ben Hill Griffin Stadium', address: { '@type': 'PostalAddress', addressLocality: 'Gainesville', addressRegion: 'FL', addressCountry: 'US' } };
+const VENUE_ID = `${SITE}/#ben-hill-griffin-stadium`;
+const SEC_ID = `${SITE}/#sec`;
+const HOME_VENUE = { '@type': 'Place', '@id': VENUE_ID, name: 'Ben Hill Griffin Stadium', address: { '@type': 'PostalAddress', addressLocality: 'Gainesville', addressRegion: 'FL', addressCountry: 'US' } };
+const SEC = { '@type': 'SportsOrganization', '@id': SEC_ID, name: 'Southeastern Conference' };
 // Writer profile pages that exist on the site (sports-live/front-page.config.json columnists).
 const WRITER_URLS = {
   'Buddy Martin': `${SITE}/gatorbait-media-blogs/tags/buddy-martin`,
@@ -52,8 +55,10 @@ export function gameName(game) {
 
 export function gameId(game) { return `${SITE}/#game-${game.eventId}`; }
 
-export function buildSportsEvent(game, { venueByEventId = {} } = {}) {
-  const florida = { '@type': 'SportsTeam', '@id': TEAM_ID, name: 'Florida Gators' };
+// `standalone` inlines the shared venue/team/conference nodes (article pages have no @graph to reference);
+// the homepage graph references them by @id so the embed stays small.
+export function buildSportsEvent(game, { venueByEventId = {}, standalone = false } = {}) {
+  const florida = standalone ? { '@type': 'SportsTeam', '@id': TEAM_ID, name: 'Florida Gators' } : { '@id': TEAM_ID };
   const opponent = { '@type': 'SportsTeam', name: game.opponent };
   const ev = {
     '@type': 'SportsEvent',
@@ -62,24 +67,20 @@ export function buildSportsEvent(game, { venueByEventId = {} } = {}) {
     sport: 'American Football',
     startDate: gameStartDate(game),
     eventStatus: 'https://schema.org/EventScheduled',
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     homeTeam: game.home ? florida : opponent,
     awayTeam: game.home ? opponent : florida,
-    competitor: game.home ? [florida, opponent] : [opponent, florida],
-    organizer: { '@type': 'SportsOrganization', name: 'Southeastern Conference' },
-    identifier: { '@type': 'PropertyValue', propertyID: 'espn:event', value: String(game.eventId) },
+    organizer: standalone ? SEC : { '@id': SEC_ID },
+    sameAs: `https://www.espn.com/college-football/game/_/gameId/${game.eventId}`,
   };
-  if (game.home) ev.location = HOME_VENUE;
+  if (game.home) ev.location = standalone ? HOME_VENUE : { '@id': VENUE_ID };
   else if (venueByEventId[game.eventId]) ev.location = { '@type': 'Place', name: venueByEventId[game.eventId] };
   if (game.status === 'final' && game.score) {
     const won = game.score.fla > game.score.opp;
     ev.description = `Final: Florida ${game.score.fla}, ${game.opponent} ${game.score.opp}. ${won ? 'Florida won' : 'Florida lost'}.`;
-  } else if (game.tv) {
-    ev.description = `Kickoff ${kickoffKnown(game) ? new Date(game.date).toLocaleString('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) + ' ET' : 'time TBA'} on ${game.tv}.`;
+  } else if (game.tv && kickoffKnown(game)) {
+    ev.description = `Kickoff ${new Date(game.date).toLocaleString('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })} ET on ${game.tv}.`;
   }
-  if (game.tv) ev.broadcastOfEvent = undefined; // reserved: schema.org BroadcastEvent is a separate node; keep tight.
-  if (game.storyUrl) ev.subjectOf = { '@type': 'NewsArticle', url: game.storyUrl }; // exactly one canonical story
-  Object.keys(ev).forEach((k) => ev[k] === undefined && delete ev[k]);
+  if (game.storyUrl) ev.subjectOf = { '@id': game.storyUrl }; // exactly one canonical story, referenced by its URL
   return ev;
 }
 
@@ -117,7 +118,7 @@ export function orderStories(posts, now, limit = 8) {
   return [lead, ...sorted.filter((p) => p !== lead)].slice(0, limit); // lead first, then newest-first
 }
 
-export function buildHomepageGraph({ posts, scoreboard, now = new Date(), storyLimit = 8 }) {
+export function buildHomepageGraph({ posts, scoreboard, now = new Date(), storyLimit = 6 }) {
   const venues = {};
   if (scoreboard.next && scoreboard.next.venue) venues[scoreboard.next.eventId] = scoreboard.next.venue;
   if (scoreboard.last && scoreboard.last.venue) venues[scoreboard.last.eventId] = scoreboard.last.venue;
@@ -126,7 +127,9 @@ export function buildHomepageGraph({ posts, scoreboard, now = new Date(), storyL
   const graph = [
     { '@type': 'NewsMediaOrganization', '@id': ORG_ID, name: 'GatorBait Media', url: `${SITE}/`, foundingDate: '1980', sameAs: ['https://www.youtube.com/channel/UCtR8b1sKFuwaRjKy5BiXRvA', 'https://www.facebook.com/thebuddymartinshow', 'https://x.com/buddyshow'] },
     { '@type': 'WebSite', '@id': SITE_ID, url: `${SITE}/`, name: 'GatorBait Media', publisher: { '@id': ORG_ID } },
-    { '@type': 'SportsTeam', '@id': TEAM_ID, name: 'Florida Gators', alternateName: 'Florida', sport: 'American Football', memberOf: { '@type': 'SportsOrganization', name: 'Southeastern Conference' }, url: 'https://floridagators.com/', subjectOf: { '@id': `${SITE}/#webpage` } },
+    { '@type': 'SportsTeam', '@id': TEAM_ID, name: 'Florida Gators', alternateName: 'Florida', sport: 'American Football', memberOf: { '@id': SEC_ID }, url: 'https://floridagators.com/', subjectOf: { '@id': `${SITE}/#webpage` } },
+    SEC,
+    HOME_VENUE,
     { '@type': 'CollectionPage', '@id': `${SITE}/#webpage`, url: `${SITE}/`, name: 'GatorBait Media | Florida Gators News, Recruiting & Analysis', isPartOf: { '@id': SITE_ID }, about: { '@id': TEAM_ID }, dateModified: now.toISOString(), mainEntity: { '@type': 'ItemList', name: 'Latest Florida Gators stories', itemListOrder: 'https://schema.org/ItemListOrderDescending', itemListElement: stories.map((p, i) => ({ '@type': 'ListItem', position: i + 1, item: articleStub(p) })) } },
     { '@type': 'ItemList', '@id': `${SITE}/#schedule-${scoreboard.season}`, name: `Florida Gators ${scoreboard.season} football schedule`, numberOfItems: games.length, itemListElement: games.map((g, i) => ({ '@type': 'ListItem', position: i + 1, item: g })) },
   ];
@@ -151,8 +154,9 @@ export function buildArticleEvent(post, scoreboard) {
   const venues = {};
   if (scoreboard.next && scoreboard.next.venue) venues[scoreboard.next.eventId] = scoreboard.next.venue;
   if (scoreboard.last && scoreboard.last.venue) venues[scoreboard.last.eventId] = scoreboard.last.venue;
-  const ev = buildSportsEvent(game, { venueByEventId: venues });
-  ev.subjectOf = { '@type': 'NewsArticle', url: post.url }; // the page itself is the one story for this event
+  const ev = buildSportsEvent(game, { venueByEventId: venues, standalone: true });
+  ev.subjectOf = articleStub(post); // the page itself is the one story for this event
+  delete ev.subjectOf.publisher; // no @graph on the article page to resolve the publisher @id
   return { '@context': 'https://schema.org', ...ev };
 }
 
@@ -177,7 +181,8 @@ export function validate(doc) {
     if (t && REQUIRED[t]) for (const k of REQUIRED[t]) if (n[k] === undefined || n[k] === null || n[k] === '') errors.push(`${path}: ${t} missing ${k}`);
     if (t === 'SportsEvent') {
       if (!/^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}Z)?$/.test(n.startDate)) errors.push(`${path}: bad startDate ${n.startDate}`);
-      if (n.subjectOf && Array.isArray(n.subjectOf)) errors.push(`${path}: more than one canonical story`);
+      if (Array.isArray(n.subjectOf)) errors.push(`${path}: more than one canonical story`);
+      if (n.subjectOf && !(n.subjectOf['@id'] || n.subjectOf.url)) errors.push(`${path}: subjectOf has no url`);
       if (n.homeTeam && n.awayTeam && n.homeTeam.name === n.awayTeam.name) errors.push(`${path}: team plays itself`);
     }
     if (t === 'NewsArticle' && n.author && !n.author.name && !n.author['@id']) errors.push(`${path}: blank author`);

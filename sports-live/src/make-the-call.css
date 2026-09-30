@@ -1,0 +1,75 @@
+/* ---------- Make the Call: score-pick module under The Road Ahead ----------
+   Same conventions as sports-live/src/front-page.css: scoped to #gbm-live.fp26, Barlow + Barlow Condensed only,
+   Swamp Night tokens, every box reserved at paint so numbers change in place and nothing moves. */
+#gbm-live.fp26 #gbm-call{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;--line:rgba(255,255,255,.14);background:radial-gradient(80% 90% at 0% 100%,rgba(0,33,165,.5),transparent 70%),var(--n);color:var(--ink);font-family:var(--fp-sans);padding:26px 0 28px;border-top:1px solid var(--line);position:relative;overflow:hidden}
+#gbm-live.fp26 #gbm-call *{box-sizing:border-box}
+#gbm-live.fp26 #gbm-call .wrap{max-width:1440px;margin:0 auto;padding:0 var(--fp-pad)}
+#gbm-live.fp26 #gbm-call .hd{display:grid;gap:8px;margin-bottom:16px}
+#gbm-live.fp26 #gbm-call .kick{font:700 12px/1.3 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f;display:flex;align-items:center;gap:10px}
+#gbm-live.fp26 #gbm-call .kick::before{content:"";flex:0 0 22px;height:2px;background:var(--o)}
+#gbm-live.fp26 #gbm-call h2{font:800 clamp(30px,6vw,52px)/.92 var(--fp-cond);text-transform:uppercase;margin:0}
+#gbm-live.fp26 #gbm-call h2 span{color:var(--o)}
+#gbm-live.fp26 #gbm-call .mt{font:700 14px/1.35 var(--fp-sans);color:var(--mut);letter-spacing:.02em}
+#gbm-live.fp26 #gbm-call .mt b{color:var(--ink);font:800 16px/1.3 var(--fp-cond);text-transform:uppercase;letter-spacing:.04em;display:block}
+#gbm-live.fp26 #gbm-call .grid{display:grid;gap:18px}
+/* Pick form: label left, stepper right; rows are 44px so the form is the same height in every state. */
+#gbm-live.fp26 #gbm-call .pick{display:grid;gap:10px;align-content:start}
+#gbm-live.fp26 #gbm-call .tm{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;min-height:52px;border-bottom:1px solid var(--line)}
+#gbm-live.fp26 #gbm-call .tm label{font:800 22px/1 var(--fp-cond);text-transform:uppercase;letter-spacing:.02em;min-width:0;overflow-wrap:anywhere}
+#gbm-live.fp26 #gbm-call .tm label small{display:block;font:700 11px/1.3 var(--fp-sans);letter-spacing:.1em;color:var(--mut);margin-bottom:2px}
+#gbm-live.fp26 #gbm-call .step{display:flex;align-items:stretch;gap:0;flex:0 0 auto}
+#gbm-live.fp26 #gbm-call .step button{width:44px;height:44px;padding:0;margin:0;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:var(--ink);font:800 24px/1 var(--fp-cond);cursor:pointer;-webkit-tap-highlight-color:transparent}
+#gbm-live.fp26 #gbm-call .step button:first-child{border-radius:8px 0 0 8px}
+#gbm-live.fp26 #gbm-call .step button:last-child{border-radius:0 8px 8px 0}
+#gbm-live.fp26 #gbm-call .step input{width:56px;height:44px;margin:0;padding:0;border:1px solid rgba(255,255,255,.3);border-inline:0;background:#fff;color:var(--n);font:800 26px/1 var(--fp-cond);font-variant-numeric:tabular-nums;text-align:center;border-radius:0;-moz-appearance:textfield;appearance:textfield}
+#gbm-live.fp26 #gbm-call .step input::-webkit-outer-spin-button,#gbm-live.fp26 #gbm-call .step input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+#gbm-live.fp26 #gbm-call .step input::placeholder{color:#9aa3b8}
+#gbm-live.fp26 #gbm-call .step input:focus-visible,#gbm-live.fp26 #gbm-call .step button:focus-visible{outline:3px solid var(--o);outline-offset:2px;position:relative;z-index:1}
+#gbm-live.fp26 #gbm-call .row{display:grid;gap:8px;padding-top:4px}
+#gbm-live.fp26 #gbm-call .go{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border:0;background:var(--o);color:#fff;font:800 16px/1 var(--fp-cond);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:8px;width:100%}
+#gbm-live.fp26 #gbm-call .go:disabled{background:rgba(255,255,255,.14);color:var(--mut);cursor:default}
+#gbm-live.fp26 #gbm-call .msg{min-height:22px;margin:0;font:700 15px/1.4 var(--fp-sans);color:#fff}
+#gbm-live.fp26 #gbm-call .msg[data-kind=err]{color:#ffb08f}
+#gbm-live.fp26 #gbm-call .fine{margin:0;font:500 12px/1.4 var(--fp-sans);color:var(--mut)}
+#gbm-live.fp26 #gbm-call[data-state=locked] .step button,#gbm-live.fp26 #gbm-call[data-state=locked] .step input{opacity:.5}
+/* Crowd: three stat tiles, six fixed-height bins, one lock line. Bars are 0 wide until the feed lands. */
+#gbm-live.fp26 #gbm-call .crowd{display:grid;gap:14px;align-content:start;padding:16px 14px 14px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:12px}
+#gbm-live.fp26 #gbm-call .crowd h3{margin:0;font:800 13px/1 var(--fp-cond);letter-spacing:.2em;text-transform:uppercase;color:var(--mut);display:flex;justify-content:space-between;gap:8px}
+#gbm-live.fp26 #gbm-call .crowd h3 span{color:#ffb08f;letter-spacing:.1em}
+#gbm-live.fp26 #gbm-call .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#gbm-live.fp26 #gbm-call .stats div{border-bottom:3px solid var(--o);padding-bottom:6px;min-width:0}
+#gbm-live.fp26 #gbm-call .stats b{display:block;height:34px;font:800 32px/34px var(--fp-cond);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+#gbm-live.fp26 #gbm-call .stats span{display:block;font:700 10px/1.2 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gbm-live.fp26 #gbm-call .bins{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+#gbm-live.fp26 #gbm-call .bins li{display:grid;grid-template-columns:104px minmax(0,1fr) 30px;align-items:center;gap:8px;height:26px}
+#gbm-live.fp26 #gbm-call .bins .lb{font:700 12px/1 var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gbm-live.fp26 #gbm-call .bins li.mine .lb{color:#fff}
+#gbm-live.fp26 #gbm-call .bins li.mine .lb::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--o);margin:0 5px 1px 0;vertical-align:middle}
+#gbm-live.fp26 #gbm-call .bins li.mine b{color:#ffb08f}
+#gbm-live.fp26 #gbm-call .bins .bar{position:relative;height:12px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden}
+#gbm-live.fp26 #gbm-call .bins .bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--b),var(--o));border-radius:6px;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+#gbm-live.fp26 #gbm-call .bins li.opp .bar i{background:linear-gradient(90deg,#3a4770,#8391b8)}
+#gbm-live.fp26 #gbm-call .bins b{font:800 15px/1 var(--fp-cond);font-variant-numeric:tabular-nums;text-align:right}
+#gbm-live.fp26 #gbm-call .lock{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;margin:0;min-height:20px;font:600 12px/1.4 var(--fp-sans);color:var(--mut)}
+#gbm-live.fp26 #gbm-call .lock b{color:#fff;font-weight:700}
+@media(min-width:600px){
+#gbm-live.fp26 #gbm-call .hd{grid-template-columns:minmax(0,1fr) auto;align-items:end}
+#gbm-live.fp26 #gbm-call .mt{text-align:right}
+#gbm-live.fp26 #gbm-call .grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:start}
+#gbm-live.fp26 #gbm-call .go{width:auto;min-width:200px}
+#gbm-live.fp26 #gbm-call .bins li{grid-template-columns:124px minmax(0,1fr) 36px}
+}
+@media(min-width:821px){
+#gbm-live.fp26 #gbm-call{padding:34px 0 36px}
+#gbm-live.fp26 #gbm-call .grid{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:32px}
+#gbm-live.fp26 #gbm-call .crowd{padding:20px 22px 18px}
+#gbm-live.fp26 #gbm-call .stats b{font-size:40px;height:40px;line-height:40px}
+#gbm-live.fp26 #gbm-call .bins li{height:30px}
+}
+@media(max-width:359px){
+#gbm-live.fp26 #gbm-call .stats{gap:6px}
+#gbm-live.fp26 #gbm-call .stats b{font-size:26px}
+#gbm-live.fp26 #gbm-call .bins li{grid-template-columns:92px minmax(0,1fr) 26px;gap:6px}
+#gbm-live.fp26 #gbm-call .bins .lb{font-size:11px;letter-spacing:.02em}
+}
+@media(prefers-reduced-motion:reduce){#gbm-live.fp26 #gbm-call .bins .bar i{transition:none}}

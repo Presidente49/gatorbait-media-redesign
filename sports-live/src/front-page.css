@@ -443,3 +443,11 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 @keyframes fpTnRun{from{transform:translate(-50%,-50%) scale(.06);opacity:0}12%{opacity:.95}to{transform:translate(-50%,-50%) scale(1.15);opacity:0}}
 @keyframes fpTnGlow{50%{opacity:1;filter:blur(16px)}}
 @keyframes fpTnSweep{to{transform:rotate(360deg)}}
+
+/* ---------- Fan modules (mounted after paint by front-page.js when deploy/cloudflare/endpoints.json names their Workers) ----------
+   Make the Call's rules come from sports-live/src/make-the-call.css (bundled after this file). Ask GatorBait and The Stands
+   inject their own scoped styles on mount; these rules only seat them in the page. */
+#gbm-live.fp26 .fp-hub-grid>.fp-ask{grid-column:1/-1;border-radius:14px;min-width:0}
+#gbm-live.fp26 #gbm-stands{width:100%;max-width:980px;min-width:0}
+#gbm-live.fp26 #gbm-stands:empty{display:none}
+@media(min-width:600px){#gbm-live.fp26 .fp-hub-grid>.fp-ask{grid-row:3}}

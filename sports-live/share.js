@@ -71,11 +71,23 @@
     }
     return Promise.all(jobs);
   }
+  // The story headline: the first h1 that is actually laid out. The hidden native Wix header keeps an h1
+  // ("GatorBait Media") ahead of the post in DOM order, and a button appended beside it is display:none.
+  function headline() {
+    var pick = null, list = document.querySelectorAll('h1'), i, n;
+    for (i = 0; i < list.length; i++) {
+      n = list[i];
+      if (!n.getClientRects().length) continue;
+      if (n.getAttribute('data-hook') === 'post-title' || n.closest('article')) return n;
+      if (!pick) pick = n;
+    }
+    return pick;
+  }
   function safePost(u) { try { var x = new URL(String(u), SITE); return /^(www\.)?gatorbaitmedia\.com$/.test(x.hostname) && x.pathname.indexOf('/post/') === 0 ? SITE + x.pathname : ''; } catch (_) { return ''; } }
   // The story on a Wix blog post page: canonical URL, headline, byline. Falls back to the feed's newest story on the homepage.
   function storyOf() {
     var canon = document.querySelector('link[rel="canonical"]'), url = safePost(canon ? canon.href : location.href);
-    var h = document.querySelector('article h1, h1'), by = document.querySelector('[data-hook="user-name"], [rel="author"]');
+    var h = headline(), by = document.querySelector('[data-hook="user-name"], [rel="author"]');
     var feed = (data.posts || []).filter(function (p) { return safePost(p.url); });
     var match = url && feed.filter(function (p) { return safePost(p.url) === url; })[0];
     if (!url && feed.length) match = feed[0];
@@ -243,7 +255,7 @@
     if (tn && !tn.querySelector('[data-share]')) tn.appendChild(button('tunnel', 'Share', true));
     // Blog post page: canonical /post/ URL and a headline, no homepage root.
     if (!document.getElementById('gbm-live') && safePost(location.href) && !document.getElementById('gbm-share-btn')) {
-      var h = document.querySelector('article h1, [data-hook="post-title"], h1'), host = h && (h.closest('header') || h.parentNode);
+      var h = headline(), host = h && (h.closest('header') || h.parentNode);
       if (host) { var b = button('story', 'Share this story'); b.id = 'gbm-share-btn'; b.style.margin = '12px 0'; host.appendChild(b); }
     }
   }

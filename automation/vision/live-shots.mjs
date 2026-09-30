@@ -111,7 +111,7 @@ for (const w of widths) {
           if (document.querySelector('[data-story-kit]') || document.querySelector('[data-share]')) {
             const rect = (n) => { if (!n) return null; const b = n.getBoundingClientRect(), c = getComputedStyle(n); return { x: Math.round(b.left), y: Math.round(b.top + scrollY), w: Math.round(b.width), h: Math.round(b.height), opacity: c.opacity, vis: c.visibility, size: c.fontSize, text: (n.textContent || '').trim().slice(0, 60) }; };
             const row = document.querySelector('.gbm-kit-row'), chips = row ? [...row.children] : [];
-            story = { h1: rect(document.querySelector('h1')), share: rect(document.querySelector('[data-share]')), strip: rect(document.querySelector('[data-story-kit="strip"]')),
+            story = { h1: rect(document.querySelector('[data-hook="post-title"]') || document.querySelector('article h1') || document.querySelector('h1')), share: rect(document.querySelector('[data-share]')), strip: rect(document.querySelector('[data-story-kit="strip"]')),
               row: row ? { scrollLeft: row.scrollLeft, scrollWidth: row.scrollWidth, clientWidth: row.clientWidth, dir: getComputedStyle(row).direction, justify: getComputedStyle(row).justifyContent } : null,
               firstChip: rect(chips[0]), lastChip: rect(chips[chips.length - 1]), more: rect(document.querySelector('[data-story-kit="more"]')), links: [...document.querySelectorAll('a.gbm-kit-link')].map((a) => a.getAttribute('data-term')), scrollX,
               capture: { probe: document.documentElement.getAttribute('data-gbm-capture-probe'), cards: document.querySelectorAll('[data-gbm-capture]').length, slideup: rect(document.querySelector('[data-gbm-capture="story-slideup"]')) } };

@@ -16,7 +16,12 @@
       "context": "to his team Monday, after the \"not our standard\" tape from the Ole Miss win. From Buddy Martin's column."
     }
   },
+  "$covers": "Rendered story covers (deploy/covers) carry their own type, so the front page shows them whole (16:9, contain, no crop, no Ken Burns) instead of cropping. Add the media id when a cover is set on a post.",
+  "covers": [
+    "d3cfa5_56a64986c874417c9a8299fae22649ed"
+  ],
   "credits": {
+    "d3cfa5_56a64986c874417c9a8299fae22649ed": "Photo by Chris Spears, GatorBait Media · Faulkner: UAA",
     "d3cfa5_d3190d83cdfc44549b10b6bd025e57a3": "Photo by Chris Spears, GatorBait Media",
     "d3cfa5_2ea58f38e2da4c988ab73065cfe63130": "Photo by Chris Spears, GatorBait Media",
     "d3cfa5_026d2a4d2be04a91b8c32317fed5f623": "Photo by Chris Spears, GatorBait Media",

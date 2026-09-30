@@ -10,7 +10,7 @@ This container cannot reach static.wixstatic.com, so the render happens in the l
 `{"path":"deploy/covers/template.html?<query>","selector":"#cover","widths":"1600"}`. The workflow opens the
 file from the checkout, waits for fonts and the photo, and publishes `element-1600.jpg` to `qa/live-shots`.
 Upload that file to the media manager from its raw.githubusercontent.com URL (Wix fetches it), then set it as
-the post's cover through the draft-posts PATCH (UPDATE_PUBLISH). Keep a copy in `out/` for the record.
+the post's cover through the draft-posts PATCH (UPDATE_PUBLISH). Keep a copy in `out/` for the record. Then add the media id to `covers` in `sports-live/front-page.config.json` (with its credit) and rebuild, so the front page shows the cover whole instead of cropping its headline.
 
 History:
 - 2026-09-30: Buddy Martin, "The Looming Brilliance of Buster Faulkner" (post 0753a25b). Photo

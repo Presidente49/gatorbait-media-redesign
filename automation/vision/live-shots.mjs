@@ -31,6 +31,12 @@ for (const w of widths) {
     m.http = res && res.status();
     await page.waitForSelector('#gbm-live.fp26', { timeout: 15000 }).catch(() => { m.note = 'front page root not seen in 15s'; });
     await page.waitForTimeout(3500);
+    // Which build ran: the loader's pinned commit as served in the HTML, and the renderer's own build stamp.
+    Object.assign(m, await page.evaluate(() => ({
+      loaderSrc: (document.documentElement.outerHTML.match(/front-page-2026 src=([0-9a-f]+)/) || [])[1] || null,
+      fpBuild: document.querySelector('#gbm-live')?.getAttribute('data-fp-build') || null,
+      fpVersion: document.querySelector('#gbm-live')?.getAttribute('data-fp') || null,
+    })));
     await page.screenshot({ path: `${OUT}/top-${w}.jpg`, type: 'jpeg', quality: 70 });
     if (selector) {
       const found = await page.$(selector);

@@ -368,6 +368,44 @@
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { run(); o.disconnect(); } }, { threshold: .25 }).observe(T); else run();
   }
 
+  /* ---------- The Tunnel: game-day opener (Brenden, Sept. 30: "tunnel") ----------
+   * Renders all three states (countdown, live score, final) and shows one by data-phase, so the feed can
+   * move it from pre to live to final in place. Stories about the opponent ride below, never the lead. */
+  function tunnelHtml(gs, sb, posts, leadUrl) {
+    if (!gs || !gs.away || !gs.home) return '';
+    var phase = gs.phase === 'half' ? 'half' : gs.phase, opp = gs.away.name === 'Florida' ? gs.home : gs.away;
+    function team(s) { return '<div class="fp-tn-team"><small>' + esc([s.rank ? 'No. ' + s.rank : '', s.record || ''].filter(Boolean).join(' · ') || ' ') + '</small><b>' + esc(s.name) + '</b></div>'; }
+    var re = new RegExp(String(opp.name || '').replace(/[.*+?^${}()|[\]\\]/g, '\\  function hubHtml(latest, sb, posts, used) {'), 'i');
+    var about = posts.filter(function (p) { return p.url !== leadUrl && re.test(p.title + ' ' + (p.excerpt || '')); }).slice(0, 3);
+    var first = gs.links[0], primary = first ? [first[0], first[1]] : sb.next && sb.next.previewUrl ? ['Game preview', sb.next.previewUrl] : sb.last && sb.last.recapUrl && gs.phase === 'final' ? ['Read the recap', sb.last.recapUrl] : ['Scores & schedule', L.schedule];
+    var when = gs.when || '', score = '<div class="fp-tn-score"><b data-tn="away">' + (gs.away.score == null ? '0' : esc(gs.away.score)) + '</b><span>–</span><b data-tn="home">' + (gs.home.score == null ? '0' : esc(gs.home.score)) + '</b></div>';
+    return '<section class="fp-tunnel" data-phase="' + esc(phase) + '" aria-label="Game day: ' + esc(gs.away.name + ' at ' + gs.home.name) + '">' +
+      '<div class="fp-tn-scene" aria-hidden="true"><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><b class="fp-tn-light"></b><u class="fp-tn-floor"></u></div>' +
+      '<div class="fp-wrap fp-tn-wrap"><p class="fp-tn-top"><span class="fp-pill">Game day</span>' + (when ? '<span>' + esc(when) + '</span>' : '') + (gs.venue ? '<span>' + esc(gs.venue) + '</span>' : '') + '</p>' +
+      '<div class="fp-tn-match">' + team(gs.away) + '<div class="fp-tn-vs">at</div>' + team(gs.home) + '</div>' +
+      '<div class="fp-tn-mid">' +
+        '<div class="fp-tn-pre"><p class="fp-tn-label">Kickoff in</p>' + (gs.kickoff ? cd(new Date(gs.kickoff).toISOString()) : '') + '</div>' +
+        '<div class="fp-tn-kick"><p>Out of the tunnel</p><p class="fp-tn-label">Kickoff' + (when ? ' · ' + esc(when.replace(/^[^·]*·\s*/, '')) : '') + '</p></div>' +
+        '<div class="fp-tn-live">' + score + '<p class="fp-tn-clock" data-tn="clock">' + esc(gs.phase === 'half' ? 'Halftime' : gs.clock || 'Live') + '</p>' + (gs.drive ? '<p class="fp-tn-drive"><b>Drive</b><span data-tn="drive">' + esc(gs.drive) + '</span></p>' : '<p class="fp-tn-drive" hidden><b>Drive</b><span data-tn="drive"></span></p>') + '</div>' +
+        '<div class="fp-tn-final">' + score.replace(/data-tn="(away|home)"/g, 'data-tn="$1-final"') + '<p class="fp-tn-clock">Final</p></div>' +
+      '</div>' +
+      '<div class="fp-tn-cta"><a class="fp-btn" href="' + esc(primary[1]) + '">' + esc(primary[0]) + '</a><a class="fp-btn fp-ghost" href="#gbm-road">The road ahead</a></div>' +
+      (about.length ? '<ul class="fp-tn-stories" aria-label="More on ' + esc(opp.name) + '">' + about.map(function (p) { return '<li><a href="' + esc(p.url) + '">' + esc(p.title) + '<span>' + esc(p.author + ' · ' + shortDate(p.date.getTime())) + '</span></a></li>'; }).join('') + '</ul>' : '') +
+      '</div></section>';
+  }
+  // Feed updates after paint: phase, score, clock and drive change in place; nothing moves.
+  function patchTunnel(root, sb) {
+    var t = root.querySelector('.fp-tunnel'); if (!t) return;
+    var gs = gameState(sb); if (!gs || !gs.away || !gs.home) return;
+    var phase = gs.phase, cur = t.getAttribute('data-phase');
+    if (phase === 'pre' && (cur === 'kick' || cur === 'live' || cur === 'half' || cur === 'final')) phase = cur === 'kick' ? 'kick' : cur;
+    function put(sel, v) { var el = t.querySelector('[data-tn="' + sel + '"]'); if (el && v != null && el.textContent !== String(v)) el.textContent = String(v); }
+    put('away', gs.away.score == null ? '0' : gs.away.score); put('home', gs.home.score == null ? '0' : gs.home.score);
+    put('away-final', gs.away.score == null ? '0' : gs.away.score); put('home-final', gs.home.score == null ? '0' : gs.home.score);
+    put('clock', gs.phase === 'half' ? 'Halftime' : gs.clock || 'Live');
+    var d = t.querySelector('.fp-tn-drive'); if (d) { put('drive', gs.drive || ''); d.hidden = !gs.drive; }
+    if (phase !== cur) t.setAttribute('data-phase', phase);
+  }
   function hubHtml(latest, sb, posts, used) {
     var sn = showNext(), ep = BUNDLE.show.episode;
     var mLatest = '<section class="fp-mod fp-mod-latest" aria-label="Latest stories"><h2>Latest</h2><ol class="fp-latest">' + latest.map(function (p) {
@@ -423,6 +461,7 @@
         [0, 1].forEach(function (j) { var b = bs[i * 2 + j]; if (b && b.textContent !== two[j]) { var first = !b.textContent; b.textContent = two[j]; if (!first) { b.classList.remove('fp-flip'); void b.offsetWidth; b.classList.add('fp-flip'); } } });
       });
       el.hidden = s === 0;
+      if (s === 0) { var tn = el.closest('.fp-tunnel'); if (tn && tn.getAttribute('data-phase') === 'pre') tn.setAttribute('data-phase', 'kick'); }
       el.setAttribute('aria-label', parts[0][0] + ' days ' + parts[1][0] + ' hours ' + parts[2][0] + ' minutes to kickoff');
     });
     var show = root.querySelector('.fp-show');
@@ -501,12 +540,13 @@
     root.className = 'gbm-gazette gbm-sports-home fp26' + (mode.night ? ' fp-night' : ' fp-day') + (mode.gameday ? ' fp-gameday' : '') + (mode.embers ? ' fp-embers-on' : '');
     root.setAttribute('data-theme', mode.night ? 'dark' : 'light');
     root.setAttribute('data-fp', VERSION);
+    root.setAttribute('data-fp-build', String(BUNDLE.build || ''));
     root.setAttribute('data-fp-lead', picked.why);
     root.setAttribute('data-fp-scoreboard', sb.source);
     root.setAttribute('data-gazette-source', fresh ? 'current-feed' : 'last-known-feed');
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
     root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
-      (mode.gameday ? boardHtml(gs) : '') +
+      (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
       '<main id="sh-main"><div class="fp-wrap"><div id="sh-freshness"></div>' + leadHtml(lead, picked.why) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
       roadHtml(sb) + hubHtml(latest, sb, posts, used) + '</main>';
     if (!document.getElementById('gbm-fp26-styles')) {
@@ -534,6 +574,7 @@
     if (sb.next) root.querySelectorAll('[data-fp-count]').forEach(function (el) { if (el.getAttribute('data-fp-count') !== sb.next.kickoffIso && Date.parse(sb.next.kickoffIso) > now()) { el.setAttribute('data-fp-count', sb.next.kickoffIso); el.innerHTML = ''; } });
     renderCountdowns(root);
     patchRoad(root, sb);
+    patchTunnel(root, sb);
   }
   // The season band is the one block allowed to change after paint: it sits below the fold, so a band that the
   // feed adds or refreshes only swaps while it is off screen (same card count keeps the same height).

@@ -1,5 +1,5 @@
 import { chromium, devices } from 'playwright';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 const OUT='build/live-site-vision';
 mkdirSync(OUT,{recursive:true});
@@ -8,6 +8,13 @@ const TARGETS=[
   {
     name:'home',
     url:'https://www.gatorbaitmedia.com/',
+    root:'#gbm-live',
+    expectedText:"The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder"
+  },
+  {
+    // The Saturday game-day opener, forced by query so it is checked on production before kickoff.
+    name:'home-gameday',
+    url:'https://www.gatorbaitmedia.com/?gbm_fp=gameday',
     root:'#gbm-live',
     expectedText:"The Cowboy Doesn’t Talk Very Often But His Actions Speak Even Louder"
   },
@@ -91,11 +98,22 @@ function audit(input){
   if(target.root&&rootPresent&&!rootVisible)hard.push('expected presentation root not visible: '+target.root);
 
   const nativeVisible=visible(nativePages);
-  if(target.name==='home'&&rootVisible&&nativeVisible)hard.push('home custom surface and native #SITE_PAGES are both visible');
-  if(target.name==='home'&&rootPresent){
+  const isHome=target.name==='home'||target.name==='home-gameday';
+  if(isHome&&rootVisible&&nativeVisible)hard.push('home custom surface and native #SITE_PAGES are both visible');
+  if(isHome&&rootPresent){
     const road=document.querySelector('#gbm-road');
     if(!road)warnings.push('season band #gbm-road not rendered');
     else if(road.querySelectorAll('.g').length<3)warnings.push('season band has '+road.querySelectorAll('.g').length+' games');
+  }
+  if(target.name==='home-gameday'&&rootPresent){
+    const tn=document.querySelector('.fp-tunnel');
+    if(!tn)hard.push('game-day tunnel missing');
+    else{
+      const cd=tn.querySelector('[data-fp-count]');
+      if(tn.dataset.phase==='pre'&&!/\d/.test(cd?.textContent||''))warnings.push('tunnel countdown empty');
+      const r=tn.getBoundingClientRect();
+      if(r.width>innerWidth+2)hard.push('tunnel wider than viewport');
+    }
   }
   if(target.name==='magazine'&&rootVisible&&nativeVisible)hard.push('Magazine custom surface and native #SITE_PAGES are both visible');
 
@@ -217,8 +235,13 @@ function audit(input){
   if(small>10)warnings.push(small+' interactive targets below 44px guideline');
 
   const viewportMeta=document.querySelector('meta[name="viewport"]')?.getAttribute('content')||null;
+  // Which front-page build ran: the loader's pinned commit as served in the HTML and the renderer's build stamp.
+  const loaderSrc=(document.documentElement.outerHTML.match(/front-page-2026 src=([0-9a-f]+)/)||[])[1]||null;
+  const fpBuild=document.querySelector('#gbm-live')?.getAttribute('data-fp-build')||null;
   return {
     url:location.href,
+    loaderSrc,
+    fpBuild,
     viewportMeta,
     screen:{width:screen.width,height:screen.height},
     outer:{width:outerWidth,height:outerHeight},
@@ -261,8 +284,16 @@ if(lead){
   TARGETS.find(t=>t.name==='article').url=lead.url;
 }
 
+// The latest recorded Home Code loader (deploy/front-page-2026/README.md, "rev N: loader pinned to <sha>").
+let expectedLoader=null;
+try{
+  const readme=readFileSync('deploy/front-page-2026/README.md','utf8');
+  const revs=[...readme.matchAll(/^- rev \d+: loader pinned to ([0-9a-f]{7,})/gm)];
+  if(revs.length)expectedLoader=revs[revs.length-1][1];
+}catch{}
+
 const browser=await chromium.launch();
-const report={capturedAt:new Date().toISOString(),runs:[],hardFailureCount:0};
+const report={capturedAt:new Date().toISOString(),runs:[],hardFailureCount:0,expectedLoader};
 
 for(const profile of PROFILES){
   for(const target of TARGETS){
@@ -312,6 +343,8 @@ for(const profile of PROFILES){
         viewportCandidate.screenshot=candidateShot;
       }
       if(status!==200)result.hard.push('HTTP status '+status);
+      // Wix edges kept serving an older embed revision for a while after a PATCH (Sept. 30), so say which loader ran.
+      if(result.loaderSrc&&expectedLoader&&result.loaderSrc!==expectedLoader)result.warnings.push('production served loader src='+result.loaderSrc+', latest recorded rev pins '+expectedLoader+' (edge cache lag or an unrecorded change)');
       report.hardFailureCount+=result.hard.length;
       report.runs.push({target:target.name,profile:profile.name,requestedWidth:profile.expectedWidth,status,screenshot:shot,viewportCandidate,consoleErrors:consoleErrors.slice(0,6),networkFailures:networkFailures.slice(0,10),...result});
     }catch(error){
@@ -329,6 +362,7 @@ for(const r of report.runs){
   lines.push('## '+r.target+' · '+r.profile);
   if(r.error){lines.push('- HARD: '+r.error,'');continue;}
   lines.push('- HTTP: '+r.status);
+  if(r.loaderSrc||r.fpBuild)lines.push('- front page: loader src='+(r.loaderSrc||'n/a')+' · build '+(r.fpBuild||'n/a'));
   lines.push('- requested/rendered viewport: '+r.requestedWidth+' / '+r.viewport.width+'×'+r.viewport.height+'; layout width '+r.layoutWidth);
   lines.push('- viewport meta: '+r.viewportMeta);
   lines.push('- screen / visual viewport: '+r.screen.width+' / '+(r.visualViewport?r.visualViewport.width:'n/a'));

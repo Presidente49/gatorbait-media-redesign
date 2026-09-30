@@ -1,5 +1,5 @@
 {
-  "commit": "dc747be29042e0838ee322e8a47ee7be3c316be6",
-  "updated": "2026-09-30T21:40:00Z",
-  "note": "PR #99 speed cut: Wix images re-cut with enc_auto + srcset, fan modules in a lazy chunk, minified bundles, embers deferred. Rollback: fba3a358a79bffc8853baf20dc499a4a1f9c7638."
+  "commit": "2cd7303fb009767491e256c07f5def7faf668b6a",
+  "updated": "2026-09-30T22:40:00Z",
+  "note": "PR #104: story Share button and Guide strip find the post title by structure and retry the mount during late Wix re-renders. Rollback: dc747be29042e0838ee322e8a47ee7be3c316be6."
 }

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Game Threads Mockup</title>
+<meta name="description" content="Mockup of the GatorBait Game Threads board on Missouri week: thread list, the open game thread, Buddy's pinned post and the members-only marker.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#07122e;--blue:#0021a5;--orange:#fa4616;--ink:#f3f5fa;--mute:#b9c4dc;--panel:#0d1a3f;--line:rgba(243,245,250,.14)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--navy);color:var(--ink);font:400 16px/1.5 Barlow,system-ui,sans-serif}
+a{color:var(--orange);text-decoration:none}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 40px}
+.mock{background:var(--orange);color:var(--navy);font:800 12px/1.2 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:7px 12px}
+.mast{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font:800 14px/1 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.mast span{color:var(--orange)}
+.mast small{color:var(--mute);letter-spacing:.08em}
+.k{font:800 13px/1 "Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+h1{margin:22px 0 4px;font:800 38px/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.sub{margin:0 0 16px;color:var(--mute);font-size:15px}
+.tabs{display:flex;gap:6px;margin:0 0 14px;overflow-x:auto}
+.tabs span{flex:none;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font:600 13px/1 Barlow,sans-serif;color:var(--mute)}
+.tabs .on{background:var(--blue);border-color:var(--blue);color:var(--ink)}
+.list{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.list li{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.list li.open{background:linear-gradient(90deg,rgba(0,33,165,.35),transparent)}
+.wk{font:800 22px/1 "Barlow Condensed",sans-serif;color:var(--mute);text-align:center}
+.list li.open .wk{color:var(--orange)}
+.t{font:600 16px/1.2 Barlow,sans-serif}
+.m{display:block;font-size:12.5px;color:var(--mute);margin-top:3px}
+.st{font:800 11px/1 "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:6px 8px;border:1px solid var(--line);border-radius:3px;color:var(--mute);white-space:nowrap}
+.st.live{border-color:var(--orange);color:var(--orange)}
+.st.soon{border-color:var(--blue);color:var(--ink)}
+.th{margin-top:30px;padding-top:18px;border-top:3px solid var(--orange)}
+.th h2{margin:6px 0 4px;font:800 30px/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0}
+.strip div{background:var(--panel);border-top:3px solid var(--blue);padding:8px 10px}
+.strip b{display:block;font:800 22px/1 "Barlow Condensed",sans-serif}
+.strip i{font:600 11px/1.2 Barlow,sans-serif;font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.src{font-size:12px;color:var(--mute);margin:0 0 16px}
+.post{padding:14px 0;border-bottom:1px solid var(--line)}
+.who{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mute);margin-bottom:6px;flex-wrap:wrap}
+.av{width:28px;height:28px;border-radius:50%;background:var(--blue);display:inline-grid;place-items:center;font:800 13px/1 "Barlow Condensed",sans-serif;color:var(--ink)}
+.who b{color:var(--ink);font-weight:600}
+.badge{font:800 10px/1 "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:4px 6px;border-radius:3px;background:var(--orange);color:var(--navy)}
+.badge.staff{background:var(--ink)}
+.post p{margin:0 0 8px}
+.acts{font-size:12.5px;color:var(--mute)}
+.acts span{margin-right:14px}
+.pin{background:var(--blue);border-left:5px solid var(--orange);padding:14px 14px 12px;margin:14px 0 4px}
+.pin .k{color:var(--ink)}
+.pin .av{background:var(--navy)}
+.porch{background:var(--panel);border:1px dashed var(--orange);padding:14px;margin:14px 0}
+.porch h3{margin:0 0 6px;font:800 22px/1 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.porch p{margin:0 0 10px;font-size:14.5px;color:var(--mute)}
+.btn{display:inline-block;background:var(--orange);color:var(--navy);font:800 14px/1 "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:11px 14px;border-radius:3px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.reply{display:flex;gap:8px;margin-top:16px}
+.reply div{flex:1;border:1px solid var(--line);border-radius:3px;padding:11px 12px;color:var(--mute);font-size:14px}
+.foot{margin-top:26px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--mute)}
+@media(min-width:600px){h1{font-size:48px}.th h2{font-size:36px}}
+</style>
+</head>
+<body>
+<div class="mock">Mockup for review. Not live. All handles and posts are fictional.</div>
+<div class="wrap">
+<div class="mast"><div>GatorBait <span>Game Threads</span></div><small>Sign in</small></div>
+
+<div class="k">Missouri week</div>
+<h1>Game Threads</h1>
+<p class="sub">One thread per Florida game. Opens on Bloody Tuesday, closes after the recap. Read free; post with a GatorBait account.</p>
+
+<div class="tabs"><span class="on">2026 football</span><span>Hoops</span><span>Buddy's Porch</span><span>House rules</span></div>
+
+<ul class="list">
+<li class="open"><div class="wk">5</div><div><div class="t">Florida at No. 25 Missouri</div><span class="m">Sat., Oct. 3, 3:30 p.m. ET, ABC. Opened Tuesday.</span></div><span class="st live">Open</span></li>
+<li><div class="wk">6</div><div><div class="t">Week 6 opponent</div><span class="m">Opens Tuesday after the Missouri recap posts.</span></div><span class="st soon">Next</span></li>
+<li><div class="wk">4</div><div><div class="t">Florida 52, No. 4 Ole Miss 28</div><span class="m">Sept. 26. Closed after the recap and gallery.</span></div><span class="st">Archived</span></li>
+<li><div class="wk">2</div><div><div class="t">Florida 52, Campbell 3</div><span class="m">Sept. 12. Closed.</span></div><span class="st">Archived</span></li>
+<li><div class="wk">1</div><div><div class="t">Florida 66, Florida Atlantic 21</div><span class="m">Sept. 5. Closed.</span></div><span class="st">Archived</span></li>
+</ul>
+
+<section class="th">
+<div class="k">Week 5 thread. Open</div>
+<h2>Florida at No. 25 Missouri</h2>
+<div class="strip">
+<div><b>4-0</b><i>Florida record</i></div>
+<div><b>No. 8</b><i>Florida ranking</i></div>
+<div><b>3:30</b><i>p.m. ET, ABC</i></div>
+</div>
+<p class="src">Record, ranking, kickoff and TV: ESPN, via the GatorBait scoreboard feed (sports-live/scoreboard.json, updated Sept. 29).</p>
+
+<div class="pin">
+<div class="k">Pinned by staff</div>
+<div class="who"><span class="av">BM</span><b>Buddy Martin</b><span class="badge staff">Editorial lead</span><span>Tue. 9:12 a.m.</span></div>
+<p>Sample text for the mockup. Thread's open. My column on why the poll doesn't matter this week is on the site. Members, drop your questions on the Porch below and I'll take the best ones on Wednesday's show at 9 p.m. ET.</p>
+<div class="acts"><span>Read the column</span><span>Preview: First Look at Missouri</span></div>
+</div>
+
+<div class="porch">
+<div class="k">Members only</div>
+<h3>Buddy's Porch: Ask before the show</h3>
+<p>Questions posted here go to Buddy before The Buddy Martin Show, live Mondays, Wednesdays and Thursdays at 9 p.m. ET. Included with any paid GatorBait plan.</p>
+<span class="btn">Ask Buddy</span> <span class="btn ghost">See plans</span>
+</div>
+
+<div class="post">
+<div class="who"><span class="av">S</span><b>SwampRat84</b><span class="badge">Member</span><span>Tue. 10:40 a.m.</span></div>
+<p>Sumrall's "Bloody Tuesday" line from the presser is the whole week in two words. Nobody on this roster needs a poll to get up for Columbia.</p>
+<div class="acts"><span>Reply</span><span>Like 14</span></div>
+</div>
+
+<div class="post">
+<div class="who"><span class="av">O</span><b>OrangeAndBlue352</b><span>Tue. 11:05 a.m.</span></div>
+<p>Grade 1 PCL sprain for Vernell Brown III per the site's MRI story. Anyone expect him to go, or is this a wait-till-warmups deal?</p>
+<div class="acts"><span>Reply</span><span>Like 9</span></div>
+</div>
+
+<div class="post">
+<div class="who"><span class="av">T</span><b>TebowEraTailgate</b><span class="badge">Member</span><span>Tue. 12:31 p.m.</span></div>
+<p>Asked Buddy on the Porch whether the O-line keeps the Ole Miss push going on the road. Franz's trenches piece has me believing.</p>
+<div class="acts"><span>Reply</span><span>Like 6</span></div>
+</div>
+
+<div class="post">
+<div class="who"><span class="av">H</span><b>HoopsFirst</b><span>Tue. 1:14 p.m.</span></div>
+<p>3:30 on ABC. Setting the tailgate for noon. Who's driving up?</p>
+<div class="acts"><span>Reply</span><span>Like 3</span></div>
+</div>
+
+<div class="reply"><div>Add to the thread. Sign in to post.</div><span class="btn">Post</span></div>
+</section>
+
+<p class="foot">Mockup only. Scores, record, ranking, kickoff and TV from ESPN via the GatorBait scoreboard feed; story references from gatorbaitmedia.com posts of Sept. 28 and 29, 2026. Handles are fictional. Buddy's post is sample copy pending his approval. No prices shown; plan gating uses existing GatorBait pricing plans.</p>
+</div>
+</body>
+</html>

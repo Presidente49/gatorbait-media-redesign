@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GatorBait Share</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#07122e;--blue:#0021a5;--or:#fa4616;--ink:#f3f5fa;--mut:#b9c4dc}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--ink);font:16px/1.45 Barlow,sans-serif}
+.wrap{max-width:430px;margin:0 auto;padding:16px}
+h1{font:800 26px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;margin:4px 0 2px}
+.sub{color:var(--mut);font-size:14px;margin:0 0 16px}
+.card{background:#0b1a44;border:1px solid #1a2d6a;border-radius:14px;padding:16px;margin-bottom:14px}
+.k{color:var(--or);font:600 13px "Barlow Condensed",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.card h2{font:800 24px/1.05 "Barlow Condensed",sans-serif;margin:6px 0 8px}
+.by{color:var(--mut);font-size:13px}
+.rec{display:flex;align-items:baseline;gap:10px}.rec b{font:800 56px/1 "Barlow Condensed",sans-serif}
+.rec span{font:600 18px "Barlow Condensed",sans-serif;color:var(--or)}
+.res{list-style:none;padding:0;margin:8px 0;display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:14px}
+.res b{color:#7ef0a6;margin-right:4px}
+.nx{border-top:1px solid #1a2d6a;padding-top:8px;font-size:14px}.cd{font:800 30px/1 "Barlow Condensed",sans-serif;color:var(--or);margin:2px 0}
+.bar{display:flex;gap:8px;margin-top:12px}
+.btn{flex:1;min-height:44px;border:0;border-radius:10px;font:600 16px Barlow,sans-serif;color:#fff;background:var(--blue);cursor:pointer}
+.btn.or{background:var(--or)}.btn.gh{background:transparent;border:1px solid #2b3f80;color:var(--ink)}
+a.lk{color:var(--mut);font-size:12px;word-break:break-all;text-decoration:none;display:block;margin-top:6px}
+.src{color:var(--mut);font-size:12px;margin-top:20px}
+#veil{position:fixed;inset:0;background:rgba(3,8,24,.7);display:none}
+#sh{position:fixed;left:0;right:0;bottom:0;background:#0b1a44;border-radius:18px 18px 0 0;padding:12px 16px 24px;max-width:430px;margin:0 auto;transform:translateY(105%);transition:transform .25s}
+#sh.on{transform:none}#veil.on{display:block}
+#sh i{display:block;width:40px;height:4px;border-radius:2px;background:#2b3f80;margin:0 auto 10px}
+canvas{width:100%;height:auto;border-radius:10px;display:block;background:var(--navy)}
+#tx{font-size:13px;color:var(--mut);margin:10px 0;white-space:pre-wrap}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--or);color:#fff;padding:10px 16px;border-radius:999px;font-weight:600;opacity:0;transition:.2s;pointer-events:none}
+</style></head><body><div class="wrap">
+<h1>Share GatorBait</h1><p class="sub">One tap, on every story, the season card and The Tunnel. The image is drawn on your phone from the page's own numbers.</p>
+
+<div class="card" id="c-story"><span class="k">Column · Florida 52, No. 4 Ole Miss 28</span>
+<h2>Put Down the Poll, Gators. Missouri Is Waiting.</h2><div class="by">By Buddy Martin · Sept. 28</div>
+<a class="lk" href="https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time">gatorbaitmedia.com/post/put-down-the-poll-gators…</a>
+<div class="bar"><button class="btn or" onclick="open_('story')">Share this story</button></div></div>
+
+<div class="card" id="c-season"><span class="k">The Road Ahead · 2026</span>
+<div class="rec"><b>4-0</b><span>No. 8 · Florida</span></div>
+<ul class="res"><li><b>W</b>66-21 FAU</li><li><b>W</b>52-3 Campbell</li><li><b>W</b>44-39 at Auburn</li><li><b>W</b>52-28 No. 4 Ole Miss</li></ul>
+<div class="nx">Next: Sat., Oct. 3, 3:30 p.m. ET at No. 25 Missouri · ABC<div class="cd" id="cd">…</div><span class="by">to kickoff · The Tunnel</span></div>
+<div class="bar"><button class="btn" onclick="open_('season')">Share season card</button><button class="btn gh" onclick="open_('tunnel')">Share countdown</button></div></div>
+
+<p class="src">Record, scores and kickoff: ESPN via sports-live/scoreboard.json. Story URL: gazette-live/posts.json. Demo only; nothing here touches the live site.</p></div>
+
+<div id="veil" onclick="close_()"></div>
+<div id="sh" role="dialog" aria-label="Share"><i></i><canvas id="cv" width="1200" height="630"></canvas><div id="tx"></div>
+<div class="grid"><button class="btn or" onclick="nat()">Share…</button><button class="btn gh" onclick="copy()">Copy link</button><button class="btn gh" onclick="go('x')">Post on X</button><button class="btn gh" onclick="go('facebook')">Facebook</button><button class="btn gh" style="grid-column:1/-1" onclick="save()">Save image</button></div></div>
+<div id="toast"></div>
+<script>
+var D={rec:'4-0',rank:8,games:[['FAU','66-21'],['Campbell','52-3'],['at Auburn','44-39'],['No. 4 Ole Miss','52-28']],
+next:{opp:'No. 25 Missouri',when:'Sat., Oct. 3, 3:30 p.m. ET, ABC',kick:'2026-10-03T19:30:00Z'},
+story:{t:'Put Down the Poll, Gators. Missouri Is Waiting.',by:'Buddy Martin',kick:'Florida 52, No. 4 Ole Miss 28',
+url:'https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time'},home:'https://www.gatorbaitmedia.com/'};
+var cur='story',cv=document.getElementById('cv'),x=cv.getContext('2d');
+function left(){var ms=Date.parse(D.next.kick)-Date.now();if(ms<0)return'Kickoff';var m=Math.floor(ms/6e4);return Math.floor(m/1440)+'d '+Math.floor(m%1440/60)+'h '+m%60+'m'}
+function tick(){document.getElementById('cd').textContent=left()}tick();setInterval(tick,3e4);
+function utm(kind,med){var b=kind==='story'?D.story.url:D.home,u=new URL(b);u.searchParams.set('utm_source','gatorbait_share');u.searchParams.set('utm_medium',med);u.searchParams.set('utm_campaign',kind);if(kind!=='story')if(kind==='season')u.hash='gbm-road';return u.href}
+function text(kind){return kind==='story'?D.story.t+' — '+D.story.by+' on GatorBait':kind==='season'?'Florida '+D.rec+', No. '+D.rank+'. Next: at '+D.next.opp+', '+D.next.when+'. The Road Ahead on GatorBait':'Kickoff in '+left()+': Florida at '+D.next.opp+', '+D.next.when+'. The Tunnel on GatorBait'}
+function wrap(s,xx,y,w,lh){var ws=s.split(' '),l='';for(var i=0;i<ws.length;i++){var t=l+ws[i]+' ';if(x.measureText(t).width>w&&l){x.fillText(l,xx,y);l=ws[i]+' ';y+=lh}else l=t}x.fillText(l,xx,y);return y+lh}
+function F(w,px,c){x.font=w+' '+px+'px "Barlow Condensed"';x.fillStyle=c}
+function draw(kind){x.fillStyle='#07122e';x.fillRect(0,0,1200,630);x.fillStyle='#0021a5';x.beginPath();x.moveTo(860,0);x.lineTo(1200,0);x.lineTo(1200,630);x.lineTo(700,630);x.fill();x.fillStyle='#fa4616';x.fillRect(0,0,18,630);
+F(800,34,'#fa4616');x.fillText('GATORBAIT',70,80);F(600,26,'#b9c4dc');x.fillText('Independent Florida Gators coverage',290,80);
+if(kind==='story'){F(600,32,'#fa4616');x.fillText(D.story.kick.toUpperCase(),70,180);F(800,86,'#f3f5fa');var y=wrap(D.story.t,70,280,1000,92);F(600,36,'#b9c4dc');x.fillText('By '+D.story.by,70,y+10)}
+else{F(800,190,'#f3f5fa');x.fillText(D.rec,70,300);F(800,54,'#fa4616');x.fillText('NO. '+D.rank+' FLORIDA',70,360);F(600,40,'#f3f5fa');
+if(kind==='season'){D.games.forEach(function(g,i){x.fillStyle='#7ef0a6';x.fillText('W',560,190+i*56);x.fillStyle='#f3f5fa';x.fillText(g[1]+'  '+g[0],620,190+i*56)});F(600,34,'#b9c4dc');x.fillText('Next: at '+D.next.opp+'  ·  '+D.next.when,70,450)}
+else{F(600,34,'#b9c4dc');x.fillText('KICKOFF IN',620,190);F(800,120,'#fa4616');x.fillText(left(),620,310);F(600,40,'#f3f5fa');x.fillText('Florida at '+D.next.opp,620,380);F(600,34,'#b9c4dc');x.fillText(D.next.when,70,450)}}
+F(600,30,'#b9c4dc');x.fillText((kind==='story'?D.story.url.replace('https://www.',''):'gatorbaitmedia.com')+'   ·   Source: ESPN, GatorBait',70,585)}
+function open_(k){cur=k;document.fonts.ready.then(function(){draw(k);document.getElementById('tx').textContent=text(k)+'\n'+utm(k,'native');document.getElementById('sh').classList.add('on');document.getElementById('veil').classList.add('on')})}
+function close_(){document.getElementById('sh').classList.remove('on');document.getElementById('veil').classList.remove('on')}
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.style.opacity=1;setTimeout(function(){t.style.opacity=0},1600)}
+function copy(){var s=text(cur)+' '+utm(cur,'copy');(navigator.clipboard?navigator.clipboard.writeText(s):Promise.reject()).then(function(){toast('Link copied')},function(){prompt('Copy this link',s)})}
+function go(n){var u=utm(cur,n),h=n==='x'?'https://x.com/intent/post?text='+encodeURIComponent(text(cur))+'&url='+encodeURIComponent(u):'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(u);window.open(h,'_blank','noopener,width=600,height=560')}
+function blob(cb){cv.toBlob(function(b){cb(new File([b],'gatorbait-'+cur+'.png',{type:'image/png'}))},'image/png')}
+function save(){blob(function(f){var a=document.createElement('a');a.href=URL.createObjectURL(f);a.download=f.name;a.click();toast('Image saved')})}
+function nat(){if(!navigator.share)return copy();blob(function(f){var d={title:'GatorBait',text:text(cur),url:utm(cur,'native')};if(navigator.canShare&&navigator.canShare({files:[f]}))d.files=[f];navigator.share(d).catch(function(){})})}
+</script></body></html>

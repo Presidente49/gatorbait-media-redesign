@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Make the Call</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#07122e;--blue:#0021a5;--orange:#fa4616;--ink:#f3f5fa;--mut:#b9c4dc;--cond:"Barlow Condensed","Arial Narrow",sans-serif;--body:"Barlow","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--navy);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;padding:20px 16px 40px}
+main{max-width:430px;margin:0 auto}
+.kick{font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+h1{font-family:var(--cond);font-weight:800;font-size:44px;line-height:.92;text-transform:uppercase;margin:4px 0 8px}
+h1 span{color:var(--orange)}
+.sub{color:var(--mut);font-size:14px}
+.sub b{color:var(--ink)}
+.mock{display:inline-block;margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--mut);color:var(--mut);padding:3px 8px;border-radius:2px}
+section{margin-top:18px;background:linear-gradient(160deg,#0b1a45,#07122e 70%);border:1px solid #17285c;border-radius:6px;padding:16px 14px 14px;position:relative;overflow:hidden}
+section::after{content:"";position:absolute;right:-60px;top:-60px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(250,70,22,.35),transparent 68%);pointer-events:none}
+h2{font-family:var(--cond);font-weight:800;font-size:26px;line-height:1;text-transform:uppercase;display:flex;justify-content:space-between;align-items:baseline}
+h2 small{font-size:12px;letter-spacing:.12em;color:var(--orange);font-weight:700}
+.row{display:flex;gap:10px;margin-top:12px;align-items:stretch}
+.team{flex:1;background:rgba(0,33,165,.35);border:1px solid #1c3a9a;border-radius:4px;padding:8px 10px;text-align:center}
+.team label{display:block;font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.team input{width:100%;background:none;border:0;color:var(--ink);font-family:var(--cond);font-weight:800;font-size:46px;line-height:1;text-align:center;outline:0}
+.team input:focus{color:var(--orange)}
+.at{align-self:center;font-family:var(--cond);font-weight:800;font-size:22px;color:var(--mut)}
+.line{display:flex;gap:8px;margin-top:10px}
+input.txt,textarea{flex:1;width:100%;background:#040c24;border:1px solid #1c3a9a;border-radius:4px;color:var(--ink);font:inherit;padding:10px 12px;outline:0}
+input.txt:focus,textarea:focus{border-color:var(--orange)}
+textarea{min-height:76px;resize:vertical}
+button{background:var(--orange);color:var(--navy);border:0;border-radius:4px;font-family:var(--cond);font-weight:800;font-size:18px;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;cursor:pointer;white-space:nowrap}
+button:disabled{background:#3a4770;color:#99a3bf;cursor:default}
+.note{margin-top:8px;font-size:12px;color:var(--mut)}
+.note b{color:var(--orange)}
+.bars{margin-top:14px}
+.bar{display:grid;grid-template-columns:96px 1fr 44px;gap:8px;align-items:center;font-size:13px;margin-top:7px}
+.bar i{display:block;height:14px;background:var(--blue);border-radius:2px;transition:width .5s;min-width:2px}
+.bar.me i{background:var(--orange)}
+.bar em{font-style:normal;text-align:right;font-family:var(--cond);font-weight:700;font-size:15px}
+.stat{display:flex;gap:10px;margin-top:12px}
+.stat div{flex:1;border-top:2px solid var(--orange);padding-top:6px}
+.stat b{display:block;font-family:var(--cond);font-weight:800;font-size:24px;line-height:1}
+.stat span{font-size:12px;color:var(--mut)}
+ol{list-style:none;margin-top:12px}
+ol li{display:grid;grid-template-columns:28px 1fr auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #17285c;font-size:14px}
+ol li:first-child b{color:var(--orange)}
+ol li b{font-family:var(--cond);font-weight:800;font-size:20px}
+ol li span{color:var(--mut);font-size:12px;display:block}
+ol li.you{background:rgba(250,70,22,.12);margin:0 -14px;padding:8px 14px;border-bottom:0}
+ol li.you b{color:var(--orange)}
+.q{margin-top:10px;padding:10px 12px;border-left:3px solid var(--blue);background:rgba(0,33,165,.18);font-size:14px}
+.q .tag{display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:2px 6px;border-radius:2px;margin-bottom:4px;background:#3a4770;color:var(--ink)}
+.q .tag.live{background:var(--orange);color:var(--navy)}
+.q span{display:block;font-size:12px;color:var(--mut);margin-top:4px}
+footer{margin-top:18px;font-size:11.5px;color:var(--mut);line-height:1.5}
+footer p+p{margin-top:8px}
+</style>
+</head>
+<body>
+<main>
+<div class="kick">Gator Nation · Fan Zone</div>
+<h1>Make <span>the call.</span></h1>
+<p class="sub"><b>Florida (4-0, No. 8) at No. 25 Missouri</b> · Sat., Oct. 3, 3:30 p.m. ET, ABC. Picks lock at kickoff. Score it after the final, climb the ladder all season.</p>
+<span class="mock">Mockup · fictional handles and counts</span>
+
+<section aria-labelledby="h-pick">
+<h2 id="h-pick">Pick the score <small id="lock">Locks in 3d 4h</small></h2>
+<div class="row">
+<div class="team"><label for="uf">Florida</label><input id="uf" type="number" inputmode="numeric" min="0" max="99" value="34"></div>
+<div class="at">at</div>
+<div class="team"><label for="mz">Missouri</label><input id="mz" type="number" inputmode="numeric" min="0" max="99" value="24"></div>
+</div>
+<div class="line"><input class="txt" id="handle" maxlength="18" placeholder="Your handle (shown on the ladder)"><button id="go">Lock it</button></div>
+<p class="note" id="msg">Exact score <b>25 pts</b> · winner and margin within 3 <b>10</b> · winner <b>5</b>. One pick per game per fan.</p>
+<div class="bars" id="bars"></div>
+<div class="stat"><div><b id="n">0</b><span>picks in</span></div><div><b id="avg">–</b><span>Gator Nation's average call</span></div><div><b id="uf-pct">–</b><span>take Florida</span></div></div>
+</section>
+
+<section aria-labelledby="h-lad">
+<h2 id="h-lad">The ladder <small>After 4 games</small></h2>
+<ol id="ladder"></ol>
+<p class="note">Season standings reset for bowl season. Ties break on most exact scores.</p>
+</section>
+
+<section aria-labelledby="h-ask">
+<h2 id="h-ask">Ask Buddy <small>Wed. 9 p.m. ET show</small></h2>
+<textarea id="ask" maxlength="240" placeholder="One question for Buddy about Missouri, the poll or the road to Texas and Georgia. 240 characters."></textarea>
+<div class="line" style="margin-top:8px"><span class="note" id="cnt" style="flex:1;margin:0">0 / 240</span><button id="send">Send it</button></div>
+<div id="queue"></div>
+</section>
+
+<footer>
+<p><b>Privacy:</b> we show only the handle you type and your pick. No email, phone or account is needed to play. Questions are read by an editor before they appear or are used on air, and can be edited for length and taste. Prizes, if any, need a verified handle.</p>
+<p><b>Sources:</b> record, ranking, opponent, kickoff and network from ESPN via the site scoreboard feed (sports-live/scoreboard.json, updated Sept. 29). Show schedule: The Buddy Martin Show, Mon., Wed., Thu. 9 p.m. ET on YouTube and Facebook. Pick counts and ladder names in this mockup are fictional.</p>
+</footer>
+</main>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var bins=[{k:"UF by 14+",n:212},{k:"UF by 7-13",n:168},{k:"UF by 1-6",n:74},{k:"Mizzou wins",n:39}];
+var sum=[34.6,23.4],me=null;
+var ladder=[["SwampRat88",86,"2 exact"],["OrangeAndBlueOG",77,"1 exact"],["ChompChompChi",71,"1 exact"],["GatorGranny",64,"0 exact"],["TebowTime15",60,"0 exact"]];
+function bin(u,m){var d=u-m;return d>=14?0:d>=7?1:d>=1?2:3}
+function bars(){var t=0,i;for(i=0;i<4;i++)t+=bins[i].n;var h="";for(i=0;i<4;i++){var p=Math.round(bins[i].n/t*100);h+='<div class="bar'+(me!==null&&me===i?' me':'')+'"><span>'+bins[i].k+'</span><i style="width:'+p+'%"></i><em>'+p+'%</em></div>'}
+$("bars").innerHTML=h;$("n").textContent=t;$("avg").textContent=Math.round(sum[0])+"-"+Math.round(sum[1]);$("uf-pct").textContent=Math.round((t-bins[3].n)/t*100)+"%"}
+function lad(){var h="",i;for(i=0;i<5;i++)h+='<li><b>'+(i+1)+'</b><div>@'+ladder[i][0]+'<span>'+ladder[i][2]+'</span></div><b>'+ladder[i][1]+'</b></li>';
+if(me!==null)h+='<li class="you"><b>–</b><div>@'+esc($("handle").value.trim()||"you")+'<span>Pick locked. Scored after the final.</span></div><b>0</b></li>';$("ladder").innerHTML=h}
+function esc(s){return s.replace(/[<>&"]/g,function(c){return{"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]})}
+$("go").onclick=function(){var u=+$("uf").value,m=+$("mz").value,h=$("handle").value.trim();
+if(!h){$("msg").innerHTML="Add a handle so your pick can climb the ladder.";$("handle").focus();return}
+if(u===m||isNaN(u)||isNaN(m)){$("msg").innerHTML="Games do not end in ties. Pick a winner.";return}
+var t=0,i;for(i=0;i<4;i++)t+=bins[i].n;sum[0]=(sum[0]*t+u)/(t+1);sum[1]=(sum[1]*t+m)/(t+1);me=bin(u,m);bins[me].n++;
+$("msg").innerHTML="Locked: <b>Florida "+u+", Missouri "+m+"</b> as @"+esc(h)+". You can change it until kickoff.";
+$("go").textContent="Update";bars();lad();try{localStorage.setItem("gbm-call",JSON.stringify([u,m,h]))}catch(e){}};
+var q=[{t:"Is Sumrall's 'pay the toll' talk about Columbia real, or is it a coach protecting a 4-0 team from a No. 8 ranking?",s:"live",w:"Asked by @BullGatorBill · answered on Wednesday's show"}];
+function qs(){var h="",i;for(i=0;i<q.length;i++)h+='<div class="q"><span class="tag'+(q[i].s==="live"?" live":"")+'">'+(q[i].s==="live"?"On the show":"Awaiting moderation")+'</span><div>'+esc(q[i].t)+'</div><span>'+q[i].w+'</span></div>';$("queue").innerHTML=h}
+$("ask").oninput=function(){$("cnt").textContent=this.value.length+" / 240"};
+$("send").onclick=function(){var v=$("ask").value.trim();if(v.length<8){$("cnt").textContent="Give Buddy a full question.";return}
+q.unshift({t:v,s:"pend",w:"Sent by @"+esc($("handle").value.trim()||"you")+" · an editor reads it before it goes anywhere"});$("ask").value="";$("cnt").textContent="Sent. 0 / 240";qs()};
+try{var s=JSON.parse(localStorage.getItem("gbm-call"));if(s){$("uf").value=s[0];$("mz").value=s[1];$("handle").value=s[2];me=bin(+s[0],+s[1]);$("go").textContent="Update";$("msg").innerHTML="Your pick is locked: <b>Florida "+s[0]+", Missouri "+s[1]+"</b>. Change it any time before kickoff."}}catch(e){}
+var ko=new Date("2026-10-03T19:30:00Z");function tick(){var d=ko-Date.now();if(d<=0){$("lock").textContent="Locked";$("go").disabled=true;return}$("lock").textContent="Locks in "+Math.floor(d/864e5)+"d "+Math.floor(d%864e5/36e5)+"h"}
+tick();setInterval(tick,6e4);bars();lad();qs();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+# Community pitch: GatorBait Game Threads
+
+Three directions were weighed. The game-thread board wins, with Buddy's Porch folded in as the members-only piece rather than a standalone room, and no public-with-badges board.
+
+- Game threads win because the season sets the rhythm. Each thread has a real open (Bloody Tuesday) and a real close (the recap), so there is never a stale front page. A game thread is the one thing Gator fans already do on rival boards and in the YouTube chat during the show, and the site already produces the fuel every week: Monday presser story, Buddy's column, the first-look preview, the recap, the gallery.
+- Buddy's Porch alone would be quiet four days a week and would put the whole board behind a paywall before anyone has seen it work. Inside the game thread it is alive every week and it is the visible reason to pay.
+- A public board with badges and paid-only threads is a 24/7 moderation commitment with no natural close, which is how the Groups feed collected spam in the first place.
+
+## 1) The idea (two sentences)
+
+GatorBait Game Threads is one board with one thread per Florida game: it opens on Bloody Tuesday with the week's presser story and Buddy's column pinned, runs through kickoff on the phone, and is archived after the recap and gallery post, so the board is always current and never empty. Inside each thread sits Buddy's Porch, a members-only box where paid subscribers post questions that Buddy takes on The Buddy Martin Show (live Mondays, Wednesdays and Thursdays at 9 p.m. ET), which turns the existing plans into something a reader can see and use every week.
+
+## 2) Why readers or revenue care
+
+- Readers: on Missouri week (Florida 4-0, No. 8, at No. 25 Missouri, Sat., Oct. 3, 3:30 p.m. ET, ABC; ESPN via `sports-live/scoreboard.json`) the site has five relevant stories and no place to talk about them. Rival fan boards and the YouTube chat hold that conversation now. A thread that opens Tuesday keeps them on gatorbaitmedia.com from the presser to the recap.
+- Membership: the paid plans currently buy content that is not gated. The Sept. 28 read-only audit found 0 of the 26 newest posts gated and the recent 20 posts with empty `pricingPlanIds` (`skills/master-control/references/CURRENT-STATE.md`; `docs/HOMEPAGE-BASELINE-LOCK.md`). Buddy's Porch gives every existing plan a weekly, visible benefit without touching the paywall question: ask Buddy, hear the answer on the show. The "See plans" button goes to the existing `/pricing-plans` page (`automation/ops-hub/agents/subscriptions.md`); no prices are invented or changed.
+- Editorial: the board feeds the show and the next story. The community skill already defines this loop (story, discuss, thread, insight, next story; `skills/gatorbait-community/SKILL.md`). Questions on the Porch are a free weekly listener-mail segment for Buddy and a leads list for Brenden.
+- Retention: a member who asks a question Tuesday has a reason to watch Wednesday and to come back for the recap Sunday. That is three touches a week from one paid feature.
+
+No audience or conversion numbers are claimed. The email-cohort counts in `docs/EMAIL-HYGIENE-2026-09-23.md` are email counts, not board demand, and are not used here.
+
+## 3) How it is built (Wix app vs. custom, moderation, who runs it, hours to launch, what it costs)
+
+Build on Wix Groups, not a custom embed, and not Discourse yet.
+
+- What exists: the native Wix Groups app is installed and reconnected on production, with eight pre-existing group records and a private VIP group whose privacy is preserved (`docs/CREATIVE-DIRECTION-2026-09-23.md`). `/message-board` already redirects to `/groups` (`skills/master-control/references/CURRENT-STATE.md`). The Groups frontend pages still need Editor completion and public/member QC before anyone calls it a working board (same doc).
+- Wix Forum: the repo records the Wix Forum app as discontinued March 1, 2026, and says not to enable it (`skills/gatorbait-community/SKILL.md`; `automation/ops-hub/agents/community-director.md`). That could not be re-verified this session because network access was blocked and the Wix MCP failed to connect, so Brenden should confirm in the dashboard. Either way the plan does not depend on it.
+- Discourse: the repo's long-term target (`skills/gatorbait-community/SKILL.md`). It is the better forum engine, but it means a recurring hosted fee or a self-hosted server with backups, email delivery and rollback, and the skill requires owner approval before either. Game Threads on Groups is the cheap demand test that tells Brenden whether Discourse is worth paying for.
+- Shape in Groups: one public group, "GatorBait Game Threads," reused from an existing record where possible (no duplicates). Reading is public; posting requires a free site account. One post per game, created Tuesday, pinned, and closed to comments after the recap. A second, plan-gated group, "Buddy's Porch," restricted to the existing paid plans through Groups' pricing-plan access setting; the "Members only" box in the game thread links to that week's Porch post. Groups cannot gate one comment stream inside a public post, which is why the Porch is a gated group rather than a paid reply lane; the reader sees one board with one members-only door. The pricing-plan access setting must be confirmed against the live dashboard before launch.
+- Trade-off stated plainly: Groups gives member gating, native moderation (delete, block, member approval, admin-only posting), mobile pages in the existing shell and zero code, at zero added cost. It gives up threaded replies, search across threads, trust levels and an API worth automating against. For a board that has one live thread a week, those losses do not hurt yet. If threads run past a few hundred comments each week, that is the signal to fund Discourse.
+- Moderation: house rules posted as a pinned group post before launch (no personal attacks, no doxxing, no recruiting rumors presented as fact, no reposting paid content, staff may delete without notice). New posts by members with no history held for approval for the first two weeks. GatorBot, if used later, creates the Tuesday thread from the verified schedule and flags spam; it does not post as a human (`skills/gatorbait-community/SKILL.md`).
+- Who runs it: Brenden opens and closes the weekly thread (or GatorBot later, after the automation is authorized). One named staffer is the moderator of record with a daily check on game week and a twice-daily check on game day. Buddy owns the Porch: he reads it before the show and answers on air; he never has to type a reply.
+- Hours to launch: about 8 to 10 staff hours. Editor completion and QC of the Groups pages, 3 to 4; group settings, plan gating and a test purchase-free member walkthrough, 2; house rules and the first thread, 1; mobile shell check at 390 and 430 pixels plus rollback notes, 2. Weekly running cost after that is about 2 hours (open, pin, watch, close).
+- What it costs: no new app, service, subscription or code. Groups is included in the current Wix site. The only spend is staff time. Any move to hosted Discourse is a separate decision with its own price, which is not estimated here.
+- Repo rules honored: `/message-board` keeps pointing to Groups; no Discourse purchase; no placeholder threads presented as live; no fake activity counters; Barlow only; homepage untouched.
+
+## 4) What it needs from Brenden
+
+1. A yes on the name (GatorBait Game Threads) and on folding Buddy's Porch into the game thread rather than running a separate room.
+2. Buddy's yes on reading the Porch before the show and on the sample pinned copy in the preview, which is placeholder text, not his words.
+3. A dashboard check of the live Groups records: which of the eight existing groups to reuse, confirmation that the private VIP group stays untouched, and confirmation that Groups' pricing-plan access lists the current paid plans, including Magazine Monthly.
+4. A named moderator of record and a decision on approval-first posting for new members.
+5. An assigned work item under the active controller before any Editor or Groups write. This pitch made no live changes.
+6. Later, not now: whether GatorBot may create the Tuesday thread automatically, and whether the Week 6 thread should carry a "Discuss this game" link from the recap.
+
+## 5) Risks
+
+- Spam, as the Groups feed already saw: the old feed was open to drive-by posts with no rules and no one watching. Mitigations: posting requires a site account; first-two-weeks approval for new posters; house rules pinned; a moderator of record with a check schedule; threads closed after the recap so there is no idle surface for bots. If spam persists, switch the public group to member-approval-to-join rather than closing the board.
+- Moderation load on game day: a 3:30 p.m. SEC road game will spike. Mitigation: two staff on the thread on Saturdays during the game window, admin-only posting as the emergency brake, and the rule that staff delete first and explain later.
+- Legal exposure: fan posts can include defamation of players or coaches, unverified injury or recruiting claims, doxxing, or pasted paid content. Mitigations: rules ban them explicitly; the thread and the Porch are labeled as reader posts, not GatorBait reporting; sensitive posts are removed and escalated per the community-director escalation rule; nothing a reader posts is quoted in a story without verification; Brenden should confirm the site's terms and privacy pages cover user posts.
+- Members-only disappointment: if Buddy never gets to the Porch questions on air, the paid benefit is hollow and members will say so publicly. Mitigation: a standing show segment, even two questions, every Wednesday of game week, and a Thursday note in the thread saying which ones were answered.
+- Dead-board risk: the biggest risk for any GatorBait board. Mitigations built into the design: one thread a week, never an empty category list; the thread is seeded Tuesday with real staff stories, not placeholders; the recap closes it, so a quiet thread is archived rather than sitting stale on top; a "Next" row shows the following week is coming. If the Missouri, Week 6 and Week 7 threads draw little, the board is paused after the season with nothing lost but 10 staff hours, and the Groups pages simply stop being linked.
+- Wix limits: Groups lacks threaded replies and search, and the pages have not passed mobile QC. Mitigation: QC before the first public link; keep expectations at "game thread," not "forum"; treat sustained volume as the trigger for the Discourse decision the repo already anticipates.
+- Redundancy with the YouTube and Facebook live chat: the show chat already exists during the broadcast. Mitigation: the Porch asks questions before the show and the thread lives all week, which the chat cannot do; the show should point back to the thread, not compete with it.

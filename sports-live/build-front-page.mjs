@@ -12,19 +12,33 @@ import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
+
+// esbuild minifies the outputs (NODE_PATH=<dir with esbuild>); the shell build uses the same package.
+const esbuild = createRequire(import.meta.url)('esbuild');
+const minify = (code, banner) => banner + esbuild.transformSync(code, { minify: true, target: 'es2017', legalComments: 'none', charset: 'utf8' }).code;
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = join(here, '..');
 const read = (p) => readFileSync(join(repo, p), 'utf8');
 
 const minCss = (p) => read(p).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
-const css = minCss('sports-live/src/front-page.css') + '\n' + minCss('sports-live/src/make-the-call.css');
+const css = minCss('sports-live/src/front-page.css');
+const mtcCss = minCss('sports-live/src/make-the-call.css');
 const runtime = read('sports-live/src/front-page.js');
 // Story pages: Share GatorBait, the Magazine signup (capture.js), then the Story Kit (guide strip, first-mention links, "Keep up with the Gators"); both ship in
 // the standalone sports-live/share.js that the blog post embed loads and ride along in homepage.js (the kit exits off /post/).
-const share = read('sports-live/src/share.js') + '\n/* GatorBait Capture (sports-live/src/capture.js): the "Get GatorBait Magazine free" signup for story pages and the homepage hub. */\n' + read('sports-live/src/capture.js') + '\n/* GatorBait Story Kit (sports-live/src/story-kit.js): guide strip, first-mention links and the Keep up with the Gators cards on /post/ pages only. */\n' + read('sports-live/src/story-kit.js');
+// Story pages get all three in sports-live/share.js. The homepage bundle carries only Share + Capture: the Story Kit exits on
+// line 1 off /post/ and was 18 KB of dead weight there (bundle analysis, Sept. 30).
+const shareHome = read('sports-live/src/share.js') + '\n/* GatorBait Capture (sports-live/src/capture.js): the "Get GatorBait Magazine free" signup for story pages and the homepage hub. */\n' + read('sports-live/src/capture.js');
+const share = shareHome + '\n/* GatorBait Story Kit (sports-live/src/story-kit.js): guide strip, first-mention links, "Keep up with the Gators" cards on story pages. */\n' + read('sports-live/src/story-kit.js');
 // Fan modules: each an IIFE that only defines window.GBM_CALL / GBM_ASK / GBM_STANDS; front-page.js mounts them after paint.
 const modules = ['make-the-call', 'ask-gatorbait', 'the-stands'].map((m) => `/* ${m} (sports-live/src/${m}.js) */\n` + read(`sports-live/src/${m}.js`)).join('\n');
+// The fan modules ship as their own chunk, sports-live/fan-modules.js, fetched by front-page.js only once
+// deploy/cloudflare/endpoints.json names a Worker (44 KB raw that every homepage visit carried for nothing until then).
+const fanChunk = `(function () { if (document.getElementById('gbm-fp-mtc-css')) return; var s = document.createElement('style'); s.id = 'gbm-fp-mtc-css'; s.textContent = ${JSON.stringify(mtcCss)}; document.head.appendChild(s); })();
+${modules}
+`;
 const MAX_JS = 260 * 1024;
 const config = JSON.parse(read('sports-live/front-page.config.json'));
 const feed = JSON.parse(read('gazette-live/posts.json'));
@@ -58,20 +72,22 @@ if (repoScoreboard && Array.isArray(repoScoreboard.schedule)) {
 const build = createHash('sha1').update(css + runtime + share + modules + JSON.stringify(cfg)).digest('hex').slice(0, 8);
 const bundle = { snapshot: newest, build, ...cfg, posts };
 
-const js = `/* GatorBait Front Page 2026: magazine front page, broadcast layer, Swamp Night palette, hub.
- * BUILT FILE: edit sports-live/src/front-page.{css,js} or sports-live/front-page.config.json,
- * then run: node sports-live/build-front-page.mjs
- * Bundled story snapshot: ${newest} (fallback only; live stories come from /blog-feed.xml).
+const banner = `/* GatorBait Front Page 2026: magazine front page, broadcast layer, Swamp Night palette, hub.
+ * BUILT, MINIFIED FILE: edit sports-live/src/front-page.{css,js} or sports-live/front-page.config.json,
+ * then run: NODE_PATH=<dir with esbuild> node sports-live/build-front-page.mjs
+ * Bundled story snapshot: ${newest} (fallback only; live stories come from /blog-feed.xml). Build ${build}.
  */
-${modules}
-(function () {
+`;
+const js = minify(`(function () {
   'use strict';
   var CSS = ${JSON.stringify(css)};
   var BUNDLE = ${JSON.stringify(bundle)};
 ${runtime}})();
-/* Share GatorBait (sports-live/src/share.js) + Story Kit (sports-live/src/story-kit.js): standalone copy in sports-live/share.js for blog post pages. */
-${share}
-`;
+/* Share GatorBait (sports-live/src/share.js) + Capture: the standalone sports-live/share.js for blog post pages adds the Story Kit. */
+${shareHome}
+`, banner);
+const shareOut = minify(share, `/* GatorBait Share + Capture + Story Kit for /post/ pages. BUILT, MINIFIED FILE: edit sports-live/src/{share,capture,story-kit}.js, then run the front page build. Build ${build}. */\n`);
+const fanOut = minify(fanChunk, `/* GatorBait fan modules (Make the Call, Ask GatorBait, The Stands). BUILT, MINIFIED FILE: edit sports-live/src/{make-the-call,ask-gatorbait,the-stands}.js, then run the front page build. Build ${build}. */\n`);
 
 // Fixture: the real loader's mobile-shell critical CSS, a shell host stub and the built renderer inline.
 const loader = read('deploy/wix-served/homepage-embed-cdn.html');
@@ -94,12 +110,12 @@ ${[['Day', 'day'], ['Swamp Night', 'night'], ['Game day', 'gameday']].map(([labe
 `;
 
 if (Buffer.byteLength(js) > MAX_JS) { console.error(`homepage.js is ${Buffer.byteLength(js)} bytes; the limit is ${MAX_JS}`); process.exit(1); }
-const outputs = { 'sports-live/homepage.js': js, 'sports-live/share.js': share, 'sports-live/frame.html': frame, 'sports-live/qa.html': qa };
+const outputs = { 'sports-live/homepage.js': js, 'sports-live/share.js': shareOut, 'sports-live/fan-modules.js': fanOut, 'sports-live/frame.html': frame, 'sports-live/qa.html': qa };
 if (process.argv.includes('--check')) {
   const stale = Object.entries(outputs).filter(([p, s]) => read(p) !== s).map(([p]) => p);
   if (stale.length) { console.error('Out of date; run node sports-live/build-front-page.mjs:', stale.join(', ')); process.exit(1); }
   console.log('Front page build is current.');
 } else {
   for (const [p, s] of Object.entries(outputs)) writeFileSync(join(repo, p), s);
-  console.log(`homepage.js ${js.length} chars (${Buffer.byteLength(js)} bytes), frame.html ${frame.length} chars; snapshot ${newest}; ${posts.length} bundled stories`);
+  console.log(`homepage.js ${js.length} chars (${Buffer.byteLength(js)} bytes), share.js ${Buffer.byteLength(shareOut)} bytes, fan-modules.js ${Buffer.byteLength(fanOut)} bytes, frame.html ${frame.length} chars; snapshot ${newest}; ${posts.length} bundled stories`);
 }

@@ -20,6 +20,8 @@ const frame = readFileSync(join(repo, 'sports-live/frame.html'), 'utf8');
 // Story pages: the Wix-post fixture and the built Share + Story Kit embed (sports-live/share.js) it loads.
 const storyFixture = readFileSync(join(repo, 'sports-live/qa-story.html'), 'utf8');
 const shareJs = readFileSync(join(repo, 'sports-live/share.js'), 'utf8');
+// Fan modules: the chunk front-page.js fetches once endpoints.json names a Worker.
+const fanJs = readFileSync(join(repo, 'sports-live/fan-modules.js'), 'utf8');
 const feed = JSON.parse(readFileSync(join(repo, 'gazette-live/posts.json'), 'utf8'));
 const tsp = process.env.TSP_FILE && existsSync(process.env.TSP_FILE) ? readFileSync(process.env.TSP_FILE) : null;
 const photos = process.env.PHOTO_DIR ? readdirSync(process.env.PHOTO_DIR).filter((f) => /\.(jpe?g|png)$/i.test(f)).map((f) => readFileSync(join(process.env.PHOTO_DIR, f))) : [];
@@ -158,6 +160,7 @@ for (const sc of only(scenarios)) {
         if (sc.scoreboardDelay) setTimeout(send, sc.scoreboardDelay); else send();
         return;
       }
+      if (u.pathname.endsWith('/sports-live/fan-modules.js')) return route.fulfill({ contentType: 'application/javascript', body: fanJs });
       if (u.hostname === 'presidente49.github.io' && u.pathname.endsWith('/deploy/cloudflare/endpoints.json')) {
         const send = () => sc.endpoints && sc.endpoints !== 404 ? route.fulfill({ contentType: 'application/json', body: JSON.stringify(sc.endpoints) }) : route.fulfill({ status: 404, body: '' });
         if (sc.endpointsDelay) setTimeout(send, sc.endpointsDelay); else send();
@@ -202,7 +205,7 @@ for (const sc of only(scenarios)) {
     const moved = (a, b) => Object.keys(a).filter((k) => k in b && Math.abs(a[k] - b[k]) > 1).length;
     const jumps = [];
     const atPaint = sc.expect.stable ? await snap() : null;
-    await page.waitForTimeout(sc.expect.embers ? 2600 : 1800);
+    await page.waitForTimeout(sc.expect.embers ? 3400 : 1800); // embers load after a 1 s settle plus an idle slot
     if (sc.expect.stable) {
       const n = moved(atPaint, await snap()); if (n) jumps.push(`${n} blocks moved in view after paint`);
       // Scroll the page in steps; on each step nothing in view may move once the scroll settles (a module that mounts

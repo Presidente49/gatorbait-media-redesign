@@ -213,7 +213,25 @@
 
   /* ---------- Markup helpers ---------- */
   function link(href, content, cls, extra) { return href ? '<a' + (cls ? ' class="' + cls + '"' : '') + ' href="' + esc(href) + '"' + (extra || '') + '>' + content + '</a>' : '<span' + (cls ? ' class="' + cls + '"' : '') + '>' + content + '</span>'; }
-  function img(src, alt, eager, w, h) { return src ? '<img src="' + esc(src) + '" alt="' + esc(alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + ' width="' + (w || 1000) + '" height="' + (h || 667) + '">' : ''; }
+  // Wix media URLs from the feed ask for a 1000px PNG cut ("/v1/fit/w_1000,h_1000,al_c,q_80/file.png"): a JPEG photo came
+  // back as a 1 MB PNG (live speed run 36757168414, Sept. 30: the lead cover was 975 KB and a card 1,018 KB, LCP 28 s on a
+  // throttled phone). Re-cut every static.wixstatic.com image to the box it fills, let Wix pick the encoding (enc_auto:
+  // AVIF/WebP), and offer three widths; the original URL stays on the element and comes back if the re-cut ever 404s.
+  var WIX_MEDIA = /^(https:\/\/static\.wixstatic\.com\/media\/[^\/?#]+)(?:\/v1\/[^?#]*)?(?:[?#].*)?$/;
+  function wixCut(src, w, h) { var m = WIX_MEDIA.exec(String(src || '')); return m ? m[1] + '/v1/fit/w_' + w + ',h_' + h + ',al_c,q_80,enc_auto/gatorbait.jpg' : ''; }
+  function img(src, alt, eager, w, h) {
+    if (!src) return '';
+    var W = w || 1000, H = h || 667, cut = wixCut(src, W, H);
+    var set = cut ? [480, 800, 1200].map(function (x) { return wixCut(src, x, Math.round(x * H / W)) + ' ' + x + 'w'; }).join(', ') : '';
+    return '<img src="' + esc(cut || src) + '"' + (set ? ' srcset="' + esc(set) + '" sizes="(max-width: 700px) 100vw, 60vw" data-fp-orig="' + esc(src) + '"' : '') + ' alt="' + esc(alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + ' width="' + W + '" height="' + H + '">';
+  }
+  // If a re-cut URL fails, fall back to the feed's own URL once (delegated: the grid is innerHTML).
+  function imgFallback(root) {
+    root.addEventListener('error', function (e) {
+      var t = e.target, o = t && t.tagName === 'IMG' && t.getAttribute('data-fp-orig');
+      if (!o) return; t.removeAttribute('data-fp-orig'); t.removeAttribute('srcset'); t.removeAttribute('sizes'); t.src = o;
+    }, true);
+  }
   function by(p) { return '<p class="fp-meta">' + esc(p.author) + ' · ' + esc(shortDate(p.date.getTime())) + '</p>'; }
   function kicker(p, why) {
     if (why === 'breaking') return 'Breaking';
@@ -500,16 +518,26 @@
       window.tsParticles.load({ id: 'fp-embers', options: opts }).then(function (c) { particles = c; if (document.hidden && c) c.pause(); }).catch(function () {});
     }
     if (window.tsParticles) { go(); return; }
-    var s = document.getElementById('gbm-fp-tsparticles');
-    if (!s) { s = document.createElement('script'); s.id = 'gbm-fp-tsparticles'; s.src = TSP; s.async = true; s.crossOrigin = 'anonymous'; document.head.appendChild(s); }
-    s.addEventListener('load', go, { once: true });
+    // The 44 KB library rode with the first paint (speed run 36757168414). It now waits for the page to settle and an idle
+    // slot, and stays off on data-saver or a 2G/3G connection: the embers are decoration.
+    var conn = navigator.connection || {};
+    if (conn.saveData || /(^|[^4-9])[23]g$/.test(String(conn.effectiveType || ''))) return;
+    var idle = window.requestIdleCallback || function (f) { return setTimeout(f, 300); };
+    setTimeout(function () {
+      idle(function () {
+        if (!root.isConnected) return;
+        var s = document.getElementById('gbm-fp-tsparticles');
+        if (!s) { s = document.createElement('script'); s.id = 'gbm-fp-tsparticles'; s.src = TSP; s.async = true; s.crossOrigin = 'anonymous'; document.head.appendChild(s); }
+        if (window.tsParticles) go(); else s.addEventListener('load', go, { once: true });
+      }, { timeout: 1200 });
+    }, 1000);
   }
   document.addEventListener('visibilitychange', function () {
     if (!particles) return;
     try { if (document.hidden) particles.pause(); else particles.play(); } catch (_) {}
   });
   function ensureFonts() {
-    if (!document.getElementById('gbm-fp-fonts')) {
+    if (!document.getElementById('gbm-fp-fonts') && !document.querySelector('link[rel="stylesheet"][href*="Barlow+Condensed"]')) {
       var l = document.createElement('link'); l.id = 'gbm-fp-fonts'; l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l);
     }
     if (!document.fonts || !document.fonts.load) return Promise.resolve();
@@ -564,6 +592,7 @@
     else document.body.insertBefore(root, document.body.firstChild);
     doc.classList.add('gbm-gazette-live', 'gbm-standalone-live');
     try { initRoad(root); } catch (_) {}
+    try { imgFallback(root); } catch (_) {}
     loading = false;
     window.__GBM_GAZETTE_RUNTIME__.ready = true;
     if (window.__GBM_GAZETTE_BOOT__ && window.__GBM_GAZETTE_BOOT__.ready) window.__GBM_GAZETTE_BOOT__.ready();
@@ -659,8 +688,21 @@
       if (!j || typeof j !== 'object' || !root.isConnected) return;
       var ep = { call: endpointUrl(j.call), ask: endpointUrl(j.ask), stands: endpointUrl(j.stands), standsToken: typeof j.standsToken === 'string' && /^\/[\w\/-]*$/.test(j.standsToken) ? j.standsToken : '' };
       root.setAttribute('data-fp-modules', ['call', 'ask', 'stands'].filter(function (k) { return ep[k]; }).join(' ') || 'none');
-      if (ep.call || ep.ask || ep.stands) mountModules(root, ep);
+      if (ep.call || ep.ask || ep.stands) fanChunk().then(function () { if (root.isConnected) mountModules(root, ep); }).catch(function () {});
     }).catch(function () { if (root.isConnected) root.setAttribute('data-fp-modules', 'none'); });
+  }
+  // The three modules (44 KB raw) live in sports-live/fan-modules.js next to this bundle and load only when a Worker exists.
+  function fanChunk() {
+    if (window.GBM_CALL && window.GBM_ASK && window.GBM_STANDS) return Promise.resolve();
+    return new Promise(function (resolve, reject) {
+      var have = document.getElementById('gbm-fp26-fan');
+      if (have) { have.addEventListener('load', resolve, { once: true }); have.addEventListener('error', reject, { once: true }); return; }
+      var b = document.getElementById('gbm-fp26-bundle'), src = (b && b.src) || (document.currentScript && document.currentScript.src) || '';
+      var url = /\/sports-live\/homepage\.js/.test(src) ? src.replace(/\/sports-live\/homepage\.js.*$/, '/sports-live/fan-modules.js') : PAGES + 'sports-live/fan-modules.js';
+      var s = document.createElement('script'); s.id = 'gbm-fp26-fan'; s.async = true; s.src = url;
+      s.onload = resolve; s.onerror = function () { s.remove(); reject(new Error('fan modules failed to load')); };
+      document.head.appendChild(s);
+    });
   }
 
   function fetchJson(url, ms) {

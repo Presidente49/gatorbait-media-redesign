@@ -1,0 +1,25 @@
+
+<style id="gbm-footer-utility-v13">
+html body #SITE_FOOTER{display:none!important}
+#gbm-live>footer[aria-label="GatorBait Media footer"]{display:none!important}
+#gbm-footer{background:#08132f!important;border-top:4px solid #fa4616!important;color:#f2efe6!important;padding:16px 16px max(16px,env(safe-area-inset-bottom))!important;font-family:Barlow,sans-serif!important}
+#gbm-footer *{box-sizing:border-box}
+#gbm-footer .gbf{max-width:1180px;margin:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 18px}
+#gbm-footer nav{display:flex;flex-wrap:wrap;gap:6px 14px}
+#gbm-footer a{color:#f2efe6!important;text-decoration:none!important;font-size:12px;font-weight:800;min-height:36px;display:inline-flex;align-items:center}
+#gbm-footer a:hover{color:#ff9474!important}
+#gbm-footer .meta{color:#b9c4d6;font-size:11px;line-height:1.4}
+@media(max-width:700px){#gbm-footer .gbf{display:block;text-align:center}#gbm-footer nav{justify-content:center;margin-bottom:8px}#gbm-footer .meta{text-align:center}}
+</style>
+<script>(function(){
+if(window.__GBM_FOOTER_V13__)return;window.__GBM_FOOTER_V13__=1;
+function build(){
+if(document.getElementById('gbm-footer'))return;
+var f=document.createElement('footer');f.id='gbm-footer';f.setAttribute('aria-label','GatorBait Media footer');
+f.innerHTML='<div class="gbf"><nav aria-label="Footer links"><a href="https://gatorbait2026.itemorder.com/shop/home/" target="_blank" rel="noopener" aria-label="Store (opens in a new tab)">Store</a><a href="/pricing-plans">Join</a><a href="/contact">Contact</a><a href="/policies">Policies</a><a href="https://www.facebook.com/gatorbaitmedia">Facebook</a><a href="https://www.youtube.com/@thebuddymartinshow?sub_confirmation=1">YouTube</a></nav><div class="meta"><a href="mailto:info@gatorbaitmedia.com">info@gatorbaitmedia.com</a> · © 2026 GatorBait Media</div></div>';
+document.body.appendChild(f);
+}
+function sync(){build()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build,{once:true});else build();
+window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

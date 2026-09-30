@@ -1,0 +1,51 @@
+<style id="gbm-footer-utility-v14">
+html body #SITE_FOOTER{display:none!important}
+#gbm-live>footer[aria-label="GatorBait Media footer"]{display:none!important}
+/* #gbm-footer#gbm-footer out-ranks the Light Theme (c66d5b7f) and the header's footer overrides, so the footer looks the same on every page. */
+html body #gbm-footer#gbm-footer{background:#08132f!important;border-top:4px solid #fa4616!important;color:#f2efe6!important;padding:0 16px max(16px,env(safe-area-inset-bottom));font-family:Barlow,sans-serif}
+#gbm-footer *{box-sizing:border-box}
+html body #gbm-footer#gbm-footer a{color:#f2efe6!important;text-decoration:none;font-weight:700}
+html body #gbm-footer#gbm-footer a:hover{color:#ff9474!important;text-decoration:underline;text-underline-offset:3px}
+#gbm-footer a:focus-visible{outline:3px solid #fa4616;outline-offset:2px}
+#gbm-footer .gbf{max-width:1180px;margin:auto}
+#gbm-footer .gbf-shop{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;padding:18px 0;border-bottom:1px solid #26365a}
+#gbm-footer .gbf-shop h2{margin:0 0 2px;font:800 20px/1.1 Barlow,sans-serif;color:#fff;text-transform:uppercase;letter-spacing:.02em}
+#gbm-footer .gbf-shop p{margin:0;font-size:14px;line-height:1.45;color:#b9c4d6}
+html body #gbm-footer#gbm-footer a.gbf-btn{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;padding:0 22px;background:#fa4616;color:#08132f!important;font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+html body #gbm-footer#gbm-footer a.gbf-btn:hover{background:#ff6a3d}
+#gbm-footer .gbf-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 24px;padding:18px 0 8px}
+#gbm-footer .gbf-map h3{margin:0 0 4px;font:800 12px/1.2 Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#fa4616}
+#gbm-footer .gbf-map ul{list-style:none;margin:0;padding:0}
+#gbm-footer .gbf-map a{display:inline-flex;align-items:center;min-height:32px;font-size:14px}
+#gbm-footer .gbf-base{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 18px;padding-top:10px;border-top:1px solid #26365a;color:#b9c4d6;font-size:12px;line-height:1.4}
+#gbm-footer .gbf-base nav{display:flex;flex-wrap:wrap;gap:0 16px}
+#gbm-footer .gbf-base a{display:inline-flex;align-items:center;min-height:40px;font-size:13px}
+@media(max-width:820px){#gbm-footer .gbf-map{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){#gbm-footer .gbf-shop{display:block;text-align:center}#gbm-footer .gbf-shop p{margin-bottom:12px}html body #gbm-footer#gbm-footer a.gbf-btn{display:flex;width:100%}#gbm-footer .gbf-base{display:block;text-align:center}#gbm-footer .gbf-base nav{justify-content:center}}
+</style>
+<script>(function(){
+if(window.__GBM_FOOTER_V14__)return;window.__GBM_FOOTER_V14__=1;
+var STORE='https://gatorbait2026.itemorder.com/shop/home/',
+GUIDE='/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play',
+CAT='/gatorbait-media-blogs/categories/',
+STATS=false, // set true with the header once /florida-football-stats exists
+NEWTAB=' target="_blank" rel="noopener"';
+// Site map: every live reader page, grouped. External links open in a new tab.
+var map=[
+['News',[['Front Page','/'],['Latest','/gatorbait-media-blogs'],['Breaking News',CAT+'gator-breaking-news'],['Recruiting',CAT+'gator-recruiting'],['Basketball',CAT+'gator-basketball'],['Search','/gatorbait-media-blogs#gbm-lp-search']]],
+['Voices',[['Magazine','/magazine'],["Buddy's Blog",CAT+'buddy-s-blog'],['Franz Beard',CAT+'franz-beard-blog'],['Thoughts of the Day',CAT+'thoughts-of-the-day-franz-beard-1'],['TV &amp; Podcasts','/the-buddy-martin-show'],['Podcasts','/the-buddy-martin-show#podcasts']]],
+['Gators Football',[['Scores &amp; Schedule',GUIDE+'#schedule'],['Roster',GUIDE+'#roster'],['Stats','/florida-football-stats'],['Football',CAT+'gator-football'],['Gators in the NFL',CAT+'gators-in-the-nfl'],['Community','/groups']]],
+['GatorBait',[['Join GatorBait','/pricing-plans'],['Sign In / Account','/account/my-account'],['Shop Gear',STORE],['About','/about'],['Contact','/contact'],['Policies','/policies']]]
+];
+function a(l){var ext=/^https?:/.test(l[1]);return'<a href="'+l[1]+'"'+(ext?NEWTAB+' aria-label="'+l[0]+' (opens in a new tab)"':'')+'>'+l[0]+'</a>';}
+function build(){
+if(document.getElementById('gbm-footer')||!document.body)return;
+var f=document.createElement('footer');f.id='gbm-footer';f.setAttribute('aria-label','GatorBait Media footer');
+f.innerHTML='<div class="gbf"><div class="gbf-shop"><div><h2>GatorBait Gear</h2><p>Shirts, hats and gifts for Gator Nation. The store opens in a new tab, so your story stays right here.</p></div><a class="gbf-btn" href="'+STORE+'"'+NEWTAB+' aria-label="Shop GatorBait gear (opens in a new tab)">Shop Gear <span aria-hidden="true">↗</span></a></div>'+
+'<nav class="gbf-map" aria-label="Site map">'+map.map(function(g){return'<div><h3>'+g[0]+'</h3><ul>'+g[1].filter(function(l){return STATS||l[0]!=='Stats';}).map(function(l){return'<li>'+a(l)+'</li>';}).join('')+'</ul></div>';}).join('')+'</nav>'+
+'<div class="gbf-base"><nav aria-label="Follow GatorBait">'+a(['Facebook','https://www.facebook.com/gatorbaitmedia'])+a(['YouTube','https://www.youtube.com/@thebuddymartinshow?sub_confirmation=1'])+'<a href="mailto:info@gatorbaitmedia.com">info@gatorbaitmedia.com</a></nav><div>© 2026 GatorBait Media · Independent Florida coverage since 1979</div></div></div>';
+document.body.appendChild(f);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build,{once:true});else build();
+window.addEventListener('popstate',build);window.addEventListener('gbmroutechange',build);
+})();</script>

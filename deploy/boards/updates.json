@@ -1,0 +1,494 @@
+{
+  "$comment": "GatorBait boards: exact Wix Groups requests for Jarvis. Nothing here has been run. Read-only checks on 2026-09-30 confirmed the live IDs, settings, rules and redirects listed. Run in step order under the active controller; stop on any error.",
+  "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+  "preparedAt": "2026-09-30",
+  "contractNotes": [
+    "Update Group: PATCH https://www.wixapis.com/social-groups-proxy/groups/v2/groups/{group.id}; required group.id; writable name, slug, privacyStatus, description (max 20,480), teaser (max 1,000), memberTitle, coverImage, settings. Schema read with ReadFullDocsMethodSchema on 2026-09-30.",
+    "Update Group has NO accessRestriction field, so paid-plan gating cannot be set by this API. It is a dashboard step for Brenden.",
+    "contentType is a top-level method parameter (PLAIN_TEXT | DRAFTJS | RICH_CONTENT). Live descriptions read back as plain text, so PLAIN_TEXT is sent.",
+    "Renaming a PUBLIC or PRIVATE group changes its slug (per the docs).",
+    "Settings are sent as the full writable set because the docs do not say whether a partial settings object merges. Live settings also carry fields not in the public schema (allowedToCreatePosts, allowedToCommentPosts, allowedToAddMembers, allowedToCreateEvents); the canary step checks they survive.",
+    "groupDetailsChangedPostEnabled is set false in the same call, so the renames and new descriptions do not drop automatic 'group details changed' posts into empty feeds.",
+    "Cover images cannot be uploaded through this API (docs: 'You cannot upload your own cover image'). Covers are optional and left out.",
+    "There is no public REST endpoint to create feed posts (deploy/dept-ideas/community/evidence/group-contract.json), so pinned welcome posts are made by a staff admin in the Groups UI or app."
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "kind": "update-group",
+      "group": "The Swamp Lounge",
+      "newName": "The Swamp Lounge",
+      "method": "PATCH",
+      "url": "https://www.wixapis.com/social-groups-proxy/groups/v2/groups/73291075-3751-42b5-b877-ec5ec9349045",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/groups/update-group",
+      "body": {
+        "group": {
+          "id": "73291075-3751-42b5-b877-ec5ec9349045",
+          "teaser": "Off-topic. Tailgates, road trips, food, music and life as a Gator. No politics, no religion.",
+          "description": "The off-topic board: tailgate recipes, road-trip plans, Gainesville memories, other sports and whatever else is on your mind. Politics and religion stay out; everything else is fair game within the rules.",
+          "settings": {
+            "welcomeMemberPostEnabled": false,
+            "groupDetailsChangedPostEnabled": false,
+            "showMemberList": true,
+            "allowedToInviteMembers": "ALL_MEMBERS",
+            "allowedToApproveJoinRequests": "OWNER_AND_ADMINS",
+            "aiSpamProtectionEnabled": true
+          }
+        },
+        "contentType": "PLAIN_TEXT"
+      },
+      "note": "CANARY: run this first, then GET the group and confirm allowedToCreatePosts and allowedToCommentPosts are still ALL_MEMBERS and privacy is unchanged before running the rest."
+    },
+    {
+      "step": 2,
+      "kind": "update-group",
+      "group": "Gator Football Talk",
+      "newName": "Gator Football Talk",
+      "method": "PATCH",
+      "url": "https://www.wixapis.com/social-groups-proxy/groups/v2/groups/74041d23-8785-41f7-8715-7f5562804685",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/groups/update-group",
+      "body": {
+        "group": {
+          "id": "74041d23-8785-41f7-8715-7f5562804685",
+          "teaser": "The main board. Florida football every day: games, coaching, roster and hot takes. Free to read, sign in to post.",
+          "description": "The main GatorBait board. Talk Florida football with fellow Gators: games, coaching, depth chart, transfer portal and the week ahead. Free to read; sign in with your free GatorBait account to post. Game-day talk lives in Game Day Threads, recruiting in Recruiting Central, everything else in The Swamp Lounge.",
+          "settings": {
+            "welcomeMemberPostEnabled": false,
+            "groupDetailsChangedPostEnabled": false,
+            "showMemberList": true,
+            "allowedToInviteMembers": "ALL_MEMBERS",
+            "allowedToApproveJoinRequests": "OWNER_AND_ADMINS",
+            "aiSpamProtectionEnabled": true
+          }
+        },
+        "contentType": "PLAIN_TEXT"
+      },
+      "note": null
+    },
+    {
+      "step": 3,
+      "kind": "update-group",
+      "group": "Game Day Threads",
+      "newName": "Game Day Threads",
+      "method": "PATCH",
+      "url": "https://www.wixapis.com/social-groups-proxy/groups/v2/groups/1b1232f0-0dca-47ad-b500-cf12c9a3da41",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/groups/update-group",
+      "body": {
+        "group": {
+          "id": "1b1232f0-0dca-47ad-b500-cf12c9a3da41",
+          "teaser": "One thread per game. Opens Tuesday, runs through kickoff and closes after the recap. Live chat runs in The Stands.",
+          "description": "One pinned thread per Florida game. It opens on game week Tuesday with the preview stories, runs through kickoff and closes after the GatorBait recap publishes. During the game, the live chat room, The Stands, opens on the GatorBait homepage; this board keeps the pregame and postgame conversation.",
+          "settings": {
+            "welcomeMemberPostEnabled": false,
+            "groupDetailsChangedPostEnabled": false,
+            "showMemberList": true,
+            "allowedToInviteMembers": "ALL_MEMBERS",
+            "allowedToApproveJoinRequests": "OWNER_AND_ADMINS",
+            "aiSpamProtectionEnabled": true
+          }
+        },
+        "contentType": "PLAIN_TEXT"
+      },
+      "note": null
+    },
+    {
+      "step": 4,
+      "kind": "update-group",
+      "group": "Recruiting Central",
+      "newName": "Recruiting Central",
+      "method": "PATCH",
+      "url": "https://www.wixapis.com/social-groups-proxy/groups/v2/groups/7b8950ba-2fec-470a-a9c9-3aeaf85989bb",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/groups/update-group",
+      "body": {
+        "group": {
+          "id": "7b8950ba-2fec-470a-a9c9-3aeaf85989bb",
+          "teaser": "Commitments, visits, offers and the transfer portal. Link your source.",
+          "description": "Florida recruiting and the transfer portal: commitments, decommitments, visits, offers and prospect breakdowns. Link your source for anything that is not public. Deeper intel and staff notes live on The Insider Board for All Access and Gold members.",
+          "settings": {
+            "welcomeMemberPostEnabled": false,
+            "groupDetailsChangedPostEnabled": false,
+            "showMemberList": true,
+            "allowedToInviteMembers": "ALL_MEMBERS",
+            "allowedToApproveJoinRequests": "OWNER_AND_ADMINS",
+            "aiSpamProtectionEnabled": true
+          }
+        },
+        "contentType": "PLAIN_TEXT"
+      },
+      "note": null
+    },
+    {
+      "step": 5,
+      "kind": "update-group",
+      "group": "Gator Hoops",
+      "newName": "Gator Hoops",
+      "method": "PATCH",
+      "url": "https://www.wixapis.com/social-groups-proxy/groups/v2/groups/75976f5e-289c-493d-b7ab-ebc869b49e61",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/groups/update-group",
+      "body": {
+        "group": {
+          "id": "75976f5e-289c-493d-b7ab-ebc869b49e61",
+          "teaser": "Florida basketball: SEC play, the NCAA Tournament, recruiting and everything hardwood.",
+          "description": "Florida men's and women's basketball: games, SEC play, NCAA Tournament talk, recruiting and the portal. One pinned thread per game once the season tips off.",
+          "settings": {
+            "welcomeMemberPostEnabled": false,
+            "groupDetailsChangedPostEnabled": false,
+            "showMemberList": true,
+            "allowedToInviteMembers": "ALL_MEMBERS",
+            "allowedToApproveJoinRequests": "OWNER_AND_ADMINS",
+            "aiSpamProtectionEnabled": true
+          }
+        },
+        "contentType": "PLAIN_TEXT"
+      },
+      "note": null
+    },
+    {
+      "step": 6,
+      "kind": "update-group",
+      "group": "All Gator Sports",
+      "newName": "All Gator Sports",
+      "method": "PATCH",
+      "url": "https://www.wixapis.com/social-groups-proxy/groups/v2/groups/40bb6c39-cf82-4b35-a7fc-6ae0124393b3",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/groups/update-group",
+      "body": {
+        "group": {
+          "id": "40bb6c39-cf82-4b35-a7fc-6ae0124393b3",
+          "teaser": "Baseball, softball, gymnastics, track, tennis, golf, soccer and volleyball. If it's orange and blue, it's here.",
+          "description": "Every other Florida sport: baseball, softball, gymnastics, track and field, swimming, tennis, golf, soccer, volleyball and lacrosse. One thread per sport per season keeps it easy to follow.",
+          "settings": {
+            "welcomeMemberPostEnabled": false,
+            "groupDetailsChangedPostEnabled": false,
+            "showMemberList": true,
+            "allowedToInviteMembers": "ALL_MEMBERS",
+            "allowedToApproveJoinRequests": "OWNER_AND_ADMINS",
+            "aiSpamProtectionEnabled": true
+          }
+        },
+        "contentType": "PLAIN_TEXT"
+      },
+      "note": null
+    },
+    {
+      "step": 7,
+      "kind": "update-group",
+      "group": "Swamp Talk",
+      "newName": "The Insider Board",
+      "method": "PATCH",
+      "url": "https://www.wixapis.com/social-groups-proxy/groups/v2/groups/590d01c2-5170-4fb8-8f26-2ec65e40b8ab",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/groups/update-group",
+      "body": {
+        "group": {
+          "id": "590d01c2-5170-4fb8-8f26-2ec65e40b8ab",
+          "name": "The Insider Board",
+          "teaser": "The members-only board for All Access and GatorBait Gold. Staff notes, recruiting intel and the real conversation.",
+          "description": "The members-only board for All Access and GatorBait Gold subscribers. GatorBait staff post practice notes, recruiting intel and early reads here first, and members talk Gators without the noise. What's said on The Insider Board stays on The Insider Board.",
+          "memberTitle": "Insiders",
+          "settings": {
+            "welcomeMemberPostEnabled": false,
+            "groupDetailsChangedPostEnabled": false,
+            "showMemberList": true,
+            "allowedToInviteMembers": "OWNER_AND_ADMINS",
+            "allowedToApproveJoinRequests": "OWNER_AND_ADMINS",
+            "aiSpamProtectionEnabled": true
+          }
+        },
+        "contentType": "PLAIN_TEXT"
+      },
+      "note": "Rename changes the slug from swamp-talk; the old /group/swamp-talk redirect stays harmless. Group stays PRIVATE with admin approval until Brenden connects paid plans."
+    },
+    {
+      "step": 8,
+      "kind": "update-group",
+      "group": "GatorBait Gold VIP Lounge",
+      "newName": "GatorBait Gold VIP Lounge",
+      "method": "PATCH",
+      "url": "https://www.wixapis.com/social-groups-proxy/groups/v2/groups/a6400ba5-8553-44a6-b627-c8cb3377c171",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/groups/update-group",
+      "body": {
+        "group": {
+          "id": "a6400ba5-8553-44a6-b627-c8cb3377c171",
+          "teaser": "GatorBait Gold only. Buddy's Porch, game threads with staff and the monthly AMA with Buddy Martin.",
+          "description": "The GatorBait Gold lounge. Every game week, Buddy's Porch collects your questions for Buddy Martin to take on The Buddy Martin Show, staff join the game threads, and Buddy hosts a monthly AMA here. Gold members only.",
+          "settings": {
+            "welcomeMemberPostEnabled": false,
+            "groupDetailsChangedPostEnabled": false,
+            "showMemberList": true,
+            "allowedToInviteMembers": "OWNER_AND_ADMINS",
+            "allowedToApproveJoinRequests": "OWNER_AND_ADMINS",
+            "aiSpamProtectionEnabled": true
+          }
+        },
+        "contentType": "PLAIN_TEXT"
+      },
+      "note": null
+    },
+    {
+      "step": 9,
+      "kind": "update-group",
+      "group": "GatorBait Media Group",
+      "newName": "GatorBait Media Group (hidden)",
+      "method": "PATCH",
+      "url": "https://www.wixapis.com/social-groups-proxy/groups/v2/groups/13047ff1-a8e1-4765-9823-dbe7abc346dd",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/groups/update-group",
+      "body": {
+        "group": {
+          "id": "13047ff1-a8e1-4765-9823-dbe7abc346dd",
+          "privacyStatus": "SECRET",
+          "settings": {
+            "welcomeMemberPostEnabled": false,
+            "groupDetailsChangedPostEnabled": false,
+            "showMemberList": true,
+            "allowedToInviteMembers": "OWNER_AND_ADMINS",
+            "allowedToApproveJoinRequests": "OWNER_AND_ADMINS",
+            "aiSpamProtectionEnabled": true
+          }
+        },
+        "contentType": "PLAIN_TEXT"
+      },
+      "note": "Retire without deleting: SECRET hides it from the groups list; its four members and its Feb. 10 posts stay. Name and slug are unchanged, so its Sept. 28 redirects stay in place. Rollback: PATCH privacyStatus PUBLIC."
+    },
+    {
+      "step": 10,
+      "kind": "rules",
+      "group": "The Swamp Lounge",
+      "method": "PUT",
+      "url": "https://www.wixapis.com/social-groups/v2/rules/73291075-3751-42b5-b877-ec5ec9349045",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/rules/create-or-replace-all-rules",
+      "body": {
+        "rules": [
+          {
+            "title": "No politics, no religion",
+            "description": "Keep the Lounge the one place everybody can hang out. Those threads are closed and removed."
+          },
+          {
+            "title": "Argue the take, not the person",
+            "description": "No personal attacks on players, coaches, staff or other posters. No slurs, no threats."
+          },
+          {
+            "title": "No rumors as fact",
+            "description": "Injury, recruiting, transfer and legal claims need a link to a published report. If all you have is 'I heard,' say so."
+          },
+          {
+            "title": "No doxxing, no harassment",
+            "description": "Never post anyone's phone, address, workplace, family or private messages. First offense is removal."
+          },
+          {
+            "title": "Keep paid content paid",
+            "description": "Do not paste Magazine, Insider Board or Gold Lounge posts into free boards or social media. Link to them instead."
+          },
+          {
+            "title": "No spam, no promo",
+            "description": "No ticket resale, betting touts, product plugs or link farms. AI spam protection is on, and staff remove spam without notice."
+          },
+          {
+            "title": "Staff decisions are final",
+            "description": "Moderators remove posts that break these rules. Repeat problems lose posting rights. Questions go to staff, not the thread."
+          }
+        ]
+      },
+      "note": "Replaces all rules for this group (currently none)."
+    },
+    {
+      "step": 11,
+      "kind": "rules",
+      "group": "Recruiting Central",
+      "method": "PUT",
+      "url": "https://www.wixapis.com/social-groups/v2/rules/7b8950ba-2fec-470a-a9c9-3aeaf85989bb",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/rules/create-or-replace-all-rules",
+      "body": {
+        "rules": [
+          {
+            "title": "Link your source",
+            "description": "Commitment, offer, visit and portal news needs a link or a named public source. Crystal-ball guesses go in their own thread."
+          },
+          {
+            "title": "Do not contact recruits",
+            "description": "Never tag, message or post about contacting a prospect or his family. NCAA rules treat fan contact as a possible violation, and staff remove it on sight."
+          },
+          {
+            "title": "Argue the take, not the person",
+            "description": "No personal attacks on players, coaches, staff or other posters. No slurs, no threats."
+          },
+          {
+            "title": "No rumors as fact",
+            "description": "Injury, recruiting, transfer and legal claims need a link to a published report. If all you have is 'I heard,' say so."
+          },
+          {
+            "title": "No doxxing, no harassment",
+            "description": "Never post anyone's phone, address, workplace, family or private messages. First offense is removal."
+          },
+          {
+            "title": "Keep paid content paid",
+            "description": "Do not paste Magazine, Insider Board or Gold Lounge posts into free boards or social media. Link to them instead."
+          },
+          {
+            "title": "No spam, no promo",
+            "description": "No ticket resale, betting touts, product plugs or link farms. AI spam protection is on, and staff remove spam without notice."
+          },
+          {
+            "title": "Staff decisions are final",
+            "description": "Moderators remove posts that break these rules. Repeat problems lose posting rights. Questions go to staff, not the thread."
+          }
+        ]
+      },
+      "note": "Replaces all rules for this group (currently none)."
+    },
+    {
+      "step": 12,
+      "kind": "rules",
+      "group": "Gator Hoops",
+      "method": "PUT",
+      "url": "https://www.wixapis.com/social-groups/v2/rules/75976f5e-289c-493d-b7ab-ebc869b49e61",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/rules/create-or-replace-all-rules",
+      "body": {
+        "rules": [
+          {
+            "title": "Argue the take, not the person",
+            "description": "No personal attacks on players, coaches, staff or other posters. No slurs, no threats."
+          },
+          {
+            "title": "No rumors as fact",
+            "description": "Injury, recruiting, transfer and legal claims need a link to a published report. If all you have is 'I heard,' say so."
+          },
+          {
+            "title": "No doxxing, no harassment",
+            "description": "Never post anyone's phone, address, workplace, family or private messages. First offense is removal."
+          },
+          {
+            "title": "Keep paid content paid",
+            "description": "Do not paste Magazine, Insider Board or Gold Lounge posts into free boards or social media. Link to them instead."
+          },
+          {
+            "title": "No spam, no promo",
+            "description": "No ticket resale, betting touts, product plugs or link farms. AI spam protection is on, and staff remove spam without notice."
+          },
+          {
+            "title": "Staff decisions are final",
+            "description": "Moderators remove posts that break these rules. Repeat problems lose posting rights. Questions go to staff, not the thread."
+          }
+        ]
+      },
+      "note": "Replaces all rules for this group (currently none)."
+    },
+    {
+      "step": 13,
+      "kind": "rules",
+      "group": "All Gator Sports",
+      "method": "PUT",
+      "url": "https://www.wixapis.com/social-groups/v2/rules/40bb6c39-cf82-4b35-a7fc-6ae0124393b3",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/rules/create-or-replace-all-rules",
+      "body": {
+        "rules": [
+          {
+            "title": "Argue the take, not the person",
+            "description": "No personal attacks on players, coaches, staff or other posters. No slurs, no threats."
+          },
+          {
+            "title": "No rumors as fact",
+            "description": "Injury, recruiting, transfer and legal claims need a link to a published report. If all you have is 'I heard,' say so."
+          },
+          {
+            "title": "No doxxing, no harassment",
+            "description": "Never post anyone's phone, address, workplace, family or private messages. First offense is removal."
+          },
+          {
+            "title": "Keep paid content paid",
+            "description": "Do not paste Magazine, Insider Board or Gold Lounge posts into free boards or social media. Link to them instead."
+          },
+          {
+            "title": "No spam, no promo",
+            "description": "No ticket resale, betting touts, product plugs or link farms. AI spam protection is on, and staff remove spam without notice."
+          },
+          {
+            "title": "Staff decisions are final",
+            "description": "Moderators remove posts that break these rules. Repeat problems lose posting rights. Questions go to staff, not the thread."
+          }
+        ]
+      },
+      "note": "Replaces all rules for this group (currently none)."
+    },
+    {
+      "step": 14,
+      "kind": "rules",
+      "group": "The Insider Board",
+      "method": "PUT",
+      "url": "https://www.wixapis.com/social-groups/v2/rules/590d01c2-5170-4fb8-8f26-2ec65e40b8ab",
+      "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/rules/create-or-replace-all-rules",
+      "body": {
+        "rules": [
+          {
+            "title": "What's said here stays here",
+            "description": "Do not copy, screenshot or quote Insider Board posts on free boards, other sites or social media. Sharing costs your membership."
+          },
+          {
+            "title": "Staff intel is labeled",
+            "description": "Posts from GatorBait staff carry their names. Treat member posts as opinion unless they link a source."
+          },
+          {
+            "title": "Argue the take, not the person",
+            "description": "No personal attacks on players, coaches, staff or other posters. No slurs, no threats."
+          },
+          {
+            "title": "No rumors as fact",
+            "description": "Injury, recruiting, transfer and legal claims need a link to a published report. If all you have is 'I heard,' say so."
+          },
+          {
+            "title": "No doxxing, no harassment",
+            "description": "Never post anyone's phone, address, workplace, family or private messages. First offense is removal."
+          },
+          {
+            "title": "Keep paid content paid",
+            "description": "Do not paste Magazine, Insider Board or Gold Lounge posts into free boards or social media. Link to them instead."
+          },
+          {
+            "title": "No spam, no promo",
+            "description": "No ticket resale, betting touts, product plugs or link farms. AI spam protection is on, and staff remove spam without notice."
+          },
+          {
+            "title": "Staff decisions are final",
+            "description": "Moderators remove posts that break these rules. Repeat problems lose posting rights. Questions go to staff, not the thread."
+          }
+        ]
+      },
+      "note": "Replaces all rules for this group (currently none)."
+    }
+  ],
+  "routingOnHold": {
+    "status": "HOLD: runs only after Brenden's yes (item 1 in PLAN.md) and the Editor QC of the Groups pages in the current shell. Reverses part of the Sept. 28 legacy-retirement order; controller owns this write.",
+    "method": "POST",
+    "url": "https://www.wixapis.com/seo-redirects-service/v1/bulk/redirects/delete",
+    "docsUrl": "https://dev.wix.com/docs/api-reference/business-management/seo/redirects/redirect-v1/bulk-delete-redirects",
+    "body": {
+      "redirectIds": [
+        "2c8bd562-5303-4db4-b0f7-9e81d2c53466",
+        "6f46633f-908e-469a-a951-e868ef2465d3",
+        "f3df140b-b78b-4283-a2f2-ec79def9fd97",
+        "6d64b260-c0c2-4409-b8e1-dc0cb35dcb6d",
+        "890a0f8f-ee1b-4a84-a52f-b63a21ea0d0a",
+        "19f5b878-5376-4989-a506-efcc11db4c8d",
+        "23b286e4-5945-4550-8706-b36e9e95a6e0",
+        "282ccad4-1b59-4b4d-949e-dc4a684f7c86",
+        "a3e1d55a-7308-4baf-9e59-a31be1b93ad6",
+        "3b35b142-1fdf-4005-ba53-0504ec239205",
+        "6392cf1d-049f-4115-bc86-f556ac5380ea",
+        "f7d4c1fe-9e5d-4165-9da8-2f1130a7af7e",
+        "d2030b77-b51c-4e08-89a4-f29523a126d2",
+        "a739b09d-3463-41a7-acbb-062c9a521bbf",
+        "f75065db-434f-454b-9592-0913d5ba8539"
+      ]
+    },
+    "covers": [
+      "/groups",
+      "/group/{gator-football-talk,game-day-threads,recruiting-central,gator-hoops,all-gator-sports,the-swamp-lounge,gatorbait-gold-vip-lounge} and each /discussion list"
+    ],
+    "keeps": "Redirects for old indexed post URLs, all gatorbait-media-group routes and all swamp-talk routes stay. The renamed Insider Board gets a new slug with no redirect.",
+    "preflight": "GET each ID first (https://dev.wix.com/docs/api-reference/business-management/seo/redirects/redirect-v1/get-redirect) and delete only if from/to still match deploy/legacy-retirement/applied-redirects.json.",
+    "rollback": "Recreate from deploy/legacy-retirement/applied-redirects.json with Create Redirect (https://dev.wix.com/docs/api-reference/business-management/seo/redirects/redirect-v1/create-redirect), keeping options.groupRedirect false."
+  },
+  "verifyAfter": [
+    "GET https://www.wixapis.com/social-groups-proxy/groups/v2/groups?limit=100 and compare names, teasers, privacy and settings with this file.",
+    "GET https://www.wixapis.com/social-groups/v2/rules/{groupId} for each rules step.",
+    "Record results in the existing controller issue; do not self-certify."
+  ]
+}

@@ -128,6 +128,9 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-lead-photo{min-width:0}
 #gbm-live.fp26 .fp-frame{position:relative;display:block;overflow:hidden;aspect-ratio:3/2;background:var(--fp-chip)}
 #gbm-live.fp26 .fp-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+/* Rendered story covers carry their own headline: show them whole, never cropped or panned. */
+#gbm-live.fp26 .fp-frame.fp-cover{aspect-ratio:16/9;background:#07122e}
+#gbm-live.fp26 .fp-frame.fp-cover img{object-fit:contain;object-position:50% 50%;animation:none!important}
 #gbm-live.fp26 .fp-frame.fp-portrait img{object-fit:contain}
 #gbm-live.fp26 .fp-lead-copy{min-width:0;display:grid;gap:12px;align-content:start}
 #gbm-live.fp26 .fp-lead h1{font-size:clamp(40px,11.5vw,54px);line-height:.94;text-transform:uppercase;color:var(--fp-ink)}

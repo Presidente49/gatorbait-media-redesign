@@ -1,5 +1,5 @@
 {
-  "commit": "eece061f391fc7dffc92e60efd7d9a68148764dd",
-  "updated": "2026-09-30T17:25:00Z",
-  "note": "Story Kit header fix (PR #86): the strip contributes no intrinsic width. Rollback: 6dc26d993c23b756152ade7eb29d654a3b281b4d, or 499dca9f8d65fd746c117b39260ea08184e0416f to drop the Story Kit."
+  "commit": "3c3942b2e15a9e4c4c8a0fc5b6125c3001faf9e9",
+  "updated": "2026-09-30T17:45:00Z",
+  "note": "Rendered covers show whole on the front page (PR #92). Rollback: eece061f391fc7dffc92e60efd7d9a68148764dd."
 }

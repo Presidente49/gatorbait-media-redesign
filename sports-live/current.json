@@ -1,5 +1,5 @@
 {
-  "commit": "729e645f374d3830f13ab7d80cc1301d81d3bd90",
-  "updated": "2026-09-30T03:46:37Z",
-  "note": "Front Page 2026 build the Home Code V3 loader should run; change this on main to deploy or roll back a build (deploy/front-page-2026/README.md)."
+  "commit": "91523dafd736e074b2ea0bd0e9991b9aa311420e",
+  "updated": "2026-09-30T11:22:11.305Z",
+  "note": "Share GatorBait bundled (PR #70). Previous: 729e645f374d3830f13ab7d80cc1301d81d3bd90 (nav Store clip fix)."
 }

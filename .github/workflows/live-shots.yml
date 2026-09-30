@@ -3,9 +3,17 @@ name: GatorBait live screenshots
 # On-demand real-browser screenshots of production, pushed to the orphan branch qa/live-shots
 # (one commit, replaced each run) so a cloud session without site access can review them:
 #   git fetch origin qa/live-shots && git show origin/qa/live-shots --stat
+# Two ways to ask for a run:
+#   - workflow_dispatch with inputs (needs Actions write access), or
+#   - push a branch named shots/<anything> carrying automation/vision/live-shots.request.json,
+#     e.g. {"path":"/","selector":"#gbm-road","widths":"390,1365"} (works from a GitHub App
+#     that can push but cannot dispatch workflows).
 # Read-only against the site; writes nothing but that branch.
 
 on:
+  push:
+    branches:
+      - 'shots/**'
   workflow_dispatch:
     inputs:
       path:
@@ -41,13 +49,33 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Resolve request
+        id: req
+        env:
+          IN_PATH: ${{ github.event.inputs.path }}
+          IN_SELECTOR: ${{ github.event.inputs.selector }}
+          IN_WIDTHS: ${{ github.event.inputs.widths }}
+        run: |
+          node -e '
+            const fs = require("fs");
+            let r = { path: process.env.IN_PATH, selector: process.env.IN_SELECTOR, widths: process.env.IN_WIDTHS };
+            const f = "automation/vision/live-shots.request.json";
+            if (process.env.GITHUB_EVENT_NAME === "push" && fs.existsSync(f)) r = JSON.parse(fs.readFileSync(f, "utf8"));
+            const path = r.path || "/", selector = r.selector === undefined ? "#gbm-road" : r.selector, widths = r.widths || "390,1365";
+            if (!/^\/[\w\-./?=&%#+]*$/.test(path)) throw new Error("bad path");
+            if (!/^[\d,]+$/.test(widths)) throw new Error("bad widths");
+            if (!/^[\w\-#.\[\]=:" ]*$/.test(selector)) throw new Error("bad selector");
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `path=${path}\nselector=${selector}\nwidths=${widths}\n`);
+            console.log({ path, selector, widths });
+          '
+
       - name: Install Playwright Chromium
         run: |
           npm install --no-save playwright@1.49.1
           npx playwright install --with-deps chromium
 
       - name: Shoot production
-        run: node automation/vision/live-shots.mjs "${{ github.event.inputs.path }}" "${{ github.event.inputs.selector }}" "${{ github.event.inputs.widths }}"
+        run: node automation/vision/live-shots.mjs "${{ steps.req.outputs.path }}" "${{ steps.req.outputs.selector }}" "${{ steps.req.outputs.widths }}"
 
       - name: Publish to qa/live-shots
         run: |
@@ -58,5 +86,5 @@ jobs:
           git config user.name "gatorbait-live-shots"
           git config user.email "actions@users.noreply.github.com"
           git add -A
-          git commit -q -m "live shots: ${{ github.event.inputs.path }} ${{ github.event.inputs.selector }} ${{ github.event.inputs.widths }} (run ${{ github.run_id }})"
+          git commit -q -m "live shots: ${{ steps.req.outputs.path }} ${{ steps.req.outputs.selector }} ${{ steps.req.outputs.widths }} (run ${{ github.run_id }})"
           git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" qa/live-shots

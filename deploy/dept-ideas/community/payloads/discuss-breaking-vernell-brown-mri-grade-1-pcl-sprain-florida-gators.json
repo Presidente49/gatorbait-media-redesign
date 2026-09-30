@@ -1,0 +1,28 @@
+{
+  "kind": "group-feed-post",
+  "target": {
+    "groupId": "74041d23-8785-41f7-8715-7f5562804685",
+    "slug": "gator-football-talk",
+    "name": "Gator Football Talk",
+    "privacyStatus": "PUBLIC",
+    "accessRestriction": null
+  },
+  "post": {
+    "contentType": "PLAIN_TEXT",
+    "pinned": false,
+    "text": "DISCUSS: BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III\nAn MRI confirmed a Grade 1 PCL sprain, the mildest grade, in Vernell Brown III’s knee, sources told GatorBait. He may not miss any games.\nhttps://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators\nBy Brenden Martin. Read it on GatorBait, then talk about it here. One thread per story; GatorBot posts the link, people post the takes.",
+    "links": [
+      {
+        "label": "Story",
+        "title": "BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III",
+        "url": "https://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators"
+      }
+    ]
+  },
+  "story": {
+    "author": "Brenden Martin",
+    "firstPublishedDate": "2026-09-27T22:04:07Z",
+    "section": "GatorBait"
+  },
+  "schemaNote": "NOT FOUND in the public REST spec on 2026-09-30 (three ranked SearchWixRESTDocumentation queries and a lightIndex scan for feed|social-groups|posts returned only Comments/Moderation resources). Group feed posts are created in the Groups app UI, or by Velo, or by the Comments API for replies; GatorBot therefore emits a handoff payload for the feed post and a fully validated API payload for rules."
+}

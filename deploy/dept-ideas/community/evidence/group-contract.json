@@ -1,0 +1,14 @@
+{
+  "$comment": "Transcribed from mcp__Wix__SearchWixAPISpec on 2026-09-30 for wix.social.groups.api.v2.Group (List Groups, https://dev.wix.com/docs/api-reference/crm/community/groups/groups/list-groups). Used by gatorbot.mjs to validate post targets.",
+  "privacyStatus": ["UNKNOWN", "PUBLIC", "PRIVATE", "SECRET"],
+  "accessRestrictionType": ["UNKNOWN", "ADMIN_APPROVAL", "PAID_PLANS", "EVENTS"],
+  "allowPolicy": ["UNKNOWN", "OWNER_AND_ADMINS", "OWNER", "ALL_MEMBERS"],
+  "contentType": ["PLAIN_TEXT", "DRAFTJS", "RICH_CONTENT"],
+  "feedPermissions": ["canViewPosts", "canCreatePosts", "canPinPosts", "canCreateTopic", "canFollowPosts", "canCreatePaidPosts", "canReadSettings", "canManageSettings"],
+  "feedItemPermissions": ["canViewFullPost", "canAssignTopic", "canUnassignTopic", "canUpdate", "canDelete", "canShare", "canAddComment", "canReact", "canPin"],
+  "groupSettings": ["membersCanInvite", "membersCanApprove", "welcomeMemberPostEnabled", "groupDetailsChangedPostEnabled", "showMemberList", "allowedToInviteMembers", "allowedToApproveJoinRequests", "aiSpamProtectionEnabled"],
+  "feedCreateEndpoint": "NOT FOUND in the public REST spec on 2026-09-30 (three ranked SearchWixRESTDocumentation queries and a lightIndex scan for feed|social-groups|posts returned only Comments/Moderation resources). Group feed posts are created in the Groups app UI, or by Velo, or by the Comments API for replies; GatorBot therefore emits a handoff payload for the feed post and a fully validated API payload for rules.",
+  "name": { "maxLength": 100 },
+  "description": { "maxLength": 20480, "format": "DraftJS" },
+  "teaser": { "maxLength": 1000 }
+}

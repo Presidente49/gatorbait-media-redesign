@@ -1,0 +1,28 @@
+{
+  "kind": "group-feed-post",
+  "target": {
+    "groupId": "74041d23-8785-41f7-8715-7f5562804685",
+    "slug": "gator-football-talk",
+    "name": "Gator Football Talk",
+    "privacyStatus": "PUBLIC",
+    "accessRestriction": null
+  },
+  "post": {
+    "contentType": "PLAIN_TEXT",
+    "pinned": false,
+    "text": "DISCUSS: What Happened in College Football Saturday: Gators Take Down No. 4 Ole Miss as Top 25 Shakes\nFlorida beat No. 4 Ole Miss 52-28 to move to 4-0, while Wisconsin and Wake Forest pulled road upsets and No. 1 Texas and No. 2 Georgia stayed unbeaten ahead of Sunday's AP poll.\nhttps://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25\nBy Brenden Martin. Read it on GatorBait, then talk about it here. One thread per story; GatorBot posts the link, people post the takes.",
+    "links": [
+      {
+        "label": "Story",
+        "title": "What Happened in College Football Saturday: Gators Take Down No. 4 Ole Miss as Top 25 Shakes",
+        "url": "https://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25"
+      }
+    ]
+  },
+  "story": {
+    "author": "Brenden Martin",
+    "firstPublishedDate": "2026-09-27T05:25:16Z",
+    "section": "GatorBait"
+  },
+  "schemaNote": "NOT FOUND in the public REST spec on 2026-09-30 (three ranked SearchWixRESTDocumentation queries and a lightIndex scan for feed|social-groups|posts returned only Comments/Moderation resources). Group feed posts are created in the Groups app UI, or by Velo, or by the Comments API for replies; GatorBot therefore emits a handoff payload for the feed post and a fully validated API payload for rules."
+}

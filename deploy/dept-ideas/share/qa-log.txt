@@ -1,0 +1,26 @@
+390 article buttons: 1 ["story"]
+card story.png 111550 bytes
+390 navigator.share calls: [{"title":"GatorBait","text":"Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time' — Buddy Martin on GatorBait","url":"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time?utm_source=gatorbait_share&utm_medium=native&utm_campaign=story","files":["gatorbait-story.png image/png 111550"]}]
+390 article errors: []
+390 home buttons: ["tunnel:44","season:44","show:44"]
+card tunnel-countdown.png 77791 bytes
+tunnel text: Kickoff in 3d 3h 30m: Florida at No. 25 Missouri, Sat., Oct. 3, 3:30 p.m. ET, ABC. The Tunnel on GatorBait
+https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind?utm_source=gatorbait_share&utm_medium=native&utm_campaign=tunnel
+card season.png 91770 bytes
+season text: {"text":"Florida 4-0, No. 8. Next: at No. 25 Missouri, Sat., Oct. 3, 3:30 p.m. ET, ABC. The Road Ahead on GatorBait","url":"https://www.gatorbaitmedia.com/?utm_source=gatorbait_share&utm_medium=x&utm_campaign=season#gbm-road"}
+card show.png 83717 bytes
+show text: {"text":"The Buddy Martin Show, next live Wed. 9 p.m. ET. Watch on GatorBait","url":"https://www.gatorbaitmedia.com/the-buddy-martin-show?utm_source=gatorbait_share&utm_medium=x&utm_campaign=show"}
+390 home errors: []
+card tunnel-live.png 63326 bytes
+live text: {"text":"Live: Florida 24, No. 25 Missouri 17, Q3 8:14. Follow on GatorBait","url":"https://www.gatorbaitmedia.com/?utm_source=gatorbait_share&utm_medium=x&utm_campaign=tunnel"}
+card tunnel-final.png 66315 bytes
+final text: {"text":"Final: Florida 52, No. 4 Ole Miss 28. The recap on GatorBait","url":"https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28?utm_source=gatorbait_share&utm_medium=x&utm_campaign=tunnel"}
+1365 has navigator.share: false
+popup https://x.com/intent/post?text=Florida%204-0%2C%20No.%208.%20Next%3A%20at%20No.%2025%20Missouri%2C%20Sat.%2C%20Oct.%203%2C%203%3A30%20p.m.%20ET%2C%20ABC.%20The%
+1365 X popup url: https://x.com/intent/post?text=Florida%204-0%2C%20No.%208.%20Next%3A%20at%20No.%2025%20Missouri%2C%20Sat.%2C%20Oct.%203%2C%203%3A30%20p.m.%20ET%2C%20ABC.%20The%20Road%20Ahead%20on%20GatorBait&url=https%3A%2F%2Fwww.gatorbaitmedia.com%2F%3Futm_source%3Dgatorbait_share%26utm_medium%3Dx%26utm_campaign%3Dseason%23gbm-road
+popup https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.gatorbaitmedia.com%2F%3Futm_source%3Dgatorbait_share%26utm_medium%3Dfacebook%26utm_campaign%3Dsea
+1365 FB popup url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.gatorbaitmedia.com%2F%3Futm_source%3Dgatorbait_share%26utm_medium%3Dfacebook%26utm_campaign%3Dseason%23gbm-road
+1365 clipboard: Florida 4-0, No. 8. Next: at No. 25 Missouri, Sat., Oct. 3, 3:30 p.m. ET, ABC. The Road Ahead on GatorBait https://www.gatorbaitmedia.com/?utm_source=gatorbait_share&utm_medium=copy&utm_campaign=season#gbm-road
+1365 download: gatorbait-season.png
+1365 closed after Escape: true
+1365 errors: []

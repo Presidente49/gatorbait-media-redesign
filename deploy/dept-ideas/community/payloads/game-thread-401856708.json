@@ -1,0 +1,41 @@
+{
+  "kind": "group-feed-post",
+  "target": {
+    "groupId": "1b1232f0-0dca-47ad-b500-cf12c9a3da41",
+    "slug": "game-day-threads",
+    "name": "Game Day Threads",
+    "privacyStatus": "PUBLIC",
+    "accessRestriction": null
+  },
+  "post": {
+    "contentType": "PLAIN_TEXT",
+    "pinned": true,
+    "text": "GAME THREAD: No. 8 Florida (4-0) at No. 25 Missouri\nKickoff Sat., Oct. 3, 3:30 p.m. ET, ABC. Memorial Stadium.\nLast week: Florida 52, No. 4 Ole Miss 28.\n\nThis thread opened on Bloody Tuesday and closes when the recap posts. Read free; post with a GatorBait account. House rules are pinned in the group.\nPreview: Show-Me State of Mind: A First Look at No. 25 Missouri https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind\nLast week: Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28 https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28\n\nRecord, ranking, kickoff and TV: ESPN via the GatorBait scoreboard feed (updated 2026-09-29T02:17:33Z).\nPosted by GatorBot (automated). Staff replies are signed by name.",
+    "links": [
+      {
+        "label": "Preview",
+        "title": "Show-Me State of Mind: A First Look at No. 25 Missouri",
+        "url": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"
+      },
+      {
+        "label": "Last week",
+        "title": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
+        "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28"
+      }
+    ]
+  },
+  "lifecycle": {
+    "opens": {
+      "localDate": "2026-09-29",
+      "localTime": "09:00",
+      "timeZone": "America/New_York"
+    },
+    "closes": "when the recap for this eventId is present in gazette-live/posts.json (score.last.recapUrl)",
+    "eventId": "401856708"
+  },
+  "sources": [
+    "sports-live/scoreboard.json (ESPN)",
+    "gazette-live/posts.json"
+  ],
+  "schemaNote": "NOT FOUND in the public REST spec on 2026-09-30 (three ranked SearchWixRESTDocumentation queries and a lightIndex scan for feed|social-groups|posts returned only Comments/Moderation resources). Group feed posts are created in the Groups app UI, or by Velo, or by the Comments API for replies; GatorBot therefore emits a handoff payload for the feed post and a fully validated API payload for rules."
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "group-feed-post",
+  "target": {
+    "groupId": "1b1232f0-0dca-47ad-b500-cf12c9a3da41",
+    "slug": "game-day-threads",
+    "name": "Game Day Threads",
+    "privacyStatus": "PUBLIC",
+    "accessRestriction": null
+  },
+  "post": {
+    "contentType": "PLAIN_TEXT",
+    "pinned": false,
+    "text": "DISCUSS: Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri\nJon Sumrall told Florida he doesn't want to hear another word about Ole Miss, and he had good news on Vernell Brown III before Saturday's trip to No. 25 Missouri.\nhttps://www.gatorbaitmedia.com/post/pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloody-tuesday-before-missouri\nBy Brenden Martin. Read it on GatorBait, then talk about it here. One thread per story; GatorBot posts the link, people post the takes.",
+    "links": [
+      {
+        "label": "Story",
+        "title": "Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri",
+        "url": "https://www.gatorbaitmedia.com/post/pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloody-tuesday-before-missouri"
+      }
+    ]
+  },
+  "story": {
+    "author": "Brenden Martin",
+    "firstPublishedDate": "2026-09-28T20:54:04Z",
+    "section": "GatorBait"
+  },
+  "schemaNote": "NOT FOUND in the public REST spec on 2026-09-30 (three ranked SearchWixRESTDocumentation queries and a lightIndex scan for feed|social-groups|posts returned only Comments/Moderation resources). Group feed posts are created in the Groups app UI, or by Velo, or by the Comments API for replies; GatorBot therefore emits a handoff payload for the feed post and a fully validated API payload for rules."
+}

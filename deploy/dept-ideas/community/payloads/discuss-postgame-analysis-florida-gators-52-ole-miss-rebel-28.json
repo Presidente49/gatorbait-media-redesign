@@ -1,0 +1,28 @@
+{
+  "kind": "group-feed-post",
+  "target": {
+    "groupId": "74041d23-8785-41f7-8715-7f5562804685",
+    "slug": "gator-football-talk",
+    "name": "Gator Football Talk",
+    "privacyStatus": "PUBLIC",
+    "accessRestriction": null
+  },
+  "post": {
+    "contentType": "PLAIN_TEXT",
+    "pinned": false,
+    "text": "DISCUSS: Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28\nFlorida dominated No. 4 Ole Miss for a season-defining win, but Jon Sumrall says the Gators are still a work in progress. Loren Meadows on what he expected, what he got and what comes next.\nhttps://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28\nBy Loren Meadows. Read it on GatorBait, then talk about it here. One thread per story; GatorBot posts the link, people post the takes.",
+    "links": [
+      {
+        "label": "Story",
+        "title": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
+        "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28"
+      }
+    ]
+  },
+  "story": {
+    "author": "Loren Meadows",
+    "firstPublishedDate": "2026-09-27T13:50:06Z",
+    "section": "GatorBait"
+  },
+  "schemaNote": "NOT FOUND in the public REST spec on 2026-09-30 (three ranked SearchWixRESTDocumentation queries and a lightIndex scan for feed|social-groups|posts returned only Comments/Moderation resources). Group feed posts are created in the Groups app UI, or by Velo, or by the Comments API for replies; GatorBot therefore emits a handoff payload for the feed post and a fully validated API payload for rules."
+}

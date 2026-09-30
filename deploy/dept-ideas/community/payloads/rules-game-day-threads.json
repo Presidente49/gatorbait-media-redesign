@@ -1,0 +1,47 @@
+{
+  "kind": "rules",
+  "method": "PUT",
+  "url": "https://www.wixapis.com/social-groups/v2/rules/1b1232f0-0dca-47ad-b500-cf12c9a3da41",
+  "docsUrl": "https://dev.wix.com/docs/api-reference/crm/community/groups/rules/create-or-replace-all-rules",
+  "target": {
+    "groupId": "1b1232f0-0dca-47ad-b500-cf12c9a3da41",
+    "slug": "game-day-threads",
+    "name": "Game Day Threads",
+    "privacyStatus": "PUBLIC",
+    "accessRestriction": null
+  },
+  "body": {
+    "rules": [
+      {
+        "title": "Real fans, real names optional, real respect",
+        "description": "No personal attacks on players, coaches, staff or other posters. Argue the take, not the person."
+      },
+      {
+        "title": "No rumors as fact",
+        "description": "Injury, recruiting, transfer or legal claims need a link to a published report. Say 'I heard' if that is all you have."
+      },
+      {
+        "title": "No doxxing, no harassment",
+        "description": "Never post anyone's contact information, location, workplace or family. First offense is removal."
+      },
+      {
+        "title": "Keep paid content paid",
+        "description": "Do not paste Magazine or members-only text into public threads. Link to it instead."
+      },
+      {
+        "title": "No spam, no promo",
+        "description": "No product plugs, ticket resale, betting touts or link farms. AI spam protection is on, and staff delete without notice."
+      },
+      {
+        "title": "One game, one thread",
+        "description": "Game talk goes in the pinned game thread. It opens Tuesday and closes after the recap."
+      },
+      {
+        "title": "Staff decisions are final",
+        "description": "Moderators may remove posts and members. Appeals go to the Contact page, not the thread."
+      }
+    ]
+  },
+  "currentRulesOnSite": [],
+  "note": "Replaces all rules on that group. Owner: Jarvis. Not sent by this script."
+}

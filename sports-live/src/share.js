@@ -71,14 +71,18 @@
     }
     return Promise.all(jobs);
   }
-  // The story headline: the first h1 that is actually laid out. The hidden native Wix header keeps an h1
-  // ("GatorBait Media") ahead of the post in DOM order, and a button appended beside it is display:none.
+  // The story headline. The hidden native Wix header keeps an h1 ("GatorBait Media") ahead of the post in DOM order
+  // (Lesson 63), so the post title is found by structure first (Wix's data-hook, then any h1 inside the article);
+  // only then does the first laid-out h1 outside the native header count. Layout is not required for the structural
+  // match: on slow loads Wix re-renders the post header late and an h1 can exist before it has boxes (Sept. 30 evening).
   function headline() {
-    var pick = null, list = document.querySelectorAll('h1'), i, n;
+    var n = document.querySelector('[data-hook="post-title"]') || document.querySelector('article h1');
+    if (n) return n;
+    var pick = null, list = document.querySelectorAll('h1'), i;
     for (i = 0; i < list.length; i++) {
       n = list[i];
-      if (!n.getClientRects().length) continue;
-      if (n.getAttribute('data-hook') === 'post-title' || n.closest('article')) return n;
+      if (n.closest('#SITE_HEADER,#SITE_FOOTER,#gbm-site-header,#gbm-mobile-shell-host')) continue;
+      if (n.getClientRects().length) return n;
       if (!pick) pick = n;
     }
     return pick;
@@ -246,6 +250,7 @@
     var b = el('button', { type: 'button', 'class': 'gbm-share-btn' + (ghost ? ' ghost' : ''), 'data-share': kind, 'aria-label': label }, ICON + '<span>' + esc(label) + '</span>');
     b.addEventListener('click', function () { open(kind); }); return b;
   }
+  var storyRetries = 0, storyTimer = 0;
   function mount() {
     if (!document.getElementById('gbm-share-css')) document.head.appendChild(el('style', { id: 'gbm-share-css' }, CSS));
     var road = document.querySelector('#gbm-road .hd'), tn = document.querySelector('.fp-tunnel .fp-tn-cta'), show = document.querySelector('.fp-show .fp-actions');
@@ -257,6 +262,8 @@
     if (!document.getElementById('gbm-live') && safePost(location.href) && !document.getElementById('gbm-share-btn')) {
       var h = headline(), host = h && (h.closest('header') || h.parentNode);
       if (host) { var b = button('story', 'Share this story'); b.id = 'gbm-share-btn'; b.style.margin = '12px 0'; host.appendChild(b); }
+      // No headline yet (Wix mid re-render): try again shortly, for up to a minute, without waiting for another mutation.
+      else if (storyRetries++ < 150) { clearTimeout(storyTimer); storyTimer = setTimeout(mount, 400); }
     }
   }
   window.__GBM_SHARE_RUNTIME__ = { version: VERSION, open: open, card: card, payload: payload, mount: mount };

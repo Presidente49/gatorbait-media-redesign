@@ -27,19 +27,31 @@ Image-cut probe (run 36758186268, `deploy/covers/probe-logo.html`): Wix honors `
 
 Three read-only audits back this up: `wix-inventory.md` (58 custom embeds, 28 enabled, 219 KB injected on every page, no page filters, seven document-wide MutationObservers), `external-audit.md` (SEO and search visibility), `bundle-analysis.md` (byte-level breakdown of our own code).
 
-## What shipped (PR #99, our code only, deployed through `sports-live/current.json`)
+## After the first cut (build dc747be + V4 loader, `perf-home-after-dc747be.json`)
+
+| Homepage | Phone 390 before → after | Desktop 1365 before → after |
+|---|---|---|
+| Largest paint (LCP) | **27.9 s → 10.1 s** | **4.6 s → 1.7 s** |
+| First paint | 1.1 s → 0.9 s | 0.21 s → 0.17 s |
+| Page bytes | 4.07 MB → 2.12 MB | 3.98 MB → 1.87 MB |
+| Image bytes | 2.43 MB → 0.52 MB | 2.35 MB → 0.27 MB |
+| Total blocking time | 2.1 s → 2.4 s (Wix scripts) | 0.30 s → 0.13 s |
+
+The phone run still had the old loader from Wix's cache; the desktop run had V4 (fonts CSS at 88 ms). The 200 KB header logo is now the largest image on the page.
+
+## What shipped (PR #99 and #100, our code only, deployed through `sports-live/current.json` and one embed PATCH)
 
 - **Images:** every static.wixstatic.com image is re-cut to the box it fills with `enc_auto` (Wix picks AVIF/WebP) and a 480/800/1200 srcset; the feed's original URL stays on the element and comes back if a re-cut ever fails.
 - **Bundle:** fan modules moved to `sports-live/fan-modules.js`, fetched only once `deploy/cloudflare/endpoints.json` names a Worker; Story Kit dropped from the homepage bundle (it stays in `share.js` for story pages); esbuild minification of all three outputs. homepage.js 244 KB → 138 KB raw, 69 KB → 40 KB gzip; share.js 65 → 42 KB raw, 21 → 14 KB gzip.
 - **Embers:** tsParticles loads after the page settles (1 s plus an idle slot) and never on data-saver or 2G/3G.
-- **Fonts:** the renderer skips its own Google Fonts link when a sitewide Barlow + Barlow Condensed stylesheet is already in `<head>` (for the loader change below).
+- **Fonts and hops:** Home Code `622d8ece` rev 29 is the V4 loader (PR #100): preconnects for jsDelivr, GitHub Pages and Google Fonts plus the one Barlow + Condensed stylesheet in `<head>` as `media=print` until it loads; the renderer skips its own font link when it is present.
 
 Rollback: point `sports-live/current.json` back to fba3a35.
 
 ## Still to do, in order
 
 1. **Header logo** (Wix embeds `7fee4de6` and the mobile shell `fdc2127a`): serve the 900 px webp at 500 px via a Wix cut (`/v1/fill/w_500,h_134,al_c,q_85,enc_auto/gatorbait.webp`, verified 26 KB).
-2. **One font chain in `<head>`** from the Home Code loader (preconnect jsDelivr, GitHub Pages, fonts.gstatic; one Barlow stylesheet), then retire the second link in embed `0709a98e`.
+2. **Retire the second Google Fonts link** in embed `0709a98e` now that the loader carries the full set (keep its `sitewide-type.css`).
 3. **Story pages:** quiet our embeds' document-wide observers and polls (Site Fixer, Inner Page UI layer, normalizer, wide canvas, roster links, News SEO, FB ViewContent, header): scope them to the post container and disconnect when done. Each is one embed PATCH with its `-live.html` as rollback.
-4. **Wix side, Brenden only:** Site Speed report and Search Console vitals; uninstall Hotels, Restaurants x2, Events; Blog settings (comments default, related posts, gallery list layout); GTM container contents (possible GA4 double-fire with the gtag embed).
+4. **Wix side, Brenden only:** limit the 19 route-specific embeds to their pages (Settings → Custom code → Choose specific pages; `pageFilter` is read-only in the API, so this is dashboard-only and saves ~90–110 KB of parsed code on every page); Site Speed report and Search Console vitals; uninstall Hotels, Restaurants x2, Events; Blog settings (comments default, related posts, gallery list layout); GTM container contents (possible GA4 double-fire with the gtag embed).
 5. **SEO** (`external-audit.md` section 3): story meta descriptions at 155 chars, Person author in the native JSON-LD, category page titles, the homepage "Today's Edition" heading (Editor, Brenden), sitemap index response time.

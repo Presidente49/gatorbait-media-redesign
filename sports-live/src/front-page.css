@@ -316,9 +316,12 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 }
 @media(max-width:429px){#gbm-live.fp26 .fp-wordmark small{display:none}}
 @media(max-width:374px){#gbm-live.fp26 .fp-date span+span{display:none}#gbm-live.fp26 .fp-mast .fp-btn{padding:0 10px;font-size:13px;gap:5px}}
+/* Small laptops: Store stays in the nav at every width; the middle sections give way first (Columnists is also on the page). */
 @media(min-width:821px) and (max-width:1099px){
-#gbm-live.fp26 .fp-links a:nth-child(n+6){display:none}
+#gbm-live.fp26 .fp-links a:nth-child(n+4):not(:last-child){display:none}
 }
+@media(min-width:821px) and (max-width:899px){#gbm-live.fp26 .fp-links a:nth-child(3):not(:last-child){display:none}}
+@media(min-width:1100px) and (max-width:1279px){#gbm-live.fp26 .fp-links a:nth-child(4){display:none}}
 @media(max-width:360px){
 #gbm-live.fp26 .fp-bug-team{font-size:13px}
 #gbm-live.fp26 .fp-bug-team strong{font-size:19px}

@@ -266,7 +266,7 @@
     function team(s) { return '<span class="fp-bug-team">' + esc(s.abbr) + ' <strong class="fp-num">' + (s.score == null ? '–' : esc(s.score)) + '</strong></span>'; }
   }
   function navHtml(sb, gs) {
-    return '<nav class="fp-nav" aria-label="GatorBait sections"><div class="fp-wrap"><div class="fp-links"><a href="/" aria-current="page">Front Page</a><a href="' + esc(L.latest) + '">Latest</a><a href="' + esc(L.magazine) + '">Magazine</a><a href="#fp-columnists">Columnists</a><a href="' + esc(L.show) + '">TV &amp; Podcasts</a><a href="' + esc(L.schedule) + '">Scores</a><a href="' + esc(L.store) + '">Store</a></div>' + bugHtml(sb, gs) + '</div></nav>';
+    return '<nav class="fp-nav" aria-label="GatorBait sections"><div class="fp-wrap"><div class="fp-links"><a href="/" aria-current="page">Front Page</a><a href="' + esc(L.latest) + '">Latest</a><a href="' + esc(L.magazine) + '">Magazine</a><a href="#fp-columnists">Columnists</a><a href="' + esc(L.show) + '">TV &amp; Podcasts</a><a href="' + esc(L.schedule) + '">Scores</a><a class="fp-store" href="' + esc(L.store) + '" target="_blank" rel="noopener" aria-label="Shop GatorBait gear (opens in a new tab)">Store <span aria-hidden="true">↗</span></a></div>' + bugHtml(sb, gs) + '</div></nav>';
   }
   function lineTable(gs, cls) {
     var n = Math.max(4, gs.away.q.length, gs.home.q.length), head = '', i;

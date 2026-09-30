@@ -1,0 +1,1772 @@
+{
+ "ran": "2026-09-30T17:30:17.290Z",
+ "passed": 353,
+ "failed": 0,
+ "results": [
+  {
+   "name": "unchanged-look /post/sample-story@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /post/sample-story@320",
+   "ok": true,
+   "info": "470/470"
+  },
+  {
+   "name": "store-links-new-tab /post/sample-story@320",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /post/sample-story@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /post/sample-story@320",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /post/sample-story@320",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1596.875,\"width\":288,\"height\":48,\"top\":1596.875,\"right\":304,\"bottom\":1644.875,\"left\":16}"
+  },
+  {
+   "name": "site-map /post/sample-story@320",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /post/sample-story@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /post/sample-story@320",
+   "ok": true,
+   "info": "{\"x\":155.359375,\"y\":9.5,\"width\":74.640625,\"height\":44,\"top\":9.5,\"right\":230,\"bottom\":53.5,\"left\":155.359375}"
+  },
+  {
+   "name": "drawer-menu /post/sample-story@320",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /post/sample-story@320",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /post/sample-story@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /post/sample-story@390",
+   "ok": true,
+   "info": "505/505"
+  },
+  {
+   "name": "store-links-new-tab /post/sample-story@390",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /post/sample-story@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /post/sample-story@390",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /post/sample-story@390",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1576.578125,\"width\":358,\"height\":48,\"top\":1576.578125,\"right\":374,\"bottom\":1624.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /post/sample-story@390",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /post/sample-story@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /post/sample-story@390",
+   "ok": true,
+   "info": "{\"x\":182.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":300,\"bottom\":53.5,\"left\":182.59375}"
+  },
+  {
+   "name": "drawer-menu /post/sample-story@390",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /post/sample-story@390",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /post/sample-story@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/post/sample-story"
+  },
+  {
+   "name": "store-guard a.story-store /post/sample-story@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/post/sample-story"
+  },
+  {
+   "name": "unchanged-look /post/sample-story@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /post/sample-story@430",
+   "ok": true,
+   "info": "525/525"
+  },
+  {
+   "name": "store-links-new-tab /post/sample-story@430",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /post/sample-story@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /post/sample-story@430",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /post/sample-story@430",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1530.578125,\"width\":398,\"height\":48,\"top\":1530.578125,\"right\":414,\"bottom\":1578.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /post/sample-story@430",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /post/sample-story@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /post/sample-story@430",
+   "ok": true,
+   "info": "{\"x\":222.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":340,\"bottom\":53.5,\"left\":222.59375}"
+  },
+  {
+   "name": "drawer-menu /post/sample-story@430",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /post/sample-story@430",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /post/sample-story@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /post/sample-story@1024",
+   "ok": true,
+   "info": "1024/1024"
+  },
+  {
+   "name": "store-links-new-tab /post/sample-story@1024",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /post/sample-story@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /post/sample-story@1024",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /post/sample-story@1024",
+   "ok": true,
+   "info": "{\"x\":859.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1008,\"bottom\":1699.390625,\"left\":859.15625}"
+  },
+  {
+   "name": "site-map /post/sample-story@1024",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /post/sample-story@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "desktop-shop /post/sample-story@1024",
+   "ok": true,
+   "info": "{\"x\":872.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":996,\"bottom\":155.9375,\"left\":872.609375}"
+  },
+  {
+   "name": "desktop-menu /post/sample-story@1024",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /post/sample-story@1024",
+   "ok": true,
+   "info": "Latest*"
+  },
+  {
+   "name": "unchanged-look /post/sample-story@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /post/sample-story@1366",
+   "ok": true,
+   "info": "1366/1366"
+  },
+  {
+   "name": "store-links-new-tab /post/sample-story@1366",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /post/sample-story@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /post/sample-story@1366",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /post/sample-story@1366",
+   "ok": true,
+   "info": "{\"x\":1124.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1273,\"bottom\":1699.390625,\"left\":1124.15625}"
+  },
+  {
+   "name": "site-map /post/sample-story@1366",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /post/sample-story@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "desktop-shop /post/sample-story@1366",
+   "ok": true,
+   "info": "{\"x\":1151.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":1275,\"bottom\":155.9375,\"left\":1151.609375}"
+  },
+  {
+   "name": "desktop-menu /post/sample-story@1366",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /post/sample-story@1366",
+   "ok": true,
+   "info": "Latest*"
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /post/sample-story@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/post/sample-story"
+  },
+  {
+   "name": "store-guard a.story-store /post/sample-story@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/post/sample-story"
+  },
+  {
+   "name": "unchanged-look /contact@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /contact@320",
+   "ok": true,
+   "info": "470/470"
+  },
+  {
+   "name": "store-links-new-tab /contact@320",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /contact@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /contact@320",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /contact@320",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1596.875,\"width\":288,\"height\":48,\"top\":1596.875,\"right\":304,\"bottom\":1644.875,\"left\":16}"
+  },
+  {
+   "name": "site-map /contact@320",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /contact@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "contact-label /contact@320",
+   "ok": true,
+   "info": "Send message"
+  },
+  {
+   "name": "phone-shop /contact@320",
+   "ok": true,
+   "info": "{\"x\":155.359375,\"y\":9.5,\"width\":74.640625,\"height\":44,\"top\":9.5,\"right\":230,\"bottom\":53.5,\"left\":155.359375}"
+  },
+  {
+   "name": "drawer-menu /contact@320",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /contact@320",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /contact@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /contact@390",
+   "ok": true,
+   "info": "505/505"
+  },
+  {
+   "name": "store-links-new-tab /contact@390",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /contact@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /contact@390",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /contact@390",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1576.578125,\"width\":358,\"height\":48,\"top\":1576.578125,\"right\":374,\"bottom\":1624.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /contact@390",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /contact@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "contact-label /contact@390",
+   "ok": true,
+   "info": "Send message"
+  },
+  {
+   "name": "phone-shop /contact@390",
+   "ok": true,
+   "info": "{\"x\":182.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":300,\"bottom\":53.5,\"left\":182.59375}"
+  },
+  {
+   "name": "drawer-menu /contact@390",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /contact@390",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /contact@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/contact"
+  },
+  {
+   "name": "store-guard a.story-store /contact@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/contact"
+  },
+  {
+   "name": "unchanged-look /contact@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /contact@430",
+   "ok": true,
+   "info": "525/525"
+  },
+  {
+   "name": "store-links-new-tab /contact@430",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /contact@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /contact@430",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /contact@430",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1530.578125,\"width\":398,\"height\":48,\"top\":1530.578125,\"right\":414,\"bottom\":1578.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /contact@430",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /contact@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "contact-label /contact@430",
+   "ok": true,
+   "info": "Send message"
+  },
+  {
+   "name": "phone-shop /contact@430",
+   "ok": true,
+   "info": "{\"x\":222.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":340,\"bottom\":53.5,\"left\":222.59375}"
+  },
+  {
+   "name": "drawer-menu /contact@430",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /contact@430",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /contact@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /contact@1024",
+   "ok": true,
+   "info": "1024/1024"
+  },
+  {
+   "name": "store-links-new-tab /contact@1024",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /contact@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /contact@1024",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /contact@1024",
+   "ok": true,
+   "info": "{\"x\":859.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1008,\"bottom\":1699.390625,\"left\":859.15625}"
+  },
+  {
+   "name": "site-map /contact@1024",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /contact@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "contact-label /contact@1024",
+   "ok": true,
+   "info": "Send message"
+  },
+  {
+   "name": "desktop-shop /contact@1024",
+   "ok": true,
+   "info": "{\"x\":872.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":996,\"bottom\":155.9375,\"left\":872.609375}"
+  },
+  {
+   "name": "desktop-menu /contact@1024",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /contact@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "unchanged-look /contact@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /contact@1366",
+   "ok": true,
+   "info": "1366/1366"
+  },
+  {
+   "name": "store-links-new-tab /contact@1366",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /contact@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /contact@1366",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /contact@1366",
+   "ok": true,
+   "info": "{\"x\":1124.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1273,\"bottom\":1699.390625,\"left\":1124.15625}"
+  },
+  {
+   "name": "site-map /contact@1366",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /contact@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "contact-label /contact@1366",
+   "ok": true,
+   "info": "Send message"
+  },
+  {
+   "name": "desktop-shop /contact@1366",
+   "ok": true,
+   "info": "{\"x\":1151.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":1275,\"bottom\":155.9375,\"left\":1151.609375}"
+  },
+  {
+   "name": "desktop-menu /contact@1366",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /contact@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /contact@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/contact"
+  },
+  {
+   "name": "store-guard a.story-store /contact@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/contact"
+  },
+  {
+   "name": "unchanged-look /pricing-plans@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /pricing-plans@320",
+   "ok": true,
+   "info": "470/470"
+  },
+  {
+   "name": "store-links-new-tab /pricing-plans@320",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /pricing-plans@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /pricing-plans@320",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /pricing-plans@320",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1596.875,\"width\":288,\"height\":48,\"top\":1596.875,\"right\":304,\"bottom\":1644.875,\"left\":16}"
+  },
+  {
+   "name": "site-map /pricing-plans@320",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /pricing-plans@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /pricing-plans@320",
+   "ok": true,
+   "info": "{\"x\":155.359375,\"y\":9.5,\"width\":74.640625,\"height\":44,\"top\":9.5,\"right\":230,\"bottom\":53.5,\"left\":155.359375}"
+  },
+  {
+   "name": "drawer-menu /pricing-plans@320",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /pricing-plans@320",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /pricing-plans@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /pricing-plans@390",
+   "ok": true,
+   "info": "505/505"
+  },
+  {
+   "name": "store-links-new-tab /pricing-plans@390",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /pricing-plans@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /pricing-plans@390",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /pricing-plans@390",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1576.578125,\"width\":358,\"height\":48,\"top\":1576.578125,\"right\":374,\"bottom\":1624.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /pricing-plans@390",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /pricing-plans@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /pricing-plans@390",
+   "ok": true,
+   "info": "{\"x\":182.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":300,\"bottom\":53.5,\"left\":182.59375}"
+  },
+  {
+   "name": "drawer-menu /pricing-plans@390",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /pricing-plans@390",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /pricing-plans@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/pricing-plans"
+  },
+  {
+   "name": "store-guard a.story-store /pricing-plans@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/pricing-plans"
+  },
+  {
+   "name": "unchanged-look /pricing-plans@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /pricing-plans@430",
+   "ok": true,
+   "info": "525/525"
+  },
+  {
+   "name": "store-links-new-tab /pricing-plans@430",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /pricing-plans@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /pricing-plans@430",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /pricing-plans@430",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1530.578125,\"width\":398,\"height\":48,\"top\":1530.578125,\"right\":414,\"bottom\":1578.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /pricing-plans@430",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /pricing-plans@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /pricing-plans@430",
+   "ok": true,
+   "info": "{\"x\":222.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":340,\"bottom\":53.5,\"left\":222.59375}"
+  },
+  {
+   "name": "drawer-menu /pricing-plans@430",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /pricing-plans@430",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /pricing-plans@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /pricing-plans@1024",
+   "ok": true,
+   "info": "1024/1024"
+  },
+  {
+   "name": "store-links-new-tab /pricing-plans@1024",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /pricing-plans@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /pricing-plans@1024",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /pricing-plans@1024",
+   "ok": true,
+   "info": "{\"x\":859.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1008,\"bottom\":1699.390625,\"left\":859.15625}"
+  },
+  {
+   "name": "site-map /pricing-plans@1024",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /pricing-plans@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "desktop-shop /pricing-plans@1024",
+   "ok": true,
+   "info": "{\"x\":872.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":996,\"bottom\":155.9375,\"left\":872.609375}"
+  },
+  {
+   "name": "desktop-menu /pricing-plans@1024",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /pricing-plans@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "unchanged-look /pricing-plans@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /pricing-plans@1366",
+   "ok": true,
+   "info": "1366/1366"
+  },
+  {
+   "name": "store-links-new-tab /pricing-plans@1366",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /pricing-plans@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /pricing-plans@1366",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /pricing-plans@1366",
+   "ok": true,
+   "info": "{\"x\":1124.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1273,\"bottom\":1699.390625,\"left\":1124.15625}"
+  },
+  {
+   "name": "site-map /pricing-plans@1366",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /pricing-plans@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "desktop-shop /pricing-plans@1366",
+   "ok": true,
+   "info": "{\"x\":1151.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":1275,\"bottom\":155.9375,\"left\":1151.609375}"
+  },
+  {
+   "name": "desktop-menu /pricing-plans@1366",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /pricing-plans@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /pricing-plans@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/pricing-plans"
+  },
+  {
+   "name": "store-guard a.story-store /pricing-plans@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/pricing-plans"
+  },
+  {
+   "name": "unchanged-look /the-buddy-martin-show@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /the-buddy-martin-show@320",
+   "ok": true,
+   "info": "470/470"
+  },
+  {
+   "name": "store-links-new-tab /the-buddy-martin-show@320",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /the-buddy-martin-show@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /the-buddy-martin-show@320",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /the-buddy-martin-show@320",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1596.875,\"width\":288,\"height\":48,\"top\":1596.875,\"right\":304,\"bottom\":1644.875,\"left\":16}"
+  },
+  {
+   "name": "site-map /the-buddy-martin-show@320",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /the-buddy-martin-show@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /the-buddy-martin-show@320",
+   "ok": true,
+   "info": "{\"x\":155.359375,\"y\":9.5,\"width\":74.640625,\"height\":44,\"top\":9.5,\"right\":230,\"bottom\":53.5,\"left\":155.359375}"
+  },
+  {
+   "name": "drawer-menu /the-buddy-martin-show@320",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /the-buddy-martin-show@320",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /the-buddy-martin-show@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "505/505"
+  },
+  {
+   "name": "store-links-new-tab /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /the-buddy-martin-show@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1576.578125,\"width\":358,\"height\":48,\"top\":1576.578125,\"right\":374,\"bottom\":1624.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /the-buddy-martin-show@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "{\"x\":182.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":300,\"bottom\":53.5,\"left\":182.59375}"
+  },
+  {
+   "name": "drawer-menu /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/the-buddy-martin-show"
+  },
+  {
+   "name": "store-guard a.story-store /the-buddy-martin-show@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/the-buddy-martin-show"
+  },
+  {
+   "name": "unchanged-look /the-buddy-martin-show@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /the-buddy-martin-show@430",
+   "ok": true,
+   "info": "525/525"
+  },
+  {
+   "name": "store-links-new-tab /the-buddy-martin-show@430",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /the-buddy-martin-show@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /the-buddy-martin-show@430",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /the-buddy-martin-show@430",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1530.578125,\"width\":398,\"height\":48,\"top\":1530.578125,\"right\":414,\"bottom\":1578.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /the-buddy-martin-show@430",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /the-buddy-martin-show@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /the-buddy-martin-show@430",
+   "ok": true,
+   "info": "{\"x\":222.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":340,\"bottom\":53.5,\"left\":222.59375}"
+  },
+  {
+   "name": "drawer-menu /the-buddy-martin-show@430",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /the-buddy-martin-show@430",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": "1024/1024"
+  },
+  {
+   "name": "store-links-new-tab /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": "{\"x\":859.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1008,\"bottom\":1699.390625,\"left\":859.15625}"
+  },
+  {
+   "name": "site-map /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "desktop-shop /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": "{\"x\":872.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":996,\"bottom\":155.9375,\"left\":872.609375}"
+  },
+  {
+   "name": "desktop-menu /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /the-buddy-martin-show@1024",
+   "ok": true,
+   "info": "TV & Podcasts*"
+  },
+  {
+   "name": "unchanged-look /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "1366/1366"
+  },
+  {
+   "name": "store-links-new-tab /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "{\"x\":1124.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1273,\"bottom\":1699.390625,\"left\":1124.15625}"
+  },
+  {
+   "name": "site-map /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "desktop-shop /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "{\"x\":1151.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":1275,\"bottom\":155.9375,\"left\":1151.609375}"
+  },
+  {
+   "name": "desktop-menu /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "TV & Podcasts*"
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/the-buddy-martin-show"
+  },
+  {
+   "name": "store-guard a.story-store /the-buddy-martin-show@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/the-buddy-martin-show"
+  },
+  {
+   "name": "unchanged-look /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": "470/470"
+  },
+  {
+   "name": "store-links-new-tab /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1596.875,\"width\":288,\"height\":48,\"top\":1596.875,\"right\":304,\"bottom\":1644.875,\"left\":16}"
+  },
+  {
+   "name": "site-map /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": "{\"x\":155.359375,\"y\":9.5,\"width\":74.640625,\"height\":44,\"top\":9.5,\"right\":230,\"bottom\":53.5,\"left\":155.359375}"
+  },
+  {
+   "name": "drawer-menu /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /gatorbait-media-blogs@320",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "505/505"
+  },
+  {
+   "name": "store-links-new-tab /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1576.578125,\"width\":358,\"height\":48,\"top\":1576.578125,\"right\":374,\"bottom\":1624.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "{\"x\":182.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":300,\"bottom\":53.5,\"left\":182.59375}"
+  },
+  {
+   "name": "drawer-menu /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/gatorbait-media-blogs"
+  },
+  {
+   "name": "store-guard a.story-store /gatorbait-media-blogs@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/gatorbait-media-blogs"
+  },
+  {
+   "name": "unchanged-look /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": "525/525"
+  },
+  {
+   "name": "store-links-new-tab /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1530.578125,\"width\":398,\"height\":48,\"top\":1530.578125,\"right\":414,\"bottom\":1578.578125,\"left\":16}"
+  },
+  {
+   "name": "site-map /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": "{\"x\":222.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":340,\"bottom\":53.5,\"left\":222.59375}"
+  },
+  {
+   "name": "drawer-menu /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /gatorbait-media-blogs@430",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": "1024/1024"
+  },
+  {
+   "name": "store-links-new-tab /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": "{\"x\":859.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1008,\"bottom\":1699.390625,\"left\":859.15625}"
+  },
+  {
+   "name": "site-map /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "desktop-shop /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": "{\"x\":872.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":996,\"bottom\":155.9375,\"left\":872.609375}"
+  },
+  {
+   "name": "desktop-menu /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /gatorbait-media-blogs@1024",
+   "ok": true,
+   "info": "Latest*"
+  },
+  {
+   "name": "unchanged-look /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "1366/1366"
+  },
+  {
+   "name": "store-links-new-tab /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"sh-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "{\"x\":1124.15625,\"y\":1651.390625,\"width\":148.84375,\"height\":48,\"top\":1651.390625,\"right\":1273,\"bottom\":1699.390625,\"left\":1124.15625}"
+  },
+  {
+   "name": "site-map /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "desktop-shop /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "{\"x\":1151.609375,\"y\":115.9375,\"width\":123.390625,\"height\":40,\"top\":115.9375,\"right\":1275,\"bottom\":155.9375,\"left\":1151.609375}"
+  },
+  {
+   "name": "desktop-menu /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop Gear ↗"
+  },
+  {
+   "name": "aria-current /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "Latest*"
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/gatorbait-media-blogs"
+  },
+  {
+   "name": "store-guard a.story-store /gatorbait-media-blogs@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/gatorbait-media-blogs"
+  },
+  {
+   "name": "unchanged-look /@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /@320",
+   "ok": true,
+   "info": "470/470"
+  },
+  {
+   "name": "store-links-new-tab /@320",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /@320",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /@320",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1481.140625,\"width\":288,\"height\":48,\"top\":1481.140625,\"right\":304,\"bottom\":1529.140625,\"left\":16}"
+  },
+  {
+   "name": "site-map /@320",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /@320",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /@320",
+   "ok": true,
+   "info": "{\"x\":155.359375,\"y\":9.5,\"width\":74.640625,\"height\":44,\"top\":9.5,\"right\":230,\"bottom\":53.5,\"left\":155.359375}"
+  },
+  {
+   "name": "drawer-menu /@320",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /@320",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /@390",
+   "ok": true,
+   "info": "505/505"
+  },
+  {
+   "name": "store-links-new-tab /@390",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /@390",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /@390",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1460.84375,\"width\":358,\"height\":48,\"top\":1460.84375,\"right\":374,\"bottom\":1508.84375,\"left\":16}"
+  },
+  {
+   "name": "site-map /@390",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /@390",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /@390",
+   "ok": true,
+   "info": "{\"x\":182.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":300,\"bottom\":53.5,\"left\":182.59375}"
+  },
+  {
+   "name": "drawer-menu /@390",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /@390",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/"
+  },
+  {
+   "name": "store-guard a.story-store /@390",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/"
+  },
+  {
+   "name": "unchanged-look /@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /@430",
+   "ok": true,
+   "info": "525/525"
+  },
+  {
+   "name": "store-links-new-tab /@430",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":false,\"cls\":\"\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbm-ms-shop\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /@430",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /@430",
+   "ok": true,
+   "info": "{\"x\":16,\"y\":1414.84375,\"width\":398,\"height\":48,\"top\":1414.84375,\"right\":414,\"bottom\":1462.84375,\"left\":16}"
+  },
+  {
+   "name": "site-map /@430",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /@430",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "phone-shop /@430",
+   "ok": true,
+   "info": "{\"x\":222.59375,\"y\":9.5,\"width\":117.40625,\"height\":44,\"top\":9.5,\"right\":340,\"bottom\":53.5,\"left\":222.59375}"
+  },
+  {
+   "name": "drawer-menu /@430",
+   "ok": true,
+   "info": "Front Page | Latest | Magazine | TV & Podcasts | Scores & Schedule | Roster | Community | Shop GatorBait Gear ↗ | Join GatorBait | Sign In / Account | Contact"
+  },
+  {
+   "name": "drawer-shop /@430",
+   "ok": true,
+   "info": "48 _blank"
+  },
+  {
+   "name": "unchanged-look /@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /@1024",
+   "ok": true,
+   "info": "1024/1024"
+  },
+  {
+   "name": "store-links-new-tab /@1024",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /@1024",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /@1024",
+   "ok": true,
+   "info": "{\"x\":859.15625,\"y\":1337.25,\"width\":148.84375,\"height\":48,\"top\":1337.25,\"right\":1008,\"bottom\":1385.25,\"left\":859.15625}"
+  },
+  {
+   "name": "site-map /@1024",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /@1024",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "unchanged-look /@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "no-overflow /@1366",
+   "ok": true,
+   "info": "1366/1366"
+  },
+  {
+   "name": "store-links-new-tab /@1366",
+   "ok": true,
+   "info": "[{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"gbf-btn\"},{\"t\":\"_blank\",\"rel\":\"noopener\",\"vis\":true,\"cls\":\"\"}]"
+  },
+  {
+   "name": "barlow-only /@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "footer-uniform /@1366",
+   "ok": true,
+   "info": "rgb(8, 19, 47)"
+  },
+  {
+   "name": "footer-shop /@1366",
+   "ok": true,
+   "info": "{\"x\":1124.15625,\"y\":1337.25,\"width\":148.84375,\"height\":48,\"top\":1337.25,\"right\":1273,\"bottom\":1385.25,\"left\":1124.15625}"
+  },
+  {
+   "name": "site-map /@1366",
+   "ok": true,
+   "info": "23"
+  },
+  {
+   "name": "newsletter-close+rename /@1366",
+   "ok": true,
+   "info": ""
+  },
+  {
+   "name": "store-guard #SITE_HEADER a.native-shop /@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/"
+  },
+  {
+   "name": "store-guard a.story-store /@1366",
+   "ok": true,
+   "info": "https://gatorbait2026.itemorder.com/shop/home/ stay=https://www.gatorbaitmedia.com/"
+  }
+ ]
+}

@@ -74,7 +74,7 @@
       var key = (image.match(/media\/([0-9a-f]+_[0-9a-f]+)/) || [])[1] || '';
       if (BUNDLE.credits[key]) credit = BUNDLE.credits[key];
       return { title: String(p.title).trim(), url: u, path: path(u), author: String(p.author || 'GatorBait Staff'), date: date, excerpt: raw,
-        cap: cap, credit: credit, image: image, key: key, alt: String(p.image && p.image.alt || p.title),
+        cap: cap, credit: credit, image: image, key: key, alt: String(p.image && p.image.alt || p.title), cover: (BUNDLE.covers || []).indexOf(key) >= 0,
         portrait: !!(p.image && Number(p.image.width) > 0 && Number(p.image.height) > Number(p.image.width)) };
     }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).slice(0, 30);
   }
@@ -289,7 +289,7 @@
   }
   function photoBlock(p, eager, cls) {
     if (!p.image) return '';
-    return '<figure class="' + (cls || '') + '">' + link(p.url, img(p.image, p.alt, eager), 'fp-frame' + (p.portrait ? ' fp-portrait' : ''), ' tabindex="-1" aria-hidden="true"') +
+    return '<figure class="' + (cls || '') + '">' + link(p.url, img(p.image, p.alt, eager), 'fp-frame' + (p.portrait ? ' fp-portrait' : '') + (p.cover ? ' fp-cover' : ''), ' tabindex="-1" aria-hidden="true"') +
       ((p.cap || p.credit) ? '<figcaption class="fp-cap"><span>' + esc(p.cap) + '</span>' + (p.credit ? '<b>' + esc(p.credit) + '</b>' : '') + '</figcaption>' : '') + '</figure>';
   }
   function leadHtml(lead, why) {

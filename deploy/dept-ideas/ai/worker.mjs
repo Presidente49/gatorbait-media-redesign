@@ -19,7 +19,7 @@ import { tokens } from './tokenize.mjs';
 export const MODEL = '@cf/meta/llama-3.1-8b-instruct';
 export const REFUSAL = "I don't have that in GatorBait's stories, the ESPN scoreboard feed or our Gators history file yet, so I won't guess. Try the schedule, a recent story or a Gators history question.";
 const ALLOWED = ['https://www.gatorbaitmedia.com', 'https://gatorbaitmedia.com'];
-const TOP_K = 5, MIN_SCORE = 1.2, ASK_PER_MIN = 8, ASK_PER_DAY = 60, MAX_Q = 280;
+const TOP_K = 5, MIN_SCORE = 1.2, MIN_COVERAGE = 0.5, ASK_PER_MIN = 8, ASK_PER_DAY = 60, MAX_Q = 280;
 const SYNONYMS = { coach: ['sumrall'], hc: ['sumrall'], qb: ['quarterback'], score: ['result', 'beat', 'lost'], final: ['result'], next: ['next'], upcoming: ['next'], kickoff: ['next', 'time'], tv: ['next'], channel: ['tv'], record: ['record', 'overall'], ranked: ['rank', 'ranked'], ranking: ['rank', 'poll'], rank: ['rank'], standing: ['standing'], standings: ['standing'], title: ['championship'], titles: ['championship'], champion: ['championship'], champions: ['championship'], natty: ['championship', 'national'], heisman: ['heisman'], stadium: ['swamp', 'stadium'], mascot: ['mascot', 'albert'], injury: ['injured', 'sprain', 'mri'], hurt: ['injured', 'sprain', 'mri'], lose: ['lost'], loss: ['lost'], win: ['beat', 'won'], won: ['beat', 'won'], play: ['next', 'play'], schedule: ['schedule', 'play'], week: ['next'], weekend: ['next'], saturday: ['next'] };
 const MON = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
 
@@ -47,7 +47,10 @@ export function retrieve(q, k = TOP_K, nowMs = Date.now()) {
     if (s && d.type === 'story') { const ageDays = Math.max(0, (nowMs - Date.parse(d.date)) / 86400000); s *= 1 + 0.5 * Math.exp(-ageDays / 14); }
     return { d, s };
   }).filter((x) => x.s > 0).sort((a, b2) => b2.s - a.s).slice(0, k);
-  return scored.map((x) => ({ id: x.d.id, type: x.d.type, title: x.d.title, url: x.d.url, text: x.d.text, date: x.d.date, score: Math.round(x.s * 100) / 100 }));
+  // coverage: share of the question's own words (or a synonym) present in the doc. Guards against one rare word
+  // ("Gainesville" in a pizza question) pulling in a source that does not answer the question.
+  const cov = (d) => words.length ? words.filter((w) => d.tf[w] || (SYNONYMS[w] || []).some((s) => d.tf[s])).length / words.length : 0;
+  return scored.map((x) => ({ id: x.d.id, type: x.d.type, title: x.d.title, url: x.d.url, text: x.d.text, date: x.d.date, score: Math.round(x.s * 100) / 100, coverage: Math.round(cov(x.d) * 100) / 100 }));
 }
 
 /* ---------- prompt: the model sees the numbered sources and nothing else ---------- */
@@ -108,7 +111,7 @@ export default {
       const q = String(body.q || '').replace(/\s+/g, ' ').trim().slice(0, MAX_Q);
       if (q.length < 3) return json({ error: 'ask a question' }, 400, c.headers);
       const hits = retrieve(q, TOP_K, now);
-      if (!hits.length || hits[0].score < MIN_SCORE) return json({ answer: REFUSAL, grounded: false, refused: 'no-sources', sources: [] }, 200, c.headers);
+      if (!hits.length || hits[0].score < MIN_SCORE || hits[0].coverage < MIN_COVERAGE) return json({ answer: REFUSAL, grounded: false, refused: 'no-sources', sources: [] }, 200, c.headers);
       let raw = '';
       try { const r = await env.AI.run(MODEL, { messages: buildPrompt(q, hits, et.ymd), max_tokens: 220, temperature: 0.2 }); raw = r && (r.response || (r.choices && r.choices[0] && r.choices[0].message && r.choices[0].message.content)) || ''; }
       catch (e) { return json({ error: 'model unavailable', detail: String(e && e.message || e).slice(0, 120) }, 503, c.headers); }

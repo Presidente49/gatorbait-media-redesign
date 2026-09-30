@@ -37,8 +37,8 @@ const DIST_SQL = 'SELECT COUNT(*) AS n, AVG(fla) AS af, AVG(opp) AS ao, SUM(fla 
 const TOP_SQL = 'SELECT fla, opp, COUNT(*) AS n FROM picks WHERE game_id = ? GROUP BY fla, opp ORDER BY n DESC, fla DESC, opp ASC LIMIT 1';
 const GAME_SQL = 'SELECT id, away, home, fla_home, kickoff, final_fla, final_opp FROM games WHERE id = ?';
 const UPSERT_SQL = 'INSERT INTO picks (game_id, voter, fla, opp, created_at, updated_at) VALUES (?1, ?2, ?3, ?4, ?5, ?5) ' +
-  'ON CONFLICT (game_id, voter) DO UPDATE SET fla = excluded.fla, opp = excluded.opp, updated_at = excluded.updated_at ' +
-  'RETURNING created_at = updated_at AS fresh';
+  'ON CONFLICT (game_id, voter) DO UPDATE SET fla = excluded.fla, opp = excluded.opp, updated_at = excluded.updated_at';
+const EXISTS_SQL = 'SELECT 1 AS x FROM picks WHERE game_id = ? AND voter = ?';
 const RATE_SQL = 'INSERT INTO rate_limits (bucket, n, expires) VALUES (?1, 1, ?2) ON CONFLICT (bucket) DO UPDATE SET n = n + 1 RETURNING n';
 
 function now(env) { const t = Number(env && env.NOW_OVERRIDE); return Number.isFinite(t) && t > 0 ? t : Date.now(); }
@@ -126,9 +126,10 @@ export default {
         if (!game) return json({ error: 'unknown game' }, 404, c.headers);
         if (t >= Date.parse(game.kickoff)) return json({ error: 'locked', kickoff: game.kickoff }, 409, c.headers);
         const voter = (await sha256('gbm-call:' + token)).slice(0, 32);
-        const res = await env.DB.prepare(UPSERT_SQL).bind(game.id, voter, fla, opp, iso(t)).first();
+        // One transaction: did this device already have a call (200 update) or not (201 counted)?
+        const [had] = await env.DB.batch([env.DB.prepare(EXISTS_SQL).bind(game.id, voter), env.DB.prepare(UPSERT_SQL).bind(game.id, voter, fla, opp, iso(t))]);
         const dist = await distribution(env, game, t);
-        return json(Object.assign({ ok: true, yours: { fla, opp } }, dist), res && Number(res.fresh) === 1 ? 201 : 200, Object.assign({ 'cache-control': 'no-store' }, c.headers));
+        return json(Object.assign({ ok: true, yours: { fla, opp } }, dist), had.results && had.results.length ? 200 : 201, Object.assign({ 'cache-control': 'no-store' }, c.headers));
       }
 
       return json({ error: 'not found' }, 404, c.headers);

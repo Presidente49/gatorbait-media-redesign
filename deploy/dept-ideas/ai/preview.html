@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ask GatorBait preview</title>
+<meta name="description" content="The real Ask GatorBait client (client.js) mounted in a stand-in Swamp Night shell, answering from responses recorded by test/harness.mjs against the Worker's fetch handler.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap">
+<style>
+:root{color-scheme:dark}
+body{margin:0;background:#07122e;color:#f3f5fa;font:400 16px/1.45 "Barlow",sans-serif}
+#gbm-live.fp26{--fp-band:#07122e;--fp-card:#0e2257;--fp-chip:#16295e;--fp-ink:#f3f5fa;--fp-ink-2:#b9c4dc;--fp-link:#a9bbff;--fp-navy:#0021a5;--fp-orange:#fa4616;--fp-rule:#26386b;--fp-cond:"Barlow Condensed","Barlow",sans-serif;--fp-sans:"Barlow",sans-serif;--fp-pad:16px}
+@media(min-width:600px){#gbm-live.fp26{--fp-pad:24px}}@media(min-width:900px){#gbm-live.fp26{--fp-pad:32px}}@media(min-width:1200px){#gbm-live.fp26{--fp-pad:64px}}
+.pv-mast{background:#0b1d4a;padding:14px var(--fp-pad,16px);display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pv-mast b{font:800 22px/1 "Barlow Condensed",sans-serif;letter-spacing:.02em;text-transform:uppercase}
+.pv-mast span{font:700 11px/1.3 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#b9c4dc}
+.pv-note{max-width:980px;margin:0 auto;padding:14px var(--fp-pad,16px) 40px;font-size:13px;color:#b9c4dc}
+.pv-note a{color:#a9bbff}
+</style></head>
+<body>
+<div id="gbm-live" class="gbm-gazette gbm-sports-home fp26 fp-night">
+  <div class="pv-mast"><b>GatorBait Media</b><span>Stand-in Swamp Night shell · the section below is the real client.js</span></div>
+</div>
+<p class="pv-note">Every answer on this page is a recorded response from <code>test/harness.mjs</code> running the Worker's fetch handler with a stub AI binding: retrieval, prompt, number guard, refusals, trivia, streak and rate limits are the real code paths. Only the model's sentence is canned (it repeats the top source). Nothing is deployed; see TEST.md.</p>
+<script>
+  // Recorded transport: same JSON the Worker returned in the harness run, keyed by question.
+  var REC = null, pending = fetch('recorded.json').then(function (r) { return r.json(); }).then(function (j) { REC = j; });
+  window.__GBM_ASK_TRANSPORT__ = function (path, body) {
+    return pending.then(function () {
+      if (path === '/ask') { var hit = REC.asks.filter(function (a) { return a.q.toLowerCase() === String(body.q).toLowerCase(); })[0]; return hit || REC.asks[REC.asks.length - 1]; }
+      if (path === '/trivia/today') return REC.trivia.today;
+      if (path === '/trivia/answer') return body.choice === REC.trivia.today.__answer ? REC.trivia.answer : REC.trivia.wrong;
+      return { error: 'not found' };
+    });
+  };
+  // Auto-play for the screenshots: ask two recorded questions, then reveal the trivia state.
+  window.addEventListener('load', function () {
+    pending.then(function () {
+      REC.trivia.today.__answer = REC.trivia.answer.answer;
+      var chips = document.querySelectorAll('.fp-ask-chip'); if (chips[0]) chips[0].click();
+      setTimeout(function () { if (chips[2]) chips[2].click(); }, 150);
+      var q = new URLSearchParams(location.search);
+      if (q.get('tab') === 'trivia') { var t = document.querySelector('.fp-ask-tab[data-tab=trivia]'); if (t) t.click(); }
+      if (q.get('answer') === 'right') setTimeout(function () { var o = document.querySelectorAll('.fp-ask-opt')[REC.trivia.answer.answer]; if (o) o.click(); }, 300);
+    });
+  });
+</script>
+<script src="client.js"></script>
+</body></html>

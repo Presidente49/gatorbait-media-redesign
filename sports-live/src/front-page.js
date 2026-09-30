@@ -374,7 +374,7 @@
   function tunnelHtml(gs, sb, posts, leadUrl) {
     if (!gs || !gs.away || !gs.home) return '';
     var phase = gs.phase === 'half' ? 'half' : gs.phase, opp = gs.away.name === 'Florida' ? gs.home : gs.away;
-    function team(s) { return '<div class="fp-tn-team"><small>' + esc([s.rank ? 'No. ' + s.rank : '', s.record || ''].filter(Boolean).join(' · ') || ' ') + '</small><b>' + esc(s.name) + '</b></div>'; }
+    function team(s) { return '<span class="fp-tn-team"><small>' + esc([s.rank ? 'No. ' + s.rank : '', s.record || ''].filter(Boolean).join(' · ') || ' ') + '</small><b>' + esc(s.name) + '</b></span>'; }
     var re = new RegExp(String(opp.name || '').replace(/[.*+?^${}()|[\]\\]/g, '\\  function hubHtml(latest, sb, posts, used) {'), 'i');
     var about = posts.filter(function (p) { return p.url !== leadUrl && re.test(p.title + ' ' + (p.excerpt || '')); }).slice(0, 3);
     var first = gs.links[0], primary = first ? [first[0], first[1]] : sb.next && sb.next.previewUrl ? ['Game preview', sb.next.previewUrl] : sb.last && sb.last.recapUrl && gs.phase === 'final' ? ['Read the recap', sb.last.recapUrl] : ['Scores & schedule', L.schedule];
@@ -382,7 +382,7 @@
     return '<section class="fp-tunnel" data-phase="' + esc(phase) + '" aria-label="Game day: ' + esc(gs.away.name + ' at ' + gs.home.name) + '">' +
       '<div class="fp-tn-scene" aria-hidden="true"><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><i class="fp-tn-ring"></i><b class="fp-tn-light"></b><u class="fp-tn-floor"></u></div>' +
       '<div class="fp-wrap fp-tn-wrap"><p class="fp-tn-top"><span class="fp-pill">Game day</span>' + (when ? '<span>' + esc(when) + '</span>' : '') + (gs.venue ? '<span>' + esc(gs.venue) + '</span>' : '') + '</p>' +
-      '<div class="fp-tn-match">' + team(gs.away) + '<div class="fp-tn-vs">at</div>' + team(gs.home) + '</div>' +
+      '<h2 class="fp-tn-match">' + team(gs.away) + '<span class="fp-tn-vs">at</span>' + team(gs.home) + '</h2>' +
       '<div class="fp-tn-mid">' +
         '<div class="fp-tn-pre"><p class="fp-tn-label">Kickoff in</p>' + (gs.kickoff ? cd(new Date(gs.kickoff).toISOString()) : '') + '</div>' +
         '<div class="fp-tn-kick"><p>Out of the tunnel</p><p class="fp-tn-label">Kickoff' + (when ? ' · ' + esc(when.replace(/^[^·]*·\s*/, '')) : '') + '</p></div>' +

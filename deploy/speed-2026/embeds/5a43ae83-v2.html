@@ -1,0 +1,188 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "@id": "https://www.gatorbaitmedia.com/#organization",
+  "name": "GatorBait Media",
+  "alternateName": "Gator Bait Media",
+  "url": "https://www.gatorbaitmedia.com",
+  "logo": {"@type": "ImageObject","url": "https://static.wixstatic.com/media/ae876a_33367cf1645c43d18b0d930a68ca747b~mv2.png","width": 600,"height": 600},
+  "image": "https://static.wixstatic.com/media/ae876a_33367cf1645c43d18b0d930a68ca747b~mv2.png",
+  "description": "GatorBait Media is the premier source for Florida Gators news, founded by Emmy-winning journalist and NY Times best-selling author Buddy Martin. Covering UF athletics since 1979.",
+  "foundingDate": "1979",
+  "founders": [{"@type":"Person","name":"Buddy Martin","jobTitle":"Founder & Editorial Director"},{"@type":"Person","name":"Brenden Martin","jobTitle":"Publisher & Producer"}],
+  "founder": {"@type":"Person","name":"Buddy Martin"},
+  "employees": [{"@type":"Person","name":"Buddy Martin","jobTitle":"Host, The Buddy Martin Show"},{"@type":"Person","name":"Brenden Martin","jobTitle":"Publisher & Producer"},{"@type":"Person","name":"Franz Beard","jobTitle":"Senior Writer"},{"@type":"Person","name":"Carlton Reese","jobTitle":"Writer"},{"@type":"Person","name":"Chris Spears","jobTitle":"Photographer"}],
+  "knowsAbout": ["Florida Gators","SEC Football","SEC Basketball","College Football","College Basketball","NCAA Recruiting","Transfer Portal"],
+  "areaServed": {"@type":"Country","name":"United States"},
+  "email": "info@gatorbaitmedia.com",
+  "sameAs": ["https://www.facebook.com/gatorbaitmedia","https://x.com/gatorbaitmedia","https://twitter.com/gatorbaitmedia","https://www.instagram.com/gatorbaitmedia","https://www.youtube.com/@thebuddymartinshow"],
+  "diversityPolicy": "https://www.gatorbaitmedia.com/policies",
+  "ethicsPolicy": "https://www.gatorbaitmedia.com/policies",
+  "masthead": "https://www.gatorbaitmedia.com/about",
+  "missionCoveragePrioritiesPolicy": "https://www.gatorbaitmedia.com/about",
+  "ownershipFundingInfo": "https://www.gatorbaitmedia.com/about",
+  "verificationFactCheckingPolicy": "https://www.gatorbaitmedia.com/policies",
+  "publishingPrinciples": "https://www.gatorbaitmedia.com/policies",
+  "actionableFeedbackPolicy": "https://www.gatorbaitmedia.com/policies",
+  "correctionsPolicy": "https://www.gatorbaitmedia.com/policies"
+}
+</script>
+<script>
+(function(){
+  try {
+    var p = window.location.pathname || "";
+    var s = window.location.search || "";
+    var h = window.location.hash || "";
+
+    function goReplace(u){ window.location.replace(u); }
+    // Preserve legacy contact links while the canonical indexed route remains /contact.
+    if (p === "/contact-form" || p === "/contact-form/") { goReplace("/contact" + s + h); return; }
+
+    // Official merchandise store: retire the broken Wix all-products destination.
+    if (/^\/category\/all-products\/?$/.test(p)) { goReplace("https://gatorbait2026.itemorder.com/shop/home/"); return; }
+
+    // 1. Legacy post prefix - biggest bug for subscribers
+    if (p.indexOf("/gatorbait-media-blogs/post/") === 0) {
+      goReplace(p.replace("/gatorbait-media-blogs/post/", "/post/") + s + h); return;
+    }
+    // 2. /blog/ -> /post/
+    if (/^\/blog\/[^/]+/.test(p)) {
+      var mb = p.match(/^\/blog\/(.+)$/);
+      if (mb) { goReplace("/post/" + mb[1] + s + h); return; }
+    }
+    // 3. /category/{slug} and /categories/{slug} -> /gatorbait-media-blogs/categories/{slug}
+    var mCat = p.match(/^\/categor(?:y|ies)\/(.+)$/);
+    if (mCat) {
+      var catSlug = mCat[1];
+      if (catSlug === "buddys-blog" || catSlug === "buddy-blog") catSlug = "buddy-s-blog";
+      goReplace("/gatorbait-media-blogs/categories/" + catSlug + s + h); return;
+    }
+    // 4. Fix buddys-blog even inside blog category path
+    if (p === "/gatorbait-media-blogs/categories/buddys-blog" || p === "/gatorbait-media-blogs/categories/buddy-blog") {
+      goReplace("/gatorbait-media-blogs/categories/buddy-s-blog" + s + h); return;
+    }
+    // 5. /tag/{slug} -> /gatorbait-media-blogs/tags/{slug}
+    var mTag = p.match(/^\/tag\/(.+)$/);
+    if (mTag) { goReplace("/gatorbait-media-blogs/tags/" + mTag[1] + s + h); return; }
+    // 6. /plans-pricing -> /pricing-plans (subscribe funnel)
+    if (p === "/plans-pricing" || p === "/plans-pricing/") {
+      goReplace("/pricing-plans" + s + h); return;
+    }
+    // 7. /home -> / (dedupe)
+    if (p === "/home") { goReplace("/" + s + h); return; }
+    // 8. /signin -> /account/my-account (Wix members flow)
+    if (p === "/signin" || p === "/sign-in" || p === "/login") {
+      goReplace("/account/my-account" + s + h); return;
+    }
+
+    // === POST PAGE META / SCHEMA INJECTOR ===
+    var isPost = (p.indexOf("/gatorbait-media-blogs/post/") === 0) || (p.indexOf("/post/") === 0);
+    if (!isPost || p === '/post/denzel-aberdeen-florida-temporary-injunction-2026') return;
+
+    function setMeta(attr, name, value) {
+      if (!value) return;
+      var sel = 'meta[' + attr + '="' + name + '"]';
+      var el = document.querySelector(sel);
+      if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+      el.setAttribute("content", value);
+    }
+    function getMeta(name, attr) {
+      attr = attr || "property";
+      var el = document.querySelector('meta[' + attr + '="' + name + '"]');
+      return el ? el.content : null;
+    }
+
+    setMeta("property", "og:type", "article");
+    setMeta("name", "twitter:card", "summary_large_image");
+
+    function slugToHeadline(slug){
+      if(!slug) return "";
+      slug = slug.replace(/[-_]/g, " ").replace(/\.[a-z]{2,4}$/i, "");
+      return slug.replace(/\b\w/g, function(c){return c.toUpperCase();});
+    }
+    var slug = (p.match(/\/post\/([^/?#]+)/) || [])[1] || "";
+    var slugHeadline = slugToHeadline(decodeURIComponent(slug));
+
+    if (slugHeadline) {
+      document.title = slugHeadline + " | GatorBait Media";
+      setMeta("property", "og:title", slugHeadline);
+      setMeta("name", "twitter:title", slugHeadline);
+    }
+
+    var injected = false;
+    function injectAll() {
+      var h1 = document.querySelector("h1");
+      var headline = (h1 && h1.innerText && h1.innerText.trim()) || "";
+      if (!headline) { headline = document.title.replace(/\s*\|\s*GatorBait Media.*$/i, "").trim(); }
+      if (!headline || /^GatorBait Media/i.test(headline)) headline = slugHeadline;
+      if (!headline) return false;
+
+      var siteDesc = "GatorBait Media is the premier source for Florida Gators news, founded by Emmy-winning journalist and NY Times best-selling author Buddy Martin. Covering UF athletics since 1979.";
+      var existingOgDesc = getMeta("og:description");
+      var existingMetaDesc = getMeta("description", "name");
+      var desc;
+      if (existingOgDesc && existingOgDesc !== siteDesc) { desc = existingOgDesc; }
+      else if (existingMetaDesc && existingMetaDesc !== siteDesc) { desc = existingMetaDesc; }
+      else { desc = "GatorBait Media coverage of Florida Gators and SEC athletics: " + headline + "."; }
+      desc = desc.substring(0, 250);
+
+      var newTitle = headline + " | GatorBait Media";
+      if (document.title !== newTitle) { document.title = newTitle; }
+      setMeta("property", "og:title", headline);
+      setMeta("property", "og:type", "article");
+      setMeta("property", "og:description", desc);
+      setMeta("name", "description", desc);
+      setMeta("name", "twitter:card", "summary_large_image");
+      setMeta("name", "twitter:title", headline);
+      setMeta("name", "twitter:description", desc);
+
+      var titleNode=document.querySelector('[data-hook="post-page"] [data-hook="post-title"]');
+      var postHeader=titleNode&&titleNode.closest('header'),rawDate=getMeta('article:published_time'),date=new Date(rawDate||'');
+      if(postHeader&&rawDate&&Number.isFinite(date.getTime())&&!postHeader.querySelector('.gbm-published')){
+        var line=document.createElement('p'),time=document.createElement('time');line.className='gbm-published';
+        time.dateTime=date.toISOString();time.textContent=date.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'});
+        line.appendChild(document.createTextNode('Published '));line.appendChild(time);postHeader.appendChild(line);
+      }
+      injected = true; return true; /* GBM: duplicate NewsArticle removed - gbm-news-ld is canonical */
+      var url = (window.location.origin + window.location.pathname).replace(/\/+$/, "");
+      var img = getMeta("og:image") || "https://static.wixstatic.com/media/ae876a_33367cf1645c43d18b0d930a68ca747b~mv2.png";
+      var published = getMeta("article:published_time") || new Date().toISOString();
+      var modified = getMeta("article:modified_time") || published;
+      var author = getMeta("article:author") || "GatorBait Staff";
+      var section = getMeta("article:section") || "Florida Gators";
+      var schema = {"@context":"https://schema.org","@type":"NewsArticle","@id":url+"#article","mainEntityOfPage":{"@type":"WebPage","@id":url},"url":url,"headline":headline.substring(0,110),"description":desc,"image":[img],"datePublished":published,"dateModified":modified,"author":{"@type":"Person","name":author},"publisher":{"@id":"https://www.gatorbaitmedia.com/#organization"},"articleSection":section,"isAccessibleForFree":true,"inLanguage":"en-US"};
+      var s2 = document.createElement("script"); s2.type = "application/ld+json"; s2.id = "gbm-na-ld"; s2.textContent = JSON.stringify(schema); document.head.appendChild(s2);
+      injected = true;
+      return true;
+    }
+
+    injectAll();
+
+    function startObserver() {
+      // v2 (speed-2026): watch the Wix page container instead of body; one injectAll per animation frame.
+      var root = document.getElementById('SITE_CONTAINER') || document.body, frame = 0;
+      if (!root) { setTimeout(startObserver, 50); return; }
+      var obs = new MutationObserver(function(mutations, observer){
+        if (frame) return;
+        frame = requestAnimationFrame(function(){
+          frame = 0;
+          if (injectAll() && injected) {
+            setTimeout(function(){ injectAll(); observer.disconnect(); }, 500);
+          }
+        });
+      });
+      obs.observe(root, {childList: true, subtree: true});
+      setTimeout(function(){ obs.disconnect(); }, 15000);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", startObserver);
+    } else {
+      startObserver();
+    }
+    setTimeout(injectAll, 500);
+    setTimeout(injectAll, 1500);
+    setTimeout(injectAll, 3500);
+  } catch(e) {}
+})();
+</script>

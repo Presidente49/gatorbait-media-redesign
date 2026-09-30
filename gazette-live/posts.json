@@ -2,10 +2,38 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”",
+      "excerpt": "I’ll be honest. This guy could turn out to be brilliant. Maybe even Steve Spurrier brilliant. But I’d never put him above the Head Ball Coach, or even in the same paragraph. Faulkner has to earn that.",
+      "url": "https://www.gatorbaitmedia.com/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-09-30T14:25:44Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_b8f5f91b591148208d23919fd45072e8~mv2.png/v1/fit/w_672,h_715,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”"
+      }
+    },
+    {
+      "title": "Thoughts of the Day: September 30, 2026",
+      "excerpt": "Why are these guys smiling? (UAA Photo) A few thoughts to jump start your Wednesday morning: To paraphrase Steve Spurrier, God smiled on the Gators Tuesday. First, Alachua County judge George Wright issued a temporary restraining order against the NCAA that will allow Denzel Aberdeen a fifth year of eligibility. While that was going on, Ian Condon (6-7…",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-30-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-09-30T13:48:39Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/a99769_d6cc8efa8cfb4c0b8ad6ee7c8eb9768f~mv2.jpg/v1/fit/w_689,h_708,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: September 30, 2026"
+      }
+    },
+    {
       "title": "Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction",
       "excerpt": "Denzel Aberdeen wins a temporary injunction allowing him to play for Florida in 2026–27. What the ruling means for the Gators and their backcourt.",
       "url": "https://www.gatorbaitmedia.com/post/denzel-aberdeen-florida-temporary-injunction-2026",
-      "author": "GatorBait Staff",
+      "author": "GatorBaitMagazineStaff",
       "firstPublishedDate": "2026-09-29T20:19:43Z",
       "section": "GatorBait",
       "image": {
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for What Happened in College Football Saturday: Gators Take Down No. 4 Ole Miss as Top 25 Shakes"
-      }
-    },
-    {
-      "title": "The Swamp Gets Its Swagger Back And Welcomes The Folks From The Grove In Rude Fashion",
-      "excerpt": "Florida 52, Ole Miss 28. Buddy Martin on the Swamp's swagger, Jadan Baugh's historic day, and a 4-0 start for the first time since 2019.",
-      "url": "https://www.gatorbaitmedia.com/post/the-swamp-gets-its-swagger-back-and-welcomes-the-folks-from-the-grove-in-rude-fashion",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-27T04:44:52Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Swamp Gets Its Swagger Back And Welcomes The Folks From The Grove In Rude Fashion"
-      }
-    },
-    {
-      "title": "Woods Chipper: Florida’s Defense, Special Teams Swing Win Over No. 4 Ole Miss",
-      "excerpt": "Jayden Woods’ strip-sack, an early fourth-down stop and London Montgomery’s kick returns: Florida scored 31 of its 52 points against No. 4 Ole Miss after defensive stops and big returns.",
-      "url": "https://www.gatorbaitmedia.com/post/woods-chipper-florida-defense-special-teams-ole-miss",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-09-27T01:58:05Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_1546cc59544f491abdb5bd78c786ced1~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Woods Chipper: Florida’s Defense, Special Teams Swing Win Over No. 4 Ole Miss"
       }
     }
   ]

@@ -15,10 +15,10 @@
   var TZ = 'America/New_York';
   var C = { navy: '#07122e', blue: '#0021a5', orange: '#fa4616', ink: '#f3f5fa', muted: '#b9c4dc', win: '#7ef0a6' };
   var SHOW = { name: 'The Buddy Martin Show', path: '/the-buddy-martin-show', when: 'Mondays, Wednesdays and Thursdays at 9 p.m. ET', days: [1, 3, 4], hour: 21 };
-  var CSS = '#gbm-share-btn,.gbm-share-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:0;border-radius:6px;background:#fa4616;color:#fff;font:800 15px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}' +
+  var CSS = '.gbm-share-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:0;border-radius:6px;background:#fa4616;color:#fff;font:800 15px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}' +
     '.gbm-share-btn.ghost{background:transparent;border:1px solid #2b3f80;color:#f3f5fa}.gbm-share-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}' +
     '#gbm-share-veil{position:fixed;inset:0;background:rgba(3,8,24,.72);z-index:9998}' +
-    '#gbm-share{position:fixed;left:0;right:0;bottom:0;z-index:9999;max-width:480px;margin:0 auto;background:#0b1a44;color:#f3f5fa;border-radius:18px 18px 0 0;padding:12px 16px calc(20px + env(safe-area-inset-bottom));font:16px/1.4 "Barlow",sans-serif;box-shadow:0 -12px 40px rgba(0,0,0,.5);transform:translateY(105%);transition:transform .25s}' +
+    '#gbm-share{position:fixed;left:0;right:0;bottom:0;z-index:9999;max-width:480px;margin:0 auto;background:#0b1a44;color:#f3f5fa;border-radius:18px 18px 0 0;padding:12px 16px calc(20px + env(safe-area-inset-bottom));font:16px/1.4 "Barlow",sans-serif;transform:translateY(105%);transition:transform .25s}' +
     '#gbm-share.on{transform:none}#gbm-share i{display:block;width:40px;height:4px;border-radius:2px;background:#2b3f80;margin:0 auto 10px}' +
     '#gbm-share canvas{width:100%;height:auto;display:block;border-radius:10px;background:#07122e}' +
     '#gbm-share p{margin:10px 0;font-size:13px;color:#b9c4dc;white-space:pre-wrap;word-break:break-word}' +
@@ -75,15 +75,13 @@
   // The story on a Wix blog post page: canonical URL, headline, byline. Falls back to the feed's newest story on the homepage.
   function storyOf() {
     var canon = document.querySelector('link[rel="canonical"]'), url = safePost(canon ? canon.href : location.href);
-    var h = document.querySelector('article h1, [data-hook="post-title"], h1');
-    var meta = document.querySelector('meta[property="og:title"]');
-    var by = document.querySelector('[data-hook="user-name"], [data-hook="post-author"], [rel="author"], .gbm-byline');
+    var h = document.querySelector('article h1, h1'), by = document.querySelector('[data-hook="user-name"], [rel="author"]');
     var feed = (data.posts || []).filter(function (p) { return safePost(p.url); });
     var match = url && feed.filter(function (p) { return safePost(p.url) === url; })[0];
     if (!url && feed.length) match = feed[0];
     if (match) return { title: match.title, author: match.author || '', url: safePost(match.url), kicker: kickerFor(match) };
     if (!url) return null;
-    return { title: (h && h.textContent || meta && meta.content || document.title).trim(), author: (by && by.textContent || '').trim(), url: url, kicker: 'GatorBait' };
+    return { title: (h && h.textContent || document.title).trim(), author: (by && by.textContent || '').trim(), url: url, kicker: 'GatorBait' };
   }
   function kickerFor(p) { var d = Date.parse(p.firstPublishedDate); return Number.isFinite(d) ? 'GatorBait · ' + MONTHS[et(d).mo] + ' ' + et(d).d : 'GatorBait'; }
   function season() {
@@ -136,7 +134,7 @@
     ctx.fillStyle = C.blue; ctx.beginPath(); ctx.moveTo(860, 0); ctx.lineTo(1200, 0); ctx.lineTo(1200, 630); ctx.lineTo(700, 630); ctx.closePath(); ctx.fill();
     ctx.fillStyle = C.orange; ctx.fillRect(0, 0, 18, 630);
     F(800, 34, C.orange); ctx.fillText('GATORBAIT', 70, 80); F(600, 26, C.muted); ctx.fillText('Independent Florida Gators coverage', 290, 80);
-    F(600, 28, C.muted); ctx.fillText(footer, 70, 585);
+    F(600, 28, C.muted); var f = footer; while (ctx.measureText(f).width > 1060 && f.length > 8) f = f.slice(0, -2).replace(/…$/, '') + '…'; ctx.fillText(f, 70, 585);
   }
   function scoreLine(t, y) {
     F(800, 150, C.ink); ctx.fillText(String(t.fa), 70, y); var w = ctx.measureText(String(t.fa)).width;
@@ -179,7 +177,7 @@
     return true;
   }
   function ready() { return document.fonts && document.fonts.load ? Promise.all([document.fonts.load('800 80px "Barlow Condensed"'), document.fonts.load('600 40px "Barlow Condensed"')]).catch(function () {}) : Promise.resolve(); }
-  function canvas() { if (!cv) { cv = el('canvas', { width: 1200, height: 630, 'aria-label': 'Share card preview' }); ctx = cv.getContext('2d'); } return cv; }
+  function canvas() { if (!cv) { cv = el('canvas', { width: 1200, height: 630 }); ctx = cv.getContext('2d'); } return cv; }
   function card(kind) { canvas(); return load().then(ready).then(function () { return draw(kind) ? cv.toDataURL('image/png') : ''; }); }
   function file(cb) { cv.toBlob(function (b) { cb(b ? new File([b], 'gatorbait-' + cur + '.png', { type: 'image/png' }) : null); }, 'image/png'); }
 
@@ -206,7 +204,7 @@
       var p = payload(kind, 'native'); if (!png || !p) { toast('Nothing to share yet'); return false; }
       document.getElementById('gbm-share-text').textContent = p.text + '\n' + p.url;
       document.getElementById('gbm-share-veil').hidden = false; s.classList.add('on'); opened = true;
-      s.querySelector('[data-act="native"]').focus(); return true;
+      return true;
     });
   }
   function close() { var s = document.getElementById('gbm-share'); if (s) s.classList.remove('on'); var v = document.getElementById('gbm-share-veil'); if (v) v.hidden = true; opened = false; }
@@ -251,6 +249,5 @@
   window.__GBM_SHARE_RUNTIME__ = { version: VERSION, open: open, card: card, payload: payload, mount: mount };
   document.addEventListener('gbm:gazette-ready', mount);
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount, { once: true }); else mount();
-  // The homepage paints asynchronously inside its 1.5 s budget; try again briefly in case the event fired first.
   var tries = 0, retry = setInterval(function () { mount(); if (++tries > 8 || document.querySelector('[data-share]')) clearInterval(retry); }, 500);
 })();

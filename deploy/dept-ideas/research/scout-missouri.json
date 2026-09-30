@@ -1,0 +1,732 @@
+{
+ "generatedAt": "2026-09-30T09:37:14.472Z",
+ "season": 2026,
+ "feedUpdatedAt": "2026-09-29T02:17:33Z",
+ "dataMode": "saved-espn-json",
+ "game": {
+  "eventId": "401856708",
+  "kickoffIso": "2026-10-03T19:30Z",
+  "date": "Oct. 3",
+  "time": "3:30 p.m. ET",
+  "venue": "Memorial Stadium",
+  "city": "Columbia, MO",
+  "tv": "ABC",
+  "floridaHome": false,
+  "weather": {
+   "temperature": 70,
+   "precipitationPct": 3,
+   "gustMph": 15
+  },
+  "predictor": {
+   "opp": 29.8,
+   "fla": 70.2,
+   "label": "Matchup Predictor"
+  },
+  "source": "S1"
+ },
+ "opponent": {
+  "id": "142",
+  "name": "Missouri",
+  "displayName": "Missouri Tigers",
+  "rank": 25,
+  "record": "3-1",
+  "conf": "0-1",
+  "standing": "10th in SEC",
+  "color": "f1b82d",
+  "sources": [
+   "S2",
+   "S1"
+  ]
+ },
+ "florida": {
+  "rank": 8,
+  "record": "4-0",
+  "conf": "2-0",
+  "standing": "1st in SEC",
+  "sources": [
+   "S5",
+   "S1"
+  ]
+ },
+ "results": [
+  {
+   "eventId": "401856663",
+   "date": "2026-09-04T00:00Z",
+   "opponent": "Arkansas-Pine Bluff",
+   "opponentId": "2029",
+   "opponentRank": null,
+   "home": true,
+   "neutral": false,
+   "status": "final",
+   "score": {
+    "opp": 54,
+    "them": 14
+   },
+   "result": "W",
+   "margin": 40,
+   "venue": "Memorial Stadium",
+   "tv": "SEC Network",
+   "source": "S3"
+  },
+  {
+   "eventId": "401856678",
+   "date": "2026-09-12T00:00Z",
+   "opponent": "Kansas",
+   "opponentId": "2305",
+   "opponentRank": null,
+   "home": false,
+   "neutral": false,
+   "status": "final",
+   "score": {
+    "opp": 38,
+    "them": 21
+   },
+   "result": "W",
+   "margin": 17,
+   "venue": "David Booth Kansas Memorial Stadium",
+   "tv": "FOX",
+   "source": "S3"
+  },
+  {
+   "eventId": "401856689",
+   "date": "2026-09-19T23:00Z",
+   "opponent": "Troy",
+   "opponentId": "2653",
+   "opponentRank": null,
+   "home": true,
+   "neutral": false,
+   "status": "final",
+   "score": {
+    "opp": 27,
+    "them": 17
+   },
+   "result": "W",
+   "margin": 10,
+   "venue": "Memorial Stadium",
+   "tv": "SECN+",
+   "source": "S3"
+  },
+  {
+   "eventId": "401856703",
+   "date": "2026-09-26T23:45Z",
+   "opponent": "Mississippi State",
+   "opponentId": "344",
+   "opponentRank": 24,
+   "home": false,
+   "neutral": false,
+   "status": "final",
+   "score": {
+    "opp": 24,
+    "them": 31
+   },
+   "result": "L",
+   "margin": -7,
+   "venue": "Davis Wade Stadium",
+   "tv": "SEC Network",
+   "source": "S3"
+  },
+  {
+   "eventId": "401856708",
+   "date": "2026-10-03T19:30Z",
+   "opponent": "Florida",
+   "opponentId": "57",
+   "opponentRank": 8,
+   "home": true,
+   "neutral": false,
+   "status": "scheduled",
+   "score": null,
+   "result": null,
+   "margin": null,
+   "venue": "Memorial Stadium",
+   "tv": "ABC",
+   "source": "S3"
+  },
+  {
+   "eventId": "401856716",
+   "date": "2026-10-10T04:00Z",
+   "opponent": "Texas A&M",
+   "opponentId": "245",
+   "opponentRank": null,
+   "home": true,
+   "neutral": false,
+   "status": "scheduled",
+   "score": null,
+   "result": null,
+   "margin": null,
+   "venue": "Memorial Stadium",
+   "tv": null,
+   "source": "S3"
+  },
+  {
+   "eventId": "401856721",
+   "date": "2026-10-17T04:00Z",
+   "opponent": "Ole Miss",
+   "opponentId": "145",
+   "opponentRank": 9,
+   "home": false,
+   "neutral": false,
+   "status": "scheduled",
+   "score": null,
+   "result": null,
+   "margin": null,
+   "venue": "Vaught-Hemingway Stadium",
+   "tv": null,
+   "source": "S3"
+  },
+  {
+   "eventId": "401856733",
+   "date": "2026-10-31T04:00Z",
+   "opponent": "Arkansas",
+   "opponentId": "8",
+   "opponentRank": null,
+   "home": false,
+   "neutral": false,
+   "status": "scheduled",
+   "score": null,
+   "result": null,
+   "margin": null,
+   "venue": "Donald W. Reynolds Razorback Stadium",
+   "tv": null,
+   "source": "S3"
+  },
+  {
+   "eventId": "401856743",
+   "date": "2026-11-07T05:00Z",
+   "opponent": "Texas",
+   "opponentId": "251",
+   "opponentRank": 1,
+   "home": true,
+   "neutral": false,
+   "status": "scheduled",
+   "score": null,
+   "result": null,
+   "margin": null,
+   "venue": "Memorial Stadium",
+   "tv": null,
+   "source": "S3"
+  },
+  {
+   "eventId": "401856883",
+   "date": "2026-11-14T05:00Z",
+   "opponent": "Georgia",
+   "opponentId": "61",
+   "opponentRank": 2,
+   "home": false,
+   "neutral": false,
+   "status": "scheduled",
+   "score": null,
+   "result": null,
+   "margin": null,
+   "venue": "Sanford Stadium",
+   "tv": null,
+   "source": "S3"
+  },
+  {
+   "eventId": "401856751",
+   "date": "2026-11-21T05:00Z",
+   "opponent": "Kentucky",
+   "opponentId": "96",
+   "opponentRank": 24,
+   "home": true,
+   "neutral": false,
+   "status": "scheduled",
+   "score": null,
+   "result": null,
+   "margin": null,
+   "venue": "Memorial Stadium",
+   "tv": null,
+   "source": "S3"
+  },
+  {
+   "eventId": "401856763",
+   "date": "2026-11-28T05:00Z",
+   "opponent": "Oklahoma",
+   "opponentId": "201",
+   "opponentRank": null,
+   "home": true,
+   "neutral": false,
+   "status": "scheduled",
+   "score": null,
+   "result": null,
+   "margin": null,
+   "venue": "Memorial Stadium",
+   "tv": null,
+   "source": "S3"
+  }
+ ],
+ "pointsFor": 143,
+ "pointsAgainst": 83,
+ "perGame": {
+  "totalPointsPerGame": {
+   "opp": 35.8,
+   "fla": 53.5,
+   "source": "S1"
+  },
+  "totalPointsPerGameAllowed": {
+   "opp": 20.8,
+   "fla": 22.8,
+   "source": "S1"
+  },
+  "yardsPerGame": {
+   "opp": 418.8,
+   "fla": 532.8,
+   "source": "S1"
+  },
+  "yardsPerGameAllowed": {
+   "opp": 318.5,
+   "fla": 351.3,
+   "source": "S1"
+  },
+  "passingYardsPerGame": {
+   "opp": 263,
+   "fla": 272.8,
+   "source": "S1"
+  },
+  "passingYardsPerGameAllowed": {
+   "opp": 218.3,
+   "fla": 248.3,
+   "source": "S1"
+  },
+  "rushingYardsPerGame": {
+   "opp": 155.8,
+   "fla": 260,
+   "source": "S1"
+  },
+  "rushingYardsPerGameAllowed": {
+   "opp": 100.3,
+   "fla": 103,
+   "source": "S1"
+  }
+ },
+ "leaders": {
+  "opp": {
+   "passingYards": {
+    "name": "Austin Simmons",
+    "pos": "QB",
+    "jersey": "13",
+    "line": "70/107, 947 YDS, 11 TD",
+    "source": "S1"
+   },
+   "rushingYards": {
+    "name": "Jamal Roberts",
+    "pos": "RB",
+    "jersey": "20",
+    "line": "89 CAR, 395 YDS, 3 TD",
+    "source": "S1"
+   },
+   "receivingYards": {
+    "name": "Cayden Lee",
+    "pos": "WR",
+    "jersey": "19",
+    "line": "27 REC, 412 YDS, 4 TD",
+    "source": "S1"
+   },
+   "sacks": {
+    "name": "Daeden Hopkins",
+    "pos": "EDGE",
+    "jersey": "10",
+    "line": "6",
+    "source": "S1"
+   },
+   "totalTackles": {
+    "name": "Nicholas Rodriguez",
+    "pos": "LB",
+    "jersey": "5",
+    "line": "39",
+    "source": "S1"
+   }
+  },
+  "fla": {
+   "passingYards": {
+    "name": "Aaron Philo",
+    "pos": "QB",
+    "jersey": "12",
+    "line": "63/87, 917 YDS, 7 TD, 2 INT",
+    "source": "S1"
+   },
+   "rushingYards": {
+    "name": "Jadan Baugh",
+    "pos": "RB",
+    "jersey": "13",
+    "line": "83 CAR, 600 YDS, 11 TD",
+    "source": "S1"
+   },
+   "receivingYards": {
+    "name": "Vernell Brown III",
+    "pos": "WR",
+    "jersey": "1",
+    "line": "17 REC, 271 YDS, 2 TD",
+    "source": "S1"
+   },
+   "sacks": {
+    "name": "Jayden Woods",
+    "pos": "LB",
+    "jersey": "0",
+    "line": "4",
+    "source": "S1"
+   },
+   "totalTackles": {
+    "name": "Myles Graham",
+    "pos": "LB",
+    "jersey": "5",
+    "line": "28",
+    "source": "S1"
+   }
+  }
+ },
+ "lastGame": {
+  "eventId": "401856703",
+  "date": "2026-09-26T23:45Z",
+  "opponent": "Mississippi State",
+  "opponentRank": 24,
+  "home": false,
+  "result": "L",
+  "score": {
+   "opp": 24,
+   "them": 31
+  },
+  "quarters": {
+   "opp": [
+    0,
+    10,
+    14,
+    0
+   ],
+   "them": [
+    14,
+    0,
+    3,
+    14
+   ]
+  },
+  "venue": "Davis Wade Stadium",
+  "attendance": 60417,
+  "recordAfter": "3-1",
+  "teamStats": {
+   "firstDowns": {
+    "opp": "23",
+    "them": "27"
+   },
+   "totalYards": {
+    "opp": "414",
+    "them": "499"
+   },
+   "netPassingYards": {
+    "opp": "295",
+    "them": "360"
+   },
+   "rushingYards": {
+    "opp": "119",
+    "them": "139"
+   },
+   "yardsPerRushAttempt": {
+    "opp": "3.4",
+    "them": "3.5"
+   },
+   "thirdDownEff": {
+    "opp": "7-16",
+    "them": "6-14"
+   },
+   "turnovers": {
+    "opp": "0",
+    "them": "1"
+   },
+   "totalPenaltiesYards": {
+    "opp": "8-91",
+    "them": "8-84"
+   },
+   "possessionTime": {
+    "opp": "31:36",
+    "them": "28:24"
+   }
+  },
+  "leaders": {
+   "opp": {
+    "passingYards": {
+     "name": "Austin Simmons",
+     "pos": "QB",
+     "jersey": "13",
+     "line": "23/39, 295 YDS, 3 TD",
+     "source": "S4"
+    },
+    "rushingYards": {
+     "name": "Jamal Roberts",
+     "pos": "RB",
+     "jersey": "20",
+     "line": "26 CAR, 95 YDS",
+     "source": "S4"
+    },
+    "receivingYards": {
+     "name": "Cayden Lee",
+     "pos": "WR",
+     "jersey": "19",
+     "line": "11 REC, 156 YDS, 2 TD",
+     "source": "S4"
+    },
+    "sacks": {
+     "name": "Daeden Hopkins",
+     "pos": "EDGE",
+     "jersey": "10",
+     "line": "3.5",
+     "source": "S4"
+    },
+    "totalTackles": {
+     "name": "Robert Woodyard Jr.",
+     "pos": "LB",
+     "jersey": "0",
+     "line": "14",
+     "source": "S4"
+    }
+   },
+   "them": {
+    "passingYards": {
+     "name": "Kamario Taylor",
+     "pos": "QB",
+     "jersey": "1",
+     "line": "27/38, 360 YDS, 3 TD, 1 INT",
+     "source": "S4"
+    },
+    "rushingYards": {
+     "name": "Fluff Bothwell",
+     "pos": "RB",
+     "jersey": "24",
+     "line": "25 CAR, 122 YDS, 1 TD",
+     "source": "S4"
+    },
+    "receivingYards": {
+     "name": "Anthony Evans III",
+     "pos": "WR",
+     "jersey": "3",
+     "line": "8 REC, 114 YDS",
+     "source": "S4"
+    },
+    "sacks": {
+     "name": "Marcus Williams",
+     "pos": "S",
+     "jersey": "15",
+     "line": "1",
+     "source": "S4"
+    },
+    "totalTackles": {
+     "name": "Jardin Gilbert",
+     "pos": "S",
+     "jersey": "5",
+     "line": "9",
+     "source": "S4"
+    }
+   }
+  },
+  "scoringPlays": [
+   {
+    "q": 1,
+    "clock": "8:56",
+    "team": "Mississippi State",
+    "text": "Sanfrisco Magee 43 Yd pass from Kamario Taylor (Kyle Ferrie Kick)",
+    "score": "0-7"
+   },
+   {
+    "q": 1,
+    "clock": "0:24",
+    "team": "Mississippi State",
+    "text": "Fluff Bothwell 11 Yd pass from Kamario Taylor (Kyle Ferrie Kick)",
+    "score": "0-14"
+   },
+   {
+    "q": 2,
+    "clock": "7:59",
+    "team": "Missouri",
+    "text": "Blake Craig 35 Yd Field Goal ",
+    "score": "3-14"
+   },
+   {
+    "q": 2,
+    "clock": "6:09",
+    "team": "Missouri",
+    "text": "Donovan Olugbode 9 Yd pass from Austin Simmons (Blake Craig Kick)",
+    "score": "10-14"
+   },
+   {
+    "q": 3,
+    "clock": "10:50",
+    "team": "Missouri",
+    "text": "Cayden Lee 21 Yd pass from Austin Simmons (Blake Craig Kick)",
+    "score": "17-14"
+   },
+   {
+    "q": 3,
+    "clock": "4:37",
+    "team": "Mississippi State",
+    "text": "Kyle Ferrie 28 Yd Field Goal ",
+    "score": "17-17"
+   },
+   {
+    "q": 3,
+    "clock": "2:53",
+    "team": "Missouri",
+    "text": "Cayden Lee 28 Yd pass from Austin Simmons (Blake Craig Kick)",
+    "score": "24-17"
+   },
+   {
+    "q": 4,
+    "clock": "7:09",
+    "team": "Mississippi State",
+    "text": "Fluff Bothwell 4 Yd Run (Kyle Ferrie Kick)",
+    "score": "24-24"
+   },
+   {
+    "q": 4,
+    "clock": "3:57",
+    "team": "Mississippi State",
+    "text": "Sanfrisco Magee 24 Yd pass from Kamario Taylor (Kyle Ferrie Kick)",
+    "score": "24-31"
+   }
+  ],
+  "source": "S4"
+ },
+ "lastFive": {
+  "opp": [
+   {
+    "eventId": "401778322",
+    "result": "L",
+    "score": "13-7",
+    "opponent": "Virginia Cavaliers",
+    "date": "2025-12-28T00:30Z",
+    "at": false
+   },
+   {
+    "eventId": "401856663",
+    "result": "W",
+    "score": "54-14",
+    "opponent": "Arkansas-Pine Bluff",
+    "date": "2026-09-04T00:00Z",
+    "at": false
+   },
+   {
+    "eventId": "401856678",
+    "result": "W",
+    "score": "38-21",
+    "opponent": "Kansas",
+    "date": "2026-09-12T00:00Z",
+    "at": true
+   },
+   {
+    "eventId": "401856689",
+    "result": "W",
+    "score": "27-17",
+    "opponent": "Troy",
+    "date": "2026-09-19T23:00Z",
+    "at": false
+   },
+   {
+    "eventId": "401856703",
+    "result": "L",
+    "score": "31-24",
+    "opponent": "Mississippi State",
+    "date": "2026-09-26T23:45Z",
+    "at": true
+   }
+  ],
+  "fla": [
+   {
+    "eventId": "401752785",
+    "result": "W",
+    "score": "40-21",
+    "opponent": "Florida State Seminoles",
+    "date": "2025-11-29T21:30Z",
+    "at": false
+   },
+   {
+    "eventId": "401856637",
+    "result": "W",
+    "score": "66-21",
+    "opponent": "Florida Atlantic Owls",
+    "date": "2026-09-05T23:45Z",
+    "at": false
+   },
+   {
+    "eventId": "401856672",
+    "result": "W",
+    "score": "52-3",
+    "opponent": "Campbell Fighting Camels",
+    "date": "2026-09-12T21:30Z",
+    "at": false
+   },
+   {
+    "eventId": "401856687",
+    "result": "W",
+    "score": "44-39",
+    "opponent": "Auburn Tigers",
+    "date": "2026-09-19T23:00Z",
+    "at": true
+   },
+   {
+    "eventId": "401856699",
+    "result": "W",
+    "score": "52-28",
+    "opponent": "Ole Miss",
+    "date": "2026-09-26T19:30Z",
+    "at": false
+   }
+  ]
+ },
+ "commonOpponents": [
+  {
+   "opponent": "Ole Miss",
+   "florida": "W 52-28 (home, Sept. 26)",
+   "missouri": "at Ole Miss, Oct. 17",
+   "sources": [
+    "S3",
+    "scoreboard.json"
+   ]
+  },
+  {
+   "opponent": "Texas",
+   "florida": "at Texas, Oct. 17",
+   "missouri": "vs. Texas, Nov. 7",
+   "sources": [
+    "S3",
+    "scoreboard.json"
+   ]
+  },
+  {
+   "opponent": "Georgia",
+   "florida": "at Georgia, Oct. 31",
+   "missouri": "at Georgia, Nov. 14",
+   "sources": [
+    "S3",
+    "scoreboard.json"
+   ]
+  },
+  {
+   "opponent": "Kentucky",
+   "florida": "at Kentucky, Nov. 14",
+   "missouri": "vs. Kentucky, Nov. 21",
+   "sources": [
+    "S3",
+    "scoreboard.json"
+   ]
+  },
+  {
+   "opponent": "Oklahoma",
+   "florida": "vs. Oklahoma, Nov. 7",
+   "missouri": "vs. Oklahoma, Nov. 28",
+   "sources": [
+    "S3",
+    "scoreboard.json"
+   ]
+  }
+ ],
+ "seriesHistory": null,
+ "notes": [
+  "seriesHistory is null: the ESPN site API documents read here carry no head-to-head history; add it only from a source on the allowed list.",
+  "opponentRank on results rows is the rank ESPN attaches to the row when read, not the rank at kickoff.",
+  "Every number carries a source key; the sources map gives the URL. Florida results come from sports-live/scoreboard.json, itself built from ESPN by automation/scoreboard_feed.py."
+ ],
+ "sources": {
+  "S1": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708",
+  "S2": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142",
+  "S3": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/schedule?season=2026&seasontype=2",
+  "S4": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856703",
+  "S5": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57"
+ }
+}

@@ -1,6 +1,6 @@
 390 article buttons: 1 ["story"]
-card story.png 111550 bytes
-390 navigator.share calls: [{"title":"GatorBait","text":"Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time' — Buddy Martin on GatorBait","url":"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time?utm_source=gatorbait_share&utm_medium=native&utm_campaign=story","files":["gatorbait-story.png image/png 111550"]}]
+card story.png 110679 bytes
+390 navigator.share calls: [{"title":"GatorBait","text":"Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time' — Buddy Martin on GatorBait","url":"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time?utm_source=gatorbait_share&utm_medium=native&utm_campaign=story","files":["gatorbait-story.png image/png 110679"]}]
 390 article errors: []
 390 home buttons: ["tunnel:44","season:44","show:44"]
 card tunnel-countdown.png 77791 bytes

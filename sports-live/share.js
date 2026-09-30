@@ -288,7 +288,7 @@
 (function () {
   'use strict';
   if (String(location.pathname).indexOf('/post/') !== 0) return;
-  var VERSION = 'story-kit-2026.1';
+  var VERSION = 'story-kit-2026.2';
   var PAGES = 'https://presidente49.github.io/gatorbait-media-redesign/';
   var SITE = 'https://www.gatorbaitmedia.com';
   var TZ = 'America/New_York';
@@ -428,10 +428,24 @@
     // One sweep for the static terms; the opponent's name gets its own once the feed has landed ("static" -> "all"). After that
     // the body is left alone until Wix replaces the node, which clears the mark.
     var done = [].slice.call(b.querySelectorAll('a.gbm-kit-link')).map(function (a) { return a.getAttribute('data-term'); }), swept = b.getAttribute('data-story-kit-linked') || '';
+    // Native editorial anchors win. Count only body links, not the guide/cards;
+    // retain fragments so roster and schedule remain distinct destinations.
+    function destination(href) {
+      try {
+        var u = new URL(href, SITE);
+        if (u.protocol !== 'https:' || !/^(www\.)?gatorbaitmedia\.com$/.test(u.hostname)) return '';
+        return u.pathname.replace(/\/$/, '') + u.search + u.hash;
+      } catch (_) { return ''; }
+    }
+    var destinations = [].slice.call(b.querySelectorAll('a[href]')).filter(function (a) {
+      return !a.closest('[data-story-kit="strip"],[data-story-kit="more"]');
+    }).map(function (a) { return destination(a.getAttribute('href')); }).filter(Boolean);
     terms().forEach(function (t) {
       if (done.length >= MAX_LINKS || done.indexOf(t.id) >= 0) return;
+      var target = destination(t.href);
+      if (destinations.indexOf(target) >= 0) return;
       if (swept && (t.id !== 'opponent' || swept === 'all')) return;
-      if (linkTerm(b, t)) done.push(t.id);
+      if (linkTerm(b, t)) { done.push(t.id); destinations.push(target); }
     });
     b.setAttribute('data-story-kit-linked', data.scoreboard ? 'all' : 'static');
   }

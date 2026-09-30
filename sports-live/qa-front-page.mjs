@@ -266,12 +266,12 @@ for (const sc of only(scenarios)) {
 // The fixture stamps its article 300 ms after load (Wix hydration) and __qaRestamp() wipes and re-stamps it; the kit must
 // mount once after the Share button, link exactly the first plain mentions, add the cards once, and come back after the wipe.
 const GUIDE = 'https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play';
-const STORY_LINKS = [['roster', GUIDE + '#roster', 'roster'], ['schedule', GUIDE + '#schedule', 'schedule'], ['opponent', 'https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind', 'Missouri Tigers']];
+const STORY_LINKS = [['roster', GUIDE + '#roster', 'roster'], ['opponent', 'https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind', 'Missouri Tigers']];
 const STORY_CHIPS = ['Next: at No. 25 Missouri · Sat., Oct. 3 · 3:30 p.m. ET', 'Last: W 52-28 vs. No. 4 Ole Miss', 'Roster', 'Schedule', 'Stats', 'The Road Ahead', 'The Buddy Martin Show'];
 const storyScenarios = [
   { name: 'story', path: '/post/qa-story-kit-fixture', widths: WIDTHS, mounted: true },
   // scoreboard.json down: the strip still mounts with the five guide links, no live chips, and no opponent link.
-  { name: 'story-feed-down', path: '/post/qa-story-kit-fixture', widths: [390], mounted: true, scoreboard: 404, chips: STORY_CHIPS.slice(2), links: STORY_LINKS.slice(0, 2), sweep: 'static' },
+  { name: 'story-feed-down', path: '/post/qa-story-kit-fixture', widths: [390], mounted: true, scoreboard: 404, chips: STORY_CHIPS.slice(2), links: STORY_LINKS.slice(0, 1), sweep: 'static' },
   { name: 'story-not-post', path: '/blog-qa-story-kit-fixture', widths: [390], mounted: false },
 ];
 for (const sc of only(storyScenarios)) {

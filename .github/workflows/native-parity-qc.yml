@@ -1,0 +1,29 @@
+name: Native links and writer archive parity
+on:
+  pull_request:
+    paths:
+      - 'sports-live/**'
+      - '.github/workflows/native-parity-qc.yml'
+permissions:
+  contents: read
+jobs:
+  parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test sports-live/test-writer-archive.mjs
+      - run: npm install --no-save playwright@1.49.1
+      - run: npx playwright install --with-deps chromium
+      - run: node sports-live/qa-native-parity.mjs
+      - run: QA_ONLY=story node sports-live/qa-front-page.mjs build/story-kit-parity
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-parity-evidence
+          path: |
+            build/native-parity
+            build/story-kit-parity

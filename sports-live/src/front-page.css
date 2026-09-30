@@ -350,16 +350,18 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 @keyframes fpPulse{50%{opacity:.25}}
 /* ---------- The Road Ahead: additive season band (Brenden, Sept. 29) ---------- */
 /* Layout: one horizontal snap-scroll ribbon; a glowing route draws to the current game. Barlow only. Night palette. */
-#gbm-live.fp26 #gbm-road{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;background:radial-gradient(120% 120% at 80% 0%,#10306e 0%,var(--n) 60%);color:var(--ink);font-family:var(--fp-sans);padding:28px 0 26px;overflow:hidden;position:relative}
+/* Same night sky as the page: paper token under a navy lift and the lead's orange glow. Edges follow --fp-pad and the 1440 wrap. */
+#gbm-live.fp26 #gbm-road{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;background:radial-gradient(70% 90% at 100% 100%,rgba(250,70,22,.16),transparent 70%),radial-gradient(90% 100% at 0% 0%,#10306e,transparent 65%),var(--n);color:var(--ink);font-family:var(--fp-sans);padding:28px 0 26px;overflow:hidden;position:relative}
 #gbm-live.fp26 #gbm-road *{box-sizing:border-box}
-#gbm-live.fp26 #gbm-road .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:0 20px 14px;max-width:1240px;margin:0 auto}
+#gbm-live.fp26 #gbm-road .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:0 var(--fp-pad) 14px;max-width:1440px;margin:0 auto}
 #gbm-live.fp26 #gbm-road h2{font:800 clamp(30px,6vw,52px)/.92 var(--fp-cond);text-transform:uppercase;margin:0}
 #gbm-live.fp26 #gbm-road h2 span{color:var(--o)}
-#gbm-live.fp26 #gbm-road .rec{font:700 14px var(--fp-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);text-align:right}
+#gbm-live.fp26 #gbm-road .rec{flex:0 0 auto;white-space:nowrap;font:700 14px var(--fp-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mut);text-align:right}
 #gbm-live.fp26 #gbm-road .rec b{display:block;font:800 34px/1 var(--fp-cond);color:var(--ink);letter-spacing:0}
-#gbm-live.fp26 #gbm-road .track{position:relative;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:20px;padding:26px 20px 12px;max-width:1240px;margin:0 auto;scrollbar-width:none}
+#gbm-live.fp26 #gbm-road .track{position:relative;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:var(--fp-pad);padding:26px var(--fp-pad) 12px;max-width:1440px;margin:0 auto;scrollbar-width:none}
 #gbm-live.fp26 #gbm-road .track::-webkit-scrollbar{display:none}
-#gbm-live.fp26 #gbm-road .line{position:absolute;left:20px;right:20px;top:39px;height:3px;background:rgba(255,255,255,.12);border-radius:3px}
+/* The route runs through the dot centers: dots sit 19px above the cards (13px tall), cards start 26px down. */
+#gbm-live.fp26 #gbm-road .line{position:absolute;left:var(--fp-pad);right:var(--fp-pad);top:12px;height:3px;background:rgba(255,255,255,.12);border-radius:3px}
 #gbm-live.fp26 #gbm-road .line i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--b),var(--o));box-shadow:0 0 14px var(--o);border-radius:3px;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
 #gbm-live.fp26 #gbm-road .g{position:relative;flex:0 0 156px;scroll-snap-align:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 12px 12px;min-height:168px;display:flex;flex-direction:column;gap:4px;text-decoration:none;color:inherit}
 #gbm-live.fp26 #gbm-road .g::before{content:"";position:absolute;left:14px;top:-19px;width:13px;height:13px;border-radius:50%;background:var(--n);border:3px solid rgba(255,255,255,.35)}

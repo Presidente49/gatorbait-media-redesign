@@ -593,3 +593,14 @@ Each was reasonable alone. Together they mean nobody knows which one is true.
 - Before recommending "hide" or "delete" on a store or site object, read its orders and status first. The six store products the audit called old took real orders this year; hiding them would have cost sales.
 - The auto-mode classifier also blocks moving subscriber data out of the repo (Drive upload and `git rm` both refused). That removal is Brenden's to do by hand or to allow explicitly; do not retry it.
 
+
+## 59. Verify what production served, not what you wrote (Sept. 30, 2026)
+
+**What happened:** After three Home Code embed PATCHes in an hour (rev 25 → 27), real-browser screenshots of production showed different visitors getting different revisions: the iPhone profile had the newest loader while a real-UA desktop request 45 minutes later still carried rev 24 (no season band at all), and the Magazine page's desktop HTML carried rev 24 too. Jarvis first blamed a feed race for the "missing band on phones" and shipped a robustness fix for it; the loader commit recorded in each screenshot later showed the cause was Wix serving stale HTML. Brenden's "road ahead look off" was real (the route line was drawn through the cards) and also a cache symptom.
+
+**The rule:**
+- Every production check records which build it saw: the loader commit in the served HTML (`front-page-2026 src=...`) and the renderer's `data-fp-build` stamp. `automation/vision/live-qc.mjs` and `live-shots.mjs` print both and warn when the served loader differs from the latest recorded rev. A green check on the wrong build proves nothing.
+- Wix's SSR cache cannot be invalidated by REST for our case (the Cache API covers Velo web methods; the SSR cache needs `wix-site-backend` or a republish, which pushes editor drafts). Expect 30–45 minutes of mixed revisions after any embed change, per device class and edge; a query string (`?gbm_fp=gameday`) bypassed it.
+- So the Home Code loader (V3, `deploy/front-page-2026/make-loader.mjs`) reads `sports-live/current.json` from GitHub Pages each minute and loads the build it names, with the baked commit as fallback. A build ships or rolls back by changing that file on `main`; the embed only changes when the fallback should move. Test any new loader with `test-loader.mjs` before it goes near Wix.
+- Real-browser evidence from a cloud session: push a `shots/<name>` branch carrying `automation/vision/live-shots.request.json` and read branch `qa/live-shots` (the GitHub App cannot dispatch workflows, so the push is the trigger). Use a real Chrome UA on desktop; a local render of the built file is not evidence about production.
+- Name the correction when a first diagnosis turns out wrong, in #34 and to Brenden, and keep the fix only if it stands on its own (the bundled schedule did).

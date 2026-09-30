@@ -1,5 +1,10 @@
 # Master Control Current State
 
+## Sept. 30, ~7:30 a.m. ET: Share GatorBait live (Jarvis)
+- Homepage build pointer `sports-live/current.json` → `b4158dd` (Share buttons on The Road Ahead, The Tunnel, the show). Home Code embed `622d8ece` unchanged at rev 28. Rollback: pointer → `729e645`.
+- New story-page embed `f285a38c-4a2b-43e9-b22d-a66eaeedfb41` (HEAD, ESSENTIAL, rev 1) loads `sports-live/share.js` only under `/post/`. Rollback: disable it.
+- Department round two merged in PR #69 (`deploy/dept-ideas/`): Ask GatorBait, Make the Call and The Stands are built and tested but wait on a Cloudflare API token as repo secrets before deploy. The `Today's Edition` static H1 in the Wix homepage HTML (found by the SEO audit) needs the Editor on the Mac.
+
 **Snapshot date:** 2026-09-28 ET. The Sept. 28 sync section below overrides older sections where they conflict.  
 **Purpose:** one compact cross-harness continuity snapshot for Claude, Codex, ChatGPT and bounded workers.
 

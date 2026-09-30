@@ -19,6 +19,9 @@ Brenden, Sept. 29 evening: "i want this" → "swamp night". Swamp Night is the e
 - rev 28: **V3 loader** (`home-code-loader-4cc4ad3.html`, 1,063 chars, djb2 hash 3641483271), Sept. 30 ~1:05 a.m. ET: reads `sports-live/current.json` from Pages, baked fallback 4cc4ad3 (The Tunnel game-day opener, build stamp `478953c7` on the page, nav score bug without seconds under 1440px). `current.json` = 4cc4ad3. Rollback of the embed: PATCH the rev 27 loader (`home-code-loader-8688c05.html`).
 - pointer → 729e645 (embed unchanged, still rev 28), Sept. 30 ~1:50 a.m. ET: nav links 16px apart at 821–1439px so Store never clips (production at 1365 showed "STOR"). First deploy through `current.json`. Rollback: point `current.json` back to 4cc4ad3.
 
+- pointer → 91523da then **b4158dd** (embed unchanged, still rev 28), Sept. 30 ~7:25 a.m. ET: Share GatorBait bundled into the build (PRs #70, #71): Share buttons on The Road Ahead, The Tunnel CTA row and the show module; cards drawn on the device, Web Share API with fallback sheet; short labels under 600px. Live shots run 36708205702 showed build ad6bec86 on both profiles. Rollback: point `current.json` to 729e645 (no Share).
+- **Story pages:** new custom embed `f285a38c-4a2b-43e9-b22d-a66eaeedfb41` "GBM - Share GatorBait v1 (story pages)", rev 1, HEAD, ESSENTIAL, loadOnce false, 1,003 chars, djb2 1281193840 (`deploy/share-2026/post-share-loader-91523da.html`). Runs only under `/post/`; follows `current.json` for `sports-live/share.js`, baked fallback 91523da. Rollback: disable that one embed, re-sending ESSENTIAL.
+
 ## Rollback
 - **A build (from rev 28):** commit `sports-live/current.json` back to the previous commit on `main`; live within about a minute, no Wix write.
 - **The embed (one PATCH):**

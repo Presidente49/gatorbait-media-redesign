@@ -8,7 +8,7 @@ binding = "AI"
 
 [[kv_namespaces]]
 binding = "ASK_KV"
-id = "REPLACE_WITH_NEW_NAMESPACE_ID" # create `ASK_GATORBAIT_KV`; do not reuse GATORBAIT_SOCIAL_KV (b2b1b70ae87047d6ac380b9a839780ef)
+id = "e971351e2b55482380dde65e7091bae1" # ASK_GATORBAIT_KV, created Sept. 30
 
 [vars]
 ASK_PER_MIN = "8"

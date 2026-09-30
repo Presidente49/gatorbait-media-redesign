@@ -1,7 +1,7 @@
 # Master Control Current State
 
-## Sept. 30, ~7:30 p.m. ET: Autonomous mode, message board, capture, Shell 2026 (Jarvis)
-- **Brenden's direction (Sept. 30 ~3 p.m. ET):** "I would like to not make any decisions ... run autonomously with checks on the emails." Stop-work is lifted. Jarvis makes routine editorial, template and site-maintenance calls inside the tested stack and still asks before money, subscriber sends, automations, DNS, Meta/Google connections and deleting live content. Email rule: at most one list email a day, every send runs `automation/newsletter/send-governor.js` first, no story-alert automations.
+## Sept. 30, ~2:15 p.m. ET: Autonomous mode, message board, capture, Shell 2026 (Jarvis)
+- **Brenden's direction (Sept. 30, midday):** "I would like to not make any decisions ... run autonomously with checks on the emails." Stop-work is lifted. Jarvis makes routine editorial, template and site-maintenance calls inside the tested stack and still asks before money, subscriber sends, automations, DNS, Meta/Google connections and deleting live content. Email rule: at most one list email a day, every send runs `automation/newsletter/send-governor.js` first, no story-alert automations.
 - **Routines re-enabled on his word:** morning news sweep `trig_01RULitPE99Ch2fcEYhxjSrj`, daily roundup `trig_01JibZfuK6jRddgK16atrrTQ`, desk inbox `trig_01TrguYhktGZ29Wbr4Wz62FH`, tagging `trig_01VgDMSLDLFkkTvhXrXUCUPu`, Thursday preview `trig_011cSGMQcch48p2wpjaBrWGp`, Monday presser `trig_01JKUBvRUZ3ptM5D3kr4V13T`. New: The Morning After `trig_01YMmshPUh1hcRtGoSqqYU1C` (Tue/Thu/Fri 7:05 a.m. ET) and the hourly copy desk `trig_019J7WB6KNvin4Swma9ut7KM`.
 - **Message board (his "one big thing") is live on Wix Groups** (`deploy/boards/PLAN.md`, `updates.json`): Gator Football Talk, Game Day Threads, Recruiting Central, Gator Hoops, All Gator Sports, The Insider Board (PRIVATE, member title Insiders), Gold VIP Lounge; the GatorBait Media Group is SECRET. Rules posted on five boards. The 15 Sept. 28 redirects on `/groups` and the board paths were bulk-deleted, and `/groups` shows the feed on phone and desktop (cache-bust the URL to re-test). Still his: lock The Insider Board to ALL ACCESS ANNUAL/MONTHLY and GATORBAIT GOLD and the VIP Lounge to GOLD in the dashboard (pricing plans), pin the Missouri thread and Buddy's Porch, delete two spam posts and turn on post approval.
 - **Newsletter capture is live** (PR #93, pointer `677d5c3`, `deploy/capture-2026/README.md`): "Get GatorBait Magazine free" on the homepage hub and inline/end/slide-up cards on every story page, submitting to the existing Wix form `6babfee8` (double opt-in, spam filter) with an anonymous visitor token. Probe-verified on the live site (run 36753071936). Unproven: a real signup through the spam filter. Optional: add a hidden `signup_source` field to the form.
@@ -86,7 +86,7 @@ Brenden, Sept. 28: "make sure everyone is not running independently… stop, com
   It mirrors #34 and holds counts only: no dollar figures or subscriber data.
 - **This file and LESSONS.md on `main`:** the shared memory. Lessons live on `main` only (Lesson 50).
 
-### Stop-work was lifted Sept. 30 ~3 p.m. ET (historical record below)
+### Stop-work was lifted Sept. 30, midday (historical record below)
 Brenden lifted it in chat ("run autonomously with checks on the emails"). The paused list below is what was paused Sept. 28–30; every routine on it is back on as of the Sept. 30 evening entry at the top of this file.
 
 Original text: Only Brenden lifts it, in chat or on the Control Room card. Until then, no production writes except what Jarvis is explicitly assigned.

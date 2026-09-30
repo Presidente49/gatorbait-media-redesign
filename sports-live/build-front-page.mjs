@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Builds sports-live/homepage.js (Front Page 2026) and its fixtures from:
 //   sports-live/src/front-page.css, sports-live/src/front-page.js,
+//   the fan modules sports-live/src/{make-the-call.js,make-the-call.css,ask-gatorbait.js,the-stands.js}
+//   (mounted only when deploy/cloudflare/endpoints.json names their Workers),
 //   sports-live/front-page.config.json and the newest stories in gazette-live/posts.json.
 // Usage: node sports-live/build-front-page.mjs [--check]
 //   --check exits 1 if the committed outputs differ from a fresh build. The bundled story snapshot
@@ -15,9 +17,13 @@ const here = dirname(fileURLToPath(import.meta.url));
 const repo = join(here, '..');
 const read = (p) => readFileSync(join(repo, p), 'utf8');
 
-const css = read('sports-live/src/front-page.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
+const minCss = (p) => read(p).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
+const css = minCss('sports-live/src/front-page.css') + '\n' + minCss('sports-live/src/make-the-call.css');
 const runtime = read('sports-live/src/front-page.js');
 const share = read('sports-live/src/share.js');
+// Fan modules: each an IIFE that only defines window.GBM_CALL / GBM_ASK / GBM_STANDS; front-page.js mounts them after paint.
+const modules = ['make-the-call', 'ask-gatorbait', 'the-stands'].map((m) => `/* ${m} (sports-live/src/${m}.js) */\n` + read(`sports-live/src/${m}.js`)).join('\n');
+const MAX_JS = 260 * 1024;
 const config = JSON.parse(read('sports-live/front-page.config.json'));
 const feed = JSON.parse(read('gazette-live/posts.json'));
 
@@ -36,14 +42,18 @@ if (repoScoreboard && Array.isArray(repoScoreboard.schedule)) {
     date: g.date, opponent: g.opponent, opponentRank: g.opponentRank ?? null, home: g.home === true, status: g.status || '',
     score: g.score && Number.isFinite(g.score.fla) && Number.isFinite(g.score.opp) ? { fla: g.score.fla, opp: g.score.opp } : null, tv: g.tv || '', storyUrl: g.storyUrl || '',
   })) };
-  // The Tunnel prints the opponent's record under its name (front-page.js reads next.opponentRecord). The feed's value
-  // rides in the bundle only for the same opponent the config names, so a stale config never wears another team's record.
+  // The Tunnel prints the opponent's record under its name (front-page.js reads next.opponentRecord) and Make the Call keys
+  // its picks on the ESPN event id. Both ride in the bundle only for the same opponent the config names, so a stale config
+  // never wears another team's record or game.
   const nx = repoScoreboard.next, cn = cfg.scoreboard.next;
-  if (nx && cn && nx.opponent === cn.opponent && /^\d+-\d+$/.test(String(nx.opponentRecord || ''))) cfg.scoreboard.next = { ...cn, opponentRecord: nx.opponentRecord };
+  if (nx && cn && nx.opponent === cn.opponent) {
+    if (/^\d+-\d+$/.test(String(nx.opponentRecord || ''))) cfg.scoreboard.next = { ...cfg.scoreboard.next, opponentRecord: nx.opponentRecord };
+    if (/^\d{6,12}$/.test(String(nx.eventId || ''))) cfg.scoreboard.next = { ...cfg.scoreboard.next, eventId: String(nx.eventId) };
+  }
 }
 // Build stamp: the page exposes it as data-fp-build, so live QC and screenshots prove which build actually ran
 // (Wix edges served an older embed revision for a while after a PATCH on Sept. 30).
-const build = createHash('sha1').update(css + runtime + share + JSON.stringify(cfg)).digest('hex').slice(0, 8);
+const build = createHash('sha1').update(css + runtime + share + modules + JSON.stringify(cfg)).digest('hex').slice(0, 8);
 const bundle = { snapshot: newest, build, ...cfg, posts };
 
 const js = `/* GatorBait Front Page 2026: magazine front page, broadcast layer, Swamp Night palette, hub.
@@ -51,6 +61,7 @@ const js = `/* GatorBait Front Page 2026: magazine front page, broadcast layer, 
  * then run: node sports-live/build-front-page.mjs
  * Bundled story snapshot: ${newest} (fallback only; live stories come from /blog-feed.xml).
  */
+${modules}
 (function () {
   'use strict';
   var CSS = ${JSON.stringify(css)};
@@ -80,6 +91,7 @@ ${[['Day', 'day'], ['Swamp Night', 'night'], ['Game day', 'gameday']].map(([labe
 </body></html>
 `;
 
+if (Buffer.byteLength(js) > MAX_JS) { console.error(`homepage.js is ${Buffer.byteLength(js)} bytes; the limit is ${MAX_JS}`); process.exit(1); }
 const outputs = { 'sports-live/homepage.js': js, 'sports-live/share.js': share, 'sports-live/frame.html': frame, 'sports-live/qa.html': qa };
 if (process.argv.includes('--check')) {
   const stale = Object.entries(outputs).filter(([p, s]) => read(p) !== s).map(([p]) => p);
@@ -87,5 +99,5 @@ if (process.argv.includes('--check')) {
   console.log('Front page build is current.');
 } else {
   for (const [p, s] of Object.entries(outputs)) writeFileSync(join(repo, p), s);
-  console.log(`homepage.js ${js.length} chars, frame.html ${frame.length} chars; snapshot ${newest}; ${posts.length} bundled stories`);
+  console.log(`homepage.js ${js.length} chars (${Buffer.byteLength(js)} bytes), frame.html ${frame.length} chars; snapshot ${newest}; ${posts.length} bundled stories`);
 }

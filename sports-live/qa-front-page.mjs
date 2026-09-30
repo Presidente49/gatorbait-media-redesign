@@ -22,6 +22,13 @@ const photos = process.env.PHOTO_DIR ? readdirSync(process.env.PHOTO_DIR).filter
 // OLD_CSS_FILE: the previous renderer's CSS, injected as #gbgz-styles like the split Wix-served embeds do.
 const oldCss = process.env.OLD_CSS_FILE && existsSync(process.env.OLD_CSS_FILE) ? readFileSync(process.env.OLD_CSS_FILE, 'utf8') : null;
 
+// Fan modules: endpoints.json names the Workers; the three fake hosts answer with the desks' recorded Worker responses.
+const EP = { call: 'https://gatorbait-make-the-call.qa.workers.dev', ask: 'https://ask-gatorbait.qa.workers.dev', stands: 'https://the-stands.qa.workers.dev' };
+const callRec = JSON.parse(readFileSync(join(repo, 'deploy/dept-ideas/web/recorded.json'), 'utf8'));
+const askRec = JSON.parse(readFileSync(join(repo, 'deploy/dept-ideas/ai/recorded.json'), 'utf8'));
+const CORS = { 'access-control-allow-origin': 'https://www.gatorbaitmedia.com', 'access-control-allow-methods': 'GET,POST,OPTIONS', 'access-control-allow-headers': 'content-type' };
+const jsonRes = (body, status = 200) => ({ status, contentType: 'application/json', headers: CORS, body: JSON.stringify(body) });
+
 // The committed feed from the scoreboard job (automation/scoreboard_feed.py).
 const repoScoreboard = existsSync(join(repo, 'sports-live/scoreboard.json')) ? JSON.parse(readFileSync(join(repo, 'sports-live/scoreboard.json'), 'utf8')) : null;
 const x = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
@@ -56,6 +63,14 @@ const scenarios = [
   { name: 'scoreboard-late', now: T.day, scoreboardDelay: 2200, scoreboard: repoScoreboard && { ...repoScoreboard, schedule: repoScoreboard.schedule.map((g) => g.opponent === 'Missouri' ? { ...g, status: 'final', score: { fla: 31, opp: 24 } } : g) }, widths: [390, 1366], expect: { scoreboard: 'feed', road: 1, roadCards: 12, roadWins: 5 } },
   { name: 'scoreboard-live', now: T.gameLive, scoreboard: repoScoreboard && { ...repoScoreboard, live: { eventId: 'qa', clock: '8:14', period: 3, score: { fla: 24, opp: 17 }, possession: 'fla', lastPlay: 'QA fixture play' } }, widths: [390, 1366], expect: { scoreboard: 'feed', gameday: true, boardLive: true, tunnel: 'live', tunnelScore: '24' } },
   { name: 'split-embeds', now: T.day, oldStyles: true, widths: [390, 1366], expect: {} },
+  // Fan modules. endpoints.json arrives 500 ms after paint (inside the renderer's 800 ms budget): Make the Call goes under The Road Ahead and Ask GatorBait under the show
+  // module while both are off screen (nothing in view moves), from the recorded Worker responses. data-fp-modules lists what the file
+  // names; The Stands is named but stays out because a Tuesday is not game day.
+  { name: 'endpoints', now: T.day, endpoints: EP, endpointsDelay: 500, widths: [390, 1366], expect: { lead: 'buddy', road: 1, modules: 'call ask stands', call: '49', callState: 'set-or-pick', askTrivia: true, askAfter: 'fp-mod-show', stands: false, stable: true } },
+  // Game day, live: The Stands sits inside The Tunnel under the CTA row, Ask GatorBait under The Tunnel, Make the Call (locked at kickoff) under the band.
+  { name: 'endpoints-gameday', now: T.gameLive, endpoints: EP, scoreboard: repoScoreboard && { ...repoScoreboard, live: { eventId: 'qa', clock: '8:14', period: 3, score: { fla: 24, opp: 17 }, possession: 'fla', lastPlay: 'QA fixture play' } }, widths: [390, 1366], expect: { gameday: true, tunnel: 'live', modules: 'call ask stands', call: '49', callState: 'locked', askTrivia: true, askAfter: 'fp-tunnel', stands: true, stable: true, lowLeadOk: true } },
+  // No endpoints.json (404): nothing mounts, no placeholder, nothing moves.
+  { name: 'endpoints-404', now: T.gameLive, endpoints: 404, scoreboard: repoScoreboard, expect: { gameday: true, modules: 'none', noModules: true, stable: true } },
 ];
 const WIDTHS = [320, 390, 430, 1366];
 
@@ -82,6 +97,21 @@ for (const sc of scenarios) {
         if (sc.scoreboardDelay) setTimeout(send, sc.scoreboardDelay); else send();
         return;
       }
+      if (u.hostname === 'presidente49.github.io' && u.pathname.endsWith('/deploy/cloudflare/endpoints.json')) {
+        const send = () => sc.endpoints && sc.endpoints !== 404 ? route.fulfill({ contentType: 'application/json', body: JSON.stringify(sc.endpoints) }) : route.fulfill({ status: 404, body: '' });
+        if (sc.endpointsDelay) setTimeout(send, sc.endpointsDelay); else send();
+        return;
+      }
+      if (u.origin === EP.call) return route.fulfill(u.pathname === '/v1/game/' + callRec.gameId ? jsonRes(callRec) : jsonRes({ error: 'not found' }, 404));
+      if (u.origin === EP.ask) {
+        const m = route.request().method();
+        if (m === 'OPTIONS') return route.fulfill({ status: 204, headers: CORS, body: '' });
+        if (u.pathname === '/trivia/today') return route.fulfill(jsonRes(askRec.trivia.today));
+        if (u.pathname === '/trivia/answer') return route.fulfill(jsonRes(askRec.trivia.answer));
+        if (u.pathname === '/ask') { const q = JSON.parse(route.request().postData() || '{}').q; const hit = askRec.asks.find((a) => a.q === q); return route.fulfill(jsonRes(hit || { answer: '', grounded: false, sources: [], error: 'Not in our material.' })); }
+        return route.fulfill(jsonRes({ error: 'not found' }, 404));
+      }
+      if (u.hostname === 'www.gatorbaitmedia.com' && u.pathname === '/_functions/standsToken') return route.fulfill({ status: 404, body: '' }); // no Velo bridge in the fixture: the room shows "Sign in to chat"
       if (u.hostname === 'cdn.jsdelivr.net' && u.pathname.includes('@tsparticles/slim@3.9.1')) return tsp ? route.fulfill({ contentType: 'application/javascript', body: tsp }) : route.abort();
       if (u.pathname.includes('95dd8a25863b4556b7ba6398fcfd0316')) return route.fulfill({ contentType: 'image/png', body: png1 });
       if (u.hostname === 'static.wixstatic.com' || u.hostname === 'i.ytimg.com') return route.fulfill({ contentType: 'image/jpeg', body: photos.length ? photos[photoTurn++ % photos.length] : png1 });
@@ -94,7 +124,36 @@ for (const sc of scenarios) {
     }, { now: sc.now, pins: sc.pins || null, desk: sc.desk || null });
     await page.goto('https://www.gatorbaitmedia.com/', { waitUntil: 'load' });
     await page.waitForSelector('#gbm-live.fp26', { timeout: 8000 }).catch(() => {});
+    // Layout stability: viewport-relative tops of every block in view, keyed per element, so a module that mounts
+    // (or a feed that lands) after paint must not move anything the reader can see. Sideways ticker, embers,
+    // the tunnel scene and the countdown digits are excluded, like the overflow check.
+    const snap = () => page.evaluate(() => {
+      const out = {}, root = document.querySelector('#gbm-live'); if (!root) return out;
+      window.__qaN = window.__qaN || 0;
+      for (const el of root.querySelectorAll('section,article,main,nav,header,h1,h2,h3,li,figure,table,form,.fp-mod')) {
+        if (el.closest('.fp-tk-view,#fp-embers,.fp-tn-scene,#gr-track,.fp-cd')) continue;
+        const b = el.getBoundingClientRect(); if (!b.height || b.bottom <= 0 || b.top >= innerHeight) continue;
+        out[el.__qaId || (el.__qaId = 'n' + (++window.__qaN))] = Math.round(b.top);
+      }
+      return out;
+    });
+    const moved = (a, b) => Object.keys(a).filter((k) => k in b && Math.abs(a[k] - b[k]) > 1).length;
+    const jumps = [];
+    const atPaint = sc.expect.stable ? await snap() : null;
     await page.waitForTimeout(sc.expect.embers ? 2600 : 1800);
+    if (sc.expect.stable) {
+      const n = moved(atPaint, await snap()); if (n) jumps.push(`${n} blocks moved in view after paint`);
+      // Scroll the page in steps; on each step nothing in view may move once the scroll settles (a module that mounts
+      // above the viewport as its anchor leaves must pay its own height back).
+      const total = await page.evaluate(() => document.body.scrollHeight);
+      for (let y = 500; y < total + 500; y += 500) {
+        const before = await page.evaluate((y) => { scrollTo(0, y); return scrollY; }, y);
+        const a = await snap(); await page.waitForTimeout(250); const b = await snap();
+        const n = moved(a, b); if (n) jumps.push(`${n} blocks moved at scroll ${before}`);
+      }
+      await page.waitForTimeout(400);
+      await page.evaluate(() => scrollTo(0, 0));
+    }
     const r = await page.evaluate(() => {
       const root = document.querySelector('#gbm-live');
       const vw = document.documentElement.clientWidth;
@@ -122,6 +181,12 @@ for (const sc of scenarios) {
         tunnelScore: document.querySelector('.fp-tunnel [data-tn=away]')?.textContent || '', tunnelStories: document.querySelectorAll('.fp-tunnel .fp-tn-stories a').length,
         // The opponent's line in the Tunnel matchup: <small>No. 25 · 3-1</small><b>Missouri</b>; the record is the last ' · ' part.
         tunnelOpp: [...document.querySelectorAll('.fp-tunnel .fp-tn-match .fp-tn-team')].map((t) => ({ name: t.querySelector('b')?.textContent || '', line: t.querySelector('small')?.textContent || '' })).find((t) => t.name !== 'Florida') || null,
+        modules: root && root.getAttribute('data-fp-modules'),
+        call: !!document.querySelector('#gbm-call'), callPrev: document.querySelector('#gbm-call')?.previousElementSibling?.id || '', callLoaded: document.querySelector('#gbm-call')?.dataset.loaded || '', callState: document.querySelector('#gbm-call')?.dataset.state || '',
+        callCount: document.querySelector('#gbm-call [data-c=count]')?.textContent || '', callBars: [...document.querySelectorAll('#gbm-call .bins .bar i')].filter((i) => parseFloat(i.style.width) > 0).length,
+        ask: !!document.querySelector('.fp-ask'), askPrev: document.querySelector('.fp-ask')?.previousElementSibling?.className || '', askTrivia: document.querySelector('.fp-ask-tq')?.textContent || '', askOpts: document.querySelectorAll('.fp-ask-opt').length,
+        stands: !!document.querySelector('#gbm-stands .gbs'), standsIn: !!document.querySelector('.fp-tunnel .fp-tn-cta + #gbm-stands .gbs'), standsCount: document.querySelector('#gbm-stands [data-gbs=count]')?.textContent || '', standsQuiet: document.querySelector('#gbm-stands .gbs')?.dataset.quiet || '',
+        globals: { call: window.__GBM_CALL_API__ || '', ask: window.__GBM_ASK_URL__ || '', stands: window.__GBM_STANDS__ ? window.__GBM_STANDS__.api + ' ' + window.__GBM_STANDS__.room : '' },
       };
     });
     const e = sc.expect, bad = [];
@@ -157,9 +222,25 @@ for (const sc of scenarios) {
     if (e.roadLinks && r.roadLinks < e.roadLinks) bad.push(`season band story links ${r.roadLinks} < ${e.roadLinks}`);
     if (e.roadRank && !r.roadRank) bad.push('season band ranked opponent missing');
     if (sc.oldStyles && oldCss && r.oldMedia !== 'not all') bad.push('old #gbgz-styles still active');
-    if (width < 800 && r.h1Top > r.vh * 1.6) bad.push(`lead headline too low (${r.h1Top}px)`);
+    if (width < 800 && !e.lowLeadOk && r.h1Top > r.vh * 1.6) bad.push(`lead headline too low (${r.h1Top}px)`);
+    if (e.modules !== undefined && r.modules !== e.modules) bad.push(`data-fp-modules "${r.modules}" != "${e.modules}"`);
+    if (e.noModules && (r.call || r.ask || r.stands)) bad.push('a fan module mounted without endpoints');
+    if (e.call !== undefined) {
+      if (!r.call || r.callPrev !== 'gbm-road') bad.push('Make the Call not under The Road Ahead');
+      if (r.callLoaded !== '1' || r.callCount !== e.call || r.callBars < 6) bad.push(`Make the Call crowd loaded=${r.callLoaded} count=${r.callCount} bars=${r.callBars}`);
+      if (e.callState === 'locked' ? r.callState !== 'locked' : r.callState === 'locked') bad.push('Make the Call state ' + r.callState);
+      if (r.globals.call !== EP.call + '/v1') bad.push('__GBM_CALL_API__ ' + r.globals.call);
+    }
+    if (e.askTrivia) {
+      if (!r.ask || !r.askPrev.includes(e.askAfter)) bad.push(`Ask GatorBait after "${r.askPrev}" != ${e.askAfter}`);
+      if (r.askTrivia !== askRec.trivia.today.q || r.askOpts !== 4) bad.push('Gator Trivia not loaded: ' + r.askTrivia);
+      if (r.globals.ask !== EP.ask) bad.push('__GBM_ASK_URL__ ' + r.globals.ask);
+    }
+    if (e.stands === true && (!r.stands || !r.standsIn || r.standsCount !== 'Sign in to chat' || r.globals.stands !== EP.stands + ' game-2026-10-03')) bad.push(`The Stands: in tunnel=${r.standsIn} count="${r.standsCount}" cfg="${r.globals.stands}"`);
+    if (e.stands === false && r.stands) bad.push('The Stands mounted outside game day');
+    if (e.stable && jumps.length) bad.push('layout jump: ' + jumps.join(', '));
     const tag = `${sc.name}@${width}`;
-    console.log((bad.length ? 'FAIL ' : 'ok   ') + tag.padEnd(26) + ` lead=${r.lead} cls="${r.cls.replace('gbm-gazette gbm-sports-home fp26 ', '')}" h1=${r.h1Top} cd="${r.cd}"` + (r.tunnelOpp ? ` tunnel=${r.tunnelPhase}:${r.tunnelOpp.name}[${r.tunnelOpp.line}]` : '') + ` ${bad.join('; ')}`);
+    console.log((bad.length ? 'FAIL ' : 'ok   ') + tag.padEnd(26) + ` lead=${r.lead} cls="${r.cls.replace('gbm-gazette gbm-sports-home fp26 ', '')}" h1=${r.h1Top} cd="${r.cd}"` + (r.tunnelOpp ? ` tunnel=${r.tunnelPhase}:${r.tunnelOpp.name}[${r.tunnelOpp.line}]` : '') + (sc.endpoints ? ` modules=${r.modules} call=${r.call ? r.callState + ':' + r.callCount : '-'} ask=${r.ask ? 'after ' + r.askPrev.split(' ')[0] : '-'} stands=${r.stands ? r.standsCount : '-'}` : '') + ` ${bad.join('; ')}`);
     if (bad.length) failures.push(tag + ': ' + bad.join('; '));
     if (shots && !sc.pins && !sc.rss) {
       await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { scrollTo(0, y); await new Promise((r) => setTimeout(r, 60)); } scrollTo(0, 0); });

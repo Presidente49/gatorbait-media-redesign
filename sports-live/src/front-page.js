@@ -123,7 +123,10 @@
       else if (g.hasOwnProperty('quarters')) out.quarters = null;
       if (g.stats && typeof g.stats === 'object') { var s = {}; ['totalYards', 'rushYards', 'firstDowns', 'attendance'].forEach(function (k) { if (num(g.stats[k]) !== null) s[k] = g.stats[k]; }); out.stats = s; }
       if (ymdOf(g.date)) out.date = g.date;
-    } else if (Number.isFinite(Date.parse(g.kickoffIso))) out.kickoffIso = g.kickoffIso;
+    } else {
+      if (Number.isFinite(Date.parse(g.kickoffIso))) out.kickoffIso = g.kickoffIso;
+      if (/^\d{6,12}$/.test(String(g.eventId || ''))) out.eventId = String(g.eventId); // ESPN event id: keys Make the Call
+    }
     return out;
   }
   // Season rows keep the feed's field names (opponentRank, storyUrl) so the band and the hub read one shape; `rank` stays as an alias.
@@ -535,6 +538,7 @@
     var cols = columnistsHtml(posts);
     var latest = take(posts, 8);
     var gs = gameState(sb), mode = modes(sb);
+    lastSb = sb;
     var root = document.createElement('div');
     root.id = 'gbm-live';
     root.className = 'gbm-gazette gbm-sports-home fp26' + (mode.night ? ' fp-night' : ' fp-day') + (mode.gameday ? ' fp-gameday' : '') + (mode.embers ? ' fp-embers-on' : '');
@@ -565,11 +569,13 @@
     requestAnimationFrame(function () { requestAnimationFrame(function () { doc.classList.remove('gbm-prepaint-v2'); }); });
     startTicking(root); countUp(root); embers(root);
     document.dispatchEvent(new CustomEvent('gbm:gazette-ready', { detail: { stories: posts.length, fresh: fresh, lead: picked.why, version: VERSION } }));
+    setTimeout(function () { loadModules(root); }, 50); // after first paint, never before it
   }
   // After paint the scoreboard can only change values in place (never structure), so nothing moves.
   function patchScores(raw) {
     var root = document.getElementById('gbm-live'); if (!root || !root.classList.contains('fp26')) return;
     var sb = readScoreboard(raw);
+    lastSb = sb;
     root.setAttribute('data-fp-scoreboard', sb.source);
     if (sb.next) root.querySelectorAll('[data-fp-count]').forEach(function (el) { if (el.getAttribute('data-fp-count') !== sb.next.kickoffIso && Date.parse(sb.next.kickoffIso) > now()) { el.setAttribute('data-fp-count', sb.next.kickoffIso); el.innerHTML = ''; } });
     renderCountdowns(root);
@@ -589,6 +595,71 @@
       cur.parentNode.replaceChild(fresh, cur);
     } else hub.parentNode.insertBefore(fresh, hub);
     try { initRoad(root); } catch (_) {}
+  }
+
+  /* ---------- Fan modules: Make the Call, Ask GatorBait, The Stands ----------
+   * Bundled from sports-live/src/{make-the-call,ask-gatorbait,the-stands}.js. Their Workers exist only once
+   * deploy/cloudflare/endpoints.json on Pages names them ({call, ask, stands}); it is read after first paint and a
+   * missing file or field mounts nothing: no placeholder, no reserved box. A module enters the page only while its
+   * anchor is off screen (patchRoad's rule) and any scroll offset it causes above the viewport is paid back, so
+   * nothing the reader is looking at moves. */
+  var ENDPOINTS = PAGES + 'deploy/cloudflare/endpoints.json';
+  var lastSb = null, modulesDone = false;
+  function endpointUrl(v) {
+    try {
+      var u = new URL(String(v || ''));
+      if (u.protocol !== 'https:' || u.username || u.password || u.search || u.hash) return '';
+      return /(^|\.)(workers\.dev|gatorbaitmedia\.com)$/.test(u.hostname) ? u.href.replace(/\/+$/, '') : '';
+    } catch (_) { return ''; }
+  }
+  function offScreen(el) { var b = el.getBoundingClientRect(); return b.bottom <= 0 || b.top >= innerHeight; }
+  // Insert `make()`'s node relative to `ref` only while `ref` is out of view; until then, retry on scroll/resize.
+  function mountQuiet(ref, make) {
+    var armed = false;
+    function go() {
+      if (!ref.isConnected) { off(); return; }
+      if (!offScreen(ref)) { arm(); return; }
+      off();
+      var probe = document.elementFromPoint(Math.floor(innerWidth / 2), Math.floor(innerHeight / 2));
+      probe = probe && (probe.closest('section,article,main,nav,header,footer') || probe);
+      var before = probe ? probe.getBoundingClientRect().top : 0;
+      try { make(); } catch (_) { return; }
+      var d = probe ? probe.getBoundingClientRect().top - before : 0; // browsers with scroll anchoring already give 0
+      if (Math.abs(d) > 0.5) scrollBy(0, d);
+    }
+    var pending = 0;
+    function onMove() { if (!pending) pending = requestAnimationFrame(function () { pending = 0; go(); }); }
+    function arm() { if (armed) return; armed = true; addEventListener('scroll', onMove, { passive: true }); addEventListener('resize', onMove); }
+    function off() { if (!armed) return; armed = false; removeEventListener('scroll', onMove); removeEventListener('resize', onMove); }
+    go();
+  }
+  function mountModules(root, ep) {
+    var sb = lastSb, gs = sb && gameState(sb), mode = sb && modes(sb), tunnel = root.querySelector('.fp-tunnel');
+    if (ep.call && window.GBM_CALL && sb && !root.querySelector('#gbm-call')) {
+      var game = GBM_CALL.game(sb), road = root.querySelector('#gbm-road'), hub = root.querySelector('.fp-hub');
+      if (game && (road || hub)) {
+        window.__GBM_CALL_API__ = ep.call + '/v1';
+        mountQuiet(road || hub, function () { (road || hub).insertAdjacentHTML(road ? 'afterend' : 'beforebegin', GBM_CALL.html(game)); GBM_CALL.init(root); });
+      }
+    }
+    if (ep.ask && window.GBM_ASK && !root.querySelector('.fp-ask')) {
+      var after = mode && mode.gameday && tunnel ? tunnel : root.querySelector('.fp-mod-show');
+      if (after) { window.__GBM_ASK_URL__ = ep.ask; mountQuiet(after, function () { GBM_ASK.mount(after); }); }
+    }
+    if (ep.stands && window.GBM_STANDS && mode && mode.gameday && tunnel && gs && gs.kickoff && !root.querySelector('#gbm-stands')) {
+      var cta = tunnel.querySelector('.fp-tn-cta');
+      var cfg = { api: ep.stands, room: 'game-' + et(gs.kickoff).ymd, mount: '#gbm-stands', tokenUrl: ep.standsToken || '/_functions/standsToken', signin: L.signin };
+      if (cta) { window.__GBM_STANDS__ = cfg; mountQuiet(cta, function () { var host = document.createElement('div'); host.id = 'gbm-stands'; cta.parentNode.insertBefore(host, cta.nextSibling); GBM_STANDS.mount(Object.assign({}, cfg, { mount: host })); }); }
+    }
+  }
+  function loadModules(root) {
+    if (modulesDone) return; modulesDone = true;
+    fetchJson(ENDPOINTS + '?t=' + Math.floor(Date.now() / 60000), 800).then(function (j) {
+      if (!j || typeof j !== 'object' || !root.isConnected) return;
+      var ep = { call: endpointUrl(j.call), ask: endpointUrl(j.ask), stands: endpointUrl(j.stands), standsToken: typeof j.standsToken === 'string' && /^\/[\w\/-]*$/.test(j.standsToken) ? j.standsToken : '' };
+      root.setAttribute('data-fp-modules', ['call', 'ask', 'stands'].filter(function (k) { return ep[k]; }).join(' ') || 'none');
+      if (ep.call || ep.ask || ep.stands) mountModules(root, ep);
+    }).catch(function () { if (root.isConnected) root.setAttribute('data-fp-modules', 'none'); });
   }
 
   function fetchJson(url, ms) {
@@ -650,6 +721,7 @@
       if (particles) { try { particles.destroy(); } catch (_) {} particles = null; }
       doc.classList.remove('gbm-gazette-live', 'gbm-standalone-live');
       window.__GBM_GAZETTE_RUNTIME__.ready = false;
+      modulesDone = false;
     } else start();
   }
   window.__GBM_GAZETTE_RUNTIME__ = { sync: sync, ready: false, version: VERSION };

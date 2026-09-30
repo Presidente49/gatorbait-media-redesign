@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>GatorBait story page fixture (Share + Story Kit QA)</title>
+<link rel="canonical" href="https://www.gatorbaitmedia.com/post/qa-story-kit-fixture">
+<!-- Mimics a Wix blog post page: the post header (h1 + byline) and the rich-content body ([data-hook="post-description"]) are
+     stamped from the template 300 ms after load, like Wix hydration, and window.__qaRestamp() replaces the whole article again
+     (the "hydration wipe" that drops early inserts). qa-front-page.mjs serves this file at https://www.gatorbaitmedia.com/post/...
+     and at a non-/post/ path, with the built sports-live/share.js (Share + Story Kit) as the embed script. -->
+<style>body{margin:0;font:18px/1.6 "Barlow",sans-serif;color:#222;background:#fff}main{max-width:740px;margin:0 auto;padding:24px 16px}h1{font:800 34px/1.1 "Barlow Condensed",sans-serif}h2{font:800 24px/1.1 "Barlow Condensed",sans-serif}figure{margin:16px 0}figure div{height:120px;background:#dde3f5}figcaption{font-size:14px;color:#555}blockquote{margin:16px 0;padding:0 0 0 16px;border-left:4px solid #0021a5}#qa-existing{color:#0021a5}</style>
+</head><body>
+<div id="qa-root"></div>
+<template id="qa-post">
+<main><article>
+  <header>
+    <h1 data-hook="post-title">Florida's roster is set for Missouri: what the schedule says about October</h1>
+    <div data-hook="post-metadata"><span data-hook="user-name">Buddy Martin</span> · Sept. 29, 2026 · 4 min read</div>
+  </header>
+  <div data-hook="post-description">
+    <div><p>By Buddy Martin, the roster and schedule desk</p></div>
+    <div><h2>The roster question</h2></div>
+    <div><p>Florida's rosters have looked different in every October of the Napier era, and this one is no exception after the win over Ole Miss.</p></div>
+    <div><p>The roster the Gators take to Columbia is the healthiest it has been since August, and the roster math at receiver finally works.</p></div>
+    <div><figure><div></div><figcaption>The roster at practice on Tuesday. Photo: Chris Spears</figcaption></figure></div>
+    <div><p>Check the <a id="qa-existing" href="https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule">schedule</a> before you book anything, because the October slate turns quickly.</p></div>
+    <div><blockquote><p>"We know what October asks of us."</p><p>— Billy Napier, on the schedule</p></blockquote></div>
+    <div><p>The schedule sends Florida to the Missouri Tigers on Saturday, and Missouri has not lost at home this season.</p></div>
+    <div><p>Missouri's defense has been the story of its season so far, and the Gators will see it up close.</p></div>
+    <div><p>What matters most is that the Gators arrive in Columbia with the pieces they spent all of September assembling.</p></div>
+    <div><p>Kickoff is 3:30 p.m. ET on ABC.</p></div>
+  </div>
+</article></main>
+</template>
+<script>
+  (function () {
+    var root = document.getElementById('qa-root'), tpl = document.getElementById('qa-post');
+    function stamp() { root.replaceChildren(tpl.content.cloneNode(true)); }
+    window.__qaRestamp = stamp;
+    setTimeout(stamp, 300);
+  })();
+</script>
+<script src="https://www.gatorbaitmedia.com/_qa/share.js"></script>
+</body></html>

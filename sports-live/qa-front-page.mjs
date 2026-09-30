@@ -5,6 +5,7 @@
 // tsParticles comes from TSP_FILE when given (the CDN is used live).
 // Usage: node sports-live/qa-front-page.mjs [screenshotDir]
 //   env PLAYWRIGHT=/path/to/playwright  TSP_FILE=/path/tsparticles.slim.bundle.min.js  PHOTO_DIR=/dir/with/jpgs  OLD_CSS_FILE=/path/old.css
+//   env QA_ONLY=<scenario name prefix> runs only matching scenarios (e.g. QA_ONLY=story for the blog post page checks).
 import { readFileSync, readdirSync, mkdirSync, existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
@@ -16,6 +17,9 @@ const repo = join(dirname(fileURLToPath(import.meta.url)), '..');
 const shots = process.argv[2] || '';
 if (shots) mkdirSync(shots, { recursive: true });
 const frame = readFileSync(join(repo, 'sports-live/frame.html'), 'utf8');
+// Story pages: the Wix-post fixture and the built Share + Story Kit embed (sports-live/share.js) it loads.
+const storyFixture = readFileSync(join(repo, 'sports-live/qa-story.html'), 'utf8');
+const shareJs = readFileSync(join(repo, 'sports-live/share.js'), 'utf8');
 const feed = JSON.parse(readFileSync(join(repo, 'gazette-live/posts.json'), 'utf8'));
 const tsp = process.env.TSP_FILE && existsSync(process.env.TSP_FILE) ? readFileSync(process.env.TSP_FILE) : null;
 const photos = process.env.PHOTO_DIR ? readdirSync(process.env.PHOTO_DIR).filter((f) => /\.(jpe?g|png)$/i.test(f)).map((f) => readFileSync(join(process.env.PHOTO_DIR, f))) : [];
@@ -79,10 +83,11 @@ const scenarios = [
   { name: 'endpoints-404', now: T.gameLive, endpoints: 404, scoreboard: repoScoreboard, expect: { gameday: true, modules: 'none', noModules: true, stable: true } },
 ];
 const WIDTHS = [320, 390, 430, 1366];
+const only = (list) => process.env.QA_ONLY ? list.filter((sc) => sc.name.startsWith(process.env.QA_ONLY)) : list;
 
 const failures = [];
 const browser = await chromium.launch();
-for (const sc of scenarios) {
+for (const sc of only(scenarios)) {
   for (const width of sc.widths || WIDTHS) {
     const ctx = await browser.newContext({ viewport: { width, height: width > 800 ? 900 : 844 }, colorScheme: sc.scheme || 'light', reducedMotion: sc.reduced ? 'reduce' : 'no-preference', deviceScaleFactor: 1 });
     const page = await ctx.newPage();
@@ -253,6 +258,108 @@ for (const sc of scenarios) {
       await page.waitForTimeout(400);
     }
     if (shots && !sc.pins && !sc.rss) await page.screenshot({ path: join(shots, `fp-${tag.replace('@', '-')}.png`), fullPage: true });
+    await ctx.close();
+  }
+}
+
+// ---------- Story pages: Share button + Story Kit (guide strip, first-mention links, Keep up with the Gators) ----------
+// The fixture stamps its article 300 ms after load (Wix hydration) and __qaRestamp() wipes and re-stamps it; the kit must
+// mount once after the Share button, link exactly the first plain mentions, add the cards once, and come back after the wipe.
+const GUIDE = 'https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play';
+const STORY_LINKS = [['roster', GUIDE + '#roster', 'roster'], ['schedule', GUIDE + '#schedule', 'schedule'], ['opponent', 'https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind', 'Missouri Tigers']];
+const STORY_CHIPS = ['Next: at No. 25 Missouri · Sat., Oct. 3 · 3:30 p.m. ET', 'Last: W 52-28 vs. No. 4 Ole Miss', 'Roster', 'Schedule', 'Stats', 'The Road Ahead', 'The Buddy Martin Show'];
+const storyScenarios = [
+  { name: 'story', path: '/post/qa-story-kit-fixture', widths: WIDTHS, mounted: true },
+  // scoreboard.json down: the strip still mounts with the five guide links, no live chips, and no opponent link.
+  { name: 'story-feed-down', path: '/post/qa-story-kit-fixture', widths: [390], mounted: true, scoreboard: 404, chips: STORY_CHIPS.slice(2), links: STORY_LINKS.slice(0, 2), sweep: 'static' },
+  { name: 'story-not-post', path: '/blog-qa-story-kit-fixture', widths: [390], mounted: false },
+];
+for (const sc of only(storyScenarios)) {
+  for (const width of sc.widths) {
+    const ctx = await browser.newContext({ viewport: { width, height: width > 800 ? 900 : 844 }, deviceScaleFactor: 1 });
+    const page = await ctx.newPage();
+    const errors = [];
+    page.on('pageerror', (e) => errors.push(String(e)));
+    await ctx.route('**/*', (route) => {
+      const u = new URL(route.request().url());
+      if (u.hostname === 'www.gatorbaitmedia.com' && u.pathname === sc.path) return route.fulfill({ contentType: 'text/html', body: storyFixture });
+      if (u.hostname === 'www.gatorbaitmedia.com' && u.pathname === '/_qa/share.js') return route.fulfill({ contentType: 'application/javascript', body: shareJs });
+      if (u.hostname === 'presidente49.github.io' && u.pathname.endsWith('/sports-live/scoreboard.json')) return repoScoreboard && sc.scoreboard !== 404 ? route.fulfill({ contentType: 'application/json', body: JSON.stringify(repoScoreboard) }) : route.fulfill({ status: 404, body: '' });
+      if (u.hostname === 'presidente49.github.io' && u.pathname.endsWith('/gazette-live/posts.json')) return route.fulfill({ contentType: 'application/json', body: JSON.stringify(feed) });
+      return route.abort();
+    });
+    await page.addInitScript((now) => { window.__GBM_FP_NOW__ = Date.parse(now); }, T.day);
+    await page.goto('https://www.gatorbaitmedia.com' + sc.path, { waitUntil: 'load' });
+    if (sc.mounted) await page.waitForSelector(sc.scoreboard === 404 ? '[data-story-kit="strip"]' : '[data-story-kit="strip"][data-kit-live]', { timeout: 8000 }).catch(() => {});
+    await page.waitForTimeout(1200);
+    const read = () => page.evaluate(() => {
+      const vw = document.documentElement.clientWidth, off = [];
+      for (const el of document.querySelectorAll('[data-story-kit] *, [data-story-kit]')) {
+        if (el.closest('.gbm-kit-row') && !el.classList.contains('gbm-kit-row')) continue; // chips scroll sideways by design
+        const b = el.getBoundingClientRect(); if (b.width && (b.right > vw + 1 || b.left < -1)) off.push(el.className || el.tagName);
+      }
+      const strip = document.querySelector('[data-story-kit="strip"]'), body = document.querySelector('[data-hook="post-description"]');
+      const fonts = new Set(); for (const el of document.querySelectorAll('[data-story-kit], [data-story-kit] *')) fonts.add(getComputedStyle(el).fontFamily);
+      const more = document.querySelector('[data-story-kit="more"]'), ps = body ? [...body.querySelectorAll('p')].filter((p) => !p.closest('[data-story-kit]')) : [];
+      return {
+        scrollW: document.documentElement.scrollWidth, vw, off: off.slice(0, 5), fonts: [...fonts],
+        runtime: !!window.__GBM_KIT_RUNTIME__, kitNodes: document.querySelectorAll('[data-story-kit]').length, css: document.querySelectorAll('#gbm-story-kit-css').length,
+        strips: document.querySelectorAll('[data-story-kit="strip"]').length, afterShare: !!strip && !!strip.previousElementSibling && strip.previousElementSibling.matches('[data-share]'),
+        shareBtns: document.querySelectorAll('[data-share]').length,
+        chips: strip ? [...strip.querySelectorAll('.gbm-kit-chip')].map((a) => a.textContent) : [], chipHrefs: strip ? [...strip.querySelectorAll('.gbm-kit-chip')].map((a) => a.getAttribute('href')) : [],
+        chipMin: Math.min(...(strip ? [...strip.querySelectorAll('.gbm-kit-chip')].map((a) => a.getBoundingClientRect().height) : [99])),
+        links: body ? [...body.querySelectorAll('a.gbm-kit-link')].map((a) => [a.getAttribute('data-term'), a.getAttribute('href'), a.textContent]) : [],
+        linkedAll: body ? body.getAttribute('data-story-kit-linked') : '', existing: (document.getElementById('qa-existing') || {}).innerHTML,
+        inSkipped: document.querySelectorAll('h1 .gbm-kit-link, h2 .gbm-kit-link, figcaption .gbm-kit-link, [data-hook="post-metadata"] .gbm-kit-link, blockquote .gbm-kit-link, a a').length,
+        bodyText: body ? body.textContent.replace(/\s+/g, ' ').trim() : '',
+        mores: document.querySelectorAll('[data-story-kit="more"]').length, cards: document.querySelectorAll('[data-story-kit="more"] .gbm-kit-card').length,
+        moreAfterLast: !!more && !!ps.length && more.previousElementSibling !== null && more.previousElementSibling.contains(ps[ps.length - 1]),
+        moreTitle: more ? more.querySelector('h3').textContent : '',
+      };
+    });
+    const bodyTextOf = () => page.evaluate(() => document.querySelector('[data-hook="post-description"]').textContent.replace(/\s+/g, ' ').trim());
+    const check = (r, bad, phase) => {
+      if (r.scrollW > r.vw) bad.push(`${phase}horizontal overflow ${r.scrollW}>${r.vw}`);
+      if (r.off.length) bad.push(`${phase}elements past viewport: ` + r.off.join(', '));
+      const badFonts = r.fonts.filter((f) => /georgia|times|anton|arial|(^|,)\s*serif\s*(,|$)/i.test(f));
+      if (badFonts.length) bad.push(`${phase}fonts: ` + badFonts.join(' / '));
+      if (r.strips !== 1 || !r.afterShare) bad.push(`${phase}strip count ${r.strips}, after share button ${r.afterShare}`);
+      if (r.shareBtns !== 1) bad.push(`${phase}share buttons ${r.shareBtns}`);
+      if (JSON.stringify(r.chips) !== JSON.stringify(sc.chips || STORY_CHIPS)) bad.push(`${phase}chips ${JSON.stringify(r.chips)}`);
+      if (r.chipMin < 44) bad.push(`${phase}chip min height ${r.chipMin}`);
+      if (r.chipHrefs.some((h) => !/^https:\/\/www\.gatorbaitmedia\.com\//.test(h))) bad.push(`${phase}chip hrefs ` + r.chipHrefs.join(', '));
+      if (JSON.stringify(r.links) !== JSON.stringify(sc.links || STORY_LINKS)) bad.push(`${phase}links ${JSON.stringify(r.links)}`);
+      if (r.linkedAll !== (sc.sweep || 'all')) bad.push(`${phase}body sweep "${r.linkedAll}"`);
+      if (r.existing !== 'schedule' || r.inSkipped) bad.push(`${phase}existing link "${r.existing}", links in skipped zones ${r.inSkipped}`);
+      if (r.mores !== 1 || r.cards !== 3 || !r.moreAfterLast || r.moreTitle !== 'Keep up with the Gators') bad.push(`${phase}cards block ${r.mores}x${r.cards} afterLast=${r.moreAfterLast} "${r.moreTitle}"`);
+      if (r.css !== 1) bad.push(`${phase}css tags ${r.css}`);
+    };
+    const bad = [];
+    let r = await read();
+    if (errors.length) bad.push('page errors: ' + errors.join(' | '));
+    if (sc.mounted) {
+      const before = await bodyTextOf();
+      check(r, bad, '');
+      // Article text must read exactly as authored: the links wrap words, the cards sit after the last paragraph.
+      const expectedText = await page.evaluate(() => { const t = document.getElementById('qa-post').content.querySelector('[data-hook="post-description"]'); return t.textContent.replace(/\s+/g, ' ').trim(); });
+      const seen = r.bodyText.replace(/Keep up with the Gators.*$/, '').trim();
+      if (seen !== expectedText) bad.push('body text changed');
+      // Hydration wipe: Wix replaces the article; the Share button and the kit come back exactly once.
+      await page.evaluate(() => window.__qaRestamp());
+      await page.waitForSelector(sc.scoreboard === 404 ? '[data-story-kit="strip"]' : '[data-story-kit="strip"][data-kit-live]', { timeout: 8000 }).catch(() => {});
+      await page.waitForTimeout(1200);
+      r = await read();
+      check(r, bad, 'after wipe: ');
+      if ((await bodyTextOf()).replace(/Keep up with the Gators.*$/, '').trim() !== before.replace(/Keep up with the Gators.*$/, '').trim()) bad.push('after wipe: body text changed');
+      // Extra mount calls are no-ops.
+      await page.evaluate(() => { window.__GBM_KIT_RUNTIME__.mount(); window.__GBM_KIT_RUNTIME__.mount(); });
+      r = await read();
+      check(r, bad, 'after remount: ');
+    } else if (r.runtime || r.kitNodes || r.css) bad.push(`kit mounted off /post/: runtime=${r.runtime} nodes=${r.kitNodes} css=${r.css}`);
+    const tag = `${sc.name}@${width}`;
+    console.log((bad.length ? 'FAIL ' : 'ok   ') + tag.padEnd(26) + ` strips=${r.strips} chips=${r.chips.length} links=${r.links.length} cards=${r.cards} ${bad.join('; ')}`);
+    if (bad.length) failures.push(tag + ': ' + bad.join('; '));
+    if (shots && sc.mounted) await page.screenshot({ path: join(shots, `story-${width}.png`), fullPage: true });
     await ctx.close();
   }
 }

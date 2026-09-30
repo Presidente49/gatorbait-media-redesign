@@ -1,5 +1,5 @@
 {
-  "commit": "91523dafd736e074b2ea0bd0e9991b9aa311420e",
-  "updated": "2026-09-30T11:22:11.305Z",
-  "note": "Share GatorBait bundled (PR #70). Previous: 729e645f374d3830f13ab7d80cc1301d81d3bd90 (nav Store clip fix)."
+  "commit": "b4158dd97d537b7f6e3fec23d07b62dbc6d336d9",
+  "updated": "2026-09-30T11:28:41.208Z",
+  "note": "Share GatorBait, short phone labels (PR #71). Previous: 91523dafd736e074b2ea0bd0e9991b9aa311420e; pre-Share: 729e645f374d3830f13ab7d80cc1301d81d3bd90."
 }

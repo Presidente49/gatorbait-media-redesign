@@ -147,6 +147,83 @@ class BuildTests(unittest.TestCase):
         self.assertIsNone(d['live'])
 
 
+class OpponentRecordTests(unittest.TestCase):
+    """next.opponentRecord / schedule[i].opponentRecord: the string The Tunnel prints under the opponent's name."""
+    PRE = {'401856699': sf.parse_summary(load('summary-401856699.json')), '401856708': sf.parse_summary(load('summary-401856708.json'))}
+
+    def test_next_record_comes_from_the_pregame_summary(self):
+        d = build(summaries=self.PRE)
+        self.assertEqual(d['next']['opponent'], 'Missouri')
+        self.assertEqual(d['next']['opponentRecord'], '3-1')
+        self.assertEqual(list(d['next']), ['eventId', 'opponent', 'opponentRank', 'opponentRecord', 'home', 'kickoffIso', 'tv', 'venue', 'previewUrl'])
+        by = {g['opponent']: g for g in d['schedule']}
+        self.assertEqual(by['Missouri']['opponentRecord'], '3-1')          # same string on the season row
+        self.assertEqual(by['Ole Miss']['opponentRecord'], '3-1')          # a final: ESPN's record after that game
+        self.assertEqual(by['Florida Atlantic']['opponentRecord'], '0-1')
+        self.assertIsNone(by['Texas']['opponentRecord'])                   # not yet played, no pregame summary read
+        self.assertTrue(all('opponentRecord' in g for g in d['schedule']))
+        self.assertEqual(vs.validate(d), [])
+
+    def test_no_pregame_summary_means_null_not_a_guess(self):
+        d = build()  # only the last final's summary
+        self.assertIsNone(d['next']['opponentRecord'])
+        self.assertEqual(vs.validate(d), [])
+
+    def test_summary_failure_keeps_the_previous_record_for_the_same_game(self):
+        first = build(summaries=self.PRE)
+        d = build(prev=first)
+        self.assertEqual(d['next']['opponentRecord'], '3-1')
+        other = copy.deepcopy(first)
+        other['next']['eventId'] = 'someone-else'
+        self.assertIsNone(build(prev=other)['next']['opponentRecord'])
+
+    def test_live_game_record_survives_from_the_schedule_row(self):
+        sch, sm = make_live()
+        ev = next(e for e in sch['events'] if e['id'] == '401856708')
+        for c in ev['competitions'][0]['competitors']:
+            c['record'] = [{'type': 'total', 'displayValue': '3-1' if c['id'] != '57' else '4-0'}]
+        d = sf.build(sch, load('standings.json'), {}, POSTS, None, NOW)  # summary read failed mid-game
+        self.assertEqual(d['next']['opponentRecord'], '3-1')
+        self.assertEqual(vs.validate(d), [])
+
+    def test_odd_espn_records_are_dropped(self):
+        sm = load('summary-401856708.json')
+        for c in sm['header']['competitions'][0]['competitors']:
+            c['record'] = [{'type': 'total', 'summary': '3-1-1'}]
+        d = build(summaries={'401856708': sf.parse_summary(sm)})
+        self.assertIsNone(d['next']['opponentRecord'])
+        self.assertEqual(vs.validate(d), [])
+
+    def test_validator_accepts_absent_null_or_record_and_refuses_the_rest(self):
+        good = build(summaries=self.PRE)
+        def check(mutate):
+            d = copy.deepcopy(good)
+            mutate(d)
+            return vs.validate(d)
+        self.assertEqual(check(lambda d: d['next'].pop('opponentRecord')), [])
+        self.assertEqual(check(lambda d: d['next'].update(opponentRecord=None)), [])
+        self.assertEqual(check(lambda d: d['schedule'][0].pop('opponentRecord')), [])
+        self.assertEqual(check(lambda d: d['schedule'][0].update(opponentRecord='12-0')), [])
+        for bad in ('3-1-0', 'three-one', '', 31, '3-1 ', ' 3-1', '3–1'):
+            self.assertTrue(check(lambda d: d['next'].update(opponentRecord=bad)), repr(bad))
+            self.assertTrue(check(lambda d: d['schedule'][4].update(opponentRecord=bad)), repr(bad))
+        self.assertTrue(check(lambda d: d['last'].update(opponentRecord='3-1')))  # not part of the last block's contract
+
+    def test_committed_feed_carries_the_missouri_record(self):
+        doc = json.loads((HERE.parent.parent / 'sports-live' / 'scoreboard.json').read_text())
+        self.assertEqual(vs.validate(doc), [])
+        self.assertEqual((doc['next']['opponent'], doc['next']['opponentRecord']), ('Missouri', '3-1'))
+
+    def test_main_reads_the_pregame_summary_and_writes_the_record(self):
+        with tempfile.TemporaryDirectory() as t:
+            out = pathlib.Path(t, 'scoreboard.json')
+            self.assertEqual(sf.main(['--from-dir', str(FIX), '--out', str(out), '--now', '2026-09-29T03:00:00Z', '--posts', str(HERE / 'nope.json')]), 0)
+            doc = json.loads(out.read_text())
+            self.assertEqual(doc['next']['opponentRecord'], '3-1')
+            self.assertEqual(next(g for g in doc['schedule'] if g['eventId'] == '401856708')['opponentRecord'], '3-1')
+            self.assertEqual(vs.load_and_validate(out), [])
+
+
 class ValidatorTests(unittest.TestCase):
     def setUp(self):
         self.good = build()

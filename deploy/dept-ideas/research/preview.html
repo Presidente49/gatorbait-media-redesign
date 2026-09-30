@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Ledger</title>
+<meta name="description" content="Research dept. prototype: Florida's playoff resume, one line per game, from ESPN's public scoreboard feed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#07122e;--blue:#0021a5;--org:#fa4616;--ink:#f3f5fa;--dim:#aab3cc;--line:#1c2a55}
+*{box-sizing:border-box;margin:0}
+body{background:var(--navy);color:var(--ink);font:16px/1.45 Barlow,sans-serif;padding:20px 16px 48px}
+main{max-width:640px;margin:0 auto}
+h1,h2,.n{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.k{color:var(--org);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:56px;line-height:.95;font-weight:800;margin:6px 0 10px}
+.dek{color:var(--dim);font-size:17px;max-width:34em}
+h2{font-size:24px;font-weight:800;margin:32px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+.src{color:var(--dim);font-size:12px;line-height:1.35;margin-top:8px}
+.src a,p a{color:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{text-align:left;color:var(--dim);font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:0 4px 6px}
+td{padding:7px 4px;border-top:1px solid var(--line);vertical-align:top}
+td.r,th.r{text-align:right;white-space:nowrap}
+.n{font-size:20px;font-weight:800}
+.w{color:var(--org)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.t{background:var(--blue);border-radius:6px;padding:12px}
+.t .n{font-size:36px;line-height:1}
+.t small{display:block;color:var(--ink);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+.bars div{display:grid;grid-template-columns:78px 1fr 40px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.bars i{display:block;height:14px;background:var(--org);border-radius:2px}
+.bars b{font-family:"Barlow Condensed",sans-serif;font-size:18px;text-align:right}
+.q{display:grid;grid-template-columns:52px repeat(4,1fr) 52px;gap:4px;text-align:center;font-family:"Barlow Condensed",sans-serif;font-size:22px;font-weight:800}
+.q span{background:var(--blue);border-radius:4px;padding:8px 0}
+.q em{font-style:normal;font-size:13px;color:var(--dim);align-self:center;font-family:Barlow,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.q .tot{background:var(--org)}
+ul{padding-left:18px}li{margin:4px 0}
+p{margin:8px 0}
+.gaunt{background:var(--blue);border-left:4px solid var(--org);padding:12px 14px;border-radius:4px}
+.gaunt .n{font-size:30px}
+@media(min-width:480px){h1{font-size:72px}.tiles{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<main>
+<p class="k">GatorBait Research · Prototype</p>
+<h1>The Ledger</h1>
+<p class="dek">Florida's playoff resume, one line per game. Every number below comes from ESPN's public scoreboard as already saved in this repo. Nothing is estimated.</p>
+
+<h2>The resume so far: No. 8 Florida, 4-0, 2-0 SEC</h2>
+<table>
+<tr><th>Date</th><th>Opponent</th><th class="r">Result</th><th class="r">Margin</th></tr>
+<tr><td>Sept. 5</td><td>Florida Atlantic, home</td><td class="r n w">66-21</td><td class="r n">+45</td></tr>
+<tr><td>Sept. 12</td><td>Campbell, home</td><td class="r n w">52-3</td><td class="r n">+49</td></tr>
+<tr><td>Sept. 19</td><td>at Auburn</td><td class="r n w">44-39</td><td class="r n">+5</td></tr>
+<tr><td>Sept. 26</td><td>No. 4 Ole Miss, home</td><td class="r n w">52-28</td><td class="r n">+24</td></tr>
+</table>
+<p class="src">Source: ESPN schedule and scores for Florida (ESPN team ID 57), via sports-live/scoreboard.json, updated Sept. 29, 2026, 2:17 a.m. UTC. Opponent rank is ESPN's rank at kickoff.</p>
+
+<div class="tiles" style="margin-top:14px">
+<div class="t"><span class="n">214-91</span><small>Points for-against</small></div>
+<div class="t"><span class="n">+30.8</span><small>Avg. margin</small></div>
+<div class="t"><span class="n">1</span><small>Win over a ranked team</small></div>
+<div class="t"><span class="n">1</span><small>SEC road win</small></div>
+</div>
+<p class="src">Source: sums and averages computed by GatorBait from the four final scores in sports-live/scoreboard.json (ESPN). Ranked: opponent ranked by ESPN at kickoff.</p>
+
+<h2>Margin by game</h2>
+<div class="bars">
+<div>FAU<i style="width:92%"></i><b>+45</b></div>
+<div>Campbell<i style="width:100%"></i><b>+49</b></div>
+<div>at Auburn<i style="width:10%"></i><b>+5</b></div>
+<div>Ole Miss<i style="width:49%"></i><b>+24</b></div>
+</div>
+<p class="src">Source: final scores, ESPN via sports-live/scoreboard.json. Bar length is margin as a share of the season high (+49).</p>
+
+<h2>Inside the last one: Florida 52, No. 4 Ole Miss 28</h2>
+<div class="q">
+<em>UF</em><span>10</span><span>7</span><span>14</span><span>21</span><span class="tot">52</span>
+<em>Miss</em><span>0</span><span>6</span><span>15</span><span>7</span><span class="tot">28</span>
+</div>
+<p>First half 17-6, second half 35-22. Florida's biggest quarter was its last, 21-7 in the fourth.</p>
+<p class="src">Source: ESPN game summary for event 401856699 (Sept. 26, Ben Hill Griffin Stadium), via sports-live/scoreboard.json. Half totals computed by GatorBait. Read: <a href="https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28">Postgame analysis</a> · <a href="https://www.gatorbaitmedia.com/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again">The five plays that decided it</a></p>
+
+<h2>What Saturday adds: at No. 25 Missouri</h2>
+<p>Missouri is 3-1 overall and 0-1 in the SEC. A win Saturday (3:30 p.m. ET, ABC, Memorial Stadium) would put Florida at 5-0 and 3-0 in the SEC with a second win over a ranked opponent and a second SEC road win. A loss would leave Florida 4-1 with a ranked home win and no ranked road win.</p>
+<p class="src">Source: ESPN schedule (event 401856708) and SEC standings via sports-live/scoreboard.json. Missouri's No. 25 is ESPN's rank as of the feed timestamp; it can change before kickoff. Read: <a href="https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time">Buddy Martin: Put down the poll</a> · <a href="https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind">First look at Missouri</a></p>
+
+<h2>The Gauntlet: what is left</h2>
+<div class="gaunt">
+<span class="n">21-7 (.750)</span><br>
+Combined record of Florida's seven remaining SEC opponents, including No. 1 Texas (4-0) and No. 2 Georgia (4-0). Both are road games, 14 days apart, with no game listed Oct. 24.
+</div>
+<p class="src">Source: SEC standings and Florida schedule, ESPN via sports-live/scoreboard.json. Florida State (Nov. 27) is not in the SEC table and is excluded from the combined record.</p>
+<ul>
+<li>Oct. 3, at No. 25 Missouri, 3-1</li>
+<li>Oct. 10, South Carolina, 2-2</li>
+<li>Oct. 17, at No. 1 Texas, 4-0</li>
+<li>Oct. 31, at No. 2 Georgia, 4-0</li>
+<li>Nov. 7, Oklahoma, 2-2</li>
+<li>Nov. 14, at No. 24 Kentucky, 3-1</li>
+<li>Nov. 21, Vanderbilt, 3-1</li>
+<li>Nov. 27, at Florida State, record not in feed</li>
+</ul>
+<p class="src">Source: ESPN schedule and SEC standings via sports-live/scoreboard.json. Ranks are ESPN's as of Sept. 29. Kickoff times for games after Oct. 3 are not yet set in the feed. Read: <a href="https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again">Buddy Martin: Bound for the top ten</a></p>
+
+<h2>How it stays current</h2>
+<p>The feed already refreshes on a five-minute tick from ESPN's public site API. Once live, The Ledger reads the same three endpoints: the Florida schedule (teams/57/schedule), the SEC standings (standings?group=8) and the game summary (summary?event=ID) for every final, so the quarter strip covers all 12 games, not just the last one.</p>
+<p class="src">Source: automation/scoreboard_feed.py and .github/workflows/refresh-newsroom-feed.yml in this repo. No new scheduler, no paid fetches.</p>
+</main>
+</body>
+</html>

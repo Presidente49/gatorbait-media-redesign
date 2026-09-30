@@ -44,10 +44,11 @@
 #gbm-live.fp26 #gbm-call .bins li{display:grid;grid-template-columns:104px minmax(0,1fr) 30px;align-items:center;gap:8px;height:26px}
 #gbm-live.fp26 #gbm-call .bins .lb{font:700 12px/1 var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #gbm-live.fp26 #gbm-call .bins li.mine .lb{color:#fff}
+#gbm-live.fp26 #gbm-call .bins li.mine .lb::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--o);margin:0 5px 1px 0;vertical-align:middle}
+#gbm-live.fp26 #gbm-call .bins li.mine b{color:#ffb08f}
 #gbm-live.fp26 #gbm-call .bins .bar{position:relative;height:12px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden}
 #gbm-live.fp26 #gbm-call .bins .bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--b),var(--o));border-radius:6px;transition:width .9s cubic-bezier(.2,.7,.2,1)}
 #gbm-live.fp26 #gbm-call .bins li.opp .bar i{background:linear-gradient(90deg,#3a4770,#8391b8)}
-#gbm-live.fp26 #gbm-call .bins li.mine .bar::after{content:"";position:absolute;right:0;top:0;bottom:0;width:3px;background:#fff}
 #gbm-live.fp26 #gbm-call .bins b{font:800 15px/1 var(--fp-cond);font-variant-numeric:tabular-nums;text-align:right}
 #gbm-live.fp26 #gbm-call .lock{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;margin:0;min-height:20px;font:600 12px/1.4 var(--fp-sans);color:var(--mut)}
 #gbm-live.fp26 #gbm-call .lock b{color:#fff;font-weight:700}

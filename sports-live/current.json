@@ -1,5 +1,5 @@
 {
-  "commit": "677d5c3ec4f8983b6cd75f9b3016b11271be75f4",
-  "updated": "2026-09-30T18:35:00Z",
-  "note": "Newsletter signup on story pages and the homepage hub (PR #93). Rollback: 3c3942b2e15a9e4c4c8a0fc5b6125c3001faf9e9."
+  "commit": "9653d739c147b2ae7ed753786d8f16bf3c68e863",
+  "updated": "2026-09-30T19:05:00Z",
+  "note": "Shell 2026 (PR #94): homepage Store link opens in a new tab and stays visible at every desktop width. Rollback: 677d5c3ec4f8983b6cd75f9b3016b11271be75f4."
 }

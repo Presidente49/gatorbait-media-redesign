@@ -348,10 +348,14 @@
     tick(); setInterval(tick, 30000);
     function run() {
       var upto = nxEl || nodes[nodes.length - 1]; if (!upto) return;
-      L.style.right = 'auto'; L.style.width = (T.scrollWidth - 40) + 'px';
-      L.firstChild.style.width = (upto.offsetLeft + upto.offsetWidth / 2 - 20) + 'px';
+      var pad = parseFloat(getComputedStyle(T).paddingLeft) || 16;
+      // The rail spans the whole scroll width; the glow ends at the next game's dot (14px in, 13px wide).
+      L.style.right = 'auto'; L.style.width = (T.scrollWidth - 2 * pad) + 'px';
+      L.firstChild.style.width = Math.max(0, upto.offsetLeft + 20.5 - pad) + 'px';
       T.querySelectorAll('.bar i').forEach(function (b) { b.style.width = b.getAttribute('data-w') + '%'; });
-      if (nxEl && T.scrollWidth > T.clientWidth) T.scrollLeft = Math.max(0, nxEl.offsetLeft - 32);
+      // Phones: keep the last result and the next game in view together; wider tracks stay at the start.
+      var prev = nxEl && nodes[nodes.indexOf(nxEl) - 1];
+      if (nxEl && nxEl.offsetLeft + nxEl.offsetWidth > T.clientWidth) T.scrollLeft = Math.max(0, (prev || nxEl).offsetLeft - pad);
     }
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { run(); o.disconnect(); } }, { threshold: .25 }).observe(T); else run();
   }

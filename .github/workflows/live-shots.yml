@@ -1,0 +1,62 @@
+name: GatorBait live screenshots
+
+# On-demand real-browser screenshots of production, pushed to the orphan branch qa/live-shots
+# (one commit, replaced each run) so a cloud session without site access can review them:
+#   git fetch origin qa/live-shots && git show origin/qa/live-shots --stat
+# Read-only against the site; writes nothing but that branch.
+
+on:
+  workflow_dispatch:
+    inputs:
+      path:
+        description: 'Page path on www.gatorbaitmedia.com, query allowed'
+        default: '/'
+        required: false
+      selector:
+        description: 'Element to scroll to and capture (blank for none)'
+        default: '#gbm-road'
+        required: false
+      widths:
+        description: 'Comma list of viewport widths'
+        default: '390,1365'
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-shots
+  cancel-in-progress: false
+
+jobs:
+  shoot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.49.1
+          npx playwright install --with-deps chromium
+
+      - name: Shoot production
+        run: node automation/vision/live-shots.mjs "${{ github.event.inputs.path }}" "${{ github.event.inputs.selector }}" "${{ github.event.inputs.widths }}"
+
+      - name: Publish to qa/live-shots
+        run: |
+          set -e
+          cd build/live-shots
+          git init -q
+          git checkout -q -b qa/live-shots
+          git config user.name "gatorbait-live-shots"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "live shots: ${{ github.event.inputs.path }} ${{ github.event.inputs.selector }} ${{ github.event.inputs.widths }} (run ${{ github.run_id }})"
+          git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" qa/live-shots

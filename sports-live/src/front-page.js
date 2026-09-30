@@ -126,8 +126,17 @@
     } else if (Number.isFinite(Date.parse(g.kickoffIso))) out.kickoffIso = g.kickoffIso;
     return out;
   }
+  // Season rows keep the feed's field names (opponentRank, storyUrl) so the band and the hub read one shape; `rank` stays as an alias.
+  function normSchedule(list) {
+    return Array.isArray(list) ? list.slice(0, 20).map(function (g) {
+      if (!g || !str(g.opponent, 40) || !Number.isFinite(Date.parse(g.date))) return null;
+      var rank = num(g.opponentRank);
+      return { opponent: str(g.opponent, 40), opponentRank: rank, rank: rank, home: g.home === true, date: g.date, status: str(g.status, 16) || '', tv: str(g.tv, 24) || '',
+        score: g.score && num(g.score.fla) !== null && num(g.score.opp) !== null ? { fla: g.score.fla, opp: g.score.opp } : null, storyUrl: str(g.storyUrl, 300) || '' };
+    }).filter(Boolean) : [];
+  }
   function readScoreboard(raw) {
-    var fb = BUNDLE.scoreboard, sb = { team: Object.assign({}, fb.team), last: Object.assign({}, fb.last), next: Object.assign({}, fb.next), schedule: [], standings: [], live: null, source: 'bundled' };
+    var fb = BUNDLE.scoreboard, sb = { team: Object.assign({}, fb.team), last: Object.assign({}, fb.last), next: Object.assign({}, fb.next), schedule: normSchedule(fb.schedule), standings: [], live: null, source: 'bundled' };
     if (!raw || typeof raw !== 'object' || !raw.team) return sb;
     sb.source = 'feed';
     if (raw.team.hasOwnProperty('rank') && (num(raw.team.rank) !== null || raw.team.rank === null)) sb.team.rank = num(raw.team.rank);
@@ -142,9 +151,7 @@
     if (sb.next && !Number.isFinite(Date.parse(sb.next.kickoffIso))) sb.next = null;
     if (Array.isArray(raw.standings)) sb.standings = raw.standings.slice(0, 16).map(function (r) {
       return r && str(r.team, 40) ? { team: str(r.team, 40), conf: str(r.confRecord, 8) || str(r.conf, 8) || '', overall: str(r.overall, 8) || '' } : null; }).filter(Boolean);
-    if (Array.isArray(raw.schedule)) sb.schedule = raw.schedule.slice(0, 20).map(function (g) {
-      return g && str(g.opponent, 40) && Number.isFinite(Date.parse(g.date)) ? { opponent: str(g.opponent, 40), rank: num(g.opponentRank), home: g.home === true, date: g.date, status: str(g.status, 16) || '', tv: str(g.tv, 24) || '',
-        score: g.score && num(g.score.fla) !== null && num(g.score.opp) !== null ? g.score : null } : null; }).filter(Boolean);
+    if (Array.isArray(raw.schedule) && normSchedule(raw.schedule).length) sb.schedule = normSchedule(raw.schedule);
     var lv = raw.live;
     if (lv && typeof lv === 'object' && lv.score && num(lv.score.fla) !== null && num(lv.score.opp) !== null) {
       var clk = str(lv.clock, 16) || '', per = num(lv.period);
@@ -335,7 +342,8 @@
       var url = g.storyUrl ? safeUrl(g.storyUrl, 'post') : '';
       return (url ? '<a href="' + esc(url) + '"' : '<div') + ' class="' + cls + '" role="listitem">' + top + body + (url ? '</a>' : '</div>');
     }).join('');
-    return '<section id="gbm-road" aria-label="Florida season road"><div class="hd"><h2>The road <span>ahead</span></h2><div class="rec"><b>' + W + '–' + Ls + '</b>' + (sb.team && sb.team.season ? esc(sb.team.season) : '2026') + ' record</div></div><div class="track" id="gr-track" role="list"><div class="line"><i id="gr-line"></i></div>' + cards + '</div></section>';
+    var sig = games.map(function (g) { return g.date + ':' + g.status + ':' + (g.score ? g.score.fla + '-' + g.score.opp : ''); }).join('|');
+    return '<section id="gbm-road" aria-label="Florida season road" data-sig="' + esc(sig) + '"><div class="hd"><h2>The road <span>ahead</span></h2><div class="rec"><b>' + W + '–' + Ls + '</b>' + (sb.team && sb.team.season ? esc(sb.team.season) : '2026') + ' record</div></div><div class="track" id="gr-track" role="list"><div class="line"><i id="gr-line"></i></div>' + cards + '</div></section>';
   }
   function initRoad(root) {
     var T = root.querySelector('#gr-track'); if (!T) return;
@@ -345,7 +353,7 @@
       var ms = new Date(c.getAttribute('data-k')) - now(); if (ms <= 0) { c.textContent = 'Live'; return; }
       c.textContent = Math.floor(ms / 864e5) + 'd ' + Math.floor(ms % 864e5 / 36e5) + 'h ' + Math.floor(ms % 36e5 / 6e4) + 'm';
     }
-    tick(); setInterval(tick, 30000);
+    tick(); if (root.__gbmRoadTick) clearInterval(root.__gbmRoadTick); root.__gbmRoadTick = setInterval(tick, 30000);
     function run() {
       var upto = nxEl || nodes[nodes.length - 1]; if (!upto) return;
       var pad = parseFloat(getComputedStyle(T).paddingLeft) || 16;
@@ -525,6 +533,21 @@
     root.setAttribute('data-fp-scoreboard', sb.source);
     if (sb.next) root.querySelectorAll('[data-fp-count]').forEach(function (el) { if (el.getAttribute('data-fp-count') !== sb.next.kickoffIso && Date.parse(sb.next.kickoffIso) > now()) { el.setAttribute('data-fp-count', sb.next.kickoffIso); el.innerHTML = ''; } });
     renderCountdowns(root);
+    patchRoad(root, sb);
+  }
+  // The season band is the one block allowed to change after paint: it sits below the fold, so a band that the
+  // feed adds or refreshes only swaps while it is off screen (same card count keeps the same height).
+  function patchRoad(root, sb) {
+    var html = roadHtml(sb); if (!html) return;
+    var tmp = document.createElement('div'); tmp.innerHTML = html;
+    var fresh = tmp.firstChild, cur = root.querySelector('#gbm-road'), hub = root.querySelector('.fp-hub');
+    var anchor = cur || hub; if (!fresh || !anchor) return;
+    var box = anchor.getBoundingClientRect(); if (box.bottom > 0 && box.top < innerHeight + 120) return;
+    if (cur) {
+      if (cur.getAttribute('data-sig') === fresh.getAttribute('data-sig') || cur.querySelectorAll('.g').length !== fresh.querySelectorAll('.g').length) return;
+      cur.parentNode.replaceChild(fresh, cur);
+    } else hub.parentNode.insertBefore(fresh, hub);
+    try { initRoad(root); } catch (_) {}
   }
 
   function fetchJson(url, ms) {

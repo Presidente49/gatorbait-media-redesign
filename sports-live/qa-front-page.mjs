@@ -40,10 +40,10 @@ const DESK_LIVE = { kickoff: '2026-10-03T19:30:00Z', until: '2026-10-05T04:00:00
   headline: 'QA fixture only', drive: 'QA fixture drive line', updates: [['Q3', 'QA fixture update one'], ['Q2', 'QA fixture update two']], links: [['Missouri first look', '/post/first-look-missouri-florida-gators-show-me-state-of-mind']] };
 
 const scenarios = [
-  { name: 'day-light', now: T.day, scheme: 'light', expect: { night: true, gameday: false, embers: true, lead: 'buddy' } }, // Swamp Night is the everyday look (config look: swamp-night)
+  { name: 'day-light', now: T.day, scheme: 'light', expect: { night: true, gameday: false, embers: true, lead: 'buddy', road: 1, roadCards: 12, roadWins: 4 } }, // Swamp Night is the everyday look (config look: swamp-night); band from the bundled schedule
   { name: 'day-dark', now: T.day, scheme: 'dark', expect: { night: true, gameday: false, lead: 'buddy', embers: true } },
   { name: 'night', now: T.night, scheme: 'light', expect: { night: true, gameday: false, embers: true, showLive: true } },
-  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: true, gameday: true } },
+  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: true, gameday: true, road: 1 } },
   { name: 'gameday-live', now: T.gameLive, scheme: 'light', desk: DESK_LIVE, expect: { night: true, gameday: true, embers: true, boardLive: true } },
   { name: 'reduced-motion', now: T.night, scheme: 'light', reduced: true, expect: { night: true, embers: false, noAnimations: true } },
   { name: 'rss-down', now: T.day, scheme: 'light', rss: 500, widths: [390], expect: { lead: 'buddy' } },
@@ -51,7 +51,9 @@ const scenarios = [
   { name: 'pin-timed', now: '2026-10-06T15:00:00Z', pins: { timed: { path: '/post/who-are-these-guys-trautwein', until: '2026-10-07T00:00:00Z' } }, widths: [390], expect: { lead: 'pin' } },
   { name: 'pin-breaking', now: T.day, pins: { breaking: { path: '/post/first-look-missouri', until: '2026-10-01T00:00:00Z' } }, widths: [390], expect: { lead: 'breaking' } },
   { name: 'newest-no-buddy', now: '2026-10-06T15:00:00Z', pins: { timed: null }, widths: [390], expect: { lead: 'newest' } },
-  { name: 'scoreboard-json', now: T.day, scoreboard: repoScoreboard, widths: [390, 1366], expect: { scoreboard: 'feed', standings: true } },
+  { name: 'scoreboard-json', now: T.day, scoreboard: repoScoreboard, widths: [390, 1366], expect: { scoreboard: 'feed', standings: true, road: 1, roadCards: 12, roadLinks: 2, roadRank: true } },
+  // Feed lands after the 1.5 s paint budget (phones did on Sept. 30): the band paints from the bundle, then swaps off screen to the fresh result.
+  { name: 'scoreboard-late', now: T.day, scoreboardDelay: 2200, scoreboard: repoScoreboard && { ...repoScoreboard, schedule: repoScoreboard.schedule.map((g) => g.opponent === 'Missouri' ? { ...g, status: 'final', score: { fla: 31, opp: 24 } } : g) }, widths: [390, 1366], expect: { scoreboard: 'feed', road: 1, roadCards: 12, roadWins: 5 } },
   { name: 'scoreboard-live', now: T.gameLive, scoreboard: repoScoreboard && { ...repoScoreboard, live: { eventId: 'qa', clock: '8:14', period: 3, score: { fla: 24, opp: 17 }, possession: 'fla', lastPlay: 'QA fixture play' } }, widths: [390, 1366], expect: { scoreboard: 'feed', gameday: true, boardLive: true } },
   { name: 'split-embeds', now: T.day, oldStyles: true, widths: [390, 1366], expect: {} },
 ];
@@ -75,7 +77,11 @@ for (const sc of scenarios) {
       }
       if (u.hostname === 'www.gatorbaitmedia.com' && u.pathname === '/blog-feed.xml') return sc.rss ? route.fulfill({ status: sc.rss, body: '' }) : route.fulfill({ contentType: 'application/rss+xml', body: rss });
       if (u.hostname === 'presidente49.github.io' && u.pathname.endsWith('/gazette-live/posts.json')) return sc.pages ? route.fulfill({ status: sc.pages, body: '' }) : route.fulfill({ contentType: 'application/json', body: JSON.stringify(feed) });
-      if (u.hostname === 'presidente49.github.io' && u.pathname.endsWith('/sports-live/scoreboard.json')) return sc.scoreboard ? route.fulfill({ contentType: 'application/json', body: JSON.stringify(sc.scoreboard) }) : route.fulfill({ status: 404, body: '' });
+      if (u.hostname === 'presidente49.github.io' && u.pathname.endsWith('/sports-live/scoreboard.json')) {
+        const send = () => sc.scoreboard ? route.fulfill({ contentType: 'application/json', body: JSON.stringify(sc.scoreboard) }) : route.fulfill({ status: 404, body: '' });
+        if (sc.scoreboardDelay) setTimeout(send, sc.scoreboardDelay); else send();
+        return;
+      }
       if (u.hostname === 'cdn.jsdelivr.net' && u.pathname.includes('@tsparticles/slim@3.9.1')) return tsp ? route.fulfill({ contentType: 'application/javascript', body: tsp }) : route.abort();
       if (u.pathname.includes('95dd8a25863b4556b7ba6398fcfd0316')) return route.fulfill({ contentType: 'image/png', body: png1 });
       if (u.hostname === 'static.wixstatic.com' || u.hostname === 'i.ytimg.com') return route.fulfill({ contentType: 'image/jpeg', body: photos.length ? photos[photoTurn++ % photos.length] : png1 });
@@ -110,6 +116,8 @@ for (const sc of scenarios) {
         showLive: document.querySelector('.fp-show')?.getAttribute('data-live') === '1', standings: !!document.querySelector('.fp-stand'),
         anims: document.getAnimations().filter((a) => a.playState === 'running').length, oldMedia: document.getElementById('gbgz-styles')?.media ?? null,
         cd: document.querySelector('[data-fp-count]')?.textContent || '', ids: document.querySelectorAll('#gbm-live').length,
+        road: document.querySelectorAll('#gbm-road').length, roadCards: document.querySelectorAll('#gbm-road .g').length, roadWins: document.querySelectorAll('#gbm-road .g.w').length,
+        roadLinks: document.querySelectorAll('#gbm-road a.g[href]').length, roadRank: !!document.querySelector('#gbm-road .rk'), roadNext: (document.querySelector('#gbm-road .g.nx .op') || {}).textContent || '',
       };
     });
     const e = sc.expect, bad = [];
@@ -132,6 +140,11 @@ for (const sc of scenarios) {
     if (e.noAnimations && r.anims) bad.push(r.anims + ' running animations under reduced motion');
     if (e.scoreboard && r.sbSource !== e.scoreboard) bad.push('scoreboard source ' + r.sbSource);
     if (e.standings && !r.standings) bad.push('standings missing');
+    if (e.road !== undefined && r.road !== e.road) bad.push(`season band count ${r.road} != ${e.road}`);
+    if (e.roadCards !== undefined && r.roadCards !== e.roadCards) bad.push(`season band cards ${r.roadCards} != ${e.roadCards}`);
+    if (e.roadWins !== undefined && r.roadWins !== e.roadWins) bad.push(`season band wins ${r.roadWins} != ${e.roadWins}`);
+    if (e.roadLinks && r.roadLinks < e.roadLinks) bad.push(`season band story links ${r.roadLinks} < ${e.roadLinks}`);
+    if (e.roadRank && !r.roadRank) bad.push('season band ranked opponent missing');
     if (sc.oldStyles && oldCss && r.oldMedia !== 'not all') bad.push('old #gbgz-styles still active');
     if (width < 800 && r.h1Top > r.vh * 1.6) bad.push(`lead headline too low (${r.h1Top}px)`);
     const tag = `${sc.name}@${width}`;

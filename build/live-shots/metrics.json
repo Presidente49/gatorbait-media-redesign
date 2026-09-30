@@ -1,0 +1,73 @@
+{
+ "url": "file:///tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/wt-perf/deploy/covers/template.html?headline=Test",
+ "selector": "",
+ "at": "2026-09-30T18:13:43.078Z",
+ "shots": [
+  {
+   "width": 390,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "perf": {
+    "ttfb": 0,
+    "domContentLoaded": 437,
+    "load": 437,
+    "fcp": 428,
+    "lcp": {
+     "t": 428,
+     "size": 11685,
+     "url": "",
+     "tag": "DIV.mark"
+    },
+    "cls": 0,
+    "longTasks": 0,
+    "longTaskMs": 0,
+    "tbt": 0,
+    "fpRootAt": null,
+    "shareAt": null,
+    "requests": 1,
+    "bytes": 0,
+    "byKind": {
+     "css": {
+      "n": 1,
+      "bytes": 0
+     }
+    },
+    "byHost": {
+     "fonts.googleapis.com": {
+      "n": 1,
+      "bytes": 0,
+      "ms": 367
+     }
+    },
+    "top": [
+     {
+      "url": "fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@500;600;700&display=swap",
+      "kind": "css",
+      "bytes": 0,
+      "start": 37,
+      "ms": 367
+     }
+    ],
+    "ours": [
+     {
+      "url": "fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@500;600;700&display=swap",
+      "bytes": 0,
+      "start": 37,
+      "ms": 367
+     }
+    ],
+    "scripts": 1,
+    "inlineScriptChars": 1097,
+    "styles": 1,
+    "inlineStyleChars": 2093,
+    "images": 1,
+    "lazyImages": 0,
+    "domNodes": 27
+   },
+   "loaderSrc": null,
+   "fpBuild": null,
+   "fpVersion": null
+  }
+ ]
+}

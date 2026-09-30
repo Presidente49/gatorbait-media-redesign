@@ -1,48 +1,61 @@
-SEO department pitch: Gators Game Graph. Idea only; read-only, nothing on the live site was touched.
+# Gators Game Graph
 
-## 1) The idea
+Round two. The name survives because the idea now runs on a real audit and real code: an OpenRush audit of gatorbaitmedia.com (14 calls, evidence below), a generator that turns `gazette-live/posts.json` and `sports-live/scoreboard.json` into valid JSON-LD, ten passing shape tests, and the actual output files in this folder. Nothing live was touched.
 
-Turn the existing canonical roster/schedule guide into a search-built "Florida Gators 2026 schedule, scores and results" hub, and stamp every one of the 12 games with its own `SportsEvent` JSON-LD entity generated from the ESPN feed the site already refreshes every five minutes. Each game entity carries the kickoff, venue, TV, final score and a `subjectOf` link to the one canonical GatorBait story for that game, so Google sees GatorBait as the publisher that describes each Florida game, not just a blog that mentions it.
+## The idea
 
-## 2) Why readers or revenue care
+Give Google the entity layer it cannot find on gatorbaitmedia.com today. `deploy/dept-ideas/seo/structured-data.mjs` emits two things from feeds the site already refreshes:
 
-- The highest-intent Gators searches in any given week are utility queries: "Florida Gators schedule," "what time do the Gators play," "what channel is Florida Missouri on," "Florida Ole Miss score." Those queries are answered today by ESPN, Google's own sports box and floridagators.com. GatorBait has no page purpose-built to compete for them; the closest is a blog post whose title tag reads "Florida Football: 2026 Roster & Schedule | GatorBait" (`deploy/roster-schedule/resource-seo-data.json`).
-- Google's Event rich results require `name`, `startDate` and `location`. Every Florida game already has all three in `sports-live/scoreboard.json` (ESPN event IDs 401856637 through 401856759), so eligibility costs nothing beyond a build step.
-- The `subjectOf` link is the revenue angle: it binds each game entity to one story URL (for example the Ole Miss recap at https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28 and the Missouri preview at https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind). That reinforces Brenden's one-canonical-article rule and gives recaps and previews an entity-level reason to be surfaced next to the game, which is when page views and ad impressions peak.
-- The hub is evergreen inside the season: it refreshes weekly rather than dying like a game story, so it can accumulate links from every football story (the roster README already asks stories to link back to it) and from The Road Ahead band on the homepage.
-- Why not the alternatives in the brief: FAQ and HowTo rich results were withdrawn by Google for general sites in 2023, so they are a weak bet; author-authority markup for Buddy Martin is worth doing later but is a trust signal, not a demand play. Event markup is the one that maps to real weekly search demand.
-- No traffic numbers are claimed. The measurable checks are Search Console impressions for the query set above and Rich Results Test eligibility for the hub URL.
+1. **Homepage HEAD embed** (`out/homepage-embed.html`, 11,237 chars, under the 15,000-char Wix custom embed limit): one `@graph` with `NewsMediaOrganization` (GatorBait Media, founded 1980, sameAs YouTube/Facebook/X), `WebSite`, `SportsTeam` Florida Gators, the SEC, Ben Hill Griffin Stadium, a `CollectionPage` whose `ItemList` is the six newest stories with the newest Buddy Martin piece first, and an `ItemList` of all 12 season games as `SportsEvent` nodes. Each game carries the ESPN event id as `sameAs` (the same id Google shows in the "Florida Missouri football game" SERP), home/away teams, `eventStatus`, the final score for finals, kickoff and TV for announced games, and exactly one `subjectOf` story per game.
+2. **Per-article `SportsEvent` tag** (`out/article-*.json`, about 1,500 chars each) for the 12 of 20 feed stories whose title names an opponent, shaped as a Wix `seoData.tags` script entry. It is a `SportsEvent`, not a second `NewsArticle`, because Wix already renders one and `docs/ARTICLE-PAGE-STANDARD.md` bans duplicates. The article stub inside it names the writer as a `Person` with the columnist tag URL, which is the authorship signal Wix's native tag lacks.
 
-## 3) How it is built
+Rules in code, each covered by a test: no invented kickoffs (South Carolina Oct. 10 becomes a date-only `startDate` until ESPN carries a time); no story invented for a game the feed has not covered; Buddy Martin leads when he has a piece from the last seven days, otherwise newest-first; matching uses titles and URLs only after excerpts produced a false Texas match; output is script-safe and round-trips.
 
-**Files (repo, all new or additive):**
+Run: `node deploy/dept-ideas/seo/structured-data.mjs` (writes `out/`), `node --test deploy/dept-ideas/seo/structured-data.test.mjs`.
 
-- `deploy/roster-schedule/build_schedule_schema.py`: reads `sports-live/scoreboard.json` and `deploy/roster-schedule/schedule.json`, writes `deploy/roster-schedule/schedule-jsonld.json` (an `ItemList` of 12 `SportsEvent` items plus one `SportsTeam` node). Rules: `startDate` only when ESPN carries an announced kickoff; date-only ISO string otherwise, never an invented time. `description` and `subjectOf` for finals come from the ESPN score and the `storyUrl`/`recapUrl` fields; scheduled games use `previewUrl` when set. Home games use Ben Hill Griffin Stadium, Gainesville, FL; road games use the ESPN venue string.
-- `deploy/roster-schedule/resource-seo-data.json`: gains one tag of `type: "script"` with `props.type: "application/ld+json"` and the generated JSON as `children`, plus a retitled title tag ("Florida Gators 2026 Schedule, Scores and Results | GatorBait") and matching meta description. The existing canonical, OG and robots tags stay untouched.
-- `deploy/dept-ideas/seo/preview.html`: the reader-facing hub layout and the markup, this folder.
+## Why it matters
 
-**Where it lives on Wix:** the existing native blog post `aeb4f5a5-3910-4b11-9a63-b05bac96e623`, canonical URL https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play. The JSON-LD goes into that post's `seoData.tags` array through the same controller-owned Blog update workflow the roster guide already uses. No new page, route, embed or loader. Wix keeps rendering its own `BlogPosting` schema; the added script is a different type, so it does not violate the no-duplicate-JSON-LD rule in `docs/ARTICLE-PAGE-STANDARD.md`.
+The audit says the site is technically healthy and entity-blind:
 
-**Data source:** ESPN via `sports-live/scoreboard.json`, refreshed by `.github/workflows/refresh-newsroom-feed.yml` and validated by `automation/validate_scoreboard.py`. Story links from `gazette-live/posts.json`.
+- On-page score **87.5**, 0 high issues (evidence 03). The problem is not broken pages.
+- The homepage ranks for 24 keywords and the real ones are `gator bait and tackle`, `gator bait melrose`, `cast of gator bait` (evidence 05). Google reads the domain as bait shops and a 1970s film, not the Florida Gators.
+- The served homepage HTML still leads with `<h1>Today's Edition</h1>` and the old shell copy; the Front Page 2026 renderer is injected by JavaScript (evidence 18). A HEAD JSON-LD embed is the one way to tell crawlers what the page is about without touching that shell, which is locked pending Brenden's approval.
+- "Buddy Martin" returns a knowledge graph, the YouTube show, a drag racer and an obituary; no gatorbaitmedia.com URL (evidence 08). "Buddy Martin Gators" ranks the About page with a 2019 snippet, not a column (evidence 14). The `Person` node with the columnist URL is aimed at exactly that.
+- "Florida Missouri football game" is owned by floridagators.com, ESPN event 401856708, ticket sites and a YouTube preview; GatorBait's Missouri preview (published Sept. 27) is absent (evidence 10). "Gators Missouri" produces an AI Overview about alligators (evidence 09). The `SportsEvent` nodes with the ESPN `sameAs` are how a publisher attaches its story to the game entity Google already uses.
+- Demand is now: `florida football` 823,000 searches in Sept. 2025 against a 301,000 average; `florida gators football schedule` 301,000 in Sept. 2025 (evidence 12).
+- AI Overviews already cite the site 7 times, mostly as a "gator blog" (evidence 11). Entity markup is the cheapest way to move from "a blog" to "the publisher describing this team and its games".
 
-**Sources:** ESPN via `sports-live/scoreboard.json` (updated 2026-09-29T02:17:33Z) for the 4-0 record, No. 8 rank, results (66-21 FAU, 52-3 Campbell, 44-39 at Auburn, 52-28 vs. No. 4 Ole Miss), the Missouri kickoff (2026-10-03T19:30Z, ABC, Memorial Stadium), event IDs and opponent ranks; https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28; https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind; https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play.
+What it does not claim: markup makes the pages eligible for Event and richer article treatment and gives Google entity edges; it does not put GatorBait scores in Google's sports box and it does not fix the shell H1. Measurement is Search Console impressions for the SERP set above and the Rich Results Test on the live URLs; no traffic number is promised.
 
-**Cadence:** the build runs in the existing workflow after the scoreboard step and commits `schedule-jsonld.json` only when it changes. The Wix PATCH is a controller action once per game week (after the final, and again when a kickoff or TV is announced), not every five minutes.
+## Evidence
 
-**Effort:** build script and tests, 3 hours; SEO tag assembly and Rich Results Test on a preview, 1 hour; controller PATCH, Search Console URL inspection and rollback note, 1 hour; optional visible schedule refresh in the post body, 2 hours. Total 5 to 7 hours, zero new services or spend.
+Condensed responses in `deploy/dept-ideas/seo/evidence/` (money columns and follower counts stripped). Full audit narrative with provenance in `audit.md`.
 
-## 4) What it needs from Brenden
+- `mcp__OpenRush__describe_capabilities` (ev. 01); `list_websites` (ev. 02): no Search Console connection, `get_search_performance` unavailable.
+- `mcp__OpenRush__audit_site` domain `gatorbaitmedia.com`, max_pages 20 (ev. 03): 2,001 discovered, 20 audited, score 87.5, 0/3/7 issues, `multiple_h1` on 14 pages including `/`; crawl, observed 2026-09-30T05:14:25Z, confidence 0.9. Dataset resource id recorded in the file.
+- `mcp__OpenRush__inspect_domain` (ev. 04): 132 keywords, 6 top-3, 18 top-10, recruiting category page at 12 to 16 on 2,900-volume queries.
+- `mcp__OpenRush__inspect_page` homepage (ev. 05): 24 keywords, top terms bait-and-tackle. Buddy Martin article (ev. 06): 0 keywords 30 hours after publish.
+- `mcp__OpenRush__inspect_serp` x5 (ev. 07, 08, 09, 10, 14): rankings, features and PAA as tabulated in `audit.md`; all live_serp, confidence 0.95.
+- `mcp__OpenRush__inspect_ai_visibility` (ev. 11): 7 mentions, sample questions listed.
+- `mcp__OpenRush__research_keywords` (ev. 12) and `discover_competitors` seed mode (ev. 13).
+- `mcp__vidIQ_for_Claude__vidiq_keyword_research` (ev. 15): refused, "Not enough credits. This tool costs 5 credits..."; switched to OpenRush.
+- `mcp__Wix__SearchWixRESTDocumentation` (ev. 16, 17): custom embed html max 15,000 chars; Item SEO Tags / Draft Post `seoData.tags` shape; the native NewsArticle tag seen in `deploy/writer-attributions/before/064b72aa-....json`.
+- `mcp__TinyFish__fetch_content` live homepage HTML (ev. 18); `mcp__Exa__web_fetch_exa` (ev. 19, homepage copy stale, discarded).
+- Code: `structured-data.mjs` (15,506 bytes), `structured-data.test.mjs` (8,373 bytes, 10 pass / 0 fail on Node 22), `out/` 15 files: `homepage-graph.json`, `homepage-embed.html`, 12 `article-*.json`, `index.json`.
 
-1. A yes on the retitled hub ("Florida Gators 2026 Schedule, Scores and Results") and on adding the script tag to that post's SEO data. Title and description copy are his call.
-2. Confirmation that the controller (Master Control) owns the Wix PATCH and the weekly refresh; this desk supplies the generated JSON and the before/after diff.
-3. Agreement that the hub links only the single canonical story per game, following the Buddy Martin lead direction, so `subjectOf` never points at two recaps for one game.
-4. A decision on whether The Road Ahead band should link to the hub, so homepage and hub reinforce each other.
+## What it needs from Brenden
 
-## 5) Risks
+1. A yes to a new **HEAD custom embed on the homepage only** (`position: HEAD`, `category: ESSENTIAL`, page-filtered to `/`), created by Master Control through the Custom Embeds API with the exact contents of `out/homepage-embed.html`. Separate embed, so the Home Code loader `622d8ece` and the baseline lock are untouched; rollback is disabling that one embed.
+2. A yes to adding the `SportsEvent` script tag to `seoData.tags` on game stories, starting with the Missouri preview and Buddy's column, through the same controller-owned Blog update path used for writer attributions. Wix's own NewsArticle tag stays.
+3. A refresh owner: the generator runs after the scoreboard step in the existing feed workflow and commits `out/`; the controller PATCHes the embed once per game week (after the final; when a kickoff or TV is announced), not every five minutes.
+4. Connect Search Console in OpenRush so the SERP set above can be measured instead of estimated.
+5. Confirmation of the Buddy Martin lead rule (newest piece within seven days) and of the columnist tag URLs as the author profile pages.
 
-- Google decides what to show. `SportsEvent` markup makes the page eligible for Event rich results and helps entity matching; it does not put GatorBait scores inside Google's live sports box, which is fed by Google's own data partners. Sell it as eligibility and ranking support, not a guaranteed snippet.
-- Google's Event guidelines discourage marking up events the page does not primarily cover. The visible schedule table in the post must stay complete and current, which the roster README already requires.
-- Stale data is worse than no data. A final that stays "scheduled" or a wrong kickoff in markup can draw a manual action. Mitigation: the build refuses to emit a time unless ESPN has one, and the weekly PATCH is gated on the validated scoreboard.
-- Wix served stale embed revisions for 30 to 45 minutes on Sept. 30 (`deploy/front-page-2026/README.md`). Verify the live HTML with the Rich Results Test after each PATCH rather than assuming the tag is live.
-- Kickoff windows: South Carolina on Oct. 10 is noon or 12:45 p.m. ET on ABC or SEC Network until Oct. 3 games finish (`deploy/roster-schedule/README.md`). The build must leave that game date-only until ESPN carries the final time.
-- Rollback is one PATCH restoring the previous `seoData.tags` from `before.json`; keep that capture current before every change.
+## Risks
+
+- Google decides what to show; this is eligibility and entity linking, not a guaranteed rich result.
+- Event markup must describe events the page covers. The homepage visibly shows The Road Ahead schedule band and the stories, so the markup matches the page; keep it that way.
+- Stale data is worse than none: a final left as scheduled or a wrong kickoff invites a manual action. The build refuses to emit a time ESPN has not carried, the validator fails the run on shape errors, and the PATCH is gated on the validated scoreboard.
+- Wix served stale embed revisions for 30 to 45 minutes on Sept. 30; verify with the Rich Results Test on the live URL after each PATCH.
+- Away venues other than the next game are omitted (the feed does not carry them), which limits Event eligibility for those games until the feed does.
+- The served-HTML "Today's Edition" H1 remains a separate, approval-gated issue; this pitch does not fix it and should not be sold as if it does.

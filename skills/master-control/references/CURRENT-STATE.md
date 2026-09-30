@@ -1,5 +1,11 @@
 # Master Control Current State
 
+## Sept. 30, ~9:15 a.m. ET: Tunnel record, fan-module mounts, Game Graph (Jarvis)
+- Homepage build pointer `sports-live/current.json` → `cfe4b4b` (deploy commit 85272eb). The Tunnel shows the opponent record ("No. 25 · 3-1", from `scoreboard.json` `next.opponentRecord`, ESPN summary). Make the Call, Ask GatorBait and The Stands are bundled but mount only once `deploy/cloudflare/endpoints.json` exists on Pages with the three Worker URLs; the Workers deploy from Brenden's Mac (`wrangler login` + `deploy`). Verified by live shots run 36719666693 (build `3699f7f3`, 390 and 1365). Rollback: pointer → `9f166e2`.
+- New homepage-only embed `1261f2b9-3dbf-4a2b-96e7-a13063534398` "GBM - Gators Game Graph v1 (homepage JSON-LD)" (HEAD, ESSENTIAL, rev 1, `deploy/seo-2026/home-game-graph-v1.html`). Refreshed by the Tuesday routine. Rollback: disable it.
+- Kickoff Watch (`.github/workflows/kickoff-watch.yml`) is armed: Saturday read-only homepage checks, comments on #34 only on failure.
+- Waiting on Brenden: Worker URLs from the Mac paste; Editor steps (place the Ask Buddy form `8ab68d60-d973-4cf4-bbd5-47dcdbf94774`, delete the "Today's Edition" heading); the Buddy column Blog draft and the first Game Threads post.
+
 ## Sept. 30, ~7:30 a.m. ET: Share GatorBait live (Jarvis)
 - Homepage build pointer `sports-live/current.json` → `b4158dd` (Share buttons on The Road Ahead, The Tunnel, the show). Home Code embed `622d8ece` unchanged at rev 28. Rollback: pointer → `729e645`.
 - New story-page embed `f285a38c-4a2b-43e9-b22d-a66eaeedfb41` (HEAD, ESSENTIAL, rev 1) loads `sports-live/share.js` only under `/post/`. Rollback: disable it.

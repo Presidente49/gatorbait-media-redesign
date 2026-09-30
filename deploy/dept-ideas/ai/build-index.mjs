@@ -5,6 +5,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { tokens } from './tokenize.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = join(here, '..', '..', '..');
@@ -12,11 +13,6 @@ const posts = JSON.parse(readFileSync(join(repo, 'gazette-live/posts.json'), 'ut
 const sb = JSON.parse(readFileSync(join(repo, 'sports-live/scoreboard.json'), 'utf8'));
 const hist = JSON.parse(readFileSync(join(here, 'history.json'), 'utf8'));
 
-const STOP = new Set('a an and are as at be by for from has have how in is it of on or that the this to was what when where which who why will with did does do gators florida uf'.split(' '));
-export function tokens(s) {
-  return String(s || '').toLowerCase().replace(/[’']/g, '').replace(/[^a-z0-9]+/g, ' ').split(' ')
-    .filter((w) => w && !STOP.has(w)).map((w) => (w.length > 4 && w.endsWith('s') ? w.slice(0, -1) : w));
-}
 const MON = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
 function etDate(iso) {
   const d = new Date(iso); const o = {};

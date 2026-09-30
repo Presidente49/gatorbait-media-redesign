@@ -142,9 +142,9 @@ try {
   check('links from readers refused', c3.inbox.slice(linkTry).some((o) => o.t === 'err' && o.code === 'link'));
   const closed = await mod({ cmd: 'scoreboard', sb });
   check(`real scoreboard restored: room ${closed.room.open ? 'open (' + closed.room.why + ' window now)' : 'closed until game day'}`, closed.room.kickoff === '2026-10-03T19:30:00.000Z');
-  await A.waitForFunction(() => document.querySelector('.gbs').getAttribute('data-quiet') === (document.querySelector('.gbs-clk em').textContent === 'Room open' ? '0' : '1'), null, { timeout: 8000 }).catch(() => { });
+  await A.waitForFunction((open) => document.querySelector('.gbs').getAttribute('data-quiet') === (open ? '0' : 'closed'), closed.room.open, { timeout: 8000 }).catch(() => { });
   if (!closed.room.open) { await A.screenshot({ path: join(here, 'shots/stands-390-quiet.png') }); await B.screenshot({ path: join(here, 'shots/stands-1365-quiet.png') }); say('saved shots/stands-390-quiet.png and shots/stands-1365-quiet.png (countdown to kickoff, no empty feed)'); }
-  check('quiet state shown when the room is closed', closed.room.open || await A.getAttribute('.gbs', 'data-quiet') === '1');
+  check('quiet state (score, countdown, no input) shown when the room is closed', closed.room.open || await A.getAttribute('.gbs', 'data-quiet') === 'closed');
   for (const c of [c3, c4, staff]) c.ws.close();
 } catch (e) { check('run completed without an exception', false, e.stack || String(e)); }
 check('no browser console errors', errors.length === 0, errors.join(' | ').slice(0, 400));

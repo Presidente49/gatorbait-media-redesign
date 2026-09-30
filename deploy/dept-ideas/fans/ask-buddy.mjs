@@ -30,7 +30,7 @@ const args = Object.fromEntries(process.argv.slice(2).map((a, i, all) =>
   a.startsWith("--") ? [a.slice(2), all[i + 1] && !all[i + 1].startsWith("--") ? all[i + 1] : true] : []).filter(Boolean));
 
 /* ---------- lexicons ---------- */
-const STOP = new Set(("a an the and or but of to in on at for with by from as is are was were be been it its this that these those he she they them his her their we our you your i my me not no yes do does did so if then than too very can could would should will just about into over after before up down out off again more most some such only own same what which who whom why how when where here there all any both each few other".split(" ")));
+const STOP = new Set(("a an the and or but of to in on at for with by from as is are was were be been it its this that these those he she they them his her their we our you your i my me not no yes do does did so if then than too very can could would should will just about into over after before up down out off again more most some such only own same what which who whom why how when where here there all any both each few other has have had got much many".split(" ")));
 const PROFANITY = ["damn", "hell", "ass", "bastard", "bitch", "crap", "shit", "fuck", "piss", "dick", "slut", "whore", "retard", "fag", "nigg"];
 const SLUR_HARD = new Set(["retard", "fag", "nigg"]);
 const HOSTILE = ["coward", "clown", "idiot", "moron", "loser", "trash", "sucks", "hate"];
@@ -44,8 +44,15 @@ const HANDLE_RE = /^[A-Za-z0-9_]{3,18}$/;
 const norm = (s) => String(s || "").toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 const tokens = (s) => norm(s).split(" ").filter((t) => t.length > 2 && !STOP.has(t)).map(stem);
 function stem(t) { return t.replace(/(ings|ing|ies|ers|ed|es|s)$/, (m) => (m === "es" || m === "s" ? "" : m === "ies" ? "y" : "")); }
-function jaccard(a, b) { const A = new Set(a), B = new Set(b); let i = 0; for (const x of A) if (B.has(x)) i++; return i / (A.size + B.size - i || 1); }
-const et = (iso) => new Date(iso).toLocaleString("en-US", { timeZone: "America/New_York", weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+/** Similarity: Jaccard, or containment (shared / smaller set) once both sides have 5+ keywords. */
+function similar(a, b) { const A = new Set(a), B = new Set(b); let i = 0; for (const x of A) if (B.has(x)) i++; const small = Math.min(A.size, B.size); return Math.max(i / (A.size + B.size - i || 1), small >= 5 ? i / small : 0); }
+const AP_MONTH = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+/** AP-style date in Eastern time: "Sat., Oct. 3, 3:30 p.m." */
+function et(iso) {
+  const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", weekday: "short", month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit", hour12: true }).formatToParts(new Date(iso)).map((x) => [x.type, x.value]));
+  const min = p.minute === "00" ? "" : ":" + p.minute;
+  return `${p.weekday}., ${AP_MONTH[Number(p.month) - 1]} ${p.day}, ${p.hour}${min} ${p.dayPeriod.toLowerCase().replace("am", "a.m.").replace("pm", "p.m.")}`;
+}
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 /** Next show slot: Mon/Wed/Thu 9 p.m. ET, from `now`. */
@@ -56,7 +63,7 @@ export function nextShow(now = new Date()) {
     const p = Object.fromEntries(fmt.formatToParts(t).map((x) => [x.type, x.value]));
     if (!["Mon", "Wed", "Thu"].includes(p.weekday)) continue;
     if (d === 0 && Number(p.hour) >= 21) continue;
-    return { weekday: p.weekday, date: `${p.year}-${p.month}-${p.day}`, label: `${p.weekday}., ${new Date(`${p.year}-${p.month}-${p.day}T12:00:00Z`).toLocaleString("en-US", { timeZone: "UTC", month: "short", day: "numeric" })}, 9 p.m. ET` };
+    return { weekday: p.weekday, date: `${p.year}-${p.month}-${p.day}`, label: `${p.weekday}., ${AP_MONTH[Number(p.month) - 1]} ${Number(p.day)}, 9 p.m. ET` };
   }
 }
 
@@ -104,7 +111,7 @@ export function dedupe(items) {
   const kept = [];
   for (const it of items.sort((a, b) => new Date(a.createdDate) - new Date(b.createdDate))) {
     const tk = tokens(it.question);
-    const dup = kept.find((k) => norm(k.question) === norm(it.question) || jaccard(k._tk, tk) >= 0.6);
+    const dup = kept.find((k) => norm(k.question) === norm(it.question) || similar(k._tk, tk) >= 0.6);
     if (dup) { dup.askedBy.push(it.handle); dup.asked += 1; dup.dupIds.push(it.id); continue; }
     kept.push({ ...it, _tk: tk, asked: 1, askedBy: [it.handle], dupIds: [] });
   }
@@ -142,8 +149,10 @@ export function rank(it, ctx) {
   for (const t of new Set(it._tk)) { const w = ctx.weights.get(t); if (w) { score += w; hits.push(t); } }
   score += Math.min(it.asked - 1, 3) * 2; // asked by several fans
   const len = it.question.length; if (len >= 60 && len <= 220) score += 1;
-  const story = ctx.stories.map((s) => ({ s, m: it._tk.filter((t) => s.kw.has(t)).length })).filter((x) => x.m > 1).sort((a, b) => b.m * b.s.w - a.m * a.s.w)[0];
-  const bucket = /\b(missouri|columbia|tiger|memorial)\b/.test(norm(it.question)) ? "Missouri" : /poll|rank|no 8|top ten|top 25|playoff/.test(norm(it.question)) ? "Poll and playoff" : /injur|sprain|pcl|knee|mri|hurt|out for/.test(norm(it.question)) ? "Injuries" : /texas|georgia|south carolina|rest of the season|schedule|road/.test(norm(it.question)) ? "Road ahead" : /line|trench|front|o line|offensive line|defense|special teams|return/.test(norm(it.question)) ? "Line play and units" : "Other";
+  const story = ctx.stories.map((s) => ({ s, m: it._tk.filter((t) => s.kw.has(t)).length })).filter((x) => x.m > 1).sort((a, b) => b.m - a.m || b.s.w - a.s.w)[0];
+  const nq = norm(it.question), oppRe = new RegExp(tokens(ctx.game.opponent).join("|") + (ctx.game.venue ? "|" + norm(ctx.game.venue).split(" ")[0] : ""));
+  if (oppRe.test(nq)) score += 3; // names the next opponent or its stadium
+  const bucket = /injur|sprain|pcl|knee|mri|hurt|out for/.test(nq) ? "Injuries" : oppRe.test(nq) ? ctx.game.opponent : /poll|rank|no 8|top ten|top 25|playoff/.test(nq) ? "Poll and playoff" : /texas|georgia|south carolina|rest of the season|schedule|road/.test(nq) ? "Road ahead" : /line|trench|front|o line|offensive line|defense|special teams|return/.test(nq) ? "Line play and units" : "Other";
   return { score: Math.round(score * 10) / 10, hits, story: story ? { title: story.s.title, url: story.s.url, author: story.s.author } : null, bucket };
 }
 
@@ -169,7 +178,7 @@ export function renderMarkdown(out) {
   if (backup.length) { L.push(``, `## Backups`, ``); backup.forEach((q) => L.push(`- **@${q.handle}** (${q.bucket}): ${q.question}`)); }
   if (review.length) { L.push(``, `## Editor review before use`, ``); review.forEach((q) => L.push(`- **@${q.handle}**: ${q.question}  \n  _${q.reasons.join("; ")}_`)); }
   L.push(``, `## Held (not for air, not public)`, ``);
-  held.forEach((q) => L.push(`- ${q.id.slice(0, 8)} @${q.handle}: ${q.reasons.join("; ")}`));
+  held.forEach((q) => L.push(`- …${q.id.slice(-4)} @${q.handle}: ${q.reasons.join("; ")}`));
   L.push(``, `## Rules`, ``, `- Nothing above is public until an editor marks it used. Held items stay in Wix and are never displayed.`, `- Fans give a handle and a question only; no email, phone or account is collected on this form.`, `- Questions may be trimmed for length and taste. Handle is read on air only when the fan ticked "OK to read on air."`, `- Ranking weights: opponent and venue from the ESPN scoreboard feed, keywords from the newest stories in gazette-live/posts.json, repeat questions from several fans.`);
   return L.join("\n") + "\n";
 }
@@ -228,13 +237,14 @@ function selfTest() {
   assert(heldIds.includes("QuietQuinn"), "no on-air consent is held");
   assert(out.review.some((r) => r.handle === "ArcherRoadAndy"), "all-caps goes to review, not air");
   assert(out.review.some((r) => r.handle === "OcalaOrange"), "too-short goes to review");
-  assert(out.queue[0].bucket === "Missouri", "top-ranked question is about the next opponent");
+  assert(out.queue[0].bucket === "Missouri", "top-ranked question names the next opponent");
   assert(out.queue.every((q) => q.reasons.length === 0), "nothing flagged reaches the air list");
   assert(!JSON.stringify(out.queue).includes("@example.com"), "no email leaks into the queue payload");
   assert(out.ctx.nextShow.weekday === "Wed" && out.ctx.nextShow.date === "2026-09-30", "next show resolves to Wed., Sept. 30");
   assert(nextShow(new Date("2026-10-03T02:00:00Z")).weekday === "Mon", "after Thursday's show the next slot is Monday");
   const md = renderMarkdown(out);
   assert(md.includes("No. 25 Missouri") && md.includes("ABC"), "show sheet carries opponent, rank and network from the feed");
+  assert(md.includes("Sat., Oct. 3, 3:30 p.m.") && md.includes("Wed., Sept. 30"), "dates are AP style");
   assert(!md.includes("352-555"), "held phone number is not printed in the show sheet");
   console.log(process.exitCode ? "SELF-TEST FAILED" : "SELF-TEST PASSED");
 }

@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-09-30T14:00:00.000Z",
+  "input": 16,
+  "unique": 14,
+  "duplicatesFolded": 2,
+  "ok": 7,
+  "review": 2,
+  "held": 5,
+  "buckets": {
+    "Other": 5,
+    "Missouri": 4,
+    "Road ahead": 3,
+    "Poll and playoff": 1,
+    "Injuries": 1
+  }
+}

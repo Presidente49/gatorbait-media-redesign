@@ -14,7 +14,8 @@
  * TOKEN_SECRET; payload {sub, name, tier:'reader'|'member'|'staff', exp}. DEV_TOKENS=1 lets /token mint
  * test tokens locally; never set it on the deployed Worker. */
 
-export const RING = 200, MAX_LEN = 240, LOCK_MIN = 5, HIDE_AT = 3, OPEN_BEFORE_MIN = 30, OPEN_AFTER_H = 5;
+// Not exported: workerd only accepts classes, functions and handlers as module exports.
+const RING = 200, MAX_LEN = 240, LOCK_MIN = 5, HIDE_AT = 3, OPEN_BEFORE_MIN = 30, OPEN_AFTER_H = 5;
 const WORDS = ['damn', 'hell', 'crap', 'ass', 'bitch', 'shit', 'fuck']; // starter list; override with the WORDS var (comma separated)
 const enc = new TextEncoder();
 

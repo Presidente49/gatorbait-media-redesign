@@ -35,7 +35,7 @@
     '.gbs-in button,.gbs-in a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:0;background:var(--o);color:#fff;font:800 15px/1 var(--c);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}' +
     '.gbs-quiet{display:none;flex:1;align-content:center;gap:10px;padding:24px 16px;text-align:center}.gbs-quiet h3{margin:0;font:800 30px/1 var(--c);text-transform:uppercase;color:var(--ink)}.gbs-quiet p{margin:0;font-size:14px;color:var(--mut)}.gbs-quiet b{color:var(--ink)}' +
     '.gbs-cd{display:flex;justify-content:center;gap:12px;font:800 44px/1 var(--c);font-variant-numeric:tabular-nums}.gbs-cd span{display:grid}.gbs-cd i{font:700 10px/1 var(--c);letter-spacing:.14em;color:#ffb08f;font-style:normal}' +
-    '.gbs[data-quiet="1"] .gbs-quiet{display:grid}.gbs[data-quiet="1"] .gbs-feed,.gbs[data-quiet="1"] .gbs-sys,.gbs[data-quiet="1"] .gbs-slow,.gbs[data-quiet="1"] .gbs-in{display:none}' +
+    '.gbs[data-quiet="1"] .gbs-quiet,.gbs[data-quiet="closed"] .gbs-quiet{display:grid}.gbs[data-quiet="1"] .gbs-feed,.gbs[data-quiet="closed"] .gbs-feed,.gbs[data-quiet="closed"] .gbs-sys,.gbs[data-quiet="closed"] .gbs-slow,.gbs[data-quiet="closed"] .gbs-in{display:none}' +
     '@media(min-width:821px){.gbs-t b{font-size:28px}.gbs-sc{font-size:44px}.gbs-p p{font-size:16px}}';
   if (!document.getElementById('gbs-css')) { var st = document.createElement('style'); st.id = 'gbs-css'; st.textContent = CSS; document.head.appendChild(st); }
 
@@ -63,8 +63,9 @@
   }
   /* ---------- quiet state: no open room, or nothing said in ten minutes ---------- */
   function quiet() {
-    var r = room || {}, k = Date.parse(r.kickoff), on = !r.open || (now() - lastMsg > 600000 && !q('feed').children.length);
-    root.setAttribute('data-quiet', on ? '1' : '0'); if (!on) return;
+    // Closed: score and countdown only. Open but idle (nothing said in ten minutes): the same panel above the input, so the first poster is never staring at an empty feed.
+    var r = room || {}, k = Date.parse(r.kickoff), on = !r.open ? 'closed' : now() - lastMsg > 600000 && !q('feed').children.length ? '1' : '0';
+    root.setAttribute('data-quiet', on); if (on === '0') return;
     var s = Number.isFinite(k) ? Math.max(0, Math.floor((k - now()) / 1000)) : 0, l = r.last, n = r.next;
     var html = '<h3>' + (r.open ? 'Quiet in here' : 'The room opens on game day') + '</h3>' +
       (s > 0 ? '<p>Kickoff in</p><div class="gbs-cd"><span>' + pad(Math.floor(s / 86400)) + '<i>days</i></span><span>' + pad(Math.floor(s / 3600) % 24) + '<i>hrs</i></span><span>' + pad(Math.floor(s / 60) % 60) + '<i>min</i></span><span>' + pad(s % 60) + '<i>sec</i></span></div>' : '') +
@@ -100,7 +101,8 @@
   function token(cb) {
     if (C.token) return cb(C.token);
     if (!C.tokenUrl) return cb('');
-    fetch(C.tokenUrl, { credentials: 'include' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) { cb(j && j.token || ''); }).catch(function () { cb(''); });
+    var same = /^\//.test(C.tokenUrl) || C.tokenUrl.indexOf(location.origin + '/') === 0; // the Velo function is same-origin and needs the member cookie
+    fetch(C.tokenUrl, { credentials: same ? 'include' : 'omit' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) { cb(j && j.token || ''); }).catch(function () { cb(''); });
   }
   function signin() {
     put('count', 'Sign in to chat');

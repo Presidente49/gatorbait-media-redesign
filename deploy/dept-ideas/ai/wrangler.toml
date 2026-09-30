@@ -1,0 +1,16 @@
+# Ask GatorBait. Deploy needs Jarvis (#34 scope); nothing here is deployed by the AI desk.
+name = "ask-gatorbait"
+main = "worker.mjs"
+compatibility_date = "2026-09-01"
+
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "ASK_KV"
+id = "REPLACE_WITH_NEW_NAMESPACE_ID" # create `ASK_GATORBAIT_KV`; do not reuse GATORBAIT_SOCIAL_KV (b2b1b70ae87047d6ac380b9a839780ef)
+
+[vars]
+ASK_PER_MIN = "8"
+ASK_PER_DAY = "60"
+# HASH_SALT is a secret: `wrangler secret put HASH_SALT`

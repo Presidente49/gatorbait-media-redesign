@@ -1,85 +1,126 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kickoff Watch Preview</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#07122e;--blue:#0021a5;--orange:#fa4616;--ink:#f3f5fa;--card:#0b1a44;--line:rgba(243,245,250,.14);--dim:rgba(243,245,250,.66)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--navy);color:var(--ink);font-family:Barlow,system-ui,sans-serif;font-size:16px;line-height:1.45;padding:20px 16px 48px}
-main{max-width:560px;margin:0 auto}
-.kicker{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--orange)}
-h1{font-size:28px;line-height:1.1;font-weight:800;margin:6px 0 4px}
-.lede{color:var(--dim);margin:0 0 22px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px;margin:0 0 16px}
-.who{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--dim);margin-bottom:10px}
-.av{width:28px;height:28px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-weight:800;font-size:12px;color:var(--ink)}
-.who b{color:var(--ink);font-weight:700}
-.title{font-size:19px;font-weight:800;line-height:1.2;margin:0 0 4px}
-.sub{color:var(--dim);font-size:14px;margin:0 0 12px}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th{text-align:left;font-weight:700;color:var(--dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:0 0 6px;border-bottom:1px solid var(--line)}
-td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}
-td:first-child{font-weight:700;white-space:nowrap;padding-right:10px;width:1%}
-.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;padding:2px 7px;border-radius:4px;margin-right:6px;vertical-align:1px}
-.pass{background:rgba(0,33,165,.55);color:var(--ink)}
-.fail{background:var(--orange);color:var(--navy)}
-.h{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin:14px 0 6px}
-ul{margin:0;padding-left:18px;font-size:14px}
-li{margin:0 0 6px}
-.foot{font-size:13px;color:var(--dim);margin:12px 0 0;border-top:1px solid var(--line);padding-top:10px}
-.foot a,.sub a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--orange)}
-.ok{border-color:rgba(0,33,165,.9)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 16px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 10px 8px}
-.stat b{display:block;font-size:24px;font-weight:800;line-height:1;color:var(--ink)}
-.stat span{font-size:12px;color:var(--dim);line-height:1.2;display:block;margin-top:4px}
-.note{font-size:13px;color:var(--dim)}
-@media (min-width:600px){h1{font-size:34px}.card{padding:18px}}
-</style>
-</head>
-<body>
-<main>
-<p class="kicker">Ops · Kickoff Watch</p>
-<h1>What lands on #34 when the homepage slips on a Saturday</h1>
-<p class="lede">Nothing posts while the checks pass. Below: the one failure comment, then the recovery note. Sample data for Oct. 3 at Missouri.</p>
-
-<section class="card">
-  <div class="who"><span class="av">GB</span><b>github-actions</b> commented at 4:10 p.m. ET</div>
-  <p class="title">Kickoff Watch: 2 of 5 homepage checks failed</p>
-  <p class="sub">Florida at Missouri, 4:10 p.m. ET</p>
-  <table>
-    <tr><th>Check</th><th>Result</th></tr>
-    <tr><td>Homepage</td><td><span class="tag pass">Pass</span>200 in 0.4 s</td></tr>
-    <tr><td>Home Code loader</td><td><span class="tag pass">Pass</span>V3 loader served, baked fallback 4cc4ad3</td></tr>
-    <tr><td>Build pointer</td><td><span class="tag fail">Fail</span>Pages serves 4cc4ad3, main has 729e645 (committed 22 min ago)</td></tr>
-    <tr><td>Front-page bundle</td><td><span class="tag pass">Pass</span>homepage.js@4cc4ad3 served, 41 KB</td></tr>
-    <tr><td>Scoreboard feed</td><td><span class="tag fail">Fail</span>updatedAt is 41 min old during the game; main is newer (3 min), so Pages is behind</td></tr>
-  </table>
-  <p class="h">Next step</p>
-  <ul>
-    <li><b>Build pointer:</b> Pages is behind main. If the next tick agrees, request a build with the same call refresh-newsroom-feed already makes.</li>
-    <li><b>Scoreboard feed:</b> Request a Pages build (see Build pointer).</li>
-  </ul>
-  <p class="foot">Read-only run; nothing was changed. Next tick in 10 minutes. <a href="#">Run log</a></p>
-</section>
-
-<section class="card ok">
-  <div class="who"><span class="av">GB</span><b>github-actions</b> commented at 4:30 p.m. ET</div>
-  <p class="title">Kickoff Watch: all 5 checks pass again</p>
-  <p class="sub">Florida at Missouri, 4:30 p.m. ET. Earlier failure: build-pointer, scoreboard-feed. Read-only run; nothing was changed. <a href="#">Run log</a></p>
-</section>
-
-<p class="h">A game Saturday, by the numbers</p>
-<div class="stats">
-  <div class="stat"><b>36</b><span>ticks in the six-hour game window</span></div>
-  <div class="stat"><b>0</b><span>model tokens, Wix writes, emails</span></div>
-  <div class="stat"><b>≈30</b><span>Actions minutes a week, free on a public repo</span></div>
-</div>
-<p class="note">Outside the window each tick exits in about a second. A failure repeats on #34 only when its signature changes, so a stuck Pages build is one comment, not thirty-six.</p>
-</main>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sunday Ledger 2026-09-27</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;800&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
+<style>:root{--navy:#0021a5;--orange:#fa4616;--ink:#101828;--dim:#667085;--line:#e4e7ec;--bg:#fff}@media(prefers-color-scheme:dark){:root{--ink:#f2f4f7;--dim:#98a2b3;--line:#2b3340;--bg:#0b1220}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 Barlow,system-ui,sans-serif;padding:20px 16px 48px}main{max-width:760px;margin:0 auto}
+h1{font-family:"Barlow Condensed",Barlow,sans-serif;font-weight:700;font-size:34px;line-height:1.05;margin:0 0 6px;color:var(--navy)}@media(prefers-color-scheme:dark){h1{color:#fff}}
+h2{font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin:26px 0 8px;font-weight:800}
+p{margin:0 0 10px}ul{margin:0 0 10px;padding-left:20px}li{margin:3px 0}a{color:var(--navy)}@media(prefers-color-scheme:dark){a{color:#9db4ff}}
+table{border-collapse:collapse;width:100%;margin:6px 0 12px;font-size:14px}th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-weight:600;color:var(--dim)}
+.wrap{overflow-x:auto}</style></head><body><main class="wrap"><h1>Sunday Ledger: week of Sept. 21 to Sept. 27, 2026</h1>
+<p>GatorBait Media weekly ops report. Generated Sept. 30, 2026 at 5:57 a.m. ET. <b>Redacted sample: every audience number is printed as "n".</b> Prior week is Sept. 14 to Sept. 20.</p>
+<h2>Attention</h2>
+<ul>
+<li>GA4 reported no usable data for 4 of 7 days (Sept. 21, Sept. 22, Sept. 23, Sept. 24). The site totals below are incomplete; check the GA4 tag on the Wix site and the Windsor GA4 connection before trusting a week-over-week line.</li>
+<li>Direct is n% of sessions with an engaged rate of n%. That pattern is bot or referrer-stripped traffic, not readers; do not quote the sessions total to anyone until it is explained.</li>
+<li>Facebook The Buddy Martin Show: reach n% vs. the prior week.</li>
+<li>Instagram thebestfridaysinfootball: no posts this week.</li>
+<li>YouTube: no connected read path (see Sources). The Buddy Martin Show channel is not in this ledger.</li>
+</ul>
+<h2>Games (ESPN via sports-live/scoreboard.json)</h2>
+<ul>
+<li>Sept. 26: Florida 52, No. 4 Ole Miss 28 (home). Record 4-0, ranked No. 8.</li>
+<li>Next: Florida at No. 25 Missouri, Oct. 3, 3:30 p.m. ET on ABC. <a href="https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind">Preview</a></li>
+</ul>
+<h2>Stories published (39, from gazette-live/posts.json and its 19 snapshots this week)</h2>
+<p>Buddy Martin 9 · GatorBait Staff 9 · Brenden Martin 7 · Franz Beard 7 · EDDIE GILLEY 3 · Loren Meadows 2 · Chris Spears 1 · Carlton Reese 1</p>
+<ul>
+<li>Sept. 27 · Brenden Martin · <a href="https://www.gatorbaitmedia.com/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28">Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28</a></li>
+<li>Sept. 27 · Brenden Martin · <a href="https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss">Chris Spears' Best Shots: Florida 52, Ole Miss 28</a></li>
+<li>Sept. 27 · Brenden Martin · <a href="https://www.gatorbaitmedia.com/post/breaking-vernell-brown-mri-grade-1-pcl-sprain-florida-gators">BREAKING: MRI Confirms Grade 1 PCL Sprain for Gators WR Vernell Brown III</a></li>
+<li>Sept. 27 · Brenden Martin · <a href="https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind">Show-Me State of Mind: A First Look at No. 25 Missouri</a></li>
+<li>Sept. 27 · Chris Spears · <a href="https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss">10 Thoughts From the Sidelines: Florida 52, Ole Miss 28</a></li>
+<li>Sept. 27 · Brenden Martin · <a href="https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls">Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls</a></li>
+<li>Sept. 27 · Buddy Martin · <a href="https://www.gatorbaitmedia.com/post/bound-for-the-cfb-top-ten-cue-up-happy-days-are-here-again">Bound for the CFB Top Ten: Cue Up “Happy Days Are Here Again”</a></li>
+<li>Sept. 27 · Loren Meadows · <a href="https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28">Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28</a></li>
+<li>Sept. 27 · Franz Beard · <a href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss">Beating Ole Miss was huge, but the Gators left at least 28 points on the field</a></li>
+<li>Sept. 27 · Brenden Martin · <a href="https://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25">What Happened in College Football Saturday: Gators Take Down No. 4 Ole Miss as Top 25 Shakes</a></li>
+<li>…and 29 more in the full ledger.</li>
+</ul>
+<h2>Site (GA4, Windsor.ai)</h2>
+<table><tr><th>Metric</th><th>This week</th><th>Prior week</th><th>Change</th></tr>
+<tr><td>Sessions</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>Active users</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>New users</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>Page views</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>Engaged sessions</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>Days with data</td><td>3 of 7</td><td>7 of 7</td><td></td></tr>
+</table>
+<p>Top pages by views:</p>
+<ul>
+<li>n · /</li>
+<li>n · /magazine</li>
+<li>n · /post/sumrall-postgame-press-conference-ole-miss-not-fully-awake</li>
+<li>n · /post/the-sweet-music-chimes-again</li>
+<li>n · /post/florida-ole-miss-final-baugh-gators-run-over-rebels</li>
+</ul>
+<p>Channels (sessions, engaged): Direct n (n) · Unassigned n (n) · Organic Social n (n) · Organic Search n (n) · Referral n (n) · AI Assistant n (n)</p>
+<p>Devices: mobile n · desktop n · tablet n</p>
+<h2>Search (Google Search Console, Windsor.ai)</h2>
+<table><tr><th>Metric</th><th>This week</th><th>Prior week</th><th>Change</th></tr>
+<tr><td>Clicks</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>Impressions</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>CTR</td><td>n%</td><td>n%</td><td></td></tr>
+<tr><td>Avg. position</td><td>n</td><td>n</td><td></td></tr>
+</table>
+<p>Top queries (clicks): gatorbait media n · gatorbait n · joey freshwater n · gator bait media n · gator bait magazine n</p>
+<p>Top pages (clicks):</p>
+<ul>
+<li>n · /</li>
+<li>n · /post/buddy-martin-blog-the-complete-field-guide-to-joey-freshwater-s-aliases</li>
+<li>n · /magazine</li>
+<li>n · /post/jon-sumrall-postgame-florida-auburn</li>
+<li>n · /post/jon-sumrall-stayed-home-so-did-his-star-running-back-it-was-a-brilliant-choice</li>
+</ul>
+<h2>Facebook (organic, Windsor.ai)</h2>
+<table><tr><th>Page</th><th>Posts</th><th>Impressions</th><th>Reach</th><th>Engagements</th><th>Video views</th><th>Reach vs. prior</th></tr>
+<tr><td>Gator Bait Media</td><td>96</td><td>n</td><td>n</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>The Buddy Martin Show</td><td>46</td><td>n</td><td>n</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>Best Fridays in Football</td><td>5</td><td>n</td><td>n</td><td>n</td><td>n</td><td>n%</td></tr>
+</table>
+<p>Top posts by impressions:</p>
+<ul>
+<li>n · Gator Bait Media · Sept. 25 · Lights out. Phones up. 90,000 singing Won't Back Down. 🐊🔦 Full video on our YouTube: htt</li>
+<li>n · Gator Bait Media · Sept. 27 · "No defense in the country can stop us. I'm trying to put up 70." — Jadan Baugh after 142 </li>
+<li>n · Gator Bait Media · Sept. 26 · 🐊 THE SWAMP WAS ROCKING. Gators take down No. 4 Ole Miss 52-28 — 4-0 for the first time s</li>
+<li>n · Gator Bait Media · Sept. 23 · Buster Faulkner's offense is anything but predictable — and the numbers back it up. The Ga</li>
+<li>n · Gator Bait Media · Sept. 26 · 🐊 52-28. STATEMENT MADE IN THE SWAMP.  Baugh (142 yds, 3 TDs) and Clark (career-high 126)</li>
+</ul>
+<h2>Instagram (Windsor.ai)</h2>
+<table><tr><th>Account</th><th>Posts</th><th>Reach</th><th>Views</th><th>Interactions</th><th>Reach vs. prior</th></tr>
+<tr><td>gatorbaitmedia</td><td>36</td><td>n</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>thebuddymartinshow</td><td>20</td><td>n</td><td>n</td><td>n</td><td>n%</td></tr>
+<tr><td>thebestfridaysinfootball</td><td>0</td><td>n</td><td>n</td><td>n</td><td>n%</td></tr>
+</table>
+<p>Top posts by reach:</p>
+<ul>
+<li>n · gatorbaitmedia · REELS · <a href="https://www.instagram.com/reel/DduVi8FjjAz/">Swamp noise causes false starts — just ask the visitors. Graham Hall from 247Spo</a></li>
+<li>n · gatorbaitmedia · REELS · <a href="https://www.instagram.com/reel/DduVvgfDs6b/">"He was paid to be a backup." From Ferris State to Heisman favorite — the wildes</a></li>
+<li>n · gatorbaitmedia · REELS · <a href="https://www.instagram.com/reel/DdnjWXWjxI6/">"I love the fact that he's super aggressive." Faulkner on going for it on 4th-an</a></li>
+<li>n · gatorbaitmedia · REELS · <a href="https://www.instagram.com/reel/DdoYINwk_dW/">"Recruiting rankings are nonsense. This QB proves it." Stars don't throw touchdo</a></li>
+<li>n · gatorbaitmedia · REELS · <a href="https://www.instagram.com/reel/DdnjboLD1gJ/">"He's played good enough to cut him loose." Faulkner on Philo, the run game, and</a></li>
+</ul>
+<h2>YouTube</h2>
+<p>Not connected on any read path this session; see Sources. Nothing reported.</p>
+<h2>Site health (live-presentation-qc, GitHub Actions)</h2>
+<ul>
+<li>Latest run: #144 success on claude/dept-ideas at f5f8e63, Sept. 30 1:04 a.m. ET. <a href="https://github.com/Presidente49/gatorbait-media-redesign/actions/runs/36671764685">Run</a></li>
+<li>Runs dated in the week: 0. The run list read covers the newest 5 runs only.</li>
+<li>scoreboard.json updated Sept. 28, 2026 10:17 p.m. ET; posts.json snapshots this week: 19.</li>
+</ul>
+<h2>Sources</h2>
+<table><tr><th>Connector</th><th>Status</th></tr>
+<tr><td>windsor.googleanalytics4</td><td>answered (4 reads, 340655495 GatorBaitMedia)</td></tr>
+<tr><td>windsor.searchconsole</td><td>answered (3 reads, sc-domain:gatorbaitmedia.com)</td></tr>
+<tr><td>windsor.facebook_organic</td><td>answered (2 reads, 3 accounts)</td></tr>
+<tr><td>windsor.instagram</td><td>answered (2 reads, 3 accounts)</td></tr>
+<tr><td>github.actions</td><td>answered (1 read)</td></tr>
+<tr><td>metricool.getBrandSettings</td><td>refused: This brand doesn't have any social network connected yet. Ask the user to connect at least one network before continuing here: https://app.metricool.com/brands/connections?blogId=6946016</td></tr>
+<tr><td>supermetrics.data_source_discovery</td><td>refused: authentication_status: NOT_AUTHENTICATED for GAWA (Google Analytics), GW (Google Search Console), FB (Facebook Insights), IGI (Instagram Insights), YT2 (YouTube); GW returned login_note: You need to log in with this link before using this data source.</td></tr>
+<tr><td>posthog.project-get</td><td>refused: project 601216 Default project: ingested_event: false, completed_snippet_onboarding: false (no snippet on the site; nothing to query)</td></tr>
+<tr><td>google_drive.search_files</td><td>refused: {} (no files matched GatorBait + analytics/weekly/report/ledger)</td></tr>
+</table>
+<ul>
+<li>YouTube: no connected read path this session (Metricool has no networks; Supermetrics YT2 not authenticated; Windsor lists no youtube account). vidIQ was outside the ops brief's tool list.</li>
+</ul>
+<p>Read-only. This report changed nothing on the site, the socials or the repo. No follower, subscriber or revenue figures are collected.</p></main></body></html>

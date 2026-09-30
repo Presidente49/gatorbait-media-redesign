@@ -20,6 +20,8 @@ const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[i + 1] : d; };
 const flag = k => argv.includes(k);
 const REDACT = flag('--redact');
+const COMPACT = flag('--compact');          // preview size: 10 stories, top-5 lists
+const TOPN = COMPACT ? 5 : 8, MAXSTORIES = COMPACT ? 10 : Infinity;
 const REPO = opt('--repo', process.cwd());
 const OUT = opt('--out', join(process.cwd(), 'ledger'));
 const INPUTS = opt('--inputs', join(OUT, 'inputs'));
@@ -173,7 +175,8 @@ L.push('');
 L.push(`## Stories published (${stories.list.length}, from gazette-live/posts.json and its ${stories.snapshots} snapshots this week)`);
 L.push(Object.entries(byAuthor).sort((a, b) => b[1] - a[1]).map(([a, n]) => `${a} ${n}`).join(' · ') || 'none');
 L.push('');
-L.push(stories.list.map(s => `- ${ap(s.et)} · ${s.author || 'Staff'} · [${esc(s.title)}](${s.url})`).join('\n') || '- No stories found in the window.');
+L.push(stories.list.slice(0, MAXSTORIES).map(s => `- ${ap(s.et)} · ${s.author || 'Staff'} · [${esc(s.title)}](${s.url})`).join('\n') || '- No stories found in the window.');
+if (stories.list.length > MAXSTORIES) L.push(`- …and ${stories.list.length - MAXSTORIES} more in the full ledger.`);
 L.push('');
 L.push('## Site (GA4, Windsor.ai)');
 if (gaWeek) {
@@ -185,7 +188,7 @@ if (gaWeek) {
     ['Engaged sessions', num(gaWeek.engaged), num(gaPrior.engaged), delta(gaWeek.engaged, gaPrior.engaged)],
     ['Days with data', String(7 - gaGap.length) + ' of 7', String(gaPrior.days) + ' of 7', ''],
   ]));
-  if (gaPages.length) { L.push(''); L.push('Top pages by views:'); L.push(gaPages.slice(0, 8).map(p => `- ${num(p.screen_page_views)} · ${p.page_path}`).join('\n')); }
+  if (gaPages.length) { L.push(''); L.push('Top pages by views:'); L.push(gaPages.slice(0, TOPN).map(p => `- ${num(p.screen_page_views)} · ${p.page_path}`).join('\n')); }
   if (gaChannels.length) { L.push(''); L.push('Channels (sessions, engaged): ' + gaChannels.map(c => `${c.session_default_channel_group} ${num(c.sessions)} (${num(c.engaged_sessions)})`).join(' · ')); }
   if (gaDevices.length) { L.push(''); L.push('Devices: ' + gaDevices.map(d => `${d.devicecategory} ${num(d.sessions)}`).join(' · ')); }
 } else L.push('Not available this week (no ga4-daily.json input).');
@@ -198,8 +201,8 @@ if (gscWeek) {
     ['CTR', pct(gscWeek.ctr), pct(gscPrior.ctr), ''],
     ['Avg. position', pos(gscWeek.position), pos(gscPrior.position), ''],
   ]));
-  if (gscQueries.length) { L.push(''); L.push('Top queries (clicks): ' + gscQueries.slice(0, 8).map(q => `${q.query} ${num(q.clicks)}`).join(' · ')); }
-  if (gscPages.length) { L.push(''); L.push('Top pages (clicks):'); L.push(gscPages.slice(0, 6).map(p => `- ${num(p.clicks)} · ${p.page.replace('https://www.gatorbaitmedia.com', '') || '/'}`).join('\n')); }
+  if (gscQueries.length) { L.push(''); L.push('Top queries (clicks): ' + gscQueries.slice(0, TOPN).map(q => `${q.query} ${num(q.clicks)}`).join(' · ')); }
+  if (gscPages.length) { L.push(''); L.push('Top pages (clicks):'); L.push(gscPages.slice(0, TOPN).map(p => `- ${num(p.clicks)} · ${p.page.replace('https://www.gatorbaitmedia.com', '') || '/'}`).join('\n')); }
 } else L.push('Not available this week (no gsc-daily.json input).');
 L.push('');
 L.push('## Facebook (organic, Windsor.ai)');

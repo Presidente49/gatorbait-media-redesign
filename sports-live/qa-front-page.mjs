@@ -94,7 +94,7 @@ for (const sc of scenarios) {
       const vw = document.documentElement.clientWidth;
       const off = [];
       if (root) for (const el of root.querySelectorAll('*')) {
-        if (el.closest('.fp-tk-view,#fp-embers,.fp-sr,.fp-skip')) continue;
+        if (el.closest('.fp-tk-view,#fp-embers,.fp-sr,.fp-skip,#gr-track')) continue; // #gr-track scrolls sideways by design
         const b = el.getBoundingClientRect();
         if (b.width && (b.right > vw + 1 || b.left < -1)) off.push(el.className || el.tagName);
       }

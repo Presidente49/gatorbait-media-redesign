@@ -319,6 +319,43 @@
     }
     return { live: false, label: '' };
   }
+  /* ---------- The Road Ahead: season band under the lead ---------- */
+  function roadHtml(sb) {
+    var games = (sb.schedule || []).slice(0, 14);
+    if (games.length < 3) return '';
+    var W = 0, Ls = 0, nx = -1, fm = new Intl.DateTimeFormat('en-US', { timeZone: TZ, month: 'short', day: 'numeric' });
+    var cards = games.map(function (g, i) {
+      var fin = g.status === 'final' && g.score, win = fin && g.score.fla > g.score.opp;
+      if (fin) { if (win) W++; else Ls++; } else if (nx < 0) nx = i;
+      var top = '<div class="dt">' + esc(fm.format(new Date(g.date))) + ' · ' + (g.home ? 'Home' : 'Away') + '</div><div class="op">' + (g.opponentRank ? '<span class="rk">No. ' + g.opponentRank + '</span>' : '') + esc(g.opponent) + '</div>', body;
+      if (fin) body = '<div class="sc">' + (win ? 'W ' : 'L ') + g.score.fla + '–' + g.score.opp + '</div><div class="bar"><i data-w="' + Math.max(6, Math.min(100, Math.round((g.score.fla - g.score.opp) / 40 * 100))) + '"></i></div><div class="sub">' + esc(g.tv || 'Final') + '</div>';
+      else if (i === nx) body = '<div class="cd" data-k="' + esc(g.date) + '">…</div><div class="sub">to kickoff' + (g.tv ? ' · ' + esc(g.tv) : '') + '</div>';
+      else body = '<div class="sub" style="margin-top:auto">' + esc(g.tv || 'Kickoff TBA') + '</div>';
+      var cls = 'g' + (win ? ' w' : '') + (i === nx ? ' nx' : '') + (g.opponentRank && g.opponentRank <= 5 && !fin ? ' boss' : '');
+      var url = g.storyUrl ? safeUrl(g.storyUrl, 'post') : '';
+      return (url ? '<a href="' + esc(url) + '"' : '<div') + ' class="' + cls + '" role="listitem">' + top + body + (url ? '</a>' : '</div>');
+    }).join('');
+    return '<section id="gbm-road" aria-label="Florida season road"><div class="hd"><h2>The road <span>ahead</span></h2><div class="rec"><b>' + W + '–' + Ls + '</b>' + (sb.team && sb.team.season ? esc(sb.team.season) : '2026') + ' record</div></div><div class="track" id="gr-track" role="list"><div class="line"><i id="gr-line"></i></div>' + cards + '</div></section>';
+  }
+  function initRoad(root) {
+    var T = root.querySelector('#gr-track'); if (!T) return;
+    var L = T.querySelector('.line'), nodes = Array.prototype.slice.call(T.querySelectorAll('.g')), nxEl = T.querySelector('.g.nx');
+    function tick() {
+      var c = T.querySelector('.cd'); if (!c) return;
+      var ms = new Date(c.getAttribute('data-k')) - now(); if (ms <= 0) { c.textContent = 'Live'; return; }
+      c.textContent = Math.floor(ms / 864e5) + 'd ' + Math.floor(ms % 864e5 / 36e5) + 'h ' + Math.floor(ms % 36e5 / 6e4) + 'm';
+    }
+    tick(); setInterval(tick, 30000);
+    function run() {
+      var upto = nxEl || nodes[nodes.length - 1]; if (!upto) return;
+      L.style.right = 'auto'; L.style.width = (T.scrollWidth - 40) + 'px';
+      L.firstChild.style.width = (upto.offsetLeft + upto.offsetWidth / 2 - 20) + 'px';
+      T.querySelectorAll('.bar i').forEach(function (b) { b.style.width = b.getAttribute('data-w') + '%'; });
+      if (nxEl && T.scrollWidth > T.clientWidth) T.scrollLeft = Math.max(0, nxEl.offsetLeft - 32);
+    }
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { run(); o.disconnect(); } }, { threshold: .25 }).observe(T); else run();
+  }
+
   function hubHtml(latest, sb, posts, used) {
     var sn = showNext(), ep = BUNDLE.show.episode;
     var mLatest = '<section class="fp-mod fp-mod-latest" aria-label="Latest stories"><h2>Latest</h2><ol class="fp-latest">' + latest.map(function (p) {
@@ -459,7 +496,7 @@
     root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? boardHtml(gs) : '') +
       '<main id="sh-main"><div class="fp-wrap"><div id="sh-freshness"></div>' + leadHtml(lead, picked.why) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
-      hubHtml(latest, sb, posts, used) + '</main>';
+      roadHtml(sb) + hubHtml(latest, sb, posts, used) + '</main>';
     if (!document.getElementById('gbm-fp26-styles')) {
       var style = document.createElement('style'); style.id = 'gbm-fp26-styles'; style.textContent = CSS; document.head.appendChild(style);
     }
@@ -469,6 +506,7 @@
     if (shell && shell.parentNode) shell.parentNode.insertBefore(root, shell.nextSibling);
     else document.body.insertBefore(root, document.body.firstChild);
     doc.classList.add('gbm-gazette-live', 'gbm-standalone-live');
+    try { initRoad(root); } catch (_) {}
     loading = false;
     window.__GBM_GAZETTE_RUNTIME__.ready = true;
     if (window.__GBM_GAZETTE_BOOT__ && window.__GBM_GAZETTE_BOOT__.ready) window.__GBM_GAZETTE_BOOT__.ready();

@@ -64,14 +64,13 @@ export function buildSportsEvent(game, { venueByEventId = {}, standalone = false
     '@type': 'SportsEvent',
     '@id': gameId(game),
     name: gameName(game),
-    sport: 'American Football',
     startDate: gameStartDate(game),
     eventStatus: 'https://schema.org/EventScheduled',
     homeTeam: game.home ? florida : opponent,
     awayTeam: game.home ? opponent : florida,
-    organizer: standalone ? SEC : { '@id': SEC_ID },
     sameAs: `https://www.espn.com/college-football/game/_/gameId/${game.eventId}`,
   };
+  if (standalone) { ev.sport = 'American Football'; ev.organizer = SEC; }
   if (game.home) ev.location = standalone ? HOME_VENUE : { '@id': VENUE_ID };
   else if (venueByEventId[game.eventId]) ev.location = { '@type': 'Place', name: venueByEventId[game.eventId] };
   if (game.status === 'final' && game.score) {
@@ -92,17 +91,17 @@ export function authorNode(name) {
   return a;
 }
 
-export function articleStub(post) {
+export function articleStub(post, { standalone = false } = {}) {
   const a = {
     '@type': 'NewsArticle',
-    '@id': post.url,
-    url: post.url,
+    '@id': post.url, // the canonical URL doubles as the node id; `url` is only spelled out on standalone nodes
+    ...(standalone ? { url: post.url } : {}),
     headline: String(post.title || '').slice(0, 110),
     datePublished: post.firstPublishedDate,
     author: authorNode(post.author),
     publisher: { '@id': ORG_ID },
   };
-  if (post.image && post.image.src) a.image = post.image.src;
+  if (standalone && post.image && post.image.src) a.image = post.image.src; // homepage stubs skip the image: the post's own Wix NewsArticle carries it
   return a;
 }
 
@@ -136,8 +135,9 @@ export function buildHomepageGraph({ posts, scoreboard, now = new Date(), storyL
   return { '@context': 'https://schema.org', '@graph': graph };
 }
 
+// Title/URL only: excerpts mention opponents in passing (a poll column citing FPI odds against Texas is not a Texas story).
 export function matchGame(post, scoreboard) {
-  const hay = `${post.title} ${post.excerpt || ''} ${post.url}`.toLowerCase();
+  const hay = ` ${post.title} ${post.url.split('/post/')[1] || ''} `.toLowerCase().replace(/-/g, ' ');
   const sched = scoreboard.schedule || [];
   const direct = sched.find((g) => g.storyUrl && g.storyUrl === post.url);
   if (direct) return direct;
@@ -155,7 +155,7 @@ export function buildArticleEvent(post, scoreboard) {
   if (scoreboard.next && scoreboard.next.venue) venues[scoreboard.next.eventId] = scoreboard.next.venue;
   if (scoreboard.last && scoreboard.last.venue) venues[scoreboard.last.eventId] = scoreboard.last.venue;
   const ev = buildSportsEvent(game, { venueByEventId: venues, standalone: true });
-  ev.subjectOf = articleStub(post); // the page itself is the one story for this event
+  ev.subjectOf = articleStub(post, { standalone: true }); // the page itself is the one story for this event
   delete ev.subjectOf.publisher; // no @graph on the article page to resolve the publisher @id
   return { '@context': 'https://schema.org', ...ev };
 }
@@ -167,7 +167,7 @@ export function toWixSeoTag(obj) { return { type: 'script', props: { type: 'appl
 
 const REQUIRED = {
   SportsEvent: ['name', 'startDate', 'homeTeam', 'awayTeam', 'eventStatus'],
-  NewsArticle: ['headline', 'url', 'datePublished', 'author'],
+  NewsArticle: ['headline', 'datePublished', 'author'],
   NewsMediaOrganization: ['name', 'url'], WebSite: ['url', 'name'], SportsTeam: ['name'], CollectionPage: ['url', 'mainEntity'], ItemList: ['itemListElement'],
 };
 export function validate(doc) {
@@ -186,6 +186,7 @@ export function validate(doc) {
       if (n.homeTeam && n.awayTeam && n.homeTeam.name === n.awayTeam.name) errors.push(`${path}: team plays itself`);
     }
     if (t === 'NewsArticle' && n.author && !n.author.name && !n.author['@id']) errors.push(`${path}: blank author`);
+    if (t === 'NewsArticle' && !(n.url || n['@id'])) errors.push(`${path}: NewsArticle missing url`);
     for (const [k, v] of Object.entries(n)) if (k !== '@type' && typeof v === 'object') walk(v, `${path}.${k}`);
   };
   nodes.forEach((n, i) => walk(n, `graph[${i}]`));
@@ -200,7 +201,7 @@ export function loadInputs(repo) {
 
 export function generate({ posts, scoreboard, now = new Date() }) {
   const homepage = buildHomepageGraph({ posts, scoreboard, now });
-  const embed = `<!-- GBM_SEO_GAME_GRAPH generated ${now.toISOString()} from gazette-live/posts.json + sports-live/scoreboard.json (${scoreboard.updatedAt}) -->\n${toScriptTag(homepage, 'gbm-game-graph')}`;
+  const embed = `<!-- GBM_SEO_GAME_GRAPH ${now.toISOString()} posts.json+scoreboard.json@${scoreboard.updatedAt} -->\n${toScriptTag(homepage, 'gbm-game-graph')}`;
   const articles = posts.map((p) => ({ post: p, event: buildArticleEvent(p, scoreboard) })).filter((x) => x.event);
   return { homepage, embed, articles };
 }

@@ -1,3 +1,15 @@
+# The Buddy Martin Show, Sept. 16, 2026: full-show transcript (Descript export)
+
+Source: Descript project `GatorBait Buddy Martin Show Highlights 2026-09-16` (project_id `4722f81b-757d-4169-b528-9479dc40ce4d`, drive `Brenden's Drive`), composition `Buddy Martin Show Audio` (composition_id `72916e10-1950-44de-9862-21118a122cbc`, 3,579.8 seconds).
+Call: `mcp__Descript__export_transcript` with format `markdown`, speaker labels on change, timecodes on paragraphs and speaker changes. Exported Sept. 30, 2026. Raw export was 67,846 characters over 694 lines; it is reproduced verbatim below except one hourly-wage figure, replaced with `[hourly wage redacted]` under the round-two rule against dollar figures in repo files.
+
+Speaker key (from context; Descript did not name speakers): Speaker / Speaker 2 / Speaker 3 = the AI-produced GatorBait anthem that opens and closes the show. Speaker 4 = Buddy Martin (host). Speaker 5 = Laura Rutledge (ESPN). Speaker 6 = Carlton Reese. Speaker 7 = Ally Peek Wilbur.
+Known mis-hearings in the raw export: "Laura Brothers" = Laura Rutledge; "Summerall" = Jon Sumrall; "Jayden Ball" = Jadan Baugh; "Aaron Philon" = Aaron Philo; "Trinidad Chambless" = Trinidad Chambliss; "Ally Peek at the Carlton Reese" = Ally Peek (Wilbur) and Carlton Reese; "Gator Blade Media" = GatorBait Media; "Brandon" = Brenden.
+
+Show status per `automation/ops-hub/show-assets/2026-09-17-buddy-martin-show-laura-rutledge-replay.json`: Laura Rutledge segment 05:20-09:20 was cleared as a replay asset for the Sept. 17 show. Nothing here is published.
+
+---
+
 [00:00:00] **Speaker:** Smoke on the walk and the pace moves slow. Orange and blue through the Gainesville night. The swamp wakes up under Griffin light. Steve Spurrier Field, where the old ghosts bite. Head ball coach fire still burns tonight. Right over left when the chomp comes down. One Gator nation, hear that sound. 
 
 [00:00:20] **Speaker 2:** Gator bait, gator bait.
@@ -86,7 +98,7 @@
 
 [00:07:58] **Speaker 5:** Yeah. Yeah, exactly. Yeah. No, I mean, I, I... Really, that was the way that it, that it went down. But I thought that I was gonna go in there and get a news radio job, and I, I had grown up listening to NPR and- Yeah
 
-[00:08:11] you know, just, I love the idea of audio storytelling. I thought it was really cool, and I thought- Mm-hmm ... "Okay, you know, I'll do this. I'll make six bucks an hour." And they said, "Well, yeah, we'll take you, but we have one opening and it's in sports." And I didn't even think. I just said, "Yeah, I'll, I'll do that."
+[00:08:11] you know, just, I love the idea of audio storytelling. I thought it was really cool, and I thought- Mm-hmm ... "Okay, you know, I'll do this. I'll make [hourly wage redacted] an hour." And they said, "Well, yeah, we'll take you, but we have one opening and it's in sports." And I didn't even think. I just said, "Yeah, I'll, I'll do that."
 
 [00:08:25] And then I'm like, "Well, golly, I, I don't know anything. This is gonna be really bad." And I was. I was terrible. I mean, my, my very first sports report that I did for AM 850 at the time, uh, WRUF, was just dead air because I forgot to turn the button on to, to go live. And I'm like, "I am gonna get fired." Yeah. I mean, the...
 

@@ -1,0 +1,133 @@
+{
+ "tool": "mcp__OpenRush__audit_site",
+ "args": {
+  "domain": "gatorbaitmedia.com",
+  "max_pages": 20
+ },
+ "provenance": {
+  "source_class": "crawl",
+  "method": "observed",
+  "observed_at": "2026-09-30T05:14:25.078913Z",
+  "confidence": 0.9,
+  "cache_hit": false
+ },
+ "result": {
+  "discovery_source": "robots_sitemap",
+  "pages_discovered": 2001,
+  "pages_audited": 20,
+  "pages_excluded": 0,
+  "fetch_failures": 0,
+  "render_warning": false,
+  "templates_sampled": [
+   "/product-page/*",
+   "/",
+   "/post/*",
+   "/post/react",
+   "/category/*"
+  ],
+  "onpage_score": 87.5,
+  "issues_summary": {
+   "high": 0,
+   "medium": 3,
+   "low": 7
+  },
+  "page_class_summary": {
+   "core": 8,
+   "content": 12
+  },
+  "worst_page": "https://gatorbait2026.itemorder.com/shop/home/",
+  "issue_clusters": [
+   {
+    "issue": "missing_meta_description",
+    "severity": "medium",
+    "affected_pages": 2,
+    "sample_urls": [
+     "https://gatorbait2026.itemorder.com/shop/home/",
+     "https://www.gatorbaitmedia.com/product-page/the-golden-season-by-franz-beard"
+    ]
+   },
+   {
+    "issue": "low_content",
+    "severity": "medium",
+    "affected_pages": 3,
+    "sample_urls": [
+     "https://www.gatorbaitmedia.com/post/gators-beat-uconn",
+     "https://www.gatorbaitmedia.com/post/stampeded-in-texas",
+     "https://www.gatorbaitmedia.com/post/the-promise-was-not"
+    ]
+   },
+   {
+    "issue": "duplicate_title",
+    "severity": "medium",
+    "affected_pages": 1,
+    "sample_urls": [
+     "https://gatorbait2026.itemorder.com/shop/home/"
+    ]
+   },
+   {
+    "issue": "multiple_h1",
+    "severity": "low",
+    "affected_pages": 14,
+    "sample_urls": [
+     "https://www.gatorbaitmedia.com/",
+     "https://www.gatorbaitmedia.com/post/1st-half-notes",
+     "https://www.gatorbaitmedia.com/post/alex-condon-returns"
+    ]
+   },
+   {
+    "issue": "title_too_long",
+    "severity": "low",
+    "affected_pages": 6
+   },
+   {
+    "issue": "no_image_alt",
+    "severity": "low",
+    "affected_pages": 4,
+    "sample_urls": [
+     "https://www.gatorbaitmedia.com/",
+     "https://www.gatorbaitmedia.com/post/baugh-runs-the-sec",
+     "https://www.gatorbaitmedia.com/post/brian-kelly-fired"
+    ]
+   },
+   {
+    "issue": "short_meta_description",
+    "severity": "low",
+    "affected_pages": 3
+   },
+   {
+    "issue": "missing_canonical",
+    "severity": "low",
+    "affected_pages": 1,
+    "sample_urls": [
+     "https://gatorbait2026.itemorder.com/shop/home/"
+    ]
+   },
+   {
+    "issue": "missing_structured_data",
+    "severity": "low",
+    "affected_pages": 1,
+    "sample_urls": [
+     "https://gatorbait2026.itemorder.com/shop/home/"
+    ]
+   },
+   {
+    "issue": "long_meta_description",
+    "severity": "low",
+    "affected_pages": 2
+   }
+  ],
+  "homepage_row": {
+   "url": "https://www.gatorbaitmedia.com/",
+   "status_code": 200,
+   "page_class": "core",
+   "word_count": 434,
+   "issues": [
+    "multiple_h1",
+    "no_image_alt"
+   ],
+   "title": "GatorBait Media | Florida Gators News, Recruiting & Analysis"
+  },
+  "note": "The audit sampled the itemorder.com store page 6 times (its sitemap template) which inflates the duplicate_title/missing_canonical counts; that host is Baker's Sporting Goods, not Wix."
+ },
+ "resource": "openrush://dataset/eyJrIjoiUXRaWDlIdlhpQ0Y2M1hMeHBMVHh0USIsIm8iOnsidG9vbCI6ImF1ZGl0X3NpdGUiLCJhcmdzIjp7ImRvbWFpbiI6ImdhdG9yYmFpdG1lZGlhLmNvbSIsIm1heF9wYWdlcyI6MjB9fX0"
+}

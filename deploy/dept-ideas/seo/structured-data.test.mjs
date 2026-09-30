@@ -108,6 +108,10 @@ test('article pages get a SportsEvent only (Wix already renders NewsArticle), ma
   assert.equal(matchGame(recap, scoreboard).opponent, 'Ole Miss'); // direct storyUrl match wins
   const senate = posts.find((p) => /senate-passes/.test(p.url));
   assert.equal(buildArticleEvent(senate, scoreboard), null); // not a game story: nothing emitted
+  const poll = posts.find((p) => /bound-for-the-cfb-top-ten/.test(p.url)); // excerpt cites FPI odds vs. Texas; title has no opponent
+  assert.equal(buildArticleEvent(poll, scoreboard), null);
+  const woods = posts.find((p) => /woods-chipper/.test(p.url));
+  assert.equal(buildArticleEvent(woods, scoreboard).name, 'No. 4 Ole Miss at Florida Gators');
   const tag = toWixSeoTag(ev);
   assert.equal(tag.type, 'script');
   assert.equal(tag.props.type, 'application/ld+json');

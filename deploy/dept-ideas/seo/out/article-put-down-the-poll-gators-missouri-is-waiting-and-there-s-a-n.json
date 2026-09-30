@@ -6,7 +6,7 @@
     "props": {
       "type": "application/ld+json"
     },
-    "children": "{\"@context\":\"https://schema.org\",\"@type\":\"SportsEvent\",\"@id\":\"https://www.gatorbaitmedia.com/#game-401856708\",\"name\":\"Florida Gators at No. 25 Missouri\",\"sport\":\"American Football\",\"startDate\":\"2026-10-03T19:30:00Z\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"homeTeam\":{\"@type\":\"SportsTeam\",\"name\":\"Missouri\"},\"awayTeam\":{\"@type\":\"SportsTeam\",\"@id\":\"https://www.gatorbaitmedia.com/#florida-gators\",\"name\":\"Florida Gators\"},\"organizer\":{\"@type\":\"SportsOrganization\",\"@id\":\"https://www.gatorbaitmedia.com/#sec\",\"name\":\"Southeastern Conference\"},\"sameAs\":\"https://www.espn.com/college-football/game/_/gameId/401856708\",\"location\":{\"@type\":\"Place\",\"name\":\"Memorial Stadium\"},\"description\":\"Kickoff Saturday, Oct 3, 3:30 PM ET on ABC.\",\"subjectOf\":{\"@type\":\"NewsArticle\",\"@id\":\"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time\",\"url\":\"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time\",\"headline\":\"Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'\",\"datePublished\":\"2026-09-28T23:24:43Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Buddy Martin\",\"url\":\"https://www.gatorbaitmedia.com/gatorbait-media-blogs/tags/buddy-martin\"},\"image\":\"https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png\"}}",
+    "children": "{\"@context\":\"https://schema.org\",\"@type\":\"SportsEvent\",\"@id\":\"https://www.gatorbaitmedia.com/#game-401856708\",\"name\":\"Florida Gators at No. 25 Missouri\",\"startDate\":\"2026-10-03T19:30:00Z\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"homeTeam\":{\"@type\":\"SportsTeam\",\"name\":\"Missouri\"},\"awayTeam\":{\"@type\":\"SportsTeam\",\"@id\":\"https://www.gatorbaitmedia.com/#florida-gators\",\"name\":\"Florida Gators\"},\"sameAs\":\"https://www.espn.com/college-football/game/_/gameId/401856708\",\"sport\":\"American Football\",\"organizer\":{\"@type\":\"SportsOrganization\",\"@id\":\"https://www.gatorbaitmedia.com/#sec\",\"name\":\"Southeastern Conference\"},\"location\":{\"@type\":\"Place\",\"name\":\"Memorial Stadium\"},\"description\":\"Kickoff Saturday, Oct 3, 3:30 PM ET on ABC.\",\"subjectOf\":{\"@type\":\"NewsArticle\",\"@id\":\"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time\",\"url\":\"https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time\",\"headline\":\"Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'\",\"datePublished\":\"2026-09-28T23:24:43Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Buddy Martin\",\"url\":\"https://www.gatorbaitmedia.com/gatorbait-media-blogs/tags/buddy-martin\"},\"image\":\"https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png\"}}",
     "custom": true,
     "disabled": false
   },
@@ -15,7 +15,6 @@
     "@type": "SportsEvent",
     "@id": "https://www.gatorbaitmedia.com/#game-401856708",
     "name": "Florida Gators at No. 25 Missouri",
-    "sport": "American Football",
     "startDate": "2026-10-03T19:30:00Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "homeTeam": {
@@ -27,12 +26,13 @@
       "@id": "https://www.gatorbaitmedia.com/#florida-gators",
       "name": "Florida Gators"
     },
+    "sameAs": "https://www.espn.com/college-football/game/_/gameId/401856708",
+    "sport": "American Football",
     "organizer": {
       "@type": "SportsOrganization",
       "@id": "https://www.gatorbaitmedia.com/#sec",
       "name": "Southeastern Conference"
     },
-    "sameAs": "https://www.espn.com/college-football/game/_/gameId/401856708",
     "location": {
       "@type": "Place",
       "name": "Memorial Stadium"

@@ -1,0 +1,13 @@
+{
+ "tool": "mcp__Exa__web_fetch_exa",
+ "args": {
+  "urls": [
+   "https://www.gatorbaitmedia.com/",
+   "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time"
+  ]
+ },
+ "result": {
+  "homepage": "STALE CACHE: returned mid-September content (Campbell recap, 'What Can VB3 Do for You?'), so not used as evidence of the live page.",
+  "article": "Fresh: byline Buddy Martin, 'Published: 2026-09-28', body present; Exa returns text only so JSON-LD is not visible."
+ }
+}

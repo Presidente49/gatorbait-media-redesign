@@ -1,0 +1,12 @@
+{
+ "tool": "mcp__Wix__SearchWixRESTDocumentation",
+ "args": {
+  "searchTerm": "blog post SEO data tags structured data update draft post seoData"
+ },
+ "result": {
+  "item_seo_tags_api": "https://dev.wix.com/docs/api-reference/business-management/seo/item-seo-tags-v1/introduction",
+  "draft_post_update": "PATCH https://www.wixapis.com/blog/v3/draft-posts/{draftPost.id}",
+  "tag_shape": "{type: 'script'|'meta'|'link'|'title', props: {...}, children}",
+  "native_example_in_repo": "deploy/writer-attributions/before/064b72aa-54ac-4af4-a8ad-54fc1b019a81.json carries Wix's own NewsArticle script tag (author = Organization 'GatorBait Staff')"
+ }
+}

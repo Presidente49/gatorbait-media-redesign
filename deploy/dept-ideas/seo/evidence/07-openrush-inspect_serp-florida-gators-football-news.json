@@ -1,0 +1,76 @@
+{
+ "tool": "mcp__OpenRush__inspect_serp",
+ "args": {
+  "query": "Florida Gators football news"
+ },
+ "provenance": {
+  "source_class": "live_serp",
+  "method": "observed",
+  "observed_at": "2026-09-30T05:14:38.752707Z",
+  "confidence": 0.95
+ },
+ "result": {
+  "features_present": [
+   "top_stories",
+   "perspectives",
+   "organic",
+   "video",
+   "people_also_ask",
+   "related_searches"
+  ],
+  "organic": [
+   [
+    1,
+    "www.gatorsports.com",
+    "https://www.gatorsports.com/"
+   ],
+   [
+    2,
+    "www.reddit.com",
+    "https://www.reddit.com/r/FloridaGators/"
+   ],
+   [
+    3,
+    "floridagators.com",
+    "https://floridagators.com/"
+   ],
+   [
+    4,
+    "sports.yahoo.com",
+    "https://sports.yahoo.com/ncaaf/teams/florida/"
+   ],
+   [
+    5,
+    "hailfloridahail.com",
+    "https://hailfloridahail.com/"
+   ],
+   [
+    6,
+    "www.youtube.com",
+    "https://www.youtube.com/watch?v=iALS7ao4G6o"
+   ],
+   [
+    7,
+    "gatorswire.usatoday.com",
+    "https://gatorswire.usatoday.com/"
+   ]
+  ],
+  "gatorbaitmedia_in_top_7": false,
+  "related_searches": [
+   "Florida football schedule",
+   "Where to watch ole miss rebels football vs florida gators football",
+   "247 Gators football",
+   "Gators football recruiting news",
+   "Gators football news today and rumors",
+   "Gator basketball news",
+   "Gator Football news now and rumors",
+   "Florida gators game today"
+  ],
+  "people_also_ask": [
+   "Did Florida head coach get fired?",
+   "Why is Florida favored over Ole Miss?",
+   "What are the latest Florida Gators football news updates?",
+   "What is the latest news on Jon Sumrall?"
+  ]
+ }
+}

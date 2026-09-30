@@ -1,0 +1,68 @@
+{
+ "tool": "mcp__OpenRush__inspect_serp",
+ "args": {
+  "query": "Gators Missouri"
+ },
+ "provenance": {
+  "source_class": "live_serp",
+  "method": "observed",
+  "observed_at": "2026-09-30T05:14:32.240991Z",
+  "confidence": 0.95
+ },
+ "result": {
+  "features_present": [
+   "ai_overview",
+   "people_also_ask",
+   "perspectives",
+   "organic",
+   "video",
+   "related_searches"
+  ],
+  "organic": [
+   [
+    1,
+    "floridagators.com",
+    "https://floridagators.com/galleries?gallery=10748 (photo gallery)"
+   ],
+   [
+    2,
+    "www.perfectgame.org",
+    "(youth baseball team 'Missouri Gators')"
+   ],
+   [
+    3,
+    "www.youtube.com",
+    "(2024-25 basketball full game)"
+   ],
+   [
+    4,
+    "floridagators.com",
+    "(cross country opponent history)"
+   ],
+   [
+    5,
+    "www.perfectgame.org",
+    "(youth baseball)"
+   ],
+   [
+    6,
+    "www.facebook.com",
+    "(Gainesville Sun basketball video)"
+   ],
+   [
+    7,
+    "www.reddit.com",
+    "(baseball postgame thread)"
+   ]
+  ],
+  "ai_overview_topic": "alligators in Missouri (a-z-animals.com, mdc.mo.gov cited)",
+  "gatorbaitmedia_in_top_7": false,
+  "people_also_ask": [
+   "Have alligators been found in Missouri?",
+   "What city do the Gators represent?",
+   "Did the Florida Gators win their game today?",
+   "What are the odds for the Florida vs Missouri game?"
+  ],
+  "note": "Google reads this two-word query as ambiguous: no football result in the top 7 four days before kickoff."
+ }
+}

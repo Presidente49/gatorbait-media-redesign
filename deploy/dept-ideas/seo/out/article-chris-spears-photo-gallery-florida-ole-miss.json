@@ -6,7 +6,7 @@
     "props": {
       "type": "application/ld+json"
     },
-    "children": "{\"@context\":\"https://schema.org\",\"@type\":\"SportsEvent\",\"@id\":\"https://www.gatorbaitmedia.com/#game-401856699\",\"name\":\"No. 4 Ole Miss at Florida Gators\",\"sport\":\"American Football\",\"startDate\":\"2026-09-26T19:30:00Z\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"homeTeam\":{\"@type\":\"SportsTeam\",\"@id\":\"https://www.gatorbaitmedia.com/#florida-gators\",\"name\":\"Florida Gators\"},\"awayTeam\":{\"@type\":\"SportsTeam\",\"name\":\"Ole Miss\"},\"organizer\":{\"@type\":\"SportsOrganization\",\"@id\":\"https://www.gatorbaitmedia.com/#sec\",\"name\":\"Southeastern Conference\"},\"sameAs\":\"https://www.espn.com/college-football/game/_/gameId/401856699\",\"location\":{\"@type\":\"Place\",\"@id\":\"https://www.gatorbaitmedia.com/#ben-hill-griffin-stadium\",\"name\":\"Ben Hill Griffin Stadium\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Gainesville\",\"addressRegion\":\"FL\",\"addressCountry\":\"US\"}},\"description\":\"Final: Florida 52, Ole Miss 28. Florida won.\",\"subjectOf\":{\"@type\":\"NewsArticle\",\"@id\":\"https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss\",\"url\":\"https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss\",\"headline\":\"Chris Spears' Best Shots: Florida 52, Ole Miss 28\",\"datePublished\":\"2026-09-28T01:49:57Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Brenden Martin\"},\"image\":\"https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png\"}}",
+    "children": "{\"@context\":\"https://schema.org\",\"@type\":\"SportsEvent\",\"@id\":\"https://www.gatorbaitmedia.com/#game-401856699\",\"name\":\"No. 4 Ole Miss at Florida Gators\",\"startDate\":\"2026-09-26T19:30:00Z\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"homeTeam\":{\"@type\":\"SportsTeam\",\"@id\":\"https://www.gatorbaitmedia.com/#florida-gators\",\"name\":\"Florida Gators\"},\"awayTeam\":{\"@type\":\"SportsTeam\",\"name\":\"Ole Miss\"},\"sameAs\":\"https://www.espn.com/college-football/game/_/gameId/401856699\",\"sport\":\"American Football\",\"organizer\":{\"@type\":\"SportsOrganization\",\"@id\":\"https://www.gatorbaitmedia.com/#sec\",\"name\":\"Southeastern Conference\"},\"location\":{\"@type\":\"Place\",\"@id\":\"https://www.gatorbaitmedia.com/#ben-hill-griffin-stadium\",\"name\":\"Ben Hill Griffin Stadium\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Gainesville\",\"addressRegion\":\"FL\",\"addressCountry\":\"US\"}},\"description\":\"Final: Florida 52, Ole Miss 28. Florida won.\",\"subjectOf\":{\"@type\":\"NewsArticle\",\"@id\":\"https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss\",\"url\":\"https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss\",\"headline\":\"Chris Spears' Best Shots: Florida 52, Ole Miss 28\",\"datePublished\":\"2026-09-28T01:49:57Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Brenden Martin\"},\"image\":\"https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png\"}}",
     "custom": true,
     "disabled": false
   },
@@ -15,7 +15,6 @@
     "@type": "SportsEvent",
     "@id": "https://www.gatorbaitmedia.com/#game-401856699",
     "name": "No. 4 Ole Miss at Florida Gators",
-    "sport": "American Football",
     "startDate": "2026-09-26T19:30:00Z",
     "eventStatus": "https://schema.org/EventScheduled",
     "homeTeam": {
@@ -27,12 +26,13 @@
       "@type": "SportsTeam",
       "name": "Ole Miss"
     },
+    "sameAs": "https://www.espn.com/college-football/game/_/gameId/401856699",
+    "sport": "American Football",
     "organizer": {
       "@type": "SportsOrganization",
       "@id": "https://www.gatorbaitmedia.com/#sec",
       "name": "Southeastern Conference"
     },
-    "sameAs": "https://www.espn.com/college-football/game/_/gameId/401856699",
     "location": {
       "@type": "Place",
       "@id": "https://www.gatorbaitmedia.com/#ben-hill-griffin-stadium",

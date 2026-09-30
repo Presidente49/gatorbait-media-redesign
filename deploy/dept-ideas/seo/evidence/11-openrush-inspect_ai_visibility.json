@@ -1,0 +1,64 @@
+{
+ "tool": "mcp__OpenRush__inspect_ai_visibility",
+ "args": {
+  "domain": "gatorbaitmedia.com"
+ },
+ "provenance": {
+  "source_class": "ai_answer",
+  "method": "observed",
+  "observed_at": "2026-09-19T20:21:37Z",
+  "confidence": 0.4,
+  "corpus_window": "2026-09-10 to 2026-09-19",
+  "platform": "google_ai_overview"
+ },
+ "result": {
+  "mentions": 7,
+  "sample_answers": [
+   {
+    "question": "florida gator blogs",
+    "cited": [
+     "hailfloridahail.com",
+     "gatorcountry.com",
+     "reddit.com/r/FloridaGators",
+     "onlygators.com",
+     "gatorbaitmedia.com"
+    ]
+   },
+   {
+    "question": "florida gator blog",
+    "cited": [
+     "hailfloridahail.com",
+     "gatorcountry.com",
+     "onlygators.com",
+     "gatorbaitmedia.com",
+     "alligatorarmy.com"
+    ]
+   },
+   {
+    "question": "gator blog",
+    "cited": [
+     "hailfloridahail.com",
+     "gatorcountry.com",
+     "onlygators.com",
+     "gatorbaitmedia.com",
+     "alligatorarmy.com"
+    ]
+   },
+   {
+    "question": "gator blogs",
+    "cited": [
+     "hailfloridahail.com",
+     "gatorcountry.com",
+     "onlygators.com",
+     "gatorsports.com",
+     "gatorbaitmedia.com",
+     "on3.com"
+    ]
+   },
+   {
+    "question": "lane kiffin nickname",
+    "cited_gatorbait_url": "https://www.gatorbaitmedia.com/post/buddy-martin-blog-the-complete-field-guide-to-joey-freshwater-s-aliases"
+   }
+  ]
+ }
+}

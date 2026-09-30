@@ -1,0 +1,74 @@
+{
+ "tool": "mcp__OpenRush__inspect_serp",
+ "args": {
+  "query": "Florida Missouri football game"
+ },
+ "provenance": {
+  "source_class": "live_serp",
+  "method": "observed",
+  "observed_at": "2026-09-30T05:14:30.099318Z",
+  "confidence": 0.95
+ },
+ "result": {
+  "features_present": [
+   "organic",
+   "top_stories",
+   "people_also_ask",
+   "perspectives",
+   "video",
+   "related_searches"
+  ],
+  "organic": [
+   [
+    1,
+    "floridagators.com",
+    "https://floridagators.com/sports/football/opponent-history/university-of-missouri/41"
+   ],
+   [
+    2,
+    "www.espn.com",
+    "https://www.espn.com/college-football/game/_/gameId/401856708/florida-missouri"
+   ],
+   [
+    3,
+    "www.ticketmaster.com",
+    "(tickets)"
+   ],
+   [
+    4,
+    "mutigers.com",
+    "https://mutigers.com/sports/football/schedule"
+   ],
+   [
+    5,
+    "www.winsipedia.com",
+    "https://www.winsipedia.com/games/florida/vs/missouri"
+   ],
+   [
+    6,
+    "www.youtube.com",
+    "https://www.youtube.com/watch?v=hLI6I7S_MXg (preview video)"
+   ],
+   [
+    7,
+    "seatgeek.com",
+    "(tickets)"
+   ]
+  ],
+  "gatorbaitmedia_in_top_7": false,
+  "espn_event_id_in_serp": "401856708 (same id as sports-live/scoreboard.json next.eventId)",
+  "people_also_ask": [
+   "Is the Mizzou game on TV today?",
+   "What are the odds for the Florida vs Missouri game?",
+   "What channel can I watch the Florida football game on?",
+   "How much is Florida favored to win?"
+  ],
+  "related_searches": [
+   "Florida missouri football game tickets",
+   "Florida missouri football game score",
+   "Florida missouri football game live",
+   "Florida vs missouri predictions",
+   "Mizzou game TODAY"
+  ]
+ }
+}

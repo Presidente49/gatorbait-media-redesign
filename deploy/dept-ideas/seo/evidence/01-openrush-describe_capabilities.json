@@ -1,0 +1,28 @@
+{
+ "tool": "mcp__OpenRush__describe_capabilities",
+ "args": {},
+ "result": {
+  "domains": [
+   "ads",
+   "ai_visibility",
+   "analytics",
+   "audit",
+   "backlinks",
+   "core",
+   "gsc",
+   "seo",
+   "serp"
+  ],
+  "credit_cost": {
+   "audit_site": 9,
+   "inspect_domain": 9,
+   "inspect_page": 3,
+   "inspect_serp": 2,
+   "research_keywords": 3,
+   "discover_competitors": 7,
+   "inspect_ai_visibility": 20,
+   "get_search_performance": 2
+  },
+  "get_search_performance_requires": "webmaster_console connection"
+ }
+}

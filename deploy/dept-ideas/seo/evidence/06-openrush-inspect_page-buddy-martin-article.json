@@ -1,0 +1,18 @@
+{
+ "tool": "mcp__OpenRush__inspect_page",
+ "args": {
+  "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time"
+ },
+ "provenance": {
+  "source_class": "search_index",
+  "method": "indexed",
+  "observed_at": "2026-09-30T05:14:25.555335Z",
+  "confidence": 0.7
+ },
+ "result": {
+  "organic_keywords": 0,
+  "estimated_organic_traffic_per_month": 0,
+  "top_keywords": []
+ },
+ "note": "Published 2026-09-28T23:24:43Z (gazette-live/posts.json); the search index had not picked it up 30 hours later."
+}

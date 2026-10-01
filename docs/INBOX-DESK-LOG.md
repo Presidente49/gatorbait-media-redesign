@@ -117,3 +117,17 @@ Stop-work was in force Sept. 28 ~18:15Z–Sept. 30 ~17:00Z (lifted by Brenden, #
 No new UF press releases from gators.ufl.edu/ufl.edu or any "Hutchinson" sender in the window. **YouTube:** direct RSS fetch is blocked from this sandbox (same limitation logged Sept. 28); not a channel finding, will retry next run via vidIQ if credits allow.
 
 Nothing here needed a new write from this desk — every genuine submission in the gap was already caught and handled by another session while this one was stopped.
+
+## Morning news sweep — Oct. 1, ~10:3xZ
+
+**What we have:** checked #34 and recent posts; nothing new in Gmail from gators.ufl.edu/floridagators.com since the last check (just UAA ticket marketing, skipped).
+
+**Sweep (ESPN news API, Gators Wire, general search, ~15 fetches):** Mostly wire aggregation already covered elsewhere (Heisman/CFP odds, power rankings, Missouri preview content) — skipped, no distinct Florida-only scoop. Two real items:
+
+- **Confirmed, we didn't have it — PUBLISHED:** "Jayden Woods Added To Chuck Bednarik Award Watch List" (official Maxwell Football Club announcement via floridagators.com, single authoritative source, newsworthy on its own). Post `3e699ce7-3e50-4c92-9e99-bd9d4d7c565c`, /post/jayden-woods-added-to-chuck-bednarik-award-watch-list. Byline GatorBait Media Staff; cover is a GatorBait type-led graphic (`GatorBait-Photo-B-Sports.png`), credited as "Graphic: GatorBait Media" since no verified photo of Woods specifically was on hand. Category Gator Football; tags Jayden Woods, Jon Sumrall, Florida Gators Football, Missouri. No [CHECK] items — every stat and quote traces to the UF release. Not featured, no email (story alerts still INACTIVE, quota unchanged).
+- **We have it and it changed — checked, no edit needed:** WRUF's updated injury report (Brown III and Stockton both now "questionable," Singleton cleared) is consistent with the existing breaking post `baa858cf` ("Grade 1 PCL sprain... may not miss any games"); logged as source material for a Thursday/pregame piece rather than editing the existing post, since nothing in it is now wrong.
+- Denzel Aberdeen injunction/ESPN item: already fully published and patched by another session (Codex), per #34 `5897970401` onward — not touched here (one-writer-per-object).
+
+**YouTube:** not re-checked this pass (routine's own desk-inbox YouTube step covers that channel; no new Florida-game video surfaced in the general sweep).
+
+Committed and pushed to `fix-native-flash-20260926`.

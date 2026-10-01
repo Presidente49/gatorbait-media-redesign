@@ -103,6 +103,10 @@ Re-run: `NODE_PATH=<dir with playwright+esbuild> PLAYWRIGHT_BROWSERS_PATH=/opt/p
 
 All nine PATCHes went through with the rev + djb2 guard; the API echoed the new body length and hash for each. New revisions (the rollback needs these): fb8963cc **5**, 5ab10e7b **2**, 4d3ab24a **5**, c91ad133 **5**, a5452619 **3**, 5a43ae83 **19**, a13b04e3 **4**, 7fee4de6 **32**, fdc2127a **86**. Records in #34 (two comments). Live verification: `shots/perf-story-after`, `shots/shell-v3-home`, `shots/shell-v3-story` (results in `deploy/speed-2026/`).
 
+## 4b. Sitewide typography embed (Sept. 30, 8:25 p.m. ET)
+
+`0709a98e-e95f-42e1-99a8-5f018ad85457` "GBM - Sitewide Barlow Typography v1", BODY_END, ESSENTIAL, loadOnce false: rev 5 → **6**. The V4 Home Code loader (622d8ece rev 29) carries the Barlow + Barlow Condensed stylesheet and the font preconnects in `<head>` on every page, so this embed now holds only the `sitewide-type.css` link (`0709a98e-v2.html`, 323 / 1386119782). Rollback: PATCH `0709a98e-live.html` (401 / 3507264639) back with the current revision; if the loader is ever returned to V3, restore this one in the same step.
+
 ## 4. PATCH order for Jarvis
 
 Endpoint (from https://dev.wix.com/docs/api-reference/business-management/custom-embeds/update-custom-embed):

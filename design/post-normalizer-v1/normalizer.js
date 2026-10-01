@@ -11,6 +11,11 @@ function allBold(p){
  return !!any;
 }
 function maxSize(p){var m=0;p.querySelectorAll('[style*="font-size"]').forEach(function(e){var v=parseFloat(e.style.fontSize);if(v>m)m=v;});return m;}
+// Writer -> live Wix member-profile slug, confirmed resolving at /profile/<slug> with that writer's real posts.
+// Eddie Gilley is deliberately absent: the member ID actually attributed on his posts has no working profile page
+// (a separate, empty Eddie account does, which would be a wrong/misleading link) - render his byline as plain text.
+var BYLINE_SLUGS={'buddy martin':'buddymartinshow','franz beard':'franz','loren meadows':'coachmeadows','carlton reese':'28879c23-51ea-47d3-ac02-a41cd5376fcd'};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
 function run(){
  var H=document.documentElement;
  if(!/^\/post\//.test(location.pathname))return;
@@ -37,6 +42,10 @@ function run(){
  paras.forEach(function(p,i){
   var t=txt(p),sz=maxSize(p),b=allBold(p);
   if(/^by [a-z][a-z .'\-]{2,40}$/i.test(t)){p.setAttribute('data-gbm-meta','');metaEnd=p;
+   if(!p.querySelector('a[data-gbm-byline-link]')){
+    var name=t.replace(/^by /i,'').trim(),slug=BYLINE_SLUGS[name.toLowerCase()];
+    if(slug)p.innerHTML='By <a data-gbm-byline-link href="/profile/'+esc(slug)+'">'+esc(name)+'</a>';
+   }
    var nx=paras[i+1];if(nx&&/^(www\.)?gatorbaitmedia\.com$/i.test(txt(nx))){nx.setAttribute('data-gbm-meta','');metaEnd=nx;}return;}
   if(p.hasAttribute('data-gbm-meta'))return;
   if(sz>=30&&t.length<=120){p.setAttribute('data-gbm-dek','');return;}

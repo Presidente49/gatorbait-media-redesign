@@ -15,6 +15,7 @@ html[data-gbm-unbold] body #SITE_PAGES [data-hook=post-page] [data-hook=post-des
 /* Byline typed into the body */
 § p[data-gbm-meta]{margin:0 0 4px!important;color:#5b677a!important;font:700 13px/1.4 "Barlow",Arial,sans-serif!important;letter-spacing:.08em;text-transform:uppercase}
 § p[data-gbm-meta] *{font:inherit!important;color:inherit!important;text-decoration:none!important}
+§ p[data-gbm-meta] a[data-gbm-byline-link]:hover{text-decoration:underline!important;text-underline-offset:3px}
 § p[data-gbm-meta-last]{margin-bottom:26px!important}
 @media(max-width:750px){
 § p[data-gbm-h]{margin-top:38px!important;font-size:27px!important}

@@ -1,0 +1,208 @@
+{
+  "$comment": "GatorBait Magazine weekly web issue. Schema and the drop-in contract for the departments compiler: deploy/magazine-2026/README.md. Bundled into sports-live/magazine.js by sports-live/build-magazine.mjs (keys named $comment, todo and note are stripped from the bundle; the renderer prints only what is here, and a missing, empty or pending slot renders nothing). Story URLs are the canonical /post/ paths under https://www.gatorbaitmedia.com; images are Wix media ids (the part before ~mv2).",
+  "id": "2026-10-01-missouri",
+  "issue": {
+    "number": "Issue 1",
+    "name": "The Missouri Issue",
+    "date": "October 1, 2026",
+    "week": "Florida at No. 25 Missouri",
+    "tagline": "The long read. The bigger picture.",
+    "pageTitle": "GatorBait Magazine | The Missouri Issue"
+  },
+  "masthead": {
+    "image": "https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp",
+    "alt": "GatorBait",
+    "word": "Magazine"
+  },
+  "labels": {
+    "contents": "In this issue",
+    "coverEntry": "Cover story",
+    "read": "Read the story",
+    "readColumn": "Read the column",
+    "vs": "vs.",
+    "at": "at",
+    "rank": "No.",
+    "win": "W",
+    "loss": "L"
+  },
+  "cover": {
+    "kicker": "Cover story · Buddy Martin",
+    "headline": "The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”",
+    "dek": "I’ll be honest. This guy could turn out to be brilliant. Maybe even Steve Spurrier brilliant. But I’d never put him above the Head Ball Coach, or even in the same paragraph. Faulkner has to earn that.",
+    "byline": "By Buddy Martin",
+    "url": "/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it",
+    "image": {
+      "id": "d3cfa5_56a64986c874417c9a8299fae22649ed",
+      "ext": "jpg",
+      "width": 1600,
+      "height": 900,
+      "alt": "The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”",
+      "credit": "Photo by Chris Spears, GatorBait Media · Faulkner: UAA"
+    },
+    "note": "Dek is the published excerpt of the story, Buddy's own words."
+  },
+  "columns": {
+    "label": "Columns",
+    "note": "Franz Beard, Buddy Martin and Eddie Gilley on the week that was.",
+    "items": [
+      {
+        "columnist": "Franz Beard",
+        "headline": "When it came to finding a quarterback Sumrall trusted Buster and it paid off",
+        "excerpt": "Jon Sumrall left the quarterback call to Buster Faulkner, and it paid off.",
+        "url": "/post/when-it-came-to-finding-a-quarterback-sumrall-trusted-buster-and-it-paid-off",
+        "image": {
+          "id": "16b519_00359caad82744778e7c387d8bf98777",
+          "ext": "jpg",
+          "width": 3000,
+          "height": 1867,
+          "alt": "When it came to finding a quarterback Sumrall trusted Buster and it paid off",
+          "credit": "Photo by Chris Spears, GatorBait Media"
+        },
+        "todo": "Excerpt restates the headline because the story was published after the feed snapshot; replace it with the published dek."
+      },
+      {
+        "columnist": "Buddy Martin",
+        "headline": "Put Down the Poll, Gators. Missouri Is Waiting.",
+        "excerpt": "Jon Sumrall wants Gator Nation to put down the poll: Florida has lost three of its last four trips to Columbia, and the coach with the raspy voice is making his team pay the toll on “Bloody Tuesday.”",
+        "url": "/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time"
+      },
+      {
+        "columnist": "Franz Beard",
+        "headline": "Who are these guys? Trautwein's troops in the trenches are difference makers",
+        "excerpt": "“Who are these guys?” We could be asking the same question of the Florida offensive line.",
+        "url": "/post/who-are-these-guys-trautwein-s-troops-in-the-trenches-are-difference-makers",
+        "image": {
+          "id": "16b519_a0e407bedc46487ca71033fc8351d0fe",
+          "ext": "jpg",
+          "width": 1600,
+          "height": 900,
+          "alt": "The guys up front helped Jadan Baugh score another touchdown against Ole Miss",
+          "credit": "Photo by Chris Spears, GatorBait Media"
+        }
+      },
+      {
+        "columnist": "Eddie Gilley",
+        "headline": "How The Gators Sealed And Secured A 52-28 Rout Of No. 4 Ole Miss With a Pick, Again",
+        "excerpt": "Eddie Gilley breaks down the five plays that decided Florida's 52-28 rout of No. 4 Ole Miss, from a blown fourth-down gamble to DJ Coleman's game-sealing interception.",
+        "url": "/post/how-the-gators-sealed-and-secured-a-52-28-rout-of-no-4-ole-miss-with-a-pick-again"
+      }
+    ]
+  },
+  "feature": {
+    "label": "Feature",
+    "pending": true,
+    "todo": "A new story is being written. Fill kicker, headline, dek, byline, url and image, then remove pending (or set it false); until then the slot renders nothing and stays out of the contents strip."
+  },
+  "pregame": {
+    "label": "Pregame",
+    "note": "Everything you need before kickoff in Columbia.",
+    "matchup": "Florida at No. 25 Missouri",
+    "separator": "AT",
+    "teams": [
+      { "name": "Florida", "line": "4-0 · 2-0 SEC · AP No. 8" },
+      { "name": "Missouri", "line": "3-1 · 0-1 SEC · AP No. 25" }
+    ],
+    "when": {
+      "kickoff": "Sat., Oct. 3 · 3:30 p.m. ET",
+      "tv": "ABC",
+      "venue": "Memorial Stadium (Faurot Field), Columbia, Mo."
+    },
+    "series": "",
+    "keysLabel": "Three keys",
+    "keys": [],
+    "preview": {
+      "label": "Read the preview",
+      "title": "Show-Me State of Mind: A First Look at No. 25 Missouri",
+      "byline": "By Brenden Martin",
+      "excerpt": "No. 8 Florida’s reward for routing Ole Miss is a trip to No. 25 Missouri, which let a fourth-quarter lead get away at Mississippi State.",
+      "url": "/post/first-look-missouri-florida-gators-show-me-state-of-mind"
+    },
+    "todo": "series (one sentence, with the source) and three keys (one sentence each) from the departments compiler. Both render only when filled."
+  },
+  "departments": {
+    "label": "Departments",
+    "note": "Schedule, injuries and numbers, each line with its source.",
+    "schedule": {
+      "label": "Schedule & results",
+      "team": { "name": "Florida", "record": "4-0", "conf": "2-0 SEC", "rank": 8, "line": "Florida 4-0 (2-0 SEC) · AP No. 8" },
+      "headers": { "date": "Date", "opponent": "Opponent", "result": "Result / kickoff" },
+      "games": [
+        { "date": "Sept. 5", "opponent": "FAU", "home": true, "result": { "fla": 66, "opp": 21 } },
+        { "date": "Sept. 12", "opponent": "Campbell", "home": true, "result": { "fla": 52, "opp": 3 } },
+        { "date": "Sept. 19", "opponent": "Auburn", "home": false, "result": { "fla": 44, "opp": 39 } },
+        { "date": "Sept. 26", "opponent": "Ole Miss", "opponentRank": 4, "home": true, "result": { "fla": 52, "opp": 28 } },
+        { "date": "Oct. 3", "opponent": "Missouri", "opponentRank": 25, "home": false, "kickoff": "3:30 p.m. ET", "tv": "ABC", "next": true },
+        { "date": "Oct. 10", "opponent": "South Carolina", "home": true, "kickoff": "TBA" },
+        { "date": "Oct. 17", "opponent": "Texas", "home": false, "kickoff": "TBA" },
+        { "date": "Oct. 31", "opponent": "Georgia", "home": false, "site": "Atlanta", "kickoff": "TBA" },
+        { "date": "Nov. 7", "opponent": "Oklahoma", "home": true, "kickoff": "TBA" },
+        { "date": "Nov. 14", "opponent": "Kentucky", "home": false, "kickoff": "TBA" },
+        { "date": "Nov. 21", "opponent": "Vanderbilt", "home": true, "kickoff": "TBA" },
+        { "date": "Nov. 27", "opponent": "Florida State", "home": false, "kickoff": "TBA" }
+      ],
+      "foot": "",
+      "todo": "Opponent ranks for the remaining games and kickoff times/TV as they are announced (status 'TBA' until then). Rank numbers only for currently ranked opponents."
+    },
+    "injuries": {
+      "label": "Injury report",
+      "teams": [
+        {
+          "name": "Florida",
+          "source": "Franz Beard, GatorBait",
+          "items": [
+            { "pos": "WR", "name": "Vernell Brown III", "status": "Questionable", "source": "Franz Beard, GatorBait" },
+            { "pos": "WR", "name": "Bailey Stockton", "status": "Questionable", "source": "Franz Beard, GatorBait" }
+          ]
+        },
+        {
+          "name": "Missouri",
+          "source": "Franz Beard, GatorBait",
+          "items": [
+            { "pos": "S", "name": "JaDon Blair", "status": "Out", "source": "Franz Beard, GatorBait" },
+            { "pos": "RB", "name": "Ahmad Hary", "status": "Out", "source": "Franz Beard, GatorBait" },
+            { "pos": "RB", "name": "Malae Fonoti", "status": "Out", "source": "Franz Beard, GatorBait" },
+            { "pos": "OL", "name": "Josh Atkins", "status": "Out", "source": "Franz Beard, GatorBait" },
+            { "pos": "TE", "name": "Gavin Hoffman", "status": "Out", "source": "Franz Beard, GatorBait" },
+            { "pos": "EDGE", "name": "Langden Kitchen", "status": "Questionable", "source": "Franz Beard, GatorBait" },
+            { "pos": "LB", "name": "Bobby Washington Jr.", "status": "Questionable", "source": "Franz Beard, GatorBait" },
+            { "pos": "EDGE", "name": "Darris Smith", "status": "Questionable", "source": "Franz Beard, GatorBait" }
+          ]
+        }
+      ],
+      "todo": "Any further designations (doubtful, probable) and a detail string per line if the compiler has one. Status values render as a tag; out/questionable/doubtful get their own colour."
+    },
+    "numbers": {
+      "label": "Numbers",
+      "note": "",
+      "items": [
+        { "value": "19", "label": "Tackles, Jayden Woods", "source": "ESPN" },
+        { "value": "6", "label": "Tackles for loss, Jayden Woods", "source": "ESPN" },
+        { "value": "4", "label": "Sacks, Jayden Woods", "source": "ESPN" }
+      ],
+      "todo": "Three to five more stats (value, label, source) to fill the 2-column grid at 6 to 8 tiles; the renderer caps at 8."
+    },
+    "roster": {
+      "label": "Roster notes",
+      "items": [],
+      "todo": "Short list of roster notes, each {text, source}. Renders only when at least one item exists."
+    }
+  },
+  "bestShots": {
+    "label": "Best Shots",
+    "note": "Chris Spears had the sideline for all of it.",
+    "credit": "Photos by Chris Spears, GatorBait Media",
+    "photos": [
+      { "id": "d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b", "ext": "jpg", "width": 1600, "height": 900, "alt": "Chris Spears' Best Shots: Florida 52, Ole Miss 28", "caption": "Best Shots: Florida 52, Ole Miss 28", "url": "/post/chris-spears-photo-gallery-florida-ole-miss" },
+      { "id": "16b519_9e6aad749e564c33ab69f6e7e19e9560", "ext": "jpg", "width": 1600, "height": 900, "alt": "Chris Spears’ Best Shots, Vol. 2: Florida 52, Ole Miss 28", "caption": "Best Shots, Vol. 2", "url": "/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28" },
+      { "id": "16b519_a0e407bedc46487ca71033fc8351d0fe", "ext": "jpg", "width": 1600, "height": 900, "alt": "The guys up front helped Jadan Baugh score another touchdown against Ole Miss", "caption": "Jadan Baugh, behind the line that moved Ole Miss", "url": "/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28" }
+    ],
+    "todo": "The ids here are the Chris Spears-credited featured images of the Ole Miss week posts (feed snapshot). Swap in three to six frames from inside the two galleries once their media ids are confirmed; each photo links to the gallery it comes from."
+  },
+  "footer": {
+    "label": "More from GatorBait",
+    "links": [
+      { "label": "All stories", "url": "/gatorbait-media-blogs" }
+    ],
+    "line": ""
+  }
+}

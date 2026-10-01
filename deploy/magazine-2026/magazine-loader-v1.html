@@ -1,0 +1,14 @@
+<!-- GBM_MAGAZINE_2026_V1 weekly web issue src=__COMMIT__ pointer=sports-live/current.json bundle=sports-live/magazine.js --><style id="gbm-magazine-2026-shell">
+.gbm-mq:not(.gbm-magazine-live) #SITE_PAGES,.gbm-mq:not(.gbm-magazine-live) #gbm-footer{opacity:0;animation:gbmr 0s 4s forwards}@keyframes gbmr{to{opacity:1}}
+.gbm-magazine-live #SITE_PAGES,html:has(#gbm-magazine-page) #SITE_PAGES,.gbm-magazine-live #pageBackground_nh0hy{display:none!important}
+.gbm-magazine-live #SITE_CONTAINER,.gbm-magazine-live #masterPage,.gbm-magazine-live #PAGES_CONTAINER,.gbm-magazine-live #SITE_PAGES_TRANSITION_GROUP{height:auto!important;min-height:0!important;padding-bottom:0!important;margin-bottom:0!important}
+</style><script id="gbm-magazine-2026-loader">(function(){
+if(window.__GBMM_2026_LOADER__)return;window.__GBMM_2026_LOADER__=1;
+var d='__COMMIT__',H=document.documentElement.classList,loaded=false;
+function on(){return /^\/magazine\/?$/.test(location.pathname||'')}
+function load(){if(loaded)return;loaded=true;var u='https://presidente49.github.io/gatorbait-media-redesign/sports-live/current.json?t='+Math.floor(Date.now()/6e4),done=false;
+function go(c){if(done)return;done=true;var s=document.createElement('script');s.id='gbm-mag26-bundle';s.async=true;s.setAttribute('data-commit',c);s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@'+c+'/sports-live/magazine.js';s.onerror=function(){s.remove();if(c!==d){done=false;go(d)}else H.remove('gbm-mq')};document.head.appendChild(s)}
+var t=setTimeout(function(){go(d)},800);fetch(u,{cache:'no-store',credentials:'omit'}).then(function(r){return r.json()}).then(function(j){clearTimeout(t);go(j&&/^[0-9a-f]{40}$/.test(j.commit)?j.commit:d)}).catch(function(){clearTimeout(t);go(d)})}
+function sync(){if(on()){H.add('gbm-mq');load();if(window.__GBM_MAG26__)window.__GBM_MAG26__.sync()}else{H.remove('gbm-mq','gbm-magazine-live')}}
+sync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

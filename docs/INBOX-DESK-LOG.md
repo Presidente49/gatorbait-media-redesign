@@ -220,3 +220,16 @@ No new writer submissions. No genuine UF press release from gators.ufl.edu/ufl.e
 **YouTube:** direct RSS fetch succeeded this pass (prior "blocked from sandbox" note no longer applies). One new video not previously logged: "Meltdown Monday: Florida's 52-28 Statement Win + Shane Matthews | Buddy Martin Show" (`qWBazfq_4Mc`, published Sept. 28 23:48Z) — the full Monday-night show episode breaking down the Ole Miss win with former Gator Shane Matthews. It's a produced show episode, not a press-conference/player-quote clip tied to the Sumrall presser story (`2bb6c273`), so logging as ready-to-embed for Brenden rather than auto-embedding, consistent with how the "Won't Back Down" Shorts were handled Sept. 28. Everything else in the feed (the 3 "Won't Back Down" tradition Shorts, all 9 postgame locker-room clips, the Auburn "NO BAD WINS" short) was already logged in prior passes — none re-embedded.
 
 Nothing published, drafted, or embedded this pass — staying silent on #34 per step 9.
+
+## Front-page lead bug found and fixed — Oct. 1, ~18:2xZ
+
+Brenden relayed that Buddy said his new column hadn't been the front-page lead/cover for hours. Checked live state directly:
+
+- The Magazine (embed `1dd74333`) was already correct — Buddy's "Different Playbooks" has been its cover/lead since the rev50/51 refresh earlier today.
+- The **homepage** was the actual problem. Embed `622d8ece` ("Home Code v1") carries a hardcoded `window.__GBM_HOME_PINS__` object that force-pins one story as the front-page lead regardless of publish time. It was pointing at Franz Beard's "quarterback trusted Buster" piece, `until: "2026-10-02T04:00:00Z"` — set by another session this morning per #34 (comment 5931774779/5931827308). That directly overrides the site's own standing editorial rule ("Buddy Martin's newest column leads the front page") and Brenden's own "Buddy should always be the lead" direction, for as long as that pin stands.
+
+**Fix:** repointed the pin to `/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators` (`until: 2026-10-03T16:00:00Z`, Saturday noon ET — same convention as the pin it replaced). Embed `622d8ece` rev30 → rev31. Site republished.
+
+**Flagging, not fixing right now:** this embed also shows the homepage still loading its renderer from jsDelivr/GitHub Pages (`cdn.jsdelivr.net/gh/.../sports-live/homepage.js`, driven by a `sports-live/current.json` commit pointer), not the fully-Wix-served architecture `docs/HOMEPAGE-BASELINE-LOCK.md` says was authorized and verified live on Sept. 26 specifically to kill that dependency and the native-shell flash. Another session reintroduced the CDN path this morning to ship the lead-pin feature. Didn't unwind that architecture change in this pass — out of scope for "why isn't Buddy's article the lead," and reverting it blind could break whatever that session built on top of it. Worth the active controller's attention.
+
+**Could not independently re-verify in a real browser** — TinyFish's web-automation wallet is at zero balance, and a plain content fetch only returns pre-JS/cached markup (it showed "Today's Edition" and an older Buddy column, neither of which reflects the pin mechanism either way, pinned or not). Confirmed via API that the new pin value is saved and the site was republished; asked Brenden to hard-refresh and confirm.

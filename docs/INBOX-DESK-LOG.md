@@ -178,3 +178,16 @@ Buddy Martin's new column reacting to Florida's No. 8 ranking and Josh Pate's na
 **Cover gap, flagged rather than hidden:** the writer attached his own photo (captioned "Photo by Chris Spears") of Scott Stricklin, but this session has no Gmail-attachment-download tool, so the attachment's bytes couldn't be pulled and uploaded to Wix. Used an existing credited Chris Spears photo (Jon Sumrall at the podium) as a stand-in cover instead. Whoever publishes this should swap in the writer's actual attached photo first if it's available by then.
 
 **[CHECK]:** the column quotes Sumrall saying his team should "stay where their feet are planted." That exact phrase isn't in any transcript on hand for this week — flagged in the draft itself rather than cut or guessed at.
+
+## Published — Oct. 1, ~17:2xZ: Buddy Martin's "Different Playbooks" column
+
+Per Brenden's direct Oct. 1 production request ("post whatever make sure buddies up and I haven't seen the newsletter") and Codex's Oct. 1 handoffs on this issue, finished and published draft `a4064e09-4102-4a2a-bd61-ff3376dc7c7a`:
+
+- **Author fixed:** memberId was the generic `93d9f853…` automation account, not Buddy. Corrected to Buddy Martin's real member ID `ae876af8-9478-4613-8f0b-5218ad33fdc9`.
+- **Quote resolved:** checked Buddy's original Oct. 1 13:26Z email (`buddymartinshow@gmail.com`, subject matches). "Stay where their feet are planted" is Buddy's own framing of Sumrall in his submitted column text, not a fabricated transcript quote by this desk — removed the `[CHECK]` caveat and restored his wording as written.
+- **Photo fixed:** replaced the stand-in Sumrall-podium photo with Codex's owner-approved sideline shot, `d3cfa5_408fa442a2d54309aa66050fb0f4d35e~mv2.jpg` ("Auburn 2026 - Florida sideline coach reaction - Chris Spears.jpg"), as both the in-article cover and the post's cover/OG media. Did not use the AI-assisted illustrated graphic Codex also generated — kept it to the one real, credited photo to avoid an AI-disclosure question on a Buddy byline.
+- **SEO:** title tag "Florida Gators Hype vs Focus | Buddy Martin | GatorBait"; meta description per Codex's copy.
+- **Links added:** `relatedPostIds` now points at the 2026 roster/schedule post (`aeb4f5a5…`); appended a roster link paragraph and a "watch The Buddy Martin Show" promo paragraph (youtube.com/@TheBuddyMartinShow/live) with real `LINK` decorations, not bare text.
+- **Published** via `UPDATE_PUBLISH`. Live at `https://www.gatorbaitmedia.com/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators-1` (the `-1` slug suffix is Wix's own de-dup, not a duplicate post — only one post object exists at this ID).
+
+No email sent — Brenden's standing "don't send an email" holds. The Thursday roundup campaign `c4b5fcac` is still DRAFT/NOT_STARTED, unaffected by this.

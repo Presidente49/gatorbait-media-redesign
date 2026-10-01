@@ -206,3 +206,17 @@ Brenden asked to update the Magazine with current articles. Before touching anyt
 ### Duplicate post found and fixed
 
 While pulling current articles, found Buddy's "Different Playbooks" column live **twice**: the draft this desk published earlier today (`a4064e09…`, at slug `…-1`) and a second, separate post (`4a3de039…`) that was apparently published directly — same column text, different title wording, different photo, no SEO data, published ~90 minutes before this desk's version. Per the owner's standing "one canonical article URL, avoid redundancies" rule: deleted the stray duplicate (`4a3de039…`) and moved the canonical, fully-fixed post onto the now-freed clean slug. Live URL unchanged in spirit, now simpler: `https://www.gatorbaitmedia.com/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators`.
+
+## Desk inbox — Oct. 1, ~18:0xZ
+
+| Thread ID | Sender | Subject | Action |
+|---|---|---|---|
+| 1a0f86aaa211e5af | reply@e.floridagators.com | #7 Gators Host #11 Vols, #3 'Cats | Skip — volleyball ticket marketing, not a press release |
+| 1a0f45717d97ef0b | reply@e.floridagators.com | The Swamp is Back | Skip — football ticket/Homecoming marketing, not a press release |
+| 1a0f7a4ce555882d | buddymartinshow@gmail.com | Coaches and Fans Have Different Playbooks... | Already processed and published earlier today, see above |
+
+No new writer submissions. No genuine UF press release from gators.ufl.edu/ufl.edu or any Hutchinson sender this window — both floridagators.com items are ticket-sales marketing. Nothing breaking.
+
+**YouTube:** direct RSS fetch succeeded this pass (prior "blocked from sandbox" note no longer applies). One new video not previously logged: "Meltdown Monday: Florida's 52-28 Statement Win + Shane Matthews | Buddy Martin Show" (`qWBazfq_4Mc`, published Sept. 28 23:48Z) — the full Monday-night show episode breaking down the Ole Miss win with former Gator Shane Matthews. It's a produced show episode, not a press-conference/player-quote clip tied to the Sumrall presser story (`2bb6c273`), so logging as ready-to-embed for Brenden rather than auto-embedding, consistent with how the "Won't Back Down" Shorts were handled Sept. 28. Everything else in the feed (the 3 "Won't Back Down" tradition Shorts, all 9 postgame locker-room clips, the Auburn "NO BAD WINS" short) was already logged in prior passes — none re-embedded.
+
+Nothing published, drafted, or embedded this pass — staying silent on #34 per step 9.

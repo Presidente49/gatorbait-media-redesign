@@ -29,18 +29,17 @@ html.gbm-mobile-menu-open #gbm-mobile-drawer-root .gbm-ms-panel{transform:transl
 .gbm-ms-foot a{color:#0021a5!important;-webkit-text-fill-color:#0021a5!important}
 }
 </style>
-<!-- GBM_MAGAZINE_2026_V1 weekly web issue src=__COMMIT__ pointer=sports-live/current.json bundle=sports-live/magazine.js --><style id="gbm-magazine-2026-shell">
-.gbm-mq:not(.gbm-magazine-live) #SITE_PAGES,.gbm-mq:not(.gbm-magazine-live) #gbm-footer{opacity:0;animation:gbmr 0s 4s forwards}@keyframes gbmr{to{opacity:1}}
+<!-- GBM_MAGAZINE_2026_V1 weekly web issue src=9fbde970856fa0c37efa3870deb031d50b5ba6ba immutable=1 bundle=sports-live/magazine.js --><style id="gbm-magazine-2026-shell">
+
 .gbm-magazine-live #SITE_PAGES,html:has(#gbm-magazine-page) #SITE_PAGES,.gbm-magazine-live #pageBackground_nh0hy{display:none!important}
 .gbm-magazine-live #SITE_CONTAINER,.gbm-magazine-live #masterPage,.gbm-magazine-live #PAGES_CONTAINER,.gbm-magazine-live #SITE_PAGES_TRANSITION_GROUP{height:auto!important;min-height:0!important;padding-bottom:0!important;margin-bottom:0!important}
 </style><script id="gbm-magazine-2026-loader">(function(){
 if(window.__GBMM_2026_LOADER__)return;window.__GBMM_2026_LOADER__=1;
-var d='__COMMIT__',H=document.documentElement.classList,loaded=false;
+var loaded=false,H=document.documentElement.classList;
 function on(){return /^\/magazine\/?$/.test(location.pathname||'')}
-function load(){if(loaded)return;loaded=true;var u='https://presidente49.github.io/gatorbait-media-redesign/sports-live/current.json?t='+Math.floor(Date.now()/6e4),done=false;
-function go(c){if(done)return;done=true;var s=document.createElement('script');s.id='gbm-mag26-bundle';s.async=true;s.setAttribute('data-commit',c);s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@'+c+'/sports-live/magazine.js';s.onerror=function(){s.remove();if(c!==d){done=false;go(d)}else H.remove('gbm-mq')};document.head.appendChild(s)}
-var t=setTimeout(function(){go(d)},800);fetch(u,{cache:'no-store',credentials:'omit'}).then(function(r){return r.json()}).then(function(j){clearTimeout(t);go(j&&/^[0-9a-f]{40}$/.test(j.commit)?j.commit:d)}).catch(function(){clearTimeout(t);go(d)})}
-function sync(){if(on()){H.add('gbm-mq');load();if(window.__GBM_MAG26__)window.__GBM_MAG26__.sync()}else{H.remove('gbm-mq','gbm-magazine-live')}}
+function sync(){if(!on()){H.remove('gbm-mq','gbm-magazine-live');if(window.__GBM_MAG26__)window.__GBM_MAG26__.sync();return;}
+if(window.__GBM_MAG26__){window.__GBM_MAG26__.sync();return;}if(loaded)return;loaded=true;
+var s=document.createElement('script');s.id='gbm-mag26-bundle';s.async=true;s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@9fbde970856fa0c37efa3870deb031d50b5ba6ba/sports-live/magazine.js';s.onerror=function(){loaded=false;H.remove('gbm-mq','gbm-magazine-live')};document.head.appendChild(s);}
 sync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
 })();</script>
 <style>body{margin:0;font-family:Arial,sans-serif}#SITE_HEADER,#SITE_FOOTER{padding:18px 16px;background:#eef;color:#123}#SITE_PAGES{padding:24px 16px;min-height:900px}#SITE_PAGES h1{font-family:Georgia,serif}#gbm-footer{padding:32px 16px;background:#08132f;color:#fff;font:600 14px/1.4 "Barlow",sans-serif}</style>

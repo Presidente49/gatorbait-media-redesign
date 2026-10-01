@@ -252,3 +252,41 @@ html,body{background:white!important;color:black!important}
 #gbm-magazine-page.mz26 .mz-writer-promo>div{display:flex;flex-wrap:wrap;gap:12px 24px}
 #gbm-magazine-page.mz26 .mz-writer-promo a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline}
 @media print{#gbm-magazine-page.mz26 .mz-writer-promo{break-inside:avoid;padding:8pt;margin:12pt auto;background:none}#gbm-magazine-page.mz26 .mz-writer-promo h3{font-size:13pt}}
+
+/* Owner correction Oct 1: Swamp Night; one site logo, no paper palette or texture. */
+@media screen {
+#gbm-magazine-page.mz26{--mz-paper:#07122e;--mz-cream:#f7f9ff;--mz-ink:#f7f9ff;--mz-ink-2:#c5cee1;--mz-mute:#b5c2db;--mz-rule:#354563;--mz-rule-soft:#293956;--mz-blue:#dce7ff;--mz-orange:#fa4616;--mz-orange-ink:#ff9877;--mz-shadow:transparent;background:#07122e;color:#f7f9ff}
+#gbm-magazine-page.mz26 .mz-head{border-bottom:1px solid #354563;padding:16px 0 14px}
+#gbm-magazine-page.mz26 .mz-head-top{border:0;font-size:12px}
+#gbm-magazine-page.mz26 .mz-mast{padding-top:4px}
+#gbm-magazine-page.mz26 .mz-mast b{font-size:38px;color:#fff;letter-spacing:.04em}
+#gbm-magazine-page.mz26 .mz-issue{border:0;color:#c5cee1}
+#gbm-magazine-page.mz26 .mz-issue .mz-week{color:#c5cee1}
+#gbm-magazine-page.mz26 .mz-cover{border:1px solid #354563;background:#0d1d3b;box-shadow:none}
+#gbm-magazine-page.mz26 .mz-cover-type{background:#0d1d3b;padding:28px 24px;color:#fff}
+#gbm-magazine-page.mz26 .mz-cover-type::after{display:none}
+#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame{background:#07122e}
+#gbm-magazine-page.mz26 .mz-cover-fig .mz-cr{background:#0d1d3b;color:#c5cee1}
+#gbm-magazine-page.mz26 .mz-cover h1{font-size:clamp(32px,4.2vw,52px);line-height:1.02;color:#fff}
+#gbm-magazine-page.mz26 .mz-btn,#gbm-magazine-page.mz26 button{background:#132848;color:#fff;border:1px solid #7489ad;border-bottom:3px solid #fa4616;box-shadow:none}
+#gbm-magazine-page.mz26 .mz-toc{border-top:1px solid #354563}
+#gbm-magazine-page.mz26 .mz-toc a:hover{background:#132848;color:#fff}
+#gbm-magazine-page.mz26 .mz-full-story h2,#gbm-magazine-page.mz26 .mz-reading h3{color:#fff}
+#gbm-magazine-page.mz26 .mz-reading{color:#f0f3fa}
+#gbm-magazine-page.mz26 .mz-reading a,#gbm-magazine-page.mz26 .mz-site{color:#b8d5ff}
+#gbm-magazine-page.mz26 .mz-utilities,#gbm-magazine-page.mz26 .mz-writer-promo{background:#0d1d3b;color:#f7f9ff;border-color:#354563;border-top:3px solid #fa4616}
+#gbm-magazine-page.mz26 .mz-writer-promo p,#gbm-magazine-page.mz26 .mz-writer-promo a{font-size:16px}
+}
+/* Photo-led cover: editorial type over real photography, not a split color panel. */
+@media screen {
+#gbm-magazine-page.mz26 .mz-cover{display:block;position:relative;isolation:isolate;overflow:hidden;border:0;border-radius:0}
+#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame{aspect-ratio:16/10!important;min-height:620px}
+#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame img{object-fit:cover;object-position:center 40%}
+#gbm-magazine-page.mz26 .mz-cover-fig .mz-cr{position:absolute;right:16px;top:14px;z-index:3;padding:5px 8px;background:rgba(7,18,46,.85);font-size:12px}
+#gbm-magazine-page.mz26 .mz-cover-type{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(20px,4vw,46px);background:linear-gradient(180deg,rgba(3,9,22,0) 15%,rgba(3,9,22,.24) 35%,rgba(3,9,22,.94) 80%,#030916 100%);pointer-events:none}
+#gbm-magazine-page.mz26 .mz-cover-type a{pointer-events:auto}
+#gbm-magazine-page.mz26 .mz-cover h1{max-width:850px;font-size:clamp(34px,4.6vw,62px);line-height:1.01;text-wrap:balance;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+#gbm-magazine-page.mz26 .mz-cover .mz-dek{font-size:16px;max-width:650px}
+#gbm-magazine-page.mz26 .mz-cover .mz-btn{align-self:flex-start;background:#102342}
+@media(max-width:600px){#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame{aspect-ratio:3/4!important;min-height:620px}#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame img{object-position:42% top}#gbm-magazine-page.mz26 .mz-cover-type{padding:22px 18px}#gbm-magazine-page.mz26 .mz-cover h1{font-size:36px}#gbm-magazine-page.mz26 .mz-cover .mz-dek{font-size:15px}}
+}

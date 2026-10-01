@@ -71,7 +71,7 @@
     var top = text(I.tagline, 120), num = text(I.number, 40), name = text(I.name, 120), date = text(I.date, 60), week = text(I.week, 120);
     if (!mast && !name && !date) return '';
     return '<header class="mz-head">' + (top || num ? '<div class="mz-head-top"><span>' + esc(top) + '</span><span>' + esc(num) + '</span></div>' : '') +
-      '<div class="mz-mast">' + (mast ? '<img src="' + esc(mast) + '" alt="' + esc(text(M.alt, 80)) + '" width="900" height="241" decoding="async" fetchpriority="high">' : '') + (text(M.word, 30) ? '<b>' + esc(text(M.word, 30)) + '</b>' : '') + '</div>' +
+      '<div class="mz-mast"><b>Magazine</b></div>' +
       (name || date || week ? '<p class="mz-issue">' + [name, date].filter(Boolean).map(function (s) { return '<span>' + esc(s) + '</span>'; }).join('') + (week ? '<span class="mz-week">' + esc(week) + '</span>' : '') + '</p>' : '') + '</header>';
   }
   function cover(D, L) {

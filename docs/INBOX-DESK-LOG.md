@@ -159,3 +159,22 @@ Excluded as already covered by the Sept. 29 11:45Z "Senate Vote and Missouri" se
 **Uploaded:** Wix Email Marketing draft campaign `c4b5fcac-cd3f-4983-a135-a096b963b6d6`, label target `e345fa8e`. Preview verified: 53,745-char rendered HTML, all six stories present, no broken placeholders.
 
 **Send governor: `ok:false`.** 18 list sends in the last 7 days (cap 7) — stale Ole Miss game-week volume (Sept. 24–27), not anything from today or this policy period. Bounce 1.28%, complaint 0.03% (both fine, well under the 2%/0.1% caps). Account ACTIVE, rank BAD, no story alerts active. **Held, not sent.** Will clear once the Sept. 24–27 sends age out of the rolling 7-day window (by roughly Oct. 4).
+
+## Weekly Thursday game-week package — Oct. 1, ~13:4xZ
+
+This routine (`trig_011cSGMQcch48p2wpjaBrWGp`) still asks for a separate Missouri preview story and a separate Magazine draft. Both are already satisfied:
+- **Preview story:** "Show-Me State of Mind: A First Look at No. 25 Missouri" (`db2e38da`) already published Sept. 27. Nothing new to write.
+- **Magazine weekly edition:** per the daily-roundup routine's own standing rule ("Thursdays: the roundup IS the Magazine weekly edition"), this was already built and uploaded this morning — see the "Daily roundup — Oct. 1" entry above (campaign `c4b5fcac`, held on the send governor). Not duplicating with a second draft.
+- **Magazine page fallback refresh:** skipped this pass — no new headroom-worthy column since the last refresh that isn't already reflected in the live Magazine embed from Jarvis's Sept. 29 rotation.
+
+## Desk inbox — Oct. 1, ~13:2xZ
+
+| Thread ID | Sender | Subject | Action | Draft |
+|---|---|---|---|---|
+| 1a0f7a4ce555882d | buddymartinshow@gmail.com | Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators. | Built as Wix DRAFT (not published) — column, not breaking | a4064e09-4102-4a2a-bd61-ff3376dc7c7a |
+
+Buddy Martin's new column reacting to Florida's No. 8 ranking and Josh Pate's national-title comments, with a look ahead to Missouri. Writer's copy used verbatim except two typo fixes ("butvthe" → "but the"; a stray line break fixed to "Two things can't be true"). Category Buddy's Blog; tags Jon Sumrall, Scott Stricklin, Florida Gators Football, Missouri, Knijeah Harris.
+
+**Cover gap, flagged rather than hidden:** the writer attached his own photo (captioned "Photo by Chris Spears") of Scott Stricklin, but this session has no Gmail-attachment-download tool, so the attachment's bytes couldn't be pulled and uploaded to Wix. Used an existing credited Chris Spears photo (Jon Sumrall at the podium) as a stand-in cover instead. Whoever publishes this should swap in the writer's actual attached photo first if it's available by then.
+
+**[CHECK]:** the column quotes Sumrall saying his team should "stay where their feet are planted." That exact phrase isn't in any transcript on hand for this week — flagged in the draft itself rather than cut or guessed at.

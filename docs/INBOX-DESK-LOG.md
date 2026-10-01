@@ -191,3 +191,18 @@ Per Brenden's direct Oct. 1 production request ("post whatever make sure buddies
 - **Published** via `UPDATE_PUBLISH`. Live at `https://www.gatorbaitmedia.com/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators-1` (the `-1` slug suffix is Wix's own de-dup, not a duplicate post — only one post object exists at this ID).
 
 No email sent — Brenden's standing "don't send an email" holds. The Thursday roundup campaign `c4b5fcac` is still DRAFT/NOT_STARTED, unaffected by this.
+
+## Magazine refresh — Oct. 1, ~17:4xZ — and a repo/live drift worth flagging
+
+Brenden asked to update the Magazine with current articles. Before touching anything, GET on the live embed (`1dd74333-ee02-40da-9c93-cf8fd787c129`) turned up two things worth recording:
+
+1. **It's already a different, newer design than this repo knows about.** The repo's `automation/site-design/magazine.js` / `deploy/wix-served/magazine-embed.html` still build the old `{lead, lines, inside}` three-tier grid (last touched by this session Sept. 27). The *live* embed is at **revision 50** and runs a genuinely different editorial format: a dated "issue" object (`id`, `date`, `edition`) with a styled cover block (`stamp`/`kicker`/`h1`/`deck`/`foot`/`credit`/`headline`), a `stories` array, and a `gallery` spotlight. Someone — almost certainly the design-system session or Codex — pushed this straight to Wix without committing the new markup/JS back to this repo. That's exactly the "documentation drift" issue #34 already flags, just in a new spot.
+2. **Rebuilding from this repo's `build.py` would have been a regression.** A dry run of the normal rebuild path also tried to revert the homepage's hero-overlay CSS (issue #1 on this session's own list, already fixed live) back to an older state, because the pinned source commit `build.py` reads from predates that fix. Reverted that rebuild attempt untouched — did not push it. Only ever patched the live embed's existing `var D=` data object in place, leaving its CSS/JS and the homepage completely alone.
+
+**What was actually refreshed (embed revision 49 → 50, in-place content only):** cover/lead now point at today's de-duped Buddy Martin column ("Different Playbooks," the canonical URL — see the duplicate-post note below), with the sideline photo and a fresh three-line `h1` treatment. The `stories` rail now carries Franz Beard's Buster/Philo piece, the Jayden Woods Bednarik story, the Denzel Aberdeen injunction ruling, and Buddy's Missouri preview. Left the Ole Miss photo gallery feature as-is — still the right "best shots" callout for this stretch. Site re-published after the patch.
+
+**Recommend to the active controller:** get this live HTML/CSS/JS pulled back into the repo (a one-time export of embed `1dd74333…` into `automation/site-design/`) so the next session's rebuild doesn't silently stomp it. Did not do that export myself this pass — scope creep beyond "update with current articles."
+
+### Duplicate post found and fixed
+
+While pulling current articles, found Buddy's "Different Playbooks" column live **twice**: the draft this desk published earlier today (`a4064e09…`, at slug `…-1`) and a second, separate post (`4a3de039…`) that was apparently published directly — same column text, different title wording, different photo, no SEO data, published ~90 minutes before this desk's version. Per the owner's standing "one canonical article URL, avoid redundancies" rule: deleted the stray duplicate (`4a3de039…`) and moved the canonical, fully-fixed post onto the now-freed clean slug. Live URL unchanged in spirit, now simpler: `https://www.gatorbaitmedia.com/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators`.

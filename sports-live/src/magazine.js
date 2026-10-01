@@ -188,16 +188,30 @@
     return '<nav class="mz-foot" data-mz="footer" aria-label="' + esc(text(F.label, 40)) + '">' + links.map(function (l) { return '<a class="mz-more" href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a>'; }).join('') + (text(F.line, 200) ? '<small>' + esc(text(F.line, 200)) + '</small>' : '') + '</nav>';
   }
 
+  // Shared writer CTA contract: reuse these fields in writer archives/profile templates.
+  function writerPromo(name) {
+    var shows = {
+      'Buddy Martin': {line:'Catch Buddy Martin on The Buddy Martin Show.', role:'Editor', show:'The Buddy Martin Show'},
+      'Loren Meadows': {line:'Catch Loren Meadows on Florida Gator Lowdown.', role:'Football Analyst', show:'Florida Gator Lowdown'}
+    };
+    var p = shows[name];
+    var channel='https://www.youtube.com/@TheBuddyMartinShow';
+    return '<aside class="mz-writer-promo" aria-label="Watch GatorBait TV">'+
+      '<p class="mz-kick">GatorBait TV</p><h3>' + esc(p ? p.line : 'Keep up with GatorBait on YouTube.') + '</h3>'+
+      (p ? '<p>'+esc(name)+' · '+esc(p.role)+'</p>' : '')+
+      '<div><a href="'+channel+'/videos">Browse '+esc(p ? p.show+' and other shows' : 'GatorBait TV shows')+' →</a>'+
+      '<a href="'+channel+'?sub_confirmation=1">Subscribe on YouTube →</a></div></aside>';
+  }
+
   function render(D) {
-    var L = obj(D.labels) || {}, items = [], blocks = [];
-    var cv = cover(D, L); if (cv && obj(D.cover)) items.push({ id: 'mz-cover', label: text(L.coverEntry, 40) || text((obj(D.cover) || {}).kicker, 40), note: text(D.cover.headline, 200) });
-    [columns(D, L), feature(D, L), pregame(D), departments(D, L), shots(D)].forEach(function (s, i) {
-      if (!s) return;
-      var id = ['mz-columns', 'mz-feature', 'mz-pregame', 'mz-departments', 'mz-shots'][i], src = [D.columns, D.feature, D.pregame, D.departments, D.bestShots][i];
-      items.push({ id: id, label: text((obj(src) || {}).label, 60), note: s.note });
-      blocks.push(s.html);
-    });
-    return '<div class="mz-wrap">' + head(D) + cv + contents(items, L) + blocks.join('') + footer(D) + '</div>';
+    var stories=D.stories||[], L=D.labels||{};
+    var items=stories.map(function(p){return {id:'story-'+p.id,label:p.author,note:p.title};});
+    var front=cover(D,L).replaceAll('href="'+safeUrl(D.cover.url)+'"','href="#story-'+stories[0].id+'"');
+    var mast='<aside class="mz-staff" aria-label="Magazine masthead"><p><b>Brenden Martin</b> · Publisher</p><p><b>Buddy Martin</b> · Editor</p><p><b>Franz Beard</b> · Senior Columnist</p><p><b>Loren Meadows</b> · Football Analyst</p><p><b>Chris Spears</b> · Photographer</p></aside>';
+    var body=stories.map(function(p,i){return '<article class="mz-full-story" id="story-'+esc(p.id)+'" data-post="'+esc(p.id)+'"><header><span class="mz-kick">'+String(i+1).padStart(2,'0')+' / '+esc(p.author)+'</span><h2>'+esc(p.title)+'</h2><p class="mz-story-meta">'+esc(p.author)+' · '+esc(p.date)+'</p><a class="mz-site" href="https://www.gatorbaitmedia.com/">gatorbaitmedia.com</a></header><div class="mz-reading">'+p.html+'</div>'+writerPromo(p.author)+'<nav class="mz-story-nav" aria-label="Article navigation"><a href="#mz-contents">Back to contents ↑</a><a href="'+esc(safeUrl(p.url))+'">Original article and discussion ↗</a>'+(stories[i+1]?'<a href="#story-'+esc(stories[i+1].id)+'">Next: '+esc(stories[i+1].author)+' →</a>':'')+'</nav></article>';}).join('');
+    var guide='/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play';
+    var utility='<section class="mz-utilities" aria-label="GatorBait reference desk"><h2>The reference desk</h2><p><a href="'+guide+'#roster">Florida Gators roster</a> · <a href="'+guide+'#schedule">Schedule and results</a></p><h3>The Buddy Martin Show on GatorBait TV</h3><a href="https://www.youtube.com/@TheBuddyMartinShow/live">Watch The Buddy Martin Show</a></section>';
+    return '<div class="mz-wrap">'+head(D)+mast+front+'<div class="mz-tools"><button type="button" data-print>Print / Save as PDF</button><span>Six complete articles · October 1 edition</span></div>'+contents(items,L)+body+utility+'<div class="mz-tools"><button type="button" data-print>Print / Save as PDF</button><a href="#mz-contents">Back to contents ↑</a></div>'+footer(D)+'</div>';
   }
 
   /* ---------- Lifecycle ---------- */
@@ -220,6 +234,7 @@
     m.setAttribute('data-issue', text(D.id, 80)); m.setAttribute('data-mz-build', BUILD); m.setAttribute('data-mz-version', VERSION);
     if (text((obj(D.issue) || {}).pageTitle, 120)) m.setAttribute('aria-label', text(D.issue.pageTitle, 120));
     m.innerHTML = html;
+    m.addEventListener('click', function(e){if(e.target.closest('[data-print]'))window.print();});
     // Same seat as the urban embed: right after the mobile shell host (or the shared header) when that is a body child.
     var anchor = document.getElementById('gbm-mobile-shell-host') || document.getElementById('gbm-site-header');
     if (anchor && anchor.parentNode === document.body) document.body.insertBefore(m, anchor.nextSibling); else document.body.insertBefore(m, document.body.firstChild);

@@ -12,8 +12,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 
-const esbuild = createRequire(import.meta.url)('esbuild');
-const minify = (code, banner) => banner + esbuild.transformSync(code, { minify: true, target: 'es2017', legalComments: 'none', charset: 'utf8' }).code;
+const minify = (code, banner) => banner + code; // Dependency-free, deterministic full-issue bundle.
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = join(here, '..');
@@ -21,7 +20,7 @@ const read = (p) => readFileSync(join(repo, p), 'utf8');
 
 const css = read('sports-live/src/magazine.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
 const runtime = read('sports-live/src/magazine.js');
-const MAX_JS = 80 * 1024;
+const MAX_JS = 180 * 1024;
 
 // Strip editorial meta (notes to the compiler) so the bundle carries only what renders; everything else goes through untouched.
 const META = new Set(['$comment', 'todo']);

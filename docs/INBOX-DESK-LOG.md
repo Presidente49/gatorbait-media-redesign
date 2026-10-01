@@ -131,3 +131,31 @@ Nothing here needed a new write from this desk — every genuine submission in t
 **YouTube:** not re-checked this pass (routine's own desk-inbox YouTube step covers that channel; no new Florida-game video surfaced in the general sweep).
 
 Committed and pushed to `fix-native-flash-20260926`.
+
+## Daily roundup — Oct. 1 (Thursday Magazine edition), ~10:4xZ
+
+First list email check for today: no campaign created or sent yet today (last SENT campaign was Sept. 29, 11:45Z "Senate Vote and Missouri"; checked Wix Email Marketing campaigns list by `dateCreated` to confirm). Not already built by hand. Proceeding per the Thursday rule: the roundup IS the Magazine weekly edition, Buddy leading.
+
+**Stories collected** (every post not yet covered by a sent campaign, newest Buddy piece leading):
+1. Buddy Martin — "The Looming Brilliance of Buster Faulkner" (lead, `0753a25b`)
+2. "Jayden Woods Added To Chuck Bednarik Award Watch List" (`3e699ce7`, this morning's sweep)
+3. Franz Beard — "Thoughts of the Day: September 30, 2026" (`8aaf6121`)
+4. "Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction" (`63e5f8b2`)
+5. "Pay the Toll: Sumrall Buries the Ole Miss Win..." (`50399e36`)
+6. "Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards" (`d0567063`)
+7. Buddy Martin — "Put Down the Poll, Gators. Missouri Is Waiting." (`31cb2116`)
+
+Excluded as already covered by the Sept. 29 11:45Z "Senate Vote and Missouri" send: the Senate Protect College Sports Act story and Thoughts of the Day (Sept. 29).
+
+**Build:** `newsletter/2026-10-01-roundup.mjml`, Colorlib Stack template, Barlow/Inter+Newsreader type. Subject "GatorBait Magazine — Thursday Edition: Faulkner, Woods and Aberdeen" per the Thursday-subject rule. UTM campaign `roundup_2026_10_01`.
+
+**Gates:**
+- Strict MJML compile: pass.
+- check-links (source + rendered): pass, clean UTM set.
+- validate-unique-images: pass, 2/2 unique credited photos (Buster Faulkner cover, Chris Spears/UAA; Denzel Aberdeen cover, Chris Spears).
+- run-stack-qc: pass — 2/2 images, **7 distinct article links** (minimum 6; the first draft with only 4 new-since-window stories failed this gate at 4 links, fixed by adding the three Sept. 28 evening stories — Pay the Toll, Honor Roll, Put Down the Poll — that the Sept. 29 Senate/Missouri email never covered).
+- 390/1000 overflow check: **not run** — Playwright isn't available in this sandbox (same gap noted Sept. 28); structure is otherwise identical to the already-verified-clean template, so this is a real gap, not a pass.
+
+**Uploaded:** Wix Email Marketing draft campaign `c4b5fcac-cd3f-4983-a135-a096b963b6d6`, label target `e345fa8e`. Preview verified: 53,745-char rendered HTML, all six stories present, no broken placeholders.
+
+**Send governor: `ok:false`.** 18 list sends in the last 7 days (cap 7) — stale Ole Miss game-week volume (Sept. 24–27), not anything from today or this policy period. Bounce 1.28%, complaint 0.03% (both fine, well under the 2%/0.1% caps). Account ACTIVE, rank BAD, no story alerts active. **Held, not sent.** Will clear once the Sept. 24–27 sends age out of the rolling 7-day window (by roughly Oct. 4).

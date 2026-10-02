@@ -1,0 +1,12 @@
+{
+  "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+  "revision": "55",
+  "name": "GBM - Magazine Live Issue v9 (rotating edition: Thoughts of the Day)",
+  "enabled": true,
+  "loadOnce": false,
+  "position": "HEAD",
+  "embedData": {
+    "category": "ESSENTIAL",
+    "html": "<!-- GBM_MAGAZINE_2026_V1 weekly web issue src=2898f1b2755eb8adf41825fe274929695a43015c immutable=1 bundle=sports-live/magazine.js --><style id=\"gbm-magazine-2026-shell\">\n\n.gbm-magazine-live #SITE_PAGES,html:has(#gbm-magazine-page) #SITE_PAGES,.gbm-magazine-live #pageBackground_nh0hy{display:none!important}\n.gbm-magazine-live #SITE_CONTAINER,.gbm-magazine-live #masterPage,.gbm-magazine-live #PAGES_CONTAINER,.gbm-magazine-live #SITE_PAGES_TRANSITION_GROUP{height:auto!important;min-height:0!important;padding-bottom:0!important;margin-bottom:0!important}\n</style><script id=\"gbm-magazine-2026-loader\">(function(){\nif(window.__GBMM_2026_LOADER__)return;window.__GBMM_2026_LOADER__=1;\nvar loaded=false,H=document.documentElement.classList;\nfunction on(){return /^\\/magazine\\/?$/.test(location.pathname||'')}\nfunction sync(){if(!on()){H.remove('gbm-mq','gbm-magazine-live');if(window.__GBM_MAG26__)window.__GBM_MAG26__.sync();return;}\nif(window.__GBM_MAG26__){window.__GBM_MAG26__.sync();return;}if(loaded)return;loaded=true;\nvar s=document.createElement('script');s.id='gbm-mag26-bundle';s.async=true;s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@2898f1b2755eb8adf41825fe274929695a43015c/sports-live/magazine.js';s.onerror=function(){loaded=false;H.remove('gbm-mq','gbm-magazine-live')};document.head.appendChild(s);}\nsync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);\n})();</script>"
+  }
+}

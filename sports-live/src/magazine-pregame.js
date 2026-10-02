@@ -28,7 +28,7 @@
   function pgMast(D) {
     var I = obj(D.issue) || {};
     return '<header class="pg-mast"><div class="pg-mast-top"><span>' + esc(text(I.tagline, 120)) + '</span><span>' + esc(text(I.date, 60)) + '</span></div>' +
-      '<p class="pg-word"><span>Gator</span><span>Bait</span></p><p class="pg-word2">Magazine</p>' +
+      '<p class="pg-word"><span>Gator</span><span>Bait</span></p><p class="pg-word2" role="img" aria-label="Magazine">' + 'MAGAZINE'.split('').map(function (c) { return '<span aria-hidden="true">' + c + '</span>'; }).join('') + '</p>' +
       '<p class="pg-issue"><b>' + esc(text(I.number, 60)) + '</b><span>' + esc(text(I.week, 120)) + '</span></p></header>';
   }
   function pgCover(D) {

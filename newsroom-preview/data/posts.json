@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Denzel Aberdeen is back home where he belongs",
+      "excerpt": "A judge cleared Denzel Aberdeen for a fifth year, and the guard who left after Florida's 2025 title is back in Gainesville chasing another championship and his degree.",
+      "url": "https://www.gatorbaitmedia.com/post/denzel-aberdeen-back-home-where-he-belongs",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-02T17:06:28Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_f3b76e840c4c42d38b8b56d657ab01f4~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Denzel Aberdeen is back home where he belongs"
+      }
+    },
+    {
       "title": "The Soothsayer: Gators head to Missouri, where history hasn’t been kind",
       "excerpt": "Florida (4-0) heads to Columbia, where history has not been kind, with a No. 8 ranking and a 5.5-point cushion. The Soothsayer on Missouri, Saturday’s SEC slate and the coaching hot seat.",
       "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-gators-head-to-missouri-where-history-hasn-t-been-kind",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'"
-      }
-    },
-    {
-      "title": "Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout",
-      "excerpt": "Jadan Baugh earned his first SEC Offensive Player of the Week award, while London Montgomery and Bryce Lovett received their first SEC weekly honors after Florida’s 52-28 win over No. 4 Ole Miss.",
-      "url": "https://www.gatorbaitmedia.com/post/honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-awards-after-ole-miss-rout",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-28T20:56:09Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_52f12f29b57540dcb22edd0fa545ceb1~mv2.jpg/v1/fit/w_800,h_500,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout"
       }
     }
   ]

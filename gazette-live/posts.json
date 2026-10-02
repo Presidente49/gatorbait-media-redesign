@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Denzel Aberdeen is back home where he belongs",
+      "excerpt": "A judge cleared Denzel Aberdeen for a fifth year, and the guard who left after Florida's 2025 title is back in Gainesville chasing another championship and his degree.",
+      "url": "https://www.gatorbaitmedia.com/post/denzel-aberdeen-back-home-where-he-belongs",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-02T17:06:28Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_f3b76e840c4c42d38b8b56d657ab01f4~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Denzel Aberdeen is back home where he belongs"
+      }
+    },
+    {
       "title": "The Soothsayer: Gators head to Missouri, where history hasn’t been kind",
       "excerpt": "Florida (4-0) heads to Columbia, where history has not been kind, with a No. 8 ranking and a 5.5-point cushion. The Soothsayer on Missouri, Saturday’s SEC slate and the coaching hot seat.",
       "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-gators-head-to-missouri-where-history-hasn-t-been-kind",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Show-Me State of Mind: A First Look at No. 25 Missouri"
-      }
-    },
-    {
-      "title": "10 Thoughts From the Sidelines: Florida 52, Ole Miss 28",
-      "excerpt": "Photographer Chris Spears had the best seat in The Swamp. Ten things the sideline told him about the Florida team that ran over No. 4 Ole Miss.",
-      "url": "https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss",
-      "author": "Chris Spears",
-      "firstPublishedDate": "2026-09-27T18:39:36Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for 10 Thoughts From the Sidelines: Florida 52, Ole Miss 28"
       }
     }
   ]

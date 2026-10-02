@@ -2,7 +2,7 @@
 """Friday Pregame newsletter, house MJML style (light cards, navy and orange), built from sports-live/magazine-issue-pregame.json.
 Usage: build-email-mjml.py <cover-image-url> [--test]   -> writes friday-pregame.mjml next to this file (compile with mjml).
 The GatorBait mark is the approved logo file (Wix d3cfa5_95dd8a25...), served as PNG for email clients that cannot read webp."""
-import json, sys, html, pathlib
+import json, sys, html, pathlib, re
 root = pathlib.Path(__file__).resolve().parents[4]
 D = json.loads((root / 'sports-live/magazine-issue-pregame.json').read_text())
 COVER = sys.argv[1]
@@ -19,7 +19,7 @@ NAVY, ORANGE, BLUE, INK, MUTE = '#081F3D', '#FA4616', '#0A2CA8', '#11274A', '#4B
 out = []
 add = out.append
 add('<mjml><mj-head><mj-title>GatorBait Magazine: Friday Pregame, Florida at Missouri</mj-title>'
-    '<mj-preview>Franz Beard leads the Friday pregame edition: the Sooth Board, three keys and who is out.</mj-preview>'
+    '<mj-preview>The Soothsayer’s picks, the stat-geek tale of the tape and who’s out before Saturday’s 3:30 p.m. kickoff.</mj-preview>'
     '<mj-attributes><mj-all font-family="Arial, Helvetica, sans-serif" /><mj-text color="%s" font-size="16px" line-height="1.5" />'
     '<mj-button background-color="%s" color="#FFFFFF" border-radius="3px" font-size="15px" font-weight="800" /></mj-attributes></mj-head>'
     '<mj-body background-color="#EEF1F5">' % (INK, ORANGE))
@@ -114,6 +114,9 @@ def card(c):
             % ('' if CID else '<mj-image src="%s" alt="%s" href="%s" padding="0" />' % (img(c['image'], 640, 360), e(c['image']['alt']), e(u(c['url']))),
                ORANGE, e(c['kicker'].upper()), NAVY, e(u(c['url'])), NAVY, e(c['title']), MUTE, e(c['excerpt']), e(u(c['url']))))
 cs = D['cards']['items']
+for c in cs:
+    if 'jayden-woods' in c['url']:
+        c['image'] = {'id': 'd3cfa5_1546cc59544f491abdb5bd78c786ced1', 'ext': 'jpg', 'alt': 'Jayden Woods stat card (GatorBait Media graphic)'}
 for i in range(0, len(cs), 2):
     pair = cs[i:i+2]
     add('<mj-section background-color="#FFFFFF" padding="%s 18px 6px">%s%s</mj-section>' % ('20px' if i == 0 else '6px', ''.join(card(c) for c in pair), '' if len(pair) == 2 else '<mj-column></mj-column>'))
@@ -139,9 +142,18 @@ add('<mj-section background-color="#FFFFFF" padding="24px 24px 26px">'
     % (ORANGE, ORANGE, NAVY, MUTE, e(FB or SITE), 'FOLLOW ON FACEBOOK' if FB else 'GET THE STORIES', NAVY, SITE + '/groups', NAVY))
 # footer
 links = ' &#183; '.join('<a href="%s" style="color:#D7E0EB;">%s</a>' % (e(u(l['url'])), e(l['label'])) for l in D['reference']['links'])
-add('<mj-section background-color="%s" padding="20px 24px"><mj-column><mj-text align="center" color="#D7E0EB" font-size="13px" line-height="1.7" padding="0">%s<br/><a href="%s" style="color:#D7E0EB;">GatorBait Media</a> &#183; Independent Florida Gators coverage<br/>%s</mj-text></mj-column></mj-section>'
+add('<mj-section background-color="%s" padding="20px 24px"><mj-column><mj-text align="center" color="#D7E0EB" font-size="13px" line-height="1.7" padding="0">%s<br/><a href="%s" style="color:#D7E0EB;">GatorBait Media</a> &#183; Independent Florida Gators coverage<br/>GatorBait Magazine Newsletter<br/>%s</mj-text></mj-column></mj-section>'
     % (NAVY, links, SITE, 'You are receiving this test from GatorBait Media.' if TEST else ''))
 add('</mj-body></mjml>')
+doc = '\n'.join(out)
+n = [0]
+def tag(m):
+    url = m.group(1)
+    n[0] += 1
+    base, frag = (url.split('#', 1) + [''])[:2]
+    q = ('&' if '?' in base else '?') + 'utm_source=gatorbait&utm_medium=email&utm_campaign=magazine-2026-10-02-missouri&utm_content=link-%d' % n[0]
+    return 'href="%s%s%s"' % (base, q, ('#' + frag) if frag else '')
+doc = re.sub(r'href="(https://www\.gatorbaitmedia\.com[^"]*)"', tag, doc)
 p = pathlib.Path(__file__).resolve().parent / 'friday-pregame.mjml'
-p.write_text('\n'.join(out))
+p.write_text(doc)
 print('wrote', p, p.stat().st_size)

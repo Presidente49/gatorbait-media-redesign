@@ -1,7 +1,7 @@
 /* GatorBait Capture 2026: "Get GatorBait Magazine free" signup for story pages and the homepage hub.
  * One component, four placements, each tagged with its source:
  *   home           the hub module the Front Page renderer paints (front-page.js calls GBM_CAPTURE.html('home'));
- *   story-inline   mid-article, after the 4th prose paragraph (stories with 6+ prose paragraphs only);
+ *   story-inline   retired Oct. 2, 2026 (mid-article card removed at Brenden's request);
  *   story-end      folded into the Story Kit's "Keep up with the Gators" block;
  *   story-slideup  a small bar that slides up on /post/ pages after 50% scroll or 45 s.
  * Where a signup goes: the site's existing Wix form "GatorBait Email List" (6babfee8-...), which already holds the
@@ -51,9 +51,9 @@
   var CSS = [
     P + '.gbc{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;contain:inline-size;margin:24px 0;padding:18px 16px 16px;border-radius:12px;background:#0021a5;color:#fff;text-align:left;direction:ltr;font:500 16px/1.4 "Barlow",sans-serif;border-top:6px solid #fa4616}',
     P + '.gbc *{box-sizing:border-box}' + P + '.gbc input,' + P + '.gbc button{font-family:"Barlow",sans-serif}',
-    P + '.gbc .gbc-k{display:block;margin:0 0 6px;padding:0;border:0;font:800 12px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#ffb27a}',
-    P + '.gbc .gbc-h{margin:0 0 6px;padding:0;border:0;font:800 26px/1.05 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.01em;text-transform:none;color:#fff;overflow-wrap:break-word}',
-    P + '.gbc .gbc-v{margin:0 0 12px;padding:0;font:500 16px/1.4 "Barlow",sans-serif;color:#e8ecf8}',
+    P + '.gbc .gbc-k{display:block;margin:0 0 6px;padding:0;border:0;font:800 12px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#ffb27a!important}',
+    P + '.gbc .gbc-h{margin:0 0 6px;padding:0;border:0;font:800 26px/1.05 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.01em;text-transform:none;color:#fff!important;overflow-wrap:break-word}',
+    P + '.gbc .gbc-v{margin:0 0 12px;padding:0;font:500 16px/1.4 "Barlow",sans-serif;color:#e8ecf8!important}',
     P + '.gbc form{margin:0;padding:0}',
     P + '.gbc .gbc-l{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}',
     P + '.gbc .gbc-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}',
@@ -62,9 +62,9 @@
     P + '.gbc .gbc-b{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin:0;padding:0 18px;border:0;border-radius:8px;background:#fa4616;color:#fff;font:800 17px/1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;white-space:nowrap}',
     P + '.gbc .gbc-b:hover,' + P + '.gbc .gbc-b:focus-visible{background:#fff;color:#0021a5;outline:2px solid #fa4616;outline-offset:2px}',
     P + '.gbc .gbc-b[disabled]{opacity:.7;cursor:progress}',
-    P + '.gbc .gbc-c{display:flex;align-items:flex-start;gap:10px;min-height:44px;margin:0 0 6px;padding:2px 0;font:500 15px/1.35 "Barlow",sans-serif;color:#fff;cursor:pointer}',
+    P + '.gbc .gbc-c{display:flex;align-items:flex-start;gap:10px;min-height:44px;margin:0 0 6px;padding:2px 0;font:500 15px/1.35 "Barlow",sans-serif;color:#fff!important;cursor:pointer}',
     P + '.gbc .gbc-c input{flex:0 0 auto;width:22px;height:22px;margin:0;accent-color:#fa4616;cursor:pointer}',
-    P + '.gbc .gbc-p{margin:0;padding:0;font:500 13px/1.4 "Barlow",sans-serif;color:#c9d3ee}',
+    P + '.gbc .gbc-p{margin:0;padding:0;font:500 13px/1.4 "Barlow",sans-serif;color:#c9d3ee!important}',
     P + '.gbc a,' + P + '.gbc a:visited{color:#fff;text-decoration:underline;text-decoration-color:#fa4616;text-underline-offset:2px}',
     P + '.gbc .gbc-m{margin:8px 0 0;padding:0;font:700 15px/1.35 "Barlow",sans-serif;color:#fff}.gbc .gbc-m:empty{display:none}',
     P + '.gbc .gbc-m[data-tone=err]{color:#ffd2c2}',
@@ -199,29 +199,10 @@
   }
 
   /* ---------- Story pages: inline card after the 4th prose paragraph, and inside "Keep up with the Gators" ---------- */
-  function prose(ps) {
-    return ps.filter(function (p) {
-      var t = String(p.textContent || '').replace(/\s+/g, ' ').trim();
-      return t.length > 60 && !p.closest('blockquote,figure,figcaption,[data-story-kit]') && !/^(By\s+[A-Z]|[—–-]\s)/.test(t);
-    });
-  }
-  // Insert without moving what the reader sees: if the anchor is above the viewport, pay the new height back.
-  function insertQuiet(anchor, el) {
-    var above = anchor.getBoundingClientRect().bottom < 0;
-    anchor.insertAdjacentElement('afterend', el);
-    if (above) { var h = el.getBoundingClientRect().height + 48; if (h > 0) scrollBy(0, h); }
-  }
   function mountStory(ctx) {
     if (!onPost() || joined() || !ctx || !ctx.body) return;
     css();
-    if (!document.querySelector('[data-gbm-capture="story-inline"]')) {
-      var ps = prose(ctx.paras || []);
-      if (ps.length >= 6) {
-        var a = ps[3];
-        if (a.parentNode && a.parentNode !== ctx.body && a.parentNode.children.length === 1) a = a.parentNode;
-        insertQuiet(a, node('story-inline'));
-      }
-    }
+    // No mid-article card (Brenden, Oct. 2: hard to read mid-story; keep the slide-up bar and the end card).
     var more = ctx.more || document.querySelector('[data-story-kit="more"]');
     if (more && !more.querySelector('[data-gbm-capture="story-end"]')) more.appendChild(node('story-end', { extra: 'gbc-end' }));
     watchBar();

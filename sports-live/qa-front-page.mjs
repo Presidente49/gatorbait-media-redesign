@@ -362,8 +362,8 @@ const storyScenarios = [
   { name: 'story-feed-down', path: '/post/qa-story-kit-fixture', widths: [390], mounted: true, scoreboard: 404, chips: STORY_CHIPS.slice(2), links: STORY_LINKS.slice(0, 2), sweep: 'static' },
   { name: 'story-not-post', path: '/blog-qa-story-kit-fixture', widths: [390], mounted: false },
   // GatorBait Magazine signup on story pages (sports-live/src/capture.js). The slide-up waits 45 s live; QA shortens it.
-  // Signup from the mid-article card, tagged story-inline; the other card steps back and no slide-up follows.
-  { name: 'story-capture-inline', path: '/post/qa-story-kit-fixture', widths: [320, 390, 1366], mounted: true, capture: 'inline' },
+  // No mid-article card (retired Oct. 2, 2026). Signup from the end card, tagged story-end; no slide-up follows.
+  { name: 'story-capture-end', path: '/post/qa-story-kit-fixture', widths: [320, 390, 1366], mounted: true, capture: 'end' },
   // 50% scroll brings the slide-up; it steps aside while the Share sheet is open, signs up as story-slideup.
   { name: 'story-capture-slideup', path: '/post/qa-story-kit-fixture', widths: [320, 390, 430, 1366], mounted: true, capture: 'slideup', delayMs: 60000 },
   // The timer alone (no scroll) brings it; the close button and Escape remember the dismissal for 14 days.
@@ -375,15 +375,15 @@ const storyScenarios = [
 async function captureFlow(page, sc, bad, wixLog, read) {
   const barState = () => page.evaluate(() => { const b = document.querySelector('#gbc-bar'); if (!b) return 'none'; const r = b.getBoundingClientRect(); return (b.classList.contains('aside') ? 'aside' : b.classList.contains('on') ? 'on' : 'off') + (b.classList.contains('on') && !b.classList.contains('aside') && r.bottom > innerHeight + 1 ? '-offscreen' : ''); });
   const vwOk = async (phase) => { const o = await page.evaluate(() => ({ w: document.documentElement.scrollWidth, vw: document.documentElement.clientWidth, bar: (() => { const b = document.querySelector('#gbc-bar .gbc'); if (!b) return null; const r = b.getBoundingClientRect(); return [Math.round(r.left), Math.round(r.right)]; })(), fonts: [...new Set([...document.querySelectorAll('#gbc-bar, #gbc-bar *')].map((e) => getComputedStyle(e).fontFamily))] })); if (o.w > o.vw || (o.bar && (o.bar[0] < 0 || o.bar[1] > o.vw))) bad.push(`${phase}overflow page ${o.w}/${o.vw} bar ${o.bar}`); const bf = o.fonts.filter((f) => /georgia|times|anton|arial|(^|,)\s*serif\s*(,|$)/i.test(f)); if (bf.length) bad.push(`${phase}bar fonts ${bf}`); };
-  if (sc.capture === 'inline') {
-    await page.evaluate(() => document.querySelector('[data-gbm-capture="story-inline"]').scrollIntoView({ block: 'center' }));
-    const reqs = await signUp(page, '[data-gbm-capture="story-inline"]', wixLog);
-    checkSignup(reqs, 'story-inline', bad, 'inline signup: ');
-    const st = await page.evaluate(() => ({ state: document.querySelector('[data-gbm-capture="story-inline"]').getAttribute('data-state'), endHidden: document.querySelector('[data-gbm-capture="story-end"]').hidden, joined: localStorage.getItem('gbm-capture-joined') }));
-    if (st.state !== 'done' || !st.endHidden || !st.joined) bad.push(`inline signup: ${JSON.stringify(st)}`);
+  if (sc.capture === 'end') {
+    await page.evaluate(() => document.querySelector('[data-gbm-capture="story-end"]').scrollIntoView({ block: 'center' }));
+    const reqs = await signUp(page, '[data-gbm-capture="story-end"]', wixLog);
+    checkSignup(reqs, 'story-end', bad, 'end signup: ');
+    const st = await page.evaluate(() => ({ state: document.querySelector('[data-gbm-capture="story-end"]').getAttribute('data-state'), joined: localStorage.getItem('gbm-capture-joined') }));
+    if (st.state !== 'done' || !st.joined) bad.push(`end signup: ${JSON.stringify(st)}`);
     await page.evaluate(() => scrollTo(0, document.body.scrollHeight)); await page.waitForTimeout(1300);
     if ((await barState()) !== 'none') bad.push('slide-up shown after the reader signed up');
-    await vwOk('inline signup: ');
+    await vwOk('end signup: ');
   }
   if (sc.capture === 'slideup') {
     // Wix puts comments, related posts and the footer under a story; stand in for them so the reader can leave both cards behind.
@@ -431,7 +431,7 @@ async function captureFlow(page, sc, bad, wixLog, read) {
     await page.reload({ waitUntil: 'load' }); await page.waitForSelector('[data-story-kit="strip"]', { timeout: 8000 }).catch(() => {});
     await page.evaluate(() => scrollTo(0, document.body.scrollHeight)); await page.waitForTimeout(2600);
     if ((await barState()) !== 'none') bad.push('slide-up came back inside the 14-day quiet period');
-    const r2 = await read(); if (r2.cap.inline !== 1 || r2.cap.end !== 1) bad.push('dismissing the bar removed the story cards');
+    const r2 = await read(); if (r2.cap.inline !== 0 || r2.cap.end !== 1) bad.push('dismissing the bar removed the story cards');
     // 15 days later it may return.
     await page.evaluate(() => localStorage.setItem('gbm-capture-dismissed', String(Date.now() - 15 * 864e5)));
     await page.reload({ waitUntil: 'load' }); await page.waitForTimeout(400); await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(2400);
@@ -526,8 +526,8 @@ for (const sc of only(storyScenarios)) {
       if (r.css !== 1) bad.push(`${phase}css tags ${r.css}`);
       const c = r.cap;
       if (sc.joined) { if (c.inline || c.end || c.bar) bad.push(`${phase}signed-up reader still sees capture: inline ${c.inline}, end ${c.end}, bar ${c.bar}`); }
-      else if (!sc.capture) { /* the original kit scenarios: the cards must be there once */ if (c.inline !== 1 || c.end !== 1) bad.push(`${phase}capture cards inline ${c.inline}, end ${c.end}`); }
-      if (!sc.joined && (c.inline !== 1 || !c.inBody || !c.afterFourth || c.end !== 1 || !c.endInMore || c.css !== 1)) bad.push(`${phase}capture inline=${c.inline} inBody=${c.inBody} afterFourth=${c.afterFourth} end=${c.end} inMore=${c.endInMore} css=${c.css}`);
+      else if (!sc.capture) { /* the original kit scenarios: the cards must be there once */ if (c.inline !== 0 || c.end !== 1) bad.push(`${phase}capture cards inline ${c.inline}, end ${c.end}`); }
+      if (!sc.joined && (c.inline !== 0 || c.end !== 1 || !c.endInMore || c.css !== 1)) bad.push(`${phase}capture inline=${c.inline} (expect no mid-article card) end=${c.end} inMore=${c.endInMore} css=${c.css}`);
       if (c.checked) bad.push(`${phase}a consent box starts checked`);
     };
     const bad = [];

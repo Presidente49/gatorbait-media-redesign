@@ -292,7 +292,7 @@ html,body{background:white!important;color:black!important}
 }
 /* Grow with enlarged text while preserving the current photo overlay. */
 @media screen {
-#gbm-magazine-page.mz26 .mz-cover{display:grid}
+#gbm-magazine-page.mz26 .mz-cover{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto}
 #gbm-magazine-page.mz26 .mz-cover-fig,#gbm-magazine-page.mz26 .mz-cover-type{grid-area:1/1}
 #gbm-magazine-page.mz26 .mz-cover-type{position:relative;inset:auto;min-width:0}
 #gbm-magazine-page.mz26 .mz-cover-fig .mz-frame{height:100%}
@@ -309,3 +309,12 @@ html,body{background:white!important;color:black!important}
 #gbm-magazine-page.mz26 .mz-five figcaption span{display:block;font-size:13px;color:var(--mz-mute)}
 #gbm-magazine-page.mz26 .mz-five a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline}
 @media print{#gbm-magazine-page.mz26 .mz-five{break-before:page}#gbm-magazine-page.mz26 .mz-five figcaption{font-size:10pt}}
+@media print{
+#gbm-magazine-page.mz26 .mz-cover{display:block;box-shadow:none;border:0}
+#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame{height:55mm;aspect-ratio:auto!important}
+#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame img{object-fit:contain;max-height:55mm}
+#gbm-magazine-page.mz26 .mz-cover-type{padding:8pt 0;background:none}
+#gbm-magazine-page.mz26 .mz-cover h1{font-size:26pt;line-height:1.1}
+#gbm-magazine-page.mz26 .mz-cover .mz-dek{font-size:10pt}
+#gbm-magazine-page.mz26 .mz-staff{font-size:9pt;margin-block:8pt;padding-block:8pt}
+}

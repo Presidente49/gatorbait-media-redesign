@@ -8,18 +8,19 @@ const browser=await chromium.launch({headless:true});
 const assert=(condition,message)=>{if(!condition)throw Error(message);};
 for(const width of [320,390,430,1366]){
  const page=await browser.newPage({viewport:{width,height:900}});
- await page.route('https://www.gatorbaitmedia.com/magazine',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><meta name="viewport" content="width=device-width"><meta name="robots" content="noindex"><div id="SITE_CONTAINER"><div id="masterPage"><div id="PAGES_CONTAINER"><div id="SITE_PAGES_TRANSITION_GROUP"><div id="SITE_PAGES"></div></div></div></div></div><script>'+bundle+'</script>'}));
+ await page.route('https://www.gatorbaitmedia.com/magazine',r=>r.fulfill({contentType:'text/html; charset=utf-8',body:'<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="robots" content="noindex"><div id="SITE_CONTAINER"><div id="masterPage"><div id="PAGES_CONTAINER"><div id="SITE_PAGES_TRANSITION_GROUP"><div id="SITE_PAGES"></div></div></div></div></div><script>'+bundle+'</script>'}));
  await page.goto('https://www.gatorbaitmedia.com/magazine');
  await page.locator('.mz-passport').waitFor();await page.evaluate(()=>document.fonts.ready);
  const metrics=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,count:document.querySelectorAll('.mz-full-story').length,credits:document.querySelectorAll('.mz-body-photo figcaption').length,cover:(()=>{const a=document.querySelector('.mz-cover').getBoundingClientRect(),b=document.querySelector('.mz-cover-type').getBoundingClientRect();return b.bottom<=a.bottom+1})()}));
  assert(!metrics.overflow,'overflow '+width);assert(metrics.count===6,'missing article');assert(metrics.credits===5,'credit count');assert(metrics.cover,'clipped cover');
+ assert(await page.evaluate(()=>document.querySelector('.mz-cover-fig').getBoundingClientRect().width>=document.querySelector('.mz-cover').getBoundingClientRect().width-1),'cover inherited split columns');
  await page.screenshot({path:out+'cover-'+width+'.png'});
  await page.locator('.mz-passport a').click();await page.locator('.mz-story-nav').first().scrollIntoViewIfNeeded();await page.waitForTimeout(2300);
  assert((await page.locator('.mz-passport span').first().innerText()).startsWith('1 of 6'),'passport end '+width);
  await page.reload();assert((await page.locator('.mz-passport span').first().innerText()).startsWith('1 of 6'),'resume storage');
  await page.addStyleTag({content:'#gbm-magazine-page.mz26{font-size:32px}#gbm-magazine-page.mz26 .mz-cover h1{font-size:72px}#gbm-magazine-page.mz26 .mz-cover .mz-dek{font-size:30px}'});
  assert(await page.evaluate(()=>document.querySelector('.mz-cover-type').getBoundingClientRect().bottom<=document.querySelector('.mz-cover').getBoundingClientRect().bottom+1),'enlarged cover');
- if(width===1366){await page.reload();await page.pdf({path:out+'full-issue.pdf',format:'A4',printBackground:true});}
+ if(width===1366){await page.reload();await page.locator('.mz-passport').waitFor();await page.evaluate(()=>{window.print=()=>window.__printed=true;});await page.locator('[data-print]').first().click();await page.waitForFunction(()=>window.__printed===true);assert(await page.evaluate(()=>Array.from(document.querySelectorAll('.mz26 img')).every(i=>i.complete&&i.naturalWidth>0)),'print images failed');await page.pdf({path:out+'full-issue.pdf',format:'A4',printBackground:true});}
  console.log('PASS same build width '+width+': 6 articles, 5 credits, cover growth, progress/reload.');await page.close();
 }
 await browser.close();

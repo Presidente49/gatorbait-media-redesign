@@ -308,8 +308,15 @@
     m.setAttribute('data-issue', text(D.id, 80)); m.setAttribute('data-mz-build', BUILD); m.setAttribute('data-mz-version', VERSION);
     if (text((obj(D.issue) || {}).pageTitle, 120)) m.setAttribute('aria-label', text(D.issue.pageTitle, 120));
     m.innerHTML = html;
-    m.addEventListener('click', function(e){
-      if(e.target.closest('[data-print]'))window.print();
+    m.addEventListener('click', async function(e){
+      var printButton=e.target.closest('[data-print]');
+      if(printButton){
+        var label=printButton.textContent;printButton.disabled=true;printButton.textContent='Preparing photographs…';
+        var images=Array.from(m.querySelectorAll('img'));
+        images.forEach(function(img){img.loading='eager';});
+        await Promise.race([Promise.all(images.map(function(img){return img.decode ? img.decode().catch(function(){}) : Promise.resolve();})),new Promise(function(resolve){setTimeout(resolve,10000);})]);
+        try{window.print();}finally{printButton.disabled=false;printButton.textContent=label;}
+      }
       var a=e.target.closest('a[href^="#story-"]');
       if(a){var target=m.querySelector(a.getAttribute('href'));var h=target&&target.querySelector('h2');if(h){h.tabIndex=-1;h.focus({preventScroll:true});}}
     });

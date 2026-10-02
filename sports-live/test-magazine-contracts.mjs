@@ -1,0 +1,18 @@
+import vm from 'node:vm';
+import {readFileSync} from 'node:fs';
+const runtime=readFileSync(new URL('./src/magazine.js',import.meta.url),'utf8');
+const issue=JSON.parse(readFileSync(new URL('./magazine-issue.json',import.meta.url),'utf8'));
+const context=vm.createContext({URL,console,ISSUE:issue,BUILD:'contract-test',CSS:'',window:{addEventListener(){}},document:{documentElement:{classList:{remove(){}}},readyState:'loading',addEventListener(){}}});
+vm.runInContext('(function(){'+runtime+';this.test={fiveBeats,writerPromo};}).call(this);',context);
+const assert=(ok,msg)=>{if(!ok)throw Error(msg);};
+const photo={id:'d3cfa5_56a64986c874417c9a8299fae22649ed',ext:'jpg',alt:'Fixture image',caption:'Fixture caption',credit:'Fixture credit',sourceUrl:'/post/fixture'};
+const draft={fiveBeats:{title:'Fixture',approved:false,photos:Array(5).fill(photo)}};
+assert(context.test.fiveBeats(draft)==='','unapproved feature rendered');
+draft.fiveBeats.approved=true;
+assert((context.test.fiveBeats(draft).match(/<figure>/g)||[]).length===5,'five frames missing');
+draft.fiveBeats.photos=Array(4).fill(photo);assert(context.test.fiveBeats(draft)==='','partial package rendered');
+draft.fiveBeats.photos=Array(5).fill({...photo,credit:''});assert(context.test.fiveBeats(draft)==='','unknown credit rendered');
+assert(context.test.writerPromo('Buddy Martin').includes('@TheBuddyMartinShow/live'),'Buddy show route missing');
+assert(!context.test.writerPromo('Loren Meadows',{show:'Wrong show',title:'Mismatch',url:'https://www.youtube.com/watch?v=abcdefghijk'}).includes('watch?v='),'wrong show accepted');
+assert(context.test.writerPromo('Loren Meadows',{show:'Florida Gator Lowdown',title:'Fixture',url:'https://www.youtube.com/watch?v=abcdefghijk'}).includes('watch?v='),'verified episode contract missing');
+console.log('PASS Five Beats approval/count/credit gates and matched-show routing contracts. Fixture data only.');

@@ -117,14 +117,12 @@ cs = D['cards']['items']
 for i in range(0, len(cs), 2):
     pair = cs[i:i+2]
     add('<mj-section background-color="#FFFFFF" padding="%s 18px 6px">%s%s</mj-section>' % ('20px' if i == 0 else '6px', ''.join(card(c) for c in pair), '' if len(pair) == 2 else '<mj-column></mj-column>'))
-if not CID:
-    # best shots
-    ph = D['shots']['photos']
-    def shot(p): return '<mj-column padding="3px"><mj-image src="%s" alt="%s" href="%s" padding="0" /><mj-text font-size="12px" color="%s" padding="3px 0 0" line-height="1.3">%s</mj-text></mj-column>' % (img(p, 360, 240), e(p['alt']), e(u(D['shots']['url'])), MUTE, e(p['caption']))
-    add('<mj-section background-color="#FFFFFF" padding="22px 21px 0"><mj-column><mj-text color="%s" font-size="12px" font-weight="900" letter-spacing="2px" padding="0 3px 2px">PHOTOGRAPHY</mj-text><mj-text color="%s" font-size="26px" font-weight="900" padding="0 3px 4px">Best shots</mj-text><mj-text color="%s" font-size="13px" padding="0 3px 4px">From Florida 52, Ole Miss 28. Photos by Chris Spears, GatorBait Media.</mj-text></mj-column></mj-section>' % (ORANGE, NAVY, MUTE))
-    add('<mj-section background-color="#FFFFFF" padding="0 21px">%s</mj-section>' % ''.join(shot(p) for p in ph[:3]))
-    add('<mj-section background-color="#FFFFFF" padding="0 21px 8px">%s<mj-column padding="3px"></mj-column></mj-section>' % ''.join(shot(p) for p in ph[3:5]))
 add('<mj-section background-color="#FFFFFF" padding="6px 24px 26px"><mj-column><mj-text align="center" color="%s" font-size="16px" padding="0 0 6px">%s</mj-text><mj-button href="%s" padding="8px 0 0">OPEN THE FULL MAGAZINE</mj-button></mj-column></mj-section>' % (INK, e(D['reference']['next']), SITE + '/magazine'))
+# best shots: one gallery image (rendered from deploy/covers/pregame-gallery.html) at the bottom
+GALLERY = next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--gallery=')), None)
+if GALLERY and not CID:
+    add('<mj-section background-color="#060B1C" padding="0"><mj-column><mj-image src="%s" alt="Best shots from Florida 52, Ole Miss 28: a touchdown celebration, Jon Sumrall leading the Gators out, the defense swarming, The Swamp at kickoff and the scene after the win. Photos by Chris Spears, GatorBait Media." href="%s" padding="0" width="600px" /></mj-column></mj-section>'
+        '<mj-section background-color="#060B1C" padding="10px 24px 18px"><mj-column><mj-button href="%s" background-color="#060B1C" border="2px solid #FA4616" padding="0">SEE THE FULL GALLERY</mj-button></mj-column></mj-section>' % (GALLERY, e(u(D['shots']['url'])), e(u(D['shots']['url']))))
 # get more: daily blog alerts (The Gator Daily News on Facebook) | the GatorBait Boards
 FB = next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--fb=')), None)
 add('<mj-section background-color="#FFFFFF" padding="0 24px 26px">'

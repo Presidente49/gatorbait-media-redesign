@@ -42,6 +42,30 @@ G = D['game']
 MATCHUP = 'https://static.wixstatic.com/media/d3cfa5_1fe245369e1d40dfbe9ab7c20053de72~mv2.jpg/v1/fill/w_1200,h_760,al_c,q_85/file.jpg'
 add('<mj-section background-color="%s" padding="0"><mj-column><mj-image src="%s" alt="No. 8 Florida (4-0) at No. 25 Missouri (3-1), Saturday, Oct. 3, 3:30 p.m. ET on ABC. Line FLA -5.5, total 57.5." href="%s" padding="0" width="600px" /></mj-column></mj-section>' % (NAVY, MATCHUP, SITE + '/magazine'))
 add('<mj-section background-color="%s" padding="12px 24px 16px"><mj-column><mj-text color="#D7E0EB" font-size="14px" line-height="1.5" padding="0">ESPN matchup predictor: Florida %s%%, Missouri %s%%. %s</mj-text></mj-column></mj-section>' % (NAVY, G['predictor']['florida'], G['predictor']['missouri'], e(G['forecast'])))
+# tale of the tape: ESPN season team stats (site.api.espn.com teams/57 and /142 statistics, pulled Oct. 2) and ESPN season leaders (summary?event=401856708)
+T = json.loads((pathlib.Path(__file__).resolve().parent / 'stats-espn.json').read_text())
+tr = ''
+for lab, f, m, hi in T['tape']:
+    fb = (float(f.rstrip('%')) > float(m.rstrip('%'))) == hi
+    mb = (float(m.rstrip('%')) > float(f.rstrip('%'))) == hi
+    if f == m: fb = mb = False
+    cell = lambda v, b, al: '<td style="padding:8px 4px;border-bottom:1px solid #dde3ec;text-align:%s;font-size:18px;font-weight:900;color:%s;font-variant-numeric:tabular-nums;width:26%%;">%s</td>' % (al, ORANGE if b else NAVY, e(v))
+    tr += '<tr>%s<td style="padding:8px 4px;border-bottom:1px solid #dde3ec;text-align:center;font-size:12px;font-weight:800;letter-spacing:1px;color:%s;">%s</td>%s</tr>' % (cell(f, fb, 'left'), MUTE, e(lab.upper()), cell(m, mb, 'right'))
+add('<mj-section background-color="#FFFFFF" padding="24px 24px 8px"><mj-column>'
+    '<mj-text color="%s" font-size="12px" font-weight="900" letter-spacing="2px" padding="0 0 4px">FOR THE STAT GEEKS</mj-text>'
+    '<mj-text color="%s" font-size="30px" line-height="1.1" font-weight="900" padding="0 0 4px">Tale of the tape</mj-text>'
+    '<mj-text color="%s" font-size="13px" padding="0 0 8px">Season averages, four games each. Orange marks the edge. Source: ESPN.</mj-text>'
+    '<mj-table padding="0" cellpadding="0"><tr><td style="padding:6px 4px;border-bottom:3px solid %s;font-size:14px;font-weight:900;color:%s;letter-spacing:1px;">FLORIDA</td><td style="border-bottom:3px solid %s;"></td><td style="padding:6px 4px;border-bottom:3px solid #F1B82D;text-align:right;font-size:14px;font-weight:900;color:%s;letter-spacing:1px;">MISSOURI</td></tr>%s</mj-table>'
+    '</mj-column></mj-section>' % (ORANGE, NAVY, MUTE, BLUE, BLUE, NAVY, NAVY, tr))
+def lead(team, bg, acc, fg, sub):
+    r = ''.join('<mj-text color="%s" font-size="11px" font-weight="900" letter-spacing="1.6px" padding="12px 0 0">%s</mj-text>'
+                '<mj-text color="%s" font-size="19px" line-height="1.15" font-weight="900" padding="2px 0 0">%s</mj-text>'
+                '<mj-text color="%s" font-size="13px" line-height="1.4" padding="2px 0 0">%s</mj-text>' % (acc, e(c.upper()), fg, e(n), sub, e(v)) for c, n, v in T['leaders'][team])
+    return '<mj-column background-color="%s" padding="18px 18px 20px" vertical-align="top"><mj-text color="%s" font-size="22px" font-weight="900" letter-spacing="1px" padding="0">%s</mj-text>%s</mj-column>' % (bg, fg, team.upper(), r)
+add('<mj-section background-color="#FFFFFF" padding="16px 24px 4px"><mj-column><mj-text color="%s" font-size="12px" font-weight="900" letter-spacing="2px" padding="0 0 4px">PLAYERS TO KNOW</mj-text>'
+    '<mj-text color="%s" font-size="13px" padding="0">Season leaders by jersey number. Source: ESPN.</mj-text></mj-column></mj-section>' % (ORANGE, MUTE))
+add('<mj-section background-color="#FFFFFF" padding="6px 24px 8px">%s%s</mj-section>' % (lead('Florida', BLUE, ORANGE, '#FFFFFF', '#DCE4FF'), lead('Missouri', '#111111', '#F1B82D', '#FFFFFF', '#E9D9A8')))
+add('<mj-section background-color="#FFFFFF" padding="4px 24px 24px"><mj-column><mj-button href="https://floridagators.com/sports/football/roster" background-color="%s" padding="6px 0 0">THE FULL GATORS ROSTER</mj-button></mj-column></mj-section>' % NAVY)
 # Sooth Board
 rows = []
 games = D['slate']['games']
@@ -81,14 +105,18 @@ add('<mj-section background-color="#FFFFFF" padding="14px 24px 22px"><mj-column>
 # more from this week
 add('<mj-section background-color="%s" padding="26px 24px 4px"><mj-column><mj-text color="%s" font-size="12px" font-weight="900" letter-spacing="2px" padding="0 0 4px">THIS WEEK</mj-text>'
     '<mj-text color="#FFFFFF" font-size="28px" font-weight="900" padding="0">More from GatorBait</mj-text></mj-column></mj-section>' % (NAVY, ORANGE))
-for c in D['cards']['items']:
-    add('<mj-section background-color="#FFFFFF" padding="0 0 2px"><mj-column>'
-        '%s'
-        '<mj-text color="%s" font-size="12px" font-weight="900" letter-spacing="1.6px" padding="14px 24px 0">%s</mj-text>'
-        '<mj-text color="%s" font-size="22px" line-height="1.15" font-weight="900" padding="4px 24px 0">%s</mj-text>'
-        '<mj-text color="%s" font-size="15px" line-height="1.5" padding="6px 24px 0">%s</mj-text>'
-        '<mj-button href="%s" align="left" padding="10px 24px 22px" inner-padding="10px 22px">READ</mj-button></mj-column></mj-section>'
-        % ('' if CID else '<mj-image src="%s" alt="%s" href="%s" padding="0" width="600px" />' % (img(c['image'], 1200, 674), e(c['image']['alt']), e(u(c['url']))), ORANGE, e(c['kicker'].upper()), NAVY, e(c['title']), MUTE, e(c['excerpt']), e(u(c['url']))))
+def card(c):
+    return ('<mj-column padding="0 6px 12px" vertical-align="top">%s'
+            '<mj-text color="%s" font-size="11px" font-weight="900" letter-spacing="1.6px" padding="10px 2px 0">%s</mj-text>'
+            '<mj-text color="%s" font-size="18px" line-height="1.2" font-weight="900" padding="4px 2px 0"><a href="%s" style="color:%s;text-decoration:none;">%s</a></mj-text>'
+            '<mj-text color="%s" font-size="14px" line-height="1.45" padding="6px 2px 0">%s</mj-text>'
+            '<mj-button href="%s" align="left" padding="10px 2px 0" inner-padding="9px 18px" font-size="13px">READ</mj-button></mj-column>'
+            % ('' if CID else '<mj-image src="%s" alt="%s" href="%s" padding="0" />' % (img(c['image'], 600, 400), e(c['image']['alt']), e(u(c['url']))),
+               ORANGE, e(c['kicker'].upper()), NAVY, e(u(c['url'])), NAVY, e(c['title']), MUTE, e(c['excerpt']), e(u(c['url']))))
+cs = D['cards']['items']
+for i in range(0, len(cs), 2):
+    pair = cs[i:i+2]
+    add('<mj-section background-color="#FFFFFF" padding="%s 18px 6px">%s%s</mj-section>' % ('20px' if i == 0 else '6px', ''.join(card(c) for c in pair), '' if len(pair) == 2 else '<mj-column></mj-column>'))
 if not CID:
     # best shots
     ph = D['shots']['photos']
@@ -97,6 +125,20 @@ if not CID:
     add('<mj-section background-color="#FFFFFF" padding="0 21px">%s</mj-section>' % ''.join(shot(p) for p in ph[:3]))
     add('<mj-section background-color="#FFFFFF" padding="0 21px 8px">%s<mj-column padding="3px"></mj-column></mj-section>' % ''.join(shot(p) for p in ph[3:5]))
 add('<mj-section background-color="#FFFFFF" padding="6px 24px 26px"><mj-column><mj-text align="center" color="%s" font-size="16px" padding="0 0 6px">%s</mj-text><mj-button href="%s" padding="8px 0 0">OPEN THE FULL MAGAZINE</mj-button></mj-column></mj-section>' % (INK, e(D['reference']['next']), SITE + '/magazine'))
+# get more: daily blog alerts (The Gator Daily News on Facebook) | the GatorBait Boards
+FB = next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--fb=')), None)
+add('<mj-section background-color="#FFFFFF" padding="0 24px 26px">'
+    '<mj-column background-color="#FFF4EF" padding="18px 18px 20px" vertical-align="top" border-left="5px solid %s">'
+    '<mj-text color="%s" font-size="11px" font-weight="900" letter-spacing="1.6px" padding="0">DAILY BLOG ALERTS</mj-text>'
+    '<mj-text color="%s" font-size="20px" line-height="1.15" font-weight="900" padding="4px 0 0">Never miss a story</mj-text>'
+    '<mj-text color="%s" font-size="14px" line-height="1.45" padding="6px 0 0">Every new GatorBait story, every day, on The Gator Daily News.</mj-text>'
+    '<mj-button href="%s" align="left" padding="12px 0 0" inner-padding="9px 18px" font-size="13px">%s</mj-button></mj-column>'
+    '<mj-column background-color="%s" padding="18px 18px 20px" vertical-align="top" border-left="5px solid #F1B82D">'
+    '<mj-text color="#F1B82D" font-size="11px" font-weight="900" letter-spacing="1.6px" padding="0">THE BOARDS</mj-text>'
+    '<mj-text color="#FFFFFF" font-size="20px" line-height="1.15" font-weight="900" padding="4px 0 0">Talk Gators with us</mj-text>'
+    '<mj-text color="#D7E0EB" font-size="14px" line-height="1.45" padding="6px 0 0">Game Day Threads, recruiting and Gator Football Talk. A free GatorBait login lets you post.</mj-text>'
+    '<mj-button href="%s" align="left" background-color="#F1B82D" color="%s" padding="12px 0 0" inner-padding="9px 18px" font-size="13px">JOIN THE BOARDS</mj-button></mj-column></mj-section>'
+    % (ORANGE, ORANGE, NAVY, MUTE, e(FB or SITE), 'FOLLOW ON FACEBOOK' if FB else 'GET THE STORIES', NAVY, SITE + '/groups', NAVY))
 # footer
 links = ' &#183; '.join('<a href="%s" style="color:#D7E0EB;">%s</a>' % (e(u(l['url'])), e(l['label'])) for l in D['reference']['links'])
 add('<mj-section background-color="%s" padding="20px 24px"><mj-column><mj-text align="center" color="#D7E0EB" font-size="13px" line-height="1.7" padding="0">%s<br/><a href="%s" style="color:#D7E0EB;">GatorBait Media</a> &#183; Independent Florida Gators coverage<br/>%s</mj-text></mj-column></mj-section>'

@@ -1,0 +1,619 @@
+{
+ "$comment": "GatorBait Magazine, Friday Pregame edition (Oct. 2, 2026). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js.",
+ "id": "2026-10-02-friday-pregame",
+ "layout": "pregame",
+ "issue": {
+  "number": "Friday Pregame Edition",
+  "name": "Florida at Missouri",
+  "date": "Friday, October 2, 2026",
+  "week": "Week 5 · Saturday 3:30 p.m. ET · ABC",
+  "tagline": "Independent Florida Gators coverage",
+  "pageTitle": "GatorBait Magazine | Friday Pregame: Florida at Missouri"
+ },
+ "asOf": "ESPN data as of Oct. 1-2, 2026. Kickoff, line and forecast can move before Saturday.",
+ "cover": {
+  "kicker": "The Soothsayer · Franz Beard",
+  "headline": "Gators head to Missouri, where history hasn’t been kind",
+  "dek": "No. 8 Florida (4-0) is 2-4 in Columbia since 2012 and has to find an emotional peak right after the biggest win in years. Franz Beard asks if the Gators are tough enough.",
+  "byline": "By Franz Beard",
+  "url": "/post/the-soothsayer-gators-head-to-missouri-where-history-hasn-t-been-kind",
+  "image": {
+   "id": "16b519_c17395a88d06437d9d7e57086b8f4707",
+   "ext": "jpg",
+   "width": 3000,
+   "height": 1697,
+   "alt": "A Florida ball carrier fights for extra yardage near the goal line against Ole Miss (Photo by Chris Spears, GatorBait Media)",
+   "credit": "Photo by Chris Spears, GatorBait Media"
+  }
+ },
+ "game": {
+  "label": "The game",
+  "kickoffISO": "2026-10-03T19:30:00Z",
+  "kickoff": "Saturday, Oct. 3 · 3:30 p.m. ET",
+  "tv": "ABC",
+  "venue": "Memorial Stadium (Faurot Field), Columbia, Mo.",
+  "forecast": "71°, 0% chance of rain, gusts to 10 mph (ESPN forecast, Oct. 1)",
+  "teams": [
+   {
+    "rank": "No. 8",
+    "name": "Florida",
+    "record": "4-0",
+    "conf": "2-0 SEC",
+    "role": "AP No. 8 (up from No. 21)"
+   },
+   {
+    "rank": "No. 25",
+    "name": "Missouri",
+    "record": "3-1",
+    "conf": "0-1 SEC",
+    "role": "AP No. 25 (down from No. 19)"
+   }
+  ],
+  "chips": [
+   {
+    "k": "Line",
+    "v": "Florida -5.5"
+   },
+   {
+    "k": "Total",
+    "v": "57.5"
+   },
+   {
+    "k": "Moneyline",
+    "v": "FLA -218 · MIZ +180"
+   }
+  ],
+  "predictor": {
+   "label": "ESPN matchup predictor",
+   "florida": 70.2,
+   "missouri": 29.8
+  },
+  "source": "ESPN game summary and pickcenter (DraftKings)"
+ },
+ "series": {
+  "label": "The series",
+  "headline": "Six apiece since 2012",
+  "line": "Florida is 4-2 in Gainesville and 2-4 in Columbia in the 12 meetings since Missouri joined the SEC. They did not play in 2024 or 2025.",
+  "games": [
+   {
+    "year": 2012,
+    "site": "H",
+    "fla": 14,
+    "mizz": 7
+   },
+   {
+    "year": 2013,
+    "site": "A",
+    "fla": 17,
+    "mizz": 36
+   },
+   {
+    "year": 2014,
+    "site": "H",
+    "fla": 13,
+    "mizz": 42
+   },
+   {
+    "year": 2015,
+    "site": "A",
+    "fla": 21,
+    "mizz": 3
+   },
+   {
+    "year": 2016,
+    "site": "H",
+    "fla": 40,
+    "mizz": 14
+   },
+   {
+    "year": 2017,
+    "site": "A",
+    "fla": 16,
+    "mizz": 45
+   },
+   {
+    "year": 2018,
+    "site": "H",
+    "fla": 17,
+    "mizz": 38
+   },
+   {
+    "year": 2019,
+    "site": "A",
+    "fla": 23,
+    "mizz": 6
+   },
+   {
+    "year": 2020,
+    "site": "H",
+    "fla": 41,
+    "mizz": 17
+   },
+   {
+    "year": 2021,
+    "site": "A",
+    "fla": 23,
+    "mizz": 24
+   },
+   {
+    "year": 2022,
+    "site": "H",
+    "fla": 24,
+    "mizz": 17
+   },
+   {
+    "year": 2023,
+    "site": "A",
+    "fla": 31,
+    "mizz": 33
+   }
+  ],
+  "source": "ESPN team schedules, 2012-2023"
+ },
+ "tape": {
+  "label": "Tale of the tape",
+  "note": "Through four games, per game",
+  "source": "ESPN team statistics",
+  "rows": [
+   {
+    "label": "Points scored",
+    "fla": 53.5,
+    "miz": 35.8,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Total yards",
+    "fla": 532.8,
+    "miz": 418.8,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Rushing yards",
+    "fla": 260.0,
+    "miz": 155.8,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Passing yards",
+    "fla": 272.8,
+    "miz": 263.0,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Points allowed",
+    "fla": 22.8,
+    "miz": 20.8,
+    "unit": "",
+    "lower": true
+   },
+   {
+    "label": "Rush yards allowed",
+    "fla": 103.0,
+    "miz": 100.3,
+    "unit": "",
+    "lower": true
+   },
+   {
+    "label": "Pass yards allowed",
+    "fla": 248.3,
+    "miz": 218.3,
+    "unit": "",
+    "lower": true
+   },
+   {
+    "label": "Penalty yards",
+    "fla": 89.3,
+    "miz": 73.0,
+    "unit": "",
+    "lower": true
+   }
+  ]
+ },
+ "keys": {
+  "label": "Three keys",
+  "items": [
+   {
+    "h": "Baugh against a top-20 run defense",
+    "p": "Florida runs for 260 yards a game and has 18 rushing touchdowns, tied for most in the country. Jadan Baugh has 600 yards and 11 touchdowns and has topped 100 in every game. Missouri allows 2.8 yards a carry, 19th nationally, and has given up two rushing touchdowns all season."
+   },
+   {
+    "h": "Philo’s shots against a bend-don’t-break secondary",
+    "p": "Aaron Philo’s 10.5 yards an attempt leads the SEC and he has been sacked twice in 104 throws. Missouri allows just 56% completions, but Mississippi State threw for 360 on the Tigers last week."
+   },
+   {
+    "h": "Third downs and Austin Simmons",
+    "p": "Florida allows 248 passing yards a game, 113th nationally, and opponents convert 41% on third down. Simmons has 11 touchdowns and no interceptions. Missouri has two giveaways, fewest in the SEC; Florida has seven takeaways."
+   },
+   {
+    "h": "The flags",
+    "p": "Florida has 35 penalties for 357 yards, the most yards in the SEC. Missouri has 32 for 292. Read why the bill may come due.",
+    "url": "/post/florida-keeps-winning-big-and-the-laundry-keeps-piling-up"
+   }
+  ],
+  "source": "ESPN team statistics and box scores"
+ },
+ "injuries": {
+  "label": "Availability",
+  "asOf": "As of Oct. 1. ESPN lists no injuries for either team; names below are GatorBait reporting.",
+  "teams": [
+   {
+    "name": "Florida",
+    "items": [
+     {
+      "pos": "WR",
+      "name": "Vernell Brown III",
+      "status": "Questionable",
+      "detail": "MRI showed a Grade 1 PCL sprain"
+     },
+     {
+      "pos": "WR",
+      "name": "Bailey Stockton",
+      "status": "Questionable",
+      "detail": ""
+     }
+    ]
+   },
+   {
+    "name": "Missouri",
+    "items": [
+     {
+      "pos": "S",
+      "name": "JaDon Blair",
+      "status": "Out",
+      "detail": ""
+     },
+     {
+      "pos": "RB",
+      "name": "Ahmad Hardy",
+      "status": "Out",
+      "detail": ""
+     },
+     {
+      "pos": "RB",
+      "name": "Malae Fonoti",
+      "status": "Out",
+      "detail": ""
+     },
+     {
+      "pos": "OL",
+      "name": "Josh Atkins",
+      "status": "Out",
+      "detail": ""
+     },
+     {
+      "pos": "TE",
+      "name": "Gavin Hoffman",
+      "status": "Out",
+      "detail": ""
+     },
+     {
+      "pos": "EDGE",
+      "name": "Langden Kitchen",
+      "status": "Questionable",
+      "detail": ""
+     },
+     {
+      "pos": "EDGE",
+      "name": "Darris Smith",
+      "status": "Questionable",
+      "detail": ""
+     }
+    ]
+   }
+  ],
+  "source": "GatorBait reporting"
+ },
+ "lead": {
+  "label": "The Soothsayer",
+  "kicker": "Franz Beard · Senior Columnist",
+  "title": "Gators head to Missouri, where history hasn’t been kind",
+  "url": "/post/the-soothsayer-gators-head-to-missouri-where-history-hasn-t-been-kind",
+  "html": "<p>A whole bunch of Ole Miss fans are of the opinion that the Florida Gators really aren’t as good as their 52-28 win over the Rebels last week. They truly believe that if Kewan Lacy had been healthy and the game hadn’t been the week after an emotional win over LSU in Oxford that it would have been a far different story in Gainesville. They don’t take into account that the Gators rarely lose in The Swamp and the last time Ole Miss visited the Rebels were tagged with a loss that kept them out of the College Football Playoff.</p><p>The Gators (4-0, 2-0 SEC) parlayed that win over Ole Miss into the <a href=\"/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls\">No. 8 national ranking</a>. Just like Ole Miss last week, the Gators have to deal with a road trip after a very emotional win and it’s to a place where history has not been kind to UF. Prior to 2012 when <a href=\"/post/first-look-missouri-florida-gators-show-me-state-of-mind\">Missouri</a> (3-1, 0-1 SEC) bolted the Big 12 to join the Southeastern Conference, the two schools had met only once, the 1965 Sugar Bowl, won by Missouri 20-18 when the Gators missed three straight two-point conversions while rallying in the fourth quarter. Since 2012, the two teams have met 12 times, with Florida owning a 4-2 record against the Tigers in Gainesville, 2-4 in Columbia.</p><p>Since Eli Drinkwitz took over as the Mizzou coach in 2020, the Gators have won both encounters in Gainesville, lost both games in Columbia. Drinkwitz is 49-30 overall at Mizzou, but a rather sparkling 35-9 at home. Since 2023, Drinkwitz and the Tigers are 21-3 in Columbia.</p><p>So the task for the Gators Saturday (<a href=\"/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule\">3:30 p.m., ABC</a>) is complicated. Not only do the Gators have to find an emotional peak to avoid a letdown but they’re also playing in a place where they’ve had minimal success. This might be an even bigger task for Jon Sumrall than preparing the Gators for their first road trip to Auburn a couple of weeks ago. With one SEC loss already (last week at Mississippi State), the No. 25 Tigers can’t afford an 0-2 start to the SEC portion of the schedule so the Gators can expect a backs against the wall mentality.</p><p>Sumrall is well aware of Florida’s history in Columbia. He is also fully aware of the emotions that went into bushwhacking Ole Miss last week. His solution to what’s ahead is “be where your feet are, just be in the moment.”</p><p>To bring the Gators back to the moment, Monday Sumrall showed the film of the Ole Miss game. The good news was 302 rushing yards, seven touchdown drives and 52 points but the Gators allowed Ole Miss to score 28 points and throw for 298 yards.</p><blockquote>“We showed our not-our-standard tape this morning,” Sumrall said, adding “So, yeah, just, I think we have to keep a humble, hungry, gritty blue-collar mindset. You know, tough teams win, selfless teams win. Like, teams that have an edge about them and hunger about them, they win. Complacent, soft, entitled, lazy, selfish teams, they lose.”</blockquote><p>Will the Gators prove tough enough? Will they play with an edge and have a ravishing hunger to win in a place that hasn’t been kind? Tough questions for The Soothsayer.</p><p class=\"pg-sooth\"><strong>The Sayer Says Sooth!:</strong> Missouri will load the box to stop Jadan Baugh and Florida’s running game while at the same time hope they have the numbers to force Aaron Philo to rush his passes. The strategy didn’t work against Mississippi State last week in Starkville where Kamario Taylor threw for 360 yards and three touchdowns. Philo will loosen up the defense early, then the O-line will get in a groove. The Sayer likes the Gators by more than the 5.5 points they are favored.</p>",
+  "continue": "Read the full column: Franz’s picks for every SEC game, plus Countdown to Firing Day",
+  "date": "October 2, 2026",
+  "image": {
+   "id": "16b519_c17395a88d06437d9d7e57086b8f4707",
+   "ext": "jpg",
+   "width": 3000,
+   "height": 1697,
+   "alt": "A Florida ball carrier fights for extra yardage near the goal line against Ole Miss (Photo by Chris Spears, GatorBait Media)",
+   "credit": "Photo by Chris Spears, GatorBait Media"
+  },
+  "caption": "Florida ran for 302 yards against Ole Miss. Missouri will try to take that away."
+ },
+ "slate": {
+  "label": "The Sooth Board",
+  "note": "Saturday’s SEC games with Franz Beard’s picks",
+  "source": "Kickoffs, TV and lines: ESPN. Picks: Franz Beard, The Soothsayer.",
+  "games": [
+   {
+    "time": "Noon",
+    "tv": "ABC",
+    "away": {
+     "rank": 7,
+     "name": "Alabama",
+     "rec": "4-0"
+    },
+    "home": {
+     "rank": 16,
+     "name": "Mississippi State",
+     "rec": "4-0"
+    },
+    "line": "ALA -6",
+    "ou": 60.5,
+    "pick": "Alabama"
+   },
+   {
+    "time": "12:45 p.m.",
+    "tv": "SEC Network",
+    "away": {
+     "name": "Vanderbilt",
+     "rec": "3-1"
+    },
+    "home": {
+     "rank": 2,
+     "name": "Georgia",
+     "rec": "4-0"
+    },
+    "line": "UGA -25.5",
+    "ou": 50.5,
+    "pick": "Georgia"
+   },
+   {
+    "time": "3:30 p.m.",
+    "tv": "ABC",
+    "away": {
+     "rank": 8,
+     "name": "Florida",
+     "rec": "4-0"
+    },
+    "home": {
+     "rank": 25,
+     "name": "Missouri",
+     "rec": "3-1"
+    },
+    "line": "FLA -5.5",
+    "ou": 57.5,
+    "pick": "Florida",
+    "note": "by more than 5.5",
+    "hero": true
+   },
+   {
+    "time": "3:30 p.m.",
+    "tv": "ESPN",
+    "away": {
+     "name": "Auburn",
+     "rec": "3-1"
+    },
+    "home": {
+     "rank": 17,
+     "name": "Tennessee",
+     "rec": "3-1"
+    },
+    "line": "TENN -7",
+    "ou": 53.5,
+    "pick": "Tennessee"
+   },
+   {
+    "time": "4:15 p.m.",
+    "tv": "SEC Network",
+    "away": {
+     "rank": 24,
+     "name": "Kentucky",
+     "rec": "3-1"
+    },
+    "home": {
+     "name": "South Carolina",
+     "rec": "2-2"
+    },
+    "line": "SC -3",
+    "ou": 54.5,
+    "pick": "Kentucky"
+   },
+   {
+    "time": "7 p.m.",
+    "tv": "ESPN2",
+    "away": {
+     "name": "Arkansas",
+     "rec": "2-2"
+    },
+    "home": {
+     "name": "Texas A&M",
+     "rec": "2-2"
+    },
+    "line": "TA&M -13.5",
+    "ou": 50.5,
+    "pick": "Texas A&M"
+   },
+   {
+    "time": "7:45 p.m.",
+    "tv": "SEC Network",
+    "away": {
+     "name": "McNeese",
+     "rec": "2-3"
+    },
+    "home": {
+     "rank": 11,
+     "name": "LSU",
+     "rec": "3-1"
+    },
+    "line": "LSU -53.5",
+    "ou": 62.5,
+    "pick": "LSU"
+   }
+  ]
+ },
+ "cards": {
+  "label": "More from this week",
+  "items": [
+   {
+    "kicker": "Buddy Martin · Column",
+    "title": "Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators.",
+    "url": "/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators",
+    "excerpt": "Florida fans have earned the right to brag after four years of misery. Just don’t build a shrine on an early poll before Saturday’s trip to Missouri.",
+    "image": {
+     "id": "d3cfa5_408fa442a2d54309aa66050fb0f4d35e",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 800,
+     "alt": "Jon Sumrall reacts on the Florida sideline with an official in the foreground (Photo by Chris Spears, GatorBait Media)",
+     "credit": "Photo by Chris Spears, GatorBait Media"
+    },
+    "date": "Oct. 1"
+   },
+   {
+    "kicker": "Buddy Martin · Column",
+    "title": "The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”",
+    "url": "/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it",
+    "excerpt": "This guy could turn out to be brilliant. Maybe even Steve Spurrier brilliant. But Faulkner has to earn that.",
+    "image": {
+     "id": "d3cfa5_56a64986c874417c9a8299fae22649ed",
+     "ext": "jpg",
+     "width": 1600,
+     "height": 900,
+     "alt": "Buddy Martin column: The Looming Brilliance of Buster Faulkner. Photo by Chris Spears, GatorBait Media; Faulkner photo UAA.",
+     "credit": "Photo by Chris Spears, GatorBait Media; Faulkner photo UAA"
+    },
+    "date": "Sept. 30"
+   },
+   {
+    "kicker": "Analysis · GatorBait Staff",
+    "title": "Florida Keeps Winning Big, and the Laundry Keeps Piling Up",
+    "url": "/post/florida-keeps-winning-big-and-the-laundry-keeps-piling-up",
+    "excerpt": "The No. 8 Gators have outscored four opponents by nearly 31 points a game while drawing 35 flags for 357 yards.",
+    "image": {
+     "id": "d3cfa5_f130d47a9cb74914b869ac554c67e931",
+     "ext": "jpg",
+     "width": 2576,
+     "height": 1198,
+     "alt": "Officials at the SEC replay monitor on the Florida sideline (Photo by Chris Spears, GatorBait Media)",
+     "credit": "Photo by Chris Spears, GatorBait Media"
+    },
+    "date": "Oct. 1"
+   },
+   {
+    "kicker": "Franz Beard · Column",
+    "title": "When it came to finding a quarterback Sumrall trusted Buster and it paid off",
+    "url": "/post/when-it-came-to-finding-a-quarterback-sumrall-trusted-buster-and-it-paid-off",
+    "excerpt": "Aaron Philo was barely known when the season began. Jon Sumrall trusted Buster Faulkner to find a quarterback, and it paid off.",
+    "image": {
+     "id": "16b519_00359caad82744778e7c387d8bf98777",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 1867,
+     "alt": "Aaron Philo, Florida quarterback (Photo by Chris Spears, GatorBait Media)",
+     "credit": "Photo by Chris Spears, GatorBait Media"
+    },
+    "date": "Oct. 1"
+   },
+   {
+    "kicker": "Honors · GatorBait Staff",
+    "title": "Jayden Woods Added To Chuck Bednarik Award Watch List",
+    "url": "/post/jayden-woods-added-to-chuck-bednarik-award-watch-list",
+    "excerpt": "The sophomore JACK’s 19 tackles, six TFLs and four sacks through four games have him in the running for college football’s top defensive honor.",
+    "image": {
+     "id": "d3cfa5_dc70ea9e65574abebd3b0ace40bd8232",
+     "ext": "png",
+     "width": 1080,
+     "height": 1350,
+     "alt": "Jayden Woods, Florida JACK linebacker (Graphic: GatorBait Media)",
+     "credit": "Graphic: GatorBait Media"
+    },
+    "date": "Oct. 1"
+   },
+   {
+    "kicker": "Preview · GatorBait Staff",
+    "title": "Show-Me State of Mind: A First Look at No. 25 Missouri",
+    "url": "/post/first-look-missouri-florida-gators-show-me-state-of-mind",
+    "excerpt": "No. 8 Florida’s reward for routing Ole Miss is a trip to No. 25 Missouri, which let a fourth-quarter lead get away at Mississippi State.",
+    "image": {
+     "id": "d3cfa5_a67ff355ad6a4d668106c2befa41b208",
+     "ext": "png",
+     "width": 1600,
+     "height": 900,
+     "alt": "Show-Me State of Mind: No. 8 Florida at No. 25 Missouri, Saturday, Oct. 3, 3:30 p.m. ET. GatorBait Media graphic.",
+     "credit": "Graphic: GatorBait Media"
+    },
+    "date": "Sept. 27"
+   }
+  ]
+ },
+ "shots": {
+  "label": "Best shots",
+  "note": "From Florida 52, Ole Miss 28",
+  "url": "/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28",
+  "credit": "Photo by Chris Spears, GatorBait Media",
+  "photos": [
+   {
+    "id": "16b519_9e6aad749e564c33ab69f6e7e19e9560",
+    "ext": "jpg",
+    "width": 3000,
+    "height": 1851,
+    "alt": "The Swamp before kickoff against Ole Miss.",
+    "caption": "The Swamp glows before kickoff"
+   },
+   {
+    "id": "16b519_958769d0cfef4d9e931621ae78bfd008",
+    "ext": "jpg",
+    "width": 3000,
+    "height": 1848,
+    "alt": "Gators players celebrate a touchdown against Ole Miss.",
+    "caption": "Another touchdown, another celebration"
+   },
+   {
+    "id": "16b519_ab5daac7afa94664b9e6a4931049cfb9",
+    "ext": "jpg",
+    "width": 3000,
+    "height": 1834,
+    "alt": "Florida defenders make a tackle against Ole Miss.",
+    "caption": "The defense swarms"
+   },
+   {
+    "id": "16b519_b249571522434882a534cca747ba54a9",
+    "ext": "jpg",
+    "width": 3000,
+    "height": 2000,
+    "alt": "Florida players react after a touchdown.",
+    "caption": "Reaction in the end zone"
+   },
+   {
+    "id": "16b519_a0e407bedc46487ca71033fc8351d0fe",
+    "ext": "jpg",
+    "width": 3000,
+    "height": 1874,
+    "alt": "The Florida sideline erupts in celebration.",
+    "caption": "The sideline erupts"
+   },
+   {
+    "id": "16b519_f3af81d3cac048ae84d89d9194ddd9eb",
+    "ext": "jpg",
+    "width": 3000,
+    "height": 2000,
+    "alt": "A Florida player speaks with reporters after the win.",
+    "caption": "After the win"
+   }
+  ]
+ },
+ "reference": {
+  "label": "Reference desk",
+  "links": [
+   {
+    "label": "Roster",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+   },
+   {
+    "label": "Schedule and results",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   }
+  ],
+  "next": "Next up: South Carolina, Oct. 10, in The Swamp. Then Texas in Austin on Oct. 17."
+ }
+}

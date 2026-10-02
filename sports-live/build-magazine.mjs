@@ -17,17 +17,18 @@ const minify = (code, banner) => banner + code; // Dependency-free, deterministi
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = join(here, '..');
-execFileSync('python3', [join(here, 'check-magazine-parity.py')], {stdio:'inherit'});
+const VARIANT = process.env.MAG_VARIANT || ''; // '' = the weekly full-story issue; 'pregame' = Friday Pregame edition
+if (!VARIANT) execFileSync('python3', [join(here, 'check-magazine-parity.py')], {stdio:'inherit'});
 const read = (p) => readFileSync(join(repo, p), 'utf8');
 
-const css = read('sports-live/src/magazine.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
-const runtime = read('sports-live/src/magazine.js');
+const css = (read('sports-live/src/magazine.css') + read('sports-live/src/magazine-pregame.css')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
+const runtime = read('sports-live/src/magazine.js') + read('sports-live/src/magazine-pregame.js');
 const MAX_JS = 180 * 1024;
 
 // Strip editorial meta (notes to the compiler) so the bundle carries only what renders; everything else goes through untouched.
 const META = new Set(['$comment', 'todo']);
 const strip = (v) => Array.isArray(v) ? v.map(strip) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).filter(([k]) => !META.has(k)).map(([k, x]) => [k, strip(x)])) : v;
-const issue = strip(JSON.parse(read('sports-live/magazine-issue.json')));
+const issue = strip(JSON.parse(read(VARIANT ? 'sports-live/magazine-issue-' + VARIANT + '.json' : 'sports-live/magazine-issue.json')));
 if (!issue.id || !issue.cover || !issue.cover.url) { console.error('magazine-issue.json needs an id and a cover with a url'); process.exit(1); }
 
 const build = createHash('sha1').update(css + runtime + JSON.stringify(issue)).digest('hex').slice(0, 8);
@@ -62,7 +63,7 @@ ${loader}
 `;
 
 if (Buffer.byteLength(js) > MAX_JS) { console.error(`magazine.js is ${Buffer.byteLength(js)} bytes; the limit is ${MAX_JS}`); process.exit(1); }
-const outputs = { 'sports-live/magazine.js': js, 'sports-live/magazine-frame.html': frame };
+const outputs = VARIANT ? { ['sports-live/magazine-' + VARIANT + '.js']: js, ['sports-live/magazine-' + VARIANT + '-frame.html']: frame } : { 'sports-live/magazine.js': js, 'sports-live/magazine-frame.html': frame };
 if (process.argv.includes('--check')) {
   const stale = Object.entries(outputs).filter(([p, s]) => read(p) !== s).map(([p]) => p);
   if (stale.length) { console.error('Out of date; run node sports-live/build-magazine.mjs:', stale.join(', ')); process.exit(1); }

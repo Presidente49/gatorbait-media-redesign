@@ -125,7 +125,7 @@ if GALLERY and not CID:
         '<mj-section background-color="#060B1C" padding="10px 24px 18px"><mj-column><mj-button href="%s" background-color="#060B1C" border="2px solid #FA4616" padding="0">SEE THE FULL GALLERY</mj-button></mj-column></mj-section>' % (GALLERY, e(u(D['shots']['url'])), e(u(D['shots']['url']))))
 # get more: daily blog alerts (The Gator Daily News on Facebook) | the GatorBait Boards
 FB = next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--fb=')), None)
-add('<mj-section background-color="#FFFFFF" padding="0 24px 26px">'
+add('<mj-section background-color="#FFFFFF" padding="24px 24px 26px">'
     '<mj-column background-color="#FFF4EF" padding="18px 18px 20px" vertical-align="top" border-left="5px solid %s">'
     '<mj-text color="%s" font-size="11px" font-weight="900" letter-spacing="1.6px" padding="0">DAILY BLOG ALERTS</mj-text>'
     '<mj-text color="%s" font-size="20px" line-height="1.15" font-weight="900" padding="4px 0 0">Never miss a story</mj-text>'

@@ -111,7 +111,7 @@ def card(c):
             '<mj-text color="%s" font-size="18px" line-height="1.2" font-weight="900" padding="4px 2px 0"><a href="%s" style="color:%s;text-decoration:none;">%s</a></mj-text>'
             '<mj-text color="%s" font-size="14px" line-height="1.45" padding="6px 2px 0">%s</mj-text>'
             '<mj-button href="%s" align="left" padding="10px 2px 0" inner-padding="9px 18px" font-size="13px">READ</mj-button></mj-column>'
-            % ('' if CID else '<mj-image src="%s" alt="%s" href="%s" padding="0" />' % (img(c['image'], 600, 400), e(c['image']['alt']), e(u(c['url']))),
+            % ('' if CID else '<mj-image src="%s" alt="%s" href="%s" padding="0" />' % (img(c['image'], 640, 360), e(c['image']['alt']), e(u(c['url']))),
                ORANGE, e(c['kicker'].upper()), NAVY, e(u(c['url'])), NAVY, e(c['title']), MUTE, e(c['excerpt']), e(u(c['url']))))
 cs = D['cards']['items']
 for i in range(0, len(cs), 2):

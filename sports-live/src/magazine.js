@@ -189,18 +189,31 @@
   }
 
   // Shared writer CTA contract: reuse these fields in writer archives/profile templates.
-  function writerPromo(name) {
+  function writerPromo(name, episode) {
     var shows = {
       'Buddy Martin': {line:'Catch Buddy Martin on The Buddy Martin Show.', role:'Editor', show:'The Buddy Martin Show'},
       'Loren Meadows': {line:'Catch Loren Meadows on Florida Gator Lowdown.', role:'Football Analyst', show:'Florida Gator Lowdown'}
     };
     var p = shows[name];
     var channel='https://www.youtube.com/@TheBuddyMartinShow';
+    var watch=channel+'/videos', label='Browse '+(p ? p.show+' and other shows' : 'GatorBait TV shows');
+    if(name==='Buddy Martin'){watch=channel+'/live';label='Watch The Buddy Martin Show';}
+    if(episode && p && episode.show===p.show && /^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(episode.url) && text(episode.title,160)){
+      watch=episode.url;label='Watch '+p.show+': '+text(episode.title,160);
+    }
     return '<aside class="mz-writer-promo" aria-label="Watch GatorBait TV">'+
       '<p class="mz-kick">GatorBait TV</p><h3>' + esc(p ? p.line : 'Keep up with GatorBait on YouTube.') + '</h3>'+
       (p ? '<p>'+esc(name)+' · '+esc(p.role)+'</p>' : '')+
-      '<div><a href="'+channel+'/videos">Browse '+esc(p ? p.show+' and other shows' : 'GatorBait TV shows')+' →</a>'+
+      '<div><a href="'+esc(watch)+'">'+esc(label)+' →</a>'+
       '<a href="'+channel+'?sub_confirmation=1">Subscribe on YouTube →</a></div></aside>';
+  }
+
+  // Five cleared photographs, in editorial order; incomplete packages stay out of the issue.
+  function fiveBeats(D) {
+    var b=obj(D.fiveBeats), photos=b&&list(b.photos,6);
+    if(!b || b.approved!==true || !photos || photos.length!==5 || !text(b.title,160) ||
+      !photos.every(function(p){return obj(p)&&media(p)&&text(p.alt,200)&&text(p.caption,400)&&text(p.credit,160)&&safeUrl(p.sourceUrl);}))return '';
+    return '<section class="mz-five" id="mz-five-beats" aria-labelledby="mz-five-title"><span class="mz-kick">Five Beats</span><h2 id="mz-five-title">'+esc(b.title)+'</h2>'+photos.map(function(p,i){return '<figure>'+frame(p,{main:1200,sizes:'(max-width: 820px) 100vw, 900px'})+'<figcaption><b>'+String(i+1).padStart(2,'0')+'</b> '+esc(p.caption)+' <span>'+esc(p.credit)+'</span> <a href="'+esc(safeUrl(p.sourceUrl))+'">Source story →</a></figcaption></figure>';}).join('')+'</section>';
   }
 
   function render(D) {
@@ -208,10 +221,71 @@
     var items=stories.map(function(p){return {id:'story-'+p.id,label:p.author,note:p.title};});
     var front=cover(D,L).replaceAll('href="'+safeUrl(D.cover.url)+'"','href="#story-'+stories[0].id+'"');
     var mast='<aside class="mz-staff" aria-label="Magazine masthead"><p><b>Brenden Martin</b> · Publisher</p><p><b>Buddy Martin</b> · Editor</p><p><b>Franz Beard</b> · Senior Columnist</p><p><b>Loren Meadows</b> · Football Analyst</p><p><b>Chris Spears</b> · Photographer</p></aside>';
-    var body=stories.map(function(p,i){return '<article class="mz-full-story" id="story-'+esc(p.id)+'" data-post="'+esc(p.id)+'"><header><span class="mz-kick">'+String(i+1).padStart(2,'0')+' / '+esc(p.author)+'</span><h2>'+esc(p.title)+'</h2><p class="mz-story-meta">'+esc(p.author)+' · '+esc(p.date)+'</p><a class="mz-site" href="https://www.gatorbaitmedia.com/">gatorbaitmedia.com</a></header><div class="mz-reading">'+p.html+'</div>'+writerPromo(p.author)+'<nav class="mz-story-nav" aria-label="Article navigation"><a href="#mz-contents">Back to contents ↑</a><a href="'+esc(safeUrl(p.url))+'">Original article and discussion ↗</a>'+(stories[i+1]?'<a href="#story-'+esc(stories[i+1].id)+'">Next: '+esc(stories[i+1].author)+' →</a>':'')+'</nav></article>';}).join('');
+    var body=stories.map(function(p,i){return '<article class="mz-full-story" id="story-'+esc(p.id)+'" data-post="'+esc(p.id)+'"><header><span class="mz-kick">'+String(i+1).padStart(2,'0')+' / '+esc(p.author)+'</span><h2>'+esc(p.title)+'</h2><p class="mz-story-meta">'+esc(p.author==='GatorBait Media Staff'?'GatorBait Staff':p.author)+' · '+esc(p.date)+'</p><a class="mz-site" href="https://www.gatorbaitmedia.com/">gatorbaitmedia.com</a></header><div class="mz-reading">'+p.html+'</div>'+writerPromo(p.author,p.showEpisode)+'<nav class="mz-story-nav" aria-label="Article navigation"><a href="#mz-contents">Back to contents ↑</a><a href="'+esc(safeUrl(p.url))+'">Original article and discussion ↗</a>'+(stories[i+1]?'<a href="#story-'+esc(stories[i+1].id)+'">Next: '+esc(stories[i+1].author)+' →</a>':'')+'</nav></article>';}).join('');
     var guide='/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play';
     var utility='<section class="mz-utilities" aria-label="GatorBait reference desk"><h2>The reference desk</h2><p><a href="'+guide+'#roster">Florida Gators roster</a> · <a href="'+guide+'#schedule">Schedule and results</a></p><h3>The Buddy Martin Show on GatorBait TV</h3><a href="https://www.youtube.com/@TheBuddyMartinShow/live">Watch The Buddy Martin Show</a></section>';
-    return '<div class="mz-wrap">'+head(D)+mast+front+'<div class="mz-tools"><button type="button" data-print>Print / Save as PDF</button><span>Six complete articles · October 1 edition</span></div>'+contents(items,L)+body+utility+'<div class="mz-tools"><button type="button" data-print>Print / Save as PDF</button><a href="#mz-contents">Back to contents ↑</a></div>'+footer(D)+'</div>';
+    return '<div class="mz-wrap">'+head(D)+mast+front+'<div class="mz-tools"><button type="button" data-print>Print / Save as PDF</button><span>Six complete articles · October 1 edition</span></div>'+contents(items,L)+body+fiveBeats(D)+utility+'<div class="mz-tools"><button type="button" data-print>Print / Save as PDF</button><a href="#mz-contents">Back to contents ↑</a></div>'+footer(D)+'</div>';
+  }
+
+  // Edition-local reading passport. Reached is a navigation signal, not comprehension.
+  var passportCleanup = function () {};
+  function passport(root, D) {
+    passportCleanup();
+    var stories = D.stories || [], toc = root.querySelector('.mz-toc');
+    if (!stories.length || !toc || !window.IntersectionObserver) return;
+    var key = 'gbm:magazine:reached:' + D.id, reached = [], canStore = true;
+    var ids = stories.map(function (s) { return s.id; });
+    try {
+      var saved = JSON.parse(localStorage.getItem(key) || '[]');
+      reached = Array.isArray(saved) ? saved.filter(function (id,i) { return ids.indexOf(id) >= 0 && saved.indexOf(id)===i; }) : [];
+      localStorage.setItem(key, JSON.stringify(reached));
+    } catch (_) { canStore = false; return; }
+    var box = document.createElement('div'); box.className = 'mz-passport';
+    var count = document.createElement('span'), resume = document.createElement('a');
+    box.append(count, resume); toc.insertBefore(box, toc.querySelector('ol'));
+    function paint() {
+      count.textContent = reached.length + ' of ' + stories.length + ' story endings reached';
+      var next = stories.find(function (s) { return reached.indexOf(s.id) < 0; });
+      resume.textContent = next ? 'Resume: ' + next.title : 'Return to contents';
+      resume.href = next ? '#story-' + next.id : '#mz-contents';
+      stories.forEach(function (s) {
+        var link = toc.querySelector('a[href="#story-' + s.id + '"]');
+        if (!link) return;
+        var label = link.querySelector('.mz-reached');
+        if (reached.indexOf(s.id) >= 0 && !label) {
+          label = document.createElement('small'); label.className = 'mz-reached';
+          label.textContent = 'Reached'; link.querySelector('span').appendChild(label);
+        }
+      });
+    }
+    var pending = new Map(), visible = new Set(), seenStarts = new Set();
+    function cancel() { pending.forEach(clearTimeout); pending.clear(); }
+    function schedule(nav) {
+      var id = nav.closest('article').getAttribute('data-post');
+      if (document.hidden || !seenStarts.has(id) || pending.has(id) || reached.indexOf(id) >= 0) return;
+      pending.set(id, setTimeout(function () {
+        pending.delete(id);
+        if (document.hidden || !visible.has(nav) || !root.isConnected) return;
+        reached.push(id);
+        try { if (canStore) localStorage.setItem(key, JSON.stringify(reached)); } catch (_) { canStore = false; }
+        paint();
+      }, 2000));
+    }
+    var starts = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting && !document.hidden) seenStarts.add(e.target.closest('article').getAttribute('data-post')); });
+    });
+    var ends = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { visible.add(e.target); schedule(e.target); }
+        else { visible.delete(e.target); var id = e.target.closest('article').getAttribute('data-post'); clearTimeout(pending.get(id)); pending.delete(id); }
+      });
+    }, { threshold: 0.5 });
+    root.querySelectorAll('.mz-full-story>header').forEach(function (el) { starts.observe(el); });
+    root.querySelectorAll('.mz-story-nav').forEach(function (el) { ends.observe(el); });
+    function visibility() { cancel(); if (!document.hidden) visible.forEach(schedule); }
+    document.addEventListener('visibilitychange', visibility);
+    paint();
+    passportCleanup = function () { cancel(); starts.disconnect(); ends.disconnect(); document.removeEventListener('visibilitychange', visibility); };
   }
 
   /* ---------- Lifecycle ---------- */
@@ -234,13 +308,18 @@
     m.setAttribute('data-issue', text(D.id, 80)); m.setAttribute('data-mz-build', BUILD); m.setAttribute('data-mz-version', VERSION);
     if (text((obj(D.issue) || {}).pageTitle, 120)) m.setAttribute('aria-label', text(D.issue.pageTitle, 120));
     m.innerHTML = html;
-    m.addEventListener('click', function(e){if(e.target.closest('[data-print]'))window.print();});
+    m.addEventListener('click', function(e){
+      if(e.target.closest('[data-print]'))window.print();
+      var a=e.target.closest('a[href^="#story-"]');
+      if(a){var target=m.querySelector(a.getAttribute('href'));var h=target&&target.querySelector('h2');if(h){h.tabIndex=-1;h.focus({preventScroll:true});}}
+    });
     // Same seat as the urban embed: right after the mobile shell host (or the shared header) when that is a body child.
     var anchor = document.getElementById('gbm-mobile-shell-host') || document.getElementById('gbm-site-header');
     if (anchor && anchor.parentNode === document.body) document.body.insertBefore(m, anchor.nextSibling); else document.body.insertBefore(m, document.body.firstChild);
     doc.classList.add('gbm-mq', 'gbm-magazine-live');
     if (text((obj(D.issue) || {}).pageTitle, 120)) document.title = text(D.issue.pageTitle, 120);
     expose(D);
+    passport(m, D);
     window.__GBM_MAG26__.ready = true;
   }
   function start() {
@@ -251,6 +330,7 @@
   function sync() {
     if (onRoute()) { start(); return; }
     timers.forEach(clearTimeout); timers = [];
+    passportCleanup();
     var root = document.getElementById('gbm-magazine-page'); if (root) root.remove();
     doc.classList.remove('gbm-magazine-live', 'gbm-mq');
     window.__GBM_MAG26__.ready = false;

@@ -11,11 +11,13 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import { execFileSync } from 'node:child_process';
 
 const minify = (code, banner) => banner + code; // Dependency-free, deterministic full-issue bundle.
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = join(here, '..');
+execFileSync('python3', [join(here, 'check-magazine-parity.py')], {stdio:'inherit'});
 const read = (p) => readFileSync(join(repo, p), 'utf8');
 
 const css = read('sports-live/src/magazine.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();

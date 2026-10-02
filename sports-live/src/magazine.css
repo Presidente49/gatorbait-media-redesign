@@ -290,3 +290,22 @@ html,body{background:white!important;color:black!important}
 #gbm-magazine-page.mz26 .mz-cover .mz-btn{align-self:flex-start;background:#102342}
 @media(max-width:600px){#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame{aspect-ratio:3/4!important;min-height:620px}#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame img{object-position:42% top}#gbm-magazine-page.mz26 .mz-cover-type{padding:22px 18px}#gbm-magazine-page.mz26 .mz-cover h1{font-size:36px}#gbm-magazine-page.mz26 .mz-cover .mz-dek{font-size:15px}}
 }
+/* Grow with enlarged text while preserving the current photo overlay. */
+@media screen {
+#gbm-magazine-page.mz26 .mz-cover{display:grid}
+#gbm-magazine-page.mz26 .mz-cover-fig,#gbm-magazine-page.mz26 .mz-cover-type{grid-area:1/1}
+#gbm-magazine-page.mz26 .mz-cover-type{position:relative;inset:auto;min-width:0}
+#gbm-magazine-page.mz26 .mz-cover-fig .mz-frame{height:100%}
+#gbm-magazine-page.mz26 .mz-cover-fig>a{height:100%}
+#gbm-magazine-page.mz26 .mz-passport{display:flex;flex-wrap:wrap;gap:8px 24px;padding:16px 0;border-bottom:1px solid #354563;font-size:15px}
+#gbm-magazine-page.mz26 .mz-passport a{min-height:44px;display:flex;align-items:center;overflow-wrap:anywhere;color:#b8d5ff;text-decoration:underline;max-width:100%}
+#gbm-magazine-page.mz26 .mz-reached{display:block;color:#b8d5ff}
+}
+@media print{#gbm-magazine-page.mz26 .mz-passport,#gbm-magazine-page.mz26 .mz-reached{display:none!important}}
+#gbm-magazine-page.mz26 .mz-five{max-width:900px;margin:48px auto}
+#gbm-magazine-page.mz26 .mz-five h2{font-size:clamp(30px,5vw,48px);margin-bottom:24px}
+#gbm-magazine-page.mz26 .mz-five figure{margin:24px 0;break-inside:avoid}
+#gbm-magazine-page.mz26 .mz-five figcaption{padding:12px 0;font-size:16px;line-height:1.5}
+#gbm-magazine-page.mz26 .mz-five figcaption span{display:block;font-size:13px;color:var(--mz-mute)}
+#gbm-magazine-page.mz26 .mz-five a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline}
+@media print{#gbm-magazine-page.mz26 .mz-five{break-before:page}#gbm-magazine-page.mz26 .mz-five figcaption{font-size:10pt}}

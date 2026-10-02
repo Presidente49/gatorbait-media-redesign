@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Soothsayer: Gators head to Missouri, where history hasn’t been kind",
+      "excerpt": "Florida (4-0) heads to Columbia, where history has not been kind, with a No. 8 ranking and a 5.5-point cushion. The Soothsayer on Missouri, Saturday’s SEC slate and the coaching hot seat.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-gators-head-to-missouri-where-history-hasn-t-been-kind",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-02T10:33:54Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: Gators head to Missouri, where history hasn’t been kind"
+      }
+    },
+    {
       "title": "Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators.",
       "excerpt": "Buddy Martin: Florida fans have earned the right to brag after four years of misery — just don’t build a shrine on an early poll before Saturday’s trip to Missouri.",
       "url": "https://www.gatorbaitmedia.com/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout"
-      }
-    },
-    {
-      "title": "Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri",
-      "excerpt": "Jon Sumrall told Florida he doesn't want to hear another word about Ole Miss, and he had good news on Vernell Brown III before Saturday's trip to No. 25 Missouri.",
-      "url": "https://www.gatorbaitmedia.com/post/pay-the-toll-sumrall-buries-the-ole-miss-win-braces-for-bloody-tuesday-before-missouri",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-28T20:54:04Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Pay the Toll: Sumrall Buries the Ole Miss Win, Braces for ‘Bloody Tuesday’ Before Missouri"
       }
     }
   ]

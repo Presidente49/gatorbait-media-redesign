@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Soothsayer: Gators head to Missouri, where history hasn’t been kind",
+      "excerpt": "Florida (4-0) heads to Columbia, where history has not been kind, with a No. 8 ranking and a 5.5-point cushion. The Soothsayer on Missouri, Saturday’s SEC slate and the coaching hot seat.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-gators-head-to-missouri-where-history-hasn-t-been-kind",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-02T10:33:54Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: Gators head to Missouri, where history hasn’t been kind"
+      }
+    },
+    {
       "title": "Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators.",
       "excerpt": "Buddy Martin: Florida fans have earned the right to brag after four years of misery — just don’t build a shrine on an early poll before Saturday’s trip to Missouri.",
       "url": "https://www.gatorbaitmedia.com/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for 10 Thoughts From the Sidelines: Florida 52, Ole Miss 28"
-      }
-    },
-    {
-      "title": "Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls",
-      "excerpt": "Florida’s 52-28 win over No. 4 Ole Miss sent the Gators up 13 spots in the AP Top 25 and 14 in the Coaches Poll. They’re No. 8 in both.",
-      "url": "https://www.gatorbaitmedia.com/post/chomp-up-the-charts-florida-jumps-to-no-8-in-ap-coaches-polls",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-09-27T18:20:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_1043f4b7772245baa5aed5f80c21669a~mv2.png/v1/fit/w_1000,h_720,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Chomp Up the Charts: Florida Jumps to No. 8 in AP, Coaches Polls"
       }
     }
   ]

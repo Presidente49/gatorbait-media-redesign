@@ -18,6 +18,7 @@
     root.addEventListener('click', function (e) {
       var b = e.target && e.target.closest ? e.target.closest('[data-pg-print]') : null; if (!b) return; e.preventDefault();
       var im = root.querySelectorAll('img'); for (var i = 0; i < im.length; i++) { im[i].loading = 'eager'; }
+      var dt = root.querySelectorAll('details'); for (var j = 0; j < dt.length; j++) { dt[j].open = true; }
       setTimeout(function () { window.print(); }, 350);
     });
   }
@@ -101,6 +102,31 @@
       }).join('') + '</ul></div>';
     }).join('') + '</div>' + pgSrc(J.source) + '</section>';
   }
+  function pgWatch(D) {
+    var W = obj(D.watch), items = W ? list(W.items, 8).map(obj).filter(function (i) { return i && text(i.k, 20) && text(i.v, 120); }) : [];
+    if (!items.length) return '';
+    var links = list(W.links, 4).map(obj).filter(function (l) { return l && safeUrl(l.url) && text(l.label, 60); });
+    return '<section class="pg-watch" id="pg-watch" aria-labelledby="pg-watch-t">' + pgHeadSec('pg-watch', text(W.label, 40)) + '<dl>' + items.map(function (i) {
+      return '<div><dt>' + esc(text(i.k, 20)) + '</dt><dd>' + esc(text(i.v, 120)) + '</dd></div>';
+    }).join('') + '</dl>' + (links.length ? '<p class="pg-wl">' + links.map(function (l) { return '<a class="pg-more" href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 60)) + '</a>'; }).join('') + '</p>' : '') + pgSrc(W.source) + '</section>';
+  }
+  function pgRosters(D) {
+    var R = obj(D.rosters), teams = R ? list(R.teams, 2).map(obj).filter(function (t) { return t && text(t.name, 30) && list(t.players, 160).length; }) : [];
+    if (!teams.length) return '';
+    var SIDES = [['offense', 'Offense'], ['defense', 'Defense'], ['specialTeam', 'Special teams']];
+    return '<section class="pg-ros" id="pg-rosters" aria-labelledby="pg-ros-t">' + pgHeadSec('pg-ros', text(R.label, 40), text(R.note, 160)) + '<div class="pg-ros-grid">' + teams.map(function (t) {
+      var ps = list(t.players, 160).map(obj).filter(function (p) { return p && text(p.name, 60); });
+      var hurt = ps.filter(function (p) { return text(p.st, 20); }).length;
+      return '<details class="pg-team"><summary><b>' + esc(text(t.name, 30)) + '</b><span>' + ps.length + ' players' + (hurt ? ' · ' + hurt + ' on the report' : '') + '</span></summary>' + SIDES.map(function (sd) {
+        var grp = ps.filter(function (p) { return text(p.side, 20) === sd[0]; });
+        if (!grp.length) return '';
+        return '<h3>' + sd[1] + '</h3><ul>' + grp.map(function (p) {
+          var st = text(p.st, 20);
+          return '<li' + (st ? ' class="pg-hurt"' : '') + '><span class="pg-no">' + esc(text(p.n, 3)) + '</span><b>' + esc(text(p.name, 60)) + '</b><i>' + esc(text(p.pos, 6)) + '</i><small>' + esc(text(p.cls, 4)) + '</small>' + (st ? '<span class="pg-st" data-s="' + esc(st.toLowerCase()) + '">' + esc(st) + '</span>' : '') + '</li>';
+        }).join('') + '</ul>';
+      }).join('') + '</details>';
+    }).join('') + '</div>' + pgSrc(R.source) + '</section>';
+  }
   function pgLead(D) {
     var L = obj(D.lead); if (!L || !text(L.html, 20000)) return '';
     var url = safeUrl(L.url), fig = frame(L.image, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' });
@@ -139,5 +165,5 @@
     return '<footer class="pg-foot"><h2>' + esc(text(R && R.label, 40)) + '</h2><nav aria-label="' + esc(text(R && R.label, 40)) + '">' + links.map(function (l) { return '<a href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a>'; }).join('') + '<a href="https://www.youtube.com/@TheBuddyMartinShow/live">Watch The Buddy Martin Show live</a></nav>' + (R && text(R.next, 200) ? '<p>' + esc(text(R.next, 200)) + '</p>' : '') + '<p class="pg-src">' + esc(text(D.asOf, 240)) + '</p><a class="pg-top" href="#pg-cover">Back to top ↑</a></footer>';
   }
   function renderPregame(D) {
-    return '<div class="pg-wrap">' + pgTop(D) + pgMast(D) + pgCover(D) + '<div class="pg-grid">' + pgGame(D) + pgSeries(D) + '</div>' + pgTape(D) + pgKeys(D) + pgInjuries(D) + pgLead(D) + pgSlate(D) + pgCards(D) + pgShots(D) + pgFoot(D) + '</div>';
+    return '<div class="pg-wrap">' + pgTop(D) + pgMast(D) + pgCover(D) + '<div class="pg-grid">' + pgGame(D) + pgSeries(D) + '</div>' + pgWatch(D) + pgTape(D) + pgKeys(D) + pgInjuries(D) + pgRosters(D) + pgLead(D) + pgSlate(D) + pgCards(D) + pgShots(D) + pgFoot(D) + '</div>';
   }

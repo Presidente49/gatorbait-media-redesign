@@ -238,22 +238,34 @@
  },
  "injuries": {
   "label": "Availability",
-  "asOf": "As of Oct. 1. ESPN lists no injuries for either team; names below are GatorBait reporting.",
+  "asOf": "Official SEC availability report, updated Thursday morning, Oct. 1 (FloridaGators.com). Final report comes before kickoff.",
   "teams": [
    {
     "name": "Florida",
     "items": [
      {
+      "pos": "RB",
+      "name": "Kelvin Jimenez",
+      "status": "Out",
+      "detail": "Knee"
+     },
+     {
       "pos": "WR",
       "name": "Vernell Brown III",
       "status": "Questionable",
-      "detail": "MRI showed a Grade 1 PCL sprain"
+      "detail": "Knee. An MRI showed a Grade 1 PCL sprain; game-time decision"
      },
      {
       "pos": "WR",
       "name": "Bailey Stockton",
       "status": "Questionable",
-      "detail": ""
+      "detail": "Back"
+     },
+     {
+      "pos": "WR",
+      "name": "Eric Singleton Jr.",
+      "status": "Probable",
+      "detail": "Ankle"
      }
     ]
    },
@@ -261,51 +273,57 @@
     "name": "Missouri",
     "items": [
      {
-      "pos": "S",
-      "name": "JaDon Blair",
-      "status": "Out",
-      "detail": ""
-     },
-     {
       "pos": "RB",
       "name": "Ahmad Hardy",
       "status": "Out",
-      "detail": ""
+      "detail": "Leg"
      },
      {
       "pos": "RB",
       "name": "Malae Fonoti",
       "status": "Out",
-      "detail": ""
+      "detail": "Undisclosed"
      },
      {
       "pos": "OL",
       "name": "Josh Atkins",
       "status": "Out",
-      "detail": ""
+      "detail": "Undisclosed"
      },
      {
       "pos": "TE",
       "name": "Gavin Hoffman",
       "status": "Out",
-      "detail": ""
+      "detail": "Undisclosed"
      },
      {
-      "pos": "EDGE",
-      "name": "Langden Kitchen",
-      "status": "Questionable",
-      "detail": ""
+      "pos": "DB",
+      "name": "JaDon Blair",
+      "status": "Out",
+      "detail": "Undisclosed"
      },
      {
-      "pos": "EDGE",
+      "pos": "DL",
       "name": "Darris Smith",
       "status": "Questionable",
-      "detail": ""
+      "detail": "Lower body"
+     },
+     {
+      "pos": "DL",
+      "name": "Langden Kitchen",
+      "status": "Questionable",
+      "detail": "Lower body"
+     },
+     {
+      "pos": "LB",
+      "name": "Bobby Washington Jr.",
+      "status": "Questionable",
+      "detail": "Undisclosed"
      }
     ]
    }
   ],
-  "source": "GatorBait reporting"
+  "source": "Source: FloridaGators.com, The Opening Kickoff (SEC availability report)"
  },
  "lead": {
   "label": "The Soothsayer",
@@ -448,8 +466,23 @@
   ]
  },
  "cards": {
-  "label": "More from this week",
+  "label": "Missouri week",
   "items": [
+   {
+    "kicker": "Franz Beard · Thoughts of the Day",
+    "title": "Franz Beard’s Pregame Thoughts: The Road to Columbia",
+    "url": "/post/thoughts-of-the-day-september-29-2026",
+    "excerpt": "Franz’s game-week thoughts as Florida turns from the Ole Miss rout to No. 25 Missouri, starting with the men up front who made it happen.",
+    "image": {
+     "id": "16b519_c0cae41f73f142ec8c32a0599593365f",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 1663,
+     "alt": "O-line coach Phil Trautwein and family celebrate the win over Ole Miss (Photo by Chris Spears, GatorBait Media)",
+     "credit": "Photo by Chris Spears, GatorBait Media"
+    },
+    "date": "Sept. 29"
+   },
    {
     "kicker": "Buddy Martin · Column",
     "title": "Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators.",
@@ -462,66 +495,6 @@
      "height": 800,
      "alt": "Jon Sumrall reacts on the Florida sideline with an official in the foreground (Photo by Chris Spears, GatorBait Media)",
      "credit": "Photo by Chris Spears, GatorBait Media"
-    },
-    "date": "Oct. 1"
-   },
-   {
-    "kicker": "Buddy Martin · Column",
-    "title": "The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”",
-    "url": "/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it",
-    "excerpt": "This guy could turn out to be brilliant. Maybe even Steve Spurrier brilliant. But Faulkner has to earn that.",
-    "image": {
-     "id": "d3cfa5_56a64986c874417c9a8299fae22649ed",
-     "ext": "jpg",
-     "width": 1600,
-     "height": 900,
-     "alt": "Buddy Martin column: The Looming Brilliance of Buster Faulkner. Photo by Chris Spears, GatorBait Media; Faulkner photo UAA.",
-     "credit": "Photo by Chris Spears, GatorBait Media; Faulkner photo UAA"
-    },
-    "date": "Sept. 30"
-   },
-   {
-    "kicker": "Analysis · GatorBait Staff",
-    "title": "Florida Keeps Winning Big, and the Laundry Keeps Piling Up",
-    "url": "/post/florida-keeps-winning-big-and-the-laundry-keeps-piling-up",
-    "excerpt": "The No. 8 Gators have outscored four opponents by nearly 31 points a game while drawing 35 flags for 357 yards.",
-    "image": {
-     "id": "d3cfa5_f130d47a9cb74914b869ac554c67e931",
-     "ext": "jpg",
-     "width": 2576,
-     "height": 1198,
-     "alt": "Officials at the SEC replay monitor on the Florida sideline (Photo by Chris Spears, GatorBait Media)",
-     "credit": "Photo by Chris Spears, GatorBait Media"
-    },
-    "date": "Oct. 1"
-   },
-   {
-    "kicker": "Franz Beard · Column",
-    "title": "When it came to finding a quarterback Sumrall trusted Buster and it paid off",
-    "url": "/post/when-it-came-to-finding-a-quarterback-sumrall-trusted-buster-and-it-paid-off",
-    "excerpt": "Aaron Philo was barely known when the season began. Jon Sumrall trusted Buster Faulkner to find a quarterback, and it paid off.",
-    "image": {
-     "id": "16b519_00359caad82744778e7c387d8bf98777",
-     "ext": "jpg",
-     "width": 3000,
-     "height": 1867,
-     "alt": "Aaron Philo, Florida quarterback (Photo by Chris Spears, GatorBait Media)",
-     "credit": "Photo by Chris Spears, GatorBait Media"
-    },
-    "date": "Oct. 1"
-   },
-   {
-    "kicker": "Honors · GatorBait Staff",
-    "title": "Jayden Woods Added To Chuck Bednarik Award Watch List",
-    "url": "/post/jayden-woods-added-to-chuck-bednarik-award-watch-list",
-    "excerpt": "The sophomore JACK’s 19 tackles, six TFLs and four sacks through four games have him in the running for college football’s top defensive honor.",
-    "image": {
-     "id": "d3cfa5_dc70ea9e65574abebd3b0ace40bd8232",
-     "ext": "png",
-     "width": 1080,
-     "height": 1350,
-     "alt": "Jayden Woods, Florida JACK linebacker (Graphic: GatorBait Media)",
-     "credit": "Graphic: GatorBait Media"
     },
     "date": "Oct. 1"
    },
@@ -607,5 +580,1900 @@
    }
   ],
   "next": "Next up: South Carolina, Oct. 10, in The Swamp. Then Texas in Austin on Oct. 17."
+ },
+ "rosters": {
+  "label": "Rosters",
+  "note": "Tap a team to see every player. Injury status from the official availability report.",
+  "source": "Rosters: ESPN, Oct. 2. Availability: FloridaGators.com.",
+  "teams": [
+   {
+    "name": "Florida",
+    "sub": "Gators",
+    "players": [
+     {
+      "n": "0",
+      "name": "Jayden Woods",
+      "pos": "LB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "1",
+      "name": "Bryce Thornton",
+      "pos": "S",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "1",
+      "name": "Vernell Brown III",
+      "pos": "WR",
+      "cls": "SO",
+      "side": "offense",
+      "st": "Questionable"
+     },
+     {
+      "n": "2",
+      "name": "Eric Singleton Jr.",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": "Probable"
+     },
+     {
+      "n": "2",
+      "name": "Lagonza Hayward",
+      "pos": "S",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "3",
+      "name": "Bailey Stockton",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": "Questionable"
+     },
+     {
+      "n": "3",
+      "name": "Onis Konanbanny",
+      "pos": "CB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "4",
+      "name": "TJ Abrams",
+      "pos": "WR",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "5",
+      "name": "Micah Mays Jr.",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "5",
+      "name": "Myles Graham",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "6",
+      "name": "Dallas Wilson",
+      "pos": "WR",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "6",
+      "name": "J'Vari Flowers",
+      "pos": "CB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "7",
+      "name": "Amir Jackson",
+      "pos": "TE",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "7",
+      "name": "Ty Jackson",
+      "pos": "LB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "8",
+      "name": "Aaron Chiles",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "9",
+      "name": "Drake Stubbs",
+      "pos": "S",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "9",
+      "name": "Tramell Jones Jr.",
+      "pos": "QB",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "10",
+      "name": "Aaron Williams",
+      "pos": "QB",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "10",
+      "name": "Cam Dooley",
+      "pos": "S",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "11",
+      "name": "LJ McCray",
+      "pos": "DL",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "11",
+      "name": "Will Griffin",
+      "pos": "QB",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "12",
+      "name": "Aaron Philo",
+      "pos": "QB",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "12",
+      "name": "Ben Hanks III",
+      "pos": "CB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "13",
+      "name": "Jadan Baugh",
+      "pos": "RB",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "13",
+      "name": "Jordy Lowery",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "14",
+      "name": "Jaden Edgecombe",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "14",
+      "name": "KJ Ford",
+      "pos": "LB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "15",
+      "name": "CJ Bronaugh",
+      "pos": "CB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "15",
+      "name": "Luke Harpring",
+      "pos": "TE",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "16",
+      "name": "Aidan Warner",
+      "pos": "QB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "16",
+      "name": "TJ Bullard",
+      "pos": "LB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "17",
+      "name": "Lacota Dippre",
+      "pos": "TE",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "17",
+      "name": "Titus Bullard",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "18",
+      "name": "Davian Groce",
+      "pos": "WR",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "19",
+      "name": "Jaylen Lloyd",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "20",
+      "name": "Duke Clark",
+      "pos": "RB",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "20",
+      "name": "Kanye Clark",
+      "pos": "DB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "21",
+      "name": "CJ Hester",
+      "pos": "CB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "21",
+      "name": "Evan Pryor",
+      "pos": "RB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "22",
+      "name": "Kahleil Jackson",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "22",
+      "name": "Kofi Asare",
+      "pos": "LB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "23",
+      "name": "Javier Jones",
+      "pos": "CB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "24",
+      "name": "Kamran James",
+      "pos": "DL",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "24",
+      "name": "London Montgomery",
+      "pos": "RB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "25",
+      "name": "Anthony Rubio",
+      "pos": "RB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "25",
+      "name": "Cormani McClain",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "27",
+      "name": "Byron Louis",
+      "pos": "RB",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "27",
+      "name": "Dijon Johnson",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "28",
+      "name": "Elijah Owens",
+      "pos": "DB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "29",
+      "name": "Jaden Robinson",
+      "pos": "LB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "30",
+      "name": "Dylan Purter",
+      "pos": "DB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "32",
+      "name": "Eric Parks",
+      "pos": "S",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "33",
+      "name": "Brian Case",
+      "pos": "RB",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "33",
+      "name": "DJ Coleman",
+      "pos": "S",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "34",
+      "name": "Kaiden Hall",
+      "pos": "S",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "34",
+      "name": "Kelvin Jimenez",
+      "pos": "RB",
+      "cls": "JR",
+      "side": "offense",
+      "st": "Out"
+     },
+     {
+      "n": "35",
+      "name": "Brayden Slade",
+      "pos": "S",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "36",
+      "name": "Vincent Brown Jr.",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "37",
+      "name": "Javion Toombs",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "38",
+      "name": "Alec Clark",
+      "pos": "P",
+      "cls": "SR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "39",
+      "name": "Carter Milliron",
+      "pos": "LS",
+      "cls": "SR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "40",
+      "name": "Brandon Rabasco",
+      "pos": "PK",
+      "cls": "JR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "40",
+      "name": "Jayden Gross",
+      "pos": "DL",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "41",
+      "name": "Liam Padron",
+      "pos": "PK",
+      "cls": "JR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "42",
+      "name": "Matthew Kade",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "43",
+      "name": "Alfonzo Allen Jr.",
+      "pos": "S",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "44",
+      "name": "Myles Johnson",
+      "pos": "LB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "47",
+      "name": "Miller Fealy",
+      "pos": "P",
+      "cls": "JR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "48",
+      "name": "Erich Seager",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "48",
+      "name": "Nicholas Inglis",
+      "pos": "P",
+      "cls": "JR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "49",
+      "name": "Jalen Wiggins",
+      "pos": "DL",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "50",
+      "name": "Jason Zandamela",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "50",
+      "name": "Malik Morris",
+      "pos": "LB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "51",
+      "name": "Tyler Chukuyem",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "52",
+      "name": "Dylan Leighton",
+      "pos": "LB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "52",
+      "name": "Harrison Moore",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "53",
+      "name": "Bryce Lovett",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "54",
+      "name": "Javarii Luckas",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "54",
+      "name": "Lincoln Anderson",
+      "pos": "LS",
+      "cls": "FR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "55",
+      "name": "Charles Emanuel III",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "55",
+      "name": "TJ Dice Jr.",
+      "pos": "OL",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "56",
+      "name": "Jahari Medlock",
+      "pos": "OL",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "56",
+      "name": "Stive-Bentley Keumajou-Yondui",
+      "pos": "DL",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "58",
+      "name": "Hunter Solwold",
+      "pos": "LS",
+      "cls": "SO",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "59",
+      "name": "Corey Brown",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "61",
+      "name": "G'Nivre Carr",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "63",
+      "name": "Caden Jones",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "64",
+      "name": "Eagan Boyer",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "66",
+      "name": "Emeka Ugorji",
+      "pos": "OL",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "67",
+      "name": "TJ Shanahan Jr.",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "68",
+      "name": "Fletcher Westphal",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "71",
+      "name": "Roderick Kearney",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "73",
+      "name": "Daniel Pierre Louis",
+      "pos": "OL",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "76",
+      "name": "Mark Faircloth",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "77",
+      "name": "Knijeah Harris",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "78",
+      "name": "Desmond Green",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "79",
+      "name": "Chancellor Campbell",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "80",
+      "name": "Jaylen Jordon",
+      "pos": "TE",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "81",
+      "name": "Mason Jordan",
+      "pos": "WR",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "82",
+      "name": "Ace Ciongoli",
+      "pos": "WR",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "83",
+      "name": "Justin Williams",
+      "pos": "WR",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "84",
+      "name": "Micah Jones",
+      "pos": "TE",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "85",
+      "name": "Evan Chieca",
+      "pos": "TE",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "86",
+      "name": "Heze Kent",
+      "pos": "TE",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "88",
+      "name": "Marquez Daniel",
+      "pos": "WR",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "89",
+      "name": "Tripp Brown Jr.",
+      "pos": "TE",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "90",
+      "name": "Brendan Bett",
+      "pos": "DL",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "91",
+      "name": "Jeramiah McCloud",
+      "pos": "DL",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "91",
+      "name": "Patrick Durkin",
+      "pos": "PK",
+      "cls": "JR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "92",
+      "name": "Sebastian Scott",
+      "pos": "DL",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "93",
+      "name": "DK Kalu",
+      "pos": "DL",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "94",
+      "name": "Kendall Guervil",
+      "pos": "DL",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "95",
+      "name": "Jamari Lyons",
+      "pos": "DL",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "96",
+      "name": "JaReylan McCoy",
+      "pos": "DL",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "97",
+      "name": "Joseph Mbatchou",
+      "pos": "DL",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "98",
+      "name": "Mason Clinton",
+      "pos": "DL",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "99",
+      "name": "Emmanuel Oyebadejo",
+      "pos": "DL",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     }
+    ]
+   },
+   {
+    "name": "Missouri",
+    "sub": "Tigers",
+    "players": [
+     {
+      "n": "0",
+      "name": "Naeshaun Montgomery",
+      "pos": "WR",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "0",
+      "name": "Robert Woodyard Jr.",
+      "pos": "LB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "1",
+      "name": "Chris Graves Jr.",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "1",
+      "name": "Donovan Olugbode",
+      "pos": "WR",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "2",
+      "name": "Caleb Goodie Sr.",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "2",
+      "name": "Sione Laulea",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "3",
+      "name": "DaMarion Fowlkes",
+      "pos": "WR",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "3",
+      "name": "Marquis Gracial",
+      "pos": "DT",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "4",
+      "name": "Shaun Terry II",
+      "pos": "WR",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "4",
+      "name": "Trajen Greco",
+      "pos": "S",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "5",
+      "name": "Matt Zollers",
+      "pos": "QB",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "5",
+      "name": "Nicholas Rodriguez",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "6",
+      "name": "Jeremiah Beasley",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "7",
+      "name": "Gavin Sidwar",
+      "pos": "QB",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "7",
+      "name": "Kensley Louidor-Faustin",
+      "pos": "S",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "8",
+      "name": "Donta Simpson",
+      "pos": "DT",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "9",
+      "name": "Dante McClellan",
+      "pos": "LB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "10",
+      "name": "Daeden Hopkins",
+      "pos": "EDGE",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "10",
+      "name": "Nick Evers",
+      "pos": "QB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "11",
+      "name": "Jabari Brady",
+      "pos": "WR",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "11",
+      "name": "Langden Kitchen",
+      "pos": "EDGE",
+      "cls": "SR",
+      "side": "defense",
+      "st": "Questionable"
+     },
+     {
+      "n": "12",
+      "name": "Devyon Hill-Lomax",
+      "pos": "WR",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "12",
+      "name": "Malik Bryant",
+      "pos": "EDGE",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "13",
+      "name": "Austin Simmons",
+      "pos": "QB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "13",
+      "name": "Jaden Jones",
+      "pos": "EDGE",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "14",
+      "name": "Brett Brown",
+      "pos": "QB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "14",
+      "name": "CJ Bass III",
+      "pos": "S",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "15",
+      "name": "Santana Banner",
+      "pos": "S",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "16",
+      "name": "Bobby Washington Jr.",
+      "pos": "LB",
+      "cls": "SR",
+      "side": "defense",
+      "st": "Questionable"
+     },
+     {
+      "n": "17",
+      "name": "Brian Huff",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "17",
+      "name": "Kenric Lanier II",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "18",
+      "name": "Isaac Jensen",
+      "pos": "TE",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "18",
+      "name": "JaDon Blair",
+      "pos": "S",
+      "cls": "SO",
+      "side": "defense",
+      "st": "Out"
+     },
+     {
+      "n": "19",
+      "name": "Blake Craig",
+      "pos": "PK",
+      "cls": "SR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "19",
+      "name": "Cayden Lee",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "19",
+      "name": "Darris Smith",
+      "pos": "EDGE",
+      "cls": "SR",
+      "side": "defense",
+      "st": "Questionable"
+     },
+     {
+      "n": "20",
+      "name": "Cameron Keys",
+      "pos": "CB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "20",
+      "name": "Jamal Roberts",
+      "pos": "RB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "21",
+      "name": "Jahlil Florence",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "21",
+      "name": "Malae Fonoti",
+      "pos": "RB",
+      "cls": "JR",
+      "side": "offense",
+      "st": "Out"
+     },
+     {
+      "n": "22",
+      "name": "Elijah Dotson",
+      "pos": "S",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "22",
+      "name": "Max Warner",
+      "pos": "RB",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "24",
+      "name": "Nick DeLoach Jr.",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "24",
+      "name": "Xai'Shaun Edwards",
+      "pos": "RB",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "25",
+      "name": "Jason King",
+      "pos": "LB",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "26",
+      "name": "Brady Hultman",
+      "pos": "RB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "26",
+      "name": "Jaxson Gates",
+      "pos": "CB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "28",
+      "name": "Jayden McGregory",
+      "pos": "S",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "28",
+      "name": "Preston Hatfield",
+      "pos": "RB",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "29",
+      "name": "Ahmad Hardy",
+      "pos": "RB",
+      "cls": "JR",
+      "side": "offense",
+      "st": "Out"
+     },
+     {
+      "n": "29",
+      "name": "Kamauryn Morgan",
+      "pos": "EDGE",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "30",
+      "name": "Carter Stewart",
+      "pos": "S",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "31",
+      "name": "Anthony Favrow",
+      "pos": "RB",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "31",
+      "name": "Nasir Pogue",
+      "pos": "CB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "32",
+      "name": "Brody Jones",
+      "pos": "S",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "32",
+      "name": "Gavin Wyatt",
+      "pos": "WR",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "33",
+      "name": "DJ McBride II",
+      "pos": "WR",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "33",
+      "name": "JJ Bush",
+      "pos": "LB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "34",
+      "name": "Jackson Hancock",
+      "pos": "S",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "34",
+      "name": "Mark Shenouda",
+      "pos": "P",
+      "cls": "SR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "35",
+      "name": "Ahmod Billins",
+      "pos": "DB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "36",
+      "name": "Sean Gross",
+      "pos": "LS",
+      "cls": "SO",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "36",
+      "name": "Trashundon Neal",
+      "pos": "CB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "38",
+      "name": "Henry Crosby",
+      "pos": "LS",
+      "cls": "SO",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "38",
+      "name": "Keenan Harris",
+      "pos": "LB",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "39",
+      "name": "Maddux Hermestroff",
+      "pos": "S",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "40",
+      "name": "Brunno Reus",
+      "pos": "PK",
+      "cls": "SO",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "41",
+      "name": "Graham Faust",
+      "pos": "S",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "43",
+      "name": "John Butcher",
+      "pos": "P",
+      "cls": "SR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "46",
+      "name": "Jackson Daily",
+      "pos": "LB",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "48",
+      "name": "Oliver Robbins",
+      "pos": "PK",
+      "cls": "JR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "49",
+      "name": "Brett Le Blanc",
+      "pos": "LS",
+      "cls": "SR",
+      "side": "specialTeam",
+      "st": ""
+     },
+     {
+      "n": "51",
+      "name": "Luke Work",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "52",
+      "name": "Demarcus Johnson",
+      "pos": "EDGE",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "52",
+      "name": "Zack Owens",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "53",
+      "name": "Tommy Reese",
+      "pos": "LB",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "54",
+      "name": "Josh Atkins",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": "Out"
+     },
+     {
+      "n": "55",
+      "name": "Cavan Tuley",
+      "pos": "EDGE",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "55",
+      "name": "Will Kemna",
+      "pos": "OL",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "56",
+      "name": "Dominick Giudice",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "57",
+      "name": "Mark Hensley",
+      "pos": "DT",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "58",
+      "name": "Khalief Canty Jr.",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "63",
+      "name": "Chace Missouri",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "64",
+      "name": "Joe Schranz",
+      "pos": "OL",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "65",
+      "name": "Brysen Wessell",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "66",
+      "name": "Logan Reichert",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "69",
+      "name": "Braylon Ellison",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "70",
+      "name": "Cayden Green",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "71",
+      "name": "Ryan Jostes",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "72",
+      "name": "Colin Sorensen",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "73",
+      "name": "Tristan Wilson",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "74",
+      "name": "Whit Hafer",
+      "pos": "OL",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "75",
+      "name": "Jack Lange",
+      "pos": "OL",
+      "cls": "SO",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "77",
+      "name": "Curtis Peagler",
+      "pos": "OL",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "78",
+      "name": "DJ Jones",
+      "pos": "OL",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "80",
+      "name": "Jayden Bolton",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "81",
+      "name": "Noah Flaskamp",
+      "pos": "WR",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "82",
+      "name": "Karsten Fiene",
+      "pos": "WR",
+      "cls": "FR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "84",
+      "name": "Adam Molitor",
+      "pos": "TE",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "86",
+      "name": "Jordon Harris",
+      "pos": "TE",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "87",
+      "name": "Brett Norfleet",
+      "pos": "TE",
+      "cls": "SR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "88",
+      "name": "Gavin Hoffman",
+      "pos": "TE",
+      "cls": "JR",
+      "side": "offense",
+      "st": "Out"
+     },
+     {
+      "n": "89",
+      "name": "Jude James",
+      "pos": "TE",
+      "cls": "JR",
+      "side": "offense",
+      "st": ""
+     },
+     {
+      "n": "90",
+      "name": "Sterling Webb",
+      "pos": "DT",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "91",
+      "name": "Elias Williams",
+      "pos": "DT",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "92",
+      "name": "Jason Dowell",
+      "pos": "DT",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "93",
+      "name": "Jocques Felix",
+      "pos": "DT",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "94",
+      "name": "Sam Williams",
+      "pos": "DT",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "95",
+      "name": "Jalen Marshall",
+      "pos": "DT",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "96",
+      "name": "Aidan Dubbert",
+      "pos": "EDGE",
+      "cls": "SR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "97",
+      "name": "CJ May",
+      "pos": "EDGE",
+      "cls": "SO",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "98",
+      "name": "Tajh Overton",
+      "pos": "DT",
+      "cls": "FR",
+      "side": "defense",
+      "st": ""
+     },
+     {
+      "n": "99",
+      "name": "Jadon Frick",
+      "pos": "DT",
+      "cls": "JR",
+      "side": "defense",
+      "st": ""
+     }
+    ]
+   }
+  ]
+ },
+ "watch": {
+  "label": "How to watch",
+  "items": [
+   {
+    "k": "Kickoff",
+    "v": "Saturday, Oct. 3, 3:30 p.m. ET"
+   },
+   {
+    "k": "TV",
+    "v": "ABC"
+   },
+   {
+    "k": "Stream",
+    "v": "ESPN app, with a TV-provider login"
+   },
+   {
+    "k": "Radio",
+    "v": "Gator IMG Sports Network, with Sean Kelley"
+   },
+   {
+    "k": "Where",
+    "v": "Memorial Stadium (Faurot Field), Columbia, Mo. Missouri homecoming"
+   }
+  ],
+  "links": [
+   {
+    "label": "Find your Gators radio station",
+    "url": "https://floridagators.com/sports/2015/12/11/_radio_affiliates_"
+   },
+   {
+    "label": "Game Day thread on the Boards",
+    "url": "/groups"
+   }
+  ],
+  "source": "TV: ESPN. Radio: FloridaGators.com."
  }
 }

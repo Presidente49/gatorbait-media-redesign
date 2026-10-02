@@ -37,17 +37,16 @@ add('<mj-section background-color="#FFFFFF" padding="22px 24px 6px"><mj-column>'
     '<mj-button href="%s" padding="14px 0 6px">READ THE COLUMN</mj-button>'
     '<mj-button href="%s" background-color="%s" padding="6px 0 10px">OPEN THE FULL MAGAZINE</mj-button></mj-column></mj-section>'
     % (MUTE, e(D['cover']['dek']), FRANZ, SITE + '/magazine', NAVY))
-# the game
-G = D['game']; T = G['teams']
-add('<mj-section background-color="%s" padding="26px 24px 8px"><mj-column>'
-    '<mj-text color="%s" font-size="12px" font-weight="900" letter-spacing="2px" padding="0 0 8px">THE GAME &#183; %s &#183; %s</mj-text>'
-    '<mj-text color="#FFFFFF" font-size="32px" line-height="1.08" font-weight="900" padding="0 0 8px">%s %s at %s %s</mj-text>'
-    '<mj-text color="#D7E0EB" font-size="15px" line-height="1.5" padding="0">%s &#183; %s<br/>Line %s &#183; Total %s &#183; Moneyline %s<br/>%s<br/>ESPN matchup predictor: Florida %s%%, Missouri %s%%.</mj-text></mj-column></mj-section>'
-    % (NAVY, ORANGE, e(G['kickoff'].upper()), e(G['tv']), e(T[0]['rank']), e(T[0]['name']), e(T[1]['rank']), e(T[1]['name']),
-       e(G['venue']), e(G['forecast']), e(G['chips'][0]['v']), e(G['chips'][1]['v']), e(G['chips'][2]['v']), e(D['asOf']), G['predictor']['florida'], G['predictor']['missouri']))
+# the game: matchup graphic (rendered from deploy/covers/pregame-matchup.html) + one line of detail
+G = D['game']
+MATCHUP = 'https://static.wixstatic.com/media/d3cfa5_1fe245369e1d40dfbe9ab7c20053de72~mv2.jpg/v1/fill/w_1200,h_760,al_c,q_85/file.jpg'
+add('<mj-section background-color="%s" padding="0"><mj-column><mj-image src="%s" alt="No. 8 Florida (4-0) at No. 25 Missouri (3-1), Saturday, Oct. 3, 3:30 p.m. ET on ABC. Line FLA -5.5, total 57.5." href="%s" padding="0" width="600px" /></mj-column></mj-section>' % (NAVY, MATCHUP, SITE + '/magazine'))
+add('<mj-section background-color="%s" padding="12px 24px 16px"><mj-column><mj-text color="#D7E0EB" font-size="14px" line-height="1.5" padding="0">ESPN matchup predictor: Florida %s%%, Missouri %s%%. %s</mj-text></mj-column></mj-section>' % (NAVY, G['predictor']['florida'], G['predictor']['missouri'], e(G['forecast'])))
 # Sooth Board
 rows = []
-for g in D['slate']['games']:
+games = D['slate']['games']
+show = [g for g in games if g.get('hero')] + [g for g in games if not g.get('hero')][:2]
+for g in show:
     a, h = g['away'], g['home']
     nm = lambda t: ((('No. %s ' % t['rank']) if t.get('rank') else '') + t['name'] + ' (' + t['rec'] + ')')
     pick = g['pick'] + ((' ' + g['note']) if g.get('note') else '')
@@ -60,8 +59,8 @@ for g in D['slate']['games']:
 add('<mj-section background-color="#FFFFFF" padding="26px 24px 6px"><mj-column>'
     '<mj-text color="%s" font-size="12px" font-weight="900" letter-spacing="2px" padding="0 0 6px">THE SOOTHSAYER</mj-text>'
     '<mj-text color="%s" font-size="30px" line-height="1.1" font-weight="900" padding="0 0 4px">The Sooth Board</mj-text>'
-    '<mj-text color="%s" font-size="14px" padding="0 0 8px">Saturday&#8217;s SEC games with Franz Beard&#8217;s picks. Kickoffs, TV and lines: ESPN.</mj-text>'
-    '<mj-table padding="0" cellpadding="0">%s</mj-table></mj-column></mj-section>' % (ORANGE, NAVY, MUTE, ''.join(rows)))
+    '<mj-text color="%s" font-size="14px" padding="0 0 8px">Franz Beard picks every SEC game. Here are three. Lines: ESPN.</mj-text>'
+    '<mj-table padding="0" cellpadding="0">%s</mj-table><mj-button href="%s" background-color="%s" padding="14px 0 4px">SEE ALL %d OF FRANZ&#8217;S PICKS</mj-button></mj-column></mj-section>' % (ORANGE, NAVY, MUTE, ''.join(rows), SITE + '/magazine', NAVY, len(games)))
 # three keys
 ks = D['keys']['items'][:3]
 kt = ''

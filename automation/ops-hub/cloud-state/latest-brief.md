@@ -1,6 +1,6 @@
 # GatorBait operations brief
 
-Generated: 2026-10-01T20:59:18.452949+00:00
+Generated: 2026-10-02T00:42:11.783424+00:00
 
 Overall status: **HEALTHY**
 
@@ -10,12 +10,12 @@ Learning: **2 review candidate(s)** / 3 tracked incident pattern(s)
 
 | Check | Result | Time | Final URL |
 |---|---:|---:|---|
-| Homepage | PASS (200) | 2.88s | https://www.gatorbaitmedia.com/?ops_health=1 |
-| Magazine | PASS (200) | 3.03s | https://www.gatorbaitmedia.com/magazine |
-| GatorBait TV | PASS (200) | 2.23s | https://www.gatorbaitmedia.com/the-buddy-martin-show |
-| Membership | PASS (200) | 2.96s | https://www.gatorbaitmedia.com/pricing-plans |
-| Policies | PASS (200) | 2.52s | https://www.gatorbaitmedia.com/policies |
-| Contact | PASS (200) | 2.26s | https://www.gatorbaitmedia.com/contact |
-| Merch Store | PASS (200) | 1.98s | https://gatorbait2026.itemorder.com/shop/home/ |
+| Homepage | PASS (200) | 0.38s | https://www.gatorbaitmedia.com/?ops_health=1 |
+| Magazine | PASS (200) | 0.44s | https://www.gatorbaitmedia.com/magazine |
+| GatorBait TV | PASS (200) | 0.37s | https://www.gatorbaitmedia.com/the-buddy-martin-show |
+| Membership | PASS (200) | 0.34s | https://www.gatorbaitmedia.com/pricing-plans |
+| Policies | PASS (200) | 0.37s | https://www.gatorbaitmedia.com/policies |
+| Contact | PASS (200) | 0.33s | https://www.gatorbaitmedia.com/contact |
+| Merch Store | PASS (200) | 2.2s | https://gatorbait2026.itemorder.com/shop/home/ |
 
 Controller reason: deterministic checks are healthy

@@ -13,8 +13,16 @@
     var iso = root.getAttribute('data-kickoff');
     root.querySelectorAll('[data-pg-count]').forEach(function (el) { el.textContent = pgCount(iso); });
   }
+  function pgPrintInit(root) {
+    if (root.__pgPrint) return; root.__pgPrint = 1;
+    root.addEventListener('click', function (e) {
+      var b = e.target && e.target.closest ? e.target.closest('[data-pg-print]') : null; if (!b) return; e.preventDefault();
+      var im = root.querySelectorAll('img'); for (var i = 0; i < im.length; i++) { im[i].loading = 'eager'; }
+      setTimeout(function () { window.print(); }, 350);
+    });
+  }
   function pgStart(root) {
-    pgStop(); pgTick(root); pgTimer = setInterval(function () { if (!root.isConnected) { pgStop(); return; } pgTick(root); }, 30000);
+    pgPrintInit(root); pgStop(); pgTick(root); pgTimer = setInterval(function () { if (!root.isConnected) { pgStop(); return; } pgTick(root); }, 30000);
   }
   function pgStop() { if (pgTimer) { clearInterval(pgTimer); pgTimer = null; } }
   function fx(n, d) { return typeof n === 'number' && isFinite(n) ? n.toFixed(d == null ? 1 : d) : ''; }
@@ -33,7 +41,7 @@
       '<text class="pg-wm-o" x="0" y="232" textLength="994" lengthAdjust="spacing">MAGAZINE</text>' +
       '<text class="pg-wm-a" x="0" y="168" textLength="520" lengthAdjust="spacingAndGlyphs">GATOR</text>' +
       '<text class="pg-wm-b" x="540" y="168" textLength="460" lengthAdjust="spacingAndGlyphs">BAIT</text></svg>' +
-      '<p class="pg-issue"><b>' + esc(text(I.number, 60)) + '</b><span>' + esc(text(I.week, 120)) + '</span></p></header>';
+      '<p class="pg-issue"><b>' + esc(text(I.number, 60)) + '</b><span>' + esc(text(I.week, 120)) + '</span></p><button type="button" class="pg-print" data-pg-print>Print the whole magazine</button></header>';
   }
   function pgCover(D) {
     var C = obj(D.cover); if (!C) return '';

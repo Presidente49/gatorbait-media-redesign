@@ -39,10 +39,7 @@
   function pgMast(D) {
     var I = obj(D.issue) || {};
     return '<header class="pg-mast"><div class="pg-mast-top"><a class="pg-home" href="/">' + esc(text(I.tagline, 120) || 'GatorBait Media') + '</a><span>' + esc(text(I.date, 60)) + '</span></div>' +
-      '<svg class="pg-wm" viewBox="0 0 1000 246" role="img" aria-label="GatorBait Magazine" preserveAspectRatio="xMinYMin meet" focusable="false">' +
-      '<text class="pg-wm-m" x="2" y="236" textLength="990" lengthAdjust="spacing">MAGAZINE</text>' +
-      '<text class="pg-wm-a" x="0" y="168" textLength="520" lengthAdjust="spacingAndGlyphs">GATOR</text>' +
-      '<text class="pg-wm-b" x="540" y="168" textLength="460" lengthAdjust="spacingAndGlyphs">BAIT</text></svg>' +
+      '<div class="pg-plate"><img class="pg-logo" src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp/v1/fill/w_900,h_241,al_c,q_90,enc_auto/gatorbait.webp" width="900" height="241" alt="GatorBait" decoding="async"><span class="pg-plate-mz">Magazine</span></div>' +
       '<p class="pg-issue"><b>' + esc(text(I.number, 60)) + '</b><span>' + esc(text(I.week, 120)) + '</span></p><button type="button" class="pg-print" data-pg-print>Print the whole magazine</button></header>';
   }
   function pgCoverHref(D) {

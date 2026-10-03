@@ -35,6 +35,12 @@
 #gbm-magazine-page.pg .pg-wm-a{fill:#fff}
 #gbm-magazine-page.pg .pg-wm-b{fill:var(--pg-orange)}
 #gbm-magazine-page.pg .pg-wm-m{font-size:96px;fill:var(--pg-text)}
+/* Nameplate A (Brenden, Oct. 3): the official GatorBait script logo on a cream plate, MAGAZINE between orange rules. */
+#gbm-magazine-page.pg .pg-plate{max-width:640px;margin-top:12px;background:var(--pg-cream);border-radius:8px;padding:16px 16px 12px;box-shadow:0 10px 30px #0006}
+#gbm-magazine-page.pg .pg-logo{display:block;width:min(520px,86%);height:auto;margin:0 auto}
+#gbm-magazine-page.pg .pg-plate-mz{display:flex;align-items:center;gap:12px;margin-top:10px;font:800 clamp(16px,4.8vw,26px)/1 var(--mz-cond);letter-spacing:.42em;text-transform:uppercase;color:var(--pg-blue)}
+#gbm-magazine-page.pg .pg-plate-mz::before,#gbm-magazine-page.pg .pg-plate-mz::after{content:"";flex:1;height:3px;background:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-plate-mz::after{margin-left:-.42em}
 #gbm-magazine-page.pg .pg-home{color:inherit;text-decoration:none}
 #gbm-magazine-page.pg .pg-home::before{content:"\2190\00a0";color:var(--pg-orange-2)}
 /* Magazine page only: no site header strip above the Magazine's own masthead (Brenden, Oct. 3). */

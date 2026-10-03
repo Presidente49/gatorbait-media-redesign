@@ -93,6 +93,14 @@ for (const w of widths) {
       fpBuild: document.querySelector('#gbm-live')?.getAttribute('data-fp-build') || null,
       fpVersion: document.querySelector('#gbm-live')?.getAttribute('data-fp') || null,
     })));
+    if (/^\/magazine/.test(P)) {
+      await page.waitForTimeout(8000);
+      m.mag = await page.evaluate(async () => {
+        const r = document.getElementById('gbm-magazine-page'); let espn = null;
+        try { const x = await fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=20261003', { credentials: 'omit', cache: 'no-store' }); espn = 'HTTP ' + x.status; } catch (e) { espn = 'ERR ' + e.message; }
+        return { score: r && r.getAttribute('data-pg-score'), live: r && r.getAttribute('data-mz-live'), ticker: (document.querySelector('.pg-ticker') || {}).textContent || null, espn };
+      });
+    }
     await page.screenshot({ path: `${OUT}/${pre}top-${w}.jpg`, type: 'jpeg', quality: 70 });
     if (selector && selector.startsWith('DUMP ')) {
       m.dump = await page.evaluate((s) => {

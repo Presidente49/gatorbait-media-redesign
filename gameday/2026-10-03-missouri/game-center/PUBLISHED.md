@@ -41,3 +41,10 @@ Test: `test2.mjs` (Playwright, real pregame ESPN summary plus synthetic live gam
 ### Nav audit (live, via fetch, ~19:3xZ)
 OK: /groups, /pricing-plans, /account/my-account, /about, /contact, /policies, /the-buddy-martin-show, /magazine, /gatorbait-media-blogs, /tags, /login, /shop (redirects to the itemorder store).
 **Broken and fixed:** header (`7fee4de6` rev 33) and footer (`f8b950c9` rev 31) "Stats" pointed to `/florida-football-stats`, a **404** (Wix's API cannot create static pages; the stats embed `756655cf` has nothing to mount on). Both now read "Game Center" -> `/#gameday`. To restore Stats later: add a blank Wix page with slug `florida-football-stats`, then swap the entry back.
+
+## Update, ~19:15Z: one page for pregame, live and postgame; graphics; editable game update (Brenden)
+
+- **Banner embed** `b5984d6d-b604-48c0-82d4-e9224083696c` (source `gcb.js`, `gcb.css`, body `embed-banner.html`): pregame "GAME DAY" poster graphic (SVG, matchup, ranks, records, date, time, TV, venue, SEC), postgame "FINAL / GATORS WIN" graphic with the final score and share buttons (X, Facebook, read the story), and a **Score By Quarter** table for live and final (from ESPN linescores). The pill, scoreboard, Chomp Meter, scoring plays, stats and leaders already switch by game state, so this one page is the pregame, live and postgame page.
+- **Game update embed** `60f89132-2771-4733-8e47-9e4ece60c8a1` ("edit me"): one line, `window.__GBM_GC_UPDATE__={at,head,lines,story}`, rendered as an orange card at the top. PATCH it in place any time (halftime, postgame) without touching code. Set `story` to the recap URL after the game; postgame mode uses it for "Read the story".
+- Core `bdb6094b` and extras `fdf0a3e3` were patched in place with the new hooks (`X('update')`, `X('banner')`, `X('ls')`, `__GBM_GC_ST__`); extras no longer overwrites other modules (`__GBM_GCX_E__` guard).
+- Test: `test3.mjs` covers pre, live and post fixtures at 390 and 1366 px (no JS errors, no overflow). The postgame fixture score (38-17) is synthetic.

@@ -1,5 +1,5 @@
 (function(){
-if(window.__GBM_GCX__)return;
+if(window.__GBM_GCX_E__)return;window.__GBM_GCX_E__=1;
 var EV='401856708',B='/apis/site/v2/sports/football/college-football/',H=['https://site.web.api.espn.com','https://site.api.espn.com'],S={},T={},run=false;
 function e(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function gj(p,i){i=i||0;return fetch(H[i]+B+p+(p.indexOf('?')<0?'?':'&')+'_='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return i<H.length-1?gj(p,i+1):null})}
@@ -46,6 +46,6 @@ txt=it.map(function(t){return'<span>'+e(t)+'</span>'}).join(''),k=r.querySelecto
 if(!it.length){if(k)k.remove();return}
 if(!k){k=document.createElement('div');k.className='gx-tk';b.insertAdjacentElement('afterend',k)}
 if(k.getAttribute('data-k')!==txt){k.setAttribute('data-k',txt);k.innerHTML='<div class="gx-tr" style="animation-duration:'+Math.max(45,Math.round(txt.length*.045))+'s">'+txt+txt+'</div>'}}
-window.__GBM_GCX__={field:field,more:function(p,d){return sec()+ranks()+news(d)+board()+track()},tick:tick};
+window.__GBM_GCX__=window.__GBM_GCX__||{};window.__GBM_GCX__.field=field;window.__GBM_GCX__.more=function(p,d){return sec()+ranks()+news(d)+board()+track()};window.__GBM_GCX__.tick=tick;
 window.__GBM_GC_RENDER__&&window.__GBM_GC_RENDER__();
 })();

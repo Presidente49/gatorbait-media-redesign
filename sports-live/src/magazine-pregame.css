@@ -34,9 +34,11 @@
 #gbm-magazine-page.pg .pg-wm-a,#gbm-magazine-page.pg .pg-wm-b{font-size:204px}
 #gbm-magazine-page.pg .pg-wm-a{fill:#fff}
 #gbm-magazine-page.pg .pg-wm-b{fill:var(--pg-orange)}
-#gbm-magazine-page.pg .pg-wm-g,#gbm-magazine-page.pg .pg-wm-o{font-size:104px}
-#gbm-magazine-page.pg .pg-wm-o{fill:none;stroke:var(--pg-blue-2);stroke-width:2.4px;paint-order:stroke}
-#gbm-magazine-page.pg .pg-wm-g{fill:#fa46165c}
+#gbm-magazine-page.pg .pg-wm-m{font-size:96px;fill:var(--pg-text)}
+#gbm-magazine-page.pg .pg-home{color:inherit;text-decoration:none}
+#gbm-magazine-page.pg .pg-home::before{content:"\2190\00a0";color:var(--pg-orange-2)}
+/* Magazine page only: no site header strip above the Magazine's own masthead (Brenden, Oct. 3). */
+html:has(#gbm-magazine-page.pg) #gbm-site-header,html:has(#gbm-magazine-page.pg) #SITE_HEADER,html:has(#gbm-magazine-page.pg) #gbm-mobile-shell-host,html:has(#gbm-magazine-page.pg) #gbm-mobile-shell,html:has(#gbm-magazine-page.pg) #gbm-mobile-drawer-root{display:none!important}
 #gbm-magazine-page.pg .pg-issue{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:14px;padding-top:12px;border-top:2px solid var(--pg-orange);font:700 13px/1.3 var(--mz-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--pg-mute)}
 #gbm-magazine-page.pg .pg-issue b{color:#fff;background:var(--pg-blue);padding:4px 10px}
 

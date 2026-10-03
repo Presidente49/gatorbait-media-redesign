@@ -38,10 +38,9 @@
   }
   function pgMast(D) {
     var I = obj(D.issue) || {};
-    return '<header class="pg-mast"><div class="pg-mast-top"><span>' + esc(text(I.tagline, 120)) + '</span><span>' + esc(text(I.date, 60)) + '</span></div>' +
+    return '<header class="pg-mast"><div class="pg-mast-top"><a class="pg-home" href="/">' + esc(text(I.tagline, 120) || 'GatorBait Media') + '</a><span>' + esc(text(I.date, 60)) + '</span></div>' +
       '<svg class="pg-wm" viewBox="0 0 1000 246" role="img" aria-label="GatorBait Magazine" preserveAspectRatio="xMinYMin meet" focusable="false">' +
-      '<text class="pg-wm-g" x="6" y="238" textLength="994" lengthAdjust="spacing">MAGAZINE</text>' +
-      '<text class="pg-wm-o" x="0" y="232" textLength="994" lengthAdjust="spacing">MAGAZINE</text>' +
+      '<text class="pg-wm-m" x="2" y="236" textLength="990" lengthAdjust="spacing">MAGAZINE</text>' +
       '<text class="pg-wm-a" x="0" y="168" textLength="520" lengthAdjust="spacingAndGlyphs">GATOR</text>' +
       '<text class="pg-wm-b" x="540" y="168" textLength="460" lengthAdjust="spacingAndGlyphs">BAIT</text></svg>' +
       '<p class="pg-issue"><b>' + esc(text(I.number, 60)) + '</b><span>' + esc(text(I.week, 120)) + '</span></p><button type="button" class="pg-print" data-pg-print>Print the whole magazine</button></header>';

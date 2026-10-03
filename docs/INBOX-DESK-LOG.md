@@ -247,3 +247,11 @@ Brenden relayed that Buddy said his new column hadn't been the front-page lead/c
 **Skipped — no Florida angle or not new:** general CFB analysis/power-rankings/CFP-projection pieces from ESPN's team feed (Peter Burns rankings, betting lines, recruiting-class rankings, Heisman odds) — not GatorBait-specific news.
 
 **Needs Brenden:** nothing this pass.
+
+## Desk inbox + YouTube check — Oct. 3, ~12:3xZ
+
+**Gmail:** 1 thread not previously logged — `1a101b758181bc0e`, from buddymartinshow@gmail.com, subject "Fwd: Time to RYZE. Your order is confirmed!" — a forwarded personal order confirmation, not a story submission (no SUBMIT subject, no story content). Skipped. No UF press release from gators.ufl.edu/floridagators.com/ufl.edu or any Hutchinson sender this window.
+
+**YouTube:** ~15 new videos since the last log (prior: "Meltdown Monday" `qWBazfq_4Mc`, Sept. 28). All are pregame content for today's Missouri game, not postgame/press-conference clips tied to the most recently completed game (Ole Miss) — none match the embed criteria for the Sumrall presser story (`2bb6c273`), so none auto-embedded. Two full show episodes ready to embed for Brenden if wanted: "Has Jadan Baugh Got A Shot At The Heisman?" (`aEOcRpECIOQ`, Oct. 3 01:57Z) and "Will Success Come With A Big Price For The Gators?" (`VIsn01dETY4`, Oct. 1 14:23Z). The other ~13 are short auto-clipped live-stream fragments ("Just how unique," "What do you like about his approach?" etc.) ahead of kickoff — logged as seen, not individually listed or embedded.
+
+Nothing published, drafted, or embedded this pass beyond the morning sweep's Dodd Trophy story — staying silent on #34 per step 9 beyond this log entry.

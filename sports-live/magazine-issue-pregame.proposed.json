@@ -327,20 +327,20 @@
  },
  "lead": {
   "label": "The Lead",
-  "kicker": "Buddy Martin",
-  "author": "Buddy Martin",
-  "title": "The Wizards Have Spoken, And These Florida Gators Are Suddenly Somebody",
-  "url": "/post/the-wizards-have-spoken-and-these-2026-florida-gators-suddenly-somebody",
-  "html": "<p>Hey! No resting on your laurels, Scott Stricklin National championship. Shhhhh! Say it slowly. Then go lie down. By Buddy Martin Somewhere in Gainesville there’s a whistle with teeth marks in it. It belongs to Jon Sumrall, and it’s the only thing in Florida football that has taken a beating lately. Think back to where we were a month ago. If you’d said in…</p>",
+  "kicker": "Eddie Gilley",
+  "author": "Eddie Gilley",
+  "title": "Something’s Got to Give",
+  "url": "/post/something-s-got-to-give",
+  "html": "<p>Florida wants to run behind Jadan Baugh. Missouri allows about 100 rushing yards a game. Eddie Gilley on which unit gives first in Columbia.</p>",
   "continue": "Read the full column",
-  "date": "October 3, 2026",
+  "date": "October 2, 2026",
   "image": {
-   "id": "ae876a_252aaaab6d0345418c1f59dc860889f2",
-   "ext": "avif",
+   "id": "d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35",
+   "ext": "jpg",
    "width": 1600,
-   "height": 2400,
-   "alt": "The Wizards Have Spoken, And These Florida Gators Are Suddenly Somebody",
-   "credit": ""
+   "height": 900,
+   "alt": "Something’s Got to Give (Photo: Hannah White / UAA Communications)",
+   "credit": "Photo: Hannah White / UAA Communications"
   },
   "caption": ""
  },
@@ -470,21 +470,6 @@
   "label": "Missouri week",
   "items": [
    {
-    "kicker": "Eddie Gilley · Column",
-    "title": "Something’s Got to Give",
-    "url": "/post/something-s-got-to-give",
-    "excerpt": "Florida wants to run behind Jadan Baugh. Missouri allows about 100 rushing yards a game. Eddie Gilley on which unit gives first in Columbia.",
-    "image": {
-     "id": "d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35",
-     "ext": "jpg",
-     "width": 1600,
-     "height": 900,
-     "alt": "Something’s Got to Give (Photo: Hannah White / UAA Communications)",
-     "credit": "Photo: Hannah White / UAA Communications"
-    },
-    "date": "Oct. 2"
-   },
-   {
     "kicker": "Buddy Martin · Column",
     "title": "Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators.",
     "url": "/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators",
@@ -503,7 +488,7 @@
     "kicker": "Franz Beard · Column",
     "title": "When it came to finding a quarterback Sumrall trusted Buster and it paid off",
     "url": "/post/when-it-came-to-finding-a-quarterback-sumrall-trusted-buster-and-it-paid-off",
-    "excerpt": "Trust was put to the ultimate test back in January. Having spent the month of December juggling two jobs – head coach at Tulane where he led the Green Wave to the American Conference championship and the College…",
+    "excerpt": "Trust was put to the ultimate test back in January.",
     "image": {
      "id": "16b519_00359caad82744778e7c387d8bf98777",
      "ext": "jpg",
@@ -513,6 +498,21 @@
      "credit": "Photo by Chris Spears, GatorBait Media"
     },
     "date": "Oct. 1"
+   },
+   {
+    "kicker": "Buddy Martin · Column",
+    "title": "The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”",
+    "url": "/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it",
+    "excerpt": "I’ll be honest. This guy could turn out to be brilliant. Maybe even Steve Spurrier brilliant.",
+    "image": {
+     "id": "d3cfa5_56a64986c874417c9a8299fae22649ed",
+     "ext": "jpg",
+     "width": 1600,
+     "height": 1440,
+     "alt": "The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It” (Photo by Chris Spears, GatorBait Media · Faulkner: UAA)",
+     "credit": "Photo by Chris Spears, GatorBait Media · Faulkner: UAA"
+    },
+    "date": "Sept. 30"
    }
   ]
  },

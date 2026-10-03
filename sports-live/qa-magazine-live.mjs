@@ -13,8 +13,8 @@ const bundle = readFileSync('sports-live/magazine-pregame.js', 'utf8');
 const frame = readFileSync('sports-live/magazine-pregame-frame.html', 'utf8');
 const feed = readFileSync('sports-live/fixtures/blog-feed-2026-10-03.xml', 'utf8');
 const issue = JSON.parse(readFileSync('sports-live/magazine-issue-pregame.json', 'utf8'));
-const WIZ = '/post/the-wizards-have-spoken-and-these-2026-florida-gators-suddenly-somebody';
-const CARDS = ['/post/something-s-got-to-give', '/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators', '/post/when-it-came-to-finding-a-quarterback-sumrall-trusted-buster-and-it-paid-off'];
+const WIZ = '/post/something-s-got-to-give'; // freshest credited column (Buddy's Oct. 3 photo has no verified credit)
+const CARDS = ['/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators', '/post/when-it-came-to-finding-a-quarterback-sumrall-trusted-buster-and-it-paid-off', '/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it'];
 const svg = (w, h) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><rect width="100%" height="100%" fill="#1b3aa8"/></svg>`;
 const fail = [];
 const check = (ok, msg) => { if (!ok) fail.push(msg); };
@@ -52,8 +52,8 @@ for (const width of [320, 390, 430, 1366]) {
     await page.waitForFunction(() => document.getElementById('gbm-magazine-page').getAttribute('data-mz-live') === 'feed', null, { timeout: 8000 });
     await page.waitForTimeout(200);
     const s = await state(page);
-    check(s.leadUrl === WIZ && /Wizards Have Spoken/.test(s.lead), width + ' A lead not Buddy: ' + s.lead);
-    check(/By Buddy Martin/.test(s.by), width + ' A byline: ' + s.by);
+    check(s.leadUrl === WIZ && /Something’s Got to Give/.test(s.lead), width + ' A lead: ' + s.lead);
+    check(/By Eddie Gilley/.test(s.by), width + ' A byline: ' + s.by);
     check(JSON.stringify(s.cards) === JSON.stringify(CARDS), width + ' A cards: ' + s.cards);
     check(new Set([s.cover, s.leadUrl, ...s.cards]).size === 2 + s.cards.length, width + ' A duplicate story: ' + s.posts);
     check(s.cover === issue.cover.url, width + ' A cover should link its own canonical post once the lead moved on: ' + s.cover);

@@ -38,13 +38,30 @@
     if (m) { cap = m[1]; credit = /spears/i.test(m[2]) ? 'Photo by Chris Spears, GatorBait Media' : m[2].replace(/^photo:?\s*/i, 'Photo: '); s = m[3]; }
     return { text: s, cap: cap, credit: credit };
   }
-  function mfClip(s, max) {
+  // Teaser: drop everything up to a writer's "By <Name> " in the first 400 characters (photo caption, kicker, dateline),
+  // then keep two or three whole sentences. Never a mid-word cut; curly quotes are left as they are.
+  var MF_BYLINE = new RegExp('(^|[\\s.!?’”"])By (' + MF_WRITERS.join('|') + ')[.,:]?\\s+', 'i');
+  function mfTeaser(raw, max) {
+    var s = mfStr(raw), m = MF_BYLINE.exec(s.slice(0, 400 + 40));
+    if (m && m.index <= 400) s = s.slice(m.index + m[0].length);
+    max = max || 320;
+    // A trailing "…" or "..." is Wix truncating the excerpt, not the end of a sentence.
+    var re = /[.!?]+[’”"')\]]*(?=\s+[“"‘'(A-Z0-9]|$)/g, ends = [], x;
+    while ((x = re.exec(s))) if (!/^\.\./.test(x[0])) ends.push(x.index + x[0].length);
+    var out = '';
+    for (var i = 0; i < ends.length && i < 3; i++) { var c = s.slice(0, ends[i]).trim(); if (i >= 2 && c.length > max) break; if (i >= 1 && c.length > max * 1.4) break; out = c; }
+    if (out) return out;
     if (s.length <= max) return s;
-    var cut = s.slice(0, max), dot = cut.lastIndexOf('. ');
-    if (dot > max * 0.55) return cut.slice(0, dot + 1);
-    return cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:\-–—]+$/, '') + '…';
+    return s.slice(0, s.lastIndexOf(' ', max)).replace(/[,;:\-–—]+$/, '') + '…';
   }
-  function mfNormalize(posts, nowMs) {
+  // Photo credit stated in the feed itself: "(Photo by X, Y)" or "(Photo: X)" in the image alt text or the caption.
+  function mfCreditIn(v) {
+    var m = /\((?:UAA )?Photo(?: by|:)\s*([^)]{2,80})\)/i.exec(mfStr(v));
+    if (!m) return '';
+    return /chris spears/i.test(m[1]) ? 'Photo by Chris Spears, GatorBait Media' : /^photo:/i.test(m[0].slice(1)) ? 'Photo: ' + m[1].trim() : 'Photo by ' + m[1].trim();
+  }
+  function mfNormalize(posts, nowMs, credits) {
+    credits = credits || {};
     var seen = {}, out = [];
     (Array.isArray(posts) ? posts : []).forEach(function (p) {
       if (!p || typeof p !== 'object') return;
@@ -57,13 +74,16 @@
       // The snapshot's 1600x900 is a placeholder; a non-square Wix fit box in the feed URL carries the photo's real shape.
       var box = /\/fit\/w_(\d+),h_(\d+)/.exec(mfStr(img.src));
       if (box && +box[1] !== +box[2] && (!w || (w === 1600 && h === 900))) { w = 1600; h = Math.round(1600 * box[2] / box[1]); }
-      out.push({ title: title, path: path, author: mfStr(p.author) || 'GatorBait Staff', writer: mfWriter(p.author), t: t, excerpt: ex.text, cap: ex.cap, credit: ex.credit,
+      // Verified credit only: the curated/homepage credit map, then a credit the feed states for this photo. Otherwise ''.
+      var credit = (file && credits[file.id]) || ex.credit || mfCreditIn(img.alt) || mfCreditIn(img.caption) || '';
+      out.push({ title: title, path: path, author: mfStr(p.author) || 'GatorBait Staff', writer: mfWriter(p.author), t: t, excerpt: mfTeaser(ex.text), cap: ex.cap, credit: credit,
         html: typeof p.html === 'string' ? p.html : '', file: file, width: w, height: h, alt: mfStr(img.alt) || title });
     });
     return out.sort(function (a, b) { return b.t - a.t || (a.path < b.path ? -1 : 1); });
   }
   // News items under a writer's name (BREAKING / LIVE NOW / UPDATE) never lead; galleries never lead.
-  function mfLeadable(p) { return !!p.writer && !!p.file && !/^(BREAKING|LIVE NOW|UPDATE|WATCH)\b/i.test(p.title) && !/best shots|photo gallery/i.test(p.title); }
+  // A lead needs a photo with a verified credit (Brenden/Jarvis, Oct. 3); the Buddy tie rule applies among those.
+  function mfLeadable(p) { return !!p.writer && !!p.file && !!p.credit && !/^(BREAKING|LIVE NOW|UPDATE|WATCH)\b/i.test(p.title) && !/best shots|photo gallery/i.test(p.title); }
   function mfPickLead(posts, nowMs) {
     var c = posts.filter(function (p) { return mfLeadable(p) && nowMs - p.t <= MF_LEAD_MAX_AGE; });
     if (!c.length) return null;
@@ -109,7 +129,12 @@
       while ((m = re.exec(p.html)) && paras.length < 4) {
         var inner = m[1].replace(/<a\b[^>]*href="([^"]*)"[^>]*>/gi, function (_, h) { var q = mfPath(h); return q ? '<a href="' + q + '">' : '<a>'; })
           .replace(/<(?!\/?(?:a|strong|em)\b)[^>]*>/gi, '').replace(/<a>([\s\S]*?)<\/a>/gi, '$1').trim();
-        if (inner.replace(/<[^>]*>/g, '').trim().length > 20) paras.push('<p>' + inner + '</p>');
+        var plain = mfStr(inner.replace(/<[^>]*>/g, ''));
+        // Nothing before the byline: a paragraph holding "By <Writer>" restarts the body after it; caption lines are skipped.
+        var by = MF_BYLINE.exec(plain);
+        if (by) { paras = []; if (by.index + by[0].length >= plain.length - 20) continue; inner = mfEsc(plain.slice(by.index + by[0].length)); plain = inner; }
+        if (/\((?:UAA )?Photo(?: by|:)/i.test(plain) && plain.length < 260) continue;
+        if (plain.length > 20) paras.push('<p>' + inner + '</p>');
       }
     }
     return paras.length ? paras.join('') : (p.excerpt ? '<p>' + mfEsc(p.excerpt) + '</p>' : '');
@@ -117,14 +142,14 @@
   function mfPick(issue, posts, nowMs, extraCredits) {
     var D = issue && typeof issue === 'object' ? issue : {}, oldLead = D.lead && typeof D.lead === 'object' ? D.lead : null;
     var oldCards = D.cards && Array.isArray(D.cards.items) ? D.cards.items : [];
-    var all = mfNormalize(posts, nowMs), credits = mfCredits(D, extraCredits);
+    var credits = mfCredits(D, extraCredits), all = mfNormalize(posts, nowMs, credits);
     var res = { lead: oldLead, items: oldCards, leadChanged: false, cardsChanged: false, posts: all.length };
     if (!all.length) return res;
     var pick = mfPickLead(all, nowMs), leadPath = oldLead ? mfPath(oldLead.url) : '';
     if (pick && pick.path !== leadPath) {
       var body = mfLeadHtml(pick);
       if (body) {
-        var cr = credits[pick.file.id] || pick.credit || '';
+        var cr = pick.credit;
         res.lead = { label: 'The Lead', kicker: pick.writer, author: pick.writer, title: pick.title, url: pick.path, html: body,
           'continue': 'Read the full column', date: mfLongDate(pick.t), image: mfImg(pick, cr), caption: pick.cap };
         res.leadChanged = true; leadPath = pick.path;
@@ -138,9 +163,9 @@
       if (p.path === leadPath || linked[p.path]) continue;
       if (byPath[p.path]) { items.push(byPath[p.path]); continue; }
       if (!p.file) continue;
-      var credit = credits[p.file.id] || p.credit;
+      var credit = p.credit;
       if (!credit) continue;
-      items.push({ kicker: mfKicker(p), title: p.title, url: p.path, excerpt: mfClip(p.excerpt, 220), image: mfImg(p, credit), date: mfShortDate(p.t) });
+      items.push({ kicker: mfKicker(p), title: p.title, url: p.path, excerpt: mfTeaser(p.excerpt, 220), image: mfImg(p, credit), date: mfShortDate(p.t) });
     }
     if (items.length && (items.length !== oldCards.length || items.some(function (c, k) { return c !== oldCards[k]; }))) { res.items = items; res.cardsChanged = true; }
     return res;

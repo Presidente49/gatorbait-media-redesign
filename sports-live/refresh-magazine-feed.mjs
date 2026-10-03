@@ -20,7 +20,7 @@ const repo = join(here, '..');
 export function loadPicker() {
   const src = readFileSync(join(here, 'src/magazine-feed.js'), 'utf8');
   const ctx = vm.createContext({ URL, Intl, Date, Math, JSON, String, Array, Object, isFinite });
-  vm.runInContext('(function(){' + src + ';this.api={mfPick,mfNormalize,mfPickLead,mfScoreLine,mfLinked};}).call(this);', ctx);
+  vm.runInContext('(function(){' + src + ';this.api={mfPick,mfNormalize,mfPickLead,mfScoreLine,mfLinked,mfTeaser};}).call(this);', ctx);
   return ctx.api;
 }
 

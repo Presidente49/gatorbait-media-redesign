@@ -99,9 +99,12 @@ test('runtime parser shape: fake Wix RSS feed through the same picker', () => {
   assert.equal(posts.length, 20);
   assert.deepEqual(Object.keys(posts[0]).sort(), ['author', 'excerpt', 'firstPublishedDate', 'html', 'image', 'title', 'url']);
   const r = P.mfPick(ISSUE, posts, NOW, CREDITS);
-  assert.equal(r.lead.url, '/post/the-wizards-have-spoken-and-these-2026-florida-gators-suddenly-somebody');
-  assert.equal(r.lead.author, 'Buddy Martin');
-  assert.equal(r.items[0].url, '/post/something-s-got-to-give');
+  // Buddy's "Wizards" photo has no verified credit, so the freshest credited column (Eddie) leads.
+  assert.equal(r.lead.url, '/post/something-s-got-to-give');
+  assert.equal(r.lead.author, 'Eddie Gilley');
+  assert.ok(r.lead.image.credit);
+  assert.deepEqual(Array.from(r.items, (c) => c.url), ['/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators', '/post/when-it-came-to-finding-a-quarterback-sumrall-trusted-buster-and-it-paid-off', '/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it']);
+  assert.ok(!r.items.some((c) => /wizards/.test(c.url)), 'uncredited photo never runs on the Magazine');
   assert.ok(!r.items.some((c) => c.url === ISSUE.cover.url), 'Soothsayer is the cover; no second copy as a card');
   const json = P.mfPick(ISSUE, readFeed(readFileSync(join(here, 'fixtures/feed-2026-10-03.json'), 'utf8')), NOW, CREDITS);
   assert.deepEqual(JSON.parse(JSON.stringify(json.lead)), JSON.parse(JSON.stringify(r.lead)), 'RSS and posts.json agree');
@@ -139,4 +142,39 @@ test('live score line', () => {
   assert.equal(P.mfScoreLine({ next: { opponent: 'Georgia' }, live: sb.live }, 'Missouri', k, at('2026-10-03T20:30:00Z')), '', 'another game never shows');
   assert.equal(P.mfScoreLine({ last: { opponent: 'Missouri', status: 'final', date: k, score: { fla: 31, opp: 24 } }, next: null }, 'Missouri', k, at('2026-10-03T23:30:00Z')), 'Final: FLA 31 MIZ 24');
   assert.equal(P.mfScoreLine(null, 'Missouri', k, at('2026-10-03T20:30:00Z')), '');
+});
+
+const BUDDY = 'Hey! No resting on your laurels, Scott Stricklin National championship. Shhhhh! Say it slowly. Then go lie down. By Buddy Martin Somewhere in Gainesville there’s a whistle with teeth marks in it. It belongs to Jon Sumrall, and it’s the only thing in the building that hasn’t celebrated. The Gators are 4-0 and ranked No. 8. Nobody in orange and blue is acting like it.';
+
+test('teaser starts after the byline, two or three whole sentences, curly quotes kept', () => {
+  const t = P.mfTeaser(BUDDY);
+  assert.ok(t.startsWith('Somewhere in Gainesville there’s a whistle'), t);
+  assert.ok(/[.!?…][’”]?$/.test(t), 'ends on a sentence boundary: ' + t);
+  const n = (t.match(/[.!?](?=\s|$)/g) || []).length;
+  assert.ok(n >= 2 && n <= 3, 'sentences: ' + n);
+  assert.ok(!/By Buddy Martin|Stricklin/.test(t));
+  assert.ok(P.mfTeaser('A caption here. BY FRANZ BEARD The column starts. Second line here.').startsWith('The column starts.'));
+  assert.equal(P.mfTeaser('Plain excerpt with no byline. Still fine.'), 'Plain excerpt with no byline. Still fine.');
+  assert.equal(P.mfTeaser('Trust was put to the test in January. Having spent December juggling two jobs while prepping to take over full time as…'), 'Trust was put to the test in January.', 'Wix truncation is not a sentence end');
+  const long = P.mfTeaser('word '.repeat(120));
+  assert.ok(long.endsWith('…') && !/\bwor…$/.test(long), 'no mid-word cut');
+});
+
+test('lead body never opens with a caption or byline', () => {
+  const r = pick([post('Buddy Byline', 'Buddy Martin', 1, { excerpt: BUDDY })]);
+  assert.ok(r.lead.html.startsWith('<p>Somewhere in Gainesville there’s a whistle'), r.lead.html);
+  const html = '<p>Jon Sumrall on the sideline (Photo by Chris Spears)</p><p>By Buddy Martin</p><p>Somewhere in Gainesville there is a whistle with teeth marks.</p>';
+  const h = pick([post('Buddy Html', 'Buddy Martin', 1, { html })]);
+  assert.equal(h.lead.html, '<p>Somewhere in Gainesville there is a whistle with teeth marks.</p>');
+});
+
+test('lead needs a verified photo credit; Buddy tie rule among credited columns', () => {
+  const r = pick([post('Buddy Uncredited', 'Buddy Martin', 1, { image: img(false) }), post('Eddie Credited', 'Eddie Gilley', 2)]);
+  assert.equal(r.lead.url, '/post/eddie-credited');
+  assert.ok(!r.items.some((c) => c.url === '/post/buddy-uncredited'));
+  const alt = pick([post('Buddy Alt Credit', 'Buddy Martin', 3, { image: { ...img(false), alt: 'Sumrall at practice (Photo by Chris Spears, GatorBait Media)' } }), post('Franz Fresh', 'Franz Beard', 1)]);
+  assert.equal(alt.lead.url, '/post/buddy-alt-credit', 'credit parsed from alt; Buddy wins the 12 h tie');
+  assert.equal(alt.lead.image.credit, 'Photo by Chris Spears, GatorBait Media');
+  const colon = pick([post('Loren Colon', 'Loren Meadows', 1, { image: { ...img(false), alt: 'Kickoff (Photo: Hannah White / UAA Communications)' } })]);
+  assert.equal(colon.lead.image.credit, 'Photo: Hannah White / UAA Communications');
 });

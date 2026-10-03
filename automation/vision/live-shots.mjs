@@ -17,7 +17,9 @@ const PERF = process.env.PERF === '1';
 const OUT = 'build/live-shots';
 mkdirSync(OUT, { recursive: true });
 // deploy/covers/*.html renders a story cover from the checkout instead of the live site (the query carries the copy).
-const url = /^deploy\/covers\//.test(path) ? 'file://' + process.cwd() + '/' + path : 'https://www.gatorbaitmedia.com' + path;
+const mkUrl = (P) => /^deploy\/covers\//.test(P) ? 'file://' + process.cwd() + '/' + P : 'https://www.gatorbaitmedia.com' + P;
+const paths = path.split('|');
+let url = mkUrl(paths[0]);
 const IOS_UA = devices['iPhone 13'].userAgent;
 // A real Chrome UA on desktop: with the default HeadlessChrome UA, Wix answered with an older cached
 // snapshot for a while after an embed update (Sept. 30), which real browsers did not get.
@@ -28,6 +30,7 @@ const profile = (w) => w < 800
 
 const browser = await chromium.launch();
 const metrics = { url, selector, at: new Date().toISOString(), shots: [] };
+for (const [pi, P] of paths.entries()) { url = mkUrl(P); const pre = paths.length > 1 ? 'p' + pi + '-' : '';
 for (const w of widths) {
   const ctx = await browser.newContext(profile(w));
   const page = await ctx.newPage();
@@ -57,7 +60,7 @@ for (const w of widths) {
     }
     const res = await page.goto(url, { waitUntil: 'load', timeout: 60000 });
     m.http = res && res.status();
-    await page.waitForSelector('#gbm-live.fp26', { timeout: 15000 }).catch(() => { m.note = 'front page root not seen in 15s'; });
+    if (/^\/(\?|$)/.test(P)) await page.waitForSelector('#gbm-live.fp26', { timeout: 15000 }).catch(() => { m.note = 'front page root not seen in 15s'; });
     await page.waitForTimeout(3500);
     if (PERF) {
       await page.waitForTimeout(6500);
@@ -90,7 +93,7 @@ for (const w of widths) {
       fpBuild: document.querySelector('#gbm-live')?.getAttribute('data-fp-build') || null,
       fpVersion: document.querySelector('#gbm-live')?.getAttribute('data-fp') || null,
     })));
-    await page.screenshot({ path: `${OUT}/top-${w}.jpg`, type: 'jpeg', quality: 70 });
+    await page.screenshot({ path: `${OUT}/${pre}top-${w}.jpg`, type: 'jpeg', quality: 70 });
     if (selector && selector.startsWith('DUMP ')) {
       m.dump = await page.evaluate((s) => {
         const root = document.querySelector(s); if (!root) return null; const out = [];
@@ -127,15 +130,16 @@ for (const w of widths) {
           return { x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height), bg: cs.backgroundColor, font: cs.fontFamily.slice(0, 60), kids,
             track: track ? { scrollWidth: track.scrollWidth, clientWidth: track.clientWidth, scrollLeft: track.scrollLeft } : null, story, docScrollWidth: document.documentElement.scrollWidth, innerWidth };
         }, selector);
-        await page.screenshot({ path: `${OUT}/view-${w}.jpg`, type: 'jpeg', quality: 70 });
-        await found.screenshot({ path: `${OUT}/element-${w}.jpg`, type: 'jpeg', quality: 75 }).catch((e) => { m.elementShot = String(e).slice(0, 120); });
+        await page.screenshot({ path: `${OUT}/${pre}view-${w}.jpg`, type: 'jpeg', quality: 70 });
+        await found.screenshot({ path: `${OUT}/${pre}element-${w}.jpg`, type: 'jpeg', quality: 75 }).catch((e) => { m.elementShot = String(e).slice(0, 120); });
       }
     }
   } catch (e) {
     m.error = String(e).slice(0, 300);
   }
-  metrics.shots.push(m);
+  m.path = P; metrics.shots.push(m);
   await ctx.close();
+}
 }
 await browser.close();
 writeFileSync(`${OUT}/metrics.json`, JSON.stringify(metrics, null, 1));

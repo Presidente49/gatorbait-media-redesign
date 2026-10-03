@@ -1,0 +1,1176 @@
+{
+ "asOf": {
+  "fetched": "2026-10-01T12:40Z to 2026-10-01T12:45Z (ET: 8:40-8:45 a.m. Thursday, Oct. 1, 2026)",
+  "espnScheduleTimestamp": "2026-10-01T12:40:12Z",
+  "espnRosterTimestamp": "2026-10-01T12:40:18Z",
+  "espnMissouriScheduleTimestamp": "2026-10-01T12:41:40Z",
+  "apPollLastUpdated": "2026-09-27T21:32Z (Week 5)",
+  "coachesPollLastUpdated": "2026-09-27T20:16Z (Week 5)",
+  "oddsSnapshot": "ESPN pickcenter (DraftKings) as of fetch 2026-10-01T12:40Z"
+ },
+ "sources": {
+  "sched": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule",
+  "roster": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/roster",
+  "sum": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708",
+  "stats57": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/statistics",
+  "core57": "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2026/types/2/teams/57/statistics",
+  "stats142": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/statistics",
+  "sched142": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/schedule",
+  "rank": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings",
+  "fau": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856637",
+  "cam": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856672",
+  "aub": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856687",
+  "miss": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856699",
+  "msu": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856703",
+  "s2023": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2023",
+  "s2022": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2022",
+  "s2021": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2021",
+  "s2024": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2024",
+  "s2025": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2025",
+  "inj57": "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/teams/57/injuries",
+  "inj142": "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/teams/142/injuries",
+  "injItem": "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2026/athletes/4693740/injuries/139830",
+  "ufsched": "https://floridagators.com/sports/football/schedule",
+  "ufhome": "https://floridagators.com/sports/football",
+  "ufroster": "https://floridagators.com/sports/football/roster",
+  "ufnews": "https://floridagators.com/news",
+  "secStats": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{id}/statistics (ids 333,57,61,344,251,145,2,96,99,142,2633,238,8,201,2579,245)"
+ },
+ "notes": [
+  "All figures from ESPN JSON API unless marked 'GatorBait reporting' or FloridaGators.com.",
+  "SEC ranks are computed by GatorBait from ESPN's per-team statistics for all 16 SEC teams (each has played 4 games); ESPN itself only supplies national ranks.",
+  "ESPN national-rank fields are used only where plausible; ESPN returns nonsense ranks for some fields (e.g., 'T-1st' on 0.00 red-zone pct, '264th' passer rating), so those are omitted.",
+  "ESPN box scores carry no starter flags and no offensive-line stats; the two-deep below is usage-based (snaps not available), not an official depth chart. ESPN's depth-chart endpoint returned HTTP 400.",
+  "floridagators.com/news was blocked (bot_blocked); floridagators.com/sports/football, /schedule and /roster were reachable and contain no injury information."
+ ],
+ "records": {
+  "florida": {
+   "overall": "4-0",
+   "sec": "2-0",
+   "apRank": 8,
+   "apPrevious": 21,
+   "coachesRank": 8,
+   "coachesPrevious": 22,
+   "secStanding": "1st in SEC (ESPN standingSummary; tied 4-0/2-0 with Alabama, Georgia, Mississippi State)",
+   "source": [
+    "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708",
+    "https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings",
+    "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule"
+   ]
+  },
+  "missouri": {
+   "overall": "3-1",
+   "sec": "0-1",
+   "apRank": 25,
+   "apPrevious": 19,
+   "coachesRank": 25,
+   "coachesPrevious": 21,
+   "secStanding": "10th in SEC (ESPN standingSummary)",
+   "source": [
+    "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708",
+    "https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings",
+    "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/schedule"
+   ]
+  }
+ },
+ "schedule": {
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule",
+  "tvWindowsSource": "https://floridagators.com/sports/football/schedule",
+  "opponentRankNote": "Ranks shown are the current AP Week 5 rank at fetch time (ESPN curatedRank); Ole Miss was No. 4 and Florida No. 21 on the day of that game.",
+  "games": [
+   {
+    "date": "Sept. 5",
+    "kickoffET": "7:45 p.m.",
+    "opponent": "Florida Atlantic",
+    "rank": null,
+    "site": "home",
+    "venue": "Ben Hill Griffin Stadium, Gainesville",
+    "result": "W 66-21",
+    "tv": "SEC Network",
+    "attendance": 90295,
+    "espnEvent": "401856637"
+   },
+   {
+    "date": "Sept. 12",
+    "kickoffET": "5:30 p.m.",
+    "opponent": "Campbell",
+    "rank": null,
+    "site": "home",
+    "venue": "Ben Hill Griffin Stadium, Gainesville",
+    "result": "W 52-3",
+    "tv": "SECN+",
+    "attendance": 88863,
+    "espnEvent": "401856672"
+   },
+   {
+    "date": "Sept. 19",
+    "kickoffET": "7 p.m.",
+    "opponent": "Auburn",
+    "rank": null,
+    "site": "away",
+    "venue": "Jordan-Hare Stadium, Auburn, Ala.",
+    "result": "W 44-39",
+    "tv": "ESPN",
+    "attendance": 88043,
+    "espnEvent": "401856687"
+   },
+   {
+    "date": "Sept. 26",
+    "kickoffET": "3:30 p.m.",
+    "opponent": "Ole Miss",
+    "rank": "No. 4 at kickoff (now No. 9)",
+    "site": "home",
+    "venue": "Ben Hill Griffin Stadium, Gainesville",
+    "result": "W 52-28",
+    "tv": "ABC",
+    "attendance": 90683,
+    "espnEvent": "401856699"
+   },
+   {
+    "date": "Oct. 3",
+    "kickoffET": "3:30 p.m.",
+    "opponent": "Missouri",
+    "rank": "No. 25",
+    "site": "away",
+    "venue": "Memorial Stadium (Faurot Field), Columbia, Mo.",
+    "result": null,
+    "tv": "ABC",
+    "espnEvent": "401856708"
+   },
+   {
+    "date": "Oct. 10",
+    "kickoffET": "TBD (FloridaGators.com: 12 or 12:45 p.m., ABC or SEC Network)",
+    "opponent": "South Carolina",
+    "rank": null,
+    "site": "home",
+    "venue": "Ben Hill Griffin Stadium, Gainesville",
+    "result": null,
+    "tv": "TBD",
+    "espnEvent": "401856714"
+   },
+   {
+    "date": "Oct. 17",
+    "kickoffET": "TBD (FloridaGators.com: early window, 12-1 p.m.)",
+    "opponent": "Texas",
+    "rank": "No. 1",
+    "site": "away",
+    "venue": "DKR-Texas Memorial Stadium, Austin, Texas",
+    "result": null,
+    "tv": "TBD",
+    "espnEvent": "401856724"
+   },
+   {
+    "date": "Oct. 31",
+    "kickoffET": "3:30 p.m.",
+    "opponent": "Georgia",
+    "rank": "No. 2",
+    "site": "neutral",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "result": null,
+    "tv": "ABC",
+    "espnEvent": "401856734"
+   },
+   {
+    "date": "Nov. 7",
+    "kickoffET": "TBD (FloridaGators.com: flex, 3:30-4:30 p.m. or 6-8 p.m.)",
+    "opponent": "Oklahoma",
+    "rank": null,
+    "site": "home",
+    "venue": "Ben Hill Griffin Stadium, Gainesville",
+    "result": null,
+    "tv": "TBD",
+    "espnEvent": "401856739"
+   },
+   {
+    "date": "Nov. 14",
+    "kickoffET": "TBD (FloridaGators.com: night window, 6-8 p.m.)",
+    "opponent": "Kentucky",
+    "rank": "No. 24",
+    "site": "away",
+    "venue": "Kroger Field, Lexington, Ky.",
+    "result": null,
+    "tv": "TBD",
+    "espnEvent": "401856884"
+   },
+   {
+    "date": "Nov. 21",
+    "kickoffET": "TBD (FloridaGators.com: early window, 12-1 p.m.)",
+    "opponent": "Vanderbilt",
+    "rank": null,
+    "site": "home",
+    "venue": "Ben Hill Griffin Stadium, Gainesville",
+    "result": null,
+    "tv": "TBD",
+    "espnEvent": "401856748"
+   },
+   {
+    "date": "Nov. 27",
+    "kickoffET": "3:30 p.m.",
+    "opponent": "Florida State",
+    "rank": null,
+    "site": "away",
+    "venue": "Doak Campbell Stadium, Tallahassee",
+    "result": null,
+    "tv": "ABC",
+    "espnEvent": "401856759"
+   }
+  ]
+ },
+ "rosterChanges": {
+  "note": "The Sept. 17 'Florida Football: 2026 Roster & Schedule' post was not available to this desk, so no diff is possible. Below is a usage-based two-deep built from the four ESPN box scores (season totals summed by GatorBait and cross-checked against ESPN's season leaders in the Missouri game summary) with positions/classes from ESPN's roster (100 players, head coach Jon Sumrall). ESPN box scores do not flag starters.",
+  "sources": [
+   "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/roster",
+   "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856637",
+   "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856672",
+   "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856687",
+   "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856699",
+   "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708"
+  ],
+  "rosterDiscrepancies": [
+   "Bryce Thornton (No. 1, 14 tackles in box scores) and Drake Stubbs (No. 9, 4 tackles) appear in ESPN box scores but are absent from ESPN's 100-man Florida roster feed; confirm with FloridaGators.com roster before publishing positions.",
+   "ESPN roster lists Kanye Clark as 'DB' and Alfonzo Allen Jr. as 'S'."
+  ],
+  "twoDeep": {
+   "QB": [
+    {
+     "name": "Aaron Philo",
+     "no": 12,
+     "class": "JR",
+     "line": "63-of-87 (72.4%), 917 yds, 7 TD, 2 INT; 24 rushes, 69 yds, 3 TD"
+    },
+    {
+     "name": "Tramell Jones Jr.",
+     "no": 9,
+     "class": "SO",
+     "line": "12-of-16, 126 yds, 1 TD, 1 INT (FAU, Campbell)"
+    }
+   ],
+   "RB": [
+    {
+     "name": "Jadan Baugh",
+     "no": 13,
+     "class": "JR",
+     "line": "83 car., 600 yds (7.2 avg), 11 TD; 100+ yds in all four games"
+    },
+    {
+     "name": "Duke Clark",
+     "no": 20,
+     "class": "SO",
+     "line": "32 car., 259 yds (8.1 avg), 3 TD; 1 rec. TD"
+    },
+    {
+     "name": "Evan Pryor",
+     "no": 21,
+     "class": "SR",
+     "line": "10 car., 30 yds"
+    },
+    {
+     "name": "London Montgomery",
+     "no": 24,
+     "class": "SR",
+     "line": "8 car., 19 yds; KR 3-128 (74 long)"
+    }
+   ],
+   "WR": [
+    {
+     "name": "Vernell Brown III",
+     "no": 1,
+     "class": "SO",
+     "line": "17 rec., 271 yds, 2 TD; PR 5-173, 2 TD (both vs. Campbell); GatorBait reporting: questionable"
+    },
+    {
+     "name": "Dallas Wilson",
+     "no": 6,
+     "class": null,
+     "line": "14 rec., 236 yds, 2 TD; 1 rush TD (ESPN roster feed does not list him; position per box score usage)"
+    },
+    {
+     "name": "Bailey Stockton",
+     "no": 3,
+     "class": null,
+     "line": "13 rec., 106 yds, 1 TD; GatorBait reporting: questionable (not in ESPN roster feed)"
+    },
+    {
+     "name": "TJ Abrams",
+     "no": 4,
+     "class": "JR",
+     "line": "5 rec., 111 yds (63 long)"
+    },
+    {
+     "name": "Eric Singleton Jr.",
+     "no": 2,
+     "class": null,
+     "line": "1 rec., 38 yds (first catch, vs. Ole Miss; not in ESPN roster feed)"
+    },
+    {
+     "name": "Micah Mays Jr.",
+     "no": 5,
+     "class": "SR",
+     "line": "3 rec., 16 yds"
+    },
+    {
+     "name": "Kahleil Jackson",
+     "no": 22,
+     "class": "SR",
+     "line": "2 rec., 19 yds; 1-of-1 passing, 48 yds (Auburn)"
+    }
+   ],
+   "TE": [
+    {
+     "name": "Luke Harpring",
+     "no": 15,
+     "class": "JR",
+     "line": "7 rec., 97 yds"
+    },
+    {
+     "name": "Amir Jackson",
+     "no": 7,
+     "class": "JR",
+     "line": "4 rec., 90 yds, 1 TD"
+    },
+    {
+     "name": "Micah Jones",
+     "no": 84,
+     "class": "SO",
+     "line": "1 rec., 6 yds, 1 TD"
+    },
+    {
+     "name": "Lacota Dippre",
+     "no": 17,
+     "class": "SR",
+     "line": "KR 2-30"
+    }
+   ],
+   "OL": {
+    "starters": "unavailable - ESPN box scores carry no offensive-line data and ESPN's depth-chart endpoint returned HTTP 400",
+    "unit": "2 sacks allowed on 104 pass attempts; 5.9 yds per rush (source: https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/statistics)",
+    "rosterOL": [
+     "51 Tyler Chukuyem FR",
+     "52 Harrison Moore JR",
+     "53 Bryce Lovett SR",
+     "54 Javarii Luckas FR",
+     "55 TJ Dice Jr. SO",
+     "56 Jahari Medlock SO",
+     "59 Corey Brown FR",
+     "61 G'Nivre Carr FR",
+     "63 Caden Jones SR",
+     "64 Eagan Boyer JR",
+     "71 Roderick Kearney SR",
+     "73 Daniel Pierre Louis SO",
+     "76 Mark Faircloth JR",
+     "77 Knijeah Harris SR",
+     "78 Desmond Green FR",
+     "79 Chancellor Campbell FR"
+    ]
+   },
+   "DL": [
+    {
+     "name": "Jeramiah McCloud",
+     "no": 91,
+     "class": "SO",
+     "line": "15 tkl, 0.5 sack, 1.5 TFL, 3 hurries"
+    },
+    {
+     "name": "Emmanuel Oyebadejo",
+     "no": 99,
+     "class": "SR",
+     "line": "7 tkl, 2.5 sacks, 2.5 TFL (all vs. Auburn)"
+    },
+    {
+     "name": "LJ McCray",
+     "no": 11,
+     "class": "JR",
+     "line": "5 tkl, 1 sack, 2 TFL"
+    },
+    {
+     "name": "Kamran James",
+     "no": 24,
+     "class": "SR",
+     "line": "8 tkl, 1 sack, 2 TFL"
+    },
+    {
+     "name": "Brendan Bett",
+     "no": 90,
+     "class": "SR",
+     "line": "8 tkl, 2 TFL"
+    },
+    {
+     "name": "DK Kalu",
+     "no": 93,
+     "class": "SR",
+     "line": "5 tkl, 1 sack, 2 TFL"
+    },
+    {
+     "name": "Jamari Lyons",
+     "no": 95,
+     "class": "SR",
+     "line": "3 tkl, 0.5 sack, 1 TFL"
+    },
+    {
+     "name": "Joseph Mbatchou",
+     "no": 97,
+     "class": "SO",
+     "line": "2 tkl"
+    }
+   ],
+   "LB": [
+    {
+     "name": "Myles Graham",
+     "no": 5,
+     "class": "JR",
+     "line": "28 tkl (team high), 0.5 sack, 1 FR"
+    },
+    {
+     "name": "Jayden Woods",
+     "no": 0,
+     "class": null,
+     "line": "19 tkl, 6 TFL, 4 sacks (team highs); Bednarik Award watch-list add Sept. 30 per FloridaGators.com; not in ESPN roster feed"
+    },
+    {
+     "name": "Aaron Chiles",
+     "no": 8,
+     "class": "JR",
+     "line": "18 tkl, 1 TFL, 2 PD, 1 FR"
+    },
+    {
+     "name": "Jaden Robinson",
+     "no": 29,
+     "class": "SR",
+     "line": "12 tkl, 1 sack, 2 TFL"
+    },
+    {
+     "name": "Myles Johnson",
+     "no": 44,
+     "class": "SO",
+     "line": "8 tkl, 1 TFL, 2 FR"
+    },
+    {
+     "name": "Kofi Asare",
+     "no": 22,
+     "class": "SR",
+     "line": "7 tkl"
+    }
+   ],
+   "DB": [
+    {
+     "name": "Bryce Thornton",
+     "no": 1,
+     "class": null,
+     "pos": "S (per usage; not in ESPN roster feed)",
+     "line": "14 tkl, 2 PD"
+    },
+    {
+     "name": "Kanye Clark",
+     "no": 20,
+     "class": "SR",
+     "pos": "DB",
+     "line": "13 tkl, 1 PD, 4 hurries"
+    },
+    {
+     "name": "DJ Coleman",
+     "no": 33,
+     "class": "SR",
+     "pos": "S",
+     "line": "7 tkl, 2 INT (FAU, Ole Miss), 3 PD"
+    },
+    {
+     "name": "Dijon Johnson",
+     "no": 27,
+     "class": "SR",
+     "pos": "CB",
+     "line": "10 tkl, 1 INT, 3 PD"
+    },
+    {
+     "name": "Cormani McClain",
+     "no": 25,
+     "class": "SR",
+     "pos": "CB",
+     "line": "8 tkl, 1 INT (Auburn)"
+    },
+    {
+     "name": "Ben Hanks III",
+     "no": 12,
+     "class": "SO",
+     "pos": "CB",
+     "line": "13 tkl, 1 TFL, 1 PD"
+    },
+    {
+     "name": "Lagonza Hayward",
+     "no": 2,
+     "class": "SO",
+     "pos": "S",
+     "line": "11 tkl, 2 TFL, 3 PD"
+    },
+    {
+     "name": "J'Vari Flowers",
+     "no": 6,
+     "class": "SO",
+     "pos": "CB",
+     "line": "8 tkl, 3 PD"
+    },
+    {
+     "name": "Alfonzo Allen Jr.",
+     "no": 43,
+     "class": "SR",
+     "pos": "S",
+     "line": "12 tkl"
+    }
+   ],
+   "K": [
+    {
+     "name": "Patrick Durkin",
+     "no": 91,
+     "class": "JR",
+     "line": "6-of-6 FG (long 53), 27-of-27 PAT, 45 pts"
+    },
+    {
+     "name": "Liam Padron",
+     "no": 41,
+     "class": "JR",
+     "line": "1-of-1 PAT"
+    }
+   ],
+   "P": [
+    {
+     "name": "Alec Clark",
+     "no": 38,
+     "class": "SR",
+     "line": "5 punts, 49.0 avg, long 70, 3 inside 20"
+    }
+   ],
+   "returners": {
+    "KR": "London Montgomery 3-128 (74 long); Lacota Dippre 2-30; J'Vari Flowers 1-23",
+    "PR": "Vernell Brown III 5-173, 2 TD; Bailey Stockton 1-16"
+   }
+  }
+ },
+ "injuryReport": {
+  "asOf": "2026-10-01T12:45Z",
+  "florida": [
+   {
+    "player": "WR Vernell Brown III",
+    "status": "Questionable",
+    "detail": "Per Franz Beard",
+    "source": "GatorBait reporting"
+   },
+   {
+    "player": "WR Bailey Stockton",
+    "status": "Questionable",
+    "detail": "Per Franz Beard",
+    "source": "GatorBait reporting"
+   },
+   {
+    "player": "ESPN injury feed",
+    "status": "No current Florida injuries listed",
+    "detail": "site API teams/57/injuries returned empty; core API lists one item, a stale Nov. 21, 2020 'Out' entry for Kahleil Jackson that is not current",
+    "source": [
+     "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/teams/57/injuries",
+     "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2026/athletes/4693740/injuries/139830",
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708 (injuries: null)"
+    ]
+   },
+   {
+    "player": "FloridaGators.com",
+    "status": "unavailable",
+    "detail": "floridagators.com/news blocked (bot_blocked); /sports/football, /schedule and /roster reachable but carry no injury info",
+    "source": [
+     "https://floridagators.com/news",
+     "https://floridagators.com/sports/football",
+     "https://floridagators.com/sports/football/roster"
+    ]
+   }
+  ],
+  "missouri": {
+   "out": [
+    {
+     "player": "S JaDon Blair (No. 18, SO per ESPN roster)",
+     "source": "GatorBait reporting"
+    },
+    {
+     "player": "RB Ahmad Hardy (No. 29, JR) - copy desk note spelled 'Hary'; ESPN roster spells Hardy",
+     "source": "GatorBait reporting; spelling via https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/roster"
+    },
+    {
+     "player": "RB Malae Fonoti (No. 21, JR)",
+     "source": "GatorBait reporting"
+    },
+    {
+     "player": "OL Josh Atkins (No. 54, SR)",
+     "source": "GatorBait reporting"
+    },
+    {
+     "player": "TE Gavin Hoffman (No. 88, JR)",
+     "source": "GatorBait reporting"
+    }
+   ],
+   "questionable": [
+    {
+     "player": "EDGE Langden Kitchen (No. 11, SR)",
+     "source": "GatorBait reporting"
+    },
+    {
+     "player": "LB Bobby Washington Jr. - not found on ESPN's Missouri roster feed; verify",
+     "source": "GatorBait reporting"
+    },
+    {
+     "player": "EDGE Darris Smith (No. 19, SR)",
+     "source": "GatorBait reporting"
+    }
+   ],
+   "espn": {
+    "status": "No Missouri injuries listed",
+    "source": [
+     "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/teams/142/injuries",
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708 (injuries: null)"
+    ]
+   }
+  }
+ },
+ "numbers": {
+  "florida": {
+   "gamesPlayed": 4,
+   "sources": {
+    "teamStats": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/statistics",
+    "nationalRanksOffense": "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2026/types/2/teams/57/statistics",
+    "nationalRanksDefense": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/statistics (results.opponent ranks)",
+    "secRanks": "computed from https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{id}/statistics (ids 333,57,61,344,251,145,2,96,99,142,2633,238,8,201,2579,245)"
+   },
+   "offense": {
+    "pointsPerGame": {
+     "value": 53.5,
+     "national": "2nd",
+     "sec": 2
+    },
+    "totalYardsPerGame": {
+     "value": 532.8,
+     "national": "5th",
+     "sec": 2
+    },
+    "rushYardsPerGame": {
+     "value": 260.0,
+     "national": "11th",
+     "sec": 2
+    },
+    "yardsPerCarry": {
+     "value": 5.9,
+     "national": "T-14th",
+     "sec": 3
+    },
+    "rushTD": {
+     "value": 18,
+     "national": "T-1st"
+    },
+    "passYardsPerGame": {
+     "value": 272.8,
+     "national": "T-50th",
+     "sec": 6
+    },
+    "yardsPerAttempt": {
+     "value": 10.5,
+     "national": "T-6th",
+     "sec": 1
+    },
+    "completionPct": {
+     "value": 73.1,
+     "national": "7th"
+    },
+    "passTD_INT": "8 TD, 3 INT",
+    "sacksAllowed": "2 (on 104 attempts)",
+    "thirdDown": {
+     "value": "21-of-44, 47.7%",
+     "sec": 6
+    },
+    "fourthDown": "6-of-8, 75.0%",
+    "firstDownsPerGame": 26.3,
+    "timeOfPossessionPerGame": "33:46",
+    "turnoverMargin": {
+     "value": "+3 (7 takeaways, 4 giveaways)",
+     "national": "25th",
+     "sec": 2
+    },
+    "penalties": {
+     "value": "35 for 357 yds (89.3/game)",
+     "sec": "16th of 16 (most yards)"
+    },
+    "fieldGoals": "6-of-6, long 53 (T-1st nationally in pct.)",
+    "punting": "49.0 gross/net avg",
+    "puntReturns": "7-189, 27.0 avg, 2 TD"
+   },
+   "defense": {
+    "pointsAllowedPerGame": {
+     "value": 22.8,
+     "national": "69th",
+     "sec": 12
+    },
+    "yardsAllowedPerGame": {
+     "value": 351.3,
+     "national": "72nd",
+     "sec": 12
+    },
+    "rushYardsAllowedPerGame": {
+     "value": 103.0,
+     "national": "35th",
+     "sec": 7
+    },
+    "yardsPerCarryAllowed": {
+     "value": 3.4,
+     "sec": 10
+    },
+    "passYardsAllowedPerGame": {
+     "value": 248.3,
+     "national": "113th",
+     "sec": 15
+    },
+    "yardsPerAttemptAllowed": {
+     "value": 6.2,
+     "sec": 7
+    },
+    "oppCompletionPct": 62.5,
+    "sacks": {
+     "value": 12,
+     "national": "T-16th",
+     "sec": 6
+    },
+    "tacklesForLoss": {
+     "value": 23,
+     "national": "T-18th",
+     "sec": 5
+    },
+    "takeaways": {
+     "value": "7 (4 INT, 3 FR; 6 forced fumbles)",
+     "sec": 3
+    },
+    "oppThirdDown": {
+     "value": "26-of-64, 40.6%",
+     "sec": 13
+    },
+    "oppFourthDown": "7-of-12, 58.3%"
+   },
+   "individualLeaders": {
+    "source": "Summed from the four ESPN box scores; matches ESPN season leaders in https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708",
+    "passing": [
+     [
+      "Aaron Philo",
+      "63-87, 917 yds, 7 TD, 2 INT"
+     ],
+     [
+      "Tramell Jones Jr.",
+      "12-16, 126, 1 TD, 1 INT"
+     ],
+     [
+      "Kahleil Jackson",
+      "1-1, 48"
+     ]
+    ],
+    "rushing": [
+     [
+      "Jadan Baugh",
+      "83-600, 11 TD"
+     ],
+     [
+      "Duke Clark",
+      "32-259, 3 TD"
+     ],
+     [
+      "Aaron Philo",
+      "24-69, 3 TD"
+     ],
+     [
+      "Byron Louis",
+      "6-34"
+     ],
+     [
+      "Evan Pryor",
+      "10-30"
+     ]
+    ],
+    "receiving": [
+     [
+      "Vernell Brown III",
+      "17-271, 2 TD"
+     ],
+     [
+      "Dallas Wilson",
+      "14-236, 2 TD"
+     ],
+     [
+      "TJ Abrams",
+      "5-111"
+     ],
+     [
+      "Bailey Stockton",
+      "13-106, 1 TD"
+     ],
+     [
+      "Luke Harpring",
+      "7-97"
+     ]
+    ],
+    "tackles": [
+     [
+      "Myles Graham",
+      28
+     ],
+     [
+      "Jayden Woods",
+      19
+     ],
+     [
+      "Aaron Chiles",
+      18
+     ],
+     [
+      "Jeramiah McCloud",
+      15
+     ],
+     [
+      "Bryce Thornton",
+      14
+     ]
+    ],
+    "sacks": [
+     [
+      "Jayden Woods",
+      4
+     ],
+     [
+      "Emmanuel Oyebadejo",
+      2.5
+     ],
+     [
+      "LJ McCray",
+      1
+     ],
+     [
+      "Kamran James",
+      1
+     ],
+     [
+      "Jaden Robinson",
+      1
+     ],
+     [
+      "DK Kalu",
+      1
+     ]
+    ],
+    "tacklesForLoss": [
+     [
+      "Jayden Woods",
+      6
+     ],
+     [
+      "Emmanuel Oyebadejo",
+      2.5
+     ],
+     [
+      "Lagonza Hayward",
+      2
+     ],
+     [
+      "LJ McCray",
+      2
+     ],
+     [
+      "Kamran James",
+      2
+     ],
+     [
+      "Jaden Robinson",
+      2
+     ],
+     [
+      "Brendan Bett",
+      2
+     ]
+    ],
+    "interceptions": [
+     [
+      "DJ Coleman",
+      2
+     ],
+     [
+      "Dijon Johnson",
+      1
+     ],
+     [
+      "Cormani McClain",
+      1
+     ]
+    ],
+    "scoring": [
+     [
+      "Jadan Baugh",
+      "66 pts (11 TD)"
+     ],
+     [
+      "Patrick Durkin",
+      "45 pts"
+     ],
+     [
+      "Duke Clark",
+      "24 pts (4 TD)"
+     ],
+     [
+      "Aaron Philo",
+      "18 pts (3 TD)"
+     ],
+     [
+      "Vernell Brown III",
+      "24 pts (2 rec. TD, 2 PR TD)"
+     ]
+    ]
+   }
+  },
+  "missouri": {
+   "gamesPlayed": 4,
+   "sources": {
+    "teamStats": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/statistics",
+    "secRanks": "computed from https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/{id}/statistics (ids 333,57,61,344,251,145,2,96,99,142,2633,238,8,201,2579,245)",
+    "leaders": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708"
+   },
+   "offense": {
+    "pointsPerGame": {
+     "value": 35.8,
+     "sec": 8
+    },
+    "totalYardsPerGame": {
+     "value": 418.8,
+     "sec": 10
+    },
+    "rushYardsPerGame": {
+     "value": 155.8,
+     "sec": 10
+    },
+    "yardsPerCarry": {
+     "value": 4.2,
+     "sec": 10
+    },
+    "passYardsPerGame": {
+     "value": 263.0,
+     "sec": 7
+    },
+    "yardsPerAttempt": {
+     "value": 8.6,
+     "sec": 6
+    },
+    "completionPct": 64.2,
+    "passTD_INT": "11 TD, 0 INT",
+    "sacksAllowed": 4,
+    "thirdDown": {
+     "value": "22-of-54, 40.7%",
+     "sec": 11
+    },
+    "fourthDown": "3-of-5",
+    "giveaways": {
+     "value": 2,
+     "sec": "1st (fewest)"
+    },
+    "turnoverMargin": {
+     "value": "0 (2 takeaways, 2 giveaways)",
+     "sec": 9
+    },
+    "fieldGoals": "5-of-8, long 36",
+    "penalties": "32 for 292 yds"
+   },
+   "defense": {
+    "pointsAllowedPerGame": {
+     "value": 20.8,
+     "national": "T-51st",
+     "sec": 7
+    },
+    "yardsAllowedPerGame": {
+     "value": 318.5,
+     "national": "51st",
+     "sec": 9
+    },
+    "rushYardsAllowedPerGame": {
+     "value": 100.3,
+     "national": "T-31st",
+     "sec": 6
+    },
+    "yardsPerCarryAllowed": {
+     "value": 2.8,
+     "national": "19th",
+     "sec": 3
+    },
+    "rushTDAllowed": 2,
+    "passYardsAllowedPerGame": {
+     "value": 218.3,
+     "sec": 10
+    },
+    "yardsPerAttemptAllowed": {
+     "value": 7.0,
+     "sec": 11
+    },
+    "oppCompletionPct": {
+     "value": 56.0,
+     "national": "23rd"
+    },
+    "sacks": {
+     "value": 12,
+     "sec": 6
+    },
+    "tacklesForLoss": {
+     "value": 20,
+     "sec": 9
+    },
+    "takeaways": {
+     "value": "2 (0 INT, 2 FR)",
+     "sec": "T-15th"
+    },
+    "oppThirdDown": {
+     "value": "19-of-59, 32.2%",
+     "sec": 7
+    }
+   },
+   "leaders": [
+    [
+     "QB Austin Simmons",
+     "70-107, 947 yds, 11 TD"
+    ],
+    [
+     "RB Jamal Roberts",
+     "89-395, 3 TD"
+    ],
+    [
+     "WR Cayden Lee",
+     "27-412, 4 TD"
+    ],
+    [
+     "EDGE Daeden Hopkins",
+     "6 sacks"
+    ],
+    [
+     "LB Nicholas Rodriguez",
+     "39 tackles"
+    ]
+   ]
+  }
+ },
+ "missouriPregame": {
+  "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708",
+  "kickoff": "Saturday, Oct. 3, 2026, 3:30 p.m. ET",
+  "tv": "ABC",
+  "venue": {
+   "name": "Memorial Stadium (Faurot Field)",
+   "city": "Columbia, Mo.",
+   "surface": "artificial (ESPN venue.grass = false)",
+   "capacity": "unavailable (ESPN returns null)"
+  },
+  "weather": {
+   "forecast": "71 degrees, 0% precipitation, gusts to 10 mph (ESPN/AccuWeather at fetch)",
+   "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708 gameInfo.weather"
+  },
+  "line": {
+   "provider": "DraftKings via ESPN pickcenter",
+   "spread": "Florida -5.5 (FLA -105 / MIZ -115)",
+   "overUnder": 57.5,
+   "overUnderOdds": "over -108 / under -112",
+   "moneyline": "Florida -218, Missouri +180",
+   "favoriteAtOpen": "Florida",
+   "espnMatchupPredictor": "Florida 70.2%, Missouri 29.8%",
+   "note": "ESPN 'odds' array empty; figures from pickcenter"
+  },
+  "series": {
+   "overallRecord": "unavailable - ESPN game summary carries no series block",
+   "lastMeeting": {
+    "date": "Nov. 18, 2023",
+    "result": "No. 9 Missouri 33, Florida 31",
+    "site": "Memorial Stadium, Columbia, Mo.",
+    "espnEvent": "401520413",
+    "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2023"
+   },
+   "recentMeetings": [
+    {
+     "date": "Nov. 18, 2023",
+     "result": "Missouri 33, Florida 31",
+     "site": "Columbia",
+     "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2023"
+    },
+    {
+     "date": "Oct. 8, 2022",
+     "result": "Florida 24, Missouri 17",
+     "site": "Gainesville",
+     "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2022"
+    },
+    {
+     "date": "Nov. 20, 2021",
+     "result": "Missouri 24, Florida 23",
+     "site": "Columbia",
+     "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2021"
+    }
+   ],
+   "notPlayed": "2024 and 2025 (per ESPN schedules https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2024, https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2025)"
+  },
+  "missouriResults": {
+   "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/schedule",
+   "games": [
+    {
+     "date": "Sept. 3",
+     "opponent": "Arkansas-Pine Bluff",
+     "site": "home",
+     "result": "W 54-14",
+     "tv": "SEC Network"
+    },
+    {
+     "date": "Sept. 11",
+     "opponent": "Kansas",
+     "site": "away",
+     "result": "W 38-21",
+     "tv": "FOX"
+    },
+    {
+     "date": "Sept. 19",
+     "opponent": "Troy",
+     "site": "home",
+     "result": "W 27-17",
+     "tv": "SECN+"
+    },
+    {
+     "date": "Sept. 26",
+     "opponent": "Mississippi State (No. 24)",
+     "site": "away",
+     "result": "L 31-24",
+     "tv": "SEC Network"
+    }
+   ],
+   "lastGame": {
+    "source": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856703",
+    "summary": "At Mississippi State, Missouri lost 31-24 despite no turnovers: 414 total yds (295 pass, 119 rush), 7-of-16 on third down, 0-of-2 on fourth; MSU 499 yds, 360 passing. Austin Simmons 23-39, 295 yds, 3 TD; Jamal Roberts 26-95; Cayden Lee 11-156, 2 TD."
+   },
+   "nextUp": "Texas A&M at home Oct. 10 (per ESPN schedule)"
+  },
+  "statisticalKeys": [
+   {
+    "key": "Florida's ground game vs. Missouri's run defense",
+    "numbers": "Florida: 260.0 rush yds/game (2nd SEC, 11th nationally), 5.9 per carry, 18 rush TD (T-1st nationally); Jadan Baugh 600 yds, 11 TD, 100+ in every game. Missouri: 100.3 rush yds allowed (6th SEC), 2.8 per carry (3rd SEC, 19th nationally), 2 rush TD allowed in four games.",
+    "sources": [
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/statistics",
+     "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2026/types/2/teams/57/statistics",
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/statistics"
+    ]
+   },
+   {
+    "key": "Explosive passing vs. a bend-not-break secondary",
+    "numbers": "Florida: 10.5 yds per attempt (1st SEC, T-6th nationally), 73.1% completions (7th nationally), 2 sacks allowed on 104 attempts. Missouri: 7.0 per attempt and 56.0% completions allowed (23rd nationally), but Mississippi State threw for 360 on them last week; Daeden Hopkins has 6 sacks.",
+    "sources": [
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/statistics",
+     "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/2026/types/2/teams/57/statistics",
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/statistics",
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856703",
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708"
+    ]
+   },
+   {
+    "key": "Florida's pass defense and third downs vs. Austin Simmons",
+    "numbers": "Florida allows 248.3 pass yds/game (15th SEC, 113th nationally) and 40.6% on third down (13th SEC). Simmons: 70-of-107, 947 yds, 11 TD, 0 INT; Cayden Lee 412 yds, 4 TD. Turnover ledger: Florida +3 (7 takeaways); Missouri has 2 giveaways (fewest in SEC) and 2 takeaways (fewest in SEC). Jayden Woods: 19 tkl, 6 TFL, 4 sacks.",
+    "sources": [
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/statistics",
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/142/statistics",
+     "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708"
+    ]
+   }
+  ]
+ }
+}

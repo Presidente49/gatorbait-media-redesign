@@ -259,3 +259,11 @@ Nothing published, drafted, or embedded this pass beyond the morning sweep's Dod
 ## Desk inbox + YouTube check — Oct. 3, ~14:0xZ
 
 No change since the ~12:3xZ pass: same single Gmail thread (`1a101b758181bc0e`, already skipped), no UF press, same YouTube feed (no new videos). Nothing to do this pass.
+
+## Desk inbox + YouTube check — Oct. 3, ~16:0xZ (email-probation rules received, #34 5970606711)
+
+**Gmail (`newer_than:1d`):** same single thread as the prior two passes, `1a101b758181bc0e` (buddymartinshow@gmail.com, "Fwd: Time to RYZE. Your order is confirmed!") — already logged/skipped, not a submission. Broadened check of all inbox mail in the last 24h turned up nothing else from staff or gators.ufl.edu/ufl.edu/floridagators.com/Hutchinson — only GitHub CI-failure notices (Florida stats live check / live presentation QC / live screenshots workflows, all failing — flagging for the active controller, not this desk's job to fix), account-security notices (GitHub OAuth apps, Vercel, Shopify, Dropbox, GitLab) and marketing mail. Nothing breaking, no new writer submission, no new UF release.
+
+**YouTube:** could not check this pass — vidIQ channel-videos call returned "not enough credits," and the direct RSS fetch (`youtube.com/feeds/videos.xml?channel_id=UCtR8b1sKFuwaRjKy5BiXRvA`) is blocked by this sandbox's egress proxy this pass (worked Oct. 1, blocked again now — intermittent, not a channel change). Will retry next run.
+
+Nothing published, drafted or embedded this pass — staying silent on #34 per step 9. Also received and logged the standing email-probation rules from Brenden/#34 `5970606711` (3/week cap, 1/day, verified-clean ~530 list only, no BREAKING emails, story-alert automations off, daily roundup builds-but-doesn't-send, next allowed window ~1:15pm ET Mon. Oct. 5) — applies to any future send decision from this desk.

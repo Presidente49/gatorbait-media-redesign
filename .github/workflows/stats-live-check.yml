@@ -1,0 +1,42 @@
+name: Florida stats live check
+
+# Loads the live /florida-football-stats route (and the homepage, where the embed must stay out of the way)
+# in Chromium after a change to the stats embed. Push automation/vision/stats-live-check.mjs or
+# deploy/wix-served/florida-stats.check to run it again, e.g. during a game to watch the live score.
+on:
+  push:
+    paths:
+      - 'automation/vision/stats-live-check.mjs'
+      - 'deploy/wix-served/florida-stats.check'
+      - '.github/workflows/stats-live-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stats-live-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.49.1
+          npx playwright install --with-deps chromium
+      - name: Check the live stats route
+        run: node automation/vision/stats-live-check.mjs
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: florida-stats-live
+          path: build/stats-live
+          if-no-files-found: ignore

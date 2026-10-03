@@ -3,6 +3,7 @@
 These playbooks are implementation contracts for the single GatorBait controller. They are not independent agents and do not create a second source of truth.
 
 - `daily-operations.md` — daily newsroom/business heartbeat with desktop/mobile QC and owner-facing exception brief.
+- `morning-news-sweep.md` — every day at 6:28 a.m. ET: sweep all Gators news, publish confirmed stories we don't have, then feed the 7 a.m. roundup and report to #34 for Jarvis's 7:44 a.m. Morning Money Report.
 - `mobile-app-strategy.md` — Spaces-by-Wix pilot and evidence gate for a paid branded native app.
 - `digital-magazine-and-print.md` — web-first magazine packaging and premium print-on-demand pilot.
 - `subscriber-winback.md` — lapsed-customer recovery with consent, cohort and retention gates.

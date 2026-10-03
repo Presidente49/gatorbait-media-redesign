@@ -15,7 +15,7 @@ Canonical coordination:
 - Repository: `Presidente49/gatorbait-media-redesign`
 - Production Wix site: `18fb3a4e-d7f6-414a-aeb9-3047db3ea115`
 - Public site: https://www.gatorbaitmedia.com/
-- Shared work item: GitHub issue #3
+- Shared work item: GitHub issue #34, the coordination thread since Sept. 26. Its all-hands comment lists which agent owns which live object. Issue #3 is historical.
 - AdSense incident: issue #30
 - Single controller / one production writer
 - Scheduled monitors remain read-only for live Wix/content/assets/routing.
@@ -55,6 +55,12 @@ GitHub `main` continues to advance through normal controller/ops commits. Produc
 
 ## Session update — Sept. 27 night into Sept. 28, 2026
 
+- **Email Marketing:** the account went `WARNED` on Sept. 28 after 18 list sends in 7 days. It's `ACTIVE` again since Brenden accepted the terms (~07:50Z), but its rank is still `BAD`.
+  - **Policy (Brenden, Sept. 28):** one roundup email a day through the daily roundup routine, no separate breaking emails, and both blog story alerts (`5006baf5`, `824714d4`) `INACTIVE`.
+  - **Audience:** Jarvis's cleanup cut the Active Email Audience to 1,273. The 573 contacts inactive for 6 months are labeled, not deleted, and paid and Plus members were kept.
+  - **Before every list email,** run `automation/newsletter/send-governor.js` (1 send a day, 7 a week). See the playbook's "Send governor" section and Lesson 48.
+- **Morning news sweep:** every day at 6:28 a.m. ET in the game-day desk session. See `automation/ops-hub/playbooks/morning-news-sweep.md`.
+- **Florida stats page:** embed `756655cf` has been live since Sept. 27 (stats session, PR #37). `/florida-football-stats` still 404s because no Wix page exists at that slug.
 - **Typography enforcement.** Georgia serif had crept back into the header embed (`7fee4de6`, now rev 26) and the Magazine embed (`1dd74333`) — article-page headlines, account/plan titles, the sidebar "recent post" widget, and every Magazine headline. This directly violated the "Site typography" section above. Swapped all 11 occurrences to Barlow. Re-audit both embeds for Georgia periodically; this has now recurred once.
 - **Home Code embed** (`622d8ece`, now rev 12): fixed a real headline bug — `The voices<br>you come for.` had no literal space next to the `<br>`, so a mobile rule that hides the `<br>` for a one-line layout also collapsed the words together ("voicesyou"). Also widened the "Only at GatorBait" columnist box from a hardcoded Buddy+Franz pair to a 5-name priority list (adds Loren Meadows, Carlton Reese, Eddie Gilley), so it varies with what's actually recent instead of always showing the same two names.
 - **Embed-repo drift.** All three live-patched embeds above had their repo copies (`deploy/wix-served/header-embed.html`, `magazine-embed.html`, `split/home-code.html`) go stale immediately after each live PATCH tonight — the repo was never re-synced in the same session as the patch. Re-synced all three; character length now verified to match live exactly. Re-sync the repo copy in the *same* tool call chain as any live PATCH going forward, not as a separate later step.

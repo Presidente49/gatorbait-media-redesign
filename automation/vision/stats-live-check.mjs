@@ -12,10 +12,14 @@ const PROFILES = [
   { name: 'phone390', context: { userAgent: devices['iPhone 13'].userAgent, viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true } },
   { name: 'desktop', context: { viewport: { width: 1365, height: 900 } } }
 ];
+// 'stats-spa' loads the homepage, then moves to the stats route in-page the way the site shell does
+// (pushState + gbmroutechange). It exercises the live embed even while the Wix page itself is missing.
 const ROUTES = [
   { name: 'stats', path: '/florida-football-stats', expectMount: true },
-  { name: 'home', path: '/', expectMount: false }
+  { name: 'home', path: '/', expectMount: false },
+  { name: 'stats-spa', path: '/', spa: '/florida-football-stats', expectMount: true }
 ];
+const ESPN = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708';
 
 const browser = await chromium.launch();
 let failed = 0;
@@ -35,6 +39,13 @@ for (const prof of PROFILES) {
     page.on('requestfailed', r => { if (/espn\.com|florida-stats\.json/.test(r.url())) reads.push({ url: r.url(), failed: r.failure() && r.failure().errorText }); });
     const resp = await page.goto(`${BASE}${route.path}?${bust}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
     await page.waitForTimeout(8000);
+    const http = resp && resp.status();
+    if (route.spa) {
+      await page.evaluate(p => { history.pushState({}, '', p); window.dispatchEvent(new Event('gbmroutechange')); }, route.spa);
+      await page.waitForTimeout(5000);
+    }
+    // Can a reader's browser on this origin read ESPN directly? (status and CORS header)
+    const espnFromSite = route.name === 'home' ? await page.evaluate(u => fetch(u).then(x => x.status + ' ' + x.headers.get('access-control-allow-origin')).catch(e => 'error ' + e.message), ESPN) : undefined;
     const r = await page.evaluate(() => {
       const m = document.getElementById('gbm-stats');
       const row = m && [...m.querySelectorAll('.fs-log tbody tr')].find(t => /Missouri/.test(t.textContent));
@@ -55,13 +66,16 @@ for (const prof of PROFILES) {
     await page.screenshot({ path: `${OUT}/${route.name}-${prof.name}.png`, fullPage: false });
     const ourErrors = errors.filter(e => /FLSTATS|gbm-stats|flstats/i.test(e));
     const bad = [];
-    if (!r.embedLoaded) bad.push('embed script missing');
-    if (route.expectMount !== r.mounted) bad.push(`mounted=${r.mounted}`);
+    // Wix serves no custom embeds on its 404 page, so a missing page is reported, not failed: it needs the editor.
+    const pageMissing = route.name === 'stats' && http === 404;
+    if (!pageMissing && !r.embedLoaded) bad.push('embed script missing');
+    if (!pageMissing && route.expectMount !== r.mounted) bad.push(`mounted=${r.mounted}`);
+    if (espnFromSite !== undefined && !/^200 \*$/.test(espnFromSite)) bad.push(`espn from site: ${espnFromSite}`);
     if (route.expectMount && r.overflow) bad.push('horizontal overflow');
     if (route.expectMount && !/Barlow/.test(r.font || '')) bad.push(`font=${r.font}`);
     if (ourErrors.length) bad.push('stats errors');
     if (bad.length) failed++;
-    console.log(JSON.stringify({ route: route.name, profile: prof.name, http: resp && resp.status(), ok: !bad.length, bad, ...r, reads, pageErrors: errors }));
+    console.log(JSON.stringify({ route: route.name, profile: prof.name, http, pageMissing, ok: !bad.length, bad, ...r, espnFromSite, reads, pageErrors: errors }));
     await ctx.close();
   }
 }

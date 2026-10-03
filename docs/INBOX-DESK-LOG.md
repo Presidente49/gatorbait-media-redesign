@@ -267,3 +267,11 @@ No change since the ~12:3xZ pass: same single Gmail thread (`1a101b758181bc0e`, 
 **YouTube:** could not check this pass — vidIQ channel-videos call returned "not enough credits," and the direct RSS fetch (`youtube.com/feeds/videos.xml?channel_id=UCtR8b1sKFuwaRjKy5BiXRvA`) is blocked by this sandbox's egress proxy this pass (worked Oct. 1, blocked again now — intermittent, not a channel change). Will retry next run.
 
 Nothing published, drafted or embedded this pass — staying silent on #34 per step 9. Also received and logged the standing email-probation rules from Brenden/#34 `5970606711` (3/week cap, 1/day, verified-clean ~530 list only, no BREAKING emails, story-alert automations off, daily roundup builds-but-doesn't-send, next allowed window ~1:15pm ET Mon. Oct. 5) — applies to any future send decision from this desk.
+
+## Desk inbox + YouTube check — Oct. 3, ~17:0xZ
+
+No new writer submissions, no new UF press. One new item not matching either criteria: a Google Alert ("Florida Gator football coaching hire," re: Greg McMahon) — not from staff or a UF sender, so out of scope for this routine, not logged as source material. Also recurring: the "GatorBait live presentation QC" GitHub Actions workflow keeps failing on every run (`05b7a1c`, `b013f22`, and earlier) — flagging for the active controller, not this desk's job to fix.
+
+**YouTube:** still blocked — direct RSS fetch (`youtube.com/feeds/videos.xml?...`) returned egress-blocked again this pass; vidIQ not retried (same credit exhaustion as last pass, hasn't reset). Will keep retrying.
+
+Nothing published, drafted or embedded — staying silent on #34 per step 9.

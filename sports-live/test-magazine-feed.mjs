@@ -10,7 +10,7 @@ import { loadPicker, parseRss, readFeed, refresh } from './refresh-magazine-feed
 
 const here = dirname(fileURLToPath(import.meta.url));
 const P = loadPicker();
-const ISSUE_TEXT = readFileSync(join(here, 'fixtures/issue-pregame-pre-refresh.json'), 'utf8');
+const ISSUE_TEXT = readFileSync(join(here, 'magazine-issue-pregame.json'), 'utf8');
 const ISSUE = JSON.parse(ISSUE_TEXT);
 const CREDITS = JSON.parse(readFileSync(join(here, 'front-page.config.json'), 'utf8')).credits;
 const NOW = Date.parse('2026-10-03T13:00:00Z');
@@ -127,11 +127,10 @@ test('refresh is byte-preserving and idempotent', () => {
 
 test('--check and --dry-run never write; --check fails when behind', () => {
   const run = (...a) => { try { return { code: 0, out: execFileSync('node', [join(here, 'refresh-magazine-feed.mjs'), '--feed', 'sports-live/fixtures/feed-2026-10-03.json', '--now', '2026-10-03T13:00:00Z', ...a], { cwd: join(here, '..'), encoding: 'utf8', stdio: 'pipe' }) }; } catch (e) { return { code: e.status, out: e.stdout }; } };
-  const FROZEN = 'sports-live/fixtures/issue-pregame-pre-refresh.json';
-  assert.equal(run('--dry-run', '--issue', FROZEN).code, 0);
-  assert.equal(run('--check', '--issue', FROZEN).code, 1, 'the frozen pre-refresh issue is behind the feed');
-  assert.equal(run('--check').code, 0, 'the committed issue is current with the Oct. 3 snapshot');
-  assert.equal(readFileSync(join(here, 'fixtures/issue-pregame-pre-refresh.json'), 'utf8'), ISSUE_TEXT);
+  assert.equal(run('--dry-run').code, 0);
+  assert.equal(run('--check').code, 1);
+  assert.equal(run('--check', '--issue', 'sports-live/magazine-issue-pregame.proposed.json').code, 0);
+  assert.equal(readFileSync(join(here, 'magazine-issue-pregame.json'), 'utf8'), ISSUE_TEXT);
 });
 
 test('live score line', () => {

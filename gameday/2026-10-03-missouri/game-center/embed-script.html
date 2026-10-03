@@ -1,0 +1,62 @@
+<script id="gbm-gc-js">(function(){
+if(window.__GBM_GC__)return;window.__GBM_GC__=1;
+var EV='401856708',Q='/apis/site/v2/sports/football/college-football/summary?event='+EV,
+HOSTS=['https://site.web.api.espn.com','https://site.api.espn.com'],
+URL_='https://www.gatorbaitmedia.com/#gameday',root,d,stories=[],tPoll,tCd,tNews,okAt=0,fail=0;
+function e(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function path(){return location.pathname.replace(/\/+$/,'')||'/'}
+function on(){return path()==='/gameday'||(path()==='/'&&location.hash==='#gameday')}
+function get(i){return fetch(HOSTS[i]+Q+'&_='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return i<HOSTS.length-1?get(i+1):null})}
+function num(v){var m=String(v==null?'':v).match(/-?\d+(\.\d+)?/);return m?parseFloat(m[0]):0}
+function cd(ms){if(ms<0)ms=0;var s=Math.floor(ms/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60);s%=60;return(h>=24?Math.floor(h/24)+'d ':'')+(h%24||h>=24?(h%24)+':':'')+(m<10&&(h||h>=24)?'0':'')+m+':'+(s<10?'0':'')+s}
+function parse(){
+var h=d.header.competitions[0],cs=h.competitors,A,H;cs.forEach(function(c){if(c.homeAway==='away')A=c;else H=c});
+var st=h.status||{},ty=st.type||{};
+return{h:h,A:A,H:H,state:ty.state||'pre',detail:ty.detail||'',short:ty.shortDetail||'',date:h.date,tid:{a:A.team.id,h:H.team.id}}}
+function team(c,col){var t=c.team,rec=(c.record||[])[0]||{};
+return'<div class="gc-t'+(c.possession?' pos':'')+'" style="--c:'+col+'"><img alt="" src="https://a.espncdn.com/i/teamlogos/ncaa/500/'+e(t.id)+'.png" onerror="this.style.display=\'none\'"><div class="gc-n"><b class="D">'+e(t.name==='Gators'?'Florida':t.displayName.replace(/ Tigers$/,''))+'</b><small>'+(c.rank?'No. '+e(c.rank)+' · ':'')+e(rec.displayValue||'')+'</small></div><div class="gc-s D">'+(c.score==null||c.score===''?'–':e(c.score))+'</div></div>'}
+function wp(p){var a,live=false,w=d.winprobability;
+if(w&&w.length){var x=w[w.length-1].homeWinPercentage;a=100-(x<=1?x*100:x);live=true}
+else a=num(d.predictor&&d.predictor.awayTeam&&d.predictor.awayTeam.gameProjection);
+if(!a)return'';a=Math.max(4,Math.min(96,a));
+return'<div class="gc-c"><h2 class="D">Chomp Meter</h2><div class="gc-bar2"><div class="a D" style="width:'+a+'%">FLA '+Math.round(a)+'%</div><div class="h D">'+Math.round(100-a)+'% MIZ</div></div><div class="gc-cap">'+(live?'Live win probability · ESPN':'Pregame projection · ESPN Matchup Predictor')+'</div></div>'}
+function plays(p){var sp=(d.scoringPlays||[]).slice().reverse(),ab={};ab[p.tid.a]='FLA';ab[p.tid.h]='MIZ';
+var li=sp.map(function(x){return'<li><b>'+e((x.period&&x.period.number?'Q'+x.period.number+' ':'')+(x.clock&&x.clock.displayValue?x.clock.displayValue+' · ':'')+(ab[x.team&&x.team.id]||''))+'</b><span>'+e(x.text)+'</span><em>FLA '+e(x.awayScore)+' – MIZ '+e(x.homeScore)+'</em></li>'}).join('');
+return'<div class="gc-c"><h2 class="D">Scoring Plays</h2>'+(li?'<ul class="gc-sp">'+li+'</ul>':'<div class="gc-cap">No scoring yet. Every score lands here the moment ESPN logs it.</div>')+'</div>'}
+function stats(p){var T=(d.boxscore&&d.boxscore.teams)||[],a,h;T.forEach(function(t){if(t.team.id===p.tid.a)a=t;else if(t.team.id===p.tid.h)h=t});
+if(!a||!h)return'';var ha={};(h.statistics||[]).forEach(function(s){ha[s.name]=s});
+var rows=(a.statistics||[]).slice(0,8).map(function(s){var o=ha[s.name];if(!o)return'';var x=num(s.displayValue),y=num(o.displayValue),t=x+y,pc=t?x/t*100:50;
+return'<div class="gc-r"><div class="l">'+e(s.label||s.name)+'</div><div class="x"><span class="v D">'+e(s.displayValue)+'</span><div class="bb"><i style="width:'+pc+'%"></i></div><span class="v D">'+e(o.displayValue)+'</span></div></div>'}).join('');
+return rows?'<div class="gc-c"><h2 class="D">'+(p.state==='pre'?'Tale of the Tape':'Team Stats')+'</h2>'+(p.state==='pre'?'<div class="gc-cap" style="margin:-4px 0 4px">Season averages per game</div>':'')+rows+'</div>':''}
+function leaders(p){var L=(d.leaders||[]).slice().sort(function(x,y){return(y.team.id===p.tid.a)-(x.team.id===p.tid.a)}),out=L.map(function(t){var ps=(t.leaders||[]).filter(function(c){return/passing|rushing|receiving/i.test(c.name)}).map(function(c){var l=c.leaders&&c.leaders[0];return l?'<p><b>'+e((c.displayName||'').replace(/ Yards/,''))+'</b>'+e(l.athlete.shortName||l.athlete.displayName)+' · '+e(l.displayValue)+'</p>':''}).join('');
+return'<div class="gc-ld"><p><b style="font-size:13px;color:#fff">'+e(t.team.abbreviation)+'</b></p>'+ps+'</div>'}).join('');
+return out?'<div class="gc-c"><h2 class="D">'+(p.state==='pre'?'Season Leaders':'Game Leaders')+'</h2>'+out+'</div>':''}
+function news(){if(!stories.length)return'';return'<div class="gc-c gc-nw"><h2 class="D">Latest From GatorBait</h2>'+stories.map(function(s){return'<a href="'+e(s.l)+'">'+e(s.t)+'<small>'+e(s.d)+'</small></a>'}).join('')+'</div>'}
+function share(){var tx=encodeURIComponent('Florida at Missouri: live score, win probability and scoring plays on GatorBait #Gators #GoGators'),u=encodeURIComponent(URL_);
+return'<div class="gc-c"><h2 class="D">Share The Game</h2><div class="gc-sh"><a target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text='+tx+'&url='+u+'">Post on X</a><a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u='+u+'">Facebook</a><button type="button" data-gc="copy">Copy link</button></div></div>'}
+function watch(){return'<div class="gc-c"><h2 class="D">Watch &amp; Listen</h2><ul class="gc-sp"><li><b>TV</b><span>ABC · Joe Tessitore, Jesse Palmer, Kris Budden. Streams on the ESPN app.</span></li><li><b>Radio</b><span>Gators Sports Network · Sean Kelly, Shane Matthews, Tate Casey.</span></li><li><b>Where</b><span>Faurot Field / Memorial Stadium, Columbia, Mo.</span></li></ul></div>'}
+function render(){if(!root||!d)return;var p=parse(),live=p.state==='in',post=p.state==='post',pill,sub;
+if(p.state==='pre'){pill='<span class="gc-pill pre">Kickoff in <span id="gc-cd">'+cd(Date.parse(p.date)-Date.now())+'</span></span>';sub=e(p.detail)}
+else if(live){pill='<span class="gc-pill in"><i></i>'+e(/half/i.test(p.detail)?'Halftime':p.short||'Live')+'</span>';sub='Live · updates every 15 seconds'}
+else{pill='<span class="gc-pill post">'+e(p.short&&/final/i.test(p.short)?p.short:'Final')+'</span>';sub='Final · full coverage on GatorBait'}
+var w=root.querySelector('.gc-w');w.innerHTML='<div class="gc-hero"><div class="gc-stt">'+pill+'<div class="gc-sub">'+sub+'</div></div><div class="gc-board">'+team(p.A,'#fa4616')+team(p.H,'#f1b82d')+'</div></div>'+wp(p)+plays(p)+'<div class="gc-g"><div>'+stats(p)+'</div><div>'+leaders(p)+watch()+'</div></div>'+news()+share()+'<div class="gc-ft">Live data from ESPN, refreshed '+new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit',second:'2-digit'})+'. Stories and photos by GatorBait Media.</div>'}
+function poll(){clearTimeout(tPoll);if(!root)return;
+(document.hidden?Promise.resolve(null):get(0)).then(function(j){if(j&&j.header){d=j;okAt=Date.now();fail=0;render()}else if(!document.hidden){fail++;if(!d&&root){root.querySelector('.gc-w').innerHTML='<div class="gc-c"><h2 class="D">Reconnecting</h2><div class="gc-cap">Live data is warming up. Retrying.</div></div>'}}
+var st=d&&parse().state;tPoll=setTimeout(poll,st==='in'?15000:st==='post'?300000:60000)})}
+function loadNews(){clearTimeout(tNews);if(!root)return;
+fetch('/blog-feed.xml?_='+Date.now(),{cache:'no-store'}).then(function(r){return r.text()}).then(function(x){var doc=new DOMParser().parseFromString(x,'text/xml'),it=[].slice.call(doc.querySelectorAll('item')).map(function(i){var g=function(n){var q=i.querySelector(n);return q?q.textContent:''},dt=new Date(g('pubDate'));return{t:g('title'),l:g('link').replace(/^https?:\/\/(www\.)?gatorbaitmedia\.com/,''),dt:dt,d:isNaN(dt)?'':dt.toLocaleString([],{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}}).filter(function(s){return/^\/post\//.test(s.l)});
+it.sort(function(a,b){return b.dt-a.dt});stories=it.slice(0,6);render()}).catch(function(){}).then(function(){tNews=setTimeout(loadNews,120000)})}
+function open(){root=document.createElement('div');root.id='gbm-gc';root.setAttribute('role','dialog');root.setAttribute('aria-label','GatorBait Game Center');
+root.innerHTML='<div class="gc-bar"><b class="D">GATOR<i>BAIT</i> GAME CENTER</b><button type="button" class="gc-x" data-gc="x">Close</button></div><div class="gc-w"><div class="gc-c"><h2 class="D">Loading the game</h2><div class="gc-cap">Pulling live data from ESPN.</div></div></div>';
+document.body.appendChild(root);document.documentElement.classList.add('gc-open');
+tCd=setInterval(function(){var el=document.getElementById('gc-cd');if(el&&d)el.textContent=cd(Date.parse(parse().date)-Date.now())},1000);poll();loadNews()}
+function close(){clearTimeout(tPoll);clearTimeout(tNews);clearInterval(tCd);if(root&&root.parentNode)root.parentNode.removeChild(root);root=null;document.documentElement.classList.remove('gc-open')}
+function sync(){var o=on();if(o&&!root)open();else if(!o&&root)close()}
+document.addEventListener('click',function(ev){var b=ev.target.closest&&ev.target.closest('[data-gc]');if(!b)return;
+if(b.getAttribute('data-gc')==='x'){if(path()==='/gameday')location.assign('/');else{history.replaceState(null,'',location.pathname+location.search);sync()}}
+else{var done=function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy link'},1500)};
+if(navigator.share){navigator.share({title:'GatorBait Game Center',url:URL_}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(URL_).then(done,function(){})}}});
+document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&root){var x=root.querySelector('[data-gc=x]');x&&x.click()}});
+['hashchange','popstate','gbmroutechange'].forEach(function(n){window.addEventListener(n,sync)});
+setInterval(sync,1500);sync();
+})();</script>

@@ -45,4 +45,9 @@ Then paste `tagger.js` into ExecuteWixAPI with `hasMutations` set true for a rea
 - 0 skipped, 0 errors.
 - Retried the 8 remaining skips: all 8 (Urquhart/Auburn, "14 Days In Gainesville" ESPN doc piece, Auburn By the Numbers, "No sugar coating", "Putting things in perspective", "Reasons for optimism", "Day One Looks", "Sumrall exudes confidence") still have unpublished edits and remain skipped.
 
+**2026-10-03 12:1xZ daily sweep (last 48 h, 6 posts):**
+- 4 tagged: "The Wizards Have Spoken..." (+1), "Something's Got to Give" (+2), Denzel Aberdeen "back home" story (+2), "Florida Keeps Winning Big, and the Laundry..." (+7).
+- 2 already complete ("The Soothsayer: Gators head to Missouri", "Coaches and Fans Have Different Playbooks"), 0 skipped, 0 errors.
+- Retried the 8 remaining skips: all 8 still have unpublished edits and remain skipped, unchanged from the prior sweep.
+
 Formatting is standardized separately: `design/post-normalizer-v1/` runs on every article page. It handles spacer lines, all-bold bodies, hand-made subheads, deck/lede lines and the typed-in byline.

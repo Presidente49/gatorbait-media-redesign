@@ -10,7 +10,7 @@ const text=nodes=>{let o=[];const w=a=>(a||[]).forEach(n=>{if(n.textData&&n.text
 const R=(method,url,body)=>wix.request({scope:"site",method,url,body}).then(r=>r.data||r);
 // posts (newest first), season only
 let posts=[],cursor=null;
-for(let k=0;k<3;k++){const q=cursor?{query:{cursorPaging:{cursor,limit:100}},fieldsets:['RICH_CONTENT']}:{query:{filter:{firstPublishedDate:{$gte:'2026-09-29T10:52:56Z'}},paging:{limit:100}},fieldsets:['RICH_CONTENT']};
+for(let k=0;k<3;k++){const q=cursor?{query:{cursorPaging:{cursor,limit:100}},fieldsets:['RICH_CONTENT']}:{query:{filter:{firstPublishedDate:{$gte:'2026-10-01T12:17:55Z'}},paging:{limit:100}},fieldsets:['RICH_CONTENT']};
  const d=await R('POST','https://www.wixapis.com/blog/v3/posts/query',q);posts=posts.concat(d.posts||[]);cursor=d.pagingMetadata&&d.pagingMetadata.cursors&&d.pagingMetadata.cursors.next;if(!cursor||!(d.posts||[]).length)break;}
 posts=posts.slice(OFFSET,OFFSET+LIMIT);
 let tags=[];for(let k=0;k<6;k++){const d=await R('POST','https://www.wixapis.com/blog/v3/tags/query',{query:{paging:{limit:100,offset:k*100}}});tags=tags.concat(d.tags||[]);if(!(d.pagingMetadata||{}).hasNext)break;}

@@ -275,3 +275,7 @@ No new writer submissions, no new UF press. One new item not matching either cri
 **YouTube:** still blocked — direct RSS fetch (`youtube.com/feeds/videos.xml?...`) returned egress-blocked again this pass; vidIQ not retried (same credit exhaustion as last pass, hasn't reset). Will keep retrying.
 
 Nothing published, drafted or embedded — staying silent on #34 per step 9.
+
+## Desk inbox — Oct. 3, ~18:0xZ
+
+No new writer submissions, no new UF press. Only GitHub CI-failure noise (the pre-existing "GatorBait live presentation QC" failures on `magazine-2026/auto-refresh` continue — confirmed via Actions history they predate this desk's masthead-font commit, failing on every push to that branch since `d306ae0`; not a regression from here, not this desk's PR to drive) and two Google Alerts (coaching hire, general Gator football news — neither from staff/UF senders). Nothing to do. Game-day watch loop (separate, 5-min cadence until kickoff) is running independently and not duplicated here.

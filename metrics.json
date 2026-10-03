@@ -1,0 +1,77 @@
+{
+ "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-breaking-news?v=c9",
+ "selector": "#gbm-sn",
+ "at": "2026-10-03T19:50:36.135Z",
+ "shots": [
+  {
+   "width": 390,
+   "errors": [
+    "SyntaxError: Invalid regular expression flags"
+   ],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": "dc747be",
+   "fpBuild": null,
+   "fpVersion": null,
+   "selectorFound": true,
+   "box": {
+    "x": 3,
+    "y": 60,
+    "w": 314,
+    "h": 195,
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Barlow, Arial, sans-serif",
+    "kids": [
+     {
+      "cls": "H1",
+      "x": 19,
+      "y": 90,
+      "w": 282,
+      "h": 68,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "34px"
+     }
+    ],
+    "track": null,
+    "story": null,
+    "docScrollWidth": 320,
+    "innerWidth": 320
+   }
+  },
+  {
+   "width": 1366,
+   "errors": [
+    "SyntaxError: Invalid regular expression flags"
+   ],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": "dc747be",
+   "fpBuild": null,
+   "fpVersion": null,
+   "selectorFound": true,
+   "box": {
+    "x": 193,
+    "y": 70,
+    "w": 980,
+    "h": 165,
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Barlow, Arial, sans-serif",
+    "kids": [
+     {
+      "cls": "H1",
+      "x": 286,
+      "y": 88,
+      "w": 413,
+      "h": 48,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "48px"
+     }
+    ],
+    "track": null,
+    "story": null,
+    "docScrollWidth": 1366,
+    "innerWidth": 1366
+   }
+  }
+ ]
+}

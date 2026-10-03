@@ -12,7 +12,7 @@
   var doc = document.documentElement;
   if (window.__GBM_MAG26__) { window.__GBM_MAG26__.sync(); return; }
 
-  function onRoute() { return /^\/magazine\/?$/.test(location.pathname || ''); }
+  function onRoute() { return window.__GBM_MAG_PREVIEW__ === true || /^\/magazine\/?$/.test(location.pathname || ''); } // __GBM_MAG_PREVIEW__: repo preview page only (deploy/covers/pregame-preview.html), never set on the site
   function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function text(v, max) { return v == null || typeof v === 'object' ? '' : String(v).replace(/\s+/g, ' ').trim().slice(0, max || 400); }
   function num(v) { return typeof v === 'number' && Number.isFinite(v) ? v : null; }
@@ -217,6 +217,7 @@
   }
 
   function render(D) {
+    if (D && D.layout === 'pregame') return renderPregame(D);
     var stories=D.stories||[], L=D.labels||{};
     var items=stories.map(function(p){return {id:'story-'+p.id,label:p.author,note:p.title};});
     var front=cover(D,L).replaceAll('href="'+safeUrl(D.cover.url)+'"','href="#story-'+stories[0].id+'"');
@@ -304,7 +305,8 @@
     var D = issue(), html;
     try { html = render(D); } catch (error) { doc.classList.remove('gbm-mq'); window.__GBM_MAG26__.error = String(error); return; }
     styles(); fonts();
-    var m = document.createElement('main'); m.id = 'gbm-magazine-page'; m.className = 'mz26';
+    var m = document.createElement('main'); m.id = 'gbm-magazine-page'; m.className = 'mz26' + (D.layout === 'pregame' ? ' pg' : '');
+    if (D.layout === 'pregame' && obj(D.game)) m.setAttribute('data-kickoff', text(D.game.kickoffISO, 40));
     m.setAttribute('data-issue', text(D.id, 80)); m.setAttribute('data-mz-build', BUILD); m.setAttribute('data-mz-version', VERSION);
     if (text((obj(D.issue) || {}).pageTitle, 120)) m.setAttribute('aria-label', text(D.issue.pageTitle, 120));
     m.innerHTML = html;
@@ -327,6 +329,7 @@
     if (text((obj(D.issue) || {}).pageTitle, 120)) document.title = text(D.issue.pageTitle, 120);
     expose(D);
     passport(m, D);
+    if (D.layout === 'pregame') pgStart(m);
     window.__GBM_MAG26__.ready = true;
   }
   function start() {
@@ -337,7 +340,7 @@
   function sync() {
     if (onRoute()) { start(); return; }
     timers.forEach(clearTimeout); timers = [];
-    passportCleanup();
+    passportCleanup(); pgStop();
     var root = document.getElementById('gbm-magazine-page'); if (root) root.remove();
     doc.classList.remove('gbm-magazine-live', 'gbm-mq');
     window.__GBM_MAG26__.ready = false;

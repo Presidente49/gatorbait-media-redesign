@@ -1,0 +1,47 @@
+name: Deploy department workers
+
+# Deploys Ask GatorBait and Make the Call to Cloudflare. Runs only when
+# deploy/cloudflare/DEPLOY-REQUEST.json changes on branch jarvis/cloudflare-deploy.
+# Needs two repository secrets: CLOUDFLARE_API_TOKEN (Edit Workers scope only)
+# and CLOUDFLARE_ACCOUNT_ID. No secret value is ever printed or committed.
+on:
+  push:
+    branches: [jarvis/cloudflare-deploy]
+    paths:
+      - deploy/cloudflare/DEPLOY-REQUEST.json
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check the secrets exist
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo "CLOUDFLARE_API_TOKEN is missing"; exit 1; }
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "CLOUDFLARE_ACCOUNT_ID is missing"; exit 1; }
+      - name: Deploy the requested workers
+        run: |
+          set -euo pipefail
+          WORKERS=$(jq -r '.workers[]' deploy/cloudflare/DEPLOY-REQUEST.json)
+          SET_SALT=$(jq -r '.setSalt // false' deploy/cloudflare/DEPLOY-REQUEST.json)
+          for w in $WORKERS; do
+            case "$w" in ai|web) ;; *) echo "refusing to deploy unknown worker: $w"; exit 1 ;; esac
+            echo "::group::deploy $w"
+            cd "deploy/dept-ideas/$w"
+            if [ "$w" = "ai" ] && [ "$SET_SALT" = "true" ]; then
+              openssl rand -hex 16 | npx --yes wrangler@4 secret put HASH_SALT
+            fi
+            npx --yes wrangler@4 deploy 2>&1 | tee "/tmp/deploy-$w.log"
+            echo "worker $w: $(grep -o 'https://[A-Za-z0-9.-]*workers.dev' /tmp/deploy-$w.log | head -1)" >> "$GITHUB_STEP_SUMMARY"
+            cd - >/dev/null
+            echo "::endgroup::"
+          done

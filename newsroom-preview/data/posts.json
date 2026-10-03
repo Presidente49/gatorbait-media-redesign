@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Baby Chomp, Big Grudge: Florida Goes to Columbia With a Photo to Settle",
+      "excerpt": "A mocking baby Gator chomp from Florida’s last loss at Missouri still stings in Gainesville, and No. 8 Florida gets its answer at Faurot Field on Saturday.",
+      "url": "https://www.gatorbaitmedia.com/post/baby-chomp-big-grudge-florida-goes-to-columbia-with-a-photo-to-settle",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-10-03T18:45:42Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Baby Chomp, Big Grudge: Florida Goes to Columbia With a Photo to Settle"
+      }
+    },
+    {
       "title": "Brown Out: Florida Preps to Play Missouri Without VB3",
       "excerpt": "Vernell Brown III, Florida’s leading receiver, was downgraded to doubtful for Saturday’s 3:30 p.m. ET game at Missouri. Here is what the Gators lose and who steps in.",
       "url": "https://www.gatorbaitmedia.com/post/brown-out-florida-preps-to-play-missouri-without-vb3",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for When it came to finding a quarterback Sumrall trusted Buster and it paid off"
-      }
-    },
-    {
-      "title": "Jayden Woods Added To Chuck Bednarik Award Watch List",
-      "excerpt": "The sophomore JACK’s 19 tackles, six TFLs and four sacks through four games have him in the running for college football’s top defensive honor.",
-      "url": "https://www.gatorbaitmedia.com/post/jayden-woods-added-to-chuck-bednarik-award-watch-list",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-01T10:31:11Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_dc70ea9e65574abebd3b0ace40bd8232~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Jayden Woods Added To Chuck Bednarik Award Watch List"
       }
     }
   ]

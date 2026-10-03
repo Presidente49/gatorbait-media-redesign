@@ -1,0 +1,16 @@
+{
+  "enabled": false,
+  "approvalReference": null,
+  "fulfillmentVerified": false,
+  "supportUrl": null,
+  "offer": {
+    "currency": "USD",
+    "proposedMembershipThreshold": 100,
+    "comparison": "greater_than_or_equal",
+    "thresholdStatus": "proposed interpretation of owner instruction",
+    "membershipMonths": 12,
+    "autoRenew": false,
+    "paymentModel": "voluntary support with included membership benefit",
+    "existingSubscriberPolicy": "reconcile membership before capture"
+  }
+}

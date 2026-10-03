@@ -47,6 +47,9 @@ One game, three modes, **no site edits during the game.**
 4. Post-template Next pill → next opponent (time TBA unless ESPN has it).
 5. Quotes come from the UF transcript (Scott Burns email) when it lands; never invent them.
 6. Stop the score loop. No list email unless Brenden says so for that send.
+7. When Brenden says "postgame mode" (Oct. 3, 23:33Z: "remove trackers, remove game day"): set the band's `__GBM_GAMEDAY__.until` to now, add the `gbm-postgame-hide` style to the band embed (it hides `#gbm-live .fp-tunnel, .fp-board` with CSS, so nothing moves), disable the Game Center set, and remove the "Game Center" nav links from the header and footer.
+
+**Back to pregame for the next game:** delete the `gbm-postgame-hide` style, set new `__GBM_GAMEDAY__` data (kickoff, opponent, `until`), re-enable the Game Center set with the new `EV`, and restore the nav link.
 
 ## Postgame setup right now (Oct. 3, 23:30Z)
 
@@ -54,7 +57,7 @@ One game, three modes, **no site edits during the game.**
 - Pin: Home Code `622d8ece` timed pin → same story until 16:00Z Oct. 4.
 - Second story: "Reality Check" `62dcd9c0` (angle piece). Duplicate game story `ee91ccc6` unpublished.
 - Next pill: vs. South Carolina, Sat., Oct. 10, Time TBA, Gainesville.
-- Off: home tracker `877bdac7`, Chomp `5a7c1f57`, Chant player `513eee8c` (Jarvis).
+- Off: home tracker `877bdac7`, Chomp `5a7c1f57`, Chant player `513eee8c`, Game Center set (Jarvis). Postgame hide style on the band; Game Center nav links removed.
 - Game Center shows the final from ESPN by itself; card `60f89132` (Jarvis) links the story.
 - Open: header NEXT strip still needs PR #121 merged plus a working scoreboard refresh. Walk-up photos still need a Media Manager upload.
 

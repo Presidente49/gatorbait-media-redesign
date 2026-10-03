@@ -144,7 +144,7 @@
     "1",
     "0",
     "0",
-    "1"
+    "2"
    ],
    [
     "Jeramiah McCloud",
@@ -160,7 +160,7 @@
     "0",
     "0",
     "0",
-    "1"
+    "2"
    ],
    [
     "Ben Hanks III",
@@ -328,7 +328,7 @@
  "players": {
   "defensive": [
    {
-    "PD": 1,
+    "PD": 2,
     "SACKS": 0,
     "SOLO": 10,
     "TFL": 1,
@@ -382,7 +382,7 @@
     "name": "Bryce Lovett"
    },
    {
-    "PD": 1,
+    "PD": 2,
     "SACKS": 0,
     "SOLO": 10,
     "TFL": 0,
@@ -475,7 +475,7 @@
     "name": "J'Vari Flowers"
    },
    {
-    "PD": 0,
+    "PD": 1,
     "SACKS": 1,
     "SOLO": 6,
     "TFL": 2,
@@ -549,10 +549,10 @@
    {
     "PD": 0,
     "SACKS": 0,
-    "SOLO": 1,
+    "SOLO": 0,
     "TFL": 0,
-    "TOT": 2,
-    "g": 2,
+    "TOT": 1,
+    "g": 1,
     "name": "Kahleil Jackson"
    },
    {
@@ -576,9 +576,9 @@
    {
     "PD": 0,
     "SACKS": 0,
-    "SOLO": 3,
+    "SOLO": 4,
     "TFL": 0,
-    "TOT": 6,
+    "TOT": 7,
     "g": 3,
     "name": "Kofi Asare"
    },
@@ -1000,7 +1000,7 @@
    "4 games"
   ]
  ],
- "updated": "2026-09-27T20:44:58Z",
- "updatedLabel": "Sept. 27, 2026, 4:44 p.m. ET",
+ "updated": "2026-10-03T14:33:24Z",
+ "updatedLabel": "Oct. 3, 2026, 10:33 a.m. ET",
  "v": 1
 }

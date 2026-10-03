@@ -2,8 +2,11 @@ name: Refresh GatorBait publication feeds
 
 on:
   push:
-    branches: [main]
+    # The PR branch runs only the stats build: push deploy/wix-served/florida-stats.request to
+    # get a free ESPN read and a committed snapshot (this session cannot dispatch workflows).
+    branches: [main, claude/tender-wozniak-rmp60e]
     paths:
+      - 'deploy/wix-served/florida-stats.request'
       - 'automation/update_newsroom_feed.py'
       - 'automation/update_newsroom_feed_routed.py'
       - 'newsroom-preview/editorial-routing.json'
@@ -39,7 +42,7 @@ jobs:
       - name: Refresh Florida football stats from ESPN box scores
         continue-on-error: true
         env:
-          FORCE: ${{ github.event_name == 'workflow_dispatch' && '--force' || '' }}
+          FORCE: ${{ (github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref != 'refs/heads/main')) && '--force' || '' }}
         run: |
           python -m unittest -q automation/tests/test_florida_stats.py
           python automation/florida_stats.py $FORCE
@@ -78,7 +81,7 @@ jobs:
           fi
           # GITHUB_TOKEN commits do not trigger branch-based Pages automatically.
           # Ask the SAME native publisher to publish; no second artifact root.
-          if [ "$CHANGED" = true ] || [ "$EVENT_NAME" = push ]; then
+          if [ "$GITHUB_REF" = refs/heads/main ] && { [ "$CHANGED" = true ] || [ "$EVENT_NAME" = push ]; }; then
             gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"
           else
             echo 'No publication content changed. No deployment requested.'

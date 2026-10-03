@@ -97,7 +97,10 @@ for (const w of widths) {
       await page.waitForTimeout(8000);
       m.mag = await page.evaluate(async () => {
         const r = document.getElementById('gbm-magazine-page'); let espn = null;
-        try { const x = await fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=20261003', { credentials: 'omit', cache: 'no-store' }); espn = 'HTTP ' + x.status; } catch (e) { espn = 'ERR ' + e.message; }
+        espn = {};
+        for (const u of ['https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=20261003', 'https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=20261003', 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708', 'https://cdn.espn.com/core/college-football/scoreboard?xhr=1&groups=8', 'https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856708/competitions/401856708/status', 'https://presidente49.github.io/gatorbait-media-redesign/sports-live/scoreboard.json']) {
+          try { const x = await fetch(u, { credentials: 'omit', cache: 'no-store' }); espn[u.slice(8, 60)] = 'HTTP ' + x.status + ' acao=' + x.headers.get('access-control-allow-origin'); } catch (e) { espn[u.slice(8, 60)] = 'ERR ' + e.message; }
+        }
         return { score: r && r.getAttribute('data-pg-score'), live: r && r.getAttribute('data-mz-live'), ticker: (document.querySelector('.pg-ticker') || {}).textContent || null, espn };
       });
     }

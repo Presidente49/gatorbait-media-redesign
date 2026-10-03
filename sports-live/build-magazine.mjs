@@ -22,7 +22,9 @@ if (!VARIANT) execFileSync('python3', [join(here, 'check-magazine-parity.py')], 
 const read = (p) => readFileSync(join(repo, p), 'utf8');
 
 const css = (read('sports-live/src/magazine.css') + read('sports-live/src/magazine-pregame.css')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
-const runtime = read('sports-live/src/magazine.js') + read('sports-live/src/magazine-pregame.js');
+const runtime = read('sports-live/src/magazine.js') + read('sports-live/src/magazine-feed.js') + read('sports-live/src/magazine-pregame.js');
+// Photo credits the homepage already verified (front-page.config.json), so the live card refresh can credit a new card's photo.
+const credits = JSON.parse(read('sports-live/front-page.config.json')).credits || {};
 const MAX_JS = 180 * 1024;
 
 // Strip editorial meta (notes to the compiler) so the bundle carries only what renders; everything else goes through untouched.
@@ -31,7 +33,7 @@ const strip = (v) => Array.isArray(v) ? v.map(strip) : v && typeof v === 'object
 const issue = strip(JSON.parse(read(VARIANT ? 'sports-live/magazine-issue-' + VARIANT + '.json' : 'sports-live/magazine-issue.json')));
 if (!issue.id || !issue.cover || !issue.cover.url) { console.error('magazine-issue.json needs an id and a cover with a url'); process.exit(1); }
 
-const build = createHash('sha1').update(css + runtime + JSON.stringify(issue)).digest('hex').slice(0, 8);
+const build = createHash('sha1').update(css + runtime + JSON.stringify(issue) + JSON.stringify(credits)).digest('hex').slice(0, 8);
 const banner = `/* GatorBait Magazine 2026: the weekly web issue on /magazine. Issue ${issue.id}, build ${build}.
  * BUILT, MINIFIED FILE: edit sports-live/src/magazine.{css,js} or sports-live/magazine-issue.json, then run:
  * NODE_PATH=<dir with esbuild> node sports-live/build-magazine.mjs
@@ -42,6 +44,7 @@ const js = minify(`(function () {
   var CSS = ${JSON.stringify(css)};
   var ISSUE = ${JSON.stringify(issue)};
   var BUILD = ${JSON.stringify(build)};
+  var CREDITS = ${JSON.stringify(credits)};
 ${runtime}})();
 `, banner);
 

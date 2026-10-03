@@ -153,6 +153,24 @@ Before calling a publishing/email task complete:
 - Mobile layout is checked before send.
 - Repo source/runbook are updated with any new persistent rule.
 
+## Send governor: run it before every list email (Sept. 28, 2026)
+
+On Sept. 28 the Wix Email Marketing account went `WARNED` with rank `BAD`. In the 7 days before, the list got 18 full sends, 10 of them in the 46 hours around the Ole Miss game, each to about 1,810 people. While the account isn't `ACTIVE`, nothing can send, and every `email-marketing/v1/campaigns` call returns 401 "site owner action required". Brenden accepted the terms at about 07:50Z, and the account is `ACTIVE` again. The rank is still `BAD`. See Lesson 48.
+
+**The policy (Brenden, Sept. 28):**
+- **One roundup email a day,** built by the daily roundup routine. Thursday's roundup is the Magazine, and Saturday's is the postgame.
+- **No separate breaking emails.** Breaking news goes to the site and social right away, then leads the next roundup.
+- **Both blog story alerts stay off.**
+- The audience is the cleaned Active Email Audience: 1,273 contacts after the Sept. 28 cleanup.
+
+**Before any list email,** paste `automation/newsletter/send-governor.js` into ExecuteWixAPI with `hasMutations: false`. Send only when it returns `ok: true`. It blocks when:
+- the account `status` isn't `ACTIVE`. Only Brenden can clear it, in the Wix Email Marketing dashboard. No API or agent does this for him;
+- a blog story-alert automation (`wix_blog-new_blog_post`) is `ACTIVE`;
+- there's already 1 list send in the last 24 hours or 7 in the last 7 days, counting scheduled sends. Sends before `COUNT_FROM` don't count toward these limits. The controller sets it; `null` counts every send;
+- the 7-day bounce rate is above 2%, or the complaint rate is above 0.1%. Run "List hygiene" below first.
+
+Going over a limit needs Brenden's explicit yes for that one send. If the governor blocks, hold the email and post its result in #34 for Jarvis. Record the result next to the campaign ID in the day's log.
+
 ## The easy send: band → newsletter (Sept. 27, 2026)
 
 The homepage game-day band (the `/*GD*/` data in `deploy/wix-served/home-gameday.html`, live in embed `96ef5a04`) is the single source for the quick game newsletter.
@@ -180,7 +198,7 @@ When a staff writer (Buddy Martin, Franz Beard, Loren Meadows, Carlton Reese, Ed
 2. **Copy desk:** check names and numbers against editorial-desk.md. Attribute anonymous-source claims ("sources told GatorBait"). No invented quotes or facts. If a core fact can't be sourced at all, hold the story and ask Brenden. That is the only reason to hold.
 3. **Photo:** a credited archive photo of the subject (Chris Spears first; see photos-chris-spears/CREDIT.md and SMUGMUG-GALLERY.md). Never AI art. If no real photo exists, use a type-led GatorBait graphic.
 4. **Front page:** set `featured`. Move the Home Code (622d8ece) BREAKING pin to the new post until the next day at noon ET. Make the story the first button on the band (96ef5a04), labeled "BREAKING: …".
-5. **Breaking email** to the newsletter label e345fa8e. It's short: the red BREAKING bar, the photo, headline, 2–3 sentences, READ button, the All Access CTA, the postal address, and a campaign UTM of breaking_<slug>_<date>. Pass the subject explicitly at publish. Template: newsletter/breaking/2026-09-27-vernell-brown.mjml. This is standing authorization for BREAKING items only. Newsletters, recaps and columns still need Brenden's yes for each send.
+5. **No separate breaking email** (Brenden, Sept. 28). The story leads the next daily roundup instead; see "Send governor" above. The breaking template below is kept for reference. As it was used until Sept. 28, the breaking email was short: the red BREAKING bar, the photo, headline, 2–3 sentences, READ button, the All Access CTA, the postal address, and a campaign UTM of breaking_<slug>_<date>. Pass the subject explicitly at publish. Template: newsletter/breaking/2026-09-27-vernell-brown.mjml. This is standing authorization for BREAKING items only. Newsletters, recaps and columns still need Brenden's yes for each send.
 6. **Social:** once networks are connected in Metricool (brand 6946016, none connected as of Sept. 27), post to Facebook, X, Instagram and Threads right away with the story link. Until then, give Brenden paste-ready Facebook, X and IG copy.
 7. **Verify** the live page, the share card (og:image/title) and email delivery (DISTRIBUTED plus stats). Then tell Brenden in 3 lines: link, what went where, and anything held.
 
@@ -229,4 +247,5 @@ API notes:
 - Post baa858cf: still live, featured, `hasUnpublishedChanges: false`. 211 views, 0 likes. No typos, broken links or credit issues in the body; cover and alt text intact. No official UF/Sumrall update on Brown since the original story — nothing to add as an "Update:" line.
 - The "1 comment" in metrics: re-checked every status (pending/hidden/published/deleted) under both contextId and resourceId — zero rows every time, same as the 1-hour check. Treating this as a stale counter in Wix's own metrics endpoint, not a real comment; not chasing further unless it changes.
 - Breaking email ea362ae3: **could not check.** `email-marketing/v1/campaigns/*` now returns a 401 "Account authorization error - site owner action required" on every call — the same block found during tonight's department-tool audit on an unrelated campaign lookup. Confirmed it's scoped to Email Marketing only (Contacts API calls succeed). This needs Brenden to reconnect/re-approve the Email Marketing app in the Wix dashboard before any campaign stats (this one included) can be pulled again.
+  - **Correction (06:53Z Sept. 28):** the app doesn't need reconnecting. `GET /email-marketing/v1/account-details` shows the account `WARNED`, rank `BAD`. Brenden clears it by accepting the terms in the Wix Email Marketing dashboard. See "Send governor" and Lesson 48.
 - Social: Metricool has no networks connected yet (checked directly — `getBrandSettings` returns the connection-setup link). No action needed.

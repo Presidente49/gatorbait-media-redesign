@@ -478,3 +478,19 @@ Four of the Ole Miss covers came from the same diagonal-plane template, and thre
 **What happened:** Page titles, descriptions and share images for 13 static pages were written through the Item SEO Tags API (`PATCH /promote/seo/v1/item-seo-tags/STATIC_PAGE/{id}`), once with `publish: true` and once without. Both reads and the live pages confirmed the change. A later `POST /site-publisher/v1/site/publish` (made to push a sitewide share-image change) then rolled most of those pages back to their old titles and descriptions — including the Gatorade-domain contact email that had just been fixed. The API's own "saved revision" still held the new values. The rollback also landed page by page over several minutes, so back-to-back live checks disagreed with each other.
 
 **The rule:** Page-level SEO written through the API is not in the Editor's document, and a full-site publish re-renders pages from the Editor's copy. After changing page SEO through the API, don't run a site publish in the same pass. The embed-patch loop publishes the site every time, so after any embed publish, re-apply every page in `docs/PAGE-SEO-2026-09-28.json` (one `PATCH .../item-seo-tags/STATIC_PAGE/{id}` per page with `{itemSeoTags:{tags}, fieldMask:'tags', publish:true}`, fanned out with Promise.allSettled so it fits ExecuteWixAPI's 60-second limit) and verify live a few minutes later, since the rollback lands page by page. The durable fix is to paste the same titles and descriptions into each page's SEO panel in the Wix Editor once, so the Editor's copy matches.
+
+## 48. The email account went WARNED after 18 list-wide sends in a week (Sept. 28, 2026)
+
+**What happened:** From Sept. 22 to 27 the list got 18 full sends, each to about 1,810 people. Ten of them landed in the 46 hours around the Ole Miss game: the pregame emails, two breaking emails, columns, the postgame, the postgame wrap and the Sunday Edition. The account's `rank` had read `BAD` since at least Sept. 23. Campaign stats still read at 23:25Z Sept. 27. By 02:25Z every `email-marketing/v1/campaigns` call returned 401 "Account authorization error - site owner action required", and the 401 was first taken for an app that needed reconnecting. `GET /email-marketing/v1/account-details`, which works in any status, showed `WARNED`. Brenden accepted the terms at about 07:50Z Sept. 28, and the account is `ACTIVE` again. The rank is still `BAD`.
+
+**The rule:**
+- A 401 "site owner action required" from Email Marketing means the account isn't `ACTIVE`. Read `account-details` first, and don't retry.
+- `WARNED` clears only when Brenden accepts the terms in the Wix Email Marketing dashboard. No API does it, and no agent clicks it for him: the acceptance is his statement about how his list was gathered.
+- Brenden's policy since Sept. 28: one roundup email a day, no separate breaking emails, and blog story alerts off.
+- Before every list email, run `automation/newsletter/send-governor.js` through ExecuteWixAPI and send only on `ok: true`. It blocks when:
+  - the account isn't `ACTIVE`;
+  - a story alert is on;
+  - there's already 1 send in the last 24 hours or 7 in the last 7 days, counting scheduled sends and skipping any sent before `COUNT_FROM`;
+  - the week's bounce rate is over 2% or its complaint rate is over 0.1%.
+- Going over a cap takes Brenden's yes for that send.
+- Game weeks are where the volume spikes, because every column, preview and wrap seems to deserve its own email. Put them in the day's roundup instead. Microsoft throttling (see the hygiene pass) points the same way: fewer list-wide sends, not a bigger list.

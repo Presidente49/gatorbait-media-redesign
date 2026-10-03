@@ -27,9 +27,9 @@ var NAV=[['Front Page','/'],['Latest stories','/gatorbait-media-blogs'],['Footba
 function navHtml(){return'<div class="kr-x"><h3>Explore GatorBait</h3><nav class="kr-nav" aria-label="Explore GatorBait">'+NAV.map(function(n){return'<a href="'+n[1]+'"'+(n[2]?' class="'+n[2]+'"':'')+'>'+n[0]+'</a>';}).join('')+'</nav></div>';}
 function run(){
 var here=(location.pathname||'').replace(/\/+$/,''),old=document.getElementById('gbm-kr');
-if(old&&old.getAttribute('data-for')!==here)old.remove();
+if(old&&(old.getAttribute('data-for')!==here||!old.getClientRects().length))old.remove();
 if(!/^\/post\//.test(here)||document.getElementById('gbm-kr'))return;
-var body=document.querySelector('[data-hook=post-description]');if(!body)return;
+var bs=Array.prototype.slice.call(document.querySelectorAll('[data-hook=post-description]')),body=bs.filter(function(x){return x.getClientRects().length;})[0]||bs[0];if(!body)return;
 load().then(function(list){
 if(document.getElementById('gbm-kr')||!document.contains(body))return;
 var picks=list.filter(function(p){return p.u.replace(/\/+$/,'')!==here;}).slice(0,3);if(picks.length<2)picks=[];
@@ -38,7 +38,7 @@ s.innerHTML=(picks.length?'<h2>Keep reading</h2><div class="kr-grid">'+picks.map
 body.parentNode.insertBefore(s,body.nextSibling);
 });
 }
-function sched(){[300,1200,3000].forEach(function(ms){setTimeout(run,ms);});}
+function sched(){[300,1200,3000,6000].forEach(function(ms){setTimeout(run,ms);});}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sched,{once:true});else sched();
 window.addEventListener('popstate',sched);window.addEventListener('gbmroutechange',sched);
 })();</script>

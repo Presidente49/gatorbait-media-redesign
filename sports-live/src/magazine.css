@@ -9,7 +9,7 @@ html.gbm-magazine-live #SITE_CONTAINER,html.gbm-magazine-live #masterPage,html.g
 #gbm-magazine-page.mz26{
   --mz-paper:#f3efe5;--mz-cream:#fffaf0;--mz-ink:#10264b;--mz-ink-2:#42506a;--mz-mute:#526075;--mz-rule:#b5b7b8;--mz-rule-soft:#d9d4c7;
   --mz-blue:#123dc9;--mz-orange:#f15a24;--mz-orange-ink:#a83511;--mz-orange-soft:#ff864d;--mz-shadow:#c9c3b5;
-  --mz-cond:"Barlow Condensed","Barlow",sans-serif;--mz-sans:"Barlow",sans-serif;--mz-pad:16px;
+  --mz-cond:"Barlow Condensed","Barlow",sans-serif;--mz-sans:"Barlow",sans-serif;--mz-mast:"Bebas Neue","Barlow Condensed","Barlow",sans-serif;--mz-pad:16px;
   display:block;position:relative;z-index:3;width:100%;min-width:0;overflow-x:clip;
   background:var(--mz-paper);color:var(--mz-ink);font:16px/1.5 var(--mz-sans);
   padding:0 0 40px;text-size-adjust:100%;-webkit-text-size-adjust:100%

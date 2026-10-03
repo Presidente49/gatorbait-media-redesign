@@ -54,7 +54,7 @@ const homeLoader = read('deploy/wix-served/homepage-embed-cdn.html');
 const shellCss = (homeLoader.match(/<style id="gbm-mobile-shell-critical-v2">[\s\S]*?<\/style>/) || [''])[0];
 const loader = read('deploy/magazine-2026/magazine-loader-v1.html');
 const frame = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>GatorBait Magazine fixture</title>
-<link id="gbm-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap">
+<link id="gbm-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&family=Bebas+Neue&display=swap">
 ${shellCss}
 ${loader}
 <style>body{margin:0;font-family:Arial,sans-serif}#SITE_HEADER,#SITE_FOOTER{padding:18px 16px;background:#eef;color:#123}#SITE_PAGES{padding:24px 16px;min-height:900px}#SITE_PAGES h1{font-family:Georgia,serif}#gbm-footer{padding:32px 16px;background:#08132f;color:#fff;font:600 14px/1.4 "Barlow",sans-serif}</style>

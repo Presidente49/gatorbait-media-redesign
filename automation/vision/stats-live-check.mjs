@@ -44,8 +44,22 @@ for (const prof of PROFILES) {
       await page.evaluate(p => { history.pushState({}, '', p); window.dispatchEvent(new Event('gbmroutechange')); }, route.spa);
       await page.waitForTimeout(5000);
     }
-    // Can a reader's browser on this origin read ESPN directly? (status and CORS header)
-    const espnFromSite = route.name === 'home' ? await page.evaluate(u => fetch(u).then(x => x.status + ' ' + x.headers.get('access-control-allow-origin')).catch(e => 'error ' + e.message), ESPN) : undefined;
+    // Can a reader's browser on this origin read ESPN directly? CDP records the real response even when CORS hides it.
+    let espnFromSite, espnDiag;
+    if (route.name === 'home') {
+      const cdp = await ctx.newCDPSession(page);
+      await cdp.send('Network.enable');
+      const seen = {};
+      cdp.on('Network.responseReceived', e => {
+        if (/espn\.com/.test(e.response.url)) seen[e.response.url] = { status: e.response.status, acao: e.response.headers['access-control-allow-origin'] || e.response.headers['Access-Control-Allow-Origin'] || null, server: e.response.headers.server || e.response.headers.Server || null };
+      });
+      cdp.on('Network.loadingFailed', e => { seen['failed:' + e.requestId] = { error: e.errorText, blocked: e.blockedReason || null, cors: e.corsErrorStatus || null }; });
+      const urls = [ESPN, ESPN.replace('//site.api.', '//site.web.api.'), 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8'];
+      const results = await page.evaluate(us => Promise.all(us.map(u => fetch(u).then(x => x.status + ' ' + x.headers.get('access-control-allow-origin')).catch(e => 'error ' + e.message))), urls);
+      await page.waitForTimeout(1000);
+      espnFromSite = results[0];
+      espnDiag = { results: Object.fromEntries(urls.map((u, i) => [u.split('/')[2] + ' ' + u.split('/').pop(), results[i]])), seen, ua: await page.evaluate(() => navigator.userAgent), brands: await page.evaluate(() => navigator.userAgentData ? navigator.userAgentData.brands.map(b => b.brand).join(',') : null) };
+    }
     const r = await page.evaluate(() => {
       const m = document.getElementById('gbm-stats');
       const row = m && [...m.querySelectorAll('.fs-log tbody tr')].find(t => /Missouri/.test(t.textContent));
@@ -75,7 +89,7 @@ for (const prof of PROFILES) {
     if (route.expectMount && !/Barlow/.test(r.font || '')) bad.push(`font=${r.font}`);
     if (ourErrors.length) bad.push('stats errors');
     if (bad.length) failed++;
-    console.log(JSON.stringify({ route: route.name, profile: prof.name, http, pageMissing, ok: !bad.length, bad, ...r, espnFromSite, reads, pageErrors: errors }));
+    console.log(JSON.stringify({ route: route.name, profile: prof.name, http, pageMissing, ok: !bad.length, bad, ...r, espnFromSite, espnDiag, reads, pageErrors: errors }));
     await ctx.close();
   }
 }

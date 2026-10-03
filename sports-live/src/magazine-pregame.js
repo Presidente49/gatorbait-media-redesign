@@ -246,12 +246,35 @@
     var key = mfCardKey(res.items);
     if (key && key !== L.cards && mfSwap(root.querySelector('#pg-more'), pgCards(D))) L.cards = key;
   }
+  // ESPN scoreboard -> the scoreboard.json shape mfScoreLine reads ({live} in game, {last} when final). null when not started or not found.
+  function mfEspn(G, opp) {
+    var ev = text(G.espnEvent, 20), k = Date.parse(G.kickoffISO || '');
+    if (!/^[0-9]+$/.test(ev) || !isFinite(k)) return Promise.resolve(null);
+    var d = new Date(k - 5 * 3600000), ymd = d.getUTCFullYear() + ('0' + (d.getUTCMonth() + 1)).slice(-2) + ('0' + d.getUTCDate()).slice(-2);
+    var c = typeof AbortController === 'function' ? new AbortController() : null, tm = setTimeout(function () { if (c) c.abort(); }, 4000);
+    return fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=' + ymd, { signal: c ? c.signal : undefined, credentials: 'omit', cache: 'no-store' })
+      .then(function (r) { clearTimeout(tm); if (!r.ok) throw new Error('espn ' + r.status); return r.json(); })
+      .then(function (j) {
+        var e = (j && j.events || []).filter(function (x) { return x && String(x.id) === ev; })[0], cp = e && e.competitions && e.competitions[0];
+        if (!cp || !cp.status || !cp.status.type) return null;
+        var st = cp.status.type, fla = null, oth = null;
+        (cp.competitors || []).forEach(function (x) { var n = num(parseInt(x && x.score, 10)); if (x && x.team && x.team.location === 'Florida') fla = n; else oth = n; });
+        if (fla === null || oth === null) return null;
+        if (st.state === 'in') return { live: { score: { fla: fla, opp: oth }, clock: /HALFTIME/.test(st.name || '') ? 'Half' : text(cp.status.displayClock, 8), period: num(cp.status.period) } };
+        if (st.state === 'post' && st.completed) return { last: { opponent: opp, status: 'final', date: G.kickoffISO, score: { fla: fla, opp: oth } } };
+        return null;
+      });
+  }
   function mfScore(root, base) {
     var G = obj(base.game) || {}, teams = list(G.teams, 2).map(obj), opp = teams[1] ? text(teams[1].name, 40) : '', k = Date.parse(G.kickoffISO || ''), t = Date.now();
     if (!opp || !isFinite(k) || t < k - 1800000 || t > k + 12 * 3600000) return Promise.resolve();
     var c = typeof AbortController === 'function' ? new AbortController() : null, tm = setTimeout(function () { if (c) c.abort(); }, 3000);
-    return fetch('https://presidente49.github.io/gatorbait-media-redesign/sports-live/scoreboard.json?t=' + Math.floor(t / 60000), { signal: c ? c.signal : undefined, credentials: 'omit', cache: 'no-store' })
-      .then(function (r) { clearTimeout(tm); if (!r.ok) throw new Error('scoreboard ' + r.status); return r.json(); })
+    // ESPN's scoreboard first when the issue names the event (the live game), then the repo feed; any failure keeps the baked text.
+    return mfEspn(G, opp).catch(function () { return null; }).then(function (espn) {
+      if (espn) { clearTimeout(tm); return espn; }
+      return fetch('https://presidente49.github.io/gatorbait-media-redesign/sports-live/scoreboard.json?t=' + Math.floor(t / 60000), { signal: c ? c.signal : undefined, credentials: 'omit', cache: 'no-store' })
+        .then(function (r) { clearTimeout(tm); if (!r.ok) throw new Error('scoreboard ' + r.status); return r.json(); });
+    })
       .then(function (raw) {
         var line = mfScoreLine(raw, opp, G.kickoffISO, Date.now());
         if (!root.isConnected || line === (root.getAttribute('data-pg-score') || '')) return;

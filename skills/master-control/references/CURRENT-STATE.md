@@ -1,5 +1,25 @@
 # Master Control Current State
 
+## Oct. 3, ~2:45 a.m. ET: coordination day, game-day desk restored, Chats board, design system status (Jarvis)
+
+### Today's one big thing (Oct. 3)
+Brenden, ~2:30 a.m. ET: "sorry coordinate today just to clean it up." Jarvis reads it as: coordinate the whole team and clean up loose ends. He had just asked "what is your one big thing for today? remember??" Nothing earlier is recorded as a daily "one big thing" (checked: the chat transcript, this file, #34, the Control Room, Wispr notes, Gmail). The only "one big thing" on file is the message board (Sept. 28). **From now on Brenden's one big thing for the day is written on this line first, so it survives a context reset.**
+
+### Found and fixed overnight
+- **The Game-day desk session (`session_01WPrfyiDi3ySUA7EuZTPJVf`) was ARCHIVED at 05:22Z (1:22 a.m. ET) by an unknown actor.** Seven enabled routines target it: the Oct. 3 game-day routine `trig_01VAAJ6y3YXfyjt9oCPrKo1X` (13:50Z), the morning news sweep `trig_01RULitPE99Ch2fcEYhxjSrj`, the tagging sweep, the hourly desk inbox `trig_01TrguYhktGZ29Wbr4Wz62FH`, the Daily Roundup `trig_01JibZfuK6jRddgK16atrrTQ`, and the Monday and Thursday game-week routines. An archived session cannot receive them, so Saturday's kickoff routine would have done nothing. Jarvis unarchived it at about 06:32Z and queued a one-time, read-only readiness ping (`trig_01RmkDjTxbFfVwx7Qt7Bw6cX`, 06:42Z).
+- **Lesson candidate:** a routine whose target session is archived fails silently. Each morning, list the routines with their target sessions and confirm none is ARCHIVED (the Chats board shows this; a watchdog line in the 7:44 a.m. brief would too).
+- **Control Room "Chats" tab** (artifact version 7; previous version `1790724352-332f` is the rollback): one column per department chat with live status from the Claude account, a Jarvis note, what it owns, its next routines and an Open chat button. Department notes live in the hub db doc `config/departments`.
+
+### Authority and holds (Oct. 3)
+- Brenden's words: "unpause" and "lift the pause order" (Control Room, ~2:17 a.m. ET) and "Lift the hold on the staff" (Jarvis chat, ~2 a.m. ET). Jarvis reads these as lifting the Oct. 1 ALL STOP (#34 comment 5938556323) for the Game-day desk's Oct. 3 routines, under the standing protocol (comment 5943370118): fresh live read, rollback snapshot, smallest change, read-back, one writer per object, claims in #34.
+- **Still needs Brenden's explicit yes every time: any list email.** The send governor runs first. The Sunday 6:32 a.m. ET Daily Roundup routine is on HOLD this week (build only, no send, post "@Jarvis — needs Brenden"): the sender rank is still BAD and Brenden said Oct. 2 not to risk it.
+
+### Design system (together repo, merged Oct. 3 at 2:23 a.m. ET, commit `1024d65`)
+- Brand book, tokens (30 colors, 23 Barlow type styles, spacing, layout), 14 `gb-*` components, Barlow 400/500/700/800, wordmark and four photos. Extracted Sept. 28 from `d696498` (the "Paper" front page).
+- **Not wired into this repo.** It predates Swamp Night, and it says "one theme, Paper; dark styling is rejected", which contradicts the live homepage (Front Page 2026, Swamp Night). So it is **not** the homepage rulebook. Do not "restore" Paper from it.
+- Palette drift to settle: story-page embeds use navy `#081b35`/`#12305c`; the system's navy is `#11274a` (deep `#08132f`), orange `#fa4616` matches.
+- Plan: adopt it as the rulebook for NEW embeds only (a docs line and a color/type check), after updating it for Swamp Night. No homepage change without Brenden's yes.
+
 ## Oct. 2, ~9:45 p.m. ET: Missouri week close-out, members, navigation plan, Brenden's queue (Jarvis)
 
 ### Brenden's queue (he adds here; Jarvis takes the next item from the top)

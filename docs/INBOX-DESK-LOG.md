@@ -233,3 +233,17 @@ Brenden relayed that Buddy said his new column hadn't been the front-page lead/c
 **Flagging, not fixing right now:** this embed also shows the homepage still loading its renderer from jsDelivr/GitHub Pages (`cdn.jsdelivr.net/gh/.../sports-live/homepage.js`, driven by a `sports-live/current.json` commit pointer), not the fully-Wix-served architecture `docs/HOMEPAGE-BASELINE-LOCK.md` says was authorized and verified live on Sept. 26 specifically to kill that dependency and the native-shell flash. Another session reintroduced the CDN path this morning to ship the lead-pin feature. Didn't unwind that architecture change in this pass — out of scope for "why isn't Buddy's article the lead," and reverting it blind could break whatever that session built on top of it. Worth the active controller's attention.
 
 **Could not independently re-verify in a real browser** — TinyFish's web-automation wallet is at zero balance, and a plain content fetch only returns pre-JS/cached markup (it showed "Today's Edition" and an older Buddy column, neither of which reflects the pin mechanism either way, pinned or not). Confirmed via API that the new pin value is saved and the site was republished; asked Brenden to hard-refresh and confirm.
+
+## Morning news sweep — Oct. 3, ~12:2xZ
+
+**Known-state check:** 6 posts published in the last 48h, 12 open drafts (none newsworthy-blocking), no email hold change (account-details still not ACTIVE, so the standing email hold stays separate from this sweep's no-email policy).
+
+**Sweep sources (7 fetches):** ESPN CFB team news (team=57), Gators Wire headlines, two TinyFish searches (Dodd Trophy confirmation, WR availability), one fetch of the official Peach Bowl/Dodd Trophy release, one search confirming Florida-at-Missouri game date, one Gmail check for UF press (`from:gators.ufl.edu OR from:floridagators.com newer_than:1d` — empty, no UF releases this window).
+
+**Published:** "Jon Sumrall Named Inaugural Dodd Trophy Coach of the Month" — confirmed via official Peach Bowl/Bobby Dodd Foundation release plus Yahoo, SI, 247Sports, floridagators.com. Draft `c083b32a-f053-4dbb-b68b-182cb669ea93`, live at `/post/jon-sumrall-named-inaugural-dodd-trophy-coach-of-the-month`. **Caught and fixed a self-introduced error** before closing out: first draft said "Florida hosts Missouri next Saturday" — actually an away game at Missouri, today (Oct. 3). Corrected and republished; verified live with a cache-busting fetch.
+
+**Logged, not written up separately:** Vernell Brown III downgraded to doubtful on Florida's Friday availability report for today's Missouri game (Yahoo, 247Sports, On3, Gators Wire, ~9-15 hours old at sweep time). Routine pregame-status news already well covered elsewhere and overtaken by kickoff today; leaving to the gameday routine rather than a standalone post.
+
+**Skipped — no Florida angle or not new:** general CFB analysis/power-rankings/CFP-projection pieces from ESPN's team feed (Peter Burns rankings, betting lines, recruiting-class rankings, Heisman odds) — not GatorBait-specific news.
+
+**Needs Brenden:** nothing this pass.

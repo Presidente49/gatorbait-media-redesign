@@ -21,13 +21,13 @@ function campaign(hoursAgo, stats = {}, state = 'DISTRIBUTED') {
 }
 
 // Builds the governor with a fake `wix` global that answers by URL.
-async function run({ status = 'ACTIVE', campaigns = [], automations = [], countFrom = null } = {}) {
+async function run({ status = 'ACTIVE', rank = 'GOOD', campaigns = [], automations = [], countFrom = null } = {}) {
   const calls = [];
   const wix = {
     request: async ({ method, url }) => {
       calls.push(`${method} ${url}`);
       if (url.includes('/account-details')) {
-        return { data: { accountDetails: { status, rank: 'BAD', quotaPeriod: {} } } };
+        return { data: { accountDetails: { status, rank, quotaPeriod: {} } } };
       }
       if (url.includes('/automations/query')) return { data: { automations } };
       if (url.includes('/campaigns?')) return { data: { campaigns } };
@@ -103,4 +103,18 @@ test('blocks on bounce or complaint rates above the playbook limits', async () =
 
   const complaints = await run({ campaigns: [campaign(50, { delivered: 1000, complained: 2 })] });
   assert.match(complaints.result.reasons.join(' '), /complaint rate 0\.20%/);
+});
+
+test('probation: a BAD sender rank lowers the week cap to 3', async () => {
+  const two = await run({ rank: 'BAD', campaigns: [30, 60].map(h => campaign(h)) });
+  assert.equal(two.result.ok, true, two.result.reasons.join('; '));
+  assert.equal(two.result.probation, true);
+
+  const three = await run({ rank: 'BAD', campaigns: [30, 60, 90].map(h => campaign(h)) });
+  assert.equal(three.result.ok, false);
+  assert.match(three.result.reasons.join(' '), /3 list send\(s\) in the last 7 days; the cap is 3 while the sender rank is BAD \(probation\)/);
+
+  const good = await run({ rank: 'GOOD', campaigns: [30, 60, 90].map(h => campaign(h)) });
+  assert.equal(good.result.ok, true, good.result.reasons.join('; '));
+  assert.equal(good.result.probation, false);
 });

@@ -1,0 +1,33 @@
+<style id="gbm-chomp-css">
+#gbm-chomp{position:relative;margin:14px 0 0;background:#06142a;border-radius:10px;padding:16px 18px 16px;color:#fff;border-top:3px solid #ff9a6b;font-family:Barlow,Arial,sans-serif}
+#gbm-chomp .cm-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:4px}
+#gbm-chomp .cm-label{font:800 11px/1 Barlow,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#ff9a6b}
+#gbm-chomp .cm-sub{font:600 11px/1 Barlow,sans-serif;color:#7e8ba6;letter-spacing:.04em}
+#gbm-chomp .cm-bar-wrap{position:relative;height:40px;margin-bottom:6px}
+#gbm-chomp .cm-bar{position:relative;height:30px;border-radius:15px;overflow:hidden;background:#1b3a63;box-shadow:inset 0 2px 6px rgba(0,0,0,.35)}
+#gbm-chomp .cm-fill{position:absolute;top:0;left:0;height:100%;background:linear-gradient(90deg,#fa4616,#ff8a4c);transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+#gbm-chomp .cm-bite{position:absolute;top:0;bottom:0;width:18px;margin-left:-9px;transition:left 1.2s cubic-bezier(.4,0,.2,1)}
+#gbm-chomp .cm-pct-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:2px}
+#gbm-chomp .cm-pct{font:900 30px/1 Barlow,sans-serif;letter-spacing:-.01em}
+#gbm-chomp .cm-pct-team{font:800 12px/1.2 Barlow,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#ffb347}
+#gbm-chomp .cm-teams{display:flex;justify-content:space-between;font:700 11px/1 Barlow,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8ea0c2;margin-top:8px}
+#gbm-chomp .cm-teams .lead{color:#fff}
+@media(max-width:600px){#gbm-chomp .cm-pct{font-size:26px}}
+</style>
+<script id="gbm-chomp-v1">(function(){
+if(window.__GBM_CHOMP_MOUNT__)return;window.__GBM_CHOMP_MOUNT__=1;
+function own(){return(location.pathname||'/').replace(/\/+$/,'')===''||location.pathname==='/';}
+window.__GBM_CHOMP__=window.__GBM_CHOMP__||{pct:70.1,leader:'away',awayShort:'FLORIDA',awayName:'Florida',awayRank:8,homeShort:'MISSOURI',homeName:'Missouri',homeRank:25,live:false,until:'2026-10-05T04:00:00Z'};
+function e(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function html(){if(!own())return'';var g=window.__GBM_CHOMP__;if(!g||Date.now()>Date.parse(g.until))return'';
+var pct=Math.max(2,Math.min(98,g.pct));
+var leadName=g.leader==='away'?g.awayShort:g.homeShort;
+return '<div id="gbm-chomp"><div class="cm-head"><span class="cm-label">⚡ The Chomp Meter</span><span class="cm-sub">'+(g.live?'Live win probability':'Pregame projection')+' &middot; ESPN</span></div><div class="cm-bar-wrap"><div class="cm-bar"><div class="cm-fill" style="width:'+pct+'%"></div></div><svg class="cm-bite" style="left:'+pct+'%" viewBox="0 0 18 40" preserveAspectRatio="none"><polygon points="0,0 18,0 18,6 12,12 18,18 12,24 18,30 12,36 18,40 0,40" fill="#06142a"/></svg></div><div class="cm-pct-row"><span class="cm-pct">'+Math.round(pct)+'%</span><span class="cm-pct-team">'+e(leadName)+'</span></div><div class="cm-teams"><span class="'+(g.leader==='away'?'lead':'')+'">No. '+e(g.awayRank)+' '+e(g.awayName)+'</span><span class="'+(g.leader==='home'?'lead':'')+'">No. '+e(g.homeRank)+' '+e(g.homeName)+'</span></div></div>';
+}
+function mount(){var host=document.getElementById('gbm-gd');if(!host||document.getElementById('gbm-chomp'))return;var h=html();if(!h)return;var div=document.createElement('div');div.innerHTML=h;host.insertAdjacentElement('afterend',div.firstChild);}
+function sync(){if(!own())return;var el=document.getElementById('gbm-chomp');var h=html();if(!h){if(el)el.remove();return;}if(!el){mount();return;}var g=window.__GBM_CHOMP__,pct=Math.max(2,Math.min(98,g.pct));var f=el.querySelector('.cm-fill'),b=el.querySelector('.cm-bite'),p=el.querySelector('.cm-pct'),t=el.querySelector('.cm-pct-team'),s=el.querySelector('.cm-sub');if(f)f.style.width=pct+'%';if(b)b.style.left=pct+'%';if(p)p.textContent=Math.round(pct)+'%';if(t)t.textContent=g.leader==='away'?g.awayShort:g.homeShort;if(s)s.textContent=(g.live?'Live win probability':'Pregame projection')+' · ESPN';}
+new MutationObserver(sync).observe(document.body,{childList:true,subtree:true});
+setInterval(sync,3000);
+sync();
+window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

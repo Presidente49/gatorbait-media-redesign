@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{width:900px;padding:50px;background:#eef1f6;font-family:Arial,sans-serif}
+#gbm-chomp{position:relative;background:#081b35;border-radius:12px;padding:22px 26px 22px;color:#fff;width:620px}
+#gbm-chomp .cm-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px}
+#gbm-chomp .cm-label{font:800 11px/1 Barlow,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#ff9a6b}
+#gbm-chomp .cm-sub{font:600 11px/1 Barlow,Arial,sans-serif;color:#7e8ba6;letter-spacing:.04em}
+#gbm-chomp .cm-bar-wrap{position:relative;height:54px;margin-bottom:6px}
+#gbm-chomp .cm-bar{position:relative;height:38px;border-radius:19px;overflow:hidden;background:#1b3a63;box-shadow:inset 0 2px 6px rgba(0,0,0,.35)}
+#gbm-chomp .cm-fill{position:absolute;top:0;left:0;height:100%;background:linear-gradient(90deg,#fa4616,#ff8a4c);transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+#gbm-chomp .cm-bite{position:absolute;top:0;bottom:0;width:22px;margin-left:-11px;transition:left 1.2s cubic-bezier(.4,0,.2,1);filter:drop-shadow(0 0 2px rgba(0,0,0,.4))}
+#gbm-chomp .cm-pct-row{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:2px}
+#gbm-chomp .cm-pct{font:900 42px/1 Barlow,Arial,sans-serif;letter-spacing:-.01em}
+#gbm-chomp .cm-pct-team{font:800 13px/1.2 Barlow,Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#ffb347}
+#gbm-chomp .cm-teams{display:flex;justify-content:space-between;font:700 12px/1 Barlow,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#8ea0c2;margin-top:8px}
+#gbm-chomp .cm-teams .lead{color:#fff}
+</style></head><body>
+
+<div id="gbm-chomp">
+  <div class="cm-head">
+    <span class="cm-label">The Chomp Meter</span>
+    <span class="cm-sub">Live win probability · ESPN</span>
+  </div>
+  <div class="cm-bar-wrap">
+    <div class="cm-bar">
+      <div class="cm-fill" style="width:70%"></div>
+    </div>
+    <svg class="cm-bite" style="left:70%" viewBox="0 0 22 54" preserveAspectRatio="none">
+      <polygon points="0,0 22,0 22,8 15,16 22,24 15,32 22,40 15,48 22,54 0,54" fill="#081b35"/>
+    </svg>
+  </div>
+  <div class="cm-pct-row">
+    <span class="cm-pct">70%</span>
+    <span class="cm-pct-team">FLORIDA</span>
+  </div>
+  <div class="cm-teams">
+    <span class="lead">No. 8 Florida</span>
+    <span>No. 25 Missouri</span>
+  </div>
+</div>
+
+</body></html>

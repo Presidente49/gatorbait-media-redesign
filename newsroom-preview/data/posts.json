@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Wizards Have Spoken, And These 2026 Florida Gators  Suddenly Somebody",
+      "excerpt": "Hey! No resting on your laurels, Scott Stricklin National championship. Shhhhh! Say it slowly. Then go lie down. By Buddy Martin Somewhere in Gainesville there’s a whistle with teeth marks in it. It belongs to Jon Sumrall, and it’s the only thing in Florida football that has taken a beating lately. Think back to where we were a month ago. If you’d said in…",
+      "url": "https://www.gatorbaitmedia.com/post/the-wizards-have-spoken-and-these-2026-florida-gators-suddenly-somebody",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-03T04:34:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_252aaaab6d0345418c1f59dc860889f2~mv2.avif/v1/fit/w_576,h_864,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Wizards Have Spoken, And These 2026 Florida Gators  Suddenly Somebody"
+      }
+    },
+    {
+      "title": "Something’s Got to Give",
+      "excerpt": "Florida wants to run behind Jadan Baugh. Missouri allows about 100 rushing yards a game. Eddie Gilley on which unit gives first in Columbia.",
+      "url": "https://www.gatorbaitmedia.com/post/something-s-got-to-give",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-10-03T02:54:42Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Something’s Got to Give"
+      }
+    },
+    {
       "title": "Denzel Aberdeen is back home where he belongs",
       "excerpt": "A judge cleared Denzel Aberdeen for a fifth year, and the guard who left after Florida's 2025 title is back in Gainesville chasing another championship and his degree.",
       "url": "https://www.gatorbaitmedia.com/post/denzel-aberdeen-back-home-where-he-belongs",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Thoughts of the Day: September 29, 2026"
-      }
-    },
-    {
-      "title": "Senate Passes Protect College Sports Act 77–22",
-      "excerpt": "The Senate passed the Protect College Sports Act 77–22 Monday night. What the proposal could mean for Florida, and why it is not law yet.",
-      "url": "https://www.gatorbaitmedia.com/post/senate-passes-protect-college-sports-act-florida",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-29T11:31:17Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_92f9918e12f941e3a9621a000db7c07d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Senate Passes Protect College Sports Act 77–22"
-      }
-    },
-    {
-      "title": "Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",
-      "excerpt": "Jon Sumrall wants Gator Nation to put down the poll: Florida has lost three of its last four trips to Columbia, and the coach with the raspy voice is making his team pay the toll on \"Bloody Tuesday.\"",
-      "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-28T23:24:43Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'"
       }
     }
   ]

@@ -42,7 +42,7 @@
   "opponentRank": 25,
   "opponentRecord": "3-1",
   "home": false,
-  "kickoffIso": "2026-10-03T19:30:00Z",
+  "kickoffIso": "2026-10-03T19:50:00Z",
   "tv": "ABC",
   "venue": "Memorial Stadium",
   "previewUrl": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"
@@ -106,7 +106,7 @@
   },
   {
    "eventId": "401856708",
-   "date": "2026-10-03T19:30:00Z",
+   "date": "2026-10-03T19:50:00Z",
    "opponent": "Missouri",
    "opponentRank": 25,
    "home": false,

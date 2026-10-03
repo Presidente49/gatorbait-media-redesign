@@ -162,6 +162,46 @@ class EmbedTests(unittest.TestCase):
             self.assertTrue(h.read_text().startswith('<!-- GBM_FLORIDA_STATS_V1'))
 
 
+class LiveFeedTests(unittest.TestCase):
+    def live_schedule(self):
+        sch = load('schedule-2.json')
+        comp = sch['events'][2]['competitions'][0]
+        comp['status']['type'].update({'state': 'in', 'completed': False, 'shortDetail': '5:21 - 3rd'})
+        for c, pts in zip(comp['competitors'], ('24', '21')):
+            c['score'] = {'value': float(pts), 'displayValue': pts}
+        return sch
+
+    def test_live_status_drops_the_clock(self):
+        self.assertEqual(fs.live_status('5:21 - 3rd'), '3rd quarter')
+        self.assertEqual(fs.live_status('Halftime'), 'Halftime')
+        self.assertEqual(fs.live_status('0:00 - End of 2nd'), 'End of 2nd')
+        self.assertEqual(fs.live_status('1:02 - OT'), 'OT')
+
+    def test_in_progress_game_shows_live_score_but_not_in_totals(self):
+        s = build(schedule=self.live_schedule())
+        g = s['games'][2]
+        self.assertEqual((g.get('live'), g.get('s'), g.get('st')), (1, '24-21', '3rd quarter'))
+        self.assertNotIn('r', g)
+        self.assertEqual(s['record'], '1-1')  # totals still count finals only
+        self.assertNotIn('live', s['games'][0])
+
+    def test_cli_feed_only_writes_compact_feed_and_no_embed(self):
+        with tempfile.TemporaryDirectory() as t:
+            j, h, f = pathlib.Path(t, 'full.json'), pathlib.Path(t, 's.html'), pathlib.Path(t, 'live/feed.json')
+            args = ['--from-dir', str(FIX), '--season', '2026', '--out-json', str(j), '--out-html', str(h),
+                    '--feed', str(f), '--no-embed']
+            self.assertEqual(fs.main(args), 0)
+            self.assertFalse(h.exists())
+            feed = json.loads(f.read_text())
+            self.assertEqual(feed['record'], '1-1')
+            self.assertNotIn('players', feed)
+            self.assertEqual(feed['src'][0][0], 'ESPN box scores')
+            self.assertEqual(feed['updated'], json.loads(j.read_text())['updated'])
+            before = f.stat().st_mtime_ns
+            self.assertEqual(fs.main(args), 0)  # unchanged numbers: same file, same time
+            self.assertEqual(f.stat().st_mtime_ns, before)
+
+
 class DueTests(unittest.TestCase):
     def setUp(self):
         self.prev = dict(build(), updated='2026-09-12T20:00:00Z')

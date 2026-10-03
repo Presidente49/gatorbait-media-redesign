@@ -15,6 +15,8 @@ Usage:
   python automation/florida_stats.py --force       # refetch schedule and every final now
   python automation/florida_stats.py --from-dir D  # build from saved ESPN JSON (tests, offline review)
   python automation/florida_stats.py --build-only  # rebuild the embed from the committed snapshot
+  python automation/florida_stats.py --no-embed --out-json sports-live/florida-stats-full.json \
+      --feed sports-live/florida-stats.json      # the 5-minute GitHub Actions job: the page reads the feed live
 """
 import argparse, datetime as dt, json, pathlib, re, sys, time, urllib.request
 from zoneinfo import ZoneInfo
@@ -366,6 +368,13 @@ def ap_time(d):
     return 'Noon' if (d.hour, d.minute) == (12, 0) else f'{h}{m} {"a.m." if d.hour < 12 else "p.m."}'
 
 
+def live_status(detail):
+    """ESPN '5:21 - 3rd' -> '3rd quarter'; 'Halftime' and 'End of 2nd' pass through.
+    Dropping the clock means the feed changes on scores and quarters, not every tick."""
+    part = re.sub(r'^\s*\d{1,2}:\d{2}\s*-\s*', '', detail or '').strip()
+    return f'{part} quarter' if part in ('1st', '2nd', '3rd', '4th') else part
+
+
 def opp_label(g):
     pre = {'h': 'vs.', 'a': 'at', 'n': 'vs.'}[g['ha']]
     return f"{pre} {'No. ' + str(g['rk']) + ' ' if g['rk'] else ''}{g['opp']}"
@@ -396,6 +405,8 @@ def build_snapshot(season, events, boxes_by_id, schedule_team):
             row.update({'r': 'W' if win else 'L', 's': f"{g['us']}-{g['them']}", 'rec': f'{run[0]}-{run[1]}'})
         else:
             row.update({'t': ap_time(d) if g['timeValid'] else 'TBA', 'tv': g['tv']})
+            if g['state'] == 'in' and g['us'] is not None and g['them'] is not None:
+                row.update({'live': 1, 's': f"{g['us']}-{g['them']}", 'st': live_status(g['detail'])})
         log.append(row)
     data = {'v': SCHEMA, 'season': season, 'team': 'Florida', 'games': log, 'finals': [g['id'] for g in finals]}
     if finals:
@@ -490,6 +501,8 @@ def main(argv=None):
     ap.add_argument('--build-only', action='store_true')
     ap.add_argument('--out-json', default=str(OUT_JSON))
     ap.add_argument('--out-html', default=str(OUT_HTML))
+    ap.add_argument('--feed', help='also write the embed data as compact JSON here (served by GitHub Pages)')
+    ap.add_argument('--no-embed', action='store_true', help='skip the Wix embed HTML (the feed job needs no template)')
     a = ap.parse_args(argv)
     now = dt.datetime.now(dt.timezone.utc)
     out_json, out_html = pathlib.Path(a.out_json), pathlib.Path(a.out_html)
@@ -530,19 +543,28 @@ def main(argv=None):
             boxes[g['id']] = parse_summary(src.summary(g['id']), g['id'])
         data = build_snapshot(season, list(events.values()), boxes, team)
         snap, changed = stamp(data, prev)
-        html = build_embed(snap)
+        html = None if a.no_embed else build_embed(snap)
     except StatsError as e:
         print(f'florida-stats: {reason}: kept last snapshot: {e}', file=sys.stderr)
         return 2
     new_finals = sorted(set(snap['finals']) - prev_finals)
-    if changed or not out_html.exists() or out_html.read_text() != html:
+    if changed or not out_json.exists():
         out_json.parent.mkdir(parents=True, exist_ok=True)
-        out_html.parent.mkdir(parents=True, exist_ok=True)
         out_json.write_text(json.dumps(snap, ensure_ascii=False, indent=1, sort_keys=True) + '\n')
+    if html is not None and (changed or not out_html.exists() or out_html.read_text() != html):
+        out_html.parent.mkdir(parents=True, exist_ok=True)
         out_html.write_text(html)
-    print(json.dumps({'reason': reason, 'changed': changed, 'finals': len(snap['finals']), 'newFinals': new_finals,
-                      'record': snap.get('record'), 'embed': len(html), 'fp': fingerprint(html),
-                      'shellFp': shell_fingerprint(html)}))
+    if a.feed:
+        feed = pathlib.Path(a.feed)
+        blob = json.dumps(embed_data(snap), ensure_ascii=False, separators=(',', ':'), sort_keys=True) + '\n'
+        if not feed.exists() or feed.read_text() != blob:
+            feed.parent.mkdir(parents=True, exist_ok=True)
+            feed.write_text(blob)
+    report = {'reason': reason, 'changed': changed, 'finals': len(snap['finals']), 'newFinals': new_finals,
+              'record': snap.get('record')}
+    if html is not None:
+        report.update({'embed': len(html), 'fp': fingerprint(html), 'shellFp': shell_fingerprint(html)})
+    print(json.dumps(report))
     return 0
 
 

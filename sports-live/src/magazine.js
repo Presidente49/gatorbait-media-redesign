@@ -31,10 +31,10 @@
    * An image is {id, ext, width, height, alt, credit} (id = Wix media id without ~mv2) or a full static.wixstatic.com URL.
    * Every cut asks Wix to fit the photo in a box of its own ratio and pick the encoding (enc_auto). */
   function media(img) {
-    if (typeof img === 'string') { var m = /^https:\/\/static\.wixstatic\.com\/media\/([0-9a-f]+_[0-9a-f]{32}~mv2\.(?:jpe?g|png|webp))(?:[\/?#].*)?$/i.exec(img); return m ? m[1] : ''; }
+    if (typeof img === 'string') { var m = /^https:\/\/static\.wixstatic\.com\/media\/([0-9a-f]+_[0-9a-f]{32}~mv2\.(?:jpe?g|png|webp|avif))(?:[\/?#].*)?$/i.exec(img); return m ? m[1] : ''; }
     var o = obj(img); if (!o) return '';
     var id = text(o.id, 80), ext = (text(o.ext, 5) || 'jpg').toLowerCase();
-    return /^[0-9a-f]+_[0-9a-f]{32}$/.test(id) && /^(jpe?g|png|webp)$/.test(ext) ? id + '~mv2.' + ext : '';
+    return /^[0-9a-f]+_[0-9a-f]{32}$/.test(id) && /^(jpe?g|png|webp|avif)$/.test(ext) ? id + '~mv2.' + ext : '';
   }
   function cut(file, w, h) { return MEDIA + file + '/v1/fit/w_' + w + ',h_' + h + ',al_c,q_80,enc_auto/gatorbait.jpg'; }
   function picture(img, o) {

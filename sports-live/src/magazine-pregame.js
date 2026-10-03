@@ -11,7 +11,8 @@
   }
   function pgTick(root) {
     var iso = root.getAttribute('data-kickoff');
-    root.querySelectorAll('[data-pg-count]').forEach(function (el) { el.textContent = pgCount(iso); });
+    var sc = root.getAttribute('data-pg-score') || '';
+    root.querySelectorAll('[data-pg-count]').forEach(function (el) { el.textContent = sc || pgCount(iso); });
   }
   function pgPrintInit(root) {
     if (root.__pgPrint) return; root.__pgPrint = 1;
@@ -24,8 +25,9 @@
   }
   function pgStart(root) {
     pgPrintInit(root); pgStop(); pgTick(root); pgTimer = setInterval(function () { if (!root.isConnected) { pgStop(); return; } pgTick(root); }, 30000);
+    mfLiveStart(root);
   }
-  function pgStop() { if (pgTimer) { clearInterval(pgTimer); pgTimer = null; } }
+  function pgStop() { if (pgTimer) { clearInterval(pgTimer); pgTimer = null; } mfLiveStop(); }
   function fx(n, d) { return typeof n === 'number' && isFinite(n) ? n.toFixed(d == null ? 1 : d) : ''; }
   function pgHeadSec(id, label, note) { return label ? '<div class="pg-sh"><h2 id="' + id + '-t">' + esc(label) + '</h2>' + (note ? '<p>' + esc(note) + '</p>' : '') + '</div>' : ''; }
   function pgSrc(s) { s = text(s, 160); return s ? '<p class="pg-src">' + esc(s) + '</p>' : ''; }
@@ -36,22 +38,22 @@
   }
   function pgMast(D) {
     var I = obj(D.issue) || {};
-    return '<header class="pg-mast"><div class="pg-mast-top"><span>' + esc(text(I.tagline, 120)) + '</span><span>' + esc(text(I.date, 60)) + '</span></div>' +
-      '<svg class="pg-wm" viewBox="0 0 1000 246" role="img" aria-label="GatorBait Magazine" preserveAspectRatio="xMinYMin meet" focusable="false">' +
-      '<text class="pg-wm-g" x="6" y="238" textLength="994" lengthAdjust="spacing">MAGAZINE</text>' +
-      '<text class="pg-wm-o" x="0" y="232" textLength="994" lengthAdjust="spacing">MAGAZINE</text>' +
-      '<text class="pg-wm-a" x="0" y="168" textLength="520" lengthAdjust="spacingAndGlyphs">GATOR</text>' +
-      '<text class="pg-wm-b" x="540" y="168" textLength="460" lengthAdjust="spacingAndGlyphs">BAIT</text></svg>' +
+    return '<header class="pg-mast"><div class="pg-mast-top"><a class="pg-home" href="/">' + esc(text(I.tagline, 120) || 'GatorBait Media') + '</a><span>' + esc(text(I.date, 60)) + '</span></div>' +
+      '<div class="pg-plate"><img class="pg-logo" src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp/v1/fill/w_900,h_241,al_c,q_90,enc_auto/gatorbait.webp" width="900" height="241" alt="GatorBait" decoding="async"><span class="pg-plate-mz">Magazine</span></div>' +
       '<p class="pg-issue"><b>' + esc(text(I.number, 60)) + '</b><span>' + esc(text(I.week, 120)) + '</span></p><button type="button" class="pg-print" data-pg-print>Print the whole magazine</button></header>';
+  }
+  function pgCoverHref(D) {
+    var C = obj(D.cover) || {}, L = obj(D.lead) || {}, cu = safeUrl(C.url), lu = safeUrl(L.url);
+    return !cu || !lu || cu === lu ? '#pg-lead' : cu;
   }
   function pgCover(D) {
     var C = obj(D.cover); if (!C) return '';
     var hl = text(C.headline, 200); if (!hl) return '';
-    var fig = frame(C.image, { eager: true, main: 1600, sizes: '(max-width: 900px) 100vw, 62vw' });
-    return '<section class="pg-cover" id="pg-cover" aria-labelledby="pg-cover-h">' + (fig ? '<a class="pg-cover-fig" href="#pg-lead" tabindex="-1" aria-hidden="true">' + fig + '</a>' : '') +
-      '<div class="pg-cover-type">' + (text(C.kicker, 80) ? '<span class="pg-kick">' + esc(text(C.kicker, 80)) + '</span>' : '') + '<h1 id="pg-cover-h"><a href="#pg-lead">' + esc(hl) + '</a></h1>' +
+    var fig = frame(C.image, { eager: true, main: 1600, sizes: '(max-width: 900px) 100vw, 62vw' }), go = esc(pgCoverHref(D));
+    return '<section class="pg-cover" id="pg-cover" aria-labelledby="pg-cover-h">' + (fig ? '<a class="pg-cover-fig" href="' + go + '" tabindex="-1" aria-hidden="true">' + fig + '</a>' : '') +
+      '<div class="pg-cover-type">' + (text(C.kicker, 80) ? '<span class="pg-kick">' + esc(text(C.kicker, 80)) + '</span>' : '') + '<h1 id="pg-cover-h"><a href="' + go + '">' + esc(hl) + '</a></h1>' +
       (text(C.dek, 600) ? '<p class="pg-dek">' + esc(text(C.dek, 600)) + '</p>' : '') + (text(C.byline, 80) ? '<p class="pg-by">' + esc(text(C.byline, 80)) + '</p>' : '') +
-      '<a class="pg-btn" href="#pg-lead">Read the column</a></div>' + (fig && C.image && text(C.image.credit, 160) ? '<p class="pg-cr">' + esc(text(C.image.credit, 160)) + '</p>' : '') + '</section>';
+      '<a class="pg-btn" href="' + go + '">Read the column</a></div>' + (fig && C.image && text(C.image.credit, 160) ? '<p class="pg-cr">' + esc(text(C.image.credit, 160)) + '</p>' : '') + '</section>';
   }
   function pgGame(D) {
     var G = obj(D.game); if (!G) return '';
@@ -132,7 +134,7 @@
     var url = safeUrl(L.url), fig = frame(L.image, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' });
     // html is trusted issue copy built from the canonical post (links already site-relative); keep only the tags the post uses.
     var clean = String(L.html).replace(/<(?!\/?(?:p|a|strong|em|blockquote|h3)\b)[^>]*>/gi, '').replace(/<a\b(?![^>]*href="\/)[^>]*>/gi, '<a>');
-    return '<article class="pg-lead" id="pg-lead" aria-labelledby="pg-lead-h"><header><span class="pg-kick">' + esc(text(L.label, 40)) + ' · ' + esc(text(L.kicker, 80)) + '</span><h2 id="pg-lead-h">' + esc(text(L.title, 200)) + '</h2><p class="pg-by">By Franz Beard · ' + esc(text(L.date, 40)) + '</p></header>' +
+    return '<article class="pg-lead" id="pg-lead" aria-labelledby="pg-lead-h"><header><span class="pg-kick">' + esc(text(L.label, 40)) + ' · ' + esc(text(L.kicker, 80)) + '</span><h2 id="pg-lead-h">' + esc(text(L.title, 200)) + '</h2><p class="pg-by">By ' + esc(text(L.author, 60) || 'Franz Beard') + ' · ' + esc(text(L.date, 40)) + '</p></header>' +
       (fig ? '<figure class="pg-fig">' + fig + '<figcaption>' + esc(text(L.caption, 200)) + (L.image && text(L.image.credit, 160) ? ' <span>' + esc(text(L.image.credit, 160)) + '</span>' : '') + '</figcaption></figure>' : '') +
       '<div class="pg-prose">' + clean + '</div>' + (url ? '<a class="pg-btn" href="' + esc(url) + '">' + esc(text(L.continue, 160)) + '</a>' : '') + '</article>';
   }
@@ -145,12 +147,13 @@
         '<p class="pg-gl"><span>' + esc(text(g.line, 20)) + '</span><span>O/U ' + fx(num(g.ou)) + '</span></p><p class="pg-pick"><small>Soothsayer picks</small><b>' + esc(text(g.pick, 40)) + '</b>' + (text(g.note, 40) ? '<em>' + esc(text(g.note, 40)) + '</em>' : '') + '</p></article>';
     }).join('') + '</div>' + pgSrc(S.source) + '</section>';
   }
+  function pgCard(c) {
+    return '<a class="pg-card" href="' + esc(safeUrl(c.url)) + '">' + frame(c.image, { main: 800, sizes: '(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 33vw' }) + '<span class="pg-kick">' + esc(text(c.kicker, 80)) + (text(c.date, 20) ? ' · ' + esc(text(c.date, 20)) : '') + '</span><h3>' + esc(text(c.title, 200)) + '</h3><p>' + esc(text(c.excerpt, 300)) + '</p>' + (c.image && text(c.image.credit, 160) ? '<small class="pg-cr">' + esc(text(c.image.credit, 160)) + '</small>' : '') + '<span class="pg-more">Read</span></a>';
+  }
   function pgCards(D) {
     var C = obj(D.cards), items = C ? list(C.items, 9).map(obj).filter(function (c) { return c && safeUrl(c.url) && text(c.title, 200); }) : [];
     if (!items.length) return '';
-    return '<section class="pg-cards" id="pg-more" aria-labelledby="pg-more-t">' + pgHeadSec('pg-more', text(C.label, 40)) + '<div class="pg-cgrid">' + items.map(function (c) {
-      return '<a class="pg-card" href="' + esc(safeUrl(c.url)) + '">' + frame(c.image, { main: 800, sizes: '(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 33vw' }) + '<span class="pg-kick">' + esc(text(c.kicker, 80)) + (text(c.date, 20) ? ' · ' + esc(text(c.date, 20)) : '') + '</span><h3>' + esc(text(c.title, 200)) + '</h3><p>' + esc(text(c.excerpt, 300)) + '</p>' + (c.image && text(c.image.credit, 160) ? '<small class="pg-cr">' + esc(text(c.image.credit, 160)) + '</small>' : '') + '<span class="pg-more">Read</span></a>';
-    }).join('') + '</div></section>';
+    return '<section class="pg-cards" id="pg-more" aria-labelledby="pg-more-t">' + pgHeadSec('pg-more', text(C.label, 40)) + '<div class="pg-cgrid">' + items.map(pgCard).join('') + '</div></section>';
   }
   function pgShots(D) {
     var B = obj(D.shots), photos = B ? list(B.photos, 8).map(obj).filter(function (p) { return p && media(p); }) : [], url = B ? safeUrl(B.url) : '';
@@ -166,4 +169,94 @@
   }
   function renderPregame(D) {
     return '<div class="pg-wrap">' + pgTop(D) + pgMast(D) + pgCover(D) + '<div class="pg-grid">' + pgGame(D) + pgSeries(D) + '</div>' + pgWatch(D) + pgTape(D) + pgKeys(D) + pgInjuries(D) + pgRosters(D) + pgLead(D) + pgSlate(D) + pgCards(D) + pgShots(D) + pgFoot(D) + '</div>';
+  }
+
+  /* ================= Live refresh (pregame layout) =================
+   * On mount and every 60 s while the tab is visible: read /blog-feed.xml (same origin, no credentials, no-store), run the
+   * shared picker (src/magazine-feed.js, the same rules as sports-live/refresh-magazine-feed.mjs) against the baked issue, and
+   * swap the lead column and the card band in place when the story changed. A block the reader can see is never swapped (it
+   * waits for the next cycle); a block above the viewport is swapped with the scroll held on what the reader is looking at.
+   * Inside the game window the scoreboard (sports-live/scoreboard.json, the feed the homepage reads) puts the live score in the
+   * countdown slots, text only. Any failure keeps the baked issue. State lives on the root, never in late-initialised vars. */
+  function mfLiveStop() {
+    var r = document.getElementById('gbm-magazine-page'), L = r && r.__mfLive;
+    if (!L) return;
+    clearInterval(L.timer); document.removeEventListener('visibilitychange', L.vis); r.__mfLive = null;
+  }
+  function mfLiveStart(root) {
+    if (root.__mfLive || typeof fetch !== 'function' || typeof DOMParser !== 'function') return;
+    var base = issue(), L = root.__mfLive = { last: 0, busy: false, lead: safeUrl((obj(base.lead) || {}).url), cards: mfCardKey((obj(base.cards) || {}).items) };
+    function cycle(force) {
+      if (!root.isConnected) { mfLiveStop(); return; }
+      if (document.hidden || L.busy || (!force && Date.now() - L.last < 55000)) return;
+      L.busy = true; L.last = Date.now();
+      Promise.all([mfFeed().then(function (posts) { mfApply(root, base, posts); }, function () { if (!root.hasAttribute('data-mz-live')) root.setAttribute('data-mz-live', 'baked'); }),
+        mfScore(root, base)]).then(function () { L.busy = false; }, function () { L.busy = false; });
+    }
+    L.vis = function () { if (!document.hidden) cycle(false); };
+    document.addEventListener('visibilitychange', L.vis);
+    L.timer = setInterval(function () { cycle(false); }, 60000);
+    setTimeout(function () { cycle(true); }, 0);
+  }
+  function mfCardKey(items) { return list(items, 9).map(function (c) { return safeUrl(c && c.url); }).join(' '); }
+  function mfFeed() {
+    var c = typeof AbortController === 'function' ? new AbortController() : null, t = setTimeout(function () { if (c) c.abort(); }, 4000);
+    return fetch('/blog-feed.xml?t=' + Math.floor(Date.now() / 60000), { signal: c ? c.signal : undefined, credentials: 'omit', cache: 'no-store' }).then(function (r) {
+      clearTimeout(t); if (!r.ok) throw new Error('feed ' + r.status);
+      return r.text();
+    }).then(function (xml) {
+      var feed = new DOMParser().parseFromString(xml, 'text/xml');
+      function t2(n, key) { var el = Array.from(n.children).find(function (x) { return x.localName === key; }); return el ? el.textContent.trim() : ''; }
+      var posts = Array.from(feed.querySelectorAll('item')).map(function (n) { var enc = n.querySelector('enclosure'); return { title: t2(n, 'title'), excerpt: t2(n, 'description'), author: t2(n, 'creator'), url: t2(n, 'link'), firstPublishedDate: t2(n, 'pubDate'), html: t2(n, 'encoded'), image: { src: enc ? enc.getAttribute('url') : '', alt: t2(n, 'title') } }; });
+      if (posts.length < 3) throw new Error('feed too short');
+      return posts;
+    });
+  }
+  // Replace el with html unless the reader can see it. Returns true when swapped.
+  function mfSwap(el, html) {
+    if (!el || !el.parentNode || !html) return false;
+    var r = el.getBoundingClientRect(), vh = window.innerHeight || document.documentElement.clientHeight || 800;
+    if (r.bottom > 0 && r.top < vh) return false;
+    var tmp = document.createElement('div'); tmp.innerHTML = html; var fresh = tmp.firstElementChild; if (!fresh) return false;
+    mfHold(el, function () { el.parentNode.replaceChild(fresh, el); });
+    return true;
+  }
+  // Run fn; if el sits above the viewport, keep the first thing below it where it was (no visible jump, with or without native scroll anchoring).
+  function mfHold(el, fn) {
+    var above = el.getBoundingClientRect().bottom <= 0, ref = null;
+    if (above) { for (var n = el; n && !ref; n = n.parentNode) ref = n.nextElementSibling; }
+    var y = ref ? ref.getBoundingClientRect().top : 0;
+    fn();
+    if (ref && ref.isConnected) { var d = ref.getBoundingClientRect().top - y; if (d) window.scrollBy(0, d); }
+  }
+  function mfApply(root, base, posts) {
+    var res = mfPick(base, posts, Date.now(), typeof CREDITS === 'object' && CREDITS ? CREDITS : {}), L = root.__mfLive;
+    if (!L || !root.isConnected) return;
+    root.setAttribute('data-mz-live', 'feed');
+    var D = Object.assign({}, base, { lead: res.lead, cards: Object.assign({}, obj(base.cards) || {}, { items: res.items }) });
+    var leadUrl = safeUrl((obj(res.lead) || {}).url);
+    if (leadUrl && leadUrl !== L.lead) {
+      var oldHref = pgCoverHref(Object.assign({}, base, { lead: { url: L.lead } }));
+      if (mfSwap(root.querySelector('#pg-lead'), pgLead(D))) {
+        L.lead = leadUrl;
+        var go = pgCoverHref(D);
+        root.querySelectorAll('#pg-cover a[href]').forEach(function (a) { if (a.getAttribute('href') === oldHref) a.setAttribute('href', go); });
+      }
+    }
+    var key = mfCardKey(res.items);
+    if (key && key !== L.cards && mfSwap(root.querySelector('#pg-more'), pgCards(D))) L.cards = key;
+  }
+  function mfScore(root, base) {
+    var G = obj(base.game) || {}, teams = list(G.teams, 2).map(obj), opp = teams[1] ? text(teams[1].name, 40) : '', k = Date.parse(G.kickoffISO || ''), t = Date.now();
+    if (!opp || !isFinite(k) || t < k - 1800000 || t > k + 12 * 3600000) return Promise.resolve();
+    var c = typeof AbortController === 'function' ? new AbortController() : null, tm = setTimeout(function () { if (c) c.abort(); }, 3000);
+    return fetch('https://presidente49.github.io/gatorbait-media-redesign/sports-live/scoreboard.json?t=' + Math.floor(t / 60000), { signal: c ? c.signal : undefined, credentials: 'omit', cache: 'no-store' })
+      .then(function (r) { clearTimeout(tm); if (!r.ok) throw new Error('scoreboard ' + r.status); return r.json(); })
+      .then(function (raw) {
+        var line = mfScoreLine(raw, opp, G.kickoffISO, Date.now());
+        if (!root.isConnected || line === (root.getAttribute('data-pg-score') || '')) return;
+        var slots = root.querySelectorAll('[data-pg-count]');
+        function set() { if (line) root.setAttribute('data-pg-score', line); else root.removeAttribute('data-pg-score'); pgTick(root); }
+        if (slots.length) mfHold(slots[0], set); else set();
+      }).catch(function () {});
   }

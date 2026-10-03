@@ -1,5 +1,29 @@
 # Master Control Current State
 
+## Oct. 2, ~9:45 p.m. ET: Missouri week close-out, members, navigation plan, Brenden's queue (Jarvis)
+
+### Brenden's queue (he adds here; Jarvis takes the next item from the top)
+Brenden, Oct. 2: "push this to your shared file and then take your next queue from me there." Items are worked top-down. Each one is claimed in #34 and checked off here with a link to the evidence. Brenden can add a line here on GitHub, or type it in the Control Room message box. That box pings Jarvis, who copies it here.
+1. [ ] **Story-page "Explore GatorBait" block.** After Keep Reading on every story, add big plain buttons: Front Page, Latest, Football, Recruiting, Basketball, Magazine, Buddy's Show, Message Board and Your account. Story pages only (embed `59e31550` Keep Reading, rev 2, 3,981 chars). Show Brenden the 390 px preview first. Small and reversible; no homepage change.
+2. [ ] **Category cleanup** (waits on Brenden's "go on categories"). There are 21 categories today. Proposed:
+   - **Sections:** Football, Recruiting, Basketball, Baseball, More Gator Sports (Softball and Gymnastics), Gators in the NFL.
+   - **Columns:** Buddy, Franz (with Thoughts of the Day), Loren, Eddie, Carlton.
+   - **Also kept:** Magazine and The Buddy Martin Show.
+   - **Folded:** Featured Article (698) and Gator Breaking News (404) become tags; Spring Football (54), SEC Media Days (1), Aaron Philo (9) and Jon Sumrall (21) move into Football and tags.
+
+   First test on one old post that a category-only update does not move `lastPublishedDate` (UPDATE_PUBLISH does, which would bump old posts into Latest). Move posts first. Retire an empty category only with Brenden's OK (deleting live content). The copy desk then files new posts into the new set. The footer site map (`f8b950c9`, four groups) and the header menu get the new sections after the move.
+3. [ ] **Members email "Your membership is more than an email"** (`deploy/newsletter/members-online/members-online.html`; preview at 390 sent Oct. 2). It goes to paid members only, as Tuesday's one email, after Brenden's yes on the preview. Run the send governor first. Swap in that week's stories.
+4. [ ] **Eddie Gilley's Missouri preview "Somethings Got To Give"** and **Loren Meadows's Missouri preview.** Both are .docx email attachments the Gmail tools cannot open. They wait on Brenden dropping the files in chat. Then publish under each writer and add them to the Magazine Missouri cards.
+5. [ ] **Refund leak.** Wix shows zero refunded plan or checkout orders, so refunds have been made in Stripe or by bank dispute, and those buyers keep access. Fix: refund only from Wix (Sales → Orders), require terms acceptance on the All Access plans and pick one refund rule (plan settings are Brenden's call). Jarvis matches a Stripe refund/dispute export to still-active memberships when Brenden provides one.
+
+### Done Oct. 2
+- **Magazine email** c0a2d27d, "Florida at Missouri: Franz's picks and 3 keys". Sent 21:20Z to the verified clean list minus HOLD (533). 511 delivered, 8 bounced (1.5%), 0 complaints, about 34% opened in the first hour. Account ACTIVE, rank BAD (unchanged).
+- **Magazine embed `1dd74333` rev 62** (pin 6896ba9) fixed the stray `@media` that left phones unstyled. Verified live at 390 and 1365. The repo-only caption fix 7cc8e9f rides the next pin.
+- **Copy desk:** Buddy's "Coaches and Fans" republished at 22:54Z. Fixed the cut-off photo credit, alt text, an apostrophe and the show schedule line (Mon., Wed., Thu. at 9 p.m. ET). Flagged "Two things can't be true" for Buddy.
+- **Subscriber billing check.** A 2020 member reported he could not pay for the year. Wix shows his All Access Annual active and paid through Oct. 8 with auto-renew on, and four past renewal failures (stale card). Stripe is charging normally. Since mid-August, the only no-card order is a Sept. 29 dashboard "Pay in Person" order, which Brenden confirmed he made. Abandoned checkouts show as DRAFT/UNPAID and grant nothing. On Brenden's word, Jarvis emailed the member the plans link with a sign-in tip.
+- **Brenden's insight:** most older members don't know the website exists; they think they are paying for emails. That is the basis for item 3 and the end-of-story navigation in item 1.
+- Still open from earlier: "deploy it" for the PR #116 capture fix (pointer → cfc29c0); six desk stories still bylined "Brenden Martin" (proposed: GatorBait Staff).
+
 ## Sept. 30, ~6:10 p.m. ET: Speed cut live, audits, betting-zone research (Jarvis)
 - **Brenden:** "everything's a little slow... optimize... dispatch someone to look at the dashboard settings and speed... SEO." And: a betting zone with a Kalshi sponsorship.
 - **Measured for real** (live shots `PERF=1`, PR #98): homepage LCP on a throttled phone was **27.9 s** because the feed's image URLs asked Wix for 1000 px PNG cuts (lead cover 975 KB). Story pages: TBT 7.7 s on phones from Wix hydration plus our seven document-wide MutationObservers. Audits in `deploy/speed-2026/` (Wix inventory: 58 embeds, 28 enabled, 219 KB injected per page, no page filters; external SEO; bundle analysis).

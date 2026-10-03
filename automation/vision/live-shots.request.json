@@ -1,1 +1,1 @@
-{"path":"/magazine?v=g5","selector":"#gbm-magazine-page","widths":"390,1366"}
+{"path":"/|/","selector":"DUMP audio,iframe,[class*=radio],[id*=radio],[class*=audio]","widths":"390,1366"}

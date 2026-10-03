@@ -6,7 +6,7 @@
   "number": "Friday Pregame Edition",
   "name": "Florida at Missouri",
   "date": "Friday, October 2, 2026",
-  "week": "Week 5 · Saturday 3:30 p.m. ET · ABC",
+  "week": "Week 5 · Saturday 3:50 p.m. ET · ABC",
   "tagline": "Independent Florida Gators coverage",
   "pageTitle": "GatorBait Magazine | Friday Pregame: Florida at Missouri"
  },
@@ -28,8 +28,8 @@
  },
  "game": {
   "label": "The game",
-  "kickoffISO": "2026-10-03T19:30:00Z",
-  "kickoff": "Saturday, Oct. 3 · 3:30 p.m. ET",
+  "kickoffISO": "2026-10-03T19:50:00Z",
+  "kickoff": "Saturday, Oct. 3 · 3:50 p.m. ET",
   "tv": "ABC",
   "venue": "Memorial Stadium (Faurot Field), Columbia, Mo.",
   "forecast": "71°, 0% chance of rain, gusts to 10 mph (ESPN forecast, Oct. 1)",
@@ -383,7 +383,7 @@
     "pick": "Georgia"
    },
    {
-    "time": "3:30 p.m.",
+    "time": "3:50 p.m.",
     "tv": "ABC",
     "away": {
      "rank": 8,
@@ -2446,7 +2446,7 @@
   "items": [
    {
     "k": "Kickoff",
-    "v": "Saturday, Oct. 3, 3:30 p.m. ET"
+    "v": "Saturday, Oct. 3, 3:50 p.m. ET"
    },
    {
     "k": "TV",

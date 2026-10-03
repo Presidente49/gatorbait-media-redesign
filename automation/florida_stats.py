@@ -52,6 +52,10 @@ def fetch_json(url, tries=3):
                 return json.load(r)
         except Exception as e:  # network or JSON error: retry, then give up without writing
             last = e
+            # Oct. 3, 2026: site.api.espn.com answered 403 to this User-Agent from GitHub Actions while
+            # site.web.api.espn.com served the identical response, so a 403 retries on that host.
+            if getattr(e, 'code', None) == 403:
+                url = url.replace('://site.api.espn.com/', '://site.web.api.espn.com/')
             time.sleep(2 * (i + 1))
     raise StatsError(f'fetch failed: {url}: {last}')
 

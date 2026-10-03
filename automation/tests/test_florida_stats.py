@@ -2,7 +2,8 @@
 
 Run: python -m unittest automation/tests/test_florida_stats.py
 """
-import copy, datetime as dt, json, pathlib, sys, tempfile, unittest
+import copy, datetime as dt, io, json, pathlib, sys, tempfile, unittest, urllib.error
+from unittest import mock
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
@@ -200,6 +201,21 @@ class LiveFeedTests(unittest.TestCase):
             before = f.stat().st_mtime_ns
             self.assertEqual(fs.main(args), 0)  # unchanged numbers: same file, same time
             self.assertEqual(f.stat().st_mtime_ns, before)
+
+
+class FetchTests(unittest.TestCase):
+    def test_403_retries_on_the_web_api_host(self):
+        seen = []
+
+        def fake(req, timeout=25):
+            seen.append(req.full_url)
+            if '//site.api.espn.com/' in req.full_url:
+                raise urllib.error.HTTPError(req.full_url, 403, 'Forbidden', {}, None)
+            return io.BytesIO(b'{"ok": 1}')
+
+        with mock.patch.object(fs.urllib.request, 'urlopen', fake), mock.patch.object(fs.time, 'sleep'):
+            self.assertEqual(fs.fetch_json(fs.API + '/teams/57'), {'ok': 1})
+        self.assertEqual([u.split('/')[2] for u in seen], ['site.api.espn.com', 'site.web.api.espn.com'])
 
 
 class DueTests(unittest.TestCase):

@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}
+body{width:500px;height:300px;padding:40px;background:#eef1f6;font-family:Arial,sans-serif;display:flex;align-items:flex-end;justify-content:flex-end}
+#gbm-chant{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#081b35,#0b2449);border-radius:999px;padding:10px 18px 10px 12px;box-shadow:0 8px 24px rgba(8,27,53,.35);border:1px solid rgba(255,154,107,.35)}
+#gbm-chant .gc-btn{width:40px;height:40px;border-radius:50%;background:#fa4616;display:flex;align-items:center;justify-content:center;flex:none;cursor:pointer}
+#gbm-chant .gc-btn svg{width:16px;height:16px;fill:#fff}
+#gbm-chant .gc-eq{display:flex;align-items:center;gap:3px;height:22px}
+#gbm-chant .gc-eq i{display:block;width:4px;border-radius:2px;background:linear-gradient(180deg,#ffb347,#fa4616);animation:gceq 0.9s ease-in-out infinite}
+#gbm-chant .gc-eq i:nth-child(1){height:40%;animation-delay:-0.6s}
+#gbm-chant .gc-eq i:nth-child(2){height:100%;animation-delay:-0.3s}
+#gbm-chant .gc-eq i:nth-child(3){height:65%;animation-delay:-0.9s}
+#gbm-chant .gc-eq i:nth-child(4){height:85%;animation-delay:-0.1s}
+#gbm-chant .gc-eq i:nth-child(5){height:50%;animation-delay:-0.5s}
+@keyframes gceq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+#gbm-chant .gc-label{font:800 11px/1.2 Barlow,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#ffb347;white-space:nowrap}
+</style></head><body>
+
+<div id="gbm-chant">
+  <div class="gc-btn"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/></svg></div>
+  <div class="gc-eq"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="gc-label">Gator Bait Anthem</div>
+</div>
+
+</body></html>

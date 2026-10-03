@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post template mock</title>
+<!-- PROTOTYPE MOCK. DOM trimmed from the live Wix post
+     /post/sumrall-postgame-press-conference-ole-miss-not-fully-awake (fetched 2026-09-27).
+     Hashed classes and data-hook attributes are kept as Wix served them. The blockquote and the
+     "By the numbers" block were added to show those styles; the live post has neither. -->
+<meta property="og:image" content="../../gameday/2026-09-26-ole-miss/presser/2026-09-26_gatorbait_presser_sumrall-awake_v02.jpg">
+
+<!-- Stand-in for Wix's own blog CSS (Ricos defaults, container padding). -->
+<style id="mock-wix-baseline">
+body{margin:0;background:#fff;font-family:Helvetica,Arial,sans-serif;color:#222}
+#SITE_HEADER{height:64px;background:#08132f;color:#fff;display:flex;align-items:center;padding:0 24px;font:700 14px/1 Arial;letter-spacing:.06em}
+[data-hook=post-page]{background:#fff}
+.HcBlwg{padding:40px 0}
+article[data-hook=post]{max-width:940px;margin:0 auto;border:1px solid #ddd}
+.HW6ttf{padding:0 48px}
+header.PhCafd{padding:40px 0 0}
+.a5JqMF{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.NtBDdE{display:flex;align-items:center;gap:12px;font-size:12px}
+.MABqta{display:flex;align-items:center;gap:8px}
+.bZrSjY img,.bZrSjY .avatar{display:block;width:32px;height:32px;border-radius:50%;background:#c9ced8}
+.MHuRVq{background:none;border:0;padding:4px;cursor:pointer}
+h1[data-hook=post-title]{font-size:40px;margin:0}
+p{font-size:16px;line-height:1.5;margin:0 0 16px}
+h2.csMdH{font-size:28px;margin:24px 0 12px}
+blockquote.qgGz1{margin:24px 0;padding-inline-start:20px;border-inline-start:3px solid #116dff;font-size:20px;font-style:italic}
+.yEWwt{position:relative;aspect-ratio:var(--dim-width)/var(--dim-height)}
+figcaption.J0zbO{text-align:center;font-size:14px}
+[data-hook=gap-spacer]{height:16px}
+footer.PhCafd.B6ltWa{padding:16px 0;margin-top:24px}
+.eFSltK,.Zt1NVN{display:flex;gap:16px}
+.qXlEOR{background:none;border:0;padding:4px}
+.zp8s_J{max-width:940px;margin:24px auto 0}
+.qmDeKd{display:flex;justify-content:space-between;align-items:baseline;padding:28px 0 18px;font-size:20px}
+.zHLEBV{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.kkOpHH{aspect-ratio:16/9;overflow:hidden}.kkOpHH img{width:100%;height:100%;object-fit:cover;display:block}
+.ZnRZP5{padding:14px 16px}
+.hPl9QB{color:#222;text-decoration:none;font-size:18px}
+.gbm-writer-alerts{display:inline-flex;margin-left:8px;padding:6px 9px;border:1px solid #08132f;border-radius:999px;background:#08132f;color:#fff;font:800 11px/1 Arial}
+@media(max-width:750px){
+ .HcBlwg{padding:0}
+ article[data-hook=post]{border:0}
+ .HW6ttf{padding:0 20px}
+ .zp8s_J{padding:0 20px}
+ .zHLEBV{grid-template-columns:1fr}
+ #SITE_HEADER{height:60px;padding:0 16px}
+}
+</style>
+
+<!-- Live competitors, copied verbatim: header embed 7fee4de6 rev25 post rules + sitewide Barlow typography. -->
+<style id="live-header-embed-7fee4de6-post-rules">
+html:has(#gbm-site-header) [data-hook="post-page"]{background:#fffdf9!important;color:#11274a!important;border:0!important}
+html:has(#gbm-site-header) [data-hook="post-page"] [data-hook="post-title"]{font-family:Georgia,serif!important;font-size:36px!important;line-height:1.16!important;color:#11274a!important;font-weight:700!important;letter-spacing:-.025em!important}
+html:has(#gbm-site-header) [data-hook="post-page"] article[data-hook="post"]{max-width:940px;margin-inline:auto}
+@media(max-width:820px){html:has(#gbm-site-header) [data-hook="post-page"] article p,html:has(#gbm-site-header) [data-hook="post-page"] article li,html:has(#gbm-site-header) [data-hook="post-page"] article p span,html:has(#gbm-site-header) [data-hook="post-page"] article li span{font-size:16px!important;line-height:1.55!important;}
+html:has(#gbm-site-header) [data-hook="post-page"] article h2{font-size:21px!important;line-height:1.2!important;}}
+[data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{font-family:"Barlow",Arial,Helvetica,sans-serif!important;font-weight:400!important;font-size:17px!important;line-height:1.68!important}
+[data-hook="post-title"],[data-hook="post-title"] *{font-family:"Barlow",Arial,Helvetica,sans-serif!important;font-weight:800!important;letter-spacing:-.02em!important}
+</style>
+
+<!-- THE PROTOTYPE (same files build.py packs into post-template-embed.html) -->
+<link rel="stylesheet" id="gbm-post-template" href="post-template.css">
+<script src="post-template.js"></script>
+
+<!-- Local fonts for offline rendering. Declared after the template so they win over its jsDelivr @font-face. -->
+<style id="mock-local-fonts">
+@font-face{font-family:"Barlow";font-weight:400;src:url(fonts/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:500;src:url(fonts/barlow-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:600;src:url(fonts/barlow-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:700;src:url(fonts/barlow-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:800;src:url(fonts/barlow-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:700;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:800;src:url(fonts/barlow-condensed-latin-800-normal.woff2) format("woff2")}
+</style>
+</head>
+<body>
+<div id="SITE_HEADER"><div id="gbm-site-header">GATORBAIT HEADER / MOBILE SHELL (existing owners, untouched)</div></div>
+<div class="Y3K28_ SITE_PAGES" id="SITE_PAGES"><div class="uvik8H" id="SITE_PAGES_TRANSITION_GROUP"><div class="i0StQr theme-vars uix2p" id="uix2p"><div class="JJb9Mt"><section class="Le88gL wixui-section" id="comp-l9drh78o2"><div class="QrIus TPAMultiSection_jui5fga7" id="TPAMultiSection_jui5fga7"><div data-hook="tpa-components-provider"><div><div class="use-media-queries urT2WH" data-hook="post-page-root" style="--root-width:100vw"><div class="L5x0Fp xZVb1s is-desktop app-desktop"><div id="content-wrapper">
+<div class="ZL4A4N" data-hook="post-page">
+ <div class="HcBlwg"><div class="zp8IQu"><div><div class="EcwjNF">
+  <article class="tgMH9T" data-hook="post">
+   <section data-hook="post-hero-image"></section>
+   <div class="HW6ttf">
+    <header class="PhCafd"><div class="PKQ95p"><div class="MbPQSQ">
+     <div class="apmiGT" data-hook="post-title"><h1 class="H3vOVf" data-hook="post-title">‘It Ain’t Fully Awake Yet’: Sumrall Says Gators Haven’t Arrived After Routing No. 4 Ole Miss</h1></div>
+     <div class="a5JqMF"><div class="NtBDdE">
+      <div class="MABqta"><div class="bZrSjY" style="width:32px;height:32px"><span class="lR3yj5 fluid-avatar-image bok7Ik" data-hook="avatar-image" role="img" aria-label="Writer: GatorBait Staff"><span class="avatar"></span></span></div><a class="IkAhjA" data-hook="profile-link" href="#"><span data-hook="user-name">GatorBait Staff</span></a></div>
+      <div class="wBTynn"><span class="time-ago" data-hook="time-ago" title="1 hour ago">1 hour ago</span></div>
+      <div class="F56Ope"><span data-hook="time-to-read" title="3 min read">3 min read</span></div>
+     </div><div class="hSZsuG"><button aria-label="More actions" class="MHuRVq" data-hook="more-button" type="button"><svg aria-hidden="true" viewBox="0 0 19 19" width="19"><circle cx="2.5" cy="4.5" r="1.5"/><circle cx="2.5" cy="9.5" r="1.5"/><circle cx="2.5" cy="14.5" r="1.5"/></svg></button></div></div>
+    </div></div></header>
+
+    <section class="VQDdIN" data-hook="post-description"><div class="moHCnT"><div class="fTEXDR" data-rce-version="11.13.0"><div class="gRY6A" data-id="content-viewer" dir="ltr"><div class="Zfg9-">
+     <div data-hook="rcv-block-first" type="first"></div>
+     <div class="t39ig">
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-p2"><span class="lig--"><span>GAINESVILLE — Jon Sumrall said he barely had a voice left after Florida’s 52-28 win over No. 4 Ole Miss on Saturday night. He used what was left to deliver the message he has repeated all season.</span></span></p></div><div data-hook="rcv-block1" type="paragraph"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-p3"><span class="lig--"><span>“We have not arrived,” Sumrall said. “We have so much room to grow and get better, and we still have to do that or we’re not going to be pleased with outcomes that we have coming up.”</span></span></p></div><div data-hook="rcv-block2" type="paragraph"></div>
+      <div data-breakout="normal"><blockquote class="qgGz1 CCfLw" dir="auto" id="viewer-q1"><span class="lig--"><span>It’s not asleep, but it ain’t fully awake yet. I promise you, I didn’t come here for us to be average.</span></span></blockquote></div><div data-hook="rcv-block3" type="blockquote"></div>
+      <div data-breakout="normal"><h2 class="csMdH k8wFp CCfLw hLCy-" dir="auto" id="viewer-p6"><span aria-hidden="true" id="i-would-never-bet-against-him-p6"></span><span class="wemRL"><span>“I would never bet against him”</span></span></h2></div><div data-hook="rcv-block6" type="heading"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-p7"><span class="lig--"><span>Sumrall said during the week that Ole Miss had proven more than his team. Asked after the game what he made of the oddsmakers now, he didn’t back off.</span></span></p></div><div data-hook="rcv-block7" type="paragraph"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-p8"><span class="lig--"><span>“I think they’re still pretty smart. We just played better today,” Sumrall said. He pointed to Ole Miss’ 16-2 record over the past year and to quarterback Trinidad Chambliss. “I don’t bet, but if I did, I would never bet against him.”</span></span></p></div><div data-hook="rcv-block8" type="paragraph"></div>
+      <div data-breakout="normal"><figure class="PLZzf" data-hook="figure-IMAGE"><div class="Sc6S7" data-hook="image-viewer"><div class="yEWwt _71dQV JI-G2" data-hook="image-viewer-pgimg1" style="--dim-height:838;--dim-width:1471"><div class="jnBGO"><div class="NwBzC" id="pgimg1" style="position:absolute;top:0;left:0;right:0;bottom:0"><wow-image class="undefined FoZLt"><img alt="Florida running back Jadan Baugh (13) dives into the end zone for a first-quarter touchdown against Ole Miss" src="../../gameday/2026-09-26-ole-miss/postgame/photos/baugh-first-td-dive-q1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;max-width:100%;position:absolute;left:0;top:0"></wow-image></div></div></div></div><div class="MG-TX m1KKS" data-hook="gap-spacer"></div><div class="_4Uccy" id="viewer-pgimg1c"><div class="uuke2"><figcaption class="J0zbO" style="padding-top:16px;padding-bottom:16px"><strong style="font-weight:700"><span>Jadan Baugh dives in from 4 yards out for Florida’s first touchdown. (Photo by Chris Spears/GatorBait Media)</span></strong></figcaption></div></div><div class="MG-TX m1KKS" data-hook="gap-spacer"></div></figure></div><div data-hook="rcv-block9" type="image"></div>
+      <div data-breakout="normal"><h2 class="csMdH k8wFp CCfLw hLCy-" dir="auto" id="viewer-p10"><span class="wemRL"><span>By the numbers</span></span></h2></div><div data-hook="rcv-block10" type="heading"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-s1"><span class="lig--"><strong><span>302</span></strong><span> Florida rushing yards against No. 4 Ole Miss. “Makes my job pretty easy,” Aaron Philo said.</span></span></p></div><div data-hook="rcv-block11" type="paragraph"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-s2"><span class="lig--"><strong><span>142</span></strong><span> yards and three touchdowns for Jadan Baugh on 29 carries.</span></span></p></div><div data-hook="rcv-block12" type="paragraph"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-s3"><span class="lig--"><strong><span>126</span></strong><span> yards on 12 carries for Duke Clark, including the 45-yard score.</span></span></p></div><div data-hook="rcv-block13" type="paragraph"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-s4"><span class="lig--"><strong><span>52-28</span></strong><span> final, Florida’s first top-five win since 2020.</span></span></p></div><div data-hook="rcv-block14" type="paragraph"></div>
+      <div data-breakout="normal"><h2 class="csMdH k8wFp CCfLw hLCy-" dir="auto" id="viewer-p18"><span class="wemRL"><span>Injury update</span></span></h2></div><div data-hook="rcv-block18" type="heading"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-p19"><span class="lig--"><span>Receiver Bailey Stockton took “a pretty significant shot to his back” on the play that drew a targeting flag, Sumrall said, but it “doesn’t look like anything that should keep him out long term.”</span></span></p></div><div data-hook="rcv-block19" type="paragraph"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-p27"><span class="lig--"><span>Florida hosted a big group of recruits for the game, and Sumrall tied them to his theme. </span><a class="_3EIux _9B3dA" data-hook="web-link" href="#"><span>Four-star safety Cyion Smith committed to the Gators hours before kickoff</span></a><span>.</span></span></p></div><div data-hook="rcv-block27" type="paragraph"></div>
+      <div data-breakout="normal"><p class="zDIwP _8wDM6 CCfLw hLCy-" dir="auto" id="viewer-p28"><span class="lig--"><span>Florida plays at Missouri on Saturday, Oct. 3, at 3:30 p.m. ET.</span></span></p></div><div data-hook="rcv-block28" type="paragraph"></div>
+     </div>
+     <div data-hook="rcv-block-last" type="last"></div>
+    </div></div></div></div></section>
+
+    <footer class="PhCafd B6ltWa" data-hook="post-footer"><div class="PKQ95p"><div class="KVKbzt aQg0ny"><section class="Xyiv4I" data-hook="post-main-actions-desktop"><div class="eFSltK"><div class="Zt1NVN">
+     <button aria-label="Share via Facebook" class="qXlEOR" data-hook="share-button__facebook"><svg viewBox="0 0 19 19" width="19"><path d="M8.09 17v-6.8H5.79V7.42h2.3V5.08a3.08 3.08 0 0 1 3.08-3.08h2.4v2.5h-1.72a.98.98 0 0 0-.98.98v1.94h2.66l-.37 2.79h-2.29V17z"/></svg></button>
+     <button aria-label="Share via X (Twitter)" class="qXlEOR" data-hook="share-button__twitter"><svg viewBox="0 0 19 19" width="19"><path d="M11 8.5 17 2h-1.4l-5.2 5.6L6.3 2H2l6.3 9L2 18h1.4l5.5-6.1 4.4 6.1H18z"/></svg></button>
+     <button aria-label="Share via link" class="qXlEOR" data-hook="share-button__link"><svg viewBox="0 0 19 19" width="19"><rect x="2" y="7" width="15" height="5" rx="2.5"/></svg></button>
+    </div></div></section></div></div></footer>
+   </div>
+  </article>
+ </div></div></div>
+ <div class="zp8IQu zp8s_J"><div><section class="oY1ew3" data-hook="recent-posts"><header class="qmDeKd"><h2 style="font:inherit">Related Posts</h2><a class="vz0Mhy" href="#">See All</a></header><section><div class="zHLEBV">
+  <article class="qbu2Gh" data-hook="recent-post-list-item"><div class="dkbPQd"><a class="blog-link-hover-color" data-hook="link" href="#" tabindex="-1"><div class="kkOpHH"><img alt="" src="../../gameday/2026-09-26-ole-miss/column-reese/2026-09-26_gatorbait_column_reese-contenders_v02.jpg"></div></a><div class="ZnRZP5"><header data-hook="recent-post__title"><a class="hPl9QB" href="#">Contenders, Not Hopefuls: Florida’s Rout of No. 4 Ole Miss Puts the SEC on Notice</a></header><footer class="LO60EX" data-hook="post-footer"><div class="LVcAxq post-stats" data-hook="post-stats">0 views</div></footer></div></div></article>
+  <article class="qbu2Gh" data-hook="recent-post-list-item"><div class="dkbPQd"><a class="blog-link-hover-color" data-hook="link" href="#" tabindex="-1"><div class="kkOpHH"><img alt="" src="../../gameday/2026-09-26-ole-miss/postgame/photos/gators-take-the-field.jpg"></div></a><div class="ZnRZP5"><header data-hook="recent-post__title"><a class="hPl9QB" href="#">Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp</a></header><footer class="LO60EX" data-hook="post-footer"><div class="LVcAxq post-stats" data-hook="post-stats">0 views</div></footer></div></div></article>
+  <article class="qbu2Gh" data-hook="recent-post-list-item"><div class="dkbPQd"><a class="blog-link-hover-color" data-hook="link" href="#" tabindex="-1"><div class="kkOpHH"><img alt="" src="../../gameday/2026-09-26-ole-miss/postgame/photos/sideline-guests.jpg"></div></a><div class="ZnRZP5"><header data-hook="recent-post__title"><a class="hPl9QB" href="#">Baugh Punches Ole Miss Twice: Gators Lead 17-6 at the Half</a></header><footer class="LO60EX" data-hook="post-footer"><div class="LVcAxq post-stats" data-hook="post-stats">0 views</div></footer></div></div></article>
+ </div></section></section></div></div>
+ <div data-hook="comments-section-placeholder"></div>
+</div>
+</div></div></div></div></div></section></div></div></div></div>
+<script>
+// Mock only: the ui-layer embed a13b04e3 adds this button after the writer link on posts.
+(function(){var l=document.querySelector('[data-hook=profile-link]');if(l)l.insertAdjacentHTML('afterend','<button type="button" class="gbm-writer-alerts">Follow / alerts</button>');})();
+</script>
+</body>
+</html>

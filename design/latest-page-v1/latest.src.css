@@ -1,0 +1,83 @@
+/* GatorBait Latest page v1 - SOURCE. Scope: Wix Blog feed pages ([data-hook=feed-page-root]): /gatorbait-media-blogs, its /page/N and /categories/*.
+   The native Pro Gallery list stays in the DOM as the data source; this layout replaces it visually. */
+/* While the script is mounting (html.gbm-lp-wait, max 4s) the native list is held invisible with its space kept; on failure the class drops and the styled native list shows. */
+/* While mounting (wait) and for as long as our layout owns this page (hold), the native list never paints. */
+html.gbm-lp-wait [data-hook=feed-page-root]:not(:has(#gbm-lp)) [data-hook=post-list-pro-gallery-container],
+html.gbm-lp-hold [data-hook=feed-page-root]:not(:has(#gbm-lp)) [data-hook=post-list-pro-gallery-container],
+html.gbm-lp-hold [data-hook=feed-page-root]:not(:has(#gbm-lp)) [data-hook=feed-pagination-container]{visibility:hidden}
+/* Hide the native list ONLY while our layout is actually in the page. If Wix re-renders and drops #gbm-lp,
+   the native list comes straight back (never a blank page) until the script re-mounts. */
+[data-hook=feed-page-root]:has(#gbm-lp) [data-hook=post-list-pro-gallery-container],
+[data-hook=feed-page-root]:has(#gbm-lp) [data-hook*=above-post-list],
+[data-hook=feed-page-root]:has(#gbm-lp) [data-hook=feed-pagination-container]{display:none!important}
+#gbm-lp{--o:#fa4616;--od:#d8450c;--n:#081b35;--n2:#0d2447;--k:#1b2638;--g:#5b677a;--l:#dfe4ec;--c:"Barlow Condensed","Barlow",Arial,sans-serif;--f:"Barlow",Arial,sans-serif;max-width:1180px;margin:8px auto 36px;padding:0 20px;box-sizing:border-box;color:var(--k);font-family:var(--f);text-align:left}
+#gbm-lp *{box-sizing:border-box}
+#gbm-lp a{color:inherit;text-decoration:none}
+#gbm-lp img{display:block;width:100%;height:100%;object-fit:cover}
+/* Masthead */
+#gbm-lp .lp-mast{display:flex;align-items:flex-end;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:18px 0 14px;margin-bottom:22px;border-bottom:6px solid var(--n)}
+#gbm-lp .lp-kick{display:block;margin-bottom:6px;color:var(--od);font:800 13px/1 var(--f);letter-spacing:.16em;text-transform:uppercase}
+#gbm-lp h1{margin:0;color:var(--n);font:800 72px/.86 var(--c);text-transform:uppercase;letter-spacing:-.005em}
+#gbm-lp .lp-date{color:var(--g);font:700 13px/1.4 var(--f);letter-spacing:.08em;text-transform:uppercase;text-align:right}
+#gbm-lp .lp-date b{display:block;color:var(--n);font-weight:800}
+/* Shared story bits */
+#gbm-lp .lp-cat{display:block;margin:0 0 6px;color:var(--od);font:800 12px/1.2 var(--f);letter-spacing:.12em;text-transform:uppercase}
+#gbm-lp .lp-hd{margin:0;color:var(--n);font:800 24px/1.02 var(--c);text-transform:uppercase;transition:color .15s}
+#gbm-lp .lp-by{display:flex;flex-wrap:wrap;gap:2px 12px;margin-top:9px;color:var(--g);font:600 12px/1.4 var(--f);letter-spacing:.05em;text-transform:uppercase}
+#gbm-lp .lp-by b{color:var(--n);font-weight:800}
+#gbm-lp .lp-lead,#gbm-lp .lp-card,#gbm-lp .lp-row>span,#gbm-lp .lp-card>span{display:block;min-width:0}
+#gbm-lp .lp-img{display:block;position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--n2);border-bottom:4px solid var(--o)}
+#gbm-lp .lp-img img{transition:transform .35s ease}
+#gbm-lp a:hover .lp-hd,#gbm-lp a:focus-visible .lp-hd{color:var(--od)}
+#gbm-lp a:hover .lp-img img{transform:scale(1.03)}
+#gbm-lp a:focus-visible{outline:3px solid var(--o);outline-offset:3px}
+/* Top: lead + rail */
+#gbm-lp .lp-top{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;margin-bottom:34px}
+#gbm-lp .lp-lead .lp-hd{margin-top:14px;font-size:48px;line-height:.96}
+#gbm-lp .lp-lead .lp-cat{margin-top:16px;font-size:13px}
+#gbm-lp .lp-rail{display:flex;flex-direction:column;border-top:6px solid var(--o);background:var(--n);color:#fff;padding:4px 18px 8px}
+#gbm-lp .lp-rail h2{margin:12px 0 4px;color:#fff;font:800 15px/1 var(--f);letter-spacing:.16em;text-transform:uppercase}
+#gbm-lp .lp-row{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:start;padding:14px 0;border-top:1px solid rgba(255,255,255,.16)}
+#gbm-lp .lp-rail .lp-row:first-of-type{border-top:0}
+#gbm-lp .lp-row .lp-img{border-bottom-width:3px}
+#gbm-lp .lp-rail .lp-hd{color:#fff;font-size:20px}
+#gbm-lp .lp-rail .lp-cat{color:#ff9a70}
+#gbm-lp .lp-rail .lp-by{color:#aebbd0}
+#gbm-lp .lp-rail .lp-by b{color:#fff}
+#gbm-lp .lp-rail a:hover .lp-hd{color:#ff9a70}
+/* River: 4-column grid */
+#gbm-lp .lp-sec{display:flex;align-items:center;gap:14px;margin:0 0 18px;color:var(--n);font:800 28px/1 var(--c);text-transform:uppercase}
+#gbm-lp .lp-sec::before{content:"";width:8px;height:28px;background:var(--o)}
+#gbm-lp .lp-sec::after{content:"";flex:1;height:2px;background:var(--l)}
+#gbm-lp .lp-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 24px}
+#gbm-lp .lp-card .lp-cat{margin-top:12px}
+/* Pager (built from Wix's own next/previous/last links) */
+#gbm-lp .lp-pager{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:34px;padding-top:16px;border-top:6px solid var(--n);font:800 14px/1 var(--f);letter-spacing:.1em;text-transform:uppercase}
+#gbm-lp .lp-pager a{padding:13px 18px;background:var(--n);color:#fff}
+#gbm-lp .lp-pager a:hover,#gbm-lp .lp-pager a:focus-visible{background:var(--o)}
+#gbm-lp .lp-pager span{color:var(--g)}
+/* Tablet */
+@media(max-width:1023px){
+#gbm-lp h1{font-size:58px}
+#gbm-lp .lp-top{grid-template-columns:1fr;gap:22px}
+#gbm-lp .lp-lead .lp-hd{font-size:40px}
+#gbm-lp .lp-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 20px}
+}
+/* Phone: lead full-bleed, everything else as scannable rows */
+@media(max-width:640px){
+#gbm-lp{padding:0 16px;margin-top:0}
+#gbm-lp .lp-mast{padding-top:12px;margin-bottom:16px;border-bottom-width:5px}
+#gbm-lp h1{font-size:46px}
+#gbm-lp .lp-date{text-align:left}
+#gbm-lp .lp-lead .lp-img{margin:0 -16px}
+#gbm-lp .lp-lead .lp-hd{font-size:32px;line-height:.98}
+#gbm-lp .lp-rail{margin:0 -16px;padding:4px 16px 6px}
+#gbm-lp .lp-row{grid-template-columns:104px minmax(0,1fr);gap:12px}
+#gbm-lp .lp-rail .lp-hd,#gbm-lp .lp-grid .lp-hd{font-size:19px}
+#gbm-lp .lp-grid{grid-template-columns:1fr;gap:0}
+#gbm-lp .lp-grid .lp-card{display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;padding:14px 0;border-top:1px solid var(--l)}
+#gbm-lp .lp-grid .lp-card .lp-img{border-bottom-width:3px}
+#gbm-lp .lp-grid .lp-card .lp-cat{margin-top:0}
+#gbm-lp .lp-sec{font-size:24px;margin-bottom:4px}
+#gbm-lp .lp-pager{flex-wrap:wrap;justify-content:center}
+}

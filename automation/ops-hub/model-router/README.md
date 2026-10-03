@@ -201,3 +201,10 @@ uv tool uninstall free-claude-code
 ```
 
 The GatorBait production site does not depend on FCC, n8n or any model worker. If a harness or router fails, return the task to the existing trusted controller path; do not make the website unavailable because an AI worker is down.
+
+## RTK in the cloud (Sept. 27, 2026)
+- **Build:** `cargo install --locked --git https://github.com/rtk-ai/rtk --rev 45b0b4c3` (rtk 0.49.0). Built and smoke-tested in the cloud session.
+- **Hook:** the project file `.claude/settings.json` adds a PreToolUse Bash hook, `command -v rtk … && rtk hook claude || true`. It rewrites shell commands to their compact `rtk` form, and does nothing when rtk isn't installed.
+- **To keep it in every new cloud session,** add this to the environment's Setup script:
+  `cargo install --locked --git https://github.com/rtk-ai/rtk --rev 45b0b4c3`
+- **Check savings with** `rtk gain`. The savings apply to command output only, not the whole model bill.

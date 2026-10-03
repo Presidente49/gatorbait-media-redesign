@@ -1,0 +1,112 @@
+/* GatorBait post template v1 - SOURCE. build.py expands "§" to the scope prefix and minifies.
+   Scope: [data-hook=post-page] only exists on Wix Blog /post/ pages. "¤" = short scope #SITE_PAGES
+   for post-only hooks no other embed styles. "§" prefix is
+   `html body #SITE_PAGES [data-hook=post-page]` = specificity (1,1,2), one step above the
+   header embed 7fee4de6's `html:has(#gbm-site-header) [data-hook=post-page] ...` (1,1,1). */
+
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:optional;src:url(https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-800-normal.woff2) format("woff2")}
+
+§{--o:#fa4616;--n:#081b35;--b:#0021a5;--k:#1b2638;--c:"Barlow Condensed","Barlow",Arial,sans-serif;--f:"Barlow",Arial,sans-serif;background:#fff!important}
+§ [data-hook=post]{background:transparent!important;border:0!important;box-shadow:none!important}
+
+/* ---- Headline first, cover second. Wix renders its hero section empty (blog cover display is off),
+   so the cover (og:image via --gbm-hero) is drawn as the bottom of the headline panel instead:
+   the H1 is on the first screen, the cover lines up with the panel, and its 16:9 box is reserved
+   at first paint = no jump. If Wix ever fills its own hero, that one shows and ours steps aside. ---- */
+¤ [data-hook=post-hero-image]:empty{display:none}
+§ [data-hook=post]>div>header::after{content:"";display:block;aspect-ratio:16/9;margin:24px -40px -24px;background:#0d2447 var(--gbm-hero,none) center/cover no-repeat}
+§ [data-hook=post-hero-image]:not(:empty)~div>header::after{display:none}
+/* No landscape cover (missing, square or portrait og:image): no navy block at all. */
+html[data-gbm-nohero] [data-hook=post]>div>header::after{display:none!important}
+
+/* ---- Headline panel ---- */
+§ [data-hook=post]>div>header{position:relative;z-index:1;margin:0 0 36px!important;padding:28px 40px 24px!important;background:var(--n)!important;border-top:6px solid var(--o)}
+§ [data-hook=post]>div>header>div{padding:0!important;margin:0!important;max-width:none!important}
+§ [data-hook=post]>div>header::before{content:var(--gbm-kicker,"Gators Football");display:inline-block;margin:0 0 14px;padding:7px 10px 6px;background:var(--o);color:#fff;font:800 13px/1 var(--f);letter-spacing:.14em;text-transform:uppercase}
+§ [data-hook=post-title]{margin:0 0 16px!important;color:#fff!important;font:800 60px/.98 var(--c)!important;letter-spacing:-.005em!important;text-transform:uppercase;text-wrap:balance}
+§ h1[data-hook=post-title]{margin:0!important}
+§ [data-hook=post-title]+div{display:flex;justify-content:space-between;align-items:center;gap:8px 14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2)}
+§ [data-hook=post-title]+div>div:first-child{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+§ [data-hook=post-title]+div *{white-space:nowrap;color:#c8d3e3!important;font:700 13px/1.3 var(--f)!important;letter-spacing:.06em;text-transform:uppercase}
+§ [data-hook=post-title]+div [data-hook=user-name]{color:#fff!important;font-weight:800!important}
+§ [data-hook=post-title]+div [data-hook=profile-link]:hover [data-hook=user-name]{color:var(--o)!important}
+§ [data-hook=post-title]+div :is([data-hook=time-ago],[data-hook=time-to-read])::before{content:"";display:inline-block;width:6px;height:6px;margin:0 10px 2px 0;background:var(--o);vertical-align:middle}
+§ [data-hook=post-title]+div .fluid-avatar-image{outline:2px solid var(--o);border-radius:50%}
+¤ [data-hook=more-button] svg{fill:#fff}
+§ [data-hook=post]>div>header p{margin:10px 0 0!important;color:#9fb0c8!important;font:600 12px/1.3 var(--f)!important;text-transform:uppercase;letter-spacing:.06em}
+§ [data-hook=post]>div>header .gbm-writer-alerts{background:var(--o)!important;border-color:var(--o)!important;color:#fff!important}
+
+/* ---- Body copy ---- */
+§ [data-hook=post-description]{max-width:700px;margin-inline:auto!important}
+§ [data-hook=post-description] :is(p,li){margin:0 0 20px!important;color:var(--k)!important;font:400 19px/1.72 var(--f)!important}
+§ [data-hook=post-description] :is(p,li) span{font-size:inherit!important;line-height:inherit!important}
+§ [data-hook=rcv-block-first]+div>[data-breakout]:first-child p{color:var(--n)!important;font-size:22px!important;line-height:1.55!important;font-weight:500!important}
+§ [data-hook=post-description] a[data-hook=web-link]{color:var(--b)!important;font-weight:600;text-decoration:underline!important;text-decoration-color:var(--o)!important;text-decoration-thickness:2px!important;text-underline-offset:3px}
+§ [data-hook=post-description] a[data-hook=web-link]:hover{color:var(--o)!important}
+§ [data-hook=post-description] h2{margin:46px 0 16px!important;padding:2px 0 2px 16px!important;border-left:6px solid var(--o);color:var(--n)!important;font:800 32px/1.02 var(--c)!important;letter-spacing:0!important;text-transform:uppercase}
+§ [data-hook=post-description] :is(h2,h3) span{font:inherit!important;color:inherit!important}
+§ [data-hook=post-description] h3{margin:34px 0 10px!important;color:var(--b)!important;font:800 23px/1.15 var(--f)!important}
+
+/* ---- Pull quote ---- */
+§ [data-hook=post-description] blockquote{position:relative;margin:38px 0!important;padding:20px 0 18px!important;border:0!important;border-top:4px solid var(--n)!important;border-bottom:1px solid #d5dbe6!important}
+§ [data-hook=post-description] blockquote::before{content:"\201C";display:block;height:30px;color:var(--o);font:800 76px/.9 var(--c)}
+§ [data-hook=post-description] :is(blockquote,blockquote *){color:var(--n)!important;font:700 28px/1.2 var(--c)!important;font-style:normal!important}
+
+/* ---- Images + captions ---- */
+¤ [data-hook=figure-IMAGE]{margin:36px 0!important}
+¤ [data-hook=figure-IMAGE] [data-hook=image-viewer]{background:var(--n)}
+¤ [data-hook=figure-IMAGE] [data-hook=gap-spacer]{height:0!important}
+¤ [data-hook=figure-IMAGE] figcaption{margin-top:12px!important;padding:2px 0 2px 12px!important;border-left:3px solid var(--o);text-align:left!important}
+¤ [data-hook=figure-IMAGE] :is(figcaption,figcaption *){color:#4a5872!important;font:600 14px/1.45 var(--f)!important}
+
+/* ---- By the numbers (tagged by the embed script) ---- */
+¤ [data-gbm-stat-head] h2{margin-bottom:0!important;padding:12px 22px!important;border:0!important;background:var(--o);color:#fff!important}
+¤ [data-gbm-stat]{padding:16px 22px 2px!important;background:var(--n);border-left:6px solid var(--o)}
+¤ [data-gbm-stat=last]{margin-bottom:34px!important;padding-bottom:6px!important}
+§ [data-gbm-stat] p{display:flow-root;color:#e6ecf5!important;font-size:17px!important;line-height:1.5!important;padding-bottom:14px!important;margin:0!important;border-bottom:1px solid rgba(255,255,255,.14)}
+§ [data-gbm-stat=last] p{border-bottom:0}
+§ [data-gbm-stat] p strong{float:left;min-width:128px;margin:0 18px 0 0;color:var(--o)!important;font:800 46px/1 var(--c)!important;font-variant-numeric:tabular-nums}
+§ [data-gbm-stat] p strong *{font:inherit!important;color:inherit!important}
+
+/* ---- Up next strip (inserted after the body by the embed script) ---- */
+¤ .gbm-upnext{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px 20px;max-width:700px;margin:40px auto 8px;padding:16px 20px;background:var(--n);border-left:6px solid var(--o);color:#fff!important;text-decoration:none!important;box-sizing:border-box}
+¤ .gbm-upnext .gu-l{padding:6px 9px 5px;background:var(--o);font:800 12px/1 var(--f);letter-spacing:.14em;text-transform:uppercase}
+¤ .gbm-upnext b{display:block;font:800 30px/1 var(--c);text-transform:uppercase}
+¤ .gbm-upnext small{display:block;margin-top:5px;color:#aebbd0;font:600 13px/1.3 var(--f)}
+¤ .gbm-upnext .gu-c{font:800 13px/1 var(--f);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+¤ .gbm-upnext:is(:hover,:focus-visible) .gu-c{color:var(--o)}
+¤ .gbm-upnext:focus-visible{outline:3px solid #ffb49e;outline-offset:2px}
+
+/* ---- Share row ---- */
+§ [data-hook=post]>div>footer[data-hook=post-footer]{max-width:700px;margin-inline:auto!important;border-top:1px solid #d5dbe6}
+¤ [data-hook^=share-button] svg{fill:var(--n)}
+¤ [data-hook^=share-button]:hover svg{fill:var(--o)}
+
+/* ---- Related stories (native Wix "Related Posts", reskinned) ---- */
+¤ [data-hook=recent-posts]{border-top:6px solid var(--o)!important;background:transparent!important}
+¤ [data-hook=recent-posts]>header h2{font-size:0!important}
+¤ [data-hook=recent-posts]>header h2::before{content:"Related stories";color:var(--n);font:800 30px/1 var(--c);text-transform:uppercase}
+¤ [data-hook=recent-posts]>header a{color:var(--b)!important;font:800 13px/1 var(--f)!important;letter-spacing:.08em;text-transform:uppercase}
+¤ [data-hook=recent-post-list-item]{background:#fff!important;border:1px solid #dfe4ec!important;border-top:4px solid var(--n)!important}
+¤ [data-hook=recent-post-list-item]:hover{border-top-color:var(--o)!important}
+¤ [data-hook=recent-post__title] a{color:var(--n)!important;font:800 21px/1.12 var(--c)!important;text-transform:uppercase}
+¤ [data-hook=recent-post-list-item] [data-hook=post-footer]{display:none!important}
+
+/* ---- Phone (Wix mobile layout <=750px) ---- */
+@media(max-width:750px){
+§ [data-hook=post]>div>header::after{margin:18px -20px -18px}
+§ [data-hook=post]>div>header{width:100vw;box-sizing:border-box;margin:0 calc(50% - 50vw) 26px!important;padding:20px 20px 18px!important;border-top-width:5px}
+§ [data-hook=post-title]{font-size:34px!important;line-height:1!important}
+§ [data-hook=post-title]+div,§ [data-hook=post-title]+div>div:first-child{gap:8px 12px}
+§ [data-hook=post-title]+div .gbm-writer-alerts{margin:0!important}
+§ [data-hook=post-title]+div *{font-size:12px!important}
+§ [data-hook=post-description] :is(p,li){font-size:17.5px!important;line-height:1.66!important}
+§ [data-hook=rcv-block-first]+div>[data-breakout]:first-child p{font-size:19.5px!important;line-height:1.5!important}
+§ [data-hook=post-description] h2{margin-top:38px!important;font-size:27px!important}
+§ [data-hook=post-description] :is(blockquote,blockquote *){font-size:24px!important}
+¤ [data-gbm-stat]{padding:14px 16px 2px!important}
+§ [data-gbm-stat] p strong{float:none;display:block;margin:0 0 4px;font-size:40px!important}
+¤ .gbm-upnext{grid-template-columns:1fr;gap:10px;padding:16px}
+¤ .gbm-upnext .gu-l{justify-self:start}
+¤ .gbm-upnext b{font-size:27px}
+}

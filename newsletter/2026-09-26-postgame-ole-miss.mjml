@@ -1,0 +1,122 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>FINAL: Gators run over No. 4 Ole Miss, 52-28</mj-title>
+    <mj-preview>Jadan Baugh ran for three touchdowns, Florida scored on its first five drives of the second half and moved to 4-0.</mj-preview>
+    <mj-font name="Newsreader" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&amp;display=swap" />
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Inter, Arial, sans-serif" />
+      <mj-text color="#14243D" font-size="16px" line-height="1.55" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="14px 22px" font-size="13px" font-weight="800" />
+    </mj-attributes>
+    <mj-style>
+      .gb-wordmark { font-weight:900; letter-spacing:-1.8px; }
+      .gb-h1 { font-family:'Newsreader',Georgia,serif; font-size:36px; line-height:1.06; font-weight:700; letter-spacing:-.5px; }
+      .gb-num { font-size:40px; line-height:1; font-weight:900; color:#FA4616; letter-spacing:-1px; }
+      .gb-lab { font-size:12px; line-height:1.35; font-weight:800; letter-spacing:1.2px; color:#D5DFEC; text-transform:uppercase; }
+      @media only screen and (max-width:480px) {
+        .gb-h1 { font-size:29px !important; line-height:1.1 !important; }
+        .gb-num { font-size:34px !important; }
+      }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#F2F0EB" width="640px">
+
+    <mj-section background-color="#FA4616" padding="10px 24px">
+      <mj-column width="70%">
+        <mj-text color="#FFFFFF" font-size="13px" font-weight="900" letter-spacing="3px" padding="0">FINAL &middot; FLORIDA 52, OLE MISS 28</mj-text>
+      </mj-column>
+      <mj-column width="30%">
+        <mj-text align="right" color="#FFFFFF" font-size="11px" font-weight="700" letter-spacing="1px" padding="1px 0 0">POSTGAME</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="16px 24px 12px">
+      <mj-column>
+        <mj-text align="center" padding="0">
+          <a href="https://www.gatorbaitmedia.com/?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=postgame_ole_miss_2026_09_26&utm_content=masthead" style="text-decoration:none;"><span class="gb-wordmark" style="font-size:32px;color:#003B7A;">GATOR</span><span class="gb-wordmark" style="font-size:32px;color:#FA4616;">BAIT</span></a><br/>
+          <span style="font-size:12px;font-weight:800;letter-spacing:3px;color:#003B7A;">MEDIA</span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#081B35" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_026d2a4d2be04a91b8c32317fed5f623~mv2.jpg" alt="Jadan Baugh dives into the end zone for Florida's first touchdown against Ole Miss. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=postgame_ole_miss_2026_09_26&utm_content=cover_image" padding="0" width="640px" />
+        <mj-text align="right" color="#AEBBD0" font-size="11px" padding="6px 14px 8px">Photo by Chris Spears, GatorBait Media</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="26px 30px 6px">
+      <mj-column>
+        <mj-text padding="0 0 8px" color="#081B35"><span class="gb-h1">Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp</span></mj-text>
+        <mj-text padding="0 0 14px" font-size="12px" font-weight="800" letter-spacing="1.2px" color="#5F6B7A">GATORBAIT MEDIA STAFF</mj-text>
+        <mj-text padding="0 0 12px">Every time No. 4 Ole Miss punched, Florida punched back harder.</mj-text>
+        <mj-text padding="0 0 12px">Jadan Baugh ran for 142 yards and three touchdowns, the Gators scored touchdowns on their first five possessions of the second half, and No. 21 Florida beat the Rebels 52-28 in The Swamp. Florida is 4-0 and 2-0 in the SEC, and it now leads the all-time series 14-13-1.</mj-text>
+        <mj-text padding="0 0 18px">Ole Miss twice cut it to three in the third quarter. Duke Clark answered with a 45-yard touchdown run, London Montgomery&rsquo;s 74-yard kickoff return set up Aaron Philo&rsquo;s 1-yard score, and Florida never led by fewer than 10 again.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#081B35" padding="22px 30px 8px">
+      <mj-column>
+        <mj-text color="#FA7A45" font-size="11px" font-weight="900" letter-spacing="2px" padding="0 0 4px">BY THE NUMBERS</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="0 30px 6px">
+      <mj-column width="50%">
+        <mj-text padding="8px 0"><span class="gb-num">302</span><br/><span class="gb-lab">Florida rushing yards</span></mj-text>
+      </mj-column>
+      <mj-column width="50%">
+        <mj-text padding="8px 0"><span class="gb-num">35</span><br/><span class="gb-lab">Second-half points</span></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="0 30px 22px">
+      <mj-column width="50%">
+        <mj-text padding="8px 0"><span class="gb-num">268</span><br/><span class="gb-lab">Baugh 142 + Clark 126</span></mj-text>
+      </mj-column>
+      <mj-column width="50%">
+        <mj-text padding="8px 0"><span class="gb-num">0</span><br/><span class="gb-lab">Florida turnovers</span></mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg" alt="The Florida Gators run onto the field at Ben Hill Griffin Stadium before kickoff. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=postgame_ole_miss_2026_09_26&utm_content=second_image" padding="0" width="640px" />
+        <mj-text align="right" color="#6D7888" font-size="11px" padding="6px 14px 8px">Photo by Chris Spears, GatorBait Media</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="14px 30px 6px">
+      <mj-column>
+        <mj-text padding="0 0 18px">When the clock hit 0:00, the Gators headed for the band, and the sold-out crowd stayed to celebrate with them. The full story has every number, the takeaways that decided it and the scene on the field.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=postgame_ole_miss_2026_09_26&utm_content=read_full" align="left" padding="0 0 22px">READ THE FULL POSTGAME STORY</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="0 30px 8px">
+      <mj-column border-left="5px solid #FA4616" padding="4px 0 4px 16px">
+        <mj-text padding="0 0 4px" font-size="12px" font-weight="900" letter-spacing="1.5px" color="#D8450C">FROM BUDDY MARTIN</mj-text>
+        <mj-text padding="0 0 16px" font-size="17px" font-weight="700" color="#081B35"><a href="https://www.gatorbaitmedia.com/post/the-sweet-music-chimes-again?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=postgame_ole_miss_2026_09_26&utm_content=buddy_column" style="color:#081B35;text-decoration:none;">THE SWEET MUSIC CHIMES AGAIN!</a></mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#081B35" padding="22px 30px">
+      <mj-column>
+        <mj-text color="#FA7A45" font-size="11px" font-weight="900" letter-spacing="2px" padding="0 0 6px">NEXT</mj-text>
+        <mj-text color="#FFFFFF" font-size="19px" line-height="1.35" font-weight="800" padding="0 0 6px">Florida (4-0) at Missouri</mj-text>
+        <mj-text color="#D5DFEC" font-size="15px" line-height="1.5" padding="0 0 14px">Saturday, Oct. 3, 3:30 p.m. ET. Postgame reaction from Jon Sumrall and the players is coming, with analysis from Buddy Martin and Franz Beard.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=postgame_ole_miss_2026_09_26&utm_content=homepage" align="left" padding="0" background-color="#FFFFFF" color="#081B35">MORE ON GATORBAITMEDIA.COM</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="18px 26px 22px">
+      <mj-column width="40%">
+        <mj-text padding="0" color="#003B7A" font-size="18px" font-weight="900">GATOR<span style="color:#FA4616;">BAIT</span> MEDIA</mj-text>
+      </mj-column>
+      <mj-column width="60%">
+        <mj-text align="right" color="#667386" font-size="11px" line-height="1.55" padding="0">Florida football. All the time.<br/>GatorBaitMedia.com &middot; Old-school journalism + new tech.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

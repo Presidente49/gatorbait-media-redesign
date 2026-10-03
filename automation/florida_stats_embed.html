@@ -45,7 +45,7 @@ html:has(#gbm-stats) #SITE_CONTAINER,html:has(#gbm-stats) #masterPage,html:has(#
 </style><script id="gbm-flstats-v1">window.__GBM_FLSTATS__=/*FS*/null/*FS-END*/;
 (function(){
 if(window.__GBM_FLSTATS_UI__)return;window.__GBM_FLSTATS_UI__=1;
-var H=document.documentElement.classList,BOX='https://www.espn.com/college-football/game/_/gameId/',FEED='https://presidente49.github.io/gatorbait-media-redesign/sports-live/florida-stats.json',API='https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=';
+var H=document.documentElement.classList,BOX='https://www.espn.com/college-football/game/_/gameId/',FEED='https://presidente49.github.io/gatorbait-media-redesign/sports-live/florida-stats.json',API='https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=';
 function on(){return /^\/florida-football-stats\/?$/.test(location.pathname||'')&&!!window.__GBM_FLSTATS__}
 function e(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function table(cls,cap,head,rows){return'<div class="fs-x"><table class="'+cls+'"><caption class="fs-sr">'+e(cap)+'</caption><thead><tr>'+head.map(function(h){return'<th scope="col">'+e(h)+'</th>'}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table></div>'}

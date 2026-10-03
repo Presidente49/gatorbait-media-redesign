@@ -19,7 +19,7 @@ const ROUTES = [
   { name: 'home', path: '/', expectMount: false },
   { name: 'stats-spa', path: '/', spa: '/florida-football-stats', expectMount: true }
 ];
-const ESPN = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708';
+const ESPN = 'https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708';
 
 const browser = await chromium.launch();
 let failed = 0;
@@ -54,8 +54,8 @@ for (const prof of PROFILES) {
         if (/espn\.com/.test(e.response.url)) seen[e.response.url] = { status: e.response.status, acao: e.response.headers['access-control-allow-origin'] || e.response.headers['Access-Control-Allow-Origin'] || null, server: e.response.headers.server || e.response.headers.Server || null };
       });
       cdp.on('Network.loadingFailed', e => { seen['failed:' + e.requestId] = { error: e.errorText, blocked: e.blockedReason || null, cors: e.corsErrorStatus || null }; });
-      const urls = [ESPN, ESPN.replace('//site.api.', '//site.web.api.'), 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8'];
-      const results = await page.evaluate(us => Promise.all(us.map(u => fetch(u).then(x => x.status + ' ' + x.headers.get('access-control-allow-origin')).catch(e => 'error ' + e.message))), urls);
+      const urls = [ESPN, ESPN.replace('//site.web.api.', '//site.api.')];
+      const results = await page.evaluate(us => Promise.all(us.map(u => fetch(u).then(x => String(x.status)).catch(e => 'error ' + e.message))), urls);
       await page.waitForTimeout(1000);
       espnFromSite = results[0];
       espnDiag = { results: Object.fromEntries(urls.map((u, i) => [u.split('/')[2] + ' ' + u.split('/').pop(), results[i]])), seen, ua: await page.evaluate(() => navigator.userAgent), brands: await page.evaluate(() => navigator.userAgentData ? navigator.userAgentData.brands.map(b => b.brand).join(',') : null) };
@@ -84,7 +84,8 @@ for (const prof of PROFILES) {
     const pageMissing = route.name === 'stats' && http === 404;
     if (!pageMissing && !r.embedLoaded) bad.push('embed script missing');
     if (!pageMissing && route.expectMount !== r.mounted) bad.push(`mounted=${r.mounted}`);
-    if (espnFromSite !== undefined && !/^200 \*$/.test(espnFromSite)) bad.push(`espn from site: ${espnFromSite}`);
+    // A 200 visible to page JS means CORS passed. The embed reads this host.
+    if (espnFromSite !== undefined && espnFromSite !== '200') bad.push(`espn from site: ${espnFromSite}`);
     if (route.expectMount && r.overflow) bad.push('horizontal overflow');
     if (route.expectMount && !/Barlow/.test(r.font || '')) bad.push(`font=${r.font}`);
     if (ourErrors.length) bad.push('stats errors');

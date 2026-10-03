@@ -43,6 +43,15 @@ jobs:
         run: |
           python -m unittest -q automation/tests/test_florida_stats.py
           python automation/florida_stats.py $FORCE
+          if [ -n "$FORCE" ]; then
+            # Can a reader's browser read ESPN directly? Print CORS headers and sizes (log only).
+            API=https://site.api.espn.com/apis/site/v2/sports/football/college-football
+            for u in "$API/teams/57" "$API/scoreboard?groups=8" "$API/summary?event=401856708"; do
+              echo "== $u"
+              curl -s -D - -o /dev/null -w 'bytes=%{size_download}\n' -H 'Origin: https://www.gatorbaitmedia.com' "$u" \
+                | grep -i -E '^(HTTP/|access-control-allow-origin|content-encoding|cache-control|bytes=)' || true
+            done
+          fi
       - name: Commit changed content and request the existing Pages publisher
         shell: bash
         env:

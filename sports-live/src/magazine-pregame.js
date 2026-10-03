@@ -252,7 +252,7 @@
     if (!/^[0-9]+$/.test(ev) || !isFinite(k)) return Promise.resolve(null);
     var d = new Date(k - 5 * 3600000), ymd = d.getUTCFullYear() + ('0' + (d.getUTCMonth() + 1)).slice(-2) + ('0' + d.getUTCDate()).slice(-2);
     var c = typeof AbortController === 'function' ? new AbortController() : null, tm = setTimeout(function () { if (c) c.abort(); }, 4000);
-    return fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=' + ymd, { signal: c ? c.signal : undefined, credentials: 'omit', cache: 'no-store' })
+    return fetch('https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=' + ymd, { signal: c ? c.signal : undefined, credentials: 'omit', cache: 'no-store' })
       .then(function (r) { clearTimeout(tm); if (!r.ok) throw new Error('espn ' + r.status); return r.json(); })
       .then(function (j) {
         var e = (j && j.events || []).filter(function (x) { return x && String(x.id) === ev; })[0], cp = e && e.competitions && e.competitions[0];

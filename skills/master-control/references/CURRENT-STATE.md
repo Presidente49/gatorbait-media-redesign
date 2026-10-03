@@ -12,7 +12,7 @@ Brenden, ~2:30 a.m. ET: "sorry coordinate today just to clean it up." Jarvis rea
 
 ### Authority and holds (Oct. 3)
 - Brenden's words: "unpause" and "lift the pause order" (Control Room, ~2:17 a.m. ET) and "Lift the hold on the staff" (Jarvis chat, ~2 a.m. ET). Jarvis reads these as lifting the Oct. 1 ALL STOP (#34 comment 5938556323) for the Game-day desk's Oct. 3 routines, under the standing protocol (comment 5943370118): fresh live read, rollback snapshot, smallest change, read-back, one writer per object, claims in #34.
-- **Still needs Brenden's explicit yes every time: any list email.** The send governor runs first. The Sunday 6:32 a.m. ET Daily Roundup routine is on HOLD this week (build only, no send, post "@Jarvis — needs Brenden"): the sender rank is still BAD and Brenden said Oct. 2 not to risk it.
+- **Still needs Brenden's explicit yes every time: any list email.** The send governor runs first. The Sunday 6:32 a.m. ET Daily Roundup routine (`trig_01JibZfuK6jRddgK16atrrTQ`) is on HOLD by Jarvis's instruction: build only, no send, post "@Jarvis — needs Brenden". The sender rank is still BAD and Brenden said Oct. 2 not to risk it. **The routine's own prompt is unchanged** (its instructions can be edited only from the desk chat), so the hold rests on this note, #34 and the send governor. Safer if Brenden agrees: Jarvis pauses the routine (needs his word).
 
 ### Design system (together repo, merged Oct. 3 at 2:23 a.m. ET, commit `1024d65`)
 - Brand book, tokens (30 colors, 23 Barlow type styles, spacing, layout), 14 `gb-*` components, Barlow 400/500/700/800, wordmark and four photos. Extracted Sept. 28 from `d696498` (the "Paper" front page).

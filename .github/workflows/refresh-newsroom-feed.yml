@@ -36,6 +36,26 @@ jobs:
       - name: Refresh both presentations from one public Wix feed read
         if: github.ref == 'refs/heads/main'
         run: python automation/update_newsroom_feed_routed.py
+      # Branch-only diagnostic: which ESPN hosts and User-Agents answer this runner, and does
+      # ESPN send CORS headers a reader's browser could use? Log only; never blocks anything.
+      - name: Probe ESPN access from this runner
+        if: github.ref != 'refs/heads/main'
+        continue-on-error: true
+        run: |
+          P=sports/football/college-football
+          CHROME='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+          for host in site.api.espn.com site.web.api.espn.com; do
+            for ua in 'GatorBait-Stats/1 (+https://www.gatorbaitmedia.com)' "$CHROME" 'Python-urllib/3.12'; do
+              code=$(curl -s -o /dev/null -w '%{http_code} bytes=%{size_download}' -A "$ua" "https://$host/apis/site/v2/$P/teams/57/schedule?season=2026&seasontype=2")
+              echo "schedule $host [$ua] -> $code"
+            done
+          done
+          for u in "teams/57" "scoreboard?groups=8" "summary?event=401856708"; do
+            echo "== CORS $u"
+            curl -s -D - -o /dev/null -w 'bytes=%{size_download}\n' -A "$CHROME" -H 'Origin: https://www.gatorbaitmedia.com' "https://site.api.espn.com/apis/site/v2/$P/$u" \
+              | grep -i -E '^(HTTP/|access-control-allow-origin|cache-control|server|x-cache|bytes=)' || true
+          done
+          curl -s https://api.ipify.org && echo ' (runner IP)' || true
       # Florida football stats: reads ESPN only in a game window, hourly for 3 days after a final,
       # and once a day; otherwise a no-op. A failed read or check keeps the last good snapshot
       # and never blocks the newsroom refresh.
@@ -46,15 +66,6 @@ jobs:
         run: |
           python -m unittest -q automation/tests/test_florida_stats.py
           python automation/florida_stats.py $FORCE
-          if [ -n "$FORCE" ]; then
-            # Can a reader's browser read ESPN directly? Print CORS headers and sizes (log only).
-            API=https://site.api.espn.com/apis/site/v2/sports/football/college-football
-            for u in "$API/teams/57" "$API/scoreboard?groups=8" "$API/summary?event=401856708"; do
-              echo "== $u"
-              curl -s -D - -o /dev/null -w 'bytes=%{size_download}\n' -H 'Origin: https://www.gatorbaitmedia.com' "$u" \
-                | grep -i -E '^(HTTP/|access-control-allow-origin|content-encoding|cache-control|bytes=)' || true
-            done
-          fi
       - name: Commit changed content and request the existing Pages publisher
         shell: bash
         env:

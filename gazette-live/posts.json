@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10",
+      "excerpt": "Austin Simmons threw two touchdown passes and No. 25 Missouri held Jadan Baugh to 12 yards on nine carries to lead No. 8 Florida 20-10 at the half in Columbia.",
+      "url": "https://www.gatorbaitmedia.com/post/halftime-simmons-strikes-twice-missouri-leads-florida-20-10",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-10-03T21:49:53Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_c2096747d67b47c68ca6e6839330cb03~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10"
+      }
+    },
+    {
       "title": "Baby Chomp, Big Grudge: Florida Goes to Columbia With a Photo to Settle",
       "excerpt": "A mocking baby Gator chomp from Florida’s last loss at Missouri still stings in Gainesville, and No. 8 Florida gets its answer at Faurot Field on Saturday.",
       "url": "https://www.gatorbaitmedia.com/post/baby-chomp-big-grudge-florida-goes-to-columbia-with-a-photo-to-settle",
@@ -17,7 +31,7 @@
     },
     {
       "title": "Brown Out: Florida Preps to Play Missouri Without VB3",
-      "excerpt": "Vernell Brown III, Florida’s leading receiver, was downgraded to doubtful for Saturday’s 3:30 p.m. ET game at Missouri. Here is what the Gators lose and who steps in.",
+      "excerpt": "Vernell Brown III, Florida’s leading receiver, was downgraded to doubtful for Saturday’s 3:50 p.m. ET game at Missouri. Here is what the Gators lose and who steps in.",
       "url": "https://www.gatorbaitmedia.com/post/brown-out-florida-preps-to-play-missouri-without-vb3",
       "author": "GatorBait Staff",
       "firstPublishedDate": "2026-10-03T15:25:38Z",
@@ -45,7 +59,7 @@
     },
     {
       "title": "Game Day: No. 8 Florida at No. 25 Missouri",
-      "excerpt": "No. 8 Florida looks to stay unbeaten against No. 25 Missouri today at 3:30 p.m. ET on ABC, on Missouri's homecoming weekend at Faurot Field.",
+      "excerpt": "No. 8 Florida looks to stay unbeaten against No. 25 Missouri today at 3:50 p.m. ET on ABC, on Missouri's homecoming weekend at Faurot Field.",
       "url": "https://www.gatorbaitmedia.com/post/game-day-no-8-florida-at-no-25-missouri",
       "author": "GatorBait Staff",
       "firstPublishedDate": "2026-10-03T14:04:31Z",
@@ -73,7 +87,7 @@
     },
     {
       "title": "The Wizards Have Spoken, And These Florida Gators Are Suddenly Somebody",
-      "excerpt": "Hey! No resting on your laurels, Scott Stricklin By Buddy Martin GatirBaitMedia.com Somewhere in Gainesville there’s a whistle with teeth marks in it. It belongs to Jon Sumrall, and it’s the only thing in Florida football that has taken a beating lately. Think back to where we were a month ago. If you’d said in August that the Gators would go into the first…",
+      "excerpt": "Hey! No resting on your laurels, Scott Stricklin By Buddy Martin GatorBaitMedia.com Somewhere in Gainesville there’s a whistle with teeth marks in it. It belongs to Jon Sumrall, and it’s the only thing in Florida football that has taken a beating lately. Think back to where we were a month ago. If you’d said in August that the Gators would go into the first…",
       "url": "https://www.gatorbaitmedia.com/post/the-wizards-have-spoken-and-these-2026-florida-gators-suddenly-somebody",
       "author": "Buddy Martin",
       "firstPublishedDate": "2026-10-03T04:34:18Z",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'"
-      }
-    },
-    {
-      "title": "Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout",
-      "excerpt": "Jadan Baugh earned his first SEC Offensive Player of the Week award, while London Montgomery and Bryce Lovett received their first SEC weekly honors after Florida’s 52-28 win over No. 4 Ole Miss.",
-      "url": "https://www.gatorbaitmedia.com/post/honor-roll-baugh-montgomery-and-lovett-collect-sec-weekly-awards-after-ole-miss-rout",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-09-28T20:56:09Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_52f12f29b57540dcb22edd0fa545ceb1~mv2.jpg/v1/fit/w_800,h_500,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Honor Roll: Baugh, Montgomery and Lovett Collect SEC Weekly Awards After Ole Miss Rout"
       }
     }
   ]

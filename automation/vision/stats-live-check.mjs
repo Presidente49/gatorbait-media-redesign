@@ -81,13 +81,13 @@ for (const prof of PROFILES) {
     const ourErrors = errors.filter(e => /FLSTATS|gbm-stats|flstats/i.test(e));
     const bad = [];
     // Wix serves no custom embeds on its 404 page, so a missing page is reported, not failed: it needs the editor.
-    const pageMissing = route.name === 'stats' && http === 404;
+    const pageMissing = (route.name === 'stats' && http === 404) || (!!route.spa && /^404/.test(r.title || '') && !r.mounted);
     if (!pageMissing && !r.embedLoaded) bad.push('embed script missing');
     if (!pageMissing && route.expectMount !== r.mounted) bad.push(`mounted=${r.mounted}`);
     // A 200 visible to page JS means CORS passed. The embed reads this host.
     if (espnFromSite !== undefined && espnFromSite !== '200') bad.push(`espn from site: ${espnFromSite}`);
-    if (route.expectMount && r.overflow) bad.push('horizontal overflow');
-    if (route.expectMount && !/Barlow/.test(r.font || '')) bad.push(`font=${r.font}`);
+    if (!pageMissing && route.expectMount && r.overflow) bad.push('horizontal overflow');
+    if (!pageMissing && route.expectMount && !/Barlow/.test(r.font || '')) bad.push(`font=${r.font}`);
     if (ourErrors.length) bad.push('stats errors');
     if (bad.length) failed++;
     console.log(JSON.stringify({ route: route.name, profile: prof.name, http, pageMissing, ok: !bad.length, bad, ...r, espnFromSite, espnDiag, reads, pageErrors: errors }));

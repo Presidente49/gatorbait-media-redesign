@@ -74,7 +74,7 @@ var a=document.getElementById('gbm-mobile-shell-host')||document.getElementById(
 if(a&&a.parentNode===document.body)document.body.insertBefore(m,a.nextSibling);else document.body.insertBefore(m,document.body.firstChild);
 document.title='Florida Gators Football Stats '+window.__GBM_FLSTATS__.season+' | GatorBait Media';pull()}
 catch(err){H.remove('gbm-fs');console.warn('[GatorBait] stats page',err)}}
-// In a game window, each minute: live score from ESPN, newer checked totals from the Pages feed.
+/* In a game window, each minute: live score from ESPN, newer checked totals from the Pages feed. */
 function hot(g){var k=Date.parse(g.k),n=Date.now();return!g.r&&g.live!==2&&n>k&&n<k+288e5}
 function get(u){return fetch(u).then(function(r){return r.ok?r.json():0}).catch(function(){})}
 function pull(){if(!on()||!window.fetch)return;var g=window.__GBM_FLSTATS__.games.filter(hot)[0];

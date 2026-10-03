@@ -11,6 +11,8 @@ on:
       - 'automation/ops-hub/policy.json'
       - 'tools/fetch-pinned-sources.sh'
       - '.github/workflows/newsletter-stack-qc.yml'
+      - 'automation/newsletter/send-governor.js'
+      - 'automation/newsletter/send-governor.test.mjs'
   workflow_dispatch:
 
 permissions:
@@ -47,6 +49,9 @@ jobs:
           node automation/newsletter/validate-unique-images.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
           node automation/newsletter/run-stack-qc.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
           node automation/newsletter/check-links.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
+
+      - name: Test the send governor
+        run: node --test automation/newsletter/send-governor.test.mjs
 
       - name: Install upstream MJML toolchain
         run: npm ci --prefix vendor/colorlib-email-templates

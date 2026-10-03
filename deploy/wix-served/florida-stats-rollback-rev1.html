@@ -1,0 +1,78 @@
+<!-- GBM_FLORIDA_STATS_V1 route=/florida-football-stats built by automation/florida_stats.py --><style id="gbm-flstats-css">
+html.gbm-fs #SITE_PAGES{display:none!important}
+html.gbm-fs:not(:has(#gbm-stats-page)) #gbm-footer{visibility:hidden}
+html:has(#gbm-stats-page) #BACKGROUND_GROUP{display:none!important}
+html:has(#gbm-stats-page) #SITE_CONTAINER,html:has(#gbm-stats-page) #masterPage,html:has(#gbm-stats-page) #PAGES_CONTAINER,html:has(#gbm-stats-page) #SITE_PAGES_TRANSITION_GROUP{height:auto!important;min-height:0!important;padding-bottom:0!important;margin-bottom:0!important}
+#gbm-stats-page,#gbm-stats-page *{box-sizing:border-box}
+#gbm-stats-page{position:relative;z-index:3;background:#fffdf9;color:#10233f;font:400 15px/1.5 Barlow,Arial,sans-serif;padding:28px 0 8px}
+#gbm-stats-page .fs-wrap{max-width:1184px;margin:auto;padding:0 24px 40px}
+#gbm-stats-page a{color:#0021a5;text-decoration:underline;text-underline-offset:3px}
+#gbm-stats-page a:focus-visible{outline:3px solid #e84b10;outline-offset:3px}
+#gbm-stats-page h1,#gbm-stats-page h2,#gbm-stats-page p{margin:0}
+#gbm-stats-page .fs-kick{font:700 12px/1.4 Barlow,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#ba3c0c}
+#gbm-stats-page h1{margin-top:8px;font:800 36px/1.08 Barlow,Arial,sans-serif;letter-spacing:-.025em;color:#11274a}
+#gbm-stats-page .fs-meta{margin-top:10px;font:500 14px/1.5 Barlow,Arial,sans-serif;color:#4b5666}
+#gbm-stats-page .fs-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0 8px}
+#gbm-stats-page .fs-tile{padding:14px 16px 16px;background:#f0eee8;border-top:3px solid #11274a;min-width:0}
+#gbm-stats-page .fs-tile span{display:block;font:700 13px/1.3 Barlow,Arial,sans-serif;color:#4b5666}
+#gbm-stats-page .fs-tile b{display:block;margin-top:6px;font:800 34px/1 Barlow,Arial,sans-serif;color:#11274a}
+#gbm-stats-page .fs-tile small{display:block;margin-top:6px;font:500 13px/1.3 Barlow,Arial,sans-serif;color:#586475}
+#gbm-stats-page .fs-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px;align-items:start}
+#gbm-stats-page .fs-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 32px}
+#gbm-stats-page section{margin-top:28px;min-width:0}
+#gbm-stats-page h2{font:800 20px/1.2 Barlow,Arial,sans-serif;letter-spacing:-.02em;color:#11274a;border-top:4px solid #e84b10;padding-top:12px;margin-bottom:6px}
+#gbm-stats-page h3{margin:18px 0 2px;font:800 14px/1.3 Barlow,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#11274a}
+#gbm-stats-page .fs-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+#gbm-stats-page table{width:100%;border-collapse:collapse;font:500 15px/1.35 Barlow,Arial,sans-serif;font-variant-numeric:tabular-nums}
+#gbm-stats-page th,#gbm-stats-page td{padding:9px 8px;border-bottom:1px solid #d9dce1;text-align:right;white-space:nowrap;background:none}
+#gbm-stats-page th:first-child,#gbm-stats-page td:first-child{text-align:left;padding-left:0}
+#gbm-stats-page th:last-child,#gbm-stats-page td:last-child{padding-right:0}
+#gbm-stats-page thead th{font:700 12px/1.3 Barlow,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#586475;border-bottom:2px solid #11274a}
+#gbm-stats-page tbody th{font-weight:600;color:#10233f;white-space:normal;min-width:8.5em}
+#gbm-stats-page .fs-sr{position:absolute;left:-9999px}
+#gbm-stats-page .fs-log td:nth-child(2),#gbm-stats-page .fs-log th:nth-child(2){text-align:left;white-space:normal}
+#gbm-stats-page .fs-log td:nth-child(3){font-weight:700}
+#gbm-stats-page .fs-log .fs-up td{color:#586475}
+#gbm-stats-page .fs-log .fs-up td:nth-child(3){font-weight:500;white-space:normal}
+#gbm-stats-page .fs-n{font:700 11px/1 Barlow,Arial,sans-serif;color:#586475;margin-left:4px}
+#gbm-stats-page .fs-note{margin-top:10px;font:500 14px/1.5 Barlow,Arial,sans-serif;color:#4b5666}
+#gbm-stats-page .fs-src{margin-top:32px;padding-top:14px;border-top:1px solid #c5c9ce;font:500 13px/1.55 Barlow,Arial,sans-serif;color:#4b5666;max-width:80ch}
+@media(max-width:900px){#gbm-stats-page .fs-row,#gbm-stats-page .fs-grid{grid-template-columns:minmax(0,1fr);gap:0}#gbm-stats-page .fs-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#gbm-stats-page{padding-top:18px}#gbm-stats-page .fs-wrap{padding:0 16px 32px}#gbm-stats-page h1{font-size:28px}#gbm-stats-page .fs-tile{padding:12px}#gbm-stats-page .fs-tile b{font-size:28px}#gbm-stats-page table{font-size:14px}#gbm-stats-page th,#gbm-stats-page td{padding:8px 5px}#gbm-stats-page thead th{font-size:11px;letter-spacing:.04em}}
+@media(max-width:360px){#gbm-stats-page tbody th{min-width:6.5em}#gbm-stats-page th,#gbm-stats-page td{padding:8px 3px}}
+</style><script id="gbm-flstats-v1">window.__GBM_FLSTATS__=/*FS*/{"v":1,"season":2026,"record":"4-0","confRecord":"2-0","tiles":[["Record","4-0","2-0 SEC"],["Points per game","53.5","22.8 allowed"],["Yards per game","532.8","351.2 allowed"],["Turnover margin","+4","4 games"]],"teamRows":[["Points per game","53.5","22.8"],["Total yards per game","532.8","351.2"],["Rushing yards per game","260.0","103.0"],["Yards per carry","5.9","3.4"],["Passing yards per game","272.8","248.2"],["Completions-attempts","76-104 (73%)","100-160 (62%)"],["First downs per game","26.2","20.8"],["Third-down conversions","21-43 (49%)","26-63 (41%)"],["Turnovers","4","8"],["Penalties-yards","35-357","30-277"],["Time of possession (avg.)","34:04","25:56"]],"lead":{"pass":[["Aaron Philo","63-87","917","7","2"],["Tramell Jones Jr.","12-16","126","1","1"],["Kahleil Jackson","1-1","48","0","0"]],"rush":[["Jadan Baugh","83","600","7.2","11","75"],["Duke Clark","32","259","8.1","3","45"],["Aaron Philo","24","69","2.9","3","12"],["Byron Louis","6","34","5.7","0","15"],["Evan Pryor","10","30","3.0","0","11"],["London Montgomery","8","19","2.4","0","5"]],"rec":[["Vernell Brown III","17","271","15.9","2","49"],["Dallas Wilson","14","236","16.9","2","40"],["TJ Abrams","5","111","22.2","0","63"],["Bailey Stockton","13","106","8.2","1","24"],["Luke Harpring","7","97","13.9","0","22"],["Amir Jackson","4","90","22.5","1","48"]],"def":[["Myles Graham","28","0.5","0.5","0","0"],["Jayden Woods","19","6","4","0","0"],["Aaron Chiles","18","1","0","0","1"],["Jeramiah McCloud","15","1.5","0.5","0","2"],["Bryce Thornton","14","0","0","0","1"],["Ben Hanks III","13","1","0","0","1"]],"kick":[["Patrick Durkin","6-6","53","27-27","45"],["Liam Padron","0-0","–","1-1","1"]],"defBest":{"SACKS":["Jayden Woods","4"],"INT":["DJ Coleman","2"],"TFL":["Jayden Woods","6"]}},"through":"Sept. 26 vs. Ole Miss","games":[{"id":"401856637","k":"2026-09-05T23:45Z","d":"Sat., Sept. 5","o":"vs. Florida Atlantic","n":false,"r":"W","s":"66-21","rec":"1-0"},{"id":"401856672","k":"2026-09-12T21:30Z","d":"Sat., Sept. 12","o":"vs. Campbell","n":false,"r":"W","s":"52-3","rec":"2-0"},{"id":"401856687","k":"2026-09-19T23:00Z","d":"Sat., Sept. 19","o":"at Auburn","n":false,"r":"W","s":"44-39","rec":"3-0"},{"id":"401856699","k":"2026-09-26T19:30Z","d":"Sat., Sept. 26","o":"vs. No. 4 Ole Miss","n":false,"r":"W","s":"52-28","rec":"4-0"},{"id":"401856708","k":"2026-10-03T19:30Z","d":"Sat., Oct. 3","o":"at No. 25 Missouri","n":false,"t":"3:30 p.m.","tv":"ABC"},{"id":"401856714","k":"2026-10-10T04:00Z","d":"Sat., Oct. 10","o":"vs. South Carolina","n":false,"t":"TBA","tv":""},{"id":"401856724","k":"2026-10-17T04:00Z","d":"Sat., Oct. 17","o":"at No. 1 Texas","n":false,"t":"TBA","tv":""},{"id":"401856734","k":"2026-10-31T19:30Z","d":"Sat., Oct. 31","o":"vs. No. 2 Georgia","n":true,"t":"3:30 p.m.","tv":"ABC"},{"id":"401856739","k":"2026-11-07T05:00Z","d":"Sat., Nov. 7","o":"vs. Oklahoma","n":false,"t":"TBA","tv":""},{"id":"401856884","k":"2026-11-14T05:00Z","d":"Sat., Nov. 14","o":"at No. 24 Kentucky","n":false,"t":"TBA","tv":""},{"id":"401856748","k":"2026-11-21T05:00Z","d":"Sat., Nov. 21","o":"vs. Vanderbilt","n":false,"t":"TBA","tv":""},{"id":"401856759","k":"2026-11-27T20:30Z","d":"Fri., Nov. 27","o":"at Florida State","n":false,"t":"3:30 p.m.","tv":"ABC"}],"updated":"2026-09-27T20:44:58Z","updatedLabel":"Sept. 27, 2026, 4:44 p.m. ET","src":[["ESPN box scores","https://www.espn.com/college-football/team/stats/_/id/57/florida-gators"],["FloridaGators.com","https://floridagators.com/sports/football/stats"]]}/*FS-END*/;
+(function(){
+if(window.__GBM_FLSTATS_UI__)return;window.__GBM_FLSTATS_UI__=1;
+var H=document.documentElement.classList,BOX='https://www.espn.com/college-football/game/_/gameId/';
+function on(){return /^\/florida-football-stats\/?$/.test(location.pathname||'')&&!!window.__GBM_FLSTATS__}
+function e(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function table(cls,cap,head,rows){return'<div class="fs-x"><table class="'+cls+'"><caption class="fs-sr">'+e(cap)+'</caption><thead><tr>'+head.map(function(h){return'<th scope="col">'+e(h)+'</th>'}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table></div>'}
+function lines(rows){return rows.map(function(r){return'<tr><th scope="row">'+e(r[0])+'</th>'+r.slice(1).map(function(c){return'<td>'+e(c)+'</td>'}).join('')+'</tr>'})}
+function game(g){var res;
+if(g.r)res='<a href="'+BOX+encodeURIComponent(g.id)+'" target="_blank" rel="noopener" aria-label="'+e((g.r==='W'?'Won ':'Lost ')+g.s+', ESPN box score')+'">'+e(g.r+' '+g.s)+'</a>';
+else res=Date.now()>Date.parse(g.k)?'In progress':e(g.t+(g.tv?' · '+g.tv:''));
+return'<tr'+(g.r?'':' class="fs-up"')+'><td>'+e(g.d)+'</td><td>'+e(g.o)+(g.n?'<span class="fs-n" title="Neutral site">N</span>':'')+'</td><td>'+res+'</td><td>'+e(g.rec||'')+'</td></tr>'}
+function html(){var S=window.__GBM_FLSTATS__,L=S.lead||{},out=[];
+out.push('<header><p class="fs-kick">Florida football · '+e(S.season)+' season</p><h1 id="fs-h">Florida Gators stats</h1><p class="fs-meta">'+(S.through?'Through '+e(S.through)+' · ':'')+'Updated '+e(S.updatedLabel)+'</p></header>');
+if(S.tiles)out.push('<div class="fs-tiles">'+S.tiles.map(function(t){return'<div class="fs-tile"><span>'+e(t[0])+'</span><b>'+e(t[1])+'</b><small>'+e(t[2])+'</small></div>'}).join('')+'</div>');
+out.push('<div class="fs-row"><section aria-labelledby="fs-g"><h2 id="fs-g">Game by game</h2>'+table('fs-log','Florida schedule and results',['Date','Opponent','Result','Record'],S.games.map(game))+'<p class="fs-note">Kickoff times are Eastern. Each result links to its ESPN box score.</p></section>');
+if(S.teamRows)out.push('<section aria-labelledby="fs-t"><h2 id="fs-t">Team stats</h2>'+table('fs-team','Florida and opponents season team statistics',['','Florida','Opponents'],lines(S.teamRows))+'</section>');
+out.push('</div>');
+if(L.rush){var b=[['pass','Passing',['C-Att','Yds','TD','Int']],['rush','Rushing',['Car','Yds','Avg','TD','Long']],['rec','Receiving',['Rec','Yds','Avg','TD','Long']],['def','Defense',['Tkl','TFL','Sacks','Int','PD']],['kick','Kicking',['FG','Long','XP','Pts']]];
+out.push('<section aria-labelledby="fs-l"><h2 id="fs-l">Season leaders</h2><div class="fs-grid">'+b.filter(function(x){return L[x[0]]&&L[x[0]].length}).map(function(x){return'<div><h3>'+x[1]+'</h3>'+table('fs-lead',x[1]+' leaders',['Player'].concat(x[2]),lines(L[x[0]]))+'</div>'}).join('')+'</div>');
+var d=L.defBest||{},also=[['SACKS','Sacks'],['TFL','Tackles for loss'],['INT','Interceptions']].filter(function(x){return d[x[0]]}).map(function(x){return x[1]+': '+e(d[x[0]][0])+' ('+e(d[x[0]][1])+')'});
+if(also.length)out.push('<p class="fs-note">Team leaders. '+also.join(' · ')+'</p>');
+out.push('</section>')}
+out.push('<p class="fs-src">Source: '+S.src.map(function(s){return'<a href="'+e(s[1])+'" target="_blank" rel="noopener">'+e(s[0])+'</a>'}).join(' and ')+'. Season totals are the sum of ESPN’s game-by-game box scores and are rechecked automatically after every game; official NCAA figures can differ slightly after stat corrections. Updated '+e(S.updatedLabel)+'.</p>');
+return'<div class="fs-wrap">'+out.join('')+'</div>'}
+function mount(){if(!on()||document.getElementById('gbm-stats-page'))return;
+try{var m=document.createElement('main');m.id='gbm-stats-page';m.setAttribute('aria-labelledby','fs-h');m.innerHTML=html();
+var a=document.getElementById('gbm-mobile-shell-host')||document.getElementById('gbm-site-header');
+if(a&&a.parentNode===document.body)document.body.insertBefore(m,a.nextSibling);else document.body.insertBefore(m,document.body.firstChild);
+document.title='Florida Gators Football Stats '+window.__GBM_FLSTATS__.season+' | GatorBait Media';}
+catch(err){H.remove('gbm-fs');console.warn('[GatorBait] stats page',err)}}
+function sync(){if(on()){H.add('gbm-fs');if(document.body)mount();return}H.remove('gbm-fs');var m=document.getElementById('gbm-stats-page');if(m)m.remove()}
+if(on())H.add('gbm-fs');
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync,{once:true});else sync();
+window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

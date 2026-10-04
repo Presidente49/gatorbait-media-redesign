@@ -82,7 +82,7 @@
   function isSpears(p) { return /chris spears/i.test(p.author) || /^chris spears/i.test(p.title); }
   function byColumnist(p, name) { return (name === 'Chris Spears' || name === 'Chris Spears Photos') ? isSpears(p) : p.author.toLowerCase().indexOf(name.toLowerCase()) >= 0; }
 
-  // Home Code lead rule: breaking pin > timed pin (unless a newer Buddy piece) > newest Buddy <= 7 days > newest.
+  // Only an explicit feature may override chronology; writer identity does not pin news.
   function pickLead(posts) {
     var t = now(), pins = {}, extra = window.__GBM_HOME_PINS__;
     ['breaking', 'timed'].forEach(function (k) { pins[k] = extra && extra.hasOwnProperty(k) ? extra[k] : BUNDLE.pins[k]; });
@@ -93,10 +93,8 @@
     }
     var breaking = find(pins.breaking);
     if (breaking) return { post: breaking, why: 'breaking' };
-    var buddy = posts.find(function (p) { return /buddy martin/i.test(p.author) && t - p.date.getTime() < 7 * DAY; });
     var timed = find(pins.timed);
-    if (timed && !(buddy && buddy.date > timed.date)) return { post: timed, why: 'pin' };
-    if (buddy) return { post: buddy, why: 'buddy' };
+    if (timed) return { post: timed, why: 'pin' };
     return { post: posts[0], why: 'newest' };
   }
 
@@ -587,10 +585,10 @@
     var picked = pickLead(posts), lead = picked.post, shown = {}, used = {};
     shown[lead.url] = 1; if (lead.image) used[lead.image] = 1;
     function take(list, n, test) { var out = []; list.forEach(function (p) { if (out.length < n && !shown[p.url] && (!test || test(p))) { shown[p.url] = 1; if (p.image) used[p.image] = 1; out.push(p); } }); return out; }
-    // Secondary feature: newest columnist story with a photo (Franz first), then any story with a photo.
-    var feature = take(posts, 1, function (p) { return p.image && /franz beard/i.test(p.author); })[0] ||
-      take(posts, 1, function (p) { return p.image && !/staff/i.test(p.author) && !isSpears(p); })[0] || take(posts, 1, function (p) { return !!p.image; })[0];
-    var list = take(posts, 4, function (p) { return !isSpears(p) || !/(photo|galler|best shots)/i.test(p.title); });
+    // Only the lead is curated. Every supporting slot follows publication order,
+    // including photographs and stories without art; no writer gets a sticky slot.
+    var feature = take(posts, 1)[0];
+    var list = take(posts, 6);
     var cols = columnistsHtml(posts);
     var latest = take(posts, 8);
     var gs = gameState(sb), mode = modes(sb);

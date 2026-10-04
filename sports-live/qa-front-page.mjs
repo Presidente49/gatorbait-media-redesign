@@ -100,12 +100,18 @@ const LATE_PLUS_DAY = new Date(BUDDY_NEWEST + 9 * 86400000).toISOString();
 const NEWEST_OTHER_PATH = new URL(feed.posts.find((p) => !/buddy martin/i.test(p.author)).url).pathname;
 
 const scenarios = [
-  { name: 'day-light', now: T.day, scheme: 'light', expect: { night: true, gameday: false, embers: true, lead: 'buddy', road: 1, roadCards: 12, roadWins: 4 } }, // Swamp Night is the everyday look (config look: swamp-night); band from the bundled schedule
-  { name: 'day-dark', now: T.day, scheme: 'dark', expect: { night: true, gameday: false, lead: 'buddy', embers: true } },
-  { name: 'night', now: T.night, scheme: 'light', expect: { night: true, gameday: false, embers: true, showLive: true } },
-  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: true, gameday: true, road: 1, tunnel: 'pre', tunnelOpp: 'Missouri', tunnelOppRecord: '3-1' } }, // record from the bundled scoreboard.json (next.opponentRecord, fed by The Scout)
-  { name: 'gameday-live', now: T.gameLive, scheme: 'light', desk: DESK_LIVE, expect: { night: true, gameday: true, embers: true, boardLive: true, tunnel: 'live', tunnelScore: '24' } },
-  { name: 'reduced-motion', now: T.night, scheme: 'light', reduced: true, expect: { night: true, embers: false, noAnimations: true } },
+  // Gator Day is the everyday look at every hour and on dark-mode phones (config look: gator-day, Brenden Oct. 3-4); band from the bundled schedule.
+  { name: 'day-light', now: T.day, scheme: 'light', expect: { night: false, gameday: false, embers: false, lead: 'buddy', road: 1, roadCards: 12, roadWins: 4 } },
+  { name: 'day-dark', now: T.day, scheme: 'dark', expect: { night: false, gameday: false, lead: 'buddy', embers: false } },
+  { name: 'night', now: T.night, scheme: 'light', expect: { night: false, gameday: false, embers: false, showLive: true } },
+  // ?gbm_fp=night still renders Swamp Night (QA and the look the rollback restores).
+  { name: 'night-param', now: T.night, scheme: 'light', query: '?gbm_fp=night', widths: [390, 1366], expect: { night: true, embers: true, showLive: true } },
+  { name: 'gameday-pre', now: T.gamePre, scheme: 'light', expect: { night: false, gameday: true, road: 1, tunnel: 'pre', tunnelOpp: 'Missouri', tunnelOppRecord: '3-1' } }, // record from the bundled scoreboard.json (next.opponentRecord, fed by The Scout)
+  { name: 'gameday-live', now: T.gameLive, scheme: 'light', desk: DESK_LIVE, expect: { night: false, gameday: true, embers: false, boardLive: true, tunnel: 'live', tunnelScore: '24' } },
+  // Oct. 3: LATEST showed "Final Florida 17, Missouri 45" (desk score) and "Final Missouri 45, Florida 17" (the desk's band update). One final line only.
+  { name: 'gameday-final', now: T.gameLive, scheme: 'light', desk: { ...DESK_LIVE, status: 'final', clock: '', away: { ...DESK_LIVE.away, score: 17, quarters: [7, 3, 0, 7] }, home: { ...DESK_LIVE.home, score: 45, quarters: [14, 10, 14, 7] },
+    updates: [['Final', 'Missouri 45, Florida 17'], ['Q4', 'QA fixture update one']] }, widths: [390, 1366], expect: { gameday: true, tunnel: 'final', finals: 1, finalText: 'Missouri 45, Florida 17' } },
+  { name: 'reduced-motion', now: T.night, scheme: 'light', reduced: true, expect: { night: false, embers: false, noAnimations: true } },
   { name: 'rss-down', now: T.day, scheme: 'light', rss: 500, widths: [390], expect: { lead: 'buddy' } },
   { name: 'all-feeds-down', now: T.day, scheme: 'light', rss: 500, pages: 500, widths: [390], expect: {} },
   // Lead-rule scenarios derive their clock from the bundled feed: 8 days after Buddy's newest piece, so no Buddy column is fresh and the rule falls to the pin, then to the newest story.
@@ -187,7 +193,7 @@ for (const sc of only(scenarios)) {
       if (pins) window.__GBM_HOME_PINS__ = pins;
       if (desk) window.__GBM_GAMEDAY__ = desk;
     }, { now: sc.now, pins: sc.pins || null, desk: sc.desk || null });
-    await page.goto('https://www.gatorbaitmedia.com/', { waitUntil: 'load' });
+    await page.goto('https://www.gatorbaitmedia.com/' + (sc.query || ''), { waitUntil: 'load' });
     await page.waitForSelector('#gbm-live.fp26', { timeout: 8000 }).catch(() => {});
     // Layout stability: viewport-relative tops of every block in view, keyed per element, so a module that mounts
     // (or a feed that lands) after paint must not move anything the reader can see. Sideways ticker, embers,
@@ -236,6 +242,8 @@ for (const sc of only(scenarios)) {
         root: !!root, cls: root ? root.className : '', lead: root && root.getAttribute('data-fp-lead'), sbSource: root && root.getAttribute('data-fp-scoreboard'),
         scrollW: document.documentElement.scrollWidth, vw, off: off.slice(0, 5), badLinks, fonts: [...fonts],
         h1Top: h1 ? Math.round(h1.getBoundingClientRect().top + scrollY) : -1, vh: innerHeight,
+        h1Case: h1 ? getComputedStyle(h1).textTransform : '', h1Lines: h1 ? Math.round(h1.getBoundingClientRect().height / parseFloat(getComputedStyle(h1).lineHeight)) : 0,
+        tkFinals: [...document.querySelectorAll('.fp-tk-list:not(.fp-tk-dup) li')].filter((li) => /^final$/i.test(li.querySelector('b')?.textContent || '')).map((li) => li.textContent.replace(/^final/i, '').trim()),
         embers: !!document.querySelector('#fp-embers canvas'), board: !!document.querySelector('.fp-board'), boardState: (document.querySelector('.fp-board .fp-status') || {}).dataset?.state,
         showLive: document.querySelector('.fp-show')?.getAttribute('data-live') === '1', standings: !!document.querySelector('.fp-stand'),
         anims: document.getAnimations().filter((a) => a.playState === 'running').length, oldMedia: document.getElementById('gbgz-styles')?.media ?? null,
@@ -295,6 +303,10 @@ for (const sc of only(scenarios)) {
     if (e.roadRank && !r.roadRank) bad.push('season band ranked opponent missing');
     if (sc.oldStyles && oldCss && r.oldMedia !== 'not all') bad.push('old #gbgz-styles still active');
     if (width < 800 && !e.lowLeadOk && r.h1Top > r.vh * 1.6) bad.push(`lead headline too low (${r.h1Top}px)`);
+    if (r.root && r.h1Case === 'uppercase') bad.push('lead headline is all caps');
+    if (r.root && (width === 390 || width === 430) && r.h1Lines > 3) bad.push(`lead headline ${r.h1Lines} lines at ${width}px (max 3)`);
+    if (e.finals !== undefined && r.tkFinals.length !== e.finals) bad.push(`ticker final lines ${JSON.stringify(r.tkFinals)} (want ${e.finals})`);
+    if (e.finalText && r.tkFinals[0] !== e.finalText) bad.push(`ticker final "${r.tkFinals[0]}" != "${e.finalText}"`);
     if (e.modules !== undefined && r.modules !== e.modules) bad.push(`data-fp-modules "${r.modules}" != "${e.modules}"`);
     if (e.noModules && (r.call || r.ask || r.stands)) bad.push('a fan module mounted without endpoints');
     if (e.call !== undefined) {

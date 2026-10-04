@@ -234,7 +234,7 @@ def find_story(game, posts, kind):
                 continue
             key = (0, p['when'])  # earliest gallery is the canonical one
         elif kind == 'recap':
-            if is_gallery or not (-0.1 <= age <= 7) or not (RECAP.search(low) or SCORE_IN_TITLE.search(low)):
+            if is_gallery or re.search(r'\bhalf[- ]?time\b', low) or not (-0.1 <= age <= 7) or not (RECAP.search(low) or SCORE_IN_TITLE.search(low)):
                 continue
             key = (-(3 * bool(re.search('postgame|post-game|recap', low)) + 2 * bool(SCORE_IN_TITLE.search(low)) + bool(RECAP.search(low))), p['when'])
         else:

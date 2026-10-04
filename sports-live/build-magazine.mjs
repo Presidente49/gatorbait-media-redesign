@@ -21,8 +21,14 @@ const VARIANT = process.env.MAG_VARIANT || ''; // '' = the weekly full-story iss
 if (!VARIANT) execFileSync('python3', [join(here, 'check-magazine-parity.py')], {stdio:'inherit'});
 const read = (p) => readFileSync(join(repo, p), 'utf8');
 
-const css = (read('sports-live/src/magazine.css') + read('sports-live/src/magazine-pregame.css')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
-const runtime = read('sports-live/src/magazine.js') + read('sports-live/src/magazine-feed.js') + read('sports-live/src/magazine-pregame.js');
+// 'postgame' (the postgame issue) swaps the pregame skin for src/magazine-postgame.css and adds src/magazine-postgame.js plus the
+// site's existing signup component (src/capture.js, guarded by window.GBM_CAPTURE, so a page that already loaded it keeps one copy).
+// The weekly and pregame bundles are built exactly as before.
+const POSTGAME = VARIANT === 'postgame';
+const css = (read('sports-live/src/magazine.css') + read(POSTGAME ? 'sports-live/src/magazine-postgame.css' : 'sports-live/src/magazine-pregame.css')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
+// capture.js goes first: magazine.js mounts synchronously at its end, and the postgame signup needs window.GBM_CAPTURE by then.
+const runtime = (POSTGAME ? read('sports-live/src/capture.js') + '\n;' : '') + read('sports-live/src/magazine.js') + read('sports-live/src/magazine-feed.js') + read('sports-live/src/magazine-pregame.js') +
+  (POSTGAME ? '\n' + read('sports-live/src/magazine-postgame.js') : '');
 // Photo credits the homepage already verified (front-page.config.json), so the live card refresh can credit a new card's photo.
 const credits = JSON.parse(read('sports-live/front-page.config.json')).credits || {};
 const MAX_JS = 180 * 1024;
@@ -52,7 +58,8 @@ ${runtime}})();
 // critical CSS, the real Magazine loader, and a stand-in for the native Wix page the loader must hide.
 const homeLoader = read('deploy/wix-served/homepage-embed-cdn.html');
 const shellCss = (homeLoader.match(/<style id="gbm-mobile-shell-critical-v2">[\s\S]*?<\/style>/) || [''])[0];
-const loader = read('deploy/magazine-2026/magazine-loader-v1.html');
+// The postgame fixture carries the loader that is live on embed 1dd74333 (rev 73), so QA runs the real pointer -> bundle path.
+const loader = read(POSTGAME ? 'deploy/magazine-2026/postgame-missouri/live-rev73-loader.html' : 'deploy/magazine-2026/magazine-loader-v1.html');
 const frame = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>GatorBait Magazine fixture</title>
 <link id="gbm-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&family=Bebas+Neue&display=swap">
 ${shellCss}

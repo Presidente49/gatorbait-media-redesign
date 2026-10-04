@@ -1,0 +1,590 @@
+{
+ "$comment": "GatorBait Magazine postgame issue, Missouri 45, Florida 17 (Oct. 3, 2026). layout \"postgame\" is rendered by sports-live/src/magazine-postgame.{js,css}; every word and number below prints as written and the renderer adds none. Sources: ESPN event 401856708 (score, box score, play-by-play win probability); the seven canonical GatorBait posts (titles, excerpts, read times and images read from the Wix Blog API, Oct. 4); postgame news conferences and the Orlando Sentinel (quotes). Build: MAG_VARIANT=postgame node sports-live/build-magazine.mjs",
+ "id": "2026-10-04-postgame-missouri",
+ "layout": "postgame",
+ "issue": {
+  "number": "Postgame edition",
+  "date": "Sunday, October 4, 2026",
+  "week": "Week 5 · Florida at Missouri",
+  "home": "GatorBait Media",
+  "pageTitle": "GatorBait Magazine | Postgame: Missouri 45, Florida 17"
+ },
+ "cover": {
+  "kicker": "Cover story · Buddy Martin",
+  "headline": "Hey Missouri, don’t show me anymore!",
+  "dek": "The Tigers did not just beat Florida. They drove over it, backed up, drove over it again and then threw a couple touchdown passes just to make sure nobody mistook the afternoon for a competitive football game.",
+  "byline": "By Buddy Martin · 6 min read",
+  "cta": "Read Buddy’s column",
+  "url": "/post/hey-missouri-don-t-show-me-anymore",
+  "image": {
+   "id": "ae876a_a58dcb57990a497b84bcd2b5fab12df3",
+   "ext": "jpeg",
+   "width": 2000,
+   "height": 1333,
+   "alt": "Florida’s Emmanuel Oyebadejo (99) gets to Missouri quarterback Austin Simmons",
+   "credit": "UAA Photo"
+  },
+  "linesLabel": "Also inside",
+  "lines": [
+   "The damage: 560 yards to 325",
+   "Report card: three Fs",
+   "How a 10-10 game got away",
+   "Sumrall: “Starts with me”"
+  ]
+ },
+ "final": {
+  "label": "Final",
+  "teams": [
+   {
+    "rank": "No. 25",
+    "name": "Missouri",
+    "score": 45,
+    "won": true
+   },
+   {
+    "rank": "No. 8",
+    "name": "Florida",
+    "score": 17
+   }
+  ],
+  "meta": [
+   "Saturday, Oct. 3",
+   "Faurot Field, Columbia, Mo.",
+   "Florida is 4-1, 2-1 SEC"
+  ]
+ },
+ "contents": {
+  "label": "In this issue",
+  "items": [
+   {
+    "id": "damage",
+    "label": "The damage"
+   },
+   {
+    "id": "flow",
+    "label": "Game flow"
+   },
+   {
+    "id": "grades",
+    "label": "Report card"
+   },
+   {
+    "id": "quotes",
+    "label": "In their words"
+   },
+   {
+    "id": "package",
+    "label": "The package"
+   },
+   {
+    "id": "next",
+    "label": "Up next"
+   }
+  ]
+ },
+ "damage": {
+  "kicker": "By the numbers",
+  "title": "The damage",
+  "dek": "Florida came in scoring 53.5 points and gaining 532.8 yards a game. Missouri held the Gators to 17 and 325, and ran for 220 of its own.",
+  "yards": {
+   "label": "Total yards",
+   "rows": [
+    {
+     "name": "Missouri",
+     "value": 560
+    },
+    {
+     "name": "Florida",
+     "value": 325,
+     "us": true
+    }
+   ]
+  },
+  "stats": [
+   {
+    "value": "42",
+    "label": "Florida rushing yards",
+    "detail": "25 carries, 1.7 a carry"
+   },
+   {
+    "value": "211",
+    "label": "Jamal Roberts rushing yards",
+    "detail": "24 carries, 3 touchdowns"
+   },
+   {
+    "value": "340",
+    "label": "Austin Simmons passing yards",
+    "detail": "23 of 30, 2 touchdowns"
+   },
+   {
+    "value": "35",
+    "label": "Straight Missouri points",
+    "detail": "After a 10-10 tie"
+   },
+   {
+    "value": "13",
+    "label": "Jadan Baugh rushing yards",
+    "detail": "12 carries"
+   }
+  ],
+  "compare": {
+   "label": "Coming in vs. Saturday",
+   "beforeLabel": "Per game, first four",
+   "afterLabel": "At Missouri",
+   "rows": [
+    {
+     "label": "Points",
+     "before": "53.5",
+     "after": "17"
+    },
+    {
+     "label": "Total yards",
+     "before": "532.8",
+     "after": "325"
+    }
+   ]
+  },
+  "more": {
+   "label": "By the Numbers: the full breakdown",
+   "url": "/post/by-the-numbers-how-missouri-flipped-florida-s-script"
+  },
+  "source": "Box score: ESPN."
+ },
+ "flow": {
+  "kicker": "Game flow",
+  "title": "How the win slipped away",
+  "dek": "Florida’s chance to win, play by play. The Gators peaked at 80% in the first quarter and were level at 10-10 late in the second. Missouri scored the next 35.",
+  "axis": [
+   "100%",
+   "50%",
+   "0%"
+  ],
+  "quarters": [
+   "Q1",
+   "Q2",
+   "Q3",
+   "Q4"
+  ],
+  "quarterStarts": [
+   1,
+   44,
+   90,
+   129
+  ],
+  "points": [
+   70.1,
+   71.4,
+   72.2,
+   73.3,
+   72.3,
+   70.5,
+   75.7,
+   73.8,
+   75.1,
+   77.1,
+   78.5,
+   77.3,
+   77.3,
+   80,
+   79.4,
+   78.1,
+   73.7,
+   73.8,
+   73.7,
+   73.4,
+   72.7,
+   72,
+   70.7,
+   71.8,
+   70.1,
+   69.2,
+   65.2,
+   65.5,
+   67.4,
+   70.7,
+   69.7,
+   69.9,
+   71.5,
+   70.5,
+   69,
+   66.8,
+   68.1,
+   66,
+   67.4,
+   68.9,
+   70.7,
+   71.1,
+   70.3,
+   70.3,
+   67.1,
+   65.8,
+   66.3,
+   64.6,
+   66.3,
+   65.4,
+   62.8,
+   63.2,
+   61.1,
+   48.5,
+   47.9,
+   47.2,
+   47.4,
+   43,
+   37.2,
+   37.9,
+   39.6,
+   43.4,
+   47.6,
+   47.1,
+   50.9,
+   52.8,
+   56.8,
+   55.4,
+   55.8,
+   63.5,
+   64.3,
+   63,
+   62.2,
+   56.6,
+   57.5,
+   42.8,
+   43.1,
+   42.5,
+   41.2,
+   39.3,
+   39.2,
+   41,
+   40,
+   41.2,
+   40.7,
+   40.7,
+   39,
+   37,
+   37.1,
+   33.9,
+   28.2,
+   29.4,
+   31.1,
+   22,
+   23.2,
+   14.7,
+   12.1,
+   11.5,
+   9.7,
+   8.8,
+   12.7,
+   11.6,
+   10.5,
+   9.2,
+   7.4,
+   7.9,
+   8.8,
+   8.2,
+   5.4,
+   5.5,
+   6,
+   5,
+   4.1,
+   4.1,
+   4.5,
+   6,
+   3.3,
+   3.6,
+   4,
+   3.7,
+   4.6,
+   3.7,
+   2.4,
+   1.6,
+   1.6,
+   2.1,
+   0.3,
+   0.3,
+   0.3,
+   0.1,
+   0.2,
+   0.2,
+   0.2,
+   0.2,
+   0.1,
+   0.1,
+   0.1,
+   0.2,
+   0.2,
+   0.2,
+   0.2,
+   0.2,
+   0.2,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0.1,
+   0,
+   0.1,
+   0,
+   0
+  ],
+  "marks": [
+   {
+    "i": 13,
+    "title": "80%",
+    "note": "Florida’s high point, 9:52 left in the first quarter"
+   },
+   {
+    "i": 69,
+    "title": "10-10",
+    "note": "Philo to Wilson ties it with 4:26 left in the half"
+   },
+   {
+    "i": 75,
+    "title": "17-10",
+    "note": "Simmons to Goodie Sr.; Missouri leads the rest of the way"
+   },
+   {
+    "i": 136,
+    "title": "45-10",
+    "note": "Roberts goes 80 yards with 13:33 to play"
+   }
+  ],
+  "summary": "Line chart of Florida’s win probability against Missouri. It starts near 70%, peaks at 80% in the first quarter, dips below 50% in the second, climbs back to 64% at 10-10, falls to about 12% early in the third quarter and sits near zero through the fourth.",
+  "source": "Win probability: ESPN. GatorBait Media graphic.",
+  "more": {
+   "label": "Drink Mix: how Missouri’s blueprint bottled up the Gators",
+   "url": "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators"
+  }
+ },
+ "grades": {
+  "kicker": "Report card",
+  "title": "Red ink in Columbia",
+  "dek": "Three Fs, and only one grade above a C.",
+  "items": [
+   {
+    "unit": "Quarterbacks",
+    "grade": "C-"
+   },
+   {
+    "unit": "Running backs",
+    "grade": "D",
+    "note": "Baugh: 12 carries, 13 yards"
+   },
+   {
+    "unit": "Offensive line",
+    "grade": "F",
+    "note": "42 rushing yards on 25 carries"
+   },
+   {
+    "unit": "Receivers and tight ends",
+    "grade": "B-"
+   },
+   {
+    "unit": "Defensive line",
+    "grade": "F",
+    "note": "Roberts ran for 211"
+   },
+   {
+    "unit": "Linebackers",
+    "grade": "D-",
+    "note": "Missouri ran for 220"
+   },
+   {
+    "unit": "Secondary",
+    "grade": "F",
+    "note": "Simmons: 23 of 30, 340 yards"
+   },
+   {
+    "unit": "Special teams",
+    "grade": "C"
+   },
+   {
+    "unit": "Coaching",
+    "grade": "D",
+    "note": "“Starts with the coaching, starts with me.”"
+   }
+  ],
+  "more": {
+   "label": "Every grade, with the reasons",
+   "url": "/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri"
+  }
+ },
+ "quotes": {
+  "kicker": "In their words",
+  "title": "Nobody ducked it",
+  "items": [
+   {
+    "text": "Embarrassing performance in every phase. Starts with the coaching, starts with me.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, postgame news conference",
+    "url": "/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
+    "link": "Sumrall owns it"
+   },
+   {
+    "text": "I take full accountability. I didn’t play my best game at all. Nobody did.",
+    "who": "Myles Graham",
+    "role": "Florida, to the Orlando Sentinel"
+   },
+   {
+    "text": "…tough teams stop the run, run the ball, and cover kicks.",
+    "who": "Eli Drinkwitz",
+    "role": "Missouri coach, postgame news conference"
+   }
+  ]
+ },
+ "package": {
+  "kicker": "Read the package",
+  "title": "Seven stories from Columbia",
+  "dek": "Buddy Martin leads. Each story opens on its one home at gatorbaitmedia.com.",
+  "items": [
+   {
+    "rubric": "Cover story",
+    "author": "Buddy Martin",
+    "title": "Hey Missouri, don’t show me anymore!",
+    "dek": "The Tigers did not just beat Florida. They drove over it, backed up and drove over it again.",
+    "read": "6 min read",
+    "url": "/post/hey-missouri-don-t-show-me-anymore",
+    "lead": true
+   },
+   {
+    "rubric": "The coach",
+    "author": "GatorBait Staff",
+    "title": "‘We earned the loss’: Sumrall owns the mauling in Columbia",
+    "dek": "Jon Sumrall said Missouri deserved it after a 45-17 rout ended Florida’s unbeaten start. The numbers, who was missing and what comes next.",
+    "read": "3 min read",
+    "url": "/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
+    "image": {
+     "id": "d3cfa5_fb8dcc167ff64b5c90cc1b6904390bf7",
+     "ext": "jpg",
+     "width": 1600,
+     "height": 900,
+     "alt": "Jon Sumrall quote card: We earned the loss. Missouri 45, Florida 17.",
+     "credit": "GatorBait Media graphic"
+    }
+   },
+   {
+    "rubric": "Report card",
+    "author": "GatorBait Staff",
+    "title": "Red ink in Columbia: Grading every Gator unit after Missouri",
+    "dek": "Florida ran for 42 yards and gave up 340 through the air, and few position groups escaped the red pen.",
+    "read": "4 min read",
+    "url": "/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri",
+    "image": {
+     "id": "16b519_fb9b6535ba3046ab86e7d0d05b6579bc",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 2000,
+     "alt": "Florida Gators against Ole Miss at Ben Hill Griffin Stadium, Sept. 26, 2026",
+     "credit": "File photo by Chris Spears, GatorBait Media"
+    }
+   },
+   {
+    "rubric": "By the Numbers",
+    "author": "GatorBait Staff",
+    "title": "How Missouri flipped Florida’s script",
+    "dek": "Florida had been scoring 53.5 points and gaining 532.8 yards a game. The numbers show where it went wrong.",
+    "read": "3 min read",
+    "url": "/post/by-the-numbers-how-missouri-flipped-florida-s-script",
+    "image": {
+     "id": "16b519_ca805b099f49450bb75c33404d8e4b1b",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 2000,
+     "alt": "Florida Gators against Ole Miss at Ben Hill Griffin Stadium, Sept. 26, 2026",
+     "credit": "File photo by Chris Spears, GatorBait Media"
+    }
+   },
+   {
+    "rubric": "Drink Mix",
+    "author": "GatorBait Staff",
+    "title": "How Missouri’s blueprint bottled up the Gators",
+    "dek": "Eli Drinkwitz spent all week saying tough teams stop the run. Missouri did it Saturday.",
+    "read": "3 min read",
+    "url": "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators"
+   },
+   {
+    "rubric": "Game recap",
+    "author": "GatorBait Staff",
+    "title": "Roberts runs away, Missouri routs Florida 45-17",
+    "dek": "Jamal Roberts ran for 211 yards and three touchdowns as No. 25 Missouri scored 35 straight points and handed No. 8 Florida its first loss.",
+    "read": "2 min read",
+    "url": "/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17"
+   },
+   {
+    "rubric": "Reality Check",
+    "author": "GatorBait Staff",
+    "title": "What Florida’s first loss exposed, and the road ahead",
+    "dek": "Missouri ran for 220 yards and held Florida to 42. With South Carolina, Texas and Georgia next, here is what the loss exposed.",
+    "read": "2 min read",
+    "url": "/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
+    "image": {
+     "id": "16b519_d600f2d12282447eb6ceb6bfb0d988f3",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 1910,
+     "alt": "The Florida Gators against Ole Miss, Sept. 26, 2026",
+     "credit": "File photo by Chris Spears, GatorBait Media"
+    }
+   }
+  ]
+ },
+ "next": {
+  "kicker": "Up next",
+  "title": "South Carolina at Florida",
+  "meta": [
+   "Saturday, Oct. 10",
+   "Homecoming",
+   "The Swamp, Gainesville",
+   "Kickoff TBA"
+  ],
+  "note": "Then Texas in Austin on Oct. 17. Florida has six days to make sure South Carolina can’t do what Missouri did.",
+  "pickem": {
+   "badge": "Coming this week",
+   "title": "GatorBait Pick ’Em",
+   "text": "Call South Carolina at Florida before kickoff. Pick ’Em opens on GatorBait this week."
+  }
+ },
+ "reference": {
+  "label": "More GatorBait",
+  "links": [
+   {
+    "label": "Schedule and results",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+   },
+   {
+    "label": "Roster",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   },
+   {
+    "label": "GatorBait home",
+    "url": "/"
+   }
+  ],
+  "top": "Back to the cover"
+ },
+ "asOf": "Score, box score and win probability: ESPN (event 401856708). Quotes: postgame news conferences and the Orlando Sentinel. Issue closed Oct. 4, 2026."
+}

@@ -38,6 +38,7 @@
     '.gbm-kit-chip:hover,.gbm-kit-chip:focus-visible{background:#0021a5;color:#fff;outline:2px solid #fa4616;outline-offset:2px}' +
     '.gbm-kit-chip.lead{background:#fa4616;border-color:#fa4616;color:#fff;text-transform:none;letter-spacing:.02em;font-weight:800}.gbm-kit-chip.lead:hover,.gbm-kit-chip.lead:focus-visible{background:#0021a5;border-color:#0021a5}' +
     '.gbm-kit-chip.last{text-transform:none;letter-spacing:.02em}' +
+    '@media(max-width:899px){.gbm-kit-chip.lead{max-width:100%;box-sizing:border-box;white-space:normal;line-height:1.25;padding-top:8px;padding-bottom:8px}}' +
     '@media(min-width:900px){.gbm-kit-row{flex-wrap:wrap;overflow:visible}}' +
     'a.gbm-kit-link,a.gbm-kit-link:visited{color:#0021a5;text-decoration:underline;text-decoration-color:#fa4616;text-decoration-thickness:2px;text-underline-offset:2px}a.gbm-kit-link:hover{color:#fa4616}' +
     '.gbm-kit-more{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;text-align:left;margin:28px 0 8px;padding:16px 0 0;border-top:3px solid #fa4616;font:15px/1.35 "Barlow","Barlow Condensed",sans-serif;color:#0021a5}' +

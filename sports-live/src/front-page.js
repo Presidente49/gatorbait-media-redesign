@@ -21,6 +21,7 @@
   function prefersDark() { try { return matchMedia('(prefers-color-scheme: dark)').matches; } catch (_) { return false; } }
   // Links: our own site paths, our YouTube/Facebook, the store. Nothing else renders.
   function safeUrl(value, kind) {
+    if (typeof value !== 'string' || !value.trim()) return '';
     try {
       var u = new URL(String(value), 'https://www.gatorbaitmedia.com');
       if (u.protocol !== 'https:' || u.username || u.password) return '';
@@ -313,7 +314,7 @@
   function leadHtml(lead, why) {
     var s = splitTitle(lead.title);
     return '<section class="fp-lead" aria-label="Lead story"><div id="fp-embers" aria-hidden="true"></div><div class="fp-night-glow" aria-hidden="true"></div>' + photoBlock(lead, true, 'fp-lead-photo') +
-      '<div class="fp-lead-copy"><p class="fp-kick">' + esc(kicker(lead, why)) + '</p><h1 data-len="' + (s.h.length > 60 ? 'long' : 'short') + '">' + link(lead.url, words(s.h), 'fp-hl') + '</h1>' +
+      '<div class="fp-lead-copy"><p class="fp-kick">' + esc(kicker(lead, why)) + '</p><h1 data-len="' + (s.h.length > 50 ? 'long' : 'short') + '">' + link(lead.url, words(s.h), 'fp-hl') + '</h1>' +
       (s.dek ? '<p class="fp-dek">' + esc(s.dek) + '</p>' : '') + '<p class="fp-by">By ' + esc(lead.author) + '<span>' + esc(shortDate(lead.date.getTime())) + '</span></p>' +
       (lead.excerpt ? '<p class="fp-body">' + esc(lead.excerpt) + '</p>' : '') + '<a class="fp-more" href="' + esc(lead.url) + '">Continue reading <span aria-hidden="true">&nbsp;→</span></a></div></section>';
   }
@@ -427,6 +428,32 @@
     var d = t.querySelector('.fp-tn-drive'); if (d) { put('drive', gs.drive || ''); d.hidden = !gs.drive; }
     if (phase !== cur) t.setAttribute('data-phase', phase);
   }
+  /* Recent broadcasts: source parity with the verified live show rail. */
+  var gbmShowRows = [{ "id": "aEOcRpECIOQ", "title": "Has Jadan Baugh Got A Shot At The Heisman?", "publishedAt": "2026-10-02T18:57:40-07:00", "duration": "PT51M35S" }, { "id": "TPKZcSS9Bc0", "title": "Has Jadan Baugh Got A Shot At The Heisman?", "publishedAt": "2026-10-02T07:12:37-07:00", "duration": "PT61M36S" }, { "id": "VIsn01dETY4", "title": "Will Success Come With A Big Price For The Gators?", "publishedAt": "2026-10-01T07:23:17-07:00", "duration": "PT64M11S" }, { "id": "SYBBWfaTTcs", "title": "Denzel Aberdeen Cleared for Florida, with Missouri Preview Ahead", "publishedAt": "2026-09-30T08:07:36-07:00", "duration": "PT57M53S" }, { "id": "qWBazfq_4Mc", "title": "Florida DESTROYS Ole Miss 52-28 🐊 Shane Matthews Reacts", "publishedAt": "2026-09-29T07:18:49-07:00", "duration": "PT59M18S" }, { "id": "u2dMQ4u3yNY", "title": "Ole Miss vs Florida Preview Can the Gators Own the Swamp", "publishedAt": "2026-09-25T07:38:50-07:00", "duration": "PT72M39S" }];
+  function gbmRecentShows() {
+    return '<div class="fp-episode-head">Recent broadcasts · newest first</div><div class="fp-episode-list" tabindex="0" aria-label="Recent broadcasts, newest first">' + gbmShowRows.slice(0, 6).map(function(v) {
+      return '<a class="fp-vid" href="https://www.youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener"><span class="fp-frame">' + img("https://i.ytimg.com/vi/" + v.id + "/hqdefault.jpg", "", false, 480, 360) + '<span class="fp-play"></span></span><span><b>' + esc(v.title) + "</b><span>Published " + esc(new Date(v.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "America/New_York" })) + "</span></span></a>";
+    }).join("") + '</div><p class="fp-ex"><a href="/the-buddy-martin-show">Watch here</a> · <a href="https://www.youtube.com/@TheBuddyMartinShow" target="_blank" rel="noopener">Subscribe on YouTube</a> · <a href="https://www.twitter.com/buddyshow" target="_blank" rel="noopener">Buddy on X</a></p>';
+  }
+  function gbmRefreshShows() {
+    fetchJson(PAGES + "sports-live/episodes.json?t=" + Math.floor(Date.now() / 9e5), 3e3).then(function(data) {
+      if (data.channelId !== "UCtR8b1sKFuwaRjKy5BiXRvA" || !Array.isArray(data.episodes) || !Number.isFinite(Date.parse(data.checkedAt)) || Date.now() - Date.parse(data.checkedAt) > 864e5 || data.discoveryGap) return;
+      var rows = data.episodes.filter(function(v) {
+        return /^[A-Za-z0-9_-]{11}$/.test(v.id) && typeof v.title === "string" && v.title.length <= 300 && Number.isFinite(Date.parse(v.publishedAt));
+      }).sort(function(a, b) {
+        return Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
+      }).slice(0, 6);
+      if (rows.length < 3) return;
+      gbmShowRows = rows;
+      var list = document.querySelector("#gbm-live .fp-episode-list");
+      if (!list || list.contains(document.activeElement)) return;
+      var holder = document.createElement("div");
+      holder.innerHTML = gbmRecentShows();
+      list.replaceWith(holder.querySelector(".fp-episode-list"));
+    }).catch(function() {
+    });
+  }
+
   function hubHtml(latest, sb, posts, used) {
     var sn = showNext(), ep = BUNDLE.show.episode;
     var mLatest = '<section class="fp-mod fp-mod-latest" aria-label="Latest stories"><h2>Latest</h2><ol class="fp-latest">' + latest.map(function (p) {
@@ -434,7 +461,7 @@
       '</ol><a class="fp-more" href="' + esc(L.latest) + '">All stories <span aria-hidden="true">&nbsp;→</span></a></section>';
     var mShow = '<section class="fp-mod fp-mod-show fp-show" data-live="' + (sn.live ? 1 : 0) + '" aria-label="The Buddy Martin Show"><h2>The Buddy Martin Show</h2><p class="fp-show-when"><span class="fp-live-dot" aria-hidden="true"></span><span data-fp-show>' + esc(sn.live ? 'Live now' : 'Next live: ' + sn.label) + '</span></p>' +
       '<p class="fp-ex">Mondays, Wednesdays and Thursdays at 9 p.m. ET.</p><div class="fp-actions"><a class="fp-btn" href="' + esc(L.youtubeLive) + '" rel="noopener">Watch on YouTube</a><a class="fp-btn fp-ghost" href="' + esc(L.facebook) + '" rel="noopener">Facebook</a></div>' +
-      (ep ? '<a class="fp-vid" href="https://www.youtube.com/watch?v=' + esc(ep.id) + '" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + ep.id + '/hqdefault.jpg', '', false, 480, 360) + '<span class="fp-play"></span></span><span><b>' + esc(ep.title) + '</b><span>From the show · ' + esc(shortDate(Date.parse(ep.date + 'T16:00:00Z'))) + '</span></span></a>' : '') +
+      gbmRecentShows() +
       '<a class="fp-more" href="' + esc(L.show) + '">GatorBait TV &amp; podcasts <span aria-hidden="true">&nbsp;→</span></a></section>';
     var mClips = BUNDLE.clips.length ? '<section class="fp-mod fp-mod-clips" aria-label="Clips"><h2>Clips</h2><div class="fp-clips">' + BUNDLE.clips.slice(0, 2).map(function (c) {
       return '<a class="fp-clip" href="https://www.youtube.com/shorts/' + esc(c.id) + '" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + c.id + '/hqdefault.jpg', '', false, 480, 360) + '<span class="fp-play"></span></span><b>' + esc(c.title) + '</b></a>'; }).join('') +
@@ -599,6 +626,7 @@
     requestAnimationFrame(function () { requestAnimationFrame(function () { doc.classList.remove('gbm-prepaint-v2'); }); });
     startTicking(root); countUp(root); embers(root);
     document.dispatchEvent(new CustomEvent('gbm:gazette-ready', { detail: { stories: posts.length, fresh: fresh, lead: picked.why, version: VERSION } }));
+    gbmRefreshShows();
     setTimeout(function () { loadModules(root); }, 50); // after first paint, never before it
   }
   // After paint the scoreboard can only change values in place (never structure), so nothing moves.

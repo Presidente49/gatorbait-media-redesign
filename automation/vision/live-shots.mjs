@@ -31,6 +31,13 @@ const profile = (w) => w < 800
 const browser = await chromium.launch();
 const metrics = { url, selector, at: new Date().toISOString(), shots: [] };
 for (const [pi, P] of paths.entries()) { url = mkUrl(P); const pre = paths.length > 1 ? 'p' + pi + '-' : '';
+if (process.env.GBM_PROBE !== '0') {
+  const pr = {};
+  for (const u of ['https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2026&seasontype=2', 'https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2026&seasontype=2', 'https://site.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season=2026', 'https://site.web.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season=2026']) {
+    try { const r = await fetch(u, { headers: { 'User-Agent': 'GatorBait-Scoreboard/1 (+https://www.gatorbaitmedia.com)', Accept: 'application/json' } }); const t = await r.text(); pr[u.slice(8, 70)] = r.status + ' ' + t.length; } catch (e) { pr[u.slice(8, 70)] = 'ERR ' + e.message; }
+  }
+  metrics.espnProbe = pr;
+}
 for (const w of widths) {
   const ctx = await browser.newContext(profile(w));
   const page = await ctx.newPage();

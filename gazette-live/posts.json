@@ -2,10 +2,80 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Drink Mix: How Missouri’s Blueprint Bottled Up the Gators",
+      "excerpt": "Eli Drinkwitz spent all week saying tough teams stop the run. Missouri did it Saturday. Now Florida has six days to make sure South Carolina can't do it again.",
+      "url": "https://www.gatorbaitmedia.com/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-04T03:56:09Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_940418a6e0a7432882f19b4620d77d81~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Drink Mix: How Missouri’s Blueprint Bottled Up the Gators"
+      }
+    },
+    {
+      "title": "By the Numbers: How Missouri Flipped Florida’s Script",
+      "excerpt": "Florida had been scoring 53.5 points and gaining 532.8 yards a game. Missouri held the Gators to 17 points, 325 yards and 42 rushing yards, and the numbers show where it went wrong.",
+      "url": "https://www.gatorbaitmedia.com/post/by-the-numbers-how-missouri-flipped-florida-s-script",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-04T03:44:19Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_ca805b099f49450bb75c33404d8e4b1b~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for By the Numbers: How Missouri Flipped Florida’s Script"
+      }
+    },
+    {
+      "title": "Red Ink in Columbia: Grading Every Gator Unit After Missouri",
+      "excerpt": "Florida ran for 42 yards and gave up 340 through the air at Missouri, and few position groups escaped the red pen. Every unit's grade, with the numbers behind it.",
+      "url": "https://www.gatorbaitmedia.com/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-04T03:43:05Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_fb9b6535ba3046ab86e7d0d05b6579bc~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Red Ink in Columbia: Grading Every Gator Unit After Missouri"
+      }
+    },
+    {
+      "title": "‘We Earned the Loss’: Sumrall Owns the Mauling in Columbia",
+      "excerpt": "Jon Sumrall said Missouri deserved it after a 45-17 rout ended Florida’s unbeaten start. The numbers, who was missing and what comes next with South Carolina.",
+      "url": "https://www.gatorbaitmedia.com/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-04T01:34:01Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_fb8dcc167ff64b5c90cc1b6904390bf7~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for ‘We Earned the Loss’: Sumrall Owns the Mauling in Columbia"
+      }
+    },
+    {
+      "title": "Hey Missouri, Don’t Show Me Anymore!",
+      "excerpt": "The Tigers did not just beat Florida. They drove over it, backed up, drove over it again and then threw a couple touchdown passes just to make sure nobody mistook the afternoon for a competitive football game.",
+      "url": "https://www.gatorbaitmedia.com/post/hey-missouri-don-t-show-me-anymore",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-04T01:10:26Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_a58dcb57990a497b84bcd2b5fab12df3~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Hey Missouri, Don’t Show Me Anymore!"
+      }
+    },
+    {
       "title": "Reality Check: What Florida’s First Loss Exposed, and the Road Ahead",
       "excerpt": "Missouri ran for 220 yards and held Florida to 42. With South Carolina, Texas and Georgia next, here is what the 45-17 loss exposed for the Gators.",
       "url": "https://www.gatorbaitmedia.com/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
-      "author": "GatorBait Staff",
+      "author": "Brenden Martin",
       "firstPublishedDate": "2026-10-03T23:14:42Z",
       "section": "GatorBait",
       "image": {
@@ -19,11 +89,11 @@
       "title": "Roberts Runs Away, Missouri Routs Florida 45-17",
       "excerpt": "Jamal Roberts ran for 211 yards and three touchdowns as No. 25 Missouri scored 35 straight points and handed No. 8 Florida its first loss, 45-17, in Columbia.",
       "url": "https://www.gatorbaitmedia.com/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17",
-      "author": "GatorBait Staff",
+      "author": "Brenden Martin",
       "firstPublishedDate": "2026-10-03T23:12:00Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_771d22e505854ba38fdfb8124e95e1d0~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_49f61d2e3df04d09947775688b8de577~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Roberts Runs Away, Missouri Routs Florida 45-17"
@@ -33,7 +103,7 @@
       "title": "Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10",
       "excerpt": "Austin Simmons threw two touchdown passes and No. 25 Missouri held Jadan Baugh to 12 yards on nine carries to lead No. 8 Florida 20-10 at the half in Columbia.",
       "url": "https://www.gatorbaitmedia.com/post/halftime-simmons-strikes-twice-missouri-leads-florida-20-10",
-      "author": "GatorBait Staff",
+      "author": "Brenden Martin",
       "firstPublishedDate": "2026-10-03T21:49:53Z",
       "section": "GatorBait",
       "image": {
@@ -47,7 +117,7 @@
       "title": "Baby Chomp, Big Grudge: Florida Goes to Columbia With a Photo to Settle",
       "excerpt": "A mocking baby Gator chomp from Florida’s last loss at Missouri still stings in Gainesville, and No. 8 Florida gets its answer at Faurot Field on Saturday.",
       "url": "https://www.gatorbaitmedia.com/post/baby-chomp-big-grudge-florida-goes-to-columbia-with-a-photo-to-settle",
-      "author": "GatorBait Staff",
+      "author": "Brenden Martin",
       "firstPublishedDate": "2026-10-03T18:45:42Z",
       "section": "GatorBait",
       "image": {
@@ -61,7 +131,7 @@
       "title": "Brown Out: Florida Preps to Play Missouri Without VB3",
       "excerpt": "Vernell Brown III, Florida’s leading receiver, was downgraded to doubtful for Saturday’s 3:50 p.m. ET game at Missouri. Here is what the Gators lose and who steps in.",
       "url": "https://www.gatorbaitmedia.com/post/brown-out-florida-preps-to-play-missouri-without-vb3",
-      "author": "GatorBait Staff",
+      "author": "Brenden Martin",
       "firstPublishedDate": "2026-10-03T15:25:38Z",
       "section": "GatorBait",
       "image": {
@@ -89,7 +159,7 @@
       "title": "Game Day: No. 8 Florida at No. 25 Missouri",
       "excerpt": "No. 8 Florida looks to stay unbeaten against No. 25 Missouri today at 3:50 p.m. ET on ABC, on Missouri's homecoming weekend at Faurot Field.",
       "url": "https://www.gatorbaitmedia.com/post/game-day-no-8-florida-at-no-25-missouri",
-      "author": "GatorBait Staff",
+      "author": "Brenden Martin",
       "firstPublishedDate": "2026-10-03T14:04:31Z",
       "section": "GatorBait",
       "image": {
@@ -103,7 +173,7 @@
       "title": "Jon Sumrall Named Inaugural Dodd Trophy Coach of the Month",
       "excerpt": "Florida's first-year head coach was picked from September's weekly Dodd Trophy winners after leading the Gators to a 4-0 start, including a 52-28 upset of No. 4 Ole Miss.",
       "url": "https://www.gatorbaitmedia.com/post/jon-sumrall-named-inaugural-dodd-trophy-coach-of-the-month",
-      "author": "GatorBait Staff",
+      "author": "Brenden Martin",
       "firstPublishedDate": "2026-10-03T12:22:17Z",
       "section": "GatorBait",
       "image": {
@@ -187,7 +257,7 @@
       "title": "Florida Keeps Winning Big, and the Laundry Keeps Piling Up",
       "excerpt": "The No. 8 Gators have outscored four opponents by nearly 31 points a game while drawing 35 flags for 357 yards, and the play-by-play says the bill has only been deferred, not paid.",
       "url": "https://www.gatorbaitmedia.com/post/florida-keeps-winning-big-and-the-laundry-keeps-piling-up",
-      "author": "GatorBait Staff",
+      "author": "Brenden Martin",
       "firstPublishedDate": "2026-10-01T13:02:46Z",
       "section": "GatorBait",
       "image": {
@@ -209,76 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for When it came to finding a quarterback Sumrall trusted Buster and it paid off"
-      }
-    },
-    {
-      "title": "Jayden Woods Added To Chuck Bednarik Award Watch List",
-      "excerpt": "The sophomore JACK’s 19 tackles, six TFLs and four sacks through four games have him in the running for college football’s top defensive honor.",
-      "url": "https://www.gatorbaitmedia.com/post/jayden-woods-added-to-chuck-bednarik-award-watch-list",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-10-01T10:31:11Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_dc70ea9e65574abebd3b0ace40bd8232~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Jayden Woods Added To Chuck Bednarik Award Watch List"
-      }
-    },
-    {
-      "title": "The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”",
-      "excerpt": "I’ll be honest. This guy could turn out to be brilliant. Maybe even Steve Spurrier brilliant. But I’d never put him above the Head Ball Coach, or even in the same paragraph. Faulkner has to earn that.",
-      "url": "https://www.gatorbaitmedia.com/post/the-looming-brilliance-of-buster-faulkner-if-it-works-one-time-we-retire-it",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-30T14:25:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_56a64986c874417c9a8299fae22649ed~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Looming Brilliance of Buster Faulkner: “If It Works Once, We Retire It”"
-      }
-    },
-    {
-      "title": "Thoughts of the Day: September 30, 2026",
-      "excerpt": "Why are these guys smiling? (UAA Photo) A few thoughts to jump start your Wednesday morning: To paraphrase Steve Spurrier, God smiled on the Gators Tuesday. First, Alachua County judge George Wright issued a temporary restraining order against the NCAA that will allow Denzel Aberdeen a fifth year of eligibility. While that was going on, Ian Condon (6-7…",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-30-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-09-30T13:48:39Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/a99769_d6cc8efa8cfb4c0b8ad6ee7c8eb9768f~mv2.jpg/v1/fit/w_689,h_708,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Thoughts of the Day: September 30, 2026"
-      }
-    },
-    {
-      "title": "Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction",
-      "excerpt": "Denzel Aberdeen wins a temporary injunction allowing him to play for Florida in 2026–27. What the ruling means for the Gators and their backcourt.",
-      "url": "https://www.gatorbaitmedia.com/post/denzel-aberdeen-florida-temporary-injunction-2026",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-29T20:19:43Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_cefbed4d0c2a46988a3929e5d0b85807~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction"
-      }
-    },
-    {
-      "title": "Thoughts of the Day: September 29, 2026",
-      "excerpt": "O-line coach Phil Trautwein and family celebrate the win over Ole Miss (Photo by Chris Spears) A few thoughts to jump start your Tuesday morning: Driving home on I-75 from Jon Sumrall’s Monday morning press conference in Gainesville, cruise control set at 77 to keep steady with the flow of traffic, I’m listening to the album “Hitman: David Foster and…",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-september-29-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-09-29T11:36:39Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_c0cae41f73f142ec8c32a0599593365f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Thoughts of the Day: September 29, 2026"
       }
     }
   ]

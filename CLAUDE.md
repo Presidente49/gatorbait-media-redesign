@@ -20,6 +20,11 @@ The four scheduled site monitors are read-only for live Wix content/settings/emb
 
 Latest Brenden direction: **Buddy Martin should be the editorial lead across the homepage, Magazine and curated multi-story packages, without redundancies**. Keep one canonical article URL and one primary editorial home, with the remaining news lists newest-first. This direction supersedes an older proposal to make the newer Franz/Buster article the overall lead. Implement only through the existing approved presentation under the active controller; do not duplicate articles or alerts.
 
+Oct. 4, 2026 Brenden direction:
+- **Franz Beard is the other main piece.** When a strong Franz story is live, the lead slot may split into two columns, Buddy and Franz side by side, with Buddy still first. Hold the split until Franz files.
+- **Titles:** Brenden Martin is president, and Buddy Martin is publisher. Both are co-owners, and the Magazine is Buddy's.
+- **Social media** follows `docs/SOCIAL-RULES.md`: one story per post, credit the writer, create natively in the app, and use our own photos.
+
 Do not delete old-named folders or Wix sites as a shortcut. Some still hold shared live adapters, routing or rollback files. Do not create another repo, handoff hierarchy, scheduler or renderer to solve a coordination problem.
 
 ## Start here

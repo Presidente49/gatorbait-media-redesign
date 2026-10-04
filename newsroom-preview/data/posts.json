@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!",
+      "excerpt": "But make no mistake: What happened in Columbia was worse than a speed bump. It was a public mugging. It was a betrayal of sorts. The question is: Who betrayed whom?",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-04T16:10:06Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_4b6b8c0bb3d34bb6ba1d62a4ac109159~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!"
+      }
+    },
+    {
+      "title": "The loss to Mizzou is history; the question is how will the Gators respond?",
+      "excerpt": "For an entire month Jon Sumrall had been warning that the Florida Gators would be exposed somewhere down the road if they didn’t change their ways. Somewhere down the road was Columbia, Missouri, where Saturday afternoon the 8th-ranked Gators (4-1, 2-1 SEC) took one of those leave no place on their body without a bruise beatings at the hands of the…",
+      "url": "https://www.gatorbaitmedia.com/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-04T13:33:37Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_be903de5f60d4510963f83dce1b90109~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The loss to Mizzou is history; the question is how will the Gators respond?"
+      }
+    },
+    {
       "title": "Drink Mix: How Missouri’s Blueprint Bottled Up the Gators",
       "excerpt": "Eli Drinkwitz spent all week saying tough teams stop the run. Missouri did it Saturday. Now Florida has six days to make sure South Carolina can't do it again.",
       "url": "https://www.gatorbaitmedia.com/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Brown Out: Florida Preps to Play Missouri Without VB3"
-      }
-    },
-    {
-      "title": "Week 5 Preview: Florida Gators (4-0, 2-0) v. Missouri Tigers (3-1, 0-1)",
-      "excerpt": "A trip to Columbia can be tough but the Gators are equipped to travel and travel well. By Loren Meadows, GatorBaitMedia.com Football Analyst, Host of the Gator Lowdown with Loren Meadows Second early road test for Sumrall and the Gators (Chris Spears photo) Missouri Offense Key Players: #13 QB Austin Simmons (6-4, 220, Sr./Missouri), #20 RB Jamal Roberts…",
-      "url": "https://www.gatorbaitmedia.com/post/week-5-preview-florida-gators-4-0-2-0-v-missouri-tigers-3-1-0-1",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-10-03T15:12:01Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_d600f2d12282447eb6ceb6bfb0d988f3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Week 5 Preview: Florida Gators (4-0, 2-0) v. Missouri Tigers (3-1, 0-1)"
-      }
-    },
-    {
-      "title": "Game Day: No. 8 Florida at No. 25 Missouri",
-      "excerpt": "No. 8 Florida looks to stay unbeaten against No. 25 Missouri today at 3:50 p.m. ET on ABC, on Missouri's homecoming weekend at Faurot Field.",
-      "url": "https://www.gatorbaitmedia.com/post/game-day-no-8-florida-at-no-25-missouri",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-10-03T14:04:31Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_031b46343079458fb97e18f1617e9626~mv2.jpg/v1/fit/w_880,h_495,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Game Day: No. 8 Florida at No. 25 Missouri"
       }
     }
   ]

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!",
+      "excerpt": "But make no mistake: What happened in Columbia was worse than a speed bump. It was a public mugging. It was a betrayal of sorts. The question is: Who betrayed whom?",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-04T16:10:06Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_4b6b8c0bb3d34bb6ba1d62a4ac109159~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!"
+      }
+    },
+    {
+      "title": "The loss to Mizzou is history; the question is how will the Gators respond?",
+      "excerpt": "For an entire month Jon Sumrall had been warning that the Florida Gators would be exposed somewhere down the road if they didn’t change their ways. Somewhere down the road was Columbia, Missouri, where Saturday afternoon the 8th-ranked Gators (4-1, 2-1 SEC) took one of those leave no place on their body without a bruise beatings at the hands of the…",
+      "url": "https://www.gatorbaitmedia.com/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-04T13:33:37Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_be903de5f60d4510963f83dce1b90109~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The loss to Mizzou is history; the question is how will the Gators respond?"
+      }
+    },
+    {
       "title": "Drink Mix: How Missouri’s Blueprint Bottled Up the Gators",
       "excerpt": "Eli Drinkwitz spent all week saying tough teams stop the run. Missouri did it Saturday. Now Florida has six days to make sure South Carolina can't do it again.",
       "url": "https://www.gatorbaitmedia.com/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators."
-      }
-    },
-    {
-      "title": "Florida Keeps Winning Big, and the Laundry Keeps Piling Up",
-      "excerpt": "The No. 8 Gators have outscored four opponents by nearly 31 points a game while drawing 35 flags for 357 yards, and the play-by-play says the bill has only been deferred, not paid.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-keeps-winning-big-and-the-laundry-keeps-piling-up",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-01T13:02:46Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_f130d47a9cb74914b869ac554c67e931~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida Keeps Winning Big, and the Laundry Keeps Piling Up"
-      }
-    },
-    {
-      "title": "When it came to finding a quarterback Sumrall trusted Buster and it paid off",
-      "excerpt": "Aaron Philo was barely known when the season began for the Gators (Photo by Chris Spears) Trust was put to the ultimate test back in January. Having spent the month of December juggling two jobs – head coach at Tulane where he led the Green Wave to the American Conference championship and the College Football Playoff while prepping to take over full time as…",
-      "url": "https://www.gatorbaitmedia.com/post/when-it-came-to-finding-a-quarterback-sumrall-trusted-buster-and-it-paid-off",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-01T11:38:49Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_00359caad82744778e7c387d8bf98777~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for When it came to finding a quarterback Sumrall trusted Buster and it paid off"
       }
     }
   ]

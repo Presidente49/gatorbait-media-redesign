@@ -1,5 +1,5 @@
 {
-  "commit": "314302704a8c4209db3d064071ae319dfda61157",
-  "updated": "2026-10-01T12:47:55Z",
-  "note": "PR #109: Franz Beard's Philo/Faulkner column leads the front page until Sat. Oct. 3 noon ET (Brenden, Oct. 1). Rollback: 2cd7303fb009767491e256c07f5def7faf668b6a."
+  "commit": "314eee89adebfa6eb9bb0a36df8d889fccb613d3",
+  "updated": "2026-10-04T16:29:00Z",
+  "note": "Show rail only: six verified broadcasts newest first, from deployed 314302704a8c4209db3d064071ae319dfda61157. Existing homepage/layout retained. Rollback: 314302704a8c4209db3d064071ae319dfda61157."
 }

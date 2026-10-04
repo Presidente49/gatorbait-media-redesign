@@ -43,7 +43,7 @@ const MAX_JS = 260 * 1024;
 const config = JSON.parse(read('sports-live/front-page.config.json'));
 const feed = JSON.parse(read('gazette-live/posts.json'));
 
-const posts = feed.posts.slice(0, 16).map((p) => ({
+const posts = feed.posts.slice(0, 20).map((p) => ({
   title: p.title, excerpt: String(p.excerpt || '').slice(0, 320), url: p.url, author: p.author,
   firstPublishedDate: p.firstPublishedDate,
   image: p.image ? { src: p.image.src, width: p.image.width, height: p.image.height, alt: p.image.alt } : null,

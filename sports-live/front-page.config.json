@@ -1,12 +1,17 @@
 {
   "$comment": "Front Page 2026 editorial config. Bundled into sports-live/homepage.js by sports-live/build-front-page.mjs. Pins may also be overridden at runtime by window.__GBM_HOME_PINS__ = {breaking:{path,until}, timed:{path,until}} (same shape).",
-  "look": "swamp-night",
+  "look": "gator-day",
+  "topStoryAuthors": [
+    "Buddy Martin",
+    "Franz Beard",
+    "Loren Meadows"
+  ],
   "pins": {
     "breaking": null,
     "timed": {
       "path": "/post/week-5-preview-florida-gators-4-0-2-0-v-missouri-tigers-3-1-0-1",
       "until": "2026-10-05T16:00:00Z",
-      "note": "Owner October 4: feature Loren once; all other stories newest first, actual writer and publication date preserved. Feature expires Monday noon Eastern."
+      "note": "Owner October 4, 5:21 p.m. ET: Loren in the main box, Buddy and Franz in the top package, Brenden stories below. Actual bylines and dates preserved."
     }
   },
   "quotes": {
@@ -21,7 +26,7 @@
     "d3cfa5_56a64986c874417c9a8299fae22649ed"
   ],
   "credits": {
-    "d3cfa5_56a64986c874417c9a8299fae22649ed": "Photo by Chris Spears, GatorBait Media · Faulkner: UAA",
+    "d3cfa5_56a64986c874417c9a8299fae22649ed": "Photo by Chris Spears, GatorBait Media \u00b7 Faulkner: UAA",
     "d3cfa5_d3190d83cdfc44549b10b6bd025e57a3": "Photo by Chris Spears, GatorBait Media",
     "d3cfa5_2ea58f38e2da4c988ab73065cfe63130": "Photo by Chris Spears, GatorBait Media",
     "d3cfa5_026d2a4d2be04a91b8c32317fed5f623": "Photo by Chris Spears, GatorBait Media",
@@ -35,22 +40,22 @@
     {
       "name": "Buddy Martin",
       "initials": "BM",
-      "href": "/gatorbait-media-blogs/tags/buddy-martin"
+      "href": "/gatorbait-media-blogs/categories/buddy-s-blog"
     },
     {
       "name": "Franz Beard",
       "initials": "FB",
-      "href": "/gatorbait-media-blogs/tags/franz-beard"
+      "href": "/gatorbait-media-blogs/categories/franz-beard-blog"
     },
     {
       "name": "Loren Meadows",
       "initials": "LM",
-      "href": "/gatorbait-media-blogs/tags/loren-meadows"
+      "href": "/gatorbait-media-blogs/categories/loren-meadows-blogs"
     },
     {
       "name": "Eddie Gilley",
       "initials": "EG",
-      "href": "/gatorbait-media-blogs/tags/eddie-gilley"
+      "href": "/gatorbait-media-blogs/categories/eddie-gilley-blog"
     },
     {
       "name": "Chris Spears Photos",
@@ -165,5 +170,13 @@
       "previewUrl": "/post/first-look-missouri-florida-gators-show-me-state-of-mind"
     },
     "standings": []
+  },
+  "$columnists": "Writer names link to their Wix writer category page (branded, newest-first, Columnists sub-nav). Oct. 4: the old tag pages held 26/4/3/1 posts; the member profile page has no post list. A writer's list is only as complete as the post's writer category, so every column needs its writer category.",
+  "newHours": 48,
+  "colead": {
+    "on": false,
+    "left": "Buddy Martin",
+    "right": "Franz Beard",
+    "days": 7
   }
 }

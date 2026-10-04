@@ -96,6 +96,15 @@ class BuildTests(unittest.TestCase):
         self.assertIsNone(by['Texas'])
         self.assertEqual(by['Ole Miss'], d['last']['recapUrl'])
 
+    def test_recap_excludes_halftime_score_update(self):
+        g = {'opponent': 'Missouri', 'date': '2026-10-03T19:50:00Z'}
+        halftime = {'title': 'Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10',
+                    'url': 'https://www.gatorbaitmedia.com/post/halftime', 'firstPublishedDate': '2026-10-03T21:00:00Z'}
+        final = {'title': 'Roberts Runs Away, Missouri Routs Florida 45-17',
+                 'url': 'https://www.gatorbaitmedia.com/post/final', 'firstPublishedDate': '2026-10-03T23:00:00Z'}
+        self.assertEqual(sf.find_story(g, sf._posts({'posts': [halftime, final]}), 'recap'), final['url'])
+        self.assertIsNone(sf.find_story(g, sf._posts({'posts': [halftime]}), 'recap'))
+
     def test_no_posts_means_null_links(self):
         d = build(posts={})
         self.assertIsNone(d['last']['recapUrl'])

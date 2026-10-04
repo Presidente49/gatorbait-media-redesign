@@ -29,3 +29,15 @@ Previous live pointer: `2009d1857772389679d06424e3f4d71a71d48b6d`; previous visi
 The current Wix HOME_CODE embed `622d8ece-df55-44fc-9e4a-3f580804743b` revision38 contains an expired Buddy pin that overrides repository selection. The exact previous HTML is saved as `home-code-rev38.html`. Release removes that obsolete override and updates the timeout fallback to the integrated release commit. The pointer remains the central deployment mechanism.
 
 Rollback: restore `sports-live/current.json` to the previous commit and restore the saved embed HTML using its fresh current revision. Revert category-only corrections separately only if necessary, preserving any subsequently added categories or drafts. No broad Wix site publish is required.
+
+## Completed release and public verification
+
+Integration PR #137 merged to `a76e8cf343e5ac95c3353621d759b6e3b26a099a`. Pointer release commit: `92a80b0bc09ac54443ef440dbde88220f7f407c4`. Wix HOME_CODE revision39 is enabled, removes the expired pin and uses the integrated commit as its fallback.
+
+Public runtime verified October 4 at approximately 21:41 UTC: build `a9ec63bf`, light theme, lead rule `pin`, Loren Week 5 preview in the main feature, latest Buddy feature and Franz leading the upper list. Writer names link to their category archives; Chris Spears retains the verified gallery. The public Buddy archive includes Hey Missouri, Franz archive leads with the October 4 Mizzou column, and Loren archive leads with the Week 5 preview.
+
+Independent production screenshots, Actions run `37237018259`: HTTP200, correct build and no page errors at widths 320, 390, 430 and 1366; document width equals viewport at all four widths (no horizontal overflow). See `live-metrics.json`, `live-homepage.jpg` and `live-mobile-390.jpg`. A redundant follow-up screenshot request also exists on `shots/homepage-writers-20261004-2139`; it is read-only against production.
+
+Wix briefly served cached revision38 on the unversioned homepage; a fresh query URL returned revision39 and the correct Loren pin. No second production patch or broad site publish was used to work around cache propagation.
+
+Final unversioned `https://www.gatorbaitmedia.com/` verification also returned build `a9ec63bf`, Loren pinned lead and no old override after propagation.

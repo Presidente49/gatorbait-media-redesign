@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Reality Check: What Florida’s First Loss Exposed, and the Road Ahead",
+      "excerpt": "Missouri ran for 220 yards and held Florida to 42. With South Carolina, Texas and Georgia next, here is what the 45-17 loss exposed for the Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-10-03T23:14:42Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_d600f2d12282447eb6ceb6bfb0d988f3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Reality Check: What Florida’s First Loss Exposed, and the Road Ahead"
+      }
+    },
+    {
+      "title": "Roberts Runs Away, Missouri Routs Florida 45-17",
+      "excerpt": "Jamal Roberts ran for 211 yards and three touchdowns as No. 25 Missouri scored 35 straight points and handed No. 8 Florida its first loss, 45-17, in Columbia.",
+      "url": "https://www.gatorbaitmedia.com/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-10-03T23:12:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_771d22e505854ba38fdfb8124e95e1d0~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Roberts Runs Away, Missouri Routs Florida 45-17"
+      }
+    },
+    {
       "title": "Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10",
       "excerpt": "Austin Simmons threw two touchdown passes and No. 25 Missouri held Jadan Baugh to 12 yards on nine carries to lead No. 8 Florida 20-10 at the half in Columbia.",
       "url": "https://www.gatorbaitmedia.com/post/halftime-simmons-strikes-twice-missouri-leads-florida-20-10",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Thoughts of the Day: September 29, 2026"
-      }
-    },
-    {
-      "title": "Senate Passes Protect College Sports Act 77–22",
-      "excerpt": "The Senate passed the Protect College Sports Act 77–22 Monday night. What the proposal could mean for Florida, and why it is not law yet.",
-      "url": "https://www.gatorbaitmedia.com/post/senate-passes-protect-college-sports-act-florida",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-09-29T11:31:17Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_92f9918e12f941e3a9621a000db7c07d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Senate Passes Protect College Sports Act 77–22"
-      }
-    },
-    {
-      "title": "Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'",
-      "excerpt": "Jon Sumrall wants Gator Nation to put down the poll: Florida has lost three of its last four trips to Columbia, and the coach with the raspy voice is making his team pay the toll on \"Bloody Tuesday.\"",
-      "url": "https://www.gatorbaitmedia.com/post/put-down-the-poll-gators-missouri-is-waiting-and-there-s-a-new-definition-for-one-game-at-a-time",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-09-28T23:24:43Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Put Down the Poll, Gators. Missouri Is Waiting. And There's A New Definition For 'One Game At A Time'"
       }
     }
   ]

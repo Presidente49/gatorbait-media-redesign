@@ -18,8 +18,10 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from validate_scoreboard import SITE, validate  # noqa: E402
 
 TEAM_ID = '57'  # ESPN id for Florida
-SITE_API = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football'
-STANDINGS_URL = 'https://site.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season={season}'  # group 8 = SEC
+# site.web.api.espn.com, not site.api.espn.com: the latter answers 403 to GitHub Actions runners (probed Oct. 3, 2026),
+# which kept scoreboard.json frozen from Sept. 29 while the step exited 2 under continue-on-error.
+SITE_API = 'https://site.web.api.espn.com/apis/site/v2/sports/football/college-football'
+STANDINGS_URL = 'https://site.web.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season={season}'  # group 8 = SEC
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / 'sports-live/scoreboard.json'
 POSTS = ROOT / 'gazette-live/posts.json'

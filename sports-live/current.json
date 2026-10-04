@@ -1,5 +1,5 @@
 {
-  "commit": "314eee89adebfa6eb9bb0a36df8d889fccb613d3",
-  "updated": "2026-10-04T16:29:00Z",
-  "note": "Show rail only: six verified broadcasts newest first, from deployed 314302704a8c4209db3d064071ae319dfda61157. Existing homepage/layout retained. Rollback: 314302704a8c4209db3d064071ae319dfda61157."
+  "commit": "1d870ec2cd425dae3c6633b0705523f11075d1d8",
+  "updated": "2026-10-04T16:46:40Z",
+  "note": "URL guard only plus existing Chris Spears Photos gallery destination, from deployed show rail 314eee89adebfa6eb9bb0a36df8d889fccb613d3. Preserves show updates, design and ready event. Rollback: 314eee89adebfa6eb9bb0a36df8d889fccb613d3."
 }

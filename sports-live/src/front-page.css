@@ -490,3 +490,35 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26:not(.fp-night) #gbm-road .rk{color:#ffb08f}
 #gbm-live.fp26:not(.fp-night) .fp-tn-vs{color:#ffb08f}
 #gbm-live.fp26:not(.fp-night) .gbc .gbc-b:not(:hover):not(:focus-visible){background:var(--fp-orange-ink)}
+
+/* Owner Oct. 4: mobile should be a photo-led sports front page, not a wall of titles. */
+#gbm-live.fp26 .fp-story-photo{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--fp-chip);min-width:0}
+#gbm-live.fp26 .fp-story-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+#gbm-live.fp26 .fp-story-contain img{object-fit:contain}
+#gbm-live.fp26 .fp-story-copy{display:grid;align-content:start;gap:7px;min-width:0}
+#gbm-live.fp26 .fp-story-credit{font:400 10px/1.3 var(--fp-sans);color:var(--fp-ink-2)}
+#gbm-live.fp26 .fp-list a.fp-story-card{grid-template-columns:112px minmax(0,1fr);gap:12px}
+#gbm-live.fp26 .fp-list a.fp-no-photo{grid-template-columns:minmax(0,1fr)}
+#gbm-live.fp26 .fp-latest a.fp-latest-photo{grid-template-columns:96px minmax(0,1fr);gap:12px}
+#gbm-live.fp26 .fp-latest a.fp-no-photo{grid-template-columns:minmax(0,1fr)}
+#gbm-live.fp26 .fp-latest time{display:block;margin-bottom:4px}
+@media(max-width:820px){
+body:has(#gbm-mobile-shell-host) #gbm-live.fp26 .fp-mast{display:none}
+#gbm-live.fp26 .fp-lead{gap:10px;padding-top:14px}
+#gbm-live.fp26 .fp-lead h1,#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(26px,7.2vw,32px);line-height:1.08}
+#gbm-live.fp26 .fp-lead-photo .fp-frame{aspect-ratio:16/9}
+#gbm-live.fp26 .fp-body{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:14px;line-height:1.45}
+#gbm-live.fp26 .fp-quote{display:none}
+#gbm-live.fp26 .fp-second{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:20px}
+#gbm-live.fp26 .fp-feature{gap:8px}
+#gbm-live.fp26 .fp-feature .fp-frame{aspect-ratio:16/9}
+#gbm-live.fp26 .fp-feature h2{font-size:25px;line-height:1.12}
+#gbm-live.fp26 .fp-feature p.fp-ex{display:none}
+#gbm-live.fp26 .fp-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}
+#gbm-live.fp26 .fp-list li{min-width:0;border:0}
+#gbm-live.fp26 .fp-list a.fp-story-card{grid-template-columns:minmax(0,1fr);gap:9px;padding:0;align-content:start;height:100%}
+#gbm-live.fp26 .fp-list h3{font-size:19px;line-height:1.14;overflow-wrap:break-word}
+#gbm-live.fp26 .fp-list .fp-meta{font-size:11px;line-height:1.4;letter-spacing:0}
+#gbm-live.fp26 .fp-list .fp-story-credit{font-size:9px}
+#gbm-live.fp26 .fp-rail{grid-column:auto}
+}

@@ -229,11 +229,11 @@
   // AVIF/WebP), and offer three widths; the original URL stays on the element and comes back if the re-cut ever 404s.
   var WIX_MEDIA = /^(https:\/\/static\.wixstatic\.com\/media\/[^\/?#]+)(?:\/v1\/[^?#]*)?(?:[?#].*)?$/;
   function wixCut(src, w, h) { var m = WIX_MEDIA.exec(String(src || '')); return m ? m[1] + '/v1/fit/w_' + w + ',h_' + h + ',al_c,q_80,enc_auto/gatorbait.jpg' : ''; }
-  function img(src, alt, eager, w, h) {
+  function img(src, alt, eager, w, h, sizes) {
     if (!src) return '';
     var W = w || 1000, H = h || 667, cut = wixCut(src, W, H);
     var set = cut ? [480, 800, 1200].map(function (x) { return wixCut(src, x, Math.round(x * H / W)) + ' ' + x + 'w'; }).join(', ') : '';
-    return '<img src="' + esc(cut || src) + '"' + (set ? ' srcset="' + esc(set) + '" sizes="(max-width: 700px) 100vw, 60vw" data-fp-orig="' + esc(src) + '"' : '') + ' alt="' + esc(alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + ' width="' + W + '" height="' + H + '">';
+    return '<img src="' + esc(cut || src) + '"' + (set ? ' srcset="' + esc(set) + '" sizes="' + esc(sizes || '(max-width: 700px) 100vw, 60vw') + '" data-fp-orig="' + esc(src) + '"' : '') + ' alt="' + esc(alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + ' width="' + W + '" height="' + H + '">';
   }
   // If a re-cut URL fails, fall back to the feed's own URL once (delegated: the grid is innerHTML).
   function imgFallback(root) {
@@ -359,10 +359,16 @@
     if (!q) return '';
     return '<figure class="fp-quote"><blockquote>' + esc(q.text) + '</blockquote><figcaption><cite><b>' + esc(q.who) + '</b>' + esc(q.context) + '</cite></figcaption></figure>';
   }
+  // Real story photography in the supporting cards, with reserved dimensions and lazy delivery.
+  function storyThumb(p, compact) {
+    if (!p.image) return '';
+    return '<span class="fp-story-photo' + (p.cover || p.portrait ? ' fp-story-contain' : '') + '">' +
+      img(p.image, p.alt, false, 480, 300, compact ? '112px' : '(max-width: 820px) 46vw, 112px') + '</span>';
+  }
   function secondHtml(feature, list, cols) {
     return '<section class="fp-second" aria-label="More top stories">' +
       (feature ? '<article class="fp-feature">' + photoBlock(feature, false) + '<p class="fp-kick">' + esc(kicker(feature)) + '</p>' + link(feature.url, '<h2 class="fp-hl">' + esc(feature.title) + '</h2>') + (feature.excerpt ? '<p class="fp-ex">' + esc(feature.excerpt.slice(0, 220)) + (feature.excerpt.length > 220 ? '…' : '') + '</p>' : '') + by(feature) + '</article>' : '') +
-      '<ol class="fp-list" aria-label="Top stories">' + list.map(function (p) { return '<li>' + link(p.url, '<h3 class="fp-hl">' + esc(p.title) + '</h3>' + (p.excerpt ? '<p class="fp-ex">' + esc(p.excerpt.slice(0, 120)) + (p.excerpt.length > 120 ? '…' : '') + '</p>' : '') + by(p)) + '</li>'; }).join('') + '</ol>' +
+      '<ol class="fp-list" aria-label="Top stories">' + list.map(function (p) { return '<li>' + link(p.url, storyThumb(p, false) + '<div class="fp-story-copy"><h3 class="fp-hl">' + esc(p.title) + '</h3>' + by(p) + (p.credit ? '<small class="fp-story-credit">' + esc(p.credit) + '</small>' : '') + '</div>', p.image ? 'fp-story-card' : 'fp-story-card fp-no-photo') + '</li>'; }).join('') + '</ol>' +
       '<aside class="fp-rail" id="fp-columnists" aria-label="Columnists"><h2>Columnists</h2><div class="fp-rail-cols">' + cols + '</div></aside></section>';
   }
   function columnistsHtml(posts) {
@@ -494,7 +500,7 @@
   function hubHtml(latest, sb, posts, used) {
     var sn = showNext(), ep = BUNDLE.show.episode;
     var mLatest = '<section class="fp-mod fp-mod-latest" aria-label="Latest stories"><h2>Latest</h2><ol class="fp-latest">' + latest.map(function (p) {
-      return '<li>' + link(p.url, '<time datetime="' + p.date.toISOString() + '">' + esc(ago(p.date)) + '</time><div><h3 class="fp-hl">' + esc(p.title) + '</h3><p class="fp-meta">' + esc(p.author) + '</p></div>') + '</li>'; }).join('') +
+      return '<li>' + link(p.url, storyThumb(p, true) + '<div><time datetime="' + p.date.toISOString() + '">' + esc(ago(p.date)) + '</time><h3 class="fp-hl">' + esc(p.title) + '</h3><p class="fp-meta">' + esc(p.author) + '</p></div>', p.image ? 'fp-latest-photo' : 'fp-no-photo') + '</li>'; }).join('') +
       '</ol><a class="fp-more" href="' + esc(L.latest) + '">All stories <span aria-hidden="true">&nbsp;→</span></a></section>';
     var mShow = '<section class="fp-mod fp-mod-show fp-show" data-live="' + (sn.live ? 1 : 0) + '" aria-label="The Buddy Martin Show"><h2>The Buddy Martin Show</h2><p class="fp-show-when"><span class="fp-live-dot" aria-hidden="true"></span><span data-fp-show>' + esc(sn.live ? 'Live now' : 'Next live: ' + sn.label) + '</span></p>' +
       '<p class="fp-ex">Mondays, Wednesdays and Thursdays at 9 p.m. ET.</p><div class="fp-actions"><a class="fp-btn" href="' + esc(L.youtubeLive) + '" rel="noopener">Watch on YouTube</a><a class="fp-btn fp-ghost" href="' + esc(L.facebook) + '" rel="noopener">Facebook</a></div>' +

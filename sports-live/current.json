@@ -1,5 +1,5 @@
 {
-  "commit": "a76e8cf343e5ac95c3353621d759b6e3b26a099a",
-  "updated": "2026-10-04T21:39:00Z",
-  "note": "Owner-directed PR #137: Jarvis Gator Day layout, writer archive links and NEW badges, Loren main feature, Buddy/Franz upper stories; Brenden news lower in Latest. Prior pointer 2009d1857772389679d06424e3f4d71a71d48b6d. Rollback and embed snapshot: deploy/homepage-rotation-20261004/."
+  "commit": "4971ff53e55c66527541697350410c69656e04b4",
+  "updated": "2026-10-04T23:48:31.743Z",
+  "note": "Owner-requested photo-led mobile homepage PR138. Real article photography in upper story cards and Latest, smaller headlines and shorter mobile previews. Loren/Buddy/Franz positions retained. Rollback a76e8cf343e5ac95c3353621d759b6e3b26a099a; deploy/mobile-photo-stories-20261004/."
 }

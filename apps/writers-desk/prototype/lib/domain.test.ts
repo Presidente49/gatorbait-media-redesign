@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {cleanDelta,mayRead,mayEdit,transition,photoSelectable} from './domain.ts';
+import {deskAnswer} from './help.ts';
+const alice={user_id:'a',role:'writer'},bob={user_id:'b',role:'writer'},editor={user_id:'e',role:'editor'};
+const story={id:'one',author_id:'a',status:'draft'};
+test('writers cannot read or edit another writer’s copy',()=>{assert.equal(mayRead(bob,story),false);assert.equal(mayEdit(bob,story),false);assert.equal(mayRead(editor,story),true)});
+test('submitted copy is locked and only editors can approve',()=>{assert.equal(transition(alice,story,'submit'),'review');const review={...story,status:'review'};assert.equal(mayEdit(alice,review),false);assert.throws(()=>transition(alice,review,'approve'));assert.equal(transition(editor,review,'approve'),'approved');assert.equal(transition(editor,review,'return'),'changes');assert.throws(()=>transition(editor,story,'published'));});
+test('unknown availability and another story reservation are blocked',()=>{assert.equal(photoSelectable({status:'unchecked'},null,'one'),false);assert.equal(photoSelectable({status:'available'},{story_id:'two'},'one'),false);assert.equal(photoSelectable({status:'available'},null,'one'),true)});
+test('story storage rejects embeds and strips dangerous or unknown attributes',()=>{assert.throws(()=>cleanDelta({ops:[{insert:{image:'data:text/html,evil'}}]}));assert.deepEqual(cleanDelta({ops:[{insert:'safe',attributes:{link:'javascript:alert(1)',onclick:'evil',bold:true}}]}),{ops:[{insert:'safe',attributes:{bold:true}}]});assert.throws(()=>cleanDelta({ops:[{insert:'x'.repeat(200001)}]}));});
+test('help does not invent current sports facts or claim email integration',()=>{assert.match(deskAnswer('Who won the game today?'),/don’t have a verified answer/);assert.match(deskAnswer('Send through Gmail'),/not connected/);assert.match(deskAnswer('How to upload Word?'),/\.docx/)});

@@ -1,0 +1,570 @@
+{
+  "form": {
+    "id": "0ab5d3a7-86ad-4484-9db9-8d05f258fab2",
+    "fields": [
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a31",
+        "target": "writer_name",
+        "validation": {
+          "string": {
+            "format": "UNDEFINED",
+            "enum": []
+          },
+          "required": true
+        },
+        "pii": true,
+        "hidden": false,
+        "view": {
+          "label": "Your name",
+          "fieldType": "TEXT_INPUT",
+          "hideLabel": false
+        },
+        "readOnly": false
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a32",
+        "target": "writer_email",
+        "validation": {
+          "string": {
+            "format": "EMAIL",
+            "enum": []
+          },
+          "required": true
+        },
+        "pii": true,
+        "hidden": false,
+        "view": {
+          "label": "Email",
+          "fieldType": "TEXT_INPUT",
+          "hideLabel": false
+        },
+        "readOnly": false
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a33",
+        "target": "headline",
+        "validation": {
+          "string": {
+            "format": "UNDEFINED",
+            "enum": []
+          },
+          "required": true
+        },
+        "pii": true,
+        "hidden": false,
+        "view": {
+          "label": "Headline",
+          "fieldType": "TEXT_INPUT",
+          "hideLabel": false
+        },
+        "readOnly": false
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a34",
+        "target": "story",
+        "validation": {
+          "string": {
+            "format": "UNDEFINED",
+            "enum": []
+          },
+          "required": false
+        },
+        "pii": true,
+        "hidden": false,
+        "view": {
+          "label": "Paste your story here or upload below",
+          "fieldType": "TEXT_AREA",
+          "hideLabel": false
+        },
+        "readOnly": false
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a35",
+        "target": "story_file",
+        "validation": {
+          "predefined": {
+            "format": "WIX_FILE"
+          },
+          "required": false
+        },
+        "pii": false,
+        "hidden": false,
+        "view": {
+          "label": "Story file",
+          "uploadFileFormats": [
+            "Document"
+          ],
+          "buttonText": "Upload here",
+          "valueSliderLimit": 1,
+          "hideLabel": false,
+          "fieldType": "FILE_UPLOAD"
+        },
+        "readOnly": false
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a36",
+        "target": "picture",
+        "validation": {
+          "predefined": {
+            "format": "WIX_FILE"
+          },
+          "required": false
+        },
+        "pii": false,
+        "hidden": false,
+        "view": {
+          "label": "Picture (optional)",
+          "uploadFileFormats": [
+            "Image"
+          ],
+          "buttonText": "Upload here",
+          "valueSliderLimit": 1,
+          "hideLabel": false,
+          "fieldType": "FILE_UPLOAD"
+        },
+        "readOnly": false
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a37",
+        "pii": false,
+        "hidden": false,
+        "view": {
+          "fieldType": "SUBMIT_BUTTON",
+          "submitText": "Submit"
+        },
+        "readOnly": false
+      }
+    ],
+    "formFields": [
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a31",
+        "hidden": false,
+        "identifier": "TEXT_INPUT",
+        "fieldType": "INPUT",
+        "inputOptions": {
+          "target": "writer_name",
+          "pii": true,
+          "required": true,
+          "inputType": "STRING",
+          "readOnly": false,
+          "stringOptions": {
+            "validation": {
+              "format": "UNKNOWN_FORMAT",
+              "enum": []
+            },
+            "componentType": "TEXT_INPUT",
+            "textInputOptions": {
+              "label": "Your name",
+              "showLabel": true,
+              "mediaSettings": {
+                "imagePosition": "ABOVE",
+                "imageAlignment": "CENTER",
+                "imageFit": "COVER"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a32",
+        "hidden": false,
+        "identifier": "TEXT_INPUT",
+        "fieldType": "INPUT",
+        "inputOptions": {
+          "target": "writer_email",
+          "pii": true,
+          "required": true,
+          "inputType": "STRING",
+          "readOnly": false,
+          "stringOptions": {
+            "validation": {
+              "format": "EMAIL",
+              "enum": []
+            },
+            "componentType": "TEXT_INPUT",
+            "textInputOptions": {
+              "label": "Email",
+              "showLabel": true,
+              "mediaSettings": {
+                "imagePosition": "ABOVE",
+                "imageAlignment": "CENTER",
+                "imageFit": "COVER"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a33",
+        "hidden": false,
+        "identifier": "TEXT_INPUT",
+        "fieldType": "INPUT",
+        "inputOptions": {
+          "target": "headline",
+          "pii": true,
+          "required": true,
+          "inputType": "STRING",
+          "readOnly": false,
+          "stringOptions": {
+            "validation": {
+              "format": "UNKNOWN_FORMAT",
+              "enum": []
+            },
+            "componentType": "TEXT_INPUT",
+            "textInputOptions": {
+              "label": "Headline",
+              "showLabel": true,
+              "mediaSettings": {
+                "imagePosition": "ABOVE",
+                "imageAlignment": "CENTER",
+                "imageFit": "COVER"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a34",
+        "hidden": false,
+        "identifier": "TEXT_AREA",
+        "fieldType": "INPUT",
+        "inputOptions": {
+          "target": "story",
+          "pii": true,
+          "required": false,
+          "inputType": "STRING",
+          "readOnly": false,
+          "stringOptions": {
+            "validation": {
+              "format": "UNKNOWN_FORMAT",
+              "enum": []
+            },
+            "componentType": "TEXT_INPUT",
+            "textInputOptions": {
+              "label": "Paste your story here or upload below",
+              "showLabel": true,
+              "mediaSettings": {
+                "imagePosition": "ABOVE",
+                "imageAlignment": "CENTER",
+                "imageFit": "COVER"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a35",
+        "hidden": false,
+        "identifier": "FILE_UPLOAD",
+        "fieldType": "INPUT",
+        "inputOptions": {
+          "target": "story_file",
+          "pii": false,
+          "required": false,
+          "inputType": "WIX_FILE",
+          "readOnly": false,
+          "wixFileOptions": {
+            "componentType": "FILE_UPLOAD",
+            "validation": {
+              "fileLimit": 1,
+              "uploadFileFormats": [
+                "DOCUMENT"
+              ]
+            },
+            "fileUploadOptions": {
+              "label": "Story file",
+              "showLabel": true,
+              "buttonText": "Upload here",
+              "fileLimit": 1,
+              "uploadFileFormats": [
+                "DOCUMENT"
+              ],
+              "mediaSettings": {
+                "imagePosition": "ABOVE",
+                "imageAlignment": "CENTER",
+                "imageFit": "COVER"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a36",
+        "hidden": false,
+        "identifier": "FILE_UPLOAD",
+        "fieldType": "INPUT",
+        "inputOptions": {
+          "target": "picture",
+          "pii": false,
+          "required": false,
+          "inputType": "WIX_FILE",
+          "readOnly": false,
+          "wixFileOptions": {
+            "componentType": "FILE_UPLOAD",
+            "validation": {
+              "fileLimit": 1,
+              "uploadFileFormats": [
+                "IMAGE"
+              ]
+            },
+            "fileUploadOptions": {
+              "label": "Picture (optional)",
+              "showLabel": true,
+              "buttonText": "Upload here",
+              "fileLimit": 1,
+              "uploadFileFormats": [
+                "IMAGE"
+              ],
+              "mediaSettings": {
+                "imagePosition": "ABOVE",
+                "imageAlignment": "CENTER",
+                "imageFit": "COVER"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a37",
+        "hidden": false,
+        "identifier": "SUBMIT_BUTTON",
+        "fieldType": "DISPLAY",
+        "displayOptions": {
+          "displayFieldType": "PAGE_NAVIGATION",
+          "pageNavigationOptions": {
+            "submitText": "Submit"
+          }
+        }
+      }
+    ],
+    "steps": [
+      {
+        "id": "54b235b7-a780-4cdc-9be2-cc3022262a38",
+        "name": "Your story",
+        "hidden": false,
+        "layout": {
+          "large": {
+            "items": [
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a31",
+                "row": 0,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a32",
+                "row": 1,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a33",
+                "row": 2,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a34",
+                "row": 3,
+                "column": 0,
+                "width": 12,
+                "height": 4
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a35",
+                "row": 7,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a36",
+                "row": 8,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a37",
+                "row": 9,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              }
+            ],
+            "sections": []
+          },
+          "medium": {
+            "items": [
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a31",
+                "row": 0,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a32",
+                "row": 1,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a33",
+                "row": 2,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a34",
+                "row": 3,
+                "column": 0,
+                "width": 12,
+                "height": 4
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a35",
+                "row": 7,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a36",
+                "row": 8,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a37",
+                "row": 9,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              }
+            ],
+            "sections": []
+          },
+          "small": {
+            "items": [
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a31",
+                "row": 0,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a32",
+                "row": 1,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a33",
+                "row": 2,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a34",
+                "row": 3,
+                "column": 0,
+                "width": 12,
+                "height": 4
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a35",
+                "row": 7,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a36",
+                "row": 8,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              },
+              {
+                "fieldId": "54b235b7-a780-4cdc-9be2-cc3022262a37",
+                "row": 9,
+                "column": 0,
+                "width": 12,
+                "height": 1
+              }
+            ],
+            "sections": []
+          }
+        }
+      }
+    ],
+    "rules": [],
+    "revision": "2",
+    "createdDate": "2026-10-04T00:39:26.493Z",
+    "updatedDate": "2026-10-04T00:41:17.090Z",
+    "properties": {
+      "name": "GatorBait Writers Desk",
+      "disabled": false
+    },
+    "deletedFields": [],
+    "deletedFormFields": [],
+    "kind": "REGULAR",
+    "extendedFields": {
+      "namespaces": {
+        "@forms/form-app": {
+          "automationId": "0404fde8-fbc4-40da-98cb-a43a595a2c28"
+        }
+      }
+    },
+    "namespace": "wix.form_app.form",
+    "nestedForms": [],
+    "mediaFolderId": "1621f444027c4458a227c21be289dc30",
+    "spamFilterProtectionLevel": "ADVANCED",
+    "submitSettings": {
+      "submitSuccessAction": "THANK_YOU_MESSAGE",
+      "thankYouMessageOptions": {
+        "durationInSeconds": 15,
+        "richContent": {
+          "nodes": [
+            {
+              "type": "PARAGRAPH",
+              "id": "thanks",
+              "nodes": [
+                {
+                  "type": "TEXT",
+                  "id": "",
+                  "nodes": [],
+                  "textData": {
+                    "text": "Story received. We will take it from here.",
+                    "decorations": []
+                  }
+                }
+              ],
+              "paragraphData": {
+                "textStyle": {
+                  "textAlignment": "CENTER"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "fieldGroups": [],
+    "enabled": true,
+    "name": "GatorBait Writers Desk",
+    "formRules": [],
+    "autoFillContact": "FORM_INPUT",
+    "submissionAccess": "OWNER_AND_COLLABORATORS"
+  }
+}

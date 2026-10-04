@@ -1,5 +1,5 @@
 {
-  "commit": "9b7faf1c794917f1c6d4e9a5b94790c14c478973",
-  "updated": "2026-10-04T18:19:00Z",
-  "note": "Writer-identity compatibility only: Chris Spears Photos retains Chris Spears gallery matching. Source parity preserved; prior URL/headline/guide/show fixes unchanged. Rollback: aaaba2a377525f8cf0d6c90d179ff6dbaad345b3."
+  "commit": "2009d1857772389679d06424e3f4d71a71d48b6d",
+  "updated": "2026-10-04T19:35:00Z",
+  "note": "Owner-authorized PR #136: one explicit lead feature, all supporting stories newest first with actual bylines. Loren feature expires October 5 noon Eastern. Rollback: 9b7faf1c794917f1c6d4e9a5b94790c14c478973."
 }

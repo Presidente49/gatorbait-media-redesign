@@ -71,3 +71,7 @@ One game, three modes, **no site edits during the game.**
 4. During a game: **zero Wix writes**. Postgame: one write, the game story link, which is also the pin.
 
 Until that ships, use the manual checklist above and keep the disabled blocks off.
+
+## Byline rule (Brenden, Oct. 4, 2026)
+
+Never byline a story to Wix member `16433bab` ("GatorBait Staff"): it is a paying subscriber's account. Byline the human who wrote it. If no human wrote it, use Brenden Martin, member `93d9f853-336f-4a8e-bcfa-4c621ff96db9`. Check this on every game story, halftime post and desk draft.

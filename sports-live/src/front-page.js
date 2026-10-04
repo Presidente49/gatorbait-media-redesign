@@ -314,7 +314,7 @@
   function leadHtml(lead, why) {
     var s = splitTitle(lead.title);
     return '<section class="fp-lead" aria-label="Lead story"><div id="fp-embers" aria-hidden="true"></div><div class="fp-night-glow" aria-hidden="true"></div>' + photoBlock(lead, true, 'fp-lead-photo') +
-      '<div class="fp-lead-copy"><p class="fp-kick">' + esc(kicker(lead, why)) + '</p><h1 data-len="' + (s.h.length > 60 ? 'long' : 'short') + '">' + link(lead.url, words(s.h), 'fp-hl') + '</h1>' +
+      '<div class="fp-lead-copy"><p class="fp-kick">' + esc(kicker(lead, why)) + '</p><h1 data-len="' + (s.h.length > 50 ? 'long' : 'short') + '">' + link(lead.url, words(s.h), 'fp-hl') + '</h1>' +
       (s.dek ? '<p class="fp-dek">' + esc(s.dek) + '</p>' : '') + '<p class="fp-by">By ' + esc(lead.author) + '<span>' + esc(shortDate(lead.date.getTime())) + '</span></p>' +
       (lead.excerpt ? '<p class="fp-body">' + esc(lead.excerpt) + '</p>' : '') + '<a class="fp-more" href="' + esc(lead.url) + '">Continue reading <span aria-hidden="true">&nbsp;→</span></a></div></section>';
   }

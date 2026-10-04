@@ -1,5 +1,5 @@
 {
-  "commit": "aaaba2a377525f8cf0d6c90d179ff6dbaad345b3",
-  "updated": "2026-10-04T17:12:30Z",
-  "note": "Precise readability repairs: existing long-headline treatment above50 characters and narrow-screen Next guide pill wrapping. Preserves tested URL guard, Chris photo gallery, six-show rail, article content and palette. Rollback: 1d870ec2cd425dae3c6633b0705523f11075d1d8."
+  "commit": "9b7faf1c794917f1c6d4e9a5b94790c14c478973",
+  "updated": "2026-10-04T18:19:00Z",
+  "note": "Writer-identity compatibility only: Chris Spears Photos retains Chris Spears gallery matching. Source parity preserved; prior URL/headline/guide/show fixes unchanged. Rollback: aaaba2a377525f8cf0d6c90d179ff6dbaad345b3."
 }

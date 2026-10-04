@@ -80,7 +80,7 @@
     }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).slice(0, 30);
   }
   function isSpears(p) { return /chris spears/i.test(p.author) || /^chris spears/i.test(p.title); }
-  function byColumnist(p, name) { return name === 'Chris Spears' ? isSpears(p) : p.author.toLowerCase().indexOf(name.toLowerCase()) >= 0; }
+  function byColumnist(p, name) { return (name === 'Chris Spears' || name === 'Chris Spears Photos') ? isSpears(p) : p.author.toLowerCase().indexOf(name.toLowerCase()) >= 0; }
 
   // Home Code lead rule: breaking pin > timed pin (unless a newer Buddy piece) > newest Buddy <= 7 days > newest.
   function pickLead(posts) {

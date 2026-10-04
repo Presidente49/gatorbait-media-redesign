@@ -204,10 +204,11 @@
     var q = ''; try { q = new URLSearchParams(location.search).get('gbm_fp') || ''; } catch (_) {}
     var e = et(now()), gameday = q === 'gameday' || (q !== 'day' && q !== 'night' && e.wd === 6 && gameToday(sb));
     var timeNight = e.h >= 19 || e.h < 6 || (gameday && e.h >= 17);
-    // Brenden, Sept. 29: Swamp Night is the everyday look. `look: "swamp-night"` in the config keeps
-    // the night palette and embers on all day; ?gbm_fp=day still shows the daytime look for QA.
-    var always = BUNDLE.look === 'swamp-night';
-    var night = q === 'night' || (q !== 'day' && (always || timeNight || prefersDark()));
+    // Brenden, Oct. 3-4: the everyday look is Gator Day (blue, orange, white) at every hour and on dark-mode phones
+    // ("that navy blue is too dark"). `look: "swamp-night"` in the config brings back the Sept. 29 all-day night palette
+    // (rollback); any other look follows the clock and the reader's scheme. ?gbm_fp=night|day still forces one for QA.
+    var look = BUNDLE.look || 'gator-day', always = look === 'swamp-night', day = look === 'gator-day';
+    var night = q === 'night' || (q !== 'day' && !day && (always || timeNight || prefersDark()));
     return { gameday: gameday, night: night, embers: night && (q === 'night' || always || timeNight) };
   }
 
@@ -251,11 +252,25 @@
   function fmtNum(n) { return Number(n).toLocaleString('en-US'); }
 
   /* ---------- Zones ---------- */
+  // "Missouri 45, Florida 17" and "Final: Florida 17, Missouri 45" are the same result: team/score pairs, ranks and
+  // labels dropped, sorted by team. Two or more pairs or it is not a score line ('' never matches).
+  function scoreKey(text) {
+    var t = String(text || '').toLowerCase().replace(/no\.\s*\d+\s*/g, '').replace(/^\s*(final|ft|live|half(time)?)\b[\s:.,·–-]*/, '');
+    var pairs = [], re = /([a-z][a-z.'&\s-]*?)\s+(\d{1,3})(?=\s*(?:[,;·–-]|$))/g, m;
+    while ((m = re.exec(t))) pairs.push(m[1].replace(/\s+/g, ' ').trim() + ':' + m[2]);
+    return pairs.length >= 2 ? pairs.sort().join('|') : '';
+  }
   function tickerHtml(posts, sb, gs) {
-    var items = [];
-    if (gs && gs.phase !== 'pre') items.push('<li><b>' + (gs.phase === 'final' ? 'Final' : 'Live') + '</b>' + esc(gs.away.name + ' ' + (gs.away.score == null ? '' : gs.away.score) + ', ' + gs.home.name + ' ' + (gs.home.score == null ? '' : gs.home.score)) + '</li>');
-    else if (sb.last && sb.last.score) items.push('<li><b>Final</b>' + link(sb.last.recapUrl, esc((sb.last.score.fla > sb.last.score.opp ? 'Florida ' + sb.last.score.fla + ', ' + sb.last.opponent + ' ' + sb.last.score.opp : sb.last.opponent + ' ' + sb.last.score.opp + ', Florida ' + sb.last.score.fla))) + '</li>');
-    if (gs) gs.updates.slice(0, 2).forEach(function (u) { items.push('<li><b>' + esc(u[0]) + '</b>' + esc(u[1]) + '</li>'); });
+    var items = [], seen = {};
+    // One line per result: the scoreboard/desk score line comes first, and a game-day update repeating it (the desk's
+    // "Final" band line, often with the teams the other way round) is dropped (LATEST showed the final twice, Oct. 3).
+    function scoreLine(label, text, href) { var k = scoreKey(text); if (k) seen[k] = 1; items.push('<li><b>' + esc(label) + '</b>' + (href ? link(href, esc(text)) : esc(text)) + '</li>'); }
+    function winnerFirst(a, b) { return (b.score > a.score ? [b, a] : [a, b]).map(function (s) { return s.name + ' ' + s.score; }).join(', '); }
+    if (gs && gs.phase !== 'pre') {
+      var done = gs.phase === 'final' && gs.away.score != null && gs.home.score != null;
+      scoreLine(done ? 'Final' : 'Live', done ? winnerFirst(gs.away, gs.home) : gs.away.name + ' ' + (gs.away.score == null ? '' : gs.away.score) + ', ' + gs.home.name + ' ' + (gs.home.score == null ? '' : gs.home.score));
+    } else if (sb.last && sb.last.score) scoreLine('Final', winnerFirst({ name: 'Florida', score: sb.last.score.fla }, { name: sb.last.opponent, score: sb.last.score.opp }), sb.last.recapUrl);
+    if (gs) gs.updates.filter(function (u) { var k = scoreKey(u[1]) || scoreKey(u[0] + ' ' + u[1]); return !(k && seen[k]); }).slice(0, 2).forEach(function (u) { items.push('<li><b>' + esc(u[0]) + '</b>' + esc(u[1]) + '</li>'); });
     if (sb.next) items.push('<li><b>Next</b>' + link(sb.next.previewUrl, esc(ranked(sb.team.rank, 'Florida') + (sb.next.home ? ' vs. ' : ' at ') + ranked(sb.next.opponentRank, sb.next.opponent) + ' · ' + gameWhen(sb.next.kickoffIso) + (sb.next.tv ? ' · ' + sb.next.tv : ''))) + '</li>');
     posts.slice(0, 8).forEach(function (p) { items.push('<li><b>' + esc(ago(p.date)) + '</b>' + link(p.url, esc(p.title)) + '</li>'); });
     var list = items.join('');

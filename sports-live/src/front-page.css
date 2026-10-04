@@ -1,4 +1,6 @@
-/* GatorBait Front Page 2026: magazine base, broadcast layer, Swamp Night palette.
+/* GatorBait Front Page 2026: magazine base, broadcast layer.
+   Everyday look is Gator Day (Brenden, Oct. 3-4: Gator blue #0021A5, orange #FA4616 and white; "that navy blue is too dark").
+   Swamp Night (.fp-night) stays for ?gbm_fp=night and as the one-line rollback (config look: "swamp-night").
    Barlow + Barlow Condensed only. Day/night is a class on the root; tokens do the rest. */
 
 /* Owned DOM controls visibility; Wix may replace document classes at hydration. */
@@ -6,7 +8,7 @@ html:has(#gbm-live.gbm-gazette) #SITE_HEADER,
 html:has(#gbm-live.gbm-gazette) #SITE_PAGES,
 html:has(#gbm-live.gbm-gazette) #PAGES_CONTAINER{display:none!important}
 html:has(#gbm-live.gbm-gazette),html:has(#gbm-live.gbm-gazette) body{height:auto!important;min-height:100vh!important}
-html:has(#gbm-live.gbm-gazette) body{margin:0!important;background:#f7f4ee!important;min-width:0!important}
+html:has(#gbm-live.gbm-gazette) body{margin:0!important;background:#fff!important;min-width:0!important}
 html:has(#gbm-live.fp-night) body{background:#07122e!important}
 html:has(#gbm-live.gbm-gazette) #SITE_CONTAINER,
 html:has(#gbm-live.gbm-gazette) #masterPage,
@@ -16,9 +18,13 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer{position:relative;z-index:3;backgrou
 html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 
 #gbm-live.fp26{
-  --fp-paper:#f7f4ee;--fp-surface:#fffdf9;--fp-hub:#ece6da;--fp-ink:#111629;--fp-ink-2:#454d5e;--fp-rule:#c9c5bb;--fp-rule-strong:#111629;
-  --fp-link:#0021a5;--fp-mast:#0021a5;--fp-mast-ink:#fff;--fp-band:#07122e;--fp-band-ink:#fff;--fp-card:#fffdf9;--fp-chip:#e4ddcf;
-  --fp-navy:#0021a5;--fp-orange:#fa4616;--fp-cond:"Barlow Condensed","Barlow",sans-serif;--fp-sans:"Barlow",sans-serif;
+  --fp-paper:#fff;--fp-surface:#fff;--fp-hub:#eef2fb;--fp-ink:#0d1530;--fp-ink-2:#47506a;--fp-rule:#d6dcec;--fp-rule-strong:#0021a5;
+  --fp-link:#0021a5;--fp-mast:#0021a5;--fp-mast-ink:#fff;--fp-band:#fff;--fp-band-ink:#0d1530;--fp-card:#fff;--fp-chip:#e6ebf8;
+  --fp-navy:#0021a5;--fp-orange:#fa4616;
+  /* Small white text on brand orange is 3.5:1; fills and small orange text use this deeper orange (4.8:1 with white). */
+  --fp-orange-ink:#d23c0d;--fp-tk-label:#d23c0d;
+  /* Stage sections (game-day board, tunnel, season band, Magazine card) sit on Gator blue, white text only. */
+  --fp-deep:#0021a5;--fp-deep-hi:#2448d6;--fp-cond:"Barlow Condensed","Barlow",sans-serif;--fp-sans:"Barlow",sans-serif;
   --fp-pad:16px;
   display:block;position:relative;z-index:2;width:100%;min-width:0;overflow-x:clip;
   background:var(--fp-paper);color:var(--fp-ink);font-family:var(--fp-sans);font-size:16px;line-height:1.5;
@@ -26,7 +32,8 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 }
 #gbm-live.fp26.fp-night{
   --fp-paper:#07122e;--fp-surface:#0b1d4a;--fp-hub:#0b1d4a;--fp-ink:#f3f5fa;--fp-ink-2:#b9c4dc;--fp-rule:#26386b;--fp-rule-strong:#9fb0d8;
-  --fp-link:#a9bbff;--fp-mast:#0b1d4a;--fp-band:#040b1f;--fp-card:#0e2257;--fp-chip:#16295e
+  --fp-link:#a9bbff;--fp-mast:#0b1d4a;--fp-band:#040b1f;--fp-band-ink:#fff;--fp-card:#0e2257;--fp-chip:#16295e;
+  --fp-orange-ink:#fa4616;--fp-tk-label:#ffb08f;--fp-deep:#040b1f;--fp-deep-hi:#10306e
 }
 #gbm-live.fp26 *,#gbm-live.fp26 *::before,#gbm-live.fp26 *::after{box-sizing:border-box}
 #gbm-live.fp26 a{color:inherit;text-decoration:none}
@@ -45,20 +52,21 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-meta{font:600 12px/1.4 var(--fp-sans);letter-spacing:.02em;color:var(--fp-ink-2)}
 #gbm-live.fp26 .fp-cap{font:500 12px/1.4 var(--fp-sans);color:var(--fp-ink-2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;padding-top:6px}
 #gbm-live.fp26 .fp-cap b{font-weight:700;color:var(--fp-ink)}
-#gbm-live.fp26 .fp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;background:var(--fp-orange);color:#fff;font:800 15px/1 var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+#gbm-live.fp26 .fp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;background:var(--fp-orange-ink);color:#fff;font:800 15px/1 var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
 #gbm-live.fp26 .fp-btn.fp-ghost{background:transparent;color:var(--fp-ink);box-shadow:inset 0 0 0 2px currentColor}
 #gbm-live.fp26 .fp-more{display:inline-flex;align-items:center;min-height:44px;font:800 14px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:var(--fp-link);border-bottom:2px solid var(--fp-orange)}
 #gbm-live.fp26 .fp-num{font-variant-numeric:tabular-nums}
 
 /* ---------- Broadcast ticker ---------- */
 #gbm-live.fp26 .fp-ticker{display:flex;align-items:stretch;height:38px;background:var(--fp-band);color:var(--fp-band-ink);font:700 13px/38px var(--fp-cond);letter-spacing:.06em;text-transform:uppercase;overflow:hidden}
-#gbm-live.fp26 .fp-tk-tag{flex:0 0 auto;display:flex;align-items:center;padding:0 12px;background:var(--fp-orange);color:#fff;font-weight:800;letter-spacing:.14em}
+#gbm-live.fp26 .fp-tk-tag{flex:0 0 auto;display:flex;align-items:center;padding:0 12px;background:var(--fp-orange-ink);color:#fff;font-weight:800;letter-spacing:.14em}
 #gbm-live.fp26 .fp-tk-view{position:relative;flex:1 1 auto;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
 #gbm-live.fp26 .fp-tk-track{display:flex;width:max-content}
 #gbm-live.fp26 .fp-tk-list{display:flex;flex:0 0 auto;padding-left:16px}
 #gbm-live.fp26 .fp-tk-list li{display:flex;align-items:center;white-space:nowrap;padding-right:28px}
 #gbm-live.fp26 .fp-tk-list li::after{content:"";width:5px;height:5px;margin-left:28px;background:var(--fp-orange);transform:rotate(45deg)}
-#gbm-live.fp26 .fp-tk-list b{color:#ffb08f;margin-right:8px}
+#gbm-live.fp26 .fp-tk-list b{color:var(--fp-tk-label);margin-right:8px}
+#gbm-live.fp26:not(.fp-night) .fp-ticker{box-shadow:inset 0 -1px 0 var(--fp-rule)}
 #gbm-live.fp26 .fp-tk-list a{display:inline-block;max-width:70vw;overflow:hidden;text-overflow:ellipsis}
 
 /* ---------- Masthead ---------- */
@@ -81,7 +89,7 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-bug-last{flex:0 0 auto;background:var(--fp-navy);color:#fff}
 #gbm-live.fp26 .fp-bug-next{flex:1 1 auto;background:var(--fp-surface);color:var(--fp-ink);border-left:4px solid var(--fp-orange);justify-content:space-between}
 #gbm-live.fp26 .fp-bug-tag{font:800 11px/1 var(--fp-cond);letter-spacing:.14em;padding:5px 6px;background:rgba(255,255,255,.14)}
-#gbm-live.fp26 .fp-bug-next .fp-bug-tag{background:var(--fp-orange);color:#fff}
+#gbm-live.fp26 .fp-bug-next .fp-bug-tag{background:var(--fp-orange-ink);color:#fff}
 #gbm-live.fp26 .fp-bug-last .fp-bug-tag[data-state=live]{background:#c8102e}
 #gbm-live.fp26 .fp-bug-team{display:flex;align-items:baseline;gap:5px;font:800 15px/1 var(--fp-cond);letter-spacing:.04em;white-space:nowrap}
 #gbm-live.fp26 .fp-bug-team strong{font-size:22px;font-weight:800;letter-spacing:0}
@@ -94,14 +102,14 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-cd .fp-cd-s{display:none}
 
 /* ---------- Game-day stadium board ---------- */
-#gbm-live.fp26 .fp-board{background:#040b1f;color:#fff;border-bottom:4px solid var(--fp-orange);position:relative;overflow:hidden}
+#gbm-live.fp26 .fp-board{background:var(--fp-deep);color:#fff;border-bottom:4px solid var(--fp-orange);position:relative;overflow:hidden}
 #gbm-live.fp26 .fp-board::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.08) 1px,transparent 1.5px) 0 0/6px 6px;pointer-events:none}
 #gbm-live.fp26 .fp-board .fp-wrap{position:relative;display:grid;gap:12px;padding-block:14px 16px}
 #gbm-live.fp26 .fp-board-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font:700 12px/1.3 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase;color:#c8d3ef}
-#gbm-live.fp26 .fp-pill{background:var(--fp-orange);color:#fff;padding:5px 9px;font-weight:800;letter-spacing:.16em}
+#gbm-live.fp26 .fp-pill{background:var(--fp-orange-ink);color:#fff;padding:5px 9px;font-weight:800;letter-spacing:.16em}
 #gbm-live.fp26 .fp-status{padding:4px 9px;border:1px solid rgba(255,255,255,.35);color:#fff;font-weight:800;font-variant-numeric:tabular-nums}
 #gbm-live.fp26 .fp-status[data-state=live]{background:#c8102e;border-color:#c8102e}
-#gbm-live.fp26 .fp-status[data-state=final]{background:#fff;color:#040b1f;border-color:#fff}
+#gbm-live.fp26 .fp-status[data-state=final]{background:#fff;color:var(--fp-deep);border-color:#fff}
 #gbm-live.fp26 .fp-line{width:100%;border-collapse:collapse;font:800 15px/1 var(--fp-cond);font-variant-numeric:tabular-nums;table-layout:fixed}
 #gbm-live.fp26 .fp-line th,#gbm-live.fp26 .fp-line td{padding:8px 2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.12)}
 #gbm-live.fp26 .fp-line thead th{font:700 11px/1 var(--fp-cond);letter-spacing:.12em;color:#9fb0d8}
@@ -116,7 +124,7 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-board-latest b{font:800 12px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:#ffb08f;margin-right:8px}
 #gbm-live.fp26 .fp-board-links{display:flex;flex-wrap:wrap;gap:8px}
 #gbm-live.fp26 .fp-board-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;font:800 13px/1 var(--fp-cond);letter-spacing:.08em;text-transform:uppercase;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45)}
-#gbm-live.fp26 .fp-board-links a:first-child{background:var(--fp-orange);box-shadow:none}
+#gbm-live.fp26 .fp-board-links a:first-child{background:var(--fp-orange-ink);box-shadow:none}
 
 /* ---------- Lead ---------- */
 #gbm-live.fp26 main{display:block;padding-bottom:0}
@@ -129,12 +137,13 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-frame{position:relative;display:block;overflow:hidden;aspect-ratio:3/2;background:var(--fp-chip)}
 #gbm-live.fp26 .fp-frame img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 /* Rendered story covers carry their own headline: show them whole, never cropped or panned. */
-#gbm-live.fp26 .fp-frame.fp-cover{aspect-ratio:16/9;background:#07122e}
+#gbm-live.fp26 .fp-frame.fp-cover{aspect-ratio:16/9;background:var(--fp-deep)}
 #gbm-live.fp26 .fp-frame.fp-cover img{object-fit:contain;object-position:50% 50%;animation:none!important}
 #gbm-live.fp26 .fp-frame.fp-portrait img{object-fit:contain}
 #gbm-live.fp26 .fp-lead-copy{min-width:0;display:grid;gap:12px;align-content:start}
-#gbm-live.fp26 .fp-lead h1{font-size:clamp(40px,11.5vw,54px);line-height:.94;text-transform:uppercase;color:var(--fp-ink)}
-#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(34px,9.6vw,46px)}
+/* Editorial, like the Magazine: the headline as written (no all-caps), about three lines at 390px (Brenden, Oct. 3-4). */
+#gbm-live.fp26 .fp-lead h1{font-size:clamp(30px,8.4vw,38px);font-weight:700;line-height:1.04;letter-spacing:-.005em;text-transform:none;color:var(--fp-ink)}
+#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(28px,7.4vw,34px)}
 #gbm-live.fp26 .fp-w{display:inline-block}
 /* Phones: kicker and headline first, then the photo, then the dek and byline, so the headline sits high on the screen and clear of Wix's cookie panel (live QC, Sept. 29). */
 @media(max-width:820px){
@@ -152,7 +161,7 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 
 /* ---------- Pull quote ---------- */
 #gbm-live.fp26 .fp-quote{display:grid;gap:10px;margin-top:24px;padding:20px 0;border-block:1px solid var(--fp-rule-strong)}
-#gbm-live.fp26 .fp-quote blockquote{font:800 30px/1.02 var(--fp-cond);text-transform:uppercase;color:var(--fp-navy)}
+#gbm-live.fp26 .fp-quote blockquote{font:700 28px/1.1 var(--fp-cond);color:var(--fp-navy)}
 #gbm-live.fp26.fp-night .fp-quote blockquote{color:#fff}
 #gbm-live.fp26 .fp-quote blockquote::before{content:"\201C";color:var(--fp-orange)}
 #gbm-live.fp26 .fp-quote blockquote::after{content:"\201D";color:var(--fp-orange)}
@@ -163,12 +172,12 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-second{display:grid;gap:24px;padding-block:24px}
 #gbm-live.fp26 .fp-feature{display:grid;gap:10px;align-content:start;min-width:0}
 #gbm-live.fp26 .fp-feature .fp-frame{aspect-ratio:16/10}
-#gbm-live.fp26 .fp-feature h2{font-size:32px;line-height:.98;text-transform:uppercase}
+#gbm-live.fp26 .fp-feature h2{font-size:30px;font-weight:700;line-height:1.05}
 #gbm-live.fp26 .fp-feature p.fp-ex{font:400 15px/1.55 var(--fp-sans);color:var(--fp-ink-2)}
 #gbm-live.fp26 .fp-list{min-width:0;border-top:3px solid var(--fp-rule-strong)}
 #gbm-live.fp26 .fp-list li{border-bottom:1px solid var(--fp-rule)}
 #gbm-live.fp26 .fp-list a{display:grid;gap:6px;padding:14px 0}
-#gbm-live.fp26 .fp-list h3{font-size:22px;line-height:1.02;text-transform:uppercase}
+#gbm-live.fp26 .fp-list h3{font-size:21px;font-weight:700;line-height:1.1}
 #gbm-live.fp26 .fp-list p.fp-ex{font:400 14px/1.45 var(--fp-sans);color:var(--fp-ink-2)}
 #gbm-live.fp26 .fp-rail{min-width:0}
 #gbm-live.fp26 .fp-rail h2,#gbm-live.fp26 .fp-mod h2{font:800 14px/1 var(--fp-cond);letter-spacing:.2em;text-transform:uppercase;color:var(--fp-ink);padding:12px 0 10px;border-top:3px solid var(--fp-rule-strong)}
@@ -229,7 +238,7 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-chips{display:flex;flex-wrap:wrap;gap:8px}
 #gbm-live.fp26 .fp-chips a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;background:var(--fp-chip);font:800 13px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;color:var(--fp-ink)}
 #gbm-live.fp26 .fp-mod p.fp-ex{font:500 15px/1.5 var(--fp-sans);color:var(--fp-ink-2)}
-#gbm-live.fp26 .fp-mag{display:grid;grid-template-columns:minmax(0,1fr) 128px;gap:14px;align-items:center;background:#07122e;color:#fff}
+#gbm-live.fp26 .fp-mag{display:grid;grid-template-columns:minmax(0,1fr) 128px;gap:14px;align-items:center;background:var(--fp-deep);color:#fff}
 #gbm-live.fp26 .fp-mag h2{color:#fff;border-top-color:var(--fp-orange)!important}
 #gbm-live.fp26 .fp-mag p.fp-ex{color:#c8d3ef}
 #gbm-live.fp26 .fp-mag-copy{display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -272,7 +281,7 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-nav .fp-wrap{min-height:56px;gap:20px}
 #gbm-live.fp26 .fp-links{display:flex;align-items:center;gap:22px;flex:1 1 auto;min-width:0;overflow:hidden;font:800 14px/1 var(--fp-cond);letter-spacing:.12em;text-transform:uppercase}
 #gbm-live.fp26 .fp-links a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap}
-#gbm-live.fp26 .fp-links a[aria-current]{color:var(--fp-orange);box-shadow:inset 0 -3px 0 var(--fp-orange)}
+#gbm-live.fp26 .fp-links a[aria-current]{color:var(--fp-orange-ink);box-shadow:inset 0 -3px 0 var(--fp-orange)}
 #gbm-live.fp26 .fp-bug{flex:0 1 auto;margin:0}
 #gbm-live.fp26 .fp-bug>a{min-height:44px;padding:4px 12px}
 #gbm-live.fp26 .fp-bug-next{flex:0 1 auto;gap:14px}
@@ -285,11 +294,11 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-lead{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding-top:28px;align-items:start}
 #gbm-live.fp26 .fp-lead-photo{grid-column:1/8}
 #gbm-live.fp26 .fp-lead-copy{grid-column:8/13;gap:14px}
-#gbm-live.fp26 .fp-lead h1{font-size:clamp(56px,6.2vw,88px)}
-#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(48px,5vw,70px)}
+#gbm-live.fp26 .fp-lead h1{font-size:clamp(44px,4.2vw,60px)}
+#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(40px,3.6vw,52px)}
 #gbm-live.fp26 .fp-dek{font-size:22px}
 #gbm-live.fp26 .fp-quote{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:center;margin-top:32px;padding:26px 0}
-#gbm-live.fp26 .fp-quote blockquote{grid-column:2/9;font-size:44px}
+#gbm-live.fp26 .fp-quote blockquote{grid-column:2/9;font-size:38px}
 #gbm-live.fp26 .fp-quote figcaption{grid-column:9/13}
 #gbm-live.fp26 .fp-second{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;padding-block:32px}
 #gbm-live.fp26 .fp-feature{grid-column:1/5}
@@ -360,7 +369,7 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 /* ---------- The Road Ahead: additive season band (Brenden, Sept. 29) ---------- */
 /* Layout: one horizontal snap-scroll ribbon; a glowing route draws to the current game. Barlow only. Night palette. */
 /* Same night sky as the page: paper token under a navy lift and the lead's orange glow. Edges follow --fp-pad and the 1440 wrap. */
-#gbm-live.fp26 #gbm-road{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;background:radial-gradient(70% 90% at 100% 100%,rgba(250,70,22,.16),transparent 70%),radial-gradient(90% 100% at 0% 0%,#10306e,transparent 65%),var(--n);color:var(--ink);font-family:var(--fp-sans);padding:28px 0 26px;overflow:hidden;position:relative}
+#gbm-live.fp26 #gbm-road{--n:var(--fp-deep);--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;background:radial-gradient(70% 90% at 100% 100%,rgba(250,70,22,.16),transparent 70%),radial-gradient(90% 100% at 0% 0%,var(--fp-deep-hi),transparent 65%),var(--n);color:var(--ink);font-family:var(--fp-sans);padding:28px 0 26px;overflow:hidden;position:relative}
 #gbm-live.fp26 #gbm-road *{box-sizing:border-box}
 #gbm-live.fp26 #gbm-road .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:0 var(--fp-pad) 14px;max-width:1440px;margin:0 auto}
 #gbm-live.fp26 #gbm-road h2{font:800 clamp(30px,6vw,52px)/.92 var(--fp-cond);text-transform:uppercase;margin:0}
@@ -393,7 +402,7 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
    Saturday game days only (or ?gbm_fp=gameday). Six rings converge on the light at the end of the tunnel;
    a perspective field floor sits under it. Pre-game carries the big countdown, live the score and clock,
    final the result. Barlow Condensed display, Swamp Night palette. All motion off under reduced motion. */
-#gbm-live.fp26 .fp-tunnel{position:relative;isolation:isolate;overflow:hidden;background:#040b1f;color:#fff;border-bottom:4px solid var(--fp-orange);display:grid;align-items:center;min-height:min(72vh,540px)}
+#gbm-live.fp26 .fp-tunnel{position:relative;isolation:isolate;overflow:hidden;background:var(--fp-deep);color:#fff;border-bottom:4px solid var(--fp-orange);display:grid;align-items:center;min-height:min(72vh,540px)}
 #gbm-live.fp26 .fp-tn-scene{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
 #gbm-live.fp26 .fp-tn-scene::before{content:"";position:absolute;inset:-25%;background:repeating-conic-gradient(from 0deg at 50% 44%,rgba(255,255,255,.05) 0 1.4deg,transparent 1.4deg 11deg);opacity:.9}
 #gbm-live.fp26 .fp-tn-ring{position:absolute;left:50%;top:44%;width:180vw;max-width:2300px;aspect-ratio:2/1;border:1px solid rgba(255,255,255,.16);border-radius:18%/30%;transform:translate(-50%,-50%) scale(var(--s));opacity:var(--o);box-shadow:0 0 30px rgba(0,33,165,.25) inset}
@@ -428,7 +437,7 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-tn-score span{color:var(--fp-orange);font-size:.6em}
 #gbm-live.fp26 .fp-tn-clock{display:inline-flex;align-items:center;gap:8px;margin:0;padding:6px 10px;background:#c8102e;font:800 13px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase}
 #gbm-live.fp26 .fp-tn-clock::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
-#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-clock{background:#fff;color:#040b1f}
+#gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-clock{background:#fff;color:var(--fp-deep)}
 #gbm-live.fp26 .fp-tunnel[data-phase=final] .fp-tn-clock::before{background:var(--fp-orange)}
 #gbm-live.fp26 .fp-tn-drive{margin:0;max-width:640px;font:600 15px/1.45 var(--fp-sans);color:#dfe6f7}
 #gbm-live.fp26 .fp-tn-drive b{font:800 12px/1 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:#ffb08f;margin-right:8px}
@@ -459,3 +468,12 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 #gbm-stands{width:100%;max-width:980px;min-width:0}
 #gbm-live.fp26 #gbm-stands:empty{display:none}
 @media(min-width:600px){#gbm-live.fp26 .fp-hub-grid>.fp-ask{grid-row:3}}
+
+/* ---------- Gator Day contrast guards (Brenden, Oct. 3-4: never light text on light boxes or dark on dark) ---------- */
+/* share.js styles its ghost button for a dark page; on the white hub cards it takes the ink, and orange fills take the AA orange. */
+#gbm-live.fp26:not(.fp-night) .fp-mod .gbm-share-btn.ghost{color:var(--fp-ink);border-color:var(--fp-rule-strong)}
+#gbm-live.fp26:not(.fp-night) .gbm-share-btn:not(.ghost){background:var(--fp-orange-ink)}
+/* Small orange type on Gator blue is 3.5:1; it takes the light orange the night look used for labels. */
+#gbm-live.fp26:not(.fp-night) #gbm-road .rk{color:#ffb08f}
+#gbm-live.fp26:not(.fp-night) .fp-tn-vs{color:#ffb08f}
+#gbm-live.fp26:not(.fp-night) .gbc .gbc-b:not(:hover):not(:focus-visible){background:var(--fp-orange-ink)}

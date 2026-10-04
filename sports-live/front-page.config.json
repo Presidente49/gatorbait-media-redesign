@@ -1,6 +1,6 @@
 {
   "$comment": "Front Page 2026 editorial config. Bundled into sports-live/homepage.js by sports-live/build-front-page.mjs. Pins may also be overridden at runtime by window.__GBM_HOME_PINS__ = {breaking:{path,until}, timed:{path,until}} (same shape).",
-  "look": "swamp-night",
+  "look": "gator-day",
   "pins": {
     "breaking": null,
     "timed": {

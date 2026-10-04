@@ -1,4 +1,4 @@
-<!-- GBM_MAGAZINE_2026_V1 postgame missouri src=784f83271c5e101b228944cb1a5bc0aa04b235a4 immutable=1 bundle=sports-live/magazine-postgame.js --><style id="gbm-magazine-2026-shell">
+<!-- GBM_MAGAZINE_2026_V1 postgame missouri src=6d803965e330feb8aad0484f1899e3f6c4dd4a54 immutable=1 bundle=sports-live/magazine-postgame.js --><style id="gbm-magazine-2026-shell">
 
 .gbm-magazine-live #SITE_PAGES,html:has(#gbm-magazine-page) #SITE_PAGES,.gbm-magazine-live #pageBackground_nh0hy{display:none!important}
 .gbm-magazine-live #SITE_CONTAINER,.gbm-magazine-live #masterPage,.gbm-magazine-live #PAGES_CONTAINER,.gbm-magazine-live #SITE_PAGES_TRANSITION_GROUP{height:auto!important;min-height:0!important;padding-bottom:0!important;margin-bottom:0!important}
@@ -10,6 +10,6 @@ var loaded=false,H=document.documentElement.classList;
 function on(){return /^\/magazine\/?$/.test(location.pathname||'')}
 function sync(){if(on()){H.add('gbm-pre');clearTimeout(window.__GBMM_PRE_T__);window.__GBMM_PRE_T__=setTimeout(function(){H.remove('gbm-pre')},8000)}if(!on()){H.remove('gbm-pre','gbm-mq','gbm-magazine-live');if(window.__GBM_MAG26__)window.__GBM_MAG26__.sync();return;}
 if(window.__GBM_MAG26__){window.__GBM_MAG26__.sync();return;}if(loaded)return;loaded=true;
-var s=document.createElement('script');s.id='gbm-mag26-bundle';s.async=true;s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@784f83271c5e101b228944cb1a5bc0aa04b235a4/sports-live/magazine-postgame.js';s.onerror=function(){loaded=false;H.remove('gbm-pre','gbm-mq','gbm-magazine-live')};document.head.appendChild(s);}
+var s=document.createElement('script');s.id='gbm-mag26-bundle';s.async=true;s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@6d803965e330feb8aad0484f1899e3f6c4dd4a54/sports-live/magazine-postgame.js';s.onerror=function(){loaded=false;H.remove('gbm-pre','gbm-mq','gbm-magazine-live')};document.head.appendChild(s);}
 sync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
 })();</script>

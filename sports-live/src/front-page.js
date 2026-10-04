@@ -53,10 +53,6 @@
     if (mins < 24 * 60) return Math.round(mins / 60) + 'h';
     return shortDate(date.getTime());
   }
-  function dateline() {
-    var d = new Date(now());
-    return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: TZ });
-  }
 
   /* ---------- Stories ---------- */
   function normalize(data) {
@@ -277,7 +273,8 @@
     return '<div class="fp-ticker" role="region" aria-label="Latest headlines and scores"><span class="fp-tk-tag">Latest</span><div class="fp-tk-view"><div class="fp-tk-track" style="--fp-tk-dur:' + Math.max(40, items.length * 7) + 's"><ul class="fp-tk-list">' + list + '</ul><ul class="fp-tk-list fp-tk-dup" aria-hidden="true">' + list.replace(/<a /g, '<a tabindex="-1" ') + '</ul></div></div></div>';
   }
   function mastHtml() {
-    return '<header class="fp-mast"><div class="fp-wrap"><p class="fp-date"><span>' + esc(dateline()) + '</span><span>Gainesville, Fla.</span></p>' +
+    // No newspaper dateline row (Brenden, Oct. 4): wordmark, Sign in and Join only.
+    return '<header class="fp-mast"><div class="fp-wrap">' +
       '<a class="fp-wordmark" href="/" aria-label="GatorBait Media home">GatorBait<small>Media</small></a>' +
       '<div class="fp-mast-right"><a class="fp-signin" href="' + esc(L.signin) + '">Sign in</a><a class="fp-btn" href="' + esc(L.subscribe) + '"><span class="fp-cta-long">Join All Access</span><span class="fp-cta-short">Join</span> <span aria-hidden="true">→</span></a></div></div></header>';
   }

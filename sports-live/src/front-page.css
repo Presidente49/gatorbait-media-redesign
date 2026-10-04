@@ -196,6 +196,9 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-live-dot{display:none;width:10px;height:10px;border-radius:50%;background:#c8102e}
 #gbm-live.fp26 .fp-show[data-live="1"] .fp-live-dot{display:inline-block}
 #gbm-live.fp26 .fp-actions{display:flex;flex-wrap:wrap;gap:8px}
+#gbm-live.fp26 .fp-episode-head{font:700 13px/1.4 var(--fp-sans);margin-top:8px}
+#gbm-live.fp26 .fp-episode-list{display:grid;gap:14px;max-height:400px;overflow-y:auto;overscroll-behavior:contain;padding-right:4px}
+#gbm-live.fp26 .fp-episode-list:focus-visible{outline:2px solid var(--fp-orange);outline-offset:3px}
 #gbm-live.fp26 .fp-vid{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;align-items:center}
 #gbm-live.fp26 .fp-vid .fp-frame{aspect-ratio:16/9}
 #gbm-live.fp26 .fp-vid b{display:block;font:700 16px/1.15 var(--fp-cond)}

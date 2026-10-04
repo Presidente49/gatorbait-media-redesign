@@ -1,0 +1,13 @@
+import {DatabaseSync} from 'node:sqlite';
+import {readFileSync,readdirSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const db=new DatabaseSync(':memory:');
+for(const f of readdirSync('drizzle').filter(f=>f.endsWith('.sql')).sort())db.exec(readFileSync('drizzle/'+f,'utf8'));
+const insert=db.prepare('INSERT INTO stories(id,author_id,byline,created_at,updated_at) VALUES(?,?,?,?,?)');
+insert.run('s1','alice','Alice','2026-10-03','2026-10-03');insert.run('s2','bob','Bob','2026-10-03','2026-10-03');
+const save=db.prepare('UPDATE stories SET title=?,revision=revision+1 WHERE id=? AND revision=?');
+assert.equal(save.run('First save','s1',1).changes,1);assert.equal(save.run('Stale edit','s1',1).changes,0);assert.equal(db.prepare('SELECT title FROM stories WHERE id=?').get('s1').title,'First save');
+const reserve=db.prepare('INSERT INTO reservations(photo_id,story_id,created_at) VALUES(?,?,?)');reserve.run('photo1','s1','now');assert.throws(()=>reserve.run('photo1','s2','now'));assert.throws(()=>reserve.run('photo2','s1','now'));
+db.prepare('DELETE FROM reservations WHERE story_id=?').run('s1');reserve.run('photo1','s2','now');assert.equal(db.prepare('SELECT story_id FROM reservations WHERE photo_id=?').get('photo1').story_id,'s2');
+assert.equal(db.prepare('SELECT COUNT(*) AS n FROM stories WHERE author_id=?').get('alice').n,1);
+console.log('PASS: generated schema, stale edit rejection, photo exclusivity, reservation release, writer-scoped query.');

@@ -21,6 +21,7 @@
   function prefersDark() { try { return matchMedia('(prefers-color-scheme: dark)').matches; } catch (_) { return false; } }
   // Links: our own site paths, our YouTube/Facebook, the store. Nothing else renders.
   function safeUrl(value, kind) {
+    if (typeof value !== 'string' || !value.trim()) return '';
     try {
       var u = new URL(String(value), 'https://www.gatorbaitmedia.com');
       if (u.protocol !== 'https:' || u.username || u.password) return '';

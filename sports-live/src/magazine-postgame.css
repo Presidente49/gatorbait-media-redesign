@@ -131,6 +131,14 @@ html:has(#gbm-magazine-page.pm) #gbm-site-header,html:has(#gbm-magazine-page.pm)
 #gbm-magazine-page.pm .pm-gu{grid-area:u;font:700 19px/1.15 var(--mz-cond);color:var(--pm-ink)}
 #gbm-magazine-page.pm .pm-gg small{grid-area:n;font:500 14px/1.35 var(--mz-sans);color:var(--pm-mute)}
 #gbm-magazine-page.pm .pm-gl{grid-area:g;display:grid;place-items:center;min-width:64px;height:56px;padding:0 6px;border-radius:4px;font:800 40px/1 var(--mz-cond);background:#e8ecf8;color:var(--pm-ink)}
+/* Small phones: keep the cover headline above Wix's cookie panel (about 210px tall at 320). */
+@media (max-width:359px){
+  #gbm-magazine-page.pm .pm-cover-fig img{aspect-ratio:16/9;width:100%;height:auto;object-fit:cover}
+  #gbm-magazine-page.pm .pm-cover-type{padding-top:14px}
+  #gbm-magazine-page.pm .pm-cover-type h1{font-size:36px}
+  #gbm-magazine-page.pm .pm-issue{margin-top:10px}
+}
+
 @media (min-width:340px){
   #gbm-magazine-page.pm .pm-gg{grid-template-columns:1fr 1fr}
   #gbm-magazine-page.pm .pm-gg li{grid-template-columns:1fr;grid-template-areas:"g" "u" "n";align-content:start;justify-items:start;gap:8px;padding:12px;border-left-width:1px;border-top:5px solid var(--pm-line)}

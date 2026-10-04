@@ -1,0 +1,179 @@
+{
+  "submissions": [
+    {
+      "id": "sub-01",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-06T14:00:00.000Z",
+      "submissions": {
+        "email_pickem": "ace@example.com",
+        "callsign": "Ace",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 31,
+        "pick_opponent": 17,
+        "subscribe_pickem": true,
+        "tiebreak_rush": 175
+      }
+    },
+    {
+      "id": "sub-02",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-06T15:00:00.000Z",
+      "submissions": {
+        "email_pickem": "bolt@example.com",
+        "callsign": "Bolt",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 31,
+        "pick_opponent": 17,
+        "subscribe_pickem": false,
+        "tiebreak_rush": 190
+      }
+    },
+    {
+      "id": "sub-03",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-07T01:00:00.000Z",
+      "submissions": {
+        "email_pickem": "chomp@example.com",
+        "callsign": "ChompKing",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 28,
+        "pick_opponent": 14,
+        "subscribe_pickem": false
+      }
+    },
+    {
+      "id": "sub-04",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-08T01:00:00.000Z",
+      "submissions": {
+        "email_pickem": "CHOMP@example.com",
+        "callsign": "ChompKing",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 31,
+        "pick_opponent": 17,
+        "subscribe_pickem": false,
+        "tiebreak_rush": 182
+      }
+    },
+    {
+      "id": "sub-05",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-10T16:05:00.000Z",
+      "submissions": {
+        "email_pickem": "late@example.com",
+        "callsign": "LateLarry",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 31,
+        "pick_opponent": 17,
+        "subscribe_pickem": false,
+        "tiebreak_rush": 182
+      }
+    },
+    {
+      "id": "sub-06",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-07T02:00:00.000Z",
+      "submissions": {
+        "email_pickem": "rude@example.com",
+        "callsign": "Sh1tHead",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 31,
+        "pick_opponent": 17,
+        "subscribe_pickem": false
+      }
+    },
+    {
+      "id": "sub-07",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-07T03:00:00.000Z",
+      "submissions": {
+        "email_pickem": "tie@example.com",
+        "callsign": "Tied Up",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 21,
+        "pick_opponent": 21,
+        "subscribe_pickem": false
+      }
+    },
+    {
+      "id": "sub-08",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-07T04:00:00.000Z",
+      "submissions": {
+        "email_pickem": "cock@example.com",
+        "callsign": "Gamecock Fan",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 17,
+        "pick_opponent": 24,
+        "subscribe_pickem": false,
+        "tiebreak_rush": 120
+      }
+    },
+    {
+      "id": "sub-09",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-07T05:00:00.000Z",
+      "submissions": {
+        "email_pickem": "ace2@example.com",
+        "callsign": "ace",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 35,
+        "pick_opponent": 10,
+        "subscribe_pickem": false
+      }
+    },
+    {
+      "id": "sub-10",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "CONFIRMED",
+      "createdDate": "2026-10-03T12:00:00.000Z",
+      "submissions": {
+        "email_pickem": "miz@example.com",
+        "callsign": "OldWeek",
+        "game_id": "2026-10-03-missouri",
+        "pick_florida": 24,
+        "pick_opponent": 20,
+        "subscribe_pickem": false
+      }
+    },
+    {
+      "id": "sub-11",
+      "formId": "00000000-0000-4000-8000-00000000fa11",
+      "namespace": "wix.form_app.form",
+      "status": "PENDING",
+      "createdDate": "2026-10-07T06:00:00.000Z",
+      "submissions": {
+        "email_pickem": "pending@example.com",
+        "callsign": "Pending",
+        "game_id": "2026-10-10-south-carolina",
+        "pick_florida": 31,
+        "pick_opponent": 17,
+        "subscribe_pickem": false
+      }
+    }
+  ],
+  "metadata": {
+    "count": 11,
+    "hasNext": false
+  },
+  "_note": "Synthetic test data in the Wix Forms QuerySubmissionsByNamespace response shape. Not real fans."
+}

@@ -31,26 +31,27 @@
     "d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35": "Photo: Hannah White / UAA Communications",
     "16b519_00359caad82744778e7c387d8bf98777": "Photo by Chris Spears, GatorBait Media"
   },
+  "$columnists": "Writer names link to their Wix writer category page (branded, newest-first, Columnists sub-nav). Oct. 4: the old tag pages held 26/4/3/1 posts; the member profile page has no post list. A writer's list is only as complete as the post's writer category, so every column needs its writer category.",
   "columnists": [
     {
       "name": "Buddy Martin",
       "initials": "BM",
-      "href": "/gatorbait-media-blogs/tags/buddy-martin"
+      "href": "/gatorbait-media-blogs/categories/buddy-s-blog"
     },
     {
       "name": "Franz Beard",
       "initials": "FB",
-      "href": "/gatorbait-media-blogs/tags/franz-beard"
+      "href": "/gatorbait-media-blogs/categories/franz-beard-blog"
     },
     {
       "name": "Loren Meadows",
       "initials": "LM",
-      "href": "/gatorbait-media-blogs/tags/loren-meadows"
+      "href": "/gatorbait-media-blogs/categories/loren-meadows-blogs"
     },
     {
       "name": "Eddie Gilley",
       "initials": "EG",
-      "href": "/gatorbait-media-blogs/tags/eddie-gilley"
+      "href": "/gatorbait-media-blogs/categories/eddie-gilley-blog"
     },
     {
       "name": "Chris Spears",
@@ -58,6 +59,14 @@
       "href": null
     }
   ],
+  "newHours": 48,
+  "$colead": "Dormant co-lead: on=true puts left's newest piece (<= days old, the page h1) beside right's newest piece on desktop, stacked on phones. Off by default (Brenden, Oct. 4: \"we'll wait\"). A breaking pin, or either piece missing, keeps the single lead. window.__GBM_HOME_COLEAD__ overrides at runtime (same shape).",
+  "colead": {
+    "on": false,
+    "left": "Buddy Martin",
+    "right": "Franz Beard",
+    "days": 7
+  },
   "links": {
     "subscribe": "/pricing-plans/subscribe",
     "signin": "/account/my-account",

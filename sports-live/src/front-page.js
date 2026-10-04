@@ -98,6 +98,20 @@
     if (buddy) return { post: buddy, why: 'buddy' };
     return { post: posts[0], why: 'newest' };
   }
+  // Co-lead (Brenden, Oct. 4: "Franz will be the other main piece; split the columns when necessary, but we'll wait"):
+  // dormant unless front-page.config.json colead.on is true or window.__GBM_HOME_COLEAD__ = {on:true,...} (same shape).
+  // Buddy's newest column (<= days) leads on the left with the page's one h1; the right author's newest piece sits beside
+  // it on desktop and below it on phones. A breaking pin, or either piece missing, keeps the normal single lead.
+  function pickCoLead(posts, picked) {
+    var extra = window.__GBM_HOME_COLEAD__, cfg = Object.assign({ on: false, left: 'Buddy Martin', right: 'Franz Beard', days: 7 }, BUNDLE.colead || {}, extra && typeof extra === 'object' ? extra : {});
+    if (cfg.on !== true || picked.why === 'breaking') return null;
+    var t = now(), max = Math.max(1, Number(cfg.days) || 7) * DAY;
+    function newest(name, not) { return posts.find(function (p) { return p !== not && byColumnist(p, name) && t - p.date.getTime() < max; }) || null; }
+    var left = byColumnist(picked.post, cfg.left) ? picked.post : newest(cfg.left), right = left && newest(cfg.right, left);
+    return left && right ? [left, right] : null;
+  }
+  // "NEW" next to a writer's name on the landing page while their newest story is under newHours old (Brenden, Oct. 4).
+  function isFresh(p) { var age = now() - p.date.getTime(); return age >= -DAY && age < (Number(BUNDLE.newHours) || 48) * 3600000; }
 
   /* ---------- Scoreboard feed (sports-live/scoreboard.json, contract in README "Scoreboard feed") ----------
    * { updatedAt, season, team:{name,rank,record,conf},
@@ -317,6 +331,16 @@
       (s.dek ? '<p class="fp-dek">' + esc(s.dek) + '</p>' : '') + '<p class="fp-by">By ' + esc(lead.author) + '<span>' + esc(shortDate(lead.date.getTime())) + '</span></p>' +
       (lead.excerpt ? '<p class="fp-body">' + esc(lead.excerpt) + '</p>' : '') + '<a class="fp-more" href="' + esc(lead.url) + '">Continue reading <span aria-hidden="true">&nbsp;→</span></a></div></section>';
   }
+  function coLeadHtml(a, b) {
+    function item(p, first) {
+      var s = splitTitle(p.title), ex = p.excerpt.length > 240 ? p.excerpt.slice(0, 240).replace(/\s+\S*$/, '') + '…' : p.excerpt;
+      return '<article class="fp-co">' + photoBlock(p, first, 'fp-lead-photo') + '<div class="fp-lead-copy"><p class="fp-kick">' + esc(kicker(p)) + '</p>' +
+        (first ? '<h1 data-len="' + (s.h.length > 60 ? 'long' : 'short') + '">' + link(p.url, words(s.h), 'fp-hl') + '</h1>' : '<h2 class="fp-co-h">' + link(p.url, esc(s.h), 'fp-hl') + '</h2>') +
+        (s.dek ? '<p class="fp-dek">' + esc(s.dek) + '</p>' : '') + '<p class="fp-by">By ' + esc(p.author) + '<span>' + esc(shortDate(p.date.getTime())) + '</span></p>' +
+        (ex ? '<p class="fp-ex">' + esc(ex) + '</p>' : '') + '<a class="fp-more" href="' + esc(p.url) + '">Continue reading <span aria-hidden="true">&nbsp;→</span></a></div></article>';
+    }
+    return '<section class="fp-lead fp-colead" aria-label="Lead stories"><div id="fp-embers" aria-hidden="true"></div><div class="fp-night-glow" aria-hidden="true"></div>' + item(a, true) + item(b, false) + '</section>';
+  }
   function quoteHtml(lead, posts) {
     var q = null, t = now();
     Object.keys(BUNDLE.quotes).some(function (k) { if (lead.path.indexOf(k) === 0) { q = BUNDLE.quotes[k]; return true; } return false; });
@@ -333,8 +357,11 @@
   function columnistsHtml(posts) {
     return BUNDLE.columnists.map(function (c) {
       var p = posts.find(function (x) { return byColumnist(x, c.name); });
-      var page = safeUrl(c.href) || (p && p.url) || L.latest;
-      return '<div class="fp-col">' + link(page, esc(c.initials), 'fp-roundel', ' aria-hidden="true" tabindex="-1"') + link(page, esc(c.name), 'fp-col-name') +
+      // href null (Chris Spears) falls to his newest story: safeUrl(null) resolves "null" to /null, the 404 the rail linked to before Oct. 4.
+      var page = (c.href && safeUrl(c.href)) || (p && p.url) || L.latest, fresh = !!(p && isFresh(p));
+      // The badge hangs off the roundel (absolute, so nothing reflows); screen readers hear ", new story" on the name link.
+      return '<div class="fp-col' + (fresh ? ' fp-col-new' : '') + '">' + link(page, esc(c.initials) + (fresh ? '<span class="fp-new">New</span>' : ''), 'fp-roundel', ' aria-hidden="true" tabindex="-1"') +
+        link(page, esc(c.name) + (fresh ? '<span class="fp-sr">, new story</span>' : ''), 'fp-col-name') +
         (p ? link(p.url, esc(p.title), 'fp-col-story') : '<span class="fp-col-story">Latest columns</span>') + '</div>';
     }).join('');
   }
@@ -557,8 +584,8 @@
     var existing = document.getElementById('gbm-live');
     if (existing && existing.classList.contains('gbm-gazette')) { loading = false; return; }
     if (existing) throw new Error('Another homepage owner already mounted');
-    var picked = pickLead(posts), lead = picked.post, shown = {}, used = {};
-    shown[lead.url] = 1; if (lead.image) used[lead.image] = 1;
+    var picked = pickLead(posts), co = pickCoLead(posts, picked), lead = co ? co[0] : picked.post, shown = {}, used = {};
+    (co || [lead]).forEach(function (p) { shown[p.url] = 1; if (p.image) used[p.image] = 1; });
     function take(list, n, test) { var out = []; list.forEach(function (p) { if (out.length < n && !shown[p.url] && (!test || test(p))) { shown[p.url] = 1; if (p.image) used[p.image] = 1; out.push(p); } }); return out; }
     // Secondary feature: newest columnist story with a photo (Franz first), then any story with a photo.
     var feature = take(posts, 1, function (p) { return p.image && /franz beard/i.test(p.author); })[0] ||
@@ -574,13 +601,13 @@
     root.setAttribute('data-theme', mode.night ? 'dark' : 'light');
     root.setAttribute('data-fp', VERSION);
     root.setAttribute('data-fp-build', String(BUNDLE.build || ''));
-    root.setAttribute('data-fp-lead', picked.why);
+    root.setAttribute('data-fp-lead', co ? 'colead' : picked.why);
     root.setAttribute('data-fp-scoreboard', sb.source);
     root.setAttribute('data-gazette-source', fresh ? 'current-feed' : 'last-known-feed');
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
     root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
-      '<main id="sh-main"><div class="fp-wrap"><div id="sh-freshness"></div>' + leadHtml(lead, picked.why) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
+      '<main id="sh-main"><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
       roadHtml(sb) + hubHtml(latest, sb, posts, used) + '</main>';
     if (!document.getElementById('gbm-fp26-styles')) {
       var style = document.createElement('style'); style.id = 'gbm-fp26-styles'; style.textContent = CSS; document.head.appendChild(style);

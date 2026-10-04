@@ -1,51 +1,51 @@
 {
- "updatedAt": "2026-09-29T02:17:33Z",
+ "updatedAt": "2026-10-04T16:27:46Z",
  "season": 2026,
  "team": {
   "name": "Florida",
   "rank": 8,
-  "record": "4-0",
-  "conf": "2-0"
+  "record": "4-1",
+  "conf": "2-1"
  },
  "last": {
-  "eventId": "401856699",
-  "opponent": "Ole Miss",
-  "opponentRank": 4,
-  "home": true,
-  "date": "2026-09-26T19:30:00Z",
-  "status": "final",
-  "score": {
-   "fla": 52,
-   "opp": 28
-  },
-  "quarters": {
-   "fla": [
-    10,
-    7,
-    14,
-    21
-   ],
-   "opp": [
-    0,
-    6,
-    15,
-    7
-   ]
-  },
-  "venue": "Ben Hill Griffin Stadium",
-  "recapUrl": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
-  "galleryUrl": "https://www.gatorbaitmedia.com/post/chris-spears-photo-gallery-florida-ole-miss"
- },
- "next": {
   "eventId": "401856708",
   "opponent": "Missouri",
   "opponentRank": 25,
-  "opponentRecord": "3-1",
   "home": false,
-  "kickoffIso": "2026-10-03T19:30:00Z",
-  "tv": "ABC",
+  "date": "2026-10-03T19:50:00Z",
+  "status": "final",
+  "score": {
+   "fla": 17,
+   "opp": 45
+  },
+  "quarters": {
+   "fla": [
+    3,
+    7,
+    0,
+    7
+   ],
+   "opp": [
+    3,
+    17,
+    10,
+    15
+   ]
+  },
   "venue": "Memorial Stadium",
-  "previewUrl": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"
+  "recapUrl": "https://www.gatorbaitmedia.com/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17",
+  "galleryUrl": null
+ },
+ "next": {
+  "eventId": "401856714",
+  "opponent": "South Carolina",
+  "opponentRank": null,
+  "opponentRecord": "2-3",
+  "home": true,
+  "kickoffIso": "2026-10-10T16:45:00Z",
+  "tv": "SEC Network",
+  "venue": "Ben Hill Griffin Stadium",
+  "previewUrl": null
  },
  "schedule": [
   {
@@ -53,6 +53,7 @@
    "date": "2026-09-05T23:45:00Z",
    "opponent": "Florida Atlantic",
    "opponentRank": null,
+   "opponentRecord": "0-1",
    "home": true,
    "status": "final",
    "score": {
@@ -67,6 +68,7 @@
    "date": "2026-09-12T21:30:00Z",
    "opponent": "Campbell",
    "opponentRank": null,
+   "opponentRecord": "2-1",
    "home": true,
    "status": "final",
    "score": {
@@ -81,6 +83,7 @@
    "date": "2026-09-19T23:00:00Z",
    "opponent": "Auburn",
    "opponentRank": null,
+   "opponentRecord": "2-1",
    "home": false,
    "status": "final",
    "score": {
@@ -95,6 +98,7 @@
    "date": "2026-09-26T19:30:00Z",
    "opponent": "Ole Miss",
    "opponentRank": 4,
+   "opponentRecord": "3-1",
    "home": true,
    "status": "final",
    "score": {
@@ -102,28 +106,33 @@
     "opp": 28
    },
    "tv": "ABC",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28"
+   "storyUrl": null
   },
   {
    "eventId": "401856708",
-   "date": "2026-10-03T19:30:00Z",
+   "date": "2026-10-03T19:50:00Z",
    "opponent": "Missouri",
    "opponentRank": 25,
+   "opponentRecord": "4-1",
    "home": false,
-   "status": "scheduled",
-   "score": null,
+   "status": "final",
+   "score": {
+    "fla": 17,
+    "opp": 45
+   },
    "tv": "ABC",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/first-look-missouri-florida-gators-show-me-state-of-mind"
+   "storyUrl": "https://www.gatorbaitmedia.com/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17"
   },
   {
    "eventId": "401856714",
-   "date": "2026-10-10T04:00:00Z",
+   "date": "2026-10-10T16:45:00Z",
    "opponent": "South Carolina",
    "opponentRank": null,
+   "opponentRecord": "2-3",
    "home": true,
    "status": "scheduled",
    "score": null,
-   "tv": null,
+   "tv": "SEC Network",
    "storyUrl": null
   },
   {
@@ -131,6 +140,7 @@
    "date": "2026-10-17T04:00:00Z",
    "opponent": "Texas",
    "opponentRank": 1,
+   "opponentRecord": null,
    "home": false,
    "status": "scheduled",
    "score": null,
@@ -142,6 +152,7 @@
    "date": "2026-10-31T19:30:00Z",
    "opponent": "Georgia",
    "opponentRank": 2,
+   "opponentRecord": null,
    "home": false,
    "status": "scheduled",
    "score": null,
@@ -153,6 +164,7 @@
    "date": "2026-11-07T05:00:00Z",
    "opponent": "Oklahoma",
    "opponentRank": null,
+   "opponentRecord": null,
    "home": true,
    "status": "scheduled",
    "score": null,
@@ -164,6 +176,7 @@
    "date": "2026-11-14T05:00:00Z",
    "opponent": "Kentucky",
    "opponentRank": 24,
+   "opponentRecord": null,
    "home": false,
    "status": "scheduled",
    "score": null,
@@ -175,6 +188,7 @@
    "date": "2026-11-21T05:00:00Z",
    "opponent": "Vanderbilt",
    "opponentRank": null,
+   "opponentRecord": null,
    "home": true,
    "status": "scheduled",
    "score": null,
@@ -186,6 +200,7 @@
    "date": "2026-11-27T20:30:00Z",
    "opponent": "Florida State",
    "opponentRank": null,
+   "opponentRecord": null,
    "home": false,
    "status": "scheduled",
    "score": null,
@@ -196,23 +211,13 @@
  "standings": [
   {
    "team": "Alabama",
-   "confRecord": "2-0",
-   "overall": "4-0"
-  },
-  {
-   "team": "Florida",
-   "confRecord": "2-0",
-   "overall": "4-0"
+   "confRecord": "3-0",
+   "overall": "5-0"
   },
   {
    "team": "Georgia",
-   "confRecord": "2-0",
-   "overall": "4-0"
-  },
-  {
-   "team": "Mississippi State",
-   "confRecord": "2-0",
-   "overall": "4-0"
+   "confRecord": "3-0",
+   "overall": "5-0"
   },
   {
    "team": "Texas",
@@ -220,19 +225,34 @@
    "overall": "4-0"
   },
   {
-   "team": "Auburn",
-   "confRecord": "1-1",
-   "overall": "3-1"
+   "team": "Florida",
+   "confRecord": "2-1",
+   "overall": "4-1"
   },
   {
    "team": "Kentucky",
-   "confRecord": "1-1",
-   "overall": "3-1"
+   "confRecord": "2-1",
+   "overall": "4-1"
+  },
+  {
+   "team": "Mississippi State",
+   "confRecord": "2-1",
+   "overall": "4-1"
   },
   {
    "team": "LSU",
    "confRecord": "1-1",
-   "overall": "3-1"
+   "overall": "4-1"
+  },
+  {
+   "team": "Missouri",
+   "confRecord": "1-1",
+   "overall": "4-1"
+  },
+  {
+   "team": "Tennessee",
+   "confRecord": "1-1",
+   "overall": "4-1"
   },
   {
    "team": "Ole Miss",
@@ -240,24 +260,19 @@
    "overall": "3-1"
   },
   {
-   "team": "Missouri",
-   "confRecord": "0-1",
-   "overall": "3-1"
+   "team": "Auburn",
+   "confRecord": "1-2",
+   "overall": "3-2"
   },
   {
-   "team": "Tennessee",
-   "confRecord": "0-1",
-   "overall": "3-1"
+   "team": "Texas A&M",
+   "confRecord": "1-2",
+   "overall": "3-2"
   },
   {
    "team": "Vanderbilt",
-   "confRecord": "0-1",
-   "overall": "3-1"
-  },
-  {
-   "team": "Arkansas",
-   "confRecord": "0-1",
-   "overall": "2-2"
+   "confRecord": "0-2",
+   "overall": "3-2"
   },
   {
    "team": "Oklahoma",
@@ -265,14 +280,14 @@
    "overall": "2-2"
   },
   {
-   "team": "South Carolina",
+   "team": "Arkansas",
    "confRecord": "0-2",
-   "overall": "2-2"
+   "overall": "2-3"
   },
   {
-   "team": "Texas A&M",
-   "confRecord": "0-2",
-   "overall": "2-2"
+   "team": "South Carolina",
+   "confRecord": "0-3",
+   "overall": "2-3"
   }
  ],
  "live": null

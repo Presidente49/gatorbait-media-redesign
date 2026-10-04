@@ -17,7 +17,9 @@ const PERF = process.env.PERF === '1';
 const OUT = 'build/live-shots';
 mkdirSync(OUT, { recursive: true });
 // deploy/covers/*.html renders a story cover from the checkout instead of the live site (the query carries the copy).
-const url = /^deploy\/covers\//.test(path) ? 'file://' + process.cwd() + '/' + path : 'https://www.gatorbaitmedia.com' + path;
+const mkUrl = (P) => /^deploy\/covers\//.test(P) ? 'file://' + process.cwd() + '/' + P : 'https://www.gatorbaitmedia.com' + P;
+const paths = path.split('|');
+let url = mkUrl(paths[0]);
 const IOS_UA = devices['iPhone 13'].userAgent;
 // A real Chrome UA on desktop: with the default HeadlessChrome UA, Wix answered with an older cached
 // snapshot for a while after an embed update (Sept. 30), which real browsers did not get.
@@ -28,6 +30,14 @@ const profile = (w) => w < 800
 
 const browser = await chromium.launch();
 const metrics = { url, selector, at: new Date().toISOString(), shots: [] };
+for (const [pi, P] of paths.entries()) { url = mkUrl(P); const pre = paths.length > 1 ? 'p' + pi + '-' : '';
+if (process.env.GBM_PROBE !== '0') {
+  const pr = {};
+  for (const u of ['https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2026&seasontype=2', 'https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2026&seasontype=2', 'https://site.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season=2026', 'https://site.web.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season=2026']) {
+    try { const r = await fetch(u, { headers: { 'User-Agent': 'GatorBait-Scoreboard/1 (+https://www.gatorbaitmedia.com)', Accept: 'application/json' } }); const t = await r.text(); pr[u.slice(8, 70)] = r.status + ' ' + t.length; } catch (e) { pr[u.slice(8, 70)] = 'ERR ' + e.message; }
+  }
+  metrics.espnProbe = pr;
+}
 for (const w of widths) {
   const ctx = await browser.newContext(profile(w));
   const page = await ctx.newPage();
@@ -57,7 +67,7 @@ for (const w of widths) {
     }
     const res = await page.goto(url, { waitUntil: 'load', timeout: 60000 });
     m.http = res && res.status();
-    await page.waitForSelector('#gbm-live.fp26', { timeout: 15000 }).catch(() => { m.note = 'front page root not seen in 15s'; });
+    if (/^\/(\?|$)/.test(P)) await page.waitForSelector('#gbm-live.fp26', { timeout: 15000 }).catch(() => { m.note = 'front page root not seen in 15s'; });
     await page.waitForTimeout(3500);
     if (PERF) {
       await page.waitForTimeout(6500);
@@ -90,8 +100,27 @@ for (const w of widths) {
       fpBuild: document.querySelector('#gbm-live')?.getAttribute('data-fp-build') || null,
       fpVersion: document.querySelector('#gbm-live')?.getAttribute('data-fp') || null,
     })));
-    await page.screenshot({ path: `${OUT}/top-${w}.jpg`, type: 'jpeg', quality: 70 });
-    if (selector) {
+    if (/^\/magazine/.test(P)) {
+      await page.waitForTimeout(8000);
+      m.mag = await page.evaluate(async () => {
+        const r = document.getElementById('gbm-magazine-page'); let espn = null;
+        espn = {};
+        for (const u of ['https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=20261003', 'https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=20261003', 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856708', 'https://cdn.espn.com/core/college-football/scoreboard?xhr=1&groups=8', 'https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856708/competitions/401856708/status', 'https://presidente49.github.io/gatorbait-media-redesign/sports-live/scoreboard.json']) {
+          try { const x = await fetch(u, { credentials: 'omit', cache: 'no-store' }); espn[u.slice(8, 60)] = 'HTTP ' + x.status + ' acao=' + x.headers.get('access-control-allow-origin'); } catch (e) { espn[u.slice(8, 60)] = 'ERR ' + e.message; }
+        }
+        return { score: r && r.getAttribute('data-pg-score'), live: r && r.getAttribute('data-mz-live'), ticker: (document.querySelector('.pg-ticker') || {}).textContent || null, espn };
+      });
+    }
+    await page.screenshot({ path: `${OUT}/${pre}top-${w}.jpg`, type: 'jpeg', quality: 70 });
+    if (selector && selector.startsWith('DUMP ')) {
+      m.dump = await page.evaluate((s) => {
+        const root = document.querySelector(s); if (!root) return null; const out = [];
+        const walk = (el, d) => { if (d > 9 || out.length > 400) return; const r = el.getBoundingClientRect(); const cs = getComputedStyle(el);
+          
+          out.push(' '.repeat(d) + el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (el.getAttribute('data-hook') ? '[dh=' + el.getAttribute('data-hook') + ']' : '') + (typeof el.className === 'string' && el.className ? '.' + el.className.trim().split(/\s+/).slice(0, 3).join('.') : '') + ' ' + Math.round(r.x) + ',' + Math.round(r.y) + ' ' + Math.round(r.width) + 'x' + Math.round(r.height) + (el.children.length ? '' : ' "' + (el.textContent || '').trim().slice(0, 40) + '"') + (el.tagName === 'IFRAME' ? ' isrc=' + (el.getAttribute('src') || '').slice(0, 140) + ' anc=' + [1,2,3,4,5,6].map((k) => { let a = el; for (let j = 0; j < k && a; j++) a = a.parentElement; return a ? (a.id || a.className || a.tagName).toString().slice(0, 40) : ''; }).join(' < ') : '') + (el.tagName === 'IMG' ? ' src=' + (el.getAttribute('src') || '').slice(0, 90) + ' data-src=' + (el.getAttribute('data-src') || '').slice(0, 60) : '') + (cs.backgroundImage && cs.backgroundImage !== 'none' ? ' bg=' + cs.backgroundImage.slice(0, 90) : ''));
+          [...el.children].forEach((c) => walk(c, d + 1)); };
+        walk(root, 0); return out; }, selector.slice(5));
+    } else if (selector) {
       const found = await page.$(selector);
       m.selectorFound = Boolean(found);
       if (found) {
@@ -119,15 +148,16 @@ for (const w of widths) {
           return { x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height), bg: cs.backgroundColor, font: cs.fontFamily.slice(0, 60), kids,
             track: track ? { scrollWidth: track.scrollWidth, clientWidth: track.clientWidth, scrollLeft: track.scrollLeft } : null, story, docScrollWidth: document.documentElement.scrollWidth, innerWidth };
         }, selector);
-        await page.screenshot({ path: `${OUT}/view-${w}.jpg`, type: 'jpeg', quality: 70 });
-        await found.screenshot({ path: `${OUT}/element-${w}.jpg`, type: 'jpeg', quality: 75 }).catch((e) => { m.elementShot = String(e).slice(0, 120); });
+        await page.screenshot({ path: `${OUT}/${pre}view-${w}.jpg`, type: 'jpeg', quality: 70 });
+        await found.screenshot({ path: `${OUT}/${pre}element-${w}.jpg`, type: 'jpeg', quality: 75 }).catch((e) => { m.elementShot = String(e).slice(0, 120); });
       }
     }
   } catch (e) {
     m.error = String(e).slice(0, 300);
   }
-  metrics.shots.push(m);
+  m.path = P; metrics.shots.push(m);
   await ctx.close();
+}
 }
 await browser.close();
 writeFileSync(`${OUT}/metrics.json`, JSON.stringify(metrics, null, 1));

@@ -16,6 +16,18 @@ Before a story is published:
 
 For major stories, create branded art before release when supplied art is weak. Do not use faces unless there is a real supplied/licensed photo.
 
+### 1A. Media permanence gate — owner direction, October 5, 2026
+
+**If an asset is not in the production Wix Media Manager, it is not publication-ready.**
+
+1. Before any image, photo, graphic, thumbnail, roster, schedule, or other visual is attached to a Wix article, upload or import it into the production site's Media Manager first.
+2. Never make a live article depend on a temporary local path, chat-generated attachment URL, external hotlink, GitHub raw asset, transfer link, or other non-canonical source. The Wix Media Manager copy is the durable source used by the article.
+3. Canonical article storage path: `MEDIA / ARTICLES / YYYY / MM-MMM / YYYY-MM-DD <Story Name>`. Reuse the existing path when it exists; create missing folders before attaching the asset. Keep related cover art, body images, source photos, rosters, schedules, and derivatives in that story folder; add subfolders only when volume requires them.
+4. Wait until the Media Manager file is ready for use before publishing or replacing article media. Use the Wix media ID/URL from that stored file for hero, cover, and body references.
+5. Use a descriptive file name and meaningful alt text. Preserve photographer/source credit separately in the story caption or metadata when required.
+6. When replacing media, store the new asset first, then switch the article to the new Wix media asset. Do not delete the previous asset as part of the replacement unless cleanup is separately verified and authorized.
+7. This gate applies to generated graphics as well as supplied photography: create → Media Manager → correct folder → ready/verified → article.
+
 ### Attribution and fact verification — owner direction, September 28, 2026
 
 Brenden confirmed that his otherwise unnamed or generic Staff AI-assisted writing should credit **Brenden Martin**. This is an authorship instruction, not evidence that an article's factual claims are correct. Preserve genuine named writers, reporting contributions and separate photographer credits. Read the existing body, captions and source notes before replacing a generic native author record; an inline named byline takes precedence over a generic Staff account. Keep the native author, visible byline, cards and structured metadata consistent. Do not relabel Chris Spears' photographs or firsthand reporting as someone else's work.

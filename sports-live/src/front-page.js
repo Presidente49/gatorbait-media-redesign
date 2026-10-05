@@ -368,7 +368,7 @@
   function secondHtml(feature, list, cols) {
     return '<section class="fp-second" aria-label="More top stories">' +
       (feature ? '<article class="fp-feature">' + photoBlock(feature, false) + '<p class="fp-kick">' + esc(kicker(feature)) + '</p>' + link(feature.url, '<h2 class="fp-hl">' + esc(feature.title) + '</h2>') + (feature.excerpt ? '<p class="fp-ex">' + esc(feature.excerpt.slice(0, 220)) + (feature.excerpt.length > 220 ? '…' : '') + '</p>' : '') + by(feature) + '</article>' : '') +
-      '<ol class="fp-list" aria-label="Top stories">' + list.map(function (p) { return '<li>' + link(p.url, storyThumb(p, false) + '<div class="fp-story-copy"><h3 class="fp-hl">' + esc(p.title) + '</h3>' + by(p) + (p.credit ? '<small class="fp-story-credit">' + esc(p.credit) + '</small>' : '') + '</div>', p.image ? 'fp-story-card' : 'fp-story-card fp-no-photo') + '</li>'; }).join('') + '</ol>' +
+      '<ol class="fp-list" aria-label="Top stories">' + list.map(function (p) { return '<li>' + link(p.url, storyThumb(p, false) + '<div class="fp-story-copy"><h3 class="fp-hl">' + esc(p.title) + '</h3><p class="fp-meta">' + esc(p.author) + '</p>' + (p.credit ? '<small class="fp-story-credit">' + esc(p.credit) + '</small>' : '') + '</div>', p.image ? 'fp-story-card' : 'fp-story-card fp-no-photo') + '</li>'; }).join('') + '</ol>' +
       '<aside class="fp-rail" id="fp-columnists" aria-label="Columnists"><h2>Columnists</h2><div class="fp-rail-cols">' + cols + '</div></aside></section>';
   }
   function columnistsHtml(posts) {
@@ -500,7 +500,7 @@
   function hubHtml(latest, sb, posts, used) {
     var sn = showNext(), ep = BUNDLE.show.episode;
     var mLatest = '<section class="fp-mod fp-mod-latest" aria-label="Latest stories"><h2>Latest</h2><ol class="fp-latest">' + latest.map(function (p) {
-      return '<li>' + link(p.url, storyThumb(p, true) + '<div><time datetime="' + p.date.toISOString() + '">' + esc(ago(p.date)) + '</time><h3 class="fp-hl">' + esc(p.title) + '</h3><p class="fp-meta">' + esc(p.author) + '</p></div>', p.image ? 'fp-latest-photo' : 'fp-no-photo') + '</li>'; }).join('') +
+      return '<li>' + link(p.url, storyThumb(p, true) + '<div><h3 class="fp-hl">' + esc(p.title) + '</h3><p class="fp-meta">' + esc(p.author) + '</p></div>', p.image ? 'fp-latest-photo' : 'fp-no-photo') + '</li>'; }).join('') +
       '</ol><a class="fp-more" href="' + esc(L.latest) + '">All stories <span aria-hidden="true">&nbsp;→</span></a></section>';
     var mShow = '<section class="fp-mod fp-mod-show fp-show" data-live="' + (sn.live ? 1 : 0) + '" aria-label="The Buddy Martin Show"><h2>The Buddy Martin Show</h2><p class="fp-show-when"><span class="fp-live-dot" aria-hidden="true"></span><span data-fp-show>' + esc(sn.live ? 'Live now' : 'Next live: ' + sn.label) + '</span></p>' +
       '<p class="fp-ex">Mondays, Wednesdays and Thursdays at 9 p.m. ET.</p><div class="fp-actions"><a class="fp-btn" href="' + esc(L.youtubeLive) + '" rel="noopener">Watch on YouTube</a><a class="fp-btn fp-ghost" href="' + esc(L.facebook) + '" rel="noopener">Facebook</a></div>' +

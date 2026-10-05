@@ -1142,7 +1142,13 @@
       function finish() {
         m.classList.remove('pm-opening'); m.classList.add('pm-opened'); opening = false;
         if (!m.isConnected) return;
-        contents.focus({preventScroll:true}); contents.scrollIntoView({block:'start',behavior:'instant'});
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
+            catch (_) { window.scrollTo(0, 0); }
+            contents.focus({preventScroll:true});
+          });
+        });
       }
       if (reduced) { finish(); return; }
       m.classList.add('pm-opening');

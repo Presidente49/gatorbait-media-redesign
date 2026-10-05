@@ -331,6 +331,7 @@
     expose(D);
     passport(m, D);
     if (D.layout === 'pregame') pgStart(m);
+    if (D.layout === 'postgame') pmStart(m);
     window.__GBM_MAG26__.ready = true;
   }
   function start() {

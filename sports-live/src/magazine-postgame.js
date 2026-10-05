@@ -3,7 +3,54 @@
    * number; this file only lays them out, and a missing or empty block renders nothing. Helpers (esc, text, num, list,
    * obj, safeUrl, media, frame) come from src/magazine.js. Bundled only into sports-live/magazine-postgame.js
    * (MAG_VARIANT=postgame), together with src/capture.js for the signup. No timers, no feed swap: the lead is curated
-   * (Buddy Martin) and stays put; nothing animates. */
+   * (Buddy Martin) and stays put. The portrait entrance animates only after activation. */
+  function pmEntrance(D) {
+    var C = obj(D.cover) || {}, I = obj(D.issue) || {};
+    return '<section class="pm-entrance" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
+      frame(C.image, { eager: true, main: 1200, sizes: '(max-width: 699px) 100vw, 460px' }) +
+      '<div class="pm-poster-ink"><div><p class="pm-covermark">Gator<span>Bait</span></p><p class="pm-covermag">Magazine</p><p class="pm-coverdate">' + esc(text(I.date, 60)) + '</p></div>' +
+      '<div class="pm-poster-bottom"><p class="pm-edition">' + esc(text(I.number, 60)) + '</p><p class="pm-coverwriter">' + esc(text(C.kicker, 80)) + '</p><h1>' + esc(text(C.headline, 200)) + '</h1>' +
+      '<p class="pm-coverweek">' + esc(text(I.week, 120)) + '</p><p class="pm-covercredit">' + esc(text(C.image && C.image.credit, 120)) + '</p><span class="pm-open-label">Open this issue <span aria-hidden="true">↗</span></span></div></div>' +
+      '<button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Tap the cover. Get the whole picture.</p></section>';
+  }
+  function pmReaderBar(D) {
+    return '<div class="pm-readerbar"><a class="pm-readerbrand" href="/">Gator<span>Bait</span></a><details class="pm-reader-menu"><summary>Contents</summary>' + pmContents(D).replace('id="pm-contents" tabindex="-1"', '') + '</details><button type="button" data-pm-cover>Cover ↑</button></div>';
+  }
+  function pmStart(m) {
+    var entry = m.querySelector('.pm-entrance'), cover = m.querySelector('.pm-open'), contents = m.querySelector('#pm-contents');
+    if (!entry || !cover || !contents) return;
+    var opening = false;
+    function open() {
+      if (opening) return; opening = true;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function finish() {
+        m.classList.remove('pm-opening'); m.classList.add('pm-opened'); opening = false;
+        if (!m.isConnected) return;
+        contents.focus({preventScroll:true}); contents.scrollIntoView({block:'start',behavior:'instant'});
+      }
+      if (reduced) { finish(); return; }
+      m.classList.add('pm-opening');
+      setTimeout(finish, 480);
+    }
+    cover.addEventListener('click', open);
+    m.addEventListener('click', function(e) {
+      if (e.target.closest('[data-pm-cover]')) {
+        m.classList.remove('pm-opened'); entry.scrollIntoView({block:'start',behavior:'instant'}); cover.focus({preventScroll:true});
+      }
+      var a = e.target.closest('a[href^="#pm-"]');
+      if (a) {
+        var menu = m.querySelector('.pm-reader-menu'); if (menu) menu.open = false;
+        var target = m.querySelector(a.getAttribute('href'));
+        if (target) { target.tabIndex = -1; target.focus({preventScroll:true}); }
+      }
+    });
+    m.addEventListener('keydown', function(e) {
+      var menu = m.querySelector('.pm-reader-menu');
+      if (e.key === 'Escape' && menu && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
+    });
+    // Direct links into the issue bypass the entrance. Content is always present and scrollable.
+    if (/^#pm-/.test(location.hash)) m.classList.add('pm-opened');
+  }
   function pmHead(id, D) {
     var k = text(D.kicker, 60), t = text(D.title, 120), d = text(D.dek, 400);
     return t ? '<header class="pm-sh">' + (k ? '<p class="pm-kick">' + esc(k) + '</p>' : '') + '<h2 id="pm-' + id + '-t">' + esc(t) + '</h2>' + (d ? '<p class="pm-dek">' + esc(d) + '</p>' : '') + '</header>' : '';
@@ -14,12 +61,6 @@
   }
   function pmSrc(s) { s = text(s, 240); return s ? '<p class="pm-src">' + esc(s) + '</p>' : ''; }
 
-  function pmMast(D) {
-    var I = obj(D.issue) || {};
-    return '<header class="pm-mast"><div class="pm-in"><div class="pm-mast-top"><a class="pm-home" href="/">' + esc(text(I.home, 60) || 'GatorBait Media') + '</a><span>' + esc(text(I.date, 60)) + '</span></div>' +
-      '<p class="pm-plate"><span class="pm-wm">Gator<em>Bait</em></span><span class="pm-mz">Magazine</span></p>' +
-      '<p class="pm-issue"><b>' + esc(text(I.number, 60)) + '</b><span>' + esc(text(I.week, 120)) + '</span></p></div></header>';
-  }
   function pmCover(D) {
     var C = obj(D.cover); if (!C) return '';
     var hl = text(C.headline, 200), url = safeUrl(C.url); if (!hl || !url) return '';
@@ -28,7 +69,7 @@
     return '<section class="pm-cover" id="pm-cover" aria-labelledby="pm-cover-h"><div class="pm-in pm-cover-in">' +
       (fig ? '<figure class="pm-cover-fig"><a href="' + esc(url) + '" tabindex="-1" aria-hidden="true">' + fig + '</a>' + (C.image && text(C.image.credit, 120) ? '<figcaption>' + esc(text(C.image.credit, 120)) + '</figcaption>' : '') + '</figure>' : '') +
       '<div class="pm-cover-type">' + (text(C.kicker, 80) ? '<p class="pm-kick">' + esc(text(C.kicker, 80)) + '</p>' : '') +
-      '<h1 id="pm-cover-h"><a href="' + esc(url) + '">' + esc(hl) + '</a></h1>' +
+      '<h2 id="pm-cover-h"><a href="' + esc(url) + '">' + esc(hl) + '</a></h2>' +
       (text(C.dek, 600) ? '<p class="pm-cover-dek">' + esc(text(C.dek, 600)) + '</p>' : '') +
       (text(C.byline, 80) ? '<p class="pm-by">' + esc(text(C.byline, 80)) + '</p>' : '') +
       '<a class="pm-btn" href="' + esc(url) + '">' + esc(text(C.cta, 60) || hl) + ' <span aria-hidden="true">→</span></a></div>' +
@@ -48,7 +89,7 @@
   function pmContents(D) {
     var C = obj(D.contents), items = C ? list(C.items, 8).map(obj).filter(function (i) { return i && /^[a-z]+$/.test(text(i.id, 20)) && text(i.label, 40) && obj(D[i.id]); }) : [];
     if (!items.length) return '';
-    return '<nav class="pm-toc" aria-label="' + esc(text(C.label, 40) || 'Contents') + '"><div class="pm-in">' + (text(C.label, 40) ? '<p class="pm-kick">' + esc(text(C.label, 40)) + '</p>' : '') + '<ol>' + items.map(function (i, n) {
+    return '<nav class="pm-toc" id="pm-contents" tabindex="-1" aria-label="' + esc(text(C.label, 40) || 'Contents') + '"><div class="pm-in">' + (text(C.label, 40) ? '<p class="pm-kick">' + esc(text(C.label, 40)) + '</p>' : '') + '<ol>' + items.map(function (i, n) {
       return '<li><a href="#pm-' + i.id + '"><b aria-hidden="true">' + (n + 1) + '</b>' + esc(text(i.label, 40)) + '</a></li>';
     }).join('') + '</ol></div></nav>';
   }
@@ -140,8 +181,8 @@
   function pmFoot(D) {
     var R = obj(D.reference), links = R ? list(R.links, 6).map(obj).filter(function (l) { return l && safeUrl(l.url) && text(l.label, 40); }) : [];
     return '<footer class="pm-foot"><div class="pm-in">' + (links.length ? '<nav aria-label="' + esc(text(R.label, 40) || 'More') + '"><p class="pm-kick">' + esc(text(R.label, 40)) + '</p><ul>' + links.map(function (l) { return '<li><a href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a></li>'; }).join('') + '</ul></nav>' : '') +
-      pmSrc(D.asOf) + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
+      pmSrc(D.asOf) + '<button type="button" class="pm-print" data-print>Print / save as PDF</button>' + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
   }
   function renderPostgame(D) {
-    return '<div class="pm-wrap">' + pmMast(D) + pmCover(D) + pmFinal(D) + pmContents(D) + pmDamage(D) + pmFlow(D) + pmGrades(D) + pmQuotes(D) + pmPackage(D) + pmNext(D) + pmFoot(D) + '</div>';
+    return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmDamage(D) + pmFlow(D) + pmGrades(D) + pmQuotes(D) + pmPackage(D) + pmNext(D) + pmFoot(D) + '</div>';
   }

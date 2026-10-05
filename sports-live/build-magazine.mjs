@@ -58,8 +58,8 @@ ${runtime}})();
 // critical CSS, the real Magazine loader, and a stand-in for the native Wix page the loader must hide.
 const homeLoader = read('deploy/wix-served/homepage-embed-cdn.html');
 const shellCss = (homeLoader.match(/<style id="gbm-mobile-shell-critical-v2">[\s\S]*?<\/style>/) || [''])[0];
-// The postgame fixture carries the loader that is live on embed 1dd74333 (rev 73), so QA runs the real pointer -> bundle path.
-const loader = read(POSTGAME ? 'deploy/magazine-2026/postgame-missouri/live-rev73-loader.html' : 'deploy/magazine-2026/magazine-loader-v1.html');
+// Postgame uses the confirmed postgame pointer, not the retired pregame rev-73 loader.
+const loader = read(POSTGAME ? 'deploy/magazine-2026/postgame-missouri/candidate-loader.html' : 'deploy/magazine-2026/magazine-loader-v1.html');
 const frame = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>GatorBait Magazine fixture</title>
 <link id="gbm-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&family=Bebas+Neue&display=swap">
 ${shellCss}

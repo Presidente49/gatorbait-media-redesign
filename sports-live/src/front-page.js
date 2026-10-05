@@ -537,11 +537,11 @@
     var magazine = BUNDLE.magazine, cover = magazine.cover, issue = magazine.issue;
     var coverSrc = 'https://static.wixstatic.com/media/' + cover.image.id + '.' + cover.image.ext;
     var mMag = '<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><h2>GatorBait Magazine</h2>' +
-      '<a class="fp-cover" href="' + esc(L.magazine) + '" aria-label="Open GatorBait Magazine: ' + esc(cover.headline) + '">' +
-      img(coverSrc, cover.image.alt, false, 600, 400, '240px') +
-      '<span class="fp-cover-mh">Gator<span>Bait</span><small>Magazine</small><span class="fp-cover-date">' + esc(issue.date) + '</span></span>' +
-      '<span class="fp-cover-t"><em>' + esc(cover.kicker) + '</em><strong>' + esc(cover.headline) + '</strong><span class="fp-cover-credit">' + esc(cover.image.credit) + '</span></span></a>' +
-      '<div class="fp-mag-copy"><p>' + esc(issue.number) + ' · ' + esc(issue.week) + '</p><a class="fp-btn" href="' + esc(L.magazine) + '">Open this issue <span aria-hidden="true">→</span></a></div></section>';
+      '<button type="button" class="fp-cover fp-mag-open" aria-expanded="false" aria-controls="fp-mag-reader" aria-label="Open GatorBait Magazine">' +
+      img(coverSrc, cover.image.alt, false, cover.image.width || 864, cover.image.height || 1536, '(max-width: 599px) 76vw, 320px') +
+      '<span class="fp-mag-hint">Tap cover to open <span aria-hidden="true">↗</span></span></button>' +
+      '<div class="fp-mag-copy"><p>' + esc(issue.number) + ' · ' + esc(issue.week) + '</p></div>' +
+      '<div class="fp-mag-reader" id="fp-mag-reader" hidden><iframe title="GatorBait Magazine — Missouri postgame edition" loading="lazy" data-src="' + esc(L.magazine) + '?embed=home#pm-contents"></iframe><p><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine <span aria-hidden="true">→</span></a></p></div></section>';
     // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
     var mNews = window.GBM_CAPTURE ? window.GBM_CAPTURE.html('home') : '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
     return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show and photos. Everything GatorBait, in one place.</p></div><div class="fp-hub-grid">' +
@@ -675,6 +675,18 @@
     doc.classList.add('gbm-gazette-live', 'gbm-standalone-live');
     try { initRoad(root); } catch (_) {}
     try { imgFallback(root); } catch (_) {}
+    try {
+      var magOpen = root.querySelector('.fp-mag-open'), magReader = root.querySelector('#fp-mag-reader');
+      if (magOpen && magReader) magOpen.addEventListener('click', function () {
+        if (magOpen.getAttribute('aria-expanded') === 'true') return;
+        magOpen.setAttribute('aria-expanded', 'true');
+        var frame = magReader.querySelector('iframe');
+        if (frame && !frame.src) frame.src = frame.getAttribute('data-src');
+        magReader.hidden = false;
+        magOpen.closest('.fp-mag').classList.add('fp-mag-opening');
+        setTimeout(function () { magOpen.closest('.fp-mag').classList.add('fp-mag-opened'); magReader.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 480);
+      });
+    } catch (_) {}
     loading = false;
     window.__GBM_GAZETTE_RUNTIME__.ready = true;
     if (window.__GBM_GAZETTE_BOOT__ && window.__GBM_GAZETTE_BOOT__.ready) window.__GBM_GAZETTE_BOOT__.ready();

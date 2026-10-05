@@ -12,7 +12,7 @@
   var doc = document.documentElement;
   if (window.__GBM_MAG26__) { window.__GBM_MAG26__.sync(); return; }
 
-  function onRoute() { return window.__GBM_MAG_PREVIEW__ === true || /^\/magazine\/?$/.test(location.pathname || ''); } // __GBM_MAG_PREVIEW__: repo preview page only (deploy/covers/pregame-preview.html), never set on the site
+  function onRoute() { return window.__GBM_MAG_PREVIEW__ === true || window.__GBM_MAG_EMBED__ === true || /^\/magazine\/?$/.test(location.pathname || ''); } // __GBM_MAG_PREVIEW__: repo preview page only (deploy/covers/pregame-preview.html), never set on the site
   function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function text(v, max) { return v == null || typeof v === 'object' ? '' : String(v).replace(/\s+/g, ' ').trim().slice(0, max || 400); }
   function num(v) { return typeof v === 'number' && Number.isFinite(v) ? v : null; }

@@ -43,7 +43,7 @@ if(document.getElementById('gbm-footer')||!document.body)return;
 var f=document.createElement('footer');f.id='gbm-footer';f.setAttribute('aria-label','GatorBait Media footer');
 f.innerHTML='<div class="gbf"><div class="gbf-shop"><div><h2>GatorBait Gear</h2><p>Shirts, hats and gifts for Gator Nation. The store opens in a new tab, so your story stays right here.</p></div><a class="gbf-btn" href="'+STORE+'"'+NEWTAB+' aria-label="Shop GatorBait gear (opens in a new tab)">Shop Gear <span aria-hidden="true">↗</span></a></div>'+
 '<nav class="gbf-map" aria-label="Site map">'+map.map(function(g){return'<div><h3>'+g[0]+'</h3><ul>'+g[1].filter(function(l){return STATS||l[0]!=='Stats';}).map(function(l){return'<li>'+a(l)+'</li>';}).join('')+'</ul></div>';}).join('')+'</nav>'+
-'<div class="gbf-base"><nav aria-label="Follow GatorBait">'+a(['Facebook','https://www.facebook.com/gatorbaitmedia'])+a(['YouTube','https://www.youtube.com/@thebuddymartinshow?sub_confirmation=1'])+'<a href="mailto:info@gatorbaitmedia.com">info@gatorbaitmedia.com</a></nav><div>© 2026 GatorBait Media · Independent Florida coverage since 1979</div></div></div>';
+'<div class="gbf-base"><nav aria-label="Follow GatorBait">'+a(['Facebook','https://www.facebook.com/gatorbaitmedia'])+a(['YouTube','https://www.youtube.com/@thebuddymartinshow?sub_confirmation=1'])+'<a href="mailto:brenden@gatorbaitmedia.com">brenden@gatorbaitmedia.com</a></nav><div>© 2026 GatorBait Media · Independent Florida coverage since 1979</div></div></div>';
 document.body.appendChild(f);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build,{once:true});else build();

@@ -338,6 +338,7 @@ if(lead){
 
 const browser=await chromium.launch();
 const report={capturedAt:new Date().toISOString(),runs:[],hardFailureCount:0};
+let bandVerified=false;
 
 for(const profile of PROFILES){
   for(const target of TARGETS){
@@ -361,12 +362,15 @@ for(const profile of PROFILES){
       if(target.name==='home'&&EXPECTED_BAND){
         const served=()=>page.evaluate(()=>{const s=document.getElementById('gbm-gameday-v1');return s?s.textContent:null;});
         bandMatches=await served()===EXPECTED_BAND;
-        while(!bandMatches&&staleLoads<3){
-          staleLoads++;
-          await page.waitForTimeout(15000);
-          response=await page.goto(target.url+'?qc='+Date.now(),{waitUntil:'load',timeout:45000});
-          await page.waitForTimeout(8000);
-          bandMatches=await served()===EXPECTED_BAND;
+        if(!bandVerified){
+          while(!bandMatches&&staleLoads<3){
+            staleLoads++;
+            await page.waitForTimeout(15000);
+            response=await page.goto(target.url+'?qc='+Date.now(),{waitUntil:'load',timeout:45000});
+            await page.waitForTimeout(8000);
+            bandMatches=await served()===EXPECTED_BAND;
+          }
+          if(bandMatches)bandVerified=true;
         }
       }
       // Article embeds: Wix's CDN can serve an older page copy for minutes after an embed update.

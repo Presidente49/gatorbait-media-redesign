@@ -4,6 +4,7 @@ import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 const request=JSON.parse(readFileSync('automation/vision/live-shots.request.json','utf8'));
 const candidate=request.mode!=='production';
 const bundle=readFileSync('sports-live/homepage.js','utf8'),expected=(bundle.match(/Build ([a-f0-9]{8})\./)||[])[1];
+const expectedIssueLinks=["/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked","/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators","/post/by-the-numbers-how-missouri-flipped-florida-s-script","/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri","/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia","/post/hey-missouri-don-t-show-me-anymore","/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead","/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17"];
 const out='build/live-shots';mkdirSync(out,{recursive:true});
 const browser=await chromium.launch(),report={mode:candidate?'candidate in current live shell':'production',at:new Date().toISOString(),expected,checks:[]};
 const assert=(x,s)=>{if(!x)throw Error(s)};
@@ -29,8 +30,8 @@ for(const [width,reduced] of [[320,false],[390,false],[430,false],[1366,false],[
   await page.locator('.fp-mag-close').waitFor({state:'visible'});
   const handle=await page.locator('#fp-mag-reader iframe').elementHandle(),frame=await handle.contentFrame();
   await frame.locator('#gbm-magazine-page.pm-opened').waitFor({timeout:40000});await frame.evaluate(()=>document.fonts.ready);
-  r.opened=await frame.evaluate(()=>({top:scrollY,root:!!document.querySelector('#gbm-magazine-page'),contentsTop:document.querySelector('#pm-contents').getBoundingClientRect().top,entryDisplay:getComputedStyle(document.querySelector('.pm-entrance')).display,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,stories:document.querySelectorAll('.pm-it').length}));
-  assert(r.opened.root&&r.opened.top<=2,'reader not at top');assert(r.opened.entryDisplay==='none','second cover should not need another spin');assert(r.opened.overflow===0,'iframe overflow');assert(r.opened.stories>=9,'issue content missing');
+  r.opened=await frame.evaluate(()=>({top:scrollY,root:!!document.querySelector('#gbm-magazine-page'),contentsTop:document.querySelector('#pm-contents').getBoundingClientRect().top,entryDisplay:getComputedStyle(document.querySelector('.pm-entrance')).display,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,stories:document.querySelectorAll('.pm-it').length,links:Array.from(document.querySelectorAll('.pm-it a')).map(a=>a.getAttribute('href'))}));
+  assert(r.opened.root&&r.opened.top<=2,'reader not at top');assert(r.opened.entryDisplay==='none','second cover should not need another spin');assert(r.opened.overflow===0,'iframe overflow');assert(JSON.stringify(r.opened.links)===JSON.stringify(expectedIssueLinks),'current issue links changed');
   await page.screenshot({path:`${out}/opened-${width}${reduced?'-reduced':''}.jpg`,type:'jpeg',quality:85});
   await frame.evaluate(()=>scrollTo(0,1000));await page.locator('.fp-mag-close').click();assert(await page.locator('.fp-mag-open').isVisible(),'close did not restore cover');assert(!await page.locator('#fp-mag-reader').isVisible(),'reader not hidden');
   await page.locator('.fp-mag-open').click();await page.locator('.fp-mag-close').waitFor({state:'visible'});r.reopenTop=await frame.evaluate(()=>scrollY);assert(r.reopenTop<=2,'reopen not at top');assert(r.magazineRequests===1,'reopen reloaded Magazine');await page.locator('.fp-mag-close').press('Escape');assert(await page.locator('.fp-mag-open').isVisible(),'Escape close');

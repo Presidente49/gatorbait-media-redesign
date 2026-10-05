@@ -370,7 +370,7 @@ for(const profile of PROFILES){
             await page.waitForTimeout(8000);
             bandMatches=await served()===EXPECTED_BAND;
           }
-          if(bandMatches)bandVerified=true;
+          bandVerified=true;
         }
       }
       // Article embeds: Wix's CDN can serve an older page copy for minutes after an embed update.

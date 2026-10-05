@@ -26,7 +26,16 @@
       function finish() {
         m.classList.remove('pm-opening'); m.classList.add('pm-opened'); opening = false;
         if (!m.isConnected) return;
-        contents.focus({preventScroll:true}); contents.scrollIntoView({block:'start',behavior:'instant'});
+        // The entrance is removed from layout at this point. Force the reader to the
+        // actual start of the issue instead of asking scrollIntoView() to resolve a
+        // target whose position just changed during the cover transition.
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
+            catch (_) { window.scrollTo(0, 0); }
+            contents.focus({preventScroll:true});
+          });
+        });
       }
       if (reduced) { finish(); return; }
       m.classList.add('pm-opening');

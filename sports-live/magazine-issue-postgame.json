@@ -1,5 +1,5 @@
 {
- "$comment": "GatorBait Magazine postgame issue, Missouri 45, Florida 17 (Oct. 3, 2026). layout \"postgame\" is rendered by sports-live/src/magazine-postgame.{js,css}; every word and number below prints as written and the renderer adds none. Sources: ESPN event 401856708 (score, box score, play-by-play win probability); the seven canonical GatorBait posts (titles, excerpts, read times and images read from the Wix Blog API, Oct. 4); postgame news conferences and the Orlando Sentinel (quotes). Build: MAG_VARIANT=postgame node sports-live/build-magazine.mjs",
+ "$comment": "GatorBait Magazine postgame issue, Missouri 45, Florida 17. Expanded Oct. 5 to include every Missouri postgame story in the live feed plus the final and halftime GatorBait graphics. Existing cover, data graphics and design preserved.",
  "id": "2026-10-04-postgame-missouri",
  "layout": "postgame",
  "issue": {
@@ -29,7 +29,8 @@
    "The damage: 560 yards to 325",
    "Report card: three Fs",
    "How a 10-10 game got away",
-   "Sumrall: “Starts with me”"
+   "Sumrall: “Starts with me”",
+   "Buddy + Franz: what comes next"
   ]
  },
  "final": {
@@ -454,9 +455,39 @@
  },
  "package": {
   "kicker": "Read the package",
-  "title": "Seven stories from Columbia",
-  "dek": "Buddy Martin leads. Each story opens on its one home at gatorbaitmedia.com.",
+  "title": "Ten stories and graphics from Columbia",
+  "dek": "The complete Missouri postgame package: columns, analysis, grades, numbers, recap and game graphics.",
   "items": [
+   {
+    "rubric": "Sunday column",
+    "author": "Buddy Martin",
+    "title": "Gator Football: Where Does It Go From Here? I’m Glad You Asked!",
+    "dek": "What happened in Columbia was worse than a speed bump. Buddy asks who betrayed whom — and where Florida goes from here.",
+    "url": "/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+    "image": {
+     "id": "ae876a_4b6b8c0bb3d34bb6ba1d62a4ac109159",
+     "ext": "jpeg",
+     "width": 1600,
+     "height": 900,
+     "alt": "Featured image for Buddy Martin’s post-Missouri column",
+     "credit": "GatorBait Media"
+    }
+   },
+   {
+    "rubric": "The response",
+    "author": "Franz Beard",
+    "title": "The loss to Mizzou is history; the question is how will the Gators respond?",
+    "dek": "Jon Sumrall warned Florida that its flaws would eventually be exposed. Columbia was that day. Now the response matters.",
+    "url": "/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
+    "image": {
+     "id": "16b519_be903de5f60d4510963f83dce1b90109",
+     "ext": "jpg",
+     "width": 1600,
+     "height": 900,
+     "alt": "Featured image for Franz Beard’s Missouri response column",
+     "credit": "GatorBait Media"
+    }
+   },
    {
     "rubric": "Cover story",
     "author": "Buddy Martin",
@@ -520,7 +551,15 @@
     "title": "How Missouri’s blueprint bottled up the Gators",
     "dek": "Eli Drinkwitz spent all week saying tough teams stop the run. Missouri did it Saturday.",
     "read": "3 min read",
-    "url": "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators"
+    "url": "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
+    "image": {
+     "id": "d3cfa5_940418a6e0a7432882f19b4620d77d81",
+     "ext": "jpg",
+     "width": 1600,
+     "height": 900,
+     "alt": "Drink Mix: Missouri’s blueprint bottled up Florida",
+     "credit": "GatorBait Media graphic"
+    }
    },
    {
     "rubric": "Game recap",
@@ -528,7 +567,15 @@
     "title": "Roberts runs away, Missouri routs Florida 45-17",
     "dek": "Jamal Roberts ran for 211 yards and three touchdowns as No. 25 Missouri scored 35 straight points and handed No. 8 Florida its first loss.",
     "read": "2 min read",
-    "url": "/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17"
+    "url": "/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17",
+    "image": {
+     "id": "d3cfa5_726f3a64929145bf88f702859743c8b9",
+     "ext": "jpg",
+     "width": 1600,
+     "height": 900,
+     "alt": "Final score graphic: Missouri 45, Florida 17",
+     "credit": "GatorBait Media graphic"
+    }
    },
    {
     "rubric": "Reality Check",
@@ -544,6 +591,21 @@
      "height": 1910,
      "alt": "The Florida Gators against Ole Miss, Sept. 26, 2026",
      "credit": "File photo by Chris Spears, GatorBait Media"
+    }
+   },
+   {
+    "rubric": "Halftime",
+    "author": "GatorBait Staff",
+    "title": "Simmons strikes twice, Missouri leads Florida 20-10",
+    "dek": "The halftime report and graphic from Columbia, before Missouri broke the game open in the second half.",
+    "url": "/post/halftime-simmons-strikes-twice-missouri-leads-florida-20-10",
+    "image": {
+     "id": "d3cfa5_c2096747d67b47c68ca6e6839330cb03",
+     "ext": "jpg",
+     "width": 1600,
+     "height": 900,
+     "alt": "Halftime graphic: Missouri 20, Florida 10",
+     "credit": "GatorBait Media graphic"
     }
    }
   ]

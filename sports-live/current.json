@@ -1,5 +1,5 @@
 {
-  "commit": "a38ea279cf2de8db9724d28339368735a66e34e1",
-  "updated": "2026-10-05T06:57:35.130Z",
-  "note": "Owner request: omit Brenden Martin bylines from homepage cards; retain other writers and source authorship. Rollback 1a157fbd24dc029f5eb0654cfd378547bcabab1f. Notes deploy/homepage-byline-20261005/."
+  "commit": "9ad1ff44d90e3a055dee29f95536fca9dcbad622",
+  "updated": "2026-10-05T07:15:56.676Z",
+  "note": "Owner-requested Magazine card update: current postgame cover and Buddy headline, direct Magazine link. Rollback a38ea279cf2de8db9724d28339368735a66e34e1. Notes deploy/homepage-magazine-card-20261005/."
 }

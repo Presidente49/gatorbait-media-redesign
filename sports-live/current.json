@@ -1,5 +1,5 @@
 {
-  "commit": "af591b211765e18f5590989473a6bfd50ae0c896",
-  "updated": "2026-10-05T01:02:08.630Z",
-  "note": "Owner-approved homepage full-show archive; compact photo layout preserved. Rollback 3417925bb3e10ab0be484b642f02dc3bdd7360ef. Notes deploy/homepage-show-archive-20261004/."
+  "commit": "1a157fbd24dc029f5eb0654cfd378547bcabab1f",
+  "updated": "2026-10-05T03:10:09.069Z",
+  "note": "Owner-approved removal of dates from compact homepage story cards. Lead/article dates and chronology preserved. Rollback af591b211765e18f5590989473a6bfd50ae0c896. Notes deploy/homepage-compact-dates-20261005/."
 }

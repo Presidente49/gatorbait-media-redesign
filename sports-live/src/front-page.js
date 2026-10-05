@@ -505,7 +505,7 @@
     var mLatest = '<section class="fp-mod fp-mod-latest" aria-label="Latest stories"><h2>Latest</h2><ol class="fp-latest">' + latest.map(function (p) {
       return '<li>' + link(p.url, storyThumb(p, true) + '<div><h3 class="fp-hl">' + esc(p.title) + '</h3>' + cardAuthor(p) + '</div>', p.image ? 'fp-latest-photo' : 'fp-no-photo') + '</li>'; }).join('') +
       '</ol><a class="fp-more" href="' + esc(L.latest) + '">All stories <span aria-hidden="true">&nbsp;→</span></a></section>';
-    var mShow = '<section class="fp-mod fp-mod-show fp-show" data-live="' + (sn.live ? 1 : 0) + '" aria-label="The Buddy Martin Show"><h2>The Buddy Martin Show</h2><p class="fp-show-when"><span class="fp-live-dot" aria-hidden="true"></span><span data-fp-show>' + esc(sn.live ? 'Live now' : 'Next live: ' + sn.label) + '</span></p>' +
+    var mShow = '<section class="fp-mod fp-mod-show fp-show" id="fp-show-schedule" data-live="' + (sn.live ? 1 : 0) + '" aria-label="The Buddy Martin Show"><h2>The Buddy Martin Show</h2><p class="fp-show-when"><span class="fp-live-dot" aria-hidden="true"></span><span data-fp-show>' + esc(sn.live ? 'Live now' : 'Next live: ' + sn.label) + '</span></p>' +
       '<p class="fp-ex">Mondays, Wednesdays and Thursdays at 9 p.m. ET.</p><div class="fp-actions"><a class="fp-btn" href="' + esc(L.youtubeLive) + '" rel="noopener">Watch on YouTube</a><a class="fp-btn fp-ghost" href="' + esc(L.facebook) + '" rel="noopener">Facebook</a></div>' +
       gbmRecentShows() +
       '<a class="fp-more" href="' + esc(L.show) + '">GatorBait TV &amp; podcasts <span aria-hidden="true">&nbsp;→</span></a></section>';
@@ -532,16 +532,16 @@
       var t = Date.parse(g.date), e = et(t), tba = /T0[45]:00:00/.test(g.date);
       return '<tr><td>' + esc((g.home ? 'vs. ' : 'at ') + ranked(g.rank, g.opponent)) + '</td><td>' + esc(tba ? MONTHS[new Date(t).getUTCMonth()] + ' ' + new Date(t).getUTCDate() : MONTHS[e.mo] + ' ' + e.d) + '</td><td>' + esc(g.tv || 'TBA') + '</td></tr>'; }).join('') + '</tbody></table>';
     if (sb.standings.length) scores += '<table class="fp-stand"><caption class="fp-sr">SEC standings</caption><thead><tr><th scope="col">SEC</th><th scope="col">Conf.</th><th scope="col">Overall</th></tr></thead><tbody>' + sb.standings.slice(0, 6).map(function (r) { return '<tr' + (/^florida$/i.test(r.team) ? ' class="fp-us"' : '') + '><td>' + esc(r.team) + '</td><td>' + esc(r.conf) + '</td><td>' + esc(r.overall) + '</td></tr>'; }).join('') + '</tbody></table>';
-    scores += '<div class="fp-chips"><a href="' + esc(L.schedule) + '">Schedule</a><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.stats) + '">Stats</a><a href="' + esc(L.standings) + '">Standings</a></div>';
+    scores += '<div class="fp-chips"><a href="' + esc(L.schedule) + '">Schedule</a><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.stats) + '" target="_blank" rel="noopener" aria-label="Official Florida stats (opens in a new tab)">Stats ↗</a><a href="' + esc(L.standings) + '" target="_blank" rel="noopener" aria-label="Official SEC football standings (opens in a new tab)">Standings ↗</a></div>';
     var mScores = '<section class="fp-mod fp-mod-scores" aria-label="Scores and schedule"><h2>Scores &amp; Schedule · Florida ' + esc(sb.team.record || '') + '</h2>' + scores + '</section>';
     var magazine = BUNDLE.magazine, cover = magazine.cover, issue = magazine.issue;
-    var coverSrc = 'https://static.wixstatic.com/media/' + cover.image.id + '.' + cover.image.ext;
+    var coverSrc = 'https://static.wixstatic.com/media/' + cover.image.id.replace(/(?:~mv2)+$/, '') + '~mv2.' + cover.image.ext;
     var mMag = '<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><h2>GatorBait Magazine</h2>' +
       '<button type="button" class="fp-cover fp-mag-open" aria-expanded="false" aria-controls="fp-mag-reader" aria-label="Open GatorBait Magazine">' +
       img(coverSrc, cover.image.alt, false, cover.image.width || 864, cover.image.height || 1536, '(max-width: 599px) 76vw, 320px') +
       '<span class="fp-mag-hint">Tap cover to open <span aria-hidden="true">↗</span></span></button>' +
       '<div class="fp-mag-copy"><p>' + esc(issue.number) + ' · ' + esc(issue.week) + '</p></div>' +
-      '<div class="fp-mag-reader" id="fp-mag-reader" hidden><iframe title="GatorBait Magazine — Missouri postgame edition" loading="lazy" data-src="' + esc(L.magazine) + '?embed=home#pm-contents"></iframe><p><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine <span aria-hidden="true">→</span></a></p></div></section>';
+      '<div class="fp-mag-reader" id="fp-mag-reader" hidden><div class="fp-mag-tools"><button type="button" class="fp-btn fp-mag-close" aria-label="Close magazine">Close magazine</button><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine ↗</a></div><iframe title="GatorBait Magazine — Missouri postgame edition" loading="lazy" data-src="' + esc(L.magazine) + '?embed=home#pm-contents"></iframe><p><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine <span aria-hidden="true">→</span></a></p></div></section>';
     // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
     var mNews = window.GBM_CAPTURE ? window.GBM_CAPTURE.html('home') : '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
     return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show and photos. Everything GatorBait, in one place.</p></div><div class="fp-hub-grid">' +
@@ -662,7 +662,7 @@
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
     root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
-      '<main id="sh-main"><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
+      '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Football schedule</a><a href="#fp-show-schedule">Buddy Martin Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
       roadHtml(sb) + hubHtml(latest, sb, posts, used) + '</main>';
     if (!document.getElementById('gbm-fp26-styles')) {
       var style = document.createElement('style'); style.id = 'gbm-fp26-styles'; style.textContent = CSS; document.head.appendChild(style);
@@ -677,25 +677,51 @@
     try { imgFallback(root); } catch (_) {}
     try {
       var magOpen = root.querySelector('.fp-mag-open'), magReader = root.querySelector('#fp-mag-reader');
+      var magClose = root.querySelector('.fp-mag-close');
+      function magazineTop(frame) {
+        try { if (frame && frame.contentWindow) { var issueRoot = frame.contentDocument.querySelector('#gbm-magazine-page'); if (issueRoot) issueRoot.classList.add('pm-opened'); frame.contentWindow.scrollTo(0, 0); } } catch (_) {}
+      }
+      function closeMagazine() {
+        if (!magOpen || !magReader) return;
+        magReader.hidden = true;
+        magOpen.setAttribute('aria-expanded', 'false');
+        magOpen.closest('.fp-mag').classList.remove('fp-mag-opened');
+        magOpen.focus({ preventScroll: true });
+        var top = magOpen.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo(0, Math.max(0, top));
+      }
+      if (magClose) magClose.addEventListener('click', closeMagazine);
       if (magOpen && magReader) magOpen.addEventListener('click', function () {
         if (magOpen.getAttribute('aria-expanded') === 'true') return;
         magOpen.setAttribute('aria-expanded', 'true');
         var frame = magReader.querySelector('iframe');
         if (frame && !frame.getAttribute('srcdoc')) {
           frame.addEventListener('load', function () {
-            try { frame.contentWindow.scrollTo(0, 0); } catch (_) {}
+            magazineTop(frame);
+            // Keep section links inside this inline issue; article links retain the top-level target.
+            try { frame.contentDocument.addEventListener('click', function (e) {
+              var a = e.target.closest && e.target.closest('a[href^="#pm-"]');
+              var id = a && a.getAttribute('href');
+              if (!id || !/^#pm-[a-z0-9-]+$/i.test(id)) return;
+              var target = frame.contentDocument.querySelector(id);
+              if (!target) return;
+              e.preventDefault();
+              target.scrollIntoView({ block: 'start', behavior: 'instant' });
+            }); } catch (_) {}
           }, { once: true });
-          frame.setAttribute('srcdoc', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"><style>html,body{margin:0;background:#fff}</style></head><body><script>window.__GBM_MAG_EMBED__=true;<\\/script><script src="https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@88ae0124a476c5d247b16dc60fdd3ccb6fa1cb6f/sports-live/magazine-postgame.js"><\\/script></body></html>');
+          // Split the closing tag while generating the HTML; the browser receives real </script> tags.
+          var endScript = '<' + '/script>';
+          frame.setAttribute('srcdoc', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"><style>html,body{margin:0;background:#fff}.pm-entrance,.pm-readerbar [data-pm-cover]{display:none!important}</style></head><body><script>window.__GBM_MAG_EMBED__=true;' + endScript + '<script src="https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@88ae0124a476c5d247b16dc60fdd3ccb6fa1cb6f/sports-live/magazine-postgame.js">' + endScript + '</body></html>');
         }
         magReader.hidden = false;
-        magOpen.closest('.fp-mag').classList.add('fp-mag-opening');
-        setTimeout(function () {
-          magOpen.closest('.fp-mag').classList.add('fp-mag-opened');
-          var y = magReader.getBoundingClientRect().top + window.scrollY - 8;
-          try { window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' }); }
-          catch (_) { window.scrollTo(0, Math.max(0, y)); }
-          try { if (frame && frame.contentWindow) frame.contentWindow.scrollTo(0, 0); } catch (_) {}
-        }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 480);
+        magOpen.closest('.fp-mag').classList.add('fp-mag-opened');
+        magazineTop(frame);
+        if (magClose) magClose.focus({ preventScroll: true });
+        var top = magReader.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo(0, Math.max(0, top));
+      });
+      if (magReader) magReader.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { e.preventDefault(); closeMagazine(); }
       });
     } catch (_) {}
     loading = false;

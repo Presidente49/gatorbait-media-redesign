@@ -251,14 +251,13 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-mag h2{color:#fff;align-self:flex-start}
 #gbm-live.fp26 .fp-mag-copy{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;text-align:center}
 #gbm-live.fp26 .fp-mag-copy p{font:500 13px/1.5 var(--fp-sans);color:#dce4f5}
-#gbm-live.fp26 .fp-mag .fp-cover{appearance:none;border:0;padding:0;position:relative;display:block;flex:none;width:min(100%,320px);aspect-ratio:9/16;overflow:hidden;background:#031134;box-shadow:0 12px 30px rgba(0,0,0,.38);color:#fff;cursor:pointer;transform-origin:50% 100%;transition:transform .48s cubic-bezier(.2,.75,.2,1),opacity .32s ease,filter .32s ease}
+#gbm-live.fp26 .fp-mag .fp-cover{appearance:none;border:0;padding:0;position:relative;display:block;flex:none;width:min(100%,320px);aspect-ratio:9/16;overflow:hidden;background:#031134;box-shadow:0 12px 30px rgba(0,0,0,.38);color:#fff;cursor:pointer;transform:none;transition:none}
 #gbm-live.fp26 .fp-mag .fp-cover img{display:block;width:100%;height:100%;object-fit:cover}
 #gbm-live.fp26 .fp-mag-hint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);min-width:170px;padding:10px 14px;background:rgba(3,17,52,.86);border:1px solid rgba(255,255,255,.55);font:800 13px/1 var(--fp-cond);letter-spacing:.08em;text-transform:uppercase;color:#fff}
 #gbm-live.fp26 .fp-mag-reader{width:100%;border-top:3px solid var(--fp-orange);padding-top:14px}
 #gbm-live.fp26 .fp-mag-reader iframe{display:block;width:100%;height:min(84vh,920px);border:0;background:#fff}
 #gbm-live.fp26 .fp-mag-reader p{display:flex;justify-content:center;padding:14px 0 2px}
-#gbm-live.fp26 .fp-mag.fp-mag-opening .fp-cover{transform:perspective(900px) rotateY(-14deg) translateX(-4%);filter:brightness(.85)}
-#gbm-live.fp26 .fp-mag.fp-mag-opened .fp-cover{transform:perspective(900px) rotateY(-88deg) translateX(-35%);opacity:0;position:absolute;pointer-events:none}
+#gbm-live.fp26 .fp-mag.fp-mag-opened .fp-cover{display:none}
 #gbm-live.fp26 .fp-mag.fp-mag-opened .fp-mag-copy{display:none}
 @media(max-width:599px){
 #gbm-live.fp26 .fp-mag .fp-cover{width:min(76vw,320px)}
@@ -531,3 +530,13 @@ body:has(#gbm-mobile-shell-host) #gbm-live.fp26 .fp-mast{display:none}
 #gbm-live.fp26 .fp-list .fp-story-credit{font-size:9px}
 #gbm-live.fp26 .fp-rail{grid-column:auto}
 }
+
+/* Simple inline Magazine controls and permanent utility links. No flip or timed entrance. */
+#gbm-live.fp26 .fp-mag .fp-cover:hover,#gbm-live.fp26 .fp-mag .fp-cover:focus-visible{transform:none;transition:none}
+#gbm-live.fp26 .fp-mag-reader[hidden]{display:none!important}
+#gbm-live.fp26 .fp-mag-tools{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-bottom:12px}
+#gbm-live.fp26 .fp-mag-tools .fp-btn{min-height:44px;flex:1 1 auto;justify-content:center;font-size:13px;color:#fff;border-color:#fff}
+#gbm-live.fp26 .fp-mag-reader .fp-ghost{color:#fff;border-color:#fff}
+#gbm-live.fp26 .fp-quick-links{padding-block:12px;border-bottom:1px solid var(--fp-rule)}
+#gbm-live.fp26 .fp-quick-links .fp-wrap{justify-content:center}
+#gbm-live.fp26 #fp-show-schedule{scroll-margin-top:84px}

@@ -1,0 +1,408 @@
+{
+  "mode": "candidate in current live shell",
+  "at": "2026-10-05T21:55:12.283Z",
+  "expected": "cb5f0f83",
+  "checks": [
+    {
+      "width": 320,
+      "reduced": false,
+      "errors": [],
+      "magazineRequests": 1,
+      "http": 200,
+      "quick": [
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+        },
+        {
+          "text": "Football schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+        },
+        {
+          "text": "Buddy Martin Show schedule",
+          "href": "#fp-show-schedule"
+        }
+      ],
+      "destinations": [
+        {
+          "text": "Schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Stats ↗",
+          "href": "https://floridagators.com/sports/football/stats",
+          "target": "_blank",
+          "rel": "noopener"
+        },
+        {
+          "text": "Standings ↗",
+          "href": "https://www.secsports.com/standings/football",
+          "target": "_blank",
+          "rel": "noopener"
+        }
+      ],
+      "cover": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2.jpg/v1/fit/w_480,h_853,al_c,q_80,enc_auto/gatorbait.jpg",
+        "transform": "none",
+        "transition": "0s",
+        "build": "cb5f0f83",
+        "overflow": 0
+      },
+      "opened": {
+        "top": 0,
+        "root": true,
+        "contentsTop": 58,
+        "entryDisplay": "none",
+        "overflow": 0,
+        "stories": 8,
+        "links": [
+          "/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+          "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
+          "/post/by-the-numbers-how-missouri-flipped-florida-s-script",
+          "/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri",
+          "/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
+          "/post/hey-missouri-don-t-show-me-anymore",
+          "/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
+          "/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17"
+        ]
+      },
+      "sectionLink": {
+        "root": true,
+        "scroll": 3734,
+        "gradeTop": 71.921875
+      },
+      "reopenTop": 0,
+      "finalOverflow": 0,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "reduced": false,
+      "errors": [],
+      "magazineRequests": 1,
+      "http": 200,
+      "quick": [
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+        },
+        {
+          "text": "Football schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+        },
+        {
+          "text": "Buddy Martin Show schedule",
+          "href": "#fp-show-schedule"
+        }
+      ],
+      "destinations": [
+        {
+          "text": "Schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Stats ↗",
+          "href": "https://floridagators.com/sports/football/stats",
+          "target": "_blank",
+          "rel": "noopener"
+        },
+        {
+          "text": "Standings ↗",
+          "href": "https://www.secsports.com/standings/football",
+          "target": "_blank",
+          "rel": "noopener"
+        }
+      ],
+      "cover": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2.jpg/v1/fit/w_480,h_853,al_c,q_80,enc_auto/gatorbait.jpg",
+        "transform": "none",
+        "transition": "0s",
+        "build": "cb5f0f83",
+        "overflow": 0
+      },
+      "opened": {
+        "top": 0,
+        "root": true,
+        "contentsTop": 58,
+        "entryDisplay": "none",
+        "overflow": 0,
+        "stories": 8,
+        "links": [
+          "/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+          "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
+          "/post/by-the-numbers-how-missouri-flipped-florida-s-script",
+          "/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri",
+          "/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
+          "/post/hey-missouri-don-t-show-me-anymore",
+          "/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
+          "/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17"
+        ]
+      },
+      "sectionLink": {
+        "root": true,
+        "scroll": 3310,
+        "gradeTop": 71.984375
+      },
+      "reopenTop": 0,
+      "finalOverflow": 0,
+      "pass": true
+    },
+    {
+      "width": 430,
+      "reduced": false,
+      "errors": [],
+      "magazineRequests": 1,
+      "http": 200,
+      "quick": [
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+        },
+        {
+          "text": "Football schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+        },
+        {
+          "text": "Buddy Martin Show schedule",
+          "href": "#fp-show-schedule"
+        }
+      ],
+      "destinations": [
+        {
+          "text": "Schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Stats ↗",
+          "href": "https://floridagators.com/sports/football/stats",
+          "target": "_blank",
+          "rel": "noopener"
+        },
+        {
+          "text": "Standings ↗",
+          "href": "https://www.secsports.com/standings/football",
+          "target": "_blank",
+          "rel": "noopener"
+        }
+      ],
+      "cover": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2.jpg/v1/fit/w_800,h_1422,al_c,q_80,enc_auto/gatorbait.jpg",
+        "transform": "none",
+        "transition": "0s",
+        "build": "cb5f0f83",
+        "overflow": 0
+      },
+      "opened": {
+        "top": 0,
+        "root": true,
+        "contentsTop": 58,
+        "entryDisplay": "none",
+        "overflow": 0,
+        "stories": 8,
+        "links": [
+          "/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+          "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
+          "/post/by-the-numbers-how-missouri-flipped-florida-s-script",
+          "/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri",
+          "/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
+          "/post/hey-missouri-don-t-show-me-anymore",
+          "/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
+          "/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17"
+        ]
+      },
+      "sectionLink": {
+        "root": true,
+        "scroll": 3535,
+        "gradeTop": 71.984375
+      },
+      "reopenTop": 0,
+      "finalOverflow": 0,
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "reduced": false,
+      "errors": [],
+      "magazineRequests": 1,
+      "http": 200,
+      "quick": [
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+        },
+        {
+          "text": "Football schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+        },
+        {
+          "text": "Buddy Martin Show schedule",
+          "href": "#fp-show-schedule"
+        }
+      ],
+      "destinations": [
+        {
+          "text": "Schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Stats ↗",
+          "href": "https://floridagators.com/sports/football/stats",
+          "target": "_blank",
+          "rel": "noopener"
+        },
+        {
+          "text": "Standings ↗",
+          "href": "https://www.secsports.com/standings/football",
+          "target": "_blank",
+          "rel": "noopener"
+        }
+      ],
+      "cover": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2.jpg/v1/fit/w_480,h_853,al_c,q_80,enc_auto/gatorbait.jpg",
+        "transform": "none",
+        "transition": "0s",
+        "build": "cb5f0f83",
+        "overflow": 0
+      },
+      "opened": {
+        "top": 0,
+        "root": true,
+        "contentsTop": 58,
+        "entryDisplay": "none",
+        "overflow": 0,
+        "stories": 8,
+        "links": [
+          "/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+          "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
+          "/post/by-the-numbers-how-missouri-flipped-florida-s-script",
+          "/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri",
+          "/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
+          "/post/hey-missouri-don-t-show-me-anymore",
+          "/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
+          "/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17"
+        ]
+      },
+      "sectionLink": {
+        "root": true,
+        "scroll": 3470,
+        "gradeTop": 71.71875
+      },
+      "reopenTop": 0,
+      "finalOverflow": 0,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "reduced": true,
+      "errors": [],
+      "magazineRequests": 1,
+      "http": 200,
+      "quick": [
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+        },
+        {
+          "text": "Football schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+        },
+        {
+          "text": "Buddy Martin Show schedule",
+          "href": "#fp-show-schedule"
+        }
+      ],
+      "destinations": [
+        {
+          "text": "Schedule",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Roster",
+          "href": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+          "target": "",
+          "rel": ""
+        },
+        {
+          "text": "Stats ↗",
+          "href": "https://floridagators.com/sports/football/stats",
+          "target": "_blank",
+          "rel": "noopener"
+        },
+        {
+          "text": "Standings ↗",
+          "href": "https://www.secsports.com/standings/football",
+          "target": "_blank",
+          "rel": "noopener"
+        }
+      ],
+      "cover": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2.jpg/v1/fit/w_480,h_853,al_c,q_80,enc_auto/gatorbait.jpg",
+        "transform": "none",
+        "transition": "0s",
+        "build": "cb5f0f83",
+        "overflow": 0
+      },
+      "opened": {
+        "top": 0,
+        "root": true,
+        "contentsTop": 58,
+        "entryDisplay": "none",
+        "overflow": 0,
+        "stories": 8,
+        "links": [
+          "/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+          "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
+          "/post/by-the-numbers-how-missouri-flipped-florida-s-script",
+          "/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri",
+          "/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
+          "/post/hey-missouri-don-t-show-me-anymore",
+          "/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
+          "/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17"
+        ]
+      },
+      "sectionLink": {
+        "root": true,
+        "scroll": 3310,
+        "gradeTop": 71.984375
+      },
+      "reopenTop": 0,
+      "finalOverflow": 0,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

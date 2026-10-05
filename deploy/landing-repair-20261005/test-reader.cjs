@@ -1,0 +1,15 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const source=fs.readFileSync('sports-live/src/front-page.js','utf8'),css=fs.readFileSync('sports-live/src/front-page.css','utf8');
+const start=source.indexOf("      var magOpen = root.querySelector('.fp-mag-open')"),end=source.indexOf('    } catch (_) {}',start);
+const handler=source.slice(start,end),classes=new Set(),events={},frameAttrs={},scrolls=[];
+const frame={getAttribute:k=>frameAttrs[k],setAttribute:(k,v)=>frameAttrs[k]=v,addEventListener:(n,fn)=>events['frame:'+n]=fn,contentDocument:{querySelector:()=>({classList:{add:()=>{}}})},contentWindow:{scrollTo:(x,y)=>scrolls.push([x,y])}};
+const poster={attrs:{'aria-expanded':'false'},getAttribute(k){return this.attrs[k]},setAttribute(k,v){this.attrs[k]=v},closest:()=>({classList:{add:k=>classes.add(k),remove:k=>classes.delete(k)}}),addEventListener:(n,fn)=>events['poster:'+n]=fn,focus:o=>{},getBoundingClientRect:()=>({top:100})};
+const reader={hidden:true,querySelector:()=>frame,addEventListener:(n,fn)=>events['reader:'+n]=fn,getBoundingClientRect:()=>({top:100})};
+const close={addEventListener:(n,fn)=>events['close:'+n]=fn,focus:o=>{}};
+const root={querySelector:q=>q==='.fp-mag-open'?poster:q==='#fp-mag-reader'?reader:close};
+vm.runInNewContext(handler,{root,window:{scrollY:0,scrollTo:()=>{}},setTimeout:()=>{throw Error('opening must not wait on animation timer')}});
+assert.strictEqual(frameAttrs.srcdoc,undefined);events['poster:click']();assert(!reader.hidden);assert(classes.has('fp-mag-opened'));assert.strictEqual(poster.attrs['aria-expanded'],'true');assert.strictEqual((frameAttrs.srcdoc.match(/<script[ >]/g)||[]).length,2);assert.strictEqual((frameAttrs.srcdoc.match(/<\/script>/g)||[]).length,2);assert(!frameAttrs.srcdoc.includes('<\\/script>'));assert(frameAttrs.srcdoc.includes('window.__GBM_MAG_EMBED__=true;'));
+const srcdoc=frameAttrs.srcdoc;events['close:click']();assert(reader.hidden);assert(!classes.has('fp-mag-opened'));assert.strictEqual(poster.attrs['aria-expanded'],'false');events['poster:click']();assert.strictEqual(frameAttrs.srcdoc,srcdoc);assert(!reader.hidden);events['reader:keydown']({key:'Escape',preventDefault(){}});assert(reader.hidden);
+assert(!/fp-mag-opening/.test(css));assert(!/rotateY\(/.test(css));assert(!handler.includes('setTimeout'));assert(source.includes('Buddy Martin Show schedule'));assert(source.includes('id="fp-show-schedule"'));
+const old=JSON.parse(fs.readFileSync(require('path').join(__dirname,'before.config.json'),'utf8')),next=JSON.parse(fs.readFileSync('sports-live/front-page.config.json','utf8'));assert.strictEqual(next.links.stats,'https://floridagators.com/sports/football/stats');assert.strictEqual(next.links.standings,'https://www.secsports.com/standings/football');old.links.stats=next.links.stats;old.links.standings=next.links.standings;assert.deepStrictEqual(old,next);
+console.log('PASS: immediate open; valid srcdoc scripts; one lazy frame; close/reopen/Escape; no spin/timer; permanent shortcuts; only intended config destinations changed.');

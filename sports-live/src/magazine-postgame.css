@@ -273,7 +273,7 @@ html #gbm-magazine-page.pm .gbc input[type=email]{color:var(--pm-ink)!important;
 #gbm-magazine-page.pm .pm-book{perspective:1600px;width:min(100%,calc((100svh - 90px)*.5625),460px);min-width:230px;background:var(--pm-blue);box-shadow:0 20px 70px #0007}
 #gbm-magazine-page.pm .pm-poster{position:relative;aspect-ratio:9/16;container-type:inline-size;transform-origin:left center;background:var(--pm-navy);transition:transform .48s ease-in,opacity .48s ease-in}
 #gbm-magazine-page.pm .pm-poster>.mz-frame{position:absolute;inset:0;aspect-ratio:auto;height:100%;width:100%}
-#gbm-magazine-page.pm .pm-poster img{height:100%;width:100%;object-fit:cover;object-position:48% 38%}
+#gbm-magazine-page.pm .pm-poster img{height:100%;width:100%;object-fit:cover;object-position:27% 38%}
 #gbm-magazine-page.pm .pm-poster-ink{position:absolute;inset:0;padding:6%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,#020e37dc,transparent 28%,#06144422 40%,#031134ed 67%,#031134 100%);pointer-events:none}
 #gbm-magazine-page.pm .pm-covermark{font:800 17cqw/.85 var(--mz-cond);letter-spacing:-.04em;text-transform:uppercase;color:#fff}
 #gbm-magazine-page.pm .pm-covermark span,#gbm-magazine-page.pm .pm-readerbrand span{color:var(--pm-orange)}

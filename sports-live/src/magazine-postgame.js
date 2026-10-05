@@ -7,7 +7,7 @@
   function pmEntrance(D) {
     var C = obj(D.cover) || {}, I = obj(D.issue) || {};
     return '<section class="pm-entrance" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
-      frame(C.image, { eager: true, main: 1200, sizes: '(max-width: 699px) 100vw, 460px' }) +
+      frame(C.image, { eager: true, main: 1200, sizes: '(max-width: 699px) 267vw, 1230px' }) +
       '<div class="pm-poster-ink"><div><p class="pm-covermark">Gator<span>Bait</span></p><p class="pm-covermag">Magazine</p><p class="pm-coverdate">' + esc(text(I.date, 60)) + '</p></div>' +
       '<div class="pm-poster-bottom"><p class="pm-edition">' + esc(text(I.number, 60)) + '</p><p class="pm-coverwriter">' + esc(text(C.kicker, 80)) + '</p><h1>' + esc(text(C.headline, 200)) + '</h1>' +
       '<p class="pm-coverweek">' + esc(text(I.week, 120)) + '</p><p class="pm-covercredit">' + esc(text(C.image && C.image.credit, 120)) + '</p><span class="pm-open-label">Open this issue <span aria-hidden="true">↗</span></span></div></div>' +

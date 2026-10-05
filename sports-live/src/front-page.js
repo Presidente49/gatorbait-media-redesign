@@ -506,9 +506,9 @@
       '<p class="fp-ex">Mondays, Wednesdays and Thursdays at 9 p.m. ET.</p><div class="fp-actions"><a class="fp-btn" href="' + esc(L.youtubeLive) + '" rel="noopener">Watch on YouTube</a><a class="fp-btn fp-ghost" href="' + esc(L.facebook) + '" rel="noopener">Facebook</a></div>' +
       gbmRecentShows() +
       '<a class="fp-more" href="' + esc(L.show) + '">GatorBait TV &amp; podcasts <span aria-hidden="true">&nbsp;→</span></a></section>';
-    var mClips = BUNDLE.clips.length ? '<section class="fp-mod fp-mod-clips" aria-label="Clips"><h2>Clips</h2><div class="fp-clips">' + BUNDLE.clips.slice(0, 2).map(function (c) {
-      return '<a class="fp-clip" href="https://www.youtube.com/shorts/' + esc(c.id) + '" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + c.id + '/hqdefault.jpg', '', false, 480, 360) + '<span class="fp-play"></span></span><b>' + esc(c.title) + '</b></a>'; }).join('') +
-      '</div><a class="fp-more" href="' + esc(L.youtubeChannel) + '" rel="noopener">More on YouTube <span aria-hidden="true">&nbsp;→</span></a></section>' : '';
+    var mClips = '<section class="fp-mod fp-mod-clips" aria-label="Buddy Martin Show archive"><h2>Buddy Martin Show archive</h2><p class="fp-ex">Selected full-length shows from GatorBait TV.</p><div class="fp-clips">' + BUNDLE.showArchive.slice(0, 2).map(function (c) {
+      return '<a class="fp-clip" href="https://www.youtube.com/watch?v=' + esc(c.id) + '" target="_blank" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + c.id + '/hqdefault.jpg', '', false, 480, 360) + '<span class="fp-play"></span></span><b>' + esc(c.title) + '</b><span class="fp-meta">Full show · ' + esc(c.duration) + '</span></a>'; }).join('') +
+      '</div><a class="fp-more" href="' + esc(L.youtubePlaylist) + '" target="_blank" rel="noopener">Browse the show playlist <span aria-hidden="true">&nbsp;→</span></a></section>';
     var gal = posts.filter(function (p) { return p.image && /spears/i.test(p.title + ' ' + p.author) && /(photo|galler|best shots)/i.test(p.title); }).slice(0, 2)
       .map(function (p) { return { title: p.title, url: p.url, image: p.image }; });
     if (!gal.length) gal = BUNDLE.galleries.slice(0, 2);
@@ -536,7 +536,7 @@
       (cover ? '<a class="fp-cover" href="' + esc(L.magazine) + '" aria-label="GatorBait Magazine">' + img(cover.image, '', false) + '<span class="fp-cover-mh">GatorBait<small>Magazine · Thursday</small></span><span class="fp-cover-t"><em>' + esc(cover.author) + '</em>' + esc(splitTitle(cover.title).h) + '</span></a>' : '') + '</section>';
     // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
     var mNews = window.GBM_CAPTURE ? window.GBM_CAPTURE.html('home') : '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
-    return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show, clips and photos. Everything GatorBait, in one place.</p></div><div class="fp-hub-grid">' +
+    return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show and photos. Everything GatorBait, in one place.</p></div><div class="fp-hub-grid">' +
       mLatest + mScores + mShow + (window.GBM_CAPTURE ? mNews : '') + mClips + mPhotos + mMag + (window.GBM_CAPTURE ? '' : mNews) + '</div></div></section>';
   }
 

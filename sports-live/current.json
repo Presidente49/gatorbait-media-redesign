@@ -1,5 +1,5 @@
 {
-  "commit": "38f84affdf576c922cd29689c10cd5df62d758b9",
-  "updated": "2026-10-05T19:10:00Z",
-  "note": "Oct 5 build: footer contact updated to brenden@gatorbaitmedia.com, magazine card synced to current Franz postgame cover."
+  "commit": "ee3c66595677c718598d869e10e29ea72828b54c",
+  "updated": "2026-10-05T20:55:00Z",
+  "note": "Homepage Magazine uses exact FIRST LOSS cover artwork; tap cover animates open and reveals the current Missouri postgame issue inline."
 }

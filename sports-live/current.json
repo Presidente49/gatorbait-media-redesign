@@ -1,5 +1,5 @@
 {
-  "commit": "9ad1ff44d90e3a055dee29f95536fca9dcbad622",
-  "updated": "2026-10-05T07:15:56.676Z",
-  "note": "Owner-requested Magazine card update: current postgame cover and Buddy headline, direct Magazine link. Rollback a38ea279cf2de8db9724d28339368735a66e34e1. Notes deploy/homepage-magazine-card-20261005/."
+  "commit": "9d4c095b5d3d87d5ad5b84c477b8de2e1ef1f3ce",
+  "updated": "2026-10-05T13:12:00Z",
+  "note": "Removed stale Loren Week 5 timed pin; homepage lead returns to normal newest-story rotation."
 }

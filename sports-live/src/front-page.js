@@ -4,7 +4,7 @@
    * gbm:gazette-ready event, the 15-minute session feed cache and paint-once (no jump). */
   var VERSION = 'front-page-2026.1';
   var PAGES = 'https://presidente49.github.io/gatorbait-media-redesign/';
-  var RSS = '/blog-feed.xml';
+  var RSS = '/gazette-live/posts.json';
   var TZ = 'America/New_York';
   var TSP = 'https://cdn.jsdelivr.net/npm/@tsparticles/slim@3.9.1/tsparticles.slim.bundle.min.js';
   var FONTS = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap';

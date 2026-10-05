@@ -1,5 +1,5 @@
 {
-  "commit": "1a157fbd24dc029f5eb0654cfd378547bcabab1f",
-  "updated": "2026-10-05T03:10:09.069Z",
-  "note": "Owner-approved removal of dates from compact homepage story cards. Lead/article dates and chronology preserved. Rollback af591b211765e18f5590989473a6bfd50ae0c896. Notes deploy/homepage-compact-dates-20261005/."
+  "commit": "a38ea279cf2de8db9724d28339368735a66e34e1",
+  "updated": "2026-10-05T06:57:35.130Z",
+  "note": "Owner request: omit Brenden Martin bylines from homepage cards; retain other writers and source authorship. Rollback 1a157fbd24dc029f5eb0654cfd378547bcabab1f. Notes deploy/homepage-byline-20261005/."
 }

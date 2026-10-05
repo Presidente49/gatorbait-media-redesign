@@ -455,8 +455,8 @@
   },
   "package": {
     "kicker": "Read the package",
-    "title": "Eight postgame stories and graphics from Columbia",
-    "dek": "The complete Missouri postgame package, newest first after the Franz Beard cover: columns, analysis, grades, numbers, recap and final-game graphics. No halftime or in-game material.",
+    "title": "9 postgame stories and graphics from Columbia",
+    "dek": "The complete Missouri postgame package, newest first after the Franz Beard cover, with Eddie Gilley’s column closing the edition. No halftime or in-game material.",
     "items": [
       {
         "rubric": "Sunday column",
@@ -577,6 +577,14 @@
           "alt": "Final score graphic: Missouri 45, Florida 17",
           "credit": "GatorBait Media graphic"
         }
+      },
+      {
+        "rubric": "Sunday column",
+        "author": "Eddie Gilley",
+        "title": "Florida Gave On Saturday",
+        "dek": "Florida was beaten in every phase at Missouri. Eddie Gilley examines what went wrong and what comes next for the Gators.",
+        "read": "3 min read",
+        "url": "/post/florida-gave-on-saturday"
       }
     ]
   },
@@ -618,5 +626,5 @@
     ],
     "top": "Back to the cover"
   },
-  "asOf": "Score, box score and win probability: ESPN (event 401856708). Quotes: postgame news conferences and the Orlando Sentinel. Issue closed Oct. 4, 2026."
+  "asOf": "Score, box score and win probability: ESPN (event 401856708). Quotes: postgame news conferences and the Orlando Sentinel. Eddie Gilley column added Oct. 5, 2026."
 }

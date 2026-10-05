@@ -1,5 +1,5 @@
 {
-  "commit": "d725980ebe56c54b0090fc41e1a53558f1bf2dca",
-  "updated": "2026-10-05T21:30:00Z",
-  "note": "Normalized release: FIRST LOSS homepage cover, self-contained inline magazine reader, chronological story rotation."
+  "commit": "6bcc3177957f5168f6d9dd34c8be20558e4d163d",
+  "updated": "2026-10-05T22:05:00Z",
+  "note": "Magazine animation fix: inline reader and internal issue opener now land at the start of the issue instead of the white-space tail."
 }

@@ -1,5 +1,5 @@
 {
-  "commit": "2cd7303fb009767491e256c07f5def7faf668b6a",
-  "updated": "2026-09-30T22:40:00Z",
-  "note": "PR #104: story Share button and Guide strip find the post title by structure and retry the mount during late Wix re-renders. Rollback: dc747be29042e0838ee322e8a47ee7be3c316be6."
+  "commit": "38f84af",
+  "updated": "2026-10-05T22:35:00Z",
+  "note": "Oct 5: latest with Codex homepage/mobile/magazine work. Serves current stories including South Carolina preview."
 }

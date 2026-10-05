@@ -1,0 +1,447 @@
+{
+ "url": "https://www.gatorbaitmedia.com/",
+ "selector": ".fp-list",
+ "at": "2026-10-05T03:11:03.119Z",
+ "shots": [
+  {
+   "width": 320,
+   "errors": [],
+   "http": 200,
+   "loaderSrc": "3417925",
+   "fpBuild": "259c28ef",
+   "fpVersion": "front-page-2026.1",
+   "selectorFound": true,
+   "box": {
+    "x": 16,
+    "y": 71,
+    "w": 288,
+    "h": 768,
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Barlow, Arial, Helvetica, sans-serif",
+    "kids": [
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 89,
+      "w": 172,
+      "h": 82,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 216,
+      "w": 172,
+      "h": 41,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 306,
+      "w": 172,
+      "h": 82,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 433,
+      "w": 172,
+      "h": 61,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 539,
+      "w": 172,
+      "h": 102,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 703,
+      "w": 172,
+      "h": 102,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     }
+    ],
+    "track": null,
+    "story": {
+     "h1": {
+      "x": 0,
+      "y": 846,
+      "w": 0,
+      "h": 0,
+      "opacity": "1",
+      "vis": "visible",
+      "size": "22px",
+      "text": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm "
+     },
+     "share": {
+      "x": 235,
+      "y": 2256,
+      "w": 112,
+      "h": 44,
+      "opacity": "1",
+      "vis": "visible",
+      "size": "15px",
+      "text": "Share"
+     },
+     "strip": null,
+     "row": null,
+     "firstChip": null,
+     "lastChip": null,
+     "more": null,
+     "links": [],
+     "scrollX": 0,
+     "capture": {
+      "probe": null,
+      "cards": 1,
+      "slideup": null
+     }
+    },
+    "docScrollWidth": 320,
+    "innerWidth": 320
+   }
+  },
+  {
+   "width": 390,
+   "errors": [],
+   "http": 200,
+   "loaderSrc": "a76e8cf",
+   "fpBuild": "259c28ef",
+   "fpVersion": "front-page-2026.1",
+   "selectorFound": true,
+   "box": {
+    "x": 16,
+    "y": 71,
+    "w": 358,
+    "h": 629,
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Barlow, Arial, Helvetica, sans-serif",
+    "kids": [
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 89,
+      "w": 242,
+      "h": 61,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 195,
+      "w": 242,
+      "h": 41,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 285,
+      "w": 242,
+      "h": 61,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 392,
+      "w": 242,
+      "h": 41,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 482,
+      "w": 242,
+      "h": 61,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 605,
+      "w": 242,
+      "h": 61,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     }
+    ],
+    "track": null,
+    "story": {
+     "h1": {
+      "x": 0,
+      "y": 927,
+      "w": 0,
+      "h": 0,
+      "opacity": "1",
+      "vis": "visible",
+      "size": "22px",
+      "text": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm "
+     },
+     "share": {
+      "x": 263,
+      "y": 2160,
+      "w": 112,
+      "h": 44,
+      "opacity": "1",
+      "vis": "visible",
+      "size": "15px",
+      "text": "Share"
+     },
+     "strip": null,
+     "row": null,
+     "firstChip": null,
+     "lastChip": null,
+     "more": null,
+     "links": [],
+     "scrollX": 0,
+     "capture": {
+      "probe": null,
+      "cards": 1,
+      "slideup": null
+     }
+    },
+    "docScrollWidth": 390,
+    "innerWidth": 390
+   }
+  },
+  {
+   "width": 430,
+   "errors": [],
+   "http": 200,
+   "loaderSrc": "3417925",
+   "fpBuild": "259c28ef",
+   "fpVersion": "front-page-2026.1",
+   "selectorFound": true,
+   "box": {
+    "x": 16,
+    "y": 70,
+    "w": 398,
+    "h": 629,
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Barlow, Arial, Helvetica, sans-serif",
+    "kids": [
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 88,
+      "w": 282,
+      "h": 61,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 195,
+      "w": 282,
+      "h": 41,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 285,
+      "w": 282,
+      "h": 61,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 391,
+      "w": 282,
+      "h": 41,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 481,
+      "w": 282,
+      "h": 61,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 132,
+      "y": 605,
+      "w": 282,
+      "h": 61,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "17px"
+     }
+    ],
+    "track": null,
+    "story": {
+     "h1": {
+      "x": 0,
+      "y": 978,
+      "w": 0,
+      "h": 0,
+      "opacity": "1",
+      "vis": "visible",
+      "size": "22px",
+      "text": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm "
+     },
+     "share": {
+      "x": 303,
+      "y": 2183,
+      "w": 112,
+      "h": 44,
+      "opacity": "1",
+      "vis": "visible",
+      "size": "15px",
+      "text": "Share"
+     },
+     "strip": null,
+     "row": null,
+     "firstChip": null,
+     "lastChip": null,
+     "more": null,
+     "links": [],
+     "scrollX": 0,
+     "capture": {
+      "probe": null,
+      "cards": 1,
+      "slideup": null
+     }
+    },
+    "docScrollWidth": 430,
+    "innerWidth": 430
+   }
+  },
+  {
+   "width": 1366,
+   "errors": [],
+   "http": 200,
+   "loaderSrc": "3417925",
+   "fpBuild": "259c28ef",
+   "fpVersion": "front-page-2026.1",
+   "selectorFound": true,
+   "box": {
+    "x": 485,
+    "y": 71,
+    "w": 397,
+    "h": 729,
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Barlow, Arial, Helvetica, sans-serif",
+    "kids": [
+     {
+      "cls": "fp-hl",
+      "x": 609,
+      "y": 85,
+      "w": 273,
+      "h": 69,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "21px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 609,
+      "y": 207,
+      "w": 273,
+      "h": 46,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "21px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 609,
+      "y": 306,
+      "w": 273,
+      "h": 69,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "21px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 609,
+      "y": 428,
+      "w": 273,
+      "h": 46,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "21px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 609,
+      "y": 527,
+      "w": 273,
+      "h": 69,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "21px"
+     },
+     {
+      "cls": "fp-hl",
+      "x": 609,
+      "y": 669,
+      "w": 273,
+      "h": 92,
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "size": "21px"
+     }
+    ],
+    "track": null,
+    "story": {
+     "h1": {
+      "x": 0,
+      "y": 725,
+      "w": 0,
+      "h": 0,
+      "opacity": "1",
+      "vis": "visible",
+      "size": "22px",
+      "text": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm "
+     },
+     "share": {
+      "x": 1096,
+      "y": 1592,
+      "w": 206,
+      "h": 44,
+      "opacity": "1",
+      "vis": "visible",
+      "size": "15px",
+      "text": "Share the season"
+     },
+     "strip": null,
+     "row": null,
+     "firstChip": null,
+     "lastChip": null,
+     "more": null,
+     "links": [],
+     "scrollX": 0,
+     "capture": {
+      "probe": null,
+      "cards": 1,
+      "slideup": null
+     }
+    },
+    "docScrollWidth": 1366,
+    "innerWidth": 1366
+   }
+  }
+ ]
+}

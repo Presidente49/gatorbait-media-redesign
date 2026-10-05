@@ -1,5 +1,5 @@
 {
-  "$comment": "Front Page 2026 editorial config. Bundled into sports-live/homepage.js by sports-live/build-front-page.mjs. Pins may also be overridden at runtime by window.__GBM_HOME_PINS__ = {breaking:{path,until}, timed:{path,until}} (same shape).",
+  "$comment": "Front Page 2026 editorial config. Default story order is strictly newest-first by firstPublishedDate. Only an explicit breaking-news pin may override chronology; do not use timed pins for ordinary story rotation.",
   "look": "gator-day",
   "topStoryAuthors": [
     "Buddy Martin",
@@ -8,11 +8,7 @@
   ],
   "pins": {
     "breaking": null,
-    "timed": {
-      "path": "/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
-      "until": "2026-10-05T16:00:00-04:00",
-      "note": "Owner correction Oct. 5: replace stale Loren preview; Franz Missouri-response column is the editorial lead."
-    }
+    "timed": null
   },
   "quotes": {
     "/post/put-down-the-poll-gators-missouri-is-waiting": {

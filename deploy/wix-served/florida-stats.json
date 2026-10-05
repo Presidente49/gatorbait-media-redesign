@@ -61,11 +61,11 @@
   {
    "d": "Sat., Oct. 10",
    "id": "401856714",
-   "k": "2026-10-10T04:00Z",
+   "k": "2026-10-10T16:45Z",
    "n": false,
    "o": "vs. South Carolina",
-   "t": "TBA",
-   "tv": ""
+   "t": "12:45 p.m.",
+   "tv": "SEC Network"
   },
   {
    "d": "Sat., Oct. 17",
@@ -99,7 +99,7 @@
    "id": "401856884",
    "k": "2026-11-14T05:00Z",
    "n": false,
-   "o": "at No. 24 Kentucky",
+   "o": "at Kentucky",
    "t": "TBA",
    "tv": ""
   },
@@ -1026,7 +1026,7 @@
    "5 games"
   ]
  ],
- "updated": "2026-10-04T00:32:19Z",
- "updatedLabel": "Oct. 3, 2026, 8:32 p.m. ET",
+ "updated": "2026-10-05T13:55:35Z",
+ "updatedLabel": "Oct. 5, 2026, 9:55 a.m. ET",
  "v": 1
 }

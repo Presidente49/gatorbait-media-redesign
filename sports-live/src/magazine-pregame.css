@@ -1,0 +1,287 @@
+
+/* ================= Friday Pregame layout (#gbm-magazine-page.mz26.pg) =================
+   Friday night under the lights: stadium-dark page, Gator blue and orange, huge Barlow Condensed. Cream reading panel for prose. */
+#gbm-magazine-page.pg{
+  --pg-night:#060b1c;--pg-navy:#0a1740;--pg-deep:#0d2160;--pg-blue:#0021a5;--pg-blue-2:#2b57ff;--pg-orange:#fa4616;--pg-orange-2:#ff8a57;--pg-gold:#f2b632;--pg-green:#2fbf71;
+  --pg-cream:#fffaf0;--pg-ink:#10264b;--pg-text:#e8edff;--pg-mute:#9eacd0;--pg-line:#233468;--pg-card:#0f1c4a;--pg-r:14px;
+  background:var(--pg-night);color:var(--pg-text);padding:0 0 56px;
+  background-image:radial-gradient(900px 420px at 50% -80px,#1b3aa855,transparent 70%),repeating-linear-gradient(0deg,transparent 0 78px,#ffffff06 78px 80px)
+}
+#gbm-magazine-page.pg h1,#gbm-magazine-page.pg h2,#gbm-magazine-page.pg h3,#gbm-magazine-page.pg h4{color:inherit;font-family:var(--mz-cond);font-weight:800;text-wrap:balance}
+#gbm-magazine-page.pg .pg-wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--mz-pad)}
+#gbm-magazine-page.pg .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#gbm-magazine-page.pg .pg-kick{display:block;font:700 12px/1.4 var(--mz-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--pg-orange-2)}
+#gbm-magazine-page.pg .pg-src{font:600 11px/1.5 var(--mz-sans);letter-spacing:.04em;color:var(--pg-mute);margin-top:12px}
+#gbm-magazine-page.pg .pg-cr{font:500 11px/1.4 var(--mz-sans);color:var(--pg-mute);padding-top:6px}
+#gbm-magazine-page.pg .pg-cr-c{text-align:center;margin-top:10px}
+#gbm-magazine-page.pg .pg-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;margin-top:16px;background:var(--pg-orange);color:#fff;font:800 15px/1 var(--mz-cond);letter-spacing:.1em;text-transform:uppercase;border-radius:3px;box-shadow:0 6px 0 #a82d0b;text-align:center}
+#gbm-magazine-page.pg .pg-btn:active{transform:translateY(3px);box-shadow:0 3px 0 #a82d0b}
+#gbm-magazine-page.pg .pg-more{display:inline-flex;align-items:center;min-height:44px;font:800 14px/1 var(--mz-cond);letter-spacing:.1em;text-transform:uppercase;color:var(--pg-orange-2);border-bottom:3px solid var(--pg-orange)}
+#gbm-magazine-page.pg a:focus-visible{outline:3px solid var(--pg-gold);outline-offset:3px}
+#gbm-magazine-page.pg .mz-frame{background:var(--pg-navy)}
+
+/* ticker + masthead */
+#gbm-magazine-page.pg .pg-ticker{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 14px;margin:0 calc(var(--mz-pad) * -1);padding:9px var(--mz-pad);background:var(--pg-orange);color:#fff;font:800 12px/1.3 var(--mz-cond);letter-spacing:.14em;text-transform:uppercase}
+#gbm-magazine-page.pg .pg-live{display:inline-flex;align-items:center;gap:8px}
+#gbm-magazine-page.pg .pg-live i{width:9px;height:9px;border-radius:50%;background:#fff;animation:pgpulse 1.6s ease-in-out infinite}
+@keyframes pgpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+@media (prefers-reduced-motion:reduce){#gbm-magazine-page.pg .pg-live i{animation:none}}
+#gbm-magazine-page.pg .pg-ticker-c{font-variant-numeric:tabular-nums}
+#gbm-magazine-page.pg .pg-mast{padding:20px 0 6px}
+#gbm-magazine-page.pg .pg-mast-top{display:flex;justify-content:space-between;gap:10px;font:700 10px/1.3 var(--mz-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-wm{display:block;width:100%;height:auto;margin-top:10px;overflow:visible}
+#gbm-magazine-page.pg .pg-wm text{font-family:var(--mz-cond);font-weight:800;text-transform:uppercase}
+#gbm-magazine-page.pg .pg-wm-a,#gbm-magazine-page.pg .pg-wm-b{font-size:204px}
+#gbm-magazine-page.pg .pg-wm-a{fill:#fff}
+#gbm-magazine-page.pg .pg-wm-b{fill:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-wm-m{font-size:96px;fill:var(--pg-text)}
+/* Nameplate A (Brenden, Oct. 3): the official GatorBait script logo on a cream plate, MAGAZINE between orange rules. */
+#gbm-magazine-page.pg .pg-plate{max-width:640px;margin-top:12px}
+#gbm-magazine-page.pg .pg-wm{display:block;font:800 clamp(40px,13.5vw,124px)/.88 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#fff}
+#gbm-magazine-page.pg .pg-wm em{font-style:normal;color:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-logo{display:block;width:min(520px,86%);height:auto;margin:0 auto}
+#gbm-magazine-page.pg .pg-plate-mz{display:flex;align-items:center;gap:12px;margin-top:10px;font:700 clamp(18px,5.2vw,30px)/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#c9d3e6}
+#gbm-magazine-page.pg .pg-plate-mz::before,#gbm-magazine-page.pg .pg-plate-mz::after{content:"";flex:1;height:3px;background:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-plate-mz::after{margin-left:-.2em}
+#gbm-magazine-page.pg .pg-home{color:inherit;text-decoration:none}
+#gbm-magazine-page.pg .pg-home::before{content:"\2190\00a0";color:var(--pg-orange-2)}
+/* Magazine page only: no site header strip above the Magazine's own masthead (Brenden, Oct. 3). */
+html:has(#gbm-magazine-page.pg) #gbm-site-header,html:has(#gbm-magazine-page.pg) #SITE_HEADER,html:has(#gbm-magazine-page.pg) #gbm-mobile-shell-host,html:has(#gbm-magazine-page.pg) #gbm-mobile-shell,html:has(#gbm-magazine-page.pg) #gbm-mobile-drawer-root{display:none!important}
+#gbm-magazine-page.pg .pg-issue{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:14px;padding-top:12px;border-top:2px solid var(--pg-orange);font:700 13px/1.3 var(--mz-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-issue b{color:#fff;background:var(--pg-blue);padding:4px 10px}
+
+/* cover */
+#gbm-magazine-page.pg .pg-cover{position:relative;margin-top:22px;border-radius:var(--pg-r);overflow:hidden;background:var(--pg-navy);border:1px solid var(--pg-line);box-shadow:0 24px 60px #0008}
+#gbm-magazine-page.pg .pg-cover-fig{display:block}
+#gbm-magazine-page.pg .pg-cover-type{position:relative;padding:18px 18px 22px;background:linear-gradient(180deg,var(--pg-deep),var(--pg-navy))}
+#gbm-magazine-page.pg .pg-cover-type::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--pg-orange),var(--pg-gold))}
+#gbm-magazine-page.pg .pg-cover h1{font:800 clamp(36px,10.4vw,86px)/.9 var(--mz-cond);letter-spacing:-.015em;text-transform:uppercase;color:#fff;margin-top:8px}
+#gbm-magazine-page.pg .pg-cover h1 a{display:block}
+#gbm-magazine-page.pg .pg-dek{font:500 16px/1.45 var(--mz-sans);color:#dce4ff;margin-top:14px;max-width:62ch}
+#gbm-magazine-page.pg .pg-by{font:700 13px/1.4 var(--mz-sans);letter-spacing:.06em;text-transform:uppercase;color:var(--pg-orange-2);margin-top:10px}
+#gbm-magazine-page.pg .pg-cover>.pg-cr{padding:0 18px 12px;background:var(--pg-navy)}
+
+/* section heads */
+#gbm-magazine-page.pg .pg-sh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-sh h2{font:800 clamp(28px,7vw,48px)/1 var(--mz-cond);letter-spacing:.02em;text-transform:uppercase;color:#fff}
+#gbm-magazine-page.pg .pg-sh h2::before{content:"";display:inline-block;width:.4em;height:.4em;margin-right:.35em;background:var(--pg-orange);transform:rotate(45deg) translateY(-.08em)}
+#gbm-magazine-page.pg .pg-sh p{font:600 14px/1.4 var(--mz-sans);color:var(--pg-mute)}
+#gbm-magazine-page.pg section,#gbm-magazine-page.pg .pg-lead{margin-top:44px;scroll-margin-top:70px}
+#gbm-magazine-page.pg .pg-grid{display:grid;gap:0;margin-top:0}
+#gbm-magazine-page.pg .pg-grid>section:first-child{margin-top:34px}
+
+/* the game card */
+#gbm-magazine-page.pg .pg-game{padding:18px 16px 20px;border-radius:var(--pg-r);background:linear-gradient(160deg,var(--pg-deep),var(--pg-navy) 60%);border:1px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-game-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px}
+#gbm-magazine-page.pg .pg-game-top h2{font:800 13px/1.3 var(--mz-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--pg-orange-2)}
+#gbm-magazine-page.pg .pg-count{font:800 clamp(20px,5.6vw,30px)/1 var(--mz-cond);letter-spacing:.06em;text-transform:uppercase;color:var(--pg-gold);font-variant-numeric:tabular-nums}
+#gbm-magazine-page.pg .pg-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin-top:16px}
+#gbm-magazine-page.pg .pg-team{min-width:0;text-align:center;padding:14px 6px 12px;border-radius:10px;background:#ffffff0d;border:1px solid #ffffff1c}
+#gbm-magazine-page.pg .pg-team small{display:block;font:700 11px/1.2 var(--mz-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-team b{display:block;font:800 clamp(24px,7.6vw,46px)/.95 var(--mz-cond);text-transform:uppercase;overflow-wrap:anywhere;color:#fff;margin-top:4px}
+#gbm-magazine-page.pg .pg-rec{display:block;font:800 clamp(34px,10vw,64px)/1 var(--mz-cond);margin-top:6px}
+#gbm-magazine-page.pg .pg-fla .pg-rec{color:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-miz .pg-rec{color:var(--pg-gold)}
+#gbm-magazine-page.pg .pg-team em{display:block;font:700 12px/1.3 var(--mz-sans);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--pg-mute);margin-top:4px}
+#gbm-magazine-page.pg .pg-at{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--pg-orange);color:#fff;font:800 14px/1 var(--mz-cond);letter-spacing:.08em;text-transform:uppercase}
+#gbm-magazine-page.pg .pg-when{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;font:600 14px/1.4 var(--mz-sans);color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-when b{flex:1 0 100%;font:800 clamp(20px,5.6vw,28px)/1.1 var(--mz-cond);letter-spacing:.04em;text-transform:uppercase;color:#fff}
+#gbm-magazine-page.pg .pg-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+#gbm-magazine-page.pg .pg-chips li{flex:1 1 130px;padding:9px 12px;border-radius:8px;background:#06102f;border:1px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-chips small{display:block;font:700 10px/1.2 var(--mz-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-chips b{display:block;font:800 20px/1.2 var(--mz-cond);letter-spacing:.03em;color:#fff;margin-top:2px}
+#gbm-magazine-page.pg .pg-prob{margin-top:16px}
+#gbm-magazine-page.pg .pg-prob p{font:700 11px/1.3 var(--mz-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-bar{height:14px;margin-top:7px;border-radius:7px;background:var(--pg-gold);overflow:hidden}
+#gbm-magazine-page.pg .pg-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pg-orange),var(--pg-orange-2));border-radius:7px 0 0 7px}
+#gbm-magazine-page.pg .pg-prob-n{display:flex;justify-content:space-between;margin-top:6px;font:800 15px/1.2 var(--mz-cond);letter-spacing:.06em;text-transform:uppercase}
+#gbm-magazine-page.pg .pg-prob-n b:first-child{color:var(--pg-orange-2)}
+#gbm-magazine-page.pg .pg-prob-n b:last-child{color:var(--pg-gold)}
+
+/* the series strip */
+#gbm-magazine-page.pg .pg-lede{font:500 16px/1.5 var(--mz-sans);color:var(--pg-text);max-width:62ch}
+#gbm-magazine-page.pg .pg-yrs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-top:14px}
+#gbm-magazine-page.pg .pg-yrs li{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px 7px;border-radius:8px;border:1px solid var(--pg-line);background:var(--pg-card);text-align:center;min-width:0}
+#gbm-magazine-page.pg .pg-yrs b{font:800 17px/1 var(--mz-cond);letter-spacing:.04em}
+#gbm-magazine-page.pg .pg-yrs span{font:800 14px/1.1 var(--mz-cond);font-variant-numeric:tabular-nums}
+#gbm-magazine-page.pg .pg-yrs small{font:700 9px/1.2 var(--mz-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-yrs .pg-w{background:linear-gradient(180deg,#0b2f78,#0a2260);border-color:var(--pg-blue-2)}
+#gbm-magazine-page.pg .pg-yrs .pg-w b,#gbm-magazine-page.pg .pg-yrs .pg-w span{color:#fff}
+#gbm-magazine-page.pg .pg-yrs .pg-l{background:#241408;border-color:#6c4710}
+#gbm-magazine-page.pg .pg-yrs .pg-l b,#gbm-magazine-page.pg .pg-yrs .pg-l span{color:var(--pg-gold)}
+#gbm-magazine-page.pg .pg-tally{display:flex;gap:10px;margin-top:12px;font:800 22px/1 var(--mz-cond);letter-spacing:.06em;text-transform:uppercase}
+#gbm-magazine-page.pg .pg-tally .pg-w{color:var(--pg-orange-2)}
+#gbm-magazine-page.pg .pg-tally .pg-l{color:var(--pg-gold)}
+
+/* tale of the tape */
+#gbm-magazine-page.pg .pg-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;font:800 14px/1.3 var(--mz-cond);letter-spacing:.1em;text-transform:uppercase}
+#gbm-magazine-page.pg .pg-lf{color:var(--pg-orange-2)}#gbm-magazine-page.pg .pg-lm{color:var(--pg-gold)}
+#gbm-magazine-page.pg .pg-legend small{flex:1 0 100%;font:500 12px/1.4 var(--mz-sans);letter-spacing:0;text-transform:none;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-rows{display:grid;gap:14px;margin-top:14px}
+#gbm-magazine-page.pg .pg-row-l{display:block;text-align:center;font:800 14px/1.2 var(--mz-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--pg-mute);margin-bottom:5px}
+#gbm-magazine-page.pg .pg-rbars{display:grid;grid-template-columns:minmax(46px,auto) 1fr 1fr minmax(46px,auto);align-items:center;gap:0 6px}
+#gbm-magazine-page.pg .pg-v{font:800 20px/1 var(--mz-cond);font-variant-numeric:tabular-nums;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-v:last-child{text-align:right}
+#gbm-magazine-page.pg .pg-v.pg-win{color:#fff}
+#gbm-magazine-page.pg .pg-half{height:18px;background:#ffffff0f;display:flex}
+#gbm-magazine-page.pg .pg-hf{justify-content:flex-end;border-radius:9px 0 0 9px}
+#gbm-magazine-page.pg .pg-hm{justify-content:flex-start;border-radius:0 9px 9px 0}
+#gbm-magazine-page.pg .pg-half i{display:block;height:100%;background:#7a3a24}
+#gbm-magazine-page.pg .pg-hf i{border-radius:9px 0 0 9px;background:#8a3a1d}
+#gbm-magazine-page.pg .pg-hm i{border-radius:0 9px 9px 0;background:#6f5a1b}
+#gbm-magazine-page.pg .pg-hf i.pg-win{background:linear-gradient(270deg,var(--pg-orange),var(--pg-orange-2))}
+#gbm-magazine-page.pg .pg-hm i.pg-win{background:linear-gradient(90deg,var(--pg-gold),#ffd36e)}
+
+/* three keys */
+#gbm-magazine-page.pg .pg-keys ol{display:grid;gap:12px}
+#gbm-magazine-page.pg .pg-keys li{position:relative;padding:16px 16px 14px 16px;border-radius:var(--pg-r);background:var(--pg-card);border:1px solid var(--pg-line);overflow:hidden}
+#gbm-magazine-page.pg .pg-n{position:absolute;right:10px;top:-14px;font:800 108px/1 var(--mz-cond);color:transparent;-webkit-text-stroke:1.5px #2b57ff66;pointer-events:none}
+#gbm-magazine-page.pg .pg-keys h3{position:relative;font:800 clamp(22px,5.8vw,30px)/1.05 var(--mz-cond);text-transform:uppercase;letter-spacing:.01em;color:#fff;padding-right:60px}
+#gbm-magazine-page.pg .pg-keys p{position:relative;margin-top:8px;font:500 15px/1.5 var(--mz-sans);color:#dbe3ff}
+
+/* availability */
+#gbm-magazine-page.pg .pg-watch dl{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+#gbm-magazine-page.pg .pg-watch dl>div{padding:12px 14px;border-radius:var(--pg-r);background:var(--pg-card);border:1px solid var(--pg-line);min-width:0}
+#gbm-magazine-page.pg .pg-watch dt{font:800 12px/1 var(--mz-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--pg-orange-2);margin-bottom:6px}
+#gbm-magazine-page.pg .pg-watch dd{margin:0;font:700 17px/1.3 var(--mz-sans);color:#fff}
+#gbm-magazine-page.pg .pg-wl{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px}
+#gbm-magazine-page.pg .pg-ros-grid{display:grid;gap:12px}
+#gbm-magazine-page.pg .pg-team{border-radius:var(--pg-r);background:var(--pg-card);border:1px solid var(--pg-line);overflow:hidden}
+#gbm-magazine-page.pg .pg-team summary{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;padding:14px 16px;cursor:pointer;list-style:none;min-height:44px}
+#gbm-magazine-page.pg .pg-team summary::-webkit-details-marker{display:none}
+#gbm-magazine-page.pg .pg-team summary b{font:800 26px/1 var(--mz-cond);letter-spacing:.06em;text-transform:uppercase;color:#fff}
+#gbm-magazine-page.pg .pg-team summary b::after{content:" +";color:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-team[open] summary b::after{content:" \2212"}
+#gbm-magazine-page.pg .pg-team summary span{font:600 13px/1.3 var(--mz-sans);color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-team h3{font:800 14px/1 var(--mz-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--pg-orange-2);padding:12px 16px 6px}
+#gbm-magazine-page.pg .pg-team ul{padding:0 16px 10px}
+#gbm-magazine-page.pg .pg-team li{display:grid;grid-template-columns:34px 1fr auto auto;align-items:center;gap:2px 10px;padding:7px 0;border-bottom:1px solid var(--pg-line);font-variant-numeric:tabular-nums}
+#gbm-magazine-page.pg .pg-team li .pg-no{font:800 16px/1 var(--mz-cond);color:var(--pg-mute);text-align:right}
+#gbm-magazine-page.pg .pg-team li b{font:600 15px/1.25 var(--mz-sans);color:#fff;min-width:0}
+#gbm-magazine-page.pg .pg-team li i{font:800 12px/1 var(--mz-cond);font-style:normal;letter-spacing:.08em;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-team li small{font:700 11px/1 var(--mz-cond);letter-spacing:.08em;color:var(--pg-mute);min-width:22px}
+#gbm-magazine-page.pg .pg-team li .pg-st{grid-column:2/5;justify-self:start}
+#gbm-magazine-page.pg .pg-team li.pg-hurt b{color:var(--pg-orange-2)}
+@media (min-width:900px){#gbm-magazine-page.pg .pg-ros-grid{grid-template-columns:1fr 1fr;align-items:start}}
+@media print{#gbm-magazine-page.pg .pg-team>*{display:block!important}#gbm-magazine-page.pg .pg-team ul{columns:2}}
+#gbm-magazine-page.pg .pg-inj-grid{display:grid;gap:16px}
+#gbm-magazine-page.pg .pg-inj h3{font:800 22px/1 var(--mz-cond);letter-spacing:.08em;text-transform:uppercase;color:var(--pg-orange-2);margin-bottom:8px}
+#gbm-magazine-page.pg .pg-inj li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2px 10px;padding:10px 0;border-bottom:1px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-inj i{font:800 12px/1 var(--mz-cond);font-style:normal;letter-spacing:.08em;padding:4px 7px;border-radius:4px;background:#ffffff14;color:var(--pg-mute);min-width:40px;text-align:center}
+#gbm-magazine-page.pg .pg-inj b{font:700 16px/1.3 var(--mz-sans);color:#fff}
+#gbm-magazine-page.pg .pg-inj small{grid-column:2/4;font:500 12px/1.4 var(--mz-sans);color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-st{font:800 11px/1 var(--mz-cond);letter-spacing:.12em;text-transform:uppercase;padding:5px 8px;border-radius:4px}
+#gbm-magazine-page.pg .pg-st[data-s="out"]{background:#7a1c10;color:#ffd9d1}
+#gbm-magazine-page.pg .pg-st[data-s="questionable"]{background:#6b5410;color:#ffeaa8}
+
+/* Franz, the lead column */
+#gbm-magazine-page.pg .pg-lead{position:relative;padding:22px 16px 28px;border-radius:var(--pg-r);background:var(--pg-cream);color:var(--pg-ink);box-shadow:0 0 0 6px var(--pg-orange),0 30px 60px #0009}
+#gbm-magazine-page.pg .pg-lead .pg-kick{color:#a83511}
+#gbm-magazine-page.pg .pg-lead h2{font:800 clamp(32px,8.4vw,60px)/.95 var(--mz-cond);text-transform:uppercase;letter-spacing:-.01em;color:var(--pg-ink);margin-top:8px}
+#gbm-magazine-page.pg .pg-lead .pg-by{color:#42506a;text-transform:none;letter-spacing:.02em}
+#gbm-magazine-page.pg .pg-fig{margin:18px 0 6px}
+#gbm-magazine-page.pg .pg-fig figcaption{font:500 13px/1.45 var(--mz-sans);color:#42506a;padding-top:8px}
+#gbm-magazine-page.pg .pg-fig figcaption span{display:block;font-size:11px;color:#526075}
+#gbm-magazine-page.pg .pg-prose{max-width:68ch;margin-top:14px}
+#gbm-magazine-page.pg .pg-prose p{font:500 18px/1.65 var(--mz-sans);margin:0 0 1.05em;color:#162a50}
+#gbm-magazine-page.pg .pg-prose>p:first-child::first-letter{float:left;font:800 4.6em/.8 var(--mz-cond);padding:.06em .1em 0 0;color:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-prose a{color:#0a2fc0;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+#gbm-magazine-page.pg .pg-prose blockquote{margin:1.4em 0;padding:4px 0 4px 18px;border-left:6px solid var(--pg-orange)}
+#gbm-magazine-page.pg .pg-prose blockquote p{font:700 clamp(21px,5.4vw,28px)/1.25 var(--mz-cond);letter-spacing:.005em;color:var(--pg-ink);margin:0}
+#gbm-magazine-page.pg .pg-prose blockquote{font:600 clamp(20px,5vw,24px)/1.35 var(--mz-cond);letter-spacing:.01em;color:var(--pg-ink)}
+#gbm-magazine-page.pg .pg-prose .pg-sooth{padding:16px 16px 4px;margin-top:1.4em;border-radius:10px;background:var(--pg-ink);color:#e8edff;font-size:17px}
+#gbm-magazine-page.pg .pg-prose .pg-sooth strong{display:block;font:800 22px/1.2 var(--mz-cond);letter-spacing:.06em;text-transform:uppercase;color:var(--pg-orange-2);margin-bottom:6px}
+#gbm-magazine-page.pg .pg-lead .pg-btn{margin-top:8px}
+
+/* the sooth board */
+#gbm-magazine-page.pg .pg-games{display:grid;gap:12px}
+#gbm-magazine-page.pg .pg-g{padding:14px 14px 12px;border-radius:var(--pg-r);background:var(--pg-card);border:1px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-g.pg-hero{background:linear-gradient(160deg,#4b1a0d,#0f1c4a 70%);border-color:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-gt{display:flex;justify-content:space-between;font:800 14px/1.2 var(--mz-cond);letter-spacing:.1em;text-transform:uppercase}
+#gbm-magazine-page.pg .pg-gt span{color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-g ul{margin-top:8px}
+#gbm-magazine-page.pg .pg-g li{display:grid;grid-template-columns:26px 1fr auto;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #ffffff12}
+#gbm-magazine-page.pg .pg-rk{font:800 14px/1 var(--mz-cond);color:var(--pg-gold);text-align:center}
+#gbm-magazine-page.pg .pg-g li b{font:800 22px/1.1 var(--mz-cond);text-transform:uppercase;letter-spacing:.02em;overflow-wrap:anywhere;color:#d3dcfb}
+#gbm-magazine-page.pg .pg-rc{font:700 13px/1 var(--mz-sans);color:var(--pg-mute);font-variant-numeric:tabular-nums}
+#gbm-magazine-page.pg .pg-g li.pg-picked b{color:#fff}
+#gbm-magazine-page.pg .pg-g li.pg-picked{box-shadow:inset 4px 0 0 var(--pg-orange);padding-left:4px}
+#gbm-magazine-page.pg .pg-gl{display:flex;gap:14px;margin-top:8px;font:700 13px/1.2 var(--mz-sans);letter-spacing:.06em;color:var(--pg-mute);font-variant-numeric:tabular-nums}
+#gbm-magazine-page.pg .pg-pick{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;margin-top:10px;padding:9px 12px;border-radius:8px;background:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-pick small{font:700 10px/1.2 var(--mz-sans);letter-spacing:.14em;text-transform:uppercase;color:#ffe4d8}
+#gbm-magazine-page.pg .pg-pick b{font:800 22px/1.1 var(--mz-cond);letter-spacing:.04em;text-transform:uppercase;color:#fff}
+#gbm-magazine-page.pg .pg-pick em{font:600 12px/1.2 var(--mz-sans);font-style:normal;color:#ffe4d8}
+
+/* more from this week */
+#gbm-magazine-page.pg .pg-cgrid{display:grid;gap:14px}
+#gbm-magazine-page.pg .pg-card{display:flex;flex-direction:column;gap:8px;padding:12px 12px 14px;border-radius:var(--pg-r);background:var(--pg-card);border:1px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-card .mz-frame{border-radius:8px;aspect-ratio:16/10!important}
+#gbm-magazine-page.pg .pg-card h3{font:800 clamp(22px,5.8vw,28px)/1.05 var(--mz-cond);letter-spacing:.005em;color:#fff}
+#gbm-magazine-page.pg .pg-card p{font:500 15px/1.45 var(--mz-sans);color:#cdd7f7}
+#gbm-magazine-page.pg .pg-card .pg-cr{padding-top:0}
+#gbm-magazine-page.pg .pg-card .pg-more{align-self:flex-start;margin-top:2px}
+
+/* best shots */
+#gbm-magazine-page.pg .pg-mosaic{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#gbm-magazine-page.pg .pg-shot{position:relative;display:block;border-radius:10px;overflow:hidden;background:var(--pg-navy)}
+#gbm-magazine-page.pg .pg-shot span{display:block;padding:7px 10px 9px;font:700 12px/1.3 var(--mz-sans);letter-spacing:.04em;color:#dbe3ff}
+#gbm-magazine-page.pg .pg-s0{grid-column:1/-1}
+
+/* footer */
+#gbm-magazine-page.pg .pg-foot{margin-top:48px;padding:22px 0 0;border-top:3px solid var(--pg-orange)}
+#gbm-magazine-page.pg .pg-foot h2{font:800 14px/1.2 var(--mz-sans);letter-spacing:.2em;text-transform:uppercase;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-foot nav{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:10px}
+#gbm-magazine-page.pg .pg-foot nav a{display:inline-flex;align-items:center;min-height:44px;font:800 18px/1 var(--mz-cond);letter-spacing:.08em;text-transform:uppercase;color:#fff;border-bottom:3px solid var(--pg-orange)}
+#gbm-magazine-page.pg .pg-foot>p:not(.pg-src){margin-top:12px;font:600 15px/1.45 var(--mz-sans);color:var(--pg-text)}
+#gbm-magazine-page.pg .pg-top{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font:800 14px/1 var(--mz-cond);letter-spacing:.12em;text-transform:uppercase;color:var(--pg-orange-2)}
+
+@media (min-width:700px){
+  #gbm-magazine-page.pg{--mz-pad:24px}
+  #gbm-magazine-page.pg .pg-cgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-games{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-keys ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-inj-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+  #gbm-magazine-page.pg .pg-mosaic{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-s0{grid-column:span 2}
+  #gbm-magazine-page.pg .pg-yrs{grid-template-columns:repeat(12,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-lead{padding:34px 36px 38px}
+}
+@media (min-width:1000px){
+  #gbm-magazine-page.pg .pg-mast{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"top top" "word issue" "word2 issue";align-items:end;gap:0 40px}
+  #gbm-magazine-page.pg .pg-mast-top{grid-area:top}
+  #gbm-magazine-page.pg .pg-wm{grid-area:2 / 1 / 4 / 2;max-width:760px}
+  #gbm-magazine-page.pg .pg-issue{grid-area:issue;flex-direction:column;align-items:flex-end;margin:0 0 8px;padding:0 0 0 26px;border-top:0;border-left:2px solid var(--pg-orange);font-size:16px;text-align:right}
+  #gbm-magazine-page.pg .pg-issue b{font-size:26px;padding:6px 14px}
+  #gbm-magazine-page.pg .pg-cover-type{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:6px 44px;align-items:start;padding:30px 36px 34px}
+  #gbm-magazine-page.pg .pg-cover-type .pg-kick{grid-column:1/-1}
+  #gbm-magazine-page.pg .pg-cover h1{grid-column:1;grid-row:2/6;font-size:clamp(52px,6.2vw,84px);margin-top:0}
+  #gbm-magazine-page.pg .pg-dek{grid-column:2;margin-top:6px;font-size:18px}
+  #gbm-magazine-page.pg .pg-cover .pg-by{grid-column:2}
+  #gbm-magazine-page.pg .pg-cover .pg-btn{grid-column:2;justify-self:start}
+  #gbm-magazine-page.pg .pg-cover>.pg-cr{padding:0 36px 14px}
+  #gbm-magazine-page.pg .pg-lead{max-width:920px;margin-left:auto;margin-right:auto}
+  #gbm-magazine-page.pg .pg-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0 28px;align-items:start}
+  #gbm-magazine-page.pg .pg-cgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-games{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-keys ol{grid-template-columns:repeat(4,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-rows{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 40px}
+  #gbm-magazine-page.pg .pg-yrs{grid-template-columns:repeat(6,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-mosaic{grid-template-columns:repeat(4,minmax(0,1fr))}
+  #gbm-magazine-page.pg .pg-s0{grid-column:span 2;grid-row:span 2}
+}
+@media print{#gbm-magazine-page.pg{background:#fff;color:#000}#gbm-magazine-page.pg .pg-ticker{display:none}}
+
+/* print the whole magazine */
+#gbm-magazine-page.pg .pg-print{justify-self:start;margin-top:14px;font:800 15px/1 var(--mz-cond);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:transparent;border:2px solid var(--pg-orange);border-radius:999px;padding:11px 20px;cursor:pointer}
+#gbm-magazine-page.pg .pg-print:hover,#gbm-magazine-page.pg .pg-print:focus-visible{background:var(--pg-orange)}
+@page{size:letter;margin:9mm}
+@media print{
+  html,body{background:#060b1c!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #SITE_HEADER,#SITE_FOOTER,[id*="consent"],[class*="consent"],[data-hook*="consent"]{display:none!important}
+  #gbm-magazine-page.pg{width:100%!important;max-width:none!important;margin:0!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #gbm-magazine-page.pg *{-webkit-print-color-adjust:exact;print-color-adjust:exact;animation:none!important}
+  #gbm-magazine-page.pg .pg-print,#gbm-magazine-page.pg .pg-ticker,#gbm-magazine-page.pg .pg-btn{display:none!important}
+  #gbm-magazine-page.pg section,#gbm-magazine-page.pg article,#gbm-magazine-page.pg .pg-card,#gbm-magazine-page.pg .pg-key,#gbm-magazine-page.pg figure,#gbm-magazine-page.pg .pg-sg{break-inside:avoid;page-break-inside:avoid}
+  #gbm-magazine-page.pg h2{break-after:avoid}
+  #gbm-magazine-page.pg a{text-decoration:none}
+}

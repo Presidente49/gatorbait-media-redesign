@@ -1,0 +1,25 @@
+<!-- GBM_WRITER_SHOW_PROMOS_V1 2026-10-01 -->
+<style id="gbm-writer-show-style">
+#gbm-writer-show{box-sizing:border-box;margin:20px 0;padding:24px;max-width:850px;background:#f2f5fa;border-top:4px solid #fa4616;color:#08132f;font-family:Barlow,Arial,sans-serif}
+#gbm-writer-show h3{font-size:clamp(23px,4vw,32px);line-height:1.15;margin:8px 0}
+#gbm-writer-show p{margin:8px 0;font-size:16px;line-height:1.5}#gbm-writer-show .gbws-kicker{font-size:12px;font-weight:800;letter-spacing:.12em}
+#gbm-writer-show a{display:inline-flex;align-items:center;min-height:44px;margin-right:20px;font-size:16px;color:#0021a5;font-weight:700;text-decoration:underline}
+#gbm-writer-show a:focus-visible{outline:3px solid #fa4616;outline-offset:3px}
+</style>
+<script>(function(){
+'use strict';if(window.__GBM_WRITER_SHOW_V1__)return;window.__GBM_WRITER_SHOW_V1__=true;
+var writers={buddymartinshow:['Buddy Martin','Editor','Catch Buddy Martin on The Buddy Martin Show.'],coachmeadows:['Loren Meadows','Football Analyst','Catch Loren Meadows on Florida Gator Lowdown.'],franz:['Franz Beard','Senior Columnist','Keep up with GatorBait on YouTube.'],brenden:['Brenden Martin','Publisher','Keep up with GatorBait on YouTube.'],'eddie-gilley75145':['Eddie Gilley','Writer','Keep up with GatorBait on YouTube.'],'9322e920-3989-4e86-bfad-6a714ff21fd5':['Eddie Gilley','Writer','Keep up with GatorBait on YouTube.'],'28879c23-51ea-47d3-ac02-a41cd5376fcd':['Carlton Reese','Writer','Keep up with GatorBait on YouTube.']};
+var timers=[];
+function mount(){
+var match=/^\/profile\/([^/]+)\/profile\/?$/.exec(location.pathname),p=match&&writers[match[1]],old=document.getElementById('gbm-writer-show');
+if(old&&(!p||old.dataset.writer!==match[1]))old.remove();
+if(!p||document.getElementById('gbm-writer-show'))return;
+var title=document.getElementById('members-area-page-title');if(!title)return;
+var block=document.createElement('aside');block.id='gbm-writer-show';block.dataset.writer=match[1];block.setAttribute('aria-label',p[0]+' shows and subscriptions');
+block.innerHTML='<p class="gbws-kicker">GATORBAIT TV</p><h3>'+p[2]+'</h3><p>'+p[0]+' · '+p[1]+'<br><a href="https://www.gatorbaitmedia.com/">gatorbaitmedia.com</a></p><div><a href="https://www.youtube.com/@TheBuddyMartinShow/videos">Browse GatorBait TV shows →</a><a href="https://www.youtube.com/@TheBuddyMartinShow?sub_confirmation=1">Subscribe on YouTube →</a></div>';
+title.insertAdjacentElement('afterend',block);
+}
+function sync(){timers.forEach(clearTimeout);mount();timers=[300,1000,3000,6000].map(function(ms){return setTimeout(mount,ms);});}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync,{once:true});else sync();
+window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

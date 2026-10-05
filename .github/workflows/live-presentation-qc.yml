@@ -37,6 +37,20 @@ jobs:
           npm install --no-save playwright@1.49.1
           npx playwright install --with-deps chromium
 
+      - name: Check and render magazine reader candidate
+        run: |
+          python3 sports-live/check-magazine-parity.py --self-test
+          node sports-live/test-magazine-contracts.mjs
+          node sports-live/build-magazine.mjs --check
+          node sports-live/qa-magazine-reader.mjs
+
+      - name: Upload magazine candidate proofs
+        uses: actions/upload-artifact@v4
+        with:
+          name: gatorbait-magazine-reader-candidate
+          path: build/magazine-reader-qa
+          if-no-files-found: error
+
       - name: Render and audit production
         run: node automation/vision/live-qc.mjs
 
@@ -45,5 +59,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: gatorbait-live-presentation-qc
-          path: build/live-site-vision
+          path: |
+            build/live-site-vision
+            build/magazine-reader-qa
           if-no-files-found: error

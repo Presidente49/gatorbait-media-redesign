@@ -1,0 +1,168 @@
+{
+  "mode": "production",
+  "url": "https://www.gatorbaitmedia.com/magazine",
+  "expected": "c838f940",
+  "at": "2026-10-05T03:55:36.961Z",
+  "checks": [
+    {
+      "width": 320,
+      "reduced": false,
+      "errors": [],
+      "http": 200,
+      "pass": false,
+      "failure": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('.pm-open') to be visible\n"
+    },
+    {
+      "width": 390,
+      "reduced": false,
+      "errors": [],
+      "http": 200,
+      "cover": {
+        "build": "c838f940",
+        "overflow": 0,
+        "ratio": 0.5628930817610063,
+        "title": "Hey Missouri, don’t show me anymore!",
+        "headlineInside": true,
+        "buttonHeight": 636,
+        "photo": true,
+        "transition": "0.48s, 0.48s",
+        "stories": 7,
+        "dateSize": 12,
+        "creditSize": 12
+      },
+      "opened": {
+        "focus": "pm-contents",
+        "focusTag": "NAV",
+        "focusText": "In this issue1The damage2Game flow3Report card4In their words5The package6Up next",
+        "overflow": 0,
+        "top": 58
+      },
+      "navigation": {
+        "focus": "pm-grades",
+        "closed": true,
+        "top": 72.4375
+      },
+      "print": {
+        "cover": "none",
+        "bar": "none",
+        "story": 959.75,
+        "stats": 1134.4375
+      },
+      "pass": true
+    },
+    {
+      "width": 430,
+      "reduced": false,
+      "errors": [],
+      "http": 200,
+      "cover": {
+        "build": "c838f940",
+        "overflow": 0,
+        "ratio": 0.5621468926553672,
+        "title": "Hey Missouri, don’t show me anymore!",
+        "headlineInside": true,
+        "buttonHeight": 708,
+        "photo": true,
+        "transition": "0.48s, 0.48s",
+        "stories": 7,
+        "dateSize": 12,
+        "creditSize": 12
+      },
+      "opened": {
+        "focus": "pm-contents",
+        "focusTag": "NAV",
+        "focusText": "In this issue1The damage2Game flow3Report card4In their words5The package6Up next",
+        "overflow": 0,
+        "top": 58
+      },
+      "navigation": {
+        "focus": "pm-grades",
+        "closed": true,
+        "top": 72.09375
+      },
+      "print": {
+        "cover": "none",
+        "bar": "none",
+        "story": 974.203125,
+        "stats": 1155.921875
+      },
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "reduced": false,
+      "errors": [],
+      "http": 200,
+      "cover": {
+        "build": "c838f940",
+        "overflow": 0,
+        "ratio": 0.562962962962963,
+        "title": "Hey Missouri, don’t show me anymore!",
+        "headlineInside": true,
+        "buttonHeight": 810,
+        "photo": true,
+        "transition": "0.48s, 0.48s",
+        "stories": 7,
+        "dateSize": 13.6687,
+        "creditSize": 13.6687
+      },
+      "opened": {
+        "focus": "pm-contents",
+        "focusTag": "NAV",
+        "focusText": "In this issue1The damage2Game flow3Report card4In their words5The package6Up next",
+        "overflow": 0,
+        "top": 58
+      },
+      "navigation": {
+        "focus": "pm-grades",
+        "closed": true,
+        "top": 72.234375
+      },
+      "print": {
+        "cover": "none",
+        "bar": "none",
+        "story": 618.28125,
+        "stats": 729.265625
+      },
+      "pass": true
+    },
+    {
+      "width": 390,
+      "reduced": true,
+      "errors": [],
+      "http": 200,
+      "cover": {
+        "build": "c838f940",
+        "overflow": 0,
+        "ratio": 0.5628930817610063,
+        "title": "Hey Missouri, don’t show me anymore!",
+        "headlineInside": true,
+        "buttonHeight": 636,
+        "photo": true,
+        "transition": "0s",
+        "stories": 7,
+        "dateSize": 12,
+        "creditSize": 12
+      },
+      "opened": {
+        "focus": "pm-contents",
+        "focusTag": "NAV",
+        "focusText": "In this issue1The damage2Game flow3Report card4In their words5The package6Up next",
+        "overflow": 0,
+        "top": 58
+      },
+      "navigation": {
+        "focus": "pm-grades",
+        "closed": true,
+        "top": 72.4375
+      },
+      "print": {
+        "cover": "none",
+        "bar": "none",
+        "story": 959.75,
+        "stats": 1134.4375
+      },
+      "pass": true
+    }
+  ]
+}

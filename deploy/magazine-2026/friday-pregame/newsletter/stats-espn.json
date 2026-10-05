@@ -1,0 +1,33 @@
+{
+  "source": "ESPN site API, pulled Oct. 2, 2026: teams/57/statistics and teams/142/statistics (season 2026); leaders from summary?event=401856708",
+  "tape": [
+    ["Points per game", "53.5", "35.8", true],
+    ["Points allowed", "22.8", "20.8", false],
+    ["Total yards per game", "532.8", "418.8", true],
+    ["Rushing yards per game", "260.0", "155.8", true],
+    ["Yards per carry", "5.9", "4.2", true],
+    ["Yards per pass attempt", "10.5", "8.6", true],
+    ["Completion %", "73.1%", "64.2%", true],
+    ["Third-down conversions", "47.7%", "40.7%", true],
+    ["Opponent third downs", "40.6%", "32.2%", false],
+    ["Sacks by the defense", "12", "12", true],
+    ["Tackles for loss", "23", "20", true],
+    ["Field goal %", "100.0%", "62.5%", true]
+  ],
+  "leaders": {
+    "Florida": [
+      ["Passing", "#12 Aaron Philo, QB", "63 of 87, 917 yards, 7 TD, 2 INT"],
+      ["Rushing", "#13 Jadan Baugh, RB", "83 carries, 600 yards, 11 TD"],
+      ["Receiving", "#1 Vernell Brown III, WR", "17 catches, 271 yards, 2 TD"],
+      ["Sacks", "#0 Jayden Woods, LB", "4"],
+      ["Tackles", "#5 Myles Graham, LB", "28"]
+    ],
+    "Missouri": [
+      ["Passing", "#13 Austin Simmons, QB", "70 of 107, 947 yards, 11 TD"],
+      ["Rushing", "#20 Jamal Roberts, RB", "89 carries, 395 yards, 3 TD"],
+      ["Receiving", "#19 Cayden Lee, WR", "27 catches, 412 yards, 4 TD"],
+      ["Sacks", "#10 Daeden Hopkins, EDGE", "6"],
+      ["Tackles", "#5 Nicholas Rodriguez, LB", "39"]
+    ]
+  }
+}

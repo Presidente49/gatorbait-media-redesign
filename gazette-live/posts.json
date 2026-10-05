@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Buddy Blog: Florida Gators Need the Balm of Homecoming This Week",
+      "excerpt": "Sumrall didn’t care about Mizzou’s homecoming, but he certainly does his own this week. Buddy Martin on Florida’s reset, Mac Steen and a lesson from 1990.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-florida-gators-need-the-balm-of-homecoming-this-week",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-05T22:00:34Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Buddy Blog: Florida Gators Need the Balm of Homecoming This Week"
+      }
+    },
+    {
+      "title": "Reeling Gamecocks, Rattled Gators: Homecoming Comes With a Fix List",
+      "excerpt": "Florida's first loss left a to-do list: block the run, stop the run, talk in the secondary. Homecoming brings a South Carolina team that is reeling even worse.",
+      "url": "https://www.gatorbaitmedia.com/post/reeling-gamecocks-rattled-gators-homecoming-comes-with-a-fix-list",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-05T18:33:48Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_52f12f29b57540dcb22edd0fa545ceb1~mv2.jpg/v1/fit/w_800,h_500,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Reeling Gamecocks, Rattled Gators: Homecoming Comes With a Fix List"
+      }
+    },
+    {
       "title": "Florida Gave On Saturday—Gave Way Too Much!",
       "excerpt": "Florida was beaten in every phase at Missouri. Eddie Gilley examines what went wrong and what comes next for the Gators.",
       "url": "https://www.gatorbaitmedia.com/post/florida-gave-on-saturday",
@@ -27,6 +55,20 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Missouri 45, Florida 17: Postgame Analysis"
+      }
+    },
+    {
+      "title": "Florida Gave On Saturday",
+      "excerpt": "Florida Gave On Saturday By Eddie Gilley Florida had it handed to them in Columbia on Saturday afternoon. They were whipped in every phase of the game. There is nothing you can point to where the Gators were better on Saturday. Missouri had the answer for Florida's run game. Load the box. Commit to playing man coverage and a single safety on first down and…",
+      "url": "https://www.gatorbaitmedia.com/post/florida-gave-on-saturday-1",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-10-05T04:00:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_7899efcd866b4882a1cde64071e4d842~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida Gave On Saturday"
       }
     },
     {
@@ -237,48 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Jon Sumrall Named Inaugural Dodd Trophy Coach of the Month"
-      }
-    },
-    {
-      "title": "The Wizards Have Spoken, And These Florida Gators Are Suddenly Somebody",
-      "excerpt": "Hey! No resting on your laurels, Scott Stricklin By Buddy Martin GatorBaitMedia.com Somewhere in Gainesville there’s a whistle with teeth marks in it. It belongs to Jon Sumrall, and it’s the only thing in Florida football that has taken a beating lately. Think back to where we were a month ago. If you’d said in August that the Gators would go into the first…",
-      "url": "https://www.gatorbaitmedia.com/post/the-wizards-have-spoken-and-these-2026-florida-gators-suddenly-somebody",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-03T04:34:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_252aaaab6d0345418c1f59dc860889f2~mv2.avif/v1/fit/w_576,h_864,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Wizards Have Spoken, And These Florida Gators Are Suddenly Somebody"
-      }
-    },
-    {
-      "title": "Something’s Got to Give",
-      "excerpt": "Florida wants to run behind Jadan Baugh. Missouri allows about 100 rushing yards a game. Eddie Gilley on which unit gives first in Columbia.",
-      "url": "https://www.gatorbaitmedia.com/post/something-s-got-to-give",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-03T02:54:42Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Something’s Got to Give"
-      }
-    },
-    {
-      "title": "Denzel Aberdeen is back home where he belongs",
-      "excerpt": "A judge cleared Denzel Aberdeen for a fifth year, and the guard who left after Florida's 2025 title is back in Gainesville chasing another championship and his degree.",
-      "url": "https://www.gatorbaitmedia.com/post/denzel-aberdeen-back-home-where-he-belongs",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-02T17:06:28Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/a99769_73393b48895d46beb49e488c798b91e3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Denzel Aberdeen is back home where he belongs"
       }
     }
   ]

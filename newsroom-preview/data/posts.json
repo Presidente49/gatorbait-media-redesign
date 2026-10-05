@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Buddy Blog: Florida Gators Need the Balm of Homecoming This Week",
+      "excerpt": "Sumrall didn’t care about Mizzou’s homecoming, but he certainly does his own this week. Buddy Martin on Florida’s reset, Mac Steen and a lesson from 1990.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-florida-gators-need-the-balm-of-homecoming-this-week",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-05T22:00:34Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Buddy Blog: Florida Gators Need the Balm of Homecoming This Week"
+      }
+    },
+    {
+      "title": "Reeling Gamecocks, Rattled Gators: Homecoming Comes With a Fix List",
+      "excerpt": "Florida's first loss left a to-do list: block the run, stop the run, talk in the secondary. Homecoming brings a South Carolina team that is reeling even worse.",
+      "url": "https://www.gatorbaitmedia.com/post/reeling-gamecocks-rattled-gators-homecoming-comes-with-a-fix-list",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-05T18:33:48Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_52f12f29b57540dcb22edd0fa545ceb1~mv2.jpg/v1/fit/w_800,h_500,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Reeling Gamecocks, Rattled Gators: Homecoming Comes With a Fix List"
+      }
+    },
+    {
       "title": "Florida Gave On Saturday—Gave Way Too Much!",
       "excerpt": "Florida was beaten in every phase at Missouri. Eddie Gilley examines what went wrong and what comes next for the Gators.",
       "url": "https://www.gatorbaitmedia.com/post/florida-gave-on-saturday",
@@ -27,6 +55,20 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Missouri 45, Florida 17: Postgame Analysis"
+      }
+    },
+    {
+      "title": "Florida Gave On Saturday",
+      "excerpt": "Florida Gave On Saturday By Eddie Gilley Florida had it handed to them in Columbia on Saturday afternoon. They were whipped in every phase of the game. There is nothing you can point to where the Gators were better on Saturday. Missouri had the answer for Florida's run game. Load the box. Commit to playing man coverage and a single safety on first down and…",
+      "url": "https://www.gatorbaitmedia.com/post/florida-gave-on-saturday-1",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-10-05T04:00:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_7899efcd866b4882a1cde64071e4d842~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida Gave On Saturday"
       }
     },
     {
@@ -125,48 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Hey Missouri, Don’t Show Me Anymore!"
-      }
-    },
-    {
-      "title": "Reality Check: What Florida’s First Loss Exposed, and the Road Ahead",
-      "excerpt": "Missouri ran for 220 yards and held Florida to 42. With South Carolina, Texas and Georgia next, here is what the 45-17 loss exposed for the Gators.",
-      "url": "https://www.gatorbaitmedia.com/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-10-03T23:14:42Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_d600f2d12282447eb6ceb6bfb0d988f3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Reality Check: What Florida’s First Loss Exposed, and the Road Ahead"
-      }
-    },
-    {
-      "title": "Roberts Runs Away, Missouri Routs Florida 45-17",
-      "excerpt": "Jamal Roberts ran for 211 yards and three touchdowns as No. 25 Missouri scored 35 straight points and handed No. 8 Florida its first loss, 45-17, in Columbia.",
-      "url": "https://www.gatorbaitmedia.com/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-10-03T23:12:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_771d22e505854ba38fdfb8124e95e1d0~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Roberts Runs Away, Missouri Routs Florida 45-17"
-      }
-    },
-    {
-      "title": "Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10",
-      "excerpt": "Austin Simmons threw two touchdown passes and No. 25 Missouri held Jadan Baugh to 12 yards on nine carries to lead No. 8 Florida 20-10 at the half in Columbia.",
-      "url": "https://www.gatorbaitmedia.com/post/halftime-simmons-strikes-twice-missouri-leads-florida-20-10",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-10-03T21:49:53Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c2096747d67b47c68ca6e6839330cb03~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10"
       }
     }
   ]

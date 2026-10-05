@@ -59,6 +59,7 @@ Friendly names are not sufficient identity for automations, campaigns, embeds, o
 - Never restore retired competing themes, permanent rapid polling, first-paint hiding, or broad CSS selectors without a tested reason.
 - Keep credentials/secrets out of the repo.
 - Generated social/email/publication output is draft unless the active request authorizes that publication/send.
+- **Media permanence gate:** no live Wix article may reference an image, photo, graphic, roster, schedule or other visual until that asset is stored in the production Wix Media Manager. Use `MEDIA / ARTICLES / YYYY / MM-MMM / YYYY-MM-DD <Story Name>` for article assets, create missing folders first, and use the resulting Wix media ID/URL. Never hotlink or depend on temporary/local/chat-transfer assets. Full rule: `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md` section 1A.
 - Measured repeated outcomes may graduate into reviewed playbooks; they do not silently rewrite money, safety, approval, or customer-data boundaries.
 - Persistent defects converge on one owned work item/issue instead of spawning duplicate fixes or duplicate alerts.
 - After an authorized mutation, run primary verification plus an independent evidence check when practical; do not stack a second production patch in the same cycle.

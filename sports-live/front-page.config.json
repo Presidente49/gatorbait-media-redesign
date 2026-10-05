@@ -8,7 +8,11 @@
   ],
   "pins": {
     "breaking": null,
-    "timed": null
+    "timed": {
+      "path": "/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
+      "until": "2026-10-05T16:00:00-04:00",
+      "note": "Owner correction Oct. 5: replace stale Loren preview; Franz Missouri-response column is the editorial lead."
+    }
   },
   "quotes": {
     "/post/put-down-the-poll-gators-missouri-is-waiting": {

@@ -681,7 +681,9 @@
         if (magOpen.getAttribute('aria-expanded') === 'true') return;
         magOpen.setAttribute('aria-expanded', 'true');
         var frame = magReader.querySelector('iframe');
-        if (frame && !frame.src) frame.src = frame.getAttribute('data-src');
+        if (frame && !frame.getAttribute('srcdoc')) {
+          frame.setAttribute('srcdoc', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"></head><body><script>try{history.replaceState(null,"","/magazine?embed=home")}catch(e){}<\\/script><script src="https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@6a7947d5f1193b0ca0ffb9e76dd9b44787faa074/sports-live/magazine-postgame.js"><\\/script></body></html>');
+        }
         magReader.hidden = false;
         magOpen.closest('.fp-mag').classList.add('fp-mag-opening');
         setTimeout(function () { magOpen.closest('.fp-mag').classList.add('fp-mag-opened'); magReader.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 480);

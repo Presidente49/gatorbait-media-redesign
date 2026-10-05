@@ -1,0 +1,33 @@
+{
+  "sourceRelease": "e0bf32359c7d560239d15e7baf8a0e64da2a1952",
+  "issue": {
+    "number": "Postgame edition",
+    "date": "Sunday, October 4, 2026",
+    "week": "Week 5 · Florida at Missouri",
+    "home": "GatorBait Media",
+    "pageTitle": "GatorBait Magazine | Postgame: Missouri 45, Florida 17"
+  },
+  "cover": {
+    "kicker": "Cover story · Buddy Martin",
+    "headline": "Hey Missouri, don’t show me anymore!",
+    "dek": "The Tigers did not just beat Florida. They drove over it, backed up, drove over it again and then threw a couple touchdown passes just to make sure nobody mistook the afternoon for a competitive football game.",
+    "byline": "By Buddy Martin · 6 min read",
+    "cta": "Read Buddy’s column",
+    "url": "/post/hey-missouri-don-t-show-me-anymore",
+    "image": {
+      "id": "ae876a_a58dcb57990a497b84bcd2b5fab12df3",
+      "ext": "jpeg",
+      "width": 2000,
+      "height": 1333,
+      "alt": "Florida’s Emmanuel Oyebadejo (99) gets to Missouri quarterback Austin Simmons",
+      "credit": "UAA Photo"
+    },
+    "linesLabel": "Also inside",
+    "lines": [
+      "The damage: 560 yards to 325",
+      "Report card: three Fs",
+      "How a 10-10 game got away",
+      "Sumrall: “Starts with me”"
+    ]
+  }
+}

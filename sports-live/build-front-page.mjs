@@ -50,6 +50,8 @@ const posts = feed.posts.slice(0, 20).map((p) => ({
 }));
 const newest = posts.map((p) => p.firstPublishedDate).sort().pop();
 const { $comment, ...cfg } = config;
+// Curated Magazine preview: snapshot of the current live issue, never an arbitrary news post.
+cfg.magazine = JSON.parse(read('sports-live/magazine-card.json'));
 // Bundle the season schedule from the scoreboard job's feed, so The Road Ahead band paints even when the
 // live scoreboard fetch misses the 1.5 s paint budget (phones did on Sept. 30); the fetch then patches it.
 const repoScoreboard = existsSync(join(repo, 'sports-live/scoreboard.json')) ? JSON.parse(read('sports-live/scoreboard.json')) : null;

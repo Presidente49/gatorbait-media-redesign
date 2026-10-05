@@ -209,3 +209,61 @@
     mo.observe(document.documentElement, { childList: true, subtree: true });
   }
 })();
+
+
+/* GatorBait publishing SEO/accessibility layer: descriptive image alternatives, semantic sports tables,
+ * and one contextual first-mention link for current Florida names. Never changes article prose. */
+(function () {
+  'use strict';
+  if (location.pathname.indexOf('/post/') !== 0 || window.__GBM_PUBLISHING_SEO__) return;
+  window.__GBM_PUBLISHING_SEO__ = true;
+  var SITE = 'https://www.gatorbaitmedia.com';
+  var PEOPLE = ['Jon Sumrall','DJ Lagway','Jadan Baugh','Vernell Brown III','Denzel Aberdeen','Eugene Wilson III','Aidan Mizell','Myles Graham','Aaron Chiles','Caleb Banks','Jake Slaughter','Austin Barber'];
+  function title() {
+    var h = document.querySelector('[data-hook="post-title"], article h1, main h1');
+    return h ? String(h.textContent || '').replace(/\s+/g,' ').trim() : 'Florida Gators story';
+  }
+  function body() { return document.querySelector('[data-hook="post-description"],.blog-post-page-content,[data-hook="post-content"],article[data-hook="post"]'); }
+  function altImages(b) {
+    [].slice.call((b || document).querySelectorAll('img')).forEach(function (im) {
+      var alt = String(im.getAttribute('alt') || '').trim();
+      if (alt && !/^(image|photo|gatorbait|featured image)$/i.test(alt)) return;
+      var fig = im.closest('figure'), cap = fig && fig.querySelector('figcaption'), text = cap && String(cap.textContent || '').replace(/\s+/g,' ').trim();
+      im.setAttribute('alt', (text || title()).slice(0, 180));
+    });
+  }
+  function tables(b) {
+    [].slice.call((b || document).querySelectorAll('table')).forEach(function (t) {
+      if (!t.querySelector('caption')) {
+        var cap = document.createElement('caption'), prev = t.previousElementSibling;
+        cap.textContent = prev && /^H[2-4]$/.test(prev.tagName) ? prev.textContent.trim() : (/roster/i.test(title()) ? 'Florida Gators roster' : /schedule/i.test(title()) ? 'Florida Gators schedule' : 'Florida Gators data');
+        t.insertBefore(cap, t.firstChild);
+      }
+      [].slice.call(t.querySelectorAll('tr')).forEach(function (tr, ri) {
+        [].slice.call(tr.querySelectorAll('th')).forEach(function (th, ci) { if (!th.hasAttribute('scope')) th.setAttribute('scope', ri === 0 ? 'col' : ci === 0 ? 'row' : 'col'); });
+      });
+    });
+  }
+  function people(b) {
+    if (!b) return;
+    var done = {};
+    [].slice.call(b.querySelectorAll('a[data-gbm-person]')).forEach(function(a){ done[a.getAttribute('data-gbm-person')] = 1; });
+    var walker = document.createTreeWalker(b, NodeFilter.SHOW_TEXT, null, false), nodes=[], n;
+    while ((n = walker.nextNode())) if (/\S/.test(n.nodeValue) && !n.parentElement.closest('a,h1,h2,h3,h4,figcaption,blockquote,cite,[data-story-kit]')) nodes.push(n);
+    PEOPLE.forEach(function (name) {
+      if (done[name]) return;
+      for (var i=0;i<nodes.length;i++) {
+        if (!nodes[i].parentNode) continue;
+        var re = new RegExp('(^|[^A-Za-z0-9])(' + name + ')(?![A-Za-z0-9])','i'), m = re.exec(nodes[i].nodeValue);
+        if (!m) continue;
+        var start=m.index+m[1].length, mid=nodes[i].splitText(start); mid.splitText(m[2].length);
+        var a=document.createElement('a'); a.href=SITE+'/search-results?q='+encodeURIComponent(name); a.className='gbm-kit-link gbm-kit-person'; a.setAttribute('data-gbm-person',name); a.textContent=mid.nodeValue;
+        mid.parentNode.replaceChild(a,mid); done[name]=1; break;
+      }
+    });
+  }
+  function mount() { var b=body(); altImages(b); tables(b); people(b); }
+  if (!document.getElementById('gbm-publishing-seo-css')) { var st=document.createElement('style'); st.id='gbm-publishing-seo-css'; st.textContent='a.gbm-kit-person{font-weight:700;text-decoration:underline;text-decoration-color:#fa4616;text-decoration-thickness:1px;text-underline-offset:2px}article table caption{font-weight:800;text-align:left;padding:8px 0;color:#0021a5}'; document.head.appendChild(st); }
+  document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', mount, {once:true}) : mount();
+  var tries=0,t=setInterval(function(){mount();if(++tries>12)clearInterval(t);},700);
+})();

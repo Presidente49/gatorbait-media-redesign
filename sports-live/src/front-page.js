@@ -682,11 +682,20 @@
         magOpen.setAttribute('aria-expanded', 'true');
         var frame = magReader.querySelector('iframe');
         if (frame && !frame.getAttribute('srcdoc')) {
-          frame.setAttribute('srcdoc', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"></head><body><script>try{history.replaceState(null,"","/magazine?embed=home")}catch(e){}<\\/script><script src="https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@6a7947d5f1193b0ca0ffb9e76dd9b44787faa074/sports-live/magazine-postgame.js"><\\/script></body></html>');
+          frame.addEventListener('load', function () {
+            try { frame.contentWindow.scrollTo(0, 0); } catch (_) {}
+          }, { once: true });
+          frame.setAttribute('srcdoc', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"></head><body><script>try{history.replaceState(null,"","/magazine?embed=home")}catch(e){}<\\/script><script src="https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@b77419e0f53290545c1f83f6ed44484753657b67/sports-live/magazine-postgame.js"><\\/script></body></html>');
         }
         magReader.hidden = false;
         magOpen.closest('.fp-mag').classList.add('fp-mag-opening');
-        setTimeout(function () { magOpen.closest('.fp-mag').classList.add('fp-mag-opened'); magReader.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 480);
+        setTimeout(function () {
+          magOpen.closest('.fp-mag').classList.add('fp-mag-opened');
+          var y = magReader.getBoundingClientRect().top + window.scrollY - 8;
+          try { window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' }); }
+          catch (_) { window.scrollTo(0, Math.max(0, y)); }
+          try { if (frame && frame.contentWindow) frame.contentWindow.scrollTo(0, 0); } catch (_) {}
+        }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 480);
       });
     } catch (_) {}
     loading = false;

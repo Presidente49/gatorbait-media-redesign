@@ -696,7 +696,19 @@
         magOpen.setAttribute('aria-expanded', 'true');
         var frame = magReader.querySelector('iframe');
         if (frame && !frame.getAttribute('srcdoc')) {
-          frame.addEventListener('load', function () { magazineTop(frame); }, { once: true });
+          frame.addEventListener('load', function () {
+            magazineTop(frame);
+            // Keep section links inside this inline issue; article links retain the top-level target.
+            try { frame.contentDocument.addEventListener('click', function (e) {
+              var a = e.target.closest && e.target.closest('a[href^="#pm-"]');
+              var id = a && a.getAttribute('href');
+              if (!id || !/^#pm-[a-z0-9-]+$/i.test(id)) return;
+              var target = frame.contentDocument.querySelector(id);
+              if (!target) return;
+              e.preventDefault();
+              target.scrollIntoView({ block: 'start', behavior: 'instant' });
+            }); } catch (_) {}
+          }, { once: true });
           // Split the closing tag while generating the HTML; the browser receives real </script> tags.
           var endScript = '<' + '/script>';
           frame.setAttribute('srcdoc', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"><style>html,body{margin:0;background:#fff}.pm-entrance,.pm-readerbar [data-pm-cover]{display:none!important}</style></head><body><script>window.__GBM_MAG_EMBED__=true;' + endScript + '<script src="https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@88ae0124a476c5d247b16dc60fdd3ccb6fa1cb6f/sports-live/magazine-postgame.js">' + endScript + '</body></html>');

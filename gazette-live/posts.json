@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida Gave On Saturday—Gave Way Too Much!",
+      "excerpt": "Florida was beaten in every phase at Missouri. Eddie Gilley examines what went wrong and what comes next for the Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-gave-on-saturday",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-10-05T15:34:11Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida Gave On Saturday—Gave Way Too Much!"
+      }
+    },
+    {
+      "title": "Missouri 45, Florida 17: Postgame Analysis",
+      "excerpt": "Florida is humbled in Columbia as Sumrall faces his first week of adversity as Gator head coach.",
+      "url": "https://www.gatorbaitmedia.com/post/missouri-45-florida-17-postgame-analysis",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-10-05T12:26:34Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2acc3b2b8b544db28db78319b2c29f63~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Missouri 45, Florida 17: Postgame Analysis"
+      }
+    },
+    {
       "title": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!",
       "excerpt": "But make no mistake: What happened in Columbia was worse than a speed bump. It was a public mugging. It was a betrayal of sorts. The question is: Who betrayed whom?",
       "url": "https://www.gatorbaitmedia.com/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Denzel Aberdeen is back home where he belongs"
-      }
-    },
-    {
-      "title": "The Soothsayer: Gators head to Missouri, where history hasn’t been kind",
-      "excerpt": "Florida (4-0) heads to Columbia, where history has not been kind, with a No. 8 ranking and a 5.5-point cushion. The Soothsayer on Missouri, Saturday’s SEC slate and the coaching hot seat.",
-      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-gators-head-to-missouri-where-history-hasn-t-been-kind",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-02T10:33:54Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Soothsayer: Gators head to Missouri, where history hasn’t been kind"
-      }
-    },
-    {
-      "title": "Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators.",
-      "excerpt": "Buddy Martin: Florida fans have earned the right to brag after four years of misery — just don’t build a shrine on an early poll before Saturday’s trip to Missouri.",
-      "url": "https://www.gatorbaitmedia.com/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-01T17:24:33Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_408fa442a2d54309aa66050fb0f4d35e~mv2.jpg/v1/fit/w_1000,h_800,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators."
       }
     }
   ]

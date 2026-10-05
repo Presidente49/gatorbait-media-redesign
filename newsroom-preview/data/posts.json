@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida Gave On Saturday—Gave Way Too Much!",
+      "excerpt": "Florida was beaten in every phase at Missouri. Eddie Gilley examines what went wrong and what comes next for the Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-gave-on-saturday",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-10-05T15:34:11Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida Gave On Saturday—Gave Way Too Much!"
+      }
+    },
+    {
+      "title": "Missouri 45, Florida 17: Postgame Analysis",
+      "excerpt": "Florida is humbled in Columbia as Sumrall faces his first week of adversity as Gator head coach.",
+      "url": "https://www.gatorbaitmedia.com/post/missouri-45-florida-17-postgame-analysis",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-10-05T12:26:34Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2acc3b2b8b544db28db78319b2c29f63~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Missouri 45, Florida 17: Postgame Analysis"
+      }
+    },
+    {
       "title": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!",
       "excerpt": "But make no mistake: What happened in Columbia was worse than a speed bump. It was a public mugging. It was a betrayal of sorts. The question is: Who betrayed whom?",
       "url": "https://www.gatorbaitmedia.com/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10"
-      }
-    },
-    {
-      "title": "Baby Chomp, Big Grudge: Florida Goes to Columbia With a Photo to Settle",
-      "excerpt": "A mocking baby Gator chomp from Florida’s last loss at Missouri still stings in Gainesville, and No. 8 Florida gets its answer at Faurot Field on Saturday.",
-      "url": "https://www.gatorbaitmedia.com/post/baby-chomp-big-grudge-florida-goes-to-columbia-with-a-photo-to-settle",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-10-03T18:45:42Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Baby Chomp, Big Grudge: Florida Goes to Columbia With a Photo to Settle"
-      }
-    },
-    {
-      "title": "Brown Out: Florida Preps to Play Missouri Without VB3",
-      "excerpt": "Vernell Brown III, Florida’s leading receiver, was downgraded to doubtful for Saturday’s 3:50 p.m. ET game at Missouri. Here is what the Gators lose and who steps in.",
-      "url": "https://www.gatorbaitmedia.com/post/brown-out-florida-preps-to-play-missouri-without-vb3",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-10-03T15:25:38Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Brown Out: Florida Preps to Play Missouri Without VB3"
       }
     }
   ]

@@ -37,3 +37,18 @@ Read the current embed and revision, then replace only embedData.html with rollb
 ## Scope and measurement
 
 No homepage, article, category, email, schema, indexing or analytics changes. No engagement lift is claimed. Prior Design Lab report is historical pre-deployment research; this record supersedes its deployment hold following the owner's direct implementation approval.
+
+## Masthead correction — October 5, 2026
+
+Owner clarified the defect was the word MAGAZINE on the masthead, then requested Gator green around those letters. Centered the GATORBAIT/MAGAZINE lockup, balanced subtitle tracking, and used pale green letter faces (#d4f9de) with green outlines (#248648). MAGAZINE remains at least 13 px.
+
+- Release: e0bf32359c7d560239d15e7baf8a0e64da2a1952; build 9fbb5513; 183008 bytes.
+- Embed revision 76 → 77, with exact baseline guard. Only the immutable bundle pin changed.
+- Discarded unpromoted photo-crop candidate 0d8a507 after the owner clarified the target; photo remains at the live 48% 38% baseline with original responsive image sizes.
+- Build/check, JS syntax and diff checks pass; CDN bytes match SHA-256 fb2add60afcd60b706c595367ea8fe43d3d7ef9269b6f4be30703a26aaaedbb1.
+- Same-build candidate in production shell: run 37262674675; evidence d11859e6057017d3e01087b438acb454afccfd01. All 320/390/430/1366 and reduced-motion 390 cases pass with zero overflow; live font-loaded screenshots visually reviewed.
+- CUA verified the published 9fbb5513 build, centered green text and zero overflow at https://www.gatorbaitmedia.com/magazine?gbm_mag=masthead-9fbb5513.
+- Rollback for this follow-up: rollback-rev76-loader.html. Read current revision, confirm pin e0bf3235, restore only embedData.html and retain category ESSENTIAL. Do not overwrite a later release.
+- No article content, photo source, byline, homepage or other embed changes.
+
+- Independent post-deployment browser run 37262838685 passed at 390 and 1366 px with published build 9fbb5513, zero overflow and all cover/contents/keyboard/print checks. Immutable evidence: https://github.com/Presidente49/gatorbait-media-redesign/tree/39b0b2d4028173a3322eeccb60af28687971948c. Phone screenshot: cover-390.jpg. These are actual Chromium viewport checks, not a physical-device claim.

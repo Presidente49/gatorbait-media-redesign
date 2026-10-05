@@ -535,7 +535,7 @@
     scores += '<div class="fp-chips"><a href="' + esc(L.schedule) + '">Schedule</a><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.stats) + '">Stats</a><a href="' + esc(L.standings) + '">Standings</a></div>';
     var mScores = '<section class="fp-mod fp-mod-scores" aria-label="Scores and schedule"><h2>Scores &amp; Schedule · Florida ' + esc(sb.team.record || '') + '</h2>' + scores + '</section>';
     var magazine = BUNDLE.magazine, cover = magazine.cover, issue = magazine.issue;
-    var coverSrc = 'https://static.wixstatic.com/media/' + cover.image.id + '.' + cover.image.ext;
+    var coverSrc = 'https://static.wixstatic.com/media/' + cover.image.id + '~mv2.' + cover.image.ext;
     var mMag = '<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><h2>GatorBait Magazine</h2>' +
       '<a class="fp-cover" href="' + esc(L.magazine) + '" aria-label="Open GatorBait Magazine: ' + esc(cover.headline) + '">' +
       img(coverSrc, cover.image.alt, false, 600, 400, '240px') +

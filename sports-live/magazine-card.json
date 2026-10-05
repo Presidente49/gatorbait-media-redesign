@@ -15,11 +15,11 @@
     "cta": "Open this issue",
     "url": "/magazine",
     "image": {
-      "id": "d3cfa5_c43013d57f144e5fad03f68b077d83af~mv2",
+      "id": "d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2",
       "ext": "jpg",
       "width": 864,
       "height": 1536,
-      "alt": "GatorBait Magazine Missouri postgame cover: First Loss",
+      "alt": "GatorBait Magazine Missouri Postgame First Loss cover featuring Florida coach Jon Sumrall",
       "credit": "Photo illustration · Chris Spears Photography"
     },
     "linesLabel": "Also inside",
@@ -29,6 +29,7 @@
       "Report card: three Fs",
       "Sumrall: “Starts with me”",
       "Final: Missouri 45, Florida 17"
-    ]
+    ],
+    "artwork": true
   }
 }

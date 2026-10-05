@@ -1,5 +1,5 @@
 {
-  "commit": "4971ff53e55c66527541697350410c69656e04b4",
-  "updated": "2026-10-04T23:48:31.743Z",
-  "note": "Owner-requested photo-led mobile homepage PR138. Real article photography in upper story cards and Latest, smaller headlines and shorter mobile previews. Loren/Buddy/Franz positions retained. Rollback a76e8cf343e5ac95c3353621d759b6e3b26a099a; deploy/mobile-photo-stories-20261004/."
+  "commit": "3417925bb3e10ab0be484b642f02dc3bdd7360ef",
+  "updated": "2026-10-05T00:11:54.336Z",
+  "note": "Owner-requested mobile typography and whitespace fix: compact natural-height photo rows, 17px supporting headlines, smaller lead/feature. All photos and editorial positions retained. Rollback 4971ff53e55c66527541697350410c69656e04b4. Notes deploy/mobile-type-20261004/."
 }

@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: October 6, 2026",
+      "excerpt": "Franz Beard on whether Florida’s loss at Missouri can be a turning point, South Carolina, the SEC across the board, and the NCAA’s fifth-year fight.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-6-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-06T12:17:47Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_98a6d5b1d7024b75b557ef1ea52eaf24~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: October 6, 2026"
+      }
+    },
+    {
       "title": "LIVE NOW: The Buddy Martin Show Talks Florida Gators Football",
       "excerpt": "The Buddy Martin Show is live now talking Florida Gators football. Watch on GatorBait or join the live stream on YouTube.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-now-october-5-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Red Ink in Columbia: Grading Every Gator Unit After Missouri"
-      }
-    },
-    {
-      "title": "‘We Earned the Loss’: Sumrall Owns the Mauling in Columbia",
-      "excerpt": "Jon Sumrall said Missouri deserved it after a 45-17 rout ended Florida’s unbeaten start. The numbers, who was missing and what comes next with South Carolina.",
-      "url": "https://www.gatorbaitmedia.com/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-04T01:34:01Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_fb8dcc167ff64b5c90cc1b6904390bf7~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for ‘We Earned the Loss’: Sumrall Owns the Mauling in Columbia"
       }
     }
   ]

@@ -631,3 +631,21 @@ A button appended to the story headline's header from a HEAD embed was present i
 **What happened:** Brenden said the site felt slow. Three read-only audits produced long lists (219 KB of embeds per page, observers, fonts loaded three ways), all true and none the main cause. The first real-browser measurement (live shots `PERF=1`, run 36757168414) showed the homepage's largest paint at 27.9 s on a throttled phone because the blog feed's image URLs request `/v1/fit/w_1000,…/file.png`: a JPEG photo came back as a 975 KB PNG. Re-cutting with `enc_auto` (probe run 36758186268) took it to 44 KB, and the deploy cut phone LCP to 10.1 s and desktop to 1.7 s.
 
 **The rule:** before touching code for speed, run `shots/<name>` with `"perf":"1"` on the page in question and read `perf.top` (largest transfers), `perf.lcp` (what painted last) and `perf.tbt`. Fix the largest transfer first. Every Wix image the renderer emits goes through `wixCut()` (enc_auto, box-sized, srcset). Custom-embed `pageFilter` is read-only in the API: scoping embeds to pages is a dashboard job for Brenden, not a PATCH. A `<link rel=stylesheet>` added to `<head>` by an embed is render-blocking; use `media="print" onload="this.media='all'"`.
+
+## Lesson 65: Never state a number, quote or time that has not been read from the primary source (Oct. 4)
+
+**What happened:** During the Missouri postgame run Brenden asked, "Why can't you get your facts straight?" Two things were wrong or thin: scheduled times were quoted in the wrong zone (01:16Z is 9:16 p.m. ET, not 8:16), and a share draft for a writer was built from search-result snippets instead of the full AP recap and ESPN box score.
+
+**The rule:** every stat comes from ESPN or FloridaGators.com, every quote from the full source text, and every local time is converted from UTC (Oct. 4 is EDT, UTC-4) before it is said. A snippet is a lead, not a source. Run a read-only fact audit (ESPN summary plus AP recap against each published artifact) before a draft is handed to a writer and after any story is published.
+
+## Lesson 66: A write-capable connector is not a posting permission (Oct. 4)
+
+**What happened:** Windsor listed Facebook Pages and Instagram accounts for The Buddy Martin Show and Gator Bait Media, and list_actions showed create_photo_post and create_image_post, but both calls failed: Facebook needs pages_manage_posts and Instagram needs instagram_content_publish granted to the connection. Metricool had no networks connected at all.
+
+**The rule:** before promising a social post, test the permission on the exact account (or read it from the connection), and state the blocker once with the one-step fix. Do not route around a permission refusal, and do not schedule a post whose permission is unverified. Share graphics are built and hosted ahead of time so the post goes out the moment permission exists.
+
+## Lesson 67: Handoff chain for a published story (Oct. 4)
+
+**What happened:** Brenden asked for one chain with no gaps: writer files, copy desk cleans and publishes, the game-day desk sets the homepage lead, then marketing builds a graphic and posts.
+
+**The rule:** the owner of each step posts a claim and evidence in #34 and messages the next owner; the next owner verifies the previous step on the live site before starting. The routine copy desk keeps running hourly, the postgame ingest stays on through the window, and the learning step is this file: each run ends by adding what was wrong and the rule that prevents it. No new scheduler or agent layer is added to do this.

@@ -109,6 +109,13 @@
     joined: "You're on the GatorBait Magazine list",
     joinedLine: 'Thanks for reading. Watch your inbox for the next issue.',
   };
+  // Bot/SEO spam patterns detected in Oct 1-6 registrations.
+  var SPAM_KEYWORDS = /viagra|casino|crypto|pharmacy|cialis|poker|betting|loans?|pills?|xyz|xxx|forex|seo|backlink|lens|cheap|discount|generic|adult|adult\s*content|dating|escort|hemp|cbd|bitcoin|ethereum|nft|dropship|affiliate|mlm|weight.?loss|diet.?pills?/i;
+  var SPAM_PATTERNS = {
+    excessiveDots: /(\.\w+){3,}/,            // 3+ dot-separated segments
+    excessiveNumbers: /\d{5,}/,              // 5+ consecutive digits
+    suspiciousChars: /[_+-]{2,}/,            // 2+ repeated special chars
+  };
   var SOURCES = { home: 1, 'story-inline': 1, 'story-end': 1, 'story-slideup': 1 };
   function html(source, opts) {
     css();
@@ -171,6 +178,13 @@
       .then(function (res) { document.documentElement.setAttribute('data-gbm-capture-probe', JSON.stringify(res)); });
   }
   function say(box, text, tone) { var m = box.querySelector('.gbc-m'); if (m) { m.textContent = text; if (tone) m.setAttribute('data-tone', tone); else m.removeAttribute('data-tone'); } }
+  function isSpamEmail(email) {
+    if (SPAM_KEYWORDS.test(email)) return true;
+    for (var pattern in SPAM_PATTERNS) {
+      if (SPAM_PATTERNS[pattern].test(email)) return true;
+    }
+    return false;
+  }
   function onSubmit(ev) {
     var form = ev.target, box = form && form.closest && form.closest('[data-gbm-capture]');
     if (!box || !form.classList.contains('gbc-f')) return;
@@ -178,6 +192,7 @@
     if (busy || box.getAttribute('data-state') === 'done') return;
     var source = box.getAttribute('data-gbm-capture'), email = String(form.email.value || '').trim(), hp = form.company && form.company.value;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 254) { say(box, COPY.badEmail, 'err'); form.email.focus(); return; }
+    if (isSpamEmail(email)) { say(box, COPY.badEmail, 'err'); form.email.focus(); return; }
     if (!form.consent.checked) { say(box, COPY.noConsent, 'err'); form.consent.focus(); return; }
     if (hp) { box.setAttribute('data-state', 'done'); say(box, COPY.done); return; } // bot fill: no request
     busy = true; box.setAttribute('data-state', 'sending'); say(box, COPY.sending);

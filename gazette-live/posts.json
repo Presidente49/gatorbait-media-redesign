@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "LIVE NOW: The Buddy Martin Show Talks Florida Gators Football",
+      "excerpt": "The Buddy Martin Show is live now talking Florida Gators football. Watch on GatorBait or join the live stream on YouTube.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-now-october-5-2026",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-06T01:15:59Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for LIVE NOW: The Buddy Martin Show Talks Florida Gators Football"
+      }
+    },
+    {
       "title": "Buddy Blog: Florida Gators Need the Balm of Homecoming This Week",
       "excerpt": "Sumrall didn’t care about Mizzou’s homecoming, but he certainly does his own this week. Buddy Martin on Florida’s reset, Mac Steen and a lesson from 1990.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-blog-florida-gators-need-the-balm-of-homecoming-this-week",
@@ -9,7 +23,7 @@
       "firstPublishedDate": "2026-10-05T22:00:34Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/16b519_af154b6318f44ed59403673bf7060316~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_6871ae4903954844b5fc471a0eb0a492~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Buddy Blog: Florida Gators Need the Balm of Homecoming This Week"
@@ -37,7 +51,7 @@
       "firstPublishedDate": "2026-10-05T15:34:11Z",
       "section": "GatorBait",
       "image": {
-        "src": "",
+        "src": "https://static.wixstatic.com/media/d3cfa5_1fe245369e1d40dfbe9ab7c20053de72~mv2.jpg/v1/fit/w_1000,h_760,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida Gave On Saturday—Gave Way Too Much!"
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Game Day: No. 8 Florida at No. 25 Missouri"
-      }
-    },
-    {
-      "title": "Jon Sumrall Named Inaugural Dodd Trophy Coach of the Month",
-      "excerpt": "Florida's first-year head coach was picked from September's weekly Dodd Trophy winners after leading the Gators to a 4-0 start, including a 52-28 upset of No. 4 Ole Miss.",
-      "url": "https://www.gatorbaitmedia.com/post/jon-sumrall-named-inaugural-dodd-trophy-coach-of-the-month",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-03T12:22:17Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_1c01e88e9d044849a10e9508975388b7~mv2.jpg/v1/fit/w_945,h_945,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Jon Sumrall Named Inaugural Dodd Trophy Coach of the Month"
       }
     }
   ]

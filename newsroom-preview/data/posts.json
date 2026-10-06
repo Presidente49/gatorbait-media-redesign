@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "LIVE NOW: The Buddy Martin Show Talks Florida Gators Football",
+      "excerpt": "The Buddy Martin Show is live now talking Florida Gators football. Watch on GatorBait or join the live stream on YouTube.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-now-october-5-2026",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-06T01:15:59Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for LIVE NOW: The Buddy Martin Show Talks Florida Gators Football"
+      }
+    },
+    {
       "title": "Buddy Blog: Florida Gators Need the Balm of Homecoming This Week",
       "excerpt": "Sumrall didn’t care about Mizzou’s homecoming, but he certainly does his own this week. Buddy Martin on Florida’s reset, Mac Steen and a lesson from 1990.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-blog-florida-gators-need-the-balm-of-homecoming-this-week",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for ‘We Earned the Loss’: Sumrall Owns the Mauling in Columbia"
-      }
-    },
-    {
-      "title": "Hey Missouri, Don’t Show Me Anymore!",
-      "excerpt": "The Tigers did not just beat Florida. They drove over it, backed up, drove over it again and then threw a couple touchdown passes just to make sure nobody mistook the afternoon for a competitive football game.",
-      "url": "https://www.gatorbaitmedia.com/post/hey-missouri-don-t-show-me-anymore",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-04T01:10:26Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_a58dcb57990a497b84bcd2b5fab12df3~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Hey Missouri, Don’t Show Me Anymore!"
       }
     }
   ]

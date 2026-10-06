@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The College Football Crisis: Corn Dogs vs Commissioners And Why It's A Big Deal!",
+      "excerpt": "There are only so many weekends on the calendar and only so many hits a player’s body can take. Stretch the playoff and something has to go, and the people in charge have already said conference title games could be cut.",
+      "url": "https://www.gatorbaitmedia.com/post/the-college-football-crisis-corn-dogs-vs-commissioners-and-why-it-s-a-big-deal",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-06T20:35:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_3c2ac82531924611a2c5afb5e0cdc0b6~mv2.jpg/v1/fit/w_442,h_709,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The College Football Crisis: Corn Dogs vs Commissioners And Why It's A Big Deal!"
+      }
+    },
+    {
       "title": "Thoughts of the Day: October 6, 2026",
       "excerpt": "Franz Beard on whether Florida’s loss at Missouri can be a turning point, South Carolina, the SEC across the board, and the NCAA’s fifth-year fight.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-6-2026",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Brown Out: Florida Preps to Play Missouri Without VB3"
-      }
-    },
-    {
-      "title": "Week 5 Preview: Florida Gators (4-0, 2-0) v. Missouri Tigers (3-1, 0-1)",
-      "excerpt": "A trip to Columbia can be tough but the Gators are equipped to travel and travel well. By Loren Meadows, GatorBaitMedia.com Football Analyst, Host of the Gator Lowdown with Loren Meadows Second early road test for Sumrall and the Gators (Chris Spears photo) Missouri Offense Key Players: #13 QB Austin Simmons (6-4, 220, Sr./Missouri), #20 RB Jamal Roberts…",
-      "url": "https://www.gatorbaitmedia.com/post/week-5-preview-florida-gators-4-0-2-0-v-missouri-tigers-3-1-0-1",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-10-03T15:12:01Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_d600f2d12282447eb6ceb6bfb0d988f3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Week 5 Preview: Florida Gators (4-0, 2-0) v. Missouri Tigers (3-1, 0-1)"
       }
     }
   ]

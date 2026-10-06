@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The College Football Crisis: Corn Dogs vs Commissioners And Why It's A Big Deal!",
+      "excerpt": "There are only so many weekends on the calendar and only so many hits a player’s body can take. Stretch the playoff and something has to go, and the people in charge have already said conference title games could be cut.",
+      "url": "https://www.gatorbaitmedia.com/post/the-college-football-crisis-corn-dogs-vs-commissioners-and-why-it-s-a-big-deal",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-06T20:35:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_3c2ac82531924611a2c5afb5e0cdc0b6~mv2.jpg/v1/fit/w_442,h_709,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The College Football Crisis: Corn Dogs vs Commissioners And Why It's A Big Deal!"
+      }
+    },
+    {
       "title": "Thoughts of the Day: October 6, 2026",
       "excerpt": "Franz Beard on whether Florida’s loss at Missouri can be a turning point, South Carolina, the SEC across the board, and the NCAA’s fifth-year fight.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-6-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for By the Numbers: How Missouri Flipped Florida’s Script"
-      }
-    },
-    {
-      "title": "Red Ink in Columbia: Grading Every Gator Unit After Missouri",
-      "excerpt": "Florida ran for 42 yards and gave up 340 through the air at Missouri, and few position groups escaped the red pen. Every unit's grade, with the numbers behind it.",
-      "url": "https://www.gatorbaitmedia.com/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-04T03:43:05Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_fb9b6535ba3046ab86e7d0d05b6579bc~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Red Ink in Columbia: Grading Every Gator Unit After Missouri"
       }
     }
   ]

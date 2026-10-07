@@ -123,7 +123,9 @@ function audit(input){
   const sideways=document.documentElement.scrollWidth>viewport+2;
   if(sideways)hard.push('document scrollWidth exceeds viewport');
 
-  const textMatch=bodyText.toLowerCase().includes(target.expectedText.toLowerCase());
+  const want=(target.expectedAny&&target.expectedAny.length?target.expectedAny:[target.expectedText]);
+  const lowerBody=bodyText.toLowerCase();
+  const textMatch=want.some(w=>lowerBody.includes(String(w).toLowerCase()));
   if(!textMatch)hard.push('expected current story text missing');
 
   if(visibleImages.length&&visibleImages.some(i=>!i.loaded))hard.push('visible image failed to load in first two screens');
@@ -269,7 +271,8 @@ function audit(input){
 
 // The homepage and Magazine lead with the newest Buddy Martin post from the live feed, so the
 // expected story follows that feed; the constants above remain the fallback when it is unreachable.
-async function currentBuddyLead(){
+let RECENT_TITLES=[];
+async function currentBuddyLeads(){
   try{
     const res=await fetch('https://www.gatorbaitmedia.com/blog-feed.xml',{signal:AbortSignal.timeout(15000)});
     if(!res.ok)return null;
@@ -278,12 +281,17 @@ async function currentBuddyLead(){
     const tag=(item,name)=>{const m=item.match(new RegExp('<'+name+'[^>]*>([\\s\\S]*?)</'+name+'>'));return m?decode(m[1]):'';};
     const posts=[...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(m=>({title:tag(m[1],'title'),url:tag(m[1],'link'),author:tag(m[1],'dc:creator'),date:Date.parse(tag(m[1],'pubDate'))}))
       .filter(p=>p.title&&/^https:\/\/www\.gatorbaitmedia\.com\/post\//.test(p.url)&&Number.isFinite(p.date)).sort((a,b)=>b.date-a.date);
-    return posts.find(p=>/buddy martin/i.test(p.author))||null;
-  }catch{return null;}
+    RECENT_TITLES=posts.slice(0,12).map(p=>p.title);
+    return posts.filter(p=>/buddy martin/i.test(p.author)).slice(0,3);
+  }catch{return [];}
 }
-const lead=await currentBuddyLead();
+const leads=await currentBuddyLeads();
+const lead=leads[0]||null;
 if(lead){
   for(const t of TARGETS)t.expectedText=lead.title;
+  // The Magazine is an edition: its lead is a curated Buddy Martin story that may be a day or two behind the home lead.
+  // It must show a current story (one of the 12 newest posts in the live feed), so a stale or empty Magazine still fails.
+  TARGETS.find(t=>t.name==='magazine').expectedAny=[...new Set([...leads.map(p=>p.title),...RECENT_TITLES])];
   TARGETS.find(t=>t.name==='article').url=lead.url;
 }
 

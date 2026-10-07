@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@500;600;700&display=swap">
 <style>
 /* GatorBait story cover, 1600x900. Rendered by the live-shots workflow (file:// in the runner) and imported to Wix.
-   Query: photo=<wix media id> cutout=<wix media id> kicker= title= dek= credit= focus=<css background-position> tone=navy|orange */
+   Query: photo=<wix media id> cutout=<wix media id> kicker= sub= title= dek= credit= focus=<css background-position> side=right (copy on the right when the subject is on the left) */
 html,body{margin:0;background:#07122e}
 .cover{position:relative;width:1600px;height:900px;overflow:hidden;background:#07122e;font-family:"Barlow",sans-serif;color:#fff}
 .photo{position:absolute;inset:0;background-size:cover;background-position:var(--focus,50% 35%);filter:saturate(1.05) contrast(1.04)}
@@ -21,6 +21,9 @@ h1.long{font-size:82px}
 h1.xlong{font-size:70px}
 .dek{font:500 30px/1.3 "Barlow",sans-serif;color:#dfe6fb;max-width:720px}
 .rule{width:150px;height:8px;background:#fa4616}
+.cover.r .wash{background:linear-gradient(270deg,rgba(7,18,46,.96) 0%,rgba(7,18,46,.84) 40%,rgba(7,18,46,.30) 66%,rgba(7,18,46,.05) 100%)}
+.cover.r .copy{left:auto;right:84px;width:760px}
+.cover.r .rings{background:radial-gradient(60% 60% at 22% 62%,rgba(250,70,22,.22),rgba(250,70,22,0) 60%)}
 .cutout{position:absolute;right:70px;bottom:0;height:96%;width:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
 .foot{position:absolute;left:84px;bottom:40px;display:grid;gap:10px;justify-items:start;max-width:760px}
 .mark{font:800 34px/1 "Barlow Condensed",sans-serif;letter-spacing:.14em;text-transform:uppercase}
@@ -38,6 +41,7 @@ h1.xlong{font-size:70px}
   var q = new URLSearchParams(location.search), W = 'https://static.wixstatic.com/media/';
   function esc(s) { return String(s || ''); }
   var photo = q.get('photo'); if (photo) document.getElementById('photo').style.backgroundImage = 'url("' + W + photo + '/v1/fill/w_1600,h_900,al_c,q_90/' + photo + '")';
+  if (q.get('side') === 'right') document.getElementById('cover').classList.add('r');
   if (q.get('focus')) document.getElementById('photo').style.setProperty('--focus', q.get('focus'));
   var cut = q.get('cutout'); if (cut) { var c = document.getElementById('cutout'); c.src = W + cut; c.hidden = false; }
   var k = document.getElementById('kick'); k.innerHTML = '<b>' + esc(q.get('kicker') || 'GatorBait') + '</b>' + (q.get('sub') ? '<span>' + esc(q.get('sub')) + '</span>' : '');

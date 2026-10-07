@@ -315,7 +315,10 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 @media(max-width:599px){
 #gbm-live.fp26 .fp-bug-last:has(+ .fp-bug-next){display:none}
 #gbm-live.fp26 .fp-bug-match{flex:1 1 auto;white-space:nowrap;overflow:hidden}
-#gbm-live.fp26 .fp-bug-match small{overflow:hidden;text-overflow:ellipsis}
+#gbm-live.fp26 .fp-bug-match small{white-space:normal;line-height:1.25}
+}
+@media(min-width:1100px) and (max-width:1499px){
+#gbm-live.fp26 .fp-bug-last:has(+ .fp-bug-next){display:none}
 }
 @media(max-width:429px){#gbm-live.fp26 .fp-wordmark small{display:none}}
 @media(max-width:374px){#gbm-live.fp26 .fp-date span+span{display:none}#gbm-live.fp26 .fp-mast .fp-btn{padding:0 10px;font-size:13px;gap:5px}}

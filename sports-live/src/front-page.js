@@ -164,7 +164,7 @@
     if (str(raw.updatedAt, 40)) sb.updatedAt = raw.updatedAt;
     return sb;
   }
-  function abbr(name, given) { return given || ({ Florida: 'FLA', 'Ole Miss': 'MISS', Missouri: 'MIZ', Georgia: 'UGA', Tennessee: 'TENN', LSU: 'LSU', Kentucky: 'UK' })[name] || String(name || '').slice(0, 4).toUpperCase(); }
+  function abbr(name, given) { return given || ({ Florida: 'FLA', 'Ole Miss': 'MISS', Missouri: 'MIZ', Georgia: 'UGA', Tennessee: 'TENN', LSU: 'LSU', Kentucky: 'UK', 'South Carolina': 'S. Carolina', Alabama: 'ALA', Arkansas: 'ARK', Auburn: 'AUB', 'Texas A&M': 'A&M', 'Mississippi State': 'Miss. St.', Oklahoma: 'OKLA', Vanderbilt: 'Vandy', Texas: 'Texas' })[name] || String(name || '').slice(0, 4).toUpperCase(); }
   function ranked(rank, name) { return (rank ? 'No. ' + rank + ' ' : '') + name; }
 
   // Game state for the score bug and the Saturday stadium board. Desk data (window.__GBM_GAMEDAY__) wins.

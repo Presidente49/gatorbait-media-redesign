@@ -70,9 +70,8 @@ html body #SITE_PAGES [category-dropdown],html body #SITE_PAGES [category-dropdo
 [data-hook^="consent-banner"] button,[data-hook^="consent-banner"] button *{
   font-weight:700!important;
 }
-html body nav[tag-cloud-root] ul[class] li[class] a[class],
-html body nav[tag-cloud-root] ul[class] li[class] a[class] *,
-html body #SITE_PAGES nav[tag-cloud-root] ul li a{
+html body nav[tag-cloud-root] ul[class] li a[class],
+html body nav[tag-cloud-root] ul[class] li a[class] *{
   font-family:var(--gbm-cond)!important;
   font-weight:700!important;
   letter-spacing:.06em!important;

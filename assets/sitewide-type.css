@@ -22,9 +22,11 @@ html body{
 
 /* 1. Text elements inside our embeds are Barlow. Headings, kickers, buttons and numerals are not listed here:
  *    the embeds set them in Barlow Condensed and v2 no longer overrides that. */
+#gbm-mobile-shell,#gbm-mobile-shell *,#gbm-mobile-drawer-root,#gbm-mobile-drawer-root *,
+#gbm-footer,#gbm-footer *,
+[data-hook="post-title"],[data-hook="post-title"] *,
 #gbm-live p,#gbm-live li,#gbm-live small,
-#gbm-magazine-page p,#gbm-magazine-page li,#gbm-magazine-page small,
-#gbm-footer,#gbm-footer p,#gbm-footer li{
+#gbm-magazine-page p,#gbm-magazine-page li,#gbm-magazine-page small{
   font-family:var(--gbm-font)!important;
 }
 
@@ -85,6 +87,17 @@ html body #SITE_PAGES [data-hook="post-page"] .gbc .gbc-b,
 [data-hook="post-categories"],[data-hook="time-ago"],[data-hook="time-to-read"],[data-hook="user-name"],
 [data-hook="post-category-label"] *{
   font-weight:700!important;
+}
+/* Fallback body size for post pages the template does not reach (the template's own rules win elsewhere). */
+[data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{
+  font-size:17px!important;
+  line-height:1.68!important;
+}
+@media(max-width:760px){
+  [data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{
+    font-size:16px!important;
+    line-height:1.62!important;
+  }
 }
 
 /* 5. Article body: one face, one weight, one size. Body 500, 19px desktop / 17.5px phone;

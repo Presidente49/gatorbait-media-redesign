@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Baugh Owns It: Florida Running Back Texts Sumrall an Apology After Missouri Loss",
+      "excerpt": "Jadan Baugh apologized to Jon Sumrall by text the day after Florida's 45-17 loss at Missouri, and Sumrall says his running back 'owned it.'",
+      "url": "https://www.gatorbaitmedia.com/post/baugh-owns-it-florida-running-back-texts-sumrall-an-apology-after-missouri-loss",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-07T15:23:25Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_b815ea1981c24faf87c2d9969476f54b~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Baugh Owns It: Florida Running Back Texts Sumrall an Apology After Missouri Loss"
+      }
+    },
+    {
       "title": "Thoughts of the Day: October 7, 2026",
       "excerpt": "Franz Beard on Florida's explosive-play problem, South Carolina, the SEC across the board, and the push to expand the College Football Playoff.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-7-2026",
@@ -9,7 +23,7 @@
       "firstPublishedDate": "2026-10-07T12:57:27Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_0d1374ffc0884a48aa3b363a54ee0ab3~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_76a430063f5b40d6a008010165fbe093~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Thoughts of the Day: October 7, 2026"
@@ -23,7 +37,7 @@
       "firstPublishedDate": "2026-10-07T12:36:27Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c07c1969a698462f8066e3858805a158~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_72fd69312f7f41fbb87712798f84e9bd~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Homecoming Test: No. 16 Florida Hosts South Carolina Saturday at 12:45 p.m."
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Roberts Runs Away, Missouri Routs Florida 45-17"
-      }
-    },
-    {
-      "title": "Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10",
-      "excerpt": "Austin Simmons threw two touchdown passes and No. 25 Missouri held Jadan Baugh to 12 yards on nine carries to lead No. 8 Florida 20-10 at the half in Columbia.",
-      "url": "https://www.gatorbaitmedia.com/post/halftime-simmons-strikes-twice-missouri-leads-florida-20-10",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-03T21:49:53Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c2096747d67b47c68ca6e6839330cb03~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10"
       }
     }
   ]

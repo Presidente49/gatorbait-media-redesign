@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Baugh Owns It: Florida Running Back Texts Sumrall an Apology After Missouri Loss",
+      "excerpt": "Jadan Baugh apologized to Jon Sumrall by text the day after Florida's 45-17 loss at Missouri, and Sumrall says his running back 'owned it.'",
+      "url": "https://www.gatorbaitmedia.com/post/baugh-owns-it-florida-running-back-texts-sumrall-an-apology-after-missouri-loss",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-07T15:23:25Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_b815ea1981c24faf87c2d9969476f54b~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Baugh Owns It: Florida Running Back Texts Sumrall an Apology After Missouri Loss"
+      }
+    },
+    {
       "title": "Thoughts of the Day: October 7, 2026",
       "excerpt": "Franz Beard on Florida's explosive-play problem, South Carolina, the SEC across the board, and the push to expand the College Football Playoff.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-7-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!"
-      }
-    },
-    {
-      "title": "The loss to Mizzou is history; the question is how will the Gators respond?",
-      "excerpt": "For an entire month Jon Sumrall had been warning that the Florida Gators would be exposed somewhere down the road if they didn’t change their ways. Somewhere down the road was Columbia, Missouri, where Saturday afternoon the 8th-ranked Gators (4-1, 2-1 SEC) took one of those leave no place on their body without a bruise beatings at the hands of the…",
-      "url": "https://www.gatorbaitmedia.com/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-04T13:33:37Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_be903de5f60d4510963f83dce1b90109~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The loss to Mizzou is history; the question is how will the Gators respond?"
       }
     }
   ]

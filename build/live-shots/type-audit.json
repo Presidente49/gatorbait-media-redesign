@@ -1,0 +1,2642 @@
+{
+ "at": "2026-10-07T15:38:06.638Z",
+ "pages": [
+  {
+   "path": "/post/the-college-football-crisis-corn-dogs-vs-commissioners-and-why-it-s-a-big-deal",
+   "w": 390,
+   "slug": "the-college-football-crisis-corn-dogs-vs-390-tierA",
+   "variant": "-tierA",
+   "status": 200,
+   "probe": {
+    "fonts": [
+     {
+      "family": "Barlow",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "500",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "600",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "700",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "800",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "800",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow",
+      "weight": "800",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "600",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "700",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "800",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "800",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "800",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "Bebas Neue",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Bebas Neue",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "Barlow Condensed",
+      "weight": "800",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "helvetica-w01-roman",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "helvetica-w01-roman",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "helvetica-w01-roman",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "open sans",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "open sans",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "open sans",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "open sans",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald-medium",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald-medium",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto-bold",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto-bold",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "roboto-bold",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto-bold",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "wf_9538166b969941ddac57d126a",
+      "weight": "normal",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "wf_ecf1088283924ea1ae51fa6b0",
+      "weight": "normal",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "arial-w01-black",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "arial-w01-black",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "arial-w01-black",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "futura-lt-w01-book",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "helvetica-w01-roman",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "helvetica-w01-roman",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "helvetica-w01-roman",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald-medium",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "oswald-medium",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "proxima-n-w01-reg",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "proxima-n-w01-reg",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto-bold",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto-bold",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+     },
+     {
+      "family": "roboto-bold",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+     },
+     {
+      "family": "roboto-bold",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+     }
+    ],
+    "census": [
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 14,
+      "lh": "normal",
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(242, 239, 230)",
+      "n": 23,
+      "samples": [
+       {
+        "t": "Front Page",
+        "h": "a"
+       },
+       {
+        "t": "Latest",
+        "h": "a"
+       },
+       {
+        "t": "Breaking News",
+        "h": "a"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "500",
+      "size": 17.5,
+      "lh": 29.05,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(15, 26, 44)",
+      "n": 22,
+      "samples": [
+       {
+        "t": "I’m not a member of the team Steve Sarkisian fan",
+        "h": "span"
+       },
+       {
+        "t": "“I love all of that. I love all that this thing ",
+        "h": "span"
+       },
+       {
+        "t": "Translation for the commissioners: some things a",
+        "h": "span"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": 17.25,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(8, 19, 47)",
+      "n": 9,
+      "samples": [
+       {
+        "t": "Front Page",
+        "h": "a"
+       },
+       {
+        "t": "Latest",
+        "h": "a"
+       },
+       {
+        "t": "Magazine",
+        "h": "a"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "700",
+      "size": 17,
+      "lh": 19.55,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "n": 9,
+      "samples": [
+       {
+        "t": "Front Page",
+        "h": "a"
+       },
+       {
+        "t": "Latest stories",
+        "h": "a"
+       },
+       {
+        "t": "Football",
+        "h": "a"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "700",
+      "size": 19,
+      "lh": 23.75,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(17, 39, 74)",
+      "n": 7,
+      "samples": [
+       {
+        "t": "Buddy Blog: Florida Gators Need the Balm of Home",
+        "h": "a.hPl9QB"
+       },
+       {
+        "t": "Buddy Blog--Gator Football: Where Does It Go Fro",
+        "h": "a.hPl9QB"
+       },
+       {
+        "t": "Thoughts of the Day: October 6, 2026",
+        "h": "a.hPl9QB"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 27,
+      "lh": 27.54,
+      "ls": 0,
+      "tt": "uppercase",
+      "color": "rgb(8, 27, 53)",
+      "n": 6,
+      "samples": [
+       {
+        "t": "Rivalries Built in a Boardroom",
+        "h": "span"
+       },
+       {
+        "t": "Twenty-Four Teams, Zero Stakes",
+        "h": "span"
+       },
+       {
+        "t": "Atlanta on the Chopping Block",
+        "h": "span"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": 15,
+      "ls": 0.6,
+      "tt": "uppercase",
+      "color": "rgb(0, 33, 165)",
+      "n": 5,
+      "samples": [
+       {
+        "t": "Roster",
+        "h": "a.gbm-kit-chip"
+       },
+       {
+        "t": "Schedule",
+        "h": "a.gbm-kit-chip"
+       },
+       {
+        "t": "Stats",
+        "h": "a.gbm-kit-chip"
+       }
+      ]
+     },
+     {
+      "family": "proxima-n-w01-reg",
+      "stack": "proxima-n-w01-reg, sans-serif",
+      "weight": "400",
+      "size": 14,
+      "lh": 17,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)",
+      "n": 5,
+      "samples": [
+       {
+        "t": "Florida Gators Football",
+        "h": "a._u2fqx"
+       },
+       {
+        "t": "Steve Spurrier",
+        "h": "a._u2fqx"
+       },
+       {
+        "t": "Breaking News",
+        "h": "a._u2fqx"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "500",
+      "size": 12,
+      "lh": 16.8,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(74, 88, 114)",
+      "n": 4,
+      "samples": [
+       {
+        "t": "gatorbaitmedia.com",
+        "h": "a.gbm-author-site"
+       },
+       {
+        "t": "3 min read",
+        "h": "span[data-hook=time-to-read]"
+       },
+       {
+        "t": "We'll email you a link to confirm.",
+        "h": "p.gbc-p"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "400",
+      "size": 12,
+      "lh": 16.8,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(74, 88, 114)",
+      "n": 4,
+      "samples": [
+       {
+        "t": "Updated:",
+        "h": "p.NfKpG_"
+       },
+       {
+        "t": "Published",
+        "h": "p.gbm-published"
+       },
+       {
+        "t": "October 6, 2026",
+        "h": "time"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, sans-serif",
+      "weight": "500",
+      "size": 14,
+      "lh": 18.9,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(28, 42, 92)",
+      "n": 4,
+      "samples": [
+       {
+        "t": "The 2026 season guide: who is on the field and w",
+        "h": "span"
+       },
+       {
+        "t": "The numbers behind every Gators game, updated al",
+        "h": "span"
+       },
+       {
+        "t": "Results so far and the road to Atlanta, on the f",
+        "h": "span"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 12,
+      "lh": 14.4,
+      "ls": 1.44,
+      "tt": "uppercase",
+      "color": "rgb(250, 70, 22)",
+      "n": 4,
+      "samples": [
+       {
+        "t": "News",
+        "h": "h3"
+       },
+       {
+        "t": "Voices",
+        "h": "h3"
+       },
+       {
+        "t": "Gators Football",
+        "h": "h3"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "800",
+      "size": 18,
+      "lh": 19.8,
+      "ls": 0.54,
+      "tt": "uppercase",
+      "color": "rgb(0, 33, 165)",
+      "n": 3,
+      "samples": [
+       {
+        "t": "Roster & Schedule",
+        "h": "b"
+       },
+       {
+        "t": "Florida Stats",
+        "h": "b"
+       },
+       {
+        "t": "The Road Ahead",
+        "h": "b"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "500",
+      "size": 13,
+      "lh": 17.55,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "n": 3,
+      "samples": [
+       {
+        "t": "Yes, email me GatorBait Magazine and GatorBait M",
+        "h": "span"
+       },
+       {
+        "t": "We'll email you a link to confirm.",
+        "h": "p.gbc-p"
+       },
+       {
+        "t": "Privacy policy",
+        "h": "a"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 16,
+      "lh": 19.2,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(8, 27, 53)",
+      "n": 3,
+      "samples": [
+       {
+        "t": "Baugh Owns It: Florida Running Back Texts Sumral",
+        "h": "span.kr-t"
+       },
+       {
+        "t": "Thoughts of the Day: October 7, 2026",
+        "h": "span.kr-t"
+       },
+       {
+        "t": "Homecoming Test: No. 16 Florida Hosts South Caro",
+        "h": "span.kr-t"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 14,
+      "lh": 21,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)",
+      "n": 3,
+      "samples": [
+       {
+        "t": "Gator Football",
+        "h": "a[data-hook=link].Tp7c0d"
+       },
+       {
+        "t": "Buddy's Blog",
+        "h": "a[data-hook=link].Tp7c0d"
+       },
+       {
+        "t": "Write a comment...",
+        "h": "span[data-hook=comment-box-placeholder-text]"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 13,
+      "lh": 18.2,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(242, 239, 230)",
+      "n": 3,
+      "samples": [
+       {
+        "t": "Facebook",
+        "h": "a"
+       },
+       {
+        "t": "YouTube",
+        "h": "a"
+       },
+       {
+        "t": "info@gatorbaitmedia.com",
+        "h": "a"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 13,
+      "lh": 13,
+      "ls": 0.78,
+      "tt": "uppercase",
+      "color": "rgb(8, 19, 47)",
+      "n": 2,
+      "samples": [
+       {
+        "t": "Shop",
+        "h": "a.gbm-ms-shop"
+       },
+       {
+        "t": "Gear",
+        "h": "span.gbm-x"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 11,
+      "lh": 15.95,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(102, 112, 133)",
+      "n": 2,
+      "samples": [
+       {
+        "t": "Independent Florida coverage since 1979.",
+        "h": "div.gbm-ms-foot"
+       },
+       {
+        "t": "Privacy & terms",
+        "h": "a"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "700",
+      "size": 13,
+      "lh": 18.2,
+      "ls": 1.04,
+      "tt": "uppercase",
+      "color": "rgb(91, 103, 122)",
+      "n": 2,
+      "samples": [
+       {
+        "t": "By",
+        "h": "p#viewer-th71h1936.jTQCo.bZs8p"
+       },
+       {
+        "t": "Buddy Martin",
+        "h": "a"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 23,
+      "lh": 26.45,
+      "ls": -0.46,
+      "tt": "uppercase",
+      "color": "rgb(0, 33, 165)",
+      "n": 2,
+      "samples": [
+       {
+        "t": "Keep up with the Gators",
+        "h": "h3"
+       },
+       {
+        "t": "Explore GatorBait",
+        "h": "h3"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 16,
+      "lh": 16,
+      "ls": 0.96,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "n": 2,
+      "samples": [
+       {
+        "t": "Sign up free",
+        "h": "button.gbc-b"
+       },
+       {
+        "t": "Sign up free",
+        "h": "button.gbc-b"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 12,
+      "lh": 18,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "n": 2,
+      "samples": [
+       {
+        "t": "We use cookies for site performance and analytic",
+        "h": "span#cookies_policy_description[data-hook=consent-banner-description].consent-banner-description._0zrzs"
+       },
+       {
+        "t": "Privacy Policy",
+        "h": "a[data-hook=consent-banner-view-policy-link].x8ImWz"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 12,
+      "lh": "normal",
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "n": 2,
+      "samples": [
+       {
+        "t": "Decline All",
+        "h": "button[data-hook=consent-banner-decline-all-button].N24JKK.mq4ewo"
+       },
+       {
+        "t": "Accept All",
+        "h": "button[data-hook=consent-banner-apply-button].mQxxMq.mq4ewo"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "900",
+      "size": 11,
+      "lh": 11,
+      "ls": 0.88,
+      "tt": "uppercase",
+      "color": "rgb(8, 19, 47)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Menu",
+        "h": "span"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 15,
+      "lh": 17.25,
+      "ls": 0.9,
+      "tt": "uppercase",
+      "color": "rgb(8, 19, 47)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Shop GatorBait Gear",
+        "h": "a.gbm-ms-shop"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": 17.25,
+      "ls": 0,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Join GatorBait",
+        "h": "a.gbm-ms-join"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 31.2,
+      "lh": 34.32,
+      "ls": -0.78,
+      "tt": "none",
+      "color": "rgb(8, 27, 53)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "The College Football Crisis: Corn Dogs vs Commis",
+        "h": "h1[data-hook=post-title].H3vOVf"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "700",
+      "size": 12,
+      "lh": 16.8,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(8, 27, 53)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Buddy Martin",
+        "h": "span[data-hook=user-name]"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 16,
+      "lh": 24.8,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(74, 88, 114)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "14 hours ago",
+        "h": "span[data-hook=time-ago].time-ago"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 15,
+      "lh": 15,
+      "ls": 0.9,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Share this story",
+        "h": "span"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "800",
+      "size": 12,
+      "lh": 12,
+      "ls": 1.68,
+      "tt": "uppercase",
+      "color": "rgb(250, 70, 22)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "GatorBait Guide",
+        "h": "span.gbm-kit-k"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "800",
+      "size": 15,
+      "lh": 18.75,
+      "ls": 0.3,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Next: vs. South Carolina · Sat., Oct. 10 · 12:45",
+        "h": "a.gbm-kit-chip.lead"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": 15,
+      "ls": 0.3,
+      "tt": "none",
+      "color": "rgb(0, 33, 165)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Last: L 17-45 at No. 25 Missouri",
+        "h": "a.gbm-kit-chip.last"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 25,
+      "lh": 28,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(8, 27, 53)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "SEC fans should be the angriest of anybody, beca",
+        "h": "span"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "600",
+      "size": 17.5,
+      "lh": 29.05,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 33, 165)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "GatorBaitMedia.com",
+        "h": "span"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 21.84,
+      "lh": 25.12,
+      "ls": -0.22,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Get GatorBait Magazine free",
+        "h": "h3.gbc-h"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 12,
+      "lh": 12,
+      "ls": 1.68,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Up next",
+        "h": "span.gu-l"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 27,
+      "lh": 27,
+      "ls": 0,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "vs. South Carolina",
+        "h": "b"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "600",
+      "size": 13,
+      "lh": 16.9,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(174, 187, 208)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Sat., Oct. 10 · Time TBA · Ben Hill Griffin Stad",
+        "h": "small"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 13,
+      "lh": 13,
+      "ls": 1.04,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Latest news →",
+        "h": "span.gu-c"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 14,
+      "lh": 14,
+      "ls": -0.28,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Comments",
+        "h": "h2[data-hook=wc-header-title].qfdC8A.GdTDX6"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 20,
+      "lh": 22,
+      "ls": 0.4,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "GatorBait Gear",
+        "h": "h2"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 14,
+      "lh": 20.3,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(185, 196, 214)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Shirts, hats and gifts for Gator Nation. The sto",
+        "h": "p"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": "normal",
+      "ls": 0.9,
+      "tt": "uppercase",
+      "color": "rgb(8, 19, 47)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Shop Gear",
+        "h": "a.gbf-btn"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 12,
+      "lh": 30,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Settings",
+        "h": "span[data-hook=consent-banner-settings-button].ogAEw2.mq4ewo"
+       }
+      ]
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 22,
+      "lh": 23.1,
+      "ls": 0.22,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Get GatorBait Magazine free",
+        "h": "h3.gbc-h"
+       }
+      ]
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, sans-serif",
+      "weight": "500",
+      "size": 14,
+      "lh": 19.6,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(232, 236, 248)",
+      "n": 1,
+      "samples": [
+       {
+        "t": "Buddy Martin, the game-week package, Chris Spear",
+        "h": "p.gbc-v"
+       }
+      ]
+     }
+    ],
+    "bad": [
+     {
+      "family": "proxima-n-w01-reg, sans-serif",
+      "t": "Florida Gators Football",
+      "h": "a._u2fqx",
+      "size": 14
+     },
+     {
+      "family": "proxima-n-w01-reg, sans-serif",
+      "t": "Steve Spurrier",
+      "h": "a._u2fqx",
+      "size": 14
+     },
+     {
+      "family": "proxima-n-w01-reg, sans-serif",
+      "t": "Breaking News",
+      "h": "a._u2fqx",
+      "size": 14
+     },
+     {
+      "family": "proxima-n-w01-reg, sans-serif",
+      "t": "College football",
+      "h": "a._u2fqx",
+      "size": 14
+     },
+     {
+      "family": "proxima-n-w01-reg, sans-serif",
+      "t": "Texas",
+      "h": "a._u2fqx",
+      "size": 14
+     }
+    ],
+    "post": {
+     "bodyStyles": [
+      {
+       "family": "Barlow Condensed",
+       "stack": "\"Barlow Condensed\", Barlow, Arial, Helvetica, sans-serif",
+       "weight": "700",
+       "size": 25,
+       "lh": 28,
+       "ls": 0,
+       "tt": "none",
+       "color": "rgb(8, 27, 53)",
+       "n": 1,
+       "sample": "SEC fans should be the angriest of anybody, becaus"
+      },
+      {
+       "family": "Barlow",
+       "stack": "Barlow, Arial, Helvetica, sans-serif",
+       "weight": "500",
+       "size": 17.5,
+       "lh": 29.05,
+       "ls": 0,
+       "tt": "none",
+       "color": "rgb(15, 26, 44)",
+       "n": 18,
+       "sample": "I’m not a member of the team Steve Sarkisian fan c"
+      }
+     ],
+     "paragraphs": 19,
+     "firstParaText": "SEC fans should be the angriest of anybody, because the SEC Championsh",
+     "lineLen": {
+      "widthPx": 354,
+      "charsPerLine": 31
+     },
+     "weekRich": true,
+     "dropcap": null,
+     "title": {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 31.2,
+      "lh": 34.32,
+      "ls": -0.78,
+      "tt": "none",
+      "color": "rgb(8, 27, 53)",
+      "text": "The College Football Crisis: Corn Dogs vs Commissioners And Why It's A"
+     },
+     "kicker": {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 12,
+      "lh": 12,
+      "ls": 1.68,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "content": "\"Column\""
+     },
+     "byline": {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "700",
+      "size": 12,
+      "lh": 16.8,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(8, 27, 53)"
+     },
+     "date": {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "500",
+      "size": 12,
+      "lh": 16.8,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(74, 88, 114)",
+      "text": "19 hours ago"
+     },
+     "h2": {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 27,
+      "lh": 27.54,
+      "ls": 0,
+      "tt": "uppercase",
+      "color": "rgb(8, 27, 53)",
+      "text": "Keep reading"
+     },
+     "h3": {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "800",
+      "size": 23,
+      "lh": 26.45,
+      "ls": -0.46,
+      "tt": "uppercase",
+      "color": "rgb(0, 33, 165)",
+      "text": "Keep up with the Gators"
+     },
+     "quote": null,
+     "caption": null
+    },
+    "buttons": [
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "900",
+      "size": 11,
+      "lh": 11,
+      "ls": 0.88,
+      "tt": "uppercase",
+      "color": "rgb(8, 19, 47)",
+      "text": "Menu",
+      "h": "button#gbm-mobile-menu-toggle.gbm-ms-trigger",
+      "w": 72,
+      "hgt": 44
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 27,
+      "lh": 27,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(8, 19, 47)",
+      "text": "×",
+      "h": "button.gbm-ms-close",
+      "w": 40,
+      "hgt": 40
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "500",
+      "size": 12,
+      "lh": 16.8,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(74, 88, 114)",
+      "text": "",
+      "h": "button#more-button-58ac5240-a49a-4d15-85d9-609c2e76dd87[data-hook=more-button].MHuRVq",
+      "w": 24,
+      "hgt": 24
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 15,
+      "lh": 15,
+      "ls": 0.9,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "text": "Share this story",
+      "h": "button#gbm-share-btn.gbm-share-btn",
+      "w": 354,
+      "hgt": 44
+     },
+     {
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 16,
+      "lh": 16,
+      "ls": 0.96,
+      "tt": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "text": "Sign up free",
+      "h": "button.gbc-b",
+      "w": 123,
+      "hgt": 44
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 13.33,
+      "lh": 0,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)",
+      "text": "",
+      "h": "button[data-hook=share-button__facebook].qXlEOR",
+      "w": 19,
+      "hgt": 19
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 13.33,
+      "lh": 0,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)",
+      "text": "",
+      "h": "button[data-hook=share-button__twitter].qXlEOR",
+      "w": 19,
+      "hgt": 19
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 13.33,
+      "lh": 0,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)",
+      "text": "",
+      "h": "button[data-hook=share-button__linked-in].qXlEOR",
+      "w": 19,
+      "hgt": 19
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 13.33,
+      "lh": 0,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)",
+      "text": "",
+      "h": "button[data-hook=share-button__link].qXlEOR",
+      "w": 19,
+      "hgt": 19
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 13.33,
+      "lh": 0,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)",
+      "text": "",
+      "h": "button[data-hook=share-button__print].qXlEOR",
+      "w": 19,
+      "hgt": 19
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 13.33,
+      "lh": "normal",
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)",
+      "text": "Write a comment...Write a comm",
+      "h": "button[data-hook=comment-box-placeholder].yh5VQB",
+      "w": 348,
+      "hgt": 56
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": "normal",
+      "ls": 0.9,
+      "tt": "uppercase",
+      "color": "rgb(8, 19, 47)",
+      "text": "Shop Gear ↗",
+      "h": "a.gbf-btn",
+      "w": 358,
+      "hgt": 48
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 12,
+      "lh": 30,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "text": "Settings",
+      "h": "span[data-hook=consent-banner-settings-button].ogAEw2.mq4ewo",
+      "w": 350,
+      "hgt": 30
+     },
+     {
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "700",
+      "size": 12,
+      "lh": "normal",
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)",
+      "text": "Decline All",
+      "h": "button[data-hook=consent-banner-decline-all-button].N24JKK.mq4ewo",
+      "w": 173,
+      "hgt": 32
+     }
+    ],
+    "fixed": [
+     {
+      "h": "div#gbm-mobile-shell-host",
+      "pos": "sticky",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "hgt": 60,
+      "pctOfViewport": 7,
+      "text": "Shop Gear ↗Menu×PodcastsMessage BoardStoreFront PageLatestMagazineTV & PodcastsScores & Sc",
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 10,
+      "lh": "normal",
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)"
+     },
+     {
+      "h": "div#gbm-mobile-drawer-root",
+      "pos": "fixed",
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "hgt": 844,
+      "pctOfViewport": 100,
+      "text": "×PodcastsMessage BoardStoreFront PageLatestMagazineTV & PodcastsScores & ScheduleRosterCom",
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 10,
+      "lh": "normal",
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)"
+     },
+     {
+      "h": "div[data-hook=consent-banner-root].consent-banner-root.MNUFxS",
+      "pos": "fixed",
+      "x": 0,
+      "y": 684,
+      "w": 390,
+      "hgt": 160,
+      "pctOfViewport": 19,
+      "text": "We use cookies for site performance and analytics.Privacy PolicySettingsDecline AllAccept ",
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 12,
+      "lh": 18,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(255, 255, 255)"
+     },
+     {
+      "h": "div#gbc-bar.on",
+      "pos": "fixed",
+      "x": 0,
+      "y": 608,
+      "w": 390,
+      "hgt": 236,
+      "pctOfViewport": 28,
+      "text": "×Free · GatorBait MagazineGet GatorBait Magazine freeBuddy Martin, the game-week package, ",
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "400",
+      "size": 10,
+      "lh": "normal",
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(0, 0, 0)"
+     }
+    ],
+    "clipped": [
+     {
+      "h": "button.gbm-ms-close",
+      "t": "×",
+      "sw": 38,
+      "cw": 38,
+      "right": 733,
+      "ellip": false,
+      "past": true,
+      "size": 27,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "Front Page",
+      "sw": 343,
+      "cw": 343,
+      "right": 747,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "Latest",
+      "sw": 343,
+      "cw": 343,
+      "right": 747,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "Magazine",
+      "sw": 343,
+      "cw": 343,
+      "right": 747,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "TV & Podcasts",
+      "sw": 343,
+      "cw": 343,
+      "right": 747,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "Scores & Schedule",
+      "sw": 343,
+      "cw": 343,
+      "right": 747,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "Roster",
+      "sw": 343,
+      "cw": 343,
+      "right": 747,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "Community",
+      "sw": 343,
+      "cw": 343,
+      "right": 747,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "span",
+      "t": "↗",
+      "sw": 14,
+      "cw": 14,
+      "right": 677,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a.gbm-ms-join",
+      "t": "Join GatorBait",
+      "sw": 311,
+      "cw": 311,
+      "right": 731,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "Sign In / Account",
+      "sw": 343,
+      "cw": 343,
+      "right": 747,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "Contact",
+      "sw": 343,
+      "cw": 343,
+      "right": 747,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "Barlow"
+     },
+     {
+      "h": "a",
+      "t": "Privacy & terms",
+      "sw": 0,
+      "cw": 0,
+      "right": 497,
+      "ellip": false,
+      "past": true,
+      "size": 11,
+      "family": "Barlow"
+     },
+     {
+      "h": "a.gbm-kit-chip.last",
+      "t": "Last: L 17-45 at No. 25 Missouri",
+      "sw": 233,
+      "cw": 233,
+      "right": 615,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "\"Barlow Condensed\""
+     },
+     {
+      "h": "a.gbm-kit-chip",
+      "t": "Roster",
+      "sw": 79,
+      "cw": 79,
+      "right": 703,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "\"Barlow Condensed\""
+     },
+     {
+      "h": "a.gbm-kit-chip",
+      "t": "Schedule",
+      "sw": 94,
+      "cw": 94,
+      "right": 807,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "\"Barlow Condensed\""
+     },
+     {
+      "h": "a.gbm-kit-chip",
+      "t": "Stats",
+      "sw": 68,
+      "cw": 68,
+      "right": 885,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "\"Barlow Condensed\""
+     },
+     {
+      "h": "a.gbm-kit-chip",
+      "t": "The Road Ahead",
+      "sw": 133,
+      "cw": 133,
+      "right": 1028,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "\"Barlow Condensed\""
+     },
+     {
+      "h": "a.gbm-kit-chip",
+      "t": "The Buddy Martin Show",
+      "sw": 189,
+      "cw": 189,
+      "right": 1227,
+      "ellip": false,
+      "past": true,
+      "size": 15,
+      "family": "\"Barlow Condensed\""
+     },
+     {
+      "h": "a.hPl9QB",
+      "t": "Buddy Blog: Florida Gators Need the Balm of Homeco",
+      "sw": 270,
+      "cw": 270,
+      "right": 660,
+      "ellip": false,
+      "past": true,
+      "size": 19,
+      "family": "Barlow"
+     },
+     {
+      "h": "a.hPl9QB",
+      "t": "Buddy Blog--Gator Football: Where Does It Go From ",
+      "sw": 270,
+      "cw": 270,
+      "right": 990,
+      "ellip": false,
+      "past": true,
+      "size": 19,
+      "family": "Barlow"
+     },
+     {
+      "h": "a.hPl9QB",
+      "t": "Thoughts of the Day: October 6, 2026",
+      "sw": 270,
+      "cw": 270,
+      "right": 1320,
+      "ellip": false,
+      "past": true,
+      "size": 19,
+      "family": "Barlow"
+     },
+     {
+      "h": "a.hPl9QB",
+      "t": "Buddy Blog: Florida Gators Need the Balm of Homeco",
+      "sw": 270,
+      "cw": 270,
+      "right": 1650,
+      "ellip": false,
+      "past": true,
+      "size": 19,
+      "family": "Barlow"
+     }
+    ],
+    "nav": [
+     {
+      "t": "Shop Gear ↗",
+      "x": 175,
+      "right": 300,
+      "y": 10,
+      "w": 125,
+      "cw": 125,
+      "sw": 125,
+      "family": "Barlow",
+      "stack": "Barlow, Arial, Helvetica, sans-serif",
+      "weight": "800",
+      "size": 13,
+      "lh": 13,
+      "ls": 0.78,
+      "tt": "uppercase",
+      "color": "rgb(8, 19, 47)"
+     },
+     {
+      "t": "Buddy Martin",
+      "x": 18,
+      "right": 92,
+      "y": -430,
+      "w": 74,
+      "cw": 74,
+      "sw": 74,
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "500",
+      "size": 12,
+      "lh": 16.8,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(74, 88, 114)"
+     },
+     {
+      "t": "gatorbaitmedia.com",
+      "x": 18,
+      "right": 129,
+      "y": -410,
+      "w": 111,
+      "cw": 111,
+      "sw": 111,
+      "family": "Barlow",
+      "stack": "Barlow, Arial, sans-serif",
+      "weight": "500",
+      "size": 12,
+      "lh": 16.8,
+      "ls": 0,
+      "tt": "none",
+      "color": "rgb(74, 88, 114)"
+     },
+     {
+      "t": "Roster",
+      "x": 623,
+      "right": 703,
+      "y": -88,
+      "w": 81,
+      "cw": 79,
+      "sw": 79,
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": 15,
+      "ls": 0.6,
+      "tt": "uppercase",
+      "color": "rgb(0, 33, 165)"
+     },
+     {
+      "t": "Schedule",
+      "x": 711,
+      "right": 807,
+      "y": -88,
+      "w": 96,
+      "cw": 94,
+      "sw": 94,
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": 15,
+      "ls": 0.6,
+      "tt": "uppercase",
+      "color": "rgb(0, 33, 165)"
+     },
+     {
+      "t": "Stats",
+      "x": 815,
+      "right": 885,
+      "y": -88,
+      "w": 70,
+      "cw": 68,
+      "sw": 68,
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": 15,
+      "ls": 0.6,
+      "tt": "uppercase",
+      "color": "rgb(0, 33, 165)"
+     },
+     {
+      "t": "The Road Ahead",
+      "x": 893,
+      "right": 1028,
+      "y": -88,
+      "w": 135,
+      "cw": 133,
+      "sw": 133,
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": 15,
+      "ls": 0.6,
+      "tt": "uppercase",
+      "color": "rgb(0, 33, 165)"
+     },
+     {
+      "t": "The Buddy Martin Show",
+      "x": 1036,
+      "right": 1227,
+      "y": -88,
+      "w": 191,
+      "cw": 189,
+      "sw": 189,
+      "family": "Barlow Condensed",
+      "stack": "\"Barlow Condensed\", Barlow, sans-serif",
+      "weight": "700",
+      "size": 15,
+      "lh": 15,
+      "ls": 0.6,
+      "tt": "uppercase",
+      "color": "rgb(0, 33, 165)"
+     }
+    ],
+    "docScrollWidth": 390,
+    "innerWidth": 390
+   },
+   "cascade": {
+    "lede": {
+     "pHtml": "<p class=\"jTQCo bZs8p _6nv9R HR9l3\" dir=\"auto\" data-ricos-paragraph=\"4ybi26\" id=\"viewer-4ybi26\" tabindex=\"-1\" data-gbm-dek=\"\"><span class=\"JShga\"><strong style=\"font-weight: 700;\"><span style=\"font-size: 30px;\"><span>SEC fans should be the angriest of anybody, because the SEC Championship Game is in the crosshairs.</span></span></strong></span></p>",
+     "pInline": null,
+     "spanInline": null,
+     "spanClass": "JShga",
+     "spanFamily": "\"Barlow Condensed\", Barlow, Arial, Helvetica, sans",
+     "rules": [
+      {
+       "owner": "STYLE",
+       "sel": "html body #SITE_PAGES [data-hook=\"post-page\"] [data-hook=\"post-description\"] :is(p, li) span",
+       "ff": "var(--gbm-font)",
+       "prio": "important"
+      }
+     ]
+    },
+    "foreign": [
+     {
+      "family": "Helvetica",
+      "t": "Skip to Main Content",
+      "chain": "button.SKIP_TO_CONTENT_BTN < div.main_MF < div"
+     },
+     {
+      "family": "roboto-bold",
+      "t": "GATOR",
+      "chain": "span.color_41 < span.wixui-rich-text__text < span.wixui-rich-text__text < h1.font_0 < div.N8MGzv < div < div"
+     },
+     {
+      "family": "roboto-bold",
+      "t": "BAIT",
+      "chain": "span.wixui-rich-text__text < span.wixui-rich-text__text < span.wixui-rich-text__text < h1.font_0 < div.N8MGzv < div < div"
+     },
+     {
+      "family": "proxima-n-w01-reg",
+      "t": "Florida Gators Football",
+      "chain": "a._u2fqx < li < ul.zmug2R < nav[tag-cloud-root] < section.JJ6Vcq < div.KVKbzt < div.PKQ95p"
+     },
+     {
+      "family": "proxima-n-w01-reg",
+      "t": "Steve Spurrier",
+      "chain": "a._u2fqx < li < ul.zmug2R < nav[tag-cloud-root] < section.JJ6Vcq < div.KVKbzt < div.PKQ95p"
+     }
+    ]
+   }
+  }
+ ]
+}

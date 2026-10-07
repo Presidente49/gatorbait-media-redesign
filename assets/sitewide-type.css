@@ -47,14 +47,17 @@ html body{
 [data-hook^="consent-banner"] button,[data-hook^="consent-banner"] button *{
   font-weight:700!important;
 }
-#SITE_PAGES [data-hook="post-page"] a[class^="_"][href*="/tags/"],
-#SITE_PAGES [data-hook="post-page"] a[href*="/blog/tags/"],
-#SITE_PAGES [data-hook="post-page"] [data-hook="post-tags"] a,
-#SITE_PAGES [data-hook="post-page"] [data-hook="tags"] a{
+#SITE_PAGES [tag-cloud-root] a{
   font-family:var(--gbm-cond)!important;
   font-weight:700!important;
   letter-spacing:.06em!important;
   text-transform:uppercase!important;
+}
+/* Signup card: one face in both mounts (end-of-story strip and slide-up bar). */
+html body #SITE_PAGES [data-hook="post-page"] .gbc .gbc-h,
+html body #SITE_PAGES [data-hook="post-page"] .gbc .gbc-b,
+#gbc-bar .gbc-h,#gbc-bar .gbc-b{
+  font-family:var(--gbm-cond)!important;
 }
 
 /* 3b. Display headings in Condensed 800 carry no negative tracking: it closes up the counters and

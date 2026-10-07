@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: October 7, 2026",
+      "excerpt": "Franz Beard on Florida's explosive-play problem, South Carolina, the SEC across the board, and the push to expand the College Football Playoff.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-7-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-07T12:57:27Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_0d1374ffc0884a48aa3b363a54ee0ab3~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: October 7, 2026"
+      }
+    },
+    {
+      "title": "Homecoming Test: No. 16 Florida Hosts South Carolina Saturday at 12:45 p.m.",
+      "excerpt": "Florida (4-1) answers the 45-17 loss at Missouri against a South Carolina team (2-3) with the nation's No. 7 rushing offense, per ESPN. Kickoff is 12:45 p.m. ET on SEC Network.",
+      "url": "https://www.gatorbaitmedia.com/post/homecoming-test-no-16-florida-hosts-south-carolina-saturday-at-12-45-p-m",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-07T12:36:27Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_c07c1969a698462f8066e3858805a158~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Homecoming Test: No. 16 Florida Hosts South Carolina Saturday at 12:45 p.m."
+      }
+    },
+    {
       "title": "The College Football Crisis: Corn Dogs vs Commissioners And Why It's A Big Deal!",
       "excerpt": "There are only so many weekends on the calendar and only so many hits a player’s body can take. Stretch the playoff and something has to go, and the people in charge have already said conference title games could be cut.",
       "url": "https://www.gatorbaitmedia.com/post/the-college-football-crisis-corn-dogs-vs-commissioners-and-why-it-s-a-big-deal",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The loss to Mizzou is history; the question is how will the Gators respond?"
-      }
-    },
-    {
-      "title": "Drink Mix: How Missouri’s Blueprint Bottled Up the Gators",
-      "excerpt": "Eli Drinkwitz spent all week saying tough teams stop the run. Missouri did it Saturday. Now Florida has six days to make sure South Carolina can't do it again.",
-      "url": "https://www.gatorbaitmedia.com/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-04T03:56:09Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_940418a6e0a7432882f19b4620d77d81~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Drink Mix: How Missouri’s Blueprint Bottled Up the Gators"
-      }
-    },
-    {
-      "title": "By the Numbers: How Missouri Flipped Florida’s Script",
-      "excerpt": "Florida had been scoring 53.5 points and gaining 532.8 yards a game. Missouri held the Gators to 17 points, 325 yards and 42 rushing yards, and the numbers show where it went wrong.",
-      "url": "https://www.gatorbaitmedia.com/post/by-the-numbers-how-missouri-flipped-florida-s-script",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-04T03:44:19Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_ca805b099f49450bb75c33404d8e4b1b~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for By the Numbers: How Missouri Flipped Florida’s Script"
       }
     }
   ]

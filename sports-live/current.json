@@ -1,5 +1,5 @@
 {
-  "commit": "deadd8eeff9dac05b3658243927a9a32f3b199ab",
-  "updated": "2026-10-05T22:18:00Z",
-  "note": "Inline magazine runtime now mounts explicitly inside the homepage reader and lands at the start of the issue after the cover animation."
+  "commit": "9877b904ace3b908192f3ebd864e632744b60af4",
+  "updated": "2026-10-07T14:15:00Z",
+  "note": "Front page shows only the newest Thoughts of the Day, the Oct. 7 cover whole, 'vs. S. Carolina' in the Next band, and no Store clipping at 1100-1499px. Rollback: commit deadd8eeff9dac05b3658243927a9a32f3b199ab."
 }

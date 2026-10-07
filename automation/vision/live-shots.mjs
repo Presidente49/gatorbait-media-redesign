@@ -16,6 +16,8 @@ const widths = (process.argv[4] || '390,1365').split(',').map(Number).filter(Boo
 const PERF = process.env.PERF === '1';
 const OUT = 'build/live-shots';
 mkdirSync(OUT, { recursive: true });
+// Read-only typography census (automation/vision/type-audit.mjs): path "/__type-audit" runs it instead of one page.
+if (path === '/__type-audit') { await import('./type-audit.mjs'); process.exit(0); }
 // deploy/covers/*.html renders a story cover from the checkout instead of the live site (the query carries the copy).
 const url = /^deploy\/covers\//.test(path) ? 'file://' + process.cwd() + '/' + path : 'https://www.gatorbaitmedia.com' + path;
 const IOS_UA = devices['iPhone 13'].userAgent;

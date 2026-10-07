@@ -9,7 +9,14 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 
 const OUT = 'build/live-shots';
 mkdirSync(OUT, { recursive: true });
-const PAGES = (process.env.TA_PAGES || [
+import { readFileSync, existsSync } from 'node:fs';
+// Optional automation/vision/type-audit.config.json: {pages:[...], widths:"390,1365", css:"assets/sitewide-type.css", suffix:"after", cascade:true}
+// "css" is injected into the live page (the page's own sitewide-type link is removed first) so a proposed
+// stylesheet can be measured and photographed without any production write.
+const CFG = existsSync('automation/vision/type-audit.config.json') ? JSON.parse(readFileSync('automation/vision/type-audit.config.json', 'utf8')) : {};
+const VARIANTS = (CFG.variants || [{ suffix: '', css: CFG.css || '' }]).map((v) => ({ suffix: v.suffix ? '-' + v.suffix : '', css: v.css ? readFileSync(v.css, 'utf8') : '' }));
+let CSS = '', SUFFIX = '';
+const PAGES = (CFG.pages ? CFG.pages.join(',') : process.env.TA_PAGES || [
   '/', '/magazine', '/gatorbait-media-blogs',
   '/post/the-college-football-crisis-corn-dogs-vs-commissioners-and-why-it-s-a-big-deal',
   '/post/thoughts-of-the-day-october-7-2026',
@@ -19,7 +26,7 @@ const PAGES = (process.env.TA_PAGES || [
   '/post/reeling-gamecocks-rattled-gators-homecoming-comes-with-a-fix-list',
   '/post/florida-ole-miss-final-baugh-gators-run-over-rebels',
 ].join(',')).split(',');
-const WIDTHS = (process.env.TA_WIDTHS || '390,430,1365').split(',').map(Number);
+const WIDTHS = (CFG.widths || process.env.TA_WIDTHS || '390,430,1365').split(',').map(Number);
 const IOS_UA = devices['iPhone 13'].userAgent, DESKTOP_UA = devices['Desktop Chrome'].userAgent;
 const profile = (w) => w < 800
   ? { userAgent: IOS_UA, viewport: { width: w, height: w < 410 ? 844 : 932 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }
@@ -100,18 +107,37 @@ const probe = () => {
   return out;
 };
 
+// Which stylesheet rules set a font family on the lede paragraph's text, and where non-Barlow text sits.
+const cascade = () => {
+  const out = { lede: null, foreign: [] };
+  const p = document.querySelector('[data-hook=post-description] p.gbm-dropcap') || document.querySelector('[data-hook=post-description] p');
+  const chain = (el) => { const a = []; for (let e = el; e && e !== document.body && a.length < 7; e = e.parentElement) a.push(e.tagName.toLowerCase() + (e.getAttribute('data-hook') ? '[' + e.getAttribute('data-hook') + ']' : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/)[0] : '')); return a.join(' < '); };
+  const rules = (el) => { const hits = []; for (const sh of document.styleSheets) { let rs; try { rs = sh.cssRules; } catch (_) { continue; } const owner = sh.ownerNode && (sh.ownerNode.id || sh.ownerNode.getAttribute && sh.ownerNode.getAttribute('href') || sh.ownerNode.tagName) || 'sheet'; const walk = (list) => { for (const r of list) { if (r.cssRules && !r.selectorText) { walk(r.cssRules); continue; } if (!r.selectorText || !r.style) continue; let m = false; try { m = el.matches(r.selectorText); } catch (_) {} if (m && /Condensed|font-family|^font$/i.test(r.cssText.slice(0, 600)) && (r.style.fontFamily || /font:/.test(r.cssText))) hits.push({ owner: String(owner).slice(-60), sel: r.selectorText.slice(0, 160), ff: r.style.fontFamily.slice(0, 60), prio: r.style.getPropertyPriority('font-family') || r.style.getPropertyPriority('font') }); } }; walk(rs); } return hits.slice(0, 12); };
+  if (p) { const sp = p.querySelector('span') || p; out.lede = { pHtml: p.outerHTML.slice(0, 420), pInline: p.getAttribute('style'), spanInline: sp.getAttribute('style'), spanClass: sp.className, spanFamily: getComputedStyle(sp).fontFamily.slice(0, 50), rules: rules(sp) }; }
+  const seen = new Set();
+  document.querySelectorAll('body *').forEach((el) => { if (el.childElementCount) return; const t = (el.textContent || '').trim(); if (t.length < 2) return; const f = getComputedStyle(el).fontFamily.split(',')[0].replace(/["']/g, '').trim(); if (/barlow|bebas/i.test(f) && !/bebas/i.test(f)) return; const k = f; if (seen.has(k) && out.foreign.filter((x) => x.family === f).length >= 2) return; seen.add(k); out.foreign.push({ family: f, t: t.slice(0, 30), chain: chain(el) }); });
+  out.foreign = out.foreign.slice(0, 14);
+  return out;
+};
 const browser = await chromium.launch();
 const res = { at: new Date().toISOString(), pages: [] };
+for (const V of VARIANTS) {
+CSS = V.css; SUFFIX = V.suffix;
 for (const path of PAGES) {
   for (const w of WIDTHS) {
-    const slug = (path === '/' ? 'home' : path.replace(/^\/(post\/)?/, '').replace(/[^\w]+/g, '-').slice(0, 40)) + '-' + w;
+    const slug = (path === '/' ? 'home' : path.replace(/^\/(post\/)?/, '').replace(/[^\w]+/g, '-').slice(0, 40)) + '-' + w + SUFFIX;
     const ctx = await browser.newContext(profile(w));
     const page = await ctx.newPage();
-    const m = { path, w, slug };
+    const m = { path, w, slug, variant: SUFFIX || '-before' };
     try {
       const r = await page.goto('https://www.gatorbaitmedia.com' + path, { waitUntil: 'domcontentloaded', timeout: 45000 });
       m.status = r && r.status();
       await page.waitForTimeout(6500);
+      if (CSS) {
+        await page.evaluate(() => document.querySelectorAll('link[href*="sitewide-type"]').forEach((l) => l.remove()));
+        await page.addStyleTag({ content: CSS });
+        await page.waitForTimeout(1500);
+      }
       await page.evaluate(() => document.fonts.ready).catch(() => {});
       await page.screenshot({ path: `${OUT}/${slug}-top.jpg`, type: 'jpeg', quality: 60 });
       // scroll through so lazy sections draw, then back to the body start
@@ -121,6 +147,7 @@ for (const path of PAGES) {
       else await page.evaluate(() => scrollTo(0, 900));
       await page.waitForTimeout(1200);
       m.probe = await page.evaluate(probe);
+      m.cascade = await page.evaluate(cascade);
       await page.screenshot({ path: `${OUT}/${slug}-body.jpg`, type: 'jpeg', quality: 60 });
       if (hasBody) {
         const dc = await page.$('p.gbm-dropcap');
@@ -130,6 +157,7 @@ for (const path of PAGES) {
     res.pages.push(m);
     await ctx.close();
   }
+}
 }
 await browser.close();
 writeFileSync(`${OUT}/type-audit.json`, JSON.stringify(res, null, 1));

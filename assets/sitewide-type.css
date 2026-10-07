@@ -43,13 +43,15 @@ html body{
 /* 3. Native Wix pieces that bring their own face. */
 [data-hook^="consent-banner"],[data-hook^="consent-banner"] *,#cookies_policy_description,
 [data-hook="comment-box-placeholder-text"],[data-hook^="comments-"],[data-hook^="comments-"] *,
-[data-hook="floating-dropdown-base-selected"],[data-hook="edited-comment-indicator"]{
+[data-hook="floating-dropdown-base-selected"],[data-hook="edited-comment-indicator"],
+html body #SITE_PAGES [category-dropdown],html body #SITE_PAGES [category-dropdown] *{
   font-family:var(--gbm-font)!important;
 }
 [data-hook^="consent-banner"] button,[data-hook^="consent-banner"] button *{
   font-weight:700!important;
 }
-#SITE_PAGES [tag-cloud-root] a{
+html body #SITE_PAGES nav[tag-cloud-root] ul li a,
+html body #SITE_PAGES nav[tag-cloud-root] ul li a *{
   font-family:var(--gbm-cond)!important;
   font-weight:700!important;
   letter-spacing:.06em!important;
@@ -146,12 +148,4 @@ html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="po
   html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="post"] [data-hook="post-description"] p.gbm-dropcap[data-gbm-dek]{
     font-size:25px!important;
   }
-}
-
-/* 7. Wix-native rich text on static pages (About, Contact, ...) uses the theme's Avenir/wfont faces. */
-#SITE_PAGES [data-testid="richTextElement"] :is(p,span,li,a,div):not(:is(h1,h2,h3,h4,h5,h6) *){
-  font-family:var(--gbm-font)!important;
-}
-#SITE_PAGES :is(h1,h2,h3,h4,h5,h6) :is(span,a,b,strong,em){
-  font-family:inherit!important;
 }

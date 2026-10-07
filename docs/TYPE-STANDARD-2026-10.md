@@ -65,7 +65,7 @@ Defects found, with evidence in `docs/type-audit-2026-10-07/`:
 1. **Corn Dogs vs. Commissioners column: the lede renders in Barlow Condensed 500, 18.5 px.** The author sized the opening line bold 30 px in the Wix editor. The post normalizer `c91ad133` marks it `data-gbm-dek` and styles it `700 30px/1.12 "Barlow Condensed"`; the drop-cap script in the post template `14a887e3` also picks it as "first paragraph of 80+ characters". The drop-cap rule wins size and weight, the dek rule wins the family, so the paragraph ends up Condensed 500 at body size, with ragged word spacing, and the drop cap sits on a headline. Only Buddy columns that open with a bold line show it (`p.gbm-dropcap[data-gbm-dek]`).
 2. **Lede size differs by post type**: 20 / 18.5 px on columns, 22 / 19.5 px on news stories (the template's `[data-hook=rcv-block-first]+div>[data-breakout]:first-child p` rule). Body is 19 / 17.5 px.
 3. **`h3` is uppercase with negative tracking** (`-0.46px` on 23 px). Uppercase wants positive tracking. The template README says no uppercase titles; this `h3` comes from another embed's rule.
-4. **Non-Barlow faces still render**: the Wix cookie banner (Arial 12 px, buttons and links), the post tag chips (`nav[tag-cloud-root] a`, Proxima Nova), the Wix comments widget (Roboto, desktop), and the Wix-native About page (Avenir and a Wix theme face).
+4. **Non-Barlow faces still render**: the Wix cookie banner (Arial 12 px, buttons and links), the post tag chips (`nav[tag-cloud-root] a`, Proxima Nova), the Wix comments widget (Roboto, desktop), and the Wix category dropdown on the Latest list (Helvetica), and the Wix-native About page (Avenir and a decorative Wix theme face).
 5. **Signup card uses two faces**: the end-of-story strip headline and button are Barlow 800 (21.84 px, 16 px), the slide-up bar (`#gbc-bar`) is Condensed 800 (22 px, 16 px).
 6. **Post meta row**: "Updated:" is 14 px light and "13 hours ago" is 16 px 700 with a 24.8 px line height in the same line; the kicker chip sits centered while title and byline are left-aligned.
 7. **Latest (`/gatorbait-media-blogs`) and About render in Wix's forced 320 px viewport on a 390 phone** (`innerWidth` 320). Type is scaled 1.22x, and `small` microcopy lays out at 8.33 px ("Results open on Google, limited to GatorBaitMedia.com"). `/`, `/magazine` and `/post/*` already have the override.
@@ -100,7 +100,7 @@ Desktop / phone (390 to 430). Line height is unitless.
 
 Condensed runs about 15 to 20 percent narrower than Barlow at the same size. Every headline size that moves to Condensed needs a size bump, or headlines look small and the mobile cards lose their weight. The "Story title" row is a decision for Brenden (Oct. 4 made story titles Barlow 800, never uppercase). The row above keeps "never uppercase" and changes only the face.
 
-**Drop cap.** First body paragraph that is not a dek, a byline, a credit or stats line, 80 characters or more, on posts published within 7 days. `float:left; font:800 4.6em/.78 "Barlow Condensed"; color:#fa4616; padding:.07em .11em 0 0`, 4.15em on phones (it spans three lines of text). Never on the homepage, in the Magazine card grid, on a dek paragraph, or on a post older than 7 days. The Magazine in-issue reader keeps `.pg-prose>p:first-child::first-letter` (4.6em/.8, padding `.06em .1em 0 0`).
+**Drop cap.** First body paragraph that is not a dek, a byline, a credit or stats line, 80 characters or more, whose first letter is not followed by an apostrophe ("I'm"), on posts published within 7 days. `float:left; font:800 4.6em/.78 "Barlow Condensed"; color:#fa4616; padding:.07em .11em 0 0`, 4.15em on phones (it spans three lines of text). Never on the homepage, in the Magazine card grid, on a dek paragraph, or on a post older than 7 days. The Magazine in-issue reader keeps `.pg-prose>p:first-child::first-letter` (4.6em/.8, padding `.06em .1em 0 0`).
 
 **Line length.** Body 60 to 78 characters at desktop (column about 700 px at 19 px), 35 to 45 on phone. Do not widen the post column.
 
@@ -110,12 +110,12 @@ Tier A: defects and consistency. Safe to apply now; staged in this PR and dispat
 
 | # | Tier | Change | Selector / location | Embed (owner: game-day desk) |
 |---|---|---|---|---|
-| A1 | A | Drop-cap script skips a dek and lands on the first body paragraph | in `gbm-week-rich-js`: add `&&!p[i].hasAttribute('data-gbm-dek')` to the `if` that adds `gbm-dropcap` | `14a887e3` post template (+36 characters; 282 free) |
+| A1 | A | Drop-cap script skips a dek and lands on the first body paragraph | in `gbm-week-rich-js`: add `&&!p[i].hasAttribute('data-gbm-dek')&&/^[A-Za-z](?!['\u2019])/.test(s)` to the `if` that adds `gbm-dropcap` (skips a dek, and skips a paragraph that opens "I'm" or "We're", where `::first-letter` takes the apostrophe into the cap) | `14a887e3` post template (+75 characters; 282 free) |
 | A1b | A | CSS safety net if the script is late: dek keeps its own face, no float on its first letter | `p.gbm-dropcap[data-gbm-dek]` and `::first-letter` (sitewide-type v2 section 6) | `0709a98e` link pin |
 | A2 | A | One lede size (20 / 18.5 px), one body size, weight 500 | `[data-hook=rcv-block-first]+div>[data-breakout]:first-child p`, `p.gbm-dropcap` (v2 section 5) | `0709a98e` link pin |
 | A3 | A | Cookie banner, comments widget, tag chips in house type | `[data-hook^="consent-banner"] *`, `#cookies_policy_description`, `[data-hook^="comments-"] *`, `#SITE_PAGES [tag-cloud-root] a` (v2 section 3) | `0709a98e` link pin |
 | A4 | A | Signup card, one face in both mounts | `.gbc .gbc-h`, `.gbc .gbc-b`, `#gbc-bar .gbc-h` (v2 section 3) | `0709a98e` link pin |
-| A5 | A | Native static pages in Barlow | `#SITE_PAGES [data-testid="richTextElement"] ...` (v2 section 7) | `0709a98e` link pin |
+| A5 | — | About page (Wix native text: Avenir, plus a decorative small-caps heading face). Not changed: forcing Barlow onto it made the page's own letter-spacing and weight look worse. Needs a design decision, not a global override | `/about` | none |
 | A6 | A | `Menu` button weight 900 to 800 | `button` in `#gbm-mobile-shell-host` | `7fee4de6` header or shell embed (small) |
 | A7 | A | `h3` in posts: no uppercase with negative tracking. Condensed 800 sentence case, tracking 0 | find the rule that sets `text-transform:uppercase` on `[data-hook=post-description] h3` (not in `14a887e3`) | desk to locate (likely `a5452619` or the Share bundle) |
 | A8 | A | Magazine masthead stack: remove Bebas Neue | `--mz-mast` in `sports-live/src/magazine.css` and `deploy/wix-served/magazine*.html` | Magazine `1dd74333` (37 free characters; removing a family name frees space) |
@@ -126,7 +126,7 @@ Tier A: defects and consistency. Safe to apply now; staged in this PR and dispat
 | B2 | B | Re-tune headline sizes for Condensed (+12 percent), keep the no-jump reserved heights | `#gbm-live .fp-hl`, `.fp-lead h2`, `#gbm-magazine-page h1, h2, h3` | front-page and Magazine sources, then the pointer |
 | B3 | B | Post title in Condensed 800 title case (52 / 38 px) instead of Barlow 800 | `[data-hook=post-title]` rule, `font:800 44px/1.06 var(--f)` becomes `var(--c)` at 52 px | `14a887e3` (same length) |
 
-One Wix write covers A1b to A5, B1: change the `sitewide-type.css` link in embed `0709a98e` from `@a4b4648e...` to the commit that carries this PR's `assets/sitewide-type.css`. jsDelivr serves any commit by hash, so the file can go live before the PR merges. Rollback is the old hash. A1 is a second, small write to `14a887e3`.
+One Wix write covers A1b to A4, B1: change the `sitewide-type.css` link in embed `0709a98e` from `@a4b4648e...` to the commit that carries this PR's `assets/sitewide-type.css`. jsDelivr serves any commit by hash, so the file can go live before the PR merges. Rollback is the old hash. A1 is a second, small write to `14a887e3`.
 
 ## 7. Verify after any change
 

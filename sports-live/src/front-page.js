@@ -542,10 +542,15 @@
     var mScores = '<section class="fp-mod fp-mod-scores" aria-label="Scores and schedule"><h2>Scores &amp; Schedule · Florida ' + esc(sb.team.record || '') + '</h2>' + scores + '</section>';
     var magazine = BUNDLE.magazine, cover = magazine.cover, issue = magazine.issue;
     var coverSrc = 'https://static.wixstatic.com/media/' + cover.image.id.replace(/(?:~mv2)+$/, '') + '~mv2.' + cover.image.ext;
+    // Newest issue first (magazine.cover), then up to two earlier issues (magazine.previous: [{image, caption}]). One cover
+    // renders exactly as before; two or more fade through each other (see the rotator below the render).
+    function magSrc(c) { return 'https://static.wixstatic.com/media/' + c.image.id.replace(/(?:~mv2)+$/, '') + '~mv2.' + c.image.ext; }
+    var magList = [{ image: cover.image, caption: issue.number + ' · ' + issue.week }].concat((magazine.previous || []).filter(function (c) { return c && c.image && c.image.id && c.image.ext; })).slice(0, 3);
+    var magCovers = magList.length < 2 ? img(coverSrc, cover.image.alt, false, cover.image.width || 864, cover.image.height || 1536, '(max-width: 599px) 76vw, 320px') :
+      magList.map(function (c, i) { return '<span class="fp-mag-slide' + (i ? '' : ' is-on') + '" data-caption="' + esc(c.caption || '') + '">' + img(magSrc(c), c.image.alt || '', false, c.image.width || 864, c.image.height || 1536, '(max-width: 599px) 76vw, 320px') + '</span>'; }).join('');
     var mMag = '<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><h2>GatorBait Magazine</h2>' +
       '<button type="button" class="fp-cover fp-mag-open" aria-expanded="false" aria-controls="fp-mag-reader" aria-label="Open GatorBait Magazine">' +
-      img(coverSrc, cover.image.alt, false, cover.image.width || 864, cover.image.height || 1536, '(max-width: 599px) 76vw, 320px') +
-      '<span class="fp-mag-hint">Tap cover to open <span aria-hidden="true">↗</span></span></button>' +
+      magCovers + '<span class="fp-mag-hint">Tap cover to open <span aria-hidden="true">↗</span></span></button>' +
       '<div class="fp-mag-copy"><p>' + esc(issue.number) + ' · ' + esc(issue.week) + '</p></div>' +
       '<div class="fp-mag-reader" id="fp-mag-reader" hidden><div class="fp-mag-tools"><button type="button" class="fp-btn fp-mag-close" aria-label="Close magazine">Close magazine</button><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine ↗</a></div><iframe title="GatorBait Magazine — Missouri postgame edition" loading="lazy" data-src="' + esc(L.magazine) + '?embed=home#pm-contents"></iframe><p><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine <span aria-hidden="true">→</span></a></p></div></section>';
     // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
@@ -696,6 +701,24 @@
         var top = magOpen.getBoundingClientRect().top + window.scrollY - 80;
         window.scrollTo(0, Math.max(0, top));
       }
+      // Cover rotator: soft fade about every 6 s, paused while a pointer or finger is on the cover, the reader is open or the tab
+      // is hidden; no auto-rotation at all under prefers-reduced-motion (the newest cover simply stays).
+      (function () {
+        var slides = root.querySelectorAll('.fp-mag-slide'), copy = root.querySelector('.fp-mag-copy p'), at = 0, timer = 0, held = false;
+        if (slides.length < 2 || !magOpen) return;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+        function show(n) {
+          slides[at].classList.remove('is-on'); at = n % slides.length; slides[at].classList.add('is-on');
+          var cap = slides[at].getAttribute('data-caption'); if (copy && cap) copy.textContent = cap;
+        }
+        function tick() { if (!held && !document.hidden && !magOpen.closest('.fp-mag').classList.contains('fp-mag-opened')) show(at + 1); }
+        function start() { if (!timer && !(reduce && reduce.matches)) timer = setInterval(tick, 6000); }
+        function stop() { if (timer) { clearInterval(timer); timer = 0; } }
+        ['mouseenter', 'touchstart', 'focusin'].forEach(function (e) { magOpen.addEventListener(e, function () { held = true; }, { passive: true }); });
+        ['mouseleave', 'touchend', 'touchcancel', 'focusout'].forEach(function (e) { magOpen.addEventListener(e, function () { held = false; }, { passive: true }); });
+        if (reduce && reduce.addEventListener) reduce.addEventListener('change', function () { if (reduce.matches) stop(); else start(); });
+        start();
+      })();
       if (magClose) magClose.addEventListener('click', closeMagazine);
       if (magOpen && magReader) magOpen.addEventListener('click', function () {
         if (magOpen.getAttribute('aria-expanded') === 'true') return;

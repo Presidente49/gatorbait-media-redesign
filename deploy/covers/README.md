@@ -16,3 +16,11 @@ History:
 - 2026-09-30: Buddy Martin, "The Looming Brilliance of Buster Faulkner" (post 0753a25b). Photo
   16b519_c17395a88d06437d9d7e57086b8f4707 (Chris Spears), cutout ae876a_b8f5f91b591148208d23919fd45072e8 (UAA).
   Replaced a transparent cutout PNG that Brenden did not like.
+
+## Homepage Magazine cover rotator
+
+`sports-live/magazine-card.json` holds the newest issue cover (`cover`, `issue`). To rotate, add up to two earlier
+issues as `"previous": [{"caption": "Missouri pregame edition · Week 5", "image": {"id": "...", "ext": "jpg", "width": 864, "height": 1536, "alt": "...", "credit": "..."}}]`.
+With one cover the module renders exactly as before; with two or more the covers fade through each other about every 6 s,
+pause while a pointer, finger or focus is on the cover, stay put under `prefers-reduced-motion`, and tap opens the reader as usual.
+Rebuild with `node sports-live/build-front-page.mjs`. Rollback: point `sports-live/current.json` back to the previous commit.

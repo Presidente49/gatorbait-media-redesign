@@ -100,7 +100,7 @@ Desktop / phone (390 to 430). Line height is unitless.
 
 Condensed runs about 15 to 20 percent narrower than Barlow at the same size. Every headline size that moves to Condensed needs a size bump, or headlines look small and the mobile cards lose their weight. The "Story title" row is a decision for Brenden (Oct. 4 made story titles Barlow 800, never uppercase). The row above keeps "never uppercase" and changes only the face.
 
-**Drop cap.** First body paragraph that is not a dek, a byline, a credit or stats line, 80 characters or more, whose first letter is not followed by an apostrophe ("I'm"), on posts published within 7 days. `float:left; font:800 4.6em/.78 "Barlow Condensed"; color:#fa4616; padding:.07em .11em 0 0`, 4.15em on phones (it spans three lines of text). Never on the homepage, in the Magazine card grid, on a dek paragraph, or on a post older than 7 days. The Magazine in-issue reader keeps `.pg-prose>p:first-child::first-letter` (4.6em/.8, padding `.06em .1em 0 0`).
+**Drop cap.** First body paragraph that is not a dek, a byline, a credit or stats line, 80 characters or more, whose first letter is not followed by an apostrophe ("I'm" gets no drop cap), on posts published within 7 days. `float:left; font:800 4.6em/.78 "Barlow Condensed"; color:#fa4616; padding:.07em .11em 0 0`, 4.15em on phones (it spans three lines of text). Never on the homepage, in the Magazine card grid, on a dek paragraph, or on a post older than 7 days. The Magazine in-issue reader keeps `.pg-prose>p:first-child::first-letter` (4.6em/.8, padding `.06em .1em 0 0`).
 
 **Line length.** Body 60 to 78 characters at desktop (column about 700 px at 19 px), 35 to 45 on phone. Do not widen the post column.
 
@@ -110,7 +110,7 @@ Tier A: defects and consistency. Safe to apply now; staged in this PR and dispat
 
 | # | Tier | Change | Selector / location | Embed (owner: game-day desk) |
 |---|---|---|---|---|
-| A1 | A | Drop-cap script skips a dek and lands on the first body paragraph | in `gbm-week-rich-js`: add `&&!p[i].hasAttribute('data-gbm-dek')&&/^[A-Za-z](?!['\u2019])/.test(s)` to the `if` that adds `gbm-dropcap` (skips a dek, and skips a paragraph that opens "I'm" or "We're", where `::first-letter` takes the apostrophe into the cap) | `14a887e3` post template (+75 characters; 282 free) |
+| A1 | A | Drop-cap script skips a dek and lands on the first real body paragraph; if that paragraph opens "I'm" or "We're" it gets no drop cap (`::first-letter` would swallow the apostrophe and leave "m" dangling) | in `gbm-week-rich-js`: change the `if` to `if(s.length>=80&&!/^by\s+/i.test(s)&&!/^(photo|image|source|statistics|stats|tags?)\b/i.test(s)&&!p[i].hasAttribute('data-gbm-dek')){if(/^[A-Za-z](?!['\u2019])/.test(s))p[i].classList.add('gbm-dropcap');break}` | `14a887e3` post template (+about 90 characters; 282 free) |
 | A1b | A | CSS safety net if the script is late: dek keeps its own face, no float on its first letter | `p.gbm-dropcap[data-gbm-dek]` and `::first-letter` (sitewide-type v2 section 6) | `0709a98e` link pin |
 | A2 | A | One lede size (20 / 18.5 px), one body size, weight 500 | `[data-hook=rcv-block-first]+div>[data-breakout]:first-child p`, `p.gbm-dropcap` (v2 section 5) | `0709a98e` link pin |
 | A3 | A | Cookie banner, comments widget, tag chips in house type | `[data-hook^="consent-banner"] *`, `#cookies_policy_description`, `[data-hook^="comments-"] *`, `#SITE_PAGES [tag-cloud-root] a` (v2 section 3) | `0709a98e` link pin |

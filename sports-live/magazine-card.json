@@ -1,35 +1,48 @@
 {
-  "sourceRelease": "current-postgame",
+  "sourceRelease": "current-pregame",
   "issue": {
-    "number": "Postgame edition",
-    "date": "Sunday, October 4, 2026",
-    "week": "Week 5 · Florida at Missouri",
+    "number": "Pregame edition",
+    "date": "Wednesday, October 7, 2026",
+    "week": "Week 6 · South Carolina at Florida",
     "home": "GatorBait Media",
-    "pageTitle": "GatorBait Magazine | Postgame: Missouri 45, Florida 17"
+    "pageTitle": "GatorBait Magazine | Pregame: South Carolina at Florida"
   },
   "cover": {
-    "kicker": "Missouri postgame · October 4, 2026",
-    "headline": "FIRST LOSS",
-    "dek": "Breaking down Florida’s 45–17 loss at Missouri. One game. Lessons to build on.",
+    "kicker": "South Carolina pregame · October 7, 2026",
+    "headline": "SOUTH CAROLINA AT FLORIDA",
+    "dek": "Homecoming at Ben Hill Griffin Stadium. Saturday, Oct. 10, 12:45 p.m. ET on SEC Network.",
     "byline": "Buddy Martin · Franz Beard",
     "cta": "Open this issue",
     "url": "/magazine",
     "image": {
-      "id": "d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2",
+      "id": "d3cfa5_7062fd8ae50e4b27b2349854476071c0~mv2",
       "ext": "jpg",
       "width": 864,
       "height": 1536,
-      "alt": "GatorBait Magazine Missouri Postgame First Loss cover featuring Florida coach Jon Sumrall",
-      "credit": "Photo illustration · Chris Spears Photography"
+      "alt": "GatorBait Magazine South Carolina pregame cover: South Carolina at Florida, Saturday, Oct. 10, 12:45 p.m. ET",
+      "credit": "GatorBait Media"
     },
     "linesLabel": "Also inside",
     "lines": [
-      "Buddy Martin: Where does Florida go from here?",
-      "The damage: 560 yards to 325",
-      "Report card: three Fs",
-      "Sumrall: “Starts with me”",
-      "Final: Missouri 45, Florida 17"
+      "Buddy Martin: Florida needs the balm of Homecoming",
+      "Homecoming Test: No. 16 Florida hosts South Carolina",
+      "Franz Beard: Thoughts of the Day",
+      "Baugh owns it: the apology text to Sumrall",
+      "Reeling Gamecocks, rattled Gators: the fix list"
     ],
     "artwork": true
-  }
+  },
+  "previous": [
+    {
+      "caption": "Postgame edition · Week 5 · Florida at Missouri",
+      "image": {
+        "id": "d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2",
+        "ext": "jpg",
+        "width": 864,
+        "height": 1536,
+        "alt": "GatorBait Magazine Missouri Postgame First Loss cover featuring Florida coach Jon Sumrall",
+        "credit": "Photo illustration · Chris Spears Photography"
+      }
+    }
+  ]
 }

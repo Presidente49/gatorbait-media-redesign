@@ -73,7 +73,13 @@
       return { title: String(p.title).trim(), url: u, path: path(u), author: String(p.author || 'GatorBait Staff'), date: date, excerpt: raw,
         cap: cap, credit: credit, image: image, key: key, alt: String(p.image && p.image.alt || p.title), cover: (BUNDLE.covers || []).indexOf(key) >= 0,
         portrait: !!(p.image && Number(p.image.width) > 0 && Number(p.image.height) > Number(p.image.width)) };
-    }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).slice(0, 30);
+    }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).filter(function (p) {
+      // One post per recurring series on the front page (Brenden, Oct. 7): only the newest "Thoughts of the Day:" shows.
+      if (!/^Thoughts of the Day:/i.test(p.title)) return true;
+      if (this.tod) return false;
+      this.tod = true;
+      return true;
+    }, { tod: false }).slice(0, 30);
   }
   function isSpears(p) { return /chris spears/i.test(p.author) || /^chris spears/i.test(p.title); }
   function byColumnist(p, name) { return (name === 'Chris Spears' || name === 'Chris Spears Photos') ? isSpears(p) : p.author.toLowerCase().indexOf(name.toLowerCase()) >= 0; }
@@ -173,7 +179,7 @@
     if (str(raw.updatedAt, 40)) sb.updatedAt = raw.updatedAt;
     return sb;
   }
-  function abbr(name, given) { return given || ({ Florida: 'FLA', 'Ole Miss': 'MISS', Missouri: 'MIZ', Georgia: 'UGA', Tennessee: 'TENN', LSU: 'LSU', Kentucky: 'UK' })[name] || String(name || '').slice(0, 4).toUpperCase(); }
+  function abbr(name, given) { return given || ({ Florida: 'FLA', 'Ole Miss': 'MISS', Missouri: 'MIZ', Georgia: 'UGA', Tennessee: 'TENN', LSU: 'LSU', Kentucky: 'UK', 'South Carolina': 'S. Carolina', Alabama: 'ALA', Arkansas: 'ARK', Auburn: 'AUB', 'Texas A&M': 'A&M', 'Mississippi State': 'Miss. St.', Oklahoma: 'OKLA', Vanderbilt: 'Vandy', Texas: 'Texas' })[name] || String(name || '').slice(0, 4).toUpperCase(); }
   function ranked(rank, name) { return (rank ? 'No. ' + rank + ' ' : '') + name; }
 
   // Game state for the score bug and the Saturday stadium board. Desk data (window.__GBM_GAMEDAY__) wins.

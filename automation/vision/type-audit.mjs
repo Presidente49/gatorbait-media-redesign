@@ -10,6 +10,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 const OUT = 'build/live-shots';
 mkdirSync(OUT, { recursive: true });
 import { readFileSync, existsSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 // Optional automation/vision/type-audit.config.json: {pages:[...], widths:"390,1365", css:"assets/sitewide-type.css", suffix:"after", cascade:true}
 // "css" is injected into the live page (the page's own sitewide-type link is removed first) so a proposed
 // stylesheet can be measured and photographed without any production write.
@@ -163,3 +164,13 @@ for (const path of PAGES) {
 await browser.close();
 writeFileSync(`${OUT}/type-audit.json`, JSON.stringify(res, null, 1));
 console.log('type-audit pages:', res.pages.length, 'errors:', res.pages.filter((p) => p.error).length);
+// Publish to a branch of our own and stop the job on purpose, so the shared qa/live-shots branch (the game-day desk's
+// render, one commit replaced per run) is not overwritten. The checkout step's stored credentials do the push.
+if (CFG.publishBranch && process.env.GITHUB_ACTIONS) {
+  const sh = (c) => execSync(c, { stdio: 'inherit' });
+  sh('git config user.name gatorbait-type-audit && git config user.email actions@users.noreply.github.com');
+  sh('git checkout -q --orphan type-audit-out && git rm -rfq --cached . && git add -f build/live-shots');
+  sh(`git commit -q -m "type audit ${res.at}" && git push -q --force origin HEAD:refs/heads/${CFG.publishBranch}`);
+  console.log('published to ' + CFG.publishBranch + '; exiting 1 on purpose so qa/live-shots is left alone');
+  process.exit(1);
+}

@@ -1,4 +1,4 @@
-/* GatorBait fan modules (Make the Call, Ask GatorBait, The Stands). BUILT, MINIFIED FILE: edit sports-live/src/{make-the-call,ask-gatorbait,the-stands}.js, then run the front page build. Build ce6c874b. */
+/* GatorBait fan modules (Make the Call, Ask GatorBait, The Stands). BUILT, MINIFIED FILE: edit sports-live/src/{make-the-call,ask-gatorbait,the-stands}.js, then run the front page build. Build f8a69f07. */
 (function(){if(!document.getElementById("gbm-fp-mtc-css")){var E=document.createElement("style");E.id="gbm-fp-mtc-css",E.textContent=`#gbm-live.fp26 #gbm-call{--n:#07122e;--b:#0021a5;--o:#fa4616;--ink:#f3f5fb;--mut:#aab4cc;--line:rgba(255,255,255,.14);background:radial-gradient(80% 90% at 0% 100%,rgba(0,33,165,.5),transparent 70%),var(--n);color:var(--ink);font-family:var(--fp-sans);padding:26px 0 28px;border-top:1px solid var(--line);position:relative;overflow:hidden}
 #gbm-live.fp26 #gbm-call *{box-sizing:border-box}
 #gbm-live.fp26 #gbm-call .wrap{max-width:1440px;margin:0 auto;padding:0 var(--fp-pad)}

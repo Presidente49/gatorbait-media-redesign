@@ -393,7 +393,7 @@ for(const r of report.runs){
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
   if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');
-  if(r.hard.length)for(const f of r.hard)lines.push('- **HARD:** '+f);
+  if(r.hard.length)for(const f of r.hard){lines.push('- **HARD:** '+f);console.log('::error title=live-qc hard failure::'+String(f).replace(/[\r\n%]+/g,' ').slice(0,400));}
   if(r.warnings.length)for(const f of r.warnings)lines.push('- warning: '+f);
   if(r.consoleErrors.length)lines.push('- console errors recorded: '+r.consoleErrors.length);
   if(r.networkFailures?.length)lines.push('- failed/4xx network requests recorded: '+r.networkFailures.length);

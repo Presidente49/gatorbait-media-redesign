@@ -23,18 +23,14 @@ History:
 
 ## Thoughts of the Day (standing)
 
-One format for every day's Franz Beard column (Brenden, Oct. 7: "pull the most Gator part of that day's Thoughts
-out and focus on it, with a subheading 'Thoughts of the Day'. It has to be consistent"). Same `template.html`,
-1600x900, Barlow only, navy #07122e wash, one orange #fa4616 rule.
+**Standing format (Brenden, Oct. 7): the type-led series cover, the same every day.** "The graphic for yesterday was fine for Thoughts of the Day. Why did it change?" The photo-and-quote cover used once on Oct. 7 (Oyebadejo, `out/thoughts-of-the-day-2026-10-07.jpg`) is retired for the series; `template.html` with `side=right` stays available for one-off story covers.
 
-1. Kicker tag: `kicker=Thoughts of the Day` (the template uppercases it), sub `sub=Franz Beard · <AP date>`, for example `Oct. 7, 2026`.
-2. Headline `title=`: the single most Gator-specific item in that day's column, 8 words or fewer. The template sets it in uppercase Barlow Condensed.
-3. Dek `dek=`: one line, one stat or quote from the column. Stats are Franz's own; flag any that are not yet checked against ESPN or UF in #34.
-4. Photo `photo=<Wix media id>`: a real GatorBait photo (Chris Spears or UAA) that matches the headline topic. Add `cutout=` when a clean cutout exists. Never AI art. Do not reuse the same photo two days running.
-5. `credit=Photo: <credit>`; the GatorBait Media mark is bottom left (built in).
-6. Use `side=right` when the subject sits on the left of the frame, so the copy never covers the player. Default is copy on the left.
+Template: `deploy/covers/thoughts-of-the-day.html`, 1600x900, Barlow only, navy #07122e wash, one orange #fa4616 rule, no photo. The series title is fixed ("THOUGHTS OF THE DAY", orange "DAY"). Query parameters:
+- `date=` the column date, for example `October 7, 2026`.
+- `hook=` one line, for example `Explosive plays, South Carolina and the SEC across the board`.
+- `by=` the byline, for example `Franz Beard` (renders "BY FRANZ BEARD").
+- Optional overrides for other series: `k1=`, `k2=` (kicker), `l1=`, `l2=` (headline lines, `l2` in orange), `fs=` (headline px). Leave them off for Thoughts of the Day.
 
-Query for Oct. 7:
-`deploy/covers/template.html?photo=d3cfa5_49f61d2e3df04d09947775688b8de577~mv2.jpg&side=right&kicker=Thoughts+of+the+Day&sub=Franz+Beard+%C2%B7+Oct.+7%2C+2026&title=Same+defense.+Same+explosive+plays.&dek=...&credit=Photo%3A+UF+Athletic+Association`
+Each day: render through the live-shots workflow (`{"path":"deploy/covers/thoughts-of-the-day.html?date=...&hook=...&by=Franz+Beard","selector":"#cover","widths":"1600"}`), upload to the media manager from the raw URL, set it as the post cover in one UPDATE_PUBLISH (also `og:image` and alt text), keep the file in `out/`, add the media id to `covers` with credit "GatorBait Media" in `sports-live/front-page.config.json`, rebuild, deploy through `current.json`. The front page keeps only the newest "Thoughts of the Day:" post; older ones stay at their URLs and in Latest.
 
-Each day: pick the item, build the query, render through the live-shots workflow, upload, set the cover on the post (one UPDATE_PUBLISH, also set `og:image` and alt text), keep the file in `out/`, add the media id to `covers`. The older type-only series cover (`thoughts-of-the-day.html`, used Oct. 6) is retired for new days; keep it only as a fallback when no matching photo exists.
+History: Oct. 6 `out/thoughts-of-the-day-2026-10-06.jpg` (media `d3cfa5_9dbc974303bb4e4080580502a1c6b727`); Oct. 7 `out/thoughts-of-the-day-series-2026-10-07.jpg` (media `d3cfa5_76a430063f5b40d6a008010165fbe093`, set by Jarvis).

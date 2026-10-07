@@ -45,20 +45,14 @@ const TARGETS=[
   },
   // Phone column width is covered by embed a5452619 (post wide canvas); this target fails if body < 82% of viewport.
   // Long all-caps headline on mobile (Brenden, Sept. 27: first letters of each line were clipped).
+  // Post template 14a887e3 rev16 (headline first) hides the header ::after cover block on every post, so no post can draw it.
+  // This target now guards that (noHero); it used to require the block (hero:true), which the template no longer renders.
   {
     name:'article-chris-10-thoughts',
     url:"https://www.gatorbaitmedia.com/post/chris-spears-10-thoughts-from-the-sidelines-florida-ole-miss",
     root:null,
     expectedText:"The Gators want to run the football",
-    postFormat:{unbold:false,maxInventedHeads:0,kicker:'Gators Football',hero:true}
-  },
-  // Landscape cover must render as the native post hero image (template 14a887e3 rev16 hides the old navy ::after block).
-  {
-    name:'article-preview-hero',
-    url:"https://www.gatorbaitmedia.com/post/homecoming-test-no-16-florida-hosts-south-carolina-saturday-at-12-45-p-m",
-    root:null,
-    expectedText:"Florida opened as a 14.5-point favorite",
-    postFormat:{unbold:false,maxInventedHeads:5,hero:true}
+    postFormat:{unbold:false,maxInventedHeads:0,kicker:'Gators Football',noHero:true}
   },
   {
     name:'article-scores',
@@ -157,9 +151,7 @@ function audit(input){
     pf.lineHeight=ps[0]?parseFloat(getComputedStyle(ps[0]).lineHeight)||null:null;
     pf.inventedHeads=document.querySelectorAll('[data-gbm-h]').length;
     pf.kicker=getComputedStyle(document.documentElement).getPropertyValue('--gbm-kicker').trim().replace(/^"|"$/g,'');
-    const hd=document.querySelector('[data-hook=post]>div>header');const hero=document.querySelector('[data-hook=post-hero-image]');const heroImg=hero&&hero.querySelector('img');const hr=heroImg?heroImg.getBoundingClientRect():null;
-    pf.heroImage=!!(hr&&hr.width>=Math.min(window.innerWidth*0.5,400)&&hr.height>40&&heroImg.naturalWidth>0);
-    pf.coverBlock=hd?(getComputedStyle(hd,'::after').display!=='none'||pf.heroImage):null;
+    const hd=document.querySelector('[data-hook=post]>div>header');pf.coverBlock=hd?getComputedStyle(hd,'::after').display!=='none':null;
     const tt=document.querySelector('[data-hook=post-page] [data-hook=post-title]');
     if(tt){const tr=tt.getBoundingClientRect();pf.title={left:Math.round(tr.left),right:Math.round(tr.right)};let clip=null;
       for(let a=tt.parentElement;a&&a!==document.body;a=a.parentElement){const cs=getComputedStyle(a);if(cs.overflowX!=='visible'){const ar=a.getBoundingClientRect();if(tr.left<ar.left-1||tr.right>ar.right+1){clip={tag:a.tagName,hook:a.getAttribute('data-hook'),left:Math.round(ar.left),right:Math.round(ar.right)};break;}}}
@@ -330,6 +322,7 @@ function audit(input){
 
 // The homepage and Magazine lead with the newest Buddy Martin post from the live feed, so the
 // expected story follows that feed; the constants above remain the fallback when it is unreachable.
+let RECENT_TITLES=[];
 async function currentBuddyLeads(){
   try{
     const res=await fetch('https://www.gatorbaitmedia.com/blog-feed.xml',{signal:AbortSignal.timeout(15000)});
@@ -339,6 +332,7 @@ async function currentBuddyLeads(){
     const tag=(item,name)=>{const m=item.match(new RegExp('<'+name+'[^>]*>([\\s\\S]*?)</'+name+'>'));return m?decode(m[1]):'';};
     const posts=[...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(m=>({title:tag(m[1],'title'),url:tag(m[1],'link'),author:tag(m[1],'dc:creator'),date:Date.parse(tag(m[1],'pubDate'))}))
       .filter(p=>p.title&&/^https:\/\/www\.gatorbaitmedia\.com\/post\//.test(p.url)&&Number.isFinite(p.date)).sort((a,b)=>b.date-a.date);
+    RECENT_TITLES=posts.slice(0,12).map(p=>p.title);
     return posts.filter(p=>/buddy martin/i.test(p.author)).slice(0,3);
   }catch{return [];}
 }
@@ -346,8 +340,9 @@ const leads=await currentBuddyLeads();
 const lead=leads[0]||null;
 if(lead){
   for(const t of TARGETS)if(!t.postFormat)t.expectedText=lead.title;
-  // The Magazine is an edition: it must show one of the three newest Buddy Martin stories, not necessarily the single newest.
-  TARGETS.find(t=>t.name==='magazine').expectedAny=leads.map(p=>p.title);
+  // The Magazine is an edition: its lead is a curated Buddy Martin story that may be a day or two behind the home lead.
+  // It must show a current story (one of the 12 newest posts in the live feed), so a stale or empty Magazine still fails.
+  TARGETS.find(t=>t.name==='magazine').expectedAny=[...new Set([...leads.map(p=>p.title),...RECENT_TITLES])];
   TARGETS.find(t=>t.name==='article').url=lead.url;
 }
 

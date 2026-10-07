@@ -170,7 +170,11 @@ if (CFG.publishBranch && process.env.GITHUB_ACTIONS) {
   const sh = (c) => execSync(c, { stdio: 'inherit' });
   sh('git config user.name gatorbait-type-audit && git config user.email actions@users.noreply.github.com');
   sh('git checkout -q --orphan type-audit-out && git rm -rfq --cached . && git add -f build/live-shots');
-  sh(`git commit -q -m "type audit ${res.at}" && git push -q --force origin HEAD:refs/heads/${CFG.publishBranch}`);
+  sh(`git commit -q -m "type audit ${res.at}"`);
+  for (let n = 0, ok = false; !ok && n < 5; n++) {
+    try { sh(`git push -q --force origin HEAD:refs/heads/${CFG.publishBranch}`); ok = true; }
+    catch (e) { console.log('push attempt ' + (n + 1) + ' failed; retrying'); execSync('sleep ' + 4 * (n + 1)); }
+  }
   console.log('published to ' + CFG.publishBranch + '; exiting 1 on purpose so qa/live-shots is left alone');
   process.exit(1);
 }

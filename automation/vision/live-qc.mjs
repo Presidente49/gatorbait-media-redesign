@@ -52,6 +52,14 @@ const TARGETS=[
     expectedText:"The Gators want to run the football",
     postFormat:{unbold:false,maxInventedHeads:0,kicker:'Gators Football',hero:true}
   },
+  // Landscape cover must render as the native post hero image (template 14a887e3 rev16 hides the old navy ::after block).
+  {
+    name:'article-preview-hero',
+    url:"https://www.gatorbaitmedia.com/post/homecoming-test-no-16-florida-hosts-south-carolina-saturday-at-12-45-p-m",
+    root:null,
+    expectedText:"Florida opened as a 14.5-point favorite",
+    postFormat:{unbold:false,maxInventedHeads:5,hero:true}
+  },
   {
     name:'article-scores',
     url:"https://www.gatorbaitmedia.com/post/college-football-saturday-week-4-wrap-gators-ole-miss-top-25",
@@ -149,7 +157,9 @@ function audit(input){
     pf.lineHeight=ps[0]?parseFloat(getComputedStyle(ps[0]).lineHeight)||null:null;
     pf.inventedHeads=document.querySelectorAll('[data-gbm-h]').length;
     pf.kicker=getComputedStyle(document.documentElement).getPropertyValue('--gbm-kicker').trim().replace(/^"|"$/g,'');
-    const hd=document.querySelector('[data-hook=post]>div>header');pf.coverBlock=hd?getComputedStyle(hd,'::after').display!=='none':null;
+    const hd=document.querySelector('[data-hook=post]>div>header');const hero=document.querySelector('[data-hook=post-hero-image]');const heroImg=hero&&hero.querySelector('img');const hr=heroImg?heroImg.getBoundingClientRect():null;
+    pf.heroImage=!!(hr&&hr.width>=Math.min(window.innerWidth*0.5,400)&&hr.height>40&&heroImg.naturalWidth>0);
+    pf.coverBlock=hd?(getComputedStyle(hd,'::after').display!=='none'||pf.heroImage):null;
     const tt=document.querySelector('[data-hook=post-page] [data-hook=post-title]');
     if(tt){const tr=tt.getBoundingClientRect();pf.title={left:Math.round(tr.left),right:Math.round(tr.right)};let clip=null;
       for(let a=tt.parentElement;a&&a!==document.body;a=a.parentElement){const cs=getComputedStyle(a);if(cs.overflowX!=='visible'){const ar=a.getBoundingClientRect();if(tr.left<ar.left-1||tr.right>ar.right+1){clip={tag:a.tagName,hook:a.getAttribute('data-hook'),left:Math.round(ar.left),right:Math.round(ar.right)};break;}}}
@@ -173,7 +183,9 @@ function audit(input){
   const sideways=document.documentElement.scrollWidth>viewport+2;
   if(sideways)hard.push('document scrollWidth exceeds viewport');
 
-  const textMatch=bodyText.toLowerCase().includes(target.expectedText.toLowerCase());
+  const want=(target.expectedAny&&target.expectedAny.length?target.expectedAny:[target.expectedText]);
+  const lowerBody=bodyText.toLowerCase();
+  const textMatch=want.some(w=>lowerBody.includes(String(w).toLowerCase()));
   if(!textMatch)hard.push('expected current story text missing');
 
   if(visibleImages.length&&visibleImages.some(i=>!i.loaded))hard.push('visible image failed to load in first two screens');
@@ -318,7 +330,7 @@ function audit(input){
 
 // The homepage and Magazine lead with the newest Buddy Martin post from the live feed, so the
 // expected story follows that feed; the constants above remain the fallback when it is unreachable.
-async function currentBuddyLead(){
+async function currentBuddyLeads(){
   try{
     const res=await fetch('https://www.gatorbaitmedia.com/blog-feed.xml',{signal:AbortSignal.timeout(15000)});
     if(!res.ok)return null;
@@ -327,12 +339,15 @@ async function currentBuddyLead(){
     const tag=(item,name)=>{const m=item.match(new RegExp('<'+name+'[^>]*>([\\s\\S]*?)</'+name+'>'));return m?decode(m[1]):'';};
     const posts=[...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(m=>({title:tag(m[1],'title'),url:tag(m[1],'link'),author:tag(m[1],'dc:creator'),date:Date.parse(tag(m[1],'pubDate'))}))
       .filter(p=>p.title&&/^https:\/\/www\.gatorbaitmedia\.com\/post\//.test(p.url)&&Number.isFinite(p.date)).sort((a,b)=>b.date-a.date);
-    return posts.find(p=>/buddy martin/i.test(p.author))||null;
-  }catch{return null;}
+    return posts.filter(p=>/buddy martin/i.test(p.author)).slice(0,3);
+  }catch{return [];}
 }
-const lead=await currentBuddyLead();
+const leads=await currentBuddyLeads();
+const lead=leads[0]||null;
 if(lead){
   for(const t of TARGETS)if(!t.postFormat)t.expectedText=lead.title;
+  // The Magazine is an edition: it must show one of the three newest Buddy Martin stories, not necessarily the single newest.
+  TARGETS.find(t=>t.name==='magazine').expectedAny=leads.map(p=>p.title);
   TARGETS.find(t=>t.name==='article').url=lead.url;
 }
 

@@ -57,6 +57,11 @@ html body{
   text-transform:uppercase!important;
 }
 
+/* 3b. Display headings in Condensed 800 carry no negative tracking: it closes up the counters and
+ *     makes the letters touch at 28px and above. */
+#gbm-magazine-page h1,#gbm-magazine-page h2{letter-spacing:0!important}
+#gbm-live h1,#gbm-live h2:not(.fp-rail h2):not(.fp-mod h2),#gbm-live h3.fp-hl{letter-spacing:0!important}
+
 /* 4. Native and static pages. */
 #SITE_HEADER [data-testid="richTextElement"],
 #SITE_HEADER nav a,#SITE_HEADER nav span,#SITE_HEADER nav button,
@@ -106,4 +111,31 @@ html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="po
     font-size:18.5px!important;
     line-height:1.62!important;
   }
+}
+
+/* 6. Dek. A bold opening line that the author sized in the Wix editor is marked data-gbm-dek by the post
+ *    normalizer (c91ad133) and is a deck, not body copy: Condensed 700, 30px / 25px, no drop cap. Without
+ *    this block the lede rule above (and the drop-cap rule in the post template) mix with it and render
+ *    Barlow Condensed at weight 500 and body size (seen on the Corn Dogs vs. Commissioners column). */
+html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] p[data-gbm-dek],
+html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="post"] [data-hook="post-description"] p.gbm-dropcap[data-gbm-dek]{
+  font:700 30px/1.12 var(--gbm-cond)!important;
+  letter-spacing:0!important;
+}
+html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] p.gbm-dropcap[data-gbm-dek]::first-letter{
+  float:none!important;font:inherit!important;padding:0!important;color:inherit!important;
+}
+@media(max-width:750px){
+  html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] p[data-gbm-dek],
+  html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="post"] [data-hook="post-description"] p.gbm-dropcap[data-gbm-dek]{
+    font-size:25px!important;
+  }
+}
+
+/* 7. Wix-native rich text on static pages (About, Contact, ...) uses the theme's Avenir/wfont faces. */
+#SITE_PAGES [data-testid="richTextElement"] :is(p,span,li,a,div):not(:is(h1,h2,h3,h4,h5,h6) *){
+  font-family:var(--gbm-font)!important;
+}
+#SITE_PAGES :is(h1,h2,h3,h4,h5,h6) :is(span,a,b,strong,em){
+  font-family:inherit!important;
 }

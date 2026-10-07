@@ -14,8 +14,8 @@ import { readFileSync, existsSync } from 'node:fs';
 // "css" is injected into the live page (the page's own sitewide-type link is removed first) so a proposed
 // stylesheet can be measured and photographed without any production write.
 const CFG = existsSync('automation/vision/type-audit.config.json') ? JSON.parse(readFileSync('automation/vision/type-audit.config.json', 'utf8')) : {};
-const VARIANTS = (CFG.variants || [{ suffix: '', css: CFG.css || '' }]).map((v) => ({ suffix: v.suffix ? '-' + v.suffix : '', css: v.css ? readFileSync(v.css, 'utf8') : '' }));
-let CSS = '', SUFFIX = '';
+const VARIANTS = (CFG.variants || [{ suffix: '', css: CFG.css || '' }]).map((v) => ({ suffix: v.suffix ? '-' + v.suffix : '', css: v.css ? readFileSync(v.css, 'utf8') : '', js: v.js ? readFileSync(v.js, 'utf8') : '' }));
+let CSS = '', SUFFIX = '', JS = '';
 const PAGES = (CFG.pages ? CFG.pages.join(',') : process.env.TA_PAGES || [
   '/', '/magazine', '/gatorbait-media-blogs',
   '/post/the-college-football-crisis-corn-dogs-vs-commissioners-and-why-it-s-a-big-deal',
@@ -122,7 +122,7 @@ const cascade = () => {
 const browser = await chromium.launch();
 const res = { at: new Date().toISOString(), pages: [] };
 for (const V of VARIANTS) {
-CSS = V.css; SUFFIX = V.suffix;
+CSS = V.css; SUFFIX = V.suffix; JS = V.js;
 for (const path of PAGES) {
   for (const w of WIDTHS) {
     const slug = (path === '/' ? 'home' : path.replace(/^\/(post\/)?/, '').replace(/[^\w]+/g, '-').slice(0, 40)) + '-' + w + SUFFIX;
@@ -138,6 +138,7 @@ for (const path of PAGES) {
         await page.addStyleTag({ content: CSS });
         await page.waitForTimeout(1500);
       }
+      if (JS) { await page.evaluate(JS); await page.waitForTimeout(500); }
       await page.evaluate(() => document.fonts.ready).catch(() => {});
       await page.screenshot({ path: `${OUT}/${slug}-top.jpg`, type: 'jpeg', quality: 60 });
       // scroll through so lazy sections draw, then back to the body start

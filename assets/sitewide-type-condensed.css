@@ -1,12 +1,18 @@
-/* GatorBait sitewide typography authority (v1 plus the Oct. 7 fixes, "Tier A"). Spec: docs/TYPE-STANDARD-2026-10.md
- * House type is the Barlow family: Barlow Condensed for display, Barlow for text. v1's Barlow force on headings is left
- * as it was; the Condensed restore is assets/sitewide-type-condensed.css (Tier B, needs Brenden's yes).
+/* GatorBait sitewide typography authority, v2 "Condensed display" (Oct. 7, 2026). TIER B: needs Brenden's yes (it changes the look of
+ * the homepage, Magazine and Latest headlines). Tier A, the safe fixes, is assets/sitewide-type.css. Spec: docs/TYPE-STANDARD-2026-10.md
+ * House type is the Barlow family only:
+ *   Barlow Condensed (600/700/800)  display: headlines, kickers, nav, ticker, buttons, numerals, drop caps
+ *   Barlow (400/500/600/700/800)    text: body copy, bylines, captions, form fields
+ * No Georgia, Times, Arial, Proxima, Roboto or Bebas anywhere. Body copy is Barlow 500.
+ * v1 forced Barlow on every heading, link, span and button in #gbm-live, #gbm-magazine-page and #SITE_PAGES,
+ * which flattened the Condensed display face the embeds ask for. v2 forces the family only where a foreign
+ * or flattened face leaks in, and leaves display type to each embed's own Condensed rules.
  */
 :root{
   --gbm-font:"Barlow",Arial,Helvetica,sans-serif;
-  --gbm-font-display:"Barlow",Arial,Helvetica,sans-serif;
   --gbm-font-copy:"Barlow",Arial,Helvetica,sans-serif;
   --gbm-font-ui:"Barlow",Arial,Helvetica,sans-serif;
+  --gbm-font-display:"Barlow Condensed","Barlow",Arial,Helvetica,sans-serif;
   --gbm-cond:"Barlow Condensed","Barlow",Arial,Helvetica,sans-serif;
 }
 html body{
@@ -14,53 +20,28 @@ html body{
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
 }
-#gbm-live,
-#gbm-live h1,#gbm-live h2,#gbm-live h3,#gbm-live h4,#gbm-live p,#gbm-live a,#gbm-live button,#gbm-live small,#gbm-live span,
-#gbm-magazine-page,
-#gbm-magazine-page h1,#gbm-magazine-page h2,#gbm-magazine-page h3,#gbm-magazine-page h4,#gbm-magazine-page p,#gbm-magazine-page a,#gbm-magazine-page button,#gbm-magazine-page small,#gbm-magazine-page span,#gbm-magazine-page strong,#gbm-magazine-page em,
-#gbm-mobile-shell,#gbm-mobile-shell *,
-#gbm-mobile-drawer-root,#gbm-mobile-drawer-root *{
-  font-family:var(--gbm-font)!important;
-}
-#SITE_HEADER [data-testid="richTextElement"],
-#SITE_HEADER nav a,#SITE_HEADER nav span,#SITE_HEADER nav button,
-#SITE_PAGES h1,#SITE_PAGES h2,#SITE_PAGES h3,#SITE_PAGES h4,#SITE_PAGES h5,#SITE_PAGES h6,
-#SITE_PAGES p,#SITE_PAGES li,#SITE_PAGES label,#SITE_PAGES button,#SITE_PAGES input,#SITE_PAGES textarea,#SITE_PAGES select,
-[data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p,
+
+/* 1. Text elements inside our embeds are Barlow. Headings, kickers, buttons and numerals are not listed here:
+ *    the embeds set them in Barlow Condensed and v2 no longer overrides that. */
+#gbm-mobile-shell,#gbm-mobile-shell *,#gbm-mobile-drawer-root,#gbm-mobile-drawer-root *,
+#gbm-footer,#gbm-footer *,
 [data-hook="post-title"],[data-hook="post-title"] *,
-[data-hook="post-owner"],[data-hook="post-publish-date"],[data-hook="post-reading-time"],
-[data-hook="post-categories"],[data-hook="time-ago"],[data-hook="time-to-read"],[data-hook="user-name"],
-[data-hook="post-category-label"] *,
-#gbm-footer,#gbm-footer *{
+#gbm-live p,#gbm-live li,#gbm-live small,
+#gbm-magazine-page p,#gbm-magazine-page li,#gbm-magazine-page small{
   font-family:var(--gbm-font)!important;
-}
-#gbm-live h1,#gbm-live h2,#gbm-live h3,
-#gbm-magazine-page h1,#gbm-magazine-page h2,#gbm-magazine-page h3,
-#SITE_PAGES h1,#SITE_PAGES h2,#SITE_PAGES h3,
-[data-hook="post-title"],[data-hook="post-title"] *{
-  font-weight:800!important;
-  letter-spacing:-.02em!important;
-}
-#SITE_HEADER nav a,#SITE_HEADER nav span,#SITE_HEADER nav button,
-[data-hook="post-owner"],[data-hook="post-publish-date"],[data-hook="post-reading-time"],
-[data-hook="post-categories"],[data-hook="time-ago"],[data-hook="time-to-read"],[data-hook="user-name"],
-[data-hook="post-category-label"] *,
-#gbm-footer h4,#gbm-footer a{
-  font-weight:700!important;
-}
-[data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{
-  font-weight:400!important;
-  font-size:17px!important;
-  line-height:1.68!important;
-}
-@media(max-width:760px){
-  [data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{
-    font-size:16px!important;
-    line-height:1.62!important;
-  }
 }
 
-/* A. Native Wix pieces that bring their own face, and the signup card. */
+/* 2. Display type that must be Condensed wherever it appears. */
+#gbm-live h1,#gbm-live h2,#gbm-live h3,#gbm-live h4,
+#gbm-magazine-page h1,#gbm-magazine-page h2,#gbm-magazine-page h3,#gbm-magazine-page h4,
+#gbm-live .fp-kick,#gbm-live .fp-more,#gbm-live .fp-btn,#gbm-live .fp-hl,
+#gbm-live .fp-ticker,#gbm-live .fp-ticker *,#gbm-live .fp-bug,#gbm-live .fp-bug *,#gbm-live .fp-cd,#gbm-live .fp-cd *,
+#gbm-live .fp-col-name,#gbm-live .fp-by,#gbm-live .fp-latest h3,#gbm-live .fp-latest time,
+#gbm-magazine-page .pm-kick,#gbm-magazine-page .pm-n,#gbm-magazine-page .pm-gu{
+  font-family:var(--gbm-cond)!important;
+}
+
+/* 3. Native Wix pieces that bring their own face. */
 [data-hook^="consent-banner"],[data-hook^="consent-banner"] *,#cookies_policy_description,
 [data-hook="comment-box-placeholder-text"],[data-hook^="comments-"],[data-hook^="comments-"] *,
 [data-hook="floating-dropdown-base-selected"],[data-hook="edited-comment-indicator"],
@@ -84,7 +65,45 @@ html body #SITE_PAGES [data-hook="post-page"] .gbc .gbc-b,
   font-family:var(--gbm-cond)!important;
 }
 
-/* B. Article body: one face, one weight, one size. Body 500, 19px desktop / 17.5px phone;
+/* 3b. Display headings in Condensed 800 carry no negative tracking: it closes up the counters and
+ *     makes the letters touch at 28px and above. */
+#gbm-magazine-page h1,#gbm-magazine-page h2{letter-spacing:0!important}
+#gbm-live h1,#gbm-live h2:not(.fp-rail h2):not(.fp-mod h2),#gbm-live h3.fp-hl{letter-spacing:0!important}
+
+/* 4. Native and static pages. */
+#SITE_HEADER [data-testid="richTextElement"],
+#SITE_HEADER nav a,#SITE_HEADER nav span,#SITE_HEADER nav button,
+#SITE_PAGES p,#SITE_PAGES li,#SITE_PAGES label,#SITE_PAGES input,#SITE_PAGES textarea,#SITE_PAGES select,
+[data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p,
+[data-hook="post-owner"],[data-hook="post-publish-date"],[data-hook="post-reading-time"],
+[data-hook="post-categories"],[data-hook="time-ago"],[data-hook="time-to-read"],[data-hook="user-name"],
+[data-hook="post-category-label"] *{
+  font-family:var(--gbm-font)!important;
+}
+#SITE_PAGES h1,#SITE_PAGES h2,#SITE_PAGES h3,#SITE_PAGES h4,#SITE_PAGES h5,#SITE_PAGES h6{
+  font-family:var(--gbm-cond)!important;
+  font-weight:800!important;
+  letter-spacing:0!important;
+}
+#SITE_HEADER nav a,#SITE_HEADER nav span,#SITE_HEADER nav button,
+[data-hook="post-owner"],[data-hook="post-publish-date"],[data-hook="post-reading-time"],
+[data-hook="post-categories"],[data-hook="time-ago"],[data-hook="time-to-read"],[data-hook="user-name"],
+[data-hook="post-category-label"] *{
+  font-weight:700!important;
+}
+/* Fallback body size for post pages the template does not reach (the template's own rules win elsewhere). */
+[data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{
+  font-size:17px!important;
+  line-height:1.68!important;
+}
+@media(max-width:760px){
+  [data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{
+    font-size:16px!important;
+    line-height:1.62!important;
+  }
+}
+
+/* 5. Article body: one face, one weight, one size. Body 500, 19px desktop / 17.5px phone;
  *    the lede (first paragraph, carries the drop cap) is 20px / 18.5px on every post. Specificity matches the post
  *    template's own selectors plus one attribute so it wins without raising !important order. */
 html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] :is(p,li) span{
@@ -113,7 +132,7 @@ html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="po
   }
 }
 
-/* C. Dek. A bold opening line that the author sized in the Wix editor is marked data-gbm-dek by the post
+/* 6. Dek. A bold opening line that the author sized in the Wix editor is marked data-gbm-dek by the post
  *    normalizer (c91ad133) and is a deck, not body copy: Condensed 700, 30px / 25px, no drop cap. Without
  *    this block the lede rule above (and the drop-cap rule in the post template) mix with it and render
  *    Barlow Condensed at weight 500 and body size (seen on the Corn Dogs vs. Commissioners column). */

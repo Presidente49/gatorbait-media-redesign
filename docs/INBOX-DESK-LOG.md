@@ -289,3 +289,13 @@ No new writer submissions, no new UF press. Only GitHub CI-failure noise (the pr
 **YouTube:** not checked this pass (direct RSS egress-blocked, vidIQ out of credits as before). Nothing embedded.
 
 No breaking items. Nothing published, drafted or sent from this pass.
+
+## Desk inbox + YouTube check — Oct. 7, ~18:05Z
+
+**Gmail (`newer_than:1d`):**
+- `1a11773929a7ba41`, buddymartinshow@gmail.com, "Fwd: Your dispute has been submitted" — not a story submission. Buddy asks what a YouTube notice means. It confirms a Content ID dispute he filed on "Is College Football Losing Its Most Valuable Traditions?" (claimed content "Hip-Hop Sport Rock", claimant Elite Alliance Music; his stated reason: used with authorization from the copyright holder). Action: no reply sent (desk does not email staff on its own); explained in #34 for Brenden.
+- `1a1165ee015167ee`, `1a113ac1eaa9312f`: already logged at 16:05Z.
+
+**YouTube:** still not checked (egress blocked, vidIQ out of credits). Front-page rail refresh is PR #149, pending merge.
+
+No breaking items. Nothing published, drafted or sent.

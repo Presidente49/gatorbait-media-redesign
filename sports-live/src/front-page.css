@@ -556,3 +556,7 @@ body:has(#gbm-mobile-shell-host) #gbm-live.fp26 .fp-mast{display:none}
 #gbm-live.fp26 .fp-quick-links{padding-block:12px;border-bottom:1px solid var(--fp-rule)}
 #gbm-live.fp26 .fp-quick-links .fp-wrap{justify-content:center}
 #gbm-live.fp26 #fp-show-schedule{scroll-margin-top:84px}
+@media(max-width:820px){
+#gbm-live.fp26 .fp-quick-links .fp-chips{flex-wrap:nowrap;gap:6px;justify-content:center}
+#gbm-live.fp26 .fp-quick-links .fp-chips a{flex:1 1 0;min-width:0;justify-content:center;text-align:center;min-height:44px;padding:0 6px;font-size:12px;letter-spacing:.04em;line-height:1.1}
+}

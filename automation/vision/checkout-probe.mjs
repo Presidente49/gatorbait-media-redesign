@@ -1,6 +1,6 @@
 // Read-only walk of the Pricing Plans checkout in a real browser, for review from sessions that cannot reach the site.
 // Usage: PLAN="ALL ACCESS ANNUAL" WIDTHS=390,1366 RUN_ID=<id> node automation/vision/checkout-probe.mjs
-// Per width it opens /plans-pricing, lists the plan cards, picks the requested plan and follows the flow as far
+// Per width it opens /pricing-plans (falling back to /plans-pricing), lists the plan cards, picks the requested plan and follows the flow as far
 // as it goes without paying, entering a real card or creating an account: a login/sign-up wall ends that branch.
 // When a billing address form is reachable it records the inputs (label, placeholder, required, autocomplete
 // style) and what the Continue/Pay button and validation messages do when "123 Main St" is typed and tabbed away
@@ -153,7 +153,14 @@ for (const w of widths) {
   const step = (name, extra = {}) => { const s = { step: name, url: page.url().slice(0, 160), at: new Date().toISOString(), ...extra }; m.steps.push(s); console.log(`[${w}] ${name} ${s.url}`); return s; };
   try {
     // 1. Plans page.
-    const res = await page.goto(`${BASE}/plans-pricing?cb=${encodeURIComponent(RUN_ID)}`, { waitUntil: 'load', timeout: 60000 });
+    // The live Pricing Plans page is /pricing-plans; /plans-pricing (the Wix default slug) answers 404 on this site.
+    let res = null, plansPath = null;
+    for (const p of ['/pricing-plans', '/plans-pricing']) {
+      res = await page.goto(`${BASE}${p}?cb=${encodeURIComponent(RUN_ID)}`, { waitUntil: 'load', timeout: 60000 });
+      plansPath = p;
+      if (res && res.status() < 400) break;
+      m.steps.push({ step: 'plans-path-404', url: page.url().slice(0, 160), http: res && res.status() });
+    }
     await page.waitForTimeout(4000);
     const cookie = await dismissCookies(page);
     await page.waitForTimeout(500);
@@ -171,7 +178,7 @@ for (const w of widths) {
         return { name: name.slice(0, 60), price: (t.match(/\$\s?[\d,.]+(\s*\/?\s*\w+)?/) || [''])[0].slice(0, 30), button: txt(b).slice(0, 40), hook: b.getAttribute('data-hook'), href: (b.getAttribute('href') || '').slice(0, 100), text: t.slice(0, 160) };
       }).filter(Boolean).slice(0, 12);
     });
-    step('plans', { http: res && res.status(), cookieBanner: cookie, planCount: m.plans.length });
+    step('plans', { path: plansPath, http: res && res.status(), cookieBanner: cookie, planCount: m.plans.length });
 
     // 2. Pick the plan.
     const pick = m.plans.findIndex((p) => p.text.toLowerCase().includes(PLAN.toLowerCase()) || p.name.toLowerCase().includes(PLAN.toLowerCase()));

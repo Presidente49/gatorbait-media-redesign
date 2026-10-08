@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@500;600;700&display=swap">
 <style>
 /* GatorBait "Thoughts of the Day" series cover, 1600x900, type-led (no photo). Same live-shots pipeline as template.html.
-   Query: date=  hook=  by=  (series title default). Optional overrides: k1= k2= (kicker), l1= l2= (headline lines, l2 in orange), fs= (headline px), x= (left inset px, default 96; use ~240 so a centre-cropped thumbnail keeps the text) */
+   Query: date=  hook=  by=  (series title default). Optional overrides: k1= k2= (kicker), l1= l2= (headline lines, l2 in orange), fs= (headline px), bg=1 (background only, no type: for a hero that the page overlays with its own headline), x= (left inset px, default 96; use ~240 so a centre-cropped thumbnail keeps the text) */
 html,body{margin:0;background:#07122e}
 .cover{position:relative;width:1600px;height:900px;overflow:hidden;background:#07122e;font-family:"Barlow",sans-serif;color:#fff}
 .glow{position:absolute;inset:0;background:radial-gradient(70% 90% at 85% 100%,rgba(250,70,22,.34),rgba(250,70,22,0) 62%),radial-gradient(60% 70% at 0% 0%,rgba(30,64,140,.55),rgba(30,64,140,0) 65%)}
@@ -43,6 +43,7 @@ h1 em{font-style:normal;color:#fa4616}
   if(q.get('k2'))document.getElementById('k2').textContent=q.get('k2');
   if(q.get('l1')){var h=document.getElementById('h1');h.textContent='';h.appendChild(document.createTextNode(q.get('l1')));if(q.get('l2')){h.appendChild(document.createElement('br'));var em=document.createElement('em');em.textContent=q.get('l2');h.appendChild(em);}if(q.get('fs'))h.style.fontSize=q.get('fs')+'px';}
   if(q.get('x'))document.getElementById('cover').style.setProperty('--x',q.get('x')+'px');
+  if(q.get('bg')){var c=document.querySelector('.copy'),f=document.querySelector('.foot');if(c)c.style.display='none';if(f)f.style.display='none';}
   document.getElementById('date').textContent = q.get('date') || '';
   document.getElementById('hook').textContent = q.get('hook') || '';
   document.getElementById('by').textContent = q.get('by') ? 'By ' + q.get('by') : '';

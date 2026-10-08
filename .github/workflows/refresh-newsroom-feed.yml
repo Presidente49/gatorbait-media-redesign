@@ -6,6 +6,7 @@ on:
     paths:
       - 'automation/update_newsroom_feed.py'
       - 'automation/update_newsroom_feed_routed.py'
+      - 'automation/episodes_feed.py'
       - 'newsroom-preview/editorial-routing.json'
       - '.github/workflows/refresh-newsroom-feed.yml'
   schedule:
@@ -102,4 +103,44 @@ jobs:
             git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           done
           [ "$pushed" = true ] || { echo 'push failed after 3 tries; scoreboard not published' >&2; exit 1; }
+          gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"
+
+  # Buddy Martin Show uploads for the front page "Recent broadcasts" rail. Same workflow and 5-minute tick, no second
+  # scheduler. Runs after `scoreboard` so the jobs push to main one at a time. The script rewrites
+  # sports-live/episodes.json only when the newest uploads change or every 6 hours (the page ignores the file once
+  # checkedAt is over 24 hours old), and a YouTube outage keeps the last good file without failing the workflow.
+  episodes:
+    needs: scoreboard
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Refresh sports-live/episodes.json from the channel's public RSS
+        continue-on-error: true
+        run: python automation/episodes_feed.py
+      - name: Commit if changed and request the existing Pages publisher
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- sports-live/episodes.json; then
+            echo 'Episodes unchanged. No deployment requested.'
+            exit 0
+          fi
+          git config user.name 'gatorbait-newsroom-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
+          git add sports-live/episodes.json
+          git commit -m 'data: refresh Buddy Martin Show episodes'
+          pushed=false
+          for i in 1 2 3; do
+            if git push; then pushed=true; break; fi
+            git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          done
+          [ "$pushed" = true ] || { echo 'push failed after 3 tries; episodes not published' >&2; exit 1; }
           gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"

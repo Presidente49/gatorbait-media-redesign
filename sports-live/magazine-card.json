@@ -1,28 +1,28 @@
 {
-  "sourceRelease": "current-pregame",
+  "sourceRelease": "current-wednesday",
   "issue": {
-    "number": "Pregame edition",
+    "number": "Wednesday Edition",
     "date": "Wednesday, October 7, 2026",
-    "week": "Week 6 · South Carolina at Florida",
+    "week": "Oct. 7 · Week 6 · South Carolina at Florida",
     "home": "GatorBait Media",
-    "pageTitle": "GatorBait Magazine | Pregame: South Carolina at Florida"
+    "pageTitle": "GatorBait Magazine | Wednesday Edition, October 7, 2026"
   },
   "cover": {
-    "kicker": "South Carolina pregame · October 7, 2026",
-    "headline": "SOUTH CAROLINA AT FLORIDA",
-    "dek": "Homecoming at Ben Hill Griffin Stadium. Saturday, Oct. 10, 12:45 p.m. ET on SEC Network.",
-    "byline": "Buddy Martin · Franz Beard",
+    "kicker": "Wednesday Edition · October 7, 2026",
+    "headline": "HOMECOMING WEEK",
+    "dek": "Buddy Martin leads. South Carolina, Franz Beard, Eddie Gilley and more.",
+    "byline": "Buddy Martin · Franz Beard · Eddie Gilley",
     "cta": "Open this issue",
     "url": "/magazine",
     "image": {
-      "id": "d3cfa5_7062fd8ae50e4b27b2349854476071c0~mv2",
+      "id": "d3cfa5_c470cbdbc2f74f8e963c96d6a008d3ad~mv2",
       "ext": "jpg",
       "width": 864,
       "height": 1536,
-      "alt": "GatorBait Magazine South Carolina pregame cover: South Carolina at Florida, Saturday, Oct. 10, 12:45 p.m. ET",
+      "alt": "GatorBait Magazine Wednesday Edition cover: Homecoming Week, Oct. 7",
       "credit": "GatorBait Media"
     },
-    "linesLabel": "Also inside",
+    "linesLabel": "Inside",
     "lines": [
       "Buddy Martin: Florida needs the balm of Homecoming",
       "Homecoming Test: No. 16 Florida hosts South Carolina",

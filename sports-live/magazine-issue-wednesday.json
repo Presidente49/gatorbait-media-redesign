@@ -1,0 +1,151 @@
+{
+  "$comment": "GatorBait Magazine, Wednesday Edition (Oct. 7, 2026). Link-card edition: each story carries the published excerpt and links to its single canonical /post/ URL (no duplicated article text). Built with MAG_VARIANT=wednesday (sports-live/magazine-wednesday.js); the weekly /magazine bundle is untouched. Cover art is type-led Barlow (design team may swap cover.image).",
+  "id": "2026-10-07-wednesday-edition",
+  "issue": {
+    "number": "Wednesday Edition",
+    "name": "Homecoming Week",
+    "date": "Wednesday, October 7, 2026",
+    "week": "Week 6 · South Carolina at Florida",
+    "tagline": "The long read. The bigger picture.",
+    "pageTitle": "GatorBait Magazine | Wednesday Edition, October 7, 2026"
+  },
+  "masthead": {
+    "image": "https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp",
+    "alt": "GatorBait",
+    "word": "Magazine"
+  },
+  "labels": {
+    "contents": "In this issue",
+    "coverEntry": "Cover story",
+    "read": "Start reading",
+    "readColumn": "Read the column",
+    "vs": "vs.",
+    "at": "at",
+    "rank": "No.",
+    "win": "W",
+    "loss": "L"
+  },
+  "cover": {
+    "kicker": "The Buddy Martin column",
+    "headline": "Buddy Blog: Florida Gators Need the Balm of Homecoming This Week",
+    "dek": "The Wednesday Edition: Buddy Martin leads, with South Carolina, Franz Beard, Eddie Gilley and the week's best GatorBait reads.",
+    "byline": "By Buddy Martin",
+    "url": "/post/buddy-blog-florida-gators-need-the-balm-of-homecoming-this-week",
+    "image": {
+      "id": "d3cfa5_be110d53aa094259b40604b0b333a5b2",
+      "ext": "jpg",
+      "width": 1600,
+      "height": 900,
+      "alt": "GatorBait Magazine Wednesday Edition: Homecoming Week",
+      "credit": "GatorBait Media"
+    }
+  },
+  "footer": {
+    "label": "More from GatorBait",
+    "links": [
+      {
+        "label": "All stories",
+        "url": "/gatorbait-media-blogs"
+      }
+    ],
+    "line": ""
+  },
+  "stories": [
+    {
+      "id": "a7f30c37-7461-48e2-bbde-94723ac2a2e0",
+      "title": "Buddy Blog: Florida Gators Need the Balm of Homecoming This Week",
+      "author": "Buddy Martin",
+      "date": "2026-10-05",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-florida-gators-need-the-balm-of-homecoming-this-week",
+      "html": "<p>Sumrall didn’t care about Mizzou’s homecoming, but he certainly does his own this week. Buddy Martin on Florida’s reset, Mac Steen and a lesson from 1990.</p><p><a href=\"https://www.gatorbaitmedia.com/post/buddy-blog-florida-gators-need-the-balm-of-homecoming-this-week\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "583b6aeb-58d4-429c-a13e-154d29415f90",
+      "title": "Homecoming Test: No. 16 Florida Hosts South Carolina Saturday at 12:45 p.m.",
+      "author": "Brenden Martin",
+      "date": "2026-10-07",
+      "url": "https://www.gatorbaitmedia.com/post/homecoming-test-no-16-florida-hosts-south-carolina-saturday-at-12-45-p-m",
+      "html": "<p>Florida (4-1) answers the 45-17 loss at Missouri against a South Carolina team (2-3) with the nation's No. 7 rushing offense, per ESPN. Kickoff is 12:45 p.m. ET on SEC Network.</p><p><a href=\"https://www.gatorbaitmedia.com/post/homecoming-test-no-16-florida-hosts-south-carolina-saturday-at-12-45-p-m\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "7f5d042f-443f-406a-86f7-d8b479097024",
+      "title": "Thoughts of the Day: October 7, 2026",
+      "author": "Franz Beard",
+      "date": "2026-10-07",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-7-2026",
+      "html": "<p>Franz Beard on Florida's explosive-play problem, South Carolina, the SEC across the board, and the push to expand the College Football Playoff.</p><p><a href=\"https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-7-2026\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "0c28dbe8-8457-4866-88f6-462237f269f0",
+      "title": "Baugh Owns It: Florida Running Back Texts Sumrall an Apology After Missouri Loss",
+      "author": "Brenden Martin",
+      "date": "2026-10-07",
+      "url": "https://www.gatorbaitmedia.com/post/baugh-owns-it-florida-running-back-texts-sumrall-an-apology-after-missouri-loss",
+      "html": "<p>Jadan Baugh apologized to Jon Sumrall by text the day after Florida's 45-17 loss at Missouri, and Sumrall says his running back 'owned it.'</p><p><a href=\"https://www.gatorbaitmedia.com/post/baugh-owns-it-florida-running-back-texts-sumrall-an-apology-after-missouri-loss\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "17f721b5-40ed-431b-b8b0-285031b55ad6",
+      "title": "Reeling Gamecocks, Rattled Gators: Homecoming Comes With a Fix List",
+      "author": "Brenden Martin",
+      "date": "2026-10-05",
+      "url": "https://www.gatorbaitmedia.com/post/reeling-gamecocks-rattled-gators-homecoming-comes-with-a-fix-list",
+      "html": "<p>Florida's first loss left a to-do list: block the run, stop the run, talk in the secondary. Homecoming brings a South Carolina team that is reeling even worse.</p><p><a href=\"https://www.gatorbaitmedia.com/post/reeling-gamecocks-rattled-gators-homecoming-comes-with-a-fix-list\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "6ea489bf-df0a-453d-9bcd-ebd8a3a0d701",
+      "title": "Florida Gave On Saturday—Gave Way Too Much!",
+      "author": "Eddie Gilley",
+      "date": "2026-10-05",
+      "url": "https://www.gatorbaitmedia.com/post/florida-gave-on-saturday",
+      "html": "<p>Florida was beaten in every phase at Missouri. Eddie Gilley examines what went wrong and what comes next for the Gators.</p><p><a href=\"https://www.gatorbaitmedia.com/post/florida-gave-on-saturday\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "58ac5240-a49a-4d15-85d9-609c2e76dd87",
+      "title": "The College Football Crisis: Corn Dogs vs Commissioners And Why It's A Big Deal!",
+      "author": "Buddy Martin",
+      "date": "2026-10-06",
+      "url": "https://www.gatorbaitmedia.com/post/the-college-football-crisis-corn-dogs-vs-commissioners-and-why-it-s-a-big-deal",
+      "html": "<p>There are only so many weekends on the calendar and only so many hits a player’s body can take. Stretch the playoff and something has to go, and the people in charge have already said conference title games could be cut.</p><p><a href=\"https://www.gatorbaitmedia.com/post/the-college-football-crisis-corn-dogs-vs-commissioners-and-why-it-s-a-big-deal\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "6d534c81-ff56-4b7f-9961-0e3e12ded612",
+      "title": "You Can Reschedule Football. Not a Hurricane. But The Memories Linger.",
+      "author": "Buddy Martin",
+      "date": "2026-10-07",
+      "url": "https://www.gatorbaitmedia.com/post/you-can-reschedule-football-not-a-hurricane-but-the-memories-linger",
+      "html": "<p>The initial forecast for Tuscaloosa and the Georgia-Alabama mega-game was looking so grim that there was some talk of moving it to Atlanta (although doubtful).</p><p><a href=\"https://www.gatorbaitmedia.com/post/you-can-reschedule-football-not-a-hurricane-but-the-memories-linger\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "7200e92a-8615-4745-a834-9df94e98f63a",
+      "title": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!",
+      "author": "Buddy Martin",
+      "date": "2026-10-04",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+      "html": "<p>But make no mistake: What happened in Columbia was worse than a speed bump. It was a public mugging. It was a betrayal of sorts. The question is: Who betrayed whom?</p><p><a href=\"https://www.gatorbaitmedia.com/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "04a43828-61f4-457e-abf5-2120b510525b",
+      "title": "Hey Missouri, Don’t Show Me Anymore!",
+      "author": "Buddy Martin",
+      "date": "2026-10-04",
+      "url": "https://www.gatorbaitmedia.com/post/hey-missouri-don-t-show-me-anymore",
+      "html": "<p>The Tigers did not just beat Florida. They drove over it, backed up, drove over it again and then threw a couple touchdown passes just to make sure nobody mistook the afternoon for a competitive football game.</p><p><a href=\"https://www.gatorbaitmedia.com/post/hey-missouri-don-t-show-me-anymore\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "64ae06cc-3478-4aa1-a675-7f1b965bc752",
+      "title": "The Wizards Have Spoken, And These Florida Gators Are Suddenly Somebody",
+      "author": "Buddy Martin",
+      "date": "2026-10-03",
+      "url": "https://www.gatorbaitmedia.com/post/the-wizards-have-spoken-and-these-2026-florida-gators-suddenly-somebody",
+      "html": "<p>Hey! No resting on your laurels, Scott Stricklin. Somewhere in Gainesville there’s a whistle with teeth marks in it. It belongs to Jon Sumrall.</p><p><a href=\"https://www.gatorbaitmedia.com/post/the-wizards-have-spoken-and-these-2026-florida-gators-suddenly-somebody\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    },
+    {
+      "id": "a4064e09-4102-4a2a-bd61-ff3376dc7c7a",
+      "title": "Coaches and Fans Have Different Playbooks. So Have Another Round, Thirsty Gators.",
+      "author": "Buddy Martin",
+      "date": "2026-10-01",
+      "url": "https://www.gatorbaitmedia.com/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators",
+      "html": "<p>Florida fans have earned the right to brag after four years of misery — just don’t build a shrine on an early poll before Saturday’s trip to Missouri.</p><p><a href=\"https://www.gatorbaitmedia.com/post/coaches-and-fans-have-different-playbooks-so-have-another-round-thirsty-gators\">Read the full article on GatorBaitMedia.com ↗</a></p>"
+    }
+  ]
+}

@@ -103,7 +103,7 @@ async function pageKind(page) {
   return k;
 }
 
-const findInput = (fields, re, not = /line ?2|apt|suite|unit|\b2\b/i) => fields.find((f) => (f.tag === 'input' || f.role === 'combobox') && re.test([f.label, f.placeholder, f.name, f.id, f.autocomplete, f.hook].join(' ')) && !not.test([f.label, f.placeholder, f.name, f.autocomplete].join(' ')));
+const findInput = (fields, re, not = /line ?2|apt|suite|unit|\b2\b|e-?mail|phone/i) => fields.find((f) => (f.tag === 'input' || f.role === 'combobox') && re.test([f.label, f.placeholder, f.name, f.id, f.autocomplete, f.hook].join(' ')) && !not.test([f.label, f.placeholder, f.name, f.autocomplete].join(' ')));
 
 // Locate a field (from formFields) as a Playwright locator in its frame.
 function locate(page, field) {
@@ -196,7 +196,8 @@ for (const w of widths) {
     await dismissCookies(page);
     await shot(page, '02-after-select', w, true);
     let kind = await pageKind(page);
-    const isAuth = (k) => Object.values(k).some((v) => v && typeof v === 'object' && (v.password || (v.authText && v.dialogs?.length) || (v.email && v.authText && !v.addressFields)));
+    // A wall is a visible password field, an auth dialog, or a login/signup URL. A "Have an account? Log in" link on a guest checkout is not.
+    const isAuth = (k) => /\/(login|signup|sign-up|members)/i.test(k.url) || Object.values(k).some((v) => v && typeof v === 'object' && (v.password || (v.authText && v.dialogs?.length && /log in|sign up|sign in/i.test(v.dialogs.join(' ')))));
     step('after-select', { kind, authWall: isAuth(kind) });
     if (isAuth(kind)) { step('stopped-at-auth-wall'); m.outcome = 'auth-wall'; }
     else {
@@ -207,13 +208,23 @@ for (const w of widths) {
       // Some checkouts hide the address behind a "Continue" from an email/contact step; probe one level deeper if no address field yet.
       let street = findInput(fields, /street|address/i);
       if (!street) {
-        const cont = page.locator('button').filter({ hasText: /continue|next/i }).first();
-        if (await cont.isVisible().catch(() => false) && !(await cont.isDisabled().catch(() => true))) {
+        // Wix guest checkout: a Customer details step (email, first/last name, phone) gates the Payment step that holds the
+        // billing address. Fill it with an obviously fake probe identity (this is not an account; no member is created).
+        const fill = async (re, val) => { const f = findInput(fields, re, /^$/); const l = f && locate(page, f); if (l) { await l.click({ timeout: 4000 }).catch(() => {}); await l.fill(val).catch(() => {}); return f.label || f.placeholder || f.name; } return null; };
+        const filled = { email: await fill(/e-?mail/i, `qa-checkout-probe-${RUN_ID}@example.com`), first: await fill(/first ?name/i, 'QA'), last: await fill(/last ?name/i, 'Probe'), phone: await fill(/phone/i, '3525550100') };
+        await page.keyboard.press('Tab');
+        await page.waitForTimeout(800);
+        await shot(page, '03-contact-filled', w, true);
+        const cont = page.locator('button').filter({ hasText: /^\s*(continue|next)\s*$/i }).first();
+        const contVisible = await cont.isVisible().catch(() => false), contDisabled = await cont.isDisabled().catch(() => true);
+        step('contact-filled', { filled, continueVisible: contVisible, continueDisabled: contDisabled, ...(await buttonState(page)) });
+        if (contVisible && !contDisabled) {
           await cont.click({ timeout: 5000 }).catch(() => {});
-          await page.waitForTimeout(4000);
-          await shot(page, '03-after-continue', w, true);
+          await page.waitForTimeout(6000);
+          await shot(page, '04-after-continue', w, true);
           fields = await formFields(page); state = await buttonState(page);
-          step('after-continue', { fieldCount: fields.length, fields: fields.slice(0, 40), ...state, kind: await pageKind(page) });
+          kind = await pageKind(page);
+          step('after-continue', { fieldCount: fields.length, fields: fields.slice(0, 40), ...state, kind });
           street = findInput(fields, /street|address/i);
         }
       }
@@ -230,11 +241,11 @@ for (const w of widths) {
         await loc.pressSequentially('123 Main St', { delay: 60 });
         await page.waitForTimeout(2500);
         const sugg = await suggestions(page);
-        await shot(page, '04-typed-suggestions', w);
+        await shot(page, '05-typed-suggestions', w);
         await page.keyboard.press('Tab');
         await page.waitForTimeout(1500);
         const afterTab = await buttonState(page);
-        await shot(page, '05-typed-tab-no-pick', w, true);
+        await shot(page, '06-typed-tab-no-pick', w, true);
         step('typed-tab-no-pick', { suggestions: sugg, ...afterTab, fields: (await formFields(page)).filter((f) => ADDRESS_RE.test([f.label, f.placeholder, f.name, f.id, f.autocomplete].join(' '))).map((f) => ({ label: f.label || f.placeholder || f.name, value: f.value, ariaInvalid: f.ariaInvalid })) });
         // 3b. Type and pick the first suggestion.
         await loc.click({ timeout: 5000 });
@@ -245,7 +256,7 @@ for (const w of widths) {
         const how = sugg2.count ? await clickFirstSuggestion(page) : 'none-available';
         await page.waitForTimeout(2000);
         const afterPick = await buttonState(page);
-        await shot(page, '06-picked-suggestion', w, true);
+        await shot(page, '07-picked-suggestion', w, true);
         step('picked-suggestion', { suggestions: sugg2, how, ...afterPick, fields: (await formFields(page)).filter((f) => ADDRESS_RE.test([f.label, f.placeholder, f.name, f.id, f.autocomplete].join(' '))).map((f) => ({ label: f.label || f.placeholder || f.name, value: f.value, ariaInvalid: f.ariaInvalid })) });
         // 3c. ZIP alone.
         const zipF = findInput(await formFields(page), /zip|postal/i, /^$/);
@@ -254,7 +265,7 @@ for (const w of widths) {
           for (const f of (await formFields(page)).filter((f) => ADDRESS_RE.test([f.label, f.placeholder, f.name, f.id, f.autocomplete].join(' ')) && f.tag === 'input' && f.value)) { const l = locate(page, f); if (l) await l.fill('').catch(() => {}); }
           if (zl) { await zl.click({ timeout: 5000 }); await zl.fill(''); await zl.pressSequentially('32601', { delay: 60 }); await page.keyboard.press('Tab'); await page.waitForTimeout(1500); }
           const afterZip = await buttonState(page);
-          await shot(page, '07-zip-only', w, true);
+          await shot(page, '08-zip-only', w, true);
           step('zip-only', { zipField: zipF, ...afterZip, fields: (await formFields(page)).filter((f) => ADDRESS_RE.test([f.label, f.placeholder, f.name, f.id, f.autocomplete].join(' '))).map((f) => ({ label: f.label || f.placeholder || f.name, value: f.value, ariaInvalid: f.ariaInvalid })) });
         } else step('zip-only', { note: 'no zip field found' });
         // Payment form presence (never filled).

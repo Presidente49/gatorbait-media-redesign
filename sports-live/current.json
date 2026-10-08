@@ -1,5 +1,5 @@
 {
-  "commit": "3470c80e30f743b94cbff3d3ede34588aef1f7a4",
-  "updated": "2026-10-07T14:40:00Z",
-  "note": "Type-led Thoughts of the Day series covers (Oct. 6 and Oct. 7) show whole on the front page. Rollback: commit 9877b904ace3b908192f3ebd864e632744b60af4."
+  "commit": "34a180d4fdcd600cc96ad8718f7189f72203f36d",
+  "updated": "2026-10-08T12:45:00Z",
+  "note": "Buddy-first co-lead and mobile co-lead layout (PRs #151, #156). Rollback: set commit to 3470c80e30f743b94cbff3d3ede34588aef1f7a4."
 }

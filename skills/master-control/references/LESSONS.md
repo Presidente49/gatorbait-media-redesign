@@ -649,3 +649,21 @@ A button appended to the story headline's header from a HEAD embed was present i
 **What happened:** At 02:36Z a one-to-one "hate to lose you" email, signed as Buddy and offering three months free, left the editorial Gmail to a canceled member. No session had claimed it in #34 and the controller did not send it. Yahoo bounced it on DKIM, so the only harm was the record gap, but the pattern is the problem: a member email plus a pricing offer are both Brenden-only lines.
 
 **The rule:** any session that sends a one-to-one member email, or anything that names a price, discount or comp, posts the claim in #34 first (recipient class, offer, who approved it) and the send evidence after. A send with no claim is treated as an incident and the sender stops until Brenden confirms. Impersonating a writer's voice in a direct email is Brenden's call, every time.
+
+## Lesson 68: A worker commit hid the phone masthead for four days and nobody noticed (Oct. 8)
+
+**What happened:** d970208 (Oct. 4, 7:47 p.m., "Make supporting homepage stories photo-led on mobile") added `body:has(#gbm-mobile-shell-host) .fp-mast{display:none}`. Desktop kept the blue GatorBait band; phones lost it. Brenden flagged "desktop looks better, mobile isn't as sexy" on Oct. 8 and had to ask for "the page we had a couple of days ago." The live-shots metrics never caught it because no check compares phone and desktop section inventories.
+
+**The rule:** a front-page commit that hides or removes a section on one width says so in its first line and in #34, with a before/after shot of that width. The live-qc check lists the top-level sections present at 390 and 1366 and fails when a section exists on one and not the other unless the config names the exception.
+
+## Lesson 69: Cover art comes from the title and the description, never from a daily template reused by habit (Oct. 8)
+
+**What happened:** Two days of type-only "Thoughts of the Day" series covers looked the same; Brenden: "read the title and description and come up with something much better." The Oct. 8 column got a rain-and-mud stadium illustration tied to "Mud Bowl."
+
+**The rule:** before rendering any cover, read the post title and excerpt and pick a visual that belongs to that story; a series template is a fallback only when the story has no visual hook. Photo or illustration over type-only.
+
+## Lesson 70: Canva generate-image returns only a 200-px thumbnail to the container (Oct. 8)
+
+**What happened:** The generated image's full-size file lives on canva.com, which the container proxy blocks (403), and the tool result carries a 199x112 preview. It cannot be uploaded as a cover.
+
+**The rule:** for covers rendered from here, draw them as SVG/HTML and screenshot with the bundled Chromium at 1600x900, commit the JPG on a branch, and upload to Wix from the raw.githubusercontent.com URL. Use Canva only where a Mac-side session can export the file.

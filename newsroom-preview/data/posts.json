@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "You Can Reschedule Football. Not a Hurricane. But The Memories Linger.",
+      "excerpt": "The initial forecast for Tuscaloosa and the Georgia-Alabama mega-game was looking so grim that the was some talk of moving it to Atlanta (although doubtful).",
+      "url": "https://www.gatorbaitmedia.com/post/you-can-reschedule-football-not-a-hurricane-but-the-memories-linger",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-07T20:30:03Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_e9a2f74a0fad4095ad2d2264ce5d186f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for You Can Reschedule Football. Not a Hurricane. But The Memories Linger."
+      }
+    },
+    {
+      "title": "Baugh Owns It: Florida Running Back Texts Sumrall an Apology After Missouri Loss",
+      "excerpt": "Jadan Baugh apologized to Jon Sumrall by text the day after Florida's 45-17 loss at Missouri, and Sumrall says his running back 'owned it.'",
+      "url": "https://www.gatorbaitmedia.com/post/baugh-owns-it-florida-running-back-texts-sumrall-an-apology-after-missouri-loss",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-07T15:23:25Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_b815ea1981c24faf87c2d9969476f54b~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Baugh Owns It: Florida Running Back Texts Sumrall an Apology After Missouri Loss"
+      }
+    },
+    {
       "title": "Thoughts of the Day: October 7, 2026",
       "excerpt": "Franz Beard on Florida's explosive-play problem, South Carolina, the SEC across the board, and the push to expand the College Football Playoff.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-7-2026",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida Gave On Saturday"
-      }
-    },
-    {
-      "title": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!",
-      "excerpt": "But make no mistake: What happened in Columbia was worse than a speed bump. It was a public mugging. It was a betrayal of sorts. The question is: Who betrayed whom?",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-04T16:10:06Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_4b6b8c0bb3d34bb6ba1d62a4ac109159~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!"
-      }
-    },
-    {
-      "title": "The loss to Mizzou is history; the question is how will the Gators respond?",
-      "excerpt": "For an entire month Jon Sumrall had been warning that the Florida Gators would be exposed somewhere down the road if they didn’t change their ways. Somewhere down the road was Columbia, Missouri, where Saturday afternoon the 8th-ranked Gators (4-1, 2-1 SEC) took one of those leave no place on their body without a bruise beatings at the hands of the…",
-      "url": "https://www.gatorbaitmedia.com/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-04T13:33:37Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_be903de5f60d4510963f83dce1b90109~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The loss to Mizzou is history; the question is how will the Gators respond?"
       }
     }
   ]

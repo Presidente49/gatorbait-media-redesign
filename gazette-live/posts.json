@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "You Can Reschedule Football. Not a Hurricane. But The Memories Linger.",
+      "excerpt": "The initial forecast for Tuscaloosa and the Georgia-Alabama mega-game was looking so grim that the was some talk of moving it to Atlanta (although doubtful).",
+      "url": "https://www.gatorbaitmedia.com/post/you-can-reschedule-football-not-a-hurricane-but-the-memories-linger",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-07T20:30:03Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_e9a2f74a0fad4095ad2d2264ce5d186f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for You Can Reschedule Football. Not a Hurricane. But The Memories Linger."
+      }
+    },
+    {
+      "title": "Baugh Owns It: Florida Running Back Texts Sumrall an Apology After Missouri Loss",
+      "excerpt": "Jadan Baugh apologized to Jon Sumrall by text the day after Florida's 45-17 loss at Missouri, and Sumrall says his running back 'owned it.'",
+      "url": "https://www.gatorbaitmedia.com/post/baugh-owns-it-florida-running-back-texts-sumrall-an-apology-after-missouri-loss",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-07T15:23:25Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_b815ea1981c24faf87c2d9969476f54b~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Baugh Owns It: Florida Running Back Texts Sumrall an Apology After Missouri Loss"
+      }
+    },
+    {
       "title": "Thoughts of the Day: October 7, 2026",
       "excerpt": "Franz Beard on Florida's explosive-play problem, South Carolina, the SEC across the board, and the push to expand the College Football Playoff.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-7-2026",
@@ -9,7 +37,7 @@
       "firstPublishedDate": "2026-10-07T12:57:27Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_0d1374ffc0884a48aa3b363a54ee0ab3~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_76a430063f5b40d6a008010165fbe093~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Thoughts of the Day: October 7, 2026"
@@ -23,7 +51,7 @@
       "firstPublishedDate": "2026-10-07T12:36:27Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c07c1969a698462f8066e3858805a158~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_72fd69312f7f41fbb87712798f84e9bd~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Homecoming Test: No. 16 Florida Hosts South Carolina Saturday at 12:45 p.m."
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Reality Check: What Florida’s First Loss Exposed, and the Road Ahead"
-      }
-    },
-    {
-      "title": "Roberts Runs Away, Missouri Routs Florida 45-17",
-      "excerpt": "Jamal Roberts ran for 211 yards and three touchdowns as No. 25 Missouri scored 35 straight points and handed No. 8 Florida its first loss, 45-17, in Columbia.",
-      "url": "https://www.gatorbaitmedia.com/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-03T23:12:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_49f61d2e3df04d09947775688b8de577~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Roberts Runs Away, Missouri Routs Florida 45-17"
-      }
-    },
-    {
-      "title": "Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10",
-      "excerpt": "Austin Simmons threw two touchdown passes and No. 25 Missouri held Jadan Baugh to 12 yards on nine carries to lead No. 8 Florida 20-10 at the half in Columbia.",
-      "url": "https://www.gatorbaitmedia.com/post/halftime-simmons-strikes-twice-missouri-leads-florida-20-10",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-03T21:49:53Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c2096747d67b47c68ca6e6839330cb03~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Halftime: Simmons Strikes Twice, Missouri Leads Florida 20-10"
       }
     }
   ]

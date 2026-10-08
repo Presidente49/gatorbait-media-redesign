@@ -152,6 +152,16 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-lead-copy>.fp-kick,#gbm-live.fp26 .fp-lead-copy>h1{order:1}
 #gbm-live.fp26 .fp-co .fp-lead-copy>h2{order:1}
 #gbm-live.fp26 .fp-lead-photo{order:2}
+/* Co-lead on phones (Brenden, Oct. 8): one hero, then the second piece as a compact row card, not a second hero. */
+#gbm-live.fp26 .fp-co+.fp-co{display:grid;grid-template-columns:minmax(0,38%) minmax(0,1fr);gap:4px 14px;align-items:start;border-top:3px solid var(--fp-rule-strong);padding-top:16px;margin-top:4px}
+#gbm-live.fp26 .fp-co+.fp-co .fp-lead-photo{order:0;grid-column:1;grid-row:1/4;margin:0}
+#gbm-live.fp26 .fp-co+.fp-co .fp-lead-photo .fp-cap{display:none}
+#gbm-live.fp26 .fp-co+.fp-co .fp-lead-copy{display:contents}
+#gbm-live.fp26 .fp-co+.fp-co .fp-lead-copy>*{grid-column:2;order:0}
+#gbm-live.fp26 .fp-co+.fp-co .fp-kick{font-size:11px}
+#gbm-live.fp26 .fp-co+.fp-co .fp-co-h{font-size:clamp(19px,5.4vw,23px);line-height:1.08;text-transform:none;letter-spacing:0}
+#gbm-live.fp26 .fp-co+.fp-co .fp-by{font-size:11px}
+#gbm-live.fp26 .fp-co+.fp-co .fp-dek,#gbm-live.fp26 .fp-co+.fp-co .fp-ex,#gbm-live.fp26 .fp-co+.fp-co .fp-more{display:none}
 }
 #gbm-live.fp26 .fp-dek{font:700 20px/1.2 var(--fp-cond);color:var(--fp-ink)}
 #gbm-live.fp26 .fp-by{font:700 12px/1.4 var(--fp-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--fp-ink)}

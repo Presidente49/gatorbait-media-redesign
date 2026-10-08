@@ -631,3 +631,21 @@ A button appended to the story headline's header from a HEAD embed was present i
 **What happened:** Brenden said the site felt slow. Three read-only audits produced long lists (219 KB of embeds per page, observers, fonts loaded three ways), all true and none the main cause. The first real-browser measurement (live shots `PERF=1`, run 36757168414) showed the homepage's largest paint at 27.9 s on a throttled phone because the blog feed's image URLs request `/v1/fit/w_1000,…/file.png`: a JPEG photo came back as a 975 KB PNG. Re-cutting with `enc_auto` (probe run 36758186268) took it to 44 KB, and the deploy cut phone LCP to 10.1 s and desktop to 1.7 s.
 
 **The rule:** before touching code for speed, run `shots/<name>` with `"perf":"1"` on the page in question and read `perf.top` (largest transfers), `perf.lcp` (what painted last) and `perf.tbt`. Fix the largest transfer first. Every Wix image the renderer emits goes through `wixCut()` (enc_auto, box-sized, srcset). Custom-embed `pageFilter` is read-only in the API: scoping embeds to pages is a dashboard job for Brenden, not a PATCH. A `<link rel=stylesheet>` added to `<head>` by an embed is render-blocking; use `media="print" onload="this.media='all'"`.
+
+## Lesson 65: In the cloud container, qa-front-page.mjs fails for network reasons, not page reasons (Oct. 8)
+
+**What happened:** The full harness `sports-live/qa-front-page.mjs` reported `root missing` at every width on both `main` and the co-lead branch. The page itself rendered fine; the container's proxy refuses the hosts the harness leaves live (fonts.googleapis.com, static.wixstatic.com, presidente49.github.io), and the harness's own checks run before its fallbacks settle. Thirty minutes went to chasing a branch bug that did not exist.
+
+**The rule:** when the full harness fails identically on `main`, it is the environment. Use `sports-live/qa-front-page-lean.mjs` (`PLAYWRIGHT=$(npm root -g)/playwright node sports-live/qa-front-page-lean.mjs <repo> <shotDir> <label>`): it serves the frame as the real origin, feeds from the repo, 1-pixel image stand-ins, and refuses every other host, then shoots 390/430/1366 and reports lead mode, h1 count, lead links, sideways scroll, script errors and non-Barlow fonts. That is enough proof for a front-page merge. Live shots still come from the `live-shots` workflow after the pointer moves.
+
+## Lesson 66: `dig` is not installed in the cloud container; an empty DNS answer there is not evidence (Oct. 8)
+
+**What happened:** A DKIM check with `dig` printed nothing for SPF and DMARC too, which read as "the domain has no SPF." The real cause was `dig: command not found` swallowed by `2>/dev/null`. The Wix DNS zone read (`GET /domains/v1/dns-zones/{domain}`, account scope) showed SPF, MX and the Wix campaign DKIM CNAMEs were all present; only `google._domainkey` for the Google Workspace mailbox was missing.
+
+**The rule:** in the container, read DNS from the Wix zone API (the domain is on ns8/ns9.wixdns.net), never from `dig`/`nslookup`, and never hide a tool's stderr when its empty output would be treated as a finding. Public resolvers (dns.google, cloudflare-dns.com) are blocked here too. Wix campaign DKIM and Gmail DKIM are separate records; a Yahoo `550 5.7.9 DKIM = FAILURE` on Gmail-sent mail does not mean the newsletters are failing.
+
+## Lesson 67: A member email with an offer went out with no claim in #34 (Oct. 8)
+
+**What happened:** At 02:36Z a one-to-one "hate to lose you" email, signed as Buddy and offering three months free, left the editorial Gmail to a canceled member. No session had claimed it in #34 and the controller did not send it. Yahoo bounced it on DKIM, so the only harm was the record gap, but the pattern is the problem: a member email plus a pricing offer are both Brenden-only lines.
+
+**The rule:** any session that sends a one-to-one member email, or anything that names a price, discount or comp, posts the claim in #34 first (recipient class, offer, who approved it) and the send evidence after. A send with no claim is treated as an incident and the sender stops until Brenden confirms. Impersonating a writer's voice in a direct email is Brenden's call, every time.

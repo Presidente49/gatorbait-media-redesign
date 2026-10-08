@@ -5,8 +5,13 @@ name: GatorBait checkout probe
 # without site access can review the screenshots and metrics.json:
 #   git fetch origin qa/checkout-probe && git show origin/qa/checkout-probe --stat
 # It never pays, never enters a real card and never creates an account; a login/sign-up wall ends the walk.
+# Two ways to ask for a run: workflow_dispatch (once the file is on main), or push a branch named
+# probe/<anything> carrying this file (how a new workflow gets registered and run before it reaches main).
 
 on:
+  push:
+    branches:
+      - 'probe/**'
   workflow_dispatch:
     inputs:
       plan:

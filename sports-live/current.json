@@ -1,5 +1,5 @@
 {
-  "commit": "ebcc7978ef0cda89544613d4aa3a104f9718be43",
-  "updated": "2026-10-08T13:05:00Z",
-  "note": "Blue GatorBait masthead back on phones (PR #158). Rollback: set commit to 2ca8f8c24fe7e78f77cb938f7e109c785537f846."
+  "commit": "843c75cb5737ae26e7d054876959e03e57bbd6c7",
+  "updated": "2026-10-08T13:15:00Z",
+  "note": "The Road Ahead band under the masthead every day (PR #160). Rollback: set commit to ebcc7978ef0cda89544613d4aa3a104f9718be43."
 }

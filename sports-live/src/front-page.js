@@ -740,7 +740,7 @@
           }, { once: true });
           // Split the closing tag while generating the HTML; the browser receives real </script> tags.
           var endScript = '<' + '/script>';
-          frame.setAttribute('srcdoc', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"><style>html,body{margin:0;background:#fff}.pm-entrance,.pm-readerbar [data-pm-cover]{display:none!important}</style></head><body><script>window.__GBM_MAG_EMBED__=true;' + endScript + '<script src="https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@88ae0124a476c5d247b16dc60fdd3ccb6fa1cb6f/sports-live/magazine-postgame.js">' + endScript + '</body></html>');
+          frame.setAttribute('srcdoc', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"><style>html,body{margin:0;background:#fff}.pm-entrance,.pm-readerbar [data-pm-cover]{display:none!important}</style></head><body><script>window.__GBM_MAG_EMBED__=true;' + endScript + '<script src="https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@0d5ff5ab0c75bd96955f5fcca7859154889dbfee/sports-live/magazine-wednesday.js">' + endScript + '</body></html>');
         }
         magReader.hidden = false;
         magOpen.closest('.fp-mag').classList.add('fp-mag-opened');

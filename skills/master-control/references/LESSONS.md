@@ -679,3 +679,21 @@ A button appended to the story headline's header from a HEAD embed was present i
 **What happened:** Franz's hoops-commit story was published a second time by another session (`2572bf12`, slug `-1`). Eddie Gilley's Missouri column existed twice (`6ea489bf` with categories, tags and a meta description, and `f6ade8e9` with none). Readers could land on either copy. Separately, 13 older posts carried curly quotes, double spaces, all-bold body paragraphs and missing cover alt text.
 
 **The rule:** before publishing any story, query draft posts for the same author and title words; one story gets one post. When two exist, keep the one with categories, tags, excerpt and the canonical slug, and remove the other with `DELETE /blog/v3/draft-posts/{id}`. That moves it to the blog trash, so it can be restored, and it creates no redirect. Confirm the removed slug returns 404 and the kept slug renders. Copy-desk passes re-publish only posts with no unpublished changes, use straight quotes, single spaces and un-bold any body paragraph over 160 characters. Re-check both new-post email automations (`5006baf5`, `824714d4`) are INACTIVE after any bulk re-publish.
+
+## Lesson 73: Readers like the Magazine; protect the format and keep the last issue reachable (Oct. 8)
+
+**What happened:** Brenden reported strong reader feedback on the Magazine that went out Monday (Oct. 5) and on the Wednesday issue. Read-only Wix email stats for the last five sends back it up as a good performer, not the only one:
+
+| Send | Delivered | Opened | Clicked |
+|---|---|---|---|
+| Magazine: "How will the Gators respond?" (Oct. 5) | 1,108 | 698 | 204 |
+| Roundup: South Carolina Saturday (Oct. 7) | 1,006 | 661 | 141 |
+| Franz's picks and 3 keys (Oct. 2) | 512 | 345 | 117 |
+| Latest Reads (Sept. 29) | 451 | 370 | 135 |
+| Roundup: Best Shots Vol. 2 (Sept. 28) | 300 | 262 | 59 |
+
+The Monday Magazine had the most clicks of the five and a 63% open rate; its click rate (18%) beat the Oct. 7 Roundup (14%), while the smaller Latest Reads send had the highest rate (30%). Opens run high because of mail-app prefetching, so clicks are the signal.
+
+The same day, the `/magazine` page was still serving the Missouri issue while the homepage card said Wednesday Edition. Pinning `/magazine` to the new issue is the right call, but the Missouri issue is only a caption on the homepage card, so a reader who loved Monday's issue can no longer reopen it.
+
+**The rule:** do not change the Magazine's format (Buddy-led cover story, photo cover, long reads, question-style subject line) without evidence it will do better. When a new edition goes live on `/magazine`, keep the previous edition reachable (an issue-footer link or archive entry), and compare each send's clicks, not opens, against this table before changing a template. The next Magazine release should add a "Previous issue" link to the issue footer.

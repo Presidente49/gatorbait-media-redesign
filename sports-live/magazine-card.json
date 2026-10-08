@@ -1,35 +1,48 @@
 {
-  "sourceRelease": "current-postgame",
+  "sourceRelease": "current-wednesday",
   "issue": {
-    "number": "Postgame edition",
-    "date": "Sunday, October 4, 2026",
-    "week": "Week 5 · Florida at Missouri",
+    "number": "Wednesday Edition",
+    "date": "Wednesday, October 7, 2026",
+    "week": "Oct. 7 · Week 6 · South Carolina at Florida",
     "home": "GatorBait Media",
-    "pageTitle": "GatorBait Magazine | Postgame: Missouri 45, Florida 17"
+    "pageTitle": "GatorBait Magazine | Wednesday Edition, October 7, 2026"
   },
   "cover": {
-    "kicker": "Missouri postgame · October 4, 2026",
-    "headline": "FIRST LOSS",
-    "dek": "Breaking down Florida’s 45–17 loss at Missouri. One game. Lessons to build on.",
-    "byline": "Buddy Martin · Franz Beard",
+    "kicker": "Wednesday Edition · October 7, 2026",
+    "headline": "HOMECOMING WEEK",
+    "dek": "Buddy Martin leads. South Carolina, Franz Beard, Eddie Gilley and more.",
+    "byline": "Buddy Martin · Franz Beard · Eddie Gilley",
     "cta": "Open this issue",
     "url": "/magazine",
     "image": {
-      "id": "d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2",
+      "id": "16b519_a0e407bedc46487ca71033fc8351d0fe~mv2",
       "ext": "jpg",
-      "width": 864,
-      "height": 1536,
-      "alt": "GatorBait Magazine Missouri Postgame First Loss cover featuring Florida coach Jon Sumrall",
-      "credit": "Photo illustration · Chris Spears Photography"
+      "width": 3000,
+      "height": 1874,
+      "alt": "Florida touchdown celebration against Ole Miss, Sept. 26, 2026. Photo by Chris Spears, GatorBait Media",
+      "credit": "Photo by Chris Spears, GatorBait Media"
     },
-    "linesLabel": "Also inside",
+    "linesLabel": "Inside",
     "lines": [
-      "Buddy Martin: Where does Florida go from here?",
-      "The damage: 560 yards to 325",
-      "Report card: three Fs",
-      "Sumrall: “Starts with me”",
-      "Final: Missouri 45, Florida 17"
+      "Buddy Martin: Florida needs the balm of Homecoming",
+      "Homecoming Test: No. 16 Florida hosts South Carolina",
+      "Franz Beard: Thoughts of the Day",
+      "Baugh owns it: the apology text to Sumrall",
+      "Reeling Gamecocks, rattled Gators: the fix list"
     ],
     "artwork": true
-  }
+  },
+  "previous": [
+    {
+      "caption": "Postgame edition · Week 5 · Florida at Missouri",
+      "image": {
+        "id": "d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2",
+        "ext": "jpg",
+        "width": 864,
+        "height": 1536,
+        "alt": "GatorBait Magazine Missouri Postgame First Loss cover featuring Florida coach Jon Sumrall",
+        "credit": "Photo illustration · Chris Spears Photography"
+      }
+    }
+  ]
 }

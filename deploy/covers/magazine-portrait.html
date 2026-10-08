@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>GatorBait Magazine portrait cover (type-led)</title>
+<meta name="viewport" content="width=864">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@500;600;700&display=swap">
+<style>
+/* GatorBait Magazine issue cover, 864x1536 (9:16), type-led, Barlow only: the portrait sibling of thoughts-of-the-day.html.
+   Query: edition=  l1=  l2= (l2 in orange)  date=  hook=  by=  fs= (headline px, default 190) */
+html,body{margin:0;background:#07122e}
+.cover{position:relative;width:864px;height:1536px;overflow:hidden;background:#07122e;font-family:"Barlow",sans-serif;color:#fff}
+.glow{position:absolute;inset:0;background:radial-gradient(90% 55% at 80% 100%,rgba(250,70,22,.38),rgba(250,70,22,0) 64%),radial-gradient(80% 45% at 0% 0%,rgba(30,64,140,.6),rgba(30,64,140,0) 66%)}
+.stripes{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,rgba(255,255,255,0) 2px 46px)}
+.bar{position:absolute;left:0;top:0;bottom:0;width:20px;background:#fa4616}
+.top{position:absolute;left:84px;right:60px;top:84px;display:flex;justify-content:space-between;align-items:center;font:800 30px/1 "Barlow Condensed",sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.top b{font-weight:800}.top i{font-style:normal;color:#fa4616}
+.top span{color:#c8d3ef;font-size:26px}
+.copy{position:absolute;left:84px;right:60px;top:380px;display:grid;gap:30px;align-content:start}
+.kick{margin:0;display:inline-flex;font:800 30px/1 "Barlow Condensed",sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.kick b{background:#fa4616;padding:11px 18px 10px;border-radius:2px}
+h1{margin:0;font:800 190px/.88 "Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.004em;text-shadow:0 6px 40px rgba(0,0,0,.4)}
+h1 em{font-style:normal;color:#fa4616}
+.rule{width:190px;height:10px;background:#fa4616}
+.date{font:800 64px/1.05 "Barlow Condensed",sans-serif;letter-spacing:.05em;text-transform:uppercase}
+.hook{margin:0;font:500 30px/1.35 "Barlow",sans-serif;color:#dfe6fb;max-width:640px}
+.foot{position:absolute;left:84px;right:60px;bottom:80px;display:flex;justify-content:space-between;align-items:flex-end}
+.by{font:600 28px/1.3 "Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#c8d3ef}
+.by b{display:block;color:#fff;font-weight:800}
+</style></head><body>
+<div class="cover" id="cover">
+  <div class="glow"></div><div class="stripes"></div><div class="bar"></div>
+  <div class="top"><b>Gator<i>Bait</i> Magazine</b><span id="week"></span></div>
+  <div class="copy">
+    <p class="kick"><b id="edition">Pregame edition</b></p>
+    <h1 id="h1">South<br>Carolina<br><em>at Florida</em></h1>
+    <div class="rule"></div>
+    <div class="date" id="date"></div>
+    <p class="hook" id="hook"></p>
+  </div>
+  <div class="foot"><div class="by" id="by"></div></div>
+</div>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search), $ = function (i) { return document.getElementById(i); };
+  if (q.get('edition')) $('edition').textContent = q.get('edition');
+  if (q.get('week')) $('week').textContent = q.get('week');
+  if (q.get('l1')) { var h = $('h1'); h.textContent = ''; h.appendChild(document.createTextNode(q.get('l1')));
+    if (q.get('l2')) { h.appendChild(document.createElement('br')); var em = document.createElement('em'); em.textContent = q.get('l2'); h.appendChild(em); } }
+  if (q.get('fs')) $('h1').style.fontSize = q.get('fs') + 'px';
+  $('date').textContent = q.get('date') || '';
+  $('hook').textContent = q.get('hook') || '';
+  if (q.get('by')) $('by').innerHTML = '<b></b>'; if (q.get('by')) $('by').firstChild.textContent = q.get('by');
+  $('cover').setAttribute('data-ready', '1');
+})();
+</script></body></html>

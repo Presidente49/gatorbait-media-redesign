@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "sourceUrl": "https://floridagators.com/sports/football/roster/2026",
-  "checkedDate": "2026-09-29",
+  "checkedDate": "2026-10-08",
   "players": [
     {
       "firstName": "Jayden",
@@ -390,7 +390,7 @@
     {
       "firstName": "Jordy",
       "lastName": "Lowery",
-      "jerseyNumber": "13",
+      "jerseyNumber": "26",
       "positionShort": "CB",
       "positionLong": "Cornerback",
       "academicYearShort": "5th",
@@ -669,7 +669,7 @@
       "academicYearLong": "Junior",
       "heightFeet": 6,
       "heightInches": 1,
-      "weight": 181,
+      "weight": 182,
       "hometown": "Phoenix, Ariz.",
       "rosterPlayerId": 18421,
       "hide": false,
@@ -829,7 +829,7 @@
       "academicYearLong": "Freshman",
       "heightFeet": 6,
       "heightInches": 0,
-      "weight": 193,
+      "weight": 197,
       "hometown": "Tampa, Fla.",
       "rosterPlayerId": 18420,
       "hide": false,
@@ -1565,7 +1565,7 @@
       "academicYearLong": "Fifth Year",
       "heightFeet": 6,
       "heightInches": 5,
-      "weight": 247,
+      "weight": 252,
       "hometown": "Hilliard, Fla.",
       "rosterPlayerId": 18422,
       "hide": false,

@@ -285,11 +285,16 @@ html:has(#gbm-magazine-page.pg) #gbm-site-header,html:has(#gbm-magazine-page.pg)
   #gbm-magazine-page.pg h2{break-after:avoid}
   #gbm-magazine-page.pg a{text-decoration:none}
 }
-/* Phones: keep the cover headline above the Wix cookie banner (160px at 390x844). Tighter masthead, shorter cover photo. */
+/* Phones: keep the cover headline above the Wix cookie banner (209px at 320x740, 160px at 390x844). Trim the masthead
+ * (one-line ticker, no date row, no print button), shorter cover photo, tighter cover type. */
 @media (max-width:699px){
-  #gbm-magazine-page.pg .pg-mast{padding:10px 0 4px}
-  #gbm-magazine-page.pg .pg-print{margin-top:8px;padding:8px 16px}
+  #gbm-magazine-page.pg .pg-ticker>span:nth-child(2){display:none}
+  #gbm-magazine-page.pg .pg-mast{padding:8px 0 2px}
+  #gbm-magazine-page.pg .pg-mast-top{display:none}
+  #gbm-magazine-page.pg .pg-issue{margin-top:10px;padding-top:8px}
+  #gbm-magazine-page.pg .pg-print{display:none}
   #gbm-magazine-page.pg .pg-cover{margin-top:10px}
-  #gbm-magazine-page.pg .pg-cover-fig .mz-frame{max-height:min(52vw,210px)}
-  #gbm-magazine-page.pg .pg-cover h1{font-size:clamp(34px,9.6vw,86px);margin-top:4px}
+  #gbm-magazine-page.pg .pg-cover-fig .mz-frame{max-height:min(46vw,190px)}
+  #gbm-magazine-page.pg .pg-cover-type{padding:12px 16px 18px}
+  #gbm-magazine-page.pg .pg-cover h1{font-size:clamp(30px,9vw,86px);margin-top:4px}
 }

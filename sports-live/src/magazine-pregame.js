@@ -31,6 +31,11 @@
   function fx(n, d) { return typeof n === 'number' && isFinite(n) ? n.toFixed(d == null ? 1 : d) : ''; }
   function pgHeadSec(id, label, note) { return label ? '<div class="pg-sh"><h2 id="' + id + '-t">' + esc(label) + '</h2>' + (note ? '<p>' + esc(note) + '</p>' : '') + '</div>' : ''; }
   function pgSrc(s) { s = text(s, 160); return s ? '<p class="pg-src">' + esc(s) + '</p>' : ''; }
+  // The opponent is whichever game team is not Florida (the issue lists the away team first for a home game). Falls back to Missouri, the first issue.
+  function pgOpp(D) {
+    var teams = list((obj(D.game) || {}).teams, 2).map(obj).filter(Boolean), o = teams.filter(function (t) { return text(t.name, 30) !== 'Florida'; })[0];
+    return o && text(o.name, 30) ? text(o.name, 30) : 'Missouri';
+  }
 
   function pgTop(D) {
     var G = obj(D.game) || {}, I = obj(D.issue) || {};
@@ -59,22 +64,22 @@
     var G = obj(D.game); if (!G) return '';
     var teams = list(G.teams, 2).map(obj).filter(Boolean); if (teams.length < 2) return '';
     var chips = list(G.chips, 4).map(obj).filter(function (c) { return c && text(c.k, 20) && text(c.v, 40); });
-    var P = obj(G.predictor), f = P ? num(P.florida) : null, m = P ? num(P.missouri) : null;
-    function team(t, cls) { return '<div class="pg-team ' + cls + '">' + (text(t.rank, 12) ? '<small>' + esc(text(t.rank, 12)) + '</small>' : '') + '<b>' + esc(text(t.name, 30)) + '</b><span class="pg-rec">' + esc(text(t.record, 12)) + '</span><em>' + esc(text(t.conf, 20)) + '</em></div>'; }
+    var P = obj(G.predictor), f = P ? num(P.florida) : null, m = P ? num(P.missouri) : null, opp = pgOpp(D);
+    function team(t) { return '<div class="pg-team ' + (text(t.name, 30) === 'Florida' ? 'pg-fla' : 'pg-miz') + '">' + (text(t.rank, 12) ? '<small>' + esc(text(t.rank, 12)) + '</small>' : '') + '<b>' + esc(text(t.name, 30)) + '</b><span class="pg-rec">' + esc(text(t.record, 12)) + '</span><em>' + esc(text(t.conf, 20)) + '</em></div>'; }
     return '<section class="pg-game" id="pg-game" aria-labelledby="pg-game-t"><div class="pg-game-top"><h2 id="pg-game-t">' + esc(text(G.label, 40)) + '</h2><b class="pg-count" data-pg-count>' + esc(pgCount(G.kickoffISO)) + '</b></div>' +
-      '<div class="pg-teams">' + team(teams[0], 'pg-fla') + '<div class="pg-at" aria-hidden="true">at</div>' + team(teams[1], 'pg-miz') + '</div>' +
+      '<div class="pg-teams">' + team(teams[0]) + '<div class="pg-at" aria-hidden="true">at</div>' + team(teams[1]) + '</div>' +
       '<p class="pg-when"><b>' + esc(text(G.kickoff, 60)) + '</b><span>' + esc(text(G.tv, 20)) + '</span><span>' + esc(text(G.venue, 120)) + '</span>' + (text(G.forecast, 120) ? '<span>' + esc(text(G.forecast, 120)) + '</span>' : '') + '</p>' +
       (chips.length ? '<ul class="pg-chips">' + chips.map(function (c) { return '<li><small>' + esc(text(c.k, 20)) + '</small><b>' + esc(text(c.v, 40)) + '</b></li>'; }).join('') + '</ul>' : '') +
-      (f !== null && m !== null ? '<div class="pg-prob" role="img" aria-label="' + esc(text(P.label, 40) + ': Florida ' + fx(f) + ' percent, Missouri ' + fx(m) + ' percent') + '"><p>' + esc(text(P.label, 40)) + '</p><div class="pg-bar"><i style="width:' + fx(f) + '%"></i></div><div class="pg-prob-n"><b>Florida ' + fx(f) + '%</b><b>Missouri ' + fx(m) + '%</b></div></div>' : '') +
+      (f !== null && m !== null ? '<div class="pg-prob" role="img" aria-label="' + esc(text(P.label, 40) + ': Florida ' + fx(f) + ' percent, ' + opp + ' ' + fx(m) + ' percent') + '"><p>' + esc(text(P.label, 40)) + '</p><div class="pg-bar"><i style="width:' + fx(f) + '%"></i></div><div class="pg-prob-n"><b>Florida ' + fx(f) + '%</b><b>' + esc(opp) + ' ' + fx(m) + '%</b></div></div>' : '') +
       pgSrc(G.source) + '</section>';
   }
   function pgSeries(D) {
     var S = obj(D.series), games = S ? list(S.games, 16).map(obj).filter(function (g) { return g && num(g.year) && num(g.fla) !== null && num(g.mizz) !== null; }) : [];
     if (!games.length) return '';
-    var w = 0, l = 0;
-    var tiles = games.map(function (g) { var win = g.fla > g.mizz; if (win) w++; else l++; return '<li class="' + (win ? 'pg-w' : 'pg-l') + '"><b>' + esc("’" + String(g.year).slice(2)) + '</b><span>' + g.fla + '-' + g.mizz + '</span><small>' + (g.site === 'H' ? 'Home' : 'Road') + '</small><i class="sr-only">' + (win ? 'Florida win' : 'Missouri win') + '</i></li>'; }).join('');
+    var w = 0, l = 0, opp = pgOpp(D);
+    var tiles = games.map(function (g) { var win = g.fla > g.mizz; if (win) w++; else l++; return '<li class="' + (win ? 'pg-w' : 'pg-l') + '"><b>' + esc("’" + String(g.year).slice(2)) + '</b><span>' + g.fla + '-' + g.mizz + '</span><small>' + (g.site === 'H' ? 'Home' : 'Road') + '</small><i class="sr-only">' + (win ? 'Florida win' : esc(opp) + ' win') + '</i></li>'; }).join('');
     return '<section class="pg-series" id="pg-series" aria-labelledby="pg-series-t">' + pgHeadSec('pg-series', text(S.label, 40), text(S.headline, 80)) + '<p class="pg-lede">' + esc(text(S.line, 300)) + '</p>' +
-      '<ol class="pg-yrs">' + tiles + '</ol><p class="pg-tally"><b class="pg-w">Florida ' + w + '</b><b class="pg-l">Missouri ' + l + '</b></p>' + pgSrc(S.source) + '</section>';
+      '<ol class="pg-yrs">' + tiles + '</ol><p class="pg-tally"><b class="pg-w">Florida ' + w + '</b><b class="pg-l">' + esc(opp) + ' ' + l + '</b></p>' + pgSrc(S.source) + '</section>';
   }
   function pgTape(D) {
     var T = obj(D.tape), rows = T ? list(T.rows, 12).map(obj).filter(function (r) { return r && num(r.fla) !== null && num(r.miz) !== null && text(r.label, 40); }) : [];
@@ -84,7 +89,7 @@
       var fWin = r.lower ? r.fla < r.miz : r.fla > r.miz, mWin = r.lower ? r.miz < r.fla : r.miz > r.fla;
       return '<li class="pg-row"><b class="pg-row-l">' + esc(text(r.label, 40)) + '</b><div class="pg-rbars"><span class="pg-v' + (fWin ? ' pg-win' : '') + '">' + fx(r.fla) + '</span><div class="pg-half pg-hf"><i class="' + (fWin ? 'pg-win' : '') + '" style="width:' + fw + '%"></i></div><div class="pg-half pg-hm"><i class="' + (mWin ? 'pg-win' : '') + '" style="width:' + mw + '%"></i></div><span class="pg-v' + (mWin ? ' pg-win' : '') + '">' + fx(r.miz) + '</span></div></li>';
     }).join('');
-    return '<section class="pg-tape" id="pg-tape" aria-labelledby="pg-tape-t">' + pgHeadSec('pg-tape', text(T.label, 40), text(T.note, 100)) + '<p class="pg-legend"><b class="pg-lf">Florida</b><b class="pg-lm">Missouri</b><small>Brighter bar = edge. Lower is better for points, yards allowed and penalties.</small></p><ul class="pg-rows">' + body + '</ul>' + pgSrc(T.source) + '</section>';
+    return '<section class="pg-tape" id="pg-tape" aria-labelledby="pg-tape-t">' + pgHeadSec('pg-tape', text(T.label, 40), text(T.note, 100)) + '<p class="pg-legend"><b class="pg-lf">Florida</b><b class="pg-lm">' + esc(pgOpp(D)) + '</b><small>Brighter bar = edge. Lower is better for points, yards allowed and penalties.</small></p><ul class="pg-rows">' + body + '</ul>' + pgSrc(T.source) + '</section>';
   }
   function pgKeys(D) {
     var K = obj(D.keys), items = K ? list(K.items, 6).map(obj).filter(function (k) { return k && text(k.h, 120) && text(k.p, 600); }) : [];
@@ -96,7 +101,8 @@
   }
   function pgInjuries(D) {
     var J = obj(D.injuries), teams = J ? list(J.teams, 2).map(obj).filter(function (t) { return t && text(t.name, 30) && list(t.items, 20).length; }) : [];
-    if (!teams.length) return '';
+    // No names yet (the report has not posted): the section still runs with its as-of note so readers know where the report lands.
+    if (!teams.length) return J && text(J.label, 40) && text(J.asOf, 200) ? '<section class="pg-inj" id="pg-injuries" aria-labelledby="pg-inj-t">' + pgHeadSec('pg-inj', text(J.label, 40), text(J.asOf, 200)) + pgSrc(J.source) + '</section>' : '';
     return '<section class="pg-inj" id="pg-injuries" aria-labelledby="pg-inj-t">' + pgHeadSec('pg-inj', text(J.label, 40), text(J.asOf, 200)) + '<div class="pg-inj-grid">' + teams.map(function (t) {
       return '<div><h3>' + esc(text(t.name, 30)) + '</h3><ul>' + list(t.items, 20).map(obj).filter(function (p) { return p && text(p.name, 60); }).map(function (p) {
         var st = text(p.status, 24);
@@ -139,19 +145,22 @@
       '<div class="pg-prose">' + clean + '</div>' + (url ? '<a class="pg-btn" href="' + esc(url) + '">' + esc(text(L.continue, 160)) + '</a>' : '') + '</article>';
   }
   function pgSlate(D) {
-    var S = obj(D.slate), games = S ? list(S.games, 12).map(obj).filter(function (g) { return g && obj(g.away) && obj(g.home) && text(g.pick, 40); }) : [];
+    // A game needs both teams; the pick, line and total are optional (a slate without picks is still the Saturday schedule).
+    var S = obj(D.slate), games = S ? list(S.games, 12).map(obj).filter(function (g) { return g && obj(g.away) && obj(g.home) && text(g.away.name, 40) && text(g.home.name, 40); }) : [];
     if (!games.length) return '';
-    function side(t, pick) { var r = num(t.rank); return '<li class="' + (text(t.name, 40) === pick ? 'pg-picked' : '') + '"><span class="pg-rk">' + (r ? r : '') + '</span><b>' + esc(text(t.name, 40)) + '</b><span class="pg-rc">' + esc(text(t.rec, 12)) + '</span></li>'; }
+    function side(t, pick) { var r = num(t.rank); return '<li class="' + (pick && text(t.name, 40) === pick ? 'pg-picked' : '') + '"><span class="pg-rk">' + (r ? r : '') + '</span><b>' + esc(text(t.name, 40)) + '</b><span class="pg-rc">' + esc(text(t.rec, 12)) + '</span></li>'; }
     return '<section class="pg-slate" id="pg-slate" aria-labelledby="pg-slate-t">' + pgHeadSec('pg-slate', text(S.label, 40), text(S.note, 160)) + '<div class="pg-games">' + games.map(function (g) {
-      return '<article class="pg-g' + (g.hero ? ' pg-hero' : '') + '"><p class="pg-gt"><b>' + esc(text(g.time, 20)) + '</b><span>' + esc(text(g.tv, 20)) + '</span></p><ul>' + side(g.away, text(g.pick, 40)) + side(g.home, text(g.pick, 40)) + '</ul>' +
-        '<p class="pg-gl"><span>' + esc(text(g.line, 20)) + '</span><span>O/U ' + fx(num(g.ou)) + '</span></p><p class="pg-pick"><small>Soothsayer picks</small><b>' + esc(text(g.pick, 40)) + '</b>' + (text(g.note, 40) ? '<em>' + esc(text(g.note, 40)) + '</em>' : '') + '</p></article>';
+      var pick = text(g.pick, 40), line = text(g.line, 20), ou = num(g.ou), note = text(g.note, 40);
+      return '<article class="pg-g' + (g.hero ? ' pg-hero' : '') + '"><p class="pg-gt"><b>' + esc(text(g.time, 20)) + '</b><span>' + esc(text(g.tv, 20)) + '</span></p><ul>' + side(g.away, pick) + side(g.home, pick) + '</ul>' +
+        (line || ou !== null || (!pick && note) ? '<p class="pg-gl">' + (line ? '<span>' + esc(line) + '</span>' : '') + (ou !== null ? '<span>O/U ' + fx(ou) + '</span>' : '') + (!pick && note ? '<span>' + esc(note) + '</span>' : '') + '</p>' : '') +
+        (pick ? '<p class="pg-pick"><small>Soothsayer picks</small><b>' + esc(pick) + '</b>' + (note ? '<em>' + esc(note) + '</em>' : '') + '</p>' : '') + '</article>';
     }).join('') + '</div>' + pgSrc(S.source) + '</section>';
   }
   function pgCard(c) {
     return '<a class="pg-card" href="' + esc(safeUrl(c.url)) + '">' + frame(c.image, { main: 800, sizes: '(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 33vw' }) + '<span class="pg-kick">' + esc(text(c.kicker, 80)) + (text(c.date, 20) ? ' · ' + esc(text(c.date, 20)) : '') + '</span><h3>' + esc(text(c.title, 200)) + '</h3><p>' + esc(text(c.excerpt, 300)) + '</p>' + (c.image && text(c.image.credit, 160) ? '<small class="pg-cr">' + esc(text(c.image.credit, 160)) + '</small>' : '') + '<span class="pg-more">Read</span></a>';
   }
   function pgCards(D) {
-    var C = obj(D.cards), items = C ? list(C.items, 9).map(obj).filter(function (c) { return c && safeUrl(c.url) && text(c.title, 200); }) : [];
+    var C = obj(D.cards), items = C ? list(C.items, 16).map(obj).filter(function (c) { return c && safeUrl(c.url) && text(c.title, 200); }) : [];
     if (!items.length) return '';
     return '<section class="pg-cards" id="pg-more" aria-labelledby="pg-more-t">' + pgHeadSec('pg-more', text(C.label, 40)) + '<div class="pg-cgrid">' + items.map(pgCard).join('') + '</div></section>';
   }
@@ -198,7 +207,7 @@
     L.timer = setInterval(function () { cycle(false); }, 60000);
     setTimeout(function () { cycle(true); }, 0);
   }
-  function mfCardKey(items) { return list(items, 9).map(function (c) { return safeUrl(c && c.url); }).join(' '); }
+  function mfCardKey(items) { return list(items, 16).map(function (c) { return safeUrl(c && c.url); }).join(' '); }
   function mfFeed() {
     var c = typeof AbortController === 'function' ? new AbortController() : null, t = setTimeout(function () { if (c) c.abort(); }, 4000);
     return fetch('/blog-feed.xml?t=' + Math.floor(Date.now() / 60000), { signal: c ? c.signal : undefined, credentials: 'omit', cache: 'no-store' }).then(function (r) {
@@ -266,7 +275,7 @@
       });
   }
   function mfScore(root, base) {
-    var G = obj(base.game) || {}, teams = list(G.teams, 2).map(obj), opp = teams[1] ? text(teams[1].name, 40) : '', k = Date.parse(G.kickoffISO || ''), t = Date.now();
+    var G = obj(base.game) || {}, teams = list(G.teams, 2).map(obj).filter(Boolean), oppT = teams.filter(function (x) { return text(x.name, 40) !== 'Florida'; })[0], opp = oppT ? text(oppT.name, 40) : '', k = Date.parse(G.kickoffISO || ''), t = Date.now();
     if (!opp || !isFinite(k) || t < k - 1800000 || t > k + 12 * 3600000) return Promise.resolve();
     var c = typeof AbortController === 'function' ? new AbortController() : null, tm = setTimeout(function () { if (c) c.abort(); }, 3000);
     // ESPN's scoreboard first when the issue names the event (the live game), then the repo feed; any failure keeps the baked text.

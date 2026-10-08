@@ -1,5 +1,5 @@
 {
-  "commit": "86ba792e65e4655c81498fbaaf960bdd90f0fb0c",
-  "updated": "2026-10-05T22:30:00.000Z",
-  "note": "Deploy homepage article ordering fix: use gazette-live/posts.json feed, Buddy Martin article as lead. Rollback 9ad1ff44d90e3a055dee29f95536fca9dcbad622 (Magazine card update)."
+  "commit": "4b5a6dfdbd7e5802ea9670b121543f26c49bc90a",
+  "updated": "2026-10-08T14:30:00.000Z",
+  "note": "Deploy Buddy Martin homecoming column as homepage lead feature (Oct 5-12). Article: 'Florida Gators Need The Balm Of Homecoming This Week'. Homepage-only, not in Magazine. Rollback: 86ba792e65e4655c81498fbaaf960bdd90f0fb0c"
 }

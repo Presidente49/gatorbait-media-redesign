@@ -673,7 +673,7 @@
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
     root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
-      '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Football schedule</a><a href="#fp-show-schedule">Buddy Martin Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
+      '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
       roadHtml(sb) + hubHtml(latest, sb, posts, used) + '</main>';
     if (!document.getElementById('gbm-fp26-styles')) {
       var style = document.createElement('style'); style.id = 'gbm-fp26-styles'; style.textContent = CSS; document.head.appendChild(style);

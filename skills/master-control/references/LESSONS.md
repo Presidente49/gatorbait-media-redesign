@@ -697,3 +697,9 @@ The Monday Magazine had the most clicks of the five and a 63% open rate; its cli
 The same day, the `/magazine` page was still serving the Missouri issue while the homepage card said Wednesday Edition. Pinning `/magazine` to the new issue is the right call, but the Missouri issue is only a caption on the homepage card, so a reader who loved Monday's issue can no longer reopen it.
 
 **The rule:** do not change the Magazine's format (Buddy-led cover story, photo cover, long reads, question-style subject line) without evidence it will do better. When a new edition goes live on `/magazine`, keep the previous edition reachable (an issue-footer link or archive entry), and compare each send's clicks, not opens, against this table before changing a template. The next Magazine release should add a "Previous issue" link to the issue footer.
+
+## Lesson 74: Set cover alt text when you create the draft (Oct. 8, 2026)
+
+Six posts went live on Oct. 8 with a category, cover and meta description but no cover alt text, because the create-draft payload never set `media.altText`. It was found in the QC pass and fixed with one `PATCH /blog/v3/draft-posts/{id}` (fieldmask `media`, keeping the rest of the `media` object) plus one republish per post.
+
+**The rule:** put `media.altText` in the create-draft payload, naming what the photo shows plus the credit ("Photo by <name>, GatorBait Media"). Use the QC read of `media.altText` as a publish gate, and keep the other media fields when patching it.

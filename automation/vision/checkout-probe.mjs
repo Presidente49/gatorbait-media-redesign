@@ -51,7 +51,7 @@ async function formFields(page) {
         return t.replace(/\s+/g, ' ').trim().slice(0, 60);
       };
       return [...document.querySelectorAll('input,select,textarea,[role="combobox"]')].filter((el) => vis(el) && el.type !== 'hidden').map((el) => ({
-        tag: el.tagName.toLowerCase(), type: el.type || null, name: el.name || null, id: (el.id || '').slice(0, 60), hook: el.getAttribute('data-hook'), label: labelOf(el), placeholder: (el.placeholder || '').slice(0, 60),
+        tag: el.tagName.toLowerCase(), type: el.type || null, name: el.name || null, id: el.id || '', hook: el.getAttribute('data-hook'), label: labelOf(el), placeholder: (el.placeholder || '').slice(0, 60),
         required: el.required || el.getAttribute('aria-required') === 'true', autocomplete: el.getAttribute('autocomplete'), role: el.getAttribute('role'), ariaAutocomplete: el.getAttribute('aria-autocomplete'), ariaInvalid: el.getAttribute('aria-invalid'), value: (el.value || '').slice(0, 40), disabled: el.disabled || false,
       }));
     }).catch(() => []);

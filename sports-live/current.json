@@ -1,5 +1,5 @@
 {
-  "commit": "34a180d4fdcd600cc96ad8718f7189f72203f36d",
-  "updated": "2026-10-08T12:45:00Z",
-  "note": "Buddy-first co-lead and mobile co-lead layout (PRs #151, #156). Rollback: set commit to 3470c80e30f743b94cbff3d3ede34588aef1f7a4."
+  "commit": "2ca8f8c24fe7e78f77cb938f7e109c785537f846",
+  "updated": "2026-10-08T12:50:00Z",
+  "note": "Quick links on one row on phones (PR #157). Rollback: set commit to 34a180d4fdcd600cc96ad8718f7189f72203f36d."
 }

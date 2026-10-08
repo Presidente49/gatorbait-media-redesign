@@ -667,3 +667,9 @@ A button appended to the story headline's header from a HEAD embed was present i
 **What happened:** The generated image's full-size file lives on canva.com, which the container proxy blocks (403), and the tool result carries a 199x112 preview. It cannot be uploaded as a cover.
 
 **The rule:** for covers rendered from here, draw them as SVG/HTML and screenshot with the bundled Chromium at 1600x900, commit the JPG on a branch, and upload to Wix from the raw.githubusercontent.com URL. Use Canva only where a Mac-side session can export the file.
+
+## Lesson 71: The front page's inline magazine reader loads a hard-coded bundle URL; a new edition is not live until that line moves (Oct. 8)
+
+**What happened:** The Wednesday Edition draft (#153) changed the magazine card and shipped a new `magazine-wednesday.js`, but `front-page.js` still opened the reader with a jsDelivr URL pinned to the Missouri postgame bundle at 88ae0124. The card would have said Wednesday Edition and opened last week's issue.
+
+**The rule:** an edition release has three parts and the PR names all three: the card (`sports-live/magazine-card.json`), the issue bundle (`sports-live/magazine-<variant>.js`, pushed first so jsDelivr can serve its commit), and the reader pointer in `front-page.js` (the `cdn.jsdelivr.net/gh/...@<commit>/sports-live/magazine-<variant>.js` line). Verify the bundle URL returns 200 before pointing `current.json`.

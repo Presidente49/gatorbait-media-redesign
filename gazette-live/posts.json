@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gators Go Big With Latest Hoops Commit",
+      "excerpt": "Franz Beard: Todd Golden lands 4-star center Kamsi Awaka, his second commit in a week, and a look at what Florida's 2027-28 roster could be.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-go-big-with-latest-hoops-commit",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-08T13:29:27Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_52d89330c43044b89a9dac722e5303c3~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators Go Big With Latest Hoops Commit"
+      }
+    },
+    {
+      "title": "Florida vs South Carolina: Rain Could Turn Homecoming Into a Mud Bowl",
+      "excerpt": "Franz Beard: A soggy Swamp favors South Carolina's run game and LaNorris Sellers — unless Florida gets the lead first.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-8-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-08T12:29:44Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_f387795ea44e4b2694aa07f18cacf6f3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida vs South Carolina: Rain Could Turn Homecoming Into a Mud Bowl"
+      }
+    },
+    {
       "title": "You Can Reschedule Football. Not a Hurricane. But The Memories Linger.",
       "excerpt": "The initial forecast for Tuscaloosa and the Georgia-Alabama mega-game was looking so grim that the was some talk of moving it to Atlanta (although doubtful).",
       "url": "https://www.gatorbaitmedia.com/post/you-can-reschedule-football-not-a-hurricane-but-the-memories-linger",
@@ -37,7 +65,7 @@
       "firstPublishedDate": "2026-10-07T12:57:27Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_76a430063f5b40d6a008010165fbe093~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Thoughts of the Day: October 7, 2026"
@@ -156,20 +184,6 @@
       }
     },
     {
-      "title": "Florida Gave On Saturday",
-      "excerpt": "Florida Gave On Saturday By Eddie Gilley Florida had it handed to them in Columbia on Saturday afternoon. They were whipped in every phase of the game. There is nothing you can point to where the Gators were better on Saturday. Missouri had the answer for Florida's run game. Load the box. Commit to playing man coverage and a single safety on first down and…",
-      "url": "https://www.gatorbaitmedia.com/post/florida-gave-on-saturday-1",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-05T04:00:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_7899efcd866b4882a1cde64071e4d842~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida Gave On Saturday"
-      }
-    },
-    {
       "title": "Buddy Blog--Gator Football: Where Does It Go From Here? I'm Glad You Asked!",
       "excerpt": "But make no mistake: What happened in Columbia was worse than a speed bump. It was a public mugging. It was a betrayal of sorts. The question is: Who betrayed whom?",
       "url": "https://www.gatorbaitmedia.com/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
@@ -185,7 +199,7 @@
     },
     {
       "title": "The loss to Mizzou is history; the question is how will the Gators respond?",
-      "excerpt": "For an entire month Jon Sumrall had been warning that the Florida Gators would be exposed somewhere down the road if they didn’t change their ways. Somewhere down the road was Columbia, Missouri, where Saturday afternoon the 8th-ranked Gators (4-1, 2-1 SEC) took one of those leave no place on their body without a bruise beatings at the hands of the…",
+      "excerpt": "For an entire month Jon Sumrall had been warning that the Florida Gators would be exposed somewhere down the road if they didn't change their ways. Somewhere down the road was Columbia, Missouri, where Saturday afternoon the 8th-ranked Gators (4-1, 2-1 SEC) took one of those leave no place on their body without a bruise beatings at the hands of the…",
       "url": "https://www.gatorbaitmedia.com/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
       "author": "Franz Beard",
       "firstPublishedDate": "2026-10-04T13:33:37Z",
@@ -198,7 +212,7 @@
       }
     },
     {
-      "title": "Drink Mix: How Missouri’s Blueprint Bottled Up the Gators",
+      "title": "Drink Mix: How Missouri's Blueprint Bottled Up the Gators",
       "excerpt": "Eli Drinkwitz spent all week saying tough teams stop the run. Missouri did it Saturday. Now Florida has six days to make sure South Carolina can't do it again.",
       "url": "https://www.gatorbaitmedia.com/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
       "author": "Brenden Martin",
@@ -208,11 +222,11 @@
         "src": "https://static.wixstatic.com/media/d3cfa5_940418a6e0a7432882f19b4620d77d81~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
-        "alt": "Featured image for Drink Mix: How Missouri’s Blueprint Bottled Up the Gators"
+        "alt": "Featured image for Drink Mix: How Missouri's Blueprint Bottled Up the Gators"
       }
     },
     {
-      "title": "By the Numbers: How Missouri Flipped Florida’s Script",
+      "title": "By the Numbers: How Missouri Flipped Florida's Script",
       "excerpt": "Florida had been scoring 53.5 points and gaining 532.8 yards a game. Missouri held the Gators to 17 points, 325 yards and 42 rushing yards, and the numbers show where it went wrong.",
       "url": "https://www.gatorbaitmedia.com/post/by-the-numbers-how-missouri-flipped-florida-s-script",
       "author": "Brenden Martin",
@@ -222,7 +236,7 @@
         "src": "https://static.wixstatic.com/media/16b519_ca805b099f49450bb75c33404d8e4b1b~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
-        "alt": "Featured image for By the Numbers: How Missouri Flipped Florida’s Script"
+        "alt": "Featured image for By the Numbers: How Missouri Flipped Florida's Script"
       }
     },
     {
@@ -240,7 +254,7 @@
       }
     },
     {
-      "title": "‘We Earned the Loss’: Sumrall Owns the Mauling in Columbia",
+      "title": "'We Earned the Loss': Sumrall Owns the Mauling in Columbia",
       "excerpt": "Jon Sumrall said Missouri deserved it after a 45-17 rout ended Florida’s unbeaten start. The numbers, who was missing and what comes next with South Carolina.",
       "url": "https://www.gatorbaitmedia.com/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
       "author": "Brenden Martin",
@@ -250,7 +264,7 @@
         "src": "https://static.wixstatic.com/media/d3cfa5_fb8dcc167ff64b5c90cc1b6904390bf7~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
-        "alt": "Featured image for ‘We Earned the Loss’: Sumrall Owns the Mauling in Columbia"
+        "alt": "Featured image for 'We Earned the Loss': Sumrall Owns the Mauling in Columbia"
       }
     },
     {
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Hey Missouri, Don’t Show Me Anymore!"
-      }
-    },
-    {
-      "title": "Reality Check: What Florida’s First Loss Exposed, and the Road Ahead",
-      "excerpt": "Missouri ran for 220 yards and held Florida to 42. With South Carolina, Texas and Georgia next, here is what the 45-17 loss exposed for the Gators.",
-      "url": "https://www.gatorbaitmedia.com/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-03T23:14:42Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_d600f2d12282447eb6ceb6bfb0d988f3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Reality Check: What Florida’s First Loss Exposed, and the Road Ahead"
       }
     }
   ]

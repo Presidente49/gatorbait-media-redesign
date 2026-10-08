@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gators Go Big With Latest Hoops Commit",
+      "excerpt": "Franz Beard: Todd Golden lands 4-star center Kamsi Awaka, his second commit in a week, and a look at what Florida's 2027-28 roster could be.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-go-big-with-latest-hoops-commit",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-08T13:29:27Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_52d89330c43044b89a9dac722e5303c3~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators Go Big With Latest Hoops Commit"
+      }
+    },
+    {
+      "title": "Florida vs South Carolina: Rain Could Turn Homecoming Into a Mud Bowl",
+      "excerpt": "Franz Beard: A soggy Swamp favors South Carolina's run game and LaNorris Sellers — unless Florida gets the lead first.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-8-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-08T12:29:44Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_f387795ea44e4b2694aa07f18cacf6f3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida vs South Carolina: Rain Could Turn Homecoming Into a Mud Bowl"
+      }
+    },
+    {
       "title": "You Can Reschedule Football. Not a Hurricane. But The Memories Linger.",
       "excerpt": "The initial forecast for Tuscaloosa and the Georgia-Alabama mega-game was looking so grim that the was some talk of moving it to Atlanta (although doubtful).",
       "url": "https://www.gatorbaitmedia.com/post/you-can-reschedule-football-not-a-hurricane-but-the-memories-linger",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida Gave On Saturday—Gave Way Too Much!"
-      }
-    },
-    {
-      "title": "Missouri 45, Florida 17: Postgame Analysis",
-      "excerpt": "Florida is humbled in Columbia as Sumrall faces his first week of adversity as Gator head coach.",
-      "url": "https://www.gatorbaitmedia.com/post/missouri-45-florida-17-postgame-analysis",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-10-05T12:26:34Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_2acc3b2b8b544db28db78319b2c29f63~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Missouri 45, Florida 17: Postgame Analysis"
-      }
-    },
-    {
-      "title": "Florida Gave On Saturday",
-      "excerpt": "Florida Gave On Saturday By Eddie Gilley Florida had it handed to them in Columbia on Saturday afternoon. They were whipped in every phase of the game. There is nothing you can point to where the Gators were better on Saturday. Missouri had the answer for Florida's run game. Load the box. Commit to playing man coverage and a single safety on first down and…",
-      "url": "https://www.gatorbaitmedia.com/post/florida-gave-on-saturday-1",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-05T04:00:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_7899efcd866b4882a1cde64071e4d842~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida Gave On Saturday"
       }
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "commit": "2ca8f8c24fe7e78f77cb938f7e109c785537f846",
-  "updated": "2026-10-08T12:50:00Z",
-  "note": "Quick links on one row on phones (PR #157). Rollback: set commit to 34a180d4fdcd600cc96ad8718f7189f72203f36d."
+  "commit": "ebcc7978ef0cda89544613d4aa3a104f9718be43",
+  "updated": "2026-10-08T13:05:00Z",
+  "note": "Blue GatorBait masthead back on phones (PR #158). Rollback: set commit to 2ca8f8c24fe7e78f77cb938f7e109c785537f846."
 }

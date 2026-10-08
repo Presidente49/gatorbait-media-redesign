@@ -1,0 +1,79 @@
+name: GatorBait checkout probe
+
+# On-demand, read-only walk of the Pricing Plans checkout in a real browser (phone + desktop),
+# pushed to the orphan branch qa/checkout-probe (one commit, replaced each run) so a cloud session
+# without site access can review the screenshots and metrics.json:
+#   git fetch origin qa/checkout-probe && git show origin/qa/checkout-probe --stat
+# It never pays, never enters a real card and never creates an account; a login/sign-up wall ends the walk.
+
+on:
+  workflow_dispatch:
+    inputs:
+      plan:
+        description: 'Plan name to pick (case-insensitive substring)'
+        default: 'ALL ACCESS ANNUAL'
+        required: false
+      widths:
+        description: 'Comma list of viewport widths'
+        default: '390,1366'
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: checkout-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Resolve request
+        id: req
+        env:
+          IN_PLAN: ${{ github.event.inputs.plan }}
+          IN_WIDTHS: ${{ github.event.inputs.widths }}
+        run: |
+          node -e '
+            const fs = require("fs");
+            const plan = process.env.IN_PLAN || "ALL ACCESS ANNUAL", widths = process.env.IN_WIDTHS || "390,1366";
+            if (!/^[\w \-]{1,60}$/.test(plan)) throw new Error("bad plan");
+            if (!/^[\d,]+$/.test(widths)) throw new Error("bad widths");
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `plan=${plan}\nwidths=${widths}\n`);
+            console.log({ plan, widths });
+          '
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.49.1
+          npx playwright install --with-deps chromium
+
+      - name: Probe production checkout
+        env:
+          RUN_ID: ${{ github.run_id }}
+          PLAN: ${{ steps.req.outputs.plan }}
+          WIDTHS: ${{ steps.req.outputs.widths }}
+        run: node automation/vision/checkout-probe.mjs
+
+      - name: Publish to qa/checkout-probe
+        if: always()
+        run: |
+          set -e
+          cd build/checkout-probe
+          git init -q
+          git checkout -q -b qa/checkout-probe
+          git config user.name "gatorbait-checkout-probe"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "checkout probe: ${{ steps.req.outputs.plan }} ${{ steps.req.outputs.widths }} (run ${{ github.run_id }})"
+          git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" qa/checkout-probe

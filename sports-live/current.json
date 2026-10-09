@@ -1,5 +1,5 @@
 {
-  "commit": "b7b1f347e1692e38a0557586724903e858f1d95c",
-  "updated": "2026-10-09T14:24:00Z",
-  "note": "Friday Pregame Edition magazine card plus Latest/Scores hub spacing (PR #176, merges #171 and #174). Rollback: set commit to c7fa7193b4109ec147b83d0b3a1690af79f6e265."
+  "commit": "ce0e39259b2601179f1b38215cc063cbbce1664b",
+  "updated": "2026-10-09T16:06:00Z",
+  "note": "Rebound at the Swamp cover on the homepage Magazine card (PR #179). Rollback: set commit to b7b1f347e1692e38a0557586724903e858f1d95c."
 }

@@ -1,54 +1,60 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>GatorBait Magazine portrait cover (type-led)</title>
-<meta name="viewport" content="width=864">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@500;600;700&display=swap">
+<html lang="en"><head><meta charset="utf-8"><title>GatorBait Magazine portrait cover</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,700;0,800;1,500;1,600&family=Barlow+Condensed:wght@700;800;900&display=block">
 <style>
-/* GatorBait Magazine issue cover, 864x1536 (9:16), type-led, Barlow only: the portrait sibling of thoughts-of-the-day.html.
-   Query: edition=  l1=  l2= (l2 in orange)  date=  hook=  by=  fs= (headline px, default 190) */
-html,body{margin:0;background:#07122e}
-.cover{position:relative;width:864px;height:1536px;overflow:hidden;background:#07122e;font-family:"Barlow",sans-serif;color:#fff}
-.glow{position:absolute;inset:0;background:radial-gradient(90% 55% at 80% 100%,rgba(250,70,22,.38),rgba(250,70,22,0) 64%),radial-gradient(80% 45% at 0% 0%,rgba(30,64,140,.6),rgba(30,64,140,0) 66%)}
-.stripes{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,rgba(255,255,255,0) 2px 46px)}
-.bar{position:absolute;left:0;top:0;bottom:0;width:20px;background:#fa4616}
-.top{position:absolute;left:84px;right:60px;top:84px;display:flex;justify-content:space-between;align-items:center;font:800 30px/1 "Barlow Condensed",sans-serif;letter-spacing:.2em;text-transform:uppercase}
-.top b{font-weight:800}.top i{font-style:normal;color:#fa4616}
-.top span{color:#c8d3ef;font-size:26px}
-.copy{position:absolute;left:84px;right:60px;top:380px;display:grid;gap:30px;align-content:start}
-.kick{margin:0;display:inline-flex;font:800 30px/1 "Barlow Condensed",sans-serif;letter-spacing:.22em;text-transform:uppercase}
-.kick b{background:#fa4616;padding:11px 18px 10px;border-radius:2px}
-h1{margin:0;font:800 190px/.88 "Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.004em;text-shadow:0 6px 40px rgba(0,0,0,.4)}
-h1 em{font-style:normal;color:#fa4616}
-.rule{width:190px;height:10px;background:#fa4616}
-.date{font:800 64px/1.05 "Barlow Condensed",sans-serif;letter-spacing:.05em;text-transform:uppercase}
-.hook{margin:0;font:500 30px/1.35 "Barlow",sans-serif;color:#dfe6fb;max-width:640px}
-.foot{position:absolute;left:84px;right:60px;bottom:80px;display:flex;justify-content:space-between;align-items:flex-end}
-.by{font:600 28px/1.3 "Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#c8d3ef}
-.by b{display:block;color:#fff;font-weight:800}
+/* Portrait magazine poster cover, 1080x1920. Photo, kicker, headline, sub and bylines come from the query string:
+   ?photo=<wix media id>~mv2.jpg&kicker=&title=&sub=&line=&bylines=&credit=&focus=45 */
+:root { --blue:#0021a5; --orange:#fa4616; }
+* { box-sizing: border-box; margin: 0; }
+html, body { background: #0a1a5c; }
+#cover { position: relative; width: 1080px; height: 1920px; overflow: hidden; font-family: Barlow, Arial, sans-serif; color: #fff; background: var(--blue); }
+#photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.25) contrast(1.06) brightness(1.12); }
+.glow { position: absolute; inset: 0; background:
+  radial-gradient(70% 38% at 52% 38%, rgba(255,150,40,.55) 0%, rgba(250,70,22,.22) 45%, rgba(250,70,22,0) 75%),
+  linear-gradient(180deg, rgba(0,45,200,.78) 0%, rgba(0,33,165,.30) 20%, rgba(0,33,165,0) 38%, rgba(0,33,165,0) 52%, rgba(0,20,120,.78) 74%, rgba(0,10,70,.96) 100%); mix-blend-mode: normal; }
+.rays { position: absolute; inset: 0; background: repeating-conic-gradient(from 200deg at 52% 30%, rgba(255,255,255,.07) 0 4deg, rgba(255,255,255,0) 4deg 11deg); mask-image: linear-gradient(180deg, #000 0%, transparent 55%); }
+.top { position: absolute; top: 52px; left: 0; right: 0; text-align: center; font: 700 26px/1 Barlow, sans-serif; letter-spacing: .3em; white-space: nowrap; text-transform: uppercase; text-shadow: 0 3px 12px rgba(0,0,0,.55); }
+.logo { position: absolute; top: 100px; left: 110px; width: 860px; filter: drop-shadow(0 8px 22px rgba(0,0,0,.45)); }
+.mz { position: absolute; top: 312px; left: 0; right: 0; text-align: center; font: 700 34px/1 Barlow, sans-serif; letter-spacing: .72em; text-indent: .72em; text-shadow: 0 3px 12px rgba(0,0,0,.6); }
+.head { position: absolute; left: 0; right: 0; bottom: 560px; text-align: center; }
+.compact #photo { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 150px); mask-image: linear-gradient(180deg, transparent 0, #000 150px); top: 250px; height: calc(100% - 250px); } .compact .logo { width: 800px; left: 140px; top: 96px; } .compact .mz { top: 262px; }
+.compact .head { bottom: 470px; } .compact .sub { bottom: 392px; } .compact .line { bottom: 340px; } .compact .rule { bottom: 308px; } .compact .by { bottom: 216px; } .compact .credit { bottom: 80px; }
+.head h1 { font: 900 226px/.86 "Barlow Condensed", Barlow, sans-serif; white-space: nowrap; text-transform: uppercase; letter-spacing: -.01em;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 46%, #d4dcf5 62%, #ffffff 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 10px 0 var(--orange)) drop-shadow(0 18px 34px rgba(0,0,0,.55)); }
+.sub { position: absolute; left: 70px; right: 70px; bottom: 470px; text-align: center; font: italic 600 60px/1.1 Barlow, sans-serif; text-shadow: 0 4px 18px rgba(0,0,0,.6); }
+.line { position: absolute; left: 0; right: 0; bottom: 410px; text-align: center; font: 800 33px/1 Barlow, sans-serif; letter-spacing: .06em; white-space: nowrap; text-transform: uppercase; color: #ffc233; text-shadow: 0 3px 12px rgba(0,0,0,.6); }
+.rule { position: absolute; left: 340px; right: 340px; bottom: 372px; height: 6px; background: var(--orange); }
+.by { position: absolute; left: 40px; right: 40px; bottom: 250px; text-align: center; font: 800 28px/1.45 Barlow, sans-serif; letter-spacing: .09em; white-space: nowrap; text-transform: uppercase; }
+.by i { display: inline-block; width: 11px; height: 11px; background: var(--orange); border-radius: 50%; margin: 0 13px 3px; }
+.kind { position: absolute; left: 0; right: 0; bottom: 160px; text-align: center; font: 700 26px/1 Barlow, sans-serif; letter-spacing: .5em; text-indent: .5em; text-transform: uppercase; color: #cfd9ff; }
+.credit { position: absolute; left: 0; right: 0; bottom: 96px; text-align: center; font: 600 24px/1.4 Barlow, sans-serif; color: #dbe3ff; }
 </style></head><body>
-<div class="cover" id="cover">
-  <div class="glow"></div><div class="stripes"></div><div class="bar"></div>
-  <div class="top"><b>Gator<i>Bait</i> Magazine</b><span id="week"></span></div>
-  <div class="copy">
-    <p class="kick"><b id="edition">Pregame edition</b></p>
-    <h1 id="h1">South<br>Carolina<br><em>at Florida</em></h1>
-    <div class="rule"></div>
-    <div class="date" id="date"></div>
-    <p class="hook" id="hook"></p>
-  </div>
-  <div class="foot"><div class="by" id="by"></div></div>
+<div id="cover">
+  <img id="photo" alt="">
+  <div class="glow"></div><div class="rays"></div>
+  <div class="top" id="kicker"></div>
+  <img class="logo" id="logo" alt="GatorBait">
+  <div class="mz">MAGAZINE</div>
+  <div class="head"><h1 id="title"></h1></div>
+  <div class="sub" id="sub"></div>
+  <div class="line" id="line"></div>
+  <div class="rule"></div>
+  <div class="by" id="by"></div>
+    <div class="credit" id="credit"></div>
 </div>
 <script>
-(function () {
-  var q = new URLSearchParams(location.search), $ = function (i) { return document.getElementById(i); };
-  if (q.get('edition')) $('edition').textContent = q.get('edition');
-  if (q.get('week')) $('week').textContent = q.get('week');
-  if (q.get('l1')) { var h = $('h1'); h.textContent = ''; h.appendChild(document.createTextNode(q.get('l1')));
-    if (q.get('l2')) { h.appendChild(document.createElement('br')); var em = document.createElement('em'); em.textContent = q.get('l2'); h.appendChild(em); } }
-  if (q.get('fs')) $('h1').style.fontSize = q.get('fs') + 'px';
-  $('date').textContent = q.get('date') || '';
-  $('hook').textContent = q.get('hook') || '';
-  if (q.get('by')) $('by').innerHTML = '<b></b>'; if (q.get('by')) $('by').firstChild.textContent = q.get('by');
-  $('cover').setAttribute('data-ready', '1');
-})();
+const q = new URLSearchParams(location.search), g = (k, d) => q.get(k) || d;
+if (q.get('h')) { document.getElementById('cover').style.height = q.get('h') + 'px'; document.getElementById('cover').classList.add('compact'); }
+const photo = g('photo', '16b519_e0efa08e9ebc43e5ad3c8582fcb9a85d~mv2.jpg'), id = photo.replace(/~mv2\.\w+$/, '');
+const img = document.getElementById('photo');
+img.src = 'https://static.wixstatic.com/media/' + photo + '/v1/fill/w_2160,h_3840,al_c,q_88/' + id + '.jpg';
+img.style.objectPosition = g('focus', '47') + '% 40%';
+document.getElementById('logo').src = g('logo', '../../gazette-preview/gatorbait-logo.webp');
+document.getElementById('kicker').textContent = g('kicker', 'Friday Pregame Edition · October 9, 2026');
+document.getElementById('title').textContent = g('title', 'Homecoming');
+document.getElementById('sub').textContent = g('sub', 'The 500th game in The Swamp');
+document.getElementById('line').textContent = g('line', 'South Carolina at Florida · Sat., Oct. 10 · 12:45 p.m. ET');
+document.getElementById('by').innerHTML = g('bylines', 'Buddy Martin|Franz Beard|Eddie Gilley|Loren Meadows').split('|').join('<i></i>');
+document.getElementById('credit').textContent = g('credit', 'Photo by Chris Spears, GatorBait Media');
 </script></body></html>

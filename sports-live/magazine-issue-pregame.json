@@ -399,6 +399,36 @@
     "label": "South Carolina week",
     "items": [
       {
+        "kicker": "Franz Beard · The Soothsayer",
+        "title": "The Soothsayer: Gators will handle adversity and bounce back big",
+        "url": "/post/the-soothsayer-gators-will-handle-adversity-and-bounce-back-big",
+        "excerpt": "Missouri was the punch to the gut. Homecoming against South Carolina is the answer, and the Sayer sees Florida winning by two touchdowns or more. Plus every SEC game.",
+        "image": {
+          "id": "d3cfa5_7a383977d3654820a6b045113df6e38e",
+          "ext": "jpg",
+          "width": 1600,
+          "height": 900,
+          "alt": "Florida players celebrate a touchdown against Ole Miss at The Swamp, with the headline The Soothsayer: Gators will handle adversity and bounce back big (Photo by Chris Spears, GatorBait Media)",
+          "credit": "Photo by Chris Spears, GatorBait Media"
+        },
+        "date": "Oct. 9"
+      },
+      {
+        "kicker": "The Buddy Martin Show",
+        "title": "Buddy Martin Show: Can the Gators Bounce Back With a Homecoming Win?",
+        "url": "/post/buddy-martin-show-can-the-gators-bounce-back-with-a-homecoming-win",
+        "excerpt": "Buddy Martin, Franz Beard, Ben Troupe and Eddie Gilley on South Carolina at Florida, the 500th game in The Swamp and what the Gators must prove after Missouri.",
+        "image": {
+          "id": "d3cfa5_f9445560fa474c6494c6992887b4b9b9",
+          "ext": "jpg",
+          "width": 1280,
+          "height": 720,
+          "alt": "The Buddy Martin Show episode thumbnail: Can the Gators bounce back with a Homecoming win?",
+          "credit": "The Buddy Martin Show"
+        },
+        "date": "Oct. 9"
+      },
+      {
         "kicker": "Brenden Martin · News",
         "title": "Florida's 2-1 SEC start meets 0-3 South Carolina at Homecoming",
         "url": "/post/florida-s-2-1-sec-start-meets-0-3-south-carolina-at-homecoming",

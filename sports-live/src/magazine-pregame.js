@@ -160,7 +160,7 @@
     return '<a class="pg-card" href="' + esc(safeUrl(c.url)) + '">' + frame(c.image, { main: 800, sizes: '(max-width: 699px) 100vw, (max-width: 1099px) 50vw, 33vw' }) + '<span class="pg-kick">' + esc(text(c.kicker, 80)) + (text(c.date, 20) ? ' · ' + esc(text(c.date, 20)) : '') + '</span><h3>' + esc(text(c.title, 200)) + '</h3><p>' + esc(text(c.excerpt, 300)) + '</p>' + (c.image && text(c.image.credit, 160) ? '<small class="pg-cr">' + esc(text(c.image.credit, 160)) + '</small>' : '') + '<span class="pg-more">Read</span></a>';
   }
   function pgCards(D) {
-    var C = obj(D.cards), items = C ? list(C.items, 16).map(obj).filter(function (c) { return c && safeUrl(c.url) && text(c.title, 200); }) : [];
+    var C = obj(D.cards), items = C ? list(C.items, 18).map(obj).filter(function (c) { return c && safeUrl(c.url) && text(c.title, 200); }) : [];
     if (!items.length) return '';
     return '<section class="pg-cards" id="pg-more" aria-labelledby="pg-more-t">' + pgHeadSec('pg-more', text(C.label, 40)) + '<div class="pg-cgrid">' + items.map(pgCard).join('') + '</div></section>';
   }
@@ -207,7 +207,7 @@
     L.timer = setInterval(function () { cycle(false); }, 60000);
     setTimeout(function () { cycle(true); }, 0);
   }
-  function mfCardKey(items) { return list(items, 16).map(function (c) { return safeUrl(c && c.url); }).join(' '); }
+  function mfCardKey(items) { return list(items, 18).map(function (c) { return safeUrl(c && c.url); }).join(' '); }
   function mfFeed() {
     var c = typeof AbortController === 'function' ? new AbortController() : null, t = setTimeout(function () { if (c) c.abort(); }, 4000);
     return fetch('/blog-feed.xml?t=' + Math.floor(Date.now() / 60000), { signal: c ? c.signal : undefined, credentials: 'omit', cache: 'no-store' }).then(function (r) {

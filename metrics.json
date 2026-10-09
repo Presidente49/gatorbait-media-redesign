@@ -1,0 +1,29 @@
+{
+ "url": "https://www.gatorbaitmedia.com/magazine",
+ "selector": "",
+ "at": "2026-10-09T15:10:36.925Z",
+ "shots": [
+  {
+   "width": 390,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": "6cec4c9",
+   "fpBuild": null,
+   "fpVersion": null,
+   "pageHeight": 14029,
+   "brokenImages": []
+  },
+  {
+   "width": 1366,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": "6cec4c9",
+   "fpBuild": null,
+   "fpVersion": null,
+   "pageHeight": 8806,
+   "brokenImages": []
+  }
+ ]
+}

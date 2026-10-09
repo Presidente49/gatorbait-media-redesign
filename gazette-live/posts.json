@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Buddy Martin Show: Can the Gators Bounce Back With a Homecoming Win?",
+      "excerpt": "Buddy Martin, Franz Beard, Ben Troupe and Eddie Gilley on South Carolina at Florida, the 500th game in The Swamp and what the Gators must prove after Missouri.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-can-the-gators-bounce-back-with-a-homecoming-win",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-09T12:32:02Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_f9445560fa474c6494c6992887b4b9b9~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Buddy Martin Show: Can the Gators Bounce Back With a Homecoming Win?"
+      }
+    },
+    {
+      "title": "The Soothsayer: Gators will handle adversity and bounce back big",
+      "excerpt": "Franz Beard: Missouri was the punch to the gut. Homecoming against South Carolina is the answer, and the Sayer sees Florida winning by two touchdowns or more. Plus every SEC game.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-gators-will-handle-adversity-and-bounce-back-big",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-09T12:31:16Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_7a383977d3654820a6b045113df6e38e~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: Gators will handle adversity and bounce back big"
+      }
+    },
+    {
       "title": "Buddy Martin Show: Florida, South Carolina Both Need a Bounce-Back Saturday",
       "excerpt": "Two stung teams meet at Homecoming, and Buddy Martin would not pick a winner on Wednesday's show. His takeaways on Sumrall, Faulkner, the Gamecocks and the 500th game in The Swamp.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-florida-south-carolina-both-need-a-bounce-back-saturday",
@@ -237,34 +265,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for LIVE NOW: The Buddy Martin Show Talks Florida Gators Football"
-      }
-    },
-    {
-      "title": "Buddy Blog: Florida Gators Need the Balm of Homecoming This Week",
-      "excerpt": "Sumrall didn’t care about Mizzou’s homecoming, but he certainly does his own this week. Buddy Martin on Florida’s reset, Mac Steen and a lesson from 1990.",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-florida-gators-need-the-balm-of-homecoming-this-week",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-05T22:00:34Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6871ae4903954844b5fc471a0eb0a492~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Buddy Blog: Florida Gators Need the Balm of Homecoming This Week"
-      }
-    },
-    {
-      "title": "Reeling Gamecocks, Rattled Gators: Homecoming Comes With a Fix List",
-      "excerpt": "Florida's first loss left a to-do list: block the run, stop the run, talk in the secondary. Homecoming brings a South Carolina team that is reeling even worse.",
-      "url": "https://www.gatorbaitmedia.com/post/reeling-gamecocks-rattled-gators-homecoming-comes-with-a-fix-list",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-05T18:33:48Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_8e53f84fd0eb425980a73c027d496c7f~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Reeling Gamecocks, Rattled Gators: Homecoming Comes With a Fix List"
       }
     },
     {

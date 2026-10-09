@@ -67,12 +67,12 @@ jobs:
             let r = { path: process.env.IN_PATH, selector: process.env.IN_SELECTOR, widths: process.env.IN_WIDTHS, perf: process.env.IN_PERF };
             const f = "automation/vision/live-shots.request.json";
             if (process.env.GITHUB_EVENT_NAME === "push" && fs.existsSync(f)) r = JSON.parse(fs.readFileSync(f, "utf8"));
-            const path = r.path || "/", selector = r.selector === undefined ? "#gbm-road" : r.selector, widths = r.widths || "390,1365", perf = String(r.perf || "") === "1" ? "1" : "";
+            const path = r.path || "/", selector = r.selector === undefined ? "#gbm-road" : r.selector, widths = r.widths || "390,1365", perf = String(r.perf || "") === "1" ? "1" : "", full = String(r.full || "") === "1" ? "1" : "";
             // A path under deploy/covers/ is a repo file rendered from the checkout (file://), not the site.
             if (!/^\/[\w\-./?=&%#+]*$/.test(path) && !/^deploy\/covers\/[\w\-.]+\.html(\?[\w\-.~%+=&]*)?$/.test(path)) throw new Error("bad path");
             if (!/^[\d,]+$/.test(widths)) throw new Error("bad widths");
             if (!/^[\w\-#.\[\]=:" ]*$/.test(selector)) throw new Error("bad selector");
-            fs.appendFileSync(process.env.GITHUB_OUTPUT, `path=${path}\nselector=${selector}\nwidths=${widths}\nperf=${perf}\n`);
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `path=${path}\nselector=${selector}\nwidths=${widths}\nperf=${perf}\nfull=${full}\n`);
             console.log({ path, selector, widths, perf });
           '
 
@@ -84,6 +84,7 @@ jobs:
       - name: Shoot production
         env:
           PERF: ${{ steps.req.outputs.perf }}
+          FULL: ${{ steps.req.outputs.full }}
         run: node automation/vision/live-shots.mjs "${{ steps.req.outputs.path }}" "${{ steps.req.outputs.selector }}" "${{ steps.req.outputs.widths }}"
 
       - name: Publish to qa/live-shots

@@ -1,34 +1,30 @@
 {
-  "sourceRelease": "current-wednesday",
+  "sourceRelease": "current-pregame",
   "issue": {
-    "number": "Wednesday Edition",
-    "date": "Wednesday, October 7, 2026",
-    "week": "Oct. 7 · Week 6 · South Carolina at Florida",
+    "number": "Friday Pregame Edition",
+    "date": "Friday, October 9, 2026",
+    "week": "Week 6 · South Carolina at Florida",
     "home": "GatorBait Media",
-    "pageTitle": "GatorBait Magazine | Wednesday Edition, October 7, 2026"
+    "pageTitle": "GatorBait Magazine | Friday Pregame Edition: South Carolina at Florida"
   },
   "cover": {
-    "kicker": "Wednesday Edition · October 7, 2026",
-    "headline": "HOMECOMING WEEK",
-    "dek": "Buddy Martin leads. South Carolina, Franz Beard, Eddie Gilley and more.",
-    "byline": "Buddy Martin · Franz Beard · Eddie Gilley",
+    "kicker": "Friday Pregame Edition · Week 6",
+    "headline": "SOUTH CAROLINA AT FLORIDA",
+    "dek": "Saturday, Oct. 10, 12:45 p.m. ET on SEC Network. Buddy Martin: Nostalgia Is Wonderful. It Cannot Pick Up a Blitz.",
+    "byline": "Buddy Martin",
     "cta": "Open this issue",
     "url": "/magazine",
     "image": {
-      "id": "16b519_a0e407bedc46487ca71033fc8351d0fe~mv2",
+      "id": "16b519_e0efa08e9ebc43e5ad3c8582fcb9a85d~mv2",
       "ext": "jpg",
       "width": 3000,
-      "height": 1874,
-      "alt": "Florida touchdown celebration against Ole Miss, Sept. 26, 2026. Photo by Chris Spears, GatorBait Media",
+      "height": 2000,
+      "alt": "Florida Gators football photo for the Friday Pregame Edition: South Carolina at Florida. Photo by Chris Spears, GatorBait Media",
       "credit": "Photo by Chris Spears, GatorBait Media"
     },
-    "linesLabel": "Inside",
+    "linesLabel": "Cover column",
     "lines": [
-      "Buddy Martin: Florida needs the balm of Homecoming",
-      "Homecoming Test: No. 16 Florida hosts South Carolina",
-      "Franz Beard: Thoughts of the Day",
-      "Baugh owns it: the apology text to Sumrall",
-      "Reeling Gamecocks, rattled Gators: the fix list"
+      "Buddy Martin: Nostalgia Is Wonderful. It Cannot Pick Up a Blitz."
     ],
     "artwork": true
   },

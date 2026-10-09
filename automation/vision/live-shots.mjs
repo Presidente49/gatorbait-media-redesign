@@ -91,7 +91,7 @@ for (const w of widths) {
       fpVersion: document.querySelector('#gbm-live')?.getAttribute('data-fp') || null,
     })));
     await page.screenshot({ path: `${OUT}/top-${w}.jpg`, type: 'jpeg', quality: 70 });
-    if (process.env.FULL === '1') { await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); } scrollTo(0, 0); }); await page.waitForTimeout(1500); await page.screenshot({ path: `${OUT}/full-${w}.jpg`, type: 'jpeg', quality: 55, fullPage: true }); m.pageHeight = await page.evaluate(() => document.documentElement.scrollHeight); }
+    if (process.env.FULL === '1') { await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); } scrollTo(0, 0); }); await page.waitForTimeout(1500); await page.screenshot({ path: `${OUT}/full-${w}.jpg`, type: 'jpeg', quality: 55, fullPage: true }); m.pageHeight = await page.evaluate(() => document.documentElement.scrollHeight); m.brokenImages = await page.evaluate(() => [...document.images].filter((i) => i.complete && i.naturalWidth === 0 && i.getAttribute('src')).map((i) => ({ src: (i.currentSrc || i.src).slice(0, 160), alt: (i.alt || '').slice(0, 60), w: Math.round(i.getBoundingClientRect().width) }))); }
     if (selector) {
       const found = await page.$(selector);
       m.selectorFound = Boolean(found);

@@ -63,7 +63,7 @@
       },
       {
         "k": "Total",
-        "v": "59.5"
+        "v": "58.5"
       },
       {
         "k": "Series",
@@ -75,7 +75,7 @@
       "florida": 73.1,
       "missouri": 26.9
     },
-    "source": "ESPN game summary and pickcenter (DraftKings), Oct. 8. Forecast: NWS Jacksonville, Oct. 8."
+    "source": "ESPN game summary and pickcenter (DraftKings), Oct. 9. Forecast: NWS Jacksonville, Oct. 8."
   },
   "series": {
     "label": "The series",
@@ -295,7 +295,7 @@
   "slate": {
     "label": "Saturday in the SEC",
     "note": "Kickoffs and TV: SEC Week 6 release. All times ET. Florida's line from ESPN.",
-    "source": "Kickoffs, TV and records: SEC Week 6 release. Rankings: AP poll, as listed in the release. Florida line and total: ESPN pickcenter (DraftKings).",
+    "source": "Kickoffs, TV and records: SEC Week 6 release. Rankings: AP poll, as listed in the release. Florida line and total: ESPN pickcenter (DraftKings), Oct. 9.",
     "games": [
       {
         "time": "Noon",
@@ -323,7 +323,7 @@
           "rec": "4-1"
         },
         "line": "FLA -11.5",
-        "ou": 59.5,
+        "ou": 58.5,
         "note": "Homecoming",
         "hero": true
       },

@@ -1,0 +1,66 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>Welcome to GatorBait: your free Homecoming issue</mj-title>
+    <mj-preview>Thanks for signing up. Today's Homecoming issue is on us, free to read.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Arial, Helvetica, sans-serif" />
+      <mj-text color="#14243D" font-size="15px" line-height="1.55" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="14px 26px" font-size="14px" font-weight="800" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#F4F6FA" width="620px">
+    <mj-section background-color="#081B35" padding="22px 24px 14px">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#FFFFFF" font-size="30px" font-weight="800" letter-spacing="0.5px">GATOR<span style="color:#FA4616;">BAIT</span></mj-text>
+        <mj-text align="center" padding="2px 0 0" color="#D5DFEC" font-size="12px" letter-spacing="3px">MAGAZINE NEWSLETTER</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_35426d7986a84de1af22b80150c6f735~mv2.jpg" alt="GatorBait Magazine cover: Rebound at the Swamp. A Florida helmet on the sideline grass in front of a full Ben Hill Griffin Stadium, with headlines on the Homecoming test, Baugh Owns It, Franz Beard, Buddy Martin and Eddie Gilley. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=cover" padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="22px 26px 8px">
+      <mj-column>
+        <mj-text padding="0 0 6px" color="#D8450C" font-size="12px" font-weight="800" letter-spacing="1.6px">THANKS FOR SIGNING UP</mj-text>
+        <mj-text padding="0 0 10px" color="#081B35" font-size="30px" font-weight="800" line-height="1.1">Your free Homecoming issue</mj-text>
+        <mj-text padding="0 0 14px" color="#33425C" font-size="16px" line-height="1.5">Thanks for joining GatorBait. This issue is our welcome gift: free to read, no strings. Florida (4-1) hosts South Carolina today at 12:45 p.m. ET on SEC Network, in Homecoming and the 500th game in The Swamp. Buddy Martin leads, with Franz Beard, Eddie Gilley and every South Carolina-week story inside.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=open_magazine" align="center" padding="4px 0 14px">READ THE FREE ISSUE</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#EEF2FB" padding="20px 26px 8px">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/16b519_a0e407bedc46487ca71033fc8351d0fe~mv2.jpg" alt="The Florida goal-line push against Ole Miss, with Jadan Baugh (13) in the pile. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/buddy-blog-checking-out-point-spread-and-weather-for-gator-homecoming?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=buddy_cover_photo" padding="0 0 14px" />
+        <mj-text padding="0 0 12px" color="#081B35" font-size="19px" font-weight="800">Inside this issue</mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Buddy Martin</span><br/><a href="https://www.gatorbaitmedia.com/post/buddy-blog-checking-out-point-spread-and-weather-for-gator-homecoming?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=buddy_cover" style="color:#081B35;font-weight:700;text-decoration:none;">Nostalgia Is Wonderful. It Cannot Pick Up a Blitz.</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Franz Beard</span><br/><a href="https://www.gatorbaitmedia.com/post/the-soothsayer-gators-will-handle-adversity-and-bounce-back-big?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=franz_soothsayer" style="color:#081B35;font-weight:700;text-decoration:none;">The Soothsayer: Gators will handle adversity and bounce back big</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Franz Beard</span><br/><a href="https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-8-2026?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=franz_mudbowl" style="color:#081B35;font-weight:700;text-decoration:none;">Florida vs South Carolina: Rain could turn Homecoming into a mud bowl</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">The Buddy Martin Show</span><br/><a href="https://www.gatorbaitmedia.com/post/buddy-martin-show-can-the-gators-bounce-back-with-a-homecoming-win?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=show" style="color:#081B35;font-weight:700;text-decoration:none;">Can the Gators bounce back with a Homecoming win?</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Game week</span><br/><a href="https://www.gatorbaitmedia.com/post/florida-s-2-1-sec-start-meets-0-3-south-carolina-at-homecoming?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=sec_start" style="color:#081B35;font-weight:700;text-decoration:none;">Florida's 2-1 SEC start meets 0-3 South Carolina at Homecoming</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Game week</span><br/><a href="https://www.gatorbaitmedia.com/post/south-carolina-brings-the-sec-s-top-rushing-offense-to-gainesville?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=sc_rushing" style="color:#081B35;font-weight:700;text-decoration:none;">South Carolina brings the SEC's top rushing offense to Gainesville</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Game day</span><br/><a href="https://www.gatorbaitmedia.com/post/swamp-gameday-guide-rain-odds-climb-after-2-p-m?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=gameday_guide" style="color:#081B35;font-weight:700;text-decoration:none;">Swamp gameday guide: Rain odds climb after 2 p.m.</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Homecoming</span><br/><a href="https://www.gatorbaitmedia.com/post/gators-homecoming-guide-parade-hall-of-fame-growl?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=homecoming_guide" style="color:#081B35;font-weight:700;text-decoration:none;">Gators Homecoming Guide: Parade, Hall of Fame, Growl</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Eddie Gilley</span><br/><a href="https://www.gatorbaitmedia.com/post/florida-gave-on-saturday?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=gilley" style="color:#081B35;font-weight:700;text-decoration:none;">Florida gave on Saturday. Gave way too much!</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Game week</span><br/><a href="https://www.gatorbaitmedia.com/post/baugh-owns-it-florida-running-back-texts-sumrall-an-apology-after-missouri-loss?utm_source=gatorbait_welcome&utm_medium=email&utm_campaign=welcome_form_2026_10_10&utm_content=baugh" style="color:#081B35;font-weight:700;text-decoration:none;">Baugh owns it: Florida running back texts Sumrall an apology</a></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="22px 26px 24px">
+      <mj-column>
+        <mj-text align="center" padding="0 0 12px" color="#FFFFFF" font-size="16px" font-weight="700">Take the issue with you</mj-text>
+        <mj-button href="https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_c4a276efb8394a4f9b87b9da574e07fd.pdf" align="center" padding="0 0 10px">DOWNLOAD THE PDF</mj-button>
+        <mj-text align="center" padding="0" color="#D5DFEC" font-size="12px">29 pages. Cover, columns, game page and photos.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="22px 26px 6px">
+      <mj-column>
+        <mj-text align="center" padding="0 0 10px" color="#33425C" font-size="15px" line-height="1.5">Want more from GatorBait? See the membership options.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/pricing-plans/subscribe?utm_source=gatorbait_welcome&amp;utm_medium=email&amp;utm_campaign=welcome_form_2026_10_10&amp;utm_content=membership" background-color="#081B35" align="center" padding="0 0 10px">SEE MEMBERSHIP OPTIONS</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="16px 26px 22px">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#667386" font-size="12px" line-height="1.6">Old-school journalism + new tech · GatorBait Media<br/>GatorBaitMedia.com</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

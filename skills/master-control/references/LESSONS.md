@@ -697,3 +697,9 @@ The Monday Magazine had the most clicks of the five and a 63% open rate; its cli
 The same day, the `/magazine` page was still serving the Missouri issue while the homepage card said Wednesday Edition. Pinning `/magazine` to the new issue is the right call, but the Missouri issue is only a caption on the homepage card, so a reader who loved Monday's issue can no longer reopen it.
 
 **The rule:** do not change the Magazine's format (Buddy-led cover story, photo cover, long reads, question-style subject line) without evidence it will do better. When a new edition goes live on `/magazine`, keep the previous edition reachable (an issue-footer link or archive entry), and compare each send's clicks, not opens, against this table before changing a template. The next Magazine release should add a "Previous issue" link to the issue footer.
+
+## Lesson 75: `wix.request` takes `body`, not `data` (Oct. 9, 2026)
+
+**What happened:** On the night of Oct. 8 every Wix write from the controller session failed: the account-modal embed PATCH on "revision must not be empty" and the draft-post create on "draftPost must not be empty". Reads looked fine, which hid the cause: a `posts/query` with a `$startsWith` filter returned every post because its filter never left the session. I misread the failures as permission prompts and told Brenden the session was locked. It was not.
+
+**The rule:** inside `ExecuteWixAPI`, the request body goes in `body` (`wix.request({scope:'site', siteId, method, url, body:{...}})`). `data` is silently dropped. Before any write, prove the body arrived with a cheap read that depends on it (a filtered query that returns fewer rows than an unfiltered one), and when a write fails with "must not be empty" on a field you set, check the parameter name before anything else.

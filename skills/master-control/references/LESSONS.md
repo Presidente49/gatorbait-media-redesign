@@ -697,3 +697,21 @@ The Monday Magazine had the most clicks of the five and a 63% open rate; its cli
 The same day, the `/magazine` page was still serving the Missouri issue while the homepage card said Wednesday Edition. Pinning `/magazine` to the new issue is the right call, but the Missouri issue is only a caption on the homepage card, so a reader who loved Monday's issue can no longer reopen it.
 
 **The rule:** do not change the Magazine's format (Buddy-led cover story, photo cover, long reads, question-style subject line) without evidence it will do better. When a new edition goes live on `/magazine`, keep the previous edition reachable (an issue-footer link or archive entry), and compare each send's clicks, not opens, against this table before changing a template. The next Magazine release should add a "Previous issue" link to the issue footer.
+
+## Lesson 75: `wix.request` takes `body`, not `data` (Oct. 9, 2026)
+
+**What happened:** On the night of Oct. 8 every Wix write from the controller session failed: the account-modal embed PATCH on "revision must not be empty" and the draft-post create on "draftPost must not be empty". Reads looked fine, which hid the cause: a `posts/query` with a `$startsWith` filter returned every post because its filter never left the session. I misread the failures as permission prompts and told Brenden the session was locked. It was not.
+
+**The rule:** inside `ExecuteWixAPI`, the request body goes in `body` (`wix.request({scope:'site', siteId, method, url, body:{...}})`). `data` is silently dropped. Before any write, prove the body arrived with a cheap read that depends on it (a filtered query that returns fewer rows than an unfiltered one), and when a write fails with "must not be empty" on a field you set, check the parameter name before anything else.
+
+## Lesson 76: build the magazine PDF from data, not from printing the page (Oct. 9, 2026)
+
+**What happened:** Printing live `/magazine` to PDF lost the white masthead on page 1, left page 20 blank, embedded one photo out of 25 and printed excerpts instead of columns. The fix was `tools/magazine-pdf/` (PR #175): pull full bodies from the server-rendered post pages, lay out a print HTML with `print-color-adjust: exact`, then print with Chromium only after `document.fonts.ready` and every `img.decode()`.
+
+**The rule:** never print a client-rendered page for a deliverable. Three traps to remember: a Wix `og:image` can be a `.webp` original, so keep that extension in the media path (the `.jpg` rewrite 404s); Chromium in the cloud container ignores `HTTPS_PROXY` unless passed in `chromium.launch({proxy})`, so every remote image silently fails and the PDF looks fine in the log; and the public `/blog-feed.xml` carries no bodies, so article text comes from the post pages. Keep the paid PDF out of the public repo.
+
+## Lesson 77: link-preview tags are page settings, and the live QC banner check is noisy (Oct. 9, 2026)
+
+When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Miss photo and a "columns" description. No embed sets those tags: `og:image`, `og:description` and `twitter:image` come from the Wix page's own SEO and social settings, which have no page-level REST API (the site-wide SEO tags API changes every page, so do not use it for one page). Changing them takes the Editor plus a site publish. After any new issue or cover, read the crawler view of `/`, `/magazine` and `/subscribe` (fetch the HTML with a `facebookexternalhit` user agent, no JavaScript) and queue the Editor change in #34 with a 1200x630 image already uploaded to Wix media.
+
+**The rule:** a new cover is not shipped until the link preview shows it. Separately, the `GatorBait live presentation QC` job flags the cookie banner overlapping the first headline on the live `/magazine` at 390 px. It passed and failed on the same live page within minutes (16:07 and 16:11 UTC), so treat one failure as detection noise, re-run once, and do not let it hold a data-only merge that its own candidate checks cleared. Record the merge-over in #34.

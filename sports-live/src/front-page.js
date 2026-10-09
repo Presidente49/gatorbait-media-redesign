@@ -549,7 +549,7 @@
     var magCovers = magList.length < 2 ? img(coverSrc, cover.image.alt, false, cover.image.width || 864, cover.image.height || 1536, '(max-width: 599px) 76vw, 320px') :
       magList.map(function (c, i) { return '<span class="fp-mag-slide' + (i ? '' : ' is-on') + '" data-caption="' + esc(c.caption || '') + '">' + img(magSrc(c), c.image.alt || '', false, c.image.width || 864, c.image.height || 1536, '(max-width: 599px) 76vw, 320px') + '</span>'; }).join('');
     var mMag = '<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><h2>GatorBait Magazine</h2>' +
-      '<button type="button" class="fp-cover fp-mag-open" aria-expanded="false" aria-controls="fp-mag-reader" aria-label="Open GatorBait Magazine">' +
+      '<button type="button" class="fp-cover fp-mag-open" style="aspect-ratio:' + (cover.image.width || 864) + '/' + (cover.image.height || 1536) + '" aria-expanded="false" aria-controls="fp-mag-reader" aria-label="Open GatorBait Magazine">' +
       magCovers + '<span class="fp-mag-hint">Tap cover to open <span aria-hidden="true">↗</span></span></button>' +
       '<div class="fp-mag-copy"><p>' + esc(issue.number) + ' · ' + esc(issue.week) + '</p></div>' +
       '<div class="fp-mag-reader" id="fp-mag-reader" hidden><div class="fp-mag-tools"><button type="button" class="fp-btn fp-mag-close" aria-label="Close magazine">Close magazine</button><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine ↗</a></div><iframe title="GatorBait Magazine — Missouri postgame edition" loading="lazy" data-src="' + esc(L.magazine) + '?embed=home#pm-contents"></iframe><p><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine <span aria-hidden="true">→</span></a></p></div></section>';

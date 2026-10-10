@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "South Carolina leads No. 16 Florida 17-10 at halftime in The Swamp",
+      "excerpt": "LaNorris Sellers threw two touchdown passes, and South Carolina turned a Florida interception into the go-ahead score before halftime at Ben Hill Griffin Stadium.",
+      "url": "https://www.gatorbaitmedia.com/post/south-carolina-leads-no-16-florida-17-10-at-halftime-in-the-swamp",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T18:43:42Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_a40ca60a9ebd435dafcdbbad7a5368fc~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for South Carolina leads No. 16 Florida 17-10 at halftime in The Swamp"
+      }
+    },
+    {
+      "title": "Florida vs. South Carolina live updates: Score, highlights from The Swamp",
+      "excerpt": "Live updates from No. 16 Florida vs. South Carolina at Ben Hill Griffin Stadium: the score, every scoring play and key stats from Homecoming in The Swamp.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-vs-south-carolina-live-updates-score-highlights-from-the-swamp",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T18:41:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_72fd69312f7f41fbb87712798f84e9bd~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida vs. South Carolina live updates: Score, highlights from The Swamp"
+      }
+    },
+    {
       "title": "Texas commit Easton Royal back in The Swamp a week before Florida plays the Longhorns",
       "excerpt": "Five-star receiver Easton Royal, committed to Texas, planned a second game-day visit to Florida for South Carolina. Who else is in town and where the Gators' class stands.",
       "url": "https://www.gatorbaitmedia.com/post/texas-commit-easton-royal-back-in-the-swamp-a-week-before-florida-plays-the-longhorns",
@@ -237,34 +265,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Swamp gameday guide: Storms likely after 2 p.m."
-      }
-    },
-    {
-      "title": "Gators-Gamecocks Sells Out; Doering Named SEC Legend",
-      "excerpt": "Florida's Homecoming game against South Carolina is sold out for the 22nd straight home game, and Chris Doering is the Gators' 2026 SEC Football Legend.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-gamecocks-sells-out-doering-named-sec-legend",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-08T19:05:16Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_58d7dd7741bc4895ab8a386b31f8014d~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators-Gamecocks Sells Out; Doering Named SEC Legend"
-      }
-    },
-    {
-      "title": "Gators Go Big With Latest Hoops Commit",
-      "excerpt": "Franz Beard: Todd Golden lands 4-star center Kamsi Awaka, his second commit in a week, and a look at what Florida's 2027-28 roster could be.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-go-big-with-latest-hoops-commit",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-08T13:29:27Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_1ff83431e56e4759a71ed3598e881c3a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators Go Big With Latest Hoops Commit"
       }
     },
     {

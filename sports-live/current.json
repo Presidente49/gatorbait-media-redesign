@@ -1,5 +1,5 @@
 {
-  "commit": "ce0e39259b2601179f1b38215cc063cbbce1664b",
-  "updated": "2026-10-09T16:06:00Z",
-  "note": "Rebound at the Swamp cover on the homepage Magazine card (PR #179). Rollback: set commit to b7b1f347e1692e38a0557586724903e858f1d95c."
+  "commit": "de861a9d3be8cf47a39cac271a441b202b626942",
+  "updated": "2026-10-10T11:52:00Z",
+  "note": "Game-week pregame focus, newest first, in-bundle weather and radar (PR #197). Rollback: set commit to ce0e39259b2601179f1b38215cc063cbbce1664b."
 }

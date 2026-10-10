@@ -1,0 +1,57 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>Game day in The Swamp: your free GatorBait program</mj-title>
+    <mj-preview>South Carolina at No. 16 Florida, 12:45 p.m. ET. Rosters, the matchup, picks and live coverage.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Arial, Helvetica, sans-serif" />
+      <mj-text color="#14243D" font-size="15px" line-height="1.55" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="14px 26px" font-size="14px" font-weight="800" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#F4F6FA" width="620px">
+    <mj-section background-color="#081B35" padding="22px 24px 14px">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#FFFFFF" font-size="30px" font-weight="800" letter-spacing="0.5px">GATOR<span style="color:#FA4616;">BAIT</span></mj-text>
+        <mj-text align="center" padding="2px 0 0" color="#D5DFEC" font-size="12px" letter-spacing="3px">MAGAZINE NEWSLETTER · GAME DAY · SATURDAY, OCT. 10</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_c947b3f9ab694889ba74a71f230eb914~mv2.jpg" alt="GatorBait Game Day program cover: Jon Sumrall leads Florida out of the tunnel at Ben Hill Griffin Stadium. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=cover" padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="22px 26px 8px">
+      <mj-column>
+        <mj-text padding="0 0 6px" color="#D8450C" font-size="12px" font-weight="800" letter-spacing="1.6px">IT'S GAME DAY</mj-text>
+        <mj-text padding="0 0 10px" color="#081B35" font-size="30px" font-weight="800" line-height="1.1">South Carolina at No. 16 Florida</mj-text>
+        <mj-text padding="0 0 14px" color="#33425C" font-size="16px" line-height="1.5">Kickoff is 12:45 p.m. ET on SEC Network, Homecoming and the 500th game in The Swamp. Your free GatorBait Game Day program has both rosters, the matchup, the injury report, our picks and the SEC slate. Print it, fold it, take it in.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/_files/ugd/d3cfa5_a49059d6f1704247bc219fd23b73a9fe.pdf" align="center" padding="4px 0 10px">DOWNLOAD THE GAME DAY PROGRAM</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=follow_live" background-color="#081B35" align="center" padding="0 0 14px">FOLLOW THE GAME LIVE</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#EEF2FB" padding="20px 26px 8px">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/16b519_9cef91324c1d4509b16eaeb4c5c1d492~mv2.jpg" alt="The Florida offense pushes forward against Ole Miss on Sept. 26 at Ben Hill Griffin Stadium. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/texas-commit-easton-royal-back-in-the-swamp-a-week-before-florida-plays-the-longhorns?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=photo" padding="0 0 14px" />
+        <mj-text padding="0 0 12px" color="#081B35" font-size="19px" font-weight="800">Today on GatorBait</mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Recruiting</span><br/><a href="https://www.gatorbaitmedia.com/post/texas-commit-easton-royal-back-in-the-swamp-a-week-before-florida-plays-the-longhorns?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=recruiting" style="color:#081B35;font-weight:700;text-decoration:none;">Texas commit Easton Royal back in The Swamp a week before Florida plays the Longhorns</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Who's playing</span><br/><a href="https://www.gatorbaitmedia.com/post/gators-gamecocks-availability-vernell-brown-iii-questionable-south-carolina-thin-up-front?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=availability" style="color:#081B35;font-weight:700;text-decoration:none;">Vernell Brown III questionable, South Carolina's Dylan Stewart cleared</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Buddy Martin</span><br/><a href="https://www.gatorbaitmedia.com/post/are-the-gators-being-seduced-no-9-don-t-go-sweet-talking-us-again?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=buddy" style="color:#081B35;font-weight:700;text-decoration:none;">Are the Gators being seduced? No. 9? Don't go sweet-talking us again</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Loren Meadows</span><br/><a href="https://www.gatorbaitmedia.com/post/hit-the-reset-button-gators-gamecocks-meet-at-different-crossroads?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=loren" style="color:#081B35;font-weight:700;text-decoration:none;">Hit the Reset Button: Gators, Gamecocks meet at different crossroads</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">The numbers</span><br/><a href="https://www.gatorbaitmedia.com/post/florida-is-an-11-5-point-favorite-over-south-carolina-what-the-numbers-say?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=numbers" style="color:#081B35;font-weight:700;text-decoration:none;">Florida is a double-digit favorite over South Carolina: the numbers at kickoff</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Franz Beard</span><br/><a href="https://www.gatorbaitmedia.com/post/the-soothsayer-gators-will-handle-adversity-and-bounce-back-big?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=franz" style="color:#081B35;font-weight:700;text-decoration:none;">The Soothsayer: Gators will handle adversity and bounce back big</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Game day</span><br/><a href="https://www.gatorbaitmedia.com/post/swamp-gameday-guide-rain-odds-climb-after-2-p-m?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=gameday_guide" style="color:#081B35;font-weight:700;text-decoration:none;">Swamp gameday guide: Storms likely after 2 p.m.</a></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="22px 26px 24px">
+      <mj-column>
+        <mj-text align="center" padding="0 0 12px" color="#FFFFFF" font-size="16px" font-weight="700">Live scores, the radar and the final, all on the front page</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/?utm_source=gatorbait_gameday&utm_medium=email&utm_campaign=gameday_2026_10_10&utm_content=footer_live" align="center" padding="0 0 10px">GATORBAITMEDIA.COM</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="16px 26px 22px">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#667386" font-size="12px" line-height="1.6">Independent Florida Gators coverage · GatorBait Media<br/>GatorBaitMedia.com</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

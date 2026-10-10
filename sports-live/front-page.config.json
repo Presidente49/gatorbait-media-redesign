@@ -1,11 +1,7 @@
 {
   "$comment": "Front Page 2026 editorial config. Default story order is strictly newest-first by firstPublishedDate. Only an explicit breaking-news pin may override chronology; do not use timed pins for ordinary story rotation.",
   "look": "gator-day",
-  "topStoryAuthors": [
-    "Buddy Martin",
-    "Franz Beard",
-    "Loren Meadows"
-  ],
+  "topStoryAuthors": [],
   "pins": {
     "breaking": null,
     "timed": null
@@ -166,7 +162,7 @@
   "$columnists": "Writer names link to their Wix writer category page (branded, newest-first, Columnists sub-nav). Oct. 4: the old tag pages held 26/4/3/1 posts; the member profile page has no post list. A writer's list is only as complete as the post's writer category, so every column needs its writer category.",
   "newHours": 48,
   "colead": {
-    "on": true,
+    "on": false,
     "left": "Buddy Martin",
     "right": "Franz Beard",
     "days": 7
@@ -193,5 +189,11 @@
     "station": "KGNV",
     "radar": "KJAX",
     "grid": "JAX/43,32"
+  },
+  "gameWeekFocus": {
+    "on": true,
+    "from": "2026-10-09T04:00:00Z",
+    "until": "2026-10-11T12:00:00Z",
+    "pattern": "south carolina|gamecock|homecoming|kickoff|\\brain|storm|hurricane|isaias|weather|mizzou|missouri|bounce|swamp|beamer|sumrall|baugh|philo|availability|favorite|point spread|pregame"
   }
 }

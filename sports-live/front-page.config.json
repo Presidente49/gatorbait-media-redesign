@@ -194,7 +194,7 @@
     "on": true,
     "from": "2026-10-09T04:00:00Z",
     "until": "2026-10-11T12:00:00Z",
-    "pattern": "south carolina|gamecock|homecoming|kickoff|\\brain|storm|hurricane|isaias|weather|mizzou|missouri|bounce|swamp|beamer|sumrall|baugh|philo|availability|favorite|point spread|pregame",
+    "pattern": "south carolina|gamecock|homecoming|kickoff|\\brain|storm|hurricane|isaias|weather|bounce|swamp|beamer|sumrall|baugh|philo|availability|favorite|point spread|pregame",
     "hideLast": true
   }
 }

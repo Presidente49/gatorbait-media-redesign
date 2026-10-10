@@ -273,10 +273,12 @@
   }
   // Long headlines split at a sentence boundary: the first sentences lead, the rest becomes the dek.
   function splitTitle(title) {
-    var parts = title.match(/[^.!?]+[.!?]+['’"”]?\s*|[^.!?]+$/g) || [title], head = '';
+    // Abbreviation periods (vs., No., St., Jr.) are not sentence ends.
+    var safe = title.replace(/\b(vs|v|no|st|mr|mrs|dr|jr|sr|inc|u\.s)\./gi, '$1\u0001');
+    var parts = safe.match(/[^.!?]+[.!?]+['’"”]?\s*|[^.!?]+$/g) || [safe], head = '';
     while (parts.length && (head + parts[0]).trim().length <= 56) head += parts.shift();
     if (!head.trim() || !parts.length) return { h: title, dek: '' };
-    return { h: head.trim(), dek: parts.join('').trim() };
+    return { h: head.trim().replace(/\u0001/g, '.'), dek: parts.join('').trim().replace(/\u0001/g, '.') };
   }
   function words(text) { return esc(text).split(/\s+/).map(function (w, i) { return '<span class="fp-w" style="--i:' + i + '">' + w + '</span>'; }).join(' '); }
   function cd(iso) { return '<span class="fp-cd" data-fp-count="' + esc(iso) + '" aria-label="Countdown to kickoff"></span>'; }
@@ -290,6 +292,46 @@
     var pairs = [], re = /([a-z][a-z.'&\s-]*?)\s+(\d{1,3})(?=\s*(?:[,;·–-]|$))/g, m;
     while ((m = re.exec(t))) pairs.push(m[1].replace(/\s+/g, ' ').trim() + ':' + m[2]);
     return pairs.length >= 2 ? pairs.sort().join('|') : '';
+  }
+  /* ---------- Scores strip (Brenden, Oct. 10: "a scroll at the top with the scores") ----------
+   * SEC games for today's ET date from ESPN's public scoreboard, refreshed every 60 s; Florida first.
+   * Starts with the bundled next game so the strip is never empty, and keeps the last good list if ESPN fails. */
+  function scoresStatic(sb) {
+    return sb.next ? '<li><b>' + (sb.next.home ? 'Today' : 'Next') + '</b>' + esc(abbr('Florida') + (sb.next.home ? ' vs. ' : ' at ') + abbr(sb.next.opponent, sb.next.opponentAbbr) + ' · ' + clock(Date.parse(sb.next.kickoffIso)) + ' ET' + (sb.next.tv ? ' · ' + sb.next.tv : '')) + '</li>' : '<li><b>SEC</b>Scores post here on game days</li>';
+  }
+  function scoresHtml(sb) {
+    var list = scoresStatic(sb);
+    return '<div class="fp-ticker fp-scores" role="region" aria-label="SEC scores"><span class="fp-tk-tag">Scores</span><div class="fp-tk-view"><div class="fp-tk-track" style="--fp-tk-dur:45s"><ul class="fp-tk-list">' + list + '</ul><ul class="fp-tk-list fp-tk-dup" aria-hidden="true">' + list + '</ul></div></div></div>';
+  }
+  function scoreItems(data) {
+    var rows = (data && Array.isArray(data.events) ? data.events : []).map(function (ev) {
+      var c = ev.competitions && ev.competitions[0], st = ev.status && ev.status.type;
+      if (!c || !st || !Array.isArray(c.competitors) || c.competitors.length !== 2) return null;
+      var away = c.competitors.filter(function (x) { return x.homeAway === 'away'; })[0], home = c.competitors.filter(function (x) { return x.homeAway === 'home'; })[0];
+      if (!away || !home || !away.team || !home.team) return null;
+      var an = String(away.team.abbreviation || '').slice(0, 6), hn = String(home.team.abbreviation || '').slice(0, 6), t = Date.parse(ev.date);
+      var fl = an === 'FLA' || hn === 'FLA', text, tag;
+      if (st.state === 'pre') { tag = 'Today'; text = an + ' at ' + hn + (Number.isFinite(t) ? ' · ' + clock(t) + ' ET' : ''); }
+      else { tag = st.state === 'post' ? 'Final' : 'Live'; text = an + ' ' + String(away.score || 0) + ', ' + hn + ' ' + String(home.score || 0) + (st.state === 'in' && st.shortDetail ? ' · ' + String(st.shortDetail).replace(/\s*-\s*/, ' ').slice(0, 24) : ''); }
+      return { fl: fl, html: '<li' + (fl ? ' class="fp-fla"' : '') + '><b>' + esc(tag) + '</b>' + esc(text) + '</li>', t: t };
+    }).filter(Boolean);
+    rows.sort(function (a, b) { return (b.fl ? 1 : 0) - (a.fl ? 1 : 0) || a.t - b.t; });
+    return rows.map(function (r) { return r.html; }).join('');
+  }
+  function initScores(root, sb) {
+    var box = root.querySelector('.fp-scores'); if (!box) return;
+    var url = 'https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=' + et(now()).ymd.replace(/-/g, '');
+    function pull() {
+      if (document.hidden) return;
+      fetchJson(url, 4000).then(function (data) {
+        var html = scoreItems(data); if (!html) return;
+        var lists = box.querySelectorAll('.fp-tk-list');
+        if (lists[0]) lists[0].innerHTML = html;
+        if (lists[1]) lists[1].innerHTML = html;
+        var track = box.querySelector('.fp-tk-track'); if (track) track.style.setProperty('--fp-tk-dur', Math.max(40, (html.split('<li').length - 1) * 6) + 's');
+      }).catch(function () {});
+    }
+    pull(); setInterval(pull, 60000);
   }
   function tickerHtml(posts, sb, gs) {
     var items = [], seen = {};
@@ -563,7 +605,7 @@
   /* Recent broadcasts: source parity with the verified live show rail. */
   var gbmShowRows = [{ "id": "aEOcRpECIOQ", "title": "Has Jadan Baugh Got A Shot At The Heisman?", "publishedAt": "2026-10-02T18:57:40-07:00", "duration": "PT51M35S" }, { "id": "TPKZcSS9Bc0", "title": "Has Jadan Baugh Got A Shot At The Heisman?", "publishedAt": "2026-10-02T07:12:37-07:00", "duration": "PT61M36S" }, { "id": "VIsn01dETY4", "title": "Will Success Come With A Big Price For The Gators?", "publishedAt": "2026-10-01T07:23:17-07:00", "duration": "PT64M11S" }, { "id": "SYBBWfaTTcs", "title": "Denzel Aberdeen Cleared for Florida, with Missouri Preview Ahead", "publishedAt": "2026-09-30T08:07:36-07:00", "duration": "PT57M53S" }, { "id": "qWBazfq_4Mc", "title": "Florida DESTROYS Ole Miss 52-28 🐊 Shane Matthews Reacts", "publishedAt": "2026-09-29T07:18:49-07:00", "duration": "PT59M18S" }, { "id": "u2dMQ4u3yNY", "title": "Ole Miss vs Florida Preview Can the Gators Own the Swamp", "publishedAt": "2026-09-25T07:38:50-07:00", "duration": "PT72M39S" }];
   function gbmRecentShows() {
-    return '<div class="fp-episode-head">Recent broadcasts · newest first</div><div class="fp-episode-list" tabindex="0" aria-label="Recent broadcasts, newest first">' + gbmShowRows.slice(0, 6).map(function(v) {
+    return '<div class="fp-episode-head">Recent broadcasts · newest first</div><div class="fp-episode-list" tabindex="0" aria-label="Recent broadcasts, newest first">' + gbmShowRows.filter(function(v) { return !(weekFocusOn() && /missouri|mizzou/i.test(v.title)); }).slice(0, 6).map(function(v) {
       return '<a class="fp-vid" href="https://www.youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener"><span class="fp-frame">' + img("https://i.ytimg.com/vi/" + v.id + "/hqdefault.jpg", "", false, 480, 360) + '<span class="fp-play"></span></span><span><b>' + esc(v.title) + "</b><span>Published " + esc(new Date(v.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "America/New_York" })) + "</span></span></a>";
     }).join("") + '</div><p class="fp-ex"><a href="/the-buddy-martin-show">Watch here</a> · <a href="https://www.youtube.com/@TheBuddyMartinShow" target="_blank" rel="noopener">Subscribe on YouTube</a> · <a href="https://www.twitter.com/buddyshow" target="_blank" rel="noopener">Buddy on X</a></p>';
   }
@@ -751,7 +793,7 @@
     root.setAttribute('data-fp-scoreboard', sb.source);
     root.setAttribute('data-gazette-source', fresh ? 'current-feed' : 'last-known-feed');
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
-    root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
+    root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + scoresHtml(sb) + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
       (gwCfg() ? wxHtml() : roadHtml(sb)) + '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
       hubHtml(latest, sb, posts, used) + '</main>';
@@ -766,6 +808,7 @@
     doc.classList.add('gbm-gazette-live', 'gbm-standalone-live');
     try { initRoad(root); } catch (_) {}
     try { initWeather(root); } catch (_) {}
+    try { initScores(root, sb); } catch (_) {}
     try { imgFallback(root); } catch (_) {}
     try {
       var magOpen = root.querySelector('.fp-mag-open'), magReader = root.querySelector('#fp-mag-reader');

@@ -1,0 +1,180 @@
+/* GatorBait game-day cards: the white "gator-day" look (Gator blue, orange, white). Barlow only.
+   Palette matches sports-live/src/front-page.css: paper #fff, ink #0d1530, ink-2 #47506a, rule #d6dcec,
+   hub #eef2fb, Gator blue #0021a5, orange #fa4616. White text on orange uses the deeper #d23c0d (4.8:1). */
+
+@font-face{font-family:"Barlow";font-weight:400;font-display:block;src:url("fonts/Barlow-400.woff2") format("woff2")}
+@font-face{font-family:"Barlow";font-weight:500;font-display:block;src:url("fonts/Barlow-500.woff2") format("woff2")}
+@font-face{font-family:"Barlow";font-weight:700;font-display:block;src:url("fonts/Barlow-700.woff2") format("woff2")}
+@font-face{font-family:"Barlow";font-weight:800;font-display:block;src:url("fonts/Barlow-800.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:600;font-display:block;src:url("fonts/BarlowCondensed-600.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:700;font-display:block;src:url("fonts/BarlowCondensed-700.woff2") format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:800;font-display:block;src:url("fonts/BarlowCondensed-800.woff2") format("woff2")}
+
+:root{
+  --paper:#fff; --ink:#0d1530; --ink-2:#47506a; --rule:#d6dcec; --hub:#eef2fb;
+  --blue:#0021a5; --orange:#fa4616; --orange-ink:#d23c0d;
+  --disp:"Barlow Condensed","Barlow",Arial,sans-serif; --text:"Barlow",Arial,sans-serif;
+  /* per-format scale set below */
+  --w:1200px; --h:675px; --pad:48px; --top:92px; --foot:64px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#e9edf6}
+body{width:var(--w);min-height:var(--h)}
+
+body.fmt-landscape{--w:1200px;--h:675px;--pad:48px;--top:92px;--foot:60px}
+body.fmt-portrait{--w:1080px;--h:1350px;--pad:60px;--top:120px;--foot:84px}
+body.fmt-square{--w:1080px;--h:1080px;--pad:56px;--top:108px;--foot:76px}
+
+#card{position:relative;width:var(--w);height:var(--h);overflow:hidden;background:var(--paper);color:var(--ink);
+  font-family:var(--text);display:flex;flex-direction:column}
+
+/* ---------- masthead ---------- */
+.top{flex:0 0 var(--top);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--pad);
+  background:var(--blue);color:#fff;border-bottom:8px solid var(--orange)}
+.brand{display:flex;align-items:baseline;gap:14px;font-family:var(--disp);font-weight:800;text-transform:uppercase;line-height:1}
+.brand-main{font-size:calc(var(--top)*.52);letter-spacing:.01em}
+.brand-sub{font-size:calc(var(--top)*.27);letter-spacing:.34em;font-weight:700;opacity:.92}
+.kicker{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.14em;
+  font-size:calc(var(--top)*.34);line-height:1;text-align:right;white-space:nowrap}
+
+/* ---------- body / footer ---------- */
+.body{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;padding:calc(var(--pad)*.7) var(--pad) 0}
+.foot{flex:0 0 var(--foot);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--pad);
+  border-top:2px solid var(--rule);font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  font-size:calc(var(--foot)*.42);color:var(--ink-2)}
+.foot b{color:var(--blue);font-weight:800}
+
+.pill{display:inline-block;font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:.16em;line-height:1;
+  background:var(--orange-ink);color:#fff;padding:.42em .8em .38em;font-size:40px}
+.fmt-portrait .pill{font-size:46px}
+.ctx{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2);font-size:36px;line-height:1.1}
+.fmt-portrait .ctx{font-size:38px}
+.status-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-bottom:calc(var(--pad)*.4)}
+
+/* ---------- scoreboard (final / halftime) ---------- */
+.scoreboard{display:flex;flex-direction:column;border-top:6px solid var(--ink)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:2px solid var(--rule);padding:6px 0}
+.row .id{display:flex;flex-direction:column;min-width:0;flex:1 1 auto}
+.row .meta{display:flex;align-items:baseline;gap:.7em;margin-top:4px;font-family:var(--disp);text-transform:uppercase;font-size:34px;line-height:1.2}
+.row .rank{font-weight:700;letter-spacing:.14em;color:var(--orange-ink)}
+.row .name{font-family:var(--disp);font-weight:800;text-transform:uppercase;line-height:.9;white-space:nowrap;font-size:104px;letter-spacing:-.005em}
+.row .rec{font-weight:600;letter-spacing:.1em;color:var(--ink-2)}
+.row .score{font-family:var(--disp);font-weight:800;line-height:.8;font-size:210px;letter-spacing:-.02em;text-align:right;font-variant-numeric:tabular-nums;flex:0 0 auto;min-width:2ch}
+.row.focus .score,.row.focus .name{color:var(--blue)}
+.row.other .score{color:var(--ink-2)}
+.fmt-portrait .row .name{font-size:128px}
+.fmt-portrait .row .score{font-size:290px}
+.fmt-portrait .row{padding:14px 0}
+.fmt-square .row .name{font-size:96px}
+.fmt-square .row .score{font-size:200px}
+
+/* ---------- stat strip ---------- */
+.stats{display:flex;margin-top:auto;border-top:6px solid var(--blue);background:var(--hub);margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1)}
+.stat{flex:1 1 0;min-width:0;padding:14px calc(var(--pad)*.4) 16px;border-right:2px solid var(--paper);text-align:center}
+.stat:last-child{border-right:0}
+.stat .lab{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-2);font-size:34px;line-height:1.1}
+.stat .vals{display:flex;justify-content:center;align-items:baseline;gap:18px;margin-top:6px;font-family:var(--disp);font-weight:800;line-height:.95;font-size:74px;white-space:nowrap}
+.stat .vals .v-focus{color:var(--blue)}
+.stat .vals .v-other{color:var(--ink-2)}
+.stat .vals i{font-style:normal;font-weight:600;font-size:.52em;color:var(--ink-2);letter-spacing:.1em}
+.fmt-portrait .stats{flex-direction:column}
+.fmt-portrait .stat{display:flex;align-items:center;justify-content:space-between;text-align:left;border-right:0;border-bottom:2px solid var(--paper);padding:16px var(--pad)}
+.fmt-portrait .stat:last-child{border-bottom:0}
+.fmt-portrait .stat .lab{font-size:40px}
+.fmt-portrait .stat .vals{margin-top:0;font-size:84px}
+.fmt-square .stats{flex-direction:row}
+.fmt-square .stat .vals{font-size:64px;gap:14px}
+
+/* ---------- pregame ---------- */
+.pre-kicker{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--orange-ink);font-size:44px;line-height:1}
+.matchup{display:flex;align-items:stretch;gap:0;margin-top:calc(var(--pad)*.5);flex:1 1 auto;min-height:0}
+.team{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:6px 0}
+.team.home{text-align:right;align-items:flex-end}
+.team .rank{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--orange-ink);font-size:40px;line-height:1.05;min-height:1.05em}
+.team .name{font-family:var(--disp);font-weight:800;text-transform:uppercase;line-height:.88;font-size:132px;white-space:nowrap;max-width:100%}
+.team.focus .name{color:var(--blue)}
+.team .rec{font-family:var(--disp);font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2);font-size:38px;line-height:1.2;margin-top:8px}
+.at{flex:0 0 auto;align-self:center;font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:56px;letter-spacing:.1em;
+  color:#fff;background:var(--ink);padding:.3em .55em .26em;margin:0 28px;line-height:1}
+.fmt-portrait .matchup{flex-direction:column;justify-content:center;gap:10px}
+.fmt-portrait .team,.fmt-portrait .team.home{text-align:left;align-items:flex-start;flex:0 0 auto}
+.fmt-portrait .team .name{font-size:170px}
+.fmt-portrait .at{align-self:flex-start;margin:6px 0;font-size:60px}
+.fmt-square .team .name{font-size:112px}
+.fmt-square .matchup{flex-direction:column;justify-content:center;gap:6px}
+.fmt-square .team,.fmt-square .team.home{text-align:left;align-items:flex-start;flex:0 0 auto}
+.fmt-square .at{align-self:flex-start;margin:4px 0;font-size:52px}
+.when{margin-top:auto;border-top:6px solid var(--blue);background:var(--hub);margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);
+  padding:16px var(--pad) 18px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.when .t1{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:56px;line-height:1.02;color:var(--ink)}
+.when .t2{font-family:var(--disp);font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:34px;line-height:1.2;color:var(--ink-2);margin-top:6px}
+.chips{display:flex;gap:14px}
+.chip{border:3px solid var(--blue);background:var(--paper);padding:8px 18px;text-align:center;font-family:var(--disp);font-weight:800;font-size:44px;line-height:1;color:var(--blue);letter-spacing:.04em;text-transform:uppercase}
+.chip small{display:block;font-weight:700;font-size:30px;letter-spacing:.14em;color:var(--orange-ink);margin-bottom:5px}
+.fmt-portrait .when .t1{font-size:62px}
+.fmt-portrait .when .t2{font-size:38px}
+.fmt-portrait .chip{font-size:52px}
+
+/* ---------- quote ---------- */
+.q-wrap{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;justify-content:center}
+.qmark{font-family:var(--disp);font-weight:800;color:var(--orange);font-size:240px;line-height:.55;height:.5em;margin-bottom:10px}
+.qtext{font-family:var(--disp);font-weight:800;text-transform:uppercase;color:var(--ink);line-height:.98;letter-spacing:-.005em;font-size:96px;max-width:100%}
+.qwho{margin-top:calc(var(--pad)*.55);padding-top:18px;border-top:6px solid var(--blue);display:flex;flex-direction:column;gap:6px}
+.qwho .n{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);font-size:56px;line-height:1}
+.qwho .c{font-family:var(--text);font-weight:500;color:var(--ink-2);font-size:34px;line-height:1.25}
+.fmt-portrait .qmark{font-size:300px}
+.fmt-portrait .qwho .n{font-size:64px}
+.fmt-portrait .qwho .c{font-size:38px}
+
+/* sample marker, only shown when the data says sample:true */
+
+/* ---------- per-format tuning ---------- */
+.fmt-landscape .body{padding-top:26px}
+.fmt-landscape .pill{font-size:34px}
+.fmt-landscape .ctx{font-size:32px}
+.fmt-landscape .status-row{margin-bottom:14px}
+.fmt-landscape .row .name{font-size:84px}
+.fmt-landscape .row .score{font-size:148px}
+.fmt-landscape .row .meta{font-size:32px}
+.fmt-landscape .stat .lab{font-size:32px}
+.fmt-landscape .stat .vals{font-size:62px}
+.fmt-portrait .scoreboard,.fmt-square .scoreboard{flex:1 1 auto;margin-bottom:28px}
+.fmt-portrait .row,.fmt-square .row{flex:1 1 0}
+.fmt-portrait .row .meta{font-size:40px}
+.fmt-square .row .meta{font-size:38px}
+.fmt-square .row .score{font-size:250px}
+.fmt-square .row .name{font-size:104px}
+.fmt-square .stats{margin-top:0}
+.fmt-landscape .when{flex-wrap:nowrap}
+.fmt-landscape .when .t1{font-size:54px}
+.fmt-landscape .matchup{margin-top:10px}
+.fmt-landscape .team .name{font-size:124px}
+
+/* landscape pregame: stack the two teams so both names can run big; AT sits between them */
+.fmt-landscape .matchup{flex-direction:column;justify-content:center;gap:2px;margin-top:0}
+.fmt-landscape .team,.fmt-landscape .team.home{display:grid;grid-template-columns:1fr auto;column-gap:28px;align-items:center;text-align:left;flex:0 0 auto;padding:0}
+.fmt-landscape .team .name{grid-column:1;grid-row:1 / span 2;font-size:98px;line-height:.9}
+.fmt-landscape .team .rank{grid-column:2;grid-row:1;text-align:right;align-self:end;font-size:36px;min-height:0}
+.fmt-landscape .team .rec{grid-column:2;grid-row:2;text-align:right;align-self:start;font-size:36px;margin-top:2px}
+.fmt-landscape .at{align-self:flex-start;margin:0;font-size:38px;padding:.22em .5em .18em}
+.fmt-landscape .pre-kicker{font-size:40px}
+
+/* no stat strip (pregame-style or halftime without stats): let the scoreboard fill the space */
+.no-stats .scoreboard{flex:1 1 auto;margin-bottom:26px}
+.no-stats .row{flex:1 1 0}
+.fmt-landscape.no-stats .row .name{font-size:100px}
+.fmt-landscape.no-stats .row .score{font-size:190px}
+.fmt-landscape.no-stats .row .meta{font-size:36px}
+
+.sample-tag{font-family:var(--disp);font-weight:800;letter-spacing:.2em;text-transform:uppercase;background:var(--orange-ink);color:#fff;
+  font-size:calc(var(--foot)*.4);padding:.3em .7em .22em;line-height:1.1;white-space:nowrap}
+.fmt-landscape .qmark{font-size:150px;margin-bottom:6px}
+.fmt-landscape .qtext{font-size:88px}
+.fmt-landscape .qwho{margin-top:16px;padding-top:12px}
+.fmt-landscape .qwho .c{font-size:32px}
+
+.foot span{white-space:nowrap}
+
+.foot{min-width:0}
+.foot span:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.foot .sample-tag{flex:0 0 auto}

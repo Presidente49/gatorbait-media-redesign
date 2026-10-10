@@ -1,5 +1,5 @@
 {
-  "commit": "948ed95391323c77d60c87e90c316afee3b1fb9f",
-  "updated": "2026-10-10T15:00:00Z",
-  "note": "Game Day program download (PR #216). Rollback: set commit to c8fc9db3e0506a34a087432809ca5cf08643aa76."
+  "commit": "7e21504e6720b9cf92b22f624724d8dde6148c18",
+  "updated": "2026-10-10T21:45:00Z",
+  "note": "Postgame mode after South Carolina final (PR #220). Rollback: set commit to 948ed95391323c77d60c87e90c316afee3b1fb9f."
 }

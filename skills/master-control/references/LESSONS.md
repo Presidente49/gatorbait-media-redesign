@@ -1,5 +1,7 @@
 # Master Control Learned Lessons
 
+One-line-per-lesson summary, grouped by subject: `LESSONS-DIGEST.md`. This file stays the evidence.
+
 These are recurring, evidence-backed failure patterns and operating lessons. A historical number is not current state; re-query it before using it as a present-tense fact.
 
 ## 1. One controller beats many cooks

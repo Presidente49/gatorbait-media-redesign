@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GatorBait game-day card</title>
+<link rel="stylesheet" href="card.css">
+</head>
+<body class="fmt-landscape type-final">
+<!--
+  Game-day card. One page, four card types, three sizes. Drive it with query parameters:
+    ?type=pregame|final|halftime|quote   (default final)
+    &format=landscape|portrait|square    (1200x675, 1080x1350, 1080x1080; default landscape)
+    &data=sample/final-missouri.json     (only when served over http; render.mjs injects the JSON itself)
+  Use render.mjs to make the PNGs. See README.md for the JSON shape.
+-->
+<main id="card" aria-label="GatorBait game-day card"></main>
+<script src="card.js"></script>
+</body>
+</html>

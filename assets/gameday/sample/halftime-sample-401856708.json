@@ -1,0 +1,39 @@
+{
+  "source": "ESPN event 401856708",
+  "eventId": "401856708",
+  "sample": true,
+  "status": "halftime",
+  "statusText": "Halftime",
+  "kicker": "SEC · Week 5",
+  "date": "2026-10-03T19:50Z",
+  "venue": "Memorial Stadium",
+  "city": "Columbia, MO",
+  "tv": "ABC",
+  "focus": "FLA",
+  "teams": [
+    {
+      "abbr": "MIZ",
+      "name": "Missouri",
+      "homeAway": "home",
+      "rank": 25,
+      "record": "4-1",
+      "confRecord": "1-1",
+      "confName": "SEC",
+      "score": 20,
+      "winner": true
+    },
+    {
+      "abbr": "FLA",
+      "name": "Florida",
+      "homeAway": "away",
+      "rank": 8,
+      "record": "4-1",
+      "confRecord": "2-1",
+      "confName": "SEC",
+      "score": 10,
+      "winner": false
+    }
+  ],
+  "stats": [],
+  "line": null
+}

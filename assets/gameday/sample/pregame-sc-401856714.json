@@ -1,0 +1,42 @@
+{
+  "source": "ESPN event 401856714",
+  "eventId": "401856714",
+  "sample": false,
+  "status": "pregame",
+  "statusText": "10/10 - 12:45 PM EDT",
+  "kicker": "SEC · Week 6",
+  "date": "2026-10-10T16:45Z",
+  "venue": "Ben Hill Griffin Stadium",
+  "city": "Gainesville, Fla.",
+  "tv": "SEC Network",
+  "focus": "FLA",
+  "teams": [
+    {
+      "abbr": "FLA",
+      "name": "Florida",
+      "homeAway": "home",
+      "rank": 16,
+      "record": "4-1",
+      "confRecord": "2-1",
+      "confName": "SEC",
+      "score": null,
+      "winner": false
+    },
+    {
+      "abbr": "SC",
+      "name": "South Carolina",
+      "homeAway": "away",
+      "rank": null,
+      "record": "2-3",
+      "confRecord": "0-3",
+      "confName": "SEC",
+      "score": null,
+      "winner": false
+    }
+  ],
+  "stats": [],
+  "line": {
+    "details": "FLA -10.5",
+    "overUnder": 59.5
+  }
+}

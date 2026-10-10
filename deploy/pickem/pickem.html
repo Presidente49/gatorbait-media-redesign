@@ -1,0 +1,141 @@
+<style id="gbm-pickem-v1">
+html:has(#gbm-pk.pk-page) #SITE_PAGES{display:none!important}
+#gbm-pk,#gbm-pk *{box-sizing:border-box}
+:where(#gbm-pk) :is(button,input){font-family:inherit}
+#gbm-pk{--b:#0021A5;--o:#FA4616;--ink:#0b1b45;--mut:#4a5670;--ln:#d5dbe7;--cn:"Barlow Condensed",Barlow,Arial,sans-serif;background:#fff;color:var(--ink);font:16px/1.5 Barlow,Arial,sans-serif;position:relative;z-index:3}
+.pk-w{max-width:720px;margin:auto;padding:0 16px 32px}
+.pk-hd{background:var(--b);color:#fff;padding:22px 16px 20px;border-bottom:5px solid var(--o)}
+.pk-hd>div{max-width:688px;margin:auto}
+.pk-k{font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+#gbm-pk h2,#gbm-pk h3{font-family:var(--cn);line-height:1.05;margin:0}
+#gbm-pk h2{font-size:clamp(34px,9vw,52px);font-weight:800;margin:6px 0}
+#gbm-pk h3{font-size:26px;font-weight:800;margin:28px 0 10px}
+.pk-hd p{margin:4px 0 0}
+.pk-sp{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border:1px solid var(--ln);border-left:5px solid var(--o);padding:12px 14px;margin:16px 0 4px;font-size:15px}
+.pk-sp img{max-height:40px;max-width:140px}
+.pk-sp b{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+#gbm-pk a{color:var(--b);font-weight:700}
+.pk-row{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--ln)}
+.pk-t{flex:1;font:800 24px/1.1 var(--cn);min-width:0}
+.pk-st{width:52px;height:52px;border:2px solid var(--b);background:#fff;color:var(--b);font-weight:700;font-size:28px;line-height:1;cursor:pointer;flex:none}
+.pk-n{width:72px;height:52px;text-align:center;font-weight:800;font-size:30px;color:var(--ink);border:2px solid var(--ln);flex:none}
+#gbm-pk label{display:block;font-weight:700;margin:16px 0 4px}
+.pk-in{width:100%;min-height:50px;padding:10px 12px;font-size:17px;color:var(--ink);border:2px solid var(--ln);background:#fff}
+#gbm-pk input:focus-visible,#gbm-pk button:focus-visible,#gbm-pk a:focus-visible,#gbm-pk summary:focus-visible{outline:3px solid var(--o);outline-offset:2px}
+.pk-h{font-size:14px;color:var(--mut);margin:4px 0 0}
+#gbm-pk .pk-c{display:flex;gap:12px;align-items:flex-start;font-weight:400;margin-top:18px;cursor:pointer}
+#gbm-pk .pk-c input{width:26px;height:26px;flex:none;margin:0;accent-color:var(--b)}
+.pk-go{width:100%;min-height:58px;margin-top:20px;border:0;background:var(--o);color:#fff;font:800 22px/1 var(--cn);letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+.pk-go[disabled]{opacity:.6;cursor:wait}
+.pk-msg{min-height:24px;margin:12px 0 0;font-weight:700}
+.pk-msg.err{color:#b3261e}
+.pk-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#gbm-pk .pk-box{background:var(--b);color:#fff;padding:18px 16px;margin-top:18px}
+#gbm-pk .pk-box a,#gbm-pk .pk-box button{color:#fff}
+#gbm-pk .pk-box button{background:none;border:2px solid #fff;min-height:48px;padding:0 18px;font-weight:700;font-size:16px;margin-top:12px;cursor:pointer}
+#gbm-pk table{width:100%;border-collapse:collapse;font-size:16px}
+#gbm-pk th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);text-align:left;border-bottom:2px solid var(--b);padding:6px 4px}
+#gbm-pk td{padding:10px 4px;border-bottom:1px solid var(--ln)}
+#gbm-pk td:last-child,#gbm-pk th:last-child{text-align:right;font-weight:800}
+#gbm-pk details{margin-top:22px;border-top:1px solid var(--ln);padding-top:10px;font-size:15px}
+#gbm-pk summary{font-weight:700;cursor:pointer;min-height:44px;display:flex;align-items:center}
+#gbm-pk ul{padding-left:20px;margin:6px 0}
+</style>
+<script>(function(){
+var C=Object.assign({
+path:/^\/pick-em\/?$/,
+gameId:'2026-10-10-south-carolina',
+opp:'South Carolina',
+week:'Homecoming week',
+label:'Sat., Oct. 10 · Ben Hill Griffin Stadium · Kickoff TBA',
+lockAt:'2026-10-10T16:00:00Z',
+clientId:'1565816d-bbbc-45c1-b82a-31f10d3e2c71',
+formId:'',
+season:2026,
+board:'PickEmBoard',
+boardUrl:'',
+sponsor:{name:'',logo:'',url:'',prize:''},
+pitchUrl:'/contact'
+},window.GBM_PICKEM||{});
+var D=function(i){return document.getElementById(i)},API='https://www.wixapis.com',KT='gbm-capture-token',KP='gbm-pickem-'+C.gameId;
+function now(){return window.GBM_PICKEM_NOW?Date.parse(window.GBM_PICKEM_NOW):Date.now()}
+function locked(){return now()>=Date.parse(C.lockAt)}
+function get(s,k){try{return window[s].getItem(k)}catch(_){return null}}
+function put(s,k,v){try{window[s].setItem(k,v)}catch(_){}}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return'&#'+c.charCodeAt(0)+';'})}
+function emit(o){try{document.dispatchEvent(new CustomEvent('gbm:pickem',{detail:o}))}catch(_){}if(window.dataLayer)window.dataLayer.push({event:'gbm_pickem',gbm_pickem_outcome:o.outcome,gbm_pickem_game:C.gameId})}
+var BAD=/fuck|shit|cunt|bitch|nigg|fagg|whore|slut|rape|nazi|kkk|retard|twat|wank|jizz|pussy|dildo|bastard|asshole|motherf|cocksuck|porn|buddymartin|gatorbait|admin|moderator|official|ufgators|floridagators/,
+BADW=/^(ass|cock|dick|fag|tits?|cum|hoe?|damn|piss|crap|sex|kys)$/;
+function csProblem(s){if(s.length<2||s.length>20)return'Callsign: 2 to 20 characters.';if(!/^[A-Za-z0-9][A-Za-z0-9 _.'-]*$/.test(s))return'Callsign: letters, numbers, spaces, - _ . \' only.';
+var f=s.toLowerCase().replace(/[0134578@$!|]/g,function(c){return{0:'o',1:'i',3:'e',4:'a',5:'s',7:'t',8:'b','@':'a',$:'s','!':'i','|':'i'}[c]});
+if(BAD.test(f.replace(/[^a-z]/g,''))||f.split(/[^a-z]+/).some(function(w){return BADW.test(w)}))return'Pick a different callsign. Keep it clean.';return''}
+function post(u,b,t){var h={'Content-Type':'application/json'};if(t)h.Authorization=t;return fetch(API+u,{method:'POST',credentials:'omit',headers:h,body:JSON.stringify(b)})}
+function token(){
+try{var c=JSON.parse(get('sessionStorage',KT)||'null');if(c&&c.t&&c.x>Date.now()+60000)return Promise.resolve(c.t)}catch(_){}
+return post('/oauth2/token',{clientId:C.clientId,grantType:'anonymous'})
+.then(function(r){return r.json()}).then(function(j){if(!j||!j.access_token)throw Error('token');put('sessionStorage',KT,JSON.stringify({t:j.access_token,x:Date.now()+(+j.expires_in||14400)*1e3}));return j.access_token})}
+function sponsor(){var s=C.sponsor||{};
+if(!s.name)return'<div class="pk-sp"><b>Presented by</b><span>Your business here. <a href="'+esc(C.pitchUrl)+'">Sponsor GatorBait Pick \'Em</a></span></div>';
+var n=s.logo?'<img src="'+esc(s.logo)+'" alt="'+esc(s.name)+'">':'<strong>'+esc(s.name)+'</strong>';
+return'<div class="pk-sp"><b>Presented by</b>'+(s.url?'<a href="'+esc(s.url)+'" rel="sponsored noopener" target="_blank">'+n+'</a>':n)+(s.prize?'<span>This week\'s prize: '+esc(s.prize)+'</span>':'')+'</div>'}
+function team(id,name,v){return'<div class="pk-row"><span class="pk-t" id="'+id+'-l">'+esc(name)+'</span><button type="button" class="pk-st" data-d="-1" data-t="'+id+'" aria-label="'+esc(name)+' minus one">−</button><input class="pk-n" id="'+id+'" type="number" inputmode="numeric" min="0" max="99" value="'+v+'" aria-labelledby="'+id+'-l" required><button type="button" class="pk-st" data-d="1" data-t="'+id+'" aria-label="'+esc(name)+' plus one">+</button></div>'}
+function shell(){
+return'<div class="pk-hd"><div><div class="pk-k">GatorBait Pick \'Em · '+esc(C.week)+'</div><h2>Florida vs. '+esc(C.opp)+'</h2><p>'+esc(C.label)+'</p><p>Call the exact score: 3 points for nailing it, 1 for the winner. Weekly winner gets a shout-out on The Buddy Martin Show.</p></div></div><div class="pk-w">'+sponsor()+'<div id="pk-main"></div><h3>Season leaderboard</h3><div id="pk-board"><p class="pk-h">Loading…</p></div>'+
+'<details><summary>How it works</summary><ul><li>No account needed. One entry per email per game; the first counts.</li><li>Tiebreaker: closest to Florida\'s rushing yards (ESPN), then earliest entry.</li><li>Picks lock at kickoff. Only your callsign is shown, never your email.</li><li>Vulgar or impersonating callsigns are removed.</li></ul></details></div>'}
+function formHtml(){
+return'<form id="pk-f" novalidate>'+team('pk-fla','Florida',28)+team('pk-opp',C.opp,17)+
+'<label for="pk-tb">Tiebreaker (optional): Florida rushing yards</label><input class="pk-in" id="pk-tb" type="number" inputmode="numeric" min="0" max="800" placeholder="e.g. 165">'+
+'<label for="pk-cs">Callsign</label><input class="pk-in" id="pk-cs" maxlength="20" autocomplete="nickname" aria-describedby="pk-csh" required><p class="pk-h" id="pk-csh">Shown on the leaderboard and on the show.</p>'+
+'<label for="pk-em">Email</label><input class="pk-in" id="pk-em" type="email" autocomplete="email" inputmode="email" aria-describedby="pk-emh" required><p class="pk-h" id="pk-emh">Only to reach you if you win, unless you tick the box. Never shown.</p>'+
+'<div class="pk-hp" aria-hidden="true"><label for="pk-web">Website</label><input id="pk-web" tabindex="-1" autocomplete="off"></div>'+
+'<label class="pk-c"><input type="checkbox" id="pk-ok"><span>Yes, email me GatorBait Magazine and GatorBait Media news about the Florida Gators. I can unsubscribe anytime.</span></label>'+
+'<button class="pk-go" type="submit">Lock my pick</button><p class="pk-msg" id="pk-msg" role="status" aria-live="polite"></p></form>'}
+function done(p,fresh){var m=D('pk-main');if(!m)return;
+m.innerHTML='<div class="pk-box" tabindex="-1" id="pk-done"><strong>'+(fresh?'You\'re in':'Your pick is in')+': Florida '+p.f+', '+esc(C.opp)+' '+p.o+'.</strong><p>Callsign '+esc(p.c)+'. Your first entry counts. Winner announced on The Buddy Martin Show, Mon., Wed., Thu., 9 p.m. ET.</p><button type="button" id="pk-sh">Challenge a friend</button></div>';
+if(fresh)D('pk-done').focus();
+D('pk-sh').onclick=function(){var t='I picked Florida '+p.f+', '+C.opp+' '+p.o+' in GatorBait Pick \'Em. Your call?',u=location.origin+'/pick-em';
+if(navigator.share)navigator.share({text:t,url:u}).catch(function(){});else if(navigator.clipboard)navigator.clipboard.writeText(t+' '+u).then(function(){D('pk-sh').textContent='Link copied'})}}
+function lockedView(){var m=D('pk-main');if(m)m.innerHTML='<div class="pk-box"><strong>Picks are locked for '+esc(C.opp)+'.</strong><p>Results after the final; winner on The Buddy Martin Show, Mon., Wed., Thu., 9 p.m. ET.</p></div>'}
+function main(){
+if(locked())return lockedView();
+var mine=null;try{mine=JSON.parse(get('localStorage',KP)||'null')}catch(_){}
+if(mine)return done(mine,false);
+var m=D('pk-main');m.innerHTML=formHtml();
+var f=D('pk-f'),msg=D('pk-msg');
+f.addEventListener('click',function(e){var b=e.target.closest('.pk-st');if(!b)return;var i=D(b.dataset.t);i.value=Math.max(0,Math.min(99,(parseInt(i.value,10)||0)+ +b.dataset.d))});
+function say(t,bad){msg.textContent=t;msg.className='pk-msg'+(bad?' err':'')}
+f.addEventListener('submit',function(e){e.preventDefault();
+var g=D,fl=g('pk-fla').value.trim(),op=g('pk-opp').value.trim(),tb=g('pk-tb').value.trim(),cs=g('pk-cs').value.replace(/\s+/g,' ').trim(),em=g('pk-em').value.trim().toLowerCase(),ok=g('pk-ok').checked;
+if(g('pk-web').value){emit({outcome:'honeypot'});return done({f:fl,o:op,c:cs||'Fan'},true)}
+if(locked()){emit({outcome:'late'});return lockedView()}
+var F=+fl,O=+op,T=tb===''?null:+tb,bad=function(t,id){say(t,1);g(id).focus()};
+if(!/^\d{1,2}$/.test(fl)||!/^\d{1,2}$/.test(op))return bad('Scores must be whole numbers from 0 to 99.','pk-fla');
+if(F===O)return bad('College football has no ties. Pick a winner.','pk-fla');
+if(T!==null&&(!/^\d{1,3}$/.test(tb)||T>800))return bad('Tiebreaker: rushing yards from 0 to 800, or leave it blank.','pk-tb');
+var p=csProblem(cs);if(p)return bad(p,'pk-cs');
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em))return bad('Enter a valid email so we can reach you if you win.','pk-em');
+if(!C.formId){say('Pick \'Em opens soon. Check back shortly.',1);return}
+var v={email_pickem:em,callsign:cs,game_id:C.gameId,pick_florida:F,pick_opponent:O,subscribe_pickem:ok};if(T!==null)v.tiebreak_rush=T;
+var btn=f.querySelector('.pk-go');btn.disabled=true;say('Locking it in…');
+token().then(function(t){return post('/form-submission-service/v4/submissions',{submission:{formId:C.formId,submissions:v}},t)})
+.then(function(r){if(r.status===401)put('sessionStorage',KT,'');if(!r.ok)throw Error(r.status);
+var mine={f:F,o:O,t:T,c:cs};put('localStorage',KP,JSON.stringify(mine));emit({outcome:'submitted',consent:ok});done(mine,true)})
+.catch(function(){btn.disabled=false;emit({outcome:'failed'});say(locked()?'Picks just locked. Catch the next game.':'That didn\'t go through. Try again in a minute.',1)})})}
+function boardHtml(rows,last){
+if(!rows||!rows.length)return'<p class="pk-h">The board fills in after the first final. Be the first name on it.</p>';
+return(last&&last.winner?'<p>Last week vs. '+esc(last.opponent)+': <strong>'+esc(last.winner.callsign)+'</strong> won with '+last.winner.points+' points.</p>':'')+
+'<table aria-label="Season leaderboard"><thead><tr><th scope="col">#</th><th scope="col">Callsign</th><th scope="col">Exact</th><th scope="col">Pts</th></tr></thead><tbody>'+rows.slice(0,10).map(function(r){return'<tr><td>'+(+r.rank)+'</td><td>'+esc(r.callsign)+'</td><td>'+(+r.exact||0)+'</td><td>'+(+r.points)+'</td></tr>'}).join('')+'</tbody></table>'}
+function loadBoard(){var el=D('pk-board');if(!el)return;
+var fromUrl=function(){if(!C.boardUrl)return Promise.reject();return fetch(C.boardUrl,{credentials:'omit'}).then(function(r){return r.json()}).then(function(b){return{rows:b.leaderboard,last:b.lastWeek}})};
+token().then(function(t){return post('/wix-data/v2/items/query',{dataCollectionId:C.board,query:{filter:{season:C.season},sort:[{fieldName:'rank',order:'ASC'}],paging:{limit:10}}},t)})
+.then(function(r){if(!r.ok)throw Error(r.status);return r.json()}).then(function(j){var rows=(j.dataItems||[]).map(function(d){return d.data});if(!rows.length&&C.boardUrl)throw Error('empty');return{rows:rows}})
+.catch(fromUrl).then(function(b){el.innerHTML=boardHtml(b.rows,b.last)},function(){el.innerHTML=boardHtml([])})}
+function sync(){var slot=D('gbm-pickem-slot'),on=slot||C.path.test(location.pathname),old=D('gbm-pk');
+if(!on){if(old)old.remove();return}if(old||!document.body)return;
+var m=document.createElement('section');m.id='gbm-pk';m.setAttribute('aria-label','GatorBait Pick \'Em');m.innerHTML=shell();
+if(slot)slot.appendChild(m);else{m.className='pk-page';var a=D('gbm-mobile-shell-host')||D('gbm-site-header');if(a&&a.parentNode===document.body)document.body.insertBefore(m,a.nextSibling);else document.body.insertBefore(m,document.body.firstChild)}
+main();loadBoard();emit({outcome:'shown'})}
+function schedule(){[0,250,900].forEach(function(ms){setTimeout(sync,ms)})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedule,{once:true});else schedule();
+window.addEventListener('popstate',schedule);window.addEventListener('gbmroutechange',schedule);
+})();</script>

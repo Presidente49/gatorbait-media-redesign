@@ -1,5 +1,5 @@
 {
-  "commit": "922fc4a400054723191f67dcb1ce73515252f0e9",
-  "updated": "2026-10-10T14:30:00Z",
-  "note": "Buddy + Franz split lead, old-game stories out (PR #210). Rollback: set commit to f9c55dc6d447c70ec18c8757d1e79eb17f98fb73."
+  "commit": "90b98948ded328a6d9b99c5958287e466a33124b",
+  "updated": "2026-10-10T14:45:00Z",
+  "note": "Buddy's newest column leads the split (PR #212). Rollback: set commit to 922fc4a400054723191f67dcb1ce73515252f0e9."
 }

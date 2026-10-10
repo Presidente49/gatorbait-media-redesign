@@ -355,7 +355,18 @@
       '<a class="fp-wordmark" href="/" aria-label="GatorBait Media home">GatorBait<small>Media</small></a>' +
       '<div class="fp-mast-right"><a class="fp-signin" href="' + esc(L.signin) + '">Sign in</a><a class="fp-btn" href="' + esc(L.subscribe) + '"><span class="fp-cta-long">Join All Access</span><span class="fp-cta-short">Join</span> <span aria-hidden="true">→</span></a></div></div></header>';
   }
+  /* Game-day banner across the very top (Brenden, Oct. 10: "it should say game day across the top").
+   * Pre: matchup, kickoff and countdown. Live/final: the score. Replaces the Next bug and quick-link chips on game day. */
+  function gdBand(gs) {
+    var florida = gs.away.name === 'Florida', fl = florida ? gs.away : gs.home, opp = florida ? gs.home : gs.away;
+    function nm(x) { return (x.rank ? 'No. ' + x.rank + ' ' : '') + x.name; }
+    var mid;
+    if (gs.phase === 'pre') mid = '<span class="fp-gd-match">' + esc(nm(opp)) + ' at ' + esc(nm(fl)) + '</span><small>' + esc(String(gs.when || '').replace(/^[^·]*·\s*/, '')) + '</small>' + (gs.kickoff ? cd(new Date(gs.kickoff).toISOString()) : '');
+    else mid = '<span class="fp-gd-match">' + esc(opp.name) + ' ' + esc(opp.score == null ? 0 : opp.score) + ', ' + esc(fl.name) + ' ' + esc(fl.score == null ? 0 : fl.score) + '</span><small>' + esc(gs.phase === 'final' ? 'Final' : gs.phase === 'half' ? 'Halftime' : gs.clock || 'Live') + '</small>';
+    return '<div class="fp-gdtop" role="region" aria-label="Game day"><span class="fp-gd-tag">Game day</span>' + mid + '</div>';
+  }
   function bugHtml(sb, gs) {
+    if (gs && modes(sb).gameday) return '';
     var lastA = '', nextA = '';
     if (gs && gs.phase !== 'pre') {
       lastA = '<a class="fp-bug-last" href="' + esc((gs.links[0] && gs.links[0][1]) || L.schedule) + '"><span class="fp-bug-tag" data-state="' + (gs.phase === 'final' ? 'final' : 'live') + '">' + (gs.phase === 'final' ? 'Final' : gs.phase === 'half' ? 'Half' : 'Live') + '</span>' +
@@ -571,7 +582,7 @@
     if (!gs || !gs.away || !gs.home) return '';
     var phase = gs.phase === 'half' ? 'half' : gs.phase, opp = gs.away.name === 'Florida' ? gs.home : gs.away;
     function team(s) { return '<span class="fp-tn-team"><small>' + esc([s.rank ? 'No. ' + s.rank : '', s.record || ''].filter(Boolean).join(' · ') || ' ') + '</small><b>' + esc(s.name) + '</b></span>'; }
-    var re = new RegExp(String(opp.name || '').replace(/[.*+?^${}()|[\]\\]/g, '\\  function hubHtml(latest, sb, posts, used) {'), 'i');
+    var re = new RegExp(String(opp.name || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
     var about = posts.filter(function (p) { return p.url !== leadUrl && re.test(p.title + ' ' + (p.excerpt || '')); }).slice(0, 3);
     var first = gs.links[0], primary = first ? [first[0], first[1]] : sb.next && sb.next.previewUrl ? ['Game preview', sb.next.previewUrl] : sb.last && sb.last.recapUrl && gs.phase === 'final' ? ['Read the recap', sb.last.recapUrl] : ['Scores & schedule', L.schedule];
     var when = gs.when || '', score = '<div class="fp-tn-score"><b data-tn="away">' + (gs.away.score == null ? '0' : esc(gs.away.score)) + '</b><span>–</span><b data-tn="home">' + (gs.home.score == null ? '0' : esc(gs.home.score)) + '</b></div>';
@@ -667,14 +678,14 @@
     // Newest issue first (magazine.cover), then up to two earlier issues (magazine.previous: [{image, caption}]). One cover
     // renders exactly as before; two or more fade through each other (see the rotator below the render).
     function magSrc(c) { return 'https://static.wixstatic.com/media/' + c.image.id.replace(/(?:~mv2)+$/, '') + '~mv2.' + c.image.ext; }
-    var magList = [{ image: cover.image, caption: issue.number + ' · ' + issue.week }].concat((magazine.previous || []).filter(function (c) { return c && c.image && c.image.id && c.image.ext; })).slice(0, 3);
+    var magList = [{ image: cover.image, caption: issue.number + ' · ' + issue.week }].concat((weekFocusOn() ? [] : magazine.previous || []).filter(function (c) { return c && c.image && c.image.id && c.image.ext; })).slice(0, 3);
     var magCovers = magList.length < 2 ? img(coverSrc, cover.image.alt, false, cover.image.width || 864, cover.image.height || 1536, '(max-width: 599px) 76vw, 320px') :
       magList.map(function (c, i) { return '<span class="fp-mag-slide' + (i ? '' : ' is-on') + '" data-caption="' + esc(c.caption || '') + '">' + img(magSrc(c), c.image.alt || '', false, c.image.width || 864, c.image.height || 1536, '(max-width: 599px) 76vw, 320px') + '</span>'; }).join('');
     var mMag = '<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><h2>GatorBait Magazine</h2>' +
       '<button type="button" class="fp-cover fp-mag-open" style="aspect-ratio:' + (cover.image.width || 864) + '/' + (cover.image.height || 1536) + '" aria-expanded="false" aria-controls="fp-mag-reader" aria-label="Open GatorBait Magazine">' +
       magCovers + '<span class="fp-mag-hint">Tap cover to open <span aria-hidden="true">↗</span></span></button>' +
       '<div class="fp-mag-copy"><p>' + esc(issue.number) + ' · ' + esc(issue.week) + '</p></div>' +
-      '<div class="fp-mag-reader" id="fp-mag-reader" hidden><div class="fp-mag-tools"><button type="button" class="fp-btn fp-mag-close" aria-label="Close magazine">Close magazine</button><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine ↗</a></div><iframe title="GatorBait Magazine — Missouri postgame edition" loading="lazy" data-src="' + esc(L.magazine) + '?embed=home#pm-contents"></iframe><p><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine <span aria-hidden="true">→</span></a></p></div></section>';
+      '<div class="fp-mag-reader" id="fp-mag-reader" hidden><div class="fp-mag-tools"><button type="button" class="fp-btn fp-mag-close" aria-label="Close magazine">Close magazine</button><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine ↗</a></div><iframe title="GatorBait Magazine — ' + esc(issue.number) + '" loading="lazy" data-src="' + esc(L.magazine) + '?embed=home#pm-contents"></iframe><p><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine <span aria-hidden="true">→</span></a></p></div></section>';
     // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
     var mNews = window.GBM_CAPTURE ? window.GBM_CAPTURE.html('home') : '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
     return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show and photos. Everything GatorBait, in one place.</p></div><div class="fp-hub-grid">' +
@@ -793,7 +804,7 @@
     root.setAttribute('data-fp-scoreboard', sb.source);
     root.setAttribute('data-gazette-source', fresh ? 'current-feed' : 'last-known-feed');
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
-    root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + scoresHtml(sb) + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
+    root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + (mode.gameday && gs ? gdBand(gs) : '') + scoresHtml(sb) + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
       (gwCfg() ? wxHtml() : roadHtml(sb)) + '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
       hubHtml(latest, sb, posts, used) + '</main>';

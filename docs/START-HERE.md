@@ -18,7 +18,7 @@ This is the one rulebook. Every Claude, Codex or ChatGPT session reads it first.
 - Site maintenance inside the tested stack: embeds, loaders, redirects, SEO text, the game-day front page as Brenden described it.
 - Repo housekeeping: branches, PRs, merging docs-only and data-only PRs, deleting unused files after a reference check, compressing these notes.
 - Routines: creating, re-pointing, retiring; dispatching and unblocking workers.
-- Writer coordination: drafting assignment emails and asks. Brenden sends writer emails himself.
+- Game-day and news writing: Jarvis and the Copy Desk write it, published under Brenden Martin. Brenden does not hand out writer assignments (Oct. 10); do not draft assignment emails or remind him about them. Outside writers' pieces are published as they arrive, under their own bylines.
 
 ## 3. Hard lines (Brenden's explicit yes, every time)
 

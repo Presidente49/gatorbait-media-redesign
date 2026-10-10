@@ -442,6 +442,73 @@
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { run(); o.disconnect(); } }, { threshold: .25 }).observe(T); else run();
   }
 
+  /* ---------- Game-day weather (Brenden, Oct. 9: replace the season strip at the top with the forecast + a small radar) ----------
+   * Live Gainesville conditions, the kickoff hour plus the next six from the National Weather Service API (CORS-enabled, no key), and a lazy
+   * KJAX radar loop. The shell (kickoff chip + countdown) renders with the page; each data part fills in on its own and hides itself if its feed
+   * fails, inside a box with a fixed minimum height so nothing moves. Config: BUNDLE.gameWeather. The season band source (roadHtml) stays. */
+  function gwCfg() { var g = BUNDLE.gameWeather; return g && g.on && Date.parse(g.from) <= now() && now() < Date.parse(g.until) && Date.parse(g.kickoff) ? g : null; }
+  function gwHour(ms) { var p = new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour: 'numeric', hour12: true }).format(new Date(ms)).split(' '); return p[0] + ' ' + p[1].toLowerCase().replace(/(.)m/, '$1.m.'); }
+  function wxHtml() {
+    var g = gwCfg(); if (!g) return '';
+    return '<section id="gbm-wx" aria-label="Game-day forecast for Gainesville"><div class="wx-in"><div class="wx-hd"><div><p class="wx-k">Game-day forecast · Gainesville</p><h2>' + esc(g.opp) + ' <span>at Florida</span></h2></div>' +
+      '<p class="wx-chip"><b>Kickoff ' + esc(g.kickLabel) + '</b><span data-wx-cd="' + esc(new Date(g.kickoff).toISOString()) + '">…</span></p></div>' +
+      '<div class="wx-body"><div class="wx-main"><p class="wx-alert" role="status" hidden></p><div class="wx-now" hidden></div><div class="wx-grid" role="list" aria-label="Hourly forecast from kickoff" hidden></div></div>' +
+      '<figure class="wx-radar" hidden><div class="wx-rbox"><img alt="" width="600" height="550" decoding="async"></div><figcaption>Jacksonville radar loop · NWS</figcaption></figure></div>' +
+      '<p class="wx-src">Rain chance, temperature (°F) and wind (mph) by hour. Source: National Weather Service. Updates every 10 minutes.</p></div></section>';
+  }
+  function gwFetch(u) { return fetch(u, { cache: 'no-store', credentials: 'omit' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }); }
+  function initWeather(root) {
+    var g = gwCfg(), box = root.querySelector('#gbm-wx'); if (!g || !box) return;
+    var kick = Date.parse(g.kickoff), cdEl = box.querySelector('[data-wx-cd]'), nowEl = box.querySelector('.wx-now'), alertEl = box.querySelector('.wx-alert'), grid = box.querySelector('.wx-grid'), fig = box.querySelector('.wx-radar'), img = fig.querySelector('img');
+    function tickCd() {
+      var ms = kick - now();
+      cdEl.textContent = ms <= 0 ? 'Live' : Math.floor(ms / 864e5) + 'd ' + Math.floor(ms % 864e5 / 36e5) + 'h ' + Math.floor(ms % 36e5 / 6e4) + 'm';
+    }
+    tickCd(); if (root.__gbmWxCd) clearInterval(root.__gbmWxCd); root.__gbmWxCd = setInterval(tickCd, 30000);
+    function F(c) { return Math.round(c * 9 / 5 + 32); }
+    function dir(d) { return ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'][Math.round(d / 45) % 8]; }
+    function current() {
+      return gwFetch('https://api.weather.gov/stations/' + g.station + '/observations/latest').then(function (j) {
+        var p = j.properties || {}, t = p.temperature && p.temperature.value, age = now() - Date.parse(p.timestamp);
+        if (t == null || !(age < 3 * 36e5)) throw 0;
+        var w = p.windSpeed && p.windSpeed.value, gust = p.windGust && p.windGust.value, hi = p.heatIndex && p.heatIndex.value;
+        nowEl.innerHTML = '<b>' + F(t) + '°</b><span>' + esc(p.textDescription || 'Now') + (hi != null && F(hi) > F(t) + 1 ? ' · feels like ' + F(hi) + '°' : '') +
+          (w != null ? ' · wind ' + (p.windDirection && p.windDirection.value != null ? dir(p.windDirection.value) + ' ' : '') + Math.round(w * 0.621371) + ' mph' + (gust != null ? ', gusts ' + Math.round(gust * 0.621371) : '') : '') + '</span><small>Now at Gainesville Regional</small>';
+        nowEl.hidden = false;
+      }).catch(function () { nowEl.hidden = true; });
+    }
+    function hourly() {
+      return gwFetch('https://api.weather.gov/gridpoints/' + g.grid + '/forecast/hourly').then(function (j) {
+        var start = Math.max(Math.floor(kick / 36e5) * 36e5, Math.floor(now() / 36e5) * 36e5), rows = ((j.properties || {}).periods || []).filter(function (p) { return Date.parse(p.startTime) >= start; }).slice(0, 7);
+        if (rows.length < 3) throw 0;
+        grid.innerHTML = rows.map(function (p, i) {
+          var r = p.probabilityOfPrecipitation && p.probabilityOfPrecipitation.value;
+          return '<div class="wx-c' + (i === 0 ? ' on' : '') + '" role="listitem"><span class="wx-h">' + esc(gwHour(Date.parse(p.startTime))) + (i === 0 && start === Math.floor(kick / 36e5) * 36e5 ? '<em>Kickoff</em>' : '') + '</span><b class="wx-p">' + (r == null ? '–' : esc(r) + '%') + '</b><b class="wx-t">' + esc(p.temperature) + '°</b><span class="wx-w">' + esc(String(p.windSpeed).replace(' mph', '')) + '</span></div>';
+        }).join('');
+        grid.hidden = false;
+      }).catch(function () { grid.hidden = true; });
+    }
+    function radar() {
+      var src = 'https://radar.weather.gov/ridge/standard/' + g.radar + '_loop.gif?t=' + Math.floor(now() / 6e5);
+      img.onload = function () { fig.hidden = false; }; img.onerror = function () { fig.hidden = true; };
+      if (img.getAttribute('data-ok')) { img.src = src; return; }
+      // The loop is about 1 MB: fetch it only once the panel is on screen.
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); img.setAttribute('data-ok', '1'); img.src = src; } }, { rootMargin: '200px' }).observe(box);
+      else { img.setAttribute('data-ok', '1'); img.src = src; }
+    }
+    // Optional watch/warning line: only a storm-type NWS alert for Gainesville shows (hurricane, tropical storm, storm surge, tornado, flood); no alert, no line.
+    function alerts() {
+      return gwFetch('https://api.weather.gov/alerts/active?point=29.6516,-82.3248').then(function (j) {
+        var hit = ((j && j.features) || []).map(function (f) { return f.properties || {}; }).filter(function (p) { return /hurricane|tropical storm|storm surge|tornado|flood (watch|warning)/i.test(p.event || ''); })[0];
+        if (!hit) throw 0;
+        var head = String(hit.headline || '').replace(/\s+by\s+NWS.*$/i, '');
+        alertEl.textContent = hit.event + (head ? ' · ' + head : ''); alertEl.hidden = false;
+      }).catch(function () { alertEl.hidden = true; });
+    }
+    function all() { current(); hourly(); radar(); alerts(); }
+    all(); if (root.__gbmWx) clearInterval(root.__gbmWx); root.__gbmWx = setInterval(all, 6e5);
+  }
+
   /* ---------- The Tunnel: game-day opener (Brenden, Sept. 30: "tunnel") ----------
    * Renders all three states (countdown, live score, final) and shows one by data-phase, so the feed can
    * move it from pre to live to final in place. Stories about the opponent ride below, never the lead. */
@@ -463,7 +530,7 @@
         '<div class="fp-tn-live">' + score + '<p class="fp-tn-clock" data-tn="clock">' + esc(gs.phase === 'half' ? 'Halftime' : gs.clock || 'Live') + '</p>' + (gs.drive ? '<p class="fp-tn-drive"><b>Drive</b><span data-tn="drive">' + esc(gs.drive) + '</span></p>' : '<p class="fp-tn-drive" hidden><b>Drive</b><span data-tn="drive"></span></p>') + '</div>' +
         '<div class="fp-tn-final">' + score.replace(/data-tn="(away|home)"/g, 'data-tn="$1-final"') + '<p class="fp-tn-clock">Final</p></div>' +
       '</div>' +
-      '<div class="fp-tn-cta"><a class="fp-btn" href="' + esc(primary[1]) + '">' + esc(primary[0]) + '</a><a class="fp-btn fp-ghost" href="#gbm-road">The road ahead</a></div>' +
+      '<div class="fp-tn-cta"><a class="fp-btn" href="' + esc(primary[1]) + '">' + esc(primary[0]) + '</a><a class="fp-btn fp-ghost" href="' + (gwCfg() ? '#gbm-wx">Game-day forecast' : '#gbm-road">The road ahead') + '</a></div>' +
       (about.length ? '<ul class="fp-tn-stories" aria-label="More on ' + esc(opp.name) + '">' + about.map(function (p) { return '<li><a href="' + esc(p.url) + '">' + esc(p.title) + '<span>' + esc(p.author + ' · ' + shortDate(p.date.getTime())) + '</span></a></li>'; }).join('') + '</ul>' : '') +
       '</div></section>';
   }
@@ -673,7 +740,7 @@
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
     root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
-      roadHtml(sb) + '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
+      (gwCfg() ? wxHtml() : roadHtml(sb)) + '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
       hubHtml(latest, sb, posts, used) + '</main>';
     if (!document.getElementById('gbm-fp26-styles')) {
       var style = document.createElement('style'); style.id = 'gbm-fp26-styles'; style.textContent = CSS; document.head.appendChild(style);
@@ -685,6 +752,7 @@
     else document.body.insertBefore(root, document.body.firstChild);
     doc.classList.add('gbm-gazette-live', 'gbm-standalone-live');
     try { initRoad(root); } catch (_) {}
+    try { initWeather(root); } catch (_) {}
     try { imgFallback(root); } catch (_) {}
     try {
       var magOpen = root.querySelector('.fp-mag-open'), magReader = root.querySelector('#fp-mag-reader');
@@ -776,6 +844,7 @@
   // The season band is the one block allowed to change after paint: it sits below the fold, so a band that the
   // feed adds or refreshes only swaps while it is off screen (same card count keeps the same height).
   function patchRoad(root, sb) {
+    if (gwCfg()) return;
     var html = roadHtml(sb); if (!html) return;
     var tmp = document.createElement('div'); tmp.innerHTML = html;
     var fresh = tmp.firstChild, cur = root.querySelector('#gbm-road'), hub = root.querySelector('.fp-hub');

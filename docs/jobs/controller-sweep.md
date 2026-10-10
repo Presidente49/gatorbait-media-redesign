@@ -64,3 +64,16 @@ Master Control running back. Brenden, Oct. 4: "Take over master controller in ch
 Old routine: `trig_018zxPPpA5ujA7E945V4Q37s` (Jarvis: routine watchdog (daily 7:10 a.m. ET))
 
 Routine watchdog. Brenden, Oct. 3: "You have control Jarvis make all the boss decisions." Read-only check, then fix only what is safe. 1) list_triggers (enabled) and list_sessions. 2) For every enabled routine, confirm its target session (persistent_session_id) is not ARCHIVED and not blocked on a permission prompt (status bucket BLOCKED or status REQUIRES_ACTION). 3) If a target is ARCHIVED, unarchive it (reversible) and post one line in #34. If a session is blocked on a permission prompt, tell Brenden once in plain words what to tap. 4) Also flag any routine whose last run FAILED. 5) Update the Control Room hub config/departments notes if a department's state changed. Stay silent if everything is fine. Hard lines unchanged: no list email without Brenden's yes, no pausing or enabling routines, no money, DNS or deleting live content.
+
+
+---
+
+## Learning loop (Brenden, Oct. 10: "all agents working and learning and getting better")
+
+Every job and worker ends the same way, and the controller sweep closes the loop:
+
+1. **Each run records one learning line** in its #34 note only when something was surprising, failed, or took more than one try: "learned: <what> -> <rule>". No learning, no line.
+2. **The sweep (every 4 hours) reads the new "learned:" lines** since the last sweep. For each that repeats, or that cost a visible error, it does exactly one of: add a one-line entry to `skills/master-control/references/LESSONS-DIGEST.md` (docs-only PR, merge it), edit the job file in `docs/jobs/` so the next run does it right, or edit `docs/START-HERE.md` if it is a rule.
+3. **Measure, don't guess.** The sweep keeps a running count in CURRENT-STATE: stories published, front-page checks that found the page wrong, worker stalls, blocked actions. A number that worsens two sweeps in a row gets a fix, not a note.
+4. **Prune.** If a job found nothing for a week, make it run less. If a rule was never used, delete it. Fewer, sharper jobs.
+5. **Workers learn from the repo, not from each other.** Every worker prompt is "read START-HERE, read your job file, read LESSONS-DIGEST." A lesson that is not in those three places does not exist.

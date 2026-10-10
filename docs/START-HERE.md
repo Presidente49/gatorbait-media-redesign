@@ -82,6 +82,7 @@ Nothing is written for a writer who has not filed; a missing promised piece is f
 
 - This page is the rulebook. **Issue #34** is the live log. **`skills/master-control/references/CURRENT-STATE.md`** is the status page. **`LESSONS-DIGEST.md`** is the one-line-per-lesson index; `LESSONS.md` is the evidence.
 - Every new failure mode becomes one line in LESSONS (branch + PR) and a prompt change on the routine that repeats the job.
+- Learning loop: every run ends with at most one "learned:" line in #34; the controller sweep turns repeats into a LESSONS-DIGEST line or a job-file edit (`docs/jobs/controller-sweep.md`, Learning loop). Workers read START-HERE, their job file and LESSONS-DIGEST before acting.
 - Compress, don't accumulate: dated entries older than a week move to `references/history/`; unused files are deleted after a `git grep` shows zero references and they are not a rollback copy. Old-named folders can still hold live adapters; check before deleting.
 - Do not create another repo, handoff file, scheduler or renderer to solve a coordination problem. Issue #3 and the dated `docs/*-2026-09-*.md` files are history.
 - `CLAUDE.md` and `AGENTS.md` are signposts to this page. The `gatorbait-agency` repo is a separate project.

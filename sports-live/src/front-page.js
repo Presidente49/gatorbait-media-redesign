@@ -232,7 +232,7 @@
   }
   function modes(sb) {
     var q = ''; try { q = new URLSearchParams(location.search).get('gbm_fp') || ''; } catch (_) {}
-    var e = et(now()), gameday = q === 'gameday' || (q !== 'day' && q !== 'night' && e.wd === 6 && gameToday(sb));
+    var e = et(now()), gameday = q === 'gameday' || (q !== 'day' && q !== 'night' && e.wd === 6 && gameToday(sb) && !(BUNDLE.gameDayEnds && now() >= Date.parse(BUNDLE.gameDayEnds)));
     var timeNight = e.h >= 19 || e.h < 6 || (gameday && e.h >= 17);
     // Brenden, Oct. 3-4: the everyday look is Gator Day (blue, orange, white) at every hour and on dark-mode phones
     // ("that navy blue is too dark"). `look: "swamp-night"` in the config brings back the Sept. 29 all-day night palette

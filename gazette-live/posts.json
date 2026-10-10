@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida is a double-digit favorite over South Carolina: what the numbers say",
+      "excerpt": "FanDuel lists the Gators at minus-11.5 with a total of 58.5, and numberFire gives Florida a 72.2% chance to win.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-is-an-11-5-point-favorite-over-south-carolina-what-the-numbers-say",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T11:44:51Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida is a double-digit favorite over South Carolina: what the numbers say"
+      }
+    },
+    {
+      "title": "Gators-Gamecocks availability: Vernell Brown III questionable, South Carolina thin up front",
+      "excerpt": "Florida lists receiver Vernell Brown III as questionable. South Carolina has doubtful starters at center, edge rusher and defensive line.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-gamecocks-availability-vernell-brown-iii-questionable-south-carolina-thin-up-front",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T11:44:51Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg/v1/fit/w_1000,h_800,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators-Gamecocks availability: Vernell Brown III questionable, South Carolina thin up front"
+      }
+    },
+    {
       "title": "Stay safe, Gator Nation: Hurricane Isaias",
       "excerpt": "Hurricane Isaias is bringing life-threatening storm surge and heavy rain to the Gulf Coast. Here is what the National Hurricane Center says and what to do.",
       "url": "https://www.gatorbaitmedia.com/post/stay-safe-gator-nation-hurricane-isaias",
@@ -237,34 +265,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Thoughts of the Day: October 7, 2026"
-      }
-    },
-    {
-      "title": "Homecoming Test: No. 16 Florida Hosts South Carolina Saturday at 12:45 p.m.",
-      "excerpt": "Florida (4-1) answers the 45-17 loss at Missouri against a South Carolina team (2-3) with the nation's No. 7 rushing offense, per ESPN. Kickoff is 12:45 p.m. ET on SEC Network.",
-      "url": "https://www.gatorbaitmedia.com/post/homecoming-test-no-16-florida-hosts-south-carolina-saturday-at-12-45-p-m",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-07T12:36:27Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e1b003f3622b4317bdd9555ef894a7aa~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Homecoming Test: No. 16 Florida Hosts South Carolina Saturday at 12:45 p.m."
-      }
-    },
-    {
-      "title": "The College Football Crisis: Corn Dogs vs Commissioners And Why It's A Big Deal!",
-      "excerpt": "There are only so many weekends on the calendar and only so many hits a player’s body can take. Stretch the playoff and something has to go, and the people in charge have already said conference title games could be cut.",
-      "url": "https://www.gatorbaitmedia.com/post/the-college-football-crisis-corn-dogs-vs-commissioners-and-why-it-s-a-big-deal",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-06T20:35:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c387fb02aaaf42ed88517c7a6286ddf6~mv2.jpg/v1/fit/w_1000,h_940,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The College Football Crisis: Corn Dogs vs Commissioners And Why It's A Big Deal!"
       }
     },
     {

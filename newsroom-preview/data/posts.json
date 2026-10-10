@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida is a double-digit favorite over South Carolina: what the numbers say",
+      "excerpt": "FanDuel lists the Gators at minus-11.5 with a total of 58.5, and numberFire gives Florida a 72.2% chance to win.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-is-an-11-5-point-favorite-over-south-carolina-what-the-numbers-say",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T11:44:51Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida is a double-digit favorite over South Carolina: what the numbers say"
+      }
+    },
+    {
+      "title": "Gators-Gamecocks availability: Vernell Brown III questionable, South Carolina thin up front",
+      "excerpt": "Florida lists receiver Vernell Brown III as questionable. South Carolina has doubtful starters at center, edge rusher and defensive line.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-gamecocks-availability-vernell-brown-iii-questionable-south-carolina-thin-up-front",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T11:44:51Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_d3190d83cdfc44549b10b6bd025e57a3~mv2.jpg/v1/fit/w_1000,h_800,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators-Gamecocks availability: Vernell Brown III questionable, South Carolina thin up front"
+      }
+    },
+    {
       "title": "Stay safe, Gator Nation: Hurricane Isaias",
       "excerpt": "Hurricane Isaias is bringing life-threatening storm surge and heavy rain to the Gulf Coast. Here is what the National Hurricane Center says and what to do.",
       "url": "https://www.gatorbaitmedia.com/post/stay-safe-gator-nation-hurricane-isaias",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators Homecoming Guide: Parade, Hall of Fame, Growl"
-      }
-    },
-    {
-      "title": "Swamp gameday guide: Rain odds climb after 2 p.m.",
-      "excerpt": "The National Weather Service forecasts 35 percent rain odds through 2 p.m. Saturday and 83 percent after, so here is the timing, the lightning rules and how to get in.",
-      "url": "https://www.gatorbaitmedia.com/post/swamp-gameday-guide-rain-odds-climb-after-2-p-m",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-08T19:08:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_251fd0ebc3824dac9aa7bc0749fac2ce~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Swamp gameday guide: Rain odds climb after 2 p.m."
-      }
-    },
-    {
-      "title": "Gators-Gamecocks Sells Out; Doering Named SEC Legend",
-      "excerpt": "Florida's Homecoming game against South Carolina is sold out for the 22nd straight home game, and Chris Doering is the Gators' 2026 SEC Football Legend.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-gamecocks-sells-out-doering-named-sec-legend",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-08T19:05:16Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_58d7dd7741bc4895ab8a386b31f8014d~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators-Gamecocks Sells Out; Doering Named SEC Legend"
       }
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "commit": "45a03098bbaebdec015bf0b3b1ab4c3d27fa9155",
-  "updated": "2026-10-10T13:20:00Z",
-  "note": "Scores strip, Missouri out of game week (PR #203, build aa2285d1). Rollback: set commit to 70eb2c5d124ba53d62f9cc8552ecf22abf3cee41."
+  "commit": "69a353b5c5356e7652f4aee401d4f8fde716085b",
+  "updated": "2026-10-10T13:55:00Z",
+  "note": "GAME DAY banner, pregame-only Magazine module (PR #206). Rollback: set commit to 45a03098bbaebdec015bf0b3b1ab4c3d27fa9155."
 }

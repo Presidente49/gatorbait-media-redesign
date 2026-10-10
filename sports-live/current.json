@@ -1,5 +1,5 @@
 {
-  "commit": "f9c55dc6d447c70ec18c8757d1e79eb17f98fb73",
-  "updated": "2026-10-10T14:10:00Z",
-  "note": "Hub game-day graphics (PR #208). Rollback: set commit to 69a353b5c5356e7652f4aee401d4f8fde716085b."
+  "commit": "922fc4a400054723191f67dcb1ce73515252f0e9",
+  "updated": "2026-10-10T14:30:00Z",
+  "note": "Buddy + Franz split lead, old-game stories out (PR #210). Rollback: set commit to f9c55dc6d447c70ec18c8757d1e79eb17f98fb73."
 }

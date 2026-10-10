@@ -1,5 +1,14 @@
 # Master Control Current State
 
+## Oct. 9, ~11 p.m. ET: South Carolina week, chronological order, handoff signposts (Jarvis)
+
+- **Order rule changed (Brenden, Oct. 9):** the front page is strictly chronological, newest first. No writer is pinned as lead; the "Buddy Martin leads" rule is retired. Applied to the overnight story-desk routine; the game-day desk is applying it to the front-page code and docs.
+- **Game, Sat. Oct. 10:** South Carolina at Florida, 12:45 p.m. ET (ESPN). Hurricane Isaias is making landfall far to the west; Gainesville is outside the warning areas. Status checks run 8:30 and 11:30 a.m. ET.
+- **Shipped:** post `21efb548` "Hurricane Isaias reshuffles college football; Gators face rain chance at kickoff", byline Brenden Martin (member for `brenden@gatorbaitmedia.com`), graphics in PR #186. Welcome email campaign `4ee8fd4b` audience verified (16 eligible, 5 removed) for the 8 a.m. ET send. PR #122 (stats data) merged.
+- **Dispatched to the game-day desk:** replace the top schedule strip with live NWS weather (current, hourly, kickoff call-out, small KJAX radar loop) and cycle the front page through the game package; fix the stale Missouri item and duplicate titles. Branch + PR first, claim in #34, no site publish.
+- **Pending on Brenden:** the Mac Editor session (link previews, plans page, PDF page, sitemap, Donate); the blank Wix page at `/florida-football-stats`; the game-day writer-assignment email is drafted in Gmail, unsent.
+- **Handoffs consolidated:** `docs/START-HERE.md` is the one signpost; `CLAUDE.md` and `AGENTS.md` point to it. Issue #34 is the live log and this file is the status page. The `gatorbait-agency` repo is a separate project with its own Codex role and was left alone.
+
 Older dated entries (Oct. 2 back to Sept. 28, 2026) were moved verbatim to `history/CURRENT-STATE-2026-09.md` on Oct. 10, 2026; the standing live facts (embed IDs and revisions, session IDs, store, email list) stay below.
 
 ## Oct. 3, ~2:45 a.m. ET: coordination day, game-day desk restored, Chats board, design system status (Jarvis)

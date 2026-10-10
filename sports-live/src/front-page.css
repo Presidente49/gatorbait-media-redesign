@@ -629,3 +629,5 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-gdg-watch .fp-cd{color:#fff;margin-top:4px}
 @media(min-width:821px){#gbm-live.fp26 .fp-gdgraphics{grid-template-columns:1.5fr 1fr 1fr}}
 @media(prefers-reduced-motion:no-preference){#gbm-live.fp26 .fp-tp-b i{animation:fpBar .9s cubic-bezier(.2,.7,.2,1) both}@keyframes fpBar{from{transform:scaleX(0)}to{transform:none}}}
+#gbm-live.fp26 .fp-gd-dl{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;background:#fa4616;color:#fff;font:800 13px/1 var(--fp-cond);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+#gbm-live.fp26 .fp-gd-dl:hover,#gbm-live.fp26 .fp-gd-dl:focus-visible{background:#fff;color:#0021a5}

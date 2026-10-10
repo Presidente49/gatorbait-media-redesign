@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>GatorBait Game Day: South Carolina at Florida, Oct. 10, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+@page{size:Letter;margin:0}
+*{box-sizing:border-box}
+:root{--b:#0021a5;--o:#fa4616;--ink:#0b1430;--mut:#5a6584;--rule:#d9deea;--pale:#eef2fb}
+body{margin:0;font-family:Barlow,Arial,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pg{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;padding:.5in .55in}
+.pg:last-child{page-break-after:auto}
+h1,h2,h3{font-family:"Barlow Condensed",Barlow,sans-serif;text-transform:uppercase;margin:0;letter-spacing:.01em}
+.kick{font:800 11px/1 Barlow;letter-spacing:.2em;text-transform:uppercase;color:var(--o)}
+.foot{position:absolute;left:.55in;right:.55in;bottom:.32in;display:flex;justify-content:space-between;font:700 9px/1 Barlow;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);border-top:1px solid var(--rule);padding-top:7px}
+/* cover */
+.cover{background:#00136b url("https://static.wixstatic.com/media/16b519_8fde8a97b4b5417591ca49f120d47463~mv2.jpg/v1/fill/w_2200,h_2850,al_c,q_85/cover.jpg") 50% 0/cover no-repeat;color:#fff;padding:.6in}
+.cover:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,19,107,.55) 0%,rgba(0,19,107,0) 18%,rgba(0,19,107,0) 32%,rgba(0,19,107,.78) 52%,rgba(0,19,107,.97) 70%,#00136b 100%)}
+.cover .credit{position:absolute;right:.6in;top:4.6in;font:600 9px/1 Barlow;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.cover .mast{position:relative;display:flex;justify-content:space-between;align-items:flex-start}
+.cover .brand{font:800 46px/.9 "Barlow Condensed";text-transform:uppercase;letter-spacing:.01em}
+.cover .brand small{display:block;font:800 13px/1 Barlow;letter-spacing:.42em;color:#ffb199;margin-top:6px}
+.cover .ed{text-align:right;font:700 12px/1.4 Barlow;letter-spacing:.14em;text-transform:uppercase}
+.cover .ed b{display:block;font:800 22px/1.1 "Barlow Condensed";letter-spacing:.04em;color:#fff}
+.cover .gd{position:relative;margin-top:3.55in;font:800 118px/.82 "Barlow Condensed";text-transform:uppercase;letter-spacing:-.01em}
+.cover .gd span{color:var(--o)}
+.cover .match{position:relative;margin-top:.22in;font:800 44px/.95 "Barlow Condensed";text-transform:uppercase}
+.cover .match i{font-style:normal;color:#ffb199;font-size:30px;margin:0 8px}
+.cover .match small{display:block;font:700 18px/1.2 Barlow;letter-spacing:.06em;color:#c9d4ff;margin-top:6px}
+.cover .meta{position:relative;margin-top:.28in;display:flex;gap:10px;flex-wrap:wrap}
+.cover .meta span{border:1.5px solid rgba(255,255,255,.55);padding:9px 13px;font:800 15px/1 Barlow;letter-spacing:.08em;text-transform:uppercase}
+.cover .meta span.hot{background:var(--o);border-color:var(--o)}
+.cover .tag{position:absolute;left:.6in;right:.6in;bottom:.55in;display:flex;justify-content:space-between;align-items:flex-end;border-top:2px solid rgba(255,255,255,.35);padding-top:12px;font:700 12px/1.4 Barlow;letter-spacing:.1em;text-transform:uppercase}
+.cover .tag b{font:800 20px/1.1 "Barlow Condensed";letter-spacing:.04em;color:#ffb199}
+/* inner */
+.hd{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:4px solid var(--b);padding-bottom:8px;margin-bottom:16px}
+.hd h2{font-size:34px;line-height:.9;color:var(--b)}
+.hd .kick{margin-bottom:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 22px}
+.box{border-top:3px solid var(--o);padding-top:8px}
+.box h3{font-size:19px;color:var(--b);margin-bottom:6px}
+.box p,.box li{font:500 11.2px/1.45 Barlow;margin:0 0 5px}
+.box ul{margin:0;padding-left:15px}
+.box b{font-weight:700}
+.full{grid-column:1/-1}
+.src{font:500 8.6px/1.35 Barlow;color:var(--mut);margin-top:4px}
+.big{font:800 40px/1 "Barlow Condensed";color:var(--b)}
+.pick{display:flex;gap:12px}
+.pick div{flex:1;background:var(--pale);padding:10px 12px}
+.pick b{display:block;font:800 22px/1 "Barlow Condensed";text-transform:uppercase;color:var(--b);margin-top:4px}
+.tp p{margin:7px 0 3px;font:700 10.5px/1 Barlow;color:var(--ink)}
+.tb{display:grid;grid-template-columns:22px 1fr 42px;gap:7px;align-items:center;margin:2px 0}
+.tb b{font:800 10.5px/1 "Barlow Condensed";letter-spacing:.08em}
+.tb .bar{display:block;height:8px;background:#c4cce0;border-radius:4px}
+.tb .bar.w{background:var(--o)}
+.tb em{font:800 13px/1 "Barlow Condensed";font-style:normal;text-align:right}
+table{border-collapse:collapse;width:100%}
+.res td,.res th{font:600 11px/1.3 Barlow;padding:4px 5px;border-bottom:1px solid var(--rule);text-align:left}
+.res th{font:800 9.5px/1 Barlow;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.res td.r{font-weight:800}
+.rosters{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.ros th{font:800 8.5px/1 Barlow;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--b);padding:4px 3px;text-align:left}
+.ros td{font:500 8.9px/1.18 Barlow;padding:2.2px 3px;border-bottom:1px solid #e6e9f2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:1.3in}
+.ros td.n{font:800 9.5px/1.1 "Barlow Condensed";color:var(--o);width:22px}
+.ros tr:nth-child(even) td{background:#f6f8fc}
+.sc .ros th{background:#73000a}
+.sc .hd{border-color:#73000a}.sc .hd h2{color:#73000a}
+.back{background:var(--b);color:#fff}
+.back .hd{border-color:var(--o)}.back .hd h2{color:#fff}
+.back .box h3{color:#fff}.back .box p,.back .box li{color:#dfe5ff}.back .src{color:#aab4cc}
+.back .cta{margin-top:18px;background:var(--o);padding:18px 20px;font:800 28px/1 "Barlow Condensed";text-transform:uppercase}
+.back .cta small{display:block;font:700 13px/1.3 Barlow;text-transform:none;letter-spacing:.02em;margin-top:6px}
+.back .foot{color:#aab4cc;border-color:rgba(255,255,255,.25)}
+</style></head><body>
+
+<section class="pg cover">
+  <div class="mast"><div class="brand">GatorBait<small>Media</small></div><div class="ed">GatorBait program<br>Free edition<b>Saturday, Oct. 10, 2026</b></div></div>
+  <div class="credit">Photo by Chris Spears, GatorBait Media</div>
+  <div class="gd">Game <span>Day</span></div>
+  <div class="match">South Carolina<i>at</i>No. 16 Florida<small>Gamecocks 2-3, 0-3 SEC &nbsp;·&nbsp; Gators 4-1, 2-1 SEC</small></div>
+  <div class="meta"><span class="hot">12:45 p.m. ET</span><span>SEC Network</span><span>Ben Hill Griffin Stadium</span><span>Homecoming</span></div>
+  <div class="tag"><div>The 500th game in The Swamp<br>Free download · print it, fold it, take it in</div><b>gatorbaitmedia.com</b></div>
+</section>
+
+<section class="pg">
+  <div class="hd"><div><p class="kick">Welcome to The Swamp</p><h2>Game day guide</h2></div><p class="kick" style="color:var(--mut)">Oct. 10, 2026</p></div>
+  <div class="grid">
+    <div class="box"><h3>Kickoff and TV</h3>
+      <p><b>12:45 p.m. ET</b> at Ben Hill Griffin Stadium, Gainesville.</p>
+      <p><b>TV:</b> SEC Network. UF graduate Tori Petry is the sideline reporter.</p>
+      <p><b>National radio:</b> ESPN. Former Gators lineman Max Starks calls his first game from The Swamp as analyst.</p>
+      <p class="src">Source: UAA, The Opening Kickoff, Oct. 9</p></div>
+    <div class="box"><h3>Getting in</h3>
+      <p><b>Gates open at 10:45 a.m.</b> Concessions are 50% off from 10:45 to 11:45 a.m.</p>
+      <p><b>Express Entry</b> (enter with your face, not your phone) at Gates 1, 4, 7, 8, 12 and 16.</p>
+      <p><b>Clear bag policy:</b> clear bag up to 12 by 6 by 12 inches, a one-gallon clear resealable bag or a clutch up to 4.5 by 6.5 inches. <b>No umbrellas.</b></p>
+      <p class="src">Source: UAA game day policies</p></div>
+    <div class="box"><h3>Homecoming</h3>
+      <p><b>Sold out:</b> the 22nd straight sellout at Ben Hill Griffin Stadium.</p>
+      <p><b>Mr. Two Bits:</b> basketball greats Vernon Maxwell and Andrew Moten lead the cheer before the game.</p>
+      <p><b>500 games:</b> Saturday is Florida's 500th game at Steve Spurrier-Florida Field since the stadium opened in 1930.</p>
+      <p class="src">Sources: UAA</p></div>
+    <div class="box"><h3>Hall of Fame, Class of 2026</h3>
+      <p>Inducted Friday night: Dedric Dukes (track and field), Vernon Hargreaves (football), Vernon Maxwell (basketball), Mikey Meagher (lacrosse), Andrew Moten (basketball), Logan Shore (baseball), Bridget Sloan (gymnastics) and Kelsey Stewart (softball).</p>
+      <p class="src">Source: UAA</p></div>
+    <div class="box full"><h3>Three storylines</h3>
+      <ul>
+        <li><b>A response game.</b> Florida comes off a 45-17 loss at Missouri, Jon Sumrall's first as Gators coach. South Carolina has lost three straight and eight straight SEC games dating to last season.</li>
+        <li><b>Get Baugh going.</b> Jadan Baugh had five straight 100-yard games before he was held to 13 yards on 12 carries at Missouri. He has 11 rushing touchdowns in five games.</li>
+        <li><b>Stop the run.</b> South Carolina leads the SEC with 256.0 rushing yards a game. Matt Fuller (433 yards) and quarterback LaNorris Sellers (391) have combined for 14 of the Gamecocks' 21 touchdowns.</li>
+      </ul>
+      <p class="src">Sources: UAA, The Opening Kickoff; ESPN</p></div>
+    <div class="box full"><h3>Up next for the Gators</h3>
+      <p>Florida plays at No. 1 Texas on Oct. 17 and meets No. 2 Georgia in Jacksonville on Oct. 31.</p></div>
+  </div>
+  <div class="foot"><span>GatorBait Game Day · South Carolina at Florida</span><span>2</span></div>
+</section>
+
+<section class="pg">
+  <div class="hd"><div><p class="kick">The matchup</p><h2>Gators vs. Gamecocks</h2></div><p class="kick" style="color:var(--mut)">Season to date, five games</p></div>
+  <div class="grid">
+    <div class="box"><h3>Tale of the tape</h3>%%TAPE%%<p class="src">Source: ESPN team statistics. Orange marks the edge.</p></div>
+    <div class="box"><h3>Players to watch</h3>
+      <p><b>RB Jadan Baugh, Florida (No. 13).</b> 11 rushing touchdowns in five games. Tim Tebow's school record is 23 in a season.</p>
+      <p><b>WR Dallas Wilson, Florida (No. 6).</b> Team leader with 18 catches for 302 yards.</p>
+      <p><b>QB LaNorris Sellers, South Carolina (No. 16).</b> 1,059 passing yards and 391 rushing yards.</p>
+      <p><b>RB Matt Fuller, South Carolina (No. 28).</b> 433 rushing yards, fourth in the SEC.</p>
+      <p><b>WR Nyck Harbor, South Carolina (No. 8).</b> 6-5, 239. Loren Meadows calls him and Sellers the most athletic duo Florida has seen this season.</p>
+      <p class="src">Sources: UAA, The Opening Kickoff; GatorBait Media</p></div>
+    <div class="box"><h3>Availability report</h3>
+      <p><b>Florida.</b> Out: RB Kelvin Jimenez (knee). Questionable: WR Vernell Brown III (knee), a game-time decision. Probable: RB London Montgomery, CB Dijon Johnson (ankle).</p>
+      <p><b>South Carolina.</b> Out: DB Jalewis Solomon, DL Kobby Sakyi-Prah, OL Josiah Thompson, WR Jayden Sellers. Doubtful: OL Carter Miller, DB Quay'sheed Scott, DL Julian Walker, DL Gabriel Brownlow-Dindy. Questionable: WR Mazeo Bennett Jr.</p>
+      <p class="src">Source: UAA, updated Friday morning. The SEC's final report posts about 90 minutes before kickoff; check gatorbaitmedia.com.</p></div>
+    <div class="box"><h3>The series</h3>
+      <p><span class="big">31-10-3</span><br>Florida's lead in the series. Saturday is the 45th meeting and the first since 2023. The Gators are 17-2 against South Carolina in Gainesville.</p>
+      <p><b>Last meeting:</b> Florida 41, South Carolina 39, on Oct. 14, 2023, in Columbia. The Gators erased a 10-point fourth-quarter deficit.</p>
+      <p class="src">Sources: UAA; South Carolina game notes</p></div>
+    <div class="box full"><h3>GatorBait picks</h3>
+      <div class="pick"><div>Loren Meadows<b>Florida 31, South Carolina 24</b></div><div>Franz Beard, The Soothsayer<b>Florida by two touchdowns or more</b></div><div>The line<b>Florida -10.5, total 59.5</b><span class="src">DraftKings via ESPN, Saturday morning</span></div></div></div>
+  </div>
+  <div class="foot"><span>GatorBait Game Day · South Carolina at Florida</span><span>3</span></div>
+</section>
+
+<section class="pg">
+  <div class="hd"><div><p class="kick">Roster</p><h2>Florida Gators</h2></div><p class="kick" style="color:var(--mut)">Coach Jon Sumrall · 4-1, 2-1 SEC</p></div>
+  <div class="rosters">%%FLROSTER%%</div>
+  <p class="src" style="margin-top:8px">Source: ESPN roster, Oct. 10, 2026.</p>
+  <div class="foot"><span>GatorBait Game Day · South Carolina at Florida</span><span>4</span></div>
+</section>
+
+<section class="pg sc">
+  <div class="hd"><div><p class="kick">Roster</p><h2>South Carolina Gamecocks</h2></div><p class="kick" style="color:var(--mut)">Coach Shane Beamer · 2-3, 0-3 SEC</p></div>
+  <div class="rosters">%%SCROSTER%%</div>
+  <p class="src" style="margin-top:8px">Source: ESPN roster, Oct. 10, 2026.</p>
+  <div class="foot"><span>GatorBait Game Day · South Carolina at Florida</span><span>5</span></div>
+</section>
+
+<section class="pg back">
+  <div class="hd"><div><p class="kick">The rest of the day</p><h2>Schedule and scores</h2></div></div>
+  <div class="grid">
+    <div class="box"><h3>Florida 2026</h3>
+      <table class="res"><thead><tr><th>Date</th><th>Opponent</th><th>Result</th></tr></thead><tbody>
+      <tr><td>Sept. 5</td><td>Florida Atlantic</td><td class="r">W 66-21</td></tr>
+      <tr><td>Sept. 12</td><td>Campbell</td><td class="r">W 52-3</td></tr>
+      <tr><td>Sept. 19</td><td>at Auburn</td><td class="r">W 44-39</td></tr>
+      <tr><td>Sept. 26</td><td>Ole Miss</td><td class="r">W 52-28</td></tr>
+      <tr><td>Oct. 3</td><td>at Missouri</td><td class="r">L 17-45</td></tr>
+      <tr><td>Oct. 10</td><td>South Carolina</td><td class="r">12:45 p.m.</td></tr>
+      <tr><td>Oct. 17</td><td>at Texas</td><td class="r">Noon</td></tr>
+      <tr><td>Oct. 31</td><td>Georgia (Jacksonville)</td><td class="r">3:30 p.m.</td></tr>
+      <tr><td>Nov. 7</td><td>Oklahoma</td><td class="r">TBA</td></tr>
+      <tr><td>Nov. 14</td><td>at Kentucky</td><td class="r">TBA</td></tr>
+      <tr><td>Nov. 21</td><td>Vanderbilt</td><td class="r">TBA</td></tr>
+      <tr><td>Nov. 27</td><td>at Florida State</td><td class="r">3:30 p.m.</td></tr>
+      </tbody></table><p class="src">Times ET. Source: ESPN, SEC.</p></div>
+    <div class="box"><h3>Around the SEC today</h3>
+      <table class="res"><thead><tr><th>Time (ET)</th><th>Game</th><th>TV</th></tr></thead><tbody>
+      <tr><td>Noon</td><td>Texas A&amp;M at Missouri</td><td>ABC</td></tr>
+      <tr><td>12:45 p.m.</td><td>South Carolina at Florida</td><td>SECN</td></tr>
+      <tr><td>3:30 p.m.</td><td>Texas vs. Oklahoma</td><td>ABC</td></tr>
+      <tr><td>3:30 p.m.</td><td>Ole Miss at Vanderbilt</td><td>ESPN</td></tr>
+      <tr><td>4:15 p.m.</td><td>Tennessee at Arkansas</td><td>SECN</td></tr>
+      <tr><td>7 p.m.</td><td>LSU at Kentucky</td><td>ESPN</td></tr>
+      <tr><td>7:30 p.m.</td><td>Georgia at Alabama</td><td>ABC</td></tr>
+      </tbody></table><p class="src">Source: SEC. Live scores on the GatorBait front page.</p>
+      <h3 style="margin-top:14px">Recruiting: who's in town</h3>
+      <p><b>WR Easton Royal</b>, 2027, Brother Martin (New Orleans). Five-star (247Sports), No. 1 receiver (Rivals). Committed to Texas, making his second Florida game-day visit this fall.</p>
+      <p><b>EDGE Myles Tate</b>, 2028, Woodward Academy (Atlanta). Four-star (247Sports).</p>
+      <p><b>Florida's 2027 class:</b> 25 commitments, No. 8 nationally in the 247Sports Composite and Rivals Industry rankings.</p>
+      <p class="src">Sources: 247Sports, Rivals/On3, Oct. 6-10</p>
+      <h3 style="margin-top:14px">The Buddy Martin Show</h3>
+      <p>Live on YouTube and Facebook, Mondays, Wednesdays and Thursdays at 9 p.m. ET.</p></div>
+  </div>
+  <div class="cta">Follow the game live at gatorbaitmedia.com<small>Live scores, the game-day radar, the postgame story and Chris Spears' photos, all on the front page.</small></div>
+  <div class="foot"><span>GatorBait Media · Independent Florida Gators coverage</span><span>6</span></div>
+</section>
+</body></html>

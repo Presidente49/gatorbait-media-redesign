@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Stay safe, Gator Nation: Hurricane Isaias",
+      "excerpt": "Hurricane Isaias is bringing life-threatening storm surge and heavy rain to the Gulf Coast. Here is what the National Hurricane Center says and what to do.",
+      "url": "https://www.gatorbaitmedia.com/post/stay-safe-gator-nation-hurricane-isaias",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T03:06:37Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Stay safe, Gator Nation: Hurricane Isaias"
+      }
+    },
+    {
+      "title": "Hurricane Isaias reshuffles college football; Gators face rain chance at kickoff",
+      "excerpt": "Isaias canceled one game and moved at least six. Florida-South Carolina stays at 12:45 p.m. ET, with a good chance of Saturday storms in Gainesville.",
+      "url": "https://www.gatorbaitmedia.com/post/hurricane-isaias-reshuffles-college-football-gators-face-rain-chance-at-kickoff",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T02:31:09Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2405b82b2d4b4f1a826e15053ce9e33e~mv2.png/v1/fit/w_1000,h_675,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Hurricane Isaias reshuffles college football; Gators face rain chance at kickoff"
+      }
+    },
+    {
       "title": "Buddy Martin Show: Can the Gators Bounce Back With a Homecoming Win?",
       "excerpt": "Buddy Martin, Franz Beard, Ben Troupe and Eddie Gilley on South Carolina at Florida, the 500th game in The Swamp and what the Gators must prove after Missouri.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-can-the-gators-bounce-back-with-a-homecoming-win",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators-Gamecocks Sells Out; Doering Named SEC Legend"
-      }
-    },
-    {
-      "title": "Gators Go Big With Latest Hoops Commit",
-      "excerpt": "Franz Beard: Todd Golden lands 4-star center Kamsi Awaka, his second commit in a week, and a look at what Florida's 2027-28 roster could be.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-go-big-with-latest-hoops-commit",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-08T13:29:27Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_52d89330c43044b89a9dac722e5303c3~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators Go Big With Latest Hoops Commit"
-      }
-    },
-    {
-      "title": "Florida vs South Carolina: Rain Could Turn Homecoming Into a Mud Bowl",
-      "excerpt": "Franz Beard: A soggy Swamp favors South Carolina's run game and LaNorris Sellers — unless Florida gets the lead first.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-8-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-08T12:29:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_f387795ea44e4b2694aa07f18cacf6f3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida vs South Carolina: Rain Could Turn Homecoming Into a Mud Bowl"
       }
     }
   ]

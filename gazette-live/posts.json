@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Stay safe, Gator Nation: Hurricane Isaias",
+      "excerpt": "Hurricane Isaias is bringing life-threatening storm surge and heavy rain to the Gulf Coast. Here is what the National Hurricane Center says and what to do.",
+      "url": "https://www.gatorbaitmedia.com/post/stay-safe-gator-nation-hurricane-isaias",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T03:06:37Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Stay safe, Gator Nation: Hurricane Isaias"
+      }
+    },
+    {
+      "title": "Hurricane Isaias reshuffles college football; Gators face rain chance at kickoff",
+      "excerpt": "Isaias canceled one game and moved at least six. Florida-South Carolina stays at 12:45 p.m. ET, with a good chance of Saturday storms in Gainesville.",
+      "url": "https://www.gatorbaitmedia.com/post/hurricane-isaias-reshuffles-college-football-gators-face-rain-chance-at-kickoff",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-10T02:31:09Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2405b82b2d4b4f1a826e15053ce9e33e~mv2.png/v1/fit/w_1000,h_675,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Hurricane Isaias reshuffles college football; Gators face rain chance at kickoff"
+      }
+    },
+    {
       "title": "Buddy Martin Show: Can the Gators Bounce Back With a Homecoming Win?",
       "excerpt": "Buddy Martin, Franz Beard, Ben Troupe and Eddie Gilley on South Carolina at Florida, the 500th game in The Swamp and what the Gators must prove after Missouri.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-can-the-gators-bounce-back-with-a-homecoming-win",
@@ -237,34 +265,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The College Football Crisis: Corn Dogs vs Commissioners And Why It's A Big Deal!"
-      }
-    },
-    {
-      "title": "Thoughts of the Day: October 6, 2026",
-      "excerpt": "Franz Beard on whether Florida’s loss at Missouri can be a turning point, South Carolina, the SEC across the board, and the NCAA’s fifth-year fight.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-6-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-06T12:17:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_d8607ca471a6422eac90bb77074d4196~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Thoughts of the Day: October 6, 2026"
-      }
-    },
-    {
-      "title": "LIVE NOW: The Buddy Martin Show Talks Florida Gators Football",
-      "excerpt": "The Buddy Martin Show is live now talking Florida Gators football. Watch on GatorBait or join the live stream on YouTube.",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-now-october-5-2026",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-06T01:15:59Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for LIVE NOW: The Buddy Martin Show Talks Florida Gators Football"
       }
     },
     {

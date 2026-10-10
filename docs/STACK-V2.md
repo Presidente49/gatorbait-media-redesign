@@ -55,7 +55,16 @@ Keep what is free, scriptable and reachable from the cloud: **GitHub** (state, P
 6. A gate that is noisy gets fixed or demoted; a red check that is known noise does not block a docs-only or data-only change.
 7. Cost matters: fresh short sessions, small prompts, no re-reading history.
 
-## Migration plan
+## Status (Oct. 9, ~11:20 p.m. ET): migrated tonight, no freeze
+
+Brenden asked not to freeze tonight, so the routine consolidation was done immediately:
+
+- **Four routines created** (`Newsroom desk`, `Controller sweep`, `Morning`, `Game week`), each a two-line prompt that reads `docs/START-HERE.md` and one file in `docs/jobs/`.
+- **17 old routines disabled, not deleted** (rollback: re-enable). Kept as they were: Daily GatorBait Roundup email, Sunday Ledger, Monthly list cleanup, and the 8:30 and 11:30 a.m. game-status checks.
+- **One limit found:** the routine tool cannot attach connectors (Wix, Gmail) to a fresh session in this organization, so a fresh-session routine would have no tools. The four routines therefore fire into the controller session, which holds the connectors. True fresh-session routines need connectors attached in the claude.ai routines screen. Until then the controller session carries the load, so keep its prompts short and its context lean.
+- **Still to do:** retire the standing worker sessions after their last PRs merge; move the Control Room page's live rows into CURRENT-STATE.
+
+## Migration plan (original)
 
 **Tonight (Oct. 9):** freeze. Game day is Saturday at 12:45 p.m. ET and the front-page rebuild, the weather module and the stats refresh are in flight. No routine is merged or retired before the game. Only the rules were fixed (`START-HERE.md`).
 

@@ -1,0 +1,35 @@
+<!doctype html><meta charset=utf-8><style>
+@font-face{font-family:Barlow;font-weight:500;src:url(Barlow-500.woff2)}
+@font-face{font-family:Barlow;font-weight:700;src:url(Barlow-700.woff2)}
+@font-face{font-family:Barlow;font-weight:800;src:url(Barlow-800.woff2)}
+body{margin:0;width:1200px;height:675px;background:#fff;font-family:Barlow,sans-serif;color:#0b1f3a;position:relative;overflow:hidden}
+.top{box-sizing:border-box;background:#0021a5;color:#fff;padding:20px 48px;height:112px}
+.top small{font-weight:700;letter-spacing:.14em;font-size:20px;color:#fa4616;display:block}
+.top h1{margin:2px 0 0;font-weight:800;font-size:44px;letter-spacing:-.01em}
+.chart{position:absolute;left:48px;top:128px}
+.foot{position:absolute;left:48px;bottom:22px;width:820px;font-size:17px;font-weight:500;color:#44546a}
+.brand{position:absolute;right:48px;bottom:22px;font-weight:800;font-size:22px;color:#0021a5;letter-spacing:.06em}
+</style><div class=top><small>GAME-DAY FORECAST · GAINESVILLE</small><h1>Storms build as South Carolina comes to The Swamp</h1></div>
+<svg class=chart width=1104 height=490 viewBox="0 -20 1104 490" font-family=Barlow>
+<!-- data: hour, temp F, precip % (NWS hourly, Oct 10) -->
+<g id=g></g></svg>
+<div class=foot>Source: National Weather Service, Jacksonville office, forecast for Gainesville issued Oct. 9. Kickoff 12:45 p.m. ET.</div><div class=brand>GATORBAIT MEDIA</div>
+<script>
+const d=[[9,77,22],[10,82,18],[11,85,25],[12,88,40],[13,89,51],[14,89,64],[15,87,67],[16,86,59],[17,84,69]];
+const NS='http://www.w3.org/2000/svg',g=document.getElementById('g');
+const el=(t,a,txt)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;g.appendChild(e);return e};
+const L=70,W=1000,T=50,H=290,bw=W/d.length;
+const lab=h=>(h>12?h-12:h)+(h>=12?' p.m.':' a.m.');
+[0,25,50,75,100].forEach(v=>{const y=T+H-(v/100)*H;el('line',{x1:L,x2:L+W,y1:y,y2:y,stroke:'#dfe6f1'});el('text',{x:L-10,y:y+6,'text-anchor':'end','font-size':18,fill:'#44546a','font-weight':500},v+'%')});
+d.forEach((r,i)=>{const x=L+i*bw+bw*.2,h=(r[2]/100)*H;el('rect',{x,y:T+H-h,width:bw*.6,height:h,fill:r[2]>=50?'#0021a5':'#8da2d8',rx:3});
+el('text',{x:x+bw*.3,y:T+H-h-8,'text-anchor':'middle','font-size':20,'font-weight':800,fill:'#0b1f3a'},r[2]+'%');
+el('text',{x:x+bw*.3,y:T+H+30,'text-anchor':'middle','font-size':20,'font-weight':700,fill:'#0b1f3a'},lab(r[0]));
+el('text',{x:x+bw*.3,y:T+H+60,'text-anchor':'middle','font-size':26,'font-weight':800,fill:'#fa4616'},r[1]+'°');});
+// kickoff marker at 12:45 -> between 12 and 13 slot, 75% across 12 column
+const kx=L+3*bw+bw*.5+ (0.75-0.5)*bw*0; 
+const kxx=L+3*bw+bw*.75;
+el('line',{x1:kxx,x2:kxx,y1:T-18,y2:T+H,stroke:'#fa4616','stroke-width':3,'stroke-dasharray':'6 5'});
+el('text',{x:kxx+8,y:T+6,'font-size':20,'font-weight':800,fill:'#fa4616'},'KICKOFF 12:45');
+el('text',{x:L,y:T-22,'font-size':18,'font-weight':700,fill:'#44546a'},'CHANCE OF RAIN BY HOUR (bars) · TEMPERATURE (orange)');
+el('text',{x:L+W,y:T+H+92,'text-anchor':'end','font-size':22,'font-weight':700,fill:'#0b1f3a'},'Saturday: high near 89, south wind 12-18 mph, 69% chance of storms');
+</script>

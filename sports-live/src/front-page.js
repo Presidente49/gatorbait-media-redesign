@@ -163,7 +163,10 @@
         score: g.score && num(g.score.fla) !== null && num(g.score.opp) !== null ? { fla: g.score.fla, opp: g.score.opp } : null, storyUrl: str(g.storyUrl, 300) || '' };
     }).filter(Boolean) : [];
   }
-  function readScoreboard(raw) {
+  // Game week: the last result (Missouri) steps out of the ticker, nav bug and Hub until the window ends (Brenden, Oct. 10).
+  function weekFocusOn() { var f = BUNDLE.gameWeekFocus, t = now(); return !!(f && f.on && f.hideLast && t >= Date.parse(f.from) && t < Date.parse(f.until)); }
+  function readScoreboard(raw) { var r = readScoreboardBase(raw); if (weekFocusOn()) r.last = null; return r; }
+  function readScoreboardBase(raw) {
     var fb = BUNDLE.scoreboard, sb = { team: Object.assign({}, fb.team), last: Object.assign({}, fb.last), next: Object.assign({}, fb.next), schedule: normSchedule(fb.schedule), standings: [], live: null, source: 'bundled' };
     if (!raw || typeof raw !== 'object' || !raw.team) return sb;
     sb.source = 'feed';

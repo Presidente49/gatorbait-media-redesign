@@ -48,6 +48,9 @@ jobs:
           node automation/newsletter/run-stack-qc.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
           node automation/newsletter/check-links.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
 
+      - name: Test the send governor
+        run: node --test automation/newsletter/send-governor.test.mjs
+
       - name: Install upstream MJML toolchain
         run: npm ci --prefix vendor/colorlib-email-templates
 

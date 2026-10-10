@@ -15,7 +15,7 @@ Canonical coordination:
 - Repository: `Presidente49/gatorbait-media-redesign`
 - Production Wix site: `18fb3a4e-d7f6-414a-aeb9-3047db3ea115`
 - Public site: https://www.gatorbaitmedia.com/
-- Shared work item: GitHub issue #3
+- Shared work item: GitHub issue #34, the coordination thread since Sept. 26. Its all-hands comment lists which agent owns which live object. Issue #3 is historical.
 - AdSense incident: issue #30
 - Single controller / one production writer
 - Scheduled monitors remain read-only for live Wix/content/assets/routing.
@@ -47,10 +47,26 @@ GitHub `main` continues to advance through normal controller/ops commits. Produc
 
 ### Magazine web page
 - Wix embed: `1dd74333-ee02-40da-9c93-cf8fd787c129`
-- revision: **26**
+- revision: **40** as of Sept. 28, 2026 (was 26 at this file's snapshot date; re-read live before trusting any revision number in this file)
 - enabled: **true**
 - source pointer: `485b38a036431c667584aa3990922772288399f3/automation/site-design/magazine.js`
 - web Magazine remains separate from the email newsletter and from the downloadable/print reading-edition experiments.
+- **The "Inside the issue" grid rebuilds itself live from `/blog-feed.xml` on every page load**, and that rebuild keeps only posts by five named authors (Buddy Martin, Franz Beard, Eddie Gilley, Loren Meadows, Carlton Reese) — see Lesson 45. Any card for anyone outside that list (Chris Spears, GatorBait Staff, a guest byline) must be captured once into a var and force-reinserted after the feed rebuild, or it silently disappears the moment the rebuild runs. A change to only the embed's static fallback JSON is not enough to verify — read the actual runtime logic, not just the data.
+
+## Session update — Sept. 27 night into Sept. 28, 2026
+
+- **Email Marketing:** the account went `WARNED` on Sept. 28 after 18 list sends in 7 days. It's `ACTIVE` again since Brenden accepted the terms (~07:50Z), but its rank is still `BAD`.
+  - **Policy (Brenden, Sept. 28):** one roundup email a day through the daily roundup routine, no separate breaking emails, and both blog story alerts (`5006baf5`, `824714d4`) `INACTIVE`.
+  - **Audience:** Jarvis's cleanup cut the Active Email Audience to 1,273. The 573 contacts inactive for 6 months are labeled, not deleted, and paid and Plus members were kept.
+  - **Before every list email,** run `automation/newsletter/send-governor.js` (1 send a day, 7 a week). See the playbook's "Send governor" section and Lesson 48.
+- **Morning news sweep:** every day at 6:28 a.m. ET in the game-day desk session. See `automation/ops-hub/playbooks/morning-news-sweep.md`.
+- **Florida stats page (BLOCKER):** embed planned as `756655cf` but **does not exist on Wix yet** (Oct. 5 discovery via API LIST). Stats HTML built and ready at `deploy/wix-served/florida-stats.html` with Oct. 5 corrections (4-1 record, Missouri L 17-45, South Carolina kickoff 16:45Z). Requires manual creation through Wix Editor: name "GBM - Florida Stats", position BODY_END, category ESSENTIAL. Then Sept. 27 stats session PR #37 deployment can complete. `/florida-football-stats` page still does not exist (would need Wix page creation too).
+- **Typography enforcement.** Georgia serif had crept back into the header embed (`7fee4de6`, now rev 26) and the Magazine embed (`1dd74333`) — article-page headlines, account/plan titles, the sidebar "recent post" widget, and every Magazine headline. This directly violated the "Site typography" section above. Swapped all 11 occurrences to Barlow. Re-audit both embeds for Georgia periodically; this has now recurred once.
+- **Home Code embed** (`622d8ece`, now rev 12): fixed a real headline bug — `The voices<br>you come for.` had no literal space next to the `<br>`, so a mobile rule that hides the `<br>` for a one-line layout also collapsed the words together ("voicesyou"). Also widened the "Only at GatorBait" columnist box from a hardcoded Buddy+Franz pair to a 5-name priority list (adds Loren Meadows, Carlton Reese, Eddie Gilley), so it varies with what's actually recent instead of always showing the same two names.
+- **Embed-repo drift.** All three live-patched embeds above had their repo copies (`deploy/wix-served/header-embed.html`, `magazine-embed.html`, `split/home-code.html`) go stale immediately after each live PATCH tonight — the repo was never re-synced in the same session as the patch. Re-synced all three; character length now verified to match live exactly. Re-sync the repo copy in the *same* tool call chain as any live PATCH going forward, not as a separate later step.
+- **Department audits ran for the first time** using the Sept. 27 dispersed skills (`gatorbait-agency/agency/skills-library/{editorial/copy-desk-audit,design/article-visual-qc,web/embed-patch,research/photo-sourcing,marketing/{email-delivery-check,seo-audit}}.md`). Findings: 3 posts with zero tags (tagged), one cover reused across two live posts (fixed — see photo-sourcing rule), one post correctly skipped for an in-progress unpublished edit. See `gatorbait-agency/agency/brands/gator-bait-media/outputs/log.md` for the run record.
+- **New content:** "Chris Spears' Best Shots: Florida 52, Ole Miss 28" (`67bd8aca-89e2-4098-b934-4c019b4f588e`, `/post/chris-spears-photo-gallery-florida-ole-miss`) — a 10-photo gallery post, GatorBait's first, added to the Magazine's Inside the Issue grid. Pattern for a future gallery: use only photos already identified/captioned/credited in Wix media (check `gameday/<date>/photos-chris-spears/CREDIT.md`), never the raw uncaptioned SmugMug batch without viewing each one first.
+- **Email list hygiene, Sept. 27–28:** suppressed 9 chronically-bouncing addresses (8+ bounces, 0 deliveries across 31 sends since Aug. 1) and unsubscribed 14 contacts who had filed spam complaints but were still marked SUBSCRIBED. Subscribed total: 1,849. Separately, one subscriber's mailbox forwards to a dead Outlook account under GatorBait's own Return-Path, so its bounces arrive as `postmaster@outlook.com` "Undeliverable" notices in Brenden's personal inbox rather than showing up in Wix's own bounce stats — see Lesson 46. A full list-hygiene pass now includes a Gmail NDR sweep for this reason (`docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md`).
 
 ## GatorBait Magazine Newsletter — canonical Stack
 
@@ -177,6 +193,8 @@ Issue #30 is claimed by Master Control. Remaining gates:
 
 Do not add another loader/manual unit or change consent/account/payment settings speculatively.
 
+**Root-cause finding, Sept. 28, 2026 (still open, nothing changed):** the Homepage (`fdc2127a`) and Magazine (`1dd74333`) embeds each set `#SITE_PAGES`/`#PAGES_CONTAINER` to `display:none!important` to kill the old native-page flash. Auto Ads places in-content ad units by scanning the rendered native page container; a `display:none` container has no box for it to use. Article pages don't hide that container and are unaffected. Practical read: Homepage and Magazine — the two highest-traffic pages — likely serve little beyond anchor/overlay-format ads; in-content Auto Ads units are probably confined to individual article pages. Confirming this needs the Google AdSense dashboard (impressions/RPM by URL), which isn't visible from Wix's API or this session. Do not resurrect the disabled `471ba402` ("Homepage Ad Presentation") or `109a8870` embeds to fix this — they only reposition ad units Auto Ads already placed, and can't create a placement surface Auto Ads never had. A real fix means designing one visible, intentional ad slot inside `#gbm-live`/`#gbm-magazine-page` and requesting a specific ad unit into it — a deliberate layout decision, not a diagnostic patch.
+
 ## Cross-source sweep — what exists and what does not
 
 ### GitHub
@@ -259,6 +277,46 @@ Therefore the two Sep. 21 WIX_FORMS contacts with NOT_SET are **not evidence tha
 
 The major current audience question is Wix's **758 SUBSCRIBED / INACTIVE** contacts. Do not force-send or rewrite their status based on subscription alone. Wix automatically maintains deliverability state; preserve `activeContactsOnly` and current conservative gates until a documented provider-safe re-engagement path is established.
 
+## Program facts and newsroom roster (verified Sept. 26, 2026)
+
+Know these facts without re-checking them each session.
+
+**Program**
+- Florida's head coach is **Jon Sumrall** (spelled "Jon", never "John"). He is in his first season; Billy Napier is "the previous administration."
+- Offensive coordinator: Buster Faulkner. Strength coach: Rusty Whitt (spelling taken from the presser audio; confirm before print).
+- Sumrall's running themes are "we have not arrived," "wake the beast" and "not a finished product."
+- The week of Ole Miss, Sumrall said publicly that Ole Miss had proven more (16-2 over the last year) and that he would never bet against Trinidad Chambliss. Carlton's "Vegas" line refers to this. After the game he said, "It's not asleep, but it ain't fully awake yet."
+
+**2026 season to date**
+- Florida is 4-0 (2-0 SEC) after beating No. 4 Ole Miss 52-28 on Sept. 26.
+- Next game: at Missouri, Saturday, Oct. 3, 3:30 p.m. ET.
+- Key players: RB Jadan Baugh, RB Duke Clark, QB Aaron Philo, WR Eric Singleton Jr., WR Bailey Stockton, WR Vernell Brown III, TEs Amir Jackson and Luke Harpring, edge Jayden Woods (#0), LB Aaron Chiles, S DJ Coleman, KR London Montgomery, K Patrick Durkin.
+
+**Newsroom and Wix author IDs**
+- Buddy Martin: ae876af8 (editorial lead).
+- Franz Beard: c2d49068.
+- Carlton Reese: cd142328-7f90-4a6b-906a-7963f603afb0. Its display name is "Carlton Reese," so use it for his byline. His older account d64e8755 shows as "carltonreese1306." His category is "Carlton Reese" (7600ea02).
+- Eddie Gilley: 2e74ec84.
+- Loren Meadows: c6f7996f.
+- Muse: 93d9f853. Muse's pieces are drafts only; publish them only with Brenden's yes.
+- GatorBait Staff: 16433bab.
+- Chris Spears shoots the game photos and video. Credit him as "Photo by Chris Spears/GatorBait Media."
+
+**Email audience**
+- Never put straight double quotes in an email's `<mj-title>` or subject. On 9/26 they caused a Wix 500 from GenerateHtml on preview; use curly quotes.
+- Each Sept. 25-26 send delivered to about 1,800-1,816 people (label e345fa8e, ~1,830 targeted).
+- An "~100" figure is an early open count, not the audience size.
+
+**Video**
+- UF football's YouTube channel is **Florida Gators Football**, UCGy38_kQ5tV_e87Uhs3VCRQ. The old "Florida Gators" channel, UC97IlakvONh8RBUODRuk4mA, is stale; don't use it.
+- Embed UF's official YouTube video (for example, a presser). Use a Ricos HTML node with `url: https://www.youtube.com/embed/<id>?rel=0`; this shape is proven live in "Before Laura Rutledge Was Laura Rutledge."
+- Do not download or re-upload UF's video.
+
+**Transcripts**
+- vidIQ `video_watch` gives usable verbatim quotes. Its speaker names are unreliable: it has labeled the QB "Graham Mertz" or "Aaron Chiles."
+- Identify each speaker from the questions and ESPN play data. Swap in UF's official ASAP transcript when UF SID forwards it (e.g., Matthew H.). The transcripts live at asaptext.com/asap_media/media/1109/<event>/transcripts/<id>.html.
+- ASAP transcripts can mislabel players too: 9/26 labeled Jayden Woods "Jaden Edgecombe." Always check the roster position.
+
 ## Open queue
 
 1. **Provider-preview duplicate-draft incident:** VERIFIED_CLOSED. One canonical draft remains.
@@ -279,3 +337,23 @@ Every Claude/Codex/ChatGPT GatorBait session should:
 7. update existing work items rather than inventing parallel controllers/issues
 
 Historical chats, branches and files are evidence. They do not outrank live state or this current routing snapshot.
+
+## Cloud game-week schedule (set Sept. 27, 2026; Brenden: "run all that stuff in the cloud")
+All of these are Claude Code cloud routines that fire into the controller session. No Mac, FCC or n8n dependency.
+- Sun 1:15 a.m. ET: CFB Saturday wrap refresh and publish (trig_01CnjeWyu2EENbzZp6SJVJCR).
+- Sun 8:50 a.m. ET: writer-stories QC and covers; upload the Postgame Wrap newsletter as a DRAFT and ask for a yes (trig_01FypHf2prvDbb4LXDcww7tJ).
+- Sun 2:04 p.m. ET: AP poll story "Chomp Up the Charts"; band rank update (trig_01NyNPP9mzWdG49zXnxPJp1M).
+- Sun 5:50 p.m. ET: Missouri first look; band to Missouri upcoming (trig_015kRs4KTum6Az8EvM1pJqxb).
+- Weekly Mon 1:47 p.m. ET: Monday presser and injury story (trig_01JKUBvRUZ3ptM5D3kr4V13T).
+- Weekly Thu 9:44 a.m. ET: opponent preview; weekly Magazine draft for a yes; Magazine fallback refresh (trig_011cSGMQcch48p2wpjaBrWGp).
+- Sat Oct. 3, 9:50 a.m. ET: Missouri game day, pregame through postgame (trig_01F7ct63dJfvpqG5dVSNV5ht).
+
+Every email is still owner-approved: one postgame email per game, and any other send needs Brenden's yes.
+
+## Blog standards (2026-09-27)
+- **Every post:**
+  - Post template v1 (`14a887e3`) plus the formatting normalizer (`c91ad133`). Both run on all `/post/` pages.
+  - Keyword tags per `automation/blog-tagging/README.md`: people, opponents, Florida Gators Football, roster players. Posts with unpublished edits are skipped.
+  - Tag new posts on publish. A daily sweep covers the rest.
+- **Latest, category and tag pages:** Latest page v1 (`53e15504`), multi-column; tag pages are titled with the tag name.
+

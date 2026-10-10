@@ -1,0 +1,95 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>Buddy Martin and Franz Beard on Florida 52, Ole Miss 28</mj-title>
+    <mj-preview>The Swamp gets its swagger back, and the 28 points the Gators still left on the field.</mj-preview>
+    <mj-font name="Newsreader" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&amp;display=swap" />
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Inter, Arial, sans-serif" />
+      <mj-text color="#14243D" font-size="16px" line-height="1.55" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="14px 22px" font-size="13px" font-weight="800" />
+    </mj-attributes>
+    <mj-style>
+      .gb-wordmark { font-weight:900; letter-spacing:-1.8px; }
+      .gb-h1 { font-family:'Newsreader',Georgia,serif; font-size:34px; line-height:1.08; font-weight:700; letter-spacing:-.5px; }
+      .gb-h2 { font-family:'Newsreader',Georgia,serif; font-size:28px; line-height:1.1; font-weight:700; }
+      @media only screen and (max-width:480px) {
+        .gb-h1 { font-size:28px !important; line-height:1.12 !important; }
+        .gb-h2 { font-size:24px !important; }
+      }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#F2F0EB" width="640px">
+
+    <mj-section background-color="#FA4616" padding="10px 24px">
+      <mj-column width="70%">
+        <mj-text color="#FFFFFF" font-size="13px" font-weight="900" letter-spacing="3px" padding="0">FLORIDA 52, OLE MISS 28</mj-text>
+      </mj-column>
+      <mj-column width="30%">
+        <mj-text align="right" color="#FFFFFF" font-size="11px" font-weight="700" letter-spacing="1px" padding="1px 0 0">THE COLUMNS</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="16px 24px 12px">
+      <mj-column>
+        <mj-text align="center" padding="0">
+          <a href="https://www.gatorbaitmedia.com/?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=columns_buddy_franz_2026_09_27&utm_content=masthead" style="text-decoration:none;"><span class="gb-wordmark" style="font-size:32px;color:#003B7A;">GATOR</span><span class="gb-wordmark" style="font-size:32px;color:#FA4616;">BAIT</span></a><br/>
+          <span style="font-size:12px;font-weight:800;letter-spacing:3px;color:#003B7A;">MEDIA</span>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#081B35" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35~mv2.jpg" alt="Florida RB Jadan Baugh leaping in a touchdown celebration with the packed Swamp behind him." href="https://www.gatorbaitmedia.com/post/the-swamp-gets-its-swagger-back-and-welcomes-the-folks-from-the-grove-in-rude-fashion?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=columns_buddy_franz_2026_09_27&utm_content=buddy_image" padding="0" width="640px" />
+        <mj-text align="right" color="#AEBBD0" font-size="11px" padding="6px 14px 8px">Photo: Hannah White / UAA Communications</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="26px 30px 6px">
+      <mj-column>
+        <mj-text padding="0 0 6px" font-size="11px" font-weight="900" letter-spacing="2px" color="#D8450C">COLUMN &middot; BUDDY MARTIN</mj-text>
+        <mj-text padding="0 0 14px" color="#081B35"><span class="gb-h1">The Swamp gets its swagger back</span></mj-text>
+        <mj-text padding="0 0 12px">Florida 52, No. 4 Ole Miss 28. The Gators are 4-0 and 2-0 in the SEC, unbeaten in September for the first time since 2019, and Buddy Martin says they just kicked the door open to the Land of the Giants.</mj-text>
+        <mj-text padding="0 0 12px">&ldquo;It&rsquo;s time to say what the rest of the country is only starting to figure out. Jadan Baugh may be the best running back in America.&rdquo;</mj-text>
+        <mj-text padding="0 0 12px">Baugh&rsquo;s fifth straight 100-yard game puts him with Emmitt Smith and Fred Taylor, and his 11 touchdowns are the most by any SEC player through four games since 1992.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/the-swamp-gets-its-swagger-back-and-welcomes-the-folks-from-the-grove-in-rude-fashion?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=columns_buddy_franz_2026_09_27&utm_content=buddy_cta" align="left" padding="6px 0 24px">READ BUDDY&rsquo;S COLUMN</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#081B35" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_ef56989a43bc4ebf8ffe6d6245358fef~mv2.png" alt="Left on the field: the points Florida left on the table in a 52-28 win over No. 4 Ole Miss, charted on a football field." href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=columns_buddy_franz_2026_09_27&utm_content=franz_image" padding="0" width="640px" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="24px 30px 6px">
+      <mj-column border-left="5px solid #FA4616" padding="4px 0 4px 16px">
+        <mj-text padding="0 0 6px" font-size="12px" font-weight="900" letter-spacing="1.5px" color="#D8450C">COLUMN &middot; FRANZ BEARD</mj-text>
+        <mj-text padding="0 0 10px" color="#081B35"><span class="gb-h2">The 28 points the Gators left on the field</span></mj-text>
+        <mj-text padding="0 0 12px">An overthrown Vernell Brown III, an open Amir Jackson on fourth down, a 67-yard touchdown erased by a hold and eight penalties for 92 yards. Franz Beard says 70 was there for the taking.</mj-text>
+        <mj-text padding="0 0 16px">&ldquo;There is a ton of difference in 28-0 and 10-3.&rdquo;</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=columns_buddy_franz_2026_09_27&utm_content=franz_cta" align="left" padding="0 0 20px">READ FRANZ&rsquo;S COLUMN</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#081B35" padding="22px 30px">
+      <mj-column>
+        <mj-text color="#FA7A45" font-size="11px" font-weight="900" letter-spacing="2px" padding="0 0 6px">NEXT</mj-text>
+        <mj-text color="#FFFFFF" font-size="19px" line-height="1.35" font-weight="800" padding="0 0 6px">Florida (4-0) at Missouri</mj-text>
+        <mj-text color="#D5DFEC" font-size="15px" line-height="1.5" padding="0 0 14px">Saturday, Oct. 3, 3:30 p.m. ET. The game story, the press conference and every column are on the site.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels?utm_source=gatorbait_postgame_email&utm_medium=email&utm_campaign=columns_buddy_franz_2026_09_27&utm_content=game_story" align="left" padding="0" background-color="#FFFFFF" color="#081B35">READ THE GAME STORY</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="18px 26px 22px">
+      <mj-column width="40%">
+        <mj-text padding="0" color="#003B7A" font-size="18px" font-weight="900">GATOR<span style="color:#FA4616;">BAIT</span> MEDIA</mj-text>
+      </mj-column>
+      <mj-column width="60%">
+        <mj-text align="right" color="#667386" font-size="11px" line-height="1.55" padding="0">Florida football. All the time.<br/>GatorBaitMedia.com &middot; Old-school journalism + new tech.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

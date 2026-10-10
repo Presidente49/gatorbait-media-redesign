@@ -1,6 +1,24 @@
 # GatorBait Homepage Baseline Lock
 
-## Current live pointer — September 24, 2026
+## Current live pointer — September 26, 2026 (fully Wix-served)
+
+Brenden authorized making the same sports-news homepage fully Wix-hosted. Design is unchanged; only the delivery changed. The homepage and its code no longer load from jsDelivr at runtime. A fresh provider read on 2026-09-26 confirms:
+- homepage core `fdc2127a…` = **revision 81** (mobile shell mounts at <body> creation), "GBM - Sports Home v4 core (fully Wix-served)", HEAD, **ESSENTIAL**
+- homepage parts (all rev1, ESSENTIAL, enabled): styles `1255a4cf…`, backup stories `96ef5a04…`, code `622d8ece…`, inner-page UI layer `a13b04e3…`
+- source pin: `2b42f09bceadce74629315dbae4090b2fb1fe49f` (`sports-live/homepage.js`); built by `deploy/wix-served/build.py` into `deploy/wix-served/split/`
+- Magazine `1dd74333…` = revision 33, ESSENTIAL (native page + footer held until the magazine mounts)
+- desktop header `7fee4de6…` = revision 25, ESSENTIAL (header mounts at <body> creation, so Wix's header never paints)
+- rollback: PATCH `fdc2127a` with `deploy/wix-served/homepage-embed-cdn.html` (the rev79 jsDelivr loader), keeping category ESSENTIAL, then disable the four part embeds
+- verified live 2026-09-26 13:06–13:09 UTC:
+  - Live-presentation QC run 36244025010: green.
+  - First-paint probe run 36244025001: the home root paints at ~475 ms on phone and desktop, with no native Wix text before it.
+  - A public browser shows the Buddy Martin lead, a Latest section with photos, and no "Today's Edition".
+  - The only jsDelivr request left is the Barlow font stylesheet from `0709a98e`.
+- **Game day band (Sept. 26, Brenden: "make the landing page look awesome, you're in charge"):** a scoreboard band above the Buddy lead. Its CSS, data and renderer live in `deploy/wix-served/home-gameday.html`, carried by the data part `96ef5a04` (rev7). The homepage code `622d8ece` (rev2) only calls `window.__GBM_GAMEDAY_HTML__` inside a try/catch. The band hides itself after `until` (Sunday noon ET). To post a score, edit the `/*GD*/…/*GD-END*/` JSON and re-upload the data part. To remove it early, set `until` to the past. The backup list is trimmed to 9 stories to make room.
+- **Game-day rosters (Sept. 26, Brenden asked for downloadable, interactive rosters; this re-approves the doctrine's retired roster blocks for game days):** the band's "Rosters & numbers" button opens a number lookup ("Who's wearing No. __?") with Florida and Ole Miss tabs and a PDF download. Roster data and UI live in the new embed `72189876` (HEAD, ESSENTIAL; rev2, 13,731 chars, fp 3065870201; built by `gameday/2026-09-26-ole-miss/gen-roster-embed.py`). Rev2 adds game-day availability: an `st` map keyed by exact roster name (numbers repeat within a team) renders red OUT / amber GTD tags in the team lists and the number lookup. Sept. 26 values come from the SEC final availability report: 10 Ole Miss players OUT, including RB Kewan Lacy; Florida WR Eric Singleton Jr. GTD. The PDF is in Wix Media at `https://www.gatorbaitmedia.com/_files/ugd/d3cfa5_1b3f65361c8c4af8894dc763a678acd0.pdf`. The control is a `<button>` carrying the PDF in `data-pdf`. It was first a same-site link to the PDF. The home core's capture-phase no-jump link handler turned the click into a full page load of the PDF, so the panel never opened (LESSONS #34). That handler only matches `a[href]`. If the roster embed fails to load, a small listener in the data part opens the PDF instead. Live QC clicks the button and looks up No. 13 on every run while the button exists, and hard-fails unless every `st` entry renders as a tag. After game day, disable `72189876` and clear `rosters` in the band JSON.
+- **Every Update Custom Embed call must re-send category ESSENTIAL.** FUNCTIONAL defers the embed behind consent and brings back the native flash. See LESSONS #33.
+
+## Previous live pointer — September 24, 2026
 
 Fresh Wix provider read supersedes the older rev61 pointer below:
 - active homepage embed `fdc2127a-845a-4d02-b711-438f1a4a86ce` = **revision 68 / enabled**

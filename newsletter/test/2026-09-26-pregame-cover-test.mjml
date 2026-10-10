@@ -1,0 +1,59 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>GatorBait Magazine — Gators vs. Rebels</mj-title>
+    <mj-preview>Pipeline test issue — cover only, not for send.</mj-preview>
+    <mj-font name="Newsreader" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&amp;display=swap" />
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Inter, Arial, sans-serif" />
+      <mj-text color="#14243D" font-size="15px" line-height="1.55" />
+    </mj-attributes>
+    <mj-style>
+      .gb-wordmark { font-weight:900; letter-spacing:-1.8px; }
+      .gb-h1 { font-family:'Newsreader',Georgia,serif; font-size:37px; line-height:1.04; font-weight:700; letter-spacing:-.6px; }
+      @media only screen and (max-width:480px) {
+        .gb-h1 { font-size:31px !important; line-height:1.08 !important; }
+      }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#F2F0EB" width="640px">
+
+    <!-- Masthead -->
+    <mj-section background-color="#FFFFFF" padding="22px 24px 8px">
+      <mj-column>
+        <mj-text align="center" padding="0">
+          <span class="gb-wordmark" style="font-size:36px;color:#003B7A;">GATOR</span><span class="gb-wordmark" style="font-size:36px;color:#FA4616;">BAIT</span><br/>
+          <span style="font-size:13px;font-weight:800;letter-spacing:3px;color:#003B7A;">MEDIA</span>
+        </mj-text>
+        <mj-divider border-color="#FA4616" border-width="3px" width="54%" padding="7px 0 5px" />
+        <mj-text align="center" color="#003B7A" font-size="10px" font-weight="800" letter-spacing="2.2px" padding="0">
+          GATORBAIT MAGAZINE · PIPELINE TEST ISSUE
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Cover -->
+    <mj-section background-color="#081B35" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/16b519_a7ef6b30ac954bf5962d6583bbd14b1e~mv2.jpg"
+          alt="Trinidad Chambliss and the Ole Miss offense against Florida's defense. Photo by Chris Spears / GatorBait Media."
+          padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="24px 30px 30px">
+      <mj-column>
+        <mj-text color="#FA7A45" font-size="10px" font-weight="900" letter-spacing="1.9px" padding="0 0 8px">
+          GAME WEEK · THE SWAMP
+        </mj-text>
+        <mj-text color="#FFFFFF" padding="0 0 10px">
+          <span class="gb-h1">Gators vs. Rebels</span>
+        </mj-text>
+        <mj-text color="#D5DFEC" font-size="16px" line-height="1.55" padding="0">
+          No. 21 Florida hosts No. 4 Ole Miss and Trinidad Chambliss in The Swamp. This is a pipeline test cover only — no story content yet.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>

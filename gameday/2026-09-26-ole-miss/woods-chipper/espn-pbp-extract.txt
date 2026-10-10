@@ -1,0 +1,223 @@
+
+### D0 FLA | 8 plays, 65 yards, 3:59 | Touchdown | start FLA 35 Q1 14:52
+  Q1 14:52 [] (15:00) #17 L.Carneiro kickoff 53 yards to the FLA12 #6 J.Flowers return 23 yards to the FLA35 (#43 I.Solomon)
+  Q1 14:44 [1st & 10 at FLA 35] (14:50) No Huddle-Shotgun #13 J.Baugh rush right for 12 yards gain to the FLA47 (#12 L.Ferrelli), out of bounds, 1ST DOWN
+  Q1 14:07 [1st & 10 at FLA 47] (14:17) No Huddle-Shotgun #12 A.Philo pass complete short right to #15 L.Harpring caught at OLE40, for 13 yards to the OLE40, out of bounds at OLE40, 1ST DOWN
+  Q1 13:38 [1st & 10 at MISS 40] (13:48) No Huddle-Shotgun #13 J.Baugh rush right for 23 yards gain to the OLE17 (#7 S.Denson), 1ST DOWN
+  Q1 13:38 [1st & 10 at MISS 40] Timeout Florida, clock 13:38
+  Q1 13:03 [1st & 10 at MISS 17] (13:16) No Huddle-Shotgun #12 A.Philo pass complete short left to #1 V.Brown III caught at OLE20, for 4 yards to the OLE13 (#5 K.Franklin)
+  Q1 12:35 [2nd & 6 at MISS 13] (12:40) No Huddle-Shotgun #13 J.Baugh rush middle for 1 yard gain to the OLE12 (#14 E.Joseph)
+  Q1 11:57 [3rd & 5 at MISS 12] (12:06) No Huddle-Shotgun #12 A.Philo rush middle for 6 yards gain to the OLE06 (#52 W.Echoles; #11 K.Thomas), 1ST DOWN
+  Q1 11:22 [1st & Goal at MISS 6] (11:28) No Huddle-Shotgun #13 J.Baugh rush middle for 2 yards gain to the OLE04 (#5 K.Franklin; #6 J.Aguero)
+  Q1 10:53 [2nd & Goal at MISS 4] (10:57) No Huddle-Shotgun #13 J.Baugh rush middle for 4 yards gain to the OLE00 TOUCHDOWN, clock 10:53 #91 P.Durkin kick attempt good (H: #38 A.Clark, LS: #54 L.Anderson)
+
+### D1 MISS | 4 plays, -34 yards, 1:37 | Fumble | start FLA 35 Q1 10:53
+  Q1 10:53 [] PENALTY OLE Personal Foul (#14 E.Joseph) 15 yards from FLA35 to FLA50. NO PLAY
+  Q1 10:53 [] (10:53) #91 P.Durkin kickoff 33 yards to the OLE17 #22 R.Collins return 9 yards to the OLE26 (#22 K.Jackson; #44 M.Johnson)
+  Q1 10:39 [1st & 10 at MISS 26] (10:46) No Huddle-Shotgun #26 J.Lindsey rush middle for 3 yards gain to the OLE29 (#99 E.Oyebadejo; #90 B.Bett)
+  Q1 10:10 [2nd & 7 at MISS 29] (10:19) No Huddle-Shotgun #26 J.Lindsey rush right for 5 yards gain to the OLE34 (#8 A.Chiles)
+  Q1 9:54 [3rd & 2 at MISS 34] (09:58) No Huddle-Shotgun #26 J.Lindsey rush middle for 1 yard gain to the OLE35 (#20 K.Clark)
+  Q1 9:16 [4th & 1 at MISS 35] (09:18) No Huddle-Shotgun #26 J.Lindsey rush middle for 4 yards loss to the OLE31 fumbled by #26 J.Lindsey at OLE31 forced by #8 A.Chiles recovered by OLE #26 J.Lindsey at OLE31, End Of Play, TURNOVER ON DOWNS
+
+### D2 FLA | 4 plays, 0 yards, 0:16 | Field Goal | start MISS 31 Q1 9:12
+  Q1 9:12 [1st & 10 at MISS 31] (09:15) No Huddle-Shotgun #12 A.Philo pass incomplete short left to #85 E.Chieca thrown to OLE25 broken up by #11 K.Thomas
+  Q1 9:06 [2nd & 10 at MISS 31] (09:12) No Huddle-Shotgun #12 A.Philo pass incomplete deep right to #1 V.Brown III thrown to OLE10
+  Q1 9:03 [3rd & 10 at MISS 31] (09:05) No Huddle-Shotgun #12 A.Philo pass incomplete short middle to #7 A.Jackson thrown to OLE25
+  Q1 9:00 [4th & 10 at MISS 31] (09:00) #91 P.Durkin field goal attempt from 49 yards GOOD (H: #38 A.Clark, LS: #54 L.Anderson), clock 09:00
+
+### D3 MISS | 5 plays, 10 yards, 3:05 | Punt | start MISS 25 Q1 9:00
+  Q1 9:00 [] (09:00) #91 P.Durkin kickoff 65 yards to the OLE00, Touchback
+  Q1 8:46 [1st & 10 at MISS 25] (08:58) No Huddle-Shotgun #6 T.Chambliss pass complete short middle to #4 C.Odom caught at OLE31, for 7 yards to the OLE32 (#2 L.Hayward)
+  Q1 8:15 [2nd & 3 at MISS 32] (08:27) No Huddle-Shotgun #6 T.Chambliss pass complete short right to #11 H.Fields caught at OLE36, for 5 yards to the OLE37 (#12 B.Hanks III), 1ST DOWN
+  Q1 8:03 [1st & 10 at MISS 37] (08:07) No Huddle-Shotgun #26 J.Lindsey rush middle for 2 yards gain to the OLE39 (#43 A.Allen Jr.)
+  Q1 7:30 [2nd & 8 at MISS 39] (07:37) No Huddle-Shotgun #26 J.Lindsey rush left for 1 yard gain to the OLE40 (#5 M.Graham)
+  Q1 6:59 [3rd & 7 at MISS 40] PENALTY OLE False Start (#1 D.Alexander) 5 yards from OLE40 to OLE35. NO PLAY
+  Q1 6:31 [3rd & 12 at MISS 35] (06:51) No Huddle-Shotgun #6 T.Chambliss rush left for 11 yards gain to the OLE46 (#5 M.Graham; #43 A.Allen Jr.)
+  Q1 6:31 [3rd & 12 at MISS 35] Timeout Ole Miss, clock 06:31
+  Q1 5:55 [4th & 1 at MISS 46] (06:03) #33 O.Bird punt 54 yards to the FLA00, Touchback
+
+### D4 FLA | 10 plays, 61 yards, 5:10 | Downs | start FLA 20 Q1 5:48
+  Q1 5:48 [1st & 10 at FLA 20] (05:54) Shotgun #13 J.Baugh rush left for 5 yards gain to the FLA25 (#2 J.Braxton)
+  Q1 5:17 [2nd & 5 at FLA 25] (05:22) No Huddle-Shotgun #12 A.Philo pass complete short right to #1 V.Brown III caught at FLA25, for 19 yards to the FLA44 (#8 A.Kite), out of bounds, 1ST DOWN
+  Q1 4:41 [1st & 10 at FLA 44] (04:46) No Huddle-Shotgun #13 J.Baugh rush right for 9 yards gain to the OLE47 (#8 A.Kite; #11 K.Thomas), out of bounds
+  Q1 4:06 [2nd & 1 at MISS 47] (04:11) Shotgun #13 J.Baugh rush right for 3 yards gain to the OLE44 (#4 S.Perkins), 1ST DOWN
+  Q1 3:28 [1st & 10 at MISS 44] (03:37) Shotgun #20 D.Clark rush right for 3 yards gain to the OLE41, out of bounds at OLE41
+  Q1 2:39 [2nd & 7 at MISS 41] (02:57) Shotgun #12 A.Philo pass complete short left to #3 B.Stockton caught at OLE27, for 14 yards to the OLE27, End Of Play, 1ST DOWN
+  Q1 2:27 [1st & 10 at MISS 27] (02:31) No Huddle-Shotgun #20 D.Clark rush middle for 3 yards gain to the OLE24 (#9 J.Oatis)
+  Q1 1:47 [2nd & 7 at MISS 24] (01:53) Shotgun #13 J.Baugh rush middle for 4 yards gain to the OLE20 (#88 M.Boireau; #9 J.Oatis)
+  Q1 1:24 [3rd & 3 at MISS 20] (01:30) Shotgun #12 A.Philo rush middle for 1 yard gain to the OLE19 (#9 J.Oatis)
+  Q1 0:45 [4th & 2 at MISS 19] (00:47) Shotgun #12 A.Philo pass incomplete short left to #7 A.Jackson thrown to OLE20 QB hurried by #2 J.Braxton, TURNOVER ON DOWNS
+
+### D5 MISS | 4 plays, 21 yards, 1:15 | Punt | start MISS 19 Q1 0:29
+  Q1 0:29 [1st & 10 at MISS 19] (00:45) Shotgun #6 T.Chambliss pass complete short middle to #3 C.Cunningham caught at OLE34, for 14 yards to the OLE33 (#27 D.Johnson), 1ST DOWN
+  Q1 0:18 [1st & 10 at MISS 33] (00:21) Shotgun #25 M.Frazier rush right for 4 yards gain to the OLE37 (#24 K.James), out of bounds
+  Q1 0:18 [2nd & 6 at MISS 37] (00:00) PENALTY OLE False Start (#3 C.Cunningham) 5 yards from OLE37 to OLE32. NO PLAY
+  Q1 0:00 [] End of 1st quarter.
+  Q2 14:47 [2nd & 11 at MISS 32] (14:58) Shotgun #6 T.Chambliss pass complete short left to #3 C.Cunningham caught at OLE36, for 8 yards to the OLE40, End Of Play
+  Q2 14:36 [3rd & 3 at MISS 40] (14:37) Shotgun #6 T.Chambliss pass incomplete short middle to #7 T.Ray thrown to OLE47 broken up by #2 L.Hayward
+  Q2 14:30 [4th & 3 at MISS 40] (14:35) #33 O.Bird punt 47 yards to the FLA13 fair catch by #1 V.Brown III at FLA13
+
+### D6 FLA | 5 plays, 7 yards, 1:56 | Punt | start FLA 13 Q2 14:24
+  Q2 14:24 [1st & 10 at FLA 13] (14:30) Shotgun #20 D.Clark rush middle for 12 yards gain to the FLA25 (#17 J.Maldonado), 1ST DOWN
+  Q2 13:48 [1st & 10 at FLA 25] (13:53) No Huddle-Shotgun #20 D.Clark rush right for 0 yards to the FLA25 (#49 T.Butler; #12 L.Ferrelli)
+  Q2 13:08 [2nd & 10 at FLA 25] (13:19) No Huddle-Shotgun #12 A.Philo pass complete short middle to #3 B.Stockton caught at FLA32, for 8 yards to the FLA33 (#24 A.Jaffe; #12 L.Ferrelli)
+  Q2 12:50 [3rd & 2 at FLA 33] (12:58) No Huddle-Shotgun #12 A.Philo pass complete short right to #1 V.Brown III caught at FLA29, for 67 yards to the OLE00 TOUCHDOWN nullified by penalty, clock 12:50 PENALTY FLA Holding (#3 B.Stockton) 10 yards from FLA35 to FLA25
+  Q2 12:50 [3rd & 10 at FLA 25] PENALTY FLA Delay Of Game (#12 A.Philo) 5 yards from FLA25 to FLA20. NO PLAY
+  Q2 12:42 [3rd & 15 at FLA 20] (12:48) No Huddle-Shotgun #12 A.Philo pass incomplete short left to #3 B.Stockton thrown to FLA36
+  Q2 12:34 [4th & 15 at FLA 20] (12:40) #38 A.Clark punt 43 yards to the OLE37 fair catch by #1 D.Alexander at OLE37 PENALTY FLA Kick Catch Interference (#2 L.Hayward) 15 yards from OLE37 to FLA48
+
+### D7 MISS | 5 plays, 30 yards, 2:21 | Field Goal | start FLA 48 Q2 12:24
+  Q2 12:24 [1st & 10 at FLA 48] (12:33) Shotgun #25 M.Frazier rush middle for 16 yards gain to the FLA32 (#27 D.Johnson; #29 J.Robinson), 1ST DOWN, PENALTY FLA Face Mask (#91 J.McCloud) 15 yards from FLA32 to FLA17, 1ST DOWN
+  Q2 12:04 [1st & 10 at FLA 17] (12:09) No Huddle-Shotgun #25 M.Frazier rush left for 2 yards loss to the FLA19 (#91 J.McCloud)
+  Q2 11:20 [2nd & 12 at FLA 19] (11:35) No Huddle-Shotgun #6 T.Chambliss pass complete short left to #4 C.Odom caught at FLA24, for 5 yards loss to the FLA24 (#0 J.Woods)
+  Q2 10:41 [3rd & 17 at FLA 24] (10:56) No Huddle-Shotgun #6 T.Chambliss pass complete short left to #4 C.Odom caught at FLA17, for 6 yards to the FLA18 (#43 A.Allen Jr.; #29 J.Robinson)
+  Q2 10:13 [4th & 11 at FLA 18] (10:14) #17 L.Carneiro field goal attempt from 36 yards GOOD (H: #33 O.Bird, LS: #50 C.Blankenship), clock 10:13
+
+### D8 FLA | 15 plays, 87 yards, 7:17 | Touchdown | start FLA 13 Q2 10:08
+  Q2 10:08 [] (10:13) #17 L.Carneiro kickoff 65 yards to the FLA00 #24 L.Montgomery return 13 yards to the FLA13 (#34 I.McCoy)
+  Q2 10:01 [1st & 10 at FLA 13] (10:06) No Huddle-Shotgun #13 J.Baugh rush right for 7 yards gain to the FLA20 (#88 M.Boireau; #6 J.Aguero)
+  Q2 9:24 [2nd & 3 at FLA 20] (09:30) Shotgun #13 J.Baugh rush right for 2 yards gain to the FLA22 (#11 K.Thomas; #12 L.Ferrelli)
+  Q2 9:02 [3rd & 1 at FLA 22] (09:06) No Huddle-Shotgun #12 A.Philo rush middle for 3 yards gain to the FLA25 (#88 M.Boireau), 1ST DOWN
+  Q2 8:18 [1st & 10 at FLA 25] (08:30) Shotgun #12 A.Philo pass complete short left to #3 B.Stockton caught at FLA20, for 2 yards to the FLA27 (#7 S.Denson)
+  Q2 7:47 [2nd & 8 at FLA 27] (08:00) No Huddle-Shotgun #12 A.Philo pass complete short left to #6 D.Wilson caught at FLA33, for 7 yards to the FLA34 (#8 A.Kite)
+  Q2 7:16 [3rd & 1 at FLA 34] (07:25) Shotgun #13 J.Baugh rush middle for 5 yards gain to the FLA39 (#1 J.Renaud), 1ST DOWN
+  Q2 6:43 [1st & 10 at FLA 39] (06:47) No Huddle-Shotgun #20 D.Clark rush left for 11 yards gain to the FLA50 (#7 S.Denson), 1ST DOWN
+  Q2 6:08 [1st & 10 at 50] (06:13) Shotgun #20 D.Clark rush middle for 5 yards gain to the OLE45 (#11 K.Thomas)
+  Q2 5:27 [2nd & 5 at MISS 45] (05:35) Shotgun #1 V.Brown III rush right for 6 yards gain to the OLE39 (#6 J.Aguero), 1ST DOWN
+  Q2 4:41 [1st & 10 at MISS 39] (04:53) Shotgun #12 A.Philo pass complete short left to #13 J.Baugh caught at OLE45, for 12 yards to the OLE27 (#8 A.Kite; #11 K.Thomas), 1ST DOWN
+  Q2 4:29 [1st & 10 at MISS 27] (04:34) Shotgun #12 A.Philo pass incomplete short right to #6 D.Wilson thrown to OLE09 broken up by #0 J.Crawford
+  Q2 4:23 [2nd & 10 at MISS 27] (04:27) Shotgun #13 J.Baugh rush left for 2 yards gain to the OLE25, out of bounds at OLE25
+  Q2 3:44 [3rd & 8 at MISS 25] (03:52) Shotgun #12 A.Philo pass complete short middle to #4 T.Abrams caught at OLE15, for 15 yards to the OLE10 (#8 A.Kite; #4 S.Perkins), 1ST DOWN, PENALTY OLE Targeting (#6 J.Aguero) 5 yards from OLE10 to OLE05, 1ST DOWN
+  Q2 3:26 [1st & Goal at MISS 5] (03:30) Shotgun #13 J.Baugh rush middle for 3 yards gain to the OLE02 (#17 J.Maldonado; #9 J.Oatis)
+  Q2 2:51 [2nd & Goal at MISS 2] (02:51) #13 J.Baugh rush right for 2 yards gain to the OLE00 TOUCHDOWN, clock 02:51 #91 P.Durkin kick attempt good (H: #38 A.Clark, LS: #54 L.Anderson)
+
+### D9 MISS | 8 plays, 47 yards, 1:40 | Field Goal | start MISS 25 Q2 2:51
+  Q2 2:44 [1st & 10 at MISS 25] (02:50) No Huddle-Shotgun #26 J.Lindsey rush left for 5 yards gain to the OLE30 (#2 L.Hayward; #8 A.Chiles)
+  Q2 2:17 [2nd & 5 at MISS 30] (02:29) No Huddle-Shotgun #6 T.Chambliss pass complete short left to #9 L.Hasz caught at OLE35, for 8 yards to the OLE38 (#33 D.Coleman), 1ST DOWN
+  Q2 2:00 [1st & 10 at MISS 38] (02:08) No Huddle-Shotgun #6 T.Chambliss pass complete short middle to #1 D.Alexander caught at FLA44, for 18 yards to the FLA44, End Of Play, 1ST DOWN
+  Q2 2:00 [1st & 10 at MISS 38] Timeout Ole Miss, clock 02:00
+  Q2 1:51 [1st & 10 at FLA 44] (01:59) No Huddle-Shotgun #6 T.Chambliss pass complete short right to #1 D.Alexander caught at FLA34, for 10 yards to the FLA34 (#25 C.McClain), 1ST DOWN
+  Q2 1:41 [1st & 10 at FLA 34] (01:45) No Huddle-Shotgun #26 J.Lindsey rush middle for 6 yards gain to the FLA28 (#8 A.Chiles; #5 M.Graham)
+  Q2 1:19 [2nd & 4 at FLA 28] (01:24) No Huddle-Shotgun #6 T.Chambliss pass incomplete short middle to #81 S.Reed thrown to FLA15 broken up by #33 D.Coleman
+  Q2 1:18 [3rd & 4 at FLA 28] (01:19) No Huddle-Shotgun #6 T.Chambliss pass incomplete deep left to #11 H.Fields thrown to FLA07
+  Q2 1:11 [4th & 4 at FLA 28] (01:14) #17 L.Carneiro field goal attempt from 46 yards GOOD (H: #33 O.Bird, LS: #50 C.Blankenship), clock 01:11
+
+### D10 FLA | 3 plays, -1 yard, 0:50 | Punt | start FLA 25 Q2 1:11
+  Q2 1:11 [] (01:11) #17 L.Carneiro kickoff 65 yards to the FLA00, Touchback
+  Q2 1:05 [1st & 10 at FLA 25] (01:09) Shotgun #13 J.Baugh rush middle for 1 yard gain to the FLA26 (#4 S.Perkins; #49 T.Butler)
+  Q2 0:32 [2nd & 9 at FLA 26] (00:36) Shotgun #13 J.Baugh rush left for 2 yards loss to the FLA24 (#3 B.Purchase)
+  Q2 0:32 [2nd & 9 at FLA 26] Timeout Ole Miss, clock 00:32
+  Q2 0:28 [3rd & 11 at FLA 24] (00:33) Shotgun #12 A.Philo pass complete short left to #6 D.Wilson caught at FLA21, for 4 yards to the FLA28 (#49 T.Butler)
+  Q2 0:28 [3rd & 11 at FLA 24] Timeout Ole Miss, clock 00:28
+  Q2 0:21 [4th & 7 at FLA 28] (00:29) #38 A.Clark punt 70 yards to the OLE02, out of bounds at OLE02
+
+### D11 MISS | 3 plays, 29 yards, 0:21 | End Of Half | start MISS 2 Q2 0:13
+  Q2 0:13 [1st & 10 at MISS 2] (00:20) Shotgun #25 M.Frazier rush middle for 3 yards gain to the OLE05 (#99 E.Oyebadejo; #0 J.Woods)
+  Q2 0:13 [1st & 10 at MISS 2] Timeout Florida, clock 00:13
+  Q2 0:09 [2nd & 7 at MISS 5] (00:16) Shotgun #25 M.Frazier rush middle for 9 yards gain to the OLE14 (#20 K.Clark), 1ST DOWN
+  Q2 0:02 [1st & 10 at MISS 14] (00:02) Shotgun #6 T.Chambliss pass complete short left to #0 J.Cook II caught at OLE25, for 17 yards to the OLE31 (#20 K.Clark), out of bounds, 1ST DOWN
+  Q2 0:00 [] End of 2nd quarter.
+
+### D12 MISS | 5 plays, 80 yards, 1:53 | Touchdown | start MISS 20 Q3 14:56
+  Q3 14:56 [] (15:00) #91 P.Durkin kickoff 61 yards to the OLE04 #7 T.Ray return 16 yards to the OLE20 (#9 D.Stubbs)
+  Q3 14:43 [1st & 10 at MISS 20] (14:55) Shotgun #6 T.Chambliss pass complete short middle to #1 D.Alexander caught at OLE31, for 14 yards to the OLE34, End Of Play, 1ST DOWN
+  Q3 14:24 [1st & 10 at MISS 34] (14:30) No Huddle-Shotgun #25 M.Frazier rush middle for 5 yards gain to the OLE39 (#5 M.Graham; #0 J.Woods)
+  Q3 13:57 [2nd & 5 at MISS 39] (14:03) No Huddle-Shotgun #6 T.Chambliss pass complete deep right to #1 D.Alexander caught at FLA20, for 49 yards to the FLA12 (#1 B.Thornton), 1ST DOWN
+  Q3 13:38 [1st & 10 at FLA 12] (13:43) No Huddle-Shotgun #25 M.Frazier rush middle for 4 yards gain to the FLA08 (#20 K.Clark)
+  Q3 13:03 [2nd & 6 at FLA 8] (13:06) No Huddle-Shotgun #6 T.Chambliss rush middle for 8 yards gain to the FLA00 TOUCHDOWN, clock 13:03, 1ST DOWN #11 H.Fields pass attempt Successful
+
+### D13 FLA | 4 plays, 59 yards, 1:23 | Touchdown | start FLA 41 Q3 12:55
+  Q3 12:55 [] (13:03) #17 L.Carneiro kickoff 65 yards to the FLA00 #24 L.Montgomery return 41 yards to the FLA41 (#22 R.Collins)
+  Q3 12:47 [1st & 10 at FLA 41] (12:50) No Huddle-Shotgun #13 J.Baugh rush left for 7 yards gain to the FLA48 (#3 B.Purchase)
+  Q3 12:16 [2nd & 3 at FLA 48] (12:23) No Huddle-Shotgun #13 J.Baugh rush left for 7 yards gain to the OLE45 (#3 B.Purchase; #88 M.Boireau), 1ST DOWN
+  Q3 11:40 [1st & 10 at MISS 45] (11:43) No Huddle-Shotgun #12 A.Philo pass incomplete deep middle to #2 E.Singleton Jr. thrown to OLE00
+  Q3 11:32 [2nd & 10 at MISS 45] (11:39) No Huddle-Shotgun #20 D.Clark rush left for 45 yards gain to the OLE00 TOUCHDOWN, clock 11:32, 1ST DOWN #91 P.Durkin kick attempt good (H: #38 A.Clark, LS: #54 L.Anderson)
+
+### D14 MISS | 14 plays, 74 yards, 6:05 | Touchdown | start MISS 26 Q3 11:26
+  Q3 11:26 [] (11:32) #91 P.Durkin kickoff 56 yards to the OLE09 #7 T.Ray return 17 yards to the OLE26 (#33 B.Case)
+  Q3 11:22 [1st & 10 at MISS 26] (11:25) Shotgun #6 T.Chambliss pass incomplete short left to #9 L.Hasz thrown to OLE40 QB hurried by #24 K.James
+  Q3 11:15 [2nd & 10 at MISS 26] (11:19) Shotgun #6 T.Chambliss rush middle for 4 yards gain to the OLE30 (#5 M.Graham)
+  Q3 10:33 [3rd & 6 at MISS 30] (10:43) Shotgun #6 T.Chambliss pass complete short middle to #4 C.Odom caught at OLE37, for 6 yards to the OLE36 (#2 L.Hayward), 1ST DOWN
+  Q3 10:06 [1st & 10 at MISS 36] (10:15) Shotgun #6 T.Chambliss pass complete short left to #3 C.Cunningham caught at OLE39, for 6 yards to the OLE42 (#27 D.Johnson; #22 K.Asare), out of bounds
+  Q3 9:40 [2nd & 4 at MISS 42] (09:46) Shotgun #25 M.Frazier rush left for 3 yards gain to the OLE45 (#90 B.Bett; #93 D.Kalu)
+  Q3 9:15 [3rd & 1 at MISS 45] (09:19) Shotgun #6 T.Chambliss rush middle for 8 yards gain to the FLA47 (#29 J.Robinson; #43 A.Allen Jr.), 1ST DOWN
+  Q3 8:47 [1st & 10 at FLA 47] (08:47) No Huddle-Shotgun #6 T.Chambliss pass incomplete short right to #3 C.Cunningham thrown to OLE50 QB hurried by #2 L.Hayward PENALTY FLA Holding (#27 D.Johnson) 10 yards from FLA47 to FLA37, 1ST DOWN. NO PLAY
+  Q3 8:30 [1st & 10 at FLA 37] (08:42) No Huddle-Shotgun #6 T.Chambliss rush left for 6 yards gain to the FLA31 (#5 M.Graham), out of bounds
+  Q3 8:01 [2nd & 4 at FLA 31] (08:07) No Huddle-Shotgun #26 J.Lindsey rush middle for 3 yards gain to the FLA28 (#5 M.Graham)
+  Q3 7:37 [3rd & 1 at FLA 28] (07:44) Shotgun #26 J.Lindsey rush middle for 2 yards gain to the FLA26 (#1 B.Thornton), 1ST DOWN
+  Q3 7:08 [1st & 10 at FLA 26] (07:12) Shotgun #6 T.Chambliss pass incomplete short left to #82 M.Smith thrown to FLA15
+  Q3 7:00 [2nd & 10 at FLA 26] (07:05) Shotgun #6 T.Chambliss pass complete short left to #0 J.Cook II caught at FLA20, for 6 yards to the FLA20, out of bounds at FLA20
+  Q3 6:06 [3rd & 4 at FLA 20] (06:25) Shotgun #6 T.Chambliss pass complete short left to #0 J.Cook II caught at FLA17, for 3 yards to the FLA17 (#27 D.Johnson)
+  Q3 5:46 [4th & 1 at FLA 17] (05:50) Shotgun #26 J.Lindsey rush middle for 7 yards gain to the FLA10 (#8 A.Chiles; #1 B.Thornton), 1ST DOWN
+  Q3 5:21 [1st & Goal at FLA 10] (05:25) Shotgun #6 T.Chambliss rush left for 10 yards gain to the FLA00 TOUCHDOWN, clock 05:21, 1ST DOWN #17 L.Carneiro kick attempt good (H: #33 O.Bird, LS: #50 C.Blankenship)
+
+### D15 FLA | 3 plays, 26 yards, 1:25 | Touchdown | start MISS 26 Q3 5:10
+  Q3 5:10 [] (05:21) #17 L.Carneiro kickoff 65 yards to the FLA00 #24 L.Montgomery return 74 yards to the OLE26 (#81 S.Reed)
+  Q3 4:58 [1st & 10 at MISS 26] (05:09) Shotgun #12 A.Philo pass complete short left to #7 A.Jackson caught at OLE25, for 23 yards to the OLE03 (#31 L.Clardy), 1ST DOWN
+  Q3 4:19 [1st & Goal at MISS 3] (04:27) #13 J.Baugh rush left for 2 yards gain to the OLE01 (#12 L.Ferrelli)
+  Q3 3:45 [2nd & Goal at MISS 1] (03:49) #12 A.Philo rush middle for 1 yard gain to the OLE00 TOUCHDOWN, clock 03:45 #91 P.Durkin kick attempt good (H: #38 A.Clark, LS: #54 L.Anderson)
+
+### D16 MISS | 4 plays, 32 yards, 1:04 | Fumble | start MISS 25 Q3 3:45
+  Q3 3:45 [] (03:45) #91 P.Durkin kickoff 65 yards to the OLE00, Touchback
+  Q3 3:29 [1st & 10 at MISS 25] (03:43) Shotgun #6 T.Chambliss pass complete short left to #25 M.Frazier caught at OLE18, for 3 yards to the OLE28 (#8 A.Chiles)
+  Q3 3:17 [2nd & 7 at MISS 28] (03:19) No Huddle-Shotgun #6 T.Chambliss pass complete short left to #7 T.Ray caught at OLE27, for 2 yards to the OLE30, out of bounds at OLE30
+  Q3 2:57 [3rd & 5 at MISS 30] (03:07) No Huddle-Shotgun #6 T.Chambliss pass complete short middle to #7 T.Ray caught at OLE44, for 15 yards to the OLE45 (#8 A.Chiles; #33 D.Coleman), 1ST DOWN, PENALTY FLA UNR: Unnecessary Roughness (#95 J.Lyons) 15 yards from OLE45 to FLA40, 1ST DOWN
+  Q3 2:47 [1st & 10 at FLA 40] (02:47) Shotgun #6 T.Chambliss sacked for loss of 3 yards to the FLA43 (#0 J.Woods), fumble by #6 T.Chambliss recovered by FLA #5 M.Graham at FLA43, End Of Play
+
+### D17 FLA | 7 plays, 57 yards, 4:03 | Touchdown | start FLA 43 Q3 2:28
+  Q3 2:28 [1st & 10 at FLA 43] (02:34) Shotgun #13 J.Baugh rush left for 10 yards gain to the OLE47 (#11 K.Thomas; #12 L.Ferrelli), 1ST DOWN
+  Q3 1:49 [1st & 10 at MISS 47] (01:55) Shotgun #20 D.Clark rush left for 2 yards gain to the OLE45 (#96 J.Brown; #12 L.Ferrelli)
+  Q3 1:05 [2nd & 8 at MISS 45] (01:15) Shotgun #12 A.Philo pass complete short right to #15 L.Harpring caught at OLE40, for 21 yards to the OLE24 (#20 A.Robinson III; #14 E.Joseph), 1ST DOWN
+  Q3 0:24 [1st & 10 at MISS 24] (00:36) Shotgun #12 A.Philo pass complete short left to #3 B.Stockton caught at OLE25, for 9 yards to the OLE15 (#14 E.Joseph; #2 J.Braxton)
+  Q3 0:00 [] End of 3rd quarter.
+  Q4 14:52 [2nd & 1 at MISS 15] (14:59) No Huddle-Shotgun #13 J.Baugh rush middle for 9 yards gain to the OLE06 (#24 A.Jaffe; #31 L.Clardy), 1ST DOWN
+  Q4 14:11 [1st & Goal at MISS 6] (14:14) Shotgun #13 J.Baugh rush middle for 0 yards to the OLE06 (#11 K.Thomas)
+  Q4 13:38 [2nd & Goal at MISS 6] (13:42) #6 D.Wilson rush left for 6 yards gain to the OLE00 TOUCHDOWN, clock 13:38 #91 P.Durkin kick attempt good (H: #38 A.Clark, LS: #54 L.Anderson)
+
+### D18 MISS | 4 plays, 76 yards, 1:21 | Touchdown | start MISS 24 Q4 13:30
+  Q4 13:30 [] (13:38) #91 P.Durkin kickoff 64 yards to the OLE01 #7 T.Ray return 23 yards to the OLE24 (#9 D.Stubbs)
+  Q4 13:09 [1st & 10 at MISS 24] (13:29) No Huddle-Shotgun #6 T.Chambliss pass complete deep right to #81 S.Reed caught at OLE45, for 21 yards to the OLE45, End Of Play, 1ST DOWN
+  Q4 12:46 [1st & 10 at MISS 45] (13:04) No Huddle-Shotgun #6 T.Chambliss pass complete short left to #0 J.Cook II caught at FLA46, for 9 yards to the FLA46 (#6 J.Flowers)
+  Q4 12:28 [2nd & 1 at FLA 46] (12:37) No Huddle-Shotgun #6 T.Chambliss pass complete deep right to #1 D.Alexander caught at FLA20, for 32 yards to the FLA14 (#12 B.Hanks III), 1ST DOWN
+  Q4 12:15 [1st & 10 at FLA 14] (12:15) No Huddle-Shotgun #6 T.Chambliss pass incomplete short middle to #0 J.Cook II thrown to FLA02, 1ST DOWN, PENALTY FLA Pass Interference (#6 J.Flowers) 12 yards from FLA14 to FLA02, 1ST DOWN. NO PLAY
+  Q4 12:09 [1st & Goal at FLA 2] (12:11) Shotgun #6 T.Chambliss pass complete short left to #1 D.Alexander caught at FLA00, for 2 yards to the FLA00 TOUCHDOWN, clock 12:09 #17 L.Carneiro kick attempt good (H: #33 O.Bird, LS: #50 C.Blankenship)
+
+### D19 FLA | 5 plays, 64 yards, 2:50 | Touchdown | start FLA 36 Q4 12:09
+  Q4 12:09 [] (12:09) #17 L.Carneiro kickoff 34 yards to the FLA31, out of bounds at FLA31
+  Q4 12:01 [1st & 10 at FLA 36] (12:07) Shotgun #20 D.Clark rush left for 0 yards to the FLA36 (#52 W.Echoles; #11 K.Thomas)
+  Q4 11:28 [2nd & 10 at FLA 36] (11:28) Shotgun #12 A.Philo pass incomplete deep middle to #2 E.Singleton Jr. thrown to OLE20 QB hurried by #5 K.Franklin PENALTY OLE Pass Interference (#7 S.Denson) 15 yards from FLA36 to OLE49, 1ST DOWN. NO PLAY
+  Q4 11:01 [1st & 10 at MISS 49] (11:21) Shotgun #12 A.Philo rush left for 0 yards to the OLE49 (#14 E.Joseph)
+  Q4 10:35 [2nd & 10 at MISS 49] (10:47) Shotgun #20 D.Clark rush middle for 44 yards gain to the OLE05 (#14 E.Joseph), out of bounds, 1ST DOWN
+  Q4 9:59 [1st & Goal at MISS 5] (10:06) No Huddle-Shotgun #20 D.Clark rush middle for 0 yards to the OLE05 (#11 K.Thomas)
+  Q4 9:19 [2nd & Goal at MISS 5] (09:19) Shotgun #12 A.Philo pass complete short left to #7 A.Jackson caught at OLE06, for 5 yards to the OLE00 TOUCHDOWN, clock 09:19 #91 P.Durkin kick attempt good (H: #38 A.Clark, LS: #54 L.Anderson)
+
+### D20 MISS | 3 plays, -19 yards, 0:31 | Punt | start MISS 28 Q4 9:13
+  Q4 9:13 [] (09:16) #40 B.Rabasco kickoff 57 yards to the OLE08 #7 T.Ray return 20 yards to the OLE28 (#44 M.Johnson)
+  Q4 9:07 [1st & 10 at MISS 28] (09:11) No Huddle-Shotgun #6 T.Chambliss pass incomplete deep left to #3 C.Cunningham thrown to FLA42 broken up by #27 D.Johnson
+  Q4 9:01 [2nd & 10 at MISS 28] (09:05) No Huddle-Shotgun #6 T.Chambliss pass incomplete deep right to #3 C.Cunningham thrown to FLA44
+  Q4 8:59 [3rd & 10 at MISS 28] PENALTY OLE UNS: Unsportsmanlike Conduct 14 yards from OLE28 to OLE14. NO PLAY
+  Q4 8:56 [3rd & 24 at MISS 14] (08:56) No Huddle-Shotgun #6 T.Chambliss pass incomplete short right to #1 D.Alexander thrown to OLE25 QB hurried by #91 J.McCloud
+  Q4 8:56 [4th & 24 at MISS 14] PENALTY OLE Delay Of Game 5 yards from OLE14 to OLE09. NO PLAY
+  Q4 8:42 [4th & 29 at MISS 9] (08:54) #33 O.Bird punt 60 yards to the FLA31 #3 B.Stockton return 25 yards to the OLE44 (#49 T.Butler), out of bounds PENALTY FLA Holding (#16 T.Bullard) 10 yards from FLA47 to FLA37
+
+### D21 FLA | 8 plays, 63 yards, 4:42 | Touchdown | start FLA 37 Q4 8:35
+  Q4 8:35 [1st & 10 at FLA 37] (08:41) Shotgun #13 J.Baugh rush right for 5 yards gain to the FLA42 (#7 S.Denson)
+  Q4 7:41 [2nd & 5 at FLA 42] (07:49) Shotgun #13 J.Baugh rush left for 6 yards gain to the FLA48 (#52 W.Echoles; #24 A.Jaffe), 1ST DOWN
+  Q4 6:59 [1st & 10 at FLA 48] (07:08) Shotgun #13 J.Baugh rush right for 6 yards gain to the OLE46, out of bounds at OLE46
+  Q4 6:13 [2nd & 4 at MISS 46] (06:22) Shotgun #13 J.Baugh rush middle for 1 yard gain to the OLE45, End Of Play
+  Q4 5:29 [3rd & 3 at MISS 45] (05:33) Shotgun #13 J.Baugh rush middle for 4 yards gain to the OLE41 (#5 K.Franklin; #11 K.Thomas), 1ST DOWN
+  Q4 4:46 [1st & 10 at MISS 41] (04:50) Shotgun #20 D.Clark rush left for 1 yard gain to the OLE40 (#3 B.Purchase; #49 T.Butler)
+  Q4 4:46 [1st & 10 at MISS 41] Timeout Ole Miss, clock 04:46
+  Q4 4:21 [2nd & 9 at MISS 40] (04:47) Shotgun #12 A.Philo pass complete deep right to #2 E.Singleton Jr. caught at OLE02, for 38 yards to the OLE02 (#7 S.Denson), 1ST DOWN
+  Q4 4:00 [1st & Goal at MISS 2] (04:00) #13 J.Baugh rush middle for 2 yards gain to the OLE00 TOUCHDOWN, clock 04:00 #91 P.Durkin kick attempt good (H: #38 A.Clark, LS: #54 L.Anderson)
+
+### D22 MISS | 4 plays, 53 yards, 1:24 | Interception | start MISS 25 Q4 4:00
+  Q4 4:00 [] (04:00) #91 P.Durkin kickoff 65 yards to the OLE00, Touchback
+  Q4 3:50 [1st & 10 at MISS 25] (03:59) Shotgun #6 T.Chambliss pass complete short right to #1 D.Alexander caught at OLE30, for 9 yards to the OLE34 (#25 C.McClain), out of bounds
+  Q4 3:50 [1st & 10 at MISS 25] Timeout Florida, clock 03:50
+  Q4 3:26 [2nd & 1 at MISS 34] (03:36) No Huddle-Shotgun #28 J.Dye rush middle for 11 yards gain to the OLE45 (#5 M.Graham), 1ST DOWN
+  Q4 2:55 [1st & 10 at MISS 45] (03:08) No Huddle-Shotgun #6 T.Chambliss pass complete deep middle to #4 C.Odom caught at FLA30, for 33 yards to the FLA22 (#1 B.Thornton), 1ST DOWN
+  Q4 2:36 [1st & 10 at FLA 22] (02:41) No Huddle-Shotgun #6 T.Chambliss pass intercepted by #33 D.Coleman at FLA05, End Of Play
+
+### D23 FLA | 1 play, 3 yards, 0:13 | None | start FLA 0 Q4 None
+  Q4 2:23 [1st & 10 at FLA 5] (02:35) #24 L.Montgomery rush middle for 3 yards gain to the FLA08 (#12 L.Ferrelli)

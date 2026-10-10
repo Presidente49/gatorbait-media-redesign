@@ -1,0 +1,1032 @@
+{
+ "confRecord": "2-1",
+ "finals": [
+  "401856637",
+  "401856672",
+  "401856687",
+  "401856699",
+  "401856708"
+ ],
+ "games": [
+  {
+   "d": "Sat., Sept. 5",
+   "id": "401856637",
+   "k": "2026-09-05T23:45Z",
+   "n": false,
+   "o": "vs. Florida Atlantic",
+   "r": "W",
+   "rec": "1-0",
+   "s": "66-21"
+  },
+  {
+   "d": "Sat., Sept. 12",
+   "id": "401856672",
+   "k": "2026-09-12T21:30Z",
+   "n": false,
+   "o": "vs. Campbell",
+   "r": "W",
+   "rec": "2-0",
+   "s": "52-3"
+  },
+  {
+   "d": "Sat., Sept. 19",
+   "id": "401856687",
+   "k": "2026-09-19T23:00Z",
+   "n": false,
+   "o": "at Auburn",
+   "r": "W",
+   "rec": "3-0",
+   "s": "44-39"
+  },
+  {
+   "d": "Sat., Sept. 26",
+   "id": "401856699",
+   "k": "2026-09-26T19:30Z",
+   "n": false,
+   "o": "vs. No. 4 Ole Miss",
+   "r": "W",
+   "rec": "4-0",
+   "s": "52-28"
+  },
+  {
+   "d": "Sat., Oct. 3",
+   "id": "401856708",
+   "k": "2026-10-03T19:50Z",
+   "n": false,
+   "o": "at No. 25 Missouri",
+   "r": "L",
+   "rec": "4-1",
+   "s": "17-45"
+  },
+  {
+   "d": "Sat., Oct. 10",
+   "id": "401856714",
+   "k": "2026-10-10T16:45Z",
+   "n": false,
+   "o": "vs. South Carolina",
+   "t": "12:45 p.m.",
+   "tv": "SEC Network"
+  },
+  {
+   "d": "Sat., Oct. 17",
+   "id": "401856724",
+   "k": "2026-10-17T04:00Z",
+   "n": false,
+   "o": "at No. 1 Texas",
+   "t": "TBA",
+   "tv": ""
+  },
+  {
+   "d": "Sat., Oct. 31",
+   "id": "401856734",
+   "k": "2026-10-31T19:30Z",
+   "n": true,
+   "o": "vs. No. 2 Georgia",
+   "t": "3:30 p.m.",
+   "tv": "ABC"
+  },
+  {
+   "d": "Sat., Nov. 7",
+   "id": "401856739",
+   "k": "2026-11-07T05:00Z",
+   "n": false,
+   "o": "vs. Oklahoma",
+   "t": "TBA",
+   "tv": ""
+  },
+  {
+   "d": "Sat., Nov. 14",
+   "id": "401856884",
+   "k": "2026-11-14T05:00Z",
+   "n": false,
+   "o": "at Kentucky",
+   "t": "TBA",
+   "tv": ""
+  },
+  {
+   "d": "Sat., Nov. 21",
+   "id": "401856748",
+   "k": "2026-11-21T05:00Z",
+   "n": false,
+   "o": "vs. Vanderbilt",
+   "t": "TBA",
+   "tv": ""
+  },
+  {
+   "d": "Fri., Nov. 27",
+   "id": "401856759",
+   "k": "2026-11-27T20:30Z",
+   "n": false,
+   "o": "at Florida State",
+   "t": "3:30 p.m.",
+   "tv": "ABC"
+  }
+ ],
+ "lead": {
+  "def": [
+   [
+    "Myles Graham",
+    "33",
+    "0.5",
+    "0.5",
+    "0",
+    "0"
+   ],
+   [
+    "Aaron Chiles",
+    "23",
+    "1",
+    "0",
+    "0",
+    "2"
+   ],
+   [
+    "Jayden Woods",
+    "21",
+    "6.5",
+    "4",
+    "0",
+    "0"
+   ],
+   [
+    "Jeramiah McCloud",
+    "19",
+    "1.5",
+    "0.5",
+    "0",
+    "2"
+   ],
+   [
+    "Jaden Robinson",
+    "18",
+    "2.5",
+    "1",
+    "0",
+    "2"
+   ],
+   [
+    "Lagonza Hayward",
+    "17",
+    "2",
+    "0",
+    "0",
+    "3"
+   ]
+  ],
+  "defBest": {
+   "INT": [
+    "DJ Coleman",
+    "2"
+   ],
+   "SACKS": [
+    "Jayden Woods",
+    "4"
+   ],
+   "TFL": [
+    "Jayden Woods",
+    "6.5"
+   ]
+  },
+  "kick": [
+   [
+    "Patrick Durkin",
+    "7-7",
+    "53",
+    "29-29",
+    "50"
+   ],
+   [
+    "Liam Padron",
+    "0-0",
+    "–",
+    "1-1",
+    "1"
+   ]
+  ],
+  "pass": [
+   [
+    "Aaron Philo",
+    "84-121",
+    "1,114",
+    "8",
+    "2"
+   ],
+   [
+    "Tramell Jones Jr.",
+    "17-21",
+    "212",
+    "2",
+    "1"
+   ],
+   [
+    "Kahleil Jackson",
+    "1-1",
+    "48",
+    "0",
+    "0"
+   ]
+  ],
+  "rec": [
+   [
+    "Dallas Wilson",
+    "18",
+    "302",
+    "16.8",
+    "3",
+    "40"
+   ],
+   [
+    "Vernell Brown III",
+    "17",
+    "271",
+    "15.9",
+    "2",
+    "49"
+   ],
+   [
+    "TJ Abrams",
+    "8",
+    "166",
+    "20.8",
+    "1",
+    "63"
+   ],
+   [
+    "Bailey Stockton",
+    "15",
+    "131",
+    "8.7",
+    "1",
+    "24"
+   ],
+   [
+    "Luke Harpring",
+    "10",
+    "130",
+    "13.0",
+    "0",
+    "22"
+   ],
+   [
+    "Amir Jackson",
+    "5",
+    "106",
+    "21.2",
+    "1",
+    "48"
+   ]
+  ],
+  "rush": [
+   [
+    "Jadan Baugh",
+    "95",
+    "613",
+    "6.5",
+    "11",
+    "75"
+   ],
+   [
+    "Duke Clark",
+    "33",
+    "260",
+    "7.9",
+    "3",
+    "45"
+   ],
+   [
+    "Aaron Philo",
+    "31",
+    "72",
+    "2.3",
+    "3",
+    "16"
+   ],
+   [
+    "Evan Pryor",
+    "12",
+    "40",
+    "3.3",
+    "0",
+    "11"
+   ],
+   [
+    "London Montgomery",
+    "9",
+    "36",
+    "4.0",
+    "0",
+    "17"
+   ],
+   [
+    "Byron Louis",
+    "6",
+    "34",
+    "5.7",
+    "0",
+    "15"
+   ]
+  ]
+ },
+ "players": {
+  "defensive": [
+   {
+    "PD": 2,
+    "SACKS": 0,
+    "SOLO": 11,
+    "TFL": 1,
+    "TOT": 23,
+    "g": 5,
+    "name": "Aaron Chiles"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 8,
+    "TFL": 0,
+    "TOT": 17,
+    "g": 5,
+    "name": "Alfonzo Allen Jr."
+   },
+   {
+    "PD": 2,
+    "SACKS": 0,
+    "SOLO": 14,
+    "TFL": 1,
+    "TOT": 15,
+    "g": 5,
+    "name": "Ben Hanks III"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 4,
+    "TFL": 3,
+    "TOT": 14,
+    "g": 5,
+    "name": "Brendan Bett"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 1,
+    "TFL": 0,
+    "TOT": 1,
+    "g": 1,
+    "name": "Brian Case"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 1,
+    "TFL": 0,
+    "TOT": 1,
+    "g": 1,
+    "name": "Bryce Lovett"
+   },
+   {
+    "PD": 2,
+    "SACKS": 0,
+    "SOLO": 10,
+    "TFL": 0,
+    "TOT": 14,
+    "g": 4,
+    "name": "Bryce Thornton"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 2,
+    "TFL": 0,
+    "TOT": 2,
+    "g": 1,
+    "name": "Cam Dooley"
+   },
+   {
+    "INT": 1,
+    "PD": 1,
+    "SACKS": 0,
+    "SOLO": 11,
+    "TFL": 0,
+    "TOT": 13,
+    "g": 5,
+    "name": "Cormani McClain"
+   },
+   {
+    "INT": 2,
+    "PD": 3,
+    "SACKS": 0,
+    "SOLO": 4,
+    "TFL": 1,
+    "TOT": 14,
+    "g": 5,
+    "name": "DJ Coleman"
+   },
+   {
+    "PD": 0,
+    "SACKS": 1,
+    "SOLO": 2,
+    "TFL": 2,
+    "TOT": 6,
+    "g": 5,
+    "name": "DK Kalu"
+   },
+   {
+    "INT": 1,
+    "PD": 3,
+    "SACKS": 0,
+    "SOLO": 3,
+    "TFL": 0,
+    "TOT": 10,
+    "g": 4,
+    "name": "Dijon Johnson"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 3,
+    "TFL": 0,
+    "TOT": 4,
+    "g": 2,
+    "name": "Drake Stubbs"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 1,
+    "TFL": 0,
+    "TOT": 1,
+    "g": 1,
+    "name": "Duke Clark"
+   },
+   {
+    "PD": 2,
+    "SACKS": 3.5,
+    "SOLO": 5,
+    "TFL": 3.5,
+    "TOT": 9,
+    "g": 4,
+    "name": "Emmanuel Oyebadejo"
+   },
+   {
+    "PD": 3,
+    "SACKS": 0,
+    "SOLO": 4,
+    "TFL": 0.5,
+    "TOT": 8,
+    "g": 4,
+    "name": "J'Vari Flowers"
+   },
+   {
+    "PD": 2,
+    "SACKS": 1,
+    "SOLO": 6,
+    "TFL": 2.5,
+    "TOT": 18,
+    "g": 5,
+    "name": "Jaden Robinson"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 0,
+    "TFL": 0,
+    "TOT": 1,
+    "g": 1,
+    "name": "Jalen Wiggins"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0.5,
+    "SOLO": 1,
+    "TFL": 1,
+    "TOT": 4,
+    "g": 3,
+    "name": "Jamari Lyons"
+   },
+   {
+    "PD": 0,
+    "SACKS": 4.0,
+    "SOLO": 13,
+    "TFL": 6.5,
+    "TOT": 21,
+    "g": 5,
+    "name": "Jayden Woods"
+   },
+   {
+    "PD": 2,
+    "SACKS": 0.5,
+    "SOLO": 7,
+    "TFL": 1.5,
+    "TOT": 19,
+    "g": 5,
+    "name": "Jeramiah McCloud"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 2,
+    "TFL": 0,
+    "TOT": 2,
+    "g": 1,
+    "name": "Jordy Lowery"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 1,
+    "TFL": 0.5,
+    "TOT": 4,
+    "g": 3,
+    "name": "Joseph Mbatchou"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 1,
+    "TFL": 0,
+    "TOT": 4,
+    "g": 2,
+    "name": "KJ Ford"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 0,
+    "TFL": 0,
+    "TOT": 1,
+    "g": 1,
+    "name": "Kahleil Jackson"
+   },
+   {
+    "PD": 0,
+    "SACKS": 2,
+    "SOLO": 7,
+    "TFL": 3,
+    "TOT": 14,
+    "g": 5,
+    "name": "Kamran James"
+   },
+   {
+    "PD": 1,
+    "SACKS": 0,
+    "SOLO": 8,
+    "TFL": 0.5,
+    "TOT": 16,
+    "g": 5,
+    "name": "Kanye Clark"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 5,
+    "TFL": 0,
+    "TOT": 8,
+    "g": 4,
+    "name": "Kofi Asare"
+   },
+   {
+    "PD": 1,
+    "SACKS": 1,
+    "SOLO": 5,
+    "TFL": 2,
+    "TOT": 7,
+    "g": 4,
+    "name": "LJ McCray"
+   },
+   {
+    "PD": 3,
+    "SACKS": 0,
+    "SOLO": 10,
+    "TFL": 2,
+    "TOT": 17,
+    "g": 5,
+    "name": "Lagonza Hayward"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0.5,
+    "SOLO": 17,
+    "TFL": 0.5,
+    "TOT": 33,
+    "g": 5,
+    "name": "Myles Graham"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 6,
+    "TFL": 1,
+    "TOT": 9,
+    "g": 4,
+    "name": "Myles Johnson"
+   },
+   {
+    "PD": 1,
+    "SACKS": 0,
+    "SOLO": 1,
+    "TFL": 0,
+    "TOT": 1,
+    "g": 1,
+    "name": "Stive-Bentley Keumajou-Yondui"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 2,
+    "TFL": 0,
+    "TOT": 3,
+    "g": 1,
+    "name": "Ty Jackson"
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 0,
+    "TFL": 0,
+    "TOT": 0,
+    "g": 1,
+    "name": "Vernell Brown III"
+   }
+  ],
+  "kicking": [
+   {
+    "PTS": 1,
+    "fa": 0,
+    "fm": 0,
+    "g": 1,
+    "name": "Liam Padron",
+    "xa": 1,
+    "xm": 1
+   },
+   {
+    "LONG": 53,
+    "PTS": 50,
+    "fa": 7,
+    "fm": 7,
+    "g": 5,
+    "name": "Patrick Durkin",
+    "xa": 29,
+    "xm": 29
+   }
+  ],
+  "passing": [
+   {
+    "INT": 2,
+    "TD": 8,
+    "YDS": 1114,
+    "att": 121,
+    "c": 84,
+    "g": 5,
+    "name": "Aaron Philo"
+   },
+   {
+    "INT": 0,
+    "TD": 0,
+    "YDS": 48,
+    "att": 1,
+    "c": 1,
+    "g": 1,
+    "name": "Kahleil Jackson"
+   },
+   {
+    "INT": 1,
+    "TD": 2,
+    "YDS": 212,
+    "att": 21,
+    "c": 17,
+    "g": 3,
+    "name": "Tramell Jones Jr."
+   }
+  ],
+  "receiving": [
+   {
+    "LONG": 48,
+    "REC": 5,
+    "TD": 1,
+    "YDS": 106,
+    "g": 4,
+    "name": "Amir Jackson"
+   },
+   {
+    "LONG": 24,
+    "REC": 15,
+    "TD": 1,
+    "YDS": 131,
+    "g": 5,
+    "name": "Bailey Stockton"
+   },
+   {
+    "LONG": 32,
+    "REC": 1,
+    "TD": 0,
+    "YDS": 32,
+    "g": 1,
+    "name": "Byron Louis"
+   },
+   {
+    "LONG": 40,
+    "REC": 18,
+    "TD": 3,
+    "YDS": 302,
+    "g": 5,
+    "name": "Dallas Wilson"
+   },
+   {
+    "LONG": 10,
+    "REC": 5,
+    "TD": 1,
+    "YDS": 26,
+    "g": 3,
+    "name": "Duke Clark"
+   },
+   {
+    "LONG": 38,
+    "REC": 2,
+    "TD": 0,
+    "YDS": 47,
+    "g": 2,
+    "name": "Eric Singleton Jr."
+   },
+   {
+    "LONG": 11,
+    "REC": 1,
+    "TD": 0,
+    "YDS": 11,
+    "g": 1,
+    "name": "Evan Chieca"
+   },
+   {
+    "LONG": 6,
+    "REC": 4,
+    "TD": 0,
+    "YDS": 14,
+    "g": 3,
+    "name": "Evan Pryor"
+   },
+   {
+    "LONG": 12,
+    "REC": 5,
+    "TD": 0,
+    "YDS": 35,
+    "g": 3,
+    "name": "Jadan Baugh"
+   },
+   {
+    "LONG": 14,
+    "REC": 2,
+    "TD": 0,
+    "YDS": 21,
+    "g": 1,
+    "name": "Justin Williams"
+   },
+   {
+    "LONG": 11,
+    "REC": 3,
+    "TD": 0,
+    "YDS": 30,
+    "g": 2,
+    "name": "Kahleil Jackson"
+   },
+   {
+    "LONG": 10,
+    "REC": 1,
+    "TD": 0,
+    "YDS": 10,
+    "g": 1,
+    "name": "Lacota Dippre"
+   },
+   {
+    "LONG": 22,
+    "REC": 10,
+    "TD": 0,
+    "YDS": 130,
+    "g": 5,
+    "name": "Luke Harpring"
+   },
+   {
+    "LONG": 6,
+    "REC": 1,
+    "TD": 1,
+    "YDS": 6,
+    "g": 1,
+    "name": "Micah Jones"
+   },
+   {
+    "LONG": 20,
+    "REC": 4,
+    "TD": 0,
+    "YDS": 36,
+    "g": 3,
+    "name": "Micah Mays Jr."
+   },
+   {
+    "LONG": 63,
+    "REC": 8,
+    "TD": 1,
+    "YDS": 166,
+    "g": 4,
+    "name": "TJ Abrams"
+   },
+   {
+    "LONG": 49,
+    "REC": 17,
+    "TD": 2,
+    "YDS": 271,
+    "g": 4,
+    "name": "Vernell Brown III"
+   }
+  ],
+  "rushing": [
+   {
+    "CAR": 31,
+    "LONG": 16,
+    "TD": 3,
+    "YDS": 72,
+    "g": 5,
+    "name": "Aaron Philo"
+   },
+   {
+    "CAR": 1,
+    "LONG": 13,
+    "TD": 0,
+    "YDS": 13,
+    "g": 1,
+    "name": "Alec Clark"
+   },
+   {
+    "CAR": 3,
+    "LONG": 8,
+    "TD": 0,
+    "YDS": 16,
+    "g": 2,
+    "name": "Anthony Rubio"
+   },
+   {
+    "CAR": 1,
+    "LONG": 0,
+    "TD": 0,
+    "YDS": -2,
+    "g": 1,
+    "name": "Bailey Stockton"
+   },
+   {
+    "CAR": 6,
+    "LONG": 15,
+    "TD": 0,
+    "YDS": 34,
+    "g": 2,
+    "name": "Byron Louis"
+   },
+   {
+    "CAR": 1,
+    "LONG": 6,
+    "TD": 1,
+    "YDS": 6,
+    "g": 1,
+    "name": "Dallas Wilson"
+   },
+   {
+    "CAR": 33,
+    "LONG": 45,
+    "TD": 3,
+    "YDS": 260,
+    "g": 5,
+    "name": "Duke Clark"
+   },
+   {
+    "CAR": 1,
+    "LONG": 0,
+    "TD": 0,
+    "YDS": -7,
+    "g": 1,
+    "name": "Eric Singleton Jr."
+   },
+   {
+    "CAR": 12,
+    "LONG": 11,
+    "TD": 0,
+    "YDS": 40,
+    "g": 4,
+    "name": "Evan Pryor"
+   },
+   {
+    "CAR": 95,
+    "LONG": 75,
+    "TD": 11,
+    "YDS": 613,
+    "g": 5,
+    "name": "Jadan Baugh"
+   },
+   {
+    "CAR": 9,
+    "LONG": 17,
+    "TD": 0,
+    "YDS": 36,
+    "g": 5,
+    "name": "London Montgomery"
+   },
+   {
+    "CAR": 3,
+    "LONG": 5,
+    "TD": 0,
+    "YDS": 8,
+    "g": 2,
+    "name": "Tramell Jones Jr."
+   },
+   {
+    "CAR": 3,
+    "LONG": 14,
+    "TD": 0,
+    "YDS": 16,
+    "g": 3,
+    "name": "Vernell Brown III"
+   }
+  ]
+ },
+ "record": "4-1",
+ "season": 2026,
+ "team": "Florida",
+ "teamRows": [
+  [
+   "Points per game",
+   "46.2",
+   "27.2"
+  ],
+  [
+   "Total yards per game",
+   "491.2",
+   "393.0"
+  ],
+  [
+   "Rushing yards per game",
+   "216.4",
+   "126.4"
+  ],
+  [
+   "Yards per carry",
+   "5.4",
+   "4.1"
+  ],
+  [
+   "Passing yards per game",
+   "274.8",
+   "266.6"
+  ],
+  [
+   "Completions-attempts",
+   "102-143 (71%)",
+   "123-190 (65%)"
+  ],
+  [
+   "First downs per game",
+   "24.8",
+   "21.4"
+  ],
+  [
+   "Third-down conversions",
+   "27-59 (46%)",
+   "33-76 (43%)"
+  ],
+  [
+   "Turnovers",
+   "4",
+   "8"
+  ],
+  [
+   "Penalties-yards",
+   "43-437",
+   "34-327"
+  ],
+  [
+   "Time of possession (avg.)",
+   "32:55",
+   "27:05"
+  ]
+ ],
+ "through": "Oct. 3 at Missouri",
+ "tiles": [
+  [
+   "Record",
+   "4-1",
+   "2-1 SEC"
+  ],
+  [
+   "Points per game",
+   "46.2",
+   "27.2 allowed"
+  ],
+  [
+   "Yards per game",
+   "491.2",
+   "393.0 allowed"
+  ],
+  [
+   "Turnover margin",
+   "+4",
+   "5 games"
+  ]
+ ],
+ "updated": "2026-10-05T13:55:35Z",
+ "updatedLabel": "Oct. 5, 2026, 9:55 a.m. ET",
+ "v": 1
+}

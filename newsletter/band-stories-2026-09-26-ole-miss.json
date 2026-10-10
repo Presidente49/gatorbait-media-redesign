@@ -1,0 +1,59 @@
+{
+ "source": "Wix Blog API, band stories, Sept. 27, 2026",
+ "posts": [
+  {
+   "title": "The Swamp Gets Its Swagger Back And Welcomes The Folks From The Grove In Rude Fashion",
+   "excerpt": "Florida 52, Ole Miss 28. Buddy Martin on the Swamp's swagger, Jadan Baugh's historic day, and a 4-0 start for the first time since 2019.",
+   "url": "https://www.gatorbaitmedia.com/post/the-swamp-gets-its-swagger-back-and-welcomes-the-folks-from-the-grove-in-rude-fashion",
+   "image": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_e1f06a6dd4ca414885aafdaf6db6ec35~mv2.jpg",
+    "alt": "Florida RB Jadan Baugh (#13) leaping in a touchdown celebration with the packed Swamp behind him. Photo: Hannah White / UAA Communications"
+   }
+  },
+  {
+   "title": "Beating Ole Miss was huge, but the Gators left at least 28 points on the field",
+   "excerpt": "Florida beat No. 4 Ole Miss 52-28, but Franz Beard counts at least 28 points the Gators left on the field: an overthrown Vernell Brown III, an open Amir Jackson on fourth down, a 67-yard touchdown erased by a hold, and eight penalties for 92 yards.",
+   "url": "https://www.gatorbaitmedia.com/post/franz-beard-gators-left-28-points-on-the-field-ole-miss",
+   "image": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_ef56989a43bc4ebf8ffe6d6245358fef~mv2.png",
+    "alt": "Left on the field: the points Florida left on the table in a 52-28 win over No. 4 Ole Miss, charted on a football field."
+   }
+  },
+  {
+   "title": "Postgame Analysis: Florida Gators 52, Ole Miss Rebels 28",
+   "excerpt": "Florida dominated No. 4 Ole Miss for a season-defining win, but Jon Sumrall says the Gators are still a work in progress. Loren Meadows on what he expected, what he got and what comes next.",
+   "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-52-ole-miss-rebel-28",
+   "image": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_2ea58f38e2da4c988ab73065cfe63130~mv2.jpg",
+    "alt": "The Florida Gators take the field before kickoff against Ole Miss in The Swamp. Photo by Chris Spears, GatorBait Media."
+   }
+  },
+  {
+   "title": "Contenders, Not Hopefuls: Florida’s Rout of No. 4 Ole Miss Puts the SEC on Notice",
+   "excerpt": "Carlton Reese: With a 52-28 thrashing of No. 4 Ole Miss, Jon Sumrall’s Gators are no longer hoping to compete. They are a legitimate contender.",
+   "url": "https://www.gatorbaitmedia.com/post/carlton-reese-florida-contenders-not-hopefuls-ole-miss",
+   "image": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_a0dd1ffb336440c08100e16d25e1c264~mv2.jpg",
+    "alt": "GatorBait Media column graphic: Contenders, not hopefuls. Column by Carlton Reese. Florida 52, No. 4 Ole Miss 28. Photo by Chris Spears of the crowd and band celebrating in The Swamp."
+   }
+  },
+  {
+   "title": "Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp",
+   "excerpt": "Jadan Baugh ran for three touchdowns, Florida scored touchdowns on its first five possessions of the second half, and No. 21 Florida beat No. 4 Ole Miss 52-28 to move to 4-0.",
+   "url": "https://www.gatorbaitmedia.com/post/florida-ole-miss-final-baugh-gators-run-over-rebels",
+   "image": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_74c0faaa50574ad0b505ac84433f71c2~mv2.jpg",
+    "alt": "GatorBait Media: FINAL, No. 21 Florida 52, No. 4 Ole Miss 28. Baugh Game. Photos by Chris Spears of the Gators celebrating under the final scoreboard and Jadan Baugh diving for a touchdown."
+   }
+  },
+  {
+   "title": "‘It Ain’t Fully Awake Yet’: Sumrall Says Gators Haven’t Arrived After Routing No. 4 Ole Miss",
+   "excerpt": "Jon Sumrall, Jadan Baugh and the Gators after the 52-28 win over No. 4 Ole Miss: Vegas, a broken headset, injury updates on Bailey Stockton and Vernell Brown III, and a beast that is stirring.",
+   "url": "https://www.gatorbaitmedia.com/post/sumrall-postgame-press-conference-ole-miss-not-fully-awake",
+   "image": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_eee33706db754bdf916184f507d55cc4~mv2.jpg",
+    "alt": "GatorBait Media presser graphic: Jon Sumrall, 'It ain't fully awake yet.' Three Chris Spears photos of the Gators celebrating with the band after the win over Ole Miss."
+   }
+  }
+ ]
+}

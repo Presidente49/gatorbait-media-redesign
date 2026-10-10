@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Post template mock</title>
+<!-- PROTOTYPE MOCK. DOM trimmed from the live Wix post
+     /post/the-sweet-music-chimes-again (fetched 2026-09-27).
+     Hashed classes and data-hook attributes are kept as Wix served them. The blockquote and the
+     "By the numbers" block were added to show those styles; the live post has neither. -->
+<meta property="og:image" content="../../gameday/2026-09-26-ole-miss/presser/2026-09-26_gatorbait_presser_sumrall-awake_v02.jpg">
+
+<!-- Stand-in for Wix's own blog CSS (Ricos defaults, container padding). -->
+<style id="mock-wix-baseline">
+body{margin:0;background:#fff;font-family:Helvetica,Arial,sans-serif;color:#222}
+#SITE_HEADER{height:64px;background:#08132f;color:#fff;display:flex;align-items:center;padding:0 24px;font:700 14px/1 Arial;letter-spacing:.06em}
+[data-hook=post-page]{background:#fff}
+.HcBlwg{padding:40px 0}
+article[data-hook=post]{max-width:940px;margin:0 auto;border:1px solid #ddd}
+.HW6ttf{padding:0 48px}
+header.PhCafd{padding:40px 0 0}
+.a5JqMF{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.NtBDdE{display:flex;align-items:center;gap:12px;font-size:12px}
+.MABqta{display:flex;align-items:center;gap:8px}
+.bZrSjY img,.bZrSjY .avatar{display:block;width:32px;height:32px;border-radius:50%;background:#c9ced8}
+.MHuRVq{background:none;border:0;padding:4px;cursor:pointer}
+h1[data-hook=post-title]{font-size:40px;margin:0}
+p{font-size:16px;line-height:1.5;margin:0 0 16px}
+h2.csMdH{font-size:28px;margin:24px 0 12px}
+blockquote.qgGz1{margin:24px 0;padding-inline-start:20px;border-inline-start:3px solid #116dff;font-size:20px;font-style:italic}
+.yEWwt{position:relative;aspect-ratio:var(--dim-width)/var(--dim-height)}
+figcaption.J0zbO{text-align:center;font-size:14px}
+[data-hook=gap-spacer]{height:16px}
+footer.PhCafd.B6ltWa{padding:16px 0;margin-top:24px}
+.eFSltK,.Zt1NVN{display:flex;gap:16px}
+.qXlEOR{background:none;border:0;padding:4px}
+.zp8s_J{max-width:940px;margin:24px auto 0}
+.qmDeKd{display:flex;justify-content:space-between;align-items:baseline;padding:28px 0 18px;font-size:20px}
+.zHLEBV{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.kkOpHH{aspect-ratio:16/9;overflow:hidden}.kkOpHH img{width:100%;height:100%;object-fit:cover;display:block}
+.ZnRZP5{padding:14px 16px}
+.hPl9QB{color:#222;text-decoration:none;font-size:18px}
+.gbm-writer-alerts{display:inline-flex;margin-left:8px;padding:6px 9px;border:1px solid #08132f;border-radius:999px;background:#08132f;color:#fff;font:800 11px/1 Arial}
+@media(max-width:750px){
+ .HcBlwg{padding:0}
+ article[data-hook=post]{border:0}
+ .HW6ttf{padding:0 20px}
+ .zp8s_J{padding:0 20px}
+ .zHLEBV{grid-template-columns:1fr}
+ #SITE_HEADER{height:60px;padding:0 16px}
+}
+</style>
+
+<!-- Live competitors, copied verbatim: header embed 7fee4de6 rev25 post rules + sitewide Barlow typography. -->
+<style id="live-header-embed-7fee4de6-post-rules">
+html:has(#gbm-site-header) [data-hook="post-page"]{background:#fffdf9!important;color:#11274a!important;border:0!important}
+html:has(#gbm-site-header) [data-hook="post-page"] [data-hook="post-title"]{font-family:Georgia,serif!important;font-size:36px!important;line-height:1.16!important;color:#11274a!important;font-weight:700!important;letter-spacing:-.025em!important}
+html:has(#gbm-site-header) [data-hook="post-page"] article[data-hook="post"]{max-width:940px;margin-inline:auto}
+@media(max-width:820px){html:has(#gbm-site-header) [data-hook="post-page"] article p,html:has(#gbm-site-header) [data-hook="post-page"] article li,html:has(#gbm-site-header) [data-hook="post-page"] article p span,html:has(#gbm-site-header) [data-hook="post-page"] article li span{font-size:16px!important;line-height:1.55!important;}
+html:has(#gbm-site-header) [data-hook="post-page"] article h2{font-size:21px!important;line-height:1.2!important;}}
+[data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{font-family:"Barlow",Arial,Helvetica,sans-serif!important;font-weight:400!important;font-size:17px!important;line-height:1.68!important}
+[data-hook="post-title"],[data-hook="post-title"] *{font-family:"Barlow",Arial,Helvetica,sans-serif!important;font-weight:800!important;letter-spacing:-.02em!important}
+</style>
+
+<!-- THE PROTOTYPE (same files build.py packs into post-template-embed.html) -->
+<link rel="stylesheet" id="gbm-post-template" href="post-template.css">
+<script src="post-template.js"></script>
+
+<!-- Local fonts for offline rendering. Declared after the template so they win over its jsDelivr @font-face. -->
+<style id="mock-local-fonts">
+@font-face{font-family:"Barlow";font-weight:400;src:url(fonts/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:500;src:url(fonts/barlow-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:600;src:url(fonts/barlow-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:700;src:url(fonts/barlow-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:800;src:url(fonts/barlow-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:700;src:url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Condensed";font-weight:800;src:url(fonts/barlow-condensed-latin-800-normal.woff2) format("woff2")}
+</style>
+</head>
+<body>
+<div id="SITE_HEADER"><div id="gbm-site-header">GATORBAIT HEADER / MOBILE SHELL (existing owners, untouched)</div></div>
+<div class="Y3K28_ SITE_PAGES" id="SITE_PAGES"><div class="uvik8H" id="SITE_PAGES_TRANSITION_GROUP"><div class="i0StQr theme-vars uix2p" id="uix2p"><div class="JJb9Mt"><section class="Le88gL wixui-section" id="comp-l9drh78o2"><div class="QrIus TPAMultiSection_jui5fga7" id="TPAMultiSection_jui5fga7"><div data-hook="tpa-components-provider"><div><div class="use-media-queries urT2WH" data-hook="post-page-root" style="--root-width:100vw"><div class="L5x0Fp xZVb1s is-desktop app-desktop"><div id="content-wrapper">
+<div class="ZL4A4N" data-hook="post-page">
+ <div class="HcBlwg"><div class="zp8IQu"><div><div class="EcwjNF">
+  <article class="tgMH9T" data-hook="post">
+   <section data-hook="post-hero-image"></section>
+   <div class="HW6ttf">
+    <header class="PhCafd"><div class="PKQ95p"><div class="MbPQSQ">
+     <div class="apmiGT" data-hook="post-title"><h1 class="H3vOVf" data-hook="post-title">‘It Ain’t Fully Awake Yet’: Sumrall Says Gators Haven’t Arrived After Routing No. 4 Ole Miss</h1></div>
+     <div class="a5JqMF"><div class="NtBDdE">
+      <div class="MABqta"><div class="bZrSjY" style="width:32px;height:32px"><span class="lR3yj5 fluid-avatar-image bok7Ik" data-hook="avatar-image" role="img" aria-label="Writer: GatorBait Staff"><span class="avatar"></span></span></div><a class="IkAhjA" data-hook="profile-link" href="#"><span data-hook="user-name">GatorBait Staff</span></a></div>
+      <div class="wBTynn"><span class="time-ago" data-hook="time-ago" title="1 hour ago">1 hour ago</span></div>
+      <div class="F56Ope"><span data-hook="time-to-read" title="3 min read">3 min read</span></div>
+     </div><div class="hSZsuG"><button aria-label="More actions" class="MHuRVq" data-hook="more-button" type="button"><svg aria-hidden="true" viewBox="0 0 19 19" width="19"><circle cx="2.5" cy="4.5" r="1.5"/><circle cx="2.5" cy="9.5" r="1.5"/><circle cx="2.5" cy="14.5" r="1.5"/></svg></button></div></div>
+    </div></div></header>
+
+    <section class="VQDdIN" data-hook="post-description"><div class="moHCnT"><div class="fTEXDR" data-rce-version="11.13.0"><div class="gRY6A" data-id="content-viewer" dir="ltr"><div class="Zfg9-">
+     <div data-hook="rcv-block-first" type="first"></div><div class="t39ig"><div data-breakout="normal"><div class="zDIwP" id="viewer-x1" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x2" dir="auto"><span class="lig--"><strong style="font-weight:700"><span style="font-size:36px"><span>Something’s Stirring in The Swamp. And It’s Waking Up The Echoes.</span></span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x3" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x4" dir="auto"><span class="lig--"><strong style="font-weight:700"><em style="font-style:italic"><span style="font-size:24px"><span>On Friday, Paul Finebaum brought his TV show to campus and spent an hour ringing some of the sweetest chimes since Century Tower was at its best.</span></span></em></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x5" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x6" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x7" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>By Buddy Martin</span></strong></span></p></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x8" dir="auto"><span class="lig--"><a data-hook="web-link" href="http://GatorBaitMedia.com"><strong style="font-weight:700"><span>GatorBaitMedia.com</span></strong></a></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x9" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x10" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>Maya Angelou never sat in the press box at Florida Field, which is probably lucky for her. The coffee was terrible and the view has gotten worse for about 20 years.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x11" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x12" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>Still, she probably would have understood this place better than a lot of the people who got paid to fix it.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x13" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x14" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>This week in Gainesville, it was about the feeling.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x15" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x16" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>An Hour Worth Remembering</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x17" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x18" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>Afterward, Paul told me he thought it was “a really good hour” of television. Coming from a man who has spent decades listening to SEC callers explain how their team got robbed, that’s close to a papal blessing.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x19" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x20" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>Look at who else was in that lineup.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x21" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x22" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>Some men get old. Spurrier just gets more Spurrier.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x23" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x24" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>Why It Feels Different</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x25" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x26" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>Feelings like this get earned.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x27" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x28" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>Florida beat Auburn 44-39 in a game that could have gone badly and didn’t.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x29" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x30" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>About Saturday</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x31" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x32" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>I don’t know what happens Saturday night when No. 4 Ole Miss comes to town to play No. 21 Florida. Nobody does. Ole Miss is ranked fourth for a reason, and good vibes have never blocked a blitz.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x33" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div><div data-breakout="normal"><p class="zDIwP" id="viewer-x34" dir="auto"><span class="lig--"><strong style="font-weight:700"><span>They remembered how it feels to be Florida.</span></strong></span></p></div><div data-breakout="normal"><div class="zDIwP" id="viewer-x35" dir="auto"><span class="lig--"><br role="presentation"/></span></div></div></div><div data-hook="rcv-block-last" type="last"></div>
+    </div></div></div></div></section>
+
+    <footer class="PhCafd B6ltWa" data-hook="post-footer"><div class="PKQ95p"><div class="KVKbzt aQg0ny"><section class="Xyiv4I" data-hook="post-main-actions-desktop"><div class="eFSltK"><div class="Zt1NVN">
+     <button aria-label="Share via Facebook" class="qXlEOR" data-hook="share-button__facebook"><svg viewBox="0 0 19 19" width="19"><path d="M8.09 17v-6.8H5.79V7.42h2.3V5.08a3.08 3.08 0 0 1 3.08-3.08h2.4v2.5h-1.72a.98.98 0 0 0-.98.98v1.94h2.66l-.37 2.79h-2.29V17z"/></svg></button>
+     <button aria-label="Share via X (Twitter)" class="qXlEOR" data-hook="share-button__twitter"><svg viewBox="0 0 19 19" width="19"><path d="M11 8.5 17 2h-1.4l-5.2 5.6L6.3 2H2l6.3 9L2 18h1.4l5.5-6.1 4.4 6.1H18z"/></svg></button>
+     <button aria-label="Share via link" class="qXlEOR" data-hook="share-button__link"><svg viewBox="0 0 19 19" width="19"><rect x="2" y="7" width="15" height="5" rx="2.5"/></svg></button>
+    </div></div></section></div></div></footer>
+   </div>
+  </article>
+ </div></div></div>
+ <div class="zp8IQu zp8s_J"><div><section class="oY1ew3" data-hook="recent-posts"><header class="qmDeKd"><h2 style="font:inherit">Related Posts</h2><a class="vz0Mhy" href="#">See All</a></header><section><div class="zHLEBV">
+  <article class="qbu2Gh" data-hook="recent-post-list-item"><div class="dkbPQd"><a class="blog-link-hover-color" data-hook="link" href="#" tabindex="-1"><div class="kkOpHH"><img alt="" src="../../gameday/2026-09-26-ole-miss/column-reese/2026-09-26_gatorbait_column_reese-contenders_v02.jpg"></div></a><div class="ZnRZP5"><header data-hook="recent-post__title"><a class="hPl9QB" href="#">Contenders, Not Hopefuls: Florida’s Rout of No. 4 Ole Miss Puts the SEC on Notice</a></header><footer class="LO60EX" data-hook="post-footer"><div class="LVcAxq post-stats" data-hook="post-stats">0 views</div></footer></div></div></article>
+  <article class="qbu2Gh" data-hook="recent-post-list-item"><div class="dkbPQd"><a class="blog-link-hover-color" data-hook="link" href="#" tabindex="-1"><div class="kkOpHH"><img alt="" src="../../gameday/2026-09-26-ole-miss/postgame/photos/gators-take-the-field.jpg"></div></a><div class="ZnRZP5"><header data-hook="recent-post__title"><a class="hPl9QB" href="#">Baugh Game: Gators Run Over No. 4 Ole Miss 52-28 in The Swamp</a></header><footer class="LO60EX" data-hook="post-footer"><div class="LVcAxq post-stats" data-hook="post-stats">0 views</div></footer></div></div></article>
+  <article class="qbu2Gh" data-hook="recent-post-list-item"><div class="dkbPQd"><a class="blog-link-hover-color" data-hook="link" href="#" tabindex="-1"><div class="kkOpHH"><img alt="" src="../../gameday/2026-09-26-ole-miss/postgame/photos/sideline-guests.jpg"></div></a><div class="ZnRZP5"><header data-hook="recent-post__title"><a class="hPl9QB" href="#">Baugh Punches Ole Miss Twice: Gators Lead 17-6 at the Half</a></header><footer class="LO60EX" data-hook="post-footer"><div class="LVcAxq post-stats" data-hook="post-stats">0 views</div></footer></div></div></article>
+ </div></section></section></div></div>
+ <div data-hook="comments-section-placeholder"></div>
+</div>
+</div></div></div></div></div></section></div></div></div></div>
+<script>
+// Mock only: the ui-layer embed a13b04e3 adds this button after the writer link on posts.
+(function(){var l=document.querySelector('[data-hook=profile-link]');if(l)l.insertAdjacentHTML('afterend','<button type="button" class="gbm-writer-alerts">Follow / alerts</button>');})();
+</script>
+</body>
+</html>

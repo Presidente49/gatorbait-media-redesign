@@ -1,0 +1,51 @@
+<style id="gbm-chant-css">
+#gbm-chant-wrap{position:fixed;right:18px;bottom:18px;z-index:2147481000;font-family:Barlow,Arial,sans-serif}
+#gbm-chant{display:flex;align-items:center;gap:10px;background:linear-gradient(135deg,#081b35,#0b2449);border-radius:999px;padding:9px 16px 9px 9px;box-shadow:0 8px 24px rgba(8,27,53,.4);border:1px solid rgba(255,154,107,.35);cursor:pointer;transition:transform .2s}
+#gbm-chant:active{transform:scale(.96)}
+#gbm-chant .gc-btn{width:34px;height:34px;border-radius:50%;background:#fa4616;display:flex;align-items:center;justify-content:center;flex:none}
+#gbm-chant .gc-btn svg{width:14px;height:14px;fill:#fff}
+#gbm-chant .gc-eq{display:flex;align-items:center;gap:3px;height:18px}
+#gbm-chant .gc-eq i{display:block;width:3px;border-radius:2px;background:linear-gradient(180deg,#ffb347,#fa4616);animation:gceq .9s ease-in-out infinite;animation-play-state:paused;transform:scaleY(.2)}
+#gbm-chant.playing .gc-eq i{animation-play-state:running}
+#gbm-chant .gc-eq i:nth-child(1){height:40%;animation-delay:-.6s}
+#gbm-chant .gc-eq i:nth-child(2){height:100%;animation-delay:-.3s}
+#gbm-chant .gc-eq i:nth-child(3){height:65%;animation-delay:-.9s}
+#gbm-chant .gc-eq i:nth-child(4){height:85%;animation-delay:-.1s}
+#gbm-chant .gc-eq i:nth-child(5){height:50%;animation-delay:-.5s}
+@keyframes gceq{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+#gbm-chant .gc-label{font:800 10px/1.2 Barlow,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#ffb347;white-space:nowrap}
+@media(max-width:480px){#gbm-chant-wrap{right:10px;bottom:10px}#gbm-chant .gc-label{display:none}#gbm-chant{padding:8px}}
+</style>
+<script id="gbm-chant-v1">(function(){
+if(window.__GBM_CHANT_MOUNT__)return;window.__GBM_CHANT_MOUNT__=1;
+function own(){return(location.pathname||'/').replace(/\/+$/,'')===''||location.pathname==='/';}
+if(!own())return;
+var SRC='https://music.wixstatic.com/mp3/d3cfa5_2bfa012ee4d04011a8f5d6c204ab1939.mp3';
+var KEY='gbmChantSeen';
+var audio=new Audio(SRC);audio.loop=false;audio.volume=0.85;
+var wrap=document.createElement('div');wrap.id='gbm-chant-wrap';
+wrap.innerHTML='<div id="gbm-chant" role="button" aria-label="Play the Gator Bait chant" tabindex="0"><div class="gc-btn"><svg id="gc-icon" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg></div><div class="gc-eq"><i></i><i></i><i></i><i></i><i></i></div><div class="gc-label">Gator Bait Anthem</div></div>';
+document.body.appendChild(wrap);
+var btn=wrap.querySelector('#gbm-chant'),icon=wrap.querySelector('#gc-icon');
+function setPlaying(on){
+ btn.classList.toggle('playing',on);
+ icon.innerHTML=on?'<rect x="5" y="4" width="5" height="16"/><rect x="14" y="4" width="5" height="16"/>':'<polygon points="6,4 20,12 6,20"/>';
+}
+function toggle(){if(audio.paused){audio.play().catch(function(){});}else{audio.pause();}}
+btn.addEventListener('click',toggle);
+btn.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();toggle();}});
+audio.addEventListener('play',function(){setPlaying(true);});
+audio.addEventListener('pause',function(){setPlaying(false);});
+audio.addEventListener('ended',function(){setPlaying(false);});
+try{
+ if(!sessionStorage.getItem(KEY)){
+  sessionStorage.setItem(KEY,'1');
+  audio.play().catch(function(){
+   var once=function(){audio.play().catch(function(){});document.removeEventListener('click',once);document.removeEventListener('touchstart',once);};
+   document.addEventListener('click',once,{once:true});
+   document.addEventListener('touchstart',once,{once:true});
+  });
+ }
+}catch(e){}
+window.addEventListener('beforeunload',function(){try{audio.pause();}catch(e){}});
+})();</script>

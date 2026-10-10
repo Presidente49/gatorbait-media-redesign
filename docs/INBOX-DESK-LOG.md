@@ -299,3 +299,20 @@ No breaking items. Nothing published, drafted or sent from this pass.
 **YouTube:** still not checked (egress blocked, vidIQ out of credits). Front-page rail refresh is PR #149, pending merge.
 
 No breaking items. Nothing published, drafted or sent.
+
+## Desk inbox + YouTube check — Oct. 10, ~18:45Z (game day, halftime)
+
+**Gmail (`newer_than:1d`):**
+- `1a1257977a76ba39`, Loren Meadows, "South Carolina Preview" — already published as post `be22124d` (12:59Z) and acknowledged at 17:32Z. No action.
+- `1a125255c31f6092`, Franz Beard, "Golden unloads on the NCAA" — already published as post `08295499`. No action.
+- `1a12620686378b43`, UAA marketing, "Game 06 > Gators vs. South Carolina" — game-day promo, not a release; skipped.
+- `1a122b09cadda875`, UAA marketing, "The 50/50 Raffle is OPEN!" — marketing; skipped.
+
+No other staff submissions, no UF releases, nothing breaking.
+
+**YouTube** (direct RSS fetch worked; 15 entries, newest Oct. 10 02:53Z):
+- **Embedded** `vEgJrzm_iZY`, "Jon Sumrall: "Sick to My Stomach" After 45-17 Missouri Loss" (Short, Missouri postgame news conference; its description links the story) in post `9b456acb` ("'We Earned the Loss': Sumrall Owns the Mauling in Columbia"), under a new level-2 "Watch" heading above the editor's note. One UPDATE_PUBLISH at 18:45Z; both blog alerts INACTIVE before and after. Rollback: remove the two added nodes (heading `hwatchsm1`, video `vwatchsm1`) in one UPDATE_PUBLISH.
+- **Show clips, ready to embed if wanted** (Buddy Martin Show segments, full show `hJW6CeQedGA`): `fI0ri3z4FdQ` "It Was Awful", `_46uN6sJO_Y` "Former SEC Official: They Blew the Whistle Too Early on 4th Down".
+- **Seen, not embedded** (pregame or show content, not postgame or presser clips from the last finished game): `LYnD5nptUEs`, `pUImmG9XLGo`, `Uc32b0NYUs0`, `BxDauro0GRw`, `vAXOhc6VW-4`, `R_Em-EG9uQc`, `pETWhhqbsaY`, `UchI9Kg9xNg`, `bFqwdeIf2MY`, `VNjVfP4j9Fw`, `4D5k1CumoLI`, `zGYhRXx1BhE`.
+
+Note: this log had no entries between Oct. 7 18:05Z and this pass.

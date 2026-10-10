@@ -48,8 +48,8 @@ The card shows ESPN's live score and live team stats. Re-check the score against
 - `espn.mjs`: turns an ESPN summary into the card JSON. The only place facts enter.
 - `render.mjs`: the command above. Checks each PNG is the exact size and warns if text overflows.
 - `fonts/`: Barlow 400/500/700/800 and Barlow Condensed 600/700/800 (SIL OFL, `fonts/OFL.txt`).
-- `sample/`: real ESPN JSON for the Missouri final and South Carolina pregame, a halftime sample built from
-  Missouri's first two quarters, and a quote sample.
+- `sample/`: real ESPN JSON for the South Carolina pregame and a quote sample. Final and halftime cards are made
+  from any finished or live game with `--event <ESPN id>`.
 - `ready/`: finished cards for today's game. `preview/`: the other card types on sample data.
 
 ## JSON shape

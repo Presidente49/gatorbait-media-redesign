@@ -250,5 +250,9 @@
     "label": "Game Day program"
   },
   "gameDayEnds": "2026-10-10T21:40:00Z",
-  "$gameDayEnds": "Postgame mode: after this time the Saturday GAME DAY band and tale-of-the-tape switch off and the front page goes back to the normal look with the Final bug (Brenden, Oct. 10: 'go into post game mode')."
+  "$gameDayEnds": "Postgame mode: after this time the Saturday GAME DAY band and tale-of-the-tape switch off and the front page goes back to the normal look with the Final bug (Brenden, Oct. 10: 'go into post game mode').",
+  "postgameLead": {
+    "on": true,
+    "until": "2026-10-12T04:00:00Z"
+  }
 }

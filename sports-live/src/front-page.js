@@ -515,6 +515,8 @@
    * Live Gainesville conditions, the kickoff hour plus the next six from the National Weather Service API (CORS-enabled, no key), and a lazy
    * KJAX radar loop. The shell (kickoff chip + countdown) renders with the page; each data part fills in on its own and hides itself if its feed
    * fails, inside a box with a fixed minimum height so nothing moves. Config: BUNDLE.gameWeather. The season band source (roadHtml) stays. */
+  /* Postgame lead (Brenden, Oct. 10: "the front page doesn't have post game... it looks stupid"): until BUNDLE.postgameLead.until the lead story sits right under the header and The Road Ahead moves below it. */
+  function pgLead() { var g = BUNDLE.postgameLead; return !!(g && g.on && now() < Date.parse(g.until)); }
   function gwCfg() { var g = BUNDLE.gameWeather; return g && g.on && Date.parse(g.from) <= now() && now() < Date.parse(g.until) && Date.parse(g.kickoff) ? g : null; }
   function gwHour(ms) { var p = new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour: 'numeric', hour12: true }).format(new Date(ms)).split(' '); return p[0] + ' ' + p[1].toLowerCase().replace(/(.)m/, '$1.m.'); }
   function wxHtml() {
@@ -824,8 +826,8 @@
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
     root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + (mode.gameday && gs ? gdBand(gs) : '') + scoresHtml(sb) + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
-      (gwCfg() ? '' : roadHtml(sb)) + '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + '</div>' + (gwCfg() ? wxHtml() : '') + '<div class="fp-wrap">' + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
-      hubHtml(latest, sb, posts, used) + '</main>';
+      (gwCfg() || pgLead() ? '' : roadHtml(sb)) + '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + '</div>' + (gwCfg() ? wxHtml() : '') + '<div class="fp-wrap">' + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
+      (pgLead() && !gwCfg() ? roadHtml(sb) : '') + hubHtml(latest, sb, posts, used) + '</main>';
     if (!document.getElementById('gbm-fp26-styles')) {
       var style = document.createElement('style'); style.id = 'gbm-fp26-styles'; style.textContent = CSS; document.head.appendChild(style);
     }

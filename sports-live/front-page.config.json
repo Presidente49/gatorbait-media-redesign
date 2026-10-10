@@ -198,7 +198,7 @@
     "until": "2026-10-11T12:00:00Z",
     "pattern": "south carolina|gamecock|homecoming|kickoff|\\brain|storm|hurricane|isaias|weather|bounce|swamp|beamer|sumrall|baugh|philo|availability|favorite|point spread|pregame",
     "exclude": "missouri|mizzou|ole miss|postgame|first loss",
-    "keep": "golden unloads",
+    "keep": "golden unloads|seduced",
     "hideLast": true
   },
   "gameDayGraphics": {

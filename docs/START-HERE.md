@@ -9,6 +9,17 @@ One controller, one place to look. This page replaces the scattered handoffs. If
 
 Everything else is reference. Issue #3 and the dated `docs/*-2026-09-*.md` files are history, not instructions.
 
+## Brenden's delegation (Oct. 9, 2026): do not ask for an OK
+
+Brenden: "Every time I've got to give you a OK on everything." That stops. Workers never wait on Brenden; a dispatch from Jarvis is the approval. Jarvis decides everything that is not a hard line and tells Brenden afterward in one line. Specifically delegated, no ask needed:
+
+- routine editorial: writing, copy-desk fixes, publishing, bylines (Jarvis-written pieces run under Brenden Martin), tags, covers, meta;
+- site maintenance inside the tested stack: embeds, loaders, redirects, SEO text, the game-day front page as he described it;
+- repo housekeeping: branches, PRs, merging data-only or docs-only PRs, deleting unused files after a reference check, compressing these notes;
+- routines: creating, re-pointing and retiring them; dispatching and unblocking workers.
+
+A worker that ends in "need input" on routine work has failed the task. Make the reversible choice, record it in #34, keep going.
+
 ## Who runs things
 
 - **Jarvis** (Claude session "Jarvis · GatorBait", `session_01QUnBu7zkHLGEmUEfSvE4Wp`) is the single controller. Every other session, routine, model or tool is a worker.

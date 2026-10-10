@@ -1,5 +1,5 @@
 {
-  "commit": "464861949c0b6638e34397f7d9382097032b0f83",
-  "updated": "2026-10-10T23:20:00Z",
-  "note": "Postgame lead above The Road Ahead (PR #223). Rollback: set commit to 7e21504e6720b9cf92b22f624724d8dde6148c18."
+  "commit": "5aca9405fc29668929c0c2682d0d86ad4efcfe0b",
+  "updated": "2026-10-10T23:30:00Z",
+  "note": "Uncropped postgame cards and current saved stories (PR #225). Rollback: set commit to 464861949c0b6638e34397f7d9382097032b0f83."
 }

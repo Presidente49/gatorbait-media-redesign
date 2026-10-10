@@ -639,6 +639,20 @@
     });
   }
 
+  /* Game-day graphics row in The Hub (Brenden, Oct. 10): tale of the tape (ESPN season numbers from the config), Loren's pick,
+   * and how to watch. Pure markup, no images; bars carry their numbers as text so nothing depends on color alone. */
+  function gdGraphicsHtml(gs) {
+    var g = BUNDLE.gameDayGraphics, t = now();
+    if (!g || !g.on || !(t >= Date.parse(g.from) && t < Date.parse(g.until)) || !gs || !gs.away || !gs.home) return '';
+    var florida = gs.away.name === 'Florida', opp = florida ? gs.home : gs.away;
+    var rows = (g.tape || []).map(function (r) {
+      var uf = Number(r[1]), sc = Number(r[2]), top = Math.max(uf, sc) || 1, better = r[3] ? uf >= sc : uf <= sc, ufWin = uf === sc ? null : better, f = function (n) { return n.toFixed(1); };
+      return '<div class="fp-tp-row"><p>' + esc(r[0]) + '</p><div class="fp-tp-bars"><span class="fp-tp-b' + (ufWin === true ? ' win' : '') + '" style="--w:' + Math.round(uf / top * 100) + '%"><b>UF</b><i></i><em>' + f(uf) + '</em></span><span class="fp-tp-b' + (ufWin === false ? ' win' : '') + '" style="--w:' + Math.round(sc / top * 100) + '%"><b>' + esc(abbr(opp.name).replace(/^S\. Carolina$/, 'SC')) + '</b><i></i><em>' + f(sc) + '</em></span></div></div>';
+    }).join('');
+    var pick = g.pick && g.pick.line ? '<a class="fp-gdg fp-gdg-pick" href="' + esc(g.pick.href || '#') + '"><small>' + esc(g.pick.kicker || 'Our pick') + '</small><b>' + esc(g.pick.line) + '</b><span>Read the full preview →</span></a>' : '';
+    var watch = '<div class="fp-gdg fp-gdg-watch"><small>How to watch</small><b>' + esc((gs.when || '').replace(/^[^·]*·\s*/, '').split(' · ')[0] || 'Kickoff') + '</b><span>' + esc((gs.when || '').split(' · ').slice(2).join(' · ') || 'SEC Network') + '</span><span>' + esc(gs.venue || '') + '</span>' + (gs.kickoff && t < gs.kickoff ? cd(new Date(gs.kickoff).toISOString()) : '') + '</div>';
+    return '<section class="fp-gdgraphics" aria-label="Game-day graphics"><div class="fp-gdg fp-gdg-tape"><small>Tale of the tape</small><h3>Florida vs. ' + esc(opp.name) + '</h3>' + rows + '<p class="fp-tp-src">' + esc(g.asOf || '') + '</p></div>' + pick + watch + '</section>';
+  }
   function hubHtml(latest, sb, posts, used) {
     var sn = showNext(), ep = BUNDLE.show.episode;
     var mLatest = '<section class="fp-mod fp-mod-latest" aria-label="Latest stories"><h2>Latest</h2><ol class="fp-latest">' + latest.map(function (p) {
@@ -688,7 +702,7 @@
       '<div class="fp-mag-reader" id="fp-mag-reader" hidden><div class="fp-mag-tools"><button type="button" class="fp-btn fp-mag-close" aria-label="Close magazine">Close magazine</button><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine ↗</a></div><iframe title="GatorBait Magazine — ' + esc(issue.number) + '" loading="lazy" data-src="' + esc(L.magazine) + '?embed=home#pm-contents"></iframe><p><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine <span aria-hidden="true">→</span></a></p></div></section>';
     // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
     var mNews = window.GBM_CAPTURE ? window.GBM_CAPTURE.html('home') : '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
-    return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show and photos. Everything GatorBait, in one place.</p></div><div class="fp-hub-grid">' +
+    return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show and photos. Everything GatorBait, in one place.</p></div>' + gdGraphicsHtml(gameState(sb)) + '<div class="fp-hub-grid">' +
       mLatest + mScores + mShow + (window.GBM_CAPTURE ? mNews : '') + mClips + mPhotos + mMag + (window.GBM_CAPTURE ? '' : mNews) + '</div></div></section>';
   }
 

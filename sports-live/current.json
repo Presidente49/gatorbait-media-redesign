@@ -1,5 +1,5 @@
 {
-  "commit": "90b98948ded328a6d9b99c5958287e466a33124b",
+  "commit": "c8fc9db3e0506a34a087432809ca5cf08643aa76",
   "updated": "2026-10-10T14:45:00Z",
-  "note": "Buddy's newest column leads the split (PR #212). Rollback: set commit to 922fc4a400054723191f67dcb1ce73515252f0e9."
+  "note": "Straight chronological front page (PR #214). Rollback: set commit to 90b98948ded328a6d9b99c5958287e466a33124b."
 }

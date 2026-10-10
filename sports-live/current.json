@@ -1,5 +1,5 @@
 {
-  "commit": "7e21504e6720b9cf92b22f624724d8dde6148c18",
-  "updated": "2026-10-10T21:45:00Z",
-  "note": "Postgame mode after South Carolina final (PR #220). Rollback: set commit to 948ed95391323c77d60c87e90c316afee3b1fb9f."
+  "commit": "464861949c0b6638e34397f7d9382097032b0f83",
+  "updated": "2026-10-10T23:20:00Z",
+  "note": "Postgame lead above The Road Ahead (PR #223). Rollback: set commit to 7e21504e6720b9cf92b22f624724d8dde6148c18."
 }

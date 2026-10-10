@@ -1,50 +1,50 @@
 {
- "updatedAt": "2026-10-10T17:28:51Z",
+ "updatedAt": "2026-10-10T20:39:18Z",
  "season": 2026,
  "team": {
   "name": "Florida",
   "rank": 16,
-  "record": "4-1",
-  "conf": "2-1"
+  "record": "4-2",
+  "conf": "2-2"
  },
  "last": {
-  "eventId": "401856708",
-  "opponent": "Missouri",
-  "opponentRank": 25,
-  "home": false,
-  "date": "2026-10-03T19:50:00Z",
+  "eventId": "401856714",
+  "opponent": "South Carolina",
+  "opponentRank": null,
+  "home": true,
+  "date": "2026-10-10T16:45:00Z",
   "status": "final",
   "score": {
-   "fla": 17,
-   "opp": 45
+   "fla": 19,
+   "opp": 38
   },
   "quarters": {
    "fla": [
-    3,
     7,
-    0,
-    7
+    3,
+    3,
+    6
    ],
    "opp": [
-    3,
-    17,
+    7,
     10,
-    15
+    14,
+    7
    ]
   },
-  "venue": "Memorial Stadium",
+  "venue": "Ben Hill Griffin Stadium",
   "recapUrl": null,
   "galleryUrl": null
  },
  "next": {
-  "eventId": "401856714",
-  "opponent": "South Carolina",
-  "opponentRank": null,
-  "opponentRecord": "2-3",
-  "home": true,
-  "kickoffIso": "2026-10-10T16:45:00Z",
-  "tv": "SEC Network",
-  "venue": "Ben Hill Griffin Stadium",
+  "eventId": "401856724",
+  "opponent": "Texas",
+  "opponentRank": 1,
+  "opponentRecord": "4-0",
+  "home": false,
+  "kickoffIso": "2026-10-17T16:00:00Z",
+  "tv": null,
+  "venue": "DKR-Texas Memorial Stadium",
   "previewUrl": null
  },
  "schedule": [
@@ -128,10 +128,13 @@
    "date": "2026-10-10T16:45:00Z",
    "opponent": "South Carolina",
    "opponentRank": null,
-   "opponentRecord": "2-3",
+   "opponentRecord": "3-3",
    "home": true,
-   "status": "in-progress",
-   "score": null,
+   "status": "final",
+   "score": {
+    "fla": 19,
+    "opp": 38
+   },
    "tv": "SEC Network",
    "storyUrl": null
   },
@@ -140,7 +143,7 @@
    "date": "2026-10-17T16:00:00Z",
    "opponent": "Texas",
    "opponentRank": 1,
-   "opponentRecord": null,
+   "opponentRecord": "4-0",
    "home": false,
    "status": "scheduled",
    "score": null,
@@ -225,9 +228,9 @@
    "overall": "4-0"
   },
   {
-   "team": "Florida",
+   "team": "Missouri",
    "confRecord": "2-1",
-   "overall": "4-1"
+   "overall": "5-1"
   },
   {
    "team": "Kentucky",
@@ -240,12 +243,12 @@
    "overall": "4-1"
   },
   {
-   "team": "LSU",
-   "confRecord": "1-1",
-   "overall": "4-1"
+   "team": "Florida",
+   "confRecord": "2-2",
+   "overall": "4-2"
   },
   {
-   "team": "Missouri",
+   "team": "LSU",
    "confRecord": "1-1",
    "overall": "4-1"
   },
@@ -265,9 +268,14 @@
    "overall": "3-2"
   },
   {
+   "team": "South Carolina",
+   "confRecord": "1-3",
+   "overall": "3-3"
+  },
+  {
    "team": "Texas A&M",
-   "confRecord": "1-2",
-   "overall": "3-2"
+   "confRecord": "1-3",
+   "overall": "3-3"
   },
   {
    "team": "Vanderbilt",
@@ -283,22 +291,7 @@
    "team": "Arkansas",
    "confRecord": "0-2",
    "overall": "2-3"
-  },
-  {
-   "team": "South Carolina",
-   "confRecord": "0-3",
-   "overall": "2-3"
   }
  ],
- "live": {
-  "eventId": "401856714",
-  "clock": "0:00",
-  "period": 1,
-  "score": {
-   "fla": 7,
-   "opp": 7
-  },
-  "possession": "fla",
-  "lastPlay": "End of 1st quarter."
- }
+ "live": null
 }

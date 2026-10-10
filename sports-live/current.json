@@ -1,5 +1,5 @@
 {
-  "commit": "69a353b5c5356e7652f4aee401d4f8fde716085b",
-  "updated": "2026-10-10T13:55:00Z",
-  "note": "GAME DAY banner, pregame-only Magazine module (PR #206). Rollback: set commit to 45a03098bbaebdec015bf0b3b1ab4c3d27fa9155."
+  "commit": "f9c55dc6d447c70ec18c8757d1e79eb17f98fb73",
+  "updated": "2026-10-10T14:10:00Z",
+  "note": "Hub game-day graphics (PR #208). Rollback: set commit to 69a353b5c5356e7652f4aee401d4f8fde716085b."
 }

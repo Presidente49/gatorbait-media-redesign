@@ -1,5 +1,5 @@
 {
-  "commit": "de861a9d3be8cf47a39cac271a441b202b626942",
-  "updated": "2026-10-10T11:52:00Z",
-  "note": "Game-week pregame focus, newest first, in-bundle weather and radar (PR #197). Rollback: set commit to ce0e39259b2601179f1b38215cc063cbbce1664b."
+  "commit": "70eb2c5d124ba53d62f9cc8552ecf22abf3cee41",
+  "updated": "2026-10-10T12:42:00Z",
+  "note": "Game-week: last-game score hidden (PR #201). Rollback: set commit to de861a9d3be8cf47a39cac271a441b202b626942."
 }

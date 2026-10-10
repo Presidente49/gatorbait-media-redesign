@@ -365,7 +365,8 @@
     var mid;
     if (gs.phase === 'pre') mid = '<span class="fp-gd-match">' + esc(nm(opp)) + ' at ' + esc(nm(fl)) + '</span><small>' + esc(String(gs.when || '').replace(/^[^·]*·\s*/, '')) + '</small>' + (gs.kickoff ? cd(new Date(gs.kickoff).toISOString()) : '');
     else mid = '<span class="fp-gd-match">' + esc(opp.name) + ' ' + esc(opp.score == null ? 0 : opp.score) + ', ' + esc(fl.name) + ' ' + esc(fl.score == null ? 0 : fl.score) + '</span><small>' + esc(gs.phase === 'final' ? 'Final' : gs.phase === 'half' ? 'Halftime' : gs.clock || 'Live') + '</small>';
-    return '<div class="fp-gdtop" role="region" aria-label="Game day"><span class="fp-gd-tag">Game day</span>' + mid + '</div>';
+    var prog = BUNDLE.gameDayProgram, pu = prog && prog.url && now() < Date.parse(prog.until) ? safeUrl(prog.url) : '';
+    return '<div class="fp-gdtop" role="region" aria-label="Game day"><span class="fp-gd-tag">Game day</span>' + mid + (pu ? '<a class="fp-gd-dl" href="' + esc(pu) + '" target="_blank" rel="noopener">' + esc(prog.label || 'Download the program') + ' <span aria-hidden="true">↓</span></a>' : '') + '</div>';
   }
   function bugHtml(sb, gs) {
     if (gs && modes(sb).gameday) return '';

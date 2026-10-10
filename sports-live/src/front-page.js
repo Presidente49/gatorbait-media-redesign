@@ -58,7 +58,7 @@
   /* ---------- Stories ---------- */
   function normalize(data) {
     var seen = new Set(), t = now();
-    return (data && Array.isArray(data.posts) ? data.posts : []).map(function (p) {
+    var allPosts = (data && Array.isArray(data.posts) ? data.posts : []).map(function (p) {
       var u = safeUrl(p.url, 'post'), date = new Date(p.firstPublishedDate);
       if (!u || !p.title || !Number.isFinite(date.getTime()) || date.getTime() > t + DAY || seen.has(u)) return null;
       if (/^LIVE NOW:/i.test(String(p.title)) && t - date.getTime() > 21600000) return null;
@@ -79,7 +79,17 @@
       if (this.tod) return false;
       this.tod = true;
       return true;
-    }, { tod: false }).slice(0, 30);
+    }, { tod: false });
+    return gameFocus(allPosts).slice(0, 30);
+  }
+  // Game-week focus (Brenden, Oct. 10: "everything on the front page should be all about pregame"): inside the window, only stories that
+  // match the pattern stay on the front page, newest first. Every story stays on /gatorbait-media-blogs. Needs 8+ matches or it steps aside.
+  function gameFocus(list) {
+    var f = BUNDLE.gameWeekFocus, t = now();
+    if (!f || !f.on || !(t >= Date.parse(f.from) && t < Date.parse(f.until))) return list;
+    var re; try { re = new RegExp(f.pattern, 'i'); } catch (_) { return list; }
+    var hit = list.filter(function (p) { return re.test(p.title + ' ' + (p.excerpt || '')); });
+    return hit.length >= 8 ? hit : list;
   }
   function isSpears(p) { return /chris spears/i.test(p.author) || /^chris spears/i.test(p.title); }
   function byColumnist(p, name) { return (name === 'Chris Spears' || name === 'Chris Spears Photos') ? isSpears(p) : p.author.toLowerCase().indexOf(name.toLowerCase()) >= 0; }

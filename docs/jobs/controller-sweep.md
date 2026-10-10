@@ -1,79 +1,24 @@
 # Job: controller-sweep
 
-Runs every two hours, 7:52 a.m. to 9:52 p.m. ET. Run the sections in order. Jarvis is the controller; a sweep that finds everything green writes nothing. Rules are in `docs/START-HERE.md` and win over anything below.
+Runs every two hours, 7:52 a.m. to 9:52 p.m. ET. Read `docs/START-HERE.md`, newest #34 comments, CURRENT-STATE and LESSONS-DIGEST first. Jarvis is the controller. A sweep with no material change stays silent.
 
-The sections below are the job specifications carried over verbatim from the retired routines (retired Oct. 9-10, 2026, `docs/STACK-V2.md`). Edit this file, not the routine prompt, to change the job.
+This is the consolidated job. Retired routine prompts remain in git history; do not execute them or dispatch their remembered session IDs.
 
----
+## Observe and reconcile
 
-## QC and learning loop
+1. Verify repository, branch, HEAD and dirty state; fetch current main before repo work without resetting or discarding changes. Use a current-main branch for a bounded repair. Old drafts and feature branches are evidence, not the next assignment.
+2. Review what shipped or failed since the last sweep: #34 outcomes, current PR heads and candidate CI, provider post/cover/embed changes, actual routine results. Read live routine/session state before diagnosing a missed job; a schedule or old note is not execution evidence.
+3. Keep one existing issue or #34 record per material unresolved item: owner, verified state, next action, blocker and success evidence. Reconcile stale CURRENT-STATE entries against it. Archive superseded directions rather than carrying them as active work.
 
-Old routine: `trig_018WWCWijvABao8AU2HtEra8` (Jarvis: QC and learning loop (hourly, 7 a.m.-10 p.m. ET))
+## Act and verify
 
-QC and learning loop. Brenden, Oct. 7: "Everything's on a recursive learning loop. You do something, QC checks it, and it keeps going. You are running the business. If you need more assets, go get them. Complete autonomy." Do not ask him anything. Fix, re-dispatch, or document.
+4. QC changed work against the publishing/surface playbooks: source facts, actual byline, rich formatting, alt text, permanent credited media, canonical links, chronological order and applicable live renders. Check blog alert status before publication; report a mismatch without switching it.
+5. Apply one small authorized reversible repair to an object you own, with a fresh read and rollback first. Verify provider state and independent public output when practical. Candidate CI and live-site checks answer different questions; record a known render-qc failure separately rather than treating every red check as harmless or grounds for deployment.
+6. For larger work, use one bounded branch/PR assignment with the actual owner's current status and acknowledgment. Reuse an active owner when one exists. Do not revive retired department chats, unarchive remembered sessions or create recurring jobs to chase an old list.
+7. Repo housekeeping: inspect the actual diff against current main before merging, reconciling or closing a PR. Preserve useful source and rollback branches; check references before removing files. A giant draft against an old feature base is not an integration path. Never merge the backlog wholesale.
 
-1. WHAT SHIPPED: list everything shipped in the last 2 hours: new or edited Wix posts (draft-posts query, wix.request takes `body` not `data`), covers, embeds, worker sessions' #34 lines, routine runs (list_triggers last_run), PRs and CI (render-qc, PR #36, #144).
-2. QC each item with evidence, not trust: post format (no all-bold body, straight quotes, single spaces, alt text, cover set, byline correct, category and tags), facts against ESPN or FloridaGators.com (free paths only: repo refresh data, WebSearch; TinyFish wallet is empty, do not pay for it), rankings, times converted to ET, links resolve, Barlow only, 390/430/1366 px renders when a visual changed, both blog alerts 5006baf5-fbbf-440c-a012-a09bdbd95fc9 and 824714d4-7e31-4b1d-95b2-ccec04d788af INACTIVE.
-3. ACT: small reversible fixes yourself (one UPDATE_PUBLISH per post, fingerprint-checked embed patches, one writer per object, claim in #34 first). Bigger or worker-owned: one-shot create_trigger to the owning session (game-day desk session_01WPrfyiDi3ySUA7EuZTPJVf, stats session_01VBFmjVNZX8NsWmQ9LgZ5gB) saying exactly what to do. Blocked or archived workers: unarchive or re-dispatch. Held drafts (Texas kickoff time, volleyball, Baugh apology) publish only once ESPN or FloridaGators.com or a full source backs them.
-4. LEARN: every new failure mode becomes one line in skills/master-control/references/LESSONS.md (branch + PR, never force-push) and, if it is a repeating job, a change to the owning routine's prompt via update_trigger. Prefer free tools; cost matters. If something would help the business (a missing asset, a new routine, a cheaper tool), build or fetch it if it is free and inside the hard lines.
-5. HARD LINES, still: no subscriber email sends, no automation on/off switches, no payments, pricing, refunds or memberships, no DNS, no Meta or Google account connections, no deleting live content, no byline on member 16433bab, no material homepage change beyond what Brenden approved. If one of those is the only way forward, send Brenden one line with one recommendation.
-6. REPORT: stay silent unless something failed, money is involved, or only Brenden can do it. Then one line. Record counts only in #34 and the Control Room hub, never dollar figures or subscriber data.
+## Runtime and learning
 
----
-
-## Master Control running back
-
-Old routine: `trig_01G9rJG2pMou9asYTiCkG4o5` (Jarvis: Master Control running back (hourly, 7 a.m.–11 p.m. ET))
-
-Master Control running back. Brenden, Oct. 4: "Take over master controller in charge." He wants a project manager, "the running back," constantly pushing the next agent and asking where things are, never stopping. Sept. 30: "I would like to not make any decisions... run autonomously." Jarvis (this session) is the single controller; every other session is a worker (roster in #34, controller assignment comment of Oct. 4).
-
-1. **Chase every open item (the running back).**
-   - Build the open-items list from: #34 comments since the last loop; open PRs (mine and workers'); the worker sessions (get_session on every session tagged jarvis-worker plus the game-day desk session_01WPrfyiDi3ySUA7EuZTPJVf, the stats session session_01VBFmjVNZX8NsWmQ9LgZ5gB and the blog archive worker session_01JkMKjrgqTrnqm8nWsLBgSv); list_triggers failures; Wix draft posts edited in the last 24 hours; and writer email in Gmail.
-   - For each item, name the owner and the next step. If the owner is a worker session, push it with a one-shot create_trigger (persistent_session_id, run_once_at about 2 minutes out) that says exactly what to do next.
-   - If a worker is blocked on a permission prompt or failed, unblock it, re-dispatch the work, or tell Brenden in one line exactly what he must click.
-   - Writers: if a writer's story is promised but missing, put it on the hub as an ask. Email a writer only when Brenden has approved that email.
-   - Track each item in the Control Room hub "status" doc (owner, next step, last pushed time).
-2. **Inbox.**
-   - Run ReadNotifications, then act on "@Jarvis" items in #34.
-   - Work the Control Room hub (ArtifactData, https://claude.ai/artifact/3X5Caw5wg8q3xbvtbjNDvx): act on approved asks, answer "new" messages, mirror #34 claims, refresh the health and status docs, and add one log row per thing shipped. Record counts only, never dollar figures or subscriber data.
-3. **Health (read-only).**
-   - The email account is ACTIVE and both blog alerts are INACTIVE.
-   - Today's list email count is 1 or fewer.
-   - Check CI on open PRs, render-qc, and custom-embed headroom.
-   - Fix anything red first.
-4. **Advance the plan.** Take the next unfinished item from the #34 week plan or the show-week runbook and ship one small, reversible, verified step:
-   - claim it in #34;
-   - write only objects you own, or dispatch the owner;
-   - verify at 390/430/1366 px with live shots;
-   - post the evidence and rollback.
-5. **Hard lines.**
-   - No payments, pricing or refunds.
-   - No DNS or account connections.
-   - No deleting live content.
-   - At most one list email a day.
-   - No material homepage change beyond what Brenden approved (the Gator blue/orange/white day look and editorial headline type, via PR).
-   - No site publish unless needed.
-   - No byline on member 16433bab.
-   - Every stat from ESPN or FloridaGators.com, every quote from its full source, and times converted from UTC to ET.
-6. **Silence.** Stay silent to Brenden unless there is money news, an incident, something only he can do, or a finished deliverable he asked for. Then send one line with one recommendation.
-
----
-
-## Routine watchdog
-
-Old routine: `trig_018zxPPpA5ujA7E945V4Q37s` (Jarvis: routine watchdog (daily 7:10 a.m. ET))
-
-Routine watchdog. Brenden, Oct. 3: "You have control Jarvis make all the boss decisions." Read-only check, then fix only what is safe. 1) list_triggers (enabled) and list_sessions. 2) For every enabled routine, confirm its target session (persistent_session_id) is not ARCHIVED and not blocked on a permission prompt (status bucket BLOCKED or status REQUIRES_ACTION). 3) If a target is ARCHIVED, unarchive it (reversible) and post one line in #34. If a session is blocked on a permission prompt, tell Brenden once in plain words what to tap. 4) Also flag any routine whose last run FAILED. 5) Update the Control Room hub config/departments notes if a department's state changed. Stay silent if everything is fine. Hard lines unchanged: no list email without Brenden's yes, no pausing or enabling routines, no money, DNS or deleting live content.
-
-
----
-
-## Learning loop (Brenden, Oct. 10: "all agents working and learning and getting better")
-
-Every job and worker ends the same way, and the controller sweep closes the loop:
-
-1. **Each run records one learning line** in its #34 note only when something was surprising, failed, or took more than one try: "learned: <what> -> <rule>". No learning, no line.
-2. **The sweep (every 4 hours) reads the new "learned:" lines** since the last sweep. For each that repeats, or that cost a visible error, it does exactly one of: add a one-line entry to `skills/master-control/references/LESSONS-DIGEST.md` (docs-only PR, merge it), edit the job file in `docs/jobs/` so the next run does it right, or edit `docs/START-HERE.md` if it is a rule.
-3. **Measure, don't guess.** The sweep keeps a running count in CURRENT-STATE: stories published, front-page checks that found the page wrong, worker stalls, blocked actions. A number that worsens two sweeps in a row gets a fix, not a note.
-4. **Prune.** If a job found nothing for a week, make it run less. If a rule was never used, delete it. Fewer, sharper jobs.
-5. **Workers learn from the repo, not from each other.** Every worker prompt is "read START-HERE, read your job file, read LESSONS-DIGEST." A lesson that is not in those three places does not exist.
+8. Check enabled routines and real targets for archived, blocked or failed state. Record one owned incident and the exact safe next action. Routine/automation switches follow START-HERE; this job grants no extra switching authority.
+9. Review new "learned:" lines in #34. Promote a repeated or structural verified failure into one LESSONS-DIGEST entry or owning-job edit through a PR. Routine prompts keep pointing at rulebook/job files; do not copy another rule set into them. Record counts only and revise stale claims instead of appending another status board.
+10. Report only a material incident, verified shipment, revenue-impacting outcome or real owner-only blocker, once. Do not request writer assignments or send messages to writers without the required authorization.

@@ -1,12 +1,24 @@
 # Master Control Current State
 
+## Operating direction — reconciled Oct. 10, 2026
+
+`docs/START-HERE.md` is the rulebook; issue #34's newest comments are the work log. Jarvis is the sole controller. This file records dated evidence, not another rulebook or a queue to execute from memory.
+
+- News is chronological, newest-first, with no writer pin. The Buddy-first instruction below is retired.
+- Incoming writers' pieces follow the Oct. 10 standing order and retain their own bylines. Jarvis/Copy Desk copy uses Brenden Martin. Writer-assignment emails are not current work.
+- Subscriber sends and automation switches require current explicit owner authorization under START-HERE. Historical newsletter delegation and breaking-email prompts are not send permission.
+- Run the consolidated current job in `docs/jobs/`; do not execute retired prompts or dispatch remembered department sessions. Inspect actual targets and ownership first.
+- Work from current GitHub main. Preserve local commits/dirty files; compare old PRs individually rather than merging the queue. Issue #3 is closed history.
+
+Older revisions, campaign counts, access blockers, worker rosters and open queues below are dated snapshots. Re-read providers and newest #34 evidence before treating them as current. This reconciliation did not inspect or mutate Wix, routines, email delivery or account access.
+
 ## Oct. 9, ~11 p.m. ET: South Carolina week, chronological order, handoff signposts (Jarvis)
 
 - **Order rule changed (Brenden, Oct. 9):** the front page is strictly chronological, newest first. No writer is pinned as lead; the "Buddy Martin leads" rule is retired. Applied to the overnight story-desk routine; the game-day desk is applying it to the front-page code and docs.
 - **Game, Sat. Oct. 10:** South Carolina at Florida, 12:45 p.m. ET (ESPN). Hurricane Isaias is making landfall far to the west; Gainesville is outside the warning areas. Status checks run 8:30 and 11:30 a.m. ET.
 - **Shipped:** post `21efb548` "Hurricane Isaias reshuffles college football; Gators face rain chance at kickoff", byline Brenden Martin (member for `brenden@gatorbaitmedia.com`), graphics in PR #186. Welcome email campaign `4ee8fd4b` audience verified (16 eligible, 5 removed) for the 8 a.m. ET send. PR #122 (stats data) merged.
 - **Dispatched to the game-day desk:** replace the top schedule strip with live NWS weather (current, hourly, kickoff call-out, small KJAX radar loop) and cycle the front page through the game package; fix the stale Missouri item and duplicate titles. Branch + PR first, claim in #34, no site publish.
-- **Pending on Brenden:** the Mac Editor session (link previews, plans page, PDF page, sitemap, Donate); the blank Wix page at `/florida-football-stats`; the game-day writer-assignment email is drafted in Gmail, unsent.
+- **Historical access backlog, re-verify:** the Mac Editor session (link previews, plans page, PDF page, sitemap, Donate) and blank `/florida-football-stats` page. The writer-assignment email in this snapshot is retired by START-HERE, not an active ask.
 - **Handoffs consolidated:** `docs/START-HERE.md` is the one signpost; `CLAUDE.md` and `AGENTS.md` point to it. Issue #34 is the live log and this file is the status page. The `gatorbait-agency` repo is a separate project with its own Codex role and was left alone.
 
 Older dated entries (Oct. 2 back to Sept. 28, 2026) were moved verbatim to `history/CURRENT-STATE-2026-09.md` on Oct. 10, 2026; the standing live facts (embed IDs and revisions, session IDs, store, email list) stay below.
@@ -53,7 +65,7 @@ Canonical coordination:
 - AdSense incident: issue #30
 - Single controller / one production writer
 - Scheduled monitors remain read-only for live Wix/content/assets/routing.
-- Brenden has delegated routine GatorBait newsletter/editorial implementation inside the tested Stack; do not re-ask routine template/photo/order/audience/QC questions.
+- Routine editorial implementation follows START-HERE. Historical newsletter delegation does not authorize subscriber sends; the current hard line applies.
 
 ## Standing facts kept from the Sept. 28 and Sept. 29 syncs
 
@@ -100,7 +112,7 @@ Verbatim excerpts. The complete dated entries, including the stop-work list, vid
   - `7fee4de6` rev 28, `a13b04e3` rev 3, `82c4ca83` rev 20, `f8b950c9` rev 26, `fb8963cc` rev 4.
 
   Revision numbers in older sections are historical.
-- **Homepage lead:** Home Code pins Franz Beard's "Who are these guys?" story as the lead until Oct. 5 at noon ET, unless a newer Buddy Martin piece or breaking news takes it. After that, the Buddy-first rule resumes. The approved sports-news homepage is otherwise unchanged.
+- **Historical homepage lead (Sept. 28):** the temporary Franz/Buddy pin is retired. Current news order comes from START-HERE: chronological, newest-first, no writer pinned.
 - **Type:**
   - Barlow only. Today the live embeds' Arial overrides were switched to Barlow.
   - PR #38, the Georgia/Times purge plus a CI guard, waits for Brenden's merge.
@@ -139,7 +151,7 @@ Sitewide typography is standardized on the **Barlow** family:
 
 Do not reintroduce Georgia, Times New Roman or Montserrat into the live presentation layer without an explicit new design decision.
 
-## Website presentation — live provider state
+## Website presentation — historical provider snapshot, re-read before use
 
 GitHub `main` continues to advance through normal controller/ops commits. Production presentation is pinned through immutable GitHub commits in the existing Wix embeds; a new `main` commit does not itself redeploy the site.
 
@@ -148,7 +160,7 @@ GitHub `main` continues to advance through normal controller/ops commits. Produc
 - revision: **68**
 - enabled: **true**
 - source pointer: `485b38a036431c667584aa3990922772288399f3/sports-live/homepage.js`
-- product rule: free sports-news homepage, Buddy Martin editorial lead, remaining current-news lists chronological, separate Magazine.
+- product rule: free sports-news homepage, current-news lists chronological newest-first without a writer pin, separate Magazine.
 - old Newsroom/Gazette language in historical files is not authority to restore a retired default.
 
 ### Magazine web page
@@ -365,7 +377,7 @@ Therefore the two Sep. 21 WIX_FORMS contacts with NOT_SET are **not evidence tha
 
 The major current audience question is Wix's **758 SUBSCRIBED / INACTIVE** contacts. Do not force-send or rewrite their status based on subscription alone. Wix automatically maintains deliverability state; preserve `activeContactsOnly` and current conservative gates until a documented provider-safe re-engagement path is established.
 
-## Open queue
+## Historical open queue — reconcile with newest #34 before claiming
 
 1. **Provider-preview duplicate-draft incident:** VERIFIED_CLOSED. One canonical draft remains.
 2. **Automatic Story Alert execution trace:** CLAIMED / BLOCKED_ON_RUN_LOG_ACCESS.
@@ -376,7 +388,7 @@ The major current audience question is Wix's **758 SUBSCRIBED / INACTIVE** conta
 ## Session startup rule
 
 Every Claude/Codex/ChatGPT GatorBait session should:
-1. verify canonical repo and current `main`
+1. verify canonical repo and current `main`; read `docs/START-HERE.md`
 2. read latest issue #34 comments
 3. read this file
 4. load the canonical Master Control skill
@@ -384,4 +396,4 @@ Every Claude/Codex/ChatGPT GatorBait session should:
 6. read live provider state before mutation
 7. update existing work items rather than inventing parallel controllers/issues
 
-Historical chats, branches and files are evidence. They do not outrank live state or this current routing snapshot.
+Historical chats, branches and dated snapshots are evidence. Live state establishes facts; START-HERE and current owner instructions establish authorization.

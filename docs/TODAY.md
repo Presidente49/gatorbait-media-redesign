@@ -1,11 +1,7 @@
-# TODAY: read this first
+# Today's work
 
-**Saturday, Oct. 10, 2026.** Game day.
+Read `docs/START-HERE.md` first, then the newest GitHub issue #34 comments and `skills/master-control/references/CURRENT-STATE.md`. Jarvis owns the current queue; each worker names its bounded task and checks existing ownership.
 
-- **Game:** South Carolina at No. 16 Florida, 12:45 p.m. ET, Ben Hill Griffin Stadium, SEC Network. ESPN event 401856714. Florida 4-1 (2-1 SEC), South Carolina 2-3 (0-3 SEC).
-- **Missouri is over.** The Oct. 3 game (17-45) does not appear on the front page, in graphics or in copy except as past context inside a story.
-- **Front page:** all pregame, newest first, no pinned writers. Scores strip on top. Weather and radar live.
-- **Who does what:** Jarvis runs game day and publishes (Copy Desk stories under Brenden Martin). Writers' stories go up under their own names. Stats chat refreshes the stats page after the final. Design chat delivers graphics to `assets/gameday/`. Brenden does social on Muse.
-- **Hard lines:** no subscriber email, no automation switching, no money or plan changes, no DNS or Meta/Google connections, no deleting live content without Brenden's yes.
-- **Backlog needing Brenden's yes:** membership lounge.
-- **Photos:** never reuse a cover. Check usage first.
+Resolve today's date in America/New_York and the game/publication state from the live provider. A dated pregame note is not today's assignment after the final. Do not copy an opponent, record, kickoff, weather condition or front-page mode from an old snapshot.
+
+Run only the applicable job in `docs/jobs/`, under the current rulebook. Routine editorial work proceeds under its existing delegation; the hard lines still apply. Record an actual shipped result, blocker and next action in #34. If nothing changed, stay silent. Historical directions stay in git history.

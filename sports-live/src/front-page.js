@@ -88,7 +88,8 @@
     var f = BUNDLE.gameWeekFocus, t = now();
     if (!f || !f.on || !(t >= Date.parse(f.from) && t < Date.parse(f.until))) return list;
     var re; try { re = new RegExp(f.pattern, 'i'); } catch (_) { return list; }
-    var hit = list.filter(function (p) { return re.test(p.title + ' ' + (p.excerpt || '')); });
+    var ex = null, kp = null; try { ex = f.exclude ? new RegExp(f.exclude, 'i') : null; kp = f.keep ? new RegExp(f.keep, 'i') : null; } catch (_) {}
+    var hit = list.filter(function (p) { if (ex && ex.test(p.title)) return false; return (kp && kp.test(p.title)) || re.test(p.title + ' ' + (p.excerpt || '')); });
     return hit.length >= 8 ? hit : list;
   }
   function isSpears(p) { return /chris spears/i.test(p.author) || /^chris spears/i.test(p.title); }
@@ -117,7 +118,8 @@
     var extra = window.__GBM_HOME_COLEAD__, cfg = Object.assign({ on: false, left: 'Buddy Martin', right: 'Franz Beard', days: 7 }, BUNDLE.colead || {}, extra && typeof extra === 'object' ? extra : {});
     if (cfg.on !== true || picked.why === 'breaking') return null;
     var t = now(), max = Math.max(1, Number(cfg.days) || 7) * DAY;
-    function newest(name, not) { return posts.find(function (p) { return p !== not && byColumnist(p, name) && t - p.date.getTime() < max; }) || null; }
+    var rm = null; try { rm = cfg.rightMatch ? new RegExp(cfg.rightMatch, 'i') : null; } catch (_) {}
+    function newest(name, not) { return posts.find(function (p) { return p !== not && byColumnist(p, name) && t - p.date.getTime() < max && (name !== cfg.right || !rm || rm.test(p.title + ' ' + p.excerpt)); }) || null; }
     var left = byColumnist(picked.post, cfg.left) ? picked.post : newest(cfg.left), right = left && newest(cfg.right, left);
     return left && right ? [left, right] : null;
   }
@@ -616,7 +618,7 @@
   /* Recent broadcasts: source parity with the verified live show rail. */
   var gbmShowRows = [{ "id": "aEOcRpECIOQ", "title": "Has Jadan Baugh Got A Shot At The Heisman?", "publishedAt": "2026-10-02T18:57:40-07:00", "duration": "PT51M35S" }, { "id": "TPKZcSS9Bc0", "title": "Has Jadan Baugh Got A Shot At The Heisman?", "publishedAt": "2026-10-02T07:12:37-07:00", "duration": "PT61M36S" }, { "id": "VIsn01dETY4", "title": "Will Success Come With A Big Price For The Gators?", "publishedAt": "2026-10-01T07:23:17-07:00", "duration": "PT64M11S" }, { "id": "SYBBWfaTTcs", "title": "Denzel Aberdeen Cleared for Florida, with Missouri Preview Ahead", "publishedAt": "2026-09-30T08:07:36-07:00", "duration": "PT57M53S" }, { "id": "qWBazfq_4Mc", "title": "Florida DESTROYS Ole Miss 52-28 🐊 Shane Matthews Reacts", "publishedAt": "2026-09-29T07:18:49-07:00", "duration": "PT59M18S" }, { "id": "u2dMQ4u3yNY", "title": "Ole Miss vs Florida Preview Can the Gators Own the Swamp", "publishedAt": "2026-09-25T07:38:50-07:00", "duration": "PT72M39S" }];
   function gbmRecentShows() {
-    return '<div class="fp-episode-head">Recent broadcasts · newest first</div><div class="fp-episode-list" tabindex="0" aria-label="Recent broadcasts, newest first">' + gbmShowRows.filter(function(v) { return !(weekFocusOn() && /missouri|mizzou/i.test(v.title)); }).slice(0, 6).map(function(v) {
+    return '<div class="fp-episode-head">Recent broadcasts · newest first</div><div class="fp-episode-list" tabindex="0" aria-label="Recent broadcasts, newest first">' + gbmShowRows.filter(function(v) { return !(weekFocusOn() && /missouri|mizzou|ole miss/i.test(v.title)); }).slice(0, 6).map(function(v) {
       return '<a class="fp-vid" href="https://www.youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener"><span class="fp-frame">' + img("https://i.ytimg.com/vi/" + v.id + "/hqdefault.jpg", "", false, 480, 360) + '<span class="fp-play"></span></span><span><b>' + esc(v.title) + "</b><span>Published " + esc(new Date(v.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "America/New_York" })) + "</span></span></a>";
     }).join("") + '</div><p class="fp-ex"><a href="/the-buddy-martin-show">Watch here</a> · <a href="https://www.youtube.com/@TheBuddyMartinShow" target="_blank" rel="noopener">Subscribe on YouTube</a> · <a href="https://www.twitter.com/buddyshow" target="_blank" rel="noopener">Buddy on X</a></p>';
   }
@@ -662,13 +664,14 @@
       '<p class="fp-ex">Mondays, Wednesdays and Thursdays at 9 p.m. ET.</p><div class="fp-actions"><a class="fp-btn" href="' + esc(L.youtubeLive) + '" rel="noopener">Watch on YouTube</a><a class="fp-btn fp-ghost" href="' + esc(L.facebook) + '" rel="noopener">Facebook</a></div>' +
       gbmRecentShows() +
       '<a class="fp-more" href="' + esc(L.show) + '">GatorBait TV &amp; podcasts <span aria-hidden="true">&nbsp;→</span></a></section>';
-    var mClips = '<section class="fp-mod fp-mod-clips" aria-label="Buddy Martin Show archive"><h2>Buddy Martin Show archive</h2><p class="fp-ex">Selected full-length shows from GatorBait TV.</p><div class="fp-clips">' + BUNDLE.showArchive.slice(0, 2).map(function (c) {
+    var cleanWeek = weekFocusOn();
+    var mClips = cleanWeek ? '' : '<section class="fp-mod fp-mod-clips" aria-label="Buddy Martin Show archive"><h2>Buddy Martin Show archive</h2><p class="fp-ex">Selected full-length shows from GatorBait TV.</p><div class="fp-clips">' + BUNDLE.showArchive.slice(0, 2).map(function (c) {
       return '<a class="fp-clip" href="https://www.youtube.com/watch?v=' + esc(c.id) + '" target="_blank" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + c.id + '/hqdefault.jpg', '', false, 480, 360) + '<span class="fp-play"></span></span><b>' + esc(c.title) + '</b><span class="fp-meta">Full show · ' + esc(c.duration) + '</span></a>'; }).join('') +
       '</div><a class="fp-more" href="' + esc(L.youtubePlaylist) + '" target="_blank" rel="noopener">Browse the show playlist <span aria-hidden="true">&nbsp;→</span></a></section>';
     var gal = posts.filter(function (p) { return p.image && /spears/i.test(p.title + ' ' + p.author) && /(photo|galler|best shots)/i.test(p.title); }).slice(0, 2)
       .map(function (p) { return { title: p.title, url: p.url, image: p.image }; });
     if (!gal.length) gal = BUNDLE.galleries.slice(0, 2);
-    var mPhotos = '<section class="fp-mod fp-mod-photos" aria-label="Photographs"><h2>Photos · Chris Spears</h2><div class="fp-photos">' + gal.map(function (g) {
+    var mPhotos = cleanWeek ? '' : '<section class="fp-mod fp-mod-photos" aria-label="Photographs"><h2>Photos · Chris Spears</h2><div class="fp-photos">' + gal.map(function (g) {
       return '<a class="fp-photo" href="' + esc(g.url) + '"><span class="fp-frame">' + img(g.image, g.title, false) + '</span><span class="fp-cap"><b>Photo by Chris Spears, GatorBait Media</b></span><b>' + esc(g.title) + '</b></a>'; }).join('') + '</div></section>';
     var l = sb.last, n = sb.next, scores = '';
     if (l && l.score) {
@@ -820,7 +823,7 @@
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
     root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + (mode.gameday && gs ? gdBand(gs) : '') + scoresHtml(sb) + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
-      (gwCfg() ? wxHtml() : roadHtml(sb)) + '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
+      (gwCfg() ? '' : roadHtml(sb)) + '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + '</div>' + (gwCfg() ? wxHtml() : '') + '<div class="fp-wrap">' + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
       hubHtml(latest, sb, posts, used) + '</main>';
     if (!document.getElementById('gbm-fp26-styles')) {
       var style = document.createElement('style'); style.id = 'gbm-fp26-styles'; style.textContent = CSS; document.head.appendChild(style);

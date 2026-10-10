@@ -2,7 +2,7 @@
 
 This is the one rulebook. Every Claude, Codex or ChatGPT session reads it first. If a chat, a branch, a routine prompt or a dated runbook disagrees with this page, this page wins. Live provider state still wins on facts (what exists), never on permission.
 
-> Stack redesign (Oct. 9): fewer agents, stateless jobs, one rulebook. Plan and migration in `docs/STACK-V2.md`.
+> Stack redesign (Oct. 9): fewer agents, stateless jobs, one rulebook. Plan and migration in `docs/STACK-V2.md`. Social and Marketing run as their own automatic lanes: `docs/jobs/social.md`, `docs/jobs/marketing.md`, `docs/SOCIAL-RULES.md`.
 
 ## 1. Who decides
 

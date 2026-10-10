@@ -609,3 +609,23 @@ html:has(#gbm-live.gbm-gazette) #gbm-footer a{color:#fff!important}
 #gbm-live.fp26 .fp-gdtop .fp-cd{margin-left:auto;color:#fff}
 #gbm-live.fp26.fp-gameday .fp-quick-links{display:none}
 @media(max-width:820px){#gbm-live.fp26.fp-gameday .fp-nav{display:none}}
+/* Game-day graphics row (Hub) */
+#gbm-live.fp26 .fp-gdgraphics{display:grid;gap:12px;margin:0 0 18px;grid-template-columns:1fr}
+#gbm-live.fp26 .fp-gdg{position:relative;display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:12px;color:#fff;background:linear-gradient(160deg,#0021a5 0%,#0a2463 70%);overflow:hidden;text-decoration:none}
+#gbm-live.fp26 .fp-gdg::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(250,70,22,.55),transparent 70%)}
+#gbm-live.fp26 .fp-gdg small{font:800 12px/1 var(--fp-cond);letter-spacing:.18em;text-transform:uppercase;color:#ffb199}
+#gbm-live.fp26 .fp-gdg h3{margin:0;font:800 clamp(22px,5vw,30px)/1 var(--fp-cond);text-transform:uppercase}
+#gbm-live.fp26 .fp-tp-row p{margin:8px 0 4px;font:700 13px/1.1 var(--fp-sans);color:#d6def5}
+#gbm-live.fp26 .fp-tp-bars{display:grid;gap:4px}
+#gbm-live.fp26 .fp-tp-b{display:grid;grid-template-columns:34px 1fr 52px;align-items:center;gap:8px}
+#gbm-live.fp26 .fp-tp-b b{font:800 13px/1 var(--fp-cond);letter-spacing:.08em}
+#gbm-live.fp26 .fp-tp-b i{display:block;height:10px;width:var(--w);background:rgba(255,255,255,.35);border-radius:5px;transform-origin:left}
+#gbm-live.fp26 .fp-tp-b.win i{background:#fa4616}
+#gbm-live.fp26 .fp-tp-b em{font:800 16px/1 var(--fp-cond);font-style:normal;text-align:right;font-variant-numeric:tabular-nums}
+#gbm-live.fp26 .fp-tp-src{margin:8px 0 0;font:500 12px/1.3 var(--fp-sans);color:#aab4cc}
+#gbm-live.fp26 .fp-gdg-pick b{font:800 clamp(30px,8vw,44px)/1 var(--fp-cond);text-transform:uppercase}
+#gbm-live.fp26 .fp-gdg-pick span,#gbm-live.fp26 .fp-gdg-watch span{font:700 14px/1.3 var(--fp-sans);color:#ffb199}
+#gbm-live.fp26 .fp-gdg-watch b{font:800 clamp(30px,8vw,44px)/1 var(--fp-cond);text-transform:uppercase}
+#gbm-live.fp26 .fp-gdg-watch .fp-cd{color:#fff;margin-top:4px}
+@media(min-width:821px){#gbm-live.fp26 .fp-gdgraphics{grid-template-columns:1.5fr 1fr 1fr}}
+@media(prefers-reduced-motion:no-preference){#gbm-live.fp26 .fp-tp-b i{animation:fpBar .9s cubic-bezier(.2,.7,.2,1) both}@keyframes fpBar{from{transform:scaleX(0)}to{transform:none}}}

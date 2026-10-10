@@ -196,5 +196,48 @@
     "until": "2026-10-11T12:00:00Z",
     "pattern": "south carolina|gamecock|homecoming|kickoff|\\brain|storm|hurricane|isaias|weather|bounce|swamp|beamer|sumrall|baugh|philo|availability|favorite|point spread|pregame",
     "hideLast": true
+  },
+  "gameDayGraphics": {
+    "on": true,
+    "from": "2026-10-10T04:00:00Z",
+    "until": "2026-10-11T12:00:00Z",
+    "asOf": "Season to date, five games. Source: ESPN, Oct. 10.",
+    "tape": [
+      [
+        "Points per game",
+        46.2,
+        37.6,
+        1
+      ],
+      [
+        "Rushing yards per game",
+        216.4,
+        256.0,
+        1
+      ],
+      [
+        "Passing yards per game",
+        274.8,
+        235.0,
+        1
+      ],
+      [
+        "Points allowed per game",
+        27.2,
+        26.8,
+        0
+      ],
+      [
+        "Rushing yards allowed per game",
+        126.4,
+        100.4,
+        0
+      ]
+    ],
+    "pick": {
+      "kicker": "Loren Meadows' pick",
+      "line": "Florida 31, South Carolina 24",
+      "href": "/post/hit-the-reset-button-gators-gamecocks-meet-at-different-crossroads"
+    }
   }
 }

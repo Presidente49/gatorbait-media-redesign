@@ -2,6 +2,8 @@
 
 This is the one rulebook. Every Claude, Codex or ChatGPT session reads it first. If a chat, a branch, a routine prompt or a dated runbook disagrees with this page, this page wins. Live provider state still wins on facts (what exists), never on permission.
 
+> Stack redesign (Oct. 9): fewer agents, stateless jobs, one rulebook. Plan and migration in `docs/STACK-V2.md`.
+
 ## 1. Who decides
 
 - **Jarvis** (session `session_01QUnBu7zkHLGEmUEfSvE4Wp`) is the single controller and runs the business day to day. Every other session, routine, model or tool is a worker.

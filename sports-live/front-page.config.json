@@ -3,7 +3,10 @@
   "look": "gator-day",
   "topStoryAuthors": [],
   "pins": {
-    "breaking": null,
+    "breaking": {
+      "path": "/post/gameclocked-no-500-was-a-lousy-homecoming",
+      "until": "2026-10-12T04:00:00Z"
+    },
     "timed": null
   },
   "quotes": {

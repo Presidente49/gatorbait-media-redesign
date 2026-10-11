@@ -62,6 +62,8 @@
       var u = safeUrl(p.url, 'post'), date = new Date(p.firstPublishedDate);
       if (!u || !p.title || !Number.isFinite(date.getTime()) || date.getTime() > t + DAY || seen.has(u)) return null;
       if (/^LIVE NOW:/i.test(String(p.title)) && t - date.getTime() > 21600000) return null;
+      // Members-only download pages (paywalled) stay off the public front page lists (Brenden, Oct. 11).
+      if (/^Members:/i.test(String(p.title))) return null;
       seen.add(u);
       var raw = String(p.excerpt || '').replace(/\s+/g, ' ').trim(), cap = '', credit = '';
       // Franz-style excerpts open with the photo caption: "Caption (Photo by Chris Spears) Story..."

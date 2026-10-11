@@ -1,43 +1,42 @@
 {
-  "sourceRelease": "current-pregame",
+  "sourceRelease": "current-postgame",
   "issue": {
-    "number": "Friday Pregame Edition",
-    "date": "Friday, October 9, 2026",
+    "number": "Postgame Edition",
+    "date": "Sunday, October 11, 2026",
     "week": "Week 6 · South Carolina at Florida",
     "home": "GatorBait Media",
-    "pageTitle": "GatorBait Magazine | Friday Pregame Edition: South Carolina at Florida"
+    "pageTitle": "GatorBait Magazine | Postgame: South Carolina 38, Florida 19"
   },
   "cover": {
-    "kicker": "Friday Pregame Edition · Week 6",
-    "headline": "SOUTH CAROLINA AT FLORIDA",
-    "dek": "Saturday, Oct. 10, 12:45 p.m. ET on SEC Network. Buddy Martin: Nostalgia Is Wonderful. It Cannot Pick Up a Blitz.",
+    "kicker": "Postgame Edition · Week 6",
+    "headline": "GAMECLOCKED! No. 500 Was a Lousy Homecoming in The Swamp",
+    "dek": "South Carolina 38, Florida 19. Buddy Martin, Franz Beard, Chris Spears' best shots and a look ahead to Texas.",
     "byline": "Buddy Martin",
     "cta": "Open this issue",
     "url": "/magazine",
     "image": {
-      "id": "d3cfa5_35426d7986a84de1af22b80150c6f735~mv2",
+      "id": "16b519_56d755f7140a472d903585d4fb98710a~mv2",
       "ext": "jpg",
-      "width": 1102,
-      "height": 1427,
-      "alt": "GatorBait Magazine cover, October 2026: Rebound at the Swamp. A Florida Gators helmet rests on the sideline grass in front of a full Ben Hill Griffin Stadium, with headlines on the Homecoming test, Baugh Owns It, Franz Beard, Buddy Martin and Eddie Gilley.",
-      "credit": "GatorBait Media cover art"
+      "width": 3000,
+      "height": 2000,
+      "alt": "Florida coach Jon Sumrall heads to the field before the South Carolina game at Ben Hill Griffin Stadium on Oct. 10.",
+      "credit": "Photo by Chris Spears, GatorBait Media"
     },
     "linesLabel": "Cover column",
     "lines": [
-      "Buddy Martin: Nostalgia Is Wonderful. It Cannot Pick Up a Blitz."
-    ],
-    "artwork": true
+      "Buddy Martin: GAMECLOCKED! No. 500 Was a Lousy Homecoming in The Swamp"
+    ]
   },
   "previous": [
     {
-      "caption": "Postgame edition · Week 5 · Florida at Missouri",
+      "caption": "Friday Pregame Edition · Week 6 · South Carolina at Florida",
       "image": {
-        "id": "d3cfa5_91f6f4d83bd14a6f8b09340c5079040a~mv2",
+        "id": "d3cfa5_35426d7986a84de1af22b80150c6f735~mv2",
         "ext": "jpg",
-        "width": 864,
-        "height": 1536,
-        "alt": "GatorBait Magazine Missouri Postgame First Loss cover featuring Florida coach Jon Sumrall",
-        "credit": "Photo illustration · Chris Spears Photography"
+        "width": 1102,
+        "height": 1427,
+        "alt": "GatorBait Magazine cover, October 2026: Rebound at the Swamp. A Florida Gators helmet rests on the sideline grass in front of a full Ben Hill Griffin Stadium.",
+        "credit": "GatorBait Media cover art"
       }
     }
   ]

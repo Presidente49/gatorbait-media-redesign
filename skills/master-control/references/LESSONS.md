@@ -783,3 +783,9 @@ When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Mi
 **What happened:** The South Carolina postgame edition took one build pass.
 
 **The rule:** (1) fill `sports-live/magazine-issue-postgame.json` from ESPN only and drop any section GatorBait did not publish (no invented report card); (2) `MAG_VARIANT=postgame node sports-live/build-magazine.mjs`, then `qa-magazine-postgame.mjs` at 320/390/430/1366; (3) PR, merge, take the merge sha; (4) pin the loader to that sha with `deploy/magazine-2026/postgame-sc/make-loader.py` and PATCH `1dd74333` (read it first, Lesson 92); (5) the email is a separate MJML source run through `validate-unique-images`, `run-stack-qc` and `check-links` (six distinct article links, complete UTMs), built as a Wix draft, then the audience check and send governor. A Texas or poll ranking goes in one field and is set after the Sunday polls post, so the page and the email agree. Sends need Brenden's yes and a passing governor.
+
+## Lesson 96: fresh news only; never fill a gap with an old number (Oct. 11, 2026)
+
+**What happened:** While the postgame magazine waited for the Sunday polls, I put last week's rankings on the Texas section as a stand-in. Brenden stopped it: "it always has to be fresh news, rule."
+
+**The rule:** rankings, records, odds, times and stats come from the latest release at the moment of publishing. If the fresh figure is not out, leave the line out or say it is coming, and add it when it posts. An old figure, even labeled with its date, is not a placeholder. The same applies to emails and cards.

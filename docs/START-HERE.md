@@ -38,6 +38,7 @@ This is the one rulebook. Every Claude, Codex or ChatGPT session reads it first.
 - Sources: every stat from ESPN or FloridaGators.com; every quote from its full source; times converted to ET. Never cite, name, quote, link or credit Gator Country; read it as a tip only, confirm elsewhere or leave it out.
 - Style: Barlow only. AP style for dates, times and titles. Straight quotes. Real rich formatting; writing must not read as AI.
 - Writer-published posts get copy-desk fixes only (format, spacing, alt text, cover, category, tags, meta); never a rewrite of a writer's voice.
+- **Fresh news only (Brenden, Oct. 11).** Everything we publish, send or put on a page must be current: rankings, records, odds and kickoff times come from the latest release at the moment of publishing. Never reuse last week's poll, an old ranking line or an old stat as a stand-in. If the fresh number is not out yet, leave the line out (or say it is coming) and add it the moment it posts.
 - Media permanence: no live article references an image until it is in the production Wix Media Manager. No hotlinks to temporary assets.
 
 ## 5. Game-day procedure

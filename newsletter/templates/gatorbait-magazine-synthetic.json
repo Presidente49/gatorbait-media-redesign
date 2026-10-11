@@ -1,0 +1,100 @@
+{
+  "issue": {
+    "title": "GatorBait Magazine — Synthetic local fixture",
+    "preheader": "Synthetic template validation only. Nothing will be sent.",
+    "date": "2100-01-01",
+    "label": "SYNTHETIC LOCAL EDITION",
+    "tracking_key": "synthetic_fixture_only"
+  },
+  "lead": {
+    "author": "Fixture Writer 1",
+    "kicker": "Fixture section",
+    "title": "Synthetic headline 1",
+    "excerpt": "Invented copy for local layout validation. This is not a current news story.",
+    "url": "https://example.invalid/post/fixture-1",
+    "cta": "READ FIXTURE 1 →",
+    "image": "https://example.invalid/media/fixture-cover.jpg",
+    "alt": "Synthetic cover photo. Photo by Fixture Photographer, GatorBait Media",
+    "credit": "Photo by Fixture Photographer, GatorBait Media"
+  },
+  "game_file": {
+    "title": "SYNTHETIC GAME FILE",
+    "stories": [
+      {
+        "author": "Fixture Writer 2",
+        "kicker": "Fixture section",
+        "title": "Synthetic headline 2",
+        "excerpt": "Invented copy for local layout validation. This is not a current news story.",
+        "url": "https://example.invalid/post/fixture-2",
+        "cta": "READ FIXTURE 2 →"
+      },
+      {
+        "author": "Fixture Writer 3",
+        "kicker": "Fixture section",
+        "title": "Synthetic headline 3",
+        "excerpt": "Invented copy for local layout validation. This is not a current news story.",
+        "url": "https://example.invalid/post/fixture-3",
+        "cta": "READ FIXTURE 3 →"
+      }
+    ]
+  },
+  "feature": {
+    "author": "Fixture Writer 4",
+    "kicker": "Fixture section",
+    "title": "Synthetic headline 4",
+    "excerpt": "Invented copy for local layout validation. This is not a current news story.",
+    "url": "https://example.invalid/post/fixture-4",
+    "cta": "READ FIXTURE 4 →",
+    "image": "https://example.invalid/media/fixture-secondary.jpg",
+    "alt": "Synthetic secondary photo. Photo by Fixture Photographer, GatorBait Media",
+    "credit": "Photo by Fixture Photographer, GatorBait Media"
+  },
+  "inside": [
+    {
+      "author": "Fixture Writer 5",
+      "kicker": "Fixture section",
+      "title": "Synthetic headline 5",
+      "excerpt": "Invented copy for local layout validation. This is not a current news story.",
+      "url": "https://example.invalid/post/fixture-5",
+      "cta": "READ FIXTURE 5 →"
+    },
+    {
+      "author": "Fixture Writer 6",
+      "kicker": "Fixture section",
+      "title": "Synthetic headline 6",
+      "excerpt": "Invented copy for local layout validation. This is not a current news story.",
+      "url": "https://example.invalid/post/fixture-6",
+      "cta": "READ FIXTURE 6 →"
+    },
+    {
+      "author": "Fixture Writer 7",
+      "kicker": "Fixture section",
+      "title": "Synthetic headline 7",
+      "excerpt": "Invented copy for local layout validation. This is not a current news story.",
+      "url": "https://example.invalid/post/fixture-7",
+      "cta": "READ FIXTURE 7 →"
+    },
+    {
+      "author": "Fixture Writer 8",
+      "kicker": "Fixture section",
+      "title": "Synthetic headline 8",
+      "excerpt": "Invented copy for local layout validation. This is not a current news story.",
+      "url": "https://example.invalid/post/fixture-8",
+      "cta": "READ FIXTURE 8 →"
+    }
+  ],
+  "utilities": [
+    {
+      "url": "https://example.invalid/magazine",
+      "cta": "OPEN MAGAZINE"
+    },
+    {
+      "url": "https://example.invalid/show",
+      "cta": "GATORBAIT TV"
+    },
+    {
+      "url": "https://example.invalid/store",
+      "cta": "GATORBAIT STORE"
+    }
+  ]
+}

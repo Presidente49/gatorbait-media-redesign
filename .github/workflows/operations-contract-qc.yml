@@ -1,0 +1,32 @@
+name: Source-only operating contract QC
+
+on:
+  pull_request:
+    paths:
+      - 'automation/operations/**'
+      - 'automation/sports-home/build.py'
+      - '.github/workflows/operations-contract-qc.yml'
+  push:
+    paths:
+      - 'automation/operations/**'
+      - 'automation/sports-home/build.py'
+      - '.github/workflows/operations-contract-qc.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Roles, approval boundaries and synthetic publication contracts
+        run: node --test automation/operations/contract.test.mjs automation/operations/submission-contract.test.mjs
+      - name: Canonical production build boundary
+        run: python3 -m unittest automation.operations.test_build_boundary

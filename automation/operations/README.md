@@ -8,6 +8,10 @@ The sole production Front Page builder is `sports-live/build-front-page.mjs`. Th
 
 `DryRunDesk` is an in-memory reference, with invented fixtures and no I/O. A future implementation must authenticate intake, resolve a private trusted-writer registry, persist originals and revisions atomically, deduplicate stable delivery identities, preserve bylines, fence publication claims and read back uncertain outcomes. It must never trust a caller-supplied `trusted` flag as authentication. QC evidence flags are assertions to test, not proof of factual accuracy, rights or permanent media.
 
+A registered delivery replay returns its original receipt without changing current copy. A distinct delivery must match the current `expectedRevision` before deduplication; only a repeat of the current digest is a copy duplicate. Intentional A → B → A submissions with distinct deliveries create three immutable revisions and require fresh QC for the revert.
+
+Publication uses two separate keys: `operationKey` stays stable across the one permitted retry; `attemptKey` changes for each attempt. Every completion/reconciliation result must carry the active `attemptKey`. Delayed results from an older attempt are rejected before any state change. A real private store must atomically persist and compare the attempt fence as well as the idempotency key; the token is not authentication.
+
 Missing rights, ambiguous facts, high-impact exceptions, stale revisions and conflicting canonical identities fail closed. Accepted or timed-out publication requires reconciliation before retry. Only provider and public verification permit a handoff to Muse. Newsletter preparation does not authorize a send.
 
 No inbox, account, contact, unpublished copy, asset link, receipt or business figure belongs in this public repository, including hashed versions. Real adapters require a private durable store, authenticated provider access and end-to-end testing before separately authorized activation. Passing these synthetic tests proves the reference behavior only.

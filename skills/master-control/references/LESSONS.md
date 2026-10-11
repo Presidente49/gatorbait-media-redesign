@@ -717,3 +717,45 @@ The same day, the `/magazine` page was still serving the Missouri issue while th
 When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Miss photo and a "columns" description. No embed sets those tags: `og:image`, `og:description` and `twitter:image` come from the Wix page's own SEO and social settings, which have no page-level REST API (the site-wide SEO tags API changes every page, so do not use it for one page). Changing them takes the Editor plus a site publish. After any new issue or cover, read the crawler view of `/`, `/magazine` and `/subscribe` (fetch the HTML with a `facebookexternalhit` user agent, no JavaScript) and queue the Editor change in #34 with a 1200x630 image already uploaded to Wix media.
 
 **The rule:** a new cover is not shipped until the link preview shows it. Separately, the `GatorBait live presentation QC` job flags the cookie banner overlapping the first headline on the live `/magazine` at 390 px. It passed and failed on the same live page within minutes (16:07 and 16:11 UTC), so treat one failure as detection noise, re-run once, and do not let it hold a data-only merge that its own candidate checks cleared. Record the merge-over in #34.
+
+## Lesson 78: a pending approval is a stalled desk; say so at once and never let a column wait (Oct. 11, 2026)
+
+**What happened:** Franz Beard's column arrived overnight. The Wix write needed an approval prompt that nobody answered while Brenden slept, so the column sat for hours. I only reported the delay after it published.
+
+**The rule:** when a publish waits on an approval, tell Brenden in one line right away and retry the safe read-only prep so the write is ready the moment it is approved. Batch the writes (one create, one publish, one meta patch) so a single approval covers the story. Never let a submitted column wait silently.
+
+## Lesson 79: a column lead is a timed pin, not "Breaking" (Oct. 11, 2026)
+
+**What happened:** Pinning Buddy Martin's GAMECLOCKED column as `pins.breaking` labelled it "Breaking" on the front page. Moving it to `pins.timed` with an `until` time gives the kicker "The Column · Buddy Martin" and releases the slot on its own.
+
+**The rule:** use `breaking` only for real breaking news. Columns and features lead through `pins.timed` with a path and an `until` in UTC. Check the kicker on the rendered card before saying it is done.
+
+## Lesson 80: the phone reads a bundled snapshot, so every story or cover change needs a rebuild and a pointer deploy (Oct. 11, 2026)
+
+**What happened:** Stories and covers were live on the site while the phone front page still showed the old picture and lead, because `sports-live/homepage.js` bundles a snapshot of `gazette-live/posts.json`.
+
+**The rule:** after publishing or changing a cover, run the `refresh-newsroom-feed` workflow on main, confirm the new post is in `gazette-live/posts.json`, rebuild with `sports-live/build-front-page.mjs` (then `git checkout sports-live/share.js sports-live/fan-modules.js`), merge the PR, then change `sports-live/current.json` in a separate pointer PR. Verify the live front page with a cache-busting query string. Rollback is the previous pointer commit.
+
+## Lesson 81: covers come from real credited photos, never a score card or a stale image (Oct. 11, 2026)
+
+**What happened:** Brenden saw an old picture on Buddy's lead. The score-card fallback and an early UAA photo were weaker than Chris Spears' 36 photos already in Wix Media (folder "2026.10.10 FLA VS SOUTH CAROLINA").
+
+**The rule:** look in Wix Media for the staff photographer's folder before using a wire or school photo. Credit every cover (credits are keyed by Wix media id in `front-page.config.json`), use a distinct cover per story, and build a gallery post (a Ricos GALLERY node) when a photographer files a set. Use a school photo only with its proper credit (for example Photo: Rachel Rusch/UAA Communications) and only when Brenden supplies or approves it.
+
+## Lesson 82: embed press-conference clips as native players (Oct. 11, 2026)
+
+**What happened:** Jon Sumrall's clips were posted on The Buddy Martin Show YouTube Shorts and the GatorBait Media Facebook page. They went into the stories as Ricos VIDEO nodes (`videoData.video.src.url`), two YouTube and three Facebook players.
+
+**The rule:** link the exact post-game clips in the matching story. Never download or re-upload video. Read the draft first, add each clip once, and re-check the public page renders the player.
+
+## Lesson 83: Word attachments from Gmail can corrupt in tool output; parse the zip (Oct. 11, 2026)
+
+**What happened:** Franz's column came as a .docx. The base64 in the tool output was truncated, so normal decoding failed.
+
+**The rule:** fetch the RAW message, take the attachment part, and parse the zip entries by hand (local header, then raw inflate of `word/document.xml`). Read every paragraph, keep the writer's voice, and fix only supported facts, quotes, formatting and metadata. Credit the writer as the post author and copy the categories and tags from the writer's earlier posts.
+
+## Lesson 84: the story-page "Up next" box is a config string with an expiry; update it after every game (Oct. 11, 2026)
+
+**What happened:** Every story page still said "vs. South Carolina, Time TBA" the morning after the game. The box lives in the Wix embed "GBM - Post template v1" (`14a887e3`), in the `NEXT` object (`opp`, `when`, `where`, `until`).
+
+**The rule:** after each game, patch only that string in place (GET, assert the old text, check the 15,000-character cap, PATCH with the current revision and category ESSENTIAL), with the opponent, date, time, TV, venue and an `until` at kickoff. Check the opponent's ranking after the Sunday poll. Do not publish the site.

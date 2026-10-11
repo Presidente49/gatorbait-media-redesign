@@ -27,6 +27,7 @@
         <mj-text padding="0 0 14px" color="#33425C" font-size="16px" line-height="1.5">South Carolina beat No. 16 Florida 38-19 in the 500th game in The Swamp. Florida is 4-2 and 2-2 in the SEC. Buddy Martin leads the issue. Inside: Franz Beard, Chris Spears' best shots, what Sumrall, Stockton and Chiles said, and a look at Texas, which lost Saturday before Florida visits Austin.</mj-text>
         <mj-button href="https://www.gatorbaitmedia.com/post/gameclocked-no-500-was-a-lousy-homecoming-in-the-swamp?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=postgame_sc_2026_10_11&utm_content=buddy_column" align="center" padding="4px 0 6px">READ BUDDY'S COLUMN</mj-button>
         <mj-button href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=postgame_sc_2026_10_11&utm_content=open_magazine" background-color="#0021A5" align="center" padding="0 0 14px">OPEN THE POSTGAME MAGAZINE</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/members-download-the-postgame-magazine-pdf?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=postgame_sc_2026_10_11&utm_content=members_pdf" align="center" padding="0 0 14px">MEMBERS: DOWNLOAD THE PDF</mj-button>
       </mj-column>
     </mj-section>
     <mj-section background-color="#EEF2FB" padding="20px 26px 8px">

@@ -1,0 +1,101 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>{{title}}</mj-title>
+    <mj-preview>{{excerpt}}</mj-preview>
+    <mj-font name="Barlow" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Barlow, Arial, Helvetica, sans-serif" />
+      <mj-text color="#14243D" font-size="16px" line-height="1.5" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="16px 30px" font-size="16px" font-weight="800" letter-spacing="1px" />
+    </mj-attributes>
+    <mj-style>
+      :root { color-scheme: light; supported-color-schemes: light; }
+      .gz-credit { font-style: italic; }
+      @media only screen and (max-width: 480px) {
+        .gz-wordmark { font-size: 38px !important; }
+        .gz-headline { font-size: 30px !important; line-height: 1.08 !important; }
+        .gz-pad { padding-left: 18px !important; padding-right: 18px !important; }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#E9EDF3" width="600px">
+
+    <!-- Dateline strip -->
+    <mj-section background-color="#040E1E" padding="7px 22px" css-class="gz-pad">
+      <mj-group>
+        <mj-column width="58%" padding="0">
+          <mj-text padding="0" color="#C9D4E4" font-size="11px" font-weight="700" letter-spacing="1.4px" line-height="1.4">{{date_upper}}</mj-text>
+        </mj-column>
+        <mj-column width="42%" padding="0">
+          <mj-text padding="0" align="right" color="#FA7A45" font-size="11px" font-weight="800" letter-spacing="1.4px" line-height="1.4">NEW STORY ALERT</mj-text>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+
+    <!-- Masthead -->
+    <mj-section background-color="#081B35" padding="24px 22px 6px" css-class="gz-pad">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#FFFFFF" font-size="46px" font-weight="800" letter-spacing="1px" line-height="1" css-class="gz-wordmark">GATOR<span style="color:#FA4616;">BAIT</span></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="0 22px 4px" css-class="gz-pad">
+      <mj-column>
+        <mj-divider border-color="#FA4616" border-width="3px" padding="8px 0 0" />
+        <mj-text align="center" padding="8px 0 2px" color="#FFFFFF" font-size="15px" font-weight="800" letter-spacing="9px" line-height="1.2">THE GAZETTE</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="0 22px 16px" css-class="gz-pad">
+      <mj-column>
+        <mj-divider border-color="#5E7396" border-width="1px" padding="6px 0 8px" />
+        <mj-text align="center" padding="0" color="#A9B8D0" font-size="11px" font-weight="600" letter-spacing="1.8px" line-height="1.4">FLORIDA FOOTBALL ALL THE TIME. · OLD SCHOOL JOURNALISM. NEW TECH.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Kicker, headline, byline -->
+    <mj-section background-color="#FFFFFF" padding="26px 28px 4px" css-class="gz-pad">
+      <mj-column>
+        <mj-text padding="0 0 8px" color="#D8450C" font-size="13px" font-weight="800" letter-spacing="2px" line-height="1.2">{{category_upper}}</mj-text>
+        <mj-text padding="0 0 12px" color="#081B35" font-size="38px" font-weight="800" line-height="1.06" letter-spacing="-0.3px" css-class="gz-headline"><a href="{{url_headline}}" style="color:#081B35;text-decoration:none;">{{title}}</a></mj-text>
+        <mj-text padding="0 0 14px" color="#5F6B7A" font-size="13px" font-weight="700" letter-spacing="1px" line-height="1.3">BY {{author_upper}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!--#if cover-->
+    <mj-section background-color="#FFFFFF" padding="0">
+      <mj-column>
+        <mj-image src="{{cover_image_url}}" alt="{{cover_alt}}" href="{{url_cover}}" padding="0" fluid-on-mobile="true" />
+      </mj-column>
+    </mj-section>
+    <!--#if credit-->
+    <mj-section background-color="#FFFFFF" padding="7px 28px 0" css-class="gz-pad">
+      <mj-column>
+        <mj-text padding="0" color="#6B7686" font-size="12px" line-height="1.35" css-class="gz-credit">{{cover_credit}}</mj-text>
+      </mj-column>
+    </mj-section>
+    <!--/#if credit-->
+    <!--/#if cover-->
+
+    <!-- Excerpt and CTA -->
+    <mj-section background-color="#FFFFFF" padding="18px 28px 6px" css-class="gz-pad">
+      <mj-column>
+        <mj-text padding="0 0 18px" color="#27364F" font-size="19px" line-height="1.5">{{excerpt}}</mj-text>
+        <mj-button href="{{url_cta}}" align="left" padding="0 0 8px" width="100%">READ THE FULL STORY &#8594;</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="6px 28px 24px" css-class="gz-pad">
+      <mj-column>
+        <mj-divider border-color="#081B35" border-width="3px" padding="0" />
+        <mj-divider border-color="#081B35" border-width="1px" padding="3px 0 0" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#081B35" padding="22px 28px 22px" css-class="gz-pad">
+      <mj-column>
+        <mj-text align="center" padding="0 0 8px" color="#FFFFFF" font-size="17px" font-weight="800" letter-spacing="1px">GATOR<span style="color:#FA4616;">BAIT</span> MEDIA</mj-text>
+        <mj-text align="center" padding="0 0 10px" color="#C9D4E4" font-size="13px" line-height="1.5">You're getting this because you signed up for GatorBait Daily News. <a href="{{url_site}}" style="color:#FFFFFF;font-weight:700;">Read more on GatorBaitMedia.com</a></mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>

@@ -1,5 +1,7 @@
 # Gazette production launch
 
+> Oct. 11, 2026: the `automation/gazette/` builder was removed (superseded by `automation/sports-home/`; the built bundle remains in `gazette-live/`). `check_public.py` never existed on main. Recover the builder from git history if needed.
+
 Work item #31. Brenden explicitly authorized taking the original Gazette rebuild live and then checking it on September 22, 2026.
 
 ## Prepared and verified

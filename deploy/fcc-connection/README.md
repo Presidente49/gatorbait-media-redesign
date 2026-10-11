@@ -26,7 +26,7 @@ The workspace's `~/.local/bin` is not on PATH. The installed executable can be a
 2. Start `fcc-server` and open its local Admin UI at `http://127.0.0.1:8082/admin` on that same host.
 3. Configure an authorized provider in that local UI, such as the OpenRouter key for the existing free-model route, or an already-authorized connected account. Keep credentials out of chat and Git. Do not buy a subscription or enable paid models implicitly.
 4. Repeat the authentication check, then run one minimal public-content completion and record the actual returned upstream provider/model. Only a successful completion establishes model availability.
-5. If using the FCC Claude/Codex harnesses, install and verify their underlying native CLI on that same host. For a permanent Mac service, follow the existing model-router runbook after the smoke check succeeds.
+5. If using the FCC Claude/Codex harnesses, install and verify their underlying native CLI on that same host. For a permanent Mac service, follow the model-router runbook in git history (`automation/ops-hub/model-router/`, removed Oct. 11, 2026; FCC stays retired per CLAUDE.md) after the smoke check succeeds.
 
 This setup does not switch the model serving the current ChatGPT conversation or reduce that conversation's token usage. Savings would come from future eligible tasks explicitly dispatched to a verified FCC provider.
 

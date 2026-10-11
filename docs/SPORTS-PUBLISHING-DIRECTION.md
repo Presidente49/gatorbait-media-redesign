@@ -11,7 +11,7 @@ User authority: latest Brenden instruction supersedes the Gazette-homepage exper
 - On3/Swamp247 inform discovery, current reporting and community navigation. GatorBait differentiation is its writers, original photography and magazine journalism.
 
 ## Existing tools to reuse
-Master Control (`skills/master-control/`) is controller policy and continuity. Ops Hub (`automation/ops-hub/`) handles scheduled checks and playbooks. They are complementary, not alternative websites. The latest cloud brief confirms HTTP checks; it does not prove a running Mac daemon, iPhone control, or live ad serving.
+Master Control (`skills/master-control/`) is controller policy and continuity. `automation/site_health_check.py` (run by `gatorbait-production-health.yml`) handles the scheduled route checks. `automation/ops-hub/` now holds only `policy.json` and the few playbooks Master Control still points to. The health check confirms HTTP responses; it does not prove iPhone control or live ad serving.
 
 ## Live evidence and boundaries
 - Wix homepage loader read: revision58 before work; query-only sports preview revision59.

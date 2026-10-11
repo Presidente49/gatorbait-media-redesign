@@ -1,5 +1,5 @@
 {
-  "commit": "90b159b9e0ab60287812c572b0c733ca7e7fa17a",
-  "updated": "2026-10-11T19:11:15Z",
-  "note": "Reviewed modern homepage, build ac227ac2: compact header, distinct current photographs, direct current magazine. Rollback: 347b6783edbb999d5df8a494d3ebe6888e85575a."
+  "commit": "cb81cc82abf8f506cda16479a7c004f454f76e07",
+  "updated": "2026-10-11T19:18:57Z",
+  "note": "Reviewed modern landing, build 92ce6f1a, including exact mobile footer gutters. Full rollback: 347b6783edbb999d5df8a494d3ebe6888e85575a; footer-only rollback: 90b159b9e0ab60287812c572b0c733ca7e7fa17a."
 }

@@ -1,5 +1,5 @@
 {
-  "commit": "2813ba02581d6f03a0964beb0e5d210872db7605",
-  "updated": "2026-10-11T16:50:00Z",
-  "note": "Buddy Blog lead pin and magazine card matching the postgame cover (PR #261). Rollback: set commit to 996088fa6ea42449619c28aab1e8d6b8e25ce664."
+  "commit": "347b6783edbb999d5df8a494d3ebe6888e85575a",
+  "updated": "2026-10-11T17:05:00Z",
+  "note": "Magazine card uses the stern Sumrall cover photo (PR #263). Rollback: set commit to 2813ba02581d6f03a0964beb0e5d210872db7605."
 }

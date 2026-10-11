@@ -41,7 +41,7 @@
         </mj-text>
         <mj-divider border-color="#FA4616" border-width="3px" width="54%" padding="7px 0 5px" />
         <mj-text align="center" color="#003B7A" font-size="10px" font-weight="800" letter-spacing="2.2px" padding="0">
-          GATORBAIT ROUNDUP
+          GATORBAIT MAGAZINE NEWSLETTER
         </mj-text>
       </mj-column>
       <mj-column width="22%">
@@ -154,6 +154,14 @@
         <mj-text padding="0 10px 6px"><span class="gb-h3">‘It’s a player thing’: Stockton, Sumrall and Chiles after South Carolina loss</span></mj-text>
         <mj-text color="#5F6B7A" font-size="13px" padding="0 10px 10px">Bailey Stockton, Jon Sumrall and Aaron Chiles on the 38-19 loss, plus injury notes on Vernell Brown III, Duke Clark and Myles Graham.</mj-text>
         <mj-button href="https://www.gatorbaitmedia.com/post/it-s-a-player-thing-stockton-sumrall-and-chiles-after-south-carolina-loss?utm_source=gatorbait_roundup&#38;utm_medium=email&#38;utm_campaign=roundup_2026_10_11&#38;utm_content=postgame_voices" align="left" padding="0 10px">READ THE POSTGAME →</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="0 20px 28px">
+      <mj-column>
+        <mj-text mj-class="meta" padding="12px 10px 5px">BY THE NUMBERS</mj-text>
+        <mj-text padding="0 10px 6px"><span class="gb-h3">Florida vs. South Carolina: score, scoring plays and key stats from The Swamp</span></mj-text>
+        <mj-text color="#5F6B7A" font-size="13px" padding="0 10px 10px">Every scoring play and the key stats from South Carolina’s 38-19 win on Homecoming.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-vs-south-carolina-live-updates-score-highlights-from-the-swamp?utm_source=gatorbait_roundup&#38;utm_medium=email&#38;utm_campaign=roundup_2026_10_11&#38;utm_content=scoring_plays" align="left" padding="0 10px">SEE THE SCORING PLAYS →</mj-button>
       </mj-column>
     </mj-section>
 

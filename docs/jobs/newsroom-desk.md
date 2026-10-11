@@ -33,3 +33,5 @@ Retired prompts remain in git history. Their breaking-email instructions, writer
 ## Lessons added Oct. 11 (LESSONS 85-91)
 
 After any publish or cover change: run refresh-newsroom-feed, rebuild the front page snapshot and deploy by pointer PR (Lesson 87). Lead a column with a timed pin, not breaking (Lesson 86). Use distinct credited covers, Chris Spears' folder first (Lesson 88). Embed clips as native players (Lesson 89). After each game patch the Up next box in embed 14a887e3 (Lesson 91). If an approval stalls a publish, tell Brenden at once (Lesson 85).
+
+Magazine and watches (Oct. 11): read the live embed before any deploy plan (Lesson 92); one reminder chain per job (Lesson 93); use Firecrawl when TinyFish is empty (Lesson 94); postgame magazine recipe and poll-ranking hold (Lesson 95).

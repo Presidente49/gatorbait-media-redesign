@@ -88,3 +88,9 @@ Game Week Card (Brenden, Oct. 3: full control of the automations). Build this we
 1. Facts first: read the next Florida game from ESPN (TinyFish fetch_content, site.api.espn.com college-football team 57 schedule and the AP Top 25 rankings). If sports-live/scoreboard.json on main disagrees with ESPN on opponent, date, kickoff, TV, ranks or records, use ESPN and note it. No game this week (bye or season over): end with NOOP.
 2. node deploy/dept-ideas/design/make-cards.mjs --write with the verified facts, then Canva autofill-design into the tagged design DAHWqVhJoqU's template, export-design PNG. AP style, Barlow Condensed only. Long opponent names: check the headline does not wrap badly; if it does, stop and flag rather than ship.
 3. Deliver as a Control Room ask (https://claude.ai/artifact/3X5Caw5wg8q3xbvtbjNDvx, collection asks) with the PNG link, the facts and their ESPN sources, yesLabel "Use it". Never post to social, never email. One line in #34.
+
+---
+
+## Postgame magazine (added Oct. 11)
+
+Build and release the postgame magazine with the recipe in LESSONS 95 (web issue, then a separate email draft behind the send governor). Read the live Magazine embed first (Lesson 92). Rankings are set after the Sunday polls.

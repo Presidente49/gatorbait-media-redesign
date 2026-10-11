@@ -21,7 +21,11 @@ for (const [id, f] of Object.entries({ d3cfa5_fb8dcc167ff64b5c90cc1b6904390bf7: 
   const p = SHOTS_DIR + '/' + f; if (SHOTS_DIR && existsSync(p)) local[id] = readFileSync(p);
 }
 const stand = (w, h, label) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16328f"/><stop offset=".65" stop-color="#3a4f8f"/><stop offset="1" stop-color="#fa4616"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="52%" fill="#fff" fill-opacity=".85" font-family="sans-serif" font-size="${Math.round(w / 16)}" text-anchor="middle">${label}</text></svg>`;
-const SECTIONS = ['.pm-mast', '#pm-cover', '.pm-final', '.pm-toc', '#pm-damage', '#pm-flow', '#pm-grades', '#pm-quotes', '#pm-package', '#pm-next', '.pm-foot'];
+// Required sections come from the issue itself: report-card and flow are optional (dropped when the edition has no such data).
+const ISSUE = JSON.parse(readFileSync('sports-live/magazine-issue-postgame.json', 'utf8'));
+const OPTIONAL = { grades: '#pm-grades', flow: '#pm-flow' };
+const SECTIONS = ['.pm-entrance', '#pm-cover', '.pm-final', '.pm-toc', '#pm-damage', '#pm-quotes', '#pm-package', '#pm-next', '.pm-foot'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
+const SHOT = ['#pm-damage', '#pm-quotes', '#pm-package', '#pm-next'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
 const browser = await chromium.launch();
 const results = [];
 for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430', 430, 932], ['1366', 1366, 900]]) {
@@ -69,7 +73,6 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
       bad: [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')).filter((h) => !/^(\/|#pm-|https:\/\/www\.gatorbaitmedia\.com\/)/.test(h)),
       anchorsOk: [...root.querySelectorAll('a[href^="#"]')].every((a) => !!root.querySelector(a.getAttribute('href'))),
       capture: cap ? cap.getAttribute('data-gbm-capture') : null, captureH: cap ? Math.round(cap.getBoundingClientRect().height) : 0,
-      grades: [...root.querySelectorAll('.pm-gg li')].map((l) => l.querySelector('.pm-gu').textContent + ' ' + l.querySelector('.pm-gl').textContent).join(' | '),
       packageOrder: [...root.querySelectorAll('.pm-it h3')].map((h) => h.textContent.slice(0, 28)),
       low: low.slice(0, 12), lowCount: low.length, smallTaps: smallTaps.slice(0, 8), height: root.scrollHeight, title: document.title,
       nativeHidden: getComputedStyle(document.getElementById('SITE_PAGES')).display === 'none', shellHidden: getComputedStyle(document.getElementById('gbm-mobile-shell-host')).display === 'none'
@@ -85,12 +88,7 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({ path: `${out}/pm-${name}-full.png`, fullPage: true });
   await page.screenshot({ path: `${out}/pm-${name}-cover.png`, fullPage: false });
-  await page.locator('#pm-grades').screenshot({ path: `${out}/pm-${name}-grades.png` });
-  await page.locator('#pm-damage').screenshot({ path: `${out}/pm-${name}-damage.png` });
-  await page.locator('#pm-flow').screenshot({ path: `${out}/pm-${name}-flow.png` });
-  await page.locator('#pm-next').screenshot({ path: `${out}/pm-${name}-next.png` });
-  await page.locator('#pm-quotes').screenshot({ path: `${out}/pm-${name}-quotes.png` });
-  await page.locator('#pm-package').screenshot({ path: `${out}/pm-${name}-package.png` });
+  for (const sel of SHOT) await page.locator(sel).screenshot({ path: `${out}/pm-${name}-${sel.slice(4)}.png` });
   const feed = requests.filter((u) => /blog-feed\.xml|scoreboard|espn/.test(u));
   results.push({ name, ...info, life, feed, errors });
   await ctx.close();

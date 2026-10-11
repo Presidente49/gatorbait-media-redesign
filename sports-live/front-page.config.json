@@ -265,5 +265,14 @@
   "postgameLead": {
     "on": true,
     "until": "2026-10-12T04:00:00Z"
+  },
+  "homepageImageAlternates": {
+    "/post/gators-drop-out-ap-top-25-october-11-2026": {
+      "whenMediaId": "16b519_56d755f7140a472d903585d4fb98710a",
+      "src": "https://static.wixstatic.com/media/16b519_eb9be5b00c214a3b8c5c5b6b8751a549~mv2.jpg",
+      "alt": "The Gators gather on the sideline during the South Carolina game on Oct. 10. Photo by Chris Spears, GatorBait Media.",
+      "credit": "Photo by Chris Spears, GatorBait Media",
+      "sourcePost": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-south-carolina-38-florida-19"
+    }
   }
 }

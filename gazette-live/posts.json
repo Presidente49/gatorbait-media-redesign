@@ -2,17 +2,31 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?",
+      "title": "Gators Drop Out of AP Top 25 After Second Straight Loss",
+      "excerpt": "Florida falls out of the Oct. 11 AP Top 25 after a 38-19 loss to South Carolina. Georgia takes No. 1, and the Gators visit No. 7 Texas next.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-drop-out-ap-top-25-october-11-2026",
+      "author": "GatorBaitMagazineStaff",
+      "firstPublishedDate": "2026-10-11T18:35:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_56d755f7140a472d903585d4fb98710a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Jon Sumrall takes the field before Florida’s Oct. 10 game against South Carolina. Photo by Chris Spears, GatorBait Media."
+      }
+    },
+    {
+      "title": "Buddy Blog: Can Sumrall Swim In The Deep End Of This Cesspool?",
       "excerpt": "Buddy Martin on a South Carolina collapse that raises the hard question about Jon Sumrall and a season suddenly at risk.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool",
       "author": "Buddy Martin",
       "firstPublishedDate": "2026-10-11T16:27:39Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/16b519_46d2d14e73354d91b7f848e45cceabb5~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/16b519_56d755f7140a472d903585d4fb98710a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
-        "alt": "Featured image for Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?"
+        "alt": "Featured image for Buddy Blog: Can Sumrall Swim In The Deep End Of This Cesspool?"
       }
     },
     {
@@ -79,7 +93,7 @@
       "firstPublishedDate": "2026-10-10T23:19:00Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/16b519_56d755f7140a472d903585d4fb98710a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/16b519_b66c30014a2f412ea5ec1fc7dd60848d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for GAMECLOCKED! No. 500 Was a Lousy Homecoming In The Swamp"
@@ -251,20 +265,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Isaias weakens over Alabama; Gators-Gamecocks still on with storms likely after 2 p.m."
-      }
-    },
-    {
-      "title": "Buddy Martin Show: Can the Gators Bounce Back With a Homecoming Win?",
-      "excerpt": "Buddy Martin, Franz Beard, Ben Troupe and Eddie Gilley on South Carolina at Florida, the 500th game in The Swamp and what the Gators must prove after Missouri.",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-can-the-gators-bounce-back-with-a-homecoming-win",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-09T12:32:02Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_f9445560fa474c6494c6992887b4b9b9~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Buddy Martin Show: Can the Gators Bounce Back With a Homecoming Win?"
       }
     },
     {

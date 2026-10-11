@@ -52,10 +52,22 @@ const newest = posts.map((p) => p.firstPublishedDate).sort().pop();
 const { $comment, ...cfg } = config;
 // Curated Magazine preview: snapshot of the current live issue, never an arbitrary news post.
 cfg.magazine = JSON.parse(read('sports-live/magazine-card.json'));
+cfg.broadcasts = JSON.parse(read('sports-live/episodes.json'));
+// Reuse verified photographer credits in the current issue for matching news images.
+(function walk(v) {
+  if (!v || typeof v !== 'object') return;
+  if (v.id && v.credit) cfg.credits[String(v.id).replace(/~mv2$/, '')] = v.credit;
+  Object.values(v).forEach(walk);
+})(JSON.parse(read('sports-live/magazine-issue-postgame.json')));
+
+
 // Bundle the season schedule from the scoreboard job's feed, so The Road Ahead band paints even when the
 // live scoreboard fetch misses the 1.5 s paint budget (phones did on Sept. 30); the fetch then patches it.
 const repoScoreboard = existsSync(join(repo, 'sports-live/scoreboard.json')) ? JSON.parse(read('sports-live/scoreboard.json')) : null;
-if (repoScoreboard && Array.isArray(repoScoreboard.schedule)) {
+if (repoScoreboard && repoScoreboard.team && Array.isArray(repoScoreboard.schedule)) {
+  // The bounded first paint must use the same current scoreboard as a successful fetch.
+  cfg.scoreboard = { ...cfg.scoreboard, ...repoScoreboard };
+
   cfg.scoreboard = { ...cfg.scoreboard, schedule: repoScoreboard.schedule.slice(0, 20).map((g) => ({
     date: g.date, opponent: g.opponent, opponentRank: g.opponentRank ?? null, home: g.home === true, status: g.status || '',
     score: g.score && Number.isFinite(g.score.fla) && Number.isFinite(g.score.opp) ? { fla: g.score.fla, opp: g.score.opp } : null, tv: g.tv || '', storyUrl: g.storyUrl || '',
@@ -93,13 +105,16 @@ const fanOut = minify(fanChunk, `/* GatorBait fan modules (Make the Call, Ask Ga
 
 // Fixture: the real loader's mobile-shell critical CSS, a shell host stub and the built renderer inline.
 const loader = read('deploy/wix-served/homepage-embed-cdn.html');
+const shellJs = (loader.match(/<script id="gbm-mobile-shell-critical-v2-js">[\s\S]*?<\/script>/) || [''])[0].replaceAll('href="/magazine"', 'href="https://www.gatorbaitmedia.com/magazine"');
 const shellCss = (loader.match(/<style id="gbm-mobile-shell-critical-v2">[\s\S]*?<\/style>/) || [''])[0];
+const footerCss = '#gbm-footer{padding:32px 0;background:#08132f;color:#fff;font:400 14px/1.5 "Barlow",sans-serif}#gbm-footer .gbm-footer-inner{width:100%;max-width:1280px;margin:0 auto;padding-inline:24px;box-sizing:border-box}#gbm-footer strong{font-size:22px}#gbm-footer p{margin:8px 0 4px}#gbm-footer a{display:inline-flex;align-items:center;min-height:44px;color:#fff}@media(max-width:820px){#gbm-footer .gbm-footer-inner{padding-inline:16px}}';
+const footerHtml = '<footer id="gbm-footer"><div class="gbm-footer-inner"><strong>GatorBait Media</strong><p>Independent Florida coverage since 1979.</p><a href="https://www.gatorbaitmedia.com/contact">Contact</a> · <a href="https://www.gatorbaitmedia.com/policies">Policies</a></div></footer>';
 const frame = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>GatorBait Front Page 2026 fixture</title>
 ${shellCss}
-<style>body{margin:0}#gbm-footer{padding:32px 16px;color:#fff;font:600 14px/1.4 "Barlow",sans-serif}</style>
+<style>body{margin:0}${footerCss}</style>
 </head><body>
-<div id="gbm-mobile-shell-host"><div id="gbm-mobile-shell"><a class="gbm-ms-logo" href="/"><img src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp" alt="GatorBait" width="180" height="48"></a><button class="gbm-ms-trigger" type="button" aria-label="Open menu"><span class="gbm-ms-bars"><i></i><i></i><i></i></span>Menu</button></div></div>
-<footer id="gbm-footer">GatorBait footer (fixture stub)</footer>
+${shellJs}
+${footerHtml}
 <script>
 ${js}</script>
 </body></html>
@@ -121,3 +136,6 @@ if (process.argv.includes('--check')) {
   for (const [p, s] of Object.entries(outputs)) writeFileSync(join(repo, p), s);
   console.log(`homepage.js ${js.length} chars (${Buffer.byteLength(js)} bytes), share.js ${Buffer.byteLength(shareOut)} bytes, fan-modules.js ${Buffer.byteLength(fanOut)} bytes, frame.html ${frame.length} chars; snapshot ${newest}; ${posts.length} bundled stories`);
 }
+
+// Read-only inputs for local preview packaging; normal production outputs are unchanged.
+export const localPreviewInputs = { css, bundle, runtime, shellCss, shellJs, footerCss, footerHtml };

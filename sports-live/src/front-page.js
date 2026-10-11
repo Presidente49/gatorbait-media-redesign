@@ -2,15 +2,17 @@
    * Contract kept from the previous renderer: one root #gbm-live.gbm-gazette.gbm-sports-home,
    * window.__GBM_GAZETTE_RUNTIME__ {sync, ready}, __GBM_GAZETTE_BOOT__.ready/fallback, the
    * gbm:gazette-ready event, the 15-minute session feed cache and paint-once (no jump). */
-  var VERSION = 'front-page-2026.1';
+  var VERSION = 'front-page-2026.preview-modern';
   var PAGES = 'https://presidente49.github.io/gatorbait-media-redesign/';
   var RSS = '/blog-feed.xml';
   var TZ = 'America/New_York';
   var TSP = 'https://cdn.jsdelivr.net/npm/@tsparticles/slim@3.9.1/tsparticles.slim.bundle.min.js';
-  var FONTS = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap';
+  var FONTS = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap';
   var DAY = 86400000;
   var doc = document.documentElement;
   var L = BUNDLE.links;
+  // Current issue opens the canonical live magazine, including from the local fixture.
+  var magazineUrl = new URL(L.magazine, 'https://www.gatorbaitmedia.com').href;
   function home() { return (location.pathname.replace(/\/+$/, '') || '/') === '/'; }
   if (window.__GBM_GAZETTE_RUNTIME__) { window.__GBM_GAZETTE_RUNTIME__.sync(); return; }
   var loading = false, tickTimer = 0, particles = null, io = null;
@@ -57,23 +59,33 @@
 
   /* ---------- Stories ---------- */
   function normalize(data) {
-    var seen = new Set(), t = now();
+    var seen = new Set(), seenTitles = new Set(), t = now();
     var allPosts = (data && Array.isArray(data.posts) ? data.posts : []).map(function (p) {
       var u = safeUrl(p.url, 'post'), date = new Date(p.firstPublishedDate);
       if (!u || !p.title || !Number.isFinite(date.getTime()) || date.getTime() > t + DAY || seen.has(u)) return null;
       if (/^LIVE NOW:/i.test(String(p.title)) && t - date.getTime() > 21600000) return null;
       // Members-only download pages (paywalled) stay off the public front page lists (Brenden, Oct. 11).
       if (/^Members:/i.test(String(p.title))) return null;
-      seen.add(u);
+      var titleKey = String(p.title).toLowerCase().replace(/\s+/g, ' ').trim() + '|' + ymdOf(date);
+      if (seenTitles.has(titleKey)) return null;
+      seen.add(u); seenTitles.add(titleKey);
       var raw = String(p.excerpt || '').replace(/\s+/g, ' ').trim(), cap = '', credit = '';
       // Franz-style excerpts open with the photo caption: "Caption (Photo by Chris Spears) Story..."
       var m = raw.match(/^(.{8,220}?)\s*\(((?:UAA )?Photo(?: by)?[^)]{0,60}|[^)]{0,40} photo)\)\s*(.*)$/i);
       if (m) { cap = m[1]; credit = /spears/i.test(m[2]) ? 'Photo by Chris Spears, GatorBait Media' : m[2].replace(/^photo:?\s*/i, 'Photo: '); raw = m[3]; }
       var image = safeUrl(p.image && p.image.src, 'image');
       var key = (image.match(/media\/([0-9a-f]+_[0-9a-f]+)/) || [])[1] || '';
+      var alt = String(p.image && p.image.alt || p.title);
+      // A homepage-only, verified same-game alternate avoids a repeated cover. A newer canonical cover wins.
+      var alternate = (BUNDLE.homepageImageAlternates || {})[path(u)];
+      if (alternate && key === alternate.whenMediaId && safeUrl(alternate.src, 'image')) {
+        image = safeUrl(alternate.src, 'image');
+        key = (image.match(/media\/([0-9a-f]+_[0-9a-f]+)/) || [])[1] || '';
+        alt = String(alternate.alt || alt); credit = String(alternate.credit || credit);
+      }
       if (BUNDLE.credits[key]) credit = BUNDLE.credits[key];
       return { title: String(p.title).trim(), url: u, path: path(u), author: String(p.author || 'GatorBait Staff'), date: date, excerpt: raw,
-        cap: cap, credit: credit, image: image, key: key, alt: String(p.image && p.image.alt || p.title), cover: (BUNDLE.covers || []).indexOf(key) >= 0,
+        cap: cap, credit: credit, image: image, key: key, alt: alt, cover: (BUNDLE.covers || []).indexOf(key) >= 0,
         portrait: !!(p.image && Number(p.image.width) > 0 && Number(p.image.height) > Number(p.image.width)) };
     }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).filter(function (p) {
       // One post per recurring series on the front page (Brenden, Oct. 7): only the newest "Thoughts of the Day:" shows.
@@ -171,7 +183,7 @@
   function weekFocusOn() { var f = BUNDLE.gameWeekFocus, t = now(); return !!(f && f.on && f.hideLast && t >= Date.parse(f.from) && t < Date.parse(f.until)); }
   function readScoreboard(raw) { var r = readScoreboardBase(raw); if (weekFocusOn()) r.last = null; return r; }
   function readScoreboardBase(raw) {
-    var fb = BUNDLE.scoreboard, sb = { team: Object.assign({}, fb.team), last: Object.assign({}, fb.last), next: Object.assign({}, fb.next), schedule: normSchedule(fb.schedule), standings: [], live: null, source: 'bundled' };
+    var fb = BUNDLE.scoreboard, sb = { team: Object.assign({}, fb.team), last: Object.assign({}, fb.last), next: Object.assign({}, fb.next), schedule: normSchedule(fb.schedule), standings: [], live: null, updatedAt: fb.updatedAt || '', source: 'bundled' };
     if (!raw || typeof raw !== 'object' || !raw.team) return sb;
     sb.source = 'feed';
     if (raw.team.hasOwnProperty('rank') && (num(raw.team.rank) !== null || raw.team.rank === null)) sb.team.rank = num(raw.team.rank);
@@ -258,12 +270,36 @@
     var set = cut ? [480, 800, 1200].map(function (x) { return wixCut(src, x, Math.round(x * H / W)) + ' ' + x + 'w'; }).join(', ') : '';
     return '<img src="' + esc(cut || src) + '"' + (set ? ' srcset="' + esc(set) + '" sizes="' + esc(sizes || '(max-width: 700px) 100vw, 60vw') + '" data-fp-orig="' + esc(src) + '"' : '') + ' alt="' + esc(alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + ' width="' + W + '" height="' + H + '">';
   }
-  // If a re-cut URL fails, fall back to the feed's own URL once (delegated: the grid is innerHTML).
+  // Bounded image delivery, including lazy images and the YouTube archive. A failed photo
+  // never becomes a fabricated image: its reserved box carries a plain fallback.
   function imgFallback(root) {
-    root.addEventListener('error', function (e) {
-      var t = e.target, o = t && t.tagName === 'IMG' && t.getAttribute('data-fp-orig');
-      if (!o) return; t.removeAttribute('data-fp-orig'); t.removeAttribute('srcset'); t.removeAttribute('sizes'); t.src = o;
-    }, true);
+    function unavailable(t) {
+      if (!t || t.dataset.fpFailed) return;
+      t.dataset.fpFailed = '1'; t.removeAttribute('srcset'); t.removeAttribute('src'); t.hidden = true;
+      var box = t.parentElement; if (!box) return;
+      box.classList.add('fp-media-unavailable');
+      var note = document.createElement('span'); note.className = 'fp-media-note';
+      note.textContent = box.closest('.fp-vid,.fp-clip') ? 'Watch replay' : 'Photo unavailable';
+      box.appendChild(note);
+    }
+    function recover(t) {
+      var o = t.getAttribute('data-fp-orig');
+      if (o) { t.removeAttribute('data-fp-orig'); t.removeAttribute('srcset'); t.removeAttribute('sizes'); t.src = o; return; }
+      if (/i\.ytimg\.com\/vi\//.test(t.src) && !t.dataset.fpYtRetry) {
+        t.dataset.fpYtRetry = '1'; t.src = t.src.replace(/\/[^/]+\.jpg.*$/, '/mqdefault.jpg'); return;
+      }
+      unavailable(t);
+    }
+    root.addEventListener('error', function (e) { if (e.target && e.target.tagName === 'IMG') recover(e.target); }, true);
+    var observer = typeof IntersectionObserver === 'function' ? new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (!entry.isIntersecting) return; watch(entry.target); observer.unobserve(entry.target); });
+    }, { rootMargin: '350px' }) : null;
+    function watch(t) {
+      if (t.dataset.fpWatched) return; t.dataset.fpWatched = '1'; t.loading = 'eager';
+      setTimeout(function () { if (!t.isConnected || t.dataset.fpFailed) return; if (!t.complete || !t.naturalWidth) unavailable(t); }, 7000);
+    }
+    root.__fpWatchImages = function () { root.querySelectorAll('img').forEach(function (t) { if (t.loading === 'eager' || !observer) watch(t); else observer.observe(t); }); };
+    root.__fpWatchImages();
   }
   // Owner request: omit Brenden's repeated homepage card byline; preserve source authorship.
   function cardAuthor(p) { return /^brenden martin$/i.test(String(p.author || '').trim()) ? '' : '<p class="fp-meta">' + esc(p.author) + '</p>'; }
@@ -389,7 +425,7 @@
     function team(s) { return '<span class="fp-bug-team">' + esc(s.abbr) + ' <strong class="fp-num">' + (s.score == null ? '–' : esc(s.score)) + '</strong></span>'; }
   }
   function navHtml(sb, gs) {
-    return '<nav class="fp-nav" aria-label="GatorBait sections"><div class="fp-wrap"><div class="fp-links"><a href="/" aria-current="page">Front Page</a><a href="' + esc(L.latest) + '">Latest</a><a href="' + esc(L.magazine) + '">Magazine</a><a href="#fp-columnists">Columnists</a><a href="' + esc(L.show) + '">TV &amp; Podcasts</a><a href="' + esc(L.schedule) + '">Scores</a><a class="fp-store" href="' + esc(L.store) + '" target="_blank" rel="noopener" aria-label="Shop GatorBait gear (opens in a new tab)">Store <span aria-hidden="true">↗</span></a></div>' + bugHtml(sb, gs) + '</div></nav>';
+    return '<nav class="fp-nav" aria-label="GatorBait sections"><div class="fp-wrap"><div class="fp-links"><a href="' + esc(L.latest) + '">Latest</a><a href="' + esc(magazineUrl) + '">Magazine</a><a href="' + esc(L.show) + '">TV &amp; Podcasts</a><a class="fp-nav-extra" href="#fp-columnists">Our writers</a><a class="fp-nav-extra" href="' + esc(L.schedule) + '">Schedule</a><a class="fp-nav-extra fp-store" href="' + esc(L.store) + '" target="_blank" rel="noopener">Store ↗</a></div><a class="fp-mobile-join" href="' + esc(L.subscribe) + '">Join</a><span class="fp-nav-identity">Independent Florida coverage since 1979</span></div></nav>';
   }
   function lineTable(gs, cls) {
     var n = Math.max(4, gs.away.q.length, gs.home.q.length), head = '', i;
@@ -445,21 +481,22 @@
     return '<span class="fp-story-photo' + (p.cover || p.portrait ? ' fp-story-contain' : '') + '">' +
       img(p.image, p.alt, false, 480, 300, compact ? '112px' : '(max-width: 820px) 46vw, 112px') + '</span>';
   }
+  function supportHtml(posts) {
+    return '<aside class="fp-support" aria-label="More leading stories">' + posts.map(function (p) {
+      return '<article>' + photoBlock(p, false) + link(p.url, '<h2 class="fp-hl">' + esc(p.title) + '</h2>') + by(p) + '</article>';
+    }).join('') + '</aside>';
+  }
   function secondHtml(feature, list, cols) {
-    return '<section class="fp-second" aria-label="More top stories">' +
-      (feature ? '<article class="fp-feature">' + photoBlock(feature, false) + '<p class="fp-kick">' + esc(kicker(feature)) + '</p>' + link(feature.url, '<h2 class="fp-hl">' + esc(feature.title) + '</h2>') + (feature.excerpt ? '<p class="fp-ex">' + esc(feature.excerpt.slice(0, 220)) + (feature.excerpt.length > 220 ? '…' : '') + '</p>' : '') + by(feature) + '</article>' : '') +
-      '<ol class="fp-list" aria-label="Top stories">' + list.map(function (p) { return '<li>' + link(p.url, storyThumb(p, false) + '<div class="fp-story-copy"><h3 class="fp-hl">' + esc(p.title) + '</h3>' + cardAuthor(p) + (p.credit ? '<small class="fp-story-credit">' + esc(p.credit) + '</small>' : '') + '</div>', p.image ? 'fp-story-card' : 'fp-story-card fp-no-photo') + '</li>'; }).join('') + '</ol>' +
-      '<aside class="fp-rail" id="fp-columnists" aria-label="Columnists"><h2>Columnists</h2><div class="fp-rail-cols">' + cols + '</div></aside></section>';
+    var rows = (feature ? [feature] : []).concat(list);
+    return '<section class="fp-reporting" aria-label="Latest reporting"><div class="fp-section-head"><h2>More GatorBait reporting</h2><a class="fp-more" href="' + esc(L.latest) + '">All stories →</a></div><div class="fp-reporting-grid">' + rows.map(function (p) {
+      return '<article class="fp-report-card">' + photoBlock(p, false) + link(p.url, '<h3 class="fp-hl">' + esc(p.title) + '</h3>') + by(p) + '</article>';
+    }).join('') + '</div></section><section class="fp-writers" id="fp-columnists" aria-label="GatorBait writers"><h2>The voices of GatorBait</h2><div>' + cols + '</div></section>';
   }
   function columnistsHtml(posts) {
     return BUNDLE.columnists.map(function (c) {
       var p = posts.find(function (x) { return byColumnist(x, c.name); });
-      // href null (Chris Spears) falls to his newest story: safeUrl(null) resolves "null" to /null, the 404 the rail linked to before Oct. 4.
-      var page = (c.href && safeUrl(c.href)) || (p && p.url) || L.latest, fresh = !!(p && isFresh(p));
-      // The badge hangs off the roundel (absolute, so nothing reflows); screen readers hear ", new story" on the name link.
-      return '<div class="fp-col' + (fresh ? ' fp-col-new' : '') + '">' + link(page, esc(c.initials) + (fresh ? '<span class="fp-new">New</span>' : ''), 'fp-roundel', ' aria-hidden="true" tabindex="-1"') +
-        link(page, esc(c.name) + (fresh ? '<span class="fp-sr">, new story</span>' : ''), 'fp-col-name') +
-        (p ? link(p.url, esc(p.title), 'fp-col-story') : '<span class="fp-col-story">Latest columns</span>') + '</div>';
+      var page = (c.href && safeUrl(c.href)) || (p && p.url) || L.latest;
+      return link(page, '<span class="fp-writer-initials" aria-hidden="true">' + esc(c.initials) + '</span><span>' + esc(c.name) + '</span>', 'fp-writer');
     }).join('');
   }
   function showNext() {
@@ -479,7 +516,7 @@
     var cards = games.map(function (g, i) {
       var fin = g.status === 'final' && g.score, win = fin && g.score.fla > g.score.opp;
       if (fin) { if (win) W++; else Ls++; } else if (nx < 0) nx = i;
-      var top = '<div class="dt">' + esc(fm.format(new Date(g.date))) + ' · ' + (g.home ? 'Home' : 'Away') + '</div><div class="op">' + (g.opponentRank ? '<span class="rk">No. ' + g.opponentRank + '</span>' : '') + esc(g.opponent) + '</div>', body;
+      var top = '<div class="dt">' + esc(fm.format(new Date(g.date))) + ' · ' + (g.home ? 'Home' : 'Away') + '</div><div class="op">' + (fin && g.opponentRank ? '<span class="rk">No. ' + g.opponentRank + '</span>' : '') + esc(g.opponent) + '</div>', body;
       if (fin) body = '<div class="sc">' + (win ? 'W ' : 'L ') + g.score.fla + '–' + g.score.opp + '</div><div class="bar"><i data-w="' + Math.max(6, Math.min(100, Math.round((g.score.fla - g.score.opp) / 40 * 100))) + '"></i></div><div class="sub">' + esc(g.tv || 'Final') + '</div>';
       else if (i === nx) body = '<div class="cd" data-k="' + esc(g.date) + '">…</div><div class="sub">to kickoff' + (g.tv ? ' · ' + esc(g.tv) : '') + '</div>';
       else body = '<div class="sub" style="margin-top:auto">' + esc(g.tv || 'Kickoff TBA') + '</div>';
@@ -621,29 +658,34 @@
     if (phase !== cur) t.setAttribute('data-phase', phase);
   }
   /* Recent broadcasts: source parity with the verified live show rail. */
-  var gbmShowRows = [{ "id": "aEOcRpECIOQ", "title": "Has Jadan Baugh Got A Shot At The Heisman?", "publishedAt": "2026-10-02T18:57:40-07:00", "duration": "PT51M35S" }, { "id": "TPKZcSS9Bc0", "title": "Has Jadan Baugh Got A Shot At The Heisman?", "publishedAt": "2026-10-02T07:12:37-07:00", "duration": "PT61M36S" }, { "id": "VIsn01dETY4", "title": "Will Success Come With A Big Price For The Gators?", "publishedAt": "2026-10-01T07:23:17-07:00", "duration": "PT64M11S" }, { "id": "SYBBWfaTTcs", "title": "Denzel Aberdeen Cleared for Florida, with Missouri Preview Ahead", "publishedAt": "2026-09-30T08:07:36-07:00", "duration": "PT57M53S" }, { "id": "qWBazfq_4Mc", "title": "Florida DESTROYS Ole Miss 52-28 🐊 Shane Matthews Reacts", "publishedAt": "2026-09-29T07:18:49-07:00", "duration": "PT59M18S" }, { "id": "u2dMQ4u3yNY", "title": "Ole Miss vs Florida Preview Can the Gators Own the Swamp", "publishedAt": "2026-09-25T07:38:50-07:00", "duration": "PT72M39S" }];
+  var gbmShowSnapshot = BUNDLE.broadcasts || {}, gbmShowRows = showRows(gbmShowSnapshot), gbmShowsChecked = gbmShowSnapshot.checkedAt || '';
+  function showRows(data) {
+    if (!data || data.channelId !== 'UCtR8b1sKFuwaRjKy5BiXRvA' || !Array.isArray(data.episodes)) return [];
+    var seen = {};
+    return data.episodes.filter(function (v) { return /^[A-Za-z0-9_-]{11}$/.test(v.id) && typeof v.title === 'string' && v.title.length <= 300 && Number.isFinite(Date.parse(v.publishedAt)); }).sort(function (a,b) { return Date.parse(b.publishedAt) - Date.parse(a.publishedAt); }).filter(function (v) {
+      var key = v.title.trim().toLowerCase() + '|' + ymdOf(v.publishedAt); if (seen[key]) return false; seen[key] = true; return true;
+    }).slice(0, 3);
+  }
   function gbmRecentShows() {
-    return '<div class="fp-episode-head">Recent broadcasts · newest first</div><div class="fp-episode-list" tabindex="0" aria-label="Recent broadcasts, newest first">' + gbmShowRows.filter(function(v) { return !(weekFocusOn() && /missouri|mizzou|ole miss/i.test(v.title)); }).slice(0, 6).map(function(v) {
-      return '<a class="fp-vid" href="https://www.youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener"><span class="fp-frame">' + img("https://i.ytimg.com/vi/" + v.id + "/hqdefault.jpg", "", false, 480, 360) + '<span class="fp-play"></span></span><span><b>' + esc(v.title) + "</b><span>Published " + esc(new Date(v.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "America/New_York" })) + "</span></span></a>";
-    }).join("") + '</div><p class="fp-ex"><a href="/the-buddy-martin-show">Watch here</a> · <a href="https://www.youtube.com/@TheBuddyMartinShow" target="_blank" rel="noopener">Subscribe on YouTube</a> · <a href="https://www.twitter.com/buddyshow" target="_blank" rel="noopener">Buddy on X</a></p>';
+    var old = !Number.isFinite(Date.parse(gbmShowsChecked)) || now() - Date.parse(gbmShowsChecked) > DAY;
+    return '<div class="fp-episode-head">' + (old ? 'Broadcast archive' : 'Recent broadcasts') + '</div>' + (old && gbmShowsChecked ? '<p class="fp-show-source">Archive checked ' + esc(shortDate(Date.parse(gbmShowsChecked))) + '. Visit GatorBait TV for current shows.</p>' : '') + '<div class="fp-episode-list" aria-label="Broadcast replays">' + gbmShowRows.map(function (v) {
+      return '<a class="fp-vid" href="https://www.youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg', '', false, 480, 270) + '<span class="fp-play"></span></span><span><b>' + esc(v.title) + '</b><span>' + esc(shortDate(Date.parse(v.publishedAt))) + ' · Replay</span></span></a>';
+    }).join('') + '</div>';
   }
   function gbmRefreshShows() {
-    fetchJson(PAGES + "sports-live/episodes.json?t=" + Math.floor(Date.now() / 9e5), 3e3).then(function(data) {
-      if (data.channelId !== "UCtR8b1sKFuwaRjKy5BiXRvA" || !Array.isArray(data.episodes) || !Number.isFinite(Date.parse(data.checkedAt)) || Date.now() - Date.parse(data.checkedAt) > 864e5 || data.discoveryGap) return;
-      var rows = data.episodes.filter(function(v) {
-        return /^[A-Za-z0-9_-]{11}$/.test(v.id) && typeof v.title === "string" && v.title.length <= 300 && Number.isFinite(Date.parse(v.publishedAt));
-      }).sort(function(a, b) {
-        return Date.parse(b.publishedAt) - Date.parse(a.publishedAt);
-      }).slice(0, 6);
-      if (rows.length < 3) return;
-      gbmShowRows = rows;
-      var list = document.querySelector("#gbm-live .fp-episode-list");
+    fetchJson(PAGES + 'sports-live/episodes.json?t=' + Math.floor(Date.now() / 900000), 3000).then(function (data) {
+      var rows = showRows(data);
+      if (!rows.length || !Number.isFinite(Date.parse(data.checkedAt)) || Date.parse(data.checkedAt) < Date.parse(gbmShowsChecked)) return;
+      var list = document.querySelector('#gbm-live .fp-episode-list');
       if (!list || list.contains(document.activeElement)) return;
-      var holder = document.createElement("div");
-      holder.innerHTML = gbmRecentShows();
-      list.replaceWith(holder.querySelector(".fp-episode-list"));
-    }).catch(function() {
-    });
+      gbmShowRows = rows; gbmShowsChecked = data.checkedAt;
+      var holder = document.createElement('div'); holder.innerHTML = gbmRecentShows();
+      var head = list.parentElement.querySelector('.fp-episode-head'), note = list.parentElement.querySelector('.fp-show-source');
+      if (head) head.replaceWith(holder.querySelector('.fp-episode-head')); if (note) note.remove();
+      var freshNote = holder.querySelector('.fp-show-source'); if (freshNote) list.before(freshNote);
+      list.replaceWith(holder.querySelector('.fp-episode-list'));
+      var root = document.getElementById('gbm-live'); if (root && root.__fpWatchImages) root.__fpWatchImages();
+    }).catch(function () {});
   }
 
   /* Game-day graphics row in The Hub (Brenden, Oct. 10): tale of the tape (ESPN season numbers from the config), Loren's pick,
@@ -673,10 +715,10 @@
     var mClips = cleanWeek ? '' : '<section class="fp-mod fp-mod-clips" aria-label="Buddy Martin Show archive"><h2>Buddy Martin Show archive</h2><p class="fp-ex">Selected full-length shows from GatorBait TV.</p><div class="fp-clips">' + BUNDLE.showArchive.slice(0, 2).map(function (c) {
       return '<a class="fp-clip" href="https://www.youtube.com/watch?v=' + esc(c.id) + '" target="_blank" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + c.id + '/hqdefault.jpg', '', false, 480, 360) + '<span class="fp-play"></span></span><b>' + esc(c.title) + '</b><span class="fp-meta">Full show · ' + esc(c.duration) + '</span></a>'; }).join('') +
       '</div><a class="fp-more" href="' + esc(L.youtubePlaylist) + '" target="_blank" rel="noopener">Browse the show playlist <span aria-hidden="true">&nbsp;→</span></a></section>';
-    var gal = posts.filter(function (p) { return p.image && /spears/i.test(p.title + ' ' + p.author) && /(photo|galler|best shots)/i.test(p.title); }).slice(0, 2)
+    var gal = posts.filter(function (p) { return p.image && !used[p.image] && /spears/i.test(p.title + ' ' + p.author) && /(photo|galler|best shots)/i.test(p.title); }).slice(0, 2)
       .map(function (p) { return { title: p.title, url: p.url, image: p.image }; });
-    if (!gal.length) gal = BUNDLE.galleries.slice(0, 2);
-    var mPhotos = cleanWeek ? '' : '<section class="fp-mod fp-mod-photos" aria-label="Photographs"><h2>Photos · Chris Spears</h2><div class="fp-photos">' + gal.map(function (g) {
+    if (!gal.length) gal = [];
+    var mPhotos = cleanWeek || !gal.length ? '' : '<section class="fp-mod fp-mod-photos" aria-label="Photographs"><h2>Photos · Chris Spears</h2><div class="fp-photos">' + gal.map(function (g) {
       return '<a class="fp-photo" href="' + esc(g.url) + '"><span class="fp-frame">' + img(g.image, g.title, false) + '</span><span class="fp-cap"><b>Photo by Chris Spears, GatorBait Media</b></span><b>' + esc(g.title) + '</b></a>'; }).join('') + '</div></section>';
     var l = sb.last, n = sb.next, scores = '';
     if (l && l.score) {
@@ -687,31 +729,21 @@
       if (tape.length) scores += '<div class="fp-tape">' + tape.map(function (x) { return '<div><strong data-fp-num="' + st[x[0]] + '">' + fmtNum(st[x[0]]) + '</strong><span>' + (x[0] === 'attendance' && !l.home ? 'Attendance' : x[1]) + '</span></div>'; }).join('') + '</div>';
       if (l.recapUrl) scores += '<a class="fp-more" href="' + esc(l.recapUrl) + '">Read the recap <span aria-hidden="true">&nbsp;→</span></a>';
     }
-    if (n) scores += '<a class="fp-next" href="' + esc(n.previewUrl || L.schedule) + '"><span>Next · ' + esc(n.tv || '') + '</span><b>' + esc(ranked(sb.team.rank, 'Florida') + (n.home ? ' vs. ' : ' at ') + ranked(n.opponentRank, n.opponent)) + '</b><span>' + esc(gameWhen(n.kickoffIso) + (n.venue ? ' · ' + n.venue : '')) + '</span>' + cd(n.kickoffIso) + '</a>';
+    if (n) scores += '<a class="fp-next" href="' + esc(n.previewUrl || L.schedule) + '"><span>Next · ' + esc(n.tv || '') + '</span><b>' + esc('Florida' + (n.home ? ' vs. ' : ' at ') + n.opponent) + '</b><span>' + esc(gameWhen(n.kickoffIso) + (n.venue ? ' · ' + n.venue : '')) + '</span>' + cd(n.kickoffIso) + '</a>';
     var upcoming = sb.schedule.filter(function (g) { return g.status === 'scheduled' && (!n || g.date !== n.kickoffIso); }).slice(0, 3);
     if (upcoming.length) scores += '<table class="fp-stand"><caption class="fp-sr">Upcoming schedule</caption><thead><tr><th scope="col">Coming up</th><th scope="col">Date</th><th scope="col">TV</th></tr></thead><tbody>' + upcoming.map(function (g) {
       var t = Date.parse(g.date), e = et(t), tba = /T0[45]:00:00/.test(g.date);
-      return '<tr><td>' + esc((g.home ? 'vs. ' : 'at ') + ranked(g.rank, g.opponent)) + '</td><td>' + esc(tba ? MONTHS[new Date(t).getUTCMonth()] + ' ' + new Date(t).getUTCDate() : MONTHS[e.mo] + ' ' + e.d) + '</td><td>' + esc(g.tv || 'TBA') + '</td></tr>'; }).join('') + '</tbody></table>';
-    if (sb.standings.length) scores += '<table class="fp-stand"><caption class="fp-sr">SEC standings</caption><thead><tr><th scope="col">SEC</th><th scope="col">Conf.</th><th scope="col">Overall</th></tr></thead><tbody>' + sb.standings.slice(0, 6).map(function (r) { return '<tr' + (/^florida$/i.test(r.team) ? ' class="fp-us"' : '') + '><td>' + esc(r.team) + '</td><td>' + esc(r.conf) + '</td><td>' + esc(r.overall) + '</td></tr>'; }).join('') + '</tbody></table>';
+      return '<tr><td>' + esc((g.home ? 'vs. ' : 'at ') + g.opponent) + '</td><td>' + esc(tba ? MONTHS[new Date(t).getUTCMonth()] + ' ' + new Date(t).getUTCDate() : MONTHS[e.mo] + ' ' + e.d) + '</td><td>' + esc(g.tv || 'TBA') + '</td></tr>'; }).join('') + '</tbody></table>';
     scores += '<div class="fp-chips"><a href="' + esc(L.schedule) + '">Schedule</a><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.stats) + '" target="_blank" rel="noopener" aria-label="Official Florida stats (opens in a new tab)">Stats ↗</a><a href="' + esc(L.standings) + '" target="_blank" rel="noopener" aria-label="Official SEC football standings (opens in a new tab)">Standings ↗</a></div>';
-    var mScores = '<section class="fp-mod fp-mod-scores" aria-label="Scores and schedule"><h2>Scores &amp; Schedule · Florida ' + esc(sb.team.record || '') + '</h2>' + scores + '</section>';
+    var mScores = '<section class="fp-mod fp-mod-scores" aria-label="Scores and schedule"><h2>Scores &amp; schedule</h2><p class="fp-show-source">Florida ' + esc(sb.team.record || '') + (sb.updatedAt ? ' · Source checked ' + esc(shortDate(Date.parse(sb.updatedAt))) + ', ' + esc(clock(Date.parse(sb.updatedAt))) + ' ET' : '') + '</p>' + scores + '</section>';
     var magazine = BUNDLE.magazine, cover = magazine.cover, issue = magazine.issue;
-    var coverSrc = 'https://static.wixstatic.com/media/' + cover.image.id.replace(/(?:~mv2)+$/, '') + '~mv2.' + cover.image.ext;
-    // Newest issue first (magazine.cover), then up to two earlier issues (magazine.previous: [{image, caption}]). One cover
-    // renders exactly as before; two or more fade through each other (see the rotator below the render).
-    function magSrc(c) { return 'https://static.wixstatic.com/media/' + c.image.id.replace(/(?:~mv2)+$/, '') + '~mv2.' + c.image.ext; }
-    var magList = [{ image: cover.image, caption: issue.number + ' · ' + issue.week }].concat((weekFocusOn() ? [] : magazine.previous || []).filter(function (c) { return c && c.image && c.image.id && c.image.ext; })).slice(0, 3);
-    var magCovers = magList.length < 2 ? img(coverSrc, cover.image.alt, false, cover.image.width || 864, cover.image.height || 1536, '(max-width: 599px) 76vw, 320px') :
-      magList.map(function (c, i) { return '<span class="fp-mag-slide' + (i ? '' : ' is-on') + '" data-caption="' + esc(c.caption || '') + '">' + img(magSrc(c), c.image.alt || '', false, c.image.width || 864, c.image.height || 1536, '(max-width: 599px) 76vw, 320px') + '</span>'; }).join('');
-    var mMag = '<section class="fp-mod fp-mag" aria-label="GatorBait Magazine"><h2>GatorBait Magazine</h2>' +
-      '<button type="button" class="fp-cover fp-mag-open" style="aspect-ratio:' + (cover.image.width || 864) + '/' + (cover.image.height || 1536) + '" aria-expanded="false" aria-controls="fp-mag-reader" aria-label="Open GatorBait Magazine">' +
-      magCovers + '<span class="fp-mag-hint">Tap cover to open <span aria-hidden="true">↗</span></span></button>' +
-      '<div class="fp-mag-copy"><p>' + esc(issue.number) + ' · ' + esc(issue.week) + '</p></div>' +
-      '<div class="fp-mag-reader" id="fp-mag-reader" hidden><div class="fp-mag-tools"><button type="button" class="fp-btn fp-mag-close" aria-label="Close magazine">Close magazine</button><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine ↗</a></div><iframe title="GatorBait Magazine — ' + esc(issue.number) + '" loading="lazy" data-src="' + esc(L.magazine) + '?embed=home#pm-contents"></iframe><p><a class="fp-btn fp-ghost" href="' + esc(L.magazine) + '">Open full magazine <span aria-hidden="true">→</span></a></p></div></section>';
+    // Promote the edition as a reading package, without repeating the lead story or fabricating cover art.
+    var mMag = '<section class="fp-mod fp-mag" aria-label="Current GatorBait Magazine"><a class="fp-mag-issue" href="' + esc(magazineUrl) + '" aria-label="Open the current GatorBait Magazine"><p class="fp-mag-date">Current issue · ' + esc(issue.date) + '</p><h2>GatorBait Magazine</h2><h3>' + esc(issue.number) + '</h3><p class="fp-mag-week">' + esc(issue.week) + '</p></a><div class="fp-mag-copy"><p>' + esc(cover.dek) + '</p><div class="fp-actions"><a class="fp-btn" href="' + esc(magazineUrl) + '">Open this issue</a></div></div></section>';
     // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
     var mNews = window.GBM_CAPTURE ? window.GBM_CAPTURE.html('home') : '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
-    return '<section class="fp-hub" aria-label="The GatorBait hub"><div class="fp-wrap"><div class="fp-hub-head"><h2>The Hub</h2><p>Stories, scores, the show and photos. Everything GatorBait, in one place.</p></div>' + gdGraphicsHtml(gameState(sb)) + '<div class="fp-hub-grid">' +
-      mLatest + mScores + mShow + (window.GBM_CAPTURE ? mNews : '') + mClips + mPhotos + mMag + (window.GBM_CAPTURE ? '' : mNews) + '</div></div></section>';
+    var join = '<section class="fp-membership" aria-label="GatorBait All Access"><div><p>Go deeper with GatorBait</p><h2>Your Gators. Your magazine.</h2><span>Explore All Access and the member magazine PDF.</span></div><a class="fp-btn" href="' + esc(L.subscribe) + '">Explore All Access</a></section>';
+    return '<section class="fp-hub" aria-label="More from GatorBait"><div class="fp-wrap">' + gdGraphicsHtml(gameState(sb)) + '<div class="fp-hub-grid">' + mShow + mLatest + mScores + '</div>' + mMag + '<div class="fp-continuation">' + mNews + join + '</div></div></section>';
+
   }
 
   /* ---------- Live bits: countdowns, count-up, show status, embers ---------- */
@@ -781,11 +813,11 @@
     try { if (document.hidden) particles.pause(); else particles.play(); } catch (_) {}
   });
   function ensureFonts() {
-    if (!document.getElementById('gbm-fp-fonts') && !document.querySelector('link[rel="stylesheet"][href*="Barlow+Condensed"]')) {
+    if (!document.getElementById('gbm-fp-fonts') && !document.querySelector('link[rel="stylesheet"][href*="family=Barlow"]')) {
       var l = document.createElement('link'); l.id = 'gbm-fp-fonts'; l.rel = 'stylesheet'; l.href = FONTS; document.head.appendChild(l);
     }
     if (!document.fonts || !document.fonts.load) return Promise.resolve();
-    return Promise.race([Promise.all([document.fonts.load('800 88px "Barlow Condensed"'), document.fonts.load('400 16px "Barlow"')]).catch(function () {}),
+    return Promise.race([Promise.all([document.fonts.load('600 40px "Barlow"'), document.fonts.load('400 16px "Barlow"')]).catch(function () {}),
       new Promise(function (r) { setTimeout(r, 900); })]);
   }
 
@@ -797,6 +829,11 @@
   }
   function render(posts, fresh, sb) {
     if (!home()) { loading = false; return; }
+    // Transitional game updates stay in the archive after a verified final.
+    if (sb.last && sb.last.score) {
+      var opponent = String(sb.last.opponent || '').toLowerCase(), gameDate = ymdOf(sb.last.date);
+      posts = posts.filter(function (p) { return !(ymdOf(p.date) === gameDate && p.title.toLowerCase().indexOf(opponent) >= 0 && /halftime|live updates/i.test(p.title)); });
+    }
     if (posts.length < 3) throw new Error('Insufficient public stories');
     var existing = document.getElementById('gbm-live');
     if (existing && existing.classList.contains('gbm-gazette')) { loading = false; return; }
@@ -810,10 +847,11 @@
     var topPosts = topWriters.length ? posts.filter(function (p) {
       return topWriters.some(function (name) { return p.author.toLowerCase() === name.toLowerCase(); });
     }) : posts;
+    var support = take(topPosts, 2);
     var feature = take(topPosts, 1)[0] || take(posts, 1)[0];
-    var list = take(topPosts, 6);
+    var list = take(topPosts, 2);
     var cols = columnistsHtml(posts);
-    var latest = take(posts, 8);
+    var latest = take(posts, 5);
     var gs = gameState(sb), mode = modes(sb);
     lastSb = sb;
     var root = document.createElement('div');
@@ -826,10 +864,9 @@
     root.setAttribute('data-fp-scoreboard', sb.source);
     root.setAttribute('data-gazette-source', fresh ? 'current-feed' : 'last-known-feed');
     root.setAttribute('data-gazette-newest', posts[0].date.toISOString());
-    root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + (mode.gameday && gs ? gdBand(gs) : '') + scoresHtml(sb) + tickerHtml(posts, sb, gs) + mastHtml() + navHtml(sb, gs) +
+    root.innerHTML = '<a class="fp-skip" href="#sh-main">Skip to stories</a>' + (mode.gameday && gs ? gdBand(gs) : '') + mastHtml() + navHtml(sb, gs) +
       (mode.gameday ? tunnelHtml(gs, sb, posts, lead.url) + (gs && gs.phase !== 'pre' ? boardHtml(gs) : '') : '') +
-      (gwCfg() || pgLead() ? '' : roadHtml(sb)) + '<main id="sh-main"><nav class="fp-quick-links" aria-label="GatorBait quick links"><div class="fp-wrap fp-chips"><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.schedule) + '">Schedule</a><a href="#fp-show-schedule">Show schedule</a></div></nav><div class="fp-wrap"><div id="sh-freshness"></div>' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + '</div>' + (gwCfg() ? wxHtml() : '') + '<div class="fp-wrap">' + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' +
-      (pgLead() && !gwCfg() ? roadHtml(sb) : '') + hubHtml(latest, sb, posts, used) + '</main>';
+      '<main id="sh-main"><div class="fp-wrap"><div id="sh-freshness"></div><div class="fp-top-layout">' + (co ? coLeadHtml(co[0], co[1]) : leadHtml(lead, picked.why)) + supportHtml(support) + '</div></div>' + (gwCfg() ? wxHtml() : '') + '<div class="fp-wrap">' + quoteHtml(lead, posts) + secondHtml(feature, list, cols) + '</div>' + hubHtml(latest, sb, posts, used) + roadHtml(sb) + '</main>';
     if (!document.getElementById('gbm-fp26-styles')) {
       var style = document.createElement('style'); style.id = 'gbm-fp26-styles'; style.textContent = CSS; document.head.appendChild(style);
     }
@@ -843,73 +880,6 @@
     try { initWeather(root); } catch (_) {}
     try { initScores(root, sb); } catch (_) {}
     try { imgFallback(root); } catch (_) {}
-    try {
-      var magOpen = root.querySelector('.fp-mag-open'), magReader = root.querySelector('#fp-mag-reader');
-      var magClose = root.querySelector('.fp-mag-close');
-      function magazineTop(frame) {
-        try { if (frame && frame.contentWindow) { var issueRoot = frame.contentDocument.querySelector('#gbm-magazine-page'); if (issueRoot) issueRoot.classList.add('pm-opened'); frame.contentWindow.scrollTo(0, 0); } } catch (_) {}
-      }
-      function closeMagazine() {
-        if (!magOpen || !magReader) return;
-        magReader.hidden = true;
-        magOpen.setAttribute('aria-expanded', 'false');
-        magOpen.closest('.fp-mag').classList.remove('fp-mag-opened');
-        magOpen.focus({ preventScroll: true });
-        var top = magOpen.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo(0, Math.max(0, top));
-      }
-      // Cover rotator: soft fade about every 6 s, paused while a pointer or finger is on the cover, the reader is open or the tab
-      // is hidden; no auto-rotation at all under prefers-reduced-motion (the newest cover simply stays).
-      (function () {
-        var slides = root.querySelectorAll('.fp-mag-slide'), copy = root.querySelector('.fp-mag-copy p'), at = 0, timer = 0, held = false;
-        if (slides.length < 2 || !magOpen) return;
-        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
-        function show(n) {
-          slides[at].classList.remove('is-on'); at = n % slides.length; slides[at].classList.add('is-on');
-          var cap = slides[at].getAttribute('data-caption'); if (copy && cap) copy.textContent = cap;
-        }
-        function tick() { if (!held && !document.hidden && !magOpen.closest('.fp-mag').classList.contains('fp-mag-opened')) show(at + 1); }
-        function start() { if (!timer && !(reduce && reduce.matches)) timer = setInterval(tick, 6000); }
-        function stop() { if (timer) { clearInterval(timer); timer = 0; } }
-        ['mouseenter', 'touchstart', 'focusin'].forEach(function (e) { magOpen.addEventListener(e, function () { held = true; }, { passive: true }); });
-        ['mouseleave', 'touchend', 'touchcancel', 'focusout'].forEach(function (e) { magOpen.addEventListener(e, function () { held = false; }, { passive: true }); });
-        if (reduce && reduce.addEventListener) reduce.addEventListener('change', function () { if (reduce.matches) stop(); else start(); });
-        start();
-      })();
-      if (magClose) magClose.addEventListener('click', closeMagazine);
-      if (magOpen && magReader) magOpen.addEventListener('click', function () {
-        if (magOpen.getAttribute('aria-expanded') === 'true') return;
-        magOpen.setAttribute('aria-expanded', 'true');
-        var frame = magReader.querySelector('iframe');
-        if (frame && !frame.getAttribute('srcdoc')) {
-          frame.addEventListener('load', function () {
-            magazineTop(frame);
-            // Keep section links inside this inline issue; article links retain the top-level target.
-            try { frame.contentDocument.addEventListener('click', function (e) {
-              var a = e.target.closest && e.target.closest('a[href^="#pm-"]');
-              var id = a && a.getAttribute('href');
-              if (!id || !/^#pm-[a-z0-9-]+$/i.test(id)) return;
-              var target = frame.contentDocument.querySelector(id);
-              if (!target) return;
-              e.preventDefault();
-              target.scrollIntoView({ block: 'start', behavior: 'instant' });
-            }); } catch (_) {}
-          }, { once: true });
-          // Split the closing tag while generating the HTML; the browser receives real </script> tags.
-          var endScript = '<' + '/script>';
-          frame.setAttribute('srcdoc', '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base target="_top"><style>html,body{margin:0;background:#fff}.pm-entrance,.pm-readerbar [data-pm-cover]{display:none!important}</style></head><body><script>window.__GBM_MAG_EMBED__=true;' + endScript + '<script src="https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@0d5ff5ab0c75bd96955f5fcca7859154889dbfee/sports-live/magazine-wednesday.js">' + endScript + '</body></html>');
-        }
-        magReader.hidden = false;
-        magOpen.closest('.fp-mag').classList.add('fp-mag-opened');
-        magazineTop(frame);
-        if (magClose) magClose.focus({ preventScroll: true });
-        var top = magReader.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo(0, Math.max(0, top));
-      });
-      if (magReader) magReader.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') { e.preventDefault(); closeMagazine(); }
-      });
-    } catch (_) {}
     loading = false;
     window.__GBM_GAZETTE_RUNTIME__.ready = true;
     if (window.__GBM_GAZETTE_BOOT__ && window.__GBM_GAZETTE_BOOT__.ready) window.__GBM_GAZETTE_BOOT__.ready();
@@ -1026,18 +996,18 @@
 
   function fetchJson(url, ms) {
     var c = new AbortController(), t = setTimeout(function () { c.abort(); }, ms);
-    return fetch(url, { signal: c.signal, credentials: 'omit', cache: 'no-store' }).then(function (r) { clearTimeout(t); if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); });
+    return fetch(url, { signal: c.signal, credentials: 'omit', cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); }).finally(function () { clearTimeout(t); });
   }
   function fetchRss() {
     var c = new AbortController(), t = setTimeout(function () { c.abort(); }, 4000);
     return fetch(RSS + '?t=' + Math.floor(Date.now() / 60000), { signal: c.signal, credentials: 'omit', cache: 'no-store' }).then(function (r) {
-      clearTimeout(t); if (!r.ok) throw new Error('Content response ' + r.status);
+      if (!r.ok) throw new Error('Content response ' + r.status);
       return r.text().then(function (xml) {
         var feed = new DOMParser().parseFromString(xml, 'text/xml');
         function text(n, key) { var el = Array.from(n.children).find(function (c) { return c.localName === key; }); return el ? el.textContent.trim() : ''; }
         return { posts: Array.from(feed.querySelectorAll('item')).map(function (n) { var enc = n.querySelector('enclosure'); return { title: text(n, 'title'), excerpt: text(n, 'description'), author: text(n, 'creator'), url: text(n, 'link'), firstPublishedDate: text(n, 'pubDate'), image: { src: enc ? enc.getAttribute('url') : '', alt: text(n, 'title') } }; }) };
       });
-    });
+    }).finally(function () { clearTimeout(t); });
   }
   function start() {
     if (!home() || loading || document.querySelector('#gbm-live.gbm-gazette')) return;
@@ -1066,6 +1036,7 @@
     }).catch(function () { scoreDone = true; maybePaint(); });
     fetchRss().catch(function () { return fetchJson(PAGES + 'gazette-live/posts.json', 3000); }).then(function (data) {
       var posts = normalize(data); if (posts.length < 3) throw new Error('Invalid current content');
+      if (posts[0].date < normalize(initial)[0].date) return;
       try { sessionStorage.setItem('gbm-public-feed', JSON.stringify({ saved: Date.now(), data: data })); } catch (_) {}
       if (!painted) { feedData = data; maybePaint(); return; }
       var root = document.getElementById('gbm-live');

@@ -66,6 +66,11 @@
       "href": "/gatorbait-media-blogs/categories/eddie-gilley-blog"
     },
     {
+      "name": "Brenden Martin",
+      "initials": "BR",
+      "href": "/gatorbait-media-blogs/categories/brenden-martin-blog"
+    },
+    {
       "name": "Chris Spears Photos",
       "initials": "CS",
       "href": "/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28"
@@ -193,7 +198,7 @@
     }
   ],
   "gameWeather": {
-    "on": true,
+    "on": false,
     "from": "2026-10-09T04:00:00Z",
     "until": "2026-10-10T21:40:00Z",
     "kickoff": "2026-10-10T16:45:00Z",
@@ -204,7 +209,7 @@
     "grid": "JAX/43,32"
   },
   "gameWeekFocus": {
-    "on": true,
+    "on": false,
     "from": "2026-10-09T04:00:00Z",
     "until": "2026-10-11T12:00:00Z",
     "pattern": "south carolina|gamecock|homecoming|kickoff|\\brain|storm|hurricane|isaias|weather|bounce|swamp|beamer|sumrall|baugh|philo|availability|favorite|point spread|pregame",
@@ -213,7 +218,7 @@
     "hideLast": true
   },
   "gameDayGraphics": {
-    "on": true,
+    "on": false,
     "from": "2026-10-10T04:00:00Z",
     "until": "2026-10-10T21:40:00Z",
     "asOf": "Season to date, five games. Source: ESPN, Oct. 10.",

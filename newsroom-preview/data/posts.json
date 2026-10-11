@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Members: Download the Postgame Magazine PDF",
+      "excerpt": "Members can download the full 22-page postgame edition of GatorBait Magazine: Buddy Martin, Franz Beard, Chris Spears' best shots and a look ahead to Texas.",
+      "url": "https://www.gatorbaitmedia.com/post/members-download-the-postgame-magazine-pdf",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-11T13:37:37Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_7c43c1e7f1be4ebea73828283b12bd73~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Members: Download the Postgame Magazine PDF"
+      }
+    },
+    {
       "title": "After a second sobering loss, can Florida's season still be salvaged?",
       "excerpt": "Franz Beard on South Carolina 38, Florida 19: a lost line of scrimmage, a quarterback question for Austin and a defense that keeps throwing things at the wall. Can the season still be salvaged?",
       "url": "https://www.gatorbaitmedia.com/post/after-a-second-sobering-loss-can-florida-s-season-still-be-salvaged",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Hit the Reset Button: Gators, Gamecocks Meet at Different Crossroads"
-      }
-    },
-    {
-      "title": "Florida is a double-digit favorite over South Carolina: the numbers at kickoff",
-      "excerpt": "FanDuel lists the Gators at minus-11.5 with a total of 58.5, and numberFire gives Florida a 72.2% chance to win.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-is-an-11-5-point-favorite-over-south-carolina-what-the-numbers-say",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T11:44:51Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_47123317aa9e4b4e8a5097d8bc81ae0b~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida is a double-digit favorite over South Carolina: what the numbers say"
       }
     }
   ]

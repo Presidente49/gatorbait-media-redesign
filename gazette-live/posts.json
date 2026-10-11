@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Members: Download the Postgame Magazine PDF",
+      "excerpt": "Members can download the full 22-page postgame edition of GatorBait Magazine: Buddy Martin, Franz Beard, Chris Spears' best shots and a look ahead to Texas.",
+      "url": "https://www.gatorbaitmedia.com/post/members-download-the-postgame-magazine-pdf",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-11T13:37:37Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_7c43c1e7f1be4ebea73828283b12bd73~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Members: Download the Postgame Magazine PDF"
+      }
+    },
+    {
       "title": "After a second sobering loss, can Florida's season still be salvaged?",
       "excerpt": "Franz Beard on South Carolina 38, Florida 19: a lost line of scrimmage, a quarterback question for Austin and a defense that keeps throwing things at the wall. Can the season still be salvaged?",
       "url": "https://www.gatorbaitmedia.com/post/after-a-second-sobering-loss-can-florida-s-season-still-be-salvaged",
@@ -251,20 +265,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Buddy Martin Show: Florida, South Carolina Both Need a Bounce-Back Saturday"
-      }
-    },
-    {
-      "title": "Buddy Blog: Checking Out The Point Spread And Weather For Gator Homecoming.",
-      "excerpt": "The betting line says Florida should handle this. The little voice in the back of the Gator fan’s head says the betting line won’t be sitting beside him if things go sideways. That voice has attended a few games, too.",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-checking-out-point-spread-and-weather-for-gator-homecoming",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-08T21:25:54Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_d29839649642454c84264984ec7775fa~mv2.jpg/v1/fit/w_1000,h_556,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Buddy Blog: Checking Out The Point Spread And Weather For Gator Homecoming."
       }
     },
     {

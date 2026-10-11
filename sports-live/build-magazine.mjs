@@ -33,7 +33,7 @@ const runtimeBase = (POSTGAME ? read('sports-live/src/capture.js') + '\n;' : '')
 const runtime = VARIANT === 'wednesday' ? runtimeBase.replace('Six complete articles \u00b7 October 1 edition', 'Twelve stories \u00b7 Wednesday Edition, October 7') : runtimeBase;
 // Photo credits the homepage already verified (front-page.config.json), so the live card refresh can credit a new card's photo.
 const credits = JSON.parse(read('sports-live/front-page.config.json')).credits || {};
-const MAX_JS = (POSTGAME ? 190 : 180) * 1024; // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
+const MAX_JS = (POSTGAME ? 200 : 180) * 1024; // postgame adds the dated AP poll and ten-story package; other edition caps stay unchanged.
 
 // Strip editorial meta (notes to the compiler) so the bundle carries only what renders; everything else goes through untouched.
 const META = new Set(['$comment', 'todo']);

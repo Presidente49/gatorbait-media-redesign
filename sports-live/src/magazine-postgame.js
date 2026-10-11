@@ -148,6 +148,33 @@
       (marks.length ? '<ol class="pm-key">' + marks.map(function (m) { return '<li><b>' + esc(text(m.title, 20)) + '</b> ' + esc(text(m.note, 160)) + '</li>'; }).join('') + '</ol>' : '') +
       (text(F.source, 200) ? '<figcaption class="pm-src">' + esc(text(F.source, 200)) + '</figcaption>' : '') + '</figure>' + pmMore(F.more) + '</div></section>';
   }
+  function pmRankings(D) {
+    var R = obj(D.rankings), teams = R ? list(R.teams, 25).map(obj) : [];
+    // A dated poll is either complete and sequential or omitted. No partial rankings or inferred records.
+    if (!R || !/^\d{4}-\d{2}-\d{2}$/.test(text(R.date, 10)) || !text(R.title, 120) || !Array.isArray(R.teams) || R.teams.length !== 25 || teams.length !== 25 || teams.some(function (t, k) {
+      return !t || num(t.rank) !== k + 1 || !text(t.team, 70);
+    })) return '';
+    var status = obj(R.florida), steps = status ? list(status.steps, 3).map(obj).filter(function (s) {
+      return s && text(s.date, 30) && text(s.value, 30);
+    }) : [];
+    var source = obj(R.source), sourceUrl = '';
+    try {
+      var u = new URL(source && source.url || '', SITE);
+      if (u.protocol === 'https:' && !u.username && !u.password && u.hostname === 'apnews.com') sourceUrl = u.href;
+    } catch (_) {}
+    return '<section class="pm-rankings" id="pm-rankings" data-poll-date="' + esc(R.date) + '" aria-labelledby="pm-rankings-t"><div class="pm-in">' + pmHead('rankings', R) +
+      (status && text(status.label, 60) && text(status.value, 30) ? '<div class="pm-poll-status"><div><p class="pm-kick">' + esc(text(status.label, 60)) + '</p><p class="pm-poll-out">' + esc(text(status.value, 30)) + '</p>' +
+        (text(status.note, 200) ? '<p class="pm-poll-note">' + esc(text(status.note, 200)) + '</p>' : '') + '</div>' +
+        (steps.length ? '<ol class="pm-poll-slide" aria-label="' + esc(text(status.stepsLabel, 80)) + '">' + steps.map(function (s) {
+          return '<li><span>' + esc(text(s.date, 30)) + '</span><b>' + esc(text(s.value, 30)) + '</b></li>';
+        }).join('') + '</ol>' : '') + '</div>' : '') +
+      (text(R.legend, 100) ? '<p class="pm-poll-legend">' + esc(text(R.legend, 100)) + '</p>' : '') +
+      '<ol class="pm-poll-grid" aria-label="' + esc(text(R.listLabel, 120)) + '">' + teams.map(function (t) {
+        return '<li' + (t.sec === true ? ' class="pm-poll-sec"' : '') + '><b class="pm-poll-num">' + t.rank + '</b><span class="pm-poll-team">' + esc(text(t.team, 70)) +
+          (t.sec === true && text(R.secLabel, 20) ? '<small>' + esc(text(R.secLabel, 20)) + '</small>' : '') + '</span></li>';
+      }).join('') + '</ol><div class="pm-foot-row">' + pmMore(R.more) +
+      (sourceUrl && text(source && source.label, 160) ? '<p class="pm-src"><a href="' + esc(sourceUrl) + '">' + esc(text(source.label, 160)) + '</a></p>' : '') + '</div></div></section>';
+  }
   function pmGrades(D) {
     var G = obj(D.grades), items = G ? list(G.items, 12).map(obj).filter(function (g) { return g && text(g.unit, 40) && /^[A-F][+-]?$/.test(text(g.grade, 2)); }) : [];
     if (!items.length) return '';
@@ -211,5 +238,5 @@
       pmSrc(D.asOf) + pmPdfLink(D, 'pm-print') + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
   }
   function renderPostgame(D) {
-    return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmDamage(D) + pmFlow(D) + pmGrades(D) + pmQuotes(D) + pmPackage(D) + pmTexas(D) + pmNext(D) + pmFoot(D) + '</div>';
+    return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmDamage(D) + pmFlow(D) + pmRankings(D) + pmGrades(D) + pmQuotes(D) + pmPackage(D) + pmTexas(D) + pmNext(D) + pmFoot(D) + '</div>';
   }

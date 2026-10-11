@@ -65,6 +65,10 @@
         "label": "Game flow"
       },
       {
+        "id": "rankings",
+        "label": "AP Top 25"
+      },
+      {
         "id": "quotes",
         "label": "In their words"
       },
@@ -415,8 +419,8 @@
   },
   "package": {
     "kicker": "Read the package",
-    "title": "6 more postgame stories from The Swamp",
-    "dek": "Newest first after the Buddy Martin cover. No halftime or in-game material.",
+    "title": "9 more stories in this issue",
+    "dek": "The game, its aftermath, recruiting, basketball and the Oct. 11 poll. Chris Spears closes from the sideline.",
     "items": [
       {
         "rubric": "Buddy's game column",
@@ -430,21 +434,6 @@
           "width": 3000,
           "height": 1729,
           "alt": "Florida coach Jon Sumrall walks out for the South Carolina game at Ben Hill Griffin Stadium",
-          "credit": "Photo by Chris Spears, GatorBait Media"
-        }
-      },
-      {
-        "rubric": "Sideline column",
-        "author": "Chris Spears",
-        "title": "From the Sideline: Chris Spears on the 500th Game in The Swamp",
-        "dek": "The runout, Jon Sumrall and Bailey Stockton's touchdown, seen from the sideline.",
-        "url": "/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
-        "image": {
-          "id": "16b519_79987fbda38743d9842a0ba355b3e83a",
-          "ext": "jpg",
-          "width": 3000,
-          "height": 1940,
-          "alt": "Bailey Stockton (3) stretches for the pylon against South Carolina on Oct. 10",
           "credit": "Photo by Chris Spears, GatorBait Media"
         }
       },
@@ -507,6 +496,42 @@
           "alt": "Florida receiver Bailey Stockton (3) reaches the end zone on his 59-yard touchdown catch against South Carolina on Oct. 10",
           "credit": "Photo by Chris Spears, GatorBait Media"
         }
+      },
+      {
+        "rubric": "Recruiting",
+        "author": "Brenden Martin",
+        "title": "Texas commit Easton Royal back in The Swamp a week before Florida plays the Longhorns",
+        "dek": "Easton Royal planned a second Florida game-day visit. The recruiting picture before the Gators head to Texas.",
+        "url": "/post/texas-commit-easton-royal-back-in-the-swamp-a-week-before-florida-plays-the-longhorns"
+      },
+      {
+        "rubric": "Basketball",
+        "author": "Franz Beard",
+        "title": "Golden unloads on the NCAA",
+        "dek": "Todd Golden on fifth-year eligibility, Denzel Aberdeen's injunction and the Gators' scrimmage against North Florida.",
+        "url": "/post/golden-unloads-on-the-ncaa"
+      },
+      {
+        "rubric": "AP Top 25 · Oct. 11",
+        "author": "GatorBait Magazine Staff",
+        "title": "Gators Drop Out of AP Top 25 After Second Straight Loss",
+        "dek": "Florida is unranked in the Oct. 11 poll. The Gators head to No. 7 Texas next.",
+        "url": "/post/gators-drop-out-ap-top-25-october-11-2026"
+      },
+      {
+        "rubric": "Sideline column",
+        "author": "Chris Spears",
+        "title": "From the Sideline: Chris Spears on the 500th Game in The Swamp",
+        "dek": "The runout, Jon Sumrall and Bailey Stockton's touchdown, seen from the sideline.",
+        "url": "/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
+        "image": {
+          "id": "16b519_79987fbda38743d9842a0ba355b3e83a",
+          "ext": "jpg",
+          "width": 3000,
+          "height": 1940,
+          "alt": "Bailey Stockton (3) stretches for the pylon against South Carolina on Oct. 10",
+          "credit": "Photo by Chris Spears, GatorBait Media"
+        }
       }
     ]
   },
@@ -550,7 +575,7 @@
   "texas": {
     "kicker": "Look ahead",
     "title": "Texas lost on a last-second field goal",
-    "ranking": "",
+    "ranking": "No. 7 in the AP Top 25 released Sunday, Oct. 11.",
     "dek": "Oklahoma beat Texas 27-24 in the Red River Rivalry at the Cotton Bowl in Dallas. Texas led 17-7 at the half. Arch Manning's 15-yard touchdown pass tied it 24-24 with 6:32 left, and Tate Sandell kicked a 47-yard field goal as time expired.",
     "stats": [
       {
@@ -597,5 +622,169 @@
       ]
     },
     "source": "Box scores and schedules: ESPN. Per-game averages are GatorBait Media's, computed from ESPN box scores."
+  },
+  "rankings": {
+    "date": "2026-10-11",
+    "kicker": "Sunday poll · Oct. 11, 2026",
+    "title": "AP Top 25",
+    "dek": "Georgia is No. 1. Nine SEC teams are ranked; Florida is outside the Top 25.",
+    "listLabel": "AP Top 25 released October 11, 2026",
+    "secLabel": "SEC",
+    "legend": "SEC teams are highlighted in navy and marked SEC.",
+    "florida": {
+      "label": "Florida in the AP poll",
+      "value": "Unranked",
+      "note": "From No. 8 to unranked in two weeks. Next: No. 7 Texas.",
+      "stepsLabel": "Florida's AP rankings over three polls",
+      "steps": [
+        {
+          "date": "Sept. 27",
+          "value": "No. 8"
+        },
+        {
+          "date": "Oct. 4",
+          "value": "No. 16"
+        },
+        {
+          "date": "Oct. 11",
+          "value": "Unranked"
+        }
+      ]
+    },
+    "teams": [
+      {
+        "rank": 1,
+        "team": "Georgia",
+        "sec": true
+      },
+      {
+        "rank": 2,
+        "team": "Notre Dame",
+        "sec": false
+      },
+      {
+        "rank": 3,
+        "team": "Miami (FL)",
+        "sec": false
+      },
+      {
+        "rank": 4,
+        "team": "Ohio State",
+        "sec": false
+      },
+      {
+        "rank": 5,
+        "team": "Indiana",
+        "sec": false
+      },
+      {
+        "rank": 6,
+        "team": "Alabama",
+        "sec": true
+      },
+      {
+        "rank": 7,
+        "team": "Texas",
+        "sec": true
+      },
+      {
+        "rank": 8,
+        "team": "BYU",
+        "sec": false
+      },
+      {
+        "rank": 9,
+        "team": "Ole Miss",
+        "sec": true
+      },
+      {
+        "rank": 10,
+        "team": "Texas Tech",
+        "sec": false
+      },
+      {
+        "rank": 11,
+        "team": "Utah",
+        "sec": false
+      },
+      {
+        "rank": 12,
+        "team": "UCLA",
+        "sec": false
+      },
+      {
+        "rank": 13,
+        "team": "Missouri",
+        "sec": true
+      },
+      {
+        "rank": 14,
+        "team": "Tennessee",
+        "sec": true
+      },
+      {
+        "rank": 15,
+        "team": "Kentucky",
+        "sec": true
+      },
+      {
+        "rank": 16,
+        "team": "Mississippi State",
+        "sec": true
+      },
+      {
+        "rank": 17,
+        "team": "Iowa",
+        "sec": false
+      },
+      {
+        "rank": 18,
+        "team": "Oklahoma State",
+        "sec": false
+      },
+      {
+        "rank": 19,
+        "team": "USC",
+        "sec": false
+      },
+      {
+        "rank": 20,
+        "team": "Houston",
+        "sec": false
+      },
+      {
+        "rank": 21,
+        "team": "Wake Forest",
+        "sec": false
+      },
+      {
+        "rank": 22,
+        "team": "LSU",
+        "sec": true
+      },
+      {
+        "rank": 23,
+        "team": "Boise State",
+        "sec": false
+      },
+      {
+        "rank": 24,
+        "team": "SMU",
+        "sec": false
+      },
+      {
+        "rank": 25,
+        "team": "Northwestern",
+        "sec": false
+      }
+    ],
+    "more": {
+      "label": "Read Florida's rankings story",
+      "url": "/post/gators-drop-out-ap-top-25-october-11-2026"
+    },
+    "source": {
+      "label": "Source: AP Top 25, Oct. 11, 2026",
+      "url": "https://apnews.com/live/top-25-college-football-poll-10-11-2026"
+    }
   }
 }

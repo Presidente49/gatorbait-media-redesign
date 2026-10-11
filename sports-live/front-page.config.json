@@ -3,11 +3,11 @@
   "look": "gator-day",
   "topStoryAuthors": [],
   "pins": {
-    "breaking": {
+    "breaking": null,
+    "timed": {
       "path": "/post/gameclocked-no-500-was-a-lousy-homecoming",
       "until": "2026-10-12T04:00:00Z"
-    },
-    "timed": null
+    }
   },
   "quotes": {
     "/post/put-down-the-poll-gators-missouri-is-waiting": {

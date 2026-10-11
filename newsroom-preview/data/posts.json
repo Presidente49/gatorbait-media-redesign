@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Chris Spears' Best Shots: South Carolina 38, Florida 19",
+      "excerpt": "36 photos from Chris Spears on the sideline for the 500th game in The Swamp: the runout, Bailey Stockton's 59-yard touchdown and Jon Sumrall during South Carolina's 38-19 win.",
+      "url": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-south-carolina-38-florida-19",
+      "author": "Chris Spears",
+      "firstPublishedDate": "2026-10-11T04:44:19Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_60244446a0b246dbbeae06a0cbb1e3c2~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Chris Spears' Best Shots: South Carolina 38, Florida 19"
+      }
+    },
+    {
       "title": "GAMECLOCKED! No. 500 Was a Lousy Homecoming In The Swamp",
       "excerpt": "Buddy Martin on South Carolina 38, Florida 19: a lousy Homecoming for the 500th game in the Swamp, and why he is hanging on with Jon Sumrall.",
       "url": "https://www.gatorbaitmedia.com/post/gameclocked-no-500-was-a-lousy-homecoming-in-the-swamp",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators-Gamecocks availability: Vernell Brown III questionable, South Carolina thin up front"
-      }
-    },
-    {
-      "title": "Stay safe, Gator Nation: Isaias weakens, flooding threat continues",
-      "excerpt": "Hurricane Isaias is bringing life-threatening storm surge and heavy rain to the Gulf Coast. Here is what the National Hurricane Center says and what to do.",
-      "url": "https://www.gatorbaitmedia.com/post/stay-safe-gator-nation-hurricane-isaias",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T03:06:37Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Stay safe, Gator Nation: Hurricane Isaias"
       }
     }
   ]

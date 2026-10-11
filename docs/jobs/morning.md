@@ -27,9 +27,7 @@ Old routine: `trig_01RULitPE99Ch2fcEYhxjSrj` (Morning news sweep (every day))
 
 Morning news sweep. Brenden, Sept. 28: "Why don't we look at the news the first thing in the morning… we are the news… do that for everything in the morning… all the time." It runs every day, game day or not.
 
-Follow automation/ops-hub/playbooks/morning-news-sweep.md. Until PR #37 merges, read it with git show origin/claude/tender-wozniak-rmp60e:automation/ops-hub/playbooks/morning-news-sweep.md
-
-The short version:
+The playbook file never merged to main and is not needed; this is the whole procedure:
 1. **Know what we have.** List Wix Blog posts from the last 48 hours, plus open drafts, and the holds in #34.
 2. **Sweep** every Gators sport, recruiting, and SEC news with a Florida angle, since the last sweep. Stop at about 15 fetches.
    - ESPN team news JSON through TinyFish fetch_content: football at https://site.api.espn.com/apis/site/v2/sports/football/college-football/news?team=57&limit=15, men's basketball at the same path with basketball/mens-college-basketball, and other sports when in season.

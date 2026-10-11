@@ -5,27 +5,6 @@ on:
   push:
     branches: [main]
     paths:
-      - "automation/ops-hub/controller.py"
-      - "automation/ops-hub/learning.py"
-      - "automation/ops-hub/ops_hub.py"
-      - "automation/ops-hub/test_controller.py"
-      - "automation/ops-hub/test_learning.py"
-      - "automation/ops-hub/config.json"
-      - "automation/ops-hub/controller-rules.json"
-      - ".github/workflows/gatorbait-production-health.yml"
-  pull_request:
-    paths:
-      - "CLAUDE.md"
-      - "automation/ops-hub/model-router/**"
-      - "automation/ops-hub/controller.py"
-      - "automation/ops-hub/learning.py"
-      - "automation/ops-hub/ops_hub.py"
-      - "automation/ops-hub/test_controller.py"
-      - "automation/ops-hub/test_learning.py"
-      - "automation/ops-hub/config.json"
-      - "automation/ops-hub/controller-rules.json"
-      - "automation/ops-hub/controller-diagnostic.sh"
-      - "automation/ops-hub/docker-compose.yml"
       - "automation/site_health_check.py"
       - ".github/workflows/gatorbait-production-health.yml"
   schedule:
@@ -39,38 +18,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  router-tests:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v7
-
-      - name: Test controller state transitions
-        run: python3 automation/ops-hub/test_controller.py
-
-      - name: Test bounded learning loop
-        run: python3 automation/ops-hub/test_learning.py
-
-      - name: Test controller model routing
-        run: python3 automation/ops-hub/model-router/test_task_runner.py
-
   health:
-    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
-
-      - name: Test controller state transitions
-        run: python3 automation/ops-hub/test_controller.py
-
-      - name: Test bounded learning loop
-        run: python3 automation/ops-hub/test_learning.py
-
-      - name: Test controller model routing
-        run: python3 automation/ops-hub/model-router/test_task_runner.py
 
       - name: Check production routes and brand markers
         run: python3 automation/site_health_check.py

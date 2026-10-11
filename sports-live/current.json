@@ -1,5 +1,5 @@
 {
-  "commit": "12763c5335ff389264e158e7c572f7c62826ef9d",
-  "updated": "2026-10-11T00:10:00Z",
-  "note": "Buddy Martin GAMECLOCKED pinned as lead; UAA photo credited (PR #228). Rollback: set commit to 5aca9405fc29668929c0c2682d0d86ad4efcfe0b."
+  "commit": "b7c4aacb44d6c49fd1925d7403b24db282b9e8f8",
+  "updated": "2026-10-11T00:45:00Z",
+  "note": "UAA game photo credited on Buddy lead (PR #230). Rollback: set commit to 12763c5335ff389264e158e7c572f7c62826ef9d."
 }

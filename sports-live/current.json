@@ -1,5 +1,5 @@
 {
-  "commit": "e7abc9a07ed81b37d3cd592fdaa1c4926b60205b",
-  "updated": "2026-10-11T13:15:00Z",
-  "note": "Snapshot with Buddy's full-color Sumrall cover (PR #243). Rollback: set commit to c5fa9db88022a59e6a7962e6c12f7e66da8b85d0."
+  "commit": "996088fa6ea42449619c28aab1e8d6b8e25ce664",
+  "updated": "2026-10-11T14:05:00Z",
+  "note": "SC postgame magazine card; members-only posts hidden from public lists (PR #250). Rollback: set commit to e7abc9a07ed81b37d3cd592fdaa1c4926b60205b."
 }

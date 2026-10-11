@@ -30,6 +30,8 @@ Retired prompts remain in git history. Their breaking-email instructions, writer
 13. Read back the changed post and verify its public URL, byline, media, formatting and links. Check the actual destination before claiming publication. Record canonical URL, change, verification, rollback and unresolved flags in #34; advance private receipts only after the outcome is known.
 14. Repo changes use a bounded current-main branch. Do not push into the old `fix-native-flash-20260926` draft. New failure modes become one concise lesson/job correction through controller review. If nothing changed, stay silent.
 
-## Lessons added Oct. 11 (LESSONS 78-84)
+## Lessons added Oct. 11 (LESSONS 85-91)
 
-After any publish or cover change: run refresh-newsroom-feed, rebuild the front page snapshot and deploy by pointer PR (Lesson 80). Lead a column with a timed pin, not breaking (Lesson 79). Use distinct credited covers, Chris Spears' folder first (Lesson 81). Embed clips as native players (Lesson 82). After each game patch the Up next box in embed 14a887e3 (Lesson 84). If an approval stalls a publish, tell Brenden at once (Lesson 78).
+After any publish or cover change: run refresh-newsroom-feed, rebuild the front page snapshot and deploy by pointer PR (Lesson 87). Lead a column with a timed pin, not breaking (Lesson 86). Use distinct credited covers, Chris Spears' folder first (Lesson 88). Embed clips as native players (Lesson 89). After each game patch the Up next box in embed 14a887e3 (Lesson 91). If an approval stalls a publish, tell Brenden at once (Lesson 85).
+
+Magazine and watches (Oct. 11): read the live embed before any deploy plan (Lesson 92); one reminder chain per job (Lesson 93); use Firecrawl when TinyFish is empty (Lesson 94); postgame magazine recipe and poll-ranking hold (Lesson 95).

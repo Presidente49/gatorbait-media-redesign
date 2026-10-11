@@ -105,10 +105,14 @@ One line per lesson, grouped by subject. `LESSONS.md` is the evidence (what happ
 
 ## Newsroom and front page (added Oct. 11, 2026)
 
-- Lesson 78 (Oct. 11, 2026): A pending approval stalls the desk; tell Brenden in one line at once, prep read-only, and batch the writes so one approval covers a story.
-- Lesson 79 (Oct. 11, 2026): Column and feature leads use `pins.timed` with an `until`; `breaking` is for real breaking news only; check the rendered kicker.
-- Lesson 80 (Oct. 11, 2026): The phone reads a bundled snapshot; after story or cover changes run refresh-newsroom-feed, rebuild the front page, merge, then deploy by pointer PR and verify with a cache-busting URL.
-- Lesson 81 (Oct. 11, 2026): Covers are distinct, credited real photos (staff photographer folder in Wix Media first); build a gallery post for a photographer's set; school photos only with credit and approval.
-- Lesson 82 (Oct. 11, 2026): Embed press-conference clips as native YouTube/Facebook video nodes in the matching story; never download or re-upload video.
-- Lesson 83 (Oct. 11, 2026): If a Gmail .docx base64 is corrupted, fetch RAW and parse the zip by hand; keep the writer's voice; copy categories and tags from the writer's earlier posts.
-- Lesson 84 (Oct. 11, 2026): The story-page Up next box is the `NEXT` string in embed `14a887e3`; patch it in place after every game and recheck the opponent's ranking after the Sunday poll.
+- Lesson 85 (Oct. 11, 2026): A pending approval stalls the desk; tell Brenden in one line at once, prep read-only, and batch the writes so one approval covers a story.
+- Lesson 86 (Oct. 11, 2026): Column and feature leads use `pins.timed` with an `until`; `breaking` is for real breaking news only; check the rendered kicker.
+- Lesson 87 (Oct. 11, 2026): The phone reads a bundled snapshot; after story or cover changes run refresh-newsroom-feed, rebuild the front page, merge, then deploy by pointer PR and verify with a cache-busting URL.
+- Lesson 88 (Oct. 11, 2026): Covers are distinct, credited real photos (staff photographer folder in Wix Media first); build a gallery post for a photographer's set; school photos only with credit and approval.
+- Lesson 89 (Oct. 11, 2026): Embed press-conference clips as native YouTube/Facebook video nodes in the matching story; never download or re-upload video.
+- Lesson 90 (Oct. 11, 2026): If a Gmail .docx base64 is corrupted, fetch RAW and parse the zip by hand; keep the writer's voice; copy categories and tags from the writer's earlier posts.
+- Lesson 91 (Oct. 11, 2026): The story-page Up next box is the `NEXT` string in embed `14a887e3`; patch it in place after every game and recheck the opponent's ranking after the Sunday poll.
+- Lesson 92 (Oct. 11, 2026): GET the live embed before planning a deploy; the Magazine embed was rev 87, not the README's rev 73. Save the live HTML as the rollback and build from it.
+- Lesson 93 (Oct. 11, 2026): One chain per recurring `send_later` job; check for an existing reminder before re-arming.
+- Lesson 94 (Oct. 11, 2026): If the TinyFish wallet is empty, read ESPN, AP and polls through Firecrawl (`maxAge: 0`); tell Brenden once, never top up.
+- Lesson 95 (Oct. 11, 2026): Postgame magazine recipe: ESPN-only JSON, build and QA, merge sha pin on `1dd74333`, separate email MJML with gates; set poll rankings in one field after the polls and hold go-live until then.

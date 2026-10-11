@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?",
+      "excerpt": "Buddy Martin on a South Carolina collapse that raises the hard question about Jon Sumrall and a season suddenly at risk.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-11T16:27:39Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_46d2d14e73354d91b7f848e45cceabb5~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?"
+      }
+    },
+    {
+      "title": "From the Sideline: Chris Spears on the 500th Game in The Swamp",
+      "excerpt": "Chris Spears on the view from the sideline for the 500th game in The Swamp, from the runout to Bailey Stockton's touchdown.",
+      "url": "https://www.gatorbaitmedia.com/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
+      "author": "Chris Spears",
+      "firstPublishedDate": "2026-10-11T16:22:47Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_79987fbda38743d9842a0ba355b3e83a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for From the Sideline: Chris Spears on the 500th Game in The Swamp"
+      }
+    },
+    {
       "title": "Members: Download the Postgame Magazine PDF",
       "excerpt": "Members can download the full 22-page postgame edition of GatorBait Magazine: Buddy Martin, Franz Beard, Chris Spears' best shots and a look ahead to Texas.",
       "url": "https://www.gatorbaitmedia.com/post/members-download-the-postgame-magazine-pdf",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Are The Gators Being Seduced? No. 9? Don’t Go Sweet-Talking Us Again!"
-      }
-    },
-    {
-      "title": "Golden unloads on the NCAA",
-      "excerpt": "Todd Golden took aim at the NCAA over fifth-year eligibility Friday, backing Denzel Aberdeen's injunction and updating the Gators' scrimmage against North Florida.",
-      "url": "https://www.gatorbaitmedia.com/post/golden-unloads-on-the-ncaa",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-10T13:26:57Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_1aaab5f1494140eda1966e0bca7e28cf~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Golden unloads on the NCAA"
-      }
-    },
-    {
-      "title": "Hit the Reset Button: Gators, Gamecocks Meet at Different Crossroads",
-      "excerpt": "Loren Meadows breaks down South Carolina's offense and defense, the key matchups and his pick for Homecoming: Florida 31, South Carolina 24.",
-      "url": "https://www.gatorbaitmedia.com/post/hit-the-reset-button-gators-gamecocks-meet-at-different-crossroads",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-10-10T12:59:26Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_cac5a84a16b145b5bb20bb3575b5bb0d~mv2.jpg/v1/fit/w_1000,h_590,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Hit the Reset Button: Gators, Gamecocks Meet at Different Crossroads"
       }
     }
   ]

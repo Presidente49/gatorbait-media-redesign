@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?",
+      "excerpt": "Buddy Martin on a South Carolina collapse that raises the hard question about Jon Sumrall and a season suddenly at risk.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-11T16:27:39Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_46d2d14e73354d91b7f848e45cceabb5~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?"
+      }
+    },
+    {
+      "title": "From the Sideline: Chris Spears on the 500th Game in The Swamp",
+      "excerpt": "Chris Spears on the view from the sideline for the 500th game in The Swamp, from the runout to Bailey Stockton's touchdown.",
+      "url": "https://www.gatorbaitmedia.com/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
+      "author": "Chris Spears",
+      "firstPublishedDate": "2026-10-11T16:22:47Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_79987fbda38743d9842a0ba355b3e83a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for From the Sideline: Chris Spears on the 500th Game in The Swamp"
+      }
+    },
+    {
       "title": "Members: Download the Postgame Magazine PDF",
       "excerpt": "Members can download the full 22-page postgame edition of GatorBait Magazine: Buddy Martin, Franz Beard, Chris Spears' best shots and a look ahead to Texas.",
       "url": "https://www.gatorbaitmedia.com/post/members-download-the-postgame-magazine-pdf",
@@ -237,34 +265,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Buddy Martin Show: Can the Gators Bounce Back With a Homecoming Win?"
-      }
-    },
-    {
-      "title": "The Soothsayer: Gators will handle adversity and bounce back big",
-      "excerpt": "Franz Beard: Missouri was the punch to the gut. Homecoming against South Carolina is the answer, and the Sayer sees Florida winning by two touchdowns or more. Plus every SEC game.",
-      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-gators-will-handle-adversity-and-bounce-back-big",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-09T12:31:16Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_7a383977d3654820a6b045113df6e38e~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Soothsayer: Gators will handle adversity and bounce back big"
-      }
-    },
-    {
-      "title": "Buddy Martin Show: Florida, South Carolina Both Need a Bounce-Back Saturday",
-      "excerpt": "Two stung teams meet at Homecoming, and Buddy Martin would not pick a winner on Wednesday's show. His takeaways on Sumrall, Faulkner, the Gamecocks and the 500th game in The Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-florida-south-carolina-both-need-a-bounce-back-saturday",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-08T23:07:55Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_20ea89e8813f4960a2ed200838f9dd8e~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Buddy Martin Show: Florida, South Carolina Both Need a Bounce-Back Saturday"
       }
     },
     {

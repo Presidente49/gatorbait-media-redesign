@@ -35,3 +35,14 @@ Retired prompts remain in git history. Their breaking-email instructions, writer
 After any publish or cover change: run refresh-newsroom-feed, rebuild the front page snapshot and deploy by pointer PR (Lesson 87). Lead a column with a timed pin, not breaking (Lesson 86). Use distinct credited covers, Chris Spears' folder first (Lesson 88). Embed clips as native players (Lesson 89). After each game patch the Up next box in embed 14a887e3 (Lesson 91). If an approval stalls a publish, tell Brenden at once (Lesson 85).
 
 Magazine and watches (Oct. 11): read the live embed before any deploy plan (Lesson 92); one reminder chain per job (Lesson 93); use Firecrawl when TinyFish is empty (Lesson 94); postgame magazine recipe and poll-ranking hold (Lesson 95).
+
+## Story alert email (Brenden, Oct. 11: "send an email after you look and make sure the list is OK for every blog")
+
+Brenden's standing yes covers one Gazette-style alert per qualifying story, sent by Jarvis (the Wix blog-alert automations stay INACTIVE; this path does not use them). Recipe, template and checklist: `docs/GAZETTE-STORY-ALERT.md`. For each story just published and verified live:
+
+1. Qualifies when it is a lead story (a Buddy Martin or Franz Beard column, a game or postgame story, or real breaking news). Skip routine or duplicate pieces and anything under copy-desk correction.
+2. `node automation/newsletter/build-story-alert.mjs --url <permalink> ...` (cover must already be a Wix Media Manager URL; fresh news only, never a stale ranking or stat).
+3. Create the Wix campaign DRAFT, preview it (unsubscribe footer and business address must be present), then run `automation/newsletter/send-governor.js` and `story-alert-presend.wix.js` through ExecuteWixAPI. Any failed check means no send; log one line in #34 and move on.
+4. Send only to the dedicated GatorBait Daily News label (SUBSCRIBED, VALID, no hold or Do Not Market labels), never the whole eligible pool `oHon1` (hundreds of its members carry the re-opt-in HOLD label). If that label does not exist yet, hold the alert and tell Brenden once.
+5. Caps are the governor's: one list email per 24 hours and seven a week. A second qualifying story inside the window waits for the next window or is skipped; Brenden changes the caps, not a worker.
+6. Verify delivery from campaign statistics, record campaign id and counts only in #34, keep the daily open and click numbers for the Monday scorecard.

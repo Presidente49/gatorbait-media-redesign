@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-10T23:24:15Z",
+ "updatedAt": "2026-10-11T04:45:05Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -33,17 +33,17 @@
    ]
   },
   "venue": "Ben Hill Griffin Stadium",
-  "recapUrl": null,
+  "recapUrl": "https://www.gatorbaitmedia.com/post/south-carolina-beats-no-16-florida-38-19-spoiling-homecoming-in-the-swamp",
   "galleryUrl": null
  },
  "next": {
   "eventId": "401856724",
   "opponent": "Texas",
   "opponentRank": 1,
-  "opponentRecord": "4-0",
+  "opponentRecord": "4-1",
   "home": false,
   "kickoffIso": "2026-10-17T16:00:00Z",
-  "tv": null,
+  "tv": "ABC",
   "venue": "DKR-Texas Memorial Stadium",
   "previewUrl": null
  },
@@ -136,18 +136,18 @@
     "opp": 38
    },
    "tv": "SEC Network",
-   "storyUrl": null
+   "storyUrl": "https://www.gatorbaitmedia.com/post/south-carolina-beats-no-16-florida-38-19-spoiling-homecoming-in-the-swamp"
   },
   {
    "eventId": "401856724",
    "date": "2026-10-17T16:00:00Z",
    "opponent": "Texas",
    "opponentRank": 1,
-   "opponentRecord": "4-0",
+   "opponentRecord": "4-1",
    "home": false,
    "status": "scheduled",
    "score": null,
-   "tv": null,
+   "tv": "ABC",
    "storyUrl": null
   },
   {
@@ -213,19 +213,19 @@
  ],
  "standings": [
   {
-   "team": "Alabama",
-   "confRecord": "3-0",
-   "overall": "5-0"
-  },
-  {
    "team": "Georgia",
-   "confRecord": "3-0",
-   "overall": "5-0"
+   "confRecord": "4-0",
+   "overall": "6-0"
   },
   {
-   "team": "Texas",
-   "confRecord": "1-0",
-   "overall": "4-0"
+   "team": "Alabama",
+   "confRecord": "3-1",
+   "overall": "5-1"
+  },
+  {
+   "team": "Kentucky",
+   "confRecord": "3-1",
+   "overall": "5-1"
   },
   {
    "team": "Missouri",
@@ -233,9 +233,9 @@
    "overall": "5-1"
   },
   {
-   "team": "Kentucky",
+   "team": "Tennessee",
    "confRecord": "2-1",
-   "overall": "4-1"
+   "overall": "5-1"
   },
   {
    "team": "Mississippi State",
@@ -253,14 +253,19 @@
    "overall": "4-2"
   },
   {
-   "team": "LSU",
+   "team": "Texas",
    "confRecord": "1-1",
    "overall": "4-1"
   },
   {
-   "team": "Tennessee",
+   "team": "Oklahoma",
    "confRecord": "1-1",
-   "overall": "4-1"
+   "overall": "3-2"
+  },
+  {
+   "team": "LSU",
+   "confRecord": "1-2",
+   "overall": "4-2"
   },
   {
    "team": "Auburn",
@@ -278,19 +283,14 @@
    "overall": "3-3"
   },
   {
-   "team": "Oklahoma",
-   "confRecord": "0-1",
-   "overall": "2-2"
-  },
-  {
    "team": "Vanderbilt",
    "confRecord": "0-3",
    "overall": "3-3"
   },
   {
    "team": "Arkansas",
-   "confRecord": "0-2",
-   "overall": "2-3"
+   "confRecord": "0-3",
+   "overall": "2-4"
   }
  ],
  "live": null

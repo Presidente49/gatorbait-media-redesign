@@ -1,57 +1,56 @@
 {
-  "$comment": "Missouri postgame edition only. Franz Beard response column is the cover. Package below is strict postgame chronology newest-first; halftime and in-game material excluded.",
-  "id": "2026-10-04-postgame-missouri",
+  "$comment": "South Carolina postgame edition (Oct. 10, 2026). Buddy Martin GAMECLOCKED column is the cover per Brenden's standing order of Oct. 11. Package is postgame chronology newest-first; halftime and live-update posts excluded. No report-card section: GatorBait published none for this game. Every stat is from the ESPN summary for event 401856714; per-game baselines are from ESPN events 401856637, 401856672, 401856687, 401856699. Rankings are as of kickoff. Edit the Texas ranking in ONE place: texas.ranking (Florida's own No. 16 is final.teams[1].rank). Texas data: ESPN events 401856717 (Oklahoma game), 401856667, 401856682, 401856693, 401856704.",
+  "id": "2026-10-11-postgame-south-carolina",
   "layout": "postgame",
   "issue": {
     "number": "Postgame edition",
-    "date": "Sunday, October 4, 2026",
-    "week": "Week 5 · Florida at Missouri",
+    "date": "Sunday, October 11, 2026",
+    "week": "Week 6 · South Carolina at Florida",
     "home": "GatorBait Media",
-    "pageTitle": "GatorBait Magazine | Postgame: Missouri 45, Florida 17"
+    "pageTitle": "GatorBait Magazine | Postgame: South Carolina 38, Florida 19"
   },
   "cover": {
-    "kicker": "Cover story · Franz Beard",
-    "headline": "The loss to Mizzou is history; the question is how will the Gators respond?",
-    "dek": "Jon Sumrall warned Florida that its flaws would eventually be exposed. Columbia was that day. Now the response matters.",
-    "byline": "By Franz Beard",
-    "cta": "Read Franz’s column",
-    "url": "/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
+    "kicker": "Cover story · Buddy Martin",
+    "headline": "GAMECLOCKED! No. 500 Was a Lousy Homecoming In The Swamp",
+    "dek": "A lousy Homecoming for the 500th game in The Swamp, and why Buddy is still hanging on with Jon Sumrall.",
+    "byline": "By Buddy Martin",
+    "cta": "Read Buddy's column",
+    "url": "/post/gameclocked-no-500-was-a-lousy-homecoming-in-the-swamp",
     "image": {
-      "id": "16b519_be903de5f60d4510963f83dce1b90109",
+      "id": "16b519_7070e1a767404cc999ce9808b0d13780",
       "ext": "jpg",
-      "width": 1600,
-      "height": 900,
-      "alt": "Featured image for Franz Beard’s Missouri response column",
-      "credit": "GatorBait Media"
+      "width": 3000,
+      "height": 1818,
+      "alt": "A Florida coach in a blue Gators cap and hoodie in a color-splash photo, with the crowd behind him in black and white",
+      "credit": "Photo by Chris Spears, GatorBait Media"
     },
     "linesLabel": "Also inside",
     "lines": [
-      "Buddy Martin: Where does Florida go from here?",
-      "The damage: 560 yards to 325",
-      "Report card: three Fs",
-      "Sumrall: “Starts with me”",
-      "Final: Missouri 45, Florida 17"
+      "Franz Beard: Can the season be salvaged?",
+      "The damage: 3 turnovers to 0",
+      "Sumrall: \"It starts with me\"",
+      "Photos: Chris Spears' best shots",
+      "Final: South Carolina 38, Florida 19"
     ]
   },
   "final": {
     "label": "Final",
     "teams": [
       {
-        "rank": "No. 25",
-        "name": "Missouri",
-        "score": 45,
+        "name": "South Carolina",
+        "score": 38,
         "won": true
       },
       {
-        "rank": "No. 8",
+        "rank": "No. 16",
         "name": "Florida",
-        "score": 17
+        "score": 19
       }
     ],
     "meta": [
-      "Saturday, Oct. 3",
-      "Faurot Field, Columbia, Mo.",
-      "Florida is 4-1, 2-1 SEC"
+      "Saturday, Oct. 10",
+      "Ben Hill Griffin Stadium, Gainesville",
+      "Florida is 4-2, 2-2 SEC"
     ]
   },
   "contents": {
@@ -66,16 +65,16 @@
         "label": "Game flow"
       },
       {
-        "id": "grades",
-        "label": "Report card"
-      },
-      {
         "id": "quotes",
         "label": "In their words"
       },
       {
         "id": "package",
         "label": "The package"
+      },
+      {
+        "id": "texas",
+        "label": "Look ahead to Texas"
       },
       {
         "id": "next",
@@ -86,75 +85,76 @@
   "damage": {
     "kicker": "By the numbers",
     "title": "The damage",
-    "dek": "Florida came in scoring 53.5 points and gaining 532.8 yards a game. Missouri held the Gators to 17 and 325, and ran for 220 of its own.",
+    "dek": "Florida came in scoring 53.5 points and gaining 532.8 yards a game. The yardage was nearly even Saturday. The gap was turnovers, third downs and LaNorris Sellers.",
     "yards": {
       "label": "Total yards",
       "rows": [
         {
-          "name": "Missouri",
-          "value": 560
+          "name": "South Carolina",
+          "value": 393
         },
         {
           "name": "Florida",
-          "value": 325,
+          "value": 387,
           "us": true
         }
       ]
     },
     "stats": [
       {
-        "value": "42",
-        "label": "Florida rushing yards",
-        "detail": "25 carries, 1.7 a carry"
+        "value": "3",
+        "label": "Florida turnovers",
+        "detail": "2 interceptions, 1 fumble lost. South Carolina had none"
       },
       {
-        "value": "211",
-        "label": "Jamal Roberts rushing yards",
-        "detail": "24 carries, 3 touchdowns"
+        "value": "10 of 16",
+        "label": "South Carolina on third down",
+        "detail": "Florida was 6 of 13"
       },
       {
-        "value": "340",
-        "label": "Austin Simmons passing yards",
-        "detail": "23 of 30, 2 touchdowns"
+        "value": "4",
+        "label": "Sellers touchdown passes",
+        "detail": "23 of 35, 279 yards, no interceptions"
       },
       {
-        "value": "35",
-        "label": "Straight Missouri points",
-        "detail": "After a 10-10 tie"
+        "value": "127",
+        "label": "Bailey Stockton receiving yards",
+        "detail": "8 catches, a 59-yard touchdown"
       },
       {
-        "value": "13",
+        "value": "59",
         "label": "Jadan Baugh rushing yards",
-        "detail": "12 carries"
+        "detail": "15 carries, 1 touchdown"
+      },
+      {
+        "value": "21-9",
+        "label": "Second-half score",
+        "detail": "South Carolina led 17-10 at the half"
       }
     ],
     "compare": {
       "label": "Coming in vs. Saturday",
       "beforeLabel": "Per game, first four",
-      "afterLabel": "At Missouri",
+      "afterLabel": "vs. South Carolina",
       "rows": [
         {
           "label": "Points",
           "before": "53.5",
-          "after": "17"
+          "after": "19"
         },
         {
           "label": "Total yards",
           "before": "532.8",
-          "after": "325"
+          "after": "387"
         }
       ]
-    },
-    "more": {
-      "label": "By the Numbers: the full breakdown",
-      "url": "/post/by-the-numbers-how-missouri-flipped-florida-s-script"
     },
     "source": "Box score: ESPN."
   },
   "flow": {
     "kicker": "Game flow",
-    "title": "How the win slipped away",
-    "dek": "Florida’s chance to win, play by play. The Gators peaked at 80% in the first quarter and were level at 10-10 late in the second. Missouri scored the next 35.",
+    "title": "How the game turned",
+    "dek": "Florida's chance to win, play by play. The Gators peaked at 85% in the first quarter and were level at 10-10 late in the second. South Carolina outscored them 28-9 the rest of the way.",
     "axis": [
       "100%",
       "50%",
@@ -167,442 +167,328 @@
       "Q4"
     ],
     "quarterStarts": [
-      1,
-      44,
-      90,
-      129
+      0,
+      49,
+      97,
+      139
     ],
     "points": [
-      70.1,
-      71.4,
-      72.2,
-      73.3,
-      72.3,
-      70.5,
-      75.7,
-      73.8,
-      75.1,
-      77.1,
-      78.5,
-      77.3,
-      77.3,
-      80,
-      79.4,
-      78.1,
-      73.7,
-      73.8,
-      73.7,
-      73.4,
-      72.7,
+      73,
       72,
-      70.7,
-      71.8,
-      70.1,
-      69.2,
-      65.2,
-      65.5,
-      67.4,
-      70.7,
-      69.7,
-      69.9,
-      71.5,
-      70.5,
+      73,
+      73,
+      75,
+      75,
+      74,
+      74,
+      72,
+      72,
+      72,
+      74,
+      75,
+      75,
+      74,
+      74,
+      84,
+      83,
+      83,
+      84,
+      82,
+      84,
+      85,
+      84,
+      81,
+      81,
+      80,
+      81,
+      80,
+      83,
+      85,
+      85,
+      83,
+      83,
+      82,
+      82,
+      83,
+      84,
+      81,
+      82,
+      82,
+      79,
+      77,
+      78,
+      79,
+      72,
+      72,
+      73,
+      73,
+      72,
+      70,
+      73,
+      72,
+      70,
+      75,
+      75,
+      78,
+      78,
+      80,
+      80,
+      79,
+      75,
+      75,
+      75,
+      75,
+      72,
       69,
-      66.8,
-      68.1,
-      66,
-      67.4,
-      68.9,
-      70.7,
-      71.1,
-      70.3,
-      70.3,
-      67.1,
-      65.8,
-      66.3,
-      64.6,
-      66.3,
-      65.4,
-      62.8,
-      63.2,
-      61.1,
-      48.5,
-      47.9,
-      47.2,
-      47.4,
+      69,
+      68,
+      67,
+      68,
+      72,
+      72,
+      70,
+      69,
+      69,
+      68,
+      59,
+      59,
+      62,
+      54,
+      56,
+      46,
+      44,
+      46,
+      45,
       43,
-      37.2,
-      37.9,
-      39.6,
-      43.4,
-      47.6,
-      47.1,
-      50.9,
-      52.8,
-      56.8,
-      55.4,
-      55.8,
-      63.5,
-      64.3,
-      63,
-      62.2,
-      56.6,
-      57.5,
-      42.8,
-      43.1,
-      42.5,
-      41.2,
-      39.3,
-      39.2,
-      41,
+      44,
+      44,
+      44,
+      46,
+      48,
+      48,
+      50,
+      50,
+      44,
       40,
-      41.2,
-      40.7,
-      40.7,
-      39,
-      37,
-      37.1,
-      33.9,
-      28.2,
-      29.4,
-      31.1,
+      45,
+      44,
+      45,
+      47,
+      47,
+      53,
+      51,
+      51,
+      43,
+      50,
+      48,
+      48,
+      48,
+      45,
+      49,
+      51,
+      38,
+      26,
+      25,
+      26,
+      24,
+      19,
+      26,
+      24,
       22,
-      23.2,
-      14.7,
-      12.1,
-      11.5,
-      9.7,
-      8.8,
-      12.7,
-      11.6,
-      10.5,
-      9.2,
-      7.4,
-      7.9,
-      8.8,
-      8.2,
-      5.4,
-      5.5,
-      6,
+      16,
+      16,
+      18,
+      17,
+      14,
+      12,
+      10,
+      9,
+      8,
       5,
-      4.1,
-      4.1,
-      4.5,
       6,
-      3.3,
-      3.6,
       4,
-      3.7,
-      4.6,
-      3.7,
-      2.4,
-      1.6,
-      1.6,
-      2.1,
-      0.3,
-      0.3,
-      0.3,
-      0.1,
-      0.2,
-      0.2,
-      0.2,
-      0.2,
-      0.1,
-      0.1,
-      0.1,
-      0.2,
-      0.2,
-      0.2,
-      0.2,
-      0.2,
-      0.2,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
-      0.1,
+      4,
+      4,
+      4,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5,
+      6,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
       0,
-      0.1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
       0,
       0
     ],
     "marks": [
       {
-        "i": 13,
-        "title": "80%",
-        "note": "Florida’s high point, 9:52 left in the first quarter"
+        "i": 30,
+        "title": "85%",
+        "note": "Florida's high point, 6:00 left in the first quarter"
       },
       {
-        "i": 69,
+        "i": 73,
         "title": "10-10",
-        "note": "Philo to Wilson ties it with 4:26 left in the half"
+        "note": "South Carolina's Orsan kicks a 37-yard field goal with 4:09 left in the half"
       },
       {
-        "i": 75,
+        "i": 82,
         "title": "17-10",
-        "note": "Simmons to Goodie Sr.; Missouri leads the rest of the way"
+        "note": "Sellers to Bennett with 1:47 left in the half; Florida falls to 46%"
       },
       {
-        "i": 136,
-        "title": "45-10",
-        "note": "Roberts goes 80 yards with 13:33 to play"
+        "i": 133,
+        "title": "31-13",
+        "note": "Sellers runs it in from the 1 with 1:08 left in the third; Florida is at 4%"
       }
     ],
-    "summary": "Line chart of Florida’s win probability against Missouri. It starts near 70%, peaks at 80% in the first quarter, dips below 50% in the second, climbs back to 64% at 10-10, falls to about 12% early in the third quarter and sits near zero through the fourth.",
-    "source": "Win probability: ESPN. GatorBait Media graphic.",
-    "more": {
-      "label": "Drink Mix: how Missouri’s blueprint bottled up the Gators",
-      "url": "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators"
-    }
-  },
-  "grades": {
-    "kicker": "Report card",
-    "title": "Red ink in Columbia",
-    "dek": "Three Fs, and only one grade above a C.",
-    "items": [
-      {
-        "unit": "Quarterbacks",
-        "grade": "C-"
-      },
-      {
-        "unit": "Running backs",
-        "grade": "D",
-        "note": "Baugh: 12 carries, 13 yards"
-      },
-      {
-        "unit": "Offensive line",
-        "grade": "F",
-        "note": "42 rushing yards on 25 carries"
-      },
-      {
-        "unit": "Receivers and tight ends",
-        "grade": "B-"
-      },
-      {
-        "unit": "Defensive line",
-        "grade": "F",
-        "note": "Roberts ran for 211"
-      },
-      {
-        "unit": "Linebackers",
-        "grade": "D-",
-        "note": "Missouri ran for 220"
-      },
-      {
-        "unit": "Secondary",
-        "grade": "F",
-        "note": "Simmons: 23 of 30, 340 yards"
-      },
-      {
-        "unit": "Special teams",
-        "grade": "C"
-      },
-      {
-        "unit": "Coaching",
-        "grade": "D",
-        "note": "“Starts with the coaching, starts with me.”"
-      }
-    ],
-    "more": {
-      "label": "Every grade, with the reasons",
-      "url": "/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri"
-    }
+    "summary": "Line chart of Florida's win probability against South Carolina. It starts near 73%, peaks at 85% in the first quarter, holds near 70% at 10-10, falls to about 46% when South Carolina goes up 17-10 before halftime, drops to 4% by 31-13 late in the third quarter and sits near zero through the fourth.",
+    "source": "Win probability: ESPN. GatorBait Media graphic."
   },
   "quotes": {
     "kicker": "In their words",
-    "title": "Nobody ducked it",
+    "title": "Player thing, or coach thing?",
     "items": [
       {
-        "text": "Embarrassing performance in every phase. Starts with the coaching, starts with me.",
+        "text": "I'm frustrated with every part of what we did today. It starts with me.",
         "who": "Jon Sumrall",
         "role": "Florida coach, postgame news conference",
-        "url": "/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
-        "link": "Sumrall owns it"
+        "url": "/post/it-s-a-player-thing-stockton-sumrall-and-chiles-after-south-carolina-loss",
+        "link": "All the postgame quotes"
       },
       {
-        "text": "I take full accountability. I didn’t play my best game at all. Nobody did.",
-        "who": "Myles Graham",
-        "role": "Florida, to the Orlando Sentinel"
+        "text": "I think it's a player thing right now. I don't think it has anything to do with the coaches.",
+        "who": "Bailey Stockton",
+        "role": "Florida receiver, postgame"
       },
       {
-        "text": "…tough teams stop the run, run the ball, and cover kicks.",
-        "who": "Eli Drinkwitz",
-        "role": "Missouri coach, postgame news conference"
+        "text": "We've lost two games, man. I don't believe it's the end of the world.",
+        "who": "Aaron Chiles",
+        "role": "Florida linebacker, postgame"
       }
     ]
   },
   "package": {
     "kicker": "Read the package",
-    "title": "9 postgame stories and graphics from Columbia",
-    "dek": "The complete Missouri postgame package, newest first after the Franz Beard cover, with Eddie Gilley’s column closing the edition. No halftime or in-game material.",
+    "title": "4 more postgame stories from The Swamp",
+    "dek": "Newest first after the Buddy Martin cover. No halftime or in-game material.",
     "items": [
       {
         "rubric": "Sunday column",
-        "author": "Buddy Martin",
-        "title": "Gator Football: Where Does It Go From Here? I’m Glad You Asked!",
-        "dek": "What happened in Columbia was worse than a speed bump. Buddy asks who betrayed whom — and where Florida goes from here.",
-        "url": "/post/buddy-blog-gator-football-where-does-it-go-from-here-i-m-glad-you-asked",
+        "author": "Franz Beard",
+        "title": "After a second sobering loss, can Florida's season still be salvaged?",
+        "dek": "A lost line of scrimmage, a quarterback question for Austin and a defense that keeps throwing things at the wall.",
+        "url": "/post/after-a-second-sobering-loss-can-florida-s-season-still-be-salvaged",
         "image": {
-          "id": "ae876a_4b6b8c0bb3d34bb6ba1d62a4ac109159",
-          "ext": "jpeg",
-          "width": 1600,
-          "height": 900,
-          "alt": "Featured image for Buddy Martin’s post-Missouri column",
-          "credit": "GatorBait Media"
-        }
-      },
-      {
-        "rubric": "Drink Mix",
-        "author": "Brenden Martin",
-        "title": "How Missouri’s blueprint bottled up the Gators",
-        "dek": "Eli Drinkwitz spent all week saying tough teams stop the run. Missouri did it Saturday.",
-        "read": "3 min read",
-        "url": "/post/drink-mix-how-missouri-s-blueprint-bottled-up-the-gators",
-        "image": {
-          "id": "d3cfa5_940418a6e0a7432882f19b4620d77d81",
+          "id": "16b519_6c0bd115c2c849bca004f49afa7ae417",
           "ext": "jpg",
-          "width": 1600,
-          "height": 900,
-          "alt": "Drink Mix: Missouri’s blueprint bottled up Florida",
-          "credit": "GatorBait Media graphic"
+          "width": 3000,
+          "height": 1887,
+          "alt": "Florida's offensive line works against the South Carolina front at Ben Hill Griffin Stadium on Oct. 10",
+          "credit": "Photo by Chris Spears, GatorBait Media"
         }
       },
       {
-        "rubric": "By the Numbers",
-        "author": "Brenden Martin",
-        "title": "How Missouri flipped Florida’s script",
-        "dek": "Florida had been scoring 53.5 points and gaining 532.8 yards a game. The numbers show where it went wrong.",
-        "read": "3 min read",
-        "url": "/post/by-the-numbers-how-missouri-flipped-florida-s-script",
+        "rubric": "Photo gallery",
+        "author": "Chris Spears",
+        "title": "Chris Spears' Best Shots: South Carolina 38, Florida 19",
+        "dek": "36 photos from the sideline for the 500th game in The Swamp: the runout, Bailey Stockton's 59-yard touchdown and Jon Sumrall.",
+        "url": "/post/chris-spears-best-shots-south-carolina-38-florida-19",
         "image": {
-          "id": "16b519_ca805b099f49450bb75c33404d8e4b1b",
+          "id": "16b519_60244446a0b246dbbeae06a0cbb1e3c2",
+          "ext": "jpg",
+          "width": 3000,
+          "height": 1780,
+          "alt": "Bailey Stockton (3) races toward the end zone on his 59-yard touchdown catch against South Carolina on Oct. 10",
+          "credit": "Photo by Chris Spears, GatorBait Media"
+        }
+      },
+      {
+        "rubric": "Postgame quotes",
+        "author": "Brenden Martin",
+        "title": "'It's a player thing': Stockton, Sumrall and Chiles after South Carolina loss",
+        "dek": "Plus injury notes on Vernell Brown III, Duke Clark and Myles Graham.",
+        "url": "/post/it-s-a-player-thing-stockton-sumrall-and-chiles-after-south-carolina-loss",
+        "image": {
+          "id": "16b519_f3887acb4f9143ffb025594e2a77d2f8",
+          "ext": "jpg",
+          "width": 3000,
+          "height": 1687,
+          "alt": "Florida coach Jon Sumrall talks with an official during the South Carolina game on Oct. 10",
+          "credit": "Photo by Chris Spears, GatorBait Media"
+        }
+      },
+      {
+        "rubric": "Game story",
+        "author": "Brenden Martin",
+        "title": "South Carolina beats No. 16 Florida 38-19, spoiling Homecoming in The Swamp",
+        "dek": "LaNorris Sellers threw four touchdown passes as No. 16 Florida lost for the second straight week.",
+        "url": "/post/south-carolina-beats-no-16-florida-38-19-spoiling-homecoming-in-the-swamp",
+        "image": {
+          "id": "16b519_52b8b66e04c246818b4852083be192be",
           "ext": "jpg",
           "width": 3000,
           "height": 2000,
-          "alt": "Florida Gators against Ole Miss at Ben Hill Griffin Stadium, Sept. 26, 2026",
-          "credit": "File photo by Chris Spears, GatorBait Media"
+          "alt": "Florida receiver Bailey Stockton (3) reaches the end zone on his 59-yard touchdown catch against South Carolina on Oct. 10",
+          "credit": "Photo by Chris Spears, GatorBait Media"
         }
-      },
-      {
-        "rubric": "Report card",
-        "author": "Brenden Martin",
-        "title": "Red ink in Columbia: Grading every Gator unit after Missouri",
-        "dek": "Florida ran for 42 yards and gave up 340 through the air, and few position groups escaped the red pen.",
-        "read": "4 min read",
-        "url": "/post/red-ink-in-columbia-grading-every-gator-unit-after-missouri",
-        "image": {
-          "id": "16b519_fb9b6535ba3046ab86e7d0d05b6579bc",
-          "ext": "jpg",
-          "width": 3000,
-          "height": 2000,
-          "alt": "Florida Gators against Ole Miss at Ben Hill Griffin Stadium, Sept. 26, 2026",
-          "credit": "File photo by Chris Spears, GatorBait Media"
-        }
-      },
-      {
-        "rubric": "The coach",
-        "author": "Brenden Martin",
-        "title": "‘We earned the loss’: Sumrall owns the mauling in Columbia",
-        "dek": "Jon Sumrall said Missouri deserved it after a 45-17 rout ended Florida’s unbeaten start. The numbers, who was missing and what comes next.",
-        "read": "3 min read",
-        "url": "/post/we-earned-the-loss-sumrall-owns-the-mauling-in-columbia",
-        "image": {
-          "id": "d3cfa5_fb8dcc167ff64b5c90cc1b6904390bf7",
-          "ext": "jpg",
-          "width": 1600,
-          "height": 900,
-          "alt": "Jon Sumrall quote card: We earned the loss. Missouri 45, Florida 17.",
-          "credit": "GatorBait Media graphic"
-        }
-      },
-      {
-        "rubric": "Cover story",
-        "author": "Buddy Martin",
-        "title": "Hey Missouri, don’t show me anymore!",
-        "dek": "The Tigers did not just beat Florida. They drove over it, backed up and drove over it again.",
-        "read": "6 min read",
-        "url": "/post/hey-missouri-don-t-show-me-anymore",
-        "lead": true
-      },
-      {
-        "rubric": "Reality Check",
-        "author": "Brenden Martin",
-        "title": "What Florida’s first loss exposed, and the road ahead",
-        "dek": "Missouri ran for 220 yards and held Florida to 42. With South Carolina, Texas and Georgia next, here is what the loss exposed.",
-        "read": "2 min read",
-        "url": "/post/reality-check-what-florida-s-first-loss-exposed-and-the-road-ahead",
-        "image": {
-          "id": "16b519_d600f2d12282447eb6ceb6bfb0d988f3",
-          "ext": "jpg",
-          "width": 3000,
-          "height": 1910,
-          "alt": "The Florida Gators against Ole Miss, Sept. 26, 2026",
-          "credit": "File photo by Chris Spears, GatorBait Media"
-        }
-      },
-      {
-        "rubric": "Game recap",
-        "author": "Brenden Martin",
-        "title": "Roberts runs away, Missouri routs Florida 45-17",
-        "dek": "Jamal Roberts ran for 211 yards and three touchdowns as No. 25 Missouri scored 35 straight points and handed No. 8 Florida its first loss.",
-        "read": "2 min read",
-        "url": "/post/roberts-runs-away-with-it-no-25-missouri-routs-no-8-florida-45-17",
-        "image": {
-          "id": "d3cfa5_726f3a64929145bf88f702859743c8b9",
-          "ext": "jpg",
-          "width": 1600,
-          "height": 900,
-          "alt": "Final score graphic: Missouri 45, Florida 17",
-          "credit": "GatorBait Media graphic"
-        }
-      },
-      {
-        "rubric": "Sunday column",
-        "author": "Eddie Gilley",
-        "title": "Florida Gave On Saturday",
-        "dek": "Florida was beaten in every phase at Missouri. Eddie Gilley examines what went wrong and what comes next for the Gators.",
-        "read": "3 min read",
-        "url": "/post/florida-gave-on-saturday"
       }
     ]
   },
   "next": {
     "kicker": "Up next",
-    "title": "South Carolina at Florida",
+    "title": "Florida at Texas",
     "meta": [
-      "Saturday, Oct. 10",
-      "Homecoming",
-      "The Swamp, Gainesville",
-      "Kickoff TBA"
+      "Saturday, Oct. 17",
+      "Noon ET · ABC",
+      "DKR-Texas Memorial Stadium, Austin"
     ],
-    "note": "Then Texas in Austin on Oct. 17. Florida has six days to make sure South Carolina can’t do what Missouri did.",
-    "pickem": {
-      "badge": "Coming this week",
-      "title": "GatorBait Pick ’Em",
-      "text": "Call South Carolina at Florida before kickoff. Pick ’Em opens on GatorBait this week."
-    }
+    "note": "Florida (4-2, 2-2 SEC) has six days to answer."
   },
   "reference": {
     "label": "More GatorBait",
@@ -626,5 +512,56 @@
     ],
     "top": "Back to the cover"
   },
-  "asOf": "Score, box score and win probability: ESPN (event 401856708). Quotes: postgame news conferences and the Orlando Sentinel. Eddie Gilley column added Oct. 5, 2026."
+  "asOf": "Score, box score and win probability: ESPN (event 401856714). Quotes: University of Florida postgame transcripts (ASAP Sports). Stories published through Oct. 11, 2026.",
+  "texas": {
+    "kicker": "Look ahead",
+    "title": "Texas lost on a last-second field goal",
+    "ranking": "No. 1 entering Saturday. Ranking updates after Sunday's polls.",
+    "dek": "Oklahoma beat Texas 27-24 in the Red River Rivalry at the Cotton Bowl in Dallas. Texas led 17-7 at the half. Arch Manning's 15-yard touchdown pass tied it 24-24 with 6:32 left, and Tate Sandell kicked a 47-yard field goal as time expired.",
+    "stats": [
+      {
+        "value": "4-1",
+        "label": "Texas record",
+        "detail": "1-1 in the SEC. Oklahoma is 3-2, 1-1"
+      },
+      {
+        "value": "3",
+        "label": "Arch Manning touchdown passes",
+        "detail": "19 of 31, 260 yards, 2 interceptions"
+      },
+      {
+        "value": "110",
+        "label": "Cam Coleman receiving yards",
+        "detail": "5 catches, a 41-yard touchdown"
+      }
+    ],
+    "compare": {
+      "label": "Per game this season",
+      "beforeLabel": "Texas, 5 games",
+      "afterLabel": "Florida, 6 games",
+      "rows": [
+        {
+          "label": "Points scored",
+          "before": "31.4",
+          "after": "41.7"
+        },
+        {
+          "label": "Points allowed",
+          "before": "16.0",
+          "after": "29.0"
+        },
+        {
+          "label": "Yards gained",
+          "before": "379.2",
+          "after": "473.8"
+        },
+        {
+          "label": "Yards allowed",
+          "before": "264.4",
+          "after": "393.0"
+        }
+      ]
+    },
+    "source": "Box scores and schedules: ESPN. Per-game averages are GatorBait Media's, computed from ESPN box scores."
+  }
 }

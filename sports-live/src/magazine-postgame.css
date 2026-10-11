@@ -332,4 +332,8 @@ html #gbm-magazine-page.pm .gbc input[type=email]{color:var(--pm-ink)!important;
 @media(min-width:1000px){#gbm-magazine-page.pm .pm-entrance{padding-top:12px}#gbm-magazine-page.pm .pm-book{transform:rotate(-1deg)}#gbm-magazine-page.pm .pm-readerbar{padding-left:max(24px,calc((100vw - 1132px)/2));padding-right:max(24px,calc((100vw - 1132px)/2))}}
 @media(prefers-reduced-motion:reduce){#gbm-magazine-page.pm .pm-poster{transition:none}}
 @media(max-width:359px){#gbm-magazine-page.pm .pm-readerbar button[data-pm-cover]{display:none}}
+@media(max-width:480px){
+  #gbm-magazine-page.pm .pm-readerbar{flex-wrap:wrap}
+  #gbm-magazine-page.pm section,#gbm-magazine-page.pm nav{scroll-margin-top:128px}
+}
 @media print{#gbm-magazine-page.pm .pm-entrance,#gbm-magazine-page.pm .pm-readerbar,#gbm-magazine-page.pm .pm-print{display:none!important}#gbm-magazine-page.pm .pm-cover{padding-top:20px}}

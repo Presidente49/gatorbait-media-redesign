@@ -13,8 +13,12 @@
       '<p class="pm-coverweek">' + esc(text(I.week, 120)) + '</p><p class="pm-covercredit">' + esc(text(C.image && C.image.credit, 120)) + '</p><span class="pm-open-label">Open this issue <span aria-hidden="true">↗</span></span></div></div>' +
       '<button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Tap the cover. Get the whole picture.</p></section>';
   }
+  function pmPdfLink(D, cls) {
+    var P = obj(D.pdf); if (!P || !safeUrl(P.url) || !text(P.label, 50)) return '';
+    return '<a class="' + cls + '" href="' + esc(safeUrl(P.url)) + '">' + esc(text(P.label, 50)) + '</a>';
+  }
   function pmReaderBar(D) {
-    return '<div class="pm-readerbar"><a class="pm-readerbrand" href="/">Gator<span>Bait</span></a><details class="pm-reader-menu"><summary>Contents</summary>' + pmContents(D).replace('id="pm-contents" tabindex="-1"', '') + '</details><button type="button" data-pm-cover>Cover ↑</button></div>';
+    return '<div class="pm-readerbar"><a class="pm-readerbrand" href="/">Gator<span>Bait</span></a><details class="pm-reader-menu"><summary>Contents</summary>' + pmContents(D).replace('id="pm-contents" tabindex="-1"', '') + '</details><button type="button" data-pm-cover>Cover ↑</button>' + pmPdfLink(D, 'pm-pdf') + '</div>';
   }
   function pmStart(m) {
     var entry = m.querySelector('.pm-entrance'), cover = m.querySelector('.pm-open'), contents = m.querySelector('#pm-contents');
@@ -204,7 +208,7 @@
   function pmFoot(D) {
     var R = obj(D.reference), links = R ? list(R.links, 6).map(obj).filter(function (l) { return l && safeUrl(l.url) && text(l.label, 40); }) : [];
     return '<footer class="pm-foot"><div class="pm-in">' + (links.length ? '<nav aria-label="' + esc(text(R.label, 40) || 'More') + '"><p class="pm-kick">' + esc(text(R.label, 40)) + '</p><ul>' + links.map(function (l) { return '<li><a href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a></li>'; }).join('') + '</ul></nav>' : '') +
-      pmSrc(D.asOf) + '<button type="button" class="pm-print" data-print>Print / save as PDF</button>' + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
+      pmSrc(D.asOf) + pmPdfLink(D, 'pm-print') + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
   }
   function renderPostgame(D) {
     return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmDamage(D) + pmFlow(D) + pmGrades(D) + pmQuotes(D) + pmPackage(D) + pmTexas(D) + pmNext(D) + pmFoot(D) + '</div>';

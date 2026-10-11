@@ -2,7 +2,21 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?",
+      "title": "Gators Drop Out of AP Top 25 After Second Straight Loss",
+      "excerpt": "Florida falls out of the Oct. 11 AP Top 25 after a 38-19 loss to South Carolina. Georgia takes No. 1, and the Gators visit No. 7 Texas next.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-drop-out-ap-top-25-october-11-2026",
+      "author": "GatorBaitMagazineStaff",
+      "firstPublishedDate": "2026-10-11T18:35:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_56d755f7140a472d903585d4fb98710a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators Drop Out of AP Top 25 After Second Straight Loss"
+      }
+    },
+    {
+      "title": "Buddy Blog: Can Sumrall Swim In The Deep End Of This Cesspool?",
       "excerpt": "Buddy Martin on a South Carolina collapse that raises the hard question about Jon Sumrall and a season suddenly at risk.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool",
       "author": "Buddy Martin",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Texas commit Easton Royal back in The Swamp a week before Florida plays the Longhorns"
-      }
-    },
-    {
-      "title": "Are The Gators Being Seduced? No. 9? Don’t Go Sweet-Talking Us Again!",
-      "excerpt": "“These are the musical chairs I was talking about, with no answer that is 100 percent defensible. Do you drag everyone up or down? A lot of season still to go.”",
-      "url": "https://www.gatorbaitmedia.com/post/are-the-gators-being-seduced-no-9-don-t-go-sweet-talking-us-again",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-10T13:49:55Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_283c3dddbe8f4c219266e5a2c88b049e~mv2.jpeg/v1/fit/w_1000,h_675,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Are The Gators Being Seduced? No. 9? Don’t Go Sweet-Talking Us Again!"
       }
     }
   ]

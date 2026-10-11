@@ -1,5 +1,5 @@
 {
-  "commit": "5aca9405fc29668929c0c2682d0d86ad4efcfe0b",
-  "updated": "2026-10-10T23:30:00Z",
-  "note": "Uncropped postgame cards and current saved stories (PR #225). Rollback: set commit to 464861949c0b6638e34397f7d9382097032b0f83."
+  "commit": "12763c5335ff389264e158e7c572f7c62826ef9d",
+  "updated": "2026-10-11T00:10:00Z",
+  "note": "Buddy Martin GAMECLOCKED pinned as lead; UAA photo credited (PR #228). Rollback: set commit to 5aca9405fc29668929c0c2682d0d86ad4efcfe0b."
 }

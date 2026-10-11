@@ -1,5 +1,5 @@
 {
-  "commit": "c5fa9db88022a59e6a7962e6c12f7e66da8b85d0",
-  "updated": "2026-10-11T10:50:00Z",
-  "note": "Snapshot includes Franz Beard column under Buddy lead (PR #235). Rollback: set commit to 0c3a07830bcc3e644da25ebc730b1d140435dcd3."
+  "commit": "e7abc9a07ed81b37d3cd592fdaa1c4926b60205b",
+  "updated": "2026-10-11T13:15:00Z",
+  "note": "Snapshot with Buddy's full-color Sumrall cover (PR #243). Rollback: set commit to c5fa9db88022a59e6a7962e6c12f7e66da8b85d0."
 }

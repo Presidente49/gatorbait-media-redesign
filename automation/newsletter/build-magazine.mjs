@@ -109,7 +109,7 @@ export async function compileMagazine(source) {
     try { const module = await import(candidate); compile = module.default || module; break; } catch { /* try the next local compiler */ }
   }
   if (!compile) throw Error('Local MJML compiler unavailable; set MJML_MODULE to its entry file');
-  const result = compile(source, { validationLevel: 'strict', minify: false });
+  const result = await compile(source, { validationLevel: 'strict', minify: false });
   if (result.errors?.length || !result.html) throw Error('Strict MJML validation failed');
   if (/\{\{|\}\}|\$\{/.test(result.html)) throw Error('Unresolved rendered template');
   return result.html;

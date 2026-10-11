@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "After a second sobering loss, can Florida's season still be salvaged?",
+      "excerpt": "Franz Beard on South Carolina 38, Florida 19: a lost line of scrimmage, a quarterback question for Austin and a defense that keeps throwing things at the wall. Can the season still be salvaged?",
+      "url": "https://www.gatorbaitmedia.com/post/after-a-second-sobering-loss-can-florida-s-season-still-be-salvaged",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-11T10:34:55Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_6c0bd115c2c849bca004f49afa7ae417~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for After a second sobering loss, can Florida's season still be salvaged?"
+      }
+    },
+    {
       "title": "Chris Spears' Best Shots: South Carolina 38, Florida 19",
       "excerpt": "36 photos from Chris Spears on the sideline for the 500th game in The Swamp: the runout, Bailey Stockton's 59-yard touchdown and Jon Sumrall during South Carolina's 38-19 win.",
       "url": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-south-carolina-38-florida-19",
@@ -251,20 +265,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Buddy Blog: Checking Out The Point Spread And Weather For Gator Homecoming."
-      }
-    },
-    {
-      "title": "Florida's 2-1 SEC start meets 0-3 South Carolina at Homecoming",
-      "excerpt": "Florida leads the series with South Carolina 31-10-3, and the SEC standings show the Gators at 2-1 behind two 3-0 teams.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-s-2-1-sec-start-meets-0-3-south-carolina-at-homecoming",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-08T19:29:49Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_66c67a4227b54ab59f56b31f1b97ba60~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida's 2-1 SEC start meets 0-3 South Carolina at Homecoming"
       }
     },
     {

@@ -415,9 +415,24 @@
   },
   "package": {
     "kicker": "Read the package",
-    "title": "4 more postgame stories from The Swamp",
+    "title": "5 more postgame stories from The Swamp",
     "dek": "Newest first after the Buddy Martin cover. No halftime or in-game material.",
     "items": [
+      {
+        "rubric": "Sideline column",
+        "author": "Chris Spears",
+        "title": "From the Sideline: Chris Spears on the 500th Game in The Swamp",
+        "dek": "The runout, Jon Sumrall and Bailey Stockton's touchdown, seen from the sideline.",
+        "url": "/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
+        "image": {
+          "id": "16b519_79987fbda38743d9842a0ba355b3e83a",
+          "ext": "jpg",
+          "width": 3000,
+          "height": 1940,
+          "alt": "Bailey Stockton (3) stretches for the pylon against South Carolina on Oct. 10",
+          "credit": "Photo by Chris Spears, GatorBait Media"
+        }
+      },
       {
         "rubric": "Sunday column",
         "author": "Franz Beard",

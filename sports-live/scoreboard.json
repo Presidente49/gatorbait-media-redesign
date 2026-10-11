@@ -39,7 +39,7 @@
  "next": {
   "eventId": "401856724",
   "opponent": "Texas",
-  "opponentRank": 1,
+  "opponentRank": 7,
   "opponentRecord": "4-1",
   "home": false,
   "kickoffIso": "2026-10-17T16:00:00Z",
@@ -142,7 +142,7 @@
    "eventId": "401856724",
    "date": "2026-10-17T16:00:00Z",
    "opponent": "Texas",
-   "opponentRank": 1,
+   "opponentRank": 7,
    "opponentRecord": "4-1",
    "home": false,
    "status": "scheduled",

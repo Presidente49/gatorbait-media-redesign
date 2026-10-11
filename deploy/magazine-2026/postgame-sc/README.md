@@ -7,14 +7,15 @@ Brenden, Oct. 11: "let's get our post game round up magazine ready." Standing or
 ## How it works (same mechanism as the Missouri edition, `../postgame-missouri/`)
 
 - `sports-live/magazine-issue-postgame.json` now holds this issue. The Missouri issue is archived byte-for-byte at `../postgame-missouri/archive-missouri-issue.json`. Missouri stays reachable at its pinned commit.
-- `sports-live/magazine-postgame.js` and `magazine-postgame-frame.html` are rebuilt: `NODE_PATH=/opt/node22/lib/node_modules MAG_VARIANT=postgame node sports-live/build-magazine.mjs`. Bundle is 184,126 bytes against the build's 184,320-byte cap (180 KiB), so only about 190 bytes of headroom. Trim copy before adding anything.
+- `sports-live/magazine-postgame.js` and `magazine-postgame-frame.html` are rebuilt: `NODE_PATH=/opt/node22/lib/node_modules MAG_VARIANT=postgame node sports-live/build-magazine.mjs`. Bundle size: see the PR. It no longer fits the old 180 KiB cap once the Texas section is added, so `build-magazine.mjs` now allows 190 KiB for the postgame variant only (the weekly, pregame and Wednesday caps are unchanged).
 - `sports-live/build-magazine.mjs` now reads the fixture loader from `postgame-sc/candidate-loader.html`.
 - `sports-live/src/magazine-postgame.css`: two fixes found by QA that were also failing on main (the "Postgame edition" label was white on orange at 3.53:1, now dark navy; the reader-bar "GatorBait" link was a 22 px target, now 44 px).
 - `sports-live/qa-magazine-postgame.mjs`: report-card and game-flow sections are optional (required only when the issue has them), and the stale `.pm-mast` selector is now `.pm-entrance`.
 
 ## Issue contents (every number from ESPN event 401856714 unless noted)
 
-Cover Buddy Martin column; final; In this issue; The damage; Game flow (ESPN win probability, 191 points, Florida is the home team so the series is used as given); In their words; The package (4 stories, newest first); Up next; footer.
+Cover Buddy Martin column; final; In this issue; The damage; Game flow (ESPN win probability, 191 points rounded to whole percents, Florida is the home team so the series is used as given); In their words; The package (4 stories, newest first); Look ahead to Texas (new `texas` block and `pmTexas` renderer: what happened Saturday, Texas record, ranking line, per-game comparison with Florida); Up next; footer.
+Texas facts are ESPN event 401856717 (Oklahoma 27, Texas 24, Cotton Bowl, Dallas, neutral site, Texas 4-1 and 1-1 SEC, Oklahoma 3-2 and unranked) and the Texas schedule (events 401856667, 401856682, 401856693, 401856704). Per-game averages are computed from ESPN box scores: Texas 5 games, Florida 6.
 No report card: GatorBait published none for this game, so the section is dropped, not invented. No "full breakdown" link in The damage for the same reason (no By the Numbers post exists yet). No Pick 'Em teaser (the feature does not exist).
 Per-game baselines (53.5 points, 532.8 yards) are ESPN events 401856637, 401856672, 401856687, 401856699: 214 points and 2,131 yards over four games.
 
@@ -34,7 +35,7 @@ PATCH `embedData.html` back to `live-loader-before.html` (or the exact HTML save
 
 ## Notes for the controller
 
-- **Texas ranking.** ESPN still shows Texas No. 1 (poll not yet updated), but Texas lost 27-24 to Oklahoma on Saturday. The ranking appears once, in `next.title` ("Florida at No. 1 Texas") of `sports-live/magazine-issue-postgame.json`. Edit it after the Sunday poll, rebuild, and re-pin before deploying. The `next.note` already says the ranking may change. Florida is "No. 16" as of kickoff (ESPN header); it will drop in the new poll, so the final-score card rank may also need editing (`final.teams[1].rank`).
-- Kickoff Oct. 17 is 16:00Z = noon ET on ABC (ESPN). Venue name is ESPN's "DKR-Texas Memorial Stadium".
+- **Texas ranking, one place.** Edit `texas.ranking` in `sports-live/magazine-issue-postgame.json` (now "No. 1 entering Saturday. Ranking updates after Sunday's polls.") once the poll posts, rebuild, re-pin. Florida's own rank is `final.teams[1].rank` ("No. 16", as of kickoff) and may also need editing. No other text carries a ranking.
+- Kickoff Oct. 17 is 16:00Z = noon ET on ABC (ESPN). Venue is ESPN's "DKR-Texas Memorial Stadium" (the section uses ESPN's abbreviation).
 - Photo credits were confirmed by eye (Chris Spears watermark on all five) and match GatorBait's own captions. `front-page.config.json` holds no credits for these ids.
 - The cover and the first image in Buddy's column differ (the column's inline photo is credited to UAA); only the Wix cover id is used here.

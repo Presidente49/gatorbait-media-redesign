@@ -178,6 +178,20 @@
     var h = ''; try { h = String(C.html('home', { short: true, extra: 'pm-cap' }) || ''); } catch (_) { return ''; }
     return h.replace('data-gbm-capture="home"', 'data-gbm-capture="magazine"').replace(' fp-mod-capture', '');
   }
+  function pmTexas(D) {
+    var T = obj(D.texas); if (!T || !text(T.title, 120)) return '';
+    var stats = list(T.stats, 6).map(obj).filter(function (x) { return x && text(x.value, 12) && text(x.label, 60); });
+    var Cm = obj(T.compare), cr = Cm ? list(Cm.rows, 6).map(obj).filter(function (r) { return r && text(r.label, 30) && text(r.before, 12) && text(r.after, 12); }) : [];
+    return '<section class="pm-damage pm-texas" id="pm-texas" aria-labelledby="pm-texas-t"><div class="pm-in">' + pmHead('texas', T) +
+      (text(T.ranking, 160) ? '<p class="pm-rank">' + esc(text(T.ranking, 160)) + '</p>' : '') +
+      (stats.length ? '<ul class="pm-stats">' + stats.map(function (x) {
+        return '<li><b>' + esc(text(x.value, 12)) + '</b><span>' + esc(text(x.label, 60)) + '</span>' + (text(x.detail, 90) ? '<small>' + esc(text(x.detail, 90)) + '</small>' : '') + '</li>';
+      }).join('') + '</ul>' : '') +
+      (cr.length ? '<div class="pm-cmp"><p class="pm-yl">' + esc(text(Cm.label, 60)) + '</p><table><thead><tr><td></td><th scope="col">' + esc(text(Cm.beforeLabel, 40)) + '</th><th scope="col">' + esc(text(Cm.afterLabel, 40)) + '</th></tr></thead><tbody>' + cr.map(function (r) {
+        return '<tr><th scope="row">' + esc(text(r.label, 30)) + '</th><td>' + esc(text(r.before, 12)) + '</td><td class="pm-after">' + esc(text(r.after, 12)) + '</td></tr>';
+      }).join('') + '</tbody></table></div>' : '') +
+      '<div class="pm-foot-row">' + pmSrc(T.source) + '</div></div></section>';
+  }
   function pmNext(D) {
     var N = obj(D.next); if (!N || !text(N.title, 120)) return '';
     var meta = list(N.meta, 6).map(function (m) { return text(m, 60); }).filter(Boolean), P = obj(N.pickem);
@@ -193,5 +207,5 @@
       pmSrc(D.asOf) + '<button type="button" class="pm-print" data-print>Print / save as PDF</button>' + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
   }
   function renderPostgame(D) {
-    return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmDamage(D) + pmFlow(D) + pmGrades(D) + pmQuotes(D) + pmPackage(D) + pmNext(D) + pmFoot(D) + '</div>';
+    return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmDamage(D) + pmFlow(D) + pmGrades(D) + pmQuotes(D) + pmPackage(D) + pmTexas(D) + pmNext(D) + pmFoot(D) + '</div>';
   }

@@ -24,8 +24,8 @@ const stand = (w, h, label) => `<svg xmlns="http://www.w3.org/2000/svg" width="$
 // Required sections come from the issue itself: report-card and flow are optional (dropped when the edition has no such data).
 const ISSUE = JSON.parse(readFileSync('sports-live/magazine-issue-postgame.json', 'utf8'));
 const OPTIONAL = { grades: '#pm-grades', flow: '#pm-flow' };
-const SECTIONS = ['.pm-entrance', '#pm-cover', '.pm-final', '.pm-toc', '#pm-damage', '#pm-quotes', '#pm-package', '#pm-next', '.pm-foot'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
-const SHOT = ['#pm-damage', '#pm-quotes', '#pm-package', '#pm-next'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
+const SECTIONS = ['.pm-entrance', '#pm-cover', '.pm-final', '.pm-toc', '#pm-damage', '#pm-quotes', '#pm-package', '#pm-texas', '#pm-next', '.pm-foot'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
+const SHOT = ['#pm-damage', '#pm-quotes', '#pm-package', '#pm-texas', '#pm-next'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
 const browser = await chromium.launch();
 const results = [];
 for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430', 430, 932], ['1366', 1366, 900]]) {

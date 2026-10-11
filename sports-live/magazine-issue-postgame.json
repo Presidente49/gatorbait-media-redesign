@@ -11,17 +11,17 @@
   },
   "cover": {
     "kicker": "Cover story · Buddy Martin",
-    "headline": "GAMECLOCKED! No. 500 Was a Lousy Homecoming In The Swamp",
-    "dek": "A lousy Homecoming for the 500th game in The Swamp, and why Buddy is still hanging on with Jon Sumrall.",
+    "headline": "Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?",
+    "dek": "Apparently, Missouri wasn't the detour. It may have been the warning sign.",
     "byline": "By Buddy Martin",
     "cta": "Read Buddy's column",
-    "url": "/post/gameclocked-no-500-was-a-lousy-homecoming-in-the-swamp",
+    "url": "/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool",
     "image": {
-      "id": "16b519_56d755f7140a472d903585d4fb98710a",
+      "id": "16b519_46d2d14e73354d91b7f848e45cceabb5",
       "ext": "jpg",
       "width": 3000,
-      "height": 2000,
-      "alt": "Florida coach Jon Sumrall, in a blue Gators cap and short-sleeve hoodie, walks toward the field before the South Carolina game at Ben Hill Griffin Stadium",
+      "height": 1940,
+      "alt": "Florida coach Jon Sumrall takes the field before the South Carolina game at Ben Hill Griffin Stadium",
       "credit": "Photo by Chris Spears, GatorBait Media"
     },
     "linesLabel": "Also inside",
@@ -415,9 +415,24 @@
   },
   "package": {
     "kicker": "Read the package",
-    "title": "5 more postgame stories from The Swamp",
+    "title": "6 more postgame stories from The Swamp",
     "dek": "Newest first after the Buddy Martin cover. No halftime or in-game material.",
     "items": [
+      {
+        "rubric": "Buddy's game column",
+        "author": "Buddy Martin",
+        "title": "GAMECLOCKED! No. 500 Was a Lousy Homecoming In The Swamp",
+        "dek": "A lousy Homecoming for the 500th game in The Swamp, and why Buddy is still hanging on with Jon Sumrall.",
+        "url": "/post/gameclocked-no-500-was-a-lousy-homecoming-in-the-swamp",
+        "image": {
+          "id": "16b519_56d755f7140a472d903585d4fb98710a",
+          "ext": "jpg",
+          "width": 3000,
+          "height": 2000,
+          "alt": "Florida coach Jon Sumrall, in a blue Gators cap and short-sleeve hoodie, walks toward the field before the South Carolina game at Ben Hill Griffin Stadium",
+          "credit": "Photo by Chris Spears, GatorBait Media"
+        }
+      },
       {
         "rubric": "Sideline column",
         "author": "Chris Spears",

@@ -1,5 +1,5 @@
 {
-  "commit": "b7c4aacb44d6c49fd1925d7403b24db282b9e8f8",
-  "updated": "2026-10-11T00:45:00Z",
-  "note": "UAA game photo credited on Buddy lead (PR #230). Rollback: set commit to 12763c5335ff389264e158e7c572f7c62826ef9d."
+  "commit": "0c3a07830bcc3e644da25ebc730b1d140435dcd3",
+  "updated": "2026-10-11T04:58:00Z",
+  "note": "Chris Spears covers and gallery in snapshot; Buddy lead as timed pin (PR #232). Rollback: set commit to b7c4aacb44d6c49fd1925d7403b24db282b9e8f8."
 }

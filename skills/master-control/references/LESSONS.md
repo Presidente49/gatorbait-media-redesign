@@ -718,44 +718,68 @@ When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Mi
 
 **The rule:** a new cover is not shipped until the link preview shows it. Separately, the `GatorBait live presentation QC` job flags the cookie banner overlapping the first headline on the live `/magazine` at 390 px. It passed and failed on the same live page within minutes (16:07 and 16:11 UTC), so treat one failure as detection noise, re-run once, and do not let it hold a data-only merge that its own candidate checks cleared. Record the merge-over in #34.
 
-## Lesson 78: a pending approval is a stalled desk; say so at once and never let a column wait (Oct. 11, 2026)
+## Lesson 85: a pending approval is a stalled desk; say so at once and never let a column wait (Oct. 11, 2026)
 
 **What happened:** Franz Beard's column arrived overnight. The Wix write needed an approval prompt that nobody answered while Brenden slept, so the column sat for hours. I only reported the delay after it published.
 
 **The rule:** when a publish waits on an approval, tell Brenden in one line right away and retry the safe read-only prep so the write is ready the moment it is approved. Batch the writes (one create, one publish, one meta patch) so a single approval covers the story. Never let a submitted column wait silently.
 
-## Lesson 79: a column lead is a timed pin, not "Breaking" (Oct. 11, 2026)
+## Lesson 86: a column lead is a timed pin, not "Breaking" (Oct. 11, 2026)
 
 **What happened:** Pinning Buddy Martin's GAMECLOCKED column as `pins.breaking` labelled it "Breaking" on the front page. Moving it to `pins.timed` with an `until` time gives the kicker "The Column · Buddy Martin" and releases the slot on its own.
 
 **The rule:** use `breaking` only for real breaking news. Columns and features lead through `pins.timed` with a path and an `until` in UTC. Check the kicker on the rendered card before saying it is done.
 
-## Lesson 80: the phone reads a bundled snapshot, so every story or cover change needs a rebuild and a pointer deploy (Oct. 11, 2026)
+## Lesson 87: the phone reads a bundled snapshot, so every story or cover change needs a rebuild and a pointer deploy (Oct. 11, 2026)
 
 **What happened:** Stories and covers were live on the site while the phone front page still showed the old picture and lead, because `sports-live/homepage.js` bundles a snapshot of `gazette-live/posts.json`.
 
 **The rule:** after publishing or changing a cover, run the `refresh-newsroom-feed` workflow on main, confirm the new post is in `gazette-live/posts.json`, rebuild with `sports-live/build-front-page.mjs` (then `git checkout sports-live/share.js sports-live/fan-modules.js`), merge the PR, then change `sports-live/current.json` in a separate pointer PR. Verify the live front page with a cache-busting query string. Rollback is the previous pointer commit.
 
-## Lesson 81: covers come from real credited photos, never a score card or a stale image (Oct. 11, 2026)
+## Lesson 88: covers come from real credited photos, never a score card or a stale image (Oct. 11, 2026)
 
 **What happened:** Brenden saw an old picture on Buddy's lead. The score-card fallback and an early UAA photo were weaker than Chris Spears' 36 photos already in Wix Media (folder "2026.10.10 FLA VS SOUTH CAROLINA").
 
 **The rule:** look in Wix Media for the staff photographer's folder before using a wire or school photo. Credit every cover (credits are keyed by Wix media id in `front-page.config.json`), use a distinct cover per story, and build a gallery post (a Ricos GALLERY node) when a photographer files a set. Use a school photo only with its proper credit (for example Photo: Rachel Rusch/UAA Communications) and only when Brenden supplies or approves it.
 
-## Lesson 82: embed press-conference clips as native players (Oct. 11, 2026)
+## Lesson 89: embed press-conference clips as native players (Oct. 11, 2026)
 
 **What happened:** Jon Sumrall's clips were posted on The Buddy Martin Show YouTube Shorts and the GatorBait Media Facebook page. They went into the stories as Ricos VIDEO nodes (`videoData.video.src.url`), two YouTube and three Facebook players.
 
 **The rule:** link the exact post-game clips in the matching story. Never download or re-upload video. Read the draft first, add each clip once, and re-check the public page renders the player.
 
-## Lesson 83: Word attachments from Gmail can corrupt in tool output; parse the zip (Oct. 11, 2026)
+## Lesson 90: Word attachments from Gmail can corrupt in tool output; parse the zip (Oct. 11, 2026)
 
 **What happened:** Franz's column came as a .docx. The base64 in the tool output was truncated, so normal decoding failed.
 
 **The rule:** fetch the RAW message, take the attachment part, and parse the zip entries by hand (local header, then raw inflate of `word/document.xml`). Read every paragraph, keep the writer's voice, and fix only supported facts, quotes, formatting and metadata. Credit the writer as the post author and copy the categories and tags from the writer's earlier posts.
 
-## Lesson 84: the story-page "Up next" box is a config string with an expiry; update it after every game (Oct. 11, 2026)
+## Lesson 91: the story-page "Up next" box is a config string with an expiry; update it after every game (Oct. 11, 2026)
 
 **What happened:** Every story page still said "vs. South Carolina, Time TBA" the morning after the game. The box lives in the Wix embed "GBM - Post template v1" (`14a887e3`), in the `NEXT` object (`opp`, `when`, `where`, `until`).
 
 **The rule:** after each game, patch only that string in place (GET, assert the old text, check the 15,000-character cap, PATCH with the current revision and category ESSENTIAL), with the opponent, date, time, TV, venue and an `until` at kickoff. Check the opponent's ranking after the Sunday poll. Do not publish the site.
+
+## Lesson 92: read the live embed before planning a deploy; repo notes go stale (Oct. 11, 2026)
+
+**What happened:** The Missouri postgame README said the Magazine embed `1dd74333` was at revision 73. The live read was revision 87, a rotating "Thoughts of the Day" edition pinned to a different bundle. A plan built from the README would have stopped at its first guard, or worse, patched the wrong base.
+
+**The rule:** before writing any deploy steps, GET the live object and save its HTML as the rollback. Build the new loader from what is live, not from a README. Swapping `/magazine` replaces whatever edition is live, so say so to Brenden and keep the rollback one step.
+
+## Lesson 93: one watch chain per job (Oct. 11, 2026)
+
+**What happened:** Two inbox-watch reminders ran side by side after a re-arm, so each check fired twice.
+
+**The rule:** every recurring `send_later` check has one chain. Before re-arming, confirm no other pending reminder carries the same job; if one does, let that one run and do not create another.
+
+## Lesson 94: when TinyFish is empty, use Firecrawl (Oct. 11, 2026)
+
+**What happened:** The TinyFish wallet ran out overnight (provider email, 3:26 a.m. ET). `fetch_content` is the usual way to read ESPN and AP from the container.
+
+**The rule:** read the provider's balance email first, then switch ESPN, AP and poll reads to Firecrawl `firecrawl_scrape` with `maxAge: 0`. ESPN's site API JSON works through it. Tell Brenden once that the wallet needs funds; do not top it up (money).
+
+## Lesson 95: the postgame magazine recipe, and hold the go-live for the polls (Oct. 11, 2026)
+
+**What happened:** The South Carolina postgame edition took one build pass.
+
+**The rule:** (1) fill `sports-live/magazine-issue-postgame.json` from ESPN only and drop any section GatorBait did not publish (no invented report card); (2) `MAG_VARIANT=postgame node sports-live/build-magazine.mjs`, then `qa-magazine-postgame.mjs` at 320/390/430/1366; (3) PR, merge, take the merge sha; (4) pin the loader to that sha with `deploy/magazine-2026/postgame-sc/make-loader.py` and PATCH `1dd74333` (read it first, Lesson 92); (5) the email is a separate MJML source run through `validate-unique-images`, `run-stack-qc` and `check-links` (six distinct article links, complete UTMs), built as a Wix draft, then the audience check and send governor. A Texas or poll ranking goes in one field and is set after the Sunday polls post, so the page and the email agree. Sends need Brenden's yes and a passing governor.

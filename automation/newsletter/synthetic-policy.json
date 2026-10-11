@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "photoPolicy": {
+    "minImages": 2,
+    "maxImages": 2,
+    "requireUniqueMediaIdentity": true,
+    "allowedHosts": [
+      "example.invalid"
+    ],
+    "requiredCreditMarkers": [
+      "Photo by Fixture Photographer"
+    ],
+    "disallowedAltPatterns": [
+      "illustration",
+      "graphic",
+      "cartoon",
+      "ai-generated"
+    ],
+    "deniedMediaIds": []
+  },
+  "contentPolicy": {
+    "rejectTitlePrefixes": [
+      "LIVE NOW:"
+    ],
+    "minimumDistinctArticleLinks": 8,
+    "allowedArticleHost": "example.invalid",
+    "requireHttps": true,
+    "rejectPlaceholderLinks": true,
+    "rejectBrokenUtmEntityPattern": true
+  }
+}

@@ -11,6 +11,11 @@ on:
       - 'automation/ops-hub/policy.json'
       - 'tools/fetch-pinned-sources.sh'
       - '.github/workflows/newsletter-stack-qc.yml'
+  pull_request:
+    paths:
+      - 'newsletter/**'
+      - 'automation/newsletter/**'
+      - '.github/workflows/newsletter-stack-qc.yml'
   workflow_dispatch:
 
 permissions:
@@ -42,42 +47,34 @@ jobs:
           test -f vendor/colorlib-email-templates/src/4.mjml
           test "$(git -C vendor/colorlib-email-templates rev-parse HEAD)" = "3018557fe943fb1c3e3367aa52d39b2fca44f725"
 
-      - name: Run GatorBait Stack QC
-        run: |
-          node automation/newsletter/validate-unique-images.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
-          node automation/newsletter/run-stack-qc.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
-          node automation/newsletter/check-links.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
-
       - name: Install upstream MJML toolchain
         run: npm ci --prefix vendor/colorlib-email-templates
 
-      - name: Strict-compile the real newsletter
+      - name: Render and validate synthetic issue data
+        env:
+          MJML_MODULE: ${{ github.workspace }}/vendor/colorlib-email-templates/node_modules/mjml/lib/index.js
         run: |
-          mkdir -p build/newsletter
-          vendor/colorlib-email-templates/node_modules/.bin/mjml \
-            newsletter/templates/gatorbait-magazine-colorlib-v1.mjml \
-            -o build/newsletter/gatorbait-magazine.html \
-            --config.validationLevel=strict
-          grep -qi 'GATORBAIT' build/newsletter/gatorbait-magazine.html
-          grep -qi 'MAGAZINE NEWSLETTER' build/newsletter/gatorbait-magazine.html
-          if grep -Eqi '\$\{[^}]+\}|href=["'"'"']#' build/newsletter/gatorbait-magazine.html; then
-            echo "Compiled email contains a forbidden placeholder link."
-            exit 1
-          fi
-          node automation/newsletter/check-links.mjs --rendered build/newsletter/gatorbait-magazine.html
+          node --test automation/newsletter/build-magazine.test.mjs
+          node automation/newsletter/build-magazine.mjs \
+            --json newsletter/templates/gatorbait-magazine-synthetic.json \
+            --out /tmp/gatorbait-magazine-synthetic --synthetic
+          node automation/newsletter/validate-unique-images.mjs /tmp/gatorbait-magazine-synthetic/magazine.mjml
+          node automation/newsletter/run-stack-qc.mjs /tmp/gatorbait-magazine-synthetic/magazine.mjml automation/newsletter/synthetic-policy.json
+          node automation/newsletter/check-links.mjs /tmp/gatorbait-magazine-synthetic/magazine.mjml
+          node automation/newsletter/check-links.mjs --rendered /tmp/gatorbait-magazine-synthetic/magazine.html
 
-      - name: Render mobile and desktop email proofs
+      - name: Render offline mobile and desktop proofs
         run: |
           google-chrome --version
-          node automation/newsletter/render-preview.mjs build/newsletter/gatorbait-magazine.html build/newsletter
+          node automation/newsletter/render-preview.mjs \
+            /tmp/gatorbait-magazine-synthetic/magazine.html /tmp/gatorbait-magazine-synthetic --synthetic
 
-      - name: Save compiled preview and screenshots
+      - name: Save synthetic preview and screenshots
         uses: actions/upload-artifact@v4
         with:
-          name: gatorbait-magazine-newsletter-preview
+          name: gatorbait-magazine-synthetic-preview
           path: |
-            build/newsletter/gatorbait-magazine.html
-            build/newsletter/preview-mobile390.jpg
-            build/newsletter/preview-desktop1000.jpg
-            build/newsletter/preview-report.json
+            /tmp/gatorbait-magazine-synthetic/magazine.html
+            /tmp/gatorbait-magazine-synthetic/preview-*.jpg
+            /tmp/gatorbait-magazine-synthetic/preview-report.json
           if-no-files-found: error

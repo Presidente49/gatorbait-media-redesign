@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "status": "source-only-contract",
+  "controller": "Chris",
+  "controllerAliases": [
+    "Master Control",
+    "Controller",
+    "Copy Desk"
+  ],
+  "productionBuild": "sports-live/build-front-page.mjs",
+  "legacyBuild": "automation/sports-home/build.py",
+  "socialOwner": "Muse",
+  "businessBaseline": "Wix Dashboard",
+  "roles": {
+    "intake": {
+      "owner": "Writers Desk",
+      "aliases": [
+        "Newsroom desk",
+        "desk inbox"
+      ],
+      "mode": "private-intake"
+    },
+    "editorial": {
+      "owner": "Juice",
+      "aliases": [
+        "Copy Desk editorial",
+        "editorial-qa",
+        "Numbers Desk"
+      ],
+      "mode": "bounded-review"
+    },
+    "wix": {
+      "owner": "Flaco",
+      "aliases": [
+        "Wix Operations",
+        "gatorbait-wix-operator",
+        "gatorbait-site-operations"
+      ],
+      "mode": "controller-assigned-writer"
+    },
+    "creative": {
+      "owner": "Graphic Design Artist",
+      "aliases": [
+        "Creative Director",
+        "creative-director",
+        "Creative Lead"
+      ],
+      "mode": "draft-assets"
+    },
+    "broadcast": {
+      "owner": "AP Mode",
+      "aliases": [
+        "GatorBait Sports Network graphics"
+      ],
+      "mode": "draft-assets"
+    },
+    "magazine": {
+      "owner": "Magazine Desk",
+      "aliases": [
+        "digital-magazine-and-print"
+      ],
+      "mode": "candidate-template"
+    },
+    "newsletter": {
+      "owner": "Newsletter Desk",
+      "aliases": [
+        "Daily Roundup",
+        "email-template-library"
+      ],
+      "mode": "campaign-draft"
+    },
+    "social": {
+      "owner": "Muse",
+      "aliases": [],
+      "mode": "sole-social-owner"
+    },
+    "marketing": {
+      "owner": "GatorBait Agency",
+      "aliases": [
+        "Agency Director",
+        "Distribution Lead",
+        "marketing-director"
+      ],
+      "mode": "draft-and-measure"
+    },
+    "revenue": {
+      "owner": "Revenue Director",
+      "aliases": [
+        "revenue-director",
+        "subscriptions",
+        "merchandise",
+        "model-router"
+      ],
+      "mode": "read-and-recommend"
+    },
+    "community": {
+      "owner": "Community Director",
+      "aliases": [
+        "community-director"
+      ],
+      "mode": "draft-and-inspect"
+    },
+    "verification": {
+      "owner": "Mobile QC",
+      "aliases": [
+        "Design Review"
+      ],
+      "mode": "independent-evidence"
+    }
+  },
+  "templates": {
+    "magazine": {
+      "ownerRole": "magazine",
+      "checks": [
+        "canonical-copy-parity",
+        "source-bundle-parity",
+        "cover-and-credits",
+        "reader-320-390-430-1366",
+        "previous-edition-reachable"
+      ]
+    },
+    "newsletter": {
+      "ownerRole": "newsletter",
+      "checks": [
+        "reusable-layout-and-current-issue-data",
+        "strict-mjml",
+        "unique-images",
+        "tracked-links",
+        "provider-preview",
+        "consent-and-suppression",
+        "send-governor",
+        "campaign-specific-owner-approval",
+        "provider-delivery"
+      ]
+    },
+    "roundup": {
+      "ownerRole": "newsletter",
+      "checks": [
+        "current-date-window",
+        "no-duplicate-stories",
+        "strict-mjml",
+        "provider-preview",
+        "consent-and-suppression",
+        "send-governor",
+        "campaign-specific-owner-approval",
+        "provider-delivery"
+      ]
+    },
+    "daily-news-blog": {
+      "ownerRole": "editorial",
+      "checks": [
+        "fresh-primary-sources",
+        "actual-byline",
+        "rights-and-wix-media",
+        "canonical-url",
+        "inactive-blog-alerts",
+        "public-readback"
+      ]
+    }
+  },
+  "stages": [
+    {
+      "name": "receive",
+      "ownerRole": "intake",
+      "routine": "deterministic",
+      "maxModelCalls": 0
+    },
+    {
+      "name": "deduplicate",
+      "ownerRole": "intake",
+      "routine": "deterministic",
+      "maxModelCalls": 0
+    },
+    {
+      "name": "qc",
+      "ownerRole": "editorial",
+      "routine": "deterministic-first",
+      "maxModelCalls": 1
+    },
+    {
+      "name": "publication",
+      "ownerRole": "wix",
+      "routine": "guarded-adapter",
+      "maxModelCalls": 0
+    },
+    {
+      "name": "verify",
+      "ownerRole": "verification",
+      "routine": "deterministic",
+      "maxModelCalls": 0
+    },
+    {
+      "name": "social-handoff",
+      "ownerRole": "social",
+      "routine": "receipt-only",
+      "maxModelCalls": 0
+    }
+  ],
+  "permissions": {
+    "trustedWriterIntake": "authorized-direction-with-qc",
+    "publicationAdapter": "requires-authenticated-private-adapter",
+    "gmailAdapter": "requires-authenticated-private-adapter",
+    "subscriberSend": "campaign-specific-owner-approval",
+    "schedulerChanges": "owner-approval",
+    "highImpact": "fail-closed",
+    "missingRights": "fail-closed",
+    "ambiguousFacts": "fail-closed"
+  },
+  "runtimeStorage": "private-outside-public-repository",
+  "idleOutcome": "NOOP",
+  "retryLimit": 1
+}

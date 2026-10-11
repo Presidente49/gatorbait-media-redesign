@@ -17,15 +17,15 @@
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="0">
       <mj-column>
-        <mj-image src="https://static.wixstatic.com/media/16b519_7070e1a767404cc999ce9808b0d13780~mv2.jpg" alt="Florida coach Jon Sumrall on the sideline before the South Carolina game at Ben Hill Griffin Stadium on Oct. 10. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=postgame_sc_2026_10_11&utm_content=cover" padding="0" />
+        <mj-image src="https://static.wixstatic.com/media/16b519_46d2d14e73354d91b7f848e45cceabb5~mv2.jpg" alt="Florida coach Jon Sumrall takes the field before the South Carolina game at Ben Hill Griffin Stadium on Oct. 10. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=postgame_sc_2026_10_11&utm_content=cover" padding="0" />
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="22px 26px 8px">
       <mj-column>
         <mj-text padding="0 0 6px" color="#D8450C" font-size="12px" font-weight="800" letter-spacing="1.6px">POSTGAME EDITION</mj-text>
-        <mj-text padding="0 0 10px" color="#081B35" font-size="30px" font-weight="800" line-height="1.1">GAMECLOCKED! No. 500 Was a Lousy Homecoming in The Swamp</mj-text>
+        <mj-text padding="0 0 10px" color="#081B35" font-size="30px" font-weight="800" line-height="1.1">Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?</mj-text>
         <mj-text padding="0 0 14px" color="#33425C" font-size="16px" line-height="1.5">South Carolina beat No. 16 Florida 38-19 in the 500th game in The Swamp. Florida is 4-2 and 2-2 in the SEC. Buddy Martin leads the issue. Inside: Franz Beard, Chris Spears' best shots, what Sumrall, Stockton and Chiles said, and a look at Texas, which lost Saturday before Florida visits Austin.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/post/gameclocked-no-500-was-a-lousy-homecoming-in-the-swamp?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=postgame_sc_2026_10_11&utm_content=buddy_column" align="center" padding="4px 0 6px">READ BUDDY'S COLUMN</mj-button>
+        <mj-button href="https://www.gatorbaitmedia.com/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=postgame_sc_2026_10_11&utm_content=buddy_column" align="center" padding="4px 0 6px">READ BUDDY'S COLUMN</mj-button>
         <mj-button href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=postgame_sc_2026_10_11&utm_content=open_magazine" background-color="#0021A5" align="center" padding="0 0 14px">OPEN THE POSTGAME MAGAZINE</mj-button>
         <mj-button href="https://www.gatorbaitmedia.com/post/members-download-the-postgame-magazine-pdf?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=postgame_sc_2026_10_11&utm_content=members_pdf" align="center" padding="0 0 14px">MEMBERS: DOWNLOAD THE PDF</mj-button>
       </mj-column>

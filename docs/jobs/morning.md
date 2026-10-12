@@ -2,7 +2,7 @@
 
 Runs once, 6:05 a.m. ET. Do the three jobs below in one pass, then write ONE line to #34 (or none if nothing changed) and tell Brenden only if something is wrong or needs him. Rules are in `docs/START-HERE.md` and win over anything below.
 
-The sections below are the job specifications carried over verbatim from the retired routines (retired Oct. 9-10, 2026, `docs/STACK-V2.md`). Edit this file, not the routine prompt, to change the job.
+The sections below retain procedures from routines retired Oct. 9-10, 2026 (`docs/STACK-V2.md`). Old routine IDs, copied permissions, account states, games and session assignments are historical evidence, not instructions to reactivate them. Apply `docs/jobs/controller-sweep.md` for reconciliation and `docs/jobs/newsroom-desk.md` for intake/publication; current owner scope and `docs/START-HERE.md` govern every action. Edit this file, not copied routine prompts, when the job changes.
 
 ---
 
@@ -10,14 +10,14 @@ The sections below are the job specifications carried over verbatim from the ret
 
 Old routine: `trig_01HEmZEL8TGRa5YVrPFP2pZ6` (Jarvis: daily site evaluation (first thing, 6:05 a.m. ET))
 
-Daily full-site evaluation on the CURRENT build. Brenden, Oct. 7: "do a full site evaluation on the current build first thing every day... look at the front page and evaluate." You have full autonomy; act on what you find. Free tools only.
+Daily full-site evaluation on the CURRENT build. Brenden, Oct. 7: "do a full site evaluation on the current build first thing every day... look at the front page and evaluate." Apply the current owner scope and rulebook to verified findings. Free tools only.
 
-1. READ FIRST: docs/HOMEPAGE-BASELINE-LOCK.md, newest #34 comments, the shared Codex/Claude pool: every open PR (mcp__github__list_pull_requests, it is large, save and parse) and issue, Codex branches (codex/*), who last touched each, CI state. Triage: merge what is green and approved-by-design (small, reversible, one at a time), close stale duplicates with a one-line reason (branches stay), and dispatch the owner for anything red. Record counts only.
-2. SHOOT THE LIVE SITE (read-only): push a branch shots/eval-<yyyymmdd> carrying automation/vision/live-shots.request.json, e.g. {"path":"/","selector":"","widths":"390,430,1365","perf":"1"}, then repeat for /magazine, the newest /post/ page, /gatorbait-media-blogs, /football-roster-schedule (or the live Schedule route) and /florida-football-stats once it exists. The workflow publishes to branch qa/live-shots (concurrency group live-shots; do not run while the game-day desk is mid-render: check the last commit time first). Read metrics.json and view the JPEGs with Read. The container cannot reach gatorbaitmedia.com directly.
+1. READ FIRST: docs/HOMEPAGE-BASELINE-LOCK.md, newest #34 comments, the shared Codex/Claude pool: every open PR (mcp__github__list_pull_requests, it is large, save and parse) and issue, Codex branches (codex/*), who last touched each, CI state. Triage each diff against current main, current ownership and authorization; a green old branch is not automatic merge permission. Preserve useful source and rollback branches, and route unresolved work to the current owner. Record counts only.
+2. SHOOT THE LIVE SITE (read-only): push a branch shots/eval-<yyyymmdd> carrying automation/vision/live-shots.request.json, e.g. {"path":"/","selector":"","widths":"390,430,1365","perf":"1"}, then repeat for /magazine, the newest /post/ page, /gatorbait-media-blogs, /football-roster-schedule (or the live Schedule route) and /florida-football-stats once it exists. The workflow publishes to branch qa/live-shots (concurrency group live-shots; do not run while the game-day desk is mid-render: check the last commit time first). Read metrics.json and view the JPEGs with Read. Use available public browser checks or the existing CI route; re-check actual environment access rather than assuming a historical container limitation.
 3. EVALUATE like a senior editor and product owner: (a) front page: order is chronological, newest first, no writer pinned as lead, no duplicates, game-day band shows the NEXT game (opponent, date, time ET, TV), no stale items, no dead links, first-screen load; (b) mobile 390/430 and desktop 1365 overflow, tap targets, cookie banner height, sticky header, Barlow only; (c) performance numbers; (d) console errors and failed requests; (e) article pages: cover, byline, formatting; (f) SEO: titles, meta, canonical, og:image; (g) monetization surfaces and signup forms (bot spam check); (h) Magazine headroom (embeds near 15,000 characters); (i) email health: both blog alerts state, last list email, bounce and complaint counts; (j) cost: anything paid that can be free.
-4. ACT: fix small reversible things yourself (claim in #34 first, one writer per object, fingerprint-checked embed patch with revision, ESSENTIAL re-sent, verify at 390/430/1366, record rollback). Dispatch bigger work with one-shot create_trigger to the owning session. Never materially change the approved homepage beyond Brenden's direction: Buddy lead, Gator blue/orange/white day look, editorial headline type.
-5. AUTHORITY (Brenden, Oct. 7, explicit): emails to the correct, verified-clean list, switching automations with a before/after check, spending money when it earns its keep, DNS fixes and deleting live content are permitted when needed and verified. Still: one list email per day, dedupe, back up before deleting, record rollback, and never touch payments or member data unless the task requires it.
-6. REPORT: write the evaluation to #34 (counts only, no dollar or subscriber figures), update the Control Room hub status doc, and tell Brenden in at most 5 short lines only if something needs him, is broken, or is a decision on money.
+4. ACT: follow the current controller-sweep job: one owned, authorized reversible repair, fresh object/revision, rollback, and provider plus independent public verification. Assign larger work to an acknowledged current owner. Do not revive remembered worker sessions, old lead pins or game queues; preserve the approved homepage and current chronological news order.
+5. AUTHORITY: `docs/START-HERE.md` and the active owner request decide permission. The retired routine's Oct. 7 delegation is history; this job grants no additional email, automation-switch, spending, DNS, destructive-content or member-data authority.
+6. REPORT: update the existing #34 work item only for a material finding or verified outcome (public counts only). CURRENT-STATE is continuity; do not create a second status board. Tell Brenden only about a material incident, shipment or exact owner-only blocker.
 
 ---
 
@@ -41,8 +41,8 @@ The playbook file never merged to main and is not needed; this is the whole proc
    - Unconfirmed, rumor or analysis: DRAFT it with [CHECK].
    - No Florida angle: skip.
    - Never publish over unpublished edits.
-4. **Email:** none by default. Any list send runs automation/newsletter/send-governor.js first. The account is WARNED, so the hold stays until Brenden clears it.
-5. **Report:** post one #34 comment titled "Morning news sweep, <date>" listing published (links), updated, drafted, skipped, and "@Jarvis — needs Brenden" items. Jarvis's 7:44 a.m. brief reads it. Log the items in docs/INBOX-DESK-LOG.md, then commit and push.
+4. **Email:** none by default from this general sweep. Read current account status and campaign outcomes; the retired WARNED snapshot is not current provider evidence. Any separately authorized list send uses `automation/newsletter/send-governor.js`, the current email playbook and duplicate/consent checks.
+5. **Report:** record changed canonical links, verification and real blockers in the existing #34 work item, or stay silent when nothing changed. Keep private intake receipts out of public git and comments. Do not dispatch a remembered brief or department session.
 
 ---
 
@@ -67,7 +67,7 @@ Read-only data work. Sources:
 - TRIAL CONVERTED;
 - RENEWAL.
 
-**Renewals due:** count only ONLINE + PAID + auto-renew orders, for 7 and 30 days. Leave out the 124 OFFLINE/UNPAID orders.
+**Renewals due:** count only ONLINE + PAID + auto-renew orders, for 7 and 30 days. Exclude OFFLINE/UNPAID orders using a fresh read; the historical count is not today's total.
 
 **Alerts go at the top:**
 - gross below 50% of the 28-day median;
@@ -94,4 +94,5 @@ On Mondays, add the weekly scorecard in 10 lines or fewer:
 - email;
 - social.
 
-**PRIVACY:** the repo and #34 are PUBLIC. NEVER commit dollar figures or subscriber data to git or post them in #34. Keep the numbers in this chat. Once the private Money Board artifact exists, also write one row a day there. Don't ask Brenden to decide anything; report what you did.
+**PRIVACY:** the repo and #34 are PUBLIC. NEVER commit dollar figures or subscriber data to git or post them in #34. Keep the numbers in this chat. Use a verified existing private reporting destination only when available and authorized. Don't ask Brenden to decide anything; report what you did.
+

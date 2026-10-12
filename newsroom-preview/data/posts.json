@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams",
+      "excerpt": "Buddy Martin examines Florida's consecutive losses and asks whether the failures are separate football problems or symptoms of something larger.",
+      "url": "https://www.gatorbaitmedia.com/post/an-anatomy-of-total-gator-collapse-a-swamp-strewn-with-broken-dreams",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-12T19:06:37Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_058dc8cc147c45dbbd604b840140172a~mv2.jpeg/v1/fit/w_1000,h_960,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams"
+      }
+    },
+    {
+      "title": "Texas opens as a 10-point favorite against Florida",
+      "excerpt": "Franz Beard on Florida's response to consecutive losses as Texas opens as a 10-point favorite, plus Easton Royal's commitment and the latest SEC notes.",
+      "url": "https://www.gatorbaitmedia.com/post/texas-opens-as-a-10-point-favorite-against-florida",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-12T11:34:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_0c63378bb9a24a34884987d24f487fde~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Texas opens as a 10-point favorite against Florida"
+      }
+    },
+    {
       "title": "Gators Drop Out of AP Top 25 After Second Straight Loss",
       "excerpt": "Florida falls out of the Oct. 11 AP Top 25 after a 38-19 loss to South Carolina. Georgia takes No. 1, and the Gators visit No. 7 Texas next.",
       "url": "https://www.gatorbaitmedia.com/post/gators-drop-out-ap-top-25-october-11-2026",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for South Carolina leads No. 16 Florida 17-10 at halftime in The Swamp"
-      }
-    },
-    {
-      "title": "Florida vs. South Carolina live updates: Score, highlights from The Swamp",
-      "excerpt": "Live updates from No. 16 Florida vs. South Carolina at Ben Hill Griffin Stadium: the score, every scoring play and key stats from Homecoming in The Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-vs-south-carolina-live-updates-score-highlights-from-the-swamp",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T18:41:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_72fd69312f7f41fbb87712798f84e9bd~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida vs. South Carolina live updates: Score, highlights from The Swamp"
-      }
-    },
-    {
-      "title": "Texas commit Easton Royal back in The Swamp a week before Florida plays the Longhorns",
-      "excerpt": "Five-star receiver Easton Royal, committed to Texas, planned a second game-day visit to Florida for South Carolina. Who else is in town and where the Gators' class stands.",
-      "url": "https://www.gatorbaitmedia.com/post/texas-commit-easton-royal-back-in-the-swamp-a-week-before-florida-plays-the-longhorns",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T15:02:25Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_87e5644a960143a29efe0810e9871677~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Texas commit Easton Royal back in The Swamp a week before Florida plays the Longhorns"
       }
     }
   ]

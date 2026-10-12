@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams",
+      "excerpt": "Buddy Martin examines Florida's consecutive losses and asks whether the failures are separate football problems or symptoms of something larger.",
+      "url": "https://www.gatorbaitmedia.com/post/an-anatomy-of-total-gator-collapse-a-swamp-strewn-with-broken-dreams",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-12T19:06:37Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_058dc8cc147c45dbbd604b840140172a~mv2.jpeg/v1/fit/w_1000,h_960,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams"
+      }
+    },
+    {
+      "title": "Texas opens as a 10-point favorite against Florida",
+      "excerpt": "Franz Beard on Florida's response to consecutive losses as Texas opens as a 10-point favorite, plus Easton Royal's commitment and the latest SEC notes.",
+      "url": "https://www.gatorbaitmedia.com/post/texas-opens-as-a-10-point-favorite-against-florida",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-12T11:34:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_0c63378bb9a24a34884987d24f487fde~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Texas opens as a 10-point favorite against Florida"
+      }
+    },
+    {
       "title": "Gators Drop Out of AP Top 25 After Second Straight Loss",
       "excerpt": "Florida falls out of the Oct. 11 AP Top 25 after a 38-19 loss to South Carolina. Georgia takes No. 1, and the Gators visit No. 7 Texas next.",
       "url": "https://www.gatorbaitmedia.com/post/gators-drop-out-ap-top-25-october-11-2026",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Stay safe, Gator Nation: Isaias weakens, flooding threat continues"
-      }
-    },
-    {
-      "title": "Isaias weakens over Alabama; Gators-Gamecocks still on with storms likely after 2 p.m.",
-      "excerpt": "Isaias canceled one game and moved at least six. Florida-South Carolina stays at 12:45 p.m. ET, with a good chance of Saturday storms in Gainesville.",
-      "url": "https://www.gatorbaitmedia.com/post/hurricane-isaias-reshuffles-college-football-gators-face-rain-chance-at-kickoff",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T02:31:09Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_2405b82b2d4b4f1a826e15053ce9e33e~mv2.png/v1/fit/w_1000,h_675,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Isaias weakens over Alabama; Gators-Gamecocks still on with storms likely after 2 p.m."
-      }
-    },
-    {
-      "title": "The loss to Mizzou is history; the question is how will the Gators respond?",
-      "excerpt": "For an entire month Jon Sumrall had been warning that the Florida Gators would be exposed somewhere down the road if they didn't change their ways. Somewhere down the road was Columbia, Missouri, where Saturday afternoon the 8th-ranked Gators (4-1, 2-1 SEC) took one of those leave no place on their body without a bruise beatings at the hands of the…",
-      "url": "https://www.gatorbaitmedia.com/post/the-loss-to-mizzou-is-history-the-question-is-how-will-the-gators-respond",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-04T13:33:37Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_be903de5f60d4510963f83dce1b90109~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The loss to Mizzou is history; the question is how will the Gators respond?"
       }
     }
   ]

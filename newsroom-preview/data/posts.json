@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Numbers Don't Lie",
+      "excerpt": "Florida and South Carolina were nearly even in first downs and yards, but the Gators lost 38-19. Eddie Gilley on the three turnovers and two short fields behind a statistical draw.",
+      "url": "https://www.gatorbaitmedia.com/post/numbers-don-t-lie",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-10-12T22:22:23Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_8c09fa34b35448a190b6988b94a45f5f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Numbers Don't Lie"
+      }
+    },
+    {
+      "title": "No surprise here: Gators picked to win SEC basketball title",
+      "excerpt": "Florida is the preseason SEC basketball favorite, Tommy Haugh is preseason Player of the Year, and Franz Beard looks at the Gators' frontcourt, UNF scrimmage and preseason outlook.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-picked-to-win-sec-basketball-title",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-12T21:19:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_9448e7a7fd6b42719770cf06b8ba8d74~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for No surprise here: Gators picked to win SEC basketball title"
+      }
+    },
+    {
       "title": "An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams",
       "excerpt": "Buddy Martin examines Florida's consecutive losses and asks whether the failures are separate football problems or symptoms of something larger.",
       "url": "https://www.gatorbaitmedia.com/post/an-anatomy-of-total-gator-collapse-a-swamp-strewn-with-broken-dreams",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for 'It's a player thing': Stockton, Sumrall and Chiles after South Carolina loss"
-      }
-    },
-    {
-      "title": "South Carolina beats No. 16 Florida 38-19, spoiling Homecoming in The Swamp",
-      "excerpt": "LaNorris Sellers threw four touchdown passes and South Carolina scored 21 straight points after halftime as No. 16 Florida lost for the second straight week.",
-      "url": "https://www.gatorbaitmedia.com/post/south-carolina-beats-no-16-florida-38-19-spoiling-homecoming-in-the-swamp",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T20:39:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_7b333596b8f440c1b6dc318ac39083b8~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for South Carolina beats No. 16 Florida 38-19, spoiling Homecoming in The Swamp"
-      }
-    },
-    {
-      "title": "South Carolina leads No. 16 Florida 17-10 at halftime in The Swamp",
-      "excerpt": "LaNorris Sellers threw two touchdown passes, and South Carolina turned a Florida interception into the go-ahead score before halftime at Ben Hill Griffin Stadium.",
-      "url": "https://www.gatorbaitmedia.com/post/south-carolina-leads-no-16-florida-17-10-at-halftime-in-the-swamp",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T18:43:42Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a40ca60a9ebd435dafcdbbad7a5368fc~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for South Carolina leads No. 16 Florida 17-10 at halftime in The Swamp"
       }
     }
   ]

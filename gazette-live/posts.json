@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Numbers Don't Lie",
+      "excerpt": "Florida and South Carolina were nearly even in first downs and yards, but the Gators lost 38-19. Eddie Gilley on the three turnovers and two short fields behind a statistical draw.",
+      "url": "https://www.gatorbaitmedia.com/post/numbers-don-t-lie",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-10-12T22:22:23Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_8c09fa34b35448a190b6988b94a45f5f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Numbers Don't Lie"
+      }
+    },
+    {
+      "title": "No surprise here: Gators picked to win SEC basketball title",
+      "excerpt": "Florida is the preseason SEC basketball favorite, Tommy Haugh is preseason Player of the Year, and Franz Beard looks at the Gators' frontcourt, UNF scrimmage and preseason outlook.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-picked-to-win-sec-basketball-title",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-12T21:19:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_9448e7a7fd6b42719770cf06b8ba8d74~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for No surprise here: Gators picked to win SEC basketball title"
+      }
+    },
+    {
       "title": "An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams",
       "excerpt": "Buddy Martin examines Florida's consecutive losses and asks whether the failures are separate football problems or symptoms of something larger.",
       "url": "https://www.gatorbaitmedia.com/post/an-anatomy-of-total-gator-collapse-a-swamp-strewn-with-broken-dreams",
@@ -9,7 +37,7 @@
       "firstPublishedDate": "2026-10-12T19:06:37Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_058dc8cc147c45dbbd604b840140172a~mv2.jpeg/v1/fit/w_1000,h_960,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_8acb17fa05274836baf80421256e7668~mv2.jpg/v1/fit/w_1000,h_474,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams"
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida is a double-digit favorite over South Carolina: the numbers at kickoff"
-      }
-    },
-    {
-      "title": "Gators-Gamecocks availability: Vernell Brown III questionable, South Carolina's Dylan Stewart cleared",
-      "excerpt": "Florida lists receiver Vernell Brown III as questionable. South Carolina has doubtful starters at center, edge rusher and defensive line.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-gamecocks-availability-vernell-brown-iii-questionable-south-carolina-thin-up-front",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T11:44:51Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg/v1/fit/w_1000,h_602,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators-Gamecocks availability: Vernell Brown III questionable, South Carolina's Dylan Stewart cleared"
-      }
-    },
-    {
-      "title": "Stay safe, Gator Nation: Isaias weakens, flooding threat continues",
-      "excerpt": "Hurricane Isaias is bringing life-threatening storm surge and heavy rain to the Gulf Coast. Here is what the National Hurricane Center says and what to do.",
-      "url": "https://www.gatorbaitmedia.com/post/stay-safe-gator-nation-hurricane-isaias",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T03:06:37Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Stay safe, Gator Nation: Isaias weakens, flooding threat continues"
       }
     }
   ]

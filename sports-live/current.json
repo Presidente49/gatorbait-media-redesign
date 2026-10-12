@@ -1,5 +1,5 @@
 {
-  "commit": "e52400560c7dbadb029bbe5c1c1b03edec291ff4",
-  "updated": "2026-10-12T00:49:33.018Z",
-  "note": "Independently reviewed slow-photo repair, build 1e8ad826; preserves approved homepage design. Rollback: cb81cc82abf8f506cda16479a7c004f454f76e07 plus archived Home Code revision 52."
+  "commit": "490352008342f1cb519550d3260b1e395e12cbec",
+  "updated": "2026-10-12T22:40:00.000Z",
+  "note": "Buddy's column leads with Franz's story directly under it (colead on), snapshot includes Eddie Gilley's Numbers Don't Lie. Rollback: e52400560c7dbadb029bbe5c1c1b03edec291ff4."
 }

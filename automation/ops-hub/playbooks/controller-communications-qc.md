@@ -123,6 +123,17 @@ Rules:
 
 The goal is fewer repeated mistakes and less repeated work.
 
+## Agent collaboration and token budget
+
+Brenden's Oct. 12 direction: agents cover each other's work and use code/context budgets efficiently.
+
+- For meaningful code or production work, assign a scoped implementer and an independent reviewer. Add specialists only for separable work that improves speed or quality; keep small routine tasks with one operator and proportionate verification.
+- Give each worker a bounded task, owned files/objects, success condition and relevant source paths or commit IDs. Share the needed context, not the whole conversation or repository. Confirm availability and acceptance before claiming a handoff.
+- Reuse prior discovery when the underlying files and state are unchanged. Share a compact receipt: finding, changed paths/IDs, diff or artifact link, checks and outcomes, unresolved risks, and next action. Reuse current evidence; refresh mutable provider state/revisions before a write.
+- The reviewer checks the actual diff and evidence against the requirement, including likely failure cases. A second opinion alone is not runtime verification. One designated writer applies any accepted change.
+- Use targeted searches, small patches and focused checks. Follow `RTK.md` when RTK is available; preserve failures, exit codes and relevant error detail. Repeat checks only after a relevant change, failure or unresolved concern.
+- Return a short result and release the worker when its task is done. Keep shared outcomes in the existing work item and Markdown loop; no duplicate controller, status board or unsupported claim that external agents are connected.
+
 ## Workflow optimization rules
 
 1. One controller.

@@ -37,6 +37,11 @@ jobs:
           npm install --no-save playwright@1.49.1
           npx playwright install --with-deps chromium
 
+      - name: Check slow homepage image delivery and mobile scrolling
+        run: |
+          node --test sports-live/test-front-page-images.mjs
+          node sports-live/qa-front-page-images.mjs
+
       - name: Check and render magazine reader candidate
         run: |
           python3 sports-live/check-magazine-parity.py --self-test
@@ -62,4 +67,5 @@ jobs:
           path: |
             build/live-site-vision
             build/magazine-reader-qa
+            build/front-page-image-qa
           if-no-files-found: error

@@ -31,6 +31,8 @@ Brenden, Sept. 29 evening: "i want this" → "swamp night". Swamp Night is the e
 - pointer → **2cd7303** (PR #104, deploy commit 63653ac), Sept. 30 6:40 p.m. ET: share.js finds the post title by structure (`[data-hook="post-title"]`, `article h1`) before any laid-out h1, and retries the story mount for a minute during late Wix re-renders; two slow-server phone runs had lost the Share button and Story Kit. Rollback: dc747be.
 - **Story pages:** new custom embed `f285a38c-4a2b-43e9-b22d-a66eaeedfb41` "GBM - Share GatorBait v1 (story pages)", rev 1, HEAD, ESSENTIAL, loadOnce false, 1,003 chars, djb2 1281193840 (`deploy/share-2026/post-share-loader-91523da.html`). Runs only under `/post/`; follows `current.json` for `sports-live/share.js`, baked fallback 91523da. Rollback: disable that one embed, re-sending ESSENTIAL.
 
+- rev 53: loader pinned to e524005 (`home-code-loader-e524005.html`, 1,828 chars), Oct. 12, 2026. Current pointer is e52400560c7dbadb029bbe5c1c1b03edec291ff4, build 1e8ad826 (PRs #270/#271). Only marker/fallback changed from rev 52; core 89 and Magazine 98 unchanged. Public 1366/390/430/320px shows 11/11 story photos and no overflow; real photo responses held 7.5 seconds at 390/430px still load after release. Chromium emulation, physical iOS unverified. Rollback: current.json to cb81cc82abf8f506cda16479a7c004f454f76e07 plus exact archived `home-code-loader-cb81cc8.html` at a fresh revision with ESSENTIAL preserved.
+
 ## Rollback
 - **A build (from rev 28):** commit `sports-live/current.json` back to the previous commit on `main`; live within about a minute, no Wix write.
 - **The embed (one PATCH):**

@@ -1,9 +1,9 @@
 {
- "updatedAt": "2026-10-11T09:02:06Z",
+ "updatedAt": "2026-10-12T22:25:24Z",
  "season": 2026,
  "team": {
   "name": "Florida",
-  "rank": 16,
+  "rank": null,
   "record": "4-2",
   "conf": "2-2"
  },
@@ -154,7 +154,7 @@
    "eventId": "401856734",
    "date": "2026-10-31T19:30:00Z",
    "opponent": "Georgia",
-   "opponentRank": 2,
+   "opponentRank": 1,
    "opponentRecord": null,
    "home": false,
    "status": "scheduled",
@@ -178,7 +178,7 @@
    "eventId": "401856884",
    "date": "2026-11-14T05:00:00Z",
    "opponent": "Kentucky",
-   "opponentRank": null,
+   "opponentRank": 15,
    "opponentRecord": null,
    "home": false,
    "status": "scheduled",

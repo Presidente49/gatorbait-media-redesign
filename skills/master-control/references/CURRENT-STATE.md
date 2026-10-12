@@ -1,8 +1,42 @@
 # Master Control Current State
 
-## Operating direction — reconciled Oct. 10, 2026
+## Current operating scope — Oct. 12, 2026
 
-`docs/START-HERE.md` is the rulebook; issue #34's newest comments are the work log. Jarvis is the sole controller. This file records dated evidence, not another rulebook or a queue to execute from memory.
+[Current owner scope and provider evidence](https://github.com/Presidente49/gatorbait-media-redesign/issues/34#issuecomment-6132139430) are recorded in issue #34. Brenden assigned the active Kodak/ChatGPT session the current article-access, email and general-operations reconciliation. This session is the single production writer for that task; bounded workers inspect, draft and verify. This task-scoped takeover does not establish that historical Jarvis, Dot/Doc, Muse, Flaco or department sessions are connected or have accepted work.
+
+- **Buddy access:** "An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams" remains at its [canonical URL](https://www.gatorbaitmedia.com/post/an-anatomy-of-total-gator-collapse-a-swamp-strewn-with-broken-dreams). The owner's leave-open request was applied by clearing only the post's nine pricing-plan restrictions. The provider mutation response at **20:29:29 UTC on Oct. 12** returned PUBLISHED, an empty plan list and no unpublished changes; the original publication time, body and byline were retained. Independent fresh anonymous public HTML subsequently returned the full "Baugh Has Nowhere" and "The Question Beneath the Questions" sections with no exclusive subscription gate. The first stale cached gate was superseded. Browser viewport and homepage-click checks remain unverified because the verification environment could not complete them; this is not evidence of a site failure.
+- **Franz, earlier version:** "Texas opens as a 10-point favorite against Florida" is published, open and available at its [existing canonical URL](https://www.gatorbaitmedia.com/post/texas-opens-as-a-10-point-favorite-against-florida). Campaign `73749235-2f9b-4361-b044-9292c26e93d2` was independently read as PUBLISHED / DISTRIBUTED at **13:02:12 UTC on Oct. 12**, with 300 delivered, 167 opened, 68 clicked, 1 bounced and 0 complaints. These counters are a dated provider observation, not future metrics or proof of delivery of a later revision.
+- **Franz, new revision pending:** Brenden subsequently reported a just-written update in the business inbox. Fresh reads found no new submission in the connected mailbox and no new body revision in today's Wix drafts. The actual new copy is still required. [Source-intake record](https://github.com/Presidente49/gatorbait-media-redesign/issues/34#issuecomment-6132406560): current Kodak session owns obtaining the private source, comparing it with the published article and preparing the authorized current update/email. Do not treat the morning campaign as delivery of this new version, invent replacement text or resend the old article diagnostically. Current audience, consent, dedupe and send-governor gates still apply.
+- **Blog alerts:** both existing blog-alert workflows were freshly read INACTIVE, at revisions 17 and 39; neither was switched during this repair.
+- **Scope:** current news and general intake/QC/revenue/weekly operations only. Do not resume Missouri, completed games, remembered team-specific queues or dormant department sessions. Preserve current bylines, article bodies, payments, member records and the approved homepage.
+- **Repository audit:** the fixed read-only snapshot before this docs branch covered **6 accessible repositories and all 380 branches**, including 370 branches in the canonical repo at main `ea063297796591e0f4cc232e5cad7b1b067d92b6`. Compare old PRs individually against current main; divergent history often contains content already incorporated by squash. No blanket merge, deletion or deployment follows from the inventory.
+
+### General routine configuration — verified Oct. 12
+
+The four existing routines were updated and enabled. Saved prompts and schedules were independently read back. Execution of the new prompts remains **unverified**; provider next-run values were unavailable at this checkpoint. A manual read-only QC run request is tracked separately and must not be treated as completed without runtime evidence.
+
+| Routine | Saved schedule (America/New_York) | Scope |
+| --- | --- | --- |
+| GatorBait Editorial Intake | Every 2 hours, 7:20 a.m.–11:20 p.m. | Private review-draft preparation |
+| GatorBait Publishing & Email QC | Every 2 hours, 7:52 a.m.–11:52 p.m. | Read-only verification |
+| GatorBait Revenue Watch | Daily 9 a.m., starting Oct. 13 | Read-only reporting |
+| GatorBait Weekly Ops | Mondays 8 a.m., flexible | Read-only reconciliation |
+
+The other 21 routines were untouched, including paused duplicate revenue and game jobs. A saved enabled configuration is not execution evidence and grants no independent production, email or social authority.
+
+### Current Markdown loop
+
+Read `docs/START-HERE.md`, newest #34 outcomes and the smallest current job in `docs/jobs/`. Use `docs/jobs/controller-sweep.md` for reconciliation and `docs/jobs/newsroom-desk.md` for intake. The shared `automation/ops-hub/playbooks/controller-communications-qc.md` loop is **observe → compare → diagnose → act once → verify provider → verify independently → record → recheck next cycle**. Unchanged evidence may resolve to NOOP; learning does not expand authority.
+
+Current main contains the Gazette builder, `send-governor.js`, pre-send checklist and `docs/GAZETTE-STORY-ALERT.md`; older missing-tool reports are superseded. Use current owner instructions, provider evidence and the existing consent/deduplication gates. Draft PRs #253/#257 contain proposed privacy/operations tooling; they are not activated agents or runtime adapters. Do not run the legacy `automation/sports-home/build.py` against production outputs or start the repository-root Pages recovery workflow as a coordination step.
+
+### Historical snapshots below
+
+Everything below until the session-startup signpost is dated continuity evidence. Old controller names, session IDs, campaigns, account states, lead pins and game queues are not current assignments or permissions. Re-read the provider and newest #34 record before using retained IDs or procedures; `docs/START-HERE.md` and the active owner request govern current work.
+
+## Historical operating direction — reconciled Oct. 10, 2026
+
+`docs/START-HERE.md` is the rulebook; issue #34's newest comments are the work log. At that snapshot, Jarvis was the sole controller. This file records dated evidence, not another rulebook or a queue to execute from memory.
 
 - News is chronological, newest-first, with no writer pin. The Buddy-first instruction below is retired.
 - Incoming writers' pieces follow the Oct. 10 standing order and retain their own bylines. Jarvis/Copy Desk copy uses Brenden Martin. Writer-assignment emails are not current work.
@@ -12,7 +46,7 @@
 
 Older revisions, campaign counts, access blockers, worker rosters and open queues below are dated snapshots. Re-read providers and newest #34 evidence before treating them as current. This reconciliation did not inspect or mutate Wix, routines, email delivery or account access.
 
-## Oct. 9, ~11 p.m. ET: South Carolina week, chronological order, handoff signposts (Jarvis)
+## Historical Oct. 9, ~11 p.m. ET: South Carolina week, chronological order, handoff signposts (Jarvis)
 
 - **Order rule changed (Brenden, Oct. 9):** the front page is strictly chronological, newest first. No writer is pinned as lead; the "Buddy Martin leads" rule is retired. Applied to the overnight story-desk routine; the game-day desk is applying it to the front-page code and docs.
 - **Game, Sat. Oct. 10:** South Carolina at Florida, 12:45 p.m. ET (ESPN). Hurricane Isaias is making landfall far to the west; Gainesville is outside the warning areas. Status checks run 8:30 and 11:30 a.m. ET.
@@ -21,9 +55,9 @@ Older revisions, campaign counts, access blockers, worker rosters and open queue
 - **Historical access backlog, re-verify:** the Mac Editor session (link previews, plans page, PDF page, sitemap, Donate) and blank `/florida-football-stats` page. The writer-assignment email in this snapshot is retired by START-HERE, not an active ask.
 - **Handoffs consolidated:** `docs/START-HERE.md` is the one signpost; `CLAUDE.md` and `AGENTS.md` point to it. Issue #34 is the live log and this file is the status page. The `gatorbait-agency` repo is a separate project with its own Codex role and was left alone.
 
-Older dated entries (Oct. 2 back to Sept. 28, 2026) were moved verbatim to `history/CURRENT-STATE-2026-09.md` on Oct. 10, 2026; the standing live facts (embed IDs and revisions, session IDs, store, email list) stay below.
+Older dated entries (Oct. 2 back to Sept. 28, 2026) were moved verbatim to `history/CURRENT-STATE-2026-09.md` on Oct. 10, 2026; the dated configuration snapshots (embed IDs and revisions, session IDs, store and email list) remain below for reference; re-read live providers before use.
 
-## Oct. 3, ~2:45 a.m. ET: coordination day, game-day desk restored, Chats board, design system status (Jarvis)
+## Historical Oct. 3, ~2:45 a.m. ET: coordination day, game-day desk restored, Chats board, design system status (Jarvis)
 
 ### Today's one big thing (Oct. 3)
 Brenden, ~2:30 a.m. ET: "sorry coordinate today just to clean it up." Jarvis reads it as: coordinate the whole team and clean up loose ends. He had just asked "what is your one big thing for today? remember??" Nothing earlier is recorded as a daily "one big thing" (checked: the chat transcript, this file, #34, the Control Room, Wispr notes, Gmail). The only "one big thing" on file is the message board (Sept. 28). **From now on Brenden's one big thing for the day is written on this line first, so it survives a context reset.**
@@ -51,7 +85,7 @@ Full write-up: `docs/AGENT-SYSTEM-SURVEY-2026-10-03.md`. **Stay put, adopt nothi
 
 Before any mutation or present-tense business conclusion, re-read the authoritative live provider. This file is a routing snapshot, not permission to override fresher evidence.
 
-## Truth and coordination
+## Historical truth and coordination record
 
 Truth order:
 
@@ -67,7 +101,7 @@ Canonical coordination:
 - Scheduled monitors remain read-only for live Wix/content/assets/routing.
 - Routine editorial implementation follows START-HERE. Historical newsletter delegation does not authorize subscriber sends; the current hard line applies.
 
-## Standing facts kept from the Sept. 28 and Sept. 29 syncs
+## Historical facts kept from the Sept. 28 and Sept. 29 syncs
 
 Verbatim excerpts. The complete dated entries, including the stop-work list, video, waiting-on-Brenden and usage-limit notes, are in `history/CURRENT-STATE-2026-09.md`. Revision numbers here are the Sept. 28–29 reads; the Oct. 3 entry and live provider reads are newer.
 
@@ -139,7 +173,7 @@ Verbatim excerpts. The complete dated entries, including the stop-work list, vid
 - **Draft Wix sites, all Free plan, Draft, created Sept. 20, no domain:** "Gatorbait Media 1" `4d9e149d`, "My Site" `468abff9`, "My Site 1" `5c77acfa`, "Gatorbait Media" `b4032e65`. They hold no live adapters. Trashing them is Brenden's call (card `draft-sites`).
 - **Apps on the production site with no visible use:** Wix Hotels, Restaurants Menus, Restaurants Orders. Invoices, Pay Links, Events and Forms & Payments may back checkout or old records; do not remove any app without Brenden's yes and a dashboard check (card `unused-apps`).
 
-## Site typography — current authority
+## Historical typography record — current rulebook wins
 
 Sitewide typography is standardized on the **Barlow** family:
 - body/copy: Barlow 400–500
@@ -170,7 +204,7 @@ GitHub `main` continues to advance through normal controller/ops commits. Produc
 - source pointer: `485b38a036431c667584aa3990922772288399f3/automation/site-design/magazine.js`
 - web Magazine remains separate from the email newsletter and from the downloadable/print reading-edition experiments.
 
-## GatorBait Magazine Newsletter — canonical Stack
+## Historical GatorBait Magazine Newsletter Stack record
 
 Production design library:
 - upstream: `ColorlibHQ/email-templates`
@@ -216,7 +250,7 @@ Current canonical Wix release draft:
 
 Do not reuse older Library HTML/PDF reading-edition proofs as the send-ready campaign. They are historical design artifacts unless explicitly promoted through the current Stack.
 
-## Original magazine/publication tool inventory — recovered and canonicalized
+## Historical magazine/publication tool inventory
 
 The richer publication toolbox previously lived only on branch `tools/magazine-originals-20260924` and in ChatGPT Library setup ZIPs. It is now mirrored source-only on `main` at:
 
@@ -252,7 +286,7 @@ Library artifacts found during the consolidation sweep include:
 
 Use these as evidence/source material, not as competing current state.
 
-## Automatic Story Alert — live identity and open blocker
+## Historical Automatic Story Alert identity and blocker
 
 Live Wix state:
 - production automation: `5006baf5-fbbf-440c-a012-a09bdbd95fc9`
@@ -278,7 +312,7 @@ Exact blocker:
 
 Do not republish, resend, test-trigger or flip workflows diagnostically.
 
-## AdSense — live identity and open evidence gates
+## Historical AdSense identity and evidence gates
 
 Live Wix custom-embed state:
 - serving owner: `af338ad4-8c84-4708-8859-f1d6a0121c13`
@@ -295,7 +329,7 @@ Issue #30 is claimed by Master Control. Remaining gates:
 
 Do not add another loader/manual unit or change consent/account/payment settings speculatively.
 
-## Cross-source sweep — what exists and what does not
+## Historical cross-source sweep
 
 ### GitHub
 Code search for newsletter/Colorlib/MJML/GatorBait Magazine across the `Presidente49` account found the current implementation in **`Presidente49/gatorbait-media-redesign`**. No second GatorBait newsletter code repository was found in accessible GitHub code search.
@@ -318,7 +352,7 @@ A Google Drive mount is available. Top-level and likely code/download locations 
 ### Local computer
 Remote Desktop Commander currently returns **no connected devices**. Therefore local Mac folders, local Git clones/worktrees and local Claude/Codex session state cannot be truthfully inventoried from this cloud session yet. Do not claim local installation or local cleanup until a device connects.
 
-## Open branch / PR disposition
+## Historical branch / PR disposition
 
 Do not bulk-merge old branches to recover one useful component.
 
@@ -328,7 +362,7 @@ Do not bulk-merge old branches to recover one useful component.
 - **PR #5** magazine/growth playbooks are already merged; use current main copies.
 - **PR #24** Studio product work was merged to its Studio branch/base history; it is not authority to migrate production Wix.
 
-## Visual QC — current evidence
+## Historical visual QC evidence
 
 Read-only GitHub Chromium QC is now part of Master Control:
 - workflow: `.github/workflows/live-presentation-qc.yml`
@@ -349,7 +383,7 @@ Newsletter visual proof is separately verified:
 - exactly two distinct images, both loaded
 - restored GatorBait/Killing Fields editorial rhythm visibly present.
 
-## Email audience and consent — fresh September 24 audit
+## Historical email audience and consent — Sept. 24 audit
 
 Full Wix population audit:
 - contacts / unique emails: **2,580 / 2,580**
@@ -397,3 +431,4 @@ Every Claude/Codex/ChatGPT GatorBait session should:
 7. update existing work items rather than inventing parallel controllers/issues
 
 Historical chats, branches and dated snapshots are evidence. Live state establishes facts; START-HERE and current owner instructions establish authorization.
+

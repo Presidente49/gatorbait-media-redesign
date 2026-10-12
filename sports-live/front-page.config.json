@@ -174,10 +174,10 @@
   "$columnists": "Writer names link to their Wix writer category page (branded, newest-first, Columnists sub-nav). Oct. 4: the old tag pages held 26/4/3/1 posts; the member profile page has no post list. A writer's list is only as complete as the post's writer category, so every column needs its writer category.",
   "newHours": 48,
   "colead": {
-    "on": false,
+    "on": true,
     "left": "Buddy Martin",
     "right": "Franz Beard",
-    "rightMatch": "soothsayer|south carolina|gamecock|homecoming|gators will",
+    "rightMatch": "",
     "days": 7
   },
   "showArchive": [

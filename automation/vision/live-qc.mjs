@@ -32,6 +32,7 @@ const TARGETS=[
   }
 ];
 
+// The engine is Chromium; the phone UA/geometry do not establish Safari coverage.
 const IOS_UA=devices['iPhone 13'].userAgent;
 function phone(width,height){
   return {
@@ -130,6 +131,17 @@ function audit(input){
 
   if(visibleImages.length&&visibleImages.some(i=>!i.loaded))hard.push('visible image failed to load in first two screens');
   if(!visibleImages.length)warnings.push('no visible image detected in first two screens');
+  // Inspect reserved story-photo boxes, including hidden/fpFailed images and lower lazy cards.
+  // Filtering by image visibility previously let the destructive seven-second fallback pass QC.
+  const storyPhotos=isHome&&root?[...root.querySelectorAll('.fp-frame[href*="/post/"],.fp-story-photo')].map(box=>{
+    const img=box.querySelector('img');
+    return {alt:img?.alt||'',loaded:Boolean(img&&img.complete&&img.naturalWidth>0),hidden:Boolean(img&&img.hidden),failed:img?.dataset.fpFailed||null,visible:visible(img)};
+  }):[];
+  if(isHome&&rootPresent){
+    if(!storyPhotos.length)hard.push('expected homepage story photographs missing');
+    const missing=storyPhotos.filter(i=>!i.loaded||i.hidden||i.failed||!i.visible);
+    if(missing.length)hard.push(missing.length+' of '+storyPhotos.length+' expected story photographs missing, hidden or unloaded after scrolling');
+  }
 
   const inspected=[];
   for(const el of document.querySelectorAll('h1,h2,h3,[data-hook],[data-testid]')){
@@ -262,6 +274,7 @@ function audit(input){
     articleTitleCandidates,
     consentCandidates:consentDiagnostics,
     visibleImages:visibleImages.slice(0,8),
+    storyPhotos,
     smallTapTargets:small,
     hard,
     consent,
@@ -304,7 +317,7 @@ try{
 }catch{}
 
 const browser=await chromium.launch();
-const report={capturedAt:new Date().toISOString(),runs:[],hardFailureCount:0,expectedLoader};
+const report={capturedAt:new Date().toISOString(),browser:'Chromium (phone UA/touch emulation, not Safari)',runs:[],hardFailureCount:0,expectedLoader};
 
 for(const profile of PROFILES){
   for(const target of TARGETS){
@@ -325,6 +338,12 @@ for(const profile of PROFILES){
       const response=await page.goto(target.url,{waitUntil:'load',timeout:45000});
       status=response?.status()??null;
       await page.waitForTimeout(8000);
+      if(target.name==='home'||target.name==='home-gameday'){
+        const boxes=page.locator('#gbm-live .fp-frame[href*="/post/"],#gbm-live .fp-story-photo');
+        for(let i=0;i<await boxes.count();i++)await boxes.nth(i).scrollIntoViewIfNeeded();
+        await page.waitForFunction(()=>[...document.querySelectorAll('#gbm-live .fp-frame[href*="/post/"] img,#gbm-live .fp-story-photo img')].every(i=>i.complete&&i.naturalWidth>0),null,{timeout:15000}).catch(()=>{});
+        await page.evaluate(()=>scrollTo(0,0));
+      }
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';
       await page.screenshot({path:shot,type:'jpeg',quality:70,fullPage:false});
       const result=await page.evaluate(audit,{target,requestedWidth:profile.expectedWidth});

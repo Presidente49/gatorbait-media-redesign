@@ -270,12 +270,12 @@
     var set = cut ? [480, 800, 1200].map(function (x) { return wixCut(src, x, Math.round(x * H / W)) + ' ' + x + 'w'; }).join(', ') : '';
     return '<img src="' + esc(cut || src) + '"' + (set ? ' srcset="' + esc(set) + '" sizes="' + esc(sizes || '(max-width: 700px) 100vw, 60vw') + '" data-fp-orig="' + esc(src) + '"' : '') + ' alt="' + esc(alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + ' width="' + W + '" height="' + H + '">';
   }
-  // Bounded image delivery, including lazy images and the YouTube archive. A failed photo
-  // never becomes a fabricated image: its reserved box carries a plain fallback.
+  // Failed images keep an honest fallback; pending requests have no delivery deadline.
+  // Slow phones must be able to finish loading, including after a lazy photo scrolls into view.
   function imgFallback(root) {
     function unavailable(t) {
       if (!t || t.dataset.fpFailed) return;
-      t.dataset.fpFailed = '1'; t.removeAttribute('srcset'); t.removeAttribute('src'); t.hidden = true;
+      t.dataset.fpFailed = '1'; t.hidden = true;
       var box = t.parentElement; if (!box) return;
       box.classList.add('fp-media-unavailable');
       var note = document.createElement('span'); note.className = 'fp-media-note';
@@ -291,12 +291,21 @@
       unavailable(t);
     }
     root.addEventListener('error', function (e) { if (e.target && e.target.tagName === 'IMG') recover(e.target); }, true);
+    root.addEventListener('load', function (e) {
+      var t = e.target; if (!t || t.tagName !== 'IMG' || !t.naturalWidth || !t.dataset.fpFailed) return;
+      delete t.dataset.fpFailed; t.hidden = false;
+      var box = t.parentElement; if (!box) return;
+      box.classList.remove('fp-media-unavailable');
+      box.querySelectorAll('.fp-media-note').forEach(function (note) { note.remove(); });
+    }, true);
     var observer = typeof IntersectionObserver === 'function' ? new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) { if (!entry.isIntersecting) return; watch(entry.target); observer.unobserve(entry.target); });
     }, { rootMargin: '350px' }) : null;
     function watch(t) {
       if (t.dataset.fpWatched) return; t.dataset.fpWatched = '1'; t.loading = 'eager';
-      setTimeout(function () { if (!t.isConnected || t.dataset.fpFailed) return; if (!t.complete || !t.naturalWidth) unavailable(t); }, 7000);
+      // Catch a cached failure whose error event preceded the listener. Incomplete means pending,
+      // not failed; keep its URL and let the browser's load/error events decide, even after 7 s.
+      setTimeout(function () { if (!t.isConnected || t.dataset.fpFailed) return; if (t.complete && !t.naturalWidth) recover(t); }, 7000);
     }
     root.__fpWatchImages = function () { root.querySelectorAll('img').forEach(function (t) { if (t.loading === 'eager' || !observer) watch(t); else observer.observe(t); }); };
     root.__fpWatchImages();

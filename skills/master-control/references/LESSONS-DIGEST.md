@@ -117,3 +117,5 @@ One line per lesson, grouped by subject. `LESSONS.md` is the evidence (what happ
 - Lesson 94 (Oct. 11, 2026): If the TinyFish wallet is empty, read ESPN, AP and polls through Firecrawl (`maxAge: 0`); tell Brenden once, never top up.
 - Lesson 95 (Oct. 11, 2026): Postgame magazine recipe: ESPN-only JSON, build and QA, merge sha pin on `1dd74333`, separate email MJML with gates; set poll rankings in one field after the polls and hold go-live until then.
 - Lesson 96 (Oct. 11, 2026): Fresh news only. Never fill a gap with last week's ranking or stat, even dated; leave the line out until the current figure posts.
+
+- Lesson 97 (Oct. 12, 2026): Incomplete image requests are pending, not failures; keep URLs until load/error, restore the photo after a late successful load, and audit expected story-photo boxes including hidden images after scrolling lower lazy cards.

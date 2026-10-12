@@ -789,3 +789,9 @@ When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Mi
 **What happened:** While the postgame magazine waited for the Sunday polls, I put last week's rankings on the Texas section as a stand-in. Brenden stopped it: "it always has to be fresh news, rule."
 
 **The rule:** rankings, records, odds, times and stats come from the latest release at the moment of publishing. If the fresh figure is not out, leave the line out or say it is coming, and add it when it posts. An old figure, even labeled with its date, is not a placeholder. The same applies to emails and cards.
+
+## Lesson 97: pending photos and expected-image QA (Oct. 12, 2026)
+
+**What happened:** The homepage hid slow photos and removed their URLs after 7 seconds. Live QC filtered out hidden images and ignored lower lazy photos, so the defect could pass. Exact production source failed 5/8 units and 8/10 browser regressions. PR #270 fixes the handler and QC; PR #271 releases build 1e8ad826.
+
+**The rule:** incomplete is pending, not failed. Wait for load/error, retain the source for recovery, and clear fallback state after a valid late load. QA counts reserved story-photo boxes even when img is absent/hidden/failed, scrolls lazy cards, and requires the expected deployed commit/build and actual viewport. Unmodified public at 1366/390/430/320px and real photo responses held for 7.5 seconds at 390/430px verified the release (#34 receipt6115843450); Chromium emulation does not establish physical iOS coverage.

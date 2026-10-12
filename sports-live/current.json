@@ -1,5 +1,5 @@
 {
-  "commit": "cb81cc82abf8f506cda16479a7c004f454f76e07",
-  "updated": "2026-10-11T19:18:57Z",
-  "note": "Reviewed modern landing, build 92ce6f1a, including exact mobile footer gutters. Full rollback: 347b6783edbb999d5df8a494d3ebe6888e85575a; footer-only rollback: 90b159b9e0ab60287812c572b0c733ca7e7fa17a."
+  "commit": "e52400560c7dbadb029bbe5c1c1b03edec291ff4",
+  "updated": "2026-10-12T00:49:33.018Z",
+  "note": "Independently reviewed slow-photo repair, build 1e8ad826; preserves approved homepage design. Rollback: cb81cc82abf8f506cda16479a7c004f454f76e07 plus archived Home Code revision 52."
 }

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Buddy Blog: A Gator Ass-Whipping, With Bowl Projections in the Ashes",
+      "excerpt": "Trying to find two more wins is going to take patience and ibuprofen",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-a-gator-ass-whipping-with-bowl-projections-in-the-ashes",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-13T15:36:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9d0c9cbd2bcd492a8987e073294f6b94~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Buddy Blog: A Gator Ass-Whipping, With Bowl Projections in the Ashes"
+      }
+    },
+    {
+      "title": "Philo is the Florida quarterback at least for now",
+      "excerpt": "Because it is universally described as the single most important position in all of team sports, when it comes to football fingers immediately point to the quarterback whenever things go south, which they have the last two weeks for the Florida Gators (4-2, 2-2 SEC). Aaron Philo, whose numbers were just a shade under brilliant in Florida's 4-0 September…",
+      "url": "https://www.gatorbaitmedia.com/post/philo-is-the-florida-quarterback-at-least-for-now",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-13T12:51:07Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Philo is the Florida quarterback at least for now"
+      }
+    },
+    {
       "title": "Numbers Don't Lie",
       "excerpt": "Florida and South Carolina were nearly even in first downs and yards, but the Gators lost 38-19. Eddie Gilley on the three turnovers and two short fields behind a statistical draw.",
       "url": "https://www.gatorbaitmedia.com/post/numbers-don-t-lie",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Chris Spears' Best Shots: South Carolina 38, Florida 19"
-      }
-    },
-    {
-      "title": "GAMECLOCKED! No. 500 Was a Lousy Homecoming In The Swamp",
-      "excerpt": "Buddy Martin on South Carolina 38, Florida 19: a lousy Homecoming for the 500th game in the Swamp, and why he is hanging on with Jon Sumrall.",
-      "url": "https://www.gatorbaitmedia.com/post/gameclocked-no-500-was-a-lousy-homecoming-in-the-swamp",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-10T23:19:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_49718366a7af45c8b41d687433e56d4f~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for GAMECLOCKED! No. 500 Was a Lousy Homecoming in the Swamp"
-      }
-    },
-    {
-      "title": "'It's a player thing': Stockton, Sumrall and Chiles after South Carolina loss",
-      "excerpt": "Bailey Stockton, Jon Sumrall and Aaron Chiles on Florida's 38-19 loss to South Carolina, plus injury notes on Vernell Brown III, Duke Clark and Myles Graham.",
-      "url": "https://www.gatorbaitmedia.com/post/it-s-a-player-thing-stockton-sumrall-and-chiles-after-south-carolina-loss",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T22:31:22Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_881bf92c88194db396e3e532bbfc1144~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for 'It's a player thing': Stockton, Sumrall and Chiles after South Carolina loss"
       }
     }
   ]

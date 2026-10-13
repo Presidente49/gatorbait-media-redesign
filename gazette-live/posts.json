@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Buddy Blog: A Gator Ass-Whipping, With Bowl Projections in the Ashes",
+      "excerpt": "Trying to find two more wins is going to take patience and ibuprofen",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-a-gator-ass-whipping-with-bowl-projections-in-the-ashes",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-13T15:36:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9d0c9cbd2bcd492a8987e073294f6b94~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Buddy Blog: A Gator Ass-Whipping, With Bowl Projections in the Ashes"
+      }
+    },
+    {
+      "title": "Philo is the Florida quarterback at least for now",
+      "excerpt": "Because it is universally described as the single most important position in all of team sports, when it comes to football fingers immediately point to the quarterback whenever things go south, which they have the last two weeks for the Florida Gators (4-2, 2-2 SEC). Aaron Philo, whose numbers were just a shade under brilliant in Florida's 4-0 September…",
+      "url": "https://www.gatorbaitmedia.com/post/philo-is-the-florida-quarterback-at-least-for-now",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-13T12:51:07Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Philo is the Florida quarterback at least for now"
+      }
+    },
+    {
       "title": "Numbers Don't Lie",
       "excerpt": "Florida and South Carolina were nearly even in first downs and yards, but the Gators lost 38-19. Eddie Gilley on the three turnovers and two short fields behind a statistical draw.",
       "url": "https://www.gatorbaitmedia.com/post/numbers-don-t-lie",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Golden unloads on the NCAA"
-      }
-    },
-    {
-      "title": "Hit the Reset Button: Gators, Gamecocks Meet at Different Crossroads",
-      "excerpt": "Loren Meadows breaks down South Carolina's offense and defense, the key matchups and his pick for Homecoming: Florida 31, South Carolina 24.",
-      "url": "https://www.gatorbaitmedia.com/post/hit-the-reset-button-gators-gamecocks-meet-at-different-crossroads",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-10-10T12:59:26Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_cac5a84a16b145b5bb20bb3575b5bb0d~mv2.jpg/v1/fit/w_1000,h_590,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Hit the Reset Button: Gators, Gamecocks Meet at Different Crossroads"
-      }
-    },
-    {
-      "title": "Florida is a double-digit favorite over South Carolina: the numbers at kickoff",
-      "excerpt": "FanDuel lists the Gators at minus-11.5 with a total of 58.5, and numberFire gives Florida a 72.2% chance to win.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-is-an-11-5-point-favorite-over-south-carolina-what-the-numbers-say",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T11:44:51Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_23a80f2eb6b448149eccbcd0165d872c~mv2.jpg/v1/fit/w_1000,h_800,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida is a double-digit favorite over South Carolina: the numbers at kickoff"
       }
     }
   ]

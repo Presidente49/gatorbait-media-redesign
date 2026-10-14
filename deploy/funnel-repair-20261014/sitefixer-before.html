@@ -1,0 +1,140 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "@id": "https://www.gatorbaitmedia.com/#organization",
+  "name": "GatorBait Media",
+  "alternateName": "Gator Bait Media",
+  "url": "https://www.gatorbaitmedia.com",
+  "logo": {"@type": "ImageObject","url": "https://static.wixstatic.com/media/ae876a_33367cf1645c43d18b0d930a68ca747b~mv2.png","width": 600,"height": 600},
+  "image": "https://static.wixstatic.com/media/ae876a_33367cf1645c43d18b0d930a68ca747b~mv2.png",
+  "description": "GatorBait Media is the premier source for Florida Gators news, founded by Emmy-winning journalist and NY Times best-selling author Buddy Martin. Covering UF athletics since 1979.",
+  "foundingDate": "1979",
+  "founders": [{"@type":"Person","name":"Buddy Martin","jobTitle":"Founder & Editorial Director"},{"@type":"Person","name":"Brenden Martin","jobTitle":"Publisher & Producer"}],
+  "founder": {"@type":"Person","name":"Buddy Martin"},
+  "employees": [{"@type":"Person","name":"Buddy Martin","jobTitle":"Host, The Buddy Martin Show"},{"@type":"Person","name":"Brenden Martin","jobTitle":"Publisher & Producer"},{"@type":"Person","name":"Franz Beard","jobTitle":"Senior Writer"},{"@type":"Person","name":"Carlton Reese","jobTitle":"Writer"},{"@type":"Person","name":"Chris Spears","jobTitle":"Photographer"}],
+  "knowsAbout": ["Florida Gators","SEC Football","SEC Basketball","College Football","College Basketball","NCAA Recruiting","Transfer Portal"],
+  "areaServed": {"@type":"Country","name":"United States"},
+  "email": "info@gatorbaitmedia.com",
+  "sameAs": ["https://www.facebook.com/gatorbaitmedia","https://x.com/gatorbaitmedia","https://twitter.com/gatorbaitmedia","https://www.instagram.com/gatorbaitmedia","https://www.youtube.com/@thebuddymartinshow"],
+  "diversityPolicy": "https://www.gatorbaitmedia.com/policies",
+  "ethicsPolicy": "https://www.gatorbaitmedia.com/policies",
+  "masthead": "https://www.gatorbaitmedia.com/about",
+  "missionCoveragePrioritiesPolicy": "https://www.gatorbaitmedia.com/about",
+  "ownershipFundingInfo": "https://www.gatorbaitmedia.com/about",
+  "verificationFactCheckingPolicy": "https://www.gatorbaitmedia.com/policies",
+  "publishingPrinciples": "https://www.gatorbaitmedia.com/policies",
+  "actionableFeedbackPolicy": "https://www.gatorbaitmedia.com/policies",
+  "correctionsPolicy": "https://www.gatorbaitmedia.com/policies"
+}
+</script>
+<script>
+(function(){
+  try {
+    var p = window.location.pathname || "";
+    var s = window.location.search || "";
+    var h = window.location.hash || "";
+
+    function goReplace(u){ window.location.replace(u); }
+    // Preserve legacy contact links while the canonical indexed route remains /contact.
+    if (p === "/contact-form" || p === "/contact-form/") { goReplace("/contact" + s + h); return; }
+
+    // Official merchandise store: retire the broken Wix all-products destination.
+    if (/^\/category\/all-products\/?$/.test(p)) { goReplace("https://gatorbait2026.itemorder.com/shop/home/"); return; }
+
+    // 1. Legacy post prefix - biggest bug for subscribers
+    if (p.indexOf("/gatorbait-media-blogs/post/") === 0) {
+      goReplace(p.replace("/gatorbait-media-blogs/post/", "/post/") + s + h); return;
+    }
+    // 2. /blog/ -> /post/
+    if (/^\/blog\/[^/]+/.test(p)) {
+      var mb = p.match(/^\/blog\/(.+)$/);
+      if (mb) { goReplace("/post/" + mb[1] + s + h); return; }
+    }
+    // 3. /category/{slug} and /categories/{slug} -> /gatorbait-media-blogs/categories/{slug}
+    var mCat = p.match(/^\/categor(?:y|ies)\/(.+)$/);
+    if (mCat) {
+      var catSlug = mCat[1];
+      if (catSlug === "buddys-blog" || catSlug === "buddy-blog") catSlug = "buddy-s-blog";
+      goReplace("/gatorbait-media-blogs/categories/" + catSlug + s + h); return;
+    }
+    // 4. Fix buddys-blog even inside blog category path
+    if (p === "/gatorbait-media-blogs/categories/buddys-blog" || p === "/gatorbait-media-blogs/categories/buddy-blog") {
+      goReplace("/gatorbait-media-blogs/categories/buddy-s-blog" + s + h); return;
+    }
+    // 5. /tag/{slug} -> /gatorbait-media-blogs/tags/{slug}
+    var mTag = p.match(/^\/tag\/(.+)$/);
+    if (mTag) { goReplace("/gatorbait-media-blogs/tags/" + mTag[1] + s + h); return; }
+    // 6. /plans-pricing -> /pricing-plans (subscribe funnel)
+    if (p === "/plans-pricing" || p === "/plans-pricing/") {
+      goReplace("/pricing-plans" + s + h); return;
+    }
+    // 7. /home -> / (dedupe)
+    if (p === "/home") { goReplace("/" + s + h); return; }
+    // 8. /signin -> /account/my-account (Wix members flow)
+    if (p === "/signin" || p === "/sign-in" || p === "/login") {
+      goReplace("/account/my-account" + s + h); return;
+    }
+
+    // Reader repair: author-name links lead to the native current-author feed, not a legacy tag archive.
+    if ((p.replace(/\/+$/, "") || "/") === "/") {
+      function repairFranzLinks() {
+        // Chris has no working public profile; use the verified existing photo-gallery destination.
+        document.querySelectorAll('#gbm-live .fp-rail a[href="/null"]').forEach(function(a) {
+          if (/^(CS|Chris Spears)$/.test(a.textContent.trim())) { a.setAttribute("href", "/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28"); a.setAttribute("aria-label", "Chris Spears photo gallery"); if (a.textContent.trim() !== "CS") a.textContent = "Chris Spears Photos"; }
+        });
+        document.querySelectorAll('#gbm-live .fp-rail a[href="/gatorbait-media-blogs/tags/franz-beard"]').forEach(function(a) {
+          a.setAttribute("href", "/profile/franz/profile");
+        });
+      }
+      repairFranzLinks();
+      document.addEventListener("gbm:gazette-ready", repairFranzLinks);
+    }
+
+    // Native Wix owns post titles, descriptions, social tags and article schema.
+    // Wait for its real post header; decorate the visible published date only.
+    var isPost = p.indexOf("/post/") === 0;
+    if (!isPost || p === '/post/denzel-aberdeen-florida-temporary-injunction-2026') return;
+    var injected = false;
+    function injectAll() {
+      var titleNode=document.querySelector('[data-hook="post-page"] [data-hook="post-title"]');
+      var postHeader=titleNode&&titleNode.closest('header'),rawDate=(document.querySelector('meta[property="article:published_time"]')||{}).content,date=new Date(rawDate||'');
+      if(postHeader&&rawDate&&Number.isFinite(date.getTime())&&!postHeader.querySelector('.gbm-published')){
+        var line=document.createElement('p'),time=document.createElement('time');line.className='gbm-published';
+        time.dateTime=date.toISOString();time.textContent=date.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'});
+        line.appendChild(document.createTextNode('Published '));line.appendChild(time);postHeader.appendChild(line);
+      }
+      if (!titleNode || !postHeader || !rawDate || !Number.isFinite(date.getTime())) return false;
+      injected = true;
+      return true;
+    }
+
+    injectAll();
+
+    function startObserver() {
+      // v2 (speed-2026): watch the Wix page container instead of body; one injectAll per animation frame.
+      var root = document.getElementById('SITE_CONTAINER') || document.body, frame = 0;
+      if (!root) { setTimeout(startObserver, 50); return; }
+      var obs = new MutationObserver(function(mutations, observer){
+        if (frame) return;
+        frame = requestAnimationFrame(function(){
+          frame = 0;
+          if (injectAll() && injected) {
+            setTimeout(function(){ injectAll(); observer.disconnect(); }, 500);
+          }
+        });
+      });
+      obs.observe(root, {childList: true, subtree: true});
+      setTimeout(function(){ obs.disconnect(); }, 15000);
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", startObserver);
+    } else {
+      startObserver();
+    }
+    setTimeout(injectAll, 500);
+    setTimeout(injectAll, 1500);
+    setTimeout(injectAll, 3500);
+  } catch(e) {}
+})();
+</script>

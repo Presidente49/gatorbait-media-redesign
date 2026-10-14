@@ -1,0 +1,50 @@
+{
+  "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+  "embeds": [
+    {
+      "name": "core",
+      "id": "fdc2127a-845a-4d02-b711-438f1a4a86ce",
+      "revision": "90",
+      "category": "ESSENTIAL",
+      "characters": 14941,
+      "sha256": "19f2cd24e328f460f8a29881ccbb39b030a2cc989a88beca1765d7e7c24b3904",
+      "rollback": "core-before.html"
+    },
+    {
+      "name": "home",
+      "id": "622d8ece-df55-44fc-9e4a-3f580804743b",
+      "revision": "57",
+      "category": "ESSENTIAL",
+      "characters": 6100,
+      "sha256": "8af16a120a2661db437e535213dfaf8d65b6751862ef0c10271b324024e7cc28",
+      "rollback": "home-before.html"
+    },
+    {
+      "name": "magazine",
+      "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+      "revision": "99",
+      "category": "ESSENTIAL",
+      "characters": 2774,
+      "sha256": "13ce1d293ab729186126d59d55cf0afde0203b10330c68bddb49ac81e7b30023",
+      "rollback": "magazine-before.html"
+    },
+    {
+      "name": "sitefixer",
+      "id": "5a43ae83-690e-4933-971d-4837db00b2f3",
+      "revision": "24",
+      "category": "ESSENTIAL",
+      "characters": 8072,
+      "sha256": "3d065b61fbe2416699f7db0ae7084e23a4ee1f34780f555a4be690e75ec11a18",
+      "rollback": "sitefixer-before.html"
+    },
+    {
+      "name": "pricing",
+      "id": "78528a4b-6bf4-4642-9a76-5c05226a270f",
+      "revision": "4",
+      "category": "ESSENTIAL",
+      "characters": 5799,
+      "sha256": "7de83a374f156e92a1d85602314df75fa0fbeb823408c376deb85af1f7841367",
+      "rollback": "pricing-before.html"
+    }
+  ]
+}

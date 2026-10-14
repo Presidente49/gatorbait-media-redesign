@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Report: Aaron Philo's status uncertain for Florida's trip to Texas",
+      "excerpt": "Aaron Philo was limited at practice Wednesday, according to On3. Tramell Jones Jr. would be next in line if Philo cannot play.",
+      "url": "https://www.gatorbaitmedia.com/post/report-aaron-philo-s-status-uncertain-for-florida-s-trip-to-texas",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-14T19:15:39Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_8e8e9000b0044c4d8375ed1fd8ee7399~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Report: Aaron Philo's status uncertain for Florida's trip to Texas"
+      }
+    },
+    {
       "title": "Thoughts of the Day: Franz Beard, Oct. 14, 2026",
       "excerpt": "Florida’s trip to Texas brings familiar faces and pressing questions. Franz Beard examines the Muschamp and Manning storylines, plus the offensive and defensive issues the Gators must address.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-14-2026",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Texas commit Easton Royal back in The Swamp a week before Florida plays the Longhorns"
-      }
-    },
-    {
-      "title": "Are The Gators Being Seduced? No. 9? Don’t Go Sweet-Talking Us Again!",
-      "excerpt": "“These are the musical chairs I was talking about, with no answer that is 100 percent defensible. Do you drag everyone up or down? A lot of season still to go.”",
-      "url": "https://www.gatorbaitmedia.com/post/are-the-gators-being-seduced-no-9-don-t-go-sweet-talking-us-again",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-10T13:49:55Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_283c3dddbe8f4c219266e5a2c88b049e~mv2.jpeg/v1/fit/w_1000,h_675,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Are The Gators Being Seduced? No. 9? Don’t Go Sweet-Talking Us Again!"
       }
     }
   ]

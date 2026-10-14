@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Report: Aaron Philo's status uncertain for Florida's trip to Texas",
+      "excerpt": "Aaron Philo was limited at practice Wednesday, according to On3. Tramell Jones Jr. would be next in line if Philo cannot play.",
+      "url": "https://www.gatorbaitmedia.com/post/report-aaron-philo-s-status-uncertain-for-florida-s-trip-to-texas",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-14T19:15:39Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_8e8e9000b0044c4d8375ed1fd8ee7399~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Report: Aaron Philo's status uncertain for Florida's trip to Texas"
+      }
+    },
+    {
       "title": "Thoughts of the Day: Franz Beard, Oct. 14, 2026",
       "excerpt": "Florida’s trip to Texas brings familiar faces and pressing questions. Franz Beard examines the Muschamp and Manning storylines, plus the offensive and defensive issues the Gators must address.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-14-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Members: Download the Postgame Magazine PDF"
-      }
-    },
-    {
-      "title": "After a second sobering loss, can Florida's season still be salvaged?",
-      "excerpt": "Franz Beard on South Carolina 38, Florida 19: a lost line of scrimmage, a quarterback question for Austin and a defense that keeps throwing things at the wall. Can the season still be salvaged?",
-      "url": "https://www.gatorbaitmedia.com/post/after-a-second-sobering-loss-can-florida-s-season-still-be-salvaged",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-11T10:34:55Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_6c0bd115c2c849bca004f49afa7ae417~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for After a second sobering loss, can Florida's season still be salvaged?"
       }
     }
   ]

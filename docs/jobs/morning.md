@@ -53,19 +53,27 @@ Old routine: `trig_01Ryb64b1eMgTGNAWivVVPRm` (Jarvis: Morning Money Report (7:44
 Morning Money Report. Brenden, Sept. 28: "it's your job every day to tell me how you made us some money."
 
 Read-only data work. Sources:
-- **Wix Analytics semantic model 'sales'** (5e701449, POST analytics/semantic-model/v3/semantic-models/query-data) for yesterday's ET day (the day starts at 04:00Z during EDT). Cross-check against the Data API TOTAL_SALES; if they differ by more than $1, mark it UNVERIFIED.
-- **pricing-plans/v2/orders**, fully paged inside ExecuteWixAPI and returning aggregates only. Key everything by planId, never planName.
+- **payments/v2/transactions**, fully paged inside ExecuteWixAPI and returning aggregates only. Date cash receipts by the transaction's `createdAt` in America/New_York, not the subscription order's creation date. Gross USD receipts are positive-value APPROVED charges, before fees, refunds and disputes. Keep zero-value approved trial initializations separate; they are not cash receipts or paid conversions.
+- **Wix Analytics semantic model 'sales'** (5e701449, POST analytics/semantic-model/v3/semantic-models/query-data) and the Data API TOTAL_SALES for the same ET period (the day starts at 04:00Z during EDT, 05:00Z during EST). Cross-check gross USD approved charges against both sales sources; if they differ by more than $1, mark the reconciliation UNVERIFIED and report the source totals separately.
+- **pricing-plans/v2/orders**, fully paged inside ExecuteWixAPI and returning aggregates only. Key everything by planId, never planName. Use order `createdDate` only for acquisition/cohort counts; current `lastPaymentStatus` is not historical cash received or evidence of when a renewal was charged.
 - **ecom/v1/orders/search**, split by app: 1522827f plans, 215238eb Stores/merch.
+- **Refunds and disputes:** report separately from gross charges. Date them by their own event timestamps when available. If the source exposes only a current transaction snapshot, state that coverage limitation; do not assign cumulative refund/dispute values to the charge's creation day or claim complete period net receipts.
 - **Email:** account-details status and rank, plus yesterday's roundup delivered, opened, clicked, bounced and complained.
+- **Email audience/reporting:** query email subscriptions with `$in` chunks of at most 20 unique addresses. Recent queries returned only 50 records even with `limit:100`; the requested limit does not prove completeness. Normalize addresses with trim + lowercase, join responses to fully paged contacts by normalized address, deduplicate requested/returned addresses, and reconcile each cohort's expected, matched, missing and ambiguous addresses. Mark missing or ambiguous matches UNVERIFIED; do not count them as unsubscribed or free, and preserve the existing consent, hold and send-permission rules.
 - **Blog METRICS** for the top 3 posts; Wix sessions; Windsor GA4/FB/IG only if cheap.
 - **Never** em-campaign-actions 1df6b270: it returns other sites' data.
 
-**Classify each non-draft order yesterday** as one of:
-- WIN-BACK: the buyer has a prior CANCELED order;
-- NEW: no prior order;
-- TRIAL STARTED: $0;
-- TRIAL CONVERTED;
-- RENEWAL.
+**Classify each actual positive-value APPROVED charge in the reporting period** using its verified buyer, plan and order links:
+- WIN-BACK: a verified returning buyer's new paid subscription after prior cancellation;
+- NEW: a verified first paid subscription charge without a trial;
+- TRIAL CONVERTED: the verified first paid charge after that subscription's trial;
+- RENEWAL: a verified subsequent billing-cycle charge on an existing subscription; never infer it from the subscription order's creation date;
+- MERCH: a verified Stores/merch charge;
+- UNCLASSIFIED: an approved charge whose buyer/plan/order mapping or billing-cycle history is unavailable. Keep it in gross receipts and disclose the missing classification.
+
+Report trial starts and zero-value approved trial initializations as separate acquisition counts, using linked trial evidence. Do not add them to paid charge counts. Count the active paid subscriber base from current access backed by a verified positive payment and deduplicate buyers; exclude active zero-value trials and complimentary access, and disclose unresolved access/payment status. Email/CRM cohort labels are not the financial subscriber base.
+
+**Coverage:** state the source, date window, time zone and pagination completeness for each total. Unavailable, incomplete or unmapped data is UNAVAILABLE or UNVERIFIED, never an assumed zero. Do not combine gross receipts, subscription acquisition counts, renewals, trial starts, refunds/disputes or email cohorts into one unlabeled number.
 
 **Renewals due:** count only ONLINE + PAID + auto-renew orders, for 7 and 30 days. Exclude OFFLINE/UNPAID orders using a fresh read; the historical count is not today's total.
 

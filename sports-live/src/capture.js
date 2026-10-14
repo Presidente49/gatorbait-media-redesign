@@ -16,8 +16,8 @@
  * Until that hidden field exists on the form, Wix rejects the key as UNKNOWN_VALUE_ERROR and the module resends
  * once without it (and remembers that for the page view). A "gbm:capture" DOM event and a dataLayer push (when a
  * dataLayer exists) record source and outcome either way.
- * Memory (localStorage, every access in try/catch): gbm-capture-joined (signed up here: no slide-up, no story cards,
- * the home module shows its thank-you line) and gbm-capture-dismissed (slide-up closed: quiet for 14 days).
+ * Memory (localStorage, every access in try/catch): gbm-capture-joined (submission accepted here, confirmation unverified: no slide-up, no story cards,
+ * the home module keeps its confirmation reminder) and gbm-capture-dismissed (slide-up closed: quiet for 14 days).
  * The slide-up never covers the Share sheet (#gbm-share.on): it sits below it and steps aside while the sheet is open.
  * Test hooks: window.__GBM_CAPTURE_CFG__ {clientId, formId, sourceField, delayMs} overrides the defaults;
  * window.GBM_CAPTURE exposes {version, html(source), mountStory(ctx), state()}. Nothing here edits a Wix page. */
@@ -106,8 +106,8 @@
     badEmail: 'Enter a valid email address.',
     noConsent: 'Check the box to say yes to GatorBait emails.',
     failed: "That didn't go through. Try again in a minute.",
-    joined: "You're on the GatorBait Magazine list",
-    joinedLine: 'Thanks for reading. Watch your inbox for the next issue.',
+    joined: "Thanks for signing up",
+    joinedLine: 'If you haven’t confirmed your email yet, open our confirmation message and tap the link. Already confirmed? Watch your inbox for the next issue.',
   };
   // Bot/SEO spam patterns detected in Oct 1-6 registrations.
   var SPAM_KEYWORDS = /viagra|casino|crypto|pharmacy|cialis|poker|betting|loans?|pills?|xyz|xxx|forex|seo|backlink|lens|cheap|discount|generic|adult|adult\s*content|dating|escort|hemp|cbd|bitcoin|ethereum|nft|dropship|affiliate|mlm|weight.?loss|diet.?pills?/i;

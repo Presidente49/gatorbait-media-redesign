@@ -1,0 +1,64 @@
+<style id="gbm-plan-terms-css">
+#gbm-plan-terms{box-sizing:border-box;display:block;width:100%;max-width:760px;flex:0 0 100%;grid-column:1/-1;margin:28px auto 40px;padding:18px 22px 16px;background:#fffdf9;border:1px solid #c5c9ce;border-top:4px solid #fa4616;color:#11274a;font:16px/1.55 Barlow,Arial,Helvetica,sans-serif;text-align:left}
+#gbm-plan-terms *{box-sizing:border-box}
+#gbm-plan-terms h2{margin:0 0 8px;font:800 18px/1.2 Barlow,Arial,Helvetica,sans-serif;letter-spacing:.02em;text-transform:uppercase;color:#11274a}
+#gbm-plan-terms ul{margin:0 0 12px;padding:0 0 0 20px;list-style:disc}
+#gbm-plan-terms li{margin:4px 0;color:#11274a}
+#gbm-plan-terms p{margin:0;font-size:15px;color:#4b5666}
+#gbm-plan-terms a{color:#0021a5;text-decoration:underline;font-weight:700}
+#gbm-plan-terms a:focus-visible{outline:3px solid #fa4616;outline-offset:2px}
+@media(max-width:600px){#gbm-plan-terms{margin:20px 0 32px;padding:16px}}
+#gbm-plan-benefits{box-sizing:border-box;width:100%;max-width:760px;flex:0 0 100%;grid-column:1/-1;margin:20px auto 26px;padding:18px 22px;border-left:4px solid #fa4616;background:#f3f6fb;color:#11274a;font:16px/1.55 Barlow,Arial,sans-serif;text-align:left}
+#gbm-plan-benefits h2{margin:0 0 8px;font:700 26px/1.15 "Barlow Condensed",Barlow,Arial,sans-serif;color:#11274a}
+#gbm-plan-benefits p{margin:8px 0}
+@media(max-width:600px){#gbm-plan-benefits{padding:16px;margin:16px 0 20px}}
+</style>
+<script>
+(function(){
+'use strict';
+var BENEFITS_ID='gbm-plan-benefits';
+var CTA=/^(start free trial|start trial|select|select plan|choose|choose plan|get started|buy now|subscribe)$/i;
+function onPlanPage(){var p=(location.pathname||'').replace(/\/+$/,'');return p==='/pricing-plans';}
+function lca(a,b){var s=[];for(var n=a;n;n=n.parentElement)s.push(n);for(var m=b;m;m=m.parentElement){if(s.indexOf(m)!==-1)return m;}return null;}
+function build(){
+var txt=(document.body&&document.body.innerText)||'';
+
+var el=document.createElement('section');
+el.id='gbm-plan-terms';
+el.setAttribute('aria-labelledby','gbm-plan-terms-h');
+el.innerHTML='<h2 id="gbm-plan-terms-h">How billing works</h2><ul>'+
+'<li>Plans renew automatically at the price shown, each billing period, until you cancel.</li>'+
+'<li>Your first payment is due when you purchase. There is no free trial.</li>'+
+'<li>Cancel anytime in <a href="/account/my-subscriptions">My Account &rarr; My Subscriptions</a>. Canceling stops the next renewal charge.</li>'+
+'</ul><p>Full subscription, cancellation and refund terms are in our <a href="/policies#subscriptions">Policies</a>. Billing question? <a href="/contact">Contact us</a>.</p>';
+return el;
+}
+function buildBenefits(){
+var el=document.createElement('section');el.id=BENEFITS_ID;el.setAttribute('aria-labelledby','gbm-plan-benefits-h');
+el.innerHTML='<h2 id="gbm-plan-benefits-h">Support independent Gator coverage</h2><p>Your membership supports GatorBait reporting and columns, recruiting coverage, live shows and podcasts.</p><p><strong>Choose $99 per year or $9.99 per month.</strong> Annual billing saves $20.88 compared with 12 monthly payments.</p><p>Payment is due at purchase. Plans renew until canceled. See the billing details below.</p>';
+return el;
+}
+function install(){
+if(!onPlanPage())return true;
+if(document.getElementById('gbm-plan-terms')&&document.getElementById(BENEFITS_ID))return true;
+var root=document.getElementById('PAGES_CONTAINER')||document.querySelector('main')||document.body;
+if(!root)return false;
+var ctas=[].slice.call(root.querySelectorAll('button,a,[role="button"]')).filter(function(b){return CTA.test((b.textContent||'').replace(/\s+/g,' ').trim());});
+if(ctas.length<2)return false;
+var box=ctas.reduce(function(acc,b){return acc?lca(acc,b):b;},null);
+if(!box||!box.parentElement||box===root)return false;
+if(!document.getElementById(BENEFITS_ID))box.parentElement.insertBefore(buildBenefits(),box);
+if(!document.getElementById('gbm-plan-terms'))box.parentElement.insertBefore(build(),box.nextSibling);
+return true;
+}
+function boot(){
+if(install()===true)return;
+var busy=false;
+var o=new MutationObserver(function(){if(busy)return;busy=true;requestAnimationFrame(function(){busy=false;if(install()===true)o.disconnect();});});
+o.observe(document.documentElement,{childList:true,subtree:true});
+setTimeout(function(){o.disconnect();},20000);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+setTimeout(install,800);setTimeout(install,2500);
+})();
+</script>

@@ -11,24 +11,6 @@
       "rollback": "core-before.html"
     },
     {
-      "name": "home",
-      "id": "622d8ece-df55-44fc-9e4a-3f580804743b",
-      "revision": "57",
-      "category": "ESSENTIAL",
-      "characters": 6100,
-      "sha256": "8af16a120a2661db437e535213dfaf8d65b6751862ef0c10271b324024e7cc28",
-      "rollback": "home-before.html"
-    },
-    {
-      "name": "magazine",
-      "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
-      "revision": "99",
-      "category": "ESSENTIAL",
-      "characters": 2774,
-      "sha256": "13ce1d293ab729186126d59d55cf0afde0203b10330c68bddb49ac81e7b30023",
-      "rollback": "magazine-before.html"
-    },
-    {
       "name": "sitefixer",
       "id": "5a43ae83-690e-4933-971d-4837db00b2f3",
       "revision": "24",
@@ -45,6 +27,42 @@
       "characters": 5799,
       "sha256": "7de83a374f156e92a1d85602314df75fa0fbeb823408c376deb85af1f7841367",
       "rollback": "pricing-before.html"
+    },
+    {
+      "name": "home",
+      "id": "622d8ece-df55-44fc-9e4a-3f580804743b",
+      "revision": "58",
+      "category": "ESSENTIAL",
+      "characters": 6100,
+      "sha256": "257d3603e88904dbd5a102bbe6c1a7bf967d424e3c0727d704c827e2cf0d23bc",
+      "rollback": "home-pre-capture.html"
+    },
+    {
+      "name": "magazine",
+      "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+      "revision": "101",
+      "category": "ESSENTIAL",
+      "characters": 2774,
+      "sha256": "13ce1d293ab729186126d59d55cf0afde0203b10330c68bddb49ac81e7b30023",
+      "rollback": "magazine-pre-capture.html"
+    },
+    {
+      "name": "share",
+      "id": "f285a38c-4a2b-43e9-b22d-a66eaeedfb41",
+      "revision": "3",
+      "category": "ESSENTIAL",
+      "characters": 1024,
+      "sha256": "a693074d2b4c54edc04040525c973ae768e7c1ff0b90a9eb5733d3b8472b172c",
+      "rollback": "share-pre-capture.html"
+    },
+    {
+      "name": "postFormatter",
+      "id": "14a887e3-38ea-4258-ae0b-7d19cf9feead",
+      "revision": "20",
+      "category": "ESSENTIAL",
+      "characters": 14760,
+      "sha256": "c13041faef31563d0c98960e22a3c45541097efeef3f638d56dcc10e4e3df168",
+      "rollback": "postFormatter-pre-capture.html"
     }
   ]
 }

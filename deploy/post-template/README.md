@@ -1,3 +1,5 @@
+> Current production repair: see `../funnel-repair-20261014/postFormatter-live.html` and `post-week-rich.js` in that directory. The current formatter uses route-matched publication metadata and a bounded hydration observer. The files below are the original template design and must not overwrite that repair.
+
 # Story page template: Magazine look, no dark-on-dark signup box
 
 Brenden, Oct. 4: story pages "aren't looking as cool as our magazine template ... we have that giant sign-up box on mobile it looks like crap, the dark lettering, I thought we were past that."

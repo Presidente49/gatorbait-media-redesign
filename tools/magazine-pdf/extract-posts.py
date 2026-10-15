@@ -72,7 +72,7 @@ def article(h):
 def main():
     issue = json.load(open(sys.argv[1], encoding='utf8'))
     urls = []
-    for key in ('cover', 'lead'):
+    for key in ('cover', 'lead', 'feature'):
         u = (issue.get(key) or {}).get('url')
         if u: urls.append(u)
     for c in (issue.get('cards') or {}).get('items') or []:

@@ -303,3 +303,8 @@ html:has(#gbm-magazine-page.pg) #gbm-site-header,html:has(#gbm-magazine-page.pg)
 #gbm-magazine-page.pg .pg-poster{background:#031134;max-width:640px;margin-left:auto;margin-right:auto}
 #gbm-magazine-page.pg .pg-poster .pg-cover-fig .mz-frame{max-height:none}
 #gbm-magazine-page.pg .pg-poster .pg-cover-fig .mz-frame img{object-fit:contain;object-position:center}
+
+#gbm-magazine-page.pg .pg-feature .pg-dek{font:500 19px/1.4 var(--mz-sans);color:#42506a;margin:10px 0 6px}
+#gbm-magazine-page.pg .pg-pdf{display:flex;flex-direction:column;gap:4px;margin-top:22px;padding:16px 18px;border-radius:12px;background:var(--pg-orange);color:#081b35;text-decoration:none;min-height:44px}
+#gbm-magazine-page.pg .pg-pdf b{font:800 22px/1.1 var(--mz-cond);letter-spacing:.06em;text-transform:uppercase}
+#gbm-magazine-page.pg .pg-pdf span{font:600 14px/1.35 var(--mz-sans)}

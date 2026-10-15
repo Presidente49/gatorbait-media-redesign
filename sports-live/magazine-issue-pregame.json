@@ -2372,5 +2372,39 @@
   ],
   "links": [],
   "source": "Sources: ESPN broadcast listing and game summary; TexasLonghorns.com game center (11 a.m. CT, ABC, sold out); FloridaGators.com schedule (12 p.m. ET)"
+ },
+ "feature": {
+  "label": "The Big Picture",
+  "kicker": "College Football Playoff",
+  "author": "Brenden Martin",
+  "date": "October 16, 2026",
+  "title": "Expansion Pack: Will a 24-team playoff water down college football?",
+  "dek": "The CFP is close to doubling its field. The numbers say the brand survives, but the regular season and the conference title games pay the price.",
+  "url": "/post/24-team-college-football-playoff-sec-brand",
+  "continue": "Read the full story, with all six graphics",
+  "image": {
+   "id": "d3cfa5_927b7ee1fa71438396dcae09cac639b8",
+   "ext": "png",
+   "width": 1600,
+   "height": 900,
+   "alt": "How the reported 24-team format would work: four Power 4 champions, the top Group of 6 team and 19 at-large teams, with seeds 1-8 getting a bye.",
+   "credit": "Graphic: GatorBait Media"
+  },
+  "caption": "The reported 24-team format: four Power 4 champions, the top Group of 6 team and 19 at-large teams.",
+  "html": "<p>College football is about to find out whether more is really better.</p><p>ESPN reported Thursday that the College Football Playoff is \"nearing a deal to expand the field to 24 teams in 2027,\" pending final approvals. The deal is expected to eliminate the Power 4 conference championship games, the SEC's game in Atlanta among them.</p><p>So does doubling the field water down the sport's brand? The numbers split the answer. The playoff itself should keep drawing big crowds and big TV audiences. The bill comes due in the regular season and in the title games that used to settle it.</p><p>\"There's an openness to playoff expansion on our part,\" SEC commissioner Greg Sankey said Wednesday. Florida coach Jon Sumrall picked his side in May: \"I do think more football is good football in my opinion. And a lot of people say we'll water it down or whatever. I think people will still probably watch.\"</p><p>The games being cut are bigger than the games being added. The SEC Championship Game has averaged more than 16.6 million viewers in each of the past two years. First-round playoff games averaged 9.9 million last season. And in the last two years, five 9-3 SEC teams finished between No. 11 and No. 19 in the final rankings and missed the playoff. Under 24, all five would have been in.</p>",
+  "figure": {
+   "id": "d3cfa5_570f8bd4f2ec4bd7a5905f311cd6e030",
+   "ext": "png",
+   "width": 1600,
+   "height": 900,
+   "alt": "Average TV audiences: the national title game, playoff rounds, the conference title games a 24-team plan would drop, and other bowls.",
+   "credit": "Graphic: GatorBait Media"
+  },
+  "figureCaption": "Title games outdraw the first round: average TV audiences for the playoff rounds and the conference title games a 24-team plan would drop."
+ },
+ "pdf": {
+  "label": "Members: download this issue (PDF)",
+  "url": "/post/members-read-the-texas-pregame-magazine",
+  "note": "All Access members get the full print edition of every Friday Pregame and postgame issue."
  }
 }

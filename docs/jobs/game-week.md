@@ -91,6 +91,10 @@ Game Week Card (Brenden, Oct. 3: full control of the automations). Build this we
 
 ---
 
+## Standing rule: members download on every magazine issue (Brenden, Oct. 15)
+
+Every Friday Pregame and postgame issue carries a download at the bottom of the magazine: the `pdf` slot in the issue JSON links to a members-only post (All Access plans) that holds the print-edition PDF. Build it with `tools/magazine-pdf/` from the same issue JSON after the stories are approved and published, upload the PDF to Wix Media, create the members post with the file link, then set `pdf.url` to that post. The regular edition is what the email links; the PDF is members-only.
+
 ## Postgame magazine (added Oct. 11)
 
 Build and release the postgame magazine with the recipe in LESSONS 95 (web issue, then a separate email draft behind the send governor). Read the live Magazine embed first (Lesson 92). Rankings are set after the Sunday polls.

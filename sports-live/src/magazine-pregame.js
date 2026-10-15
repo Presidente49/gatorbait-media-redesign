@@ -145,6 +145,16 @@
       (fig ? '<figure class="pg-fig">' + fig + '<figcaption>' + esc(text(L.caption, 200)) + (L.image && text(L.image.credit, 160) ? ' <span>' + esc(text(L.image.credit, 160)) + '</span>' : '') + '</figcaption></figure>' : '') +
       '<div class="pg-prose">' + clean + '</div>' + (url ? '<a class="pg-btn" href="' + esc(url) + '">' + esc(text(L.continue, 160)) + '</a>' : '') + '</article>';
   }
+  function pgFeature(D) {
+    // A second full feature after the lead: same cream column, with an optional closing figure (a chart or graphic).
+    var F = obj(D.feature); if (!F || !text(F.html, 20000) || !text(F.title, 200)) return '';
+    var url = safeUrl(F.url), fig = frame(F.image, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' }), fig2 = frame(F.figure, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' });
+    var clean = String(F.html).replace(/<(?!\/?(?:p|a|strong|em|blockquote|h3)\b)[^>]*>/gi, '').replace(/<a\b(?![^>]*href="\/)[^>]*>/gi, '<a>');
+    function cap(img, c) { return '<figcaption>' + esc(text(c, 200)) + (img && text(img.credit, 160) ? ' <span>' + esc(text(img.credit, 160)) + '</span>' : '') + '</figcaption>'; }
+    return '<article class="pg-lead pg-feature" id="pg-feature" aria-labelledby="pg-feature-h"><header><span class="pg-kick">' + esc(text(F.label, 40)) + ' · ' + esc(text(F.kicker, 80)) + '</span><h2 id="pg-feature-h">' + esc(text(F.title, 200)) + '</h2>' + (text(F.dek, 300) ? '<p class="pg-dek">' + esc(text(F.dek, 300)) + '</p>' : '') + '<p class="pg-by">By ' + esc(text(F.author, 60)) + (text(F.date, 40) ? ' · ' + esc(text(F.date, 40)) : '') + '</p></header>' +
+      (fig ? '<figure class="pg-fig">' + fig + cap(F.image, F.caption) + '</figure>' : '') + '<div class="pg-prose">' + clean + '</div>' +
+      (fig2 ? '<figure class="pg-fig">' + fig2 + cap(F.figure, F.figureCaption) + '</figure>' : '') + (url ? '<a class="pg-btn" href="' + esc(url) + '">' + esc(text(F.continue, 160) || 'Read the full story') + '</a>' : '') + '</article>';
+  }
   function pgSlate(D) {
     // A game needs both teams; the pick, line and total are optional (a slate without picks is still the Saturday schedule).
     var S = obj(D.slate), games = S ? list(S.games, 12).map(obj).filter(function (g) { return g && obj(g.away) && obj(g.home) && text(g.away.name, 40) && text(g.home.name, 40); }) : [];
@@ -173,12 +183,17 @@
       return (url ? '<a class="pg-shot pg-s' + i + '" href="' + esc(url) + '">' : '<div class="pg-shot pg-s' + i + '">') + inner + (url ? '</a>' : '</div>');
     }).join('') + '</div><p class="pg-cr pg-cr-c">' + esc(text(B.credit, 120)) + '</p></section>';
   }
+  function pgPdf(D) {
+    // Members download, the standing rule for every issue: a link at the bottom of the magazine to the members-only post that holds the PDF.
+    var P = obj(D.pdf); if (!P || !safeUrl(P.url) || !text(P.label, 50)) return '';
+    return '<a class="pg-pdf" href="' + esc(safeUrl(P.url)) + '"><b>' + esc(text(P.label, 50)) + '</b>' + (text(P.note, 120) ? '<span>' + esc(text(P.note, 120)) + '</span>' : '') + '</a>';
+  }
   function pgFoot(D) {
     var R = obj(D.reference), links = R ? list(R.links, 5).map(obj).filter(function (l) { return l && safeUrl(l.url) && text(l.label, 40); }) : [];
-    return '<footer class="pg-foot"><h2>' + esc(text(R && R.label, 40)) + '</h2><nav aria-label="' + esc(text(R && R.label, 40)) + '">' + links.map(function (l) { return '<a href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a>'; }).join('') + '<a href="https://www.youtube.com/@TheBuddyMartinShow/live">Watch The Buddy Martin Show live</a></nav>' + (R && text(R.next, 200) ? '<p>' + esc(text(R.next, 200)) + '</p>' : '') + '<p class="pg-src">' + esc(text(D.asOf, 240)) + '</p><a class="pg-top" href="#pg-cover">Back to top ↑</a></footer>';
+    return '<footer class="pg-foot"><h2>' + esc(text(R && R.label, 40)) + '</h2><nav aria-label="' + esc(text(R && R.label, 40)) + '">' + links.map(function (l) { return '<a href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a>'; }).join('') + '<a href="https://www.youtube.com/@TheBuddyMartinShow/live">Watch The Buddy Martin Show live</a></nav>' + pgPdf(D) + (R && text(R.next, 200) ? '<p>' + esc(text(R.next, 200)) + '</p>' : '') + '<p class="pg-src">' + esc(text(D.asOf, 240)) + '</p><a class="pg-top" href="#pg-cover">Back to top ↑</a></footer>';
   }
   function renderPregame(D) {
-    return '<div class="pg-wrap">' + pgTop(D) + pgMast(D) + pgCover(D) + '<div class="pg-grid">' + pgGame(D) + pgSeries(D) + '</div>' + pgWatch(D) + pgTape(D) + pgKeys(D) + pgInjuries(D) + pgRosters(D) + pgLead(D) + pgSlate(D) + pgCards(D) + pgShots(D) + pgFoot(D) + '</div>';
+    return '<div class="pg-wrap">' + pgTop(D) + pgMast(D) + pgCover(D) + '<div class="pg-grid">' + pgGame(D) + pgSeries(D) + '</div>' + pgWatch(D) + pgTape(D) + pgKeys(D) + pgInjuries(D) + pgRosters(D) + pgLead(D) + pgFeature(D) + pgSlate(D) + pgCards(D) + pgShots(D) + pgFoot(D) + '</div>';
   }
 
   /* ================= Live refresh (pregame layout) =================

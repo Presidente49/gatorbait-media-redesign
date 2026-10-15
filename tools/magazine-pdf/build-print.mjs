@@ -66,7 +66,8 @@ ${pull ? `<blockquote class="pull">${esc(q(pull))}</blockquote>` : ''}
 const I = D.issue || {}, C = D.cover || {}, G = D.game || {}, L = D.lead || {};
 const teams = G.teams || [];
 const cards = (D.cards && D.cards.items) || [];
-const coverPost = byUrl.get(C.url), leadPost = byUrl.get(L.url);
+const coverPost = byUrl.get(C.url), leadPost = byUrl.get(L.url), F = D.feature || {}, featPost = byUrl.get(F.url);
+const oppName = (teams.find(t => t.name !== 'Florida') || {}).name || 'Opponent';
 
 const cover = `<section class="cover">
 <img class="cover-img" src="${media(C.image, 2200, 1700, 'fill')}" alt="${esc(q(C.image && C.image.alt))}">
@@ -95,7 +96,7 @@ const briefing = `<section class="brief">
 <p class="src">${esc(q(G.source))}</p>
 <div class="two">
 <div><h3>${esc(D.keys && D.keys.label || 'Keys')}</h3>${keys}<p class="src">${esc(q(D.keys && D.keys.source))}</p></div>
-<div><h3>${esc(D.tape && D.tape.label || 'Tale of the tape')}</h3><p class="note">${esc(q(D.tape && D.tape.note))}</p><table class="tape"><thead><tr><th></th><th>Florida</th><th>S. Carolina</th></tr></thead><tbody>${tape}</tbody></table><p class="src">${esc(q(D.tape && D.tape.source))}</p>
+<div><h3>${esc(D.tape && D.tape.label || 'Tale of the tape')}</h3><p class="note">${esc(q(D.tape && D.tape.note))}</p><table class="tape"><thead><tr><th></th><th>Florida</th><th>${esc(oppName)}</th></tr></thead><tbody>${tape}</tbody></table><p class="src">${esc(q(D.tape && D.tape.source))}</p>
 <h3>${esc(D.series && D.series.label || 'The series')}</h3><p class="big">${esc(q(D.series && D.series.headline))}</p><p>${esc(q(D.series && D.series.line))}</p>
 <h3>${esc(D.injuries && D.injuries.label || 'Availability')}</h3><p>${esc(q(D.injuries && D.injuries.asOf))}</p></div>
 </div>
@@ -255,6 +256,7 @@ ${cover}
 ${briefing}
 ${story(coverPost, { kicker: C.kicker, title: coverPost && /Nostalgia/i.test(C.headline) ? C.headline : undefined, lede: '', cls: 'feature', pq: ((C.lines||[])[2]||'').replace(/ Buddy Martin$/, '').replace(/^"|"$/g, '') })}
 ${story(leadPost, { kicker: `${L.label || 'The Lead'} · ${L.author || ''}`, image: L.image, title: L.title, cls: 'feature' })}
+${featPost ? story(featPost, { kicker: `${F.label || 'Feature'} · ${F.author || ''}`, image: F.image, title: F.title, cls: 'feature' }) : ''}
 ${slateSec}
 <section class="news"><h2 class="sec" style="break-before:page">${esc(D.cards && D.cards.label || 'This week')}</h2>
 ${cardStories}

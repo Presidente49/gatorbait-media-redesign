@@ -1,5 +1,5 @@
 {
-  "commit": "f632b5a3eea535db727232c51cc0e82cd96fdf49",
-  "updated": "2026-10-14T17:22:10.000Z",
-  "note": "Signup confirmation copy; preserves the current magazine issue and styles. Stable Home and story loader fallbacks match this asset commit. Rollback: 490352008342f1cb519550d3260b1e395e12cbec."
+  "commit": "1514ed77ed987dec653290e26952b3f9b776dbc9",
+  "updated": "2026-10-15T16:09:18.000Z",
+  "note": "Oct. 15 homepage emergency fix (PR #287): one lead story, unwrapped YouTube covers, readable lead dek. Rollback: f632b5a3eea535db727232c51cc0e82cd96fdf49."
 }

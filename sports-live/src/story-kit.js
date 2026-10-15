@@ -148,10 +148,19 @@
     while ((n = w.nextNode())) if (/\S/.test(n.nodeValue) && !skippable(n, b)) out.push(n);
     return out;
   }
+  // The sentence around position i (bounded by . ! ? or the text node's ends) names Florida, the Gators or UF.
+  function floridaSentence(s, i) {
+    var a = Math.max(s.lastIndexOf('. ', i), s.lastIndexOf('! ', i), s.lastIndexOf('? ', i)) + 1;
+    var ends = ['. ', '! ', '? '].map(function (p) { var k = s.indexOf(p, i); return k < 0 ? s.length : k; });
+    return /\b(Florida|Gators?|UF)\b/.test(s.slice(a, Math.min.apply(null, ends)));
+  }
   function linkTerm(b, t) {
     var re = new RegExp('(^|[^A-Za-z0-9])(' + t.re + ')(?![A-Za-z0-9])', 'i'), nodes = textNodes(b);
     for (var i = 0; i < nodes.length; i++) {
       var m = re.exec(nodes[i].nodeValue); if (!m) continue;
+      // Generic terms link to Florida's guide only when their sentence is about Florida: "Bill Belichick and North
+      // Carolina's remaining schedule" must not point at the Gators' schedule (Oct. 15 reader report).
+      if (t.id !== 'opponent' && !floridaSentence(nodes[i].nodeValue, m.index + m[1].length)) continue;
       var start = m.index + m[1].length, mid = nodes[i].splitText(start); mid.splitText(m[2].length);
       var a = el('a', { 'class': 'gbm-kit-link', 'data-story-kit': 'link', 'data-term': t.id, href: t.href });
       mid.parentNode.insertBefore(a, mid); a.appendChild(mid);

@@ -94,6 +94,16 @@ The local Ops Hub may continuously accumulate bounded evidence about recurring i
 For persistent incidents and recurring automations, use the shared communications/QC playbook so repeated checks converge on one owner/work item, unchanged state may resolve to NOOP, and any authorized mutation gets primary plus independent verification before the incident is considered improved.
 
 
+## Collective operation and learning
+
+Every controller and active worker follows the shared contract in `automation/ops-hub/playbooks/controller-communications-qc.md`, including its agent collaboration and token-budget section. Brenden's Oct. 14 direction is collective, proactive operation with equal respect for human direction and verified machine work.
+
+Start from one user outcome, current evidence and a measurable success condition. Use the smallest useful team: parallelize separable work, share findings that change another lane's decision, and serialize dependent steps and production writes. Reuse supplied context and resolve routine choices without asking Brenden for known answers.
+
+Before a meaningful authorized change, state the expected result and a check that could disprove the diagnosis. Verify the actual environment outcome, reconcile cross-team evidence, and carry an evidence-backed lesson into the next pass through the existing job or playbook. Track quality, elapsed time and rework; record tool/cost figures only when available. Agent activity and agreement are not success measures.
+
+Use compact structured receipts and shared artifacts. Prioritize reader access, freshness, delivery, performance and revenue checks using current baselines and unresolved work. Apply this on the existing cadence; it does not create persistent agents, another scheduler, automatic authority or unbounded recursion.
+
 ## Standing owner delegation for routine operations
 
 Brenden's September 24 direction is to stop asking routine implementation questions and run the Stack. For routine GatorBait work already covered by policy and a tested playbook, Master Control chooses the implementation details and completes the work end to end.

@@ -4,7 +4,8 @@
 The front page's "Recent broadcasts" rail (sports-live/src/front-page.js, gbmRefreshShows) reads this file and
 ignores it once checkedAt is more than 24 hours old, so this script rewrites it when the newest uploads change
 and at least every 6 hours otherwise. A fetch or parse failure keeps the last good file (exit 2, nothing written).
-No Wix writes happen here.
+No Wix writes happen here. A channel mismatch, undated feed or older feed cannot
+replace a newer verified snapshot or advance its freshness timestamp.
 
 Usage:
   python automation/episodes_feed.py                 # fetch the channel feed now
@@ -31,9 +32,9 @@ def parse(xml_text):
         root = ET.fromstring(xml_text)
     except ET.ParseError as e:
         raise EpisodeError('feed is not valid XML: %s' % e)
-    if (root.findtext('yt:channelId', default='', namespaces=NS) or CHANNEL_ID) != CHANNEL_ID:
+    if root.findtext('yt:channelId', default='', namespaces=NS).strip() != CHANNEL_ID:
         raise EpisodeError('feed is for a different channel')
-    rows = []
+    rows, seen = [], set()
     for entry in root.findall('a:entry', NS):
         vid = (entry.findtext('yt:videoId', default='', namespaces=NS) or '').strip()
         title = (entry.findtext('a:title', default='', namespaces=NS) or '').strip()
@@ -41,14 +42,34 @@ def parse(xml_text):
         if not re.fullmatch(r'[A-Za-z0-9_-]{11}', vid) or not title or len(title) > 300:
             continue
         try:
-            dt.datetime.fromisoformat(published.replace('Z', '+00:00'))
+            stamp = dt.datetime.fromisoformat(published.replace('Z', '+00:00'))
+            if stamp.tzinfo is None:
+                continue
         except ValueError:
             continue
+        if vid in seen:
+            continue
+        seen.add(vid)
         rows.append({'id': vid, 'title': title, 'publishedAt': published})
     if len(rows) < 3:
         raise EpisodeError('feed gave %d usable videos, expected at least 3' % len(rows))
     rows.sort(key=lambda r: dt.datetime.fromisoformat(r['publishedAt'].replace('Z', '+00:00')), reverse=True)
     return rows[:KEEP]
+
+
+def prevent_regression(rows, old):
+    """Do not certify a cached/upstream feed that omits our newest known show."""
+    known = []
+    for row in old.get('episodes', []):
+        try:
+            stamp = dt.datetime.fromisoformat(row['publishedAt'].replace('Z', '+00:00'))
+            if stamp.tzinfo is not None:
+                known.append(stamp)
+        except (KeyError, TypeError, ValueError):
+            continue
+    newest = dt.datetime.fromisoformat(rows[0]['publishedAt'].replace('Z', '+00:00'))
+    if known and newest < max(known):
+        raise EpisodeError('feed is older than the newest verified broadcast')
 
 
 def main():
@@ -67,6 +88,11 @@ def main():
         print('episodes feed failed, keeping last good file: %s' % e, file=sys.stderr)
         return 2
     old = json.loads(OUT.read_text(encoding='utf-8')) if OUT.exists() else {}
+    try:
+        prevent_regression(rows, old)
+    except EpisodeError as e:
+        print('episodes feed failed, keeping last good file: %s' % e, file=sys.stderr)
+        return 2
     old_by_id = {e['id']: e for e in old.get('episodes', []) if isinstance(e, dict) and 'id' in e}
     for r in rows:  # RSS has no duration; keep the one we already knew
         if r['id'] in old_by_id and old_by_id[r['id']].get('duration'):
@@ -74,13 +100,16 @@ def main():
     now = dt.datetime.now(dt.timezone.utc)
     try:
         age_h = (now - dt.datetime.fromisoformat(old['checkedAt'].replace('Z', '+00:00'))).total_seconds() / 3600
-    except (KeyError, ValueError):
+    except (KeyError, TypeError, ValueError):
         age_h = 1e9
     if rows == old.get('episodes') and age_h < REWRITE_AFTER_H:
         print('episodes unchanged, checked %.1f h ago' % age_h)
         return 0
     out = {'channelId': CHANNEL_ID, 'channelUrl': old.get('channelUrl', 'https://www.youtube.com/@TheBuddyMartinShow'),
-           'checkedAt': now.strftime('%Y-%m-%dT%H:%M:%SZ'), 'episodes': rows}
+           'checkedAt': now.strftime('%Y-%m-%dT%H:%M:%SZ'),
+           'sourceCheckedAt': now.strftime('%Y-%m-%dT%H:%M:%SZ'),
+           'source': 'YouTube public channel RSS', 'sourceUrl': FEED_URL,
+           'episodes': rows}
     OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
     print('wrote %d episodes, newest: %s' % (len(rows), rows[0]['title']))
     return 0

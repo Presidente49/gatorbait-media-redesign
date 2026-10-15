@@ -2,7 +2,7 @@
    * Contract kept from the previous renderer: one root #gbm-live.gbm-gazette.gbm-sports-home,
    * window.__GBM_GAZETTE_RUNTIME__ {sync, ready}, __GBM_GAZETTE_BOOT__.ready/fallback, the
    * gbm:gazette-ready event, the 15-minute session feed cache and paint-once (no jump). */
-  var VERSION = 'front-page-2026.preview-modern';
+  var VERSION = 'front-page-2026.editorial-refresh';
   var PAGES = 'https://presidente49.github.io/gatorbait-media-redesign/';
   var RSS = '/blog-feed.xml';
   var TZ = 'America/New_York';
@@ -463,7 +463,7 @@
   function leadHtml(lead, why) {
     var s = splitTitle(lead.title);
     return '<section class="fp-lead" aria-label="Lead story"><div id="fp-embers" aria-hidden="true"></div><div class="fp-night-glow" aria-hidden="true"></div>' + photoBlock(lead, true, 'fp-lead-photo') +
-      '<div class="fp-lead-copy"><p class="fp-kick">' + esc(kicker(lead, why)) + '</p><h1 data-len="' + (s.h.length > 50 ? 'long' : 'short') + '">' + link(lead.url, words(s.h), 'fp-hl') + '</h1>' +
+      '<div class="fp-lead-copy"><p class="fp-kick">' + esc(kicker(lead, why)) + '</p><h1 data-len="' + (s.h.length > 50 ? 'long' : 'short') + '">' + link(lead.url, esc(s.h), 'fp-hl') + '</h1>' +
       (s.dek ? '<p class="fp-dek">' + esc(s.dek) + '</p>' : '') + '<p class="fp-by">By ' + esc(lead.author) + '<span>' + esc(shortDate(lead.date.getTime())) + '</span></p>' +
       (lead.excerpt ? '<p class="fp-body">' + esc(lead.excerpt) + '</p>' : '') + '<a class="fp-more" href="' + esc(lead.url) + '">Continue reading <span aria-hidden="true">&nbsp;→</span></a></div></section>';
   }
@@ -471,7 +471,7 @@
     function item(p, first) {
       var s = splitTitle(p.title), ex = p.excerpt.length > 240 ? p.excerpt.slice(0, 240).replace(/\s+\S*$/, '') + '…' : p.excerpt;
       return '<article class="fp-co">' + photoBlock(p, first, 'fp-lead-photo') + '<div class="fp-lead-copy"><p class="fp-kick">' + esc(kicker(p)) + '</p>' +
-        (first ? '<h1 data-len="' + (s.h.length > 60 ? 'long' : 'short') + '">' + link(p.url, words(s.h), 'fp-hl') + '</h1>' : '<h2 class="fp-co-h">' + link(p.url, esc(s.h), 'fp-hl') + '</h2>') +
+        (first ? '<h1 data-len="' + (s.h.length > 60 ? 'long' : 'short') + '">' + link(p.url, esc(s.h), 'fp-hl') + '</h1>' : '<h2 class="fp-co-h">' + link(p.url, esc(s.h), 'fp-hl') + '</h2>') +
         (s.dek ? '<p class="fp-dek">' + esc(s.dek) + '</p>' : '') + '<p class="fp-by">By ' + esc(p.author) + '<span>' + esc(shortDate(p.date.getTime())) + '</span></p>' +
         (ex ? '<p class="fp-ex">' + esc(ex) + '</p>' : '') + '<a class="fp-more" href="' + esc(p.url) + '">Continue reading <span aria-hidden="true">&nbsp;→</span></a></div></article>';
     }
@@ -526,37 +526,51 @@
       var fin = g.status === 'final' && g.score, win = fin && g.score.fla > g.score.opp;
       if (fin) { if (win) W++; else Ls++; } else if (nx < 0) nx = i;
       var top = '<div class="dt">' + esc(fm.format(new Date(g.date))) + ' · ' + (g.home ? 'Home' : 'Away') + '</div><div class="op">' + (fin && g.opponentRank ? '<span class="rk">No. ' + g.opponentRank + '</span>' : '') + esc(g.opponent) + '</div>', body;
-      if (fin) body = '<div class="sc">' + (win ? 'W ' : 'L ') + g.score.fla + '–' + g.score.opp + '</div><div class="bar"><i data-w="' + Math.max(6, Math.min(100, Math.round((g.score.fla - g.score.opp) / 40 * 100))) + '"></i></div><div class="sub">' + esc(g.tv || 'Final') + '</div>';
+      if (fin) body = '<div class="sc">' + (win ? 'W ' : 'L ') + g.score.fla + '–' + g.score.opp + '</div><div class="bar"><i data-w="' + Math.max(6, Math.min(100, Math.round(g.score.fla / Math.max(1, g.score.fla + g.score.opp) * 100))) + '"></i></div><div class="sub">' + esc(g.tv || 'Final') + '</div>';
       else if (i === nx) body = '<div class="cd" data-k="' + esc(g.date) + '">…</div><div class="sub">to kickoff' + (g.tv ? ' · ' + esc(g.tv) : '') + '</div>';
       else body = '<div class="sub" style="margin-top:auto">' + esc(g.tv || 'Kickoff TBA') + '</div>';
       var cls = 'g' + (win ? ' w' : '') + (i === nx ? ' nx' : '') + (g.opponentRank && g.opponentRank <= 5 && !fin ? ' boss' : '');
       var url = g.storyUrl ? safeUrl(g.storyUrl, 'post') : '';
-      return (url ? '<a href="' + esc(url) + '"' : '<div') + ' class="' + cls + '" role="listitem">' + top + body + (url ? '</a>' : '</div>');
+      return (url ? '<a href="' + esc(url) + '"' : '<div') + ' class="' + cls + '" role="listitem"' + (i === nx ? ' aria-current="step"' : '') + '>' + top + body + (url ? '</a>' : '</div>');
     }).join('');
     var sig = games.map(function (g) { return g.date + ':' + g.status + ':' + (g.score ? g.score.fla + '-' + g.score.opp : ''); }).join('|');
-    return '<section id="gbm-road" aria-label="Florida season road" data-sig="' + esc(sig) + '"><div class="hd"><h2>The road <span>ahead</span></h2><div class="rec"><b>' + W + '–' + Ls + '</b>' + (sb.team && sb.team.season ? esc(sb.team.season) : '2026') + ' record</div></div><div class="track" id="gr-track" role="list"><div class="line"><i id="gr-line"></i></div>' + cards + '</div></section>';
+    return '<section id="gbm-road" aria-label="Florida season road" data-paused="false" data-sig="' + esc(sig) + '"><div class="hd"><div class="road-heading"><p class="road-kicker">Florida football</p><h2>The road <span>ahead</span></h2></div><div class="rec"><b>' + W + '–' + Ls + '</b>' + (sb.team && sb.team.season ? esc(sb.team.season) : '2026') + ' record</div><div class="road-controls" aria-label="Season tracker controls"><button type="button" data-road-dir="-1" aria-label="Previous games" aria-controls="gr-track">←</button><button type="button" class="road-pause" aria-pressed="false" aria-label="Pause tracker animation">Pause motion</button><button type="button" data-road-dir="1" aria-label="Next games" aria-controls="gr-track">→</button></div></div><div class="track" id="gr-track" role="list" tabindex="0" aria-label="Florida season, scroll for more games"><div class="line" aria-hidden="true"><i id="gr-line"></i></div>' + cards + '</div><p class="road-hint">Follow the season <span aria-hidden="true">·</span> Swipe or use the arrows</p></section>';
   }
   function initRoad(root) {
+    if (root.__gbmRoadCleanup) root.__gbmRoadCleanup();
     var T = root.querySelector('#gr-track'); if (!T) return;
-    var L = T.querySelector('.line'), nodes = Array.prototype.slice.call(T.querySelectorAll('.g')), nxEl = T.querySelector('.g.nx');
+    var section = T.closest('#gbm-road'), rail = T.querySelector('.line'), nodes = Array.prototype.slice.call(T.querySelectorAll('.g')), nxEl = T.querySelector('.g.nx'), observer;
     function tick() {
       var c = T.querySelector('.cd'); if (!c) return;
-      var ms = new Date(c.getAttribute('data-k')) - now(); if (ms <= 0) { c.textContent = 'Live'; return; }
+      var ms = new Date(c.getAttribute('data-k')) - now(); if (ms <= 0) { c.textContent = 'Kickoff'; return; }
       c.textContent = Math.floor(ms / 864e5) + 'd ' + Math.floor(ms % 864e5 / 36e5) + 'h ' + Math.floor(ms % 36e5 / 6e4) + 'm';
     }
     tick(); if (root.__gbmRoadTick) clearInterval(root.__gbmRoadTick); root.__gbmRoadTick = setInterval(tick, 30000);
-    function run() {
-      var upto = nxEl || nodes[nodes.length - 1]; if (!upto) return;
+    function measure() {
+      var upto = nxEl || nodes[nodes.length - 1]; if (!upto || !rail) return;
       var pad = parseFloat(getComputedStyle(T).paddingLeft) || 16;
-      // The rail spans the whole scroll width; the glow ends at the next game's dot (14px in, 13px wide).
-      L.style.right = 'auto'; L.style.width = (T.scrollWidth - 2 * pad) + 'px';
-      L.firstChild.style.width = Math.max(0, upto.offsetLeft + 20.5 - pad) + 'px';
+      rail.style.right = 'auto'; rail.style.width = (T.scrollWidth - 2 * pad) + 'px';
+      rail.firstChild.style.width = Math.max(0, upto.offsetLeft + 20.5 - pad) + 'px';
       T.querySelectorAll('.bar i').forEach(function (b) { b.style.width = b.getAttribute('data-w') + '%'; });
-      // Phones: keep the last result and the next game in view together; wider tracks stay at the start.
-      var prev = nxEl && nodes[nodes.indexOf(nxEl) - 1];
-      if (nxEl && nxEl.offsetLeft + nxEl.offsetWidth > T.clientWidth) T.scrollLeft = Math.max(0, (prev || nxEl).offsetLeft - pad);
     }
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { run(); o.disconnect(); } }, { threshold: .25 }).observe(T); else run();
+    function reveal() {
+      measure();
+      var prev = nxEl && nodes[nodes.indexOf(nxEl) - 1], pad = parseFloat(getComputedStyle(T).paddingLeft) || 16;
+      if (nxEl && nxEl.offsetLeft + nxEl.offsetWidth > T.clientWidth) T.scrollLeft = Math.max(0, (prev || nxEl).offsetLeft - pad);
+      section.setAttribute('data-ready', 'true');
+    }
+    section.querySelectorAll('[data-road-dir]').forEach(function (b) {
+      b.addEventListener('click', function () { T.scrollBy({ left: Number(b.getAttribute('data-road-dir')) * (nodes[0] ? nodes[0].offsetWidth + 14 : 190), behavior: reduced() ? 'auto' : 'smooth' }); });
+    });
+    var pause = section.querySelector('.road-pause');
+    if (pause) pause.addEventListener('click', function () {
+      var paused = section.getAttribute('data-paused') !== 'true';
+      section.setAttribute('data-paused', String(paused)); pause.setAttribute('aria-pressed', String(paused));
+      pause.textContent = paused ? 'Play motion' : 'Pause motion'; pause.setAttribute('aria-label', (paused ? 'Play' : 'Pause') + ' tracker animation');
+    });
+    addEventListener('resize', measure);
+    if ('IntersectionObserver' in window) { observer = new IntersectionObserver(function (entries) { if (entries[0].isIntersecting) { reveal(); observer.disconnect(); } }, { threshold: .25 }); observer.observe(T); } else reveal();
+    root.__gbmRoadCleanup = function () { removeEventListener('resize', measure); if (observer) observer.disconnect(); if (root.__gbmRoadTick) clearInterval(root.__gbmRoadTick); };
   }
 
   /* ---------- Game-day weather (Brenden, Oct. 9: replace the season strip at the top with the forecast + a small radar) ----------
@@ -666,33 +680,31 @@
     var d = t.querySelector('.fp-tn-drive'); if (d) { put('drive', gs.drive || ''); d.hidden = !gs.drive; }
     if (phase !== cur) t.setAttribute('data-phase', phase);
   }
-  /* Recent broadcasts: source parity with the verified live show rail. */
+  /* Fresh broadcasts only. An expired snapshot routes readers to the maintained channel instead of wearing an old date. */
   var gbmShowSnapshot = BUNDLE.broadcasts || {}, gbmShowRows = showRows(gbmShowSnapshot), gbmShowsChecked = gbmShowSnapshot.checkedAt || '';
   function showRows(data) {
     if (!data || data.channelId !== 'UCtR8b1sKFuwaRjKy5BiXRvA' || !Array.isArray(data.episodes)) return [];
-    var seen = {};
-    return data.episodes.filter(function (v) { return /^[A-Za-z0-9_-]{11}$/.test(v.id) && typeof v.title === 'string' && v.title.length <= 300 && Number.isFinite(Date.parse(v.publishedAt)); }).sort(function (a,b) { return Date.parse(b.publishedAt) - Date.parse(a.publishedAt); }).filter(function (v) {
+    var seen = {}, t = now();
+    return data.episodes.filter(function (v) { var published = Date.parse(v.publishedAt); return /^[A-Za-z0-9_-]{11}$/.test(v.id) && typeof v.title === 'string' && v.title.length <= 300 && Number.isFinite(published) && published <= t + 36e5 && t - published <= 7 * DAY; }).sort(function (a,b) { return Date.parse(b.publishedAt) - Date.parse(a.publishedAt); }).filter(function (v) {
       var key = v.title.trim().toLowerCase() + '|' + ymdOf(v.publishedAt); if (seen[key]) return false; seen[key] = true; return true;
     }).slice(0, 3);
   }
   function gbmRecentShows() {
-    var old = !Number.isFinite(Date.parse(gbmShowsChecked)) || now() - Date.parse(gbmShowsChecked) > DAY;
-    return '<div class="fp-episode-head">' + (old ? 'Broadcast archive' : 'Recent broadcasts') + '</div>' + (old && gbmShowsChecked ? '<p class="fp-show-source">Archive checked ' + esc(shortDate(Date.parse(gbmShowsChecked))) + '. Visit GatorBait TV for current shows.</p>' : '') + '<div class="fp-episode-list" aria-label="Broadcast replays">' + gbmShowRows.map(function (v) {
+    var checked = Date.parse(gbmShowsChecked), expired = !Number.isFinite(checked) || now() - checked > DAY || checked > now() + 3e5;
+    var current = expired ? [] : gbmShowRows, watchUrl = safeUrl(gbmShowSnapshot.websitePlaylistUrl || '') || 'https://www.youtube.com/@TheBuddyMartinShow/streams';
+    if (!current.length) return '<div class="fp-recent-shows"><a class="fp-watch-now" href="' + esc(watchUrl) + '" target="_blank" rel="noopener"><b>Watch GatorBait TV <span aria-hidden="true">↗</span></b><span>The Buddy Martin Show, Gators conversations and more. Open our channel for the latest broadcasts.</span><span class="fp-more">Browse the latest shows →</span></a></div>';
+    return '<div class="fp-recent-shows"><div class="fp-episode-head">Recent broadcasts</div><div class="fp-episode-list" aria-label="Recent broadcast replays">' + current.map(function (v) {
       return '<a class="fp-vid" href="https://www.youtube.com/watch?v=' + esc(v.id) + '" target="_blank" rel="noopener"><span class="fp-frame">' + img('https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg', '', false, 480, 270) + '<span class="fp-play"></span></span><span><b>' + esc(v.title) + '</b><span>' + esc(shortDate(Date.parse(v.publishedAt))) + ' · Replay</span></span></a>';
-    }).join('') + '</div>';
+    }).join('') + '</div></div>';
   }
   function gbmRefreshShows() {
     fetchJson(PAGES + 'sports-live/episodes.json?t=' + Math.floor(Date.now() / 900000), 3000).then(function (data) {
-      var rows = showRows(data);
-      if (!rows.length || !Number.isFinite(Date.parse(data.checkedAt)) || Date.parse(data.checkedAt) < Date.parse(gbmShowsChecked)) return;
-      var list = document.querySelector('#gbm-live .fp-episode-list');
-      if (!list || list.contains(document.activeElement)) return;
-      gbmShowRows = rows; gbmShowsChecked = data.checkedAt;
-      var holder = document.createElement('div'); holder.innerHTML = gbmRecentShows();
-      var head = list.parentElement.querySelector('.fp-episode-head'), note = list.parentElement.querySelector('.fp-show-source');
-      if (head) head.replaceWith(holder.querySelector('.fp-episode-head')); if (note) note.remove();
-      var freshNote = holder.querySelector('.fp-show-source'); if (freshNote) list.before(freshNote);
-      list.replaceWith(holder.querySelector('.fp-episode-list'));
+      var rows = showRows(data), checked = Date.parse(data.checkedAt), previous = Date.parse(gbmShowsChecked);
+      if (data.channelId !== 'UCtR8b1sKFuwaRjKy5BiXRvA' || !Array.isArray(data.episodes) || !Number.isFinite(checked) || checked > now() + 3e5 || Number.isFinite(previous) && checked < previous) return;
+      var section = document.querySelector('#gbm-live .fp-recent-shows');
+      if (!section || section.contains(document.activeElement)) return;
+      gbmShowSnapshot = data; gbmShowRows = rows; gbmShowsChecked = data.checkedAt;
+      var holder = document.createElement('div'); holder.innerHTML = gbmRecentShows(); section.replaceWith(holder.firstChild);
       var root = document.getElementById('gbm-live'); if (root && root.__fpWatchImages) root.__fpWatchImages();
     }).catch(function () {});
   }
@@ -746,8 +758,10 @@
     scores += '<div class="fp-chips"><a href="' + esc(L.schedule) + '">Schedule</a><a href="' + esc(L.roster) + '">Roster</a><a href="' + esc(L.stats) + '" target="_blank" rel="noopener" aria-label="Official Florida stats (opens in a new tab)">Stats ↗</a><a href="' + esc(L.standings) + '" target="_blank" rel="noopener" aria-label="Official SEC football standings (opens in a new tab)">Standings ↗</a></div>';
     var mScores = '<section class="fp-mod fp-mod-scores" aria-label="Scores and schedule"><h2>Scores &amp; schedule</h2><p class="fp-show-source">Florida ' + esc(sb.team.record || '') + (sb.updatedAt ? ' · Source checked ' + esc(shortDate(Date.parse(sb.updatedAt))) + ', ' + esc(clock(Date.parse(sb.updatedAt))) + ' ET' : '') + '</p>' + scores + '</section>';
     var magazine = BUNDLE.magazine, cover = magazine.cover, issue = magazine.issue;
-    // Promote the edition as a reading package, without repeating the lead story or fabricating cover art.
-    var mMag = '<section class="fp-mod fp-mag" aria-label="Current GatorBait Magazine"><a class="fp-mag-issue" href="' + esc(magazineUrl) + '" aria-label="Open the current GatorBait Magazine"><p class="fp-mag-date">Current issue · ' + esc(issue.date) + '</p><h2>GatorBait Magazine</h2><h3>' + esc(issue.number) + '</h3><p class="fp-mag-week">' + esc(issue.week) + '</p></a><div class="fp-mag-copy"><p>' + esc(cover.dek) + '</p><div class="fp-actions"><a class="fp-btn" href="' + esc(magazineUrl) + '">Open this issue</a></div></div></section>';
+    // The issue gets a compact visual cover made from its own permanent Wix photograph and real issue metadata.
+    var art = cover.image || {}, artSrc = art.id ? safeUrl('https://static.wixstatic.com/media/' + art.id + '.' + (art.ext || 'jpg'), 'image') : '';
+    var magArt = artSrc ? '<a class="fp-mag-cover" href="' + esc(magazineUrl) + '" aria-label="Open ' + esc(issue.number) + ' of GatorBait Magazine"><div class="fp-mag-cover-art">' + img(artSrc, art.alt || 'Current issue cover photograph', false, art.width || 900, art.height || 1200, '(max-width: 599px) 220px, 280px') + '<div class="fp-mag-cover-ink"><span class="fp-mag-cover-brand">GatorBait<span>Magazine</span></span><span class="fp-mag-cover-title"><small>' + esc(cover.kicker || issue.number) + '</small><b>' + esc(cover.headline || issue.number) + '</b></span></div></div></a>' : '';
+    var mMag = '<section class="fp-mod fp-mag" aria-label="Current GatorBait Magazine">' + magArt + '<div class="fp-mag-copy"><p class="fp-mag-date">Inside the current issue · ' + esc(issue.date) + '</p><h2>GatorBait Magazine</h2><h3>' + esc(issue.number) + '</h3><p class="fp-mag-week">' + esc(issue.week) + '</p><p>' + esc(cover.dek) + '</p><div class="fp-actions"><a class="fp-btn" href="' + esc(magazineUrl) + '">' + esc(cover.cta || 'Open this issue') + ' <span aria-hidden="true">→</span></a><a class="fp-mag-history" href="' + esc(L.magazine) + '">Explore the magazine</a></div>' + (artSrc && art.credit ? '<p class="fp-mag-photo-credit">' + esc(art.credit) + '</p>' : '') + '</div></section>';
     // GatorBait Magazine signup (sports-live/src/capture.js, source "home"); the plain link module is the fallback if it is absent.
     var mNews = window.GBM_CAPTURE ? window.GBM_CAPTURE.html('home') : '<section class="fp-mod fp-mod-news" aria-label="Newsletter"><h2>The GatorBait Email</h2><p class="fp-ex">One email a day with the Gators stories that matter. Free to join.</p><div class="fp-actions"><a class="fp-btn fp-ghost" href="' + esc(L.newsletter) + '">Sign up <span aria-hidden="true">→</span></a></div></section>';
     var join = '<section class="fp-membership" aria-label="GatorBait All Access"><div><p>Go deeper with GatorBait</p><h2>Your Gators. Your magazine.</h2><span>Explore All Access and the member magazine PDF.</span></div><a class="fp-btn" href="' + esc(L.subscribe) + '">Explore All Access</a></section>';
@@ -833,6 +847,7 @@
   /* ---------- Render ---------- */
   function failure(error) {
     loading = false;
+    var failedRoot = document.querySelector('#gbm-live.gbm-gazette'); if (failedRoot && failedRoot.__gbmRoadCleanup) failedRoot.__gbmRoadCleanup();
     if (window.__GBM_GAZETTE_BOOT__ && window.__GBM_GAZETTE_BOOT__.fallback) window.__GBM_GAZETTE_BOOT__.fallback(error);
     else console.error('[GatorBait front page]', error);
   }
@@ -1058,7 +1073,7 @@
 
   function sync() {
     if (!home()) {
-      var root = document.querySelector('#gbm-live.gbm-gazette'); if (root) root.remove();
+      var root = document.querySelector('#gbm-live.gbm-gazette'); if (root) { if (root.__gbmRoadCleanup) root.__gbmRoadCleanup(); root.remove(); }
       stopTicking(); if (io) { io.disconnect(); io = null; }
       if (particles) { try { particles.destroy(); } catch (_) {} particles = null; }
       doc.classList.remove('gbm-gazette-live', 'gbm-standalone-live');

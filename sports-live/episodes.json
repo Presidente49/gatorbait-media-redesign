@@ -1,43 +1,46 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
   "channelUrl": "https://www.youtube.com/@TheBuddyMartinShow",
-  "checkedAt": "2026-10-04T16:10:00Z",
+  "checkedAt": "2026-10-15",
+  "sourceCheckedAt": "2026-10-15",
+  "source": "vidIQ channel-videos public live-format newest list",
+  "sourceUrl": "https://www.youtube.com/@TheBuddyMartinShow/streams",
   "episodes": [
     {
-      "id": "aEOcRpECIOQ",
-      "title": "Has Jadan Baugh Got A Shot At The Heisman?",
-      "publishedAt": "2026-10-02T18:57:40-07:00",
-      "duration": "PT51M35S"
+      "id": "k0vRbdeBlkU",
+      "title": "Florida QB Watch: Philo or Jones? | The Buddy Martin Show",
+      "publishedAt": "2026-10-15T01:04:01Z",
+      "duration": null
     },
     {
-      "id": "TPKZcSS9Bc0",
-      "title": "Has Jadan Baugh Got A Shot At The Heisman?",
-      "publishedAt": "2026-10-02T07:12:37-07:00",
-      "duration": "PT61M36S"
+      "id": "oY7p_APFbeI",
+      "title": "Florida Gators Football QB Questions Ahead of Texas",
+      "publishedAt": "2026-10-14T14:24:37Z",
+      "duration": "PT1H8M19S"
     },
     {
-      "id": "VIsn01dETY4",
-      "title": "Will Success Come With A Big Price For The Gators?",
-      "publishedAt": "2026-10-01T07:23:17-07:00",
-      "duration": "PT64M11S"
+      "id": "oZ4koMQVVy8",
+      "title": "Florida Gators Football :Are They Right on Schedule?",
+      "publishedAt": "2026-10-13T14:23:12Z",
+      "duration": "PT58M27S"
     },
     {
-      "id": "SYBBWfaTTcs",
-      "title": "Denzel Aberdeen Cleared for Florida, with Missouri Preview Ahead",
-      "publishedAt": "2026-09-30T08:07:36-07:00",
-      "duration": "PT57M53S"
+      "id": "LYnD5nptUEs",
+      "title": "Friday Football with Terry Bradshaw",
+      "publishedAt": "2026-10-10T02:53:38Z",
+      "duration": "PT59M37S"
     },
     {
-      "id": "qWBazfq_4Mc",
-      "title": "Florida DESTROYS Ole Miss 52-28 \ud83d\udc0a Shane Matthews Reacts",
-      "publishedAt": "2026-09-29T07:18:49-07:00",
-      "duration": "PT59M18S"
+      "id": "pUImmG9XLGo",
+      "title": "Can the Gators Bounce Back With Homecoming Win?",
+      "publishedAt": "2026-10-09T14:46:01Z",
+      "duration": "PT59M43S"
     },
     {
-      "id": "u2dMQ4u3yNY",
-      "title": "Ole Miss vs Florida Preview Can the Gators Own the Swamp",
-      "publishedAt": "2026-09-25T07:38:50-07:00",
-      "duration": "PT72M39S"
+      "id": "bFqwdeIf2MY",
+      "title": "Who Wins Bounce Back Bowl: Florida or  South Carolina?",
+      "publishedAt": "2026-10-08T14:19:03Z",
+      "duration": "PT57M21S"
     }
   ]
 }

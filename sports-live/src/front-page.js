@@ -24,6 +24,10 @@
   // Links: our own site paths, our YouTube/Facebook, the store. Nothing else renders.
   function safeUrl(value, kind) {
     if (typeof value !== 'string' || !value.trim()) return '';
+    // The blog feed hands over YouTube covers wrapped in a Wix media path, e.g.
+    // "https://static.wixstatic.com/media/https://i.ytimg.com/vi/ID/maxresdefault_live.jpg/v1/fit/w_1000,.../file.png",
+    // which 404s ("Photo unavailable", Oct. 15). Rebuild the plain YouTube cover; recover() steps down to mqdefault.
+    if (kind === 'image') value = value.replace(/^https?:\/\/static\.wixstatic\.com\/media\/https?:\/\/i\.ytimg\.com\/vi\/([\w-]{6,})\/.*$/i, 'https://i.ytimg.com/vi/$1/maxresdefault.jpg');
     try {
       var u = new URL(String(value), 'https://www.gatorbaitmedia.com');
       if (u.protocol !== 'https:' || u.username || u.password) return '';

@@ -662,6 +662,7 @@ html:has(#gbm-live.fp26) #gbm-footer .gbf{width:100%;max-width:1280px;margin-inl
 #gbm-live.fp26 .fp-lead-photo .fp-cap span:empty{display:none}
 #gbm-live.fp26 .fp-lead-photo .fp-cap b{color:#cbd5e5;font-weight:400}
 #gbm-live.fp26 .fp-lead-copy{position:absolute;left:0;right:0;bottom:0;padding:100px 28px 32px;gap:10px;background:linear-gradient(0deg,rgba(4,16,39,.98),rgba(4,16,39,.87) 65%,transparent);display:grid}
+#gbm-live.fp26 .fp-lead .fp-dek{color:#dfe6f5}
 #gbm-live.fp26 .fp-lead h1,#gbm-live.fp26 .fp-lead h1[data-len=long]{font-size:clamp(32px,3.1vw,44px);font-weight:600;line-height:1.09;letter-spacing:-.035em;color:#fff;max-width:680px}
 #gbm-live.fp26 .fp-lead .fp-kick{color:#ffb49b;font:500 12px/1.2 "Barlow",sans-serif;letter-spacing:0;text-transform:none}
 #gbm-live.fp26 .fp-kick::before{display:none}

@@ -1,0 +1,88 @@
+{
+  "pricing": {
+    "publicBrowserObserved": true,
+    "placeholderVisible": false,
+    "nativeTrialButtons": 2,
+    "billingNotesPresent": true,
+    "width": 390
+  },
+  "preview": [
+    {
+      "surface": "magazine-preview",
+      "width": 390,
+      "navigationAndTextSizePassed": true,
+      "coverPhotoLoaded": true,
+      "overflow": false
+    },
+    {
+      "surface": "magazine-preview",
+      "width": 430,
+      "navigationAndTextSizePassed": true,
+      "coverPhotoLoaded": true,
+      "overflow": false
+    },
+    {
+      "surface": "magazine-preview",
+      "width": 1366,
+      "navigationAndTextSizePassed": true,
+      "coverPhotoLoaded": true,
+      "overflow": false
+    }
+  ],
+  "tv": {
+    "publicIframeObserved": "https://www.youtube.com/embed/k0vRbdeBlkU?autoplay=0&mute=0&playsinline=1&rel=0",
+    "latestMetadataVerified": true,
+    "actualPlaybackVerified": false,
+    "nativeInputLimitation": "Automated physical pointer produced no click event; programmatic DOM click selected the second broadcast. No site routing or physical-device continuity conclusion."
+  },
+  "persistentPlayerFixture": {
+    "fixtureOnly": true,
+    "notRealYoutubePlaybackProof": true,
+    "checks": [
+      {
+        "viewport": 390,
+        "sameIframeAndWindow": true,
+        "playheadPreserved": 73,
+        "playingAcrossSpaDeparture": true,
+        "lateCookieRepositioned": true,
+        "restoreRespectedFullscreenConsent": true,
+        "closePaused": true,
+        "restoreDidNotAutoplay": true,
+        "returnAfterDismissalStayedClosed": true,
+        "iframeLoadsAfterRepeatedRoutes": 1,
+        "dockGeometry": {
+          "x": 19,
+          "y": 530.5,
+          "w": 358,
+          "h": 200.5,
+          "bottom": 731,
+          "cookieTop": 744,
+          "viewport": 390
+        },
+        "errors": []
+      },
+      {
+        "viewport": 1366,
+        "sameIframeAndWindow": true,
+        "playheadPreserved": 73,
+        "playingAcrossSpaDeparture": true,
+        "lateCookieRepositioned": true,
+        "restoreRespectedFullscreenConsent": true,
+        "closePaused": true,
+        "restoreDidNotAutoplay": true,
+        "returnAfterDismissalStayedClosed": true,
+        "iframeLoadsAfterRepeatedRoutes": 1,
+        "dockGeometry": {
+          "x": 995,
+          "y": 586.5,
+          "w": 358,
+          "h": 200.5,
+          "bottom": 787,
+          "cookieTop": 800,
+          "viewport": 1366
+        },
+        "errors": []
+      }
+    ]
+  }
+}

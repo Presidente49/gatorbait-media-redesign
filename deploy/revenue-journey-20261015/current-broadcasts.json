@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-15",
+  "source": "vidIQ channel-videos public live-format newest list",
+  "channelUrl": "https://www.youtube.com/@TheBuddyMartinShow/streams",
+  "broadcasts": [
+    {
+      "id": "k0vRbdeBlkU",
+      "title": "Florida QB Watch: Philo or Jones? | The Buddy Martin Show",
+      "publishedAt": "2026-10-15T01:04:01Z",
+      "duration": null
+    },
+    {
+      "id": "oY7p_APFbeI",
+      "title": "Florida Gators Football QB Questions Ahead of Texas",
+      "publishedAt": "2026-10-14T14:24:37Z",
+      "duration": "PT1H8M19S"
+    },
+    {
+      "id": "oZ4koMQVVy8",
+      "title": "Florida Gators Football :Are They Right on Schedule?",
+      "publishedAt": "2026-10-13T14:23:12Z",
+      "duration": "PT58M27S"
+    },
+    {
+      "id": "LYnD5nptUEs",
+      "title": "Friday Football with Terry Bradshaw",
+      "publishedAt": "2026-10-10T02:53:38Z",
+      "duration": "PT59M37S"
+    },
+    {
+      "id": "pUImmG9XLGo",
+      "title": "Can the Gators Bounce Back With Homecoming Win?",
+      "publishedAt": "2026-10-09T14:46:01Z",
+      "duration": "PT59M43S"
+    },
+    {
+      "id": "bFqwdeIf2MY",
+      "title": "Who Wins Bounce Back Bowl: Florida or  South Carolina?",
+      "publishedAt": "2026-10-08T14:19:03Z",
+      "duration": "PT57M21S"
+    }
+  ]
+}

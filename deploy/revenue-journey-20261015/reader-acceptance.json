@@ -1,0 +1,23 @@
+[
+  {
+    "width": 390,
+    "horizontalSwipe": true,
+    "verticalSwipeDoesNotTurnPage": true,
+    "allImagesLoaded": 8,
+    "overflow": false
+  },
+  {
+    "width": 430,
+    "horizontalSwipe": true,
+    "verticalSwipeDoesNotTurnPage": true,
+    "allImagesLoaded": 8,
+    "overflow": false
+  },
+  {
+    "width": 1366,
+    "horizontalSwipe": true,
+    "verticalSwipeDoesNotTurnPage": true,
+    "allImagesLoaded": 8,
+    "overflow": false
+  }
+]

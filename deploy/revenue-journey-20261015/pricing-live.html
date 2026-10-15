@@ -1,0 +1,75 @@
+<style id="gbm-plan-terms-css">
+#gbm-plan-terms{box-sizing:border-box;display:block;width:100%;max-width:760px;flex:0 0 100%;grid-column:1/-1;margin:28px auto 40px;padding:18px 22px 16px;background:#fffdf9;border:1px solid #c5c9ce;border-top:4px solid #fa4616;color:#11274a;font:16px/1.55 Barlow,Arial,Helvetica,sans-serif;text-align:left}
+#gbm-plan-terms *{box-sizing:border-box}
+#gbm-plan-terms h2{margin:0 0 8px;font:800 18px/1.2 Barlow,Arial,Helvetica,sans-serif;letter-spacing:.02em;text-transform:uppercase;color:#11274a}
+#gbm-plan-terms ul{margin:0 0 12px;padding:0 0 0 20px;list-style:disc}
+#gbm-plan-terms li{margin:4px 0;color:#11274a}
+#gbm-plan-terms p{margin:0;font-size:15px;color:#4b5666}
+#gbm-plan-terms a{color:#0021a5;text-decoration:underline;font-weight:700}
+#gbm-plan-terms a:focus-visible{outline:3px solid #fa4616;outline-offset:2px}
+@media(max-width:600px){#gbm-plan-terms{margin:20px 0 32px;padding:16px}}
+#gbm-plan-benefits{box-sizing:border-box;width:100%;max-width:760px;flex:0 0 100%;grid-column:1/-1;margin:20px auto 26px;padding:18px 22px;border-left:4px solid #fa4616;background:#f3f6fb;color:#11274a;font:16px/1.55 Barlow,Arial,sans-serif;text-align:left}
+#gbm-plan-benefits h2{margin:0 0 8px;font:700 26px/1.15 "Barlow Condensed",Barlow,Arial,sans-serif;color:#11274a}
+#gbm-plan-benefits p{margin:8px 0}
+@media(max-width:600px){#gbm-plan-benefits{padding:16px;margin:16px 0 20px}}
+</style>
+<script>
+(function(){
+'use strict';
+if(window.__GBM_PLAN_NOTES__){window.__GBM_PLAN_NOTES__.sync();return;}
+var BENEFITS_ID='gbm-plan-benefits',TERMS_ID='gbm-plan-terms';
+var CTA=/^(try for free|start free trial|start trial|select|select plan|choose|choose plan|get started|buy now|subscribe)$/i;
+var observer=null,deadline=0,frame=0;
+function onPlanPage(){return /^\/pricing-plans(?:\/subscribe)?\/?$/.test(location.pathname||'');}
+function norm(s){return String(s||'').replace(/\s+/g,' ').trim();}
+function lca(a,b){var s=[];for(var n=a;n;n=n.parentElement)s.push(n);for(var m=b;m;m=m.parentElement)if(s.indexOf(m)!==-1)return m;return null;}
+function selectedCtas(root){
+var out=[];
+root.querySelectorAll('[data-hook="plan-title"]').forEach(function(title){
+if(!/^all access (annual|monthly)$/i.test(norm(title.textContent)))return;
+for(var card=title.parentElement;card&&card!==root;card=card.parentElement){
+var buttons=card.querySelectorAll('button[data-hook="plan-cta"]');
+if(!buttons.length)continue;
+if(card.querySelectorAll('[data-hook="plan-title"]').length!==1)return;
+buttons.forEach(function(button){if(!CTA.test(norm(button.textContent)))return;button.querySelectorAll('span').forEach(function(span){if(!span.children.length&&CTA.test(norm(span.textContent))&&span.textContent!=='Try for free')span.textContent='Try for free';});out.push(button);});
+return;
+}
+});
+return out;
+}
+function buildTerms(){
+var el=document.createElement('section');el.id=TERMS_ID;el.setAttribute('aria-labelledby','gbm-plan-terms-h');
+el.innerHTML='<h2 id="gbm-plan-terms-h">How billing works</h2><ul><li><strong>$0 today.</strong> Your All Access membership starts with a 7-day free trial.</li><li>After 7 days, your selected plan is $99 per year or $9.99 per month. It renews automatically each billing period until you cancel.</li><li>Cancel before your trial ends to avoid the first charge. Cancel anytime in <a href="/account/my-subscriptions">My Account &rarr; My Subscriptions</a>. After the trial, canceling stops the next renewal charge.</li></ul><p>Full subscription, cancellation and refund terms are in our <a href="/policies#subscriptions">Policies</a>. Billing question? <a href="/contact">Contact us</a>.</p>';
+return el;
+}
+function buildBenefits(){
+var el=document.createElement('section');el.id=BENEFITS_ID;el.setAttribute('aria-labelledby','gbm-plan-benefits-h');
+el.innerHTML='<h2 id="gbm-plan-benefits-h">Support independent Gator coverage</h2><p>Your membership supports GatorBait reporting and columns, recruiting coverage, live shows and podcasts.</p><p><strong>Try All Access free for 7 days. $0 today; then $99 per year or $9.99 per month.</strong> Annual billing saves $20.88 compared with 12 monthly payments.</p><p>Your selected plan renews automatically until canceled. Cancel before the trial ends to avoid the first charge. See the billing details below.</p>';
+return el;
+}
+function install(){
+if(!onPlanPage())return;
+var root=document.getElementById('PAGES_CONTAINER')||document.querySelector('main')||document.body;if(!root)return;
+// Exact native Editor placeholder confirmed on this pricing page. Keep future real copy visible.
+var placeholder=root.querySelector('#comp-musf2gox');
+if(placeholder&&norm(placeholder.textContent)==="I'm a paragraph. Click here to add your own text and edit me. It's easy.")placeholder.style.display='none';
+var ctas=selectedCtas(root);if(ctas.length<2)return;
+if(document.getElementById(TERMS_ID)&&document.getElementById(BENEFITS_ID))return;
+var box=ctas.reduce(function(acc,b){return acc?lca(acc,b):b;},null);if(!box||!box.parentElement||box===root)return;
+var benefits=document.getElementById(BENEFITS_ID);
+if(!benefits){benefits=buildBenefits();box.parentElement.insertBefore(benefits,box.nextSibling);}
+if(!document.getElementById(TERMS_ID))box.parentElement.insertBefore(buildTerms(),benefits.nextSibling);
+}
+function stop(){if(observer)observer.disconnect();observer=null;clearTimeout(deadline);deadline=0;if(frame)cancelAnimationFrame(frame);frame=0;}
+function sync(){
+stop();if(!onPlanPage()){[BENEFITS_ID,TERMS_ID].forEach(function(id){var el=document.getElementById(id);if(el)el.remove();});return;}
+observer=new MutationObserver(function(){if(frame)return;frame=requestAnimationFrame(function(){frame=0;install();});});
+observer.observe(document.documentElement,{childList:true,subtree:true,characterData:true});
+install();deadline=setTimeout(stop,30000);
+}
+window.__GBM_PLAN_NOTES__={sync:sync};
+window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync,{once:true});else sync();
+})();
+</script>
+

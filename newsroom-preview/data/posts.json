@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "So You're Saying There's a Chance!?",
+      "excerpt": "Well, the low scoring Longhorns have their struggles, too. I wrote earlier in the week about the similarities of the stats between UF and UM last weekend in every category but the one that matters. Facing the Texas Longhorns on the road in Austin is a tough task for a team that hasn't played well in the last two weeks. The Gators hit the road as a…",
+      "url": "https://www.gatorbaitmedia.com/post/so-you-re-saying-there-s-a-chance-1",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-10-15T11:52:43Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg/v1/fit/w_1000,h_602,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for So You're Saying There's a Chance!?"
+      }
+    },
+    {
       "title": "Philo's injury could give Tramell Jones Jr. his opening",
       "excerpt": "Franz Beard considers what a strong game at Texas could mean for Tramell Jones Jr. if Aaron Philo cannot play, plus his latest coaching hot-seat roundup.",
       "url": "https://www.gatorbaitmedia.com/post/philo-s-injury-could-give-tramell-jones-jr-his-opening",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?"
-      }
-    },
-    {
-      "title": "From the Sideline: Chris Spears on the 500th Game in The Swamp",
-      "excerpt": "Chris Spears on the view from the sideline for the 500th game in The Swamp, from the runout to Bailey Stockton's touchdown.",
-      "url": "https://www.gatorbaitmedia.com/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
-      "author": "Chris Spears",
-      "firstPublishedDate": "2026-10-11T16:22:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_79987fbda38743d9842a0ba355b3e83a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for From the Sideline: Chris Spears on the 500th Game in The Swamp"
       }
     }
   ]

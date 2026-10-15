@@ -1,0 +1,191 @@
+<!--
+  GatorBait compact manual display adapter — deployment sample, NOT production.
+  Disabled until the site's authorized advertising-consent integration supplies:
+    window.GB_COMPACT_ADS_CONFIG = {
+      enabled: true,
+      nativeSettingsVerified: true,
+      publisherId: 'ca-pub-<verified publisher ID>',
+      slotIds: { article_banner: '<verified responsive display slot ID>' }
+    };
+  Then that integration may emit:
+    window.dispatchEvent(new Event('gb-advertising-ready'));
+  Emit only after advertising permission is established through the real CMP.
+  Never infer consent from this sample, a timer, or a generic cookie banner.
+  Place this adapter once per HTML document, after target markup. Do not use a
+  second ad owner on the same slot or a second AdSense loader in that document.
+  nativeSettingsVerified may be true only after verifying Auto ads OFF and
+  global mobile ad-size optimization OFF in the native AdSense account.
+  This sample uses Google's variable-width / fixed-height responsive pattern.
+  Google owns orientation-driven creative reflow; no JS alters served creatives.
+  Actual filled-ad rotation must pass on the live site before release.
+-->
+<style>
+  .gb_compact_ad {
+    width: 100%;
+    min-width: 0;
+    min-height: 110px;
+    margin: 24px auto;
+    text-align: center;
+  }
+  .gb_compact_ad_label {
+    display: block;
+    margin-bottom: 6px;
+    font: 10px/14px "Barlow";
+    letter-spacing: .12em;
+    color: #64748b;
+    text-transform: uppercase;
+  }
+  .gb_compact_ad_slot {
+    display: block;
+    width: 100%;
+    max-width: 728px;
+    height: 90px;
+    margin: 0 auto;
+    text-align: left;
+    vertical-align: top;
+  }
+  /* No overflow clipping, max-height cap, transform, or iframe styling. */
+</style>
+
+<!-- Duplicate only target markup for another independently verified slot key. -->
+<div class="gb_compact_ad" data-gb-ad-key="article_banner"
+     data-gb-ad-state="disabled" aria-label="Advertisement">
+  <span class="gb_compact_ad_label">Advertisement</span>
+  <div class="gb_compact_ad_mount"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  if (window.GBCompactAds) return; // One adapter owner per document.
+
+  var DEFAULT_CONFIG = {
+    enabled: false,
+    nativeSettingsVerified: false,
+    publisherId: '',
+    slotIds: { article_banner: '' }
+  };
+  var authorized = false;
+  var loaderPromise = null;
+  var attempted = new WeakSet();
+  var GOOGLE_LOADER = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+
+  function config() {
+    return window.GB_COMPACT_ADS_CONFIG || DEFAULT_CONFIG;
+  }
+
+  function validConfig(c, key) {
+    return c && c.enabled === true && c.nativeSettingsVerified === true &&
+      /^ca-pub-\d{16}$/.test(c.publisherId || '') &&
+      c.slotIds && /^\d+$/.test(c.slotIds[key] || '');
+  }
+
+  function loader(c) {
+    if (loaderPromise) return loaderPromise;
+    loaderPromise = new Promise(function (resolve, reject) {
+      var scripts = Array.prototype.filter.call(document.scripts, function (s) {
+        try {
+          var u = new URL(s.src, document.baseURI);
+          return u.origin + u.pathname === GOOGLE_LOADER;
+        } catch (_) { return false; }
+      });
+      if (scripts.length > 1) {
+        reject(new Error('Multiple AdSense loaders already exist; resolve ownership first.'));
+        return;
+      }
+      if (scripts.length === 1) {
+        var existing = scripts[0];
+        var existingClient = new URL(existing.src, document.baseURI).searchParams.get('client');
+        if (existingClient && existingClient !== c.publisherId) {
+          reject(new Error('Existing AdSense loader publisher differs from authorized config.'));
+          return;
+        }
+        // An existing loader can process a queued push. Do not insert another.
+        resolve();
+        return;
+      }
+      var script = document.createElement('script');
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.src = GOOGLE_LOADER + '?client=' + encodeURIComponent(c.publisherId);
+      script.onload = resolve;
+      script.onerror = function () { reject(new Error('AdSense loader could not load.')); };
+      document.head.appendChild(script);
+    });
+    return loaderPromise;
+  }
+
+  function requestOne(host) {
+    if (!authorized || attempted.has(host)) return;
+    var c = config();
+    var key = host.getAttribute('data-gb-ad-key');
+    if (!validConfig(c, key)) {
+      host.setAttribute('data-gb-ad-state', 'disabled');
+      return;
+    }
+    var mount = host.querySelector('.gb_compact_ad_mount');
+    if (!mount || mount.children.length) return;
+    if (Math.floor(host.getBoundingClientRect().width) < 320) {
+      host.setAttribute('data-gb-ad-state', 'too-narrow');
+      return; // No ad request below 320px of actual container space.
+    }
+    attempted.add(host);
+    host.setAttribute('data-gb-ad-state', 'preparing');
+    loader(c).then(function () {
+      var current = config();
+      if (!authorized || !host.isConnected || !validConfig(current, key) ||
+          current.publisherId !== c.publisherId || current.slotIds[key] !== c.slotIds[key]) {
+        host.setAttribute('data-gb-ad-state', 'cancelled-before-request');
+        return;
+      }
+      // Re-measure BEFORE creating/pushing. CSS remains responsive afterward.
+      if (Math.floor(host.getBoundingClientRect().width) < 320) {
+        host.setAttribute('data-gb-ad-state', 'too-narrow');
+        return;
+      }
+      var slot = document.createElement('ins');
+      slot.className = 'adsbygoogle gb_compact_ad_slot';
+      // Google 9183363: expandable width with fixed height on responsive ins.
+      // Width follows its container, capped at728; height remains90 before
+      // request and during rotation. Never set a captured728px inline width.
+      slot.style.cssText = 'display:block;width:100%;max-width:728px;height:90px;margin:0 auto';
+      slot.setAttribute('data-ad-client', c.publisherId);
+      slot.setAttribute('data-ad-slot', c.slotIds[key]);
+      // Omit data-ad-format and data-full-width-responsive for this size method.
+      mount.appendChild(slot);
+      host.setAttribute('data-gb-ad-state', 'requested');
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (error) {
+        host.setAttribute('data-gb-ad-state', 'request-error');
+        console.warn('GatorBait compact ad request failed:', error.message);
+      }
+    }).catch(function (error) {
+      host.setAttribute('data-gb-ad-state', 'loader-error');
+      console.warn('GatorBait compact ads:', error.message);
+    });
+  }
+
+  function start() {
+    authorized = true;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-gb-ad-key]'), requestOne);
+  }
+
+  window.GBCompactAds = Object.freeze({
+    version: 'sample-2',
+    scan: function () {
+      // Host may scan freshly mounted, stable route content after consent.
+      // No automatic route listener, refresh loop, or reused served nodes.
+      if (authorized) start();
+    },
+    stopNewRequests: function () { authorized = false; }
+  });
+  window.addEventListener('gb-advertising-ready', start);
+  // CMP withdrawal must stop further requests. Existing served ads are not
+  // hidden/cropped here; the host applies its documented withdrawal lifecycle.
+  window.addEventListener('gb-advertising-withdrawn', function () {
+    authorized = false;
+  });
+  // No startup request: only the authorized CMP event can open the gate.
+}());
+</script>

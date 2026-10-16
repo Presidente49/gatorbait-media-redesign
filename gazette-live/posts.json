@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Watch Live at 9: Buddy Martin on Philo, Jones and the Texas Trip",
+      "excerpt": "The Buddy Martin Show is live at 9 p.m. ET with the Philo-or-Jones question ahead of Florida at No. 7 Texas. Watch on the show page or YouTube.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-tonight-philo-jones-texas",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-16T00:31:58Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_5b0ae0716772496c83643fe90f8ec91d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Watch Live at 9: Buddy Martin on Philo, Jones and the Texas Trip"
+      }
+    },
+    {
       "title": "QB1 Philo Hurt. QB2 Jones To Start? Explained by That Great Football Mind Ted Lasso",
       "excerpt": "Buddy Martin called in the two greatest minds he knows, Albert Einstein and Ted Lasso, to explain Jon Sumrall's reverse thermostat, why calm is not surrender, and why Gator fans might not be crazy for believing. Members, the biscuits are inside. Einstein had relativity. Ted Lasso has biscuits. And an amazing attitude. So does Tramell Jones.",
       "url": "https://www.gatorbaitmedia.com/post/qb1-philo-hurt-qb2-jones-to-start-explained-by-that-great-football-mind-ted-lasso",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for 'It's a player thing': Stockton, Sumrall and Chiles after South Carolina loss"
-      }
-    },
-    {
-      "title": "South Carolina beats No. 16 Florida 38-19, spoiling Homecoming in The Swamp",
-      "excerpt": "LaNorris Sellers threw four touchdown passes and South Carolina scored 21 straight points after halftime as No. 16 Florida lost for the second straight week.",
-      "url": "https://www.gatorbaitmedia.com/post/south-carolina-beats-no-16-florida-38-19-spoiling-homecoming-in-the-swamp",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T20:39:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_52b8b66e04c246818b4852083be192be~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for South Carolina beats No. 16 Florida 38-19, spoiling Homecoming in The Swamp"
       }
     }
   ]

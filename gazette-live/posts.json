@@ -2,7 +2,21 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "Watch Live at 9: Buddy Martin on Philo, Jones and the Texas Trip",
+      "title": "The Soothsayer: Texas big unless the UF defense finds an exorcist",
+      "excerpt": "Franz Beard: Florida is the man with the rope around his neck and Texas is the jukebox. The Soothsayer on Tramell Jones Jr.’s first start, Will Muschamp’s defense, an 11.5-point line and every SEC game Saturday.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-16T11:06:34Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg/v1/fit/w_1000,h_602,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: Texas big unless the UF defense finds an exorcist"
+      }
+    },
+    {
+      "title": "Watch the Replay: Buddy Martin's Philo Injury Exclusive, With Chris Doering",
       "excerpt": "The Buddy Martin Show is live at 9 p.m. ET with the Philo-or-Jones question ahead of Florida at No. 7 Texas. Watch on the show page or YouTube.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-tonight-philo-jones-texas",
       "author": "Brenden Martin",
@@ -12,7 +26,7 @@
         "src": "https://static.wixstatic.com/media/16b519_5b0ae0716772496c83643fe90f8ec91d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
-        "alt": "Featured image for Watch Live at 9: Buddy Martin on Philo, Jones and the Texas Trip"
+        "alt": "Featured image for Watch the Replay: Buddy Martin's Philo Injury Exclusive, With Chris Doering"
       }
     },
     {
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for GAMECLOCKED! No. 500 Was a Lousy Homecoming In The Swamp"
-      }
-    },
-    {
-      "title": "'It's a player thing': Stockton, Sumrall and Chiles after South Carolina loss",
-      "excerpt": "Bailey Stockton, Jon Sumrall and Aaron Chiles on Florida's 38-19 loss to South Carolina, plus injury notes on Vernell Brown III, Duke Clark and Myles Graham.",
-      "url": "https://www.gatorbaitmedia.com/post/it-s-a-player-thing-stockton-sumrall-and-chiles-after-south-carolina-loss",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-10T22:31:22Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_f3887acb4f9143ffb025594e2a77d2f8~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for 'It's a player thing': Stockton, Sumrall and Chiles after South Carolina loss"
       }
     }
   ]

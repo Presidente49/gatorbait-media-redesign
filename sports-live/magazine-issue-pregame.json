@@ -23,11 +23,11 @@
    "\"He doesn't mind his players enjoying success. He just doesn't want them moving into it and buying furniture.\" Buddy Martin"
   ],
   "image": {
-   "id": "d3cfa5_05a47d3bda774db182e3b72f547ed0c1",
+   "id": "d3cfa5_67659843d29e4a5d8daf63dbbca7b563",
    "ext": "jpg",
    "width": 2204,
    "height": 2854,
-   "alt": "GatorBait Magazine Friday Pregame cover, Oct. 16, 2026: Tramell Jones Jr. in the shotgun for Florida, under the headline Who's QB1 in Austin?, Buddy Martin's cover story, Florida at No. 7 Texas, Saturday at noon ET on ABC.",
+   "alt": "GatorBait Magazine Friday Pregame cover, Oct. 16, 2026, in the broadcast set style: chrome masthead, orange slab reading Florida at No. 7 Texas, Chris Spears' photo of Tramell Jones Jr. in the shotgun on the set's screen, and the headline Who's QB1 in Austin?",
    "credit": "Photo by Chris Spears, GatorBait Media"
   },
   "poster": true
@@ -114,6 +114,43 @@
    }
   ],
   "source": "FloridaGators.com, football opponent history vs. Texas (all five meetings, 1924-2025); 2024 and 2025 results also on TexasLonghorns.com game center"
+ },
+ "numbers": {
+  "label": "By the numbers",
+  "note": "Six figures that frame Saturday",
+  "items": [
+   {
+    "value": "-11.5",
+    "label": "Texas, the line",
+    "note": "Total 51.5. DraftKings line via ESPN pickcenter, Oct. 15."
+   },
+   {
+    "value": "87.5%",
+    "label": "ESPN predictor, Texas",
+    "note": "Florida at 12.5% in the ESPN matchup predictor."
+   },
+   {
+    "value": "1-3-1",
+    "label": "Florida in the series",
+    "note": "Last meeting: Florida 29-21 in Gainesville, Oct. 4, 2025."
+   },
+   {
+    "value": "672",
+    "label": "Baugh rushing yards",
+    "note": "Jadan Baugh: 110 carries, 12 touchdowns; Florida runs for 200.3 a game at 5.0 a carry."
+   },
+   {
+    "value": "131st",
+    "label": "Florida pass defense",
+    "note": "268.7 passing yards allowed a game, 131st nationally. Texas throws for 237.0."
+   },
+   {
+    "value": "16.0",
+    "label": "Texas points allowed",
+    "note": "Florida scores 41.7 a game; Texas allows 96.0 rushing yards."
+   }
+  ],
+  "source": "ESPN game summary and pickcenter (event 401856724), ESPN 2026 team statistics and national ranks, Oct. 15; FloridaGators.com series history."
  },
  "tape": {
   "label": "Tale of the tape",

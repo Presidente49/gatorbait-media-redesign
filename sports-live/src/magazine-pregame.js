@@ -148,7 +148,7 @@
   function pgFeature(D) {
     // A second full feature after the lead: same cream column, with an optional closing figure (a chart or graphic).
     var F = obj(D.feature); if (!F || !text(F.html, 20000) || !text(F.title, 200)) return '';
-    var url = safeUrl(F.url), fig = frame(F.image, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' }), fig2 = frame(F.figure, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' });
+    var url = text(F.url, 300) ? safeUrl(F.url) : "", fig = frame(F.image, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' }), fig2 = frame(F.figure, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' });
     var clean = String(F.html).replace(/<(?!\/?(?:p|a|strong|em|blockquote|h3)\b)[^>]*>/gi, '').replace(/<a\b(?![^>]*href="\/)[^>]*>/gi, '<a>');
     function cap(img, c) { return '<figcaption>' + esc(text(c, 200)) + (img && text(img.credit, 160) ? ' <span>' + esc(text(img.credit, 160)) + '</span>' : '') + '</figcaption>'; }
     return '<article class="pg-lead pg-feature" id="pg-feature" aria-labelledby="pg-feature-h"><header><span class="pg-kick">' + esc(text(F.label, 40)) + ' · ' + esc(text(F.kicker, 80)) + '</span><h2 id="pg-feature-h">' + esc(text(F.title, 200)) + '</h2>' + (text(F.dek, 300) ? '<p class="pg-dek">' + esc(text(F.dek, 300)) + '</p>' : '') + '<p class="pg-by">By ' + esc(text(F.author, 60)) + (text(F.date, 40) ? ' · ' + esc(text(F.date, 40)) : '') + '</p></header>' +

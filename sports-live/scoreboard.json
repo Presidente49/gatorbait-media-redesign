@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-12T22:25:24Z",
+ "updatedAt": "2026-10-16T07:08:28Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -33,7 +33,7 @@
    ]
   },
   "venue": "Ben Hill Griffin Stadium",
-  "recapUrl": "https://www.gatorbaitmedia.com/post/south-carolina-beats-no-16-florida-38-19-spoiling-homecoming-in-the-swamp",
+  "recapUrl": null,
   "galleryUrl": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-south-carolina-38-florida-19"
  },
  "next": {
@@ -136,7 +136,7 @@
     "opp": 38
    },
    "tv": "SEC Network",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/south-carolina-beats-no-16-florida-38-19-spoiling-homecoming-in-the-swamp"
+   "storyUrl": null
   },
   {
    "eventId": "401856724",

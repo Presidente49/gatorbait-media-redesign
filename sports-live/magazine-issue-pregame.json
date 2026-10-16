@@ -247,9 +247,9 @@
   "caption": "Aaron Philo (12) and Tramell Jones Jr. (9) against South Carolina."
  },
  "slate": {
-  "label": "Saturday in the SEC",
-  "note": "Kickoffs and TV: ESPN scoreboard. All times ET. Florida's line from ESPN.",
-  "source": "Kickoffs, TV, records and rankings: ESPN SEC scoreboard for Oct. 17, checked against the AP Top 25 (Week 7) and ESPN SEC standings, Oct. 15. Florida-Texas line and total: ESPN pickcenter (DraftKings), Oct. 15.",
+  "label": "Saturday in the SEC: the Soothsayer's picks",
+  "note": "Picks by Franz Beard, from The Soothsayer. Kickoffs and TV: ESPN scoreboard. All times ET. Florida's line from ESPN.",
+  "source": "Kickoffs, TV, records and rankings: ESPN SEC scoreboard for Oct. 17, checked against the AP Top 25 (Week 7) and ESPN SEC standings, Oct. 15. Florida-Texas line and total: ESPN pickcenter (DraftKings), Oct. 15. Picks: Franz Beard, The Soothsayer, Oct. 16 (/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist).",
   "games": [
    {
     "time": "Noon",
@@ -265,8 +265,9 @@
     },
     "line": "TEX -11.5",
     "ou": 51.5,
-    "note": "Sold out",
-    "hero": true
+    "note": "Texas by three TDs or more",
+    "hero": true,
+    "pick": "Texas"
    },
    {
     "time": "Noon",
@@ -280,7 +281,8 @@
      "rank": 22,
      "name": "LSU",
      "rec": "4-2"
-    }
+    },
+    "pick": "LSU"
    },
    {
     "time": "1 p.m.",
@@ -292,7 +294,8 @@
     "home": {
      "name": "Texas A&M",
      "rec": "3-3"
-    }
+    },
+    "pick": "Texas A&M"
    },
    {
     "time": "3:30 p.m.",
@@ -305,7 +308,8 @@
      "rank": 1,
      "name": "Georgia",
      "rec": "6-0"
-    }
+    },
+    "pick": "Georgia"
    },
    {
     "time": "3:30 p.m.",
@@ -319,7 +323,9 @@
      "rank": 14,
      "name": "Tennessee",
      "rec": "5-1"
-    }
+    },
+    "pick": "Alabama",
+    "note": "Brace for a white-knuckle finish"
    },
    {
     "time": "3:30 p.m.",
@@ -333,7 +339,9 @@
      "rank": 9,
      "name": "Ole Miss",
      "rec": "4-1"
-    }
+    },
+    "pick": "Ole Miss",
+    "note": "Heart says Mizzou; mind says Rebels"
    },
    {
     "time": "7 p.m.",
@@ -345,7 +353,8 @@
     "home": {
      "name": "Vanderbilt",
      "rec": "3-3"
-    }
+    },
+    "pick": "Vanderbilt"
    },
    {
     "time": "7:30 p.m.",
@@ -358,13 +367,29 @@
     "home": {
      "name": "Oklahoma",
      "rec": "3-2"
-    }
+    },
+    "pick": "Oklahoma"
    }
   ]
  },
  "cards": {
   "label": "Texas week",
   "items": [
+   {
+    "kicker": "Franz Beard · The Soothsayer",
+    "title": "The Soothsayer: Texas big unless the UF defense finds an exorcist",
+    "url": "/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
+    "excerpt": "Florida is the man with the rope around his neck and Texas is the jukebox. Tramell Jones Jr.'s first start, Muschamp's defense, an 11.5-point line and every SEC game.",
+    "image": {
+     "id": "d3cfa5_65da416fd88a4a60a2c65e8b8c467e16",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 602,
+     "alt": "Florida's defense swarms an Auburn ball carrier at Jordan-Hare Stadium on Sept. 19.",
+     "credit": "Photo by Chris Spears, GatorBait Media"
+    },
+    "date": "Oct. 16"
+   },
    {
     "kicker": "Buddy Martin · Members",
     "title": "QB1 Philo Hurt. QB2 Jones To Start? Explained by That Great Football Mind Ted Lasso",
@@ -497,21 +522,6 @@
      "height": 474,
      "alt": "Steve Spurrier on the sideline at Ben Hill Griffin Stadium.",
      "credit": "Photo by Chris Spears, GatorBait Media"
-    },
-    "date": "Oct. 12"
-   },
-   {
-    "kicker": "Gator Basketball · Franz Beard",
-    "title": "No surprise here: Gators picked to win SEC basketball title",
-    "url": "/post/gators-picked-to-win-sec-basketball-title",
-    "excerpt": "Florida is the preseason SEC basketball favorite, and Tommy Haugh is preseason Player of the Year.",
-    "image": {
-     "id": "16b519_9448e7a7fd6b42719770cf06b8ba8d74",
-     "ext": "jpg",
-     "width": 3000,
-     "height": 1758,
-     "alt": "Florida basketball file photo.",
-     "credit": "GatorBait Media"
     },
     "date": "Oct. 12"
    }

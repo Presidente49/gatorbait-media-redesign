@@ -2,20 +2,6 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "Members: Read the Texas Pregame Magazine",
-      "excerpt": "Read the Texas pregame magazine on your phone: Buddy Martin on the QB1 question, Franz Beard on Tramell Jones Jr. and the Soothsayer’s SEC picks, and the full preview of Florida at No. 7 Texas. Members can also download the 20-page print edition (PDF).",
-      "url": "https://www.gatorbaitmedia.com/post/members-read-the-texas-pregame-magazine",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-16T16:30:53Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c1074801312349d9a08dabde5c4ac23f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Members: Read the Texas Pregame Magazine"
-      }
-    },
-    {
       "title": "The Soothsayer: Texas big unless the UF defense finds an exorcist",
       "excerpt": "Franz Beard: Florida is the man with the rope around his neck and Texas is the jukebox. The Soothsayer on Tramell Jones Jr.’s first start, Will Muschamp’s defense, an 11.5-point line and every SEC game Saturday.",
       "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
@@ -237,6 +223,20 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for From the Sideline: Chris Spears on the 500th Game in The Swamp"
+      }
+    },
+    {
+      "title": "Members: Read the Texas Pregame Magazine",
+      "excerpt": "Read the Texas pregame magazine on your phone: Buddy Martin on the QB1 question, Franz Beard on Tramell Jones Jr. and the Soothsayer’s SEC picks, and the full preview of Florida at No. 7 Texas. Members can also download the 20-page print edition (PDF).",
+      "url": "https://www.gatorbaitmedia.com/post/members-read-the-texas-pregame-magazine",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-11T16:00:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_c1074801312349d9a08dabde5c4ac23f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Members: Read the Texas Pregame Magazine"
       }
     },
     {

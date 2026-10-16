@@ -100,6 +100,13 @@
       return '<li><span class="pg-n" aria-hidden="true">' + (i + 1) + '</span><h3>' + esc(text(k.h, 120)) + '</h3><p>' + esc(text(k.p, 600)) + '</p>' + (u ? '<a class="pg-more" href="' + esc(u) + '">Read more</a>' : '') + '</li>';
     }).join('') + '</ol>' + pgSrc(K.source) + '</section>';
   }
+  function pgNumbers(D) {
+    var N = obj(D.numbers), items = N ? list(N.items, 6).map(obj).filter(function (t) { return t && text(t.value, 16) && text(t.label, 60); }) : [];
+    if (!items.length) return '';
+    return '<section class="pg-numbers" id="pg-numbers" aria-labelledby="pg-numbers-t">' + pgHeadSec('pg-numbers', text(N.label, 40) || 'By the numbers', text(N.note, 120)) + '<ol>' + items.map(function (t) {
+      return '<li><b>' + esc(text(t.value, 16)) + '</b><span>' + esc(text(t.label, 60)) + '</span>' + (text(t.note, 120) ? '<small>' + esc(text(t.note, 120)) + '</small>' : '') + '</li>';
+    }).join('') + '</ol>' + pgSrc(N.source) + '</section>';
+  }
   function pgInjuries(D) {
     var J = obj(D.injuries), teams = J ? list(J.teams, 2).map(obj).filter(function (t) { return t && text(t.name, 30) && list(t.items, 20).length; }) : [];
     // No names yet (the report has not posted): the section still runs with its as-of note so readers know where the report lands.
@@ -193,7 +200,7 @@
     return '<footer class="pg-foot"><h2>' + esc(text(R && R.label, 40)) + '</h2><nav aria-label="' + esc(text(R && R.label, 40)) + '">' + links.map(function (l) { return '<a href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a>'; }).join('') + '<a href="https://www.youtube.com/@TheBuddyMartinShow/live">Watch The Buddy Martin Show live</a></nav>' + pgPdf(D) + (R && text(R.next, 200) ? '<p>' + esc(text(R.next, 200)) + '</p>' : '') + '<p class="pg-src">' + esc(text(D.asOf, 240)) + '</p><a class="pg-top" href="#pg-cover">Back to top ↑</a></footer>';
   }
   function renderPregame(D) {
-    return '<div class="pg-wrap">' + pgTop(D) + pgMast(D) + pgCover(D) + '<div class="pg-grid">' + pgGame(D) + pgSeries(D) + '</div>' + pgWatch(D) + pgTape(D) + pgKeys(D) + pgInjuries(D) + pgRosters(D) + pgLead(D) + pgFeature(D) + pgSlate(D) + pgCards(D) + pgShots(D) + pgFoot(D) + '</div>';
+    return '<div class="pg-wrap">' + pgTop(D) + pgMast(D) + pgCover(D) + '<div class="pg-grid">' + pgGame(D) + pgSeries(D) + '</div>' + pgNumbers(D) + pgWatch(D) + pgTape(D) + pgKeys(D) + pgInjuries(D) + pgRosters(D) + pgLead(D) + pgFeature(D) + pgSlate(D) + pgCards(D) + pgShots(D) + pgFoot(D) + '</div>';
   }
 
   /* ================= Live refresh (pregame layout) =================

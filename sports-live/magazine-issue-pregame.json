@@ -23,11 +23,11 @@
    "\"He doesn't mind his players enjoying success. He just doesn't want them moving into it and buying furniture.\" Buddy Martin"
   ],
   "image": {
-   "id": "d3cfa5_05a47d3bda774db182e3b72f547ed0c1",
+   "id": "d3cfa5_67659843d29e4a5d8daf63dbbca7b563",
    "ext": "jpg",
    "width": 2204,
    "height": 2854,
-   "alt": "GatorBait Magazine Friday Pregame cover, Oct. 16, 2026: Tramell Jones Jr. in the shotgun for Florida, under the headline Who's QB1 in Austin?, Buddy Martin's cover story, Florida at No. 7 Texas, Saturday at noon ET on ABC.",
+   "alt": "GatorBait Magazine Friday Pregame cover, Oct. 16, 2026, in the broadcast set style: chrome masthead, orange slab reading Florida at No. 7 Texas, Chris Spears' photo of Tramell Jones Jr. in the shotgun on the set's screen, and the headline Who's QB1 in Austin?",
    "credit": "Photo by Chris Spears, GatorBait Media"
   },
   "poster": true
@@ -114,6 +114,43 @@
    }
   ],
   "source": "FloridaGators.com, football opponent history vs. Texas (all five meetings, 1924-2025); 2024 and 2025 results also on TexasLonghorns.com game center"
+ },
+ "numbers": {
+  "label": "By the numbers",
+  "note": "Six figures that frame Saturday",
+  "items": [
+   {
+    "value": "-11.5",
+    "label": "Texas, the line",
+    "note": "Total 51.5. DraftKings line via ESPN pickcenter, Oct. 15."
+   },
+   {
+    "value": "87.5%",
+    "label": "ESPN predictor, Texas",
+    "note": "Florida at 12.5% in the ESPN matchup predictor."
+   },
+   {
+    "value": "1-3-1",
+    "label": "Florida in the series",
+    "note": "Last meeting: Florida 29-21 in Gainesville, Oct. 4, 2025."
+   },
+   {
+    "value": "672",
+    "label": "Baugh rushing yards",
+    "note": "Jadan Baugh: 110 carries, 12 touchdowns; Florida runs for 200.3 a game at 5.0 a carry."
+   },
+   {
+    "value": "131st",
+    "label": "Florida pass defense",
+    "note": "268.7 passing yards allowed a game, 131st nationally. Texas throws for 237.0."
+   },
+   {
+    "value": "16.0",
+    "label": "Texas points allowed",
+    "note": "Florida scores 41.7 a game; Texas allows 96.0 rushing yards."
+   }
+  ],
+  "source": "ESPN game summary and pickcenter (event 401856724), ESPN 2026 team statistics and national ranks, Oct. 15; FloridaGators.com series history."
  },
  "tape": {
   "label": "Tale of the tape",
@@ -2394,13 +2431,13 @@
  },
  "feature": {
   "label": "The Big Picture",
-  "kicker": "College Football Playoff",
-  "author": "Brenden Martin",
+  "kicker": "Buddy Martin on the 24-team playoff",
+  "author": "Buddy Martin",
   "date": "October 16, 2026",
-  "title": "Expansion Pack: Will a 24-team playoff water down college football?",
-  "dek": "The CFP is close to doubling its field. The numbers say the brand survives, but the regular season and the conference title games pay the price.",
-  "url": null,
-  "continue": "Read the full story, with all six graphics",
+  "title": "Is the SEC undergoing a drain of excellence?",
+  "dek": "Parody or parity? The SEC hasn’t lost excellence so much as its monopoly on it, and a 24-team playoff threatens to make the difference matter less.",
+  "url": "/post/is-the-sec-undergoing-a-drain-of-excellence",
+  "continue": "Read Buddy’s full column",
   "image": {
    "id": "d3cfa5_927b7ee1fa71438396dcae09cac639b8",
    "ext": "png",
@@ -2410,7 +2447,7 @@
    "credit": "Graphic: GatorBait Media"
   },
   "caption": "The reported 24-team format: four Power 4 champions, the top Group of 6 team and 19 at-large teams.",
-  "html": "<p>College football is about to find out whether more is really better.</p><p>ESPN reported Thursday that the College Football Playoff is \"nearing a deal to expand the field to 24 teams in 2027,\" pending final approvals. The deal is expected to eliminate the Power 4 conference championship games, the SEC's game in Atlanta among them.</p><p>So does doubling the field water down the sport's brand? The numbers split the answer. The playoff itself should keep drawing big crowds and big TV audiences. The bill comes due in the regular season and in the title games that used to settle it.</p><p>\"There's an openness to playoff expansion on our part,\" SEC commissioner Greg Sankey said Wednesday. Florida coach Jon Sumrall picked his side in May: \"I do think more football is good football in my opinion. And a lot of people say we'll water it down or whatever. I think people will still probably watch.\"</p><p>The games being cut are bigger than the games being added. The SEC Championship Game has averaged more than 16.6 million viewers in each of the past two years. First-round playoff games averaged 9.9 million last season. And in the last two years, five 9-3 SEC teams finished between No. 11 and No. 19 in the final rankings and missed the playoff. Under 24, all five would have been in.</p>",
+  "html": "<p>They have thrown out the bathwater and now they’re coming for the baby!</p><p>Apparently, there is nothing sacred left about college football, or the SEC.</p><p>That’s the way one side looks at it. The other side, led by the Matt Barries of the world, thinks we are in the throes of the “greatest football” weeks in history. Me, I worry that the scavengers have come for what’s left of college football.</p><p>As Nick Saban has said, it used to be more important for the Southern teams to win the SEC than the national championship. The preservation of that tradition seems more important than the money. But then there is this: ESPN reported that replacing the SEC championship game alone required accounting for an event generating roughly $80 million to $100 million.</p><p>I have generally found that when they say “it’s not about the money,” it is, indeed, about the money.</p><p><strong>My take:</strong> The SEC hasn’t lost excellence. It has lost some of its monopoly on excellence, and a 24-team playoff threatens to make the distinction between “excellent” and “merely pretty good” matter less. Those are related problems, but they aren’t the same problem.</p>",
   "figure": {
    "id": "d3cfa5_570f8bd4f2ec4bd7a5905f311cd6e030",
    "ext": "png",

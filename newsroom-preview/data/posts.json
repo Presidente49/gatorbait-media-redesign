@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Is the SEC undergoing a drain of excellence?",
+      "excerpt": "Parody or parity? Buddy Martin on a 24-team playoff and an SEC that hasn’t lost excellence so much as its monopoly on it. Me, I worry that the scavengers have come for what’s left of college football.",
+      "url": "https://www.gatorbaitmedia.com/post/is-the-sec-undergoing-a-drain-of-excellence",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-16T20:08:54Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Is the SEC undergoing a drain of excellence?"
+      }
+    },
+    {
       "title": "The Soothsayer: Texas big unless the UF defense finds an exorcist",
       "excerpt": "Franz Beard: Florida is the man with the rope around his neck and Texas is the jukebox. The Soothsayer on Tramell Jones Jr.’s first start, Will Muschamp’s defense, an 11.5-point line and every SEC game Saturday.",
       "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for No surprise here: Gators picked to win SEC basketball title"
-      }
-    },
-    {
-      "title": "An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams",
-      "excerpt": "Buddy Martin examines Florida's consecutive losses and asks whether the failures are separate football problems or symptoms of something larger.",
-      "url": "https://www.gatorbaitmedia.com/post/an-anatomy-of-total-gator-collapse-a-swamp-strewn-with-broken-dreams",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-12T19:06:37Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_8acb17fa05274836baf80421256e7668~mv2.jpg/v1/fit/w_1000,h_474,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams"
       }
     }
   ]

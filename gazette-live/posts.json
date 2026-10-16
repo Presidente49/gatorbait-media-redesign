@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Is the SEC undergoing a drain of excellence?",
+      "excerpt": "Parody or parity? Buddy Martin on a 24-team playoff and an SEC that hasn’t lost excellence so much as its monopoly on it. Me, I worry that the scavengers have come for what’s left of college football.",
+      "url": "https://www.gatorbaitmedia.com/post/is-the-sec-undergoing-a-drain-of-excellence",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-16T20:08:54Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Is the SEC undergoing a drain of excellence?"
+      }
+    },
+    {
       "title": "The Soothsayer: Texas big unless the UF defense finds an exorcist",
       "excerpt": "Franz Beard: Florida is the man with the rope around his neck and Texas is the jukebox. The Soothsayer on Tramell Jones Jr.’s first start, Will Muschamp’s defense, an 11.5-point line and every SEC game Saturday.",
       "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for After a second sobering loss, can Florida's season still be salvaged?"
-      }
-    },
-    {
-      "title": "Chris Spears' Best Shots: South Carolina 38, Florida 19",
-      "excerpt": "36 photos from Chris Spears on the sideline for the 500th game in The Swamp: the runout, Bailey Stockton's 59-yard touchdown and Jon Sumrall during South Carolina's 38-19 win.",
-      "url": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-south-carolina-38-florida-19",
-      "author": "Chris Spears",
-      "firstPublishedDate": "2026-10-11T04:44:19Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_60244446a0b246dbbeae06a0cbb1e3c2~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Chris Spears' Best Shots: South Carolina 38, Florida 19"
       }
     }
   ]

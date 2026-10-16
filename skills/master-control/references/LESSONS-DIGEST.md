@@ -119,3 +119,7 @@ One line per lesson, grouped by subject. `LESSONS.md` is the evidence (what happ
 - Lesson 96 (Oct. 11, 2026): Fresh news only. Never fill a gap with last week's ranking or stat, even dated; leave the line out until the current figure posts.
 
 - Lesson 97 (Oct. 12, 2026): Incomplete image requests are pending, not failures; keep URLs until load/error, restore the photo after a late successful load, and audit expected story-photo boxes including hidden images after scrolling lower lazy cards.
+- Lesson 98 (Oct. 16, 2026): A members PDF or other utility post takes the homepage lead; backdate `firstPublishedDate` with `UPDATE_PUBLISH` or publish it after the next story, and check the lead after every publish.
+- Lesson 99 (Oct. 16, 2026): The embed fingerprint is djb2 `((h<<5)+h+code)|0`, hex of `h>>>0`; compute it on the live HTML before and after every PATCH and abort on mismatch.
+- Lesson 100 (Oct. 16, 2026): Any `sports-live/src/` change rebuilds and `--check`s all three magazine bundles together; watch the weekly 184 KB cap and expect a short jsdelivr lag on a new sha.
+- Lesson 101 (Oct. 16, 2026): A design reference from Brenden supplies palette, type and chrome only; never swap photos or copy because of it. Tokens live in `docs/design/NETWORK-DESIGN-SYSTEM.md`.

@@ -795,3 +795,27 @@ When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Mi
 **What happened:** The homepage hid slow photos and removed their URLs after 7 seconds. Live QC filtered out hidden images and ignored lower lazy photos, so the defect could pass. Exact production source failed 5/8 units and 8/10 browser regressions. PR #270 fixes the handler and QC; PR #271 releases build 1e8ad826.
 
 **The rule:** incomplete is pending, not failed. Wait for load/error, retain the source for recovery, and clear fallback state after a valid late load. QA counts reserved story-photo boxes even when img is absent/hidden/failed, scrolls lazy cards, and requires the expected deployed commit/build and actual viewport. Unmodified public at 1366/390/430/320px and real photo responses held for 7.5 seconds at 390/430px verified the release (#34 receipt6115843450); Chromium emulation does not establish physical iOS coverage.
+
+## Lesson 98: a members-only PDF post takes the homepage lead unless it is backdated (Oct. 16, 2026)
+
+**What happened:** The Texas pregame magazine PDF went out as a members blog post. The Gazette home code sorts the feed by date, so the PDF post, not a story, became the lead box. Brenden saw "somebody sent out a magazine and it looks like shit" on the front page.
+
+**The rule:** a utility post (a PDF, a members download, a gallery index) is published with `firstPublishedDate` set earlier than the current lead, via `PATCH /blog/v3/draft-posts/{id}` with `action: 'UPDATE_PUBLISH'`, or it is published after the next real story. Check the homepage lead after every publish. The members PDF post for the Texas issue is `1af68860`, backdated to Oct. 11, 16:00Z.
+
+## Lesson 99: the embed fingerprint is one specific djb2 (Oct. 16, 2026)
+
+**What happened:** The first embed PATCH of the day aborted on a fingerprint mismatch. The check used `h * 33 ^ c`; the recorded fingerprints in #34 use the other djb2 form.
+
+**The rule:** the fingerprint is `let h = 5381; for each char: h = ((h << 5) + h + code) | 0; return (h >>> 0).toString(16)`. Compute it on the exact live HTML string before and after every PATCH, and abort on mismatch, which is what happened here. A mismatch from the wrong formula is still an abort, not a reason to skip the check.
+
+## Lesson 100: a shared magazine source change rebuilds all three bundles (Oct. 16, 2026)
+
+**What happened:** A pregame-only change touched `sports-live/src/magazine-pregame.js`, which the weekly and postgame bundles also include. CI went red with "Out of date; run build-magazine.mjs: sports-live/magazine.js", and the weekly bundle then crossed its size cap.
+
+**The rule:** after any change under `sports-live/src/`, run `build-magazine.mjs` for `MAG_VARIANT=` (weekly), `postgame` and `pregame`, then `--check` for all three, and commit the three bundles together. Watch the weekly cap (`MAX_JS`, 184 KB); trim CSS before raising it. Expect jsdelivr to lag a new commit sha by a minute or two; verify with the live-shots workflow, not a cached first read.
+
+## Lesson 101: a reference image is a style, not content (Oct. 16, 2026)
+
+**What happened:** Brenden sent a Buddy Martin Show broadcast thumbnail as the look he wants for the magazine and the site. A first pass treated it as a source for a new photo and new words. He corrected it: "not new photo not new words. Those are just for an example of the colors and things and the logos."
+
+**The rule:** when Brenden sends a design reference, take the palette, type treatment, chrome, slabs, rails and logo placement from it and apply them to the content we already have. Do not replace photos, headlines or copy because of a reference. The tokens and recipes live in `docs/design/NETWORK-DESIGN-SYSTEM.md`; the homepage stays locked until he says yes.

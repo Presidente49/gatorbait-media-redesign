@@ -180,7 +180,7 @@
    },
    {
     "label": "Yards a carry",
-    "fla": 5.0,
+    "fla": 5,
     "miz": 3.7,
     "unit": "",
     "lower": false
@@ -188,21 +188,21 @@
    {
     "label": "Passing yards",
     "fla": 273.5,
-    "miz": 237.0,
+    "miz": 237,
     "unit": "",
     "lower": false
    },
    {
     "label": "Points allowed",
-    "fla": 29.0,
-    "miz": 16.0,
+    "fla": 29,
+    "miz": 16,
     "unit": "",
     "lower": true
    },
    {
     "label": "Rush yards allowed",
     "fla": 124.3,
-    "miz": 96.0,
+    "miz": 96,
     "unit": "",
     "lower": true
    },
@@ -257,6 +257,17 @@
    }
   ],
   "source": "ESPN 2026 team statistics, national ranks and game-summary leaders, Oct. 15 (Florida six games, Texas five)"
+ },
+ "watching": {
+  "label": "What we’re watching",
+  "note": "GatorBait Media writers, in their own words",
+  "items": [
+   {
+    "by": "Buddy Martin",
+    "line": "It will depend a lot upon the composure of the new starting quarterback, Tramell Jones Jr., who’s a promising talent but drew the short straw for his first college start: in Austin, Texas, against a team that two weeks ago was ranked No. 1 in the nation."
+   }
+  ],
+  "source": "Writers’ lines filed by email, Oct. 16; AP Top 25 rank via ESPN (Texas No. 1 in the Oct. 5 poll, No. 7 in the Oct. 11 poll)"
  },
  "injuries": {
   "label": "Availability",

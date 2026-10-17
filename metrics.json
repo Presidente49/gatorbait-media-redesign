@@ -1,0 +1,30 @@
+{
+ "url": "file:///home/runner/work/gatorbait-media-redesign/gatorbait-media-redesign/deploy/covers/postgame-final.html?a=Florida&as=27&ar=&b=Texas&bs=24&br=No.%207&kicker=Final%20%C2%B7%20SEC&when=Saturday%2C%20Oct.%2017&sub=DKR-Texas%20Memorial%20Stadium%2C%20Austin&qa=0%2C10%2C7%2C10&qb=10%2C7%2C0%2C7&ab=UF&bb=TEX",
+ "selector": "#cover",
+ "at": "2026-10-17T19:24:19.499Z",
+ "shots": [
+  {
+   "width": 1600,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": null,
+   "fpBuild": null,
+   "fpVersion": null,
+   "selectorFound": true,
+   "box": {
+    "x": 0,
+    "y": 0,
+    "w": 1600,
+    "h": 900,
+    "bg": "rgb(6, 11, 28)",
+    "font": "Barlow, Arial, sans-serif",
+    "kids": [],
+    "track": null,
+    "story": null,
+    "docScrollWidth": 1600,
+    "innerWidth": 1600
+   }
+  }
+ ]
+}

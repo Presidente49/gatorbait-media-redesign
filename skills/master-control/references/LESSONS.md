@@ -819,3 +819,15 @@ When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Mi
 **What happened:** Brenden sent a Buddy Martin Show broadcast thumbnail as the look he wants for the magazine and the site. A first pass treated it as a source for a new photo and new words. He corrected it: "not new photo not new words. Those are just for an example of the colors and things and the logos."
 
 **The rule:** when Brenden sends a design reference, take the palette, type treatment, chrome, slabs, rails and logo placement from it and apply them to the content we already have. Do not replace photos, headlines or copy because of a reference. The tokens and recipes live in `docs/design/NETWORK-DESIGN-SYSTEM.md`; the homepage stays locked until he says yes.
+
+## Lesson 102: a live card is not proven by fixtures or one check (Oct. 17, 2026)
+
+**What happened:** on game day the homepage card showed no live score. Tests had only used seeded data. A real-browser probe on the production origin showed the card's ESPN read never worked: `site.api.espn.com` blocks the site's origin (CORS), so the card fell back to last week's final. Switching the read to `site.web.api.espn.com` fixed it, verified live at 18:23Z. Minutes later the scoreboard feed gained a `live` block with no kickoff. `window_()` read that block first, got `NaN`, skipped the ESPN read, and the card showed the South Carolina final again from about 18:25Z to 18:47Z. A second real-browser probe showed the page asked for the feed and the loader but made no ESPN request.
+
+**The rule:** a browser-side live feed is proven only by a real-browser probe on the production origin, and it must be re-run after every feed refresh while a game is on, because the feed changes shape when the game goes live. Fixtures prove parsing, never reachability. The kickoff for the game window comes from the matching `next` block, or from now while the feed says the game is live.
+
+## Lesson 103: render the real CSS locally before any pin (Oct. 17, 2026)
+
+**What happened:** the blue game-day band was written and ready to ship. A local render of the real stylesheet (Playwright, Barlow installed) at 320, 390, 430 and 1366 px found three defects before any audience saw them: the score clipped at the right edge on phones, the jump link was white on white, and the band overflowed its box. The cause of the first was a later phone rule, `padding:12px!important` on `.bc-nx>.bc-sc`, that beat the new rule at equal specificity.
+
+**The rule:** build the harness from the real CSS string and the real markup, check document width against viewport width, and read the computed padding, margin and width of anything that looks off. When a later `!important` rule wins at equal specificity, raise the specificity of the new rule (for example `.bc-nx:has(>.bc-sc)>.bc-sc`) instead of stacking more `!important`.

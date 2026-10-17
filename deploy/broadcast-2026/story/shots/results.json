@@ -1,0 +1,462 @@
+[
+ {
+  "kind": "column",
+  "w": 320,
+  "docW": 320,
+  "vw": 320,
+  "problems": [],
+  "title": [
+   "32px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   17,
+   1.6
+  ],
+  "subhead": true,
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "column",
+  "w": 390,
+  "docW": 390,
+  "vw": 390,
+  "problems": [],
+  "title": [
+   "38.22px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   18,
+   1.6
+  ],
+  "subhead": true,
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "column",
+  "w": 430,
+  "docW": 430,
+  "vw": 430,
+  "problems": [],
+  "title": [
+   "42.14px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   18,
+   1.6
+  ],
+  "subhead": true,
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": false,
+  "errors": []
+ },
+ {
+  "kind": "column",
+  "w": 1366,
+  "docW": 1366,
+  "vw": 1366,
+  "problems": [],
+  "title": [
+   "60px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   19,
+   1.6
+  ],
+  "subhead": true,
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "photos",
+  "w": 320,
+  "docW": 320,
+  "vw": 320,
+  "problems": [],
+  "title": [
+   "32px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   17,
+   1.6
+  ],
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "photos",
+  "w": 390,
+  "docW": 390,
+  "vw": 390,
+  "problems": [],
+  "title": [
+   "38.22px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   18,
+   1.6
+  ],
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "photos",
+  "w": 430,
+  "docW": 430,
+  "vw": 430,
+  "problems": [],
+  "title": [
+   "42.14px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   18,
+   1.6
+  ],
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "photos",
+  "w": 1366,
+  "docW": 1366,
+  "vw": 1366,
+  "problems": [],
+  "title": [
+   "60px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   19,
+   1.6
+  ],
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "members",
+  "w": 320,
+  "docW": 320,
+  "vw": 320,
+  "problems": [],
+  "title": [
+   "32px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "subhead": true,
+  "lead": true,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "members",
+  "w": 390,
+  "docW": 390,
+  "vw": 390,
+  "problems": [],
+  "title": [
+   "38.22px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "subhead": true,
+  "lead": true,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "members",
+  "w": 430,
+  "docW": 430,
+  "vw": 430,
+  "problems": [],
+  "title": [
+   "42.14px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "subhead": true,
+  "lead": true,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": false,
+  "errors": []
+ },
+ {
+  "kind": "members",
+  "w": 1366,
+  "docW": 1366,
+  "vw": 1366,
+  "problems": [],
+  "title": [
+   "60px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "subhead": true,
+  "lead": true,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "subheads",
+  "w": 320,
+  "docW": 320,
+  "vw": 320,
+  "problems": [],
+  "title": [
+   "32px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   17,
+   1.6
+  ],
+  "subhead": true,
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": true,
+  "errors": []
+ },
+ {
+  "kind": "subheads",
+  "w": 390,
+  "docW": 390,
+  "vw": 390,
+  "problems": [],
+  "title": [
+   "38.22px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   18,
+   1.6
+  ],
+  "subhead": true,
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": false,
+  "errors": []
+ },
+ {
+  "kind": "subheads",
+  "w": 430,
+  "docW": 430,
+  "vw": 430,
+  "problems": [],
+  "title": [
+   "42.14px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   18,
+   1.6
+  ],
+  "subhead": true,
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": false,
+  "errors": []
+ },
+ {
+  "kind": "subheads",
+  "w": 1366,
+  "docW": 1366,
+  "vw": 1366,
+  "problems": [],
+  "title": [
+   "60px",
+   "italic",
+   "uppercase",
+   "rgb(255, 255, 255)"
+  ],
+  "fonts": [
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "body": [
+   19,
+   1.6
+  ],
+  "subhead": true,
+  "lead": false,
+  "quote": [
+   "linear-gradient(100d",
+   "rgb(255, 255, 255)",
+   "italic"
+  ],
+  "upnext": false,
+  "errors": []
+ }
+]

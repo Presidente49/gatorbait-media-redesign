@@ -1,5 +1,5 @@
 // Broadcast S4 QA: real production pages, candidate embeds swapped in (or live with --live).
-// node qa/run.mjs [--live] [--widths 320,390,430,1366] [--out dir] [paths...]
+// node deploy/broadcast-2026/s4/run.mjs [--live] [--widths 320,390,430,1366] [--out dir] [paths...]
 import { createRequire } from 'node:module';
 const { chromium } = createRequire(import.meta.url)('playwright');
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';

@@ -1,108 +1,48 @@
-// Builds the Broadcast S4 candidate embeds from src/ into <id8>/rev<N>.html.
-// node deploy/broadcast-2026/build.mjs
-import { readFileSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const here = dirname(fileURLToPath(import.meta.url));
-const rd = (p) => readFileSync(join(here, p), 'utf8');
-const LIMIT = 15000;
-
-export function djb2(s) {
-  let h = 5381;
-  for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
-  return (h >>> 0).toString(16);
+// Broadcast S2 build: live revision + asserted replacements -> proposed embed HTML.
+// node deploy/broadcast-2026/build.mjs   (writes <id>/proposed.html, prints length and djb2)
+import fs from 'fs';
+const D = new URL('.', import.meta.url).pathname;
+const djb2 = t => { let h = 5381; for (let i = 0; i < t.length; i++) h = ((h << 5) + h + t.charCodeAt(i)) | 0; return (h >>> 0).toString(16); };
+function apply(src, reps) {
+  for (const [from, to, n = 1] of reps) {
+    const got = src.split(from).length - 1;
+    if (got !== n) throw new Error(`expected ${n} x ${JSON.stringify(from.slice(0, 80))}, found ${got}`);
+    src = src.split(from).join(to);
+  }
+  return src;
 }
-const css = (s) => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n+/g, '').replace(/\s*([{};,])\s*/g, '$1').trim();
-const js = (s) => s.replace(/^\/\*.*\*\/$/gm, '').replace(/\n+/g, '\n').trim();
-
+const min = css => css.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n+/g, '').trim();
+const SET = 'linear-gradient(115deg,transparent 0 62%,rgba(255,255,255,.035) 62% 63%,transparent 63%),linear-gradient(180deg,#0021a5 0,#0a1a6b 560px,#061247 100%)';
+const FEED = 'html body #SITE_PAGES [data-hook="feed-page-root"]';
 const out = {};
 
-// 7fee4de6 Header: macro CSS loader + header runtime + brand script kept verbatim from rev36.
-{
-  const prev = rd('7fee4de6/rev36.html');
-  const brand = prev.slice(prev.indexOf('<script id="gbm-official-brand-script-v1">'));
-  const loader = '<script>(function(i,e,o){i.getElementById("gbm-shared-site-design-v6")||(o=i.createElement("style"),o.id="gbm-shared-site-design-v6",o.textContent='
-    + JSON.stringify(css(rd('src/header.css')))
-    + '.replace(/\\^/g,"html:has(`) ").replace(/`/g,"#gbm-site-header").replace(/\\$/g,"!important").replace(/~/g,\'"Barlow Condensed",Barlow,sans-serif\').replace(/§/g,"#gbm-mobile-drawer-root").replace(/¶/g,"#gbm-mobile-shell"),e&&e.parentNode?e.parentNode.insertBefore(o,e):i.head.appendChild(o))})(document,document.currentScript);</script>';
-  out['7fee4de6/rev37.html'] = loader + '<script>' + js(rd('src/header.js')) + '</script>' + brand;
-}
+// 602fb362 Sports Feed Cards: deep-blue set behind every feed page; native fallback list on dark.
+out['602fb362'] = apply(fs.readFileSync(D + '602fb362/rev15.html', 'utf8'), [
+  ['html:has([data-hook="feed-page-root"]) #SITE_PAGES{background:#fff!important}', `html:has([data-hook="feed-page-root"]) #SITE_PAGES{background:${SET}!important}`],
+  ['[data-hook="feed-page-root"]{color:#11274a!important;background:#fff!important;', '[data-hook="feed-page-root"]{color:#e8edff!important;background:transparent!important;'],
+  ['margin:0!important;color:#11274a!important;box-shadow:none', 'margin:0!important;color:#e8edff!important;box-shadow:none'],
+  ['margin:0!important;color:#081b35!important;-webkit-text-fill-color:#081b35!important;font:800 25px', 'margin:0!important;color:#fff!important;-webkit-text-fill-color:#fff!important;font:800 25px'],
+  ['{color:#5b677a!important;-webkit-text-fill-color:#5b677a!important;', '{color:#9fb0ff!important;-webkit-text-fill-color:#9fb0ff!important;'],
+  ['nav[aria-label="Blog"]{border-bottom:1px solid #d6dce4!important;background:#fff!important}', 'nav[aria-label="Blog"]{border-bottom:0!important;background:#040c30!important}'],
+  ['text-transform:uppercase;color:#081b35!important;min-height:44px', 'text-transform:uppercase;color:#fff!important;min-height:44px'],
+  ['>.inner-box{background:#fff!important;', '>.inner-box{background:transparent!important;'],
+  ['.inner-box{background:#fff!important;box-shadow:none!important;border:0!important}\nhtml body #SITE_PAGES [data-hook="feed-page-root"] [data-hook="post-title"] h2', '.inner-box{background:transparent!important;box-shadow:none!important;border:0!important}\nhtml body #SITE_PAGES [data-hook="feed-page-root"] [data-hook="post-title"] h2'],
+  [' h1{color:#081b35!important;-webkit-text-fill-color:#081b35!important;', ' h1{color:#fff!important;-webkit-text-fill-color:#fff!important;'],
+  ['color:#d8450c!important;-webkit-text-fill-color:#d8450c!important;font:800 12px', 'color:#ffb39a!important;-webkit-text-fill-color:#ffb39a!important;font:800 12px'],
+  [':hover [data-hook="post-title"] h2{color:#d8450c!important;-webkit-text-fill-color:#d8450c!important}', ':hover [data-hook="post-title"] h2{color:#ffb39a!important;-webkit-text-fill-color:#ffb39a!important}'],
+  ['[data-hook="user-name"]{color:#081b35!important;-webkit-text-fill-color:#081b35!important;', '[data-hook="user-name"]{color:#ffb39a!important;-webkit-text-fill-color:#ffb39a!important;'],
+  ['outline:3px solid #e84b10!important', 'outline:3px solid #f2b632!important'],
+  ['text-decoration:none!important}\n</style>', `text-decoration:none!important}\n${FEED},${FEED} .blog-background-color,html body #SITE_PAGES .blog-background-category-color:has(#gbm-lp){background:transparent!important}\n</style>`],
+]);
 
-// c66d5b7f Theme: rev8 kept verbatim (homepage rules) + Broadcast skin for S4 pages.
-{
-  const prev = rd('c66d5b7f/rev8.html');
-  // Source stays plain CSS; the build packs repeated strings into one-character macros expanded at runtime.
-  const packed = css(rd('src/theme.css'))
-    .replaceAll('!important', '$')
-    .replaceAll('html.gbm-bc #SITE_PAGES ', '^')
-    .replaceAll('html:has(#gbm-site-header)', '`')
-    .replaceAll('"Barlow Condensed",Barlow,sans-serif', '~')
-    .replaceAll('#gbm-mobile-drawer-root', '§')
-    .replaceAll('#gbm-mobile-shell', '¶');
-  out['c66d5b7f/rev9.html'] = prev + '<script>(function(d,s){d.getElementById("gbm-broadcast-skin-v1")||(s=d.createElement("style"),s.id="gbm-broadcast-skin-v1",s.textContent='
-    + JSON.stringify(packed)
-    + '.replace(/\\$/g,"!important").replace(/\\^/g,"html.gbm-bc #SITE_PAGES ").replace(/`/g,"html:has(#gbm-site-header)").replace(/~/g,\'"Barlow Condensed",Barlow,sans-serif\').replace(/§/g,"#gbm-mobile-drawer-root").replace(/¶/g,"#gbm-mobile-shell"),d.head.appendChild(s))})(document);'
-    + js(rd('src/theme.js')) + '</script>';
-}
+// c4b41f6a Section nav: Broadcast skin for #gbm-sn and #gbm-lp; kicker becomes a two-part bug.
+out['c4b41f6a'] = apply(fs.readFileSync(D + 'c4b41f6a/rev1.html', 'utf8'), [
+  [`'<div class="sn-top"><span class="sn-k">'+esc(i.k)+'</span>`, `'<div class="sn-top"><span class="sn-k"><b>GB</b><i>'+esc(i.k)+'</i></span>`],
+  ['</style><script id="gbm-sn-js">', '</style><style id="gbm-bc-s2">' + min(fs.readFileSync(D + 'c4b41f6a/broadcast-skin.css', 'utf8')) + '</style><script id="gbm-sn-js">'],
+]);
 
-// 82c4ca83 TV: new Broadcast stylesheet; script kept from rev37 except the hub now sits after the phone bar too.
-{
-  const prev = rd('82c4ca83/rev37.html');
-  let script = prev.slice(prev.indexOf('</style>') + 8);
-  const last = "var A=[document.getElementById('gbm-site-header'),document.getElementById('gbm-mobile-shell-host')].filter(function(e){return e&&e.parentNode===document.body}).sort(function(a,b){return a.compareDocumentPosition(b)&4?-1:1}).pop();";
-  const swaps = [
-    ["if(old){var header=document.getElementById('gbm-site-header');if(header&&header.parentNode===document.body&&header.nextElementSibling!==old)header.after(old);return}",
-     "if(old){" + last + "if(A&&A.nextElementSibling!==old)A.after(old);return}"],
-    ["var anchor=document.getElementById('gbm-site-header')||document.getElementById('gbm-mobile-shell-host');if(anchor&&anchor.parentNode===document.body)document.body.insertBefore(m,anchor.nextSibling);else document.body.insertBefore(m,document.body.firstChild);",
-     last + "if(A)A.after(m);else document.body.insertBefore(m,document.body.firstChild);"],
-  ];
-  for (const [a, b] of swaps) { if (!script.includes(a)) throw new Error('TV anchor not found'); script = script.replace(a, () => b); }
-  const packed = css(rd('src/tv.css'))
-    .replaceAll('!important', '$')
-    .replaceAll('html:has(#gbm-media-hub) ', '`')
-    .replaceAll('#gbm-media-hub ', '^')
-    .replaceAll('"Barlow Condensed",Barlow,sans-serif', '~')
-    .replaceAll('text-transform:uppercase', '¤')
-    .replaceAll('clip-path:polygon(', '¢');
-  out['82c4ca83/rev38.html'] = '<script>(function(d,s){d.getElementById("gbm-media-hub-v2")||(s=d.createElement("style"),s.id="gbm-media-hub-v2",s.textContent='
-    + JSON.stringify(packed)
-    + '.replace(/\\$/g,"!important").replace(/`/g,"html:has(#gbm-media-hub) ").replace(/\\^/g,"#gbm-media-hub ").replace(/~/g,\'"Barlow Condensed",Barlow,sans-serif\').replace(/¤/g,"text-transform:uppercase").replace(/¢/g,"clip-path:polygon("),d.head.appendChild(s))})(document);</script>' + script;
+for (const [id, html] of Object.entries(out)) {
+  if (html.length > 15000) throw new Error(`${id} is ${html.length} chars`);
+  fs.writeFileSync(`${D}${id}/proposed.html`, html);
+  console.log(id, html.length, djb2(html));
 }
-
-// 360c9265 Roster and schedule card: Broadcast card styles, guide-table rules and script kept from rev4.
-{
-  const prev = rd('360c9265/rev4.html');
-  out['360c9265/rev5.html'] = '<style id="gbm-football-tools-style">\n' + rd('src/roster.css') + '</style>' + prev.slice(prev.indexOf('</style>') + 8);
-}
-
-// a13b04e3 UI layer: modal type and buttons to Broadcast, Barlow only; logic unchanged.
-{
-  let h = rd('a13b04e3/rev5.html');
-  const swaps = [
-    ['-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Arial,sans-serif', 'Barlow,sans-serif', 5],
-    ['.gbm-modal-card{position:relative;width:min(520px,100%);max-height:min(720px,calc(100vh - 32px));overflow:auto;background:#fff;color:#101827;border-top:6px solid #fa4616;',
-     '.gbm-modal-card{position:relative;width:min(520px,100%);max-height:min(720px,calc(100vh - 32px));overflow:auto;background:#fffaf0;color:#10264b;border-top:6px solid #fa4616;', 1],
-    ['font:700 32px/1.05 Barlow,Arial,sans-serif!important;letter-spacing:-.02em}',
-     'font:italic 800 36px/.95 \\"Barlow Condensed\\",Barlow,sans-serif!important;letter-spacing:-.01em;text-transform:uppercase}', 1],
-    ['.gbm-modal-eyebrow{display:block;margin-bottom:8px;color:#0021a5;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}',
-     '.gbm-modal-eyebrow{display:inline-block;margin-bottom:10px;padding:6px 14px 6px 10px;background:#fa4616;color:#08132f;font:800 13px/1 \\"Barlow Condensed\\",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)}', 1],
-    ['.gbm-modal-btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:12px 16px;border:2px solid #08132f;background:#08132f;color:#fff!important;text-decoration:none!important;font-size:13px;font-weight:900;letter-spacing:.03em;',
-     '.gbm-modal-btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:12px 16px;border:2px solid #0a1a6b;background:#0a1a6b;color:#fff!important;text-decoration:none!important;font:800 18px/1.1 \\"Barlow Condensed\\",Barlow,sans-serif;text-transform:uppercase;letter-spacing:.04em;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);', 1],
-    ['.gbm-modal-btn{min-height:52px;font-size:14px}', '.gbm-modal-btn{min-height:52px;font-size:18px}', 1],
-  ];
-  for (const [a, b, n] of swaps) {
-    const c = h.split(a).length - 1;
-    if (c !== n) throw new Error(`UI layer: expected ${n} of ${a.slice(0, 40)}, found ${c}`);
-    h = h.split(a).join(b);
-  }
-  out['a13b04e3/rev6.html'] = h;
-}
-
-let bad = 0;
-for (const [p, html] of Object.entries(out)) {
-  writeFileSync(join(here, p), html);
-  const ok = html.length < LIMIT;
-  if (!ok) bad++;
-  console.log(`${ok ? 'ok ' : 'BIG'} ${p} ${html.length} chars djb2 ${djb2(html)}`);
-}
-process.exit(bad ? 1 : 0);

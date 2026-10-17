@@ -1,28 +1,26 @@
-# Broadcast S4: site shell and other pages
+# Broadcast S2: All News, category hubs and section pages
 
-Session S4 of the Broadcast rollout (`docs/design/BROADCAST-ROLLOUT.md`). Scope comment: issue #34, "Broadcast S4 · scope".
+Session S2 of the Broadcast rollout (`docs/design/BROADCAST-ROLLOUT.md`). Pages: `/gatorbait-media-blogs` (All News, the "Latest" link in the header), every `/gatorbait-media-blogs/categories/<slug>` hub (sections and columnists), topic `/tags/` pages and `/page/<n>`. `/latest` returns 404 on the live site; there is no page at that path, so nothing is changed there.
 
 ## What changes
 
-| Embed | Live rev (rollback file) | Candidate | What it does |
-|---|---|---|---|
-| `7fee4de6` Header | `rev36.html` | `rev37.html` | Ticker strip with the orange GB bug (newest four headlines from `/blog-feed.xml`, then show times and standing links), dark blue header bar, GatorBait type lockup, condensed uppercase nav with the orange underline on the current page, skewed orange "Join GatorBait" button, Search, Sign in and Shop Gear in the ticker's utility area. Phones get the ticker above the sticky bar. Story-page rules from rev36 kept as they were. |
-| `c66d5b7f` Theme | `rev8.html` | `rev9.html` | rev8 kept byte for byte (homepage rules). Adds: dark phone bar and drawer (markup is S1's `fdc2127a`, restyled only), Broadcast footer (neon rail, condensed links) on every page with the shared header, and on S4 pages (`html.gbm-bc`) the deep-blue page band with the page name, condensed italic headings, chamfered buttons, membership cards and the contact form. |
-| `82c4ca83` TV | `rev37.html` | `rev38.html` | `/the-buddy-martin-show` fully on the deep-blue set. The hub is now placed after the phone bar. Copy, video list and links unchanged. |
-| `360c9265` Roster card | `rev4.html` | `rev5.html` | The roster and schedule card in Broadcast styling. Guide-table rules and script unchanged. |
-| `a13b04e3` UI layer | `rev5.html` | `rev6.html` | Account and writer modals: Barlow only (the system font stack is gone), condensed headings, orange bug eyebrow, chamfered buttons. Logic unchanged. |
-| `5a43ae83` Site Fixer | `rev24.html` | none | Kept for the record; nothing visual to change. |
+| Embed | Live before | Change |
+|---|---|---|
+| `602fb362` Sports Feed Cards | rev 15, 9,586 chars, fp `8127b737` | Feed pages: white page becomes the deep-blue set; the native fallback list (shown only if the Latest page script fails) is restyled for dark. |
+| `c4b41f6a` Section nav | rev 1, 5,970 chars, fp `3b044e1c` | Adds one `<style id="gbm-bc-s2">` (source `c4b41f6a/broadcast-skin.css`) for `#gbm-sn` and `#gbm-lp`: orange "GB" bug kicker, italic condensed uppercase title with a neon rail, dark section nav, white "Just in" bar with an orange tag, slashed lead photo with an orange slash, chamfered thumbnails and orange buttons. JS: the kicker becomes a two-part bug (same words). |
+| `53e15504` Latest page | rev 11, 13,818 chars, fp `e6a71858` | No change. Saved for reference only. |
 
-Source is in `src/`; `node build.mjs` writes the candidates and prints length and djb2 for each. Rollback files are the exact HTML served on Oct. 17, 2026, about 03:00Z (taken from the live page's embed config; the magazine's fingerprint matched Jarvis's posted rev 108 value, `a8c8fd13`, which confirms the extraction).
+Unchanged: every link, category, pagination, the archive search, ad slots, analytics, the page `h1` text, the JSON-LD (`#gbm-sn-ld`), reading order. The header, footer and sitewide type sheet (S4) are not touched; the skin overrides that sheet only inside `#gbm-sn` and `#gbm-lp` with two-id selectors. Italic and upright Barlow Condensed 800 load under a private family name, "GB Broadcast", from the same jsDelivr `@fontsource/barlow-condensed@5.3.0` files the site already uses, so no other page changes.
 
-## Why the app pages keep a light panel
+## Build and QA
 
-Wix app pages (Pricing Plans, checkout, member account, Groups, forms) take their text colors from the Wix site theme. Putting them on the dark set would leave dark text on a dark background wherever an app renders its own color. The design system's reading panel (cream panel, dark set around it) covers this: those pages get the dark header, a dark page band, the dark footer, Broadcast headings and buttons, and keep their light reading surface. Only colors, type and buttons change on app pages; no fields are hidden and no flow changes.
+```
+node deploy/broadcast-2026/build.mjs      # rev files + asserted replacements -> <id>/proposed.html, prints length and djb2
+node deploy/broadcast-2026/qa.mjs <path> <outdir>   # loads the live page with proposed.html swapped in
+```
 
-## Test
+QA at 320, 390, 430 (iPhone UA) and 1366 on All News, the Football hub, Buddy's Blog and page 2: no horizontal scroll, no text under 4.5:1, no tap target under 44 px, Barlow families only, links, `h1` and JSON-LD unchanged. Renders in `qa/`. On phones Wix lays these pages out at its forced 320 px viewport; that is existing behavior.
 
-`node qa/run.mjs` loads real production pages in Chromium and swaps the candidates into the page before it runs (`qa/inject.mjs`), at 320, 390, 430 and 1366 px (phones with a phone user agent, as Wix serves its mobile layout to phones). Checks: horizontal scroll, header links, ticker, page band, phone menu, Barlow-only fonts, contrast and tap targets in the shell. Load pages one at a time; parallel loads trip the site's bot check. `node qa/run.mjs --live` runs the same checks against the live site.
+## Live write and rollback
 
-## Rollback
-
-One step per embed: PATCH the rollback file back at the then-current revision, with `embedData.category` `ESSENTIAL`. No site publish is needed or allowed.
+PATCH each embed in place at its current revision with the djb2 check, `embedData.category` ESSENTIAL re-sent, no site publish. Rollback for each embed is one PATCH with `<id>/rev<N>.html` verbatim.

@@ -76,6 +76,28 @@ const out = {};
   out['360c9265/rev5.html'] = '<style id="gbm-football-tools-style">\n' + rd('src/roster.css') + '</style>' + prev.slice(prev.indexOf('</style>') + 8);
 }
 
+// 360c9265 rev6: mount on /magazine in every variant. Classic and Wednesday keep .mz-ed; pregame and
+// postgame have no .mz-ed, so the card goes before the magazine footer (pg-foot, pm-foot) in its own wrapper.
+// The heading font is also pinned past #gbm-live h2 {font-family:var(--gbm-font)!important}.
+{
+  let h = out['360c9265/rev5.html'];
+  const swaps = [
+    ['.mz-ed>.gbm-football-tools{margin-top:26px;margin-bottom:0}',
+      '.mz-ed>.gbm-football-tools{margin-top:26px;margin-bottom:0}\n#gbm-magazine-page .gbm-football-tools{box-sizing:border-box;max-width:100%;margin:26px 0 30px}#gbm-magazine-page .mz-ed>.gbm-football-tools{margin-bottom:0}#gbm-live .gbm-football-tools h2{font-family:"Barlow Condensed",Barlow,sans-serif!important}#gbm-magazine-page .gbm-football-tools h2{margin:12px 0 8px!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;color:#fff!important;-webkit-text-fill-color:#fff!important}'],
+    [`      var edition=document.querySelector('#gbm-magazine-page .mz-ed');
+      if(edition&&!edition.querySelector('.gbm-football-tools'))edition.appendChild(card());`,
+      `      var mag=document.getElementById('gbm-magazine-page');
+      if(mag&&!mag.querySelector('.gbm-football-tools')){
+        var edition=mag.querySelector('.mz-ed'),foot=mag.querySelector('footer');
+        if(edition)edition.appendChild(card());
+        else if(foot)foot.parentNode.insertBefore(card(),foot);
+        else(mag.children.length===1?mag.firstElementChild:mag).appendChild(card());
+      }`],
+  ];
+  for (const [a, b] of swaps) { if (h.split(a).length !== 2) throw new Error('roster anchor not found once'); h = h.replace(a, () => b); }
+  out['360c9265/rev6.html'] = h;
+}
+
 // a13b04e3 UI layer: modal type and buttons to Broadcast, Barlow only; logic unchanged.
 {
   let h = rd('a13b04e3/rev5.html');

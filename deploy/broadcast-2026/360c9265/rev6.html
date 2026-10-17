@@ -1,0 +1,94 @@
+<style id="gbm-football-tools-style">
+.gbm-football-tools{position:relative;box-sizing:border-box;margin:0 0 26px;padding:22px 20px 20px;color:#e8edff;font-family:Barlow,sans-serif;background:linear-gradient(115deg,#0000 0 66%,#ffffff0a 66% 67%,#0000 67%),linear-gradient(180deg,#0021a5,#0a1a6b 60%,#061247);box-shadow:0 10px 30px #00000059}
+.gbm-football-tools:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#ff7a3d,#fa4616 60%,#fa461600);box-shadow:0 0 14px #ff6a2bbf}
+.gbm-football-tools *{box-sizing:border-box}
+.gbm-football-tools small{display:inline-block;padding:6px 14px 6px 10px;background:#fa4616;color:#08132f;font:800 13px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.gbm-football-tools h2,.mz .mz-ed .gbm-football-tools h2{color:#fff!important;font:italic 800 34px/.92 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:-.01em!important;text-transform:uppercase;margin:12px 0 8px!important}
+.gbm-football-tools p{color:#c3cdff!important;font:15px/1.45 Barlow,sans-serif!important;margin:0 0 16px!important}
+.gbm-football-tools nav{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.gbm-football-tools a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:10px 16px;background:#ffffff14;color:#fff!important;text-decoration:none!important;font:700 18px/1.1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;box-shadow:inset 0 0 0 1px #2a4aa8;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.gbm-football-tools a span{color:#ff8a57}
+.gbm-football-tools a:focus-visible{outline:3px solid #f2b632;outline-offset:3px}
+.gbm-football-tools a:hover{background:#fa4616;color:#08132f!important}
+.gbm-football-tools a:hover span{color:#08132f}
+.mz-ed>.gbm-football-tools{margin-top:26px;margin-bottom:0}
+#gbm-magazine-page .gbm-football-tools{box-sizing:border-box;max-width:100%;margin:26px 0 30px}#gbm-magazine-page .mz-ed>.gbm-football-tools{margin-bottom:0}#gbm-live .gbm-football-tools h2{font-family:"Barlow Condensed",Barlow,sans-serif!important}#gbm-magazine-page .gbm-football-tools h2{margin:12px 0 8px!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+.gbm-football-guide [data-hook="table-plugin-cell"]>div:last-child{padding:0!important}
+#roster,#schedule{scroll-margin-top:100px}
+.gbm-football-guide [data-hook="table-component"]{width:100%!important;max-width:100%!important;table-layout:fixed!important}
+.gbm-football-guide [data-hook="table-component"] col{min-width:0!important}
+.gbm-football-guide [data-hook="table-component"] col:nth-child(1){width:15%!important}
+.gbm-football-guide [data-hook="table-component"] col:nth-child(2){width:60%!important}
+.gbm-football-guide [data-hook="table-component"] col:nth-child(3){width:25%!important}
+.gbm-football-guide [aria-label="2026 Florida football schedule and results"] col:nth-child(2){width:37%!important}
+.gbm-football-guide [aria-label="2026 Florida football schedule and results"] col:nth-child(3){width:48%!important}
+.gbm-football-guide [data-hook="table-plugin-cell"]{padding:12px!important;vertical-align:top}
+html.gbm-football-guide #SITE_CONTAINER [data-hook="table-component"] [data-hook="table-plugin-cell"] p{padding:0!important;margin:0!important;font-size:16px!important;line-height:1.4!important;overflow-wrap:anywhere}
+@media(max-width:480px){.gbm-football-tools{padding:20px 16px 17px}.gbm-football-tools h2,.mz .mz-ed .gbm-football-tools h2{font-size:28px!important}}
+</style>
+<script id="gbm-football-tools-runtime">
+(function(){
+  if(window.__GBM_FOOTBALL_TOOLS__)return;
+  window.__GBM_FOOTBALL_TOOLS__=true;
+  var guide='/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play';
+  var observer,timer,frame;
+  function card(){
+    var box=document.createElement('section');
+    box.className='gbm-football-tools';
+    box.setAttribute('aria-label','Florida football roster and schedule');
+    box.innerHTML='<small>2026 Florida football</small><h2>Know the Gators.</h2><p>The players. The dates. The season in one place.</p><nav aria-label="Football team guide"><a href="'+guide+'#roster">Team roster <span aria-hidden="true">↗</span></a><a href="'+guide+'#schedule">Schedule &amp; results <span aria-hidden="true">↗</span></a></nav>';
+    return box;
+  }
+  function mount(){
+    var path=location.pathname.replace(/\/$/,'')||'/';
+    document.documentElement.classList.toggle('gbm-football-guide',path===guide);
+    if(path==='/'){
+      var latest=document.querySelector('.sh-latest');
+      if(latest&&!latest.querySelector('.gbm-football-tools'))latest.insertBefore(card(),latest.firstChild);
+    }else if(path==='/magazine'){
+      var mag=document.getElementById('gbm-magazine-page');
+      if(mag&&!mag.querySelector('.gbm-football-tools')){
+        var edition=mag.querySelector('.mz-ed'),foot=mag.querySelector('footer');
+        if(edition)edition.appendChild(card());
+        else if(foot)foot.parentNode.insertBefore(card(),foot);
+        else(mag.children.length===1?mag.firstElementChild:mag).appendChild(card());
+      }
+    }else if(path===guide){
+      var headings=document.querySelectorAll('h2,h3'),changed=false;
+      headings.forEach(function(h){
+        var text=h.textContent.trim().toLowerCase();
+        if(text==='2026 player roster'&&h.id!=='roster'){h.id='roster';changed=true;}
+        if(text==='2026 schedule & results'&&h.id!=='schedule'){h.id='schedule';changed=true;}
+      });
+      if(changed)jump();
+    }
+  }
+  function jump(){
+    if(location.pathname.replace(/\/$/,'')!==guide)return;
+    var id=location.hash.slice(1);
+    if(id!=='roster'&&id!=='schedule')return;
+    var target=document.getElementById(id);
+    if(target)target.scrollIntoView({block:'start'});
+  }
+  function sync(){
+    if(observer)observer.disconnect();
+    clearTimeout(timer);
+    cancelAnimationFrame(frame);
+    var path=location.pathname.replace(/\/$/,'')||'/';
+    document.documentElement.classList.toggle('gbm-football-guide',path===guide);
+    if(path!=='/'&&path!=='/magazine'&&path!==guide)return;
+    mount();jump();
+    if(!document.body)return;
+    observer=new MutationObserver(function(){
+      cancelAnimationFrame(frame);
+      frame=requestAnimationFrame(mount);
+    });
+    observer.observe(document.body,{childList:true,subtree:true});
+    timer=setTimeout(function(){observer.disconnect();mount()},15000);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync,{once:true});else sync();
+  window.addEventListener('gbmroutechange',sync);
+  window.addEventListener('popstate',sync);
+  window.addEventListener('hashchange',function(){mount();jump()});
+})();
+</script>

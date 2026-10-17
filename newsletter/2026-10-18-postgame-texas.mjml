@@ -1,0 +1,72 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>Gators stun No. 7 Texas 27-24 in Austin</mj-title>
+    <mj-preview>Florida scored 24 straight after trailing 17-3. Box score, standouts and what is next.</mj-preview>
+    <mj-font name="Barlow" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Barlow, Arial, Helvetica, sans-serif" />
+      <mj-text color="#33404F" font-size="17px" line-height="1.5" padding="0 0 14px" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="16px 28px" font-size="18px" font-weight="800" letter-spacing="0.8px" align="left" padding="0" />
+    </mj-attributes>
+    <mj-style>
+      :root { color-scheme: light; supported-color-schemes: light; }
+      @media only screen and (max-width: 480px) {
+        .gb-pad { padding-left: 16px !important; padding-right: 16px !important; }
+        .gb-h1 div { font-size: 32px !important; }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#FFFFFF" width="600px">
+    <mj-section background-color="#FFFFFF" padding="20px 24px 14px" border-top="6px solid #FA4616" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" padding="0" color="#101820" font-size="28px" font-weight="800" letter-spacing="0.5px" line-height="1.1">GATOR<span style="color:#FA4616;">BAIT</span> <span style="color:#5B6472;font-weight:600;font-size:14px;letter-spacing:2px;">POSTGAME</span></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="6px 24px 24px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 8px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.8px">FINAL &#183; SATURDAY, OCT. 17 &#183; AUSTIN</mj-text>
+        <mj-text css-class="gb-h1" padding="0 0 14px" color="#101820" font-size="38px" font-weight="800" line-height="1.08"><a href="https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=lead_headline" style="color:#101820;text-decoration:none;">Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr.</a></mj-text>
+        <mj-text>Florida trailed 17-3, then scored 24 straight points and left DKR-Texas Memorial Stadium with a 27-24 win over No. 7 Texas. The Gators are 5-2 overall and 3-2 in the SEC.</mj-text>
+        <mj-text padding="0 0 20px">Tramell Jones Jr. threw for two touchdowns and ran for 41 yards, Jadan Baugh ran for 91 yards and a score, and Florida did not turn the ball over.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=lead_story">READ THE GAME STORY</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F5F6F8" padding="22px 24px 10px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 8px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.8px">BOX SCORE</mj-text>
+        <mj-table padding="0 0 12px" cellpadding="0" cellspacing="0" width="100%" font-size="16px"><tr><th align="left" style="padding:0 4px 8px;font-size:12px;letter-spacing:1px;color:#5B6472;font-weight:700;border-bottom:2px solid #101820;padding-left:0;">FINAL</th><th align="center" style="padding:0 4px 8px;font-size:12px;letter-spacing:1px;color:#5B6472;font-weight:700;border-bottom:2px solid #101820;">1</th><th align="center" style="padding:0 4px 8px;font-size:12px;letter-spacing:1px;color:#5B6472;font-weight:700;border-bottom:2px solid #101820;">2</th><th align="center" style="padding:0 4px 8px;font-size:12px;letter-spacing:1px;color:#5B6472;font-weight:700;border-bottom:2px solid #101820;">3</th><th align="center" style="padding:0 4px 8px;font-size:12px;letter-spacing:1px;color:#5B6472;font-weight:700;border-bottom:2px solid #101820;">4</th><th align="center" style="padding:0 4px 8px;font-size:12px;letter-spacing:1px;color:#5B6472;font-weight:700;border-bottom:2px solid #101820;">T</th></tr><tr><td style="padding:11px 0;border-bottom:1px solid #D9DDE4;font-size:16px;font-weight:800;color:#101820;">Florida</td><td align="center" style="padding:11px 4px;border-bottom:1px solid #D9DDE4;font-size:16px;color:#33404F;">0</td><td align="center" style="padding:11px 4px;border-bottom:1px solid #D9DDE4;font-size:16px;color:#33404F;">10</td><td align="center" style="padding:11px 4px;border-bottom:1px solid #D9DDE4;font-size:16px;color:#33404F;">7</td><td align="center" style="padding:11px 4px;border-bottom:1px solid #D9DDE4;font-size:16px;color:#33404F;">10</td><td align="center" style="padding:11px 0;border-bottom:1px solid #D9DDE4;font-size:22px;font-weight:800;color:#FA4616;">27</td></tr><tr><td style="padding:11px 0;font-size:16px;font-weight:800;color:#101820;">No. 7 Texas</td><td align="center" style="padding:11px 4px;font-size:16px;color:#33404F;">10</td><td align="center" style="padding:11px 4px;font-size:16px;color:#33404F;">7</td><td align="center" style="padding:11px 4px;font-size:16px;color:#33404F;">0</td><td align="center" style="padding:11px 4px;font-size:16px;color:#33404F;">7</td><td align="center" style="padding:11px 0;font-size:22px;font-weight:800;color:#101820;">24</td></tr></mj-table>
+        <mj-text padding="0 0 8px" color="#5B6472" font-size="13px">Source: ESPN. DKR-Texas Memorial Stadium, Austin.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="24px 24px 8px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 8px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.8px">STANDOUTS</mj-text>
+        <mj-table padding="0 0 20px" cellpadding="0" cellspacing="0" width="100%" font-size="16px"><tr><td style="padding:11px 12px 11px 0;border-bottom:1px solid #E6E9EF;color:#101820;font-size:16px;font-weight:700;" valign="top">Tramell Jones Jr.</td><td align="right" style="padding:11px 0;border-bottom:1px solid #E6E9EF;color:#33404F;font-size:15px;line-height:1.35;">22-of-35, 155 yards, 2 TDs passing;<br />10 carries, 41 yards</td></tr><tr><td style="padding:11px 12px 11px 0;border-bottom:1px solid #E6E9EF;color:#101820;font-size:16px;font-weight:700;" valign="top">Jadan Baugh</td><td align="right" style="padding:11px 0;border-bottom:1px solid #E6E9EF;color:#33404F;font-size:15px;line-height:1.35;">25 carries, 91 yards, 1 TD</td></tr><tr><td style="padding:11px 12px 11px 0;border-bottom:1px solid #E6E9EF;color:#101820;font-size:16px;font-weight:700;" valign="top">Lacota Dippre</td><td align="right" style="padding:11px 0;border-bottom:1px solid #E6E9EF;color:#33404F;font-size:15px;line-height:1.35;">2 touchdown catches</td></tr><tr><td style="padding:11px 12px 11px 0;border-bottom:1px solid #E6E9EF;color:#101820;font-size:16px;font-weight:700;" valign="top">Patrick Durkin</td><td align="right" style="padding:11px 0;border-bottom:1px solid #E6E9EF;color:#33404F;font-size:15px;line-height:1.35;">2-of-2 on field goals (45, 28 yards)</td></tr></mj-table>
+        <mj-text padding="0 0 8px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.8px">TEAM NUMBERS</mj-text>
+        <mj-table padding="0 0 8px" cellpadding="0" cellspacing="0" width="100%" font-size="16px"><tr><td style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#5B6472;font-size:15px;">Total yards</td><td align="right" style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#101820;font-size:16px;font-weight:700;">313</td></tr><tr><td style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#5B6472;font-size:15px;">Rushing yards</td><td align="right" style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#101820;font-size:16px;font-weight:700;">158</td></tr><tr><td style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#5B6472;font-size:15px;">Turnovers</td><td align="right" style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#101820;font-size:16px;font-weight:700;">0</td></tr><tr><td style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#5B6472;font-size:15px;">Time of possession</td><td align="right" style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#101820;font-size:16px;font-weight:700;">38:11</td></tr><tr><td style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#5B6472;font-size:15px;">Third-down conversions</td><td align="right" style="padding:10px 0;border-bottom:1px solid #E6E9EF;color:#101820;font-size:16px;font-weight:700;">8-of-19</td></tr></mj-table>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="16px 24px 26px" css-class="gb-pad">
+      <mj-column>
+        <mj-divider border-color="#FA4616" border-width="3px" padding="0 0 20px" />
+        <mj-text padding="0 0 8px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.8px">UP NEXT</mj-text>
+        <mj-text padding="0 0 12px" color="#101820" font-size="26px" font-weight="800" line-height="1.15">Georgia, Saturday, Oct. 31</mj-text>
+        <mj-text padding="0 0 18px">Florida plays Georgia at 3:30 p.m. ET on ABC at Mercedes-Benz Stadium in Atlanta. Follow GatorBait all week for coverage.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=more_coverage">MORE GATORBAIT COVERAGE</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#101820" padding="24px 24px 26px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" padding="0 0 6px" color="#FFFFFF" font-size="22px" font-weight="800" line-height="1.3">Old-school journalism + new tech.</mj-text>
+        <mj-text align="left" padding="0 0 16px" color="#D5DBE4" font-size="16px">Join GatorBait for every column and the Magazine.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/pricing-plans?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=join_cta">JOIN GATORBAIT</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#EEF0F3" padding="20px 24px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" color="#4B5563" font-size="14px" padding="0">GatorBait Media &#183; <a href="https://www.gatorbaitmedia.com/?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=footer_site" style="color:#0021A5;">GatorBaitMedia.com</a><br />Reply to brenden@gatorbaitmedia.com</mj-text>
+        <mj-text align="left" color="#4B5563" font-size="13px" padding="10px 0 0">You&#8217;re receiving this because you subscribed to GatorBait Media. Manage your preferences or unsubscribe using the controls below.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

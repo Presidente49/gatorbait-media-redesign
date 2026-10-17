@@ -28,8 +28,10 @@ let fails = 0;
 for (const [kind, slug] of Object.entries(POSTS)) {
   for (const w of WIDTHS) {
     const ctx = await browser.newContext(profile(w));
+    // Once a revision is live its own script runs first and the candidate's guard would skip; neutralize the live copy.
+    await ctx.addInitScript(() => { new MutationObserver(ms => { for (const m of ms) for (const n of m.addedNodes) if (n.id === 'gbm-post-broadcast-v1' && !n.dataset.cand) n.type = 'text/plain'; }).observe(document, { childList: true, subtree: true }); });
     await ctx.addInitScript(html => {
-      const put = () => { const t = document.createElement('template'); t.innerHTML = html; for (const n of [...t.content.childNodes]) { if (n.nodeName === 'SCRIPT') { const s = document.createElement('script'); s.id = n.id; s.textContent = n.textContent; document.head.appendChild(s); } else document.head.appendChild(n); } };
+      const put = () => { const t = document.createElement('template'); t.innerHTML = html; for (const n of [...t.content.childNodes]) { if (n.nodeName === 'SCRIPT') { const s = document.createElement('script'); s.dataset.cand = 1; s.id = n.id; s.textContent = n.textContent; document.head.appendChild(s); } else document.head.appendChild(n); } };
       if (document.head) put(); else document.addEventListener('DOMContentLoaded', put, { once: true });
     }, CAND);
     const page = await ctx.newPage();
@@ -77,6 +79,7 @@ for (const [kind, slug] of Object.entries(POSTS)) {
       const sub = q('[data-hook=post-description] :is(h2,h3)[id^=viewer-], [data-hook=post-description] p[data-gbm-h]');
       if (sub) { const s = cs(sub); out.subhead = /gradient/.test(s.backgroundImage) && s.fontStyle === 'italic'; if (!out.subhead) P('subhead without rail'); }
       const lead = q('[data-gbm-lead]'); out.lead = !!lead;
+      if (document.querySelectorAll('#gbm-post-broadcast').length !== 1) P('skin style count ' + document.querySelectorAll('#gbm-post-broadcast').length);
       // Pull-quote probe (client-side only).
       const d = q('[data-hook=post-description]');
       if (d) { const bq = document.createElement('blockquote'); bq.textContent = 'Pull-quote probe'; d.appendChild(bq); const s = cs(bq); out.quote = [s.backgroundImage.slice(0, 20), s.color, s.fontStyle]; if (ratio(rgb(s.color), [10, 26, 107]) < 4.5 || s.fontStyle !== 'italic') P('pull quote style'); bq.remove(); }

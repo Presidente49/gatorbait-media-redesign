@@ -160,3 +160,9 @@ html:root body #SITE_PAGES #comp-lii7mqe42#comp-lii7mqe42 [data-mesh-id]{width:1
 html:root body #SITE_PAGES #comp-lii7mqe42#comp-lii7mqe42 [data-mesh-id=comp-lii7mqe42inlineContent-gridContainer]{padding:24px!important;gap:18px!important}
 html:root body #SITE_PAGES #comp-lii7mqe42#comp-lii7mqe42 :is(.wixui-text-input,.wixui-text-box,.wixui-dropdown,input,textarea,select){width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;color:#243956!important;-webkit-text-fill-color:#243956!important}
 html:root body #SITE_PAGES #comp-lii7mqe42#comp-lii7mqe42 label{font:500 16px/1.4 Barlow,Arial,sans-serif!important;color:#243956!important;-webkit-text-fill-color:#243956!important;white-space:normal!important}
+
+/* Staff role is a caption, not a page headline. */
+html.gbm-bc #SITE_PAGES #comp-jiy787wl h1,html.gbm-bc #SITE_PAGES #comp-jiy787wl h1 *{font-family:Barlow,sans-serif!important;font-size:22px!important;font-weight:600!important;line-height:1.3!important;text-transform:none!important;color:#102344!important}
+
+/* External-store icon is a vector so it never depends on a font glyph. */
+#gbm-mobile-shell .gbm-ms-shop>span[aria-hidden="true"],#gbm-mobile-drawer-root .gbm-ms-shop>span[aria-hidden="true"]{display:inline-block!important;flex:0 0 12px;width:12px;height:12px;font-size:0!important;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 12L12 4M4 4h8v8' fill='none' stroke='%23102344' stroke-width='1.8'/%3E%3C/svg%3E") center/12px 12px no-repeat}

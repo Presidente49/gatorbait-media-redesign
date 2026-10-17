@@ -1,0 +1,31 @@
+/* Broadcast S2 depth pass (Brenden, Oct. 17: "too much dead spaces", "needs depth like the thumbnail had").
+   Layered panels, glow rails, the lead as a photo-led hero with its headline on the image, a compact Just in rail
+   so both columns end together. Two-id selectors beat the skin in c4b41f6a and the layout in 53e15504.
+   P = #gbm-lp, S = #gbm-sn (expanded by build.mjs). Visual only: no text, link or order change. */
+P .lp-top{align-items:stretch}
+P .lp-lead{position:relative;isolation:isolate;display:flex;flex-direction:column;padding:0 0 22px;background:linear-gradient(180deg,#0d2160,#0a1740);border:1px solid #2a4aa8;box-shadow:0 10px 30px #00000073,inset 0 1px 0 #ffffff14}
+P .lp-lead .lp-img{order:-1;position:relative;z-index:0;aspect-ratio:16/9;flex:1 0 auto;margin:0}
+P .lp-lead .lp-img::after{content:"";position:absolute;inset:0;clip-path:polygon(calc(var(--s) + 4px) 0,100% 0,100% 100%,20px 100%);background:linear-gradient(0deg,#0d2160 0,#0d2160cc 22%,#0d216000 58%)}
+P .lp-lead>:not(.lp-img),P .lp-lead::before,P .lp-lead::after{position:relative;z-index:1;margin-left:28px;margin-right:28px}
+P .lp-lead::before{content:"Latest";align-self:flex-start;margin-top:-92px;margin-bottom:12px;padding:7px 16px 7px 12px;background:#c2390a;color:#fff;font:800 14px/1 var(--bc);letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+P .lp-lead .lp-hd{margin-top:0;font-size:48px;text-shadow:0 4px 30px #000000a6}
+P .lp-lead .lp-by{color:#c9d3ff}
+P .lp-lead::after{content:"Read the story \2192";align-self:flex-start;display:flex;align-items:center;min-height:44px;padding:0 26px;background:#fff;color:#0a1a6b;font:800 16px/1 var(--bc);letter-spacing:.08em;text-transform:uppercase;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+P .lp-lead .lp-by+*,P .lp-lead .lp-by{margin-bottom:18px}
+P .lp-lead:hover::after,P .lp-lead:focus-visible::after{background:#c2390a;color:#fff}
+/* panels: deep-to-navy, lifted edge, shadow */
+P .lp-rail,P .lp-card,html body #SITE_PAGES #gbm-lp-search{background:linear-gradient(180deg,#0d2160,#0a1740);border:1px solid #2a4aa8;box-shadow:0 10px 30px #00000073,inset 0 1px 0 #ffffff14}
+P .lp-rail{border-top:0;padding-bottom:10px}
+P .lp-rail h2{box-shadow:0 0 14px #ff6a2bbf}
+P .lp-card{padding-bottom:16px}
+P .lp-card>span:last-child{display:block;padding:0 14px}
+P .lp-card .lp-img{clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
+html body #SITE_PAGES #gbm-lp-search{padding:14px 18px}
+/* section head: lifted nav with a glowing orange rail under it */
+S nav{position:relative;box-shadow:0 10px 30px #00000073}
+S nav:not(.sn-2)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#fa4616;box-shadow:0 0 14px #ff6a2bbf}
+/* pager */
+P .lp-pager a{box-shadow:0 0 14px #ff6a2bbf}
+@media(min-width:1024px){P .lp-row{grid-template-columns:104px minmax(0,1fr);gap:12px;padding:12px 0}P .lp-row .lp-img{max-width:none}P .lp-rail .lp-hd{font-size:18px;line-height:1}P .lp-rail .lp-by{gap:0 8px;margin-top:6px;font-size:11px;letter-spacing:.03em}P .lp-lead .lp-img img{object-position:28% 50%}}
+@media(max-width:1023px){P .lp-lead .lp-hd{font-size:40px}}
+@media(max-width:640px){P .lp-lead{margin:0 -16px;border-left:0;border-right:0;padding-bottom:18px}P .lp-lead>:not(.lp-img),P .lp-lead::before,P .lp-lead::after{margin-left:16px;margin-right:16px}P .lp-lead::before{margin-top:-60px}P .lp-lead .lp-hd{font-size:30px}P .lp-lead::after{font-size:15px}P .lp-grid{gap:12px}P .lp-grid .lp-card{padding:10px;border-top:1px solid #2a4aa8}P .lp-card>span:last-child{padding:0}P .lp-rail{border-left:0;border-right:0}html body #SITE_PAGES #gbm-lp-search{padding:12px}}

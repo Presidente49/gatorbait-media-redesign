@@ -41,6 +41,17 @@ out['c4b41f6a'] = apply(fs.readFileSync(D + 'c4b41f6a/rev1.html', 'utf8'), [
   ['</style><script id="gbm-sn-js">', '</style><style id="gbm-bc-s2">' + min(fs.readFileSync(D + 'c4b41f6a/broadcast-skin.css', 'utf8')) + '</style><script id="gbm-sn-js">'],
 ]);
 
+// Depth pass candidate (602fb362 rev16 -> rev17): stronger field light, then the depth layer. Built from the live rev16 copy.
+const SET2 = 'radial-gradient(ellipse 90% 520px at 50% 0,#2b57ff59,#2b57ff00 70%),linear-gradient(115deg,transparent 0 57%,rgba(255,255,255,.06) 57% 59%,transparent 59% 63%,rgba(255,255,255,.035) 63% 64%,transparent 64%),linear-gradient(180deg,#0021a5 0,#0a1a6b 560px,#061247 100%)';
+const depth = min(fs.readFileSync(D + '602fb362/depth.css', 'utf8')).replace(/\bP /g, 'html body #SITE_PAGES #gbm-lp ').replace(/\bS /g, 'html body #SITE_PAGES #gbm-sn ');
+const cand = apply(fs.readFileSync(D + '602fb362/rev16.html', 'utf8'), [
+  [`#SITE_PAGES{background:${SET}!important}`, `#SITE_PAGES{background:${SET2}!important}`],
+  ['</style>', '</style><style id="gbm-bc-s2-depth">' + depth + '</style>'],
+]);
+if (cand.length > 15000) throw new Error(`candidate is ${cand.length} chars`);
+fs.writeFileSync(`${D}602fb362/rev17-candidate.html`, cand);
+console.log('602fb362 rev17 candidate', cand.length, djb2(cand));
+
 for (const [id, html] of Object.entries(out)) {
   if (html.length > 15000) throw new Error(`${id} is ${html.length} chars`);
   fs.writeFileSync(`${D}${id}/proposed.html`, html);

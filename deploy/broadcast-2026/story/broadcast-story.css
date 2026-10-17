@@ -49,6 +49,11 @@ html:root body #SITE_PAGES div:has(>[data-hook=post-page]),html:root body #SITE_
 ~[data-hook=post-footer] [data-hook^=share-button]:is(:hover,:focus-visible){background:#fa4616¡}
 ~[data-hook=recent-posts] header h2{color:#10264b¡;font:italic 800 28px/1 "Barlow Condensed","Barlow",Arial,sans-serif¡;text-transform:uppercase¡}
 ~[data-hook=recent-posts] header a{color:#b4310c¡;font-weight:700¡;letter-spacing:.08em;text-transform:uppercase}
+/* Native story-end signup and exploration modules share the night palette. */
+~.gbc,~#gbm-kr .kr-x{background:linear-gradient(160deg,#07122e,#0b0d12)¡;border:1px solid rgba(255,255,255,.1)¡;border-radius:12px¡}
+~.gbc .gbc-b,~.gbc .gbc-b *{color:#07122e¡;-webkit-text-fill-color:#07122e¡}
+~#gbm-kr .kr-nav a{background:rgba(255,255,255,.06)¡;border:1px solid rgba(255,255,255,.1)¡;border-radius:8px¡}
+~#gbm-kr .kr-nav a:is(:hover,:focus-visible),~#gbm-kr .kr-nav a.kr-acct{background:#fa4616¡;color:#07122e¡;-webkit-text-fill-color:#07122e¡}
 @media(max-width:750px){
 ~article[data-hook=post]>div>header{margin-bottom:26px¡;padding:22px 18px¡}
 ~article[data-hook=post]>div>header [data-hook=post-title]{font-size:clamp(32px,9.8vw,44px)¡;line-height:.96¡}

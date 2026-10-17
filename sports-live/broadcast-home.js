@@ -187,6 +187,11 @@ html:has(@) body{background:#0b0d12!important}
 @ .bc-slash{display:none}
 @ .bc-sc,@ .bc-nx,@ .bc-side,@ .sh-voices,@ .sh-watch,@ .sh-magazine,@ .sh-coverage article{
 background:rgba(255,255,255,.06)!important;color:var(--tx)!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:14px;box-shadow:0 16px 36px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06)!important;backdrop-filter:blur(16px)}
+/* Let narrow story-card tracks shrink; long staff bylines wrap inside their own card. */
+@ .sh-lower>div{min-width:0}
+@ .sh-coverage{grid-template-columns:repeat(2,minmax(0,1fr))}
+@ .sh-coverage article>a{min-width:0;max-width:100%}
+@ .sh-coverage .sh-meta{overflow-wrap:anywhere}
 @ .sh-magazine:not(:has(.sh-mcover)){background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.1)!important}
 @ .bc-side:before,@ .sh-voices:after{display:none}
 @ .bc-tm,@ .bc-tm.bc-w{clip-path:none;border-radius:8px}

@@ -26,6 +26,8 @@ jobs:
         uses: actions/checkout@v6
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      - name: Reject private runtime and CRM files before root upload
+        run: python3 automation/operations/public-boundary.py --artifact-root .
       - name: Upload complete static site including sitemaps and previews
         uses: actions/upload-pages-artifact@v4
         with:

@@ -133,10 +133,14 @@ function audit(input){
   if(!visibleImages.length)warnings.push('no visible image detected in first two screens');
   // Inspect reserved story-photo boxes, including hidden/fpFailed images and lower lazy cards.
   // Filtering by image visibility previously let the destructive seven-second fallback pass QC.
-  const storyPhotos=isHome&&root?[...root.querySelectorAll('.fp-frame[href*="/post/"],.fp-story-photo')].map(box=>{
-    const img=box.querySelector('img');
+  // The Gazette/Broadcast homepage (#gbm-live.gbm-gazette) has no .fp-* boxes: its photos are the lead figure and the
+  // newsroom cards. A story without a cover has no <img> and is not a failure; a broken or hidden <img> is. Containers
+  // the skin hides (display:none) are not expected to show photos.
+  const gazette=Boolean(root&&root.classList.contains('gbm-gazette'));
+  const photoBoxes=isHome&&root?(gazette?[...root.querySelectorAll('.sh-lead figure,.sh-coverage article')].filter(visible):[...root.querySelectorAll('.fp-frame[href*="/post/"],.fp-story-photo')]):[];
+  const storyPhotos=photoBoxes.map(box=>({box,img:box.querySelector('img')})).filter(x=>!gazette||x.img).map(({img})=>{
     return {alt:img?.alt||'',loaded:Boolean(img&&img.complete&&img.naturalWidth>0),hidden:Boolean(img&&img.hidden),failed:img?.dataset.fpFailed||null,visible:visible(img)};
-  }):[];
+  });
   if(isHome&&rootPresent){
     if(!storyPhotos.length)hard.push('expected homepage story photographs missing');
     const missing=storyPhotos.filter(i=>!i.loaded||i.hidden||i.failed||!i.visible);
@@ -339,9 +343,9 @@ for(const profile of PROFILES){
       status=response?.status()??null;
       await page.waitForTimeout(8000);
       if(target.name==='home'||target.name==='home-gameday'){
-        const boxes=page.locator('#gbm-live .fp-frame[href*="/post/"],#gbm-live .fp-story-photo');
-        for(let i=0;i<await boxes.count();i++)await boxes.nth(i).scrollIntoViewIfNeeded();
-        await page.waitForFunction(()=>[...document.querySelectorAll('#gbm-live .fp-frame[href*="/post/"] img,#gbm-live .fp-story-photo img')].every(i=>i.complete&&i.naturalWidth>0),null,{timeout:15000}).catch(()=>{});
+        const boxes=page.locator('#gbm-live .fp-frame[href*="/post/"],#gbm-live .fp-story-photo,#gbm-live.gbm-gazette .sh-lead figure,#gbm-live.gbm-gazette .sh-coverage article');
+        for(let i=0;i<await boxes.count();i++)await boxes.nth(i).scrollIntoViewIfNeeded({timeout:4000}).catch(()=>{});
+        await page.waitForFunction(()=>[...document.querySelectorAll('#gbm-live .fp-frame[href*="/post/"] img,#gbm-live .fp-story-photo img,#gbm-live.gbm-gazette .sh-lead figure img,#gbm-live.gbm-gazette .sh-coverage article img')].filter(i=>i.getClientRects().length).every(i=>i.complete&&i.naturalWidth>0),null,{timeout:15000}).catch(()=>{});
         await page.evaluate(()=>scrollTo(0,0));
       }
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';

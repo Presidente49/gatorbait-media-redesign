@@ -314,7 +314,7 @@ function loadLive(){var w=window_();if(!w){D.live=null;return Promise.resolve();
 return get(ESPN+ymd(w.k)).then(function(d){var e=(d.events||[]).find(function(e){return String(e.id)===w.id;});if(!e)return;var c=e.competitions[0],
 us=c.competitors.find(function(t){return String(t.id||t.team.id)==='57';}),th=c.competitors.find(function(t){return t!==us;});if(!us||!th)return;
 var rk=function(t){var r=t.curatedRank&&t.curatedRank.current;return r>=1&&r<=25?r:null;},ty=c.status.type;
-D.live={id:w.id,state:ty.state,done:!!ty.completed,detail:ty.shortDetail||'',fla:Number(us.score),opp:Number(th.score),oppName:th.team.location,oppRank:rk(th),flaRank:rk(us),
+var qs=function(t){var r=(t.linescores||[]).map(function(l){return Number(l.value);});while(r.length<4)r.push('\u2013');return r;};D.live={id:w.id,state:ty.state,done:!!ty.completed,detail:ty.shortDetail||'',q:{fla:qs(us),opp:qs(th)},fla:Number(us.score),opp:Number(th.score),oppName:th.team.location,oppRank:rk(th),flaRank:rk(us),
 home:us.homeAway==='home'&&!c.neutralSite,neutral:!!c.neutralSite,date:c.date};}).catch(function(){});}
 var MO=['Jan.','Feb.','March','April','May','June','July','Aug.','Sept.','Oct.','Nov.','Dec.'],WD={Tue:'Tues.',Thu:'Thurs.'};
 function et(t){var o={};new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',month:'numeric',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true}).formatToParts(new Date(t)).forEach(function(x){o[x.type]=x.value;});return o;}
@@ -326,8 +326,8 @@ function post(h){return/^\/post\//.test(h||'');}
 /* One model for the ticker, the scoreboard panel and the next-up bar. */
 function model(root){var sb=D.sb,lv=D.live,g=window.__GBM_GAMEDAY__,now=Date.now(),M={last:null,live:null,next:null};
 var fr=sb&&sb.team&&sb.team.rank;
-if(lv&&lv.state==='in')M.live={opp:lv.oppName,oppRank:lv.oppRank,flaRank:lv.flaRank,fla:lv.fla,oppS:lv.opp,home:lv.home,neutral:lv.neutral,detail:lv.detail,date:lv.date};
-if(lv&&lv.state==='post'&&lv.done)M.last={opp:lv.oppName,oppRank:lv.oppRank,fla:lv.fla,oppS:lv.opp,home:lv.home,neutral:lv.neutral,date:lv.date,links:[]};
+if(lv&&lv.state==='in')M.live={opp:lv.oppName,oppRank:lv.oppRank,flaRank:lv.flaRank,fla:lv.fla,oppS:lv.opp,home:lv.home,neutral:lv.neutral,detail:lv.detail,date:lv.date,q:lv.q};
+if(lv&&lv.state==='post'&&lv.done)M.last={opp:lv.oppName,oppRank:lv.oppRank,fla:lv.fla,oppS:lv.opp,home:lv.home,neutral:lv.neutral,date:lv.date,q:lv.q,links:[]};
 else if(sb&&sb.last&&sb.last.score)M.last={opp:sb.last.opponent,oppRank:sb.last.opponentRank,fla:sb.last.score.fla,oppS:sb.last.score.opp,home:sb.last.home,neutral:sb.last.neutral,date:sb.last.date,links:[sb.last.recapUrl,sb.last.galleryUrl].filter(post)};
 if(M.last&&sb&&sb.last&&sb.last.score&&M.last.opp===sb.last.opponent&&M.last.fla===sb.last.score.fla&&M.last.oppS===sb.last.score.opp){M.last.q=sb.last.quarters;M.last.tape=sb.last.tape;M.last.leaders=sb.last.leaders;}
 if(M.last&&now-Date.parse(M.last.date)>8*DAY)M.last=null;
@@ -359,7 +359,7 @@ return'<section class="bc-sc bc-pre" aria-label="Game day: '+esc(matchup(x).join
 teamRow(aw[0],aw[1],aw[2],'',false)+teamRow(hm[0],hm[1],hm[2],'',false)+(x.venue?'<p class="bc-ven">'+esc(x.venue)+'</p>':'')+(x.href?'<p class="bc-go"><a class="bc-o" href="'+esc(x.href)+'">Preview</a></p>':'')+'</section><span class="bc-slash" aria-hidden="true"></span>';}
 function panel(M){if(M.pre&&!M.live)return prePanel(M.pre);var x=M.live||M.last;if(!x)return'';var L=!!M.live,f=[ 'Florida',L?x.flaRank:null,'',x.fla],o=[x.opp,x.oppRank,'',x.oppS],aw=x.home?o:f,hm=x.home?f:o;
 var win=L?null:(x.fla>x.oppS?f:o),lk=L?[]:M.links.slice(0,2);
-var ls='',q=!L&&x.q;if(q&&q.fla&&q.opp&&q.fla.length===q.opp.length&&q.fla.length>=4){var n=q.fla.length,hdr=[''];for(var i=1;i<=n;i++)hdr.push(i>4?'OT':String(i));hdr.push('T');
+var ls='',q=x.q;if(q&&q.fla&&q.opp&&q.fla.length===q.opp.length&&q.fla.length>=4){var n=q.fla.length,hdr=[''];for(var i=1;i<=n;i++)hdr.push(i>4?'OT':String(i));hdr.push('T');
 var row=function(nm,arr,t){return'<span>'+esc(ab(nm))+'</span>'+arr.map(function(v){return'<span>'+esc(v)+'</span>';}).join('')+'<span class="t">'+esc(t)+'</span>';},aq=x.home?q.opp:q.fla,hq=x.home?q.fla:q.opp;
 ls='<div class="bc-ls" aria-label="Score by quarter" style="grid-template-columns:62px repeat('+n+',1fr) 52px">'+hdr.map(function(h){return'<span class="h">'+h+'</span>';}).join('')+row(aw[0],aq,aw[3])+row(hm[0],hq,hm[3])+'</div>';}
 var ld=!L&&x.leaders&&x.leaders.length?'<div class="bc-ld"><small>Florida leaders</small>'+x.leaders.slice(0,3).map(function(r){return'<p><b>'+esc(r[1])+'</b><em>'+esc(String(r[2]).replace(/ (YDS|CAR|REC)\b/g,function(m,w){return' '+w.toLowerCase();}))+'</em></p>';}).join('')+'</div>':'';

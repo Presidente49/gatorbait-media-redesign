@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr.",
+      "excerpt": "AUSTIN, Texas — Florida walked into Darrell K Royal–Texas Memorial Stadium on Saturday with a backup quarterback making his first career start, fell behind 17-3, and walked out with the win of its season. The Gators (5-2, 3-2 SEC) scored 24 straight points and held on to beat No. 7 Texas 27-24, sealed in the final two minutes when Myles Graham sacked Arch…",
+      "url": "https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-17T19:42:57Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_b1c4d099fb864e9f97ed50cd8e561d26~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr."
+      }
+    },
+    {
       "title": "Aberdeen will be in the lineup against Baylor on Sunday",
       "excerpt": "Franz Beard: Denzel Aberdeen starts Sunday when preseason No. 1 Florida opens with a Baylor exhibition in Jacksonville, and his fifth-year case should hold up. Plus SEC coaches on the NCAA and 11 international recruits to watch.",
       "url": "https://www.gatorbaitmedia.com/post/aberdeen-will-be-in-the-lineup-against-baylor-on-sunday",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Philo is the Florida quarterback at least for now"
-      }
-    },
-    {
-      "title": "Numbers Don't Lie",
-      "excerpt": "Florida and South Carolina were nearly even in first downs and yards, but the Gators lost 38-19. Eddie Gilley on the three turnovers and two short fields behind a statistical draw.",
-      "url": "https://www.gatorbaitmedia.com/post/numbers-don-t-lie",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-12T22:22:23Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_8c09fa34b35448a190b6988b94a45f5f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Numbers Don't Lie"
       }
     }
   ]

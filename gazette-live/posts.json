@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr.",
+      "excerpt": "AUSTIN, Texas — Florida walked into Darrell K Royal–Texas Memorial Stadium on Saturday with a backup quarterback making his first career start, fell behind 17-3, and walked out with the win of its season. The Gators (5-2, 3-2 SEC) scored 24 straight points and held on to beat No. 7 Texas 27-24, sealed in the final two minutes when Myles Graham sacked Arch…",
+      "url": "https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-17T19:42:57Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_b1c4d099fb864e9f97ed50cd8e561d26~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr."
+      }
+    },
+    {
       "title": "Aberdeen will be in the lineup against Baylor on Sunday",
       "excerpt": "Franz Beard: Denzel Aberdeen starts Sunday when preseason No. 1 Florida opens with a Baylor exhibition in Jacksonville, and his fifth-year case should hold up. Plus SEC coaches on the NCAA and 11 international recruits to watch.",
       "url": "https://www.gatorbaitmedia.com/post/aberdeen-will-be-in-the-lineup-against-baylor-on-sunday",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Members: Read the Texas Pregame Magazine"
-      }
-    },
-    {
-      "title": "Members: Read the Postgame Magazine",
-      "excerpt": "Read the current South Carolina postgame magazine on your phone: 10 stories, led by Buddy Martin’s new Sumrall column and closing with Chris Spears’ sideline column. The earlier fixed-layout PDF remains available as an archive.",
-      "url": "https://www.gatorbaitmedia.com/post/members-download-the-postgame-magazine-pdf",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-11T13:37:37Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_7c43c1e7f1be4ebea73828283b12bd73~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Members: Read the Postgame Magazine"
       }
     }
   ]

@@ -2,8 +2,8 @@
 /* ================= Friday Pregame layout (#gbm-magazine-page.mz26.pg) =================
    Friday night under the lights: stadium-dark page, Gator blue and orange, huge Barlow Condensed. Cream reading panel for prose. */
 #gbm-magazine-page.pg{
-  --pg-night:#060b1c;--pg-navy:#0a1740;--pg-deep:#0d2160;--pg-blue:#0021a5;--pg-blue-2:#2b57ff;--pg-orange:#fa4616;--pg-orange-2:#ff8a57;--pg-gold:#f2b632;--pg-green:#2fbf71;
-  --pg-cream:#fffaf0;--pg-ink:#10264b;--pg-text:#e8edff;--pg-mute:#9eacd0;--pg-line:#233468;--pg-card:#0f1c4a;--pg-r:14px;
+  --pg-night:#0b0d12;--pg-navy:#07122e;--pg-deep:#0b1d4a;--pg-blue:#102342;--pg-blue-2:#354563;--pg-orange:#fa4616;--pg-orange-2:#b9c4dc;--pg-gold:#c9d2e7;--pg-green:#2fbf71;
+  --pg-cream:#fffaf0;--pg-ink:#10264b;--pg-text:#f3f5fa;--pg-mute:#b9c4dc;--pg-line:rgba(255,255,255,.1);--pg-card:rgba(255,255,255,.06);--pg-r:14px;
   background:var(--pg-night);color:var(--pg-text);padding:0 0 56px;
   background-image:radial-gradient(900px 420px at 50% -80px,#1b3aa855,transparent 70%),repeating-linear-gradient(0deg,transparent 0 78px,#ffffff06 78px 80px)
 }
@@ -83,7 +83,7 @@ html:has(#gbm-magazine-page.pg) #gbm-site-header,html:has(#gbm-magazine-page.pg)
 #gbm-magazine-page.pg .pg-fla .pg-rec{color:var(--pg-orange)}
 #gbm-magazine-page.pg .pg-miz .pg-rec{color:var(--pg-gold)}
 #gbm-magazine-page.pg .pg-team em{display:block;font:700 12px/1.3 var(--mz-sans);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--pg-mute);margin-top:4px}
-#gbm-magazine-page.pg .pg-at{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--pg-orange);color:#fff;font:800 14px/1 var(--mz-cond);letter-spacing:.08em;text-transform:uppercase}
+#gbm-magazine-page.pg .pg-at{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--pg-orange);color:#07122e;font:800 14px/1 var(--mz-cond);letter-spacing:.08em;text-transform:uppercase}
 #gbm-magazine-page.pg .pg-when{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;font:600 14px/1.4 var(--mz-sans);color:var(--pg-mute)}
 #gbm-magazine-page.pg .pg-when b{flex:1 0 100%;font:800 clamp(20px,5.6vw,28px)/1.1 var(--mz-cond);letter-spacing:.04em;text-transform:uppercase;color:#fff}
 #gbm-magazine-page.pg .pg-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
@@ -130,12 +130,12 @@ html:has(#gbm-magazine-page.pg) #gbm-site-header,html:has(#gbm-magazine-page.pg)
 #gbm-magazine-page.pg .pg-hf i{border-radius:9px 0 0 9px;background:#8a3a1d}
 #gbm-magazine-page.pg .pg-hm i{border-radius:0 9px 9px 0;background:#6f5a1b}
 #gbm-magazine-page.pg .pg-hf i.pg-win{background:linear-gradient(270deg,var(--pg-orange),var(--pg-orange-2))}
-#gbm-magazine-page.pg .pg-hm i.pg-win{background:linear-gradient(90deg,var(--pg-gold),#ffd36e)}
+#gbm-magazine-page.pg .pg-hm i.pg-win{background:var(--pg-gold)}
 
 /* three keys */
 #gbm-magazine-page.pg .pg-keys ol{display:grid;gap:12px}
 #gbm-magazine-page.pg .pg-keys li{position:relative;padding:16px 16px 14px 16px;border-radius:var(--pg-r);background:var(--pg-card);border:1px solid var(--pg-line);overflow:hidden}
-#gbm-magazine-page.pg .pg-n{position:absolute;right:10px;top:-14px;font:800 108px/1 var(--mz-cond);color:transparent;-webkit-text-stroke:1.5px #2b57ff66;pointer-events:none}
+#gbm-magazine-page.pg .pg-n{position:absolute;right:10px;top:-14px;font:800 108px/1 var(--mz-cond);color:transparent;-webkit-text-stroke:1.5px #ffffff33;pointer-events:none}
 #gbm-magazine-page.pg .pg-keys h3{position:relative;font:800 clamp(22px,5.8vw,30px)/1.05 var(--mz-cond);text-transform:uppercase;letter-spacing:.01em;color:#fff;padding-right:60px}
 #gbm-magazine-page.pg .pg-keys p{position:relative;margin-top:8px;font:500 15px/1.5 var(--mz-sans);color:#dbe3ff}
 
@@ -327,16 +327,27 @@ html:has(#gbm-magazine-page.pg) #gbm-site-header,html:has(#gbm-magazine-page.pg)
 #gbm-magazine-page.pg .pg-numbers small{margin-top:6px;font:500 13px/1.45 var(--mz-sans);color:var(--pg-mute)}
 @media (min-width:821px){#gbm-magazine-page.pg .pg-numbers ol{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
-/* Network skin (Oct. 16): the Buddy Martin Show broadcast set carried through the book. Chrome type, orange slabs, neon rails, deep blue set. */
-#gbm-magazine-page.pg{background:radial-gradient(ellipse 90% 40% at 50% 0%,#1a46c4 0%,#0b2a86 38%,var(--pg-night) 100%)}
-#gbm-magazine-page.pg .pg-ticker{clip-path:polygon(12px 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,12px 100%,0 50%);background:linear-gradient(180deg,#ff7a3d,#f24e14 55%,#d33608);box-shadow:0 0 18px rgba(255,106,43,.6);text-shadow:0 1px 0 #9a2a06}
-#gbm-magazine-page.pg .pg-sh{border-bottom:0;position:relative;padding-bottom:14px}
-#gbm-magazine-page.pg .pg-sh::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#ff7a3d,#fa4616 60%,rgba(250,70,22,0));box-shadow:0 0 14px rgba(255,106,43,.75)}
-#gbm-magazine-page.pg .pg-sh h2{background:linear-gradient(180deg,#fff 0%,#e3eaf2 32%,#9aa7b7 49%,#f6f9fc 54%,#b7c1cd 78%,#e9eef4 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 #1a2b55) drop-shadow(0 6px 10px rgba(0,0,0,.6))}
-#gbm-magazine-page.pg .pg-sh h2::before{background:#ff7a3d;box-shadow:0 0 10px #ff7a3d}
-#gbm-magazine-page.pg .pg-game,#gbm-magazine-page.pg .pg-g,#gbm-magazine-page.pg .pg-card,#gbm-magazine-page.pg .pg-keys li,#gbm-magazine-page.pg .pg-numbers li,#gbm-magazine-page.pg .pg-watching li{border-color:#2a4aa8;box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.08)}
-#gbm-magazine-page.pg .pg-btn{clip-path:polygon(10px 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,10px 100%,0 50%);border-radius:0;box-shadow:none;background:linear-gradient(180deg,#ff7a3d,#f24e14 55%,#d33608);text-shadow:0 1px 0 #9a2a06;padding:0 30px}
-#gbm-magazine-page.pg .pg-issue b{background:linear-gradient(180deg,#2b57ff,#0021a5);box-shadow:0 0 14px rgba(43,87,255,.6)}
-#gbm-magazine-page.pg .pg-foot{border-top:0;position:relative}
-#gbm-magazine-page.pg .pg-foot::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,rgba(250,70,22,0),#ff7a3d 20%,#ff7a3d 80%,rgba(250,70,22,0));box-shadow:0 0 16px rgba(255,106,43,.7)}
-@media print{#gbm-magazine-page.pg .pg-sh h2{background:none;color:#000;filter:none;-webkit-text-fill-color:#000}}
+/* Swamp Night (Brenden, Oct. 17): quiet navy glass, white type and a corner ember glow. */
+@media screen{
+#gbm-magazine-page.pg{--pg-cream:#101b31;--pg-ink:#f3f5fa;background:radial-gradient(ellipse at 0 100%,rgba(250,70,22,.12),transparent 48%),linear-gradient(180deg,#07122e,#0b0d12 70%)}
+#gbm-magazine-page.pg .pg-ticker{background:rgba(255,255,255,.06);border-bottom:1px solid var(--pg-line);color:var(--pg-text)}
+#gbm-magazine-page.pg .pg-issue{border-color:var(--pg-line)}
+#gbm-magazine-page.pg .pg-issue b{background:rgba(255,255,255,.06);border:1px solid var(--pg-line);border-radius:8px}
+#gbm-magazine-page.pg .pg-sh{border-bottom:1px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-sh h2::before{display:none}
+#gbm-magazine-page.pg .pg-cover-type{background:linear-gradient(180deg,#101b31,#07122e)}
+#gbm-magazine-page.pg .pg-cover-type::before{display:none}
+#gbm-magazine-page.pg .pg-game,#gbm-magazine-page.pg .pg-g,#gbm-magazine-page.pg .pg-card,#gbm-magazine-page.pg .pg-keys li,#gbm-magazine-page.pg .pg-numbers li,#gbm-magazine-page.pg .pg-watching li{background:var(--pg-card);border-color:var(--pg-line);box-shadow:0 10px 30px rgba(0,0,0,.2);backdrop-filter:blur(12px)}
+#gbm-magazine-page.pg .pg-btn{border-radius:8px;box-shadow:none;background:var(--pg-orange);color:#07122e}
+#gbm-magazine-page.pg .pg-btn:active{box-shadow:none;transform:translateY(1px)}
+#gbm-magazine-page.pg .pg-yrs .pg-w,#gbm-magazine-page.pg .pg-yrs .pg-l,#gbm-magazine-page.pg .pg-chips li{background:var(--pg-card);border-color:var(--pg-line)}
+#gbm-magazine-page.pg .pg-lead{background:var(--pg-cream);box-shadow:0 18px 48px #0005;border:1px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-lead .pg-kick,#gbm-magazine-page.pg .pg-lead .pg-by,#gbm-magazine-page.pg .pg-fig figcaption,#gbm-magazine-page.pg .pg-fig figcaption span,#gbm-magazine-page.pg .pg-feature .pg-dek{color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-prose p{color:var(--pg-text)}
+#gbm-magazine-page.pg .pg-prose a{color:#fff}
+#gbm-magazine-page.pg .pg-prose .pg-sooth{background:var(--pg-navy)}
+#gbm-magazine-page.pg .pg-pick{background:var(--pg-card);border:1px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-numbers b{color:var(--pg-orange)}
+#gbm-magazine-page.pg .pg-plate-mz::before,#gbm-magazine-page.pg .pg-plate-mz::after{background:var(--pg-line);height:1px}
+#gbm-magazine-page.pg .pg-foot{border-top:1px solid var(--pg-line)}
+}

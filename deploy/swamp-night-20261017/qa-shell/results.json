@@ -1,0 +1,220 @@
+[
+  {
+    "path": "/about",
+    "w": 320,
+    "overflow": 0,
+    "loaded": true,
+    "blocked": false,
+    "header": {
+      "text": "GatorBaitMediaFront PageLatestMagazineTV",
+      "color": "rgb(255, 255, 255)",
+      "background": "linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, sans-serif",
+      "clip": "none",
+      "width": 0
+    },
+    "mobile": {
+      "text": "Shop Gear ↗Menu",
+      "color": "rgb(0, 0, 0)",
+      "background": "linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "clip": "none",
+      "width": 320
+    },
+    "band": {
+      "text": "GBGatorBait NetworkAbout GatorBait",
+      "color": "rgb(255, 255, 255)",
+      "background": "radial-gradient(at 90% 110%, rgba(250, 70, 22, 0.08), rgba(0, 0, 0, 0) 65%), linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, sans-serif",
+      "clip": "none",
+      "width": 320
+    },
+    "hub": null,
+    "lead": null,
+    "contact": null,
+    "bug": {
+      "text": "GB",
+      "color": "rgb(243, 245, 250)",
+      "background": "rgba(255, 255, 255, 0.06)",
+      "font": "\"Barlow Condensed\", Barlow, sans-serif",
+      "clip": "none",
+      "width": 59.125
+    },
+    "nav": [
+      "https://www.gatorbaitmedia.com/",
+      "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+      "https://www.gatorbaitmedia.com/magazine",
+      "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+      "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+      "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+      "https://www.gatorbaitmedia.com/groups"
+    ],
+    "errors": []
+  },
+  {
+    "path": "/about",
+    "w": 1366,
+    "overflow": 0,
+    "loaded": true,
+    "blocked": false,
+    "header": {
+      "text": "GatorBaitMediaFront PageLatestMagazineTV",
+      "color": "rgb(255, 255, 255)",
+      "background": "linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, sans-serif",
+      "clip": "none",
+      "width": 1366
+    },
+    "mobile": null,
+    "band": {
+      "text": "GBGatorBait NetworkAbout GatorBait",
+      "color": "rgb(255, 255, 255)",
+      "background": "radial-gradient(at 90% 110%, rgba(250, 70, 22, 0.08), rgba(0, 0, 0, 0) 65%), linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, sans-serif",
+      "clip": "none",
+      "width": 1366
+    },
+    "hub": null,
+    "lead": null,
+    "contact": null,
+    "bug": {
+      "text": "GB",
+      "color": "rgb(243, 245, 250)",
+      "background": "rgba(255, 255, 255, 0.06)",
+      "font": "\"Barlow Condensed\", Barlow, sans-serif",
+      "clip": "none",
+      "width": 73.40625
+    },
+    "nav": [
+      "https://www.gatorbaitmedia.com/",
+      "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+      "https://www.gatorbaitmedia.com/magazine",
+      "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+      "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+      "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+      "https://www.gatorbaitmedia.com/groups"
+    ],
+    "errors": [
+      "wixTagManager is not defined",
+      "wixTagManager is not defined"
+    ]
+  },
+  {
+    "path": "/the-buddy-martin-show",
+    "w": 320,
+    "overflow": 0,
+    "loaded": true,
+    "blocked": false,
+    "header": {
+      "text": "GatorBaitMediaFront PageLatestMagazineTV",
+      "color": "rgb(255, 255, 255)",
+      "background": "linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, sans-serif",
+      "clip": "none",
+      "width": 0
+    },
+    "mobile": {
+      "text": "Shop Gear ↗Menu",
+      "color": "rgb(0, 0, 0)",
+      "background": "linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "clip": "none",
+      "width": 320
+    },
+    "band": null,
+    "hub": {
+      "text": "GatorBait TVThe conversation continues h",
+      "color": "rgb(243, 245, 250)",
+      "background": "radial-gradient(at 95% 0px, rgba(250, 70, 22, 0.08), rgba(0, 0, 0, 0) 48%), linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18) 900px)",
+      "font": "Barlow, sans-serif",
+      "clip": "none",
+      "width": 320
+    },
+    "lead": {
+      "text": "The conversation continues here.",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgba(0, 0, 0, 0)",
+      "font": "\"Barlow Condensed\", Barlow, sans-serif",
+      "clip": "none",
+      "width": 248.0625
+    },
+    "contact": null,
+    "bug": {
+      "text": "GB",
+      "color": "rgb(243, 245, 250)",
+      "background": "rgba(255, 255, 255, 0.06)",
+      "font": "\"Barlow Condensed\", Barlow, sans-serif",
+      "clip": "none",
+      "width": 59.125
+    },
+    "nav": [
+      "https://www.gatorbaitmedia.com/",
+      "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+      "https://www.gatorbaitmedia.com/magazine",
+      "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+      "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+      "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+      "https://www.gatorbaitmedia.com/groups"
+    ],
+    "errors": []
+  },
+  {
+    "path": "/contact",
+    "w": 320,
+    "overflow": 0,
+    "loaded": true,
+    "blocked": false,
+    "header": {
+      "text": "GatorBaitMediaFront PageLatestMagazineTV",
+      "color": "rgb(255, 255, 255)",
+      "background": "linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, sans-serif",
+      "clip": "none",
+      "width": 0
+    },
+    "mobile": {
+      "text": "Shop Gear ↗Menu",
+      "color": "rgb(0, 0, 0)",
+      "background": "linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "clip": "none",
+      "width": 320
+    },
+    "band": {
+      "text": "GBGatorBait NetworkContact",
+      "color": "rgb(255, 255, 255)",
+      "background": "radial-gradient(at 90% 110%, rgba(250, 70, 22, 0.08), rgba(0, 0, 0, 0) 65%), linear-gradient(rgb(7, 18, 46), rgb(11, 13, 18))",
+      "font": "Barlow, sans-serif",
+      "clip": "none",
+      "width": 320
+    },
+    "hub": null,
+    "lead": null,
+    "contact": {
+      "text": "Contact InformationFirst nameLast nameEm",
+      "color": "rgb(16, 38, 75)",
+      "background": "rgb(255, 250, 240)",
+      "font": "Barlow, Arial, Helvetica, sans-serif",
+      "clip": "none",
+      "width": 248
+    },
+    "bug": {
+      "text": "GB",
+      "color": "rgb(243, 245, 250)",
+      "background": "rgba(255, 255, 255, 0.06)",
+      "font": "\"Barlow Condensed\", Barlow, sans-serif",
+      "clip": "none",
+      "width": 59.125
+    },
+    "nav": [
+      "https://www.gatorbaitmedia.com/",
+      "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+      "https://www.gatorbaitmedia.com/magazine",
+      "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+      "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule",
+      "https://www.gatorbaitmedia.com/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster",
+      "https://www.gatorbaitmedia.com/groups"
+    ],
+    "errors": []
+  }
+]

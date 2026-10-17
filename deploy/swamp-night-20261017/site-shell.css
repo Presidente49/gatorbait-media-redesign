@@ -1,0 +1,256 @@
+/* Swamp Night shared chrome, Oct. 17, 2026. CSS only; no content, routing, app logic or story rules. */
+/* Swamp Night S4 header. Runtime macros: #gbm-site-header #gbm-site-header, html:has(#gbm-site-header)  "html:has(#gbm-site-header) ", !important !important, "Barlow Condensed",Barlow,sans-serif Barlow Condensed stack, #gbm-mobile-drawer-root #gbm-mobile-drawer-root, #gbm-mobile-shell #gbm-mobile-shell */
+html:has(#gbm-site-header) #SITE_HEADER{display:none!important}
+#gbm-site-header,#gbm-site-header *{box-sizing:border-box}
+#gbm-site-header{position:relative;z-index:20;background:#0b0d12;color:#fff;font-family:Barlow,sans-serif;width:100%}
+#gbm-site-header a{color:inherit;text-decoration:none}
+#gbm-site-header a:focus-visible{outline:3px solid #f2b632;outline-offset:2px}
+#gbm-site-header .sh-tick{height:40px;display:flex;align-items:center;background:#0b0d12;border-bottom:1px solid #ffffff14;overflow:hidden}
+#gbm-site-header .sh-bug{flex:none;height:100%;display:flex;align-items:center;gap:8px;padding:0 22px 0 16px;margin-right:6px;background:#ffffff0f;color:#f3f5fa;font:normal 900 20px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.06em;clip-path:none}
+#gbm-site-header .sh-bug:before{content:"";width:6px;height:6px;flex:none;border-radius:50%;background:#fa4616;box-shadow:0 0 12px #fa461680}
+#gbm-site-header .sh-track{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#000 94%,#0000);mask-image:linear-gradient(90deg,#000 94%,#0000)}
+#gbm-site-header .sh-run{display:flex;width:max-content;animation:gbm-tick 80s linear infinite}
+#gbm-site-header .sh-track:hover .sh-run,#gbm-site-header .sh-track:focus-within .sh-run{animation-play-state:paused}
+@keyframes gbm-tick{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){#gbm-site-header .sh-run{animation:none}}
+#gbm-site-header .sh-run a{flex:none;display:block;padding:0 20px;border-right:1px solid #ffffff24;font:700 16px/40px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+#gbm-site-header .sh-run a:hover{color:#ffb093}
+#gbm-site-header .sh-run em{font-style:normal;font-weight:800;color:#aeb9cd;margin-right:8px}
+#gbm-site-header .sh-util{flex:none;display:flex;gap:20px;padding:0 28px 0 16px;font:700 13px/40px Barlow,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+#gbm-site-header .sh-util a:hover{color:#ffb093}
+#gbm-site-header .sh-util .sh-shop{color:#ffb093}
+#gbm-site-header .sh-bar{position:relative;background:linear-gradient(180deg,#07122e,#0b0d12)}
+#gbm-site-header .sh-bar:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#ffffff1a;box-shadow:none}
+#gbm-site-header .sh-inner{max-width:1320px;margin:auto;padding:0 28px;min-height:84px;display:flex;align-items:center;gap:28px}
+#gbm-site-header .sh-logo{flex:none;display:flex;align-items:baseline;font:normal 900 36px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap}
+#gbm-site-header .sh-logo b{color:#fff;font-weight:900}
+#gbm-site-header .sh-logo small{font:700 11px/1 Barlow,sans-serif;letter-spacing:.2em;color:#c9d2e3;margin-left:6px}
+#gbm-site-header nav{display:flex;flex-wrap:wrap;gap:0 16px;margin-left:auto;font:700 16px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+#gbm-site-header nav a{display:block;padding:14px 0}
+#gbm-site-header nav a:hover{color:#ffb093}
+#gbm-site-header nav [aria-current]{color:#ffb093;box-shadow:inset 0 -1px 0 #ffffff1a}
+#gbm-site-header .sh-cta{flex:none;display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:8px;background:#fa4616;color:#0b0d12;transform:none;font:normal 800 19px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.02em;text-transform:uppercase;box-shadow:0 6px 24px #fa46162e}
+#gbm-site-header .sh-cta span{display:inline-block;transform:none}
+#gbm-site-header .sh-cta:hover{background:#ff683e}
+@media(max-width:1440px){#gbm-site-header .sh-logo small{display:none}#gbm-site-header .sh-cta{padding:0 18px}}@media(max-width:1300px){#gbm-site-header .sh-inner{gap:18px}#gbm-site-header nav{gap:0 14px;font-size:15px}#gbm-site-header .sh-logo{font-size:32px}#gbm-site-header .sh-cta{padding:0 16px}}
+@media(max-width:1180px){#gbm-site-header .sh-inner{flex-wrap:wrap;padding-block:10px 4px}#gbm-site-header nav{order:3;width:100%;margin:0}}
+@media(max-width:820px){#gbm-site-header .sh-bar,#gbm-site-header .sh-util{display:none}#gbm-site-header .sh-tick{height:34px}#gbm-site-header .sh-bug{font-size:16px;padding:0 16px 0 12px}#gbm-site-header .sh-run a{font-size:14px;line-height:34px;padding:0 14px}}
+/* Swamp Night S4 skin. Footer: every page that has the shared header. Frame, band, type and buttons: S4 pages only (html.gbm-bc, set by theme.js). */
+html:has(#gbm-site-header) body #gbm-footer#gbm-footer{position:relative;background:linear-gradient(180deg,#0b1429,#0b0d12 70%)!important;border-top:0!important;color:#f3f5fa!important}
+html:has(#gbm-site-header) body #gbm-footer#gbm-footer:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:#ffffff1a;box-shadow:none}
+html:has(#gbm-site-header) #gbm-footer .gbf-shop,html:has(#gbm-site-header) #gbm-footer .gbf-base{border-color:#ffffff1a!important}
+html:has(#gbm-site-header) #gbm-footer .gbf-shop h2{font:normal 800 28px/1 "Barlow Condensed",Barlow,sans-serif!important}
+html:has(#gbm-site-header) #gbm-footer .gbf-shop p,html:has(#gbm-site-header) #gbm-footer .gbf-base{color:#c9d2e3!important}
+html:has(#gbm-site-header) body #gbm-footer#gbm-footer a.gbf-btn{font:normal 800 20px/1 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:.06em;clip-path:none}
+html:has(#gbm-site-header) #gbm-footer .gbf-map h3{color:#ffb093!important;font:800 13px/1.2 Barlow,sans-serif!important;letter-spacing:.14em!important}
+html:has(#gbm-site-header) #gbm-footer .gbf-map a{font:700 18px/1.1 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:.04em;text-transform:uppercase;min-height:36px!important}
+html:has(#gbm-site-header) body #gbm-footer#gbm-footer .gbf-map a:hover{color:#ffb093!important;text-decoration:underline;text-decoration-color:#fa4616;text-decoration-thickness:2px}
+/* phone bar and drawer, every page (markup from fdc2127a, S1); restyle only */
+@media(max-width:820px){
+#gbm-mobile-shell{background:linear-gradient(180deg,#07122e,#0b1429)!important;border:0!important;box-shadow:0 5px 22px #0005!important}
+#gbm-mobile-shell .gbm-ms-logo{position:relative;display:flex!important;align-items:center;min-height:44px;width:auto;min-width:0;flex:0 1 auto;line-height:1!important;font:normal 900 30px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:-.01em;text-transform:uppercase;color:#fff!important;-webkit-text-fill-color:#fff;text-decoration:none!important;white-space:nowrap}
+#gbm-mobile-shell .gbm-ms-logo img,#gbm-mobile-drawer-root .gbm-ms-head img{position:absolute!important;width:1px!important;height:1px!important;opacity:0;pointer-events:none}
+#gbm-mobile-shell .gbm-ms-logo:before,#gbm-mobile-drawer-root .gbm-ms-head a:before{content:"Gator"}
+#gbm-mobile-shell .gbm-ms-logo:after,#gbm-mobile-drawer-root .gbm-ms-head a:after{content:"Bait";color:#ff9e7d;-webkit-text-fill-color:#ff9e7d}
+#gbm-mobile-shell .gbm-ms-trigger{flex:none;width:auto;min-width:72px;height:44px;min-height:44px;padding:0 10px;border:2px solid #ffffff59!important;border-radius:8px!important;background:transparent!important;color:#fff!important;font:800 14px/1 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:.1em}
+#gbm-mobile-shell .gbm-ms-bars i{background:#ff9e7d!important}
+#gbm-mobile-shell .gbm-ms-shop{flex:none;margin:0 8px 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:4px;height:44px;min-height:44px;padding:0 12px;background:#fa4616;color:#0b0d12!important;-webkit-text-fill-color:#08132f;font:normal 800 16px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none!important;white-space:nowrap;clip-path:none}
+#gbm-mobile-drawer-root .gbm-ms-panel{background:linear-gradient(180deg,#0b1429,#0b0d12)!important}
+#gbm-mobile-drawer-root .gbm-ms-head{border:0!important;box-shadow:inset 0 -1px 0 #ffffff1a}
+#gbm-mobile-drawer-root .gbm-ms-head a{position:relative;color:#fff!important;-webkit-text-fill-color:#fff;text-decoration:none!important;font:normal 900 28px/1 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase}
+#gbm-mobile-drawer-root .gbm-ms-close{background:transparent!important;color:#fff!important;border-color:#ffffff59!important;width:44px!important;height:44px!important}
+#gbm-mobile-drawer-root .gbm-ms-nav a{background:transparent!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-bottom-color:#ffffff1f!important;font:700 19px/1.1 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:.06em;text-transform:uppercase}
+#gbm-mobile-drawer-root .gbm-ms-nav a[aria-current=page]{background:#ffffff0f!important;border-left:4px solid #fa4616!important;color:#ffb093!important;-webkit-text-fill-color:#ffb093!important}
+#gbm-mobile-drawer-root .gbm-ms-nav a.gbm-ms-shop{gap:6px;white-space:nowrap;font-size:17px!important;margin:12px 16px 4px;width:calc(100% - 32px);min-height:48px;justify-content:center;border:0;background:#fa4616!important;color:#08132f!important;-webkit-text-fill-color:#08132f!important;clip-path:none}
+#gbm-mobile-drawer-root .gbm-ms-nav a.gbm-ms-join{margin:6px 16px 8px;width:calc(100% - 32px);justify-content:center;border:0;border-radius:8px!important;background:#fff!important;color:#0b1429!important;-webkit-text-fill-color:#0b1429!important;clip-path:none}
+#gbm-mobile-drawer-root .gbm-ms-foot{color:#c9d2e3!important}
+#gbm-mobile-drawer-root .gbm-ms-foot a{color:#ffb093!important;-webkit-text-fill-color:#ffb093!important}
+}
+@media(max-width:430px){#gbm-mobile-shell .gbm-ms-logo{font-size:25px}#gbm-mobile-shell .gbm-ms-shop{padding:0 10px;margin-right:6px}#gbm-mobile-shell .gbm-ms-trigger{min-width:0;padding:0 8px}}@media(max-width:374px){#gbm-mobile-shell .gbm-ms-shop .gbm-x{display:none}#gbm-mobile-shell .gbm-ms-logo{font-size:23px}}
+/* S4 page frame */
+html.gbm-bc body{background:#0b0d12!important}
+#gbm-band{position:relative;overflow:hidden;background:radial-gradient(ellipse at 90% 110%,#fa461614,transparent 65%),linear-gradient(180deg,#07122e,#0b0d12);color:#fff;font-family:Barlow,sans-serif;padding:26px max(16px,calc(50% - 632px)) 30px}
+#gbm-band:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#ffffff1a;box-shadow:none}
+#gbm-band .gbm-band-k{display:inline-flex;font:800 14px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+#gbm-band .gbm-band-k b{background:#fa4616;color:#0b0d12;padding:7px 14px 7px 10px;clip-path:none}
+#gbm-band .gbm-band-k span{background:#fff;color:#0b1429;padding:7px 14px 7px 16px;margin-left:-6px;clip-path:none}
+#gbm-band p{margin:14px 0 0;font:normal 800 clamp(38px,6vw,68px)/.9 "Barlow Condensed",Barlow,sans-serif;letter-spacing:-.01em;text-transform:uppercase;text-shadow:0 4px 30px #00000080}
+/* type and buttons on S4 pages (colors stay with each page) */
+html.gbm-bc #SITE_PAGES h1,html.gbm-bc #SITE_PAGES h1 *,html.gbm-bc #SITE_PAGES h2,html.gbm-bc #SITE_PAGES h2 *,html.gbm-bc #SITE_PAGES [data-hook=app-title]{font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:0!important}
+html.gbm-bc #SITE_PAGES h3,html.gbm-bc #SITE_PAGES h3 *{font-family:"Barlow Condensed",Barlow,sans-serif!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.02em!important}
+html.gbm-bc #SITE_PAGES [data-testid=buttonElement],html.gbm-bc #SITE_PAGES [data-hook*=button i]:is(button,a){border-radius:8px!important;clip-path:none}
+html.gbm-bc #SITE_PAGES [data-testid=buttonElement] *{font-family:"Barlow Condensed",Barlow,sans-serif!important;font-weight:800!important;letter-spacing:.06em!important;text-transform:uppercase}
+/* membership (Wix Pricing Plans): colors, type, buttons only */
+html.gbm-bc #SITE_PAGES [data-hook=app-title]{font-size:44px!important;line-height:1!important;color:#10264b!important}
+html.gbm-bc #SITE_PAGES [data-hook=plan]>div{box-shadow:none!important;border:1px solid #cdd4dd!important;border-top:5px solid #fa4616!important;border-radius:8px!important;background:#fffaf0!important}
+html.gbm-bc #SITE_PAGES [data-hook=plan]>div:before{box-shadow:none!important}
+html.gbm-bc #SITE_PAGES [data-hook=plan]>div>div:not([data-hook=ribbon]){background:#fffaf0!important;padding:24px!important}
+html.gbm-bc #SITE_PAGES [data-hook=plan]>div>div:not([data-hook=ribbon])>div{background:transparent!important}
+html.gbm-bc #SITE_PAGES [data-hook=plan] *{font-family:Barlow,sans-serif!important}
+html.gbm-bc #SITE_PAGES [data-hook=plan-title],html.gbm-bc #SITE_PAGES [data-hook=plan-title] span{font:normal 800 30px/1 "Barlow Condensed",Barlow,sans-serif!important;color:#10264b!important;text-transform:uppercase}
+html.gbm-bc #SITE_PAGES [data-hook=plan-price],html.gbm-bc #SITE_PAGES [data-hook=plan-price] *{color:#10264b!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-weight:900!important;font-variant-numeric:tabular-nums}
+html.gbm-bc #SITE_PAGES [data-hook=plan-cta],html.gbm-bc #SITE_PAGES [data-hook=plan-cta] span{background:#fa4616!important;color:#fff!important;border-radius:8px!important;font:normal 800 20px/1.2 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:.04em;text-transform:uppercase;min-height:48px}
+html.gbm-bc #SITE_PAGES [data-hook=plan-cta]{clip-path:none}
+html.gbm-bc #SITE_PAGES [data-hook=plan-cta]:hover,html.gbm-bc #SITE_PAGES [data-hook=plan-cta]:hover span{background:#d33608!important}
+html.gbm-bc #SITE_PAGES [data-hook=ribbon]{background:#0b1429!important;color:#fff!important;font:800 12px/1.5 Barlow,sans-serif!important;letter-spacing:.12em;text-transform:uppercase;border-radius:8px!important}
+html.gbm-bc #bgLayers_comp-lhp5jdcg>[data-testid=colorUnderlay]{background:#fffaf0!important}
+/* contact form: layout kept from header rev36, Broadcast button */
+#comp-lii7mqe42{width:min(640px,calc(100% - 32px))!important;margin:24px auto!important;height:auto!important;min-height:0!important;background:#fffaf0!important;color:#10264b!important;border-top:5px solid #fa4616}
+[data-mesh-id=comp-lii7mqe42inlineContent-gridContainer]{display:flex!important;flex-direction:column;gap:18px;padding:24px;box-sizing:border-box}
+[data-mesh-id=comp-lii7mqe42inlineContent-gridContainer]>div[id]{width:100%!important;min-width:0!important;margin:0!important;left:auto!important;top:auto!important}
+[data-mesh-id=comp-lii7mqe42inlineContent-wedge-3]{display:none!important}
+#comp-lii7mqe42 label{font:14px/1.4 Barlow,sans-serif!important;color:#24344b!important}
+#comp-lii7mqe42 input,#comp-lii7mqe42 select,#comp-lii7mqe42 textarea{font:16px/1.5 Barlow,sans-serif!important;background:#fff!important;border-color:#8792a6!important}
+#comp-lii7mqe42 textarea{min-height:100px!important}
+#comp-lii7mqe42 #comp-lii7mqfa2,#comp-lii7mqe42 #comp-lii7mqfb3,#comp-lii7mqe42 #comp-lii7mqfl1{width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;left:0!important}
+#comp-lii7mqe42 [data-mesh-id=comp-lii7mqfa2inlineContent-gridContainer]{display:flex!important;flex-direction:column;gap:12px}
+[data-mesh-id=comp-lii7mqfa2inlineContent-gridContainer]>div{width:100%!important;min-width:0!important;margin:0!important;grid-area:auto!important}
+#comp-lii7mqfp4 button,#comp-lii7mqe42 button[data-testid=buttonElement]{width:100%!important;min-height:48px!important;padding:12px 18px!important;border-radius:8px!important;background:#fa4616!important;color:#08132f!important}
+#comp-lii7mqfp4 button span,#comp-lii7mqe42 button[data-testid=buttonElement] span{font:normal 800 20px/1.2 "Barlow Condensed",Barlow,sans-serif!important;color:#08132f!important;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:820px){#gbm-band{padding:18px 16px 22px}html.gbm-bc #SITE_PAGES [data-hook=app-title]{font-size:34px!important}}
+/* Calm glass chrome; native app reading surfaces and flows remain intact. */
+html.gbm-bc #SITE_PAGES [data-testid=richTextElement],html.gbm-bc #SITE_PAGES [data-testid=richTextElement] *{color:#10264b!important;-webkit-text-fill-color:#10264b!important}
+#gbm-band .gbm-band-k b,#gbm-band .gbm-band-k span{background:#ffffff0f;color:#d6deec;border:1px solid #ffffff1a;border-radius:6px;clip-path:none;margin-left:0}
+#gbm-band .gbm-band-k{gap:6px}
+html:has(#gbm-site-header) body #gbm-footer#gbm-footer a.gbf-btn{background:#fa4616!important;color:#0b0d12!important;border-radius:8px;clip-path:none;box-shadow:0 6px 24px #fa46162e}
+html:has(#gbm-site-header) #gbm-footer .gbf-map h3{color:#c9d2e3!important}
+html.gbm-bc #SITE_PAGES [data-hook=plan]>div{border-top:1px solid #cdd4dd!important;border-radius:12px!important}
+html.gbm-bc #SITE_PAGES [data-hook=plan-cta],html.gbm-bc #SITE_PAGES [data-hook=plan-cta] span{color:#0b0d12!important}
+#comp-lii7mqe42{border-top:1px solid #cdd4dd;border-radius:12px;overflow:hidden}
+@media(max-width:820px){
+#gbm-mobile-shell{background:linear-gradient(180deg,#07122e,#0b0d12)!important;border-bottom:1px solid #ffffff1a!important}
+#gbm-mobile-shell .gbm-ms-logo:after,#gbm-mobile-drawer-root .gbm-ms-head a:after{color:#fff;-webkit-text-fill-color:#fff}
+#gbm-mobile-shell .gbm-ms-shop,#gbm-mobile-drawer-root .gbm-ms-nav a.gbm-ms-shop{border-radius:8px;clip-path:none}
+#gbm-mobile-drawer-root .gbm-ms-nav a.gbm-ms-join{border-radius:8px!important;background:#ffffff0f!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+}
+
+html:has(#gbm-media-hub#gbm-media-hub) #SITE_CONTAINER,html:has(#gbm-media-hub#gbm-media-hub) #SITE_PAGES,html:has(#gbm-media-hub#gbm-media-hub) #SITE_FOOTER{display:none!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
+html:has(#gbm-media-hub#gbm-media-hub) #SITE_CONTAINER,html:has(#gbm-media-hub#gbm-media-hub) #masterPage,html:has(#gbm-media-hub#gbm-media-hub) #PAGES_CONTAINER,html:has(#gbm-media-hub#gbm-media-hub) #SITE_PAGES_TRANSITION_GROUP{height:auto!important;min-height:0!important;margin-bottom:0!important;padding-bottom:0!important}
+html:has(#gbm-media-hub#gbm-media-hub) body{background:#0b0d12!important}
+#gbm-media-hub#gbm-media-hub,#gbm-media-hub#gbm-media-hub *{box-sizing:border-box}
+#gbm-media-hub#gbm-media-hub{position:relative;z-index:3;padding:34px 24px 48px;color:#f3f5fa;font:16px/1.6 Barlow,sans-serif;background:radial-gradient(ellipse at 95% 0,#fa461614,transparent 48%),linear-gradient(180deg,#07122e,#0b0d12 900px)}
+#gbm-media-hub#gbm-media-hub .mh-wrap{max-width:1184px;margin:auto}
+#gbm-media-hub#gbm-media-hub h1,#gbm-media-hub#gbm-media-hub h2{margin:8px 0 16px;color:#fff;font-family:"Barlow Condensed",Barlow,sans-serif;font-style:normal;font-weight:800;line-height:.92;letter-spacing:-.01em;text-transform:uppercase}
+#gbm-media-hub#gbm-media-hub h1{font-size:clamp(40px,7vw,76px);max-width:16ch;text-shadow:0 4px 30px #00000080}
+#gbm-media-hub#gbm-media-hub h2{font-size:34px}
+#gbm-media-hub#gbm-media-hub .mh-kicker{display:inline-block;margin:0;padding:6px 16px 6px 10px;background:#fa4616;color:#0b0d12;font:800 14px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;clip-path:none}
+#gbm-media-hub#gbm-media-hub .mh-deck{max-width:64ch;color:#c9d2e3;font-size:18px;margin-bottom:28px}
+#gbm-media-hub#gbm-media-hub p{color:#c9d2e3}
+#gbm-media-hub#gbm-media-hub strong{color:#fff}
+#gbm-media-hub#gbm-media-hub .mh-watch{position:relative;display:grid;grid-template-columns:1.8fr 1fr;gap:30px;padding:28px 0;border-top:1px solid #ffffff1a}
+#gbm-media-hub#gbm-media-hub .mh-watch:before,#gbm-media-hub#gbm-media-hub .mh-programs section:before{content:"";position:absolute;left:0;top:-2px;width:140px;height:1px;background:#ffffff1a;box-shadow:none}
+#gbm-media-hub#gbm-media-hub .mh-player{min-width:0;aspect-ratio:16/9;display:grid;place-items:center;background:#0b0d12;color:#fff;box-shadow:0 0 0 1px #ffffff1a,0 10px 30px #00000073;clip-path:none}
+#gbm-media-hub#gbm-media-hub .mh-player iframe{width:100%;height:100%;border:0;aspect-ratio:16/9}
+#gbm-media-hub#gbm-media-hub .mh-poster{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;width:100%;height:100%;padding:20px;color:#fff;text-decoration:none;background:radial-gradient(circle at 50% 40%,#1b3a8a,#081b35 70%)}
+#gbm-media-hub#gbm-media-hub .mh-plate{display:block;text-align:center}
+#gbm-media-hub#gbm-media-hub .mh-plate .mh-wm{display:block;color:#fff;font:normal 900 clamp(44px,8vw,84px)/.9 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase}
+#gbm-media-hub#gbm-media-hub .mh-wm em{font-style:normal;color:#ff9e7d}
+#gbm-media-hub#gbm-media-hub .mh-plate b{display:inline-block;margin-top:10px;padding-top:10px;border-top:3px solid #fa4616;color:#c9d3e6;font:800 clamp(13px,2.4vw,18px)/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.3em;text-transform:uppercase}
+#gbm-media-hub#gbm-media-hub button,#gbm-media-hub#gbm-media-hub .mh-button,#gbm-media-hub#gbm-media-hub .mh-go{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border:0;background:#fa4616;color:#0b0d12;cursor:pointer;text-decoration:none;font:normal 800 20px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;clip-path:none}
+#gbm-media-hub#gbm-media-hub button:hover,#gbm-media-hub#gbm-media-hub .mh-go:hover{background:#d33608}
+#gbm-media-hub#gbm-media-hub a{color:inherit;text-underline-offset:4px}
+#gbm-media-hub#gbm-media-hub a:focus-visible,#gbm-media-hub#gbm-media-hub button:focus-visible{outline:3px solid #f2b632;outline-offset:3px}
+#gbm-media-hub#gbm-media-hub .mh-links a{display:block;padding:10px 0;color:#ffb093;font:700 18px/1.2 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+#gbm-media-hub#gbm-media-hub .mh-links a:hover,#gbm-media-hub#gbm-media-hub .mh-related a:hover{color:#fff;text-decoration:underline;text-decoration-color:#fa4616;text-decoration-thickness:2px}
+#gbm-media-hub#gbm-media-hub .mh-programs{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:36px}
+#gbm-media-hub#gbm-media-hub .mh-programs section{position:relative;padding:24px;background:rgba(255,255,255,.06);box-shadow:0 0 0 1px #ffffff1a,0 10px 30px #00000073}
+#gbm-media-hub#gbm-media-hub .mh-programs section:before{top:0;left:0;width:100%}
+#gbm-media-hub#gbm-media-hub .mh-programs section>a{display:inline-flex;align-items:center;min-height:44px;color:#ffb093;font:700 18px/1.2 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase;letter-spacing:.04em}
+#gbm-media-hub#gbm-media-hub .mh-related{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:36px;padding-top:20px;border-top:1px solid #ffffff1a;font:700 18px/1.2 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+#gbm-media-hub#gbm-media-hub .mh-related a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+#gbm-media-hub#gbm-media-hub .mh-filmstrip{position:relative;padding:24px 0;border-bottom:1px solid #ffffff1a}
+#gbm-media-hub#gbm-media-hub .mh-strip-heading{display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap}
+#gbm-media-hub#gbm-media-hub .mh-strip-heading h2{font-size:28px;margin:0 auto 0 0}
+#gbm-media-hub#gbm-media-hub .mh-strip-heading button{font-size:19px;min-height:44px;padding:0 16px}
+#gbm-media-hub#gbm-media-hub .mh-strip-heading a{display:inline-flex;align-items:center;min-height:44px;color:#ffb093;font:700 18px/1.2 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase}
+#gbm-media-hub#gbm-media-hub .mh-player-note{margin:12px 0;color:#aeb9cd;font-size:14px}
+#gbm-media-hub#gbm-media-hub .mh-strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 2px 14px}
+#gbm-media-hub#gbm-media-hub button.mh-video-card{flex:0 0 232px;display:block;scroll-snap-align:start;min-height:0;padding:0;background:transparent;color:#fff;text-align:left;white-space:normal;font:inherit;text-transform:none;letter-spacing:0;clip-path:none}
+#gbm-media-hub#gbm-media-hub .mh-card-visual{position:relative;aspect-ratio:16/9;display:grid;place-items:center;background:#0b0d12;border-bottom:3px solid #fa4616;clip-path:none}
+#gbm-media-hub#gbm-media-hub .mh-card-visual [hidden]{display:none!important}
+#gbm-media-hub#gbm-media-hub .mh-video-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+#gbm-media-hub#gbm-media-hub .mh-card-fallback{padding:20px;color:#fff;font:normal 800 21px/1 "Barlow Condensed",Barlow,sans-serif;text-align:center;text-transform:uppercase}
+#gbm-media-hub#gbm-media-hub .mh-video-card span{display:block;padding:9px 0 2px;color:#fff;font:700 18px/1.15 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase}
+#gbm-media-hub#gbm-media-hub .mh-video-card time{display:block;color:#aeb9cd;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+#gbm-media-hub#gbm-media-hub .mh-video-card:hover span{color:#ffb093}
+@media(max-width:820px){#gbm-media-hub#gbm-media-hub{padding:20px 16px 30px}#gbm-media-hub#gbm-media-hub h2{font-size:28px}#gbm-media-hub#gbm-media-hub .mh-watch,#gbm-media-hub#gbm-media-hub .mh-programs{grid-template-columns:1fr;gap:22px}}
+@media(max-width:600px){#gbm-media-hub#gbm-media-hub button.mh-video-card{flex-basis:72vw}}
+@media(max-width:560px){#gbm-media-hub#gbm-media-hub h1{font-size:34px}#gbm-media-hub#gbm-media-hub .mh-poster{gap:12px;padding:14px}#gbm-media-hub#gbm-media-hub .mh-plate b{font-size:12px;letter-spacing:.16em}#gbm-media-hub#gbm-media-hub .mh-go{font-size:16px;padding:0 12px;white-space:nowrap}}
+#gbm-media-hub#gbm-media-hub .mh-kicker{background:#ffffff0f;color:#d6deec;border:1px solid #ffffff1a;border-radius:6px}
+#gbm-media-hub#gbm-media-hub .mh-player,#gbm-media-hub#gbm-media-hub .mh-programs section,#gbm-media-hub#gbm-media-hub .mh-card-visual{border-radius:12px;overflow:hidden}
+#gbm-media-hub#gbm-media-hub .mh-poster{background:radial-gradient(ellipse at 50% 110%,#fa461624,transparent 65%),linear-gradient(180deg,#07122e,#0b0d12)}
+#gbm-media-hub#gbm-media-hub .mh-plate b{border-top:1px solid #ffffff1a}
+#gbm-media-hub#gbm-media-hub button,#gbm-media-hub#gbm-media-hub .mh-button,#gbm-media-hub#gbm-media-hub .mh-go{border-radius:8px}
+#gbm-media-hub#gbm-media-hub button:hover,#gbm-media-hub#gbm-media-hub .mh-go:hover{background:#ff683e}
+#gbm-media-hub#gbm-media-hub .mh-links a,#gbm-media-hub#gbm-media-hub .mh-programs section>a,#gbm-media-hub#gbm-media-hub .mh-strip-heading a{color:#d6deec}
+#gbm-media-hub#gbm-media-hub .mh-card-visual{border-bottom:1px solid #ffffff1a}
+
+.gbm-football-tools.gbm-football-tools{position:relative;box-sizing:border-box;margin:0 0 26px;padding:22px 20px 20px;color:#f3f5fa;font-family:Barlow,sans-serif;background:radial-gradient(ellipse at 95% 110%,#fa461614,transparent 65%),linear-gradient(180deg,#07122e,#0b0d12);box-shadow:0 10px 30px #00000059}
+.gbm-football-tools.gbm-football-tools:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:#ffffff1a;box-shadow:none}
+.gbm-football-tools.gbm-football-tools *{box-sizing:border-box}
+.gbm-football-tools.gbm-football-tools small{display:inline-block;padding:6px 14px 6px 10px;background:#fa4616;color:#0b0d12;font:800 13px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;clip-path:none}
+.gbm-football-tools.gbm-football-tools h2,.mz .mz-ed .gbm-football-tools.gbm-football-tools h2{color:#fff!important;font:normal 800 34px/.92 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:-.01em!important;text-transform:uppercase;margin:12px 0 8px!important}
+.gbm-football-tools.gbm-football-tools p{color:#c9d2e3!important;font:15px/1.45 Barlow,sans-serif!important;margin:0 0 16px!important}
+.gbm-football-tools.gbm-football-tools nav{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.gbm-football-tools.gbm-football-tools a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:10px 16px;background:#ffffff14;color:#fff!important;text-decoration:none!important;font:700 18px/1.1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;box-shadow:inset 0 0 0 1px #ffffff1a;clip-path:none}
+.gbm-football-tools.gbm-football-tools a span{color:#ffb093}
+.gbm-football-tools.gbm-football-tools a:focus-visible{outline:3px solid #f2b632;outline-offset:3px}
+.gbm-football-tools.gbm-football-tools a:hover{background:#fa4616;color:#0b0d12!important}
+.gbm-football-tools.gbm-football-tools a:hover span{color:#08132f}
+.mz-ed>.gbm-football-tools.gbm-football-tools{margin-top:26px;margin-bottom:0}
+.gbm-football-guide [data-hook="table-plugin-cell"]>div:last-child{padding:0!important}
+#roster,#schedule{scroll-margin-top:100px}
+.gbm-football-guide [data-hook="table-component"]{width:100%!important;max-width:100%!important;table-layout:fixed!important}
+.gbm-football-guide [data-hook="table-component"] col{min-width:0!important}
+.gbm-football-guide [data-hook="table-component"] col:nth-child(1){width:15%!important}
+.gbm-football-guide [data-hook="table-component"] col:nth-child(2){width:60%!important}
+.gbm-football-guide [data-hook="table-component"] col:nth-child(3){width:25%!important}
+.gbm-football-guide [aria-label="2026 Florida football schedule and results"] col:nth-child(2){width:37%!important}
+.gbm-football-guide [aria-label="2026 Florida football schedule and results"] col:nth-child(3){width:48%!important}
+.gbm-football-guide [data-hook="table-plugin-cell"]{padding:12px!important;vertical-align:top}
+html.gbm-football-guide #SITE_CONTAINER [data-hook="table-component"] [data-hook="table-plugin-cell"] p{padding:0!important;margin:0!important;font-size:16px!important;line-height:1.4!important;overflow-wrap:anywhere}
+@media(max-width:480px){.gbm-football-tools.gbm-football-tools{padding:20px 16px 17px}.gbm-football-tools.gbm-football-tools h2,.mz .mz-ed .gbm-football-tools.gbm-football-tools h2{font-size:28px!important}}
+.gbm-football-tools.gbm-football-tools{border:1px solid #ffffff1a;border-radius:12px}
+.gbm-football-tools.gbm-football-tools small{background:#ffffff0f;color:#d6deec;border:1px solid #ffffff1a;border-radius:6px}
+.gbm-football-tools.gbm-football-tools a{background:#ffffff0f;border-radius:8px}
+.gbm-football-tools.gbm-football-tools a span{color:#d6deec}
+.gbm-football-tools.gbm-football-tools a:hover{background:#ffffff1f;color:#fff!important}
+.gbm-football-tools.gbm-football-tools a:hover span{color:#fff}
+
+/* Members gate on paywalled stories (Site Fixer). Only active once #gbm-gate#gbm-gate exists, i.e. Wix rendered a paywall Subscribe link. */
+html:has(#gbm-gate#gbm-gate) h3:has(>span[id^="want-to-read-more"]),html:has(#gbm-gate#gbm-gate) h3:has(>span[id^="want-to-read-more"])~p,html:has(#gbm-gate#gbm-gate) div:has(>a[href*="referral=blog-post-paywall"]):not(#gbm-gate#gbm-gate *){display:none!important}
+#gbm-gate#gbm-gate{position:relative;box-sizing:border-box;margin:8px 0 32px;padding:30px 24px 28px;overflow:hidden;color:#fff;font-family:Barlow,sans-serif;text-align:left;background:radial-gradient(ellipse at 95% 110%,#fa461614,transparent 65%),linear-gradient(180deg,#07122e,#0b0d12);box-shadow:0 14px 40px #08132f59}
+#gbm-gate#gbm-gate:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:#ffffff1a;box-shadow:none}
+#gbm-gate#gbm-gate *{box-sizing:border-box}
+html:has(#gbm-gate#gbm-gate) [data-hook=post-page] div:has(#gbm-gate#gbm-gate){border-color:transparent!important;padding-top:0!important}
+#gbm-gate#gbm-gate .gg-k{display:inline-flex;font:800 14px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+#gbm-gate#gbm-gate .gg-k b{background:#fa4616;color:#0b0d12;padding:7px 14px 7px 10px;clip-path:none}
+#gbm-gate#gbm-gate .gg-k span{background:#fff;color:#0b1429;padding:7px 14px 7px 16px;margin-left:-6px;clip-path:none}
+#gbm-gate#gbm-gate .gg-h{margin:16px 0 10px!important;padding:0!important;border:0!important;color:#fff!important;-webkit-text-fill-color:#fff!important;font:normal 800 clamp(34px,8vw,52px)/.92 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:-.01em!important;text-transform:uppercase;text-shadow:0 4px 30px #00000080}
+#gbm-gate#gbm-gate .gg-p{margin:0 0 22px!important;max-width:52ch;color:#d6deec!important;-webkit-text-fill-color:#d6deec!important;font:500 17px/1.5 Barlow,sans-serif!important}
+#gbm-gate#gbm-gate .gg-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+#gbm-gate#gbm-gate a.gg-go{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;background:#fa4616;color:#0b0d12!important;text-decoration:none!important;font:normal 800 22px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;transform:none;box-shadow:0 0 18px #ff6a2b80}
+#gbm-gate#gbm-gate a.gg-go span{display:inline-block;transform:none}
+#gbm-gate#gbm-gate a.gg-go:hover{background:#d33608}
+#gbm-gate#gbm-gate a.gg-in{display:inline-flex;align-items:center;min-height:44px;color:#ffb093!important;font:700 17px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:underline!important;text-decoration-color:#fa4616!important;text-underline-offset:4px}
+#gbm-gate#gbm-gate a:focus-visible{outline:3px solid #f2b632;outline-offset:3px}
+@media(max-width:480px){#gbm-gate#gbm-gate{padding:26px 18px 24px;margin-inline:-4px}#gbm-gate#gbm-gate .gg-row{flex-direction:column;align-items:stretch}#gbm-gate#gbm-gate a.gg-go{width:100%}}
+#gbm-gate#gbm-gate{border:1px solid #ffffff1a;border-radius:12px}
+#gbm-gate#gbm-gate .gg-k{gap:6px}
+#gbm-gate#gbm-gate .gg-k b,#gbm-gate#gbm-gate .gg-k span{background:#ffffff0f;color:#d6deec;border:1px solid #ffffff1a;border-radius:6px;clip-path:none;margin-left:0}
+#gbm-gate#gbm-gate a.gg-go{border-radius:8px;color:#0b0d12!important;box-shadow:0 6px 24px #fa46162e}
+#gbm-gate#gbm-gate a.gg-go:hover{background:#ff683e}
+#gbm-gate#gbm-gate a.gg-in{color:#d6deec!important;text-decoration-color:#ffffff59!important}
+
+/* Swamp Night account and writer dialogs. Existing actions and native flows are untouched. */
+.gbm-modal{background:rgba(3,8,20,.78)!important}
+.gbm-modal-card{background:linear-gradient(180deg,#07122e,#0b0d12)!important;color:#f3f5fa!important;border:1px solid #ffffff1a!important;border-radius:14px;box-shadow:0 24px 80px #0007!important}
+.gbm-modal-card h2{color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important}
+.gbm-modal-card p{color:#c9d2e3!important}
+.gbm-modal-eyebrow{background:#ffffff0f!important;color:#d6deec!important;border:1px solid #ffffff1a;border-radius:6px;clip-path:none!important;font-style:normal!important}
+.gbm-modal-close{background:#ffffff0f!important;color:#fff!important;border:1px solid #ffffff59!important}
+.gbm-modal-btn{background:#fa4616!important;color:#0b0d12!important;border:1px solid #fa4616!important;border-radius:8px;clip-path:none!important}
+.gbm-modal-btn.alt{background:#ffffff0f!important;color:#f3f5fa!important;border-color:#ffffff1a!important}
+.gbm-modal-btn:hover,.gbm-modal-btn:focus-visible{background:#ff683e!important;color:#0b0d12!important}
+.gbm-modal-btn.alt:hover{background:#ffffff1f!important;color:#fff!important}
+.gbm-modal-card p.gbm-modal-note{color:#aeb9cd!important}

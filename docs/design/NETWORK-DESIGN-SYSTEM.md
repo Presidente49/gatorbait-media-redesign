@@ -1,5 +1,7 @@
 # GatorBait Network Design System
 
+> **Current direction — Oct. 17, 2026: Swamp Night.** Brenden's later choice replaces the Broadcast palette described below. Source: [issue #34, comment 6230312104](https://github.com/Presidente49/gatorbait-media-redesign/issues/34#issuecomment-6230312104), reaffirmed by his active game-day design repair request. Use a navy-to-black set (`#07122e` → `#0b0d12`), a restrained warm ember glow, white Barlow display text and glass panels (`rgba(255,255,255,.06)` with a `rgba(255,255,255,.1)` hairline). Reserve `#fa4616` orange for numbers, calls to action and the glow. Remove bright-blue slabs, chrome text, slashed bugs and skewed chrome. Keep cream story-reading panels for contrast. The historical Broadcast specification below is reference material, not permission to restore its colors. Current implementation: `deploy/swamp-night-20261017/` and each surface's existing source files.
+
 Brenden's direction, Oct. 16, 2026: "I wanna be run like a Network." The Buddy Martin Show broadcast set is the visual system for every GatorBait surface: the magazine (cover and inside, shipped Oct. 16), then the homepage, the All News page, story pages, email and social cards.
 
 Reference renders: `deploy/magazine-2026/pregame-texas/art/v6/cover.html` (cover), `sports-live/src/magazine-pregame.css` (the "Network skin" block at the end). Every department works from this file; if it is not in here, ask before inventing it.

@@ -1,5 +1,7 @@
 # Broadcast S4: site shell and other pages
 
+**Oct. 17 palette correction:** Brenden subsequently selected Swamp Night for the whole site in issue #34, comment 6230312104. The source CSS in `src/` now follows that selection. Build the current shared skin with `node deploy/swamp-night-20261017/build-shell.mjs`; the Theme-only candidate and exact live rollback are in that folder. This preserves all existing embed runtimes. The historical Broadcast build below must not be used to deploy the palette correction or overwrite the saved revision files.
+
 Session S4 of the Broadcast rollout (`docs/design/BROADCAST-ROLLOUT.md`). Scope comment: issue #34, "Broadcast S4 · scope".
 
 ## What changes

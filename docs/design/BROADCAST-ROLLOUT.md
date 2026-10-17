@@ -1,5 +1,7 @@
 # Broadcast rollout: every page in the network design
 
+> **Palette superseded Oct. 17 by Swamp Night.** [Brenden's later direction in #34](https://github.com/Presidente49/gatorbait-media-redesign/issues/34#issuecomment-6230312104) replaces the Broadcast look below. Retain the object ownership, guarded-write and verification mechanics; use the current notice in `NETWORK-DESIGN-SYSTEM.md` for color and chrome. Do not reintroduce bright-blue slabs or slashed bugs from this historical rollout.
+
 Brenden, Oct. 17, 2026 (about 02:40Z): "Install the artifact GatorBait homepage Look Book" and "work in sessions and make every page of the entire website in this design." Earlier the same night: "I wanna be run like a Network."
 
 **The design** is the **Broadcast** direction of the homepage look book, read together with the network design system:

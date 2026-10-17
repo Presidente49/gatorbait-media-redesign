@@ -51,14 +51,14 @@ Live URL once merged: `https://presidente49.github.io/gatorbait-media-redesign/s
 
 ```
 { updatedAt, season, team:{name,rank,record,conf},
-  last:{eventId,opponent,opponentRank,home,neutral?,date,status:"final",score:{fla,opp},quarters:{fla:[..],opp:[..]}|null,venue,recapUrl,galleryUrl},
+  last:{eventId,opponent,opponentRank,home,neutral?,date,status:"final",score:{fla,opp},quarters:{fla:[..],opp:[..]}|null,venue,recapUrl,galleryUrl,tape?:{totalYards,rushingYards,firstDowns,attendance}|null,leaders?:[[category,player,line]]|null},
   next:{eventId,opponent,opponentRank,opponentRecord?,home,neutral?,kickoffIso,tv,venue,previewUrl},
   schedule:[{eventId,date,opponent,opponentRank,opponentRecord?,home,status,score:{fla,opp}|null,tv,storyUrl}],
   standings:[{team,confRecord,overall}],           // SEC, best conference record first
   live: null | {eventId,clock,period,score:{fla,opp},possession:"fla"|"opp"|null,lastPlay} }
 ```
 
-`opponentRecord` is optional: the opponent's overall record as `"3-1"` or `null`. On `next` it is the current record from ESPN's pregame summary (The Tunnel prints it under the opponent's name); on a `schedule` row ESPN supplies it only once that game is final, and it is the record after that game. `status` is `scheduled`, `in-progress`, `final`, `postponed` or `canceled`. `next` is the first game not yet final, so during a game it is the game in progress. `home` is false at a neutral site; `neutral` (optional on `last` and `next`) is true there, so a page can write "Florida vs. Georgia" rather than "Florida at Georgia". `last`, `next` and `live` are `null` when they don't apply. Ranks are AP (1-25) or `null`. For a game with no set time, ESPN sends a placeholder kickoff (04:00Z or 05:00Z); the feed passes it through.
+`opponentRecord` is optional: the opponent's overall record as `"3-1"` or `null`. On `next` it is the current record from ESPN's pregame summary (The Tunnel prints it under the opponent's name); on a `schedule` row ESPN supplies it only once that game is final, and it is the record after that game. `status` is `scheduled`, `in-progress`, `final`, `postponed` or `canceled`. `next` is the first game not yet final, so during a game it is the game in progress. `home` is false at a neutral site; `neutral` (optional on `last` and `next`) is true there, so a page can write "Florida vs. Georgia" rather than "Florida at Georgia". `tape` (Florida's box-score totals and attendance) and `leaders` (Florida's passing, rushing and receiving leaders, ESPN's own lines) come from the last final's ESPN summary and feed the homepage's Game tape and Florida leaders; either is `null` when ESPN has no data. `last`, `next` and `live` are `null` when they don't apply. Ranks are AP (1-25) or `null`. For a game with no set time, ESPN sends a placeholder kickoff (04:00Z or 05:00Z); the feed passes it through.
 
 Commands:
 

@@ -378,5 +378,30 @@ class ImportTests(unittest.TestCase):
         self.assertEqual(si.name_for('https://site.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season=2026'), 'standings.json')
 
 
+
+class GameTapeTests(unittest.TestCase):
+    """last.tape and last.leaders: optional, validated when present (front page Game tape and Florida leaders)."""
+    def doc(self):
+        return json.loads((HERE.parent.parent / 'sports-live/scoreboard.json').read_text())
+
+    def test_tape_and_leaders_validate(self):
+        d = self.doc()
+        d['last']['tape'] = {'totalYards': 387, 'rushingYards': 120, 'firstDowns': 20, 'attendance': 90311}
+        d['last']['leaders'] = [['Passing Yards', 'Aaron Philo', '21/28, 227 YDS, 1 TD, 1 INT']]
+        self.assertEqual(vs.validate(d), [])
+        d['last']['tape'] = None
+        d['last']['leaders'] = None
+        self.assertEqual(vs.validate(d), [])
+
+    def test_bad_tape_is_rejected(self):
+        d = self.doc()
+        d['last']['tape'] = {'totalYards': -1, 'rushingYards': 120, 'firstDowns': 20, 'attendance': None}
+        self.assertTrue(vs.validate(d))
+        d['last']['tape'] = {'totalYards': 1}
+        self.assertTrue(vs.validate(d))
+        d['last'].pop('tape')
+        d['last']['leaders'] = [['Passing Yards', '', '1 YDS']]
+        self.assertTrue(vs.validate(d))
+
 if __name__ == '__main__':
     unittest.main()

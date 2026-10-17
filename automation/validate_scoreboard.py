@@ -123,7 +123,7 @@ def validate(doc):
     last = doc.get('last')
     if last is not None and v.obj(last, 'last', ('eventId', 'opponent', 'opponentRank', 'home', 'date', 'status', 'score',
                                                   'quarters', 'venue', 'recapUrl', 'galleryUrl'),
-                                                  optional=('neutral',)):
+                                                  optional=('neutral', 'tape', 'leaders')):
         v.string(last.get('eventId'), 'last.eventId')
         v.string(last.get('opponent'), 'last.opponent')
         v.rank(last.get('opponentRank'), 'last.opponentRank')
@@ -143,6 +143,18 @@ def validate(doc):
         v.string(last.get('venue'), 'last.venue', nullable=True)
         v.link(last.get('recapUrl'), 'last.recapUrl')
         v.link(last.get('galleryUrl'), 'last.galleryUrl')
+        tape = last.get('tape')
+        if tape is not None:
+            if not isinstance(tape, dict) or set(tape) != {'totalYards', 'rushingYards', 'firstDowns', 'attendance'}:
+                v.err('last.tape', 'must be null or {totalYards, rushingYards, firstDowns, attendance}')
+            else:
+                for k, val in tape.items():
+                    if val is not None and (not _int(val) or val < 0):
+                        v.err(f'last.tape.{k}', f'must be a non-negative integer or null, got {val!r}')
+        lead = last.get('leaders')
+        if lead is not None:
+            if not isinstance(lead, list) or not lead or not all(isinstance(r, list) and len(r) == 3 and all(isinstance(x, str) and x for x in r) for r in lead):
+                v.err('last.leaders', 'must be null or a non-empty list of [category, player, line] strings')
 
     nxt = doc.get('next')
     if nxt is not None and v.obj(nxt, 'next', ('eventId', 'opponent', 'opponentRank', 'home', 'kickoffIso', 'tv', 'venue', 'previewUrl'),

@@ -1,5 +1,7 @@
 # Broadcast rollout: every page in the network design
 
+> **Current owner direction — Oct. 17, 2026, active design session.** White editorial pages, dark readable text and stronger Gator Orange (`#fa4616`). The recovered Thursday Buddy Martin Show thumbnail informs compact dimensional mastheads, framed photography and layered orange/blue accents. The owner explicitly rejected both the prior Swamp Night result and an overly blue first prototype. Use the existing Gazette content renderer and live game/feed engines, newest-first story chronology and a complete current pregame collection. No saved Sports artifact was selected. Source and release evidence: `deploy/broadcast-network-20261017/`; scoped authorization: [issue #34](https://github.com/Presidente49/gatorbait-media-redesign/issues/34#issuecomment-6235084960). Prior palette notices below are superseded.
+
 > **Palette superseded Oct. 17 by Swamp Night.** [Brenden's later direction in #34](https://github.com/Presidente49/gatorbait-media-redesign/issues/34#issuecomment-6230312104) replaces the Broadcast look below. Retain the object ownership, guarded-write and verification mechanics; use the current notice in `NETWORK-DESIGN-SYSTEM.md` for color and chrome. Do not reintroduce bright-blue slabs or slashed bugs from this historical rollout.
 
 Brenden, Oct. 17, 2026 (about 02:40Z): "Install the artifact GatorBait homepage Look Book" and "work in sessions and make every page of the entire website in this design." Earlier the same night: "I wanna be run like a Network."

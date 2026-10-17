@@ -25,11 +25,26 @@ jobs:
             p.on('requestfailed', r => { if (/espn|scoreboard|github\.io|jsdelivr/.test(r.url())) console.log('REQFAIL', r.url().slice(0, 140), r.failure() && r.failure().errorText); });
             p.on('response', r => { if (/espn|scoreboard\.json|jsdelivr|blog-feed/.test(r.url())) console.log('RESP', r.status(), r.url().slice(0, 150)); });
             await p.goto('https://www.gatorbaitmedia.com/?v=probe' + Date.now(), { waitUntil: 'load' });
-            await p.waitForTimeout(15000);
-            const t = await p.evaluate(() => { const n = document.querySelector('.bc-nx, .bc-sc'); return n ? n.innerText.replace(/\s+/g, ' ').slice(0, 300) : 'NO CARD'; });
-            console.log('CARD:', t);
-            const sc = await p.evaluate(() => [...document.scripts].map(s => s.src).filter(s => /jsdelivr/.test(s)));
-            console.log('SCRIPTS:', JSON.stringify(sc));
+            await p.waitForTimeout(4000);
+            const u = 'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=20261017';
+            const r = await p.evaluate(async (u) => {
+              const out = {};
+              const tries = {
+                'no-store+omit (what the card does)': { cache: 'no-store', credentials: 'omit' },
+                'plain omit (proposed fix)': { credentials: 'omit' },
+                'plain': {}
+              };
+              for (const [k, o] of Object.entries(tries)) {
+                try {
+                  const x = await fetch(u + '&_=' + Date.now(), o);
+                  const j = await x.json();
+                  const e = (j.events || []).find(e => String(e.id) === '401856724');
+                  out[k] = 'OK ' + x.status + ' ' + (e ? e.status.type.shortDetail + ' ' + e.competitions[0].competitors.map(c => c.team.abbreviation + c.score).join(' ') : 'event missing');
+                } catch (err) { out[k] = 'FAIL ' + String(err).slice(0, 80); }
+              }
+              return out;
+            }, u);
+            console.log('FETCH TESTS', JSON.stringify(r, null, 1));
             await b.close();
           })();
           JS

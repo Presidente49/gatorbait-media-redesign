@@ -1,0 +1,34 @@
+name: Homepage cache check (one-off, read-only)
+on:
+  push:
+    branches:
+      - 'probe/espn-20261017'
+permissions:
+  contents: read
+jobs:
+  hdr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch the plain homepage a few times and show headers and the pinned loader sha
+        run: |
+          cat > hdr.js <<'JS'
+          const urls = ['https://www.gatorbaitmedia.com/', 'https://www.gatorbaitmedia.com/', 'https://www.gatorbaitmedia.com/?x=' + Date.now(), 'https://www.gatorbaitmedia.com/'];
+          const ua = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1';
+          (async () => {
+            for (const u of urls) {
+              const t0 = Date.now();
+              const r = await fetch(u, { headers: { 'user-agent': ua } });
+              const body = await r.text();
+              const h = {};
+              for (const k of ['cache-control', 'age', 'date', 'last-modified', 'etag', 'x-cache', 'x-seen-by', 'server-timing', 'x-wix-request-id', 'vary', 'x-content-type-options', 'content-length']) { if (r.headers.get(k)) h[k] = r.headers.get(k).slice(0, 120); }
+              const shas = [...body.matchAll(/gatorbait-media-redesign@([0-9a-f]{7,40})\/sports-live\/broadcast-home\.js/g)].map(m => m[1].slice(0, 7));
+              console.log('FETCH', u.slice(0, 50), r.status, Date.now() - t0 + 'ms', 'len', body.length, 'loaderShas', JSON.stringify(shas), JSON.stringify(h));
+              await new Promise(r => setTimeout(r, 4000));
+            }
+          })();
+          JS
+          node hdr.js

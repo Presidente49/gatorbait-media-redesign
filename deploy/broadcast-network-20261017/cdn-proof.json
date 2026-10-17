@@ -1,0 +1,48 @@
+{
+  "pin": "312018fa66e644a3f32fe473b6a855d1b114c356",
+  "at": "2026-10-17T14:59:45.108Z",
+  "ok": true,
+  "files": [
+    {
+      "path": "sports-live/broadcast-home.js",
+      "status": 200,
+      "bytes": 86701,
+      "expectedSha256": "de9430dd9d539f01c7feb3d2a332de5e7bd3a46974d559767f55b735f63bbef8",
+      "sha256": "de9430dd9d539f01c7feb3d2a332de5e7bd3a46974d559767f55b735f63bbef8",
+      "ok": true
+    },
+    {
+      "path": "sports-live/magazine-pregame.js",
+      "status": 200,
+      "bytes": 182866,
+      "expectedSha256": "8168521f4a02e6f6fde0ec2013cf9173f1849a0d44c85a097f4dbcfb71482818",
+      "sha256": "8168521f4a02e6f6fde0ec2013cf9173f1849a0d44c85a097f4dbcfb71482818",
+      "ok": true
+    },
+    {
+      "path": "deploy/broadcast-network-20261017/site-shell.css",
+      "status": 200,
+      "bytes": 47526,
+      "expectedSha256": "b09dfeb710afe1a91b22af2039ec218dde7837a449c90e7ef5fce2abb6b6dbbe",
+      "sha256": "b09dfeb710afe1a91b22af2039ec218dde7837a449c90e7ef5fce2abb6b6dbbe",
+      "ok": true
+    },
+    {
+      "path": "deploy/broadcast-network-20261017/news-chronology.js",
+      "status": 200,
+      "bytes": 11024,
+      "expectedSha256": "7ddde8064232daf8c4a69ef182f2f0dc3170740b1984842e762e85326a166da5",
+      "sha256": "7ddde8064232daf8c4a69ef182f2f0dc3170740b1984842e762e85326a166da5",
+      "ok": true
+    },
+    {
+      "path": "owner-selected-v5-cover",
+      "status": 200,
+      "bytes": 857631,
+      "expectedSha256": "6fe6309f9d70930149e41458d0dc4659ba3bc1c3bec93e74a8fd1a26fb2c320d",
+      "sha256": "6fe6309f9d70930149e41458d0dc4659ba3bc1c3bec93e74a8fd1a26fb2c320d",
+      "ok": true
+    }
+  ],
+  "runId": 39043064037
+}

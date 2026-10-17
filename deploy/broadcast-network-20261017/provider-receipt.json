@@ -1,0 +1,69 @@
+{
+  "ok": true,
+  "sourceCommit": "312018fa66e644a3f32fe473b6a855d1b114c356",
+  "appliedAt": "2026-10-17T15:00:59.445Z",
+  "guards": [
+    {
+      "id": "c66d5b7f-c474-45b5-af4d-662ae1eaf67c",
+      "ok": true,
+      "revision": "10",
+      "fingerprint": "a76f00f2"
+    },
+    {
+      "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+      "ok": true,
+      "revision": "7",
+      "fingerprint": "a88a29ba"
+    },
+    {
+      "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+      "ok": true,
+      "revision": "110",
+      "fingerprint": "1f67f870"
+    },
+    {
+      "id": "53e15504-76c9-4551-90fe-4defe7cad84d",
+      "ok": true,
+      "revision": "11",
+      "fingerprint": "e6a71858"
+    }
+  ],
+  "mutations": [
+    {
+      "id": "c66d5b7f-c474-45b5-af4d-662ae1eaf67c",
+      "revision": "11",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "f2112134",
+      "expectedFingerprint": "f2112134",
+      "ok": true
+    },
+    {
+      "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+      "revision": "8",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "becd4806",
+      "expectedFingerprint": "becd4806",
+      "ok": true
+    },
+    {
+      "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+      "revision": "111",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "31abecc5",
+      "expectedFingerprint": "31abecc5",
+      "ok": true
+    },
+    {
+      "id": "53e15504-76c9-4551-90fe-4defe7cad84d",
+      "revision": "12",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "bb7472dc",
+      "expectedFingerprint": "bb7472dc",
+      "ok": true
+    }
+  ]
+}

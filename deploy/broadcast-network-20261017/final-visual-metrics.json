@@ -1,0 +1,1460 @@
+{
+  "at": "2026-10-17T15:13:55.859Z",
+  "preflight": {
+    "pin": "312018fa66e644a3f32fe473b6a855d1b114c356",
+    "at": "2026-10-17T15:13:55.567Z",
+    "ok": true,
+    "files": [
+      {
+        "path": "sports-live/broadcast-home.js",
+        "status": 200,
+        "bytes": 86701,
+        "expectedSha256": "de9430dd9d539f01c7feb3d2a332de5e7bd3a46974d559767f55b735f63bbef8",
+        "sha256": "de9430dd9d539f01c7feb3d2a332de5e7bd3a46974d559767f55b735f63bbef8",
+        "ok": true
+      },
+      {
+        "path": "sports-live/magazine-pregame.js",
+        "status": 200,
+        "bytes": 182866,
+        "expectedSha256": "8168521f4a02e6f6fde0ec2013cf9173f1849a0d44c85a097f4dbcfb71482818",
+        "sha256": "8168521f4a02e6f6fde0ec2013cf9173f1849a0d44c85a097f4dbcfb71482818",
+        "ok": true
+      },
+      {
+        "path": "deploy/broadcast-network-20261017/site-shell.css",
+        "status": 200,
+        "bytes": 47526,
+        "expectedSha256": "b09dfeb710afe1a91b22af2039ec218dde7837a449c90e7ef5fce2abb6b6dbbe",
+        "sha256": "b09dfeb710afe1a91b22af2039ec218dde7837a449c90e7ef5fce2abb6b6dbbe",
+        "ok": true
+      },
+      {
+        "path": "deploy/broadcast-network-20261017/news-chronology.js",
+        "status": 200,
+        "bytes": 11024,
+        "expectedSha256": "7ddde8064232daf8c4a69ef182f2f0dc3170740b1984842e762e85326a166da5",
+        "sha256": "7ddde8064232daf8c4a69ef182f2f0dc3170740b1984842e762e85326a166da5",
+        "ok": true
+      }
+    ]
+  },
+  "targets": [
+    {
+      "name": "home",
+      "path": "/",
+      "selector": "#gbm-live"
+    },
+    {
+      "name": "magazine",
+      "path": "/magazine",
+      "selector": "#gbm-magazine-page"
+    },
+    {
+      "name": "story",
+      "path": "/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
+      "selector": "[data-hook=post-page]"
+    }
+  ],
+  "shots": [
+    {
+      "target": "home",
+      "url": "https://www.gatorbaitmedia.com/?broadcastproof=20261017",
+      "selector": "#gbm-live",
+      "width": 390,
+      "errors": [],
+      "http": 200,
+      "optionalCookiesDeclinedForCapture": true,
+      "loaderSrc": null,
+      "fpBuild": null,
+      "fpVersion": null,
+      "broadcastProof": {
+        "shareProof": null,
+        "headline": {
+          "text": "Aberdeen will be in the lineup against Baylor on Sunday",
+          "font": "Barlow, sans-serif",
+          "size": "30px",
+          "whiteSpace": "normal"
+        },
+        "mainPaths": [
+          "/post/aberdeen-will-be-in-the-lineup-against-baylor-on-sunday",
+          "/post/is-the-sec-undergoing-a-drain-of-excellence",
+          "/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
+          "/post/buddy-martin-show-live-tonight-philo-jones-texas",
+          "/post/qb1-philo-hurt-qb2-jones-to-start-explained-by-that-great-football-mind-ted-lasso",
+          "/post/so-you-re-saying-there-s-a-chance-1",
+          "/post/philo-s-injury-could-give-tramell-jones-jr-his-opening",
+          "/post/report-aaron-philo-s-status-uncertain-for-florida-s-trip-to-texas",
+          "/post/thoughts-of-the-day-october-14-2026",
+          "/post/buddy-blog-a-gator-ass-whipping-with-bowl-projections-in-the-ashes",
+          "/post/philo-is-the-florida-quarterback-at-least-for-now",
+          "/post/numbers-don-t-lie",
+          "/post/gators-picked-to-win-sec-basketball-title",
+          "/post/an-anatomy-of-total-gator-collapse-a-swamp-strewn-with-broken-dreams",
+          "/post/texas-opens-as-a-10-point-favorite-against-florida",
+          "/post/gators-drop-out-ap-top-25-october-11-2026",
+          "/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool",
+          "/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
+          "/post/members-read-the-texas-pregame-magazine",
+          "/post/members-download-the-postgame-magazine-pdf",
+          "/post/after-a-second-sobering-loss-can-florida-s-season-still-be-salvaged",
+          "/post/chris-spears-best-shots-south-carolina-38-florida-19"
+        ],
+        "pregamePaths": [
+          "/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
+          "/post/buddy-martin-show-live-tonight-philo-jones-texas",
+          "/post/qb1-philo-hurt-qb2-jones-to-start-explained-by-that-great-football-mind-ted-lasso",
+          "/post/so-you-re-saying-there-s-a-chance-1",
+          "/post/philo-s-injury-could-give-tramell-jones-jr-his-opening",
+          "/post/report-aaron-philo-s-status-uncertain-for-florida-s-trip-to-texas",
+          "/post/thoughts-of-the-day-october-14-2026",
+          "/post/philo-is-the-florida-quarterback-at-least-for-now",
+          "/post/texas-opens-as-a-10-point-favorite-against-florida",
+          "/post/members-read-the-texas-pregame-magazine"
+        ],
+        "tokens": {
+          "--nt": "#fff",
+          "--tx": "#102040",
+          "--mu": "#52657f",
+          "--pk": "#a32e09",
+          "--o": "#fa4616"
+        },
+        "magazineTokens": null,
+        "storyBody": null,
+        "rootWidths": {
+          "#gbm-live": {
+            "client": 390,
+            "scroll": 390,
+            "box": 390
+          },
+          "#gbm-magazine-page": null,
+          "#gbm-lp": null,
+          "[data-hook=post-page]": null
+        },
+        "panels": {
+          "#gbm-live": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(16, 32, 64)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 390
+          },
+          ".bc-nx": {
+            "bg": "rgb(255, 248, 242)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(228, 212, 201) rgb(228, 212, 201) rgb(250, 70, 22)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 358
+          },
+          ".bc-side": {
+            "bg": "rgb(244, 246, 249)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(250, 70, 22) rgb(212, 220, 232) rgb(212, 220, 232)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 358
+          },
+          ".sh-magazine": {
+            "bg": "rgb(255, 248, 242)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(250, 70, 22) rgb(229, 213, 199) rgb(229, 213, 199)",
+            "radius": "0px",
+            "clipPath": "polygon(0px 0px, 100% 0px, 100% 100%, 14px 100%, 0px calc(100% - 14px))",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 358
+          },
+          ".sh-coverage article": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(16, 32, 64) rgb(16, 32, 64) rgb(212, 220, 232)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 171
+          },
+          "#gbm-magazine-page": null,
+          ".pg-game": null,
+          ".pg-lead": null,
+          "#gbm-lp": null,
+          ".lp-lead": null,
+          ".lp-row": null,
+          "#SITE_PAGES": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(0, 0, 0)",
+            "border": "rgb(0, 0, 0)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 0
+          },
+          "[data-hook=post-page] article[data-hook=post]>div>header": null,
+          "[data-hook=post-page] article[data-hook=post]>div": null,
+          "#gbm-mobile-shell": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(250, 70, 22) rgb(20, 39, 68) rgb(214, 222, 234)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 390
+          },
+          "#gbm-site-header": null
+        },
+        "styleTagIds": [
+          "gbm-author-simple",
+          "gbm-bc-home-fonts",
+          "gbm-bc-s2",
+          "gbm-bc-s2-depth",
+          "gbm-bc-wait",
+          "gbm-breaking-story-label-v1",
+          "gbm-broadcast-home-css",
+          "gbm-broadcast-network-shell-v1",
+          "gbm-broadcast-skin-v1",
+          "gbm-flstats-css",
+          "gbm-football-tools-style",
+          "gbm-footer-utility-v14",
+          "gbm-gameday-css",
+          "gbm-gate-v1",
+          "gbm-gazette-startup-v1",
+          "gbm-keep-reading-css",
+          "gbm-latest-page",
+          "gbm-legal-styles",
+          "gbm-light-nav-guard",
+          "gbm-magazine-2026-shell",
+          "gbm-media-hub-v2",
+          "gbm-mobile-account-tight-v1",
+          "gbm-mobile-shell-critical-v2",
+          "gbm-native-blog-design-v4",
+          "gbm-plan-terms-css",
+          "gbm-post-broadcast",
+          "gbm-post-norm",
+          "gbm-post-read-v1",
+          "gbm-post-stable-slots-v1",
+          "gbm-post-template",
+          "gbm-postgame-hide",
+          "gbm-share-contrast-20261017",
+          "gbm-shared-site-design-v6",
+          "gbm-sn-css",
+          "gbm-viewport-wide-v1",
+          "gbm-week-rich-style",
+          "gbm-writer-show-style",
+          "gbm-wx-css"
+        ],
+        "coverImage": null,
+        "coverExpected": null,
+        "assetUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/news-chronology.js",
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/sports-live/broadcast-home.js"
+        ],
+        "resourceUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/site-shell.css",
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/sports-live/broadcast-home.js"
+        ],
+        "viewport": {
+          "innerWidth": 390,
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "scrollX": 0,
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+        },
+        "hasHomeStyle": true,
+        "hasShellStyle": true,
+        "paletteLooksWhite": true
+      },
+      "selectorFound": true,
+      "box": {
+        "x": 0,
+        "y": 70,
+        "w": 390,
+        "h": 6437,
+        "bg": "rgb(255, 255, 255)",
+        "font": "Barlow, Arial, Helvetica, sans-serif",
+        "kids": [
+          {
+            "cls": "H1",
+            "x": 16,
+            "y": 596,
+            "w": 358,
+            "h": 101,
+            "font": "Barlow, sans-serif",
+            "size": "30px"
+          },
+          {
+            "cls": "sh-section-title",
+            "x": 37,
+            "y": 965,
+            "w": 316,
+            "h": 31,
+            "font": "Barlow, sans-serif",
+            "size": "26px"
+          },
+          {
+            "cls": "H3",
+            "x": 75,
+            "y": 1014,
+            "w": 278,
+            "h": 51,
+            "font": "Barlow, sans-serif",
+            "size": "21px"
+          },
+          {
+            "cls": "H3",
+            "x": 75,
+            "y": 1123,
+            "w": 278,
+            "h": 77,
+            "font": "Barlow, sans-serif",
+            "size": "21px"
+          },
+          {
+            "cls": "H3",
+            "x": 75,
+            "y": 1257,
+            "w": 278,
+            "h": 77,
+            "font": "Barlow, sans-serif",
+            "size": "21px"
+          },
+          {
+            "cls": "bc-h",
+            "x": 35,
+            "y": 1484,
+            "w": 320,
+            "h": 31,
+            "font": "Barlow, sans-serif",
+            "size": "26px"
+          }
+        ],
+        "track": null,
+        "story": null,
+        "docScrollWidth": 390,
+        "innerWidth": 390
+      }
+    },
+    {
+      "target": "home",
+      "url": "https://www.gatorbaitmedia.com/?broadcastproof=20261017",
+      "selector": "#gbm-live",
+      "width": 1366,
+      "errors": [],
+      "http": 200,
+      "optionalCookiesDeclinedForCapture": true,
+      "loaderSrc": null,
+      "fpBuild": null,
+      "fpVersion": null,
+      "broadcastProof": {
+        "shareProof": null,
+        "headline": {
+          "text": "Aberdeen will be in the lineup against Baylor on Sunday",
+          "font": "Barlow, sans-serif",
+          "size": "38px",
+          "whiteSpace": "normal"
+        },
+        "mainPaths": [
+          "/post/aberdeen-will-be-in-the-lineup-against-baylor-on-sunday",
+          "/post/is-the-sec-undergoing-a-drain-of-excellence",
+          "/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
+          "/post/buddy-martin-show-live-tonight-philo-jones-texas",
+          "/post/qb1-philo-hurt-qb2-jones-to-start-explained-by-that-great-football-mind-ted-lasso",
+          "/post/so-you-re-saying-there-s-a-chance-1",
+          "/post/philo-s-injury-could-give-tramell-jones-jr-his-opening",
+          "/post/report-aaron-philo-s-status-uncertain-for-florida-s-trip-to-texas",
+          "/post/thoughts-of-the-day-october-14-2026",
+          "/post/buddy-blog-a-gator-ass-whipping-with-bowl-projections-in-the-ashes",
+          "/post/philo-is-the-florida-quarterback-at-least-for-now",
+          "/post/numbers-don-t-lie",
+          "/post/gators-picked-to-win-sec-basketball-title",
+          "/post/an-anatomy-of-total-gator-collapse-a-swamp-strewn-with-broken-dreams",
+          "/post/texas-opens-as-a-10-point-favorite-against-florida",
+          "/post/gators-drop-out-ap-top-25-october-11-2026",
+          "/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool",
+          "/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
+          "/post/members-read-the-texas-pregame-magazine",
+          "/post/members-download-the-postgame-magazine-pdf",
+          "/post/after-a-second-sobering-loss-can-florida-s-season-still-be-salvaged",
+          "/post/chris-spears-best-shots-south-carolina-38-florida-19"
+        ],
+        "pregamePaths": [
+          "/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
+          "/post/buddy-martin-show-live-tonight-philo-jones-texas",
+          "/post/qb1-philo-hurt-qb2-jones-to-start-explained-by-that-great-football-mind-ted-lasso",
+          "/post/so-you-re-saying-there-s-a-chance-1",
+          "/post/philo-s-injury-could-give-tramell-jones-jr-his-opening",
+          "/post/report-aaron-philo-s-status-uncertain-for-florida-s-trip-to-texas",
+          "/post/thoughts-of-the-day-october-14-2026",
+          "/post/philo-is-the-florida-quarterback-at-least-for-now",
+          "/post/texas-opens-as-a-10-point-favorite-against-florida",
+          "/post/members-read-the-texas-pregame-magazine"
+        ],
+        "tokens": {
+          "--nt": "#fff",
+          "--tx": "#102040",
+          "--mu": "#52657f",
+          "--pk": "#a32e09",
+          "--o": "#fa4616"
+        },
+        "magazineTokens": null,
+        "storyBody": null,
+        "rootWidths": {
+          "#gbm-live": {
+            "client": 1366,
+            "scroll": 1366,
+            "box": 1366
+          },
+          "#gbm-magazine-page": null,
+          "#gbm-lp": null,
+          "[data-hook=post-page]": null
+        },
+        "panels": {
+          "#gbm-live": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(16, 32, 64)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 1366
+          },
+          ".bc-nx": {
+            "bg": "rgb(255, 248, 242)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(228, 212, 201) rgb(228, 212, 201) rgb(250, 70, 22)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 1232
+          },
+          ".bc-side": {
+            "bg": "rgb(244, 246, 249)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(250, 70, 22) rgb(212, 220, 232) rgb(212, 220, 232)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 1232
+          },
+          ".sh-magazine": {
+            "bg": "rgb(255, 248, 242)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(250, 70, 22) rgb(229, 213, 199) rgb(229, 213, 199)",
+            "radius": "0px",
+            "clipPath": "polygon(0px 0px, 100% 0px, 100% 100%, 14px 100%, 0px calc(100% - 14px))",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 388
+          },
+          ".sh-coverage article": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(16, 32, 64)",
+            "border": "rgb(16, 32, 64) rgb(16, 32, 64) rgb(212, 220, 232)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 258
+          },
+          "#gbm-magazine-page": null,
+          ".pg-game": null,
+          ".pg-lead": null,
+          "#gbm-lp": null,
+          ".lp-lead": null,
+          ".lp-row": null,
+          "#SITE_PAGES": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(0, 0, 0)",
+            "border": "rgb(0, 0, 0)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 0
+          },
+          "[data-hook=post-page] article[data-hook=post]>div>header": null,
+          "[data-hook=post-page] article[data-hook=post]>div": null,
+          "#gbm-mobile-shell": null,
+          "#gbm-site-header": null
+        },
+        "styleTagIds": [
+          "gbm-author-simple",
+          "gbm-bc-home-fonts",
+          "gbm-bc-s2",
+          "gbm-bc-s2-depth",
+          "gbm-bc-wait",
+          "gbm-breaking-story-label-v1",
+          "gbm-broadcast-home-css",
+          "gbm-broadcast-network-shell-v1",
+          "gbm-broadcast-skin-v1",
+          "gbm-flstats-css",
+          "gbm-football-tools-style",
+          "gbm-footer-utility-v14",
+          "gbm-gameday-css",
+          "gbm-gate-v1",
+          "gbm-gazette-startup-v1",
+          "gbm-keep-reading-css",
+          "gbm-latest-page",
+          "gbm-legal-styles",
+          "gbm-light-nav-guard",
+          "gbm-magazine-2026-shell",
+          "gbm-media-hub-v2",
+          "gbm-mobile-account-tight-v1",
+          "gbm-mobile-shell-critical-v2",
+          "gbm-native-blog-design-v4",
+          "gbm-plan-terms-css",
+          "gbm-post-broadcast",
+          "gbm-post-norm",
+          "gbm-post-read-v1",
+          "gbm-post-stable-slots-v1",
+          "gbm-post-template",
+          "gbm-postgame-hide",
+          "gbm-share-contrast-20261017",
+          "gbm-shared-site-design-v6",
+          "gbm-sn-css",
+          "gbm-viewport-wide-v1",
+          "gbm-week-rich-style",
+          "gbm-writer-show-style",
+          "gbm-wx-css"
+        ],
+        "coverImage": null,
+        "coverExpected": null,
+        "assetUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/news-chronology.js",
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/sports-live/broadcast-home.js"
+        ],
+        "resourceUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/site-shell.css",
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/sports-live/broadcast-home.js"
+        ],
+        "viewport": {
+          "innerWidth": 1366,
+          "clientWidth": 1366,
+          "scrollWidth": 1366,
+          "scrollX": 0,
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+        },
+        "hasHomeStyle": true,
+        "hasShellStyle": true,
+        "paletteLooksWhite": true
+      },
+      "selectorFound": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 1366,
+        "h": 3932,
+        "bg": "rgb(255, 255, 255)",
+        "font": "Barlow, Arial, Helvetica, sans-serif",
+        "kids": [
+          {
+            "cls": "H1",
+            "x": 67,
+            "y": 404,
+            "w": 788,
+            "h": 85,
+            "font": "Barlow, sans-serif",
+            "size": "38px"
+          },
+          {
+            "cls": "sh-section-title",
+            "x": 906,
+            "y": 403,
+            "w": 372,
+            "h": 31,
+            "font": "Barlow, sans-serif",
+            "size": "26px"
+          },
+          {
+            "cls": "H3",
+            "x": 944,
+            "y": 453,
+            "w": 334,
+            "h": 51,
+            "font": "Barlow, sans-serif",
+            "size": "21px"
+          },
+          {
+            "cls": "H3",
+            "x": 944,
+            "y": 561,
+            "w": 334,
+            "h": 51,
+            "font": "Barlow, sans-serif",
+            "size": "21px"
+          },
+          {
+            "cls": "H3",
+            "x": 944,
+            "y": 670,
+            "w": 334,
+            "h": 77,
+            "font": "Barlow, sans-serif",
+            "size": "21px"
+          },
+          {
+            "cls": "bc-h",
+            "x": 90,
+            "y": 1140,
+            "w": 581,
+            "h": 31,
+            "font": "Barlow, sans-serif",
+            "size": "26px"
+          }
+        ],
+        "track": null,
+        "story": null,
+        "docScrollWidth": 1366,
+        "innerWidth": 1366
+      }
+    },
+    {
+      "target": "magazine",
+      "url": "https://www.gatorbaitmedia.com/magazine?broadcastproof=20261017",
+      "selector": "#gbm-magazine-page",
+      "width": 390,
+      "errors": [],
+      "http": 200,
+      "optionalCookiesDeclinedForCapture": true,
+      "loaderSrc": null,
+      "fpBuild": null,
+      "fpVersion": null,
+      "broadcastProof": {
+        "shareProof": null,
+        "headline": {
+          "text": "Who's QB1 in Austin?",
+          "font": "Barlow, Arial, Helvetica, sans-serif",
+          "size": "30px",
+          "whiteSpace": "nowrap"
+        },
+        "mainPaths": [],
+        "pregamePaths": [],
+        "tokens": null,
+        "magazineTokens": {
+          "--pg-night": "#fff",
+          "--pg-navy": "#f5f7fb",
+          "--pg-orange": "#fa4616",
+          "--pg-text": "#142744",
+          "--pg-mute": "#526580",
+          "--pg-card": "#fff"
+        },
+        "storyBody": null,
+        "rootWidths": {
+          "#gbm-live": null,
+          "#gbm-magazine-page": {
+            "client": 390,
+            "scroll": 390,
+            "box": 390
+          },
+          "#gbm-lp": null,
+          "[data-hook=post-page]": null
+        },
+        "panels": {
+          "#gbm-live": null,
+          ".bc-nx": null,
+          ".bc-side": null,
+          ".sh-magazine": null,
+          ".sh-coverage article": null,
+          "#gbm-magazine-page": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(20, 39, 68)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 390
+          },
+          ".pg-game": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "gradient": "linear-gradient(160deg, rgb(237, 242, 250), rgb(245, 247, 251) 60%)",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(204, 214, 229)",
+            "radius": "2px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 358
+          },
+          ".pg-lead": {
+            "bg": "rgb(255, 250, 244)",
+            "gradient": "none",
+            "color": "rgb(17, 34, 62)",
+            "border": "rgb(250, 70, 22) rgb(221, 222, 218) rgb(221, 222, 218)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 358
+          },
+          "#gbm-lp": null,
+          ".lp-lead": null,
+          ".lp-row": null,
+          "#SITE_PAGES": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(20, 39, 68)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 0
+          },
+          "[data-hook=post-page] article[data-hook=post]>div>header": null,
+          "[data-hook=post-page] article[data-hook=post]>div": null,
+          "#gbm-mobile-shell": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(250, 70, 22) rgb(20, 39, 68) rgb(214, 222, 234)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 0
+          },
+          "#gbm-site-header": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(20, 39, 68) rgb(20, 39, 68) rgb(250, 70, 22)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, sans-serif",
+            "width": 0
+          }
+        },
+        "styleTagIds": [
+          "gbm-author-simple",
+          "gbm-bc-fonts",
+          "gbm-bc-s2",
+          "gbm-bc-s2-depth",
+          "gbm-bc-wait",
+          "gbm-breaking-story-label-v1",
+          "gbm-broadcast-network-shell-v1",
+          "gbm-broadcast-skin-v1",
+          "gbm-flstats-css",
+          "gbm-football-tools-style",
+          "gbm-footer-utility-v14",
+          "gbm-gameday-css",
+          "gbm-gate-v1",
+          "gbm-gazette-startup-v1",
+          "gbm-keep-reading-css",
+          "gbm-latest-page",
+          "gbm-legal-styles",
+          "gbm-light-nav-guard",
+          "gbm-mag26-css",
+          "gbm-magazine-2026-shell",
+          "gbm-media-hub-v2",
+          "gbm-mobile-account-tight-v1",
+          "gbm-mobile-shell-critical-v2",
+          "gbm-native-blog-design-v4",
+          "gbm-plan-terms-css",
+          "gbm-post-broadcast",
+          "gbm-post-norm",
+          "gbm-post-read-v1",
+          "gbm-post-stable-slots-v1",
+          "gbm-post-template",
+          "gbm-postgame-hide",
+          "gbm-share-contrast-20261017",
+          "gbm-shared-site-design-v6",
+          "gbm-sn-css",
+          "gbm-ui-layer-css",
+          "gbm-viewport-wide-v1",
+          "gbm-week-rich-style",
+          "gbm-writer-show-style"
+        ],
+        "coverImage": {
+          "src": "https://static.wixstatic.com/media/d3cfa5_6d3a6ab429634722ada0394526bc480d~mv2.jpg/v1/fit/w_1600,h_2072,al_c,q_80,enc_auto/gatorbait.jpg",
+          "currentSrc": "https://static.wixstatic.com/media/d3cfa5_6d3a6ab429634722ada0394526bc480d~mv2.jpg/v1/fit/w_800,h_1036,al_c,q_80,enc_auto/gatorbait.jpg",
+          "alt": "GatorBait Magazine Friday Pregame cover, Oct. 16, 2026: Who's QB1 in Austin? A deliberate mystery portrait of Florida quarterback Tramell Jones Jr., with an orange-and-white headline and an identity-o",
+          "loaded": true,
+          "naturalWidth": 390,
+          "naturalHeight": 504,
+          "box": {
+            "width": 356,
+            "height": 461
+          }
+        },
+        "coverExpected": true,
+        "assetUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/sports-live/magazine-pregame.js",
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/news-chronology.js"
+        ],
+        "resourceUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/site-shell.css",
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/sports-live/magazine-pregame.js"
+        ],
+        "viewport": {
+          "innerWidth": 390,
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "scrollX": 0,
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+        },
+        "hasHomeStyle": false,
+        "hasShellStyle": true,
+        "paletteLooksWhite": true
+      },
+      "selectorFound": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 390,
+        "h": 18045,
+        "bg": "rgb(255, 255, 255)",
+        "font": "Barlow, Arial, Helvetica, sans-serif",
+        "kids": [
+          {
+            "cls": "pg-hide",
+            "x": 16,
+            "y": 752,
+            "w": 1,
+            "h": 1,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "30px"
+          },
+          {
+            "cls": "H2",
+            "x": 33,
+            "y": 804,
+            "w": 63,
+            "h": 17,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "13px"
+          },
+          {
+            "cls": "H2",
+            "x": 16,
+            "y": 1488,
+            "w": 111,
+            "h": 28,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "24px"
+          },
+          {
+            "cls": "H2",
+            "x": 16,
+            "y": 1870,
+            "w": 162,
+            "h": 28,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "24px"
+          },
+          {
+            "cls": "H2",
+            "x": 16,
+            "y": 2665,
+            "w": 142,
+            "h": 28,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "24px"
+          },
+          {
+            "cls": "H2",
+            "x": 16,
+            "y": 3299,
+            "w": 166,
+            "h": 28,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "24px"
+          }
+        ],
+        "track": null,
+        "story": null,
+        "docScrollWidth": 390,
+        "innerWidth": 390
+      }
+    },
+    {
+      "target": "magazine",
+      "url": "https://www.gatorbaitmedia.com/magazine?broadcastproof=20261017",
+      "selector": "#gbm-magazine-page",
+      "width": 1366,
+      "errors": [],
+      "http": 200,
+      "optionalCookiesDeclinedForCapture": true,
+      "loaderSrc": null,
+      "fpBuild": null,
+      "fpVersion": null,
+      "broadcastProof": {
+        "shareProof": null,
+        "headline": {
+          "text": "Who's QB1 in Austin?",
+          "font": "Barlow, Arial, Helvetica, sans-serif",
+          "size": "42px",
+          "whiteSpace": "nowrap"
+        },
+        "mainPaths": [],
+        "pregamePaths": [],
+        "tokens": null,
+        "magazineTokens": {
+          "--pg-night": "#fff",
+          "--pg-navy": "#f5f7fb",
+          "--pg-orange": "#fa4616",
+          "--pg-text": "#142744",
+          "--pg-mute": "#526580",
+          "--pg-card": "#fff"
+        },
+        "storyBody": null,
+        "rootWidths": {
+          "#gbm-live": null,
+          "#gbm-magazine-page": {
+            "client": 1366,
+            "scroll": 1366,
+            "box": 1366
+          },
+          "#gbm-lp": null,
+          "[data-hook=post-page]": null
+        },
+        "panels": {
+          "#gbm-live": null,
+          ".bc-nx": null,
+          ".bc-side": null,
+          ".sh-magazine": null,
+          ".sh-coverage article": null,
+          "#gbm-magazine-page": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(20, 39, 68)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 1366
+          },
+          ".pg-game": {
+            "bg": "rgba(0, 0, 0, 0)",
+            "gradient": "linear-gradient(160deg, rgb(237, 242, 250), rgb(245, 247, 251) 60%)",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(204, 214, 229)",
+            "radius": "2px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 589
+          },
+          ".pg-lead": {
+            "bg": "rgb(255, 250, 244)",
+            "gradient": "none",
+            "color": "rgb(17, 34, 62)",
+            "border": "rgb(250, 70, 22) rgb(221, 222, 218) rgb(221, 222, 218)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 920
+          },
+          "#gbm-lp": null,
+          ".lp-lead": null,
+          ".lp-row": null,
+          "#SITE_PAGES": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(20, 39, 68)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 0
+          },
+          "[data-hook=post-page] article[data-hook=post]>div>header": null,
+          "[data-hook=post-page] article[data-hook=post]>div": null,
+          "#gbm-mobile-shell": null,
+          "#gbm-site-header": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(20, 39, 68) rgb(20, 39, 68) rgb(250, 70, 22)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, sans-serif",
+            "width": 0
+          }
+        },
+        "styleTagIds": [
+          "gbm-author-simple",
+          "gbm-bc-fonts",
+          "gbm-bc-s2",
+          "gbm-bc-s2-depth",
+          "gbm-bc-wait",
+          "gbm-breaking-story-label-v1",
+          "gbm-broadcast-network-shell-v1",
+          "gbm-broadcast-skin-v1",
+          "gbm-flstats-css",
+          "gbm-football-tools-style",
+          "gbm-footer-utility-v14",
+          "gbm-gameday-css",
+          "gbm-gate-v1",
+          "gbm-gazette-startup-v1",
+          "gbm-keep-reading-css",
+          "gbm-latest-page",
+          "gbm-legal-styles",
+          "gbm-light-nav-guard",
+          "gbm-mag26-css",
+          "gbm-magazine-2026-shell",
+          "gbm-media-hub-v2",
+          "gbm-mobile-account-tight-v1",
+          "gbm-mobile-shell-critical-v2",
+          "gbm-native-blog-design-v4",
+          "gbm-plan-terms-css",
+          "gbm-post-broadcast",
+          "gbm-post-norm",
+          "gbm-post-read-v1",
+          "gbm-post-stable-slots-v1",
+          "gbm-post-template",
+          "gbm-postgame-hide",
+          "gbm-share-contrast-20261017",
+          "gbm-shared-site-design-v6",
+          "gbm-sn-css",
+          "gbm-ui-layer-css",
+          "gbm-viewport-wide-v1",
+          "gbm-week-rich-style",
+          "gbm-writer-show-style"
+        ],
+        "coverImage": {
+          "src": "https://static.wixstatic.com/media/d3cfa5_6d3a6ab429634722ada0394526bc480d~mv2.jpg/v1/fit/w_1600,h_2072,al_c,q_80,enc_auto/gatorbait.jpg",
+          "currentSrc": "https://static.wixstatic.com/media/d3cfa5_6d3a6ab429634722ada0394526bc480d~mv2.jpg/v1/fit/w_1200,h_1554,al_c,q_80,enc_auto/gatorbait.jpg",
+          "alt": "GatorBait Magazine Friday Pregame cover, Oct. 16, 2026: Who's QB1 in Austin? A deliberate mystery portrait of Florida quarterback Tramell Jones Jr., with an orange-and-white headline and an identity-o",
+          "loaded": true,
+          "naturalWidth": 846,
+          "naturalHeight": 1096,
+          "box": {
+            "width": 638,
+            "height": 826
+          }
+        },
+        "coverExpected": true,
+        "assetUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/sports-live/magazine-pregame.js",
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/news-chronology.js"
+        ],
+        "resourceUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/site-shell.css",
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/sports-live/magazine-pregame.js"
+        ],
+        "viewport": {
+          "innerWidth": 1366,
+          "clientWidth": 1366,
+          "scrollWidth": 1366,
+          "scrollX": 0,
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+        },
+        "hasHomeStyle": false,
+        "hasShellStyle": true,
+        "paletteLooksWhite": true
+      },
+      "selectorFound": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 1366,
+        "h": 12006,
+        "bg": "rgb(255, 255, 255)",
+        "font": "Barlow, Arial, Helvetica, sans-serif",
+        "kids": [
+          {
+            "cls": "pg-hide",
+            "x": 363,
+            "y": 1146,
+            "w": 1,
+            "h": 1,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "42px"
+          },
+          {
+            "cls": "H2",
+            "x": 124,
+            "y": 1203,
+            "w": 59,
+            "h": 17,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "13px"
+          },
+          {
+            "cls": "H2",
+            "x": 724,
+            "y": 1180,
+            "w": 123,
+            "h": 32,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "28px"
+          },
+          {
+            "cls": "H2",
+            "x": 107,
+            "y": 1775,
+            "w": 187,
+            "h": 32,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "28px"
+          },
+          {
+            "cls": "H2",
+            "x": 107,
+            "y": 2221,
+            "w": 165,
+            "h": 32,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "28px"
+          },
+          {
+            "cls": "H2",
+            "x": 107,
+            "y": 2546,
+            "w": 187,
+            "h": 32,
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "size": "28px"
+          }
+        ],
+        "track": null,
+        "story": null,
+        "docScrollWidth": 1366,
+        "innerWidth": 1366
+      }
+    },
+    {
+      "target": "story",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist?broadcastproof=20261017",
+      "selector": "[data-hook=post-page]",
+      "width": 390,
+      "errors": [],
+      "http": 200,
+      "optionalCookiesDeclinedForCapture": true,
+      "loaderSrc": null,
+      "fpBuild": null,
+      "fpVersion": null,
+      "broadcastProof": {
+        "shareProof": {
+          "color": "rgb(20, 39, 68)",
+          "bg": "rgb(250, 70, 22)",
+          "children": [
+            {
+              "tag": "svg",
+              "text": "",
+              "color": "rgb(7, 18, 46)",
+              "fill": "rgb(7, 18, 46)"
+            },
+            {
+              "tag": "path",
+              "text": "",
+              "color": "rgb(7, 18, 46)",
+              "fill": "rgb(7, 18, 46)"
+            },
+            {
+              "tag": "SPAN",
+              "text": "Share this story",
+              "color": "rgb(7, 18, 46)",
+              "fill": "rgb(7, 18, 46)"
+            }
+          ],
+          "overrideLoaded": true
+        },
+        "headline": null,
+        "mainPaths": [],
+        "pregamePaths": [],
+        "tokens": null,
+        "magazineTokens": null,
+        "storyBody": {
+          "color": "rgb(8, 27, 53)",
+          "background": "rgb(255, 250, 244)",
+          "font": "Barlow, Arial, sans-serif",
+          "size": "18px",
+          "lineHeight": "28.8px",
+          "width": 354,
+          "text": "“Out in the ocean, a rope is put around a man’s neck. The other end of the rope "
+        },
+        "rootWidths": {
+          "#gbm-live": null,
+          "#gbm-magazine-page": null,
+          "#gbm-lp": null,
+          "[data-hook=post-page]": {
+            "client": 390,
+            "scroll": 390,
+            "box": 390
+          }
+        },
+        "panels": {
+          "#gbm-live": null,
+          ".bc-nx": null,
+          ".bc-side": null,
+          ".sh-magazine": null,
+          ".sh-coverage article": null,
+          "#gbm-magazine-page": null,
+          ".pg-game": null,
+          ".pg-lead": null,
+          "#gbm-lp": null,
+          ".lp-lead": null,
+          ".lp-row": null,
+          "#SITE_PAGES": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(20, 39, 68)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 390
+          },
+          "[data-hook=post-page] article[data-hook=post]>div>header": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(250, 70, 22) rgb(214, 222, 234) rgb(214, 222, 234)",
+            "radius": "12px",
+            "clipPath": "none",
+            "font": "roboto-bold, roboto, sans-serif",
+            "width": 390
+          },
+          "[data-hook=post-page] article[data-hook=post]>div": {
+            "bg": "rgb(255, 250, 244)",
+            "gradient": "none",
+            "color": "rgb(0, 0, 0)",
+            "border": "rgb(0, 0, 0)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "roboto-bold, roboto, sans-serif",
+            "width": 390
+          },
+          "#gbm-mobile-shell": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(250, 70, 22) rgb(20, 39, 68) rgb(214, 222, 234)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, Arial, Helvetica, sans-serif",
+            "width": 390
+          },
+          "#gbm-site-header": {
+            "bg": "rgb(255, 255, 255)",
+            "gradient": "none",
+            "color": "rgb(20, 39, 68)",
+            "border": "rgb(20, 39, 68) rgb(20, 39, 68) rgb(250, 70, 22)",
+            "radius": "0px",
+            "clipPath": "none",
+            "font": "Barlow, sans-serif",
+            "width": 390
+          }
+        },
+        "styleTagIds": [
+          "gbm-author-simple",
+          "gbm-bc-fonts",
+          "gbm-bc-s2",
+          "gbm-bc-s2-depth",
+          "gbm-bc-wait",
+          "gbm-breaking-story-label-v1",
+          "gbm-broadcast-network-shell-v1",
+          "gbm-broadcast-skin-v1",
+          "gbm-capture-css",
+          "gbm-flstats-css",
+          "gbm-football-tools-style",
+          "gbm-footer-utility-v14",
+          "gbm-gameday-css",
+          "gbm-gate-v1",
+          "gbm-gazette-startup-v1",
+          "gbm-keep-reading-css",
+          "gbm-latest-page",
+          "gbm-legal-styles",
+          "gbm-light-nav-guard",
+          "gbm-magazine-2026-shell",
+          "gbm-media-hub-v2",
+          "gbm-mobile-account-tight-v1",
+          "gbm-mobile-shell-critical-v2",
+          "gbm-native-blog-design-v4",
+          "gbm-plan-terms-css",
+          "gbm-post-broadcast",
+          "gbm-post-norm",
+          "gbm-post-read-v1",
+          "gbm-post-stable-slots-v1",
+          "gbm-post-template",
+          "gbm-post-vars",
+          "gbm-postgame-hide",
+          "gbm-publishing-seo-css",
+          "gbm-share-contrast-20261017",
+          "gbm-share-css",
+          "gbm-shared-site-design-v6",
+          "gbm-sn-css",
+          "gbm-story-kit-css",
+          "gbm-ui-layer-css",
+          "gbm-viewport-wide-v1",
+          "gbm-week-rich-style",
+          "gbm-writer-show-style"
+        ],
+        "coverImage": null,
+        "coverExpected": null,
+        "assetUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/news-chronology.js"
+        ],
+        "resourceUrls": [
+          "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@312018fa66e644a3f32fe473b6a855d1b114c356/deploy/broadcast-network-20261017/site-shell.css"
+        ],
+        "viewport": {
+          "innerWidth": 390,
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "scrollX": 0,
+          "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+        },
+        "hasHomeStyle": false,
+        "hasShellStyle": true,
+        "paletteLooksWhite": false
+      },
+      "selectorFound": true,
+      "box": {
+        "x": 0,
+        "y": 70,
+        "w": 390,
+        "h": 11992,
+        "bg": "rgb(255, 255, 255)",
+        "font": "roboto-bold, roboto, sans-serif",
+        "kids": [
+          {
+            "cls": "H3vOVf",
+            "x": 19,
+            "y": 247,
+            "w": 352,
+            "h": 101,
+            "font": "Barlow, Arial, sans-serif",
+            "size": "28px"
+          },
+          {
+            "cls": "Vhttk _91pHl IPM-j lxswf",
+            "x": 18,
+            "y": 3797,
+            "w": 354,
+            "h": 47,
+            "font": "Barlow, Arial, sans-serif",
+            "size": "27px"
+          },
+          {
+            "cls": "H3",
+            "x": 0,
+            "y": 9728,
+            "w": 390,
+            "h": 26,
+            "font": "Barlow, Arial, sans-serif",
+            "size": "23px"
+          },
+          {
+            "cls": "gbc-h",
+            "x": 17,
+            "y": 10063,
+            "w": 356,
+            "h": 25,
+            "font": "Barlow, Arial, sans-serif",
+            "size": "21.84px"
+          },
+          {
+            "cls": "H2",
+            "x": 0,
+            "y": 10327,
+            "w": 390,
+            "h": 32,
+            "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+            "size": "27px"
+          },
+          {
+            "cls": "H3",
+            "x": 17,
+            "y": 10655,
+            "w": 356,
+            "h": 26,
+            "font": "Barlow, Arial, sans-serif",
+            "size": "23px"
+          }
+        ],
+        "track": null,
+        "story": {
+          "h1": {
+            "x": 19,
+            "y": 274,
+            "w": 352,
+            "h": 105,
+            "opacity": "1",
+            "vis": "visible",
+            "size": "28px",
+            "text": "The Soothsayer: Texas big unless the UF defense finds an exo"
+          },
+          "share": {
+            "x": 19,
+            "y": 405,
+            "w": 352,
+            "h": 44,
+            "opacity": "1",
+            "vis": "visible",
+            "size": "15px",
+            "text": "Share this story"
+          },
+          "strip": {
+            "x": 19,
+            "y": 471,
+            "w": 352,
+            "h": 66,
+            "opacity": "1",
+            "vis": "visible",
+            "size": "15px",
+            "text": "GatorBait GuideNext: at No. 7 Texas · Sat., Oct. 17 · 12 p.m"
+          },
+          "row": {
+            "scrollLeft": 0,
+            "scrollWidth": 1139,
+            "clientWidth": 352,
+            "dir": "ltr",
+            "justify": "flex-start"
+          },
+          "firstChip": {
+            "x": 19,
+            "y": 489,
+            "w": 305,
+            "h": 44,
+            "opacity": "1",
+            "vis": "visible",
+            "size": "14px",
+            "text": "Next: at No. 7 Texas · Sat., Oct. 17 · 12 p.m. ET"
+          },
+          "lastChip": {
+            "x": 977,
+            "y": 489,
+            "w": 181,
+            "h": 44,
+            "opacity": "1",
+            "vis": "visible",
+            "size": "14px",
+            "text": "The Buddy Martin Show"
+          },
+          "more": {
+            "x": 0,
+            "y": 9704,
+            "w": 390,
+            "h": 563,
+            "opacity": "1",
+            "vis": "visible",
+            "size": "15px",
+            "text": "Keep up with the GatorsRoster & ScheduleThe 2026 season guid"
+          },
+          "links": [
+            null,
+            null
+          ],
+          "scrollX": 0,
+          "capture": {
+            "probe": null,
+            "cards": 1,
+            "slideup": null
+          }
+        },
+        "docScrollWidth": 390,
+        "innerWidth": 390
+      }
+    }
+  ]
+}

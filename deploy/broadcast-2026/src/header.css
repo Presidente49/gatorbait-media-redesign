@@ -11,7 +11,7 @@
 ` .sh-track:hover .sh-run,` .sh-track:focus-within .sh-run{animation-play-state:paused}
 @keyframes gbm-tick{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){` .sh-run{animation:none}}
-` .sh-run a{flex:none;display:block;padding:0 20px;border-right:1px solid #ffffff24;font:600 16px/40px ~;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+` .sh-run a{flex:none;display:block;padding:0 20px;border-right:1px solid #ffffff24;font:700 16px/40px ~;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
 ` .sh-run a:hover{color:#ffb39a}
 ` .sh-run em{font-style:normal;font-weight:800;color:#8fa3ff;margin-right:8px}
 ` .sh-util{flex:none;display:flex;gap:20px;padding:0 28px 0 16px;font:700 13px/40px Barlow,sans-serif;letter-spacing:.08em;text-transform:uppercase}

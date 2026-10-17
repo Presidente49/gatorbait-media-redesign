@@ -4,10 +4,13 @@ F=' target="_blank" rel="noopener" aria-label="Shop GatorBait gear (opens in a n
 M=[["Front Page","/"],["Latest","/gatorbait-media-blogs"],["Magazine","/magazine"],["TV &amp; Podcasts","/the-buddy-martin-show"],["Scores &amp; Schedule",G+"#schedule"],["Roster",G+"#roster"],["Community","/groups"]],
 T=[["GatorBait TV","The Buddy Martin Show, Mon., Wed. and Thurs., 9 p.m. ET","/the-buddy-martin-show"],["GatorBait TV","Florida Gator Lowdown, Tues., 9 p.m. ET","/the-buddy-martin-show"],["Magazine","This week's GatorBait Magazine","/magazine"],["Football","2026 roster and schedule",G+"#schedule"]],
 N=null;
+/* inner pages load no Barlow files today (the homepage loader is S1's); load the faces this shell uses */
+location.pathname.replace(/\/+$/,"")&&!document.getElementById("gbm-bc-fonts")&&document.head.appendChild(Object.assign(document.createElement("style"),{id:"gbm-bc-fonts",textContent:[["barlow",400,"normal"],["barlow",700,"normal"],["barlow-condensed",700,"normal"],["barlow-condensed",800,"normal"],["barlow-condensed",800,"italic"],["barlow-condensed",900,"italic"]].map(function(f){return'@font-face{font-family:"'+(f[0]=="barlow"?"Barlow":"Barlow Condensed")+'";font-weight:'+f[1]+";font-style:"+f[2]+";font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/"+f[0]+"@5.3.0/files/"+f[0]+"-latin-"+f[1]+"-"+f[2]+'.woff2) format("woff2")}'}).join("")}));
 function shop(c,t){return'<a class="'+c+'" href="'+S+'"'+F+">"+t+' <span aria-hidden="true">↗</span></a>'}
 /* phone bar shop button and drawer menu (markup from fdc2127a) */
 function mob(){var e=document.getElementById("gbm-mobile-shell"),t=document.getElementById("gbm-mobile-menu-toggle"),a=document.querySelector("#gbm-mobile-drawer-root .gbm-ms-nav"),o={};
 e&&t&&!e.querySelector(".gbm-ms-shop")&&t.insertAdjacentHTML("beforebegin",shop("gbm-ms-shop",'Shop<span class="gbm-x">&nbsp;Gear</span>'));
+document.querySelectorAll(".gbm-ms-logo,.gbm-ms-head a").forEach(function(l){l.setAttribute("aria-label","GatorBait Media home")});
 if(!a||a.getAttribute("data-gbm-menu"))return;a.setAttribute("data-gbm-menu","5");
 a.querySelectorAll("a").forEach(function(n){o[n.getAttribute("href")]=n;n.style.display="none"});
 M.concat([[0,S],[0,"/pricing-plans"],[0,"/account/my-account"],[0,"/contact"]]).forEach(function(n){var r=o[n[1]];if(n[1]===S)return a.insertAdjacentHTML("beforeend",shop("gbm-ms-shop","Shop GatorBait Gear"));if(!r){if(!n[0])return;r=document.createElement("a");r.setAttribute("data-gbm-route","");r.setAttribute("href",n[1])}n[0]&&(r.innerHTML=n[0]);r.style.display="";a.appendChild(r)})}

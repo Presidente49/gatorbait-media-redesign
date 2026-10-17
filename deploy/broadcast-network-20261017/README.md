@@ -17,3 +17,7 @@ The exact v5 poster at `deploy/magazine-2026/pregame-texas/art/v5/cover.jpg` is 
 Provider inventory at 14:31 UTC contains22 current-week stories, not the saved snapshot's20. All22 sort by first publication newest-first. The dedicated pregame shelf contains10 verified stories and admits new relevant live RSS stories; broader context stays in the main chronology. Existing RSS rows merge by canonical URL over the dated fallback. The same RSS read also retains a sanitized description for new-story classification. The ESPN acquisition, model and refresh/visibility cadence remain unchanged.
 
 Headlines use wider Barlow in sentence case; titles wrap naturally with white space, and desktop scale is modest. Final visual, native and public evidence is separate from this source description.
+
+## All News chronology
+
+The existing 53e15504 renderer used Wix gallery indices and therefore promoted an older pinned post. `news-chronology.js` is the same renderer with first-publication descending sort using existing native warmup dates and validated current-week fallback dates. Existing cache and native pagination remain; no article unpin or new fetch loop. The exact source is externalized from the same embed to remain under the15,000-character limit.

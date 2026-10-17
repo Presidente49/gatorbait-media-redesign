@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-17T05:54:44Z",
+ "updatedAt": "2026-10-17T18:23:01Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -170,7 +170,7 @@
    "opponentRank": 7,
    "opponentRecord": "4-1",
    "home": false,
-   "status": "scheduled",
+   "status": "in-progress",
    "score": null,
    "tv": "ABC",
    "storyUrl": null
@@ -318,5 +318,15 @@
    "overall": "2-4"
   }
  ],
- "live": null
+ "live": {
+  "eventId": "401856724",
+  "clock": "5:28",
+  "period": 3,
+  "score": {
+   "fla": 17,
+   "opp": 17
+  },
+  "possession": "opp",
+  "lastPlay": "(05:34) #43 M.Chiumento punt 44 yards to the FLA25, out of bounds at FLA25"
+ }
 }

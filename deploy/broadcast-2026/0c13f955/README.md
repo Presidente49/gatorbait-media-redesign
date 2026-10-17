@@ -29,6 +29,10 @@ Plan and rules: `docs/design/BROADCAST-ROLLOUT.md` (on `jarvis/broadcast-rollout
 
 The final shows for eight days after the game. The next game hides once it kicks off and returns when the next one is set. A kickoff ESPN hasn't set (04:00Z or 05:00Z) reads "Time TBA" with no countdown. Neutral-site games read "vs." (ESPN `neutralSite`, the new optional `neutral` field in `scoreboard.json`). The ticker re-renders only when its text changes.
 
+## Right rail
+
+The rail runs, top to bottom: Game tape, Best shots (eager-loaded, so they also appear in non-scrolling captures), SEC standings (`scoreboard.json` `standings`, ESPN) and the show tile. On desktop, `balance()` trims standings rows from the bottom, never Florida's, until the rail ends level with the rundown. It drops the table if fewer than four rows fit, and runs again on load, resize and font load. On phones the table shows the top six plus Florida.
+
 ## Graphic leads
 
 When the lead's cover is a typeset graphic, its media id is in `front-page.config.json` `covers[]` (read from Pages) or the file is a PNG (photos in this feed are JPG). The lead then shows whole at 16:9 with no text overlay, and the kicker, headline, deck and byline sit on the dark panel below it. Photo leads keep the overlay. This came from Oct. 17: Buddy's column led with the 24-team bracket graphic, and the overlaid headline read busy on phones.

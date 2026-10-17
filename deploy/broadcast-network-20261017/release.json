@@ -1,0 +1,99 @@
+{
+  "sourceCommit": "312018fa66e644a3f32fe473b6a855d1b114c356",
+  "pullRequest": 324,
+  "status": "public-verified",
+  "objects": [
+    {
+      "id": "c66d5b7f-c474-45b5-af4d-662ae1eaf67c",
+      "beforeRevision": "10",
+      "beforeFingerprint": "a76f00f2",
+      "candidate": "deploy/broadcast-network-20261017/c66d5b7f-release.html",
+      "candidateFingerprint": "ebb0cd3b",
+      "candidateChars": 14523,
+      "afterRevision": "12",
+      "providerFingerprint": "ebb0cd3b",
+      "initialAfterRevision": "11",
+      "initialProviderFingerprint": "f2112134"
+    },
+    {
+      "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+      "beforeRevision": "7",
+      "beforeFingerprint": "a88a29ba",
+      "candidate": "deploy/broadcast-network-20261017/0c13f955-candidate.html",
+      "candidateFingerprint": "becd4806",
+      "candidateChars": 714,
+      "afterRevision": "8",
+      "providerFingerprint": "becd4806"
+    },
+    {
+      "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+      "beforeRevision": "110",
+      "beforeFingerprint": "1f67f870",
+      "candidate": "deploy/broadcast-network-20261017/1dd74333-candidate.html",
+      "candidateFingerprint": "31abecc5",
+      "candidateChars": 2762,
+      "afterRevision": "111",
+      "providerFingerprint": "31abecc5"
+    },
+    {
+      "id": "53e15504-76c9-4551-90fe-4defe7cad84d",
+      "beforeRevision": "11",
+      "beforeFingerprint": "e6a71858",
+      "candidate": "deploy/broadcast-network-20261017/53e15504-candidate.html",
+      "candidateFingerprint": "bb7472dc",
+      "candidateChars": 6715,
+      "afterRevision": "12",
+      "providerFingerprint": "bb7472dc"
+    }
+  ],
+  "appliedAt": "2026-10-17T15:00:59.445Z",
+  "mergedSourceCommit": "7738850a950a233e69be2780ff5a7ad499efae96",
+  "verifiedAt": "2026-10-17T15:18:31.800950+00:00",
+  "publicVerification": {
+    "runId": 39043262685,
+    "targets": [
+      "home",
+      "magazine",
+      "news",
+      "story"
+    ],
+    "widths": [
+      320,
+      390,
+      430,
+      1366
+    ],
+    "captures": 16,
+    "http200": 16,
+    "targetsMounted": 16,
+    "javascriptErrors": 0,
+    "documentHorizontalOverflow": 0,
+    "homepageChronologicalStories": 22,
+    "homepageDirectPregameStories": 10,
+    "selectedCoverLoadedAtAllWidths": true,
+    "independentArtReview": "Actual public home and magazine at390/1366 match latest owner direction. Original intentional QB1 mystery preserved."
+  },
+  "finalVisualVerification": {
+    "runId": 39044085767,
+    "captures": 5,
+    "http200": 5,
+    "javascriptErrors": 0,
+    "documentHorizontalOverflow": 0,
+    "optionalCookiesDeclinedOnlyInIsolatedCaptureBrowser": true,
+    "shareVisibleLabel": "rgb(7, 18, 46)",
+    "shareBackground": "rgb(250, 70, 22)",
+    "visibleLabelContrast": 5.24
+  },
+  "followups": [
+    {
+      "reason": "Actual public Share label was gray on orange. Narrow inline text-color correction followed primary and independent public review.",
+      "id": "c66d5b7f-c474-45b5-af4d-662ae1eaf67c",
+      "beforeRevision": "11",
+      "beforeFingerprint": "f2112134",
+      "afterRevision": "12",
+      "afterFingerprint": "ebb0cd3b",
+      "rollback": "deploy/broadcast-network-20261017/rollback/c66d5b7f-rev11.html",
+      "publicVerificationRunId": 39044085767
+    }
+  ]
+}

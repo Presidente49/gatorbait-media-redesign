@@ -1,0 +1,44 @@
+{
+  "sourcePin": "312018fa66e644a3f32fe473b6a855d1b114c356",
+  "actualSourceTree": "f7983d687c7005052b49acbeba56004ba6e53fd4",
+  "candidateWidths": [
+    320,
+    390,
+    430,
+    1366
+  ],
+  "homepage": {
+    "chronologicalCurrentStories": 22,
+    "directPregameStories": 10,
+    "singleGameBand": true,
+    "realImagesDecoded": 6,
+    "menuEscape": true
+  },
+  "magazine": {
+    "sections": 10,
+    "realImagesDecoded": 19,
+    "exactOwnerCoverSha256": "6fe6309f9d70930149e41458d0dc4659ba3bc1c3bec93e74a8fd1a26fb2c320d"
+  },
+  "allNews": {
+    "lead": "Aberdeen will be in the lineup against Baylor on Sunday",
+    "sort": "firstPublishedDate descending within native returned page",
+    "nativePaginationPreserved": true,
+    "nativePageMembershipPreserved": true
+  },
+  "phaseFixtures": [
+    "pregame",
+    "live",
+    "final"
+  ],
+  "phaseFixtureWidths": [
+    390,
+    1366
+  ],
+  "limits": [
+    "Seeded phase scores are tests, not actual current-game scores.",
+    "Captured native candidate checks precede separate public verification.",
+    "Checkout, login, form submission and external video playback were not exercised.",
+    "All News native page membership remains managed by Wix; its old pin can consume a slot across page boundaries.",
+    "Legacy broad production audit failed on expected-photo hooks and a consent/headline overlap against the previous live site; source checks passed."
+  ]
+}

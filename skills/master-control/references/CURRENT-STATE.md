@@ -1,5 +1,13 @@
 # Master Control Current State
 
+## Current website and magazine — Oct. 17, 2026
+
+Owner-directed design is live: white editorial surfaces, stronger Gator Orange, smaller wider Barlow UI and naturally wrapping titles. The original v5 Who’s QB1 in Austin? poster is intentional mystery art: its eye/identity-obscuring strap must not be repaired into a different concept. Homepage22 current-week stories sort newest-first, with10 pregame stories and fresh relevant RSS additions. All News sorts each returned native page by publication date; native page membership/pagination remain Wix-owned. Existing ESPN pregame/live/final acquisition and refresh behavior is retained.
+
+Source PR324 merged7738850; immutable source312018fa66e644a3f32fe473b6a855d1b114c356. Current embeds: Theme c66d5b7f revision12/ebb0cd3b (includes bounded Share-label contrast follow-up), Home0c13f955 revision8/becd4806, Magazine1dd74333 revision111/31abecc5, AllNews53e15504 revision12/bb7472dc. Always re-read the current provider before mutation. Exact HTML, intermediate rollback, candidate/CDN/provider/public evidence and HTML review are in deploy/broadcast-network-20261017/. Public runs39043262685 (16captures/fourwidths) and39044085767 (fivefinalviews/Sharelabel) returnedHTTP200, mounted targets, zeroJSerrors/documentoverflow; selectedcoverloadedallwidths. The separate legacy broad production audit had baseline expected-photo-hook/consent failures, documented in the release. Native checkout/login/form-submit/video playback were not exercised. No Editor publish, outbound sends, automation switches or business-account changes were made.
+
+Older state below is historical. The Oct.17 active owner direction and exact release record supersede old Swamp Night notices.
+
 ## Current operating scope — Oct. 12, 2026
 
 [Current owner scope and provider evidence](https://github.com/Presidente49/gatorbait-media-redesign/issues/34#issuecomment-6132139430) are recorded in issue #34. Brenden assigned the active Kodak/ChatGPT session the current article-access, email and general-operations reconciliation. This session is the single production writer for that task; bounded workers inspect, draft and verify. This task-scoped takeover does not establish that historical Jarvis, Dot/Doc, Muse, Flaco or department sessions are connected or have accepted work.

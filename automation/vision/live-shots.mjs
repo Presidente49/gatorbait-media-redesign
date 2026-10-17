@@ -63,14 +63,23 @@ writeFileSync(`${OUT}/preflight.json`, JSON.stringify(preflight, null, 1));
 console.log(JSON.stringify({ event: preflight.ok ? 'SWAMP_CDN_PREFLIGHT_OK' : 'SWAMP_CDN_PREFLIGHT_ALERT', ...preflight }));
 if (!preflight.ok) process.exit(1);
 
+const TARGETS = [
+  { name: 'home', path: '/', selector: '#gbm-live' },
+  { name: 'magazine', path: '/magazine', selector: '#gbm-magazine-page' },
+  { name: 'news', path: '/gatorbait-media-blogs', selector: '#gbm-lp' },
+  { name: 'story', path: '/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist', selector: '[data-hook=post-page]' },
+];
 const browser = await chromium.launch();
-const metrics = { url, selector, at: new Date().toISOString(), preflight, shots: [] };
+const metrics = { at: new Date().toISOString(), preflight, targets: TARGETS, shots: [] };
+for (const target of TARGETS) {
+  const url = 'https://www.gatorbaitmedia.com' + target.path + '?swampproof=20261017';
+  const selector = target.selector;
 for (const w of widths) {
   const ctx = await browser.newContext(profile(w));
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e).slice(0, 200)));
-  const m = { width: w, errors };
+  const m = { target: target.name, url, selector, width: w, errors };
   try {
     if (PERF) {
       const cdp = await ctx.newCDPSession(page);
@@ -96,6 +105,10 @@ for (const w of widths) {
     m.http = res && res.status();
     await page.waitForSelector(selector || '#gbm-live', { timeout: 15000 }).catch(() => { m.note = 'requested page root not seen in 15s'; });
     await page.waitForTimeout(3500);
+    if (target.name === 'magazine') {
+      await page.evaluate(() => { const img = document.querySelector('#gbm-magazine-page .pg-cover img'); if (img) img.loading = 'eager'; });
+      await page.waitForFunction(() => { const img = document.querySelector('#gbm-magazine-page .pg-cover img'); return img && img.complete && img.naturalWidth > 0; }, null, { timeout: 10000 }).catch(() => { m.coverWait = 'cover not decoded within 10s'; });
+    }
     if (PERF) {
       await page.waitForTimeout(6500);
       m.perf = await page.evaluate(() => {
@@ -130,6 +143,7 @@ for (const w of widths) {
     // Stable style/palette receipt, using rendered values and actual requested assets.
     m.swampProof = await page.evaluate(() => {
       const root = document.getElementById('gbm-live');
+      const magazine = document.getElementById('gbm-magazine-page');
       const inspect = (selector) => {
         const el = document.querySelector(selector);
         if (!el) return null;
@@ -138,22 +152,27 @@ for (const w of widths) {
       };
       const rootStyle = root && getComputedStyle(root);
       const tokens = rootStyle ? Object.fromEntries(['--nt', '--tx', '--mu', '--pk', '--o'].map((name) => [name, rootStyle.getPropertyValue(name).trim()])) : null;
-      const cover = document.querySelector('.sh-magazine img, img.sh-mcover, .sh-mcover img, #gbm-magazine-page .pg-cover img');
+      const cover = document.querySelector('#gbm-magazine-page .pg-cover img, .sh-magazine img, img.sh-mcover, .sh-mcover img');
       const coverImage = cover ? { src: cover.getAttribute('src'), currentSrc: cover.currentSrc, alt: cover.alt, loaded: cover.complete && cover.naturalWidth > 0, naturalWidth: cover.naturalWidth, naturalHeight: cover.naturalHeight, box: { width: Math.round(cover.getBoundingClientRect().width), height: Math.round(cover.getBoundingClientRect().height) } } : null;
-      const panels = Object.fromEntries(['#gbm-live', '.bc-nx', '.bc-side', '.sh-magazine', '.sh-coverage article', '#gbm-mobile-shell', '#gbm-site-header'].map((selector) => [selector, inspect(selector)]));
+      const panels = Object.fromEntries(['#gbm-live', '.bc-nx', '.bc-side', '.sh-magazine', '.sh-coverage article', '#gbm-magazine-page', '.pg-game', '.pg-lead', '#gbm-lp', '.lp-lead', '.lp-row', '#SITE_PAGES', '[data-hook=post-page] article[data-hook=post]>div>header', '[data-hook=post-page] article[data-hook=post]>div', '#gbm-mobile-shell', '#gbm-site-header'].map((selector) => [selector, inspect(selector)]));
       const styleTagIds = [...document.querySelectorAll('style[id]')].map((el) => el.id).filter((id) => /^gbm-|^gbc-/.test(id)).sort();
       const assetUrls = [...document.querySelectorAll('script[src],link[href]')].map((el) => el.src || el.href).filter((url) => /broadcast-home\.js|magazine-pregame\.js|swamp-night/.test(url));
       const resourceUrls = performance.getEntriesByType('resource').map((entry) => entry.name).filter((url) => /broadcast-home\.js|magazine-pregame\.js|swamp-night.*site-shell\.css/.test(url));
-      return { tokens, panels, styleTagIds, coverImage, assetUrls, resourceUrls, viewport: { requestedWidth: innerWidth, clientWidth: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth, scrollX, meta: document.querySelector('meta[name=viewport]')?.content || null }, hasHomeStyle: Boolean(document.getElementById('gbm-broadcast-home-css')), hasShellStyle: Boolean(document.getElementById('gbm-swamp-night-shell-v1')), paletteLooksSwamp: tokens?.['--nt'] === '#07122e' && Boolean(panels['#gbm-live']?.gradient?.includes('rgb(11, 13, 18)')) };
+      const magStyle = magazine && getComputedStyle(magazine);
+      const magazineTokens = magStyle ? Object.fromEntries(['--pg-night', '--pg-navy', '--pg-orange', '--pg-text', '--pg-mute', '--pg-card'].map((name) => [name, magStyle.getPropertyValue(name).trim()])) : null;
+      const bodyParagraph = [...document.querySelectorAll('[data-hook=post-description] p')].find((el) => el.textContent.trim().length > 90 && el.getBoundingClientRect().width > 0);
+      const storyBody = bodyParagraph ? (() => { const cs = getComputedStyle(bodyParagraph); let readingBackground = null; for (let el = bodyParagraph; el; el = el.parentElement) { const c = getComputedStyle(el); if (c.backgroundColor !== 'rgba(0, 0, 0, 0)') { readingBackground = c.backgroundColor; break; } } return { color: cs.color, background: readingBackground, font: cs.fontFamily, size: cs.fontSize, lineHeight: cs.lineHeight, width: Math.round(bodyParagraph.getBoundingClientRect().width), text: bodyParagraph.textContent.trim().slice(0, 80) }; })() : null;
+      const rootWidths = Object.fromEntries(['#gbm-live', '#gbm-magazine-page', '#gbm-lp', '[data-hook=post-page]'].map((selector) => { const el = document.querySelector(selector); return [selector, el ? { client: el.clientWidth, scroll: el.scrollWidth, box: Math.round(el.getBoundingClientRect().width) } : null]; }));
+      return { tokens, magazineTokens, storyBody, rootWidths, panels, styleTagIds, coverImage, coverExpected: coverImage ? coverImage.src.includes('d3cfa5_2da2f73321374ea9ac8b6a71583cc142') : null, assetUrls, resourceUrls, viewport: { innerWidth, clientWidth: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth, scrollX, meta: document.querySelector('meta[name=viewport]')?.content || null }, hasHomeStyle: Boolean(document.getElementById('gbm-broadcast-home-css')), hasShellStyle: Boolean(document.getElementById('gbm-swamp-night-shell-v1')), paletteLooksSwamp: tokens?.['--nt'] === '#07122e' && Boolean(panels['#gbm-live']?.gradient?.includes('rgb(11, 13, 18)')) };
     });
-    await page.screenshot({ path: `${OUT}/top-${w}.jpg`, type: 'jpeg', quality: 70 });
+    await page.screenshot({ path: `${OUT}/${target.name}-top-${w}.jpg`, type: 'jpeg', quality: 70 });
     if (selector) {
       const found = await page.$(selector);
       m.selectorFound = Boolean(found);
       if (found) {
         await page.evaluate((s) => document.querySelector(s).scrollIntoView({ block: 'start' }), selector);
         await page.evaluate(() => scrollBy(0, -70));
-        await page.waitForTimeout(2200);
+        await page.waitForTimeout(800);
         m.box = await page.evaluate((s) => {
           const el = document.querySelector(s), r = el.getBoundingClientRect();
           const cs = getComputedStyle(el);
@@ -175,8 +194,8 @@ for (const w of widths) {
           return { x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height), bg: cs.backgroundColor, font: cs.fontFamily.slice(0, 60), kids,
             track: track ? { scrollWidth: track.scrollWidth, clientWidth: track.clientWidth, scrollLeft: track.scrollLeft } : null, story, docScrollWidth: document.documentElement.scrollWidth, innerWidth };
         }, selector);
-        await page.screenshot({ path: `${OUT}/view-${w}.jpg`, type: 'jpeg', quality: 70 });
-        await found.screenshot({ path: `${OUT}/element-${w}.jpg`, type: 'jpeg', quality: 75 }).catch((e) => { m.elementShot = String(e).slice(0, 120); });
+        await page.screenshot({ path: `${OUT}/${target.name}-view-${w}.jpg`, type: 'jpeg', quality: 70 });
+        await found.screenshot({ path: `${OUT}/${target.name}-element-${w}.jpg`, type: 'jpeg', quality: 75 }).catch((e) => { m.elementShot = String(e).slice(0, 120); });
       }
     }
   } catch (e) {
@@ -185,6 +204,7 @@ for (const w of widths) {
   metrics.shots.push(m);
   await ctx.close();
 }
+}
 await browser.close();
 writeFileSync(`${OUT}/metrics.json`, JSON.stringify(metrics, null, 1));
-console.log(JSON.stringify({ event: 'SWAMP_BROWSER_RECEIPT', url, preflightOk: preflight.ok, shots: metrics.shots.map((shot) => ({ width: shot.width, http: shot.http, selectorFound: shot.selectorFound, box: shot.box ? { docScrollWidth: shot.box.docScrollWidth, innerWidth: shot.box.innerWidth } : null, swampProof: shot.swampProof, errors: shot.errors, error: shot.error || null })) }));
+console.log(JSON.stringify({ event: 'SWAMP_POSTDEPLOY_RECEIPT', targets: TARGETS.map((target) => target.name), preflightOk: preflight.ok, shots: metrics.shots.map((shot) => ({ target: shot.target, width: shot.width, http: shot.http, selectorFound: shot.selectorFound, box: shot.box ? { docScrollWidth: shot.box.docScrollWidth, innerWidth: shot.box.innerWidth } : null, swampProof: shot.swampProof, errors: shot.errors, error: shot.error || null })) }));

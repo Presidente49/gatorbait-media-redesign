@@ -18,6 +18,17 @@ Plan and rules: `docs/design/BROADCAST-ROLLOUT.md` (on `jarvis/broadcast-rollout
   - Numbered rundown (01–06), a side panel for the two supporting stories, and Broadcast cards for the voices, newsroom, magazine and show modules.
 - **Unchanged:** the feed, the lead rule (newest first), bylines, photos, links, the h1, the skip link, analytics and SEO. The skin reads only data the page already has; `window.__GBM_GAMEDAY__` is read, never written.
 
+## Where the ticker, scoreboard and next-up bar get their data (kept current)
+
+| Item | Source | Refresh while the page is open |
+|---|---|---|
+| Latest headlines | `/blog-feed.xml` (Wix, live), newest seven | every 3 min and when the tab comes back |
+| Next game, last final | `sports-live/scoreboard.json` on GitHub Pages, built from ESPN by `refresh-newsroom-feed.yml` (rotates itself after every final) | every 3 min |
+| Live score, and the final before Pages catches up | ESPN's public SEC scoreboard (`site.api.espn.com`, CORS-open), only from 1 hour before kickoff to 6 hours after | every 30 s in that window |
+| Fallback when a source fails | the page's Up next card and `__GBM_GAMEDAY__` (read only), with the stale-card guard | — |
+
+The final shows for eight days after the game. The next game hides once it kicks off and returns when the next one is set. A kickoff ESPN hasn't set (04:00Z or 05:00Z) reads "Time TBA" with no countdown. Neutral-site games read "vs." (ESPN `neutralSite`, the new optional `neutral` field in `scoreboard.json`). The ticker re-renders only when its text changes.
+
 ## QA
 
 Built against the exact live embeds plus an 18-story feed fixture taken from the Wix Blog API. Renders are in `qa/`. At 320, 390, 430 and 1366 px:

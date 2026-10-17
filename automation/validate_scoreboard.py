@@ -122,11 +122,14 @@ def validate(doc):
 
     last = doc.get('last')
     if last is not None and v.obj(last, 'last', ('eventId', 'opponent', 'opponentRank', 'home', 'date', 'status', 'score',
-                                                  'quarters', 'venue', 'recapUrl', 'galleryUrl')):
+                                                  'quarters', 'venue', 'recapUrl', 'galleryUrl'),
+                                                  optional=('neutral',)):
         v.string(last.get('eventId'), 'last.eventId')
         v.string(last.get('opponent'), 'last.opponent')
         v.rank(last.get('opponentRank'), 'last.opponentRank')
         v.boolean(last.get('home'), 'last.home')
+        if 'neutral' in last:
+            v.boolean(last.get('neutral'), 'last.neutral')
         v.iso(last.get('date'), 'last.date')
         if last.get('status') != 'final':
             v.err('last.status', 'must be "final"')
@@ -143,12 +146,14 @@ def validate(doc):
 
     nxt = doc.get('next')
     if nxt is not None and v.obj(nxt, 'next', ('eventId', 'opponent', 'opponentRank', 'home', 'kickoffIso', 'tv', 'venue', 'previewUrl'),
-                                 optional=('opponentRecord',)):
+                                 optional=('opponentRecord', 'neutral')):
         v.string(nxt.get('eventId'), 'next.eventId')
         v.string(nxt.get('opponent'), 'next.opponent')
         v.rank(nxt.get('opponentRank'), 'next.opponentRank')
         v.opp_record(nxt.get('opponentRecord'), 'next.opponentRecord')
         v.boolean(nxt.get('home'), 'next.home')
+        if 'neutral' in nxt:
+            v.boolean(nxt.get('neutral'), 'next.neutral')
         v.iso(nxt.get('kickoffIso'), 'next.kickoffIso')
         v.string(nxt.get('tv'), 'next.tv', nullable=True)
         v.string(nxt.get('venue'), 'next.venue', nullable=True)

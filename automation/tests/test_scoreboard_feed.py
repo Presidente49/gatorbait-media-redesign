@@ -164,7 +164,8 @@ class OpponentRecordTests(unittest.TestCase):
         d = build(summaries=self.PRE)
         self.assertEqual(d['next']['opponent'], 'Missouri')
         self.assertEqual(d['next']['opponentRecord'], '3-1')
-        self.assertEqual(list(d['next']), ['eventId', 'opponent', 'opponentRank', 'opponentRecord', 'home', 'kickoffIso', 'tv', 'venue', 'previewUrl'])
+        self.assertEqual(list(d['next']), ['eventId', 'opponent', 'opponentRank', 'opponentRecord', 'home', 'neutral', 'kickoffIso', 'tv', 'venue', 'previewUrl'])
+        self.assertIs(d['next']['neutral'], False)  # campus game in the fixture; True only for ESPN neutralSite games
         by = {g['opponent']: g for g in d['schedule']}
         self.assertEqual(by['Missouri']['opponentRecord'], '3-1')          # same string on the season row
         self.assertEqual(by['Ole Miss']['opponentRecord'], '3-1')          # a final: ESPN's record after that game

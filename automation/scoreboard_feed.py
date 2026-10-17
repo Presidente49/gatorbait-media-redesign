@@ -135,6 +135,7 @@ def parse_event(ev):
         'opponent': them['team'].get('location') or them['team'].get('shortDisplayName') or them['team'].get('displayName'),
         'opponentRank': rank_of(them), 'flaRank': rank_of(us),
         'home': us.get('homeAway') == 'home' and not comp.get('neutralSite'),
+        'neutral': bool(comp.get('neutralSite')),
         'status': status, 'score': {'fla': a, 'opp': b} if a is not None and b is not None else None,
         'tv': tv, 'venue': (comp.get('venue') or {}).get('fullName'),
         'flaConf': record_of(us, 'vsconf'),
@@ -290,7 +291,7 @@ def build(schedule, standings, summaries, posts_doc, prev, now):
         elif prev and (prev.get('last') or {}).get('eventId') == g['eventId']:
             q = prev['last'].get('quarters')  # summary read failed: keep what we already had for this game
         out['last'] = {
-            'eventId': g['eventId'], 'opponent': g['opponent'], 'opponentRank': g['opponentRank'], 'home': g['home'],
+            'eventId': g['eventId'], 'opponent': g['opponent'], 'opponentRank': g['opponentRank'], 'home': g['home'], 'neutral': g['neutral'],
             'date': g['date'], 'status': 'final', 'score': g['score'], 'quarters': q, 'venue': g['venue'],
             'recapUrl': find_story(g, posts, 'recap'), 'galleryUrl': find_story(g, posts, 'gallery'),
         }
@@ -306,7 +307,7 @@ def build(schedule, standings, summaries, posts_doc, prev, now):
             opp_rec = prev['next'].get('opponentRecord')
         g['opponentRecord'] = opp_rec if isinstance(opp_rec, str) and OVERALL.match(opp_rec) else None
         out['next'] = {'eventId': g['eventId'], 'opponent': g['opponent'], 'opponentRank': g['opponentRank'], 'opponentRecord': g['opponentRecord'],
-                       'home': g['home'], 'kickoffIso': g['date'], 'tv': g['tv'], 'venue': g['venue'], 'previewUrl': find_story(g, posts, 'preview')}
+                       'home': g['home'], 'neutral': g['neutral'], 'kickoffIso': g['date'], 'tv': g['tv'], 'venue': g['venue'], 'previewUrl': find_story(g, posts, 'preview')}
 
     sched = []
     for g in events:

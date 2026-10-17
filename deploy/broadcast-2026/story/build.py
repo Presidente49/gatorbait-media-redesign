@@ -45,8 +45,13 @@ js = ('<script id="gbm-post-broadcast-v1">(function(d,s){if(d.getElementById("gb
       'function L(){var D=d.querySelector("[data-hook=post-page] [data-hook=post-description]");if(!D)return;'
       'var f=D.querySelector("[data-hook=figure-IMAGE]"),p=[].find.call(D.querySelectorAll("p"),function(x){return x.textContent.trim()});'
       'if(f&&!f.hasAttribute("data-gbm-lead")&&(!p||f.compareDocumentPosition(p)&4))f.setAttribute("data-gbm-lead","")}'
-      'd.addEventListener("DOMContentLoaded",L);addEventListener("load",L);[800,2500,6000].forEach(function(t){setTimeout(L,t)});'
-      'addEventListener("popstate",function(){setTimeout(L,1200)})})(document)</script>')
+      # Wix re-renders the post body after hydration (Lesson 60), so a throttled observer re-tags it for 30 s after
+      # each arm: DOMContentLoaded and every client-side navigation.
+      'var m,q=0,o=0;function W(){if(m)m.disconnect();clearTimeout(o);L();'
+      'm=new MutationObserver(function(){if(!q)q=setTimeout(function(){q=0;L()},150)});'
+      'm.observe(d.getElementById("SITE_CONTAINER")||d.body,{childList:true,subtree:true});o=setTimeout(function(){m.disconnect()},3e4)}'
+      'd.readyState=="loading"?d.addEventListener("DOMContentLoaded",W):W();addEventListener("load",L);'
+      'addEventListener("popstate",function(){setTimeout(W,300)});addEventListener("gbmroutechange",function(){setTimeout(W,300)})})(document)</script>')
 base = (HERE.parent / 'a5452619' / f'rev{BASE_REV}.html').read_text()
 assert 'gbm-post-broadcast' not in base, 'base already carries the skin'
 out = base + '\n' + js

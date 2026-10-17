@@ -86,7 +86,7 @@
    "rgb(255, 255, 255)",
    "italic"
   ],
-  "upnext": false,
+  "upnext": true,
   "errors": []
  },
  {
@@ -258,7 +258,7 @@
    "rgb(255, 255, 255)",
    "italic"
   ],
-  "upnext": true,
+  "upnext": false,
   "errors": []
  },
  {
@@ -284,7 +284,7 @@
    "rgb(255, 255, 255)",
    "italic"
   ],
-  "upnext": true,
+  "upnext": false,
   "errors": []
  },
  {
@@ -310,7 +310,7 @@
    "rgb(255, 255, 255)",
    "italic"
   ],
-  "upnext": false,
+  "upnext": true,
   "errors": []
  },
  {
@@ -366,7 +366,7 @@
    "rgb(255, 255, 255)",
    "italic"
   ],
-  "upnext": true,
+  "upnext": false,
   "errors": []
  },
  {

@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Aberdeen will be in the lineup against Baylor on Sunday",
+      "excerpt": "Franz Beard: Denzel Aberdeen starts Sunday when preseason No. 1 Florida opens with a Baylor exhibition in Jacksonville, and his fifth-year case should hold up. Plus SEC coaches on the NCAA and 11 international recruits to watch.",
+      "url": "https://www.gatorbaitmedia.com/post/aberdeen-will-be-in-the-lineup-against-baylor-on-sunday",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-17T10:30:02Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_290bf3f6c66e455e9386bfc3136bbeb1~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Aberdeen will be in the lineup against Baylor on Sunday"
+      }
+    },
+    {
       "title": "Is the SEC undergoing a drain of excellence?",
       "excerpt": "Parody or parity? Buddy Martin on a 24-team playoff and an SEC that hasn’t lost excellence so much as its monopoly on it. Me, I worry that the scavengers have come for what’s left of college football.",
       "url": "https://www.gatorbaitmedia.com/post/is-the-sec-undergoing-a-drain-of-excellence",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Members: Read the Postgame Magazine"
-      }
-    },
-    {
-      "title": "After a second sobering loss, can Florida's season still be salvaged?",
-      "excerpt": "Franz Beard on South Carolina 38, Florida 19: a lost line of scrimmage, a quarterback question for Austin and a defense that keeps throwing things at the wall. Can the season still be salvaged?",
-      "url": "https://www.gatorbaitmedia.com/post/after-a-second-sobering-loss-can-florida-s-season-still-be-salvaged",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-11T10:34:55Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_6c0bd115c2c849bca004f49afa7ae417~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for After a second sobering loss, can Florida's season still be salvaged?"
       }
     }
   ]

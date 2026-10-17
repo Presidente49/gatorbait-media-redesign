@@ -1,0 +1,58 @@
+{
+  "results": [
+    {
+      "id": "c66d5b7f-c474-45b5-af4d-662ae1eaf67c",
+      "revision": "10",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "a76f00f2",
+      "htmlLength": 14309,
+      "expectedFingerprint": "a76f00f2"
+    },
+    {
+      "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+      "revision": "7",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "a88a29ba",
+      "htmlLength": 714,
+      "expectedFingerprint": "a88a29ba"
+    },
+    {
+      "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+      "revision": "110",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "1f67f870",
+      "htmlLength": 2762,
+      "expectedFingerprint": "1f67f870"
+    },
+    {
+      "id": "602fb362-3917-4e42-9128-57af3a504ef3",
+      "revision": "18",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "b8dfd186",
+      "htmlLength": 14198,
+      "expectedFingerprint": "b8dfd186"
+    },
+    {
+      "id": "c4b41f6a-f584-4f72-a8dd-11b3cd645f88",
+      "revision": "3",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "c755912e",
+      "htmlLength": 13428,
+      "expectedFingerprint": "c755912e"
+    },
+    {
+      "id": "a5452619-cb57-4927-9771-3a63f7cb4212",
+      "revision": "7",
+      "enabled": true,
+      "category": "ESSENTIAL",
+      "fingerprint": "ce5fe4b2",
+      "htmlLength": 13639,
+      "expectedFingerprint": "ce5fe4b2"
+    }
+  ]
+}

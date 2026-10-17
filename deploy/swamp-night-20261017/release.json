@@ -1,0 +1,92 @@
+{
+  "sourceCommit": "10bf36420faa2f3d5a631ce8c7a47518b5183c10",
+  "pullRequest": 322,
+  "status": "public-verified",
+  "objects": [
+    {
+      "id": "c66d5b7f-c474-45b5-af4d-662ae1eaf67c",
+      "beforeRevision": "9",
+      "beforeFingerprint": "1923b228",
+      "candidate": "deploy/swamp-night-20261017/c66d5b7f-release.html",
+      "candidateFingerprint": "a76f00f2",
+      "candidateChars": 14309,
+      "afterRevision": "10",
+      "providerFingerprint": "a76f00f2"
+    },
+    {
+      "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+      "beforeRevision": "6",
+      "beforeFingerprint": "9496e4c4",
+      "candidate": "deploy/swamp-night-20261017/0c13f955-release.html",
+      "candidateFingerprint": "a88a29ba",
+      "candidateChars": 714,
+      "afterRevision": "7",
+      "providerFingerprint": "a88a29ba"
+    },
+    {
+      "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+      "beforeRevision": "109",
+      "beforeFingerprint": "30b17fba",
+      "candidate": "deploy/swamp-night-20261017/1dd74333-release.html",
+      "candidateFingerprint": "1f67f870",
+      "candidateChars": 2762,
+      "afterRevision": "110",
+      "providerFingerprint": "1f67f870"
+    },
+    {
+      "id": "602fb362-3917-4e42-9128-57af3a504ef3",
+      "beforeRevision": "17",
+      "beforeFingerprint": "c8c8d87f",
+      "candidate": "deploy/swamp-night-20261017/602fb362-release.html",
+      "candidateFingerprint": "b8dfd186",
+      "candidateChars": 14198,
+      "afterRevision": "18",
+      "providerFingerprint": "b8dfd186"
+    },
+    {
+      "id": "c4b41f6a-f584-4f72-a8dd-11b3cd645f88",
+      "beforeRevision": "2",
+      "beforeFingerprint": "7a3506d0",
+      "candidate": "deploy/swamp-night-20261017/c4b41f6a-release.html",
+      "candidateFingerprint": "c755912e",
+      "candidateChars": 13428,
+      "afterRevision": "3",
+      "providerFingerprint": "c755912e"
+    },
+    {
+      "id": "a5452619-cb57-4927-9771-3a63f7cb4212",
+      "beforeRevision": "6",
+      "beforeFingerprint": "8adf6ab2",
+      "candidate": "deploy/swamp-night-20261017/a5452619-release.html",
+      "candidateFingerprint": "ce5fe4b2",
+      "candidateChars": 13639,
+      "afterRevision": "7",
+      "providerFingerprint": "ce5fe4b2"
+    }
+  ],
+  "appliedAt": "2026-10-17T13:51:57Z",
+  "mergedSourceCommit": "4797f81159eaef746a3b82a1e70f6a8301a0b782",
+  "verifiedAt": "2026-10-17T13:56:12Z",
+  "publicVerification": {
+    "runId": 39038356467,
+    "targets": [
+      "home",
+      "magazine",
+      "news",
+      "story"
+    ],
+    "widths": [
+      320,
+      390,
+      430,
+      1366
+    ],
+    "captures": 16,
+    "http200": 16,
+    "selectorFound": 16,
+    "javascriptErrors": 0,
+    "horizontalOverflow": 0,
+    "newCoverLoaded": true,
+    "allSourcePinsMatched": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "runId": 39038104271,
+  "sourceCommit": "10bf36420faa2f3d5a631ce8c7a47518b5183c10",
+  "allHttp200": true,
+  "allSha256Exact": true,
+  "files": [
+    {
+      "path": "sports-live/broadcast-home.js",
+      "bytes": 52883,
+      "sha256": "bc3991d2956d72dc2fdb423d75a7027d30a4ff57925a46ae1d5eb73098be0bbc"
+    },
+    {
+      "path": "sports-live/magazine-pregame.js",
+      "bytes": 183123,
+      "sha256": "9fc792c90f103b41ced2e17692d094855099d813a935bc77432fc19023b267d5"
+    },
+    {
+      "path": "deploy/swamp-night-20261017/site-shell.css",
+      "bytes": 35721,
+      "sha256": "cb6baf022e33b0de0a2cf832266d175735b0c1ee9251f5e7d2beb31de4575588"
+    }
+  ]
+}

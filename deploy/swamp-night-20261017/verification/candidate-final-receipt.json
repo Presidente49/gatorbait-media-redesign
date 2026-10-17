@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-10-17T13:44:30.107341+00:00",
+  "role": "independent candidate QA; no live writes",
+  "widths": [
+    320,
+    390,
+    430,
+    1366
+  ],
+  "surfaces": [
+    "home",
+    "magazine",
+    "about",
+    "tv",
+    "contact",
+    "news",
+    "native story"
+  ],
+  "results": [
+    "All seven surfaces rendered at all four widths using saved production documents with exact candidate swaps; true phone-UA HTML used for native mobile layout.",
+    "Actual Barlow and Barlow Condensed fonts loaded from cached Google font files.",
+    "Final homepage min-content overflow repair independently rechecked at320:document width320; source lane also reran4 widths green.",
+    "Magazine final cover visually inspected standalone and integrated; final pg-at contrast fix independently rerun390 green.",
+    "About text Range rectangles at four widths fit panel and viewport.",
+    "Final article390/1366 showed no horizontal scroll, clipped text, applied blue panels or solid-panel contrast failures; lower signup/account colors independently probed with representative DOM when optional module did not mount.",
+    "Homepage and all four magazine bundle runtime suffixes match original f6479b1 byte-for-byte. Magazine issue/card only cover image ID+alt changed."
+  ],
+  "limitations": [
+    "Gradient/image-backed text requires visual inspection; automated contrast checks do not certify every gradient pixel.",
+    "Container intermittently cannot load external Wix lodash worker; original runtimes unchanged.",
+    "TV playback unverified because external video iframe displayed a browser resource error; visual shell checked.",
+    "This is candidate verification. Production revision, CDN pin and public render must be checked by controller after deployment."
+  ],
+  "sha256": {
+    "sports-live/broadcast-home.js": "bc3991d2956d72dc2fdb423d75a7027d30a4ff57925a46ae1d5eb73098be0bbc",
+    "sports-live/magazine-pregame.js": "9fc792c90f103b41ced2e17692d094855099d813a935bc77432fc19023b267d5",
+    "deploy/swamp-night-20261017/site-shell.css": "cb6baf022e33b0de0a2cf832266d175735b0c1ee9251f5e7d2beb31de4575588",
+    "deploy/broadcast-2026/602fb362/rev17-candidate.html": "70240e083edb2cc707b754200be2d3b92d5b9bce9902e4a151050239f6cf1961",
+    "deploy/broadcast-2026/c4b41f6a/proposed.html": "7b518ca63afc731ef737393a0cacbc9321da5d3b1700dcc2d195fd292936e6ef",
+    "deploy/broadcast-2026/story/a5452619-broadcast.html": "6e23e103eb9683ab00610f0f23bbb361371776831ed3f6a27559377495d9e1be",
+    "deploy/swamp-night-20261017/cover/cover.jpg": "a67c72e7785cf17024f5f9adadf9b04b54fe0eaa71df1d4dcf01de737b43c7c4"
+  }
+}

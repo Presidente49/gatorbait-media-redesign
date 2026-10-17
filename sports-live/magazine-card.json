@@ -1,33 +1,44 @@
 {
-  "sourceRelease": "current-postgame",
+  "sourceRelease": "current-pregame",
   "issue": {
-    "number": "Postgame Edition",
-    "date": "Sunday, October 11, 2026",
-    "week": "Week 6 · South Carolina at Florida",
+    "number": "Game Day Edition",
+    "date": "Saturday, October 17, 2026",
+    "week": "Week 8 · Florida at Texas",
     "home": "GatorBait Media",
-    "pageTitle": "GatorBait Magazine | Postgame: South Carolina 38, Florida 19"
+    "pageTitle": "GatorBait Magazine | Game Day: Florida at Texas"
   },
   "cover": {
-    "kicker": "Postgame Edition · Week 6",
-    "headline": "Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?",
-    "dek": "South Carolina 38, Florida 19. Buddy Martin's cover column, Franz Beard, Chris Spears' sideline column and best shots, and a look ahead to Texas.",
+    "kicker": "Game Day Edition · Week 8",
+    "headline": "Who's QB1 in Austin?",
+    "dek": "Philo is hurt. Jones hasn't started a game since Mandarin High. Buddy Martin calls in Ted Lasso to explain the quarterback question, and why calm is not surrender.",
     "byline": "Buddy Martin",
     "cta": "Open this issue",
     "url": "/magazine",
     "image": {
-      "id": "16b519_56d755f7140a472d903585d4fb98710a~mv2",
+      "id": "d3cfa5_67659843d29e4a5d8daf63dbbca7b563",
       "ext": "jpg",
-      "width": 3000,
-      "height": 2000,
-      "alt": "Florida coach Jon Sumrall glares toward the field before the South Carolina game at Ben Hill Griffin Stadium on Oct. 10.",
+      "width": 2204,
+      "height": 2854,
+      "alt": "GatorBait Magazine Friday Pregame cover, Oct. 16, 2026, in the broadcast set style: chrome masthead, orange slab reading Florida at No. 7 Texas, Chris Spears' photo of Tramell Jones Jr. in the shotgun on the set's screen, and the headline Who's QB1 in Austin?",
       "credit": "Photo by Chris Spears, GatorBait Media"
     },
-    "linesLabel": "Cover column",
+    "linesLabel": "Cover story",
     "lines": [
-      "Buddy Martin: Can Sumrall Swim in the Deep End of This Cesspool?"
+      "Buddy Martin: Who's QB1 in Austin?"
     ]
   },
   "previous": [
+    {
+      "caption": "Postgame Edition · Week 6 · South Carolina 38, Florida 19",
+      "image": {
+        "id": "16b519_56d755f7140a472d903585d4fb98710a~mv2",
+        "ext": "jpg",
+        "width": 3000,
+        "height": 2000,
+        "alt": "Florida coach Jon Sumrall glares toward the field before the South Carolina game at Ben Hill Griffin Stadium on Oct. 10.",
+        "credit": "Photo by Chris Spears, GatorBait Media"
+      }
+    },
     {
       "caption": "Friday Pregame Edition · Week 6 · South Carolina at Florida",
       "image": {

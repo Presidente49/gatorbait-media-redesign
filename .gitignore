@@ -11,3 +11,5 @@ deploy/dept-ideas/research/espn/
 # wrangler local state from department tests
 deploy/dept-ideas/**/.wrangler/
 deploy/dept-ideas/**/node_modules/
+# Pick 'Em submission exports and scored output contain entrant emails; never commit them
+deploy/pickem/private/

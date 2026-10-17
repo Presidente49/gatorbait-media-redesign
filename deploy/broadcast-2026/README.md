@@ -24,3 +24,17 @@ QA at 320, 390, 430 (iPhone UA) and 1366 on All News, the Football hub, Buddy's 
 ## Live write and rollback
 
 PATCH each embed in place at its current revision with the djb2 check, `embedData.category` ESSENTIAL re-sent, no site publish. Rollback for each embed is one PATCH with `<id>/rev<N>.html` verbatim.
+
+## Depth pass (Oct. 17, after Brenden: "too much dead spaces", "needs depth like the thumbnail had")
+
+Live after the first pass: `602fb362` rev 16 (`a9e769bc`, written by Jarvis), `c4b41f6a` rev 2 (`7a3506d0`). Both saved as `rev16.html` / `rev2.html`.
+
+Candidate `602fb362/rev17-candidate.html` (rev 16 + `depth.css` + a brighter field) changes only `602fb362`. Gaps closed, measured at 1366 on All News:
+
+- Lead vs Just in: the lead ended 215 px above the rail. The rail rows are now compact (104 px thumbs, one-line bylines), so the rail drops from 687 to 489 px. The lead is a lifted panel: the photo at full 16:9, a "Latest" bug and the headline over the photo's darkened bottom, then the byline and a "Read the story" button. Both columns now end together on All News, the Football hub, Buddy's Blog and page 2. The only space below the byline is the button itself.
+- Flat blocks become layered panels (deep-to-navy gradient, `#2a4aa8` edge, `0 10px 30px #00000073` shadow): the lead, the Just in rail, every story card, the archive search and the section nav. Cards in a row now match heights.
+- Glow rails (`0 0 14px #ff6a2bbf`) under the section nav, on the Just in bar and on the pager button.
+- Slashed edges: the lead keeps its orange slash; card thumbnails get a 14 px corner cut.
+- The field: a top light bloom and two diagonal light streaks.
+
+QA (`qa.mjs <path> <out> depth`) on the same four routes at 320, 390, 430 and 1366: no horizontal scroll, 0 contrast failures, 0 tap targets under 44 px, Barlow families only, link counts unchanged. Renders: `qa/depth-*.jpg`.

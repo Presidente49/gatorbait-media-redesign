@@ -1,12 +1,14 @@
 // Broadcast S2 candidate QA: load the live page, swap the live embed HTML for proposed.html in the served
 // document (same as a PATCH would), then check overflow, fonts, contrast, tap targets and links per width.
-// node deploy/broadcast-2026/qa.mjs <path> <outdir> [live]   ("live" skips the swap, for a baseline)
+// node deploy/broadcast-2026/qa.mjs <path> <outdir> [live|depth]
 import fs from 'fs';
 import { chromium, devices } from '/opt/node-tools/node_modules/playwright/index.mjs';
 const D = new URL('.', import.meta.url).pathname;
 const [, , path = '/gatorbait-media-blogs', outDir = '/tmp/claude-0/s2/qa', mode = ''] = process.argv;
 fs.mkdirSync(outDir, { recursive: true });
-const swaps = mode === 'live' ? [] : [['602fb362', 15], ['c4b41f6a', 1]].map(([id, rev]) => [fs.readFileSync(`${D}${id}/rev${rev}.html`, 'utf8'), fs.readFileSync(`${D}${id}/proposed.html`, 'utf8')]);
+// modes: live (no swap), depth (602fb362 rev16 -> rev17-candidate), default (first S2 pass: rev15/rev1 -> proposed)
+const pairs = mode === 'live' ? [] : mode === 'depth' ? [['602fb362/rev16.html', '602fb362/rev17-candidate.html']] : [['602fb362/rev15.html', '602fb362/proposed.html'], ['c4b41f6a/rev1.html', 'c4b41f6a/proposed.html']];
+const swaps = pairs.map(([a, z]) => [fs.readFileSync(D + a, 'utf8'), fs.readFileSync(D + z, 'utf8')]);
 const ctxFor = w => w < 768
   ? { userAgent: devices['iPhone 13'].userAgent, viewport: { width: w, height: w < 360 ? 740 : w < 410 ? 844 : 932 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }
   : { userAgent: devices['Desktop Chrome'].userAgent, viewport: { width: w, height: 900 }, deviceScaleFactor: 1 };

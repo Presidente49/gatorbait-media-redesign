@@ -1,14 +1,14 @@
-.gbm-football-tools{position:relative;box-sizing:border-box;margin:0 0 26px;padding:22px 20px 20px;color:#e8edff;font-family:Barlow,sans-serif;background:linear-gradient(115deg,#0000 0 66%,#ffffff0a 66% 67%,#0000 67%),linear-gradient(180deg,#0021a5,#0a1a6b 60%,#061247);box-shadow:0 10px 30px #00000059}
-.gbm-football-tools:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#ff7a3d,#fa4616 60%,#fa461600);box-shadow:0 0 14px #ff6a2bbf}
+.gbm-football-tools{position:relative;box-sizing:border-box;margin:0 0 26px;padding:22px 20px 20px;color:#f3f5fa;font-family:Barlow,sans-serif;background:radial-gradient(ellipse at 95% 110%,#fa461614,transparent 65%),linear-gradient(180deg,#07122e,#0b0d12);box-shadow:0 10px 30px #00000059}
+.gbm-football-tools:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:#ffffff1a;box-shadow:none}
 .gbm-football-tools *{box-sizing:border-box}
-.gbm-football-tools small{display:inline-block;padding:6px 14px 6px 10px;background:#fa4616;color:#08132f;font:800 13px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)}
-.gbm-football-tools h2,.mz .mz-ed .gbm-football-tools h2{color:#fff!important;font:italic 800 34px/.92 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:-.01em!important;text-transform:uppercase;margin:12px 0 8px!important}
-.gbm-football-tools p{color:#c3cdff!important;font:15px/1.45 Barlow,sans-serif!important;margin:0 0 16px!important}
+.gbm-football-tools small{display:inline-block;padding:6px 14px 6px 10px;background:#fa4616;color:#0b0d12;font:800 13px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;clip-path:none}
+.gbm-football-tools h2,.mz .mz-ed .gbm-football-tools h2{color:#fff!important;font:normal 800 34px/.92 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:-.01em!important;text-transform:uppercase;margin:12px 0 8px!important}
+.gbm-football-tools p{color:#c9d2e3!important;font:15px/1.45 Barlow,sans-serif!important;margin:0 0 16px!important}
 .gbm-football-tools nav{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.gbm-football-tools a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:10px 16px;background:#ffffff14;color:#fff!important;text-decoration:none!important;font:700 18px/1.1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;box-shadow:inset 0 0 0 1px #2a4aa8;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
-.gbm-football-tools a span{color:#ff8a57}
+.gbm-football-tools a{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:48px;padding:10px 16px;background:#ffffff14;color:#fff!important;text-decoration:none!important;font:700 18px/1.1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;box-shadow:inset 0 0 0 1px #ffffff1a;clip-path:none}
+.gbm-football-tools a span{color:#ffb093}
 .gbm-football-tools a:focus-visible{outline:3px solid #f2b632;outline-offset:3px}
-.gbm-football-tools a:hover{background:#fa4616;color:#08132f!important}
+.gbm-football-tools a:hover{background:#fa4616;color:#0b0d12!important}
 .gbm-football-tools a:hover span{color:#08132f}
 .mz-ed>.gbm-football-tools{margin-top:26px;margin-bottom:0}
 .gbm-football-guide [data-hook="table-plugin-cell"]>div:last-child{padding:0!important}
@@ -23,3 +23,9 @@
 .gbm-football-guide [data-hook="table-plugin-cell"]{padding:12px!important;vertical-align:top}
 html.gbm-football-guide #SITE_CONTAINER [data-hook="table-component"] [data-hook="table-plugin-cell"] p{padding:0!important;margin:0!important;font-size:16px!important;line-height:1.4!important;overflow-wrap:anywhere}
 @media(max-width:480px){.gbm-football-tools{padding:20px 16px 17px}.gbm-football-tools h2,.mz .mz-ed .gbm-football-tools h2{font-size:28px!important}}
+.gbm-football-tools{border:1px solid #ffffff1a;border-radius:12px}
+.gbm-football-tools small{background:#ffffff0f;color:#d6deec;border:1px solid #ffffff1a;border-radius:6px}
+.gbm-football-tools a{background:#ffffff0f;border-radius:8px}
+.gbm-football-tools a span{color:#d6deec}
+.gbm-football-tools a:hover{background:#ffffff1f;color:#fff!important}
+.gbm-football-tools a:hover span{color:#fff}

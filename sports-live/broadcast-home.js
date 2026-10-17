@@ -169,6 +169,66 @@ var C="html:has(@) body{background:#061247!important}"+
 "@ .sh-wire-item{grid-template-columns:52px minmax(0,1fr);gap:12px;padding:12px 0!important}@ .sh-wire-item:before{font-size:42px}@ .sh-wire-item h3{font-size:21px!important;line-height:1.02!important}"+
 "@ .sh-section-title{font-size:22px!important}@ .sh-support h2,@ .sh-coverage h2{font-size:21px!important}@ .sh-voices h2{font-size:28px!important}@ .sh-voices h3{font-size:22px!important}"+
 "@ .sh-watch.bc-tv{padding-left:90px!important}}";
+/* Swamp Night palette correction, Oct. 17: restore the owner's latest direction
+ * (#34 comment 6230312104). Keep the existing layout, stories and live game runtime.
+ * The night field and glass replace Broadcast's royal-blue slabs and slash chrome. */
+C += `
+html:has(@) body{background:#0b0d12!important}
+@{--nt:#07122e;--tx:#e9ebf1;--mu:#a9b4cc;--pk:#ffb39a;background:radial-gradient(ellipse 850px 500px at 0 100%,rgba(250,70,22,.15),transparent 65%),linear-gradient(180deg,#07122e 0,#0b0d12 900px)!important;color:var(--tx)!important}
+@ .bc-tk{background:rgba(7,18,46,.75);border-color:rgba(255,255,255,.1)}
+@ .bc-bug{background:rgba(255,255,255,.06);color:#fff;clip-path:none}
+@ .sh-header{background:rgba(7,18,46,.45);border-color:rgba(255,255,255,.1)}
+@ .bc-wm{font-style:normal}@ .bc-wm b{color:#fff}
+@ .sh-header nav [aria-current]{color:#fff!important;box-shadow:inset 0 -2px 0 var(--o)}
+@ .bc-hero h1{font-style:normal!important;line-height:1.02!important;text-shadow:0 6px 28px rgba(0,0,0,.6)}
+@ .bc-hero .sh-lead{clip-path:none!important;border-radius:12px}
+@ .bc-hero .sh-lead:after{background:linear-gradient(0deg,rgba(7,18,46,.96),rgba(7,18,46,.55) 42%,rgba(7,18,46,.08) 75%)}
+@ .bc-hero .sh-kicker{background:rgba(7,18,46,.7);color:#e9ebf1!important;clip-path:none;border:1px solid rgba(255,255,255,.14);border-radius:999px}
+@ .bc-slash{display:none}
+@ .bc-sc,@ .bc-nx,@ .bc-side,@ .sh-voices,@ .sh-watch,@ .sh-magazine,@ .sh-coverage article{
+background:rgba(255,255,255,.06)!important;color:var(--tx)!important;border:1px solid rgba(255,255,255,.1)!important;border-radius:14px;box-shadow:0 16px 36px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06)!important;backdrop-filter:blur(16px)}
+/* Let narrow story-card tracks shrink; long staff bylines wrap inside their own card. */
+@ .sh-lower>div{min-width:0}
+@ .sh-coverage{grid-template-columns:repeat(2,minmax(0,1fr))}
+@ .sh-coverage article>a{min-width:0;max-width:100%}
+@ .sh-coverage .sh-meta{overflow-wrap:anywhere}
+@ .sh-magazine:not(:has(.sh-mcover)){background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.1)!important}
+@ .bc-side:before,@ .sh-voices:after{display:none}
+@ .bc-tm,@ .bc-tm.bc-w{clip-path:none;border-radius:8px}
+@ .bc-tm.bc-w:before{background:rgba(255,255,255,.22)}
+@ .bc-ab{background:rgba(255,255,255,.08);color:#fff;clip-path:none;border-radius:6px}
+@ .bc-pt{color:#fff!important}@ .bc-tm:not(.bc-w) .bc-pt{color:#a9b4cc!important}
+@ .bc-lbl{background:none;color:#ffb39a}@ .bc-lbl i{border-radius:50%;transform:none}
+@ .bc-tag{background:none;color:#a9b4cc;clip-path:none;transform:none}
+@ .bc-mu .bc-t,@ .bc-mu .bc-t small,@ .bc-when b{color:#fff}
+@ .bc-mu .bc-at,@ .bc-when{color:#a9b4cc}
+@ .bc-nx .bc-lk,@ .bc-go a{border-color:rgba(255,255,255,.3);color:#fff;border-radius:6px}
+@ .bc-cd{background:rgba(7,18,46,.48);clip-path:none;border-radius:0 14px 14px 0}
+@ .bc-cd b{background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff}
+@ .sh-join,@ .bc-hero .sh-read,@ .bc-go a.bc-o,@ #sh-freshness a{clip-path:none;transform:none;border-radius:6px;background:#fa4616!important;color:#08132f!important;box-shadow:0 6px 20px rgba(250,70,22,.16)}
+@ .sh-join>span{transform:none}
+@ .sh-section-title:after,@ .bc-h:after{height:1px;background:rgba(255,255,255,.16);box-shadow:none}
+@ .sh-voices h2{font-style:normal!important}
+@ .sh-watch.bc-tv{background:rgba(255,255,255,.06)!important}
+@ .sh-watch.bc-tv:before{border-radius:50%;box-shadow:0 0 20px rgba(250,70,22,.18)}
+@ .bc-stat i{background:linear-gradient(90deg,var(--o) 0 54px,rgba(255,255,255,.12) 54px);box-shadow:none}
+@ .bc-shot,@ .sh-support img,@ .sh-coverage img{clip-path:none;border-radius:10px}
+@ .bc-shot{background:#07122e}@ .bc-shot span{background:linear-gradient(transparent,rgba(7,18,46,.96))}
+@ .bc-tbl li.bc-fl{background:rgba(255,255,255,.08);box-shadow:inset 3px 0 0 rgba(255,255,255,.35)}
+@ .bc-graphic .sh-lead{background:rgba(7,18,46,.55)!important}
+@ .bc-graphic .sh-lead figure{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);border-radius:10px;box-shadow:0 16px 36px rgba(0,0,0,.28)}
+@ .bc-graphic .sh-lead img{background:#07122e}
+@media(max-width:820px){
+@ .bc-hero .sh-lead{clip-path:none!important}
+@ .bc-sc{background:rgba(7,18,46,.94)!important}
+@ .bc-sc .bc-ab{color:#fff;background:none}
+@ .bc-sc .bc-go a{color:#fff;border-color:rgba(255,255,255,.3)}
+@ .bc-sc .bc-go a.bc-o{color:#08132f}
+@ .bc-nx{background:rgba(255,255,255,.06)!important}
+@ .bc-tag{color:#a9b4cc;transform:none}
+@ .bc-cd{background:none;border-radius:0}
+}
+`;
 function css(){if(document.getElementById('gbm-broadcast-home-css'))return;var s=document.createElement('style');s.id='gbm-broadcast-home-css';s.textContent=C.replace(/@ /g,R+' ').replace(/@\{/g,R+'{').replace(/@\)/g,R+')');(document.head||document.documentElement).appendChild(s);}
 css();document.documentElement.classList.remove('gbm-bc-wait');
 if(!document.getElementById('gbm-bc-home-fonts')){var ff=document.createElement('style');ff.id='gbm-bc-home-fonts';ff.textContent=[['barlow',400,'normal'],['barlow',500,'normal'],['barlow',600,'normal'],['barlow',700,'normal'],['barlow',800,'normal'],['barlow-condensed',600,'normal'],['barlow-condensed',700,'normal'],['barlow-condensed',800,'normal'],['barlow-condensed',900,'normal'],['barlow-condensed',800,'italic'],['barlow-condensed',900,'italic']].map(function(f){return'@font-face{font-family:"'+(f[0]=='barlow'?'Barlow':'Barlow Condensed')+'";font-weight:'+f[1]+';font-style:'+f[2]+';font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/'+f[0]+'@5.3.0/files/'+f[0]+'-latin-'+f[1]+'-'+f[2]+'.woff2) format("woff2")}';}).join('');document.head.appendChild(ff);}

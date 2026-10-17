@@ -1,0 +1,12 @@
+/* Swamp Night account and writer dialogs. Existing actions and native flows are untouched. */
+.gbm-modal{background:rgba(3,8,20,.78)!important}
+.gbm-modal-card{background:linear-gradient(180deg,#07122e,#0b0d12)!important;color:#f3f5fa!important;border:1px solid #ffffff1a!important;border-radius:14px;box-shadow:0 24px 80px #0007!important}
+.gbm-modal-card h2{color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important}
+.gbm-modal-card p{color:#c9d2e3!important}
+.gbm-modal-eyebrow{background:#ffffff0f!important;color:#d6deec!important;border:1px solid #ffffff1a;border-radius:6px;clip-path:none!important;font-style:normal!important}
+.gbm-modal-close{background:#ffffff0f!important;color:#fff!important;border:1px solid #ffffff59!important}
+.gbm-modal-btn{background:#fa4616!important;color:#0b0d12!important;border:1px solid #fa4616!important;border-radius:8px;clip-path:none!important}
+.gbm-modal-btn.alt{background:#ffffff0f!important;color:#f3f5fa!important;border-color:#ffffff1a!important}
+.gbm-modal-btn:hover,.gbm-modal-btn:focus-visible{background:#ff683e!important;color:#0b0d12!important}
+.gbm-modal-btn.alt:hover{background:#ffffff1f!important;color:#fff!important}
+.gbm-modal-card p.gbm-modal-note{color:#aeb9cd!important}

@@ -1,0 +1,35 @@
+name: ESPN box score (one-off, read-only)
+on:
+  push:
+    branches:
+      - 'probe/espn-20261017'
+permissions:
+  contents: read
+jobs:
+  box:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Read the ESPN summary for Florida at Texas
+        run: |
+          cat > box.js <<'JS'
+          (async () => {
+            const u = 'https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856724';
+            const r = await fetch(u);
+            const j = await r.json();
+            const c = (j.header && j.header.competitions && j.header.competitions[0]) || {};
+            const st = c.status || {};
+            console.log('BOX_AT', new Date().toISOString(), 'http', r.status);
+            console.log('STATUS', JSON.stringify({ type: st.type && [st.type.name, st.type.state, st.type.detail, st.type.completed], clock: st.displayClock, period: st.period }));
+            console.log('TEAMS', JSON.stringify((c.competitors || []).map(t => ({ id: t.id, ha: t.homeAway, name: t.team && t.team.displayName, score: t.score, win: t.winner, rank: t.rank, rec: (t.record || []).map(x => x.displayValue || x.summary), ls: (t.linescores || []).map(l => l.displayValue) }))));
+            console.log('TEAMSTATS', JSON.stringify(((j.boxscore && j.boxscore.teams) || []).map(t => ({ name: t.team && t.team.displayName, stats: Object.fromEntries((t.statistics || []).map(s => [s.name, s.displayValue])) }))));
+            console.log('LEADERS', JSON.stringify((j.leaders || []).map(t => ({ team: t.team && t.team.displayName, cats: (t.leaders || []).map(l => ({ cat: l.displayName, who: l.leaders && l.leaders[0] && l.leaders[0].athlete && l.leaders[0].athlete.displayName, line: l.leaders && l.leaders[0] && l.leaders[0].displayValue })) }))));
+            console.log('SCORING', JSON.stringify((j.scoringPlays || []).map(p => ({ q: p.period && p.period.number, clk: p.clock && p.clock.displayValue, team: p.team && p.team.displayName, type: p.type && p.type.text, text: p.text, away: p.awayScore, home: p.homeScore }))));
+            console.log('GAMEINFO', JSON.stringify({ venue: j.gameInfo && j.gameInfo.venue && j.gameInfo.venue.fullName, att: j.gameInfo && j.gameInfo.attendance, wx: j.gameInfo && j.gameInfo.weather }));
+            console.log('KEYS', Object.keys(j).join(','));
+          })().catch(e => { console.log('BOX_ERR', String(e)); process.exit(1); });
+          JS
+          node box.js

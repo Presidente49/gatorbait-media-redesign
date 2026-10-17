@@ -1,0 +1,60 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>GatorBait Magazine: Friday Pregame Edition, Florida at Texas</mj-title>
+    <mj-preview>Florida at No. 7 Texas, Saturday at noon ET on ABC. Philo or Jones? Buddy Martin, Franz Beard and Eddie Gilley on the week's big question.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Arial, Helvetica, sans-serif" />
+      <mj-text color="#14243D" font-size="15px" line-height="1.55" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="14px 26px" font-size="14px" font-weight="800" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#F4F6FA" width="620px">
+    <mj-section background-color="#081B35" padding="22px 24px 14px">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#FFFFFF" font-size="30px" font-weight="800" letter-spacing="0.5px">GATOR<span style="color:#FA4616;">BAIT</span></mj-text>
+        <mj-text align="center" padding="2px 0 0" color="#D5DFEC" font-size="12px" letter-spacing="3px">MAGAZINE NEWSLETTER</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg" alt="Florida quarterback Aaron Philo (12) stands with head coach Jon Sumrall on the Florida sideline during the South Carolina game. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/philo-is-the-florida-quarterback-at-least-for-now?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=cover_photo" padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="22px 26px 8px">
+      <mj-column>
+        <mj-text padding="0 0 6px" color="#D8450C" font-size="12px" font-weight="800" letter-spacing="1.6px">FRIDAY PREGAME EDITION</mj-text>
+        <mj-text padding="0 0 10px" color="#081B35" font-size="30px" font-weight="800" line-height="1.1">Philo or Jones? Austin awaits.</mj-text>
+        <mj-text padding="0 0 14px" color="#33425C" font-size="16px" line-height="1.5">Florida (4-2, 2-2 SEC) visits No. 7 Texas on Saturday at noon ET on ABC. The question all week has been who takes the snaps. Buddy Martin called in Ted Lasso to explain it, Franz Beard sized up Tramell Jones Jr.'s opening and made his Soothsayer picks, and Eddie Gilley found reasons for hope in Austin.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/qb1-philo-hurt-qb2-jones-to-start-explained-by-that-great-football-mind-ted-lasso?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=lead_buddy" align="center" padding="4px 0 14px">READ BUDDY'S COLUMN</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#EEF2FB" padding="20px 26px 8px">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_886c22d32224408e933692539abaa54c~mv2.jpg" alt="Aaron Philo (12), left, and Tramell Jones Jr. (9), right, on the Florida sideline against South Carolina on Oct. 10, 2026. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/philo-s-injury-could-give-tramell-jones-jr-his-opening?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=qb_photo" padding="0 0 14px" />
+        <mj-text padding="0 0 12px" color="#081B35" font-size="19px" font-weight="800">Inside this week</mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Franz Beard · The Soothsayer</span><br/><a href="https://www.gatorbaitmedia.com/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=franz_soothsayer" style="color:#081B35;font-weight:700;text-decoration:none;">The Soothsayer: Texas big unless the UF defense finds an exorcist</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">The Buddy Martin Show</span><br/><a href="https://www.gatorbaitmedia.com/post/watch-the-replay-buddy-martin-s-philo-injury-exclusive-with-chris-doering?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=show_replay" style="color:#081B35;font-weight:700;text-decoration:none;">Watch the replay: Buddy's Philo injury exclusive, with Chris Doering</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Buddy Martin · Members</span><br/><a href="https://www.gatorbaitmedia.com/post/qb1-philo-hurt-qb2-jones-to-start-explained-by-that-great-football-mind-ted-lasso?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=buddy_lasso" style="color:#081B35;font-weight:700;text-decoration:none;">QB1 Philo Hurt. QB2 Jones To Start? Explained by That Great Football Mind Ted Lasso</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Franz Beard</span><br/><a href="https://www.gatorbaitmedia.com/post/philo-s-injury-could-give-tramell-jones-jr-his-opening?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=franz_jones" style="color:#081B35;font-weight:700;text-decoration:none;">Philo's injury could give Tramell Jones Jr. his opening</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Eddie Gilley</span><br/><a href="https://www.gatorbaitmedia.com/post/so-you-re-saying-there-s-a-chance-1?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=gilley_chance" style="color:#081B35;font-weight:700;text-decoration:none;">So You're Saying There's a Chance!?</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Game week</span><br/><a href="https://www.gatorbaitmedia.com/post/report-aaron-philo-s-status-uncertain-for-florida-s-trip-to-texas?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=philo_status" style="color:#081B35;font-weight:700;text-decoration:none;">Report: Aaron Philo's status uncertain for Florida's trip to Texas</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Franz Beard</span><br/><a href="https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-14-2026?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=franz_austin" style="color:#081B35;font-weight:700;text-decoration:none;">Thoughts of the Day: Muschamp, Manning and the trip to Texas</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Franz Beard</span><br/><a href="https://www.gatorbaitmedia.com/post/philo-is-the-florida-quarterback-at-least-for-now?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=franz_philo" style="color:#081B35;font-weight:700;text-decoration:none;">Philo is the Florida quarterback, at least for now</a></mj-text>
+        <mj-text padding="0 0 11px" font-size="15px" line-height="1.35"><span style="font-size:10px;font-weight:800;letter-spacing:1.5px;color:#D8450C;text-transform:uppercase;">Eddie Gilley</span><br/><a href="https://www.gatorbaitmedia.com/post/numbers-don-t-lie?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=gilley_numbers" style="color:#081B35;font-weight:700;text-decoration:none;">Numbers Don't Lie</a></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="22px 26px 24px">
+      <mj-column>
+        <mj-text align="center" padding="0 0 6px" color="#FFAD86" font-size="12px" font-weight="800" letter-spacing="1.6px">NOT AN ALL ACCESS MEMBER YET?</mj-text>
+        <mj-text align="center" padding="0 0 12px" color="#FFFFFF" font-size="18px" font-weight="700" line-height="1.4">Save 20% on your first year with code GATORNIGHT20.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/pricing-plans?utm_source=gatorbait_magazine_newsletter&utm_medium=email&utm_campaign=friday_pregame_2026_10_16&utm_content=join_offer" align="center" padding="0 0 10px">JOIN ALL ACCESS</mj-button>
+        <mj-text align="center" padding="0" color="#D5DFEC" font-size="12px" line-height="1.5">All Access Annual: $79.20 for your first year with the code, then $99 a year. Every column, the Magazine and Buddy's members-only pieces.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="16px 26px 22px">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#667386" font-size="12px" line-height="1.6">Old-school journalism + new tech · GatorBait Media<br/>GatorBaitMedia.com</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

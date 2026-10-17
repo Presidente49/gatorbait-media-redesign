@@ -9,6 +9,7 @@
 // Output: build/live-shots/<name>.jpg plus metrics.json (bounding boxes, computed fonts, scroll state, perf).
 import { chromium, devices } from 'playwright';
 import { mkdirSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const path = process.argv[2] || '/';
 const selector = process.argv[3] === undefined ? '#gbm-road' : process.argv[3];
@@ -26,8 +27,44 @@ const profile = (w) => w < 800
   ? { userAgent: IOS_UA, viewport: { width: w, height: w < 360 ? 740 : w < 410 ? 844 : 932 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }
   : { userAgent: DESKTOP_UA, viewport: { width: w, height: 900 }, deviceScaleFactor: 1 };
 
+// Read-only CDN availability/integrity gate; fail before starting Chromium.
+const SOURCE_PIN = '10bf36420faa2f3d5a631ce8c7a47518b5183c10';
+const EXPECTED_ASSETS = [
+  {
+    "path": "sports-live/broadcast-home.js",
+    "sha256": "bc3991d2956d72dc2fdb423d75a7027d30a4ff57925a46ae1d5eb73098be0bbc"
+  },
+  {
+    "path": "sports-live/magazine-pregame.js",
+    "sha256": "9fc792c90f103b41ced2e17692d094855099d813a935bc77432fc19023b267d5"
+  },
+  {
+    "path": "deploy/swamp-night-20261017/site-shell.css",
+    "sha256": "cb6baf022e33b0de0a2cf832266d175735b0c1ee9251f5e7d2beb31de4575588"
+  }
+];
+const preflight = { pin: SOURCE_PIN, at: new Date().toISOString(), ok: false, files: [] };
+for (const asset of EXPECTED_ASSETS) {
+  const receipt = { path: asset.path, status: null, bytes: 0, expectedSha256: asset.sha256, sha256: null, ok: false };
+  try {
+    const response = await fetch(`https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@${SOURCE_PIN}/${asset.path}`, { signal: AbortSignal.timeout(30000), cache: 'no-store' });
+    receipt.status = response.status;
+    if (response.status !== 200) throw new Error(`HTTP ${response.status}`);
+    const bytes = Buffer.from(await response.arrayBuffer());
+    receipt.bytes = bytes.length;
+    receipt.sha256 = createHash('sha256').update(bytes).digest('hex');
+    receipt.ok = receipt.sha256 === asset.sha256;
+    if (!receipt.ok) receipt.error = 'SHA256 mismatch';
+  } catch (error) { receipt.error = String(error.message || error).slice(0, 180); }
+  preflight.files.push(receipt);
+}
+preflight.ok = preflight.files.length === EXPECTED_ASSETS.length && preflight.files.every((file) => file.ok);
+writeFileSync(`${OUT}/preflight.json`, JSON.stringify(preflight, null, 1));
+console.log(JSON.stringify({ event: preflight.ok ? 'SWAMP_CDN_PREFLIGHT_OK' : 'SWAMP_CDN_PREFLIGHT_ALERT', ...preflight }));
+if (!preflight.ok) process.exit(1);
+
 const browser = await chromium.launch();
-const metrics = { url, selector, at: new Date().toISOString(), shots: [] };
+const metrics = { url, selector, at: new Date().toISOString(), preflight, shots: [] };
 for (const w of widths) {
   const ctx = await browser.newContext(profile(w));
   const page = await ctx.newPage();
@@ -57,7 +94,7 @@ for (const w of widths) {
     }
     const res = await page.goto(url, { waitUntil: 'load', timeout: 60000 });
     m.http = res && res.status();
-    await page.waitForSelector('#gbm-live.fp26', { timeout: 15000 }).catch(() => { m.note = 'front page root not seen in 15s'; });
+    await page.waitForSelector(selector || '#gbm-live', { timeout: 15000 }).catch(() => { m.note = 'requested page root not seen in 15s'; });
     await page.waitForTimeout(3500);
     if (PERF) {
       await page.waitForTimeout(6500);
@@ -90,6 +127,25 @@ for (const w of widths) {
       fpBuild: document.querySelector('#gbm-live')?.getAttribute('data-fp-build') || null,
       fpVersion: document.querySelector('#gbm-live')?.getAttribute('data-fp') || null,
     })));
+    // Stable style/palette receipt, using rendered values and actual requested assets.
+    m.swampProof = await page.evaluate(() => {
+      const root = document.getElementById('gbm-live');
+      const inspect = (selector) => {
+        const el = document.querySelector(selector);
+        if (!el) return null;
+        const cs = getComputedStyle(el), b = el.getBoundingClientRect();
+        return { bg: cs.backgroundColor, gradient: cs.backgroundImage, color: cs.color, border: cs.borderColor, radius: cs.borderRadius, clipPath: cs.clipPath, font: cs.fontFamily, width: Math.round(b.width) };
+      };
+      const rootStyle = root && getComputedStyle(root);
+      const tokens = rootStyle ? Object.fromEntries(['--nt', '--tx', '--mu', '--pk', '--o'].map((name) => [name, rootStyle.getPropertyValue(name).trim()])) : null;
+      const cover = document.querySelector('.sh-magazine img, img.sh-mcover, .sh-mcover img, #gbm-magazine-page .pg-cover img');
+      const coverImage = cover ? { src: cover.getAttribute('src'), currentSrc: cover.currentSrc, alt: cover.alt, loaded: cover.complete && cover.naturalWidth > 0, naturalWidth: cover.naturalWidth, naturalHeight: cover.naturalHeight, box: { width: Math.round(cover.getBoundingClientRect().width), height: Math.round(cover.getBoundingClientRect().height) } } : null;
+      const panels = Object.fromEntries(['#gbm-live', '.bc-nx', '.bc-side', '.sh-magazine', '.sh-coverage article', '#gbm-mobile-shell', '#gbm-site-header'].map((selector) => [selector, inspect(selector)]));
+      const styleTagIds = [...document.querySelectorAll('style[id]')].map((el) => el.id).filter((id) => /^gbm-|^gbc-/.test(id)).sort();
+      const assetUrls = [...document.querySelectorAll('script[src],link[href]')].map((el) => el.src || el.href).filter((url) => /broadcast-home\.js|magazine-pregame\.js|swamp-night/.test(url));
+      const resourceUrls = performance.getEntriesByType('resource').map((entry) => entry.name).filter((url) => /broadcast-home\.js|magazine-pregame\.js|swamp-night.*site-shell\.css/.test(url));
+      return { tokens, panels, styleTagIds, coverImage, assetUrls, resourceUrls, viewport: { requestedWidth: innerWidth, clientWidth: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth, scrollX, meta: document.querySelector('meta[name=viewport]')?.content || null }, hasHomeStyle: Boolean(document.getElementById('gbm-broadcast-home-css')), hasShellStyle: Boolean(document.getElementById('gbm-swamp-night-shell-v1')), paletteLooksSwamp: tokens?.['--nt'] === '#07122e' && Boolean(panels['#gbm-live']?.gradient?.includes('rgb(11, 13, 18)')) };
+    });
     await page.screenshot({ path: `${OUT}/top-${w}.jpg`, type: 'jpeg', quality: 70 });
     if (selector) {
       const found = await page.$(selector);
@@ -131,4 +187,4 @@ for (const w of widths) {
 }
 await browser.close();
 writeFileSync(`${OUT}/metrics.json`, JSON.stringify(metrics, null, 1));
-console.log(JSON.stringify(metrics, null, 1));
+console.log(JSON.stringify({ event: 'SWAMP_BROWSER_RECEIPT', url, preflightOk: preflight.ok, shots: metrics.shots.map((shot) => ({ width: shot.width, http: shot.http, selectorFound: shot.selectorFound, box: shot.box ? { docScrollWidth: shot.box.docScrollWidth, innerWidth: shot.box.innerWidth } : null, swampProof: shot.swampProof, errors: shot.errors, error: shot.error || null })) }));

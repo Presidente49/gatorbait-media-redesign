@@ -11,17 +11,26 @@ if (!outPath) { console.error('usage: build-print.mjs <issue.json> <posts.json> 
 const D = JSON.parse(fs.readFileSync(issuePath, 'utf8'));
 const P = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
 const byUrl = new Map(P.posts.map(p => [p.url, p]));
+// Optional print-only extras (desk column, credits) keyed by issue id, so the website bundle is untouched.
+const extrasPath = process.argv[5] || new URL(`./issues/${D.id}.json`, import.meta.url).pathname;
+const X = fs.existsSync(extrasPath) ? JSON.parse(fs.readFileSync(extrasPath, 'utf8')) : {};
 
 const LOGO = 'data:image/webp;base64,' + fs.readFileSync(new URL('./assets/gatorbait-logo.webp', import.meta.url)).toString('base64');
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 // Text strings get curly quotes (AP style for GatorBait copy). Article HTML is never touched: it already carries the writer's curly quotes.
 const q = s => String(s == null ? '' : s)
   .replace(/(^|[\s(\[{\u2014\u2013-])"/g, '$1\u201c').replace(/"/g, '\u201d')
-  .replace(/(^|[\s(\[{\u2014\u2013-])'/g, '$1\u2018').replace(/'/g, '\u2019');
+  .replace(/(^|[\s(\[{\u2014\u2013-])'/g, '$1\u2018').replace(/'/g, '\u2019')
+  .replace(/\b12 p\.m\. ET/g, 'noon ET').replace(/\s*\(\/post\/[^)\s]*\)/g, '');
+// AP style: abbreviate months that take an abbreviation when a date follows.
+const ap = s => String(s || '').replace(/\b(January|February|August|September|October|November|December)\b(?= \d)/g, m => ({ January: 'Jan.', February: 'Feb.', August: 'Aug.', September: 'Sept.', October: 'Oct.', November: 'Nov.', December: 'Dec.' }[m]));
+// Photo credits read one way everywhere.
+const fixCredit = s => String(s || '').replace(/Photo Credit\s*[-\u2013:]\s*Chris Spears,?\s*Gator ?[Bb]ait (?:Magazine|Media)\s*/g, 'Photo by Chris Spears, GatorBait Media');
 const media = (img, w = 1600, h = 1600, mode = 'fit', qv = 78) => img && img.id ? `https://static.wixstatic.com/media/${img.id}~mv2.${img.ext || 'jpg'}/v1/${mode}/w_${w},h_${h},al_c,q_${qv}/${img.id}.${img.ext === 'png' ? 'png' : 'jpg'}` : '';
 const fig = (img, cls = '', w = 1600, h = 1600, mode = 'fit') => {
   if (!img || !img.id) return '';
-  const credit = q(img.credit || '');
+  const credit = fixCredit(q(img.credit || ''));
+  if (img.ext === 'png' || /illustration|graphic/i.test(credit)) cls += ' contain';
   return `<figure class="ph ${cls}"><img src="${media(img, w, h, mode)}" alt="${esc(q(img.alt || ''))}">${credit ? `<figcaption>${esc(credit)}</figcaption>` : ''}</figure>`;
 };
 const site = u => /^https?:/.test(u) ? u : 'https://www.gatorbaitmedia.com' + u;
@@ -32,6 +41,10 @@ function body(post) {
   if (post.cover) h = h.replace(new RegExp(`<figure><img data-media="${post.cover.id}"[^>]*>(<figcaption>[^<]*</figcaption>)?</figure>`), '');
   h = h.replace(/<img data-media="([^"]+)" data-ext="([^"]+)" alt="([^"]*)">/g, (m, id, ext, alt) => `<img src="${media({ id, ext }, 1400, 1400)}" alt="${alt}">`);
   h = h.replace(new RegExp(`^(<p><strong>By ${esc(post.author)}\\.?</strong></p>|<p>By ${esc(post.author)}\\.?</p>)`), '');
+  h = h.replace(new RegExp(`<p>(?:<strong>)?By ${esc(post.author)}\\.?(?:<\\/strong>)?<\\/p>`, 'g'), '');   // byline already in the header
+  h = h.replace(/<p>(?:<strong>|<em>)*(?:Photo (?:by|credit|Credit)|Archival photo by)[^<]{0,140}(?:<\/strong>|<\/em>)*<\/p>/g, '');   // credit-only lines; the caption carries it
+  h = h.replace(/<p>(?:<em>)?GatorBait (?:editorial |Media )?illustration\.?(?:<\/em>)?<\/p>/gi, '');
+  h = fixCredit(h);
   h = h.replace(/<a href="[^"]*">/g, '').replace(/<\/a>/g, '');   // links are not useful on paper
   return smartHtml(h);
 }
@@ -86,7 +99,7 @@ const cover = artCover ? `<section class="cover art"><img class="cover-img" src=
 <div class="cover-shade"></div>
 <div class="mast"><img class="logo" src="${LOGO}" alt="GatorBait"><span class="mz">Magazine</span></div>
 <div class="cover-type"><p class="kick">${esc(q(C.kicker))}</p><h1>${esc(q(C.headline))}</h1><p class="dek">${esc(q(C.dek))}</p><p class="cby">Buddy Martin <i></i> Franz Beard <i></i> Eddie Gilley <i></i> Loren Meadows</p></div>
-<div class="cover-foot"><span>${esc(I.number)} · ${esc(q(I.name))} · ${esc(I.week)} · ${esc(I.date)}</span><span>${esc(q(C.image && C.image.credit))}</span></div>
+<div class="cover-foot"><span>${esc(I.number)} · ${esc(q(I.name))} · ${esc(I.week)} · ${esc(ap(I.date))}</span><span>${esc(q(C.image && C.image.credit))}</span></div>
 </section>`;
 
 const chips = (G.chips || []).map(c => `<div class="chip"><b>${esc(c.k)}</b><span>${esc(q(c.v))}</span></div>`).join('');
@@ -122,7 +135,14 @@ const numbers = numItems.length ? `<section class="nums"><h2 class="sec">${esc(q
 const watching = wchItems.length ? `<section class="wtch"><h2 class="sec">${esc(q(WCH.label || 'What we are watching'))}</h2><p class="note">${esc(q(WCH.note))}</p>
 <div class="wqs">${wchItems.map(t => `<blockquote class="wq"><p>${esc(q(t.line))}</p><cite>${esc(t.by)}</cite></blockquote>`).join('')}</div><p class="src">${esc(q(WCH.source))}</p></section>` : '';
 const team = `<section class="team-page"><h2 class="sec">The GatorBait Media team</h2><p class="who">${authors.map(esc).join(' <i></i> ')}</p><p class="src">Photography: Chris Spears, GatorBait Media. Independent Florida Gators coverage at www.gatorbaitmedia.com, with The Buddy Martin Show nightly.</p></section>`;
-const numPage = (numbers || watching) ? `<div class="numpage">${numbers}${watching}${team}</div>` : '';
+const numPage = (numbers || watching) ? `<div class="numpage">${numbers}${watching}${X.credits ? '' : team}</div>` : '';
+
+// From the GatorBait desk: one staff column with a small chart of the numbers it uses.
+const DK = X.desk;
+const deskChart = DK && DK.chart ? `<figure class="dchart"><figcaption class="dc-t">${esc(q(DK.chart.label))}</figcaption>${DK.chart.bars.map(b => `<div class="dc-r"><span class="dc-l">${esc(q(b.label))}</span><span class="dc-b"><i class="${b.tone === 'orange' ? 'o' : 'b'}" style="width:${(100 * b.value / (DK.chart.max || 50)).toFixed(1)}%"></i></span><b>${esc(b.value.toFixed(1))}</b></div>`).join('')}</figure>` : '';
+const deskPage = DK ? `<article class="story desk"><header class="story-h"><p class="kick">${esc(q(DK.kicker))}</p><h2>${esc(q(DK.title))}</h2><p class="lede">${esc(q(DK.dek))}</p><p class="by">${esc(q(DK.byline))}</p></header>
+<blockquote class="pull">${esc(q(DK.pull).replace(/[\u201c\u201d]/g, '\u2019'))}</blockquote>${deskChart}
+<div class="body">${DK.paragraphs.map(t => `<p>${esc(q(t))}</p>`).join('')}</div><p class="src">${esc(q(DK.source))}</p></article>` : '';
 
 const watchSec = `<h3>${esc(D.watch && D.watch.label || 'How to watch')}</h3><table class="watch">${watch}</table><p class="src">${esc(q(D.watch && D.watch.source))}</p>`;
 
@@ -135,6 +155,12 @@ const shots = D.shots && D.shots.photos && D.shots.photos.length ? `<section cla
 const cardStories = cards.filter(c => c.url !== C.url && c.url !== F.url && c.url !== L.url).map(c => story(byUrl.get(c.url), { kicker: c.kicker, image: c.image, title: c.title, cls: 'card' })).join('\n');
 const next = D.reference && D.reference.next ? `<p class="next">${esc(q(D.reference.next))}</p>` : '';
 
+const CR = X.credits;
+const creditsPage = CR ? `<section class="credits"><h2 class="sec">${esc(q(CR.label || 'Masthead'))}</h2>
+<div class="people">${CR.people.map(p => `<div class="pr"><b>${esc(q(p.name))}</b><span>${esc(q(p.role))}</span></div>`).join('')}</div>
+<div class="clines">${CR.lines.map(l => `<p>${esc(q(l))}</p>`).join('')}</div>
+<p class="cc">${esc(q(CR.contact || ''))}<br>${esc(q(CR.copyright || ''))}</p></section>` : '';
+
 const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>${esc(q(I.pageTitle || 'GatorBait Magazine'))}</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,7 +168,7 @@ const html = `<!doctype html>
 <style>
 @page { size: 8.5in 11in; margin: 0.6in 0.58in 0.7in; }
 @page :first { margin: 0; }
-@page { @bottom-center { content: "GatorBait Magazine · ${esc(q(I.number))} · ${esc(q(I.date))}   |   " counter(page); font: 500 8pt/1 Barlow, Arial, sans-serif; color: #5a6783; } }
+@page { @bottom-center { content: "GatorBait Magazine · ${esc(q(I.number))} · ${esc(ap(q(I.date)))}   |   " counter(page); font: 500 8pt/1 Barlow, Arial, sans-serif; color: #5a6783; } }
 :root { --navy: #081b35; --orange: #fa4616; --ink: #10172a; --mute: #5c6675; --rule: #d6dbe3; --paper: #fff; }
 * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font: 10.4pt/1.42 Barlow, Arial, sans-serif; }
@@ -300,10 +326,39 @@ figcaption, .src, .note, .by span { color: var(--mute); }
 .story.feature .body > h2:first-child { display: none; }
 .story.feature .body > h2:first-child + p::first-letter { float: left; font: 900 54pt/.8 "Barlow Condensed", Barlow, sans-serif; color: var(--orange); padding: 4pt 6pt 0 0; }
 .story.feature .pull { font-size: 21pt; background: var(--tint); padding: 10pt 14pt; border-left-width: 7pt; }
+
+/* Desk column + masthead */
+.story.desk { break-before: page; }
+.story.desk .story-h h2 { font-size: 32pt; margin-bottom: 3pt; }
+.story.desk .body { columns: 2; column-gap: 16pt; column-fill: balance; font-size: 10pt; line-height: 1.4; }
+.story.desk .body p { margin: 0 0 5pt; }
+.story.desk .lede { font-size: 11.5pt; }
+.story.desk .src { margin-top: 6pt; }
+.story.desk .pull { font-size: 17pt; background: var(--tint); padding: 6pt 12pt; margin: 2pt 0 6pt; border-left-width: 7pt; }
+.dchart { margin: 4pt 0 8pt; padding: 8pt 14pt 6pt; background: var(--tint); border-top: 5pt solid var(--blue); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12pt), calc(100% - 12pt) 100%, 0 100%); break-inside: avoid; }
+.dc-t { font: 800 9pt/1.2 Barlow, Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin: 0 0 6pt; }
+.dc-r { display: grid; grid-template-columns: 1.15in 1fr 0.5in; align-items: center; gap: 8pt; margin: 0 0 3pt; font: 600 9.4pt/1.2 Barlow, Arial, sans-serif; color: var(--ink); }
+.dc-b { display: block; height: 11pt; background: #dfe5f5; position: relative; }
+.dc-b i { display: block; height: 100%; }
+.dc-b i.b { background: var(--blue); } .dc-b i.o { background: var(--orange); }
+.dc-r b { font: 800 12pt/1 "Barlow Condensed", Barlow, sans-serif; color: var(--blue); text-align: right; font-variant-numeric: tabular-nums; }
+.credits { break-before: page; break-inside: avoid; }
+.people { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt 18pt; margin: 12pt 0 14pt; }
+.pr { border-left: 5pt solid var(--orange); background: var(--tint); padding: 8pt 12pt 8pt 11pt; break-inside: avoid; }
+.pr b { display: block; font: 900 19pt/1 "Barlow Condensed", Barlow, sans-serif; text-transform: uppercase; color: var(--blue); }
+.pr span { display: block; margin-top: 3pt; font: 700 8.6pt/1.3 Barlow, Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); }
+.clines p { font-size: 9.6pt; margin: 0 0 6pt; color: var(--ink); }
+.cc { margin-top: 10pt; font: 700 9pt/1.5 Barlow, Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+
+/* QA fixes: headings stay with their text; graphics are never cropped */
+.body h2, .body h3, .body h4 { break-after: avoid; break-inside: avoid; }
+.body figure img { object-fit: contain; max-height: 4.4in; background: #fff; }
+.story-ph.contain img { object-fit: contain; background: var(--tint); }
 </style></head><body>
 ${cover}
 ${briefing}
 ${numPage}
+${deskPage}
 ${story(coverPost, { kicker: C.kicker, title: coverPost && /Nostalgia/i.test(C.headline) ? C.headline : undefined, lede: '', cls: 'feature', pq: ((C.lines||[])[2]||'').replace(/ Buddy Martin$/, '').replace(/^"|"$/g, '') })}
 ${story(leadPost, { kicker: `${L.label || 'The Lead'} · ${L.author || ''}`, image: L.image, title: L.title, cls: 'feature' })}
 ${featPost ? story(featPost, { kicker: `${F.label || 'Feature'} · ${F.author || ''}`, image: F.image, title: F.title, lede: F.dek, cls: 'feature', pq: process.env.FEATURE_PULL || '' }) : ''}
@@ -312,7 +367,8 @@ ${slateSec}
 ${cardStories}
 </section>
 ${shots}
-<section class="end">${next}<p class="colophon">GatorBait Magazine, ${esc(q(I.number))}, ${esc(q(I.date))}. ${esc(q(I.tagline))}. ${esc(q(D.asOf || ''))} Published by GatorBait Media, www.gatorbaitmedia.com.</p></section>
+${creditsPage}
+<section class="end">${next}<p class="colophon">GatorBait Magazine, ${esc(q(I.number))}, ${esc(ap(q(I.date)))}. ${esc(q(I.tagline))}. ${esc(q(D.asOf || ''))} Published by GatorBait Media, www.gatorbaitmedia.com.</p></section>
 </body></html>`;
 fs.writeFileSync(outPath, html);
 console.log(`wrote ${outPath} (${html.length} chars, ${P.posts.length} posts, ${(html.match(/<img /g) || []).length} images)`);

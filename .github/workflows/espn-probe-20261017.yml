@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Read ESPN the way the homepage card does
         run: |
-          for q in "groups=8&dates=20261017" "dates=20261017" ""; do
+          for q in "groups=8&dates=20261017"; do
             echo "=== query: $q"
             curl -sS -D /tmp/h.txt -o /tmp/espn.json "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?$q" || true
             grep -i -E "^HTTP|access-control" /tmp/h.txt | head -3
@@ -24,8 +24,19 @@ jobs:
           ev=d.get('events',[])
           print('events:',len(ev))
           for e in ev:
+              if str(e.get('id'))=='401856724': open('/tmp/ev.json','w').write(json.dumps(e))
               if str(e.get('id'))=='401856724' or 'Florida' in e.get('name',''):
                   c=e['competitions'][0]; t=c['status']['type']
                   print(e['id'], e['name'], '|', t['state'], t.get('shortDetail'), '|', [(x['team']['abbreviation'],x['score'],[l.get('value') for l in x.get('linescores',[])]) for x in c['competitors']])
           PY
           done
+      - name: Run the card's own parse on the real event
+        run: |
+          node -e "
+          const e=JSON.parse(require('fs').readFileSync('/tmp/ev.json','utf8'));
+          const c=e.competitions[0];
+          console.log('competitor ids:', c.competitors.map(t=>[t.id, t.team&&t.team.id, t.homeAway, t.score]));
+          const us=c.competitors.find(t=>String(t.id||t.team.id)==='57'), th=c.competitors.find(t=>t!==us);
+          console.log('us found:', !!us, 'th found:', !!th, 'state:', c.status.type.state, 'completed:', c.status.type.completed, 'shortDetail:', c.status.type.shortDetail, 'neutral:', c.neutralSite);
+          console.log('curatedRank us/th:', JSON.stringify(us&&us.curatedRank), JSON.stringify(th&&th.curatedRank), 'loc:', th&&th.team.location);
+          "

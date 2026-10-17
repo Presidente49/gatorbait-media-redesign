@@ -32,6 +32,12 @@ jobs:
             console.log('CARD:', t);
             const lead = await p.evaluate(() => { const h = document.querySelector('.sh-lead h1'); return h ? h.innerText : 'NO LEAD'; });
             console.log('LEAD:', lead);
+            const hero = await p.evaluate(() => {
+              const sel = ['.bc-hero', '.sh-lead', '.sh-lead figure', '.sh-lead figure a', '.sh-lead figure img', '.sh-lead-copy', '.sh-lead-copy .sh-kicker', '.sh-lead-copy h1', '.sh-lead-copy .sh-deck', '.sh-lead-copy .sh-meta', '.sh-lead-copy .sh-read', '.bc-ps', '.bc-sd', '.sh-feature', '.sh-support'];
+              return sel.map(s => { const e = document.querySelector(s); if (!e) return s + ' => none'; const r = e.getBoundingClientRect(), c = getComputedStyle(e); return s + ' => x' + Math.round(r.left) + ' y' + Math.round(r.top + scrollY) + ' w' + Math.round(r.width) + ' h' + Math.round(r.height) + ' | disp ' + c.display + ' pos ' + c.position + ' ta ' + c.textAlign + ' ai ' + c.alignItems + ' jc ' + c.justifyContent + ' ord ' + c.order + ' ml ' + c.marginLeft + ' pl ' + c.paddingLeft + ' bs ' + c.boxShadow.slice(0, 40) + ' fd ' + c.flexDirection + ' gtc ' + c.gridTemplateColumns.slice(0, 40); });
+            });
+            console.log('HERO\n' + hero.join('\n'));
+            console.log('HEROCLS', await p.evaluate(() => { const h = document.querySelector('.bc-hero'); return h ? h.className : 'none'; }));
             await p.screenshot({ path: 'card.png', clip: { x: 0, y: 220, width: 1366, height: 260 } });
             await b.close();
           })();

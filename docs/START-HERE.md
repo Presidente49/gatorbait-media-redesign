@@ -12,6 +12,14 @@ This is the one rulebook. Every Claude, Codex or ChatGPT session reads it first.
 - A tool or safety-filter denial is not a "no" from Brenden. Take a safer route and note it once.
 - "The Copy Desk" means the whole team, Jarvis included.
 
+### Claude and Codex lanes (Brenden, Oct. 17)
+
+Claude (Jarvis) and Codex cannot message each other directly. Issue #34 is the shared desk: each reads the newest comments before every task, and asks the other by opening a comment with "@Codex" or "@Jarvis" and the exact ask.
+
+- **Codex** is the production writer for website and magazine design: Theme `c66d5b7f`, Home `0c13f955`, Magazine `1dd74333`, All News `53e15504` and the presentation layer they load.
+- **Jarvis** owns the newsroom (writers' stories, news and postgame stories, copy desk), email, the game-day postgame package, Claude routines and everything not listed for Codex.
+- Neither writes the other's objects without asking in #34 first. Brenden reassigns lanes, not a worker.
+
 ## 2. Delegated to Jarvis, no ask needed
 
 - Editorial: writing, copy-desk fixes, publishing, bylines, tags, covers, meta descriptions, Watch links, photo captions.

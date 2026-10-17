@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1600">
+<title>GatorBait final-score cover</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#060b1c;width:1600px}
+#cover{position:relative;width:1600px;height:900px;overflow:hidden;background:#060b1c;font-family:'Barlow',Arial,sans-serif;color:#fff}
+.uf{position:absolute;inset:0;background:linear-gradient(135deg,#0a2ca8 0%,#0021a5 45%,#04186e 100%);clip-path:polygon(0 0,57% 0,43% 100%,0 100%)}
+.op{position:absolute;inset:0;background:linear-gradient(225deg,#1c1c1c 0%,#050505 60%,#0c0c0c 100%);clip-path:polygon(57% 0,100% 0,100% 100%,43% 100%)}
+.seam{position:absolute;inset:0;background:#fa4616;clip-path:polygon(56.2% 0,58.2% 0,44.2% 100%,42.2% 100%)}
+.seam2{position:absolute;inset:0;background:#f1b82d;clip-path:polygon(58.2% 0,59% 0,45% 100%,44.2% 100%)}
+.top{position:absolute;left:0;right:0;top:0;height:104px;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:linear-gradient(180deg,rgba(6,11,28,.85),rgba(6,11,28,0))}
+.top img{height:64px;width:auto;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+.top span{font:800 36px/1 'Barlow Condensed',Arial Narrow,sans-serif;letter-spacing:8px;text-transform:uppercase}
+.t{position:absolute;z-index:3}
+.t .rank{font:800 46px/1 'Barlow Condensed',Arial Narrow,sans-serif;letter-spacing:6px;text-transform:uppercase;min-height:46px}
+.t .name{font:800 168px/.86 'Barlow Condensed',Arial Narrow,sans-serif;text-transform:uppercase;letter-spacing:-1px;text-shadow:0 8px 30px rgba(0,0,0,.5)}
+.t .score{font:800 330px/.84 'Barlow Condensed',Arial Narrow,sans-serif;font-variant-numeric:tabular-nums;margin-top:10px;text-shadow:0 10px 36px rgba(0,0,0,.5)}
+.t .rule{height:12px;width:150px;background:#fa4616;margin-top:18px}
+.t.a{left:70px;top:150px}
+.t.a .rank{color:#ffb39a}
+.t.b{right:70px;top:150px;text-align:right}
+.t.b .rank{color:#f1b82d}
+.t.b .rule{margin-left:auto}
+.t.lose .rule{background:transparent}
+.bar{position:absolute;left:0;right:0;bottom:0;height:132px;z-index:5;background:#060b1c;border-top:7px solid #fa4616;display:flex;align-items:center;justify-content:space-between;padding:0 52px}
+.bar .k{font:800 44px/1 'Barlow Condensed',Arial Narrow,sans-serif;letter-spacing:5px;text-transform:uppercase}
+.bar .k small{display:block;font:600 24px/1.3 'Barlow',Arial,sans-serif;letter-spacing:0;text-transform:none;color:#a9b3d3;margin-top:8px}
+.q{display:grid;grid-template-columns:90px repeat(5,72px);gap:6px 0;font:800 34px/1 'Barlow Condensed',Arial Narrow,sans-serif;text-align:center;font-variant-numeric:tabular-nums}
+.q .h{font:700 20px/1 'Barlow Condensed',Arial Narrow,sans-serif;letter-spacing:4px;color:#fa4616}
+.q .n{text-align:left;color:#ffc8b3;letter-spacing:3px}
+.q .t2{color:#ff9a70}
+</style></head><body>
+<div id="cover">
+  <div class="uf"></div><div class="op"></div><div class="seam"></div><div class="seam2"></div>
+  <div class="top"><img id="logo" src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp" alt="GatorBait" onerror="this.style.display='none'"><span id="kicker">Final</span></div>
+  <div class="t a" id="ta"><div class="rank" id="ar"></div><div class="name" id="an"></div><div class="score" id="as"></div><div class="rule"></div></div>
+  <div class="t b" id="tb"><div class="rank" id="br"></div><div class="name" id="bn"></div><div class="score" id="bs"></div><div class="rule"></div></div>
+  <div class="bar"><div class="k" id="when"></div><div class="q" id="q"></div></div>
+</div>
+<script>
+/* Query: a, as, ar (rank line), an (name), b, bs, br, kicker, when, sub, q=aLine|bLine as "7,10,0,10" per team, ab, bb (abbrevs). */
+var P=new URLSearchParams(location.search),g=function(k,d){return P.has(k)?P.get(k):d;};
+document.getElementById('kicker').textContent=g('kicker','Final');
+document.getElementById('an').textContent=g('a','Florida');document.getElementById('as').textContent=g('as','');document.getElementById('ar').textContent=g('ar','');
+document.getElementById('bn').textContent=g('b','Opponent');document.getElementById('bs').textContent=g('bs','');document.getElementById('br').textContent=g('br','');
+var as=+g('as',0),bs=+g('bs',0);document.getElementById(as<bs?'ta':'tb').classList.add('lose');
+document.getElementById('when').innerHTML=g('when','')+(g('sub','')?'<small>'+g('sub','')+'</small>':'');
+var qa=g('qa','').split(','),qb=g('qb','').split(',');
+if(qa.length>=4&&qb.length>=4){var h='<span></span>'+['1','2','3','4'].slice(0,qa.length).map(function(x){return'<span class="h">'+x+'</span>';}).join('')+'<span class="h">T</span>';
+h+='<span class="n">'+g('ab','UF')+'</span>'+qa.map(function(v){return'<span>'+v+'</span>';}).join('')+'<span class="t2">'+as+'</span>';
+h+='<span class="n">'+g('bb','OPP')+'</span>'+qb.map(function(v){return'<span>'+v+'</span>';}).join('')+'<span class="t2">'+bs+'</span>';
+var el=document.getElementById('q');el.style.gridTemplateColumns='90px repeat('+(qa.length+1)+',72px)';el.innerHTML=h;}
+</script>
+</body></html>

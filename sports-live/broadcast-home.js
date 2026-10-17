@@ -58,6 +58,12 @@ var C="html:has(@) body{background:#061247!important}"+
 "@ .bc-hero h1{font:italic 800 clamp(40px,4.4vw,64px)/.92 var(--dc)!important;text-shadow:0 4px 30px #00000080;max-width:780px}"+
 "@ .bc-hero .sh-deck{color:#dfe5ff!important;font-size:18px!important;line-height:1.4!important;max-width:640px}"+
 "@ .bc-hero .sh-read{justify-self:start;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;background:var(--o);color:#08132f!important;font:800 16px/1 var(--dc)!important;letter-spacing:.08em;text-transform:uppercase}"+
+"@ .bc-graphic .sh-lead{min-height:0;display:block!important}@ .bc-graphic .sh-lead:after{display:none}"+
+"@ .bc-graphic .sh-lead figure{position:relative!important;inset:auto!important;height:auto;padding-left:90px;background:#040c30}@ .bc-graphic .sh-lead figure>a{position:static!important;display:block;height:auto}"+
+"@ .bc-graphic .sh-lead img{position:static;display:block;width:100%!important;height:auto!important;aspect-ratio:16/9!important;object-fit:contain!important;background:#040c30}"+
+"@ .bc-graphic .sh-lead figcaption{position:static;padding:6px 0 0;text-shadow:none;color:var(--mu)}"+
+"@ .bc-graphic .sh-lead-copy{position:static!important;padding:22px 44px 30px 64px!important;max-width:none}"+
+"@ .bc-graphic h1{font-size:clamp(34px,3.4vw,50px)!important;text-shadow:none}@ .bc-graphic .sh-deck{max-width:760px}"+
 "@ .bc-slash{position:absolute;left:400px;top:0;bottom:0;width:90px;z-index:3;pointer-events:none;background:linear-gradient(115deg,transparent 0 44%,var(--o) 44% 56%,transparent 56%)}"+
 /* next up */
 "@ .bc-nx{display:grid;grid-template-columns:190px minmax(0,1fr) auto;min-height:112px;margin:0 -28px;background:#fff;color:#0a1a6b}"+
@@ -106,7 +112,8 @@ var C="html:has(@) body{background:#061247!important}"+
 "@ .bc-hero .sh-lead{order:-1;min-height:430px;clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - 36px))!important}"+
 "@ .bc-hero .sh-lead:after{background:linear-gradient(0deg,#040c30f7 0,#040c308c 42%,#040c3000 68%)}"+
 "@ .bc-hero .sh-lead-copy{left:16px!important;right:16px!important;bottom:44px!important;gap:10px}"+
-"@ .bc-hero h1{font-size:clamp(30px,9.4vw,40px)!important;line-height:.93!important}@ .bc-hero .sh-deck{font-size:15px!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}"+
+"@ .bc-graphic .sh-lead{min-height:0;clip-path:none!important}@ .bc-graphic .sh-lead figure{padding-left:0}@ .bc-graphic .sh-lead-copy{padding:16px 16px 34px!important}@ .bc-graphic .sh-lead-copy .sh-meta{display:block}"+
+"@ .bc-hero h1{font-size:clamp(30px,9.4vw,40px)!important;line-height:.93!important}@ .bc-graphic h1{font-size:clamp(28px,8.4vw,36px)!important}@ .bc-hero .sh-deck{font-size:15px!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}"+
 "@ .bc-hero .sh-meta{display:none}@ .bc-hero .sh-read{min-height:44px}"+
 "@ .bc-sc{margin:-22px 16px 0;padding:10px 14px;background:#fff;color:#0a1a6b;display:grid;grid-template-columns:auto 1fr 1fr;gap:6px 12px;align-items:center;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)}"+
 "@ .bc-lbl{font-size:13px;background:var(--o);color:#08132f;padding:5px 8px}@ .bc-lbl i,@ .bc-lbl span{display:none}"+
@@ -142,6 +149,10 @@ function loadFeed(){return get('/blog-feed.xml?t='+minute(),1).then(function(x){
 try{u=new URL(q('link'),location.href);}catch(e){return;}if(!/(^|\.)gatorbaitmedia\.com$/.test(u.hostname)||u.pathname.indexOf('/post/')!==0||!q('title'))return;
 out.push([Date.parse(q('pubDate'))||0,q('title'),u.pathname]);});
 out.sort(function(a,b){return b[0]-a[0];});if(out.length>=3)D.feed=out.slice(0,7);}).catch(function(){});}
+var CFG='https://presidente49.github.io/gatorbait-media-redesign/sports-live/front-page.config.json';
+function loadCfg(){return get(CFG+'?t='+Math.floor(Date.now()/36e5)).then(function(c){if(c&&Array.isArray(c.covers))D.covers=c.covers;}).catch(function(){});}
+/* A lead whose cover is a typeset graphic (a covers[] media id, or a PNG; photos here are JPG) shows whole with the headline below it, not over it. */
+function graphic(root){var im=root.querySelector('.bc-hero .sh-lead img'),u=im&&(im.currentSrc||im.src)||'',id=(/\/media\/([0-9a-f]+_[0-9a-f]+)/.exec(u)||[])[1];return!!u&&(/~mv2\.png(\/|$|\?)/i.test(u)||!!(id&&D.covers&&D.covers.indexOf(id)>=0));}
 function loadSB(){return get(SB+'?t='+minute()).then(function(d){if(d&&d.team&&('next' in d))D.sb=d;}).catch(function(){});}
 function ymd(t){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date(t)).replace(/-/g,'');}
 function window_(){var n=D.sb&&(D.sb.live||D.sb.next);if(!n)return null;var k=Date.parse(n.kickoffIso||n.date);return isFinite(k)&&Date.now()>k-HR&&Date.now()<k+6*HR?{id:String(n.eventId),k:k}:null;}
@@ -206,6 +217,7 @@ var html='<span class="bc-bug" aria-hidden="true">GB</span><div class="bc-tw"><d
 if(!tk){tk=document.createElement('div');tk.className='bc-tk';tk.setAttribute('role','region');tk.setAttribute('aria-label','GatorBait ticker');root.insertBefore(tk,root.firstChild);}
 put(tk,html,'tk');}
 var hero=root.querySelector('.bc-hero'),slot=hero&&hero.querySelector('.bc-ps'),ph=band?'':panel(M);
+if(hero)hero.classList.toggle('bc-graphic',graphic(root));
 if(slot&&put(slot,ph,'ps'))hero.classList.toggle('bc-solo',!ph);
 var bx=root.querySelector('.bc-nx'),bh=bar(M);if(bx){if(put(bx,bh,'nx'))cdTick();bx.hidden=!bh;var ref=root.querySelector('.sh-reference');if(ref)ref.style.display=bh||D.sb?'none':'';}}
 function build(){
@@ -222,7 +234,7 @@ render();}
 function sync(){if(document.querySelector(R+':not([data-bc])'))build();}
 /* Refresh: feed every 3 min, scoreboard every 5 min, ESPN every 30 s inside the game window; all again when the tab comes back. */
 function refresh(all){var j=[loadLive()];if(all){j.push(loadFeed(),loadSB());}return Promise.all(j).then(function(){return window_()&&!D.live?loadLive():0;}).then(render);}
-loadSB().then(function(){return Promise.all([loadFeed(),loadLive()]);}).then(render);
+loadSB().then(function(){return Promise.all([loadFeed(),loadLive(),loadCfg()]);}).then(render);
 var n=0;setInterval(function(){n++;if(document.hidden)return;if(n%6===0)refresh(1);else if(window_())refresh(0);},3e4);
 setInterval(function(){if(!document.hidden)cdTick();},3e4);
 document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh(1);});

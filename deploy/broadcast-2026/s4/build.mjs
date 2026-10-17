@@ -99,6 +99,16 @@ const out = {};
   out['a13b04e3/rev6.html'] = h;
 }
 
+// 5a43ae83 Site Fixer: JSON-LD and redirects unchanged. Retires the late "Published" date line (Wix's hydration wipes it ~4 s
+// after load, which made the story jump 27 px) and adds the Broadcast members card on paywalled stories.
+{
+  let h = rd('5a43ae83/rev24.html');
+  const a = h.indexOf('    // Native Wix owns post titles'), b = h.indexOf('  } catch(e) {}');
+  if (a < 0 || b < a) throw new Error('Site Fixer: date block not found');
+  h = h.slice(0, a) + h.slice(b);
+  out['5a43ae83/rev25.html'] = h + '<style id="gbm-gate-v1">' + css(rd('src/gate.css')) + '</style><script>' + js(rd('src/gate.js')) + '</script>';
+}
+
 let bad = 0;
 for (const [p, html] of Object.entries(out)) {
   writeFileSync(join(root, p), html);

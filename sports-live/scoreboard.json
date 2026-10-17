@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-16T07:08:28Z",
+ "updatedAt": "2026-10-17T05:54:44Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -12,6 +12,7 @@
   "opponent": "South Carolina",
   "opponentRank": null,
   "home": true,
+  "neutral": false,
   "date": "2026-10-10T16:45:00Z",
   "status": "final",
   "score": {
@@ -34,7 +35,30 @@
   },
   "venue": "Ben Hill Griffin Stadium",
   "recapUrl": null,
-  "galleryUrl": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-south-carolina-38-florida-19"
+  "galleryUrl": null,
+  "tape": {
+   "totalYards": 387,
+   "rushingYards": 120,
+   "firstDowns": 20,
+   "attendance": 90311
+  },
+  "leaders": [
+   [
+    "Passing Yards",
+    "Aaron Philo",
+    "21/28, 227 YDS, 1 TD, 1 INT"
+   ],
+   [
+    "Rushing Yards",
+    "Jadan Baugh",
+    "15 CAR, 59 YDS, 1 TD"
+   ],
+   [
+    "Receiving Yards",
+    "Bailey Stockton",
+    "8 REC, 127 YDS, 1 TD"
+   ]
+  ]
  },
  "next": {
   "eventId": "401856724",
@@ -42,6 +66,7 @@
   "opponentRank": 7,
   "opponentRecord": "4-1",
   "home": false,
+  "neutral": false,
   "kickoffIso": "2026-10-17T16:00:00Z",
   "tv": "ABC",
   "venue": "DKR-Texas Memorial Stadium",

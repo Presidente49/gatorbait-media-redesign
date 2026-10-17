@@ -178,6 +178,14 @@ def parse_summary(sm):
         play = cur['plays'][-1]
         poss = poss or (cur.get('team') or {}).get('id')
     out['possession'] = poss and str(poss)
+    # Box-score totals, attendance and per-team leaders for the front page's game tape (absent from trimmed fixtures).
+    out['stats'] = {str((t.get('team') or {}).get('id')): {x.get('name'): x.get('displayValue') for x in t.get('statistics') or []}
+                    for t in (sm.get('boxscore') or {}).get('teams') or []}
+    att = (sm.get('gameInfo') or {}).get('attendance')
+    out['attendance'] = int(att) if isinstance(att, (int, float)) and att > 0 else None
+    out['leaders'] = {str((t.get('team') or {}).get('id')): [[c.get('displayName'), ((c['leaders'][0].get('athlete') or {}).get('displayName')), c['leaders'][0].get('displayValue')]
+                                                         for c in t.get('leaders') or [] if c.get('leaders')]
+                      for t in sm.get('leaders') or []}
     out['lastPlay'] = (play.get('text') or None) if play else None
     return out
 
@@ -290,10 +298,24 @@ def build(schedule, standings, summaries, posts_doc, prev, now):
                     raise ScoreError(f'event {g["eventId"]}: quarters {q} do not add up to schedule score {g["score"]}')
         elif prev and (prev.get('last') or {}).get('eventId') == g['eventId']:
             q = prev['last'].get('quarters')  # summary read failed: keep what we already had for this game
+        tape, leaders = None, None
+        if sm and TEAM_ID in sm.get('stats', {}):
+            def num(v):
+                return int(v) if isinstance(v, str) and v.isdigit() else None
+            st = sm['stats'][TEAM_ID]
+            tape = {'totalYards': num(st.get('totalYards')), 'rushingYards': num(st.get('rushingYards')),
+                    'firstDowns': num(st.get('firstDowns')), 'attendance': sm.get('attendance')}
+            if all(v is None for v in tape.values()):
+                tape = None
+            leaders = [r for r in sm.get('leaders', {}).get(TEAM_ID, [])
+                       if r[0] in ('Passing Yards', 'Rushing Yards', 'Receiving Yards') and r[1] and r[2]] or None
+        elif prev and (prev.get('last') or {}).get('eventId') == g['eventId']:
+            tape, leaders = prev['last'].get('tape'), prev['last'].get('leaders')
         out['last'] = {
             'eventId': g['eventId'], 'opponent': g['opponent'], 'opponentRank': g['opponentRank'], 'home': g['home'], 'neutral': g['neutral'],
             'date': g['date'], 'status': 'final', 'score': g['score'], 'quarters': q, 'venue': g['venue'],
             'recapUrl': find_story(g, posts, 'recap'), 'galleryUrl': find_story(g, posts, 'gallery'),
+            'tape': tape, 'leaders': leaders,
         }
 
     out['next'] = None

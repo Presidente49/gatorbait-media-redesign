@@ -1,0 +1,31 @@
+name: ESPN probe (one-off, read-only)
+on:
+  push:
+    branches:
+      - 'probe/espn-20261017'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read ESPN the way the homepage card does
+        run: |
+          for q in "groups=8&dates=20261017" "dates=20261017" ""; do
+            echo "=== query: $q"
+            curl -sS -D /tmp/h.txt -o /tmp/espn.json "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?$q" || true
+            grep -i -E "^HTTP|access-control" /tmp/h.txt | head -3
+            python3 - <<'PY'
+          import json
+          try:
+              d=json.load(open('/tmp/espn.json'))
+          except Exception as e:
+              print('PARSE FAIL', e); raise SystemExit
+          ev=d.get('events',[])
+          print('events:',len(ev))
+          for e in ev:
+              if str(e.get('id'))=='401856724' or 'Florida' in e.get('name',''):
+                  c=e['competitions'][0]; t=c['status']['type']
+                  print(e['id'], e['name'], '|', t['state'], t.get('shortDetail'), '|', [(x['team']['abbreviation'],x['score'],[l.get('value') for l in x.get('linescores',[])]) for x in c['competitors']])
+          PY
+          done

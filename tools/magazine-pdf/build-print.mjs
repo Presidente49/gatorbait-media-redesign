@@ -14,8 +14,11 @@ const byUrl = new Map(P.posts.map(p => [p.url, p]));
 
 const LOGO = 'data:image/webp;base64,' + fs.readFileSync(new URL('./assets/gatorbait-logo.webp', import.meta.url)).toString('base64');
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const q = s => String(s == null ? '' : s).replace(/[“”]/g, '"').replace(/[‘’]/g, "'");
-const media = (img, w = 1600, h = 1600, mode = 'fit') => img && img.id ? `https://static.wixstatic.com/media/${img.id}~mv2.${img.ext || 'jpg'}/v1/${mode}/w_${w},h_${h},al_c,q_78/${img.id}.${img.ext === 'png' ? 'png' : 'jpg'}` : '';
+// Text strings get curly quotes (AP style for GatorBait copy). Article HTML is never touched: it already carries the writer's curly quotes.
+const q = s => String(s == null ? '' : s)
+  .replace(/(^|[\s(\[{\u2014\u2013-])"/g, '$1\u201c').replace(/"/g, '\u201d')
+  .replace(/(^|[\s(\[{\u2014\u2013-])'/g, '$1\u2018').replace(/'/g, '\u2019');
+const media = (img, w = 1600, h = 1600, mode = 'fit', qv = 78) => img && img.id ? `https://static.wixstatic.com/media/${img.id}~mv2.${img.ext || 'jpg'}/v1/${mode}/w_${w},h_${h},al_c,q_${qv}/${img.id}.${img.ext === 'png' ? 'png' : 'jpg'}` : '';
 const fig = (img, cls = '', w = 1600, h = 1600, mode = 'fit') => {
   if (!img || !img.id) return '';
   const credit = q(img.credit || '');
@@ -30,7 +33,15 @@ function body(post) {
   h = h.replace(/<img data-media="([^"]+)" data-ext="([^"]+)" alt="([^"]*)">/g, (m, id, ext, alt) => `<img src="${media({ id, ext }, 1400, 1400)}" alt="${alt}">`);
   h = h.replace(new RegExp(`^(<p><strong>By ${esc(post.author)}\\.?</strong></p>|<p>By ${esc(post.author)}\\.?</p>)`), '');
   h = h.replace(/<a href="[^"]*">/g, '').replace(/<\/a>/g, '');   // links are not useful on paper
-  return q(h);
+  return smartHtml(h);
+}
+// Curly quotes in text nodes only; markup and attributes are never touched.
+function smartHtml(h) {
+  const fix = t => t.replace(/&(?:#x27|#39|apos);/gi, "'").replace(/&(?:#x22|#34|quot);/gi, '"')
+    .replace(/(^|[\s(\[{\u2014\u2013-])'(?=(em|til|cause|tis|twas|round|n)\b|\d\d)/gi, '$1\u2019')
+    .replace(/(^|[\s(\[{\u2014\u2013-])"/g, '$1\u201c').replace(/"/g, '\u201d')
+    .replace(/(^|[\s(\[{\u2014\u2013-])'/g, '$1\u2018').replace(/'/g, '\u2019');
+  return h.split(/(<[^>]+>)/).map(seg => seg.startsWith('<') ? seg : fix(seg)).join('');
 }
 const when = iso => { const d = new Date(iso); if (!iso || isNaN(d)) return ''; const m = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.']; return `${m[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`; };
 
@@ -44,7 +55,7 @@ function brief(html, maxWords) {
 const pullFrom = (post, extra) => {
   if (extra) return extra;
   const t = (post.html || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
-  const m = t.match(/"([^"]{50,170}[.!?])"/);
+  const m = t.match(/[\u201c"]([^\u201d"]{50,170}[.!?])[\u201d"]/);
   return m ? m[1] : '';
 };
 function story(post, { kicker, image, title, cls = '', lede = '', pq = '' } = {}) {
@@ -58,7 +69,7 @@ function story(post, { kicker, image, title, cls = '', lede = '', pq = '' } = {}
   return `<article class="story ${cls}" id="${esc(post.url.replace(/[^a-z0-9]+/gi, '-'))}">
 <header class="story-h">${kicker ? `<p class="kick">${esc(q(kicker))}</p>` : ''}<h2>${esc(q(title || post.title))}</h2>${lede ? `<p class="lede">${esc(q(lede))}</p>` : ''}<p class="by">By ${esc(post.author)} <span>${esc(when(post.published))}</span></p></header>
 ${fig(img, 'story-ph', 1300, 900)}
-${pull ? `<blockquote class="pull">${esc(q(pull))}</blockquote>` : ''}
+${pull ? `<blockquote class="pull">${esc(String(pull).replace(/\u201c/g, '\u2018').replace(/\u201d/g, '\u2019').replace(/'/g, '\u2019'))}</blockquote>` : ''}
 <div class="body">${bodyHtml}</div>${more}
 </article>`;
 }
@@ -69,7 +80,8 @@ const cards = (D.cards && D.cards.items) || [];
 const coverPost = byUrl.get(C.url), leadPost = byUrl.get(L.url), F = D.feature || {}, featPost = byUrl.get(F.url);
 const oppName = (teams.find(t => t.name !== 'Florida') || {}).name || 'Opponent';
 
-const cover = `<section class="cover">
+const artCover = !!(C.image && C.image.width && C.image.height && Math.abs(C.image.width / C.image.height - 8.5 / 11) < 0.02);
+const cover = artCover ? `<section class="cover art"><img class="cover-img" src="${media(C.image, 2200, 2850, 'fill', 90)}" alt="${esc(q(C.image.alt))}"></section>` : `<section class="cover">
 <img class="cover-img" src="${media(C.image, 2200, 1700, 'fill')}" alt="${esc(q(C.image && C.image.alt))}">
 <div class="cover-shade"></div>
 <div class="mast"><img class="logo" src="${LOGO}" alt="GatorBait"><span class="mz">Magazine</span></div>
@@ -101,15 +113,26 @@ const briefing = `<section class="brief">
 <h3>${esc(D.injuries && D.injuries.label || 'Availability')}</h3><p>${esc(q(D.injuries && D.injuries.asOf))}</p></div>
 </div>
 </section>`;
+const NUM = D.numbers || {}, WCH = D.watching || {};
+const numItems = (NUM.items || []).filter(t => t && t.value && t.label);
+const wchItems = (WCH.items || []).filter(t => t && t.by && t.line);
+const authors = [...new Set(P.posts.map(p => p.author).filter(Boolean))];
+const numbers = numItems.length ? `<section class="nums"><h2 class="sec">${esc(q(NUM.label || 'By the numbers'))}</h2><p class="note">${esc(q(NUM.note))}</p>
+<div class="tiles">${numItems.map(t => `<div class="tile"><b>${esc(t.value)}</b><span>${esc(q(t.label))}</span>${t.note ? `<small>${esc(q(t.note))}</small>` : ''}</div>`).join('')}</div><p class="src">${esc(q(NUM.source))}</p></section>` : '';
+const watching = wchItems.length ? `<section class="wtch"><h2 class="sec">${esc(q(WCH.label || 'What we are watching'))}</h2><p class="note">${esc(q(WCH.note))}</p>
+<div class="wqs">${wchItems.map(t => `<blockquote class="wq"><p>${esc(q(t.line))}</p><cite>${esc(t.by)}</cite></blockquote>`).join('')}</div><p class="src">${esc(q(WCH.source))}</p></section>` : '';
+const team = `<section class="team-page"><h2 class="sec">The GatorBait Media team</h2><p class="who">${authors.map(esc).join(' <i></i> ')}</p><p class="src">Photography: Chris Spears, GatorBait Media. Independent Florida Gators coverage at www.gatorbaitmedia.com, with The Buddy Martin Show nightly.</p></section>`;
+const numPage = (numbers || watching) ? `<div class="numpage">${numbers}${watching}${team}</div>` : '';
+
 const watchSec = `<h3>${esc(D.watch && D.watch.label || 'How to watch')}</h3><table class="watch">${watch}</table><p class="src">${esc(q(D.watch && D.watch.source))}</p>`;
 
-const slateSec = `<section class="slate"><h2 class="sec">${esc(D.slate && D.slate.label || 'Saturday in the SEC')}</h2><p class="note">${esc(q(D.slate && D.slate.note))}</p>
+const slateSec = `<section class="slate"><h2 class="sec">${esc(q(D.slate && D.slate.label || 'Saturday in the SEC'))}</h2><p class="note">${esc(q(D.slate && D.slate.note))}</p>
 <table class="sl"><thead><tr><th>Time (ET)</th><th>Game</th><th>TV</th><th>Line</th></tr></thead><tbody>${slate}</tbody></table><p class="src">${esc(q(D.slate && D.slate.source))}</p>${watchSec}</section>`;
 
 const shots = D.shots && D.shots.photos && D.shots.photos.length ? `<section class="shots"><h2 class="sec">${esc(D.shots.label)}</h2><p class="note">${esc(q(D.shots.note))} · ${esc(q(D.shots.credit))}</p>
 <div class="grid">${D.shots.photos.map(p => `<figure class="ph"><img src="${media(p, 1400, 1000)}" alt="${esc(q(p.alt))}"><figcaption>${esc(q(p.caption))}</figcaption></figure>`).join('')}</div></section>` : '';
 
-const cardStories = cards.map(c => story(byUrl.get(c.url), { kicker: c.kicker, image: c.image, title: c.title, cls: 'card' })).join('\n');
+const cardStories = cards.filter(c => c.url !== C.url && c.url !== F.url && c.url !== L.url).map(c => story(byUrl.get(c.url), { kicker: c.kicker, image: c.image, title: c.title, cls: 'card' })).join('\n');
 const next = D.reference && D.reference.next ? `<p class="next">${esc(q(D.reference.next))}</p>` : '';
 
 const html = `<!doctype html>
@@ -249,14 +272,41 @@ figcaption, .src, .note, .by span { color: var(--mute); }
 .body h2, .body h3, .body h4 { color: var(--blue); font: 800 12pt/1.2 "Barlow Condensed", Barlow, sans-serif; text-transform: uppercase; letter-spacing: .04em; margin: 9pt 0 3pt; }
 .body strong { color: var(--blue); } .body blockquote { border-left-color: var(--orange); color: var(--ink); }
 .more { margin: 5pt 0 0; font: 700 8.5pt/1.3 Barlow, Arial, sans-serif; color: var(--blue); }
-.grid img { max-height: 4.6in; }
+.grid img { max-height: 1.75in; width: 100%; object-fit: cover; } .grid figure:first-child img { max-height: 3in; }
 .end { border-top: 4pt solid var(--orange); } .next { color: var(--blue); font-size: 13pt; }
+
+/* ===== Network skin for print: blue slabs, orange rails, chamfered tiles. Pages stay white for home printers. ===== */
+.cover.art { display: block; position: relative; background: #061a45; }
+.cover.art .cover-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: none; }
+.sec { background: linear-gradient(90deg, #0021a5 0%, #0a38d4 100%); color: #fff; border-left: 0; padding: 8pt 22pt 8pt 12pt; position: relative; clip-path: polygon(0 0, 100% 0, calc(100% - 14pt) 100%, 0 100%); letter-spacing: .02em; }
+.sec::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3.5pt; background: var(--orange); }
+.story .kick { display: inline-block; background: var(--orange); color: #fff; padding: 3pt 12pt 3pt 8pt; margin: 0 0 6pt; clip-path: polygon(0 0, 100% 0, calc(100% - 7pt) 100%, 0 100%); }
+.story.card .story-h .kick { font-size: 7.6pt; }
+.numpage { break-after: page; display: grid; gap: 14pt; align-content: start; }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9pt; margin: 8pt 0 2pt; }
+.tile { background: var(--tint); border-top: 5pt solid var(--orange); padding: 9pt 10pt 9pt; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 11pt), calc(100% - 11pt) 100%, 0 100%); break-inside: avoid; }
+.tile b { display: block; font: 900 31pt/.95 "Barlow Condensed", Barlow, Arial, sans-serif; color: var(--blue); }
+.tile span { display: block; margin-top: 3pt; font: 800 8.4pt/1.25 Barlow, Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); }
+.tile small { display: block; margin-top: 3pt; font: 500 8.2pt/1.35 Barlow, Arial, sans-serif; color: var(--mute); }
+.wqs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10pt; margin-top: 8pt; }
+.wq { margin: 0; padding: 10pt 12pt 9pt 34pt; background: var(--tint); border-left: 5pt solid var(--orange); position: relative; break-inside: avoid; }
+.wq::before { content: "\\201C"; position: absolute; left: 9pt; top: -2pt; font: 900 44pt/1 "Barlow Condensed", Barlow, sans-serif; color: var(--orange); }
+.wq p { margin: 0; font: 600 11.2pt/1.35 Barlow, Arial, sans-serif; color: var(--ink); }
+.wq cite { display: block; margin-top: 6pt; font: 800 8.6pt/1.2 Barlow, Arial, sans-serif; font-style: normal; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
+.team-page { break-inside: avoid; }
+.who { font: 800 13pt/1.3 "Barlow Condensed", Barlow, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin: 6pt 0 3pt; }
+.who i { display: inline-block; width: 5pt; height: 5pt; background: var(--orange); margin: 0 8pt 1.5pt; transform: rotate(45deg); }
+.story.feature .story-h h2 { font-size: 44pt; }
+.story.feature .body > h2:first-child { display: none; }
+.story.feature .body > h2:first-child + p::first-letter { float: left; font: 900 54pt/.8 "Barlow Condensed", Barlow, sans-serif; color: var(--orange); padding: 4pt 6pt 0 0; }
+.story.feature .pull { font-size: 21pt; background: var(--tint); padding: 10pt 14pt; border-left-width: 7pt; }
 </style></head><body>
 ${cover}
 ${briefing}
+${numPage}
 ${story(coverPost, { kicker: C.kicker, title: coverPost && /Nostalgia/i.test(C.headline) ? C.headline : undefined, lede: '', cls: 'feature', pq: ((C.lines||[])[2]||'').replace(/ Buddy Martin$/, '').replace(/^"|"$/g, '') })}
 ${story(leadPost, { kicker: `${L.label || 'The Lead'} · ${L.author || ''}`, image: L.image, title: L.title, cls: 'feature' })}
-${featPost ? story(featPost, { kicker: `${F.label || 'Feature'} · ${F.author || ''}`, image: F.image, title: F.title, cls: 'feature' }) : ''}
+${featPost ? story(featPost, { kicker: `${F.label || 'Feature'} · ${F.author || ''}`, image: F.image, title: F.title, lede: F.dek, cls: 'feature', pq: process.env.FEATURE_PULL || '' }) : ''}
 ${slateSec}
 <section class="news"><h2 class="sec" style="break-before:page">${esc(D.cards && D.cards.label || 'This week')}</h2>
 ${cardStories}

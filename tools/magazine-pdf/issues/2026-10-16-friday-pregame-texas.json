@@ -1,0 +1,87 @@
+{
+ "desk": {
+  "label": "From the GatorBait desk",
+  "kicker": "The desk · Saturday math",
+  "title": "Two sets of numbers, one point spread",
+  "dek": "The market says Texas by 11.5. The season averages say something closer. Both can be true, and the gap between them is Saturday's story.",
+  "byline": "By the GatorBait Media Desk",
+  "pull": "The averages say close. The line says it isn’t.",
+  "chart": {
+   "label": "Points a game, season averages",
+   "bars": [
+    {
+     "label": "Florida scores",
+     "value": 41.7,
+     "tone": "blue"
+    },
+    {
+     "label": "Texas allows",
+     "value": 16.0,
+     "tone": "orange"
+    },
+    {
+     "label": "Texas scores",
+     "value": 31.4,
+     "tone": "orange"
+    },
+    {
+     "label": "Florida allows",
+     "value": 29.0,
+     "tone": "blue"
+    }
+   ],
+   "max": 45
+  },
+  "paragraphs": [
+   "Texas is favored by 11.5 at noon ET on Saturday, and the total is 51.5. Do the arithmetic and the market is picturing something near Texas 31.5, Florida 20.",
+   "Now put the season averages side by side. Florida scores 41.7 points a game. Texas allows 16.0. Texas scores 31.4. Florida allows 29.0. Split each matchup down the middle and you land at about 29 for Florida and 30 for Texas. That is not a prediction. It is a reminder that the line and the stats are answering different questions. The line knows about a road trip and a quarterback who may be making his first start. The averages do not.",
+   "Where the line has a case: Florida’s pass defense gives up 268.7 yards a game, 131st nationally, and Arch Manning is 92 of 146 for 1,122 yards with 10 touchdowns and five interceptions. Texas throws for 237.0 a game. That is the matchup the 11.5 is built on.",
+   "Where Florida has one: the ground. The Gators run for 200.3 yards a game at 5.0 a carry, and Jadan Baugh has 672 yards and 12 touchdowns on 110 carries. Texas allows 96.0 rushing yards a game, 19th nationally. One of those numbers moves on Saturday.",
+   "Two smaller figures decide how close the game stays. Texas holds opponents to 30.4% on third down, 21 of 69. Florida allows 46.2%, 43 of 93. On offense the teams are almost even: 45.2% for Florida, 44.6% for Texas. Add the turnover margin, plus-3 for Florida and plus-1 for Texas, and the path to a close game runs through who finishes drives.",
+   "History adds a note of caution. Florida is 0-2-1 in Austin, and its only win in five meetings came last October in Gainesville, 29-21.",
+   "The averages say close. The line says it isn’t. Noon will settle it."
+  ],
+  "source": "Source: ESPN game summary and pickcenter (event 401856724), ESPN 2026 team statistics and national ranks, Oct. 15 (Florida six games, Texas five); FloridaGators.com series history. The implied score is figured from the 11.5-point spread and 51.5 total. The split-the-middle figures are simple averages of the per-game numbers shown."
+ },
+ "credits": {
+  "label": "Masthead",
+  "people": [
+   {
+    "role": "Publisher and Editor-in-Chief",
+    "name": "Buddy Martin"
+   },
+   {
+    "role": "Owner and Executive Producer, GatorBait Media and GatorBait TV",
+    "name": "Brenden Martin"
+   },
+   {
+    "role": "Columnist",
+    "name": "Franz Beard"
+   },
+   {
+    "role": "Writer",
+    "name": "Eddie Gilley"
+   },
+   {
+    "role": "Writer",
+    "name": "Loren Meadows"
+   },
+   {
+    "role": "Photography",
+    "name": "Chris Spears"
+   },
+   {
+    "role": "Pregame desk, graphics and production",
+    "name": "The GatorBait Media Desk"
+   }
+  ],
+  "lines": [
+   "GatorBait Magazine is an independent Florida Gators publication. It was founded by David Stirt and is published today by GatorBait Media.",
+   "The Buddy Martin Show streams nightly from GatorBait Media.",
+   "Photos by Chris Spears, GatorBait Media. Cover art, charts and illustrations by GatorBait Media.",
+   "Statistics, rankings and betting lines: ESPN, with the DraftKings line via ESPN. Series history and availability reports: FloridaGators.com."
+  ],
+  "contact": "www.gatorbaitmedia.com",
+  "copyright": "© 2026 GatorBait Media. All rights reserved."
+ }
+}

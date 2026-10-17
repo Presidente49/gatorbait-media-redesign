@@ -327,7 +327,8 @@ function loadCfg(){return get(CFG+'?t='+Math.floor(Date.now()/36e5)).then(functi
 function graphic(root){var im=root.querySelector('.bc-hero .sh-lead img'),u=im&&(im.currentSrc||im.src)||'',id=(/\/media\/([0-9a-f]+_[0-9a-f]+)/.exec(u)||[])[1];return!!u&&(/~mv2\.png(\/|$|\?)/i.test(u)||!!(id&&D.covers&&D.covers.indexOf(id)>=0));}
 function loadSB(){return get(SB+'?t='+minute()).then(function(d){if(d&&d.team&&('next' in d))D.sb=d;}).catch(function(){});}
 function ymd(t){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date(t)).replace(/-/g,'');}
-function window_(){var n=D.sb&&(D.sb.live||D.sb.next);if(!n)return null;var k=Date.parse(n.kickoffIso||n.date);return isFinite(k)&&Date.now()>k-HR&&Date.now()<k+6*HR?{id:String(n.eventId),k:k}:null;}
+/* The feed's live block has no kickoff: take it from the matching next block, or use now while the game is on (the card showed last week's final once the feed went live). */
+function window_(){var s=D.sb,n=s&&(s.live||s.next);if(!n)return null;var m=s.next&&String(s.next.eventId)===String(n.eventId)?s.next:n,k=Date.parse(m.kickoffIso||m.date);if(!isFinite(k)&&n===s.live)k=Date.now();return isFinite(k)&&Date.now()>k-HR&&Date.now()<k+6*HR?{id:String(n.eventId),k:k}:null;}
 function loadLive(){var w=window_();if(!w){D.live=null;return Promise.resolve();}
 return get(ESPN+ymd(w.k)+'&_='+Math.floor(Date.now()/15e3),0,1).then(function(d){var e=(d.events||[]).find(function(e){return String(e.id)===w.id;});if(!e)return;var c=e.competitions[0],
 us=c.competitors.find(function(t){return String(t.id||t.team.id)==='57';}),th=c.competitors.find(function(t){return t!==us;});if(!us||!th)return;

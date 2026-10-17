@@ -1,11 +1,13 @@
-/* GatorBait sitewide typography authority.
- * One-family system: Barlow.
+/* GatorBait sitewide typography authority (v1 plus the Oct. 7 fixes, "Tier A"). Spec: docs/TYPE-STANDARD-2026-10.md
+ * House type is the Barlow family: Barlow Condensed for display, Barlow for text. v1's Barlow force on headings is left
+ * as it was; the Condensed restore is assets/sitewide-type-condensed.css (Tier B, needs Brenden's yes).
  */
 :root{
   --gbm-font:"Barlow",Arial,Helvetica,sans-serif;
   --gbm-font-display:"Barlow",Arial,Helvetica,sans-serif;
   --gbm-font-copy:"Barlow",Arial,Helvetica,sans-serif;
   --gbm-font-ui:"Barlow",Arial,Helvetica,sans-serif;
+  --gbm-cond:"Barlow Condensed","Barlow",Arial,Helvetica,sans-serif;
 }
 html body{
   font-family:var(--gbm-font)!important;
@@ -55,5 +57,77 @@ html body{
   [data-hook="post"] p,[data-hook="post"] li,[data-hook="post-description"],[data-hook="post-page"] p{
     font-size:16px!important;
     line-height:1.62!important;
+  }
+}
+
+/* A. Native Wix pieces that bring their own face, and the signup card. */
+[data-hook^="consent-banner"],[data-hook^="consent-banner"] *,#cookies_policy_description,
+[data-hook="comment-box-placeholder-text"],[data-hook^="comments-"],[data-hook^="comments-"] *,
+[data-hook="floating-dropdown-base-selected"],[data-hook="edited-comment-indicator"],
+html body #SITE_PAGES [category-dropdown],html body #SITE_PAGES [category-dropdown] *{
+  font-family:var(--gbm-font)!important;
+}
+[data-hook^="consent-banner"] button,[data-hook^="consent-banner"] button *{
+  font-weight:700!important;
+}
+html body nav[tag-cloud-root] ul[class] li a[class],
+html body nav[tag-cloud-root] ul[class] li a[class] *{
+  font-family:var(--gbm-cond)!important;
+  font-weight:700!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+/* Signup card: one face in both mounts (end-of-story strip and slide-up bar). */
+html body #SITE_PAGES [data-hook="post-page"] .gbc .gbc-h,
+html body #SITE_PAGES [data-hook="post-page"] .gbc .gbc-b,
+#gbc-bar .gbc-h,#gbc-bar .gbc-b{
+  font-family:var(--gbm-cond)!important;
+}
+
+/* B. Article body: one face, one weight, one size. Body 500, 19px desktop / 17.5px phone;
+ *    the lede (first paragraph, carries the drop cap) is 20px / 18.5px on every post. Specificity matches the post
+ *    template's own selectors plus one attribute so it wins without raising !important order. */
+html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] :is(p,li) span{
+  font-family:var(--gbm-font)!important;
+}
+html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] :is(p,li) span strong,
+html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] [data-gbm-stat] p strong,
+html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] [data-gbm-stat] p strong *{
+  font-family:var(--gbm-cond)!important;
+}
+html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] :is(p,li){
+  font-family:var(--gbm-font)!important;
+  font-weight:500!important;
+}
+html body #SITE_PAGES [data-hook="post-page"] [data-hook="post"] [data-hook="rcv-block-first"]+div>[data-breakout]:first-child p,
+html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="post"] [data-hook="post-description"] p.gbm-dropcap{
+  font-size:20px!important;
+  line-height:1.68!important;
+  font-weight:500!important;
+}
+@media(max-width:750px){
+  html body #SITE_PAGES [data-hook="post-page"] [data-hook="post"] [data-hook="rcv-block-first"]+div>[data-breakout]:first-child p,
+  html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="post"] [data-hook="post-description"] p.gbm-dropcap{
+    font-size:18.5px!important;
+    line-height:1.62!important;
+  }
+}
+
+/* C. Dek. A bold opening line that the author sized in the Wix editor is marked data-gbm-dek by the post
+ *    normalizer (c91ad133) and is a deck, not body copy: Condensed 700, 30px / 25px, no drop cap. Without
+ *    this block the lede rule above (and the drop-cap rule in the post template) mix with it and render
+ *    Barlow Condensed at weight 500 and body size (seen on the Corn Dogs vs. Commissioners column). */
+html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] p[data-gbm-dek],
+html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="post"] [data-hook="post-description"] p.gbm-dropcap[data-gbm-dek]{
+  font:700 30px/1.12 var(--gbm-cond)!important;
+  letter-spacing:0!important;
+}
+html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] p.gbm-dropcap[data-gbm-dek]::first-letter{
+  float:none!important;font:inherit!important;padding:0!important;color:inherit!important;
+}
+@media(max-width:750px){
+  html body #SITE_PAGES [data-hook="post-page"] [data-hook="post-description"] p[data-gbm-dek],
+  html[data-gbm-week-rich] body #SITE_PAGES [data-hook="post-page"] [data-hook="post"] [data-hook="post-description"] p.gbm-dropcap[data-gbm-dek]{
+    font-size:25px!important;
   }
 }

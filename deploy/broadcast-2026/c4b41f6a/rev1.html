@@ -1,0 +1,34 @@
+<!-- GBM_SECTION_NAV_V1 --><style id="gbm-sn-css">[data-hook=feed-page-root]:has(#gbm-lp) [data-hook=blog-desktop-header-container],[data-hook=feed-page-root]:has(#gbm-lp) #content-wrapper>div:has(.header-buttons),#gbm-lp .lp-mast{display:none!important}#gbm-sn{--o:#fa4616;--n:#081b35;max-width:1180px;margin:0 auto 18px;padding:0 20px;box-sizing:border-box;font-family:Barlow,Arial,sans-serif;text-align:left}#gbm-sn *{box-sizing:border-box}#gbm-sn .sn-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding:18px 0 12px}#gbm-sn .sn-k{color:#d8450c;font:800 12px/1 Barlow,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}#gbm-sn h1{margin:0;color:var(--n);font:800 38px/1 "Barlow Condensed",Barlow,Arial,sans-serif;text-transform:uppercase;letter-spacing:.005em}#gbm-sn nav{background:var(--n);border-top:4px solid var(--o)}#gbm-sn ul{display:flex;align-items:center;margin:0;padding:0 8px;list-style:none;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}#gbm-sn ul::-webkit-scrollbar{display:none}#gbm-sn li{flex:0 0 auto;margin:0;padding:0}#gbm-sn a{display:block;padding:15px 12px 11px;color:#fff;font:800 15px/1 "Barlow Condensed",Barlow,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:4px solid transparent;white-space:nowrap}#gbm-sn a:hover,#gbm-sn a:focus-visible{color:#ff9a70;outline:none}#gbm-sn a[aria-current=page]{border-bottom-color:var(--o)}#gbm-sn .sn-2{background:#0d2447;border-top:0}#gbm-sn .sn-2 a{font-size:14px;color:#c9d3e6;padding:12px 12px 8px}#gbm-sn .sn-2 a[aria-current=page]{color:#fff}#gbm-sn .sn-l{padding:12px 6px 8px 4px;color:#ff9a70;font:800 11px/1.4 Barlow,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}@media(max-width:640px){#gbm-sn{padding:0;margin-bottom:14px}#gbm-sn .sn-top{padding:14px 16px 10px}#gbm-sn h1{font-size:30px}#gbm-sn ul{padding:0 4px}}</style><script id="gbm-sn-js">(function(){
+'use strict';if(window.__GBM_SN__)return;window.__GBM_SN__=1;
+var B='/gatorbait-media-blogs',C=B+'/categories/',O='https://www.gatorbaitmedia.com',sig='';
+var S=[['Latest',''],['Football','gator-football'],['Breaking News','gator-breaking-news'],['Recruiting','gator-recruiting'],['Basketball','gator-basketball'],['Baseball','gator-baseball'],['Softball','gator-softball'],['Gymnastics','gator-gymnastics'],['Gators in the NFL','gators-in-the-nfl'],['Magazine','gatorbait-magazine'],['Buddy Martin Show','the-buddy-martin-show']];
+var W=[['Buddy Martin','buddy-s-blog'],['Franz Beard','franz-beard-blog'],['Thoughts of the Day','thoughts-of-the-day-franz-beard-1'],['Loren Meadows','loren-meadows-blogs'],['Eddie Gilley','eddie-gilley-blog'],['Carlton Reese','carlton-reese']];
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function on(){var p=location.pathname;return /^\/gatorbait-media-blogs(\/|$)/.test(p)&&!/\/post\//.test(p);}
+function cur(){var p=location.pathname,m=p.match(/\/categories\/([^/]+)/);if(m)return m[1];return /\/tags\//.test(p)?null:'';}
+function url(s){return s?C+s:B;}
+function find(s){var a=S.concat(W);for(var i=0;i<a.length;i++)if(a[i][1]===s)return a[i];return null;}
+function info(){var c=cur(),dt=(document.title||'').split('|')[0].trim(),f;
+if(c==='')return {k:'GatorBait Media',t:'Latest Florida Gators News'};
+if(c===null)return {k:'Topic',t:dt||'Topic'};
+f=find(c);var col=W.some(function(x){return x[1]===c;});
+return {k:col?'Columnist':'Section',t:dt&&!/gatorbait/i.test(dt)?dt:(f?f[0]:c.replace(/-/g,' '))};}
+function li(list,c){return list.map(function(x){return '<li><a href="'+url(x[1])+'"'+(x[1]===c?' aria-current="page"':'')+'>'+esc(x[0])+'</a></li>';}).join('');}
+function html(){var c=cur(),i=info();return '<div class="sn-top"><span class="sn-k">'+esc(i.k)+'</span><h1>'+esc(i.t)+'</h1></div><nav aria-label="GatorBait sections"><ul>'+li(S,c)+'</ul></nav><nav class="sn-2" aria-label="GatorBait columnists"><ul><li class="sn-l">Columnists</li>'+li(W,c)+'</ul></nav>';}
+function ld(lp){var i=info(),u=O+location.pathname,items=[],seen={};
+[].forEach.call(lp.querySelectorAll('a.lp-lead,a.lp-row,a.lp-card'),function(a){var h=a.getAttribute('href'),t=a.querySelector('h2,h3');if(!h||seen[h]||!t)return;seen[h]=1;items.push({'@type':'ListItem',position:items.length+1,url:h.charAt(0)=='/'?O+h:h,name:(t.textContent||'').trim()});});
+var g={'@context':'https://schema.org','@graph':[{'@type':'CollectionPage','@id':u+'#page',url:u,name:i.t+' | GatorBait Media',isPartOf:{'@type':'WebSite',name:'GatorBait Media',url:O+'/'},about:{'@type':'SportsTeam',name:'Florida Gators'},breadcrumb:{'@id':u+'#crumbs'},mainEntity:{'@type':'ItemList',itemListElement:items}},{'@type':'BreadcrumbList','@id':u+'#crumbs',itemListElement:[{'@type':'ListItem',position:1,name:'GatorBait Media',item:O+'/'},{'@type':'ListItem',position:2,name:'Latest',item:O+B}].concat(cur()?[{'@type':'ListItem',position:3,name:i.t,item:u}]:[])}]};
+var s=document.getElementById('gbm-sn-ld');if(!s){s=document.createElement('script');s.type='application/ld+json';s.id='gbm-sn-ld';document.head.appendChild(s);}s.textContent=JSON.stringify(g);}
+function tick(){
+if(!on()){var o=document.getElementById('gbm-sn');if(o)o.remove();var l=document.getElementById('gbm-sn-ld');if(l)l.remove();sig='';return;}
+var lp=document.getElementById('gbm-lp');if(!lp||!lp.parentNode)return;
+var n=document.getElementById('gbm-sn');
+if(!n){n=document.createElement('section');n.id='gbm-sn';n.setAttribute('aria-label','Sections');}
+var s=location.pathname+'|'+document.title;
+if(n.getAttribute('data-sig')!==s){n.innerHTML=html();n.setAttribute('data-sig',s);}
+if(n.nextSibling!==lp)lp.parentNode.insertBefore(n,lp);
+var k=s+'|'+lp.querySelectorAll('a.lp-card,a.lp-row,a.lp-lead').length+'|'+(lp.querySelector('a.lp-lead')||{}).href;
+if(k!==sig){sig=k;try{ld(lp);}catch(e){}}
+}
+setInterval(tick,600);tick();
+})();</script>

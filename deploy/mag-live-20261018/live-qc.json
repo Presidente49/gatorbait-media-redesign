@@ -1,0 +1,234 @@
+[
+ {
+  "width": "390",
+  "http": 200,
+  "servedPin": 4,
+  "servedMarker": true,
+  "roots": 1,
+  "h1": "A Texas Barbecue: Gators Flip The Script — And Jones Changes",
+  "bundleSrc": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@3fc54418008a793dcca2b2e5e35132a961af0dce/sports-live/magazine-postgame.js",
+  "scrollW": 390,
+  "clientW": 390,
+  "overflow": 0,
+  "pmInWidth": 390,
+  "reels": [
+   {
+    "href": "https://www.youtube.com/watch?v=JexQFsm_wts",
+    "posterLoaded": true,
+    "w": 340,
+    "h": 604,
+    "ratio": 1.778,
+    "link": "Watch on YouTube",
+    "credit": "Video: Muse Made Media / GatorBait Media"
+   },
+   {
+    "href": "https://www.facebook.com/reel/2357932004980670/",
+    "posterLoaded": true,
+    "w": 340,
+    "h": 604,
+    "ratio": 1.778,
+    "link": "Watch on Facebook",
+    "credit": "Video: Muse Made Media / GatorBait Media"
+   }
+  ],
+  "imgs": 8,
+  "imgsBroken": 0,
+  "iframesBefore": 0,
+  "dlHref": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+  "dlDownload": true,
+  "uaa": true,
+  "georgiaRank": false,
+  "pageHeight": 14340,
+  "thirdPartyBeforeTap": [],
+  "bad": [],
+  "tap": {
+   "iframeSrc": "https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1",
+   "w": 340,
+   "h": 604.4375,
+   "buttonHidden": true,
+   "fbIframes": 0,
+   "shiftW": 0,
+   "shiftH": 0,
+   "srcOk": true
+  },
+  "errors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "pass": true
+ },
+ {
+  "width": "430",
+  "http": 200,
+  "servedPin": 4,
+  "servedMarker": true,
+  "roots": 1,
+  "h1": "A Texas Barbecue: Gators Flip The Script — And Jones Changes",
+  "bundleSrc": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@3fc54418008a793dcca2b2e5e35132a961af0dce/sports-live/magazine-postgame.js",
+  "scrollW": 430,
+  "clientW": 430,
+  "overflow": 0,
+  "pmInWidth": 430,
+  "reels": [
+   {
+    "href": "https://www.youtube.com/watch?v=JexQFsm_wts",
+    "posterLoaded": true,
+    "w": 340,
+    "h": 604,
+    "ratio": 1.778,
+    "link": "Watch on YouTube",
+    "credit": "Video: Muse Made Media / GatorBait Media"
+   },
+   {
+    "href": "https://www.facebook.com/reel/2357932004980670/",
+    "posterLoaded": true,
+    "w": 340,
+    "h": 604,
+    "ratio": 1.778,
+    "link": "Watch on Facebook",
+    "credit": "Video: Muse Made Media / GatorBait Media"
+   }
+  ],
+  "imgs": 8,
+  "imgsBroken": 0,
+  "iframesBefore": 0,
+  "dlHref": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+  "dlDownload": true,
+  "uaa": true,
+  "georgiaRank": false,
+  "pageHeight": 14259,
+  "thirdPartyBeforeTap": [],
+  "bad": [],
+  "tap": {
+   "iframeSrc": "https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1",
+   "w": 340,
+   "h": 604.4375,
+   "buttonHidden": true,
+   "fbIframes": 0,
+   "shiftW": 0,
+   "shiftH": 0,
+   "srcOk": true
+  },
+  "errors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "pass": true
+ },
+ {
+  "width": "1366",
+  "http": 200,
+  "servedPin": 4,
+  "servedMarker": true,
+  "roots": 1,
+  "h1": "A Texas Barbecue: Gators Flip The Script — And Jones Changes",
+  "bundleSrc": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@3fc54418008a793dcca2b2e5e35132a961af0dce/sports-live/magazine-postgame.js",
+  "scrollW": 1366,
+  "clientW": 1366,
+  "overflow": 0,
+  "pmInWidth": 1360,
+  "reels": [
+   {
+    "href": "https://www.youtube.com/watch?v=JexQFsm_wts",
+    "posterLoaded": true,
+    "w": 420,
+    "h": 747,
+    "ratio": 1.778,
+    "link": "Watch on YouTube",
+    "credit": "Video: Muse Made Media / GatorBait Media"
+   },
+   {
+    "href": "https://www.facebook.com/reel/2357932004980670/",
+    "posterLoaded": true,
+    "w": 420,
+    "h": 747,
+    "ratio": 1.778,
+    "link": "Watch on Facebook",
+    "credit": "Video: Muse Made Media / GatorBait Media"
+   }
+  ],
+  "imgs": 8,
+  "imgsBroken": 0,
+  "iframesBefore": 0,
+  "dlHref": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+  "dlDownload": true,
+  "uaa": true,
+  "georgiaRank": false,
+  "pageHeight": 11214,
+  "thirdPartyBeforeTap": [],
+  "bad": [],
+  "tap": {
+   "iframeSrc": "https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1",
+   "w": 420,
+   "h": 746.65625,
+   "buttonHidden": true,
+   "fbIframes": 0,
+   "shiftW": 0,
+   "shiftH": 0,
+   "srcOk": true
+  },
+  "errors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "pass": true
+ },
+ {
+  "width": "1920",
+  "http": 200,
+  "servedPin": 4,
+  "servedMarker": true,
+  "roots": 1,
+  "h1": "A Texas Barbecue: Gators Flip The Script — And Jones Changes",
+  "bundleSrc": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@3fc54418008a793dcca2b2e5e35132a961af0dce/sports-live/magazine-postgame.js",
+  "scrollW": 1920,
+  "clientW": 1920,
+  "overflow": 0,
+  "pmInWidth": 1520,
+  "reels": [
+   {
+    "href": "https://www.youtube.com/watch?v=JexQFsm_wts",
+    "posterLoaded": true,
+    "w": 460,
+    "h": 818,
+    "ratio": 1.778,
+    "link": "Watch on YouTube",
+    "credit": "Video: Muse Made Media / GatorBait Media"
+   },
+   {
+    "href": "https://www.facebook.com/reel/2357932004980670/",
+    "posterLoaded": true,
+    "w": 460,
+    "h": 818,
+    "ratio": 1.778,
+    "link": "Watch on Facebook",
+    "credit": "Video: Muse Made Media / GatorBait Media"
+   }
+  ],
+  "imgs": 8,
+  "imgsBroken": 0,
+  "iframesBefore": 0,
+  "dlHref": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+  "dlDownload": true,
+  "uaa": true,
+  "georgiaRank": false,
+  "pageHeight": 12440,
+  "thirdPartyBeforeTap": [],
+  "bad": [],
+  "tap": {
+   "iframeSrc": "https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1",
+   "w": 460,
+   "h": 817.765625,
+   "buttonHidden": true,
+   "fbIframes": 0,
+   "shiftW": 0,
+   "shiftH": 0,
+   "srcOk": true
+  },
+  "errors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "pass": true
+ }
+]

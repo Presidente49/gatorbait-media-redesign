@@ -120,6 +120,14 @@
         <mj-text padding="0 0 8px" color="#5B6472" font-size="13px">Rankings as of kickoff. Scores: ESPN. Notes: Franz Beard.</mj-text>
       </mj-column>
     </mj-section>
+    <mj-section background-color="#FFFFFF" padding="26px 24px 8px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 4px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.6px">WATCH</mj-text>
+        <mj-text padding="0 0 12px" color="#101820" font-size="24px" font-weight="800" line-height="1.15">Postgame clips from Austin</mj-text>
+        <mj-text padding="0 0 10px" color="#101820" font-size="16px" line-height="1.45"><a href="https://www.instagram.com/reel/Deo2ka3j-lI/" style="color:#0B3B9E;font-weight:700;">Baugh: &#8220;Tramell is going to be a great quarterback.&#8221;</a><br /><span style="color:#5B6472;font-size:14px;">Jadan Baugh on Tramell Jones Jr.&#8217;s first career start.</span></mj-text>
+        <mj-text padding="0 0 8px" color="#101820" font-size="16px" line-height="1.45"><a href="https://www.instagram.com/reel/Deo0M1Kj-1N/" style="color:#0B3B9E;font-weight:700;">Sumrall: &#8220;We still suck. We just suck less.&#8221;</a><br /><span style="color:#5B6472;font-size:14px;">Florida 27, No. 7 Texas 24, after a 17-3 hole.</span></mj-text>
+      </mj-column>
+    </mj-section>
     <mj-section background-color="#0B1F4B" padding="26px 24px 28px" css-class="gb-pad">
       <mj-column>
         <mj-text padding="0 0 6px" color="#FFAD86" font-size="13px" font-weight="800" letter-spacing="1.8px">WHAT&#8217;S NEXT</mj-text>

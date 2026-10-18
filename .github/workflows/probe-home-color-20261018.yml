@@ -1,0 +1,28 @@
+name: Homepage color probe (read-only)
+on:
+  push:
+    branches: ['probe/home-color-20261018']
+    paths: ['probe-home/**', '.github/workflows/probe-home-color-20261018.yml']
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Probe live homepage
+        run: |
+          mkdir p && cd p && npm init -y >/dev/null && npm i playwright@1.49.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cp ../probe-home/* . && node run.js
+      - name: Save output
+        if: always()
+        run: |
+          mkdir -p deploy/home-color-probe-20261018 && cp p/shots/* deploy/home-color-probe-20261018/ || true
+          git config user.name "probe-bot" && git config user.email "probe-bot@users.noreply.github.com"
+          git add deploy/home-color-probe-20261018 && git commit -m "probe output: homepage color" && git push origin HEAD:probe/home-color-20261018 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: home-color, path: p/shots, retention-days: 7 }

@@ -14,21 +14,21 @@ const DUMP=()=>{const out={links:[],imgs:[],years:[],heads:[],ids:[]};
  out.ls=Object.keys(localStorage).map(k=>[k,(localStorage.getItem(k)||'').length]);out.ss=Object.keys(sessionStorage).map(k=>[k,(sessionStorage.getItem(k)||'').length]);
  out.h=document.documentElement.scrollHeight;return out;};
 (async()=>{const b=await chromium.launch();const summary={};
- for(const v of VIEWS){
+ for(const PG of [['allnews','/gatorbait-media-blogs'],['buddy','/gatorbait-media-blogs/categories/buddy-s-blog'],['recruit','/gatorbait-media-blogs/categories/gator-recruiting'],['football','/gatorbait-media-blogs/categories/gator-football']]) for(const v of VIEWS){
   for(const mode of ['cold','warm']){
-   const ctx=mode==='cold'?await b.newContext({viewport:{width:v.w,height:v.h},isMobile:v.m,deviceScaleFactor:1}):global['wctx'+v.n];
-   let c=ctx; if(mode==='warm'){c=global['wctx'+v.n];} else {global['wctx'+v.n]=ctx;}
+   const ctx=mode==='cold'?await b.newContext({viewport:{width:v.w,height:v.h},isMobile:v.m,deviceScaleFactor:1}):global['wctx'+PG[0]+v.n];
+   let c=ctx; if(mode==='warm'){c=global['wctx'+PG[0]+v.n];} else {global['wctx'+PG[0]+v.n]=ctx;}
    const p=await c.newPage();const net=[];
    p.on('response',async r=>{const u=r.url();if(/blog-feed|\.json|\.xml|github\.io|jsdelivr|raw\.githubusercontent|api\/|_api/.test(u)&&!/\.(woff2?|png|jpe?g|webp)/.test(u))net.push({u:u.slice(0,150),s:r.status(),age:r.headers()['age']||'',cc:(r.headers()['cache-control']||'').slice(0,40)});});
-   await p.goto(BASE+'/?cb='+Date.now(),{waitUntil:'domcontentloaded'});
-   for(const t of [500,1000,2000,5000]){await p.waitForTimeout(t===500?500:t-({1000:500,2000:1000,5000:2000})[t]);await p.screenshot({path:`out/${v.n}-${mode}-${t}.jpg`,type:'jpeg',quality:55});}
+   await p.goto(BASE+PG[1]+'?cb='+Date.now(),{waitUntil:'domcontentloaded'});
+   for(const t of [500,1000,2000,5000]){await p.waitForTimeout(t===500?500:t-({1000:500,2000:1000,5000:2000})[t]);await p.screenshot({path:`out/${PG[0]}-${v.n}-${mode}-${t}.jpg`,type:'jpeg',quality:55});}
    await p.waitForTimeout(3000);
    const d=await p.evaluate(DUMP);d.net=net;
-   await p.screenshot({path:`out/${v.n}-${mode}-full.jpg`,type:'jpeg',quality:45,fullPage:true});
-   fs.writeFileSync(`out/${v.n}-${mode}.json`,JSON.stringify(d,null,1));
+   await p.screenshot({path:`out/${PG[0]}-${v.n}-${mode}-full.jpg`,type:'jpeg',quality:45,fullPage:true});
+   fs.writeFileSync(`out/${PG[0]}-${v.n}-${mode}.json`,JSON.stringify(d,null,1));
    await p.close();
   }
-  await global['wctx'+v.n].close();
+  await global['wctx'+PG[0]+v.n].close();
  }
  // fresh context with fake populated stale storage
  const c3=await b.newContext({viewport:{width:390,height:844},isMobile:true});const p3=await c3.newPage();

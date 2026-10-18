@@ -12,3 +12,6 @@ Guarded PATCH of `embedData.html` to `rollback/1dd74333-rev116.html` (pin 814353
 
 ## Open
 The sticky-bar fix needs a real-iPhone check by Brenden. The Wix media host serves PDFs as `application/octet-stream` (the old PDF does the same), so the "application/pdf" header check cannot pass; the file starts with `%PDF-` and downloads with the `download` attribute.
+
+## Live result
+Read-only Actions probe (branch `probe/looks-audit-20261018`, commit 4dda48b, output `deploy/looks-audit-20261018/audit.json` at 99d42f3), Chrome, cache-busting URL, 390/430/1366/1920: all PASS. HTTP 200; served HTML carries the 5dfd57f3 pin; the entrance cover is the new portrait `postgame-cover-20261018.jpg` (1200x1600, loaded); the bottom download link href equals `.../ugd/d3cfa5_6fd61c786a0441b5a8dbead1182f2e1d.pdf` with `download`; that URL answers 206 on a Range request, body starts `%PDF-`, content-type `application/octet-stream` (Wix host, same as the old file); overflow 0; `.pm-in` 390/430/1360/1520; no broken images; both YouTube cards pass. Residual console `wixTagManager is not defined` is Wix's own.

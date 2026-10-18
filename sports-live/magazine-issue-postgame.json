@@ -693,17 +693,23 @@
  "watch": {
   "kicker": "Watch",
   "title": "On the GatorBait reels",
-  "dek": "Two clips from @gatorbaitmedia on Instagram, posted Oct. 18.",
+  "dek": "Two GatorBait Media clips from Austin. Tap to play.",
   "items": [
    {
-    "title": "Baugh: Tramell is going to be a great quarterback.",
-    "url": "https://www.instagram.com/reel/Deo2ka3j-lI/",
-    "meta": "Instagram reel · @gatorbaitmedia"
+    "title": "Sumrall: We still suck. We just suck less.",
+    "caption": "Florida 27, No. 7 Texas 24 in Austin.",
+    "url": "https://www.youtube.com/watch?v=JexQFsm_wts",
+    "poster": "sumrall-yt-jexqfsm.jpg",
+    "meta": "YouTube · The Buddy Martin Show",
+    "credit": "Video: Muse Made Media / GatorBait Media"
    },
    {
-    "title": "Sumrall: We still suck. We just suck less.",
-    "url": "https://www.instagram.com/reel/Deo0M1Kj-1N/",
-    "meta": "Instagram reel · @gatorbaitmedia"
+    "title": "Baugh: Tramell is going to be a great quarterback.",
+    "caption": "Jadan Baugh on Tramell Jones Jr.",
+    "url": "https://www.facebook.com/reel/2357932004980670/",
+    "poster": "baugh-tramell-great-qb.jpg",
+    "meta": "Facebook reel · GatorBait Media",
+    "credit": "Video: Muse Made Media / GatorBait Media"
    }
   ]
  },

@@ -1,35 +1,50 @@
 <!-- GBM Site Pages v1 (jarvis/site-pages-20261018): no-flash guard + navy look for inner pages. Visual only. -->
-<script>(function(){try{var d=document.documentElement,R=[[/^\/about/,"about"],[/^\/contact/,"contact"],[/^\/(pricing-plans|subscribe|join|checkout|thank-you)/,"plans"],[/^\/(policies|tags|groups?|search|event-list|event-details|2021-gatorbait-magazine|magazine\/\d{4}|members|account|profile|cart-page)/,"inner"]],K=["about","contact","plans","inner"];function k(){var p=location.pathname.replace(/\/+$/,"")||"/";for(var i=0;i<R.length;i++)if(R[i][0].test(p))return R[i][1];return""}function s(pre){var c=k();K.forEach(function(x){d.classList.toggle("gbm-sp-"+x,x===c)});d.classList.toggle("gbm-sp",!!c);if(pre&&c)d.classList.add("gbm-sp-pre");else if(!c)d.classList.remove("gbm-sp-pre")}s(1);addEventListener("popstate",function(){s(0)});addEventListener("gbmroutechange",function(){s(0)});setTimeout(function(){d.classList.remove("gbm-sp-pre")},2600)}catch(e){}})();</script>
+<script>(function(){try{var d=document.documentElement,R=[[/^\/about/,"about"],[/^\/contact/,"contact"],[/^\/(pricing-plans|subscribe)/,"plans"],[/^\/policies/,"policies"],[/^\/(search|tags)/,"light"],[/^\/(groups?|account|profile|members|checkout|thank-you|cart-page)/,"app"]],K=["about","contact","plans","policies","light","app"];function k(){var p=location.pathname.replace(/\/+$/,"")||"/";for(var i=0;i<R.length;i++)if(R[i][0].test(p))return R[i][1];return""}function s(pre){var c=k();K.forEach(function(x){d.classList.toggle("gbm-sp-"+x,x===c)});d.classList.toggle("gbm-sp",!!c);if(pre&&c)d.classList.add("gbm-sp-pre");else if(!c)d.classList.remove("gbm-sp-pre")}s(1);addEventListener("popstate",function(){s(0)});addEventListener("gbmroutechange",function(){s(0)});setTimeout(function(){d.classList.remove("gbm-sp-pre")},2600)}catch(e){}})();</script>
 <style id="gbm-site-pages-v1">
 /* Guard: page content held (visibility, stays in DOM and crawlable) on a navy page until the theme band exists; 2.5 s failsafe. */
 html.gbm-sp-pre,html.gbm-sp-pre body{background:#060b1c!important}
 html.gbm-sp-pre:not(:has(#gbm-band)) #SITE_PAGES{visibility:hidden;animation:gbmspshow 0s linear 2.5s forwards}
 @keyframes gbmspshow{to{visibility:visible}}
-/* Navy page, white type (same skin as the homepage and Latest). */
-html.gbm-sp,html.gbm-sp body,html.gbm-sp #SITE_CONTAINER,html.gbm-sp #masterPage,html.gbm-sp #PAGES_CONTAINER,html.gbm-sp #SITE_PAGES,html.gbm-sp #SITE_PAGES [data-testid=page-bg]{background:#060b1c!important}
-html.gbm-sp #SITE_PAGES :is(section,.wixui-section,[data-testid=colorUnderlay],[id^=bgLayers],[data-testid=columns]){background-color:transparent!important}
-html.gbm-sp #SITE_PAGES :is([data-testid=richTextElement],[data-hook=item-description]) :is(p,span,li,div,em,strong,b,i,u,h4,h5,h6,label){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
-html.gbm-sp #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]),html.gbm-sp #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]) *{color:#fff!important;-webkit-text-fill-color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.01em!important}
-html.gbm-sp #SITE_PAGES [data-testid=richTextElement] a,html.gbm-sp #SITE_PAGES [data-testid=richTextElement] a *{color:#FA4616!important;-webkit-text-fill-color:#FA4616!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
-/* Orange rule under the lead heading, small green mark. */
-html.gbm-sp-about #SITE_PAGES h2:first-of-type:after,html.gbm-sp-contact #SITE_PAGES h2:first-of-type:after{content:"";display:block;width:64px;height:4px;margin-top:12px;background:#FA4616;border-right:14px solid #22884C;box-sizing:content-box}
-/* Buttons: Core Orange, one AA label color. */
-html.gbm-sp #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]){background:#FA4616!important;border:0!important;border-radius:8px!important;clip-path:none!important;box-shadow:none!important}
-html.gbm-sp #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]):hover{background:#ff6a38!important}
-html.gbm-sp #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]),html.gbm-sp #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]) *{color:#07122E!important;-webkit-text-fill-color:#07122E!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.06em!important}
-/* Forms (fields and logic untouched): dark fields, white labels. */
-html.gbm-sp #SITE_PAGES :is(label,legend,[role=group]>div){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
-html.gbm-sp #SITE_PAGES :is(input,textarea,select,[data-testid=select-trigger]){background:#0f1a38!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border:1px solid #3d4f86!important;border-radius:6px!important;font-family:Barlow,sans-serif!important}
-html.gbm-sp #SITE_PAGES :is(input,textarea)::placeholder{color:#aab6d4!important;opacity:1}
-html.gbm-sp #SITE_PAGES :is(input,textarea,select):focus{outline:2px solid #FA4616!important;outline-offset:1px}
-html.gbm-sp-contact #comp-lii7mqe42{background:#0b1429!important;color:#e6ebf8!important;border:1px solid #1d2b52!important;border-top:4px solid #FA4616!important;border-radius:8px!important}
-/* Membership plans: navy cards, orange top rule. Plans, prices and checkout are Wix-owned and unchanged. */
-html.gbm-sp-plans #SITE_PAGES [data-hook=plan]>div{background:#0b1429!important;border:1px solid #1d2b52!important;border-top:4px solid #FA4616!important;border-radius:10px!important;box-shadow:none!important}
-html.gbm-sp-plans #SITE_PAGES [data-hook=plan]>div>div:not([data-hook=ribbon]),html.gbm-sp-plans #SITE_PAGES [data-hook=plan]>div>div:not([data-hook=ribbon])>div{background:transparent!important}
-html.gbm-sp-plans #SITE_PAGES [data-hook=plan] *:not([data-hook=plan-cta]):not([data-hook=plan-cta] *){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
-html.gbm-sp-plans #SITE_PAGES :is([data-hook=plan-title],[data-hook=plan-price],[data-hook=plan-price] *,[data-hook=plan-title] *){color:#fff!important;-webkit-text-fill-color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important}
-html.gbm-sp-plans #SITE_PAGES [data-hook=ribbon],html.gbm-sp-plans #SITE_PAGES [data-hook=ribbon] *{background:#1d2b52!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-radius:6px!important}
-/* Wix app pages (search, groups, account, events): navy page and readable headings only; app internals stay Wix-owned. */
-html.gbm-sp-inner #SITE_PAGES :is([data-hook*=title],[data-hook*=name]){font-family:Barlow,sans-serif!important}
+/* Navy page (same skin as homepage and Latest). The Wix page-background layer is navy too; hiding it removes a 0.10 layout shift when the band lands. */
+html.gbm-sp,html.gbm-sp body,html.gbm-sp #SITE_CONTAINER,html.gbm-sp #masterPage,html.gbm-sp #PAGES_CONTAINER,html.gbm-sp #SITE_PAGES{background:#060b1c!important}
+html.gbm-sp.gbm-bc #SITE_PAGES [id^=bgLayers_pageBackground]{display:none!important}
+html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is([id^=bgLayers],[data-testid=colorUnderlay],section){background-color:transparent!important}
+/* Type: white headings in Barlow Condensed, light body in Barlow, orange links. */
+html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is([data-testid=richTextElement],[data-hook=item-description]) :is(p,span,li,div,em,strong,b,i,u,h4,h5,h6,label){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]),html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]) *{color:#fff!important;-webkit-text-fill-color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.01em!important}
+html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies).gbm-bc #SITE_PAGES [data-testid=richTextElement] a,html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies).gbm-bc #SITE_PAGES [data-testid=richTextElement] a *{color:#FA4616!important;-webkit-text-fill-color:#FA4616!important;text-decoration:underline;text-underline-offset:3px}
+html.gbm-sp-about.gbm-bc #SITE_PAGES h2:first-of-type:after,html.gbm-sp-contact.gbm-bc #SITE_PAGES h2:first-of-type:after{content:"";display:block;width:64px;height:4px;margin:12px auto 0;background:#FA4616;border-right:14px solid #22884C;box-sizing:content-box}
+/* Search and tags (Wix lists): light text on navy; buttons keep their own colors. */
+html.gbm-sp-light.gbm-bc #SITE_PAGES :is(a,p,span,li,h4,[role=tab]):not(:is(button,[role=button],[data-hook*=button i],mark) *):not(:is(button,[role=button])){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp-light.gbm-bc #SITE_PAGES a:is([data-hook*=title i],[class*=title i]),html.gbm-sp-light.gbm-bc #SITE_PAGES a:is([data-hook*=title i],[class*=title i]) *{color:#fff!important;-webkit-text-fill-color:#fff!important}
+/* Buttons: Core Orange, one AA label color (#07122E, 5.26:1). Search View All keeps the Wix blue with white. */
+html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies).gbm-bc #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]){background:#FA4616!important;border:0!important;border-radius:8px!important;clip-path:none!important;box-shadow:none!important}
+html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies).gbm-bc #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]):hover{background:#ff6a38!important}
+html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies).gbm-bc #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]),html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies).gbm-bc #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]) *{color:#07122E!important;-webkit-text-fill-color:#07122E!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.06em!important}
+/* Contact form (fields and logic untouched): dark fields, white labels, card fits its column. */
+html.gbm-sp-contact.gbm-bc #SITE_PAGES :is(label,legend){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp-contact.gbm-bc #SITE_PAGES :is(input,textarea,select,[data-testid=select-trigger]){background:#0f1a38!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border:1px solid #3d4f86!important;border-radius:6px!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp-contact.gbm-bc #SITE_PAGES :is(input,textarea)::placeholder{color:#aab6d4!important;opacity:1}
+html.gbm-sp-contact.gbm-bc #SITE_PAGES :is(input,textarea,select):focus{outline:2px solid #FA4616!important;outline-offset:1px}
+html.gbm-sp-contact.gbm-bc #comp-lii7mqe42{width:100%!important;max-width:640px!important;box-sizing:border-box!important;background:#0b1429!important;color:#e6ebf8!important;border:1px solid #1d2b52!important;border-top:4px solid #FA4616!important;border-radius:8px!important}
+/* Plans: navy cards, orange top rule; plans, prices and checkout are Wix-owned and unchanged. */
+html.gbm-sp-plans.gbm-bc #SITE_PAGES [data-hook=plan]{background:transparent!important;border:0!important;outline:0!important;box-shadow:none!important}
+html.gbm-sp-plans.gbm-bc #SITE_PAGES [data-hook=plan] div{background-color:transparent!important;box-shadow:none!important}
+html.gbm-sp-plans.gbm-bc #SITE_PAGES [data-hook=plan]>div{background:#0b1429!important;border:1px solid #1d2b52!important;border-top:4px solid #FA4616!important;border-radius:10px!important;outline:0!important}
+html.gbm-sp-plans.gbm-bc #SITE_PAGES [data-hook=plan] :is(span,p,li,div):not([data-hook=plan-cta] *):not([data-hook=ribbon] *){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp-plans.gbm-bc #SITE_PAGES :is([data-hook=plan-title],[data-hook=plan-price]),html.gbm-sp-plans.gbm-bc #SITE_PAGES :is([data-hook=plan-title],[data-hook=plan-price]) *{color:#fff!important;-webkit-text-fill-color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important}
+html.gbm-sp-plans.gbm-bc #SITE_PAGES [data-hook=ribbon],html.gbm-sp-plans.gbm-bc #SITE_PAGES [data-hook=ribbon] *{background:#1d2b52!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-radius:6px!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp-plans #gbm-plan-benefits,html.gbm-sp-plans #gbm-plan-terms{background:#0b1429!important;color:#e6ebf8!important;border-color:#FA4616!important}
+html.gbm-sp-plans :is(#gbm-plan-benefits,#gbm-plan-terms) :is(p,li,span,strong){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important}
+html.gbm-sp-plans :is(#gbm-plan-benefits,#gbm-plan-terms) h2{color:#fff!important;-webkit-text-fill-color:#fff!important;text-transform:uppercase;font-weight:800!important}
+html.gbm-sp-plans :is(#gbm-plan-benefits,#gbm-plan-terms) a{color:#FA4616!important;-webkit-text-fill-color:#FA4616!important}
+/* Policies: dark legal card. */
+html.gbm-sp-policies #gbm-legal{background:#0b1429!important;border:1px solid #1d2b52!important;border-top:4px solid #FA4616!important;border-radius:10px!important;color:#e6ebf8!important}
+html.gbm-sp-policies #gbm-legal :is(p,li,span,div,td,th,strong,em,small){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important}
+html.gbm-sp-policies #gbm-legal :is(h1,h2,h3,h4){color:#fff!important;-webkit-text-fill-color:#fff!important}
+html.gbm-sp-policies #gbm-legal a{color:#FA4616!important;-webkit-text-fill-color:#FA4616!important}
+html.gbm-sp-policies #gbm-legal .notice{background:#0f1a38!important;border:1px solid #1d2b52!important;border-left:4px solid #FA4616!important}
+/* Wix app pages (groups, account, profile, members): navy page, Wix-owned light panel; headings made readable on it. */
+html.gbm-sp-app.gbm-bc #SITE_PAGES :is(h1,h2,h3){color:#0b1220!important;-webkit-text-fill-color:#0b1220!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-weight:800!important;text-transform:uppercase}
 html.gbm-sp #SITE_PAGES a:focus-visible{outline:2px solid #FA4616;outline-offset:2px}
 </style>

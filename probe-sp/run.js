@@ -48,7 +48,7 @@ const INIT = () => {
 
 const AUDIT = () => {
   const out = {}; const d = document.documentElement;
-  out.overflow = d.scrollWidth - d.clientWidth; out.h = d.scrollHeight; out.cls = String(d.className).slice(0, 120);
+  window.scrollTo(9999, 0); out.overflow = window.scrollX; window.scrollTo(0, 0); out.scrollWidthMinusClient = d.scrollWidth - d.clientWidth; out.h = d.scrollHeight; out.cls = String(d.className).slice(0, 120);
   const rgb = s => { const m = String(s).match(/rgba?\(([\d.]+)[, ]+([\d.]+)[, ]+([\d.]+)(?:[, /]+([\d.]+))?/); return m ? [+m[1], +m[2], +m[3], m[4] === undefined ? 1 : +m[4]] : null; };
   const f = v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); };
   const lum = c => .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]);

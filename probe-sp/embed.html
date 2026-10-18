@@ -11,7 +11,7 @@ html.gbm-sp.gbm-bc :is(#SITE_CONTAINER,#masterPage,#PAGES_CONTAINER,#SITE_PAGES)
 html.gbm-sp.gbm-bc [id^=bgLayers_pageBackground]{display:none!important}
 html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is([id^=bgLayers],[data-testid=colorUnderlay],section){background-color:transparent!important}
 /* Desktop: reserve the band's height until it lands, so the page does not jump (the theme reserve does not apply at desktop widths). */
-@media(min-width:821px){html.gbm-sp.gbm-band-pre:not(:has(#gbm-band)) #SITE_CONTAINER{margin-top:var(--gbm-bh,161px)}}
+@media(min-width:821px){html.gbm-sp.gbm-band-pre:not(:has(#gbm-band)) #SITE_CONTAINER{margin-top:var(--gbm-bh,161px)}html.gbm-sp.gbm-band-pre #SITE_CONTAINER:before{display:none!important}}
 /* Type: white headings in Barlow Condensed, light body in Barlow, orange links. */
 html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is([data-testid=richTextElement],[data-hook=item-description]) :is(p,span,li,div,em,strong,b,i,u,h4,h5,h6,label){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
 html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]),html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]) *{color:#fff!important;-webkit-text-fill-color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.01em!important}

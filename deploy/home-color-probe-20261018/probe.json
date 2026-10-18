@@ -1,0 +1,318 @@
+{
+ "390": {
+  "w": 390,
+  "frames": [
+   {
+    "root": false,
+    "hidden": false,
+    "vis": null,
+    "skin": false,
+    "color": false,
+    "t": 200
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 500
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 1000
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 2000
+   }
+  ],
+  "http": 200,
+  "final": {
+   "sw": 390,
+   "cw": 390,
+   "h": 4755,
+   "lead": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
+   "order": [
+    "Deep In The Heart Of Texas, A Gator Grin",
+    "Postgame Thoughts: Florida (5-2, 3-2) v.",
+    "The Gators Sucked Less, Turning Arch Mad",
+    "A Texas Barbecue: Gators Flip The Script",
+    "It was a good day for an exorcism in Aus",
+    "Gators Stun No. 7 Texas 27-24 in Austin ",
+    "Aberdeen will be in the lineup against B",
+    "Is the SEC undergoing a drain of excelle"
+   ],
+   "sections": [
+    "Rundown",
+    "Game tape",
+    "SEC standings",
+    "Latest",
+    "More from the newsroom"
+   ],
+   "skin": true,
+   "color": false,
+   "fonts": [
+    "Barlow",
+    "Barlow Condensed"
+   ],
+   "headerRule": "rgba(255, 255, 255, 0.1)"
+  },
+  "reqs": [
+   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@10bf36420faa2f3d5a631ce8c7a47518b5183c10/sports-live/broadcast-home.js"
+  ],
+  "errs": [
+   "ReferenceError: wixTagManager is not defined",
+   "loadAndRegisterComponent -> Component loader for tpaWidgetNative_c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not defined.\n\nWidget ID: c8e6cca8-3a46-4dd5-8ae4-9a809e",
+   "\n\t\t\t\t\t\tWidget with widgetId: c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not registered in ooiComponentsData.\n\t\t\t\t\t\tThis is likely a clientSpecMap configuration iss",
+   "OOI component c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 not found in ooiComponentsData",
+   "ReferenceError: wixTagManager is not defined",
+   "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+  ]
+ },
+ "430": {
+  "w": 430,
+  "frames": [
+   {
+    "root": false,
+    "hidden": false,
+    "vis": null,
+    "skin": false,
+    "color": false,
+    "t": 200
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 500
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 1000
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 2000
+   }
+  ],
+  "http": 200,
+  "final": {
+   "sw": 430,
+   "cw": 430,
+   "h": 4650,
+   "lead": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
+   "order": [
+    "Deep In The Heart Of Texas, A Gator Grin",
+    "Postgame Thoughts: Florida (5-2, 3-2) v.",
+    "The Gators Sucked Less, Turning Arch Mad",
+    "A Texas Barbecue: Gators Flip The Script",
+    "It was a good day for an exorcism in Aus",
+    "Gators Stun No. 7 Texas 27-24 in Austin ",
+    "Aberdeen will be in the lineup against B",
+    "Is the SEC undergoing a drain of excelle"
+   ],
+   "sections": [
+    "Rundown",
+    "Game tape",
+    "SEC standings",
+    "Latest",
+    "More from the newsroom"
+   ],
+   "skin": true,
+   "color": false,
+   "fonts": [
+    "Barlow",
+    "Barlow Condensed"
+   ],
+   "headerRule": "rgba(255, 255, 255, 0.1)"
+  },
+  "reqs": [
+   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@10bf36420faa2f3d5a631ce8c7a47518b5183c10/sports-live/broadcast-home.js"
+  ],
+  "errs": [
+   "ReferenceError: wixTagManager is not defined",
+   "loadAndRegisterComponent -> Component loader for tpaWidgetNative_c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not defined.\n\nWidget ID: c8e6cca8-3a46-4dd5-8ae4-9a809e",
+   "\n\t\t\t\t\t\tWidget with widgetId: c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not registered in ooiComponentsData.\n\t\t\t\t\t\tThis is likely a clientSpecMap configuration iss",
+   "OOI component c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 not found in ooiComponentsData",
+   "ReferenceError: wixTagManager is not defined",
+   "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+  ]
+ },
+ "1366": {
+  "w": 1366,
+  "frames": [
+   {
+    "root": false,
+    "hidden": false,
+    "vis": null,
+    "skin": false,
+    "color": false,
+    "t": 200
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 500
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 1000
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 2000
+   }
+  ],
+  "http": 200,
+  "final": {
+   "sw": 1366,
+   "cw": 1366,
+   "h": 2631,
+   "lead": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
+   "order": [
+    "Deep In The Heart Of Texas, A Gator Grin",
+    "Postgame Thoughts: Florida (5-2, 3-2) v.",
+    "The Gators Sucked Less, Turning Arch Mad",
+    "A Texas Barbecue: Gators Flip The Script",
+    "It was a good day for an exorcism in Aus",
+    "Gators Stun No. 7 Texas 27-24 in Austin ",
+    "Aberdeen will be in the lineup against B",
+    "Is the SEC undergoing a drain of excelle"
+   ],
+   "sections": [
+    "Rundown",
+    "Game tape",
+    "SEC standings",
+    "Latest",
+    "More from the newsroom"
+   ],
+   "skin": true,
+   "color": false,
+   "fonts": [
+    "Barlow",
+    "Barlow Condensed"
+   ],
+   "headerRule": "rgba(255, 255, 255, 0.1)"
+  },
+  "reqs": [
+   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@10bf36420faa2f3d5a631ce8c7a47518b5183c10/sports-live/broadcast-home.js"
+  ],
+  "errs": [
+   "ReferenceError: wixTagManager is not defined",
+   "loadAndRegisterComponent -> Component loader for tpaWidgetNative_c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not defined.\n\nWidget ID: c8e6cca8-3a46-4dd5-8ae4-9a809e",
+   "\n\t\t\t\t\t\tWidget with widgetId: c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not registered in ooiComponentsData.\n\t\t\t\t\t\tThis is likely a clientSpecMap configuration iss",
+   "OOI component c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 not found in ooiComponentsData",
+   "ReferenceError: wixTagManager is not defined",
+   "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+  ]
+ },
+ "1920": {
+  "w": 1920,
+  "frames": [
+   {
+    "root": false,
+    "hidden": false,
+    "vis": null,
+    "skin": false,
+    "color": false,
+    "t": 200
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 500
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 1000
+   },
+   {
+    "root": true,
+    "hidden": false,
+    "vis": "visible",
+    "skin": true,
+    "color": false,
+    "t": 2000
+   }
+  ],
+  "http": 200,
+  "final": {
+   "sw": 1920,
+   "cw": 1920,
+   "h": 2631,
+   "lead": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
+   "order": [
+    "Deep In The Heart Of Texas, A Gator Grin",
+    "Postgame Thoughts: Florida (5-2, 3-2) v.",
+    "The Gators Sucked Less, Turning Arch Mad",
+    "A Texas Barbecue: Gators Flip The Script",
+    "It was a good day for an exorcism in Aus",
+    "Gators Stun No. 7 Texas 27-24 in Austin ",
+    "Aberdeen will be in the lineup against B",
+    "Is the SEC undergoing a drain of excelle"
+   ],
+   "sections": [
+    "Rundown",
+    "Game tape",
+    "SEC standings",
+    "Latest",
+    "More from the newsroom"
+   ],
+   "skin": true,
+   "color": false,
+   "fonts": [
+    "Barlow",
+    "Barlow Condensed"
+   ],
+   "headerRule": "rgba(255, 255, 255, 0.1)"
+  },
+  "reqs": [
+   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@10bf36420faa2f3d5a631ce8c7a47518b5183c10/sports-live/broadcast-home.js"
+  ],
+  "errs": [
+   "ReferenceError: wixTagManager is not defined",
+   "loadAndRegisterComponent -> Component loader for tpaWidgetNative_c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not defined.\n\nWidget ID: c8e6cca8-3a46-4dd5-8ae4-9a809e",
+   "\n\t\t\t\t\t\tWidget with widgetId: c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not registered in ooiComponentsData.\n\t\t\t\t\t\tThis is likely a clientSpecMap configuration iss",
+   "OOI component c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 not found in ooiComponentsData",
+   "ReferenceError: wixTagManager is not defined",
+   "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+  ]
+ }
+}

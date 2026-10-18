@@ -24,7 +24,7 @@ const sleep = ms => new Promise(s => setTimeout(s, ms));
 
 const INIT = () => {
   const G = window.__g = { shifts: [], samples: [], fonts: [] };
-  try { new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) G.shifts.push({ t: Math.round(e.startTime), v: +e.value.toFixed(4), src: (e.sources || []).slice(0, 2).map(s => { const n = s.node; return n && n.nodeType === 1 ? (n.id ? '#' + n.id : n.tagName.toLowerCase()) : '?'; }).join(',') }); }).observe({ type: 'layout-shift', buffered: true }); } catch (e) {}
+  try { new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) G.shifts.push({ t: Math.round(e.startTime), v: +e.value.toFixed(4), src: (e.sources || []).slice(0, 2).map(s => { const n = s.node; const pr = s.previousRect, cr = s.currentRect; return (n && n.nodeType === 1 ? (n.id ? '#' + n.id : n.tagName.toLowerCase()) : '?') + '[' + [pr.y, pr.height, cr.y, cr.height].map(Math.round).join(',') + ']'; }).join(',') }); }).observe({ type: 'layout-shift', buffered: true }); } catch (e) {}
   const lum = c => { const f = v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]); };
   const rgb = s => { const m = String(s).match(/rgba?\(([\d.]+)[, ]+([\d.]+)[, ]+([\d.]+)(?:[, /]+([\d.]+))?/); return m ? [+m[1], +m[2], +m[3], m[4] === undefined ? 1 : +m[4]] : null; };
   const t0 = performance.now();
@@ -64,6 +64,8 @@ const AUDIT = () => {
     if (cr < (big ? 3 : 4.5) && bad.length < 12) bad.push({ cr: +cr.toFixed(2), t: el.textContent.trim().slice(0, 28), fg: cs.color, bg: 'rgb(' + bg.slice(0, 3).join(',') + ')', el: el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') });
   }
   out.fonts = ff; out.lowContrast = bad;
+  const wide = []; for (const el of document.querySelectorAll('body *')) { const r = el.getBoundingClientRect(); if (r.right > innerWidth + 20 && r.width > 2 && wide.length < 6 && !el.closest('#gbm-mobile-drawer-root')) wide.push((el.id ? '#' + el.id : el.tagName.toLowerCase() + '.' + String(el.className).slice(0, 30)) + ':' + Math.round(r.left) + '-' + Math.round(r.right)); } out.wide = wide;
+  const white = []; for (const el of document.querySelectorAll('#SITE_PAGES *')) { if (white.length > 8) break; const c = rgb(getComputedStyle(el).backgroundColor); const r = el.getBoundingClientRect(); if (c && c[3] > .6 && c[0] > 235 && c[1] > 235 && c[2] > 235 && r.width > 150 && r.height > 40) white.push((el.id ? '#' + el.id : el.tagName.toLowerCase() + '.' + String(el.className).slice(0, 40)) + ' ' + Math.round(r.width) + 'x' + Math.round(r.height)); } out.whiteBoxes = white;
   const sp = document.getElementById('SITE_PAGES'); out.spBg = sp ? getComputedStyle(sp).backgroundColor : null; out.bodyBg = getComputedStyle(document.body).backgroundColor;
   out.links = document.querySelectorAll('#SITE_PAGES a[href]').length; out.forms = document.querySelectorAll('#SITE_PAGES form,#SITE_PAGES input,#SITE_PAGES textarea,#SITE_PAGES button').length;
   out.h1 = (document.querySelector('#SITE_PAGES h1') || {}).textContent; out.band = !!document.getElementById('gbm-band'); out.textLen = (sp ? sp.textContent : '').length;

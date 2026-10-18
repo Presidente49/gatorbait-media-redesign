@@ -1,0 +1,32 @@
+name: Site pages probe (read-only)
+on:
+  push:
+    branches:
+      - 'probe/sitepages-20261018'
+    paths:
+      - 'probe-sp/**'
+      - '.github/workflows/probe-sp-20261018.yml'
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Probe live pages (read-only)
+        run: |
+          mkdir p && cd p && npm init -y >/dev/null && npm i playwright@1.49.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cp ../probe-sp/run.js . && set -a && . ../probe-sp/config.env && set +a
+          if [ -n "$EMBED_FILE" ]; then export EMBED_FILE=../$EMBED_FILE; fi
+          node run.js
+      - name: Commit probe output (output folder only)
+        if: always()
+        run: |
+          . probe-sp/config.env
+          mkdir -p deploy/site-pages-probe-$TAG && cp p/shots-$TAG/* deploy/site-pages-probe-$TAG/ || true
+          git config user.name "probe-bot" && git config user.email "probe-bot@users.noreply.github.com"
+          git add deploy/site-pages-probe-$TAG && git commit -m "probe output $TAG (read-only)" && git push origin HEAD:probe/sitepages-20261018 || true

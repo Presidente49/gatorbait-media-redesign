@@ -1,0 +1,574 @@
+[
+ {
+  "page": "pricing",
+  "http": 200,
+  "reqs": [
+   {
+    "t": 7547,
+    "u": "fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap"
+   },
+   {
+    "t": 7869,
+    "u": "cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-800-normal.woff2"
+   },
+   {
+    "t": 7869,
+    "u": "cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-700-normal.woff2"
+   },
+   {
+    "t": 7869,
+    "u": "fonts.gstatic.com/s/barlow/v13/7cHqv4kjgoGqM7E3t-4s51os.woff2"
+   },
+   {
+    "t": 7869,
+    "u": "cdn.jsdelivr.net/npm/@fontsource/barlow@5.3.0/files/barlow-latin-700-normal.woff2"
+   },
+   {
+    "t": 7869,
+    "u": "fonts.gstatic.com/s/barlow/v13/7cHpv4kjgoGqM7E_DMs5.woff2"
+   },
+   {
+    "t": 7907,
+    "u": "static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/roboto/v18/97uahxiqZRoncBaCEI3aW1tXRa"
+   }
+  ],
+  "fl": {
+   "loads": [
+    {
+     "t": 7865,
+     "f": "loading-start"
+    },
+    {
+     "t": 8007,
+     "f": "Barlow Condensed 800 normal"
+    },
+    {
+     "t": 8007,
+     "f": "Barlow Condensed 800 normal"
+    },
+    {
+     "t": 8007,
+     "f": "Barlow Condensed 700 normal"
+    },
+    {
+     "t": 8007,
+     "f": "Barlow 700 normal"
+    },
+    {
+     "t": 8007,
+     "f": "Barlow 400 normal"
+    },
+    {
+     "t": 8007,
+     "f": "Barlow 700 normal"
+    },
+    {
+     "t": 8007,
+     "f": "roboto-bold 400 normal"
+    }
+   ],
+   "paint": 7882
+  },
+  "faces": [
+   {
+    "sheet": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.d189c0b1.min.css",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.d1b87f2e.min.cs",
+    "blocked": true
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "Barlow",
+    "w": "400",
+    "st": "normal",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.3.0/files/barlow-latin-400-normal.w"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "Barlow",
+    "w": "700",
+    "st": "normal",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.3.0/files/barlow-latin-700-normal.w"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "\"Barlow Condensed\"",
+    "w": "700",
+    "st": "normal",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "\"Barlow Condensed\"",
+    "w": "800",
+    "st": "normal",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "\"Barlow Condensed\"",
+    "w": "800",
+    "st": "italic",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "\"Barlow Condensed\"",
+    "w": "900",
+    "st": "italic",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@35d9588c245abb26a8584241",
+    "blocked": true
+   },
+   {
+    "sheet": "inline:gbm-post-template",
+    "fam": "\"Barlow Condensed\"",
+    "w": "800",
+    "st": "",
+    "disp": "optional",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "inline:gbm-post-broadcast",
+    "fam": "\"Barlow Condensed\"",
+    "w": "800",
+    "st": "italic",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_7.c472a333.chunk.min.cs",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/pricing-plans-tpa/1.5448.0/PackagePickerViewerWidg",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/pricing-plans-tpa/1.5448.0/client-viewer/6313.chun",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/pricing-plans-tpa/1.5448.0/client-viewer/3934.chun",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/pricing-plans-tpa/1.5448.0/client-viewer/PlanListP",
+    "blocked": true
+   },
+   {
+    "sheet": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%",
+    "blocked": true
+   },
+   {
+    "sheet": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%",
+    "blocked": true
+   },
+   {
+    "sheet": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%",
+    "blocked": true
+   },
+   {
+    "sheet": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%",
+    "blocked": true
+   },
+   {
+    "sheet": "https://serverless.parastorage.com/cookie-consent-settings-serverless/font?family=Arial",
+    "blocked": true
+   },
+   {
+    "sheet": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@a4b4648e1f18a4fe6490f80b",
+    "blocked": true
+   }
+  ],
+  "preload": [
+   "stylesheet  https://static.parastorage.com/services/wix-thunderbolt/dist/main.d189c0b1.min.css",
+   "stylesheet  https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.d1b87f2e.min.css",
+   "stylesheet  https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@35d9588c245abb26a8584241ff10e198ea",
+   "stylesheet  https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/wix-thunderbolt/dist/group_7.c472a333.chunk.min.css",
+   "stylesheet  https://static.parastorage.com/services/pricing-plans-tpa/1.5448.0/PackagePickerViewerWidget.min.css",
+   "stylesheet  https://static.parastorage.com/services/pricing-plans-tpa/1.5448.0/client-viewer/6313.chunk.min.css",
+   "stylesheet  https://static.parastorage.com/services/pricing-plans-tpa/1.5448.0/client-viewer/3934.chunk.min.css",
+   "stylesheet  https://static.parastorage.com/services/pricing-plans-tpa/1.5448.0/client-viewer/PlanListPageWidget.",
+   "stylesheet  https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21",
+   "stylesheet  https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21",
+   "stylesheet  https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21",
+   "stylesheet  https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21",
+   "stylesheet  https://serverless.parastorage.com/cookie-consent-settings-serverless/font?family=Arial",
+   "preload script https://static.parastorage.com/services/pricing-plans-tpa/1.5448.0/PackagePickerViewerWidgetNoCss.bu",
+   "stylesheet  https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@a4b4648e1f18a4fe6490f80bb9b3e08291"
+  ]
+ },
+ {
+  "page": "post",
+  "http": 200,
+  "reqs": [
+   {
+    "t": 3028,
+    "u": "fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap"
+   },
+   {
+    "t": 3200,
+    "u": "cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-800-normal.woff2"
+   },
+   {
+    "t": 3200,
+    "u": "cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-700-normal.woff2"
+   },
+   {
+    "t": 3200,
+    "u": "fonts.gstatic.com/s/barlow/v13/7cHqv4kjgoGqM7E3t-4s51os.woff2"
+   },
+   {
+    "t": 3200,
+    "u": "cdn.jsdelivr.net/npm/@fontsource/barlow@5.3.0/files/barlow-latin-700-normal.woff2"
+   },
+   {
+    "t": 3200,
+    "u": "fonts.gstatic.com/s/barlow/v13/7cHpv4kjgoGqM7E_DMs5.woff2"
+   },
+   {
+    "t": 3285,
+    "u": "cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-800-italic.woff2"
+   },
+   {
+    "t": 3285,
+    "u": "static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/roboto/v18/97uahxiqZRoncBaCEI3aW1tXRa"
+   },
+   {
+    "t": 3285,
+    "u": "fonts.gstatic.com/s/barlow/v13/7cHqv4kjgoGqM7E30-8s51os.woff2"
+   },
+   {
+    "t": 3285,
+    "u": "fonts.gstatic.com/s/barlow/v13/7cHqv4kjgoGqM7E3_-gs51os.woff2"
+   }
+  ],
+  "fl": {
+   "loads": [
+    {
+     "t": 3210,
+     "f": "loading-start"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow 700 normal"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow Condensed 800 normal"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow Condensed 800 normal"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow Condensed 700 normal"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow 700 normal"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow 400 normal"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow 600 normal"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow 500 normal"
+    },
+    {
+     "t": 3486,
+     "f": "roboto-bold 400 normal"
+    },
+    {
+     "t": 3486,
+     "f": "roboto-bold 400 normal"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow Condensed 800 italic"
+    },
+    {
+     "t": 3486,
+     "f": "Barlow Condensed 800 italic"
+    }
+   ],
+   "paint": 3213
+  },
+  "faces": [
+   {
+    "sheet": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.d189c0b1.min.css",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.d1b87f2e.min.cs",
+    "blocked": true
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "Barlow",
+    "w": "400",
+    "st": "normal",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.3.0/files/barlow-latin-400-normal.w"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "Barlow",
+    "w": "700",
+    "st": "normal",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.3.0/files/barlow-latin-700-normal.w"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "\"Barlow Condensed\"",
+    "w": "700",
+    "st": "normal",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "\"Barlow Condensed\"",
+    "w": "800",
+    "st": "normal",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "\"Barlow Condensed\"",
+    "w": "800",
+    "st": "italic",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "inline:gbm-bc-fonts",
+    "fam": "\"Barlow Condensed\"",
+    "w": "900",
+    "st": "italic",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@35d9588c245abb26a8584241",
+    "blocked": true
+   },
+   {
+    "sheet": "inline:gbm-post-template",
+    "fam": "\"Barlow Condensed\"",
+    "w": "800",
+    "st": "",
+    "disp": "optional",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "inline:gbm-post-broadcast",
+    "fam": "\"Barlow Condensed\"",
+    "w": "800",
+    "st": "italic",
+    "disp": "swap",
+    "src": "url(\"https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condense"
+   },
+   {
+    "sheet": "https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_7.c472a333.chunk.min.cs",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/PostViewerWidget.min",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/3339.c",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/rich-c",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/ricos_",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/ricos_",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/ricos_",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/5252.c",
+    "blocked": true
+   },
+   {
+    "sheet": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/post-p",
+    "blocked": true
+   },
+   {
+    "sheet": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%",
+    "blocked": true
+   },
+   {
+    "sheet": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%",
+    "blocked": true
+   },
+   {
+    "sheet": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%",
+    "blocked": true
+   },
+   {
+    "sheet": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%",
+    "blocked": true
+   },
+   {
+    "sheet": "https://serverless.parastorage.com/cookie-consent-settings-serverless/font?family=Arial",
+    "blocked": true
+   },
+   {
+    "sheet": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@a4b4648e1f18a4fe6490f80b",
+    "blocked": true
+   }
+  ],
+  "preload": [
+   "stylesheet  https://static.parastorage.com/services/wix-thunderbolt/dist/main.d189c0b1.min.css",
+   "stylesheet  https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.d1b87f2e.min.css",
+   "stylesheet  https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@35d9588c245abb26a8584241ff10e198ea",
+   "stylesheet  https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbol",
+   "stylesheet  https://static.parastorage.com/services/wix-thunderbolt/dist/group_7.c472a333.chunk.min.css",
+   "stylesheet  https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/PostViewerWidget.min.css",
+   "stylesheet  https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/3339.chunk.min.c",
+   "stylesheet  https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/rich-content-vie",
+   "stylesheet  https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/ricos_plugin_tab",
+   "stylesheet  https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/ricos_plugin_tab",
+   "stylesheet  https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/ricos_plugin_tab",
+   "stylesheet  https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/5252.chunk.min.c",
+   "stylesheet  https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/client-viewer/post-page-wix-co",
+   "stylesheet  https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21",
+   "stylesheet  https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21",
+   "stylesheet  https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21",
+   "stylesheet  https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21",
+   "stylesheet  https://serverless.parastorage.com/cookie-consent-settings-serverless/font?family=Arial",
+   "preload script https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/PostViewerWidgetNoCss.bundle.m",
+   "stylesheet  https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@a4b4648e1f18a4fe6490f80bb9b3e08291"
+  ]
+ }
+]

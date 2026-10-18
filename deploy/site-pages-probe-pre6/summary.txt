@@ -1,0 +1,4 @@
+about      1366  cold  http=200 cls=0.0806 flashLightMs=0 ovf=0 lowC=0 band=true err=
+about      1366  warm  http=200 cls=0.0806 flashLightMs=0 ovf=0 lowC=0 band=true err=
+plans      1366  cold  http=200 cls=0.175 flashLightMs=0 ovf=0 lowC=0 band=true err=
+plans      1366  warm  http=200 cls=0.175 flashLightMs=0 ovf=0 lowC=0 band=true err=

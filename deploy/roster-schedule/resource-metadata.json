@@ -4,10 +4,10 @@
   "title": "Florida Football: 2026 Roster & Schedule",
   "excerpt": "Florida\u2019s full 2026 football roster, game results and upcoming schedule. A permanent GatorBait season guide, checked against official UF sources.",
   "author": "Brenden Martin",
-  "sourceCheckedDate": "2026-09-29",
+  "sourceCheckedDate": "2026-10-18",
   "rosterCount": 117,
   "regularSeasonGames": 12,
-  "nativeHtmlCharacters": 21247,
+  "nativeHtmlCharacters": 21652,
   "scope": "Replace this existing guide body and title; preserve its canonical slug, originalPublishedDate, categoryIds, tagIds, media and other metadata unless separately reviewed.",
   "anchors": "HTML ids schedule and roster are source intent. Verify converted Ricos heading node IDs and public DOM IDs before wiring deep links. Default both cards to canonical URL if anchors cannot be verified."
 }

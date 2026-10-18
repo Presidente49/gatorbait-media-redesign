@@ -1,0 +1,2732 @@
+[
+ {
+  "page": "pricing",
+  "w": "1366",
+  "rep": 0,
+  "http": 200,
+  "sh": [
+   {
+    "t": 3012,
+    "v": 0.5355,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "div.LNYVZi.ayCf9D",
+      "p": [
+       0,
+       128,
+       1366,
+       772
+      ],
+      "c": [
+       0,
+       124,
+       1366,
+       776
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       772,
+       0,
+       311,
+       39
+      ],
+      "c": [
+       592,
+       0,
+       409,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1101,
+       29,
+       250,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 3162,
+    "v": 0.1017,
+    "src": [
+     {
+      "n": "div#bgLayers_pageBackground_rf27d.QG9w8P",
+      "p": [
+       0,
+       124,
+       1366,
+       776
+      ],
+      "c": [
+       0,
+       285,
+       1366,
+       615
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 5282,
+    "v": 0.0418,
+    "src": [
+     {
+      "n": "footer#gbm-footer",
+      "p": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "c": [
+       0,
+       795,
+       1366,
+       105
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     3579
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 5286,
+    "v": 0.046,
+    "src": [
+     {
+      "n": "span.s__5CjnXs.se5p61l",
+      "p": [
+       365,
+       645,
+       149,
+       48
+      ],
+      "c": [
+       383,
+       645,
+       113,
+       48
+      ]
+     },
+     {
+      "n": "span.s__5CjnXs.se5p61l",
+      "p": [
+       854,
+       645,
+       149,
+       48
+      ],
+      "c": [
+       872,
+       645,
+       113,
+       48
+      ]
+     },
+     {
+      "n": "footer#gbm-footer",
+      "p": [
+       0,
+       795,
+       1366,
+       105
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     3579
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ },
+ {
+  "page": "about",
+  "w": "1366",
+  "rep": 0,
+  "http": 200,
+  "sh": [
+   {
+    "t": 1911,
+    "v": 0.5355,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "div.LNYVZi.ayCf9D",
+      "p": [
+       0,
+       128,
+       1366,
+       772
+      ],
+      "c": [
+       0,
+       124,
+       1366,
+       776
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       773,
+       0,
+       310,
+       39
+      ],
+      "c": [
+       593,
+       0,
+       409,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1101,
+       29,
+       250,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 1990,
+    "v": 0.0604,
+    "src": [
+     {
+      "n": "?",
+      "p": [
+       253,
+       423,
+       549,
+       76
+      ],
+      "c": [
+       252,
+       427,
+       550,
+       76
+      ]
+     },
+     {
+      "n": "blockquote.font_8.wixui-rich-text__text",
+      "p": [
+       253,
+       678,
+       549,
+       85
+      ],
+      "c": [
+       253,
+       712,
+       549,
+       76
+      ]
+     },
+     {
+      "n": "blockquote.font_8.wixui-rich-text__text",
+      "p": [
+       253,
+       508,
+       549,
+       153
+      ],
+      "c": [
+       252,
+       522,
+       550,
+       171
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       253,
+       559,
+       549,
+       114
+      ],
+      "c": [
+       252,
+       579,
+       550,
+       114
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 2021,
+    "v": 0.0415,
+    "src": [
+     {
+      "n": "?",
+      "p": [
+       252,
+       579,
+       550,
+       113
+      ],
+      "c": [
+       253,
+       579,
+       549,
+       113
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       253,
+       731,
+       549,
+       56
+      ],
+      "c": [
+       253,
+       731,
+       549,
+       56
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       253,
+       825,
+       549,
+       18
+      ],
+      "c": [
+       253,
+       825,
+       549,
+       18
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       253,
+       844,
+       549,
+       37
+      ],
+      "c": [
+       253,
+       825,
+       549,
+       37
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 3549,
+    "v": 0.1017,
+    "src": [
+     {
+      "n": "div#bgLayers_pageBackground_a2pb6.QG9w8P",
+      "p": [
+       0,
+       124,
+       1366,
+       776
+      ],
+      "c": [
+       0,
+       285,
+       1366,
+       615
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ },
+ {
+  "page": "magazine",
+  "w": "1366",
+  "rep": 0,
+  "http": 200,
+  "sh": [
+   {
+    "t": 2800,
+    "v": 0.0648,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       84,
+       0,
+       999,
+       39
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       84,
+       11,
+       695,
+       19
+      ],
+      "c": [
+       84,
+       10,
+       618,
+       19
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       779,
+       0,
+       304,
+       39
+      ],
+      "c": [
+       702,
+       0,
+       381,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1072,
+       29,
+       279,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/auto"
+  }
+ },
+ {
+  "page": "allnews",
+  "w": "1366",
+  "rep": 0,
+  "http": 200,
+  "sh": [
+   {
+    "t": 3481,
+    "v": 0.0648,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       84,
+       0,
+       999,
+       39
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       84,
+       11,
+       695,
+       19
+      ],
+      "c": [
+       84,
+       10,
+       618,
+       19
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       779,
+       0,
+       304,
+       39
+      ],
+      "c": [
+       702,
+       0,
+       381,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1072,
+       29,
+       279,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 3556,
+    "v": 0.0697,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       84,
+       0,
+       999,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       79,
+       10,
+       616,
+       19
+      ],
+      "c": [
+       79,
+       10,
+       513,
+       19
+      ]
+     },
+     {
+      "n": "div.zp8IQu",
+      "p": [
+       193,
+       371,
+       980,
+       529
+      ],
+      "c": [
+       193,
+       323,
+       980,
+       577
+      ]
+     },
+     {
+      "n": "nav",
+      "p": [
+       283,
+       60,
+       797,
+       44
+      ],
+      "c": [
+       456,
+       60,
+       653,
+       44
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 3607,
+    "v": 0.0964,
+    "src": [
+     {
+      "n": "div.mbKyhH.hYUP9L",
+      "p": [
+       193,
+       195,
+       980,
+       705
+      ],
+      "c": [
+       193,
+       115,
+       980,
+       785
+      ]
+     },
+     {
+      "n": "div.zp8IQu",
+      "p": [
+       193,
+       323,
+       980,
+       577
+      ],
+      "c": [
+       193,
+       115,
+       987,
+       785
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 4056,
+    "v": 0.1381,
+    "src": [
+     {
+      "n": "div",
+      "p": [
+       193,
+       123,
+       987,
+       777
+      ],
+      "c": [
+       168,
+       115,
+       1012,
+       785
+      ]
+     },
+     {
+      "n": "form#gbm-lp-search",
+      "p": [
+       168,
+       88,
+       1030,
+       210
+      ],
+      "c": [
+       168,
+       365,
+       1030,
+       210
+      ]
+     },
+     {
+      "n": "a.lp-lead",
+      "p": [
+       168,
+       232,
+       698,
+       625
+      ],
+      "c": [
+       168,
+       509,
+       698,
+       391
+      ]
+     },
+     {
+      "n": "a.lp-card",
+      "p": [
+       168,
+       849,
+       307,
+       51
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 5852,
+    "v": 0.1381,
+    "src": [
+     {
+      "n": "div",
+      "p": [
+       193,
+       123,
+       987,
+       777
+      ],
+      "c": [
+       168,
+       115,
+       1012,
+       785
+      ]
+     },
+     {
+      "n": "form#gbm-lp-search",
+      "p": [
+       168,
+       88,
+       1030,
+       210
+      ],
+      "c": [
+       168,
+       365,
+       1030,
+       210
+      ]
+     },
+     {
+      "n": "a.lp-lead",
+      "p": [
+       168,
+       232,
+       698,
+       625
+      ],
+      "c": [
+       168,
+       509,
+       698,
+       391
+      ]
+     },
+     {
+      "n": "a.lp-card",
+      "p": [
+       168,
+       849,
+       307,
+       51
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     3599
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ },
+ {
+  "page": "cat-recruit",
+  "w": "1366",
+  "rep": 0,
+  "http": 200,
+  "sh": [
+   {
+    "t": 2480,
+    "v": 0.0648,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       84,
+       0,
+       999,
+       39
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       84,
+       11,
+       695,
+       19
+      ],
+      "c": [
+       84,
+       10,
+       618,
+       19
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       779,
+       0,
+       304,
+       39
+      ],
+      "c": [
+       702,
+       0,
+       381,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1072,
+       29,
+       279,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 2554,
+    "v": 0.1859,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       84,
+       0,
+       999,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "div.zp8IQu",
+      "p": [
+       193,
+       477,
+       980,
+       423
+      ],
+      "c": [
+       193,
+       123,
+       987,
+       777
+      ]
+     },
+     {
+      "n": "div.mbKyhH.hYUP9L",
+      "p": [
+       193,
+       195,
+       980,
+       705
+      ],
+      "c": [
+       193,
+       115,
+       980,
+       785
+      ]
+     },
+     {
+      "n": "nav",
+      "p": [
+       283,
+       60,
+       797,
+       44
+      ],
+      "c": [
+       456,
+       60,
+       653,
+       44
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 3011,
+    "v": 0.1678,
+    "src": [
+     {
+      "n": "div.zp8IQu",
+      "p": [
+       193,
+       123,
+       987,
+       777
+      ],
+      "c": [
+       168,
+       115,
+       1012,
+       785
+      ]
+     },
+     {
+      "n": "form#gbm-lp-search",
+      "p": [
+       168,
+       88,
+       1030,
+       209
+      ],
+      "c": [
+       168,
+       425,
+       1030,
+       209
+      ]
+     },
+     {
+      "n": "a.lp-lead",
+      "p": [
+       168,
+       232,
+       698,
+       555
+      ],
+      "c": [
+       168,
+       568,
+       698,
+       332
+      ]
+     },
+     {
+      "n": "a.lp-card",
+      "p": [
+       168,
+       778,
+       307,
+       122
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 4876,
+    "v": 0.1678,
+    "src": [
+     {
+      "n": "div.zp8IQu",
+      "p": [
+       193,
+       123,
+       987,
+       777
+      ],
+      "c": [
+       168,
+       115,
+       1012,
+       785
+      ]
+     },
+     {
+      "n": "form#gbm-lp-search",
+      "p": [
+       168,
+       88,
+       1030,
+       209
+      ],
+      "c": [
+       168,
+       425,
+       1030,
+       209
+      ]
+     },
+     {
+      "n": "a.lp-lead",
+      "p": [
+       168,
+       232,
+       698,
+       555
+      ],
+      "c": [
+       168,
+       568,
+       698,
+       332
+      ]
+     },
+     {
+      "n": "a.lp-card",
+      "p": [
+       168,
+       778,
+       307,
+       122
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     3599
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ },
+ {
+  "page": "post",
+  "w": "1366",
+  "rep": 0,
+  "http": 200,
+  "sh": [
+   {
+    "t": 4007,
+    "v": 0.5142,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       84,
+       0,
+       999,
+       39
+      ]
+     },
+     {
+      "n": "main#PAGES_CONTAINER.PAGES_CONTAINER",
+      "p": [
+       0,
+       128,
+       1366,
+       772
+      ],
+      "c": [
+       0,
+       124,
+       1366,
+       776
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       776,
+       0,
+       307,
+       39
+      ],
+      "c": [
+       614,
+       0,
+       427,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1072,
+       29,
+       279,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ },
+ {
+  "page": "pricing",
+  "w": "1366",
+  "rep": 1,
+  "http": 200,
+  "sh": [
+   {
+    "t": 2792,
+    "v": 0.5355,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "div.LNYVZi.ayCf9D",
+      "p": [
+       0,
+       128,
+       1366,
+       772
+      ],
+      "c": [
+       0,
+       124,
+       1366,
+       776
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       773,
+       0,
+       310,
+       39
+      ],
+      "c": [
+       593,
+       0,
+       409,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1101,
+       29,
+       250,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 3064,
+    "v": 0.1017,
+    "src": [
+     {
+      "n": "div#bgLayers_pageBackground_rf27d.QG9w8P",
+      "p": [
+       0,
+       124,
+       1366,
+       776
+      ],
+      "c": [
+       0,
+       285,
+       1366,
+       615
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 4940,
+    "v": 0.0418,
+    "src": [
+     {
+      "n": "footer#gbm-footer",
+      "p": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "c": [
+       0,
+       795,
+       1366,
+       105
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     3579
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 4945,
+    "v": 0.046,
+    "src": [
+     {
+      "n": "span.s__5CjnXs.se5p61l",
+      "p": [
+       365,
+       645,
+       149,
+       48
+      ],
+      "c": [
+       383,
+       645,
+       113,
+       48
+      ]
+     },
+     {
+      "n": "span.s__5CjnXs.se5p61l",
+      "p": [
+       854,
+       645,
+       149,
+       48
+      ],
+      "c": [
+       872,
+       645,
+       113,
+       48
+      ]
+     },
+     {
+      "n": "footer#gbm-footer",
+      "p": [
+       0,
+       795,
+       1366,
+       105
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     3579
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ },
+ {
+  "page": "about",
+  "w": "1366",
+  "rep": 1,
+  "http": 200,
+  "sh": [
+   {
+    "t": 2547,
+    "v": 0.5355,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "div.LNYVZi.ayCf9D",
+      "p": [
+       0,
+       128,
+       1366,
+       772
+      ],
+      "c": [
+       0,
+       124,
+       1366,
+       776
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       773,
+       0,
+       310,
+       39
+      ],
+      "c": [
+       593,
+       0,
+       409,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1101,
+       29,
+       250,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 2569,
+    "v": 0.0604,
+    "src": [
+     {
+      "n": "?",
+      "p": [
+       253,
+       423,
+       549,
+       76
+      ],
+      "c": [
+       252,
+       427,
+       550,
+       76
+      ]
+     },
+     {
+      "n": "blockquote.font_8.wixui-rich-text__text",
+      "p": [
+       253,
+       678,
+       549,
+       85
+      ],
+      "c": [
+       253,
+       712,
+       549,
+       76
+      ]
+     },
+     {
+      "n": "blockquote.font_8.wixui-rich-text__text",
+      "p": [
+       253,
+       508,
+       549,
+       153
+      ],
+      "c": [
+       252,
+       522,
+       550,
+       171
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       253,
+       559,
+       549,
+       114
+      ],
+      "c": [
+       252,
+       579,
+       550,
+       114
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 2678,
+    "v": 0.0415,
+    "src": [
+     {
+      "n": "?",
+      "p": [
+       252,
+       579,
+       550,
+       113
+      ],
+      "c": [
+       253,
+       579,
+       549,
+       113
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       253,
+       731,
+       549,
+       56
+      ],
+      "c": [
+       253,
+       731,
+       549,
+       56
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       253,
+       825,
+       549,
+       18
+      ],
+      "c": [
+       253,
+       825,
+       549,
+       18
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       253,
+       844,
+       549,
+       37
+      ],
+      "c": [
+       253,
+       825,
+       549,
+       37
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   },
+   {
+    "t": 2756,
+    "v": 0.1017,
+    "src": [
+     {
+      "n": "div#bgLayers_pageBackground_a2pb6.QG9w8P",
+      "p": [
+       0,
+       124,
+       1366,
+       776
+      ],
+      "c": [
+       0,
+       285,
+       1366,
+       615
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2155
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 285
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ },
+ {
+  "page": "magazine",
+  "w": "1366",
+  "rep": 1,
+  "http": 200,
+  "sh": [
+   {
+    "t": 2585,
+    "v": 0.5355,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "main#PAGES_CONTAINER.PAGES_CONTAINER",
+      "p": [
+       0,
+       128,
+       1366,
+       772
+      ],
+      "c": [
+       0,
+       124,
+       1366,
+       776
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       773,
+       0,
+       310,
+       39
+      ],
+      "c": [
+       593,
+       0,
+       409,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1101,
+       29,
+       250,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/auto"
+  }
+ },
+ {
+  "page": "allnews",
+  "w": "1366",
+  "rep": 1,
+  "http": 200,
+  "sh": [
+   {
+    "t": 3582,
+    "v": 0.0664,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       84,
+       0,
+       999,
+       39
+      ]
+     },
+     {
+      "n": "?",
+      "p": [
+       84,
+       11,
+       695,
+       19
+      ],
+      "c": [
+       84,
+       10,
+       533,
+       19
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       779,
+       0,
+       304,
+       39
+      ],
+      "c": [
+       617,
+       0,
+       427,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1072,
+       29,
+       279,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 3646,
+    "v": 0.134,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       84,
+       0,
+       999,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "div.zp8IQu",
+      "p": [
+       193,
+       371,
+       980,
+       529
+      ],
+      "c": [
+       193,
+       115,
+       987,
+       785
+      ]
+     },
+     {
+      "n": "div.mbKyhH.hYUP9L",
+      "p": [
+       193,
+       195,
+       980,
+       705
+      ],
+      "c": [
+       193,
+       115,
+       980,
+       785
+      ]
+     },
+     {
+      "n": "nav",
+      "p": [
+       427,
+       60,
+       653,
+       44
+      ],
+      "c": [
+       456,
+       60,
+       653,
+       44
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 4094,
+    "v": 0.1381,
+    "src": [
+     {
+      "n": "div",
+      "p": [
+       193,
+       123,
+       987,
+       777
+      ],
+      "c": [
+       168,
+       115,
+       1012,
+       785
+      ]
+     },
+     {
+      "n": "form#gbm-lp-search",
+      "p": [
+       168,
+       88,
+       1030,
+       210
+      ],
+      "c": [
+       168,
+       365,
+       1030,
+       210
+      ]
+     },
+     {
+      "n": "a.lp-lead",
+      "p": [
+       168,
+       232,
+       698,
+       625
+      ],
+      "c": [
+       168,
+       509,
+       698,
+       391
+      ]
+     },
+     {
+      "n": "a.lp-card",
+      "p": [
+       168,
+       849,
+       307,
+       51
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 7346,
+    "v": 0.1381,
+    "src": [
+     {
+      "n": "div",
+      "p": [
+       193,
+       123,
+       987,
+       777
+      ],
+      "c": [
+       168,
+       115,
+       1012,
+       785
+      ]
+     },
+     {
+      "n": "form#gbm-lp-search",
+      "p": [
+       168,
+       88,
+       1030,
+       210
+      ],
+      "c": [
+       168,
+       365,
+       1030,
+       210
+      ]
+     },
+     {
+      "n": "a.lp-lead",
+      "p": [
+       168,
+       232,
+       698,
+       625
+      ],
+      "c": [
+       168,
+       509,
+       698,
+       391
+      ]
+     },
+     {
+      "n": "a.lp-card",
+      "p": [
+       168,
+       849,
+       307,
+       51
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     3599
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ },
+ {
+  "page": "cat-recruit",
+  "w": "1366",
+  "rep": 1,
+  "http": 200,
+  "sh": [
+   {
+    "t": 2903,
+    "v": 0.5358,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "div#SITE_PAGES.Y3K28_.SITE_PAGES",
+      "p": [
+       0,
+       128,
+       1366,
+       772
+      ],
+      "c": [
+       0,
+       124,
+       1366,
+       776
+      ]
+     },
+     {
+      "n": "div.mbKyhH.hYUP9L",
+      "p": [
+       193,
+       195,
+       980,
+       705
+      ],
+      "c": [
+       193,
+       115,
+       980,
+       785
+      ]
+     },
+     {
+      "n": "div.zp8IQu",
+      "p": [
+       193,
+       477,
+       980,
+       423
+      ],
+      "c": [
+       193,
+       123,
+       987,
+       777
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 3246,
+    "v": 0.1678,
+    "src": [
+     {
+      "n": "div.zp8IQu",
+      "p": [
+       193,
+       123,
+       987,
+       777
+      ],
+      "c": [
+       168,
+       115,
+       1012,
+       785
+      ]
+     },
+     {
+      "n": "form#gbm-lp-search",
+      "p": [
+       168,
+       88,
+       1030,
+       209
+      ],
+      "c": [
+       168,
+       425,
+       1030,
+       209
+      ]
+     },
+     {
+      "n": "a.lp-lead",
+      "p": [
+       168,
+       232,
+       698,
+       555
+      ],
+      "c": [
+       168,
+       568,
+       698,
+       332
+      ]
+     },
+     {
+      "n": "a.lp-card",
+      "p": [
+       168,
+       778,
+       307,
+       122
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   },
+   {
+    "t": 5072,
+    "v": 0.1678,
+    "src": [
+     {
+      "n": "div.zp8IQu",
+      "p": [
+       193,
+       123,
+       987,
+       777
+      ],
+      "c": [
+       168,
+       115,
+       1012,
+       785
+      ]
+     },
+     {
+      "n": "form#gbm-lp-search",
+      "p": [
+       168,
+       88,
+       1030,
+       209
+      ],
+      "c": [
+       168,
+       425,
+       1030,
+       209
+      ]
+     },
+     {
+      "n": "a.lp-lead",
+      "p": [
+       168,
+       232,
+       698,
+       555
+      ],
+      "c": [
+       168,
+       568,
+       698,
+       332
+      ]
+     },
+     {
+      "n": "a.lp-card",
+      "p": [
+       168,
+       778,
+       307,
+       122
+      ],
+      "c": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     3599
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ },
+ {
+  "page": "post",
+  "w": "1366",
+  "rep": 1,
+  "http": 200,
+  "sh": [
+   {
+    "t": 6204,
+    "v": 0.5355,
+    "src": [
+     {
+      "n": "div.sh-track",
+      "p": [
+       90,
+       0,
+       971,
+       39
+      ],
+      "c": [
+       79,
+       0,
+       1004,
+       39
+      ]
+     },
+     {
+      "n": "main#PAGES_CONTAINER.PAGES_CONTAINER",
+      "p": [
+       0,
+       128,
+       1366,
+       772
+      ],
+      "c": [
+       0,
+       124,
+       1366,
+       776
+      ]
+     },
+     {
+      "n": "a",
+      "p": [
+       773,
+       0,
+       310,
+       39
+      ],
+      "c": [
+       593,
+       0,
+       409,
+       39
+      ]
+     },
+     {
+      "n": "a.sh-cta",
+      "p": [
+       1052,
+       31,
+       299,
+       118
+      ],
+      "c": [
+       1101,
+       29,
+       250,
+       118
+      ]
+     }
+    ],
+    "hd": [
+     124,
+     2,
+     2175
+    ],
+    "tr": [
+     79,
+     0,
+     1004,
+     40
+    ],
+    "trKids": 1,
+    "trStyle": "",
+    "trAnim": "none/none",
+    "sp": 124
+   }
+  ],
+  "html": {
+   "track": "<div class=\"sh-track\" role=\"region\" aria-label=\"GatorBait ticker\"><div class=\"sh-run\"><a href=\"/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll\"><em>Latest</em>Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll</a><a href=\"/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back\"><em>Latest</em>Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”</a><a href=\"/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2\"><em",
+   "headerCss": "relative/124px"
+  }
+ }
+]

@@ -1,0 +1,7 @@
+Full-page before (origin/main 764c5b7) vs after, Chromium DPR1. diff bbox None = pixel-identical.
+320px: sizes (320, 12893)==(320, 12893), diff bbox None
+390px: sizes (390, 11703)==(390, 11703), diff bbox None
+430px: sizes (430, 11745)==(430, 11745), diff bbox None
+768px: sizes (768, 10397)==(768, 10397), diff bbox None
+999px: sizes (999, 9965)==(999, 9965), diff bbox None
+1100px: sizes (1100, 8473)==(1100, 8473), diff bbox None

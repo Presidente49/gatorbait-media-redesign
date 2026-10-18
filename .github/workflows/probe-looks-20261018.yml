@@ -24,7 +24,7 @@ jobs:
       - name: Commit bottom screenshots (read-only probe output only)
         if: always()
         run: |
-          mkdir -p deploy/mag-bottom-check-20261018 && cp p/shots/mag-bottom-*.png p/shots/bottom-check.json deploy/mag-bottom-check-20261018/ || true
+          mkdir -p deploy/mag-bottom-check-20261018 && cp p/shots/mag-bottom-*.png p/shots/mag-top-*.png p/shots/full-check.json deploy/mag-bottom-check-20261018/ || true
           git config user.name "probe-bot" && git config user.email "probe-bot@users.noreply.github.com"
           git add deploy/mag-bottom-check-20261018 && git commit -m "probe output: magazine bottom check screenshots" && git push origin HEAD:probe/looks-audit-20261018 || true
       - uses: actions/upload-artifact@v4

@@ -126,19 +126,20 @@ async function findMagLink(page, scope) {
     const ok = a => { try { const u = new URL(a.href, location.href); return /^\/magazine\/?$/.test(u.pathname) && u.hostname.replace(/^www\./, '') === 'gatorbaitmedia.com'; } catch (e) { return false; } };
     const vis = a => { const r = a.getBoundingClientRect(); const cs = getComputedStyle(a); return r.width > 4 && r.height > 4 && cs.visibility !== 'hidden' && cs.display !== 'none'; };
     const all = [...document.querySelectorAll('a[href]')].filter(ok);
-    const inHdr = a => !!a.closest('#SITE_HEADER'), inFtr = a => !!a.closest('#SITE_FOOTER');
+    const inHdr = a => !!a.closest('#SITE_HEADER,#gbm-site-header,#gbm-mobile-shell-host,header,nav,[id*="drawer" i],[id*="mobile" i]'), inFtr = a => !!a.closest('#SITE_FOOTER,footer');
     let pool = all;
     if (scope === 'header') pool = all.filter(inHdr); else if (scope === 'footer') pool = all.filter(inFtr); else if (scope === 'card') pool = all.filter(a => !inHdr(a) && !inFtr(a));
     return { vis: pool.filter(vis)[0] || null, hidden: pool[0] || null, total: all.length, pool: pool.length };
   }, { scope });
 }
+async function safeClick(el, meta) { try { await el.click({ timeout: 3000 }); } catch (e) { meta.link.fallback = 'dom-click after: ' + String(e.message).split('\n')[0].slice(0, 60); await el.evaluate(a => a.click()); } }
 async function clickMag(page, v, scope, meta) {
   const info = await findMagLink(page, scope); const vis = (await info.getProperty('vis')).asElement(); const hidden = (await info.getProperty('hidden')).asElement();
   meta.link = { scope, total: await (await info.getProperty('total')).jsonValue(), pool: await (await info.getProperty('pool')).jsonValue(), mode: null };
-  if (vis) { await vis.scrollIntoViewIfNeeded().catch(() => {}); await sleep(250); meta.link.mode = 'direct'; await page.evaluate(() => window.__fx.start('click')); await vis.click({ timeout: 8000 }); return true; }
+  if (vis) { await vis.scrollIntoViewIfNeeded().catch(() => {}); await sleep(250); meta.link.mode = 'direct'; await page.evaluate(() => window.__fx.start('click')); await safeClick(vis, meta); return true; }
   if (scope === 'header' && v.isMobile) {
     const burgers = ['#SITE_HEADER [aria-label*="menu" i]', '#SITE_HEADER [data-testid*="menu" i]', '#SITE_HEADER [class*="burger" i]', '#SITE_HEADER [class*="hamburger" i]', '#gbm-mobile-drawer-root, [class*="gbm-mobile" i] button', '#SITE_HEADER button'];
-    for (const sel of burgers) { const b = page.locator(sel).first(); if (await b.count() && await b.isVisible().catch(() => false)) { await b.click({ timeout: 4000 }).catch(() => {}); await sleep(700); const i2 = await findMagLink(page, 'any'); const l = (await i2.getProperty('vis')).asElement(); if (l) { meta.link.mode = 'menu:' + sel; await page.evaluate(() => window.__fx.start('click')); await l.click({ timeout: 8000 }); return true; } } }
+    for (const sel of burgers) { const b = page.locator(sel).first(); if (await b.count() && await b.isVisible().catch(() => false)) { await b.click({ timeout: 4000 }).catch(() => {}); await sleep(1200); const i2 = await findMagLink(page, 'any'); const l = (await i2.getProperty('vis')).asElement(); if (l) { meta.link.mode = 'menu:' + sel; await page.evaluate(() => window.__fx.start('click')); await safeClick(l, meta); return true; } } }
   }
   if (hidden) { meta.link.mode = 'dom-click (link not visible)'; await page.evaluate(() => window.__fx.start('click')); await hidden.evaluate(a => a.click()); return true; }
   meta.link.mode = 'NOT FOUND'; return false;
@@ -184,14 +185,14 @@ for (const vk of ['d', 'm']) {
     await p.evaluate(() => window.__fx.start('goForward')); await p.goForward({ waitUntil: 'commit' }).catch(() => {}); return { ctx, p, sh };
   }, { v });
   add(`b3-doc-back-${v.name}`, async (b, v, meta) => {
-    const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { window.__FX_AUTO = true; });
+    const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { if (window.__fx && window === window.top) window.__fx.start('auto'); });
     await p.goto(BASE + '/magazine', { waitUntil: 'load', timeout: 90000 }); await sleep(5000);
     await p.goto(BASE + '/about', { waitUntil: 'load', timeout: 90000 }); await sleep(2500); const sh = await startShots(p);
     await p.goBack({ waitUntil: 'commit' }).catch(() => {}); return { ctx, p, sh };
   }, { v });
   // (c) throttled
   add(`c1-slow-direct-${v.name}`, async (b, v, meta) => {
-    const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { window.__FX_AUTO = true; }); await throttle(p, true); const sh = await startShots(p);
+    const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { if (window.__fx && window === window.top) window.__fx.start('auto'); }); await throttle(p, true); const sh = await startShots(p);
     p.goto(BASE + '/magazine', { waitUntil: 'commit', timeout: 90000 }).catch(() => {}); return { ctx, p, sh, wait: 15500 };
   }, { v, ticksNote: 'Slow 4G + 4x CPU' });
   add(`c2-slow-spa-${v.name}`, async (b, v, meta) => {
@@ -200,22 +201,22 @@ for (const vk of ['d', 'm']) {
   // (d) warm reload, (e) UTM / trailing slash / hash entry
   add(`d1-warm-reload-${v.name}`, async (b, v, meta) => {
     const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.goto(BASE + '/magazine', { waitUntil: 'load', timeout: 90000 }); await sleep(6000);
-    await p.evaluate(() => { window.name = 'x'; }); await p.addInitScript(() => { window.__FX_AUTO = true; }); const sh = await startShots(p); p.reload({ waitUntil: 'commit' }).catch(() => {}); return { ctx, p, sh };
+    await p.evaluate(() => { window.name = 'x'; }); await p.addInitScript(() => { if (window.__fx && window === window.top) window.__fx.start('auto'); }); const sh = await startShots(p); p.reload({ waitUntil: 'commit' }).catch(() => {}); return { ctx, p, sh };
   }, { v });
   add(`d2-warm-newtab-${v.name}`, async (b, v, meta) => {
     const ctx = await newCtx(b, v); const p0 = await ctx.newPage(); await p0.goto(BASE + '/magazine', { waitUntil: 'load', timeout: 90000 }); await sleep(6000); await p0.close();
-    const p = await ctx.newPage(); await p.addInitScript(() => { window.__FX_AUTO = true; }); const sh = await startShots(p); p.goto(BASE + '/magazine', { waitUntil: 'commit', timeout: 90000 }).catch(() => {}); return { ctx, p, sh };
+    const p = await ctx.newPage(); await p.addInitScript(() => { if (window.__fx && window === window.top) window.__fx.start('auto'); }); const sh = await startShots(p); p.goto(BASE + '/magazine', { waitUntil: 'commit', timeout: 90000 }).catch(() => {}); return { ctx, p, sh };
   }, { v });
   for (const [k, q] of [['e1-utm', '/magazine?utm_source=newsletter&utm_medium=email&utm_campaign=postgame-texas&utm_content=cover'], ['e2-utm-slash', '/magazine/?utm_source=newsletter&utm_medium=email&utm_campaign=postgame-texas'], ['e3-hash', '/magazine#top']]) {
-    add(`${k}-${v.name}`, async (b, v, meta) => { const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { window.__FX_AUTO = true; }); const sh = await startShots(p); p.goto(BASE + q, { waitUntil: 'commit', timeout: 90000 }).catch(() => {}); meta.url = q; return { ctx, p, sh }; }, { v });
+    add(`${k}-${v.name}`, async (b, v, meta) => { const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { if (window.__fx && window === window.top) window.__fx.start('auto'); }); const sh = await startShots(p); p.goto(BASE + q, { waitUntil: 'commit', timeout: 90000 }).catch(() => {}); meta.url = q; return { ctx, p, sh }; }, { v });
   }
-  add(`e4-direct-cold-${v.name}`, async (b, v, meta) => { const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { window.__FX_AUTO = true; }); const sh = await startShots(p); p.goto(BASE + '/magazine', { waitUntil: 'commit', timeout: 90000 }).catch(() => {}); return { ctx, p, sh }; }, { v });
+  add(`e4-direct-cold-${v.name}`, async (b, v, meta) => { const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { if (window.__fx && window === window.top) window.__fx.start('auto'); }); const sh = await startShots(p); p.goto(BASE + '/magazine', { waitUntil: 'commit', timeout: 90000 }).catch(() => {}); return { ctx, p, sh }; }, { v });
 }
 
 // (f) bfcache (separate browser with back/forward cache enabled)
 const BF = [];
 for (const vk of ['d', 'm']) { const v = VIEWS[vk]; BF.push({ id: `f1-bfcache-${v.name}`, v, fn: async (b, v, meta) => {
-  const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { window.__FX_AUTO = true; });
+  const ctx = await newCtx(b, v); const p = await ctx.newPage(); await p.addInitScript(() => { if (window.__fx && window === window.top) window.__fx.start('auto'); });
   await p.goto(BASE + '/magazine', { waitUntil: 'load', timeout: 90000 }); await sleep(6000);
   await p.evaluate(() => { location.href = '/about'; }); await p.waitForLoadState('load').catch(() => {}); await sleep(2500);
   meta.beforeBack = await p.evaluate(() => location.pathname); const sh = await startShots(p);

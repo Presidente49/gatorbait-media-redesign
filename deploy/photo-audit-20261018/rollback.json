@@ -140,7 +140,14 @@
         "altText": "Buddy Martin asks a question, microphone in hand, at a Florida football press conference. Photo by Chris Spears, GatorBait Media."
       },
       "addedCredit": "closing paragraph id gbphotocr ('Archive photo by Chris Spears, GatorBait Media.')",
-      "reason": "Photo shows a man shooting a phone, not Buddy Martin with a microphone. Draft differed from the published post only by editor-added video duration metadata and the slug was identical, so UPDATE_PUBLISH was safe. New cover: Chris Spears Philo at Ole Miss (No. 12)."
+      "reason": "Photo shows a man shooting a phone, not Buddy Martin with a microphone. Draft differed from the published post only by editor-added video duration metadata and the slug was identical, so UPDATE_PUBLISH was safe. New cover: Chris Spears Philo at Ole Miss (No. 12).",
+      "staleCopyFix": {
+        "note": "Post is under the Brenden Martin byline (agent-written), copy still read as pregame after Florida beat Texas 27-24. Prior text for rollback:",
+        "excerptBefore": "The Buddy Martin Show is live at 9 p.m. ET with the Philo-or-Jones question ahead of Florida at No. 7 Texas. Watch on the show page or YouTube.",
+        "bms001Before": "The Buddy Martin Show went live Thursday night with the week's biggest question: who plays quarterback for Florida at No. 7 Texas on Saturday? The replay is below.",
+        "bms003Before": "Aaron Philo's status is uncertain with a shoulder injury after the 38-19 loss to South Carolina. If he can't go, Tramell Jones Jr. would get his first start. Florida (4-2, 2-2 SEC) plays Texas (4-1, 1-1 SEC) at noon ET on ABC, and Texas opened as a 10-point favorite.",
+        "bms007Before": "Join All Access for Buddy's members-only columns and GatorBait Magazine, including Friday's Pregame edition for the Texas trip."
+      }
     },
     "15d5eaa2": {
       "title": "Philo's injury could give Tramell Jones Jr. his opening",
@@ -181,7 +188,8 @@
         "displayed": true,
         "custom": true
       },
-      "reason": "314 px wide cover, no alt, no credit"
+      "reason": "314 px wide cover, no alt, no credit",
+      "secondChange": "cover first set to 16b519_56d755f7... then to 16b519_eb9be5b00c214a3b8c5c5b6b8751a549 (the sideline photo the homepage config already uses); inline 314 px copy and its 'Cover photo' caption replaced. Prior caption: 'Cover photo: Jon Sumrall takes the field before the South Carolina game. Photo by Chris Spears, GatorBait Media.'; prior inline image d3cfa5_8183df2e1ce141dcaa4f4abaae22aaca~mv2.jpg 314x176, no alt."
     },
     "2e330964": {
       "title": "Buddy Blog: Can Sumrall Swim In The Deep End",
@@ -192,6 +200,73 @@
       "title": "From the Sideline: Chris Spears on the 500th Game",
       "priorAlt": "(none)",
       "change": "alt added"
-    }
+    },
+    "02637783": {
+      "title": "Buddy Blog: A Gator Ass-Whipping, With Bowl Projections in the Ashes",
+      "priorMedia": {
+        "wixMedia": {
+          "image": {
+            "id": "d3cfa5_9d0c9cbd2bcd492a8987e073294f6b94~mv2.jpg",
+            "url": "https://static.wixstatic.com/media/d3cfa5_9d0c9cbd2bcd492a8987e073294f6b94~mv2.jpg",
+            "width": 3000,
+            "height": 1748,
+            "altText": "Florida's sideline during the South Carolina game at Ben Hill Griffin Stadium on Oct. 10, 2026. Photo by Chris Spears, GatorBait Media."
+          }
+        },
+        "displayed": true,
+        "custom": true
+      },
+      "reason": "Near-duplicate sideline huddle stacked under the Philo/Jones card on the homepage."
+    },
+    "63e5f8b2-0631-47ca-8b45-cc0728da354a": {
+      "title": "Denzel Aberdeen Cleared to Play for Florida Under Temporary Injunction",
+      "priorMedia": {
+        "wixMedia": {
+          "image": {
+            "id": "d3cfa5_cefbed4d0c2a46988a3929e5d0b85807~mv2.png",
+            "url": "https://static.wixstatic.com/media/d3cfa5_cefbed4d0c2a46988a3929e5d0b85807~mv2.png",
+            "width": 1672,
+            "height": 941
+          }
+        },
+        "displayed": true,
+        "custom": true
+      },
+      "reason": "Banner labels a March 2025 photo of No. 1 (Walter Clayton Jr.'s 2024-25 number) as Aberdeen; replaced with the UAA photo of Aberdeen (No. 11)."
+    },
+    "0c64d821-ed4d-4ed0-826e-751b8dea9497": {
+      "title": "Saturday's Bill Comes Due",
+      "priorMedia": {
+        "wixMedia": {
+          "image": {
+            "id": "ae876a_86e7dbd7d2a84b8c9ad5177ddb72e1cd~mv2.jpg",
+            "url": "https://static.wixstatic.com/media/ae876a_86e7dbd7d2a84b8c9ad5177ddb72e1cd~mv2.jpg",
+            "width": 700,
+            "height": 560,
+            "altText": "Tim Tebow’s Promise image featured in Florida’s Ole Miss game-week story"
+          }
+        },
+        "displayed": true,
+        "custom": true
+      },
+      "reason": "Cover photo carries a visible 'Tim Casey / GatorCountry.com' credit line (rule: never credit or use Gator Country)."
+    },
+    "01b509ca-d99c-4161-b72c-86fa11e17e0d": {
+      "title": "Sumrall Cussing: His Wife Wants Him To Please Stop",
+      "priorMedia": {
+        "wixMedia": {
+          "image": {
+            "id": "d3cfa5_8183df2e1ce141dcaa4f4abaae22aaca~mv2.jpg",
+            "url": "https://static.wixstatic.com/media/d3cfa5_8183df2e1ce141dcaa4f4abaae22aaca~mv2.jpg",
+            "width": 314,
+            "height": 176
+          }
+        },
+        "displayed": true,
+        "custom": true
+      },
+      "reason": "314 px cover, no alt."
+    },
+    "30-day-alt-only": "Alt text added where it was missing or had no credit on older posts (ids and prior alt in the #34 comment). No media changed on those."
   }
 }

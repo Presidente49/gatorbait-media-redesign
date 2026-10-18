@@ -1,0 +1,235 @@
+[
+ {
+  "page": "about",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre7",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2475|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "2886|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "5018|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2886,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3755,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow": 15
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-124-7315",
+    "a.:979-1585",
+    "a.:1585-2055",
+    "em.:1605-1652",
+    "a.:2055-2569",
+    "em.:2075-2167"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "about",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre7",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2155|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "2445|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "4727|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2445,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3755,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow": 15
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-127-7312",
+    "a.:975-1582",
+    "a.:1582-2052",
+    "em.:1602-1649",
+    "a.:2052-2566",
+    "em.:2072-2164"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre7",
+  "http": 200,
+  "cls": 0.0944,
+  "shifts": [
+   {
+    "t": 6103,
+    "v": 0.045,
+    "src": "#gbm-footer[0,0,798,102],::before[0,0,787,43]"
+   },
+   {
+    "t": 6111,
+    "v": 0.0494,
+    "src": "span[648,48,648,48],span[648,48,648,48]"
+   }
+  ],
+  "timeline": [
+   "3272|0|none|-|H||gbm-bc,gbm-band-pre,gbm-account-tight,gbm-sp-plans,gbm-sp,gb",
+   "3341|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight,gbm-sp-plans,gbm-sp,gb",
+   "3688|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5865|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3688,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 1714,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-125-7313",
+    "a.:977-1583",
+    "a.:1583-2054",
+    "em.:1603-1650",
+    "a.:2054-2568",
+    "em.:2074-2165"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre7",
+  "http": 200,
+  "cls": 0.0944,
+  "shifts": [
+   {
+    "t": 6118,
+    "v": 0.045,
+    "src": "#gbm-footer[0,0,798,102],::before[0,0,787,43]"
+   },
+   {
+    "t": 6125,
+    "v": 0.0494,
+    "src": "span[648,48,648,48],span[648,48,648,48]"
+   }
+  ],
+  "timeline": [
+   "3017|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight,gbm-sp-plans,gbm-sp,gb",
+   "3455|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5576|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3455,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 1714,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-127-7311",
+    "a.:975-1581",
+    "a.:1581-2051",
+    "em.:1601-1648",
+    "a.:2051-2566",
+    "em.:2071-2163"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ }
+]

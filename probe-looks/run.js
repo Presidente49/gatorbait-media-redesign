@@ -1,9 +1,9 @@
-// Read-only live probe of https://www.gatorbaitmedia.com/magazine after the rev-116 swap (embed 1dd74333, pin 814353c9: new PDF, portrait cover, sticky fix). (rerun: 390 got a transient Wix HTTP 503)
+// Read-only live probe of https://www.gatorbaitmedia.com/magazine after the rev-117 swap (embed 1dd74333, pin 814353c9: new PDF, portrait cover, sticky fix). (rerun: 390 got a transient Wix HTTP 503)
 // Chrome at 390/430/1366/1920, cache-busting URL, no UA override (Wix bot 403). Screenshots to ./shots for the artifact.
 const { chromium } = require('playwright');
 const fs = require('fs');
 fs.mkdirSync('shots', { recursive: true });
-const PIN = '814353c9b26325e20a2f17f96906b548bc4ce7c4';
+const PIN = '5dfd57f3bfccfb69c5bd4641775f795747339684';
 const YTS = ['https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1','https://www.youtube-nocookie.com/embed/y4GpdY2bzdU?autoplay=1&rel=0&playsinline=1'];
 const widths = [
   { name: '390', w: 390, h: 844, dpr: 3, mobile: true },
@@ -25,7 +25,7 @@ const widths = [
       page.on('response', q => { if (q.status() >= 400 && /jsdelivr|usrfiles|wixstatic/.test(q.url())) bad.push(q.status() + ' ' + q.url().slice(0, 120)); });
       const resp = await page.goto('https://www.gatorbaitmedia.com/magazine?gbm_qc=' + Date.now() + v.name, { waitUntil: 'domcontentloaded', timeout: 90000 });
       const html = await resp.text();
-      r.http = resp.status(); r.servedPin = (html.match(new RegExp(PIN, 'g')) || []).length; r.servedMarker = /GBM_MAGAZINE_2026_V1 postgame texas-web src=814353c9/.test(html);
+      r.http = resp.status(); r.servedPin = (html.match(new RegExp(PIN, 'g')) || []).length; r.servedMarker = /GBM_MAGAZINE_2026_V1 postgame texas-web src=5dfd57f3/.test(html);
       await page.waitForSelector('#gbm-magazine-page.pm[data-issue="2026-10-18-postgame-texas"]', { timeout: 60000 });
       await page.waitForTimeout(4000);
       await page.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 700) { window.scrollTo(0, y); await new Promise(s => setTimeout(s, 120)); } });
@@ -46,7 +46,7 @@ const widths = [
       });
       r.cover = await page.evaluate(() => { const i = document.querySelector('#gbm-magazine-page .pm-poster img, #gbm-magazine-page .pm-entrance img'); return i ? { src: i.currentSrc || i.src, nw: i.naturalWidth, nh: i.naturalHeight, ok: i.complete && i.naturalWidth > 0 } : null; });
       r.coverOk = !!(r.cover && r.cover.ok && /postgame-cover-20261018/.test(r.cover.src) && Math.abs(r.cover.nh / r.cover.nw - 4 / 3) < 0.02);
-      const NEWPDF = 'https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_5636c273ff5447e9a301363ab12d5e86.pdf';
+      const NEWPDF = 'https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_6fd61c786a0441b5a8dbead1182f2e1d.pdf';
       const pr = await ctx.request.get(NEWPDF, { headers: { Range: 'bytes=0-1023' } });
       const pb = await pr.body();
       r.pdf = { status: pr.status(), ct: pr.headers()['content-type'], cd: pr.headers()['content-disposition'] || '', magic: pb.slice(0, 5).toString() };
@@ -74,7 +74,7 @@ const widths = [
     console.log('### /magazine @' + v.name + ' ' + JSON.stringify(r));
   }
   await browser.close();
-  fs.writeFileSync('shots/live-qc.json', JSON.stringify(results, null, 1));
+  fs.writeFileSync('shots/live-qc.json', JSON.stringify(results, null, 1)); fs.writeFileSync('shots/audit.json', JSON.stringify(results.map(r => ({ width: r.width, pass: r.pass, http: r.http, servedPin: r.servedPin, coverOk: r.coverOk, cover: r.cover, dlOk: r.dlOk, dlHref: r.dlHref, pdf: r.pdf, overflow: r.overflow, pmInWidth: r.pmInWidth, h1: r.h1, imgsBroken: r.imgsBroken, ytCards: r.ytCards, errors: r.errors, error: r.error })), null, 1));
   const bad = results.filter(x => !x.pass).map(x => x.width);
   console.log(bad.length ? 'LIVE QC FAILED at ' + bad.join(', ') : 'LIVE QC PASSED at ' + results.map(x => x.width).join('/'));
 })();

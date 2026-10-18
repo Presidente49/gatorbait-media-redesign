@@ -21,34 +21,65 @@ def e(value):
 def link(label, url):
     return '<a href="' + e(url) + '">' + e(label) + '</a>'
 
-intro = '''<p><strong>By Brenden Martin</strong></p>
-<p>Cover photo: Chris Spears / GatorBait Media.</p>
-<p><strong>2026 SEASON GUIDE · Updated September 29, 2026</strong></p>
-<p>One place for Florida's full football roster, results and the road ahead. Bookmark this guide; GatorBait's football coverage links back here throughout the season.</p>
-<p><strong>4–0 overall · 2–0 SEC</strong></p>
-<h2 id="schedule">2026 schedule &amp; results</h2>
-<p><strong>Next: at Missouri · Saturday, October 3 · 3:30 p.m. ET · ABC</strong></p>
-<p>All times Eastern. Kickoff windows are not final start times. October 10 is noon or 12:45 p.m.; the final time and TV network will be set after the October 3 games.</p>
-'''
+import re
+CHECKED = datetime.fromisoformat(SCHEDULE['checkedDate'])
+CHECKED_LABEL = CHECKED.strftime('%B %-d, %Y').replace('September', 'Sept.').replace('October', 'Oct.').replace('November', 'Nov.')
+GREEN, RED, ORANGE = '#1a7f3c', '#b3261e', '#c94400'
 games = [g for g in SCHEDULE['games'] if g['date'] >= '2026-09-01']
 assert len(games) == 12
-schedule_rows = []
-for g in games:
-    date = datetime.fromisoformat(g['date']).strftime('%b. %-d')
-    name = g['opponent']['title'].removeprefix('#4 ')
-    at = 'at ' if g['location_indicator'] == 'A' else 'vs. '
+finals = [g for g in games if g['result'] and g['result'].get('status') in ('W', 'L')]
+wins = sum(g['result']['status'] == 'W' for g in finals)
+sec = [g for g in finals if g['conference']]
+sec_wins = sum(g['result']['status'] == 'W' for g in sec)
+record = str(wins) + '–' + str(len(finals) - wins) + ' overall · ' + str(sec_wins) + '–' + str(len(sec) - sec_wins) + ' SEC'
+nxt = next(g for g in games if g not in finals)
+
+def strip_rank(title):
+    return re.sub(r'^#\d+\s+', '', title)
+
+def when(g):
+    return datetime.fromisoformat(g['date'])
+
+def short_date(d):
+    return d.strftime('%b. %-d').replace('Sep.', 'Sept.')
+
+def label(g):
+    name = strip_rank(g['opponent']['title'])
+    prefix = 'at ' if g['location_indicator'] == 'A' else 'vs. '
     if g['location_indicator'] == 'N':
-        at = 'vs. '
-        name += ' (Atlanta)'
-    result = g['result']
-    if result and result.get('status') in ['W', 'L']:
-        details = result['status'] + ' ' + result['team_score'] + '–' + result['opponent_score']
+        name += ' (' + g['location'].split(',')[0] + ')'
+    return prefix + name
+
+nd = when(nxt)
+intro = '<p><strong>By Brenden Martin</strong></p>\n<p>Cover photo: Chris Spears / GatorBait Media.</p>\n'
+intro += '<p><strong>2026 SEASON GUIDE · Updated ' + e(CHECKED_LABEL) + '</strong></p>\n'
+intro += '<p>One place for Florida’s full football roster, results and the road ahead. Bookmark this guide; GatorBait’s football coverage links back here throughout the season.</p>\n'
+intro += '<p><strong>' + e(record) + '</strong></p>\n<h2 id="schedule">2026 schedule &amp; results</h2>\n'
+intro += '<p><strong><span data-color="' + ORANGE + '">NEXT:</span> ' + e(label(nxt)) + ' · ' + e(nd.strftime('%A, %b. %-d')) + ' · ' + e(nxt['time'].strip()) + ' ET · ' + e(nxt['media']['tv'].strip() or 'TV TBA') + '</strong></p>\n'
+intro += '<p>All times Eastern. Open date: ' + e(', '.join(short_date(datetime.fromisoformat(b)) for b in SCHEDULE['byeDates'])) + '. Kickoff windows for later games are not final start times.</p>\n'
+
+rows = []
+for g in games:
+    d = when(g)
+    for b in SCHEDULE['byeDates']:
+        bd = datetime.fromisoformat(b)
+        if d > bd and not any(r[0] == bd for r in rows):
+            rows.append((bd, '<tr data-bg="#eef0f3"><td>' + e(short_date(bd)) + '</td><td><em>Open date</em></td><td><em>No game</em></td></tr>'))
+    r = g['result']
+    if g in finals:
+        color = GREEN if r['status'] == 'W' else RED
+        details = '<strong><span data-color="' + color + '">' + r['status'] + '</span></strong> ' + e(r['team_score'] + '–' + r['opponent_score'])
+        bg = ''
     else:
-        details = g['time'].strip() + ' ET · ' + (g['media']['tv'].strip() or 'TV TBA')
-    schedule_rows.append('<tr><td>' + e(date) + '</td><td>' + link(at + name, 'https://floridagators.com' + g['game_center_link']) + '</td><td>' + e(details) + '</td></tr>')
-schedule = '<table><thead><tr><th>Date</th><th>Opponent</th><th>Result / kickoff</th></tr></thead><tbody>' + ''.join(schedule_rows) + '</tbody></table>'
-schedule += '<p><strong>Open date: October 24.</strong> Home games are played in Gainesville. The Georgia game is in Atlanta.</p>'
-schedule += '<p>Source: ' + link('Florida’s official 2026 football schedule', SCHEDULE['sourceUrl']) + '. Times and TV assignments may change.</p>'
+        details = e(g['time'].strip()) + ' ET · ' + e(g['media']['tv'].strip() or 'TV TBA')
+        bg = ''
+        if g is nxt:
+            details = '<strong>NEXT</strong> · ' + details
+            bg = ' data-bg="#fff0e3"'
+    rows.append((d, '<tr' + bg + '><td>' + e(short_date(d)) + '</td><td>' + link(label(g), 'https://floridagators.com' + g['game_center_link']) + '</td><td>' + details + '</td></tr>'))
+schedule = '<table><thead><tr><th>Date</th><th>Opponent</th><th>Result / kickoff</th></tr></thead><tbody>' + ''.join(r[1] for r in rows) + '</tbody></table>'
+schedule += '<p>Home games are played in Gainesville. The Georgia game is at Mercedes-Benz Stadium in Atlanta.</p>'
+schedule += '<p>Source: ' + link('Florida’s official 2026 football schedule', SCHEDULE['sourceUrl']) + '. Checked ' + e(CHECKED_LABEL) + '. Times and TV assignments may change.</p>'
 
 roster = '<h2 id="roster">2026 player roster</h2><p>All 117 players listed on Florida’s official 2026 roster, organized by position. Tap a player’s name for the official bio. This is a roster, not a depth chart or an availability report. Some offensive and defensive players share jersey numbers.</p>'
 for code, label in GROUPS:
@@ -58,7 +89,7 @@ for code, label in GROUPS:
         roster += '<tr><td>' + e(p['jerseyNumber']) + '</td><td>' + link(p['firstName'] + ' ' + p['lastName'], p['bioUrl']) + '</td><td>' + e(p['academicYearShort']) + '</td></tr>'
     roster += '</tbody></table>'
 roster += '<p>Year abbreviations follow UF’s roster: Fr. = freshman; So. = sophomore; Jr. = junior; Sr. = senior; 5th, 6th and 7th = fifth, sixth and seventh year.</p>'
-roster += '<p>Source: ' + link('Florida’s official 2026 football roster', ROSTER['sourceUrl']) + '. Names, numbers, positions and years checked September 29, 2026.</p>'
+roster += '<p>Source: ' + link('Florida’s official 2026 football roster', ROSTER['sourceUrl']) + '. Names, numbers, positions and years checked ' + e(CHECKED_LABEL) + '.</p>'
 roster += '<h2>Keep reading</h2><p>' + link('Latest GatorBait coverage', 'https://www.gatorbaitmedia.com/gatorbait-media-blogs') + ' · ' + link('GatorBait Magazine', 'https://www.gatorbaitmedia.com/magazine') + ' · ' + link('GatorBait TV', 'https://www.gatorbaitmedia.com/the-buddy-martin-show') + '</p>'
 
 body = intro + schedule + roster
@@ -83,6 +114,10 @@ def inlines(element, inherited=None):
     decorations = list(inherited)
     if element.tag in ('strong', 'b'):
         decorations += [{'type': 'BOLD'}]
+    if element.tag == 'span' and 'data-color' in element.attrib:
+        decorations += [{'type': 'COLOR', 'colorData': {'foreground': element.attrib['data-color']}}]
+    if element.tag == 'em':
+        decorations += [{'type': 'ITALIC'}]
     if element.tag == 'a':
         decorations += [{'type': 'LINK', 'linkData': {'link': {'url': element.attrib['href'], 'target': 'BLANK', 'rel': {'noreferrer': True}}}}]
     result = []
@@ -110,23 +145,23 @@ for el in ET.fromstring('<root>' + body + '</root>'):
             cells = []
             for cell in row:
                 background = '#e6edff' if ri == 0 else ('#f4f6fa' if ri % 2 == 0 else '#ffffff')
-                if table_index == 0 and ri == 5:
-                    background = '#fff0e3'
+                if 'data-bg' in row.attrib:
+                    background = row.attrib['data-bg']
                 cells.append({'type': 'TABLE_CELL', 'id': nid(), 'nodes': [para(cell, cell.tag == 'th')], 'tableCellData': {'cellStyle': {'backgroundColor': background}, 'colspan': 1, 'rowspan': 1}})
             rows.append({'type': 'TABLE_ROW', 'id': nid(), 'nodes': cells})
-        native.append({'type': 'TABLE', 'id': nid(), 'nodes': rows, 'tableData': {'containerData': {'width': {'size': 'CONTENT'}, 'alignment': 'CENTER'}, 'dimensions': {'colsWidthRatio': [18, 37, 45] if table_index == 0 else [15, 60, 25], 'colsMinWidth': [50, 90, 125] if table_index == 0 else [40, 140, 55]}, 'rowHeader': True, 'columnHeader': False, 'cellSpacing': 0, 'cellPadding': [10, 8, 10, 8], 'altText': '2026 Florida football schedule and results' if table_index == 0 else '2026 Florida player roster by position'}})
+        native.append({'type': 'TABLE', 'id': nid(), 'nodes': rows, 'tableData': {'containerData': {'width': {'size': 'CONTENT'}, 'alignment': 'CENTER'}, 'dimensions': {'colsWidthRatio': [20, 36, 44] if table_index == 0 else [15, 60, 25], 'colsMinWidth': [64, 90, 125] if table_index == 0 else [40, 140, 55]}, 'rowHeader': True, 'columnHeader': False, 'cellSpacing': 0, 'cellPadding': [10, 8, 10, 8], 'altText': '2026 Florida football schedule and results' if table_index == 0 else '2026 Florida player roster by position'}})
         table_index += 1
 rich_content = {'nodes': native}
 (ROOT / 'resource-rich-content.json').write_text(json.dumps(rich_content, ensure_ascii=False, separators=(',', ':')))
 assert len([x for x in native if x['type'] == 'TABLE']) == 15
-assert sum(len(x['nodes']) - 1 for x in native if x['type'] == 'TABLE') == 129
+assert sum(len(x['nodes']) - 1 for x in native if x['type'] == 'TABLE') == 130
 meta = {
     'postId': 'aeb4f5a5-3910-4b11-9a63-b05bac96e623',
     'canonicalUrl': URL,
     'title': 'Florida Football: 2026 Roster & Schedule',
     'excerpt': 'Florida’s full 2026 football roster, game results and upcoming schedule. A permanent GatorBait season guide, checked against official UF sources.',
     'author': 'Brenden Martin',
-    'sourceCheckedDate': '2026-09-29',
+    'sourceCheckedDate': SCHEDULE['checkedDate'],
     'rosterCount': len(ROSTER['players']),
     'regularSeasonGames': len(games),
     'nativeHtmlCharacters': len(body),
@@ -135,9 +170,11 @@ meta = {
 }
 (ROOT / 'resource-metadata.json').write_text(json.dumps(meta, indent=2))
 
-css = '''body{margin:0;background:#f4f0e6;color:#11274a;font-family:Arial,sans-serif}*{box-sizing:border-box}main{max-width:920px;margin:36px auto;padding:32px;background:#fffdf9;border-top:8px solid #ff6500}h1{font-size:clamp(34px,7vw,62px);line-height:.98;letter-spacing:-.04em;margin:12px 0 24px;max-width:760px}h2{background:#123dbb;color:white;padding:18px;font-size:28px;margin-top:36px}h3{font-size:23px;border-top:3px solid #11274a;padding-top:18px;margin:32px 0 10px}p{font-size:17px;line-height:1.55}a{color:#163fb2;text-underline-offset:3px}table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:16px}th,td{text-align:left;padding:13px 10px;border-bottom:1px solid #d9dde4;overflow-wrap:anywhere}th{background:#11274a;color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.04em}th:first-child,td:first-child{width:70px}th:last-child,td:last-child{width:32%}tr:nth-child(even){background:#f0f3f7}td a{display:inline-block;padding:3px 0;font-weight:700}header small{font-weight:900;letter-spacing:.16em;color:#c94400}@media(max-width:600px){main{margin:0;padding:18px}h2{font-size:24px;padding:14px}p{font-size:16px}th,td{padding:11px 7px;font-size:14px}th:first-child,td:first-child{width:51px}th:last-child,td:last-child{width:31%}}
+css = '''body{margin:0;background:#f4f0e6;color:#11274a;font-family:Barlow,sans-serif}*{box-sizing:border-box}main{max-width:920px;margin:36px auto;padding:32px;background:#fffdf9;border-top:8px solid #ff6500}h1{font-size:clamp(34px,7vw,62px);line-height:.98;letter-spacing:-.04em;margin:12px 0 24px;max-width:760px}h2{background:#123dbb;color:white;padding:18px;font-size:28px;margin-top:36px}h3{font-size:23px;border-top:3px solid #11274a;padding-top:18px;margin:32px 0 10px}p{font-size:17px;line-height:1.55}a{color:#163fb2;text-underline-offset:3px}table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:16px}th,td{text-align:left;padding:13px 10px;border-bottom:1px solid #d9dde4;overflow-wrap:anywhere}th{background:#11274a;color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.04em}th:first-child,td:first-child{width:70px}th:last-child,td:last-child{width:32%}tbody tr:nth-child(even){background:#f0f3f7}td:first-child{white-space:nowrap}td a{display:inline-block;padding:3px 0;font-weight:700}header small{font-weight:900;letter-spacing:.16em;color:#c94400}@media(max-width:600px){main{margin:0;padding:18px}h2{font-size:24px;padding:14px}p{font-size:16px}th,td{padding:11px 7px;font-size:14px}th:first-child,td:first-child{width:68px}th:last-child,td:last-child{width:31%}}
 '''
-preview = '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + e(meta['title']) + '</title><style>' + css + '</style><main><header><small>GATORBAIT / THE FIELD GUIDE</small><h1>' + e(meta['title']) + '</h1></header>' + body + '</main></html>'
+pbody = re.sub(r'<tr data-bg="(#[0-9a-f]+)"', lambda m: '<tr style="background:' + m.group(1) + '"', body)
+pbody = re.sub(r'<span data-color="(#[0-9a-f]+)">', lambda m: '<span style="color:' + m.group(1) + '">', pbody)
+preview = '<!doctype html><html lang="en"><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800&display=swap"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + e(meta['title']) + '</title><style>' + css + '</style><main><header><small>GATORBAIT / THE FIELD GUIDE</small><h1>' + e(meta['title']) + '</h1></header>' + pbody + '</main></html>'
 (ROOT / 'preview.html').write_text(preview)
 
 card = '<aside class="gbm-season-card" aria-label="Florida football season guide"><small>THE FIELD GUIDE · 2026</small><h2>Know the team.<br>Follow the season.</h2><p>Florida’s full roster, results and schedule in one place.</p><a href="' + URL + '">Roster &amp; schedule <span aria-hidden="true">↗</span></a></aside>'

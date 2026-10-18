@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "sourceUrl": "https://floridagators.com/sports/football/schedule/2026",
-  "checkedDate": "2026-09-29",
+  "checkedDate": "2026-10-18",
   "games": [
     {
       "id": 27934,
@@ -535,7 +535,15 @@
         ],
         "custom_display_fields": []
       },
-      "result": null,
+      "result": {
+        "status": "L",
+        "team_score": "17",
+        "opponent_score": "45",
+        "prescore_info": "",
+        "postscore_info": "",
+        "boxscore": null,
+        "recap": null
+      },
       "game_center_link": "/game-center/27907"
     },
     {
@@ -591,7 +599,15 @@
         "gamefiles": [],
         "custom_display_fields": []
       },
-      "result": null,
+      "result": {
+        "status": "L",
+        "team_score": "19",
+        "opponent_score": "38",
+        "prescore_info": "",
+        "postscore_info": "",
+        "boxscore": null,
+        "recap": null
+      },
       "game_center_link": "/game-center/27908"
     },
     {
@@ -642,7 +658,15 @@
         "gamefiles": [],
         "custom_display_fields": []
       },
-      "result": null,
+      "result": {
+        "status": "W",
+        "team_score": "27",
+        "opponent_score": "24",
+        "prescore_info": "",
+        "postscore_info": "",
+        "boxscore": null,
+        "recap": null
+      },
       "game_center_link": "/game-center/27909"
     },
     {
@@ -915,5 +939,8 @@
       "result": null,
       "game_center_link": "/game-center/27914"
     }
+  ],
+  "byeDates": [
+    "2026-10-24"
   ]
 }

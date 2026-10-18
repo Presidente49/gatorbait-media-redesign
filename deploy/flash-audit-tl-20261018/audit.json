@@ -1,0 +1,6320 @@
+[
+ {
+  "page": "about",
+  "w": "390",
+  "http": 200,
+  "tl": [
+   {
+    "t": 1876,
+    "cls": "gbm-bc",
+    "spTop": 246,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+152",
+     "svg@0+0",
+     "div#SITE_CONTAINER@246+3251"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 1927,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3238"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 1978,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2836,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@2121+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3870,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@2116+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3895,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@2110+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3920,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@2089+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3945,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@2075+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3970,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@2043+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3995,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@2028+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4020,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@2002+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4045,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@1993+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4070,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@1983+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4095,
+    "cls": "gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+3054",
+     "footer#gbm-footer@3266+757",
+     "div.consent-banner-root.MNUFxS@1981+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": {
+    "top": 94,
+    "h": 118
+   },
+   "header": {
+    "top": 0,
+    "h": 34
+   },
+   "ticker": {
+    "top": 0,
+    "h": 34
+   },
+   "mobileHost": {
+    "top": 34,
+    "h": 60
+   },
+   "sp": {
+    "top": 212,
+    "h": 3054
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "pricing",
+  "w": "390",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2389,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+751"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2432,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+739"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2485,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3668,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@2121+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4692,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@2120+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4717,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@2116+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4742,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@2100+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4767,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@2089+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4792,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@2059+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4817,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@2043+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4842,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@2014+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4867,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@2002+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4892,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@1986+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4917,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@1983+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4942,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1016",
+     "footer#gbm-footer@1228+757",
+     "div.consent-banner-root.MNUFxS@1981+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": {
+    "top": 94,
+    "h": 118
+   },
+   "header": {
+    "top": 0,
+    "h": 34
+   },
+   "ticker": {
+    "top": 0,
+    "h": 34
+   },
+   "mobileHost": {
+    "top": 34,
+    "h": 60
+   },
+   "sp": {
+    "top": 212,
+    "h": 1016
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "contact",
+  "w": "390",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2057,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1082"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2115,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+1070"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2165,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3100,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@2121+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4125,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@2116+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4150,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@2110+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4175,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@2089+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4200,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@2075+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4225,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@2043+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4250,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@2028+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4275,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@2002+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4300,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@1993+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4325,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@1983+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4350,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 212,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "div#gbm-band@94+118",
+     "svg@0+0",
+     "div#SITE_CONTAINER@212+885",
+     "footer#gbm-footer@1098+757",
+     "div.consent-banner-root.MNUFxS@1981+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": {
+    "top": 94,
+    "h": 118
+   },
+   "header": {
+    "top": 0,
+    "h": 34
+   },
+   "ticker": {
+    "top": 0,
+    "h": 34
+   },
+   "mobileHost": {
+    "top": 34,
+    "h": 60
+   },
+   "sp": {
+    "top": 212,
+    "h": 885
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "allnews",
+  "w": "390",
+  "http": 200,
+  "tl": [
+   {
+    "t": 3370,
+    "cls": "gbm-lp-wait",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+8754"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3450,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2311"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3530,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2100",
+     "footer#gbm-footer@2194+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3890,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4577,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2121+220"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4588,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2121+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5038,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2100",
+     "footer#gbm-footer@2194+757",
+     "div.consent-banner-root.MNUFxS@2121+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5203,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2121+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5638,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2120+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5663,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2116+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5688,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2100+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5713,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2089+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5738,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2059+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5763,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2043+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5788,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2014+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5813,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@2002+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5838,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@1986+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5863,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@1983+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5888,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2350",
+     "footer#gbm-footer@2444+757",
+     "div.consent-banner-root.MNUFxS@1981+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 34
+   },
+   "ticker": {
+    "top": 0,
+    "h": 34
+   },
+   "mobileHost": {
+    "top": 34,
+    "h": 60
+   },
+   "sp": {
+    "top": 94,
+    "h": 2350
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "post",
+  "w": "390",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2863,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2993"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2924,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2983"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2957,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2796"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3027,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3109",
+     "footer#gbm-footer@3203+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3404,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3806",
+     "footer#gbm-footer@3900+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3444,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3902",
+     "footer#gbm-footer@3996+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4072,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3902",
+     "footer#gbm-footer@3996+757",
+     "div.consent-banner-root.MNUFxS@2121+220"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4088,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3902",
+     "footer#gbm-footer@3996+757",
+     "div.consent-banner-root.MNUFxS@2121+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5195,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+2955",
+     "footer#gbm-footer@3049+757",
+     "div.consent-banner-root.MNUFxS@2121+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5305,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3138",
+     "footer#gbm-footer@3232+757",
+     "div.consent-banner-root.MNUFxS@2121+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5360,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3156",
+     "footer#gbm-footer@3250+757",
+     "div.consent-banner-root.MNUFxS@2028+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5394,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3156",
+     "footer#gbm-footer@3250+757",
+     "div.consent-banner-root.MNUFxS@2002+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5419,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3156",
+     "footer#gbm-footer@3250+757",
+     "div.consent-banner-root.MNUFxS@1993+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5444,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3156",
+     "footer#gbm-footer@3250+757",
+     "div.consent-banner-root.MNUFxS@1983+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5469,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3156",
+     "footer#gbm-footer@3250+757",
+     "div.consent-banner-root.MNUFxS@1981+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5688,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3138",
+     "footer#gbm-footer@3232+757",
+     "div.consent-banner-root.MNUFxS@1981+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6019,
+    "cls": "gbm-native-wide",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+3931",
+     "footer#gbm-footer@4025+757",
+     "div.consent-banner-root.MNUFxS@1981+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 34
+   },
+   "ticker": {
+    "top": 0,
+    "h": 34
+   },
+   "mobileHost": {
+    "top": 34,
+    "h": 60
+   },
+   "sp": {
+    "top": 94,
+    "h": 3931
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "home",
+  "w": "390",
+  "http": 200,
+  "tl": [
+   {
+    "t": 3002,
+    "cls": "gbm-bc-wait",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@60+0"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 3037,
+    "cls": "",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@60+0"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 3108,
+    "cls": "",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@60+0",
+     "footer#gbm-footer@60+704"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 3322,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4025",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4085+0",
+     "footer#gbm-footer@4085+704"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 3371,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4007,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@844+220"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4024,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@844+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5024,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@843+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5049,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@839+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5074,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@823+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5099,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@812+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5124,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@782+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5149,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@766+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5174,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@737+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5199,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@725+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5224,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@709+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5249,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@706+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 5274,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-mobile-shell-host@0+60",
+     "div#gbm-live.gbm-gazette.gbm-sports-home@60+4017",
+     "svg@0+0",
+     "div#SITE_CONTAINER@4077+0",
+     "footer#gbm-footer@4077+704",
+     "div.consent-banner-root.MNUFxS@704+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": null,
+   "ticker": null,
+   "mobileHost": {
+    "top": 0,
+    "h": 60
+   },
+   "sp": {
+    "top": 0,
+    "h": 0
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "magazine",
+  "w": "390",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2425,
+    "cls": "gbm-pre",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+1908"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2483,
+    "cls": "gbm-pre",
+    "spTop": 94,
+    "kids": [
+     "header#gbm-site-header@0+34",
+     "div#gbm-mobile-shell-host@34+60",
+     "svg@0+0",
+     "div#SITE_CONTAINER@94+1895"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2623,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13886",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13886+0",
+     "footer#gbm-footer@13886+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2727,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5128,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@844+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6147,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@839+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6172,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@833+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6197,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@812+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6222,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@798+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6247,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@766+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6272,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@751+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6297,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@725+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6322,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@716+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6347,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@706+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6372,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "div#gbm-mobile-shell-host@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+13584",
+     "svg@0+0",
+     "div#SITE_CONTAINER@13584+0",
+     "footer#gbm-footer@13584+757",
+     "div.consent-banner-root.MNUFxS@704+140"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 0
+   },
+   "ticker": {
+    "top": 0,
+    "h": 0
+   },
+   "mobileHost": {
+    "top": 0,
+    "h": 0
+   },
+   "sp": {
+    "top": 0,
+    "h": 0
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "about",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2069,
+    "cls": "",
+    "spTop": 128,
+    "kids": [
+     "header#gbm-site-header@0+128",
+     "svg@0+0",
+     "div#SITE_CONTAINER@128+3251"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2121,
+    "cls": "",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3238"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2192,
+    "cls": "",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3054",
+     "footer#gbm-footer@3178+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2230,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2910,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3954,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@898+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3979,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@895+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4004,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@885+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4029,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@879+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4054,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@864+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4079,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@857+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4104,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@845+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4129,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@841+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4154,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@837+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4179,
+    "cls": "gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+3054",
+     "footer#gbm-footer@3339+416",
+     "div.consent-banner-root.MNUFxS@836+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": {
+    "top": 124,
+    "h": 161
+   },
+   "header": {
+    "top": 0,
+    "h": 124
+   },
+   "ticker": {
+    "top": 0,
+    "h": 40
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 285,
+    "h": 3054
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "pricing",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 3671,
+    "cls": "gbm-account-tight",
+    "spTop": 128,
+    "kids": [
+     "header#gbm-site-header@0+128",
+     "svg@0+0",
+     "div#SITE_CONTAINER@128+662"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3730,
+    "cls": "gbm-account-tight",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+465"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3803,
+    "cls": "gbm-account-tight",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+955",
+     "footer#gbm-footer@1079+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3828,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4655,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5680,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@898+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5705,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@895+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5730,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@885+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5755,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@879+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5780,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@864+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5805,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@857+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5830,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@845+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5855,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@841+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5880,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@837+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5905,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416",
+     "div.consent-banner-root.MNUFxS@836+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": {
+    "top": 124,
+    "h": 161
+   },
+   "header": {
+    "top": 0,
+    "h": 124
+   },
+   "ticker": {
+    "top": 0,
+    "h": 40
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 285,
+    "h": 1010
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "contact",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2045,
+    "cls": "gbm-account-tight",
+    "spTop": 128,
+    "kids": [
+     "header#gbm-site-header@0+128",
+     "svg@0+0",
+     "div#SITE_CONTAINER@128+1177"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2082,
+    "cls": "gbm-account-tight",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1085"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2105,
+    "cls": "gbm-account-tight",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+893"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2129,
+    "cls": "gbm-account-tight",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+893",
+     "footer#gbm-footer@1017+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2173,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2983,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4006,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@898+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4031,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@895+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4056,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@885+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4081,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@879+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4106,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@864+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4131,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@857+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4156,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@845+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4181,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@841+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4206,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@837+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4231,
+    "cls": "gbm-account-tight gbm-bc",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+893",
+     "footer#gbm-footer@1179+416",
+     "div.consent-banner-root.MNUFxS@836+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": {
+    "top": 124,
+    "h": 161
+   },
+   "header": {
+    "top": 0,
+    "h": 124
+   },
+   "ticker": {
+    "top": 0,
+    "h": 40
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 285,
+    "h": 893
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "allnews",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 3204,
+    "cls": "gbm-lp-wait",
+    "spTop": null,
+    "kids": [
+     "header#gbm-site-header@0+128"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3344,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1768"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3413,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1540"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3470,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1540",
+     "footer#gbm-footer@1664+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3809,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4439,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5011,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1540",
+     "footer#gbm-footer@1664+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5133,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5484,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@898+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5509,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@895+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5534,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@885+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5559,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@879+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5584,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@864+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5609,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@857+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5634,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@845+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5659,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@841+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5684,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@837+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5709,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1817",
+     "footer#gbm-footer@1941+416",
+     "div.consent-banner-root.MNUFxS@836+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 124
+   },
+   "ticker": {
+    "top": 0,
+    "h": 40
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 124,
+    "h": 1817
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "post",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 3573,
+    "cls": "gbm-native-wide",
+    "spTop": 128,
+    "kids": [
+     "header#gbm-site-header@0+128",
+     "svg@0+0",
+     "div#SITE_CONTAINER@128+3245"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3602,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3248"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3610,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3178"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3712,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3175"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3834,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+2991"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4064,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3185",
+     "footer#gbm-footer@3309+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4515,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3854",
+     "footer#gbm-footer@3978+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4769,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3854",
+     "footer#gbm-footer@3978+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5912,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+2971",
+     "footer#gbm-footer@3095+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6000,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3145",
+     "footer#gbm-footer@3269+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6087,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3202",
+     "footer#gbm-footer@3326+416",
+     "div.consent-banner-root.MNUFxS@857+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6153,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3202",
+     "footer#gbm-footer@3326+416",
+     "div.consent-banner-root.MNUFxS@838+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6174,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3202",
+     "footer#gbm-footer@3326+416",
+     "div.consent-banner-root.MNUFxS@837+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6200,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3202",
+     "footer#gbm-footer@3326+416",
+     "div.consent-banner-root.MNUFxS@836+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 6294,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3185",
+     "footer#gbm-footer@3309+416",
+     "div.consent-banner-root.MNUFxS@836+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 7002,
+    "cls": "gbm-native-wide",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+3854",
+     "footer#gbm-footer@3978+416",
+     "div.consent-banner-root.MNUFxS@836+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 124
+   },
+   "ticker": {
+    "top": 0,
+    "h": 40
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 124,
+    "h": 3854
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "home",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2340,
+    "cls": "gbm-bc-wait",
+    "spTop": 0,
+    "kids": [
+     "svg@0+0",
+     "div#SITE_CONTAINER@0+0"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 2416,
+    "cls": "",
+    "spTop": 0,
+    "kids": [
+     "svg@0+0",
+     "div#SITE_CONTAINER@0+0",
+     "footer#gbm-footer@0+392"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 2665,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2446",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2446+0",
+     "footer#gbm-footer@2446+392"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 2743,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2339",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2339+0",
+     "footer#gbm-footer@2339+392"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 2887,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 3281,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4276,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@899+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4302,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@898+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4327,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@891+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4352,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@885+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4377,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@872+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4402,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@864+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4427,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@851+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4452,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@845+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4477,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@838+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4502,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@837+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   },
+   {
+    "t": 4526,
+    "cls": "gbm-gazette-live gbm-standalone-live",
+    "spTop": 0,
+    "kids": [
+     "div#gbm-live.gbm-gazette.gbm-sports-home@0+2238",
+     "svg@0+0",
+     "div#SITE_CONTAINER@2238+0",
+     "footer#gbm-footer@2238+392",
+     "div.consent-banner-root.MNUFxS@836+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2",
+     "gbm-mobile-account-tight-v1"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": null,
+   "ticker": null,
+   "mobileHost": null,
+   "sp": {
+    "top": 0,
+    "h": 0
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "magazine",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2204,
+    "cls": "gbm-pre",
+    "spTop": 128,
+    "kids": [
+     "header#gbm-site-header@0+128",
+     "svg@0+0",
+     "div#SITE_CONTAINER@128+1908"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2289,
+    "cls": "gbm-pre",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1711"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2449,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4052,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@900+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5075,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@898+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5100,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@895+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5125,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@885+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5150,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@879+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5175,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@864+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5200,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@857+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5225,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@845+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5250,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@841+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5275,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@837+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5300,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416",
+     "div.consent-banner-root.MNUFxS@836+64"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 0
+   },
+   "ticker": {
+    "top": 0,
+    "h": 0
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 0,
+    "h": 0
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ }
+]

@@ -1,0 +1,23 @@
+/* Color pass, Oct. 18, 2026 (Brenden: more white, UF Core Orange, small Gator green; keep the dark skin).
+   Colors only: no size, spacing, font, display or position property changes. Green #22884C is used on non-text marks only. */
+@{--mu:#d6dcec;--tx:#fff}
+/* white: brighter secondary text, white hairlines and card edges */
+@ .bc-tk{border-bottom-color:rgba(255,255,255,.3)}
+@ .bc-trk a{border-right-color:rgba(255,255,255,.35)}
+@ .bc-sc,@ .bc-nx,@ .bc-side,@ .sh-voices,@ .sh-watch,@ .sh-magazine,@ .sh-magazine:not(:has(.sh-mcover)),@ .sh-coverage article{border-color:rgba(255,255,255,.3)!important;border-top-color:#FA4616!important}
+@ .sh-wire-item{border-top-color:rgba(255,255,255,.3)!important}
+@ .bc-row a{border-top-color:rgba(255,255,255,.3)}
+@ .bc-ls,@ .bc-ld{border-top-color:rgba(255,255,255,.3)}
+@ .sh-voices article,@ .bc-stack article{border-top-color:rgba(255,255,255,.35)!important}
+@ .bc-nx .bc-lk,@ .bc-go a{border-color:rgba(255,255,255,.55)}
+@media(min-width:821px){@ .bc-ab{background:#fff;color:#0a1a6b}}
+/* orange: header rule, section rules, stat bars, winner marker */
+@ .sh-header{border-bottom-color:#FA4616!important}
+@ .sh-section-title:after,@ .bc-h:after{background:linear-gradient(90deg,#FA4616 0 72px,#22884C 72px 90px,rgba(255,255,255,.35) 90px)}
+@ .bc-stat i{background:linear-gradient(90deg,#FA4616 0 54px,rgba(255,255,255,.4) 54px)}
+@ .bc-tm.bc-w:before{background:#FA4616}
+/* green: non-text marks only (status dot, standings marker, thumbnail accents) */
+@ .bc-lbl i{background:#22884C}
+@ .bc-tbl li.bc-fl{background:rgba(255,255,255,.12);box-shadow:inset 3px 0 0 #22884C}
+@ .bc-shot span{box-shadow:inset 0 -3px 0 #22884C}
+@ .sh-coverage img,@ .sh-support img{box-shadow:0 3px 0 #22884C}

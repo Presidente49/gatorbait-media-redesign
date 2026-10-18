@@ -74,7 +74,7 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
     return {
       scrollW: doc.scrollWidth, clientW: doc.clientWidth, over, missing: SECTIONS.filter((s) => !root.querySelector(s)), h1: root.querySelectorAll('h1').length,
       h1Text: (root.querySelector('h1') || {}).textContent, imgs: root.querySelectorAll('img').length,
-      bad: [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')).filter((h) => !/^(\/|#pm-|https:\/\/www\.gatorbaitmedia\.com\/|https:\/\/floridagators\.com\/?(galleries)?$|https:\/\/www\.instagram\.com\/hannahmorganphoto\/$|https:\/\/www\.facebook\.com\/reel\/\d+\/$|https:\/\/www\.youtube\.com\/watch\?v=JexQFsm_wts$|https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$)/.test(h)),
+      bad: [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')).filter((h) => !/^(\/|#pm-|https:\/\/www\.gatorbaitmedia\.com\/|https:\/\/floridagators\.com\/?(galleries)?$|https:\/\/www\.instagram\.com\/hannahmorganphoto\/$|https:\/\/www\.facebook\.com\/reel\/\d+\/$|https:\/\/www\.youtube\.com\/watch\?v=(JexQFsm_wts|y4GpdY2bzdU)$|https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$)/.test(h)),
       anchorsOk: [...root.querySelectorAll('a[href^="#"]')].every((a) => !!root.querySelector(a.getAttribute('href'))),
       capture: cap ? cap.getAttribute('data-gbm-capture') : null, captureH: cap ? Math.round(cap.getBoundingClientRect().height) : 0,
       packageOrder: [...root.querySelectorAll('.pm-it h3')].map((h) => h.textContent.slice(0, 28)),
@@ -100,12 +100,17 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
   // Tap-to-play: no Facebook request or iframe before the tap; the tap injects the plugin iframe without moving the page.
   const fbBefore = requests.filter((u) => /facebook\.com|youtube(-nocookie)?\.com|ytimg\.com/.test(u)).length;
   const tap = await page.evaluate(async () => {
-    const f = [...document.querySelectorAll('.pm-reel .pm-rf')].find((x) => /youtube/.test(x.dataset.href)) || document.querySelector('.pm-reel .pm-rf'), h0 = document.documentElement.scrollHeight, r0 = f.getBoundingClientRect().height;
-    f.querySelector('button.pm-rp').click(); await new Promise((r) => setTimeout(r, 150));
-    const i = f.querySelector('iframe'), href = f.getAttribute('data-href');
-    return { src: i ? i.getAttribute('src') : '', want: /youtube/.test(href) ? 'https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1' : 'https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(href) + '&show_text=false&width=500', shift: Math.abs(document.documentElement.scrollHeight - h0) + Math.abs(f.getBoundingClientRect().height - r0), link: /youtube/.test(href) ? f.parentNode.querySelector('a.pm-rl').getAttribute('href') === 'https://www.youtube.com/watch?v=JexQFsm_wts' && f.parentNode.querySelector('a.pm-rl').textContent === 'Watch on YouTube' : !!f.parentNode.querySelector('a.pm-rl') };
+    const res = [];
+    for (const f of document.querySelectorAll('.pm-reel .pm-rf')) {
+      const h0 = document.documentElement.scrollHeight, r0 = f.getBoundingClientRect().height;
+      f.querySelector('button.pm-rp').click(); await new Promise((r) => setTimeout(r, 150));
+      const i = f.querySelector('iframe'), href = f.getAttribute('data-href'), yt = /youtube/.test(href), a = f.parentNode.querySelector('a.pm-rl');
+      res.push({ src: i ? i.getAttribute('src') : '', want: yt ? 'https://www.youtube-nocookie.com/embed/' + href.slice(-11) + '?autoplay=1&rel=0&playsinline=1' : 'https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(href) + '&show_text=false&width=500',
+        shift: Math.abs(document.documentElement.scrollHeight - h0) + Math.abs(f.getBoundingClientRect().height - r0), link: !!a && a.getAttribute('href') === href && a.textContent === (yt ? 'Watch on YouTube' : 'Watch on Facebook') });
+    }
+    return { reels: res, src: res.map((x) => x.src).join(' '), shift: Math.max(0, ...res.map((x) => x.shift)), n: res.length, bad: !res.length || res.some((x) => !x.src || x.src !== x.want || x.shift > 1 || !x.link) };
   });
-  tap.bad = fbBefore !== 0 || !tap.src || tap.src !== tap.want || tap.shift > 1 || !tap.link;
+  tap.bad = fbBefore !== 0 || tap.bad;
   // Route lifecycle: leave /magazine (unmount, native page back), then return (remount once).
   const life = await page.evaluate(async () => {
     history.pushState({}, '', '/'); window.dispatchEvent(new Event('gbmroutechange')); await new Promise((r) => setTimeout(r, 50));

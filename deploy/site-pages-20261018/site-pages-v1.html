@@ -1,0 +1,35 @@
+<!-- GBM Site Pages v1 (jarvis/site-pages-20261018): no-flash guard + navy look for inner pages. Visual only. -->
+<script>(function(){try{var d=document.documentElement,R=[[/^\/about/,"about"],[/^\/contact/,"contact"],[/^\/(pricing-plans|subscribe|join|checkout|thank-you)/,"plans"],[/^\/(policies|tags|groups?|search|event-list|event-details|2021-gatorbait-magazine|magazine\/\d{4}|members|account|profile|cart-page)/,"inner"]],K=["about","contact","plans","inner"];function k(){var p=location.pathname.replace(/\/+$/,"")||"/";for(var i=0;i<R.length;i++)if(R[i][0].test(p))return R[i][1];return""}function s(pre){var c=k();K.forEach(function(x){d.classList.toggle("gbm-sp-"+x,x===c)});d.classList.toggle("gbm-sp",!!c);if(pre&&c)d.classList.add("gbm-sp-pre");else if(!c)d.classList.remove("gbm-sp-pre")}s(1);addEventListener("popstate",function(){s(0)});addEventListener("gbmroutechange",function(){s(0)});setTimeout(function(){d.classList.remove("gbm-sp-pre")},2600)}catch(e){}})();</script>
+<style id="gbm-site-pages-v1">
+/* Guard: page content held (visibility, stays in DOM and crawlable) on a navy page until the theme band exists; 2.5 s failsafe. */
+html.gbm-sp-pre,html.gbm-sp-pre body{background:#060b1c!important}
+html.gbm-sp-pre:not(:has(#gbm-band)) #SITE_PAGES{visibility:hidden;animation:gbmspshow 0s linear 2.5s forwards}
+@keyframes gbmspshow{to{visibility:visible}}
+/* Navy page, white type (same skin as the homepage and Latest). */
+html.gbm-sp,html.gbm-sp body,html.gbm-sp #SITE_CONTAINER,html.gbm-sp #masterPage,html.gbm-sp #PAGES_CONTAINER,html.gbm-sp #SITE_PAGES,html.gbm-sp #SITE_PAGES [data-testid=page-bg]{background:#060b1c!important}
+html.gbm-sp #SITE_PAGES :is(section,.wixui-section,[data-testid=colorUnderlay],[id^=bgLayers],[data-testid=columns]){background-color:transparent!important}
+html.gbm-sp #SITE_PAGES :is([data-testid=richTextElement],[data-hook=item-description]) :is(p,span,li,div,em,strong,b,i,u,h4,h5,h6,label){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]),html.gbm-sp #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]) *{color:#fff!important;-webkit-text-fill-color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.01em!important}
+html.gbm-sp #SITE_PAGES [data-testid=richTextElement] a,html.gbm-sp #SITE_PAGES [data-testid=richTextElement] a *{color:#FA4616!important;-webkit-text-fill-color:#FA4616!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+/* Orange rule under the lead heading, small green mark. */
+html.gbm-sp-about #SITE_PAGES h2:first-of-type:after,html.gbm-sp-contact #SITE_PAGES h2:first-of-type:after{content:"";display:block;width:64px;height:4px;margin-top:12px;background:#FA4616;border-right:14px solid #22884C;box-sizing:content-box}
+/* Buttons: Core Orange, one AA label color. */
+html.gbm-sp #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]){background:#FA4616!important;border:0!important;border-radius:8px!important;clip-path:none!important;box-shadow:none!important}
+html.gbm-sp #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]):hover{background:#ff6a38!important}
+html.gbm-sp #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]),html.gbm-sp #SITE_PAGES :is([data-testid=buttonElement],[data-hook=plan-cta],button[type=submit]) *{color:#07122E!important;-webkit-text-fill-color:#07122E!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.06em!important}
+/* Forms (fields and logic untouched): dark fields, white labels. */
+html.gbm-sp #SITE_PAGES :is(label,legend,[role=group]>div){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp #SITE_PAGES :is(input,textarea,select,[data-testid=select-trigger]){background:#0f1a38!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border:1px solid #3d4f86!important;border-radius:6px!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp #SITE_PAGES :is(input,textarea)::placeholder{color:#aab6d4!important;opacity:1}
+html.gbm-sp #SITE_PAGES :is(input,textarea,select):focus{outline:2px solid #FA4616!important;outline-offset:1px}
+html.gbm-sp-contact #comp-lii7mqe42{background:#0b1429!important;color:#e6ebf8!important;border:1px solid #1d2b52!important;border-top:4px solid #FA4616!important;border-radius:8px!important}
+/* Membership plans: navy cards, orange top rule. Plans, prices and checkout are Wix-owned and unchanged. */
+html.gbm-sp-plans #SITE_PAGES [data-hook=plan]>div{background:#0b1429!important;border:1px solid #1d2b52!important;border-top:4px solid #FA4616!important;border-radius:10px!important;box-shadow:none!important}
+html.gbm-sp-plans #SITE_PAGES [data-hook=plan]>div>div:not([data-hook=ribbon]),html.gbm-sp-plans #SITE_PAGES [data-hook=plan]>div>div:not([data-hook=ribbon])>div{background:transparent!important}
+html.gbm-sp-plans #SITE_PAGES [data-hook=plan] *:not([data-hook=plan-cta]):not([data-hook=plan-cta] *){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
+html.gbm-sp-plans #SITE_PAGES :is([data-hook=plan-title],[data-hook=plan-price],[data-hook=plan-price] *,[data-hook=plan-title] *){color:#fff!important;-webkit-text-fill-color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important}
+html.gbm-sp-plans #SITE_PAGES [data-hook=ribbon],html.gbm-sp-plans #SITE_PAGES [data-hook=ribbon] *{background:#1d2b52!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-radius:6px!important}
+/* Wix app pages (search, groups, account, events): navy page and readable headings only; app internals stay Wix-owned. */
+html.gbm-sp-inner #SITE_PAGES :is([data-hook*=title],[data-hook*=name]){font-family:Barlow,sans-serif!important}
+html.gbm-sp #SITE_PAGES a:focus-visible{outline:2px solid #FA4616;outline-offset:2px}
+</style>

@@ -1,0 +1,3559 @@
+[
+ {
+  "page": "about",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2223|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "4738|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2223,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4023,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow": 15
+   },
+   "lowContrast": [],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "about",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "1838|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "4382|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 1838,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4023,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow": 15
+   },
+   "lowContrast": [],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "contact",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "1639|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp,gbm-sp-pre",
+   "4199|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 1639,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-contact gbm-sp",
+   "fonts": {
+    "Barlow": 7,
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "contact",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "1838|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp,gbm-sp-pre",
+   "4371|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 1838,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-contact gbm-sp",
+   "fonts": {
+    "Barlow": 7,
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 1.037,
+  "shifts": [
+   {
+    "t": 4531,
+    "v": 0.3107,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4684,
+    "v": 0.7263,
+    "src": "#gbm-footer,::before"
+   }
+  ],
+  "timeline": [
+   "2478|0|visible|B|H||gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "4688|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5041|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2478,
+   "light": 0,
+   "band": true,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [
+    {
+     "cr": 1.31,
+     "t": "Choose your pricing plan",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(6,11,28)",
+     "el": "h1"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS ANNUAL",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every year",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS MONTHLY",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "9.99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every month",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.32,
+     "t": "Your membership supports Gat",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1395,
+  "shifts": [
+   {
+    "t": 4768,
+    "v": 0.0635,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4776,
+    "v": 0.076,
+    "src": "span,#gbm-footer"
+   }
+  ],
+  "timeline": [
+   "2644|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5185|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2644,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [
+    {
+     "cr": 1.31,
+     "t": "Choose your pricing plan",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(6,11,28)",
+     "el": "h1"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS ANNUAL",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every year",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS MONTHLY",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "9.99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every month",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.32,
+     "t": "Your membership supports Gat",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "subscribe",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1992,
+  "shifts": [
+   {
+    "t": 4376,
+    "v": 0.0933,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4382,
+    "v": 0.1059,
+    "src": "span,#gbm-footer"
+   }
+  ],
+  "timeline": [
+   "2240|0|none|B|H||gbm-bc,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "2308|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "4834|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2308,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [
+    {
+     "cr": 1.31,
+     "t": "Choose your pricing plan",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(6,11,28)",
+     "el": "h1"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS ANNUAL",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every year",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS MONTHLY",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "9.99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every month",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.32,
+     "t": "Your membership supports Gat",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "subscribe",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1992,
+  "shifts": [
+   {
+    "t": 4539,
+    "v": 0.0933,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4545,
+    "v": 0.1059,
+    "src": "span,#gbm-footer"
+   }
+  ],
+  "timeline": [
+   "2457|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "4996|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2457,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [
+    {
+     "cr": 1.31,
+     "t": "Choose your pricing plan",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(6,11,28)",
+     "el": "h1"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS ANNUAL",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every year",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS MONTHLY",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "9.99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every month",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.32,
+     "t": "Your membership supports Gat",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "policies",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2228|0|visible|B|H||gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "2489|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre,gbm-legal",
+   "3856|0|visible|B|H||gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4511|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4808|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2228,
+   "light": 0,
+   "band": true,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4438,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "Policies & Subscriber Terms",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h1"
+    },
+    {
+     "cr": 1.19,
+     "t": "Effective and last updated S",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "GatorBait Media is an indepe",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1,
+     "t": "Privacy notice",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    },
+    {
+     "cr": 1.19,
+     "t": "We may collect information y",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "We use this information to o",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "ItemOrder",
+     "fg": "rgb(250, 70, 22)",
+     "bg": "rgb(255,255,255)",
+     "el": "a"
+    },
+    {
+     "cr": 1.19,
+     "t": "We retain information only a",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "You may ask to access, corre",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1,
+     "t": "Cookies, analytics & adverti",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    },
+    {
+     "cr": 1.19,
+     "t": "Essential cookies support se",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1,
+     "t": "Email and communications",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "policies",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "1697|0|visible|B|H||gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "1998|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre,gbm-legal",
+   "3264|0|visible|B|H||gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4098|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4272|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 1697,
+   "light": 0,
+   "band": true,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4438,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "Policies & Subscriber Terms",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h1"
+    },
+    {
+     "cr": 1.19,
+     "t": "Effective and last updated S",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "GatorBait Media is an indepe",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1,
+     "t": "Privacy notice",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    },
+    {
+     "cr": 1.19,
+     "t": "We may collect information y",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "We use this information to o",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "ItemOrder",
+     "fg": "rgb(250, 70, 22)",
+     "bg": "rgb(255,255,255)",
+     "el": "a"
+    },
+    {
+     "cr": 1.19,
+     "t": "We retain information only a",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "You may ask to access, corre",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1,
+     "t": "Cookies, analytics & adverti",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    },
+    {
+     "cr": 1.19,
+     "t": "Essential cookies support se",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1,
+     "t": "Email and communications",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tags",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2595|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "5142|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2595,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 5008,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow": 25,
+    "avenir-lt-w01_35-light1475496": 12
+   },
+   "lowContrast": [
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tags",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2143|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4688|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2143,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 5008,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow": 25,
+    "avenir-lt-w01_35-light1475496": 12
+   },
+   "lowContrast": [
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "groups",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3428|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "5921|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3428,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 3681,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 72,
+    "roboto-bold": 44
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "Groups Feed",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h1#feed-title"
+    },
+    {
+     "cr": 1,
+     "t": "Suggested Groups",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 12,
+   "forms": 45,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 2300
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "groups",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3883|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "6379|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3883,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 3681,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 72,
+    "roboto-bold": 44
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "Groups Feed",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h1#feed-title"
+    },
+    {
+     "cr": 1,
+     "t": "Suggested Groups",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 12,
+   "forms": 45,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 2300
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "search",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2463|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4997|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2463,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2722,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow": 41,
+    "roboto-bold": 8,
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [
+    {
+     "cr": 1.07,
+     "t": "All (4325)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Blog Posts (4312)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Other Pages (12)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Products (1)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "There’s A Party Going On In ",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "I've Loved The Miracle On Ic",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "When you've seen every Super",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    },
+    {
+     "cr": 1.07,
+     "t": "The Golden Season — by Franz",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "$24.99",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 20,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 2482
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "search",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2405|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4928|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2405,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2722,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow": 41,
+    "roboto-bold": 8,
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [
+    {
+     "cr": 1.07,
+     "t": "All (4325)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Blog Posts (4312)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Other Pages (12)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Products (1)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "There’s A Party Going On In ",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "I've Loved The Miracle On Ic",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "When you've seen every Super",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    },
+    {
+     "cr": 1.07,
+     "t": "The Golden Season — by Franz",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "$24.99",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 20,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 2482
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "events",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2351|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4723|0|visible|B|H||gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4745|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4914|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2351,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "No events at the moment",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 0,
+   "forms": 0,
+   "band": true,
+   "textLen": 128
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "events",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.2823,
+  "shifts": [
+   {
+    "t": 4135,
+    "v": 0.2014,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4211,
+    "v": 0.0809,
+    "src": "#gbm-footer,::before"
+   }
+  ],
+  "timeline": [
+   "2216|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4187|0|visible|B|H||gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4212|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4767|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2216,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "No events at the moment",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "band": true,
+   "textLen": 128
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "about",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2474,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_a2pb6"
+   }
+  ],
+  "timeline": [
+   "1950|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "2472|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "4527|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2472,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3755,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow": 15
+   },
+   "lowContrast": [],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "about",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2196,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_a2pb6"
+   }
+  ],
+  "timeline": [
+   "1812|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "2210|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "4373|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2210,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3755,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow": 15
+   },
+   "lowContrast": [],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "contact",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2746,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_c7tja"
+   }
+  ],
+  "timeline": [
+   "2244|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight,gbm-sp-contact,gbm-sp,",
+   "2717|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp,gbm-sp-pre",
+   "4809|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2717,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1685,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-contact gbm-sp",
+   "fonts": {
+    "Barlow": 7,
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "contact",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2242,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_c7tja"
+   }
+  ],
+  "timeline": [
+   "1730|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight,gbm-sp-contact,gbm-sp,",
+   "2322|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp,gbm-sp-pre",
+   "4312|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2322,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1685,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-contact gbm-sp",
+   "fonts": {
+    "Barlow": 7,
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1961,
+  "shifts": [
+   {
+    "t": 3290,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_rf27d"
+   },
+   {
+    "t": 5349,
+    "v": 0.045,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 5356,
+    "v": 0.0494,
+    "src": "span,span"
+   }
+  ],
+  "timeline": [
+   "2734|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight,gbm-sp-plans,gbm-sp,gb",
+   "3287|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5422|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3287,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1714,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [
+    {
+     "cr": 1.32,
+     "t": "Your membership supports Gat",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    },
+    {
+     "cr": 1.32,
+     "t": "Try All Access free for 7 da",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "strong"
+    },
+    {
+     "cr": 1.32,
+     "t": "Your selected plan renews au",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    },
+    {
+     "cr": 1.32,
+     "t": "$0 today.",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "strong"
+    },
+    {
+     "cr": 1.32,
+     "t": "After 7 days, your selected ",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "li"
+    },
+    {
+     "cr": 1.64,
+     "t": "My Account → My Subscription",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.64,
+     "t": "Policies",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.64,
+     "t": "Contact us",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1961,
+  "shifts": [
+   {
+    "t": 3028,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_rf27d"
+   },
+   {
+    "t": 5206,
+    "v": 0.045,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 5214,
+    "v": 0.0494,
+    "src": "span,span"
+   }
+  ],
+  "timeline": [
+   "2548|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight,gbm-sp-plans,gbm-sp,gb",
+   "3036|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5271|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3036,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1714,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [
+    {
+     "cr": 1.32,
+     "t": "Your membership supports Gat",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    },
+    {
+     "cr": 1.32,
+     "t": "Try All Access free for 7 da",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "strong"
+    },
+    {
+     "cr": 1.32,
+     "t": "Your selected plan renews au",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    },
+    {
+     "cr": 1.32,
+     "t": "$0 today.",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "strong"
+    },
+    {
+     "cr": 1.32,
+     "t": "After 7 days, your selected ",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "li"
+    },
+    {
+     "cr": 1.64,
+     "t": "My Account → My Subscription",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.64,
+     "t": "Policies",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.64,
+     "t": "Contact us",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "subscribe",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1991,
+  "shifts": [
+   {
+    "t": 2924,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_rf27d"
+   },
+   {
+    "t": 5059,
+    "v": 0.0462,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 5067,
+    "v": 0.0506,
+    "src": "span,span"
+   }
+  ],
+  "timeline": [
+   "2350|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "2977|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5109|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2977,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1711,
+   "cls": "gbm-bc gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [
+    {
+     "cr": 1.31,
+     "t": "Choose your pricing plan",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(6,11,28)",
+     "el": "h1"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS ANNUAL",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every year",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS MONTHLY",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "9.99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every month",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.32,
+     "t": "Your membership supports Gat",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "subscribe",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1991,
+  "shifts": [
+   {
+    "t": 2823,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_rf27d"
+   },
+   {
+    "t": 4948,
+    "v": 0.0462,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4956,
+    "v": 0.0506,
+    "src": "span,span"
+   }
+  ],
+  "timeline": [
+   "2376|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "2826|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "4996|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2826,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1711,
+   "cls": "gbm-bc gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [
+    {
+     "cr": 1.31,
+     "t": "Choose your pricing plan",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(6,11,28)",
+     "el": "h1"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS ANNUAL",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every year",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "ALL ACCESS MONTHLY",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "$",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "9.99",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "Every month",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.15,
+     "t": "7 day free trial",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,250,240)",
+     "el": "span"
+    },
+    {
+     "cr": 1.32,
+     "t": "Your membership supports Gat",
+     "fg": "rgb(17, 39, 74)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "policies",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2114,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_fk0a2"
+   }
+  ],
+  "timeline": [
+   "1766|0|hidden|-|H||gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "2055|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre,gbm-legal",
+   "2144|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4293|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2144,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4820,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [
+    {
+     "cr": 1.19,
+     "t": "Effective and last updated S",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "GatorBait Media is an indepe",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "We may collect information y",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "We use this information to o",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "ItemOrder",
+     "fg": "rgb(250, 70, 22)",
+     "bg": "rgb(255,255,255)",
+     "el": "a"
+    },
+    {
+     "cr": 1.19,
+     "t": "We retain information only a",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "You may ask to access, corre",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "Essential cookies support se",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "We send account, payment and",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "Subscription price, billing ",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "Refund requests are reviewed",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "Content is provided for pers",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "policies",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2093,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_fk0a2"
+   }
+  ],
+  "timeline": [
+   "1766|0|hidden|-|H||gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "2092|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4323|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2092,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4820,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [
+    {
+     "cr": 1.19,
+     "t": "Effective and last updated S",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "GatorBait Media is an indepe",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "We may collect information y",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "We use this information to o",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "ItemOrder",
+     "fg": "rgb(250, 70, 22)",
+     "bg": "rgb(255,255,255)",
+     "el": "a"
+    },
+    {
+     "cr": 1.19,
+     "t": "We retain information only a",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "You may ask to access, corre",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "Essential cookies support se",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "We send account, payment and",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "Subscription price, billing ",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "Refund requests are reviewed",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    },
+    {
+     "cr": 1.19,
+     "t": "Content is provided for pers",
+     "fg": "rgb(230, 235, 248)",
+     "bg": "rgb(255,255,255)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tags",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2582,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_olpu0"
+   }
+  ],
+  "timeline": [
+   "2107|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "2660|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4796|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2660,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4740,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow": 25,
+    "avenir-lt-w01_35-light1475496": 12
+   },
+   "lowContrast": [
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tags",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2688,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_olpu0"
+   }
+  ],
+  "timeline": [
+   "2235|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "2744|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4814|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2744,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4740,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow": 25,
+    "avenir-lt-w01_35-light1475496": 12
+   },
+   "lowContrast": [
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.64,
+     "t": "Read More",
+     "fg": "rgb(0, 33, 165)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "groups",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1018,
+  "shifts": [
+   {
+    "t": 4815,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_sp116"
+   }
+  ],
+  "timeline": [
+   "3855|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4954|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "6446|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4954,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3375,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 54,
+    "roboto-bold": 32
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "Groups Feed",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h1#feed-title"
+    },
+    {
+     "cr": 1,
+     "t": "Suggested Groups",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 33,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 1638
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "groups",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1018,
+  "shifts": [
+   {
+    "t": 4618,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_sp116"
+   }
+  ],
+  "timeline": [
+   "3840|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4626|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "6504|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4626,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3375,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 54,
+    "roboto-bold": 32
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "Groups Feed",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h1#feed-title"
+    },
+    {
+     "cr": 1,
+     "t": "Suggested Groups",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "h2"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 33,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 1638
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "search",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 3252,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_ayun1"
+   }
+  ],
+  "timeline": [
+   "2721|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "3371|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "5365|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3371,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2454,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow": 41,
+    "roboto-bold": 8,
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [
+    {
+     "cr": 1.07,
+     "t": "All (4325)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Blog Posts (4312)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Other Pages (12)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Products (1)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "There’s A Party Going On In ",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "I've Loved The Miracle On Ic",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "When you've seen every Super",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    },
+    {
+     "cr": 1.07,
+     "t": "The Golden Season — by Franz",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "$24.99",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 20,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 2482
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "search",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2936,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_ayun1"
+   }
+  ],
+  "timeline": [
+   "2438|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "2954|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "5120|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2954,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2454,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow": 41,
+    "roboto-bold": 8,
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [
+    {
+     "cr": 1.07,
+     "t": "All (4325)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Blog Posts (4312)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Other Pages (12)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "Products (1)",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    },
+    {
+     "cr": 1.07,
+     "t": "There’s A Party Going On In ",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "I've Loved The Miracle On Ic",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "When you've seen every Super",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "p"
+    },
+    {
+     "cr": 1.07,
+     "t": "The Golden Season — by Franz",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "a"
+    },
+    {
+     "cr": 1.07,
+     "t": "$24.99",
+     "fg": "rgb(0, 0, 0)",
+     "bg": "rgb(6,11,28)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 20,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 2482
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "events",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.2559,
+  "shifts": [
+   {
+    "t": 2695,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_dc15f"
+   },
+   {
+    "t": 4912,
+    "v": 0.1134,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 5030,
+    "v": 0.0406,
+    "src": "#gbm-footer,::before"
+   }
+  ],
+  "timeline": [
+   "2370|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "2690|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4988|0|visible|B|H||gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "5032|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2690,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1185,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "No events at the moment",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 0,
+   "forms": 0,
+   "band": true,
+   "textLen": 128
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "events",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "pre1",
+  "http": 200,
+  "cls": 0.2559,
+  "shifts": [
+   {
+    "t": 2301,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_dc15f"
+   },
+   {
+    "t": 4151,
+    "v": 0.1134,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4245,
+    "v": 0.0406,
+    "src": "#gbm-footer,::before"
+   }
+  ],
+  "timeline": [
+   "1891|0|hidden|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "2223|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4220|0|visible|B|H||gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4246|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp,gbm-sp-pre",
+   "4474|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-inner,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2223,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1185,
+   "cls": "gbm-bc gbm-sp-inner gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 1
+   },
+   "lowContrast": [
+    {
+     "cr": 1,
+     "t": "No events at the moment",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(255,255,255)",
+     "el": "span"
+    }
+   ],
+   "spBg": "rgb(6, 11, 28)",
+   "bodyBg": "rgb(6, 11, 28)",
+   "links": 0,
+   "forms": 0,
+   "band": true,
+   "textLen": 128
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ }
+]

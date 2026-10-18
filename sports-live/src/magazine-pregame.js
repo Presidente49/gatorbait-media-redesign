@@ -45,7 +45,7 @@
     var I = obj(D.issue) || {};
     return '<header class="pg-mast"><div class="pg-mast-top"><a class="pg-home" href="/">' + esc(text(I.tagline, 120) || 'GatorBait Media') + '</a><span>' + esc(text(I.date, 60)) + '</span></div>' +
       '<div class="pg-plate"><span class="pg-wm" role="img" aria-label="GatorBait">Gator<em>Bait</em></span><span class="pg-plate-mz">Magazine</span></div>' +
-      '<p class="pg-issue"><b>' + esc(text(I.number, 60)) + '</b><span>' + esc(text(I.week, 120)) + '</span></p><div class="pg-mast-actions"><button type="button" class="pg-print" data-pg-print>Print the whole magazine</button><a href="https://gatorbait2026.itemorder.com/shop/home/" target="_blank" rel="noopener">Shop</a><a href="/pricing-plans">Join</a></div></header>';
+      '<p class="pg-issue"><b>' + esc(text(I.number, 60)) + '</b><span>' + esc(text(I.week, 120)) + '</span></p><button type="button" class="pg-print" data-pg-print>Print the whole magazine</button></header>';
   }
   function pgCoverHref(D) {
     var C = obj(D.cover) || {}, L = obj(D.lead) || {}, cu = safeUrl(C.url), lu = safeUrl(L.url);
@@ -54,13 +54,12 @@
   function pgCover(D) {
     var C = obj(D.cover); if (!C) return '';
     var hl = text(C.headline, 200); if (!hl) return '';
-    var storyImage = C.image;
-    var fig = frame(storyImage, { eager: true, main: 1600, sizes: '(max-width: 900px) 100vw, 62vw' }), go = esc(pgCoverHref(D));
+    var fig = frame(C.image, { eager: true, main: 1600, sizes: '(max-width: 900px) 100vw, 62vw' }), go = esc(pgCoverHref(D));
     if (C.poster && fig) return '<section class="pg-cover pg-poster" id="pg-cover" aria-labelledby="pg-cover-h"><a class="pg-cover-fig" href="' + go + '">' + fig + '</a><h1 id="pg-cover-h" class="pg-hide">' + esc(hl) + '</h1></section>';
     return '<section class="pg-cover" id="pg-cover" aria-labelledby="pg-cover-h">' + (fig ? '<a class="pg-cover-fig" href="' + go + '" tabindex="-1" aria-hidden="true">' + fig + '</a>' : '') +
       '<div class="pg-cover-type">' + (text(C.kicker, 80) ? '<span class="pg-kick">' + esc(text(C.kicker, 80)) + '</span>' : '') + '<h1 id="pg-cover-h"><a href="' + go + '">' + esc(hl) + '</a></h1>' +
       (text(C.dek, 600) ? '<p class="pg-dek">' + esc(text(C.dek, 600)) + '</p>' : '') + (text(C.byline, 80) ? '<p class="pg-by">' + esc(text(C.byline, 80)) + '</p>' : '') +
-      '<a class="pg-btn" href="' + go + '">Read the column</a></div>' + (fig && storyImage && text(storyImage.credit, 160) ? '<p class="pg-cr">' + esc(text(storyImage.credit, 160)) + '</p>' : '') + '</section>';
+      '<a class="pg-btn" href="' + go + '">Read the column</a></div>' + (fig && C.image && text(C.image.credit, 160) ? '<p class="pg-cr">' + esc(text(C.image.credit, 160)) + '</p>' : '') + '</section>';
   }
   function pgGame(D) {
     var G = obj(D.game); if (!G) return '';

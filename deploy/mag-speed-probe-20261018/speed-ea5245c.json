@@ -1,0 +1,1882 @@
+[
+ {
+  "width": "390",
+  "tag": "ea5245c",
+  "http": 200,
+  "dclMs": 2813,
+  "htmlPreloadImg": [],
+  "htmlImgTags": 44,
+  "htmlLen": 1953815,
+  "servedPins": [
+   "src=939ef9d2"
+  ],
+  "pmWrapMs": 3254,
+  "nav": {
+   "dcl": 2811,
+   "load": 3230,
+   "lcp": 2973,
+   "lcpEl": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg",
+   "fcp": 2575,
+   "cls": 0
+  },
+  "transferKB_beforeScroll": 3476,
+  "transferKB_afterScroll": 3628,
+  "cls_final": 0,
+  "overflow": 0,
+  "resources": [
+   {
+    "kb": 419.9,
+    "type": "Document",
+    "mime": "text/html",
+    "url": "https://www.gatorbaitmedia.com/magazine?gbm_qc=1792357147318390ea5245c"
+   },
+   {
+    "kb": 176,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9LPC2VVC0V"
+   },
+   {
+    "kb": 175.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/PostListViewerWidgetNoCss.bundle.min.js"
+   },
+   {
+    "kb": 166,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9CZZ218BYL"
+   },
+   {
+    "kb": 165.9,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9CZZ218BYL&cx=c&gtm=4e6ae1"
+   },
+   {
+    "kb": 161.9,
+    "type": "Other",
+    "mime": "application/javascript",
+    "url": "https://www.gatorbaitmedia.com/_partials/wix-thunderbolt/dist/clientWorker.61cd23ab.bundle.min.js"
+   },
+   {
+    "kb": 114.2,
+    "type": "Script",
+    "mime": "application/x-javascript",
+    "url": "https://connect.facebook.net/en_US/fbevents.js"
+   },
+   {
+    "kb": 104.2,
+    "type": "Script",
+    "mime": "application/x-javascript",
+    "url": "https://connect.facebook.net/signals/config/387220995516628?v=2.9.419&r=stable&domain=www.gatorbaitmedia.com&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C2"
+   },
+   {
+    "kb": 88.7,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MMLR5KL"
+   },
+   {
+    "kb": 58.7,
+    "type": "Image",
+    "mime": "image/jpeg",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/baugh-yt-y4gpdy2bzdu.jpg"
+   },
+   {
+    "kb": 56.9,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.0ffe6eeb.bundle.min.js"
+   },
+   {
+    "kb": 56.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_6.5f7b0030.chunk.min.js"
+   },
+   {
+    "kb": 56.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg"
+   },
+   {
+    "kb": 56.3,
+    "type": "Image",
+    "mime": "image/jpeg",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/sumrall-yt-jexqfsm.jpg"
+   },
+   {
+    "kb": 54.7,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/magazine-postgame.js"
+   },
+   {
+    "kb": 53,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png/v1/fill/w_485,h_273,fp_0.50_0.50,q_95,enc_avif,quality_auto/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png"
+   },
+   {
+    "kb": 49.6,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg"
+   },
+   {
+    "kb": 47.7,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg"
+   },
+   {
+    "kb": 46.8,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 44,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.275df9cd.bundle.min.js"
+   },
+   {
+    "kb": 43.7,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg"
+   },
+   {
+    "kb": 40.5,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 40.4,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg"
+   },
+   {
+    "kb": 40.4,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js"
+   },
+   {
+    "kb": 38.1,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg"
+   },
+   {
+    "kb": 37.6,
+    "type": "Other",
+    "mime": "application/json",
+    "url": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397-c3a5ddb27a97%22%3A%22440%22%2C%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%2"
+   },
+   {
+    "kb": 37.5,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 36.9,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 35.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jp"
+   },
+   {
+    "kb": 34.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg"
+   },
+   {
+    "kb": 34.2,
+    "type": "Fetch",
+    "mime": "application/json",
+    "url": "https://www.gatorbaitmedia.com/_api/v1/access-tokens"
+   },
+   {
+    "kb": 33.2,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_menu.69945a02.bundle.min.js"
+   },
+   {
+    "kb": 29.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/motion.c8984600.chunk.min.js"
+   },
+   {
+    "kb": 29.1,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 26.1,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg"
+   },
+   {
+    "kb": 26,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jp"
+   },
+   {
+    "kb": 25.6,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp/v1/fill/w_500,h_134,al_c,q_85,enc_auto/gatorbait.webp"
+   },
+   {
+    "kb": 25,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/unpkg/lodash@4.18.1/lodash.min.js"
+   },
+   {
+    "kb": 23.5,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_3.580d2ac2.chunk.min.js"
+   },
+   {
+    "kb": 22.8,
+    "type": "Font",
+    "mime": "font/woff2",
+    "url": "https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/oswald/v16/dI-qzxlKVQA6TUC5RKSb31tXRa8TVwTICgirnJhmVJw.woff2"
+   }
+  ],
+  "byHostKB": {
+   "static.parastorage.com": 974,
+   "static.wixstatic.com": 693,
+   "www.gatorbaitmedia.com": 628,
+   "www.googletagmanager.com": 597,
+   "cdn.jsdelivr.net": 244,
+   "connect.facebook.net": 218,
+   "fonts.gstatic.com": 155,
+   "siteassets.parastorage.com": 82,
+   "browser.sentry-cdn.com": 20,
+   "cf06bdf3-5bab-4f20-b165-97fb723dac6a.wixappcloud.com": 11,
+   "frog.wix.com": 3,
+   "fonts.googleapis.com": 2
+  },
+  "imgs": [
+   {
+    "cls": "mz-frame",
+    "lazy": "eager",
+    "fp": "high",
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "358x636",
+    "nat": "389x259",
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "eager",
+    "fp": "high",
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "390x260",
+    "nat": "389x259",
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "3000",
+    "h": "2000",
+    "shown": "88x59",
+    "nat": "112x74",
+    "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "88x59",
+    "nat": "112x74",
+    "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "2000",
+    "h": "1333",
+    "shown": "88x59",
+    "nat": "112x74",
+    "src": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "88x59",
+    "nat": "112x74",
+    "src": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "pm-rp",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "540",
+    "h": "960",
+    "shown": "338x602",
+    "nat": "540x960",
+    "src": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/sumrall-yt-jexqfsm.jpg"
+   },
+   {
+    "cls": "pm-rp",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "540",
+    "h": "960",
+    "shown": "338x602",
+    "nat": "540x960",
+    "src": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/baugh-yt-y4gpdy2bzdu.jpg"
+   }
+  ],
+  "nativeImgs": [
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp/v1/fill/w_500,h_134,al_c,q_85,enc_auto/gatorba",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img<a<header#gbm-mobile-shell<div#gbm-mobile-shell-host<body<html"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp/v1/fill/w_500,h_134,al_c,q_85,enc_auto/gatorba",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img<a<div<aside<div#gbm-mobile-drawer-root<div#gbm-mobile-shell-host<body"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-a77b1a93-712f-4708-9674-6916da8b30e5<div<div#pgia77b1a93712f470896746916da8b30e5_0<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-4ba72182-a994-41c6-ba51-113c6fd9fdba<div<div#pgi4ba72182a99441c6ba51113c6fd9fdba_1<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-1b3635c1-2ba4-402b-9c76-266c428482a3<div<div#pgi1b3635c12ba4402b9c76266c428482a3_2<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png/v1/fill/w_485,h_273,fp_0.50_0.50,q_95,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-facc29cd-494b-4e07-a309-c2da31eb3302<div<div#pgifacc29cd494b4e07a309c2da31eb3302_3<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-5951e969-1e65-463e-8583-b280d825d777<div<div#pgi5951e9691e65463e8583b280d825d777_4<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-796646b3-9eaf-489a-b940-18e61889b7e1<div<div#pgi796646b39eaf489ab94018e61889b7e1_5<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-ae9f3936-d7db-4dac-955d-ba1a6e350590<div<div#pgiae9f3936d7db4dac955dba1a6e350590_6<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-7e3d38c1-ec6d-4cc3-93ba-717f26209dd4<div<div#pgi7e3d38c1ec6d4cc393ba717f26209dd4_7<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-b28254c8-9ee0-440d-92df-61e2d8941492<div<div#pgib28254c89ee0440d92df61e2d8941492_8<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-0e70ce34-f118-433f-92b1-6b50149c7c2a<div<div#pgi0e70ce34f118433f92b16b50149c7c2a_9<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-11b8b621-6607-42c1-94b6-a56b7a44c8f6<div<div#pgi11b8b621660742c194b6a56b7a44c8f6_10<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_8b6cd2a4b2544fe0a2b3340e6e8edef2~mv2.jpeg/v1/fill/w_300,h_168,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-cf76ce62-0681-41e2-94c6-85ad22e37c5e<div<div#pgicf76ce62068141e294c685ad22e37c5e_11<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,qu",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img#img_0_comp-ln35wv7t<a[linkElement]<li#dataItem-ln35wv8j-comp-ln35wv7t<ul<div#comp-ln35wv7t<div[mesh-container-content]<div[inline-content]"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/a1b09fe8b7f04378a9fe076748ad4a6a.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,qu",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img#img_1_comp-ln35wv7t<a[linkElement]<li#dataItem-ln35wv8j6-comp-ln35wv7t<ul<div#comp-ln35wv7t<div[mesh-container-content]<div[inline-content]"
+   },
+   {
+    "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img<button<span<div<div<body<html"
+   }
+  ],
+  "attempt": 1
+ },
+ {
+  "width": "430",
+  "tag": "ea5245c",
+  "http": 200,
+  "dclMs": 4552,
+  "htmlPreloadImg": [],
+  "htmlImgTags": 44,
+  "htmlLen": 1953758,
+  "servedPins": [
+   "src=939ef9d2"
+  ],
+  "pmWrapMs": 4934,
+  "nav": {
+   "dcl": 4550,
+   "load": 4901,
+   "lcp": 4703,
+   "lcpEl": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg",
+   "fcp": 4091,
+   "cls": 0
+  },
+  "transferKB_beforeScroll": 3514,
+  "transferKB_afterScroll": 3629,
+  "cls_final": 0,
+  "overflow": 0,
+  "resources": [
+   {
+    "kb": 419.9,
+    "type": "Document",
+    "mime": "text/html",
+    "url": "https://www.gatorbaitmedia.com/magazine?gbm_qc=1792357164055430ea5245c"
+   },
+   {
+    "kb": 176,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9LPC2VVC0V"
+   },
+   {
+    "kb": 175.7,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/PostListViewerWidgetNoCss.bundle.min.js"
+   },
+   {
+    "kb": 166,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9CZZ218BYL"
+   },
+   {
+    "kb": 165.9,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9CZZ218BYL&cx=c&gtm=4e6ae1"
+   },
+   {
+    "kb": 161.9,
+    "type": "Other",
+    "mime": "application/javascript",
+    "url": "https://www.gatorbaitmedia.com/_partials/wix-thunderbolt/dist/clientWorker.61cd23ab.bundle.min.js"
+   },
+   {
+    "kb": 114.2,
+    "type": "Script",
+    "mime": "application/x-javascript",
+    "url": "https://connect.facebook.net/en_US/fbevents.js"
+   },
+   {
+    "kb": 104.3,
+    "type": "Script",
+    "mime": "application/x-javascript",
+    "url": "https://connect.facebook.net/signals/config/387220995516628?v=2.9.419&r=stable&domain=www.gatorbaitmedia.com&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C2"
+   },
+   {
+    "kb": 88.7,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MMLR5KL"
+   },
+   {
+    "kb": 58.7,
+    "type": "Image",
+    "mime": "image/jpeg",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/baugh-yt-y4gpdy2bzdu.jpg"
+   },
+   {
+    "kb": 57.1,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.0ffe6eeb.bundle.min.js"
+   },
+   {
+    "kb": 56.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_6.5f7b0030.chunk.min.js"
+   },
+   {
+    "kb": 56.5,
+    "type": "Image",
+    "mime": "image/jpeg",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/sumrall-yt-jexqfsm.jpg"
+   },
+   {
+    "kb": 56.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg"
+   },
+   {
+    "kb": 54.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/magazine-postgame.js"
+   },
+   {
+    "kb": 53,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png/v1/fill/w_485,h_273,fp_0.50_0.50,q_95,enc_avif,quality_auto/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png"
+   },
+   {
+    "kb": 49.6,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg"
+   },
+   {
+    "kb": 47.7,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg"
+   },
+   {
+    "kb": 46.8,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 44.2,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.275df9cd.bundle.min.js"
+   },
+   {
+    "kb": 43.7,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg"
+   },
+   {
+    "kb": 40.5,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 40.4,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg"
+   },
+   {
+    "kb": 40.4,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js"
+   },
+   {
+    "kb": 38.1,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg"
+   },
+   {
+    "kb": 37.6,
+    "type": "Other",
+    "mime": "application/json",
+    "url": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397-c3a5ddb27a97%22%3A%22440%22%2C%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%2"
+   },
+   {
+    "kb": 37.5,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 37,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 35.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jp"
+   },
+   {
+    "kb": 34.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg"
+   },
+   {
+    "kb": 34.2,
+    "type": "Fetch",
+    "mime": "application/json",
+    "url": "https://www.gatorbaitmedia.com/_api/v1/access-tokens"
+   },
+   {
+    "kb": 33.2,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_menu.69945a02.bundle.min.js"
+   },
+   {
+    "kb": 29.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/motion.c8984600.chunk.min.js"
+   },
+   {
+    "kb": 29.1,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 26,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jp"
+   },
+   {
+    "kb": 26,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg"
+   },
+   {
+    "kb": 25.6,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp/v1/fill/w_500,h_134,al_c,q_85,enc_auto/gatorbait.webp"
+   },
+   {
+    "kb": 25.1,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/unpkg/lodash@4.18.1/lodash.min.js"
+   },
+   {
+    "kb": 23.5,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_3.580d2ac2.chunk.min.js"
+   },
+   {
+    "kb": 22.8,
+    "type": "Font",
+    "mime": "font/woff2",
+    "url": "https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/oswald/v16/dI-qzxlKVQA6TUC5RKSb31tXRa8TVwTICgirnJhmVJw.woff2"
+   }
+  ],
+  "byHostKB": {
+   "static.parastorage.com": 975,
+   "static.wixstatic.com": 693,
+   "www.gatorbaitmedia.com": 628,
+   "www.googletagmanager.com": 597,
+   "cdn.jsdelivr.net": 245,
+   "connect.facebook.net": 218,
+   "fonts.gstatic.com": 155,
+   "siteassets.parastorage.com": 82,
+   "browser.sentry-cdn.com": 20,
+   "cf06bdf3-5bab-4f20-b165-97fb723dac6a.wixappcloud.com": 11,
+   "frog.wix.com": 3,
+   "fonts.googleapis.com": 2
+  },
+  "imgs": [
+   {
+    "cls": "mz-frame",
+    "lazy": "eager",
+    "fp": "high",
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "398x708",
+    "nat": "430x286",
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "eager",
+    "fp": "high",
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "430x287",
+    "nat": "430x286",
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "3000",
+    "h": "2000",
+    "shown": "88x59",
+    "nat": "112x74",
+    "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "88x59",
+    "nat": "112x74",
+    "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "2000",
+    "h": "1333",
+    "shown": "88x59",
+    "nat": "112x74",
+    "src": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "88x59",
+    "nat": "112x74",
+    "src": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "pm-rp",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "540",
+    "h": "960",
+    "shown": "338x602",
+    "nat": "540x960",
+    "src": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/sumrall-yt-jexqfsm.jpg"
+   },
+   {
+    "cls": "pm-rp",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "540",
+    "h": "960",
+    "shown": "338x602",
+    "nat": "540x960",
+    "src": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/baugh-yt-y4gpdy2bzdu.jpg"
+   }
+  ],
+  "nativeImgs": [
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp/v1/fill/w_500,h_134,al_c,q_85,enc_auto/gatorba",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img<a<header#gbm-mobile-shell<div#gbm-mobile-shell-host<body<html"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp/v1/fill/w_500,h_134,al_c,q_85,enc_auto/gatorba",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img<a<div<aside<div#gbm-mobile-drawer-root<div#gbm-mobile-shell-host<body"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-a77b1a93-712f-4708-9674-6916da8b30e5<div<div#pgia77b1a93712f470896746916da8b30e5_0<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-4ba72182-a994-41c6-ba51-113c6fd9fdba<div<div#pgi4ba72182a99441c6ba51113c6fd9fdba_1<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-1b3635c1-2ba4-402b-9c76-266c428482a3<div<div#pgi1b3635c12ba4402b9c76266c428482a3_2<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png/v1/fill/w_485,h_273,fp_0.50_0.50,q_95,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-facc29cd-494b-4e07-a309-c2da31eb3302<div<div#pgifacc29cd494b4e07a309c2da31eb3302_3<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-5951e969-1e65-463e-8583-b280d825d777<div<div#pgi5951e9691e65463e8583b280d825d777_4<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-796646b3-9eaf-489a-b940-18e61889b7e1<div<div#pgi796646b39eaf489ab94018e61889b7e1_5<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-ae9f3936-d7db-4dac-955d-ba1a6e350590<div<div#pgiae9f3936d7db4dac955dba1a6e350590_6<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-7e3d38c1-ec6d-4cc3-93ba-717f26209dd4<div<div#pgi7e3d38c1ec6d4cc393ba717f26209dd4_7<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-b28254c8-9ee0-440d-92df-61e2d8941492<div<div#pgib28254c89ee0440d92df61e2d8941492_8<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-0e70ce34-f118-433f-92b1-6b50149c7c2a<div<div#pgi0e70ce34f118433f92b16b50149c7c2a_9<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-11b8b621-6607-42c1-94b6-a56b7a44c8f6<div<div#pgi11b8b621660742c194b6a56b7a44c8f6_10<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_8b6cd2a4b2544fe0a2b3340e6e8edef2~mv2.jpeg/v1/fill/w_300,h_168,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-cf76ce62-0681-41e2-94c6-85ad22e37c5e<div<div#pgicf76ce62068141e294c685ad22e37c5e_11<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,qu",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img#img_0_comp-ln35wv7t<a[linkElement]<li#dataItem-ln35wv8j-comp-ln35wv7t<ul<div#comp-ln35wv7t<div[mesh-container-content]<div[inline-content]"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/a1b09fe8b7f04378a9fe076748ad4a6a.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,qu",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img#img_1_comp-ln35wv7t<a[linkElement]<li#dataItem-ln35wv8j6-comp-ln35wv7t<ul<div#comp-ln35wv7t<div[mesh-container-content]<div[inline-content]"
+   },
+   {
+    "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img<button<span<div<div<body<html"
+   }
+  ],
+  "attempt": 1
+ },
+ {
+  "width": "1366",
+  "tag": "ea5245c",
+  "http": 200,
+  "dclMs": 2433,
+  "htmlPreloadImg": [],
+  "htmlImgTags": 44,
+  "htmlLen": 1953791,
+  "servedPins": [
+   "src=939ef9d2"
+  ],
+  "pmWrapMs": 2949,
+  "nav": {
+   "dcl": 2431,
+   "load": 2927,
+   "lcp": 2611,
+   "lcpEl": "H1",
+   "fcp": 2177,
+   "cls": 0.0703
+  },
+  "transferKB_beforeScroll": 3560,
+  "transferKB_afterScroll": 3675,
+  "cls_final": 0.0703,
+  "overflow": 0,
+  "resources": [
+   {
+    "kb": 420,
+    "type": "Document",
+    "mime": "text/html",
+    "url": "https://www.gatorbaitmedia.com/magazine?gbm_qc=17923571824741366ea5245c"
+   },
+   {
+    "kb": 176,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9LPC2VVC0V"
+   },
+   {
+    "kb": 175.7,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/PostListViewerWidgetNoCss.bundle.min.js"
+   },
+   {
+    "kb": 166,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9CZZ218BYL"
+   },
+   {
+    "kb": 165.9,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9CZZ218BYL&cx=c&gtm=4e6ae1"
+   },
+   {
+    "kb": 161.9,
+    "type": "Other",
+    "mime": "application/javascript",
+    "url": "https://www.gatorbaitmedia.com/_partials/wix-thunderbolt/dist/clientWorker.61cd23ab.bundle.min.js"
+   },
+   {
+    "kb": 114.2,
+    "type": "Script",
+    "mime": "application/x-javascript",
+    "url": "https://connect.facebook.net/en_US/fbevents.js"
+   },
+   {
+    "kb": 104.2,
+    "type": "Script",
+    "mime": "application/x-javascript",
+    "url": "https://connect.facebook.net/signals/config/387220995516628?v=2.9.419&r=stable&domain=www.gatorbaitmedia.com&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C2"
+   },
+   {
+    "kb": 88.7,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MMLR5KL"
+   },
+   {
+    "kb": 70.9,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_800,h_533,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 58.7,
+    "type": "Image",
+    "mime": "image/jpeg",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/baugh-yt-y4gpdy2bzdu.jpg"
+   },
+   {
+    "kb": 57.1,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.0ffe6eeb.bundle.min.js"
+   },
+   {
+    "kb": 56.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_6.5f7b0030.chunk.min.js"
+   },
+   {
+    "kb": 56.5,
+    "type": "Image",
+    "mime": "image/jpeg",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/sumrall-yt-jexqfsm.jpg"
+   },
+   {
+    "kb": 56.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg"
+   },
+   {
+    "kb": 54.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/magazine-postgame.js"
+   },
+   {
+    "kb": 53,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png/v1/fill/w_485,h_273,fp_0.50_0.50,q_95,enc_avif,quality_auto/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png"
+   },
+   {
+    "kb": 49.6,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg"
+   },
+   {
+    "kb": 47.7,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg"
+   },
+   {
+    "kb": 46.8,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 44.2,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.275df9cd.bundle.min.js"
+   },
+   {
+    "kb": 43.7,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg"
+   },
+   {
+    "kb": 40.5,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 40.4,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg"
+   },
+   {
+    "kb": 40.4,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js"
+   },
+   {
+    "kb": 38.1,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg"
+   },
+   {
+    "kb": 37.6,
+    "type": "Other",
+    "mime": "application/json",
+    "url": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397-c3a5ddb27a97%22%3A%22440%22%2C%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%2"
+   },
+   {
+    "kb": 37.5,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 37,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 35.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jp"
+   },
+   {
+    "kb": 34.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg"
+   },
+   {
+    "kb": 34.2,
+    "type": "Fetch",
+    "mime": "application/json",
+    "url": "https://www.gatorbaitmedia.com/_api/v1/access-tokens"
+   },
+   {
+    "kb": 33.2,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_menu.69945a02.bundle.min.js"
+   },
+   {
+    "kb": 29.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/motion.c8984600.chunk.min.js"
+   },
+   {
+    "kb": 29.1,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 26,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jp"
+   },
+   {
+    "kb": 26,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg"
+   },
+   {
+    "kb": 25.1,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/unpkg/lodash@4.18.1/lodash.min.js"
+   },
+   {
+    "kb": 23.5,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_3.580d2ac2.chunk.min.js"
+   },
+   {
+    "kb": 22.8,
+    "type": "Font",
+    "mime": "font/woff2",
+    "url": "https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/oswald/v16/dI-qzxlKVQA6TUC5RKSb31tXRa8TVwTICgirnJhmVJw.woff2"
+   }
+  ],
+  "byHostKB": {
+   "static.parastorage.com": 975,
+   "static.wixstatic.com": 738,
+   "www.gatorbaitmedia.com": 628,
+   "www.googletagmanager.com": 597,
+   "cdn.jsdelivr.net": 245,
+   "connect.facebook.net": 218,
+   "fonts.gstatic.com": 155,
+   "siteassets.parastorage.com": 82,
+   "browser.sentry-cdn.com": 20,
+   "cf06bdf3-5bab-4f20-b165-97fb723dac6a.wixappcloud.com": 11,
+   "frog.wix.com": 3,
+   "fonts.googleapis.com": 2
+  },
+  "imgs": [
+   {
+    "cls": "mz-frame",
+    "lazy": "eager",
+    "fp": "high",
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "473x824",
+    "nat": "460x306",
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "eager",
+    "fp": "high",
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "663x442",
+    "nat": "791x527",
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_800,h_533,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "3000",
+    "h": "2000",
+    "shown": "220x147",
+    "nat": "200x133",
+    "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "220x147",
+    "nat": "200x133",
+    "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "2000",
+    "h": "1333",
+    "shown": "220x147",
+    "nat": "200x132",
+    "src": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "220x147",
+    "nat": "200x133",
+    "src": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "pm-rp",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "540",
+    "h": "960",
+    "shown": "418x745",
+    "nat": "540x960",
+    "src": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/sumrall-yt-jexqfsm.jpg"
+   },
+   {
+    "cls": "pm-rp",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "540",
+    "h": "960",
+    "shown": "418x745",
+    "nat": "540x960",
+    "src": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/baugh-yt-y4gpdy2bzdu.jpg"
+   }
+  ],
+  "nativeImgs": [
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-a77b1a93-712f-4708-9674-6916da8b30e5<div<div#pgia77b1a93712f470896746916da8b30e5_0<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-4ba72182-a994-41c6-ba51-113c6fd9fdba<div<div#pgi4ba72182a99441c6ba51113c6fd9fdba_1<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-1b3635c1-2ba4-402b-9c76-266c428482a3<div<div#pgi1b3635c12ba4402b9c76266c428482a3_2<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png/v1/fill/w_485,h_273,fp_0.50_0.50,q_95,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-facc29cd-494b-4e07-a309-c2da31eb3302<div<div#pgifacc29cd494b4e07a309c2da31eb3302_3<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-5951e969-1e65-463e-8583-b280d825d777<div<div#pgi5951e9691e65463e8583b280d825d777_4<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-796646b3-9eaf-489a-b940-18e61889b7e1<div<div#pgi796646b39eaf489ab94018e61889b7e1_5<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-ae9f3936-d7db-4dac-955d-ba1a6e350590<div<div#pgiae9f3936d7db4dac955dba1a6e350590_6<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-7e3d38c1-ec6d-4cc3-93ba-717f26209dd4<div<div#pgi7e3d38c1ec6d4cc393ba717f26209dd4_7<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-b28254c8-9ee0-440d-92df-61e2d8941492<div<div#pgib28254c89ee0440d92df61e2d8941492_8<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-0e70ce34-f118-433f-92b1-6b50149c7c2a<div<div#pgi0e70ce34f118433f92b16b50149c7c2a_9<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-11b8b621-6607-42c1-94b6-a56b7a44c8f6<div<div#pgi11b8b621660742c194b6a56b7a44c8f6_10<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_8b6cd2a4b2544fe0a2b3340e6e8edef2~mv2.jpeg/v1/fill/w_300,h_168,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-cf76ce62-0681-41e2-94c6-85ad22e37c5e<div<div#pgicf76ce62068141e294c685ad22e37c5e_11<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,qu",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img#img_0_comp-ln35wv7t<a[linkElement]<li#dataItem-ln35wv8j-comp-ln35wv7t<ul<div#comp-ln35wv7t<div[mesh-container-content]<div[inline-content]"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/a1b09fe8b7f04378a9fe076748ad4a6a.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,qu",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img#img_1_comp-ln35wv7t<a[linkElement]<li#dataItem-ln35wv8j6-comp-ln35wv7t<ul<div#comp-ln35wv7t<div[mesh-container-content]<div[inline-content]"
+   },
+   {
+    "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0",
+    "loading": "auto",
+    "disp": "inline",
+    "chain": "img<button<span<div<div<body<html"
+   }
+  ],
+  "attempt": 1
+ },
+ {
+  "width": "1920",
+  "tag": "ea5245c",
+  "http": 200,
+  "dclMs": 2651,
+  "htmlPreloadImg": [],
+  "htmlImgTags": 44,
+  "htmlLen": 1953831,
+  "servedPins": [
+   "src=939ef9d2"
+  ],
+  "pmWrapMs": 3171,
+  "nav": {
+   "dcl": 2650,
+   "load": 3148,
+   "lcp": 2845,
+   "lcpEl": "H1",
+   "fcp": 2362,
+   "cls": 0.0262
+  },
+  "transferKB_beforeScroll": 3576,
+  "transferKB_afterScroll": 3692,
+  "cls_final": 0.0262,
+  "overflow": 0,
+  "resources": [
+   {
+    "kb": 419.8,
+    "type": "Document",
+    "mime": "text/html",
+    "url": "https://www.gatorbaitmedia.com/magazine?gbm_qc=17923571980181920ea5245c"
+   },
+   {
+    "kb": 176,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9LPC2VVC0V"
+   },
+   {
+    "kb": 175.7,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/communities-blog-ooi/1.3368.0/PostListViewerWidgetNoCss.bundle.min.js"
+   },
+   {
+    "kb": 166,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9CZZ218BYL"
+   },
+   {
+    "kb": 165.9,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-9CZZ218BYL&cx=c&gtm=4e6ae1"
+   },
+   {
+    "kb": 161.9,
+    "type": "Other",
+    "mime": "application/javascript",
+    "url": "https://www.gatorbaitmedia.com/_partials/wix-thunderbolt/dist/clientWorker.61cd23ab.bundle.min.js"
+   },
+   {
+    "kb": 114.2,
+    "type": "Script",
+    "mime": "application/x-javascript",
+    "url": "https://connect.facebook.net/en_US/fbevents.js"
+   },
+   {
+    "kb": 104.2,
+    "type": "Script",
+    "mime": "application/x-javascript",
+    "url": "https://connect.facebook.net/signals/config/387220995516628?v=2.9.419&r=stable&domain=www.gatorbaitmedia.com&hme=7459fa3e38c2784dbaf309537bed5fa7e8560fab51fb61e53e5ffafeb46a02a9&ex_m=118%2C2"
+   },
+   {
+    "kb": 88.7,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-MMLR5KL"
+   },
+   {
+    "kb": 88,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_1200,h_800,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 58.7,
+    "type": "Image",
+    "mime": "image/jpeg",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/baugh-yt-y4gpdy2bzdu.jpg"
+   },
+   {
+    "kb": 57.1,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.0ffe6eeb.bundle.min.js"
+   },
+   {
+    "kb": 56.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_6.5f7b0030.chunk.min.js"
+   },
+   {
+    "kb": 56.5,
+    "type": "Image",
+    "mime": "image/jpeg",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/sumrall-yt-jexqfsm.jpg"
+   },
+   {
+    "kb": 56.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg"
+   },
+   {
+    "kb": 54.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/magazine-postgame.js"
+   },
+   {
+    "kb": 53,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png/v1/fill/w_485,h_273,fp_0.50_0.50,q_95,enc_avif,quality_auto/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png"
+   },
+   {
+    "kb": 49.7,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg"
+   },
+   {
+    "kb": 47.8,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg"
+   },
+   {
+    "kb": 46.8,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 44.2,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.275df9cd.bundle.min.js"
+   },
+   {
+    "kb": 43.7,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg"
+   },
+   {
+    "kb": 40.5,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 40.4,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg"
+   },
+   {
+    "kb": 40.4,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/unpkg/react-dom@18.3.1/umd/react-dom.production.min.js"
+   },
+   {
+    "kb": 38.1,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg"
+   },
+   {
+    "kb": 37.6,
+    "type": "Other",
+    "mime": "application/json",
+    "url": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397-c3a5ddb27a97%22%3A%22440%22%2C%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%2"
+   },
+   {
+    "kb": 37.5,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 36.9,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 35.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jp"
+   },
+   {
+    "kb": 34.3,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg"
+   },
+   {
+    "kb": 34.2,
+    "type": "Fetch",
+    "mime": "application/json",
+    "url": "https://www.gatorbaitmedia.com/_api/v1/access-tokens"
+   },
+   {
+    "kb": 33.2,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_menu.69945a02.bundle.min.js"
+   },
+   {
+    "kb": 29.6,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/motion.c8984600.chunk.min.js"
+   },
+   {
+    "kb": 29.1,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "kb": 26,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jp"
+   },
+   {
+    "kb": 26,
+    "type": "Image",
+    "mime": "image/avif",
+    "url": "https://static.wixstatic.com/media/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg"
+   },
+   {
+    "kb": 25.1,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/unpkg/lodash@4.18.1/lodash.min.js"
+   },
+   {
+    "kb": 23.5,
+    "type": "Script",
+    "mime": "application/javascript",
+    "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_3.580d2ac2.chunk.min.js"
+   },
+   {
+    "kb": 22.8,
+    "type": "Font",
+    "mime": "font/woff2",
+    "url": "https://static.parastorage.com/tag-bundler/api/v1/fonts-cache/googlefont/woff2/s/oswald/v16/dI-qzxlKVQA6TUC5RKSb31tXRa8TVwTICgirnJhmVJw.woff2"
+   }
+  ],
+  "byHostKB": {
+   "static.parastorage.com": 975,
+   "static.wixstatic.com": 755,
+   "www.gatorbaitmedia.com": 627,
+   "www.googletagmanager.com": 597,
+   "cdn.jsdelivr.net": 244,
+   "connect.facebook.net": 218,
+   "fonts.gstatic.com": 155,
+   "siteassets.parastorage.com": 82,
+   "browser.sentry-cdn.com": 20,
+   "cf06bdf3-5bab-4f20-b165-97fb723dac6a.wixappcloud.com": 11,
+   "frog.wix.com": 3,
+   "fonts.googleapis.com": 2
+  },
+  "imgs": [
+   {
+    "cls": "mz-frame",
+    "lazy": "eager",
+    "fp": "high",
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "578x1006",
+    "nat": "460x306",
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "eager",
+    "fp": "high",
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "737x491",
+    "nat": "1113x742",
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_1200,h_800,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "3000",
+    "h": "2000",
+    "shown": "260x173",
+    "nat": "200x133",
+    "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "260x173",
+    "nat": "200x133",
+    "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "2000",
+    "h": "1333",
+    "shown": "260x173",
+    "nat": "200x132",
+    "src": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "mz-frame",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "1320",
+    "h": "880",
+    "shown": "260x173",
+    "nat": "200x133",
+    "src": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg"
+   },
+   {
+    "cls": "pm-rp",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "540",
+    "h": "960",
+    "shown": "458x816",
+    "nat": "540x960",
+    "src": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/sumrall-yt-jexqfsm.jpg"
+   },
+   {
+    "cls": "pm-rp",
+    "lazy": "lazy",
+    "fp": null,
+    "dec": "async",
+    "w": "540",
+    "h": "960",
+    "shown": "458x816",
+    "nat": "540x960",
+    "src": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@939ef9d282541cb132dba5d2f7b9606d59ae5385/sports-live/reels/baugh-yt-y4gpdy2bzdu.jpg"
+   }
+  ],
+  "nativeImgs": [
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-a77b1a93-712f-4708-9674-6916da8b30e5<div<div#pgia77b1a93712f470896746916da8b30e5_0<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_6ff92a587d6d4ec8b93cd045b407638b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-4ba72182-a994-41c6-ba51-113c6fd9fdba<div<div#pgi4ba72182a99441c6ba51113c6fd9fdba_1<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_41eb8ab14cf342668fe0639386eaee9b~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-1b3635c1-2ba4-402b-9c76-266c428482a3<div<div#pgi1b3635c12ba4402b9c76266c428482a3_2<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_a678a34cf866435798e6a6def0b8c820~mv2.png/v1/fill/w_485,h_273,fp_0.50_0.50,q_95,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-facc29cd-494b-4e07-a309-c2da31eb3302<div<div#pgifacc29cd494b4e07a309c2da31eb3302_3<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_daa46ac4e8c948cda3175d616a3ca2dd~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-5951e969-1e65-463e-8583-b280d825d777<div<div#pgi5951e9691e65463e8583b280d825d777_4<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/d3cfa5_5249bd61a3f84dbaadf0e1867d52ff53~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-796646b3-9eaf-489a-b940-18e61889b7e1<div<div#pgi796646b39eaf489ab94018e61889b7e1_5<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_31900992456a4d0fa66f37f9170c4cde~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-ae9f3936-d7db-4dac-955d-ba1a6e350590<div<div#pgiae9f3936d7db4dac955dba1a6e350590_6<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_ef365547e7584ad9aa92d9fb4271b530~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-7e3d38c1-ec6d-4cc3-93ba-717f26209dd4<div<div#pgi7e3d38c1ec6d4cc393ba717f26209dd4_7<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_1947faa8fcec4f4c89b8c59980e323c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-b28254c8-9ee0-440d-92df-61e2d8941492<div<div#pgib28254c89ee0440d92df61e2d8941492_8<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif,",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-0e70ce34-f118-433f-92b1-6b50149c7c2a<div<div#pgi0e70ce34f118433f92b16b50149c7c2a_9<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_ed1ca983099f4ee1b28e757530249fab~mv2.jpeg/v1/fill/w_485,h_273,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-11b8b621-6607-42c1-94b6-a56b7a44c8f6<div<div#pgi11b8b621660742c194b6a56b7a44c8f6_10<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/ae876a_8b6cd2a4b2544fe0a2b3340e6e8edef2~mv2.jpeg/v1/fill/w_300,h_168,fp_0.50_0.50,q_90,enc_avif",
+    "loading": "eager",
+    "disp": "block",
+    "chain": "img<picture#multi_picture_undefined<div<div#item-wrapper-cf76ce62-0681-41e2-94c6-85ad22e37c5e<div<div#pgicf76ce62068141e294c685ad22e37c5e_11<div"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,qu",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img#img_0_comp-ln35wv7t<a[linkElement]<li#dataItem-ln35wv8j-comp-ln35wv7t<ul<div#comp-ln35wv7t<div[mesh-container-content]<div[inline-content]"
+   },
+   {
+    "src": "https://static.wixstatic.com/media/a1b09fe8b7f04378a9fe076748ad4a6a.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,qu",
+    "loading": "auto",
+    "disp": "block",
+    "chain": "img#img_1_comp-ln35wv7t<a[linkElement]<li#dataItem-ln35wv8j6-comp-ln35wv7t<ul<div#comp-ln35wv7t<div[mesh-container-content]<div[inline-content]"
+   },
+   {
+    "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0",
+    "loading": "auto",
+    "disp": "inline",
+    "chain": "img<button<span<div<div<body<html"
+   }
+  ],
+  "attempt": 1
+ }
+]

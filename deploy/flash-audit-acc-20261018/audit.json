@@ -1,0 +1,796 @@
+[
+ {
+  "page": "post",
+  "w": 1366,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.sh-cta < div.sh-inner < div.sh-bar < header#gbm-site-header",
+     "t": "Join GatorBait →",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "19px",
+     "fw": "800"
+    },
+    {
+     "p": "td.kRqOO[table-plugin-cell] < tr < tbody < table.GJd9h[table-component]",
+     "t": "Rank",
+     "col": "#000000",
+     "ratio": 5.95,
+     "fs": "16px",
+     "fw": "400"
+    },
+    {
+     "p": "td.kRqOO[table-plugin-cell] < tr < tbody < table.GJd9h[table-component]",
+     "t": "Team",
+     "col": "#000000",
+     "ratio": 5.95,
+     "fs": "16px",
+     "fw": "400"
+    },
+    {
+     "p": "td.kRqOO[table-plugin-cell] < tr < tbody < table.GJd9h[table-component]",
+     "t": "Last week",
+     "col": "#000000",
+     "ratio": 5.95,
+     "fs": "16px",
+     "fw": "400"
+    },
+    {
+     "p": "button.gbc-b < div.gbc-row < form.gbc-f < aside.gbc.gbc-end",
+     "t": "Sign up free",
+     "col": "#FFFFFF",
+     "ratio": 3.53,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.kr-acct < nav.kr-nav < div.kr-x < aside#gbm-kr",
+     "t": "Your account",
+     "col": "#FFFFFF",
+     "ratio": 3.53,
+     "fs": "17px",
+     "fw": "700"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "button.gbc-b < div.gbc-row < form.gbc-f < aside.gbc",
+     "t": "Sign up free",
+     "col": "#FFFFFF",
+     "ratio": 3.53,
+     "fs": "16px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "blue #0A1A6B backgroundColor x5 button.qXlEOR[share-button__facebook] < div.dw8bme.N8V7Oq < div.Zt1NVN < div.eFS",
+    "orange #FFB093 color x3 a.sh-shop < div.sh-util < div.sh-tick < header#gbm-site-header",
+    "orange #FF8A57 color x1 span.gbm-kit-k < nav.gbm-kit < header.PhCafd < div.HW6ttf",
+    "orange #D33608 backgroundColor x1 a.gbm-kit-chip.lead < div.gbm-kit-row < nav.gbm-kit < header.PhCafd",
+    "orange #D33608 borderTopColor x1 a.gbm-kit-chip.lead < div.gbm-kit-row < nav.gbm-kit < header.PhCafd",
+    "orange #D33608 borderBottomColor x1 a.gbm-kit-chip.lead < div.gbm-kit-row < nav.gbm-kit < header.PhCafd",
+    "orange #D33608 borderLeftColor x1 a.gbm-kit-chip.lead < div.gbm-kit-row < nav.gbm-kit < header.PhCafd"
+   ]
+  }
+ },
+ {
+  "page": "magazine",
+  "w": 1366,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.pm-btn < div.pm-cover-type < div.pm-in.pm-cover-in < section#pm-cover.pm-cover",
+     "t": "Read Buddy's column →",
+     "col": "#FFFFFF",
+     "ratio": 3.53,
+     "fs": "23px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "1",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "2",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "3",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "4",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "5",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "button.gbc-b < div.gbc-row < form.gbc-f < section.gbc.pm-cap",
+     "t": "Sign up free",
+     "col": "#FFFFFF",
+     "ratio": 3.53,
+     "fs": "22px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #B93A0E color x24 p.pm-kick < div.pm-in < nav#pm-contents.pm-toc < div.pm-wrap",
+    "orange #FFB27A color x11 p.pm-final-l < div.pm-in < section.pm-final < div.pm-wrap"
+   ]
+  }
+ },
+ {
+  "page": "contact",
+  "w": 1366,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.sh-cta < div.sh-inner < div.sh-bar < header#gbm-site-header",
+     "t": "Join GatorBait →",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "19px",
+     "fw": "800"
+    },
+    {
+     "p": "button.twJknM.wixui-button < div#comp-lii7mqfp4.comp-lii7mqfp4.mu5PoX < div < div",
+     "t": "Send message",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "13.3333px",
+     "fw": "400"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #993500 color x6 input#input_comp-lii7mqee1.nbaJII.has-custom-focus < div.nuFEsg < div#comp-lii7m",
+    "orange #FFB093 color x2 a.sh-shop < div.sh-util < div.sh-tick < header#gbm-site-header"
+   ]
+  }
+ },
+ {
+  "page": "pricing",
+  "w": 1366,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.sh-cta < div.sh-inner < div.sh-bar < header#gbm-site-header",
+     "t": "Join GatorBait →",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "19px",
+     "fw": "800"
+    },
+    {
+     "p": "button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary] < div.sZtzJ2B.okRFjvD---textAlignment-6-center < div.sFkuq_5.okRFjvD--highlighted",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "span.s__5CjnXs.se5p61l < button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary] < div.sZtzJ2B.okRFjvD---textAlignment-6-center",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "span.s__9rzV5g < span.s__5CjnXs.se5p61l < button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary]",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary] < div.sZtzJ2B.okRFjvD---textAlignment-6-center < div.sFkuq_5",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "span.s__5CjnXs.se5p61l < button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary] < div.sZtzJ2B.okRFjvD---textAlignment-6-center",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "span.s__9rzV5g < span.s__5CjnXs.se5p61l < button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary]",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #FFB093 color x2 a.sh-shop < div.sh-util < div.sh-tick < header#gbm-site-header"
+   ]
+  }
+ },
+ {
+  "page": "allnews",
+  "w": 1366,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.sh-cta < div.sh-inner < div.sh-bar < header#gbm-site-header",
+     "t": "Join GatorBait →",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "19px",
+     "fw": "800"
+    },
+    {
+     "p": "button < form#gbm-lp-search < section#gbm-lp < div",
+     "t": "Search",
+     "col": "#07122E",
+     "ratio": 5.24,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a < nav.lp-pager < section#gbm-lp < div",
+     "t": "Older stories →",
+     "col": "#07122E",
+     "ratio": 5.24,
+     "fs": "17px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #FFB093 color x3 a.sh-shop < div.sh-util < div.sh-tick < header#gbm-site-header",
+    "orange #D8450C color x1 span.sn-k < div.sn-top < section#gbm-sn < div"
+   ]
+  }
+ },
+ {
+  "page": "about",
+  "w": 1366,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.sh-cta < div.sh-inner < div.sh-bar < header#gbm-site-header",
+     "t": "Join GatorBait →",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "19px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #FFB093 color x2 a.sh-shop < div.sh-util < div.sh-tick < header#gbm-site-header"
+   ]
+  }
+ },
+ {
+  "page": "home",
+  "w": 1366,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.sh-join < div.sh-brand < header.sh-header < div#gbm-live.gbm-gazette.gbm-sports-home",
+     "t": "Join GatorBait →",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "18px",
+     "fw": "800"
+    },
+    {
+     "p": "a.sh-read < div.sh-lead-copy < article.sh-lead < section.bc-hero",
+     "t": "Read the story →",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "15px",
+     "fw": "700"
+    }
+   ],
+   "accents": [
+    "blue #0A1A6B color x2 b.bc-ab < div.bc-tm.bc-w < section.bc-sc < div.bc-ps"
+   ]
+  }
+ },
+ {
+  "page": "post",
+  "w": 390,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.gbm-ms-shop < header#gbm-mobile-shell < div#gbm-mobile-shell-host",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbm-ms-shop < nav.gbm-ms-nav < aside.gbm-ms-panel < div#gbm-mobile-drawer-root",
+     "t": "Shop GatorBait Gear ↗",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "17px",
+     "fw": "700"
+    },
+    {
+     "p": "td.kRqOO[table-plugin-cell] < tr < tbody < table.GJd9h[table-component]",
+     "t": "Rank",
+     "col": "#000000",
+     "ratio": 5.95,
+     "fs": "16px",
+     "fw": "400"
+    },
+    {
+     "p": "td.kRqOO[table-plugin-cell] < tr < tbody < table.GJd9h[table-component]",
+     "t": "Team",
+     "col": "#000000",
+     "ratio": 5.95,
+     "fs": "16px",
+     "fw": "400"
+    },
+    {
+     "p": "td.kRqOO[table-plugin-cell] < tr < tbody < table.GJd9h[table-component]",
+     "t": "Last week",
+     "col": "#000000",
+     "ratio": 5.95,
+     "fs": "16px",
+     "fw": "400"
+    },
+    {
+     "p": "button.gbc-b < div.gbc-row < form.gbc-f < aside.gbc.gbc-end",
+     "t": "Sign up free",
+     "col": "#FFFFFF",
+     "ratio": 3.53,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.kr-acct < nav.kr-nav < div.kr-x < aside#gbm-kr",
+     "t": "Your account",
+     "col": "#FFFFFF",
+     "ratio": 3.53,
+     "fs": "17px",
+     "fw": "700"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "blue #0A1A6B backgroundColor x5 button.qXlEOR[share-button__facebook] < div.dw8bme.N8V7Oq < div.Zt1NVN < div.eFS",
+    "orange #FF9E7D backgroundColor x3 i < span.gbm-ms-bars < button#gbm-mobile-menu-toggle.gbm-ms-trigger < header#gbm",
+    "orange #FFB093 color x1 a < div.gbm-ms-foot < aside.gbm-ms-panel < div#gbm-mobile-drawer-root",
+    "orange #FF8A57 color x1 span.gbm-kit-k < nav.gbm-kit < header.PhCafd < div.HW6ttf",
+    "orange #D33608 backgroundColor x1 a.gbm-kit-chip.lead < div.gbm-kit-row < nav.gbm-kit < header.PhCafd",
+    "orange #D33608 borderTopColor x1 a.gbm-kit-chip.lead < div.gbm-kit-row < nav.gbm-kit < header.PhCafd",
+    "orange #D33608 borderBottomColor x1 a.gbm-kit-chip.lead < div.gbm-kit-row < nav.gbm-kit < header.PhCafd",
+    "orange #D33608 borderLeftColor x1 a.gbm-kit-chip.lead < div.gbm-kit-row < nav.gbm-kit < header.PhCafd"
+   ]
+  }
+ },
+ {
+  "page": "magazine",
+  "w": 390,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.pm-btn < div.pm-cover-type < div.pm-in.pm-cover-in < section#pm-cover.pm-cover",
+     "t": "Read Buddy's column →",
+     "col": "#FFFFFF",
+     "ratio": 3.53,
+     "fs": "19px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "1",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "2",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "3",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "4",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "span.pm-mk < div.pm-area < div.pm-plot < figure.pm-chart",
+     "t": "5",
+     "col": "#061444",
+     "ratio": 5,
+     "fs": "14px",
+     "fw": "800"
+    },
+    {
+     "p": "button.gbc-b < div.gbc-row < form.gbc-f < section.gbc.pm-cap",
+     "t": "Sign up free",
+     "col": "#FFFFFF",
+     "ratio": 3.53,
+     "fs": "19px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #B93A0E color x24 p.pm-kick < div.pm-in < nav#pm-contents.pm-toc < div.pm-wrap",
+    "orange #FFB27A color x11 p.pm-final-l < div.pm-in < section.pm-final < div.pm-wrap"
+   ]
+  }
+ },
+ {
+  "page": "contact",
+  "w": 390,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.gbm-ms-shop < header#gbm-mobile-shell < div#gbm-mobile-shell-host",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbm-ms-shop < nav.gbm-ms-nav < aside.gbm-ms-panel < div#gbm-mobile-drawer-root",
+     "t": "Shop GatorBait Gear ↗",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "17px",
+     "fw": "700"
+    },
+    {
+     "p": "button.twJknM.wixui-button < div#comp-lii7mqfp4.comp-lii7mqfp4.mu5PoX < div < div",
+     "t": "Send message",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "16px",
+     "fw": "400"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #993500 color x6 input#input_comp-lii7mqee1.nbaJII.has-custom-focus < div.nuFEsg < div#comp-lii7m",
+    "orange #FF9E7D backgroundColor x3 i < span.gbm-ms-bars < button#gbm-mobile-menu-toggle.gbm-ms-trigger < header#gbm",
+    "orange #FFB093 color x2 a < nav.gbm-ms-nav < aside.gbm-ms-panel < div#gbm-mobile-drawer-root"
+   ]
+  }
+ },
+ {
+  "page": "pricing",
+  "w": 390,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.gbm-ms-shop < header#gbm-mobile-shell < div#gbm-mobile-shell-host",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbm-ms-shop < nav.gbm-ms-nav < aside.gbm-ms-panel < div#gbm-mobile-drawer-root",
+     "t": "Shop GatorBait Gear ↗",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "17px",
+     "fw": "700"
+    },
+    {
+     "p": "button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary] < div.sZtzJ2B.okRFjvD---textAlignment-6-center < div.sFkuq_5.okRFjvD--highlighted",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "span.s__5CjnXs.se5p61l < button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary] < div.sZtzJ2B.okRFjvD---textAlignment-6-center",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "span.s__9rzV5g < span.s__5CjnXs.se5p61l < button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary]",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary] < div.sZtzJ2B.okRFjvD---textAlignment-6-center < div.sFkuq_5",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "span.s__5CjnXs.se5p61l < button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary] < div.sZtzJ2B.okRFjvD---textAlignment-6-center",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "span.s__9rzV5g < span.s__5CjnXs.se5p61l < button.sqaxP2l.sPAw12I[plan-cta] < div.sneNoaU.okRFjvD---buttonAlignment-6-center[plan-cta-wrapper-primary]",
+     "t": "Try for free",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #FF9E7D backgroundColor x3 i < span.gbm-ms-bars < button#gbm-mobile-menu-toggle.gbm-ms-trigger < header#gbm",
+    "orange #FFB093 color x1 a < div.gbm-ms-foot < aside.gbm-ms-panel < div#gbm-mobile-drawer-root"
+   ]
+  }
+ },
+ {
+  "page": "allnews",
+  "w": 390,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.gbm-ms-shop < header#gbm-mobile-shell < div#gbm-mobile-shell-host",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbm-ms-shop < nav.gbm-ms-nav < aside.gbm-ms-panel < div#gbm-mobile-drawer-root",
+     "t": "Shop GatorBait Gear ↗",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "17px",
+     "fw": "700"
+    },
+    {
+     "p": "button < form#gbm-lp-search < section#gbm-lp < div",
+     "t": "Search",
+     "col": "#07122E",
+     "ratio": 5.24,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a < nav.lp-pager < section#gbm-lp < div",
+     "t": "Older stories →",
+     "col": "#07122E",
+     "ratio": 5.24,
+     "fs": "17px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #FF9E7D backgroundColor x3 i < span.gbm-ms-bars < button#gbm-mobile-menu-toggle.gbm-ms-trigger < header#gbm",
+    "orange #FFB093 color x2 a < nav.gbm-ms-nav < aside.gbm-ms-panel < div#gbm-mobile-drawer-root",
+    "orange #D8450C color x1 span.sn-k < div.sn-top < section#gbm-sn < div"
+   ]
+  }
+ },
+ {
+  "page": "about",
+  "w": 390,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.gbm-ms-shop < header#gbm-mobile-shell < div#gbm-mobile-shell-host",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbm-ms-shop < nav.gbm-ms-nav < aside.gbm-ms-panel < div#gbm-mobile-drawer-root",
+     "t": "Shop GatorBait Gear ↗",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "17px",
+     "fw": "700"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "20px",
+     "fw": "800"
+    }
+   ],
+   "accents": [
+    "orange #FF9E7D backgroundColor x3 i < span.gbm-ms-bars < button#gbm-mobile-menu-toggle.gbm-ms-trigger < header#gbm",
+    "orange #FFB093 color x1 a < div.gbm-ms-foot < aside.gbm-ms-panel < div#gbm-mobile-drawer-root"
+   ]
+  }
+ },
+ {
+  "page": "home",
+  "w": 390,
+  "ev": {
+   "orange": [
+    {
+     "p": "a.gbm-ms-shop < header#gbm-mobile-shell < div#gbm-mobile-shell-host",
+     "t": "Shop Gear ↗",
+     "col": "#0B0D12",
+     "ratio": 5.51,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbm-ms-shop < nav.gbm-ms-nav < aside.gbm-ms-panel < div#gbm-mobile-drawer-root",
+     "t": "Shop GatorBait Gear ↗",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "17px",
+     "fw": "700"
+    },
+    {
+     "p": "a.sh-read < div.sh-lead-copy < article.sh-lead < section.bc-hero",
+     "t": "Read the story →",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "16px",
+     "fw": "800"
+    },
+    {
+     "p": "a.gbf-btn < div.gbf-shop < div.gbf < footer#gbm-footer",
+     "t": "Shop Gear ↗",
+     "col": "#08132F",
+     "ratio": 5.2,
+     "fs": "15px",
+     "fw": "700"
+    }
+   ],
+   "accents": [
+    "orange #FF9E7D backgroundColor x3 i < span.gbm-ms-bars < button#gbm-mobile-menu-toggle.gbm-ms-trigger < header#gbm",
+    "orange #FFB093 color x2 a < nav.gbm-ms-nav < aside.gbm-ms-panel < div#gbm-mobile-drawer-root"
+   ]
+  }
+ }
+]

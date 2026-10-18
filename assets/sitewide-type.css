@@ -57,3 +57,7 @@ html body{
     line-height:1.62!important;
   }
 }
+/* Oct. 18, 2026: Wix rich-text spans on /about carried Avenir (inline font class). Same rule is live inline in embed 0709a98e rev 7. */
+#SITE_PAGES [data-testid="richTextElement"] :is(span,a,strong,em,b,i,u,li,p){
+  font-family:var(--gbm-font)!important;
+}

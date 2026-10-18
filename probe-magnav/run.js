@@ -57,7 +57,7 @@ const INIT = (TICKS) => {
   };
   const box = id => { const el = document.getElementById(id) || document.querySelector(id); if (!el) return null; const r = el.getBoundingClientRect(); const cs = getComputedStyle(el); return { y: Math.round(r.top), h: Math.round(r.height), vis: cs.visibility === 'visible' && cs.display !== 'none', inView: r.bottom > 0 && r.top < innerHeight && r.height > 2 }; };
   const snap = (full) => {
-    const h = document.documentElement; const nv = native(); const s = {
+    const h = document.documentElement || { className: '', classList: { contains: () => false } }; const nv = native(); const s = {
       path: location.pathname, cls: String(h.className).replace(/\s+/g, ' ').slice(0, 80), veil: veil(),
       mag: (() => { const m = document.getElementById('gbm-magazine-page'); if (!m) return null; const r = m.getBoundingClientRect(); return { y: Math.round(r.top), h: Math.round(r.height) }; })(),
       nv: nv.n, nvItems: nv.items, hdr: box('SITE_HEADER'), ftr: box('SITE_FOOTER'), tools: box('.gbm-football-tools'),
@@ -72,10 +72,10 @@ const INIT = (TICKS) => {
     if (F.rec && F.rec.raf) cancelAnimationFrame(F.rec.raf);
     const R = F.rec = { label, t0: performance.now(), epoch: performance.timeOrigin + performance.now(), ticks: [], rafFlash: [], flags: [], done: false, htmlLog: [], mag1: null, veilOn: null, veilOff: null };
     try { new MutationObserver(() => { const t = Math.round(performance.now() - R.t0); const v = veil(); if (v && R.veilOn === null) R.veilOn = t; if (!v && R.veilOn !== null && R.veilOff === null) R.veilOff = t; R.htmlLog.push({ t, cls: String(document.documentElement.className).slice(0, 70) }); if (R.htmlLog.length > 25) R.htmlLog.shift(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] }); } catch (e) {}
-    let i = 0; const next = () => { if (R.done) return; if (i >= TICKS.length) { R.done = true; return; } const due = R.t0 + TICKS[i]; const wait = Math.max(0, due - performance.now()); setTimeout(() => { const t = Math.round(performance.now() - R.t0); const s = snap(true); s.t = TICKS[i]; s.at = t; R.ticks.push(s); if (s.mag && R.mag1 === null) R.mag1 = t; i++; next(); }, wait); };
+    let i = 0; const next = () => { if (R.done) return; if (i >= TICKS.length) { R.done = true; return; } const due = R.t0 + TICKS[i]; const wait = Math.max(0, due - performance.now()); setTimeout(() => { const t = Math.round(performance.now() - R.t0); let s; try { s = snap(true); } catch (e) { s = { err: String(e && e.message).slice(0, 80), path: location.pathname }; } s.t = TICKS[i]; s.at = t; R.ticks.push(s); if (s.mag && R.mag1 === null) R.mag1 = t; i++; next(); }, wait); };
     next();
     // per-frame detector so a single-frame flash between the 100 ms ticks is still caught
-    let last = null; const loop = () => { if (R.done) return; const t = Math.round(performance.now() - R.t0); const v = veil(); if (!v) { const nv = native(); if (nv.n > 0) { if (!last || t - last.t1 > 40) { last = { t0: t, t1: t, n: nv.n, items: nv.items.slice(0, 3), path: location.pathname }; R.rafFlash.push(last); } else { last.t1 = t; last.n = Math.max(last.n, nv.n); } } } if (t > 14200) { return; } R.raf = requestAnimationFrame(loop); };
+    let last = null; const loop = () => { if (R.done) return; const t = Math.round(performance.now() - R.t0); const v = veil(); if (!v) { let nv; try { nv = native(); } catch (e) { nv = { n: 0, items: [] }; } if (nv.n > 0) { if (!last || t - last.t1 > 40) { last = { t0: t, t1: t, n: nv.n, items: nv.items.slice(0, 3), path: location.pathname }; R.rafFlash.push(last); } else { last.t1 = t; last.n = Math.max(last.n, nv.n); } } } if (t > 14200) { return; } R.raf = requestAnimationFrame(loop); };
     R.raf = requestAnimationFrame(loop);
     return R.epoch;
   };

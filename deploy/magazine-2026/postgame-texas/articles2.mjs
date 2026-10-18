@@ -109,11 +109,11 @@ export const APPOLL = {
 // ---- Postgame voices: quotes as the clip titles and live posts carry them ----
 export const VOICES = {
   cards: [
-    { who: 'Jadan Baugh, running back', q: 'Tramell is going to be a great quarterback.', ctx: 'On Tramell Jones Jr.’s first career start. Postgame clip from GatorBait Media, Oct. 18.', link: 'instagram.com/reel/Deo2ka3j-lI' },
-    { who: 'Jon Sumrall, head coach', q: 'We still suck. We just suck less.', ctx: 'Florida 27, No. 7 Texas 24, after a 17-3 hole. Postgame clip from GatorBait Media, Oct. 18.', link: 'instagram.com/reel/Deo0M1Kj-1N' },
+    { who: 'Jadan Baugh, running back', q: 'Tramell is going to be a great quarterback.', ctx: 'On Tramell Jones Jr.’s first career start. Postgame clip, The Buddy Martin Show on YouTube.', link: 'youtu.be/y4GpdY2bzdU' },
+    { who: 'Jon Sumrall, head coach', q: 'We still suck. We just suck less.', ctx: 'Florida 27, No. 7 Texas 24, after a 17-3 hole. Postgame clip, The Buddy Martin Show on YouTube.', link: 'youtu.be/JexQFsm_wts' },
     { who: 'Jon Sumrall, head coach', q: 'They executed with more detail, more urgency, more violence, more strength.', ctx: 'On the defense. Postgame press conference, Oct. 17, as reported by Franz Beard.' },
     { who: 'Jon Sumrall, head coach', q: 'It doesn’t matter who you play, where you play, when you play, you have to fight.', ctx: 'Postgame press conference, Oct. 17, as reported by Franz Beard.' },
     { who: 'Tramell Jones Jr., quarterback', q: 'I didn’t take it any bigger than it was. It feels great, but this is just the start. It’s not over.', ctx: 'As quoted by Buddy Martin, Oct. 18.' },
   ],
-  note: 'Quotes are printed as GatorBait Media published them. Full video at the links, on @gatorbaitmedia on Instagram.',
+  note: 'Quotes are printed as GatorBait Media published them. Full video at the links, on the GatorBait Media YouTube channel.',
 };

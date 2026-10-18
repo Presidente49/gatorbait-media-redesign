@@ -73,6 +73,11 @@
     return u && l ? '<a class="pm-more' + (cls ? ' ' + cls : '') + '" href="' + esc(u) + '">' + esc(l) + ' <span aria-hidden="true">→</span></a>' : '';
   }
   function pmSrc(s) { s = text(s, 240); return s ? '<p class="pm-src">' + esc(s) + '</p>' : ''; }
+  // UAA photos carry the full linked credit (UAA, Hannah White, UF galleries). Links are fixed here, not read from the issue.
+  function pmUaaCredit(cls) {
+    var UAA = 'https://floridagators.com', HW = 'https://www.instagram.com/hannahmorganphoto/', GAL = 'https://floridagators.com/galleries';
+    return '<span class="' + cls + '">Photo courtesy <a href="' + UAA + '" rel="noopener">UAA</a> and <a href="' + HW + '" rel="noopener">Hannah White</a> <a href="' + GAL + '" rel="noopener">More UF photos</a></span>';
+  }
 
   function pmCover(D) {
     var C = obj(D.cover); if (!C) return '';
@@ -80,14 +85,14 @@
     var fig = frame(C.image, { eager: true, main: 1600, sizes: '(max-width: 999px) 100vw, 58vw' });
     var lines = list(C.lines, 6).map(function (l) { return text(l, 80); }).filter(Boolean);
     return '<section class="pm-cover" id="pm-cover" aria-labelledby="pm-cover-h"><div class="pm-in pm-cover-in">' +
-      (fig ? '<figure class="pm-cover-fig"><a href="' + esc(url) + '" tabindex="-1" aria-hidden="true">' + fig + '</a>' + (C.image && text(C.image.credit, 120) ? '<figcaption>' + esc(text(C.image.credit, 120)) + '</figcaption>' : '') + '</figure>' : '') +
+      (fig ? '<figure class="pm-cover-fig"><a href="' + esc(url) + '" tabindex="-1" aria-hidden="true">' + fig + '</a>' + (C.image && !C.image.uaa && text(C.image.credit, 120) ? '<figcaption>' + esc(text(C.image.credit, 120)) + '</figcaption>' : '') + '</figure>' : '') +
       '<div class="pm-cover-type">' + (text(C.kicker, 80) ? '<p class="pm-kick">' + esc(text(C.kicker, 80)) + '</p>' : '') +
       '<h2 id="pm-cover-h"><a href="' + esc(url) + '">' + esc(hl) + '</a></h2>' +
       (text(C.dek, 600) ? '<p class="pm-cover-dek">' + esc(text(C.dek, 600)) + '</p>' : '') +
       (text(C.byline, 80) ? '<p class="pm-by">' + esc(text(C.byline, 80)) + '</p>' : '') +
       '<a class="pm-btn" href="' + esc(url) + '">' + esc(text(C.cta, 60) || hl) + ' <span aria-hidden="true">→</span></a></div>' +
       (lines.length ? '<div class="pm-lines">' + (text(C.linesLabel, 40) ? '<p>' + esc(text(C.linesLabel, 40)) + '</p>' : '') + '<ul>' + lines.map(function (l) { return '<li>' + esc(l) + '</li>'; }).join('') + '</ul></div>' : '') +
-      '</div></section>';
+      (C.image && C.image.uaa ? '<p class="pm-cover-cr">' + pmUaaCredit('pm-crl') + '</p>' : '') + '</div></section>';
   }
   function pmFinal(D) {
     var F = obj(D.final), teams = F ? list(F.teams, 2).map(obj).filter(function (t) { return t && text(t.name, 30) && num(t.score) !== null; }) : [];
@@ -100,7 +105,7 @@
       }).join('') + '</div>' + (meta.length ? '<p class="pm-final-m">' + meta.map(function (m) { return '<span>' + esc(m) + '</span>'; }).join('') + '</p>' : '') + '</div></section>';
   }
   function pmContents(D) {
-    var C = obj(D.contents), items = C ? list(C.items, 8).map(obj).filter(function (i) { return i && /^[a-z]+$/.test(text(i.id, 20)) && text(i.label, 40) && obj(D[i.id]); }) : [];
+    var C = obj(D.contents), items = C ? list(C.items, 10).map(obj).filter(function (i) { return i && /^[a-z]+$/.test(text(i.id, 20)) && text(i.label, 40) && obj(D[i.id]); }) : [];
     if (!items.length) return '';
     return '<nav class="pm-toc" id="pm-contents" tabindex="-1" aria-label="' + esc(text(C.label, 40) || 'Contents') + '"><div class="pm-in">' + (text(C.label, 40) ? '<p class="pm-kick">' + esc(text(C.label, 40)) + '</p>' : '') + '<ol>' + items.map(function (i, n) {
       return '<li><a href="#pm-' + i.id + '"><b aria-hidden="true">' + (n + 1) + '</b>' + esc(text(i.label, 40)) + '</a></li>';
@@ -148,14 +153,6 @@
       (marks.length ? '<ol class="pm-key">' + marks.map(function (m) { return '<li><b>' + esc(text(m.title, 20)) + '</b> ' + esc(text(m.note, 160)) + '</li>'; }).join('') + '</ol>' : '') +
       (text(F.source, 200) ? '<figcaption class="pm-src">' + esc(text(F.source, 200)) + '</figcaption>' : '') + '</figure>' + pmMore(F.more) + '</div></section>';
   }
-  function pmGrades(D) {
-    var G = obj(D.grades), items = G ? list(G.items, 12).map(obj).filter(function (g) { return g && text(g.unit, 40) && /^[A-F][+-]?$/.test(text(g.grade, 2)); }) : [];
-    if (!items.length) return '';
-    return '<section class="pm-grades" id="pm-grades" aria-labelledby="pm-grades-t"><div class="pm-in">' + pmHead('grades', G) + '<ul class="pm-gg">' + items.map(function (g) {
-      var gr = text(g.grade, 2);
-      return '<li data-g="' + gr.charAt(0) + '"><span class="pm-gu">' + esc(text(g.unit, 40)) + '</span><b class="pm-gl" aria-label="Grade ' + esc(gr.replace('-', ' minus').replace('+', ' plus')) + '">' + esc(gr.replace('-', '−')) + '</b>' + (text(g.note, 100) ? '<small>' + esc(text(g.note, 100)) + '</small>' : '') + '</li>';
-    }).join('') + '</ul>' + pmMore(G.more) + '</div></section>';
-  }
   function pmQuotes(D) {
     var Q = obj(D.quotes), items = Q ? list(Q.items, 6).map(obj).filter(function (q) { return q && text(q.text, 400) && text(q.who, 60); }) : [];
     if (!items.length) return '';
@@ -165,13 +162,13 @@
         (u && text(q.link, 60) ? '<a href="' + esc(u) + '">' + esc(text(q.link, 60)) + ' <span aria-hidden="true">→</span></a>' : '') + '</figcaption></figure>';
     }).join('') + '</div></div></section>';
   }
-  function pmPackage(D) {
-    var P = obj(D.package), items = P ? list(P.items, 12).map(obj).filter(function (s) { return s && safeUrl(s.url) && text(s.title, 200); }) : [];
+  function pmPackage(D, key) {
+    var P = obj(D[key]), items = P ? list(P.items, 12).map(obj).filter(function (s) { return s && safeUrl(s.url) && text(s.title, 200); }) : [];
     if (!items.length) return '';
-    return '<section class="pm-pack" id="pm-package" aria-labelledby="pm-package-t"><div class="pm-in">' + pmHead('package', P) + '<ol class="pm-list">' + items.map(function (s, k) {
+    return '<section class="pm-pack" id="pm-' + key + '" aria-labelledby="pm-' + key + '-t"><div class="pm-in">' + pmHead(key, P) + '<ol class="pm-list">' + items.map(function (s, k) {
       var fig = s.image ? frame(s.image, { main: 480, sizes: '(max-width: 699px) 112px, 200px' }) : '';
       return '<li class="pm-it' + (s.lead ? ' pm-lead' : '') + (fig ? ' pm-has-img' : '') + '"><a href="' + esc(safeUrl(s.url)) + '"><span class="pm-n" aria-hidden="true">' + (k < 9 ? '0' : '') + (k + 1) + '</span><span class="pm-it-b"><span class="pm-kick">' + esc([text(s.rubric, 40), text(s.author, 60)].filter(Boolean).join(' · ')) + '</span>' +
-        '<h3>' + esc(text(s.title, 200)) + '</h3>' + (text(s.dek, 400) ? '<span class="pm-it-d">' + esc(text(s.dek, 400)) + '</span>' : '') + (text(s.read, 30) ? '<span class="pm-it-r">' + esc(text(s.read, 30)) + '</span>' : '') + (fig && text(s.image.credit, 120) ? '<span class="pm-it-cr">Image: ' + esc(text(s.image.credit, 120)) + '</span>' : '') + '</span>' +
+        '<h3>' + esc(text(s.title, 200)) + '</h3>' + (text(s.dek, 400) ? '<span class="pm-it-d">' + esc(text(s.dek, 400)) + '</span>' : '') + (text(s.read, 30) ? '<span class="pm-it-r">' + esc(text(s.read, 30)) + '</span>' : '') + (fig && text(s.image.credit, 120) ? '<span class="pm-it-cr">' + esc(text(s.image.credit, 120)) + '</span>' : '') + '</span>' +
         (fig ? '<span class="pm-thumb">' + fig + '</span>' : '') + '</a></li>';
     }).join('') + '</ol></div></section>';
   }
@@ -182,19 +179,48 @@
     var h = ''; try { h = String(C.html('home', { short: true, extra: 'pm-cap' }) || ''); } catch (_) { return ''; }
     return h.replace('data-gbm-capture="home"', 'data-gbm-capture="magazine"').replace(' fp-mod-capture', '');
   }
-  function pmTexas(D) {
-    var T = obj(D.texas); if (!T || !text(T.title, 120)) return '';
-    var stats = list(T.stats, 6).map(obj).filter(function (x) { return x && text(x.value, 12) && text(x.label, 60); });
-    var Cm = obj(T.compare), cr = Cm ? list(Cm.rows, 6).map(obj).filter(function (r) { return r && text(r.label, 30) && text(r.before, 12) && text(r.after, 12); }) : [];
-    return '<section class="pm-damage pm-texas" id="pm-texas" aria-labelledby="pm-texas-t"><div class="pm-in">' + pmHead('texas', T) +
-      (text(T.ranking, 160) ? '<p class="pm-rank">' + esc(text(T.ranking, 160)) + '</p>' : '') +
-      (stats.length ? '<ul class="pm-stats">' + stats.map(function (x) {
-        return '<li><b>' + esc(text(x.value, 12)) + '</b><span>' + esc(text(x.label, 60)) + '</span>' + (text(x.detail, 90) ? '<small>' + esc(text(x.detail, 90)) + '</small>' : '') + '</li>';
-      }).join('') + '</ul>' : '') +
-      (cr.length ? '<div class="pm-cmp"><p class="pm-yl">' + esc(text(Cm.label, 60)) + '</p><table><thead><tr><td></td><th scope="col">' + esc(text(Cm.beforeLabel, 40)) + '</th><th scope="col">' + esc(text(Cm.afterLabel, 40)) + '</th></tr></thead><tbody>' + cr.map(function (r) {
-        return '<tr><th scope="row">' + esc(text(r.label, 30)) + '</th><td>' + esc(text(r.before, 12)) + '</td><td class="pm-after">' + esc(text(r.after, 12)) + '</td></tr>';
-      }).join('') + '</tbody></table></div>' : '') +
-      '<div class="pm-foot-row">' + pmSrc(T.source) + '</div></div></section>';
+  function pmScoring(D) {
+    var S = obj(D.scoring); if (!S) return '';
+    var cols = list(S.cols, 6).map(function (c) { return text(c, 4); });
+    var rows = list(S.rows, 2).map(obj).filter(function (r) { return r && text(r.team, 30) && list(r.q, 6).length === cols.length - 1 && num(r.f) !== null; });
+    var plays = list(S.plays, 24).map(obj).filter(function (p) { return p && text(p.when, 16) && text(p.play, 140) && text(p.score, 20); });
+    if (!rows.length && !plays.length) return '';
+    return '<section class="pm-sbs" id="pm-scoring" aria-labelledby="pm-scoring-t"><div class="pm-in">' + pmHead('scoring', S) +
+      (rows.length ? '<table class="pm-line"><caption class="pm-vh">Score by quarter</caption><thead><tr><th scope="col"><span class="pm-vh">Team</span></th>' + cols.map(function (c) { return '<th scope="col">' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>' + rows.map(function (r) {
+        return '<tr' + (r.us ? ' class="pm-us"' : '') + '><th scope="row">' + (text(r.rank, 8) ? '<small>' + esc(text(r.rank, 8)) + '</small> ' : '') + esc(text(r.team, 30)) + '</th>' + list(r.q, 6).map(function (v) { return '<td>' + esc(String(v)) + '</td>'; }).join('') + '<td class="pm-fin">' + r.f + '</td></tr>';
+      }).join('') + '</tbody></table>' : '') +
+      (plays.length ? '<ol class="pm-plays">' + plays.map(function (p) {
+        return '<li' + (p.uf ? ' class="pm-uf"' : '') + '><span class="pm-pw">' + esc(text(p.when, 16)) + '</span><span class="pm-pp">' + esc(text(p.play, 140)) + '</span><b class="pm-ps">' + esc(text(p.score, 20)) + '</b></li>';
+      }).join('') + '</ol>' : '') + pmSrc(S.source) + '</div></section>';
+  }
+  function pmBox(D) {
+    var B = obj(D.box); if (!B) return '';
+    var cols = list(B.cols, 2).map(function (c) { return text(c, 20); });
+    var rows = list(B.rows, 14).filter(function (r) { return Array.isArray(r) && r.length === 3 && text(r[0], 30) && text(r[1], 30) && text(r[2], 30); });
+    var lead = list(B.leaders, 2).map(obj).filter(function (t) { return t && text(t.team, 20) && list(t.items, 8).length; });
+    if (cols.length !== 2 || !rows.length) return '';
+    return '<section class="pm-box" id="pm-box" aria-labelledby="pm-box-t"><div class="pm-in">' + pmHead('box', B) +
+      '<table class="pm-tstats"><caption class="pm-vh">Team stats</caption><thead><tr><td></td><th scope="col">' + esc(cols[0]) + '</th><th scope="col">' + esc(cols[1]) + '</th></tr></thead><tbody>' + rows.map(function (r) {
+        return '<tr><th scope="row">' + esc(text(r[0], 30)) + '</th><td>' + esc(text(r[1], 30)) + '</td><td>' + esc(text(r[2], 30)) + '</td></tr>';
+      }).join('') + '</tbody></table>' +
+      (lead.length ? '<div class="pm-leaders">' + lead.map(function (t) {
+        return '<div><h3>' + esc(text(t.team, 20)) + ' leaders</h3><dl>' + list(t.items, 8).filter(function (i) { return Array.isArray(i) && text(i[0], 20) && text(i[1], 160); }).map(function (i) {
+          return '<dt>' + esc(text(i[0], 20)) + '</dt><dd>' + esc(text(i[1], 160)) + '</dd>';
+        }).join('') + '</dl></div>';
+      }).join('') + '</div>' : '') + pmSrc(B.source) + '</div></section>';
+  }
+  function pmWatch(D) {
+    var W = obj(D.watch), items = W ? list(W.items, 4).map(obj).filter(function (v) { return v && text(v.title, 120) && /^https:\/\/www\.instagram\.com\/reel\/[\w-]+\/$/.test(String(v.url || '')); }) : [];
+    if (!items.length) return '';
+    return '<section class="pm-watch" id="pm-watch" aria-labelledby="pm-watch-t"><div class="pm-in">' + pmHead('watch', W) + '<ul class="pm-vids">' + items.map(function (v) {
+      return '<li><a href="' + esc(v.url) + '" target="_blank" rel="noopener"><span class="pm-play" aria-hidden="true"></span><span class="pm-vt"><span class="pm-kick">' + esc(text(v.meta, 60)) + '</span><b>' + esc(text(v.title, 120)) + '</b><small>Opens on Instagram</small></span></a></li>';
+    }).join('') + '</ul></div></section>';
+  }
+  function pmDownload(D) {
+    var X = obj(D.download); if (!X || !text(X.label, 60) || !/^https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$/.test(String(X.url || ''))) return '';
+    // A plain link with the download attribute: it saves the file, never opens a print dialog.
+    return '<section class="pm-dl" id="pm-download" aria-label="Download the magazine"><div class="pm-in">' + (text(X.kicker, 40) ? '<p class="pm-kick">' + esc(text(X.kicker, 40)) + '</p>' : '') +
+      '<div class="pm-dl-row"><a class="pm-dl-btn" href="' + esc(X.url) + '" download="' + esc(text(X.file, 80) || 'GatorBait-Magazine.pdf') + '">' + esc(text(X.label, 60)) + '</a>' + (text(X.note, 40) ? '<span class="pm-dl-note">' + esc(text(X.note, 40)) + '</span>' : '') + '</div></div></section>';
   }
   function pmNext(D) {
     var N = obj(D.next); if (!N || !text(N.title, 120)) return '';
@@ -205,11 +231,17 @@
       (P && text(P.title, 60) ? '<div class="pm-pick"><span class="pm-badge">' + esc(text(P.badge, 40)) + '</span><h3>' + esc(text(P.title, 60)) + '</h3><p>' + esc(text(P.text, 300)) + '</p></div>' : '') +
       '</div>' + pmSignup() + '</div></div></section>';
   }
+  function pmCredits(D) {
+    var C = obj(D.credits); if (!C) return '';
+    var other = list(C.other, 4).map(function (t) { return text(t, 80); }).filter(Boolean);
+    if (!C.uaa && !other.length) return '';
+    return '<div class="pm-credits"><p class="pm-kick">' + esc(text(C.label, 30) || 'Photo credits') + '</p>' + (C.uaa ? '<p>' + pmUaaCredit('pm-crl') + '</p>' : '') + other.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join('') + '</div>';
+  }
   function pmFoot(D) {
     var R = obj(D.reference), links = R ? list(R.links, 6).map(obj).filter(function (l) { return l && safeUrl(l.url) && text(l.label, 40); }) : [];
     return '<footer class="pm-foot"><div class="pm-in">' + (links.length ? '<nav aria-label="' + esc(text(R.label, 40) || 'More') + '"><p class="pm-kick">' + esc(text(R.label, 40)) + '</p><ul>' + links.map(function (l) { return '<li><a href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a></li>'; }).join('') + '</ul></nav>' : '') +
-      pmSrc(D.asOf) + pmPdfLink(D, 'pm-print') + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
+      pmCredits(D) + pmSrc(D.asOf) + pmPdfLink(D, 'pm-print') + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
   }
   function renderPostgame(D) {
-    return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmDamage(D) + pmFlow(D) + pmGrades(D) + pmQuotes(D) + pmPackage(D) + pmTexas(D) + pmNext(D) + pmFoot(D) + '</div>';
+    return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmPackage(D, 'columns') + pmPackage(D, 'coverage') + pmDamage(D) + pmScoring(D) + pmBox(D) + pmFlow(D) + pmQuotes(D) + pmWatch(D) + pmNext(D) + pmDownload(D) + pmFoot(D) + '</div>';
   }

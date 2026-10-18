@@ -23,9 +23,10 @@ for (const [id, f] of Object.entries({ d3cfa5_fb8dcc167ff64b5c90cc1b6904390bf7: 
 const stand = (w, h, label) => `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16328f"/><stop offset=".65" stop-color="#3a4f8f"/><stop offset="1" stop-color="#fa4616"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="52%" fill="#fff" fill-opacity=".85" font-family="sans-serif" font-size="${Math.round(w / 16)}" text-anchor="middle">${label}</text></svg>`;
 // Required sections come from the issue itself: report-card and flow are optional (dropped when the edition has no such data).
 const ISSUE = JSON.parse(readFileSync('sports-live/magazine-issue-postgame.json', 'utf8'));
-const OPTIONAL = { grades: '#pm-grades', flow: '#pm-flow' };
-const SECTIONS = ['.pm-entrance', '#pm-cover', '.pm-final', '.pm-toc', '#pm-damage', '#pm-quotes', '#pm-package', '#pm-texas', '#pm-next', '.pm-foot'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
-const SHOT = ['#pm-damage', '#pm-quotes', '#pm-package', '#pm-texas', '#pm-next'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
+const OPTIONAL = { flow: '#pm-flow', damage: '#pm-damage', scoring: '#pm-scoring', box: '#pm-box', quotes: '#pm-quotes', watch: '#pm-watch', columns: '#pm-columns', coverage: '#pm-coverage', download: '#pm-download' };
+const SECTIONS = ['.pm-entrance', '#pm-cover', '.pm-final', '.pm-toc', '#pm-next', '.pm-foot'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
+const SHOT = ['#pm-next', '.pm-foot'].concat(Object.entries(OPTIONAL).filter(([k]) => ISSUE[k]).map(([, sel]) => sel));
+const DOWNLOAD_URL = ISSUE.download && ISSUE.download.url;
 const browser = await chromium.launch();
 const results = [];
 for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430', 430, 932], ['1366', 1366, 900]]) {
@@ -70,7 +71,7 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
     return {
       scrollW: doc.scrollWidth, clientW: doc.clientWidth, over, missing: SECTIONS.filter((s) => !root.querySelector(s)), h1: root.querySelectorAll('h1').length,
       h1Text: (root.querySelector('h1') || {}).textContent, imgs: root.querySelectorAll('img').length,
-      bad: [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')).filter((h) => !/^(\/|#pm-|https:\/\/www\.gatorbaitmedia\.com\/)/.test(h)),
+      bad: [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')).filter((h) => !/^(\/|#pm-|https:\/\/www\.gatorbaitmedia\.com\/|https:\/\/floridagators\.com\/?(galleries)?$|https:\/\/www\.instagram\.com\/(hannahmorganphoto\/|reel\/[\w-]+\/)$|https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$)/.test(h)),
       anchorsOk: [...root.querySelectorAll('a[href^="#"]')].every((a) => !!root.querySelector(a.getAttribute('href'))),
       capture: cap ? cap.getAttribute('data-gbm-capture') : null, captureH: cap ? Math.round(cap.getBoundingClientRect().height) : 0,
       packageOrder: [...root.querySelectorAll('.pm-it h3')].map((h) => h.textContent.slice(0, 28)),
@@ -78,6 +79,21 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
       nativeHidden: getComputedStyle(document.getElementById('SITE_PAGES')).display === 'none', shellHidden: getComputedStyle(document.getElementById('gbm-mobile-shell-host')).display === 'none'
     };
   }, SECTIONS);
+  info.extra = await page.evaluate(([dl]) => {
+    const root = document.getElementById('gbm-magazine-page'), t = root.innerText;
+    const btn = root.querySelector('a.pm-dl-btn'), cr = (re) => [...root.querySelectorAll('a')].filter((a) => re.test(a.href)).length;
+    const last = root.querySelector('.pm-wrap').lastElementChild, dlSec = root.querySelector('#pm-download');
+    return {
+      dlOk: !!btn && btn.getAttribute('href') === dl && btn.hasAttribute('download') && btn.textContent.trim() === 'Download the full magazine (PDF)' && /PDF, 16 pages, 2\.4 MB/.test(dlSec.textContent),
+      dlBottom: !!dlSec && (dlSec.nextElementSibling === last || dlSec === last), dlTap: btn ? Math.round(btn.getBoundingClientRect().height) : 0,
+      printBtn: !!root.querySelector('button.pm-print,a.pm-print,.pm-pdf') || /window\.print/.test(root.innerHTML),
+      uaaLinks: [cr(/^https:\/\/floridagators\.com\/$/), cr(/hannahmorganphoto/), cr(/floridagators\.com\/galleries/)],
+      uaaImgs: [...root.querySelectorAll('img')].filter((i) => /UAA and Hannah White/.test(i.alt)).length, uaaCaps: (t.match(/Photo courtesy UAA and Hannah White/g) || []).length,
+      watch: [...root.querySelectorAll('.pm-vids b')].map((b) => b.textContent), igEmbed: !!root.querySelector('blockquote.instagram-media,iframe'),
+      georgiaRank: /(No\. ?\d+|#\d+)\s+Georgia|Georgia\s*[(,]?\s*\d+-\d+|Georgia[^.]{0,20}ranked/i.test(t), georgia: (t.match(/Georgia/g) || []).length,
+      order: [...root.querySelectorAll('#pm-cover h2,.pm-it h3')].map((h) => h.textContent.slice(0, 30))
+    };
+  }, [DOWNLOAD_URL]);
   // Route lifecycle: leave /magazine (unmount, native page back), then return (remount once).
   const life = await page.evaluate(async () => {
     history.pushState({}, '', '/'); window.dispatchEvent(new Event('gbmroutechange')); await new Promise((r) => setTimeout(r, 50));
@@ -95,6 +111,6 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
 }
 await browser.close();
 console.log(JSON.stringify(results, null, 1));
-const fail = results.filter((r) => r.scrollW > r.clientW + 1 || r.over.length || r.missing.length || r.bad.length || r.h1 !== 1 || !r.anchorsOk || r.capture !== 'magazine' || r.lowCount || r.smallTaps.length || r.feed.length || r.errors.length || !r.life.gone || r.life.back !== 1 || !r.nativeHidden);
+const fail = results.filter((r) => !r.extra.dlOk || !r.extra.dlBottom || r.extra.dlTap < 44 || r.extra.printBtn || r.extra.uaaLinks.some((n) => n < 1) || r.extra.georgiaRank || r.extra.igEmbed || r.extra.watch.length !== 2 || r.scrollW > r.clientW + 1 || r.over.length || r.missing.length || r.bad.length || r.h1 !== 1 || !r.anchorsOk || r.capture !== 'magazine' || r.lowCount || r.smallTaps.length || r.feed.length || r.errors.length || !r.life.gone || r.life.back !== 1 || !r.nativeHidden);
 if (fail.length) { console.error('FAIL', fail.map((f) => f.name).join(',')); process.exit(1); }
 console.log('Postgame QA passed at 320/390/430/1366.');

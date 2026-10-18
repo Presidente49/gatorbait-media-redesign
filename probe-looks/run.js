@@ -4,11 +4,11 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const BASE = 'https://www.gatorbaitmedia.com';
 const PAGES = [
-  ['home', '/'], ['magazine', '/magazine'], ['allnews', '/gatorbait-media-blogs'], ['latest', '/latest'],
+  ['home', '/'], ['magazine', '/magazine'], ['allnews', '/gatorbait-media-blogs'], 
   ['post', '/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll'],
   ['cat-buddy', '/gatorbait-media-blogs/categories/buddy-s-blog'], ['cat-recruit', '/gatorbait-media-blogs/categories/gator-recruiting'],
   ['about', '/about'], ['pricing', '/pricing-plans'], ['contact', '/contact'], ['shop', '/shop'], ['shop-all', '/category/all-products'],
-  ['account', '/account/my-account'], ['members', '/members'],
+  ['account', '/account/my-account'], ['login', '/?login=1'], ['members', '/members'],
 ];
 const VIEWS = [{ name: '390', w: 390, h: 844, mobile: true }, { name: '1366', w: 1366, h: 900, mobile: false }];
 const T = [200, 500, 1000, 2000, 4000];
@@ -44,13 +44,13 @@ const INIT = () => {
       return of.apply(this, arguments).then(r => { rec.st = r.status; rec.dur = now() - rec.t; rec.age = r.headers.get('age') || ''; rec.cc = short(r.headers.get('cache-control') || '', 40); rec.lm = short(r.headers.get('last-modified') || '', 30); return r; }, e => { rec.err = short(e && e.message, 40); throw e; });
     };
   } catch (e) {}
-  const html = document.documentElement;
-  const veilOn = () => /prepaint|veil|gbm-boot|gbm-hold/i.test(html.className || '');
-  try { new MutationObserver(() => { G.classLog.push({ t: now(), cls: short(html.className, 120) }); if (G.classLog.length > 30) G.classLog.shift(); }).observe(html, { attributes: true, attributeFilter: ['class'] }); } catch (e) {}
+  const veilOn = () => /prepaint|veil|gbm-boot|gbm-hold/i.test((document.documentElement && document.documentElement.className) || '');
+  const hookHtml = () => { const h = document.documentElement; if (!h) return setTimeout(hookHtml, 5); G.classLog.push({ t: now(), cls: short(h.className, 120) }); try { new MutationObserver(() => { G.classLog.push({ t: now(), cls: short(h.className, 120) }); if (G.classLog.length > 30) G.classLog.shift(); }).observe(h, { attributes: true, attributeFilter: ['class'] }); } catch (e) {} }; hookHtml();
   const vis = el => { const r = el.getBoundingClientRect(); if (r.width < 2 || r.height < 2) return null; const cs = getComputedStyle(el); if (cs.visibility === 'hidden' || cs.display === 'none' || +cs.opacity < 0.05) return null; return r; };
   const where = el => { const out = []; for (let n = el; n && n !== document.body && out.length < 4; n = n.parentElement) { if (n.id) out.push('#' + n.id); else if (n.getAttribute && n.getAttribute('data-hook')) out.push('[' + n.getAttribute('data-hook') + ']'); else if (typeof n.className === 'string' && n.className.trim()) out.push('.' + n.className.trim().split(/\s+/)[0]); } return out.join('<'); };
   let prevTitles = new Set(), prevLead = '', prevFont = '';
-  const sample = () => {
+  const sample = () => { try { sample0(); } catch (e) { G.err = String(e && e.message).slice(0, 100); } };
+  const sample0 = () => {
     if (!document.body) return;
     const t = now();
     const titles = new Set(); let lead = null;
@@ -154,7 +154,7 @@ async function load(browser, view, pageDef, mode, ctxHolder) {
     // final state
     const g = await page.evaluate(() => { const G = window.__g || {}; return { dcl: G.dcl, load: G.load, fcp: (G.paints || {})['first-contentful-paint'], fp: (G.paints || {})['first-paint'], lcp: G.lcp, shifts: G.shifts, cls: +(G.shifts || []).reduce((a, s) => a + s.v, 0).toFixed(4), titleChanges: G.titleChanges, leadChanges: G.leadChanges, fontChanges: G.fontChanges, classLog: G.classLog, fetches: G.fetches, storage: G.storage, samples: (G.samples || []).length, timeOrigin: G.t0 }; });
     // finalize lead + title list now
-    r.final = await page.evaluate(() => { const last = (window.__g.samples || []).slice(-1)[0] || {}; return { lead: last.lead, titles: last.titles, veil: last.veil }; });
+    r.final = await page.evaluate(() => { const last = (window.__g.samples || []).slice(-1)[0] || {}; return { lead: last.lead, titles: last.titles, veil: last.veil, err: window.__g.err }; });
     r.nav = { dcl: g.dcl, load: g.load, fcp: g.fcp, fp: g.fp, lcp: g.lcp, cls: g.cls };
     r.shifts = (g.shifts || []).filter(s => s.v >= 0.002).slice(0, 8);
     const T0 = g.timeOrigin || t0node;

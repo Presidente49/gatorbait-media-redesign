@@ -10,6 +10,8 @@ html.gbm-sp,html.gbm-sp body{background:#060b1c!important}
 html.gbm-sp.gbm-bc :is(#SITE_CONTAINER,#masterPage,#PAGES_CONTAINER,#SITE_PAGES){background:transparent!important}
 html.gbm-sp.gbm-bc [id^=bgLayers_pageBackground]{display:none!important}
 html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is([id^=bgLayers],[data-testid=colorUnderlay],section){background-color:transparent!important}
+/* Desktop: reserve the band's height until it lands, so the page does not jump (the theme reserve does not apply at desktop widths). */
+@media(min-width:821px){html.gbm-sp.gbm-band-pre:not(:has(#gbm-band)) #SITE_CONTAINER{padding-top:var(--gbm-bh,161px)}}
 /* Type: white headings in Barlow Condensed, light body in Barlow, orange links. */
 html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is([data-testid=richTextElement],[data-hook=item-description]) :is(p,span,li,div,em,strong,b,i,u,h4,h5,h6,label){color:#e6ebf8!important;-webkit-text-fill-color:#e6ebf8!important;font-family:Barlow,sans-serif!important}
 html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]),html.gbm-sp:is(.gbm-sp-about,.gbm-sp-contact,.gbm-sp-plans,.gbm-sp-policies,.gbm-sp-light).gbm-bc #SITE_PAGES :is(h1,h2,h3,[data-hook=app-title]) *{color:#fff!important;-webkit-text-fill-color:#fff!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-style:normal!important;font-weight:800!important;text-transform:uppercase;letter-spacing:.01em!important}
@@ -46,6 +48,7 @@ html.gbm-sp-policies #gbm-legal :is(h1,h2,h3,h4){color:#fff!important;-webkit-te
 html.gbm-sp-policies #gbm-legal a{color:#FA4616!important;-webkit-text-fill-color:#FA4616!important}
 html.gbm-sp-policies #gbm-legal .notice{background:#0f1a38!important;border:1px solid #1d2b52!important;border-left:4px solid #FA4616!important}
 /* Wix app pages (groups, account, profile, members): navy page, Wix-owned light panel; headings made readable on it. */
+html.gbm-sp-app.gbm-bc #SITE_PAGES [class*=direction-10-horizontal]>p{color:#07122E!important;-webkit-text-fill-color:#07122E!important}
 html.gbm-sp-app.gbm-bc #SITE_PAGES :is(h1,h2,h3){color:#0b1220!important;-webkit-text-fill-color:#0b1220!important;font-family:"Barlow Condensed",Barlow,sans-serif!important;font-weight:800!important;text-transform:uppercase}
 html.gbm-sp #SITE_PAGES a:focus-visible{outline:2px solid #FA4616;outline-offset:2px}
 </style>

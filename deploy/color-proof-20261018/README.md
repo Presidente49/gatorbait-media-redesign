@@ -7,7 +7,7 @@ Core Orange #FA4616, Core Blue #0021A5, Dark Blue #002657, Gator green #22884C (
 
 ## Files
 - `before-390.png`, `after-390.png`, `before-1366.png`, `after-1366.png` (full page)
-- `color-proof.css` (the only change, 20 declarations, colors only)
+- `color-proof.css` (the only change, colors only)
 - `proof.mjs` (render script), `metrics.json`
 
 Source: `sports-live/broadcast-home.js` (homepage skin of embed 0c13f955) on main 563fe3b, rendered locally with the repo's Gazette runtime and committed feeds. Photos are a neutral placeholder in both runs. Run: `PLAYWRIGHT_PKG=/opt/node22/lib/node_modules node deploy/color-proof-20261018/proof.mjs`

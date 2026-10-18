@@ -270,7 +270,7 @@ html #gbm-magazine-page.pm .gbc input[type=email]{color:var(--pm-ink)!important;
 #gbm-magazine-page.pm .pm-entry-hint{font:500 12px/1.4 var(--mz-sans);color:#c4d1ed;margin-top:12px}
 #gbm-magazine-page.pm.pm-opening .pm-poster{transform:rotateY(-78deg);opacity:0}
 #gbm-magazine-page.pm.pm-opened .pm-entrance{display:none}
-#gbm-magazine-page.pm .pm-readerbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:10px;min-height:58px;padding:4px var(--mz-pad);background:var(--pm-navy);color:#fff;box-shadow:0 2px 8px #0002}
+#gbm-magazine-page.pm .pm-readerbar{position:-webkit-sticky;position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:10px;min-height:58px;padding:4px var(--mz-pad);background:var(--pm-navy);color:#fff;box-shadow:0 -160px 0 0 var(--pm-navy);-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
 #gbm-magazine-page.pm .pm-readerbrand{display:inline-flex;align-items:center;min-height:44px;margin-right:auto;font:800 22px/1 var(--mz-cond);text-transform:uppercase;letter-spacing:-.02em}
 #gbm-magazine-page.pm .pm-readerbar button,#gbm-magazine-page.pm .pm-readerbar summary{min-height:44px;padding:12px 8px;border:0;background:transparent;color:#fff;font:700 14px/20px var(--mz-sans);cursor:pointer}
 #gbm-magazine-page.pm .pm-reader-menu summary{list-style:none;border-bottom:2px solid var(--pm-orange)}

@@ -1,0 +1,43 @@
+{
+  "id": "1dd74333-ee02-40da-9c93-cf8fd787c129",
+  "surface": "/magazine",
+  "decision": "Brenden, 2026-10-18 01:40Z: \"keep the broadcast blue one\" for all pages",
+  "liveRev": "111",
+  "liveFp": "31abecc5",
+  "liveChars": 2762,
+  "livePin": "312018fa66e644a3f32fe473b6a855d1b114c356 sports-live/magazine-pregame.js (white newsroom, PR #324)",
+  "liveReadAt": "2026-10-18T01:40Z (read-only GET, category ESSENTIAL, HEAD)",
+  "rollback": "deploy/broadcast-restore-20261018/rollback/1dd74333-rev111.html (2762 chars, djb2 31abecc5, matches live)",
+  "newPin": "MERGE_COMMIT_OF_THIS_PR (sports-live/magazine-pregame.js). Equivalent now: 6c49b81512d457727ec64e7f93c146763161efdb, whose magazine-pregame.js is byte-identical to this PR's build (sha256 526abdeb7a517e45bd6accec0d388afe95c299b85f756b55f503f2eaafa0b931, verified on jsDelivr).",
+  "loaderChange": "In the rev-111 body, replace 312018fa66e644a3f32fe473b6a855d1b114c356 with the new pin in both places (header comment src= and the jsDelivr script src). Length stays 2762.",
+  "candidate": {
+    "file": "deploy/broadcast-restore-20261018/1dd74333-candidate-6c49b815.html",
+    "pin": "6c49b81512d457727ec64e7f93c146763161efdb",
+    "chars": 2762,
+    "fp": "8c224901"
+  },
+  "write": "Codex: guarded in-place PATCH on revision 111 and djb2 31abecc5, category ESSENTIAL re-sent, no site publish. Rollback = PATCH the rev111 file at the then-current revision.",
+  "reverted": [
+    "sports-live/src/magazine-pregame.css -> 6c49b815 (undoes Swamp Night #322 and white newsroom #324 skins; restores the Oct. 16 broadcast-set blue skin)",
+    "sports-live/src/magazine.css -> 6c49b815 (Swamp Night screen palette and Bebas masthead font var)",
+    "sports-live/src/magazine-pregame.js -> 6c49b815 (drops the white-release Shop/Join masthead links, which have no blue styling)",
+    "sports-live/magazine-issue-pregame.json cover image -> d3cfa5_67659843 (the blue broadcast-set cover; the only data difference)",
+    "Rebuilt magazine-pregame.js, magazine.js, magazine-postgame.js; magazine-wednesday.js left as it was (already stale on main by design)"
+  ],
+  "content": "Issue data is main's current Game Day Edition (Week 8, Austin, Oct. 17). At runtime the bundle still pulls the live blog feed and scoreboard: QA shows ticker and game card 'Final: FLA 27 TEX 24' and feed-swapped lead/cards, same as live rev 111.",
+  "qa": {
+    "method": "Public https://www.gatorbaitmedia.com/magazine in Chromium via proxy, loader's jsDelivr bundle swapped for this build",
+    "widths": [320, 390, 430, 1366],
+    "horizontalOverflow": "none",
+    "jsErrors": "none from the bundle; 2x 'wixTagManager is not defined' from Wix, also present with the live bundle",
+    "fonts": "Barlow and Barlow Condensed loaded and used",
+    "contrast": "Small 'Soothsayer picks' tag (#ffe4d8 on #fa4616, 2.9:1) and the 'Week 8' issue label on the royal-blue top glow (~3.4:1) are below AA; both are unchanged from the approved pre-Swamp blue design",
+    "renders": "deploy/broadcast-restore-20261018/qa/magazine-blue-{320,390,430,1366}.jpg",
+    "results": "deploy/broadcast-restore-20261018/qa/qa-blue.json"
+  },
+  "notes": [
+    "No Texas postgame magazine edition exists in the repo (magazine-issue-postgame.json is still South Carolina, Oct. 11). The page stays the Game Day pregame issue with a live final score; a postgame edition is newsroom work, not part of this restore.",
+    "The front-page card (sports-live/magazine-card.json) still points at the Swamp Night cover d3cfa5_2da2f733; that belongs to the homepage group.",
+    "Theme c66d5b7f site-shell.css is the theme group's object; the magazine page hides the site header, so this build renders blue regardless."
+  ]
+}

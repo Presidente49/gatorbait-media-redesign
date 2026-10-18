@@ -1,0 +1,502 @@
+[
+ {
+  "width": 320,
+  "swapped": 1,
+  "errors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "live": "feed",
+  "issueNo": "Game Day EditionWeek 8 · Austin",
+  "date": "Saturday, October 17, 2026",
+  "lead": "Is the SEC undergoing a drain of excellence?",
+  "leadUrl": "/post/is-the-sec-undergoing-a-drain-of-excellence",
+  "cards": [
+   "Franz Beard · The Soothsayer · Oct. 16The Soothsayer: Texas big unless",
+   "The Soothsayer: Texas big unless the UF defense finds an exorcist",
+   "Eddie Gilley · Oct. 15So You're Saying There's a Chance!?The low-scori",
+   "So You're Saying There's a Chance!?"
+  ],
+  "coverImg": "https://static.wixstatic.com/media/d3cfa5_67659843d29e4a5d8daf63dbbca7b563~mv2.jpg/v1/fit/w_480,h_622,al_c,q_80,enc_auto/gatorbait.jpg",
+  "bg": "radial-gradient(90% 40% at 50% 0%, rgb(26, 70, 196) 0%, rgb(11, 42, 134) 38%, rgb(6, 11, 28) 100%)",
+  "bodyBg": "rgba(0, 0, 0, 0)",
+  "docOverflow": false,
+  "scrollW": 320,
+  "clientW": 320,
+  "overEls": [],
+  "fonts": [
+   "Barlow",
+   "Barlow Condensed"
+  ],
+  "barlowLoaded": true,
+  "lows": [
+   {
+    "t": "Week 8 · Austin",
+    "cls": "",
+    "c": "rgb(158, 172, 208)",
+    "bg": "gradient",
+    "top": 163,
+    "cr": 3.41
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10636,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10843,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 11035,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 11226,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 11417,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 11625,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 11833,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 12024,
+    "cr": 2.91
+   },
+   {
+    "t": "2026 Florida football",
+    "cls": "",
+    "c": "rgb(20, 39, 68)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 17583,
+    "cr": 4.24
+   },
+   {
+    "t": "Know the Gators.",
+    "cls": "",
+    "c": "rgb(255, 255, 255)",
+    "bg": "rgb(255, 255, 255)",
+    "top": 17619,
+    "cr": 1
+   }
+  ],
+  "lowCount": 11,
+  "file": "deploy/broadcast-restore-20261018/qa/magazine-blue-320.jpg"
+ },
+ {
+  "width": 390,
+  "swapped": 1,
+  "errors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "live": "feed",
+  "issueNo": "Game Day EditionWeek 8 · Austin",
+  "date": "Saturday, October 17, 2026",
+  "lead": "Is the SEC undergoing a drain of excellence?",
+  "leadUrl": "/post/is-the-sec-undergoing-a-drain-of-excellence",
+  "cards": [
+   "Franz Beard · The Soothsayer · Oct. 16The Soothsayer: Texas big unless",
+   "The Soothsayer: Texas big unless the UF defense finds an exorcist",
+   "Eddie Gilley · Oct. 15So You're Saying There's a Chance!?The low-scori",
+   "So You're Saying There's a Chance!?"
+  ],
+  "coverImg": "https://static.wixstatic.com/media/d3cfa5_67659843d29e4a5d8daf63dbbca7b563~mv2.jpg/v1/fit/w_480,h_622,al_c,q_80,enc_auto/gatorbait.jpg",
+  "bg": "radial-gradient(90% 40% at 50% 0%, rgb(26, 70, 196) 0%, rgb(11, 42, 134) 38%, rgb(6, 11, 28) 100%)",
+  "bodyBg": "rgba(0, 0, 0, 0)",
+  "docOverflow": false,
+  "scrollW": 390,
+  "clientW": 390,
+  "overEls": [],
+  "fonts": [
+   "Barlow",
+   "Barlow Condensed"
+  ],
+  "barlowLoaded": true,
+  "lows": [
+   {
+    "t": "Week 8 · Austin",
+    "cls": "",
+    "c": "rgb(158, 172, 208)",
+    "bg": "gradient",
+    "top": 154,
+    "cr": 3.41
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 9678,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 9886,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10077,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10268,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10460,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10667,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10875,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 11066,
+    "cr": 2.91
+   },
+   {
+    "t": "2026 Florida football",
+    "cls": "",
+    "c": "rgb(20, 39, 68)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 16911,
+    "cr": 4.24
+   },
+   {
+    "t": "Know the Gators.",
+    "cls": "",
+    "c": "rgb(255, 255, 255)",
+    "bg": "rgb(255, 255, 255)",
+    "top": 16947,
+    "cr": 1
+   }
+  ],
+  "lowCount": 11,
+  "file": "deploy/broadcast-restore-20261018/qa/magazine-blue-390.jpg"
+ },
+ {
+  "width": 430,
+  "swapped": 1,
+  "errors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "live": "feed",
+  "issueNo": "Game Day EditionWeek 8 · Austin",
+  "date": "Saturday, October 17, 2026",
+  "lead": "Is the SEC undergoing a drain of excellence?",
+  "leadUrl": "/post/is-the-sec-undergoing-a-drain-of-excellence",
+  "cards": [
+   "Franz Beard · The Soothsayer · Oct. 16The Soothsayer: Texas big unless",
+   "The Soothsayer: Texas big unless the UF defense finds an exorcist",
+   "Eddie Gilley · Oct. 15So You're Saying There's a Chance!?The low-scori",
+   "So You're Saying There's a Chance!?"
+  ],
+  "coverImg": "https://static.wixstatic.com/media/d3cfa5_67659843d29e4a5d8daf63dbbca7b563~mv2.jpg/v1/fit/w_480,h_622,al_c,q_80,enc_auto/gatorbait.jpg",
+  "bg": "radial-gradient(90% 40% at 50% 0%, rgb(26, 70, 196) 0%, rgb(11, 42, 134) 38%, rgb(6, 11, 28) 100%)",
+  "bodyBg": "rgba(0, 0, 0, 0)",
+  "docOverflow": false,
+  "scrollW": 430,
+  "clientW": 430,
+  "overEls": [],
+  "fonts": [
+   "Barlow",
+   "Barlow Condensed"
+  ],
+  "barlowLoaded": true,
+  "lows": [
+   {
+    "t": "Week 8 · Austin",
+    "cls": "",
+    "c": "rgb(158, 172, 208)",
+    "bg": "gradient",
+    "top": 161,
+    "cr": 3.41
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 9481,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 9673,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 9864,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10056,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10247,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10455,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10662,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 10854,
+    "cr": 2.91
+   },
+   {
+    "t": "2026 Florida football",
+    "cls": "",
+    "c": "rgb(20, 39, 68)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 16972,
+    "cr": 4.24
+   },
+   {
+    "t": "Know the Gators.",
+    "cls": "",
+    "c": "rgb(255, 255, 255)",
+    "bg": "rgb(255, 255, 255)",
+    "top": 17008,
+    "cr": 1
+   }
+  ],
+  "lowCount": 11,
+  "file": "deploy/broadcast-restore-20261018/qa/magazine-blue-430.jpg"
+ },
+ {
+  "width": 1366,
+  "swapped": 1,
+  "errors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "live": "feed",
+  "issueNo": "Game Day EditionWeek 8 · Austin",
+  "date": "Saturday, October 17, 2026",
+  "lead": "Is the SEC undergoing a drain of excellence?",
+  "leadUrl": "/post/is-the-sec-undergoing-a-drain-of-excellence",
+  "cards": [
+   "Franz Beard · The Soothsayer · Oct. 16The Soothsayer: Texas big unless",
+   "The Soothsayer: Texas big unless the UF defense finds an exorcist",
+   "Eddie Gilley · Oct. 15So You're Saying There's a Chance!?The low-scori",
+   "So You're Saying There's a Chance!?"
+  ],
+  "coverImg": "https://static.wixstatic.com/media/d3cfa5_67659843d29e4a5d8daf63dbbca7b563~mv2.jpg/v1/fit/w_1200,h_1554,al_c,q_80,enc_auto/gatorbait.jpg",
+  "bg": "radial-gradient(90% 40% at 50% 0%, rgb(26, 70, 196) 0%, rgb(11, 42, 134) 38%, rgb(6, 11, 28) 100%)",
+  "bodyBg": "rgba(0, 0, 0, 0)",
+  "docOverflow": false,
+  "scrollW": 1366,
+  "clientW": 1366,
+  "overEls": [],
+  "fonts": [
+   "Barlow",
+   "Barlow Condensed"
+  ],
+  "barlowLoaded": true,
+  "lows": [
+   {
+    "t": "Independent Florida Gators coverage",
+    "cls": "pg-home",
+    "c": "rgb(158, 172, 208)",
+    "bg": "gradient",
+    "top": 54,
+    "cr": 3.41
+   },
+   {
+    "t": "Saturday, October 17, 2026",
+    "cls": "",
+    "c": "rgb(158, 172, 208)",
+    "bg": "gradient",
+    "top": 54,
+    "cr": 3.41
+   },
+   {
+    "t": "Week 8 · Austin",
+    "cls": "",
+    "c": "rgb(158, 172, 208)",
+    "bg": "gradient",
+    "top": 267,
+    "cr": 3.41
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 8143,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 8119,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 8119,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 8350,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 8350,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 8350,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 8558,
+    "cr": 2.91
+   },
+   {
+    "t": "Soothsayer picks",
+    "cls": "",
+    "c": "rgb(255, 228, 216)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 8558,
+    "cr": 2.91
+   },
+   {
+    "t": "2026 Florida football",
+    "cls": "",
+    "c": "rgb(20, 39, 68)",
+    "bg": "rgb(250, 70, 22)",
+    "top": 11503,
+    "cr": 4.24
+   }
+  ],
+  "lowCount": 13,
+  "file": "deploy/broadcast-restore-20261018/qa/magazine-blue-1366.jpg"
+ }
+]

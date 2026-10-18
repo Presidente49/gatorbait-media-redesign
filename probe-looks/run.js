@@ -1,4 +1,4 @@
-// Read-only live probe of https://www.gatorbaitmedia.com/magazine after the rev-115 swap (embed 1dd74333, pin 939ef9d2).
+// Read-only live probe of https://www.gatorbaitmedia.com/magazine after the rev-115 swap (embed 1dd74333, pin 939ef9d2). (rerun: 390 got a transient Wix HTTP 503)
 // Chrome at 390/430/1366/1920, cache-busting URL, no UA override (Wix bot 403). Screenshots to ./shots for the artifact.
 const { chromium } = require('playwright');
 const fs = require('fs');

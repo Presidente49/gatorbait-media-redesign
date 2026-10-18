@@ -256,11 +256,10 @@ html:has(#gbm-gate#gbm-gate) [data-hook=post-page] div:has(#gbm-gate#gbm-gate){b
 .gbm-modal-card p.gbm-modal-note{color:#aeb9cd!important}
 
 /* Oct. 18, 2026 first-paint reserve (jarvis/uniform-flash-20261018). The shell header (#gbm-site-header) and the inner-page band (#gbm-band)
-   are inserted by script after first paint, which pushed the page down 124-285 px. Reserve their height until they exist; the keyframe
+   are inserted by script after first paint, which pushed the page down 124-285 px. Reserve their height until they exist, on inner pages only (html.gbm-band-pre, set by the theme embed; the homepage and other routes are untouched); the keyframe
    collapses the reserve after 3 s so a failed embed can never leave a gap. Heights measured live: header 124 (94 at <=820), band 100 + .9*clamp(38px,6vw,68px) (84 at <=820). */
 html{--gbm-hh:124px;--gbm-bh:calc(100px + .9*clamp(38px,6vw,68px))}
 @media(max-width:820px){html{--gbm-hh:94px;--gbm-bh:calc(84px + .9*clamp(38px,6vw,68px))}}
-html:not(:has(#gbm-site-header .sh-track)) #SITE_CONTAINER::before{content:"";display:block;height:var(--gbm-hh);animation:gbmres 0s linear 3s forwards}
-html.gbm-band-pre:not(:has(#gbm-site-header .sh-track)) #SITE_CONTAINER::before{height:calc(var(--gbm-hh) + var(--gbm-bh))}
+html.gbm-band-pre:not(:has(#gbm-site-header .sh-track)) #SITE_CONTAINER::before{content:"";display:block;height:calc(var(--gbm-hh) + var(--gbm-bh));animation:gbmres 0s linear 3s forwards}
 html.gbm-band-pre:has(#gbm-site-header .sh-track):not(:has(#gbm-band)) #SITE_CONTAINER::before{content:"";display:block;height:var(--gbm-bh);animation:gbmres 0s linear 3s forwards}
 @keyframes gbmres{to{height:0}}

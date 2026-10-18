@@ -1,0 +1,1 @@
+{"id":"b1-spa-back-390","view":"390","note":"","error":"elementHandle.click: Timeout 8000ms exceeded.\nCall log:\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <img loading=\"eager\" decoding=\"async\" "}

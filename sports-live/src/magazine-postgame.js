@@ -5,7 +5,11 @@
    * (MAG_VARIANT=postgame), together with src/capture.js for the signup. No timers, no feed swap: the lead is curated
    * (Buddy Martin) and stays put. The portrait entrance animates only after activation. */
   function pmEntrance(D) {
-    var C = obj(D.cover) || {}, I = obj(D.issue) || {};
+    var C = obj(D.cover) || {}, I = obj(D.issue) || {}, P = obj(C.poster), b = pmReelBase();
+    // The finished portrait cover is a committed static file next to the bundle (like the reel posters); without it the photo-and-type poster below renders as before.
+    if (P && b && /^[\w-]+\.jpg$/.test(String(P.file))) return '<section class="pm-entrance pm-art" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
+      '<img src="' + esc(b + P.file) + '" width="1200" height="1600" alt="' + esc(text(P.alt, 300)) + '" fetchpriority="high" decoding="async"><h1 class="pm-vh">' + esc(text(C.headline, 200)) + '</h1>' +
+      '<span class="pm-open-label">Open this issue <span aria-hidden="true">↗</span></span><button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Tap the cover. Get the whole picture.</p></section>';
     return '<section class="pm-entrance" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
       frame(C.image, { eager: true, main: 1200, sizes: '(max-width: 699px) 100vw, 460px' }) +
       '<div class="pm-poster-ink"><div><p class="pm-covermark">Gator<span>Bait</span></p><p class="pm-covermag">Magazine</p><p class="pm-coverdate">' + esc(text(I.date, 60)) + '</p></div>' +

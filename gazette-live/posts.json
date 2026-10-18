@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”",
+      "excerpt": "Buddy Martin: There are worse ways to spend a Saturday than beating Texas in Austin while Texas A&M fans do the Gator Chomp. However, let’s maybe not order the commemorative plates yet.",
+      "url": "https://www.gatorbaitmedia.com/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-18T17:22:07Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_a0d5a806a0924b1c982fd5b03d39b777~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”"
+      }
+    },
+    {
       "title": "Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)",
       "excerpt": "Florida finds a way to get out of Austin with a win on a day where they continue to find more about themselves every day. Loren Meadows breaks down what we thought, what we got and what it means.",
       "url": "https://www.gatorbaitmedia.com/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for An Anatomy Of Total Gator Collapse: A Swamp Strewn With Broken Dreams"
-      }
-    },
-    {
-      "title": "Texas opens as a 10-point favorite against Florida",
-      "excerpt": "Franz Beard on Florida's response to consecutive losses as Texas opens as a 10-point favorite, plus Easton Royal's commitment and the latest SEC notes.",
-      "url": "https://www.gatorbaitmedia.com/post/texas-opens-as-a-10-point-favorite-against-florida",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-12T11:34:38Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_0c63378bb9a24a34884987d24f487fde~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Texas opens as a 10-point favorite against Florida"
       }
     }
   ]

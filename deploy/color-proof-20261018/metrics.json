@@ -1,0 +1,38 @@
+{
+ "before-390": {
+  "sw": 390,
+  "cw": 390,
+  "h": 7818,
+  "fonts": [
+   "Barlow",
+   "Arial"
+  ]
+ },
+ "after-390": {
+  "sw": 390,
+  "cw": 390,
+  "h": 7818,
+  "fonts": [
+   "Barlow",
+   "Arial"
+  ]
+ },
+ "before-1366": {
+  "sw": 1366,
+  "cw": 1366,
+  "h": 4249,
+  "fonts": [
+   "Barlow",
+   "Arial"
+  ]
+ },
+ "after-1366": {
+  "sw": 1366,
+  "cw": 1366,
+  "h": 4249,
+  "fonts": [
+   "Barlow",
+   "Arial"
+  ]
+ }
+}

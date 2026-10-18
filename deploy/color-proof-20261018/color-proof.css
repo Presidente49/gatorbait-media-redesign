@@ -1,0 +1,21 @@
+/* Color proof, Oct. 18, 2026. Colors only: no size, spacing, font or layout property changes.
+   Palette: UF Brand Center Core Orange #FA4616, Core Blue #0021A5, Gator green #22884C (PMS 7731), White #FFFFFF. */
+#gbm-live.gbm-gazette.gbm-sports-home{--gb-o:#FA4616;--gb-g:#22884C}
+/* 1. More white: tinted and gray panels become white (their existing borders and orange top rules stay) */
+#gbm-live.gbm-gazette.gbm-sports-home .bc-side,
+#gbm-live.gbm-gazette.gbm-sports-home .sh-watch,
+#gbm-live.gbm-gazette.gbm-sports-home .sh-voices,
+#gbm-live.gbm-gazette.gbm-sports-home .sh-magazine:not(:has(.sh-mcover)),
+#gbm-live.gbm-gazette.gbm-sports-home .bc-nx{background:#fff!important}
+#gbm-live.gbm-gazette.gbm-sports-home .bc-tbl li.bc-fl{background:#fff!important}
+/* 2. More Gator Orange: borders and rules only (no orange text; text stays navy or #a32e09) */
+#gbm-live.gbm-gazette.gbm-sports-home .sh-header{border-bottom-color:var(--gb-o)!important}
+#gbm-live.gbm-gazette.gbm-sports-home .bc-side,
+#gbm-live.gbm-gazette.gbm-sports-home .sh-watch,
+#gbm-live.gbm-gazette.gbm-sports-home .sh-voices,
+#gbm-live.gbm-gazette.gbm-sports-home .sh-magazine:not(:has(.sh-mcover)){border-color:#f9b7a0!important;border-top-color:var(--gb-o)!important}
+#gbm-live.gbm-gazette.gbm-sports-home .bc-tbl li{border-bottom-color:#ffd6c7}
+#gbm-live.gbm-gazette.gbm-sports-home .sh-coverage article{border-bottom-color:var(--gb-o)!important}
+/* 3. Small Gator green accent (non-text only, 3:1 UI contrast on white): Florida row marker and thumbnail offset shadow */
+#gbm-live.gbm-gazette.gbm-sports-home .bc-tbl li.bc-fl{box-shadow:inset 3px 0 0 var(--gb-g)!important}
+#gbm-live.gbm-gazette.gbm-sports-home .bc-tn{box-shadow:2px 2px 0 var(--gb-g)!important}

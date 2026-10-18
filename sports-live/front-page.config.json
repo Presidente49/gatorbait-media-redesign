@@ -1,6 +1,6 @@
 {
   "$comment": "Front Page 2026 editorial config. Default story order is strictly newest-first by firstPublishedDate. Only an explicit breaking-news pin may override chronology; do not use timed pins for ordinary story rotation.",
-  "look": "gator-day",
+  "look": "swamp-night",
   "topStoryAuthors": [],
   "pins": {
     "breaking": null,
@@ -193,7 +193,7 @@
     }
   ],
   "gameWeather": {
-    "on": true,
+    "on": false,
     "from": "2026-10-09T04:00:00Z",
     "until": "2026-10-10T21:40:00Z",
     "kickoff": "2026-10-10T16:45:00Z",
@@ -204,7 +204,7 @@
     "grid": "JAX/43,32"
   },
   "gameWeekFocus": {
-    "on": true,
+    "on": false,
     "from": "2026-10-09T04:00:00Z",
     "until": "2026-10-11T12:00:00Z",
     "pattern": "south carolina|gamecock|homecoming|kickoff|\\brain|storm|hurricane|isaias|weather|bounce|swamp|beamer|sumrall|baugh|philo|availability|favorite|point spread|pregame",
@@ -213,7 +213,7 @@
     "hideLast": true
   },
   "gameDayGraphics": {
-    "on": true,
+    "on": false,
     "from": "2026-10-10T04:00:00Z",
     "until": "2026-10-10T21:40:00Z",
     "asOf": "Season to date, five games. Source: ESPN, Oct. 10.",
@@ -263,7 +263,7 @@
   "gameDayEnds": "2026-10-10T21:40:00Z",
   "$gameDayEnds": "Postgame mode: after this time the Saturday GAME DAY band and tale-of-the-tape switch off and the front page goes back to the normal look with the Final bug (Brenden, Oct. 10: 'go into post game mode').",
   "postgameLead": {
-    "on": true,
+    "on": false,
     "until": "2026-10-12T04:00:00Z"
   },
   "homepageImageAlternates": {

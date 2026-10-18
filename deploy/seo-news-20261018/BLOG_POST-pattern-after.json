@@ -1,0 +1,116 @@
+{
+ "seoPattern": {
+  "pattern": {
+   "tags": [
+    {
+     "type": "meta",
+     "props": {
+      "name": "description",
+      "content": "{{blog-post.excerpt}}"
+     },
+     "children": "",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "meta",
+     "props": {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+     },
+     "children": "",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "meta",
+     "props": {
+      "name": "ai-generation-disabled"
+     },
+     "children": "",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "title",
+     "children": "{{blog-post.title}} | GatorBait",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "meta",
+     "props": {
+      "content": "{{blog-post.title}} | GatorBait",
+      "property": "og:title"
+     },
+     "children": "",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "meta",
+     "props": {
+      "name": "twitter:title",
+      "content": "{{blog-post.title}} | GatorBait"
+     },
+     "children": "",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "meta",
+     "props": {
+      "name": "twitter:description",
+      "content": "{{blog-post.excerpt}}"
+     },
+     "children": "",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "meta",
+     "props": {
+      "content": "{{blog-post.excerpt}}",
+      "property": "og:description"
+     },
+     "children": "",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "meta",
+     "props": {
+      "content": "{{blog-post.cover.image}}",
+      "property": "og:image"
+     },
+     "children": "",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "meta",
+     "props": {
+      "name": "twitter:image",
+      "content": "{{blog-post.cover.image}}"
+     },
+     "children": "",
+     "custom": false,
+     "disabled": false
+    },
+    {
+     "type": "script",
+     "props": {
+      "type": "application/ld+json"
+     },
+     "meta": {
+      "schemaType": "blog-post-news-article-preset"
+     },
+     "children": "{\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"author\":{\"@type\":\"Person\",\"name\":\"{{blog-post.author}}\",\"url\":\"{{blog-post.author.url}}\"},\"dateModified\":\"{{blog-post.modified.date}}\",\"datePublished\":\"{{blog-post.publish.date}}\",\"headline\":\"{{blog-post.headline}}\",\"mainEntityOfPage\":{\"@id\":\"{{blog-post.url}}\",\"@type\":\"WebPage\",\"url\":\"{{blog-post.url}}\"},\"description\":\"{{blog-post.description}}\",\"url\":\"{{blog-post.url}}\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"{{blog-post.cover.image}}\",\"width\":\"{{blog-post.cover.image.width}}\",\"height\":\"{{blog-post.cover.image.height}}\"},\"publisher\":{\"@type\":\"NewsMediaOrganization\",\"name\":\"GatorBait Media\",\"url\":\"{{site.url}}\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://static.wixstatic.com/media/ae876a_33367cf1645c43d18b0d930a68ca747b~mv2.png\",\"width\":600,\"height\":600}}}",
+     "custom": false,
+     "disabled": false
+    }
+   ]
+  }
+ },
+ "fieldMask": "pattern"
+}

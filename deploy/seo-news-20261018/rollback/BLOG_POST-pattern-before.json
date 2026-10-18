@@ -1,0 +1,108 @@
+{
+ "endpoint": "PATCH https://www.wixapis.com/promote/seo/v1/seo-patterns/BLOG_POST",
+ "note": "Rollback: PATCH this body (fieldMask pattern). Captured by GET /seo-patterns Oct. 18 2026 before change.",
+ "body": {
+  "seoPattern": {
+   "pattern": {
+    "tags": [
+     {
+      "type": "meta",
+      "props": {
+       "name": "description",
+       "content": "{{blog-post.excerpt}} | Florida Gators football news and analysis from GatorBait Media."
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+     },
+     {
+      "type": "meta",
+      "props": {
+       "name": "twitter:card",
+       "content": "summary_large_image"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+     },
+     {
+      "type": "meta",
+      "props": {
+       "name": "ai-generation-disabled"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+     },
+     {
+      "type": "title",
+      "children": "{{blog-post.title}} | Florida Gators News | GatorBait",
+      "custom": false,
+      "disabled": false
+     },
+     {
+      "type": "meta",
+      "props": {
+       "content": "{{blog-post.title}} | Florida Gators | GatorBait",
+       "property": "og:title"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+     },
+     {
+      "type": "meta",
+      "props": {
+       "name": "twitter:title",
+       "content": "{{blog-post.title}} | Florida Gators | GatorBait"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+     },
+     {
+      "type": "meta",
+      "props": {
+       "name": "twitter:description",
+       "content": "{{blog-post.excerpt}}"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+     },
+     {
+      "type": "meta",
+      "props": {
+       "content": "{{blog-post.excerpt}}",
+       "property": "og:description"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+     },
+     {
+      "type": "meta",
+      "props": {
+       "content": "{{blog-post.cover.image}}",
+       "property": "og:image"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+     },
+     {
+      "type": "meta",
+      "props": {
+       "name": "twitter:image",
+       "content": "{{blog-post.cover.image}}"
+      },
+      "children": "",
+      "custom": false,
+      "disabled": false
+     }
+    ]
+   }
+  },
+  "fieldMask": "pattern"
+ }
+}

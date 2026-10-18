@@ -1,17 +1,24 @@
-// READ-ONLY: where do Barlow/Barlow Condensed @font-face rules come from, with what display, and when do the faces load vs first paint?
+// READ-ONLY: orange-background controls (selector + label contrast) and off-palette accent colors (orange/blue family) per page.
 const { chromium } = require('playwright'); const fs = require('fs'); fs.mkdirSync('shots', { recursive: true });
-const INIT = () => { const L = window.__fl = { loads: [], paint: 0 }; const now = () => Math.round(performance.now());
-  try { new PerformanceObserver(l => { for (const e of l.getEntries()) if (e.name === 'first-contentful-paint') L.paint = Math.round(e.startTime); }).observe({ type: 'paint', buffered: true }); } catch (e) {}
-  const hook = () => { if (!document.fonts) return setTimeout(hook, 5); document.fonts.addEventListener('loadingdone', ev => { for (const f of ev.fontfaces) L.loads.push({ t: now(), f: f.family + ' ' + f.weight + ' ' + f.style }); }); document.fonts.addEventListener('loading', () => L.loads.push({ t: now(), f: 'loading-start' })); }; hook(); };
+const PAGES = [['post', '/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll'], ['magazine', '/magazine'], ['contact', '/contact'], ['pricing', '/pricing-plans'], ['allnews', '/gatorbait-media-blogs'], ['about', '/about'], ['home', '/']];
+const EV = () => {
+  const rgb = s => { const m = String(s).match(/rgba?\(([\d.]+)[, ]+([\d.]+)[, ]+([\d.]+)(?:[, /]+([\d.]+))?/); return m ? [+m[1], +m[2], +m[3], m[4] === undefined ? 1 : +m[4]] : null; };
+  const hex = c => '#' + c.slice(0, 3).map(v => Math.round(v).toString(16).padStart(2, '0')).join('').toUpperCase();
+  const lum = c => { const f = v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]); };
+  const cr = (a, b) => { const x = lum(a), y = lum(b); return +((Math.max(x, y) + .05) / (Math.min(x, y) + .05)).toFixed(2); };
+  const hsl = c => { const [r, g, b] = c.map(v => v / 255), mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn; let h = 0; if (d) { h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; h *= 60; if (h < 0) h += 360; } const l = (mx + mn) / 2, s = d ? d / (1 - Math.abs(2 * l - 1)) : 0; return [h, s, l]; };
+  const path = el => { const out = []; for (let n = el; n && n !== document.body && out.length < 4; n = n.parentElement) out.push(n.tagName.toLowerCase() + (n.id ? '#' + n.id : '') + (typeof n.className === 'string' && n.className.trim() ? '.' + n.className.trim().split(/\s+/).slice(0, 2).join('.') : '') + (n.getAttribute('data-hook') ? '[' + n.getAttribute('data-hook') + ']' : '')); return out.join(' < '); };
+  const vis = el => { const r = el.getBoundingClientRect(); if (r.width < 2 || r.height < 2) return false; const cs = getComputedStyle(el); return cs.visibility !== 'hidden' && cs.display !== 'none'; };
+  const orange = [], accents = {};
+  for (const el of document.body.querySelectorAll('*')) {
+    if (!vis(el)) continue; const cs = getComputedStyle(el); const bg = rgb(cs.backgroundColor);
+    if (bg && bg[3] > .5 && hex(bg) === '#FA4616' && (el.textContent || '').trim() && (el.textContent || '').trim().length < 40) { const col = rgb(cs.color); orange.push({ p: path(el), t: el.textContent.trim().slice(0, 24), col: hex(col), ratio: cr(col, bg), fs: cs.fontSize, fw: cs.fontWeight }); }
+    for (const prop of ['color', 'backgroundColor', 'borderTopColor', 'borderBottomColor', 'borderLeftColor']) { const c = rgb(cs[prop]); if (!c || c[3] < .3) continue; if (prop.startsWith('border') && (parseFloat(cs[prop.replace('Color', 'Width')]) || 0) < 1) continue; const [h, s, l] = hsl(c); const H = hex(c); if (H === '#FA4616' || H === '#0021A5' || H === '#002657' || H === '#22884C') continue; const fam = (h >= 5 && h <= 28 && s > .55 && l > .25 && l < .8) ? 'orange' : (h >= 215 && h <= 240 && s > .7 && l > .2 && l < .75) ? 'blue' : null; if (!fam) continue; const k = fam + ' ' + H + ' ' + prop; (accents[k] = accents[k] || { n: 0, ex: path(el).slice(0, 80) }).n++; }
+  }
+  return { orange: orange.slice(0, 14), accents: Object.entries(accents).sort((a, b) => b[1].n - a[1].n).slice(0, 18).map(([k, v]) => k + ' x' + v.n + ' ' + v.ex) };
+};
 (async () => { const browser = await chromium.launch(); const out = [];
-  for (const [name, path] of [['pricing', '/pricing-plans'], ['post', '/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll']]) {
-    const ctx = await browser.newContext({ viewport: { width: 1366, height: 900 } }); await ctx.addInitScript(INIT); const page = await ctx.newPage(); const reqs = [];
-    page.on('request', q => { if (/\.woff2?|fonts\.(googleapis|gstatic)|fontsource/.test(q.url())) reqs.push({ t: Date.now() - t0, u: q.url().replace(/^https?:\/\//, '').slice(0, 110) }); });
-    const t0 = Date.now(); const r = { page: name };
-    const resp = await page.goto('https://www.gatorbaitmedia.com' + path + '?gbm_qc=' + Date.now(), { waitUntil: 'domcontentloaded', timeout: 60000 }); r.http = resp.status(); await page.waitForTimeout(5000);
-    r.reqs = reqs.slice(0, 30);
-    r.fl = await page.evaluate(() => window.__fl);
-    r.faces = await page.evaluate(() => { const out = []; for (const sh of document.styleSheets) { let rules; try { rules = sh.cssRules; } catch (e) { out.push({ sheet: (sh.href || 'inline').slice(0, 90), blocked: true }); continue; } for (const ru of rules) { if (ru.constructor.name === 'CSSFontFaceRule' && /barlow/i.test(ru.style.fontFamily)) out.push({ sheet: (sh.href || 'inline:' + ((sh.ownerNode || {}).id || '')).slice(0, 80), fam: ru.style.fontFamily, w: ru.style.fontWeight, st: ru.style.fontStyle, disp: ru.style.fontDisplay, src: ru.style.src.slice(0, 90) }); } } return out.slice(0, 40); });
-    r.preload = await page.evaluate(() => [...document.querySelectorAll('link[rel=preload],link[rel=stylesheet],link[rel=preconnect]')].map(l => l.rel + ' ' + (l.as || '') + ' ' + l.href.slice(0, 100)));
-    out.push(r); console.log('### FONT ' + JSON.stringify(r).slice(0, 6000)); await ctx.close(); }
+  for (const w of [1366, 390]) for (const [name, path] of PAGES) { const ctx = await browser.newContext({ viewport: { width: w, height: 900 }, isMobile: w < 500, hasTouch: w < 500 }); const page = await ctx.newPage(); const r = { page: name, w };
+    try { await page.goto('https://www.gatorbaitmedia.com' + path + '?gbm_qc=' + Date.now(), { waitUntil: 'domcontentloaded', timeout: 60000 }); await page.waitForTimeout(6500); await page.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 700) { scrollTo(0, y); await new Promise(s => setTimeout(s, 120)); } scrollTo(0, 0); }); await page.waitForTimeout(800); r.ev = await page.evaluate(EV); } catch (e) { r.err = String(e.message).slice(0, 100); }
+    out.push(r); console.log('### AC ' + JSON.stringify(r).slice(0, 3500)); await ctx.close(); }
   fs.writeFileSync('shots/audit.json', JSON.stringify(out, null, 1)); await browser.close(); })();

@@ -31,6 +31,23 @@
         <mj-button href="https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=lead_story">READ THE GAME STORY</mj-button>
       </mj-column>
     </mj-section>
+    <mj-section background-color="#FFFFFF" padding="0 24px 24px" css-class="gb-pad">
+      <mj-column>
+        <mj-divider border-color="#FA4616" border-width="3px" padding="0 0 20px" />
+        <mj-text padding="0 0 12px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.8px">MORE POSTGAME COLUMNS</mj-text>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg" alt="Cover photo for Franz Beard's column on Florida's win at Texas" href="https://www.gatorbaitmedia.com/post/it-was-a-good-day-for-an-exorcism-in-austin?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=franz_photo" width="180px" align="left" padding="0 0 4px" />
+        <mj-text padding="0 0 14px" color="#5B6472" font-size="12px">Photo courtesy UAA and Hannah White</mj-text>
+        <mj-text padding="0 0 4px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.4px">FRANZ BEARD</mj-text>
+        <mj-text padding="0 0 14px" color="#101820" font-size="22px" font-weight="800" line-height="1.2"><a href="https://www.gatorbaitmedia.com/post/it-was-a-good-day-for-an-exorcism-in-austin?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=franz_headline" style="color:#101820;text-decoration:none;">It was a good day for an exorcism in Austin</a></mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/it-was-a-good-day-for-an-exorcism-in-austin?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=franz_button">READ THE COLUMN</mj-button>
+        <mj-divider border-color="#E6E9EF" border-width="1px" padding="24px 0" />
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg" alt="Cover photo for Buddy Martin's column on Florida's win at Texas" href="https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=buddy_photo" width="180px" align="left" padding="0 0 4px" />
+        <mj-text padding="0 0 14px" color="#5B6472" font-size="12px">Photo courtesy UAA and Hannah White</mj-text>
+        <mj-text padding="0 0 4px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.4px">BUDDY MARTIN</mj-text>
+        <mj-text padding="0 0 14px" color="#101820" font-size="22px" font-weight="800" line-height="1.2"><a href="https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=buddy_headline" style="color:#101820;text-decoration:none;">A Texas Barbecue: Gators Flip The Script &#8212; And Jones Changes The Conversation</a></mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=buddy_button">READ THE COLUMN</mj-button>
+      </mj-column>
+    </mj-section>
     <mj-section background-color="#F5F6F8" padding="22px 24px 10px" css-class="gb-pad">
       <mj-column>
         <mj-text padding="0 0 8px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.8px">BOX SCORE</mj-text>

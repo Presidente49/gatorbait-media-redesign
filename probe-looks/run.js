@@ -1,73 +1,71 @@
-// Read-only live probe of https://www.gatorbaitmedia.com/magazine after the rev-115 swap (embed 1dd74333, pin 939ef9d2). (rerun: 390 got a transient Wix HTTP 503)
-// Chrome at 390/430/1366/1920, cache-busting URL, no UA override (Wix bot 403). Screenshots to ./shots for the artifact.
+// Read-only live probe: does #pm-download / .pm-dl-btn exist and show at the bottom of /magazine? Cache-busting URL, no UA override.
 const { chromium } = require('playwright');
 const fs = require('fs');
 fs.mkdirSync('shots', { recursive: true });
-const PIN = '939ef9d282541cb132dba5d2f7b9606d59ae5385';
-const YTS = ['https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1','https://www.youtube-nocookie.com/embed/y4GpdY2bzdU?autoplay=1&rel=0&playsinline=1'];
-const widths = [
-  { name: '390', w: 390, h: 844, dpr: 3, mobile: true },
-  { name: '430', w: 430, h: 932, dpr: 3, mobile: true },
-  { name: '1366', w: 1366, h: 768, dpr: 1, mobile: false },
-  { name: '1920', w: 1920, h: 1080, dpr: 1, mobile: false },
+const views = [
+  { name: '390', w: 390, h: 844, dpr: 1, mobile: true },
+  { name: '1366', w: 1366, h: 900, dpr: 1, mobile: false },
 ];
 (async () => {
   const browser = await chromium.launch();
   const results = [];
-  for (const v of widths) {
+  for (const v of views) {
     const r = { width: v.name };
-    try {
-      const ctx = await browser.newContext({ viewport: { width: v.w, height: v.h }, deviceScaleFactor: v.dpr, isMobile: v.mobile, hasTouch: v.mobile });
-      const page = await ctx.newPage();
-      const third = [], errors = [], bad = [];
-      page.on('request', q => { const u = q.url(); if (/facebook\.com|youtube\.com|youtube-nocookie\.com|fbcdn/.test(u)) third.push(u.slice(0, 100)); });
-      page.on('pageerror', e => errors.push(String(e.message).slice(0, 160)));
-      page.on('response', q => { if (q.status() >= 400 && /jsdelivr|usrfiles|wixstatic/.test(q.url())) bad.push(q.status() + ' ' + q.url().slice(0, 120)); });
-      const resp = await page.goto('https://www.gatorbaitmedia.com/magazine?gbm_qc=' + Date.now() + v.name, { waitUntil: 'domcontentloaded', timeout: 90000 });
-      const html = await resp.text();
-      r.http = resp.status(); r.servedPin = (html.match(new RegExp(PIN, 'g')) || []).length; r.servedMarker = /GBM_MAGAZINE_2026_V1 postgame texas-web src=939ef9d2/.test(html);
-      await page.waitForSelector('#gbm-magazine-page.pm[data-issue="2026-10-18-postgame-texas"]', { timeout: 60000 });
-      await page.waitForTimeout(4000);
-      await page.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 700) { window.scrollTo(0, y); await new Promise(s => setTimeout(s, 120)); } });
-      await page.waitForTimeout(3000);
-      const pre = await page.evaluate(() => {
-        const d = document.documentElement, pg = document.getElementById('gbm-magazine-page');
-        const reels = [...document.querySelectorAll('.pm-reel')].map(li => { const img = li.querySelector('.pm-rp img'); const f = li.querySelector('.pm-rf'); const b = f.getBoundingClientRect();
-          return { href: f.getAttribute('data-href'), posterLoaded: !!(img && img.complete && img.naturalWidth > 0), w: Math.round(b.width), h: Math.round(b.height), ratio: +(b.height / b.width).toFixed(3), link: (li.querySelector('.pm-rl') || {}).textContent, credit: (li.querySelector('small') || {}).textContent }; });
-        const pmIn = document.querySelector('.pm-watch .pm-in') || document.querySelector('.pm-in');
-        const imgs = [...document.querySelectorAll('#gbm-magazine-page img')];
-        const dl = document.querySelector('.pm-dl-btn');
-        return { roots: document.querySelectorAll('#gbm-magazine-page.pm[data-issue="2026-10-18-postgame-texas"]').length, h1: ((document.querySelector('#gbm-magazine-page h1') || {}).textContent || '').trim().slice(0, 60),
-          bundleSrc: (document.getElementById('gbm-mag26-bundle') || {}).src, scrollW: d.scrollWidth, clientW: d.clientWidth, overflow: d.scrollWidth - d.clientWidth,
-          pmInWidth: pmIn && Math.round(pmIn.getBoundingClientRect().width), reels, imgs: imgs.length, imgsBroken: imgs.filter(i => i.complete && i.naturalWidth === 0 && i.getAttribute('src')).length,
-          iframesBefore: document.querySelectorAll('.pm-rf iframe').length, dlHref: dl && dl.getAttribute('href'), dlDownload: !!(dl && dl.hasAttribute('download')),
-          uaa: !![...document.querySelectorAll('a')].find(a => a.getAttribute('href') === 'https://floridagators.com'),
-          georgiaRank: /(No\. ?\d+|#\d+|top-ranked)[^.]{0,20}Georgia|Georgia[^.]{0,20}(No\. ?\d+|\(\d+-\d+)/i.test(pg ? pg.textContent : ''), pageHeight: d.scrollHeight };
-      });
-      Object.assign(r, pre); r.thirdPartyBeforeTap = third.slice(); r.bad = bad.slice(0, 5);
-      await page.screenshot({ path: 'shots/mag-' + v.name + '-full.png', fullPage: true });
-      await page.screenshot({ path: 'shots/mag-' + v.name + '-top.png' });
-      r.taps = [];
-      for (let k = 0; k < 2; k++) {
-        const yt = page.locator('.pm-rf[data-href*="youtube.com"] .pm-rp').nth(k);
-        await yt.scrollIntoViewIfNeeded(); await page.waitForTimeout(300);
-        const beforeTap = await yt.evaluate(b => { const q = b.parentNode.getBoundingClientRect(); return { w: q.width, h: q.height }; });
-        await yt.click(); await page.waitForTimeout(2000);
-        const tap = await page.evaluate((k) => { const f = document.querySelectorAll('.pm-rf[data-href*="youtube.com"]')[k], i = f.querySelector('iframe'), q = f.getBoundingClientRect();
-          return { iframeSrc: i && i.getAttribute('src'), w: q.width, h: q.height, buttonHidden: f.querySelector('.pm-rp').style.display === 'none', fbIframes: document.querySelectorAll('.pm-rf[data-href*="facebook"] iframe').length }; }, k);
-        r.taps.push(Object.assign(tap, { shiftW: +(tap.w - beforeTap.w).toFixed(2), shiftH: +(tap.h - beforeTap.h).toFixed(2), srcOk: tap.iframeSrc === YTS[k] }));
-      }
-      r.ytCards = pre.reels.filter(x => /youtube\.com/.test(x.href || '')).length;
-      await page.locator('#pm-watch').screenshot({ path: 'shots/mag-' + v.name + '-watch-tapped.png' });
-      r.errors = errors;
-      r.pass = r.http === 200 && r.servedPin >= 2 && r.servedMarker && r.roots === 1 && r.reels.length === 2 && r.reels.every(x => x.posterLoaded) && r.overflow <= 0 && r.iframesBefore === 0 && r.thirdPartyBeforeTap.length === 0 && r.ytCards === 2 && r.taps.length === 2 && r.taps.every(t => t.srcOk && t.buttonHidden && Math.abs(t.shiftW) < 1 && Math.abs(t.shiftH) < 1) && r.imgsBroken === 0 && !r.georgiaRank && r.dlDownload && (v.w < 1200 || r.pmInWidth >= (v.w >= 1600 ? 1400 : 1200));
-      await ctx.close();
-    } catch (e) { r.pass = false; r.error = String(e.message || e).slice(0, 300); }
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const ctx = await browser.newContext({ viewport: { width: v.w, height: v.h }, deviceScaleFactor: v.dpr, isMobile: v.mobile, hasTouch: v.mobile });
+        const page = await ctx.newPage();
+        const resp = await page.goto('https://www.gatorbaitmedia.com/magazine?gbm_qc=' + Date.now() + v.name, { waitUntil: 'domcontentloaded', timeout: 90000 });
+        r.http = resp.status();
+        if (r.http >= 500) { await ctx.close(); r.attempt = attempt; await new Promise(s => setTimeout(s, 4000)); continue; }
+        const html = await resp.text();
+        r.htmlHasPmDownload = /id=["']pm-download["']/.test(html); r.htmlHasDlBtn = /pm-dl-btn/.test(html);
+        await page.waitForSelector('#gbm-magazine-page', { timeout: 60000 });
+        await page.waitForTimeout(4000);
+        await page.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise(s => setTimeout(s, 150)); } window.scrollTo(0, document.documentElement.scrollHeight); });
+        await page.waitForTimeout(3000);
+        await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+        await page.waitForTimeout(1000);
+        r.info = await page.evaluate(() => {
+          const d = document.documentElement;
+          const desc = el => el ? { tag: el.tagName.toLowerCase(), id: el.id || '', cls: String(el.className || '').slice(0, 80) } : null;
+          const rectOf = el => { const b = el.getBoundingClientRect(); return { x: Math.round(b.x), y: Math.round(b.y + scrollY), w: Math.round(b.width), h: Math.round(b.height), viewportY: Math.round(b.y) }; };
+          const info = (el) => {
+            if (!el) return null;
+            const cs = getComputedStyle(el), b = el.getBoundingClientRect();
+            const o = { desc: desc(el), text: (el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 160), href: el.getAttribute('href'), download: el.hasAttribute('download'), rect: rectOf(el),
+              display: cs.display, visibility: cs.visibility, opacity: cs.opacity, color: cs.color, bg: cs.backgroundColor, fontSize: cs.fontSize };
+            const clips = []; for (let p = el.parentElement; p && p !== document.body; p = p.parentElement) { const s = getComputedStyle(p); if (/hidden|clip|scroll|auto/.test(s.overflow + s.overflowX + s.overflowY)) { const pb = p.getBoundingClientRect(); if (b.left < pb.left - 1 || b.right > pb.right + 1 || b.top < pb.top - 1 || b.bottom > pb.bottom + 1) clips.push({ el: desc(p), pr: [Math.round(pb.left), Math.round(pb.top), Math.round(pb.right), Math.round(pb.bottom)] }); } if (s.display === 'none' || s.visibility === 'hidden' || s.opacity === '0') clips.push({ hiddenAncestor: desc(p), display: s.display, vis: s.visibility, op: s.opacity }); }
+            o.clippedOrHiddenBy = clips;
+            el.scrollIntoView({ block: 'center' });
+            const bb = el.getBoundingClientRect(); const cx = bb.left + bb.width / 2, cy = bb.top + bb.height / 2;
+            const top = document.elementFromPoint(cx, cy);
+            o.inViewportAfterScroll = bb.top >= 0 && bb.bottom <= innerHeight && bb.left >= 0 && bb.right <= innerWidth;
+            o.topElementAtCenter = desc(top); o.notCovered = !!top && (top === el || el.contains(top) || top.contains(el));
+            o.overlapsFixed = [...document.querySelectorAll('*')].filter(x => { const s = getComputedStyle(x); if (s.position !== 'fixed' && s.position !== 'sticky') return false; const xb = x.getBoundingClientRect(); return xb.width > 0 && xb.height > 0 && xb.left < bb.right && xb.right > bb.left && xb.top < bb.bottom && xb.bottom > bb.top && !x.contains(el) && !el.contains(x); }).slice(0, 5).map(x => ({ el: desc(x), rect: [Math.round(x.getBoundingClientRect().left), Math.round(x.getBoundingClientRect().top), Math.round(x.getBoundingClientRect().width), Math.round(x.getBoundingClientRect().height)] }));
+            return o;
+          };
+          const sec = document.querySelector('#pm-download'), btn = document.querySelector('.pm-dl-btn');
+          const out = { pmDownloadCount: document.querySelectorAll('#pm-download').length, pmDlBtnCount: document.querySelectorAll('.pm-dl-btn').length, pmDownload: info(sec), pmDlBtn: info(btn),
+            pageHeight: d.scrollHeight, scrollW: d.scrollWidth, clientW: d.clientWidth };
+          window.scrollTo(0, d.scrollHeight);
+          const root = document.getElementById('gbm-magazine-page');
+          out.pageRootChildrenLast3 = root ? [...root.children].slice(-3).map(c => ({ desc: desc(c), text: (c.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 90), rect: rectOf(c) })) : null;
+          out.lastSections3 = [...document.querySelectorAll('section')].slice(-3).map(c => ({ desc: desc(c), text: (c.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 90), rect: rectOf(c) }));
+          out.allIdsInRoot = root ? [...root.children].map(c => (c.id || c.tagName.toLowerCase() + '.' + String(c.className).slice(0, 20))) : null;
+          return out;
+        });
+        const H = r.info.pageHeight, hh = Math.min(1400, H);
+        await page.screenshot({ path: 'shots/mag-bottom-' + v.name + '.png', fullPage: true, clip: { x: 0, y: H - hh, width: v.w, height: hh } });
+        r.shot = 'shots/mag-bottom-' + v.name + '.png'; r.attempt = attempt;
+        await ctx.close();
+        break;
+      } catch (e) { r.error = String(e.message || e).slice(0, 300); r.attempt = attempt; }
+    }
     results.push(r);
-    console.log('### /magazine @' + v.name + ' ' + JSON.stringify(r));
+    console.log('### /magazine bottom @' + v.name + ' ' + JSON.stringify(r));
   }
   await browser.close();
-  fs.writeFileSync('shots/live-qc.json', JSON.stringify(results, null, 1));
-  const bad = results.filter(x => !x.pass).map(x => x.width);
-  console.log(bad.length ? 'LIVE QC FAILED at ' + bad.join(', ') : 'LIVE QC PASSED at ' + results.map(x => x.width).join('/'));
+  fs.writeFileSync('shots/bottom-check.json', JSON.stringify(results, null, 1));
+  console.log('DONE ' + results.map(x => x.width + ':' + (x.shot ? 'shot' : 'noshot')).join(' '));
 })();

@@ -41,7 +41,7 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
     if (/cdn\.jsdelivr\.net\/gh\/.*sports-live\/magazine/.test(u)) return route.fulfill({ contentType: 'application/javascript', body: bundle });
     const rp = /cdn\.jsdelivr\.net\/gh\/.*sports-live\/reels\/([\w-]+\.jpg)$/.exec(u);
     if (rp) return route.fulfill({ contentType: 'image/jpeg', body: readFileSync(new URL('./reels/' + rp[1], import.meta.url)) });
-    if (/^https:\/\/www\.facebook\.com\/plugins\/video\.php\?/.test(u)) return route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>stub</title>' });
+    if (/^https:\/\/www\.(youtube-nocookie\.com\/embed\/|facebook\.com\/plugins\/video\.php\?)/.test(u)) return route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>stub</title>' });
     const m = /static\.wixstatic\.com\/media\/([0-9a-f]+_[0-9a-f]{32})~mv2\.[a-z]+\/v1\/fit\/w_(\d+),h_(\d+)/.exec(u);
     if (m) return local[m[1]] ? route.fulfill({ contentType: 'image/jpeg', body: local[m[1]] }) : route.fulfill({ contentType: 'image/svg+xml', body: stand(+m[2], +m[3], 'Photo stand-in') });
     if (/^https:\/\/fonts\.(googleapis|gstatic)\.com\//.test(u)) return route.continue().catch(() => route.abort());
@@ -74,7 +74,7 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
     return {
       scrollW: doc.scrollWidth, clientW: doc.clientWidth, over, missing: SECTIONS.filter((s) => !root.querySelector(s)), h1: root.querySelectorAll('h1').length,
       h1Text: (root.querySelector('h1') || {}).textContent, imgs: root.querySelectorAll('img').length,
-      bad: [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')).filter((h) => !/^(\/|#pm-|https:\/\/www\.gatorbaitmedia\.com\/|https:\/\/floridagators\.com\/?(galleries)?$|https:\/\/www\.instagram\.com\/hannahmorganphoto\/$|https:\/\/www\.facebook\.com\/reel\/\d+\/$|https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$)/.test(h)),
+      bad: [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')).filter((h) => !/^(\/|#pm-|https:\/\/www\.gatorbaitmedia\.com\/|https:\/\/floridagators\.com\/?(galleries)?$|https:\/\/www\.instagram\.com\/hannahmorganphoto\/$|https:\/\/www\.facebook\.com\/reel\/\d+\/$|https:\/\/www\.youtube\.com\/watch\?v=JexQFsm_wts$|https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$)/.test(h)),
       anchorsOk: [...root.querySelectorAll('a[href^="#"]')].every((a) => !!root.querySelector(a.getAttribute('href'))),
       capture: cap ? cap.getAttribute('data-gbm-capture') : null, captureH: cap ? Math.round(cap.getBoundingClientRect().height) : 0,
       packageOrder: [...root.querySelectorAll('.pm-it h3')].map((h) => h.textContent.slice(0, 28)),
@@ -92,18 +92,18 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
       printBtn: !!root.querySelector('button.pm-print,a.pm-print,.pm-pdf') || /window\.print/.test(root.innerHTML),
       uaaLinks: [cr(/^https:\/\/floridagators\.com\/$/), cr(/hannahmorganphoto/), cr(/floridagators\.com\/galleries/)],
       uaaImgs: [...root.querySelectorAll('img')].filter((i) => /UAA and Hannah White/.test(i.alt)).length, uaaCaps: (t.match(/Photo courtesy UAA and Hannah White/g) || []).length,
-      watch: [...root.querySelectorAll('.pm-vids b')].map((b) => b.textContent), igEmbed: !!root.querySelector('blockquote.instagram-media,iframe'), reels: [...root.querySelectorAll('.pm-reel')].map((r) => ({ btn: !!r.querySelector('button.pm-rp'), posterOk: (() => { const i = r.querySelector('img'); return !!i && i.complete && i.naturalWidth === 540; })(), ratio: +(r.querySelector('.pm-rf').getBoundingClientRect().width / r.querySelector('.pm-rf').getBoundingClientRect().height).toFixed(3), credit: /^Video: Muse Made Media \/ GatorBait Media$/.test(r.querySelector('small').textContent), fb: /^Watch on Facebook$/.test(r.querySelector('a.pm-rl').textContent) })),
+      watch: [...root.querySelectorAll('.pm-vids b')].map((b) => b.textContent), igEmbed: !!root.querySelector('blockquote.instagram-media,iframe'), reels: [...root.querySelectorAll('.pm-reel')].map((r) => ({ btn: !!r.querySelector('button.pm-rp'), posterOk: (() => { const i = r.querySelector('img'); return !!i && i.complete && i.naturalWidth === 540; })(), ratio: +(r.querySelector('.pm-rf').getBoundingClientRect().width / r.querySelector('.pm-rf').getBoundingClientRect().height).toFixed(3), credit: /^Video: Muse Made Media \/ GatorBait Media$/.test(r.querySelector('small').textContent), fb: /^Watch on (Facebook|YouTube)$/.test(r.querySelector('a.pm-rl').textContent) })),
       georgiaRank: /(No\. ?\d+|#\d+)\s+Georgia|Georgia\s*[(,]?\s*\d+-\d+|Georgia[^.]{0,20}ranked/i.test(t), georgia: (t.match(/Georgia/g) || []).length,
       order: [...root.querySelectorAll('#pm-cover h2,.pm-it h3')].map((h) => h.textContent.slice(0, 30))
     };
   }, [DOWNLOAD_URL]);
   // Tap-to-play: no Facebook request or iframe before the tap; the tap injects the plugin iframe without moving the page.
-  const fbBefore = requests.filter((u) => /facebook\.com/.test(u)).length;
+  const fbBefore = requests.filter((u) => /facebook\.com|youtube(-nocookie)?\.com|ytimg\.com/.test(u)).length;
   const tap = await page.evaluate(async () => {
-    const f = document.querySelector('.pm-reel .pm-rf'), h0 = document.documentElement.scrollHeight, r0 = f.getBoundingClientRect().height;
+    const f = [...document.querySelectorAll('.pm-reel .pm-rf')].find((x) => /youtube/.test(x.dataset.href)) || document.querySelector('.pm-reel .pm-rf'), h0 = document.documentElement.scrollHeight, r0 = f.getBoundingClientRect().height;
     f.querySelector('button.pm-rp').click(); await new Promise((r) => setTimeout(r, 150));
     const i = f.querySelector('iframe'), href = f.getAttribute('data-href');
-    return { src: i ? i.getAttribute('src') : '', want: 'https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(href) + '&show_text=false&width=500', shift: Math.abs(document.documentElement.scrollHeight - h0) + Math.abs(f.getBoundingClientRect().height - r0), link: !!f.parentNode.querySelector('a.pm-rl') };
+    return { src: i ? i.getAttribute('src') : '', want: /youtube/.test(href) ? 'https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1' : 'https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(href) + '&show_text=false&width=500', shift: Math.abs(document.documentElement.scrollHeight - h0) + Math.abs(f.getBoundingClientRect().height - r0), link: /youtube/.test(href) ? f.parentNode.querySelector('a.pm-rl').getAttribute('href') === 'https://www.youtube.com/watch?v=JexQFsm_wts' && f.parentNode.querySelector('a.pm-rl').textContent === 'Watch on YouTube' : !!f.parentNode.querySelector('a.pm-rl') };
   });
   tap.bad = fbBefore !== 0 || !tap.src || tap.src !== tap.want || tap.shift > 1 || !tap.link;
   // Route lifecycle: leave /magazine (unmount, native page back), then return (remount once).

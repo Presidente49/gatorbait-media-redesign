@@ -693,14 +693,14 @@
  "watch": {
   "kicker": "Watch",
   "title": "On the GatorBait reels",
-  "dek": "Two GatorBait Media reels from Austin. Tap to play.",
+  "dek": "Two GatorBait Media clips from Austin. Tap to play.",
   "items": [
    {
     "title": "Sumrall: We still suck. We just suck less.",
     "caption": "Florida 27, No. 7 Texas 24 in Austin.",
-    "url": "https://www.facebook.com/reel/1113241227750116/",
-    "poster": "sumrall-we-suck-less.jpg",
-    "meta": "Facebook reel · GatorBait Media",
+    "url": "https://www.youtube.com/watch?v=JexQFsm_wts",
+    "poster": "sumrall-yt-jexqfsm.jpg",
+    "meta": "YouTube · The Buddy Martin Show",
     "credit": "Video: Muse Made Media / GatorBait Media"
    },
    {

@@ -209,20 +209,20 @@
         }).join('') + '</dl></div>';
       }).join('') + '</div>' : '') + pmSrc(B.source) + '</div></section>';
   }
-  // Facebook reels: tap-to-play. The poster is a committed static file next to this bundle (fbcdn URLs are signed and expire);
-  // the Facebook player iframe is injected only on tap, so nothing from Facebook loads with the page.
+  // Facebook and YouTube reels: tap-to-play. The poster is a committed static file next to this bundle (fbcdn URLs are signed and expire);
+  // the Facebook or youtube-nocookie player iframe is injected only on tap, so nothing from either loads with the page.
   function pmReelBase() {
     var s = document.currentScript || document.querySelector('script[src*="magazine-postgame.js"]'), u = s && s.src || '';
     return /^(https?|file):/.test(u) ? u.replace(/[^\/]*$/, '') + 'reels/' : '';
   }
   function pmWatch(D) {
-    var W = obj(D.watch), base = pmReelBase(), items = W ? list(W.items, 4).map(obj).filter(function (v) { return v && text(v.title, 120) && /^https:\/\/www\.facebook\.com\/reel\/\d+\/$/.test(String(v.url || '')) && /^[\w-]+\.jpg$/.test(String(v.poster || '')); }) : [];
+    var W = obj(D.watch), base = pmReelBase(), items = W ? list(W.items, 4).map(obj).filter(function (v) { return v && text(v.title, 120) && /^https:\/\/www\.(facebook\.com\/reel\/\d+\/|youtube\.com\/watch\?v=[\w-]{11})$/.test(String(v.url || '')) && /^[\w-]+\.jpg$/.test(String(v.poster || '')); }) : [];
     if (!items.length) return '';
     return '<section class="pm-watch" id="pm-watch" aria-labelledby="pm-watch-t"><div class="pm-in">' + pmHead('watch', W) + '<ul class="pm-vids">' + items.map(function (v) {
       return '<li class="pm-reel"><div class="pm-rf" data-href="' + esc(v.url) + '"><button type="button" class="pm-rp" aria-label="Play video: ' + esc(text(v.title, 120)) + '">' +
         (base ? '<img src="' + esc(base + v.poster) + '" width="540" height="960" alt="" decoding="async" loading="lazy">' : '') + '<span class="pm-play" aria-hidden="true"></span></button></div>' +
         '<div class="pm-vt"><span class="pm-kick">' + esc(text(v.meta, 60)) + '</span><b>' + esc(text(v.title, 120)) + '</b>' + (text(v.caption, 160) ? '<span class="pm-rc">' + esc(text(v.caption, 160)) + '</span>' : '') +
-        '<small>' + esc(text(v.credit, 80)) + '</small><a class="pm-rl" href="' + esc(v.url) + '" target="_blank" rel="noopener">Watch on Facebook</a></div></li>';
+        '<small>' + esc(text(v.credit, 80)) + '</small><a class="pm-rl" href="' + esc(v.url) + '" target="_blank" rel="noopener">Watch on ' + (/youtube/.test(v.url) ? 'YouTube' : 'Facebook') + '</a></div></li>';
     }).join('') + '</ul></div></section>';
   }
   if (!window.GBM_REEL_TAP) {
@@ -231,11 +231,11 @@
       var b = e.target && e.target.closest && e.target.closest('.pm-rp'), f = b && b.parentNode, h = f && f.getAttribute('data-href');
       if (!h || f.querySelector('iframe')) return;
       var i = document.createElement('iframe');
-      i.src = 'https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(h) + '&show_text=false&width=500';
+      i.src = /youtube/.test(h) ? 'https://www.youtube-nocookie.com/embed/' + h.slice(-11) + '?autoplay=1&rel=0&playsinline=1' : 'https://www.facebook.com/plugins/video.php?href=' + encodeURIComponent(h) + '&show_text=false&width=500';
       i.title = b.getAttribute('aria-label').replace('Play video: ', '');
-      i.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
-      i.setAttribute('allowfullscreen', 'true'); i.setAttribute('scrolling', 'no'); i.setAttribute('referrerpolicy', 'origin-when-cross-origin');
-      f.appendChild(i); f.className += ' pm-on'; b.style.display = 'none';
+      i.allow = 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share';
+      i.allowFullscreen = true;
+      f.appendChild(i); b.style.display = 'none';
     });
   }
   function pmDownload(D) {

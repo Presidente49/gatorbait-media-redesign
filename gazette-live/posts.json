@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida is one win from bowl eligibility, with a bye before Georgia",
+      "excerpt": "The Gators (5-2, 3-2 SEC) need six wins for a bowl game, have five games left and are off Oct. 24 before Georgia in Atlanta on Oct. 31.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-is-one-win-from-bowl-eligibility-with-a-bye-before-georgia",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-18T22:16:57Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_14cbe910276a453e914c7808da28ba30~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida is one win from bowl eligibility, with a bye before Georgia"
+      }
+    },
+    {
       "title": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
       "excerpt": "Florida is back in the AP Top 25 at No. 20 after beating No. 7 Texas, which fell to No. 19. Miami is No. 1, and Georgia, Florida's Oct. 31 opponent, is No. 5.",
       "url": "https://www.gatorbaitmedia.com/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Numbers Don't Lie"
-      }
-    },
-    {
-      "title": "No surprise here: Gators picked to win SEC basketball title",
-      "excerpt": "Florida is the preseason SEC basketball favorite, Tommy Haugh is preseason Player of the Year, and Franz Beard looks at the Gators' frontcourt, UNF scrimmage and preseason outlook.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-picked-to-win-sec-basketball-title",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-12T21:19:22Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_9448e7a7fd6b42719770cf06b8ba8d74~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for No surprise here: Gators picked to win SEC basketball title"
       }
     }
   ]

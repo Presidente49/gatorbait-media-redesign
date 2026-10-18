@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida is one win from bowl eligibility, with a bye before Georgia",
+      "excerpt": "The Gators (5-2, 3-2 SEC) need six wins for a bowl game, have five games left and are off Oct. 24 before Georgia in Atlanta on Oct. 31.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-is-one-win-from-bowl-eligibility-with-a-bye-before-georgia",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-18T22:16:57Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_14cbe910276a453e914c7808da28ba30~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida is one win from bowl eligibility, with a bye before Georgia"
+      }
+    },
+    {
       "title": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
       "excerpt": "Florida is back in the AP Top 25 at No. 20 after beating No. 7 Texas, which fell to No. 19. Miami is No. 1, and Georgia, Florida's Oct. 31 opponent, is No. 5.",
       "url": "https://www.gatorbaitmedia.com/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Watch Live at 9: Buddy Martin on Philo, Jones and the Texas Trip"
-      }
-    },
-    {
-      "title": "QB1 Philo Hurt. QB2 Jones To Start? Explained by That Great Football Mind Ted Lasso",
-      "excerpt": "Buddy Martin called in the two greatest minds he knows, Albert Einstein and Ted Lasso, to explain Jon Sumrall's reverse thermostat, why calm is not surrender, and why Gator fans might not be crazy for believing. Members, the biscuits are inside. Einstein had relativity. Ted Lasso has biscuits. And an amazing attitude. So does Tramell Jones.",
-      "url": "https://www.gatorbaitmedia.com/post/qb1-philo-hurt-qb2-jones-to-start-explained-by-that-great-football-mind-ted-lasso",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-15T14:31:03Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/https://i.ytimg.com/vi/k0vRbdeBlkU/maxresdefault_live.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for QB1 Philo Hurt. QB2 Jones To Start? Explained by That Great Football Mind Ted Lasso"
       }
     }
   ]

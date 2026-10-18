@@ -1,0 +1,171 @@
+#!/usr/bin/env node
+// Postgame Edition print build. Reuses the house CSS of tools/magazine-pdf/build-print.mjs (extracted at build time, so the
+// two cannot drift) and adds only page layouts for this issue.
+//   node deploy/magazine-2026/postgame-texas/build-print.mjs <out.html>
+//   PLAYWRIGHT_PKG=/opt/node22/lib/node_modules/playwright node tools/magazine-pdf/render-pdf.mjs <out.html> <out.pdf>
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import * as C from './content.mjs';
+import { FRANZ2, BUDDY2, APPOLL, VOICES } from './articles2.mjs';
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const out = process.argv[2];
+if (!out) { console.error('usage: build-print.mjs <out.html>'); process.exit(2); }
+
+// House CSS from the existing pregame builder.
+const base = fs.readFileSync(path.join(here, '../../../tools/magazine-pdf/build-print.mjs'), 'utf8');
+let css = base.split('<style>\n')[1].split('</style></head>')[0].replace(/\\\\/g, '\\');
+css = css.replace(/@page \{ @bottom-center \{[^\n]*\n/, `@page { @bottom-center { content: "${C.ISSUE.footer}   |   " counter(page); font: 500 8pt/1 Barlow, Arial, sans-serif; color: #5a6783; } }\n`);
+
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const q = s => String(s == null ? '' : s)
+  .replace(/(^|[\s(\[{—–-])"/g, '$1“').replace(/"/g, '”')
+  .replace(/(^|[\s(\[{—–-])'/g, '$1‘').replace(/'/g, '’');
+const img = f => 'file://' + path.join(here, 'art', f);
+const CREDIT = C.ISSUE.credit;
+const fig = (p, cls = '') => `<figure class="ph story-ph ${cls}"><img src="${img(p.file)}" alt="${esc(p.cap)}"><figcaption>${esc(q(p.cap))} ${esc(CREDIT)}.</figcaption></figure>`;
+const hdr = (o, extra = '') => `<header class="story-h"><p class="kick">${esc(q(o.kicker))}</p><h2>${esc(q(o.title))}</h2><p class="by">${esc(o.by)} <span>${esc(o.date || '')}</span></p>${extra}</header>`;
+const pull = (t, cite = '') => `<blockquote class="pull">${esc(t.replace(/[“”]/g, '’'))}</blockquote>${cite ? `<p class="pcite">${esc(cite)}</p>` : ''}`;
+const tiles = a => `<div class="tiles">${a.map(t => `<div class="tile"><b>${esc(t.v)}</b><span>${esc(t.l)}</span><small>${esc(q(t.n))}</small></div>`).join('')}</div>`;
+
+const COVER = 'file://' + path.join(here, '../../postgame-cover-20261018/postgame-cover-1200x1600.jpg');
+const cover = `<section class="cover art"><img class="cover-img" src="${COVER}" alt="GatorBait Magazine Postgame Edition cover: Florida 27, Texas 24"></section>`;
+
+const story = `<article class="story feature desk">${hdr(C.STORY)}${fig(C.STORY.photo)}${pull(C.STORY.pull, C.STORY.pullCite)}
+<div class="body">${C.STORY.paras.map(p => `<p>${esc(q(p))}</p>`).join('')}</div><p class="src">${esc(q(C.STORY.source))}</p></article>`;
+
+const lineRows = C.LINE.rows.map(r => `<tr><td class="tm">${esc(r.team)}<small>${esc(r.rec)}</small></td>${r.q.map(n => `<td>${n}</td>`).join('')}<td class="fin">${r.f}</td></tr>`).join('');
+const lineScore = `<table class="linescore"><thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>Final</th></tr></thead><tbody>${lineRows}</tbody></table>`;
+
+const timeline = `<section class="pg"><h2 class="sec">Score by score</h2><p class="note">Final: Florida 27, No. 7 Texas 24. Highlighted rows are Florida’s 24 straight points.</p>${lineScore}
+<table class="tl"><thead><tr><th>When</th><th>Play</th><th>Score</th></tr></thead><tbody>${C.TIMELINE.map(r => `<tr class="${r.run ? 'run' : ''}"><td>${esc(r.when)}</td><td>${esc(q(r.play))}<small>${esc(q(r.src))}</small></td><td>${esc(r.score)}</td></tr>`).join('')}</tbody></table>
+<h3>Why it flipped</h3>${tiles(C.TILES)}
+<p class="src">Source: ESPN game summary (event 401856724). Q1 and the 11:27 mark are from Franz Beard’s column; the late sack is from the desk story and Franz Beard’s column. The Q2 field goal is the 45-yarder in ESPN’s kicking line and is not timed in the summary we pulled.</p></section>`;
+
+const statRows = C.TEAMSTATS.map(r => `<tr><th>${esc(r[0])}</th><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('');
+const lead = (name, rows) => `<h3>${name}</h3><table class="ld">${rows.map(r => `<tr><th>${esc(r[0])}</th><td>${esc(q(r[1]))}</td></tr>`).join('')}</table>`;
+const box = `<section class="pg"><h2 class="sec">Box score</h2><p class="note">Darrell K. Royal–Texas Memorial Stadium, Austin · Oct. 17, 2026 · Attendance 103,989</p>${lineScore}
+<div class="two"><div><h3>Team stats</h3><table class="tape"><thead><tr><th></th><th>Florida</th><th>Texas</th></tr></thead><tbody>${statRows}</tbody></table></div>
+<div>${lead('Florida leaders', C.LEADERS.Florida)}</div></div>${lead('Texas leaders', C.LEADERS.Texas)}
+<p class="src">Source: ESPN game summary (event 401856724). Records: Florida 5-2 (3-2 SEC), Texas 4-2 (1-2 SEC).</p></section>`;
+
+const franz = `<article class="story feature franz">${hdr(C.FRANZ)}${fig(C.FRANZ.photo)}${pull(C.FRANZ.pull)}<p class="src enote">${esc(q(C.FRANZ.note))}</p><p class="epi">${esc(q(C.FRANZ.epigraph))}</p>
+<div class="body">${C.FRANZ.paras.map(p => `<p>${esc(p)}</p>`).join('')}</div></article>`;
+
+const loren = `<article class="story feature loren">${hdr(C.LOREN)}${pull(C.LOREN.pull)}<p class="src enote">${esc(q(C.LOREN.note))}</p>
+<div class="body">${C.LOREN.blocks.map(([t, s]) => t === 'h' ? `<h3>${esc(q(s))}</h3>` : `<p>${esc(s)}</p>`).join('')}</div></article>`;
+
+const buddy = `<article class="story feature buddy">${hdr(C.BUDDY)}${fig(C.BUDDY.photo)}${pull(C.BUDDY.pull)}<p class="src enote">${esc(q(C.BUDDY.note))}</p>
+<div class="body">${C.BUDDY.blocks.map(([t, s]) => t === 'h' ? `<h3>${esc(q(s))}</h3>` : `<p>${esc(s)}</p>`).join('')}</div></article>`;
+
+const blocksHtml = bl => bl.map(([t, s]) => t === 'h' ? `<h3>${esc(q(s))}</h3>` : `<p>${esc(q(s))}</p>`).join('');
+const franz2 = `<article class="story feature franz2">${hdr(FRANZ2)}${pull(FRANZ2.pull)}<p class="src enote">${esc(q(FRANZ2.note))}</p>
+<div class="body">${blocksHtml(FRANZ2.blocks)}</div></article>`;
+const buddy2 = `<article class="story feature buddy">${hdr(BUDDY2)}${fig(BUDDY2.photo)}${pull(BUDDY2.pull)}<p class="src enote">${esc(q(BUDDY2.note))}</p>
+<div class="body">${blocksHtml(BUDDY2.blocks)}</div></article>`;
+const T = APPOLL.table;
+const apTable = `<p class="note"><b>${esc(T.title)}</b></p><table class="linescore ap"><thead><tr>${T.head.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${T.rows.map(r => `<tr class="${r[0] == T.hi ? 'run' : ''}">${r.map((c, i) => `<td${i == 1 ? ' class="tm"' : ''}>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+const poll = `<section class="pg poll"><header class="story-h"><p class="kick">${esc(q(APPOLL.kicker))}</p><h2>${esc(q(APPOLL.title))}</h2><p class="by">${esc(APPOLL.by)} <span>${esc(APPOLL.date)}</span></p></header>
+<div class="body">${APPOLL.paras.map(p => Array.isArray(p) ? `<h3>${esc(q(p[1]))}</h3>` : `<p>${esc(q(p))}</p>`).join('')}</div>${apTable}<p>${esc(q(APPOLL.close))}</p><p class="src">${esc(q(APPOLL.source))}</p></section>`;
+
+const presser = `<section class="pg"><h2 class="sec">Postgame voices</h2><p class="note">What the coach, the running back and the quarterback said after Florida 27, No. 7 Texas 24.</p>
+${VOICES.cards.map(c => `<div class="voice"><p class="vq">“${esc(q(c.q))}”</p><p class="ph-by">${esc(c.who)}</p><p class="vc">${esc(q(c.ctx))}${c.link ? ' ' + esc(c.link) : ''}</p></div>`).join('')}
+<p class="src">${esc(q(VOICES.note))}</p></section>`;
+
+const G = C.GEORGIA;
+const georgia = `<section class="pg"><h2 class="sec">What’s next: Georgia</h2><p class="note">Florida’s next game. Saturday, Oct. 24 is an open date.</p>
+<div class="matchup"><div class="team"><span class="rk">${esc(G.florida.rk)}</span><b>Florida</b><span>${esc(G.florida.line)}</span></div><div class="at">vs</div><div class="team"><span class="rk">${esc(G.georgia.rk)}</span><b>Georgia</b><span>${esc(G.georgia.line)}</span></div></div>
+<table class="watch">${G.facts.map(r => `<tr><th>${esc(r[0])}</th><td>${esc(q(r[1]))}</td></tr>`).join('')}</table>
+<h3>What Florida carries out of Austin</h3>${tiles(G.carry)}
+<p class="src">${esc(q(G.source))}</p></section>`;
+
+const back = `<section class="credits"><h2 class="sec">Masthead</h2><div class="people">${C.CREDITS.people.map(p => `<div class="pr"><b>${esc(q(p[0]))}</b><span>${esc(q(p[1]))}</span></div>`).join('')}</div>
+<div class="clines">${C.CREDITS.lines.map(l => `<p>${esc(q(l))}</p>`).join('')}</div><p class="cc">${esc(C.CREDITS.contact)}<br>${esc(C.CREDITS.copyright)}</p>
+<div class="end"><p class="next">Next: Georgia, Saturday, Oct. 31, 3:30 p.m. ET, ABC, Mercedes-Benz Stadium in Atlanta. Open date Oct. 24.</p><p class="colophon">GatorBait Magazine, ${esc(C.ISSUE.number)}, ${esc(C.ISSUE.date)}. Independent Florida Gators coverage. Published by GatorBait Media, www.gatorbaitmedia.com.</p></div></section>`;
+
+const extra = `
+.pg { break-before: page; }
+.pcite { margin: -6pt 0 8pt 19pt; font: 700 8pt/1.3 Barlow, Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); }
+.epi { font: italic 500 10.5pt/1.4 Barlow, Arial, sans-serif; color: var(--blue); margin: 0 0 8pt; }
+.story.feature .story-h h2 { font-size: 34pt; }
+.story.feature .body > h3:first-child + p::first-letter { float: none; font: inherit; color: inherit; padding: 0; }
+.story.feature .body > p:first-child::first-letter { float: none; font: inherit; color: inherit; padding: 0; }
+.story .body h3 { margin: 8pt 0 3pt; font: 800 12pt/1.2 "Barlow Condensed", Barlow, sans-serif; text-transform: uppercase; letter-spacing: .04em; color: var(--blue); break-after: avoid; }
+.story.feature .story-ph img { max-height: 2.6in; }
+.story .body p { break-inside: auto; }
+.enote { margin: 0 0 8pt; font-size: 7.6pt; }
+.buddy .story-ph img { max-height: 2.2in; }
+.buddy .body p { margin-bottom: 4.5pt; }
+.loren .body p { margin-bottom: 4.5pt; }
+.loren .enote { color: var(--orange); font-weight: 700; }
+.buddy .enote { color: var(--orange); font-weight: 700; }
+.linescore { margin: 4pt 0 10pt; font-size: 11pt; }
+.linescore th, .linescore td { text-align: center; padding: 5pt 6pt; }
+.linescore th:first-child, .linescore td.tm { text-align: left; }
+.linescore thead th { background: var(--blue); color: #fff; border: 0; }
+.linescore td.tm { font: 800 15pt/1.1 "Barlow Condensed", Barlow, sans-serif; text-transform: uppercase; color: var(--blue); }
+.linescore td.tm small { display: block; font: 500 8pt/1.2 Barlow, Arial, sans-serif; color: var(--mute); text-transform: none; }
+.linescore td.fin { font: 900 20pt/1 "Barlow Condensed", Barlow, sans-serif; color: var(--orange); }
+.tl { margin: 0 0 8pt; font-size: 9.6pt; }
+.tl td:first-child { width: .95in; font-weight: 700; color: var(--blue); white-space: nowrap; }
+.tl td:last-child { width: 1.45in; font-weight: 700; white-space: nowrap; }
+.tl small { display: block; color: var(--mute); font-size: 7.4pt; }
+.tl thead th { background: var(--blue); color: #fff; border: 0; }
+.tl tr.run td { background: #fff1ea; }
+.ld { font-size: 9pt; margin-bottom: 4pt; }
+.ld th { width: .8in; }
+.tape td:nth-child(n+2) { white-space: normal; }
+.two { margin-top: 6pt; }
+.slot { border: 1.5pt dashed var(--orange); background: #fffaf7; padding: 10pt 14pt 8pt; margin: 0 0 12pt; position: relative; break-inside: avoid; }
+.slot.slim { padding: 6pt 12pt 2pt; margin: 0 0 6pt; }
+.slot .tag { position: absolute; top: -8pt; left: 12pt; background: var(--orange); color: #fff; font: 800 7.6pt/1 Barlow, Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; padding: 3pt 8pt; }
+.slot h3 { margin-top: 4pt; }
+.slot.slim p { margin: 0 0 4pt; font-weight: 600; }
+.ph-q { font: italic 600 13pt/1.35 Barlow, Arial, sans-serif; color: #8a93a6; margin: 4pt 0; }
+.ph-by { font: 800 8.6pt/1.2 Barlow, Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); margin: 0 0 4pt; }
+.matchup { margin: 8pt 0 12pt; }
+.watch { margin: 4pt 0 6pt; font-size: 11pt; }
+.watch th { width: 1.3in; font-size: 9pt; }
+.credits { break-before: page; }
+.voice { border-left: 6pt solid var(--orange); background: #f4f7fd; padding: 10pt 14pt 8pt; margin: 0 0 12pt; break-inside: avoid; }
+.vq { font: 700 17pt/1.25 Barlow, Arial, sans-serif; color: var(--blue); margin: 0 0 4pt; }
+.vc { font: 500 9pt/1.35 Barlow, Arial, sans-serif; color: var(--mute); margin: 0; }
+.linescore.ap { margin: 2pt 0 6pt; }
+.linescore.ap td, .linescore.ap th { font-size: 9.5pt; padding: 2pt 6pt; }
+.linescore.ap td.tm { font-size: 11pt; }
+.pg .body p { margin-bottom: 5pt; }
+.poll .body p { font-size: 9.6pt; line-height: 1.32; margin-bottom: 3pt; }
+.poll .story-h h2 { font-size: 24pt; }
+.poll .body h3 { margin: 5pt 0 2pt; }
+.desk .story-ph img { max-height: 1.45in; }
+.desk .body p { font-size: 9.7pt; line-height: 1.34; }
+.desk .story-h h2 { font-size: 28pt !important; }
+.desk .body p { margin-bottom: 4.5pt; }
+.desk .tiles .tile { padding: 5pt 8pt; }
+.story.feature.franz2 .story-h h2, .story.feature.buddy .story-h h2 { font-size: 28pt; }
+`;
+
+const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>GatorBait Magazine | Postgame Edition: Florida 27, Texas 24</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Barlow+Condensed:wght@600;700;800;900&display=block">
+<style>
+${css}
+${extra}
+</style></head><body>
+${cover}
+${franz2}
+${franz}
+${buddy2}
+${buddy}
+${poll}
+${loren}
+${story}
+${timeline}
+${box}
+${presser}
+${georgia}
+${back}
+</body></html>`;
+fs.writeFileSync(out, html);
+console.log(`wrote ${out} (${html.length} chars, ${(html.match(/<img /g) || []).length} images)`);

@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1102px;height:1427px;overflow:hidden;background:#04123a}
+.c{position:relative;width:1102px;height:1427px;font-family:"Barlow",sans-serif;color:#fff;overflow:hidden;
+ background:radial-gradient(ellipse 80% 55% at 50% 42%,#1e52d6 0%,#0b2a86 45%,#04123a 100%)}
+
+.flare{position:absolute;width:420px;height:160px;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.55),rgba(255,255,255,0) 70%);filter:blur(10px)}
+.f1{left:-120px;top:40px}.f2{right:-120px;top:40px}
+.rail{position:absolute;left:0;right:0;height:6px;background:linear-gradient(90deg,rgba(250,70,22,0),#ff6a2b 20%,#ff6a2b 80%,rgba(250,70,22,0));box-shadow:0 0 18px #ff6a2b,0 0 40px rgba(255,106,43,.6)}
+.r1{top:0}.r2{bottom:0}
+.side{position:absolute;top:0;bottom:0;width:14px;background:linear-gradient(180deg,#ff6a2b,#fa4616 50%,#ff6a2b);box-shadow:0 0 22px rgba(255,106,43,.9)}
+.sl{left:0}.sr{right:0}
+.floor{position:absolute;left:0;right:0;bottom:0;height:260px;background:linear-gradient(180deg,rgba(4,18,58,0),rgba(2,10,34,.95));}
+.chrome{background:linear-gradient(180deg,#ffffff 0%,#e3eaf2 32%,#9aa7b7 49%,#f6f9fc 54%,#b7c1cd 78%,#e9eef4 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+ filter:drop-shadow(0 3px 0 #1a2b55) drop-shadow(0 6px 0 #0d1b3d) drop-shadow(0 14px 22px rgba(0,0,0,.65))}
+.mast{position:absolute;top:58px;left:60px;right:60px;text-align:center;z-index:5}
+.logo{font-family:"Barlow Condensed";font-weight:800;font-size:118px;line-height:.85;letter-spacing:.01em;text-transform:uppercase}
+.logo .o{background:linear-gradient(180deg,#ffb088 0%,#ff7a3d 40%,#e23f0e 55%,#ff8a52 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:10px;font-family:"Barlow Condensed";font-weight:700;font-size:28px;letter-spacing:.5em;text-transform:uppercase;color:#cfe0ff;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.slab{position:absolute;top:246px;left:50%;transform:translateX(-50%);z-index:6;padding:12px 60px 10px;white-space:nowrap;
+ background:linear-gradient(180deg,#ff7a3d 0%,#f24e14 55%,#d33608 100%);clip-path:polygon(22px 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,22px 100%,0 50%);
+ font-family:"Barlow Condensed";font-weight:800;font-size:40px;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-shadow:0 2px 0 #9a2a06,0 6px 14px rgba(0,0,0,.5)}
+.slab:after{content:"";position:absolute;left:0;right:0;top:0;height:45%;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0))}
+.screen{position:absolute;top:352px;left:72px;width:958px;height:590px;z-index:4;border:6px solid #ff7a3d;outline:3px solid #0a2a8a;box-shadow:0 0 0 10px rgba(255,122,61,.18),0 0 40px rgba(255,106,43,.55),0 30px 60px rgba(0,0,0,.7);overflow:hidden;background:#000}
+.screen img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+.tag{position:absolute;left:0;bottom:0;right:0;padding:12px 22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:linear-gradient(90deg,rgba(4,18,58,.96),rgba(4,18,58,.6) 70%,rgba(4,18,58,0));font-family:"Barlow Condensed";font-weight:700;font-size:24px;letter-spacing:.05em;text-transform:uppercase}
+.tag b{color:#ff9a70}
+.hed{position:absolute;top:958px;left:40px;right:40px;text-align:center;z-index:6;font-family:"Barlow Condensed";font-weight:800;font-size:158px;line-height:.86;text-transform:uppercase;letter-spacing:-.005em}
+.hed .o{background:linear-gradient(180deg,#ffb088 0%,#ff7a3d 40%,#e23f0e 55%,#ff8a52 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bar{position:absolute;top:1252px;left:60px;right:60px;z-index:6;text-align:center;padding:12px 20px;white-space:nowrap;background:linear-gradient(180deg,#0e2f8f,#071d60);border-top:3px solid #ff7a3d;border-bottom:3px solid #ff7a3d;box-shadow:0 10px 30px rgba(0,0,0,.6);
+ font-family:"Barlow Condensed";font-weight:800;font-size:31px;letter-spacing:.07em;text-transform:uppercase;color:#fff;text-shadow:0 2px 0 #031238}
+.bar span{color:#ff9a70}
+.foot{position:absolute;bottom:28px;left:0;right:0;z-index:6;text-align:center;font-family:"Barlow Condensed";font-weight:700;font-size:26px;letter-spacing:.14em;text-transform:uppercase;color:#dfe8ff}
+.foot:before,.foot:after{content:"";display:inline-block;width:150px;height:4px;background:#ff7a3d;vertical-align:middle;margin:0 18px;box-shadow:0 0 10px #ff7a3d}
+.cr{position:absolute;right:22px;top:420px;transform:rotate(-90deg);transform-origin:right top;font-size:13px;letter-spacing:.12em;color:rgba(255,255,255,.75);z-index:7}
+</style></head><body><div class="c">
+<div class="flare f1"></div><div class="flare f2"></div>
+<div class="rail r1"></div><div class="rail r2"></div><div class="side sl"></div><div class="side sr"></div>
+<div class="mast"><div class="logo chrome">GatorBait</div><div class="sub">Magazine · Postgame Edition</div></div>
+<div class="slab">Gators stun No. 7 Texas</div>
+<div class="screen"><img src="run2.jpg" alt="Florida ball carrier No. 2 runs against Texas in Austin, Oct. 17, 2026"><div class="tag"><b>Final · Austin</b> · Florida scored 24 straight points. Oct. 17, 2026.</div></div>
+<div class="hed"><div class="chrome">Florida 27</div><div class="o">Texas 24</div></div>
+<div class="bar">Jones Jr.’s first start <span>·</span> Columns by Franz Beard and Buddy Martin</div>
+<div class="floor"></div>
+<div class="foot">GatorBaitMedia.com</div>
+<div class="cr">PHOTO COURTESY UAA AND HANNAH WHITE</div>
+</div></body></html>

@@ -50,6 +50,9 @@ const box = `<section class="pg"><h2 class="sec">Box score</h2><p class="note">D
 const franz = `<article class="story feature franz">${hdr(C.FRANZ)}${fig(C.FRANZ.photo)}${pull(C.FRANZ.pull)}<p class="src enote">${esc(q(C.FRANZ.note))}</p><p class="epi">${esc(q(C.FRANZ.epigraph))}</p>
 <div class="body">${C.FRANZ.paras.map(p => `<p>${esc(p)}</p>`).join('')}</div></article>`;
 
+const loren = `<article class="story feature loren">${hdr(C.LOREN)}${pull(C.LOREN.pull)}<p class="src enote">${esc(q(C.LOREN.note))}</p>
+<div class="body">${C.LOREN.blocks.map(([t, s]) => t === 'h' ? `<h3>${esc(q(s))}</h3>` : `<p>${esc(s)}</p>`).join('')}</div></article>`;
+
 const buddy = `<article class="story feature buddy">${hdr(C.BUDDY)}${fig(C.BUDDY.photo)}${pull(C.BUDDY.pull)}<p class="src enote">${esc(q(C.BUDDY.note))}</p>
 <div class="body">${C.BUDDY.blocks.map(([t, s]) => t === 'h' ? `<h3>${esc(q(s))}</h3>` : `<p>${esc(s)}</p>`).join('')}</div></article>`;
 
@@ -83,6 +86,8 @@ const extra = `
 .enote { margin: 0 0 8pt; font-size: 7.6pt; }
 .buddy .story-ph img { max-height: 2.2in; }
 .buddy .body p { margin-bottom: 4.5pt; }
+.loren .body p { margin-bottom: 4.5pt; }
+.loren .enote { color: var(--orange); font-weight: 700; }
 .buddy .enote { color: var(--orange); font-weight: 700; }
 .linescore { margin: 4pt 0 10pt; font-size: 11pt; }
 .linescore th, .linescore td { text-align: center; padding: 5pt 6pt; }
@@ -126,6 +131,7 @@ ${story}
 ${timeline}
 ${box}
 ${franz}
+${loren}
 ${buddy}
 ${presser}
 ${georgia}

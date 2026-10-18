@@ -120,6 +120,74 @@ export const FRANZ = {
   note: 'Column as published by GatorBait Media (Wix post c16d53be). Sumrall quotes are from his postgame press conference as Franz Beard filed them. Print edition conforms three figures to ESPN: the halftime score was 17-10 (Florida was tied at 17 in the third quarter, not at the half), and Emmett Mosley V is spelled as ESPN lists it.',
 };
 
+// ---- Loren Meadows, Postgame Thoughts (published Wix post bba317f0, Oct. 18). Text as published, after copy-desk fixes. ----
+export const LOREN = {
+  kicker: 'Analyst · Loren Meadows',
+  title: 'Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)',
+  by: 'By Loren Meadows',
+  date: 'Oct. 18, 2026',
+  pull: 'Football matters again at Florida.',
+  note: 'As published by GatorBait Media (Wix post bba317f0). Copy-desk fixes: Brendan Bett, Lacota Dippre, Jadan Baugh per ESPN; Wingo and Coleman combined line corrected to 6 catches for 48 yards per the ESPN box score. Not verified: Simmons/Sellers 619 yards and 6 TD, Texas defense ranked 3rd in the SEC, "162 over the past two contests".',
+  blocks: [
+  [
+    "p",
+    "Florida finds a way to get out of Austin with a win on a day where they continue to find more about themselves every day."
+  ],
+  [
+    "h",
+    "What We Thought"
+  ],
+  [
+    "p",
+    "All week pundits, colleagues, and casual fans alike searched for answers and gave opinions on what had happened to Jon Sumrall and the Gators the past two weeks. With the trip to Austin looming and the Gators looking its worst in all three phases, there was no reason to think that there would not be a third straight loss for the Gators."
+  ],
+  [
+    "p",
+    "Arch Manning had been up and down all season with most of his highlights coming on a fourth quarter 21-point comeback against Ohio State. A preseason Heisman campaign had all but fallen off with late game heartbreak two late interceptions that doomed Texas in the Red River Rivalry. Unfortunately the Gator defense had been the perfect cocktail for teams coming off of tough losses the previous week. Florida was last in the SEC in pass defense and surrendering 268 yards per game. In the last two games Austin Simmons and Lenoris Sellers had bludgeoned the Gators for 619 yards and 6 touchdowns through the air. Sellers who had struggled most of the season was as elusive and dynamic as he had been all season and rediscovered himself at the hands of the Florida defense."
+  ],
+  [
+    "p",
+    "Offensively, a running game that had Jadan Baugh headed to New York had struggled to find any footing the last two weeks and had everyone questioning Buster Faulkner’s playcalling and if Aaron Philo was the quarterback to help “wake the beast up”. The offensive line seemed to catch the most strays as a unit that was the darlings of college football after Ole Miss had many questioning the makeup of this unit as they mustered just 162 over the past two contests. Factor in a Texas defense that was ranked 3rd in the SEC and this looked to be another bad trip to 40 Acres. Finally, late last week it was revealed that Aaron Philo had suffered an injury to his throwing shoulder that meant Tramell Jones would make his first career start in one of college football’s most hostile environments."
+  ],
+  [
+    "h",
+    "What We Got"
+  ],
+  [
+    "p",
+    "Early in the game it looked as if Florida was in for yet another disappointing outing. Texas would jump out to an early 10-0 lead and Florida once again looked to be struggling to find its footing. Early miscues and penalties would compound as Florida would give up a 63 yard punt return to Ryan Niblett in the second quarter and it looked like the rout was on."
+  ],
+  [
+    "p",
+    "Jon Sumrall has talked to his team about being in the moment and while he downplayed the significance of the “middle eight”, Florida seemed to understand that going into the half down 14 points was not a good proposition for an upset. Tramell Jones had played well up to the 2:36 mark of the half but three points was all that the Florida offense had been able to muster. What was evident was that the mobility of Jones looked to be much more pronounced than Philo and that this drive would need his feet more than any. A fourth down stop by the Florida defense left Florida with just 49 yards to score and plenty of time to do it. Jones would have a key 14-yard scamper on the drive and two plays later found Lacota Dippre for a 7-yard touchdown to pull the Gators within seven at the half."
+  ],
+  [
+    "p",
+    "The second half would belong to Florida who came out with a balanced 15-play drive that took up over half of the third quarter and was capped by another Jones to Dippre connection where Jones eluded the rush and stepped up to find Dippre in the middle of the end zone. As impressive as the drive was the time of possession may have been the most impressive as it was close to 12 minutes of game time that Arch Manning and the Texas offense had been on the sideline. The Florida defense was improved with the Gators limiting big runs and explosive throws by timely run blitzes and secondary play that challenged the Texas receivers. Ryan Wingo and Cam Coleman are two of the nation’s best playmakers and the Gators held the duo to just 6 catches for 48 yards. While the Gator corners had been under scrutiny all season, they showed up big in key moments against two future pros."
+  ],
+  [
+    "p",
+    "Ultimately the game came down to three key plays. After sack of Manning on the Texas 49, Texas coach Steve Sarkisian opted to go for it on 4th and 2 instead of punting to pin the Gators deep. The next play was a stop of Manning for three yard loss by tackle Brendan Bett giving the Gators another short field which would lead to a Florida score to put the Gators up 27-17. Texas would find a way to get points on the next drive and force a Florida punt to set up a game winning drive for Arch Manning and Texas. What followed was another big time defensive play for the Gators that had been missing for the last two weeks. On 2nd and 8 from the Texas 48 Florida would bring a six man pressure that mixed the picture up for Manning who would be sacked by Myles Graham and fumble the ball that was recovered by nickelback Kanye Clark."
+  ],
+  [
+    "p",
+    "Florida would run two plays forcing Texas to use two of their time-outs leaving the Gators with a 3rd and 7 from the Texas 37. While many were expecting a Jadan Baugh run or Jones throw, it was the feet of Jones again that provided the final nail in the Texas coffin. Jones pulled the ball from the belly of Baugh and made two Texas defenders miss on his way to a nine yard gain and the Gator win."
+  ],
+  [
+    "h",
+    "The Skinny"
+  ],
+  [
+    "p",
+    "What is clear is that Florida has found the right guy to lead them back to prominence. It is also clear that he is totally aware of who and what his team is and where they need to improve. Jon Sumrall has taken a lot of questions regarding the X and O’s of his football team but the real juice is in the people and his trust in them to continuously do the work to improve. Forget the play calls on both sides of the ball, forget who was playing quarterback give Buster Faulkner and crew credit for getting Jones ready to play and Brad White for getting his bruised unit back off the mat to fight and fight again. Sumrall makes no secret that the Gators have a long way to go, but he also is clear that while Jones mobility may add another dimension the offense Aaron Philo has made enough plays at big moments to warrant a stay of a permanent change at quarterback. Regardless of who takes the snaps, the mention of recruiting in the off week and a focus on the team’s overall health is what lays foremost on his mind after what many would define as a season-saving win. This was a win that Florida needed, but even at 6-0 would have needed still. The 1-0 mentality works for Sumrall and that mentality is what allows this team to prepare and show up regardless of what happened seven days before. Football matters again at Florida, and for the first time in a while to those inside the building as well."
+  ],
+  [
+    "p",
+    "Final Score: Florida 27 Texas 24 (Prediction Texas 31 Florida 14)"
+  ]
+],
+};
+
 // ---- Buddy Martin column (unpublished Wix draft 6e802f31). Magazine cut per Brenden, Oct. 18. ----
 // Kept: the opening through "Florida went into Austin...", then the first draft's remaining sections.
 // Dropped: the second restart ("Frankly, I almost turned off my television" through "...means everything, as well...") and the

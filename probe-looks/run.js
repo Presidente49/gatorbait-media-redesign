@@ -33,3 +33,4 @@ async function audit(path, w, mobile) {
   await b.close();
 }
 (async () => { for (const pg of PAGES) { await audit(pg, 1280, false); await audit(pg, 390, true); } })();
+// recheck after native font fix 1792334672

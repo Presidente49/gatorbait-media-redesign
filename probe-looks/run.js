@@ -1,31 +1,21 @@
 const { chromium } = require('playwright');
-async function check(w, mobile) {
+(async () => {
   const b = await chromium.launch();
-  const c = await b.newContext(mobile ? { viewport: { width: w, height: 844 }, isMobile: true, hasTouch: true } : { viewport: { width: w, height: 900 } });
-  const p = await c.newPage(); const errs = [], bad = [];
-  p.on('pageerror', e => errs.push(String(e).slice(0, 120)));
-  p.on('response', r => { if (r.status() >= 400 && /gatorbaitmedia|wixstatic|jsdelivr|usrfiles/.test(r.url())) bad.push(r.status() + ' ' + r.url().slice(0, 120)); });
+  const c = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 3 });
+  const p = await c.newPage();
   await p.goto('https://www.gatorbaitmedia.com/magazine?v=' + Date.now(), { waitUntil: 'networkidle', timeout: 60000 }).catch(() => {});
   await p.waitForTimeout(6000);
-  for (let y = 0; y < 30000; y += 900) { await p.evaluate(v => window.scrollTo(0, v), y); await p.waitForTimeout(120); }
-  const r = await p.evaluate(() => {
-    const pg = document.querySelector('#gbm-magazine-page');
-    const dl = [...document.querySelectorAll('a')].find(a => /Download the full magazine/i.test(a.textContent || ''));
-    const imgs = [...document.images].filter(i => pg && pg.contains(i));
-    return {
-      issue: pg && pg.getAttribute('data-issue'), h1: [...document.querySelectorAll('h1')].map(h => h.textContent.trim().slice(0, 90)),
-      dl: dl ? { href: dl.getAttribute('href'), download: dl.hasAttribute('download'), h: Math.round(dl.getBoundingClientRect().height) } : null,
-      imgs: imgs.length, brokenImgs: imgs.filter(i => i.complete && i.naturalWidth === 0).map(i => i.src.slice(-50)),
-      uaa: !![...document.querySelectorAll('a')].find(a => a.getAttribute('href') === 'https://floridagators.com'),
-      hannah: !![...document.querySelectorAll('a')].find(a => /hannahmorganphoto/.test(a.getAttribute('href') || '')),
-      georgiaRank: /(No\. ?1|#1|top-ranked|6-0)[^.]{0,20}Georgia|Georgia[^.]{0,20}(No\. ?1|6-0)/i.test(pg ? pg.textContent : ''),
-      sections: pg ? [...pg.querySelectorAll('h2')].map(h => h.textContent.trim().slice(0, 40)) : [],
-      overflow: document.documentElement.scrollWidth - window.innerWidth,
-      pageHeight: document.documentElement.scrollHeight
-    };
-  });
-  console.log('### /magazine @' + w + ' ' + JSON.stringify({ errs, bad: bad.slice(0, 5) }));
-  console.log('  ' + JSON.stringify(r));
+  for (const y of [1500, 4200, 7000]) {
+    await p.evaluate(v => window.scrollTo(0, v), y); await p.waitForTimeout(700);
+    const r = await p.evaluate(() => {
+      const bar = document.querySelector('.pm-readerbar');
+      const rc = bar && bar.getBoundingClientRect();
+      const stack = []; for (let yy = 0; yy <= 80; yy += 8) { const e = document.elementsFromPoint(195, yy).slice(0, 3).map(n => n.tagName.toLowerCase() + (n.id ? '#' + n.id : '') + (n.className && n.className.baseVal === undefined ? '.' + String(n.className).split(' ').slice(0, 2).join('.') : '')); stack.push(yy + ':' + e.join(' < ')); }
+      const cs = bar && getComputedStyle(bar);
+      const ancestors = []; for (let e = bar && bar.parentElement; e && ancestors.length < 8; e = e.parentElement) { const s = getComputedStyle(e); ancestors.push(e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + ' ov=' + s.overflow + '/' + s.overflowY + ' pos=' + s.position + ' tf=' + s.transform.slice(0, 20) + ' ct=' + s.contain + ' h=' + Math.round(e.getBoundingClientRect().height)); }
+      return { scrollY: window.scrollY, innerH: window.innerHeight, bar: rc && { top: Math.round(rc.top * 10) / 10, h: Math.round(rc.height), pos: cs.position, topCss: cs.top, shadow: cs.boxShadow, transition: cs.transition.slice(0, 60), willChange: cs.willChange }, stack, ancestors };
+    });
+    console.log('### scroll ' + y + ' ' + JSON.stringify(r));
+  }
   await b.close();
-}
-(async () => { await check(1280, false); await check(390, true); await check(320, true); })();
+})();

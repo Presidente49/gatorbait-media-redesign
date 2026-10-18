@@ -24,9 +24,9 @@ jobs:
       - name: Commit bottom screenshots (read-only probe output only)
         if: always()
         run: |
-          mkdir -p deploy/mag-bottom-check-20261018 && mkdir -p deploy/flash-audit-tl-20261018 && cp p/shots/*.jpg p/shots/audit.json deploy/flash-audit-tl-20261018/ || true
+          mkdir -p deploy/mag-bottom-check-20261018 && mkdir -p deploy/flash-audit-after2-20261018 && cp p/shots/*.jpg p/shots/audit.json deploy/flash-audit-after2-20261018/ || true
           git config user.name "probe-bot" && git config user.email "probe-bot@users.noreply.github.com"
-          git add deploy/flash-audit-tl-20261018 && git commit -m "probe output: magazine bottom check screenshots" && git push origin HEAD:probe/flash-20261018 || true
+          git add deploy/flash-audit-after2-20261018 && git commit -m "probe output: magazine bottom check screenshots" && git push origin HEAD:probe/flash-20261018 || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:

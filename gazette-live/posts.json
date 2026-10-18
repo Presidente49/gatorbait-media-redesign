@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)",
+      "excerpt": "Florida finds a way to get out of Austin with a win on a day where they continue to find more about themselves every day. Loren Meadows breaks down what we thought, what we got and what it means.",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-10-18T16:29:42Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)"
+      }
+    },
+    {
+      "title": "The Gators Sucked Less, Turning Arch Madness Into Arch Sadness",
+      "excerpt": "Franz Beard: A bye week, a quarterback question and a defense that found its fight in Austin. Plus every SEC result: Auburn stuns No. 1 Georgia, Tennessee routs Alabama and more.",
+      "url": "https://www.gatorbaitmedia.com/post/the-gators-sucked-less-turning-arch-madness-into-arch-sadness",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-18T13:30:11Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Gators Sucked Less, Turning Arch Madness Into Arch Sadness"
+      }
+    },
+    {
       "title": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation",
       "excerpt": "Buddy Martin on Florida's 27-24 win at No. 7 Texas, Tramell Jones Jr.'s first start and the quarterback question Jon Sumrall now faces.",
       "url": "https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Texas opens as a 10-point favorite against Florida"
-      }
-    },
-    {
-      "title": "Gators Drop Out of AP Top 25 After Second Straight Loss",
-      "excerpt": "Florida falls out of the Oct. 11 AP Top 25 after a 38-19 loss to South Carolina. Georgia takes No. 1, and the Gators visit No. 7 Texas next.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-drop-out-ap-top-25-october-11-2026",
-      "author": "GatorBaitMagazineStaff",
-      "firstPublishedDate": "2026-10-11T18:35:56Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_8183df2e1ce141dcaa4f4abaae22aaca~mv2.jpg/v1/fit/w_314,h_176,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators Drop Out of AP Top 25 After Second Straight Loss"
-      }
-    },
-    {
-      "title": "Buddy Blog: Can Sumrall Swim In The Deep End Of This Cesspool?",
-      "excerpt": "Buddy Martin on a South Carolina collapse that raises the hard question about Jon Sumrall and a season suddenly at risk.",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-11T16:27:39Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_46d2d14e73354d91b7f848e45cceabb5~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Buddy Blog: Can Sumrall Swim In The Deep End Of This Cesspool?"
       }
     }
   ]

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)",
+      "excerpt": "Florida finds a way to get out of Austin with a win on a day where they continue to find more about themselves every day. Loren Meadows breaks down what we thought, what we got and what it means.",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-10-18T16:29:42Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)"
+      }
+    },
+    {
+      "title": "The Gators Sucked Less, Turning Arch Madness Into Arch Sadness",
+      "excerpt": "Franz Beard: A bye week, a quarterback question and a defense that found its fight in Austin. Plus every SEC result: Auburn stuns No. 1 Georgia, Tennessee routs Alabama and more.",
+      "url": "https://www.gatorbaitmedia.com/post/the-gators-sucked-less-turning-arch-madness-into-arch-sadness",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-18T13:30:11Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Gators Sucked Less, Turning Arch Madness Into Arch Sadness"
+      }
+    },
+    {
       "title": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation",
       "excerpt": "Buddy Martin on Florida's 27-24 win at No. 7 Texas, Tramell Jones Jr.'s first start and the quarterback question Jon Sumrall now faces.",
       "url": "https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Philo's injury could give Tramell Jones Jr. his opening"
-      }
-    },
-    {
-      "title": "Report: Aaron Philo's status uncertain for Florida's trip to Texas",
-      "excerpt": "Aaron Philo was limited at practice Wednesday, according to On3. Tramell Jones Jr. would be next in line if Philo cannot play.",
-      "url": "https://www.gatorbaitmedia.com/post/report-aaron-philo-s-status-uncertain-for-florida-s-trip-to-texas",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-14T19:15:39Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_8e8e9000b0044c4d8375ed1fd8ee7399~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Report: Aaron Philo's status uncertain for Florida's trip to Texas"
-      }
-    },
-    {
-      "title": "Thoughts of the Day: Franz Beard, Oct. 14, 2026",
-      "excerpt": "Florida’s trip to Texas brings familiar faces and pressing questions. Franz Beard examines the Muschamp and Manning storylines, plus the offensive and defensive issues the Gators must address.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-14-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-14T13:18:24Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_087caa7bb241448d85154f687e83487d~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Thoughts of the Day: Franz Beard, Oct. 14, 2026"
       }
     }
   ]

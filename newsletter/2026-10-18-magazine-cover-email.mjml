@@ -19,7 +19,7 @@
   <mj-body background-color="#FFFFFF" width="600px">
     <mj-section background-color="#0B1F4B" padding="0" border-top="6px solid #FA4616">
       <mj-column>
-        <mj-image src="https://static.wixstatic.com/media/d3cfa5_38b7810599ce465ea831a03d8788b201~mv2.jpg/v1/fill/w_1200,h_675,al_c,q_85/gatorbait-magazine-postgame-edition-cover-2026-10-18.jpg" alt="GatorBait Magazine, Postgame Edition: Florida 27, No. 7 Texas 24. Jon Sumrall at the postgame podium in Austin. Photo: UAA / FloridaGators.com" href="https://www.gatorbaitmedia.com/magazine?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_cover_2026_10_18&utm_content=cover" padding="0" fluid-on-mobile="true" />
+        <mj-image width="600px" src="https://static.wixstatic.com/media/d3cfa5_dc0e57825cff4a29ac23a2e771236c34~mv2.jpg/v1/fill/w_1200,h_1600,al_c,q_80/gatorbait-magazine-postgame-cover-2026-10-18.jpg" alt="GatorBait Magazine, Postgame Edition: Florida 27, No. 7 Texas 24. Quarterback Tramell Jones, No. 9, takes the snap in Austin. Photo courtesy UAA and Hannah White (UAA / FloridaGators.com)" href="https://www.gatorbaitmedia.com/magazine?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_cover_2026_10_18&utm_content=cover" padding="0" fluid-on-mobile="true" />
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="26px 24px 26px" css-class="gb-pad">
@@ -33,7 +33,7 @@
     </mj-section>
     <mj-section background-color="#F5F6F8" padding="18px 24px 18px" css-class="gb-pad">
       <mj-column>
-        <mj-text padding="0" color="#4B5563" font-size="13px" line-height="1.5"><b>Photo credits.</b> Cover: Jon Sumrall at the postgame press conference in Austin, Oct. 17, 2026. Photo courtesy <a href="https://floridagators.com" style="color:#0B3B9E;">UAA</a> (University Athletic Association, FloridaGators.com). See more at the official <a href="https://floridagators.com/galleries" style="color:#0B3B9E;">Florida Gators photo galleries</a>.</mj-text>
+        <mj-text padding="0" color="#4B5563" font-size="13px" line-height="1.5"><b>Photo credits.</b> Cover: quarterback Tramell Jones takes the snap at Texas, Oct. 17, 2026. Photo courtesy Hannah White and <a href="https://floridagators.com" style="color:#0B3B9E;">UAA</a> (University Athletic Association, FloridaGators.com). See more at the official <a href="https://floridagators.com/galleries" style="color:#0B3B9E;">Florida Gators photo galleries</a>.</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#EEF0F3" padding="20px 24px" css-class="gb-pad">

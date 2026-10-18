@@ -161,7 +161,7 @@
     </mj-section>
         <mj-section background-color="#F5F6F8" padding="18px 24px 4px" css-class="gb-pad">
       <mj-column>
-        <mj-text padding="0" color="#4B5563" font-size="13px" line-height="1.5"><b>Photo credits.</b> Game, Franz Beard and Buddy Martin story photos: courtesy UAA and <a href="https://www.instagram.com/hannahmorganphoto/" style="color:#0B3B9E;">Hannah White</a>. See more at the official <a href="https://floridagators.com/galleries" style="color:#0B3B9E;">Florida Gators photo galleries</a>. Sunday column photo: Chris Spears, GatorBait Media.</mj-text>
+        <mj-text padding="0" color="#4B5563" font-size="13px" line-height="1.5"><b>Photo credits.</b> Game, Franz Beard and Buddy Martin story photos: courtesy <a href="https://floridagators.com" style="color:#0B3B9E;">UAA</a> (University Athletic Association, FloridaGators.com) and <a href="https://www.instagram.com/hannahmorganphoto/" style="color:#0B3B9E;">Hannah White</a>. See more at the official <a href="https://floridagators.com/galleries" style="color:#0B3B9E;">Florida Gators photo galleries</a>. Sunday column photo: Chris Spears, GatorBait Media.</mj-text>
       </mj-column>
     </mj-section>
 <mj-section background-color="#FA4616" padding="10px 24px 28px" css-class="gb-pad">

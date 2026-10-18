@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - 'probe/mobile-perf-20261018'
+    paths:
+      - 'probe-mp/**'
 permissions:
   contents: read
 jobs:

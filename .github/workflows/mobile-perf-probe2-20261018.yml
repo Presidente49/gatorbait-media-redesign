@@ -1,0 +1,23 @@
+name: Mobile perf probe 2 (logo stub render and image initiators, read-only)
+on:
+  push:
+    branches:
+      - 'probe/mobile-perf-20261018'
+    paths:
+      - 'probe-mp2/**'
+      - '.github/workflows/mobile-perf-probe2-20261018.yml'
+permissions:
+  contents: read
+jobs:
+  stub:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Render stub and trace big image requests
+        run: |
+          mkdir p && cd p && npm init -y >/dev/null && npm i playwright@1.49.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cp ../probe-mp2/* . && node run.js

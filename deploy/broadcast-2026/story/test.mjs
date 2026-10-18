@@ -12,6 +12,7 @@ const OUT = process.argv[2] || path.join(HERE, 'shots');
 fs.mkdirSync(OUT, { recursive: true });
 const CAND = fs.readFileSync(path.join(HERE, 'a5452619-broadcast.html'), 'utf8');
 const POSTS = {
+  newest: 'a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation',
   column: 'the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist',
   photos: 'chris-spears-best-shots-south-carolina-38-florida-19',
   members: 'qb1-philo-hurt-qb2-jones-to-start-explained-by-that-great-football-mind-ted-lasso',
@@ -46,8 +47,10 @@ for (const [kind, slug] of Object.entries(POSTS)) {
       const lum = c => { const v = c.map(x => { x /= 255; return x <= .03928 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4; }); return .2126 * v[0] + .7152 * v[1] + .0722 * v[2]; };
       const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
       const bgOf = e => { for (let a = e; a; a = a.parentElement) { const s = cs(a); if (s.backgroundImage !== 'none' && /gradient/.test(s.backgroundImage)) { const m = s.backgroundImage.match(/rgba?\([^)]+\)/g); if (m) return rgb(m[m.length - 1]); } const c = s.backgroundColor, al = /rgba/.test(c) ? +(c.match(/[\d.]+/g)[3]) : 1; if (al >= .5) return rgb(c); } return [255, 255, 255]; };
-      const out = { docW: document.documentElement.scrollWidth, vw: innerWidth, problems: [] };
+      const out = { docW: document.documentElement.scrollWidth, vw: innerWidth, problems: [], notes: [] };
       const P = msg => out.problems.push(msg);
+      const shell = !!q('#gbm-broadcast-network-shell-v1');
+      const S = msg => (shell ? out.notes : out.problems).push(msg + (shell ? ' (theme shell override)' : ''));
       if (out.docW > innerWidth) P(`horizontal scroll ${out.docW} > ${innerWidth}`);
       if (!q('#gbm-post-broadcast')) P('skin style missing');
       const hdr = q('[data-hook=post-page] article[data-hook=post]>div>header');
@@ -55,7 +58,7 @@ for (const [kind, slug] of Object.entries(POSTS)) {
       if (h1) {
         const s = cs(h1); out.title = [s.fontSize, s.fontStyle, s.textTransform, s.color];
         if (h1.scrollWidth > h1.clientWidth + 1) P('headline clipped');
-        if (s.fontStyle !== 'italic' || s.textTransform !== 'uppercase' || !/Barlow Condensed/.test(s.fontFamily)) P('headline not Broadcast type');
+        if (s.fontStyle !== 'italic' || s.textTransform !== 'uppercase' || !/Barlow Condensed/.test(s.fontFamily)) S('headline not Broadcast type');
         const cr = ratio(rgb(s.color), bgOf(hdr)); if (cr < 4.5) P(`headline contrast ${cr.toFixed(2)}`);
         if (h1.getBoundingClientRect().left < 12) P('headline touches the screen edge');
       } else P('no headline');
@@ -77,16 +80,31 @@ for (const [kind, slug] of Object.entries(POSTS)) {
         const b = e.getBoundingClientRect(); if (b.width && (b.height < 43.5 || b.width < 43.5)) P(`tap target ${Math.round(b.width)}x${Math.round(b.height)} ${e.id || e.className || e.getAttribute('data-hook')}`);
       }
       const sub = q('[data-hook=post-description] :is(h2,h3)[id^=viewer-], [data-hook=post-description] p[data-gbm-h]');
-      if (sub) { const s = cs(sub); out.subhead = /gradient/.test(s.backgroundImage) && s.fontStyle === 'italic'; if (!out.subhead) P('subhead without rail'); }
+      if (sub) { const s = cs(sub); out.subhead = /gradient/.test(s.backgroundImage) && s.fontStyle === 'italic'; if (!out.subhead) S('subhead without rail'); }
       const lead = q('[data-gbm-lead]'); out.lead = !!lead;
       if (document.querySelectorAll('#gbm-post-broadcast').length !== 1) P('skin style count ' + document.querySelectorAll('#gbm-post-broadcast').length);
       // Pull-quote probe (client-side only).
       const d = q('[data-hook=post-description]');
-      if (d) { const bq = document.createElement('blockquote'); bq.textContent = 'Pull-quote probe'; d.appendChild(bq); const s = cs(bq); out.quote = [s.backgroundImage.slice(0, 20), s.color, s.fontStyle]; if (ratio(rgb(s.color), [10, 26, 107]) < 4.5 || s.fontStyle !== 'italic') P('pull quote style'); bq.remove(); }
+      if (d) { const bq = document.createElement('blockquote'); bq.textContent = 'Pull-quote probe'; d.appendChild(bq); const s = cs(bq); out.quote = [s.backgroundImage.slice(0, 20), s.color, s.fontStyle]; if (ratio(rgb(s.color), [10, 26, 107]) < 4.5 || s.fontStyle !== 'italic') S('pull quote style'); bq.remove(); }
       if (document.querySelector('[data-hook=premium-paywall], [data-hook*=paywall]')) out.paywall = true;
       out.upnext = !!q('.gbm-upnext');
       return out;
     });
+    // Chronology: Wix's Related Posts widget (pinned posts first) is hidden; Keep Reading shows the newest stories in order.
+    r.related = await page.evaluate(async () => {
+      await new Promise(res => setTimeout(res, 1500));
+      const x = await (await fetch('/blog-feed.xml?t=' + Date.now())).text();
+      const dates = {};
+      new DOMParser().parseFromString(x, 'text/xml').querySelectorAll('item').forEach(n => { dates[n.querySelector('link').textContent.trim().replace(/^https?:..[^/]+/, '').replace(/[/]+$/, '')] = Date.parse(n.querySelector('pubDate').textContent); });
+      const rp = document.querySelector('[data-hook=post-page] [data-hook=recent-posts]');
+      const kr = document.getElementById('gbm-kr');
+      const krLinks = kr ? [...kr.querySelectorAll('a[href*="/post/"]')].map(a => new URL(a.href).pathname.replace(/[/]+$/, '')) : [];
+      const t = krLinks.map(p => dates[p] || 0);
+      return { widgetHidden: !rp || !rp.getClientRects().length, kr: !!(kr && kr.getClientRects().length), n: krLinks.length, ok: t.every((v, i) => v && (i === 0 || t[i - 1] >= v)), order: krLinks.map(p => p.split('/').pop().slice(0, 28)) };
+    });
+    if (!r.related.widgetHidden) r.problems.push('Related Posts widget still visible');
+    if (!r.related.kr || r.related.n < 2) r.problems.push('Keep Reading not visible');
+    else if (!r.related.ok) r.problems.push('Keep Reading not newest first: ' + r.related.order.join(' > '));
     await page.addStyleTag({ content: '[data-gbm-capture=slide],[data-gbm-capture="bar"],.gbm-cap-slide,#gbm-capture-slide{display:none!important}' });
     const shot = path.join(OUT, `${kind}-${w}.jpg`);
     await page.screenshot({ path: shot, type: 'jpeg', quality: 70, clip: { x: 0, y: 0, width: w, height: Math.min(w < 768 ? 1500 : 1300, await page.evaluate(() => document.documentElement.scrollHeight)) } });
@@ -94,7 +112,7 @@ for (const [kind, slug] of Object.entries(POSTS)) {
     if (errors.length) r.problems.push(...errors.map(e => 'page error ' + e));
     results.push({ kind, w, ...r });
     fails += r.problems.length;
-    console.log(`${r.problems.length ? 'FAIL' : 'pass'} ${kind} ${w}: title ${r.title?.[0]} body ${r.body} lead ${r.lead} subhead ${r.subhead ?? '-'} upnext ${r.upnext} ${r.problems.join('; ')}`);
+    console.log(`${r.problems.length ? 'FAIL' : 'pass'} ${kind} ${w}: title ${r.title?.[0]} body ${r.body} lead ${r.lead} subhead ${r.subhead ?? '-'} upnext ${r.upnext} keep-reading ${r.related.n}${r.related.ok ? ' newest-first' : ' OUT OF ORDER'} ${r.problems.join('; ')}${r.notes && r.notes.length ? ' | notes: ' + r.notes.join('; ') : ''}`);
     await ctx.close();
   }
 }

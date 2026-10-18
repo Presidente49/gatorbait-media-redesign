@@ -1,32 +1,234 @@
 [
  {
-  "kind": "column",
+  "kind": "newest",
   "w": 320,
   "docW": 320,
   "vw": 320,
   "problems": [],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "32px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    17,
    1.6
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24",
+    "aberdeen-will-be-in-the-line"
+   ]
+  },
+  "errors": []
+ },
+ {
+  "kind": "newest",
+  "w": 390,
+  "docW": 390,
+  "vw": 390,
+  "problems": [],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
+  "title": [
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
+  ],
+  "fonts": [
+   "Barlow",
+   "Barlow Condensed"
+  ],
+  "body": [
+   18,
+   1.6
+  ],
+  "subhead": false,
+  "lead": false,
+  "quote": [
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
+  ],
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24",
+    "aberdeen-will-be-in-the-line"
+   ]
+  },
+  "errors": []
+ },
+ {
+  "kind": "newest",
+  "w": 430,
+  "docW": 430,
+  "vw": 430,
+  "problems": [],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
+  "title": [
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
+  ],
+  "fonts": [
+   "Barlow",
+   "Barlow Condensed"
+  ],
+  "body": [
+   18,
+   1.6
+  ],
+  "subhead": false,
+  "lead": false,
+  "quote": [
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
+  ],
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24",
+    "aberdeen-will-be-in-the-line"
+   ]
+  },
+  "errors": []
+ },
+ {
+  "kind": "newest",
+  "w": 1366,
+  "docW": 1366,
+  "vw": 1366,
+  "problems": [],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
+  "title": [
+   "38px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
+  ],
+  "fonts": [
+   "Barlow",
+   "Barlow Condensed"
+  ],
+  "body": [
+   19,
+   1.6
+  ],
+  "subhead": false,
+  "lead": false,
+  "quote": [
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
+  ],
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24",
+    "aberdeen-will-be-in-the-line"
+   ]
+  },
+  "errors": []
+ },
+ {
+  "kind": "column",
+  "w": 320,
+  "docW": 320,
+  "vw": 320,
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
+  "title": [
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
+  ],
+  "fonts": [
+   "Barlow",
+   "Barlow Condensed"
+  ],
+  "body": [
+   17,
+   1.6
+  ],
+  "subhead": false,
+  "lead": false,
+  "quote": [
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
+  ],
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -34,29 +236,47 @@
   "w": 390,
   "docW": 390,
   "vw": 390,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "38.22px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    18,
    1.6
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -64,29 +284,47 @@
   "w": 430,
   "docW": 430,
   "vw": 430,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "42.14px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    18,
    1.6
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -94,29 +332,47 @@
   "w": 1366,
   "docW": 1366,
   "vw": 1366,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "60px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "38px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    19,
    1.6
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -124,16 +380,22 @@
   "w": 320,
   "docW": 320,
   "vw": 320,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "32px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    17,
@@ -141,11 +403,22 @@
   ],
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -153,16 +426,22 @@
   "w": 390,
   "docW": 390,
   "vw": 390,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "38.22px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    18,
@@ -170,11 +449,22 @@
   ],
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -182,16 +472,22 @@
   "w": 430,
   "docW": 430,
   "vw": 430,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "42.14px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    18,
@@ -199,11 +495,22 @@
   ],
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -211,16 +518,22 @@
   "w": 1366,
   "docW": 1366,
   "vw": 1366,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "60px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "38px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    19,
@@ -228,11 +541,22 @@
   ],
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -240,25 +564,43 @@
   "w": 320,
   "docW": 320,
   "vw": 320,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "32px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": true,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
   "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -266,25 +608,43 @@
   "w": 390,
   "docW": 390,
   "vw": 390,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "38.22px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": true,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
   "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -292,25 +652,43 @@
   "w": 430,
   "docW": 430,
   "vw": 430,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "42.14px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": true,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -318,25 +696,43 @@
   "w": 1366,
   "docW": 1366,
   "vw": 1366,
-  "problems": [],
+  "problems": [
+   "low contrast 1.00 \"We'll email you a link to conf\""
+  ],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "60px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "38px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": true,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
-  "upnext": true,
+  "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -345,28 +741,44 @@
   "docW": 320,
   "vw": 320,
   "problems": [],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "32px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    17,
    1.6
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
   "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -375,28 +787,44 @@
   "docW": 390,
   "vw": 390,
   "problems": [],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "38.22px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    18,
    1.6
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
   "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -405,28 +833,44 @@
   "docW": 430,
   "vw": 430,
   "problems": [],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "42.14px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "28px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    18,
    1.6
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
   "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  },
  {
@@ -435,28 +879,44 @@
   "docW": 1366,
   "vw": 1366,
   "problems": [],
+  "notes": [
+   "headline not Broadcast type (theme shell override)",
+   "subhead without rail (theme shell override)",
+   "pull quote style (theme shell override)"
+  ],
   "title": [
-   "60px",
-   "italic",
-   "uppercase",
-   "rgb(255, 255, 255)"
+   "38px",
+   "normal",
+   "none",
+   "rgb(20, 39, 68)"
   ],
   "fonts": [
-   "Barlow Condensed",
-   "Barlow"
+   "Barlow",
+   "Barlow Condensed"
   ],
   "body": [
    19,
    1.6
   ],
-  "subhead": true,
+  "subhead": false,
   "lead": false,
   "quote": [
-   "linear-gradient(100d",
-   "rgb(255, 255, 255)",
-   "italic"
+   "none",
+   "rgb(20, 39, 68)",
+   "normal"
   ],
   "upnext": false,
+  "related": {
+   "widgetHidden": true,
+   "kr": true,
+   "n": 3,
+   "ok": true,
+   "order": [
+    "a-texas-barbecue-gators-flip",
+    "it-was-a-good-day-for-an-exo",
+    "gators-stun-no-7-texas-27-24"
+   ]
+  },
   "errors": []
  }
 ]

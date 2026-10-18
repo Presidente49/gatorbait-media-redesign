@@ -354,3 +354,138 @@ html #gbm-magazine-page.pm .gbc input[type=email]{color:var(--pm-ink)!important;
 #gbm-magazine-page.pm .pm-ps{grid-column:3;text-align:right}
 }
 @media print{#gbm-magazine-page.pm .pm-entrance,#gbm-magazine-page.pm .pm-readerbar,#gbm-magazine-page.pm .pm-print{display:none!important}#gbm-magazine-page.pm .pm-cover{padding-top:20px}}
+
+/* Desktop scale-up (Oct. 18): phones and tablets under 1200px are untouched. 1200+: wider page, larger Barlow type, bigger cover, two reel cards, tables filling their columns. 1600+: wider again. */
+@media (min-width:1200px){
+#gbm-magazine-page.mz26.pm{--mz-pad:36px;--pv:72px;font-size:19px}
+#gbm-magazine-page.pm{
+.pm-in{max-width:1360px}
+.pm-kick{font-size:15px;margin-bottom:10px}
+.pm-sh{max-width:980px;margin-bottom:34px}
+.pm-sh h2{font-size:clamp(56px,4.5vw,76px)}
+.pm-dek{font-size:clamp(20px,1.5vw,23px);margin-top:14px}
+.pm-src{font-size:15px}
+.pm-more{font-size:21px}
+.pm-damage,.pm-flow,.pm-quotes,.pm-pack,.pm-sbs,.pm-box,.pm-watch,.pm-next{padding-block:var(--pv)}
+.pm-dl{padding-block:56px}
+.pm-foot{padding-block:56px 64px}
+.pm-entrance{background:#071439 radial-gradient(ellipse 52% 78% at 50% 46%,#15318f,#071439 74%)}
+.pm-book{width:min(100%,calc((100svh - 84px)*.5625),600px)}
+.pm-readerbar{padding-inline:max(24px,calc((100% - 1288px)/2))}
+.pm-reader-menu .pm-toc{width:auto;max-width:none}
+.pm-readerbrand{font-size:26px}
+.pm-readerbar button,.pm-readerbar summary{font-size:16px}
+.pm-cover{padding-block:56px 64px}
+.pm-cover-in{grid-template-columns:minmax(0,13fr) minmax(0,11fr);gap:0 64px}
+.pm-cover-type h2{font-size:clamp(60px,4.9vw,90px)}
+.pm-cover-dek{font-size:clamp(21px,1.6vw,25px);margin-top:20px}
+.pm-by{font-size:17px}
+.pm-btn{min-height:60px;padding:0 30px;font-size:23px}
+.pm-lines p{font-size:15px}
+.pm-lines li{font-size:23px;padding:11px 0}
+.pm-toc a{font-size:19px;min-height:52px;padding-right:20px}
+.pm-toc b{width:36px;height:36px;font-size:18px}
+.pm-final{padding-block:30px 28px}
+.pm-final .pm-in{grid-template-columns:auto minmax(0,900px) minmax(0,1fr)}
+.pm-final-l{font-size:15px}
+.pm-team span{font-size:clamp(30px,2.7vw,44px)}
+.pm-team small{font-size:14px}
+.pm-team b{font-size:clamp(88px,7.4vw,124px)}
+.pm-final-m{font-size:17px}
+.pm-damage .pm-in{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:10px 72px}
+.pm-yards,.pm-cmp{max-width:none}
+.pm-yl{font-size:15px}
+.pm-yr{grid-template-columns:96px minmax(0,1fr) auto;gap:14px;margin-bottom:14px}
+.pm-yn{font-size:22px}
+.pm-yb{height:28px}
+.pm-yr b{font-size:44px;min-width:72px}
+.pm-stats{gap:40px 28px}
+.pm-stats b{font-size:clamp(84px,7.4vw,124px)}
+.pm-stats span{font-size:20px;margin-top:12px}
+.pm-stats small{font-size:16px}
+.pm-cmp thead th{font-size:15px}
+.pm-cmp tbody th{font-size:21px}
+.pm-cmp tbody td{font-size:38px}
+.pm-flow .pm-in{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:0 72px}
+.pm-area{height:clamp(380px,32vw,540px)}
+.pm-plot{padding:26px 24px 16px 60px}
+.pm-key{gap:14px;margin-top:22px}
+.pm-key li{font-size:19px;padding-left:46px}
+.pm-key b{font-size:26px}
+.pm-qw{gap:20px}
+.pm-q{padding:36px 34px 30px}
+.pm-q blockquote p{font-size:clamp(34px,2.7vw,44px)}
+.pm-q0 blockquote p{font-size:clamp(56px,4.4vw,76px)}
+.pm-q figcaption{font-size:17px;margin-top:22px}
+.pm-q figcaption b{font-size:23px}
+.pm-q figcaption a{font-size:20px}
+.pm-list{column-gap:72px}
+.pm-it a{padding:26px 0;gap:6px 26px;grid-template-columns:64px minmax(0,1fr)}
+.pm-it.pm-has-img a{grid-template-columns:64px minmax(0,1fr) 220px}
+.pm-n{font-size:56px}
+.pm-it h3{font-size:clamp(30px,2.5vw,38px)}
+.pm-it-d{font-size:19px;margin-top:10px}
+.pm-it-r{font-size:15px}
+.pm-it-cr{font-size:13px}
+.pm-lead a{padding:34px 34px}
+.pm-lead h3{font-size:clamp(48px,4.2vw,64px)}
+.pm-sbs .pm-in,.pm-box .pm-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0 72px;align-items:start}
+.pm-sbs .pm-sh,.pm-box .pm-sh,.pm-line,.pm-tstats{grid-column:1}
+.pm-sbs .pm-src,.pm-box .pm-src{grid-column:1 / -1}
+table.pm-line,table.pm-tstats{max-width:none}
+.pm-line th,.pm-line td{padding:14px 8px}
+.pm-line thead th{font-size:17px}
+.pm-line tbody th{font-size:28px}
+.pm-line td{font-size:28px}
+.pm-line td.pm-fin{font-size:38px}
+.pm-plays{grid-column:2;grid-row:1 / span 3;margin-top:0;max-width:none}
+.pm-plays li{grid-template-columns:104px minmax(0,1fr) 150px;padding:16px 0 16px 16px}
+.pm-pw{font-size:18px}
+.pm-pp{font-size:20px}
+.pm-ps{font-size:25px}
+.pm-tstats th,.pm-tstats td{padding:13px 10px 13px 0}
+.pm-tstats thead th{font-size:22px}
+.pm-tstats tbody th,.pm-tstats tbody td{font-size:19px}
+.pm-leaders{grid-column:2;grid-row:1 / span 3;margin-top:0;gap:44px}
+.pm-leaders h3{font-size:32px}
+.pm-leaders dt{font-size:15px;margin-top:16px}
+.pm-leaders dd{font-size:19px}
+.pm-vids{grid-template-columns:repeat(2,minmax(0,480px));justify-content:center;gap:24px}
+.pm-watch .pm-sh{margin-inline:auto;text-align:center}
+.pm-vids a{min-height:120px;padding:20px;gap:20px}
+.pm-vt b{font-size:30px}
+.pm-vt small{font-size:15px}
+.pm-reel{max-width:420px}
+.pm-next-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px}
+.pm-game h2{font-size:clamp(64px,5.2vw,92px)}
+.pm-meta li{font-size:20px;padding:9px 16px}
+.pm-pick h3{font-size:32px}
+.pm-pick p{font-size:19px}
+.pm-dl-btn{min-height:72px;padding:0 38px;font-size:30px}
+.pm-dl-note{font-size:19px}
+.pm-foot li a{font-size:22px}
+.pm-foot .pm-src{max-width:1000px;font-size:16px}
+.pm-top{font-size:18px}
+.pm-crl,.pm-credits p{font-size:16px}
+}
+html #gbm-magazine-page.pm{
+.gbc{padding:26px 26px 22px}
+.gbc .gbc-h{font-size:34px}
+.gbc .gbc-v{font-size:18px}
+.gbc .gbc-c,.gbc .gbc-c span{font-size:16px}
+.gbc .gbc-b{font-size:22px}
+}
+}
+@media (min-width:1600px){
+#gbm-magazine-page.mz26.pm{--mz-pad:40px;--pv:88px;font-size:20px}
+#gbm-magazine-page.pm{
+.pm-in{max-width:1520px}
+.pm-readerbar{padding-inline:max(24px,calc((100% - 1440px)/2))}
+.pm-book{width:min(100%,calc((100svh - 84px)*.5625),660px)}
+.pm-cover-in{gap:0 80px}
+.pm-vids{grid-template-columns:repeat(2,minmax(0,520px))}
+.pm-reel{max-width:460px}
+.pm-it.pm-has-img a{grid-template-columns:64px minmax(0,1fr) 260px}
+.pm-list{column-gap:96px}
+}
+}

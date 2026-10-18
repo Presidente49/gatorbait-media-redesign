@@ -2,7 +2,7 @@
 // QA for the postgame layout (sports-live/magazine-postgame.js). Loads sports-live/magazine-postgame-frame.html, which carries the
 // loader that is live on embed 1dd74333, serves the local bundle in place of the jsDelivr pin, and stands in for
 // static.wixstatic.com photos (the cloud container cannot reach Wix media; a known graphic is served from SHOTS_DIR when present).
-// Checks at 320/390/430/1366: no horizontal overflow, every section present, one h1, links site-relative, text contrast (WCAG AA
+// Checks at 320/390/430/1366/1920: no horizontal overflow, every section present, one h1, links site-relative, text contrast (WCAG AA
 // against the nearest solid background), 44px tap targets, signup tagged "magazine", no feed swap of the curated lead, route
 // unmount/remount, reduced motion. Writes full-page and section screenshots.
 // Usage: [NODE_PATH=$(npm root -g)] node sports-live/qa-magazine-postgame.mjs [outdir] [dir with local art, e.g. sumrall-earned-1600x900.jpg]
@@ -29,7 +29,7 @@ const SHOT = ['#pm-next', '.pm-foot'].concat(Object.entries(OPTIONAL).filter(([k
 const DOWNLOAD_URL = ISSUE.download && ISSUE.download.url;
 const browser = await chromium.launch();
 const results = [];
-for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430', 430, 932], ['1366', 1366, 900]]) {
+for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430', 430, 932], ['1366', 1366, 900], ['1920', 1920, 1080]]) {
   const ctx = await browser.newContext({ viewport: { width, height }, deviceScaleFactor: 2, reducedMotion: 'reduce' });
   const page = await ctx.newPage();
   const requests = [];
@@ -125,4 +125,4 @@ await browser.close();
 console.log(JSON.stringify(results, null, 1));
 const fail = results.filter((r) => !r.extra.dlOk || !r.extra.dlBottom || r.extra.dlTap < 44 || r.extra.printBtn || r.extra.uaaLinks.some((n) => n < 1) || r.extra.georgiaRank || r.extra.igEmbed || r.extra.watch.length !== 2 || r.extra.reels.length !== 2 || r.extra.reels.some((x) => !x.btn || !x.posterOk || Math.abs(x.ratio - 0.5625) > 0.01 || !x.credit || !x.fb) || r.tap.bad || r.scrollW > r.clientW + 1 || r.over.length || r.missing.length || r.bad.length || r.h1 !== 1 || !r.anchorsOk || r.capture !== 'magazine' || r.lowCount || r.smallTaps.length || r.feed.length || r.errors.length || !r.life.gone || r.life.back !== 1 || !r.nativeHidden);
 if (fail.length) { console.error('FAIL', fail.map((f) => f.name).join(',')); process.exit(1); }
-console.log('Postgame QA passed at 320/390/430/1366.');
+console.log('Postgame QA passed at 320/390/430/1366/1920.');

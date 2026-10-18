@@ -1,0 +1,74 @@
+{
+ "390": {
+  "hBefore": 4330,
+  "hAfter": 4330,
+  "ovBefore": 0,
+  "ovAfter": 0,
+  "sameLead": true,
+  "sameOrder": true,
+  "sameSections": true,
+  "fonts": [
+   "Arial",
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "errs": [],
+  "lowBefore": 2,
+  "lowAfter": 2,
+  "newLow": []
+ },
+ "430": {
+  "hBefore": 4191,
+  "hAfter": 4191,
+  "ovBefore": 0,
+  "ovAfter": 0,
+  "sameLead": true,
+  "sameOrder": true,
+  "sameSections": true,
+  "fonts": [
+   "Arial",
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "errs": [],
+  "lowBefore": 2,
+  "lowAfter": 2,
+  "newLow": []
+ },
+ "1366": {
+  "hBefore": 2533,
+  "hAfter": 2533,
+  "ovBefore": 0,
+  "ovAfter": 0,
+  "sameLead": true,
+  "sameOrder": true,
+  "sameSections": true,
+  "fonts": [
+   "Arial",
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "errs": [],
+  "lowBefore": 2,
+  "lowAfter": 2,
+  "newLow": []
+ },
+ "1920": {
+  "hBefore": 2533,
+  "hAfter": 2533,
+  "ovBefore": 0,
+  "ovAfter": 0,
+  "sameLead": true,
+  "sameOrder": true,
+  "sameSections": true,
+  "fonts": [
+   "Arial",
+   "Barlow Condensed",
+   "Barlow"
+  ],
+  "errs": [],
+  "lowBefore": 2,
+  "lowAfter": 2,
+  "newLow": []
+ }
+}

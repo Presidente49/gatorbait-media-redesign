@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
+      "excerpt": "Florida is back in the AP Top 25 at No. 20 after beating No. 7 Texas, which fell to No. 19. Miami is No. 1, and Georgia, Florida's Oct. 31 opponent, is No. 5.",
+      "url": "https://www.gatorbaitmedia.com/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-18T19:07:26Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_886c22d32224408e933692539abaa54c~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll"
+      }
+    },
+    {
       "title": "Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”",
       "excerpt": "Buddy Martin: There are worse ways to spend a Saturday than beating Texas in Austin while Texas A&M fans do the Gator Chomp. However, let’s maybe not order the commemorative plates yet.",
       "url": "https://www.gatorbaitmedia.com/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for QB1 Philo Hurt. QB2 Jones To Start? Explained by That Great Football Mind Ted Lasso"
-      }
-    },
-    {
-      "title": "So You're Saying There's a Chance!?",
-      "excerpt": "Well, the low scoring Longhorns have their struggles, too. I wrote earlier in the week about the similarities of the stats between UF and UM last weekend in every category but the one that matters. Facing the Texas Longhorns on the road in Austin is a tough task for a team that hasn't played well in the last two weeks. The Gators hit the road as a…",
-      "url": "https://www.gatorbaitmedia.com/post/so-you-re-saying-there-s-a-chance-1",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-15T11:52:43Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg/v1/fit/w_1000,h_602,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for So You're Saying There's a Chance!?"
       }
     }
   ]

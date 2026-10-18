@@ -1,0 +1,3160 @@
+[
+ {
+  "page": "about",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4843|0|none|B|H||gbm-bc",
+   "5157|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 5157,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4023,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 10
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "about",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2499|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2499,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4023,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 10
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "contact",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "1627|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 1627,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-account-tight",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 6
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "contact",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2345|0|none|B|H||gbm-bc,gbm-account-tight",
+   "2495|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2495,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-account-tight",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 6
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1388,
+  "shifts": [
+   {
+    "t": 8312,
+    "v": 0.0635,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 8318,
+    "v": 0.0753,
+    "src": "span,#gbm-footer"
+   }
+  ],
+  "timeline": [
+   "5925|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 5925,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-account-tight",
+   "fonts": {
+    "Barlow Condensed": 11,
+    "Barlow": 13
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1388,
+  "shifts": [
+   {
+    "t": 4737,
+    "v": 0.0635,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4744,
+    "v": 0.0753,
+    "src": "span,#gbm-footer"
+   }
+  ],
+  "timeline": [
+   "3049|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3049,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc gbm-account-tight",
+   "fonts": {
+    "Barlow Condensed": 11,
+    "Barlow": 13
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "subscribe",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.9861,
+  "shifts": [
+   {
+    "t": 5662,
+    "v": 0.5508,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 5667,
+    "v": 0.4353,
+    "src": "#gbm-footer"
+   }
+  ],
+  "timeline": [
+   "2732|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2732,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 11,
+    "Barlow": 13
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "subscribe",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1986,
+  "shifts": [
+   {
+    "t": 4623,
+    "v": 0.0933,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4629,
+    "v": 0.1053,
+    "src": "span,#gbm-footer"
+   }
+  ],
+  "timeline": [
+   "2740|0|none|B|H||gbm-bc",
+   "2954|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2954,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2121,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 11,
+    "Barlow": 13
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "policies",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2147|0|visible|B|H||gbm-bc",
+   "2451|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-legal",
+   "3710|0|visible|B|H||gbm-bc,gbm-legal",
+   "4545|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2147,
+   "light": 0,
+   "band": true,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4438,
+   "cls": "gbm-bc gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [
+    {
+     "cr": 1.22,
+     "t": "Privacy",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Cookies",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Subscriptions",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Terms",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Editorial",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Contact",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    }
+   ],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "policies",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2074|0|none|B|H||gbm-bc",
+   "2243|0|visible|B|H||gbm-bc",
+   "2393|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-legal",
+   "3494|0|visible|B|H||gbm-bc,gbm-legal",
+   "4547|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2243,
+   "light": 0,
+   "band": true,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4438,
+   "cls": "gbm-bc gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [
+    {
+     "cr": 1.22,
+     "t": "Privacy",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Cookies",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Subscriptions",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Terms",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Editorial",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Contact",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    }
+   ],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tags",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2618|0|none|B|H||gbm-bc",
+   "2889|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2889,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 5008,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 13,
+    "Barlow": 12,
+    "avenir-lt-w01_35-light1475496": 12
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tags",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2924|0|none|B|H||gbm-bc",
+   "2958|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2958,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 5008,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 13,
+    "Barlow": 12,
+    "avenir-lt-w01_35-light1475496": 12
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "groups",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "7158|0|none|B|H||gbm-bc",
+   "7331|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 7331,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 3675,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 66,
+    "roboto-bold": 50
+   },
+   "lowContrast": [
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 12,
+   "forms": 45,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 2300
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "groups",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4161|0|none|B|H||gbm-bc",
+   "4468|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4468,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 3675,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 66,
+    "roboto-bold": 50
+   },
+   "lowContrast": [
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 12,
+   "forms": 45,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 2300
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "search",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3611|0|none|B|H||gbm-bc",
+   "3934|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3934,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2722,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "roboto-bold": 18,
+    "Barlow": 27
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 20,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 2482
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "search",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2573|0|none|B|H||gbm-bc",
+   "2723|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2723,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 2722,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "roboto-bold": 18,
+    "Barlow": 27
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 20,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 2482
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "events",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2071|0|none|-|H||gbm-bc",
+   "2331|0|visible|-|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2331,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3406,
+   "cls": "gbm-bc",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "WELCOME TO \"THE BUDDY MARTIN SHOW\" ",
+   "band": false,
+   "textLen": 35
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "events",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2207|0|none|-|H||gbm-bc",
+   "2373|0|visible|-|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2373,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3406,
+   "cls": "gbm-bc",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "WELCOME TO \"THE BUDDY MARTIN SHOW\" ",
+   "band": false,
+   "textLen": 35
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "mag2021",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3400|1|none|-|H||gbm-pre",
+   "3485|1|hidden|-|H|oswald-medium/normal|gbm-pre",
+   "3804|1|hidden|-|H|Barlow/normal|gbm-pre",
+   "3998|1|hidden|-|H|Barlow/normal|gbm-pre,gbm-mq,gbm-magazine-live"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": null,
+  "audit": {
+   "overflow": 0,
+   "h": 14340,
+   "cls": "gbm-pre gbm-mq gbm-magazine-live",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 24,
+   "forms": 0,
+   "band": false,
+   "textLen": 845
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "mag2021",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2697|1|none|-|H||gbm-pre",
+   "2886|1|hidden|-|H|oswald-medium/normal|gbm-pre",
+   "3211|1|hidden|-|H|Barlow/normal|gbm-pre,gbm-mq,gbm-magazine-live"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": null,
+  "audit": {
+   "overflow": 0,
+   "h": 14340,
+   "cls": "gbm-pre gbm-mq gbm-magazine-live",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 24,
+   "forms": 0,
+   "band": false,
+   "textLen": 845
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "notfound",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 404,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "248|1|none|-|-||"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": null,
+  "audit": {
+   "overflow": 0,
+   "h": 844,
+   "cls": "",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": null,
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "links": 0,
+   "forms": 0,
+   "band": false,
+   "textLen": 0
+  },
+  "errs": []
+ },
+ {
+  "page": "notfound",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 404,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "159|1|none|-|-||"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": null,
+  "audit": {
+   "overflow": 0,
+   "h": 844,
+   "cls": "",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": null,
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "links": 0,
+   "forms": 0,
+   "band": false,
+   "textLen": 0
+  },
+  "errs": []
+ },
+ {
+  "page": "tv",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2058|0|visible|-|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2058,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3406,
+   "cls": "gbm-bc",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "WELCOME TO \"THE BUDDY MARTIN SHOW\" ",
+   "band": false,
+   "textLen": 35
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tv",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2462|0|none|-|H||gbm-bc",
+   "2664|0|visible|-|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2664,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3406,
+   "cls": "gbm-bc",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "WELCOME TO \"THE BUDDY MARTIN SHOW\" ",
+   "band": false,
+   "textLen": 35
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "cat",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3902|1|none|-|H||gbm-lp-wait,gbm-feed-pre",
+   "4098|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre",
+   "4281|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lp-on,gbm-lp-hold"
+  ],
+  "flash": 2,
+  "flashLightMs": 183,
+  "firstVisible": {
+   "t": 4098,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 3200,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold",
+   "fonts": {
+    "GB Broadcast": 37,
+    "Barlow": 39
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 102,
+   "forms": 8,
+   "h1": "Buddy's Blog",
+   "band": false,
+   "textLen": 3554
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "cat",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2900|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre",
+   "3073|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lp-on,gbm-lp-hold"
+  ],
+  "flash": 2,
+  "flashLightMs": 173,
+  "firstVisible": {
+   "t": 2900,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 3200,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold",
+   "fonts": {
+    "GB Broadcast": 37,
+    "Barlow": 39
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 102,
+   "forms": 8,
+   "h1": "Buddy's Blog",
+   "band": false,
+   "textLen": 3554
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "latest",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4077|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre",
+   "4180|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lp-on,gbm-lp-hold"
+  ],
+  "flash": 2,
+  "flashLightMs": 103,
+  "firstVisible": {
+   "t": 4077,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 3200,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold",
+   "fonts": {
+    "GB Broadcast": 37,
+    "Barlow": 39
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 101,
+   "forms": 7,
+   "h1": "Florida Gators Headlines",
+   "band": false,
+   "textLen": 3370
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "latest",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2626|1|none|-|H||gbm-lp-wait,gbm-feed-pre",
+   "2748|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lp-on,gbm-lp-hold"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2748,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 3200,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold",
+   "fonts": {
+    "GB Broadcast": 37,
+    "Barlow": 39
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 101,
+   "forms": 8,
+   "h1": "Florida Gators Headlines",
+   "band": false,
+   "textLen": 3374
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "post",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4649|1|visible|-|H|Barlow Condensed/italic|gbm-native-wide"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4649,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/italic"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4013,
+   "cls": "gbm-native-wide",
+   "fonts": {
+    "Barlow Condensed": 14,
+    "Barlow": 50
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 39,
+   "forms": 13,
+   "h1": "Florida is one win from bowl eligibility, with a bye before Georgia",
+   "band": false,
+   "textLen": 3033
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "post",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.0818,
+  "shifts": [
+   {
+    "t": 6036,
+    "v": 0.0526,
+    "src": "div,div"
+   },
+   {
+    "t": 6771,
+    "v": 0.0292,
+    "src": "footer"
+   }
+  ],
+  "timeline": [
+   "3238|1|visible|-|H|Barlow Condensed/italic|gbm-native-wide"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3238,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/italic"
+  },
+  "audit": {
+   "overflow": 590,
+   "h": 4013,
+   "cls": "gbm-native-wide",
+   "fonts": {
+    "Barlow Condensed": 14,
+    "Barlow": 50
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 38,
+   "forms": 17,
+   "h1": "Florida is one win from bowl eligibility, with a bye before Georgia",
+   "band": false,
+   "textLen": 3176
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "home",
+  "w": "390",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1484,
+  "shifts": [
+   {
+    "t": 3978,
+    "v": 0.1484,
+    "src": "div,section"
+   }
+  ],
+  "timeline": [
+   "3229|1|visible|-|H|roboto-bold/normal|gbm-bc-wait",
+   "3416|1|visible|-|H|Barlow/normal|gbm-bc-wait",
+   "3723|1|visible|-|H|Barlow/normal|",
+   "3790|0|visible|-|H|Barlow/normal|gbm-gazette-live,gbm-standalone-live"
+  ],
+  "flash": 3,
+  "flashLightMs": 561,
+  "firstVisible": {
+   "t": 3229,
+   "light": 1,
+   "band": false,
+   "h1": "roboto-bold/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4781,
+   "cls": "gbm-gazette-live gbm-standalone-live",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 7,
+   "forms": 3,
+   "h1": "Today’s Edition",
+   "band": false,
+   "textLen": 1766
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "home",
+  "w": "390",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2335|1|visible|-|H|roboto-bold/normal|gbm-bc-wait",
+   "2463|1|visible|-|H|roboto-bold/normal|",
+   "2583|1|visible|-|H|Barlow/normal|",
+   "2830|0|visible|-|H|Barlow/normal|gbm-gazette-live,gbm-standalone-live"
+  ],
+  "flash": 3,
+  "flashLightMs": 495,
+  "firstVisible": {
+   "t": 2335,
+   "light": 1,
+   "band": false,
+   "h1": "roboto-bold/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4781,
+   "cls": "gbm-gazette-live gbm-standalone-live",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 7,
+   "forms": 3,
+   "h1": "Today’s Edition",
+   "band": false,
+   "textLen": 1766
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "about",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.2036,
+  "shifts": [
+   {
+    "t": 2632,
+    "v": 0.0604,
+    "src": "?,blockquote"
+   },
+   {
+    "t": 2901,
+    "v": 0.0415,
+    "src": "?,?"
+   },
+   {
+    "t": 3148,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_a2pb6"
+   }
+  ],
+  "timeline": [
+   "2545|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "3143|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2545,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3755,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 10
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "about",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.2036,
+  "shifts": [
+   {
+    "t": 2187,
+    "v": 0.0604,
+    "src": "?,blockquote"
+   },
+   {
+    "t": 2250,
+    "v": 0.0415,
+    "src": "?,?"
+   },
+   {
+    "t": 2421,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_a2pb6"
+   }
+  ],
+  "timeline": [
+   "2074|0|none|-|H||gbm-bc,gbm-band-pre",
+   "2188|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "2394|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2188,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3755,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 10
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2141
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "contact",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 2664,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_c7tja"
+   }
+  ],
+  "timeline": [
+   "2181|0|none|-|H||gbm-bc,gbm-band-pre,gbm-account-tight",
+   "2306|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight",
+   "2660|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2306,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1594,
+   "cls": "gbm-bc gbm-account-tight",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 6
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "contact",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 4272,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_c7tja"
+   }
+  ],
+  "timeline": [
+   "3861|0|none|-|H||gbm-bc,gbm-band-pre,gbm-account-tight",
+   "3914|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight",
+   "4212|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3914,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1594,
+   "cls": "gbm-bc gbm-account-tight",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 6
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1985,
+  "shifts": [
+   {
+    "t": 3358,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_rf27d"
+   },
+   {
+    "t": 5689,
+    "v": 0.0462,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 5695,
+    "v": 0.0504,
+    "src": "span,span"
+   }
+  ],
+  "timeline": [
+   "2962|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight",
+   "3249|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2962,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1711,
+   "cls": "gbm-bc gbm-account-tight",
+   "fonts": {
+    "Barlow Condensed": 11,
+    "Barlow": 13
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "plans",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1985,
+  "shifts": [
+   {
+    "t": 3406,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_rf27d"
+   },
+   {
+    "t": 5275,
+    "v": 0.0462,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 5282,
+    "v": 0.0504,
+    "src": "span,span"
+   }
+  ],
+  "timeline": [
+   "3032|0|none|-|H||gbm-bc,gbm-band-pre,gbm-account-tight",
+   "3113|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-account-tight",
+   "3391|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3113,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1711,
+   "cls": "gbm-bc gbm-account-tight",
+   "fonts": {
+    "Barlow Condensed": 11,
+    "Barlow": 13
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "subscribe",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1983,
+  "shifts": [
+   {
+    "t": 3252,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_rf27d"
+   },
+   {
+    "t": 5456,
+    "v": 0.0462,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 5463,
+    "v": 0.0504,
+    "src": "span,span"
+   }
+  ],
+  "timeline": [
+   "2746|0|none|-|H||gbm-bc,gbm-band-pre",
+   "2817|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "3331|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2817,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1711,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 11,
+    "Barlow": 13
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "subscribe",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1985,
+  "shifts": [
+   {
+    "t": 2819,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_rf27d"
+   },
+   {
+    "t": 4545,
+    "v": 0.0462,
+    "src": "#gbm-footer,::before"
+   },
+   {
+    "t": 4553,
+    "v": 0.0504,
+    "src": "span,span"
+   }
+  ],
+  "timeline": [
+   "2362|0|none|-|H||gbm-bc,gbm-band-pre",
+   "2567|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "2820|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2567,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 1711,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 11,
+    "Barlow": 13
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "policies",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1081,
+  "shifts": [
+   {
+    "t": 3218,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_fk0a2"
+   }
+  ],
+  "timeline": [
+   "2736|0|visible|-|H||gbm-bc,gbm-band-pre",
+   "3112|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-legal",
+   "3264|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2736,
+   "light": 0,
+   "band": false,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4820,
+   "cls": "gbm-bc gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [
+    {
+     "cr": 1.22,
+     "t": "Privacy",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Cookies",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Subscriptions",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Terms",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Editorial",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Contact",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    }
+   ],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "policies",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1081,
+  "shifts": [
+   {
+    "t": 3982,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_fk0a2"
+   }
+  ],
+  "timeline": [
+   "3580|0|none|-|H||gbm-bc,gbm-band-pre",
+   "3661|0|visible|-|H||gbm-bc,gbm-band-pre",
+   "3802|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre,gbm-legal",
+   "3921|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3661,
+   "light": 0,
+   "band": false,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4820,
+   "cls": "gbm-bc gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [
+    {
+     "cr": 1.22,
+     "t": "Privacy",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Cookies",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Subscriptions",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Terms",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Editorial",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    },
+    {
+     "cr": 1.22,
+     "t": "Contact",
+     "fg": "rgb(16, 38, 75)",
+     "bg": "rgb(8,19,47)",
+     "el": "a"
+    }
+   ],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tags",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 3915,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_olpu0"
+   }
+  ],
+  "timeline": [
+   "3463|0|none|-|H||gbm-bc,gbm-band-pre",
+   "3519|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "3978|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3519,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4740,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 13,
+    "Barlow": 12,
+    "avenir-lt-w01_35-light1475496": 12
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tags",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1017,
+  "shifts": [
+   {
+    "t": 3909,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_olpu0"
+   }
+  ],
+  "timeline": [
+   "3437|0|none|-|H||gbm-bc,gbm-band-pre",
+   "3579|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "3939|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3579,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 4740,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 13,
+    "Barlow": 12,
+    "avenir-lt-w01_35-light1475496": 12
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "groups",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1047,
+  "shifts": [
+   {
+    "t": 5246,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_sp116"
+   }
+  ],
+  "timeline": [
+   "4392|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "5307|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4392,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3371,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 50,
+    "roboto-bold": 36
+   },
+   "lowContrast": [
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 33,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 1638
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "groups",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1046,
+  "shifts": [
+   {
+    "t": 4630,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_sp116"
+   }
+  ],
+  "timeline": [
+   "3728|0|none|-|H||gbm-bc,gbm-band-pre",
+   "4094|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "4765|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4094,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3371,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 50,
+    "roboto-bold": 36
+   },
+   "lowContrast": [
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    },
+    {
+     "cr": 3.53,
+     "t": "GatorBait Admin",
+     "fg": "rgb(255, 255, 255)",
+     "bg": "rgb(250,70,22)",
+     "el": "p"
+    }
+   ],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 33,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 1638
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "search",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1027,
+  "shifts": [
+   {
+    "t": 3531,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_ayun1"
+   }
+  ],
+  "timeline": [
+   "2983|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "3535|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2983,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2454,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "roboto-bold": 18,
+    "Barlow": 27
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 20,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 2482
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "search",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.1027,
+  "shifts": [
+   {
+    "t": 6042,
+    "v": 0.1017,
+    "src": "#bgLayers_pageBackground_ayun1"
+   }
+  ],
+  "timeline": [
+   "5516|0|none|-|H||gbm-bc,gbm-band-pre",
+   "5608|0|visible|-|H|Barlow Condensed/normal|gbm-bc,gbm-band-pre",
+   "6144|0|visible|B|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 5608,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2454,
+   "cls": "gbm-bc",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "roboto-bold": 18,
+    "Barlow": 27
+   },
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 20,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 2482
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "events",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.0002,
+  "shifts": [],
+  "timeline": [
+   "2089|0|none|-|H||gbm-bc",
+   "2171|0|visible|-|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2171,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2380,
+   "cls": "gbm-bc",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "WELCOME TO \"THE BUDDY MARTIN SHOW\" ",
+   "band": false,
+   "textLen": 35
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "events",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.0002,
+  "shifts": [],
+  "timeline": [
+   "1876|0|none|-|H||gbm-bc",
+   "2039|0|visible|-|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2039,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2380,
+   "cls": "gbm-bc",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "WELCOME TO \"THE BUDDY MARTIN SHOW\" ",
+   "band": false,
+   "textLen": 35
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "mag2021",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3398|1|hidden|-|H|oswald-medium/normal|gbm-pre",
+   "3809|1|hidden|-|H|Barlow/normal|gbm-pre",
+   "4112|1|hidden|-|H|Barlow/normal|gbm-pre,gbm-mq,gbm-magazine-live"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": null,
+  "audit": {
+   "overflow": 0,
+   "h": 11329,
+   "cls": "gbm-pre gbm-mq gbm-magazine-live",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 24,
+   "forms": 0,
+   "band": false,
+   "textLen": 845
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "mag2021",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3516|1|none|-|H||gbm-pre",
+   "3603|1|hidden|-|H|oswald-medium/normal|gbm-pre",
+   "3878|1|hidden|-|H|Barlow/normal|gbm-pre,gbm-mq,gbm-magazine-live"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": null,
+  "audit": {
+   "overflow": 0,
+   "h": 11329,
+   "cls": "gbm-pre gbm-mq gbm-magazine-live",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 24,
+   "forms": 0,
+   "band": false,
+   "textLen": 845
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "notfound",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 404,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "261|1|none|-|-||"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": null,
+  "audit": {
+   "overflow": 0,
+   "h": 900,
+   "cls": "",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": null,
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "links": 0,
+   "forms": 0,
+   "band": false,
+   "textLen": 0
+  },
+  "errs": []
+ },
+ {
+  "page": "notfound",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 404,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "172|1|none|-|-||"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": null,
+  "audit": {
+   "overflow": 0,
+   "h": 900,
+   "cls": "",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": null,
+   "bodyBg": "rgba(0, 0, 0, 0)",
+   "links": 0,
+   "forms": 0,
+   "band": false,
+   "textLen": 0
+  },
+  "errs": []
+ },
+ {
+  "page": "tv",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.4858,
+  "shifts": [
+   {
+    "t": 2717,
+    "v": 0.4856,
+    "src": "#gbm-footer,::before"
+   }
+  ],
+  "timeline": [
+   "2435|0|visible|-|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2435,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2380,
+   "cls": "gbm-bc",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "WELCOME TO \"THE BUDDY MARTIN SHOW\" ",
+   "band": false,
+   "textLen": 35
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "tv",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.0002,
+  "shifts": [],
+  "timeline": [
+   "2720|0|none|-|H||gbm-bc",
+   "2832|0|visible|-|H|Barlow Condensed/normal|gbm-bc"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2832,
+   "light": 0,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2380,
+   "cls": "gbm-bc",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "WELCOME TO \"THE BUDDY MARTIN SHOW\" ",
+   "band": false,
+   "textLen": 35
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "cat",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3960|1|none|-|H||gbm-lp-wait,gbm-feed-pre",
+   "4174|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre",
+   "4243|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lp-on,gbm-lp-hold"
+  ],
+  "flash": 2,
+  "flashLightMs": 69,
+  "firstVisible": {
+   "t": 4174,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2335,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold",
+   "fonts": {
+    "GB Broadcast": 37,
+    "Barlow": 39
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 102,
+   "forms": 8,
+   "h1": "Buddy's Blog",
+   "band": false,
+   "textLen": 3554
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "cat",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3311|1|none|-|H||gbm-lp-wait,gbm-feed-pre",
+   "3509|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lp-on,gbm-lp-hold"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3509,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2335,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold",
+   "fonts": {
+    "GB Broadcast": 37,
+    "Barlow": 39
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 102,
+   "forms": 8,
+   "h1": "Buddy's Blog",
+   "band": false,
+   "textLen": 3554
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "latest",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "6102|1|none|-|H||gbm-lp-wait,gbm-feed-pre",
+   "6274|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lp-on,gbm-lp-hold"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 6274,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2335,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold",
+   "fonts": {
+    "GB Broadcast": 37,
+    "Barlow": 39
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 101,
+   "forms": 8,
+   "h1": "Florida Gators Headlines",
+   "band": false,
+   "textLen": 3374
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "latest",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3061|1|none|-|H||gbm-lp-wait,gbm-feed-pre",
+   "3210|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre",
+   "3342|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lp-on,gbm-lp-hold"
+  ],
+  "flash": 2,
+  "flashLightMs": 132,
+  "firstVisible": {
+   "t": 3210,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2335,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold",
+   "fonts": {
+    "GB Broadcast": 37,
+    "Barlow": 39
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 101,
+   "forms": 8,
+   "h1": "Florida Gators Headlines",
+   "band": false,
+   "textLen": 3374
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "post",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.014,
+  "shifts": [
+   {
+    "t": 4077,
+    "v": 0.0139,
+    "src": "?,?"
+   }
+  ],
+  "timeline": [
+   "3862|1|none|-|H||gbm-native-wide",
+   "4059|1|visible|-|H|Barlow Condensed/italic|gbm-native-wide"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4059,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/italic"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3674,
+   "cls": "gbm-native-wide",
+   "fonts": {
+    "Barlow Condensed": 14,
+    "Barlow": 50
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 39,
+   "forms": 13,
+   "h1": "Florida is one win from bowl eligibility, with a bye before Georgia",
+   "band": false,
+   "textLen": 3033
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "post",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.0001,
+  "shifts": [],
+  "timeline": [
+   "3646|1|none|-|H||gbm-native-wide",
+   "3789|1|visible|-|H|Barlow Condensed/italic|gbm-native-wide"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3789,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/italic"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 3674,
+   "cls": "gbm-native-wide",
+   "fonts": {
+    "Barlow Condensed": 14,
+    "Barlow": 49
+   },
+   "lowContrast": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 37,
+   "forms": 17,
+   "h1": "Florida is one win from bowl eligibility, with a bye before Georgia",
+   "band": false,
+   "textLen": 3158
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "home",
+  "w": "1366",
+  "mode": "cold",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.0058,
+  "shifts": [
+   {
+    "t": 2733,
+    "v": 0.0058,
+    "src": "a,a"
+   }
+  ],
+  "timeline": [
+   "2066|1|visible|-|-|roboto-bold/normal|gbm-bc-wait",
+   "2137|1|visible|-|-|roboto-bold/normal|",
+   "2176|1|visible|-|-|Barlow/normal|",
+   "2611|0|visible|-|-|Barlow/normal|gbm-gazette-live,gbm-standalone-live"
+  ],
+  "flash": 3,
+  "flashLightMs": 545,
+  "firstVisible": {
+   "t": 2066,
+   "light": 1,
+   "band": false,
+   "h1": "roboto-bold/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2631,
+   "cls": "gbm-gazette-live gbm-standalone-live",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 7,
+   "forms": 3,
+   "h1": "Today’s Edition",
+   "band": false,
+   "textLen": 1766
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ },
+ {
+  "page": "home",
+  "w": "1366",
+  "mode": "warm",
+  "tag": "base",
+  "http": 200,
+  "cls": 0.006,
+  "shifts": [
+   {
+    "t": 3727,
+    "v": 0.0058,
+    "src": "a,a"
+   }
+  ],
+  "timeline": [
+   "3164|1|none|-|-||gbm-bc-wait",
+   "3236|1|visible|-|-|roboto-bold/normal|",
+   "3345|1|visible|-|-|Barlow/normal|",
+   "3732|0|visible|-|-|Barlow/normal|gbm-gazette-live,gbm-standalone-live"
+  ],
+  "flash": 2,
+  "flashLightMs": 496,
+  "firstVisible": {
+   "t": 3236,
+   "light": 1,
+   "band": false,
+   "h1": "roboto-bold/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "h": 2631,
+   "cls": "gbm-gazette-live gbm-standalone-live",
+   "fonts": {},
+   "lowContrast": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 7,
+   "forms": 3,
+   "h1": "Today’s Edition",
+   "band": false,
+   "textLen": 1766
+  },
+  "errs": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ]
+ }
+]

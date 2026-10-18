@@ -118,6 +118,7 @@ const UNI = () => {
     if (!el.children.length && (el.textContent || '').trim()) { leaf++; const f = cs.fontFamily.split(',')[0].replace(/["']/g, '').trim(); ff[f] = (ff[f] || 0) + 1; const c = cls(rgb(cs.color)); if (c) { colText[c] = (colText[c] || 0) + 1; if (c === 'OTHER') { const k = hex(rgb(cs.color)); other['t' + k] = (other['t' + k] || 0) + 1; } } }
     const bg = cls(rgb(cs.backgroundColor)); if (bg) { colBg[bg] = (colBg[bg] || 0) + 1; if (bg === 'OTHER') { const k = hex(rgb(cs.backgroundColor)); other['b' + k] = (other['b' + k] || 0) + 1; } }
   }
+  out.offenders = []; for (const el of document.body.querySelectorAll('*')) { if (out.offenders.length >= 10) break; if (el.children.length || !(el.textContent || '').trim() || !vis(el)) continue; const f = getComputedStyle(el).fontFamily.split(',')[0].replace(/["']/g, '').trim(); if (!/^(Barlow|Barlow Condensed|GB Broadcast)$/i.test(f)) out.offenders.push({ f, tag: el.tagName.toLowerCase(), cls: String(el.className).slice(0, 40), id: (el.closest('[id^="comp-"]') || {}).id || '', text: el.textContent.trim().slice(0, 30), inline: (el.getAttribute('style') || '').slice(0, 70) }); }
   out.fonts = ff; out.colText = colText; out.colBg = colBg; out.otherTop = Object.entries(other).sort((a, b) => b[1] - a[1]).slice(0, 8);
   // headings
   const hs = {}; for (const h of document.querySelectorAll('#PAGES_CONTAINER h1,#PAGES_CONTAINER h2,#PAGES_CONTAINER h3,#gbm-live h1,#gbm-live h2,#gbm-magazine-page h1,#gbm-magazine-page h2')) { if (!vis(h)) continue; const k = h.tagName.toLowerCase(); if (hs[k]) continue; hs[k] = Object.assign({ text: (h.textContent || '').trim().slice(0, 40) }, sig(h)); }
@@ -179,6 +180,7 @@ async function load(browser, view, pageDef, mode, ctxHolder) {
       let best = null; for (const f of frames) { if (rel(f) <= tt) best = f; }
       const f = best || frames[0]; if (f) { const fn = `shots/${pname}-${view.name}-${mode}-${tt}.jpg`; fs.writeFileSync(fn, Buffer.from(f.data, 'base64')); picks.push({ tt, at: rel(f), kb: Math.round(f.data.length * 0.75 / 1024) }); }
     }
+    if (mode === 'cold') { const real = frames.filter(f => f.data.length * 0.75 > 6000); let last = -1e9, n = 0; for (const f of real) { if (rel(f) - last < 140 || n >= 9) continue; last = rel(f); n++; fs.writeFileSync(`shots/seq-${pname}-${view.name}-${String(rel(f)).padStart(5, '0')}.jpg`, Buffer.from(f.data, 'base64')); } }
     r.framePicks = picks; r.frameOffsets = frames.map(f => rel(f)).slice(0, 40); r.frameCount = frames.length;
     await cdp.send('Page.stopScreencast').catch(() => {});
     if (mode === 'cold') { r.uni = await page.evaluate(UNI); }

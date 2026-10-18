@@ -464,8 +464,8 @@ function bnMedia(u){var mid=(/\/media\/([^/~?]+)/.exec(u||'')||[])[1];return BN_
 function bnPregame(p){if(BN_PREGAME.indexOf(p[2])>=0)return true;if(BN_SEED.some(function(q){return q[2]===p[2];}))return false;var title=p[1]||'',text=title+' '+(p[5]||'');return p[0]>=Date.parse('2026-10-11T00:00:00Z')&&p[0]<Date.parse('2026-10-17T16:00:00Z')&&!/postgame|recap|final score|game result/i.test(title)&&/\b(?:texas|longhorns?|philo|tramell|soothsayer)\b/i.test(text);}
 function bnMeta(p){return esc(p[3]||'')+' · '+esc(day(p[0]));}
 function bnPh(){return!!(window.matchMedia&&matchMedia('(max-width:820px)').matches);}
-/* Story art for phone cards: only the cover URL the feed already carries, and only a photo (typeset graphics and missing covers fall back to the text row). */
-function bnArt(p){var u=p[4]||'',id=(/\/media\/([0-9a-f]+_[0-9a-f]+)/.exec(u)||[])[1];return/^https:\/\/static\.wixstatic\.com\/media\/[^/]+~mv2\.(jpe?g|webp)$/i.test(u)&&!(id&&D.covers&&D.covers.indexOf(id)>=0)?u:'';}
+/* Story art for phone cards: only the cover the feed already carries (the feed serves fresh covers as .../~mv2.jpg/v1/fit/.../file.png, so match the media base, not the whole URL), and only a photo (typeset graphics and missing covers fall back to the text row). */
+function bnArt(p){var m=/^(https:\/\/static\.wixstatic\.com\/media\/([0-9a-f]+_[0-9a-f]+)~mv2\.(jpe?g|webp))(?:\/|$)/i.exec(p[4]||'');return m&&!(D.covers&&D.covers.indexOf(m[2])>=0)?m[1]:'';}
 function bnPic(p,w,h,eager){return'<img src="'+esc(img(bnArt(p),w,h))+'" alt="" width="'+w+'" height="'+h+'" loading="'+(eager?'eager':'lazy')+'" decoding="async">';}
 /* The pair under the lead: the columnist (Buddy Martin or Franz Beard) the lead does not already show, if one has a recent photo story, then the newest photo stories. */
 function bnPair(all){var top=all[0],cand=all.slice(1).filter(bnArt),pick=[];

@@ -1,0 +1,112 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "@id": "https://www.gatorbaitmedia.com/#organization",
+  "name": "GatorBait Media",
+  "alternateName": "Gator Bait Media",
+  "url": "https://www.gatorbaitmedia.com",
+  "logo": {"@type": "ImageObject","url": "https://static.wixstatic.com/media/ae876a_33367cf1645c43d18b0d930a68ca747b~mv2.png","width": 600,"height": 600},
+  "image": "https://static.wixstatic.com/media/ae876a_33367cf1645c43d18b0d930a68ca747b~mv2.png",
+  "description": "GatorBait Media is the premier source for Florida Gators news, founded by Emmy-winning journalist and NY Times best-selling author Buddy Martin. Covering UF athletics since 1979.",
+  "foundingDate": "1979",
+  "founders": [{"@type":"Person","name":"Buddy Martin","jobTitle":"Founder & Editorial Director"},{"@type":"Person","name":"Brenden Martin","jobTitle":"Publisher & Producer"}],
+  "founder": {"@type":"Person","name":"Buddy Martin"},
+  "employees": [{"@type":"Person","name":"Buddy Martin","jobTitle":"Host, The Buddy Martin Show"},{"@type":"Person","name":"Brenden Martin","jobTitle":"Publisher & Producer"},{"@type":"Person","name":"Franz Beard","jobTitle":"Senior Writer"},{"@type":"Person","name":"Carlton Reese","jobTitle":"Writer"},{"@type":"Person","name":"Chris Spears","jobTitle":"Photographer"}],
+  "knowsAbout": ["Florida Gators","SEC Football","SEC Basketball","College Football","College Basketball","NCAA Recruiting","Transfer Portal"],
+  "areaServed": {"@type":"Country","name":"United States"},
+  "email": "info@gatorbaitmedia.com",
+  "sameAs": ["https://www.facebook.com/gatorbaitmedia","https://x.com/gatorbaitmedia","https://twitter.com/gatorbaitmedia","https://www.instagram.com/gatorbaitmedia","https://www.youtube.com/@thebuddymartinshow"],
+  "diversityPolicy": "https://www.gatorbaitmedia.com/policies",
+  "ethicsPolicy": "https://www.gatorbaitmedia.com/policies",
+  "masthead": "https://www.gatorbaitmedia.com/about",
+  "missionCoveragePrioritiesPolicy": "https://www.gatorbaitmedia.com/about",
+  "ownershipFundingInfo": "https://www.gatorbaitmedia.com/about",
+  "verificationFactCheckingPolicy": "https://www.gatorbaitmedia.com/policies",
+  "publishingPrinciples": "https://www.gatorbaitmedia.com/policies",
+  "actionableFeedbackPolicy": "https://www.gatorbaitmedia.com/policies",
+  "correctionsPolicy": "https://www.gatorbaitmedia.com/policies"
+}
+</script>
+<script>
+(function(){
+  try {
+    var p = window.location.pathname || "";
+    var s = window.location.search || "";
+    var h = window.location.hash || "";
+
+    function goReplace(u){ window.location.replace(u); }
+    // Preserve legacy contact links while the canonical indexed route remains /contact.
+    if (p === "/contact-form" || p === "/contact-form/") { goReplace("/contact" + s + h); return; }
+
+    // Official merchandise store: retire the broken Wix all-products destination.
+    if (/^\/category\/all-products\/?$/.test(p)) { goReplace("https://gatorbait2026.itemorder.com/shop/home/"); return; }
+
+    // 1. Legacy post prefix - biggest bug for subscribers
+    if (p.indexOf("/gatorbait-media-blogs/post/") === 0) {
+      goReplace(p.replace("/gatorbait-media-blogs/post/", "/post/") + s + h); return;
+    }
+    // 2. /blog/ -> /post/
+    if (/^\/blog\/[^/]+/.test(p)) {
+      var mb = p.match(/^\/blog\/(.+)$/);
+      if (mb) { goReplace("/post/" + mb[1] + s + h); return; }
+    }
+    // 3. /category/{slug} and /categories/{slug} -> /gatorbait-media-blogs/categories/{slug}
+    var mCat = p.match(/^\/categor(?:y|ies)\/(.+)$/);
+    if (mCat) {
+      var catSlug = mCat[1];
+      if (catSlug === "buddys-blog" || catSlug === "buddy-blog") catSlug = "buddy-s-blog";
+      goReplace("/gatorbait-media-blogs/categories/" + catSlug + s + h); return;
+    }
+    // 4. Fix buddys-blog even inside blog category path
+    if (p === "/gatorbait-media-blogs/categories/buddys-blog" || p === "/gatorbait-media-blogs/categories/buddy-blog") {
+      goReplace("/gatorbait-media-blogs/categories/buddy-s-blog" + s + h); return;
+    }
+    // 5. /tag/{slug} -> /gatorbait-media-blogs/tags/{slug}
+    var mTag = p.match(/^\/tag\/(.+)$/);
+    if (mTag) { goReplace("/gatorbait-media-blogs/tags/" + mTag[1] + s + h); return; }
+    // 6. /plans-pricing -> /pricing-plans (subscribe funnel)
+    if (p === "/plans-pricing" || p === "/plans-pricing/" || p === "/subscribe" || p === "/subscribe/") {
+      goReplace("/pricing-plans" + s + h); return;
+    }
+    // 7. /home -> / (dedupe)
+    if (p === "/home") { goReplace("/" + s + h); return; }
+    // 8. /signin -> /account/my-account (Wix members flow)
+    if (p === "/signin" || p === "/sign-in" || p === "/login") {
+      goReplace("/account/my-account" + s + h); return;
+    }
+
+    // Reader repair: author-name links lead to the native current-author feed, not a legacy tag archive.
+    if ((p.replace(/\/+$/, "") || "/") === "/") {
+      function repairFranzLinks() {
+        // Chris has no working public profile; use the verified existing photo-gallery destination.
+        document.querySelectorAll('#gbm-live .fp-rail a[href="/null"]').forEach(function(a) {
+          if (/^(CS|Chris Spears)$/.test(a.textContent.trim())) { a.setAttribute("href", "/post/chris-spears-best-shots-vol-2-florida-52-ole-miss-28"); a.setAttribute("aria-label", "Chris Spears photo gallery"); if (a.textContent.trim() !== "CS") a.textContent = "Chris Spears Photos"; }
+        });
+        document.querySelectorAll('#gbm-live .fp-rail a[href="/gatorbait-media-blogs/tags/franz-beard"]').forEach(function(a) {
+          a.setAttribute("href", "/profile/franz/profile");
+        });
+      }
+      repairFranzLinks();
+      document.addEventListener("gbm:gazette-ready", repairFranzLinks);
+    }
+
+  } catch(e) {}
+})();
+</script><style id="gbm-gate-v1">html:has(#gbm-gate) h3:has(>span[id^="want-to-read-more"]),html:has(#gbm-gate) h3:has(>span[id^="want-to-read-more"])~p,html:has(#gbm-gate) div:has(>a[href*="referral=blog-post-paywall"]):not(#gbm-gate *){display:none!important}#gbm-gate{position:relative;box-sizing:border-box;margin:8px 0 32px;padding:30px 24px 28px;overflow:hidden;color:#fff;font-family:Barlow,sans-serif;text-align:left;background:linear-gradient(115deg,#0000 0 62%,#ffffff0a 62% 63%,#0000 63%),linear-gradient(180deg,#0021a5,#0a1a6b 55%,#061247);box-shadow:0 14px 40px #08132f59}#gbm-gate:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#ff7a3d,#fa4616 60%,#fa461600);box-shadow:0 0 14px #ff6a2bbf}#gbm-gate *{box-sizing:border-box}html:has(#gbm-gate) [data-hook=post-page] div:has(#gbm-gate){border-color:transparent!important;padding-top:0!important}#gbm-gate .gg-k{display:inline-flex;font:800 14px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase}#gbm-gate .gg-k b{background:#fa4616;color:#08132f;padding:7px 14px 7px 10px;clip-path:polygon(0 0,100% 0,calc(100% - 8px) 100%,0 100%)}#gbm-gate .gg-k span{background:#fff;color:#0a1a6b;padding:7px 14px 7px 16px;margin-left:-6px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}#gbm-gate .gg-h{margin:16px 0 10px!important;padding:0!important;border:0!important;color:#fff!important;-webkit-text-fill-color:#fff!important;font:italic 800 clamp(34px,8vw,52px)/.92 "Barlow Condensed",Barlow,sans-serif!important;letter-spacing:-.01em!important;text-transform:uppercase;text-shadow:0 4px 30px #00000080}#gbm-gate .gg-p{margin:0 0 22px!important;max-width:52ch;color:#dfe5ff!important;-webkit-text-fill-color:#dfe5ff!important;font:500 17px/1.5 Barlow,sans-serif!important}#gbm-gate .gg-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}#gbm-gate a.gg-go{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;background:#fa4616;color:#fff!important;text-decoration:none!important;font:italic 800 22px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;transform:skewX(-10deg);box-shadow:0 0 18px #ff6a2b80}#gbm-gate a.gg-go span{display:inline-block;transform:skewX(10deg)}#gbm-gate a.gg-go:hover{background:#d33608}#gbm-gate a.gg-in{display:inline-flex;align-items:center;min-height:44px;color:#ffb39a!important;font:700 17px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:underline!important;text-decoration-color:#fa4616!important;text-underline-offset:4px}#gbm-gate a:focus-visible{outline:3px solid #f2b632;outline-offset:3px}@media(max-width:480px){#gbm-gate{padding:26px 18px 24px;margin-inline:-4px}#gbm-gate .gg-row{flex-direction:column;align-items:stretch}#gbm-gate a.gg-go{width:100%}}</style><script>(function(){"use strict";if(window.__GBM_GATE__)return;window.__GBM_GATE__=1;
+/* Paywalled story: Wix renders the teaser heading and paragraph, then (after injected story-end blocks) its Subscribe Now link.
+   Build one members card right after the teaser, using Wix's own subscribe URL; the original pieces are hidden by CSS only while the card exists. */
+function run(){if(!/^\/post\//.test(location.pathname)){var o=document.getElementById("gbm-gate");o&&o.remove();return}
+if(document.getElementById("gbm-gate"))return;
+var go=document.querySelector('a[href*="referral=blog-post-paywall"]'),h=document.querySelector('h3 > span[id^="want-to-read-more"]');
+if(!go||!h)return;h=h.parentNode;
+var p=h.nextElementSibling;while(p&&p.tagName!=="P")p=p.nextElementSibling;
+var c=document.createElement("section");c.id="gbm-gate";c.setAttribute("aria-label","Members only");
+c.innerHTML='<div class="gg-k"><b>Members only</b><span>GatorBait All Access</span></div><div class="gg-h" role="heading" aria-level="2"></div><div class="gg-p"></div><div class="gg-row"><a class="gg-go"><span></span></a><a class="gg-in" href="/account/my-account">Already a member? Sign in</a></div>';
+c.querySelector(".gg-h").textContent=h.textContent.trim();
+c.querySelector(".gg-p").textContent=p?p.textContent.trim():"";
+var a=c.querySelector(".gg-go");a.href=go.href;a.querySelector("span").textContent=(go.textContent.trim()||"Subscribe now")+" →";
+(p||h).insertAdjacentElement("afterend",c)}
+function s(){[300,1200,3000,6000,10000].forEach(function(t){setTimeout(run,t)})}
+document.readyState==="loading"?document.addEventListener("DOMContentLoaded",s,{once:!0}):s();
+addEventListener("popstate",s);addEventListener("gbmroutechange",s)})();</script>

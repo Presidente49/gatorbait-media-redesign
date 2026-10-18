@@ -1,0 +1,101 @@
+{
+  "readAt": "2026-10-18T01:38Z",
+  "site": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+  "decision": "Brenden 01:40Z Oct 18: keep the broadcast blue one for all pages",
+  "writer": "Codex (no live write by Claude)",
+  "embeds": [
+    {
+      "id": "c66d5b7f-c474-45b5-af4d-662ae1eaf67c",
+      "liveRev": "12",
+      "liveFp": "ebb0cd3b",
+      "liveChars": 14523,
+      "rollback": "deploy/broadcast-restore-20261018/rollback/c66d5b7f-rev12.html",
+      "target": "deploy/broadcast-restore-20261018/c66d5b7f-target.html",
+      "targetChars": 14032,
+      "targetFp": "ed54ff2f",
+      "change": "restore",
+      "notes": "Blue body = pre-Swamp-Night rev9 (fp 1923b228, 13,830 chars, deploy/swamp-night-20261017/rollback/c66d5b7f-rev9.html) plus one kept fix. Live rev12 = rev9 + white-newsroom site-shell.css jsDelivr loader (gbm-broadcast-network-shell-v1, PR #324; dropped as color/chrome) + inline share-contrast rule gbm-share-contrast-20261017 (KEPT: accessibility fix, navy #07122e Share label on orange, 5.24:1; same navy the Broadcast story CSS already uses). Swamp Night rev10 and white rev11/12 are fully reverted by this body. Codex is the writer: PATCH at revision 12, category ESSENTIAL; rollback = rollback/c66d5b7f-rev12.html."
+    },
+    {
+      "id": "7fee4de6-1886-475e-a3f3-b9c68161c242",
+      "liveRev": "37",
+      "liveFp": "8c34ac3a",
+      "liveChars": 14620,
+      "rollback": "deploy/broadcast-restore-20261018/rollback/7fee4de6-rev37.html",
+      "target": "deploy/broadcast-restore-20261018/7fee4de6-target.html",
+      "targetChars": 14620,
+      "targetFp": "8c34ac3a",
+      "change": "none",
+      "notes": "Not changed by PR #322 or #324. Live rev37 is byte-identical to the Broadcast S4 rev37 (deploy/broadcast-2026/7fee4de6/rev37.html). Already blue; no write."
+    },
+    {
+      "id": "a13b04e3-aa21-4528-a0a4-62faa9dd3b95",
+      "liveRev": "6",
+      "liveFp": "dc1bb55a",
+      "liveChars": 14290,
+      "rollback": "deploy/broadcast-restore-20261018/rollback/a13b04e3-rev6.html",
+      "target": "deploy/broadcast-restore-20261018/a13b04e3-target.html",
+      "targetChars": 14290,
+      "targetFp": "dc1bb55a",
+      "change": "none",
+      "notes": "Not changed by PR #322 or #324. Live rev6 = Broadcast S4 rev6. Already blue; no write."
+    },
+    {
+      "id": "5a43ae83-690e-4933-971d-4837db00b2f3",
+      "liveRev": "25",
+      "liveFp": "90bf51e1",
+      "liveChars": 10417,
+      "rollback": "deploy/broadcast-restore-20261018/rollback/5a43ae83-rev25.html",
+      "target": "deploy/broadcast-restore-20261018/5a43ae83-target.html",
+      "targetChars": 10417,
+      "targetFp": "90bf51e1",
+      "change": "none",
+      "notes": "Not changed by PR #322 or #324. Live rev25 = deploy/broadcast-2026/5a43ae83/rev25.html. No write."
+    },
+    {
+      "id": "82c4ca83-98df-4f35-9972-7345a2a71755",
+      "liveRev": "38",
+      "liveFp": "0792479a",
+      "liveChars": 14966,
+      "rollback": "deploy/broadcast-restore-20261018/rollback/82c4ca83-rev38.html",
+      "target": "deploy/broadcast-restore-20261018/82c4ca83-target.html",
+      "targetChars": 14966,
+      "targetFp": "0792479a",
+      "change": "none",
+      "notes": "Not changed by PR #322 or #324. Live rev38 = Broadcast S4 rev38. Already blue; no write."
+    },
+    {
+      "id": "360c9265-3d33-4c5f-99d3-71ac79d011aa",
+      "liveRev": "6",
+      "liveFp": "0a925989",
+      "liveChars": 6888,
+      "rollback": "deploy/broadcast-restore-20261018/rollback/360c9265-rev6.html",
+      "target": "deploy/broadcast-restore-20261018/360c9265-target.html",
+      "targetChars": 6888,
+      "targetFp": "0a925989",
+      "change": "none",
+      "notes": "Not changed by PR #322 or #324. Live rev6 = Broadcast S4 rev6 (magazine mount fix, PR #315). Already blue; no write."
+    }
+  ],
+  "qa": {
+    "script": "deploy/broadcast-restore-20261018/qa-shell.mjs",
+    "results": "deploy/broadcast-restore-20261018/qa/shell-results.json",
+    "pages": [
+      "/about",
+      "/the-buddy-martin-show",
+      "/pricing-plans"
+    ],
+    "widths": [
+      320,
+      390,
+      430,
+      1366
+    ],
+    "method": "Live pages, Theme rev12 swapped for c66d5b7f-target.html via page.route (raw and JSON config swap both hit on all 12 loads); other five embeds served live (target = live).",
+    "result": "12/12 pass: horizontal scroll 0, JS errors 0, shell fonts Barlow + Barlow Condensed only, shell contrast failures 0, shell tap targets under 44px 0, header bg rgb(4,12,48), white shell CSS absent.",
+    "caveats": [
+      "Wix serves its phone layout at a 320px layout viewport, so 390/430 renders are the same layout scaled.",
+      "Audit scope is the shell (header, mobile shell, page band, footer, TV hub, roster card, plan cards). /about body copy is Wix rich text in a non-Barlow site font, unchanged from the Broadcast era and outside this package."
+    ]
+  }
+}

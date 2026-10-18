@@ -3,7 +3,7 @@ const UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mobile/15E148 Safari/60
 const PAGES = ['/', '/post/the-gators-sucked-less-turning-arch-madness-into-arch-sadness', '/gatorbait-media-blogs', '/magazine', '/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play', '/pricing-plans'];
 async function audit(path, w, mobile) {
   const b = await chromium.launch();
-  const c = await b.newContext(mobile ? { viewport: { width: w, height: 844 }, userAgent: UA, isMobile: true, hasTouch: true } : { viewport: { width: w, height: 900 } });
+  const c = await b.newContext(mobile ? { viewport: { width: w, height: 844 }, isMobile: true, hasTouch: true } : { viewport: { width: w, height: 900 } });
   const p = await c.newPage(); const errs = [], bad = [];
   p.on('pageerror', e => errs.push(String(e).slice(0, 120)));
   p.on('response', r => { if (r.status() >= 400 && /gatorbaitmedia|wixstatic|jsdelivr/.test(r.url())) bad.push(r.status() + ' ' + r.url().slice(0, 110)); });

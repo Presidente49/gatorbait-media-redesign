@@ -1,0 +1,12 @@
+about      390   cold  http=200 cls=0 flashLightMs=0 ovf=590 lowC=0 band=true err=
+about      390   warm  http=200 cls=0 flashLightMs=0 ovf=590 lowC=0 band=true err=
+plans      390   cold  http=200 cls=0.1355 flashLightMs=0 ovf=590 lowC=8 band=true err=
+plans      390   warm  http=200 cls=0.1395 flashLightMs=0 ovf=590 lowC=12 band=true err=
+policies   390   cold  http=200 cls=0 flashLightMs=0 ovf=590 lowC=12 band=true err=
+policies   390   warm  http=200 cls=0 flashLightMs=0 ovf=590 lowC=12 band=true err=
+about      1366  cold  http=200 cls=0.1017 flashLightMs=0 ovf=0 lowC=0 band=true err=
+about      1366  warm  http=200 cls=0.1017 flashLightMs=0 ovf=0 lowC=0 band=true err=
+plans      1366  cold  http=200 cls=0.1961 flashLightMs=0 ovf=0 lowC=8 band=true err=
+plans      1366  warm  http=200 cls=0.1985 flashLightMs=0 ovf=0 lowC=12 band=true err=
+policies   1366  cold  http=200 cls=0.1017 flashLightMs=0 ovf=0 lowC=12 band=true err=
+policies   1366  warm  http=200 cls=0.1017 flashLightMs=0 ovf=0 lowC=12 band=true err=

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-17T20:46:48Z",
+ "updatedAt": "2026-10-18T00:12:57Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -34,21 +34,37 @@
    ]
   },
   "venue": "DKR-Texas Memorial Stadium",
-  "recapUrl": null,
+  "recapUrl": "https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr",
   "galleryUrl": null,
   "tape": {
-   "totalYards": null,
-   "rushingYards": null,
-   "firstDowns": null,
+   "totalYards": 313,
+   "rushingYards": 158,
+   "firstDowns": 21,
    "attendance": 103989
   },
-  "leaders": null
+  "leaders": [
+   [
+    "Passing Yards",
+    "Tramell Jones Jr.",
+    "22/35, 155 YDS, 2 TD"
+   ],
+   [
+    "Rushing Yards",
+    "Jadan Baugh",
+    "25 CAR, 91 YDS, 1 TD"
+   ],
+   [
+    "Receiving Yards",
+    "Eric Singleton Jr.",
+    "7 REC, 43 YDS"
+   ]
+  ]
  },
  "next": {
   "eventId": "401856734",
   "opponent": "Georgia",
   "opponentRank": 1,
-  "opponentRecord": "6-0",
+  "opponentRecord": "6-1",
   "home": false,
   "neutral": true,
   "kickoffIso": "2026-10-31T19:30:00Z",
@@ -160,14 +176,14 @@
     "opp": 24
    },
    "tv": "ABC",
-   "storyUrl": null
+   "storyUrl": "https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr"
   },
   {
    "eventId": "401856734",
    "date": "2026-10-31T19:30:00Z",
    "opponent": "Georgia",
    "opponentRank": 1,
-   "opponentRecord": "6-0",
+   "opponentRecord": "6-1",
    "home": false,
    "status": "scheduled",
    "score": null,
@@ -226,13 +242,13 @@
  "standings": [
   {
    "team": "Georgia",
-   "confRecord": "4-0",
-   "overall": "6-0"
+   "confRecord": "4-1",
+   "overall": "6-1"
   },
   {
-   "team": "Alabama",
+   "team": "Tennessee",
    "confRecord": "3-1",
-   "overall": "5-1"
+   "overall": "6-1"
   },
   {
    "team": "Kentucky",
@@ -240,19 +256,14 @@
    "overall": "5-1"
   },
   {
-   "team": "Missouri",
-   "confRecord": "2-1",
-   "overall": "5-1"
-  },
-  {
-   "team": "Tennessee",
-   "confRecord": "2-1",
-   "overall": "5-1"
-  },
-  {
    "team": "Ole Miss",
-   "confRecord": "2-1",
-   "overall": "4-1"
+   "confRecord": "3-1",
+   "overall": "5-1"
+  },
+  {
+   "team": "Alabama",
+   "confRecord": "3-2",
+   "overall": "5-2"
   },
   {
    "team": "Florida",
@@ -263,6 +274,16 @@
    "team": "LSU",
    "confRecord": "2-2",
    "overall": "5-2"
+  },
+  {
+   "team": "Missouri",
+   "confRecord": "2-2",
+   "overall": "5-2"
+  },
+  {
+   "team": "Auburn",
+   "confRecord": "2-2",
+   "overall": "4-2"
   },
   {
    "team": "Mississippi State",
@@ -278,11 +299,6 @@
    "team": "Texas",
    "confRecord": "1-2",
    "overall": "4-2"
-  },
-  {
-   "team": "Auburn",
-   "confRecord": "1-2",
-   "overall": "3-2"
   },
   {
    "team": "Texas A&M",

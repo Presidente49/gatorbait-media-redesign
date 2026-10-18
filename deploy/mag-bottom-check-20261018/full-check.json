@@ -1,0 +1,799 @@
+[
+ {
+  "width": "390",
+  "tag": "a",
+  "http": 200,
+  "dclMs": 3433,
+  "servedPins": [
+   "src=939ef9d2"
+  ],
+  "servedMarker": "GBM_MAGAZINE_2026_V1 postgame texas-web src=939ef9d282541cb132dba5d2f7b9606d59ae5385 immutable=1 bun",
+  "pmWrapMs": 3931,
+  "nav": {
+   "dcl": 3430,
+   "load": 3898,
+   "lcp": 3565
+  },
+  "transferKB": 3654,
+  "page": {
+   "rootDesc": "main#gbm-magazine-page.mz26.pm",
+   "h1": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conve",
+   "sections": [
+    {
+     "el": "section.pm-entrance",
+     "y": 0,
+     "h": 844,
+     "text": "← GatorBait MediaGatorBaitMagazineSunday, October "
+    },
+    {
+     "el": "div.pm-readerbar",
+     "y": 13496,
+     "h": 58,
+     "text": "GatorBaitContentsIn this issue1Franz Beard2More po"
+    },
+    {
+     "el": "nav#pm-contents.pm-toc",
+     "y": 902,
+     "h": 355,
+     "text": "In this issue1Franz Beard2More postgame coverage3B"
+    },
+    {
+     "el": "section#pm-cover.pm-cover",
+     "y": 1257,
+     "h": 1251,
+     "text": "Cover story · Buddy MartinA Texas Barbecue: Gators"
+    },
+    {
+     "el": "section.pm-final",
+     "y": 2508,
+     "h": 168,
+     "text": "FinalFlorida27No. 7Texas24Saturday, Oct. 17DKR-Tex"
+    },
+    {
+     "el": "section#pm-columns.pm-pack",
+     "y": 2675,
+     "h": 856,
+     "text": "ColumnsFranz Beard's two columnsBuddy Martin has t"
+    },
+    {
+     "el": "section#pm-coverage.pm-pack",
+     "y": 3531,
+     "h": 809,
+     "text": "More postgame coverageThe rest of the packageNewes"
+    },
+    {
+     "el": "section#pm-damage.pm-damage",
+     "y": 4368,
+     "h": 907,
+     "text": "By the numbersHow Florida won itFlorida trailed 17"
+    },
+    {
+     "el": "section#pm-scoring.pm-sbs",
+     "y": 5275,
+     "h": 1295,
+     "text": "Score by scoreHow the points cameTexas led 10-0 af"
+    },
+    {
+     "el": "section#pm-box.pm-box",
+     "y": 6570,
+     "h": 1602,
+     "text": "Box scoreThe full box scoreTeam stats and the lead"
+    },
+    {
+     "el": "section#pm-flow.pm-flow",
+     "y": 8172,
+     "h": 855,
+     "text": "Game flowHow the game turnedFlorida's chance to wi"
+    },
+    {
+     "el": "section#pm-quotes.pm-quotes",
+     "y": 9027,
+     "h": 1266,
+     "text": "In their wordsSumrall and Jones on the winThey exe"
+    },
+    {
+     "el": "section#pm-watch.pm-watch",
+     "y": 10293,
+     "h": 1862,
+     "text": "WatchOn the GatorBait reelsTwo GatorBait Media cli"
+    },
+    {
+     "el": "section#pm-next.pm-next",
+     "y": 12155,
+     "h": 575,
+     "text": "Up nextFlorida vs. GeorgiaSaturday, Oct. 313:30 p."
+    },
+    {
+     "el": "section#pm-download.pm-dl",
+     "y": 12729,
+     "h": 176,
+     "text": "Keep the whole issueDownload the full magazine (PD"
+    },
+    {
+     "el": "section.gbm-football-tools",
+     "y": 12931,
+     "h": 210,
+     "text": "2026 Florida footballKnow the Gators.The players. "
+    },
+    {
+     "el": "footer.pm-foot",
+     "y": 13171,
+     "h": 413,
+     "text": "More GatorBaitSchedule and resultsRosterThe Buddy "
+    }
+   ],
+   "sectionCount": 17,
+   "imgCount": 8,
+   "broken": [],
+   "cover": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg",
+    "loaded": true,
+    "nat": "389x259",
+    "inFirstScreen": true
+   },
+   "fonts": {
+    "Barlow": 254,
+    "Barlow Condensed": 86
+   },
+   "barlowFacesLoaded": 15,
+   "reels": [
+    {
+     "href": "https://www.youtube.com/watch?v=JexQFsm_wts",
+     "btn": true
+    },
+    {
+     "href": "https://www.youtube.com/watch?v=y4GpdY2bzdU",
+     "btn": true
+    }
+   ],
+   "dlHref": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+   "dlText": "Download the full magazine (PDF)",
+   "dlDownloadAttr": true,
+   "scrollW": 390,
+   "clientW": 390,
+   "overflow": 0,
+   "pageHeight": 14340
+  },
+  "taps": [
+   {
+    "src": "https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1",
+    "nocookie": true
+   },
+   {
+    "src": "https://www.youtube-nocookie.com/embed/y4GpdY2bzdU?autoplay=1&rel=0&playsinline=1",
+    "nocookie": true
+   }
+  ],
+  "dl": {
+   "count": 1,
+   "sectionCount": 1,
+   "visible": true,
+   "box": {
+    "x": 16,
+    "y": 392.328125,
+    "width": 358,
+    "height": 60
+   },
+   "clickable": true,
+   "status": 200,
+   "ctype": "application/octet-stream",
+   "bytes": 2377018,
+   "finalUrl": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf"
+  },
+  "consoleErrors": [
+   "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID",
+   "Permissions policy violation: compute-pressure is not allowed in this document."
+  ],
+  "pageErrors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "requestFailed": [
+   "https://www.google-analytics.com/g/collect?v=2&tid=G-9LPC2VVC0V&gtm=45je6ae1v896240836za208zd896240836xf1&_p=17923567052 net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED",
+   "https://frog.wix.com/bolt-performance net::ERR_ABORTED",
+   "https://frog.wix.com/bpm net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED"
+  ],
+  "bad4xx": [],
+  "attempt": 1
+ },
+ {
+  "width": "430",
+  "tag": "a",
+  "http": 200,
+  "dclMs": 3018,
+  "servedPins": [
+   "src=939ef9d2"
+  ],
+  "servedMarker": "GBM_MAGAZINE_2026_V1 postgame texas-web src=939ef9d282541cb132dba5d2f7b9606d59ae5385 immutable=1 bun",
+  "pmWrapMs": 3560,
+  "nav": {
+   "dcl": 3014,
+   "load": 3532,
+   "lcp": 3150
+  },
+  "transferKB": 3653,
+  "page": {
+   "rootDesc": "main#gbm-magazine-page.mz26.pm",
+   "h1": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conve",
+   "sections": [
+    {
+     "el": "section.pm-entrance",
+     "y": 0,
+     "h": 932,
+     "text": "← GatorBait MediaGatorBaitMagazineSunday, October "
+    },
+    {
+     "el": "div.pm-readerbar",
+     "y": 13327,
+     "h": 58,
+     "text": "GatorBaitContentsIn this issue1Franz Beard2More po"
+    },
+    {
+     "el": "nav#pm-contents.pm-toc",
+     "y": 990,
+     "h": 251,
+     "text": "In this issue1Franz Beard2More postgame coverage3B"
+    },
+    {
+     "el": "section#pm-cover.pm-cover",
+     "y": 1241,
+     "h": 1218,
+     "text": "Cover story · Buddy MartinA Texas Barbecue: Gators"
+    },
+    {
+     "el": "section.pm-final",
+     "y": 2459,
+     "h": 173,
+     "text": "FinalFlorida27No. 7Texas24Saturday, Oct. 17DKR-Tex"
+    },
+    {
+     "el": "section#pm-columns.pm-pack",
+     "y": 2631,
+     "h": 788,
+     "text": "ColumnsFranz Beard's two columnsBuddy Martin has t"
+    },
+    {
+     "el": "section#pm-coverage.pm-pack",
+     "y": 3419,
+     "h": 765,
+     "text": "More postgame coverageThe rest of the packageNewes"
+    },
+    {
+     "el": "section#pm-damage.pm-damage",
+     "y": 4212,
+     "h": 890,
+     "text": "By the numbersHow Florida won itFlorida trailed 17"
+    },
+    {
+     "el": "section#pm-scoring.pm-sbs",
+     "y": 5102,
+     "h": 1226,
+     "text": "Score by scoreHow the points cameTexas led 10-0 af"
+    },
+    {
+     "el": "section#pm-box.pm-box",
+     "y": 6328,
+     "h": 1606,
+     "text": "Box scoreThe full box scoreTeam stats and the lead"
+    },
+    {
+     "el": "section#pm-flow.pm-flow",
+     "y": 7935,
+     "h": 925,
+     "text": "Game flowHow the game turnedFlorida's chance to wi"
+    },
+    {
+     "el": "section#pm-quotes.pm-quotes",
+     "y": 8859,
+     "h": 1330,
+     "text": "In their wordsSumrall and Jones on the winThey exe"
+    },
+    {
+     "el": "section#pm-watch.pm-watch",
+     "y": 10189,
+     "h": 1880,
+     "text": "WatchOn the GatorBait reelsTwo GatorBait Media cli"
+    },
+    {
+     "el": "section#pm-next.pm-next",
+     "y": 12069,
+     "h": 579,
+     "text": "Up nextFlorida vs. GeorgiaSaturday, Oct. 313:30 p."
+    },
+    {
+     "el": "section#pm-download.pm-dl",
+     "y": 12648,
+     "h": 176,
+     "text": "Keep the whole issueDownload the full magazine (PD"
+    },
+    {
+     "el": "section.gbm-football-tools",
+     "y": 12850,
+     "h": 210,
+     "text": "2026 Florida footballKnow the Gators.The players. "
+    },
+    {
+     "el": "footer.pm-foot",
+     "y": 13090,
+     "h": 413,
+     "text": "More GatorBaitSchedule and resultsRosterThe Buddy "
+    }
+   ],
+   "sectionCount": 17,
+   "imgCount": 8,
+   "broken": [],
+   "cover": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg",
+    "loaded": true,
+    "nat": "430x286",
+    "inFirstScreen": true
+   },
+   "fonts": {
+    "Barlow": 254,
+    "Barlow Condensed": 86
+   },
+   "barlowFacesLoaded": 15,
+   "reels": [
+    {
+     "href": "https://www.youtube.com/watch?v=JexQFsm_wts",
+     "btn": true
+    },
+    {
+     "href": "https://www.youtube.com/watch?v=y4GpdY2bzdU",
+     "btn": true
+    }
+   ],
+   "dlHref": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+   "dlText": "Download the full magazine (PDF)",
+   "dlDownloadAttr": true,
+   "scrollW": 430,
+   "clientW": 430,
+   "overflow": 0,
+   "pageHeight": 14259
+  },
+  "taps": [
+   {
+    "src": "https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1",
+    "nocookie": true
+   },
+   {
+    "src": "https://www.youtube-nocookie.com/embed/y4GpdY2bzdU?autoplay=1&rel=0&playsinline=1",
+    "nocookie": true
+   }
+  ],
+  "dl": {
+   "count": 1,
+   "sectionCount": 1,
+   "visible": true,
+   "box": {
+    "x": 16,
+    "y": 436.984375,
+    "width": 398,
+    "height": 60
+   },
+   "clickable": true,
+   "status": 200,
+   "ctype": "application/octet-stream",
+   "bytes": 2377018,
+   "finalUrl": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf"
+  },
+  "consoleErrors": [
+   "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+  ],
+  "pageErrors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "requestFailed": [
+   "https://www.google-analytics.com/g/collect?v=2&tid=G-9LPC2VVC0V&gtm=45je6ae1v896240836za208zd896240836xf1&_p=17923567293 net::ERR_ABORTED",
+   "https://frog.wix.com/bpm net::ERR_ABORTED",
+   "https://frog.wix.com/bolt-performance net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED"
+  ],
+  "bad4xx": [],
+  "attempt": 1
+ },
+ {
+  "width": "1366",
+  "tag": "a",
+  "http": 200,
+  "dclMs": 3676,
+  "servedPins": [
+   "src=939ef9d2"
+  ],
+  "servedMarker": "GBM_MAGAZINE_2026_V1 postgame texas-web src=939ef9d282541cb132dba5d2f7b9606d59ae5385 immutable=1 bun",
+  "pmWrapMs": 4265,
+  "nav": {
+   "dcl": 3673,
+   "load": 4248,
+   "lcp": 3809
+  },
+  "transferKB": 3700,
+  "page": {
+   "rootDesc": "main#gbm-magazine-page.mz26.pm",
+   "h1": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conve",
+   "sections": [
+    {
+     "el": "section.pm-entrance",
+     "y": 0,
+     "h": 917,
+     "text": "← GatorBait MediaGatorBaitMagazineSunday, October "
+    },
+    {
+     "el": "div.pm-readerbar",
+     "y": 10446,
+     "h": 58,
+     "text": "GatorBaitContentsIn this issue1Franz Beard2More po"
+    },
+    {
+     "el": "nav#pm-contents.pm-toc",
+     "y": 975,
+     "h": 168,
+     "text": "In this issue1Franz Beard2More postgame coverage3B"
+    },
+    {
+     "el": "section#pm-cover.pm-cover",
+     "y": 1142,
+     "h": 888,
+     "text": "Cover story · Buddy MartinA Texas Barbecue: Gators"
+    },
+    {
+     "el": "section.pm-final",
+     "y": 2031,
+     "h": 166,
+     "text": "FinalFlorida27No. 7Texas24Saturday, Oct. 17DKR-Tex"
+    },
+    {
+     "el": "section#pm-columns.pm-pack",
+     "y": 2196,
+     "h": 712,
+     "text": "ColumnsFranz Beard's two columnsBuddy Martin has t"
+    },
+    {
+     "el": "section#pm-coverage.pm-pack",
+     "y": 2908,
+     "h": 703,
+     "text": "More postgame coverageThe rest of the packageNewes"
+    },
+    {
+     "el": "section#pm-damage.pm-damage",
+     "y": 3639,
+     "h": 700,
+     "text": "By the numbersHow Florida won itFlorida trailed 17"
+    },
+    {
+     "el": "section#pm-scoring.pm-sbs",
+     "y": 4339,
+     "h": 847,
+     "text": "Score by scoreHow the points cameTexas led 10-0 af"
+    },
+    {
+     "el": "section#pm-box.pm-box",
+     "y": 5186,
+     "h": 921,
+     "text": "Box scoreThe full box scoreTeam stats and the lead"
+    },
+    {
+     "el": "section#pm-flow.pm-flow",
+     "y": 6107,
+     "h": 919,
+     "text": "Game flowHow the game turnedFlorida's chance to wi"
+    },
+    {
+     "el": "section#pm-quotes.pm-quotes",
+     "y": 7026,
+     "h": 1225,
+     "text": "In their wordsSumrall and Jones on the winThey exe"
+    },
+    {
+     "el": "section#pm-watch.pm-watch",
+     "y": 8251,
+     "h": 1337,
+     "text": "WatchOn the GatorBait reelsTwo GatorBait Media cli"
+    },
+    {
+     "el": "section#pm-next.pm-next",
+     "y": 9589,
+     "h": 446,
+     "text": "Up nextFlorida vs. GeorgiaSaturday, Oct. 313:30 p."
+    },
+    {
+     "el": "section#pm-download.pm-dl",
+     "y": 10035,
+     "h": 214,
+     "text": "Keep the whole issueDownload the full magazine (PD"
+    },
+    {
+     "el": "section.gbm-football-tools",
+     "y": 10275,
+     "h": 211,
+     "text": "2026 Florida footballKnow the Gators.The players. "
+    },
+    {
+     "el": "footer.pm-foot",
+     "y": 10516,
+     "h": 415,
+     "text": "More GatorBaitSchedule and resultsRosterThe Buddy "
+    }
+   ],
+   "sectionCount": 17,
+   "imgCount": 8,
+   "broken": [],
+   "cover": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg",
+    "loaded": true,
+    "nat": "460x306",
+    "inFirstScreen": true
+   },
+   "fonts": {
+    "Barlow": 254,
+    "Barlow Condensed": 86
+   },
+   "barlowFacesLoaded": 15,
+   "reels": [
+    {
+     "href": "https://www.youtube.com/watch?v=JexQFsm_wts",
+     "btn": true
+    },
+    {
+     "href": "https://www.youtube.com/watch?v=y4GpdY2bzdU",
+     "btn": true
+    }
+   ],
+   "dlHref": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+   "dlText": "Download the full magazine (PDF)",
+   "dlDownloadAttr": true,
+   "scrollW": 1366,
+   "clientW": 1366,
+   "overflow": 0,
+   "pageHeight": 11346
+  },
+  "taps": [
+   {
+    "src": "https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1",
+    "nocookie": true
+   },
+   {
+    "src": "https://www.youtube-nocookie.com/embed/y4GpdY2bzdU?autoplay=1&rel=0&playsinline=1",
+    "nocookie": true
+   }
+  ],
+  "dl": {
+   "count": 1,
+   "sectionCount": 1,
+   "visible": true,
+   "box": {
+    "x": 39,
+    "y": 414.671875,
+    "width": 536.609375,
+    "height": 72
+   },
+   "clickable": true,
+   "status": 200,
+   "ctype": "application/octet-stream",
+   "bytes": 2377018,
+   "finalUrl": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf"
+  },
+  "consoleErrors": [
+   "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+  ],
+  "pageErrors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "requestFailed": [
+   "https://www.google-analytics.com/g/collect?v=2&tid=G-9LPC2VVC0V&gtm=45je6af0h2v896240836za208zd896240836xf1&_p=179235675 net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED",
+   "https://frog.wix.com/bpm net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED"
+  ],
+  "bad4xx": [],
+  "attempt": 1
+ },
+ {
+  "width": "1920",
+  "tag": "a",
+  "http": 200,
+  "dclMs": 3813,
+  "servedPins": [
+   "src=939ef9d2"
+  ],
+  "servedMarker": "GBM_MAGAZINE_2026_V1 postgame texas-web src=939ef9d282541cb132dba5d2f7b9606d59ae5385 immutable=1 bun",
+  "pmWrapMs": 4404,
+  "nav": {
+   "dcl": 3811,
+   "load": 4373,
+   "lcp": 3958
+  },
+  "transferKB": 3717,
+  "page": {
+   "rootDesc": "main#gbm-magazine-page.mz26.pm",
+   "h1": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conve",
+   "sections": [
+    {
+     "el": "section.pm-entrance",
+     "y": 0,
+     "h": 1097,
+     "text": "← GatorBait MediaGatorBaitMagazineSunday, October "
+    },
+    {
+     "el": "div.pm-readerbar",
+     "y": 11360,
+     "h": 58,
+     "text": "GatorBaitContentsIn this issue1Franz Beard2More po"
+    },
+    {
+     "el": "nav#pm-contents.pm-toc",
+     "y": 1155,
+     "h": 168,
+     "text": "In this issue1Franz Beard2More postgame coverage3B"
+    },
+    {
+     "el": "section#pm-cover.pm-cover",
+     "y": 1322,
+     "h": 1065,
+     "text": "Cover story · Buddy MartinA Texas Barbecue: Gators"
+    },
+    {
+     "el": "section.pm-final",
+     "y": 2387,
+     "h": 172,
+     "text": "FinalFlorida27No. 7Texas24Saturday, Oct. 17DKR-Tex"
+    },
+    {
+     "el": "section#pm-columns.pm-pack",
+     "y": 2559,
+     "h": 763,
+     "text": "ColumnsFranz Beard's two columnsBuddy Martin has t"
+    },
+    {
+     "el": "section#pm-coverage.pm-pack",
+     "y": 3322,
+     "h": 742,
+     "text": "More postgame coverageThe rest of the packageNewes"
+    },
+    {
+     "el": "section#pm-damage.pm-damage",
+     "y": 4092,
+     "h": 772,
+     "text": "By the numbersHow Florida won itFlorida trailed 17"
+    },
+    {
+     "el": "section#pm-scoring.pm-sbs",
+     "y": 4864,
+     "h": 879,
+     "text": "Score by scoreHow the points cameTexas led 10-0 af"
+    },
+    {
+     "el": "section#pm-box.pm-box",
+     "y": 5742,
+     "h": 1046,
+     "text": "Box scoreThe full box scoreTeam stats and the lead"
+    },
+    {
+     "el": "section#pm-flow.pm-flow",
+     "y": 6788,
+     "h": 1054,
+     "text": "Game flowHow the game turnedFlorida's chance to wi"
+    },
+    {
+     "el": "section#pm-quotes.pm-quotes",
+     "y": 7842,
+     "h": 1348,
+     "text": "In their wordsSumrall and Jones on the winThey exe"
+    },
+    {
+     "el": "section#pm-watch.pm-watch",
+     "y": 9190,
+     "h": 1458,
+     "text": "WatchOn the GatorBait reelsTwo GatorBait Media cli"
+    },
+    {
+     "el": "section#pm-next.pm-next",
+     "y": 10649,
+     "h": 478,
+     "text": "Up nextFlorida vs. GeorgiaSaturday, Oct. 313:30 p."
+    },
+    {
+     "el": "section#pm-download.pm-dl",
+     "y": 11127,
+     "h": 214,
+     "text": "Keep the whole issueDownload the full magazine (PD"
+    },
+    {
+     "el": "section.gbm-football-tools",
+     "y": 11367,
+     "h": 213,
+     "text": "2026 Florida footballKnow the Gators.The players. "
+    },
+    {
+     "el": "footer.pm-foot",
+     "y": 11610,
+     "h": 415,
+     "text": "More GatorBaitSchedule and resultsRosterThe Buddy "
+    }
+   ],
+   "sectionCount": 17,
+   "imgCount": 8,
+   "broken": [],
+   "cover": {
+    "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_480,h_320,al_c,q_80,enc_auto/gatorbait.jpg",
+    "loaded": true,
+    "nat": "460x306",
+    "inFirstScreen": true
+   },
+   "fonts": {
+    "Barlow": 254,
+    "Barlow Condensed": 86
+   },
+   "barlowFacesLoaded": 15,
+   "reels": [
+    {
+     "href": "https://www.youtube.com/watch?v=JexQFsm_wts",
+     "btn": true
+    },
+    {
+     "href": "https://www.youtube.com/watch?v=y4GpdY2bzdU",
+     "btn": true
+    }
+   ],
+   "dlHref": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+   "dlText": "Download the full magazine (PDF)",
+   "dlDownloadAttr": true,
+   "scrollW": 1920,
+   "clientW": 1920,
+   "overflow": 0,
+   "pageHeight": 12440
+  },
+  "taps": [
+   {
+    "src": "https://www.youtube-nocookie.com/embed/JexQFsm_wts?autoplay=1&rel=0&playsinline=1",
+    "nocookie": true
+   },
+   {
+    "src": "https://www.youtube-nocookie.com/embed/y4GpdY2bzdU?autoplay=1&rel=0&playsinline=1",
+    "nocookie": true
+   }
+  ],
+  "dl": {
+   "count": 1,
+   "sectionCount": 1,
+   "visible": true,
+   "box": {
+    "x": 240,
+    "y": 504.703125,
+    "width": 536.609375,
+    "height": 72
+   },
+   "clickable": true,
+   "status": 200,
+   "ctype": "application/octet-stream",
+   "bytes": 2377018,
+   "finalUrl": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf"
+  },
+  "consoleErrors": [
+   "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
+  ],
+  "pageErrors": [
+   "wixTagManager is not defined",
+   "wixTagManager is not defined"
+  ],
+  "requestFailed": [
+   "https://www.google-analytics.com/g/collect?v=2&tid=G-9LPC2VVC0V&gtm=45je6ae1v896240836za208zd896240836xf1&_p=17923567778 net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED",
+   "https://frog.wix.com/bpm net::ERR_ABORTED",
+   "https://frog.wix.com/bolt-performance net::ERR_ABORTED",
+   "https://panorama.wixapps.net/api/v1/bulklog net::ERR_ABORTED"
+  ],
+  "bad4xx": [],
+  "attempt": 1
+ }
+]

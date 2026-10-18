@@ -54,7 +54,7 @@
  ],
  "apply": "GET a5452619; abort unless revision 7 and djb2 ce5fe4b2. PATCH embedData.html = a5452619-target.html at revision 7, category ESSENTIAL. Read back: expect revision 8, djb2 741002ee. Apply together with or after the theme group's removal of the white shell (c66d5b7f). Rollback: PATCH rollback/a5452619-rev7.html at the then-current revision.",
  "qa": {
-  "script": "deploy/broadcast-restore-20261018/qa.mjs",
+  "script": "deploy/broadcast-restore-20261018/qa-story.mjs",
   "posts": [
    "the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
    "a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation (newest postgame in blog-feed.xml, 00:12Z Oct. 18)"

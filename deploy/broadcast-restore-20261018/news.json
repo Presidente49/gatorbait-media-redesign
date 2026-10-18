@@ -1,0 +1,59 @@
+{
+ "readAt": "2026-10-18T01:45Z",
+ "site": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+ "decision": "Brenden 01:40Z Oct 18: keep the broadcast blue one for all pages",
+ "writer": "Codex (no live write by Claude). PATCH each at its live revision after re-reading revision and djb2; abort on mismatch; re-send embedData.category ESSENTIAL; no site publish.",
+ "build": "node deploy/broadcast-restore-20261018/build.mjs",
+ "dependsOn": "Theme c66d5b7f restore (shell package, branch restore/shell-blue, target ed54ff2f). Live c66d5b7f rev12 loads the white site-shell.css, which carries 55 #gbm-lp and 21 #gbm-sn rules; with only these three embeds swapped the news pages stay white. Apply both packages.",
+ "embeds": [
+  {
+   "id": "602fb362-3917-4e42-9128-57af3a504ef3",
+   "name": "Sports Feed Cards",
+   "liveRev": "18",
+   "liveFp": "b8dfd186",
+   "liveChars": 14198,
+   "rollback": "deploy/broadcast-restore-20261018/rollback/602fb362-rev18.html",
+   "target": "deploy/broadcast-restore-20261018/602fb362-target.html",
+   "targetChars": 14438,
+   "targetFp": "c8c8d87f",
+   "change": "restore",
+   "notes": "Target = S2 depth pass exactly as live at rev 17 before Swamp Night (deploy/swamp-night-20261017/rollback/602fb362-rev17.html). Live rev 18 is the Swamp Night release (glass panels, deep-black field). Note: deploy/broadcast-2026/602fb362/rev17-candidate.html was overwritten by PR #322 and now equals the Swamp Night body; do not use it."
+  },
+  {
+   "id": "c4b41f6a-f584-4f72-a8dd-11b3cd645f88",
+   "name": "Section nav",
+   "liveRev": "4",
+   "liveFp": "1310d8ca",
+   "liveChars": 14988,
+   "rollback": "deploy/broadcast-restore-20261018/rollback/c4b41f6a-rev4.html",
+   "target": "deploy/broadcast-restore-20261018/c4b41f6a-target.html",
+   "targetChars": 14782,
+   "targetFp": "33290a73",
+   "change": "restore + keep fix",
+   "notes": "Target = blue rev 2 (7a3506d0) + the phone fill that live rev 4 added (branch broadcast/s2-phone-fill, c2bf705: All News page 1 phones fill More stories to 12 from /blog-feed.xml, newest first). Script is byte-identical to live rev 4. To stay under 15,000 chars (rev 2 + fill = 15,199), six gbm-sn-css base rules that the S2 skin overrides in every property were dropped (.sn-top x2, h1 x2, .sn-2 a, .sn-2 a[aria-current]); no rendered change."
+  },
+  {
+   "id": "53e15504-76c9-4551-90fe-4defe7cad84d",
+   "name": "Latest page",
+   "liveRev": "12",
+   "liveFp": "bb7472dc",
+   "liveChars": 6715,
+   "rollback": "deploy/broadcast-restore-20261018/rollback/53e15504-rev12.html",
+   "target": "deploy/broadcast-restore-20261018/53e15504-target.html",
+   "targetChars": 6715,
+   "targetFp": "bb7472dc",
+   "change": "none (keep live)",
+   "notes": "Live rev 12 is already blue-neutral: its <style> is byte-identical to the S2-era rev 11 (e6a71858), and news-chronology.js (jsDelivr pin 312018fa66e644a3f32fe473b6a855d1b114c356) contains no CSS, only the newest-first sort. No new JS needed. The blue #gbm-lp look comes from c4b41f6a + 602fb362. Do not PATCH."
+  }
+ ],
+ "qa": {
+  "script": "SHELL_DIR=<dir with shell package c66d5b7f-rev12.html + c66d5b7f-target.html> node deploy/broadcast-restore-20261018/qa.mjs deploy/broadcast-restore-20261018/qa target",
+  "routes": ["/gatorbait-media-blogs", "/gatorbait-media-blogs/categories/gator-football", "/gatorbait-media-blogs/categories/buddy-s-blog", "/gatorbait-media-blogs/page/2"],
+  "widths": [320, 390, 430, 1366],
+  "swapped": "602fb362 + c4b41f6a + c66d5b7f (shell target) in the served document",
+  "result": "16/16 pass: no horizontal scroll, 0 JS errors, 0 contrast failures, 0 tap targets under 44 px, Barlow families only (GB Broadcast = Barlow Condensed 800), link counts equal to live on every route/width (13/6/6/14 phones, 13/13/13/14 desktop), All News newest-first 12/12 with the newest story as lead at all widths.",
+  "caveat": "One earlier run with only the two news embeds swapped (white theme still live) showed the 320 All News lead out of order once; not reproduced in the live baseline or the combined run. That run also had 3-5 contrast failures from the white shell mixing with blue rules, which is why both packages must go together.",
+  "renders": "deploy/broadcast-restore-20261018/qa/news-*.jpg",
+  "reports": ["deploy/broadcast-restore-20261018/qa/report-target.json", "deploy/broadcast-restore-20261018/qa/report-live.json"]
+ }
+}

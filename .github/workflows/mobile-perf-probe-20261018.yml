@@ -1,0 +1,47 @@
+name: Mobile perf and South Carolina probe (one-off, read-only)
+on:
+  push:
+    branches:
+      - 'probe/mobile-perf-20261018'
+permissions:
+  contents: read
+jobs:
+  sc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dump South Carolina text on the plain homepage (iPhone and desktop)
+        run: |
+          mkdir p && cd p && npm init -y >/dev/null && npm i playwright@1.49.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cp ../probe-mp/sc.js . && node sc.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sc-shots
+          path: p/*.png
+  perf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Playwright network summary (iPhone)
+        run: |
+          mkdir p && cd p && npm init -y >/dev/null && npm i playwright@1.49.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cp ../probe-mp/perf.js . && node perf.js
+      - name: Lighthouse 12 mobile preset, 3 runs
+        run: |
+          for i in 1 2 3; do
+            npx --yes lighthouse@12 https://www.gatorbaitmedia.com/ --preset=perf --form-factor=mobile --screenEmulation.mobile=true --throttling-method=simulate --chrome-flags="--headless=new --no-sandbox" --output=json --output-path=lh$i.json --quiet || true
+          done
+          node probe-mp/lh-summary.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse
+          path: lh*.json
+          if-no-files-found: ignore

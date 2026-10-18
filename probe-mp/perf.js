@@ -1,0 +1,21 @@
+const { chromium } = require('playwright');
+const UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1';
+(async () => {
+  const b = await chromium.launch(); const c = await b.newContext({ viewport: { width: 390, height: 844 }, userAgent: UA, deviceScaleFactor: 3, isMobile: true, hasTouch: true });
+  const p = await c.newPage(); const rs = [];
+  p.on('response', async r => { try { const h = r.headers(); const buf = await r.body().catch(() => null); rs.push({ u: r.url(), s: r.status(), t: r.request().resourceType(), ct: h['content-type'] || '', enc: h['content-encoding'] || '', cl: +h['content-length'] || 0, body: buf ? buf.length : 0 }); } catch (e) {} });
+  await p.goto('https://www.gatorbaitmedia.com/', { waitUntil: 'networkidle', timeout: 60000 }).catch(e => console.log('goto', String(e).slice(0, 100)));
+  await p.waitForTimeout(4000);
+  const host = u => { try { return new URL(u).host; } catch (e) { return '?'; } };
+  const sz = r => r.cl || r.body;
+  console.log('PROBE_AT', new Date().toISOString(), 'requests', rs.length, 'bytes(~wire/body)', rs.reduce((a, r) => a + sz(r), 0));
+  console.log('TOP10'); rs.slice().sort((a, b) => sz(b) - sz(a)).slice(0, 10).forEach(r => console.log(sz(r), r.t, r.ct.split(';')[0], r.enc, r.u.slice(0, 170)));
+  const bh = {}; rs.forEach(r => { const h = host(r.u); bh[h] = (bh[h] || 0) + sz(r); }); console.log('BY_HOST'); Object.entries(bh).sort((a, b) => b[1] - a[1]).forEach(([h, v]) => console.log(v, h));
+  const bt = {}; rs.forEach(r => { bt[r.t] = (bt[r.t] || 0) + sz(r); }); console.log('BY_TYPE', JSON.stringify(bt));
+  const imgs = await p.evaluate(() => [...document.images].map(i => { const r = i.getBoundingClientRect(); return { src: i.currentSrc.slice(0, 200), nw: i.naturalWidth, nh: i.naturalHeight, dw: Math.round(r.width), dh: Math.round(r.height), top: Math.round(r.top + scrollY), lazy: i.loading, alt: (i.alt || '').slice(0, 40), id: i.id, cls: String(i.className).slice(0, 40) }; }));
+  console.log('IMAGES (all)'); imgs.forEach(i => console.log(JSON.stringify(i)));
+  const head = await p.evaluate(() => { const o = []; for (const s of ['#SITE_HEADER', 'header', '[id*="logo" i]', '[class*="logo" i]', '.sh-brand']) document.querySelectorAll(s).forEach(e => { const r = e.getBoundingClientRect(); o.push(s + ' tag=' + e.tagName + ' id=' + e.id + ' cls=' + String(e.className).slice(0, 50) + ' ' + Math.round(r.width) + 'x' + Math.round(r.height) + '@' + Math.round(r.top) + ' bg=' + getComputedStyle(e).backgroundImage.slice(0, 160) + ' html=' + e.outerHTML.slice(0, 260).replace(/\s+/g, ' ')); }); return o.slice(0, 14); }); console.log('HEADER_LOGO_DOM'); head.forEach(h => console.log(h));
+  const top = imgs.filter(i => i.top < 160); console.log('IMAGES_ABOVE_160px'); top.forEach(i => { const r = rs.find(x => x.u.slice(0, 200) === i.src); console.log(JSON.stringify(i), 'bytes', r ? sz(r) : '?', r ? r.ct : ''); });
+  const sc = await p.evaluate(() => [...document.scripts].map(s => ({ src: (s.src || 'inline:' + s.textContent.length).slice(0, 140), async: s.async, defer: s.defer, head: !!s.closest('head') }))); console.log('SCRIPTS', sc.length); sc.forEach(s => console.log(JSON.stringify(s)));
+  await b.close();
+})();

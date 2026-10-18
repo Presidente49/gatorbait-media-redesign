@@ -1,0 +1,611 @@
+[
+ {
+  "page": "pricing",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 3735,
+    "pb": "161.188px/\"\"",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-bc gbm-band-pre gbm-account-tight",
+    "spTop": 289,
+    "kids": [
+     "header#gbm-site-header@0+128",
+     "svg@0+0",
+     "div#SITE_CONTAINER@128+878"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3790,
+    "pb": "161.188px/\"\"",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-bc gbm-band-pre gbm-account-tight",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+878"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 4049,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-bc gbm-account-tight",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": {
+    "top": 124,
+    "h": 161
+   },
+   "header": {
+    "top": 0,
+    "h": 124
+   },
+   "ticker": {
+    "top": 0,
+    "h": 40
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 285,
+    "h": 1010
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "magazine",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2522,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": false,
+    "link": true,
+    "cls": "gbm-pre",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1908"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2617,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-pre",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1895"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3110,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 0
+   },
+   "ticker": {
+    "top": 0,
+    "h": 0
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 0,
+    "h": 0
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "cat-recruit",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 3333,
+    "pb": null,
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-lp-wait",
+    "spTop": null,
+    "kids": [
+     "header#gbm-site-header@0+128"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3456,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1671"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 124
+   },
+   "ticker": {
+    "top": 0,
+    "h": 40
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 124,
+    "h": 1784
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "pricing",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 2727,
+    "pb": "161.188px/\"\"",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-bc gbm-band-pre gbm-account-tight",
+    "spTop": 289,
+    "kids": [
+     "header#gbm-site-header@0+128",
+     "svg@0+0",
+     "div#SITE_CONTAINER@128+878"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 2775,
+    "pb": "161.188px/\"\"",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-bc gbm-band-pre gbm-account-tight",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+878"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3061,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-bc gbm-account-tight",
+    "spTop": 285,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "div#gbm-band@124+161",
+     "svg@0+0",
+     "div#SITE_CONTAINER@285+1010",
+     "footer#gbm-footer@1295+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": {
+    "top": 124,
+    "h": 161
+   },
+   "header": {
+    "top": 0,
+    "h": 124
+   },
+   "ticker": {
+    "top": 0,
+    "h": 40
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 285,
+    "h": 1010
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "magazine",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 4490,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-pre",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1908"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 5052,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-pre gbm-mq gbm-magazine-live",
+    "spTop": 0,
+    "kids": [
+     "header#gbm-site-header@0+0",
+     "main#gbm-magazine-page.mz26.pm@0+10914",
+     "svg@0+0",
+     "div#SITE_CONTAINER@10914+0",
+     "footer#gbm-footer@10914+416"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 0
+   },
+   "ticker": {
+    "top": 0,
+    "h": 0
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 0,
+    "h": 0
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ },
+ {
+  "page": "cat-recruit",
+  "w": "1366",
+  "http": 200,
+  "tl": [
+   {
+    "t": 3185,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-lp-wait",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+2286"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   },
+   {
+    "t": 3269,
+    "pb": "auto/none",
+    "track": true,
+    "hdr": true,
+    "shell": true,
+    "link": true,
+    "cls": "gbm-lp-on gbm-lp-hold",
+    "spTop": 124,
+    "kids": [
+     "header#gbm-site-header@0+124",
+     "svg@0+0",
+     "div#SITE_CONTAINER@124+1658"
+    ],
+    "styles": [
+     "gbm-gate-v1",
+     "gbm-shared-site-design-v6",
+     "gbm-bc-fonts",
+     "gbm-light-nav-guard",
+     "gbm-broadcast-skin-v1",
+     "gbm-swamp-night-shell-link",
+     "gbm-native-blog-design-v4",
+     "gbm-bc-s2-depth",
+     "gbm-magazine-2026-shell",
+     "gbm-gazette-startup-v1",
+     "gbm-viewport-wide-v1",
+     "gbm-mobile-shell-critical-v2"
+    ]
+   }
+  ],
+  "sizes": {
+   "band": null,
+   "header": {
+    "top": 0,
+    "h": 124
+   },
+   "ticker": {
+    "top": 0,
+    "h": 40
+   },
+   "mobileHost": null,
+   "sp": {
+    "top": 124,
+    "h": 1784
+   },
+   "nativeHeader": {
+    "top": 0,
+    "h": 0
+   }
+  }
+ }
+]

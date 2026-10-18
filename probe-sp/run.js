@@ -61,7 +61,7 @@ const AUDIT = () => {
     const fg = rgb(cs.color), bg = bgOf(el); if (!fg || !bg) continue;
     const L1 = lum(fg), L2 = lum(bg), cr = (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05);
     const big = parseFloat(cs.fontSize) >= 24 || (parseFloat(cs.fontSize) >= 18.66 && +cs.fontWeight >= 700);
-    if (cr < (big ? 3 : 4.5) && bad.length < 12) bad.push({ cr: +cr.toFixed(2), t: el.textContent.trim().slice(0, 28), fg: cs.color, bg: 'rgb(' + bg.slice(0, 3).join(',') + ')', el: el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') });
+    if (cr < (big ? 3 : 4.5) && bad.length < 12) bad.push({ cr: +cr.toFixed(2), t: el.textContent.trim().slice(0, 28), fg: cs.color, bg: 'rgb(' + bg.slice(0, 3).join(',') + ')', el: el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + '<' + [el.parentElement, el.parentElement && el.parentElement.parentElement].map(n => n ? n.tagName.toLowerCase() + '.' + String(n.className).slice(0, 40) : '').join('<') });
   }
   out.fonts = ff; out.lowContrast = bad;
   const wide = []; for (const el of document.querySelectorAll('body *')) { const r = el.getBoundingClientRect(); if (r.right > innerWidth + 20 && r.width > 2 && wide.length < 6 && !el.closest('#gbm-mobile-drawer-root')) wide.push((el.id ? '#' + el.id : el.tagName.toLowerCase() + '.' + String(el.className).slice(0, 30)) + ':' + Math.round(r.left) + '-' + Math.round(r.right)); } out.wide = wide;

@@ -1,0 +1,28 @@
+name: Magazine speed probe (read-only)
+on:
+  push:
+    branches: ['probe/mag-speed-20261018']
+    paths: ['probe-speed/**', '.github/workflows/probe-speed-20261018.yml']
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Probe live /magazine resources and timings
+        run: |
+          mkdir p && cd p && npm init -y >/dev/null && npm i playwright@1.49.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cp ../probe-speed/* . && TAG="${GITHUB_SHA::7}" node run.js
+      - name: Save output (read-only probe output only)
+        if: always()
+        run: |
+          mkdir -p deploy/mag-speed-probe-20261018 && cp p/shots/* deploy/mag-speed-probe-20261018/ || true
+          git config user.name "probe-bot" && git config user.email "probe-bot@users.noreply.github.com"
+          git add deploy/mag-speed-probe-20261018 && git commit -m "probe output: magazine speed" && git push origin HEAD:probe/mag-speed-20261018 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: mag-speed, path: p/shots, retention-days: 7 }

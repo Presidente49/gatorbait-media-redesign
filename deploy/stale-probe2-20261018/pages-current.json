@@ -1,0 +1,5 @@
+{
+  "commit": "ebc6578b8f6e859a5a4c51a491cd3b2ebf70aec2",
+  "updated": "2026-10-15T16:20:04.000Z",
+  "note": "Oct. 15: story-kit links only in Florida sentences (PR #289) on top of the homepage emergency fix (PR #287). Rollback: 1514ed77ed987dec653290e26952b3f9b776dbc9."
+}

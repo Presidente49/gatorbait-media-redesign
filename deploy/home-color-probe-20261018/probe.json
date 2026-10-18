@@ -11,11 +11,11 @@
     "t": 200
    },
    {
-    "root": true,
+    "root": false,
     "hidden": false,
-    "vis": "visible",
+    "vis": null,
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 500
    },
    {
@@ -23,7 +23,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 1000
    },
    {
@@ -31,7 +31,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 2000
    }
   ],
@@ -39,7 +39,7 @@
   "final": {
    "sw": 390,
    "cw": 390,
-   "h": 4755,
+   "h": 4782,
    "lead": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
    "order": [
     "Deep In The Heart Of Texas, A Gator Grin",
@@ -59,15 +59,15 @@
     "More from the newsroom"
    ],
    "skin": true,
-   "color": false,
+   "color": true,
    "fonts": [
     "Barlow",
     "Barlow Condensed"
    ],
-   "headerRule": "rgba(255, 255, 255, 0.1)"
+   "headerRule": "rgb(250, 70, 22)"
   },
   "reqs": [
-   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@10bf36420faa2f3d5a631ce8c7a47518b5183c10/sports-live/broadcast-home.js"
+   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@27c36c3ab64666dd8d60d207af3c5c24b66a769d/sports-live/broadcast-home-color.js"
   ],
   "errs": [
    "ReferenceError: wixTagManager is not defined",
@@ -94,7 +94,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 500
    },
    {
@@ -102,7 +102,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 1000
    },
    {
@@ -110,7 +110,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 2000
    }
   ],
@@ -118,7 +118,7 @@
   "final": {
    "sw": 430,
    "cw": 430,
-   "h": 4650,
+   "h": 4676,
    "lead": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
    "order": [
     "Deep In The Heart Of Texas, A Gator Grin",
@@ -138,15 +138,15 @@
     "More from the newsroom"
    ],
    "skin": true,
-   "color": false,
+   "color": true,
    "fonts": [
     "Barlow",
     "Barlow Condensed"
    ],
-   "headerRule": "rgba(255, 255, 255, 0.1)"
+   "headerRule": "rgb(250, 70, 22)"
   },
   "reqs": [
-   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@10bf36420faa2f3d5a631ce8c7a47518b5183c10/sports-live/broadcast-home.js"
+   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@27c36c3ab64666dd8d60d207af3c5c24b66a769d/sports-live/broadcast-home-color.js"
   ],
   "errs": [
    "ReferenceError: wixTagManager is not defined",
@@ -173,7 +173,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 500
    },
    {
@@ -181,7 +181,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 1000
    },
    {
@@ -189,7 +189,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 2000
    }
   ],
@@ -217,15 +217,15 @@
     "More from the newsroom"
    ],
    "skin": true,
-   "color": false,
+   "color": true,
    "fonts": [
     "Barlow",
     "Barlow Condensed"
    ],
-   "headerRule": "rgba(255, 255, 255, 0.1)"
+   "headerRule": "rgb(250, 70, 22)"
   },
   "reqs": [
-   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@10bf36420faa2f3d5a631ce8c7a47518b5183c10/sports-live/broadcast-home.js"
+   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@27c36c3ab64666dd8d60d207af3c5c24b66a769d/sports-live/broadcast-home-color.js"
   ],
   "errs": [
    "ReferenceError: wixTagManager is not defined",
@@ -252,7 +252,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 500
    },
    {
@@ -260,7 +260,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 1000
    },
    {
@@ -268,7 +268,7 @@
     "hidden": false,
     "vis": "visible",
     "skin": true,
-    "color": false,
+    "color": true,
     "t": 2000
    }
   ],
@@ -296,15 +296,15 @@
     "More from the newsroom"
    ],
    "skin": true,
-   "color": false,
+   "color": true,
    "fonts": [
     "Barlow",
     "Barlow Condensed"
    ],
-   "headerRule": "rgba(255, 255, 255, 0.1)"
+   "headerRule": "rgb(250, 70, 22)"
   },
   "reqs": [
-   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@10bf36420faa2f3d5a631ce8c7a47518b5183c10/sports-live/broadcast-home.js"
+   "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@27c36c3ab64666dd8d60d207af3c5c24b66a769d/sports-live/broadcast-home-color.js"
   ],
   "errs": [
    "ReferenceError: wixTagManager is not defined",
@@ -312,7 +312,7 @@
    "\n\t\t\t\t\t\tWidget with widgetId: c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not registered in ooiComponentsData.\n\t\t\t\t\t\tThis is likely a clientSpecMap configuration iss",
    "OOI component c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 not found in ooiComponentsData",
    "ReferenceError: wixTagManager is not defined",
-   "Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+   "Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID"
   ]
  }
 }

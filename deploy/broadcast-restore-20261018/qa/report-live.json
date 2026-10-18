@@ -1,0 +1,482 @@
+{
+ "all-news-320": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Latest Florida Gators News",
+  "links": 13,
+  "stories": 12,
+  "order": {
+   "dated": 12,
+   "of": 12,
+   "newestFirst": true,
+   "outOfOrderAt": [],
+   "lead": "/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+   "leadIsNewest": true
+  },
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": true,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "all-news-390": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Latest Florida Gators News",
+  "links": 13,
+  "stories": 12,
+  "order": {
+   "dated": 12,
+   "of": 12,
+   "newestFirst": true,
+   "outOfOrderAt": [],
+   "lead": "/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+   "leadIsNewest": true
+  },
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "all-news-430": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Latest Florida Gators News",
+  "links": 13,
+  "stories": 12,
+  "order": {
+   "dated": 12,
+   "of": 12,
+   "newestFirst": true,
+   "outOfOrderAt": [],
+   "lead": "/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+   "leadIsNewest": true
+  },
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": true,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "all-news-1366": {
+  "cw": 1366,
+  "sw": 1366,
+  "sn": true,
+  "lp": true,
+  "h1": "Latest Florida Gators News",
+  "links": 13,
+  "stories": 12,
+  "order": {
+   "dated": 12,
+   "of": 12,
+   "newestFirst": true,
+   "outOfOrderAt": [],
+   "lead": "/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+   "leadIsNewest": true
+  },
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": true,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "football-320": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Gator Football",
+  "links": 6,
+  "stories": 5,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "football-390": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Gator Football",
+  "links": 6,
+  "stories": 5,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "football-430": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Gator Football",
+  "links": 6,
+  "stories": 5,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "football-1366": {
+  "cw": 1366,
+  "sw": 1366,
+  "sn": true,
+  "lp": true,
+  "h1": "Gator Football",
+  "links": 13,
+  "stories": 12,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "buddy-320": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Buddy's Blog",
+  "links": 6,
+  "stories": 5,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "buddy-390": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Buddy's Blog",
+  "links": 6,
+  "stories": 5,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "buddy-430": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Buddy's Blog",
+  "links": 6,
+  "stories": 5,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "buddy-1366": {
+  "cw": 1366,
+  "sw": 1366,
+  "sn": true,
+  "lp": true,
+  "h1": "Buddy's Blog",
+  "links": 13,
+  "stories": 12,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "page2-320": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Latest Florida Gators News",
+  "links": 14,
+  "stories": 12,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"← Newer stories\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "page2-390": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Latest Florida Gators News",
+  "links": 14,
+  "stories": 12,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"← Newer stories\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "page2-430": {
+  "cw": 320,
+  "sw": 320,
+  "sn": true,
+  "lp": true,
+  "h1": "Latest Florida Gators News",
+  "links": 14,
+  "stories": 12,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"← Newer stories\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": true,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ },
+ "page2-1366": {
+  "cw": 1366,
+  "sw": 1366,
+  "sn": true,
+  "lp": true,
+  "h1": "Latest Florida Gators News",
+  "links": 14,
+  "stories": 12,
+  "order": null,
+  "ld": true,
+  "fams": [
+   "Barlow"
+  ],
+  "lowContrast": [
+   "B. \"GB\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "BUTTON. \"Search\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "SMALL. \"Results open on Google, \" rgb(189, 197, 213) on rgb(255, 255, 255) = 1.73",
+   "H2. \"Just in\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"← Newer stories\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24",
+   "A. \"Older stories →\" rgb(20, 39, 68) on rgb(250, 70, 22) = 4.24"
+  ],
+  "smallTargets": [],
+  "italicLoaded": false,
+  "depth": true,
+  "bcEdge": null,
+  "pageBg": "none",
+  "swapped": 0,
+  "errors": []
+ }
+}

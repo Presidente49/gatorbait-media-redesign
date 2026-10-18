@@ -1,0 +1,72 @@
+{
+ "decision": "Brenden 01:40Z Oct. 18: keep the broadcast blue look on all pages.",
+ "readAt": "2026-10-18 (read-only GET, custom-embeds v1)",
+ "fingerprint": "djb2: h=5381; h=((h<<5)+h+charCode)|0; hex of h>>>0",
+ "embeds": [
+  {
+   "id": "a5452619-cb57-4927-9771-3a63f7cb4212",
+   "liveRev": "7",
+   "liveFp": "ce5fe4b2",
+   "liveChars": 13639,
+   "target": "deploy/broadcast-restore-20261018/a5452619-target.html",
+   "targetChars": 13769,
+   "targetFp": "741002ee",
+   "change": "PATCH embedData.html at revision 7 (category ESSENTIAL; name, enabled, position, loadOnce unchanged; no site publish)",
+   "rollback": "deploy/broadcast-restore-20261018/rollback/a5452619-rev7.html",
+   "notes": "Target = pre-Swamp S3 Broadcast build (rev6, 8adf6ab2; story-blue.css = broadcast-story.css at 00448eb, built by build.py) plus two rules. (1) Kept functional fix from Swamp rev7: the header 'Get alerts' writer button (.gbm-writer-alerts) is a 44px tap target and no longer inherits the pale header text; restyled blue (white on slab orange #d33608, 4.9:1). (2) Share label pinned white with html:root body + three IDs so the Oct. 17 theme rule #gbm-share-contrast-20261017 (navy label, in c66d5b7f rev12) cannot drop it to 3.29:1 on the orange slab. Swamp's other rev7 changes (night palette, dark .gbc/#gbm-kr story-end modules, removed slash and chamfers) are color/style only and are dropped. The lead-photo script is byte-identical across rev6, rev7 and target; the live rev4 prefix (7333c42f) is unchanged. DEPENDENCY: the white shell CSS loaded by theme c66d5b7f rev12 (broadcast-network-20261017/site-shell.css) restyles story headers with #SITE_PAGES#SITE_PAGES rules that outrank this skin; the blue story look shows only once the theme group removes that shell. QA ran with that file stubbed out."
+  },
+  {
+   "id": "14a887e3-38ea-4258-ae0b-7d19cf9feead",
+   "liveRev": "20",
+   "liveFp": "7003636d",
+   "liveChars": 14760,
+   "target": null,
+   "targetChars": 14760,
+   "targetFp": "7003636d",
+   "change": "none",
+   "rollback": "deploy/broadcast-restore-20261018/rollback/14a887e3-rev20.html",
+   "notes": "No change. Neither Swamp Night (PR #322) nor the white newsroom (PR #324) touched it; live matches the S3 Broadcast-era revision. No Wix write."
+  },
+  {
+   "id": "c91ad133-194f-4077-b124-3c18cc11d2d7",
+   "liveRev": "7",
+   "liveFp": "4fe21601",
+   "liveChars": 6264,
+   "target": null,
+   "targetChars": 6264,
+   "targetFp": "4fe21601",
+   "change": "none",
+   "rollback": "deploy/broadcast-restore-20261018/rollback/c91ad133-rev7.html",
+   "notes": "No change. Neither Swamp Night (PR #322) nor the white newsroom (PR #324) touched it; live matches the S3 Broadcast-era revision. No Wix write."
+  },
+  {
+   "id": "f285a38c-4a2b-43e9-b22d-a66eaeedfb41",
+   "liveRev": "3",
+   "liveFp": "5de39fb5",
+   "liveChars": 1024,
+   "target": null,
+   "targetChars": 1024,
+   "targetFp": "5de39fb5",
+   "change": "none",
+   "rollback": "deploy/broadcast-restore-20261018/rollback/f285a38c-rev3.html",
+   "notes": "No change. Neither Swamp Night (PR #322) nor the white newsroom (PR #324) touched it; live matches the S3 Broadcast-era revision. No Wix write."
+  }
+ ],
+ "apply": "GET a5452619; abort unless revision 7 and djb2 ce5fe4b2. PATCH embedData.html = a5452619-target.html at revision 7, category ESSENTIAL. Read back: expect revision 8, djb2 741002ee. Apply together with or after the theme group's removal of the white shell (c66d5b7f). Rollback: PATCH rollback/a5452619-rev7.html at the then-current revision.",
+ "qa": {
+  "script": "deploy/broadcast-restore-20261018/qa-story.mjs",
+  "posts": [
+   "the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
+   "a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation (newest postgame in blog-feed.xml, 00:12Z Oct. 18)"
+  ],
+  "widths": [
+   320,
+   390,
+   430,
+   1366
+  ],
+  "result": "8/8 pass with the white shell stubbed out: no horizontal scroll, no JS errors, header and body text >=4.5:1 (3:1 large), tap targets >=44px (share slab, chips, footer share, writer alerts), Barlow only, story source text and in-story links identical to live. With the white shell left in place (SHELL_MODE=keep): 8/8 fail on headline type and subhead rail, because the white shell outranks the skin.",
+  "renders": "deploy/broadcast-restore-20261018/qa/story-*.jpg",
+  "details": "deploy/broadcast-restore-20261018/qa/results.json"
+ }
+}

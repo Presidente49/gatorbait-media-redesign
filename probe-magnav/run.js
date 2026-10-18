@@ -83,9 +83,11 @@ const INIT = (TICKS) => {
   if (F.auto) F.start('auto');
 };
 
+const AUTOJS = () => { if (window.__fx && window === window.top) window.__fx.start('auto'); };
 async function newCtx(browser, v, extra) {
   const ctx = await browser.newContext(Object.assign({ viewport: v.viewport, deviceScaleFactor: v.deviceScaleFactor || 1, isMobile: !!v.isMobile, hasTouch: !!v.hasTouch }, v.userAgent ? { userAgent: v.userAgent } : {}, extra || {}));
   await ctx.addInitScript(INIT, TICKS);
+  ctx.on('page', pg => pg.addInitScript(AUTOJS).catch(() => {}));
   return ctx;
 }
 async function throttle(page, on) {
@@ -113,6 +115,7 @@ function savePicks(sc, name, d, frames) {
 async function finish(name, meta, page, shots, waitMs) {
   await sleep(waitMs || 14800);
   let d = null; try { d = await page.evaluate(() => window.__fx && window.__fx.dump()); } catch (e) { meta.dumpErr = String(e.message).slice(0, 100); }
+  try { meta.sameDoc = await page.evaluate(() => window.__marker === 1); } catch (e) {}
   meta.rec = d; meta.picks = savePicks(null, name, d, shots ? shots.frames : []);
   try { await page.screenshot({ path: `out/${name}-final.jpg`, type: 'jpeg', quality: 45 }); } catch (e) {}
   try { if (shots) await shots.cdp.send('Page.stopScreencast'); } catch (e) {}
@@ -136,12 +139,12 @@ async function safeClick(el, meta) { try { await el.click({ timeout: 3000 }); } 
 async function clickMag(page, v, scope, meta) {
   const info = await findMagLink(page, scope); const vis = (await info.getProperty('vis')).asElement(); const hidden = (await info.getProperty('hidden')).asElement();
   meta.link = { scope, total: await (await info.getProperty('total')).jsonValue(), pool: await (await info.getProperty('pool')).jsonValue(), mode: null };
-  if (vis) { await vis.scrollIntoViewIfNeeded().catch(() => {}); await sleep(250); meta.link.mode = 'direct'; await page.evaluate(() => window.__fx.start('click')); await safeClick(vis, meta); return true; }
+  if (vis) { await vis.scrollIntoViewIfNeeded().catch(() => {}); await sleep(250); meta.link.mode = 'direct'; await page.evaluate(() => { window.__marker = 1; window.__fx.start('click'); }); await safeClick(vis, meta); return true; }
   if (scope === 'header' && v.isMobile) {
     const burgers = ['#SITE_HEADER [aria-label*="menu" i]', '#SITE_HEADER [data-testid*="menu" i]', '#SITE_HEADER [class*="burger" i]', '#SITE_HEADER [class*="hamburger" i]', '#gbm-mobile-drawer-root, [class*="gbm-mobile" i] button', '#SITE_HEADER button'];
-    for (const sel of burgers) { const b = page.locator(sel).first(); if (await b.count() && await b.isVisible().catch(() => false)) { await b.click({ timeout: 4000 }).catch(() => {}); await sleep(1200); const i2 = await findMagLink(page, 'any'); const l = (await i2.getProperty('vis')).asElement(); if (l) { meta.link.mode = 'menu:' + sel; await page.evaluate(() => window.__fx.start('click')); await safeClick(l, meta); return true; } } }
+    for (const sel of burgers) { const b = page.locator(sel).first(); if (await b.count() && await b.isVisible().catch(() => false)) { await b.click({ timeout: 4000 }).catch(() => {}); await sleep(1200); const i2 = await findMagLink(page, 'any'); const l = (await i2.getProperty('vis')).asElement(); if (l) { meta.link.mode = 'menu:' + sel; await page.evaluate(() => { window.__marker = 1; window.__fx.start('click'); }); await safeClick(l, meta); return true; } } }
   }
-  if (hidden) { meta.link.mode = 'dom-click (link not visible)'; await page.evaluate(() => window.__fx.start('click')); await hidden.evaluate(a => a.click()); return true; }
+  if (hidden) { meta.link.mode = 'dom-click (link not visible)'; await page.evaluate(() => { window.__marker = 1; window.__fx.start('click'); }); await hidden.evaluate(a => a.click()); return true; }
   meta.link.mode = 'NOT FOUND'; return false;
 }
 async function clickByPath(page, re, meta, key) {
@@ -239,7 +242,7 @@ async function runList(browser, list, summary) {
       pushes: d && d.pushes.slice(0, 4), pageshows: d && d.pageshows, cls: d ? +d.shifts.reduce((a, x) => a + x.v, 0).toFixed(4) : null, shifts: d ? d.shifts.filter(x => x.v >= 0.003).slice(0, 5) : null,
       footerInViewWithoutMag: d ? d.ticks.filter(t => t.ftr && t.ftr.inView && !t.mag && !t.veil && /^\/magazine/.test(t.path)).map(t => t.t) : null,
       toolsAppear: d ? (d.ticks.find(t => t.tools) || {}).t : null,
-      final: d && d.ticks.length ? (({ path, cls, veil, nv, mag, hdr, ftr, tools }) => ({ path, cls, veil, nv, mag, hdr, ftr, tools }))(d.ticks[d.ticks.length - 1]) : null,
+      sameDoc: meta.sameDoc, label: d && d.label, final: d && d.ticks.length ? (({ path, cls, veil, nv, mag, hdr, ftr, tools }) => ({ path, cls, veil, nv, mag, hdr, ftr, tools }))(d.ticks[d.ticks.length - 1]) : null,
       extra: { firstVisit: meta.firstVisit, afterHome: meta.afterHome, beforeBack: meta.beforeBack, beforeFwd: meta.beforeFwd, link: meta.link, blogLink: meta.blogLink, homeLink: meta.homeLink }, picks: (meta.picks || []).length, secs: Math.round((Date.now() - t0) / 1000)
     };
     summary.push(sum); fs.writeFileSync(`out/${s.id}.json`, JSON.stringify(meta, null, 0));

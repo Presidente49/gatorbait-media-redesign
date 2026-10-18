@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation",
+      "excerpt": "Buddy Martin on Florida's 27-24 win at No. 7 Texas, Tramell Jones Jr.'s first start and the quarterback question Jon Sumrall now faces.",
+      "url": "https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-18T00:12:26Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation"
+      }
+    },
+    {
+      "title": "It was a good day for an exorcism in Austin",
+      "excerpt": "Franz Beard: Florida's defense found its inner Doomsday, Arch Manning got haunted and Tramell Jones Jr. won his first start on the road, 27-24 at No. 7 Texas.",
+      "url": "https://www.gatorbaitmedia.com/post/it-was-a-good-day-for-an-exorcism-in-austin",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-18T00:02:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for It was a good day for an exorcism in Austin"
+      }
+    },
+    {
       "title": "Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr.",
       "excerpt": "AUSTIN, Texas — Florida walked into Darrell K Royal–Texas Memorial Stadium on Saturday with a backup quarterback making his first career start, fell behind 17-3, and walked out with the win of its season. The Gators (5-2, 3-2 SEC) scored 24 straight points and held on to beat No. 7 Texas 27-24, sealed in the final two minutes when Myles Graham sacked Arch…",
       "url": "https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Buddy Blog: Can Sumrall Swim In The Deep End Of This Cesspool?"
-      }
-    },
-    {
-      "title": "From the Sideline: Chris Spears on the 500th Game in The Swamp",
-      "excerpt": "Chris Spears on the view from the sideline for the 500th game in The Swamp, from the runout to Bailey Stockton's touchdown.",
-      "url": "https://www.gatorbaitmedia.com/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
-      "author": "Chris Spears",
-      "firstPublishedDate": "2026-10-11T16:22:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_79987fbda38743d9842a0ba355b3e83a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for From the Sideline: Chris Spears on the 500th Game in The Swamp"
-      }
-    },
-    {
-      "title": "Members: Read the Texas Pregame Magazine",
-      "excerpt": "Read the Texas pregame magazine on your phone: Buddy Martin on the QB1 question, Franz Beard on Tramell Jones Jr. and the Soothsayer’s SEC picks, and the full preview of Florida at No. 7 Texas. Members can also download the 27-page print edition (PDF).",
-      "url": "https://www.gatorbaitmedia.com/post/members-read-the-texas-pregame-magazine",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-11T16:00:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c1074801312349d9a08dabde5c4ac23f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Members: Read the Texas Pregame Magazine"
       }
     }
   ]

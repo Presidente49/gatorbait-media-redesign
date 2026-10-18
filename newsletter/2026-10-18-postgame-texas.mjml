@@ -1,7 +1,7 @@
 <mjml lang="en" dir="ltr">
   <mj-head>
     <mj-title>Gators stun No. 7 Texas 27-24 in Austin</mj-title>
-    <mj-preview>Florida scored 24 straight after trailing 17-3. Columns, box score and more from around the program.</mj-preview>
+    <mj-preview>Florida scored 24 straight after trailing 17-3. Inside: the columns, every SEC result and the GatorBait store.</mj-preview>
     <mj-font name="Barlow" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;display=swap" />
     <mj-attributes>
       <mj-all font-family="Barlow, Arial, Helvetica, sans-serif" />
@@ -18,10 +18,12 @@
     </mj-style>
   </mj-head>
   <mj-body background-color="#FFFFFF" width="600px">
-    <mj-section background-color="#0B1F4B" padding="18px 24px 14px" border-top="6px solid #FA4616" css-class="gb-pad">
+    <mj-section background-color="#0B1F4B" padding="22px 24px 16px" border-top="6px solid #FA4616" css-class="gb-pad">
       <mj-column>
-        <mj-text css-class="gb-mast" align="left" padding="0 0 2px" color="#FFFFFF" font-size="30px" font-weight="800" letter-spacing="0.5px" line-height="1.1">GATOR<span style="color:#FA4616;">BAIT</span> POSTGAME EDITION</mj-text>
-        <mj-text align="left" padding="0" color="#D5DBE4" font-size="14px" letter-spacing="1.5px">SUNDAY, OCT. 18, 2026 &#183; FLORIDA AT TEXAS</mj-text>
+        <mj-text css-class="gb-mast" align="center" padding="0 0 4px" color="#FFFFFF" font-size="44px" font-weight="800" letter-spacing="4px" line-height="1">GATOR<span style="color:#FA4616;">BAIT</span></mj-text>
+        <mj-text align="center" padding="0 0 10px" color="#D5DBE4" font-size="13px" font-weight="700" letter-spacing="5px">MAGAZINE</mj-text>
+        <mj-divider border-color="#FA4616" border-width="2px" padding="0 0 10px" />
+        <mj-text align="center" padding="0" color="#FFFFFF" font-size="14px" font-weight="700" letter-spacing="2px">POSTGAME EDITION &#183; SUNDAY, OCT. 18, 2026 &#183; FLORIDA AT TEXAS</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="0" css-class="gb-pad0">
@@ -37,6 +39,18 @@
         <mj-text>Florida trailed 17-3, then scored 24 straight points and left DKR-Texas Memorial Stadium with a 27-24 win over No. 7 Texas. The Gators are 5-2 overall and 3-2 in the SEC.</mj-text>
         <mj-text padding="0 0 20px">Tramell Jones Jr. threw for two touchdowns and ran for 41 yards, Jadan Baugh ran for 91 yards and a score, and Florida did not turn the ball over.</mj-text>
         <mj-button href="https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=lead_button" font-size="18px" inner-padding="16px 28px">READ THE GAME STORY</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#0B1F4B" padding="22px 24px 14px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 6px" color="#FFAD86" font-size="13px" font-weight="800" letter-spacing="2px">INSIDE THIS ISSUE</mj-text>
+        <mj-table padding="0 0 6px" cellpadding="0" cellspacing="0" width="100%"><tr><td width="44" valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;color:#FA4616;font-size:22px;font-weight:800;">01</td><td valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;"><a href="https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=toc_1" style="color:#FFFFFF;text-decoration:none;font-size:17px;font-weight:800;line-height:1.2;">Gators Stun No. 7 Texas, 27-24</a><br /><span style="color:#B8C2D6;font-size:13px;">The game story &#183; Brenden Martin</span></td></tr><tr><td width="44" valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;color:#FA4616;font-size:22px;font-weight:800;">02</td><td valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;"><a href="https://www.gatorbaitmedia.com/post/it-was-a-good-day-for-an-exorcism-in-austin?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=toc_2" style="color:#FFFFFF;text-decoration:none;font-size:17px;font-weight:800;line-height:1.2;">It was a good day for an exorcism in Austin</a><br /><span style="color:#B8C2D6;font-size:13px;">Franz Beard</span></td></tr><tr><td width="44" valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;color:#FA4616;font-size:22px;font-weight:800;">03</td><td valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;"><a href="https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=toc_3" style="color:#FFFFFF;text-decoration:none;font-size:17px;font-weight:800;line-height:1.2;">A Texas Barbecue: Gators Flip The Script</a><br /><span style="color:#B8C2D6;font-size:13px;">Buddy Martin</span></td></tr><tr><td width="44" valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;color:#FA4616;font-size:22px;font-weight:800;">04</td><td valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;"><a href="https://www.gatorbaitmedia.com/post/the-gators-sucked-less-turning-arch-madness-into-arch-sadness?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=toc_4" style="color:#FFFFFF;text-decoration:none;font-size:17px;font-weight:800;line-height:1.2;">The Gators Sucked Less, Turning Arch Madness Into Arch Sadness</a><br /><span style="color:#B8C2D6;font-size:13px;">Franz Beard &#183; Plus every SEC result</span></td></tr><tr><td width="44" valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;color:#FA4616;font-size:22px;font-weight:800;">05</td><td valign="top" style="padding:10px 0;border-bottom:1px solid #2B4278;"><a href="https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=toc_5" style="color:#FFFFFF;text-decoration:none;font-size:17px;font-weight:800;line-height:1.2;">Box score, standouts and what&#8217;s next</a><br /><span style="color:#B8C2D6;font-size:13px;">Georgia, Oct. 31 on ABC</span></td></tr></mj-table>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="26px 32px 22px" css-class="gb-pad">
+      <mj-column border-left="5px solid #FA4616" padding="0 0 0 18px">
+        <mj-text padding="0 0 8px" color="#101820" font-size="26px" font-weight="800" line-height="1.2">&#8220;It doesn&#8217;t matter who you play, where you play, when you play, you have to fight.&#8221;</mj-text>
+        <mj-text padding="0" color="#5B6472" font-size="14px" font-weight="700" letter-spacing="1.2px">JON SUMRALL, AFTER THE 27-24 WIN AT TEXAS</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="0 24px 12px" css-class="gb-pad">
@@ -113,11 +127,33 @@
         <mj-text padding="0" color="#D5DBE4" font-size="16px">Mercedes-Benz Stadium in Atlanta.</mj-text>
       </mj-column>
     </mj-section>
-    <mj-section background-color="#FFFFFF" padding="26px 24px 28px" css-class="gb-pad">
+    <mj-section background-color="#F5F6F8" padding="26px 24px 6px" css-class="gb-pad">
       <mj-column>
-        <mj-text align="left" padding="0 0 6px" color="#101820" font-size="22px" font-weight="800" line-height="1.3">Old-school journalism + new tech.</mj-text>
-        <mj-text align="left" padding="0 0 16px" font-size="16px">Join GatorBait for every column and the Magazine.</mj-text>
-        <mj-button href="https://www.gatorbaitmedia.com/pricing-plans?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=join_cta">JOIN GATORBAIT</mj-button>
+        <mj-text padding="0 0 4px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="1.6px">THE GATORBAIT STORE</mj-text>
+        <mj-text padding="0 0 14px" color="#101820" font-size="26px" font-weight="800" line-height="1.15">Gear up for the Georgia game.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F5F6F8" padding="0 18px" css-class="gb-pad2">
+      <mj-column width="33.33%" padding="0 6px 14px"><mj-text padding="14px 10px" background-color="#FFFFFF" color="#101820" font-size="15px" font-weight="800" line-height="1.3">Nike Team Legend Tee<br /><span style="color:#C23A0E;">$32.00</span></mj-text></mj-column>
+      <mj-column width="33.33%" padding="0 6px 14px"><mj-text padding="14px 10px" background-color="#FFFFFF" color="#101820" font-size="15px" font-weight="800" line-height="1.3">Nike Club Fleece Hoodie<br /><span style="color:#C23A0E;">$60.00</span></mj-text></mj-column>
+      <mj-column width="33.33%" padding="0 6px 14px"><mj-text padding="14px 10px" background-color="#FFFFFF" color="#101820" font-size="15px" font-weight="800" line-height="1.3">Flexfit Performance Cap<br /><span style="color:#C23A0E;">$26.95</span></mj-text></mj-column>
+    </mj-section>
+    <mj-section background-color="#F5F6F8" padding="0 24px 28px" css-class="gb-pad">
+      <mj-column>
+        <mj-button href="https://www.gatorbaitmedia.com/shop?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=store_button" background-color="#0B1F4B">SHOP GATOR BAIT GEAR</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FA4616" padding="28px 24px 6px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 4px" color="#FFFFFF" font-size="13px" font-weight="800" letter-spacing="2px">JOIN GATORBAIT ALL ACCESS</mj-text>
+        <mj-text padding="0 0 10px" color="#FFFFFF" font-size="30px" font-weight="800" line-height="1.1">Old-school journalism + new tech.</mj-text>
+        <mj-text padding="0 0 16px" color="#FFFFFF" font-size="17px">Every Franz Beard and Buddy Martin column, the full Magazine and the Buddy Martin Show. $9.99 a month or $99 a year, with a 7-day free trial.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/pricing-plans/subscribe?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=join_button" background-color="#0B1F4B">START YOUR FREE TRIAL</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FA4616" padding="10px 24px 28px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0" color="#FFFFFF" font-size="15px">Forwarded this email? <a href="https://www.gatorbaitmedia.com/contact?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_2026_10_18&utm_content=email_signup" style="color:#FFFFFF;font-weight:800;">Sign up to get it every week</a>.</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#EEF0F3" padding="20px 24px" css-class="gb-pad">

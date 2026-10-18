@@ -1,0 +1,294 @@
+[
+ {
+  "width": "390",
+  "http": 200,
+  "htmlHasPmDownload": false,
+  "htmlHasDlBtn": false,
+  "info": {
+   "pmDownloadCount": 1,
+   "pmDlBtnCount": 1,
+   "pmDownload": {
+    "desc": {
+     "tag": "section",
+     "id": "pm-download",
+     "cls": "pm-dl"
+    },
+    "text": "Keep the whole issueDownload the full magazine (PDF)PDF, 16 pages, 2.4 MB",
+    "href": null,
+    "download": false,
+    "rect": {
+     "x": 0,
+     "y": 12729,
+     "w": 390,
+     "h": 176,
+     "viewportY": -767
+    },
+    "display": "block",
+    "visibility": "visible",
+    "opacity": "1",
+    "color": "rgb(11, 26, 68)",
+    "bg": "rgb(250, 70, 22)",
+    "fontSize": "17px",
+    "clippedOrHiddenBy": [],
+    "inViewportAfterScroll": true,
+    "topElementAtCenter": {
+     "tag": "a",
+     "id": "",
+     "cls": "pm-dl-btn"
+    },
+    "notCovered": true,
+    "overlapsFixed": []
+   },
+   "pmDlBtn": {
+    "desc": {
+     "tag": "a",
+     "id": "",
+     "cls": "pm-dl-btn"
+    },
+    "text": "Download the full magazine (PDF)",
+    "href": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+    "download": true,
+    "rect": {
+     "x": 16,
+     "y": 12784,
+     "w": 358,
+     "h": 60,
+     "viewportY": 425
+    },
+    "display": "flex",
+    "visibility": "visible",
+    "opacity": "1",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(6, 20, 68)",
+    "fontSize": "21.06px",
+    "clippedOrHiddenBy": [],
+    "inViewportAfterScroll": true,
+    "topElementAtCenter": {
+     "tag": "a",
+     "id": "",
+     "cls": "pm-dl-btn"
+    },
+    "notCovered": true,
+    "overlapsFixed": []
+   },
+   "pageHeight": 14340,
+   "scrollW": 390,
+   "clientW": 390,
+   "pageRootChildrenLast3": [
+    {
+     "desc": {
+      "tag": "div",
+      "id": "",
+      "cls": "pm-wrap"
+     },
+     "text": "← GatorBait MediaGatorBaitMagazineSunday, October 18, 2026Postgame editionCover story · Bu",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 13584,
+      "viewportY": -13496
+     }
+    }
+   ],
+   "lastSections3": [
+    {
+     "desc": {
+      "tag": "section",
+      "id": "",
+      "cls": "gbm-football-tools"
+     },
+     "text": "2026 Florida footballKnow the Gators.The players. The dates. The season in one place.Team ",
+     "rect": {
+      "x": 0,
+      "y": 12931,
+      "w": 390,
+      "h": 210,
+      "viewportY": -565
+     }
+    },
+    {
+     "desc": {
+      "tag": "section",
+      "id": "comp-k2lb3irl",
+      "cls": "comp-k2lb3irl CeUMmm wixui-column-strip"
+     },
+     "text": "GATORBAIT MEDIALog In",
+     "rect": {
+      "x": 0,
+      "y": 13496,
+      "w": 0,
+      "h": 0,
+      "viewportY": 0
+     }
+    },
+    {
+     "desc": {
+      "tag": "section",
+      "id": "comp-lpkntdds",
+      "cls": "Le88gL comp-lpkntdds wixui-section"
+     },
+     "text": "What Can “VB3” Do for You?Eddie GilleyLight up a Camel! Nostalgia, the Gators and a game w",
+     "rect": {
+      "x": 0,
+      "y": 13496,
+      "w": 0,
+      "h": 0,
+      "viewportY": 0
+     }
+    }
+   ],
+   "allIdsInRoot": [
+    "div.pm-wrap"
+   ]
+  },
+  "shot": "shots/mag-bottom-390.png",
+  "attempt": 1
+ },
+ {
+  "width": "1366",
+  "http": 200,
+  "htmlHasPmDownload": false,
+  "htmlHasDlBtn": false,
+  "info": {
+   "pmDownloadCount": 1,
+   "pmDlBtnCount": 1,
+   "pmDownload": {
+    "desc": {
+     "tag": "section",
+     "id": "pm-download",
+     "cls": "pm-dl"
+    },
+    "text": "Keep the whole issueDownload the full magazine (PDF)PDF, 16 pages, 2.4 MB",
+    "href": null,
+    "download": false,
+    "rect": {
+     "x": 0,
+     "y": 10035,
+     "w": 1366,
+     "h": 214,
+     "viewportY": -411
+    },
+    "display": "block",
+    "visibility": "visible",
+    "opacity": "1",
+    "color": "rgb(11, 26, 68)",
+    "bg": "rgb(250, 70, 22)",
+    "fontSize": "19px",
+    "clippedOrHiddenBy": [],
+    "inViewportAfterScroll": true,
+    "topElementAtCenter": {
+     "tag": "div",
+     "id": "",
+     "cls": "pm-dl-row"
+    },
+    "notCovered": true,
+    "overlapsFixed": []
+   },
+   "pmDlBtn": {
+    "desc": {
+     "tag": "a",
+     "id": "",
+     "cls": "pm-dl-btn"
+    },
+    "text": "Download the full magazine (PDF)",
+    "href": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf",
+    "download": true,
+    "rect": {
+     "x": 39,
+     "y": 10121,
+     "w": 537,
+     "h": 72,
+     "viewportY": 466
+    },
+    "display": "flex",
+    "visibility": "visible",
+    "opacity": "1",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(6, 20, 68)",
+    "fontSize": "30px",
+    "clippedOrHiddenBy": [],
+    "inViewportAfterScroll": true,
+    "topElementAtCenter": {
+     "tag": "a",
+     "id": "",
+     "cls": "pm-dl-btn"
+    },
+    "notCovered": true,
+    "overlapsFixed": []
+   },
+   "pageHeight": 11346,
+   "scrollW": 1366,
+   "clientW": 1366,
+   "pageRootChildrenLast3": [
+    {
+     "desc": {
+      "tag": "div",
+      "id": "",
+      "cls": "pm-wrap"
+     },
+     "text": "← GatorBait MediaGatorBaitMagazineSunday, October 18, 2026Postgame editionCover story · Bu",
+     "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1366,
+      "h": 10930,
+      "viewportY": -10446
+     }
+    }
+   ],
+   "lastSections3": [
+    {
+     "desc": {
+      "tag": "section",
+      "id": "",
+      "cls": "gbm-football-tools"
+     },
+     "text": "2026 Florida footballKnow the Gators.The players. The dates. The season in one place.Team ",
+     "rect": {
+      "x": 0,
+      "y": 10275,
+      "w": 1366,
+      "h": 211,
+      "viewportY": -171
+     }
+    },
+    {
+     "desc": {
+      "tag": "section",
+      "id": "comp-k2lb3irl",
+      "cls": "comp-k2lb3irl CeUMmm wixui-column-strip"
+     },
+     "text": "GATORBAIT MEDIALog In",
+     "rect": {
+      "x": 0,
+      "y": 10446,
+      "w": 0,
+      "h": 0,
+      "viewportY": 0
+     }
+    },
+    {
+     "desc": {
+      "tag": "section",
+      "id": "comp-lpkntdds",
+      "cls": "Le88gL comp-lpkntdds wixui-section"
+     },
+     "text": "What Can “VB3” Do for You?Eddie GilleyLight up a Camel! Nostalgia, the Gators and a game w",
+     "rect": {
+      "x": 0,
+      "y": 10446,
+      "w": 0,
+      "h": 0,
+      "viewportY": 0
+     }
+    }
+   ],
+   "allIdsInRoot": [
+    "div.pm-wrap"
+   ]
+  },
+  "shot": "shots/mag-bottom-1366.png",
+  "attempt": 1
+ }
+]

@@ -33,7 +33,7 @@ const runtimeBase = (POSTGAME ? read('sports-live/src/capture.js') + '\n;' : '')
 const runtime = VARIANT === 'wednesday' ? runtimeBase.replace('Six complete articles \u00b7 October 1 edition', 'Twelve stories \u00b7 Wednesday Edition, October 7') : runtimeBase;
 // Photo credits the homepage already verified (front-page.config.json), so the live card refresh can credit a new card's photo.
 const credits = JSON.parse(read('sports-live/front-page.config.json')).credits || {};
-const MAX_JS = (POSTGAME ? 190 : 184) * 1024; // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
+const MAX_JS = (POSTGAME ? 200 : 184) * 1024; // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
 
 // Strip editorial meta (notes to the compiler) so the bundle carries only what renders; everything else goes through untouched.
 const META = new Set(['$comment', 'todo']);
@@ -61,7 +61,7 @@ ${runtime}})();
 const homeLoader = read('deploy/wix-served/homepage-embed-cdn.html');
 const shellCss = (homeLoader.match(/<style id="gbm-mobile-shell-critical-v2">[\s\S]*?<\/style>/) || [''])[0];
 // Postgame uses the confirmed postgame pointer, not the retired pregame rev-73 loader.
-const loader = read(POSTGAME ? 'deploy/magazine-2026/postgame-sc/candidate-loader.html' : 'deploy/magazine-2026/magazine-loader-v1.html');
+const loader = read(POSTGAME ? 'deploy/magazine-2026/postgame-texas-web/candidate-loader.html' : 'deploy/magazine-2026/magazine-loader-v1.html');
 const frame = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>GatorBait Magazine fixture</title>
 <link id="gbm-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&family=Bebas+Neue&display=swap">
 ${shellCss}

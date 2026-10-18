@@ -1,601 +1,757 @@
 {
-  "$comment": "South Carolina postgame edition (Oct. 10, 2026). Buddy Martin GAMECLOCKED column is the cover per Brenden's standing order of Oct. 11. Package is postgame chronology newest-first; halftime and live-update posts excluded. No report-card section: GatorBait published none for this game. Every stat is from the ESPN summary for event 401856714; per-game baselines are from ESPN events 401856637, 401856672, 401856687, 401856699. Rankings are as of kickoff. Edit the Texas ranking in ONE place: texas.ranking (Florida's own No. 16 is final.teams[1].rank). Texas data: ESPN events 401856717 (Oklahoma game), 401856667, 401856682, 401856693, 401856704.",
-  "id": "2026-10-11-postgame-south-carolina",
-  "layout": "postgame",
-  "issue": {
-    "number": "Postgame edition",
-    "date": "Sunday, October 11, 2026",
-    "week": "Week 6 · South Carolina at Florida",
-    "home": "GatorBait Media",
-    "pageTitle": "GatorBait Magazine | Postgame: South Carolina 38, Florida 19"
+ "$comment": "Texas postgame web edition (Oct. 18, 2026): Florida 27, No. 7 Texas 24 (ESPN event 401856724). Brenden, Oct. 18: Buddy Martin and Franz Beard columns lead, then every other published postgame story newest first; download-only PDF button at the bottom. Rankings as of kickoff only; no Georgia ranking or record anywhere.",
+ "id": "2026-10-18-postgame-texas",
+ "layout": "postgame",
+ "issue": {
+  "number": "Postgame edition",
+  "date": "Sunday, October 18, 2026",
+  "week": "Week 7 · Florida at Texas",
+  "home": "GatorBait Media",
+  "pageTitle": "GatorBait Magazine | Postgame: Florida 27, Texas 24"
+ },
+ "cover": {
+  "kicker": "Cover story · Buddy Martin",
+  "headline": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation",
+  "dek": "Florida went into Austin with a backup quarterback making his first career start and left with a 27-24 win over No. 7 Texas.",
+  "byline": "By Buddy Martin",
+  "cta": "Read Buddy's column",
+  "url": "/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+  "image": {
+   "id": "d3cfa5_6537648f5b15470ea4aea6703c77ed59",
+   "ext": "jpg",
+   "width": 1320,
+   "height": 880,
+   "alt": "Florida quarterback Tramell Jones Jr. hands off to Jadan Baugh against Texas in Austin, Oct. 17, 2026. Photo courtesy UAA and Hannah White.",
+   "credit": "Photo courtesy UAA and Hannah White",
+   "uaa": true
   },
-  "cover": {
-    "kicker": "Cover story · Buddy Martin",
-    "headline": "Buddy Blog: Can Sumrall Swim in the Deep End of This Cesspool?",
-    "dek": "Apparently, Missouri wasn't the detour. It may have been the warning sign.",
-    "byline": "By Buddy Martin",
-    "cta": "Read Buddy's column",
-    "url": "/post/buddy-blog-can-sumrall-swim-in-the-deep-end-of-this-cesspool",
+  "linesLabel": "Also inside",
+  "lines": [
+   "Franz Beard: A good day for an exorcism in Austin",
+   "Loren Meadows: Postgame thoughts",
+   "Score by score, box score and leaders",
+   "Watch: Baugh and Sumrall on Instagram",
+   "Final: Florida 27, No. 7 Texas 24"
+  ]
+ },
+ "final": {
+  "label": "Final",
+  "teams": [
+   {
+    "name": "Florida",
+    "score": 27,
+    "won": true
+   },
+   {
+    "rank": "No. 7",
+    "name": "Texas",
+    "score": 24
+   }
+  ],
+  "meta": [
+   "Saturday, Oct. 17",
+   "DKR-Texas Memorial Stadium, Austin",
+   "Florida is 5-2, 3-2 SEC"
+  ]
+ },
+ "contents": {
+  "label": "In this issue",
+  "items": [
+   {
+    "id": "columns",
+    "label": "Franz Beard"
+   },
+   {
+    "id": "coverage",
+    "label": "More postgame coverage"
+   },
+   {
+    "id": "damage",
+    "label": "By the numbers"
+   },
+   {
+    "id": "scoring",
+    "label": "Score by score"
+   },
+   {
+    "id": "box",
+    "label": "Box score"
+   },
+   {
+    "id": "flow",
+    "label": "Game flow"
+   },
+   {
+    "id": "quotes",
+    "label": "In their words"
+   },
+   {
+    "id": "watch",
+    "label": "Watch"
+   },
+   {
+    "id": "next",
+    "label": "Up next"
+   }
+  ]
+ },
+ "damage": {
+  "kicker": "By the numbers",
+  "title": "How Florida won it",
+  "dek": "Florida trailed 17-3 in the second quarter, then outscored Texas 24-7 the rest of the way. The Gators never turned it over.",
+  "yards": {
+   "label": "Total yards",
+   "rows": [
+    {
+     "name": "Florida",
+     "value": 313,
+     "us": true
+    },
+    {
+     "name": "Texas",
+     "value": 272
+    }
+   ]
+  },
+  "stats": [
+   {
+    "value": "24-0",
+    "label": "Florida's run",
+    "detail": "After falling behind 17-3, Florida scored the next 24 points"
+   },
+   {
+    "value": "0",
+    "label": "Florida turnovers",
+    "detail": "Texas lost a fumble"
+   },
+   {
+    "value": "5",
+    "label": "Florida sacks",
+    "detail": "Texas had 1. LJ McCray had 1.5"
+   },
+   {
+    "value": "8 of 19",
+    "label": "Florida on third down",
+    "detail": "Texas was 2 of 10"
+   },
+   {
+    "value": "38:11",
+    "label": "Time of possession",
+    "detail": "Texas held it for 21:49"
+   },
+   {
+    "value": "91",
+    "label": "Jadan Baugh rushing yards",
+    "detail": "25 carries, 1 touchdown"
+   }
+  ],
+  "source": "Box score: ESPN."
+ },
+ "scoring": {
+  "kicker": "Score by score",
+  "title": "How the points came",
+  "dek": "Texas led 10-0 after one quarter and 17-3 in the second. Florida scored the next 24 points.",
+  "cols": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "F"
+  ],
+  "rows": [
+   {
+    "team": "Florida",
+    "q": [
+     0,
+     10,
+     7,
+     10
+    ],
+    "f": 27,
+    "us": true
+   },
+   {
+    "team": "Texas",
+    "rank": "No. 7",
+    "q": [
+     10,
+     7,
+     0,
+     7
+    ],
+    "f": 24
+   }
+  ],
+  "plays": [
+   {
+    "when": "Q1 11:42",
+    "play": "Raleek Brown 32-yard run (Gianni Spetic kick)",
+    "score": "TEX 7, UF 0",
+    "uf": false
+   },
+   {
+    "when": "Q1 6:42",
+    "play": "Gianni Spetic 38-yard field goal",
+    "score": "TEX 10, UF 0",
+    "uf": false
+   },
+   {
+    "when": "Q2 13:48",
+    "play": "Patrick Durkin 45-yard field goal",
+    "score": "TEX 10, UF 3",
+    "uf": true
+   },
+   {
+    "when": "Q2 11:27",
+    "play": "Ryan Niblett 63-yard punt-return touchdown (Gianni Spetic kick)",
+    "score": "TEX 17, UF 3",
+    "uf": false
+   },
+   {
+    "when": "Q2 0:18",
+    "play": "Tramell Jones Jr. to Lacota Dippre, 7 yards (Patrick Durkin kick)",
+    "score": "TEX 17, UF 10",
+    "uf": true
+   },
+   {
+    "when": "Q3 6:50",
+    "play": "Tramell Jones Jr. to Lacota Dippre, 8 yards (Patrick Durkin kick)",
+    "score": "Tied 17-17",
+    "uf": true
+   },
+   {
+    "when": "Q4 10:40",
+    "play": "Patrick Durkin 28-yard field goal",
+    "score": "UF 20, TEX 17",
+    "uf": true
+   },
+   {
+    "when": "Q4 6:22",
+    "play": "Jadan Baugh 11-yard run (Patrick Durkin kick)",
+    "score": "UF 27, TEX 17",
+    "uf": true
+   },
+   {
+    "when": "Q4 4:21",
+    "play": "Arch Manning to Cam Coleman, 9 yards (Gianni Spetic kick)",
+    "score": "UF 27, TEX 24",
+    "uf": false
+   }
+  ],
+  "source": "Scoring plays and line score: ESPN. Times are game clock."
+ },
+ "box": {
+  "kicker": "Box score",
+  "title": "The full box score",
+  "dek": "Team stats and the leaders for both teams.",
+  "cols": [
+   "Florida",
+   "Texas"
+  ],
+  "rows": [
+   [
+    "First downs",
+    "21",
+    "13"
+   ],
+   [
+    "Total yards",
+    "313",
+    "272"
+   ],
+   [
+    "Passing",
+    "155 (22-of-35)",
+    "173 (14-of-20)"
+   ],
+   [
+    "Rushing",
+    "158 (46 carries)",
+    "99 (30 carries)"
+   ],
+   [
+    "Third down",
+    "8-of-19",
+    "2-of-10"
+   ],
+   [
+    "Fourth down",
+    "2-of-2",
+    "1-of-3"
+   ],
+   [
+    "Penalties",
+    "7-55",
+    "1-15"
+   ],
+   [
+    "Sacks",
+    "5",
+    "1"
+   ],
+   [
+    "Turnovers",
+    "0",
+    "1"
+   ],
+   [
+    "Possession",
+    "38:11",
+    "21:49"
+   ]
+  ],
+  "leaders": [
+   {
+    "team": "Florida",
+    "items": [
+     [
+      "Passing",
+      "Tramell Jones Jr.: 22-of-35, 155 yards, 2 TD, 0 INT"
+     ],
+     [
+      "Rushing",
+      "Jadan Baugh: 25 carries, 91 yards, 1 TD. Jones: 10 carries, 41 yards"
+     ],
+     [
+      "Receiving",
+      "Eric Singleton Jr.: 7 catches, 43 yards. Lacota Dippre: 2 catches, 15 yards, 2 TD"
+     ],
+     [
+      "Kicking",
+      "Patrick Durkin: 2-of-2 on field goals, long of 45; 3-of-3 on extra points"
+     ],
+     [
+      "Punting",
+      "Alec Clark: 6 punts, 51.8 average"
+     ],
+     [
+      "Defense",
+      "Myles Graham: 7 tackles, 1 sack. LJ McCray: 4 tackles, 1.5 sacks"
+     ]
+    ]
+   },
+   {
+    "team": "Texas",
+    "items": [
+     [
+      "Passing",
+      "Arch Manning: 14-of-20, 173 yards, 1 TD, 0 INT, 1 fumble lost"
+     ],
+     [
+      "Rushing",
+      "Hollywood Smothers: 12 carries, 52 yards. Raleek Brown: 8 carries, 47 yards, 1 TD"
+     ],
+     [
+      "Receiving",
+      "Emmett Mosley V: 2 catches, 76 yards. Ryan Wingo: 5 catches, 49 yards. Cam Coleman: 3 catches, 18 yards, 1 TD"
+     ],
+     [
+      "Returns",
+      "Ryan Niblett: 63-yard punt-return touchdown"
+     ],
+     [
+      "Defense",
+      "Justin Cryer: 11 tackles. Colin Simmons: 1 sack"
+     ]
+    ]
+   }
+  ],
+  "source": "Box score: ESPN (event 401856724). Sacks are summed from the ESPN player box score."
+ },
+ "flow": {
+  "kicker": "Game flow",
+  "title": "How the game turned",
+  "dek": "Florida's chance to win, play by play. The Gators started at 12%, fell to 3% down 17-3 in the second quarter and finished at 100%.",
+  "axis": [
+   "100%",
+   "50%",
+   "0%"
+  ],
+  "quarters": [
+   "Q1",
+   "Q2",
+   "Q3",
+   "Q4"
+  ],
+  "quarterStarts": [
+   0,
+   42,
+   92,
+   128
+  ],
+  "points": [
+   12,
+   12,
+   11,
+   12,
+   11,
+   11,
+   11,
+   10,
+   10,
+   7,
+   7,
+   7,
+   7,
+   6,
+   7,
+   7,
+   6,
+   6,
+   5,
+   5,
+   5,
+   6,
+   6,
+   6,
+   6,
+   6,
+   5,
+   5,
+   6,
+   6,
+   5,
+   5,
+   6,
+   6,
+   6,
+   6,
+   7,
+   7,
+   7,
+   8,
+   7,
+   7,
+   7,
+   6,
+   7,
+   7,
+   7,
+   8,
+   8,
+   8,
+   7,
+   7,
+   6,
+   4,
+   4,
+   3,
+   4,
+   4,
+   3,
+   3,
+   3,
+   4,
+   5,
+   4,
+   4,
+   4,
+   3,
+   4,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   4,
+   4,
+   4,
+   5,
+   5,
+   5,
+   4,
+   3,
+   5,
+   6,
+   5,
+   5,
+   6,
+   8,
+   9,
+   8,
+   8,
+   10,
+   9,
+   9,
+   11,
+   11,
+   11,
+   12,
+   12,
+   12,
+   14,
+   13,
+   13,
+   13,
+   16,
+   16,
+   16,
+   16,
+   22,
+   21,
+   21,
+   22,
+   27,
+   26,
+   25,
+   24,
+   19,
+   21,
+   24,
+   28,
+   29,
+   29,
+   29,
+   32,
+   32,
+   32,
+   33,
+   39,
+   38,
+   40,
+   45,
+   46,
+   53,
+   49,
+   45,
+   40,
+   42,
+   42,
+   38,
+   37,
+   39,
+   51,
+   63,
+   59,
+   66,
+   71,
+   74,
+   81,
+   93,
+   93,
+   95,
+   95,
+   98,
+   78,
+   82,
+   72,
+   75,
+   67,
+   67,
+   67,
+   63,
+   63,
+   87,
+   90,
+   92,
+   89,
+   92,
+   96,
+   100,
+   93,
+   94,
+   100,
+   100
+  ],
+  "marks": [
+   {
+    "i": 53,
+    "title": "17-3",
+    "note": "Ryan Niblett's 63-yard punt return with 11:27 left in the half; Florida is at 4%"
+   },
+   {
+    "i": 88,
+    "title": "17-10",
+    "note": "Jones to Dippre from 7 yards with 18 seconds left in the half; Florida is at 8%"
+   },
+   {
+    "i": 109,
+    "title": "17-17",
+    "note": "Jones to Dippre from 8 yards with 6:50 left in the third quarter; Florida is at 22%"
+   },
+   {
+    "i": 149,
+    "title": "27-17",
+    "note": "Jadan Baugh's 11-yard run with 6:22 left; Florida is at 93%"
+   },
+   {
+    "i": 163,
+    "title": "87%",
+    "note": "Myles Graham sacks Arch Manning and forces a fumble with 1:58 left"
+   }
+  ],
+  "summary": "Line chart of Florida's win probability against Texas. It starts near 12%, falls to 4% when Texas goes up 17-3 in the second quarter, climbs to 22% when Florida ties it at 17 in the third quarter, reaches 93% at 27-17 in the fourth, dips to 63% after Texas cuts it to 27-24, jumps to 87% on Myles Graham's sack and reaches 100% at the end.",
+  "source": "Win probability: ESPN. GatorBait Media graphic."
+ },
+ "quotes": {
+  "kicker": "In their words",
+  "title": "Sumrall and Jones on the win",
+  "items": [
+   {
+    "text": "They executed with more detail, more urgency, more violence, more strength. They finally took it upon themselves to play with that mentality.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, postgame news conference, as reported by Franz Beard",
+    "url": "/post/it-was-a-good-day-for-an-exorcism-in-austin",
+    "link": "Franz Beard's column"
+   },
+   {
+    "text": "We kept fighting. We didn't do that the past couple of weeks, to be honest with you.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, as reported by Buddy Martin",
+    "url": "/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+    "link": "Buddy Martin's column"
+   },
+   {
+    "text": "I didn't take it any bigger than it was. It feels great, but this is just the start. It's not over.",
+    "who": "Tramell Jones Jr.",
+    "role": "Florida quarterback, as reported by Buddy Martin",
+    "url": "/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+    "link": "Buddy Martin's column"
+   }
+  ]
+ },
+ "columns": {
+  "kicker": "Columns",
+  "title": "Franz Beard's two columns",
+  "dek": "Buddy Martin has the cover. Franz Beard's Sunday column and his game-day column, newest first.",
+  "items": [
+   {
+    "rubric": "Sunday column",
+    "author": "Franz Beard",
+    "title": "The Gators Sucked Less, Turning Arch Madness Into Arch Sadness",
+    "dek": "Franz Beard's Sunday column on a defense that found its fight in Austin.",
+    "url": "/post/the-gators-sucked-less-turning-arch-madness-into-arch-sadness",
     "image": {
-      "id": "16b519_56d755f7140a472d903585d4fb98710a",
-      "ext": "jpg",
-      "width": 3000,
-      "height": 2000,
-      "alt": "Florida coach Jon Sumrall, in a blue Gators cap and short-sleeve hoodie, glares toward the field before the South Carolina game at Ben Hill Griffin Stadium",
-      "credit": "Photo by Chris Spears, GatorBait Media"
-    },
-    "linesLabel": "Also inside",
-    "lines": [
-      "Franz Beard: Can the season be salvaged?",
-      "The damage: 3 turnovers to 0",
-      "Sumrall: \"It starts with me\"",
-      "Photos: Chris Spears' best shots",
-      "Final: South Carolina 38, Florida 19"
-    ]
-  },
-  "final": {
-    "label": "Final",
-    "teams": [
-      {
-        "name": "South Carolina",
-        "score": 38,
-        "won": true
-      },
-      {
-        "rank": "No. 16",
-        "name": "Florida",
-        "score": 19
-      }
-    ],
-    "meta": [
-      "Saturday, Oct. 10",
-      "Ben Hill Griffin Stadium, Gainesville",
-      "Florida is 4-2, 2-2 SEC"
-    ]
-  },
-  "contents": {
-    "label": "In this issue",
-    "items": [
-      {
-        "id": "damage",
-        "label": "The damage"
-      },
-      {
-        "id": "flow",
-        "label": "Game flow"
-      },
-      {
-        "id": "quotes",
-        "label": "In their words"
-      },
-      {
-        "id": "package",
-        "label": "The package"
-      },
-      {
-        "id": "texas",
-        "label": "Look ahead to Texas"
-      },
-      {
-        "id": "next",
-        "label": "Up next"
-      }
-    ]
-  },
-  "damage": {
-    "kicker": "By the numbers",
-    "title": "The damage",
-    "dek": "Florida came in scoring 53.5 points and gaining 532.8 yards a game. The yardage was nearly even Saturday. The gap was turnovers, third downs and LaNorris Sellers.",
-    "yards": {
-      "label": "Total yards",
-      "rows": [
-        {
-          "name": "South Carolina",
-          "value": 393
-        },
-        {
-          "name": "Florida",
-          "value": 387,
-          "us": true
-        }
-      ]
-    },
-    "stats": [
-      {
-        "value": "3",
-        "label": "Florida turnovers",
-        "detail": "2 interceptions, 1 fumble lost. South Carolina had none"
-      },
-      {
-        "value": "10 of 16",
-        "label": "South Carolina on third down",
-        "detail": "Florida was 6 of 13"
-      },
-      {
-        "value": "4",
-        "label": "Sellers touchdown passes",
-        "detail": "23 of 35, 279 yards, no interceptions"
-      },
-      {
-        "value": "127",
-        "label": "Bailey Stockton receiving yards",
-        "detail": "8 catches, a 59-yard touchdown"
-      },
-      {
-        "value": "59",
-        "label": "Jadan Baugh rushing yards",
-        "detail": "15 carries, 1 touchdown"
-      },
-      {
-        "value": "21-9",
-        "label": "Second-half score",
-        "detail": "South Carolina led 17-10 at the half"
-      }
-    ],
-    "compare": {
-      "label": "Coming in vs. Saturday",
-      "beforeLabel": "Per game, first four",
-      "afterLabel": "vs. South Carolina",
-      "rows": [
-        {
-          "label": "Points",
-          "before": "53.5",
-          "after": "19"
-        },
-        {
-          "label": "Total yards",
-          "before": "532.8",
-          "after": "387"
-        }
-      ]
-    },
-    "source": "Box score: ESPN."
-  },
-  "flow": {
-    "kicker": "Game flow",
-    "title": "How the game turned",
-    "dek": "Florida's chance to win, play by play. The Gators peaked at 85% in the first quarter and were level at 10-10 late in the second. South Carolina outscored them 28-9 the rest of the way.",
-    "axis": [
-      "100%",
-      "50%",
-      "0%"
-    ],
-    "quarters": [
-      "Q1",
-      "Q2",
-      "Q3",
-      "Q4"
-    ],
-    "quarterStarts": [
-      0,
-      49,
-      97,
-      139
-    ],
-    "points": [
-      73,
-      72,
-      73,
-      73,
-      75,
-      75,
-      74,
-      74,
-      72,
-      72,
-      72,
-      74,
-      75,
-      75,
-      74,
-      74,
-      84,
-      83,
-      83,
-      84,
-      82,
-      84,
-      85,
-      84,
-      81,
-      81,
-      80,
-      81,
-      80,
-      83,
-      85,
-      85,
-      83,
-      83,
-      82,
-      82,
-      83,
-      84,
-      81,
-      82,
-      82,
-      79,
-      77,
-      78,
-      79,
-      72,
-      72,
-      73,
-      73,
-      72,
-      70,
-      73,
-      72,
-      70,
-      75,
-      75,
-      78,
-      78,
-      80,
-      80,
-      79,
-      75,
-      75,
-      75,
-      75,
-      72,
-      69,
-      69,
-      68,
-      67,
-      68,
-      72,
-      72,
-      70,
-      69,
-      69,
-      68,
-      59,
-      59,
-      62,
-      54,
-      56,
-      46,
-      44,
-      46,
-      45,
-      43,
-      44,
-      44,
-      44,
-      46,
-      48,
-      48,
-      50,
-      50,
-      44,
-      40,
-      45,
-      44,
-      45,
-      47,
-      47,
-      53,
-      51,
-      51,
-      43,
-      50,
-      48,
-      48,
-      48,
-      45,
-      49,
-      51,
-      38,
-      26,
-      25,
-      26,
-      24,
-      19,
-      26,
-      24,
-      22,
-      16,
-      16,
-      18,
-      17,
-      14,
-      12,
-      10,
-      9,
-      8,
-      5,
-      6,
-      4,
-      4,
-      4,
-      4,
-      3,
-      3,
-      4,
-      4,
-      5,
-      5,
-      6,
-      2,
-      2,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "marks": [
-      {
-        "i": 30,
-        "title": "85%",
-        "note": "Florida's high point, 6:00 left in the first quarter"
-      },
-      {
-        "i": 73,
-        "title": "10-10",
-        "note": "South Carolina's Orsan kicks a 37-yard field goal with 4:09 left in the half"
-      },
-      {
-        "i": 82,
-        "title": "17-10",
-        "note": "Sellers to Bennett with 1:47 left in the half; Florida falls to 46%"
-      },
-      {
-        "i": 133,
-        "title": "31-13",
-        "note": "Sellers runs it in from the 1 with 1:08 left in the third; Florida is at 4%"
-      }
-    ],
-    "summary": "Line chart of Florida's win probability against South Carolina. It starts near 73%, peaks at 85% in the first quarter, holds near 70% at 10-10, falls to about 46% when South Carolina goes up 17-10 before halftime, drops to 4% by 31-13 late in the third quarter and sits near zero through the fourth.",
-    "source": "Win probability: ESPN. GatorBait Media graphic."
-  },
-  "quotes": {
-    "kicker": "In their words",
-    "title": "Player thing, or coach thing?",
-    "items": [
-      {
-        "text": "I'm frustrated with every part of what we did today. It starts with me.",
-        "who": "Jon Sumrall",
-        "role": "Florida coach, postgame news conference",
-        "url": "/post/it-s-a-player-thing-stockton-sumrall-and-chiles-after-south-carolina-loss",
-        "link": "All the postgame quotes"
-      },
-      {
-        "text": "I think it's a player thing right now. I don't think it has anything to do with the coaches.",
-        "who": "Bailey Stockton",
-        "role": "Florida receiver, postgame"
-      },
-      {
-        "text": "We've lost two games, man. I don't believe it's the end of the world.",
-        "who": "Aaron Chiles",
-        "role": "Florida linebacker, postgame"
-      }
-    ]
-  },
-  "package": {
-    "kicker": "Read the package",
-    "title": "6 more postgame stories from The Swamp",
-    "dek": "Newest first after the Buddy Martin cover. No halftime or in-game material.",
-    "items": [
-      {
-        "rubric": "Buddy's game column",
-        "author": "Buddy Martin",
-        "title": "GAMECLOCKED! No. 500 Was a Lousy Homecoming In The Swamp",
-        "dek": "A lousy Homecoming for the 500th game in The Swamp, and why Buddy is still hanging on with Jon Sumrall.",
-        "url": "/post/gameclocked-no-500-was-a-lousy-homecoming-in-the-swamp",
-        "image": {
-          "id": "16b519_b66c30014a2f412ea5ec1fc7dd60848d",
-          "ext": "jpg",
-          "width": 3000,
-          "height": 1729,
-          "alt": "Florida coach Jon Sumrall walks out for the South Carolina game at Ben Hill Griffin Stadium",
-          "credit": "Photo by Chris Spears, GatorBait Media"
-        }
-      },
-      {
-        "rubric": "Sideline column",
-        "author": "Chris Spears",
-        "title": "From the Sideline: Chris Spears on the 500th Game in The Swamp",
-        "dek": "The runout, Jon Sumrall and Bailey Stockton's touchdown, seen from the sideline.",
-        "url": "/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp",
-        "image": {
-          "id": "16b519_79987fbda38743d9842a0ba355b3e83a",
-          "ext": "jpg",
-          "width": 3000,
-          "height": 1940,
-          "alt": "Bailey Stockton (3) stretches for the pylon against South Carolina on Oct. 10",
-          "credit": "Photo by Chris Spears, GatorBait Media"
-        }
-      },
-      {
-        "rubric": "Sunday column",
-        "author": "Franz Beard",
-        "title": "After a second sobering loss, can Florida's season still be salvaged?",
-        "dek": "A lost line of scrimmage, a quarterback question for Austin and a defense that keeps throwing things at the wall.",
-        "url": "/post/after-a-second-sobering-loss-can-florida-s-season-still-be-salvaged",
-        "image": {
-          "id": "16b519_6c0bd115c2c849bca004f49afa7ae417",
-          "ext": "jpg",
-          "width": 3000,
-          "height": 1887,
-          "alt": "Florida's offensive line works against the South Carolina front at Ben Hill Griffin Stadium on Oct. 10",
-          "credit": "Photo by Chris Spears, GatorBait Media"
-        }
-      },
-      {
-        "rubric": "Photo gallery",
-        "author": "Chris Spears",
-        "title": "Chris Spears' Best Shots: South Carolina 38, Florida 19",
-        "dek": "36 photos from the sideline for the 500th game in The Swamp: the runout, Bailey Stockton's 59-yard touchdown and Jon Sumrall.",
-        "url": "/post/chris-spears-best-shots-south-carolina-38-florida-19",
-        "image": {
-          "id": "16b519_60244446a0b246dbbeae06a0cbb1e3c2",
-          "ext": "jpg",
-          "width": 3000,
-          "height": 1780,
-          "alt": "Bailey Stockton (3) races toward the end zone on his 59-yard touchdown catch against South Carolina on Oct. 10",
-          "credit": "Photo by Chris Spears, GatorBait Media"
-        }
-      },
-      {
-        "rubric": "Postgame quotes",
-        "author": "Brenden Martin",
-        "title": "'It's a player thing': Stockton, Sumrall and Chiles after South Carolina loss",
-        "dek": "Plus injury notes on Vernell Brown III, Duke Clark and Myles Graham.",
-        "url": "/post/it-s-a-player-thing-stockton-sumrall-and-chiles-after-south-carolina-loss",
-        "image": {
-          "id": "16b519_f3887acb4f9143ffb025594e2a77d2f8",
-          "ext": "jpg",
-          "width": 3000,
-          "height": 1687,
-          "alt": "Florida coach Jon Sumrall talks with an official during the South Carolina game on Oct. 10",
-          "credit": "Photo by Chris Spears, GatorBait Media"
-        }
-      },
-      {
-        "rubric": "Game story",
-        "author": "Brenden Martin",
-        "title": "South Carolina beats No. 16 Florida 38-19, spoiling Homecoming in The Swamp",
-        "dek": "LaNorris Sellers threw four touchdown passes as No. 16 Florida lost for the second straight week.",
-        "url": "/post/south-carolina-beats-no-16-florida-38-19-spoiling-homecoming-in-the-swamp",
-        "image": {
-          "id": "16b519_52b8b66e04c246818b4852083be192be",
-          "ext": "jpg",
-          "width": 3000,
-          "height": 2000,
-          "alt": "Florida receiver Bailey Stockton (3) reaches the end zone on his 59-yard touchdown catch against South Carolina on Oct. 10",
-          "credit": "Photo by Chris Spears, GatorBait Media"
-        }
-      }
-    ]
-  },
-  "next": {
-    "kicker": "Up next",
-    "title": "Florida at Texas",
-    "meta": [
-      "Saturday, Oct. 17",
-      "Noon ET · ABC",
-      "DKR-Texas Memorial Stadium, Austin"
-    ],
-    "note": "Florida (4-2, 2-2 SEC) has six days to answer."
-  },
-  "reference": {
-    "label": "More GatorBait",
-    "links": [
-      {
-        "label": "Schedule and results",
-        "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
-      },
-      {
-        "label": "Roster",
-        "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
-      },
-      {
-        "label": "The Buddy Martin Show",
-        "url": "/the-buddy-martin-show"
-      },
-      {
-        "label": "GatorBait home",
-        "url": "/"
-      }
-    ],
-    "top": "Back to the cover"
-  },
-  "pdf": {
-    "label": "Members PDF",
-    "url": "/post/members-download-the-postgame-magazine-pdf"
-  },
-  "asOf": "Score, box score and win probability: ESPN (event 401856714). Quotes: University of Florida postgame transcripts (ASAP Sports). Stories published through Oct. 11, 2026.",
-  "texas": {
-    "kicker": "Look ahead",
-    "title": "Texas lost on a last-second field goal",
-    "ranking": "",
-    "dek": "Oklahoma beat Texas 27-24 in the Red River Rivalry at the Cotton Bowl in Dallas. Texas led 17-7 at the half. Arch Manning's 15-yard touchdown pass tied it 24-24 with 6:32 left, and Tate Sandell kicked a 47-yard field goal as time expired.",
-    "stats": [
-      {
-        "value": "4-1",
-        "label": "Texas record",
-        "detail": "1-1 in the SEC. Oklahoma is 3-2, 1-1"
-      },
-      {
-        "value": "3",
-        "label": "Arch Manning touchdown passes",
-        "detail": "19 of 31, 260 yards, 2 interceptions"
-      },
-      {
-        "value": "110",
-        "label": "Cam Coleman receiving yards",
-        "detail": "5 catches, a 41-yard touchdown"
-      }
-    ],
-    "compare": {
-      "label": "Per game this season",
-      "beforeLabel": "Texas, 5 games",
-      "afterLabel": "Florida, 6 games",
-      "rows": [
-        {
-          "label": "Points scored",
-          "before": "31.4",
-          "after": "41.7"
-        },
-        {
-          "label": "Points allowed",
-          "before": "16.0",
-          "after": "29.0"
-        },
-        {
-          "label": "Yards gained",
-          "before": "379.2",
-          "after": "473.8"
-        },
-        {
-          "label": "Yards allowed",
-          "before": "264.4",
-          "after": "393.0"
-        }
-      ]
-    },
-    "source": "Box scores and schedules: ESPN. Per-game averages are GatorBait Media's, computed from ESPN box scores."
-  }
+     "id": "d3cfa5_9757cdda175141a595ad34d51439d9c6",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 2000,
+     "alt": "Florida quarterback Aaron Philo, No. 12, on the sideline with an assistant coach at Ben Hill Griffin Stadium. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Postgame column",
+    "author": "Franz Beard",
+    "title": "It was a good day for an exorcism in Austin",
+    "dek": "Florida's defense found its inner Doomsday, Arch Manning got haunted and Tramell Jones Jr. won his first start on the road.",
+    "url": "/post/it-was-a-good-day-for-an-exorcism-in-austin",
+    "image": {
+     "id": "d3cfa5_a38ad2951a7848bdb538476b28eb76c2",
+     "ext": "jpg",
+     "width": 1320,
+     "height": 880,
+     "alt": "Florida defenders gang-tackle a Texas ballcarrier in Austin, Oct. 17, 2026. Photo courtesy UAA and Hannah White.",
+     "credit": "Photo courtesy UAA and Hannah White",
+     "uaa": true
+    }
+   }
+  ]
+ },
+ "coverage": {
+  "kicker": "More postgame coverage",
+  "title": "The rest of the package",
+  "dek": "Newest first. Loren Meadows' analysis, then the GatorBait desk's game story.",
+  "items": [
+   {
+    "rubric": "Analysis",
+    "author": "Loren Meadows",
+    "title": "Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)",
+    "dek": "What we thought, what we got and what it means.",
+    "url": "/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2",
+    "image": {
+     "id": "d3cfa5_2f6744f26b44456cbbff97d6181203eb",
+     "ext": "jpg",
+     "width": 2000,
+     "height": 1333,
+     "alt": "Florida players celebrate in the locker room after beating Texas, Oct. 17, 2026. Photo courtesy UAA and Hannah White.",
+     "credit": "Photo courtesy UAA and Hannah White",
+     "uaa": true
+    }
+   },
+   {
+    "rubric": "Game story",
+    "author": "GatorBait Media Desk",
+    "title": "Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr.",
+    "dek": "Florida fell behind 17-3, then scored 24 straight points behind a backup quarterback making his first start.",
+    "url": "/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr",
+    "image": {
+     "id": "d3cfa5_be419eb42b8f4aa883f5596690c79e0c",
+     "ext": "jpg",
+     "width": 1320,
+     "height": 880,
+     "alt": "Florida quarterback Tramell Jones Jr. scrambles as a Texas defender closes in, Oct. 17, 2026. Photo courtesy UAA and Hannah White.",
+     "credit": "Photo courtesy UAA and Hannah White",
+     "uaa": true
+    }
+   }
+  ]
+ },
+ "watch": {
+  "kicker": "Watch",
+  "title": "On the GatorBait reels",
+  "dek": "Two clips from @gatorbaitmedia on Instagram, posted Oct. 18.",
+  "items": [
+   {
+    "title": "Baugh: Tramell is going to be a great quarterback.",
+    "url": "https://www.instagram.com/reel/Deo2ka3j-lI/",
+    "meta": "Instagram reel · @gatorbaitmedia"
+   },
+   {
+    "title": "Sumrall: We still suck. We just suck less.",
+    "url": "https://www.instagram.com/reel/Deo0M1Kj-1N/",
+    "meta": "Instagram reel · @gatorbaitmedia"
+   }
+  ]
+ },
+ "next": {
+  "kicker": "Up next",
+  "title": "Florida vs. Georgia",
+  "meta": [
+   "Saturday, Oct. 31",
+   "3:30 p.m. ET · ABC",
+   "Mercedes-Benz Stadium (neutral site)"
+  ],
+  "note": "Florida is 5-2 overall and 3-2 in the SEC."
+ },
+ "reference": {
+  "label": "More GatorBait",
+  "links": [
+   {
+    "label": "Schedule and results",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+   },
+   {
+    "label": "Roster",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   },
+   {
+    "label": "GatorBait home",
+    "url": "/"
+   }
+  ],
+  "top": "Back to the cover"
+ },
+ "credits": {
+  "label": "Photo credits",
+  "uaa": true,
+  "other": [
+   "Photo by Chris Spears, GatorBait Media."
+  ]
+ },
+ "download": {
+  "kicker": "Keep the whole issue",
+  "label": "Download the full magazine (PDF)",
+  "note": "PDF, 16 pages, 2.4 MB",
+  "file": "GatorBait-Magazine-Texas-Postgame.pdf",
+  "url": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_00220f84a15b4cdb8586595080e7b667.pdf"
+ },
+ "asOf": "Score, line score, scoring plays, box score, leaders and win probability: ESPN (event 401856724). Quotes are as reported in the linked columns. Rankings are as of kickoff."
 }

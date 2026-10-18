@@ -7,8 +7,8 @@ const PAGES = [
   ['home', '/'], ['magazine', '/magazine'], ['allnews', '/gatorbait-media-blogs'], 
   ['post', '/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll'],
   ['cat-buddy', '/gatorbait-media-blogs/categories/buddy-s-blog'], ['cat-recruit', '/gatorbait-media-blogs/categories/gator-recruiting'],
-  ['about', '/about'], ['pricing', '/pricing-plans'], ['contact', '/contact'], ['shop', '/shop'], ['shop-all', '/category/all-products'],
-  ['account', '/account/my-account'], ['login', '/?login=1'], ['members', '/members'],
+  ['about', '/about'], ['pricing', '/pricing-plans'], ['contact', '/contact'], 
+  
 ];
 const VIEWS = [{ name: '390', w: 390, h: 844, mobile: true }, { name: '1366', w: 1366, h: 900, mobile: false }];
 const T = [200, 500, 1000, 2000, 4000];

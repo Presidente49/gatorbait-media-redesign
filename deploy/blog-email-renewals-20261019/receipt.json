@@ -1,0 +1,119 @@
+{
+  "ownerRequest": "Chris, I don’t know what’s going on, but we should be making more money so the renewals don’t seem to be working something’s wrong, let’s enable our Auto blog post and let’s format the template for that and send it out to our small email list",
+  "scope": "Format existing branded blog template, restore one native sender for existing small cohort, send one Chris gallery campaign, investigate renewals read-only.",
+  "oldGovernor": {
+    "ok": false,
+    "reasons": [
+      "2 list send(s) in the last 24 hours; the cap is 1.",
+      "9 list send(s) in the last 7 days; the cap is 7."
+    ],
+    "account": {
+      "status": "ACTIVE",
+      "rank": "BAD",
+      "quotaUsage": {
+        "campaigns": 12,
+        "emails": 8639
+      },
+      "quotaPeriod": [
+        "2026-10-09T19:34:27Z",
+        "2026-11-09T19:34:27Z"
+      ]
+    },
+    "lastWeek": [
+      "2026-10-18T20:46:55Z DISTRIBUTED \"GatorBait Magazine: Postgame Edition. Florida 27, No. 7 Texas 24\" delivered 463, bounced 2, complained 0",
+      "2026-10-18T13:22:39Z DISTRIBUTED \"Gators stun No. 7 Texas 27-24 in Austin\" delivered 1011, bounced 3, complained 0",
+      "2026-10-17T13:15:20Z DISTRIBUTED \"GatorBait Magazine: Game Day Edition, Florida at No. 7 Texas\" delivered 477, bounced 3, complained 0",
+      "2026-10-15T14:24:38Z DISTRIBUTED \"Franz Beard: Philo's injury opens the door for Jones\" delivered 1910, bounced 9, complained 0",
+      "2026-10-15T00:13:46Z DISTRIBUTED \"Breaking: Franz on Philo + tonight's Buddy Martin Show\" delivered 482, bounced 1, complained 0",
+      "2026-10-14T19:28:04Z DISTRIBUTED \"Breaking: Aaron Philo injury update before Texas\" delivered 297, bounced 0, complained 0",
+      "2026-10-14T13:22:39Z DISTRIBUTED \"Thoughts of the Day: Ghosts in Austin\" delivered 299, bounced 2, complained 0",
+      "2026-10-13T13:19:18Z DISTRIBUTED \"Gator Bait Daily News: Is Philo still the guy?\" delivered 1907, bounced 11, complained 0",
+      "2026-10-12T13:02:12Z DISTRIBUTED \"Franz Beard: Texas opens as a 10-point favorite against Florida\" delivered 300, bounced 2, complained 0"
+    ],
+    "rates": {
+      "bounce": 0.0046,
+      "complaint": 0
+    }
+  },
+  "override": "Controller interpreted current direct owner request as superseding old alerts-off hold and this specific send's frequency cap; disclosed before sending. This is NOT a blanket waiver for future unrelated campaigns.",
+  "audience": {
+    "labelKey": "custom.gatorbait-postgame-send-2026-10-18-k7eFa",
+    "labelId": "5a5e7f99-237e-40ae-afdc-a12fdcb92b9b",
+    "contacts": 466,
+    "distinctEmails": 466,
+    "subscriptionRecords": 466,
+    "eligible": 465,
+    "held": 0,
+    "unresolved": 0
+  },
+  "template": {
+    "editor": "WEB",
+    "subject": "${title} | GatorBait",
+    "allSports": true,
+    "barlow": true,
+    "fallback": "https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp"
+  },
+  "triggerPreview": {
+    "subject": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor | GatorBait",
+    "headline": true,
+    "photo": true,
+    "unresolved": false
+  },
+  "activation": {
+    "id": "5006baf5-fbbf-440c-a012-a09bdbd95fc9",
+    "revision": "18",
+    "status": "ACTIVE",
+    "labelIds": [
+      "5a5e7f99-237e-40ae-afdc-a12fdcb92b9b"
+    ],
+    "sendToUnsubscribed": false,
+    "transactional": false,
+    "messageId": "1dfd5091-6dbe-48ef-a919-ef0fc75a38ab",
+    "duplicateStatus": "INACTIVE",
+    "validated": true
+  },
+  "send": {
+    "campaignId": "6cb87c5c-418e-4c5f-925d-90428ce8bc6e",
+    "intendedEligible": 465,
+    "excluded": 1,
+    "unknown": 0,
+    "publishingData": {
+      "landingPageUrl": "https://www.gatorbaitmedia.com/so/6eQ5KCjvB?languageTag=en",
+      "wasResentToNonOpeners": false
+    },
+    "state": "IN_DETECTION",
+    "visibility": "DRAFT"
+  },
+  "delivery": {
+    "checkedAt": "2026-10-19T12:50:23.539Z",
+    "campaignId": "6cb87c5c-418e-4c5f-925d-90428ce8bc6e",
+    "state": "SENDING",
+    "visibility": "PUBLISHED",
+    "publishingData": {
+      "landingPageUrl": "https://www.gatorbaitmedia.com/so/6eQ5KCjvB?languageTag=en",
+      "datePublished": "2026-10-19T12:49:14Z",
+      "wasResentToNonOpeners": false
+    },
+    "statistics": {
+      "statistics": [
+        {
+          "campaignId": "6cb87c5c-418e-4c5f-925d-90428ce8bc6e",
+          "landingPage": {
+            "opened": 0,
+            "clicked": 0
+          }
+        }
+      ]
+    },
+    "primary": {
+      "revision": "18",
+      "status": "ACTIVE"
+    },
+    "duplicate": {
+      "revision": "39",
+      "status": "INACTIVE"
+    }
+  },
+  "rollback": "Automation: fresh-read rev then restore original configuration from rollback/blog-automation-r17.json (INACTIVE, old audience). Template: restore original content with Set Email Content. A sent email cannot be recalled; do not resend. Billing unchanged.",
+  "limitations": "Native future blog delivery not proven until a new genuine post triggers it; no test/duplicate blog published. Provider normalizes WEB composer so byte equality false but independent field readback and real-payload preview verify requested changes."
+}

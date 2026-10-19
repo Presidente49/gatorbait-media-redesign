@@ -1,0 +1,77 @@
+{
+ "feedOrder": null,
+ "path": "/gatorbait-media-blogs/page/2",
+ "width": 1366,
+ "scenario": "normal",
+ "candidate": false,
+ "frames": [
+  "out/cat-1366/page-2-1366-f200.png",
+  "out/cat-1366/page-2-1366-f500.png",
+  "out/cat-1366/page-2-1366-f1000.png",
+  "out/cat-1366/page-2-1366-f2000.png",
+  "out/cat-1366/page-2-1366-f4000.png"
+ ],
+ "errs": [
+  "ReferenceError: wixTagManager is not defined",
+  "ReferenceError: wixTagManager is not defined"
+ ],
+ "mounted": true,
+ "htmlClass": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+ "scrollW": 1366,
+ "clientW": 1366,
+ "docH": 2774,
+ "lfLeft": 0,
+ "lfWidth": 1366,
+ "cls": 0,
+ "clsList": [],
+ "cards": 12,
+ "orderInversions": 0,
+ "firstTitles": [
+  "QB1 Philo Hurt. QB2 Jones To Start? Explained by That Great Football Mind Ted Lasso",
+  "So You're Saying There's a Chance!?",
+  "Philo's injury could give Tramell Jones Jr. his opening",
+  "Report: Aaron Philo's status uncertain for Florida's trip to Texas"
+ ],
+ "h1Dom": 4,
+ "h1Visible": 0,
+ "h2Title": "Latest Florida Gators News",
+ "nativeItems": 12,
+ "nativeGalDisplay": "block",
+ "nativeRootH": 1,
+ "nativeInert": true,
+ "lpVisible": false,
+ "snVisible": false,
+ "fonts": [
+  "Barlow",
+  "Barlow Condensed"
+ ],
+ "barlowLoaded": 9,
+ "imgsTotal": 12,
+ "imgsBroken": 0,
+ "leadImgOk": false,
+ "leadAlt": null,
+ "chips": [
+  "All news|/gatorbait-media-blogs",
+  "Franz Beard|/gatorbait-media-blogs/categories/franz-beard-blog",
+  "Buddy Martin|/gatorbait-media-blogs/categories/buddy-s-blog",
+  "Loren Meadows|/gatorbait-media-blogs/categories/loren-meadows-blogs",
+  "Eddie Gilley|/gatorbait-media-blogs/categories/eddie-gilley-blog",
+  "Gator Football|/gatorbait-media-blogs/categories/gator-football",
+  "Basketball|/gatorbait-media-blogs/categories/gator-basketball",
+  "Recruiting|/gatorbait-media-blogs/categories/gator-recruiting",
+  "Magazine|/gatorbait-media-blogs/categories/gatorbait-magazine",
+  "The Buddy Martin Show|/gatorbait-media-blogs/categories/the-buddy-martin-show",
+  "Breaking News|/gatorbait-media-blogs/categories/gator-breaking-news",
+  "Thoughts of the Day|/gatorbait-media-blogs/categories/thoughts-of-the-day-franz-beard-1"
+ ],
+ "activeChip": "All news",
+ "loadMore": false,
+ "jsonld": [
+  "NewsMediaOrganization",
+  "NewsMediaOrganization",
+  "CollectionPage"
+ ],
+ "canonical": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/page/2",
+ "title": "Latest Florida Gators News & Analysis | GatorBait Media | Page 2 of 389",
+ "more": null
+}

@@ -1,0 +1,91 @@
+{
+ "feedOrder": {
+  "match": false,
+  "firstShown": [
+   "https://www.gatorbaitmedia.com/post/florida-is-one-win-from-bowl-eligibility-with-a-bye-before-georgia",
+   "https://www.gatorbaitmedia.com/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll",
+   "https://www.gatorbaitmedia.com/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back"
+  ],
+  "firstFeed": []
+ },
+ "path": "/gatorbait-media-blogs",
+ "width": 390,
+ "scenario": "normal",
+ "candidate": false,
+ "frames": [
+  "out/warm-390/all-390-warm-f200.png",
+  "out/warm-390/all-390-warm-f500.png",
+  "out/warm-390/all-390-warm-f1000.png",
+  "out/warm-390/all-390-warm-f2000.png",
+  "out/warm-390/all-390-warm-f4000.png"
+ ],
+ "errs": [],
+ "mounted": true,
+ "htmlClass": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+ "scrollW": 320,
+ "clientW": 320,
+ "docH": 5081,
+ "lfLeft": 0,
+ "lfWidth": 320,
+ "cls": 0,
+ "clsList": [],
+ "cards": 16,
+ "orderInversions": 0,
+ "firstTitles": [
+  "Florida is one win from bowl eligibility, with a bye before Georgia",
+  "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
+  "Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”",
+  "Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)"
+ ],
+ "h1Dom": 4,
+ "h1Visible": 0,
+ "h2Title": "Latest Florida Gators News",
+ "nativeItems": 5,
+ "nativeGalDisplay": "block",
+ "nativeRootH": 1,
+ "nativeInert": true,
+ "lpVisible": false,
+ "snVisible": false,
+ "fonts": [
+  "Barlow",
+  "Barlow Condensed"
+ ],
+ "barlowLoaded": 9,
+ "imgsTotal": 16,
+ "imgsBroken": 0,
+ "leadImgOk": true,
+ "leadAlt": "Florida is one win from bowl eligibility, with a bye before Georgia (photo: GatorBait Media)",
+ "chips": [
+  "All news|/gatorbait-media-blogs",
+  "Franz Beard|/gatorbait-media-blogs/categories/franz-beard-blog",
+  "Buddy Martin|/gatorbait-media-blogs/categories/buddy-s-blog",
+  "Loren Meadows|/gatorbait-media-blogs/categories/loren-meadows-blogs",
+  "Eddie Gilley|/gatorbait-media-blogs/categories/eddie-gilley-blog",
+  "Gator Football|/gatorbait-media-blogs/categories/gator-football",
+  "Basketball|/gatorbait-media-blogs/categories/gator-basketball",
+  "Recruiting|/gatorbait-media-blogs/categories/gator-recruiting",
+  "Magazine|/gatorbait-media-blogs/categories/gatorbait-magazine",
+  "The Buddy Martin Show|/gatorbait-media-blogs/categories/the-buddy-martin-show",
+  "Breaking News|/gatorbait-media-blogs/categories/gator-breaking-news",
+  "Thoughts of the Day|/gatorbait-media-blogs/categories/thoughts-of-the-day-franz-beard-1"
+ ],
+ "activeChip": "All news",
+ "loadMore": true,
+ "jsonld": [
+  "NewsMediaOrganization",
+  "NewsMediaOrganization",
+  "CollectionPage"
+ ],
+ "canonical": "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+ "title": "Latest Florida Gators News & Analysis | GatorBait Media",
+ "more": {
+  "cards": 20,
+  "dupes": 0,
+  "inversions": 0,
+  "foot": "20 stories shown, newest first",
+  "older": null,
+  "scrollW": 320,
+  "clientW": 320,
+  "before": 16
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "feedOrder": null,
+ "path": "/gatorbait-media-blogs/categories/franz-beard-blog",
+ "width": 1366,
+ "scenario": "normal",
+ "candidate": false,
+ "frames": [
+  "out/cat-1366/categories-franz-beard-blog-1366-f200.png",
+  "out/cat-1366/categories-franz-beard-blog-1366-f500.png",
+  "out/cat-1366/categories-franz-beard-blog-1366-f1000.png",
+  "out/cat-1366/categories-franz-beard-blog-1366-f2000.png",
+  "out/cat-1366/categories-franz-beard-blog-1366-f4000.png"
+ ],
+ "errs": [
+  "ReferenceError: wixTagManager is not defined",
+  "ReferenceError: wixTagManager is not defined"
+ ],
+ "mounted": true,
+ "htmlClass": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+ "scrollW": 1366,
+ "clientW": 1366,
+ "docH": 2845,
+ "lfLeft": 0,
+ "lfWidth": 1366,
+ "cls": 0,
+ "clsList": [],
+ "cards": 12,
+ "orderInversions": 0,
+ "firstTitles": [
+  "The Gators Sucked Less, Turning Arch Madness Into Arch Sadness",
+  "It was a good day for an exorcism in Austin",
+  "Aberdeen will be in the lineup against Baylor on Sunday",
+  "The Soothsayer: Texas big unless the UF defense finds an exorcist"
+ ],
+ "h1Dom": 4,
+ "h1Visible": 0,
+ "h2Title": "Franz Beard",
+ "nativeItems": 12,
+ "nativeGalDisplay": "block",
+ "nativeRootH": 1,
+ "nativeInert": true,
+ "lpVisible": false,
+ "snVisible": false,
+ "fonts": [
+  "Barlow",
+  "Barlow Condensed"
+ ],
+ "barlowLoaded": 9,
+ "imgsTotal": 12,
+ "imgsBroken": 0,
+ "leadImgOk": true,
+ "leadAlt": "Florida quarterback Aaron Philo (No. 12) walks the Florida sideline during a 2026 home game at Ben Hill Griffin Stadium. Photo by Chris Spears, GatorBait Media.",
+ "chips": [
+  "All news|/gatorbait-media-blogs",
+  "Franz Beard|/gatorbait-media-blogs/categories/franz-beard-blog",
+  "Buddy Martin|/gatorbait-media-blogs/categories/buddy-s-blog",
+  "Loren Meadows|/gatorbait-media-blogs/categories/loren-meadows-blogs",
+  "Eddie Gilley|/gatorbait-media-blogs/categories/eddie-gilley-blog",
+  "Gator Football|/gatorbait-media-blogs/categories/gator-football",
+  "Basketball|/gatorbait-media-blogs/categories/gator-basketball",
+  "Recruiting|/gatorbait-media-blogs/categories/gator-recruiting",
+  "Magazine|/gatorbait-media-blogs/categories/gatorbait-magazine",
+  "The Buddy Martin Show|/gatorbait-media-blogs/categories/the-buddy-martin-show",
+  "Breaking News|/gatorbait-media-blogs/categories/gator-breaking-news",
+  "Thoughts of the Day|/gatorbait-media-blogs/categories/thoughts-of-the-day-franz-beard-1"
+ ],
+ "activeChip": "Franz Beard",
+ "loadMore": true,
+ "jsonld": [
+  "NewsMediaOrganization",
+  "NewsMediaOrganization",
+  "CollectionPage"
+ ],
+ "canonical": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/franz-beard-blog",
+ "title": "Franz Beard Florida Gators Columns | GatorBait Media",
+ "more": {
+  "cards": 44,
+  "dupes": 0,
+  "inversions": 0,
+  "foot": "48 stories shown, newest firstOlder stories →",
+  "older": "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/franz-beard-blog/page/5",
+  "scrollW": 1366,
+  "clientW": 1366,
+  "before": 12
+ }
+}

@@ -12,7 +12,7 @@ Codex owns the queue and is the sole production writer. Muse receives source cop
 | --- | --- | --- | --- |
 | Inbox | Muse | Correct mailbox identity, full manuscript/attachments, writer/headline, source receipt and duplicate check | Preserve unreadable source; never invent text or infer author from style |
 | Copy desk | Codex | Formatting/SEO/category/credits/alt, actual writer member, permanent relevant art, change ledger preserving voice | Hold unclear author/rights/core facts |
-| Fact review | Bounded reviewer | Official UF/ESPN statistics, recomputed totals, exact original quote speaker/context | Flag conflicts; secondary repetition is not primary verification |
+| Fact review | Bounded reviewer | Quick UF/ESPN score/core-stat/date check for trusted writer filings; resolve actual contradictions. Full source checks for agent-authored reporting | Flag conflicts; secondary repetition is not primary verification |
 | Publish | Codex | One post ID/canonical URL/time, current alert states and audience checks | No dummy posts, re-pinning or duplicate versions |
 | Live QC | Independent browser/provider check |390/430/1366/1920, correct copy/byline/photos/links, no overflow; actual result readback | Fix responsible layer, recheck; retain rollback and unresolved defects |
 | Native story email | Existing Wix automation | Template, intended consented audience, actual send/delivery evidence when available | No duplicate campaign; configured/previewed is not delivered |

@@ -1,0 +1,24 @@
+{
+  "photographer": "Chris Spears",
+  "credit": "Photo by Chris Spears, GatorBait Media",
+  "sourceFile": "1.jpg",
+  "sourceSha256": "0ecd009aca8e404174cfb620052e1dae844a3a253968f08996c66d81165836a4",
+  "packagedSha256": "0ecd009aca8e404174cfb620052e1dae844a3a253968f08996c66d81165836a4",
+  "sourceDimensions": [
+    3000,
+    2000
+  ],
+  "wixAsset": {
+    "id": "16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg",
+    "name": "10.18.26 Florida Gator Basketball vs Baylor (csp5) (1 of 16).jpg",
+    "url": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg",
+    "created": "2026-10-19T03:18:20.000Z",
+    "width": 3000,
+    "height": 2000
+  },
+  "treatment": "Original JPEG copied byte-for-byte, displayed in full at its original 3:2 aspect ratio. No crop, filter, retouch, generative edit, or text on the photograph. Original signature remains visible.",
+  "columnTitle": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
+  "columnExcerpt": "Chris Spears on Florida's 82-76 overtime exhibition loss to Baylor in Jacksonville: a cold night from three, a bench gap and a late show of fight.",
+  "canonicalStatus": "Published 2026-10-19T03:26:08Z; public HTTP200 and RSS verified.",
+  "canonicalUrl": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition"
+}

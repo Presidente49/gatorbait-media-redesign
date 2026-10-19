@@ -1,0 +1,42 @@
+name: Latest feed probe (read-only)
+on:
+  push:
+    branches:
+      - 'probe/latest-feed-20261018'
+    paths:
+      - 'probe-latest-feed/**'
+      - '.github/workflows/probe-latest-feed-20261018.yml'
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i playwright@1.56.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
+      - name: Probe (mode from probe-latest-feed/mode.txt; read-only, default TLS)
+        run: |
+          MODE=$(cat probe-latest-feed/mode.txt)
+          EXTRA=""; [ "$MODE" = "candidate" ] && EXTRA="--candidate"
+          mkdir -p out
+          for W in 390 430 1366 1920; do
+            PLAYWRIGHT=/tmp/pw/node_modules/playwright node sports-live/qa-latest-feed.mjs $EXTRA --widths $W --paths /gatorbait-media-blogs,/gatorbait-media-blogs/categories/franz-beard-blog,/gatorbait-media-blogs/page/2 --out out/cold || true
+            PLAYWRIGHT=/tmp/pw/node_modules/playwright node sports-live/qa-latest-feed.mjs $EXTRA --warm --widths $W --paths /gatorbait-media-blogs --out out/warm || true
+          done
+          for SC in rss500 bundle404; do
+            [ "$MODE" = "candidate" ] && PLAYWRIGHT=/tmp/pw/node_modules/playwright node sports-live/qa-latest-feed.mjs --candidate --widths 1366 --scenario $SC --out out/$SC || true
+          done
+      - name: Commit probe output (read-only probe output only)
+        if: always()
+        run: |
+          MODE=$(cat probe-latest-feed/mode.txt)
+          D=deploy/latest-feed-20261018/probe-$MODE-$(cat probe-latest-feed/run.txt)
+          mkdir -p $D && cp -r out/* $D/ 2>/dev/null || true
+          find $D -name '*-full.png' -delete
+          git config user.name "probe-bot" && git config user.email "probe-bot@users.noreply.github.com"
+          git add $D && git commit -m "probe output: latest feed $MODE" && git pull --rebase -q origin probe/latest-feed-20261018 || true; git push origin HEAD:probe/latest-feed-20261018 || true

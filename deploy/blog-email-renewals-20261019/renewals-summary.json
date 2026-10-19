@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-19T12:50Z",
+  "total": 1653,
+  "complete": true,
+  "windows": {
+    "7": {
+      "updatedOrders": 80,
+      "canceledPaymentFailure": 6,
+      "canceledPaymentSetupFailure": 0,
+      "onlineActivePaidRenewalCycleStarted": 20,
+      "byCancellationCause": {
+        "PAYMENT_FAILURE": 6
+      }
+    },
+    "30": {
+      "updatedOrders": 224,
+      "canceledPaymentFailure": 22,
+      "canceledPaymentSetupFailure": 0,
+      "onlineActivePaidRenewalCycleStarted": 105,
+      "byCancellationCause": {
+        "PAYMENT_FAILURE": 22,
+        "MEMBER_ACTION": 4
+      }
+    }
+  },
+  "activeOnlineFailed": 6,
+  "offlineActiveUnpaid": 124,
+  "limits": "Order-state snapshots, not transaction or cash-receipt totals. Updated-date windows are not payment attempt timestamps. Offline includes owner-designated comps; no assumption of money owed."
+}

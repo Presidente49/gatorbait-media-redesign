@@ -10,6 +10,7 @@ These apply to every post, from every person, routine and agent.
 4. **Our own picture first.** Order: a GatorBait photographer's shot ("Photo: <name>, GatorBait Media"); a GatorBait-made graphic; a licensed or credited image. UAA photos follow docs/PHOTO-ATTRIBUTION.md: credit printed on the image and in the caption, linked to floridagators.com. Never an uncredited image from another outlet.
 5. **Facts follow site rules.** Stats from ESPN or FloridaGators.com, quotes from the full source, Barlow on graphics, AP style. Never cite or credit Gator Country. A post cannot claim more than the story does.
 6. **Space the writers out.** Give each writer's story its own window.
+7. **Include the actual visuals.** Brenden's Oct. 19 direction: every social handoff includes any artwork made for the story and the relevant supplied photographs, alongside the caption and canonical story link. Show the actual images or directly accessible previews, with original/export files, permanent media URLs, credits and alt text available to the publishing owner. Present the visuals to Brenden when discussing the package. Routine presentation does not create another approval round for a publication he already authorized.
 
 Checklist per post: one story, writer named, native media, link in the preferred spot, own photo or graphic, facts match the story.
 

@@ -1,0 +1,42 @@
+{
+  "browser": "Chromium",
+  "kind": "internal proposed service blueprint",
+  "rows": [
+    {
+      "width": 390,
+      "overflow": 0,
+      "fonts": true,
+      "links": [
+        "index.html",
+        "../newsroom-stack-email-20261019/provider-preview.html"
+      ]
+    },
+    {
+      "width": 430,
+      "overflow": 0,
+      "fonts": true,
+      "links": [
+        "index.html",
+        "../newsroom-stack-email-20261019/provider-preview.html"
+      ]
+    },
+    {
+      "width": 1366,
+      "overflow": 0,
+      "fonts": true,
+      "links": [
+        "index.html",
+        "../newsroom-stack-email-20261019/provider-preview.html"
+      ]
+    },
+    {
+      "width": 1920,
+      "overflow": 0,
+      "fonts": true,
+      "links": [
+        "index.html",
+        "../newsroom-stack-email-20261019/provider-preview.html"
+      ]
+    }
+  ]
+}

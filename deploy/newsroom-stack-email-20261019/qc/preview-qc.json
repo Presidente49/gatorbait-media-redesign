@@ -1,0 +1,194 @@
+{
+  "kind": "Wix provider rendered preview with supplied SAMPLE payload; not actual trigger or delivery",
+  "browser": "Chromium",
+  "widths": [
+    {
+      "width": 390,
+      "overflow": 0,
+      "heroLoaded": true,
+      "heroAlt": "empty native image alt preserved; not claimed fixed",
+      "samplePayloadContainsCredit": true,
+      "nativePreferencesPresent": true,
+      "unresolved": [],
+      "links": [
+        {
+          "text": "READ THE FULL STORY \u2192",
+          "destination": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+          "color": "rgb(8, 19, 47)",
+          "decoration": "none"
+        },
+        {
+          "text": "GET FREE EMAIL ALERTS",
+          "destination": "https://buddymartinshow.wixforms.com/f/7517931185469654016",
+          "color": "rgb(255, 255, 255)",
+          "decoration": "none"
+        },
+        {
+          "text": "Magazine & phone PDF",
+          "destination": "https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=magazine",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "Shop the GatorBait Store",
+          "destination": "https://gatorbait2026.itemorder.com/shop/home/?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=store",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "Subscribe to GatorBait",
+          "destination": "https://www.gatorbaitmedia.com/pricing-plans/subscribe?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=membership",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "brenden@gatorbaitmedia.com",
+          "destination": "mailto:brenden@gatorbaitmedia.com",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "overflow": 0,
+      "heroLoaded": true,
+      "heroAlt": "empty native image alt preserved; not claimed fixed",
+      "samplePayloadContainsCredit": true,
+      "nativePreferencesPresent": true,
+      "unresolved": [],
+      "links": [
+        {
+          "text": "READ THE FULL STORY \u2192",
+          "destination": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+          "color": "rgb(8, 19, 47)",
+          "decoration": "none"
+        },
+        {
+          "text": "GET FREE EMAIL ALERTS",
+          "destination": "https://buddymartinshow.wixforms.com/f/7517931185469654016",
+          "color": "rgb(255, 255, 255)",
+          "decoration": "none"
+        },
+        {
+          "text": "Magazine & phone PDF",
+          "destination": "https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=magazine",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "Shop the GatorBait Store",
+          "destination": "https://gatorbait2026.itemorder.com/shop/home/?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=store",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "Subscribe to GatorBait",
+          "destination": "https://www.gatorbaitmedia.com/pricing-plans/subscribe?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=membership",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "brenden@gatorbaitmedia.com",
+          "destination": "mailto:brenden@gatorbaitmedia.com",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "overflow": 0,
+      "heroLoaded": true,
+      "heroAlt": "empty native image alt preserved; not claimed fixed",
+      "samplePayloadContainsCredit": true,
+      "nativePreferencesPresent": true,
+      "unresolved": [],
+      "links": [
+        {
+          "text": "READ THE FULL STORY \u2192",
+          "destination": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+          "color": "rgb(8, 19, 47)",
+          "decoration": "none"
+        },
+        {
+          "text": "GET FREE EMAIL ALERTS",
+          "destination": "https://buddymartinshow.wixforms.com/f/7517931185469654016",
+          "color": "rgb(255, 255, 255)",
+          "decoration": "none"
+        },
+        {
+          "text": "Magazine & phone PDF",
+          "destination": "https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=magazine",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "Shop the GatorBait Store",
+          "destination": "https://gatorbait2026.itemorder.com/shop/home/?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=store",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "Subscribe to GatorBait",
+          "destination": "https://www.gatorbaitmedia.com/pricing-plans/subscribe?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=membership",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "brenden@gatorbaitmedia.com",
+          "destination": "mailto:brenden@gatorbaitmedia.com",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "overflow": 0,
+      "heroLoaded": true,
+      "heroAlt": "empty native image alt preserved; not claimed fixed",
+      "samplePayloadContainsCredit": true,
+      "nativePreferencesPresent": true,
+      "unresolved": [],
+      "links": [
+        {
+          "text": "READ THE FULL STORY \u2192",
+          "destination": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+          "color": "rgb(8, 19, 47)",
+          "decoration": "none"
+        },
+        {
+          "text": "GET FREE EMAIL ALERTS",
+          "destination": "https://buddymartinshow.wixforms.com/f/7517931185469654016",
+          "color": "rgb(255, 255, 255)",
+          "decoration": "none"
+        },
+        {
+          "text": "Magazine & phone PDF",
+          "destination": "https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=magazine",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "Shop the GatorBait Store",
+          "destination": "https://gatorbait2026.itemorder.com/shop/home/?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=store",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "Subscribe to GatorBait",
+          "destination": "https://www.gatorbaitmedia.com/pricing-plans/subscribe?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=membership",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        },
+        {
+          "text": "brenden@gatorbaitmedia.com",
+          "destination": "mailto:brenden@gatorbaitmedia.com",
+          "color": "rgb(0, 33, 165)",
+          "decoration": "underline"
+        }
+      ]
+    }
+  ]
+}

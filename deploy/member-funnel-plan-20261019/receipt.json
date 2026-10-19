@@ -1,0 +1,43 @@
+{
+  "state": "PLAN_NOT_LIVE",
+  "checkedAt": "2026-10-19T15:58:13.608891+00:00",
+  "widths": [
+    390,
+    430,
+    1366,
+    1920
+  ],
+  "allOverflowZero": true,
+  "dialogClickOnly": true,
+  "dismissalChecks": [
+    "close button",
+    "Keep reading",
+    "Escape"
+  ],
+  "welcomeRepair": {
+    "id": "f92399d4-6ed6-4b92-84dc-610f56341120",
+    "revision": "4",
+    "status": "INACTIVE",
+    "change": "sendToUnsubscribed true -> false",
+    "validation": "VALID",
+    "independentReadback": true,
+    "rollback": "Read current revision; restore only the original inputMapping.sendToUnsubscribed=true if explicitly needed, preserve INACTIVE. Original is recorded as prior unsafe setting; do not revert casually."
+  },
+  "expiryCorrection": {
+    "id": "50605508-766c-45b9-8af4-03f3b5fb1efb",
+    "revision": "2",
+    "status": "INACTIVE",
+    "currentOffset": "1 WEEKS",
+    "proposedOffset": "3 DAYS",
+    "validation": "VALID",
+    "writeStatus": "BLOCKED",
+    "providerError": "403 TRIGGER_CONFIGURATION_MODIFICATION_DISABLED_EXCEPTION",
+    "nextAction": "Inspect the existing Wix dashboard automation trigger controls; no retry, replacement activation or deletion."
+  },
+  "noEmailSent": true,
+  "noStateSwitches": true,
+  "noAccessOrPriceChanges": true,
+  "sitePublished": false,
+  "nativeIntegrationBlocker": "Existing Mac Wix Editor / Spaces configuration access unavailable in cloud session",
+  "previewRollback": "Revert additive preview/docs changes; no live page installed"
+}

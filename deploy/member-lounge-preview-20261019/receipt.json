@@ -10,10 +10,12 @@
     1366,
     1920
   ],
-  "interactionChecks": "4 cards x click and keyboard Enter at each width",
+  "interactionChecks": "6 cards x click and keyboard Enter at each width",
   "imagesLoaded": true,
   "overflow": 0,
   "newPaidServices": 0,
   "teamLogoSource": "deploy/continuation-20261019/the-hive-logo-concept.png",
-  "publicPdfPreserved": true
+  "publicPdfPreserved": true,
+  "proposedHubRoute": "/magazine",
+  "boardProminent": true
 }

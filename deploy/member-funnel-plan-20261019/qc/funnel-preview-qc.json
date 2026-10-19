@@ -1,0 +1,50 @@
+[
+  {
+    "width": 390,
+    "initial": false,
+    "opened": true,
+    "dialogOverflow": false,
+    "keepClosed": true,
+    "escapeClosed": true,
+    "closeClosed": true,
+    "overflow": 0,
+    "researchOverflow": 0,
+    "failed": []
+  },
+  {
+    "width": 430,
+    "initial": false,
+    "opened": true,
+    "dialogOverflow": false,
+    "keepClosed": true,
+    "escapeClosed": true,
+    "closeClosed": true,
+    "overflow": 0,
+    "researchOverflow": 0,
+    "failed": []
+  },
+  {
+    "width": 1366,
+    "initial": false,
+    "opened": true,
+    "dialogOverflow": false,
+    "keepClosed": true,
+    "escapeClosed": true,
+    "closeClosed": true,
+    "overflow": 0,
+    "researchOverflow": 0,
+    "failed": []
+  },
+  {
+    "width": 1920,
+    "initial": false,
+    "opened": true,
+    "dialogOverflow": false,
+    "keepClosed": true,
+    "escapeClosed": true,
+    "closeClosed": true,
+    "overflow": 0,
+    "researchOverflow": 0,
+    "failed": []
+  }
+]

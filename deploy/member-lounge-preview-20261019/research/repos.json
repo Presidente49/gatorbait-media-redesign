@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-10-19T15:41:11.838496+00:00",
+  "repos": [
+    {
+      "repo": "discourse/discourse",
+      "url": "https://github.com/discourse/discourse",
+      "stars": 47996,
+      "forks": 9038,
+      "archived": false,
+      "pushed_at": "2026-10-19T15:35:22Z",
+      "license": "GPL-2.0",
+      "default_branch": "main"
+    },
+    {
+      "repo": "NodeBB/NodeBB",
+      "url": "https://github.com/NodeBB/NodeBB",
+      "stars": 15240,
+      "forks": 3008,
+      "archived": false,
+      "pushed_at": "2026-10-19T15:41:01Z",
+      "license": "GPL-3.0",
+      "default_branch": "master"
+    },
+    {
+      "repo": "flarum/framework",
+      "url": "https://github.com/flarum/framework",
+      "stars": 6760,
+      "forks": 887,
+      "archived": false,
+      "pushed_at": "2026-10-19T08:24:59Z",
+      "license": "MIT",
+      "default_branch": "2.x"
+    },
+    {
+      "repo": "flarum/flarum",
+      "url": "https://github.com/flarum/flarum",
+      "stars": 16424,
+      "forks": 1671,
+      "archived": false,
+      "pushed_at": "2026-10-09T18:15:31Z",
+      "license": "MIT",
+      "default_branch": "2.x"
+    },
+    {
+      "repo": "tabler/tabler",
+      "url": "https://github.com/tabler/tabler",
+      "stars": 41912,
+      "forks": 4437,
+      "archived": false,
+      "pushed_at": "2026-10-19T15:30:04Z",
+      "license": "MIT",
+      "default_branch": "dev"
+    },
+    {
+      "repo": "humhub/humhub",
+      "url": "https://github.com/humhub/humhub",
+      "stars": 6751,
+      "forks": 1678,
+      "archived": false,
+      "pushed_at": "2026-10-19T15:37:45Z",
+      "license": "NOASSERTION",
+      "default_branch": "master"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "page": "index",
+    "overflow": 0,
+    "font": true,
+    "imageReady": true,
+    "width": 390,
+    "errors": []
+  },
+  {
+    "page": "index",
+    "overflow": 0,
+    "font": true,
+    "imageReady": true,
+    "width": 430,
+    "errors": []
+  },
+  {
+    "page": "index",
+    "overflow": 0,
+    "font": true,
+    "imageReady": true,
+    "width": 1366,
+    "errors": []
+  },
+  {
+    "page": "index",
+    "overflow": 0,
+    "font": true,
+    "imageReady": true,
+    "width": 1920,
+    "errors": []
+  },
+  {
+    "page": "cfp-review",
+    "overflow": 0,
+    "font": true,
+    "imageReady": true,
+    "width": 390,
+    "errors": []
+  },
+  {
+    "page": "cfp-review",
+    "overflow": 0,
+    "font": true,
+    "imageReady": true,
+    "width": 430,
+    "errors": []
+  },
+  {
+    "page": "cfp-review",
+    "overflow": 0,
+    "font": true,
+    "imageReady": true,
+    "width": 1366,
+    "errors": []
+  },
+  {
+    "page": "cfp-review",
+    "overflow": 0,
+    "font": true,
+    "imageReady": true,
+    "width": 1920,
+    "errors": []
+  }
+]

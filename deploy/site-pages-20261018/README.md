@@ -1,6 +1,6 @@
 # GBM - Site Pages v1 (Oct. 18-19, 2026)
 
-Live embed `af792630-48d9-4306-836d-cc03d159caaf`, HEAD, ESSENTIAL, loadOnce false, enabled, revision 2 (rev 1 was 10,650 chars, djb2 `4dcd2f1e`; rev 2 adds the category-page navy first paint), 10,874 chars, djb2 `7e271808`. Source: `site-pages-v1.html`. Created with no site publish; no existing embed touched.
+Live embed `af792630-48d9-4306-836d-cc03d159caaf`, HEAD, ESSENTIAL, loadOnce false, enabled, revision 3 (rev 1 10,650 chars `4dcd2f1e`; rev 2 10,874 `7e271808` adds category navy first paint; rev 3 10,906 chars `a66c9a85` extends it to all of /gatorbait-media-blogs, i.e. All News, categories and tags). Source: `site-pages-v1.html`. Created with no site publish; no existing embed touched.
 
 ## What it does (visual only)
 - Inline script sets `html.gbm-sp` and one page class (`gbm-sp-about|contact|plans|policies|light|app`) from the path, plus `gbm-sp-pre`.

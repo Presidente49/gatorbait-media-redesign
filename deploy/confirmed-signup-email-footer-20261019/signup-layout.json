@@ -1,0 +1,86 @@
+[
+  {
+    "width": 390,
+    "overflow": 0,
+    "text": "Email address\n\nYes, send me GatorBait Media Florida Gators news and show alerts by email.*\n\nJoin the GatorBait Email List",
+    "inputs": [
+      {
+        "type": "email",
+        "checked": false,
+        "required": true
+      },
+      {
+        "type": "checkbox",
+        "checked": false,
+        "required": false
+      }
+    ],
+    "buttons": [
+      "Join the GatorBait Email List"
+    ],
+    "http": 200
+  },
+  {
+    "width": 430,
+    "overflow": 0,
+    "text": "Email address\n\nYes, send me GatorBait Media Florida Gators news and show alerts by email.*\n\nJoin the GatorBait Email List",
+    "inputs": [
+      {
+        "type": "email",
+        "checked": false,
+        "required": true
+      },
+      {
+        "type": "checkbox",
+        "checked": false,
+        "required": false
+      }
+    ],
+    "buttons": [
+      "Join the GatorBait Email List"
+    ],
+    "http": 200
+  },
+  {
+    "width": 1366,
+    "overflow": 0,
+    "text": "Email address\n\nYes, send me GatorBait Media Florida Gators news and show alerts by email.*\n\nJoin the GatorBait Email List",
+    "inputs": [
+      {
+        "type": "email",
+        "checked": false,
+        "required": true
+      },
+      {
+        "type": "checkbox",
+        "checked": false,
+        "required": false
+      }
+    ],
+    "buttons": [
+      "Join the GatorBait Email List"
+    ],
+    "http": 200
+  },
+  {
+    "width": 1920,
+    "overflow": 0,
+    "text": "Email address\n\nYes, send me GatorBait Media Florida Gators news and show alerts by email.*\n\nJoin the GatorBait Email List",
+    "inputs": [
+      {
+        "type": "email",
+        "checked": false,
+        "required": true
+      },
+      {
+        "type": "checkbox",
+        "checked": false,
+        "required": false
+      }
+    ],
+    "buttons": [
+      "Join the GatorBait Email List"
+    ],
+    "http": 200
+  }
+]

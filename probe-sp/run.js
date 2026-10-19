@@ -76,7 +76,7 @@ async function run(browser, view, pg, mode, holder) {
   const [name, path] = pg; const r = { page: name, w: view.n, mode, tag: TAG };
   let ctx = holder.ctx;
   if (!ctx) {
-    ctx = await browser.newContext({ viewport: { width: view.w, height: view.h }, deviceScaleFactor: 1, isMobile: view.m, hasTouch: view.m });
+    ctx = await browser.newContext(Object.assign({ viewport: { width: view.w, height: view.h }, deviceScaleFactor: 1, isMobile: view.m, hasTouch: view.m }, view.m ? { userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Mobile/15E148 Safari/604.1' } : {}));
     await ctx.addInitScript(INIT);
     if (EMBED) await ctx.route('**/*', async route => {
       const q = route.request();

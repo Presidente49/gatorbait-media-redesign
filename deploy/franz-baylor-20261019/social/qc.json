@@ -1,0 +1,154 @@
+{
+  "state": "READY_AWAITING_STORY_QC",
+  "exports": [
+    {
+      "card": {
+        "x": 0,
+        "y": 0,
+        "width": 1080,
+        "height": 1350,
+        "bottom": 1350,
+        "right": 1080
+      },
+      "title": {
+        "x": 48,
+        "y": 114,
+        "width": 984,
+        "height": 243.515625,
+        "bottom": 357.515625,
+        "right": 1032
+      },
+      "photo": {
+        "x": 0,
+        "y": 429,
+        "width": 1080,
+        "height": 749.515625,
+        "bottom": 1178.515625,
+        "right": 1080
+      },
+      "credit": {
+        "x": 48,
+        "y": 1286.015625,
+        "width": 984,
+        "height": 28,
+        "bottom": 1314.015625,
+        "right": 1032
+      },
+      "imageLoaded": true,
+      "photoAspect": 1.4409306010131544,
+      "originalAspect": 1.440922190201729,
+      "font": "Barlow, Arial, sans-serif",
+      "titleLines": [
+        {
+          "text": "An exhibition loss",
+          "width": 984,
+          "boxWidth": 984
+        },
+        {
+          "text": "gives Golden",
+          "width": 984,
+          "boxWidth": 984
+        },
+        {
+          "text": "plenty to correct",
+          "width": 984,
+          "boxWidth": 984
+        }
+      ],
+      "photoUncovered": true,
+      "file": "franz-baylor-1080x1350.jpg",
+      "bytes": 407883,
+      "errors": [],
+      "pass": true
+    },
+    {
+      "card": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 675,
+        "bottom": 675,
+        "right": 1200
+      },
+      "title": {
+        "x": 38,
+        "y": 223.71875,
+        "width": 468,
+        "height": 183.5625,
+        "bottom": 407.28125,
+        "right": 506
+      },
+      "photo": {
+        "x": 534,
+        "y": 111.890625,
+        "width": 666,
+        "height": 462.203125,
+        "bottom": 574.09375,
+        "right": 1200
+      },
+      "credit": {
+        "x": 801.703125,
+        "y": 626.5,
+        "width": 360.296875,
+        "height": 25,
+        "bottom": 651.5,
+        "right": 1162
+      },
+      "imageLoaded": true,
+      "photoAspect": 1.4409249180217032,
+      "originalAspect": 1.440922190201729,
+      "font": "Barlow, Arial, sans-serif",
+      "titleLines": [
+        {
+          "text": "An exhibition loss",
+          "width": 468,
+          "boxWidth": 468
+        },
+        {
+          "text": "gives Golden",
+          "width": 468,
+          "boxWidth": 468
+        },
+        {
+          "text": "plenty to correct",
+          "width": 468,
+          "boxWidth": 468
+        }
+      ],
+      "photoUncovered": true,
+      "file": "franz-baylor-1200x675.jpg",
+      "bytes": 205625,
+      "errors": [],
+      "pass": true
+    }
+  ],
+  "previewWidths": [
+    {
+      "width": 390,
+      "overflow": 0,
+      "images": true,
+      "pass": true
+    },
+    {
+      "width": 430,
+      "overflow": 0,
+      "images": true,
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "overflow": 0,
+      "images": true,
+      "pass": true
+    },
+    {
+      "width": 1920,
+      "overflow": 0,
+      "images": true,
+      "pass": true
+    }
+  ],
+  "originalByteIdentical": true,
+  "pass": true,
+  "localServerStoppedAfterRun": true
+}

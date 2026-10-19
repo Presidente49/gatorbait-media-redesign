@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-10-19",
+  "drafts": [
+    {
+      "kind": "winback.json",
+      "id": "f6273a4d-3d81-41dd-b7c1-e014885100b7",
+      "state": "NOT_STARTED",
+      "visibility": "DRAFT",
+      "editor": "MJML",
+      "previewChars": 22470,
+      "nativePreferences": true,
+      "releaseBlocked": "APPROVED_COVER_PENDING",
+      "sent": false,
+      "scheduled": false
+    },
+    {
+      "kind": "pdf.json",
+      "id": "6a17d1f1-242b-48e3-a4ed-52c71d18aada",
+      "state": "NOT_STARTED",
+      "visibility": "DRAFT",
+      "editor": "MJML",
+      "previewChars": 20338,
+      "nativePreferences": true,
+      "releaseBlocked": "APPROVED_COVER_PENDING",
+      "sent": false,
+      "scheduled": false
+    }
+  ],
+  "releaseState": "BLOCKED_MISSING_NEW_MAGAZINE_COVER",
+  "couponId": "f42b78a5-869b-4869-81da-f50e6204cc73",
+  "couponPricePreviewVerified": true,
+  "noOrdersOrCharges": true,
+  "coverSearch": "Root live Wix Media and repo scan plus Muse independent saved-image/generated-image worktree scan did not find owner-referenced replacement. Older BEATING TEXAS explicitly rejected; Through the Lens is basketball artwork, not relabeled as magazine cover."
+}

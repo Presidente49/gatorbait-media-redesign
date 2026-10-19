@@ -2,14 +2,28 @@
   "issue": "Texas postgame edition, Oct.18,2026",
   "magazine": "https://www.gatorbaitmedia.com/magazine",
   "phone_pdf": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_1c595c67708e4a42bf6b8508a4a4b5a8.pdf",
-  "phone_pdf_verified": {"http":200,"bytes":2556951,"pages":61,"real_iphone_tested":false},
+  "phone_pdf_verified": {
+    "http": 200,
+    "bytes": 2556951,
+    "pages": 61,
+    "real_iphone_tested": false
+  },
   "cover_state": "BLOCKED_MISSING_OWNER_REFERENCED_REPLACEMENT",
   "rejected_old_cover_id": "d3cfa5_dc0e57825cff4a29ac23a2e771236c34~mv2.jpg",
   "coupon_id": "f42b78a5-869b-4869-81da-f50e6204cc73",
-  "offer": {"percent_off":50,"discounted_cycles":1,"uses_per_customer":1,"total_uses":6,"expires":"2026-10-29T03:59:59Z","plan_id":"ae41ee7a-c4c2-4bc0-bb73-df1c242ec14a"},
-  "email_packets_created":false,
-  "sent":false,
-  "scheduled":false,
-  "verified_former_paid_eligible":6,
-  "revenue_recovered_verified":false
+  "offer": {
+    "percent_off": 50,
+    "discounted_cycles": 1,
+    "uses_per_customer": 1,
+    "total_uses": 6,
+    "expires": "2026-10-29T03:59:59Z",
+    "plan_id": "ae41ee7a-c4c2-4bc0-bb73-df1c242ec14a"
+  },
+  "email_packets_created": true,
+  "sent": false,
+  "scheduled": false,
+  "verified_former_paid_eligible": 6,
+  "revenue_recovered_verified": false,
+  "winback_draft": "f6273a4d-3d81-41dd-b7c1-e014885100b7",
+  "phone_pdf_draft": "6a17d1f1-242b-48e3-a4ed-52c71d18aada"
 }

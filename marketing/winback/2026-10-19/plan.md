@@ -10,12 +10,12 @@ Owner direction Oct.19: implement a win-back plan, including a deep discount if 
 - Actual Wix price preview verifies a discounted cycle1 followed by full-price cycle2+, with the existing7-day free trial. Terms must state the initial charge, normal annual renewal, automatic renewal until canceled and trial cancellation timing. Never advertise a permanent half-price renewal.
 - Media verified: current phone PDF HTTP200,2556951bytes,61pages,390×844pt, tagged/selectable and unencrypted. Permanent URL is in pdf-delivery.json. Real iPhone behavior still untested; Wix may save to Files.
 
-## Release packets prepared next
+## Release packets drafted in Wix
 
 1. Returning-reader email: specific subject,50% first-paid-year offer, private code, existing native annual signup link, exact trial/renewal terms, deadline, approved cover, free current magazine/PDF preview. Public magazine remains free; no purchase is required for the sample issue. Do not impersonate a writer.
 2. Current-subscriber email: approved cover links to the magazine, separate Download Phone PDF button,61pages/2.4MB note, Files/offline instructions, visible attribution, Store/Subscribe/free-confirmed-signup footer, existing mailing address per owner's clarification. No discount to current members.
 
-No Wix campaign for either packet has been created or scheduled. Creation code never ran: artwork lookup halted the release before drafts. The earlier Chris campaign is unrelated and already distributed; never resend it to announce these changes.
+Two editable MJML campaigns are now DRAFT / NOT_STARTED: returning-reader offer f6273a4d-3d81-41dd-b7c1-e014885100b7 and phone-magazine email6a17d1f1-242b-48e3-a4ed-52c71d18aada. Complete terms/PDF/footer copy is saved privately in Wix with APPROVED_COVER_PENDING release-block marker. No rejected artwork was inserted. Provider previews build and include native preferences. Four-width final email QC waits for the correct cover. Neither campaign is sent or scheduled. The earlier Chris campaign is unrelated and already distributed; never resend it to announce these changes.
 
 ## Timing and gates
 

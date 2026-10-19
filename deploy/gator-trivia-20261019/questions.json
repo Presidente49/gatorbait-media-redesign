@@ -1,0 +1,76 @@
+{
+  "title": "The first hand: Gator history",
+  "version": 1,
+  "questions": [
+    {
+      "id": "gator-history-1",
+      "question": "Who won Florida\u2019s first Heisman Trophy?",
+      "options": [
+        "Steve Spurrier",
+        "Danny Wuerffel",
+        "Tim Tebow",
+        "Emmitt Smith"
+      ],
+      "answer": 0,
+      "explanation": "Steve Spurrier won the Heisman Trophy in 1966.",
+      "source": "https://floridagators.com/sports/2015/12/10/_facilities_q_bhgriffin_ring_honor",
+      "verifiedOn": "2026-10-19"
+    },
+    {
+      "id": "gator-history-2",
+      "question": "Which Gator won the Heisman Trophy in 1996?",
+      "options": [
+        "Tim Tebow",
+        "Rex Grossman",
+        "Danny Wuerffel",
+        "Chris Leak"
+      ],
+      "answer": 2,
+      "explanation": "Danny Wuerffel won the 1996 Heisman during Florida\u2019s national championship season.",
+      "source": "https://floridagators.com/sports/2015/12/10/_football_history_php_his_sec1996_inc",
+      "verifiedOn": "2026-10-19"
+    },
+    {
+      "id": "gator-history-3",
+      "question": "In which year did Tim Tebow win the Heisman Trophy?",
+      "options": [
+        "2006",
+        "2007",
+        "2008",
+        "2009"
+      ],
+      "answer": 1,
+      "explanation": "Tebow won in 2007, becoming the first sophomore to receive the award.",
+      "source": "https://floridagators.com/sports/football/roster/t-tebow/1522",
+      "verifiedOn": "2026-10-19"
+    },
+    {
+      "id": "gator-history-4",
+      "question": "Who gave Florida\u2019s stadium its \u201cSwamp\u201d nickname?",
+      "options": [
+        "Urban Meyer",
+        "Billy Donovan",
+        "Steve Spurrier",
+        "Ben Hill Griffin Jr."
+      ],
+      "answer": 2,
+      "explanation": "Florida\u2019s stadium timeline credits Steve Spurrier with the nickname at the end of the 1991 season.",
+      "source": "https://floridagators.com/sports/2015/12/10/_facilities_bhgriffin_timeline_",
+      "verifiedOn": "2026-10-19"
+    },
+    {
+      "id": "gator-history-5",
+      "question": "Who did Florida beat to claim the 1996 football national championship?",
+      "options": [
+        "Ohio State",
+        "Nebraska",
+        "Alabama",
+        "Florida State"
+      ],
+      "answer": 3,
+      "explanation": "Florida defeated Florida State 52-20 in the Sugar Bowl on Jan. 2, 1997, to win the title for the 1996 season.",
+      "source": "https://floridagators.com/sports/2015/12/10/_overview_season_footb96",
+      "verifiedOn": "2026-10-19"
+    }
+  ]
+}

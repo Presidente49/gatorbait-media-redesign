@@ -1,0 +1,21 @@
+{
+  "state": "PLAYABLE_SOLO_PREVIEW",
+  "liveWix": false,
+  "writersInvolved": false,
+  "widths": [
+    390,
+    430,
+    1366,
+    1920
+  ],
+  "questions": 5,
+  "sources": "FloridaGators.com",
+  "liveAI": false,
+  "modelRequests": 0,
+  "newPaidServices": 0,
+  "publicScoreboard": false,
+  "multiplayer": "NOT_IMPLEMENTED",
+  "classQuizRuntime": "FRONTEND_200_BACKEND_BLOCKED_INTERNAL_NETWORK",
+  "nativeMemberIntegration": "NOT_INSTALLED",
+  "rollback": "Revert additive preview and lounge link; stop isolated compose project"
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "width": 390,
+    "checks": [
+      {
+        "question": 1,
+        "score": "1",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_facilities_q_bhgriffin_ring_honor",
+        "reveal": true
+      },
+      {
+        "question": 2,
+        "score": "2",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_football_history_php_his_sec1996_inc",
+        "reveal": true
+      },
+      {
+        "question": 3,
+        "score": "3",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/football/roster/t-tebow/1522",
+        "reveal": true
+      },
+      {
+        "question": 4,
+        "score": "4",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_facilities_bhgriffin_timeline_",
+        "reveal": true
+      },
+      {
+        "question": 5,
+        "score": "5",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_overview_season_footb96",
+        "reveal": true
+      }
+    ],
+    "result": "5 out of 5. That’s your first hand.",
+    "reset": "0",
+    "wrong": "0",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "width": 430,
+    "checks": [
+      {
+        "question": 1,
+        "score": "1",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_facilities_q_bhgriffin_ring_honor",
+        "reveal": true
+      },
+      {
+        "question": 2,
+        "score": "2",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_football_history_php_his_sec1996_inc",
+        "reveal": true
+      },
+      {
+        "question": 3,
+        "score": "3",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/football/roster/t-tebow/1522",
+        "reveal": true
+      },
+      {
+        "question": 4,
+        "score": "4",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_facilities_bhgriffin_timeline_",
+        "reveal": true
+      },
+      {
+        "question": 5,
+        "score": "5",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_overview_season_footb96",
+        "reveal": true
+      }
+    ],
+    "result": "5 out of 5. That’s your first hand.",
+    "reset": "0",
+    "wrong": "0",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "width": 1366,
+    "checks": [
+      {
+        "question": 1,
+        "score": "1",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_facilities_q_bhgriffin_ring_honor",
+        "reveal": true
+      },
+      {
+        "question": 2,
+        "score": "2",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_football_history_php_his_sec1996_inc",
+        "reveal": true
+      },
+      {
+        "question": 3,
+        "score": "3",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/football/roster/t-tebow/1522",
+        "reveal": true
+      },
+      {
+        "question": 4,
+        "score": "4",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_facilities_bhgriffin_timeline_",
+        "reveal": true
+      },
+      {
+        "question": 5,
+        "score": "5",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_overview_season_footb96",
+        "reveal": true
+      }
+    ],
+    "result": "5 out of 5. That’s your first hand.",
+    "reset": "0",
+    "wrong": "0",
+    "overflow": 0,
+    "errors": []
+  },
+  {
+    "width": 1920,
+    "checks": [
+      {
+        "question": 1,
+        "score": "1",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_facilities_q_bhgriffin_ring_honor",
+        "reveal": true
+      },
+      {
+        "question": 2,
+        "score": "2",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_football_history_php_his_sec1996_inc",
+        "reveal": true
+      },
+      {
+        "question": 3,
+        "score": "3",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/football/roster/t-tebow/1522",
+        "reveal": true
+      },
+      {
+        "question": 4,
+        "score": "4",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_facilities_bhgriffin_timeline_",
+        "reveal": true
+      },
+      {
+        "question": 5,
+        "score": "5",
+        "disabled": true,
+        "source": "https://floridagators.com/sports/2015/12/10/_overview_season_footb96",
+        "reveal": true
+      }
+    ],
+    "result": "5 out of 5. That’s your first hand.",
+    "reset": "0",
+    "wrong": "0",
+    "overflow": 0,
+    "errors": []
+  }
+]

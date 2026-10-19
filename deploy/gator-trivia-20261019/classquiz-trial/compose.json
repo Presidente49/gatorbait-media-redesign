@@ -1,0 +1,111 @@
+{
+  "services": {
+    "db": {
+      "image": "postgres:14-alpine",
+      "environment": {
+        "POSTGRES_PASSWORD": "${QUIZ_DB_PASSWORD}",
+        "POSTGRES_DB": "classquiz",
+        "NO_PROXY": "localhost,127.0.0.1,api,frontend,db,redis,meilisearch"
+      },
+      "healthcheck": {
+        "test": [
+          "CMD-SHELL",
+          "pg_isready -U postgres"
+        ],
+        "interval": "3s",
+        "timeout": "3s",
+        "retries": 20
+      },
+      "mem_limit": "512m",
+      "cpus": 0.5
+    },
+    "redis": {
+      "image": "valkey/valkey:alpine",
+      "mem_limit": "512m",
+      "cpus": 0.5,
+      "environment": {
+        "NO_PROXY": "localhost,127.0.0.1,api,frontend,db,redis,meilisearch"
+      }
+    },
+    "meilisearch": {
+      "image": "getmeili/meilisearch:v0.28.0",
+      "environment": {
+        "MEILI_NO_ANALYTICS": "true",
+        "NO_PROXY": "localhost,127.0.0.1,api,frontend,db,redis,meilisearch"
+      },
+      "mem_limit": "512m",
+      "cpus": 0.5
+    },
+    "api": {
+      "image": "ghcr.io/mawoka-myblock/classquiz-backend:master",
+      "environment": {
+        "DB_URL": "postgresql://postgres:${QUIZ_DB_PASSWORD}@db:5432/classquiz",
+        "REDIS": "redis://redis:6379/0?decode_responses=True",
+        "SECRET_KEY": "${QUIZ_SECRET}",
+        "MAX_WORKERS": "1",
+        "ROOT_ADDRESS": "http://127.0.0.1:8821",
+        "MAIL_PORT": "1025",
+        "MAIL_ADDRESS": "trial@example.invalid",
+        "MAIL_PASSWORD": "unused-local-trial",
+        "MAIL_USERNAME": "unused-local-trial",
+        "MAIL_SERVER": "127.0.0.1",
+        "SKIP_EMAIL_VERIFICATION": "true",
+        "STORAGE_BACKEND": "local",
+        "STORAGE_PATH": "/app/data",
+        "MEILISEARCH_URL": "http://meilisearch:7700",
+        "TELEMETRY_ENABLED": "false",
+        "NO_PROXY": "localhost,127.0.0.1,api,frontend,db,redis,meilisearch"
+      },
+      "depends_on": {
+        "db": {
+          "condition": "service_healthy"
+        },
+        "redis": {
+          "condition": "service_started"
+        }
+      },
+      "tmpfs": [
+        "/app/data"
+      ],
+      "mem_limit": "512m",
+      "cpus": 0.5
+    },
+    "frontend": {
+      "image": "ghcr.io/mawoka-myblock/classquiz-frontend:master",
+      "environment": {
+        "API_URL": "http://api:80",
+        "REDIS_URL": "redis://redis:6379/0?decode_responses=True",
+        "ORIGIN": "http://127.0.0.1:8821",
+        "NO_PROXY": "localhost,127.0.0.1,api,frontend,db,redis,meilisearch"
+      },
+      "depends_on": [
+        "api",
+        "redis"
+      ],
+      "mem_limit": "512m",
+      "cpus": 0.5,
+      "command": [
+        "node",
+        "index.js"
+      ]
+    },
+    "proxy": {
+      "image": "caddy:2-alpine",
+      "volumes": [
+        "./Caddyfile:/etc/caddy/Caddyfile:ro"
+      ],
+      "ports": [
+        "127.0.0.1:8821:8080"
+      ],
+      "depends_on": [
+        "api",
+        "frontend"
+      ],
+      "mem_limit": "512m",
+      "cpus": 0.5,
+      "environment": {
+        "NO_PROXY": "localhost,127.0.0.1,api,frontend,db,redis,meilisearch"
+      }
+    }
+  }
+}

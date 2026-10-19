@@ -1,4 +1,4 @@
-/* GatorBait Latest Feed v1, build 7b7de3ab. BUILT FILE: edit sports-live/src/latest-feed.{css,js}, then run node sports-live/build-latest-feed.mjs */
+/* GatorBait Latest Feed v1, build 030d90be. BUILT FILE: edit sports-live/src/latest-feed.{css,js}, then run node sports-live/build-latest-feed.mjs */
 (function () {
   'use strict';
   try {
@@ -231,7 +231,7 @@ if (!W.__GBM_LF__ && FEED.test(location.pathname) && !W.__GBM_LF_FAIL__) {
     var it = state.items, dateStr = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/New_York' });
     var useLead = pageNo === 1 && it.length >= 4;
     var head = '<header class="lf-head"><div><div class="lf-kick"><i class="lf-dot"></i>GatorBait Media' + (catSlug ? ' &middot; Section' : ' &middot; Newsroom') + '</div><h2 class="lf-title">' + esc(pageTitle()) + '</h2></div>' +
-      '<div class="lf-side-h"><div class="lf-date">' + esc(dateStr) + '</div><form class="lf-search" role="search" action="https://www.google.com/search" method="get"><label class="lf-sr" for="lf-q">Search the GatorBait archive</label><input id="lf-q" name="q" type="search" placeholder="Search players, writers, topics" required><input type="hidden" name="as_sitesearch" value="gatorbaitmedia.com"><button type="submit">Search</button></form></div></header>';
+      '<div class="lf-side-h"><div class="lf-date">' + esc(dateStr) + '</div><form class="lf-search" role="search" action="https://www.google.com/search" method="get"><label class="lf-sr" for="lf-q">Search the GatorBait archive</label><input id="lf-q" name="q" type="search" placeholder="Search the archive" required><input type="hidden" name="as_sitesearch" value="gatorbaitmedia.com"><button type="submit">Search</button></form></div></header>';
     var h = '<div class="lf-in">' + head + '<nav class="lf-chipbar" aria-label="Browse by writer or section"><div class="lf-chips">' + chipsHtml() + '</div></nav>';
     if (!it.length) h += '<p class="lf-empty">No stories here yet.</p>';
     else {

@@ -1,4 +1,4 @@
-/* GatorBait Latest Feed v1, build e4a93a11. BUILT FILE: edit sports-live/src/latest-feed.{css,js}, then run node sports-live/build-latest-feed.mjs */
+/* GatorBait Latest Feed v1, build 07d258c6. BUILT FILE: edit sports-live/src/latest-feed.{css,js}, then run node sports-live/build-latest-feed.mjs */
 (function () {
   'use strict';
   try {
@@ -38,7 +38,7 @@ if (!W.__GBM_LF__ && FEED.test(location.pathname) && !W.__GBM_LF_FAIL__) {
   CATS.forEach(function (c) { CAT_BY_NAME[c[0].toLowerCase()] = c; CAT_BY_SLUG[c[2]] = c; });
   // Card tag order: the voice first, then the sport. Featured Article and Archive tags never show.
   var TAG_ORDER = ['Franz Beard - Blog', "Buddy's Blog", 'Loren Meadows - Blogs', 'Eddie Gilley - Blog', 'Carlton Reese', 'The Buddy Martin Show', 'Gatorbait Magazine', 'Thoughts Of The Day', 'Gator Basketball', 'Gator Recruiting', 'Gator Breaking News', 'Gator Football', 'Gator Baseball', 'Gator Softball', 'Gator Gymnastics', 'Gators in The NFL'];
-  var root = null, state = null, PS = 12, nextPage = 2, lastPage = 1, loading = false, exhausted = false;
+  var root = null, state = null, PS = 12, nextPage = 2, lastPage = 1, loading = false, exhausted = false, failed = false;
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function txt(el) { return el ? (el.textContent || '').replace(/\s+/g, ' ').trim() : ''; }
@@ -224,7 +224,7 @@ if (!W.__GBM_LF__ && FEED.test(location.pathname) && !W.__GBM_LF_FAIL__) {
     var h = '<div class="lf-status" role="status" aria-live="polite" id="lf-status">' + shown + ' stories shown, newest first</div>';
     if (pageNo > 1) return h + pagerHtml();
     if (s.shown < s.items.length || canFetch()) h += '<button type="button" class="lf-loadmore" id="lf-more">Load more stories</button>';
-    else if (!exhausted) h += '<a class="lf-older" href="' + base + '/page/' + (lastPage + 1) + '">Older stories &rarr;</a>';
+    else if (!exhausted || failed) h += '<a class="lf-older" href="' + base + '/page/' + (lastPage + 1) + '">Older stories &rarr;</a>';
     return h;
   }
   function render() {
@@ -295,7 +295,7 @@ if (!W.__GBM_LF__ && FEED.test(location.pathname) && !W.__GBM_LF_FAIL__) {
       if (!got.length) exhausted = true;
       state.items = merge(state.items, got);
       cb(got.length);
-    }).catch(function () { if (!quiet) exhausted = true; cb(0); });
+    }).catch(function () { if (!quiet) { exhausted = true; failed = true; } cb(0); });
   }
 
   /* ---------- mount ---------- */

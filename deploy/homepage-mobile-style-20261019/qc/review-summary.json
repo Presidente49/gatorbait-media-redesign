@@ -1,0 +1,45 @@
+{
+  "candidate_sha256": "d6891a1b8f1a2d2aa6318295c439e0b2be2ff8253e1b1a12f1c167902d8d81d3",
+  "widths": {
+    "320": {
+      "all_checks_pass": true,
+      "keyboard_focus": true,
+      "errors": []
+    },
+    "390": {
+      "all_checks_pass": true,
+      "keyboard_focus": true,
+      "errors": []
+    },
+    "430": {
+      "all_checks_pass": true,
+      "keyboard_focus": true,
+      "errors": []
+    },
+    "820": {
+      "all_checks_pass": true,
+      "keyboard_focus": true,
+      "errors": []
+    },
+    "1366": {
+      "all_checks_pass": true,
+      "keyboard_focus": true,
+      "errors": [
+        "wixTagManager is not defined",
+        "wixTagManager is not defined"
+      ]
+    },
+    "1920": {
+      "all_checks_pass": true,
+      "keyboard_focus": true,
+      "errors": [
+        "wixTagManager is not defined",
+        "wixTagManager is not defined"
+      ]
+    }
+  },
+  "desktop_unchanged": {
+    "1366": true,
+    "1920": true
+  }
+}

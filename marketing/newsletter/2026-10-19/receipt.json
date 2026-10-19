@@ -1,0 +1,17 @@
+{
+  "campaignId": "d11c07d6-dee4-47b2-aa66-a3af0882ed83",
+  "state": "DRAFT / NOT_STARTED",
+  "sent": false,
+  "scheduled": false,
+  "supersedes": [
+    "ce2bc47f-7fb3-4a78-ae77-a09a1169d01c",
+    "364f351c-314c-4567-806c-6753101c32d8",
+    "1f2191cf-c040-48c6-8a69-34a8699fd333"
+  ],
+  "audience": "Free readers and members who meet current marketing consent/deliverability/hold checks; no member-only restriction",
+  "cover": "d3cfa5_dc0e57825cff4a29ac23a2e771236c34~mv2.jpg",
+  "links": "Cover and magazine CTA, Buddy/Loren/Franz columns, complete phone PDF, Store, Subscribe, confirmed free signup, native preferences",
+  "verification": "Provider-rendered Chromium 390/430/1366/1920; no overflow, cover loaded, free access stated, PDF CTA and preferences present. All three article canonical URLs HTTP200. Real inbox/iPhone untested.",
+  "hold": "No additional same-day send; 7-per-rolling-7-day cap exhausted. Recheck actual sends, scheduled campaigns, audience, sender and content freshness before release. No background worker or scheduled release implied.",
+  "photoCredits": "Cover alt includes UAA and Hannah White; linked Photo credits block points to UAA, photographer and official galleries."
+}

@@ -1,3 +1,7 @@
+# Latest: combined newsletter and credit-complete win-back
+
+Final win-back draft491b0190-9ebd-4309-9b2e-5fe5fbc69635 supersedes88af8816, with credited alt, linked UAA/Hannah White/gallery block and readable light footer. Final combined newsletterd11c07d6-dee4-47b2-aa66-a3af0882ed83 supersedes the standalone member-PDF draft. All remain unsent/unscheduled under current frequency gates. The earlier separate-member-PDF release plan below is historical. See marketing/newsletter/2026-10-19/receipt.json for latest state.
+
 # Owner update: original cover approved
 
 Brenden explicitly approved the original Texas cover after the missing newer art could not be located. Cover blocker is cleared. Replacement drafts: win-back 88af8816-900d-4fb6-a4f7-effdbd9e88f7; phone PDF 364f351c-314c-4567-806c-6753101c32d8. Both include the permanent original cover, visible UAA / Hannah White credit and phone PDF. Neither is sent or scheduled. Wix rejected editing the earlier drafts as classic-editor content despite MJML source; earlier IDs below are superseded and must not be sent. Fresh audience/sender/frequency checks still apply before release. The prior missing-cover narrative below is historical.

@@ -1,12 +1,13 @@
 # GBM - Site Pages v1 (Oct. 18-19, 2026)
 
-Live embed `af792630-48d9-4306-836d-cc03d159caaf`, HEAD, ESSENTIAL, loadOnce false, enabled, revision 1, 10,650 chars, djb2 `4dcd2f1e`. Source: `site-pages-v1.html`. Created with no site publish; no existing embed touched.
+Live embed `af792630-48d9-4306-836d-cc03d159caaf`, HEAD, ESSENTIAL, loadOnce false, enabled, revision 2 (rev 1 was 10,650 chars, djb2 `4dcd2f1e`; rev 2 adds the category-page navy first paint), 10,874 chars, djb2 `7e271808`. Source: `site-pages-v1.html`. Created with no site publish; no existing embed touched.
 
 ## What it does (visual only)
 - Inline script sets `html.gbm-sp` and one page class (`gbm-sp-about|contact|plans|policies|light|app`) from the path, plus `gbm-sp-pre`.
 - Guard: with `gbm-sp-pre` and no `#gbm-band` yet, `#SITE_PAGES` is `visibility:hidden` (stays in the DOM, crawlable) on a #060B1C page; it shows as soon as the theme band exists, or after 2.5 s (CSS animation and a JS timer).
 - Desktop band reserve moved to `#SITE_CONTAINER` margin (the theme's `::before` reserve left a 0.10 shift of the container at widths over 820 px).
 - Look: navy page, white Barlow Condensed headings, Barlow body `#E6EAF5`, `#FA4616` rules/links/buttons with `#07122E` labels (5.26:1), green `#22884C` mark, surfaces `#101529`/`#161E31` and 14% white borders (same tokens as Latest Feed v1).
+- Category pages: navy first paint only (`gbm-sp-cat`, no hold; the feed hold and skin stay with 0e55ea65 and c4b41f6a).
 - Pages: /about, /contact (form card and fields restyled only), /pricing-plans and /pricing-plans/subscribe (card colors only), /policies, /search, /tags, /groups (heading colors only).
 
 ## Not touched

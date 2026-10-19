@@ -17,6 +17,7 @@ const out = arg('out', '/tmp/lf-qa'); mkdirSync(out, { recursive: true });
 const widths = String(arg('widths', '390,430,1366,1920')).split(',').map(Number);
 const paths = String(arg('paths', '/gatorbait-media-blogs')).split(',');
 const scenario = arg('scenario', '');
+const warm = process.argv.includes('--warm');
 const ORIGIN = 'https://www.gatorbaitmedia.com';
 const bundle = readFileSync(join(repo, 'sports-live/latest-feed.js'), 'utf8');
 const loader = readFileSync(join(repo, 'deploy/latest-feed-20261018/latest-feed-loader-v1.html'), 'utf8');
@@ -50,9 +51,10 @@ async function run(browser, width, path) {
       return route.fulfill({ response: r });
     } catch (e) { return route.abort(); }
   });
+  if (warm) { const pp = await ctx.newPage(); await pp.goto(ORIGIN + path + '?prime=' + Date.now(), { waitUntil: 'load', timeout: 60000 }).catch(() => {}); await pp.waitForTimeout(3500); await pp.close(); }
   const page = await ctx.newPage();
   const errs = []; page.on('pageerror', (e) => errs.push(String(e).slice(0, 140)));
-  const tag = `${label(path)}-${width}`;
+  const tag = `${label(path)}-${width}${warm ? '-warm' : ''}`;
   const frames = [];
   const t0 = Date.now();
   const nav = page.goto(ORIGIN + path + '?qa=' + Date.now(), { waitUntil: 'load', timeout: 60000 }).catch(() => {});
@@ -100,7 +102,17 @@ async function run(browser, width, path) {
     more = await page.evaluate(() => { const lf = document.querySelector('#gbm-lf'), cards = [...lf.querySelectorAll('a.lf-lead,a.lf-sc,a.lf-card')]; const ts = cards.map((a) => { const t = a.querySelector('time[datetime]'); return t ? Date.parse(t.getAttribute('datetime')) : null; }); let inv = 0, prev = Infinity; ts.forEach((t) => { if (t == null) return; if (t > prev + 1) inv++; prev = Math.min(prev, t); }); const urls = cards.map((a) => a.getAttribute('href')); return { cards: cards.length, dupes: urls.length - new Set(urls).size, inversions: inv, foot: (lf.querySelector('#lf-foot') || {}).textContent, older: (lf.querySelector('.lf-older') || {}).href || null, scrollW: document.documentElement.scrollWidth, clientW: document.documentElement.clientWidth }; });
     more.before = before;
   }
-  const res = { path, width, scenario: scenario || 'normal', candidate, frames: frames.map((f) => f.file), errs, ...m, more };
+  let feedOrder = null;
+  if (path === '/gatorbait-media-blogs' && m.mounted) {
+    try {
+      const x = await (await ctx.request.get(ORIGIN + '/blog-feed.xml?qa=' + Date.now(), { headers: { 'cache-control': 'no-store' } })).text();
+      const items = [...x.matchAll(/<item>[\s\S]*?<\/item>/g)].map((i) => ({ u: (i[0].match(/<link>([^<]+)<\/link>/) || [])[1], t: Date.parse((i[0].match(/<pubDate>([^<]+)<\/pubDate>/) || [])[1]) })).sort((a, b) => b.t - a.t).map((i) => i.u);
+      const shown = await page.evaluate(() => [...document.querySelectorAll('#gbm-lf a.lf-lead,#gbm-lf a.lf-sc,#gbm-lf a.lf-card')].map((a) => a.href));
+      const first = shown.slice(0, 16), want = items.slice(0, 16);
+      feedOrder = { match: JSON.stringify(first.map((u) => u.replace(/\/$/, ''))) === JSON.stringify(want.map((u) => u.replace(/\/$/, ''))), firstShown: first.slice(0, 3), firstFeed: want.slice(0, 3) };
+    } catch (e) { feedOrder = { error: String(e).slice(0, 80) }; }
+  }
+  const res = { feedOrder, path, width, scenario: scenario || 'normal', candidate, frames: frames.map((f) => f.file), errs, ...m, more };
   writeFileSync(join(out, `${tag}.json`), JSON.stringify(res, null, 1));
   await ctx.close();
   return res;
@@ -110,7 +122,7 @@ const browser = await chromium.launch();
 const all = [];
 for (const p of paths) for (const w of widths) {
   const r = await run(browser, w, p); all.push(r);
-  console.log(`${label(p)} @${w}: mounted=${r.mounted} cards=${r.cards} cls=${r.cls} overflow=${r.scrollW - r.clientW} inv=${r.orderInversions} h1dom=${r.h1Dom}/vis=${r.h1Visible} lp=${r.lpVisible} sn=${r.snVisible} nativeGal=${r.nativeGalDisplay} imgsBroken=${r.imgsBroken} more=${r.more ? r.more.cards + '/inv' + r.more.inversions + '/dupes' + r.more.dupes : '-'} errs=${r.errs.length}`);
+  console.log(`${label(p)} @${w}: mounted=${r.mounted} cards=${r.cards} cls=${r.cls} overflow=${r.scrollW - r.clientW} inv=${r.orderInversions} h1dom=${r.h1Dom}/vis=${r.h1Visible} lp=${r.lpVisible} sn=${r.snVisible} nativeGal=${r.nativeGalDisplay} imgsBroken=${r.imgsBroken} feedOrder=${r.feedOrder ? r.feedOrder.match : '-'} more=${r.more ? r.more.cards + '/inv' + r.more.inversions + '/dupes' + r.more.dupes : '-'} errs=${r.errs.length}`);
 }
 writeFileSync(join(out, 'summary.json'), JSON.stringify(all, null, 1));
 await browser.close();

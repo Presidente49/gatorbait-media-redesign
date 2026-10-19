@@ -1,0 +1,23 @@
+name: Overflow probe (read-only)
+on:
+  push:
+    branches: ['probe/overflow-20261019']
+    paths: ['probe-overflow/**','.github/workflows/probe-overflow-20261019.yml']
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: |
+          mkdir p && cd p && npm init -y >/dev/null && npm i playwright@1.49.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium webkit >/dev/null 2>&1
+          cp ../probe-overflow/* . && node run.js
+      - if: always()
+        run: |
+          mkdir -p deploy/overflow-probe-20261019 && cp p/out/* deploy/overflow-probe-20261019/ || true
+          git config user.name probe-bot && git config user.email probe-bot@users.noreply.github.com
+          git add deploy/overflow-probe-20261019 && git commit -m "probe output: overflow results" && git push origin HEAD:probe/overflow-20261019 || true

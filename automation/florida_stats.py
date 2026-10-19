@@ -466,11 +466,13 @@ def build_embed(snap):
 
 
 def fingerprint(s):
-    """Same 31-hash the game-day tooling uses, for in-place Wix patch checks."""
-    h = 0
-    for ch in s:
-        h = (h * 31 + ord(ch)) & 0xffffffff
-    return h
+    """Canonical djb2: JavaScript UTF-16 code units, unsigned 32-bit, lowercase hex."""
+    h = 5381
+    units = s.encode('utf-16-le', errors='surrogatepass')
+    for i in range(0, len(units), 2):
+        code_unit = units[i] | (units[i + 1] << 8)
+        h = ((h << 5) + h + code_unit) & 0xffffffff
+    return format(h, 'x')
 
 
 def shell_fingerprint(html):

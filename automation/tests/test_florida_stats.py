@@ -139,6 +139,15 @@ class GuardTests(unittest.TestCase):
 
 
 class EmbedTests(unittest.TestCase):
+    def test_fingerprint_matches_independent_javascript_vectors(self):
+        # Recorded from Node.js charCodeAt / >>> 0 / toString(16), not Python.
+        vectors = [('', '1505'), ('a', '2b606'), ('abc', 'b885c8b'),
+                   ('GatorBait Media', '2fbc9b82'), ('🐊', '76262c'),
+                   ('A🐊B', '8034ed2f'), ('é', '2b68e')]
+        for value, expected in vectors:
+            with self.subTest(value=value):
+                self.assertEqual(fs.fingerprint(value), expected)
+
     def test_embed_under_cap_and_marked(self):
         snap, _ = fs.stamp(build(), None)
         html = fs.build_embed(snap)

@@ -1,0 +1,96 @@
+[
+  {
+    "master": "portrait",
+    "fontLoaded": true,
+    "photoNatural": [
+      3000,
+      2000
+    ],
+    "photoRendered": [
+      1080,
+      720
+    ],
+    "photoRatio": 1.5,
+    "filter": "none",
+    "creditBox": {
+      "x": 54,
+      "y": 1296.09375,
+      "width": 972,
+      "height": 35.640625
+    },
+    "cardSize": [
+      1080,
+      1341
+    ],
+    "pageOverflow": 0,
+    "exportSize": [
+      1080,
+      1350
+    ]
+  },
+  {
+    "master": "landscape",
+    "fontLoaded": true,
+    "photoNatural": [
+      3000,
+      2000
+    ],
+    "photoRendered": [
+      780,
+      520
+    ],
+    "photoRatio": 1.5,
+    "filter": "none",
+    "creditBox": {
+      "x": 450,
+      "y": 605.890625,
+      "width": 720,
+      "height": 31.046875
+    },
+    "cardSize": [
+      1200,
+      675
+    ],
+    "pageOverflow": 0,
+    "exportSize": [
+      1200,
+      675
+    ]
+  },
+  {
+    "preview": {
+      "width": 390,
+      "overflow": 0,
+      "fontLoaded": true,
+      "imagesReady": true
+    },
+    "pageErrors": []
+  },
+  {
+    "preview": {
+      "width": 430,
+      "overflow": 0,
+      "fontLoaded": true,
+      "imagesReady": true
+    },
+    "pageErrors": []
+  },
+  {
+    "preview": {
+      "width": 1366,
+      "overflow": 0,
+      "fontLoaded": true,
+      "imagesReady": true
+    },
+    "pageErrors": []
+  },
+  {
+    "preview": {
+      "width": 1920,
+      "overflow": 0,
+      "fontLoaded": true,
+      "imagesReady": true
+    },
+    "pageErrors": []
+  }
+]

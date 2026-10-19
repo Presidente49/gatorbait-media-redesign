@@ -1,0 +1,2527 @@
+[
+ {
+  "page": "about",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "5357|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "7839|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 5357,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3183,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 4,
+    "Barlow": 10
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-113-6400",
+    "a.:-113-373",
+    "a.:373-852",
+    "em.:387-428",
+    "a.:852-1388",
+    "em.:866-907"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2129
+  },
+  "errs": []
+ },
+ {
+  "page": "about",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2518|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "5090|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2518,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3183,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 4,
+    "Barlow": 10
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2129
+  },
+  "errs": []
+ },
+ {
+  "page": "contact",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2635|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp,gbm-sp-pre",
+   "5214|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2635,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 1933,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-contact gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 6
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": []
+ },
+ {
+  "page": "contact",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2268|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp,gbm-sp-pre",
+   "4842|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2268,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 1933,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-contact gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 6
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-116-6397",
+    "a.:-116-370",
+    "a.:370-849",
+    "em.:384-424",
+    "a.:849-1385",
+    "em.:863-903"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": []
+ },
+ {
+  "page": "plans",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3233|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5772|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3233,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2760,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-115-6398",
+    "a.:-115-370",
+    "a.:370-849",
+    "em.:384-425",
+    "a.:849-1386",
+    "em.:863-904"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": []
+ },
+ {
+  "page": "plans",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.0009,
+  "shifts": [],
+  "timeline": [
+   "2946|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5509|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2946,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2760,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-116-6397",
+    "a.:-116-370",
+    "a.:370-849",
+    "em.:384-424",
+    "a.:849-1385",
+    "em.:863-903"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": []
+ },
+ {
+  "page": "subscribe",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.0009,
+  "shifts": [],
+  "timeline": [
+   "2662|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5210|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2662,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2793,
+   "cls": "gbm-bc gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-115-6398",
+    "a.:-115-370",
+    "a.:370-849",
+    "em.:384-425",
+    "a.:849-1386",
+    "em.:863-904"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": []
+ },
+ {
+  "page": "subscribe",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2528|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5088|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2528,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2793,
+   "cls": "gbm-bc gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-116-6397",
+    "a.:-116-370",
+    "a.:370-849",
+    "em.:384-424",
+    "a.:849-1385",
+    "em.:863-903"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": []
+ },
+ {
+  "page": "policies",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2521|0|visible|B|H||gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre",
+   "2718|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4690|0|visible|B|H||gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4843|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "5088|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2521,
+   "light": 0,
+   "band": true,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 7131,
+   "cls": "gbm-bc gbm-sp-policies gbm-sp gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": []
+ },
+ {
+  "page": "policies",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2370|0|visible|B|H||gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre",
+   "2553|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4450|0|visible|B|H||gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4691|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4932|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2370,
+   "light": 0,
+   "band": true,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 7131,
+   "cls": "gbm-bc gbm-sp-policies gbm-sp gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-368",
+    "a.:368-847",
+    "em.:382-423",
+    "a.:847-1384",
+    "em.:861-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": []
+ },
+ {
+  "page": "tags",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4684|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp,gbm-sp-pre",
+   "7266|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4684,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 5461,
+   "cls": "gbm-bc gbm-sp-light gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 13,
+    "Barlow": 24
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": []
+ },
+ {
+  "page": "tags",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2703|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp,gbm-sp-pre",
+   "5258|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2703,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 5461,
+   "cls": "gbm-bc gbm-sp-light gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 13,
+    "Barlow": 24
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": []
+ },
+ {
+  "page": "groups",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "5253|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-app,gbm-sp,gbm-sp-pre",
+   "7792|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-app,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 5253,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3971,
+   "cls": "gbm-bc gbm-sp-app gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 1,
+    "Barlow": 37,
+    "roboto-bold": 35
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-122-6391",
+    "a.:-122-364",
+    "a.:364-843",
+    "em.:378-418",
+    "a.:843-1379",
+    "em.:857-897"
+   ],
+   "whiteBoxes": [
+    "div.kNbWGz 320x2918",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 10,
+   "forms": 27,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 1313
+  },
+  "errs": []
+ },
+ {
+  "page": "groups",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4159|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-app,gbm-sp,gbm-sp-pre",
+   "6684|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-app,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4159,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3971,
+   "cls": "gbm-bc gbm-sp-app gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 1,
+    "Barlow": 37,
+    "roboto-bold": 35
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-123-6390",
+    "a.:-123-363",
+    "a.:363-842",
+    "em.:377-418",
+    "a.:842-1378",
+    "em.:856-896"
+   ],
+   "whiteBoxes": [
+    "div.kNbWGz 320x2918",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 10,
+   "forms": 27,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 1314
+  },
+  "errs": []
+ },
+ {
+  "page": "search",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2811|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp,gbm-sp-pre",
+   "5373|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2811,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2645,
+   "cls": "gbm-bc gbm-sp-light gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 56
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-129-6384",
+    "a.:-129-357",
+    "a.:357-836",
+    "em.:371-411",
+    "a.:836-1372",
+    "em.:850-890"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 16,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 3037
+  },
+  "errs": []
+ },
+ {
+  "page": "search",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3187|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp,gbm-sp-pre",
+   "5746|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3187,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2645,
+   "cls": "gbm-bc gbm-sp-light gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 56
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-115-6398",
+    "a.:-115-370",
+    "a.:370-849",
+    "em.:384-425",
+    "a.:849-1386",
+    "em.:863-904"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 16,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 3037
+  },
+  "errs": []
+ },
+ {
+  "page": "cat",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3162|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre,gbm-lf-pre",
+   "3219|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lf-pre,gbm-lp-on,gbm-lp-hold",
+   "3645|1|visible|-|H|Barlow/italic|gbm-feed-pre,gbm-lp-on,gbm-lp-hold,gbm-lf-on"
+  ],
+  "flash": 3,
+  "flashLightMs": 483,
+  "firstVisible": {
+   "t": 3162,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2913,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+   "fonts": {
+    "Barlow": 58,
+    "Barlow Condensed": 18,
+    "futura-lt-w01-book": 1
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [
+    "div.aq_u4p HcArW_ blog-post-category-backgro 314x68"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 67,
+   "forms": 12,
+   "h1": "Buddy's Blog",
+   "band": false,
+   "textLen": 2892
+  },
+  "errs": []
+ },
+ {
+  "page": "cat",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2833|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre,gbm-lf-pre",
+   "2880|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lf-pre,gbm-lp-on,gbm-lp-hold",
+   "4466|1|visible|-|H|Barlow/italic|gbm-feed-pre,gbm-lp-on,gbm-lp-hold,gbm-lf-on"
+  ],
+  "flash": 3,
+  "flashLightMs": 1633,
+  "firstVisible": {
+   "t": 2833,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2913,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+   "fonts": {
+    "Barlow": 58,
+    "Barlow Condensed": 18,
+    "futura-lt-w01-book": 1
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-116-6397",
+    "a.:-116-370",
+    "a.:370-849",
+    "em.:384-424",
+    "a.:849-1385",
+    "em.:863-903"
+   ],
+   "whiteBoxes": [
+    "div.aq_u4p HcArW_ blog-post-category-backgro 314x68"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 67,
+   "forms": 12,
+   "h1": "Buddy's Blog",
+   "band": false,
+   "textLen": 2892
+  },
+  "errs": []
+ },
+ {
+  "page": "latest",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2890|1|none|-|H||gbm-lp-wait,gbm-feed-pre,gbm-lf-pre",
+   "2945|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre,gbm-lf-pre",
+   "2993|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lf-pre,gbm-lp-on,gbm-lp-hold",
+   "3079|1|visible|-|H|Barlow Condensed/italic|gbm-feed-pre,gbm-lp-on,gbm-lp-hold,gbm-lf-on",
+   "3162|1|visible|-|H|Barlow/italic|gbm-feed-pre,gbm-lp-on,gbm-lp-hold,gbm-lf-on"
+  ],
+  "flash": 4,
+  "flashLightMs": 217,
+  "firstVisible": {
+   "t": 2945,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 5081,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+   "fonts": {
+    "Barlow": 105,
+    "Barlow Condensed": 18,
+    "futura-lt-w01-book": 1
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-116-6397",
+    "a.:-116-370",
+    "a.:370-849",
+    "em.:384-424",
+    "a.:849-1385",
+    "em.:863-903"
+   ],
+   "whiteBoxes": [
+    "div.aq_u4p HcArW_ blog-post-homepage-backgro 314x68"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 85,
+   "forms": 12,
+   "h1": "Florida Gators Headlines",
+   "band": false,
+   "textLen": 7181
+  },
+  "errs": []
+ },
+ {
+  "page": "latest",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3226|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre,gbm-lf-pre",
+   "3298|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lf-pre,gbm-lp-on,gbm-lp-hold",
+   "3652|1|visible|-|H|Barlow/italic|gbm-feed-pre,gbm-lp-on,gbm-lp-hold,gbm-lf-on"
+  ],
+  "flash": 3,
+  "flashLightMs": 426,
+  "firstVisible": {
+   "t": 3226,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 5011,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+   "fonts": {
+    "Barlow": 101,
+    "Barlow Condensed": 18,
+    "futura-lt-w01-book": 1
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-118-6395",
+    "a.:-118-368",
+    "a.:368-847",
+    "em.:382-422",
+    "a.:847-1383",
+    "em.:861-901"
+   ],
+   "whiteBoxes": [
+    "div.aq_u4p HcArW_ blog-post-homepage-backgro 314x68"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 85,
+   "forms": 12,
+   "h1": "Florida Gators Headlines",
+   "band": false,
+   "textLen": 7141
+  },
+  "errs": []
+ },
+ {
+  "page": "post",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.0924,
+  "shifts": [
+   {
+    "t": 6847,
+    "v": 0.0891,
+    "src": "#more-button-c2f9df16-fa65-4fa5-8bbd-446b5cf21357[204,24,204,24],p[446,25,410,24]"
+   }
+  ],
+  "timeline": [
+   "3487|1|visible|-|H|Barlow Condensed/italic|gbm-native-wide"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3487,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/italic"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 4403,
+   "cls": "gbm-native-wide",
+   "fonts": {
+    "Barlow Condensed": 14,
+    "Barlow": 51
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-110-6403",
+    "a.:376-855",
+    "em.:390-430",
+    "a.:855-1391",
+    "em.:869-909",
+    "a.:1391-1806"
+   ],
+   "whiteBoxes": [
+    "div.HW6ttf 390x3551",
+    "a.gbm-kit-card 390x88",
+    "a.gbm-kit-card 390x88",
+    "a.gbm-kit-card 390x69",
+    "#gbc-story-end-e 209x44",
+    "a. 390x85",
+    "a. 390x85",
+    "a. 390x78"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 46,
+   "forms": 21,
+   "h1": "Florida is one win from bowl eligibility, with a bye before Georgia",
+   "band": false,
+   "textLen": 3587
+  },
+  "errs": []
+ },
+ {
+  "page": "post",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.0908,
+  "shifts": [
+   {
+    "t": 8127,
+    "v": 0.0891,
+    "src": "#more-button-c2f9df16-fa65-4fa5-8bbd-446b5cf21357[204,24,204,24],p[446,25,410,24]"
+   }
+  ],
+  "timeline": [
+   "5203|1|none|-|H||gbm-native-wide",
+   "5417|1|visible|-|H|Barlow Condensed/italic|gbm-native-wide"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 5417,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/italic"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 4403,
+   "cls": "gbm-native-wide",
+   "fonts": {
+    "Barlow Condensed": 14,
+    "Barlow": 51
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-115-6398",
+    "a.:370-849",
+    "em.:384-425",
+    "a.:849-1386",
+    "em.:863-904",
+    "a.:1386-1800"
+   ],
+   "whiteBoxes": [
+    "div.HW6ttf 390x3551",
+    "a.gbm-kit-card 390x88",
+    "a.gbm-kit-card 390x88",
+    "a.gbm-kit-card 390x69",
+    "#gbc-story-end-e 209x44",
+    "a. 390x85",
+    "a. 390x85",
+    "a. 390x78"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 47,
+   "forms": 21,
+   "h1": "Florida is one win from bowl eligibility, with a bye before Georgia",
+   "band": false,
+   "textLen": 3587
+  },
+  "errs": []
+ },
+ {
+  "page": "home",
+  "w": "390",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.037,
+  "shifts": [
+   {
+    "t": 8996,
+    "v": 0.0185,
+    "src": "div[229,297,192,334],span[782,62,793,51]"
+   },
+   {
+    "t": 9104,
+    "v": 0.0185,
+    "src": "div[192,334,229,297],span[793,51,782,62]"
+   }
+  ],
+  "timeline": [
+   "6228|1|visible|-|H|roboto-bold/normal|gbm-bc-wait",
+   "6291|1|visible|-|H|roboto-bold/normal|",
+   "6332|1|visible|-|H|Barlow/normal|",
+   "6607|0|visible|-|H|Barlow/normal|gbm-gazette-live,gbm-standalone-live"
+  ],
+  "flash": 3,
+  "flashLightMs": 379,
+  "firstVisible": {
+   "t": 6228,
+   "light": 1,
+   "band": false,
+   "h1": "roboto-bold/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 4781,
+   "cls": "gbm-gazette-live gbm-standalone-live",
+   "fonts": {},
+   "lowContrast": [],
+   "wide": [
+    "div.bc-trk:-192-9423",
+    "div.:-192-4615",
+    "a.:38-570",
+    "a.:570-1168",
+    "b.:586-637",
+    "a.:1168-1758"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 3,
+   "band": false,
+   "textLen": 75521
+  },
+  "errs": []
+ },
+ {
+  "page": "home",
+  "w": "390",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.037,
+  "shifts": [
+   {
+    "t": 5892,
+    "v": 0.0185,
+    "src": "div[229,297,192,334],span[782,62,793,51]"
+   },
+   {
+    "t": 5988,
+    "v": 0.0185,
+    "src": "div[192,334,229,297],span[793,51,782,62]"
+   }
+  ],
+  "timeline": [
+   "3146|1|visible|-|H|roboto-bold/normal|gbm-bc-wait",
+   "3213|1|visible|-|H|roboto-bold/normal|",
+   "3276|1|visible|-|H|Barlow/normal|",
+   "3452|0|visible|-|H|Barlow/normal|gbm-gazette-live,gbm-standalone-live"
+  ],
+  "flash": 3,
+  "flashLightMs": 306,
+  "firstVisible": {
+   "t": 3146,
+   "light": 1,
+   "band": false,
+   "h1": "roboto-bold/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 4781,
+   "cls": "gbm-gazette-live gbm-standalone-live",
+   "fonts": {},
+   "lowContrast": [],
+   "wide": [
+    "div.bc-trk:-202-9413",
+    "div.:-202-4605",
+    "a.:28-560",
+    "a.:560-1158",
+    "b.:576-627",
+    "a.:1158-1748"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 3,
+   "band": false,
+   "textLen": 75521
+  },
+  "errs": []
+ },
+ {
+  "page": "about",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2907|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "5486|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2907,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3183,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 4,
+    "Barlow": 10
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2129
+  },
+  "errs": []
+ },
+ {
+  "page": "about",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2760|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp,gbm-sp-pre",
+   "5311|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-about,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2760,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3183,
+   "cls": "gbm-bc gbm-sp-about gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 4,
+    "Barlow": 10
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 0,
+   "h1": "GatorBait Media, Florida Gator News where you want it, when you want it.",
+   "band": true,
+   "textLen": 2129
+  },
+  "errs": []
+ },
+ {
+  "page": "contact",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2332|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp,gbm-sp-pre",
+   "4921|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2332,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 1933,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-contact gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 6
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": []
+ },
+ {
+  "page": "contact",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2179|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp,gbm-sp-pre",
+   "4754|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-contact,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2179,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 1933,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-contact gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 2,
+    "Barlow": 6
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-116-6397",
+    "a.:-116-370",
+    "a.:370-849",
+    "em.:384-424",
+    "a.:849-1385",
+    "em.:863-903"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 7,
+   "h1": "Contact Information",
+   "band": true,
+   "textLen": 1727
+  },
+  "errs": []
+ },
+ {
+  "page": "plans",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3422|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5978|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3422,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2760,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": []
+ },
+ {
+  "page": "plans",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2643|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5201|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-account-tight,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2643,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2760,
+   "cls": "gbm-bc gbm-account-tight gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-115-6398",
+    "a.:-115-370",
+    "a.:370-849",
+    "em.:384-425",
+    "a.:849-1386",
+    "em.:863-904"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": []
+ },
+ {
+  "page": "subscribe",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3134|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "5806|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3134,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2793,
+   "cls": "gbm-bc gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-115-6398",
+    "a.:-115-370",
+    "a.:370-849",
+    "em.:384-425",
+    "a.:849-1386",
+    "em.:863-904"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": []
+ },
+ {
+  "page": "subscribe",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4355|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp,gbm-sp-pre",
+   "6952|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-plans,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4355,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2793,
+   "cls": "gbm-bc gbm-sp-plans gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 19
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-116-6397",
+    "a.:-116-370",
+    "a.:370-849",
+    "em.:384-424",
+    "a.:849-1385",
+    "em.:863-903"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 3,
+   "forms": 2,
+   "h1": "Choose your pricing plan",
+   "band": true,
+   "textLen": 1134
+  },
+  "errs": []
+ },
+ {
+  "page": "policies",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2894|0|visible|B|H||gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre",
+   "3131|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4696|0|visible|B|H||gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "5213|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "5483|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2894,
+   "light": 0,
+   "band": true,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 7131,
+   "cls": "gbm-bc gbm-sp-policies gbm-sp gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-368",
+    "a.:368-847",
+    "em.:382-423",
+    "a.:847-1384",
+    "em.:861-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": []
+ },
+ {
+  "page": "policies",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2298|0|visible|B|H||gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre",
+   "2476|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4050|0|visible|B|H||gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4611|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-sp-pre,gbm-legal",
+   "4854|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-policies,gbm-sp,gbm-legal"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2298,
+   "light": 0,
+   "band": true,
+   "h1": ""
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 7131,
+   "cls": "gbm-bc gbm-sp-policies gbm-sp gbm-legal",
+   "fonts": {
+    "Barlow Condensed": 8,
+    "Barlow": 23
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 8,
+   "forms": 0,
+   "h1": "Policies & Subscriber Terms",
+   "band": true,
+   "textLen": 5697
+  },
+  "errs": []
+ },
+ {
+  "page": "tags",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3590|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp,gbm-sp-pre",
+   "6231|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 3590,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 5461,
+   "cls": "gbm-bc gbm-sp-light gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 13,
+    "Barlow": 24
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": []
+ },
+ {
+  "page": "tags",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4961|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp,gbm-sp-pre",
+   "7516|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4961,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 5461,
+   "cls": "gbm-bc gbm-sp-light gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 13,
+    "Barlow": 24
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 0,
+   "forms": 0,
+   "h1": "Item List",
+   "band": true,
+   "textLen": 401
+  },
+  "errs": []
+ },
+ {
+  "page": "groups",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "8499|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-app,gbm-sp,gbm-sp-pre",
+   "11000|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-app,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 8499,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3971,
+   "cls": "gbm-bc gbm-sp-app gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 1,
+    "Barlow": 37,
+    "roboto-bold": 35
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-125-6388",
+    "a.:-125-361",
+    "a.:361-840",
+    "em.:375-415",
+    "a.:840-1376",
+    "em.:854-894"
+   ],
+   "whiteBoxes": [
+    "div.kNbWGz 320x2918",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 10,
+   "forms": 27,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 1314
+  },
+  "errs": []
+ },
+ {
+  "page": "groups",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4049|0|none|B|H||gbm-bc,gbm-sp-app,gbm-sp,gbm-sp-pre",
+   "4188|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-app,gbm-sp,gbm-sp-pre",
+   "6650|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-app,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4188,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 3971,
+   "cls": "gbm-bc gbm-sp-app gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 1,
+    "Barlow": 37,
+    "roboto-bold": 35
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-124-6389",
+    "a.:-124-362",
+    "a.:362-840",
+    "em.:376-416",
+    "a.:840-1377",
+    "em.:854-895"
+   ],
+   "whiteBoxes": [
+    "div.kNbWGz 320x2918",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466",
+    "div.srKj3SP oW0lKH_---direction-8-vertical X 320x466"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 10,
+   "forms": 27,
+   "h1": "Groups Feed",
+   "band": true,
+   "textLen": 1314
+  },
+  "errs": []
+ },
+ {
+  "page": "search",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2708|0|none|B|H||gbm-bc,gbm-sp-light,gbm-sp,gbm-sp-pre",
+   "2775|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp,gbm-sp-pre",
+   "5289|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2775,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2645,
+   "cls": "gbm-bc gbm-sp-light gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 56
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-115-6398",
+    "a.:-115-370",
+    "a.:370-849",
+    "em.:384-425",
+    "a.:849-1386",
+    "em.:863-904"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 16,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 3037
+  },
+  "errs": []
+ },
+ {
+  "page": "search",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "4238|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp,gbm-sp-pre",
+   "6788|0|visible|B|H|Barlow Condensed/normal|gbm-bc,gbm-sp-light,gbm-sp"
+  ],
+  "flash": 0,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4238,
+   "light": 0,
+   "band": true,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2645,
+   "cls": "gbm-bc gbm-sp-light gbm-sp",
+   "fonts": {
+    "Barlow Condensed": 5,
+    "Barlow": 56
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-116-6397",
+    "a.:-116-370",
+    "a.:370-849",
+    "em.:384-424",
+    "a.:849-1385",
+    "em.:863-903"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 16,
+   "forms": 4,
+   "h1": "Search Results",
+   "band": true,
+   "textLen": 3037
+  },
+  "errs": []
+ },
+ {
+  "page": "cat",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2865|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre,gbm-lf-pre",
+   "2924|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lf-pre,gbm-lp-on,gbm-lp-hold",
+   "3133|1|visible|-|H|Barlow/italic|gbm-feed-pre,gbm-lp-on,gbm-lp-hold,gbm-lf-on"
+  ],
+  "flash": 3,
+  "flashLightMs": 268,
+  "firstVisible": {
+   "t": 2865,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2913,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+   "fonts": {
+    "Barlow": 58,
+    "Barlow Condensed": 18,
+    "futura-lt-w01-book": 1
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-368",
+    "a.:368-847",
+    "em.:382-423",
+    "a.:847-1384",
+    "em.:861-902"
+   ],
+   "whiteBoxes": [
+    "div.aq_u4p HcArW_ blog-post-category-backgro 314x68"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 67,
+   "forms": 12,
+   "h1": "Buddy's Blog",
+   "band": false,
+   "textLen": 2892
+  },
+  "errs": []
+ },
+ {
+  "page": "cat",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "3501|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre,gbm-lf-pre",
+   "3563|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lf-pre,gbm-lp-on,gbm-lp-hold",
+   "3809|1|visible|-|H|Barlow/italic|gbm-feed-pre,gbm-lp-on,gbm-lp-hold,gbm-lf-on"
+  ],
+  "flash": 3,
+  "flashLightMs": 308,
+  "firstVisible": {
+   "t": 3501,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 2913,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+   "fonts": {
+    "Barlow": 58,
+    "Barlow Condensed": 18,
+    "futura-lt-w01-book": 1
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-368",
+    "a.:368-847",
+    "em.:382-423",
+    "a.:847-1384",
+    "em.:861-902"
+   ],
+   "whiteBoxes": [
+    "div.aq_u4p HcArW_ blog-post-category-backgro 314x68"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 67,
+   "forms": 12,
+   "h1": "Buddy's Blog",
+   "band": false,
+   "textLen": 2892
+  },
+  "errs": []
+ },
+ {
+  "page": "latest",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2597|1|visible|-|H|Barlow Condensed/normal|gbm-lp-wait,gbm-feed-pre,gbm-lf-pre",
+   "2684|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lf-pre,gbm-lp-on,gbm-lp-hold",
+   "2819|1|visible|-|H|Barlow/italic|gbm-feed-pre,gbm-lp-on,gbm-lp-hold,gbm-lf-on"
+  ],
+  "flash": 3,
+  "flashLightMs": 222,
+  "firstVisible": {
+   "t": 2597,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 5081,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+   "fonts": {
+    "Barlow": 105,
+    "Barlow Condensed": 18,
+    "futura-lt-w01-book": 1
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [
+    "div.aq_u4p HcArW_ blog-post-homepage-backgro 314x68"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 85,
+   "forms": 12,
+   "h1": "Florida Gators Headlines",
+   "band": false,
+   "textLen": 7181
+  },
+  "errs": []
+ },
+ {
+  "page": "latest",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0,
+  "shifts": [],
+  "timeline": [
+   "2867|1|none|-|H||gbm-lp-wait,gbm-feed-pre,gbm-lf-pre",
+   "2944|1|visible|-|H|Barlow Condensed/normal|gbm-feed-pre,gbm-lf-pre,gbm-lp-on,gbm-lp-hold",
+   "3255|1|visible|-|H|Barlow/italic|gbm-feed-pre,gbm-lp-on,gbm-lp-hold,gbm-lf-on"
+  ],
+  "flash": 2,
+  "flashLightMs": 311,
+  "firstVisible": {
+   "t": 2944,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 5081,
+   "cls": "gbm-feed-pre gbm-lp-on gbm-lp-hold gbm-lf-on",
+   "fonts": {
+    "Barlow": 105,
+    "Barlow Condensed": 18,
+    "futura-lt-w01-book": 1
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-117-6396",
+    "a.:-117-369",
+    "a.:369-848",
+    "em.:383-424",
+    "a.:848-1384",
+    "em.:862-902"
+   ],
+   "whiteBoxes": [
+    "div.aq_u4p HcArW_ blog-post-homepage-backgro 314x68"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 85,
+   "forms": 12,
+   "h1": "Florida Gators Headlines",
+   "band": false,
+   "textLen": 7181
+  },
+  "errs": []
+ },
+ {
+  "page": "post",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.0637,
+  "shifts": [
+   {
+    "t": 7527,
+    "v": 0.0632,
+    "src": "#more-button-c2f9df16-fa65-4fa5-8bbd-446b5cf21357[204,24,204,24],p[504,25,423,25]"
+   }
+  ],
+  "timeline": [
+   "4033|1|visible|-|H|Barlow Condensed/italic|gbm-native-wide"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 4033,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/italic"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 4267,
+   "cls": "gbm-native-wide",
+   "fonts": {
+    "Barlow Condensed": 14,
+    "Barlow": 51
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-115-6398",
+    "a.:371-850",
+    "a.:850-1386",
+    "em.:864-905",
+    "a.:1386-1801",
+    "em.:1400-1441"
+   ],
+   "whiteBoxes": [
+    "div.HW6ttf 430x3415",
+    "a.gbm-kit-card 430x69",
+    "a.gbm-kit-card 430x69",
+    "a.gbm-kit-card 430x69",
+    "#gbc-story-end-e 249x44",
+    "a. 430x78",
+    "a. 430x78",
+    "a. 430x78"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 46,
+   "forms": 21,
+   "h1": "Florida is one win from bowl eligibility, with a bye before Georgia",
+   "band": false,
+   "textLen": 3587
+  },
+  "errs": []
+ },
+ {
+  "page": "post",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.0637,
+  "shifts": [
+   {
+    "t": 5843,
+    "v": 0.0632,
+    "src": "#more-button-c2f9df16-fa65-4fa5-8bbd-446b5cf21357[204,24,204,24],p[504,25,423,25]"
+   }
+  ],
+  "timeline": [
+   "2891|1|visible|-|H|Barlow Condensed/italic|gbm-native-wide"
+  ],
+  "flash": 1,
+  "flashLightMs": 0,
+  "firstVisible": {
+   "t": 2891,
+   "light": 1,
+   "band": false,
+   "h1": "Barlow Condensed/italic"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 4267,
+   "cls": "gbm-native-wide",
+   "fonts": {
+    "Barlow Condensed": 14,
+    "Barlow": 51
+   },
+   "lowContrast": [],
+   "wide": [
+    "div.sh-run:-115-6398",
+    "a.:371-850",
+    "a.:850-1386",
+    "em.:864-905",
+    "a.:1386-1801",
+    "em.:1400-1441"
+   ],
+   "whiteBoxes": [
+    "div.HW6ttf 430x3415",
+    "a.gbm-kit-card 430x69",
+    "a.gbm-kit-card 430x69",
+    "a.gbm-kit-card 430x69",
+    "#gbc-story-end-e 249x44",
+    "a. 430x78",
+    "a. 430x78",
+    "a. 430x78"
+   ],
+   "spBg": "rgba(0, 0, 0, 0)",
+   "bodyBg": "rgb(255, 255, 255)",
+   "links": 47,
+   "forms": 21,
+   "h1": "Florida is one win from bowl eligibility, with a bye before Georgia",
+   "band": false,
+   "textLen": 3587
+  },
+  "errs": []
+ },
+ {
+  "page": "home",
+  "w": "430",
+  "mode": "cold",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.046,
+  "shifts": [
+   {
+    "t": 6330,
+    "v": 0.023,
+    "src": "div[219,307,178,348],span[782,85,793,85]"
+   },
+   {
+    "t": 6443,
+    "v": 0.023,
+    "src": "div[178,348,219,307],span[793,85,782,85]"
+   }
+  ],
+  "timeline": [
+   "3639|1|visible|-|H|roboto-bold/normal|gbm-bc-wait",
+   "3715|1|visible|-|H|roboto-bold/normal|",
+   "3764|1|visible|-|H|Barlow/normal|",
+   "4023|0|visible|-|H|Barlow/normal|gbm-gazette-live,gbm-standalone-live"
+  ],
+  "flash": 3,
+  "flashLightMs": 384,
+  "firstVisible": {
+   "t": 3639,
+   "light": 1,
+   "band": false,
+   "h1": "roboto-bold/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 4654,
+   "cls": "gbm-gazette-live gbm-standalone-live",
+   "fonts": {},
+   "lowContrast": [],
+   "wide": [
+    "div.bc-trk:-194-9421",
+    "div.:-194-4613",
+    "a.:36-568",
+    "a.:568-1166",
+    "b.:584-635",
+    "a.:1166-1756"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 3,
+   "band": false,
+   "textLen": 75521
+  },
+  "errs": []
+ },
+ {
+  "page": "home",
+  "w": "430",
+  "mode": "warm",
+  "tag": "pre10m",
+  "http": 200,
+  "cls": 0.046,
+  "shifts": [
+   {
+    "t": 5551,
+    "v": 0.023,
+    "src": "div[219,307,178,348],span[782,85,793,85]"
+   },
+   {
+    "t": 5667,
+    "v": 0.023,
+    "src": "div[178,348,219,307],span[793,85,782,85]"
+   }
+  ],
+  "timeline": [
+   "2944|1|visible|-|H|roboto-bold/normal|gbm-bc-wait",
+   "3009|1|visible|-|H|roboto-bold/normal|",
+   "3055|1|visible|-|H|Barlow/normal|",
+   "3234|0|visible|-|H|Barlow/normal|gbm-gazette-live,gbm-standalone-live"
+  ],
+  "flash": 3,
+  "flashLightMs": 290,
+  "firstVisible": {
+   "t": 2944,
+   "light": 1,
+   "band": false,
+   "h1": "roboto-bold/normal"
+  },
+  "audit": {
+   "overflow": 0,
+   "scrollWidthMinusClient": 0,
+   "h": 4654,
+   "cls": "gbm-gazette-live gbm-standalone-live",
+   "fonts": {},
+   "lowContrast": [],
+   "wide": [
+    "div.bc-trk:-199-9416",
+    "div.:-199-4608",
+    "a.:31-563",
+    "a.:563-1161",
+    "b.:579-630",
+    "a.:1161-1751"
+   ],
+   "whiteBoxes": [],
+   "spBg": "rgb(255, 255, 255)",
+   "bodyBg": "rgb(11, 13, 18)",
+   "links": 2,
+   "forms": 3,
+   "band": false,
+   "textLen": 75521
+  },
+  "errs": []
+ }
+]

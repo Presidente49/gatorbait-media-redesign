@@ -11,3 +11,15 @@ deploy/dept-ideas/research/espn/
 # wrangler local state from department tests
 deploy/dept-ideas/**/.wrangler/
 deploy/dept-ideas/**/node_modules/
+
+# Generated local proofs and private runtime files must never enter public Git/Pages.
+build/
+scratchpad/
+*.runtime.json
+backups/crm/
+private/
+social/queue/
+social/sent/
+marketing/queue/
+marketing/outreach/
+deploy/customer-repair/*.json

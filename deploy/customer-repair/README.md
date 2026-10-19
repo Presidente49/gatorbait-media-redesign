@@ -1,3 +1,17 @@
+> **Private rollback boundary:** provider before/after/playback JSON snapshots are privately preserved outside public git and Pages. They are removed from the current tree; Git history and prior artifacts remain unresolved. Read fresh provider state before using a private rollback. The script below must use private input/output paths. Historical filenames below are provenance, not public links or current deployment instructions.
+
+Current private invocation (historical commands below predate this boundary):
+
+```sh
+python3 deploy/customer-repair/prepare-patch.py rollback <embed-id> \
+  --snapshot-dir /private/path/to/preserved-snapshots \
+  --current /private/path/to/fresh-provider-read.json \
+  --expected-revision <fresh-revision> \
+  --output /private/path/to/guarded-patch.json
+```
+
+The output is private mode 0600; no provider body is printed. Paths inside this public checkout are rejected. A prepared body does not authorize or execute a live PATCH.
+
 # Customer audit repair — September 28–29, 2026
 
 Owner: Brenden Martin. Request: dispatch the appropriate agents and fix the customer audit issues. One production writer: root ChatGPT controller. Webmaster and Broadcast Ops staged disjoint repairs from freshly read Wix objects. Existing work item: issue #34. Canonical site: `18fb3a4e-d7f6-414a-aeb9-3047db3ea115`.

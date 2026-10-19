@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
+      "excerpt": "Chris Spears on Florida's 82-76 overtime exhibition loss to Baylor in Jacksonville: a cold night from three, a bench gap and a late show of fight.",
+      "url": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+      "author": "Chris Spears",
+      "firstPublishedDate": "2026-10-19T03:26:08Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor"
+      }
+    },
+    {
       "title": "Florida is one win from bowl eligibility, with a bye before Georgia",
       "excerpt": "The Gators (5-2, 3-2 SEC) need six wins for a bowl game, have five games left and are off Oct. 24 before Georgia in Atlanta on Oct. 31.",
       "url": "https://www.gatorbaitmedia.com/post/florida-is-one-win-from-bowl-eligibility-with-a-bye-before-georgia",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Philo is the Florida quarterback at least for now"
-      }
-    },
-    {
-      "title": "Numbers Don't Lie",
-      "excerpt": "Florida and South Carolina were nearly even in first downs and yards, but the Gators lost 38-19. Eddie Gilley on the three turnovers and two short fields behind a statistical draw.",
-      "url": "https://www.gatorbaitmedia.com/post/numbers-don-t-lie",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-12T22:22:23Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_8c09fa34b35448a190b6988b94a45f5f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Numbers Don't Lie"
       }
     }
   ]

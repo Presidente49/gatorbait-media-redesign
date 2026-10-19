@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soft Signup Proof</title>
+<style>
+:root{--b:#0021A5;--o:#FA4616;--ink:#08132F;--bg:#fff;--mut:#4a5670;--rule:#d9deea}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#08132F;--ink:#f2f5fb;--mut:#aab4cc;--rule:#24325a}}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 17px/1.5 Barlow,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font-weight:800;font-size:30px;line-height:1.1;margin:0 0 6px}h2{font-weight:800;font-size:22px;margin:34px 0 8px;border-top:4px solid var(--o);padding-top:10px}
+.k{color:var(--o);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+code{background:rgba(0,33,165,.1);padding:1px 5px;font-size:.92em}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border-bottom:1px solid var(--rule);padding:6px 8px;text-align:left}
+.ok{color:#0a7a3b;font-weight:700}.warn{color:#b3361a;font-weight:700}
+img{max-width:100%;border:1px solid var(--rule)}.row{display:flex;gap:10px;flex-wrap:wrap}.row figure{margin:0;flex:1 1 200px}figcaption{font-size:13px;color:var(--mut)}
+ol li,ul li{margin:6px 0}
+</style></head><body><main>
+<div class="k">Proof only, Oct. 18, 2026 · nothing is live</div>
+<h1>Soft email signup for story pages</h1>
+<p>One small, dismissible strip after the third paragraph replaces the signup slide-up. It never blocks reading. It has no email box: it sends the reader to a Wix form that uses email confirmation.</p>
+
+<h2>The safest working method</h2>
+<p><b>A native Wix Forms form on its own page, with double opt-in on. Our strip only links to it.</b> Our code never creates a contact and never calls a Wix API.</p>
+<ul>
+<li><b>Verified (read-only, today):</b> form <code>GatorBait Email List</code> (<code>6babfee8</code>) is new Wix Forms, subscribe checkbox is required and unchecked by default, opt-in level <code>DOUBLE_CONFIRMATION</code> on EMAIL, spam filter <code>ADVANCED</code>. No Velo needed: it is the Subscribe field's "Enable double opt-in" toggle (Wix Help Center, updated Oct. 5), already on.</li>
+<li><b>What email confirmation does:</b> the contact is created with status <b>Subscription Pending</b> (API value <code>PENDING</code>) and Wix emails a "Confirm Subscription" link. The contact becomes SUBSCRIBED only after the click. No expiry.</li>
+<li><b>How an unconfirmed contact is kept out of sends:</b> by status. Pending is not SUBSCRIBED. Our audience gate (SUBSCRIBED + VALID or NOT_SET, no hold or Do Not Market, de-duplicated) already excludes it, and START-HERE section 7 already requires it. <span class="warn">One gap to close:</span> automation <code>fea566c1</code> adds the audience labels at submission, so a pending contact would carry them. I could not verify from Wix docs that a label-targeted send skips Pending contacts. Do not rely on the label; rely on the status gate, and give the new form its own automation that adds only a source label (step 2).</li>
+<li><b>Source label:</b> the public Forms schema has no label setting on the form, so the label comes from a native user automation (<code>addLabelsToContact</code>, the same pattern as <code>fea566c1</code>) on a duplicate form: <code>Source: Story Prompt</code>.</li>
+</ul>
+<h3>Why not the other ways</h3>
+<table>
+<tr><th>Option</th><th>Result</th></tr>
+<tr><td>Our JS posts to Wix with a visitor token (today's <code>capture.js</code>)</td><td><span class="warn">Rejected.</span> Anyone can make the same call from a script. The only bot defence is a keyword check in the browser (commit fc24650), which a direct call skips. This is the likely path of the Oct. 1 to 6 bot registrations (about 80 contacts). Likely, not proven.</td></tr>
+<tr><td>Email box in the strip that forwards to Wix</td><td>No documented public endpoint that accepts it without that same token. Not used.</td></tr>
+<tr><td>Link to <code>/SUBSCRIBE</code></td><td>Redirects to <code>/pricing-plans/subscribe</code> (paid plans). Wrong page.</td></tr>
+<tr><td>Wix site-member signup</td><td>Creates members, not subscribers. Not the goal.</td></tr>
+</table>
+<h3>What this cannot do</h3>
+<ul>
+<li>No signup inside the strip: one extra tap to the form page.</li>
+<li>It does not close the old API path. Removing the UI stops our code from using it; the form stays reachable by anyone with the public client ID. The form's spam filter and double opt-in are the only gates. Whether the ADVANCED filter stops script submissions is unproven (earlier note in <code>deploy/capture-2026/README.md</code>, item c).</li>
+<li>Member hiding is a browser guess (no Velo). See below.</li>
+<li>One label per form. The homepage hub module uses form <code>6babfee8</code> and keeps its own behaviour.</li>
+</ul>
+
+<h2>What renders the slide-up today</h2>
+<p>Not a Wix app. It is <code>#gbc-bar</code> from <code>sports-live/src/capture.js</code>, bundled in <code>sports-live/share.js</code> and loaded on <code>/post/</code> pages by embed <code>f285a38c</code> (Share) through <code>sports-live/current.json</code> (now <code>ebc6578</code>). It shows after 50% scroll or 45 s. The Embeds API list (read-only) is cut off by the tool's output cap after 7 of about 50 embeds; none of those 7 renders it. The identification rests on the repo source and the post-template notes (<code>deploy/post-template/README.md</code>), not on a full live embed read.</p>
+
+<h2>Measured on a local story page</h2>
+<p>Local copy of a story page with the live bundle at <code>ebc6578</code>. Screens: 390x844, 430x932, 1366x768, 1920x1080. All 4 sizes pass every check (<code>test.mjs</code>, <code>results.json</code>). Your 47% figure came from the live type audit; the local copy measures lower for the old bar, same fault.</p>
+<table>
+<tr><th>Screen</th><th>Old slide-up</th><th>New strip height</th><th>New strip on first screen</th></tr>
+<tr><td>390 x 844</td><td>228 px, 27.0% of screen</td><td>75 px, 8.9%</td><td>1.3%</td></tr>
+<tr><td>430 x 932</td><td>209 px, 22.4%</td><td>62 px, 6.7%</td><td>6.7%</td></tr>
+<tr><td>1366 x 768</td><td>209 px, 27.2%</td><td>68 px, 8.9%</td><td>0%</td></tr>
+<tr><td>1920 x 1080</td><td>209 px, 19.4%</td><td>68 px, 6.3%</td><td>6.3%</td></tr>
+</table>
+<p>The strip sits in the page flow, not fixed, so it cannot cover text. Worst case on a phone is under 9% of the screen.</p>
+<div class="row">
+<figure><img src="shots/before-390-slideup.png" alt="Old slide-up at 390"><figcaption>Old slide-up, 390</figcaption></figure>
+<figure><img src="shots/after-390-prompt.png" alt="New strip at 390"><figcaption>New strip, 390</figcaption></figure>
+</div>
+<div class="row">
+<figure><img src="shots/after-430-prompt.png" alt="New strip at 430"><figcaption>New strip, 430</figcaption></figure>
+<figure><img src="shots/after-1366-prompt.png" alt="New strip at 1366"><figcaption>New strip, 1366</figcaption></figure>
+<figure><img src="shots/after-1920-prompt.png" alt="New strip at 1920"><figcaption>New strip, 1920</figcaption></figure>
+</div>
+<p>Checks that pass at every size: Barlow only; orange #FA4616 and blue #0021A5; 44 px tap targets; no sideways scroll; time trap (nothing renders before a real input event and 2 s); close removes it and the choice is remembered 14 days; storage blocked still works and closes for that page view; simulated member never sees it; header heuristic hides it for a named account button and shows it for "Log In"; reduced motion has no animation; zero calls to Wix APIs.</p>
+
+<h2>Member hiding</h2>
+<ul>
+<li>Signal: the same one the live shell already uses. If the header's login button (<code>[data-testid="handle-button"]</code>, <code>.login-social-bar button</code>) shows anything other than log in, sign in or join, the reader is treated as signed in and the strip never renders.</li>
+<li>Also hidden: readers who signed up in this browser (<code>gbm-capture-joined</code>), who dismissed in the last 14 days, on posts under 5 real paragraphs, and anyone who already scrolled past the third paragraph.</li>
+<li>Limit: a member whose header has not drawn within the page's first moments, or a shell change, can still see it. The cost is one dismissible strip. Not proven on a real member session: I have no member login. Check it once with Brenden's account.</li>
+</ul>
+
+<h2>Apply steps (none done)</h2>
+<ol>
+<li><b>Brenden, Wix Editor, about 5 minutes.</b> Add a page <code>Get GatorBait free</code>, slug <code>get-gatorbait-free</code>, hidden from the menu, SEO "hide from search results". Add a Wix Forms element. First duplicate the form in Dashboard, Forms: name it <code>GatorBait Email List - Story Prompt</code>. Keep the unchecked consent box, double opt-in on, spam protection on. Thank-you message: "Check your inbox and tap Confirm. You are not on the list until you do." (The current form has no thank-you action.) Publish. This is a site publish: it needs Brenden's yes under START-HERE section 3.</li>
+<li><b>Jarvis, Wix Automations, one write recorded in #34.</b> New user-owned automation: trigger "form submitted" on the new form; action add label <code>Source: Story Prompt</code> only. No audience labels at submit. If Automations offers a "subscription confirmed" trigger, use it to add the audience labels there; if not, leave audience building to the existing status gate.</li>
+<li><b>Jarvis, story lane.</b> Claim "story-page embeds" in #34. Create one new embed <code>GBM - Soft Signup v1 (story pages)</code>: HEAD, ESSENTIAL, loadOnce false, enabled, body = <code>soft-signup.embed.html</code> (about 7 KB). Create, do not PATCH existing embeds (several are near the 15,000 cap). Read it back and compare the fingerprint. No site publish needed for an embed.</li>
+<li><b>Verify live at 390, 430, 1366.</b> A real story page: nothing before input; strip after the third paragraph; old bar gone; close sticks; Brenden's member account sees nothing; the link opens the form page. Then one real signup with Brenden's own address and his yes: contact shows Subscription Pending, becomes SUBSCRIBED after the click, carries <code>Source: Story Prompt</code>, and is absent from the audience until confirmed.</li>
+<li><b>Follow-up PR, Jarvis (story pages) plus an @Codex ask in #34 (homepage hub).</b> Remove <code>capture.js</code>'s submit path and the slide-up from <code>share.js</code>/<code>story-kit.js</code>, rebuild with <code>build-front-page.mjs --check</code>, advance <code>sports-live/current.json</code>. The homepage hub module is the Codex lane: ask, do not edit.</li>
+</ol>
+
+<h2>Rollback</h2>
+<ul>
+<li>Strip off, old bar back: disable the new embed (re-send category ESSENTIAL). The old behaviour returns because the hiding CSS lives in the same embed.</li>
+<li>Page: unpublish or delete <code>/get-gatorbait-free</code>. Form copy: disable it. Automation: switch it off (Brenden's call under section 3 only if it counts as an automation switch).</li>
+<li>No existing embed, form or automation is changed by steps 1 to 4.</li>
+</ul>
+
+<h2>What Brenden must decide</h2>
+<ol>
+<li><b>Yes to the one Editor step and the site publish.</b> Recommendation: yes. It is the only way to get a public, double opt-in form without code that anyone can script.</li>
+<li><b>Accept one extra tap</b> (no email box in the strip) in exchange for closing our own bot path. Recommendation: accept.</li>
+</ol>
+<p><span class="k">Unverified</span> · live member behaviour; whether Wix skips Pending contacts in label-targeted sends; whether the ADVANCED spam filter blocks script submissions; the full list of live embeds (output capped).</p>
+</main></body></html>

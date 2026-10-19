@@ -1,0 +1,90 @@
+<!-- GBM_SOFT_SIGNUP_V1 proof 2026-10-18 | route /post/ only | NOT LIVE | no form, no network call, no Wix API -->
+<style id="gbm-soft-signup-css">
+/* Retire the old direct-submit prompts on story pages (they stay in the bundle until the follow-up PR removes them). */
+html body #gbc-bar,html body [data-gbm-capture="story-end"],html body [data-gbm-capture="story-inline"]{display:none!important}
+html body .gss{box-sizing:border-box;display:flex;align-items:center;gap:10px;margin:22px 0;padding:10px 4px 10px 14px;background:#0021A5;border-top:4px solid #FA4616;color:#fff!important;font-family:Barlow,sans-serif!important;letter-spacing:0;text-transform:none}
+html body .gss *{box-sizing:border-box;font-family:Barlow,sans-serif!important;text-transform:none!important;letter-spacing:0!important}
+html body .gss .gss-m{flex:1 1 auto;min-width:0}
+html body .gss .gss-t{display:block;color:#fff!important;font-weight:800;font-size:19px;line-height:1.1}
+html body .gss .gss-n{display:block;color:#fff!important;opacity:.9;font-weight:500;font-size:13px;line-height:1.25;margin-top:3px}
+html body .gss a.gss-b{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;background:#FA4616;color:#08132F!important;font-weight:800;font-size:16px;text-decoration:none!important;border:0;border-radius:0}
+html body .gss a.gss-b:hover,html body .gss a.gss-b:focus-visible{background:#fff;outline:2px solid #FA4616;outline-offset:2px}
+html body .gss button.gss-x{flex:0 0 44px;width:44px;height:44px;margin:0;padding:0;border:0;background:transparent;color:#fff!important;font-weight:700;font-size:26px;line-height:1;cursor:pointer}
+html body .gss button.gss-x:hover,html body .gss button.gss-x:focus-visible{outline:2px solid #FA4616;background:rgba(255,255,255,.12)}
+@media(max-width:600px){html body .gss{padding:7px 0 7px 12px;margin:18px 0;gap:8px}html body .gss .gss-t{font-size:18px}html body .gss .gss-n{font-size:12px;margin-top:2px}html body .gss a.gss-b{padding:0 12px;font-size:15px}}
+@media(min-width:751px){html body .gss{max-width:740px;margin-left:auto;margin-right:auto;padding-left:18px}html body .gss .gss-t{font-size:22px}}
+</style>
+<script id="gbm-soft-signup-js">
+(function () {
+  if (window.__GBM_SOFT_SIGNUP__) return; window.__GBM_SOFT_SIGNUP__ = 1;
+  var CFG = window.__GBM_SOFT_CFG__ || {};
+  var FORM_URL = CFG.url || '/get-gatorbait-free';       // Wix page that holds the double opt-in form (apply step 1)
+  var MIN_MS = CFG.minMs == null ? 2000 : CFG.minMs;     // time trap: nothing is rendered before this
+  var AFTER = 3, MIN_PARAS = 5, DAYS = 14;
+  var K = 'gbm-soft-signup-dismissed', K_JOINED = 'gbm-capture-joined';
+  var t0 = Date.now(), human = false, box = null, done = false, memDismissed = false, obs = null;
+
+  function path() { return location.pathname; }
+  function onPost() { return path().indexOf('/post/') === 0; }
+  function lget(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lput(k, v) { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } }
+  function sget(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+  function sput(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
+  function quiet() {
+    if (memDismissed || sget(K)) return true;                       // storage-blocked fallback: this tab only
+    var v = Number(lget(K)); if (v && Date.now() - v < DAYS * 864e5) return true;
+    return !!lget(K_JOINED);                                        // already signed up here
+  }
+  function norm(s) { return String(s || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
+  // Same signal the live shell uses: a member's header button shows a name, not "log in".
+  function signedIn() {
+    if (CFG.member != null) return !!CFG.member;
+    var h = document.getElementById('SITE_HEADER'); if (!h) return false;
+    var b = h.querySelectorAll('[data-testid="handle-button"],.wixui-login-social-bar button,.login-social-bar button');
+    for (var i = 0; i < b.length; i++) { var t = norm(b[i].innerText || b[i].getAttribute('aria-label')); if (t && !/(log in|login|sign in|sign up|join)/.test(t)) return true; }
+    return false;
+  }
+  function paras() {
+    return [].slice.call(document.querySelectorAll('[data-hook=post-description] p')).filter(function (p) {
+      return !p.closest('blockquote,figcaption,[data-gbm-stat],.gss,[data-gbm-capture]') && (p.textContent || '').trim().length >= 60;
+    });
+  }
+  function ping(outcome) {
+    try { document.dispatchEvent(new CustomEvent('gbm:softsignup', { detail: { outcome: outcome } })); } catch (e) {}
+    try { (window.dataLayer = window.dataLayer || []).push({ event: 'gbm_soft_signup', gbm_soft_signup_outcome: outcome }); } catch (e) {}
+  }
+  function build() {
+    var d = document.createElement('div'); d.className = 'gss'; d.setAttribute('role', 'region'); d.setAttribute('aria-label', 'GatorBait email signup');
+    d.innerHTML = '<div class="gss-m"><span class="gss-t">Get GatorBait free in your inbox</span><span class="gss-n">Confirm by email. Unsubscribe anytime.</span></div>' +
+      '<a class="gss-b" rel="noopener">Sign up</a><button type="button" class="gss-x" aria-label="Close signup prompt">×</button>';
+    d.querySelector('.gss-b').href = FORM_URL;           // set only after the reveal gate, never in static HTML
+    d.querySelector('.gss-b').addEventListener('click', function () { ping('click'); });
+    d.querySelector('.gss-x').addEventListener('click', function () {
+      done = true; memDismissed = true; sput(K, '1'); lput(K, String(Date.now()));
+      if (box && box.parentNode) box.parentNode.removeChild(box); if (obs) obs.disconnect(); ping('dismiss');
+    });
+    return d;
+  }
+  function place() {
+    if (done || !onPost() || quiet() || signedIn()) return false;
+    var ps = paras(); if (ps.length < MIN_PARAS) return false;
+    var a = ps[AFTER - 1], host = a.closest('[data-breakout]') || a;
+    if (box && box.isConnected) return true;
+    if (!box) { if (host.getBoundingClientRect().bottom < 0) return false; box = build(); }   // reader already scrolled past: stay quiet
+    host.insertAdjacentElement('afterend', box); return true;
+  }
+  function ready() { return human && Date.now() - t0 >= MIN_MS; }
+  function attempt() {
+    if (done || !ready()) return;
+    if (place() && !box.__shown) { box.__shown = 1; ping('shown'); }
+  }
+  ['pointerdown', 'touchstart', 'keydown', 'wheel'].forEach(function (e) { addEventListener(e, function () { human = true; }, { passive: true, once: true }); });
+  addEventListener('scroll', function () { if (scrollY > 0) human = true; }, { passive: true });
+  var tick = setInterval(attempt, 500);
+  setTimeout(function () { clearInterval(tick); }, 25000);       // bounded: no permanent polling
+  function watch() {   // survives the Wix hydration wipe; bounded to 25 s
+    try { obs = new MutationObserver(function () { if (box && !box.isConnected && !done) attempt(); }); obs.observe(document.body, { childList: true, subtree: true }); setTimeout(function () { obs.disconnect(); }, 25000); } catch (e) {}
+  }
+  if (document.body) watch(); else document.addEventListener('DOMContentLoaded', watch, { once: true });
+})();
+</script>

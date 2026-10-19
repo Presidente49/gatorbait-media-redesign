@@ -1,0 +1,18 @@
+[
+  {
+    "path": "all-gator-sports",
+    "error": "HTTP Error 503: Service Unavailable"
+  },
+  {
+    "path": "the-swamp-lounge",
+    "error": "HTTP Error 503: Service Unavailable"
+  },
+  {
+    "path": "the-insider-board",
+    "error": "HTTP Error 503: Service Unavailable"
+  },
+  {
+    "path": "gatorbait-gold-vip-lounge",
+    "error": "HTTP Error 503: Service Unavailable"
+  }
+]

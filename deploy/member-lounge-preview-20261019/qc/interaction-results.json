@@ -1,0 +1,346 @@
+[
+  {
+    "width": 390,
+    "controls": [
+      {
+        "card": 0,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 1,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 2,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 3,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 4,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 5,
+        "clickToggled": true,
+        "keyboardToggled": true
+      }
+    ],
+    "expanded": {
+      "overflow": 0,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "GatorBait Texas postgame magazine, Beating Texas. Photo courtesy UAA and Hannah White."
+        },
+        {
+          "loaded": true,
+          "alt": "Through the Lens with Chris Spears: Florida-Baylor basketball photo-gallery artwork. Photo by Chris Spears, GatorBait Media."
+        }
+      ],
+      "summaryHeights": [
+        98,
+        98,
+        98,
+        98,
+        98,
+        98
+      ],
+      "font": "Barlow, sans-serif",
+      "preview": true,
+      "publicPdf": true,
+      "creditLinks": true,
+      "destinations": [
+        "https://www.gatorbaitmedia.com/",
+        "https://www.gatorbaitmedia.com/account/my-account",
+        "https://www.gatorbaitmedia.com/group/gator-football-talk/discussion",
+        "https://www.gatorbaitmedia.com/group/game-day-threads/discussion",
+        "https://www.gatorbaitmedia.com/group/recruiting-central/discussion",
+        "https://www.gatorbaitmedia.com/group/gator-hoops/discussion",
+        "https://www.gatorbaitmedia.com/group/all-gator-sports/discussion",
+        "https://www.gatorbaitmedia.com/group/the-swamp-lounge/discussion",
+        "https://www.gatorbaitmedia.com/group/the-insider-board/discussion",
+        "https://www.gatorbaitmedia.com/group/gatorbait-gold-vip-lounge/discussion",
+        "https://www.gatorbaitmedia.com/groups",
+        "https://www.gatorbaitmedia.com/magazine",
+        "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_1c595c67708e4a42bf6b8508a4a4b5a8.pdf",
+        "https://floridagators.com/",
+        "https://www.instagram.com/hannahmorganphoto/",
+        "https://floridagators.com/galleries",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-basketball",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-recruiting",
+        "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+        "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+        "https://www.gatorbaitmedia.com/contact"
+      ]
+    },
+    "failed": []
+  },
+  {
+    "width": 430,
+    "controls": [
+      {
+        "card": 0,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 1,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 2,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 3,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 4,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 5,
+        "clickToggled": true,
+        "keyboardToggled": true
+      }
+    ],
+    "expanded": {
+      "overflow": 0,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "GatorBait Texas postgame magazine, Beating Texas. Photo courtesy UAA and Hannah White."
+        },
+        {
+          "loaded": true,
+          "alt": "Through the Lens with Chris Spears: Florida-Baylor basketball photo-gallery artwork. Photo by Chris Spears, GatorBait Media."
+        }
+      ],
+      "summaryHeights": [
+        98,
+        98,
+        98,
+        98,
+        98,
+        98
+      ],
+      "font": "Barlow, sans-serif",
+      "preview": true,
+      "publicPdf": true,
+      "creditLinks": true,
+      "destinations": [
+        "https://www.gatorbaitmedia.com/",
+        "https://www.gatorbaitmedia.com/account/my-account",
+        "https://www.gatorbaitmedia.com/group/gator-football-talk/discussion",
+        "https://www.gatorbaitmedia.com/group/game-day-threads/discussion",
+        "https://www.gatorbaitmedia.com/group/recruiting-central/discussion",
+        "https://www.gatorbaitmedia.com/group/gator-hoops/discussion",
+        "https://www.gatorbaitmedia.com/group/all-gator-sports/discussion",
+        "https://www.gatorbaitmedia.com/group/the-swamp-lounge/discussion",
+        "https://www.gatorbaitmedia.com/group/the-insider-board/discussion",
+        "https://www.gatorbaitmedia.com/group/gatorbait-gold-vip-lounge/discussion",
+        "https://www.gatorbaitmedia.com/groups",
+        "https://www.gatorbaitmedia.com/magazine",
+        "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_1c595c67708e4a42bf6b8508a4a4b5a8.pdf",
+        "https://floridagators.com/",
+        "https://www.instagram.com/hannahmorganphoto/",
+        "https://floridagators.com/galleries",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-basketball",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-recruiting",
+        "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+        "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+        "https://www.gatorbaitmedia.com/contact"
+      ]
+    },
+    "failed": []
+  },
+  {
+    "width": 1366,
+    "controls": [
+      {
+        "card": 0,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 1,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 2,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 3,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 4,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 5,
+        "clickToggled": true,
+        "keyboardToggled": true
+      }
+    ],
+    "expanded": {
+      "overflow": 0,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "GatorBait Texas postgame magazine, Beating Texas. Photo courtesy UAA and Hannah White."
+        },
+        {
+          "loaded": true,
+          "alt": "Through the Lens with Chris Spears: Florida-Baylor basketball photo-gallery artwork. Photo by Chris Spears, GatorBait Media."
+        }
+      ],
+      "summaryHeights": [
+        107,
+        107,
+        107,
+        107,
+        107,
+        107
+      ],
+      "font": "Barlow, sans-serif",
+      "preview": true,
+      "publicPdf": true,
+      "creditLinks": true,
+      "destinations": [
+        "https://www.gatorbaitmedia.com/",
+        "https://www.gatorbaitmedia.com/account/my-account",
+        "https://www.gatorbaitmedia.com/group/gator-football-talk/discussion",
+        "https://www.gatorbaitmedia.com/group/game-day-threads/discussion",
+        "https://www.gatorbaitmedia.com/group/recruiting-central/discussion",
+        "https://www.gatorbaitmedia.com/group/gator-hoops/discussion",
+        "https://www.gatorbaitmedia.com/group/all-gator-sports/discussion",
+        "https://www.gatorbaitmedia.com/group/the-swamp-lounge/discussion",
+        "https://www.gatorbaitmedia.com/group/the-insider-board/discussion",
+        "https://www.gatorbaitmedia.com/group/gatorbait-gold-vip-lounge/discussion",
+        "https://www.gatorbaitmedia.com/groups",
+        "https://www.gatorbaitmedia.com/magazine",
+        "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_1c595c67708e4a42bf6b8508a4a4b5a8.pdf",
+        "https://floridagators.com/",
+        "https://www.instagram.com/hannahmorganphoto/",
+        "https://floridagators.com/galleries",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-basketball",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-recruiting",
+        "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+        "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+        "https://www.gatorbaitmedia.com/contact"
+      ]
+    },
+    "failed": []
+  },
+  {
+    "width": 1920,
+    "controls": [
+      {
+        "card": 0,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 1,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 2,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 3,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 4,
+        "clickToggled": true,
+        "keyboardToggled": true
+      },
+      {
+        "card": 5,
+        "clickToggled": true,
+        "keyboardToggled": true
+      }
+    ],
+    "expanded": {
+      "overflow": 0,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "GatorBait Texas postgame magazine, Beating Texas. Photo courtesy UAA and Hannah White."
+        },
+        {
+          "loaded": true,
+          "alt": "Through the Lens with Chris Spears: Florida-Baylor basketball photo-gallery artwork. Photo by Chris Spears, GatorBait Media."
+        }
+      ],
+      "summaryHeights": [
+        107,
+        107,
+        107,
+        107,
+        107,
+        107
+      ],
+      "font": "Barlow, sans-serif",
+      "preview": true,
+      "publicPdf": true,
+      "creditLinks": true,
+      "destinations": [
+        "https://www.gatorbaitmedia.com/",
+        "https://www.gatorbaitmedia.com/account/my-account",
+        "https://www.gatorbaitmedia.com/group/gator-football-talk/discussion",
+        "https://www.gatorbaitmedia.com/group/game-day-threads/discussion",
+        "https://www.gatorbaitmedia.com/group/recruiting-central/discussion",
+        "https://www.gatorbaitmedia.com/group/gator-hoops/discussion",
+        "https://www.gatorbaitmedia.com/group/all-gator-sports/discussion",
+        "https://www.gatorbaitmedia.com/group/the-swamp-lounge/discussion",
+        "https://www.gatorbaitmedia.com/group/the-insider-board/discussion",
+        "https://www.gatorbaitmedia.com/group/gatorbait-gold-vip-lounge/discussion",
+        "https://www.gatorbaitmedia.com/groups",
+        "https://www.gatorbaitmedia.com/magazine",
+        "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_1c595c67708e4a42bf6b8508a4a4b5a8.pdf",
+        "https://floridagators.com/",
+        "https://www.instagram.com/hannahmorganphoto/",
+        "https://floridagators.com/galleries",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-football",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-basketball",
+        "https://www.gatorbaitmedia.com/gatorbait-media-blogs/categories/gator-recruiting",
+        "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+        "https://www.gatorbaitmedia.com/the-buddy-martin-show",
+        "https://www.gatorbaitmedia.com/contact"
+      ]
+    },
+    "failed": []
+  }
+]

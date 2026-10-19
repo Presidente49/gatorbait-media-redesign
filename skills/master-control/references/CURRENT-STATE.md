@@ -473,3 +473,12 @@ Every Claude/Codex/ChatGPT GatorBait session should:
 Historical chats, branches and dated snapshots are evidence. Live state establishes facts; START-HERE and current owner instructions establish authorization.
 
 
+
+
+## Oct. 19 — board-first lounge and funnel review
+
+Public-content preview now has six keyboard-operable panels with native message-board destinations first. `deploy/member-lounge-preview-20261019/research/` compares free repos and public membership examples; no external backend installed. `deploy/member-funnel-plan-20261019/` is the source-backed signup/nurture/Spaces plan, not live. All four target widths passed local preview interactions and overflow checks. Proposed hub route is `/magazine`; preserve the already-public Texas issue/PDF and valid trials/access/comps. Paid future issues require native/server entitlement and protected delivery.
+
+Fresh provider read: welcome `f92399d4-6ed6-4b92-84dc-610f56341120` rev4 remains INACTIVE with `sendToUnsubscribed=false` (was true). Full validation VALID, PATCH200, independent readback matched. Expiry `50605508-766c-45b9-8af4-03f3b5fb1efb` remains rev2 INACTIVE at1WEEKS;3DAYS candidate validated but PATCH403 `TRIGGER_CONFIGURATION_MODIFICATION_DISABLED_EXCEPTION`. No retry/workaround; inspect native dashboard controls. No activation/sends/access/prices/site publish. Existing active payment recovery preserved.
+
+Muse public audit: old pricing placeholders and visible duplicate prices absent; checkout unobserved. All News sometimes falls back to older layout; subsequent diagnostics hit environment-wide503s, so do not attribute all fallback behavior to a production code defect or extend timeout without evidence. Native Editor/Spaces installation remains blocked on existing Mac access; Codex/Jarvis integration is separately parked.

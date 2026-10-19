@@ -1,0 +1,551 @@
+[
+  {
+    "trace": {
+      "flags": [
+        {
+          "key": "__GBM_LF_BOOT__",
+          "value": 1,
+          "at": 3675.5,
+          "stack": null
+        },
+        {
+          "key": "__GBM_LF_RSS__",
+          "value": "Promise",
+          "at": 3677.2999999970198,
+          "stack": null
+        },
+        {
+          "key": "__GBM_LF_FAIL__",
+          "value": 1,
+          "at": 3896.5,
+          "stack": "Error\n    at set (<anonymous>:5:209)\n    at HTMLScriptElement.off (https://www.gatorbaitmedia.com/gatorbait-media-blogs?muse_lf_trace=20261019-1366-0:1386:33)"
+        },
+        {
+          "key": "__GBM_LF_FAIL__",
+          "value": 1,
+          "at": 6177.60000000149,
+          "stack": "Error\n    at set (<anonymous>:5:209)\n    at off (https://www.gatorbaitmedia.com/gatorbait-media-blogs?muse_lf_trace=20261019-1366-0:1386:33)\n    at https://www.gatorbaitmedia.com/gatorbait-media-blogs?muse_lf_trace=20261019-1366-0:1387:43"
+        }
+      ],
+      "dom": [
+        {
+          "lf": false,
+          "fr": false,
+          "native": 0,
+          "pre": false,
+          "on": false,
+          "at": 3539.7000000029802
+        },
+        {
+          "lf": false,
+          "fr": false,
+          "native": 0,
+          "pre": true,
+          "on": false,
+          "at": 3739.5
+        },
+        {
+          "lf": false,
+          "fr": true,
+          "native": 12,
+          "pre": true,
+          "on": false,
+          "at": 3869.39999999851
+        },
+        {
+          "lf": false,
+          "fr": true,
+          "native": 12,
+          "pre": false,
+          "on": false,
+          "at": 3939.60000000149
+        }
+      ],
+      "events": [
+        {
+          "name": "DOMContentLoaded",
+          "at": 4124.29999999702
+        },
+        {
+          "name": "load",
+          "at": 4256.70000000298
+        }
+      ],
+      "rss": {
+        "at": 4244.70000000298,
+        "length": 0,
+        "hasItems": false
+      }
+    },
+    "flags": {
+      "__GBM_LF_BOOT__": 1,
+      "__GBM_LF__": null,
+      "__GBM_LF_FAIL__": 1,
+      "__GBM_LF_OK__": null
+    },
+    "resources": [
+      {
+        "name": "https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-800-normal.woff2",
+        "start": 3432.10000000149,
+        "duration": 103.5,
+        "responseEnd": 3535.60000000149,
+        "initiator": "link"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-700-normal.woff2",
+        "start": 3432.2999999970198,
+        "duration": 132.30000000447035,
+        "responseEnd": 3564.60000000149,
+        "initiator": "link"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.3.0/files/barlow-latin-700-normal.woff2",
+        "start": 3434.2999999970198,
+        "duration": 126.5,
+        "responseEnd": 3560.7999999970198,
+        "initiator": "link"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/barlow/v13/7cHpv4kjgoGqM7E_DMs5.woff2",
+        "start": 3434.39999999851,
+        "duration": 119.10000000149012,
+        "responseEnd": 3553.5,
+        "initiator": "link"
+      },
+      {
+        "name": "https://fonts.gstatic.com/s/barlow/v13/7cHqv4kjgoGqM7E3t-4s51os.woff2",
+        "start": 3434.39999999851,
+        "duration": 137.80000000447035,
+        "responseEnd": 3572.2000000029802,
+        "initiator": "link"
+      },
+      {
+        "name": "https://www.gatorbaitmedia.com/blog-feed.xml?gbmlf=1792425372453",
+        "start": 3677.2999999970198,
+        "duration": 566.9000000059605,
+        "responseEnd": 4244.20000000298,
+        "initiator": "fetch"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@f41f7d56b729cbb020d3b9a16a3c8e9d2cecde3c/sports-live/latest-feed.js",
+        "start": 3677.5,
+        "duration": 195.39999999850988,
+        "responseEnd": 3872.89999999851,
+        "initiator": "script"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-900-italic.woff2",
+        "start": 3792.39999999851,
+        "duration": 295.3999999985099,
+        "responseEnd": 4087.7999999970198,
+        "initiator": "css"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/@fontsource/barlow-condensed@5.3.0/files/barlow-condensed-latin-800-italic.woff2",
+        "start": 3792.60000000149,
+        "duration": 296.1000000014901,
+        "responseEnd": 4088.7000000029802,
+        "initiator": "css"
+      },
+      {
+        "name": "https://cdn.jsdelivr.net/npm/@fontsource/barlow@5.3.0/files/barlow-latin-400-normal.woff2",
+        "start": 3818.89999999851,
+        "duration": 273.80000000447035,
+        "responseEnd": 4092.7000000029802,
+        "initiator": "css"
+      },
+      {
+        "name": "https://www.gatorbaitmedia.com/blog-feed.xml",
+        "start": 5457.5,
+        "duration": 190.5,
+        "responseEnd": 5648,
+        "initiator": "fetch"
+      }
+    ],
+    "bootText": "(function(){var w=window,d=document.documentElement,F=/^\\/gatorbait-media-blogs(\\/|$)/;\nif(!w.__GBM_LF_CLK__){w.__GBM_LF_CLK__=1;document.addEventListener('click',function(e){if(F.test(location.pathname)||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;var a=e.target&&e.target.closest&&e.target.closest('a[href]');if(!a||a.target==='_blank')return;var u;try{u=new URL(a.href,location.href)}catch(x){return}if(u.origin===location.origin&&F.test(u.pathname)){e.preventDefault();e.stopPropagation();location.assign(u.href)}},true)}\nif(!F.test(location.pathname)||w.__GBM_LF_BOOT__)return;w.__GBM_LF_BOOT__=1;\nd.classList.add('gbm-lf-pre');\nvar vw=d.clientWidth;if(vw>300)d.style.setProperty('--lf-vw',vw+'px');\ntry{w.__GBM_LF_RSS__=fetch('/blog-feed.xml?gbmlf='+Date.now(),{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text()}).catch(function(){return''})}catch(e){}\nfunction off(){w.__GBM_LF_FAIL__=1;d.classList.remove('gbm-lf-pre','gbm-lf-on')}\nsetTimeout(function(){if(!w.__GBM_LF_OK__)off()},2500);\nvar s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@f41f7d56b729cbb020d3b9a16a3c8e9d2cecde3c/sports-live/latest-feed.js';s.async=true;s.onerror=off;(document.head||d).appendChild(s)})();",
+    "width": 1366,
+    "console": [],
+    "errors": [],
+    "httpErrors": [
+      {
+        "status": 503,
+        "url": "https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap"
+      },
+      {
+        "status": 503,
+        "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@35d9588c245abb26a8584241ff10e198ea1a9925/deploy/uniform-flash-20261018/site-shell.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.d189c0b1.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MultiStateBox].baf28035.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[SkipToContentButton].c9649c22.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[Container_ResponsiveBox].ce566e07.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_7.c472a333.chunk.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap-responsive.4e8a21db.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[RefComponent].98cd6e5f.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[ClassicSection].698c66d5.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[StripColumnsContainer_Default].228b4bbf.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap-classic.95bff5e0.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[Container_DefaultAreaSkin].69073092.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_bootstrap.674e7dbc.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[AppWidget_Responsive].00874df4.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[ImageX].cb16f202.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[FooterContainer_DefaultWithFillLayers].ce8f195b.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt_menu.28ac9b1a.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.d1b87f2e.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[LoginSocialBar].89083617.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/communities-blog-ooi/1.3374.0/BlogViewerWidget.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/communities-blog-ooi/1.3374.0/client-viewer/post-list-pro-gallery.chunk.min.css"
+      },
+      {
+        "status": 503,
+        "url": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397-c3a5ddb27a97%22%3A%22440%22%2C%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%22%3A%22328%22%2C%22b976560c-3122-4351-878f-453f337b7245%22%3A%221358%22%2C%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%3A%221684%22%2C%229a5d83fd-8570-482e-81ab-cfa88942ee60%22%3A%224207%22%2C%22b278a256-2757-4f19-9313-c05c783bec92%22%3A%222377%22%2C%22869a50c8-dd38-4324-b201-e33dc0747a5f%22%3A%226%22%2C%221052fa8e-e3e2-46dc-ab66-8badb2d08fe9%22%3A%22844%22%2C%2214bcded7-0066-7c35-14d7-466cb3f09103%22%3A%221335%22%2C%221522827f-c56c-a5c9-2ac9-00f9e6ae12d3%22%3A%221903%22%2C%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%227479d596-137c-4fa3-89cd-d7091042ba61%22%3A%22132%22%7D&appDefinitionIdsWithCustomCss=%5B%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%22%2C%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%2C%229a5d83fd-8570-482e-81ab-cfa88942ee60%22%5D&beckyExperiments=.DDMenuMigrateCssCarmiMapper%2C.EnableCustomCSSVarsForLoginSocialBar%2C.customImageDomain%2C.resolveSpxWithoutEditorCheck%2C.vsm_shapes%2CpreserveEmptyCustomPropertiesInCss&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=text%2Fcss&deviceType=Desktop&dfCk=6&dfVersion=1.5650.0&editorName=Unknown&experiments=dm_migrateOldHoverBoxToNewFixer&fileId=0f39d38c.bundle.min&formFactor=desktop&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isHttps=true&isInSeo=true&isPremiumDomain=true&isUrlMigrated=true&isWixCodeOnPage=true&isWixCodeOnSite=true&language=en&locale=en-us&metaSiteId=18fb3a4e-d7f6-414a-aeb9-3047db3ea115&module=thunderbolt-css&ooiVersions=0dc35cb9-8450-4a6c-b3be-f5923ef09d24%253Dp.sm-forms-app%252F1.624.0%252FLoginViewerWidgetNoCss.%253B12950d4e-a82f-4625-8b0c-305be20dfcc6%253Dp.sm-forms-app%252F1.624.0%252FSignupViewerWidgetNoCss.%253B1380bbab-4da3-36b0-efb4-2e0599971d14%253Dp.wixstores-client-cart-ooi%252F1.6436.0%252FcartViewerWidgetNoCss.%253B1380bbb4-8df0-fd38-a235-88821cf3f8a4%253Dp.wixstores-client-thank-you-page-ooi%252F1.3525.0%252FthankYouPageViewerWidgetNoCss.%253B13a94f09-2766-3c40-4a32-8edb5acdd8bc%253Dp.wixstores-client-product-page%252F1.4422.0%252FProductPageViewerWidgetNoCss.%253B14c1462a-97f2-9f6a-7bb7-f5541f23caa6%253Dp.communities-blog-ooi%252F1.3374.0%252FBlogViewerWidgetNoCss.%253B14d2abc2-5350-6322-487d-8c16ff833c8a%253Dp.events-details-page%252F1.1008.0%252Fdetails-pageViewerWidgetNoCss.%253B14dbefb9-3b7b-c4e9-53e8-766defd30587%253Dp.members-about-ooi%252F1.2715.0%252FProfileViewerWidgetNoCss.%253B14dd1af6-3e02-63db-0ef2-72fbc7cc3136%253Dp.my-account-ooi%252F1.2862.0%252FMyAccountViewerWidgetNoCss.%253B14fd5970-8072-c276-1246-058b79e70c1a%253Dp.ecom-platform-checkout%252F1.7384.0%252FCheckoutViewerWidgetNoCss.%253B15293875-09d7-6913-a093-084a9b6ae7f4%253Dp.pricing-plans-tpa%252F1.5450.0%252FPackagePickerViewerWidgetNoCss.%253B211b5287-14e2-4690-bb71-525908938c81%253Dp.communities-blog-ooi%252F1.3374.0%252FPostViewerWidgetNoCss.%253B29ad290c-8529-4204-8fcf-41ef46e0d3b0%253Dp.events-viewer%252F1.4348.0%252FscheduleViewerWidgetNoCss.%253B39e69c4a-e7f1-44b4-94a2-02714a9469a1%253Dp.pricing-plans-tpa%252F1.5450.0%252FPaywallViewerWidgetNoCss.%253B405eb115-a694-4e2b-abaa-e4762808bb93%253Dp.events-viewer%252F1.4348.0%252Fmembers-pageViewerWidgetNoCss.%253B44c66af6-4d25-485a-ad9d-385f5460deef%253Dp.search-app%252F1.4005.0%252FSearchResultsViewerWidgetNoCss.%253B49dbb2d9-d9e5-4605-a147-e926605bf164%253Dp.wixstores-client-cart-ooi%252F1.6436.0%252FSideCartViewerWidgetNoCss.%253B513a5d84-3ebb-4ca6-a5aa-83effd2123b9%253Dp.social-groups-ooi%252F5.888.0%252FGroupViewerWidgetNoCss.%253B6467c15e-af3c-4e8d-b167-41bfb8efc32a%253Dp.payments-my-wallet%252F1.1357.0%252FMyWalletViewerWidgetNoCss.%253B7b2e8d18-29a5-40c6-b69b-ec0d4ecd8d87%253Dp.pricing-plans-tpa%252F1.5450.0%252FThankYouViewerWidgetNoCss.%253B813eb645-c6bd-4870-906d-694f30869fd9%253Dp.communities-blog-ooi%252F1.3374.0%252FPostListViewerWidgetNoCss.%253Ba74ee1f5-74e3-4612-8fac-8ba5ae2cacaf%253Dp.events-viewer%252F1.4348.0%252FwidgetViewerWidgetNoCss.%253Ba7dcdfcb-8abd-4008-af19-fed5fcd12b40%253Dp.social-groups-ooi%252F5.888.0%252FGroupsViewerWidgetNoCss.%253Babcd87fe-c51f-4538-848d-2902a2f50d2d%253Dp.wixstores-client-gallery%252F1.6050.0%252FSearchResultsPageGalleryViewerWidgetNoCss.%253Bbb5ba6e9-272d-4a4d-a8dd-5e349744b539%253Dp.wixstores-client-cart-ooi%252F1.6436.0%252FSuccessPopupViewerWidgetNoCss.%253Bbda15dc1-816d-4ff3-8dcb-1172d5343cce%253Dp.wixstores-client-gallery%252F1.6050.0%252FCategoryPageViewerWidgetNoCss.%253Bc85a2896-9f7c-4cf1-9bf8-95852cc5219a%253Dp.loyalty-tpa-my-rewards%252F1.2129.0%252FMyRewardsViewerWidgetNoCss.%253Bd72a1455-8c5c-4a73-b009-121f733d0ef1%253Dp.pricing-plans-tpa%252F1.5450.0%252FPlanCustomizationViewerWidgetNoCss.%253Bd8f7e1d3-a41d-4473-a4c1-22b5207fd35e%253Dp.wix-tips-viewer%252F1.122.0%252FWixTipsViewerViewerWidgetNoCss.%253Be018cc55-7b1c-4500-a2e5-969f22c8a33a%253Dp.social-groups-ooi%252F5.888.0%252FMembersAreaGroupsViewerWidgetNoCss.&originalLanguage=en&pageId=ae876a_506219a6dc2c9c20eb788c554bb3b905_5200.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15584.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15584.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&shouldRunVsm=true&siteId=e49e09cb-7878-4f4d-9b02-09aba076df8a&siteRevision=5200&stylableMetadataURLs=%5B%22editor-elements-library.thunderbolt.77548b2b23ece9e9db001ab864b4a547b9c6acc2%22%2C%22editor-elements-design-systems.thunderbolt.f40413f288df6b08076b4dc5dc7bf6dd21e58634%22%5D&viewMode=desktop"
+      },
+      {
+        "status": 503,
+        "url": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397-c3a5ddb27a97%22%3A%22440%22%2C%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%22%3A%22328%22%2C%22b976560c-3122-4351-878f-453f337b7245%22%3A%221358%22%2C%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%3A%221684%22%2C%229a5d83fd-8570-482e-81ab-cfa88942ee60%22%3A%224207%22%2C%22b278a256-2757-4f19-9313-c05c783bec92%22%3A%222377%22%2C%22869a50c8-dd38-4324-b201-e33dc0747a5f%22%3A%226%22%2C%221052fa8e-e3e2-46dc-ab66-8badb2d08fe9%22%3A%22844%22%2C%2214bcded7-0066-7c35-14d7-466cb3f09103%22%3A%221335%22%2C%221522827f-c56c-a5c9-2ac9-00f9e6ae12d3%22%3A%221903%22%2C%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%227479d596-137c-4fa3-89cd-d7091042ba61%22%3A%22132%22%7D&appDefinitionIdsWithCustomCss=%5B%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%22%2C%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%2C%229a5d83fd-8570-482e-81ab-cfa88942ee60%22%5D&beckyExperiments=.DDMenuMigrateCssCarmiMapper%2C.EnableCustomCSSVarsForLoginSocialBar%2C.customImageDomain%2C.resolveSpxWithoutEditorCheck%2C.vsm_shapes%2CpreserveEmptyCustomPropertiesInCss&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=text%2Fcss&deviceType=Desktop&dfCk=6&dfVersion=1.5650.0&editorName=Unknown&experiments=dm_migrateOldHoverBoxToNewFixer&featuresToIgnore=stylableCss%2CcompCssMappers&fileId=0f39d38c.bundle.min&formFactor=desktop&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isHttps=true&isInSeo=true&isPremiumDomain=true&isUrlMigrated=true&isWixCodeOnPage=true&isWixCodeOnSite=true&language=en&locale=en-us&metaSiteId=18fb3a4e-d7f6-414a-aeb9-3047db3ea115&module=thunderbolt-css&originalLanguage=en&pageId=ae876a_337f99be11b7d20f6cc2f0357576fc27_5200.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15584.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15584.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&shouldRunVsm=true&siteId=e49e09cb-7878-4f4d-9b02-09aba076df8a&siteRevision=5200&viewMode=desktop"
+      },
+      {
+        "status": 503,
+        "url": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397-c3a5ddb27a97%22%3A%22440%22%2C%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%22%3A%22328%22%2C%22b976560c-3122-4351-878f-453f337b7245%22%3A%221358%22%2C%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%3A%221684%22%2C%229a5d83fd-8570-482e-81ab-cfa88942ee60%22%3A%224207%22%2C%22b278a256-2757-4f19-9313-c05c783bec92%22%3A%222377%22%2C%22869a50c8-dd38-4324-b201-e33dc0747a5f%22%3A%226%22%2C%221052fa8e-e3e2-46dc-ab66-8badb2d08fe9%22%3A%22844%22%2C%2214bcded7-0066-7c35-14d7-466cb3f09103%22%3A%221335%22%2C%221522827f-c56c-a5c9-2ac9-00f9e6ae12d3%22%3A%221903%22%2C%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%227479d596-137c-4fa3-89cd-d7091042ba61%22%3A%22132%22%7D&appDefinitionIdsWithCustomCss=%5B%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%22%2C%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%2C%229a5d83fd-8570-482e-81ab-cfa88942ee60%22%5D&beckyExperiments=.DDMenuMigrateCssCarmiMapper%2C.EnableCustomCSSVarsForLoginSocialBar%2C.customImageDomain%2C.resolveSpxWithoutEditorCheck%2C.vsm_shapes%2CpreserveEmptyCustomPropertiesInCss&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=text%2Fcss&deviceType=Desktop&dfCk=6&dfVersion=1.5650.0&editorName=Unknown&experiments=dm_migrateOldHoverBoxToNewFixer&featuresToRun=stylableCss&fileId=0f39d38c.bundle.min&formFactor=desktop&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isHttps=true&isInSeo=true&isPremiumDomain=true&isUrlMigrated=true&isWixCodeOnPage=true&isWixCodeOnSite=true&language=en&locale=en-us&metaSiteId=18fb3a4e-d7f6-414a-aeb9-3047db3ea115&module=thunderbolt-css&originalLanguage=en&pageId=ae876a_337f99be11b7d20f6cc2f0357576fc27_5200.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15584.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15584.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&shouldRunVsm=true&siteId=e49e09cb-7878-4f4d-9b02-09aba076df8a&siteRevision=5200&stylableMetadataURLs=%5B%22editor-elements-library.thunderbolt.77548b2b23ece9e9db001ab864b4a547b9c6acc2%22%2C%22editor-elements-design-systems.thunderbolt.f40413f288df6b08076b4dc5dc7bf6dd21e58634%22%5D&viewMode=desktop"
+      },
+      {
+        "status": 503,
+        "url": "https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397-c3a5ddb27a97%22%3A%22440%22%2C%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%22%3A%22328%22%2C%22b976560c-3122-4351-878f-453f337b7245%22%3A%221358%22%2C%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%3A%221684%22%2C%229a5d83fd-8570-482e-81ab-cfa88942ee60%22%3A%224207%22%2C%22b278a256-2757-4f19-9313-c05c783bec92%22%3A%222377%22%2C%22869a50c8-dd38-4324-b201-e33dc0747a5f%22%3A%226%22%2C%221052fa8e-e3e2-46dc-ab66-8badb2d08fe9%22%3A%22844%22%2C%2214bcded7-0066-7c35-14d7-466cb3f09103%22%3A%221335%22%2C%221522827f-c56c-a5c9-2ac9-00f9e6ae12d3%22%3A%221903%22%2C%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%227479d596-137c-4fa3-89cd-d7091042ba61%22%3A%22132%22%7D&appDefinitionIdsWithCustomCss=%5B%22553c79f3-5625-4f38-b14b-ef7c0d1e87df%22%2C%2249a4ef91-9d6e-43ff-94de-88cb5481cdf5%22%2C%229a5d83fd-8570-482e-81ab-cfa88942ee60%22%5D&beckyExperiments=.DDMenuMigrateCssCarmiMapper%2C.EnableCustomCSSVarsForLoginSocialBar%2C.customImageDomain%2CpreserveEmptyCustomPropertiesInCss&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=text%2Fcss&deviceType=Desktop&dfCk=6&dfVersion=1.5650.0&editorName=Unknown&experiments=dm_migrateOldHoverBoxToNewFixer&featuresToRun=compCssMappers&fileId=5cf9614f.bundle.min&formFactor=desktop&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isHttps=true&isInSeo=true&isPremiumDomain=true&isUrlMigrated=true&isWixCodeOnPage=true&isWixCodeOnSite=true&language=en&locale=en-us&metaSiteId=18fb3a4e-d7f6-414a-aeb9-3047db3ea115&module=thunderbolt-css-mappers&ooiVersions=0dc35cb9-8450-4a6c-b3be-f5923ef09d24%253Dp.sm-forms-app%252F1.624.0%252FLoginViewerWidgetNoCss.%253B12950d4e-a82f-4625-8b0c-305be20dfcc6%253Dp.sm-forms-app%252F1.624.0%252FSignupViewerWidgetNoCss.%253B1380bbab-4da3-36b0-efb4-2e0599971d14%253Dp.wixstores-client-cart-ooi%252F1.6436.0%252FcartViewerWidgetNoCss.%253B1380bbb4-8df0-fd38-a235-88821cf3f8a4%253Dp.wixstores-client-thank-you-page-ooi%252F1.3525.0%252FthankYouPageViewerWidgetNoCss.%253B13a94f09-2766-3c40-4a32-8edb5acdd8bc%253Dp.wixstores-client-product-page%252F1.4422.0%252FProductPageViewerWidgetNoCss.%253B14c1462a-97f2-9f6a-7bb7-f5541f23caa6%253Dp.communities-blog-ooi%252F1.3374.0%252FBlogViewerWidgetNoCss.%253B14d2abc2-5350-6322-487d-8c16ff833c8a%253Dp.events-details-page%252F1.1008.0%252Fdetails-pageViewerWidgetNoCss.%253B14dbefb9-3b7b-c4e9-53e8-766defd30587%253Dp.members-about-ooi%252F1.2715.0%252FProfileViewerWidgetNoCss.%253B14dd1af6-3e02-63db-0ef2-72fbc7cc3136%253Dp.my-account-ooi%252F1.2862.0%252FMyAccountViewerWidgetNoCss.%253B14fd5970-8072-c276-1246-058b79e70c1a%253Dp.ecom-platform-checkout%252F1.7384.0%252FCheckoutViewerWidgetNoCss.%253B15293875-09d7-6913-a093-084a9b6ae7f4%253Dp.pricing-plans-tpa%252F1.5450.0%252FPackagePickerViewerWidgetNoCss.%253B211b5287-14e2-4690-bb71-525908938c81%253Dp.communities-blog-ooi%252F1.3374.0%252FPostViewerWidgetNoCss.%253B29ad290c-8529-4204-8fcf-41ef46e0d3b0%253Dp.events-viewer%252F1.4348.0%252FscheduleViewerWidgetNoCss.%253B39e69c4a-e7f1-44b4-94a2-02714a9469a1%253Dp.pricing-plans-tpa%252F1.5450.0%252FPaywallViewerWidgetNoCss.%253B405eb115-a694-4e2b-abaa-e4762808bb93%253Dp.events-viewer%252F1.4348.0%252Fmembers-pageViewerWidgetNoCss.%253B44c66af6-4d25-485a-ad9d-385f5460deef%253Dp.search-app%252F1.4005.0%252FSearchResultsViewerWidgetNoCss.%253B49dbb2d9-d9e5-4605-a147-e926605bf164%253Dp.wixstores-client-cart-ooi%252F1.6436.0%252FSideCartViewerWidgetNoCss.%253B513a5d84-3ebb-4ca6-a5aa-83effd2123b9%253Dp.social-groups-ooi%252F5.888.0%252FGroupViewerWidgetNoCss.%253B6467c15e-af3c-4e8d-b167-41bfb8efc32a%253Dp.payments-my-wallet%252F1.1357.0%252FMyWalletViewerWidgetNoCss.%253B7b2e8d18-29a5-40c6-b69b-ec0d4ecd8d87%253Dp.pricing-plans-tpa%252F1.5450.0%252FThankYouViewerWidgetNoCss.%253B813eb645-c6bd-4870-906d-694f30869fd9%253Dp.communities-blog-ooi%252F1.3374.0%252FPostListViewerWidgetNoCss.%253Ba74ee1f5-74e3-4612-8fac-8ba5ae2cacaf%253Dp.events-viewer%252F1.4348.0%252FwidgetViewerWidgetNoCss.%253Ba7dcdfcb-8abd-4008-af19-fed5fcd12b40%253Dp.social-groups-ooi%252F5.888.0%252FGroupsViewerWidgetNoCss.%253Babcd87fe-c51f-4538-848d-2902a2f50d2d%253Dp.wixstores-client-gallery%252F1.6050.0%252FSearchResultsPageGalleryViewerWidgetNoCss.%253Bbb5ba6e9-272d-4a4d-a8dd-5e349744b539%253Dp.wixstores-client-cart-ooi%252F1.6436.0%252FSuccessPopupViewerWidgetNoCss.%253Bbda15dc1-816d-4ff3-8dcb-1172d5343cce%253Dp.wixstores-client-gallery%252F1.6050.0%252FCategoryPageViewerWidgetNoCss.%253Bc85a2896-9f7c-4cf1-9bf8-95852cc5219a%253Dp.loyalty-tpa-my-rewards%252F1.2129.0%252FMyRewardsViewerWidgetNoCss.%253Bd72a1455-8c5c-4a73-b009-121f733d0ef1%253Dp.pricing-plans-tpa%252F1.5450.0%252FPlanCustomizationViewerWidgetNoCss.%253Bd8f7e1d3-a41d-4473-a4c1-22b5207fd35e%253Dp.wix-tips-viewer%252F1.122.0%252FWixTipsViewerViewerWidgetNoCss.%253Be018cc55-7b1c-4500-a2e5-969f22c8a33a%253Dp.social-groups-ooi%252F5.888.0%252FMembersAreaGroupsViewerWidgetNoCss.&originalLanguage=en&pageId=ae876a_337f99be11b7d20f6cc2f0357576fc27_5200.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15584.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15584.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&shouldRunVsm=true&siteId=e49e09cb-7878-4f4d-9b02-09aba076df8a&siteRevision=5200&viewMode=desktop"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/communities-blog-ooi/1.3374.0/BlogViewerWidgetNoCss.bundle.min.js"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/communities-blog-ooi/1.3374.0/client-viewer/8684.chunk.min.js"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/communities-blog-ooi/1.3374.0/client-viewer/post-list-pro-gallery.chunk.min.js"
+      },
+      {
+        "status": 503,
+        "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@f41f7d56b729cbb020d3b9a16a3c8e9d2cecde3c/sports-live/latest-feed.js"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.d54501f8.bundle.min.js"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/unpkg/lodash@4.18.1/lodash.min.js"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.0ffe6eeb.bundle.min.js"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/tag-manager-client/1.1075.0/siteTags.bundle.min.js"
+      },
+      {
+        "status": 503,
+        "url": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@a4b4648e1f18a4fe6490f80bb9b3e08291dbe7a3/assets/sitewide-type.css"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fill/w_443,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.b325a058.bundle.min.js"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fill/w_317,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg/v1/fill/w_318,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg/v1/fill/w_444,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_a0d5a806a0924b1c982fd5b03d39b777~mv2.jpg/v1/fill/w_443,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/d3cfa5_a0d5a806a0924b1c982fd5b03d39b777~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_d47f942f03dd4051bcf27525bb61e968~mv2.jpg/v1/fill/w_317,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_d47f942f03dd4051bcf27525bb61e968~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_d47f942f03dd4051bcf27525bb61e968~mv2.jpg/v1/fill/w_443,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/d3cfa5_d47f942f03dd4051bcf27525bb61e968~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_a0d5a806a0924b1c982fd5b03d39b777~mv2.jpg/v1/fill/w_317,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_a0d5a806a0924b1c982fd5b03d39b777~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fill/w_318,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fill/w_443,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fill/w_444,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fill/w_317,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fill/w_318,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fill/w_443,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fill/w_444,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fill/w_443,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/a99769_73393b48895d46beb49e488c798b91e3~mv2.jpg/v1/fill/w_443,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/a99769_73393b48895d46beb49e488c798b91e3~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fill/w_317,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fill/w_317,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.png/v1/fill/w_318,h_179,fp_0.50_0.50,q_95,enc_avif,quality_auto/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.png"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/a99769_73393b48895d46beb49e488c798b91e3~mv2.jpg/v1/fill/w_317,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/a99769_73393b48895d46beb49e488c798b91e3~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.png/v1/fill/w_444,h_250,fp_0.50_0.50,q_35,blur_30,enc_avif,quality_auto/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.png"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/16b519_73d2d1958aae40d1addb19d56835e7d4~mv2.jpg/v1/fill/w_443,h_250,fp_0.50_0.50,q_30,blur_30,enc_avif,quality_auto/16b519_73d2d1958aae40d1addb19d56835e7d4~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/a1b09fe8b7f04378a9fe076748ad4a6a.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a1b09fe8b7f04378a9fe076748ad4a6a.png"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png/v1/fill/w_48,h_48,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e316f544f9094143b9eac01f1f19e697.png"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fill/w_1280,h_720,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/16b519_73d2d1958aae40d1addb19d56835e7d4~mv2.jpg/v1/fill/w_317,h_179,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_73d2d1958aae40d1addb19d56835e7d4~mv2.jpg"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fill/w_640,h_360,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fill/w_640,h_360,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.png/v1/fill/w_640,h_360,fp_0.50_0.50,q_95,enc_avif,quality_auto/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.jpg/v1/fill/w_640,h_360,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_be419eb42b8f4aa883f5596690c79e0c~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-9LPC2VVC0V"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_a0d5a806a0924b1c982fd5b03d39b777~mv2.jpg/v1/fill/w_240,h_135,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_a0d5a806a0924b1c982fd5b03d39b777~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg/v1/fill/w_240,h_135,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fill/w_640,h_360,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_d47f942f03dd4051bcf27525bb61e968~mv2.jpg/v1/fill/w_240,h_135,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_d47f942f03dd4051bcf27525bb61e968~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/a99769_73393b48895d46beb49e488c798b91e3~mv2.jpg/v1/fill/w_640,h_360,fp_0.50_0.50,q_90,enc_avif,quality_auto/a99769_73393b48895d46beb49e488c798b91e3~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fill/w_640,h_360,fp_0.50_0.50,q_90,enc_avif,quality_auto/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/16b519_73d2d1958aae40d1addb19d56835e7d4~mv2.jpg/v1/fill/w_640,h_360,fp_0.50_0.50,q_90,enc_avif,quality_auto/16b519_73d2d1958aae40d1addb19d56835e7d4~mv2.webp"
+      },
+      {
+        "status": 503,
+        "url": "https://www.gatorbaitmedia.com/blog-feed.xml?gbmlf=1792425372453"
+      },
+      {
+        "status": 503,
+        "url": "https://connect.facebook.net/en_US/fbevents.js"
+      },
+      {
+        "status": 503,
+        "url": "https://frog.wix.com/bolt-performance?src=72&evid=21&appName=thunderbolt&is_rollout=1&is_company_network=false&is_sav_rollout=0&is_dac_rollout=0&dc=virginia-usercode&microPop=cloudflare_virginia-phy&is_cached=false&msid=18fb3a4e-d7f6-414a-aeb9-3047db3ea115&session_id=8a5c9cd1-663b-4570-8f42-41c187af3446&ish=true&isb=true&isbr=ua&vsi=a18c958c-7884-48c0-9675-1ff870fbfc7c&caching=miss,miss_miss&pv=visible&pn=1&v=1.18205.0&url=https%3A%2F%2Fwww.gatorbaitmedia.com%2Fgatorbait-media-blogs%3Fmuse_lf_trace%3D20261019-1366-0&client_url=https%3A%2F%2Fwww.gatorbaitmedia.com%2Fgatorbait-media-blogs%3Fmuse_lf_trace%3D20261019-1366-0&st=2&ts=390&tsn=3831&platformOnSite=true&hasInitialZoom=false&infoInitialZoom=%7B%22devicePixelRatio%22%3A1%2C%22innerWidth%22%3A1366%2C%22outerWidth%22%3A1366%2C%22visualViewportScale%22%3A1%7D&mpaSessionId=508159f6-16e6-4327-9d1b-2d2d6fda4dc2"
+      },
+      {
+        "status": 503,
+        "url": "https://www.gatorbaitmedia.com/_partials/wix-thunderbolt/dist/clientWorker.5b2697ba.bundle.min.js"
+      },
+      {
+        "status": 503,
+        "url": "https://frog.wix.com/bolt-performance?src=72&evid=28&appName=thunderbolt&is_rollout=1&is_company_network=false&is_sav_rollout=0&is_dac_rollout=0&dc=virginia-usercode&microPop=cloudflare_virginia-phy&is_cached=false&msid=18fb3a4e-d7f6-414a-aeb9-3047db3ea115&session_id=8a5c9cd1-663b-4570-8f42-41c187af3446&ish=true&isb=true&isbr=ua&vsi=a18c958c-7884-48c0-9675-1ff870fbfc7c&caching=miss,miss_miss&pv=visible&pn=1&v=1.18205.0&url=https%3A%2F%2Fwww.gatorbaitmedia.com%2Fgatorbait-media-blogs%3Fmuse_lf_trace%3D20261019-1366-0&client_url=https%3A%2F%2Fwww.gatorbaitmedia.com%2Fgatorbait-media-blogs%3Fmuse_lf_trace%3D20261019-1366-0&st=2&ts=390&tsn=3831&name=partially_visible&duration=1792425372476&pageId=nu3pj&isSuccessfulSSR=true"
+      },
+      {
+        "status": 503,
+        "url": "https://panorama.wixapps.net/api/v1/bulklog"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/ae876a_d6f68ffc2ec145de8121400267a5b92a%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/ae876a_d6f68ffc2ec145de8121400267a5b92a%7Emv2.png"
+      },
+      {
+        "status": 503,
+        "url": "https://static.wixstatic.com/media/ae876a_d6f68ffc2ec145de8121400267a5b92a%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/ae876a_d6f68ffc2ec145de8121400267a5b92a%7Emv2.png"
+      },
+      {
+        "status": 503,
+        "url": "https://www.gatorbaitmedia.com/blog-feed.xml"
+      }
+    ]
+  },
+  {
+    "trace": {
+      "flags": [],
+      "dom": [
+        {
+          "lf": false,
+          "fr": false,
+          "native": 0,
+          "pre": false,
+          "on": false,
+          "at": 145.39999999850988
+        }
+      ],
+      "events": [
+        {
+          "name": "DOMContentLoaded",
+          "at": 46.5
+        },
+        {
+          "name": "load",
+          "at": 46.80000000447035
+        }
+      ],
+      "rss": null
+    },
+    "flags": {
+      "__GBM_LF_BOOT__": null,
+      "__GBM_LF__": null,
+      "__GBM_LF_FAIL__": null,
+      "__GBM_LF_OK__": null
+    },
+    "resources": [],
+    "bootText": null,
+    "width": 1920,
+    "console": [],
+    "errors": [],
+    "httpErrors": [
+      {
+        "status": 503,
+        "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs?muse_lf_trace=20261019-1920-1"
+      }
+    ]
+  }
+]

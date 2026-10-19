@@ -4,9 +4,9 @@ Owner authorized moving ahead with the expandable-card lounge, Oct.19. This pack
 
 ## Installation target
 
-Use one Wix-native Members Area page, proposed slug `/lounge`, with native Site Members permissions and Wix login. Initial scope: approved signed-in members. Preserve the existing native permissions on linked private groups. A public preview, collapsed panel, CSS rule, local storage or frontend login flag never grants or enforces membership access.
+Current owner strategy proposes `/magazine` as the magazine/member hub, with a prominent native message board. Inspect the existing page inventory before choosing the native protected-page arrangement; do not create a duplicate `/lounge` route by default. Keep public news available. Future paid issues need native/server-side plan entitlement and protected file delivery, with Wix login. Preserve valid trials, canceled access through its end date and owner comps. Preserve the existing native permissions on linked private groups. A public preview, collapsed panel, CSS rule, local storage or frontend login flag never grants or enforces membership access.
 
-Keep the current magazine and phone PDF public, per owner instruction. Do not add a paid-plan gate or promise paid benefits merely because a visitor is signed in. Gold VIP Lounge and Insider Board currently read PRIVATE / ADMIN_APPROVAL, not verified PAID_PLANS. Any future paid-plan assignment is a distinct membership/access change with current owner direction and native enforcement evidence required.
+Keep the already-distributed current Texas issue and phone PDF public. The proposed paid hub applies to future protected benefits; access has not changed. Do not add a paid-plan gate or promise paid benefits merely because a visitor is signed in. Gold VIP Lounge and Insider Board currently read PRIVATE / ADMIN_APPROVAL, not verified PAID_PLANS. Any future paid-plan assignment is a distinct membership/access change with current owner direction and native enforcement evidence required.
 
 ## Existing platform responsibilities
 

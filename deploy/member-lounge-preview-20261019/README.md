@@ -4,14 +4,14 @@ Owner approved going ahead with an expandable member dashboard. Muse created the
 
 ## Included
 
-- index.html: four expandable cards for the public magazine/phone PDF, native community, current Chris Spears gallery and Wix account/contact destinations.
+- index.html: six expandable panels with the native message board first, followed by magazine/phone PDF, current Chris Spears gallery, shows, news and Wix account/contact tools. Research compares free GitHub candidates and public membership examples.
 - team-logo.html: displays the existing internal Hive team-logo concept on a readable artboard and links the original PNG. This is not a GatorBait brand replacement.
 - INTEGRATION.md: native Wix Members Area installation/access checks and rollback.
-- qc/:390/1366 screenshots, four-width interaction results and destination status checks.
+- qc/: refreshed390/1366 screenshots, four-width interaction results and destination status checks. research/: source-backed free-tool comparison and GitHub metadata snapshot.
 
 ## Verified
 
-Chromium390/430/1366/1920: each of4cards toggled by click and Enter; all-expanded state has zero horizontal overflow; both authentic image assets loaded; linked UAA/photographer/gallery credits and attributed image alt are present; no failed resources. Barlow fonts load locally from existing repo assets. Public magazine, community, account/contact and Chris artwork destinations returned HTTP200. These route reads do not prove private member authorization. Real iPhone/in-Wix container tests remain outstanding.
+Chromium390/430/1366/1920: each of6cards toggled by click and Enter; all-expanded state has zero horizontal overflow; both authentic image assets loaded; linked UAA/photographer/gallery credits and attributed image alt are present; no failed resources. Barlow fonts load locally from existing repo assets. Public magazine, community, account/contact and Chris artwork destinations returned HTTP200. These route reads do not prove private member authorization. Real iPhone/in-Wix container tests remain outstanding.
 
 ## State
 

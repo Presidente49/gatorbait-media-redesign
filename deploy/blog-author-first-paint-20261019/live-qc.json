@@ -1,0 +1,82 @@
+[
+  {
+    "width": 1366,
+    "status": 200,
+    "trace": {
+      "visible": 0,
+      "samples": 282,
+      "first": 3975
+    },
+    "overflow": 0,
+    "byline": "Chris Spears",
+    "headRule": true,
+    "title": {
+      "text": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif"
+    },
+    "headerBackground": "linear-gradient(160deg, rgb(0, 33, 165) 0px, rgb(10, 26, 107) 70%)",
+    "inlineImages": 4,
+    "gallery": 16
+  },
+  {
+    "width": 390,
+    "status": 200,
+    "trace": {
+      "visible": 0,
+      "samples": 291,
+      "first": 4781
+    },
+    "overflow": 0,
+    "byline": "Chris Spears",
+    "headRule": true,
+    "title": {
+      "text": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif"
+    },
+    "headerBackground": "linear-gradient(160deg, rgb(0, 33, 165) 0px, rgb(10, 26, 107) 70%)",
+    "inlineImages": 4,
+    "gallery": 16
+  },
+  {
+    "width": 430,
+    "status": 200,
+    "trace": {
+      "visible": 0,
+      "samples": 300,
+      "first": 4925
+    },
+    "overflow": 0,
+    "byline": "Chris Spears",
+    "headRule": true,
+    "title": {
+      "text": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif"
+    },
+    "headerBackground": "linear-gradient(160deg, rgb(0, 33, 165) 0px, rgb(10, 26, 107) 70%)",
+    "inlineImages": 4,
+    "gallery": 16
+  },
+  {
+    "width": 1920,
+    "status": 200,
+    "trace": {
+      "visible": 0,
+      "samples": 294,
+      "first": 5682
+    },
+    "overflow": 0,
+    "byline": "Chris Spears",
+    "headRule": true,
+    "title": {
+      "text": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif"
+    },
+    "headerBackground": "linear-gradient(160deg, rgb(0, 33, 165) 0px, rgb(10, 26, 107) 70%)",
+    "inlineImages": 4,
+    "gallery": 16
+  }
+]

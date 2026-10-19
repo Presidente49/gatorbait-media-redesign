@@ -1,0 +1,205 @@
+[
+  {
+    "width": 390,
+    "status": 200,
+    "trace": [
+      {
+        "at": 5423,
+        "avatar": {
+          "w": 32,
+          "h": 117.578125,
+          "y": 176,
+          "visibility": "hidden"
+        }
+      },
+      {
+        "at": 5658,
+        "avatar": {
+          "w": 32,
+          "h": 117.578125,
+          "y": 176,
+          "visibility": "hidden"
+        }
+      },
+      {
+        "at": 5871,
+        "avatar": {
+          "w": 32,
+          "h": 32,
+          "y": 176,
+          "visibility": "visible"
+        }
+      },
+      {
+        "at": 6480,
+        "avatar": {
+          "w": 32,
+          "h": 32,
+          "y": 176,
+          "visibility": "visible"
+        }
+      },
+      {
+        "at": 6540,
+        "avatar": {
+          "w": 32,
+          "h": 32,
+          "y": 176,
+          "visibility": "visible"
+        }
+      },
+      {
+        "at": 6660,
+        "avatar": {
+          "w": 32,
+          "h": 32,
+          "y": 176,
+          "visibility": "visible"
+        }
+      },
+      {
+        "at": 7118,
+        "avatar": {
+          "w": 0,
+          "h": 0,
+          "y": 0,
+          "visibility": "visible"
+        }
+      },
+      {
+        "at": 7380,
+        "avatar": {
+          "w": 0,
+          "h": 0,
+          "y": 0,
+          "visibility": "visible"
+        }
+      }
+    ],
+    "settledHeadings": [
+      {
+        "text": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "38.22px",
+        "weight": "800"
+      },
+      {
+        "text": "1. Somebody Please Find the Three-Point Line! \ud83d\udc4e",
+        "color": "rgb(16, 38, 75)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "27px",
+        "weight": "800"
+      },
+      {
+        "text": "2. Baylor Had Answers Florida Couldn't Find \ud83d\udc4e",
+        "color": "rgb(16, 38, 75)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "27px",
+        "weight": "800"
+      },
+      {
+        "text": "3. The Gators Still Have Some Fight in Them \ud83d\udc4d",
+        "color": "rgb(16, 38, 75)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "27px",
+        "weight": "800"
+      },
+      {
+        "text": "My Final Thought From Courtside",
+        "color": "rgb(16, 38, 75)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "27px",
+        "weight": "800"
+      }
+    ]
+  },
+  {
+    "width": 1366,
+    "status": 200,
+    "trace": [
+      {
+        "at": 4864,
+        "avatar": {
+          "w": 32,
+          "h": 117.578125,
+          "y": 232,
+          "visibility": "hidden"
+        }
+      },
+      {
+        "at": 4981,
+        "avatar": {
+          "w": 32,
+          "h": 32,
+          "y": 232,
+          "visibility": "visible"
+        }
+      },
+      {
+        "at": 5400,
+        "avatar": {
+          "w": 32,
+          "h": 32,
+          "y": 232,
+          "visibility": "visible"
+        }
+      },
+      {
+        "at": 5715,
+        "avatar": {
+          "w": 0,
+          "h": 0,
+          "y": 0,
+          "visibility": "visible"
+        }
+      },
+      {
+        "at": 19412,
+        "avatar": {
+          "w": 32,
+          "h": 117.578125,
+          "y": 232,
+          "visibility": "hidden"
+        }
+      }
+    ],
+    "settledHeadings": [
+      {
+        "text": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
+        "color": "rgb(255, 255, 255)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "60px",
+        "weight": "800"
+      },
+      {
+        "text": "1. Somebody Please Find the Three-Point Line! \ud83d\udc4e",
+        "color": "rgb(16, 38, 75)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "32px",
+        "weight": "800"
+      },
+      {
+        "text": "2. Baylor Had Answers Florida Couldn't Find \ud83d\udc4e",
+        "color": "rgb(16, 38, 75)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "32px",
+        "weight": "800"
+      },
+      {
+        "text": "3. The Gators Still Have Some Fight in Them \ud83d\udc4d",
+        "color": "rgb(16, 38, 75)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "32px",
+        "weight": "800"
+      },
+      {
+        "text": "My Final Thought From Courtside",
+        "color": "rgb(16, 38, 75)",
+        "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+        "size": "32px",
+        "weight": "800"
+      }
+    ]
+  }
+]

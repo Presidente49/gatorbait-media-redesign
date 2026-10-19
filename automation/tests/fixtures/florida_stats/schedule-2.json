@@ -1,0 +1,204 @@
+{
+ "team": {
+  "id": "57",
+  "recordSummary": "1-1"
+ },
+ "events": [
+  {
+   "id": "9001",
+   "date": "2026-09-05T23:00Z",
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "9001",
+     "date": "2026-09-05T23:00Z",
+     "neutralSite": false,
+     "conferenceCompetition": false,
+     "venue": {
+      "fullName": "Test Stadium"
+     },
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "SECN"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "state": "post",
+       "completed": true,
+       "shortDetail": "Final"
+      }
+     },
+     "competitors": [
+      {
+       "id": "57",
+       "homeAway": "home",
+       "team": {
+        "id": "57",
+        "location": "Florida",
+        "displayName": "Florida Testers",
+        "shortDisplayName": "Florida"
+       },
+       "winner": true,
+       "score": {
+        "value": 31.0,
+        "displayValue": "31"
+       },
+       "curatedRank": {
+        "current": 99
+       }
+      },
+      {
+       "id": "901",
+       "homeAway": "away",
+       "team": {
+        "id": "901",
+        "location": "Alpha State",
+        "displayName": "Alpha State Testers",
+        "shortDisplayName": "Alpha State"
+       },
+       "winner": false,
+       "score": {
+        "value": 10.0,
+        "displayValue": "10"
+       },
+       "curatedRank": {
+        "current": 99
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "9002",
+   "date": "2026-09-12T16:00Z",
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "9002",
+     "date": "2026-09-12T16:00Z",
+     "neutralSite": false,
+     "conferenceCompetition": true,
+     "venue": {
+      "fullName": "Test Stadium"
+     },
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "SECN"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "state": "post",
+       "completed": true,
+       "shortDetail": "Final"
+      }
+     },
+     "competitors": [
+      {
+       "id": "902",
+       "homeAway": "home",
+       "team": {
+        "id": "902",
+        "location": "Beta Tech",
+        "displayName": "Beta Tech Testers",
+        "shortDisplayName": "Beta Tech"
+       },
+       "winner": true,
+       "score": {
+        "value": 24.0,
+        "displayValue": "24"
+       },
+       "curatedRank": {
+        "current": 4
+       }
+      },
+      {
+       "id": "57",
+       "homeAway": "away",
+       "team": {
+        "id": "57",
+        "location": "Florida",
+        "displayName": "Florida Testers",
+        "shortDisplayName": "Florida"
+       },
+       "winner": false,
+       "score": {
+        "value": 21.0,
+        "displayValue": "21"
+       },
+       "curatedRank": {
+        "current": 99
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "9003",
+   "date": "2026-10-03T19:30Z",
+   "timeValid": true,
+   "competitions": [
+    {
+     "id": "9003",
+     "date": "2026-10-03T19:30Z",
+     "neutralSite": false,
+     "conferenceCompetition": true,
+     "venue": {
+      "fullName": "Test Stadium"
+     },
+     "broadcasts": [
+      {
+       "media": {
+        "shortName": "ABC"
+       }
+      }
+     ],
+     "status": {
+      "type": {
+       "state": "pre",
+       "completed": false,
+       "shortDetail": "9/26 - 3:30 PM EDT"
+      }
+     },
+     "competitors": [
+      {
+       "id": "57",
+       "homeAway": "home",
+       "team": {
+        "id": "57",
+        "location": "Florida",
+        "displayName": "Florida Testers",
+        "shortDisplayName": "Florida"
+       },
+       "winner": false,
+       "curatedRank": {
+        "current": 99
+       }
+      },
+      {
+       "id": "903",
+       "homeAway": "away",
+       "team": {
+        "id": "903",
+        "location": "Gamma U",
+        "displayName": "Gamma U Testers",
+        "shortDisplayName": "Gamma U"
+       },
+       "winner": false,
+       "curatedRank": {
+        "current": 99
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

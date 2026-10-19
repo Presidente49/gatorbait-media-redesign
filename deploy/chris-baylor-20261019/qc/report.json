@@ -1,0 +1,26 @@
+[
+  {
+    "width": 390,
+    "overflow": 0,
+    "images": true,
+    "barlow": true
+  },
+  {
+    "width": 430,
+    "overflow": 0,
+    "images": true,
+    "barlow": true
+  },
+  {
+    "width": 1366,
+    "overflow": 0,
+    "images": true,
+    "barlow": true
+  },
+  {
+    "width": 1920,
+    "overflow": 0,
+    "images": true,
+    "barlow": true
+  }
+]

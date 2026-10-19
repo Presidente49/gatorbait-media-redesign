@@ -1,0 +1,120 @@
+{
+  "story": {
+    "id": "a4a21b79-c8f9-40e8-bf6a-fdcfccdf3ce9",
+    "url": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+    "publishedUtc": "2026-10-19T03:26:08Z",
+    "publishedEt": "2026-10-18 23:26:08 America/New_York",
+    "cover": 1,
+    "inline": [
+      14,
+      11,
+      13,
+      5
+    ],
+    "galleryDistinctImages": 16,
+    "byline": "Chris Spears",
+    "status": "PUBLISHED"
+  },
+  "editorial": {
+    "sourceLedger": "fact-ledger.json",
+    "minimalFactCorrections": 1,
+    "writerVoiceRetained": true,
+    "firstPublicationRetained": true,
+    "paidGate": false
+  },
+  "alerts": [
+    {
+      "id": "5006baf5-fbbf-440c-a012-a09bdbd95fc9",
+      "revision": "17",
+      "status": "INACTIVE"
+    },
+    {
+      "id": "824714d4-7e31-4b1d-95b2-ccec04d788af",
+      "revision": "39",
+      "status": "INACTIVE"
+    }
+  ],
+  "postTemplate": {
+    "id": "14a887e3-38ea-4258-ae0b-7d19cf9feead",
+    "revision": "21",
+    "category": "ESSENTIAL",
+    "enabled": true,
+    "fingerprint": "2f29f770"
+  },
+  "art": [
+    {
+      "id": "d3cfa5_69f9d797d5314507a43c260cc2bb16d4~mv2.jpg",
+      "url": "https://static.wixstatic.com/media/d3cfa5_69f9d797d5314507a43c260cc2bb16d4~mv2.jpg",
+      "status": "READY",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "id": "d3cfa5_22278af9036943f3929a8313baa76614~mv2.jpg",
+      "url": "https://static.wixstatic.com/media/d3cfa5_22278af9036943f3929a8313baa76614~mv2.jpg",
+      "status": "READY",
+      "width": 1200,
+      "height": 675
+    }
+  ],
+  "feed": {
+    "rssHttp": 200,
+    "items": 20,
+    "dateInversions": 0,
+    "storyFirst": true,
+    "workflowRun": 39194905981,
+    "conclusion": "success",
+    "publicGazetteHasStory": true
+  },
+  "social": {
+    "sent": false,
+    "scheduled": false,
+    "facebook": {
+      "http": 428,
+      "oauthCode": 190,
+      "oauthSubcode": 460,
+      "requestId": "1792380160.63224036591011478"
+    },
+    "instagram": {
+      "http": 428,
+      "oauthCode": 190,
+      "oauthSubcode": 460,
+      "requestId": "1792380174.52324128989321471"
+    },
+    "metricool": "No connected network",
+    "windsor": "GA4/SearchConsole only",
+    "ownerNext": "Reconnect existing Meta connection in Wix, then verify Page and duplicate history before one native publication."
+  },
+  "engagement": {
+    "numbers": null,
+    "state": "NO_SOCIAL_PUBLICATION_NO_OUTCOME_CLAIM"
+  },
+  "morningNotification": {
+    "created": true,
+    "timezone": "America/New_York",
+    "requestedDaypart": "morning Oct19",
+    "oneShot": true,
+    "nominalLocalTime": "08:00",
+    "timingMode": "flexible_schedule",
+    "providerNextRunTime": null
+  },
+  "productionScope": {
+    "sitePublish": false,
+    "homepagePinChanged": false,
+    "automationStatusChanged": false,
+    "subscriberEmailSent": false,
+    "spacesPushSent": false,
+    "accountConnected": false,
+    "paidBoost": false
+  },
+  "rollback": {
+    "postTemplate": "Re-read currentrevision/fingerprint; restore rollback/post-template-r20.html with ESSENTIAL retained.",
+    "article": "Preserve published story, author and firstPublishedDate. Restore only incorrect fields if needed; original draft and exact candidate retained. Do not automatically unpublish/delete."
+  },
+  "qaNotes": [
+    "Native gallery combines inline images in fullscreen counter (up to20);16distinct originals in gallery.",
+    "All16 gallery images and4inline images loaded after scroll at390/430/1366/1920; zero page errors/overflow. Native expansion exercised.",
+    "A direct jump to gallery followed by immediate expansion did not consistently produce the dialog in a later harness. Do not claim immediate expansion under all loading conditions. Physical iPhone untested.",
+    "Original QC escapeCloses check counted unrelated Wix menu dialogs; false is not proof gallery failed to close. Later label/home check is separately recorded."
+  ]
+}

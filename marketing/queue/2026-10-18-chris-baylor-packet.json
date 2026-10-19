@@ -1,0 +1,61 @@
+{
+  "campaignId": "gbm-chris-baylor-20261018",
+  "state": "BLOCKED_ACCOUNT_ACCESS",
+  "story": {
+    "id": "a4a21b79-c8f9-40e8-bf6a-fdcfccdf3ce9",
+    "canonicalUrl": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+    "author": "Chris Spears",
+    "firstPublishedDate": "2026-10-19T03:26:08Z",
+    "galleryPhotos": 16
+  },
+  "sources": [
+    "https://floridagators.com/news/2026/10/18/mens-basketball-final-florida-vs-baylor-exhibition-oct-18-2026",
+    "https://floridagators.com/sports/mens-basketball/stats/2026-27/baylor-exhibition-/boxscore/28243"
+  ],
+  "art": {
+    "portrait": {
+      "path": "deploy/chris-spears-baylor-lens-20261019/through-the-lens-1080x1350.jpg",
+      "id": "d3cfa5_69f9d797d5314507a43c260cc2bb16d4~mv2.jpg",
+      "url": "https://static.wixstatic.com/media/d3cfa5_69f9d797d5314507a43c260cc2bb16d4~mv2.jpg",
+      "status": "READY",
+      "width": 1080,
+      "height": 1350
+    },
+    "landscape": {
+      "path": "deploy/chris-spears-baylor-lens-20261019/through-the-lens-1200x675.jpg",
+      "id": "d3cfa5_22278af9036943f3929a8313baa76614~mv2.jpg",
+      "url": "https://static.wixstatic.com/media/d3cfa5_22278af9036943f3929a8313baa76614~mv2.jpg",
+      "status": "READY",
+      "width": 1200,
+      "height": 675
+    },
+    "alt": "Through the Lens with Chris Spears. A Florida guard reaches for the ball during the Oct. 18 Baylor exhibition in Jacksonville. Baylor 82, Florida 76 in overtime. Photo by Chris Spears, GatorBait Media.",
+    "treatment": "Original signed game photo preserved in full; Barlow title and credit outside photograph."
+  },
+  "facebook": {
+    "target": "Gator Bait Media",
+    "historicalPageId": "192930054063033",
+    "targetStatus": "Cannot freshly enumerate: Wix Meta session invalidated.",
+    "caption": "Two nays. One yay. Sixteen frames from courtside.\n\nChris Spears takes you inside Florida's 82-76 overtime exhibition loss to Baylor in Jacksonville, with his column and all 16 original photos.\n\nWhat stood out to you: the shooting struggles, the bench gap or Florida's late fight?\n\nWords and photos by Chris Spears, GatorBait Media. Full column and gallery in the first comment.",
+    "firstComment": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition?utm_source=facebook&utm_medium=social&utm_campaign=chris-spears-baylor-20261018"
+  },
+  "instagram": {
+    "caption": "Through the Lens with Chris Spears.\n\nCourtside action. The bench. Behind the scenes. Sixteen original photos from Florida's 82-76 overtime exhibition loss to Baylor in Jacksonville.\n\nChris's column: two nays and a yay. What stood out to you from the exhibition?\n\nWords and photos by Chris Spears, GatorBait Media.",
+    "linkDestination": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+    "placement": "Use native link sticker if a Story is posted; verify existing bio destination before promising a bio link."
+  },
+  "publication": {
+    "sent": false,
+    "scheduled": false,
+    "providerPostId": null,
+    "providerUrl": null,
+    "blocker": "Wix Facebook and Instagram account inventory both fail OAuth 190/460 because the Meta session was invalidated. Metricool has no connected social network; Windsor no organic social account. No working browser connector is exposed.",
+    "next": "Brenden reconnects the existing Meta connection in Wix. Re-read actual account target and recent posts, check duplicates, then publish this owner-authorized native photo packet once and verify actual platform permalink. Never reconnect, boost or spend automatically."
+  },
+  "engagement": {
+    "state": "AWAITING_REAL_POST",
+    "prompt": "What stood out to you: the shooting struggles, the bench gap or Florida's late fight?",
+    "followup": "After actual publication, read genuine comments and reply with sourced context as GatorBait. No fabricated comments, likes or accounts. Compare reach, interactions, gallery/story clicks at matched post age using native analytics.",
+    "metrics": null
+  }
+}

@@ -1,0 +1,1157 @@
+{
+  "at": "2026-10-19T03:28:43.519Z",
+  "results": [
+    {
+      "width": 390,
+      "errors": [],
+      "http": 200,
+      "top": {
+        "title": "GATORBAIT MEDIA",
+        "overflow": 0,
+        "hasByline": true,
+        "hasCorrection": true,
+        "galleryTitle": false,
+        "hooks": [
+          "post-hero-image",
+          "image-viewer",
+          "image-viewer-chris-photo-14",
+          "image-expand-button",
+          "image-viewer-chris-photo-11",
+          "image-viewer-chris-photo-13",
+          "image-viewer-chris-photo-5",
+          "gallery-viewer",
+          "native-gallery-renderer",
+          "gallery-grid",
+          "gallery-media-cell",
+          "gallery-expand",
+          "gallery-media-image"
+        ]
+      },
+      "gallery": {
+        "overflow": 0,
+        "images": [
+          {
+            "alt": "A Florida guard dribbles with Todd Golden watching courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg/v1/fill/w_147,h_75,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~"
+          },
+          {
+            "alt": "Denzel Aberdeen surveys the floor against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_e1c6880ad84744a0b603be675ff7d600~"
+          },
+          {
+            "alt": "Todd Golden watches the action from courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg/v1/fill/w_147,h_85,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_3281ab47e3e847b8af33421ded6a307f~"
+          },
+          {
+            "alt": "Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg/v1/fill/w_147,h_95,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_23b97a122ce44a659bf66fa3c4d3c13f~"
+          },
+          {
+            "alt": "A Florida guard reaches for the ball against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fill/w_640,h_427,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg"
+          },
+          {
+            "alt": "Florida defends Baylor along the baseline. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_1aea2f0bd8ac47b393bd4df513109b03~mv2.jpg/v1/fill/w_640,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_1aea2f0bd8ac47b393bd4df513109b03~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden watches from the Florida bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_590dc976fdcc40b8b38442a8da216bd2~mv2.jpg/v1/fill/w_640,h_361,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_590dc976fdcc40b8b38442a8da216bd2~mv2.jpg"
+          },
+          {
+            "alt": "Alex Condon and Todd Golden exchange a hand slap. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_fafe0050d2234ff8a592a323472dfbe2~mv2.jpg/v1/fill/w_640,h_448,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_fafe0050d2234ff8a592a323472dfbe2~mv2.jpg"
+          },
+          {
+            "alt": "Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg/v1/fill/w_640,h_414,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden stands in front of the Florida bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg/v1/fill/w_640,h_444,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg"
+          },
+          {
+            "alt": "Baylor attacks the rim as Florida contests the shot. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_79d35d3184ee4e61a727f7449654856f~mv2.jpg/v1/fill/w_640,h_479,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_79d35d3184ee4e61a727f7449654856f~mv2.jpg"
+          },
+          {
+            "alt": "Urban Klavzar handles the ball against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_7f99ac74543f4a7bb2a7ba611ef4f72b~mv2.jpg/v1/fill/w_640,h_428,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_7f99ac74543f4a7bb2a7ba611ef4f72b~mv2.jpg"
+          },
+          {
+            "alt": "Urban Klavzar drives around an Alex Condon screen. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_42ed85d3056d4115bc41187e34fc1fc0~mv2.jpg/v1/fill/w_639,h_515,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_42ed85d3056d4115bc41187e34fc1fc0~mv2.jpg"
+          },
+          {
+            "alt": "Thomas Haugh and Baylor players prepare for a rebound. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_b30fb616131c42b9b03eadc566d2e975~mv2.jpg/v1/fill/w_639,h_391,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_b30fb616131c42b9b03eadc566d2e975~mv2.jpg"
+          },
+          {
+            "alt": "Denzel Aberdeen surveys the floor against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 354,
+            "src": "https://static.wixstatic.com/media/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg/v1/fill/w_639,h_425,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg"
+          },
+          {
+            "alt": "A Florida guard handles the ball against Baylor's defense. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          },
+          {
+            "alt": "Todd Golden watches the action from courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          },
+          {
+            "alt": "A Florida guard dribbles with Todd Golden watching courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          },
+          {
+            "alt": "Florida players watch from the bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          },
+          {
+            "alt": "Todd Golden and Thomas Haugh at the postgame news conference. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          },
+          {
+            "alt": "Florida basketball against UConn. Photo by Chris Spears, GatorBait Media.",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          },
+          {
+            "alt": "Florida basketball against UConn. Photo by Chris Spears, GatorBait Media.",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          }
+        ],
+        "galleryElements": [
+          {
+            "hook": "gallery-viewer",
+            "role": "none",
+            "label": null
+          },
+          {
+            "hook": "native-gallery-renderer",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-grid",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: A Florida guard reaches for the ball against Baylor. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Florida defends Baylor along the baseline. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Todd Golden watches from the Florida bench. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Alex Condon and Todd Golden exchange a hand slap. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Todd Golden stands in front of the Florida bench. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Baylor attacks the rim as Florida contests the shot. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          }
+        ]
+      }
+    },
+    {
+      "width": 430,
+      "errors": [],
+      "http": 200,
+      "top": {
+        "title": "GATORBAIT MEDIA",
+        "overflow": 0,
+        "hasByline": true,
+        "hasCorrection": true,
+        "galleryTitle": false,
+        "hooks": [
+          "post-hero-image",
+          "image-viewer",
+          "image-viewer-chris-photo-14",
+          "image-expand-button",
+          "image-viewer-chris-photo-11",
+          "image-viewer-chris-photo-13",
+          "image-viewer-chris-photo-5",
+          "gallery-viewer",
+          "native-gallery-renderer",
+          "gallery-grid",
+          "gallery-media-cell",
+          "gallery-expand",
+          "gallery-media-image"
+        ]
+      },
+      "gallery": {
+        "overflow": 0,
+        "images": [
+          {
+            "alt": "A Florida guard dribbles with Todd Golden watching courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg/v1/fill/w_147,h_75,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~"
+          },
+          {
+            "alt": "Denzel Aberdeen surveys the floor against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_e1c6880ad84744a0b603be675ff7d600~"
+          },
+          {
+            "alt": "Todd Golden watches the action from courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg/v1/fill/w_147,h_85,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_3281ab47e3e847b8af33421ded6a307f~"
+          },
+          {
+            "alt": "Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg/v1/fill/w_394,h_255,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jp"
+          },
+          {
+            "alt": "A Florida guard reaches for the ball against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fill/w_640,h_427,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg"
+          },
+          {
+            "alt": "Florida defends Baylor along the baseline. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_1aea2f0bd8ac47b393bd4df513109b03~mv2.jpg/v1/fill/w_640,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_1aea2f0bd8ac47b393bd4df513109b03~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden watches from the Florida bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_590dc976fdcc40b8b38442a8da216bd2~mv2.jpg/v1/fill/w_640,h_361,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_590dc976fdcc40b8b38442a8da216bd2~mv2.jpg"
+          },
+          {
+            "alt": "Alex Condon and Todd Golden exchange a hand slap. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_fafe0050d2234ff8a592a323472dfbe2~mv2.jpg/v1/fill/w_640,h_448,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_fafe0050d2234ff8a592a323472dfbe2~mv2.jpg"
+          },
+          {
+            "alt": "Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg/v1/fill/w_640,h_414,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden stands in front of the Florida bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg/v1/fill/w_640,h_444,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg"
+          },
+          {
+            "alt": "Baylor attacks the rim as Florida contests the shot. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_79d35d3184ee4e61a727f7449654856f~mv2.jpg/v1/fill/w_640,h_479,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_79d35d3184ee4e61a727f7449654856f~mv2.jpg"
+          },
+          {
+            "alt": "Urban Klavzar handles the ball against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_7f99ac74543f4a7bb2a7ba611ef4f72b~mv2.jpg/v1/fill/w_640,h_428,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_7f99ac74543f4a7bb2a7ba611ef4f72b~mv2.jpg"
+          },
+          {
+            "alt": "Urban Klavzar drives around an Alex Condon screen. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_42ed85d3056d4115bc41187e34fc1fc0~mv2.jpg/v1/fill/w_639,h_515,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_42ed85d3056d4115bc41187e34fc1fc0~mv2.jpg"
+          },
+          {
+            "alt": "Thomas Haugh and Baylor players prepare for a rebound. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_b30fb616131c42b9b03eadc566d2e975~mv2.jpg/v1/fill/w_639,h_391,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_b30fb616131c42b9b03eadc566d2e975~mv2.jpg"
+          },
+          {
+            "alt": "Denzel Aberdeen surveys the floor against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg/v1/fill/w_639,h_425,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg"
+          },
+          {
+            "alt": "A Florida guard handles the ball against Baylor's defense. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_8644bcd612844e48b86df0e10981f5fb~mv2.jpg/v1/fill/w_639,h_311,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_8644bcd612844e48b86df0e10981f5fb~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden watches the action from courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg/v1/fill/w_640,h_370,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg"
+          },
+          {
+            "alt": "A Florida guard dribbles with Todd Golden watching courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg/v1/fill/w_640,h_326,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg"
+          },
+          {
+            "alt": "Florida players watch from the bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_ea01bcceb0e24ec9877e2385bf91102a~mv2.jpg/v1/fill/w_640,h_388,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_ea01bcceb0e24ec9877e2385bf91102a~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden and Thomas Haugh at the postgame news conference. Photo by Chris Spears, GatorBait Media",
+            "loaded": false,
+            "w": 394,
+            "src": "https://static.wixstatic.com/media/16b519_e227e1e0135f4cd5996061d07dc1642a~mv2.jpg/v1/fill/w_639,h_369,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_e227e1e0135f4cd5996061d07dc1642a~mv2.jpg"
+          },
+          {
+            "alt": "Florida basketball against UConn. Photo by Chris Spears, GatorBait Media.",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          },
+          {
+            "alt": "Florida basketball against UConn. Photo by Chris Spears, GatorBait Media.",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          }
+        ],
+        "galleryElements": [
+          {
+            "hook": "gallery-viewer",
+            "role": "none",
+            "label": null
+          },
+          {
+            "hook": "native-gallery-renderer",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-grid",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: A Florida guard reaches for the ball against Baylor. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Florida defends Baylor along the baseline. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Todd Golden watches from the Florida bench. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Alex Condon and Todd Golden exchange a hand slap. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Todd Golden stands in front of the Florida bench. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Baylor attacks the rim as Florida contests the shot. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          }
+        ]
+      }
+    },
+    {
+      "width": 1366,
+      "errors": [],
+      "http": 200,
+      "top": {
+        "title": "GATORBAIT MEDIA",
+        "overflow": 0,
+        "hasByline": true,
+        "hasCorrection": true,
+        "galleryTitle": false,
+        "hooks": [
+          "post-hero-image",
+          "image-viewer",
+          "image-viewer-chris-photo-14",
+          "image-expand-button",
+          "image-viewer-chris-photo-11",
+          "image-viewer-chris-photo-13",
+          "image-viewer-chris-photo-5",
+          "gallery-viewer",
+          "native-gallery-renderer",
+          "gallery-grid",
+          "gallery-media-cell",
+          "gallery-expand",
+          "gallery-media-image"
+        ]
+      },
+      "gallery": {
+        "overflow": 0,
+        "images": [
+          {
+            "alt": "A Florida guard dribbles with Todd Golden watching courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 580,
+            "src": "https://static.wixstatic.com/media/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg/v1/fill/w_580,h_295,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jp"
+          },
+          {
+            "alt": "Denzel Aberdeen surveys the floor against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 580,
+            "src": "https://static.wixstatic.com/media/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg/v1/fill/w_580,h_386,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jp"
+          },
+          {
+            "alt": "Todd Golden watches the action from courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 580,
+            "src": "https://static.wixstatic.com/media/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg/v1/fill/w_147,h_85,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_3281ab47e3e847b8af33421ded6a307f~"
+          },
+          {
+            "alt": "Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 580,
+            "src": "https://static.wixstatic.com/media/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg/v1/fill/w_580,h_375,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jp"
+          },
+          {
+            "alt": "A Florida guard reaches for the ball against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fill/w_640,h_427,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg"
+          },
+          {
+            "alt": "Florida defends Baylor along the baseline. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_1aea2f0bd8ac47b393bd4df513109b03~mv2.jpg/v1/fill/w_640,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_1aea2f0bd8ac47b393bd4df513109b03~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden watches from the Florida bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_590dc976fdcc40b8b38442a8da216bd2~mv2.jpg/v1/fill/w_640,h_361,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_590dc976fdcc40b8b38442a8da216bd2~mv2.jpg"
+          },
+          {
+            "alt": "Alex Condon and Todd Golden exchange a hand slap. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_fafe0050d2234ff8a592a323472dfbe2~mv2.jpg/v1/fill/w_640,h_448,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_fafe0050d2234ff8a592a323472dfbe2~mv2.jpg"
+          },
+          {
+            "alt": "Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg/v1/fill/w_640,h_414,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden stands in front of the Florida bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg/v1/fill/w_640,h_444,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg"
+          },
+          {
+            "alt": "Baylor attacks the rim as Florida contests the shot. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_79d35d3184ee4e61a727f7449654856f~mv2.jpg/v1/fill/w_640,h_479,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_79d35d3184ee4e61a727f7449654856f~mv2.jpg"
+          },
+          {
+            "alt": "Urban Klavzar handles the ball against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_7f99ac74543f4a7bb2a7ba611ef4f72b~mv2.jpg/v1/fill/w_640,h_428,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_7f99ac74543f4a7bb2a7ba611ef4f72b~mv2.jpg"
+          },
+          {
+            "alt": "Urban Klavzar drives around an Alex Condon screen. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_42ed85d3056d4115bc41187e34fc1fc0~mv2.jpg/v1/fill/w_639,h_515,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_42ed85d3056d4115bc41187e34fc1fc0~mv2.jpg"
+          },
+          {
+            "alt": "Thomas Haugh and Baylor players prepare for a rebound. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_b30fb616131c42b9b03eadc566d2e975~mv2.jpg/v1/fill/w_639,h_391,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_b30fb616131c42b9b03eadc566d2e975~mv2.jpg"
+          },
+          {
+            "alt": "Denzel Aberdeen surveys the floor against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg/v1/fill/w_639,h_425,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg"
+          },
+          {
+            "alt": "A Florida guard handles the ball against Baylor's defense. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_8644bcd612844e48b86df0e10981f5fb~mv2.jpg/v1/fill/w_639,h_311,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_8644bcd612844e48b86df0e10981f5fb~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden watches the action from courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg/v1/fill/w_640,h_370,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg"
+          },
+          {
+            "alt": "A Florida guard dribbles with Todd Golden watching courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg/v1/fill/w_640,h_326,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg"
+          },
+          {
+            "alt": "Florida players watch from the bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_ea01bcceb0e24ec9877e2385bf91102a~mv2.jpg/v1/fill/w_640,h_388,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_ea01bcceb0e24ec9877e2385bf91102a~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden and Thomas Haugh at the postgame news conference. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_e227e1e0135f4cd5996061d07dc1642a~mv2.jpg/v1/fill/w_639,h_369,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_e227e1e0135f4cd5996061d07dc1642a~mv2.jpg"
+          },
+          {
+            "alt": "Florida basketball against UConn. Photo by Chris Spears, GatorBait Media.",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          }
+        ],
+        "galleryElements": [
+          {
+            "hook": "gallery-viewer",
+            "role": "none",
+            "label": null
+          },
+          {
+            "hook": "native-gallery-renderer",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-grid",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: A Florida guard reaches for the ball against Baylor. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Florida defends Baylor along the baseline. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Todd Golden watches from the Florida bench. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Alex Condon and Todd Golden exchange a hand slap. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Todd Golden stands in front of the Florida bench. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Baylor attacks the rim as Florida contests the shot. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          }
+        ]
+      }
+    },
+    {
+      "width": 1920,
+      "errors": [],
+      "http": 200,
+      "top": {
+        "title": "GATORBAIT MEDIA",
+        "overflow": 0,
+        "hasByline": true,
+        "hasCorrection": true,
+        "galleryTitle": false,
+        "hooks": [
+          "post-hero-image",
+          "image-viewer",
+          "image-viewer-chris-photo-14",
+          "image-expand-button",
+          "image-viewer-chris-photo-11",
+          "image-viewer-chris-photo-13",
+          "image-viewer-chris-photo-5",
+          "gallery-viewer",
+          "native-gallery-renderer",
+          "gallery-grid",
+          "gallery-media-cell",
+          "gallery-expand",
+          "gallery-media-image"
+        ]
+      },
+      "gallery": {
+        "overflow": 0,
+        "images": [
+          {
+            "alt": "A Florida guard dribbles with Todd Golden watching courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 580,
+            "src": "https://static.wixstatic.com/media/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg/v1/fill/w_147,h_75,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~"
+          },
+          {
+            "alt": "Denzel Aberdeen surveys the floor against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 580,
+            "src": "https://static.wixstatic.com/media/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_e1c6880ad84744a0b603be675ff7d600~"
+          },
+          {
+            "alt": "Todd Golden watches the action from courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 580,
+            "src": "https://static.wixstatic.com/media/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg/v1/fill/w_147,h_85,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/16b519_3281ab47e3e847b8af33421ded6a307f~"
+          },
+          {
+            "alt": "Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 580,
+            "src": "https://static.wixstatic.com/media/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg/v1/fill/w_580,h_375,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jp"
+          },
+          {
+            "alt": "A Florida guard reaches for the ball against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fill/w_640,h_427,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg"
+          },
+          {
+            "alt": "Florida defends Baylor along the baseline. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_1aea2f0bd8ac47b393bd4df513109b03~mv2.jpg/v1/fill/w_640,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_1aea2f0bd8ac47b393bd4df513109b03~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden watches from the Florida bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_590dc976fdcc40b8b38442a8da216bd2~mv2.jpg/v1/fill/w_640,h_361,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_590dc976fdcc40b8b38442a8da216bd2~mv2.jpg"
+          },
+          {
+            "alt": "Alex Condon and Todd Golden exchange a hand slap. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_fafe0050d2234ff8a592a323472dfbe2~mv2.jpg/v1/fill/w_640,h_448,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_fafe0050d2234ff8a592a323472dfbe2~mv2.jpg"
+          },
+          {
+            "alt": "Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg/v1/fill/w_640,h_414,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_23b97a122ce44a659bf66fa3c4d3c13f~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden stands in front of the Florida bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg/v1/fill/w_640,h_444,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg"
+          },
+          {
+            "alt": "Baylor attacks the rim as Florida contests the shot. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_79d35d3184ee4e61a727f7449654856f~mv2.jpg/v1/fill/w_640,h_479,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_79d35d3184ee4e61a727f7449654856f~mv2.jpg"
+          },
+          {
+            "alt": "Urban Klavzar handles the ball against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_7f99ac74543f4a7bb2a7ba611ef4f72b~mv2.jpg/v1/fill/w_640,h_428,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_7f99ac74543f4a7bb2a7ba611ef4f72b~mv2.jpg"
+          },
+          {
+            "alt": "Urban Klavzar drives around an Alex Condon screen. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_42ed85d3056d4115bc41187e34fc1fc0~mv2.jpg/v1/fill/w_639,h_515,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_42ed85d3056d4115bc41187e34fc1fc0~mv2.jpg"
+          },
+          {
+            "alt": "Thomas Haugh and Baylor players prepare for a rebound. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_b30fb616131c42b9b03eadc566d2e975~mv2.jpg/v1/fill/w_639,h_391,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_b30fb616131c42b9b03eadc566d2e975~mv2.jpg"
+          },
+          {
+            "alt": "Denzel Aberdeen surveys the floor against Baylor. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg/v1/fill/w_639,h_425,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_e1c6880ad84744a0b603be675ff7d600~mv2.jpg"
+          },
+          {
+            "alt": "A Florida guard handles the ball against Baylor's defense. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_8644bcd612844e48b86df0e10981f5fb~mv2.jpg/v1/fill/w_639,h_311,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_8644bcd612844e48b86df0e10981f5fb~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden watches the action from courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg/v1/fill/w_640,h_370,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_3281ab47e3e847b8af33421ded6a307f~mv2.jpg"
+          },
+          {
+            "alt": "A Florida guard dribbles with Todd Golden watching courtside. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg/v1/fill/w_640,h_326,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_3c8c8e79a0a84553ab0ba3ba1a9fbd38~mv2.jpg"
+          },
+          {
+            "alt": "Florida players watch from the bench. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_ea01bcceb0e24ec9877e2385bf91102a~mv2.jpg/v1/fill/w_640,h_388,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_ea01bcceb0e24ec9877e2385bf91102a~mv2.jpg"
+          },
+          {
+            "alt": "Todd Golden and Thomas Haugh at the postgame news conference. Photo by Chris Spears, GatorBait Media",
+            "loaded": true,
+            "w": 185,
+            "src": "https://static.wixstatic.com/media/16b519_e227e1e0135f4cd5996061d07dc1642a~mv2.jpg/v1/fill/w_639,h_369,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/16b519_e227e1e0135f4cd5996061d07dc1642a~mv2.jpg"
+          },
+          {
+            "alt": "Florida basketball against UConn. Photo by Chris Spears, GatorBait Media.",
+            "loaded": false,
+            "w": 0,
+            "src": ""
+          }
+        ],
+        "galleryElements": [
+          {
+            "hook": "gallery-viewer",
+            "role": "none",
+            "label": null
+          },
+          {
+            "hook": "native-gallery-renderer",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-grid",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: A Florida guard reaches for the ball against Baylor. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Florida defends Baylor along the baseline. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Todd Golden watches from the Florida bench. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Alex Condon and Todd Golden exchange a hand slap. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Florida and Baylor players battle for rebounding position. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Todd Golden stands in front of the Florida bench. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-expand",
+            "role": null,
+            "label": "Expand image: Baylor attacks the rim as Florida contests the shot. Photo by Chris Spears, GatorBait Media"
+          },
+          {
+            "hook": "gallery-media-image",
+            "role": null,
+            "label": null
+          },
+          {
+            "hook": "gallery-media-cell",
+            "role": null,
+            "label": null
+          }
+        ]
+      }
+    }
+  ]
+}

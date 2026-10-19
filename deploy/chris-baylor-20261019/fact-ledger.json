@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-10-19T03:25:00Z",
+  "reviewers": [
+    "Codex controller",
+    "bounded newsroom reviewer"
+  ],
+  "sources": [
+    "https://floridagators.com/news/2026/10/18/mens-basketball-final-florida-vs-baylor-exhibition-oct-18-2026",
+    "https://floridagators.com/sports/mens-basketball/stats/2026-27/baylor-exhibition-/boxscore/28243"
+  ],
+  "checks": {
+    "Final": "Baylor82 Florida76 OT, exhibition October18 Jacksonville",
+    "3PT": "4/29=13.8%;25misses",
+    "Perimeter": "Aberdeen0/10, Klavzar0/5;15misses",
+    "Bench": "Baylor33 Florida3",
+    "Mingo": "Kayden31,9OT",
+    "FreeThrows": "Florida22/35;13misses",
+    "Leaders": "Haugh19pts, Chinyelu15reb",
+    "Rebounding": "Florida46 Baylor41;26offensive"
+  },
+  "correction": {
+    "original": "Three-point deficit directly followed by two-point tying jumper.",
+    "resolution": "Restored Aberdeen making one of two free throws before backcourt turnover and tying jumper.",
+    "chronology": "68-65 -> FT at:20 -> turnover at:15 -> jumper68-68; recap0.8sec, play-by-play rounds00:00."
+  },
+  "dateNote": "Official schedule/headline/box confirm Sunday October18. Recap prose says Saturday; did not carry that typo."
+}

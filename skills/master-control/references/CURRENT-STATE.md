@@ -1,5 +1,7 @@
 # Master Control Current State
 
+- **Member dashboard preview Oct.19:** owner said go; Muse/Controller built deploy/member-lounge-preview-20261019/index.html with4expandable magazine/community/ThroughLens/account cards.390/430/1366/1920 click+keyboard, images/credits and zero-overflow checks passed. Static design only: no native Wix page/access/site publish. Native installation needs unavailable Mac wix-editor-local; see INTEGRATION.md. Existing Hive logo displayed in team-logo.html, original remains deploy/continuation-20261019/the-hive-logo-concept.png.
+
 - **Blog author flicker Oct.19:** existing4d3ab24a author/SEO embed rev7 now HEAD/ESSENTIAL, scoped native-avatar rule applies before first paint. Fresh live390/430/1366/1920: zero visible portrait samples, Chris byline retained,4inline/16gallery images, zero overflow. Header stays existing blue gradient/white title. No site publish; rollback deploy/blog-author-first-paint-20261019/rollback/author-r6.html plus BODY_END.
 - **Member lounge inventory Oct.19 (read-only):** Gold VIP Lounge exists PRIVATE/ADMIN_APPROVAL, not verified paid-plan enforcement. Old Ask/Trivia/picks/chat prototypes reusable; no fresh local Labs implementation found. Recommendation and current Groups evidence: docs/member-lounge-reuse-20261019.md. No access or plan changes.
 

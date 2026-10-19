@@ -43,6 +43,8 @@ const INIT = () => {
       if (!prev || JSON.stringify([prev.cls, prev.light, prev.spVis, prev.band, prev.hdr, prev.h1]) !== JSON.stringify([s.cls, s.light, s.spVis, s.band, s.hdr, s.h1])) G.samples.push(s);
     } catch (e) {}
   };
+  G.trace = []; const q = (sel) => { const e = document.querySelector(sel); if (!e) return null; const r = e.getBoundingClientRect(); const c = getComputedStyle(e); return [Math.round(r.top + scrollY), Math.round(r.height), c.display === 'none' ? 'N' : c.visibility === 'hidden' ? 'H' : 'v']; };
+  const tr = setInterval(() => { try { G.trace.push([Math.round(performance.now()), q('#gbm-footer'), q('#SITE_FOOTER'), q('#SITE_PAGES'), q('#gbm-band'), document.documentElement.scrollHeight, document.querySelectorAll('#gbm-footer').length]); } catch (e) {} }, 120); setTimeout(() => clearInterval(tr), 8000);
   const iv = setInterval(tick, 30); setTimeout(() => clearInterval(iv), 7000);
 };
 
@@ -99,8 +101,8 @@ async function run(browser, view, pg, mode, holder) {
     r.http = resp.status();
     await sleep(4600);
     await cdp.send('Page.stopScreencast');
-    const g = await page.evaluate(() => { const G = window.__g || {}; return { shifts: G.shifts, samples: G.samples }; }).catch(() => ({}));
-    r.cls = +((g.shifts || []).reduce((a, s) => a + s.v, 0)).toFixed(4); r.shifts = (g.shifts || []).filter(s => s.v > .005).slice(0, 5);
+    const g = await page.evaluate(() => { const G = window.__g || {}; return { shifts: G.shifts, samples: G.samples, trace: G.trace }; }).catch(() => ({}));
+    r.trace = g.trace; r.cls = +((g.shifts || []).reduce((a, s) => a + s.v, 0)).toFixed(4); r.shifts = (g.shifts || []).filter(s => s.v > .005).slice(0, 5);
     const S = g.samples || []; r.timeline = S.slice(0, 14).map(s => [s.t, s.light, s.spVis, s.band ? 'B' : '-', s.hdr ? 'H' : '-', s.h1, s.cls.replace(/\s+/g, ',').slice(0, 60)].join('|'));
     // native flash = sampled state where page content is visible on a light page or with unstyled headline while the shell is still absent
     r.flash = S.filter(s => s.spVis === 'visible' && (s.light > .35 || (/class="?$/.test('') ))).length;

@@ -2,6 +2,48 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gators find a spark in Austin",
+      "excerpt": "Eddie Gilley on Florida's 27-24 win at Texas: improved defense, third-down execution and the spark that helped the Gators fight back. Photo courtesy UAA and Hannah White.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-find-a-spark-in-austin",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-10-19T21:27:49Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators find a spark in Austin"
+      }
+    },
+    {
+      "title": "A Big Thank You to Gator Fans For Their Juice — And Their Loyalty!",
+      "excerpt": "Buddy Martin thanks Gator fans for their loyalty after Florida's 27-24 win at Texas and looks ahead to the open date. Photo courtesy UAA and Hannah White.",
+      "url": "https://www.gatorbaitmedia.com/post/a-big-thank-you-to-gator-fans-for-their-juice-and-their-loyalty",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-19T21:25:03Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for A Big Thank You to Gator Fans For Their Juice — And Their Loyalty!"
+      }
+    },
+    {
+      "title": "An Exhibition Loss Gives Golden Plenty Of Material To “Coach ‘Em Up”",
+      "excerpt": "Franz Beard on Florida's 82-76 overtime exhibition loss to Baylor and the fixes Todd Golden faces before the regular season. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/an-exhibition-loss-gives-golden-plenty-to-correct",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-19T20:03:31Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for An Exhibition Loss Gives Golden Plenty Of Material To “Coach ‘Em Up”"
+      }
+    },
+    {
       "title": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
       "excerpt": "Chris Spears on Florida's 82-76 overtime exhibition loss to Baylor in Jacksonville: a cold night from three, a bench gap and a late show of fight.",
       "url": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
@@ -125,48 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr."
-      }
-    },
-    {
-      "title": "Aberdeen will be in the lineup against Baylor on Sunday",
-      "excerpt": "Franz Beard: Denzel Aberdeen starts Sunday when preseason No. 1 Florida opens with a Baylor exhibition in Jacksonville, and his fifth-year case should hold up. Plus SEC coaches on the NCAA and 11 international recruits to watch.",
-      "url": "https://www.gatorbaitmedia.com/post/aberdeen-will-be-in-the-lineup-against-baylor-on-sunday",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-17T10:30:02Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_290bf3f6c66e455e9386bfc3136bbeb1~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Aberdeen will be in the lineup against Baylor on Sunday"
-      }
-    },
-    {
-      "title": "Is the SEC undergoing a drain of excellence?",
-      "excerpt": "Parody or parity? Buddy Martin on a 24-team playoff and an SEC that hasn’t lost excellence so much as its monopoly on it. Me, I worry that the scavengers have come for what’s left of college football.",
-      "url": "https://www.gatorbaitmedia.com/post/is-the-sec-undergoing-a-drain-of-excellence",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-16T20:08:54Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Is the SEC undergoing a drain of excellence?"
-      }
-    },
-    {
-      "title": "The Soothsayer: Texas big unless the UF defense finds an exorcist",
-      "excerpt": "Franz Beard: Florida is the man with the rope around his neck and Texas is the jukebox. The Soothsayer on Tramell Jones Jr.’s first start, Will Muschamp’s defense, an 11.5-point line and every SEC game Saturday.",
-      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-16T11:06:34Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg/v1/fit/w_1000,h_602,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Soothsayer: Texas big unless the UF defense finds an exorcist"
       }
     }
   ]

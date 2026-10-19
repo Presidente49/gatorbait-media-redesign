@@ -1,0 +1,335 @@
+{
+ "header": {
+  "competitions": [
+   {
+    "status": {
+     "type": {
+      "completed": true
+     }
+    },
+    "competitors": [
+     {
+      "id": "57",
+      "team": {
+       "id": "57"
+      },
+      "score": "21"
+     },
+     {
+      "id": "902",
+      "team": {
+       "id": "902"
+      },
+      "score": "24"
+     }
+    ]
+   }
+  ]
+ },
+ "boxscore": {
+  "teams": [
+   {
+    "team": {
+     "id": "57"
+    },
+    "statistics": [
+     {
+      "name": "totalYards",
+      "displayValue": "350"
+     },
+     {
+      "name": "rushingYards",
+      "displayValue": "150"
+     },
+     {
+      "name": "rushingAttempts",
+      "displayValue": "35"
+     },
+     {
+      "name": "netPassingYards",
+      "displayValue": "200"
+     },
+     {
+      "name": "completionAttempts",
+      "displayValue": "18/30"
+     },
+     {
+      "name": "firstDowns",
+      "displayValue": "20"
+     },
+     {
+      "name": "thirdDownEff",
+      "displayValue": "5-14"
+     },
+     {
+      "name": "turnovers",
+      "displayValue": "2"
+     },
+     {
+      "name": "totalPenaltiesYards",
+      "displayValue": "6-50"
+     },
+     {
+      "name": "possessionTime",
+      "displayValue": "28:45"
+     }
+    ]
+   },
+   {
+    "team": {
+     "id": "902"
+    },
+    "statistics": [
+     {
+      "name": "totalYards",
+      "displayValue": "390"
+     },
+     {
+      "name": "rushingYards",
+      "displayValue": "170"
+     },
+     {
+      "name": "rushingAttempts",
+      "displayValue": "33"
+     },
+     {
+      "name": "netPassingYards",
+      "displayValue": "220"
+     },
+     {
+      "name": "completionAttempts",
+      "displayValue": "20/29"
+     },
+     {
+      "name": "firstDowns",
+      "displayValue": "22"
+     },
+     {
+      "name": "thirdDownEff",
+      "displayValue": "7-13"
+     },
+     {
+      "name": "turnovers",
+      "displayValue": "1"
+     },
+     {
+      "name": "totalPenaltiesYards",
+      "displayValue": "4-35"
+     },
+     {
+      "name": "possessionTime",
+      "displayValue": "31:15"
+     }
+    ]
+   }
+  ],
+  "players": [
+   {
+    "team": {
+     "id": "57"
+    },
+    "statistics": [
+     {
+      "name": "passing",
+      "labels": [
+       "C/ATT",
+       "YDS",
+       "AVG",
+       "TD",
+       "INT"
+      ],
+      "athletes": [
+       {
+        "athlete": {
+         "id": "1",
+         "displayName": "Test Passer"
+        },
+        "stats": [
+         "18/30",
+         "200",
+         "6.7",
+         "1",
+         "2"
+        ]
+       }
+      ],
+      "totals": [
+       "18/30",
+       "200",
+       "6.7",
+       "1",
+       "2"
+      ]
+     },
+     {
+      "name": "rushing",
+      "labels": [
+       "CAR",
+       "YDS",
+       "AVG",
+       "TD",
+       "LONG"
+      ],
+      "athletes": [
+       {
+        "athlete": {
+         "id": "2",
+         "displayName": "Test Runner"
+        },
+        "stats": [
+         "28",
+         "120",
+         "4.3",
+         "1",
+         "18"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "1",
+         "displayName": "Test Passer"
+        },
+        "stats": [
+         "7",
+         "30",
+         "4.3",
+         "1",
+         "12"
+        ]
+       }
+      ],
+      "totals": [
+       "35",
+       "150",
+       "4.3",
+       "2",
+       "18"
+      ]
+     },
+     {
+      "name": "receiving",
+      "labels": [
+       "REC",
+       "YDS",
+       "AVG",
+       "TD",
+       "LONG"
+      ],
+      "athletes": [
+       {
+        "athlete": {
+         "id": "4",
+         "displayName": "Test Tight"
+        },
+        "stats": [
+         "10",
+         "110",
+         "11.0",
+         "1",
+         "31"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "3",
+         "displayName": "Test Catcher"
+        },
+        "stats": [
+         "8",
+         "90",
+         "11.3",
+         "0",
+         "25"
+        ]
+       }
+      ],
+      "totals": [
+       "18",
+       "200",
+       "11.1",
+       "1",
+       "31"
+      ]
+     },
+     {
+      "name": "defensive",
+      "labels": [
+       "TOT",
+       "SOLO",
+       "SACKS",
+       "TFL",
+       "PD",
+       "QB HUR",
+       "TD"
+      ],
+      "athletes": [
+       {
+        "athlete": {
+         "id": "6",
+         "displayName": "Test Safety"
+        },
+        "stats": [
+         "9",
+         "7",
+         "0",
+         "1",
+         "1",
+         "0",
+         "0"
+        ]
+       },
+       {
+        "athlete": {
+         "id": "5",
+         "displayName": "Test Backer"
+        },
+        "stats": [
+         "7",
+         "3",
+         "1",
+         "1.5",
+         "0",
+         "0",
+         "0"
+        ]
+       }
+      ],
+      "totals": []
+     },
+     {
+      "name": "kicking",
+      "labels": [
+       "FG",
+       "PCT",
+       "LONG",
+       "XP",
+       "PTS"
+      ],
+      "athletes": [
+       {
+        "athlete": {
+         "id": "7",
+         "displayName": "Test Kicker"
+        },
+        "stats": [
+         "1/2",
+         "50.0",
+         "38",
+         "3/3",
+         "6"
+        ]
+       }
+      ],
+      "totals": []
+     }
+    ]
+   },
+   {
+    "team": {
+     "id": "902"
+    },
+    "statistics": []
+   }
+  ]
+ }
+}

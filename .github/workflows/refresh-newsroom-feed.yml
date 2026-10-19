@@ -7,6 +7,7 @@ on:
       - 'automation/update_newsroom_feed.py'
       - 'automation/update_newsroom_feed_routed.py'
       - 'automation/episodes_feed.py'
+      - 'automation/florida_stats.py'
       - 'newsroom-preview/editorial-routing.json'
       - '.github/workflows/refresh-newsroom-feed.yml'
   schedule:
@@ -82,27 +83,40 @@ jobs:
           FORCE=""
           if [ "$EVENT_NAME" = workflow_dispatch ] || [ "$EVENT_NAME" = push ]; then FORCE="--force"; fi
           python automation/scoreboard_feed.py $FORCE
-      - name: Validate, commit if changed, and request the existing Pages publisher
+      - name: Refresh Florida season stats from ESPN box scores
+        # The existing producer checks whether a read is due. Failed reads or checks
+        # preserve both the full snapshot and the compact feed used by the Wix embed.
+        continue-on-error: true
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          python -m unittest -q automation/tests/test_florida_stats.py
+          FORCE=""
+          if [ "$EVENT_NAME" = workflow_dispatch ] || [ "$EVENT_NAME" = push ]; then FORCE="--force"; fi
+          python automation/florida_stats.py $FORCE --no-embed --feed sports-live/florida-stats.json
+      - name: Validate, commit sports feeds if changed, and request the existing Pages publisher
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           python automation/validate_scoreboard.py sports-live/scoreboard.json
-          if git diff --quiet -- sports-live/scoreboard.json && [ -z "$(git ls-files --others --exclude-standard -- sports-live/scoreboard.json)" ]; then
-            echo 'Scoreboard unchanged. No deployment requested.'
+          SPORTS_FILES='sports-live/scoreboard.json deploy/wix-served/florida-stats.json sports-live/florida-stats.json'
+          if git diff --quiet -- $SPORTS_FILES && [ -z "$(git ls-files --others --exclude-standard -- $SPORTS_FILES)" ]; then
+            echo 'Sports feeds unchanged. No deployment requested.'
             exit 0
           fi
           git config user.name 'gatorbait-newsroom-bot'
           git config user.email 'brenden@gatorbaitmedia.com'
-          git add sports-live/scoreboard.json
-          git commit -m 'data: refresh Florida scoreboard'
+          git add $SPORTS_FILES
+          git commit -m 'data: refresh Florida scoreboard and season stats'
           pushed=false
           for i in 1 2 3; do
             if git push; then pushed=true; break; fi
             git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           done
-          [ "$pushed" = true ] || { echo 'push failed after 3 tries; scoreboard not published' >&2; exit 1; }
+          [ "$pushed" = true ] || { echo 'push failed after 3 tries; sports feeds not published' >&2; exit 1; }
           gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"
 
   # Buddy Martin Show uploads for the front page "Recent broadcasts" rail. Same workflow and 5-minute tick, no second

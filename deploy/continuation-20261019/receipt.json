@@ -1,0 +1,163 @@
+{
+  "observedAt": "2026-10-19T02:37:23.589Z",
+  "contacts": {
+    "count": 2675,
+    "providerTotal": 2675,
+    "complete": true,
+    "uniquePrimaryEmails": 2674
+  },
+  "email": {
+    "matched": 2670,
+    "missing": 4,
+    "duplicateResponses": 0,
+    "subscriptionStatus": {
+      "SUBSCRIBED": 1860,
+      "UNSUBSCRIBED": 706,
+      "NOT_SET": 95,
+      "PENDING": 9
+    },
+    "deliverabilityStatus": {
+      "VALID": 1745,
+      "INACTIVE": 822,
+      "BOUNCED": 51,
+      "SPAM_COMPLAINT": 37,
+      "NOT_SET": 15
+    },
+    "subscribedDeliverableBeforeHolds": 1042,
+    "scope": "CRM primary email addresses; not a send-ready audience"
+  },
+  "planOrders": {
+    "count": 1653,
+    "providerTotal": null,
+    "complete": true,
+    "byStatus": {
+      "CANCELED": 970,
+      "ACTIVE": 590,
+      "DRAFT": 91,
+      "ENDED": 2
+    },
+    "createdSinceOct12": 5,
+    "periodStart": "2026-10-12T04:00:00Z",
+    "byPlan": [
+      {
+        "planName": "GATORBAIT ANNUAL",
+        "total": 997,
+        "active": 462,
+        "createdSinceOct12": 3,
+        "planReference": "ae41ee7a"
+      },
+      {
+        "planName": "ALL ACCESS MONTHLY",
+        "total": 237,
+        "active": 52,
+        "createdSinceOct12": 2,
+        "planReference": "fd37a730"
+      },
+      {
+        "planName": "Magazine Annual",
+        "total": 194,
+        "active": 59,
+        "createdSinceOct12": 0,
+        "planReference": "4349d910"
+      },
+      {
+        "planName": null,
+        "total": 100,
+        "active": 0,
+        "createdSinceOct12": 0,
+        "planReference": "Unmapped"
+      },
+      {
+        "planName": "Magazine Monthly",
+        "total": 81,
+        "active": 10,
+        "createdSinceOct12": 0,
+        "planReference": "fb3b8e0e"
+      },
+      {
+        "planName": "GATORBAIT MAGAZINE",
+        "total": 28,
+        "active": 3,
+        "createdSinceOct12": 0,
+        "planReference": "d8ff1861"
+      },
+      {
+        "planName": "GATORBAIT MAGAZINE",
+        "total": 6,
+        "active": 0,
+        "createdSinceOct12": 0,
+        "planReference": "1baf22f8"
+      },
+      {
+        "planName": "GNK Members Deal",
+        "total": 5,
+        "active": 0,
+        "createdSinceOct12": 0,
+        "planReference": "a938e88f"
+      },
+      {
+        "planName": "Halfoff Till Kickoff",
+        "total": 4,
+        "active": 4,
+        "createdSinceOct12": 0,
+        "planReference": "f82fc36f"
+      },
+      {
+        "planName": "Hurricane Special!!!",
+        "total": 1,
+        "active": 0,
+        "createdSinceOct12": 0,
+        "planReference": "8ebdfe8c"
+      }
+    ],
+    "scope": "Orders and active access; not verified paid subscriber count or revenue",
+    "coverage": "Sequential 50-order pages exhausted at a short final page (1,653 orders); provider total omitted. Does not prove a paid-subscriber count."
+  },
+  "blockers": {
+    "businessInbox": "Only personal Gmail is connected; business writer intake and Chris's new photos are unverified.",
+    "metricool": "No social networks connected.",
+    "youtube": "vidIQ returned no authorized YouTube channels; no current channel analytics retrieved.",
+    "ga4": "Windsor reads paused: 4 connected accounts exceed the Free plan's 1-account limit. Returned zero row is a warning, not analytics."
+  },
+  "live": {
+    "magazine": {
+      "id": "1dd74333",
+      "revision": 119,
+      "pin": "7cbf2271d266c2f1440fc3467c447071a68d187c",
+      "mutated": false
+    },
+    "sitePages": {
+      "id": "af792630",
+      "revision": 3,
+      "mergedPR": 380,
+      "mutated": false
+    },
+    "chris": {
+      "id": "a4a21b79",
+      "status": "UNPUBLISHED",
+      "photosPending": true
+    }
+  },
+  "statsRelease": {
+    "pr": 387,
+    "merge": "68bec1ed79fab86ab35eef5d14258e6ca3eb3eae",
+    "public": {
+      "url": "https://presidente49.github.io/gatorbait-media-redesign/sports-live/florida-stats.json",
+      "status": 200,
+      "bytes": 3574,
+      "record": "5-2",
+      "confRecord": "3-2",
+      "through": "Oct. 17 at Texas",
+      "updated": "2026-10-19T02:45:03Z"
+    },
+    "testsPassed": 25,
+    "fixtureWidths": [
+      390,
+      430,
+      1366,
+      1920
+    ],
+    "nativePageStatus": 404,
+    "wixMutated": false
+  }
+}

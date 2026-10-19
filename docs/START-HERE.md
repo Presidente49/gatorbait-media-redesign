@@ -1,18 +1,20 @@
 # GatorBait Media rulebook (Brenden, Oct. 9, 2026)
 
-This is the one rulebook. Every Claude, Codex or ChatGPT session reads it first. If a chat, a branch, a routine prompt or a dated runbook disagrees with this page, this page wins. Live provider state still wins on facts (what exists), never on permission.
+This is the project rulebook. Every Claude, Codex or ChatGPT session reads it first. Current instructions from Brenden set the scope and can revise this document; dated playbooks are evidence, not authority over the owner. Live provider state establishes facts about what exists, never permission.
+
+> Active owner direction, Oct. 19: Codex owns the **full continuation block** and final decisions. Muse prepares creative work; helpers receive bounded assignments and return evidence. The proposed revised team and pipeline plan is `deploy/continuation-20261019/plan.html`. The Hive is an internal team identity concept, not a live GatorBait brand replacement. The earlier Claude/Codex lane split is historical for this block. Existing explicit send/account/publish holds remain in the active handoff until the relevant owner instruction changes them.
 
 > Stack redesign (Oct. 9): fewer agents, stateless jobs, one rulebook. Plan and migration in `docs/STACK-V2.md`. Social and Marketing run as their own automatic lanes: `docs/jobs/social.md`, `docs/jobs/marketing.md`, `docs/SOCIAL-RULES.md`.
 
 ## 1. Who decides
 
-- **Jarvis** (session `session_01QUnBu7zkHLGEmUEfSvE4Wp`) is the single controller and runs the business day to day. Every other session, routine, model or tool is a worker.
-- **Brenden does not give OKs on routine work.** Jarvis decides and tells him afterward in one line. A dispatch from Jarvis is the approval. A worker that stops to wait for Brenden on routine work has failed the task; it makes the reversible choice, records it in #34 and keeps going.
+- **Codex** is the single controller for the current full continuation block. Jarvis/Claude carries continuity through issue #34 and the handoff; Brenden says "handoff" to switch the active side. Other sessions, helpers, routines and tools work under the active controller.
+- **Brenden does not give OKs on routine work.** The active controller decides and reports meaningful results in one line. Workers make reversible implementation choices inside the assigned scope, record the result and keep going.
 - Brenden is asked only for the hard lines in section 3, and then with one recommendation, never a menu.
 - A tool or safety-filter denial is not a "no" from Brenden. Take a safer route and note it once.
 - "The Copy Desk" means the whole team, Jarvis included.
 
-### Claude and Codex lanes (Brenden, Oct. 17)
+### Historical Claude and Codex lanes (Oct. 17; superseded for the current full continuation)
 
 Claude (Jarvis) and Codex cannot message each other directly. Issue #34 is the shared desk: each reads the newest comments before every task, and asks the other by opening a comment with "@Codex" or "@Jarvis" and the exact ask.
 

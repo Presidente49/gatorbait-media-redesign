@@ -1,3 +1,7 @@
+# Owner update: original cover approved
+
+Brenden explicitly approved the original Texas cover after the missing newer art could not be located. Cover blocker is cleared. Replacement drafts: win-back 88af8816-900d-4fb6-a4f7-effdbd9e88f7; phone PDF 364f351c-314c-4567-806c-6753101c32d8. Both include the permanent original cover, visible UAA / Hannah White credit and phone PDF. Neither is sent or scheduled. Wix rejected editing the earlier drafts as classic-editor content despite MJML source; earlier IDs below are superseded and must not be sent. Fresh audience/sender/frequency checks still apply before release. The prior missing-cover narrative below is historical.
+
 # Returning subscribers and phone-magazine delivery
 
 Owner direction Oct.19: implement a win-back plan, including a deep discount if necessary; include magazine cover and phone PDF for reading on the go. Later correction explicitly rejects the older BEATING TEXAS cover: use the newer artwork made overnight. That replacement has not been located. Do not send, schedule or silently substitute the rejected cover.
@@ -32,3 +36,7 @@ Track actual coupon redemption and paid order/transaction outcomes, cancellation
 Newer magazine cover missing. Root checked live Wix cover/magazine/postgame matches and latest100 image uploads reaching Oct.10, repository assets and supplied paths. Muse independently checked19unique saved portraits,5worktrees and generated_images: only older magazine covers plus new social/basketball cards and two logos; no replacement magazine-cover file or Wix ID. Brenden was asked whether he meant Texas magazine or Through the Lens basketball artwork and shown the latter. Do not relabel it as a Texas magazine cover.
 
 Rollback coupon: owner-authorized controller can deactivate this newly created offer if it cannot be used, after fresh read and documented coupon update; never rewrite unrelated1311 historical coupon records. The native create endpoint requires appliesToSubscriptions=true when discountedCycleCount is present despite an opposing documentation note; actual first/later cycle price preview is the deciding evidence.
+
+## Original-cover follow-up QC
+
+Provider-rendered replacement drafts checked at390/430/1366/1920 in Chromium: credited cover loaded with alt text, no horizontal overflow, native preferences present; tracked PDF button destinations decode to the verified phone PDF. Phone screenshot visually reviewed. Real inbox/iPhone behavior untested. Footer text links retain native blue styling and should receive a contrast improvement before release. No scheduling or delivery claim. Rollback: leave replacement drafts unsent; older drafts remain superseded. See cover-layout-qc.json.

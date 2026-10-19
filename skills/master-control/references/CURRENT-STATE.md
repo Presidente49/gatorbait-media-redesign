@@ -1,5 +1,7 @@
 # Master Control Current State
 
+- **Oct.19 cover owner update:** original Texas cover approved for win-back/member-PDF email. Final replacement drafts 88af8816-900d-4fb6-a4f7-effdbd9e88f7 and 364f351c-314c-4567-806c-6753101c32d8 include credited cover and phone PDF; neither sent/scheduled. Earlier f6273a4d/6a17d1f1 drafts superseded after classic-editor update rejection. Missing-cover blocker cleared; fresh release gates remain.
+
 ## Active Codex continuation — Oct. 19, 2026
 
 - **Win-back/PDF work, Oct.19:** Brenden authorized implementing a returning-subscriber plan including a deep discount and magazine cover/phone-PDF email. Six former-paid readers freshly verified from1653orders/1149approved-poolcontacts; no reconsent/backfill. Limited50%-first-paid-year coupon `f42b78a5` created for AllAccessAnnual only, six uses/one percustomer, expiresOct28 11:59p.m.ET; native price preview proves full-price cycle2+. No plan prices/charges/member access changed. Two Wix MJML drafts prepared (win-back `f6273a4d`, phone-PDF `6a17d1f1`), neither sent/scheduled. **Release blocked:** owner rejected older BEATING TEXAS cover and requires newer overnight artwork, not found in saved/Wix/Muse assets. Correct cover identification blocks insertion/final QC/release. Plan/receipt: `marketing/winback/2026-10-19/plan.md`; all proposed send slots are UNBOOKED. Existing phone PDF verified200/61pages/2.4MB. Do not substitute the rejected cover or claim win-back revenue.

@@ -1,0 +1,122 @@
+[
+  {
+    "draft": 0,
+    "width": 390,
+    "overflow": 0,
+    "cover": [
+      {
+        "loaded": true,
+        "alt": "GatorBait Texas postgame magazine cover: Beating Texas",
+        "width": 350
+      }
+    ],
+    "credit": true,
+    "pdf": true,
+    "preferences": true
+  },
+  {
+    "draft": 0,
+    "width": 430,
+    "overflow": 0,
+    "cover": [
+      {
+        "loaded": true,
+        "alt": "GatorBait Texas postgame magazine cover: Beating Texas",
+        "width": 390
+      }
+    ],
+    "credit": true,
+    "pdf": true,
+    "preferences": true
+  },
+  {
+    "draft": 0,
+    "width": 1366,
+    "overflow": 0,
+    "cover": [
+      {
+        "loaded": true,
+        "alt": "GatorBait Texas postgame magazine cover: Beating Texas",
+        "width": 480
+      }
+    ],
+    "credit": true,
+    "pdf": true,
+    "preferences": true
+  },
+  {
+    "draft": 0,
+    "width": 1920,
+    "overflow": 0,
+    "cover": [
+      {
+        "loaded": true,
+        "alt": "GatorBait Texas postgame magazine cover: Beating Texas",
+        "width": 480
+      }
+    ],
+    "credit": true,
+    "pdf": true,
+    "preferences": true
+  },
+  {
+    "draft": 1,
+    "width": 390,
+    "overflow": 0,
+    "cover": [
+      {
+        "loaded": true,
+        "alt": "GatorBait Texas postgame magazine cover: Beating Texas",
+        "width": 350
+      }
+    ],
+    "credit": true,
+    "pdf": true,
+    "preferences": true
+  },
+  {
+    "draft": 1,
+    "width": 430,
+    "overflow": 0,
+    "cover": [
+      {
+        "loaded": true,
+        "alt": "GatorBait Texas postgame magazine cover: Beating Texas",
+        "width": 390
+      }
+    ],
+    "credit": true,
+    "pdf": true,
+    "preferences": true
+  },
+  {
+    "draft": 1,
+    "width": 1366,
+    "overflow": 0,
+    "cover": [
+      {
+        "loaded": true,
+        "alt": "GatorBait Texas postgame magazine cover: Beating Texas",
+        "width": 480
+      }
+    ],
+    "credit": true,
+    "pdf": true,
+    "preferences": true
+  },
+  {
+    "draft": 1,
+    "width": 1920,
+    "overflow": 0,
+    "cover": [
+      {
+        "loaded": true,
+        "alt": "GatorBait Texas postgame magazine cover: Beating Texas",
+        "width": 480
+      }
+    ],
+    "credit": true,
+    "pdf": true,
+    "preferences": true
+  }
+]

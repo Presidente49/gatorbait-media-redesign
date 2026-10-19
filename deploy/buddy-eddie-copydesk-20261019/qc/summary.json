@@ -1,0 +1,114 @@
+[
+  {
+    "name": "buddy",
+    "width": 390,
+    "captured": "2026-10-19T21:41:35.814Z",
+    "checks": {
+      "corrected_body": true,
+      "inline_photo_loaded": true,
+      "three_credit_links": true,
+      "no_overflow": true,
+      "visible_credit": true
+    },
+    "maxParagraphChars": 255,
+    "nativeHero": "Existing empty/hidden native cover section; credited body image verified separately."
+  },
+  {
+    "name": "eddie",
+    "width": 390,
+    "captured": "2026-10-19T21:41:43.937Z",
+    "checks": {
+      "corrected_body": true,
+      "inline_photo_loaded": true,
+      "three_credit_links": true,
+      "no_overflow": true,
+      "visible_credit": true
+    },
+    "maxParagraphChars": 701,
+    "nativeHero": "Existing empty/hidden native cover section; credited body image verified separately."
+  },
+  {
+    "name": "buddy",
+    "width": 430,
+    "captured": "2026-10-19T21:41:38.023Z",
+    "checks": {
+      "corrected_body": true,
+      "inline_photo_loaded": true,
+      "three_credit_links": true,
+      "no_overflow": true,
+      "visible_credit": true
+    },
+    "maxParagraphChars": 255,
+    "nativeHero": "Existing empty/hidden native cover section; credited body image verified separately."
+  },
+  {
+    "name": "eddie",
+    "width": 430,
+    "captured": "2026-10-19T21:41:46.260Z",
+    "checks": {
+      "corrected_body": true,
+      "inline_photo_loaded": true,
+      "three_credit_links": true,
+      "no_overflow": true,
+      "visible_credit": true
+    },
+    "maxParagraphChars": 701,
+    "nativeHero": "Existing empty/hidden native cover section; credited body image verified separately."
+  },
+  {
+    "name": "buddy",
+    "width": 1366,
+    "captured": "2026-10-19T21:41:38.201Z",
+    "checks": {
+      "corrected_body": true,
+      "inline_photo_loaded": true,
+      "three_credit_links": true,
+      "no_overflow": true,
+      "visible_credit": true
+    },
+    "maxParagraphChars": 255,
+    "nativeHero": "Existing empty/hidden native cover section; credited body image verified separately."
+  },
+  {
+    "name": "eddie",
+    "width": 1366,
+    "captured": "2026-10-19T21:41:46.977Z",
+    "checks": {
+      "corrected_body": true,
+      "inline_photo_loaded": true,
+      "three_credit_links": true,
+      "no_overflow": true,
+      "visible_credit": true
+    },
+    "maxParagraphChars": 701,
+    "nativeHero": "Existing empty/hidden native cover section; credited body image verified separately."
+  },
+  {
+    "name": "buddy",
+    "width": 1920,
+    "captured": "2026-10-19T21:41:36.738Z",
+    "checks": {
+      "corrected_body": true,
+      "inline_photo_loaded": true,
+      "three_credit_links": true,
+      "no_overflow": true,
+      "visible_credit": true
+    },
+    "maxParagraphChars": 255,
+    "nativeHero": "Existing empty/hidden native cover section; credited body image verified separately."
+  },
+  {
+    "name": "eddie",
+    "width": 1920,
+    "captured": "2026-10-19T21:41:46.339Z",
+    "checks": {
+      "corrected_body": true,
+      "inline_photo_loaded": true,
+      "three_credit_links": true,
+      "no_overflow": true,
+      "visible_credit": true
+    },
+    "maxParagraphChars": 701,
+    "nativeHero": "Existing empty/hidden native cover section; credited body image verified separately."
+  }
+]

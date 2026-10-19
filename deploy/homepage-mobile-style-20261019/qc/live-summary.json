@@ -1,0 +1,54 @@
+{
+  "source": "Actual cache-busted live Wix homepage; no interception",
+  "commit": "8e72526ea341dd1eb77d88e74539ae9359628af8",
+  "embedRevision": "21",
+  "rows": [
+    {
+      "width": 320,
+      "passed": true,
+      "keyboardFocus": true,
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "passed": true,
+      "keyboardFocus": true,
+      "pageErrors": []
+    },
+    {
+      "width": 430,
+      "passed": true,
+      "keyboardFocus": true,
+      "pageErrors": []
+    },
+    {
+      "width": 820,
+      "passed": true,
+      "keyboardFocus": true,
+      "pageErrors": [
+        "wixTagManager is not defined",
+        "wixTagManager is not defined"
+      ]
+    },
+    {
+      "width": 1366,
+      "passed": true,
+      "keyboardFocus": true,
+      "pageErrors": [
+        "wixTagManager is not defined",
+        "wixTagManager is not defined"
+      ]
+    },
+    {
+      "width": 1920,
+      "passed": true,
+      "keyboardFocus": true,
+      "pageErrors": [
+        "wixTagManager is not defined",
+        "wixTagManager is not defined"
+      ]
+    }
+  ],
+  "independentReview": "Muse actual menu/cookie UI smoke22:10:35Z; root inspected actual live390/1920 screenshots.",
+  "physicalIPhone": false
+}

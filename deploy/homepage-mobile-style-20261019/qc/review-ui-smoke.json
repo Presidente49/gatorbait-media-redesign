@@ -1,0 +1,50 @@
+{
+  "captured": "2026-10-19T22:10:35.905Z",
+  "ctas": [
+    {
+      "text": "Read the story \u2192",
+      "height": 48,
+      "width": 180.328125
+    },
+    {
+      "text": "All stories \u2192",
+      "height": 48,
+      "width": 358
+    }
+  ],
+  "heroCredit": {
+    "text": "Photo courtesy UAA and Hannah White. Official galleries.",
+    "scrollHeight": 26,
+    "clientHeight": 26,
+    "overflow": "visible"
+  },
+  "heroMeta": "Eddie Gilley \u00b7 October 19, 2026",
+  "captionLinks": [
+    "https://floridagators.com/",
+    "https://www.instagram.com/hannahmorganphoto/",
+    "https://floridagators.com/galleries"
+  ],
+  "controls": [
+    {
+      "text": "MENU",
+      "label": null,
+      "expanded": "false"
+    },
+    {
+      "text": "\u00d7",
+      "label": "Close menu",
+      "expanded": null
+    }
+  ],
+  "menuOpenExpanded": "true",
+  "menuClosedExpanded": "false",
+  "consentSettingsVisible": true,
+  "consentDialogs": [
+    "Advanced Cookie SettingsEssential CookiesRequired for core site functions and security. These cannot be disabled.\n    \n      \n        \n      Marketing CookiesHelp measure advertising and make promotions more relevant.\n    \n      \n        \n      Functional CookiesRemember choices and improve site features.\n    \n      \n        \n      Analytics CookiesHelp us understand site usage and improve performance.\n    \n      \n        \n      Save Choices"
+  ],
+  "consentPreferencesChanged": false,
+  "liveSkinResources": [
+    "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@8e72526ea341dd1eb77d88e74539ae9359628af8/sports-live/broadcast-home-color.js"
+  ],
+  "errors": []
+}

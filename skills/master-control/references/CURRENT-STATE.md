@@ -1,5 +1,8 @@
 # Master Control Current State
 
+- **Blog author flicker Oct.19:** existing4d3ab24a author/SEO embed rev7 now HEAD/ESSENTIAL, scoped native-avatar rule applies before first paint. Fresh live390/430/1366/1920: zero visible portrait samples, Chris byline retained,4inline/16gallery images, zero overflow. Header stays existing blue gradient/white title. No site publish; rollback deploy/blog-author-first-paint-20261019/rollback/author-r6.html plus BODY_END.
+- **Member lounge inventory Oct.19 (read-only):** Gold VIP Lounge exists PRIVATE/ADMIN_APPROVAL, not verified paid-plan enforcement. Old Ask/Trivia/picks/chat prototypes reusable; no fresh local Labs implementation found. Recommendation and current Groups evidence: docs/member-lounge-reuse-20261019.md. No access or plan changes.
+
 - **Latest owner newsletter direction Oct.19:** one combined free magazine email, cover + Buddy/Loren/Franz article links + complete phone PDF; final draftd11c07d6-dee4-47b2-aa66-a3af0882ed83 NOT_STARTED, not sent/scheduled. Supersedes standalone364f351c and interimce2bc47f; win-back491b0190 remains separate. Four-width provider preview passed; current frequency caps hold another same-day send. See marketing/newsletter/2026-10-19/.
 
 - **Oct.19 cover owner update:** original Texas cover approved for win-back/member-PDF email. Final replacement drafts 88af8816-900d-4fb6-a4f7-effdbd9e88f7 and 364f351c-314c-4567-806c-6753101c32d8 include credited cover and phone PDF; neither sent/scheduled. Earlier f6273a4d/6a17d1f1 drafts superseded after classic-editor update rejection. Missing-cover blocker cleared; fresh release gates remain.

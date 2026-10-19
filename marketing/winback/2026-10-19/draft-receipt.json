@@ -3,7 +3,7 @@
   "drafts": [
     {
       "kind": "winback.json",
-      "id": "88af8816-900d-4fb6-a4f7-effdbd9e88f7",
+      "id": "491b0190-9ebd-4309-9b2e-5fe5fbc69635",
       "state": "NOT_STARTED",
       "visibility": "DRAFT",
       "editor": "MJML",
@@ -11,8 +11,9 @@
       "nativePreferences": true,
       "sent": false,
       "scheduled": false,
-      "supersedes": "f6273a4d-3d81-41dd-b7c1-e014885100b7",
-      "coverApprovedByOwner": true
+      "supersedes": "88af8816-900d-4fb6-a4f7-effdbd9e88f7",
+      "coverApprovedByOwner": true,
+      "photoCreditLinks": true
     },
     {
       "kind": "pdf.json",
@@ -25,10 +26,11 @@
       "sent": false,
       "scheduled": false,
       "supersedes": "6a17d1f1-242b-48e3-a4ed-52c71d18aada",
-      "coverApprovedByOwner": true
+      "coverApprovedByOwner": true,
+      "supersededBy": "d11c07d6-dee4-47b2-aa66-a3af0882ed83"
     }
   ],
-  "releaseState": "COVER_APPROVED_DRAFTS_PREPARED_NOT_SCHEDULED",
+  "releaseState": "COMBINED_NEWSLETTER_REPLACES_STANDALONE_PDF_NO_SEND_OR_SCHEDULE",
   "couponId": "f42b78a5-869b-4869-81da-f50e6204cc73",
   "couponPricePreviewVerified": true,
   "noOrdersOrCharges": true,

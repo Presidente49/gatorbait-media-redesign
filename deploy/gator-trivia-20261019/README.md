@@ -23,3 +23,9 @@ Local upstream image evaluation used six bounded services and loopback-only port
 Chromium390/430/1366/1920: every correct answer counted once, choices disabled after answer, all source links matched,5/5finish, replay reset0, wrong answer0, zero horizontal overflow and no browser errors. Keyboard Enter exercised each answer. Physical iPhone untested. QC in qc/.
 
 This is an additive playable preview. No Wix embed/homepage, membership, automation, email or site publish changed. Local trial rollback: stop only the gbm-classquiz-trial compose project. Preview rollback: revert this additive package and its lounge-preview link. Future member-area release requires the native Wix installation and entitlement checks already described in the lounge handoff.
+
+## Fast rounds update
+
+Default Quickfire has a visible five-second countdown. Lightning offers three seconds; untimed Practice remains available before starting or replaying. Answer or timeout locks the question, then the quizmaster automatically deals the next after a two-second reveal. Timeout earns zero; correct earns one; repeat clicks cannot add points. All five answers/explanations/sources remain in a final review. The viewport moves to the game before the clock starts so phone players do not spend the round scrolling from the masthead.
+
+Deadlines use monotonic elapsed time, checked again before accepting an answer and when returning to a backgrounded tab. This is still client-side practice/demo scoring with a public question deck, not server-authoritative anti-cheat or a protected competition. No claim that the timer eliminates looking up answers.

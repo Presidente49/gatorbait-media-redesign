@@ -1,0 +1,249 @@
+{
+  "written": [
+    {
+      "id": "fea566c1-4df6-457e-a9f0-22fe83441ae1",
+      "revision": "3",
+      "status": "ACTIVE"
+    },
+    {
+      "id": "5006baf5-fbbf-440c-a012-a09bdbd95fc9",
+      "revision": "19",
+      "status": "ACTIVE"
+    }
+  ],
+  "verified": [
+    {
+      "id": "fea566c1-4df6-457e-a9f0-22fe83441ae1",
+      "revision": "3",
+      "status": "ACTIVE",
+      "actions": {
+        "a64ec849-3d4b-4e81-a76a-98a9169cd324": {
+          "id": "a64ec849-3d4b-4e81-a76a-98a9169cd324",
+          "type": "APP_DEFINED",
+          "displayName": "Add to GatorBait email audience",
+          "namespace": "gatorbait-email-labels-1",
+          "appDefinedInfo": {
+            "appId": "74bff718-5977-47f2-9e5f-a9fd0047fd1f",
+            "actionKey": "addLabelsToContact",
+            "inputMapping": {
+              "contactId": "{{var(\"contactId\")}}",
+              "labelKeys": [
+                "custom.gatorbait-email-list",
+                "custom.gatorbait-story-alerts-new-confirmed-signups-Y8gBD"
+              ]
+            },
+            "skipConditionOrExpressionGroups": [],
+            "postActionIds": []
+          }
+        }
+      }
+    },
+    {
+      "id": "5006baf5-fbbf-440c-a012-a09bdbd95fc9",
+      "revision": "19",
+      "status": "ACTIVE",
+      "actions": {
+        "042c6c7c-f7e4-4d60-abd2-5f22fa69cf0e": {
+          "id": "042c6c7c-f7e4-4d60-abd2-5f22fa69cf0e",
+          "type": "APP_DEFINED",
+          "namespace": "triggered-emails-1",
+          "appDefinedInfo": {
+            "appId": "135c3d92-0fea-1f9d-2ba5-2a1dfb04297e",
+            "actionKey": "triggered-emails",
+            "inputMapping": {
+              "sendToUnsubscribed": false,
+              "disableLandingPage": false,
+              "transactional": false,
+              "disableEmailThreading": false,
+              "selectedAudience": {
+                "customRecipients": [],
+                "labelIds": [
+                  "5a5e7f99-237e-40ae-afdc-a12fdcb92b9b",
+                  "ffb200e5-a04d-4ba9-ab4d-d9ed8bd4282a"
+                ],
+                "contributorRoleIds": [],
+                "segmentIds": [],
+                "recipientEmails": [],
+                "audienceSelectors": [],
+                "contactIds": [],
+                "userIds": [],
+                "triggerContactExcluded": true
+              },
+              "messageUpdatedDate": "2026-07-24T01:21:30.880Z",
+              "dynamicParams": [],
+              "templateId": "50f5be81-457d-4bf8-8e04-e6a946dbf69b",
+              "disabledAttachments": [],
+              "senderDetailsId": "e789a341-dc7d-4250-9c82-f1f0539b8927",
+              "messageId": "1dfd5091-6dbe-48ef-a919-ef0fc75a38ab",
+              "excludeFromQuota": false,
+              "notificationTopicId": "a58a2a0e-9016-4d08-91d9-ee7e98352965",
+              "actionConfigVersion": "V3"
+            },
+            "skipConditionOrExpressionGroups": [],
+            "postActionIds": []
+          }
+        }
+      }
+    }
+  ],
+  "originals": {
+    "form": {
+      "id": "fea566c1-4df6-457e-a9f0-22fe83441ae1",
+      "revision": "2",
+      "createdBy": {
+        "userId": "d3cfa5bb-e790-416b-be8a-6453ae9a84dd"
+      },
+      "createdDate": "2026-09-18T22:23:01.250Z",
+      "updatedBy": {
+        "userId": "d3cfa5bb-e790-416b-be8a-6453ae9a84dd"
+      },
+      "updatedDate": "2026-10-14T17:12:18.731Z",
+      "name": "GatorBait Email List - Audience Labels",
+      "description": "Keeps the current GatorBait email audience labels synchronized with explicit opt-ins submitted through the GatorBait Email List form.",
+      "configuration": {
+        "status": "ACTIVE",
+        "trigger": {
+          "appId": "225dd912-7dea-4738-8688-4b8c6955ffc2",
+          "triggerKey": "wix_form_app-form_submitted",
+          "filters": [
+            {
+              "id": "43db08da-84bf-4dd2-817c-22d497cc70fc",
+              "fieldKey": "formId",
+              "filterExpression": "{{contains([\"6babfee8-147f-428a-9e14-6b72f6225835\"];var(\"formId\"))}}"
+            }
+          ]
+        },
+        "rootActionIds": [
+          "a64ec849-3d4b-4e81-a76a-98a9169cd324"
+        ],
+        "actions": {
+          "a64ec849-3d4b-4e81-a76a-98a9169cd324": {
+            "id": "a64ec849-3d4b-4e81-a76a-98a9169cd324",
+            "type": "APP_DEFINED",
+            "displayName": "Add to GatorBait email audience",
+            "namespace": "gatorbait-email-labels-1",
+            "appDefinedInfo": {
+              "appId": "74bff718-5977-47f2-9e5f-a9fd0047fd1f",
+              "actionKey": "addLabelsToContact",
+              "inputMapping": {
+                "contactId": "{{var(\"contactId\")}}",
+                "labelKeys": [
+                  "custom.gatorbait-email-list"
+                ]
+              },
+              "skipConditionOrExpressionGroups": [],
+              "postActionIds": []
+            }
+          }
+        }
+      },
+      "origin": "USER",
+      "settings": {
+        "hidden": false,
+        "readonly": false,
+        "disableDelete": false,
+        "disableStatusChange": false,
+        "actionSettings": {
+          "permanentActionIds": [],
+          "readonlyActionIds": [],
+          "disableDelayAddition": false,
+          "disableConditionAddition": false
+        },
+        "domain": "USER"
+      },
+      "archived": false
+    },
+    "blog": {
+      "id": "5006baf5-fbbf-440c-a012-a09bdbd95fc9",
+      "revision": "18",
+      "createdBy": {
+        "appId": "14bcded7-0066-7c35-14d7-466cb3f09103"
+      },
+      "createdDate": "2024-04-05T23:29:37Z",
+      "updatedBy": {
+        "userId": "d3cfa5bb-e790-416b-be8a-6453ae9a84dd"
+      },
+      "updatedDate": "2026-10-19T12:49:48.236Z",
+      "name": "GatorBait Story Alert — New Blog Post",
+      "description": "Branded GatorBait automatic story email. Uses each post title, cover image, excerpt and URL. Special GatorBait Magazine newsletters remain separate curated campaigns.",
+      "configuration": {
+        "status": "ACTIVE",
+        "trigger": {
+          "appId": "14bcded7-0066-7c35-14d7-466cb3f09103",
+          "triggerKey": "wix_blog-new_blog_post",
+          "filters": []
+        },
+        "rootActionIds": [
+          "042c6c7c-f7e4-4d60-abd2-5f22fa69cf0e"
+        ],
+        "actions": {
+          "042c6c7c-f7e4-4d60-abd2-5f22fa69cf0e": {
+            "id": "042c6c7c-f7e4-4d60-abd2-5f22fa69cf0e",
+            "type": "APP_DEFINED",
+            "namespace": "triggered-emails-1",
+            "appDefinedInfo": {
+              "appId": "135c3d92-0fea-1f9d-2ba5-2a1dfb04297e",
+              "actionKey": "triggered-emails",
+              "inputMapping": {
+                "sendToUnsubscribed": false,
+                "disableLandingPage": false,
+                "transactional": false,
+                "disableEmailThreading": false,
+                "selectedAudience": {
+                  "customRecipients": [],
+                  "labelIds": [
+                    "5a5e7f99-237e-40ae-afdc-a12fdcb92b9b"
+                  ],
+                  "contributorRoleIds": [],
+                  "segmentIds": [],
+                  "recipientEmails": [],
+                  "audienceSelectors": [],
+                  "contactIds": [],
+                  "userIds": [],
+                  "triggerContactExcluded": true
+                },
+                "messageUpdatedDate": "2026-07-24T01:21:30.880Z",
+                "dynamicParams": [],
+                "templateId": "50f5be81-457d-4bf8-8e04-e6a946dbf69b",
+                "disabledAttachments": [],
+                "senderDetailsId": "e789a341-dc7d-4250-9c82-f1f0539b8927",
+                "messageId": "1dfd5091-6dbe-48ef-a919-ef0fc75a38ab",
+                "excludeFromQuota": false,
+                "notificationTopicId": "a58a2a0e-9016-4d08-91d9-ee7e98352965",
+                "actionConfigVersion": "V3"
+              },
+              "skipConditionOrExpressionGroups": [],
+              "postActionIds": []
+            }
+          }
+        }
+      },
+      "origin": "PREINSTALLED",
+      "preinstalledInfo": {
+        "appId": "14bcded7-0066-7c35-14d7-466cb3f09103",
+        "componentId": "13cc69d8-e729-4b8a-b171-a467893d1583",
+        "componentVersion": 50,
+        "override": true
+      },
+      "settings": {
+        "hidden": false,
+        "readonly": false,
+        "disableDelete": false,
+        "disableStatusChange": false,
+        "actionSettings": {
+          "permanentActionIds": [],
+          "readonlyActionIds": [],
+          "disableDelayAddition": false,
+          "disableConditionAddition": false
+        },
+        "domain": "USER",
+        "triggerSettings": {
+          "disableConfigurationModification": true
+        }
+      },
+      "draftUpdatedDate": "2026-07-24T01:24:03.310Z",
+      "archived": false
+    }
+  },
+  "historicalContactsEnrolled": 0
+}

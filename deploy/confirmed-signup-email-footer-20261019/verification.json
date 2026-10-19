@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-19T12:58:20.071Z",
+  "buttons": [
+    {
+      "label": "READ THE FULL STORY →",
+      "url": "${url}"
+    },
+    {
+      "label": "GET FREE EMAIL ALERTS",
+      "url": "https://buddymartinshow.wixforms.com/f/7517931185469654016"
+    },
+    {
+      "label": "SHOP THE GATORBAIT STORE",
+      "url": "https://gatorbait2026.itemorder.com/shop/home/?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=store"
+    },
+    {
+      "label": "SUBSCRIBE TO GATORBAIT",
+      "url": "https://www.gatorbaitmedia.com/pricing-plans/subscribe?utm_source=gatorbait_story_alert&utm_medium=email&utm_campaign=story_alert_footer&utm_content=membership"
+    }
+  ],
+  "contactLink": true,
+  "addressActive": true,
+  "confirmation": {
+    "confirmationLevel": "DOUBLE_CONFIRMATION",
+    "subscriptionChannels": [
+      "EMAIL"
+    ]
+  },
+  "consentChecked": false,
+  "primary": {
+    "revision": "19",
+    "status": "ACTIVE"
+  },
+  "duplicate": {
+    "revision": "39",
+    "status": "INACTIVE"
+  }
+}

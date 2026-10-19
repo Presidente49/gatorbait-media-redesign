@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-10-19T12:51:42.604Z",
+  "campaignId": "6cb87c5c-418e-4c5f-925d-90428ce8bc6e",
+  "state": "DISTRIBUTED",
+  "visibility": "PUBLISHED",
+  "publishingData": {
+    "landingPageUrl": "https://www.gatorbaitmedia.com/so/6eQ5KCjvB?languageTag=en",
+    "datePublished": "2026-10-19T12:49:14Z",
+    "wasResentToNonOpeners": false
+  },
+  "statistics": {
+    "statistics": [
+      {
+        "campaignId": "6cb87c5c-418e-4c5f-925d-90428ce8bc6e",
+        "landingPage": {
+          "opened": 0,
+          "clicked": 0
+        },
+        "email": {
+          "delivered": 456,
+          "opened": 39,
+          "clicked": 5,
+          "bounced": 1,
+          "complained": 0,
+          "notSent": 0
+        }
+      }
+    ]
+  }
+}

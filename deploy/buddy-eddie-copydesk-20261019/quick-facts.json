@@ -1,0 +1,190 @@
+{
+  "source": "https://www.espn.com/college-football/boxscore/_/gameId/401856724",
+  "jsonSource": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856724",
+  "final": {
+    "Florida": 27,
+    "Texas": 24
+  },
+  "scoringProgression": [
+    {
+      "text": "Raleek Brown 32 Yd Run (Gianni Spetic Kick)",
+      "awayScore": 0,
+      "homeScore": 7
+    },
+    {
+      "text": "Gianni Spetic 38 Yd Field Goal  ",
+      "awayScore": 0,
+      "homeScore": 10
+    },
+    {
+      "text": "Patrick Durkin 45 Yd Field Goal  ",
+      "awayScore": 3,
+      "homeScore": 10
+    },
+    {
+      "text": "Ryan Niblett 63 Yd Punt Return (Gianni Spetic Kick)",
+      "awayScore": 3,
+      "homeScore": 17
+    },
+    {
+      "text": "Lacota Dippre 7 Yd pass from Tramell Jones Jr. (Patrick Durkin Kick)",
+      "awayScore": 10,
+      "homeScore": 17
+    },
+    {
+      "text": "Lacota Dippre 8 Yd pass from Tramell Jones Jr. (Patrick Durkin Kick)",
+      "awayScore": 17,
+      "homeScore": 17
+    },
+    {
+      "text": "Patrick Durkin 28 Yd Field Goal  ",
+      "awayScore": 20,
+      "homeScore": 17
+    },
+    {
+      "text": "Jadan Baugh 11 Yd Run (Patrick Durkin Kick)",
+      "awayScore": 27,
+      "homeScore": 17
+    },
+    {
+      "text": "Cam Coleman 9 Yd pass from Arch Manning (Gianni Spetic Kick)",
+      "awayScore": 27,
+      "homeScore": 24
+    }
+  ],
+  "attendance": 103989,
+  "teamStats": [
+    {
+      "team": "Florida Gators",
+      "stats": [
+        {
+          "name": "firstDowns",
+          "value": "21"
+        },
+        {
+          "name": "thirdDownEff",
+          "value": "8-19"
+        },
+        {
+          "name": "fourthDownEff",
+          "value": "2-2"
+        },
+        {
+          "name": "totalYards",
+          "value": "313"
+        },
+        {
+          "name": "netPassingYards",
+          "value": "155"
+        },
+        {
+          "name": "completionAttempts",
+          "value": "22/35"
+        },
+        {
+          "name": "yardsPerPass",
+          "value": "4.4"
+        },
+        {
+          "name": "rushingYards",
+          "value": "158"
+        },
+        {
+          "name": "rushingAttempts",
+          "value": "46"
+        },
+        {
+          "name": "yardsPerRushAttempt",
+          "value": "3.4"
+        },
+        {
+          "name": "totalPenaltiesYards",
+          "value": "7-55"
+        },
+        {
+          "name": "turnovers",
+          "value": "0"
+        },
+        {
+          "name": "fumblesLost",
+          "value": "0"
+        },
+        {
+          "name": "interceptions",
+          "value": "0"
+        },
+        {
+          "name": "possessionTime",
+          "value": "38:11"
+        }
+      ]
+    },
+    {
+      "team": "Texas Longhorns",
+      "stats": [
+        {
+          "name": "firstDowns",
+          "value": "13"
+        },
+        {
+          "name": "thirdDownEff",
+          "value": "2-10"
+        },
+        {
+          "name": "fourthDownEff",
+          "value": "1-3"
+        },
+        {
+          "name": "totalYards",
+          "value": "272"
+        },
+        {
+          "name": "netPassingYards",
+          "value": "173"
+        },
+        {
+          "name": "completionAttempts",
+          "value": "14/20"
+        },
+        {
+          "name": "yardsPerPass",
+          "value": "8.7"
+        },
+        {
+          "name": "rushingYards",
+          "value": "99"
+        },
+        {
+          "name": "rushingAttempts",
+          "value": "30"
+        },
+        {
+          "name": "yardsPerRushAttempt",
+          "value": "3.3"
+        },
+        {
+          "name": "totalPenaltiesYards",
+          "value": "1-15"
+        },
+        {
+          "name": "turnovers",
+          "value": "1"
+        },
+        {
+          "name": "fumblesLost",
+          "value": "1"
+        },
+        {
+          "name": "interceptions",
+          "value": "0"
+        },
+        {
+          "name": "possessionTime",
+          "value": "21:49"
+        }
+      ]
+    }
+  ],
+  "scheduleRemaining": "Florida is5-2 through7games;12regular-season games means5remaining (Georgia,Oklahoma,Kentucky,Vanderbilt,FloridaState).",
+  "staffCheckScope": "One primary ESPN box-score pass; writer observations/opinions retained."
+}

@@ -1,6 +1,8 @@
 // READ-ONLY probe of live gatorbaitmedia.com /magazine for native-Wix flash on the paths real visitors take.
 // Default TLS verification, no cache-busting params, no writes. Output: out/results.json, out/summary.txt, out/*.jpg
-const { chromium } = require('playwright');
+const pw = require('playwright');
+const ENGINE = process.env.ENGINE || 'chromium';
+const chromium = pw[ENGINE];
 const fs = require('fs');
 const BASE = 'https://www.gatorbaitmedia.com';
 const TAG = process.env.PROBE_TAG || 'run';
@@ -91,11 +93,13 @@ async function newCtx(browser, v, extra) {
   return ctx;
 }
 async function throttle(page, on) {
+  if (ENGINE !== 'chromium') return null;
   const cdp = await page.context().newCDPSession(page);
   if (on) { await cdp.send('Network.enable'); await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 150, downloadThroughput: Math.round(1.6 * 1024 * 1024 / 8), uploadThroughput: Math.round(750 * 1024 / 8) }); await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 }); }
   return cdp;
 }
 async function startShots(page) {
+  if (ENGINE !== 'chromium') { const frames = []; let stop = false; (async () => { const end = Date.now() + 9000; while (!stop && Date.now() < end) { try { const b = await page.screenshot({ type: 'jpeg', quality: 40 }); frames.push({ ts: Date.now(), data: b.toString('base64') }); } catch (e) { await new Promise(r => setTimeout(r, 100)); } } })(); return { frames, cdp: { send: async () => { stop = true; } } }; }
   const cdp = await page.context().newCDPSession(page); const frames = [];
   cdp.on('Page.screencastFrame', async f => { frames.push({ ts: f.metadata.timestamp * 1000, data: f.data }); try { await cdp.send('Page.screencastFrameAck', { sessionId: f.sessionId }); } catch (e) {} });
   await cdp.send('Page.startScreencast', { format: 'jpeg', quality: 40, everyNthFrame: 1 });
@@ -228,6 +232,7 @@ for (const vk of ['d', 'm']) { const v = VIEWS[vk]; BF.push({ id: `f1-bfcache-${
 
 async function runList(browser, list, summary) {
   for (const s of list) {
+    if (ENGINE !== 'chromium' && /^c\d/.test(s.id)) continue;
     const meta = { id: s.id, view: s.v.name, note: s.ticksNote || '' }; let h = null; const t0 = Date.now();
     try { h = await s.fn(browser, s.v, meta); await finish(s.id, meta, h.p, h.sh, h.wait); }
     catch (e) { meta.error = String(e && e.message || e).slice(0, 300); }
@@ -253,11 +258,11 @@ async function runList(browser, list, summary) {
 (async () => {
   const summary = [];
   const browser = await chromium.launch();
-  await runList(browser, SC, summary); await browser.close();
-  const b2 = await chromium.launch({ ignoreDefaultArgs: ['--disable-back-forward-cache'], args: ['--enable-features=BackForwardCache', '--disable-features=BackForwardCacheMemoryControls'] });
-  await runList(b2, BF, summary); await b2.close();
-  fs.writeFileSync('out/summary.json', JSON.stringify({ tag: TAG, at: new Date().toISOString(), summary }, null, 1));
+  await runList(browser, SC, summary); if (ENGINE !== 'chromium') await runList(browser, BF, summary); await browser.close();
+  if (ENGINE === 'chromium') { const b2 = await chromium.launch({ ignoreDefaultArgs: ['--disable-back-forward-cache'], args: ['--enable-features=BackForwardCache', '--disable-features=BackForwardCacheMemoryControls'] });
+  await runList(b2, BF, summary); await b2.close(); }
+  fs.writeFileSync(`out/summary-${ENGINE}.json`, JSON.stringify({ tag: TAG, at: new Date().toISOString(), summary }, null, 1));
   const lines = summary.map(s => `${s.id.padEnd(26)} link=${(s.mode || '-').slice(0, 12).padEnd(12)} tickFlash=${JSON.stringify(s.tickFlash)} raf=${JSON.stringify(s.rafFlash.map(f => f.from + '-' + f.to))} stray=${JSON.stringify(s.strayTicks)} veil=${s.veilOn}/${s.veilOff} mag@${s.mag1} cls=${s.cls} ftrNoMag=${JSON.stringify(s.footerInViewWithoutMag)} tools@${s.toolsAppear} ${s.err || ''}`);
-  fs.writeFileSync('out/summary.txt', lines.join('\n') + '\n');
+  fs.writeFileSync(`out/summary-${ENGINE}.txt`, lines.join('\n') + '\n');
   console.log(lines.join('\n'));
 })();

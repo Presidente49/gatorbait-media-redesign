@@ -15,8 +15,8 @@ jobs:
         with: { node-version: '22' }
       - name: Probe live /magazine paths (read-only, default TLS verification)
         run: |
-          mkdir p && cd p && npm init -y >/dev/null && npm i playwright@1.49.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
-          cp ../probe-magnav/run.js . && cat ../probe-magnav/tag.txt > /dev/null && PROBE_TAG=$(cat ../probe-magnav/tag.txt) node run.js
+          mkdir p && cd p && npm init -y >/dev/null && npm i playwright@1.49.1 >/dev/null 2>&1 && npx playwright install --with-deps chromium webkit >/dev/null 2>&1
+          cp ../probe-magnav/run.js . && cat ../probe-magnav/tag.txt > /dev/null && T=$(cat ../probe-magnav/tag.txt); PROBE_TAG=$T ENGINE=webkit node run.js; mkdir -p wk && cp out/* wk/ && rm -rf out && mkdir out && PROBE_TAG=$T node run.js; mkdir -p out/webkit && cp wk/* out/webkit/
       - if: always()
         run: |
           TAG=$(cat probe-magnav/tag.txt)

@@ -1,6 +1,6 @@
 # Job: newsroom-desk
 
-Runs hourly 6:20 a.m. to 11:20 p.m. ET; Franz Thoughts of the Day runs on weekday mornings, 6-11 a.m. Read `docs/START-HERE.md`, newest #34 comments and LESSONS-DIGEST first. Resolve date/game from live primary sources. Jarvis owns publication. This is one consolidated pass, not five intake passes over the same messages.
+Current owner direction, Oct. 19: Muse owns intake; Codex is the controller and sole production writer. Prepare one hourly sweep Monday through Saturday, 6:20 a.m. to 11:20 p.m. America/New_York. The existing hosted task `6abb42e5aba4819196a8080584891d9a` has this schedule and remains DISABLED because the correct newsroom mailbox is not connected here. This is not evidence that the separate Claude routine was resumed. Read START-HERE, current state and newest relevant #34 receipts. Verify actual mailbox identity before claiming intake coverage; the connected personal Gmail is not a sweep of brenden@gatorbaitmedia.com. One consolidated pass, not overlapping checks.
 
 Retired prompts remain in git history. Their breaking-email instructions, writer pins, old games and branch/session assignments are not executable specifications.
 
@@ -14,8 +14,8 @@ Retired prompts remain in git history. Their breaking-email instructions, writer
 
 4. Under Brenden's Oct. 10 standing order, publish incoming staff writer submissions after the copy desk, under their actual bylines, while that order stands. Preserve voice/copy; change only supported facts, formatting and approved metadata. There is no writer-assignment email step. A missing submission is not permission to ghostwrite it.
 5. Jarvis/Copy Desk news and postgame pieces follow START-HERE's existing editorial delegation and use Brenden Martin's verified member. Build one canonical story per angle from complete primary sources; unresolved core facts remain held. Read `tools/voice/HOUSE-VOICE.md` and run `tools/voice/gb_voice.py` on agent copy; never rewrite a writer's voice with it.
-6. Before each publication or UPDATE_PUBLISH, read both blog alert automations (`5006baf5-fbbf-440c-a012-a09bdbd95fc9`, `824714d4-7e31-4b1d-95b2-ccec04d788af`) and verify INACTIVE. Hold the write and report the blocker if active/unreadable; do not change automation state. Subscriber sends require separate current owner authorization and the email playbook. A passing send governor alone never authorizes a send.
-7. Set excerpt, actual writer/member, appropriate existing category/tags, distinct credited cover and descriptive alt text. Store assets in production Wix Media Manager before using their Wix URL; check prior cover usage. Follow `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md` for complete attribution, media and publication gates.
+6. Before each publication or UPDATE_PUBLISH, read both story-alert automations and reconcile current owner direction. The owner explicitly enabled primary `5006baf5-fbbf-440c-a012-a09bdbd95fc9` (fresh rev19 ACTIVE) and left duplicate `824714d4-7e31-4b1d-95b2-ccec04d788af` rev39 INACTIVE. Do not turn them off to follow older notes. A new approved post can trigger its already-authorized native alert; verify the intended small/confirmed audience, consent protection and content before release. Do not publish a dummy story to test it, duplicate the alert with a campaign, expand audiences or toggle states. Verify actual send/delivery evidence separately; ACTIVE or rendered preview does not prove delivery. Hold unexpected state or unresolved audience/content gates.
+7. Set excerpt, actual confirmed writer/member, appropriate existing category/tags, distinct credited cover and descriptive alt text. The blog trigger exposes title/description/coverImageUrl/url but no verified photo-credit variable. Ensure the excerpt consumed by the automatic email names the writer and carries the cover credit when needed, or use an appropriately credited cover asset. Never hardcode one photographer into the evergreen template. Store assets in production Wix Media Manager before using their Wix URL; check prior cover usage. Follow `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md` for complete attribution, media and publication gates.
 8. Set absent story descriptions through Item SEO Tags (`fieldMask: tags`) after checking overrides. Metadata-only edits must not move publication timestamps. Current-news lists stay newest-first; no remembered lead pin or special breaking-band patch is part of intake.
 
 ## Copy desk and video
@@ -32,11 +32,15 @@ Retired prompts remain in git history. Their breaking-email instructions, writer
 
 ## Lessons added Oct. 11 (LESSONS 85-91)
 
-After any publish or cover change: run refresh-newsroom-feed, rebuild the front page snapshot and deploy by pointer PR (Lesson 87). Lead a column with a timed pin, not breaking (Lesson 86). Use distinct credited covers, Chris Spears' folder first (Lesson 88). Embed clips as native players (Lesson 89). After each game patch the Up next box in embed 14a887e3 (Lesson 91). If an approval stalls a publish, tell Brenden at once (Lesson 85).
+After any publish or cover change: run refresh-newsroom-feed, rebuild the front page snapshot and deploy by pointer PR (Lesson 87). Lesson 86 timed-pinning direction is retired: never pin or reorder stories; strictly chronological (Lesson 104). Use distinct credited covers, Chris Spears' folder first (Lesson 88). Embed clips as native players (Lesson 89). After each game patch the Up next box in embed 14a887e3 (Lesson 91). If an approval stalls a publish, tell Brenden at once (Lesson 85).
 
 Magazine and watches (Oct. 11): read the live embed before any deploy plan (Lesson 92); one reminder chain per job (Lesson 93); use Firecrawl when TinyFish is empty (Lesson 94); postgame magazine recipe and poll-ranking hold (Lesson 95).
 
-## Story alert email (Brenden, Oct. 11: "send an email after you look and make sure the list is OK for every blog")
+## Historical manual story-alert path (Oct. 11; superseded for this block)
+
+Do not execute this manual path while the owner-authorized native primary automation is ACTIVE. It is retained as historical context only; the Oct. 19 native route above owns story email and no additional campaign is created.
+
+Earlier direction: "send an email after you look and make sure the list is OK for every blog".
 
 Brenden's standing yes covers one Gazette-style alert per qualifying story, sent by Jarvis (the Wix blog-alert automations stay INACTIVE; this path does not use them). Recipe, template and checklist: `docs/GAZETTE-STORY-ALERT.md`. For each story just published and verified live:
 
@@ -46,3 +50,7 @@ Brenden's standing yes covers one Gazette-style alert per qualifying story, sent
 4. Send only to the dedicated GatorBait Daily News label (SUBSCRIBED, VALID, no hold or Do Not Market labels), never the whole eligible pool `oHon1` (hundreds of its members carry the re-opt-in HOLD label). If that label does not exist yet, hold the alert and tell Brenden once.
 5. Caps are the governor's: one list email per 24 hours and seven a week. A second qualifying story inside the window waits for the next window or is skipped; Brenden changes the caps, not a worker.
 6. Verify delivery from campaign statistics, record campaign id and counts only in #34, keep the daily open and click numbers for the Monday scorecard.
+
+## Complete distribution handoff — owner Oct.19
+
+Use `docs/loops/newsroom.md` for accepted stage transitions: source received → copy desk → fact review → publication → independent live QC/corrections → native email verification and social packet → connected-channel publication → public verification → relevant video → measured engagement. A timer, queued packet, agent agreement or HTTP transport receipt never substitutes for completed work. Bound each repair to one attempt plus one evidence-based correction; unresolved faults remain open for the next authorized sweep. No perpetual model loops.

@@ -1,0 +1,134 @@
+{
+  "url": "http://127.0.0.1:8824/deploy/hive-workflow-20261019/",
+  "date": "2026-10-19",
+  "browser": "Chromium",
+  "widths": [
+    {
+      "width": 390,
+      "http": 200,
+      "overflow": 0,
+      "expandedOverflow": 0,
+      "logoLoaded": true,
+      "fontsLoaded": true,
+      "fontFamily": "Barlow, Arial, sans-serif",
+      "hubClearOfNodes": true,
+      "toggles": {
+        "count": 9,
+        "allOpened": true,
+        "spaceOpened": true,
+        "enterClosed": true,
+        "focusRetained": true
+      },
+      "pause": true,
+      "resume": true,
+      "emailSnapshot": "WIX STORY EMAIL\nPRIMARY ACTIVE \u00b7 DUPLICATE OFF\nTemplate saved \u00b7 Preview checked\n\nThe existing primary automation is active. The revised template is saved and preview checked; delivery remains unverified.",
+      "errors": [],
+      "failedResources": [],
+      "screenshots": [
+        "390-top.png",
+        "390-full.png",
+        "390-workflow.png"
+      ],
+      "pass": true
+    },
+    {
+      "width": 430,
+      "http": 200,
+      "overflow": 0,
+      "expandedOverflow": 0,
+      "logoLoaded": true,
+      "fontsLoaded": true,
+      "fontFamily": "Barlow, Arial, sans-serif",
+      "hubClearOfNodes": true,
+      "toggles": {
+        "count": 9,
+        "allOpened": true,
+        "spaceOpened": true,
+        "enterClosed": true,
+        "focusRetained": true
+      },
+      "pause": true,
+      "resume": true,
+      "emailSnapshot": "WIX STORY EMAIL\nPRIMARY ACTIVE \u00b7 DUPLICATE OFF\nTemplate saved \u00b7 Preview checked\n\nThe existing primary automation is active. The revised template is saved and preview checked; delivery remains unverified.",
+      "errors": [],
+      "failedResources": [],
+      "screenshots": [
+        "430-top.png",
+        "430-full.png",
+        "430-workflow.png"
+      ],
+      "pass": true
+    },
+    {
+      "width": 1366,
+      "http": 200,
+      "overflow": 0,
+      "expandedOverflow": 0,
+      "logoLoaded": true,
+      "fontsLoaded": true,
+      "fontFamily": "Barlow, Arial, sans-serif",
+      "hubClearOfNodes": true,
+      "toggles": {
+        "count": 9,
+        "allOpened": true,
+        "spaceOpened": true,
+        "enterClosed": true,
+        "focusRetained": true
+      },
+      "pause": true,
+      "resume": true,
+      "emailSnapshot": "WIX STORY EMAIL\nPRIMARY ACTIVE \u00b7 DUPLICATE OFF\nTemplate saved \u00b7 Preview checked\n\nThe existing primary automation is active. The revised template is saved and preview checked; delivery remains unverified.",
+      "errors": [],
+      "failedResources": [],
+      "screenshots": [
+        "1366-top.png",
+        "1366-full.png",
+        "1366-workflow.png"
+      ],
+      "pass": true
+    },
+    {
+      "width": 1920,
+      "http": 200,
+      "overflow": 0,
+      "expandedOverflow": 0,
+      "logoLoaded": true,
+      "fontsLoaded": true,
+      "fontFamily": "Barlow, Arial, sans-serif",
+      "hubClearOfNodes": true,
+      "toggles": {
+        "count": 9,
+        "allOpened": true,
+        "spaceOpened": true,
+        "enterClosed": true,
+        "focusRetained": true
+      },
+      "pause": true,
+      "resume": true,
+      "emailSnapshot": "WIX STORY EMAIL\nPRIMARY ACTIVE \u00b7 DUPLICATE OFF\nTemplate saved \u00b7 Preview checked\n\nThe existing primary automation is active. The revised template is saved and preview checked; delivery remains unverified.",
+      "errors": [],
+      "failedResources": [],
+      "screenshots": [
+        "1920-top.png",
+        "1920-full.png",
+        "1920-workflow.png"
+      ],
+      "pass": true
+    }
+  ],
+  "reducedMotion": {
+    "preference": true,
+    "motion": "off",
+    "halo": "paused",
+    "button": "Resume motion",
+    "pass": true
+  },
+  "pass": true,
+  "visualReview": "Inspected 390 top, 430 workflow, 1366 workflow and 1920 full screenshots; no clipping or card/hub overlap seen.",
+  "localServer": {
+    "port": 8824,
+    "stopped": true,
+    "portOpenAfterStop": false
+  },
+  "limits": "Local Chromium preview; no real iPhone/Safari or production integration tested."
+}

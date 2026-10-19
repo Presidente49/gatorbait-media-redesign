@@ -1,0 +1,158 @@
+[
+  {
+    "width": 390,
+    "repeat": false,
+    "obsoleteItalicDelayed": false,
+    "http": 200,
+    "visibleHeights": [
+      183
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [],
+    "failure": null
+  },
+  {
+    "width": 430,
+    "repeat": false,
+    "obsoleteItalicDelayed": false,
+    "http": 200,
+    "visibleHeights": [
+      202
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [],
+    "failure": null
+  },
+  {
+    "width": 390,
+    "repeat": true,
+    "obsoleteItalicDelayed": false,
+    "http": 200,
+    "visibleHeights": [
+      183
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [],
+    "failure": null
+  },
+  {
+    "width": 430,
+    "repeat": true,
+    "obsoleteItalicDelayed": false,
+    "http": 200,
+    "visibleHeights": [
+      202
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [],
+    "failure": null
+  },
+  {
+    "width": 1920,
+    "repeat": false,
+    "obsoleteItalicDelayed": false,
+    "http": 200,
+    "visibleHeights": [
+      169
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [],
+    "failure": null
+  },
+  {
+    "width": 1366,
+    "repeat": false,
+    "obsoleteItalicDelayed": false,
+    "http": 200,
+    "visibleHeights": [
+      169
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [],
+    "failure": null
+  },
+  {
+    "width": 1920,
+    "repeat": true,
+    "obsoleteItalicDelayed": false,
+    "http": 200,
+    "visibleHeights": [
+      169
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [],
+    "failure": null
+  },
+  {
+    "width": 1366,
+    "repeat": true,
+    "obsoleteItalicDelayed": false,
+    "http": 200,
+    "visibleHeights": [
+      169
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [],
+    "failure": null
+  },
+  {
+    "width": 390,
+    "repeat": false,
+    "obsoleteItalicDelayed": true,
+    "http": 200,
+    "visibleHeights": [
+      183
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [
+      "TypeError: Failed to fetch",
+      "TypeError: Failed to fetch"
+    ],
+    "failure": null
+  },
+  {
+    "width": 390,
+    "repeat": true,
+    "obsoleteItalicDelayed": true,
+    "http": 200,
+    "visibleHeights": [
+      183
+    ],
+    "styles": [
+      "normal"
+    ],
+    "overflow": false,
+    "errors": [
+      "TypeError: Failed to fetch",
+      "TypeError: Failed to fetch"
+    ],
+    "failure": null
+  }
+]

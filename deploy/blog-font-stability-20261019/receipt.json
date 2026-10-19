@@ -1,0 +1,46 @@
+{
+  "embed": {
+    "id": "a5452619-cb57-4927-9771-3a63f7cb4212",
+    "revisionBefore": "8",
+    "revisionAfter": "9",
+    "fingerprintBefore": "f763a1b3",
+    "fingerprintAfter": "b042585",
+    "chars": 13285,
+    "category": "ESSENTIAL",
+    "enabled": true,
+    "providerReadbackVerified": true
+  },
+  "change": [
+    "Upright existing Barlow Condensed for article display text; removed article skin italic font face.",
+    "Preload existing800normal face.",
+    "Phone post root waits for existing width fit;CSS2.5s failsafe."
+  ],
+  "candidate": {
+    "normalCases": 8,
+    "normalCasesPass": true,
+    "delayedObsoleteItalicCases": 2,
+    "delayedCaseVisibleHeightsStable": true,
+    "delayedCasesFetchErrors": 2,
+    "cacheNote": "Interception disables ordinary HTTPcache; second navigation is repeat, not a certified warm cache."
+  },
+  "productionVerification": {
+    "state": "INCOMPLETE_NETWORK_BLOCK",
+    "localPublicHtmlContainsCurrentCode": true,
+    "normalStyleObservedAfterPropagation": true,
+    "allFourWidthsCleanColdWarm": false,
+    "reason": "Environment outbound Envoy/cloudflare HTTPS tunnel returned503 across unrelated hosts, including Wix,jsDelivr,Pages,GitHub git. Not provider outage evidence.",
+    "probeBranch": "shots/blog-font-stability-20261019",
+    "probeHead": "641037a349b8abf6324d3deec1b24ebf4f7aebf8",
+    "probeState": "STAGED_NO_WORKFLOW_RUN_OBSERVED"
+  },
+  "scope": {
+    "homepage": false,
+    "magazine": false,
+    "bodyFont": false,
+    "articleCopy": false,
+    "sitePublish": false,
+    "automationSwitch": false
+  },
+  "rollback": "Re-read current revision/fingerprint and PATCH exact original.html withESSENTIAL retained.",
+  "physicalIphoneVerified": false
+}

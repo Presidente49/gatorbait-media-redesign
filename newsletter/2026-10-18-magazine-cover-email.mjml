@@ -1,0 +1,46 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>GatorBait Magazine: Postgame Edition. Florida 27, No. 7 Texas 24</mj-title>
+    <mj-preview>The cover, the columns and the clips from Austin. Read the Postgame Edition.</mj-preview>
+    <mj-font name="Barlow" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Barlow, Arial, Helvetica, sans-serif" />
+      <mj-text color="#33404F" font-size="17px" line-height="1.5" padding="0 0 14px" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="18px 32px" font-size="19px" font-weight="800" letter-spacing="0.8px" align="center" padding="0" />
+    </mj-attributes>
+    <mj-style>
+      :root { color-scheme: light; supported-color-schemes: light; }
+      @media only screen and (max-width: 480px) {
+        .gb-pad { padding-left: 16px !important; padding-right: 16px !important; }
+        .gb-h2 div { font-size: 24px !important; }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#FFFFFF" width="600px">
+    <mj-section background-color="#0B1F4B" padding="0" border-top="6px solid #FA4616">
+      <mj-column>
+        <mj-image width="600px" src="https://static.wixstatic.com/media/d3cfa5_dc0e57825cff4a29ac23a2e771236c34~mv2.jpg/v1/fill/w_1200,h_1600,al_c,q_80/gatorbait-magazine-postgame-cover-2026-10-18.jpg" alt="GatorBait Magazine, Postgame Edition: Florida 27, No. 7 Texas 24. Quarterback Tramell Jones, No. 9, takes the snap in Austin. Photo courtesy UAA and Hannah White (UAA / FloridaGators.com)" href="https://www.gatorbaitmedia.com/magazine?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_cover_2026_10_18&utm_content=cover" padding="0" fluid-on-mobile="true" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="26px 24px 26px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="center" padding="0 0 6px" color="#C23A0E" font-size="13px" font-weight="800" letter-spacing="2px">THE POSTGAME EDITION IS OUT</mj-text>
+        <mj-text css-class="gb-h2" align="center" padding="0 0 10px" color="#101820" font-size="28px" font-weight="800" line-height="1.15">Florida 27, No. 7 Texas 24. The whole magazine, one tap away.</mj-text>
+        <mj-text align="center" padding="0 0 22px" color="#33404F" font-size="16px">Buddy Martin, Franz Beard and Loren Meadows on the win in Austin, the game story, the new AP poll and the postgame clips. It is all on the magazine page.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/magazine?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_cover_2026_10_18&utm_content=read_button">Read the Postgame Edition</mj-button>
+        <mj-text align="center" padding="16px 0 0" color="#5B6472" font-size="13px">gatorbaitmedia.com/magazine</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F5F6F8" padding="18px 24px 18px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0" color="#4B5563" font-size="13px" line-height="1.5"><b>Photo credits.</b> Cover: quarterback Tramell Jones takes the snap at Texas, Oct. 17, 2026. Photo courtesy Hannah White and <a href="https://floridagators.com" style="color:#0B3B9E;">UAA</a> (University Athletic Association, FloridaGators.com). See more at the official <a href="https://floridagators.com/galleries" style="color:#0B3B9E;">Florida Gators photo galleries</a>.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#EEF0F3" padding="20px 24px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" color="#4B5563" font-size="14px" padding="0 0 8px">GatorBait Media &#183; <a href="https://www.gatorbaitmedia.com/?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_cover_2026_10_18&utm_content=footer_site" style="color:#0021A5;">GatorBaitMedia.com</a><br />1524 SE 22nd Ave, Ocala, FL 34471<br />Reply to brenden@gatorbaitmedia.com</mj-text>
+        <mj-text align="left" color="#4B5563" font-size="13px" padding="0">You&#8217;re receiving this because you subscribed to GatorBait Media. Manage your preferences or unsubscribe using the links below.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

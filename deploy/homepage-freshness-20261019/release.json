@@ -1,0 +1,45 @@
+{
+  "before": {
+    "customEmbed": {
+      "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+      "revision": "19",
+      "name": "GBM - Mobile rhythm v1 (homepage two-up story grid, phones)",
+      "enabled": true,
+      "loadOnce": false,
+      "position": "HEAD",
+      "embedData": {
+        "category": "ESSENTIAL",
+        "html": "<!-- GBM_BROADCAST_HOME_V1 src=27c36c3 Broadcast S1 color pass; source deploy/broadcast-2026/0c13f955/; rollback rev2.html --><style id=\"gbm-bc-wait\">html.gbm-bc-wait #gbm-live.gbm-gazette{visibility:hidden}</style><script id=\"gbm-bc-loader\">(function(){var p=(location.pathname||'/').replace(/\\/+$/,'')||'/';if(p!=='/'||window.__GBM_BC_HOME__)return;var d=document.documentElement,u=function(){d.classList.remove('gbm-bc-wait');};d.classList.add('gbm-bc-wait');setTimeout(u,2500);var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@27c36c3ab64666dd8d60d207af3c5c24b66a769d/sports-live/broadcast-home-color.js';s.onerror=u;(document.head||d).appendChild(s);})();</script>"
+      }
+    }
+  },
+  "changed": {
+    "customEmbed": {
+      "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+      "revision": "20",
+      "name": "GBM - Mobile rhythm v1 (homepage two-up story grid, phones)",
+      "enabled": true,
+      "loadOnce": false,
+      "position": "HEAD",
+      "embedData": {
+        "category": "ESSENTIAL",
+        "html": "<!-- GBM_BROADCAST_HOME_V1 src=d1ed3d5 Current-story credited photos and football labels; rollback deploy/homepage-freshness-20261019/rollback/embed-before.json --><style id=\"gbm-bc-wait\">html.gbm-bc-wait #gbm-live.gbm-gazette{visibility:hidden}</style><script id=\"gbm-bc-loader\">(function(){var p=(location.pathname||'/').replace(/\\/+$/,'')||'/';if(p!=='/'||window.__GBM_BC_HOME__)return;var d=document.documentElement,u=function(){d.classList.remove('gbm-bc-wait');};d.classList.add('gbm-bc-wait');setTimeout(u,2500);var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@d1ed3d5f99d6eb0c36955dad4e88a3ad92b53062/sports-live/broadcast-home-color.js';s.onerror=u;(document.head||d).appendChild(s);})();</script>"
+      }
+    }
+  },
+  "after": {
+    "customEmbed": {
+      "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+      "revision": "20",
+      "name": "GBM - Mobile rhythm v1 (homepage two-up story grid, phones)",
+      "enabled": true,
+      "loadOnce": false,
+      "position": "HEAD",
+      "embedData": {
+        "category": "ESSENTIAL",
+        "html": "<!-- GBM_BROADCAST_HOME_V1 src=d1ed3d5 Current-story credited photos and football labels; rollback deploy/homepage-freshness-20261019/rollback/embed-before.json --><style id=\"gbm-bc-wait\">html.gbm-bc-wait #gbm-live.gbm-gazette{visibility:hidden}</style><script id=\"gbm-bc-loader\">(function(){var p=(location.pathname||'/').replace(/\\/+$/,'')||'/';if(p!=='/'||window.__GBM_BC_HOME__)return;var d=document.documentElement,u=function(){d.classList.remove('gbm-bc-wait');};d.classList.add('gbm-bc-wait');setTimeout(u,2500);var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@d1ed3d5f99d6eb0c36955dad4e88a3ad92b53062/sports-live/broadcast-home-color.js';s.onerror=u;(document.head||d).appendChild(s);})();</script>"
+      }
+    }
+  },
+  "verified": true
+}

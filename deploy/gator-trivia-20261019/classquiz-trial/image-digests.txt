@@ -1,0 +1,2 @@
+["ghcr.io/mawoka-myblock/classquiz-frontend@sha256:f6cc3acaa49eeb4328db0966aab3f9b0ab6c6d5d6977db354e88870b5030a6f4"]
+["ghcr.io/mawoka-myblock/classquiz-backend@sha256:ae13b64132422574c12a2a751a4bbc3c5b676125dacbad020da98660fbeb9aca"]

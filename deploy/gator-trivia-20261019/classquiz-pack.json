@@ -1,0 +1,123 @@
+{
+  "public": false,
+  "title": "GatorBait: The first hand",
+  "description": "Five verified Gator history questions. Internal trial; no writers involved. Sources and explanations are in the accompanying questions.json.",
+  "background_color": "#071a33",
+  "questions": [
+    {
+      "question": "Who won Florida\u2019s first Heisman Trophy?",
+      "time": "30",
+      "type": "ABCD",
+      "answers": [
+        {
+          "answer": "Steve Spurrier",
+          "right": true
+        },
+        {
+          "answer": "Danny Wuerffel",
+          "right": false
+        },
+        {
+          "answer": "Tim Tebow",
+          "right": false
+        },
+        {
+          "answer": "Emmitt Smith",
+          "right": false
+        }
+      ]
+    },
+    {
+      "question": "Which Gator won the Heisman Trophy in 1996?",
+      "time": "30",
+      "type": "ABCD",
+      "answers": [
+        {
+          "answer": "Tim Tebow",
+          "right": false
+        },
+        {
+          "answer": "Rex Grossman",
+          "right": false
+        },
+        {
+          "answer": "Danny Wuerffel",
+          "right": true
+        },
+        {
+          "answer": "Chris Leak",
+          "right": false
+        }
+      ]
+    },
+    {
+      "question": "In which year did Tim Tebow win the Heisman Trophy?",
+      "time": "30",
+      "type": "ABCD",
+      "answers": [
+        {
+          "answer": "2006",
+          "right": false
+        },
+        {
+          "answer": "2007",
+          "right": true
+        },
+        {
+          "answer": "2008",
+          "right": false
+        },
+        {
+          "answer": "2009",
+          "right": false
+        }
+      ]
+    },
+    {
+      "question": "Who gave Florida\u2019s stadium its \u201cSwamp\u201d nickname?",
+      "time": "30",
+      "type": "ABCD",
+      "answers": [
+        {
+          "answer": "Urban Meyer",
+          "right": false
+        },
+        {
+          "answer": "Billy Donovan",
+          "right": false
+        },
+        {
+          "answer": "Steve Spurrier",
+          "right": true
+        },
+        {
+          "answer": "Ben Hill Griffin Jr.",
+          "right": false
+        }
+      ]
+    },
+    {
+      "question": "Who did Florida beat to claim the 1996 football national championship?",
+      "time": "30",
+      "type": "ABCD",
+      "answers": [
+        {
+          "answer": "Ohio State",
+          "right": false
+        },
+        {
+          "answer": "Nebraska",
+          "right": false
+        },
+        {
+          "answer": "Alabama",
+          "right": false
+        },
+        {
+          "answer": "Florida State",
+          "right": true
+        }
+      ]
+    }
+  ]
+}

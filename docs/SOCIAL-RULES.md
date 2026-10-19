@@ -7,7 +7,7 @@ These apply to every post, from every person, routine and agent.
 1. **One story per post.** One article, clip or show. No roundup posts.
 2. **Credit the writer.** Name them in the copy and tag their handle when they have one. Jarvis-written pieces credit Brenden Martin. Staff pieces credit GatorBait.
 3. **Create natively.** Upload the photo, card or video to the platform and write the copy there. No link-preview posts. The story link goes where the platform prefers it (first comment, link sticker, bio link). Scheduling tools are fine when they publish native media.
-4. **Our own picture first.** Order: a GatorBait photographer's shot ("Photo: <name>, GatorBait Media"); a GatorBait-made graphic; a licensed or credited image. Never an uncredited image from another outlet.
+4. **Our own picture first.** Order: a GatorBait photographer's shot ("Photo: <name>, GatorBait Media"); a GatorBait-made graphic; a licensed or credited image. UAA photos follow docs/PHOTO-ATTRIBUTION.md: credit printed on the image and in the caption, linked to floridagators.com. Never an uncredited image from another outlet.
 5. **Facts follow site rules.** Stats from ESPN or FloridaGators.com, quotes from the full source, Barlow on graphics, AP style. Never cite or credit Gator Country. A post cannot claim more than the story does.
 6. **Space the writers out.** Give each writer's story its own window.
 

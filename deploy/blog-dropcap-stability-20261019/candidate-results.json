@@ -1,0 +1,106 @@
+[
+  {
+    "width": 430,
+    "status": 200,
+    "trace": [
+      {
+        "at": 716.3999999985099,
+        "text": "There are nights when the basketball seems as big ",
+        "size": "18px",
+        "float": "none",
+        "visible": false,
+        "height": 201.578125,
+        "dropcaps": 0,
+        "script": false,
+        "overflow": 0
+      },
+      {
+        "at": 1021.8999999985099,
+        "text": "There are nights when the basketball seems as big ",
+        "size": "18px",
+        "float": "none",
+        "visible": true,
+        "height": 143.984375,
+        "dropcaps": 0,
+        "script": false,
+        "overflow": 0
+      }
+    ],
+    "errors": [],
+    "pass": true
+  },
+  {
+    "width": 390,
+    "status": 200,
+    "trace": [
+      {
+        "at": 240.39999999850988,
+        "text": "There are nights when the basketball seems as big ",
+        "size": "18px",
+        "float": "none",
+        "visible": false,
+        "height": 201.578125,
+        "dropcaps": 0,
+        "script": false,
+        "overflow": 0
+      },
+      {
+        "at": 488,
+        "text": "There are nights when the basketball seems as big ",
+        "size": "18px",
+        "float": "none",
+        "visible": true,
+        "height": 143.984375,
+        "dropcaps": 0,
+        "script": false,
+        "overflow": 0
+      }
+    ],
+    "errors": [
+      "Uncaught (in promise) TypeError: r.n(...)(...).createContext is not a function",
+      "TypeError: Cannot read properties of undefined (reading 'Scheduler')",
+      "Uncaught (in promise) TypeError: r.n(...)(...).createContext is not a function"
+    ],
+    "pass": true
+  },
+  {
+    "width": 1366,
+    "status": 200,
+    "trace": [
+      {
+        "at": 370.69999999552965,
+        "text": "There are nights when the basketball seems as big ",
+        "size": "19px",
+        "float": "none",
+        "visible": true,
+        "height": 91.171875,
+        "dropcaps": 0,
+        "script": false,
+        "overflow": 0
+      }
+    ],
+    "errors": [
+      "NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://static.parastorage.com/unpkg/lodash@4.18.1/lodash.min.js' failed to load."
+    ],
+    "pass": true
+  },
+  {
+    "width": 1920,
+    "status": 200,
+    "trace": [
+      {
+        "at": 455.6000000014901,
+        "text": "There are nights when the basketball seems as big ",
+        "size": "19px",
+        "float": "none",
+        "visible": true,
+        "height": 91.171875,
+        "dropcaps": 0,
+        "script": false,
+        "overflow": 0
+      }
+    ],
+    "errors": [],
+    "pass": true
+  }
+]

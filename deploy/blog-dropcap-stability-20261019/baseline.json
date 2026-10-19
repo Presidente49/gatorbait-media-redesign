@@ -1,0 +1,121 @@
+[
+  {
+    "width": 390,
+    "status": 200,
+    "trace": [
+      {
+        "at": 3744,
+        "rich": false,
+        "paras": []
+      },
+      {
+        "at": 5201,
+        "rich": true,
+        "meta": "2026-10-19T03:26:08.245Z",
+        "canonical": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+        "paras": [
+          {
+            "text": "There are nights when the basketball seems as big as a beach ball and ",
+            "cls": "lkQt0 _1nK5N rQSGI oUcKW",
+            "size": "18px",
+            "float": "none",
+            "font": "Barlow, Arial, sans-serif",
+            "display": "block",
+            "visibility": "hidden",
+            "html": "<span class=\"_4K-BC\"><span>There are nights when the basketball seems as big as a beach ball and everything finds the bottom of the net. Sunday afternoon in Jacksonville wasn't one of those nights for the Florida Gators.</span></span>",
+            "height": 201.578125
+          },
+          {
+            "text": "Sitting courtside at VyStar Veterans Memorial Arena, I watched Florida",
+            "cls": "lkQt0 _1nK5N rQSGI oUcKW",
+            "size": "18px",
+            "float": "none",
+            "font": "Barlow, Arial, sans-serif",
+            "display": "block",
+            "visibility": "hidden",
+            "html": "<span class=\"_4K-BC\"><span>Sitting courtside at VyStar Veterans Memorial Arena, I watched Florida stumble through a frustrating 82-76 overtime exhibition loss to Baylor. And while exhibition games don't count in the standings, they can tell you plenty about what needs fixing before the real season begins.</span></span>",
+            "height": 259.171875
+          }
+        ]
+      },
+      {
+        "at": 5415,
+        "rich": true,
+        "meta": "2026-10-19T03:26:08.245Z",
+        "canonical": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+        "paras": [
+          {
+            "text": "There are nights when the basketball seems as big as a beach ball and ",
+            "cls": "lkQt0 _1nK5N rQSGI oUcKW gbm-dropcap",
+            "size": "74.7px",
+            "float": "left",
+            "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+            "display": "block",
+            "visibility": "visible",
+            "html": "<span class=\"_4K-BC\"><span>There are nights when the basketball seems as big as a beach ball and everything finds the bottom of the net. Sunday afternoon in Jacksonville wasn't one of those nights for the Florida Gators.</span></span>",
+            "height": 143.984375
+          },
+          {
+            "text": "Sitting courtside at VyStar Veterans Memorial Arena, I watched Florida",
+            "cls": "lkQt0 _1nK5N rQSGI oUcKW",
+            "size": "18px",
+            "float": "none",
+            "font": "Barlow, Arial, sans-serif",
+            "display": "block",
+            "visibility": "visible",
+            "html": "<span class=\"_4K-BC\"><span>Sitting courtside at VyStar Veterans Memorial Arena, I watched Florida stumble through a frustrating 82-76 overtime exhibition loss to Baylor. And while exhibition games don't count in the standings, they can tell you plenty about what needs fixing before the real season begins.</span></span>",
+            "height": 230.375
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1366,
+    "status": 200,
+    "trace": [
+      {
+        "at": 3120,
+        "rich": false,
+        "paras": []
+      },
+      {
+        "at": 4359,
+        "rich": true,
+        "meta": "2026-10-19T03:26:08.245Z",
+        "canonical": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+        "paras": []
+      },
+      {
+        "at": 4454,
+        "rich": true,
+        "meta": "2026-10-19T03:26:08.245Z",
+        "canonical": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
+        "paras": [
+          {
+            "text": "There are nights when the basketball seems as big as a beach ball and ",
+            "cls": "lkQt0 _1nK5N rQSGI oUcKW gbm-dropcap",
+            "size": "87.4px",
+            "float": "left",
+            "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+            "display": "block",
+            "visibility": "visible",
+            "html": "<span class=\"_4K-BC\"><span>There are nights when the basketball seems as big as a beach ball and everything finds the bottom of the net. Sunday afternoon in Jacksonville wasn't one of those nights for the Florida Gators.</span></span>",
+            "height": 91.171875
+          },
+          {
+            "text": "Sitting courtside at VyStar Veterans Memorial Arena, I watched Florida",
+            "cls": "lkQt0 _1nK5N rQSGI oUcKW",
+            "size": "19px",
+            "float": "none",
+            "font": "Barlow, Arial, sans-serif",
+            "display": "block",
+            "visibility": "visible",
+            "html": "<span class=\"_4K-BC\"><span>Sitting courtside at VyStar Veterans Memorial Arena, I watched Florida stumble through a frustrating 82-76 overtime exhibition loss to Baylor. And while exhibition games don't count in the standings, they can tell you plenty about what needs fixing before the real season begins.</span></span>",
+            "height": 121.5625
+          }
+        ]
+      }
+    ]
+  }
+]

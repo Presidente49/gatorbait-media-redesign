@@ -99,7 +99,7 @@ async function run(browser, view, pg, mode, holder) {
     const t0 = Date.now();
     const resp = await page.goto(BASE + path + (path.includes('?') ? '&' : '?') + 'gbm_qc=' + t0 + view.n + mode, { waitUntil: 'commit', timeout: 60000 });
     r.http = resp.status();
-    await sleep(4600);
+    await sleep(+(process.env.SLEEPMS || 4600));
     await cdp.send('Page.stopScreencast');
     const g = await page.evaluate(() => { const G = window.__g || {}; return { shifts: G.shifts, samples: G.samples, trace: G.trace }; }).catch(() => ({}));
     r.trace = g.trace; r.cls = +((g.shifts || []).reduce((a, s) => a + s.v, 0)).toFixed(4); r.shifts = (g.shifts || []).filter(s => s.v > .005).slice(0, 5);

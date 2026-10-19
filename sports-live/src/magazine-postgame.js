@@ -242,11 +242,16 @@
       f.appendChild(i); b.style.display = 'none';
     });
   }
+  // Secondary link: the print edition (US Letter, two columns), kept next to the phone edition.
+  function pmPrint(P) {
+    P = obj(P); if (!P || !text(P.label, 60) || !/^https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$/.test(String(P.url || ''))) return '';
+    return '<p class="pm-dl-alt"><a href="' + esc(P.url) + '" download="' + esc(text(P.file, 80) || 'GatorBait-Magazine-Print.pdf') + '">' + esc(text(P.label, 60)) + '</a>' + (text(P.note, 40) ? ' <span>' + esc(text(P.note, 40)) + '</span>' : '') + '</p>';
+  }
   function pmDownload(D) {
     var X = obj(D.download); if (!X || !text(X.label, 60) || !/^https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$/.test(String(X.url || ''))) return '';
     // A plain link with the download attribute: it saves the file, never opens a print dialog.
     return '<section class="pm-dl" id="pm-download" aria-label="Download the magazine"><div class="pm-in">' + (text(X.kicker, 40) ? '<p class="pm-kick">' + esc(text(X.kicker, 40)) + '</p>' : '') +
-      '<div class="pm-dl-row"><a class="pm-dl-btn" href="' + esc(X.url) + '" download="' + esc(text(X.file, 80) || 'GatorBait-Magazine.pdf') + '">' + esc(text(X.label, 60)) + '</a>' + (text(X.note, 40) ? '<span class="pm-dl-note">' + esc(text(X.note, 40)) + '</span>' : '') + '</div></div></section>';
+      '<div class="pm-dl-row"><a class="pm-dl-btn" href="' + esc(X.url) + '" download="' + esc(text(X.file, 80) || 'GatorBait-Magazine.pdf') + '">' + esc(text(X.label, 60)) + '</a>' + (text(X.note, 40) ? '<span class="pm-dl-note">' + esc(text(X.note, 40)) + '</span>' : '') + '</div>' + pmPrint(X.print) + '</div></section>';
   }
   function pmNext(D) {
     var N = obj(D.next); if (!N || !text(N.title, 120)) return '';

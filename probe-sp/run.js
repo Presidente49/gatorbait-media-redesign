@@ -24,7 +24,7 @@ const sleep = ms => new Promise(s => setTimeout(s, ms));
 
 const INIT = () => {
   const G = window.__g = { shifts: [], samples: [], fonts: [] };
-  try { new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) G.shifts.push({ t: Math.round(e.startTime), v: +e.value.toFixed(4), src: (e.sources || []).slice(0, 2).map(s => { const n = s.node; const pr = s.previousRect, cr = s.currentRect; return (n && n.nodeType === 1 ? (n.id ? '#' + n.id : n.tagName.toLowerCase()) : '?') + '[' + [pr.y, pr.height, cr.y, cr.height].map(Math.round).join(',') + ']'; }).join(',') }); }).observe({ type: 'layout-shift', buffered: true }); } catch (e) {}
+  try { new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) G.shifts.push({ t: Math.round(e.startTime), v: +e.value.toFixed(4), src: (e.sources || []).slice(0, 3).map(s => { const n = s.node; const pr = s.previousRect, cr = s.currentRect; return (n && n.nodeType === 1 ? (n.id ? '#' + n.id : n.tagName.toLowerCase()) : '?') + '[' + [pr.y, pr.height, cr.y, cr.height].map(Math.round).join(',') + ']'; }).join(',') }); }).observe({ type: 'layout-shift', buffered: true }); } catch (e) {}
   const lum = c => { const f = v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }; return .2126 * f(c[0]) + .7152 * f(c[1]) + .0722 * f(c[2]); };
   const rgb = s => { const m = String(s).match(/rgba?\(([\d.]+)[, ]+([\d.]+)[, ]+([\d.]+)(?:[, /]+([\d.]+))?/); return m ? [+m[1], +m[2], +m[3], m[4] === undefined ? 1 : +m[4]] : null; };
   const t0 = performance.now();
@@ -43,6 +43,7 @@ const INIT = () => {
       if (!prev || JSON.stringify([prev.cls, prev.light, prev.spVis, prev.band, prev.hdr, prev.h1]) !== JSON.stringify([s.cls, s.light, s.spVis, s.band, s.hdr, s.h1])) G.samples.push(s);
     } catch (e) {}
   };
+  G.mut = []; try { const mo = new MutationObserver(ms => { const t = Math.round(performance.now()); for (const m of ms) { if (G.mut.length > 80) return; const n = m.target; const d = (n.nodeType === 1 ? (n.id ? '#' + n.id : n.tagName.toLowerCase() + '.' + String(n.className).slice(0, 30)) : '?'); if (m.type === 'attributes') { if (m.attributeName === 'style' || m.attributeName === 'class') G.mut.push([t, 'attr:' + m.attributeName, d, String(n.getAttribute(m.attributeName)).slice(0, 60)]); } else if (m.addedNodes.length || m.removedNodes.length) G.mut.push([t, 'child +' + m.addedNodes.length + ' -' + m.removedNodes.length, d]); } }); const arm = () => document.body ? mo.observe(document.documentElement, { attributes: true, childList: true, subtree: true }) : setTimeout(arm, 5); arm(); } catch (e) {}
   G.trace = []; const q = (sel) => { const e = document.querySelector(sel); if (!e) return null; const r = e.getBoundingClientRect(); const c = getComputedStyle(e); return [Math.round(r.top + scrollY), Math.round(r.height), c.display === 'none' ? 'N' : c.visibility === 'hidden' ? 'H' : 'v']; };
   const tr = setInterval(() => { try { G.trace.push([Math.round(performance.now()), q('#gbm-footer'), q('#SITE_FOOTER'), q('#SITE_PAGES'), q('#gbm-band'), document.documentElement.scrollHeight, document.querySelectorAll('#gbm-footer').length, Math.round(scrollY), innerHeight, String(document.documentElement.className).slice(-40), (document.body.getAttribute('style')||'').slice(0,60), (document.documentElement.getAttribute('style')||'').slice(0,60)]); } catch (e) {} }, 120); setTimeout(() => clearInterval(tr), 8000);
   const iv = setInterval(tick, 30); setTimeout(() => clearInterval(iv), 7000);
@@ -101,8 +102,8 @@ async function run(browser, view, pg, mode, holder) {
     r.http = resp.status();
     await sleep(+(process.env.SLEEPMS || 4600));
     await cdp.send('Page.stopScreencast');
-    const g = await page.evaluate(() => { const G = window.__g || {}; return { shifts: G.shifts, samples: G.samples, trace: G.trace }; }).catch(() => ({}));
-    r.trace = g.trace; r.cls = +((g.shifts || []).reduce((a, s) => a + s.v, 0)).toFixed(4); r.shifts = (g.shifts || []).filter(s => s.v > .005).slice(0, 5);
+    const g = await page.evaluate(() => { const G = window.__g || {}; return { shifts: G.shifts, samples: G.samples, trace: G.trace, mut: G.mut }; }).catch(() => ({}));
+    r.trace = g.trace; r.mut = g.mut; r.cls = +((g.shifts || []).reduce((a, s) => a + s.v, 0)).toFixed(4); r.shifts = (g.shifts || []).filter(s => s.v > .005).slice(0, 5);
     const S = g.samples || []; r.timeline = S.slice(0, 14).map(s => [s.t, s.light, s.spVis, s.band ? 'B' : '-', s.hdr ? 'H' : '-', s.h1, s.cls.replace(/\s+/g, ',').slice(0, 60)].join('|'));
     // native flash = sampled state where page content is visible on a light page or with unstyled headline while the shell is still absent
     r.flash = S.filter(s => s.spVis === 'visible' && (s.light > .35 || (/class="?$/.test('') ))).length;

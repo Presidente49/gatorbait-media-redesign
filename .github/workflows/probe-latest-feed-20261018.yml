@@ -25,11 +25,14 @@ jobs:
           EXTRA=""; [ "$MODE" = "candidate" ] && EXTRA="--candidate"
           mkdir -p out
           for W in 390 430 1366 1920; do
-            PLAYWRIGHT=/tmp/pw/node_modules/playwright node sports-live/qa-latest-feed.mjs $EXTRA --widths $W --paths /gatorbait-media-blogs,/gatorbait-media-blogs/categories/franz-beard-blog,/gatorbait-media-blogs/page/2 --out out/cold || true
-            PLAYWRIGHT=/tmp/pw/node_modules/playwright node sports-live/qa-latest-feed.mjs $EXTRA --warm --widths $W --paths /gatorbait-media-blogs --out out/warm || true
+            PLAYWRIGHT=/tmp/pw/node_modules/playwright node sports-live/qa-latest-feed.mjs $EXTRA --widths $W --paths /gatorbait-media-blogs --out out/cold-$W || true
+            sleep 25
+            PLAYWRIGHT=/tmp/pw/node_modules/playwright node sports-live/qa-latest-feed.mjs $EXTRA --warm --widths $W --paths /gatorbait-media-blogs --out out/warm-$W || true
+            sleep 25
           done
-          for SC in rss500 bundle404; do
-            [ "$MODE" = "candidate" ] && PLAYWRIGHT=/tmp/pw/node_modules/playwright node sports-live/qa-latest-feed.mjs --candidate --widths 1366 --scenario $SC --out out/$SC || true
+          for W in 390 1366; do
+            PLAYWRIGHT=/tmp/pw/node_modules/playwright node sports-live/qa-latest-feed.mjs $EXTRA --widths $W --paths /gatorbait-media-blogs/categories/franz-beard-blog,/gatorbait-media-blogs/page/2 --out out/cat-$W || true
+            sleep 25
           done
       - name: Commit probe output (read-only probe output only)
         if: always()

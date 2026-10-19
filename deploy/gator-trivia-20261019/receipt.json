@@ -17,5 +17,13 @@
   "multiplayer": "NOT_IMPLEMENTED",
   "classQuizRuntime": "FRONTEND_200_BACKEND_BLOCKED_INTERNAL_NETWORK",
   "nativeMemberIntegration": "NOT_INSTALLED",
-  "rollback": "Revert additive preview and lounge link; stop isolated compose project"
+  "rollback": "Revert additive preview and lounge link; stop isolated compose project",
+  "defaultQuestionSeconds": 5,
+  "optionalQuestionSeconds": [
+    3,
+    0
+  ],
+  "automaticAdvanceAfterRevealMs": 2000,
+  "postGameReview": true,
+  "competitiveAntiCheat": false
 }

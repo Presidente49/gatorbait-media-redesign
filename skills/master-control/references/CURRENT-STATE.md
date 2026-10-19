@@ -487,3 +487,8 @@ Muse public audit: old pricing placeholders and visible duplicate prices absent;
 ## Oct. 19 — Swamp Trivia solo trial
 
 Owner chose first researched option(ClassQuiz), then clarified no writers yet, solo automated quizmaster and optional small tables; table limits not fixed. Original playable solo UI at `deploy/gator-trivia-20261019/`, linked from lounge preview. Five FloridaGators.com-sourced questions, explanations, score/replay; Chromium390/430/1366/1920 passed. No live AI calls, signup or real multiplayer/leaderboard. The original preview is distinct from ClassQuiz runtime. ClassQuiz source711bdde was inspected; actual six-service loopback-only image trial got frontend200 but backend startup was blocked by internal-network403 “No approved upstream IPv4 address” on Meilisearch; no workaround, no actual ClassQuiz game seeded/verified. Local containers stopped. Matching QuizInput JSON pack and image-digest/topology record provided, not a native .cqa archive. No live Wix/membership/automation/publish/price/email changes.
+
+
+### Swamp Trivia fast-round update — Oct.19
+
+Owner requested questions that pop up with3–5second countdown. Solo preview now defaults5seconds, offers3second Lightning and untimed Practice; deadline closes answer, zero on timeout,2second reveal then automatic next. Final review retains all sources/explanations. Chromium390/430/1366/1920 verified countdown, expiry, disabled answers, automatic next, once-only scoring, completed hand/review,3second mode and untimed stability; no overflow/browser errors. Still public-deck client-side preview, not anti-cheat/multiplayer/native Wix integration. No live changes.

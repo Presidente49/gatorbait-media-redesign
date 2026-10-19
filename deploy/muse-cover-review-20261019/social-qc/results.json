@@ -1,0 +1,93 @@
+[
+  {
+    "page": "social-card",
+    "artboard": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1350
+    },
+    "fontLoaded": true,
+    "overflow": 0
+  },
+  {
+    "page": "social-draft",
+    "width": 390,
+    "overflow": 0,
+    "fontLoaded": true,
+    "card": {
+      "width": 348,
+      "overflow": 0,
+      "fontLoaded": true
+    },
+    "errors": []
+  },
+  {
+    "interactive": "editable caption and copy button",
+    "status": "caption copied."
+  },
+  {
+    "page": "social-draft",
+    "width": 430,
+    "overflow": 0,
+    "fontLoaded": true,
+    "card": {
+      "width": 388,
+      "overflow": 0,
+      "fontLoaded": true
+    },
+    "errors": []
+  },
+  {
+    "page": "social-draft",
+    "width": 1366,
+    "overflow": 0,
+    "fontLoaded": true,
+    "card": {
+      "width": 618,
+      "overflow": 0,
+      "fontLoaded": true
+    },
+    "errors": []
+  },
+  {
+    "page": "social-draft",
+    "width": 1920,
+    "overflow": 0,
+    "fontLoaded": true,
+    "card": {
+      "width": 675,
+      "overflow": 0,
+      "fontLoaded": true
+    },
+    "errors": []
+  },
+  {
+    "finalPreviewCheck": [
+      {
+        "width": 390,
+        "overflow": 0,
+        "captionFullyVisible": true,
+        "errors": []
+      },
+      {
+        "width": 430,
+        "overflow": 0,
+        "captionFullyVisible": true,
+        "errors": []
+      },
+      {
+        "width": 1366,
+        "overflow": 0,
+        "captionFullyVisible": true,
+        "errors": []
+      },
+      {
+        "width": 1920,
+        "overflow": 0,
+        "captionFullyVisible": true,
+        "errors": []
+      }
+    ]
+  }
+]

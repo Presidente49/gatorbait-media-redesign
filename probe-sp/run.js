@@ -44,7 +44,7 @@ const INIT = () => {
     } catch (e) {}
   };
   G.trace = []; const q = (sel) => { const e = document.querySelector(sel); if (!e) return null; const r = e.getBoundingClientRect(); const c = getComputedStyle(e); return [Math.round(r.top + scrollY), Math.round(r.height), c.display === 'none' ? 'N' : c.visibility === 'hidden' ? 'H' : 'v']; };
-  const tr = setInterval(() => { try { G.trace.push([Math.round(performance.now()), q('#gbm-footer'), q('#SITE_FOOTER'), q('#SITE_PAGES'), q('#gbm-band'), document.documentElement.scrollHeight, document.querySelectorAll('#gbm-footer').length]); } catch (e) {} }, 120); setTimeout(() => clearInterval(tr), 8000);
+  const tr = setInterval(() => { try { G.trace.push([Math.round(performance.now()), q('#gbm-footer'), q('#SITE_FOOTER'), q('#SITE_PAGES'), q('#gbm-band'), document.documentElement.scrollHeight, document.querySelectorAll('#gbm-footer').length, Math.round(scrollY), innerHeight, String(document.documentElement.className).slice(-40), (document.body.getAttribute('style')||'').slice(0,60), (document.documentElement.getAttribute('style')||'').slice(0,60)]); } catch (e) {} }, 120); setTimeout(() => clearInterval(tr), 8000);
   const iv = setInterval(tick, 30); setTimeout(() => clearInterval(iv), 7000);
 };
 

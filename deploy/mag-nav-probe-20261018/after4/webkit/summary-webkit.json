@@ -1,0 +1,2665 @@
+{
+ "tag": "after4",
+ "at": "2026-10-19T00:51:54.627Z",
+ "summary": [
+  {
+   "id": "a1-home-header-1366",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 592,
+   "bundle": {
+    "start": 248,
+    "end": 265,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 738,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 400,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "header",
+     "total": 3,
+     "pool": 2,
+     "mode": "direct"
+    }
+   },
+   "picks": 10,
+   "secs": 25
+  },
+  {
+   "id": "a2-home-card-1366",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1247,
+   "bundle": {
+    "start": 170,
+    "end": 186,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 660,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "card",
+     "total": 3,
+     "pool": 1,
+     "mode": "direct"
+    }
+   },
+   "picks": 10,
+   "secs": 24
+  },
+  {
+   "id": "a3-home-footer-1366",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 672,
+   "bundle": {
+    "start": 244,
+    "end": 259,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 880,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 400,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "footer",
+     "total": 3,
+     "pool": 1,
+     "mode": "direct"
+    }
+   },
+   "picks": 10,
+   "secs": 24
+  },
+  {
+   "id": "a4-blogs-header-1366",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    3500,
+    4000,
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 795,
+   "bundle": {
+    "start": 176,
+    "end": 183,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 509,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "header",
+     "total": 4,
+     "pool": 4,
+     "mode": "direct",
+     "fallback": "dom-click after: elementHandle.click: Timeout 3000ms exceeded."
+    }
+   },
+   "picks": 10,
+   "secs": 59
+  },
+  {
+   "id": "a5-post-header-1366",
+   "mode": "direct",
+   "err": null,
+   "ticks": 44,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4000,
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 986,
+   "bundle": {
+    "start": 193,
+    "end": 211,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 696,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "header",
+     "total": 4,
+     "pool": 4,
+     "mode": "direct",
+     "fallback": "dom-click after: elementHandle.click: Timeout 3000ms exceeded."
+    }
+   },
+   "picks": 10,
+   "secs": 55
+  },
+  {
+   "id": "a6-second-visit-1366",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4000,
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 458,
+   "bundle": {
+    "start": 111,
+    "end": 111,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 517,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "firstVisit": {
+     "path": "/magazine",
+     "mag": true,
+     "cls": "gbm-mq gbm-magazine-live"
+    },
+    "afterHome": {
+     "path": "/",
+     "cls": "gbm-gazette-live gbm-standalone-live",
+     "mag": false
+    },
+    "link": {
+     "scope": "header",
+     "total": 3,
+     "pool": 2,
+     "mode": "direct"
+    },
+    "homeLink": true
+   },
+   "picks": 10,
+   "secs": 37
+  },
+  {
+   "id": "b1-spa-back-1366",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4000,
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 427,
+   "bundle": {
+    "start": 97,
+    "end": 97,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 547,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 400,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "beforeBack": "/gatorbait-media-blogs",
+    "blogLink": true
+   },
+   "picks": 10,
+   "secs": 33
+  },
+  {
+   "id": "b2-spa-forward-1366",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 623,
+   "bundle": {
+    "start": 104,
+    "end": 104,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 722,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "beforeFwd": "/"
+   },
+   "picks": 10,
+   "secs": 31
+  },
+  {
+   "id": "b3-doc-back-1366",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1042,
+   "bundle": {
+    "start": 87,
+    "end": 87,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 790,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 10,
+   "secs": 27
+  },
+  {
+   "id": "d1-warm-reload-1366",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4000,
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 464,
+   "bundle": {
+    "start": 105,
+    "end": 105,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 502,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 10,
+   "secs": 22
+  },
+  {
+   "id": "d2-warm-newtab-1366",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1283,
+   "bundle": {
+    "start": 215,
+    "end": 225,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 671,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 9,
+   "secs": 23
+  },
+  {
+   "id": "e1-utm-1366",
+   "err": null,
+   "ticks": 44,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1345,
+   "bundle": {
+    "start": 262,
+    "end": 286,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 780,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 10,
+   "secs": 15
+  },
+  {
+   "id": "e2-utm-slash-1366",
+   "err": null,
+   "ticks": 42,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1404,
+   "bundle": {
+    "start": 56,
+    "end": 69,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 775,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 400,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 10,
+   "secs": 15
+  },
+  {
+   "id": "e3-hash-1366",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1302,
+   "bundle": {
+    "start": 225,
+    "end": 241,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 681,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 400,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10854
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10201,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 10,
+   "secs": 16
+  },
+  {
+   "id": "e4-direct-cold-1366",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span:Settings",
+    "button:Decline All"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1224,
+   "bundle": {
+    "start": 247,
+    "end": 401,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 1000,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10916
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10263,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 10,
+   "secs": 15
+  },
+  {
+   "id": "a1-home-header-390",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1330,
+   "bundle": {
+    "start": 365,
+    "end": 380,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 777,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "header",
+     "total": 4,
+     "pool": 3,
+     "mode": "direct",
+     "fallback": "dom-click after: elementHandle.click: Timeout 3000ms exceeded."
+    }
+   },
+   "picks": 10,
+   "secs": 26
+  },
+  {
+   "id": "a2-home-card-390",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1342,
+   "bundle": {
+    "start": 368,
+    "end": 389,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 973,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "card",
+     "total": 4,
+     "pool": 1,
+     "mode": "direct"
+    }
+   },
+   "picks": 10,
+   "secs": 24
+  },
+  {
+   "id": "a3-home-footer-390",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1467,
+   "bundle": {
+    "start": 429,
+    "end": 447,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 946,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "footer",
+     "total": 4,
+     "pool": 1,
+     "mode": "direct"
+    }
+   },
+   "picks": 10,
+   "secs": 24
+  },
+  {
+   "id": "a4-blogs-header-390",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1049,
+   "bundle": {
+    "start": 369,
+    "end": 377,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 838,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "header",
+     "total": 5,
+     "pool": 5,
+     "mode": "direct",
+     "fallback": "dom-click after: elementHandle.click: Timeout 3000ms exceeded."
+    }
+   },
+   "picks": 10,
+   "secs": 58
+  },
+  {
+   "id": "a5-post-header-390",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    2800,
+    2900,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1021,
+   "bundle": {
+    "start": 357,
+    "end": 375,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 783,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "link": {
+     "scope": "header",
+     "total": 6,
+     "pool": 6,
+     "mode": "direct",
+     "fallback": "dom-click after: elementHandle.click: Timeout 3000ms exceeded."
+    }
+   },
+   "picks": 9,
+   "secs": 58
+  },
+  {
+   "id": "a6-second-visit-390",
+   "mode": "direct",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 601,
+   "bundle": {
+    "start": 137,
+    "end": 137,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 658,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "firstVisit": {
+     "path": "/magazine",
+     "mag": true,
+     "cls": "gbm-mq gbm-magazine-live"
+    },
+    "afterHome": {
+     "path": "/",
+     "cls": "gbm-gazette-live gbm-standalone-live",
+     "mag": false
+    },
+    "link": {
+     "scope": "header",
+     "total": 4,
+     "pool": 3,
+     "mode": "direct",
+     "fallback": "dom-click after: elementHandle.click: Timeout 3000ms exceeded."
+    },
+    "homeLink": true
+   },
+   "picks": 10,
+   "secs": 39
+  },
+  {
+   "id": "b1-spa-back-390",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 442,
+   "bundle": {
+    "start": 106,
+    "end": 106,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 517,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "beforeBack": "/gatorbait-media-blogs",
+    "blogLink": true
+   },
+   "picks": 10,
+   "secs": 35
+  },
+  {
+   "id": "b2-spa-forward-390",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 639,
+   "bundle": {
+    "start": 115,
+    "end": 116,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 718,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "beforeFwd": "/"
+   },
+   "picks": 10,
+   "secs": 34
+  },
+  {
+   "id": "b3-doc-back-390",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 615,
+   "bundle": {
+    "start": 144,
+    "end": 145,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 631,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 10,
+   "secs": 27
+  },
+  {
+   "id": "d1-warm-reload-390",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4000,
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 414,
+   "bundle": {
+    "start": 97,
+    "end": 97,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 463,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": -497,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12322,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 10,
+   "secs": 22
+  },
+  {
+   "id": "d2-warm-newtab-390",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1597,
+   "bundle": {
+    "start": 414,
+    "end": 433,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 927,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 400,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 9,
+   "secs": 23
+  },
+  {
+   "id": "e1-utm-390",
+   "err": null,
+   "ticks": 45,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1586,
+   "bundle": {
+    "start": 380,
+    "end": 400,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 916,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 300,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 9,
+   "secs": 16
+  },
+  {
+   "id": "e2-utm-slash-390",
+   "err": null,
+   "ticks": 45,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1567,
+   "bundle": {
+    "start": 392,
+    "end": 415,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 944,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 400,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 9,
+   "secs": 16
+  },
+  {
+   "id": "e3-hash-390",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1589,
+   "bundle": {
+    "start": 380,
+    "end": 397,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 923,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 400,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 9,
+   "secs": 16
+  },
+  {
+   "id": "e4-direct-cold-390",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 1501,
+   "bundle": {
+    "start": 390,
+    "end": 409,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 939,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 400,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {},
+   "picks": 10,
+   "secs": 16
+  },
+  {
+   "id": "f1-bfcache-1366",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 647,
+   "bundle": {
+    "start": 150,
+    "end": 150,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 662,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 10916
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 10263,
+     "h": 210,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "beforeBack": "/about"
+   },
+   "picks": 10,
+   "secs": 25
+  },
+  {
+   "id": "f1-bfcache-390",
+   "err": null,
+   "ticks": 47,
+   "tickFlash": [],
+   "tickFlashPath": [],
+   "strayTicks": [
+    4500,
+    5000,
+    5500,
+    6000,
+    6500,
+    7000,
+    7500,
+    8000,
+    9000,
+    10000,
+    11000,
+    12000,
+    13000,
+    14000
+   ],
+   "strayWhat": [
+    "span#cookies_policy_description:We use cookies for site performance and ",
+    "a:Privacy Policy"
+   ],
+   "rafFlash": [],
+   "veilOn": null,
+   "veilOff": null,
+   "mag1": 769,
+   "bundle": {
+    "start": 98,
+    "end": 98,
+    "size": 0
+   },
+   "pushes": [],
+   "pageshows": [
+    {
+     "t": 784,
+     "persisted": false
+    }
+   ],
+   "cls": 0,
+   "shifts": [],
+   "footerInViewWithoutMag": [],
+   "toolsAppear": 200,
+   "sameDoc": false,
+   "label": "auto",
+   "final": {
+    "path": "/magazine",
+    "cls": "gbm-mq gbm-magazine-live",
+    "veil": false,
+    "nv": 0,
+    "mag": {
+     "y": 0,
+     "h": 13464
+    },
+    "hdr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "ftr": {
+     "y": 0,
+     "h": 0,
+     "vis": false,
+     "inView": false
+    },
+    "tools": {
+     "y": 12819,
+     "h": 207,
+     "vis": true,
+     "inView": false
+    }
+   },
+   "extra": {
+    "beforeBack": "/about"
+   },
+   "picks": 10,
+   "secs": 26
+  }
+ ]
+}

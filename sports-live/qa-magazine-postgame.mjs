@@ -87,7 +87,7 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
     const btn = root.querySelector('a.pm-dl-btn'), cr = (re) => [...root.querySelectorAll('a')].filter((a) => re.test(a.href)).length;
     const last = root.querySelector('.pm-wrap').lastElementChild, dlSec = root.querySelector('#pm-download');
     return {
-      dlOk: !!btn && btn.getAttribute('href') === dl && btn.hasAttribute('download') && btn.textContent.trim() === 'Download the full magazine (PDF)' && /PDF, 21 pages, 2\.3 MB/.test(dlSec.textContent),
+      dlOk: !!btn && btn.getAttribute('href') === dl && btn.hasAttribute('download') && btn.textContent.trim() === 'Download for your phone (PDF)' && /PDF, 61 pages, 2\.4 MB/.test(dlSec.textContent) && !!dlSec.querySelector('.pm-dl-alt a[download][href$="d3cfa5_6fd61c786a0441b5a8dbead1182f2e1d.pdf"]') && /Print version \(PDF\)/.test(dlSec.textContent),
       dlBottom: !!dlSec && (dlSec.nextElementSibling === last || dlSec === last), dlTap: btn ? Math.round(btn.getBoundingClientRect().height) : 0,
       printBtn: !!root.querySelector('button.pm-print,a.pm-print,.pm-pdf') || /window\.print/.test(root.innerHTML),
       uaaLinks: [cr(/^https:\/\/floridagators\.com\/$/), cr(/hannahmorganphoto/), cr(/floridagators\.com\/galleries/)],

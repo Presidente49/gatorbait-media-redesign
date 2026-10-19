@@ -1,0 +1,19 @@
+{
+  "state": "INTERACTIVE_DESIGN_PREVIEW",
+  "nativeWixPageCreated": false,
+  "nativePermissionsChanged": false,
+  "sitePublished": false,
+  "liveBlocker": "Existing Mac wix-editor-local connection unavailable in this cloud session",
+  "widths": [
+    390,
+    430,
+    1366,
+    1920
+  ],
+  "interactionChecks": "4 cards x click and keyboard Enter at each width",
+  "imagesLoaded": true,
+  "overflow": 0,
+  "newPaidServices": 0,
+  "teamLogoSource": "deploy/continuation-20261019/the-hive-logo-concept.png",
+  "publicPdfPreserved": true
+}

@@ -8,8 +8,7 @@
     "pages": 61,
     "real_iphone_tested": false
   },
-  "cover_state": "BLOCKED_MISSING_OWNER_REFERENCED_REPLACEMENT",
-  "rejected_old_cover_id": "d3cfa5_dc0e57825cff4a29ac23a2e771236c34~mv2.jpg",
+  "cover_state": "OWNER_APPROVED_ORIGINAL_TEXAS_COVER",
   "coupon_id": "f42b78a5-869b-4869-81da-f50e6204cc73",
   "offer": {
     "percent_off": 50,
@@ -24,6 +23,8 @@
   "scheduled": false,
   "verified_former_paid_eligible": 6,
   "revenue_recovered_verified": false,
-  "winback_draft": "f6273a4d-3d81-41dd-b7c1-e014885100b7",
-  "phone_pdf_draft": "6a17d1f1-242b-48e3-a4ed-52c71d18aada"
+  "winback_draft": "491b0190-9ebd-4309-9b2e-5fe5fbc69635",
+  "phone_pdf_draft": "d11c07d6-dee4-47b2-aa66-a3af0882ed83",
+  "cover_id": "d3cfa5_dc0e57825cff4a29ac23a2e771236c34~mv2.jpg",
+  "phone_pdf_draft_kind": "Combined free newsletter; supersedes separate member-PDF email"
 }

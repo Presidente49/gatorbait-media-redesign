@@ -1,0 +1,27 @@
+[
+  {
+    "url": "https://www.gatorbaitmedia.com/groups",
+    "status": 200,
+    "final": "https://www.gatorbaitmedia.com/groups"
+  },
+  {
+    "url": "https://www.gatorbaitmedia.com/account/my-account",
+    "status": 200,
+    "final": "https://www.gatorbaitmedia.com/account/my-account"
+  },
+  {
+    "url": "https://www.gatorbaitmedia.com/contact",
+    "status": 200,
+    "final": "https://www.gatorbaitmedia.com/contact"
+  },
+  {
+    "url": "https://www.gatorbaitmedia.com/magazine",
+    "status": 200,
+    "final": "https://www.gatorbaitmedia.com/magazine"
+  },
+  {
+    "url": "https://static.wixstatic.com/media/d3cfa5_69f9d797d5314507a43c260cc2bb16d4~mv2.jpg",
+    "status": 200,
+    "final": "https://static.wixstatic.com/media/d3cfa5_69f9d797d5314507a43c260cc2bb16d4~mv2.jpg"
+  }
+]

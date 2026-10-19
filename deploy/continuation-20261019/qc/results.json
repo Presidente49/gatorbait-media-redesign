@@ -1,0 +1,154 @@
+[
+  {
+    "file": "index",
+    "width": 390,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "index",
+    "width": 430,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "index",
+    "width": 1366,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "index",
+    "width": 1920,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "revenue",
+    "width": 390,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "revenue",
+    "width": 430,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "revenue",
+    "width": 1366,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "revenue",
+    "width": 1920,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "prs",
+    "width": 390,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "prs",
+    "width": 430,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "prs",
+    "width": 1366,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "prs",
+    "width": 1920,
+    "overflow": 0,
+    "font": true,
+    "broken": 0,
+    "pageErrors": 0,
+    "scope": "local report"
+  },
+  {
+    "file": "stats",
+    "width": 390,
+    "overflow": 0,
+    "record": "5-2",
+    "confRecord": "3-2",
+    "through": "Oct. 17 at Texas",
+    "roots": 1,
+    "pageErrors": 0,
+    "scope": "current Wix rev5 renderer with intercepted new feed; local fixture, not live page"
+  },
+  {
+    "file": "stats",
+    "width": 430,
+    "overflow": 0,
+    "record": "5-2",
+    "confRecord": "3-2",
+    "through": "Oct. 17 at Texas",
+    "roots": 1,
+    "pageErrors": 0,
+    "scope": "current Wix rev5 renderer with intercepted new feed; local fixture, not live page"
+  },
+  {
+    "file": "stats",
+    "width": 1366,
+    "overflow": 0,
+    "record": "5-2",
+    "confRecord": "3-2",
+    "through": "Oct. 17 at Texas",
+    "roots": 1,
+    "pageErrors": 0,
+    "scope": "current Wix rev5 renderer with intercepted new feed; local fixture, not live page"
+  },
+  {
+    "file": "stats",
+    "width": 1920,
+    "overflow": 0,
+    "record": "5-2",
+    "confRecord": "3-2",
+    "through": "Oct. 17 at Texas",
+    "roots": 1,
+    "pageErrors": 0,
+    "scope": "current Wix rev5 renderer with intercepted new feed; local fixture, not live page"
+  }
+]

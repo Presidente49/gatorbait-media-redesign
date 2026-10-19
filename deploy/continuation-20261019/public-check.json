@@ -1,0 +1,98 @@
+{
+  "statsFeed": {
+    "url": "https://presidente49.github.io/gatorbait-media-redesign/sports-live/florida-stats.json",
+    "status": 404,
+    "finalUrl": "https://presidente49.github.io/gatorbait-media-redesign/sports-live/florida-stats.json",
+    "bytes": 9379
+  },
+  "statsPage": {
+    "url": "https://www.gatorbaitmedia.com/florida-football-stats",
+    "status": 404,
+    "finalUrl": "https://www.gatorbaitmedia.com/florida-football-stats",
+    "bytes": 2206
+  },
+  "subscribe": {
+    "url": "https://www.gatorbaitmedia.com/pricing-plans/subscribe",
+    "status": 200,
+    "finalUrl": "https://www.gatorbaitmedia.com/pricing-plans/subscribe",
+    "bytes": 2140904,
+    "placeholderPresentInResponse": true,
+    "verificationScope": "HTTP/SSR only; not rendered visible-text verification"
+  },
+  "oldPlans": {
+    "url": "https://www.gatorbaitmedia.com/plans-pricing",
+    "status": 200,
+    "finalUrl": "https://www.gatorbaitmedia.com/pricing-plans",
+    "bytes": 2140665
+  },
+  "rss": {
+    "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
+    "status": 200,
+    "finalUrl": "https://www.gatorbaitmedia.com/blog-feed.xml",
+    "bytes": 18228,
+    "items": 20,
+    "dateInversions": 0,
+    "recent": [
+      {
+        "title": "Florida is one win from bowl eligibility, with a bye before Georgia",
+        "url": "https://www.gatorbaitmedia.com/post/florida-is-one-win-from-bowl-eligibility-with-a-bye-before-georgia",
+        "pubDate": "Sun, 18 Oct 2026 22:16:57 GMT"
+      },
+      {
+        "title": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
+        "url": "https://www.gatorbaitmedia.com/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll",
+        "pubDate": "Sun, 18 Oct 2026 19:07:26 GMT"
+      },
+      {
+        "title": "Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh \u201cWe\u2019re Back!\u201d",
+        "url": "https://www.gatorbaitmedia.com/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back",
+        "pubDate": "Sun, 18 Oct 2026 17:22:07 GMT"
+      },
+      {
+        "title": "Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)",
+        "url": "https://www.gatorbaitmedia.com/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2",
+        "pubDate": "Sun, 18 Oct 2026 16:29:42 GMT"
+      },
+      {
+        "title": "The Gators Sucked Less, Turning Arch Madness Into Arch Sadness",
+        "url": "https://www.gatorbaitmedia.com/post/the-gators-sucked-less-turning-arch-madness-into-arch-sadness",
+        "pubDate": "Sun, 18 Oct 2026 13:30:11 GMT"
+      },
+      {
+        "title": "A Texas Barbecue: Gators Flip The Script \u2014 And Jones Changes The Conversation",
+        "url": "https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+        "pubDate": "Sun, 18 Oct 2026 00:12:26 GMT"
+      },
+      {
+        "title": "It was a good day for an exorcism in Austin",
+        "url": "https://www.gatorbaitmedia.com/post/it-was-a-good-day-for-an-exorcism-in-austin",
+        "pubDate": "Sun, 18 Oct 2026 00:02:18 GMT"
+      },
+      {
+        "title": "Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr.",
+        "url": "https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr",
+        "pubDate": "Sat, 17 Oct 2026 19:42:57 GMT"
+      },
+      {
+        "title": "Aberdeen will be in the lineup against Baylor on Sunday",
+        "url": "https://www.gatorbaitmedia.com/post/aberdeen-will-be-in-the-lineup-against-baylor-on-sunday",
+        "pubDate": "Sat, 17 Oct 2026 10:30:02 GMT"
+      },
+      {
+        "title": "Is the SEC undergoing a drain of excellence?",
+        "url": "https://www.gatorbaitmedia.com/post/is-the-sec-undergoing-a-drain-of-excellence",
+        "pubDate": "Fri, 16 Oct 2026 20:08:54 GMT"
+      },
+      {
+        "title": "The Soothsayer: Texas big unless the UF defense finds an exorcist",
+        "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
+        "pubDate": "Fri, 16 Oct 2026 11:06:34 GMT"
+      },
+      {
+        "title": "Watch the Replay: Buddy Martin's Philo Injury Exclusive, With Chris Doering",
+        "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-tonight-philo-jones-texas",
+        "pubDate": "Fri, 16 Oct 2026 00:31:58 GMT"
+      }
+    ]
+  }
+}

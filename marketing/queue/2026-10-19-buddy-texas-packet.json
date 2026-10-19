@@ -1,0 +1,22 @@
+{
+  "campaignId": "gbm-buddy-texas-20261019",
+  "state": "DRAFT",
+  "story": {
+    "canonicalUrl": "https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
+    "author": "Buddy Martin"
+  },
+  "score": {"eventId": "401856724", "florida": 27, "opponent": 24, "opponentRankAtKickoff": 7},
+  "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856724",
+  "art": {
+    "path": "deploy/muse-cover-review-20261019/social-card-draft-1080x1350.png",
+    "width": 1080,
+    "height": 1350,
+    "kind": "original typography",
+    "alt": "GatorBait Media graphic for Buddy Martin's column, A Texas Barbecue. Final score: Florida 27, Texas 24, in Austin on Oct. 17, 2026. Texas was ranked No. 7 at kickoff."
+  },
+  "preview": "deploy/muse-cover-review-20261019/social-draft.html",
+  "channel": "facebook native media",
+  "caption": "Florida 27, Texas 24. Buddy Martin's A Texas Barbecue looks back at the Gators' win in Austin. Read Buddy's column at the link in the first comment.",
+  "measurement": {"status": "UNAVAILABLE", "compareAt": "24 hours after publication", "metrics": ["reach", "interactions", "link clicks"], "note": "Use native account data and compare column posts at the same age. No reach prediction or outcome is asserted."},
+  "publication": {"sent": false, "scheduled": false, "next": "Confirm correct account, prior sharing history and current article; perform native preview before publication."}
+}

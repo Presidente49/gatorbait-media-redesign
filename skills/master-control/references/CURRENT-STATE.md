@@ -1,5 +1,16 @@
 # Master Control Current State
 
+## Active Codex continuation — Oct. 19, 2026
+
+- Brenden assigned Codex the full continuation and final decisions for this block. Muse is a bounded creative worker. The proposed internal team identity and operating plan are in `deploy/continuation-20261019/plan.html`. The first real story packet is `marketing/queue/2026-10-19-buddy-texas-packet.json`; its local gate returns READY_FOR_NATIVE_REVIEW, not a sent post.
+- Stats recovery PR #387 merged as `68bec1ed79fab86ab35eef5d14258e6ca3eb3eae`. The missing producer/template/feed were recovered narrowly; current seven-game ESPN totals checked; 25 tests passed. Public `sports-live/florida-stats.json` independently returned HTTP 200, 3,574 bytes, record 5-2 and 3-2 SEC, through Oct. 17 at Texas. The existing rev 5 renderer consumed it in local fixtures at 390/430/1366/1920 with no document overflow. The native `/florida-football-stats` page returned 404; no Wix page/embed or site publish changed. Rollback: revert PR #387, preserving a later checked snapshot if one exists.
+- Fresh Wix reads: Magazine `1dd74333` rev 119, pin `7cbf2271d266c2f1440fc3467c447071a68d187c`; Site Pages `af792630` rev 3. PR #380 follow-up is complete and merged. The pricing footer trace remains a separate baseline issue. A replacement magazine-cover file has not been identified; the exact asset was requested in #34 comment 6258469493.
+- Measurement gaps: the connected Gmail is the personal inbox, so business writer intake is unverified. Metricool has no social connections; vidIQ returned no authorized YouTube channels; Windsor returned an account-limit warning row, which must never be counted as zero traffic. Aggregate counts and coverage: `deploy/continuation-20261019/revenue.html`.
+- Muse's separate `Presidente49/Gatorbait-agency` repo at `4bfaa9974e431c61797f397bfc88b76edb516ca3` is a prompt/runbook library. Its three n8n workflows are inactive stubs, not a working production agency. Reuse relevant methods and notices within the existing stack; no infrastructure or routines were activated. Pulse and together are reference/design assets, not current production authority.
+- No subscriber email, Spaces announcement, social post, account connection, payment/price change or Wix site publish occurred in this batch. Chris Spears' Baylor draft remains UNPUBLISHED, pending photos.
+
+Older checkpoints below are historical. Use current owner direction and fresh provider evidence before writes.
+
 ## Current website and magazine — Oct. 17, 2026
 
 Owner-directed design is live: white editorial surfaces, stronger Gator Orange, smaller wider Barlow UI and naturally wrapping titles. The original v5 Who’s QB1 in Austin? poster is intentional mystery art: its eye/identity-obscuring strap must not be repaired into a different concept. Homepage22 current-week stories sort newest-first, with10 pregame stories and fresh relevant RSS additions. All News sorts each returned native page by publication date; native page membership/pagination remain Wix-owned. Existing ESPN pregame/live/final acquisition and refresh behavior is retained.

@@ -253,6 +253,15 @@ C += `
 @ .bc-tbl li.bc-fl{background:rgba(255,255,255,.12);box-shadow:inset 3px 0 0 #22884C}
 @ .bc-shot span{box-shadow:inset 0 -3px 0 #22884C}
 @ .sh-coverage img,@ .sh-support img{box-shadow:0 3px 0 #22884C}
+/* Current-feed photographs replace the text-only rundown; keep the original coverage until every replacement loads. */
+@ .bc-photo-rows .bc-row a{grid-template-columns:160px minmax(0,1fr);gap:18px;padding:18px 0;align-items:center}
+@ .bc-thumb{display:block;aspect-ratio:16/9;background:#07143e;overflow:hidden;box-shadow:0 3px 0 #22884C}
+@ .bc-thumb img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;clip-path:none!important}
+@ .bc-photo-rows .bc-by{letter-spacing:.06em;line-height:1.5}
+@ .bc-photo-sources{margin:14px 0;font:400 13px/1.6 Barlow,sans-serif;color:var(--mu)}@ .bc-photo-sources a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+@ .bc-credit{display:block;margin-top:6px;font:400 12px/1.35 Barlow,sans-serif;color:var(--mu)}
+:is(@).bc-fresh-news .sh-lower>div:has(.sh-coverage){display:none!important}
+@media(max-width:820px){@ .bc-photo-rows .bc-row a{grid-template-columns:112px minmax(0,1fr);gap:12px;padding:16px 0}@ .bc-photo-rows .bc-row h3{font-size:22px!important;line-height:1.08!important}@ .bc-photo-rows .bc-by{font-size:11px;letter-spacing:.03em}@ .bc-credit{font-size:11px}}
 `;
 function css(){if(document.getElementById('gbm-broadcast-home-css'))return;var s=document.createElement('style');s.id='gbm-broadcast-home-css';s.textContent=C.replace(/@ /g,R+' ').replace(/@\{/g,R+'{').replace(/@\)/g,R+')');(document.head||document.documentElement).appendChild(s);}
 css();document.documentElement.classList.remove('gbm-bc-wait');
@@ -270,10 +279,10 @@ function get(u,t){return fetch(u,{cache:'no-store',credentials:'omit'}).then(fun
 function loadFeed(){return get('/blog-feed.xml?t='+minute(),1).then(function(x){var d=new DOMParser().parseFromString(x,'text/xml'),out=[];
 [].slice.call(d.querySelectorAll('item')).forEach(function(i){var q=function(k){var n=[].slice.call(i.children).find(function(c){return c.localName===k;});return n?n.textContent.trim():'';},u;
 try{u=new URL(q('link'),location.href);}catch(e){return;}if(!/(^|\.)gatorbaitmedia\.com$/.test(u.hostname)||u.pathname.indexOf('/post/')!==0||!q('title'))return;
-var en=i.querySelector('enclosure');out.push([Date.parse(q('pubDate'))||0,q('title'),u.pathname,q('creator'),en?en.getAttribute('url')||'':'']);});
+var en=i.querySelector('enclosure');out.push([Date.parse(q('pubDate'))||0,q('title'),u.pathname,q('creator'),en?en.getAttribute('url')||'':'',en?en.getAttribute('alt')||'':'',q('credit')||((/\b(?:Photo (?:by|courtesy)|Graphic:)\s+[^.\r\n]+\.?/i.exec(q('description').replace(/<[^>]*>/g,' '))||[])[0]||'')]);});
 out.sort(function(a,b){return b[0]-a[0];});if(out.length>=3){D.all=out;D.feed=out.slice(0,7);}}).catch(function(){});}
 var CFG='https://presidente49.github.io/gatorbait-media-redesign/sports-live/front-page.config.json';
-function loadCfg(){return get(CFG+'?t='+Math.floor(Date.now()/36e5)).then(function(c){if(c&&Array.isArray(c.covers))D.covers=c.covers;}).catch(function(){});}
+function loadCfg(){return get(CFG+'?t='+Math.floor(Date.now()/36e5)).then(function(c){if(c){if(Array.isArray(c.covers))D.covers=c.covers;D.credits=c.credits||{};D.imageAlts=c.imageAlts||{};}}).catch(function(){});}
 /* A lead whose cover is a typeset graphic (a covers[] media id, or a PNG; photos here are JPG) shows whole with the headline below it, not over it. */
 function graphic(root){var im=root.querySelector('.bc-hero .sh-lead img'),u=im&&(im.currentSrc||im.src)||'',id=(/\/media\/([0-9a-f]+_[0-9a-f]+)/.exec(u)||[])[1];return!!u&&(/~mv2\.png(\/|$|\?)/i.test(u)||!!(id&&D.covers&&D.covers.indexOf(id)>=0));}
 function loadSB(){return get(SB+'?t='+minute()).then(function(d){if(d&&d.team&&('next' in d))D.sb=d;}).catch(function(){});}
@@ -324,7 +333,7 @@ var heads=D.feed?D.feed.map(function(f){return[f[1],f[2]];}):[].slice.call(root.
 heads.forEach(function(h){if(h[1])it.push(['Latest',h[0],h[1]]);});return it;}
 function teamRow(name,rank,rec,score,win){return'<div class="bc-tm'+(win?' bc-w':'')+'"><b class="bc-ab" aria-hidden="true">'+esc(ab(name))+'</b><span class="bc-nm">'+esc(name)+'<small>'+(rank?'No. '+esc(rank):'')+(rank&&rec?' · ':'')+esc(rec||'')+'</small></span><b class="bc-pt">'+esc(score)+'</b></div>';}
 function prePanel(x){var f=['Florida',x.flaRank,x.flaRec],o=[x.opp,x.oppRank,x.oppRec],aw=x.home?o:f,hm=x.home?f:o;
-return'<section class="bc-sc bc-pre" aria-label="Game day: '+esc(matchup(x).join(' '))+'"><p class="bc-lbl"><i></i>Game day <span>· '+esc(kick(x.k)+(x.tv?' · '+x.tv:''))+'</span></p>'+
+return'<section class="bc-sc bc-pre" aria-label="Football game day: '+esc(matchup(x).join(' '))+'"><p class="bc-lbl"><i></i>Football · Game day <span>· '+esc(kick(x.k)+(x.tv?' · '+x.tv:''))+'</span></p>'+
 teamRow(aw[0],aw[1],aw[2],'',false)+teamRow(hm[0],hm[1],hm[2],'',false)+(x.venue?'<p class="bc-ven">'+esc(x.venue)+'</p>':'')+(x.href?'<p class="bc-go"><a class="bc-o" href="'+esc(x.href)+'">Preview</a></p>':'')+'</section><span class="bc-slash" aria-hidden="true"></span>';}
 function panel(M){if(M.pre&&!M.live)return prePanel(M.pre);var x=M.live||M.last;if(!x)return'';var L=!!M.live,f=[ 'Florida',L?x.flaRank:null,'',x.fla],o=[x.opp,x.oppRank,'',x.oppS],aw=x.home?o:f,hm=x.home?f:o;
 var win=L?null:(x.fla>x.oppS?f:o),lk=L?[]:M.links.slice(0,2);
@@ -332,13 +341,13 @@ var ls='',q=!L&&x.q;if(q&&q.fla&&q.opp&&q.fla.length===q.opp.length&&q.fla.lengt
 var row=function(nm,arr,t){return'<span>'+esc(ab(nm))+'</span>'+arr.map(function(v){return'<span>'+esc(v)+'</span>';}).join('')+'<span class="t">'+esc(t)+'</span>';},aq=x.home?q.opp:q.fla,hq=x.home?q.fla:q.opp;
 ls='<div class="bc-ls" aria-label="Score by quarter" style="grid-template-columns:62px repeat('+n+',1fr) 52px">'+hdr.map(function(h){return'<span class="h">'+h+'</span>';}).join('')+row(aw[0],aq,aw[3])+row(hm[0],hq,hm[3])+'</div>';}
 var ld=!L&&x.leaders&&x.leaders.length?'<div class="bc-ld"><small>Florida leaders</small>'+x.leaders.slice(0,3).map(function(r){return'<p><b>'+esc(r[1])+'</b><em>'+esc(String(r[2]).replace(/ (YDS|CAR|REC)\b/g,function(m,w){return' '+w.toLowerCase();}))+'</em></p>';}).join('')+'</div>':'';
-return'<section class="bc-sc" aria-label="Scoreboard: '+esc(aw[0])+(x.neutral?' vs. ':' at ')+esc(hm[0])+'"'+(L?' aria-live="polite"':'')+'><p class="bc-lbl"><i></i>'+(L?'Live':'Final')+' <span>· '+esc(L?(x.detail||day(x.date)):day(x.date))+'</span></p>'+
+return'<section class="bc-sc" aria-label="Football scoreboard: '+esc(aw[0])+(x.neutral?' vs. ':' at ')+esc(hm[0])+'"'+(L?' aria-live="polite"':'')+'><p class="bc-lbl"><i></i>Football · '+(L?'Live':'Final')+' <span>· '+esc(L?(x.detail||day(x.date)):day(x.date))+'</span></p>'+
 teamRow(aw[0],aw[1],aw[2],aw[3],aw===win)+teamRow(hm[0],hm[1],hm[2],hm[3],hm===win)+(lk.length?'<p class="bc-go">'+lk.map(function(h,k){return'<a'+(k?'':' class="bc-o"')+' href="'+esc(h)+'">'+(k?'More':'Game story')+'</a>';}).join('')+'</p>':'')+ls+ld+'</section><span class="bc-slash" aria-hidden="true"></span>';}
 function bar(M){var a,at,b,w1,w2,k=0;
 if(M.next){var mu=matchup(M.next);a=mu[0];at=mu[1];b=mu[2];w1=day(M.next.k);w2=kick(M.next.k)+(M.next.tv?' · '+M.next.tv:'');k=tba(M.next.k)?0:M.next.k;}
 else if(M.card&&!M.live){a=M.card.a;at=M.card.at;b=M.card.b;var ps=M.card.when.split(' · ');w1=ps[0];w2=ps.slice(1).join(' · ');}
 else return'';var bm=/^(No\. \d+)\s+(.+)$/.exec(b),am=/^(No\. \d+)\s+(.+)$/.exec(a),t=function(m,s){return m?'<small>'+esc(m[1])+'</small>'+esc(m[2]):esc(s);};
-return'<div class="bc-tag">'+(M.pre?'Kickoff':'Next up')+'</div><div class="bc-mu"><span class="bc-t">'+t(am,a)+'</span><span class="bc-at">'+esc(at)+'</span><span class="bc-t">'+t(bm,b)+'</span><span class="bc-when"><b>'+esc(w1)+'</b>'+esc(w2)+'</span></div>'+(k>Date.now()?'<div class="bc-cd" role="timer" aria-label="Time to kickoff" data-k="'+k+'"></div>':'');}
+return'<div class="bc-tag">Football · '+(M.pre?'Kickoff':'Next up')+'</div><div class="bc-mu"><span class="bc-t">'+t(am,a)+'</span><span class="bc-at">'+esc(at)+'</span><span class="bc-t">'+t(bm,b)+'</span><span class="bc-when"><b>'+esc(w1)+'</b>'+esc(w2)+'</span></div>'+(k>Date.now()?'<div class="bc-cd" role="timer" aria-label="Time to kickoff" data-k="'+k+'"></div>':'');}
 var S={};
 function put(el,html,key){if(S[key]===html)return false;S[key]=html;el.innerHTML=html;return true;}
 function cdTick(){var cd=document.querySelector(R+' .bc-cd');if(!cd)return;var k=+cd.getAttribute('data-k'),s=k-Date.now();if(s<=0){cd.remove();return;}
@@ -352,6 +361,7 @@ put(tk,html,'tk');}
 var hero=root.querySelector('.bc-hero'),slot=hero&&hero.querySelector('.bc-ps'),ph=band?'':panel(M);
 if(hero)hero.classList.toggle('bc-graphic',graphic(root));
 if(slot&&put(slot,ph,'ps'))hero.classList.toggle('bc-solo',!ph);
+freshRows(root);
 var sd=root.querySelector('.bc-sd');if(sd)put(sd,side(root,M),'sd');setTimeout(balance,0);
 var bx=root.querySelector('.bc-nx'),bh=bar(M);if(bx){if(put(bx,bh,'nx'))cdTick();bx.hidden=!bh;var ref=root.querySelector('.sh-reference');if(ref)ref.style.display=bh||D.sb?'none':'';}}
 var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -360,6 +370,19 @@ function shortDate(t){var m=/([A-Z][a-z]+) (\d{1,2}), \d{4}/.exec(t||''),i=m?MON
 function rundown(root){var rows=[];[].slice.call(root.querySelectorAll('.sh-support article,.sh-wire-item')).forEach(function(a){var l=a.querySelector('a[href]'),t=a.querySelector('h2,h3'),m=a.querySelector('.sh-meta');
 if(!l||!t)return;var mt=m?m.textContent.split(' · '):[];rows.push({h:l.getAttribute('href'),t:t.textContent.trim(),by:(mt[0]||'').trim(),d:shortDate(mt[1]||'')});});
 return rows.slice(0,8).map(function(r,i){return'<li class="bc-row"><a href="'+esc(r.h)+'"><span class="bc-n" aria-hidden="true">'+(i<9?'0':'')+(i+1)+'</span><span><h3>'+esc(r.t)+'</h3><span class="bc-by">'+(r.by?'<b>'+esc(r.by)+'</b>':'')+(r.by&&r.d?' · ':'')+esc(r.d)+'</span></span></a></li>';}).join('');}
+/* Reuse the same live RSS records for matching photo, title, author and publication date. */
+function storyPath(h){try{return new URL(h,location.href).pathname.replace(/\/+$/,'');}catch(e){return'';}}
+function wixPhoto(h){try{var u=new URL(h),m=/^\/media\/([^/]+~mv2\.(?:jpe?g|png|webp))(?:\/|$)/i.exec(u.pathname);return u.protocol==='https:'&&u.hostname==='static.wixstatic.com'&&m?u.origin+'/media/'+m[1]+'/v1/fit/w_480,h_320,al_c,q_80/file.jpg':'';}catch(e){return'';}}
+function freshRows(root){var list=root.querySelector('.bc-rows');if(!list||!D.all)return;
+var lead=root.querySelector('.bc-hero .sh-lead a[href]'),seen={},original={};if(lead)seen[storyPath(lead.href)]=true;
+[].slice.call(root.querySelectorAll('.sh-lead,.sh-support article,.sh-wire-item,.sh-coverage article')).forEach(function(a){var l=a.querySelector('a[href]'),im=a.querySelector('img');if(l&&im)original[storyPath(l.href)]=im.getAttribute('alt')||'';});
+var rows=D.all.slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||seen[h]||!wixPhoto(f[4]))return false;seen[h]=true;return true;}).slice(0,8);if(rows.length<6||rows.some(function(f){var id=(/\/media\/([^/~]+)/.exec(f[4])||[])[1];return!((D.credits||{})[id]||f[6]);}))return;
+var hasUAA=false,hasHannah=false;var html=rows.map(function(f){var id=(/\/media\/([^/~]+)/.exec(f[4])||[])[1],credit=(D.credits||{})[id]||f[6]||'',alt=(D.imageAlts||{})[id]||f[5]||original[storyPath(f[2])]||'';hasUAA=hasUAA||/\bUAA\b/.test(credit);hasHannah=hasHannah||/Hannah White/.test(credit);var o=et(f[0]),y=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric'}).format(new Date(f[0])),d=MO[o.month-1]+' '+o.day+', '+y;
+return'<li class="bc-row"><a href="'+esc(f[2])+'"><span class="bc-thumb"><img src="'+esc(wixPhoto(f[4]))+'" alt="'+esc(alt)+'" width="480" height="270" loading="eager" decoding="async"></span><span><h3>'+esc(f[1])+'</h3><span class="bc-by">'+(f[3]?'<b>'+esc(f[3])+'</b> · ':'')+'<time datetime="'+new Date(f[0]).toISOString()+'">'+esc(d)+'</time></span>'+(credit?'<span class="bc-credit">'+esc(credit)+'</span>':'')+'</span></a></li>';}).join('');
+var sources=list.parentNode.querySelector('.bc-photo-sources');if(!sources){sources=document.createElement('p');sources.className='bc-photo-sources';list.insertAdjacentElement('afterend',sources);}sources.hidden=!hasUAA;sources.innerHTML=hasUAA?'UAA photo sources: <a href="https://floridagators.com">UAA</a>'+(hasHannah?' · <a href="https://www.instagram.com/hannahmorganphoto/">Hannah White</a>':'')+' · <a href="https://floridagators.com/galleries">Official galleries</a>.':'';
+if(list.__bcFreshRows===html)return;list.__bcFreshRows=html;root.classList.remove('bc-fresh-news');list.classList.add('bc-photo-rows');list.innerHTML=html;
+var photos=[].slice.call(list.querySelectorAll('img'));function ready(){if(!list.isConnected||list.__bcFreshRows!==html)return;root.classList.toggle('bc-fresh-news',photos.every(function(im){return im.complete&&im.naturalWidth>0;}));}
+photos.forEach(function(im){im.addEventListener('load',ready,{once:true});im.addEventListener('error',ready,{once:true});});ready();}
 function img(u,w,h){return/^https:\/\/static\.wixstatic\.com\/media\/[^/]+~mv2\.(jpe?g|png|webp)$/i.test(u)?u+'/v1/fill/w_'+w+',h_'+h+',al_c,q_80,enc_auto/file.jpg':u;}
 function side(root,M){var h='',x=M.last,t=x&&x.tape;
 if(t&&!M.live){var st=[[t.totalYards,'Total yards'],[t.rushingYards,'Rushing yards'],[t.firstDowns,'First downs'],[t.attendance,'Attendance']].filter(function(v){return v[0]!=null;});

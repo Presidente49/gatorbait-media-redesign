@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pick 'Em fixture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+/* Stand-ins for the live Wix shell: sitewide Barlow, the unified header, the native page and footer. */
+html body{margin:0;font-family:"Barlow",Arial,Helvetica,sans-serif;background:#fff}
+#gbm-site-header{background:#0021A5;color:#fff;padding:14px 16px;font:800 22px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.02em}
+#SITE_PAGES{padding:40px 16px;background:#f3f3f3;color:#333}
+#SITE_FOOTER{background:#0b1b45;color:#fff;padding:24px 16px;font-size:14px}
+</style>
+<!--CONFIG-->
+<script>
+/* Fixture-only API mock. Records every wixapis.com call in window.__pk.reqs; never touches the network for Wix. */
+window.__pk = { reqs: [], mode: (new URLSearchParams(location.search).get('mode')) || 'ok',
+  board: [
+    { rank: 1, callsign: 'SwampThing', points: 7, exact: 2 }, { rank: 2, callsign: 'ChompKing', points: 5, exact: 1 },
+    { rank: 3, callsign: 'Gator Gal', points: 4, exact: 1 }, { rank: 4, callsign: 'OrangeBlue88', points: 3, exact: 0 },
+    { rank: 5, callsign: 'TheHerd', points: 2, exact: 0 } ] };
+(function () {
+  var real = window.fetch.bind(window);
+  function res(status, body) { return Promise.resolve(new Response(JSON.stringify(body), { status: status, headers: { 'Content-Type': 'application/json' } })); }
+  window.fetch = function (url, opt) {
+    url = String(url);
+    if (url.indexOf('https://www.wixapis.com/') !== 0) return real(url, opt);
+    var body = null; try { body = JSON.parse(opt && opt.body); } catch (_) {}
+    window.__pk.reqs.push({ url: url, body: body, auth: opt && opt.headers && opt.headers.Authorization || null });
+    if (/\/oauth2\/token$/.test(url)) return res(200, { access_token: 'TEST-VISITOR-TOKEN', token_type: 'Bearer', expires_in: 14400, refresh_token: 'R' });
+    if (/form-submission-service/.test(url)) return window.__pk.mode === 'fail' ? res(500, { message: 'mock failure' }) : res(200, { submission: { id: 'mock-1', status: 'CONFIRMED' } });
+    if (/wix-data\/v2\/items\/query$/.test(url)) return window.__pk.mode === 'empty' ? res(200, { dataItems: [] }) : res(200, { dataItems: window.__pk.board.map(function (d, i) { return { id: 'r' + i, data: d }; }) });
+    return res(404, {});
+  };
+})();
+</script>
+</head>
+<body>
+<header id="gbm-site-header">GatorBait Media</header>
+<div id="SITE_CONTAINER">
+  <main id="SITE_PAGES"><p>Native Wix page content. The Pick 'Em embed hides this on /pick-em.</p></main>
+  <footer id="SITE_FOOTER">Sitewide footer stays visible.</footer>
+</div>
+<!--EMBED-->
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "season": 2026,
+  "note": "One row per Pick 'Em week. lockAt is when picks close (ISO, UTC). While a kickoff is TBA, lockAt is noon ET on game day, the earliest realistic SEC kickoff; move it to the announced kickoff time (and update the form deadline and the embed config) once the time is set. espnEvent comes from sports-live/scoreboard.json.",
+  "games": [
+    {
+      "gameId": "2026-10-10-south-carolina",
+      "espnEvent": "401856714",
+      "opponent": "South Carolina",
+      "home": true,
+      "label": "Sat., Oct. 10 · Homecoming · Kickoff TBA",
+      "lockAt": "2026-10-10T16:00:00Z"
+    }
+  ]
+}

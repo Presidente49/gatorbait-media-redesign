@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "ownerDirectionDate": "2026-10-20",
+  "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+  "priority": [
+    "relevant_rights_cleared_story_art",
+    "verified_writer_default",
+    "create_and_store_named_writer_card"
+  ],
+  "writers": {
+    "Franz Beard": {
+      "series": "Thoughts of the Day",
+      "status": "READY",
+      "mediaId": "d3cfa5_c02758730b3941e39694492c7bc555a5~mv2.png",
+      "url": "https://static.wixstatic.com/media/d3cfa5_c02758730b3941e39694492c7bc555a5~mv2.png",
+      "width": 1672,
+      "height": 941,
+      "editionDate": "2026-10-20",
+      "futureUse": "Locked design master. Update or remove the edition date for a new day's rendition before publication; preserve the approved visual identity.",
+      "altText": "Original GatorBait illustration of a basketball and football beneath Thoughts of the Day, Franz Beard, Oct. 20, 2026.",
+      "credit": "Original illustration: GatorBait Media",
+      "source": "Original generated editorial illustration created for Brenden; no player faces or external photography. Owner approved as the series design on Oct. 20, 2026.",
+      "sha256": "34faf241972774d590eb998961fb0710dfd0e72f8a8fabfdd42afdd6dd292726"
+    },
+    "Buddy Martin": {
+      "status": "NEEDS_DEFAULT_ASSET",
+      "fallback": "Use a verified rights-cleared Buddy portrait or create and store a matching Buddy Martin branded card."
+    },
+    "Loren Meadows": {
+      "status": "NEEDS_DEFAULT_ASSET",
+      "fallback": "Use a verified rights-cleared Loren portrait or create and store a matching Loren Meadows branded card."
+    },
+    "Eddie Gilley": {
+      "status": "NEEDS_DEFAULT_ASSET",
+      "fallback": "Use a verified rights-cleared Eddie portrait or create and store a matching Eddie Gilley branded card."
+    },
+    "Chris Spears": {
+      "status": "NEEDS_DEFAULT_ASSET",
+      "fallback": "Use Chris's relevant credited photography first; otherwise use a verified portrait or matching named branded card."
+    },
+    "Carlton Reese": {
+      "status": "NEEDS_DEFAULT_ASSET",
+      "fallback": "Use a verified rights-cleared Carlton portrait or create and store a matching Carlton Reese branded card."
+    }
+  }
+}

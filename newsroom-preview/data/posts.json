@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Rays the Roof!",
+      "excerpt": "By Buddy Martin As a former St. Petersburg resident and a sports columnist for the St. Petersburg Times who campaigned for major league baseball there back in the day — some 45 years ago — I have a confession and a hurrah. The confession: somewhere between covering the Gators and falling back in love with baseball, I became a Rays fan who watches 50, 60…",
+      "url": "https://www.gatorbaitmedia.com/post/rays-the-roof",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-20T22:34:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_87834ebcaf3f4606a29e8eef62f9aa65~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Rays the Roof!"
+      }
+    },
+    {
       "title": "No. 1 expectations, SEC crossroads and the playoff picture",
       "excerpt": "Franz Beard's Tuesday column: Florida basketball's preseason expectations, college football rankings, the outlook for all 16 SEC teams and his College Football Playoff predictions.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-20-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation"
-      }
-    },
-    {
-      "title": "It was a good day for an exorcism in Austin",
-      "excerpt": "Franz Beard: Florida's defense found its inner Doomsday, Arch Manning got haunted and Tramell Jones Jr. won his first start on the road, 27-24 at No. 7 Texas.",
-      "url": "https://www.gatorbaitmedia.com/post/it-was-a-good-day-for-an-exorcism-in-austin",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-18T00:02:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for It was a good day for an exorcism in Austin"
       }
     }
   ]

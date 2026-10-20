@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-20T04:56:10.644570+00:00",
+  "results": [
+    {
+      "key": "lowdown",
+      "playlistId": "PLIekxRlp1omM",
+      "url": "https://www.youtube.com/playlist?list=PLIekxRlp1omM",
+      "http": 200,
+      "finalUrl": "https://www.youtube.com/playlist?list=PLIekxRlp1omM",
+      "bytes": 1141614,
+      "pageTitle": [
+        "Florida Gator Lowdown \ud83d\udc0a - YouTube"
+      ],
+      "unavailable": [],
+      "firstVideos": [],
+      "videoCountInInitialPage": 0
+    },
+    {
+      "key": "podcasts",
+      "playlistId": "PL1twZqsaZwxneDPF2RojFUTMXgr-OK41I",
+      "url": "https://www.youtube.com/playlist?list=PL1twZqsaZwxneDPF2RojFUTMXgr-OK41I",
+      "http": 200,
+      "finalUrl": "https://www.youtube.com/playlist?list=PL1twZqsaZwxneDPF2RojFUTMXgr-OK41I",
+      "bytes": 2107627,
+      "pageTitle": [
+        "The Buddy Martin Show Podcast - YouTube"
+      ],
+      "unavailable": [],
+      "firstVideos": [],
+      "videoCountInInitialPage": 0
+    },
+    {
+      "key": "shorts",
+      "playlistId": "PL1twZqsaZwxnM5F4xVYTJlia_-IIIHgKa",
+      "url": "https://www.youtube.com/playlist?list=PL1twZqsaZwxnM5F4xVYTJlia_-IIIHgKa",
+      "http": 200,
+      "finalUrl": "https://www.youtube.com/playlist?list=PL1twZqsaZwxnM5F4xVYTJlia_-IIIHgKa",
+      "bytes": 2111088,
+      "pageTitle": [
+        "Shorts - YouTube"
+      ],
+      "unavailable": [],
+      "firstVideos": [],
+      "videoCountInInitialPage": 0
+    }
+  ]
+}

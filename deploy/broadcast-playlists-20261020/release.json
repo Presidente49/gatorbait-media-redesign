@@ -1,0 +1,67 @@
+{
+  "sourceCommit": "fa039be6f297d29a1849b38e4a52fd6638b3980a",
+  "sourceUrl": "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@fa039be6f297d29a1849b38e4a52fd6638b3980a/sports-live/broadcast-playlists.js",
+  "sha256": "e10aa2bdfa85b1c9dce0cd361e3e9f30229a950c3c4ba1dc8e0e582376ff6b7c",
+  "http": 200,
+  "sourceBytes": 15716,
+  "embedChars": 14867,
+  "preservedFirstStyleScript": true,
+  "sourcePR": 410,
+  "candidateChecks": "candidate/summary.json",
+  "ciRun": "https://github.com/Presidente49/gatorbait-media-redesign/actions/runs/39372808309",
+  "ciLimitation": "Broad QC fails unchanged magazine.js byte cap (188969 > 188416); no diff in magazine source/build check. Homepage image checks pass. TV candidate checks pass.",
+  "beforeRevision": "38",
+  "afterRevision": "40",
+  "providerVerified": true,
+  "patchStatus": 200,
+  "liveChecks": {
+    "passed": true,
+    "widths": [
+      320,
+      390,
+      430,
+      1366,
+      1920
+    ],
+    "sourcePinVerified": "Inline data-gbm-source matches immutable source; compiled artifact reproduced exactly",
+    "noOverflow": true,
+    "pageLoadIframes": 0,
+    "allFourPlayers": "correct URLs, switch, close, restored focus",
+    "routeCleanup": true,
+    "screenshotsReviewed": [
+      "live/390-top.png",
+      "live/1920-playlists.png"
+    ],
+    "existingDesktopError": "wixTagManager is not defined",
+    "avPlaybackVerified": false,
+    "physicalIPhoneVerified": false
+  },
+  "liveCssWidths": {
+    "passed": true,
+    "widths": [
+      390,
+      430
+    ],
+    "reason": "Separate true CSS widths from Wix iPhone-UA device emulation layout viewport."
+  },
+  "intermediateRevision": "39",
+  "position": "HEAD",
+  "embedSha256": "88aebb9150a09527c4f4c02fdf3d2fd337a18285072e295c98588bc01e06fa59",
+  "runtimeLoading": "Inline compiled from immutable human source; no CDN fetch needed at runtime",
+  "compiler": "Terser5.44.0; CSS literal newlines removed",
+  "coldLoad": "inline-head-live/summary.json",
+  "coldLoadWidths": [
+    390,
+    1920
+  ],
+  "nativeFlashSamples": 0,
+  "independentFinal": {
+    "passed": true,
+    "checkedAt": "2026-10-20T05:17:24Z",
+    "nativeFlashObservations": 224,
+    "nativeFlashes": 0,
+    "menuEscape": true,
+    "cookieSettings": true,
+    "evidence": "independent/final-r40/qc.json"
+  }
+}

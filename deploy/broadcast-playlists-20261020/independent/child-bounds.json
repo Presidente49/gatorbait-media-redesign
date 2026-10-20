@@ -1,0 +1,326 @@
+[
+  {
+    "captured": "2026-10-20T05:08:55.931Z",
+    "cssViewport": 320,
+    "documentWidth": 320,
+    "posters": [
+      {
+        "key": "live",
+        "box": {
+          "x": 33,
+          "y": 439.3125,
+          "right": 287,
+          "bottom": 582.1875
+        },
+        "children": [
+          {
+            "class": "bp-mark",
+            "text": "GATORBAIT",
+            "rect": {
+              "x": 76.25,
+              "y": 466.53125,
+              "right": 243.75,
+              "bottom": 499.96875
+            },
+            "within": true
+          },
+          {
+            "class": "bp-play",
+            "text": "OPEN LIVE PLAYER",
+            "rect": {
+              "x": 81.0625,
+              "y": 510.96875,
+              "right": 238.9375,
+              "bottom": 554.96875
+            },
+            "within": true
+          }
+        ]
+      },
+      {
+        "key": "lowdown",
+        "box": {
+          "x": 35,
+          "y": 1083.609375,
+          "right": 285,
+          "bottom": 1224.234375
+        },
+        "children": [
+          {
+            "class": "bp-mark",
+            "text": "LOW\nDOWN",
+            "rect": {
+              "x": 122.21875,
+              "y": 1098.6875,
+              "right": 197.765625,
+              "bottom": 1153.375
+            },
+            "within": true
+          },
+          {
+            "class": "bp-play",
+            "text": "OPEN LOWDOWN PLAYLIST",
+            "rect": {
+              "x": 58,
+              "y": 1164.375,
+              "right": 262,
+              "bottom": 1209.15625
+            },
+            "within": true
+          }
+        ]
+      },
+      {
+        "key": "podcasts",
+        "box": {
+          "x": 35,
+          "y": 1512.234375,
+          "right": 285,
+          "bottom": 1652.859375
+        },
+        "children": [
+          {
+            "class": "bp-mark",
+            "text": "BUDDY\nMARTIN",
+            "rect": {
+              "x": 112.515625,
+              "y": 1527.703125,
+              "right": 207.46875,
+              "bottom": 1582.390625
+            },
+            "within": true
+          },
+          {
+            "class": "bp-play",
+            "text": "OPEN PODCAST PLAYLIST",
+            "rect": {
+              "x": 60.78125,
+              "y": 1593.390625,
+              "right": 259.21875,
+              "bottom": 1637.390625
+            },
+            "within": true
+          }
+        ]
+      },
+      {
+        "key": "shorts",
+        "box": {
+          "x": 35,
+          "y": 2022.109375,
+          "right": 285,
+          "bottom": 2162.734375
+        },
+        "children": [
+          {
+            "class": "bp-mark",
+            "text": "THE SHORT\nTAKE",
+            "rect": {
+              "x": 92.796875,
+              "y": 2037.578125,
+              "right": 227.203125,
+              "bottom": 2092.265625
+            },
+            "within": true
+          },
+          {
+            "class": "bp-play",
+            "text": "OPEN SHORTS PLAYLIST",
+            "rect": {
+              "x": 64.921875,
+              "y": 2103.265625,
+              "right": 255.0625,
+              "bottom": 2147.265625
+            },
+            "within": true
+          }
+        ]
+      }
+    ],
+    "requestedDeviceWidth": 390
+  },
+  {
+    "captured": "2026-10-20T05:08:56.660Z",
+    "cssViewport": 1920,
+    "documentWidth": 1920,
+    "posters": [
+      {
+        "key": "live",
+        "box": {
+          "x": 393,
+          "y": 516.40625,
+          "right": 1095.53125,
+          "bottom": 911.578125
+        },
+        "children": [
+          {
+            "class": "bp-mark",
+            "text": "GATORBAIT",
+            "rect": {
+              "x": 591.9375,
+              "y": 642.390625,
+              "right": 896.59375,
+              "bottom": 703.1875
+            },
+            "within": true
+          },
+          {
+            "class": "bp-poster-sub",
+            "text": "THE BUDDY MARTIN SHOW",
+            "rect": {
+              "x": 666.1875,
+              "y": 713.1875,
+              "right": 822.34375,
+              "bottom": 728.578125
+            },
+            "within": true
+          },
+          {
+            "class": "bp-play",
+            "text": "OPEN LIVE PLAYER",
+            "rect": {
+              "x": 658.0625,
+              "y": 741.578125,
+              "right": 830.453125,
+              "bottom": 785.578125
+            },
+            "within": true
+          }
+        ]
+      },
+      {
+        "key": "lowdown",
+        "box": {
+          "x": 389,
+          "y": 1170.84375,
+          "right": 728.328125,
+          "bottom": 1361.703125
+        },
+        "children": [
+          {
+            "class": "bp-mark",
+            "text": "LOW\nDOWN",
+            "rect": {
+              "x": 494.390625,
+              "y": 1178.53125,
+              "right": 622.921875,
+              "bottom": 1271.625
+            },
+            "within": true
+          },
+          {
+            "class": "bp-poster-sub",
+            "text": "WITH LOREN MEADOWS",
+            "rect": {
+              "x": 489.328125,
+              "y": 1281.625,
+              "right": 627.984375,
+              "bottom": 1297.015625
+            },
+            "within": true
+          },
+          {
+            "class": "bp-play",
+            "text": "OPEN LOWDOWN PLAYLIST",
+            "rect": {
+              "x": 446.8125,
+              "y": 1310.015625,
+              "right": 670.5,
+              "bottom": 1354.015625
+            },
+            "within": true
+          }
+        ]
+      },
+      {
+        "key": "podcasts",
+        "box": {
+          "x": 790.328125,
+          "y": 1170.84375,
+          "right": 1129.65625,
+          "bottom": 1361.703125
+        },
+        "children": [
+          {
+            "class": "bp-mark",
+            "text": "BUDDY\nMARTIN",
+            "rect": {
+              "x": 879.203125,
+              "y": 1178.53125,
+              "right": 1040.765625,
+              "bottom": 1271.625
+            },
+            "within": true
+          },
+          {
+            "class": "bp-poster-sub",
+            "text": "THE PODCAST",
+            "rect": {
+              "x": 918.5,
+              "y": 1281.625,
+              "right": 1001.484375,
+              "bottom": 1297.015625
+            },
+            "within": true
+          },
+          {
+            "class": "bp-play",
+            "text": "OPEN PODCAST PLAYLIST",
+            "rect": {
+              "x": 852,
+              "y": 1310.015625,
+              "right": 1067.984375,
+              "bottom": 1354.015625
+            },
+            "within": true
+          }
+        ]
+      },
+      {
+        "key": "shorts",
+        "box": {
+          "x": 1191.65625,
+          "y": 1170.84375,
+          "right": 1531,
+          "bottom": 1361.71875
+        },
+        "children": [
+          {
+            "class": "bp-mark",
+            "text": "THE SHORT\nTAKE",
+            "rect": {
+              "x": 1246.984375,
+              "y": 1178.53125,
+              "right": 1475.671875,
+              "bottom": 1271.625
+            },
+            "within": true
+          },
+          {
+            "class": "bp-poster-sub",
+            "text": "THE BUDDY MARTIN SHOW",
+            "rect": {
+              "x": 1283.25,
+              "y": 1281.625,
+              "right": 1439.40625,
+              "bottom": 1297.015625
+            },
+            "within": true
+          },
+          {
+            "class": "bp-play",
+            "text": "OPEN SHORTS PLAYLIST",
+            "rect": {
+              "x": 1257.78125,
+              "y": 1310.015625,
+              "right": 1464.859375,
+              "bottom": 1354.015625
+            },
+            "within": true
+          }
+        ]
+      }
+    ],
+    "requestedDeviceWidth": 1920
+  }
+]

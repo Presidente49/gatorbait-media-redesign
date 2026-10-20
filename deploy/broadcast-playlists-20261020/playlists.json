@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-10-20",
+  "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
+  "channelUrl": "https://www.youtube.com/@TheBuddyMartinShow",
+  "liveUrl": "https://www.youtube.com/@TheBuddyMartinShow/live",
+  "playlists": [
+    {
+      "key": "lowdown",
+      "kind": "playlist",
+      "id": "PLIekxRlp1omM",
+      "title": "Florida Gator Lowdown \ud83d\udc0a",
+      "description": "Florida Gator Lowdown with Loren Meadows \u2014 news, analysis, and insider talk on Florida Gators football.",
+      "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
+      "channelTitle": "The Buddy Martin Show",
+      "publishedAt": "2026-09-28T05:40:12Z",
+      "thumbnail": "https://i.ytimg.com/vi/oY7p_APFbeI/hqdefault.jpg",
+      "viewCount": null,
+      "videoCount": null,
+      "duration": null,
+      "likeCount": null,
+      "commentCount": null,
+      "subscriberCount": 4380,
+      "vph": null,
+      "outlierScore": null
+    },
+    {
+      "key": "podcasts",
+      "kind": "playlist",
+      "id": "PL1twZqsaZwxneDPF2RojFUTMXgr-OK41I",
+      "title": "The Buddy Martin Show Podcast",
+      "description": "Florida Gators Football Podcast - Listen to The Buddy Martin Show on the go with your YouTube Music App! You asked for it so ...",
+      "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
+      "channelTitle": "The Buddy Martin Show",
+      "publishedAt": "2023-10-20T15:02:36Z",
+      "thumbnail": "https://i.ytimg.com/vi/JexQFsm_wts/hqdefault.jpg",
+      "viewCount": null,
+      "videoCount": null,
+      "duration": null,
+      "likeCount": null,
+      "commentCount": null,
+      "subscriberCount": 4380,
+      "vph": null,
+      "outlierScore": null
+    },
+    {
+      "key": "shorts",
+      "kind": "playlist",
+      "id": "PL1twZqsaZwxnM5F4xVYTJlia_-IIIHgKa",
+      "title": "Shorts",
+      "description": "The Buddy Martin Show Shorts.",
+      "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
+      "channelTitle": "The Buddy Martin Show",
+      "publishedAt": "2023-09-04T17:40:53Z",
+      "thumbnail": "https://i.ytimg.com/vi/O6Y2kFP0L0Y/hqdefault.jpg",
+      "viewCount": null,
+      "videoCount": null,
+      "duration": null,
+      "likeCount": null,
+      "commentCount": null,
+      "subscriberCount": 4380,
+      "vph": null,
+      "outlierScore": null
+    }
+  ],
+  "source": "Connected vidIQ public YouTube playlist search; exact IDs retained. Public YouTube fetch/playback unavailable in this environment. No channel write or connection.",
+  "creditsUsed": 10,
+  "channelMutationAuthorization": false,
+  "primaryPageVerification": {
+    "workflow": "https://github.com/Presidente49/gatorbait-media-redesign/actions/runs/39372171382",
+    "result": "Each exact playlist URL returned200 with its matching actual YouTube title and no unavailable message. Initial-page item count was not parsed; no count or playback claim.",
+    "file": "playlist-primary-check.json"
+  }
+}

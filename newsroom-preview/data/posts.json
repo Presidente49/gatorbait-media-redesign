@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "No. 1 expectations, SEC crossroads and the playoff picture",
+      "excerpt": "Franz Beard's Tuesday column: Florida basketball's preseason expectations, college football rankings, the outlook for all 16 SEC teams and his College Football Playoff predictions.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-20-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-20T15:05:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_c02758730b3941e39694492c7bc555a5~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for No. 1 expectations, SEC crossroads and the playoff picture"
+      }
+    },
+    {
       "title": "Gators find a spark in Austin",
       "excerpt": "Eddie Gilley on Florida's 27-24 win at Texas: improved defense, third-down execution and the spark that helped the Gators fight back. Photo courtesy UAA and Hannah White.",
       "url": "https://www.gatorbaitmedia.com/post/gators-find-a-spark-in-austin",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for It was a good day for an exorcism in Austin"
-      }
-    },
-    {
-      "title": "Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr.",
-      "excerpt": "AUSTIN, Texas — Florida walked into Darrell K Royal–Texas Memorial Stadium on Saturday with a backup quarterback making his first career start, fell behind 17-3, and walked out with the win of its season. The Gators (5-2, 3-2 SEC) scored 24 straight points and held on to beat No. 7 Texas 27-24, sealed late when Myles Graham sacked Arch Manning and knocked…",
-      "url": "https://www.gatorbaitmedia.com/post/gators-stun-no-7-texas-27-24-in-austin-behind-jones-jr",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-17T19:42:57Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_b1c4d099fb864e9f97ed50cd8e561d26~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr."
       }
     }
   ]

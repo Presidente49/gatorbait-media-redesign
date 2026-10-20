@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "No. 1 expectations, SEC crossroads and the playoff picture",
+      "excerpt": "Franz Beard's Tuesday column: Florida basketball's preseason expectations, college football rankings, the outlook for all 16 SEC teams and his College Football Playoff predictions.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-20-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-20T15:05:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_c02758730b3941e39694492c7bc555a5~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for No. 1 expectations, SEC crossroads and the playoff picture"
+      }
+    },
+    {
       "title": "Gators find a spark in Austin",
       "excerpt": "Eddie Gilley on Florida's 27-24 win at Texas: improved defense, third-down execution and the spark that helped the Gators fight back. Photo courtesy UAA and Hannah White.",
       "url": "https://www.gatorbaitmedia.com/post/gators-find-a-spark-in-austin",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Philo's injury could give Tramell Jones Jr. his opening"
-      }
-    },
-    {
-      "title": "Report: Aaron Philo's status uncertain for Florida's trip to Texas",
-      "excerpt": "Aaron Philo was limited at practice Wednesday, according to On3. Tramell Jones Jr. would be next in line if Philo cannot play.",
-      "url": "https://www.gatorbaitmedia.com/post/report-aaron-philo-s-status-uncertain-for-florida-s-trip-to-texas",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-14T19:15:39Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_8e8e9000b0044c4d8375ed1fd8ee7399~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Report: Aaron Philo's status uncertain for Florida's trip to Texas"
       }
     }
   ]

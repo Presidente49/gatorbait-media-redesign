@@ -1,0 +1,316 @@
+{
+  "captured": "2026-10-20T05:07:02.332Z",
+  "width": 320,
+  "documentWidth": 320,
+  "rootCount": 1,
+  "rootRect": {
+    "x": 0,
+    "y": 94,
+    "width": 320,
+    "height": 2422.328125
+  },
+  "rootParent": "BODY",
+  "precedingRoot": "gbm-mobile-shell-host",
+  "title": "THE BUDDY MARTIN SHOW",
+  "modules": [
+    {
+      "id": "lowdown",
+      "title": "FLORIDA GATOR LOWDOWN"
+    },
+    {
+      "id": "podcasts",
+      "title": "THE BUDDY MARTIN SHOW PODCAST"
+    },
+    {
+      "id": "shorts",
+      "title": "SHORTS"
+    }
+  ],
+  "playlistLinks": [
+    "https://www.youtube.com/playlist?list=PLIekxRlp1omM",
+    "https://www.youtube.com/playlist?list=PL1twZqsaZwxneDPF2RojFUTMXgr-OK41I",
+    "https://www.youtube.com/playlist?list=PL1twZqsaZwxnM5F4xVYTJlia_-IIIHgKa"
+  ],
+  "liveHref": "https://www.youtube.com/@TheBuddyMartinShow/live",
+  "appleHref": "https://podcasts.apple.com/us/podcast/the-buddy-martin-show/id1321645302",
+  "initialIframeCount": 0,
+  "initialYoutubeIframes": 0,
+  "posters": [
+    {
+      "key": "live",
+      "rect": {
+        "x": 33,
+        "y": 439.3125,
+        "width": 254,
+        "height": 142.875
+      },
+      "posterRect": {
+        "x": 34,
+        "y": 440.3125,
+        "width": 252,
+        "height": 140.875
+      },
+      "posterScrollHeight": 230,
+      "posterClientHeight": 141,
+      "font": "GBMHubBarlow, Barlow, Arial, sans-serif",
+      "fontStyle": "normal",
+      "background": "linear-gradient(135deg, rgb(16, 45, 114), rgb(8, 27, 65) 64%, rgb(9, 17, 43))",
+      "clip": "none"
+    },
+    {
+      "key": "lowdown",
+      "rect": {
+        "x": 35,
+        "y": 1083.609375,
+        "width": 250,
+        "height": 140.625
+      },
+      "posterRect": {
+        "x": 36,
+        "y": 1084.609375,
+        "width": 248,
+        "height": 138.625
+      },
+      "posterScrollHeight": 227,
+      "posterClientHeight": 139,
+      "font": "GBMHubBarlow, Barlow, Arial, sans-serif",
+      "fontStyle": "normal",
+      "background": "linear-gradient(135deg, rgb(16, 45, 114), rgb(8, 27, 65) 64%, rgb(9, 17, 43))",
+      "clip": "none"
+    },
+    {
+      "key": "podcasts",
+      "rect": {
+        "x": 35,
+        "y": 1512.234375,
+        "width": 250,
+        "height": 140.625
+      },
+      "posterRect": {
+        "x": 36,
+        "y": 1513.234375,
+        "width": 248,
+        "height": 138.625
+      },
+      "posterScrollHeight": 227,
+      "posterClientHeight": 139,
+      "font": "GBMHubBarlow, Barlow, Arial, sans-serif",
+      "fontStyle": "normal",
+      "background": "linear-gradient(135deg, rgb(16, 45, 114), rgb(8, 27, 65) 64%, rgb(9, 17, 43))",
+      "clip": "none"
+    },
+    {
+      "key": "shorts",
+      "rect": {
+        "x": 35,
+        "y": 2022.109375,
+        "width": 250,
+        "height": 140.625
+      },
+      "posterRect": {
+        "x": 36,
+        "y": 2023.109375,
+        "width": 248,
+        "height": 138.625
+      },
+      "posterScrollHeight": 227,
+      "posterClientHeight": 139,
+      "font": "GBMHubBarlow, Barlow, Arial, sans-serif",
+      "fontStyle": "normal",
+      "background": "linear-gradient(135deg, rgb(16, 45, 114), rgb(8, 27, 65) 64%, rgb(9, 17, 43))",
+      "clip": "none"
+    }
+  ],
+  "controls": [
+    {
+      "text": "Live channel",
+      "rect": {
+        "x": 16,
+        "y": 309.3125,
+        "width": 72.203125,
+        "height": 46
+      }
+    },
+    {
+      "text": "Lowdown with Loren",
+      "rect": {
+        "x": 106.203125,
+        "y": 309.3125,
+        "width": 120.03125,
+        "height": 46
+      }
+    },
+    {
+      "text": "Podcast",
+      "rect": {
+        "x": 244.234375,
+        "y": 309.3125,
+        "width": 47.28125,
+        "height": 46
+      }
+    },
+    {
+      "text": "Shorts",
+      "rect": {
+        "x": 16,
+        "y": 355.3125,
+        "width": 38.578125,
+        "height": 46
+      }
+    },
+    {
+      "text": "GatorBaitThe Buddy Martin ShowOpen live player",
+      "rect": {
+        "x": 34,
+        "y": 440.3125,
+        "width": 252,
+        "height": 140.875
+      }
+    },
+    {
+      "text": "Open the live channel on YouTube",
+      "rect": {
+        "x": 33,
+        "y": 786.46875,
+        "width": 205.953125,
+        "height": 44
+      }
+    },
+    {
+      "text": "LOWDOWNWith Loren MeadowsOpen Lowdown playlist",
+      "rect": {
+        "x": 36,
+        "y": 1084.609375,
+        "width": 248,
+        "height": 138.625
+      }
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "rect": {
+        "x": 35,
+        "y": 1320.234375,
+        "width": 180.75,
+        "height": 44
+      }
+    },
+    {
+      "text": "BUDDYMARTINThe podcastOpen podcast playlist",
+      "rect": {
+        "x": 36,
+        "y": 1513.234375,
+        "width": 248,
+        "height": 138.625
+      }
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "rect": {
+        "x": 35,
+        "y": 1748.859375,
+        "width": 180.75,
+        "height": 44
+      }
+    },
+    {
+      "text": "Listen on YouTube Music",
+      "rect": {
+        "x": 35,
+        "y": 1811.859375,
+        "width": 250,
+        "height": 44
+      }
+    },
+    {
+      "text": "Older audio: Apple Podcasts archive",
+      "rect": {
+        "x": 35,
+        "y": 1855.859375,
+        "width": 250,
+        "height": 44
+      }
+    },
+    {
+      "text": "THE SHORTTAKEThe Buddy Martin ShowOpen Shorts playlist",
+      "rect": {
+        "x": 36,
+        "y": 2023.109375,
+        "width": 248,
+        "height": 138.625
+      }
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "rect": {
+        "x": 35,
+        "y": 2234.734375,
+        "width": 180.75,
+        "height": 44
+      }
+    },
+    {
+      "text": "Latest stories",
+      "rect": {
+        "x": 16,
+        "y": 2398.328125,
+        "width": 86.703125,
+        "height": 44
+      }
+    },
+    {
+      "text": "GatorBait Magazine",
+      "rect": {
+        "x": 128.703125,
+        "y": 2398.328125,
+        "width": 119.71875,
+        "height": 44
+      }
+    },
+    {
+      "text": "Contact the newsroom",
+      "rect": {
+        "x": 16,
+        "y": 2442.328125,
+        "width": 140.515625,
+        "height": 44
+      }
+    }
+  ],
+  "fontLoaded": false,
+  "scripts": [
+    "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@fa039be6f297d29a1849b38e4a52fd6638b3980a/sports-live/broadcast-playlists.js"
+  ],
+  "nativeDisplay": "none",
+  "responseStatus": 200,
+  "pageErrors": [],
+  "checks": {
+    "one_root": true,
+    "correct_pin": true,
+    "no_overflow": true,
+    "three_modules": true,
+    "exact_ids": true,
+    "no_initial_iframes": true,
+    "fixed_ratios": true,
+    "controls_44px": true,
+    "barlow_normal": true,
+    "menu_open_escape": true,
+    "consent_settings_open": true,
+    "text_and_play_controls_in_bounds": true,
+    "no_native_first_paint_flash": false
+  },
+  "menuOpenExpanded": "true",
+  "menuClosedExpanded": "false",
+  "consentSettingsVisible": true,
+  "consentDialogText": [
+    "Advanced Cookie SettingsEssential CookiesRequired for core site functions and security. These cannot be disabled.\n    \n      \n        \n      Marketing CookiesHelp measure advertising and make promotions more relevant.\n    \n      \n        \n      Functional CookiesRemember choices and improve site features.\n    \n      \n        \n      Analytics CookiesHelp us understand site usage and improve performance.\n    \n      \n        \n      Save Choices"
+  ],
+  "consentPreferencesSaved": false,
+  "requestedDeviceWidth": 390,
+  "decorativePseudoNote": "The rotated decorative pseudo-element contributes to scrollHeight; actual text and play-control rectangles are tested separately.",
+  "firstPaintObservation": "Separate cold-load probe observed the old white native Wix TV page at about 1.34\u20131.50 seconds after document commit, before the new hub mounted. Current revision 39; cause not established by a baseline comparison.",
+  "firstPaintEvidence": [
+    "first-paint.json",
+    "paint-150.png",
+    "paint-1500.png"
+  ]
+}

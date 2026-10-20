@@ -1,0 +1,302 @@
+{
+  "captured": "2026-10-20T05:07:03.668Z",
+  "width": 1920,
+  "documentWidth": 1920,
+  "rootCount": 1,
+  "rootRect": {
+    "x": 0,
+    "y": 124,
+    "width": 1920,
+    "height": 1654.703125
+  },
+  "rootParent": "BODY",
+  "precedingRoot": "gbm-site-header",
+  "title": "THE BUDDY MARTIN SHOW",
+  "modules": [
+    {
+      "id": "lowdown",
+      "title": "FLORIDA GATOR LOWDOWN"
+    },
+    {
+      "id": "podcasts",
+      "title": "THE BUDDY MARTIN SHOW PODCAST"
+    },
+    {
+      "id": "shorts",
+      "title": "SHORTS"
+    }
+  ],
+  "playlistLinks": [
+    "https://www.youtube.com/playlist?list=PLIekxRlp1omM",
+    "https://www.youtube.com/playlist?list=PL1twZqsaZwxneDPF2RojFUTMXgr-OK41I",
+    "https://www.youtube.com/playlist?list=PL1twZqsaZwxnM5F4xVYTJlia_-IIIHgKa"
+  ],
+  "liveHref": "https://www.youtube.com/@TheBuddyMartinShow/live",
+  "appleHref": "https://podcasts.apple.com/us/podcast/the-buddy-martin-show/id1321645302",
+  "initialIframeCount": 0,
+  "initialYoutubeIframes": 0,
+  "posters": [
+    {
+      "key": "live",
+      "rect": {
+        "x": 393,
+        "y": 516.40625,
+        "width": 702.53125,
+        "height": 395.171875
+      },
+      "posterRect": {
+        "x": 394,
+        "y": 517.40625,
+        "width": 700.53125,
+        "height": 393.171875
+      },
+      "posterScrollHeight": 642,
+      "posterClientHeight": 393,
+      "font": "GBMHubBarlow, Barlow, Arial, sans-serif",
+      "fontStyle": "normal",
+      "background": "linear-gradient(135deg, rgb(16, 45, 114), rgb(8, 27, 65) 64%, rgb(9, 17, 43))",
+      "clip": "none"
+    },
+    {
+      "key": "lowdown",
+      "rect": {
+        "x": 389,
+        "y": 1170.84375,
+        "width": 339.328125,
+        "height": 190.859375
+      },
+      "posterRect": {
+        "x": 390,
+        "y": 1171.84375,
+        "width": 337.328125,
+        "height": 188.859375
+      },
+      "posterScrollHeight": 309,
+      "posterClientHeight": 189,
+      "font": "GBMHubBarlow, Barlow, Arial, sans-serif",
+      "fontStyle": "normal",
+      "background": "linear-gradient(135deg, rgb(16, 45, 114), rgb(8, 27, 65) 64%, rgb(9, 17, 43))",
+      "clip": "none"
+    },
+    {
+      "key": "podcasts",
+      "rect": {
+        "x": 790.328125,
+        "y": 1170.84375,
+        "width": 339.328125,
+        "height": 190.859375
+      },
+      "posterRect": {
+        "x": 791.328125,
+        "y": 1171.84375,
+        "width": 337.328125,
+        "height": 188.859375
+      },
+      "posterScrollHeight": 309,
+      "posterClientHeight": 189,
+      "font": "GBMHubBarlow, Barlow, Arial, sans-serif",
+      "fontStyle": "normal",
+      "background": "linear-gradient(135deg, rgb(16, 45, 114), rgb(8, 27, 65) 64%, rgb(9, 17, 43))",
+      "clip": "none"
+    },
+    {
+      "key": "shorts",
+      "rect": {
+        "x": 1191.65625,
+        "y": 1170.84375,
+        "width": 339.34375,
+        "height": 190.875
+      },
+      "posterRect": {
+        "x": 1192.65625,
+        "y": 1171.84375,
+        "width": 337.34375,
+        "height": 188.875
+      },
+      "posterScrollHeight": 309,
+      "posterClientHeight": 189,
+      "font": "GBMHubBarlow, Barlow, Arial, sans-serif",
+      "fontStyle": "normal",
+      "background": "linear-gradient(135deg, rgb(16, 45, 114), rgb(8, 27, 65) 64%, rgb(9, 17, 43))",
+      "clip": "none"
+    }
+  ],
+  "controls": [
+    {
+      "text": "Live channel",
+      "rect": {
+        "x": 368,
+        "y": 417.40625,
+        "width": 77.75,
+        "height": 48
+      }
+    },
+    {
+      "text": "Lowdown with Loren",
+      "rect": {
+        "x": 467.75,
+        "y": 417.40625,
+        "width": 129.265625,
+        "height": 48
+      }
+    },
+    {
+      "text": "Podcast",
+      "rect": {
+        "x": 619.015625,
+        "y": 417.40625,
+        "width": 50.921875,
+        "height": 48
+      }
+    },
+    {
+      "text": "Shorts",
+      "rect": {
+        "x": 691.9375,
+        "y": 417.40625,
+        "width": 41.546875,
+        "height": 48
+      }
+    },
+    {
+      "text": "GatorBaitThe Buddy Martin ShowOpen live player",
+      "rect": {
+        "x": 394,
+        "y": 517.40625,
+        "width": 700.53125,
+        "height": 393.171875
+      }
+    },
+    {
+      "text": "Open the live channel on YouTube",
+      "rect": {
+        "x": 1125.53125,
+        "y": 776.84375,
+        "width": 205.953125,
+        "height": 44
+      }
+    },
+    {
+      "text": "LOWDOWNWith Loren MeadowsOpen Lowdown playlist",
+      "rect": {
+        "x": 390,
+        "y": 1171.84375,
+        "width": 337.328125,
+        "height": 188.859375
+      }
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "rect": {
+        "x": 389,
+        "y": 1433.703125,
+        "width": 180.75,
+        "height": 44
+      }
+    },
+    {
+      "text": "BUDDYMARTINThe podcastOpen podcast playlist",
+      "rect": {
+        "x": 791.328125,
+        "y": 1171.84375,
+        "width": 337.328125,
+        "height": 188.859375
+      }
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "rect": {
+        "x": 790.328125,
+        "y": 1433.703125,
+        "width": 180.75,
+        "height": 44
+      }
+    },
+    {
+      "text": "Listen on YouTube Music",
+      "rect": {
+        "x": 790.328125,
+        "y": 1496.703125,
+        "width": 339.328125,
+        "height": 44
+      }
+    },
+    {
+      "text": "Older audio: Apple Podcasts archive",
+      "rect": {
+        "x": 790.328125,
+        "y": 1540.703125,
+        "width": 339.328125,
+        "height": 44
+      }
+    },
+    {
+      "text": "THE SHORTTAKEThe Buddy Martin ShowOpen Shorts playlist",
+      "rect": {
+        "x": 1192.65625,
+        "y": 1171.84375,
+        "width": 337.34375,
+        "height": 188.875
+      }
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "rect": {
+        "x": 1191.65625,
+        "y": 1433.71875,
+        "width": 180.75,
+        "height": 44
+      }
+    },
+    {
+      "text": "Latest stories",
+      "rect": {
+        "x": 368,
+        "y": 1686.703125,
+        "width": 86.703125,
+        "height": 44
+      }
+    },
+    {
+      "text": "GatorBait Magazine",
+      "rect": {
+        "x": 480.703125,
+        "y": 1686.703125,
+        "width": 119.71875,
+        "height": 44
+      }
+    },
+    {
+      "text": "Contact the newsroom",
+      "rect": {
+        "x": 626.421875,
+        "y": 1686.703125,
+        "width": 140.515625,
+        "height": 44
+      }
+    }
+  ],
+  "fontLoaded": true,
+  "scripts": [
+    "https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@fa039be6f297d29a1849b38e4a52fd6638b3980a/sports-live/broadcast-playlists.js"
+  ],
+  "nativeDisplay": "none",
+  "responseStatus": 200,
+  "pageErrors": [
+    "wixTagManager is not defined"
+  ],
+  "checks": {
+    "one_root": true,
+    "correct_pin": true,
+    "no_overflow": true,
+    "three_modules": true,
+    "exact_ids": true,
+    "no_initial_iframes": true,
+    "fixed_ratios": true,
+    "controls_44px": true,
+    "barlow_normal": true,
+    "text_and_play_controls_in_bounds": true
+  },
+  "requestedDeviceWidth": 1920,
+  "decorativePseudoNote": "The rotated decorative pseudo-element contributes to scrollHeight; actual text and play-control rectangles are tested separately."
+}

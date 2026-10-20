@@ -1,0 +1,182 @@
+{
+  "width": 390,
+  "mode": "live",
+  "roots": 1,
+  "heading": "The Buddy Martin Show",
+  "sections": [
+    {
+      "id": "lowdown",
+      "title": "Florida Gator Lowdown"
+    },
+    {
+      "id": "podcasts",
+      "title": "The Buddy Martin Show Podcast"
+    },
+    {
+      "id": "shorts",
+      "title": "Shorts"
+    }
+  ],
+  "iframesOnLoad": 0,
+  "overflow": 0,
+  "links": [
+    {
+      "text": "Live channel",
+      "url": "https://www.gatorbaitmedia.com/the-buddy-martin-show?broadcast-qc=390-1792473375988580751#live-channel"
+    },
+    {
+      "text": "Lowdown with Loren",
+      "url": "https://www.gatorbaitmedia.com/the-buddy-martin-show?broadcast-qc=390-1792473375988580751#lowdown"
+    },
+    {
+      "text": "Podcast",
+      "url": "https://www.gatorbaitmedia.com/the-buddy-martin-show?broadcast-qc=390-1792473375988580751#podcasts"
+    },
+    {
+      "text": "Shorts",
+      "url": "https://www.gatorbaitmedia.com/the-buddy-martin-show?broadcast-qc=390-1792473375988580751#shorts"
+    },
+    {
+      "text": "Open the live channel on YouTube",
+      "url": "https://www.youtube.com/@TheBuddyMartinShow/live"
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "url": "https://www.youtube.com/playlist?list=PLIekxRlp1omM"
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "url": "https://www.youtube.com/playlist?list=PL1twZqsaZwxneDPF2RojFUTMXgr-OK41I"
+    },
+    {
+      "text": "Listen on YouTube Music",
+      "url": "https://music.youtube.com/playlist?list=PL1twZqsaZwxneDPF2RojFUTMXgr-OK41I"
+    },
+    {
+      "text": "Older audio: Apple Podcasts archive",
+      "url": "https://podcasts.apple.com/us/podcast/the-buddy-martin-show/id1321645302"
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "url": "https://www.youtube.com/playlist?list=PL1twZqsaZwxnM5F4xVYTJlia_-IIIHgKa"
+    },
+    {
+      "text": "Latest stories",
+      "url": "https://www.gatorbaitmedia.com/gatorbait-media-blogs"
+    },
+    {
+      "text": "GatorBait Magazine",
+      "url": "https://www.gatorbaitmedia.com/magazine"
+    },
+    {
+      "text": "Contact the newsroom",
+      "url": "https://www.gatorbaitmedia.com/contact"
+    }
+  ],
+  "controls": [
+    {
+      "text": "Live channel",
+      "height": 46
+    },
+    {
+      "text": "Lowdown with Loren",
+      "height": 46
+    },
+    {
+      "text": "Podcast",
+      "height": 46
+    },
+    {
+      "text": "Shorts",
+      "height": 46
+    },
+    {
+      "text": "GatorBaitThe Buddy Martin ShowOpen live player",
+      "height": 140.875
+    },
+    {
+      "text": "Open the live channel on YouTube",
+      "height": 44
+    },
+    {
+      "text": "LOWDOWNWith Loren MeadowsOpen Lowdown playlist",
+      "height": 138.625
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "height": 44
+    },
+    {
+      "text": "BUDDYMARTINThe podcastOpen podcast playlist",
+      "height": 138.625
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "height": 44
+    },
+    {
+      "text": "Listen on YouTube Music",
+      "height": 44
+    },
+    {
+      "text": "Older audio: Apple Podcasts archive",
+      "height": 44
+    },
+    {
+      "text": "THE SHORTTAKEThe Buddy Martin ShowOpen Shorts playlist",
+      "height": 138.625
+    },
+    {
+      "text": "Open this playlist on YouTube",
+      "height": 44
+    },
+    {
+      "text": "Latest stories",
+      "height": 44
+    },
+    {
+      "text": "GatorBait Magazine",
+      "height": 44
+    },
+    {
+      "text": "Contact the newsroom",
+      "height": 44
+    }
+  ],
+  "font": "GBMHubBarlow, Barlow, Arial, sans-serif",
+  "posterBackground": "linear-gradient(135deg, rgb(16, 45, 114), rgb(8, 27, 65) 64%, rgb(9, 17, 43))",
+  "headerOrder": [
+    "gbm-site-header",
+    "gbm-mobile-shell-host",
+    "gbm-media-hub"
+  ],
+  "nativeDisplay": "none",
+  "inlineSource": "fa039be6f297d29a1849b38e4a52fd6638b3980a",
+  "scripts": [],
+  "players": [
+    {
+      "key": "live",
+      "src": "https://www.youtube-nocookie.com/embed/live_stream?channel=UCtR8b1sKFuwaRjKy5BiXRvA&autoplay=0&playsinline=1&rel=0",
+      "title": "The Buddy Martin Show live channel player"
+    },
+    {
+      "key": "lowdown",
+      "src": "https://www.youtube-nocookie.com/embed/videoseries?list=PLIekxRlp1omM&autoplay=0&playsinline=1&rel=0",
+      "title": "Florida Gator Lowdown with Loren Meadows playlist player"
+    },
+    {
+      "key": "podcasts",
+      "src": "https://www.youtube-nocookie.com/embed/videoseries?list=PL1twZqsaZwxneDPF2RojFUTMXgr-OK41I&autoplay=0&playsinline=1&rel=0",
+      "title": "The Buddy Martin Show Podcast playlist player"
+    },
+    {
+      "key": "shorts",
+      "src": "https://www.youtube-nocookie.com/embed/videoseries?list=PL1twZqsaZwxnM5F4xVYTJlia_-IIIHgKa&autoplay=0&playsinline=1&rel=0",
+      "title": "The Buddy Martin Show Shorts playlist player"
+    }
+  ],
+  "routeCleanup": true,
+  "passed": true,
+  "pageErrors": [],
+  "swaps": []
+}

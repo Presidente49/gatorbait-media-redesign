@@ -1,0 +1,38 @@
+[
+  {
+    "captured": "2026-10-20T05:08:52.301Z",
+    "rootPresent": false,
+    "nativeDisplay": null,
+    "nativeHeight": 0,
+    "nativeText": "",
+    "bodyBackground": null,
+    "elapsedMs": 32
+  },
+  {
+    "captured": "2026-10-20T05:08:53.614Z",
+    "rootPresent": false,
+    "nativeDisplay": "block",
+    "nativeHeight": 476.796875,
+    "nativeText": "WELCOME TO \"THE BUDDY MARTIN SHOW\"\u00a0\nCONTACT US\u00a0\nBRENDEN@GATORBAITMEDIA.COM\n\u00a9 2026 Gator Bait Media. All rights reserved.",
+    "bodyBackground": "rgb(11, 13, 18)",
+    "elapsedMs": 1343
+  },
+  {
+    "captured": "2026-10-20T05:08:53.679Z",
+    "rootPresent": false,
+    "nativeDisplay": "block",
+    "nativeHeight": 286.796875,
+    "nativeText": "WELCOME TO \"THE BUDDY MARTIN SHOW\"\u00a0",
+    "bodyBackground": "rgb(11, 13, 18)",
+    "elapsedMs": 1409
+  },
+  {
+    "captured": "2026-10-20T05:08:53.773Z",
+    "rootPresent": false,
+    "nativeDisplay": "block",
+    "nativeHeight": 286.796875,
+    "nativeText": "WELCOME TO \"THE BUDDY MARTIN SHOW\"\u00a0",
+    "bodyBackground": "rgb(11, 13, 18)",
+    "elapsedMs": 1503
+  }
+]

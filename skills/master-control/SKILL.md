@@ -33,6 +33,7 @@ Then load the smallest existing specialist skill required by the surface, for ex
 - `skills/gatorbait-site-operations/SKILL.md` for site operations and mobile QC.
 - `skills/gatorbait-agency/SKILL.md` for campaign/distribution work.
 - `skills/gatorbait-editorial/` for editorial tasks.
+- `skills/gatorbait-morning-email/SKILL.md` for morning columns, AM emails, writer fallback artwork and post-to-email verification.
 - `skills/gatorbait-community/` for community/message-board work.
 - `skills/gatorbait-graphic-design/` for GatorBait visual production.
 - `skills/gatorbait-broadcast-graphics/SKILL.md` for AP Mode, show thumbnails, rankings, matchup cards, lower thirds, scorebugs, tickers, and GatorBait Sports Network broadcast packages.

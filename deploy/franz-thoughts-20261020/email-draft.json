@@ -1,0 +1,21 @@
+{
+  "campaignId": "c8bf3ad1-1901-453c-8b18-f81823deaec0",
+  "supersedes": "3deac1ac-991d-4543-ba3d-b13131b2ff08",
+  "distributionStatus": "NOT_STARTED",
+  "sent": false,
+  "checks": {
+    "headline": true,
+    "cover": true,
+    "franz": true,
+    "cta": true,
+    "store": true,
+    "subscribe": true,
+    "preferences": true,
+    "sameExistingMailingAddress": true,
+    "unresolved": false
+  },
+  "deliveryState": "UNVERIFIED",
+  "reason": "Existing primary alert run outcome unavailable; no fallback send without duplicate-clear evidence and all send gates.",
+  "localBuilder": "automation/newsletter/build-story-alert.mjs",
+  "localChecks": "Strict MJML compile, complete tracked links and unique-image checks passed. Native replacement preview passed all named checks. Do not send superseded draft."
+}

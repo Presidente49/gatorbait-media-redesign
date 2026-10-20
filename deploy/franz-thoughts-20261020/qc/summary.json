@@ -1,0 +1,59 @@
+{
+  "article": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-20-2026",
+  "coverId": "d3cfa5_c02758730b3941e39694492c7bc555a5~mv2.png",
+  "finalParagraph": "As for the SEC, I\u2019m going with Georgia, Tennessee and Ole Miss, all of them with two losses so the playoff field is SEC (3), Big Ten (3), Big 12 (3), Notre Dame, Miami and Boise State.",
+  "widths": [
+    {
+      "requested": 390,
+      "cssViewport": 390,
+      "documentWidth": 390,
+      "captured": "2026-10-20T15:07:17.104Z",
+      "correctByline": true,
+      "coverLoaded": true,
+      "editorialHeadingCount": 23,
+      "endingComplete": true,
+      "noOverflow": true,
+      "pageErrors": []
+    },
+    {
+      "requested": 430,
+      "cssViewport": 430,
+      "documentWidth": 430,
+      "captured": "2026-10-20T15:07:15.806Z",
+      "correctByline": true,
+      "coverLoaded": true,
+      "editorialHeadingCount": 23,
+      "endingComplete": true,
+      "noOverflow": true,
+      "pageErrors": []
+    },
+    {
+      "requested": 1366,
+      "cssViewport": 1366,
+      "documentWidth": 1366,
+      "captured": "2026-10-20T15:07:17.516Z",
+      "correctByline": true,
+      "coverLoaded": true,
+      "editorialHeadingCount": 23,
+      "endingComplete": true,
+      "noOverflow": true,
+      "pageErrors": [
+        "wixTagManager is not defined"
+      ]
+    },
+    {
+      "requested": 1920,
+      "cssViewport": 1920,
+      "documentWidth": 1920,
+      "captured": "2026-10-20T15:07:18.085Z",
+      "correctByline": true,
+      "coverLoaded": true,
+      "editorialHeadingCount": 23,
+      "endingComplete": true,
+      "noOverflow": true,
+      "pageErrors": [
+        "wixTagManager is not defined"
+      ]
+    }
+  ]
+}

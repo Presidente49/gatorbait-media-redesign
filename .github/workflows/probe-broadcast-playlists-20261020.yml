@@ -1,0 +1,22 @@
+name: Broadcast playlist metadata probe (read only)
+on:
+  push:
+    branches: ['probe/broadcast-playlists-20261020']
+    paths: ['probe-broadcast-playlists/**', '.github/workflows/probe-broadcast-playlists-20261020.yml']
+permissions:
+  contents: write
+jobs:
+  public-playlist-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read public playlist pages with default TLS
+        run: python3 probe-broadcast-playlists/check.py
+      - name: Save only public metadata evidence to this probe branch
+        run: |
+          git config user.name 'probe-bot'
+          git config user.email 'probe-bot@users.noreply.github.com'
+          git add probe-broadcast-playlists/result.json
+          git diff --cached --quiet || git commit -m 'Record public playlist metadata probe'
+          git push origin HEAD:probe/broadcast-playlists-20261020

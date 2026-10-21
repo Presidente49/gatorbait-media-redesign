@@ -1,0 +1,10 @@
+{
+  "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+  "revision": "21",
+  "enabled": true,
+  "name": "GBM - Mobile rhythm v1 (homepage two-up story grid, phones)",
+  "embedData": {
+    "category": "ESSENTIAL",
+    "html": "<!-- GBM_BROADCAST_HOME_V1 src=8e72526 Phone-first photo-led layout; rollback deploy/homepage-mobile-style-20261019/rollback/embed-before.json --><style id=\"gbm-bc-wait\">html.gbm-bc-wait #gbm-live.gbm-gazette{visibility:hidden}</style><script id=\"gbm-bc-loader\">(function(){var p=(location.pathname||'/').replace(/\\/+$/,'')||'/';if(p!=='/'||window.__GBM_BC_HOME__)return;var d=document.documentElement,u=function(){d.classList.remove('gbm-bc-wait');};d.classList.add('gbm-bc-wait');setTimeout(u,2500);var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@8e72526ea341dd1eb77d88e74539ae9359628af8/sports-live/broadcast-home-color.js';s.onerror=u;(document.head||d).appendChild(s);})();</script>"
+  }
+}

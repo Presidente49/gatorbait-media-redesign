@@ -326,6 +326,35 @@ C += `
 @ .bc-photo-rows{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
 }
 `;
+/* Owner-directed front-page rhythm: one lead, two photo-led stories and two brief links.
+   Keep the existing palette and responsive hero; hide repeated article metadata only here. */
+C += `
+@ article .sh-meta,@ .bc-hero .sh-meta,@ .bc-by,@ .bc-hero .sh-kicker{display:none!important}
+@ .sh-voices,@ .sh-voices.bc-stack{display:none!important}
+@ .bc-photo-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;list-style:none;margin:0;padding:0}
+@ .bc-photo-rows .bc-row{min-width:0;margin:0;padding:0;overflow:hidden}
+@ .bc-photo-rows .bc-row a{display:flex!important;flex-direction:column;gap:14px;padding:0 0 20px!important;align-items:stretch;min-width:0;height:100%;border-bottom:1px solid #ffffff26}
+@ .bc-photo-rows .bc-thumb{width:100%;aspect-ratio:3/2;flex-shrink:0}
+@ .bc-photo-rows .bc-row h3{font:800 30px/1.08 var(--dc)!important;text-transform:none;overflow-wrap:break-word}
+@ .bc-photo-rows .bc-credit{margin-top:10px;letter-spacing:0;text-transform:none}
+@ .bc-photo-rows .bc-brief{grid-column:1/-1;border:0;border-radius:0;background:none;overflow:visible}
+@ .bc-photo-rows .bc-brief a{display:block!important;padding:0 0 18px!important;height:auto}
+@ .bc-photo-rows .bc-brief h3{font:700 24px/1.15 var(--dc)!important}
+@ .bc-brief-heading{display:flex;align-items:center;gap:12px;margin:8px 0 22px;font:800 15px/1.2 Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
+@ .bc-brief-heading:after{content:'';height:2px;flex:1;background:#ffffff26}
+:is(@)[data-bc] .sh-lower>div:has(.sh-coverage){display:none!important}
+@media(max-width:820px){
+@ .bc-photo-rows{grid-template-columns:minmax(0,1fr);gap:20px}
+@ .bc-photo-rows .bc-row:not(.bc-brief){border:1px solid #ffffff24;border-radius:12px;background:#0b1b49}
+@ .bc-photo-rows .bc-row:not(.bc-brief) a{gap:0;padding:0 0 16px!important;border:0}
+@ .bc-photo-rows .bc-row:not(.bc-brief) a>span:last-child{padding:16px 16px 0}
+@ .bc-photo-rows .bc-thumb{aspect-ratio:3/2;border-radius:0}
+@ .bc-photo-rows .bc-row h3{font-size:27px!important}
+@ .bc-photo-rows .bc-brief h3{font-size:23px!important}
+@ .bc-photo-rows .bc-brief a{padding:0 0 18px!important}
+}
+@media(min-width:600px) and (max-width:820px){@ .bc-photo-rows{grid-template-columns:repeat(2,minmax(0,1fr))}}
+`;
 function css(){if(document.getElementById('gbm-broadcast-home-css'))return;var s=document.createElement('style');s.id='gbm-broadcast-home-css';s.textContent=C.replace(/@ /g,R+' ').replace(/@\{/g,R+'{').replace(/@\)/g,R+')');(document.head||document.documentElement).appendChild(s);}
 css();document.documentElement.classList.remove('gbm-bc-wait');
 if(!document.getElementById('gbm-bc-home-fonts')){var ff=document.createElement('style');ff.id='gbm-bc-home-fonts';ff.textContent=[['barlow',400,'normal'],['barlow',500,'normal'],['barlow',600,'normal'],['barlow',700,'normal'],['barlow',800,'normal'],['barlow-condensed',600,'normal'],['barlow-condensed',700,'normal'],['barlow-condensed',800,'normal'],['barlow-condensed',900,'normal'],['barlow-condensed',800,'italic'],['barlow-condensed',900,'italic']].map(function(f){return'@font-face{font-family:"'+(f[0]=='barlow'?'Barlow':'Barlow Condensed')+'";font-weight:'+f[1]+';font-style:'+f[2]+';font-display:swap;src:url(https://cdn.jsdelivr.net/npm/@fontsource/'+f[0]+'@5.3.0/files/'+f[0]+'-latin-'+f[1]+'-'+f[2]+'.woff2) format("woff2")}';}).join('');document.head.appendChild(ff);}
@@ -392,8 +421,7 @@ if(M.live)it.push(['Live','Florida '+M.live.fla+', '+M.live.opp+' '+M.live.oppS+
 else if(M.last)it.push(['Final',finalLine(M.last),M.links[0]||'/gatorbait-media-blogs']);
 if(M.next&&!M.pre){var mu=matchup(M.next);it.push(['Next',mu.join(' ')+' · '+when(M.next),M.next.href||'/gatorbait-media-blogs']);}
 else if(M.card)it.push(['Next',M.card.a+' '+M.card.at+' '+M.card.b+' · '+M.card.when,'/gatorbait-media-blogs']);
-var heads=D.feed?D.feed.map(function(f){return[f[1],f[2]];}):[].slice.call(root.querySelectorAll('.sh-lead h1,.sh-support h2,.sh-wire-item h3')).slice(0,7).map(function(t){var l=t.closest('a')||root.querySelector('.sh-lead a');return[t.textContent,l&&l.getAttribute('href')];});
-heads.forEach(function(h){if(h[1])it.push(['Latest',h[0],h[1]]);});return it;}
+return it;}
 function teamRow(name,rank,rec,score,win){return'<div class="bc-tm'+(win?' bc-w':'')+'"><b class="bc-ab" aria-hidden="true">'+esc(ab(name))+'</b><span class="bc-nm">'+esc(name)+'<small>'+(rank?'No. '+esc(rank):'')+(rank&&rec?' · ':'')+esc(rec||'')+'</small></span><b class="bc-pt">'+esc(score)+'</b></div>';}
 function prePanel(x){var f=['Florida',x.flaRank,x.flaRec],o=[x.opp,x.oppRank,x.oppRec],aw=x.home?o:f,hm=x.home?f:o;
 return'<section class="bc-sc bc-pre" aria-label="Football game day: '+esc(matchup(x).join(' '))+'"><p class="bc-lbl"><i></i>Football · Game day <span>· '+esc(kick(x.k)+(x.tv?' · '+x.tv:''))+'</span></p>'+
@@ -432,7 +460,7 @@ function shortDate(t){var m=/([A-Z][a-z]+) (\d{1,2}), \d{4}/.exec(t||''),i=m?MON
 /* Rundown rows from the stories the page already rendered (support stories, then the latest list), newest first as served. */
 function rundown(root){var rows=[];[].slice.call(root.querySelectorAll('.sh-support article,.sh-wire-item')).forEach(function(a){var l=a.querySelector('a[href]'),t=a.querySelector('h2,h3'),m=a.querySelector('.sh-meta');
 if(!l||!t)return;var mt=m?m.textContent.split(' · '):[];rows.push({h:l.getAttribute('href'),t:t.textContent.trim(),by:(mt[0]||'').trim(),d:shortDate(mt[1]||'')});});
-return rows.slice(0,8).map(function(r,i){return'<li class="bc-row"><a href="'+esc(r.h)+'"><span class="bc-n" aria-hidden="true">'+(i<9?'0':'')+(i+1)+'</span><span><h3>'+esc(r.t)+'</h3><span class="bc-by">'+(r.by?'<b>'+esc(r.by)+'</b>':'')+(r.by&&r.d?' · ':'')+esc(r.d)+'</span></span></a></li>';}).join('');}
+return rows.slice(0,4).map(function(r,i){return'<li class="bc-row"><a href="'+esc(r.h)+'"><span class="bc-n" aria-hidden="true">'+(i<9?'0':'')+(i+1)+'</span><span><h3>'+esc(r.t)+'</h3></span></a></li>';}).join('');}
 /* Mobile-only copy uses the current asset's explicit credit; no writer-to-photographer inference. */
 function mobileLead(root){var lead=root.querySelector('.bc-hero .sh-lead'),figure=lead&&lead.querySelector('figure'),copy=lead&&lead.querySelector('.sh-lead-copy'),im=figure&&figure.querySelector('img'),link=figure&&figure.querySelector('a[href]'),deck=copy&&copy.querySelector('.sh-deck');if(!figure||!copy||!im||!link)return;
 var id=(/\/media\/([^/~]+)/.exec(im.currentSrc||im.src)||[])[1],p=(D.all||[]).find(function(f){return storyPath(f[2])===storyPath(link.href);}),credit=(D.credits||{})[id]||(p&&p[6])||((/\b(?:Photo (?:by|courtesy)|Graphic:)\s+[^.\r\n]+\.?/i.exec(deck?deck.textContent:'' )||[])[0]||'');
@@ -445,19 +473,20 @@ function wixPhoto(h){try{var u=new URL(h),m=/^\/media\/([^/]+~mv2\.(?:jpe?g|png|
 function freshRows(root){var list=root.querySelector('.bc-rows');if(!list||!D.all)return;
 var lead=root.querySelector('.bc-hero .sh-lead a[href]'),seen={},original={};if(lead)seen[storyPath(lead.href)]=true;
 [].slice.call(root.querySelectorAll('.sh-lead,.sh-support article,.sh-wire-item,.sh-coverage article')).forEach(function(a){var l=a.querySelector('a[href]'),im=a.querySelector('img');if(l&&im)original[storyPath(l.href)]=im.getAttribute('alt')||'';});
-var rows=D.all.slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||seen[h]||!wixPhoto(f[4]))return false;seen[h]=true;return true;}).slice(0,8);if(rows.length<6||rows.some(function(f){var id=(/\/media\/([^/~]+)/.exec(f[4])||[])[1];return!((D.credits||{})[id]||f[6]);}))return;
-var hasUAA=false,hasHannah=false;var html=rows.map(function(f){var id=(/\/media\/([^/~]+)/.exec(f[4])||[])[1],credit=(D.credits||{})[id]||f[6]||'',alt=(D.imageAlts||{})[id]||f[5]||original[storyPath(f[2])]||'';hasUAA=hasUAA||/\bUAA\b/.test(credit);hasHannah=hasHannah||/Hannah White/.test(credit);var o=et(f[0]),y=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric'}).format(new Date(f[0])),d=MO[o.month-1]+' '+o.day+', '+y;
-return'<li class="bc-row"><a href="'+esc(f[2])+'"><span class="bc-thumb"><img src="'+esc(wixPhoto(f[4]))+'" alt="'+esc(alt)+'" width="480" height="270" loading="eager" decoding="async"></span><span><h3>'+esc(f[1])+'</h3><span class="bc-by">'+(f[3]?'<b>'+esc(f[3])+'</b> · ':'')+'<time datetime="'+new Date(f[0]).toISOString()+'">'+esc(d)+'</time></span>'+(credit?'<span class="bc-credit">'+esc(credit)+'</span>':'')+'</span></a></li>';}).join('');
+// Select by publication date before deciding which individual records can show a credited photo.
+var rows=D.all.slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||f[0]>Date.now()+DAY||!h||seen[h])return false;seen[h]=true;return true;}).slice(0,4);if(!rows.length)return;
+var hasUAA=false,hasHannah=false;var html=rows.map(function(f,i){var id=(/\/media\/([^/~]+)/.exec(f[4])||[])[1],credit=(D.credits||{})[id]||f[6]||'',alt=(D.imageAlts||{})[id]||f[5]||original[storyPath(f[2])]||f[1],photo=i<2&&wixPhoto(f[4])&&credit;
+if(photo){hasUAA=hasUAA||/\bUAA\b/.test(credit);hasHannah=hasHannah||/Hannah White/.test(credit);if(alt.indexOf(credit)<0)alt+=' '+credit;}
+return'<li class="bc-row '+(i<2?'bc-feature':'bc-brief')+'" data-published="'+new Date(f[0]).toISOString()+'">'+(i===2?'<h2 class="bc-brief-heading">In brief</h2>':'')+'<a href="'+esc(f[2])+'">'+(photo?'<span class="bc-thumb"><img src="'+esc(wixPhoto(f[4]))+'" alt="'+esc(alt)+'" width="480" height="320" loading="lazy" decoding="async"></span>':'')+'<span><h3>'+esc(f[1])+'</h3>'+(photo?'<span class="bc-credit">'+esc(credit)+'</span>':'')+'</span></a></li>';}).join('');
 var sources=list.parentNode.querySelector('.bc-photo-sources');if(!sources){sources=document.createElement('p');sources.className='bc-photo-sources';list.insertAdjacentElement('afterend',sources);}sources.hidden=!hasUAA;sources.innerHTML=hasUAA?'UAA photo sources: <a href="https://floridagators.com">UAA</a>'+(hasHannah?' · <a href="https://www.instagram.com/hannahmorganphoto/">Hannah White</a>':'')+' · <a href="https://floridagators.com/galleries">Official galleries</a>.':'';
-if(list.__bcFreshRows===html)return;list.__bcFreshRows=html;root.classList.remove('bc-fresh-news');list.classList.add('bc-photo-rows');list.innerHTML=html;
-var photos=[].slice.call(list.querySelectorAll('img'));function ready(){if(!list.isConnected||list.__bcFreshRows!==html)return;root.classList.toggle('bc-fresh-news',photos.every(function(im){return im.complete&&im.naturalWidth>0;}));}
-photos.forEach(function(im){im.addEventListener('load',ready,{once:true});im.addEventListener('error',ready,{once:true});});ready();}
+if(list.__bcFreshRows===html)return;list.__bcFreshRows=html;list.classList.add('bc-photo-rows');list.innerHTML=html;
+root.classList.add('bc-fresh-news','bc-story-rhythm');
+// A failed photo must not hide the latest headlines or revive an older coverage pool.
+[].slice.call(list.querySelectorAll('img')).forEach(function(im){im.addEventListener('error',function(){var thumb=im.closest('.bc-thumb'),card=im.closest('a'),cap=card&&card.querySelector('.bc-credit');if(thumb)thumb.remove();if(cap)cap.remove();},{once:true});});}
 function img(u,w,h){return/^https:\/\/static\.wixstatic\.com\/media\/[^/]+~mv2\.(jpe?g|png|webp)$/i.test(u)?u+'/v1/fill/w_'+w+',h_'+h+',al_c,q_80,enc_auto/file.jpg':u;}
 function side(root,M){var h='',x=M.last,t=x&&x.tape;
 if(t&&!M.live){var st=[[t.totalYards,'Total yards'],[t.rushingYards,'Rushing yards'],[t.firstDowns,'First downs'],[t.attendance,'Attendance']].filter(function(v){return v[0]!=null;});
 if(st.length)h+='<section aria-label="Game tape"><h2 class="bc-h">Game tape</h2><p class="bc-note">Florida · '+esc(finalLine(x))+'</p><div class="bc-stats">'+st.map(function(v){return'<div class="bc-stat"><b>'+esc(Number(v[0]).toLocaleString('en-US'))+'</b><span>'+v[1]+'</span><i></i></div>';}).join('')+'</div></section>';}
-var shots=(D.all||[]).filter(function(f){return/chris spears/i.test(f[3]||'')&&f[4]&&Date.now()-f[0]<30*DAY;}).slice(0,2);
-if(shots.length===2)h+='<section aria-label="Best shots"><h2 class="bc-h">Best shots</h2><div class="bc-shots">'+shots.map(function(f){return'<a class="bc-shot" href="'+esc(f[2])+'"><img src="'+esc(img(f[4],480,360))+'" alt="" loading="eager" decoding="async" width="480" height="360"><span>'+esc(f[1])+'</span></a>';}).join('')+'</div></section>';
 var sb=D.sb,tb=sb&&Array.isArray(sb.standings)?sb.standings:[];
 if(tb.length>=6)h+='<section class="bc-stand" aria-label="SEC standings"><h2 class="bc-h">SEC standings</h2><ol class="bc-tbl"><li class="bc-th" aria-hidden="true"><span></span><b>Team</b><em>SEC</em><small>All</small></li>'+tb.map(function(r,i){var fl=r.team==='Florida';return'<li class="'+(fl?'bc-fl':'')+(i>=6&&!fl?' bc-x':'')+'"><span>'+(i+1)+'</span><b>'+esc(r.team)+'</b><em>'+esc(r.confRecord||'')+'</em><small>'+esc(r.overall||'')+'</small></li>';}).join('')+'</ol></section>';
 return h;}
@@ -478,7 +507,7 @@ main.insertBefore(hero,front);hero.appendChild(lead);
 var bx=document.createElement('section');bx.className='bc-nx';bx.hidden=true;bx.setAttribute('aria-label','Next game');main.insertBefore(bx,front);
 var rows=rundown(root),ttl=root.querySelector('.sh-latest .sh-section-title'),more=root.querySelector('.sh-latest .sh-more');
 if(rows){var body=document.createElement('section');body.className='bc-body';body.setAttribute('aria-label','Rundown');
-body.innerHTML='<div class="bc-run"><h2 class="sh-section-title">Rundown</h2><ol class="bc-rows">'+rows+'</ol>'+(more?'<a class="sh-more" href="'+esc(more.getAttribute('href'))+'">'+esc(more.textContent)+'</a>':'')+'</div><aside class="bc-side" aria-label="Game tape, best shots and shows"><div class="bc-sd"></div></aside>';
+body.innerHTML='<div class="bc-run"><h2 class="sh-section-title">Latest stories</h2><ol class="bc-rows">'+rows+'</ol>'+(more?'<a class="sh-more" href="'+esc(more.getAttribute('href'))+'">'+esc(more.textContent)+'</a>':'')+'</div><aside class="bc-side" aria-label="Football context and shows"><div class="bc-sd"></div></aside>';
 main.insertBefore(body,front);front.classList.add('bc-moved');
 var tv=root.querySelector('.sh-watch.bc-tv')||[].slice.call(root.querySelectorAll('.sh-watch:not(.sh-reference)')).find(function(w){return w.querySelector('a[href^="/the-buddy-martin-show"]');});
 if(tv){tv.classList.add('bc-tv');body.querySelector('.bc-side').appendChild(tv);}

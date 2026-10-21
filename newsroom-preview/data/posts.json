@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gator Football Feel-Good: The Open Date Is Sweet Music, But Check the Lyrics",
+      "excerpt": "Buddy Martin on Florida's open date, the lessons of past bye weeks and the Oct. 31 Georgia matchup in Atlanta. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/gator-football-feel-good-the-open-date-is-sweet-music-but-check-the-lyrics",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-21T18:34:06Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_90425d069f7d49ac9a55f5dedba27f93~mv2.jpg/v1/fit/w_1000,h_969,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gator Football Feel-Good: The Open Date Is Sweet Music, But Check the Lyrics"
+      }
+    },
+    {
       "title": "Jones vs. Philo and other QB perceptions, realities",
       "excerpt": "Franz Beard examines quarterback recruiting hype, Florida's Aaron Philo–Tramell Jones Jr. decision and the history of the Gators' five-star quarterbacks.",
       "url": "https://www.gatorbaitmedia.com/post/jones-vs-philo-and-other-qb-perceptions-realities",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)"
-      }
-    },
-    {
-      "title": "The Gators Sucked Less, Turning Arch Madness Into Arch Sadness",
-      "excerpt": "Franz Beard: A bye week, a quarterback question and a defense that found its fight in Austin. Plus every SEC result: Auburn stuns No. 1 Georgia, Tennessee routs Alabama and more.",
-      "url": "https://www.gatorbaitmedia.com/post/the-gators-sucked-less-turning-arch-madness-into-arch-sadness",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-18T13:30:11Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Gators Sucked Less, Turning Arch Madness Into Arch Sadness"
       }
     }
   ]

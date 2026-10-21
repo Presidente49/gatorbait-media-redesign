@@ -1,0 +1,66 @@
+[
+  {
+    "width": 390,
+    "captured": "2026-10-21T11:38:21.132Z",
+    "cssViewport": 390,
+    "documentWidth": 390,
+    "correctByline": true,
+    "heroLoaded": true,
+    "editorialHeadingCount": 23,
+    "lastEditorialHeading": "2026",
+    "threeCreditLinks": true,
+    "endingBeforeLinkedCredit": true,
+    "noOverflow": true,
+    "oct20ArtUsed": false,
+    "pageErrors": []
+  },
+  {
+    "width": 430,
+    "captured": "2026-10-21T11:38:30.701Z",
+    "cssViewport": 430,
+    "documentWidth": 430,
+    "correctByline": true,
+    "heroLoaded": true,
+    "editorialHeadingCount": 23,
+    "lastEditorialHeading": "2026",
+    "threeCreditLinks": true,
+    "endingBeforeLinkedCredit": true,
+    "noOverflow": true,
+    "oct20ArtUsed": false,
+    "pageErrors": []
+  },
+  {
+    "width": 1366,
+    "captured": "2026-10-21T11:38:30.961Z",
+    "cssViewport": 1366,
+    "documentWidth": 1366,
+    "correctByline": true,
+    "heroLoaded": true,
+    "editorialHeadingCount": 23,
+    "lastEditorialHeading": "2026",
+    "threeCreditLinks": true,
+    "endingBeforeLinkedCredit": true,
+    "noOverflow": true,
+    "oct20ArtUsed": false,
+    "pageErrors": [
+      "wixTagManager is not defined"
+    ]
+  },
+  {
+    "width": 1920,
+    "captured": "2026-10-21T11:38:31.274Z",
+    "cssViewport": 1920,
+    "documentWidth": 1920,
+    "correctByline": true,
+    "heroLoaded": true,
+    "editorialHeadingCount": 23,
+    "lastEditorialHeading": "2026",
+    "threeCreditLinks": true,
+    "endingBeforeLinkedCredit": true,
+    "noOverflow": true,
+    "oct20ArtUsed": false,
+    "pageErrors": [
+      "wixTagManager is not defined"
+    ]
+  }
+]

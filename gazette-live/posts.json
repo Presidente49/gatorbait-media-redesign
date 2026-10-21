@@ -2,17 +2,31 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "Rays the Roof! Have A Day Tampa!  Remembering St. Petersburg Before There Was MLB.",
+      "title": "Jones vs. Philo and other QB perceptions, realities",
+      "excerpt": "Franz Beard examines quarterback recruiting hype, Florida's Aaron Philo–Tramell Jones Jr. decision and the history of the Gators' five-star quarterbacks.",
+      "url": "https://www.gatorbaitmedia.com/post/jones-vs-philo-and-other-qb-perceptions-realities",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-21T11:24:47Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_d0c4fd8ad08c4ec8bd70221064f3bdb8~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Jones vs. Philo and other QB perceptions, realities"
+      }
+    },
+    {
+      "title": "Rays the Roof! Have A Day Tampa Bay!  Remembering St. Petersburg Before There Was MLB.",
       "excerpt": "By Buddy Martin GatorBaitMedia.com As a former St. Petersburg resident and a sports columnist for the St. Petersburg Times who campaigned for major league baseball there back in the day — some 45 years ago — I have a confession and a hurrah. The confession: somewhere between covering the Gators and falling back in love with baseball, I became a Rays fan who…",
       "url": "https://www.gatorbaitmedia.com/post/rays-the-roof",
-      "author": "Brenden Martin",
+      "author": "Buddy Martin",
       "firstPublishedDate": "2026-10-20T22:34:56Z",
       "section": "GatorBait",
       "image": {
         "src": "https://static.wixstatic.com/media/d3cfa5_87834ebcaf3f4606a29e8eef62f9aa65~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
-        "alt": "Featured image for Rays the Roof! Have A Day Tampa!  Remembering St. Petersburg Before There Was MLB."
+        "alt": "Featured image for Rays the Roof! Have A Day Tampa Bay!  Remembering St. Petersburg Before There Was MLB."
       }
     },
     {
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for QB1 Philo Hurt. QB2 Jones To Start? Explained by That Great Football Mind Ted Lasso"
-      }
-    },
-    {
-      "title": "So You're Saying There's a Chance!?",
-      "excerpt": "Well, the low scoring Longhorns have their struggles, too. I wrote earlier in the week about the similarities of the stats between UF and UM last weekend in every category but the one that matters. Facing the Texas Longhorns on the road in Austin is a tough task for a team that hasn't played well in the last two weeks. The Gators hit the road as a…",
-      "url": "https://www.gatorbaitmedia.com/post/so-you-re-saying-there-s-a-chance-1",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-15T11:52:43Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg/v1/fit/w_1000,h_602,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for So You're Saying There's a Chance!?"
       }
     }
   ]

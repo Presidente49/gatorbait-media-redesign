@@ -2,7 +2,21 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "Rays the Roof! Have A Day Tampa!  Remembering St. Petersburg Before There Was MLB.",
+      "title": "Jones vs. Philo and other QB perceptions, realities",
+      "excerpt": "Franz Beard examines quarterback recruiting hype, Florida's Aaron Philo–Tramell Jones Jr. decision and the history of the Gators' five-star quarterbacks.",
+      "url": "https://www.gatorbaitmedia.com/post/jones-vs-philo-and-other-qb-perceptions-realities",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-21T11:24:47Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_d0c4fd8ad08c4ec8bd70221064f3bdb8~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Jones vs. Philo and other QB perceptions, realities"
+      }
+    },
+    {
+      "title": "Rays the Roof! Have A Day Tampa Bay!  Remembering St. Petersburg Before There Was MLB.",
       "excerpt": "By Buddy Martin GatorBaitMedia.com As a former St. Petersburg resident and a sports columnist for the St. Petersburg Times who campaigned for major league baseball there back in the day — some 45 years ago — I have a confession and a hurrah. The confession: somewhere between covering the Gators and falling back in love with baseball, I became a Rays fan who…",
       "url": "https://www.gatorbaitmedia.com/post/rays-the-roof",
       "author": "Brenden Martin",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Gators Sucked Less, Turning Arch Madness Into Arch Sadness"
-      }
-    },
-    {
-      "title": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation",
-      "excerpt": "Buddy Martin on Florida's 27-24 win at No. 7 Texas, Tramell Jones Jr.'s first start and the quarterback question Jon Sumrall now faces.",
-      "url": "https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-18T00:12:26Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation"
       }
     }
   ]

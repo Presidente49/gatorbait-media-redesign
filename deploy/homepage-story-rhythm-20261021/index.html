@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Homepage story rhythm — review</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&display=swap');
+*{box-sizing:border-box}body{margin:0;background:#07122e;color:#fff;font:16px/1.5 Barlow,sans-serif}main{max-width:1500px;margin:auto;padding:24px}h1{font-size:clamp(28px,5vw,42px);line-height:1.1}p{max-width:76ch;color:#d6dcec}.tag{color:#fa4616;font-weight:800;text-transform:uppercase;letter-spacing:.08em}button{font:700 16px Barlow,sans-serif;min-height:44px;padding:8px 18px;margin:0 8px 8px 0;border:1px solid #ffffff55;background:#0b1b49;color:#fff;border-radius:6px;cursor:pointer}button[aria-pressed=true]{background:#fa4616;color:#07122e}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}figure{margin:0;min-width:0}figcaption{padding:12px 0;font-weight:700}img{display:block;width:100%;height:auto;border:1px solid #ffffff33}a{color:#fff}details{margin:20px 0}summary{cursor:pointer;min-height:44px;font-weight:700}@media(max-width:700px){.grid{grid-template-columns:1fr}main{padding:16px}}
+</style>
+<main><p class="tag">Prepared for review · no live changes</p><h1>A shorter front page with a clearer rhythm</h1>
+<p>One lead, two current image cards, then two briefs. The complete archive stays one tap away. Writer/date repeats disappear from the HTML cards; photo credits remain. Approved artwork retains its printed text.</p>
+<p id="status">390 px comparison</p><nav aria-label="Preview widths"><button aria-pressed="true" data-width="390">390</button><button aria-pressed="false" data-width="430">430</button><button aria-pressed="false" data-width="1366">1366</button><button aria-pressed="false" data-width="1920">1920</button></nav>
+<div class="grid"><figure><figcaption>Current live source — story panel</figcaption><img id="before" src="qc/before-current-390-stories.png" alt="Current front-page story panel with repeated metadata and eight text rows"></figure><figure><figcaption>Prepared candidate — story panel</figcaption><img id="candidate" src="qc/candidate-current-390-stories.png" alt="Prepared front-page panel with two credited images and two brief headlines"></figure></div>
+<details><summary>Top of the page</summary><div class="grid"><img id="before-top" src="qc/before-current-390-top.png" alt="Current homepage top"><img id="candidate-top" src="qc/candidate-current-390-top.png" alt="Prepared homepage top"></div></details>
+<p>Chromium checks passed at all four widths with real loaded images, five unique stories, correct order, no overflow and unchanged lead/palette variables. Missing-credit and failed-image checks preserve the headlines. Captured-source local verification; live production and physical iPhone checks remain with the controller.</p>
+<p><a href="qc/results.json">Verification results</a> · <a href="README.md">Source, attribution evidence and rollback</a></p>
+</main><script>
+document.querySelectorAll('[data-width]').forEach(button=>button.addEventListener('click',()=>{const width=button.dataset.width;document.querySelectorAll('[data-width]').forEach(item=>item.setAttribute('aria-pressed',String(item===button)));document.getElementById('status').textContent=width+' px comparison';for(const mode of ['before','candidate']){document.getElementById(mode).src='qc/'+mode+'-current-'+width+'-stories.png';document.getElementById(mode+'-top').src='qc/'+mode+'-current-'+width+'-top.png';}}));
+</script></html>

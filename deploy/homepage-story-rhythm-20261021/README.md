@@ -1,6 +1,6 @@
 # Homepage story rhythm — prepared Oct. 21, 2026
 
-Candidate only. No Wix write, site publish, post edit, send or automation change.
+Shipped Oct. 21, 2026 at about 12:23Z. Codex applied one guarded homepage skin repin; no Editor/site publish, post-content edit, email send or automation change was part of this homepage release.
 
 ## Request and result
 
@@ -29,6 +29,10 @@ GitHub run `39598768390` passed its homepage image checks, then failed in the un
 
 ## Release / rollback for the controller
 
-After review and merge, verify the immutable candidate source, fresh-read skin revision and ownership, then replace only the skin loader's old source SHA with the merged candidate SHA. Preserve its 2.5-second fail-safe and all live settings; re-send ESSENTIAL with the fresh revision. No Editor publish is needed. Root owns the production write and independent live verification.
+PR #415 merged `9d9c5b5262772d7ca450dc67e80acbee4776f312`. Before the live patch, all three public config credits returned HTTP 200 with their intended values, and the immutable jsDelivr source matched the reviewed candidate bytes (SHA-256 `1c45ffdd593ca3368436e28f1f93580cf2bd97298ff83612c754c9db4e9b0219`). Root fresh-read the exact revision-21 loader and applied only its pinned source/comment change with ESSENTIAL re-sent. Provider readback confirms skin `0c13f955` revision 22, exact intended HTML, unchanged enabled/position/loadOnce. Core and base-style objects were not changed.
+
+Root actual cache-busted public HTTP 200 at true CSS widths 390/430/1366/1920 (12:23:29–31Z) verifies the intended merged source pin, unchanged QB lead, exactly four current supports, two loaded credited photo cards, two briefs, no repeated HTML byline/date, no visible duplicate pools, preserved magazine/show links and zero overflow. Muse independently checked the same four public widths and visually reviewed phone/desktop screenshots with the same passing result. Existing desktop `wixTagManager is not defined` noise remains; physical iPhone was not tested. Runtime evidence stays at `/workspace/scratch/homepage-rhythm-live-20261021/` and independent evidence in Muse's private review directory. The broad CI failure described above remains the unchanged magazine bundle cap, not a passing full-site suite.
+
+The release preserved the existing 2.5-second fail-safe and all live settings. No Editor publish was needed. Codex remained the only production writer.
 
 Rollback: restore revision-21 HTML from `rollback/loader-rev21.json` using the then-current revision and ownership check; remove only this candidate's three config entries if reverting its data changes. The old live source SHA above remains the immutable rollback target. Do not revert unrelated later config entries or modify the core/base-style embeds.

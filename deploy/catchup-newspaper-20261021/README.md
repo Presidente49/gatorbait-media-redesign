@@ -12,7 +12,7 @@ One existing small opted-in cohort plus confirmed new signups is used; current c
 
 The rolling weekly limit prevents immediate sending: eight earlier list campaigns remain within seven days at preparation time. At 19:29Z / 3:29 p.m. Eastern on Oct. 21, only six remain, allowing this one edition as the seventh. The 24-hour count is zero; fresh recent bounce and complaint rates remain within the existing policy. Scheduling is enabled on the current Wix plan. Scheduled is not delivered; report the provider state accurately.
 
-Provider accepted the release at 12:17:29Z Oct. 21. Immediate native readback: `IN_DETECTION`, sending state `REVIEW`, `dateScheduled=2026-10-21T19:29:00Z`; 466 eligible contacts, three exclusions and 469 complete consent records. No delivery claim is made before the scheduled time. Last six campaigns that remain within the send-time weekly window have 4,805 delivered, 21 bounced and zero complaints.
+Provider accepted the release at 12:17:29Z Oct. 21. Immediate native readback was `IN_DETECTION` / `REVIEW`; Muse's independent native read at 12:18Z confirmed both distribution and sending state `SCHEDULED`, with `dateScheduled=2026-10-21T19:29:00Z`. There are 466 eligible contacts, three exclusions and 469 complete consent records. No delivery claim is made before the scheduled time. Last six campaigns that remain within the send-time weekly window have 4,805 delivered, 21 bounced and zero complaints.
 
 No automation status changes, reactivation, test sends, list import, consent mutation, discount, payment setting or site publish belongs to this release. Automatic Story Alert delivery remains a separate existing incident pending its native Activity log; this authorized catch-up send does not prove that incident resolved.
 

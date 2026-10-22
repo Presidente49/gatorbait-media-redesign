@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Haugh's honor, coaching hot seats and the playoff debate",
+      "excerpt": "Franz Beard on Tommy Haugh's preseason All-America recognition, college football's coaching hot seats and the College Football Playoff debate. Photos by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-22-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-22T13:02:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_a5eb3abb3338476dba7f259739f50c22~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Haugh's honor, coaching hot seats and the playoff debate"
+      }
+    },
+    {
       "title": "Gator Football Feel-Good: The Open Date Is Sweet Music, But Check the Lyrics",
       "excerpt": "Buddy Martin on Florida's open date, the lessons of past bye weeks and the Oct. 31 Georgia matchup in Atlanta. Photo by Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/gator-football-feel-good-the-open-date-is-sweet-music-but-check-the-lyrics",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Soothsayer: Texas big unless the UF defense finds an exorcist"
-      }
-    },
-    {
-      "title": "Watch the Replay: Buddy Martin's Philo Injury Exclusive, With Chris Doering",
-      "excerpt": "Watch the replay of Thursday's Buddy Martin Show, with Buddy's Philo injury exclusive and Chris Doering, from the week of Florida's 27-24 win at No. 7 Texas.",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-tonight-philo-jones-texas",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-16T00:31:58Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_00359caad82744778e7c387d8bf98777~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Watch the Replay: Buddy Martin's Philo Injury Exclusive, With Chris Doering"
       }
     }
   ]

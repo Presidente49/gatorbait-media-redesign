@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Haugh's honor, coaching hot seats and the playoff debate",
+      "excerpt": "Franz Beard on Tommy Haugh's preseason All-America recognition, college football's coaching hot seats and the College Football Playoff debate. Photos by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-22-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-22T13:02:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_a5eb3abb3338476dba7f259739f50c22~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Haugh's honor, coaching hot seats and the playoff debate"
+      }
+    },
+    {
       "title": "Gator Football Feel-Good: The Open Date Is Sweet Music, But Check the Lyrics",
       "excerpt": "Buddy Martin on Florida's open date, the lessons of past bye weeks and the Oct. 31 Georgia matchup in Atlanta. Photo by Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/gator-football-feel-good-the-open-date-is-sweet-music-but-check-the-lyrics",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”"
-      }
-    },
-    {
-      "title": "Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)",
-      "excerpt": "Florida finds a way to get out of Austin with a win on a day where they continue to find more about themselves every day. Loren Meadows breaks down what we thought, what we got and what it means.",
-      "url": "https://www.gatorbaitmedia.com/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-10-18T16:29:42Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)"
       }
     }
   ]

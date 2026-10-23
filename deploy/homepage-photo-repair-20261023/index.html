@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GatorBait landing page photo repair — Oct. 23, 2026</title>
+<style>body{font:17px/1.55 system-ui,sans-serif;max-width:850px;margin:40px auto;padding:0 22px;color:#14233d}h1{line-height:1.15}table{border-collapse:collapse;width:100%}th,td{padding:12px;text-align:left;border-bottom:1px solid #ccd3df}code{overflow-wrap:anywhere}a{color:#0021a5}</style>
+<h1>Current stories with properly framed photos</h1>
+<p>The landing page showed five articles and only one visible story photograph. Supporting photos were capped and withheld when a separate credit parser found no caption. A stale bundled lead could remain above a current list.</p>
+<table><tr><th>Snapshot</th><th>Visible articles</th><th>Loaded story images</th></tr><tr><td>Before</td><td>5</td><td>1</td></tr><tr><td>Candidate and release target</td><td>9</td><td>9</td></tr></table>
+<p>The existing lead and eight newest supporting stories use their matching native covers. Ordinary photos use a proportional 16:9 crop, with verified focal positions for Brown and Doering. Text-bearing collage and illustration covers remain fully contained. Native URLs, chronology and photo credits are retained.</p>
+<p>The lead reconciles once with the same successful current RSS read as the list; subsequent feed refreshes do not replace it while the reader is reading. Failed supporting images leave a full-width, usable headline link.</p>
+<p>Source: <a href="https://github.com/Presidente49/gatorbait-media-redesign/pull/420">PR 420</a>, immutable asset <code>4eb97df1224e8564070fec161251c46429357e95/sports-live/broadcast-home-color.js</code>. SHA-256: <code>b90f9097dfe9d1769d5217677438925fe38a68970e09470d4a9e09e410041f9a</code>. Existing loader <code>0c13f955-74bf-484c-abd9-359a5eef271b</code> changed from revision 22 to 23, preserving HEAD, ESSENTIAL and loadOnce=false. No Editor publish.</p>
+<p>Candidate checks: syntax, real-origin browser tests at 320/390/430/1366/1920 CSS pixels, native story/image/date matching, nine distinct story destinations, image crops, overflow, mobile menu/Escape, failed-image fallback and stable lead after later feed updates. The served CDN asset returned 200 and the exact tested checksum.</p>
+<p>Repository CI: eight homepage image unit tests and ten slow/lazy/retry browser probes passed. The broad workflow stops at the unchanged Magazine size limit: 189184 bytes against 188416. Its production render step is skipped; separate public-browser verification is recorded for this release. Physical iPhone testing remains unverified.</p>
+<p>Rollback: <a href="embed-before.json">exact previous loader</a>. Re-read the live owner and revision before restoring that HTML and its ESSENTIAL category; never reuse a stale revision number.</p>
+</html>

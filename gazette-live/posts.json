@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "From The Scout Team To Atlanta: Chris Doering Finally Gets His Due",
+      "excerpt": "He left in 1995 with 31 touchdown catches, still the school record and second in SEC history. Think about the receivers who have come through Gainesville since then. By Buddy Martin GatorBaitMedia.com They used to hand Chris Doering a scout-team jersey and tell him to go get hit. He’d take the beating, show up the next day, and take it again. No scholarship…",
+      "url": "https://www.gatorbaitmedia.com/post/from-the-scout-team-to-atlanta-chris-doering-finally-gets-his-due",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-23T00:23:07Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_29cf2a14d2d24b1387bd60638b380ead~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for From The Scout Team To Atlanta: Chris Doering Finally Gets His Due"
+      }
+    },
+    {
       "title": "Haugh's honor, coaching hot seats and the playoff debate",
       "excerpt": "Franz Beard on Tommy Haugh's preseason All-America recognition, college football's coaching hot seats and the College Football Playoff debate. Photos by Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-22-2026",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Is the SEC undergoing a drain of excellence?"
-      }
-    },
-    {
-      "title": "The Soothsayer: Texas big unless the UF defense finds an exorcist",
-      "excerpt": "Franz Beard: Florida is the man with the rope around his neck and Texas is the jukebox. The Soothsayer on Tramell Jones Jr.’s first start, Will Muschamp’s defense, an 11.5-point line and every SEC game Saturday.",
-      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-texas-big-unless-the-uf-defense-finds-an-exorcist",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-16T11:06:34Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_73d2d1958aae40d1addb19d56835e7d4~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Soothsayer: Texas big unless the UF defense finds an exorcist"
       }
     }
   ]

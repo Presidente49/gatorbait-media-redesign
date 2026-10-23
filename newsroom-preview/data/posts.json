@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "From The Scout Team To Atlanta: Chris Doering Finally Gets His Due",
+      "excerpt": "He left in 1995 with 31 touchdown catches, still the school record and second in SEC history. Think about the receivers who have come through Gainesville since then. By Buddy Martin GatorBaitMedia.com They used to hand Chris Doering a scout-team jersey and tell him to go get hit. He’d take the beating, show up the next day, and take it again. No scholarship…",
+      "url": "https://www.gatorbaitmedia.com/post/from-the-scout-team-to-atlanta-chris-doering-finally-gets-his-due",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-23T00:23:07Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_29cf2a14d2d24b1387bd60638b380ead~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for From The Scout Team To Atlanta: Chris Doering Finally Gets His Due"
+      }
+    },
+    {
       "title": "Haugh's honor, coaching hot seats and the playoff debate",
       "excerpt": "Franz Beard on Tommy Haugh's preseason All-America recognition, college football's coaching hot seats and the College Football Playoff debate. Photos by Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-22-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll"
-      }
-    },
-    {
-      "title": "Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”",
-      "excerpt": "Buddy Martin: There are worse ways to spend a Saturday than beating Texas in Austin while Texas A&M fans do the Gator Chomp. However, let’s maybe not order the commemorative plates yet.",
-      "url": "https://www.gatorbaitmedia.com/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-18T17:22:07Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a0d5a806a0924b1c982fd5b03d39b777~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”"
       }
     }
   ]

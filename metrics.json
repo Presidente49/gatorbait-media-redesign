@@ -1,0 +1,241 @@
+{
+ "url": "https://www.gatorbaitmedia.com/?photo-release=20261023",
+ "selector": ".bc-rows",
+ "at": "2026-10-23T12:05:57.318Z",
+ "shots": [
+  {
+   "width": 390,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": null,
+   "fpBuild": null,
+   "fpVersion": null,
+   "selectorFound": true,
+   "box": {
+    "x": 16,
+    "y": 70,
+    "w": 358,
+    "h": 1527,
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Barlow, Arial, Helvetica, sans-serif",
+    "kids": [
+     {
+      "cls": "H3",
+      "x": 33,
+      "y": 285,
+      "w": 324,
+      "h": 87,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "27px"
+     },
+     {
+      "cls": "H3",
+      "x": 33,
+      "y": 667,
+      "w": 324,
+      "h": 58,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "27px"
+     },
+     {
+      "cls": "H3",
+      "x": 121,
+      "y": 804,
+      "w": 253,
+      "h": 79,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "23px"
+     },
+     {
+      "cls": "H3",
+      "x": 121,
+      "y": 948,
+      "w": 253,
+      "h": 53,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "23px"
+     },
+     {
+      "cls": "H3",
+      "x": 121,
+      "y": 1066,
+      "w": 253,
+      "h": 106,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "23px"
+     },
+     {
+      "cls": "H3",
+      "x": 121,
+      "y": 1237,
+      "w": 253,
+      "h": 79,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "23px"
+     }
+    ],
+    "track": null,
+    "story": null,
+    "docScrollWidth": 390,
+    "innerWidth": 390
+   }
+  },
+  {
+   "width": 430,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": null,
+   "fpBuild": null,
+   "fpVersion": null,
+   "selectorFound": true,
+   "box": {
+    "x": 16,
+    "y": 71,
+    "w": 398,
+    "h": 1463,
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Barlow, Arial, Helvetica, sans-serif",
+    "kids": [
+     {
+      "cls": "H3",
+      "x": 33,
+      "y": 309,
+      "w": 364,
+      "h": 58,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "27px"
+     },
+     {
+      "cls": "H3",
+      "x": 33,
+      "y": 684,
+      "w": 364,
+      "h": 58,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "27px"
+     },
+     {
+      "cls": "H3",
+      "x": 121,
+      "y": 821,
+      "w": 293,
+      "h": 79,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "23px"
+     },
+     {
+      "cls": "H3",
+      "x": 121,
+      "y": 965,
+      "w": 293,
+      "h": 53,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "23px"
+     },
+     {
+      "cls": "H3",
+      "x": 121,
+      "y": 1083,
+      "w": 293,
+      "h": 79,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "23px"
+     },
+     {
+      "cls": "H3",
+      "x": 121,
+      "y": 1227,
+      "w": 293,
+      "h": 53,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "23px"
+     }
+    ],
+    "track": null,
+    "story": null,
+    "docScrollWidth": 430,
+    "innerWidth": 430
+   }
+  },
+  {
+   "width": 1366,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": null,
+   "fpBuild": null,
+   "fpVersion": null,
+   "selectorFound": true,
+   "box": {
+    "x": 91,
+    "y": 70,
+    "w": 772,
+    "h": 1064,
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "Barlow, Arial, Helvetica, sans-serif",
+    "kids": [
+     {
+      "cls": "H3",
+      "x": 91,
+      "y": 294,
+      "w": 374,
+      "h": 65,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "30px"
+     },
+     {
+      "cls": "H3",
+      "x": 489,
+      "y": 295,
+      "w": 374,
+      "h": 65,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "30px"
+     },
+     {
+      "cls": "H3",
+      "x": 237,
+      "y": 432,
+      "w": 626,
+      "h": 55,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "24px"
+     },
+     {
+      "cls": "H3",
+      "x": 237,
+      "y": 560,
+      "w": 626,
+      "h": 28,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "24px"
+     },
+     {
+      "cls": "H3",
+      "x": 237,
+      "y": 678,
+      "w": 626,
+      "h": 55,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "24px"
+     },
+     {
+      "cls": "H3",
+      "x": 237,
+      "y": 805,
+      "w": 626,
+      "h": 28,
+      "font": "\"Barlow Condensed\", Barlow, Arial, sans-serif",
+      "size": "24px"
+     }
+    ],
+    "track": null,
+    "story": null,
+    "docScrollWidth": 1366,
+    "innerWidth": 1366
+   }
+  }
+ ]
+}

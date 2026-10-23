@@ -326,34 +326,51 @@ C += `
 @ .bc-photo-rows{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
 }
 `;
-/* Owner-directed front-page rhythm: one lead, two photo-led stories and two brief links.
-   Keep the existing palette and responsive hero; hide repeated article metadata only here. */
+/* Current-story photography: two larger cards followed by six compact photo rows.
+   The same feed controls matching titles, covers and order at every width. */
 C += `
 @ article .sh-meta,@ .bc-hero .sh-meta,@ .bc-by,@ .bc-hero .sh-kicker{display:none!important}
 @ .sh-voices,@ .sh-voices.bc-stack{display:none!important}
 @ .bc-photo-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;list-style:none;margin:0;padding:0}
 @ .bc-photo-rows .bc-row{min-width:0;margin:0;padding:0;overflow:hidden}
-@ .bc-photo-rows .bc-row a{display:flex!important;flex-direction:column;gap:14px;padding:0 0 20px!important;align-items:stretch;min-width:0;height:100%;border-bottom:1px solid #ffffff26}
+@ .bc-photo-rows .bc-feature a{display:flex!important;flex-direction:column;gap:14px;padding:0 0 20px!important;align-items:stretch;min-width:0;height:100%;border-bottom:1px solid #ffffff26}
 @ .bc-photo-rows .bc-thumb{width:100%;aspect-ratio:3/2;flex-shrink:0}
 @ .bc-photo-rows .bc-row h3{font:800 30px/1.08 var(--dc)!important;text-transform:none;overflow-wrap:break-word}
 @ .bc-photo-rows .bc-credit{margin-top:10px;letter-spacing:0;text-transform:none}
-@ .bc-photo-rows .bc-brief{grid-column:1/-1;border:0;border-radius:0;background:none;overflow:visible}
-@ .bc-photo-rows .bc-brief a{display:block!important;padding:0 0 18px!important;height:auto}
-@ .bc-photo-rows .bc-brief h3{font:700 24px/1.15 var(--dc)!important}
-@ .bc-brief-heading{display:flex;align-items:center;gap:12px;margin:8px 0 22px;font:800 15px/1.2 Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
-@ .bc-brief-heading:after{content:'';height:2px;flex:1;background:#ffffff26}
+@ .bc-photo-rows .bc-compact{grid-column:1/-1;border:0;border-radius:0;background:none;overflow:visible}
+@ .bc-photo-rows .bc-compact a{display:grid!important;grid-template-columns:128px minmax(0,1fr);gap:18px;align-items:start;padding:0 0 20px!important;border-bottom:1px solid #ffffff26}
+@ .bc-photo-rows .bc-compact .bc-thumb{width:128px}
+@ .bc-photo-rows .bc-compact h3{font:700 24px/1.15 var(--dc)!important}
 :is(@)[data-bc] .sh-lower>div:has(.sh-coverage){display:none!important}
 @media(max-width:820px){
 @ .bc-photo-rows{grid-template-columns:minmax(0,1fr);gap:20px}
-@ .bc-photo-rows .bc-row:not(.bc-brief){border:1px solid #ffffff24;border-radius:12px;background:#0b1b49}
-@ .bc-photo-rows .bc-row:not(.bc-brief) a{gap:0;padding:0 0 16px!important;border:0}
-@ .bc-photo-rows .bc-row:not(.bc-brief) a>span:last-child{padding:16px 16px 0}
+@ .bc-photo-rows .bc-feature{border:1px solid #ffffff24;border-radius:12px;background:#0b1b49}
+@ .bc-photo-rows .bc-feature a{gap:0;padding:0 0 16px!important;border:0}
+@ .bc-photo-rows .bc-feature a>span:last-child{padding:16px 16px 0}
 @ .bc-photo-rows .bc-thumb{aspect-ratio:3/2;border-radius:0}
 @ .bc-photo-rows .bc-row h3{font-size:27px!important}
-@ .bc-photo-rows .bc-brief h3{font-size:23px!important}
-@ .bc-photo-rows .bc-brief a{padding:0 0 18px!important}
+@ .bc-photo-rows .bc-compact a{grid-template-columns:92px minmax(0,1fr);gap:13px;padding:0 0 18px!important}
+@ .bc-photo-rows .bc-compact a>span:last-child{padding:0}
+@ .bc-photo-rows .bc-compact .bc-thumb{width:92px;border-radius:6px}
+@ .bc-photo-rows .bc-compact h3{font-size:23px!important}
 }
 @media(min-width:600px) and (max-width:820px){@ .bc-photo-rows{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@ .bc-photo-rows .bc-compact a:not(:has(.bc-thumb)){grid-template-columns:minmax(0,1fr)!important}
+`;
+/* Proportional widescreen photography; text-bearing covers retain their whole artwork. */
+C += `
+@ .bc-photo-rows .bc-thumb{aspect-ratio:16/9!important}
+@ .bc-photo-rows .bc-thumb img{object-fit:cover!important;object-position:50% 50%}
+@ .bc-photo-rows .bc-cover-art .bc-thumb img{object-fit:contain!important;object-position:50% 50%!important}
+@ .bc-photo-rows img[src*="d3cfa5_29cf2a14d2d24b1387bd60638b380ead"]{object-position:50% 20%!important}
+@ .bc-hero:not(.bc-graphic) .sh-lead{aspect-ratio:16/9!important;min-height:0!important;align-self:start}
+@ .bc-hero:not(.bc-graphic) .sh-lead img{object-fit:cover!important;object-position:50% 50%}
+@ .bc-hero img[src*="d3cfa5_03ca10fd162c4563b5a920b57378aa1d"]{object-position:50% 25%!important}
+@media(max-width:820px){
+@ .bc-hero:not(.bc-graphic) .sh-lead{aspect-ratio:auto!important}
+@ .bc-hero:not(.bc-graphic) .sh-lead figure>a{aspect-ratio:16/9;height:auto!important;overflow:hidden}
+@ .bc-hero:not(.bc-graphic) .sh-lead img{height:100%!important;aspect-ratio:auto!important}
+}
 `;
 function css(){if(document.getElementById('gbm-broadcast-home-css'))return;var s=document.createElement('style');s.id='gbm-broadcast-home-css';s.textContent=C.replace(/@ /g,R+' ').replace(/@\{/g,R+'{').replace(/@\)/g,R+')');(document.head||document.documentElement).appendChild(s);}
 css();document.documentElement.classList.remove('gbm-bc-wait');
@@ -366,12 +383,15 @@ function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){retur
 var SB='https://presidente49.github.io/gatorbait-media-redesign/sports-live/scoreboard.json',
 ESPN='https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=',
 D={feed:null,sb:null,live:null},HR=36e5,DAY=864e5;
+/* Native cover metadata verified from the existing published posts, Oct. 23.
+   Match by immutable Wix media ID, never by writer or headline. Missing metadata must not suppress an actual story cover. */
+var COVER_META={"d3cfa5_03ca10fd162c4563b5a920b57378aa1d":{"alt":"Vernell Brown III (No. 1) faces the student section at The Swamp in Florida’s blue uniform. Photo by Chris Spears, GatorBait Media.","credit":"Photo by Chris Spears, GatorBait Media."},"d3cfa5_29cf2a14d2d24b1387bd60638b380ead":{"alt":"UAA/SEC Photo","credit":"UAA/SEC Photo"},"d3cfa5_a5eb3abb3338476dba7f259739f50c22":{"alt":"Photo collage: Tommy Haugh (No. 10) against Baylor, alongside Haugh and Todd Golden at the postgame press conference. Photos by Chris Spears, GatorBait Media.","credit":"Photos by Chris Spears, GatorBait Media."},"d3cfa5_90425d069f7d49ac9a55f5dedba27f93":{"alt":"Ben Hill Griffin Stadium seen from the end zone. Photo by Chris Spears, GatorBait Media.","credit":"Photo by Chris Spears, GatorBait Media."},"d3cfa5_d0c4fd8ad08c4ec8bd70221064f3bdb8":{"alt":"Florida quarterback Tramell Jones Jr. hands off to Jadan Baugh against Texas in Austin. Photo courtesy UAA and Hannah White.","credit":"Photo courtesy UAA and Hannah White."},"d3cfa5_87834ebcaf3f4606a29e8eef62f9aa65":{"alt":"","credit":"Photo courtesy TBS."},"d3cfa5_c02758730b3941e39694492c7bc555a5":{"alt":"Original GatorBait illustration of a basketball and football beneath Thoughts of the Day, Franz Beard, Oct. 20, 2026.","credit":"Graphic: GatorBait Media."},"d3cfa5_a38ad2951a7848bdb538476b28eb76c2":{"alt":"Florida defenders gang-tackle a Texas ball carrier in Austin on Oct. 17, 2026. Photo courtesy UAA and Hannah White.","credit":"Photo courtesy UAA and Hannah White."},"d3cfa5_6537648f5b15470ea4aea6703c77ed59":{"alt":"A Florida quarterback hands off to running back Jadan Baugh (No. 13) against Texas in Austin on Oct. 17, 2026. Photo courtesy UAA and Hannah White.","credit":"Photo courtesy UAA and Hannah White."}};
 function minute(){return Math.floor(Date.now()/6e4);}
 function get(u,t){return fetch(u,{cache:'no-store',credentials:'omit'}).then(function(r){if(!r.ok)throw new Error(r.status);return t?r.text():r.json();});}
 function loadFeed(){return get('/blog-feed.xml?t='+minute(),1).then(function(x){var d=new DOMParser().parseFromString(x,'text/xml'),out=[];
 [].slice.call(d.querySelectorAll('item')).forEach(function(i){var q=function(k){var n=[].slice.call(i.children).find(function(c){return c.localName===k;});return n?n.textContent.trim():'';},u;
 try{u=new URL(q('link'),location.href);}catch(e){return;}if(!/(^|\.)gatorbaitmedia\.com$/.test(u.hostname)||u.pathname.indexOf('/post/')!==0||!q('title'))return;
-var en=i.querySelector('enclosure');out.push([Date.parse(q('pubDate'))||0,q('title'),u.pathname,q('creator'),en?en.getAttribute('url')||'':'',en?en.getAttribute('alt')||'':'',q('credit')||((/\b(?:Photo (?:by|courtesy)|Graphic:)\s+[^.\r\n]+\.?/i.exec(q('description').replace(/<[^>]*>/g,' '))||[])[0]||'')]);});
+var en=i.querySelector('enclosure');out.push([Date.parse(q('pubDate'))||0,q('title'),u.pathname,q('creator'),en?en.getAttribute('url')||'':'',en?en.getAttribute('alt')||'':'',q('credit')||((/\b(?:Photos? (?:by|courtesy)|Graphic:)\s+[^.\r\n]+\.?/i.exec(q('description').replace(/<[^>]*>/g,' '))||[])[0]||''),q('description').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim()]);});
 out.sort(function(a,b){return b[0]-a[0];});if(out.length>=3){D.all=out;D.feed=out.slice(0,7);}}).catch(function(){});}
 var CFG='https://presidente49.github.io/gatorbait-media-redesign/sports-live/front-page.config.json';
 function loadCfg(){return get(CFG+'?t='+Math.floor(Date.now()/36e5)).then(function(c){if(c){if(Array.isArray(c.covers))D.covers=c.covers;D.credits=c.credits||{};D.imageAlts=c.imageAlts||{};}}).catch(function(){});}
@@ -443,7 +463,7 @@ var S={};
 function put(el,html,key){if(S[key]===html)return false;S[key]=html;el.innerHTML=html;return true;}
 function cdTick(){var cd=document.querySelector(R+' .bc-cd');if(!cd)return;var k=+cd.getAttribute('data-k'),s=k-Date.now();if(s<=0){cd.remove();return;}
 var mm=Math.floor(s/6e4),u=[[Math.floor(mm/1440),'Days'],[Math.floor(mm/60)%24,'Hrs'],[mm%60,'Min']];cd.innerHTML=u.map(function(x){return'<div><b>'+(x[0]<10?'0':'')+x[0]+'</b><small>'+x[1]+'</small></div>';}).join('');}
-function render(){var root=document.querySelector(R+'[data-bc]');if(!root)return;var M=model(root),band=root.querySelector('.sh-gameday');
+function render(){var root=document.querySelector(R+'[data-bc]');if(!root)return;freshLead(root);var M=model(root),band=root.querySelector('.sh-gameday');
 var tk=root.querySelector('.bc-tk'),it=tickerItems(root,M);
 if(it.length>1){var one=it.map(function(i){return'<a href="'+esc(i[2])+'"><b>'+esc(i[0])+'</b>'+esc(i[1])+'</a>';}).join('');
 var html='<span class="bc-bug" aria-hidden="true">GB</span><div class="bc-tw"><div class="bc-trk"><div style="display:flex">'+one+'</div><div style="display:flex" aria-hidden="true" inert>'+one.replace(/<a /g,'<a tabindex="-1" ')+'</div></div></div>';
@@ -460,13 +480,30 @@ function shortDate(t){var m=/([A-Z][a-z]+) (\d{1,2}), \d{4}/.exec(t||''),i=m?MON
 /* Rundown rows from the stories the page already rendered (support stories, then the latest list), newest first as served. */
 function rundown(root){var rows=[];[].slice.call(root.querySelectorAll('.sh-support article,.sh-wire-item')).forEach(function(a){var l=a.querySelector('a[href]'),t=a.querySelector('h2,h3'),m=a.querySelector('.sh-meta');
 if(!l||!t)return;var mt=m?m.textContent.split(' · '):[];rows.push({h:l.getAttribute('href'),t:t.textContent.trim(),by:(mt[0]||'').trim(),d:shortDate(mt[1]||'')});});
-return rows.slice(0,4).map(function(r,i){return'<li class="bc-row"><a href="'+esc(r.h)+'"><span class="bc-n" aria-hidden="true">'+(i<9?'0':'')+(i+1)+'</span><span><h3>'+esc(r.t)+'</h3></span></a></li>';}).join('');}
+return rows.slice(0,8).map(function(r,i){return'<li class="bc-row"><a href="'+esc(r.h)+'"><span class="bc-n" aria-hidden="true">'+(i<9?'0':'')+(i+1)+'</span><span><h3>'+esc(r.t)+'</h3></span></a></li>';}).join('');}
 /* Mobile-only copy uses the current asset's explicit credit; no writer-to-photographer inference. */
 function mobileLead(root){var lead=root.querySelector('.bc-hero .sh-lead'),figure=lead&&lead.querySelector('figure'),copy=lead&&lead.querySelector('.sh-lead-copy'),im=figure&&figure.querySelector('img'),link=figure&&figure.querySelector('a[href]'),deck=copy&&copy.querySelector('.sh-deck');if(!figure||!copy||!im||!link)return;
-var id=(/\/media\/([^/~]+)/.exec(im.currentSrc||im.src)||[])[1],p=(D.all||[]).find(function(f){return storyPath(f[2])===storyPath(link.href);}),credit=(D.credits||{})[id]||(p&&p[6])||((/\b(?:Photo (?:by|courtesy)|Graphic:)\s+[^.\r\n]+\.?/i.exec(deck?deck.textContent:'' )||[])[0]||'');
+var id=(/\/media\/([^/~]+)/.exec(im.currentSrc||im.src)||[])[1],p=(D.all||[]).find(function(f){return storyPath(f[2])===storyPath(link.href);}),credit=(COVER_META[id]||{}).credit||(D.credits||{})[id]||(p&&p[6])||((/\b(?:Photos? (?:by|courtesy)|Graphic:)\s+[^.\r\n]+\.?/i.exec(deck?deck.textContent:'' )||[])[0]||'');
 if(!credit)return;var cap=lead.querySelector('.bc-mobile-credit');if(!cap){cap=document.createElement('p');cap.className='bc-mobile-credit';figure.insertAdjacentElement('afterend',cap);}var text=esc(credit);if(/\bUAA\b/.test(credit)){text=text.replace(/\bUAA\b/,'<a href="https://floridagators.com">UAA</a>');if(/Hannah White/.test(credit))text=text.replace('Hannah White','<a href="https://www.instagram.com/hannahmorganphoto/">Hannah White</a>');text+=' <a href="https://floridagators.com/galleries">Official galleries</a>.';}if(cap.innerHTML!==text)cap.innerHTML=text;
-var alt=(D.imageAlts||{})[id];if(alt)im.alt=alt;
+var alt=(COVER_META[id]||{}).alt||(D.imageAlts||{})[id];if(alt)im.alt=alt;
 if(deck){var desc=deck.textContent.trim(),c=credit.replace(/\.\s*$/,''),at=desc.lastIndexOf(c);if(at>=0&&/^[.\s]*$/.test(desc.slice(at+c.length)))desc=desc.slice(0,at).trim();var md=copy.querySelector('.bc-mobile-deck');if(!md){md=document.createElement('p');md.className='bc-mobile-deck';deck.insertAdjacentElement('afterend',md);}if(md.textContent!==desc)md.textContent=desc;}}
+/* Reconcile a stale bundled lead with the same successful current RSS read used by the rows.
+   One existing lead node is updated; there is no second renderer, observer or additional polling. */
+function freshLead(root){
+var p=D.all&&D.all[0],lead=root.querySelector('.bc-hero .sh-lead');
+if(root.__bcLeadReconciled||!p||!lead||!p[0]||p[0]>Date.now()+DAY)return;
+var current=lead.querySelector('a[href]'),url=storyPath(p[2]);
+if(!url||!wixPhoto(p[4]))return;
+root.__bcLeadReconciled=true;
+if(current&&storyPath(current.href)===url)return;
+var id=(/\/media\/([^/~]+)/.exec(p[4])||[])[1],native=COVER_META[id]||{},credit=native.credit||(D.credits||{})[id]||p[6]||'',alt=native.alt||(D.imageAlts||{})[id]||p[5]||p[1];
+var photo=wixPhoto(p[4]).replace('w_480,h_320','w_1200,h_800');
+var date=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',month:'long',day:'numeric',year:'numeric'}).format(new Date(p[0]));
+lead.innerHTML='<figure><a href="'+esc(url)+'"><img src="'+esc(photo)+'" alt="'+esc(alt)+'" width="1200" height="800" loading="eager" decoding="async" fetchpriority="high"></a>'+(credit?'<figcaption>'+esc(credit)+'</figcaption>':'')+'</figure><div class="sh-lead-copy"><p class="sh-kicker">'+esc(p[3])+'</p><a href="'+esc(url)+'"><h1>'+esc(p[1])+'</h1></a>'+(p[7]?'<p class="sh-deck">'+esc(p[7])+'</p>':'')+'<p class="sh-meta">'+esc(p[3])+' · '+esc(date)+'</p><a class="sh-read" href="'+esc(url)+'">Read the story <span aria-hidden="true">→</span></a></div>';
+root.setAttribute('data-gazette-newest',new Date(p[0]).toISOString());
+root.setAttribute('data-gazette-source','current-feed');
+var notice=root.querySelector('#sh-freshness');if(notice)notice.textContent='';
+}
 /* Reuse the same live RSS records for matching photo, title, author and publication date. */
 function storyPath(h){try{return new URL(h,location.href).pathname.replace(/\/+$/,'');}catch(e){return'';}}
 function wixPhoto(h){try{var u=new URL(h),m=/^\/media\/([^/]+~mv2\.(?:jpe?g|png|webp))(?:\/|$)/i.exec(u.pathname);return u.protocol==='https:'&&u.hostname==='static.wixstatic.com'&&m?u.origin+'/media/'+m[1]+'/v1/fit/w_480,h_320,al_c,q_80/file.jpg':'';}catch(e){return'';}}
@@ -474,10 +511,10 @@ function freshRows(root){var list=root.querySelector('.bc-rows');if(!list||!D.al
 var lead=root.querySelector('.bc-hero .sh-lead a[href]'),seen={},original={};if(lead)seen[storyPath(lead.href)]=true;
 [].slice.call(root.querySelectorAll('.sh-lead,.sh-support article,.sh-wire-item,.sh-coverage article')).forEach(function(a){var l=a.querySelector('a[href]'),im=a.querySelector('img');if(l&&im)original[storyPath(l.href)]=im.getAttribute('alt')||'';});
 // Select by publication date before deciding which individual records can show a credited photo.
-var rows=D.all.slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||f[0]>Date.now()+DAY||!h||seen[h])return false;seen[h]=true;return true;}).slice(0,4);if(!rows.length)return;
-var hasUAA=false,hasHannah=false;var html=rows.map(function(f,i){var id=(/\/media\/([^/~]+)/.exec(f[4])||[])[1],credit=(D.credits||{})[id]||f[6]||'',alt=(D.imageAlts||{})[id]||f[5]||original[storyPath(f[2])]||f[1],photo=i<2&&wixPhoto(f[4])&&credit;
-if(photo){hasUAA=hasUAA||/\bUAA\b/.test(credit);hasHannah=hasHannah||/Hannah White/.test(credit);if(alt.indexOf(credit)<0)alt+=' '+credit;}
-return'<li class="bc-row '+(i<2?'bc-feature':'bc-brief')+'" data-published="'+new Date(f[0]).toISOString()+'">'+(i===2?'<h2 class="bc-brief-heading">In brief</h2>':'')+'<a href="'+esc(f[2])+'">'+(photo?'<span class="bc-thumb"><img src="'+esc(wixPhoto(f[4]))+'" alt="'+esc(alt)+'" width="480" height="320" loading="lazy" decoding="async"></span>':'')+'<span><h3>'+esc(f[1])+'</h3>'+(photo?'<span class="bc-credit">'+esc(credit)+'</span>':'')+'</span></a></li>';}).join('');
+var rows=D.all.slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||f[0]>Date.now()+DAY||!h||seen[h])return false;seen[h]=true;return true;}).slice(0,8);if(!rows.length)return;
+var hasUAA=false,hasHannah=false;var html=rows.map(function(f,i){var id=(/\/media\/([^/~]+)/.exec(f[4])||[])[1],native=COVER_META[id]||{},credit=native.credit||(D.credits||{})[id]||f[6]||'',alt=native.alt||(D.imageAlts||{})[id]||f[5]||original[storyPath(f[2])]||f[1],photo=!!wixPhoto(f[4]),art=/(collage|illustration|graphic)/i.test(alt)||(D.covers||[]).indexOf(id)>=0;
+if(photo){hasUAA=hasUAA||/\bUAA\b/.test(credit);hasHannah=hasHannah||/Hannah White/.test(credit);if(credit&&alt.indexOf(credit)<0)alt+=' '+credit;}
+return'<li class="bc-row '+(i<2?'bc-feature':'bc-compact')+(art?' bc-cover-art':'')+'" data-published="'+new Date(f[0]).toISOString()+'"><a href="'+esc(f[2])+'">'+(photo?'<span class="bc-thumb"><img src="'+esc(wixPhoto(f[4]).replace('w_480,h_320','w_800,h_800'))+'" alt="'+esc(alt)+'" width="480" height="320" loading="lazy" decoding="async"></span>':'')+'<span><h3>'+esc(f[1])+'</h3>'+(photo&&credit?'<span class="bc-credit">'+esc(credit)+'</span>':'')+'</span></a></li>';}).join('');
 var sources=list.parentNode.querySelector('.bc-photo-sources');if(!sources){sources=document.createElement('p');sources.className='bc-photo-sources';list.insertAdjacentElement('afterend',sources);}sources.hidden=!hasUAA;sources.innerHTML=hasUAA?'UAA photo sources: <a href="https://floridagators.com">UAA</a>'+(hasHannah?' · <a href="https://www.instagram.com/hannahmorganphoto/">Hannah White</a>':'')+' · <a href="https://floridagators.com/galleries">Official galleries</a>.':'';
 if(list.__bcFreshRows===html)return;list.__bcFreshRows=html;list.classList.add('bc-photo-rows');list.innerHTML=html;
 root.classList.add('bc-fresh-news','bc-story-rhythm');
@@ -526,3 +563,4 @@ var rz=0;addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(bal
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){setTimeout(balance,50);});
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync,{once:true});else sync();
 })();
+

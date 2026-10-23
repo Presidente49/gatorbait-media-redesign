@@ -1,0 +1,1034 @@
+{
+  "richContent": {
+    "nodes": [
+      {
+        "type": "IMAGE",
+        "id": "d7pf71",
+        "nodes": [],
+        "imageData": {
+          "containerData": {
+            "width": {
+              "size": "CONTENT"
+            },
+            "alignment": "CENTER",
+            "textWrap": true
+          },
+          "image": {
+            "src": {
+              "id": "d3cfa5_03ca10fd162c4563b5a920b57378aa1d~mv2.jpg"
+            },
+            "width": 3000,
+            "height": 2000
+          },
+          "altText": "Vernell Brown III (No. 1) faces the student section at The Swamp in Florida’s blue uniform. Photo by Chris Spears, GatorBait Media."
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "franz23-image-caption",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Vernell Brown III (No. 1) faces the student section at The Swamp. Photo by Chris Spears, GatorBait Media.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "franz23-series-date",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Thoughts of the Day · October 23, 2026",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "54wxd4",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "A few thoughts to jump start your Friday morning:",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "a5t8d86",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Traditionally, both Florida and Georgia have a bye week prior to their close encounter, usually in Jacksonville but in Atlanta this year, Tampa next while EverBank Stadium is renovated. No one could have possibly foreseen just how perfect the timing of the bye week would be for Jon Sumrall, whose 20th-ranked Gators (5-2, 3-2 SEC) have used the open date to heal their banged up wide receiver corps. Getting Vernell Brown III, Eric Singleton Jr. and Bailey Stockton as close to full speed as possible enhances the Gators' chances to spring the upset on the 5th-ranked Bulldogs (6-1, 4-1 SEC), who were exposed as vulnerable by Auburn, a team the Gators beat.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "avmpx89",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The extra week also benefits Florida quarterback Aaron Philo, who took a blow to his throwing shoulder in the loss to South Carolina and missed the Gators' upset of Texas. It is said to be either a bruised or sprained AC joint. Best-case scenario for healing: three to four weeks. Worst case, out the rest of the year. The game at Mercedes-Benz Stadium in Atlanta will be week three in the healing process. Enough time for Philo to be healthy enough to play? Only time will answer that question.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "od59c92",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Meanwhile, Tramell Jones Jr. has a Texas scalp under his belt and he's preparing in earnest to earn his spot in Gator lore if he's able to take down a second top-10 team in just his second start. He rallied the Gators from 14 down to win against that fierce Texas defense and he did it without Brown and with Singleton and Stockton both slowed by injuries.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "u9hlc95",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Whether it's Philo or Jones taking the snaps, if all the receivers are at or near 100 percent the idea that the Gators could beat Georgia doesn't seem as preposterous an idea as it might have only a few weeks ago.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "i8y5c98",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "THE SEC SOOTHSAYER",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 2
+        }
+      },
+      {
+        "type": "HEADING",
+        "id": "xezzp100-matchup",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "No. 7 Ole Miss (5-1, 3-1 SEC) at No. 19 Texas (4-2, 1-2 SEC)",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 3
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xezzp100-airtime",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "7:30 p.m., ABC",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xezzp100-analysis-1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "This could one day be known as Sark's Last Stand. Lose and the Longhorns, for all practical purposes, are left sitting on the curb while a whole bunch of College Football Playoff contenders go whizzing by. Lose, and for all practical purposes, Steve Sarkisian is a dead man walking.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xezzp100-analysis-2",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Texas lost to Florida and a backup QB making his first collegiate start last week.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xezzp100-analysis-3",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "This week the Longhorns get to face probably the best college football quarterback in the country in Trinidad Chambliss, who has the luxury once again of handing the ball off to Kewan Lacy, finally healthy and running over, under, around and through people.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xezzp100-analysis-4",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Texas has to hope that Arch Manning will be inspired by the idea of beating the alma mater of Hall of Fame relatives, grandfather Archie and uncle Eli. The Ole Miss defense just held Missouri to a three-spot. The Rebels are good enough to win this one by a couple of touchdowns if they don't turn the ball over.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xezzp100-prediction",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Sayer Says Sooth!",
+              "decorations": [
+                {
+                  "type": "BOLD"
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": ": Here's something to rattle around in your brains. Ole Miss wins, Sark gets fired and at the end of the season, Arch hears Mama call and transfers to Ole Miss where he can get coached up (finally!) and restore the honor of the Manning name. Texas is somehow a 3.5-point favorite. It's not because of Arch but because of Will Muschamp's defense. Doesn't matter. Ole Miss is going to emerge the winner.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "616e5103-matchup",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "No. 11 Tennessee (6-1, 3-1 SEC) at South Carolina (3-3, 1-3 SEC)",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 3
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "616e5103-airtime",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "3:30 p.m., ESPN",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "616e5103-analysis-1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Something seems very wrong here. The Vols are coming off a dominant 25-10 win over Alabama, a no doubter if ever there was one. Yet, here we are a week later and they're 2.5-point underdogs on the road at Willy Brice where the Chickens had a bye week.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "616e5103-analysis-2",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Do the experts think LaNorris Sellers awakened from a coma when he led South Carolina to a decisive win over Florida in The Swamp? That's what it will take for South Carolina to win this one, but if they do stick it to the Vols, it is very likely Shane Beamer will be coaching in Columbia again next year.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "616e5103-analysis-3",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "When the Chickens beat Florida, they stuffed the run and made the Florida passing game very ordinary. Something along those lines will be necessary along with Sellers escaping the UT pass rush, which leads the nation with 30 sacks.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "616e5103-analysis-4",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Can the Vols run the football? If they can't they're going to lose.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "616e5103-prediction",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Sayer Says Sooth!",
+              "decorations": [
+                {
+                  "type": "BOLD"
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": ": It's really tempting to pick an upset here but the way Tennessee played last week against Alabama says no way. However, if it is close at the end of the third quarter,",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "9rt0o106-matchup",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Vanderbilt (3-4, 0-4 SEC) at No. 12 Kentucky (6-1, 4-1 SEC)",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 3
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "9rt0o106-airtime",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "7:30 p.m., SEC Network",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "9rt0o106-analysis-1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The way Will Stein has the Wildcats playing, the UK faithful need to be ordering Ted Lasso \"Believe\" T-shirts and sweatshirts in bulk. If Kentucky beats Vanderbilt Saturday evening, the Wildcats will have guaranteed their first winning season since 2023.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "9rt0o106-analysis-2",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "For all the talk about how Stein has rejuvenated the UK offense, it's the defense that is actually stealing the show. The Wildcats lead the SEC in turnover margin. Vanderbilt is learning what life is like with a true freshman quarterback in the SEC. Jared Curtis is going to be a fine quarterback someday. Just not Saturday.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "9rt0o106-analysis-3",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Vandy fans must be wondering how it is that Kentucky basketball player Franck Kepnang got a seventh year from the NCAA and Diego Pavia didn't get a seventh (or is it eighth) to play football at Vanderbilt? The Commodores are a 10.5-point underdog in Lexington. It feels like that number is way too small.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "9rt0o106-prediction",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Sayer Says Sooth!",
+              "decorations": [
+                {
+                  "type": "BOLD"
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": ": A win would certainly change the mood on Nashville's West End where folks are thinking we're back to being Vandy again after winning 10 games last year. The Commodores will be fortunate to find another win on their schedule, so 3-9 is highly likely. Something about this one says Kentucky wins in a blowout.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "t69fy109-matchup",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Texas A&M (4-3, 1-3 SEC) at No. 13 Alabama (5-2, 3-2 SEC)",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 3
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "t69fy109-airtime",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "3:30 p.m., ABC",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "t69fy109-analysis-1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Is there a more disappointing team in the SEC than the Aggies? And, is there a more disappointing QB in the entire country than Marcel Reed? With that being said, this is a chance for both the Aggies and Reed to right a listing ship. Can they spring the upset? A week ago the answer would have been no, not a chance and hell no.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "t69fy109-analysis-2",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "That was before Alabama got thoroughly exposed by Tennessee's defense which sacked Keelon Russell five times, held the Tide to 54 rushing yards, forced four turnovers and allowed only 10 points.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "t69fy109-analysis-3",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Mike Elko's rep is that of a defensive genius. Can he get the Aggies to replicate what Tennessee did? Can Marcel Reed remember it's not nice to turn the ball over?",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "t69fy109-analysis-4",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "As for Alabama, this is an elimination game, for the team's hopes of the College Football Playoff and perhaps for Kalen DeBoer's hopes of being gainfully employed in Tuscaloosa next year. A third loss this season will be his eleventh in three years. Bama fans are quick to tell you Nick never did that.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "t69fy109-prediction",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Sayer Says Sooth!",
+              "decorations": [
+                {
+                  "type": "BOLD"
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": ": This just reeks of an upset even though the Aggies have found themselves on the blowout end of two of their three SEC losses. The Aggies are 13.5-point underdogs and Alabama will be without its most explosive offensive player, wide receiver Ryan Coleman-Williams. If Alabama still has a Tennessee hangover, it will be low tide in Tuscaloosa. Fortunately for Alabama, Marcel Reed is the opposing QB, but it's going to be a chest clutcher at the end.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "xrdb6112-matchup",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "No. 18 LSU (5-2, 2-2 SEC) at Auburn (4-2, 2-2 SEC)",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 3
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xrdb6112-airtime",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "12 noon, ABC",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xrdb6112-analysis-1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "This may turn out to be the best game of the day. LSU's defense pitched a shutout last week at Mississippi State while Auburn QB Byrum Brown was too hot for Georgia to handle in Athens. LSU is giving up only 88 yards per game on the ground and has sacked quarterbacks 27 times.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xrdb6112-analysis-2",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Sam Leavitt is starting to play like the QB he was hyped to be when he transferred in from Arizona State. None of that bodes well for Auburn, which ranks dead last in the SEC and 134th nationally in sacks allowed.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xrdb6112-analysis-3",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Florida sacked Brown seven times. Georgia got to Brown five times last week, but he escaped enough times to lead Auburn to a shocking win.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xrdb6112-analysis-4",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "He needs to be in his feets don't fail me now mode against LSU and Auburn's defense needs to play as well as it did last week when it forced three critical Georgia turnovers.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "xrdb6112-prediction",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Sayer Says Sooth!",
+              "decorations": [
+                {
+                  "type": "BOLD"
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": ": It's an elimination game for LSU, which has to win the next five games to have a shot at the College Football Playoff. For Auburn, it's a chance to prove the win over Georgia wasn't a fluke and that first-year coach Alex Golesh has the Tigers headed onward and upward. Lane Kiffin knows what it takes to motivate a team when its back is to the wall. LSU is favored by a TD. White knuckles at the end and Lane gets a win.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "pax0b115-matchup",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Oklahoma (3-3, 1-2 SEC) at Mississippi State (4-2, 2-2 SEC)",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 3
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "pax0b115-airtime",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "3:30 p.m., SEC Network",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "pax0b115-analysis-1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Oklahoma is sticking with John Mateer at quarterback. If Kamario Taylor and Fluff Bothwell can't go for Mississippi State, Mateer might be the Bulldogs' secret weapon due to his penchant for completing passes to the other team.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "pax0b115-analysis-2",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Oklahoma has a world-class defense that held Kentucky to 230 yards last week. If Mateer and the offense had cooperated, the Sooners would have won the game.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "pax0b115-analysis-3",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Without Taylor and Bothwell, Mississippi State's offense is on the same plane as Oklahoma.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "pax0b115-prediction",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The Sayer Says Sooth!",
+              "decorations": [
+                {
+                  "type": "BOLD"
+                }
+              ]
+            }
+          },
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": ": Oklahoma is a 5.5-point favorite, largely due to the likelihood Taylor and Bothwell won't play. The Bulldogs are an explosive team with their two studs. Without them, they will go down in what promises to be an ugly game from start to finish.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "HEADING",
+        "id": "vobo1118-heading",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "ONE FINAL PITHY THOUGHT",
+              "decorations": []
+            }
+          }
+        ],
+        "headingData": {
+          "level": 2
+        }
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "vobo1118",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "There is a theory out there, most recently promoted by Arizona basketball coach Tommy Lloyd and embraced by Gary Parrish of CBS, the best basketball writer in the country, that the NCAA is actually promoting the chaos that it claims will result from 2022 high school grads getting a fifth year of eligibility. Bear with me on this one. It's complicated but logical.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "vd45t121",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "It goes something like this: The NCAA, in its infinite wisdom, claims that 2022 high school grads are excluded from a fifth year of eligibility because (a) it will create fewer opportunities for incoming freshmen and (b) a coach adding a 2022 grad to his roster will in turn cut a player already on scholarship. Therefore, chaos! Florida coach Todd Golden debunked that defense more than a week ago.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "6vnuu124",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Meanwhile, 2022 athletes who feel unfairly left out by the NCAA have taken to the courts where they are winning injunctions that will make them eligible. The NCAA is appealing their injunctions and in some cases getting a stay of the players' temporary restraining orders. Millions of billable hours for attorneys and players' lives held hostage.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "2lkcd127",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "The NCAA, of course, could give up the appeals and simply grandfather the players in, making them eligible to play. So why doesn't that happen? This is where Lloyd and Parrish chime in – it is because the NCAA is trying to create the chaos it claims to be fighting for the purpose of taking a cattle prod to Congress to pass the Protect College Sports Act.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "sgfdg130",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "\"I think my theory is this thing has gotten so political – and, obviously, there are a lot of things that need to be fixed in college sports,\" Lloyd said. \"So [in my opinion,] the NCAA doesn't mind the 'chaos' right now because it can help drive the case for them to promote the [Protect] College Sports Act, which I'm sure we need.\"",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "ftwau133",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Translation: The NCAA is so out of control it needs an act of Congress to stabilize things and it's willing to sacrifice the players it claims to protect to get the outside help it HOPES will save its control.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      },
+      {
+        "type": "PARAGRAPH",
+        "id": "ssnpm136",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "What we really need is something other than the NCAA, but unfortunately no one has a Plan B for a brand new organization that will enforce its own rules fairly.",
+              "decorations": []
+            }
+          }
+        ],
+        "paragraphData": {}
+      }
+    ],
+    "documentStyle": {}
+  },
+  "media": {
+    "wixMedia": {
+      "image": {
+        "id": "d3cfa5_03ca10fd162c4563b5a920b57378aa1d~mv2.jpg",
+        "url": "https://static.wixstatic.com/media/d3cfa5_03ca10fd162c4563b5a920b57378aa1d~mv2.jpg",
+        "height": 2000,
+        "width": 3000,
+        "altText": "Vernell Brown III (No. 1) faces the student section at The Swamp in Florida’s blue uniform. Photo by Chris Spears, GatorBait Media.",
+        "filename": "cover-brown-iii-student-section.jpg"
+      }
+    },
+    "displayed": true,
+    "custom": true,
+    "altText": "Vernell Brown III (No. 1) faces the student section at The Swamp in Florida’s blue uniform. Photo by Chris Spears, GatorBait Media."
+  }
+}

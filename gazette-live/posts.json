@@ -2,8 +2,22 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gators heal for Georgia as the SEC Soothsayer makes his picks",
+      "excerpt": "Franz Beard on Florida’s bye-week recovery before Georgia, six SEC matchups and the NCAA’s latest eligibility fight.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-23-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-23T11:13:08Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_f51d42eaf631433485fbf86d44f340ef~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators heal for Georgia as the SEC Soothsayer makes his picks"
+      }
+    },
+    {
       "title": "From The Scout Team To Atlanta: Chris Doering Finally Gets His Due",
-      "excerpt": "He left in 1995 with 31 touchdown catches, still the school record and second in SEC history. Think about the receivers who have come through Gainesville since then . By Buddy Martin GatorBaitMedia.com They used to hand Chris Doering a scout-team jersey and tell him to go get hit. He’d take the beating, show up the next day, and take it again. No…",
+      "excerpt": "He left in 1995 with 31 touchdown catches, still the school record and second in SEC history. Think about the receivers who have come through Gainesville since then By Buddy Martin GatorBaitMedia.com They used to hand Chris Doering a scout-team jersey and tell him to go get hit. He’d take the beating, show up the next day, and take it again. No scholarship…",
       "url": "https://www.gatorbaitmedia.com/post/from-the-scout-team-to-atlanta-chris-doering-finally-gets-his-due",
       "author": "Buddy Martin",
       "firstPublishedDate": "2026-10-23T00:23:07Z",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Aberdeen will be in the lineup against Baylor on Sunday"
-      }
-    },
-    {
-      "title": "Is the SEC undergoing a drain of excellence?",
-      "excerpt": "Parody or parity? Buddy Martin on a 24-team playoff and an SEC that hasn’t lost excellence so much as its monopoly on it. Me, I worry that the scavengers have come for what’s left of college football.",
-      "url": "https://www.gatorbaitmedia.com/post/is-the-sec-undergoing-a-drain-of-excellence",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-16T20:08:54Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_927b7ee1fa71438396dcae09cac639b8~mv2.png/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Is the SEC undergoing a drain of excellence?"
       }
     }
   ]

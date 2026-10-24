@@ -80,7 +80,7 @@
   // Next game: skipped once its kickoff is more than five hours gone (the feed refreshes it after the final).
   function nextGame() {
     var n = data.scoreboard && data.scoreboard.next, k = n && Date.parse(n.kickoffIso || n.kickoff);
-    return n && n.opponent && Number.isFinite(k) && k + 5 * 36e5 > now() ? { name: oppName(n), opponent: String(n.opponent), home: n.home === true, when: gameWhen(n.kickoffIso || n.kickoff), tv: n.tv || '', url: safePost(n.previewUrl) || LINKS.schedule } : null;
+    return n && n.opponent && Number.isFinite(k) && k + 5 * 36e5 > now() ? { name: oppName(n), opponent: String(n.opponent), home: n.home === true, neutral: n.neutral === true, when: gameWhen(n.kickoffIso || n.kickoff), tv: n.tv || '', url: safePost(n.previewUrl) || LINKS.schedule } : null;
   }
   function lastGame() {
     var l = data.scoreboard && data.scoreboard.last, s = l && l.score;
@@ -114,7 +114,7 @@
   function chips(s) {
     if (!data.scoreboard || s.getAttribute('data-kit-live')) return;
     var n = nextGame(), l = lastGame(), html = '';
-    if (n) html += chip('lead', n.url, 'Next: ' + (n.home ? 'vs. ' : 'at ') + n.name + ' · ' + n.when, n.tv ? 'Florida ' + (n.home ? 'vs. ' : 'at ') + n.name + ', ' + n.when + ', ' + n.tv : '');
+    if (n) html += chip('lead', n.url, 'Next: ' + (n.home || n.neutral ? 'vs. ' : 'at ') + n.name + ' · ' + n.when, n.tv ? 'Florida ' + (n.home || n.neutral ? 'vs. ' : 'at ') + n.name + ', ' + n.when + ', ' + n.tv : '');
     if (l) html += chip('last', l.url, 'Last: ' + l.line);
     s.setAttribute('data-kit-live', n || l ? 'on' : 'none');
     if (html) s.querySelector('.gbm-kit-row').insertAdjacentHTML('afterbegin', html);

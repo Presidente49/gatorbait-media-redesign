@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Sumrall restores hope as Texas faces a reckoning",
+      "excerpt": "Franz Beard on Florida's renewed hope under Jon Sumrall, Urban Meyer's playoff concerns and the pressure on Texas. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-24-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-24T14:44:51Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_e23da70ac8cf4fb387592bbc95e4e5c0~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Sumrall restores hope as Texas faces a reckoning"
+      }
+    },
+    {
       "title": "Gators heal for Georgia as the SEC Soothsayer makes his picks",
       "excerpt": "Franz Beard on Florida’s bye-week recovery before Georgia, six SEC matchups and the NCAA’s latest eligibility fight.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-23-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor"
-      }
-    },
-    {
-      "title": "Florida is one win from bowl eligibility, with a bye before Georgia",
-      "excerpt": "The Gators (5-2, 3-2 SEC) need six wins for a bowl game, have five games left and are off Oct. 24 before Georgia in Atlanta on Oct. 31.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-is-one-win-from-bowl-eligibility-with-a-bye-before-georgia",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-18T22:16:57Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_14cbe910276a453e914c7808da28ba30~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida is one win from bowl eligibility, with a bye before Georgia"
       }
     }
   ]

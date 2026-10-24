@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Sumrall restores hope as Texas faces a reckoning",
+      "excerpt": "Franz Beard on Florida's renewed hope under Jon Sumrall, Urban Meyer's playoff concerns and the pressure on Texas. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-24-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-24T14:44:51Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_e23da70ac8cf4fb387592bbc95e4e5c0~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Sumrall restores hope as Texas faces a reckoning"
+      }
+    },
+    {
       "title": "Gators heal for Georgia as the SEC Soothsayer makes his picks",
       "excerpt": "Franz Beard on Florida’s bye-week recovery before Georgia, six SEC matchups and the NCAA’s latest eligibility fight.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-23-2026",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators Stun No. 7 Texas 27-24 in Austin Behind Jones Jr."
-      }
-    },
-    {
-      "title": "Aberdeen will be in the lineup against Baylor on Sunday",
-      "excerpt": "Franz Beard: Denzel Aberdeen starts Sunday when preseason No. 1 Florida opens with a Baylor exhibition in Jacksonville, and his fifth-year case should hold up. Plus SEC coaches on the NCAA and 11 international recruits to watch.",
-      "url": "https://www.gatorbaitmedia.com/post/aberdeen-will-be-in-the-lineup-against-baylor-on-sunday",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-17T10:30:02Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/a99769_73393b48895d46beb49e488c798b91e3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Aberdeen will be in the lineup against Baylor on Sunday"
       }
     }
   ]

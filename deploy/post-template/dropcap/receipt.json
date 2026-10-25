@@ -28,5 +28,30 @@
     "desktopWidth": 1366,
     "articleOverflow": 0
   },
-  "security": "Hawk6.5.0 preflight passed; platform402 PaymentRequired prevented scan. No scanID or secure claim."
+  "security": {
+    "localSast": "PASS",
+    "engine": "Semgrep CE 1.182.1",
+    "changedLayer": {
+      "targets": 1,
+      "applicableRules": 83
+    },
+    "privateCandidate": {
+      "targets": 3,
+      "applicableRules": 83
+    },
+    "runner": {
+      "targets": 1,
+      "applicableRules": 200
+    },
+    "findings": 0,
+    "errors": 0,
+    "skipped": 0,
+    "nodeSyntax": "PASS",
+    "layerSha256": "8096e5d9f9c8922dba763b68b0b85185acee144e6f2d426d3924edc05ea7f7f0",
+    "runnerSha256": "cb9d5114625f99b36e8c079905d856ecea8de7c0f21e1da44bf8cd6c0e883971",
+    "independentGateReview": "PASS",
+    "rulesetVersioning": "Engine pinned; community registry rule packs may change; retain per-run logs and coverage",
+    "dast": "Not run: HawkScan platform402 before scan start. No scan ID or full-site security claim.",
+    "billingChanges": false
+  }
 }

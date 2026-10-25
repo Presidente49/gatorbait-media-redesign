@@ -29,7 +29,7 @@
     "ordinaryUrlCachePropagation": "PASS: both canonical URLs returned corrected tags at 05:52:44-45Z",
     "bodyIdentityAccessAndPublicationDatesUnchanged": true,
     "blogPublishCalled": false,
-    "noNewAutomationActivation": "UNVERIFIED"
+    "noNewAutomationActivation": "Marlowe reports no new run in the bounded post-write native UI check; remote PDF not inspected by Codex"
   },
   "homepage": {
     "status": "DRAFT_NOT_DEPLOYED",
@@ -46,7 +46,7 @@
   "billing": {
     "failedAnnualCases": 4,
     "unverifiedDeclineReasons": 3,
-    "nativeUiJoinEvidence": "REQUESTED",
+    "nativeUiJoinEvidence": "All four native API order.subscriptionId relations established; reported full UI URLs agree, remote artifacts not inspected by Codex",
     "memberSpecificNoticeDelivery": "UNVERIFIED",
     "draftsSent": false,
     "financialOrAccessChanges": false

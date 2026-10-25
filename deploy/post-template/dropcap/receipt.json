@@ -1,0 +1,32 @@
+{
+  "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+  "embedId": "14a887e3-38ea-4258-ae0b-7d19cf9feead",
+  "beforeRevision": "24",
+  "appliedRevision": "26",
+  "checks": {
+    "beforeRevision": "24",
+    "beforeCharacters": 12691,
+    "afterCharacters": 14935,
+    "beforeSha256": "af6a1401e2a2a1519f3514657002609354dcd9681aa350fd660d8121ee7509dd",
+    "afterSha256": "4ffd2e7878fdb170f0cfd30e1c6fe6323ff0e296d650ceef6d528ef7ce1a5230",
+    "existingTemplatePreservedVerbatimPrefix": true,
+    "bodyTextMutation": false,
+    "usesExistingRecentArticleEligibility": true,
+    "nestedRicosSpanSupport": true,
+    "newNetworkRequests": false,
+    "offPostMarkerCleared": true,
+    "singleFirstLetterOrigin": true
+  },
+  "publicQC": {
+    "ordinaryCanonical": true,
+    "dropCapOrigins": 1,
+    "firstLetterPixels": 87.4,
+    "color": "#fa4616",
+    "font": "Barlow Condensed",
+    "fontWeight": 800,
+    "float": "left",
+    "desktopWidth": 1366,
+    "articleOverflow": 0
+  },
+  "security": "Hawk6.5.0 preflight passed; platform402 PaymentRequired prevented scan. No scanID or secure claim."
+}

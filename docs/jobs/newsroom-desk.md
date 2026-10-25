@@ -29,7 +29,7 @@ Owner clarification, Oct. 19: trusted professional writer filings get a quick ch
 
 ## Verify and record
 
-13. Read back the changed post and verify its public URL, byline, media, formatting and links. Check the actual destination before claiming publication. Record canonical URL, change, verification, rollback and unresolved flags in #34; advance private receipts only after the outcome is known.
+13. Read back the changed post and verify its public URL, byline, media, formatting and links. On the ordinary public page, explicitly check one intended lead image with no repeated opening body artwork, the established large opening-letter drop cap visibly wrapping prose, heading hierarchy, readable paragraph spacing and the full ending. A native Ricos node count or a CSS class alone is not a visual pass. If the shared style/injector is absent, route that defect to the site worker and keep presentation QC open; do not report the post fully formatted. Check the actual destination before claiming publication. Record canonical URL, change, verification, rollback and unresolved flags in #34; advance private receipts only after the outcome is known.
 14. Repo changes use a bounded current-main branch. Do not push into the old `fix-native-flash-20260926` draft. New failure modes become one concise lesson/job correction through controller review. If nothing changed, stay silent.
 
 ## Lessons added Oct. 11 (LESSONS 85-91)

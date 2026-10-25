@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Ninth Game Is Collecting Its Toll, One Body at a Time",
+      "excerpt": "Buddy Martin on the physical toll of the SEC schedule as Florida and Georgia approach their Oct. 31 meeting. File photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/the-ninth-game-is-collecting-its-toll-one-body-at-a-time",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-25T21:06:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg/v1/fit/w_1000,h_602,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Ninth Game Is Collecting Its Toll, One Body at a Time"
+      }
+    },
+    {
+      "title": "A Podcast Tribute: David Moulton",
+      "excerpt": "Buddy Martin remembers his longtime friend David Moulton and a life spent informing sports fans. Editorial illustration: GatorBait Media, based on a portrait supplied by Buddy Martin.",
+      "url": "https://www.gatorbaitmedia.com/post/a-podcast-tribute-david-moulton",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-25T21:00:36Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_8b84554d81c84875aef8f8d12e43544f~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for A Podcast Tribute: David Moulton"
+      }
+    },
+    {
       "title": "The Gators still have a pulse after Saturday's chaos",
       "excerpt": "Franz Beard on Florida's revived SEC and playoff hopes after Saturday's upheaval, with the contenders, pretenders and six SEC game recaps. Original illustration: GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/the-gators-still-have-a-pulse-after-saturdays-chaos",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Gators Sucked Less, Turning Arch Madness Into Arch Sadness"
-      }
-    },
-    {
-      "title": "A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation",
-      "excerpt": "Buddy Martin on Florida's 27-24 win at No. 7 Texas, Tramell Jones Jr.'s first start and the quarterback question Jon Sumrall now faces.",
-      "url": "https://www.gatorbaitmedia.com/post/a-texas-barbecue-gators-flip-the-script-and-jones-changes-the-conversation",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-18T00:12:26Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for A Texas Barbecue: Gators Flip The Script — And Jones Changes The Conversation"
-      }
-    },
-    {
-      "title": "It was a good day for an exorcism in Austin",
-      "excerpt": "Franz Beard: Florida's defense found its inner Doomsday, Arch Manning got haunted and Tramell Jones Jr. won his first start on the road, 27-24 at No. 7 Texas.",
-      "url": "https://www.gatorbaitmedia.com/post/it-was-a-good-day-for-an-exorcism-in-austin",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-18T00:02:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for It was a good day for an exorcism in Austin"
       }
     }
   ]

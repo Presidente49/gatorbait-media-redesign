@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Gators still have a pulse after Saturday's chaos",
+      "excerpt": "Franz Beard on Florida's revived SEC and playoff hopes after Saturday's upheaval, with the contenders, pretenders and six SEC game recaps. Original illustration: GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/the-gators-still-have-a-pulse-after-saturdays-chaos",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-25T15:06:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9211723882ad4d0bb44a05383761cff9~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Gators still have a pulse after Saturday's chaos"
+      }
+    },
+    {
       "title": "Sumrall restores hope as Texas faces a reckoning",
       "excerpt": "Franz Beard on Florida's renewed hope under Jon Sumrall, Urban Meyer's playoff concerns and the pressure on Texas. Photo by Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-24-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for An Exhibition Loss Gives Golden Plenty Of Material To “Coach ‘Em Up”"
-      }
-    },
-    {
-      "title": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
-      "excerpt": "Chris Spears on Florida's 82-76 overtime exhibition loss to Baylor in Jacksonville: a cold night from three, a bench gap and a late show of fight.",
-      "url": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
-      "author": "Chris Spears",
-      "firstPublishedDate": "2026-10-19T03:26:08Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor"
       }
     }
   ]

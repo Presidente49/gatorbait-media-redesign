@@ -35,6 +35,8 @@ One line per lesson, grouped by subject. `LESSONS.md` is the evidence (what happ
 
 ## Email and list
 
+- Lesson 104 (Oct. 25, 2026): Label lookup success does not prove audience execution; use the provider's native label-key contract and independently count/enumerate the saved intended cohort before claiming recipient repair. Resolved participants are not delivered recipients.
+
 - Lesson 11 (undated): Engaged, targeted cohorts beat raw list size (engaged test → measure → expand); consent and suppression stay hard gates.
 - Lesson 12 (undated): A valid email address is not permission to market; re-audit signup forms periodically.
 - Lesson 13 (undated): Preview sender, subject, preview text, hero, CTA, destination, footer and mobile rendering before any send.

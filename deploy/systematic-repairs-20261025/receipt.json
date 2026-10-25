@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-25",
+  "controller": "Codex Master Control",
+  "authority": "Current owner request for systematic repairs with parallel specialists and one production writer",
+  "storyAlert": {
+    "automationId": "5006baf5-fbbf-440c-a012-a09bdbd95fc9",
+    "actionId": "042c6c7c-f7e4-4d60-abd2-5f22fa69cf0e",
+    "writeTime": "2026-10-25T05:40:59.529Z",
+    "revisionBefore": "19",
+    "revisionAfter": "20",
+    "status": "ACTIVE",
+    "change": "Recipients only: legacy label UUID references replaced with the same labels' native keys",
+    "resolvedParticipantsBefore": 0,
+    "resolvedParticipantsAfter": 470,
+    "cohortUnchanged": true,
+    "independentProviderVerification": true,
+    "contentAndOtherConfigurationUnchanged": true,
+    "diagnosticSend": false,
+    "actualDelivery": "PENDING_GENUINE_POST"
+  },
+  "metadata": {
+    "writeTime": "2026-10-25T05:48:13.641Z",
+    "api": "Bulk Set Item SEO Tags",
+    "successes": 2,
+    "failures": 0,
+    "postIds": ["ccd34030-ac16-49c2-97cc-9c0ec91fe151", "dc93681a-1488-4d33-a265-4ff86377c4e4"],
+    "nativeAndIndependentChecks": "PASS",
+    "publicFreshCacheMissChecks": "PASS",
+    "ordinaryUrlCachePropagation": "PASS: both canonical URLs returned corrected tags at 05:52:44-45Z",
+    "bodyIdentityAccessAndPublicationDatesUnchanged": true,
+    "blogPublishCalled": false,
+    "noNewAutomationActivation": "Marlowe reports no new run in the bounded post-write native UI check; remote PDF not inspected by Codex"
+  },
+  "homepage": {
+    "status": "DRAFT_NOT_DEPLOYED",
+    "pullRequest": "https://github.com/Presidente49/gatorbait-media-redesign/pull/425",
+    "candidateCommit": "649810ab2c7a65e74bd2b1cf21ec98cdc251bb39",
+    "sha256": "73cc0529112a3a60c9e358c7368576d263ddf1214334539b8e9135f601b6d646",
+    "independentSourceReview": "PASS",
+    "localFixtureBrowserWidths": [390, 430, 1366],
+    "localFixtureChecks": "PASS: count, overflow, hit height, edition refresh, paid Join, focus and hosted form destination",
+    "formSubmitted": false,
+    "realOriginCandidateCheck": "PENDING",
+    "security": "BLOCKED: StackHawk preflight 402 Payment Required; no scan completed"
+  },
+  "billing": {
+    "failedAnnualCases": 4,
+    "unverifiedDeclineReasons": 3,
+    "nativeUiJoinEvidence": "All four native API order.subscriptionId relations established; reported full UI URLs agree, remote artifacts not inspected by Codex",
+    "memberSpecificNoticeDelivery": "UNVERIFIED",
+    "draftsSent": false,
+    "financialOrAccessChanges": false
+  },
+  "queue": {"originalFindings": 40, "scope": "Private execution queue; public receipt omits customer and financial data"},
+  "rollback": "Private exact before snapshots and supported recipients-only/own-tag rollback requests retained; fresh-read before restoring"
+}

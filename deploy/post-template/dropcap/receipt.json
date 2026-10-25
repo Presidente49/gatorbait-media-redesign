@@ -2,7 +2,7 @@
   "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
   "embedId": "14a887e3-38ea-4258-ae0b-7d19cf9feead",
   "beforeRevision": "24",
-  "appliedRevision": "26",
+  "appliedRevision": "27",
   "checks": {
     "beforeRevision": "24",
     "beforeCharacters": 12691,
@@ -47,11 +47,28 @@
     "errors": 0,
     "skipped": 0,
     "nodeSyntax": "PASS",
-    "layerSha256": "8096e5d9f9c8922dba763b68b0b85185acee144e6f2d426d3924edc05ea7f7f0",
+    "layerSha256": "2197544f86fa9c534ec6dd3f5d030f17065c546f028dc60fa2e4b9b53300d749",
     "runnerSha256": "cb9d5114625f99b36e8c079905d856ecea8de7c0f21e1da44bf8cd6c0e883971",
     "independentGateReview": "PASS",
     "rulesetVersioning": "Engine pinned; community registry rule packs may change; retain per-run logs and coverage",
     "dast": "Not run: HawkScan platform402 before scan start. No scan ID or full-site security claim.",
-    "billingChanges": false
+    "billingChanges": false,
+    "completeTemplateAfterHydrationRepair": "PASS: exact layer and all three inline scripts, 83 applicable JavaScript rules; runner 200 Python rules; zero findings/errors/skips."
+  },
+  "lateHydrationRepair": {
+    "beforeRevision": "26",
+    "afterRevision": "27",
+    "beforeCharacters": 14935,
+    "afterCharacters": 14935,
+    "prefixAndCssUnchanged": true,
+    "debounceMs": 80,
+    "observerCapMs": 30000,
+    "regressionTests": 7,
+    "publicInitialsVerified": [
+      "B",
+      "F"
+    ],
+    "firstLetterPixels": 87.4,
+    "noArticleRepublishOrAlertReplay": true
   }
 }

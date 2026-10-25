@@ -837,3 +837,10 @@ When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Mi
 **What happened:** the Story Alert's two saved label UUIDs resolved in the label directory but produced zero participants in the Audience service. The same existing labels expressed as native keys resolved470 contacts. A recipients-only correction moved the primary automation from revision19 to20 ACTIVE; independent complete enumeration and configuration/content comparisons passed. No diagnostic send was made, and actual delivery awaits a genuine new post.
 
 **The rule:** prove the saved runtime audience through the provider's documented key contract, participant count and independent cohort enumeration. A friendly label or successful identity lookup is not recipient execution. Preserve sender, topic, consent and intended cohort; a resolved-participant count is not delivery proof.
+
+
+## Lesson 105: verify the visible article treatment and persist the next check (Oct. 25, 2026)
+
+**What happened:** both Oct. 24 and Oct. 25 Franz pages lacked the established drop cap because the active template omitted its existing layer. The Oct. 25 post also repeated its cover in the opening body. Native rich-text/content checks did not establish the intended visible treatment. One shared template restoration and a separate content correction were independently verified on the ordinary public URL, preserving the full manuscript and publication identity.
+
+**The rule:** before declaring formatting complete, inspect one intended lead image without repeated opening art, the visible large opening letter wrapping prose, readable headings/paragraphs, full ending and credits. A saved CSS class, source file or node count is insufficient. Route missing shared treatment to its owning site layer and preserve unresolved mobile/runtime checks. Record the failure and update the existing newsroom job so the next run checks it; never replay alerts to diagnose presentation. See `docs/loops/newsroom.md` and issue #34.

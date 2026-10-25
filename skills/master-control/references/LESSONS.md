@@ -831,3 +831,9 @@ When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Mi
 **What happened:** the blue game-day band was written and ready to ship. A local render of the real stylesheet (Playwright, Barlow installed) at 320, 390, 430 and 1366 px found three defects before any audience saw them: the score clipped at the right edge on phones, the jump link was white on white, and the band overflowed its box. The cause of the first was a later phone rule, `padding:12px!important` on `.bc-nx>.bc-sc`, that beat the new rule at equal specificity.
 
 **The rule:** build the harness from the real CSS string and the real markup, check document width against viewport width, and read the computed padding, margin and width of anything that looks off. When a later `!important` rule wins at equal specificity, raise the specificity of the new rule (for example `.bc-nx:has(>.bc-sc)>.bc-sc`) instead of stacking more `!important`.
+
+## Lesson 104: label identity is not audience execution (Oct. 25, 2026)
+
+**What happened:** the Story Alert's two saved label UUIDs resolved in the label directory but produced zero participants in the Audience service. The same existing labels expressed as native keys resolved470 contacts. A recipients-only correction moved the primary automation from revision19 to20 ACTIVE; independent complete enumeration and configuration/content comparisons passed. No diagnostic send was made, and actual delivery awaits a genuine new post.
+
+**The rule:** prove the saved runtime audience through the provider's documented key contract, participant count and independent cohort enumeration. A friendly label or successful identity lookup is not recipient execution. Preserve sender, topic, consent and intended cohort; a resolved-participant count is not delivery proof.

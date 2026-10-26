@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: October 26, 2026",
+      "excerpt": "Illustration: GatorBait Media (AI-assisted). A few thoughts to jump start your Monday morning: That the Georgia Bulldogs are favored to beat the Florida Gators when the rivalry takes the first of a two-year vacation from its traditional home in Jacksonville is no surprise. The Bulldogs (6-1, 4-1 SEC) should be favored. They are ranked third in the latest…",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-26-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-26T12:12:11Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6a7cde2e9a71485b89faa934285c5f0e~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: October 26, 2026"
+      }
+    },
+    {
       "title": "Four medals, one golden week for Florida's Skye Blakely",
       "excerpt": "Brenden Martin on Florida junior Skye Blakely's four-medal World Championships, led by all-around gold. Photo: USA Gymnastics.",
       "url": "https://www.gatorbaitmedia.com/post/four-medals-one-golden-week-florida-skye-blakely",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida is one win from bowl eligibility, with a bye before Georgia"
-      }
-    },
-    {
-      "title": "Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll",
-      "excerpt": "Florida is back in the AP Top 25 at No. 20 after beating No. 7 Texas, which fell to No. 19. Miami is No. 1, and Georgia, Florida's Oct. 31 opponent, is No. 5.",
-      "url": "https://www.gatorbaitmedia.com/post/longhorns-tumble-gators-return-florida-is-no-20-in-the-ap-poll",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-18T19:07:26Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_d47f942f03dd4051bcf27525bb61e968~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll"
       }
     }
   ]

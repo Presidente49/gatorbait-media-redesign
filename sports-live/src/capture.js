@@ -73,6 +73,7 @@
     P + ' .gbc-c input{flex:0 0 auto;width:22px;height:22px;margin:0;accent-color:#172c43;cursor:pointer}',
     P + ' .gbc-p{margin:0!important;padding:0;font:400 12px/1.5 "Barlow",sans-serif!important;color:#586477!important;-webkit-text-fill-color:#586477!important}',
     P + ' a,' + P + ' a:visited{color:#172c43!important;-webkit-text-fill-color:#172c43!important;text-decoration:underline;text-decoration-color:#bb3f1e;text-underline-offset:3px}',
+    P + ' .gbc-p a,' + P + ' .gbc-p a:visited{color:#172c43!important;-webkit-text-fill-color:#172c43!important}',
     P + ' .gbc-m{margin:12px 0 0!important;padding:0;font:600 15px/1.5 "Barlow",sans-serif!important;color:#172c43!important;-webkit-text-fill-color:#172c43!important}' + P + ' .gbc-m:empty{display:none}',
     P + ' .gbc-m[data-tone=err]{color:#a12616!important;-webkit-text-fill-color:#a12616!important}',
     P + ' .gbc-hp{display:none}',

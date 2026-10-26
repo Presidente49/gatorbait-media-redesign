@@ -109,6 +109,7 @@ var C="html:has(@) body{background:#061247!important}"+
 "@ .sh-watch.bc-tv{background:linear-gradient(100deg,#0021a5,#0a1a6b)!important;padding-left:100px!important;position:relative}"+
 "@ .sh-watch.bc-tv:before{content:'';position:absolute;left:22px;top:24px;width:60px;height:60px;background:var(--o) url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5v14l11-7z' fill='%23fff'/%3E%3C/svg%3E\") center/34px no-repeat}"+
 "@ a.sh-mcover{border-color:#fff!important}@ .sh-magazine>a:not(.sh-mcover){display:flex;align-items:center;min-height:44px}"+
+"@ .bc-email{display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:0;max-width:100%;min-height:44px;padding:12px 16px;border:1px solid var(--pk);background:var(--nt);color:#fff;font:700 17px/1.2 var(--dc);text-align:center;text-decoration:none;overflow-wrap:anywhere}@ .bc-email:hover{color:var(--pk)}"+
 "@ #sh-freshness a{display:flex;align-items:center;justify-content:center;min-height:44px;background:var(--o);color:#08132f;font:800 16px/1 var(--dc);letter-spacing:.08em;text-transform:uppercase}"+
 "@ .sh-gameday{margin-block:18px}"+
 "@ .sh-front.bc-moved{display:none!important}"+
@@ -541,6 +542,8 @@ var main=root.querySelector('#sh-main'),lead=root.querySelector('.sh-lead'),head
 root.setAttribute('data-bc','1');
 var logo=head&&head.querySelector('.sh-brand>a');if(logo&&!logo.querySelector('.bc-wm'))logo.insertAdjacentHTML('beforeend','<span class="bc-wm" aria-hidden="true">Gator<b>Bait</b><small>Media</small></span>');
 var join=head&&head.querySelector('.sh-join');if(join&&!join.querySelector('span'))join.innerHTML='<span>'+join.innerHTML+'</span>';
+/* Keep the free signup beside the edition; edition refreshes replace only the preview's contents. */
+var mag=root.querySelector('.sh-magazine');if(mag&&!root.querySelector('#gbm-home-email-cta')){var email=document.createElement('a');email.id='gbm-home-email-cta';email.className='bc-email';email.href='https://buddymartinshow.wixforms.com/f/7517931185469654016';email.innerHTML='Get free email alerts <span aria-hidden="true">&nbsp;→</span>';mag.insertAdjacentElement('afterend',email);}
 var hero=document.createElement('section');hero.className='bc-hero bc-solo';hero.setAttribute('aria-label','Top story');hero.innerHTML='<div class="bc-ps"></div>';
 main.insertBefore(hero,front);hero.appendChild(lead);
 var bx=document.createElement('section');bx.className='bc-nx';bx.hidden=true;bx.setAttribute('aria-label','Next game');main.insertBefore(bx,front);

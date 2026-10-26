@@ -89,7 +89,7 @@
     '#gbc-bar .gbc-x{position:absolute;top:4px;right:4px;width:44px;height:44px;margin:0;padding:0;border:0;border-radius:3px;background:transparent;color:#172c43;font:400 26px/1 "Barlow",sans-serif;cursor:pointer}',
     '#gbc-bar :is(a,button):focus-visible{outline:3px solid #bb3f1e;outline-offset:2px}',
     '#gbc-bar .gbc-x:hover{background:#eee8df}',
-    '#gbm-free-email-utility{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:1px solid #cfc7ba;border-radius:3px;color:#172c43!important;background:#fffdf8;font:700 13px/1.2 "Barlow",sans-serif;white-space:nowrap;text-decoration:none}',
+    '#gbm-free-email-utility{box-sizing:border-box;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:1px solid #cfc7ba;border-radius:3px;color:#172c43!important;background:#fffdf8;font:700 13px/1.2 "Barlow",sans-serif;white-space:nowrap;text-decoration:none}',
     '#gbm-free-email-utility:focus-visible{outline:3px solid #bb3f1e;outline-offset:2px}',
     '#gbm-live.gbm-gazette .sh-header nav #gbm-free-email-utility{padding:0 10px!important;background:#fffdf8!important;color:#172c43!important;font:700 12px/1.2 "Barlow",sans-serif!important;letter-spacing:0!important;text-transform:none!important}',
     '#gbm-free-email-row{display:none}',

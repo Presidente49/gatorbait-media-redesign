@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-25T22:05:51Z",
+ "updatedAt": "2026-10-26T17:01:55Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -34,7 +34,7 @@
    ]
   },
   "venue": "DKR-Texas Memorial Stadium",
-  "recapUrl": "https://www.gatorbaitmedia.com/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2",
+  "recapUrl": null,
   "galleryUrl": null,
   "tape": {
    "totalYards": 313,
@@ -176,7 +176,7 @@
     "opp": 24
    },
    "tv": "ABC",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2"
+   "storyUrl": null
   },
   {
    "eventId": "401856734",

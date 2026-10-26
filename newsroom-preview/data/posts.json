@@ -2,6 +2,48 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Four medals, one golden week for Florida's Skye Blakely",
+      "excerpt": "Brenden Martin on Florida junior Skye Blakely's four-medal World Championships, led by all-around gold. Photo: USA Gymnastics.",
+      "url": "https://www.gatorbaitmedia.com/post/four-medals-one-golden-week-florida-skye-blakely",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-25T22:56:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_0351930afd8e49df8f04cca01a622222~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Four medals, one golden week for Florida's Skye Blakely"
+      }
+    },
+    {
+      "title": "Gators make it four straight with sweep of Ole Miss",
+      "excerpt": "No. 5 Florida swept Ole Miss for its fourth straight win, with Kamryn Chaney and Alec Rothe leading the attack. The Gators head to Auburn next.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-four-straight-sweep-ole-miss-volleyball",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-25T22:56:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_4eae063419cb4265b7cbb6684d9dc574~mv2.jpg/v1/fit/w_1000,h_800,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators make it four straight with sweep of Ole Miss"
+      }
+    },
+    {
+      "title": "Florida-Georgia week: Atlanta kickoff, quarterback watch and fan plans",
+      "excerpt": "The Gators return from their open date for a 3:30 p.m. ET Saturday kickoff on ABC. Monday Gator Talk and Atlanta pregame shows fill the week.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-georgia-week-atlanta-kickoff-quarterback-watch-and-fan-plans",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-25T22:14:41Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida-Georgia week: Atlanta kickoff, quarterback watch and fan plans"
+      }
+    },
+    {
       "title": "The Ninth Game Is Collecting Its Toll, One Body at a Time",
       "excerpt": "Buddy Martin on the physical toll of the SEC schedule as Florida and Georgia approach their Oct. 31 meeting. File photo by Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/the-ninth-game-is-collecting-its-toll-one-body-at-a-time",
@@ -125,48 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Jones vs. Philo and other QB perceptions, realities"
-      }
-    },
-    {
-      "title": "Rays the Roof! Have A Day Tampa Bay!  Remembering St. Petersburg Before There Was MLB.",
-      "excerpt": "By Buddy Martin GatorBaitMedia.com As a former St. Petersburg resident and a sports columnist for the St. Petersburg Times who campaigned for major league baseball there back in the day — some 45 years ago — I have a confession and a hurrah. The confession: somewhere between covering the Gators and falling back in love with baseball, I became a Rays fan who…",
-      "url": "https://www.gatorbaitmedia.com/post/rays-the-roof",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-20T22:34:56Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_87834ebcaf3f4606a29e8eef62f9aa65~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Rays the Roof!"
-      }
-    },
-    {
-      "title": "No. 1 expectations, SEC crossroads and the playoff picture",
-      "excerpt": "Franz Beard's Tuesday column: Florida basketball's preseason expectations, college football rankings, the outlook for all 16 SEC teams and his College Football Playoff predictions.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-20-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-20T15:05:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c02758730b3941e39694492c7bc555a5~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for No. 1 expectations, SEC crossroads and the playoff picture"
-      }
-    },
-    {
-      "title": "Gators find a spark in Austin",
-      "excerpt": "Eddie Gilley on Florida's 27-24 win at Texas: improved defense, third-down execution and the spark that helped the Gators fight back. Photo courtesy UAA and Hannah White.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-find-a-spark-in-austin",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-19T21:27:49Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators find a spark in Austin"
       }
     }
   ]

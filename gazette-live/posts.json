@@ -2,6 +2,48 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Four medals, one golden week for Florida's Skye Blakely",
+      "excerpt": "Brenden Martin on Florida junior Skye Blakely's four-medal World Championships, led by all-around gold. Photo: USA Gymnastics.",
+      "url": "https://www.gatorbaitmedia.com/post/four-medals-one-golden-week-florida-skye-blakely",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-25T22:56:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_0351930afd8e49df8f04cca01a622222~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Four medals, one golden week for Florida's Skye Blakely"
+      }
+    },
+    {
+      "title": "Gators make it four straight with sweep of Ole Miss",
+      "excerpt": "No. 5 Florida swept Ole Miss for its fourth straight win, with Kamryn Chaney and Alec Rothe leading the attack. The Gators head to Auburn next.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-four-straight-sweep-ole-miss-volleyball",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-25T22:56:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_4eae063419cb4265b7cbb6684d9dc574~mv2.jpg/v1/fit/w_1000,h_800,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators make it four straight with sweep of Ole Miss"
+      }
+    },
+    {
+      "title": "Florida-Georgia week: Atlanta kickoff, quarterback watch and fan plans",
+      "excerpt": "The Gators return from their open date for a 3:30 p.m. ET Saturday kickoff on ABC. Monday Gator Talk and Atlanta pregame shows fill the week.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-georgia-week-atlanta-kickoff-quarterback-watch-and-fan-plans",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-25T22:14:41Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida-Georgia week: Atlanta kickoff, quarterback watch and fan plans"
+      }
+    },
+    {
       "title": "The Ninth Game Is Collecting Its Toll, One Body at a Time",
       "excerpt": "Buddy Martin on the physical toll of the SEC schedule as Florida and Georgia approach their Oct. 31 meeting. File photo by Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/the-ninth-game-is-collecting-its-toll-one-body-at-a-time",
@@ -237,48 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Longhorns Tumble, Gators Return: Florida Is No. 20 In The AP Poll"
-      }
-    },
-    {
-      "title": "Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”",
-      "excerpt": "Buddy Martin: There are worse ways to spend a Saturday than beating Texas in Austin while Texas A&M fans do the Gator Chomp. However, let’s maybe not order the commemorative plates yet.",
-      "url": "https://www.gatorbaitmedia.com/post/deep-in-the-heart-of-texas-a-gator-grin-a-song-and-the-sigh-we-re-back",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-18T17:22:07Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a0d5a806a0924b1c982fd5b03d39b777~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Deep In The Heart Of Texas, A Gator Grin. A Song. And The Sigh “We’re Back!”"
-      }
-    },
-    {
-      "title": "Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)",
-      "excerpt": "Florida finds a way to get out of Austin with a win on a day where they continue to find more about themselves every day. Loren Meadows breaks down what we thought, what we got and what it means.",
-      "url": "https://www.gatorbaitmedia.com/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-10-18T16:29:42Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_2f6744f26b44456cbbff97d6181203eb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)"
-      }
-    },
-    {
-      "title": "The Gators Sucked Less, Turning Arch Madness Into Arch Sadness",
-      "excerpt": "Franz Beard: A bye week, a quarterback question and a defense that found its fight in Austin. Plus every SEC result: Auburn stuns No. 1 Georgia, Tennessee routs Alabama and more.",
-      "url": "https://www.gatorbaitmedia.com/post/the-gators-sucked-less-turning-arch-madness-into-arch-sadness",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-18T13:30:11Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_9757cdda175141a595ad34d51439d9c6~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Gators Sucked Less, Turning Arch Madness Into Arch Sadness"
       }
     }
   ]

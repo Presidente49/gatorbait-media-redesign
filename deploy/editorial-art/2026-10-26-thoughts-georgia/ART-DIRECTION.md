@@ -29,8 +29,10 @@ No other words. No GatorBait masthead at top. No Buddy Martin Show wording. No b
 
 ## Verification
 
-Native existing-post update at 2026-10-26T12:24:53.128Z passed exact-candidate body, one inline image, new cover match, manuscript preservation, author/category/access/canonical/first-publication preservation and unchanged automation checks. Public desktop and forced-mobile QC is recorded separately from this configuration evidence.
+Native existing-post update at 2026-10-26T12:24:53.128Z passed exact-candidate body, one inline image, new cover match, manuscript preservation, author/category/access/canonical/first-publication preservation and unchanged automation checks. Independent public QC passed desktop 1366/1920 and Wix forced-mobile 390/430: exactly one loaded illustration, complete saved copy and ending, actual Franz byline, visible honest credit, single drop cap, corrected score and no overflow. Physical device testing remains unverified.
 
 Native automation comparison at 12:25:41Z still showed 23 runs with exactly one run today at 08:12 ET; no additional activation observed after the art update. The notification wrapper reached the exact canonical article.
 
-The cover-only metadata correction was saved at 12:27:51Z with the body, original publication, lastPublishedDate and route unchanged. Independent final public checks must confirm the restored OG image and one visible image.
+The cover-only metadata correction was saved at 12:27:51Z with the body, original publication, lastPublishedDate and route unchanged. Independent final public checks at 12:28:14Z/12:28:24Z confirmed the NEW og:image, exactly one visible opening image and zero native hero images on fresh desktop and forced-mobile pages.
+
+Final native route check after the cover-only save at 12:28:32Z: unchanged 23 runs, exactly one Today 08:12 run; no additional activation observed. [Controller public work record](https://github.com/Presidente49/gatorbait-media-redesign/issues/34#issuecomment-6416029324).

@@ -13,7 +13,7 @@ Owner-requested magazine-style artwork for [Franz Beard's October 26, 2026 colum
 - The generated 1672 × 941 PNG master, optimized export and exact prompt are retained in the private production artifact and isolated local Git archive.
 - Built-in `image_gen` used; no paid stock purchase or new subscription.
 - Phone-size 320 × 180 artwork inspection: headline and matchup readable, no invented logos, faces, uniforms, rankings or event details.
-- Post-only presentation uses one opening rich-content image and the same native cover for feed/social previews. Separate cover display is off. No global template modification.
+- Post-only presentation uses one opening rich-content image and the same native cover for feed/social previews. Native cover display is enabled for share-image metadata; no native heroImage is assigned, so the article has one visible opening image. No global template modification.
 - Existing post ID, first publication, canonical URL, writer, complete manuscript and access are preserved. Native email/Spaces automation is unchanged.
 
 ## Production prompt
@@ -32,3 +32,5 @@ No other words. No GatorBait masthead at top. No Buddy Martin Show wording. No b
 Native existing-post update at 2026-10-26T12:24:53.128Z passed exact-candidate body, one inline image, new cover match, manuscript preservation, author/category/access/canonical/first-publication preservation and unchanged automation checks. Public desktop and forced-mobile QC is recorded separately from this configuration evidence.
 
 Native automation comparison at 12:25:41Z still showed 23 runs with exactly one run today at 08:12 ET; no additional activation observed after the art update. The notification wrapper reached the exact canonical article.
+
+The cover-only metadata correction was saved at 12:27:51Z with the body, original publication, lastPublishedDate and route unchanged. Independent final public checks must confirm the restored OG image and one visible image.

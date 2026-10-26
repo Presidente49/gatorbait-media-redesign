@@ -22,16 +22,17 @@ const receipts = [];
 const browser = await chromium.launch({ headless: true });
 test.after(async () => { await browser.close(); if (proof) writeFileSync(proof + '/checks.json', JSON.stringify(receipts, null, 2)); });
 
-function fixture(legacy) {
+function fixture(legacy, article) {
   return '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>@font-face{font-family:Barlow;font-weight:400;src:url(/_qa/Barlow-400.woff2)}@font-face{font-family:Barlow;font-weight:700;src:url(/_qa/Barlow-700.woff2)}' + css +
     'body{margin:0}main{padding:20px}#form-host{max-width:560px;margin:auto}#read{height:2500px}' +
     // Existing native article card override: candidate must actually beat it.
-    'html body #SITE_PAGES [data-hook=post-page] .gbc{background:#0021a5!important}html body #SITE_PAGES [data-hook=post-page] .gbc .gbc-h{color:#fff!important}</style></head><body>' +
+    'html body #SITE_PAGES [data-hook=post-page] .gbc{background:#0021a5!important}html body #SITE_PAGES [data-hook=post-page] .gbc .gbc-h{color:#fff!important}' +
+    'html body #SITE_PAGES [data-hook="post-page"] .gbc :is(.gbc-h,.gbc-c,.gbc-c span,.gbc-p,.gbc-m,a){color:#fff!important;-webkit-text-fill-color:#fff!important}</style></head><body>' +
     '<div id="gbm-live" class="fp26 fp-day"><nav class="fp-nav"><div class="fp-wrap"><div class="fp-links">' +
     '<a href="/">Latest</a><a href="/magazine">Magazine</a><a href="/the-buddy-martin-show">TV &amp; Podcasts</a>' +
     '<a class="fp-nav-extra" href="#read">Our writers</a><a class="fp-nav-extra" href="#read">Schedule</a><a class="fp-nav-extra" href="#read">Store</a></div>' +
     '<a class="fp-mobile-join" href="/pricing-plans">Join</a><span class="fp-nav-identity">Independent Florida coverage since 1979</span></div></nav>' +
-    '<main><h1>GatorBait reporting</h1><div id="form-host"></div><div id="read">A long public editorial page.</div></main></div>' +
+    '<main><h1>GatorBait reporting</h1>' + (article ? '<div id="SITE_PAGES"><section data-hook="post-page"><div id="form-host"></div></section></div>' : '<div id="form-host"></div>') + '<div id="read">A long public editorial page.</div></main></div>' +
     (legacy ? '<script src="/_qa/legacy.js"></script>' : '') + '<script src="/_qa/capture.js"></script></body></html>';
 }
 function currentFixture() {
@@ -48,7 +49,7 @@ function currentFixture() {
     '<script>window.__headerBefore={top:document.getElementById("gbm-live").getBoundingClientRect().top,controls:[...document.querySelectorAll("#gbm-mobile-shell > *")].map(e=>({w:e.getBoundingClientRect().width,h:e.getBoundingClientRect().height,html:e.outerHTML}))};</script>' +
     '<script src="/_qa/capture.js"></script></body></html>';
 }
-async function setup({ path = '/', width = 390, storage = {}, legacy = false, sourceMode = false, current = false } = {}) {
+async function setup({ path = '/', width = 390, storage = {}, legacy = false, sourceMode = false, current = false, article = false } = {}) {
   const context = await browser.newContext({ viewport: { width, height: 844 }, reducedMotion: 'reduce' });
   const page = await context.newPage(), requests = [];
   await page.clock.install({ time: new Date('2026-10-26T12:00:00Z') });
@@ -61,7 +62,7 @@ async function setup({ path = '/', width = 390, storage = {}, legacy = false, so
     if (url.hostname === 'www.gatorbaitmedia.com' && url.pathname === '/_qa/capture.js') return route.fulfill({ contentType: 'application/javascript', body: sourceMode ? source : candidate });
     if (url.hostname === 'www.gatorbaitmedia.com' && url.pathname === '/_qa/legacy.js') return route.fulfill({ contentType: 'application/javascript', body: legacyShare });
     if (/^\/_qa\/Barlow-(400|700|800)\.woff2$/.test(url.pathname)) return route.fulfill({ contentType: 'font/woff2', body: readFileSync(new URL('../../assets/weather/' + url.pathname.split('/').pop(), import.meta.url)) });
-    if (route.request().isNavigationRequest()) return route.fulfill({ contentType: 'text/html', body: current ? currentFixture() : fixture(legacy) });
+    if (route.request().isNavigationRequest()) return route.fulfill({ contentType: 'text/html', body: current ? currentFixture() : fixture(legacy, article) });
     if (url.hostname === 'www.wixapis.com') {
       requests.push({ path: url.pathname, body: JSON.parse(route.request().postData() || '{}') });
       if (url.pathname === '/oauth2/token') return route.fulfill({ contentType: 'application/json', body: JSON.stringify({ access_token: 'qa-only-visitor', expires_in: 14400 }) });
@@ -297,7 +298,7 @@ test('320/390/430/1366 layout: visible utility, preserved paidJoin, readable war
 });
 
 test('actual Gazette/Broadcast header fixture:44px phone row, preserved shell controls, desktop entry and SPA/resize cleanup', async () => {
-  for (const width of [320, 390, 430, 1366]) {
+  for (const width of [320, 390, 430, 1366, 1728]) {
     const { page, close } = await setup({ width, current: true });
     try {
       await page.evaluate(() => document.fonts.ready);
@@ -312,6 +313,8 @@ test('actual Gazette/Broadcast header fixture:44px phone row, preserved shell co
           immediatelyAfterShell: !!row && shell.nextElementSibling === row,
           before: window.__headerBefore, rootTop: document.getElementById('gbm-live').getBoundingClientRect().top,
           controls: [...document.querySelectorAll('#gbm-mobile-shell > *')].map(el => el.outerHTML),
+          desktopNavRows: [...new Set([...document.querySelectorAll('.sh-header nav a')].map(el => Math.round(el.getBoundingClientRect().top)))].length,
+          desktopHeaderHeight: document.querySelector('.sh-header').getBoundingClientRect().height,
           overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
         };
       });
@@ -339,6 +342,28 @@ test('actual Gazette/Broadcast header fixture:44px phone row, preserved shell co
       await page.evaluate(() => { history.pushState({}, '', '/'); dispatchEvent(new PopStateEvent('popstate')); });
       assert.equal(await page.locator('#gbm-free-email-utility').count(), 1);
       receipts.push({ check: 'current-gazette-header', width, pass: true, phoneFlowShift: width <= 820 ? 44 : 0, preservedLogoShopMenu: true, documentOverflow: 0 });
+    } finally { await close(); }
+  }
+});
+
+test('article-end privacy link stays ink on warm white against the actual native important rule', async () => {
+  for (const width of [390, 1366]) {
+    const { page, close } = await setup({ path: '/post/franz-privacy-contrast-fixture', width, article: true });
+    try {
+      await page.evaluate(() => { document.getElementById('form-host').innerHTML = GBM_CAPTURE.html('story-end', { extra: 'gbc-end' }); });
+      const state = await page.locator('.gbc-end .gbc-p a').evaluate(el => ({
+        color: getComputedStyle(el).color,
+        fill: getComputedStyle(el).webkitTextFillColor,
+        background: getComputedStyle(el.closest('.gbc')).backgroundColor,
+        href: el.href,
+        nativeScopeMatches: el.matches('html body #SITE_PAGES [data-hook="post-page"] .gbc :is(.gbc-h,.gbc-c,.gbc-c span,.gbc-p,.gbc-m,a)')
+      }));
+      assert.equal(state.nativeScopeMatches, true, 'the observed native override must actually apply to this fixture');
+      assert.equal(state.color, 'rgb(23, 44, 67)');
+      assert.equal(state.fill, 'rgb(23, 44, 67)');
+      assert.equal(state.background, 'rgb(255, 253, 248)');
+      assert.equal(state.href, 'https://www.gatorbaitmedia.com/policies');
+      receipts.push({ check: 'article-privacy-native-contrast', width, pass: true, ...state });
     } finally { await close(); }
   }
 });

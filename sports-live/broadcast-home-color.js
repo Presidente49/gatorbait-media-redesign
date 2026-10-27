@@ -490,7 +490,7 @@ if(deck){var desc=deck.textContent.trim(),c=credit.replace(/\.\s*$/,''),at=desc.
 /* Reconcile a stale bundled lead with the same successful current RSS read used by the rows.
    One existing lead node is updated; there is no second renderer, observer or additional polling. */
 function freshLead(root){
-var p=D.all&&D.all[0],lead=root.querySelector('.bc-hero .sh-lead');
+var p=homepageStories(D.all)[0],lead=root.querySelector('.bc-hero .sh-lead');
 if(root.__bcLeadReconciled||!p||!lead||!p[0]||p[0]>Date.now()+DAY)return;
 var current=lead.querySelector('a[href]'),currentImage=lead.querySelector('img'),currentTitle=lead.querySelector('h1,h2'),url=storyPath(p[2]);
 if(!url||!wixPhoto(p[4]))return;
@@ -509,11 +509,18 @@ var notice=root.querySelector('#sh-freshness');if(notice)notice.textContent='';
 /* Reuse the same live RSS records for matching photo, title, author and publication date. */
 function storyPath(h){try{return new URL(h,location.href).pathname.replace(/\/+$/,'');}catch(e){return'';}}
 function wixPhoto(h){try{var u=new URL(h),m=/^\/media\/([^/]+~mv2\.(?:jpe?g|png|webp))(?:\/|$)/i.exec(u.pathname);return u.protocol==='https:'&&u.hostname==='static.wixstatic.com'&&m?u.origin+'/media/'+m[1]+'/v1/fit/w_480,h_320,al_c,q_80/file.jpg':'';}catch(e){return'';}}
+/* Owner order, Oct. 27: named writers first; Brenden/staff last within the current nine stories.
+   Select the chronological window before partitioning, so older writer posts cannot displace current staff news. */
+function homepageStories(records){
+var seen={},t=Date.now(),current=(records||[]).slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||f[0]>t+DAY||!h||seen[h])return false;seen[h]=true;return true;}).slice(0,9);
+function staff(f){return /^(?:brenden martin|gator\s*bait\s+staff)$/i.test(String(f[3]||'').trim().replace(/\s+/g,' '));}
+return current.filter(function(f){return!staff(f);}).concat(current.filter(staff));
+}
 function freshRows(root){var list=root.querySelector('.bc-rows');if(!list||!D.all)return;
 var lead=root.querySelector('.bc-hero .sh-lead a[href]'),seen={},original={};if(lead)seen[storyPath(lead.href)]=true;
 [].slice.call(root.querySelectorAll('.sh-lead,.sh-support article,.sh-wire-item,.sh-coverage article')).forEach(function(a){var l=a.querySelector('a[href]'),im=a.querySelector('img');if(l&&im)original[storyPath(l.href)]=im.getAttribute('alt')||'';});
-// Select by publication date before deciding which individual records can show a credited photo.
-var rows=D.all.slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||f[0]>Date.now()+DAY||!h||seen[h])return false;seen[h]=true;return true;}).slice(0,8);if(!rows.length)return;
+// Lead and rows share one current-story window and editorial order, independent of photo availability.
+var rows=homepageStories(D.all).filter(function(f){var h=storyPath(f[2]);if(seen[h])return false;seen[h]=true;return true;}).slice(0,8);if(!rows.length)return;
 var hasUAA=false,hasHannah=false;var html=rows.map(function(f,i){var id=(/\/media\/([^/~]+)/.exec(f[4])||[])[1],native=COVER_META[id]||{},credit=native.credit||(D.credits||{})[id]||f[6]||'',alt=native.alt||(D.imageAlts||{})[id]||f[5]||original[storyPath(f[2])]||f[1],photo=!!wixPhoto(f[4]),art=/(collage|illustration|graphic)/i.test(alt)||(D.covers||[]).indexOf(id)>=0;
 if(photo){hasUAA=hasUAA||/\bUAA\b/.test(credit);hasHannah=hasHannah||/Hannah White/.test(credit);if(credit&&alt.indexOf(credit)<0)alt+=' '+credit;}
 return'<li class="bc-row '+(i<2?'bc-feature':'bc-compact')+(art?' bc-cover-art':'')+'" data-published="'+new Date(f[0]).toISOString()+'"><a href="'+esc(f[2])+'">'+(photo?'<span class="bc-thumb"><img src="'+esc(wixPhoto(f[4]).replace('w_480,h_320','w_800,h_800'))+'" alt="'+esc(alt)+'" width="480" height="320" loading="lazy" decoding="async"></span>':'')+'<span><h3>'+esc(f[1])+'</h3>'+(photo&&credit?'<span class="bc-credit">'+esc(credit)+'</span>':'')+'</span></a></li>';}).join('');

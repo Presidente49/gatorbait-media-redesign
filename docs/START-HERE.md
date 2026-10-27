@@ -42,7 +42,7 @@ Claude (Jarvis) and Codex cannot message each other directly. Issue #34 is the s
 
 ## 4. Editorial rules
 
-- **Order is chronological, newest first.** No writer is pinned as lead. The old "Buddy Martin leads" rule is retired.
+- **Homepage order (Brenden, Oct. 27):** select the nine newest unique eligible stories, then place named writers newest first and Brenden Martin/GatorBait Staff pieces last, newest first within each group. Franz's current column remains the lead and Buddy runs above the current staff article; do not change publication timestamps to arrange stories. Other current-news lists remain chronological, newest first.
 - One canonical URL per story; no duplicate posts, no duplicate alerts.
 - Bylines: a writer's piece runs under that writer's member. Pieces Jarvis or an agent writes run under Brenden Martin (member for `brenden@gatorbaitmedia.com`). Never member `16433bab`. Chad Ritch is not staff.
 - Sources: every stat from ESPN or FloridaGators.com; every quote from its full source; times converted to ET. Never cite, name, quote, link or credit Gator Country; read it as a tip only, confirm elsewhere or leave it out.

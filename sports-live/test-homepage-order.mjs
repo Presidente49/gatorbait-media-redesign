@@ -49,7 +49,7 @@ test('current named writers lead, Buddy precedes Brenden, staff finishes the sam
   h.context.freshRows(h.root);
   const rows = Array.from(h.list.innerHTML.matchAll(/<li\b[^>]*><a href="([^"]+)"/g), m => m[1]);
   assert.equal(h.link.href, '/post/franz');
-  assert.deepEqual(rows, ['/post/buddy', ...Array.from({ length: 5 }, (_, i) => `/post/writer-${i}`), '/post/brenden', '/post/staff']);
+  assert.deepEqual(rows, ['/post/buddy', ...Array.from({ length: 5 }, (_, i) => `/post/writer-${i}`), '/post/staff', '/post/brenden']);
   assert.equal(new Set([h.link.href, ...rows]).size, 9);
   assert.equal(JSON.stringify(records), before, 'Publication timestamps and source records must not change');
 });
@@ -57,6 +57,17 @@ test('current named writers lead, Buddy precedes Brenden, staff finishes the sam
 test('selects current nine before partitioning so old writers cannot crowd out current staff', () => {
   const records = [story('current-staff', 'GatorBait Staff'), ...Array.from({ length: 12 }, (_, i) => story(`writer-${i}`, 'Franz Beard', 1000 + i))];
   assert.deepEqual(harness(records).order(), [...Array.from({ length: 8 }, (_, i) => `/post/writer-${i}`), '/post/current-staff']);
+});
+
+test('newest staff column is the final item even when four older staff stories share the window', () => {
+  const records = [story('current-staff', 'GatorBait Staff'), story('franz', 'Franz Beard', 1), story('buddy', 'Buddy Martin', 2),
+    ...Array.from({ length: 4 }, (_, i) => story(`older-staff-${i}`, i % 2 ? 'Brenden Martin' : 'GatorBait Staff', 3 + i))];
+  const h = harness(records);
+  h.context.freshLead(h.root);
+  h.context.freshRows(h.root);
+  assert.equal(h.link.href, '/post/franz');
+  assert.deepEqual(Array.from(h.list.innerHTML.matchAll(/<li\b[^>]*><a href="([^"]+)"/g), m => m[1]),
+    ['/post/buddy', '/post/older-staff-3', '/post/older-staff-2', '/post/older-staff-1', '/post/older-staff-0', '/post/current-staff']);
 });
 
 test('deduplicates canonical paths and skips invalid or far-future dates before filling nine slots', () => {
@@ -68,7 +79,7 @@ test('deduplicates canonical paths and skips invalid or far-future dates before 
 
 test('recognizes case and whitespace variants without demoting other named writers', () => {
   const records = [story('staff', ' gAtOrBaIt   StAfF '), story('brenden', ' BRENDEN MARTIN ', 1), story('buddy', 'Buddy Martin', 2)];
-  assert.deepEqual(harness(records).order(), ['/post/buddy', '/post/staff', '/post/brenden']);
+  assert.deepEqual(harness(records).order(), ['/post/buddy', '/post/brenden', '/post/staff']);
 });
 
 test('all-staff fallback and empty feeds remain safe', () => {

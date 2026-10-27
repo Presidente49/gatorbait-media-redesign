@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-26T17:01:55Z",
+ "updatedAt": "2026-10-27T11:01:29Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -192,14 +192,14 @@
   },
   {
    "eventId": "401856739",
-   "date": "2026-11-07T05:00:00Z",
+   "date": "2026-11-08T00:45:00Z",
    "opponent": "Oklahoma",
    "opponentRank": null,
    "opponentRecord": null,
    "home": true,
    "status": "scheduled",
    "score": null,
-   "tv": null,
+   "tv": "SEC Network",
    "storyUrl": null
   },
   {

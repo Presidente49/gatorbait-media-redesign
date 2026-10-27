@@ -36,7 +36,7 @@ const credits = JSON.parse(read('sports-live/front-page.config.json')).credits |
 // Postgame only: the 22-character page selector repeats several hundred times in the CSS, so the bundle stores it as one backtick and the runtime expands it back before the style is injected (the CSS that reaches the page is identical).
 const PM_SEL = '#gbm-magazine-page.pm';
 const MZ_SEL = '#gbm-magazine-page.mz26 '; // second token (tilde, absent from the CSS): 290 more repeats, ~6 KB
-const MAX_JS = (POSTGAME ? 200 : 184) * 1024; // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
+const MAX_JS = 200 * 1024; // One cap for every variant: 204,800 bytes, the documented magazine bundle budget (docs/ROADMAP.md step 3; the postgame cap since Oct. 18). The weekly/pregame guard was 184 KB (Oct. 16, pregame network skin); the shared homepage credits list it embeds grew past it on Oct. 23 (render-qc red on main), and the weekly loader is retired, so the guard now matches the budget. History: postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition; weekly 180 -> 184 KB on Oct. 16.
 
 // Strip editorial meta (notes to the compiler) so the bundle carries only what renders; everything else goes through untouched.
 const META = new Set(['$comment', 'todo']);

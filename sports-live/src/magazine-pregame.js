@@ -78,7 +78,7 @@
     var S = obj(D.series), games = S ? list(S.games, 16).map(obj).filter(function (g) { return g && num(g.year) && num(g.fla) !== null && num(g.mizz) !== null; }) : [];
     if (!games.length) return '';
     var w = 0, l = 0, t = 0, opp = pgOpp(D);
-    var tiles = games.map(function (g) { var win = g.fla > g.mizz, tie = g.fla === g.mizz; if (win) w++; else if (tie) t++; else l++; return '<li class="' + (win ? 'pg-w' : 'pg-l') + '"><b>' + esc("’" + String(g.year).slice(2)) + '</b><span>' + g.fla + '-' + g.mizz + '</span><small>' + (g.site === 'H' ? 'Home' : 'Road') + '</small><i class="sr-only">' + (win ? 'Florida win' : tie ? 'Tie' : esc(opp) + ' win') + '</i></li>'; }).join('');
+    var tiles = games.map(function (g) { var win = g.fla > g.mizz, tie = g.fla === g.mizz; if (win) w++; else if (tie) t++; else l++; return '<li class="' + (win ? 'pg-w' : 'pg-l') + '"><b>' + esc("’" + String(g.year).slice(2)) + '</b><span>' + g.fla + '-' + g.mizz + '</span><small>' + (g.site === 'H' ? 'Home' : g.site === 'N' ? 'Neutral' : 'Road') + '</small><i class="sr-only">' + (win ? 'Florida win' : tie ? 'Tie' : esc(opp) + ' win') + '</i></li>'; }).join('');
     return '<section class="pg-series" id="pg-series" aria-labelledby="pg-series-t">' + pgHeadSec('pg-series', text(S.label, 40), text(S.headline, 80)) + '<p class="pg-lede">' + esc(text(S.line, 300)) + '</p>' +
       '<ol class="pg-yrs">' + tiles + '</ol><p class="pg-tally"><b class="pg-w">Florida ' + w + '</b><b class="pg-l">' + esc(opp) + ' ' + l + '</b>' + (t ? '<b class="pg-l">Tie ' + t + '</b>' : '') + '</p>' + pgSrc(S.source) + '</section>';
   }

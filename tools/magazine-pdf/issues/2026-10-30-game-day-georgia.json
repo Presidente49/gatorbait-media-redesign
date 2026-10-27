@@ -1,0 +1,48 @@
+{
+ "desk": {
+  "label": "From the GatorBait desk",
+  "kicker": "The desk · Saturday math",
+  "title": "Two sets of numbers, one point spread",
+  "dek": "The market says Georgia by 11.5. The season averages say something closer to a touchdown. Both can be true, and the gap between them is Saturday's story.",
+  "byline": "By the GatorBait Media Desk",
+  "pull": "The averages say a touchdown. The line says more.",
+  "chart": {
+   "label": "Points a game, season averages (seven games each)",
+   "bars": [
+    {"label": "Florida scores", "value": 39.6, "tone": "blue"},
+    {"label": "Georgia allows", "value": 15.9, "tone": "orange"},
+    {"label": "Georgia scores", "value": 43.0, "tone": "orange"},
+    {"label": "Florida allows", "value": 28.3, "tone": "blue"}
+   ],
+   "max": 45
+  },
+  "paragraphs": [
+   "Georgia is favored by 11.5 at 3:30 p.m. ET on Saturday, and the total is 55.5. Do the arithmetic and the market is picturing something near Georgia 33.5, Florida 22.",
+   "Now put the season averages side by side. Florida scores 39.6 points a game. Georgia allows 15.9. Georgia scores 43.0. Florida allows 28.3. Split each matchup down the middle and you land at about 28 for Florida and 36 for Georgia. That is a touchdown and change, not 11.5. It is not a prediction. It is a reminder that the line and the stats are answering different questions. The line knows about a neutral site in Georgia's state capital, a five-game losing streak in the series and a Florida quarterback who has not been named. The averages do not.",
+   "Where the line has a case: Georgia's defense has given up 90.3 rushing yards a game at 2.8 a carry, and Florida's offense is built on Jadan Baugh's 763 yards. Georgia converts 54.0 percent of its third downs; Florida's defense allows 43.7. Georgia has allowed eight sacks all season. Florida has taken nine.",
+   "Where the averages have a case: Florida's 39.6 points a game include 44 at Auburn and 52 against Ole Miss, but the Gators have scored 27 or fewer in each of the last three games: 17 at Missouri, 19 against South Carolina, 27 at Texas. Georgia's lone loss came at home to Auburn, 27-24, the same Saturday Florida won in Austin.",
+   "The desk's view: the spread is about the quarterback question and the streak, not the stat sheet. If Florida's run game travels and the defense gets Georgia off the field on third down, the averages get a vote."
+  ],
+  "source": "Line and total: DraftKings via ESPN pickcenter, Oct. 27. Points for and against figured from ESPN's final scores; rushing, third-down and sack figures from ESPN 2026 team statistics (seven games each), Oct. 27."
+ },
+ "credits": {
+  "label": "Masthead",
+  "people": [
+   {"role": "Publisher and Editor-in-Chief", "name": "Buddy Martin"},
+   {"role": "Owner and Executive Producer, GatorBait Media and GatorBait TV", "name": "Brenden Martin"},
+   {"role": "Columnist", "name": "Franz Beard"},
+   {"role": "Writer", "name": "Eddie Gilley"},
+   {"role": "Writer", "name": "Loren Meadows"},
+   {"role": "Photography", "name": "Chris Spears"},
+   {"role": "Pregame desk, graphics and production", "name": "The GatorBait Media Desk"}
+  ],
+  "lines": [
+   "GatorBait Magazine is an independent Florida Gators publication. It was founded by David Stirt and is published today by GatorBait Media.",
+   "The Buddy Martin Show streams nightly from GatorBait Media.",
+   "Cover and file photos by Chris Spears, GatorBait Media. Texas photos courtesy UAA (University Athletic Association, FloridaGators.com) and Hannah White; see more of her work on Instagram (instagram.com/hannahmorganphoto) and the official Florida Gators galleries at floridagators.com/galleries. Illustrations by GatorBait Media.",
+   "Statistics, rankings and betting lines: ESPN, with the DraftKings line via ESPN. Series history, broadcast information and availability reports: FloridaGators.com."
+  ],
+  "contact": "www.gatorbaitmedia.com",
+  "copyright": "© 2026 GatorBait Media. All rights reserved."
+ }
+}

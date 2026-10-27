@@ -1,0 +1,229 @@
+{
+ "read": "2026-10-27",
+ "event": "401856734",
+ "ap": {
+  "week": "Week 9",
+  "FLA": 17,
+  "UGA": 3
+ },
+ "records": {
+  "FLA": [
+   "5-2",
+   "3-2"
+  ],
+  "UGA": [
+   "6-1",
+   "4-1"
+  ]
+ },
+ "line": "UGA -11.5",
+ "total": 55.5,
+ "predictor": {
+  "FLA": 17.9,
+  "UGA": 82.1
+ },
+ "florida": {
+  "ppg": 39.6,
+  "pa": 28.3,
+  "ypg": 450.9,
+  "rush": 194.3,
+  "ypc": 4.8,
+  "pass": 256.6,
+  "rushA": 121.6,
+  "passA": 255.0,
+  "third": 44.6,
+  "thirdA": 43.7,
+  "poss": 33.0,
+  "to": 4.0,
+  "sacks": 22.0,
+  "sacksA": 9.0
+ },
+ "georgia": {
+  "ppg": 43.0,
+  "pa": 15.9,
+  "ypg": 469.9,
+  "rush": 197.7,
+  "ypc": 6.0,
+  "pass": 272.1,
+  "rushA": 90.3,
+  "passA": 185.0,
+  "third": 54.0,
+  "thirdA": 35.9,
+  "poss": 30.2,
+  "to": 5.0,
+  "sacks": 22.0,
+  "sacksA": 8.0,
+  "ypcA": 2.8,
+  "cmp": 71.6,
+  "ypa": 9.7
+ },
+ "points": {
+  "FLA": [
+   277,
+   198
+  ],
+  "UGA": [
+   301,
+   111
+  ]
+ },
+ "leaders": {
+  "UGA passingYards": [
+   "Gunner Stockton",
+   "117/158, 1,570 YDS, 16 TD, 4 INT"
+  ],
+  "UGA rushingYards": [
+   "Dwight Phillips Jr.",
+   "47 CAR, 348 YDS, 2 TD"
+  ],
+  "UGA receivingYards": [
+   "Craig Dandridge",
+   "17 REC, 310 YDS, 1 TD"
+  ],
+  "UGA sacks": [
+   "Raylen Wilson",
+   "4"
+  ],
+  "UGA totalTackles": [
+   "Raylen Wilson",
+   "44"
+  ],
+  "FLA passingYards": [
+   "Aaron Philo",
+   "105/149, 1,341 YDS, 9 TD, 3 INT"
+  ],
+  "FLA rushingYards": [
+   "Jadan Baugh",
+   "135 CAR, 763 YDS, 13 TD"
+  ],
+  "FLA receivingYards": [
+   "Dallas Wilson",
+   "29 REC, 403 YDS, 3 TD"
+  ],
+  "FLA sacks": [
+   "Jayden Woods",
+   "4.5"
+  ],
+  "FLA totalTackles": [
+   "Myles Graham",
+   "48"
+  ]
+ },
+ "slate": [
+  {
+   "time": "12:45 p.m.",
+   "tv": "SEC Network",
+   "away": {
+    "name": "Auburn",
+    "rec": "4-3"
+   },
+   "home": {
+    "name": "Ole Miss",
+    "rec": "5-2",
+    "rank": 12
+   },
+   "line": "MISS -13.5",
+   "ou": 57.5
+  },
+  {
+   "time": "3:30 p.m.",
+   "tv": "ABC",
+   "away": {
+    "name": "Florida",
+    "rec": "5-2",
+    "rank": 17
+   },
+   "home": {
+    "name": "Georgia",
+    "rec": "6-1",
+    "rank": 3
+   },
+   "line": "UGA -11.5",
+   "ou": 55.5,
+   "hero": true,
+   "note": "Neutral site, Atlanta"
+  },
+  {
+   "time": "4:15 p.m.",
+   "tv": "SEC Network",
+   "away": {
+    "name": "South Carolina",
+    "rec": "4-3"
+   },
+   "home": {
+    "name": "Oklahoma",
+    "rec": "4-3"
+   },
+   "line": "OU -5.5",
+   "ou": 44.5
+  },
+  {
+   "time": "7:30 p.m.",
+   "tv": "ESPN",
+   "away": {
+    "name": "Mississippi State",
+    "rec": "4-3"
+   },
+   "home": {
+    "name": "Texas",
+    "rec": "5-2",
+    "rank": 11
+   },
+   "line": "TEX -21",
+   "ou": 50.5
+  },
+  {
+   "time": "7:45 p.m.",
+   "tv": "SEC Network",
+   "away": {
+    "name": "Missouri",
+    "rec": "5-2",
+    "rank": 23
+   },
+   "home": {
+    "name": "Arkansas",
+    "rec": "3-4"
+   },
+   "line": "MIZ -10",
+   "ou": 49.5
+  }
+ ],
+ "series": {
+  "source": "FloridaGators.com opponent history",
+  "record": "44-57-2",
+  "streak": "L5",
+  "last10": "2-8",
+  "last5": [
+   [
+    2021,
+    7,
+    34
+   ],
+   [
+    2022,
+    20,
+    42
+   ],
+   [
+    2023,
+    20,
+    43
+   ],
+   [
+    2024,
+    20,
+    34
+   ],
+   [
+    2025,
+    20,
+    24
+   ]
+  ],
+  "lastWin": [
+   2020,
+   44,
+   28
+  ]
+ }
+}

@@ -11,7 +11,7 @@ Outputs (only rewritten when the numbers change):
   deploy/wix-served/florida-stats.html   Wix custom embed, under the 15,000-character cap
 
 Usage:
-  python automation/florida_stats.py               # refresh only when due (cheap no-op otherwise)
+  python automation/florida_stats.py               # two schedule requests; box scores only when something changed
   python automation/florida_stats.py --force       # refetch schedule and every final now
   python automation/florida_stats.py --from-dir D  # build from saved ESPN JSON (tests, offline review)
   python automation/florida_stats.py --build-only  # rebuild the embed from the committed snapshot
@@ -386,6 +386,25 @@ def opp_label(g):
 
 # ---------- snapshot ----------
 
+def game_rows(events):
+    """The game log, from the schedule alone: date, opponent with AP rank, kickoff, TV, live score, final and record.
+    Everything here can change between games (polls, kickoff announcements, TV picks), so a quiet tick compares
+    these rows with the last snapshot before deciding whether the box scores are worth reading."""
+    log, run = [], [0, 0]
+    for g in sorted(events, key=lambda g: g['k']):
+        d = et(g['k'])
+        row = {'id': g['id'], 'k': g['k'], 'd': ap_date(d, True), 'o': opp_label(g), 'n': g['ha'] == 'n'}
+        if g['final']:
+            win = g['us'] > g['them']; run[0 if win else 1] += 1
+            row.update({'r': 'W' if win else 'L', 's': f"{g['us']}-{g['them']}", 'rec': f'{run[0]}-{run[1]}'})
+        else:
+            row.update({'t': ap_time(d) if g['timeValid'] else 'TBA', 'tv': g['tv']})
+            if g['state'] == 'in' and g['us'] is not None and g['them'] is not None:
+                row.update({'live': 1, 's': f"{g['us']}-{g['them']}", 'st': live_status(g['detail'])})
+        log.append(row)
+    return log
+
+
 def build_snapshot(season, events, boxes_by_id, schedule_team):
     events = sorted(events, key=lambda g: g['k'])
     finals = [g for g in events if g['final']]
@@ -400,19 +419,7 @@ def build_snapshot(season, events, boxes_by_id, schedule_team):
     m = re.match(r'\s*(\d+)-(\d+)', summary)
     if m and (int(m.group(1)), int(m.group(2))) != (w, l):
         raise StatsError(f'computed record {w}-{l} != ESPN recordSummary {summary}')
-    log, run = [], [0, 0]
-    for g in events:
-        d = et(g['k'])
-        row = {'id': g['id'], 'k': g['k'], 'd': ap_date(d, True), 'o': opp_label(g), 'n': g['ha'] == 'n'}
-        if g['final']:
-            win = g['us'] > g['them']; run[0 if win else 1] += 1
-            row.update({'r': 'W' if win else 'L', 's': f"{g['us']}-{g['them']}", 'rec': f'{run[0]}-{run[1]}'})
-        else:
-            row.update({'t': ap_time(d) if g['timeValid'] else 'TBA', 'tv': g['tv']})
-            if g['state'] == 'in' and g['us'] is not None and g['them'] is not None:
-                row.update({'live': 1, 's': f"{g['us']}-{g['them']}", 'st': live_status(g['detail'])})
-        log.append(row)
-    data = {'v': SCHEMA, 'season': season, 'team': 'Florida', 'games': log, 'finals': [g['id'] for g in finals]}
+    data = {'v': SCHEMA, 'season': season, 'team': 'Florida', 'games': game_rows(events), 'finals': [g['id'] for g in finals]}
     if finals:
         rows, pts, to = team_rows(finals, boxes)
         tot = season_players(boxes)
@@ -483,7 +490,12 @@ def shell_fingerprint(html):
 # ---------- scheduling ----------
 
 def due(prev, now):
-    """No-network decision: is an ESPN read worth it on this 5-minute tick?"""
+    """No-network decision: must this tick read every box score, whatever the schedule says?
+
+    Between games the answer is no. The schedule itself is still read on every tick (two requests), and the
+    box scores follow only when its rows changed: see main(). Until Oct. 27, 2026, the only off-day read was a
+    10:00-10:10 UTC window, which GitHub's throttled, drifting cron ticks never hit once the 72-hour
+    post-game window closed, so rankings, kickoff times and TV picks sat stale for a week."""
     if not prev or prev.get('v') != SCHEMA:
         return 'no snapshot'
     finals = set(prev.get('finals', []))
@@ -494,12 +506,29 @@ def due(prev, now):
             return f'game window {g["id"]}'
         if g['id'] in finals and hours <= 72 and now.minute < 5:
             return f'post-game corrections {g["id"]}'
-    if now.hour == 10 and now.minute < 10:
-        return 'daily schedule check'
     return None
 
 
-def main(argv=None):
+def read_schedule(src):
+    """Regular season plus postseason, parsed; the postseason list may not exist yet."""
+    events, team = {}, None
+    for st in (2, 3):
+        try:
+            sch = src.schedule(st)
+        except StatsError:
+            if st == 2:
+                raise
+            sch = {}
+        team = team or sch.get('team')
+        for ev in sch.get('events', []):
+            g = parse_event(ev)
+            events[g['id']] = g
+    if not events:
+        raise StatsError('ESPN schedule returned no games')
+    return list(events.values()), team
+
+
+def main(argv=None, now=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--season', type=int)
     ap.add_argument('--force', action='store_true')
@@ -510,7 +539,7 @@ def main(argv=None):
     ap.add_argument('--feed', help='also write the embed data as compact JSON here (served by GitHub Pages)')
     ap.add_argument('--no-embed', action='store_true', help='skip the Wix embed HTML (the feed job needs no template)')
     a = ap.parse_args(argv)
-    now = dt.datetime.now(dt.timezone.utc)
+    now = now or dt.datetime.now(dt.timezone.utc)
     out_json, out_html = pathlib.Path(a.out_json), pathlib.Path(a.out_html)
     prev = json.loads(out_json.read_text()) if out_json.exists() else None
     if a.build_only:
@@ -522,32 +551,23 @@ def main(argv=None):
         return 0
     season = a.season or (prev or {}).get('season') or (now.year if now.month >= 3 else now.year - 1)
     reason = 'forced' if (a.force or a.from_dir) else due(prev, now)
-    if not reason:
-        print('florida-stats: not due; no ESPN read')
-        return 0
     src = Source(season, a.from_dir)
     try:
-        events, team = {}, None
-        for st in (2, 3):
-            try:
-                sch = src.schedule(st)
-            except StatsError:
-                if st == 2:
-                    raise
-                sch = {}  # postseason list may not exist yet; the regular season still builds
-            team = team or sch.get('team')
-            for ev in sch.get('events', []):
-                g = parse_event(ev)
-                events[g['id']] = g
-        if not events:
-            raise StatsError('ESPN schedule returned no games')
+        events, team = read_schedule(src)
+        if not reason:
+            # Quiet tick: the schedule rows carry rankings, kickoff times, TV, live scores and new finals.
+            # Unchanged rows mean nothing to write, so no box-score reads and no commit.
+            if game_rows(events) == prev.get('games'):
+                print('florida-stats: schedule unchanged; no box-score read')
+                return 0
+            reason = 'schedule changed'
         prev_finals = set((prev or {}).get('finals', []))
         boxes = {}
-        for g in events.values():
+        for g in events:
             if not g['final']:
                 continue
             boxes[g['id']] = parse_summary(src.summary(g['id']), g['id'])
-        data = build_snapshot(season, list(events.values()), boxes, team)
+        data = build_snapshot(season, events, boxes, team)
         snap, changed = stamp(data, prev)
         html = None if a.no_embed else build_embed(snap)
     except StatsError as e:

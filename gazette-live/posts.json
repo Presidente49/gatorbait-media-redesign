@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "We're live: Florida-Georgia talk on The Buddy Martin Show",
+      "excerpt": "Watch The Buddy Martin Show live tonight as Buddy talks Jon Sumrall's quarterback decision and Florida-Georgia week. Tap through to the broadcast.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-florida-georgia-october-26-2026",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-27T01:18:53Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for We're live: Florida-Georgia talk on The Buddy Martin Show"
+      }
+    },
+    {
       "title": "Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap.",
       "excerpt": "You can’t buy what Georgia has. You have to grow it.",
       "url": "https://www.gatorbaitmedia.com/post/florida-georgia-sumrall-knows-the-math",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for An Exhibition Loss Gives Golden Plenty Of Material To “Coach ‘Em Up”"
-      }
-    },
-    {
-      "title": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor",
-      "excerpt": "Chris Spears on Florida's 82-76 overtime exhibition loss to Baylor in Jacksonville: a cold night from three, a bench gap and a late show of fight.",
-      "url": "https://www.gatorbaitmedia.com/post/three-things-from-courtside-florida-baylor-exhibition",
-      "author": "Chris Spears",
-      "firstPublishedDate": "2026-10-19T03:26:08Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_c07ff77e003342f78fb8b45ff9a084e5~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor"
       }
     }
   ]

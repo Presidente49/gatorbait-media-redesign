@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "We're live: Florida-Georgia talk on The Buddy Martin Show",
+      "excerpt": "Watch The Buddy Martin Show live tonight as Buddy talks Jon Sumrall's quarterback decision and Florida-Georgia week. Tap through to the broadcast.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-florida-georgia-october-26-2026",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-27T01:18:53Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for We're live: Florida-Georgia talk on The Buddy Martin Show"
+      }
+    },
+    {
       "title": "Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap.",
       "excerpt": "You can’t buy what Georgia has. You have to grow it.",
       "url": "https://www.gatorbaitmedia.com/post/florida-georgia-sumrall-knows-the-math",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for From The Scout Team To Atlanta: Chris Doering Finally Gets His Due"
-      }
-    },
-    {
-      "title": "Haugh's honor, coaching hot seats and the playoff debate",
-      "excerpt": "Franz Beard on Tommy Haugh's preseason All-America recognition, college football's coaching hot seats and the College Football Playoff debate. Photos by Chris Spears, GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-22-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-22T13:02:22Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a5eb3abb3338476dba7f259739f50c22~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Haugh's honor, coaching hot seats and the playoff debate"
       }
     }
   ]

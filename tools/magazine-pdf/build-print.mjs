@@ -5,6 +5,7 @@
 // (full article bodies). Every image is a Wix media id rendered through static.wixstatic.com.
 // Pure data in, one self-contained HTML out. render-pdf.mjs turns it into the PDF.
 import fs from 'node:fs';
+import path from 'node:path';
 
 const [issuePath, postsPath, outPath] = process.argv.slice(2);
 if (!outPath) { console.error('usage: build-print.mjs <issue.json> <posts.json> <out.html>'); process.exit(2); }
@@ -93,8 +94,10 @@ const cards = (D.cards && D.cards.items) || [];
 const coverPost = byUrl.get(C.url), leadPost = byUrl.get(L.url), F = D.feature || {}, featPost = byUrl.get(F.url);
 const oppName = (teams.find(t => t.name !== 'Florida') || {}).name || 'Opponent';
 
-const artCover = !!(C.image && C.image.width && C.image.height && Math.abs(C.image.width / C.image.height - 8.5 / 11) < 0.02);
-const cover = artCover ? `<section class="cover art"><img class="cover-img" src="${media(C.image, 2200, 2850, 'fill', 90)}" alt="${esc(q(C.image.alt))}"></section>` : `<section class="cover">
+// COVER_FILE=<local jpg> uses a finished portrait cover from disk (a deploy/<cover>/ render that is not yet in the Wix Media Manager).
+const coverFile = process.env.COVER_FILE ? 'file://' + path.resolve(process.env.COVER_FILE) : '';
+const artCover = !!coverFile || !!(C.image && C.image.width && C.image.height && Math.abs(C.image.width / C.image.height - 8.5 / 11) < 0.02);
+const cover = artCover ? `<section class="cover art"><img class="cover-img" src="${coverFile || media(C.image, 2200, 2850, 'fill', 90)}" alt="${esc(q(C.image.alt))}"></section>` : `<section class="cover">
 <img class="cover-img" src="${media(C.image, 2200, 1700, 'fill')}" alt="${esc(q(C.image && C.image.alt))}">
 <div class="cover-shade"></div>
 <div class="mast"><img class="logo" src="${LOGO}" alt="GatorBait"><span class="mz">Magazine</span></div>

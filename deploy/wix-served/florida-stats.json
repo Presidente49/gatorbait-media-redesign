@@ -85,25 +85,25 @@
    "id": "401856734",
    "k": "2026-10-31T19:30Z",
    "n": true,
-   "o": "vs. No. 5 Georgia",
+   "o": "vs. No. 3 Georgia",
    "t": "3:30 p.m.",
    "tv": "ABC"
   },
   {
    "d": "Sat., Nov. 7",
    "id": "401856739",
-   "k": "2026-11-07T05:00Z",
+   "k": "2026-11-08T00:45Z",
    "n": false,
    "o": "vs. Oklahoma",
-   "t": "TBA",
-   "tv": ""
+   "t": "7:45 p.m.",
+   "tv": "SEC Network"
   },
   {
    "d": "Sat., Nov. 14",
    "id": "401856884",
    "k": "2026-11-14T05:00Z",
    "n": false,
-   "o": "at No. 12 Kentucky",
+   "o": "at No. 9 Kentucky",
    "t": "TBA",
    "tv": ""
   },
@@ -146,7 +146,7 @@
    ],
    [
     "Jayden Woods",
-    "27",
+    "28",
     "7",
     "4.5",
     "0",
@@ -154,9 +154,9 @@
    ],
    [
     "Jaden Robinson",
-    "25",
-    "3.5",
-    "1",
+    "26",
+    "4",
+    "1.5",
     "0",
     "2"
    ],
@@ -427,11 +427,11 @@
    },
    {
     "PD": 0,
-    "SACKS": 2.0,
+    "SACKS": 1.5,
     "SOLO": 2,
-    "TFL": 3.0,
-    "TOT": 8,
-    "g": 7,
+    "TFL": 2.5,
+    "TOT": 7,
+    "g": 6,
     "name": "DK Kalu"
    },
    {
@@ -482,10 +482,10 @@
    },
    {
     "PD": 2,
-    "SACKS": 1,
+    "SACKS": 1.5,
     "SOLO": 9,
-    "TFL": 3.5,
-    "TOT": 25,
+    "TFL": 4.0,
+    "TOT": 26,
     "g": 7,
     "name": "Jaden Robinson"
    },
@@ -512,7 +512,7 @@
     "SACKS": 4.5,
     "SOLO": 16,
     "TFL": 7.0,
-    "TOT": 27,
+    "TOT": 28,
     "g": 7,
     "name": "Jayden Woods"
    },
@@ -599,10 +599,10 @@
    },
    {
     "PD": 3,
-    "SACKS": 0.5,
+    "SACKS": 0,
     "SOLO": 11,
-    "TFL": 2.5,
-    "TOT": 24,
+    "TFL": 2,
+    "TOT": 22,
     "g": 7,
     "name": "Lagonza Hayward"
    },
@@ -644,9 +644,9 @@
    },
    {
     "PD": 0,
-    "SACKS": 0.5,
-    "SOLO": 4,
-    "TFL": 1.5,
+    "SACKS": 1,
+    "SOLO": 5,
+    "TFL": 2,
     "TOT": 7,
     "g": 3,
     "name": "Ty Jackson"
@@ -754,9 +754,9 @@
    },
    {
     "LONG": 38,
-    "REC": 10,
+    "REC": 9,
     "TD": 0,
-    "YDS": 93,
+    "YDS": 82,
     "g": 4,
     "name": "Eric Singleton Jr."
    },
@@ -794,10 +794,10 @@
    },
    {
     "LONG": 11,
-    "REC": 3,
+    "REC": 4,
     "TD": 0,
-    "YDS": 30,
-    "g": 2,
+    "YDS": 41,
+    "g": 3,
     "name": "Kahleil Jackson"
    },
    {
@@ -976,12 +976,12 @@
   [
    "Total yards per game",
    "450.9",
-   "375.7"
+   "376.6"
   ],
   [
    "Rushing yards per game",
    "194.3",
-   "120.7"
+   "121.6"
   ],
   [
    "Yards per carry",
@@ -1039,7 +1039,7 @@
   [
    "Yards per game",
    "450.9",
-   "375.7 allowed"
+   "376.6 allowed"
   ],
   [
    "Turnover margin",
@@ -1047,7 +1047,7 @@
    "7 games"
   ]
  ],
- "updated": "2026-10-19T02:45:03Z",
- "updatedLabel": "Oct. 18, 2026, 10:45 p.m. ET",
+ "updated": "2026-10-27T18:08:54Z",
+ "updatedLabel": "Oct. 27, 2026, 2:08 p.m. ET",
  "v": 1
 }

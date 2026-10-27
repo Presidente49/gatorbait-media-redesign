@@ -255,14 +255,68 @@ class DueTests(unittest.TestCase):
     def test_quiet_between_games(self):
         self.assertIsNone(fs.due(self.prev, self.at('2026-09-20T14:22:00Z')))
 
-    def test_game_window_and_daily_check(self):
+    def test_game_window_and_no_snapshot(self):
         self.assertTrue(fs.due(self.prev, self.at('2026-10-03T21:40:00Z')).startswith('game window'))
-        self.assertEqual(fs.due(self.prev, self.at('2026-09-20T10:03:00Z')), 'daily schedule check')
+        self.assertIsNone(fs.due(self.prev, self.at('2026-09-20T10:03:00Z')))  # no off-day window: main() reads the schedule
         self.assertEqual(fs.due(None, self.at('2026-09-20T14:22:00Z')), 'no snapshot')
 
     def test_post_game_corrections_hourly(self):
         self.assertTrue(fs.due(self.prev, self.at('2026-09-13T15:02:00Z')).startswith('post-game'))
         self.assertIsNone(fs.due(self.prev, self.at('2026-09-13T15:20:00Z')))
+
+
+class QuietTickTests(unittest.TestCase):
+    """Between games the job still reads ESPN's schedule each tick, so poll, kickoff and TV changes refresh the feed.
+    Oct. 27, 2026: the feed sat a week stale because the only off-day read was a 10-minute UTC window that
+    GitHub's throttled cron never hit."""
+    QUIET = dt.datetime.fromisoformat('2026-09-20T14:22:00+00:00')
+
+    def setUp(self):
+        self.t = tempfile.TemporaryDirectory()
+        self.dir = pathlib.Path(self.t.name)
+        for name in ('schedule-2.json', 'summary-9001.json', 'summary-9002.json'):
+            (self.dir / name).write_text((FIX / name).read_text())
+        self.j, self.f = self.dir / 'full.json', self.dir / 'feed.json'
+        self.args = ['--season', '2026', '--out-json', str(self.j), '--feed', str(self.f), '--no-embed']
+        self.assertEqual(fs.main(self.args + ['--from-dir', str(self.dir)]), 0)
+        self.assertIsNone(fs.due(json.loads(self.j.read_text()), self.QUIET))
+        self.real_source = real = fs.Source
+        self.live = mock.patch.object(fs, 'Source', lambda season, folder=None: real(season, self.dir))
+        self.live.start()
+
+    def tearDown(self):
+        self.live.stop()
+        self.t.cleanup()
+
+    def test_rank_kickoff_and_tv_changes_refresh_the_feed_between_games(self):
+        before = json.loads(self.f.read_text())
+        self.assertEqual((before['games'][2]['o'], before['games'][2]['t'], before['games'][2]['tv']), ('vs. Gamma U', '3:30 p.m.', 'ABC'))
+        stale = dict(json.loads(self.j.read_text()), updated='2026-09-12T20:00:00Z')
+        self.j.write_text(json.dumps(stale))
+        sch = json.loads((self.dir / 'schedule-2.json').read_text())
+        comp = sch['events'][2]['competitions'][0]
+        comp['date'] = '2026-10-04T00:45Z'
+        comp['broadcasts'] = [{'media': {'shortName': 'SECN'}}]
+        next(c for c in comp['competitors'] if c['team']['id'] == '903')['curatedRank'] = {'current': 3}
+        (self.dir / 'schedule-2.json').write_text(json.dumps(sch))
+        with mock.patch('sys.stdout', new_callable=io.StringIO) as out:
+            self.assertEqual(fs.main(self.args, now=self.QUIET), 0)
+        self.assertEqual(json.loads(out.getvalue().strip().splitlines()[-1])['reason'], 'schedule changed')
+        after = json.loads(self.f.read_text())
+        self.assertEqual((after['games'][2]['o'], after['games'][2]['t'], after['games'][2]['tv']), ('vs. No. 3 Gamma U', '8:45 p.m.', 'SEC Network'))
+        self.assertGreater(after['updated'], '2026-09-12T20:00:00Z')  # numbers changed, so the stamp moved
+        self.assertEqual(after['record'], '1-1')  # box scores re-read, totals unchanged
+
+    def test_unchanged_schedule_reads_no_box_scores_and_writes_nothing(self):
+        before = (self.j.read_bytes(), self.f.read_bytes(), self.f.stat().st_mtime_ns)
+
+        def no_box_scores(source, event_id):
+            raise AssertionError(f'box score {event_id} read on a quiet tick with an unchanged schedule')
+
+        with mock.patch.object(self.real_source, 'summary', no_box_scores), mock.patch('sys.stdout', new_callable=io.StringIO) as out:
+            self.assertEqual(fs.main(self.args, now=self.QUIET), 0)
+        self.assertIn('schedule unchanged', out.getvalue())
+        self.assertEqual((self.j.read_bytes(), self.f.read_bytes(), self.f.stat().st_mtime_ns), before)
 
 
 if __name__ == '__main__':

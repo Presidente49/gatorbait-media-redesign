@@ -84,8 +84,9 @@ jobs:
           if [ "$EVENT_NAME" = workflow_dispatch ] || [ "$EVENT_NAME" = push ]; then FORCE="--force"; fi
           python automation/scoreboard_feed.py $FORCE
       - name: Refresh Florida season stats from ESPN box scores
-        # The existing producer checks whether a read is due. Failed reads or checks
-        # preserve both the full snapshot and the compact feed used by the Wix embed.
+        # Every tick reads ESPN's schedule (two requests) so rankings, kickoff times and TV picks refresh
+        # between games; box scores are read only when those rows changed or a game/corrections window is
+        # open. Failed reads or checks preserve both the full snapshot and the compact feed the Wix embed reads.
         continue-on-error: true
         env:
           EVENT_NAME: ${{ github.event_name }}

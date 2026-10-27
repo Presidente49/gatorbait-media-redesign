@@ -509,12 +509,13 @@ var notice=root.querySelector('#sh-freshness');if(notice)notice.textContent='';
 /* Reuse the same live RSS records for matching photo, title, author and publication date. */
 function storyPath(h){try{return new URL(h,location.href).pathname.replace(/\/+$/,'');}catch(e){return'';}}
 function wixPhoto(h){try{var u=new URL(h),m=/^\/media\/([^/]+~mv2\.(?:jpe?g|png|webp))(?:\/|$)/i.exec(u.pathname);return u.protocol==='https:'&&u.hostname==='static.wixstatic.com'&&m?u.origin+'/media/'+m[1]+'/v1/fit/w_480,h_320,al_c,q_80/file.jpg':'';}catch(e){return'';}}
-/* Owner order, Oct. 27: named writers first; Brenden/staff last within the current nine stories.
+/* Owner order, Oct. 27: named writers first; newest Brenden/staff item last within the current nine stories.
    Select the chronological window before partitioning, so older writer posts cannot displace current staff news. */
 function homepageStories(records){
 var seen={},t=Date.now(),current=(records||[]).slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||f[0]>t+DAY||!h||seen[h])return false;seen[h]=true;return true;}).slice(0,9);
 function staff(f){return /^(?:brenden martin|gator\s*bait\s+staff)$/i.test(String(f[3]||'').trim().replace(/\s+/g,' '));}
-return current.filter(function(f){return!staff(f);}).concat(current.filter(staff));
+var writers=current.filter(function(f){return!staff(f);}),staffStories=current.filter(staff);
+return writers.length?writers.concat(staffStories.reverse()):staffStories;
 }
 function freshRows(root){var list=root.querySelector('.bc-rows');if(!list||!D.all)return;
 var lead=root.querySelector('.bc-hero .sh-lead a[href]'),seen={},original={};if(lead)seen[storyPath(lead.href)]=true;

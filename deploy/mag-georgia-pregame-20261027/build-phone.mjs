@@ -24,7 +24,8 @@ const q = s => String(s == null ? '' : s)
   .replace(/(^|[\s(\[{—–-])'/g, '$1‘').replace(/'/g, '’');
 const ap = s => String(s || '').replace(/\b(January|February|August|September|October|November|December)\b(?= \d)/g, m => ({ January: 'Jan.', February: 'Feb.', August: 'Aug.', September: 'Sept.', October: 'Oct.', November: 'Nov.', December: 'Dec.' }[m]));
 const fixCredit = s => String(s || '').replace(/Photo Credit\s*[-–:]\s*Chris Spears,?\s*Gator ?[Bb]ait (?:Magazine|Media)\s*/g, 'Photo by Chris Spears, GatorBait Media');
-const media = (img, w = 1200, h = 1200, mode = 'fit', qv = 76) => img && img.id ? `https://static.wixstatic.com/media/${img.id}~mv2.${img.ext || 'jpg'}/v1/${mode}/w_${w},h_${h},al_c,q_${qv}/${img.id}.${img.ext === 'png' ? 'png' : 'jpg'}` : '';
+// Every photo and illustration is fetched as a JPEG at 1000 px (a 390 pt page never needs more); PNG illustrations as PNG were 2 MB each.
+const media = (img, w = 1000, h = 1000, mode = 'fit', qv = 72) => img && img.id ? `https://static.wixstatic.com/media/${img.id}~mv2.${img.ext || 'jpg'}/v1/${mode}/w_${w},h_${h},al_c,q_${qv}/${img.id}.jpg` : '';
 const fig = (img, caption) => {
   if (!img || !img.id) return '';
   const credit = fixCredit(q(img.credit || ''));

@@ -167,7 +167,7 @@ issue = {
   'label': 'The game', 'kickoffISO': '2026-10-31T19:30:00Z', 'espnEvent': '401856734',
   'kickoff': 'Saturday, Oct. 31 · 3:30 p.m. ET', 'tv': 'ABC',
   'venue': 'Mercedes-Benz Stadium, Atlanta. Neutral site',
-  'forecast': 'Indoors. Artificial turf, per ESPN\'s venue listing. The game leaves Jacksonville for Atlanta this year and Tampa next while EverBank Stadium is renovated.',
+  'forecast': 'Indoors on artificial turf, per ESPN\'s venue listing. The game leaves Jacksonville for Atlanta this year while EverBank Stadium is renovated.',
   'teams': [
    {'rank': 'No. %d' % apr['FLA'], 'name': 'Florida', 'record': rec('FLA', 'total'), 'conf': rec('FLA', 'vsconf') + ' SEC', 'role': 'AP No. %d' % apr['FLA']},
    {'rank': 'No. %d' % apr['UGA'], 'name': 'Georgia', 'record': rec('UGA', 'total'), 'conf': rec('UGA', 'vsconf') + ' SEC', 'role': 'AP No. %d' % apr['UGA']}],
@@ -177,7 +177,7 @@ issue = {
  },
  'series': {
   'label': 'The series', 'headline': 'Five straight for Georgia',
-  'line': 'FloridaGators.com counts the series at Georgia 57, Florida 44, two ties, starting in 1915. The Bulldogs have won the last five, all in Jacksonville, by a combined 177-87: 34-7 in 2021, 42-20 in 2022, 43-20 in 2023, 34-20 in 2024 and 24-20 last Nov. 1. Florida\'s last win was 44-28 in 2020; the Gators are 2-8 in the last 10.',
+  'line': 'FloridaGators.com counts the series at Georgia 57, Florida 44, two ties, since 1915. Georgia has won the last five, all in Jacksonville, by a combined 177-87, the closest 24-20 last Nov. 1. Florida\'s last win was 44-28 in 2020; the Gators are 2-8 in the last 10.',
   'games': [{'year': 2021, 'site': 'N', 'fla': 7, 'mizz': 34}, {'year': 2022, 'site': 'N', 'fla': 20, 'mizz': 42}, {'year': 2023, 'site': 'N', 'fla': 20, 'mizz': 43}, {'year': 2024, 'site': 'N', 'fla': 20, 'mizz': 34}, {'year': 2025, 'site': 'N', 'fla': 20, 'mizz': 24}],
   'source': 'FloridaGators.com, football opponent history vs. Georgia (44-57-2, streak L5, last 10: 2-8; the 2025 final confirmed on ESPN, event 401752755). Georgia\'s own count includes a disputed 1904 game and reads 58-44-2.'
  },
@@ -206,7 +206,6 @@ issue = {
    {'label': 'Pass yards allowed', 'fla': F['passA'], 'miz': G['passA'], 'unit': '', 'lower': True},
    {'label': 'Third down %', 'fla': F['third'], 'miz': G['third'], 'unit': '', 'lower': False},
    {'label': 'Opp. third down %', 'fla': F['thirdA'], 'miz': G['thirdA'], 'unit': '', 'lower': True},
-   {'label': 'Sacks', 'fla': F['sacks'], 'miz': G['sacks'], 'unit': '', 'lower': False},
    {'label': 'Possession (minutes)', 'fla': F['poss'], 'miz': G['poss'], 'unit': '', 'lower': False}]
  },
  'keys': {

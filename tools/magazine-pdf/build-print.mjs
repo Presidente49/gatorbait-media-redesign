@@ -27,7 +27,8 @@ const q = s => String(s == null ? '' : s)
 const ap = s => String(s || '').replace(/\b(January|February|August|September|October|November|December)\b(?= \d)/g, m => ({ January: 'Jan.', February: 'Feb.', August: 'Aug.', September: 'Sept.', October: 'Oct.', November: 'Nov.', December: 'Dec.' }[m]));
 // Photo credits read one way everywhere.
 const fixCredit = s => String(s || '').replace(/Photo Credit\s*[-\u2013:]\s*Chris Spears,?\s*Gator ?[Bb]ait (?:Magazine|Media)\s*/g, 'Photo by Chris Spears, GatorBait Media');
-const media = (img, w = 1600, h = 1600, mode = 'fit', qv = 78) => img && img.id ? `https://static.wixstatic.com/media/${img.id}~mv2.${img.ext || 'jpg'}/v1/${mode}/w_${w},h_${h},al_c,q_${qv}/${img.id}.${img.ext === 'png' ? 'png' : 'jpg'}` : '';
+// PDF_JPEG=1 fetches PNG illustrations as JPEG too (a 1300 px PNG collage embeds at about 2 MB; the JPEG is a tenth of that).
+const media = (img, w = 1600, h = 1600, mode = 'fit', qv = 78) => img && img.id ? `https://static.wixstatic.com/media/${img.id}~mv2.${img.ext || 'jpg'}/v1/${mode}/w_${w},h_${h},al_c,q_${qv}/${img.id}.${img.ext === 'png' && !process.env.PDF_JPEG ? 'png' : 'jpg'}` : '';
 const fig = (img, cls = '', w = 1600, h = 1600, mode = 'fit') => {
   if (!img || !img.id) return '';
   const credit = fixCredit(q(img.credit || ''));
@@ -117,16 +118,16 @@ const slate = (D.slate && D.slate.games || []).map(g => {
 
 const briefing = `<section class="brief">
 <h2 class="sec">${esc(G.label || 'The game')}</h2>
-<div class="matchup">${teams.map(t => `<div class="team"><span class="rk">${esc(t.rank || t.role || '')}</span><b>${esc(t.name)}</b><span>${esc(t.record)} · ${esc(t.conf)}</span></div>`).join('<div class="at">at</div>')}</div>
+<div class="matchup">${teams.map(t => `<div class="team"><span class="rk">${esc(t.rank || t.role || '')}</span><b>${esc(t.name)}</b><span>${esc(t.record)} · ${esc(t.conf)}</span></div>`).join(`<div class="at">${/neutral/i.test(G.venue || '') ? 'vs.' : 'at'}</div>`)}</div>
 <p class="line"><b>${esc(q(G.kickoff))}</b> · ${esc(G.tv)}<br>${esc(q(G.venue))}</p>
-<p class="line">${esc(q(G.forecast))}</p>
+<p class="line">${esc(q(G.forecast))}${D.injuries && D.injuries.asOf && process.env.PRINT_AVAIL_TOP ? ` <b>${esc(D.injuries.label || 'Availability')}:</b> ${esc(q(D.injuries.asOf))}` : ''}</p>
 <div class="chips">${chips}${pred}</div>
 <p class="src">${esc(q(G.source))}</p>
 <div class="two">
 <div><h3>${esc(D.keys && D.keys.label || 'Keys')}</h3>${keys}<p class="src">${esc(q(D.keys && D.keys.source))}</p></div>
 <div><h3>${esc(D.tape && D.tape.label || 'Tale of the tape')}</h3><p class="note">${esc(q(D.tape && D.tape.note))}</p><table class="tape"><thead><tr><th></th><th>Florida</th><th>${esc(oppName)}</th></tr></thead><tbody>${tape}</tbody></table><p class="src">${esc(q(D.tape && D.tape.source))}</p>
 <h3>${esc(D.series && D.series.label || 'The series')}</h3><p class="big">${esc(q(D.series && D.series.headline))}</p><p>${esc(q(D.series && D.series.line))}</p>
-<h3>${esc(D.injuries && D.injuries.label || 'Availability')}</h3><p>${esc(q(D.injuries && D.injuries.asOf))}</p></div>
+${process.env.PRINT_AVAIL_TOP ? '' : `<h3>${esc(D.injuries && D.injuries.label || 'Availability')}</h3><p>${esc(q(D.injuries && D.injuries.asOf))}</p>`}</div>
 </div>
 </section>`;
 const NUM = D.numbers || {}, WCH = D.watching || {};

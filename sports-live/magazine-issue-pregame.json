@@ -40,7 +40,7 @@
   "kickoff": "Saturday, Oct. 31 · 3:30 p.m. ET",
   "tv": "ABC",
   "venue": "Mercedes-Benz Stadium, Atlanta. Neutral site",
-  "forecast": "Indoors. Artificial turf, per ESPN's venue listing. The game leaves Jacksonville for Atlanta this year and Tampa next while EverBank Stadium is renovated.",
+  "forecast": "Indoors on artificial turf, per ESPN's venue listing. The game leaves Jacksonville for Atlanta this year while EverBank Stadium is renovated.",
   "teams": [
    {
     "rank": "No. 17",
@@ -81,7 +81,7 @@
  "series": {
   "label": "The series",
   "headline": "Five straight for Georgia",
-  "line": "FloridaGators.com counts the series at Georgia 57, Florida 44, two ties, starting in 1915. The Bulldogs have won the last five, all in Jacksonville, by a combined 177-87: 34-7 in 2021, 42-20 in 2022, 43-20 in 2023, 34-20 in 2024 and 24-20 last Nov. 1. Florida's last win was 44-28 in 2020; the Gators are 2-8 in the last 10.",
+  "line": "FloridaGators.com counts the series at Georgia 57, Florida 44, two ties, since 1915. Georgia has won the last five, all in Jacksonville, by a combined 177-87, the closest 24-20 last Nov. 1. Florida's last win was 44-28 in 2020; the Gators are 2-8 in the last 10.",
   "games": [
    {
     "year": 2021,
@@ -227,13 +227,6 @@
     "miz": 35.9,
     "unit": "",
     "lower": true
-   },
-   {
-    "label": "Sacks",
-    "fla": 22.0,
-    "miz": 22.0,
-    "unit": "",
-    "lower": false
    },
    {
     "label": "Possession (minutes)",

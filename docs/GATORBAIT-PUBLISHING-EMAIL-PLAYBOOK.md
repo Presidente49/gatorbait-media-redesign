@@ -11,8 +11,9 @@ Before a story is published:
 1. Verify title, byline, body and destination.
 2. Classify the primary editorial home: Front Page or Magazine. One primary home only.
 3. Confirm the story has intentional hero/cover art. A major story must not ship with a blank, generic or low-quality writer image.
-4. Use the same final hero/cover media in Wix Blog so the homepage and email automation inherit the correct image.
-5. Verify alt text and the permanent post URL after publish.
+4. Use the same final hero/cover media in Wix Blog and pass the feed/Spaces cover gate in section 1B; a body image or `og:image` alone does not establish it.
+5. Apply [house-voice review](../tools/voice/HOUSE-VOICE.md) to every new article, including named writers and Brenden. Review final headline, deck, body, excerpt and captions, run `tools/voice/gb_voice.py`, resolve typography/markup issues or record a justified exception, and assess formulaic phrasing in context. Preserve substantive writer voice and verified quotation words. Machine cues are not authorship findings or a substitute for the source checks below.
+6. Verify alt text, complete saved ending and permanent post URL after publish; obtain independent live QC.
 
 For major stories, create branded art before release when supplied art is weak. Do not use faces unless there is a real supplied/licensed photo.
 
@@ -27,6 +28,15 @@ For major stories, create branded art before release when supplied art is weak. 
 5. Use a descriptive file name and meaningful alt text. Preserve photographer/source credit separately in the story caption or metadata when required.
 6. When replacing media, store the new asset first, then switch the article to the new Wix media asset. Do not delete the previous asset as part of the replacement unless cleanup is separately verified and authorized.
 7. This gate applies to generated graphics as well as supplied photography: create → Media Manager → correct folder → ready/verified → article.
+
+### 1B. Feed and Spaces cover gate
+
+[Wix documents](https://support.wix.com/en/article/wix-blog-sharing-a-blog-post-on-social-media) that **Display Cover Image** enabled supplies the post/custom/recent feeds and social sharing; disabled limits the image to social sharing. This documents feed behavior, not a guarantee that a specific Spaces device has refreshed.
+
+- Before release or a cover repair, read the current native post/revision and preserve its rollback. Set the intended permanent Media Manager image as the custom cover, keep `heroImage` consistent, and enable `media.displayed`. Read back the saved image identity, ready asset, alt/credit, hero and display flag. An inline `IMAGE` node or social preview is a separate surface.
+- Keep exactly one intended visible website lead. If a body lead duplicates the native cover, repair that duplicate/layout while preserving caption and full manuscript. Never switch `media.displayed` off to hide duplicate art: that removes the feed cover.
+- Verify the canonical public article independently, then inspect the actual post in the Spaces list/card and open it to check the correct destination and loaded art. Record native cover/readback, public article QC and Spaces card/device proof as separate outcomes. If the app/device is unavailable, label that check **UNVERIFIED**, with the precise next check; do not claim app success from API fields or an automation run.
+- Preserve canonical ID/URL and original publication time on a presentation repair. Do not create a replacement post or replay email/push; use the authorized in-place correction path and reconcile distribution state before retrying.
 
 ### Writer defaults and morning releases — owner direction, October 20, 2026
 
@@ -169,7 +179,8 @@ Examples already encoded:
 Before calling a publishing/email task complete:
 
 - Wix post is PUBLISHED when intended.
-- Hero and cover media point to the intended asset.
+- Hero and custom cover read back as the intended permanent asset with `media.displayed` enabled; the website has one intended lead. Spaces list/card image and destination are checked separately or explicitly UNVERIFIED.
+- Every new article has a recorded house-voice/editorial disposition and applicable claim/source checks; a checker pass is not editorial or factual approval.
 - Permanent story URL resolves.
 - Exactly one relevant automatic email workflow is active.
 - Duplicate workflow remains inactive; the active message is the verified custom template.

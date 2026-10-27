@@ -17,11 +17,13 @@ Inspect the newest Wix blog drafts as well as published posts and compare canoni
 
 Preserve the writer's wording and actual native member/byline. Use the newsroom quick fact check for professional filings: score, opponent/date and core numbers; normal formatting and obvious copy errors. Avoid turning routine copy desk into an unrequested full re-report. Record unresolved material contradictions without inventing a correction.
 
+Every new article also passes [house-voice review](../../tools/voice/HOUSE-VOICE.md), including Brenden's and named writers' copy. Run `tools/voice/gb_voice.py` on final headline/deck/body/excerpt/captions, resolve house-style issues or record a justified exception, and assess canned framing/empty transitions/repetitive rhythm in context. Preserve substantive writer voice and verified quote words. Checker cues are not AI-authorship verdicts or fact verification; Brenden/agent-authored reporting receives the full dated claim/source check.
+
 Make long columns easy to scan using native section/team headings, explicit ranking rows (preserve missing/tied rank numbers), readable paragraphs and separate bold Saturday game/time/channel lines. No fixed-width HTML frame, giant table or decorative drop cap. Keep every supplied section and the ending.
 
 Resolve art via `docs/writer-cover-defaults.json`. Prefer appropriate licensed/owned story art. Otherwise use the named writer's verified portrait or registered series card; create and store a matching named card when missing. Never use another person's photo or invent a portrait. Franz's approved Thoughts of the Day design is the master; update any embedded date for the actual edition. Series title belongs on the art; use a distinct editorial hook as the native headline below it.
 
-Store a reusable master in `MEDIA / BRAND / WRITER DEFAULTS / <Writer>`, and each final issue rendition in `MEDIA / ARTICLES / YYYY / MM-MMM / YYYY-MM-DD <Story>`. Use the production Media Manager asset only after READY. Set matching cover/hero, descriptive alt text and appropriate credit.
+Store a reusable master in `MEDIA / BRAND / WRITER DEFAULTS / <Writer>`, and each final issue rendition in `MEDIA / ARTICLES / YYYY / MM-MMM / YYYY-MM-DD <Story>`. Use the production Media Manager asset only after READY. Set matching custom cover/hero, descriptive alt text and appropriate credit. Apply publishing gate 1B: enable `media.displayed` and read back the saved native image/hero/flag. Never disable the feed cover to hide duplicate body artwork.
 
 ## Publish and verify
 
@@ -30,6 +32,8 @@ Act under the existing routine publishing delegation or current explicit publish
 A new article becomes the front-page lead through the existing chronological feed. Verify the actual first `.sh-lead` link, headline, byline and loaded art; HTML containing a link somewhere is not proof of lead placement. Never pin an old post or change its original date to manufacture freshness.
 
 Check the actual public article at 390/430/1366/1920: complete ending, correct author, heading hierarchy, loaded image, no horizontal overflow, links and readable schedules. Use actual mobile context/CSS width; a desktop browser's Wix 980px layout is not an iPhone result. Get a bounded independent read-only check. Report publication immediately once verified rather than withholding the live link during later distribution checks.
+
+Separately inspect the actual Spaces list/card for the intended image and correct article destination. A public inline photo, social preview or API display flag does not prove that card. Record missing app/device evidence as UNVERIFIED, without a diagnostic post, duplicate publish or email/push replay.
 
 ## Email: delivered is a separate state
 

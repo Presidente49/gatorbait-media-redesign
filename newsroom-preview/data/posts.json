@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap.",
+      "excerpt": "You can’t buy what Georgia has. You have to grow it.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-georgia-sumrall-knows-the-math",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-27T00:03:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap."
+      }
+    },
+    {
       "title": "Thoughts of the Day: October 26, 2026",
       "excerpt": "Illustration: GatorBait Media (AI-assisted). A few thoughts to jump start your Monday morning: That the Georgia Bulldogs are favored to beat the Florida Gators when the rivalry takes the first of a two-year vacation from its traditional home in Jacksonville is no surprise. The Bulldogs (6-1, 4-1 SEC) should be favored. They are ranked third in the latest…",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-26-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Haugh's honor, coaching hot seats and the playoff debate"
-      }
-    },
-    {
-      "title": "Gator Football Feel-Good: The Open Date Is Sweet Music, But Check the Lyrics",
-      "excerpt": "Buddy Martin on Florida's open date, the lessons of past bye weeks and the Oct. 31 Georgia matchup in Atlanta. Photo by Chris Spears, GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/gator-football-feel-good-the-open-date-is-sweet-music-but-check-the-lyrics",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-21T18:34:06Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_90425d069f7d49ac9a55f5dedba27f93~mv2.jpg/v1/fit/w_1000,h_969,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gator Football Feel-Good: The Open Date Is Sweet Music, But Check the Lyrics"
       }
     }
   ]

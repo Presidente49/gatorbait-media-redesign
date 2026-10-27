@@ -203,7 +203,9 @@ Avoid clickbait that the story cannot support.
 
 ## Copy desk rule
 
-Before delivering a draft, silently check:
+For every new article, including Brenden's and named writers' filings, apply [the house-voice release gate](../../tools/voice/HOUSE-VOICE.md) and run `python3 tools/voice/gb_voice.py` on final headline/deck/body/excerpt/captions. Resolve house-style issues or record a justified exception; review formulaic framing and rhythm in context without rewriting substantive voice or verified quote words. A punctuation mark, vocabulary match or statistic does not identify AI authorship. Keep dated source evidence for factual claims and obtain independent live QC on publication; a checker pass alone closes neither gate.
+
+Before delivering a draft, check:
 
 - names and spellings
 - dates
@@ -231,6 +233,8 @@ Default style should be readable and human:
 - no AI-sounding summary conclusion
 
 Do not overuse em dashes, rhetorical questions, or canned phrases.
+
+For production, use [publishing gate 1B](../../docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md#1b-feed-and-spaces-cover-gate): permanent custom cover and matching hero with `media.displayed` enabled, saved native readback, one visible website lead, then separate actual Spaces list/card proof. A body photograph is not an app-card pass. Missing device evidence remains unverified; presentation repairs never replay email or push.
 
 ## Magazine-specific writing
 

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-ai-writing-markers checker.
+Editorial pattern report, adapted from the vendored ai-writing-markers checker.
 
 Scans a text file for the markers catalogued in markers.json and prints a
-report. This is a transparency and self-editing aid, NOT an AI detector.
-Presence of markers is a weak signal, never proof of authorship.
+report. The legacy catalog supplies copy-editing prompts, not evidence of
+authorship. Typography, individual words and sentence statistics cannot establish
+who wrote a passage. Matches require context; this tool never changes text.
 
 Usage:
     python3 check.py path/to/file.txt
@@ -24,6 +25,11 @@ DATA = os.path.join(HERE, "markers.json")
 
 # Categories matched as literal words/phrases rather than by a custom regex.
 LEXICAL_CATEGORIES = {"vocabulary", "transitions", "phrases"}
+CATEGORY_LABELS = {
+    "structural": "Structure and rhetoric to review",
+    "punctuation_format": "Typography and formatting to review",
+    "statistical": "Descriptive statistics only",
+}
 
 
 def load_markers(path=DATA):
@@ -100,7 +106,7 @@ def analyze(text, markers):
         results["categories"].append(
             {
                 "id": cid,
-                "label": cat["label"],
+                "label": CATEGORY_LABELS.get(cid, cat["label"]),
                 "total_hits": total,
                 "per_1000_words": round(total / n_words * 1000, 2),
                 "hits": sorted(hits, key=lambda h: -h["count"]),
@@ -108,7 +114,7 @@ def analyze(text, markers):
         )
 
     m_len = mean(lengths)
-    burstiness = round(pstdev(lengths) / m_len, 3) if m_len else 0.0
+    sentence_length_cv = round(pstdev(lengths) / m_len, 3) if m_len else 0.0
     tokens = re.findall(r"\b[\w'-]+\b", text.lower())
     ttr = round(len(set(tokens)) / max(len(tokens), 1), 3)
 
@@ -118,34 +124,26 @@ def analyze(text, markers):
         "mean_sentence_length": round(m_len, 1),
         "min_sentence_length": min(lengths),
         "max_sentence_length": max(lengths),
-        "burstiness": burstiness,
+        "sentence_length_cv": sentence_length_cv,
         "type_token_ratio": ttr,
     }
     return results
-
-
-def burstiness_verdict(b):
-    if b >= 0.6:
-        return "human-typical (>=0.65 is common in human prose)"
-    if b >= 0.4:
-        return "middling; consider more sentence-length variation"
-    return "low; AI-typical. Vary sentence length aggressively"
 
 
 def print_report(res):
     s = res["stats"]
     line = "=" * 64
     print(line)
-    print("  ai-writing-markers report")
-    print("  NOT an AI detector. Markers are weak signals, not proof.")
+    print("  Editorial pattern report")
+    print("  Review prompts only; no authorship classification or score.")
     print(line)
     print(f"  words: {s['words']}   sentences: {s['sentences']}")
     print(
         f"  sentence length  mean {s['mean_sentence_length']}  "
         f"min {s['min_sentence_length']}  max {s['max_sentence_length']}"
     )
-    print(f"  burstiness: {s['burstiness']}  ->  {burstiness_verdict(s['burstiness'])}")
-    print(f"  type-token ratio: {s['type_token_ratio']} (higher = more varied vocab)")
+    print(f"  sentence-length variation (stdev/mean): {s['sentence_length_cv']}")
+    print(f"  type-token ratio: {s['type_token_ratio']} (depends on passage length)")
     print(line)
 
     grand_total = 0
@@ -159,13 +157,13 @@ def print_report(res):
             print(f"      - {h['term']}: {h['count']}")
     print(line)
     print(f"  total marker hits: {grand_total}")
-    print("  Interpretation: clustering matters more than any single hit.")
-    print("  A few hits in a long document is normal human writing.")
+    print("  Review repeated phrasing/rhythm in context; do not target a numerical threshold.")
+    print("  Matches and statistics do not prove AI or human authorship.")
     print(line)
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Scan text for AI-writing markers.")
+    ap = argparse.ArgumentParser(description="Report editorial patterns for contextual review.")
     ap.add_argument("file", help="text/markdown file to scan, or - for stdin")
     ap.add_argument("--json", action="store_true", help="emit machine-readable JSON")
     ap.add_argument("--markers", default=DATA, help="path to markers.json")

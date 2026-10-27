@@ -1,42 +1,32 @@
-# GatorBait house voice: read like a person wrote it
+# GatorBait house voice and copy-desk release gate
 
-Every story Jarvis or an agent writes runs through this before it publishes:
+Every new article receives an editorial review, whatever its byline: Brenden, a named contributor or agent-assisted staff copy. Read the complete filing, preserve the writer's reporting and voice, and review the headline, deck, body, excerpt and captions. This is a publishing standard, not an authorship test or a reason to rewrite a columnist into house boilerplate.
 
-```
+Run the read-only check on the final saved copy before release:
+
+```sh
 python3 tools/voice/gb_voice.py story.txt
 ```
 
-The script runs two checks:
-- the vendored MIT checker (`check.py`, `markers.json`, from [humzakt/ai-writing-markers](https://github.com/humzakt/ai-writing-markers), which distills Wikipedia's "Signs of AI writing" guide);
-- the GatorBait house rules below.
+`gb_voice.py` reports deterministic house-style issues separately from advisory editing cues. Exit 1 means a house-style issue needs correction or a recorded editorial exception, such as necessary punctuation in a verified quotation. Exit 0 is not editorial approval. The adapted `check.py` uses the vendored [ai-writing-markers catalog](https://github.com/humzakt/ai-writing-markers) only to locate passages for review. A catalog word, punctuation mark, cluster of matches or sentence statistic never establishes AI authorship. No burstiness target, detector score or blanket word blacklist is a release gate.
 
-## Text
-- **Quotes:** use straight quotes and apostrophes (`"` and `'`). Writers type them that way into Wix, and curly quotes on every line read as machine-typeset.
-- **Rhythm:** mix sentence lengths. A two-word sentence next to a 30-word one. Aim for burstiness of 0.65 or higher on the checker.
-- **No rule of three:** don't stack three parallel items unless there really are three.
-- **No stock lines.** Never write:
-  - "It's not X, it's Y."
-  - "Here's the thing" or "Here's how."
-  - "The lessons are plain."
-  - "That's the blueprint in one sentence."
-  - "In the end."
-  - Any closer that sums the story back up for the reader.
-- **Em-dashes:** at most one per story. Use commas or periods.
-- **No signposting:** no "Let's," "Ultimately," or "Notably."
-- **Specifics over abstractions:** name the play, the quarter and the yard line, not "momentum" or "the narrative."
-- **Opinion:** only in columns and labeled grades, in the writer's voice. Beat stories stay straight.
+## Text review
 
-## Rich formatting (Wix rich content)
-Use the editor's real formatting, the way a desk editor would.
-- **Headings:**
-  - None in news stories under 700 words.
-  - Grade and list pieces may use short, plain-word headings.
-  - Never number them like "Step one:".
-- **Pull quote:** one per story, the best quote, as a `BLOCKQUOTE` node. Don't repeat it word for word in the body.
-- **Bold run-ins:** list formats only, e.g. **Quarterback: C-.** with the text following in the same paragraph.
-- **Links:** link to related GatorBait stories with a LINK decoration on a few words. No "Read more" lines.
-- **Inline photo:** one per story, with a credit caption, when we have a real one.
-- **Sourcing:** one italic line at the end instead of an "Editor's note" heading. For example: *Statistics from ESPN and UF. Quotes from the Gainesville Sun and Orlando Sentinel.*
+- **Typography:** straight quotes and apostrophes are GatorBait's house preference, not evidence of who wrote the text. Remove decorative em dashes and use periods, commas or parentheses where appropriate. Preserve verified quote words and meaning; never automatically rewrite quotations or a writer's substantive voice. Record any necessary exception.
+- **Formulaic framing:** edit canned contrasts such as "It's not X, it's Y" and question/answer openings when they obscure the actual news. Genuine contrasts, interview questions and a writer's purposeful phrasing require context, not blind replacement.
+- **Empty transitions and closers:** cut stock openings such as "Here's the thing," unsupported significance claims, repetitive signposting and conclusions that merely repeat the story. Use specific reporting to connect paragraphs.
+- **Rhythm:** read adjacent sentences and paragraphs for repeated openings, identical cadence and forced three-part lists. Let reporting determine sentence length; do not insert fragments or synonyms to manipulate a statistic. A legitimate three-item list stays intact.
+- **Specifics and sourcing:** name the play, quarter and yard line when relevant. Verify factual claims against dated primary records, distinguish observation, inference and prediction, and check every quoted passage against its full source/context. Follow the publishing playbook's fact-check scope for trusted filings; Brenden/agent-authored reporting gets the full claim check. Hold or qualify unresolved material claims, never guess.
+- **Opinion:** columns and labeled grades may carry the writer's supported judgment; beat stories stay straight. Keep the actual byline and accurate source/photo credits. Remove unresolved chatbot citation tokens or markup before release.
 
-## What this is not
-This doesn't fake authorship. Bylines stay honest: the writer's name, or Brenden Martin for staff work. The rules exist so our copy reads like good sports writing instead of a template.
+Record editorial disposition and factual corrections in the private story receipt, without storing a manuscript in public git. Publication still requires an independent live check; a clean linter is neither fact verification nor a rendered-page pass.
+
+## Rich formatting and distribution art
+
+Use native Wix rich text: useful headings, readable paragraphs and restrained emphasis. Short straight-news stories usually need no subheadings. Grade/list pieces may use short headings and bold run-ins. A pull quote is optional, must be verified and should not duplicate the same passage in the body. Link meaningful words to related reporting. An end-of-story sourcing line can supply credits without a generic "Editor's note" heading.
+
+Keep one intended visible lead photograph or artwork on the website, with honest credit and alt text. A body photo alone does not establish a feed/app cover. Follow [the publishing playbook's cover gate](../../docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md#1b-feed-and-spaces-cover-gate): read back the permanent image, matching hero and `media.displayed`, then separately inspect the actual Spaces list/card. Preserve an appropriate established drop cap for prose and readable section formatting for schedule-heavy columns. Do not disable feed cover display to hide a repeated body image. Presentation repairs must not replay email or push.
+
+## Evidence behind the policy
+
+[OpenAI withdrew its text classifier for low accuracy](https://openai.com/index/new-ai-classifier-for-indicating-ai-written-text/) and documented false positives; it is not a basis for accusing a contributor. [AP's July 2026 newsroom standards](https://www.ap.org/the-definitive-source/announcements/ap-updates-newsroom-standards-for-artificial-intelligence/) retain journalist review, sourcing, verification and accountability for assisted output. These sources support review and provenance, not punctuation-based verdicts. This house style never authorizes invented reporting, false bylines or removal of required disclosures.

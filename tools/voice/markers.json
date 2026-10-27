@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "name": "ai-writing-markers",
-  "description": "A curated, source-backed dataset of textual markers associated with AI-generated (LLM) writing. Intended as a transparency and self-editing aid, NOT as a reliable AI detector. Presence of these markers is a weak signal, not proof of authorship.",
-  "updated": "2026-07-15",
+  "description": "Legacy ai-writing-markers catalog adapted for contextual GatorBait copy editing. Terms, punctuation and patterns are review prompts only, never evidence of authorship.",
+  "updated": "2026-10-27",
   "license": "CC0-1.0 (data) / MIT (code)",
-  "disclaimer": "AI-detection is probabilistic and error-prone. Independent studies report false-positive rates from ~5% to over 60% on genuine human writing, with non-native English and formal academic prose hit hardest. Do not use these markers, or any tool built on them, as sole evidence of misconduct.",
+  "disclaimer": "Historical source annotations are not house policy or validated detection rules. This catalog supplies no AI probability, authorship verdict or statistical threshold. Review context and preserve verified quotations and substantive writer voice.",
   "sources": [
     { "id": "wikipedia_aisigns", "title": "Wikipedia: Signs of AI writing", "url": "https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing" },
     { "id": "wikipedia_aicleanup", "title": "Wikipedia: WikiProject AI Cleanup", "url": "https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup" },
@@ -154,20 +154,10 @@
     },
     {
       "id": "statistical",
-      "label": "Statistical signals",
-      "detector_signal": "perplexity and burstiness",
-      "description": "The two classical metrics behind perplexity/burstiness detectors. True perplexity needs a reference language model; this dataset defines proxies the checker can compute locally.",
-      "remediation": "Raise burstiness by aggressively varying sentence length (drop a 3-8 word sentence between long ones; allow fragments). Raise perplexity with specific, less predictable word choices, not synonym swaps.",
-      "thresholds": {
-        "burstiness_human_typical": "0.65-0.85 (stdev/mean of sentence lengths)",
-        "burstiness_ai_typical": "below 0.30",
-        "ai_sentence_length_cluster_words": "15-22",
-        "note": "Thresholds are indicative, drawn from cited 2026 write-ups, not universal constants."
-      },
-      "markers": [
-        { "term": "low_burstiness", "kind": "metric", "note": "Low standard deviation of sentence length across the passage.", "sources": ["leap_pb", "vortenza_pb", "eyesift_pb"] },
-        { "term": "low_perplexity", "kind": "metric", "note": "Predictable next-word choices. Cannot be measured without a language model; the checker reports proxies (type-token ratio, sentence-length uniformity) and says so.", "sources": ["kompozy", "textsight_how"] }
-      ]
+      "label": "Descriptive statistics only",
+      "description": "Sentence-length variation and type-token ratio describe this passage. They do not classify authorship, measure perplexity or establish a quality threshold.",
+      "remediation": "Read for repetitive rhythm in context. Do not add fragments, obscure synonyms or random length changes to chase a score.",
+      "markers": []
     }
   ]
 }

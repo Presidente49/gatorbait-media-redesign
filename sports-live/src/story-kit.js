@@ -23,12 +23,30 @@
 (function () {
   'use strict';
   if (String(location.pathname).indexOf('/post/') !== 0) return;
-  var VERSION = 'story-kit-2026.1';
+  var VERSION = 'story-kit-2026.2';
   var PAGES = 'https://presidente49.github.io/gatorbait-media-redesign/';
   var SITE = 'https://www.gatorbaitmedia.com';
   var TZ = 'America/New_York';
   var GUIDE = SITE + '/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play';
   var LINKS = { roster: GUIDE + '#roster', schedule: GUIDE + '#schedule', stats: SITE + '/florida-football-stats', road: SITE + '/#gbm-road', show: SITE + '/the-buddy-martin-show' };
+  /* The Stats destination exists only once the stats feed lands (Oct. 27, 2026: LINKS.stats is a 404). Every Stats link (strip chip,
+   * first-mention word, Keep-up card) carries .gbm-kit-stats and stays hidden until one same-origin HEAD request per session says the
+   * page answers OK; the verdict is cached in sessionStorage ('gbm-kit-stats': '1' or '0'), so the links return on their own when the
+   * page goes live. A failed request leaves them hidden; nothing is retried in the same page. */
+  var STATS_KEY = 'gbm-kit-stats', statsOk = null;
+  try { var sv = sessionStorage.getItem(STATS_KEY); statsOk = sv === '1' ? true : sv === '0' ? false : null; } catch (_) {}
+  function statsGate() {
+    [].slice.call(document.querySelectorAll('.gbm-kit-stats')).forEach(function (a) { if (statsOk === true) a.removeAttribute('hidden'); else a.setAttribute('hidden', ''); });
+  }
+  function statsCheck() {
+    if (statsOk !== null || statsCheck.started || typeof fetch !== 'function') return;
+    statsCheck.started = true;
+    fetch(LINKS.stats, { method: 'HEAD', credentials: 'same-origin', redirect: 'follow' }).then(function (r) {
+      statsOk = r.ok;
+      try { sessionStorage.setItem(STATS_KEY, r.ok ? '1' : '0'); } catch (_) {}
+      statsGate();
+    }, function () {});
+  }
   var NICK = { Missouri: 'Tigers', Georgia: 'Bulldogs', Texas: 'Longhorns', 'South Carolina': 'Gamecocks', Kentucky: 'Wildcats', Tennessee: 'Volunteers', LSU: 'Tigers', Auburn: 'Tigers', 'Ole Miss': 'Rebels', Vanderbilt: 'Commodores', 'Texas A&M': 'Aggies', Alabama: 'Crimson Tide', Arkansas: 'Razorbacks', 'Mississippi State': 'Bulldogs', Oklahoma: 'Sooners', 'Florida State': 'Seminoles' };
   var MAX_LINKS = 5;
   var CSS = '.gbm-kit{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;contain:inline-size;margin:10px 0 18px;padding:0;text-align:left;direction:ltr;font:15px/1.3 "Barlow","Barlow Condensed",sans-serif;color:#0021a5}' +
@@ -43,10 +61,11 @@
     'a.gbm-kit-link,a.gbm-kit-link:visited{color:#0021a5;text-decoration:underline;text-decoration-color:#fa4616;text-decoration-thickness:2px;text-underline-offset:2px}a.gbm-kit-link:hover{color:#fa4616}' +
     '.gbm-kit-more{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;text-align:left;margin:28px 0 8px;padding:16px 0 0;border-top:3px solid #fa4616;font:15px/1.35 "Barlow","Barlow Condensed",sans-serif;color:#0021a5}' +
     '.gbm-kit-more h3{margin:0 0 12px;font:800 22px/1.1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.02em;text-transform:uppercase;color:#0021a5}' +
-    '.gbm-kit-cards{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:700px){.gbm-kit-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}' +
+    '.gbm-kit-cards{display:grid;grid-template-columns:1fr;gap:10px}@media(min-width:700px){.gbm-kit-cards{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}}' +
     '.gbm-kit-card{display:flex;flex-direction:column;justify-content:center;gap:4px;box-sizing:border-box;min-height:64px;padding:12px 14px;border:1px solid #0021a5;border-left:6px solid #fa4616;border-radius:8px;background:#fff;color:#0021a5;text-decoration:none}' +
     '.gbm-kit-card b{font:800 18px/1.1 "Barlow Condensed","Barlow",sans-serif;letter-spacing:.03em;text-transform:uppercase}.gbm-kit-card span{font:500 14px/1.35 "Barlow",sans-serif;color:#1c2a5c}' +
-    '.gbm-kit-card:hover,.gbm-kit-card:focus-visible{background:#0021a5;color:#fff;outline:2px solid #fa4616;outline-offset:2px}.gbm-kit-card:hover span,.gbm-kit-card:focus-visible span{color:#f3f5fa}';
+    '.gbm-kit-card:hover,.gbm-kit-card:focus-visible{background:#0021a5;color:#fff;outline:2px solid #fa4616;outline-offset:2px}.gbm-kit-card:hover span,.gbm-kit-card:focus-visible span{color:#f3f5fa}' +
+    '.gbm-kit-stats[hidden]{display:none!important}';
   if (window.__GBM_KIT_RUNTIME__) { window.__GBM_KIT_RUNTIME__.mount(); return; }
 
   var seed = window.__GBM_KIT__ || {};
@@ -107,7 +126,7 @@
   function chip(cls, href, text, title) { return '<a class="gbm-kit-chip' + (cls ? ' ' + cls : '') + '" href="' + esc(href) + '"' + (title ? ' title="' + esc(title) + '"' : '') + '>' + esc(text) + '</a>'; }
   function strip() {
     var s = el('nav', { 'class': 'gbm-kit', 'data-story-kit': 'strip', 'aria-label': 'GatorBait Guide' },
-      '<span class="gbm-kit-k">GatorBait Guide</span><div class="gbm-kit-row">' + chip('', LINKS.roster, 'Roster') + chip('', LINKS.schedule, 'Schedule') + chip('', LINKS.stats, 'Stats') + chip('', LINKS.road, 'The Road Ahead') + chip('', LINKS.show, 'The Buddy Martin Show') + '</div>');
+      '<span class="gbm-kit-k">GatorBait Guide</span><div class="gbm-kit-row">' + chip('', LINKS.roster, 'Roster') + chip('', LINKS.schedule, 'Schedule') + chip('gbm-kit-stats', LINKS.stats, 'Stats') + chip('', LINKS.road, 'The Road Ahead') + chip('', LINKS.show, 'The Buddy Martin Show') + '</div>');
     return s;
   }
   // The live chips lead the row once the feed lands; nothing else in the row moves (it scrolls sideways on phones).
@@ -130,7 +149,8 @@
   /* ---------- 2. First-mention links ---------- */
   var SKIP = 'a,h1,h2,h3,h4,h5,h6,figcaption,figure,cite,blockquote footer,button,code,pre,script,style,[data-story-kit],[data-hook*="user"],[data-hook*="byline"],[data-hook*="metadata"],[rel="author"]';
   function terms() {
-    var t = [{ id: 'roster', re: 'roster', href: LINKS.roster }, { id: 'schedule', re: 'schedule', href: LINKS.schedule }, { id: 'depth-chart', re: 'depth\\s+chart', href: LINKS.roster }, { id: 'stats', re: 'stat(?:istic)?s', href: LINKS.stats }];
+    var t = [{ id: 'roster', re: 'roster', href: LINKS.roster }, { id: 'schedule', re: 'schedule', href: LINKS.schedule }, { id: 'depth-chart', re: 'depth\\s+chart', href: LINKS.roster }];
+    if (statsOk === true) t.push({ id: 'stats', re: 'stat(?:istic)?s', href: LINKS.stats });
     var n = nextGame(), nick = n && NICK[n.opponent];
     if (n) t.push({ id: 'opponent', re: n.opponent.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + (nick ? '(?:\\s+' + nick + ')?' : ''), href: n.url });
     return t;
@@ -182,7 +202,7 @@
   }
 
   /* ---------- 3. Keep up with the Gators ---------- */
-  function card(href, title, blurb) { return '<a class="gbm-kit-card" href="' + esc(href) + '"><b>' + esc(title) + '</b><span>' + esc(blurb) + '</span></a>'; }
+  function card(href, title, blurb, cls) { return '<a class="gbm-kit-card' + (cls ? ' ' + cls : '') + '" href="' + esc(href) + '"><b>' + esc(title) + '</b><span>' + esc(blurb) + '</span></a>'; }
   function mountMore() {
     if (document.querySelector('[data-story-kit="more"]')) return;
     var b = body(); if (!b) return;
@@ -190,7 +210,7 @@
     // Wix wraps each paragraph in its own block; land right after that block so the cards share the text column's gutters.
     if (last.parentNode && last.parentNode !== b && last.parentNode.children.length === 1) last = last.parentNode;
     var m = el('aside', { 'class': 'gbm-kit-more', 'data-story-kit': 'more', 'aria-label': 'Keep up with the Gators' },
-      '<h3>Keep up with the Gators</h3><div class="gbm-kit-cards">' + card(LINKS.roster, 'Roster & Schedule', 'The 2026 season guide: who is on the field and who is next.') + card(LINKS.stats, 'Florida Stats', 'The numbers behind every Gators game, updated all season.') + card(LINKS.road, 'The Road Ahead', 'Results so far and the road to Atlanta, on the front page.') + '</div>');
+      '<h3>Keep up with the Gators</h3><div class="gbm-kit-cards">' + card(LINKS.roster, 'Roster & Schedule', 'The 2026 season guide: who is on the field and who is next.') + card(LINKS.stats, 'Florida Stats', 'The numbers behind every Gators game, updated all season.', 'gbm-kit-stats') + card(LINKS.road, 'The Road Ahead', 'Results so far and the road to Atlanta, on the front page.') + '</div>');
     last.insertAdjacentElement('afterend', m);
   }
 
@@ -198,7 +218,7 @@
   function mount() {
     if (document.getElementById('gbm-live')) return;
     if (!document.getElementById('gbm-story-kit-css')) document.head.appendChild(el('style', { id: 'gbm-story-kit-css' }, CSS));
-    mountStrip(); mountLinks(); mountMore(); mountCapture();
+    statsCheck(); mountStrip(); mountLinks(); mountMore(); mountCapture(); statsGate();
   }
   // 4. GatorBait Magazine signup (sports-live/src/capture.js): a card after the 4th prose paragraph and one inside
   // "Keep up with the Gators". The capture module owns the markup, the submit and its own no-duplicate guards.
@@ -220,14 +240,13 @@
 })();
 
 
-/* GatorBait publishing SEO/accessibility layer: descriptive image alternatives, semantic sports tables,
- * and one contextual first-mention link for current Florida names. Never changes article prose. */
+/* GatorBait publishing SEO/accessibility layer: descriptive image alternatives and semantic sports tables. Never changes article
+ * prose. Player names stay plain text: the earlier first-mention link to site search (a 404, same tab) pulled readers off the page
+ * (removed Oct. 27, 2026); writers' own links are untouched. */
 (function () {
   'use strict';
   if (location.pathname.indexOf('/post/') !== 0 || window.__GBM_PUBLISHING_SEO__) return;
   window.__GBM_PUBLISHING_SEO__ = true;
-  var SITE = 'https://www.gatorbaitmedia.com';
-  var PEOPLE = ['Jon Sumrall','DJ Lagway','Jadan Baugh','Vernell Brown III','Denzel Aberdeen','Eugene Wilson III','Aidan Mizell','Myles Graham','Aaron Chiles','Caleb Banks','Jake Slaughter','Austin Barber'];
   function title() {
     var h = document.querySelector('[data-hook="post-title"], article h1, main h1');
     return h ? String(h.textContent || '').replace(/\s+/g,' ').trim() : 'Florida Gators story';
@@ -253,26 +272,8 @@
       });
     });
   }
-  function people(b) {
-    if (!b) return;
-    var done = {};
-    [].slice.call(b.querySelectorAll('a[data-gbm-person]')).forEach(function(a){ done[a.getAttribute('data-gbm-person')] = 1; });
-    var walker = document.createTreeWalker(b, NodeFilter.SHOW_TEXT, null, false), nodes=[], n;
-    while ((n = walker.nextNode())) if (/\S/.test(n.nodeValue) && !n.parentElement.closest('a,h1,h2,h3,h4,figcaption,blockquote,cite,[data-story-kit]')) nodes.push(n);
-    PEOPLE.forEach(function (name) {
-      if (done[name]) return;
-      for (var i=0;i<nodes.length;i++) {
-        if (!nodes[i].parentNode) continue;
-        var re = new RegExp('(^|[^A-Za-z0-9])(' + name + ')(?![A-Za-z0-9])','i'), m = re.exec(nodes[i].nodeValue);
-        if (!m) continue;
-        var start=m.index+m[1].length, mid=nodes[i].splitText(start); mid.splitText(m[2].length);
-        var a=document.createElement('a'); a.href=SITE+'/search-results?q='+encodeURIComponent(name); a.className='gbm-kit-link gbm-kit-person'; a.setAttribute('data-gbm-person',name); a.textContent=mid.nodeValue;
-        mid.parentNode.replaceChild(a,mid); done[name]=1; break;
-      }
-    });
-  }
-  function mount() { var b=body(); altImages(b); tables(b); people(b); }
-  if (!document.getElementById('gbm-publishing-seo-css')) { var st=document.createElement('style'); st.id='gbm-publishing-seo-css'; st.textContent='a.gbm-kit-person{font-weight:700;text-decoration:underline;text-decoration-color:#fa4616;text-decoration-thickness:1px;text-underline-offset:2px}article table caption{font-weight:800;text-align:left;padding:8px 0;color:#0021a5}'; document.head.appendChild(st); }
+  function mount() { var b=body(); altImages(b); tables(b); }
+  if (!document.getElementById('gbm-publishing-seo-css')) { var st=document.createElement('style'); st.id='gbm-publishing-seo-css'; st.textContent='article table caption{font-weight:800;text-align:left;padding:8px 0;color:#0021a5}'; document.head.appendChild(st); }
   document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', mount, {once:true}) : mount();
   var tries=0,t=setInterval(function(){mount();if(++tries>12)clearInterval(t);},700);
 })();

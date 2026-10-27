@@ -1,0 +1,14 @@
+{
+  "customEmbed": {
+    "id": "f285a38c-4a2b-43e9-b22d-a66eaeedfb41",
+    "revision": "4",
+    "name": "GBM - Share GatorBait v1 (story pages)",
+    "enabled": true,
+    "loadOnce": false,
+    "position": "HEAD",
+    "embedData": {
+      "category": "ESSENTIAL",
+      "html": "<!-- GBM_SHARE_V1 share-2026.1 neutral-site-20261024 immutable Share-only release --><script>(function(){if(window.__GBM_SHARE_LOADED__||location.pathname.indexOf('/post/')!==0)return;window.__GBM_SHARE_LOADED__=1;var c='c155975499b279a0d94928ec61d54199c51887a5',d='ebc6578b8f6e859a5a4c51a491cd3b2ebf70aec2',done=false;function go(v){if(done)return;done=true;var s=document.createElement('script');s.id='gbm-share-bundle';s.async=true;s.setAttribute('data-commit',v);s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@'+v+'/sports-live/share.js';s.onerror=function(){s.remove();if(v!==d){done=false;go(d);}};document.head.appendChild(s);}go(c);})();</script>"
+    }
+  }
+}

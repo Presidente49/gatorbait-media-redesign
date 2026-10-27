@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: October 27, 2026",
+      "excerpt": "Franz Beard on Jon Sumrall's first Florida-Georgia game and the work needed to close the rivalry gap. File photo: Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-27-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-27T12:48:24Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_fb9b6535ba3046ab86e7d0d05b6579bc~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: October 27, 2026"
+      }
+    },
+    {
+      "title": "Snubbed in Atlanta: GameDay passed, Kirby shrugged, Florida noticed",
+      "excerpt": "Brenden Martin on College GameDay's choice, Kirby Smart's quarterback comments and Florida-Georgia week in Atlanta. File photo: Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/snubbed-in-atlanta-gameday-kirby-florida",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-27T12:48:23Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_e1f8990a67f049c68d5b4da1e5fd17e9~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Snubbed in Atlanta: GameDay passed, Kirby shrugged, Florida noticed"
+      }
+    },
+    {
       "title": "We're live: Florida-Georgia talk on The Buddy Martin Show",
       "excerpt": "Watch The Buddy Martin Show live tonight as Buddy talks Jon Sumrall's quarterback decision and Florida-Georgia week. Tap through to the broadcast.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-florida-georgia-october-26-2026",
@@ -23,7 +51,7 @@
       "firstPublishedDate": "2026-10-27T00:03:22Z",
       "section": "GatorBait",
       "image": {
-        "src": "",
+        "src": "https://static.wixstatic.com/media/d3cfa5_6a1d264c48f242608ae7bfe4e90c3deb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap."
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators find a spark in Austin"
-      }
-    },
-    {
-      "title": "A Big Thank You to Gator Fans For Their Juice — And Their Loyalty!",
-      "excerpt": "Buddy Martin thanks Gator fans for their loyalty after Florida's 27-24 win at Texas and looks ahead to the open date. Photo courtesy UAA and Hannah White.",
-      "url": "https://www.gatorbaitmedia.com/post/a-big-thank-you-to-gator-fans-for-their-juice-and-their-loyalty",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-19T21:25:03Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for A Big Thank You to Gator Fans For Their Juice — And Their Loyalty!"
-      }
-    },
-    {
-      "title": "An Exhibition Loss Gives Golden Plenty Of Material To “Coach ‘Em Up”",
-      "excerpt": "Franz Beard on Florida's 82-76 overtime exhibition loss to Baylor and the fixes Todd Golden faces before the regular season. Photo by Chris Spears, GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/an-exhibition-loss-gives-golden-plenty-to-correct",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-19T20:03:31Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for An Exhibition Loss Gives Golden Plenty Of Material To “Coach ‘Em Up”"
       }
     }
   ]

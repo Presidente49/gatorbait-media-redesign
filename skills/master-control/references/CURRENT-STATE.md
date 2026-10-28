@@ -1,5 +1,13 @@
 # Master Control Current State
 
+## Verified front-page checkpoint — Oct. 28, 2026
+
+- User explicitly requested Franz's morning Florida–Georgia lead, his basketball analysis, overnight coverage and Buddy, with the earlier staff column last. Latest steering: **Rays is supporting coverage, not a headline story**. Published native Georgia post `cf6d98dc-6a1c-4dfe-9234-df9e3774aad5` once at12:36:55Z, actual canonical `/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2`. Complete filing recovered from verified writer source folder; private source provenance/copy desk receipt retained, house voice PASS. Public390/1366 passes one decoded archive photograph, correct Franz byline, five article headings, full ending and no overflow.
+- Franz basketball `38b61b3e-aec3-43ec-b838-0398d0b16bda` now uses owned Chris Spears Stetson bench photo `16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg` (3000×1902), replacing the badly cropped portrait. Custom displayed cover and matching hero/caption/alt saved; original publication and prose preserved. Independent public390/1366 passes. Georgia lead uses owned Spears 2024 rivalry archive photo `16b519_e1f8990a67f049c68d5b4da1e5fd17e9~mv2.jpg`, clearly dated as archive.
+- Live skin owner `0c13f955-74bf-484c-abd9-359a5eef271b` is revision27, pin `f5b6c20d21e7bcef87b603f526e052221c4e8c0c`, source SHA-256 `617723f430dd13b273f5024899f78fcc0cf39f73e5440dce772c11ee54ac8337`. Georgia lead; Golden/Buddy photo features; Rays first compact row; Urban Renewal last. Actual-RSS candidate390/1366 and13tests pass; CDN200 hash matches. Exact order package ends04:00ZOct29 (midnightEastern), restoring prior Oct27 writer/staff default. Preserve all timestamps and URL dedupe. No Editor publish, manual email/push resend or automation change.
+- **Pending Buddy artwork:** owner supplied/likes “THE NAME GAME” blue/orange architectural show thumbnail with oversized cream/metallic type and requested it on yesterday's Buddy `/post/florida-georgia-sumrall-knows-the-math`. Exact original bytes/link unavailable; verified MediaManager/Drive search found no match. Current Buddy cover untouched. Direct original link requested; do not substitute a regenerated approximation or claim done. Actual Spaces card/device remains unverified. Previous basketball public canonical differs from native URL; cover task left that pre-existing mapping intact.
+- Release/rollback: `deploy/front-page-package-20261028/`, PR440. Fresh public homepage verification is recorded in the release receipt when available; no CI runs were returned for this release.
+
 
 ## Verified controller checkpoint — Oct. 25, 2026
 

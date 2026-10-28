@@ -106,5 +106,12 @@
       }
     }
   },
-  "nativeLinkAfter30s": "PENDING"
+  "nativeLinkAfter30s": {
+    "verdict": "PASS",
+    "nativeLinks": "Full document navigation and browser Back pass",
+    "installedDispatcher": "After31s same-document history pushState emits gbmroutechange and clears reserve/art; replaceState restores exact valid634 ratio by2500ms",
+    "nativeSPATap": "Not observed; not claimed"
+  },
+  "fixtureRegressions": 20,
+  "emptySlotFixtureCases": 18
 }

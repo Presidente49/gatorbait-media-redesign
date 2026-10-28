@@ -22,7 +22,7 @@ ESBUILD_MODULE=/path/to/esbuild/lib/main.js python3 deploy/article-cover-cls-202
 node deploy/article-cover-cls-20261028/verify-source.cjs
 ```
 
-`rollback-v27.html` is the immutable historical build input; `rollback-rev28.html` is the actual pre-release live rollback. They serve different purposes. `source-proof.json` proves parsing, script identity, expanded-CSS equivalence and both size limits. The source verifier intentionally executes only the trusted CSS decoder in an isolated Node VM, never page scripts from an incoming filing.
+`rollback-v27.html` is the immutable historical build input; `rollback-rev28.html` is the actual pre-release live rollback. They serve different purposes. `source-proof.json` proves parsing, script identity, expanded-CSS equivalence and both size limits. `tests.cjs` passed 20 fixture regressions with an explicit private `NATIVE_SNAPSHOT`; omitting that optional input does not prove full manuscript parity. Eighteen additional empty-slot geometry cases also passed. The source verifier intentionally executes only the trusted CSS decoder in an isolated Node VM, never page scripts from an incoming filing.
 
 ## Pre-release evidence
 
@@ -37,7 +37,7 @@ Thirteen isolated, ordinary-origin Google Chrome runs replaced exactly the exist
 | Rays / Stetson, 390 px | — | 0.000176 each |
 | Buddy, 1366 px | 0.201356 | 0.201373 |
 
-Full saved text and ending, headline, actual writer, visible credit, one loaded intended cover, script parity and no horizontal overflow pass. Desktop final geometry is unchanged; its pre-existing layout shift is outside this mobile repair. Actual-page invalid-metadata, matching-inline-image, unmapped/no-cover and reinjection controls pass. Source review by Claude is approved subject to the real native-link cleanup check after the 30-second observer lifetime. Security scan passes all three candidate scripts (83 applicable JavaScript/security rules) and the local runner (200 applicable Python/security rules), with no findings, errors or skips.
+Full saved text and ending, headline, actual writer, visible credit, one loaded intended cover, script parity and no horizontal overflow pass. Desktop final geometry is unchanged; its pre-existing layout shift is outside this mobile repair. Actual-page invalid-metadata, matching-inline-image, unmapped/no-cover and reinjection controls pass. Claude approved the exact source; its remaining cleanup condition passed. Actual native article links and browser Back reload the document and restore the right cover. After 31 seconds, the installed history wrapper emits `gbmroutechange` on same-document navigation and clears old reservation/art. An exact valid return restores its ratio and image by 2.5 seconds; an immediate 300 ms assertion was too early for the existing asynchronous route cycle. No native SPA tap is claimed. See `navigation-proof.json`. Security scan passes all three candidate scripts (83 applicable JavaScript/security rules) and the local runner (200 applicable Python/security rules), with no findings, errors or skips.
 
 ## Apply and rollback
 

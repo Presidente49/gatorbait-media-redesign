@@ -25,6 +25,7 @@ Start with this file. Then load references selectively:
 - [references/CURRENT-STATE.md](references/CURRENT-STATE.md) when current IDs, connections, traffic, campaigns, integrations, or production status matter.
 - [references/DOCTRINE.md](references/DOCTRINE.md) when the task changes product strategy, UX, editorial routing, monetization, distribution, membership, community, TV, or brand behavior.
 - [references/LESSONS.md](references/LESSONS.md) before production changes, automation work, migrations, email/social publishing, or anything that resembles a prior failure.
+- [references/team-handoff.md](references/team-handoff.md) for the owner-provided three-arm organization, cross-arm handoffs and the single social claim registry; verify the named host files before relying on access.
 - `automation/ops-hub/playbooks/controller-communications-qc.md` before recurring automation work, cross-chat handoffs, persistent incident routing, repeated alerts, or recursive QC.
 
 Then load the smallest existing specialist skill required by the surface, for example:
@@ -35,6 +36,7 @@ Then load the smallest existing specialist skill required by the surface, for ex
 - `skills/gatorbait-editorial/` for editorial tasks.
 - `skills/gatorbait-morning-email/SKILL.md` for morning columns, AM emails, writer fallback artwork and post-to-email verification.
 - `skills/gatorbait-community/` for community/message-board work.
+- [Symphony Pit Crew](../symphony-pit-crew/SKILL.md) for Symphony capability discovery, native-agent dispatch, connector reconciliation and bounded repair handoffs.
 - `skills/gatorbait-graphic-design/` for GatorBait visual production.
 - `skills/gatorbait-broadcast-graphics/SKILL.md` for AP Mode, show thumbnails, rankings, matchup cards, lower thirds, scorebugs, tickers, and GatorBait Sports Network broadcast packages.
 - `automation/ops-hub/playbooks/meta-control.md` for Facebook/Instagram/Meta reads, publishing, connection repair, field-post monitoring, and paid-vs-organic routing.
@@ -54,6 +56,10 @@ When sources disagree, use this order:
 7. **Model assumptions** last.
 
 Friendly names are never enough for mutable objects. Identify automations, campaigns, embeds, workflows, accounts, and pages by stable IDs plus relevant origin/type/message ID when available.
+
+Symphony's verified live Wix/provider reads belong at the top of this hierarchy. A Maestro or worker summary, saved task note, roster entry or claimed completion is not itself live-provider verification. Reconcile it with the actual tool result, current object and public/runtime evidence before recording it as fact. Never force newer live content or a deployed commit pin to match older repository guidance.
+
+For Symphony work, read [the operating adapter](references/symphony-operations.md). It preserves this single controller and the existing issue #34/current-state record; Symphony campaign files are subordinate task evidence. This bounded production-control contract does not erase the owner's three-arm organization. Issue #34 does not replace the designated desk handoff or social claim registry in [the team handoff](references/team-handoff.md).
 
 ## Operating loop
 
@@ -116,6 +122,8 @@ Escalate only when the task crosses an `approval_required` boundary, rights/cons
 ## Approval boundaries
 
 Master Control may complete authorized reversible operational work without routine re-confirmation.
+
+Current owner instructions retain their scope when relayed through an authorized tool or worker. Do not invent a universal requirement to repeat them in another platform's chat. Before reporting a tool-origin or approval blocker, identify its source: an applicable tool contract/runtime rule, the original machine-generated refusal, or an agent's inference. A worker-written `ACTION_NEEDED` note proves a task state, not a platform rule. Respect actual gates without changing identities, credentials, permission settings or execution modes to evade them; keep independent authorized work moving.
 
 Do not infer permission to:
 

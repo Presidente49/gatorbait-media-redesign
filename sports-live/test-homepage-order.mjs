@@ -9,7 +9,7 @@ const between = (start, end) => {
   assert.ok(from >= 0 && to > from, `Missing production function ${start}`);
   return source.slice(from, to);
 };
-const functions = between('function storyPath(', 'function freshRows(')
+const functions = between('function esc(v)', '/* Live data.') + between('function storyPath(', 'function freshRows(')
   + between('function freshLead(', '/* Reuse the same live RSS records')
   + between('function freshRows(', 'function img(u,w,h)');
 const day = 86400000, now = Date.now();
@@ -228,5 +228,51 @@ test('Rays stays compact in either feature index, including URL variants and aft
   }
   assert.equal(h.context.homepageFeature(packageStory(packagePaths.basketball, 'Franz Beard'), 0), true);
   assert.equal(h.context.homepageFeature(packageStory(packagePaths.buddy, 'Buddy Martin'), 1), true);
+});
+
+test('hero and all eight current cards show their actual RSS writers separately from photograph credits', () => {
+  const records = packageRecords(), h = harness(records, packageNow);
+  h.context.freshLead(h.root);
+  h.context.freshRows(h.root);
+  assert.ok(h.lead.html.includes('<p class="bc-author">By Franz Beard</p>'));
+  const bylines = Array.from(h.list.innerHTML.matchAll(/<span class="bc-author">([^<]+)<\/span>/g), m => m[1]);
+  assert.deepEqual(bylines, ['By Franz Beard', 'By Buddy Martin', 'By GatorBait Staff', 'By Loren Meadows',
+    'By Eddie Gilley', 'By GatorBait Staff', 'By Brenden Martin', 'By GatorBait Staff']);
+  assert.ok(h.list.innerHTML.includes('<span class="bc-credit">Photo by Chris Spears, GatorBait Media.</span>'));
+  assert.ok(!bylines.some(name => name.includes('Chris Spears')), 'Photographer never becomes writer');
+  assert.equal(bylines.length, 8);
+});
+
+test('unknown RSS creator never fabricates a byline from photography or a default staff label', () => {
+  const records = [story('unknown-lead', '', 1), story('unknown-card', undefined, 2)];
+  const h = harness(records);
+  h.context.freshLead(h.root);
+  h.context.freshRows(h.root);
+  assert.ok(!h.lead.html.includes('class="bc-author"'));
+  assert.ok(!h.list.innerHTML.includes('class="bc-author"'));
+  assert.ok(!h.lead.html.includes('By GatorBait Staff'));
+  assert.equal(h.context.homepageByline({name: 'invented'}, 'p'), '');
+});
+
+test('writer names escape markup and quotes while normalizing whitespace, without changing source records', () => {
+  const name = '  Desk <img src=x onerror="bad()"> & "Editors"  ';
+  const records = [story('unsafe-name-lead', name, 1), story('unsafe-name-card', name, 2)];
+  const before = JSON.stringify(records), h = harness(records);
+  h.context.freshLead(h.root);
+  h.context.freshRows(h.root);
+  for (const html of [h.lead.html, h.list.innerHTML]) {
+    assert.ok(html.includes('By Desk &#60;img src=x onerror=&#34;bad()&#34;&#62; &#38; &#34;Editors&#34;'));
+    assert.ok(!html.includes('<img src=x'));
+  }
+  assert.equal(JSON.stringify(records), before);
+});
+
+test('matching current hero URL, image and title still repairs a missing author line', () => {
+  const record = story('same-current-lead', 'Franz Beard', 1), h = harness([record]);
+  h.link.href = record[2];
+  const currentImage = {src:record[4]};
+  h.lead.querySelector = selector => selector === 'a[href]' ? h.link : selector === 'img' ? currentImage : selector === 'h1,h2' ? {textContent:record[1]} : null;
+  h.context.freshLead(h.root);
+  assert.ok(h.lead.html.includes('<p class="bc-author">By Franz Beard</p>'));
 });
 

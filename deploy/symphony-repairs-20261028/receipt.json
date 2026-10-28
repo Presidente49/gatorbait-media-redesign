@@ -1,0 +1,72 @@
+{
+  "verified_at_utc": "2026-10-28T15:59:16.222400+00:00",
+  "pull_request": "https://github.com/Presidente49/gatorbait-media-redesign/pull/441",
+  "source_commit": "a2fb77c94d707761245d26540ad9fd1ea9c66cc3",
+  "resource": "homepage presentation loader",
+  "embed_id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+  "revision_before": "29",
+  "revision_after": "30",
+  "runtime_sha256": "2d890eed6949ef64b12a520fcae1e54de2d9f877968d80bd4bc383025ba444e5",
+  "provider_readback": "PASS",
+  "unrelated_loader_fields_preserved": true,
+  "editor_publish": false,
+  "public_verification": {
+    "status": "PASS",
+    "widths": [
+      320,
+      390,
+      430,
+      1366
+    ],
+    "interception": false,
+    "stories": 9,
+    "unchanged_story_byline_photo_route_crop_geometry": true,
+    "no_horizontal_overflow": true,
+    "menu_and_focus_followup": "PASS; initial outlier retained in raw evidence"
+  },
+  "image_metric": {
+    "scope": "six compact image responses in paired real-origin DPR1 check; not total page bytes",
+    "before_bytes": 750913,
+    "after_bytes": 59317,
+    "reduction_percent": 92.1
+  },
+  "tests": {
+    "existing_homepage_regressions": 28,
+    "component_assertions": 92,
+    "magazine_parity": "6/6",
+    "magazine_reader_widths": [
+      320,
+      390,
+      430,
+      1366
+    ]
+  },
+  "magazine_build": {
+    "before_generated_bytes": 189692,
+    "after_generated_bytes": 183107,
+    "unchanged_limit_bytes": 188416,
+    "decoded_css_and_data_and_runtime_identical": true,
+    "live_magazine_pin_changed": false
+  },
+  "global_ci": {
+    "url": "https://github.com/Presidente49/gatorbait-media-redesign/actions/runs/40717861792",
+    "homepage_and_magazine_candidate_stages": "PASS",
+    "production_wide_stage": "FAIL: four untouched live-magazine freshness assertions and two article cookie/headline overlaps; no homepage hard failures",
+    "gate_not_weakened": true
+  },
+  "not_changed": [
+    "article templates owned by another current task",
+    "email/push sends",
+    "account/DNS/payment/member settings",
+    "future schedules"
+  ],
+  "remaining": [
+    "Symphony footer/SEO cards held",
+    "Wix-hosted wixTagManager/CAPI errors",
+    "other live magazine/article audit failures"
+  ],
+  "rollback": {
+    "snapshot": "deploy/symphony-repairs-20261028/embed-before.json",
+    "instruction": "Read the current embed revision; restore original HTML with its preserved ESSENTIAL category, then verify public output. Do not blindly send revision29 or enable a second loader."
+  }
+}

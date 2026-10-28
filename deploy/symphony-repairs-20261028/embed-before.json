@@ -1,0 +1,14 @@
+{
+  "customEmbed": {
+    "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+    "revision": "29",
+    "name": "GBM - Visible author bylines and distinct story photography",
+    "enabled": true,
+    "loadOnce": false,
+    "position": "HEAD",
+    "embedData": {
+      "category": "ESSENTIAL",
+      "html": "<!-- GBM_BROADCAST_HOME_V1 src=e83e372 Author bylines, unique photos, Rays supporting; rollback deploy/front-page-package-20261028/embed-before.json --><style id=\"gbm-bc-wait\">html.gbm-bc-wait #gbm-live.gbm-gazette{visibility:hidden}</style><script id=\"gbm-bc-loader\">(function(){var p=(location.pathname||'/').replace(/\\/+$/,'')||'/';if(p!=='/'||window.__GBM_BC_HOME__)return;var d=document.documentElement,u=function(){d.classList.remove('gbm-bc-wait');};d.classList.add('gbm-bc-wait');setTimeout(u,2500);var s=document.createElement('script');s.src='https://rawcdn.githack.com/Presidente49/gatorbait-media-redesign/e83e37259ad51a277e5a9575158ad0369a53d3e5/sports-live/broadcast-home-color.js';s.onerror=u;(document.head||d).appendChild(s);})();</script>"
+    }
+  }
+}

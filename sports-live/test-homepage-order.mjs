@@ -102,7 +102,7 @@ test('later feed refresh preserves the already reconciled lead and excludes it f
 
 const packageNow = Date.parse('2026-10-28T12:00:00Z');
 const packagePaths = {
-  lead: '/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too',
+  lead: '/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2',
   basketball: '/post/golden-still-looking-to-solidify-his-bench-rotation',
   rays: '/post/rays-baseball-world-series-game-4-brewers-gators-ties',
   buddy: '/post/florida-georgia-sumrall-knows-the-math',

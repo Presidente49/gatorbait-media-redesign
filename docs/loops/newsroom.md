@@ -52,3 +52,11 @@ The learning contract remains `automation/ops-hub/playbooks/controller-communica
 ## Scoreboard
 
 Measure submission-to-live time, held items and reasons, post-QC defects, actual email/social delivery, article referrals and useful member responses. Separate outcomes from activity counts. The animated Hive chart illustrates this workflow; it is not a live heartbeat or proof a stage ran.
+
+## Article presentation recovery — Oct. 28, 2026
+
+The existing formatter14a887e3 revision28 now renders the four explicitly verified missing covers and selects prose for the opening initial, preserving Georgia's existing native hero and all five articles' IDs, bylines, native covers and publication timestamps. PR444/source `deploy/article-cover-recovery-20261028/` records the guarded change,20 browser regressions and rollback. Ordinary390/430/1366/1920 checks passed for all five at17:48Z. Native media displayed=true and a generic hard=[] probe were insufficient; release requires the actual intended image count and actual initial target. Do not generalize the four-pair recovery allowlist to unverified future artwork.
+
+A native save can precede public cache propagation. Read the known native object and independently sample the public source before retrying; this recovery used one patch, then observed the new source and ordinary public result without a second write. Presentation repair never republishes stories or replays email/push. Keep physical Spaces/card proof and actual provider delivery unverified when not observed.
+
+Buddy's genuine noon email was accepted and reconciled to an existing Jarvis-reported canonical publication; this is not proof that the Codex wake itself performed an autonomous publication. The following scheduled passes found one canonical ID and made no controller duplicate publication or send. Preserve the one Codex wake and pending genuine-filing acceptance test. Agent-authored scout drafts with an explicit publish-call hold are separate from routine writer-email filings; do not auto-publish them through intake.

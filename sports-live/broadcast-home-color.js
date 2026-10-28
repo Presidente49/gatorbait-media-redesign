@@ -513,7 +513,7 @@ function wixPhoto(h){try{var u=new URL(h),m=/^\/media\/([^/]+~mv2\.(?:jpe?g|png|
 /* Explicit Oct. 28 package, valid only for this Eastern calendar day.
    Canonical URLs rank only stories already in the newest-nine window; they never alter dates or bylines.
    A null lead means its complete native manuscript/canonical is still unresolved. */
-var HOMEPAGE_PACKAGE = {"from":"2026-10-28T04:00:00Z","until":"2026-10-29T04:00:00Z","lead":"/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2","next":["/post/golden-still-looking-to-solidify-his-bench-rotation","/post/florida-georgia-sumrall-knows-the-math","/post/rays-baseball-world-series-game-4-brewers-gators-ties"],"last":"/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition"};
+var HOMEPAGE_PACKAGE = {"from":"2026-10-28T04:00:00Z","until":"2026-10-29T04:00:00Z","lead":"/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2","next":["/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball","/post/florida-georgia-sumrall-knows-the-math","/post/rays-baseball-world-series-game-4-brewers-gators-ties"],"last":"/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition"};
 function homepagePackageOrder(ordered,t){
 var p=HOMEPAGE_PACKAGE,from=Date.parse(p&&p.from),until=Date.parse(p&&p.until);if(!p||!isFinite(from)||!isFinite(until)||from>=until||t<from||t>=until)return ordered;
 var paths=[p.lead].concat(p.next||[]).filter(Boolean),byPath={},used={},front=[];
@@ -530,6 +530,8 @@ function staff(f){return /^(?:brenden martin|gator\s*bait\s+staff)$/i.test(Strin
 var writers=current.filter(function(f){return!staff(f);}),staffStories=current.filter(staff);
 return homepagePackageOrder(writers.length?writers.concat(staffStories.reverse()):staffStories,t);
 }
+/* The Rays recap remains a compact brief even when another package story is absent. */
+function homepageFeature(f,index){return index<2&&storyPath(f[2])!=='/post/rays-baseball-world-series-game-4-brewers-gators-ties';}
 function freshRows(root){var list=root.querySelector('.bc-rows');if(!list||!D.all)return;
 var lead=root.querySelector('.bc-hero .sh-lead a[href]'),seen={},original={};if(lead)seen[storyPath(lead.href)]=true;
 [].slice.call(root.querySelectorAll('.sh-lead,.sh-support article,.sh-wire-item,.sh-coverage article')).forEach(function(a){var l=a.querySelector('a[href]'),im=a.querySelector('img');if(l&&im)original[storyPath(l.href)]=im.getAttribute('alt')||'';});
@@ -537,7 +539,7 @@ var lead=root.querySelector('.bc-hero .sh-lead a[href]'),seen={},original={};if(
 var rows=homepageStories(D.all).filter(function(f){var h=storyPath(f[2]);if(seen[h])return false;seen[h]=true;return true;}).slice(0,8);if(!rows.length)return;
 var hasUAA=false,hasHannah=false;var html=rows.map(function(f,i){var id=(/\/media\/([^/~]+)/.exec(f[4])||[])[1],native=COVER_META[id]||{},credit=native.credit||(D.credits||{})[id]||f[6]||'',alt=native.alt||(D.imageAlts||{})[id]||f[5]||original[storyPath(f[2])]||f[1],photo=!!wixPhoto(f[4]),art=/(collage|illustration|graphic)/i.test(alt)||(D.covers||[]).indexOf(id)>=0;
 if(photo){hasUAA=hasUAA||/\bUAA\b/.test(credit);hasHannah=hasHannah||/Hannah White/.test(credit);if(credit&&alt.indexOf(credit)<0)alt+=' '+credit;}
-return'<li class="bc-row '+(i<2?'bc-feature':'bc-compact')+(art?' bc-cover-art':'')+'" data-published="'+new Date(f[0]).toISOString()+'"><a href="'+esc(f[2])+'">'+(photo?'<span class="bc-thumb"><img src="'+esc(wixPhoto(f[4]).replace('w_480,h_320','w_800,h_800'))+'" alt="'+esc(alt)+'" width="480" height="320" loading="lazy" decoding="async"></span>':'')+'<span><h3>'+esc(f[1])+'</h3>'+(photo&&credit?'<span class="bc-credit">'+esc(credit)+'</span>':'')+'</span></a></li>';}).join('');
+return'<li class="bc-row '+(homepageFeature(f,i)?'bc-feature':'bc-compact')+(art?' bc-cover-art':'')+'" data-published="'+new Date(f[0]).toISOString()+'"><a href="'+esc(f[2])+'">'+(photo?'<span class="bc-thumb"><img src="'+esc(wixPhoto(f[4]).replace('w_480,h_320','w_800,h_800'))+'" alt="'+esc(alt)+'" width="480" height="320" loading="lazy" decoding="async"></span>':'')+'<span><h3>'+esc(f[1])+'</h3>'+(photo&&credit?'<span class="bc-credit">'+esc(credit)+'</span>':'')+'</span></a></li>';}).join('');
 var sources=list.parentNode.querySelector('.bc-photo-sources');if(!sources){sources=document.createElement('p');sources.className='bc-photo-sources';list.insertAdjacentElement('afterend',sources);}sources.hidden=!hasUAA;sources.innerHTML=hasUAA?'UAA photo sources: <a href="https://floridagators.com">UAA</a>'+(hasHannah?' · <a href="https://www.instagram.com/hannahmorganphoto/">Hannah White</a>':'')+' · <a href="https://floridagators.com/galleries">Official galleries</a>.':'';
 if(list.__bcFreshRows===html)return;list.__bcFreshRows=html;list.classList.add('bc-photo-rows');list.innerHTML=html;
 root.classList.add('bc-fresh-news','bc-story-rhythm');

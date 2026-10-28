@@ -1,0 +1,33 @@
+{
+  "postId": "38b61b3e-aec3-43ec-b838-0398d0b16bda",
+  "media": {
+    "wixMedia": {
+      "image": {
+        "id": "16b519_7f69c79472d2429ebf9d335bc8f6ba4a~mv2.jpg",
+        "url": "https://static.wixstatic.com/media/16b519_7f69c79472d2429ebf9d335bc8f6ba4a~mv2.jpg",
+        "height": 3000,
+        "width": 2000,
+        "filename": "10.28.26 Florida Gator Basketball vs Stetson (csp5) (15 of 25).jpg"
+      }
+    },
+    "displayed": true,
+    "custom": true
+  },
+  "caption": {
+    "type": "PARAGRAPH",
+    "id": "foo",
+    "nodes": [
+      {
+        "type": "TEXT",
+        "id": "",
+        "nodes": [],
+        "textData": {
+          "text": "Photo by Chris Spears, GatorBait Media.",
+          "decorations": []
+        }
+      }
+    ],
+    "paragraphData": {}
+  },
+  "heroImagePriorState": "Not returned in published-post snapshot; prior native top photo matched prior custom cover. If rolling back, re-read current native draft and preserve later editorial changes."
+}

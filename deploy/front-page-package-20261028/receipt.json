@@ -1,0 +1,144 @@
+{
+  "publishedAt": "2026-10-28T12:36:55Z",
+  "georgia": {
+    "id": "cf6d98dc-6a1c-4dfe-9234-df9e3774aad5",
+    "path": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+    "title": "Why I despise the Georgia Bulldogs and why you should too",
+    "status": "PUBLISHED",
+    "author": "Franz Beard",
+    "bodyNodes": 46,
+    "headings": 5,
+    "cover": "16b519_d03e2d3ca3b34a9f863a7e55157ec1d1~mv2.jpg",
+    "archiveDate": "2024-11-02",
+    "credit": "Chris Spears, GatorBait Media",
+    "coverDistinctFromOtherCards": true
+  },
+  "basketball": {
+    "id": "38b61b3e-aec3-43ec-b838-0398d0b16bda",
+    "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+    "cover": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+    "originalPublicationPreserved": true,
+    "articleCopyPreserved": true,
+    "nativeCanonicalResolved": true
+  },
+  "homepage": {
+    "owner": "0c13f955-74bf-484c-abd9-359a5eef271b",
+    "revision": "29",
+    "pin": "e83e37259ad51a277e5a9575158ad0369a53d3e5",
+    "sha256": "c946e8eb431eecb6dd0e7280f7b2ebedf1252c994572e1725f7c16ef2aa6e462",
+    "lead": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+    "features": [
+      "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+      "/post/florida-georgia-sumrall-knows-the-math"
+    ],
+    "supportingRays": "/post/rays-baseball-world-series-game-4-brewers-gators-ties",
+    "last": "/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition",
+    "until": "2026-10-29T04:00:00Z",
+    "raysAlwaysCompact": true,
+    "scriptUrl": "https://rawcdn.githack.com/Presidente49/gatorbait-media-redesign/e83e37259ad51a277e5a9575158ad0369a53d3e5/sports-live/broadcast-home-color.js",
+    "authorBylines": "Dedicated By [verified RSS creator] on all nine visible stories, separate from photograph credits.",
+    "uniqueImages": 8
+  },
+  "checks": {
+    "syntax": true,
+    "orderingTests": 20,
+    "CDNHash": true,
+    "candidateWidths": [
+      390,
+      430,
+      1366
+    ],
+    "finalCandidateWidths": [
+      390,
+      430,
+      1366
+    ],
+    "publicArticleWidths": [
+      390,
+      1366
+    ],
+    "repairedPreviewWidths": [
+      390
+    ],
+    "initialPublicFailure": "Golden canonical changed to the longer native URL between preview and release; public QA caught Rays becoming the second feature. Corrected canonical and added Rays-always-compact guard, then verified final release separately.",
+    "publicHomepage": {
+      "allPassed": true,
+      "widths": [
+        390,
+        430,
+        1366
+      ],
+      "routeInterception": false,
+      "sourceHashMatched": true,
+      "nineVisibleActualAuthors": true,
+      "eightUniqueDecodedImages": true,
+      "noOverflow": true,
+      "buddyOriginalContained": true,
+      "raysCompact": true
+    },
+    "articleBylines": {
+      "stories": 5,
+      "widths": [
+        390,
+        1366
+      ],
+      "allTenVisible": true,
+      "templateUnchanged": true
+    },
+    "actualCDNPreview": {
+      "widths": [
+        390,
+        430,
+        1366
+      ],
+      "http": 200,
+      "mime": "application/javascript",
+      "sourceHashMatched": true,
+      "noCSPFailure": true
+    },
+    "deliveryFallback": "New jsDelivr refs returned403 because repository snapshot exceeds50MB. Same immutable committed code verified through rawcdn.githack HTTPS; existing owner updated in place.",
+    "finalPublicArticleMedia": {
+      "buddy": {
+        "widths": [
+          390,
+          1366
+        ],
+        "oneDecodedOriginal": true,
+        "contained": true,
+        "allRemainingCopy": true,
+        "bylineAndCredit": true,
+        "canonicalPreserved": true,
+        "noOverflow": true
+      },
+      "georgia": {
+        "widths": [
+          390,
+          1366
+        ],
+        "oneDistinctPhoto": true,
+        "allCopyAndEnding": true,
+        "bylineAndCredit": true,
+        "noOverflow": true
+      }
+    }
+  },
+  "pending": {
+    "spacesCard": "Actual device unavailable; not verified.",
+    "redesign": "Broader landing-page redesign deferred for a separate user discussion."
+  },
+  "buddy": {
+    "id": "3b68fc68-2735-4209-855b-c635189578a0",
+    "path": "/post/florida-georgia-sumrall-knows-the-math",
+    "cover": "d3cfa5_712da939ff25435886f64d82c25674a7~mv2.jpg",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "originalBytesUnchanged": true,
+    "sha256": "622a474dd2e20cefddfe87a6f6dba29cc7fa14f4318b5cbbb09b93cb27edb2be",
+    "other83BodyNodesPreserved": true,
+    "originalPublicationPreserved": true,
+    "duplicateBodyImageRemoved": true,
+    "finalBodyNodes": 84
+  }
+}

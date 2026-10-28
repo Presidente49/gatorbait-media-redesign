@@ -1,0 +1,12 @@
+{
+  "id": "0c13f955-74bf-484c-abd9-359a5eef271b",
+  "revision": "26",
+  "name": "GBM - Current story covers and widescreen photo cards v3",
+  "enabled": true,
+  "loadOnce": false,
+  "position": "HEAD",
+  "embedData": {
+    "category": "ESSENTIAL",
+    "html": "<!-- GBM_BROADCAST_HOME_V1 src=7b8f661 Newest staff column last; rollback deploy/thoughts-cover-20261023/embed-before.json --><style id=\"gbm-bc-wait\">html.gbm-bc-wait #gbm-live.gbm-gazette{visibility:hidden}</style><script id=\"gbm-bc-loader\">(function(){var p=(location.pathname||'/').replace(/\\/+$/,'')||'/';if(p!=='/'||window.__GBM_BC_HOME__)return;var d=document.documentElement,u=function(){d.classList.remove('gbm-bc-wait');};d.classList.add('gbm-bc-wait');setTimeout(u,2500);var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@7b8f661a3b85d9e7511ab7b698a30993e6fab834/sports-live/broadcast-home-color.js';s.onerror=u;(document.head||d).appendChild(s);})();</script>"
+  }
+}

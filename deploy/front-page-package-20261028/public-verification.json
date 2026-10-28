@@ -1,0 +1,118 @@
+{
+  "allPassed": true,
+  "productionOwnerRevision": 29,
+  "url": "https://www.gatorbaitmedia.com/?release=20261028-final-bylines-r29",
+  "routeInterception": false,
+  "rssInterception": false,
+  "photoInterception": false,
+  "sourceUrl": "https://rawcdn.githack.com/Presidente49/gatorbait-media-redesign/e83e37259ad51a277e5a9575158ad0369a53d3e5/sports-live/broadcast-home-color.js",
+  "sourceSha256": "c946e8eb431eecb6dd0e7280f7b2ebedf1252c994572e1725f7c16ef2aa6e462",
+  "profiles": [
+    {
+      "profile": 390,
+      "http": 200,
+      "pass": true,
+      "loaderSource": "https://rawcdn.githack.com/Presidente49/gatorbait-media-redesign/e83e37259ad51a277e5a9575158ad0369a53d3e5/sports-live/broadcast-home-color.js",
+      "actualCdnStatus": 200,
+      "actualCdnSha256": "c946e8eb431eecb6dd0e7280f7b2ebedf1252c994572e1725f7c16ef2aa6e462",
+      "nineCorrectBylines": true,
+      "eightUniquePhotos": true,
+      "allPhotosLoaded": true,
+      "georgiaNewPhoto": true,
+      "goldenCorrect": true,
+      "buddyOriginalContained": true,
+      "requestedOrder": true,
+      "raysCompact": true,
+      "noOverflow": true,
+      "duplicateImageIds": [],
+      "duplicateDomIds": []
+    },
+    {
+      "profile": 430,
+      "http": 200,
+      "pass": true,
+      "loaderSource": "https://rawcdn.githack.com/Presidente49/gatorbait-media-redesign/e83e37259ad51a277e5a9575158ad0369a53d3e5/sports-live/broadcast-home-color.js",
+      "actualCdnStatus": 200,
+      "actualCdnSha256": "c946e8eb431eecb6dd0e7280f7b2ebedf1252c994572e1725f7c16ef2aa6e462",
+      "nineCorrectBylines": true,
+      "eightUniquePhotos": true,
+      "allPhotosLoaded": true,
+      "georgiaNewPhoto": true,
+      "goldenCorrect": true,
+      "buddyOriginalContained": true,
+      "requestedOrder": true,
+      "raysCompact": true,
+      "noOverflow": true,
+      "duplicateImageIds": [],
+      "duplicateDomIds": []
+    },
+    {
+      "profile": 1366,
+      "http": 200,
+      "pass": true,
+      "loaderSource": "https://rawcdn.githack.com/Presidente49/gatorbait-media-redesign/e83e37259ad51a277e5a9575158ad0369a53d3e5/sports-live/broadcast-home-color.js",
+      "actualCdnStatus": 200,
+      "actualCdnSha256": "c946e8eb431eecb6dd0e7280f7b2ebedf1252c994572e1725f7c16ef2aa6e462",
+      "nineCorrectBylines": true,
+      "eightUniquePhotos": true,
+      "allPhotosLoaded": true,
+      "georgiaNewPhoto": true,
+      "goldenCorrect": true,
+      "buddyOriginalContained": true,
+      "requestedOrder": true,
+      "raysCompact": true,
+      "noOverflow": true,
+      "duplicateImageIds": [],
+      "duplicateDomIds": []
+    }
+  ],
+  "buddyOriginalArtResolved": true,
+  "remainingKnownArtIssue": null,
+  "actualBylines": [
+    {
+      "path": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+      "text": "By Franz Beard",
+      "rssCreator": "Franz Beard"
+    },
+    {
+      "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+      "text": "By Franz Beard",
+      "rssCreator": "Franz Beard"
+    },
+    {
+      "path": "/post/florida-georgia-sumrall-knows-the-math",
+      "text": "By Buddy Martin",
+      "rssCreator": "Buddy Martin"
+    },
+    {
+      "path": "/post/rays-baseball-world-series-game-4-brewers-gators-ties",
+      "text": "By GatorBait Staff",
+      "rssCreator": "GatorBait Staff"
+    },
+    {
+      "path": "/post/thoughts-of-the-day-october-27-2026",
+      "text": "By Franz Beard",
+      "rssCreator": "Franz Beard"
+    },
+    {
+      "path": "/post/thoughts-of-the-day-october-26-2026",
+      "text": "By Franz Beard",
+      "rssCreator": "Franz Beard"
+    },
+    {
+      "path": "/post/buddy-martin-show-live-florida-georgia-october-26-2026",
+      "text": "By Brenden Martin",
+      "rssCreator": "Brenden Martin"
+    },
+    {
+      "path": "/post/snubbed-in-atlanta-gameday-kirby-florida",
+      "text": "By GatorBait Staff",
+      "rssCreator": "GatorBait Staff"
+    },
+    {
+      "path": "/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition",
+      "text": "By GatorBait Staff",
+      "rssCreator": "GatorBait Staff"
+    }
+  ]
+}

@@ -513,7 +513,7 @@ function wixPhoto(h){try{var u=new URL(h),m=/^\/media\/([^/]+~mv2\.(?:jpe?g|png|
 /* Explicit Oct. 28 package, valid only for this Eastern calendar day.
    Canonical URLs rank only stories already in the newest-nine window; they never alter dates or bylines.
    A null lead means its complete native manuscript/canonical is still unresolved. */
-var HOMEPAGE_PACKAGE = {"from":"2026-10-28T04:00:00Z","until":"2026-10-29T04:00:00Z","lead":"/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too","next":["/post/golden-still-looking-to-solidify-his-bench-rotation","/post/rays-baseball-world-series-game-4-brewers-gators-ties","/post/florida-georgia-sumrall-knows-the-math"],"last":"/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition"};
+var HOMEPAGE_PACKAGE = {"from":"2026-10-28T04:00:00Z","until":"2026-10-29T04:00:00Z","lead":"/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2","next":["/post/golden-still-looking-to-solidify-his-bench-rotation","/post/rays-baseball-world-series-game-4-brewers-gators-ties","/post/florida-georgia-sumrall-knows-the-math"],"last":"/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition"};
 function homepagePackageOrder(ordered,t){
 var p=HOMEPAGE_PACKAGE,from=Date.parse(p&&p.from),until=Date.parse(p&&p.until);if(!p||!isFinite(from)||!isFinite(until)||from>=until||t<from||t>=until)return ordered;
 var paths=[p.lead].concat(p.next||[]).filter(Boolean),byPath={},used={},front=[];

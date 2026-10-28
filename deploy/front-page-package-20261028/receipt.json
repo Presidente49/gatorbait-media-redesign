@@ -1,0 +1,58 @@
+{
+  "publishedAt": "2026-10-28T12:36:55Z",
+  "georgia": {
+    "id": "cf6d98dc-6a1c-4dfe-9234-df9e3774aad5",
+    "path": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+    "title": "Why I despise the Georgia Bulldogs and why you should too",
+    "status": "PUBLISHED",
+    "author": "Franz Beard",
+    "bodyNodes": 46,
+    "headings": 5,
+    "cover": "16b519_e1f8990a67f049c68d5b4da1e5fd17e9~mv2.jpg",
+    "archiveDate": "2024-11-02",
+    "credit": "Chris Spears, GatorBait Media"
+  },
+  "basketball": {
+    "id": "38b61b3e-aec3-43ec-b838-0398d0b16bda",
+    "path": "/post/golden-still-looking-to-solidify-his-bench-rotation",
+    "cover": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+    "originalPublicationPreserved": true,
+    "articleCopyPreserved": true
+  },
+  "homepage": {
+    "owner": "0c13f955-74bf-484c-abd9-359a5eef271b",
+    "revision": "27",
+    "pin": "f5b6c20d21e7bcef87b603f526e052221c4e8c0c",
+    "sha256": "617723f430dd13b273f5024899f78fcc0cf39f73e5440dce772c11ee54ac8337",
+    "lead": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+    "features": [
+      "/post/golden-still-looking-to-solidify-his-bench-rotation",
+      "/post/florida-georgia-sumrall-knows-the-math"
+    ],
+    "supportingRays": "/post/rays-baseball-world-series-game-4-brewers-gators-ties",
+    "last": "/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition",
+    "until": "2026-10-29T04:00:00Z"
+  },
+  "checks": {
+    "syntax": true,
+    "orderingTests": 13,
+    "CDNHash": true,
+    "candidateWidths": [
+      390,
+      430,
+      1366
+    ],
+    "finalCandidateWidths": [
+      390,
+      1366
+    ],
+    "publicArticleWidths": [
+      390,
+      1366
+    ]
+  },
+  "pending": {
+    "buddyArtwork": "User requested exact The Name Game show thumbnail. Original bytes or direct source link unavailable; exact Media Manager and Drive searches found no match. Current Buddy cover untouched; original link requested.",
+    "spacesCard": "Actual device unavailable; not verified."
+  }
+}

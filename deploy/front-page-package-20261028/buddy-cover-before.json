@@ -1,0 +1,135 @@
+{
+  "postId": "3b68fc68-2735-4209-855b-c635189578a0",
+  "media": {
+    "wixMedia": {
+      "image": {
+        "id": "d3cfa5_6a1d264c48f242608ae7bfe4e90c3deb~mv2.jpg",
+        "url": "https://static.wixstatic.com/media/d3cfa5_6a1d264c48f242608ae7bfe4e90c3deb~mv2.jpg",
+        "height": 1200,
+        "width": 1600,
+        "filename": "Florida-Georgia 2008 Jacksonville crowd - jasonduhon CC BY-SA 3.0.jpg"
+      }
+    },
+    "displayed": true,
+    "custom": true,
+    "altText": "Florida and Georgia fans fill the split stands in Jacksonville in 2008."
+  },
+  "heroImage": null,
+  "firstImage": {
+    "type": "IMAGE",
+    "id": "buddy-sumrall-1",
+    "nodes": [
+      {
+        "type": "CAPTION",
+        "id": "syq0c1",
+        "nodes": [
+          {
+            "type": "TEXT",
+            "id": "",
+            "nodes": [],
+            "textData": {
+              "text": "Orange and blue on one side, red and black on the other: Florida and Georgia fans split the stands in Jacksonville in 2008. This year the game moves to Atlanta, where the split may look more like 60-40, Bulldogs.",
+              "decorations": []
+            }
+          }
+        ]
+      }
+    ],
+    "imageData": {
+      "containerData": {
+        "width": {
+          "size": "CONTENT"
+        },
+        "alignment": "CENTER",
+        "textWrap": false
+      },
+      "image": {
+        "src": {
+          "id": "d3cfa5_6a1d264c48f242608ae7bfe4e90c3deb~mv2.jpg"
+        },
+        "width": 1600,
+        "height": 1200
+      },
+      "link": {
+        "url": "https://commons.wikimedia.org/wiki/File:2008_GA-FL_-_panoramio_-_jasonduhon_(5).jpg",
+        "target": "BLANK"
+      },
+      "disableExpand": true,
+      "altText": "Florida and Georgia fans fill the split stands in Jacksonville during the 2008 rivalry game.",
+      "caption": "Orange and blue on one side, red and black on the other: Florida and Georgia fans split the stands in Jacksonville in 2008. This year the game moves to Atlanta, where the split may look more like 60-40, Bulldogs."
+    }
+  },
+  "imageCredit": {
+    "type": "PARAGRAPH",
+    "id": "hs5h11779",
+    "nodes": [
+      {
+        "type": "TEXT",
+        "id": "",
+        "nodes": [],
+        "textData": {
+          "text": "Photo by jasonduhon, ",
+          "decorations": []
+        }
+      },
+      {
+        "type": "TEXT",
+        "id": "",
+        "nodes": [],
+        "textData": {
+          "text": "CC BY-SA 3.0",
+          "decorations": [
+            {
+              "type": "LINK",
+              "linkData": {
+                "link": {
+                  "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+                  "target": "BLANK"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "TEXT",
+        "id": "",
+        "nodes": [],
+        "textData": {
+          "text": ", via ",
+          "decorations": []
+        }
+      },
+      {
+        "type": "TEXT",
+        "id": "",
+        "nodes": [],
+        "textData": {
+          "text": "Wikimedia Commons",
+          "decorations": [
+            {
+              "type": "LINK",
+              "linkData": {
+                "link": {
+                  "url": "https://commons.wikimedia.org/wiki/File:2008_GA-FL_-_panoramio_-_jasonduhon_(5).jpg",
+                  "target": "BLANK"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "TEXT",
+        "id": "",
+        "nodes": [],
+        "textData": {
+          "text": ". Original photograph, unaltered.",
+          "decorations": []
+        }
+      }
+    ],
+    "paragraphData": {}
+  },
+  "note": "Media and the first image/credit only; preserve subsequent prose and newer edits if rolling back."
+}

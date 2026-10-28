@@ -7,6 +7,12 @@ description: GatorBait's senior sports graphic-design and art-direction skill fo
 
 Use this skill whenever GatorBait needs a visual asset or visual system: magazine cover, show thumbnail, broadcast graphic, social card, email hero, print/PDF page, promotional poster, scoreboard/data graphic, or campaign creative.
 
+## Standing art source (owner directive, Oct. 28, 2026)
+
+All final artwork is designed/generated in **regular ChatGPT Pro, normal Chat mode**. This replaces the earlier SuperDesign, Canva, Adobe and other generator defaults for final creative. Work, Codex and Symphony prepare research, briefs, approved assets and QA; they do not originate substitute artwork. Mechanical export, optimization and implementation of an approved ChatGPT master remain technical work.
+
+Keep AP Mode's verified copy, authentic approved photography/logos, Barlow hierarchy and phone readability. Retain the ChatGPT conversation link, prompt/reference inputs, downloaded original master and derivative provenance. Do not claim ChatGPT provenance for an asset produced elsewhere. If regular ChatGPT Pro is unavailable, keep the brief pending and report the access gap. Do not change billing, accounts or global model settings to satisfy this directive.
+
 ## Role
 
 Operate as a senior sports art director and graphic designer working at national-broadcast / major-sports-publication quality.
@@ -40,8 +46,8 @@ Separate archive/print masters from web/email/social delivery. Respect source re
 **Juice → Graphic Design Artist → GatorBait Agency → Flaco**
 
 - Juice supplies verified story angle, headline/deck options, byline, facts, placement, source links, and image direction.
-- Graphic Design Artist creates the visual concept and master asset system.
-- GatorBait Agency adapts the approved master into channel-specific campaign creative.
+- Graphic Design Artist briefs regular ChatGPT Pro to design the visual concept and master asset system, then reviews the result.
+- GatorBait Agency makes mechanical channel exports from the approved master; new creative adaptations return to regular ChatGPT Pro.
 - Flaco handles Wix/media deployment, performance optimization, routing, accessibility, mobile QC, and production execution.
 
 For show production, AP Mode may feed the Graphic Design Artist directly when the story facts are already verified.
@@ -97,7 +103,7 @@ Do not make the user choose routine art-direction details when enough context al
 
 ### 2. Build one strong master concept
 
-Choose a clear composition before producing derivatives.
+Ask regular ChatGPT Pro to resolve a clear composition before producing derivatives.
 
 Possible systems:
 - dominant-photo editorial cover;
@@ -110,16 +116,15 @@ Possible systems:
 
 Do not create five weak variations when one resolved direction is enough.
 
-### 3. Use the appropriate design engine
+### 3. Design in regular ChatGPT Pro
 
-Preferred routing:
-- persistent graphic design / covers / campaign art: AI Graphic Design (SuperDesign canvas) when available;
-- editable template-led work: Canva when a relevant brand/template workflow exists;
-- photo cleanup, masking, compositing, retouching: Adobe tools when connected;
-- image generation or stylistic object/background work: image generation only when authentic assets cannot serve the need;
-- final website integration: Flaco/Wix, not the art tool.
+- Verify the regular ChatGPT interface is in **Chat**, not Work, and use the owner's existing Pro account.
+- Supply the verified story brief and authentic approved photos/logos; regular ChatGPT Pro designs the final artwork, including creative compositing, retouching and new variants.
+- Download and retain its original master with the conversation link, prompt and source credits before making technical derivatives.
+- Other tools may inspect, mechanically resize/export/optimize and integrate the approved master. They must not redraw or replace its creative design.
+- Flaco/Wix handles final website integration and public verification after the existing release gates.
 
-The graphic-design skill owns art direction even when another tool renders the pixels.
+Architecture references and older renderer examples support implementation of approved designs; they do not override the owner's art-source directive.
 
 ### 4. Review before release
 

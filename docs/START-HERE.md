@@ -2,9 +2,15 @@
 
 This is the project rulebook. Every Claude, Codex or ChatGPT session reads it first. Current instructions from Brenden set the scope and can revise this document; dated playbooks are evidence, not authority over the owner. Live provider state establishes facts about what exists, never permission.
 
-> Active owner direction, Oct. 19: Codex owns the **full continuation block** and final decisions. Muse prepares creative work; helpers receive bounded assignments and return evidence. The proposed revised team and pipeline plan is `deploy/continuation-20261019/plan.html`. The Hive is an internal team identity concept, not a live GatorBait brand replacement. The earlier Claude/Codex lane split is historical for this block. Existing explicit send/account/publish holds remain in the active handoff until the relevant owner instruction changes them.
+> Active owner direction, Oct. 19: Codex owns the **full continuation block** and final decisions. Muse prepares creative briefs and source assets; helpers receive bounded assignments and return evidence. The proposed revised team and pipeline plan is `deploy/continuation-20261019/plan.html`. The Hive is an internal team identity concept, not a live GatorBait brand replacement. The earlier Claude/Codex lane split is historical for this block. Existing explicit send/account/publish holds remain in the active handoff until the relevant owner instruction changes them.
 
 > Stack redesign (Oct. 9): fewer agents, stateless jobs, one rulebook. Plan and migration in `docs/STACK-V2.md`. Social and Marketing run as their own automatic lanes: `docs/jobs/social.md`, `docs/jobs/marketing.md`, `docs/SOCIAL-RULES.md`.
+
+## Standing art source (Brenden, Oct. 28, 2026)
+
+All final GatorBait artwork originates in **regular ChatGPT Pro, normal Chat mode**: magazine covers, article art, thumbnails, social/campaign art and broadcast masters. Work, Codex, Symphony and alternate art generators do not supply replacement creative. Use AP Mode: verified copy, authentic approved photography/logos, Barlow hierarchy and phone-readable design.
+
+Other tools may research, prepare briefs/assets, QA, mechanically export/optimize and integrate an approved ChatGPT master. New creative variations return to regular ChatGPT Pro. Retain its conversation link, prompt/reference inputs, downloaded original master and derivative provenance. Follow [Graphic Design](../skills/gatorbait-graphic-design/SKILL.md) and [Broadcast Graphics](../skills/gatorbait-broadcast-graphics/SKILL.md); existing rights, media-permanence and publication gates still apply. This directive changes the art source, not account, billing or global model settings.
 
 ## 1. Who decides
 

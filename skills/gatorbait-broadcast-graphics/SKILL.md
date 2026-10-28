@@ -7,6 +7,12 @@ description: Specialist broadcast-graphics and AP Mode skill for GatorBait Sport
 
 This is a specialist skill under **Master Control**. It does not replace Master Control or the broader GatorBait Graphic Design skill.
 
+## Standing art source (owner directive, Oct. 28, 2026)
+
+All final broadcast artwork and thumbnails originate in **regular ChatGPT Pro, normal Chat mode**, under the [Graphic Design art-source directive](../gatorbait-graphic-design/SKILL.md#standing-art-source-owner-directive-oct-28-2026). Work, Codex, Symphony and alternate art generators may research, brief, prepare approved assets, QA and perform technical exports/integration; they do not supply replacement creative.
+
+Retain the ChatGPT conversation link, prompt/reference inputs, downloaded original master and derivative provenance. A new creative design or variation returns to regular ChatGPT Pro. Technical renderers may populate an approved design with verified live data; the architecture references below are implementation references, not alternate artwork sources. AP Mode's fact, photography, branding, Barlow and phone-readability standards still apply.
+
 Use it when Brenden says:
 
 - AP Mode
@@ -274,10 +280,10 @@ Preferred future GatorBait system:
 **Master Control**
 → verifies show state and facts  
 → routes to GatorBait Broadcast Graphics  
-→ loads approved assets  
-→ builds master graphic package  
-→ sends reusable live overlays to OBS/Restream-compatible browser sources when available  
-→ creates static derivatives for YouTube/social/email  
+→ briefs regular ChatGPT Pro in Chat with approved assets\
+→ receives and reviews the ChatGPT-origin master graphic package\
+→ implements approved live overlays for OBS/Restream-compatible browser sources when available\
+→ makes mechanical static exports for YouTube/social/email\
 → sends site derivatives to GatorBait Site Operations / Flaco  
 → verifies output and records reusable lessons
 

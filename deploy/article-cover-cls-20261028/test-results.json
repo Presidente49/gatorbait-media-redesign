@@ -1,0 +1,26 @@
+{
+  "passed": 20,
+  "tests": [
+    "missing cover /post/buddy-martin-rays-unlikely-hero-ted-lasso-world-series-game-4",
+    "missing cover /post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+    "missing cover /post/rays-baseball-world-series-game-4-brewers-gators-ties",
+    "missing cover /post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition",
+    "desktop context resized to 390 and 430 constrains min-content hero",
+    "existing native hero remains one and unchanged",
+    "Georgia hero no-op",
+    "matching body image prevents duplicate",
+    "reject signed",
+    "reject foreign",
+    "reject wrongAsset",
+    "reject wrongCanonical",
+    "reject foreignCanonical",
+    "late matching body srcset removes duplicate",
+    "late native hydration removes fallback once",
+    "late empty native section receives fallback",
+    "SPA stale metadata cleanup and new exact pair",
+    "invalid metadata removes existing fallback",
+    "bounded 30-second observer stops late reapplication",
+    "full copy parity on supplied public snapshots"
+  ],
+  "scope": "Local intercepted browser fixtures; not live production proof"
+}

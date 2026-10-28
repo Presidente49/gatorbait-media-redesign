@@ -1,0 +1,117 @@
+{
+  "candidateSHA": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+  "baselineSHA": "0dbc42a3bd04c074708d1596513387707d8360d83e74e548845803fabe32bab2",
+  "labNotField": true,
+  "completeRuns": 13,
+  "clsDefinition": "Maximum eligible session window: <1000ms between shifts, <=5000ms from first shift; hadRecentInput excluded",
+  "coldBuddy390": {
+    "baseline": {
+      "values": [
+        0.20838101209908722,
+        0.20746551662417737,
+        0.20838101209908722
+      ],
+      "median": 0.20838101209908722,
+      "checksPass": true
+    },
+    "candidate": {
+      "values": [
+        0.004199573926219779,
+        0.005115069401129631,
+        0.004199573926219779
+      ],
+      "median": 0.004199573926219779,
+      "checksPass": true
+    }
+  },
+  "secondary": [
+    {
+      "story": "buddy",
+      "width": 320,
+      "label": "candidate",
+      "cls": 0.005717868675978577,
+      "pass": true
+    },
+    {
+      "story": "buddy",
+      "width": 430,
+      "label": "candidate",
+      "cls": 0.003996285003732235,
+      "pass": true
+    },
+    {
+      "story": "golden",
+      "width": 390,
+      "label": "candidate",
+      "cls": 0.0010352394675351994,
+      "pass": true
+    },
+    {
+      "story": "rays",
+      "width": 390,
+      "label": "candidate",
+      "cls": 0.0001755149831338596,
+      "pass": true
+    },
+    {
+      "story": "stetson",
+      "width": 390,
+      "label": "candidate",
+      "cls": 0.0001755149831338596,
+      "pass": true
+    },
+    {
+      "story": "buddy",
+      "width": 1366,
+      "label": "baseline",
+      "cls": 0.20135569970567366,
+      "pass": true
+    },
+    {
+      "story": "buddy",
+      "width": 1366,
+      "label": "candidate",
+      "cls": 0.20137314063139752,
+      "pass": true
+    }
+  ],
+  "contentAndGeometryPass": true,
+  "actualHeaderReinjectionPass": true,
+  "security": {
+    "verdict": "PASS",
+    "engine": "Semgrep CE",
+    "version": "1.182.1",
+    "finishedAtUtc": "2026-10-28T23:38:57.168269+00:00",
+    "scans": {
+      "changed-layer": {
+        "rules": 83,
+        "targets": 1,
+        "findings": 0,
+        "errors": 0,
+        "skips": 0
+      },
+      "candidate": {
+        "rules": 83,
+        "targets": 3,
+        "findings": 0,
+        "errors": 0,
+        "skips": 0
+      },
+      "runner": {
+        "rules": 200,
+        "targets": 1,
+        "findings": 0,
+        "errors": 0,
+        "skips": 0
+      }
+    }
+  },
+  "nativeLinkAfter30s": {
+    "verdict": "PASS",
+    "nativeLinks": "Full document navigation and browser Back pass",
+    "installedDispatcher": "After31s same-document history pushState emits gbmroutechange and clears reserve/art; replaceState restores exact valid634 ratio by2500ms",
+    "nativeSPATap": "Not observed; not claimed"
+  },
+  "fixtureRegressions": 20,
+  "emptySlotFixtureCases": 18
+}

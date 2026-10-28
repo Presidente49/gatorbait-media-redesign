@@ -1,0 +1,162 @@
+{
+  "candidateSHA": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+  "verdict": "PASS",
+  "realNativeLinkAndBack": [
+    {
+      "name": "Actual native link to Golden",
+      "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+      "ratio": "1000/634",
+      "ownedImages": 1,
+      "sameDocument": false,
+      "scrollWidth": 390,
+      "viewport": 390
+    },
+    {
+      "name": "Actual native link to unmapped Georgia",
+      "path": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+      "ratio": "",
+      "ownedImages": 0,
+      "sameDocument": false,
+      "scrollWidth": 390,
+      "viewport": 390
+    },
+    {
+      "name": "Actual browser Back to Golden",
+      "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+      "ratio": "1000/634",
+      "ownedImages": 1,
+      "sameDocument": false,
+      "scrollWidth": 390,
+      "viewport": 390
+    }
+  ],
+  "nativeLinkRouting": "Observed full document navigations, not a claimed native SPA tap",
+  "installedHistoryAfter31s": {
+    "startedAt": "2026-10-28T23:46:15.320Z",
+    "candidateSHA": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+    "mode": "Installed native history wrappers after31s; no manual event dispatch; inspect strict gate before restoration interpretation",
+    "stages": [
+      {
+        "name": "Golden after31s",
+        "elapsedSinceLoadMs": 31014,
+        "mainDocuments": 1,
+        "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+        "canonical": "https://www.gatorbaitmedia.com/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+        "ogOrigin": "https://static.wixstatic.com",
+        "ogMediaId": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+        "ogUnsigned": true,
+        "approvedPath": true,
+        "approvedMediaId": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+        "strictPairValid": true,
+        "inlineMatches": [],
+        "eligibleForReserve": true,
+        "ratio": "1000/634",
+        "expectedRatio": "1000/634",
+        "heroHeight": 221.890625,
+        "ownedImages": [
+          {
+            "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+            "mediaId": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg"
+          }
+        ],
+        "events": []
+      },
+      {
+        "name": "Installed pushState unmapped",
+        "elapsedSinceLoadMs": 31357,
+        "mainDocuments": 1,
+        "path": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+        "canonical": "https://www.gatorbaitmedia.com/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+        "ogOrigin": "https://static.wixstatic.com",
+        "ogMediaId": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+        "ogUnsigned": true,
+        "approvedPath": false,
+        "strictPairValid": false,
+        "inlineMatches": [],
+        "eligibleForReserve": false,
+        "ratio": "",
+        "expectedRatio": "",
+        "heroHeight": 0,
+        "ownedImages": [],
+        "events": [
+          {
+            "at": 32422.699999999255,
+            "path": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+            "ratio": ""
+          }
+        ]
+      },
+      {
+        "name": "Installed replaceState restoration300ms",
+        "elapsedSinceLoadMs": 31693,
+        "mainDocuments": 1,
+        "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+        "canonical": "https://www.gatorbaitmedia.com/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+        "ogOrigin": "https://static.wixstatic.com",
+        "ogMediaId": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+        "ogUnsigned": true,
+        "approvedPath": true,
+        "approvedMediaId": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+        "strictPairValid": true,
+        "inlineMatches": [],
+        "eligibleForReserve": true,
+        "ratio": "",
+        "expectedRatio": "1000/634",
+        "heroHeight": 0,
+        "ownedImages": [],
+        "events": [
+          {
+            "at": 32422.699999999255,
+            "path": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+            "ratio": ""
+          },
+          {
+            "at": 32744.5,
+            "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+            "ratio": ""
+          }
+        ]
+      },
+      {
+        "name": "Installed replaceState restoration2500ms",
+        "elapsedSinceLoadMs": 33901,
+        "mainDocuments": 1,
+        "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+        "canonical": "https://www.gatorbaitmedia.com/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+        "ogOrigin": "https://static.wixstatic.com",
+        "ogMediaId": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+        "ogUnsigned": true,
+        "approvedPath": true,
+        "approvedMediaId": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+        "strictPairValid": true,
+        "inlineMatches": [],
+        "eligibleForReserve": true,
+        "ratio": "1000/634",
+        "expectedRatio": "1000/634",
+        "heroHeight": 221.890625,
+        "ownedImages": [
+          {
+            "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+            "mediaId": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg"
+          }
+        ],
+        "events": [
+          {
+            "at": 32422.699999999255,
+            "path": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+            "ratio": ""
+          },
+          {
+            "at": 32744.5,
+            "path": "/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+            "ratio": ""
+          }
+        ]
+      }
+    ],
+    "pass": true,
+    "mainDocumentCount": 1,
+    "finishedAt": "2026-10-28T23:46:51.372Z"
+  },
+  "interpretation": "Installed history wrapper emits gbmroutechange after observer expiry; unmapped route clears reservation and owned art. Exact valid restoration is asynchronous: pending at300ms, correct ratio and image at2500ms. No manual route event dispatch. Earlier immediate restoration assertion was a harness timing error."
+}

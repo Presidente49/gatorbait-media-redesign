@@ -1,0 +1,26 @@
+{
+  "baseline": {
+    "chars": 14931,
+    "bytes": 14993,
+    "sha256": "0dbc42a3bd04c074708d1596513387707d8360d83e74e548845803fabe32bab2"
+  },
+  "candidate": {
+    "chars": 14955,
+    "bytes": 14955,
+    "sha256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f"
+  },
+  "scriptIds": [
+    "gbm-post-template-css",
+    "gbm-post-template-js",
+    "gbm-week-rich-js"
+  ],
+  "sameScriptIds": true,
+  "allScriptsParse": true,
+  "oldExpandedCssChars": 12023,
+  "newExpandedCssChars": 12269,
+  "reserveRuleChars": 246,
+  "reserveRuleOccurrences": 1,
+  "expandedCssOtherwiseByteEquivalent": true,
+  "desktopRuleUnchanged": true,
+  "limits": true
+}

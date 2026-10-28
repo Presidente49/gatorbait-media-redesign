@@ -16,7 +16,7 @@ const day = 86400000, now = Date.now();
 const story = (slug, author, age = 0) => [now - age - 1000, slug, `/post/${slug}`, author,
   'https://static.wixstatic.com/media/16b519_0000~mv2.jpg', 'Verified cover', 'Photo by Chris Spears, GatorBait Media.', 'A short summary.'];
 
-function harness(records) {
+function harness(records, fixedNow) {
   const link = { href: '/post/old-lead' };
   const lead = {
     html: '',
@@ -33,8 +33,9 @@ function harness(records) {
     },
     querySelectorAll: () => [], setAttribute() {}, classList: { add() {} },
   };
+  const ClockDate = fixedNow === undefined ? Date : class extends Date { static now() { return fixedNow; } };
   const context = vm.createContext({
-    URL, Date, Intl, location: { href: 'https://www.gatorbaitmedia.com/' }, DAY: day,
+    URL, Date: ClockDate, Intl, location: { href: 'https://www.gatorbaitmedia.com/' }, DAY: day,
     D: { all: records }, COVER_META: {}, esc: value => String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;'),
   });
   vm.runInContext(functions, context);
@@ -98,3 +99,98 @@ test('later feed refresh preserves the already reconciled lead and excludes it f
   assert.equal(h.link.href, '/post/franz');
   assert.deepEqual(Array.from(h.list.innerHTML.matchAll(/<li\b[^>]*><a href="([^"]+)"/g), m => m[1]), ['/post/new-writer', '/post/buddy', '/post/staff']);
 });
+
+const packageNow = Date.parse('2026-10-28T12:00:00Z');
+const packagePaths = {
+  lead: '/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too',
+  basketball: '/post/golden-still-looking-to-solidify-his-bench-rotation',
+  rays: '/post/rays-baseball-world-series-game-4-brewers-gators-ties',
+  buddy: '/post/florida-georgia-sumrall-knows-the-math',
+  brenden: '/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition',
+};
+const packageStory = (path, author, age = 0) => [packageNow - age * 1000, path.slice(6), path, author,
+  'https://static.wixstatic.com/media/16b519_0000~mv2.jpg', 'Verified cover', 'Photo by Chris Spears, GatorBait Media.', 'Summary.'];
+function packageRecords() {
+  return [
+    packageStory(packagePaths.rays, 'GatorBait Staff', 0),
+    packageStory(packagePaths.basketball, 'Franz Beard', 1),
+    packageStory(packagePaths.lead, 'Franz Beard', 2),
+    packageStory('/post/other-writer-a', 'Loren Meadows', 3),
+    packageStory(packagePaths.brenden, 'GatorBait Staff', 4),
+    packageStory(packagePaths.buddy, 'Buddy Martin', 5),
+    packageStory('/post/other-writer-b', 'Eddie Gilley', 6),
+    packageStory('/post/older-staff', 'Brenden Martin', 7),
+    packageStory('/post/oldest-staff', 'GatorBait Staff', 8),
+  ];
+}
+const expectedPackage = [packagePaths.lead, packagePaths.basketball, packagePaths.rays, packagePaths.buddy,
+  '/post/other-writer-a', '/post/other-writer-b', '/post/oldest-staff', '/post/older-staff', packagePaths.brenden];
+const expectedDefault = [packagePaths.basketball, packagePaths.lead, '/post/other-writer-a', packagePaths.buddy,
+  '/post/other-writer-b', '/post/oldest-staff', '/post/older-staff', packagePaths.brenden, packagePaths.rays];
+
+test('Oct28 package shares exact lead/row order, leaves remaining default order intact and preserves source values', () => {
+  const records = packageRecords(), before = JSON.stringify(records), h = harness(records, packageNow);
+  h.context.HOMEPAGE_PACKAGE.lead = packagePaths.lead;
+  assert.deepEqual(h.order(), expectedPackage);
+  h.context.freshLead(h.root);
+  h.context.freshRows(h.root);
+  const rendered = [h.link.href, ...Array.from(h.list.innerHTML.matchAll(/<li\b[^>]*><a href="([^"]+)"/g), m => m[1])];
+  assert.deepEqual(rendered, expectedPackage);
+  assert.equal(JSON.stringify(records), before, 'No publication date, cover, byline or source record mutation');
+});
+
+test('unresolved or absent main story is skipped and never fabricated', () => {
+  const records = packageRecords().filter(f => f[2] !== packagePaths.lead), h = harness(records, packageNow);
+  h.context.HOMEPAGE_PACKAGE.lead = null;
+  assert.deepEqual(h.order(), expectedPackage.filter(path => path !== packagePaths.lead));
+  h.context.HOMEPAGE_PACKAGE.lead = packagePaths.lead;
+  assert.deepEqual(h.order(), expectedPackage.filter(path => path !== packagePaths.lead));
+});
+
+test('package cannot drag older requested stories outside the newest-nine window or expand that window', () => {
+  const records = Array.from({length: 9}, (_, i) => packageStory(`/post/current-${i}`, 'Loren Meadows', i));
+  records.push(packageStory(packagePaths.lead, 'Franz Beard', 100));
+  records.push(packageStory(packagePaths.basketball, 'Franz Beard', 101));
+  const h = harness(records, packageNow);
+  h.context.HOMEPAGE_PACKAGE.lead = packagePaths.lead;
+  assert.deepEqual(h.order(), Array.from({length: 9}, (_, i) => `/post/current-${i}`));
+});
+
+test('package is bounded by exact Eastern-day boundaries and missing or malformed bounds fall back safely', () => {
+  const from = Date.parse('2026-10-28T04:00:00Z'), until = Date.parse('2026-10-29T04:00:00Z');
+  for (const clock of [from - 1, until, until + day]) {
+    const h = harness(packageRecords(), clock);
+    h.context.HOMEPAGE_PACKAGE.lead = packagePaths.lead;
+    assert.deepEqual(h.order(), expectedDefault);
+  }
+  for (const bounds of [{until: 'invalid'}, {from: null}, {from: '2026-10-30', until: '2026-10-29'}]) {
+    const h = harness(packageRecords(), packageNow);
+    Object.assign(h.context.HOMEPAGE_PACKAGE, bounds, {lead: packagePaths.lead});
+    assert.deepEqual(h.order(), expectedDefault);
+  }
+});
+
+test('future content uses normal default lead after package expiry while existing readers keep the stable lead', () => {
+  const later = Date.parse('2026-10-29T05:00:00Z');
+  const next = [later - 1000, 'A new filing', '/post/new-next-day-writer', 'Loren Meadows',
+    'https://static.wixstatic.com/media/16b519_0000~mv2.jpg', 'Cover', 'Credit', 'Summary.'];
+  const h = harness([next, ...packageRecords()], later);
+  h.context.HOMEPAGE_PACKAGE.lead = packagePaths.lead;
+  assert.equal(h.order()[0], next[2]);
+  h.context.freshLead(h.root);
+  h.context.D.all = [packageStory(packagePaths.basketball, 'Franz Beard'), next, ...packageRecords()];
+  h.context.freshLead(h.root);
+  assert.equal(h.link.href, next[2], 'Existing stable-reading lead remains intact');
+});
+
+test('failed or absent package photograph never changes the requested ordering or hides its headline', () => {
+  const records = packageRecords();
+  records.find(f => f[2] === packagePaths.rays)[4] = '';
+  const h = harness(records, packageNow);
+  h.context.HOMEPAGE_PACKAGE.lead = packagePaths.lead;
+  assert.deepEqual(h.order(), expectedPackage);
+  h.context.freshLead(h.root);
+  h.context.freshRows(h.root);
+  assert.ok(h.list.innerHTML.includes(packagePaths.rays));
+});
+

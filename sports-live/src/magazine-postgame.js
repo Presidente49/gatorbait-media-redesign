@@ -2,34 +2,8 @@
    * Same contract as the weekly and pregame layouts: sports-live/magazine-issue-postgame.json holds every word and
    * number; this file only lays them out, and a missing or empty block renders nothing. Helpers (esc, text, num, list,
    * obj, safeUrl, media, frame) come from src/magazine.js. Bundled only into sports-live/magazine-postgame.js
-   * (MAG_VARIANT=postgame), together with src/capture.js for the signup. No polling or curated-lead swaps: a separate
-   * latest-links block reads once; Buddy Martin's edition stays put. The portrait entrance animates only after activation. */
-  function pmLatestItems(posts) {
-    var seen = {};
-    return list(posts, 40).map(function (p) {
-      var u = mfPath(p && p.url), t = text(p && p.title, 200), d = Date.parse(p && p.firstPublishedDate);
-      if (!u || !t || !isFinite(d) || seen[u]) return null;
-      seen[u] = true;
-      return { url: u, title: t, author: text(p.author, 80) || 'GatorBait Staff', date: d };
-    }).filter(Boolean).sort(function (a, b) { return b.date - a.date; }).slice(0, 3);
-  }
-  function pmLatestRows(posts) {
-    return pmLatestItems(posts).map(function (p) {
-      var d = new Date(p.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'America/New_York' });
-      return '<li><a href="' + esc(p.url) + '"><span>' + esc(p.title) + '</span><small>By ' + esc(p.author) + ' · ' + esc(d) + '</small></a></li>';
-    }).join('');
-  }
-  function pmLatest(D) {
-    var L = obj(D.latest); if (!L) return '';
-    return '<section class="pm-latest" id="pm-latest" aria-labelledby="pm-latest-title"><div class="pm-in"><p class="pm-kick">' + esc(text(L.archiveLabel, 80)) + '</p><h2 id="pm-latest-title">Latest from GatorBait</h2><p>' + esc(text(L.dek, 240)) + '</p><ol>' + pmLatestRows(L.items) + '</ol><a class="pm-latest-all" href="/gatorbait-media-blogs">All the latest stories →</a></div></section>';
-  }
-  function pmLatestLive(m) {
-    var el = m.querySelector('#pm-latest ol'); if (!el) return;
-    mfFeed().then(function (posts) {
-      if (!m.isConnected || el.contains(document.activeElement)) return;
-      var html = pmLatestRows(posts); if (html) el.innerHTML = html;
-    }).catch(function () {});
-  }
+   * (MAG_VARIANT=postgame), together with src/capture.js for the signup. No timers, no feed swap: the lead is curated
+   * (Buddy Martin) and stays put. The portrait entrance animates only after activation. */
   function pmEntrance(D) {
     var C = obj(D.cover) || {}, I = obj(D.issue) || {}, P = obj(C.poster), b = pmReelBase();
     // The finished portrait cover is a committed static file next to the bundle (like the reel posters); without it the photo-and-type poster below renders as before.
@@ -51,7 +25,6 @@
     return '<div class="pm-readerbar"><a class="pm-readerbrand" href="/">Gator<span>Bait</span></a><details class="pm-reader-menu"><summary>Contents</summary>' + pmContents(D).replace('id="pm-contents" tabindex="-1"', '') + '</details><button type="button" data-pm-cover>Cover ↑</button>' + pmPdfLink(D, 'pm-pdf') + '</div>';
   }
   function pmStart(m) {
-    pmLatestLive(m);
     var entry = m.querySelector('.pm-entrance'), cover = m.querySelector('.pm-open'), contents = m.querySelector('#pm-contents');
     if (!entry || !cover || !contents) return;
     var opening = false;
@@ -301,5 +274,5 @@
       pmCredits(D) + pmSrc(D.asOf) + pmPdfLink(D, 'pm-print') + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
   }
   function renderPostgame(D) {
-    return '<div class="pm-wrap">' + pmLatest(D) + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmPackage(D, 'columns') + pmPackage(D, 'coverage') + pmDamage(D) + pmScoring(D) + pmBox(D) + pmFlow(D) + pmQuotes(D) + pmWatch(D) + pmNext(D) + pmDownload(D) + pmFoot(D) + '</div>';
+    return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmPackage(D, 'columns') + pmPackage(D, 'coverage') + pmDamage(D) + pmScoring(D) + pmBox(D) + pmFlow(D) + pmQuotes(D) + pmWatch(D) + pmNext(D) + pmDownload(D) + pmFoot(D) + '</div>';
   }

@@ -1,0 +1,210 @@
+{
+ "$comment": "Current Florida-Georgia game-week edition for October 28, 2026. Facts read from FloridaGators.com broadcast information and ESPN event 401856734. Only existing published canonical reporting and permanent Wix media; no new article or send.",
+ "id": "2026-10-28-florida-georgia-week",
+ "layout": "pregame",
+ "liveFeed": false,
+ "issue": {
+  "number": "Florida-Georgia Week",
+  "name": "No. 17 Florida vs. No. 3 Georgia",
+  "date": "Wednesday, October 28, 2026",
+  "week": "Oct. 28, 2026 · Atlanta",
+  "tagline": "Independent Florida Gators coverage",
+  "pageTitle": "GatorBait Magazine | Florida-Georgia Week | Oct. 28, 2026"
+ },
+ "asOf": "Game facts checked Oct. 28, 2026: FloridaGators.com broadcast guide and ESPN event 401856734. Each linked story retains its publication date.",
+ "cover": {
+  "kicker": "Franz Beard · Oct. 28",
+  "headline": "Why I despise the Georgia Bulldogs and why you should too",
+  "dek": "Franz Beard's annual rivalry column. Florida faces Georgia in Atlanta on Saturday.",
+  "byline": "By Franz Beard",
+  "url": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+  "image": {
+   "id": "16b519_d03e2d3ca3b34a9f863a7e55157ec1d1",
+   "ext": "jpg",
+   "width": 3000,
+   "height": 1925,
+   "alt": "Archive photo: A Florida quarterback prepares to throw as a Georgia defender closes during the Nov. 2, 2024 rivalry game in Jacksonville.",
+   "credit": "Archive photo by Chris Spears, GatorBait Media."
+  },
+  "directLink": true
+ },
+ "game": {
+  "label": "Florida vs. Georgia",
+  "kickoffISO": "2026-10-31T19:30:00Z",
+  "espnEvent": "401856734",
+  "kickoff": "Saturday, Oct. 31 · 3:30 p.m. ET",
+  "tv": "ABC",
+  "venue": "Mercedes-Benz Stadium, Atlanta · Neutral site",
+  "separator": "vs.",
+  "teams": [
+   {
+    "rank": "No. 17",
+    "name": "Florida",
+    "record": "5-2",
+    "conf": "3-2 SEC"
+   },
+   {
+    "rank": "No. 3",
+    "name": "Georgia",
+    "record": "6-1",
+    "conf": "4-1 SEC"
+   }
+  ],
+  "chips": [
+   {
+    "k": "Location",
+    "v": "Atlanta"
+   },
+   {
+    "k": "TV",
+    "v": "ABC"
+   },
+   {
+    "k": "Kickoff",
+    "v": "3:30 p.m. ET"
+   }
+  ],
+  "source": "ESPN event 401856734 and FloridaGators.com broadcast information, checked Oct. 28."
+ },
+ "numbers": {
+  "label": "Saturday at a glance",
+  "note": "The current matchup, checked Oct. 28",
+  "items": [
+   {
+    "value": "Oct. 31",
+    "label": "Rivalry Saturday",
+    "note": "Florida and Georgia meet in Atlanta."
+   },
+   {
+    "value": "3:30",
+    "label": "Kickoff, Eastern",
+    "note": "The national broadcast is on ABC."
+   },
+   {
+    "value": "No. 17",
+    "label": "Florida",
+    "note": "5-2 overall, 3-2 in the SEC."
+   },
+   {
+    "value": "No. 3",
+    "label": "Georgia",
+    "note": "6-1 overall, 4-1 in the SEC."
+   }
+  ],
+  "source": "FloridaGators.com and ESPN, Oct. 28."
+ },
+ "watch": {
+  "label": "How to follow Saturday",
+  "items": [
+   {
+    "k": "Kickoff",
+    "v": "Saturday, Oct. 31, 3:30 p.m. ET"
+   },
+   {
+    "k": "TV",
+    "v": "ABC"
+   },
+   {
+    "k": "Where",
+    "v": "Mercedes-Benz Stadium, Atlanta"
+   },
+   {
+    "k": "Radio",
+    "v": "Gator Sports Network"
+   }
+  ],
+  "links": [
+   {
+    "label": "Florida's official broadcast guide",
+    "url": "https://floridagators.com/news/2026/10/27/football-broadcast-information-florida-vs-georgia"
+   },
+   {
+    "label": "ESPN Gamecast",
+    "url": "https://www.espn.com/college-football/game/_/gameId/401856734/florida-georgia"
+   }
+  ],
+  "source": "FloridaGators.com broadcast information, Oct. 27; checked Oct. 28."
+ },
+ "cards": {
+  "label": "Florida-Georgia coverage",
+  "items": [
+   {
+    "kicker": "Buddy Martin",
+    "date": "Oct. 26",
+    "title": "Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap.",
+    "url": "/post/florida-georgia-sumrall-knows-the-math",
+    "excerpt": "Buddy Martin on the quarterback question and the work ahead for Florida in this rivalry.",
+    "image": {
+     "id": "d3cfa5_712da939ff25435886f64d82c25674a7",
+     "ext": "jpg",
+     "width": 1280,
+     "height": 720,
+     "alt": "Florida-Georgia editorial artwork for The Buddy Martin Show's The Name Game.",
+     "credit": "Artwork supplied by GatorBait Media."
+    }
+   },
+   {
+    "kicker": "Franz Beard",
+    "date": "Oct. 27",
+    "title": "Thoughts of the Day: October 27, 2026",
+    "url": "/post/thoughts-of-the-day-october-27-2026",
+    "excerpt": "Jon Sumrall's first Florida-Georgia week and the rivalry gap facing the Gators.",
+    "image": {
+     "id": "16b519_fb9b6535ba3046ab86e7d0d05b6579bc",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 2000,
+     "alt": "File photo: Florida coach Jon Sumrall on the field before the Sept. 26, 2026 game against Ole Miss.",
+     "credit": "File photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "kicker": "GatorBait Staff",
+    "date": "Oct. 27",
+    "title": "Florida-Georgia: A chance to build on the Texas win",
+    "url": "/post/florida-georgia-a-chance-to-build-on-the-texas-win",
+    "excerpt": "The quarterback decision, Kirby Smart's assessment and Florida's opportunity in Atlanta.",
+    "image": {
+     "id": "16b519_e1f8990a67f049c68d5b4da1e5fd17e9",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 2024,
+     "alt": "Archive photo: Florida and Georgia players converge on a ball carrier during the Nov. 2, 2024 game in Jacksonville.",
+     "credit": "Archive photo by Chris Spears, GatorBait Media."
+    }
+   }
+  ]
+ },
+ "reference": {
+  "label": "Reference desk",
+  "links": [
+   {
+    "label": "All current stories",
+    "url": "/gatorbait-media-blogs"
+   },
+   {
+    "label": "Florida roster",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+   },
+   {
+    "label": "Schedule and results",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   },
+   {
+    "label": "Official game information",
+    "url": "https://floridagators.com/game-center/27910"
+   }
+  ],
+  "next": "Florida vs. Georgia · Saturday, Oct. 31 · 3:30 p.m. ET · ABC."
+ },
+ "topicPaths": [
+  "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+  "/post/florida-georgia-sumrall-knows-the-math",
+  "/post/thoughts-of-the-day-october-27-2026",
+  "/post/florida-georgia-a-chance-to-build-on-the-texas-win"
+ ]
+}

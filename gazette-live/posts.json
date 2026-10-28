@@ -2,6 +2,48 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "An Unlikely Hero at the Unlikeliest of Times",
+      "excerpt": "Buddy Martin on the Rays' 12-inning escape in World Series Game 4, an unlikely hero named Ben Williamson and what Jon Sumrall might borrow from Ted Lasso. Photo courtesy of Wikimedia Commons. Official White House Photo by Cameron Smith.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-rays-unlikely-hero-ted-lasso-world-series-game-4",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-28T16:27:25Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_e33f2a2ea014478c821a7a1acfb06383~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for An Unlikely Hero at the Unlikeliest of Times"
+      }
+    },
+    {
+      "title": "Why I despise the Georgia Bulldogs and why you should too",
+      "excerpt": "Franz Beard revisits the games, grievances and history behind his annual Florida-Georgia rivalry ritual as the Gators prepare to face the Bulldogs in Atlanta.",
+      "url": "https://www.gatorbaitmedia.com/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-28T12:36:55Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_d03e2d3ca3b34a9f863a7e55157ec1d1~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Why I despise the Georgia Bulldogs and why you should too"
+      }
+    },
+    {
+      "title": "Golden still looking to solidify his bench rotation",
+      "excerpt": "Franz Beard on the bench questions Todd Golden still has to answer before No. 1 Florida opens the season Monday against No. 14 Miami in Tampa. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-28T11:50:39Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Golden still looking to solidify his bench rotation"
+      }
+    },
+    {
       "title": "Trop 'Til You Drop: Rays Outlast Brewers in 12 Innings, Force World Series Game 5",
       "excerpt": "Tampa Bay scored twice in the bottom of the 12th to beat Milwaukee 4-3 in Game 4 of the World Series and avoid a sweep. The Brewers lead 3-1 with Game 5 on Wednesday at Tropicana Field, and no former Gators are on the Rays' roster.",
       "url": "https://www.gatorbaitmedia.com/post/rays-baseball-world-series-game-4-brewers-gators-ties",
@@ -9,7 +51,7 @@
       "firstPublishedDate": "2026-10-28T04:53:16Z",
       "section": "GatorBait",
       "image": {
-        "src": "",
+        "src": "https://static.wixstatic.com/media/d3cfa5_97d2cb5dc22c481c97ea6fbf085412ee~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Trop 'Til You Drop: Rays Outlast Brewers in 12 Innings, Force World Series Game 5"
@@ -46,7 +88,7 @@
     {
       "title": "Florida-Georgia: A chance to build on the Texas win",
       "excerpt": "Florida's quarterback decision, Kirby Smart's assessment and the opportunity ahead in Atlanta.",
-      "url": "https://www.gatorbaitmedia.com/post/snubbed-in-atlanta-gameday-kirby-florida",
+      "url": "https://www.gatorbaitmedia.com/post/florida-georgia-a-chance-to-build-on-the-texas-win",
       "author": "GatorBait Staff",
       "firstPublishedDate": "2026-10-27T12:48:23Z",
       "section": "GatorBait",
@@ -55,6 +97,20 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida-Georgia: A chance to build on the Texas win"
+      }
+    },
+    {
+      "title": "Snubbed in Atlanta: GameDay passed, Kirby shrugged, Florida noticed",
+      "excerpt": "Photo by Chris Spears, GatorBait Media. I am not a detective. I read college football press conference transcripts for a living, which is a worse job and, this week, nearly the same one. Because something about this Florida-Georgia week does not add up, and it is not the point spread. Begin with the smallest mystery. ESPN's College GameDay is a show that…",
+      "url": "https://www.gatorbaitmedia.com/post/snubbed-in-atlanta-gameday-kirby-florida-1",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-10-27T04:00:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2cc1f5bd37224ea880f89c85a8700b7c~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Snubbed in Atlanta: GameDay passed, Kirby shrugged, Florida noticed"
       }
     },
     {
@@ -79,7 +135,7 @@
       "firstPublishedDate": "2026-10-27T00:03:22Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6a1d264c48f242608ae7bfe4e90c3deb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_712da939ff25435886f64d82c25674a7~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap."
@@ -223,62 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for From The Scout Team To Atlanta: Chris Doering Finally Gets His Due"
-      }
-    },
-    {
-      "title": "Haugh's honor, coaching hot seats and the playoff debate",
-      "excerpt": "Franz Beard on Tommy Haugh's preseason All-America recognition, college football's coaching hot seats and the College Football Playoff debate. Photos by Chris Spears, GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-22-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-22T13:02:22Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a5eb3abb3338476dba7f259739f50c22~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Haugh's honor, coaching hot seats and the playoff debate"
-      }
-    },
-    {
-      "title": "Gator Football Feel-Good: The Open Date Is Sweet Music, But Check the Lyrics",
-      "excerpt": "Buddy Martin on Florida's open date, the lessons of past bye weeks and the Oct. 31 Georgia matchup in Atlanta. Photo by Chris Spears, GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/gator-football-feel-good-the-open-date-is-sweet-music-but-check-the-lyrics",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-21T18:34:06Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_90425d069f7d49ac9a55f5dedba27f93~mv2.jpg/v1/fit/w_1000,h_969,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gator Football Feel-Good: The Open Date Is Sweet Music, But Check the Lyrics"
-      }
-    },
-    {
-      "title": "Jones vs. Philo and other QB perceptions, realities",
-      "excerpt": "Franz Beard examines quarterback recruiting hype, Florida's Aaron Philo–Tramell Jones Jr. decision and the history of the Gators' five-star quarterbacks.",
-      "url": "https://www.gatorbaitmedia.com/post/jones-vs-philo-and-other-qb-perceptions-realities",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-21T11:24:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_d0c4fd8ad08c4ec8bd70221064f3bdb8~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Jones vs. Philo and other QB perceptions, realities"
-      }
-    },
-    {
-      "title": "Rays the Roof! Have A Day Tampa Bay!  Remembering St. Petersburg Before There Was MLB.",
-      "excerpt": "By Buddy Martin GatorBaitMedia.com As a former St. Petersburg resident and a sports columnist for the St. Petersburg Times who campaigned for major league baseball there back in the day — some 45 years ago — I have a confession and a hurrah. The confession: somewhere between covering the Gators and falling back in love with baseball, I became a Rays fan who…",
-      "url": "https://www.gatorbaitmedia.com/post/rays-the-roof",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-20T22:34:56Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_87834ebcaf3f4606a29e8eef62f9aa65~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Rays the Roof! Have A Day Tampa Bay!  Remembering St. Petersburg Before There Was MLB."
       }
     }
   ]

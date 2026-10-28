@@ -103,7 +103,7 @@ test('later feed refresh preserves the already reconciled lead and excludes it f
 const packageNow = Date.parse('2026-10-28T12:00:00Z');
 const packagePaths = {
   lead: '/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2',
-  basketball: '/post/golden-still-looking-to-solidify-his-bench-rotation',
+  basketball: '/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball',
   rays: '/post/rays-baseball-world-series-game-4-brewers-gators-ties',
   buddy: '/post/florida-georgia-sumrall-knows-the-math',
   brenden: '/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition',
@@ -192,5 +192,41 @@ test('failed or absent package photograph never changes the requested ordering o
   h.context.freshLead(h.root);
   h.context.freshRows(h.root);
   assert.ok(h.list.innerHTML.includes(packagePaths.rays));
+});
+
+function renderedRows(h) {
+  h.context.freshLead(h.root);
+  h.context.freshRows(h.root);
+  return Array.from(h.list.innerHTML.matchAll(/<li\b[^>]*class="([^"]+)"[^>]*><a href="([^"]+)"/g), m => ({classes: m[1].split(' '), path: m[2]}));
+}
+
+test('actual RSS basketball canonical receives its package rank and a feature card beside Buddy', () => {
+  const h = harness(packageRecords(), packageNow);
+  const rows = renderedRows(h);
+  assert.equal(h.link.href, packagePaths.lead);
+  assert.equal(rows[0].path, '/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball');
+  assert.ok(rows[0].classes.includes('bc-feature'));
+  assert.equal(rows[1].path, packagePaths.buddy);
+  assert.ok(rows[1].classes.includes('bc-feature'));
+  assert.ok(rows.find(r => r.path === packagePaths.rays).classes.includes('bc-compact'));
+});
+
+test('Rays remains compact when the ranked basketball story is missing from incoming RSS', () => {
+  const records = packageRecords().filter(f => f[2] !== packagePaths.basketball);
+  const h = harness(records, packageNow), rows = renderedRows(h);
+  assert.equal(rows[0].path, packagePaths.buddy);
+  assert.ok(rows[0].classes.includes('bc-feature'));
+  assert.equal(rows[1].path, packagePaths.rays);
+  assert.ok(rows[1].classes.includes('bc-compact'));
+  assert.ok(!rows[1].classes.includes('bc-feature'));
+});
+
+test('Rays stays compact in either feature index, including URL variants and after package expiry', () => {
+  const h = harness(packageRecords(), Date.parse('2026-10-29T04:00:00Z'));
+  for (const path of [packagePaths.rays, packagePaths.rays + '/', 'https://www.gatorbaitmedia.com' + packagePaths.rays + '?fresh=1']) {
+    for (const index of [0, 1, 2, 7]) assert.equal(h.context.homepageFeature(packageStory(path, 'GatorBait Staff'), index), false);
+  }
+  assert.equal(h.context.homepageFeature(packageStory(packagePaths.basketball, 'Franz Beard'), 0), true);
+  assert.equal(h.context.homepageFeature(packageStory(packagePaths.buddy, 'Buddy Martin'), 1), true);
 });
 

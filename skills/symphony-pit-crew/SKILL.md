@@ -37,3 +37,7 @@ Use as a subordinate platform specialist for GatorBait. [Master Control](../mast
 - Ask for purpose, inputs, actual tools/schemas, decision steps, output contract and one demonstrated example. Capture the workflow for an immediate useful role on either side.
 - Recheck the receiving side's actual access. Do not claim to copy hidden prompts, credentials or native powers with a role brief.
 - Return durable verified findings to the existing skills/runbook. Keep changing IDs, counts, tasks, trial cutoffs and approval states in dated evidence, not permanent doctrine.
+
+## Record execution and learn
+
+When the owner asks for a recorder, ongoing watch or skill updates, use [execution recording and verified learning](references/execution-recorder.md). Reuse the current campaign, capture deduplicated tool/action receipts with an explicit stop time, and promote demonstrated lessons into this existing skill. The recorder observes and documents; the designated production writer retains repair authority. An open task card does not override a successful resource read-back.

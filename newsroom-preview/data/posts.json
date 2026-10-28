@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Trop 'Til You Drop: Rays Outlast Brewers in 12 Innings, Force World Series Game 5",
+      "excerpt": "Tampa Bay scored twice in the bottom of the 12th to beat Milwaukee 4-3 in Game 4 of the World Series and avoid a sweep. The Brewers lead 3-1 with Game 5 on Wednesday at Tropicana Field, and no former Gators are on the Rays' roster.",
+      "url": "https://www.gatorbaitmedia.com/post/rays-baseball-world-series-game-4-brewers-gators-ties",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-10-28T04:53:16Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Trop 'Til You Drop: Rays Outlast Brewers in 12 Innings, Force World Series Game 5"
+      }
+    },
+    {
+      "title": "Urban Renewal: Klavzar, Aberdeen Find Their Shot as No. 1 Gators Put Away Stetson",
+      "excerpt": "Urban Klavzar and Denzel Aberdeen combined for 46 points and 10 3-pointers as No. 1 Florida beat Stetson 85-68 in its exhibition finale, nine days after a 4-for-29 night from deep against Baylor. The bench and the defense still have work to do before Miami.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-10-28T04:36:01Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_394ab2f58207493a800fece21c8b7897~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Urban Renewal: Klavzar, Aberdeen Find Their Shot as No. 1 Gators Put Away Stetson"
+      }
+    },
+    {
       "title": "Thoughts of the Day: October 27, 2026",
       "excerpt": "Franz Beard on Jon Sumrall's first Florida-Georgia game and the work needed to close the rivalry gap. File photo: Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-27-2026",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for A Podcast Tribute: David Moulton"
-      }
-    },
-    {
-      "title": "The Gators still have a pulse after Saturday's chaos",
-      "excerpt": "Franz Beard on Florida's revived SEC and playoff hopes after Saturday's upheaval, with the contenders, pretenders and six SEC game recaps. Original illustration: GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/the-gators-still-have-a-pulse-after-saturdays-chaos",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-25T15:06:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_9211723882ad4d0bb44a05383761cff9~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Gators still have a pulse after Saturday's chaos"
-      }
-    },
-    {
-      "title": "Sumrall restores hope as Texas faces a reckoning",
-      "excerpt": "Franz Beard on Florida's renewed hope under Jon Sumrall, Urban Meyer's playoff concerns and the pressure on Texas. Photo by Chris Spears, GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-24-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-24T14:44:51Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e23da70ac8cf4fb387592bbc95e4e5c0~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Sumrall restores hope as Texas faces a reckoning"
       }
     }
   ]

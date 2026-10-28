@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Trop 'Til You Drop: Rays Outlast Brewers in 12 Innings, Force World Series Game 5",
+      "excerpt": "Tampa Bay scored twice in the bottom of the 12th to beat Milwaukee 4-3 in Game 4 of the World Series and avoid a sweep. The Brewers lead 3-1 with Game 5 on Wednesday at Tropicana Field, and no former Gators are on the Rays' roster.",
+      "url": "https://www.gatorbaitmedia.com/post/rays-baseball-world-series-game-4-brewers-gators-ties",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-10-28T04:53:16Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Trop 'Til You Drop: Rays Outlast Brewers in 12 Innings, Force World Series Game 5"
+      }
+    },
+    {
+      "title": "Urban Renewal: Klavzar, Aberdeen Find Their Shot as No. 1 Gators Put Away Stetson",
+      "excerpt": "Urban Klavzar and Denzel Aberdeen combined for 46 points and 10 3-pointers as No. 1 Florida beat Stetson 85-68 in its exhibition finale, nine days after a 4-for-29 night from deep against Baylor. The bench and the defense still have work to do before Miami.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-10-28T04:36:01Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_394ab2f58207493a800fece21c8b7897~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Urban Renewal: Klavzar, Aberdeen Find Their Shot as No. 1 Gators Put Away Stetson"
+      }
+    },
+    {
       "title": "Thoughts of the Day: October 27, 2026",
       "excerpt": "Franz Beard on Jon Sumrall's first Florida-Georgia game and the work needed to close the rivalry gap. File photo: Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-27-2026",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Rays the Roof! Have A Day Tampa Bay!  Remembering St. Petersburg Before There Was MLB."
-      }
-    },
-    {
-      "title": "No. 1 expectations, SEC crossroads and the playoff picture",
-      "excerpt": "Franz Beard's Tuesday column: Florida basketball's preseason expectations, college football rankings, the outlook for all 16 SEC teams and his College Football Playoff predictions.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-20-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-20T15:05:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c02758730b3941e39694492c7bc555a5~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for No. 1 expectations, SEC crossroads and the playoff picture"
-      }
-    },
-    {
-      "title": "Gators find a spark in Austin",
-      "excerpt": "Eddie Gilley on Florida's 27-24 win at Texas: improved defense, third-down execution and the spark that helped the Gators fight back. Photo courtesy UAA and Hannah White.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-find-a-spark-in-austin",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-19T21:27:49Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg/v1/fit/w_1000,h_880,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators find a spark in Austin"
       }
     }
   ]

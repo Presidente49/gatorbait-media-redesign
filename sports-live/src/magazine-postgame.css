@@ -499,3 +499,12 @@ html #gbm-magazine-page.pm{
 .pm-list{column-gap:96px}
 }
 }
+
+/* Current reporting is separate from the preserved postgame issue. */
+#gbm-magazine-page.pm .pm-latest{background:#101529;color:#fff;padding:20px 0;border-bottom:1px solid #394159}
+#gbm-magazine-page.pm .pm-latest h2{font:800 26px/1.1 "Barlow Condensed","Barlow",sans-serif;margin:8px 0}
+#gbm-magazine-page.pm .pm-latest p{margin:0 0 8px}
+#gbm-magazine-page.pm .pm-latest ol{list-style:none;padding:0;margin:8px 0}
+#gbm-magazine-page.pm .pm-latest a{display:flex;min-height:44px;align-items:center;gap:8px;justify-content:space-between;color:inherit}
+#gbm-magazine-page.pm .pm-latest small{flex:none;font-size:13px}
+@media(max-width:600px){#gbm-magazine-page.pm .pm-latest ol a{align-items:start;flex-direction:column;gap:2px;padding:8px 0}}

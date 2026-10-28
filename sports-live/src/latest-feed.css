@@ -24,7 +24,7 @@ position:relative;display:block;width:var(--lf-vw,100vw);max-width:100vw;margin:
 /* chips */
 #gbm-lf .lf-chipbar{position:relative;margin:18px 0 26px}
 #gbm-lf .lf-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:thin;scrollbar-color:#3b4668 transparent;-webkit-overflow-scrolling:touch}
-#gbm-lf .lf-chip{flex:none;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--ln);border-radius:999px;background:var(--s);color:#fff;font:800 15px/1 var(--c);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:background .15s,border-color .15s}
+#gbm-lf .lf-chip{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--ln);border-radius:999px;background:var(--s);color:#fff;font:800 15px/1 var(--c);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:background .15s,border-color .15s}
 #gbm-lf .lf-chip:hover{border-color:var(--o);background:var(--s2)}
 #gbm-lf .lf-chip[aria-current=page]{background:var(--o);border-color:var(--o);color:var(--ink)}
 #gbm-lf .lf-chip.lf-gap{margin-left:8px;position:relative}

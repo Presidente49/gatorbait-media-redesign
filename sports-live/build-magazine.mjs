@@ -33,9 +33,13 @@ const runtimeBase = (POSTGAME ? read('sports-live/src/capture.js') + '\n;' : '')
 const runtime = VARIANT === 'wednesday' ? runtimeBase.replace('Six complete articles \u00b7 October 1 edition', 'Twelve stories \u00b7 Wednesday Edition, October 7') : runtimeBase;
 // Photo credits the homepage already verified (front-page.config.json), so the live card refresh can credit a new card's photo.
 const credits = JSON.parse(read('sports-live/front-page.config.json')).credits || {};
-// Postgame only: the 22-character page selector repeats several hundred times in the CSS, so the bundle stores it as one backtick and the runtime expands it back before the style is injected (the CSS that reaches the page is identical).
+// Every edition repeats these page selectors hundreds of times. Store each as one character and
+// expand it before injection, preserving the exact CSS bytes. A literal token in future source
+// falls back to plain CSS rather than changing its meaning; the normal size budget still applies.
 const PM_SEL = '#gbm-magazine-page.pm';
 const MZ_SEL = '#gbm-magazine-page.mz26 '; // second token (tilde, absent from the CSS): 290 more repeats, ~6 KB
+const cssExpression = css.includes('`') || css.includes('~') ? JSON.stringify(css) :
+  JSON.stringify(css.split(PM_SEL).join('`').split(MZ_SEL).join('~')) + '.split("~").join("' + MZ_SEL + '").split("`").join("' + PM_SEL + '")';
 const MAX_JS = (POSTGAME ? 200 : 184) * 1024; // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
 
 // Strip editorial meta (notes to the compiler) so the bundle carries only what renders; everything else goes through untouched.
@@ -52,7 +56,7 @@ const banner = `/* GatorBait Magazine 2026: the weekly web issue on /magazine. I
 `;
 const js = minify(`(function () {
   'use strict';
-  var CSS = ${POSTGAME ? JSON.stringify(css.split(PM_SEL).join('`').split(MZ_SEL).join('~')) + '.split("~").join("' + MZ_SEL + '").split("`").join("' + PM_SEL + '")' : JSON.stringify(css)};
+  var CSS = ${cssExpression};
   var ISSUE = ${JSON.stringify(issue)};
   var BUILD = ${JSON.stringify(build)};
   var CREDITS = ${JSON.stringify(credits)};

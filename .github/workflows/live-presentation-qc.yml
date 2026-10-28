@@ -37,8 +37,10 @@ jobs:
           npm install --no-save playwright@1.49.1
           npx playwright install --with-deps chromium
 
-      - name: Check slow homepage image delivery and mobile scrolling
+      - name: Check homepage order, accessibility and image delivery
         run: |
+          node --test sports-live/test-homepage-order.mjs
+          node sports-live/test-homepage-accessibility.mjs
           node --test sports-live/test-front-page-images.mjs
           node sports-live/qa-front-page-images.mjs
 

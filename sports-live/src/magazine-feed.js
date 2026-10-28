@@ -143,6 +143,10 @@
     var D = issue && typeof issue === 'object' ? issue : {}, oldLead = D.lead && typeof D.lead === 'object' ? D.lead : null;
     var oldCards = D.cards && Array.isArray(D.cards.items) ? D.cards.items : [];
     var credits = mfCredits(D, extraCredits), all = mfNormalize(posts, nowMs, credits);
+    if (Array.isArray(D.topicPaths) && D.topicPaths.length) {
+      var allowed = D.topicPaths.map(mfPath).filter(Boolean);
+      all = all.filter(function (p) { return allowed.indexOf(p.path) >= 0; });
+    }
     var res = { lead: oldLead, items: oldCards, leadChanged: false, cardsChanged: false, posts: all.length };
     if (!all.length) return res;
     var pick = mfPickLead(all, nowMs), leadPath = oldLead ? mfPath(oldLead.url) : '';

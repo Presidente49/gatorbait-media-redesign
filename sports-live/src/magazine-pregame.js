@@ -49,6 +49,7 @@
   }
   function pgCoverHref(D) {
     var C = obj(D.cover) || {}, L = obj(D.lead) || {}, cu = safeUrl(C.url), lu = safeUrl(L.url);
+    if (C.directLink && cu) return cu;
     return !cu || !lu || cu === lu ? '#pg-lead' : cu;
   }
   function pgCover(D) {
@@ -68,7 +69,7 @@
     var P = obj(G.predictor), f = P ? num(P.florida) : null, m = P ? num(P.missouri) : null, opp = pgOpp(D);
     function team(t) { return '<div class="pg-team ' + (text(t.name, 30) === 'Florida' ? 'pg-fla' : 'pg-miz') + '">' + (text(t.rank, 12) ? '<small>' + esc(text(t.rank, 12)) + '</small>' : '') + '<b>' + esc(text(t.name, 30)) + '</b><span class="pg-rec">' + esc(text(t.record, 12)) + '</span><em>' + esc(text(t.conf, 20)) + '</em></div>'; }
     return '<section class="pg-game" id="pg-game" aria-labelledby="pg-game-t"><div class="pg-game-top"><h2 id="pg-game-t">' + esc(text(G.label, 40)) + '</h2><b class="pg-count" data-pg-count>' + esc(pgCount(G.kickoffISO)) + '</b></div>' +
-      '<div class="pg-teams">' + team(teams[0]) + '<div class="pg-at" aria-hidden="true">at</div>' + team(teams[1]) + '</div>' +
+      '<div class="pg-teams">' + team(teams[0]) + '<div class="pg-at" aria-hidden="true">' + esc(text(G.separator, 4) || 'at') + '</div>' + team(teams[1]) + '</div>' +
       '<p class="pg-when"><b>' + esc(text(G.kickoff, 60)) + '</b><span>' + esc(text(G.tv, 20)) + '</span><span>' + esc(text(G.venue, 120)) + '</span>' + (text(G.forecast, 120) ? '<span>' + esc(text(G.forecast, 120)) + '</span>' : '') + '</p>' +
       (chips.length ? '<ul class="pg-chips">' + chips.map(function (c) { return '<li><small>' + esc(text(c.k, 20)) + '</small><b>' + esc(text(c.v, 40)) + '</b></li>'; }).join('') + '</ul>' : '') +
       (f !== null && m !== null ? '<div class="pg-prob" role="img" aria-label="' + esc(text(P.label, 40) + ': Florida ' + fx(f) + ' percent, ' + opp + ' ' + fx(m) + ' percent') + '"><p>' + esc(text(P.label, 40)) + '</p><div class="pg-bar"><i style="width:' + fx(f) + '%"></i></div><div class="pg-prob-n"><b>Florida ' + fx(f) + '%</b><b>' + esc(opp) + ' ' + fx(m) + '%</b></div></div>' : '') +
@@ -229,7 +230,7 @@
       if (!root.isConnected) { mfLiveStop(); return; }
       if (document.hidden || L.busy || (!force && Date.now() - L.last < 55000)) return;
       L.busy = true; L.last = Date.now();
-      Promise.all([mfFeed().then(function (posts) { mfApply(root, base, posts); }, function () { if (!root.hasAttribute('data-mz-live')) root.setAttribute('data-mz-live', 'baked'); }),
+      Promise.all([base.liveFeed === false ? Promise.resolve() : mfFeed().then(function (posts) { mfApply(root, base, posts); }, function () { if (!root.hasAttribute('data-mz-live')) root.setAttribute('data-mz-live', 'baked'); }),
         mfScore(root, base)]).then(function () { L.busy = false; }, function () { L.busy = false; });
     }
     L.vis = function () { if (!document.hidden) cycle(false); };

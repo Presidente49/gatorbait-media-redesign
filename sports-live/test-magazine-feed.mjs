@@ -179,3 +179,15 @@ test('lead needs a verified photo credit; Buddy tie rule among credited columns'
   const colon = pick([post('Loren Colon', 'Loren Meadows', 1, { image: { ...img(false), alt: 'Kickoff (Photo: Hannah White / UAA Communications)' } })]);
   assert.equal(colon.lead.image.credit, 'Photo: Hannah White / UAA Communications');
 });
+
+
+test('a topical issue excludes newer unrelated stories in the shared picker', () => {
+  const related = post('Florida Georgia Column', 'Franz Beard', 2);
+  const unrelated = post('Rays Baseball Column', 'Buddy Martin', 0.5);
+  const staff = post('Georgia Week News', 'GatorBait Staff', 1);
+  const issue = { ...ISSUE, topicPaths: [related.url, staff.url] };
+  const r = pick([unrelated, related, staff], issue);
+  assert.equal(r.lead.url, '/post/florida-georgia-column');
+  assert.ok(r.items.every(c => c.url !== '/post/rays-baseball-column'));
+  assert.equal(r.posts, 2);
+});

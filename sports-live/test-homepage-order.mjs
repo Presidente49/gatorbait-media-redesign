@@ -123,7 +123,7 @@ function packageRecords() {
     packageStory('/post/oldest-staff', 'GatorBait Staff', 8),
   ];
 }
-const expectedPackage = [packagePaths.lead, packagePaths.basketball, packagePaths.rays, packagePaths.buddy,
+const expectedPackage = [packagePaths.lead, packagePaths.basketball, packagePaths.buddy, packagePaths.rays,
   '/post/other-writer-a', '/post/other-writer-b', '/post/oldest-staff', '/post/older-staff', packagePaths.brenden];
 const expectedDefault = [packagePaths.basketball, packagePaths.lead, '/post/other-writer-a', packagePaths.buddy,
   '/post/other-writer-b', '/post/oldest-staff', '/post/older-staff', packagePaths.brenden, packagePaths.rays];

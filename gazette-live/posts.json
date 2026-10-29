@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Spooks Are 4-0. Georgia Is Laying 12.5. Isn't That Scary Enough On Halloween?",
+      "excerpt": "Buddy Martin revisits Florida's four Halloween wins since 1931 as the Gators prepare to face Georgia at Mercedes-Benz Stadium in Atlanta. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-spooks-halloween-florida-georgia",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-29T14:37:01Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_e1904a8d956c4c56b021aa44d4a376e2~mv2.jpg/v1/fit/w_960,h_640,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Spooks Are 4-0. Georgia Is Laying 12.5. Isn't That Scary Enough On Halloween?"
+      }
+    },
+    {
+      "title": "Will lightning strike twice for the Gators?",
+      "excerpt": "Franz Beard examines why Florida can challenge Georgia in Atlanta after the Gators and Auburn each pulled off a 27-24 upset on Oct. 17. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/will-lightning-strike-twice-for-the-gators",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-29T14:37:01Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_04f230dd243d411799e0998a9b6963c7~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Will lightning strike twice for the Gators?"
+      }
+    },
+    {
       "title": "An Unlikely Hero at the Unlikeliest of Times",
       "excerpt": "Buddy Martin on the Rays' 12-inning escape in World Series Game 4, an unlikely hero named Ben Williamson and what Jon Sumrall might borrow from Ted Lasso. Photo courtesy of Wikimedia Commons. Official White House Photo by Cameron Smith.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-martin-rays-unlikely-hero-ted-lasso-world-series-game-4",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Sumrall restores hope as Texas faces a reckoning"
-      }
-    },
-    {
-      "title": "Gators heal for Georgia as the SEC Soothsayer makes his picks",
-      "excerpt": "Franz Beard on Florida’s bye-week recovery before Georgia, six SEC matchups and the NCAA’s latest eligibility fight.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-23-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-23T11:13:08Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_f51d42eaf631433485fbf86d44f340ef~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators heal for Georgia as the SEC Soothsayer makes his picks"
-      }
-    },
-    {
-      "title": "From The Scout Team To Atlanta: Chris Doering Finally Gets His Due",
-      "excerpt": "He left in 1995 with 31 touchdown catches, still the school record and second in SEC history. Think about the receivers who have come through Gainesville since then By Buddy Martin GatorBaitMedia.com They used to hand Chris Doering a scout-team jersey and tell him to go get hit. He’d take the beating, show up the next day, and take it again. No scholarship…",
-      "url": "https://www.gatorbaitmedia.com/post/from-the-scout-team-to-atlanta-chris-doering-finally-gets-his-due",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-23T00:23:07Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_29cf2a14d2d24b1387bd60638b380ead~mv2.jpeg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for From The Scout Team To Atlanta: Chris Doering Finally Gets His Due"
       }
     }
   ]

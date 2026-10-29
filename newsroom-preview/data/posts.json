@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Spooks Are 4-0. Georgia Is Laying 12.5. Isn't That Scary Enough On Halloween?",
+      "excerpt": "Buddy Martin revisits Florida's four Halloween wins since 1931 as the Gators prepare to face Georgia at Mercedes-Benz Stadium in Atlanta. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-spooks-halloween-florida-georgia",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-29T14:37:01Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_e1904a8d956c4c56b021aa44d4a376e2~mv2.jpg/v1/fit/w_960,h_640,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Spooks Are 4-0. Georgia Is Laying 12.5. Isn't That Scary Enough On Halloween?"
+      }
+    },
+    {
+      "title": "Will lightning strike twice for the Gators?",
+      "excerpt": "Franz Beard examines why Florida can challenge Georgia in Atlanta after the Gators and Auburn each pulled off a 27-24 upset on Oct. 17. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/will-lightning-strike-twice-for-the-gators",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-29T14:37:01Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_04f230dd243d411799e0998a9b6963c7~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Will lightning strike twice for the Gators?"
+      }
+    },
+    {
       "title": "An Unlikely Hero at the Unlikeliest of Times",
       "excerpt": "Buddy Martin on the Rays' 12-inning escape in World Series Game 4, an unlikely hero named Ben Williamson and what Jon Sumrall might borrow from Ted Lasso. Photo courtesy of Wikimedia Commons. Official White House Photo by Cameron Smith.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-martin-rays-unlikely-hero-ted-lasso-world-series-game-4",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap."
-      }
-    },
-    {
-      "title": "Thoughts of the Day: October 26, 2026",
-      "excerpt": "Illustration: GatorBait Media (AI-assisted). A few thoughts to jump start your Monday morning: That the Georgia Bulldogs are favored to beat the Florida Gators when the rivalry takes the first of a two-year vacation from its traditional home in Jacksonville is no surprise. The Bulldogs (6-1, 4-1 SEC) should be favored. They are ranked third in the latest…",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-26-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-26T12:12:11Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6a7cde2e9a71485b89faa934285c5f0e~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Thoughts of the Day: October 26, 2026"
-      }
-    },
-    {
-      "title": "Four medals, one golden week for Florida's Skye Blakely",
-      "excerpt": "Brenden Martin on Florida junior Skye Blakely's four-medal World Championships, led by all-around gold. Photo: USA Gymnastics.",
-      "url": "https://www.gatorbaitmedia.com/post/four-medals-one-golden-week-florida-skye-blakely",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-25T22:56:22Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_0351930afd8e49df8f04cca01a622222~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Four medals, one golden week for Florida's Skye Blakely"
       }
     }
   ]

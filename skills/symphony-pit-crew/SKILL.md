@@ -28,6 +28,7 @@ Use as a subordinate platform specialist for GatorBait. [Master Control](../mast
 - Inspect the current object/revision and snapshot before writing. Use the exact supported schema, smallest change, drift check, rollback and independent read-back/pathway test.
 - Preserve working routes, member access, consent/suppression, editorial identity and unrelated content. A guessed 404 alias is not a confirmed defect.
 - Inspect stored template bodies or rendered evidence before diagnosing email content. Variables, active configuration and preview success are not delivery proof.
+- Enumerate every returned inventory page before declaring coverage. Inspect actual trigger/action types and per-automation sender bindings; a name, active flag or site default does not establish what runs or who sends it.
 - Keep website membership, Spaces membership, app-card appearance and device notifications separate. Do not use owner notifications as a substitute for member push.
 - Report requested, running, completed and independently verified states accurately. A saved file or approved payload is not a live fix.
 

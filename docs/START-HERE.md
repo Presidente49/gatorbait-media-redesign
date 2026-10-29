@@ -8,7 +8,7 @@ This is the project rulebook. Every Claude, Codex or ChatGPT session reads it fi
 
 Use supported direct provider connectors and an already authorized native browser session where needed. Verify the identity and actual access of the connection doing the work. Do not reconnect accounts, change platform permissions, buy capacity or add schedules to restore the retired route. Keep independent authorized work moving and name the precise missing capability.
 
-For incoming operations and Muse handoffs, first read the top of the existing desk `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` through its actual authorized host route, then follow the exact referenced files before asking Brenden or starting a generic inbox search. Top entries can contain jobs from email or other channels. A saved path is not a mounted or verified connection; retain an explicit UNVERIFIED/BLOCKED state when the route is unavailable. See [team handoff](../skills/master-control/references/team-handoff.md).
+For incoming operations and Muse handoffs, **GitHub is the owner-designated transport**; use [existing issue #34](https://github.com/Presidente49/gatorbait-media-redesign/issues/34) for desk entries, exact source-export links and reply receipts. Read its current handoff entries/replies first, then the actual referenced artifact at its stated commit before asking Brenden or starting a generic inbox search. `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` remains the logical source desk; GitHub transport does not mount that filesystem, make an absent export available, replace the social claim registry or prove Muse acceptance. Keep private operations, customer data and secrets out of public exports. See [team handoff](../skills/master-control/references/team-handoff.md).
 
 Muse hands in requests. Codex decides priority, acceptance, execution and implementation within Brenden's authorized scope, and owns QC and completion. Resolve routine choices without re-asking; a Muse recommendation is input, not automatic acceptance. Brenden's current instructions and existing source, billing and access boundaries remain controlling.
 
@@ -150,5 +150,6 @@ Nothing is written for a writer who has not filed; a missing promised piece is f
 Truth when sources disagree: live provider state, then the current object and revision, then CURRENT-STATE, then this page, then playbooks, then old docs and chats, then the model's memory.
 
 Git: branches and PRs; never force-push someone else's branch; no secrets in the repo.
+
 
 

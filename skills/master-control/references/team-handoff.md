@@ -4,17 +4,17 @@
 
 Symphony is retired for GatorBait. Do not call, wake, restart or use it to relay this handoff. Use supported direct provider connectors and an already authorized native browser where needed. Do not reconnect accounts, alter platform permissions, buy capacity or create a replacement scheduler to restore that route. Historical task receipts remain evidence, not current execution.
 
-Use [Muse Handoff](../../gatorbait-muse-handoff/SKILL.md) for the packet and exact-item acceptance, with [Newsroom Intake](../../gatorbait-newsroom-intake/SKILL.md) and [Publication QC](../../gatorbait-publication-qc/SKILL.md) for the preceding stages. Verify the receiving host/route actually exists and is reachable. If it is not, preserve PREPARED status and report the missing capability; neither a local handoff file nor an issue comment is delivered or accepted by Muse.
+Use [Muse Handoff](../../gatorbait-muse-handoff/SKILL.md) for the packet and exact-item acceptance, with [Newsroom Intake](../../gatorbait-newsroom-intake/SKILL.md) and [Publication QC](../../gatorbait-publication-qc/SKILL.md) for the preceding stages. Use the owner-designated GitHub transport below and verify each referenced source artifact. Posting an issue entry records transport; it does not establish Muse acceptance or access to an unexported host file. Preserve the precise missing-source or acceptance state.
 
 Final artwork is created only in regular ChatGPT Pro, normal Chat mode. Muse's creative role prepares briefs and authentic assets; technical workers verify and integrate that approved master. A role definition does not transfer credentials or access.
 
 ## Morning desk intake — owner direction, Oct. 29, 2026
 
-The primary incoming desk is `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md`. Read its top entries first, before asking the owner for known work or searching a generic inbox. Jobs may arrive from email or other channels; follow the exact referenced files and focus on the operational request. Verify the actual host/mount before claiming the file was read. A saved route is not a live connection.
+The logical source desk is `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md`. The owner has designated **GitHub as the incoming transport**. Use [existing issue #34](https://github.com/Presidente49/gatorbait-media-redesign/issues/34) for its top handoff entries, exact source-export links and reply receipts. Read the current entries/replies there first, before asking the owner for known work or searching a generic inbox. Jobs may originate in email or other channels. Follow each exact artifact/file link at the stated commit and read its current content; a host path or requested export alone is not available source material.
 
 Muse hands in requests; Codex remains the operational controller for priority, acceptance, execution, implementation, QC and completion within Brenden's authorized scope. Resolve routine choices without re-asking. A handoff is input, not automatic acceptance of every recommendation. Current user instructions and verified source, billing and access boundaries govern. This routing clarification does not replace the three-arm organization or Buddy's editorial authority.
 
-When the actual route is available, the controller logs the exact-item acceptance, execution and result back to this same desk, preserving existing history and claims. Workers return proposed acknowledgment/result evidence to the controller. If unavailable, retain UNVERIFIED/BLOCKED with the referenced work intact; do not claim connection, acceptance or completion. Add no watcher, schedule or duplicate ledger and do not substitute Symphony or TinyFish.
+The controller records exact-item acceptance, execution and result as replies on the existing GitHub handoff, preserving desk history and claims; mirror to the host desk only when actual host access exists. Workers return proposed acknowledgment/result evidence. Mark a missing artifact SOURCE_EXPORT_REQUIRED and retain the known reference; do not ask again which transport to use or claim the filesystem is mounted. Add no queue, watcher, schedule or duplicate ledger and do not substitute Symphony or TinyFish.
 
 ## Provenance and scope
 
@@ -50,7 +50,7 @@ These are owner-provided paths on the relevant host, not paths verified or autom
 
 The controller checked all three paths under the current cloud host's home/workspace and found them absent there. That does not establish global absence: treat the supplied paths as belonging to another host and verify the host or mount. Verify actual access and content before relying on them. Do not claim these files were read merely because the paths appear here, silently copy them into a new local ledger, or assume the cloud clone is the same filesystem.
 
-Issue #34 continues as the existing GitHub coordination record. It does **not** replace `TEAM-STATUS.md`, the social claim registry or the operational log.
+Issue #34 carries the handoff through the owner-designated GitHub transport, not a second queue or a replacement for the logical `TEAM-STATUS.md`, the actual social claim registry or the operational log. Receiving a GitHub entry/export link does not prove Muse accepted the task; require the exact-item reply receipt. Public entries and exports must exclude private operational/customer data, full private filings, credentials and secrets. Use an existing authorized private artifact for sensitive source material and record only a safe reference; never make it public to unblock transport.
 
 ## Social claims and provider truth
 
@@ -68,4 +68,5 @@ Do not add, restart or duplicate a heartbeat, schedule, watcher or claim ledger 
 Under the October 11 contract, Marlowe supplies the selected segments plus a **SOURCE PACKAGE** containing transcript, timestamps, quotes and embed links. The copy desk writes the article from that package. Preserve full source provenance and current editorial/verification rules; a clip list alone is not the source package.
 
 Reconcile any later direct owner order before applying the usual split. Keep domain ownership, access to a file, an accepted handoff and permission for an outbound action as separate facts.
+
 

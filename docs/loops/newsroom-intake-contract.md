@@ -2,13 +2,19 @@
 
 Owner direction, Oct. 28, 2026: complete routine writer filings without an owner prompt. Reuse the existing waking controller and accepted newsroom workflow. This contract describes required behavior; documentation or a saved prompt does not prove execution.
 
+## Current route — owner directive, Oct. 29, 2026
+
+Symphony is retired for GatorBait. Do not call, wake, restart or dispatch work through it. Use supported direct provider connectors and an already authorized native browser where needed; verify actual account identity, source access and the receiving route. No account reconnection, platform-permission change, spending or replacement scheduler is authorized merely to restore the retired route.
+
+For “Copy desk,” use [Newsroom Intake](../../skills/gatorbait-newsroom-intake/SKILL.md), then [Editorial](../../skills/gatorbait-editorial/SKILL.md). Use [Publication QC](../../skills/gatorbait-publication-qc/SKILL.md) and [Muse Handoff](../../skills/gatorbait-muse-handoff/SKILL.md) at their actual stages. A prepared local packet or host-local desk file is not accepted by Muse without an observed exact-item acknowledgment. Final artwork comes only from regular ChatGPT Pro, normal Chat mode; creative briefs/assets and technical integration do not establish that master exists.
+
 ## Roles and wake path
 
 | Role | Responsibility |
 | --- | --- |
 | Codex | Single controller, queue owner and sole Wix production writer; accepts complete sources, performs copy desk, publishes and verifies. |
 | Muse/Marlowe | Existing email/portal intake and staging, creative preparation and sole social outbound owner after a verified article handoff. |
-| Symphony | Read-only specialist until an exact bounded action is assigned within owner authorization; no independent publisher or scheduler. |
+| Bounded direct-tool specialists | Read, research, draft and independently verify under the controller; no independent publisher or scheduler. Symphony is retired. |
 | Claude Code | Independent code review; no additional publisher or scheduler. |
 
 Use the existing Codex heartbeat `gatorbait-post-publication-muse-handoff` for source intake and routine publication before its existing live-QC/social phase. Preserve its identity, cadence, acceptance ledger and one production owner. Read the native prompt, real target and last scheduled result before claiming it covers intake. A target must be available and own the production queue; a task name alone is insufficient.

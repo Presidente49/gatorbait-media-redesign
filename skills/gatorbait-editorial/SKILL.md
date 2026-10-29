@@ -1,3 +1,8 @@
+---
+name: gatorbait-editorial
+description: Research, copy-edit and prepare GatorBait writer columns and reported articles under Master Control; preserve verified authorship, substantive voice and the established publication checks.
+---
+
 # GatorBait Editorial Skill — Juice
 
 ## Purpose
@@ -291,3 +296,11 @@ Editorial work is done when:
 - the copy sounds like GatorBait
 - placement is decided
 - the draft is ready for Brenden to approve or for Flaco to produce
+
+## Intake, author identity and release checks — Oct. 29
+
+Use [Newsroom Intake](../gatorbait-newsroom-intake/SKILL.md) for portal/Gmail filings before assuming the work is an audit of already posted stories. Preserve a complete source/revision and any requested publication time or photo placement. Run the established trusted-writer quick checks rather than holding professional columns for a broad re-report; resolve actual contradictions and record house-style exceptions.
+
+Keep the real writer's native member/byline and RSS/card identity aligned, separately from photo credit. Never infer a writer from style or an image. Owner instructions to leave a specific incomplete passage unchanged are item-scoped; do not invent its ending or silently apply the exception to other stories. Resolve ambiguous wording with evidence and ordinary editorial judgment before asking a routine question.
+
+Use [Publication QC](../gatorbait-publication-qc/SKILL.md) for the full public ending, appropriate prose initial, one intended lead, visible bylines and distinct relevant photos. Use [Muse Handoff](../gatorbait-muse-handoff/SKILL.md) for exact-item acceptance and ChatGPT Pro normal Chat artwork provenance. Symphony is retired. A complete text draft, native save, prepared packet and actual publication/delivery are distinct states.

@@ -2,6 +2,14 @@
 
 Goal: every genuine writer filing reaches a verified canonical story and appropriate distribution, without owner micromanagement or fabricated status.
 
+## Current route — owner directive, Oct. 29, 2026
+
+Symphony is retired. Do not call, wake, restart or use it for intake, publication, artwork or handoffs. Use supported direct provider connectors and an already authorized native browser where needed. Verify each connection's actual identity and access; do not reconnect accounts, change platform permissions, purchase capacity or add a scheduler to revive the retired route. Preserve dated receipts below as history.
+
+“Copy desk” starts with [Newsroom Intake](../../skills/gatorbait-newsroom-intake/SKILL.md) and [Editorial](../../skills/gatorbait-editorial/SKILL.md). Use [Publication QC](../../skills/gatorbait-publication-qc/SKILL.md) before [Muse Handoff](../../skills/gatorbait-muse-handoff/SKILL.md). Source received, reviewed, published, packet prepared, transmitted, accepted and publicly distributed are different states. A host-local file is not a shared queue; an unavailable Muse route leaves the packet PREPARED.
+
+All final artwork originates in regular ChatGPT Pro, normal Chat mode. Muse prepares briefs and authentic source assets; technical workers QA/export/integrate the approved master. Missing Chat access is an art-stage blocker, not permission to generate substitute creative elsewhere.
+
 ## One controller and explicit acceptance
 
 Codex owns the queue and is the sole production writer. Muse receives source copy, prepares visuals/native social and evaluates engagement; the copy desk and fact reviewer return concrete evidence. A handoff is accepted only when the receiving stage acknowledges the exact item, source/revision, next action and checks. Posting a pointer alone does not complete a handoff. The [newsroom intake contract](newsroom-intake-contract.md) defines the existing wake path, source acceptance, specialist roles and scheduled verification gates.

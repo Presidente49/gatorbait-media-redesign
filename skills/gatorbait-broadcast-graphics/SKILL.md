@@ -9,7 +9,7 @@ This is a specialist skill under **Master Control**. It does not replace Master 
 
 ## Standing art source (owner directive, Oct. 28, 2026)
 
-All final broadcast artwork and thumbnails originate in **regular ChatGPT Pro, normal Chat mode**, under the [Graphic Design art-source directive](../gatorbait-graphic-design/SKILL.md#standing-art-source-owner-directive-oct-28-2026). Work, Codex, Symphony and alternate art generators may research, brief, prepare approved assets, QA and perform technical exports/integration; they do not supply replacement creative.
+All final broadcast artwork and thumbnails originate in **regular ChatGPT Pro, normal Chat mode**, under the [Graphic Design art-source directive](../gatorbait-graphic-design/SKILL.md#standing-art-source-owner-directive-oct-28-2026). Work, Codex and technical tools may research, brief, prepare approved assets, QA and perform technical exports/integration; they do not supply replacement creative.
 
 Retain the ChatGPT conversation link, prompt/reference inputs, downloaded original master and derivative provenance. A new creative design or variation returns to regular ChatGPT Pro. Technical renderers may populate an approved design with verified live data; the architecture references below are implementation references, not alternate artwork sources. AP Mode's fact, photography, branding, Barlow and phone-readability standards still apply.
 
@@ -394,3 +394,7 @@ After measurable distribution:
 - promote only repeated lessons into this skill.
 
 Do not optimize toward generic platform aesthetics if doing so erases GatorBait identity.
+
+## Current source and integration route — Oct. 29
+
+Symphony is retired for GatorBait. Final creative still originates in regular ChatGPT Pro normal Chat. Use [Muse Handoff](../gatorbait-muse-handoff/SKILL.md) for authentic inputs, explicit game-date verification, exact approved master/provenance and receiving-stage acceptance. Do not turn a previously verified score into today's result, borrow an unrelated sport's photo, crop lettering off a thumbnail or claim a prepared brief is a generated/published master.

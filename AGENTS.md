@@ -6,6 +6,14 @@ This repository uses **Master Control**, a single-controller operating model. Th
 
 Canonical repository: **Presidente49/gatorbait-media-redesign**. Production Wix site: **18fb3a4e-d7f6-414a-aeb9-3047db3ea115** at `https://www.gatorbaitmedia.com/`.
 
+## Reusable newsroom skills and agents — owner direction, Oct. 29, 2026
+
+Symphony is retired for GatorBait. Do not call it, dispatch through Maestro or resume its paused work. Use supported direct provider tools and actual authorized browser access; if a required connection or asset is unavailable, finish independent work and name that precise dependency. Do not reconnect accounts, spend, add a watcher or change a permission gate to work around it.
+
+For Copy Desk work, start with [Newsroom Intake](skills/gatorbait-newsroom-intake/SKILL.md), then [Editorial](skills/gatorbait-editorial/SKILL.md), [Publication QC](skills/gatorbait-publication-qc/SKILL.md) and the appropriate [Muse handoff](skills/gatorbait-muse-handoff/SKILL.md). Reusable project roles are listed in [agents/README.md](agents/README.md). Final artwork comes only from regular ChatGPT Pro normal Chat; technical workers prepare authentic assets and briefs, QA and integrate the approved original.
+
+Agent and skill files define behavior; they do not prove a running service, shared context, Muse acceptance or completed publication. Preserve the single production writer and actual evidence gates.
+
 ## On open: start read-only
 
 Verify the Git remote, working directory, branch, HEAD and uncommitted state; compare with `main` without resetting or discarding work. Read the newest #34 comments. State the work item the controller assigned; a posted handoff is not an acknowledged one. Then load `skills/master-control/SKILL.md` (via `.codex/skills/master-control/SKILL.md`) and the smallest specialist playbook.

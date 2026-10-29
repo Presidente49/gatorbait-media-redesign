@@ -6,6 +6,14 @@ Claude Code is a worker inside GatorBait Master Control. It is not a second cont
 
 Canonical repository: **Presidente49/gatorbait-media-redesign**. Production Wix site: **18fb3a4e-d7f6-414a-aeb9-3047db3ea115** at `https://www.gatorbaitmedia.com/`.
 
+## Reusable newsroom skills and agents — owner direction, Oct. 29, 2026
+
+Symphony is retired for GatorBait. Do not call it, dispatch through Maestro or resume its paused work. Use supported direct provider tools and actual authorized browser access; if a required connection or asset is unavailable, finish independent work and name that precise dependency. Do not reconnect accounts, spend, add a watcher or change a permission gate to work around it.
+
+For Copy Desk work, start with [Newsroom Intake](skills/gatorbait-newsroom-intake/SKILL.md), then [Editorial](skills/gatorbait-editorial/SKILL.md), [Publication QC](skills/gatorbait-publication-qc/SKILL.md) and the appropriate [Muse handoff](skills/gatorbait-muse-handoff/SKILL.md). Reusable project roles are listed in [agents/README.md](agents/README.md). Final artwork comes only from regular ChatGPT Pro normal Chat; technical workers prepare authentic assets and briefs, QA and integrate the approved original.
+
+Agent and skill files define behavior; they do not prove a running service, shared context, Muse acceptance or completed publication. Preserve the single production writer and actual evidence gates.
+
 ## On open or resume: start read-only
 
 1. Report the working directory, Git remote, branch, HEAD and uncommitted state. Confirm the remote is the canonical repo, not a similar name or an old preview. Compare with `main` without resetting, force-pushing or discarding another worker's changes.

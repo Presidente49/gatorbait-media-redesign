@@ -9,9 +9,11 @@ Use this skill for work on GatorBait Media's live Wix site or its redesign repos
 
 Read [references/live-runbook.md](references/live-runbook.md) before changing design, custom embeds, navigation, newsletter behavior, article presentation, or Velo code. It records the live identifiers, tested decisions, and failure patterns that materially affect safe implementation.
 
-The runbook is chronological evidence. Reconcile dated examples with canonical `skills/master-control/SKILL.md`, current owner instructions, newest issue #34 outcomes and a fresh provider read. For Symphony tools, email-body access and native-agent handoffs, use [the Symphony operating adapter](../../../skills/master-control/references/symphony-operations.md).
+The runbook is chronological evidence. Reconcile dated examples with canonical `skills/master-control/SKILL.md`, current owner instructions, newest issue #34 outcomes and a fresh provider read. Symphony is retired for GatorBait by the Oct. 29 owner directive; do not call, wake or route work through it. Use supported direct provider connectors and an already authorized native browser as needed. The prior adapter is historical evidence, not an execution path.
 
 For work crossing into Marlowe/Muse's social and distribution arm, read [the owner-provided team handoff](../../../skills/master-control/references/team-handoff.md). The existing desk channel and shared social claim registry are distinct from issue #34; do not assume the named host paths are accessible in this checkout.
+
+For source acceptance use [Newsroom Intake](../../../skills/gatorbait-newsroom-intake/SKILL.md), then the existing editorial skill. Verify the visible result with [Publication QC](../../../skills/gatorbait-publication-qc/SKILL.md); use [Muse Handoff](../../../skills/gatorbait-muse-handoff/SKILL.md) only through a reachable receiving route with exact-item acknowledgment. Final creative remains regular ChatGPT Pro, normal Chat mode; this worker handles supported technical integration, not substitute artwork.
 
 ## Controller architecture
 

@@ -1,4 +1,6 @@
-# Symphony operating adapter
+# Symphony operating adapter (retired reference)
+
+> **RETIRED — owner direction, Oct. 29, 2026.** Do not use Symphony, dispatch to Maestro or resume paused Symphony work for GatorBait. This file preserves historical evidence only; every execution instruction below is inactive. Current work uses [Master Control](../SKILL.md), direct supported providers and the reusable newsroom skills/agents. No account disconnection, billing change, paid fallback or schedule change is implied by this retirement.
 
 Use for current GatorBait work performed through Symphony. Master Control remains the single controller contract. Read `docs/START-HERE.md`, relevant current-state entries and the newest issue #34 outcomes before related production work. This adapter does not authorize a new scheduler, competing ledger, purchase or outbound send.
 

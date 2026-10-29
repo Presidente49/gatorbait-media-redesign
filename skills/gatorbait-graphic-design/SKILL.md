@@ -9,7 +9,7 @@ Use this skill whenever GatorBait needs a visual asset or visual system: magazin
 
 ## Standing art source (owner directive, Oct. 28, 2026)
 
-All final artwork is designed/generated in **regular ChatGPT Pro, normal Chat mode**. This replaces the earlier SuperDesign, Canva, Adobe and other generator defaults for final creative. Work, Codex and Symphony prepare research, briefs, approved assets and QA; they do not originate substitute artwork. Mechanical export, optimization and implementation of an approved ChatGPT master remain technical work.
+All final artwork is designed/generated in **regular ChatGPT Pro, normal Chat mode**. This replaces the earlier SuperDesign, Canva, Adobe and other generator defaults for final creative. Work and Codex prepare research, briefs, approved assets and QA; they do not originate substitute artwork. Mechanical export, optimization and implementation of an approved ChatGPT master remain technical work.
 
 Keep AP Mode's verified copy, authentic approved photography/logos, Barlow hierarchy and phone readability. Retain the ChatGPT conversation link, prompt/reference inputs, downloaded original master and derivative provenance. Do not claim ChatGPT provenance for an asset produced elsewhere. If regular ChatGPT Pro is unavailable, keep the brief pending and report the access gap. Do not change billing, accounts or global model settings to satisfy this directive.
 
@@ -223,3 +223,9 @@ Do not silently rewrite core brand rules from one result. Record durable lessons
 - No public asset release before required editorial/brand/rights/mobile gates.
 - No paid stock/license purchase without approval.
 - No production deployment that bypasses Flaco and Mobile QC.
+
+## Supplied originals and handoff — Oct. 29
+
+Symphony is retired. Use [Muse Handoff](../gatorbait-muse-handoff/SKILL.md) to bind exact approved artwork and credits to the source/story. An upload-only request means the exact original goes to the media bin unchanged; verify its stored bytes/hash and do not apply it to unrelated articles. Inspect actual materialized attachments before assuming they are unavailable. A style reference is not replacement story copy or permission to invent factual imagery.
+
+Check the current front-page image set before choosing a cover. Different crops of the same photo are duplicates. Preserve authentic supplied photos, archive/illustration labels and proportional crops; contain text-bearing art whole. Verify an explicit event/date for scores and next-game claims before the Chat brief. When normal ChatGPT Pro or the approved original is unavailable, finish source/copy/native-draft work and record the exact art dependency. Do not silently substitute another generator or say the artwork is complete.

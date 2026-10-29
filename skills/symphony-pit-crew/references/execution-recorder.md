@@ -60,7 +60,7 @@ An appended task note is not acknowledged delivery. If a worker's final artifact
 - Promote only a reusable decision or mechanism supported by a real tool result, read-back or runtime check. Capture the smallest lesson that changes the next operator's action.
 - Keep changing task IDs, active revisions, credit balances, deadlines, contact counts and unresolved diagnoses in dated evidence. Do not make them permanent doctrine.
 - Update the existing Symphony Pit Crew or operating adapter rather than creating another controller or copied manual. Link a focused reference when a conditional procedure would bloat the entrypoint.
-- Work on an isolated branch; preserve dirty canonical files and other workers' edits. Validate skill frontmatter, reference paths, scope and the actual diff, then commit only the assigned documentation. Reuse an existing review PR for later learning updates.
+- Work on an isolated branch; preserve dirty canonical files and other workers' edits. Validate skill frontmatter, reference paths, scope and the complete PR diff (including whitespace), then commit only the assigned documentation. Reuse an existing review PR for later learning updates.
 - A narrow docs update does not authorize applying the repair it describes. Runtime changes retain their own review and verification.
 - At the end, report actual verified fixes, remaining limits, saved evidence and the resulting skill commit or PR. A monitor being active is not completion of its watched work.
 
@@ -82,4 +82,3 @@ An appended task note is not acknowledged delivery. If a worker's final artifact
 - A curated subset of category chips is not a broken taxonomy merely because the native category count is larger. Check identities and actual routes; label source mapping and browser click-through separately.
 - Desktop-UA viewport resizing can invoke Wix's desktop layout at phone widths. Use an appropriate mobile UA, touch and device metrics before recording a phone-layout defect. Without a visible consent panel, a run cannot clear a first-visit consent-overlap finding.
 - Diagnose layout against the live DOM and computed styles to find the owning embed; another skin can outrank the formatter. Use stable hooks and a route guard when evidence covers one article. Measure both the hero section and image, preserve the whole photo with containment, and verify an unaffected control article. A banner-absent geometry preview still needs production consent QA before clearing the finding.
-

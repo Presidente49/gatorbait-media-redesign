@@ -13,6 +13,12 @@ Use under [Master Control](../master-control/SKILL.md). Read the current ruleboo
 - Current provider access, writer identity and private source-to-story ledger. A remembered account, folder name or post title is a search lead, not verified access.
 - Intake workers read sources and prepare local/private artifacts. The designated controller alone performs authorized Wix production changes. This skill does not create a scheduler, account connection, email acknowledgment or competing publisher.
 
+## Read the existing desk first
+
+For morning operations or a Muse handoff, read the top of `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` on its verified host before asking the owner or beginning a generic Gmail search. Follow the exact referenced files; incoming jobs can come from email or other channels. Route non-editorial operational jobs to the controller with those references instead of ignoring them or expanding the inbox search.
+
+Muse supplies requests; the controller decides priority, acceptance and execution within the current user-authorized scope, owns QC/completion and resolves routine choices. Do not treat every recommendation as accepted. The controller records actual acceptance, execution and result back to the same desk when reachable. A missing mount leaves the route UNVERIFIED/BLOCKED, not connected or completed. Preserve known references without creating another watcher, schedule or ledger; no Symphony or TinyFish.
+
 ## 1. Verify the source surface
 
 1. Use the relevant direct provider connector. Verify the actual Gmail profile before treating a query as business-newsroom coverage. A personal inbox's empty search says nothing about an inaccessible business inbox. Record the precise account mismatch privately; keep work on accessible sources moving.
@@ -49,3 +55,4 @@ Use [the handoff contract](references/handoff-contract.md). Verify that the exis
 Return a compact private packet: verified source identity/revision/hash; complete copy and asset references; existing story/draft match; supported corrections and targeted unresolved flags; next owner/action/checks; and honest handoff state. Keep manuscripts, private mail/file identifiers, addresses, attachments and signed URLs out of public git/issues. Public records contain safe operational conclusions only.
 
 Documentation defines behavior, not a running service. Do not claim automated intake or handoff completion without an actual scheduled run and receiving-stage evidence. Do not add another timer or ledger. Resolve routine authorized work; escalate only the specific unresolved source, access, permission or material factual blocker.
+

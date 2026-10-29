@@ -7,6 +7,10 @@ description: Prepare and verify a source-specific GatorBait handoff to existing 
 
 Use under [Master Control](../master-control/SKILL.md) and the [team handoff](../master-control/references/team-handoff.md). Symphony is retired by owner direction. Use an actually reachable existing authorized route; never create another dispatcher, heartbeat, claim ledger or paid fallback.
 
+## Start at the morning operations desk
+
+Read the top of `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` through its actual verified host route before asking the owner or searching a generic inbox. Follow exact referenced files, including requests arriving from email or other channels. Muse hands in requests; Codex decides priority, acceptance and execution within Brenden's scope and owns QC/completion. Do not automatically accept every recommendation. The controller logs actual acceptance, execution and result back to this same desk when reachable. A saved but unmounted path remains UNVERIFIED/BLOCKED; do not invent a connection or replace it with another watcher, schedule, ledger, Symphony or TinyFish.
+
 ## Determine the handoff stage
 
 - **Source/art brief:** use [Newsroom Intake](../gatorbait-newsroom-intake/SKILL.md) to identify the complete writer filing, accepted revision/hash, verified writer, actual article state, requested timing and authentic source assets. Do not imply an unpublished draft is live.
@@ -39,3 +43,4 @@ The controller retains Wix production authority. Muse remains the existing socia
 ## Return
 
 Return the exact stage, receiving owner/route evidence, actual sent/acceptance receipt, private packet reference, source/master provenance, dedupe/provider state and next bounded action. Report missing access or assets precisely, without routine re-confirmations or invented completion.
+

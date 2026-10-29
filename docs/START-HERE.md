@@ -8,6 +8,10 @@ This is the project rulebook. Every Claude, Codex or ChatGPT session reads it fi
 
 Use supported direct provider connectors and an already authorized native browser session where needed. Verify the identity and actual access of the connection doing the work. Do not reconnect accounts, change platform permissions, buy capacity or add schedules to restore the retired route. Keep independent authorized work moving and name the precise missing capability.
 
+For incoming operations and Muse handoffs, first read the top of the existing desk `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` through its actual authorized host route, then follow the exact referenced files before asking Brenden or starting a generic inbox search. Top entries can contain jobs from email or other channels. A saved path is not a mounted or verified connection; retain an explicit UNVERIFIED/BLOCKED state when the route is unavailable. See [team handoff](../skills/master-control/references/team-handoff.md).
+
+Muse hands in requests. Codex decides priority, acceptance, execution and implementation within Brenden's authorized scope, and owns QC and completion. Resolve routine choices without re-asking; a Muse recommendation is input, not automatic acceptance. Brenden's current instructions and existing source, billing and access boundaries remain controlling.
+
 For “Copy desk,” start with [Newsroom Intake](../skills/gatorbait-newsroom-intake/SKILL.md), then [Editorial](../skills/gatorbait-editorial/SKILL.md). Use [Publication QC](../skills/gatorbait-publication-qc/SKILL.md) for the actual public result and [Muse Handoff](../skills/gatorbait-muse-handoff/SKILL.md) for a reachable, acknowledged transfer. A local packet is prepared, not delivered or accepted.
 
 All final artwork still comes from **regular ChatGPT Pro, normal Chat mode**. Muse prepares briefs and authentic source assets; technical workers verify and integrate the approved master. Do not substitute another generator or call unavailable Chat access a finished design.
@@ -146,4 +150,5 @@ Nothing is written for a writer who has not filed; a missing promised piece is f
 Truth when sources disagree: live provider state, then the current object and revision, then CURRENT-STATE, then this page, then playbooks, then old docs and chats, then the model's memory.
 
 Git: branches and PRs; never force-push someone else's branch; no secrets in the repo.
+
 

@@ -11,6 +11,7 @@ Use as a subordinate platform specialist for GatorBait. [Master Control](../mast
 
 - Read current GatorBait setup notes before proposing architecture changes. Trace deployed GitHub pins, Wix/Velo code, categories/datasets, Google integrations and Spaces member pathways from actual files and provider reads.
 - Identify available tools, connector identity, permissions, native agent/task state and included allowance. Distinguish live evidence from Maestro/worker memory and marketing examples.
+- Verify the source and time of status reports. A coordinator may repeat a supplied claim state it cannot inspect; reconcile the current coordination record and native revision/source hash before recording work as held or applied.
 - Demonstrate a capability with a bounded real read. Native app connections are separate from exposed MCP servers; tool presence does not prove dashboard, editor, write or device access.
 - Resolve the actual error before declaring a platform limitation. Inspect the original tool/approval result or applicable runtime rule; do not turn an agent-authored task note into a universal owner-chat requirement.
 

@@ -66,6 +66,7 @@ An appended task note is not acknowledged delivery. If a worker's final artifact
 
 ## Demonstrated interpretation checks
 
+- A coordinator unable to read the coordination registry can echo an earlier held state from the recorder's question. That is caller context, not an independent read. Retrieve the current claim/receipt, then compare the native revision, payload hash and ordinary public source. Preserve earlier task-lab limits and missing per-call logs even when a later release is independently verified.
 - A normal native write can succeed while an old `ACTION_NEEDED` card remains open. Verify the changed resource and preserve the tool receipt; do not reapply the write or impersonate the owner to close the card.
 - A previous agent-authored claim that writes require the owner's native chat is not a universal rule. Distinguish the original machine refusal from an interpretation, and use the ordinary authorized route when it permits the action. Respect actual denials.
 - A supported GET can verify a stored email body and target URL without proving rendered variables, a preview or delivery. Report each separately.

@@ -1,9 +1,11 @@
 ---
 name: symphony-pit-crew
-description: Inspect Symphony capabilities and coordinate bounded GatorBait repairs using verified provider data, existing Master Control authority, useful parallel work and independent pathway checks.
+description: Retired GatorBait Symphony reference. Do not invoke; use direct-provider newsroom skills and project agents under Master Control.
 ---
 
-# Symphony Pit Crew
+# Symphony Pit Crew (retired reference)
+
+> **RETIRED — owner direction, Oct. 29, 2026.** Do not use Symphony, dispatch to Maestro or resume paused Symphony work for GatorBait. This file preserves historical evidence only; every execution instruction below is inactive. Current work uses [Master Control](../master-control/SKILL.md), direct supported providers and the reusable newsroom skills/agents. No account disconnection, billing change, paid fallback or schedule change is implied by this retirement.
 
 Use as a subordinate platform specialist for GatorBait. [Master Control](../master-control/SKILL.md) remains canonical; issue #34 and current-state remain the existing GitHub coordination record. Read the [Symphony operating adapter](../master-control/references/symphony-operations.md) for tool routing, tested email access and gate verification, and the [owner-provided team handoff](../master-control/references/team-handoff.md) for the three-arm organization and shared-file contracts.
 

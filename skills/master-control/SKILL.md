@@ -9,12 +9,20 @@ Master Control is the canonical operating contract for GatorBait Media.
 
 It is intentionally platform-neutral. Claude, Codex, ChatGPT, local scripts, plugins, MCP tools, n8n, and future workers are tools under one controller; none becomes a competing controller.
 
+## Current platform and newsroom routing — Oct. 29, 2026
+
+Symphony is retired by direct owner instruction. Do not call, wake, restart or dispatch work through it. Historical Symphony receipts and the retired adapter are evidence only. Use supported direct provider connectors and an already authorized native browser where needed; verify the actual connection identity and capability. Do not reconnect accounts, alter platform permissions, purchase capacity or create another scheduler to restore the retired route.
+
+“Copy desk” starts with complete source intake, not a default sweep of already-posted stories. Load [Newsroom Intake](../gatorbait-newsroom-intake/SKILL.md), then [Editorial](../gatorbait-editorial/SKILL.md), [Publication QC](../gatorbait-publication-qc/SKILL.md) and [Muse Handoff](../gatorbait-muse-handoff/SKILL.md) as each stage becomes relevant. Keep one production controller. A role brief transfers instructions, not credentials, platform powers or proof that Muse received a packet. All final artwork remains regular ChatGPT Pro, normal Chat mode.
+
 ## Invocation aliases
 
 Treat these as the same operating mode when Brenden uses them for GatorBait work:
 
 - Master Control
 - Controller
+- Copy Desk
+- Muse handoff (the bounded handoff skill, not a transfer of controller authority)
 - Chris
 - God Mode for Chris (legacy alias)
 
@@ -36,7 +44,9 @@ Then load the smallest existing specialist skill required by the surface, for ex
 - `skills/gatorbait-editorial/` for editorial tasks.
 - `skills/gatorbait-morning-email/SKILL.md` for morning columns, AM emails, writer fallback artwork and post-to-email verification.
 - `skills/gatorbait-community/` for community/message-board work.
-- [Symphony Pit Crew](../symphony-pit-crew/SKILL.md) for Symphony capability discovery, native-agent dispatch, connector reconciliation and bounded repair handoffs.
+- [Newsroom Intake](../gatorbait-newsroom-intake/SKILL.md) for writer portal/Gmail source acceptance before copy desk.
+- [Publication QC](../gatorbait-publication-qc/SKILL.md) for independent native/public byline, media and complete-copy checks.
+- [Muse Handoff](../gatorbait-muse-handoff/SKILL.md) for creative briefs, verified canonical packets and exact-item acceptance.
 - `skills/gatorbait-graphic-design/` for GatorBait visual production.
 - `skills/gatorbait-broadcast-graphics/SKILL.md` for AP Mode, show thumbnails, rankings, matchup cards, lower thirds, scorebugs, tickers, and GatorBait Sports Network broadcast packages.
 - `automation/ops-hub/playbooks/meta-control.md` for Facebook/Instagram/Meta reads, publishing, connection repair, field-post monitoring, and paid-vs-organic routing.
@@ -57,9 +67,9 @@ When sources disagree, use this order:
 
 Friendly names are never enough for mutable objects. Identify automations, campaigns, embeds, workflows, accounts, and pages by stable IDs plus relevant origin/type/message ID when available.
 
-Symphony's verified live Wix/provider reads belong at the top of this hierarchy. A Maestro or worker summary, saved task note, roster entry or claimed completion is not itself live-provider verification. Reconcile it with the actual tool result, current object and public/runtime evidence before recording it as fact. Never force newer live content or a deployed commit pin to match older repository guidance.
+Verified live Wix/provider results belong at the top of this hierarchy. A worker summary, saved task note, roster entry or claimed completion is not itself live-provider verification. Reconcile it with the actual tool result, current object and public/runtime evidence before recording it as fact. Never force newer live content or a deployed commit pin to match older repository guidance.
 
-For Symphony work, read [the operating adapter](references/symphony-operations.md). It preserves this single controller and the existing issue #34/current-state record; Symphony campaign files are subordinate task evidence. This bounded production-control contract does not erase the owner's three-arm organization. Issue #34 does not replace the designated desk handoff or social claim registry in [the team handoff](references/team-handoff.md).
+The [Symphony operating adapter](references/symphony-operations.md) is retired historical evidence, not an execution route. Preserve the existing issue #34/current-state record and the owner's three-arm organization. Issue #34 does not replace the designated desk handoff or social claim registry in [the team handoff](references/team-handoff.md); verify actual host access and receiving-side acceptance.
 
 ## Operating loop
 
@@ -188,3 +198,7 @@ Volatile facts do not.
 Campaign counts, traffic numbers, revisions, account connection states, campaign IDs, automation statuses, social metrics, and live page composition must be re-read when material to the task.
 
 If a historical document conflicts with live state, fix the document or label it historical; do not force production to match stale documentation.
+
+## Project worker definitions
+
+Load only the bounded role needed from [agents/README.md](../../agents/README.md). Codex and Claude project definitions read the same portable role instructions and canonical skills. They inherit the actual host's model, reasoning effort, tools and permission limits. Do not claim those definitions recreated external service accounts, deployed a workflow, connected Muse or started a background agent. Symphony remains retired.

@@ -1,5 +1,12 @@
 # Master Control Current State
 
+## Reusable newsroom workflow and Symphony retirement — Oct. 29, 2026
+
+- Direct owner instruction retires Symphony for GatorBait. Do not call it, dispatch through Maestro or resume its paused work. Preserve older provider/repair receipts as historical evidence; they are not current routing authority. Use supported direct connectors and actual authorized browser access, retaining the one controller and production writer.
+- Canonical skills now cover writer portal/Gmail intake, copy desk, public publication QC and exact-item Muse handoff. The master router and project entrypoints load them. Four bounded portable roles have project Codex TOML and Claude discovery definitions; models, permissions and service connections inherit from the host. These definitions are not proof of active agents, connected Muse, automatic intake, delivered art or scheduled execution.
+- Final artwork remains regular ChatGPT Pro normal Chat only. Preserve authentic source assets, Chat provenance/original masters, exact upload-only instructions, visible writer bylines, unique relevant front-page photos and one visible article lead. Separate source acceptance, native draft, publication, website/app QC, handoff acceptance and actual delivery.
+- Current unpublished source and access work stays in private receipts. This documentation/agent release publishes no manuscripts or private mail/file IDs and does not release the staged columns, replay alerts, share a folder, reconnect an account, change billing or add a schedule.
+
 ## Verified Claude/Symphony bridge and mobile article stability — Oct. 28, 2026
 
 - Claude Code on the current MacBook Pro and Codex each completed a real Symphony native Wix read. Claude's own successful backend receipt is 23:21:57.665Z, not a connector-list inference. Incoming clients and outbound connected-server lists remain separate. This does not prove another computer or every service permission.

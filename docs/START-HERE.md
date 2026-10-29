@@ -2,6 +2,16 @@
 
 This is the project rulebook. Every Claude, Codex or ChatGPT session reads it first. Current instructions from Brenden set the scope and can revise this document; dated playbooks are evidence, not authority over the owner. Live provider state establishes facts about what exists, never permission.
 
+## Current routing — owner directive, Oct. 29, 2026
+
+**Symphony is retired for GatorBait work.** Do not call, wake, restart or route a handoff through it. Retain its dated receipts as historical evidence; an unfinished task or credit-limit pause is not completed work.
+
+Use supported direct provider connectors and an already authorized native browser session where needed. Verify the identity and actual access of the connection doing the work. Do not reconnect accounts, change platform permissions, buy capacity or add schedules to restore the retired route. Keep independent authorized work moving and name the precise missing capability.
+
+For “Copy desk,” start with [Newsroom Intake](../skills/gatorbait-newsroom-intake/SKILL.md), then [Editorial](../skills/gatorbait-editorial/SKILL.md). Use [Publication QC](../skills/gatorbait-publication-qc/SKILL.md) for the actual public result and [Muse Handoff](../skills/gatorbait-muse-handoff/SKILL.md) for a reachable, acknowledged transfer. A local packet is prepared, not delivered or accepted.
+
+All final artwork still comes from **regular ChatGPT Pro, normal Chat mode**. Muse prepares briefs and authentic source assets; technical workers verify and integrate the approved master. Do not substitute another generator or call unavailable Chat access a finished design.
+
 > Active owner direction, Oct. 19: Codex owns the **full continuation block** and final decisions. Muse prepares creative briefs and source assets; helpers receive bounded assignments and return evidence. The proposed revised team and pipeline plan is `deploy/continuation-20261019/plan.html`. The Hive is an internal team identity concept, not a live GatorBait brand replacement. The earlier Claude/Codex lane split is historical for this block. Existing explicit send/account/publish holds remain in the active handoff until the relevant owner instruction changes them.
 
 > Stack redesign (Oct. 9): fewer agents, stateless jobs, one rulebook. Plan and migration in `docs/STACK-V2.md`. Social and Marketing run as their own automatic lanes: `docs/jobs/social.md`, `docs/jobs/marketing.md`, `docs/SOCIAL-RULES.md`.
@@ -121,7 +131,7 @@ Nothing is written for a writer who has not filed; a missing promised piece is f
 
 1. `skills/master-control/SKILL.md` (the `.claude/` and `.codex/` wrappers only point here).
 2. `CURRENT-STATE.md` and `LESSONS-DIGEST.md` when state or a known failure matters.
-3. The smallest playbook for the surface: homepage `docs/HOMEPAGE-BASELINE-LOCK.md`; publishing and alerts `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md`; social `docs/SOCIAL-RULES.md` (PR #132 until merged); Wix mechanics `.codex/skills/gatorbait-wix-operator/references/live-runbook.md`.
+3. For “Copy desk,” source intake comes first: `skills/gatorbait-newsroom-intake/SKILL.md`, then `skills/gatorbait-editorial/SKILL.md`; finish with `skills/gatorbait-publication-qc/SKILL.md` and an actual `skills/gatorbait-muse-handoff/SKILL.md` acceptance check. Other surfaces use the smallest playbook: homepage `docs/HOMEPAGE-BASELINE-LOCK.md`; publishing and alerts `docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md`; social `docs/SOCIAL-RULES.md` (PR #132 until merged); Wix mechanics `.codex/skills/gatorbait-wix-operator/references/live-runbook.md`.
 4. `automation/ops-hub/policy.json` only when money, automation or approval boundaries are involved; its dated shortcuts do not override this page.
 
 Truth when sources disagree: live provider state, then the current object and revision, then CURRENT-STATE, then this page, then playbooks, then old docs and chats, then the model's memory.

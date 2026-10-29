@@ -1,5 +1,13 @@
 # Owner-provided team handoff
 
+## Current routing — owner directive, Oct. 29, 2026
+
+Symphony is retired for GatorBait. Do not call, wake, restart or use it to relay this handoff. Use supported direct provider connectors and an already authorized native browser where needed. Do not reconnect accounts, alter platform permissions, buy capacity or create a replacement scheduler to restore that route. Historical task receipts remain evidence, not current execution.
+
+Use [Muse Handoff](../../gatorbait-muse-handoff/SKILL.md) for the packet and exact-item acceptance, with [Newsroom Intake](../../gatorbait-newsroom-intake/SKILL.md) and [Publication QC](../../gatorbait-publication-qc/SKILL.md) for the preceding stages. Verify the receiving host/route actually exists and is reachable. If it is not, preserve PREPARED status and report the missing capability; neither a local handoff file nor an issue comment is delivered or accepted by Muse.
+
+Final artwork is created only in regular ChatGPT Pro, normal Chat mode. Muse's creative role prepares briefs and authentic assets; technical workers verify and integrate that approved master. A role definition does not transfer credentials or access.
+
 ## Provenance and scope
 
 Brenden supplied the authoritative handoff excerpt on October 28, 2026. It is the primary source for the organization dated October 6, the atomization contract dated October 11 and the designated shared paths. The linked conversation threads were not read because `read_thread` was unavailable; no raw-thread verification is claimed.

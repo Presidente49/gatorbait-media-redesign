@@ -23,6 +23,7 @@ Resolve missing current identities with read-only discovery. Never reuse remembe
 1. Open the ordinary public homepage before proposing a fix. Record its actual lead, story links, titles, visible authors and image assets. Inspect every current card, normally nine eligible stories, at phone and desktop widths.
 2. Require a visible `By [verified writer]` on the lead and each card, separately from photographer/artwork credits. Compare to the native writer/RSS creator. Do not infer authorship from a photograph or assign a named writer by style.
 3. Compare normalized Wix media IDs across all visible front-page stories. Require distinct relevant images, including cards below the initial viewport. A different crop or rendition of one media ID is still a repeated photo. Count expected photo boxes even if their image is pending, hidden or missing; scroll lazy cards and confirm decoding.
+   Also compare the underlying photograph visually with recent article covers, magazine editions and collage components. A new media ID, different crop, absence from the current nine/RSS, or inclusion inside a collage does not clear a reported reuse issue. Reconcile an explicit owner/Muse `spent` flag with its prior-use evidence and return the recommendation to the production controller under current owner direction. Relevant, honestly labeled archive reuse remains valid when approved for the intended use; this is not a universal ban on archive photographs.
 4. Keep every title, author, image, alt and destination attached to the same story. Do not borrow the next article's image as a fallback or apply the current article's headline as alt text to unrelated recommendations. If a story has no verified image, report it honestly.
 5. Preserve the current editorial order without changing publication dates. Rays/secondary baseball stays compact supporting coverage under the current owner direction, even if another feature is absent. The broader landing-page redesign remains a separate deferred discussion.
 
@@ -72,6 +73,7 @@ Return a compact receipt with:
 - Checked time, canonical URL/native identity and expected versus observed state.
 - Per-surface results: provider save, homepage, article, Spaces card and device delivery, using `PASS`, `FAIL` or `UNVERIFIED` with evidence.
 - Checked widths, actual visible byline, intended/observed media IDs, duplicate count, full-ending check, crop/credit result and screenshot references.
+- Underlying-photo/collage reuse evidence across recent editions and disposition of any explicit owner/Muse `spent` flag; do not equate a new media ID with a fresh photograph.
 - Per-photo editorial decision and its composition, crop/edit, headline/banner and typography rationale in the article, homepage and Spaces contexts; distinguish actual app evidence from mobile web.
 - Smallest responsible fix, its owner and exact unresolved blocker. Separate source defects, missing media, template defects and related-story content without mislabeling one as another.
 - Whether any production change occurred, current release/rollback reference and any propagation limit.

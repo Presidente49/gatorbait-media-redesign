@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Tonight on The Buddy Martin Show: The Name Game",
+      "excerpt": "Tonight on The Buddy Martin Show: Florida-Georgia's name, the move and the money, with Franz Beard, Ben Troupe, Paul Wilson Jr. and Chris Spears. Watch live: https://www.gatorbaitmedia.com/the-buddy-martin-show#live-channel. Illustration: GatorBait Media (AI-assisted).",
+      "url": "https://www.gatorbaitmedia.com/post/the-whatchamacallit-game-buddy-martin-show-florida-georgia",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-29T23:05:18Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_502dcc994f0d403aa335cca992379a45~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Tonight on The Buddy Martin Show: The Name Game"
+      }
+    },
+    {
       "title": "The Spooks Are 4-0. Georgia Is Laying 12.5. Isn't That Scary Enough On Halloween?",
       "excerpt": "Buddy Martin revisits Florida's four Halloween wins since 1931 as the Gators prepare to face Georgia at Mercedes-Benz Stadium in Atlanta. Photo by Chris Spears, GatorBait Media.",
       "url": "https://www.gatorbaitmedia.com/post/buddy-martin-spooks-halloween-florida-georgia",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for We're live: Florida-Georgia talk on The Buddy Martin Show"
-      }
-    },
-    {
-      "title": "Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap.",
-      "excerpt": "You can’t buy what Georgia has. You have to grow it.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-georgia-sumrall-knows-the-math",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-27T00:03:22Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap."
       }
     }
   ]

@@ -16,6 +16,15 @@ All final artwork still comes from **regular ChatGPT Pro, normal Chat mode**. Mu
 
 > Stack redesign (Oct. 9): fewer agents, stateless jobs, one rulebook. Plan and migration in `docs/STACK-V2.md`. Social and Marketing run as their own automatic lanes: `docs/jobs/social.md`, `docs/jobs/marketing.md`, `docs/SOCIAL-RULES.md`.
 
+
+## Regular browser and AP Mode — owner direction, Oct. 29, 2026
+
+Do not use **TinyFish** for this GatorBait workflow. Brenden has authorized regular **ChatGPT Pro in the regular browser** whenever needed for the requested work, and wants its existing **AP Mode skill set** activated for article artwork and thumbnails across all shows. Use the current show profile, verified copy, authentic approved assets and phone-readable design; do not turn every show's thumbnail into the same Florida template. See [Broadcast Graphics](../skills/gatorbait-broadcast-graphics/SKILL.md) and [Muse Handoff](../skills/gatorbait-muse-handoff/SKILL.md).
+
+Do not re-ask this standing permission. Verify the supported Browser connection to the regular browser, the signed-in ChatGPT Pro account and normal Chat (not Work) before claiming access or AP Mode activation. A saved URL, earlier session or permission statement is not a live connection; report a missing connection precisely. An unavailable browser is not authority to substitute Symphony, another cloud-browser service or another final-art source. Finish independent copy/draft work while the connection is restored. This grants no billing, subscription, account-security or global-settings changes and does not prove that AP Mode was activated or an image was produced.
+
+The working split is **regular ChatGPT Pro + AP Mode creates the new artwork/design; this workspace verifies, uploads, integrates and publishes through the authorized release workflow**. Existing owned or approved supplied photography may serve as article art without being regenerated. Preserve its actual photographer credit and do not claim ChatGPT provenance for an authentic photo.
+
 ## Standing art source (Brenden, Oct. 28, 2026)
 
 All final GatorBait artwork originates in **regular ChatGPT Pro, normal Chat mode**: magazine covers, article art, thumbnails, social/campaign art and broadcast masters. Work, Codex, Symphony and alternate art generators do not supply replacement creative. Use AP Mode: verified copy, authentic approved photography/logos, Barlow hierarchy and phone-readable design.
@@ -137,3 +146,4 @@ Nothing is written for a writer who has not filed; a missing promised piece is f
 Truth when sources disagree: live provider state, then the current object and revision, then CURRENT-STATE, then this page, then playbooks, then old docs and chats, then the model's memory.
 
 Git: branches and PRs; never force-push someone else's branch; no secrets in the repo.
+

@@ -14,6 +14,9 @@ For Copy Desk work, start with [Newsroom Intake](skills/gatorbait-newsroom-intak
 
 Agent and skill files define behavior; they do not prove a running service, shared context, Muse acceptance or completed publication. Preserve the single production writer and actual evidence gates.
 
+
+**Regular-browser and AP Mode direction (Brenden, Oct. 29):** do not use TinyFish for this GatorBait workflow. Use the regular Browser connection for regular ChatGPT Pro. Brenden's standing authorization covers opening the authorized Chat session and invoking his existing AP Mode skill set for the requested artwork and all show thumbnails; do not ask him to repeat that permission. Verify the actual connection and sign-in before claiming access. If unavailable, name the precise missing browser capability while completing independent work. Do not substitute Symphony, a cloud-browser service or another final-art source, and do not change accounts, billing or global settings.
+
 ## On open: start read-only
 
 Verify the Git remote, working directory, branch, HEAD and uncommitted state; compare with `main` without resetting or discarding work. Read the newest #34 comments. State the work item the controller assigned; a posted handoff is not an acknowledged one. Then load `skills/master-control/SKILL.md` (via `.codex/skills/master-control/SKILL.md`) and the smallest specialist playbook.

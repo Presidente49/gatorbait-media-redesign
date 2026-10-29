@@ -36,15 +36,30 @@ Resolve missing current identities with read-only discovery. Never reuse remembe
 - Use honest credits: identify archival photographs as archival and illustrations/AI-assisted artwork as such where applicable. Do not present a generated scene as a game photograph.
 - Inspect the actual Spaces list/card and destination separately when that surface is in scope. Native media, website rendering, Spaces card appearance, push-action completion and a device receiving a notification are distinct states. Unavailable evidence remains unverified.
 
+## Editorial art direction in website and Spaces context
+
+For every intended photograph or cover, make a deliberate editorial assessment and return a resolved recommendation to the production writer:
+
+1. **Story and source:** choose an owned, authentic, relevant photograph by default when one is available. Verify the person, event, credit, resolution and prior front-page use. An available real photo is not a reason to manufacture a replacement scene.
+2. **Composition:** inspect the photograph inside its actual article hero, homepage lead/card and Spaces feed/story placements. Identify the subject, action, focal point and useful negative space. Preserve faces, the ball/action and meaningful context; do not approve the original merely because it looks good outside the layout.
+3. **Crop and edit:** decide whether to keep, reframe, make a restrained technical adjustment or replace the selection. Check focal position, horizon, exposure, contrast and color against the authentic source. Respect the destination's observed shape and the source's resolution; no single aspect ratio fits every placement. If the required crop damages the story, choose a better owned photograph or presentation rather than stretching it.
+4. **Headline and banner treatment:** decide whether the existing native headline beside/below the photograph already tells the story well. Consider a banner or text treatment only when it improves the editorial composition and phone readability. Do not decorate every photograph, cover a face/action, or duplicate the same headline in the image and page without a reason. New creative compositing or text-bearing artwork follows the approved ChatGPT art route below.
+5. **Typography and phone appearance:** assess Barlow hierarchy, line breaks, contrast, headline scale, byline and photo-credit separation, safe areas and surrounding spacing in the actual website and Spaces layouts. The image, type and article should read as one intentional sports-magazine presentation at phone size.
+6. **Spaces reading experience:** inspect the actual app feed/list card, opened story, cover crop, title, writer line and article reading layout when app access is available. Verify readable full copy/ending and the real destination. An API response, push-action result, social preview or mobile website screenshot is not an app screen. Keep Spaces results `UNVERIFIED` until actual app/device evidence is observed; continue independent authorized website work.
+
+Record one per-photo art-direction decision: `KEEP`, `REFRAME` or `REPLACE`, with the reason, intended crop/edit, native-headline or artwork treatment and separate website/Spaces evidence. These are professional choices within the assigned scope, not a new routine owner-approval step.
+
 ## Artwork source and supplied masters
 
-All final GatorBait artwork originates in **regular ChatGPT Pro, normal Chat mode**. Follow [Graphic Design](../gatorbait-graphic-design/SKILL.md) and [Broadcast Graphics](../gatorbait-broadcast-graphics/SKILL.md). Technical workers may research, brief, prepare authentic approved assets, QA and mechanically export/optimize/integrate the approved master; they do not supply replacement creative.
+All final GatorBait artwork originates in **regular ChatGPT Pro, normal Chat mode**, using AP Mode. Verify the actual available connection and Chat mode before claiming a creative request was submitted or a master was received; a remembered session or agent assertion is not connection proof. Follow [Graphic Design](../gatorbait-graphic-design/SKILL.md) and [Broadcast Graphics](../gatorbait-broadcast-graphics/SKILL.md). Technical workers may research, brief, prepare authentic approved assets, QA and mechanically export/optimize/integrate the approved master; they do not supply replacement creative.
 
 Keep the conversation link, prompt/reference inputs, downloaded original master and derivative provenance. When the owner says to upload an original unchanged, verify the uploaded original's bytes or hash against the attachment. Do not silently substitute an adaptation. A creative variation returns to regular ChatGPT Pro.
 
 ## Verify one repair without replaying distribution
 
 The production writer must fresh-read the responsible entity, preserve settings and rollback, and guard its current revision plus exact HTML/source fingerprint before one minimal change. A mismatch is an abort, not permission to skip the guard. QA then checks native/provider results and the independent ordinary public page.
+
+Preserve the currently approved native automatic email-then-Spaces route and verify its actual current state when relevant. Presentation QA or repair never creates a manual notification or replays distribution.
 
 Native save and public cache propagation are separate. Inspect which actual source the public page loaded; allow one bounded confirmation after a stale response. Do not repeatedly patch to chase caching, add another loader, republish a story or replay email/push/social to diagnose presentation.
 
@@ -57,6 +72,7 @@ Return a compact receipt with:
 - Checked time, canonical URL/native identity and expected versus observed state.
 - Per-surface results: provider save, homepage, article, Spaces card and device delivery, using `PASS`, `FAIL` or `UNVERIFIED` with evidence.
 - Checked widths, actual visible byline, intended/observed media IDs, duplicate count, full-ending check, crop/credit result and screenshot references.
+- Per-photo editorial decision and its composition, crop/edit, headline/banner and typography rationale in the article, homepage and Spaces contexts; distinguish actual app evidence from mobile web.
 - Smallest responsible fix, its owner and exact unresolved blocker. Separate source defects, missing media, template defects and related-story content without mislabeling one as another.
 - Whether any production change occurred, current release/rollback reference and any propagation limit.
 

@@ -1,0 +1,154 @@
+{
+  "nativeObservedAt": "2026-10-29T00:02:58.120Z",
+  "native": {
+    "observedAt": "2026-10-29T00:02:58.120Z",
+    "nativePASS": true,
+    "targetSourceAndSettingsPASS": true,
+    "neighborsExactObjectPASS": true,
+    "embeds": [
+      {
+        "id": "14a887e3-38ea-4258-ae0b-7d19cf9feead",
+        "revision": "29",
+        "sha256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+        "bytes": 14955
+      },
+      {
+        "id": "fdc2127a-845a-4d02-b711-438f1a4a86ce",
+        "revision": "90",
+        "sha256": "19f2cd24e328f460f8a29881ccbb39b030a2cc989a88beca1765d7e7c24b3904",
+        "bytes": 14942
+      },
+      {
+        "id": "a5452619-cb57-4927-9771-3a63f7cb4212",
+        "revision": "10",
+        "sha256": "001504d4c3a9539529283c814b9de104e0b7a067e4f4d4eb9fd4fd7f3ed1664f",
+        "bytes": 14126
+      }
+    ]
+  },
+  "publicFinishedAt": "2026-10-29T00:07:48.131Z",
+  "publicMode": "Ordinary canonical public pages, no interception, styling, DOM fixes or interactions during measurement; anonymous Chrome browser emulation, not field or physical Safari data",
+  "publicCases": [
+    {
+      "story": "buddy",
+      "width": 390,
+      "writer": "Buddy Martin",
+      "http": 200,
+      "sourceSHA256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+      "pass": true,
+      "clsMaxEligibleSessionWindow": 0.004199573926219779,
+      "missingParagraphs": 0,
+      "endingPresent": true,
+      "coverCount": 1,
+      "reserveRatio": "1000/563",
+      "ownedCoverCount": 1
+    },
+    {
+      "story": "golden",
+      "width": 390,
+      "writer": "Franz Beard",
+      "http": 200,
+      "sourceSHA256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+      "pass": true,
+      "clsMaxEligibleSessionWindow": 0.0010352394675351994,
+      "missingParagraphs": 0,
+      "endingPresent": true,
+      "coverCount": 1,
+      "reserveRatio": "1000/634",
+      "ownedCoverCount": 1
+    },
+    {
+      "story": "rays",
+      "width": 390,
+      "writer": "GatorBait Staff",
+      "http": 200,
+      "sourceSHA256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+      "pass": true,
+      "clsMaxEligibleSessionWindow": 0.0001755149831338596,
+      "missingParagraphs": 0,
+      "endingPresent": true,
+      "coverCount": 1,
+      "reserveRatio": "1000/563",
+      "ownedCoverCount": 1
+    },
+    {
+      "story": "stetson",
+      "width": 390,
+      "writer": "GatorBait Staff",
+      "http": 200,
+      "sourceSHA256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+      "pass": true,
+      "clsMaxEligibleSessionWindow": 0.0001755149831338596,
+      "missingParagraphs": 0,
+      "endingPresent": true,
+      "coverCount": 1,
+      "reserveRatio": "1000/563",
+      "ownedCoverCount": 1
+    },
+    {
+      "story": "buddy",
+      "width": 320,
+      "writer": "Buddy Martin",
+      "http": 200,
+      "sourceSHA256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+      "pass": true,
+      "clsMaxEligibleSessionWindow": 0.004613833921070956,
+      "missingParagraphs": 0,
+      "endingPresent": true,
+      "coverCount": 1,
+      "reserveRatio": "1000/563",
+      "ownedCoverCount": 1
+    },
+    {
+      "story": "buddy",
+      "width": 430,
+      "writer": "Buddy Martin",
+      "http": 200,
+      "sourceSHA256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+      "pass": true,
+      "clsMaxEligibleSessionWindow": 0.004817892263198371,
+      "missingParagraphs": 0,
+      "endingPresent": true,
+      "coverCount": 1,
+      "reserveRatio": "1000/563",
+      "ownedCoverCount": 1
+    },
+    {
+      "story": "buddy",
+      "width": 1366,
+      "writer": "Buddy Martin",
+      "http": 200,
+      "sourceSHA256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+      "pass": true,
+      "clsMaxEligibleSessionWindow": 0.19052873701201958,
+      "missingParagraphs": 0,
+      "endingPresent": true,
+      "coverCount": 1,
+      "reserveRatio": "1000/563",
+      "ownedCoverCount": 1
+    },
+    {
+      "story": "georgia",
+      "width": 390,
+      "writer": "Franz Beard",
+      "http": 200,
+      "sourceSHA256": "56e4afc1c3e6410c9092eecd145b3696b00787a489b153c48c4a7e30e3410b3f",
+      "pass": true,
+      "clsMaxEligibleSessionWindow": 0.001026702583525838,
+      "missingParagraphs": 0,
+      "endingPresent": true,
+      "coverCount": 1,
+      "reserveRatio": "",
+      "ownedCoverCount": 0
+    }
+  ],
+  "nativeArticlesExactUnchanged": 5,
+  "successfulLivePatches": 1,
+  "cachePropagation": "Five first samples served exact rev28; each reached candidate on bounded retry, without another patch",
+  "limitations": [
+    "Desktop CLS remains outside mobile repair",
+    "No physical-device Safari, Spaces device, email/push or autonomous intake claim"
+  ],
+  "sourcePR": "https://github.com/Presidente49/gatorbait-media-redesign/pull/450",
+  "rollback": "rollback-rev28.html; exact SHA0dbc42a3bd04c074708d1596513387707d8360d83e74e548845803fabe32bab2"
+}

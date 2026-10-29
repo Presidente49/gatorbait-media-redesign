@@ -8,6 +8,14 @@ Use [Muse Handoff](../../gatorbait-muse-handoff/SKILL.md) for the packet and exa
 
 Final artwork is created only in regular ChatGPT Pro, normal Chat mode. Muse's creative role prepares briefs and authentic assets; technical workers verify and integrate that approved master. A role definition does not transfer credentials or access.
 
+## Morning desk intake — owner direction, Oct. 29, 2026
+
+The primary incoming desk is `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md`. Read its top entries first, before asking the owner for known work or searching a generic inbox. Jobs may arrive from email or other channels; follow the exact referenced files and focus on the operational request. Verify the actual host/mount before claiming the file was read. A saved route is not a live connection.
+
+Muse hands in requests; Codex remains the operational controller for priority, acceptance, execution, implementation, QC and completion within Brenden's authorized scope. Resolve routine choices without re-asking. A handoff is input, not automatic acceptance of every recommendation. Current user instructions and verified source, billing and access boundaries govern. This routing clarification does not replace the three-arm organization or Buddy's editorial authority.
+
+When the actual route is available, the controller logs the exact-item acceptance, execution and result back to this same desk, preserving existing history and claims. Workers return proposed acknowledgment/result evidence to the controller. If unavailable, retain UNVERIFIED/BLOCKED with the referenced work intact; do not claim connection, acceptance or completion. Add no watcher, schedule or duplicate ledger and do not substitute Symphony or TinyFish.
+
 ## Provenance and scope
 
 Brenden supplied the authoritative handoff excerpt on October 28, 2026. It is the primary source for the organization dated October 6, the atomization contract dated October 11 and the designated shared paths. The linked conversation threads were not read because `read_thread` was unavailable; no raw-thread verification is claimed.
@@ -36,7 +44,7 @@ These are owner-provided paths on the relevant host, not paths verified or autom
 
 | Path | Function |
 | --- | --- |
-| `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` | Desk channel. Marlowe posts flags and fix packs; Jarvis/Codex reads through the existing heartbeat. |
+| `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` | Primary incoming operations desk. Read the top entries and exact file references first; controller records actual acceptance, execution and result here when the host route is available. |
 | `~/workspace/gatorbait-media/ops/hidden_state/article-live-seen.json` | **One shared social claim registry across every entry path.** Do not create a second claim ledger. |
 | `~/workspace/gatorbait-media/ops/log/<date>.md` | Agents append task, actions, outputs and QC evidence. |
 
@@ -60,3 +68,4 @@ Do not add, restart or duplicate a heartbeat, schedule, watcher or claim ledger 
 Under the October 11 contract, Marlowe supplies the selected segments plus a **SOURCE PACKAGE** containing transcript, timestamps, quotes and embed links. The copy desk writes the article from that package. Preserve full source provenance and current editorial/verification rules; a clip list alone is not the source package.
 
 Reconcile any later direct owner order before applying the usual split. Keep domain ownership, access to a file, an accepted handoff and permission for an outbound action as separate facts.
+

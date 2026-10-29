@@ -1,5 +1,12 @@
 # Master Control Current State
 
+## Muse morning desk route saved, connection unverified — Oct. 29, 2026
+
+- Direct owner direction identifies `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` as the primary incoming operations desk. Read its top entries first and follow exact file references before asking the owner or searching a generic inbox; the desk can carry email and other-channel jobs. Muse supplies requests; Codex controls priority, acceptance, execution, implementation, QC and completion within Brenden's scope. A recommendation is not automatic acceptance; current user instructions and source/billing/access boundaries remain controlling.
+- Owner-supplied current entries: **10:56 membership FAQ** → `~/workspace/gatorbait-media/ops/help-page-faq-draft-2026-10-29.md`; **10:52 Buddy exact photo** → `~/workspace/gatorbait-media/article-posts/2026-10-29/buddy-martin-spooks-halloween-georgia/photo.jpg`. These are referenced work items, not proof the files were opened or tasks accepted/executed. Entry times are as supplied; timezone is not established here. Full filings stay private.
+- At this check, the desk path is not mounted on the cloud host. The controller's device check reports the business Desktop Commander Mac offline for about 288 hours and no devices on the personal Desktop Commander connection. Status remains **UNVERIFIED/BLOCKED**, not connected; saving these paths does not establish remote access. Recheck actual availability when resuming rather than treating this dated device state as permanent.
+- When the real route exists, log exact-item acceptance, execution and result back to that same desk. No new watcher, schedule or duplicate ledger; no Symphony or TinyFish. This routing record changes no organization, account, permissions, billing or runtime connection and completes neither referenced task.
+
 ## Reusable newsroom workflow and Symphony retirement — Oct. 29, 2026
 
 - Direct owner instruction retires Symphony for GatorBait. Do not call it, dispatch through Maestro or resume its paused work. Preserve older provider/repair receipts as historical evidence; they are not current routing authority. Use supported direct connectors and actual authorized browser access, retaining the one controller and production writer.
@@ -574,3 +581,4 @@ Owner chose first researched option(ClassQuiz), then clarified no writers yet, s
 ### Swamp Trivia fast-round update — Oct.19
 
 Owner requested questions that pop up with3–5second countdown. Solo preview now defaults5seconds, offers3second Lightning and untimed Practice; deadline closes answer, zero on timeout,2second reveal then automatic next. Final review retains all sources/explanations. Chromium390/430/1366/1920 verified countdown, expiry, disabled answers, automatic next, once-only scoring, completed hand/review,3second mode and untimed stability; no overflow/browser errors. Still public-deck client-side preview, not anti-cheat/multiplayer/native Wix integration. No live changes.
+

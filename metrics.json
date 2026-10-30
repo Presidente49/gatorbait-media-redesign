@@ -1,0 +1,43 @@
+{
+ "url": "https://www.gatorbaitmedia.com/magazine?gbmqc=staff125",
+ "selector": "",
+ "at": "2026-10-30T22:05:10.213Z",
+ "shots": [
+  {
+   "width": 390,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": null,
+   "fpBuild": null,
+   "fpVersion": null
+  },
+  {
+   "width": 430,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": null,
+   "fpBuild": null,
+   "fpVersion": null
+  },
+  {
+   "width": 1366,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": null,
+   "fpBuild": null,
+   "fpVersion": null
+  },
+  {
+   "width": 1920,
+   "errors": [],
+   "http": 200,
+   "note": "front page root not seen in 15s",
+   "loaderSrc": null,
+   "fpBuild": null,
+   "fpVersion": null
+  }
+ ]
+}

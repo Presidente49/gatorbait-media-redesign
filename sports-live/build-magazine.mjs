@@ -48,6 +48,33 @@ const strip = (v) => Array.isArray(v) ? v.map(strip) : v && typeof v === 'object
 const issue = strip(JSON.parse(read(VARIANT ? 'sports-live/magazine-issue-' + VARIANT + '.json' : 'sports-live/magazine-issue.json')));
 if (!issue.id || !issue.cover || !issue.cover.url) { console.error('magazine-issue.json needs an id and a cover with a url'); process.exit(1); }
 
+// A Magazine edition gets one visual treatment for each source asset. Repeated art makes a
+// roundup feel accidentally templated, even when the same file arrives by a different Wix cut.
+// Keep the test at build time so the issue cannot be pinned live with an accidental repeat.
+function imageAssetId(image) {
+  const value = typeof image === 'string' ? image : image && typeof image === 'object' ? image.id : '';
+  const match = String(value || '').match(/(?:^|\/)([0-9a-f]+_[0-9a-f]{32})(?:~mv2\.(?:jpe?g|png|webp|avif))?/i);
+  return match ? match[1].toLowerCase() : '';
+}
+function assertUniqueRenderedImages(value, path = '$', seen = new Map()) {
+  if (!value || typeof value !== 'object') return;
+  if (Array.isArray(value)) { value.forEach((item, index) => assertUniqueRenderedImages(item, `${path}[${index}]`, seen)); return; }
+  for (const [key, child] of Object.entries(value)) {
+    const imageLike = key === 'image' || key === 'figure' || (key === 'photos' && Array.isArray(child));
+    const images = key === 'photos' && Array.isArray(child) ? child : imageLike ? [child] : [];
+    for (let index = 0; index < images.length; index++) {
+      const id = imageAssetId(images[index]);
+      if (!id) continue;
+      const slot = key === 'photos' ? `${path}.${key}[${index}]` : `${path}.${key}`;
+      const prior = seen.get(id);
+      if (prior) throw new Error(`Duplicate rendered Magazine image asset ${id}: ${prior} and ${slot}`);
+      seen.set(id, slot);
+    }
+    if (key !== 'image' && key !== 'figure' && key !== 'photos') assertUniqueRenderedImages(child, `${path}.${key}`, seen);
+  }
+}
+assertUniqueRenderedImages(issue);
+
 const build = createHash('sha1').update(css + runtime + JSON.stringify(issue) + JSON.stringify(credits)).digest('hex').slice(0, 8);
 const banner = `/* GatorBait Magazine 2026: the weekly web issue on /magazine. Issue ${issue.id}, build ${build}.
  * BUILT, MINIFIED FILE: edit sports-live/src/magazine.{css,js} or sports-live/magazine-issue.json, then run:

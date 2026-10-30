@@ -105,6 +105,18 @@ Start from live state plus the last verified outcome, not from the original hypo
 
 Stop when success is independently verified, nothing materially changed, a human/account permission is required, an approval boundary is reached, or another mutation would only stack unverified fixes.
 
+### Editorial visual QC
+
+For every Magazine or newsletter package, treat the cover, card band and email as one visual set before distribution:
+
+- map every rendered visual to its original media asset and honest credit;
+- reject a repeated asset across that set, including alternate Wix cuts and byte-identical inline image payloads;
+- use a text-only card when a story has no distinct, approved visual;
+- re-read the public Magazine route and the mobile/desktop email proof after a presentation repair; and
+- hold a send when an approver asks for visual rework until a new explicit approval arrives.
+
+An accepted draft, a clean image URL, or a passed provider upload does not prove the package has visual variety.
+
 ## Bounded learning loop
 
 Use:

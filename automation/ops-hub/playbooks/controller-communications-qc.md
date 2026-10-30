@@ -107,10 +107,10 @@ Stop when success is independently verified, nothing materially changed, a human
 
 ### Editorial visual QC
 
-For every Magazine or newsletter package, treat the cover, card band and email as one visual set before distribution:
+For every Magazine or newsletter package, inspect each rendered surface and its selected lead visual before distribution:
 
 - map every rendered visual to its original media asset and honest credit;
-- reject a repeated asset across that set, including alternate Wix cuts and byte-identical inline image payloads;
+- reject a repeated asset within a single Magazine surface or within a single email, including alternate Wix cuts and byte-identical inline image payloads; one matching issue-cover image may appear once in an email so readers can identify the package, but it must not appear again within that email;
 - use a text-only card when a story has no distinct, approved visual;
 - re-read the public Magazine route and the mobile/desktop email proof after a presentation repair; and
 - hold a send when an approver asks for visual rework until a new explicit approval arrives.

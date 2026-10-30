@@ -1,5 +1,6 @@
 import { chromium, devices } from 'playwright';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { hasStandardWixConsentCopy, selectPrivacyPreservingConsentControl } from './live-qc-consent.mjs';
 
 const OUT='build/live-site-vision';
 mkdirSync(OUT,{recursive:true});
@@ -52,6 +53,49 @@ const PROFILES=[
   // while after an embed update (Sept. 30), which real browsers did not get.
   {name:'desktop',expectedWidth:1365,context:{userAgent:devices['Desktop Chrome'].userAgent,viewport:{width:1365,height:900},screen:{width:1365,height:900},deviceScaleFactor:1}}
 ];
+
+async function dismissStandardConsentPanel(page) {
+  const panelState = () => {
+    const visible = el => {
+      if (!el) return false;
+      const style = getComputedStyle(el);
+      const rect = el.getBoundingClientRect();
+      return style.display !== 'none' && style.visibility !== 'hidden' && Number(style.opacity || 1) > 0 && rect.width > 0 && rect.height > 0;
+    };
+    const panels = [...document.querySelectorAll('body *')].filter(el => {
+      if (!visible(el)) return false;
+      const text = (el.innerText || '').replace(/\s+/g, ' ').trim();
+      const position = getComputedStyle(el).position;
+      return (position === 'fixed' || position === 'sticky') && text.includes('Accept All') && text.includes('Decline All') && text.includes('Settings');
+    });
+    panels.sort((a, b) => {
+      const ar = a.getBoundingClientRect(), br = b.getBoundingClientRect();
+      return (ar.width * ar.height) - (br.width * br.height);
+    });
+    const panel = panels[0];
+    return panel ? { visible: true, text: (panel.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 300) } : { visible: false };
+  };
+  const before = await page.evaluate(panelState);
+  if (!before.visible || !hasStandardWixConsentCopy(before.text)) return { state: 'not-present' };
+
+  const controls = page.locator('button,[role="button"],input[type="button"],input[type="submit"]');
+  const labels = await controls.evaluateAll(elements => elements.map(el => {
+    const inputValue = el instanceof HTMLInputElement ? el.value : '';
+    return { label: el.getAttribute('aria-label') || inputValue || el.textContent || '' };
+  }));
+  const selected = selectPrivacyPreservingConsentControl(labels);
+  if (!selected) return { state: 'present-no-decline-control' };
+
+  try {
+    await controls.nth(selected.index).click({ timeout: 4000 });
+    await page.waitForTimeout(500);
+    const after = await page.evaluate(panelState);
+    if (after.visible) return { state: 'present-decline-failed' };
+    return { state: 'declined-and-dismissed' };
+  } catch (error) {
+    return { state: 'present-decline-failed', error: String(error).slice(0, 160) };
+  }
+}
 
 function audit(input){
   const target=input.target;
@@ -342,6 +386,7 @@ for(const profile of PROFILES){
       const response=await page.goto(target.url,{waitUntil:'load',timeout:45000});
       status=response?.status()??null;
       await page.waitForTimeout(8000);
+      const consentDismissal=await dismissStandardConsentPanel(page);
       if(target.name==='home'||target.name==='home-gameday'){
         const boxes=page.locator('#gbm-live .fp-frame[href*="/post/"],#gbm-live .fp-story-photo,#gbm-live.gbm-gazette .sh-lead figure,#gbm-live.gbm-gazette .sh-coverage article');
         for(let i=0;i<await boxes.count();i++)await boxes.nth(i).scrollIntoViewIfNeeded({timeout:4000}).catch(()=>{});
@@ -351,6 +396,7 @@ for(const profile of PROFILES){
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';
       await page.screenshot({path:shot,type:'jpeg',quality:70,fullPage:false});
       const result=await page.evaluate(audit,{target,requestedWidth:profile.expectedWidth});
+      result.consentDismissal=consentDismissal;
       let viewportCandidate=null;
       if(profile.expectedWidth<=600&&Math.abs(result.viewport.width-profile.expectedWidth)>4){
         viewportCandidate=await page.evaluate(async expectedWidth=>{
@@ -413,6 +459,7 @@ for(const r of report.runs){
   lines.push('- first headline: '+(r.firstHeadline?('y='+r.firstHeadline.top+' — '+r.firstHeadline.text):'NONE'));
   if(r.typeSample)lines.push('- computed type: '+JSON.stringify(r.typeSample));
   if(r.articleTitleCandidates?.length) lines.push('- article title candidate: '+JSON.stringify(r.articleTitleCandidates[0]));
+  if(r.consentDismissal) lines.push('- consent dismissal: '+JSON.stringify(r.consentDismissal));
   if(r.consentCandidates?.length) lines.push('- consent candidate: '+JSON.stringify(r.consentCandidates[0]));
   lines.push('- visible images first two screens: '+r.visibleImages.length);
   if(r.consent)lines.push('- cookie consent: '+r.consent.height+'px ('+Math.round(r.consent.ratio*100)+'% of viewport height)');

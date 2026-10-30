@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Soothsayer: Georgia in a heart stopper",
+      "excerpt": "Franz Beard sizes up Florida's route to an upset of Georgia in Atlanta and makes his calls across the SEC. Archive photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-georgia-in-a-heart-stopper",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-10-30T12:44:33Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_d03e2d3ca3b34a9f863a7e55157ec1d1~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: Georgia in a heart stopper"
+      }
+    },
+    {
       "title": "Tonight on The Buddy Martin Show: The Name Game",
       "excerpt": "Tonight on The Buddy Martin Show: What do we call Florida-Georgia now? Franz Beard, Ben Troupe, Paul Wilson Jr. and Chris Spears join Buddy to discuss the name, the money and Saturday's matchup. Archive photo: Chris Spears, GatorBait Media. AI-assisted design.",
       "url": "https://www.gatorbaitmedia.com/post/the-whatchamacallit-game-buddy-martin-show-florida-georgia",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Snubbed in Atlanta: GameDay passed, Kirby shrugged, Florida noticed"
-      }
-    },
-    {
-      "title": "We're live: Florida-Georgia talk on The Buddy Martin Show",
-      "excerpt": "Watch The Buddy Martin Show live tonight as Buddy talks Jon Sumrall's quarterback decision and Florida-Georgia week. Tap through to the broadcast.",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-show-live-florida-georgia-october-26-2026",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-27T01:18:53Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for We're live: Florida-Georgia talk on The Buddy Martin Show"
       }
     }
   ]

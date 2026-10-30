@@ -1,5 +1,5 @@
 {
- "$comment": "Florida-Georgia game-week edition updated October 30, 2026. Facts read from FloridaGators.com broadcast information and ESPN event 401856734. The roundup links only existing published canonical reporting and permanent Wix media; Eddie Gilley's verified Oct. 30 column is included. No email or campaign send.",
+ "$comment": "Florida-Georgia game-week edition updated October 30, 2026. Facts read from FloridaGators.com broadcast information and ESPN event 401856734. The roundup links only existing published canonical reporting and permanent Wix media; Eddie Gilley's verified Oct. 30 column and the Oct. 30 Philo report are included; no photo repeats within the issue. No email or campaign send.",
  "id": "2026-10-28-florida-georgia-week",
  "layout": "pregame",
  "liveFeed": false,
@@ -11,7 +11,7 @@
   "tagline": "Independent Florida Gators coverage",
   "pageTitle": "GatorBait Magazine | Florida-Georgia Week | Oct. 30, 2026"
  },
- "asOf": "Roundup updated Oct. 30, 2026, including Eddie Gilley's new Atlanta column. Game facts checked Oct. 28, 2026: FloridaGators.com broadcast guide and ESPN event 401856734. Each linked story retains its publication date.",
+ "asOf": "Roundup updated Oct. 30, 2026, including Eddie Gilley's new Atlanta column and the Oct. 30 report on Florida's quarterback. Game facts checked Oct. 28, 2026: FloridaGators.com broadcast guide and ESPN event 401856734. Each linked story retains its publication date.",
  "cover": {
   "kicker": "Franz Beard · Oct. 28",
   "headline": "Why I despise the Georgia Bulldogs and why you should too",
@@ -19,11 +19,11 @@
   "byline": "By Franz Beard",
   "url": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
   "image": {
-   "id": "16b519_d03e2d3ca3b34a9f863a7e55157ec1d1",
+   "id": "16b519_2abae31d268b4849be2ed775dd1b7e0a",
    "ext": "jpg",
    "width": 3000,
-   "height": 1925,
-   "alt": "Archive photo: A Florida quarterback prepares to throw as a Georgia defender closes during the Nov. 2, 2024 rivalry game in Jacksonville.",
+   "height": 2000,
+   "alt": "Archive photo: A Florida running back (No. 24) carries the ball past Georgia defenders during the Nov. 2, 2024 game in Jacksonville.",
    "credit": "Archive photo by Chris Spears, GatorBait Media."
   },
   "directLink": true
@@ -129,18 +129,33 @@
   "label": "Complete Florida-Georgia roundup",
   "items": [
    {
+    "kicker": "Brenden Martin",
+    "date": "Oct. 30",
+    "title": "Georgia-Born Gator: Reports Say Aaron Philo Will Start Against Georgia",
+    "url": "/post/florida-philo-jones-questionable-georgia-sec-availability-report",
+    "excerpt": "CBS Sports and The Associated Press report that Florida plans to start Aaron Philo against Georgia in Atlanta, though the Gators had not made a formal public announcement as of Friday.",
+    "image": {
+     "id": "d3cfa5_4b8894d8f5414225af1e01dfe4a028d5",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 579,
+     "alt": "Florida quarterback Aaron Philo (No. 12) stands with teammates on the field after the Gators beat Ole Miss at Ben Hill Griffin Stadium on Sept. 26, 2026.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
     "kicker": "Franz Beard",
     "date": "Oct. 30",
     "title": "The Soothsayer: Georgia in a heart stopper",
     "url": "/post/the-soothsayer-georgia-in-a-heart-stopper",
     "excerpt": "Franz Beard sizes up Florida's route to an upset of Georgia in Atlanta and makes his calls across the SEC.",
     "image": {
-     "id": "16b519_d03e2d3ca3b34a9f863a7e55157ec1d1",
+     "id": "d3cfa5_03ca10fd162c4563b5a920b57378aa1d",
      "ext": "jpg",
      "width": 3000,
-     "height": 1925,
-     "alt": "Archive photo: A Florida quarterback prepares to throw as a Georgia defender closes during the Nov. 2, 2024 rivalry game in Jacksonville.",
-     "credit": "Archive photo by Chris Spears, GatorBait Media."
+     "height": 2000,
+     "alt": "Florida receiver Vernell Brown III stands on the field in The Swamp with a hand raised to his helmet.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
     }
    },
    {
@@ -195,12 +210,12 @@
     "url": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
     "excerpt": "Franz Beard revisits the games, grievances and history behind his annual Florida-Georgia rivalry ritual.",
     "image": {
-     "id": "16b519_d03e2d3ca3b34a9f863a7e55157ec1d1",
+     "id": "d3cfa5_6a1d264c48f242608ae7bfe4e90c3deb",
      "ext": "jpg",
-     "width": 3000,
-     "height": 1925,
-     "alt": "Archive photo: A Florida quarterback prepares to throw as a Georgia defender closes during the Nov. 2, 2024 rivalry game in Jacksonville.",
-     "credit": "Archive photo by Chris Spears, GatorBait Media."
+     "width": 1600,
+     "height": 1200,
+     "alt": "Fans fill the stands at the Florida-Georgia game in Jacksonville in 2008.",
+     "credit": "Photo: jasonduhon, CC BY-SA 3.0, via Wikimedia Commons."
     }
    },
    {
@@ -397,6 +412,7 @@
   "next": "Florida vs. Georgia · Saturday, Oct. 31 · 3:30 p.m. ET · ABC."
  },
  "topicPaths": [
+  "/post/florida-philo-jones-questionable-georgia-sec-availability-report",
   "/post/the-soothsayer-georgia-in-a-heart-stopper",
   "/post/key-to-a-win-in-atlanta",
   "/post/buddy-martin-spooks-halloween-florida-georgia",

@@ -1,5 +1,5 @@
 {
- "$comment": "Florida-Georgia game-week edition updated October 30, 2026. Facts read from FloridaGators.com broadcast information and ESPN event 401856734. The roundup links only existing published canonical reporting and permanent Wix media; no new article or send.",
+ "$comment": "Florida-Georgia game-week edition updated October 30, 2026. Facts read from FloridaGators.com broadcast information and ESPN event 401856734. The roundup links only existing published canonical reporting and permanent Wix media; Eddie Gilley's verified Oct. 30 column is included. No email or campaign send.",
  "id": "2026-10-28-florida-georgia-week",
  "layout": "pregame",
  "liveFeed": false,
@@ -11,7 +11,7 @@
   "tagline": "Independent Florida Gators coverage",
   "pageTitle": "GatorBait Magazine | Florida-Georgia Week | Oct. 30, 2026"
  },
- "asOf": "Roundup updated Oct. 30, 2026. Game facts checked Oct. 28, 2026: FloridaGators.com broadcast guide and ESPN event 401856734. Each linked story retains its publication date.",
+ "asOf": "Roundup updated Oct. 30, 2026, including Eddie Gilley's new Atlanta column. Game facts checked Oct. 28, 2026: FloridaGators.com broadcast guide and ESPN event 401856734. Each linked story retains its publication date.",
  "cover": {
   "kicker": "Franz Beard · Oct. 28",
   "headline": "Why I despise the Georgia Bulldogs and why you should too",
@@ -134,6 +134,21 @@
     "title": "The Soothsayer: Georgia in a heart stopper",
     "url": "/post/the-soothsayer-georgia-in-a-heart-stopper",
     "excerpt": "Franz Beard sizes up Florida's route to an upset of Georgia in Atlanta and makes his calls across the SEC.",
+    "image": {
+     "id": "16b519_d03e2d3ca3b34a9f863a7e55157ec1d1",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 1925,
+     "alt": "Archive photo: A Florida quarterback prepares to throw as a Georgia defender closes during the Nov. 2, 2024 rivalry game in Jacksonville.",
+     "credit": "Archive photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "kicker": "Eddie Gilley",
+    "date": "Oct. 30",
+    "title": "Key to a Win in Atlanta",
+    "url": "/post/key-to-a-win-in-atlanta",
+    "excerpt": "Eddie Gilley makes the third-down battle Florida's clearest path to an upset of Georgia in Atlanta.",
     "image": {
      "id": "16b519_d03e2d3ca3b34a9f863a7e55157ec1d1",
      "ext": "jpg",
@@ -383,6 +398,7 @@
  },
  "topicPaths": [
   "/post/the-soothsayer-georgia-in-a-heart-stopper",
+  "/post/key-to-a-win-in-atlanta",
   "/post/buddy-martin-spooks-halloween-florida-georgia",
   "/post/will-lightning-strike-twice-for-the-gators",
   "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",

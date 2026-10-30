@@ -6,6 +6,8 @@ on:
       - 'sports-live/**'
       - 'automation/site-design/**'
       - 'automation/vision/live-qc.mjs'
+      - 'automation/vision/live-qc-consent.mjs'
+      - 'automation/vision/test-live-qc-consent.mjs'
       - 'deploy/wix-served/**'
       - 'deploy/magazine-urban/**'
       - 'deploy/front-page-2026/**'
@@ -39,6 +41,7 @@ jobs:
 
       - name: Check homepage order, accessibility and image delivery
         run: |
+          node --test automation/vision/test-live-qc-consent.mjs
           node --test sports-live/test-homepage-order.mjs
           node sports-live/test-homepage-accessibility.mjs
           node --test sports-live/test-front-page-images.mjs

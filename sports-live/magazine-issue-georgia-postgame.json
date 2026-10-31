@@ -1,0 +1,412 @@
+{
+ "$comment": "SKELETON for the Florida-Georgia postgame web edition (Oct. 31, 2026; ESPN event 401856734). NOT LIVE AND NOT BUILDABLE FOR PRODUCTION until every [[...]] string and every -1 number is replaced. Gate: node deploy/postgame-georgia-20261031/check-no-placeholders.mjs. Sections with real content are already-published GatorBait posts only (Georgia-week roundup, ids and credits copied from magazine-issue-georgia.json). Every stat from ESPN or FloridaGators.com box score only; quotes only from full transcripts or the published columns; no betting lines; never cite or credit Gator Country; no rankings or records that are not from the latest release at the time of publishing.",
+ "id": "2026-10-31-postgame-georgia",
+ "layout": "postgame",
+ "issue": {
+  "number": "Postgame edition",
+  "date": "Saturday, October 31, 2026",
+  "week": "Week 9 · Florida vs. Georgia · Atlanta",
+  "home": "GatorBait Media",
+  "pageTitle": "GatorBait Magazine | Postgame: [[WINNER]] [[WIN SCORE]], [[LOSER]] [[LOSE SCORE]]"
+ },
+ "cover": {
+  "kicker": "[[COVER KICKER: Cover story · writer name]]",
+  "headline": "[[POSTGAME COVER HEADLINE]]",
+  "dek": "[[ONE-SENTENCE DEK from the published story]]",
+  "byline": "[[By WRITER NAME]]",
+  "cta": "[[Read the story]]",
+  "url": "/post/[[POSTGAME-STORY-SLUG]]",
+  "image": {
+   "id": "[[WIX_MEDIA_ID_COVER]]",
+   "ext": "jpg",
+   "width": 1320,
+   "height": 880,
+   "alt": "[[ALT TEXT: who, what, where, Oct. 31, 2026. Photo credit]]",
+   "credit": "[[PHOTO CREDIT, e.g. Photo by Chris Spears, GatorBait Media.]]"
+  },
+  "linesLabel": "Also inside",
+  "lines": [
+   "[[Second postgame story: writer: headline]]",
+   "Score by score, box score and leaders",
+   "Georgia week: every column before kickoff",
+   "Final: [[SCORE LINE]]"
+  ]
+ },
+ "final": {
+  "label": "Final",
+  "teams": [
+   {
+    "name": "Florida",
+    "score": -1
+   },
+   {
+    "name": "Georgia",
+    "score": -1
+   }
+  ],
+  "meta": [
+   "Saturday, Oct. 31",
+   "Mercedes-Benz Stadium, Atlanta",
+   "[[Florida record and SEC record AFTER the game, from ESPN]]"
+  ]
+ },
+ "contents": {
+  "label": "In this issue",
+  "items": [
+   {
+    "id": "columns",
+    "label": "Postgame columns"
+   },
+   {
+    "id": "coverage",
+    "label": "Georgia week"
+   },
+   {
+    "id": "damage",
+    "label": "By the numbers"
+   },
+   {
+    "id": "scoring",
+    "label": "Score by score"
+   },
+   {
+    "id": "box",
+    "label": "Box score"
+   },
+   {
+    "id": "quotes",
+    "label": "In their words"
+   },
+   {
+    "id": "next",
+    "label": "Up next"
+   }
+  ]
+ },
+ "damage": {
+  "kicker": "By the numbers",
+  "title": "[[Section headline, e.g. How it was decided]]",
+  "dek": "[[One sentence from the ESPN box score]]",
+  "yards": {
+   "label": "Total yards",
+   "rows": [
+    {
+     "name": "Florida",
+     "value": -1,
+     "us": true
+    },
+    {
+     "name": "Georgia",
+     "value": -1
+    }
+   ]
+  },
+  "stats": [
+   {
+    "value": "[[ESPN stat]]",
+    "label": "[[label]]",
+    "detail": "[[ESPN detail]]"
+   },
+   {
+    "value": "[[ESPN stat]]",
+    "label": "[[label]]",
+    "detail": "[[ESPN detail]]"
+   },
+   {
+    "value": "[[ESPN stat]]",
+    "label": "[[label]]",
+    "detail": "[[ESPN detail]]"
+   }
+  ]
+ },
+ "scoring": {
+  "kicker": "Score by score",
+  "title": "How the points came",
+  "dek": "[[One sentence on the shape of the game, from the line score]]",
+  "cols": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "F"
+  ],
+  "rows": [
+   {
+    "team": "Florida",
+    "q": [
+     -1,
+     -1,
+     -1,
+     -1
+    ],
+    "f": -1,
+    "us": true
+   },
+   {
+    "team": "Georgia",
+    "q": [
+     -1,
+     -1,
+     -1,
+     -1
+    ],
+    "f": -1
+   }
+  ],
+  "plays": [
+   {
+    "when": "Q[[#]] [[MM:SS]]",
+    "play": "[[ESPN scoring play, copy exactly]]",
+    "score": "[[UF/UGA running score]]",
+    "uf": true
+   }
+  ],
+  "source": "Scoring plays and line score: ESPN. Times are game clock."
+ },
+ "box": {
+  "kicker": "Box score",
+  "title": "The full box score",
+  "dek": "Team stats and the leaders for both teams.",
+  "cols": [
+   "Florida",
+   "Georgia"
+  ],
+  "rows": [
+   [
+    "First downs",
+    "[[ESPN]]",
+    "[[ESPN]]"
+   ],
+   [
+    "Total yards",
+    "[[ESPN]]",
+    "[[ESPN]]"
+   ],
+   [
+    "Passing",
+    "[[ESPN]]",
+    "[[ESPN]]"
+   ],
+   [
+    "Rushing",
+    "[[ESPN]]",
+    "[[ESPN]]"
+   ],
+   [
+    "Third down",
+    "[[ESPN]]",
+    "[[ESPN]]"
+   ],
+   [
+    "Penalties",
+    "[[ESPN]]",
+    "[[ESPN]]"
+   ],
+   [
+    "Turnovers",
+    "[[ESPN]]",
+    "[[ESPN]]"
+   ],
+   [
+    "Possession",
+    "[[ESPN]]",
+    "[[ESPN]]"
+   ]
+  ],
+  "leaders": [
+   {
+    "team": "Florida",
+    "items": [
+     [
+      "Passing",
+      "[[ESPN leader line]]"
+     ],
+     [
+      "Rushing",
+      "[[ESPN leader line]]"
+     ],
+     [
+      "Receiving",
+      "[[ESPN leader line]]"
+     ]
+    ]
+   },
+   {
+    "team": "Georgia",
+    "items": [
+     [
+      "Passing",
+      "[[ESPN leader line]]"
+     ],
+     [
+      "Rushing",
+      "[[ESPN leader line]]"
+     ],
+     [
+      "Receiving",
+      "[[ESPN leader line]]"
+     ]
+    ]
+   }
+  ],
+  "source": "Team stats and leaders: ESPN box score (event 401856734)."
+ },
+ "quotes": {
+  "kicker": "In their words",
+  "title": "[[Who is quoted]] on the game",
+  "items": [
+   {
+    "text": "[[Verbatim quote from the FULL transcript or the linked published column]]",
+    "who": "[[Name]]",
+    "role": "[[Title, source: e.g. postgame news conference, full transcript / as reported by WRITER]]",
+    "url": "/post/[[SLUG-OF-PUBLISHED-STORY-CARRYING-THE-QUOTE]]",
+    "link": "[[Writer's column]]"
+   }
+  ]
+ },
+ "columns": {
+  "kicker": "Columns",
+  "title": "[[Postgame columns]]",
+  "dek": "[[Only columns that are PUBLISHED when this is built. Delete this whole section if none.]]",
+  "items": [
+   {
+    "rubric": "[[Postgame column]]",
+    "author": "[[Writer]]",
+    "title": "[[Published headline]]",
+    "dek": "[[Published dek]]",
+    "url": "/post/[[SLUG]]",
+    "image": {
+     "id": "[[WIX_MEDIA_ID_COL1]]",
+     "ext": "jpg",
+     "width": 1320,
+     "height": 880,
+     "alt": "[[ALT TEXT: who, what, where, Oct. 31, 2026. Photo credit]]",
+     "credit": "[[PHOTO CREDIT, e.g. Photo by Chris Spears, GatorBait Media.]]"
+    }
+   },
+   {
+    "rubric": "[[Postgame column]]",
+    "author": "[[Writer]]",
+    "title": "[[Published headline]]",
+    "dek": "[[Published dek]]",
+    "url": "/post/[[SLUG]]",
+    "image": {
+     "id": "[[WIX_MEDIA_ID_COL2]]",
+     "ext": "jpg",
+     "width": 1320,
+     "height": 880,
+     "alt": "[[ALT TEXT: who, what, where, Oct. 31, 2026. Photo credit]]",
+     "credit": "[[PHOTO CREDIT, e.g. Photo by Chris Spears, GatorBait Media.]]"
+    }
+   }
+  ]
+ },
+ "coverage": {
+  "kicker": "Georgia week",
+  "title": "The road to Atlanta",
+  "dek": "In case you missed them: the GatorBait coverage before kickoff, newest first.",
+  "items": [
+   {
+    "rubric": "Report",
+    "author": "GatorBait Staff",
+    "title": "Georgia-Born Gator: Reports Say Aaron Philo Will Start Against Georgia",
+    "dek": "CBS Sports and The Associated Press report that Florida plans to start Aaron Philo against Georgia in Atlanta, though the Gators had not made a formal public announcement as of Friday.",
+    "url": "/post/florida-philo-jones-questionable-georgia-sec-availability-report",
+    "image": {
+     "id": "d3cfa5_4b8894d8f5414225af1e01dfe4a028d5",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 579,
+     "alt": "Florida quarterback Aaron Philo (No. 12) stands with teammates on the field after the Gators beat Ole Miss at Ben Hill Griffin Stadium on Sept. 26, 2026.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Franz Beard",
+    "title": "The Soothsayer: Georgia in a heart stopper",
+    "dek": "Franz Beard sizes up Florida's route to an upset of Georgia in Atlanta and makes his calls across the SEC.",
+    "url": "/post/the-soothsayer-georgia-in-a-heart-stopper",
+    "image": {
+     "id": "d3cfa5_03ca10fd162c4563b5a920b57378aa1d",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 2000,
+     "alt": "Florida receiver Vernell Brown III stands on the field in The Swamp with a hand raised to his helmet.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Eddie Gilley",
+    "title": "Key to a Win in Atlanta",
+    "dek": "Eddie Gilley makes the third-down battle Florida's clearest path to an upset of Georgia in Atlanta.",
+    "url": "/post/key-to-a-win-in-atlanta",
+    "image": {
+     "id": "16b519_d03e2d3ca3b34a9f863a7e55157ec1d1",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 1925,
+     "alt": "Archive photo: A Florida quarterback prepares to throw as a Georgia defender closes during the Nov. 2, 2024 rivalry game in Jacksonville.",
+     "credit": "Archive photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Franz Beard",
+    "title": "Why I despise the Georgia Bulldogs and why you should too",
+    "dek": "Franz Beard's annual rivalry column. Florida faces Georgia in Atlanta on Saturday.",
+    "url": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+    "image": {
+     "id": "16b519_2abae31d268b4849be2ed775dd1b7e0a",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 2000,
+     "alt": "Archive photo: A Florida running back (No. 24) carries the ball past Georgia defenders during the Nov. 2, 2024 game in Jacksonville.",
+     "credit": "Archive photo by Chris Spears, GatorBait Media."
+    }
+   }
+  ]
+ },
+ "next": {
+  "kicker": "Up next",
+  "title": "Oklahoma at Florida",
+  "meta": [
+   "Saturday, Nov. 7",
+   "7:45 p.m. ET · SEC Network",
+   "Ben Hill Griffin Stadium, Gainesville"
+  ],
+  "note": "Source: ESPN schedule and SEC Network listing, checked Oct. 31. [[Add Oklahoma ranking/record ONLY after the Sunday, Nov. 1 polls post; otherwise delete this line.]]"
+ },
+ "reference": {
+  "label": "More GatorBait",
+  "links": [
+   {
+    "label": "Schedule and results",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+   },
+   {
+    "label": "Roster",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   },
+   {
+    "label": "GatorBait home",
+    "url": "/"
+   }
+  ],
+  "top": "Back to the cover"
+ },
+ "credits": {
+  "label": "Photo credits",
+  "uaa": false,
+  "other": [
+   "Photo by Chris Spears, GatorBait Media.",
+   "[[Add every other credit used in this issue, e.g. Photo courtesy UAA, or delete]]"
+  ]
+ },
+ "asOf": "Score, line score, scoring plays, box score and leaders: ESPN (event 401856734). Quotes are as reported in the linked columns or from full transcripts. Rankings and records as of the latest release at the time of publishing."
+}

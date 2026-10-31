@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-10-31T19:52:43.730Z",
+ "generatedAt": "2026-10-31T23:17:02.267Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-10-31T19:52:43.730Z",
+  "checkedAt": "2026-10-31T23:17:02.267Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Halloween Saturday: 21 Ranked Teams Have Fallen in Three Weeks, and Miami and Ohio State Take Road Tests",
-   "link": "https://www.gatorbaitmedia.com/post/halloween-saturday-21-ranked-teams-have-fallen-in-three-weeks-and-miami-and-ohio-state-take-road-t",
-   "publishedAt": "2026-10-31T18:56:55.000Z"
+   "title": "Gators Bitten in Atlanta: Four Turnovers Sink Florida in 27-8 Loss to No. 3 Georgia",
+   "link": "https://www.gatorbaitmedia.com/post/gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia",
+   "publishedAt": "2026-10-31T23:10:05.000Z"
   },
   "problems": []
  },
@@ -44,8 +44,8 @@
    "source": "FloridaGators.com",
    "label": "FloridaGators.com news",
    "ok": false,
-   "status": 0,
-   "reason": "network",
+   "status": 200,
+   "reason": "response was not an RSS or Atom feed",
    "items": 0
   }
  ],

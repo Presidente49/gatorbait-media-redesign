@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida's Vernell Brown III Questionable Against Georgia After Friday Downgrade",
+      "excerpt": "GatorBaitMedia.com photo by Chris Spears. ATLANTA— Florida's hopes of getting one of its most explosive offensive weapons back for Saturday's showdown with Georgia have taken a significant hit. Sophomore wide receiver Vernell Brown III, who had been listed as probable on Wednesday and Thursday, was downgraded to questionable on Friday's SEC availability…",
+      "url": "https://www.gatorbaitmedia.com/post/florida-s-vernell-brown-iii-questionable-against-georgia-after-friday-downgrade",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-10-31T09:02:50Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6335563003f04dc7a195a56ec12b6f1a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida's Vernell Brown III Questionable Against Georgia After Friday Downgrade"
+      }
+    },
+    {
       "title": "Georgia-Born Gator: Reports Say Aaron Philo Will Start Against Georgia",
       "excerpt": "CBS Sports and The Associated Press report that Florida plans to start Aaron Philo against Georgia in Atlanta, though the Gators had not made a formal public announcement as of Friday.",
       "url": "https://www.gatorbaitmedia.com/post/florida-philo-jones-questionable-georgia-sec-availability-report",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Urban Renewal: Klavzar, Aberdeen Find Their Shot as No. 1 Gators Put Away Stetson"
-      }
-    },
-    {
-      "title": "Thoughts of the Day: October 27, 2026",
-      "excerpt": "Franz Beard on Jon Sumrall's first Florida-Georgia game and the work needed to close the rivalry gap. File photo: Chris Spears, GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-october-27-2026",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-27T12:48:24Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_fb9b6535ba3046ab86e7d0d05b6579bc~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Thoughts of the Day: October 27, 2026"
       }
     }
   ]

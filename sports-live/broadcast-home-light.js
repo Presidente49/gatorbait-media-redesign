@@ -389,6 +389,10 @@ C+=`
 @ .bc-tw:focus-within .bc-trk{animation:none;transform:none}
 @media(prefers-reduced-motion:reduce){@ .bc-pause{display:none}}
 @media(max-width:820px){@ .bc-sc .bc-nm{display:block!important;position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}}
+/* Live scoreboard: readable on phones (names, ranks, clock), no empty Next-up bar while live; desktop card keeps rows together. */
+@ .bc-nx:empty,@ .bc-nx:not(:has(*)){display:none!important}
+@media(min-width:821px){@ .bc-sc{align-content:start!important;gap:14px!important}}
+@media(max-width:820px){@ .bc-sc{grid-template-columns:minmax(0,1fr)!important;gap:8px!important;padding:12px 14px 14px!important}@ .bc-sc .bc-lbl{width:100%;font-size:12px}@ .bc-sc .bc-lbl span{display:inline!important;font-size:12px!important;color:#4B5563}@ .bc-sc .bc-tm{display:grid!important;grid-template-columns:44px minmax(0,1fr) auto!important;align-items:center;gap:10px!important;padding:8px 10px;border-radius:8px;background:#F4F6FA;min-width:0}@ .bc-sc .bc-ab{width:44px;height:36px;font-size:15px!important;display:grid;place-items:center;border-radius:6px}@ .bc-sc .bc-nm{position:static!important;width:auto!important;height:auto!important;margin:0!important;padding:0!important;clip:auto!important;clip-path:none!important;overflow:visible!important;white-space:normal!important;font-size:20px!important;line-height:1.05;font-weight:800}@ .bc-sc .bc-nm small{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}@ .bc-sc .bc-pt{font-size:30px!important;width:auto!important;min-width:36px;text-align:right;line-height:1}}
 `;
 /* Light layer: scoped under html.gb-light, appended after every dark rule. */
 var L=`

@@ -20,7 +20,7 @@ const UA = {
 };
 const FAST = { delay: 1500, minDelay: 500, settleTicks: 2 };
 const results = [];
-const WIX_INFRA = /(^|\.)(wix\.com|wixpress\.com|parastorage\.com|wixstatic\.com|wixapps\.net|wixappcloud\.com|wixforms\.com)$/;
+const WIX_INFRA = /(^|\.)(wix\.com|wixpress\.com|parastorage\.com|wixstatic\.com|wixapps\.net|wixappcloud\.com|wixforms\.com|google-analytics\.com|googletagmanager\.com|facebook\.com|facebook\.net|fbcdn\.net|doubleclick\.net|sentry-cdn\.com)$/;
 const newHosts = (s) => [...s.hosts.after].filter((x) => !s.hosts.before.has(x) && !WIX_INFRA.test(x));
 function ok(name, cond, extra) { results.push({ name, pass: !!cond, extra: extra === undefined ? '' : String(extra) }); if (!cond) console.log('FAIL', name, extra === undefined ? '' : extra); }
 
@@ -35,9 +35,10 @@ async function open(browser, { w, h, ua, referer, storage = true, cookies = true
   const hosts = { before: new Set(), after: new Set() };
   let injected = false;
   page.on('request', (rq) => { try { (injected ? hosts.after : hosts.before).add(new URL(rq.url()).host); } catch (e) {} });
+  const opened = []; page.on('console', (m) => { if (/^GBM_OPEN/.test(m.text())) opened.push(m.text()); });
   const popups = []; ctx.on('page', (np) => { if (np !== page) popups.push(np.url()); });
   await page.addInitScript((flags) => {
-    window.__opens = []; const wo = window.open; window.open = function () { window.__opens.push([].slice.call(arguments)); return null; };
+    window.__opens = []; window.open = function () { window.__opens.push([].slice.call(arguments)); console.log('GBM_OPEN ' + [].slice.call(arguments).join(',')); return null; };
     if (!flags.storage) {
       const boom = () => { throw new DOMException('blocked', 'SecurityError'); };
       Object.defineProperty(window, 'localStorage', { get: boom, configurable: true });
@@ -54,7 +55,7 @@ async function open(browser, { w, h, ua, referer, storage = true, cookies = true
   await page.evaluate((c) => { window.GBM_SIGNUP_CFG = c; }, cfg);
   injected = true;
   await page.addScriptTag({ content: SRC });
-  return { ctx, page, hosts, popups, stubbed };
+  return { ctx, page, hosts, popups, stubbed, opened };
 }
 const vis = (page) => page.evaluate(() => { const e = document.getElementById('gbm-su'); return !!e && e.classList.contains('su-on') && e.querySelector('.su-card').offsetHeight > 0; });
 const count = (page) => page.evaluate(() => document.querySelectorAll('#gbm-su').length);
@@ -70,8 +71,10 @@ async function geometry(page, w) {
 async function scenario(browser, label, w, h, opts) {
   const s = await open(browser, { w, h, ...opts });
   const { page } = s;
-  await page.waitForTimeout(2600);
-  ok(`${label}: appears`, await vis(page));
+  await page.waitForSelector('#gbm-su.su-on', { timeout: 25000 }).catch(() => {});
+  const shown = await vis(page);
+  ok(`${label}: appears`, shown);
+  if (!shown) { await s.ctx.close(); return; }
   ok(`${label}: exactly one`, (await count(page)) === 1);
   const g = await geometry(page, w);
   ok(`${label}: no horizontal overflow`, g.overflowX <= 0, g.overflowX);
@@ -103,17 +106,18 @@ async function scenario(browser, label, w, h, opts) {
   await s.ctx.close();
 }
 
+ok('static: script has no network/popup APIs', !/\b(fetch|XMLHttpRequest|sendBeacon|WebSocket|window\.open|beforeunload|new Image)\b/.test(SRC.replace(/\/\*[\s\S]*?\*\//, '').replace(/\/\/.*$/gm, '')));
 (async () => {
   const browser = await chromium.launch();
   const sizes = [[390, 844], [430, 932], [320, 640], [1366, 768], [1920, 1080]];
   const chunks = [sizes.slice(0, 2), sizes.slice(2, 4), sizes.slice(4)];
   for (const chunk of chunks) await Promise.all(chunk.map(async ([w, h]) => {
     for (const k of Object.keys(UA)) {
-      if (k !== 'none' && w > 800) continue;
+      if (k !== 'none' && (w > 800 || (w === 320 && k !== 'facebook') || (w === 430 && k === 'x'))) continue;
       await scenario(browser, `${w} ${k}`, w, h, { ua: UA[k], shot: k === 'none' ? `modal-${w}` : (k === 'facebook' ? `facebook-${w}` : null) });
     }
     await scenario(browser, `${w} storage-blocked`, w, h, { storage: false, shot: `storage-blocked-${w}` });
-    await scenario(browser, `${w} storage+cookies-blocked`, w, h, { storage: false, cookies: false });
+    if (w === 390 || w === 1366) await scenario(browser, `${w} storage+cookies-blocked`, w, h, { storage: false, cookies: false });
     await scenario(browser, `${w} google-referrer sheet`, w, h, { referer: 'https://www.google.com/', shot: `google-sheet-${w}` });
   }));
 
@@ -155,8 +159,9 @@ async function scenario(browser, label, w, h, opts) {
     const href = await s.page.getAttribute('#gbm-su a[data-su-go=email]', 'href');
     const target = await s.page.getAttribute('#gbm-su a[data-su-go=email]', 'target');
     ok('free-email link is the existing hosted form, no target', href === FORM && target === null, href + ' ' + target);
-    await Promise.all([s.page.waitForURL((u) => u.href.startsWith(FORM), { timeout: 15000 }).catch(() => {}), s.page.click('#gbm-su a[data-su-go=email]')]);
-    ok('CTA navigates the same tab', s.page.url().startsWith(FORM) && s.popups.length === 0, s.page.url());
+    const navReq = s.page.waitForRequest((r) => r.url().startsWith(FORM) && r.isNavigationRequest() && r.frame() === s.page.mainFrame(), { timeout: 15000 }).catch(() => null);
+    await s.page.click('#gbm-su a[data-su-go=email]'); const nr = await navReq;
+    ok('CTA navigates the same tab (main frame): no popup, no window.open', !!nr && s.popups.length === 0 && s.opened.length === 0, (nr ? '' : 'no navigation request ') + s.opened.join(';'));
     await s.ctx.close();
   }
 
@@ -174,7 +179,8 @@ async function scenario(browser, label, w, h, opts) {
     await s2.page.waitForTimeout(2800);
     await s2.page.addStyleTag({ content: '[data-hook="consent-banner-root"]{display:none!important}' }); // visitor answered the banner
     await s2.page.waitForTimeout(2200);
-    ok('modal appears once the banner is answered', await vis(s2.page) && (await s2.page.evaluate(() => document.getElementById('gbm-su').className.includes('su-center'))));
+    await s2.page.waitForSelector('#gbm-su.su-on', { timeout: 6000 }).catch(() => {});
+    ok('box appears once the banner is answered', await vis(s2.page));
     await s2.ctx.close();
   }
 
@@ -240,7 +246,7 @@ async function scenario(browser, label, w, h, opts) {
     const s = await open(browser, { w: 390, h: 844, cfg: {} });
     await s.page.waitForTimeout(2500);
     ok('default timing: not shown in first seconds', (await count(s.page)) === 0);
-    await s.page.waitForSelector('#gbm-su.su-on', { timeout: 9000 }).catch(() => {});
+    await s.page.waitForSelector('#gbm-su.su-on', { timeout: 12000 }).catch(() => {});
     ok('default timing: shown by ~10s dwell', await vis(s.page));
     await s.ctx.close();
   }

@@ -5,15 +5,15 @@ This branch changes nothing live. Jarvis ships it after QA.
 
 ## What it does
 
-- `signup-lightbox.js` (about 12 KB, vanilla JS, no dependencies, no network requests, no popups).
+- `signup-lightbox.js` (about 19 KB unminified, vanilla JS, no dependencies, no network requests, no popups).
 - Shows one small box: **Get the free email** (links to the existing native hosted form), **Join GatorBait** (existing `/pricing-plans`), **Already a member? Sign in**, **Not now**.
 - It never collects an address and has no data store. The form stays exactly as is: `https://buddymartinshow.wixforms.com/f/7517931185469654016` (email plus one **unchecked** consent box; Wix double confirmation unchanged). Verified read-only: the form returns HTTP 200, no `X-Frame-Options`. It is still a plain same-tab link, not an iframe, because iframes depend on third-party cookies that in-app browsers block.
-- Timing: not before 4 s of visible time; appears at 10 s of visible time, or after scrolling 0.6 screens (whichever first, never under 4 s). Once per session, 7 days after **Not now**, 30 days after following either link. The X and Esc close for the session only.
-- Layout: centered box with a dim backdrop (focus trapped, Esc, 44 px close). Small **bottom sheet** (no backdrop, non-modal) instead when the referrer is a search engine (Google first), when the live-game card is up, or when the cookie banner is still open.
+- Timing: not before 4 s of visible time; appears at 10 s of visible time, or after scrolling 0.6 screens (whichever first, never under 4 s), and only once the member signal has been a settled "visitor" for 3 s (below). Once per session, 7 days after **Not now**, 30 days after following either link. The X and Esc close for the session only.
+- Layout, phone first: on any screen 820 px wide or less (and for search-engine referrers, the live-game card or an open cookie banner on any screen) it is a **bottom sheet**: no backdrop, at most 60 percent of the screen (about 33 percent at 390 x 844), buttons 46 to 48 px, the close X is 44 px, safe-area inset respected, one tap on X or **Not now** closes it. It sits above the cookie banner and above the orange game-day bar `#gbm-gd10-bar` (it measures both), never over them. On desktop it is a centered box with a dim backdrop, focus trap, Esc and 44 px close. The sheet is deliberately non-modal (no trap) so it never blocks reading or the page; the desktop box traps focus. There is no text field in the lightbox (the address is typed on the existing hosted form), so there is no keyboard or 16 px input-zoom problem to manage here; the hosted form is a separate Wix page.
 - Cookie banner (`consent-banner-root`, z-index 2147483647, about 140 px): the lightbox waits up to 25 s for it to be answered; if it is still there, the sheet sits above it. It is always below the banner in stacking order.
 - Never on `/pricing-plans`, `/signin`, `/sign-in`, `/login`, `/account`, `/my-account`, `/members`, `/checkout`, `/cart`, `/thank-you`, `/payment`.
 - Member gate and suppression: see the section below. Defers while a field has focus or another dialog is open, including the earlier 55-second invitation from `capture-candidate.js`. If either invitation is dismissed or the visitor joined/pending, the other stays quiet (shared keys `gbm-capture-dismissed`, `gbm-capture-joined`, `gbm-capture-pending`).
-- Social in-app browsers: no referrer or user-agent check ever hides it. Facebook, Instagram, X, YouTube and TikTok visitors get the same box. Links open in the same tab. Storage is read/written inside try/catch with a first-party cookie fallback, then an in-memory fallback (storage and cookies both blocked: it shows at most once per page load).
+- Social in-app browsers: no referrer or user-agent check ever hides it. Facebook, Instagram, X, YouTube and TikTok visitors get the same sheet. Links are plain same-tab anchors; the click handler stops the Wix platform link handler (which otherwise re-opens links through `window.open(url, "_self")`) so the browser does native navigation with no `window.open` at all. No popups, no `beforeunload`, no third-party cookies. Storage is read/written inside try/catch with a first-party cookie fallback, then an in-memory fallback (storage and cookies both blocked: it shows at most once per page load).
 - Events (browser evidence only, not a confirmed subscriber): `dataLayer` `gbm_signup_lightbox` with `gbm_action` shown / closed / not_now / go_email / go_join / go_signin.
 - Barlow only. Colors: Gator blue `#0021A5`, orange `#FA4616` (top stripe, focus ring), white, a 8 px green `#22884C` dot.
 - **Existing site script to know about:** the header embed (`deploy/shell-2026`) scans any `role=dialog`, `aria-modal`, or class containing `modal`/`lightbox` whose text contains "newsletter", "subscribe" or "email address", adds its own "Close newsletter" button and may dismiss it. The lightbox copy and class names deliberately avoid those words (an earlier draft collided and got a second close button). Do not add those words to the copy.
@@ -38,7 +38,23 @@ Storage or cookies blocked (social in-app browsers) does not make the signal unc
 
 ## QA (item 4)
 
-`node deploy/signup-lightbox-20261031/qa.js` loads the real homepage with `?cb=<ts>&utm_source=qa&fbclid=QA123`, injects the script locally, never submits anything (form/join destinations are stubbed), and writes `results.json` and `shots/`. See `results.json` for the exact checks and outcome; screenshots were inspected by hand.
+`node deploy/signup-lightbox-20261031/qa.js` loads the real homepage with `?cb=<ts>&utm_source=qa&fbclid=QA123`, injects the script locally, never submits anything (the form and join destinations are stubbed), and writes `results.json` and `shots/`. Latest run (Oct. 31, 2026, 17:01Z, Chromium): **311 of 312 checks pass**.
+
+Phones first (320, 390, 430; plain, Facebook `FBAN/FBAV`, Instagram and X user agents; localStorage blocked; localStorage and cookies blocked; Google referrer):
+- Bottom sheet on every phone case, 206 px tall (about 24 percent of 844 and 22 percent of 932; 45 percent of the 640 px 320 screen), never over 60 percent.
+- Clear of the orange game-day bar `#gbm-gd10-bar` (card bottom equals bar top, 15 of 15), and above the open cookie banner (sheet bottom at or above banner top).
+- All targets 44 px or more, Barlow, no horizontal overflow, no request to any host that was not already on the page (Wix, analytics and Facebook infrastructure that the site loads lazily on its own is allowed; a static check also proves the script contains no fetch, XMLHttpRequest, sendBeacon, WebSocket, `window.open`, `beforeunload` or `new Image`).
+- Appears once, closes on X, Esc and Not now, stays closed; once per session; Not now holds 7 days and returns after 8 days; with storage blocked a close is still honoured after reload (cookie fallback); with storage and cookies both blocked it shows once per page load.
+- Not before 10 s by default; a Free-email tap navigates the same tab (main frame) with no popup and no `window.open`.
+- Not on `/pricing-plans`, `/signin`, `/checkout`, `/account/my-account` (real pages).
+
+Member negative tests (390 and 1366, 20 of 20): logged-out visitor is read as visitor and sees it; a simulated member (login button showing a name, enforced every 25 ms from page start) never sees it, not after reload, not with `?gbm_su=1`, not in an Instagram user agent with storage and cookies blocked; no login bar (unknown) never shows; empty login bar (hydrating) never shows; if the member state appears while it is open it closes at once.
+
+Desktop (1366, 1920): centered box with backdrop, focus trapped (Tab and Shift+Tab, 9 presses each way), Esc closes, no overflow; Google-referrer desktop gets the sheet.
+
+The one failure in the final run: `320 google-referrer sheet: appears`. On that cold first load the Wix login bar never rendered within the test's 25 s, so the member state stayed `unknown` and the lightbox correctly stayed hidden (fail closed). A rerun of the same case shows it at 12 s. This is the cost of the fail-closed rule: when Wix is slow or does not render the login bar, nobody is asked on that load (the script keeps checking for 10 minutes of visible time).
+
+Screenshots were read and checked by hand at 320, 390, 430 and 1366 (`shots/`). Two defects were found and fixed that way: a stray orange focus ring around the whole card, and a collision with the header embed's newsletter-dialog script (see above).
 
 Not covered: a real phone, real Facebook/Instagram/X/TikTok/YouTube in-app WebViews (user-agent strings and storage-blocked emulation only), a signed-in member session, the live game state (simulated with a "LIVE" element: there is no reliable live-state hook on the homepage, so the detector is a heuristic), Safari/WebKit (Chromium only).
 

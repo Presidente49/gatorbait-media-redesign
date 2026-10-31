@@ -178,6 +178,7 @@
     try { window.requestAnimationFrame(function () { if (root) root.classList.add('su-on'); }); } catch (e) { root.classList.add('su-on'); }
     try { card.focus({ preventScroll: true }); } catch (e) { card.focus(); }
     document.addEventListener('keydown', onKey, true);
+    document.addEventListener('focusin', onFocusIn, true);
     window.addEventListener('resize', placeAboveBanner);
     track('shown');
   }
@@ -187,6 +188,7 @@
     if (kind === 'later') put('localStorage', K_DISMISS, String(Date.now()), CFG.dismissDays);
     if (kind === 'later') put('localStorage', 'gbm-capture-dismissed', String(Date.now()), CFG.dismissDays); // keep the older 55-second invitation quiet too
     document.removeEventListener('keydown', onKey, true);
+    document.removeEventListener('focusin', onFocusIn, true);
     window.removeEventListener('resize', placeAboveBanner);
     var r = root; root = null; r.parentNode && r.parentNode.removeChild(r);
     if (lastFocus && lastFocus.focus && document.contains(lastFocus)) { try { lastFocus.focus({ preventScroll: true }); } catch (e) {} }
@@ -201,6 +203,12 @@
     var which = t.getAttribute('data-su-go');
     if (which === 'email' || which === 'join') put('localStorage', K_DONE, String(Date.now()), CFG.doneDays);
     track('go_' + which);
+    ev.stopPropagation(); // keep the platform's link handler (it re-opens links through window.open) out of this: plain native same-tab navigation
+  }
+
+  function onFocusIn(ev) {
+    if (!root || mode !== 'center' || root.contains(ev.target)) return;
+    var f = root.querySelector('a[href],button:not([disabled])'); if (f) f.focus();
   }
 
   function onKey(ev) {
@@ -237,14 +245,15 @@
     if (shownThisRuntime) { stop(); return; }
     if (!document.hidden) visibleMs += 500;
     if (visibleMs > 600000) { stop(); return; }
-    if (!(forced() ? visibleMs >= CFG.minDelay : (visibleMs >= CFG.delay || (visibleMs >= CFG.minDelay && scrolled())))) return;
-    if (!routeOk() || suppressed() || busy()) return;
     // Members are never asked. The signal must be a settled, positive "visitor" (login bar rendered and offering Log In, seen on
-    // settleTicks consecutive ticks); a member, a missing/still-hydrating login bar or any doubt means: do not show, keep watching.
+    // settleTicks consecutive ticks, counted during the dwell); a member, a missing/still-hydrating login bar or any doubt means:
+    // do not show, keep watching.
     var ms = memberState();
     if (ms === 'member') { put('localStorage', K_MEMBER, String(Date.now()), 365); mem.memberSeen = 1; stop(); return; }
-    if (ms !== 'visitor' || document.readyState !== 'complete') { settled = 0; return; }
-    if (++settled < CFG.settleTicks) return;
+    if (ms === 'visitor' && document.readyState === 'complete') settled++; else settled = 0;
+    if (!(forced() ? visibleMs >= CFG.minDelay : (visibleMs >= CFG.delay || (visibleMs >= CFG.minDelay && scrolled())))) return;
+    if (!routeOk() || suppressed() || busy()) return;
+    if (settled < CFG.settleTicks) return;
     var ban = bannerEl(), m;
     if (ban) {
       if (!bannerSince) bannerSince = Date.now();

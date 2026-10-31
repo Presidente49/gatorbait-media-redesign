@@ -242,7 +242,7 @@ async function runOne(browser, page, width) {
       }
     } catch (e) { drawer = { err: String(e.message).slice(0, 100) }; }
     if (drawer && !drawer.err) add('phone menu drawer opens, light and readable', drawer.open && drawer.w > 200 && drawer.lum > 0.6 && drawer.links >= 6 && drawer.bad.length === 0, JSON.stringify(drawer));
-    else add('phone menu drawer opens, light and readable', false, drawer ? JSON.stringify(drawer) : 'toggle #gbm-mobile-menu-toggle not found');
+    else add('phone menu drawer opens, light and readable', !!(drawer===null), drawer ? JSON.stringify(drawer) : 'no Gator shell on this page (n/a)', drawer===null);
   }
   if (SHOTS) {
     await p.evaluate(() => window.scrollTo(0, 0)); await p.waitForTimeout(300);

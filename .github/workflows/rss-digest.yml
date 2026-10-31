@@ -1,0 +1,62 @@
+name: GatorBait RSS check and headline digest
+
+# Hourly. Validates the site's own /blog-feed.xml and builds sports-live/rss-digest.json: headline-only
+# (title, source, link, time) from the outside feeds in sports-live/rss-feeds.json. Never Gator Country.
+# Outside feeds are fetched here because they are unreachable or unreliable from a browser (CORS) and from some networks.
+
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/rss/**'
+      - 'sports-live/rss-feeds.json'
+      - '.github/workflows/rss-digest.yml'
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: rss-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Unit tests
+        run: node --test automation/rss/rss_digest.test.mjs
+      - name: Validate our feed and build the digest
+        # An outside feed that is down or blocked is reported inside the file (ok:false); it must not fail the run.
+        run: node automation/rss/rss_digest.mjs
+      - name: Commit if changed and request the existing Pages publisher
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- sports-live/rss-digest.json && [ -z "$(git ls-files --others --exclude-standard -- sports-live/rss-digest.json)" ]; then
+            echo 'RSS digest unchanged. No deployment requested.'
+            exit 0
+          fi
+          git config user.name 'gatorbait-newsroom-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
+          git add sports-live/rss-digest.json
+          git commit -m 'data: refresh RSS validation and headline digest'
+          pushed=false
+          for i in 1 2 3; do
+            if git push; then pushed=true; break; fi
+            git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          done
+          [ "$pushed" = true ] || { echo 'push failed after 3 tries; digest not published' >&2; exit 1; }
+          gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"

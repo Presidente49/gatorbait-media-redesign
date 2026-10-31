@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "about": "Feeds for the RSS validator and the game-day headline digest (automation/rss/rss_digest.mjs). The digest stores title, source, link and timestamp only. Readers always link out to the source.",
+  "selfFeed": {
+    "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
+    "checkItems": 20,
+    "requireCoverImages": true
+  },
+  "perFeedLimit": 12,
+  "digestLimit": 30,
+  "refreshFullAfterHours": 6,
+  "blocklist": {
+    "note": "Never ingest, show or link to these publishers. Matched against title, link host and link path.",
+    "patterns": ["gator\\s*-?\\s*country", "gatorcountry"]
+  },
+  "outside": [
+    {
+      "id": "espn-ncf",
+      "source": "ESPN",
+      "label": "ESPN college football headlines",
+      "url": "https://www.espn.com/espn/rss/ncf/news"
+    },
+    {
+      "id": "espn-sec",
+      "source": "ESPN",
+      "label": "ESPN college football headlines that name an SEC team",
+      "url": "https://www.espn.com/espn/rss/ncf/news",
+      "titleMustMatch": ["\\bSEC\\b", "Alabama(?! State| A&M)", "Arkansas(?! State)", "Auburn", "Florida(?! State| Atlantic| International)", "Georgia(?! Tech| Southern| State)", "Kentucky", "\\bLSU\\b", "Mississippi State", "Ole Miss", "Missouri(?! State)", "Oklahoma(?! State)", "South Carolina(?! State)", "Tennessee(?! State| Tech)", "Texas A&M", "Texas(?! Tech| State| Christian| A&M| El Paso)", "Vanderbilt", "Gators", "Crimson Tide"]
+    },
+    {
+      "id": "floridagators",
+      "source": "FloridaGators.com",
+      "label": "FloridaGators.com news",
+      "url": "https://floridagators.com/rss.aspx?path=football",
+      "note": "floridagators.com sits behind bot protection (Incapsula). From some networks it returns an empty or blocked response. The digest then reports ok:false for this feed and shows nothing for it; it never fabricates items and does not try to bypass the protection."
+    }
+  ]
+}

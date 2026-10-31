@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>GatorBait Media Status</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--fg:#14202b;--mute:#5b6875;--line:#d8dee4;--ok:#1f9d55;--warn:#c58a00;--bad:#c62828}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1720;--fg:#e8edf2;--mute:#9aa7b4;--line:#2a3643;--ok:#3ecf7a;--warn:#f0b429;--bad:#ff6b6b}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 Barlow,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:28px;margin:0 0 4px}
+.sub{color:var(--mute);margin:0 0 20px}
+.hero{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:20px}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--mute);flex:none}
+.hero.normal .dot{background:var(--ok)}.hero.degraded .dot{background:var(--warn)}
+.hero b{font-size:20px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+.card{border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.card .n{font-size:30px;font-weight:700}
+.card .l{color:var(--mute);font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line)}
+th{color:var(--mute);font-weight:500}
+td.r,th.r{text-align:right}
+.bars{display:flex;gap:2px;align-items:flex-end;height:36px;margin:8px 0 4px}
+.bars i{flex:1;min-width:2px;background:var(--ok);border-radius:1px;height:100%}
+.bars i.x{background:var(--bad)}
+.note{color:var(--mute);font-size:14px}
+a{color:inherit}
+#msg{display:none}
+</style>
+</head>
+<body>
+<main>
+<h1>GatorBait Media status</h1>
+<p class="sub">Measured every 10 minutes from GitHub Actions. Only real checks are counted.</p>
+<div id="msg" class="hero"><span class="dot"></span><b>Status data is unavailable right now.</b></div>
+<div id="app" hidden>
+  <div id="hero" class="hero"><span class="dot"></span><div><b id="state"></b><div class="note" id="when"></div></div></div>
+  <div class="grid">
+    <div class="card"><div class="n" id="a24"></div><div class="l">Availability, last 24 hours</div></div>
+    <div class="card"><div class="n" id="a7"></div><div class="l">Availability, last 7 days</div></div>
+  </div>
+  <table>
+    <thead><tr><th>Page</th><th class="r">Now</th><th class="r">Median</th><th class="r">24h</th><th class="r">7d</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="note" style="margin-top:16px">Last 24 hours, one bar per check (red = something failed):</p>
+  <div class="bars" id="bars" aria-hidden="true"></div>
+  <p class="note" id="cov"></p>
+</div>
+<p class="note">A check counts as up only if every page answered with a normal response. Checks run from one location, so a problem near a particular reader may not show here. If GitHub skips a scheduled run it is simply missing, not counted as up.</p>
+</main>
+<script>
+(function(){
+  var base=location.href.replace(/[^\/]*$/,'');
+  var $=function(i){return document.getElementById(i)};
+  var pc=function(v){return v==null?'n/a':(Math.round(v*100)/100)+'%'};
+  var ms=function(v){return v==null?'n/a':v+' ms'};
+  fetch(base+'uptime.json?t='+Math.floor(Date.now()/300000),{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+    var s=d.summary,t=Date.parse(s.lastChecked);
+    if(!isFinite(t))throw 0;
+    var stale=Date.now()-t>45*60000;
+    $('app').hidden=false;
+    $('hero').className='hero '+(stale?'':s.state);
+    $('state').textContent=stale?'Status unknown (no recent check)':(s.state==='normal'?'All systems normal':'Degraded');
+    $('when').textContent='Last checked '+new Date(t).toLocaleString();
+    $('a24').textContent=pc(s.availability24h.overall);
+    $('a7').textContent=pc(s.availability7d.overall);
+    var last=d.runs[d.runs.length-1],rows=$('rows');
+    d.targets.forEach(function(tg,i){
+      var tr=document.createElement('tr'),st=last.s[i];
+      [[tg.label,0],[st[2]?(st[0]+' OK, '+st[1]+' ms'):(st[0]?('HTTP '+st[0]):'no response'),1],[ms(s.availability24h.medianMs[tg.id]),1],[pc(s.availability24h.targets[tg.id]),1],[pc(s.availability7d.targets[tg.id]),1]].forEach(function(c){
+        var td=document.createElement('td');td.textContent=c[0];if(c[1])td.className='r';tr.appendChild(td);});
+      rows.appendChild(tr);
+    });
+    var day=d.runs.filter(function(r){return Date.now()-Date.parse(r.t)<=864e5}),bars=$('bars');
+    day.forEach(function(r){var b=document.createElement('i');if(!r.s.every(function(x){return x[2]===1}))b.className='x';bars.appendChild(b)});
+    $('cov').textContent='Checks recorded in 7 days: '+s.availability7d.runs+(s.coverage7d!=null?' ('+pc(s.coverage7d)+' of the 1,008 scheduled).':'.');
+  }).catch(function(){$('msg').style.display='flex'});
+})();
+</script>
+</body>
+</html>

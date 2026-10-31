@@ -1,0 +1,14 @@
+{
+  "_note": "Pregame facts verified against ESPN summary event 401856734 (Oct. 31, 2026). Scores are filled by render-score.mjs arguments or the ESPN feed, never guessed.",
+  "eventId": "401856734",
+  "away": { "name": "Florida", "rank": 17, "record": "5-2", "score": null },
+  "home": { "name": "Georgia", "rank": 3, "record": "6-1", "score": null },
+  "status": { "state": "pre", "period": null, "clock": null },
+  "kickoff": "3:30 p.m. ET",
+  "date": "Saturday, Oct. 31",
+  "network": "ABC",
+  "venue": "Mercedes-Benz Stadium",
+  "city": "Atlanta",
+  "kicker": "Florida-Georgia",
+  "linescores": { "away": [], "home": [] }
+}

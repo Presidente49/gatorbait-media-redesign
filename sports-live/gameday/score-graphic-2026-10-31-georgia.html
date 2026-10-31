@@ -3,40 +3,49 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Florida-Georgia score graphic</title>
 <style>
-@font-face{font-family:'Barlow';font-weight:500;src:url('../../assets/weather/Barlow-500.woff2') format('woff2')}
-@font-face{font-family:'Barlow';font-weight:700;src:url('../../assets/weather/Barlow-700.woff2') format('woff2')}
-@font-face{font-family:'Barlow';font-weight:800;src:url('../../assets/weather/Barlow-800.woff2') format('woff2')}
-:root{--navy:#0B1F4B;--orange:#FA4616;--blue:#0021A5;--white:#fff;--mute:#9FB2CF}
+/* Barlow Condensed only (OFL, see fonts/OFL.txt). No fallback family on purpose: render-score.mjs fails the render if any other font is used. */
+@font-face{font-family:'Barlow Condensed';font-weight:700;src:url('fonts/BarlowCondensed-700.ttf') format('truetype')}
+@font-face{font-family:'Barlow Condensed';font-weight:800;src:url('fonts/BarlowCondensed-800.ttf') format('truetype')}
+/* Palette: Gator blue, orange, white, small touches of green. No navy. */
+:root{--blue:#0021A5;--orange:#FA4616;--green:#22884C;--white:#fff;--soft:rgba(255,255,255,.82);--dim:rgba(255,255,255,.58)}
 *{box-sizing:border-box}
-html,body{margin:0;background:#050f26}
+html,body{margin:0;background:var(--blue)}
 /* Fixed 1080x1350 master. Narrow viewports scale it down (see script) so nothing reflows or overflows. */
 .stage{width:1080px;height:1350px;transform-origin:top left}
-.c{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'Barlow',sans-serif;color:var(--white);
-background:radial-gradient(900px 620px at 100% 100%,rgba(250,70,22,.38),transparent 62%),radial-gradient(700px 520px at 0% 0%,rgba(0,33,165,.55),transparent 65%),linear-gradient(160deg,#081845 0%,var(--navy) 55%,#07173d 100%)}
-.c:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 54px)}
+.c{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:'Barlow Condensed';font-weight:700;color:var(--white);background:var(--blue)}
+.c:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.055) 0 2px,transparent 2px 54px)}
 .bar{position:absolute;left:0;top:0;bottom:0;width:22px;background:var(--orange)}
-.top{position:absolute;left:84px;right:72px;top:72px;display:flex;align-items:center;gap:20px}
-.tag{background:var(--orange);font-weight:800;font-size:40px;letter-spacing:4px;padding:8px 24px;text-transform:uppercase;white-space:nowrap}
-.kick{font-weight:700;font-size:34px;letter-spacing:4px;color:#C9D6EA;text-transform:uppercase;white-space:nowrap}
-.team{position:absolute;left:84px;right:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.t1{top:250px}.t2{top:632px}
-.vs{position:absolute;left:84px;top:540px;font-weight:800;font-size:38px;letter-spacing:6px;color:var(--orange)}
-.who{min-width:0}
-.rk{font-weight:800;font-size:46px;letter-spacing:3px;color:var(--orange);text-transform:uppercase;height:52px;line-height:52px}
-.nm{font-weight:800;font-size:150px;line-height:1;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
-.rec{font-weight:700;font-size:40px;letter-spacing:3px;color:#C9D6EA;margin-top:8px}
-.sc{font-weight:800;font-size:300px;line-height:1;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-.lead{color:var(--white)}.trail{color:var(--mute)}
-.rule{position:absolute;left:84px;top:960px;width:180px;height:10px;background:var(--orange)}
-.info{position:absolute;left:84px;right:72px;top:996px}
-.big{font-weight:800;font-size:62px;line-height:1.1;text-transform:uppercase;letter-spacing:1px}
+.top{position:absolute;left:84px;right:72px;top:64px;display:flex;align-items:center;gap:22px}
+.tag{background:var(--orange);font-weight:800;font-size:50px;line-height:1;letter-spacing:4px;padding:10px 26px 8px;text-transform:uppercase;white-space:nowrap}
+.kick{font-weight:700;font-size:42px;line-height:1;letter-spacing:5px;color:var(--soft);text-transform:uppercase;white-space:nowrap}
+.team{position:absolute;left:84px;right:72px;height:340px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.t1{top:170px}.t2{top:606px}
+.vs{position:absolute;left:84px;top:535px;font-weight:800;font-size:46px;line-height:1;letter-spacing:7px;color:var(--orange)}
+.who{flex:1 1 auto;min-width:0}
+.rk{font-weight:800;font-size:54px;letter-spacing:3px;color:var(--orange);text-transform:uppercase;height:60px;line-height:60px}
+.nm{font-weight:800;font-size:210px;line-height:.92;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+.nm.two{white-space:normal;line-height:.88}
+.rec{font-weight:700;font-size:48px;line-height:1;letter-spacing:3px;color:var(--soft);margin-top:10px}
+.scw{flex:none;display:flex;flex-direction:column;align-items:flex-end}
+.sc{font-weight:800;font-size:340px;line-height:.86;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.mark{display:block;width:128px;height:14px;background:var(--green);margin-top:10px}
+.lead{color:var(--white)}.trail{color:var(--dim)}
+.rule{position:absolute;left:84px;top:974px;width:180px;height:10px;background:var(--orange)}
+.rule:after{content:"";position:absolute;left:196px;top:0;width:64px;height:10px;background:var(--green)}
+.info{position:absolute;left:84px;right:72px;top:1000px}
+.big{font-weight:800;font-size:92px;line-height:1.02;text-transform:uppercase;letter-spacing:2px;display:flex;align-items:center;gap:22px;white-space:nowrap}
 .big b{color:var(--orange);font-weight:800}
-.sub{font-weight:600;font-size:38px;line-height:1.3;color:#D5DFEC;margin-top:14px}
-.ls{margin-top:18px;display:flex;gap:36px;font-weight:700;font-size:34px;color:#C9D6EA;font-variant-numeric:tabular-nums}
-.ls span{min-width:0}
-.logo{position:absolute;left:84px;bottom:56px;font-weight:800;font-size:48px;letter-spacing:5px}
-.logo b{color:var(--orange)}
-.src{position:absolute;right:72px;bottom:64px;font-weight:500;font-size:24px;letter-spacing:1px;color:#8FA3C4;text-align:right}
+.big .t{text-transform:none;letter-spacing:1px}
+.dot{display:inline-block;width:30px;height:30px;border-radius:50%;background:var(--green);flex:none}
+.sub{font-weight:700;font-size:44px;line-height:1.2;color:var(--soft);margin-top:10px;letter-spacing:.5px}
+.ls{margin-top:8px;display:flex;gap:40px;font-weight:700;font-size:38px;color:var(--soft);font-variant-numeric:tabular-nums}
+.ls span{white-space:nowrap}
+.logo{position:absolute;left:84px;bottom:50px;font-weight:800;font-size:60px;line-height:1;letter-spacing:6px}
+.logo b{color:var(--orange);font-weight:800}
+.src{position:absolute;right:72px;bottom:58px;font-weight:700;font-size:36px;line-height:1;letter-spacing:1.5px;color:var(--soft);text-align:right}
+/* TEST stamp: only for fabricated data. Not for posting. */
+.testbar{position:absolute;left:0;right:0;top:0;height:50px;background:var(--white);color:var(--orange);font-weight:800;font-size:34px;line-height:50px;letter-spacing:4px;text-align:center;text-transform:uppercase;white-space:nowrap;z-index:5}
+.wm{position:absolute;left:-300px;top:-300px;width:1700px;height:2000px;transform:rotate(-24deg);z-index:4;pointer-events:none;font-weight:800;font-size:92px;line-height:150px;letter-spacing:6px;color:rgba(255,255,255,.17);white-space:nowrap;text-transform:uppercase}
 </style></head><body>
 <div class="stage" id="stage"><div class="c" id="c">
 <div class="bar"></div>
@@ -52,12 +61,13 @@ background:radial-gradient(900px 620px at 100% 100%,rgba(250,70,22,.38),transpar
 <script>
 /* Data comes from window.__SCORE__ (set by render-score.mjs) or ?data=file.json for a browser preview. */
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
-const ord=n=>({1:'1st',2:'2nd',3:'3rd',4:'4th'}[n]||(n>4?'OT':''));
+const ord=n=>({1:'1st',2:'2nd',3:'3rd',4:'4th'}[n]||(n===5?'OT':n>5?(n-4)+' OT':''));
 function team(el,t,phase,leading){
   const hasScore=phase!=='pregame'&&t.score!=null&&t.score!=='';
   const cls=phase==='pregame'?'lead':(leading===null?'lead':(leading?'lead':'trail'));
   el.innerHTML='<div class="who"><div class="rk">'+(t.rank?'No. '+esc(t.rank):'&nbsp;')+'</div><div class="nm '+cls+'">'+esc(t.name)+'</div>'+
-   (t.record?'<div class="rec">'+esc(t.record)+'</div>':'')+'</div>'+(hasScore?'<div class="sc '+cls+'">'+esc(t.score)+'</div>':'');
+   (t.record?'<div class="rec">'+esc(t.record)+'</div>':'')+'</div>'+
+   (hasScore?'<div class="scw"><div class="sc '+cls+'">'+esc(t.score)+'</div>'+(leading===true?'<i class="mark"></i>':'')+'</div>':'');
 }
 function render(d){
   const phase=d.phase||'pregame', a=d.away, h=d.home;
@@ -68,28 +78,66 @@ function render(d){
   team(document.getElementById('t2'),h,phase,have?(sa===sh?null:sh>sa):null);
   document.getElementById('vs').style.display=phase==='pregame'?'block':'none';
   const big=document.getElementById('big'), sub=document.getElementById('sub'), ls=document.getElementById('ls');
-  const st=d.status||{};
-  if(phase==='pregame'){ big.innerHTML=esc(d.kickoff)+' · <b>'+esc(d.network)+'</b>'; sub.textContent=d.date+' · '+d.venue+', '+d.city; }
-  else if(phase==='halftime'){ big.innerHTML='Halftime'; sub.textContent=d.date+' · '+d.venue+' · '+d.network; }
-  else if(phase==='final'){ big.innerHTML='Final'+(st.period>4?' · <b>'+ord(st.period)+'</b>':''); sub.textContent=d.date+' · '+d.venue+' · '+d.network; }
-  else { big.innerHTML=(st.period?ord(st.period):'')+(st.clock?' · <b>'+esc(st.clock)+'</b>':''); sub.textContent=d.date+' · '+d.venue+' · '+d.network; }
+  const st=d.status||{}, where=d.date+' · '+d.venue+' · '+d.network;
+  if(phase==='pregame'){ big.innerHTML='<span class="t">'+esc(d.kickoff)+'</span><span>·</span><b>'+esc(d.network)+'</b>'; sub.textContent=d.date+' · '+d.venue+', '+d.city; }
+  else if(phase==='halftime'){ big.innerHTML='Halftime'; sub.textContent=where; }
+  else if(phase==='final'){ big.innerHTML='Final'+(st.period>4?'<span>·</span><b>'+ord(st.period)+'</b>':''); sub.textContent=where; }
+  else { big.innerHTML='<i class="dot"></i>'+(st.period?esc(ord(st.period))+' quarter':'Live')+(st.clock?'<span>·</span><b class="t">'+esc(st.clock)+'</b>':''); sub.textContent=where; }
   const la=(d.linescores||{}).away||[], lh=(d.linescores||{}).home||[];
   ls.innerHTML=(phase!=='pregame'&&la.length&&lh.length)?'<span>'+esc(a.name)+': '+la.map(esc).join(' · ')+'</span><span>'+esc(h.name)+': '+lh.map(esc).join(' · ')+'</span>':'';
   document.getElementById('src').textContent=phase==='pregame'?'Rankings and records: ESPN':'Scores: ESPN';
+  if(d.test){
+    const c=document.getElementById('c');
+    const bar=document.createElement('div'); bar.className='testbar'; bar.textContent='TEST CARD · FABRICATED DATA · NOT A REAL SCORE · DO NOT POST'; c.appendChild(bar);
+    const wm=document.createElement('div'); wm.className='wm'; wm.textContent=''; const line='TEST · NOT A REAL SCORE · '; wm.innerHTML=Array.from({length:14},()=>'<div>'+line.repeat(5)+'</div>').join(''); c.appendChild(wm);
+    document.body.dataset.test='1';
+  }
   fit();
 }
-/* Shrink any team name that would crowd the score so nothing overflows the 1080 canvas. */
+/* Shrink a name until it fits beside the score; wrap multi-word names to two lines before going small. */
+const BASE1=210, MIN1=112, BASE2=128, MIN2=60;
 function fit(){
+  const ls=document.getElementById('ls'); ls.style.fontSize='';
+  for(let fs=38;fs>=24&&ls.scrollWidth>ls.clientWidth+1;fs-=2) ls.style.fontSize=fs+'px';
   document.querySelectorAll('.team').forEach(row=>{
-    const nm=row.querySelector('.nm'), sc=row.querySelector('.sc'); let fs=150;
-    while(fs>60){ nm.style.fontSize=fs+'px'; const w=row.clientWidth-(sc?sc.offsetWidth+24:0); if(nm.scrollWidth<=w) break; fs-=4; }
+    const nm=row.querySelector('.nm'), who=row.querySelector('.who'); nm.classList.remove('two');
+    const ok=()=>nm.scrollWidth<=nm.clientWidth+1&&who.offsetHeight<=row.clientHeight;
+    let fs;
+    for(fs=BASE1;fs>=MIN1;fs-=4){ nm.style.fontSize=fs+'px'; if(ok()) return; }
+    if(/\s/.test(nm.textContent.trim())){
+      nm.classList.add('two');
+      for(fs=BASE2;fs>=MIN2;fs-=4){ nm.style.fontSize=fs+'px'; if(ok()) return; }
+      nm.classList.remove('two');
+    }
+    for(fs=MIN1-4;fs>=36;fs-=4){ nm.style.fontSize=fs+'px'; if(ok()) return; }
   });
 }
+/* Layout audit: any clipping, overlap or out-of-canvas element is reported in body[data-audit]; render-score.mjs refuses to ship a card with problems. */
+function audit(){
+  const bad=[], c=document.getElementById('c').getBoundingClientRect(), s=window.innerWidth<1080?c.width/1080:1;
+  const R=el=>{const b=el.getBoundingClientRect();return{l:(b.left-c.left)/s,r:(b.right-c.left)/s,t:(b.top-c.top)/s,b:(b.bottom-c.top)/s}};
+  document.querySelectorAll('.nm').forEach(n=>{ if(n.scrollWidth>n.clientWidth+1) bad.push('name clipped: '+n.textContent); });
+  document.querySelectorAll('.ls,.sub,.big').forEach(n=>{ if(n.scrollWidth>n.clientWidth+1) bad.push('line too wide: '+n.className+' '+n.textContent.slice(0,40)); });
+  document.querySelectorAll('#c *').forEach(el=>{
+    if(el.closest('.wm')||el.classList.contains('wm')||el.classList.contains('testbar')||el.classList.contains('bar')) return;
+    const r=R(el); if(!r.r&&!r.b) return;
+    if(r.r>1081||r.l<-1||r.b>1351||r.t<-1) bad.push('outside canvas: '+(el.className||el.tagName)+' '+Math.round(r.l)+','+Math.round(r.t)+','+Math.round(r.r)+','+Math.round(r.b));
+  });
+  const un=(a,b)=>({t:Math.min(a.t,b.t),b:Math.max(a.b,b.b)});
+  const rows=[...document.querySelectorAll('.team')].map(t=>[...t.children].map(R).reduce(un));
+  const blocks=[['top',R(document.querySelector('.top'))],['team1',rows[0]]];
+  if(document.getElementById('vs').style.display!=='none') blocks.push(['vs',R(document.getElementById('vs'))]);
+  blocks.push(['team2',rows[1]],['rule',R(document.querySelector('.rule'))],['info',R(document.querySelector('.info'))],['logo',R(document.querySelector('.logo'))]);
+  for(let i=1;i<blocks.length;i++){ const gap=blocks[i][0]==='logo'?24:0; if(blocks[i-1][1].b>blocks[i][1].t-gap+1) bad.push((gap?'too close: ':'overlap: ')+blocks[i-1][0]+' and '+blocks[i][0]); }
+  const lg=R(document.querySelector('.logo')), sr=R(document.getElementById('src')); if(lg.r>sr.l-12) bad.push('overlap: logo and source line');
+  document.body.dataset.audit=JSON.stringify(bad);
+}
 function scale(){ const s=Math.min(1,innerWidth/1080); const st=document.getElementById('stage'); st.style.transform=s<1?'scale('+s+')':''; document.body.style.height=s<1?(1350*s)+'px':''; document.documentElement.style.overflowX='hidden'; }
-addEventListener('resize',scale); scale();
+addEventListener('resize',()=>{scale();audit();}); scale();
 (async()=>{ try{
   let d=window.__SCORE__;
   if(!d){ const p=new URLSearchParams(location.search).get('data')||'scoreboard-2026-10-31-georgia.json'; d=await (await fetch(p)).json(); const ph=new URLSearchParams(location.search).get('phase'); if(ph) d.phase=ph; }
-  await document.fonts.ready; render(d); document.body.dataset.ready='1';
+  await document.fonts.load('800 100px "Barlow Condensed"'); await document.fonts.load('700 40px "Barlow Condensed"'); await document.fonts.ready;
+  render(d); audit(); document.body.dataset.ready='1';
 }catch(e){ document.body.dataset.error=String(e); } })();
 </script></body></html>

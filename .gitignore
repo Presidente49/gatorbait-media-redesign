@@ -11,3 +11,8 @@ deploy/dept-ideas/research/espn/
 # wrangler local state from department tests
 deploy/dept-ideas/**/.wrangler/
 deploy/dept-ideas/**/node_modules/
+# Game-day score cards (Oct. 31, 2026): fabricated TEST renders, phone previews and render receipts stay local
+sports-live/gameday/**/TEST-*
+sports-live/gameday/out/*-390.png
+sports-live/gameday/out/*.receipt.json
+deploy/gameday-live-20261031/**/TEST-*

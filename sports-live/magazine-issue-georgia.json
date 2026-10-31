@@ -11,7 +11,7 @@
   "tagline": "Independent Florida Gators coverage",
   "pageTitle": "GatorBait Magazine | Florida-Georgia Week | Oct. 31, 2026"
  },
- "asOf": "Roundup updated Saturday morning, Oct. 31, 2026, with Buddy Martin's availability-report update and the latest verified Florida-Georgia coverage. Game facts rechecked Oct. 31, 2026, against FloridaGators.com; each linked story retains its publication date.",
+ "asOf": "Roundup updated Saturday morning, Oct. 31, 2026, with Buddy Martin's availability-report update and Loren Meadows' pregame analysis and the latest verified Florida-Georgia coverage. Game facts rechecked Oct. 31, 2026, against FloridaGators.com; each linked story retains its publication date.",
  "cover": {
   "kicker": "Franz Beard · Oct. 28",
   "headline": "Why I despise the Georgia Bulldogs and why you should too",
@@ -128,6 +128,21 @@
  "cards": {
   "label": "Complete Florida-Georgia roundup",
   "items": [
+   {
+    "kicker": "Loren Meadows",
+    "date": "Oct. 31",
+    "title": "Pregame Analysis: Florida Gators (5-2, 3-2) vs. Georgia Bulldogs (6-1, 4-1)",
+    "url": "/post/pregame-analysis-florida-gators-5-2-3-2-vs-georgia-bulldogs-6-1-4-1",
+    "excerpt": "The Cocktail Party moves inside for what could be a defining moment for Sumrall and the Gators. However, quarterback questions and health may make things tough in Atlanta.",
+    "image": {
+     "id": "16b519_3be8a7a2180e4c72ae2bb30ca29ae084",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 2000,
+     "alt": "Archive photo: Florida offensive linemen set up in front of the quarterback during the Nov. 2, 2024, game against Georgia in Jacksonville.",
+     "credit": "Archive photo by Chris Spears, GatorBait Media."
+    }
+   },
    {
     "kicker": "Buddy Martin · Game-day update",
     "date": "Oct. 31",
@@ -427,6 +442,7 @@
   "next": "Florida vs. Georgia · Saturday, Oct. 31 · 3:30 p.m. ET · ABC."
  },
  "topicPaths": [
+  "/post/pregame-analysis-florida-gators-5-2-3-2-vs-georgia-bulldogs-6-1-4-1",
   "/post/florida-s-vernell-brown-iii-questionable-against-georgia-after-friday-downgrade",
   "/post/florida-philo-jones-questionable-georgia-sec-availability-report",
   "/post/the-soothsayer-georgia-in-a-heart-stopper",

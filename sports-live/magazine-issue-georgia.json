@@ -1,17 +1,17 @@
 {
- "$comment": "Florida-Georgia game-week edition updated October 30, 2026. Facts read from FloridaGators.com broadcast information and ESPN event 401856734. The roundup links only existing published canonical reporting and permanent Wix media; Eddie Gilley's verified Oct. 30 column and the Oct. 30 Philo report are included; no photo repeats within the issue. No email or campaign send.",
+ "$comment": "Florida-Georgia game-week edition updated October 31, 2026. Facts read from FloridaGators.com broadcast information and ESPN event 401856734. The roundup links only existing published canonical reporting and permanent Wix media; Buddy Martin's verified morning availability report is the top update, with the latest prior rivalry reporting retained. No photo repeats within the issue. Campaign delivery is handled separately.",
  "id": "2026-10-28-florida-georgia-week",
  "layout": "pregame",
  "liveFeed": false,
  "issue": {
   "number": "Florida-Georgia Week",
   "name": "No. 17 Florida vs. No. 3 Georgia",
-  "date": "Friday, October 30, 2026",
-  "week": "Oct. 30, 2026 · Atlanta",
+  "date": "Saturday, October 31, 2026",
+  "week": "Oct. 31, 2026 · Atlanta",
   "tagline": "Independent Florida Gators coverage",
-  "pageTitle": "GatorBait Magazine | Florida-Georgia Week | Oct. 30, 2026"
+  "pageTitle": "GatorBait Magazine | Florida-Georgia Week | Oct. 31, 2026"
  },
- "asOf": "Roundup updated Oct. 30, 2026, including Eddie Gilley's new Atlanta column and the Oct. 30 report on Florida's quarterback. Game facts checked Oct. 28, 2026: FloridaGators.com broadcast guide and ESPN event 401856734. Each linked story retains its publication date.",
+ "asOf": "Roundup updated Saturday morning, Oct. 31, 2026, with Buddy Martin's availability-report update and the latest verified Florida-Georgia coverage. Game facts rechecked Oct. 31, 2026, against FloridaGators.com; each linked story retains its publication date.",
  "cover": {
   "kicker": "Franz Beard · Oct. 28",
   "headline": "Why I despise the Georgia Bulldogs and why you should too",
@@ -128,6 +128,21 @@
  "cards": {
   "label": "Complete Florida-Georgia roundup",
   "items": [
+   {
+    "kicker": "Buddy Martin · Game-day update",
+    "date": "Oct. 31",
+    "title": "Florida's Vernell Brown III Questionable Against Georgia After Friday Downgrade",
+    "url": "/post/florida-s-vernell-brown-iii-questionable-against-georgia-after-friday-downgrade",
+    "excerpt": "Florida's Friday SEC availability report downgraded Vernell Brown III to questionable for Saturday's rivalry game with Georgia in Atlanta.",
+    "image": {
+     "id": "d3cfa5_6335563003f04dc7a195a56ec12b6f1a",
+     "ext": "jpg",
+     "width": 1036,
+     "height": 1200,
+     "alt": "Vernell Brown III earlier in the 2026 season. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
    {
     "kicker": "GatorBait Staff",
     "date": "Oct. 30",
@@ -412,6 +427,7 @@
   "next": "Florida vs. Georgia · Saturday, Oct. 31 · 3:30 p.m. ET · ABC."
  },
  "topicPaths": [
+  "/post/florida-s-vernell-brown-iii-questionable-against-georgia-after-friday-downgrade",
   "/post/florida-philo-jones-questionable-georgia-sec-availability-report",
   "/post/the-soothsayer-georgia-in-a-heart-stopper",
   "/post/key-to-a-win-in-atlanta",

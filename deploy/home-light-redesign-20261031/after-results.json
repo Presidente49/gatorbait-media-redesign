@@ -1,0 +1,342 @@
+{
+ "ranAt": "2026-10-31T15:33:18.421Z",
+ "file": "sports-live/broadcast-home-light.js",
+ "results": [
+  {
+   "width": 390,
+   "name": "HTTP 200",
+   "ok": true,
+   "detail": "200"
+  },
+  {
+   "width": 390,
+   "name": "candidate file intercepted and served",
+   "ok": true,
+   "detail": "served=1"
+  },
+  {
+   "width": 390,
+   "name": "no uncaught page errors from the skin",
+   "ok": true,
+   "detail": "wixTagManager is not defined | wixTagManager is not defined"
+  },
+  {
+   "width": 390,
+   "name": "no horizontal overflow",
+   "ok": true,
+   "detail": "scrollW=390 vw=390 "
+  },
+  {
+   "width": 390,
+   "name": "no broken images",
+   "ok": true,
+   "detail": "16 imgs "
+  },
+  {
+   "width": 390,
+   "name": "game-day band present and visible",
+   "ok": true,
+   "detail": "rgb(0, 33, 165)"
+  },
+  {
+   "width": 390,
+   "name": "countdown present (kickoff still ahead)",
+   "ok": true,
+   "detail": "00Days03Hrs58Min"
+  },
+  {
+   "width": 390,
+   "name": "Barlow loaded",
+   "ok": true,
+   "detail": "Barlow / Barlow Condensed"
+  },
+  {
+   "width": 390,
+   "name": "light surface (body bg)",
+   "ok": true,
+   "detail": "rgb(244, 246, 250)"
+  },
+  {
+   "width": 390,
+   "name": "Follow GatorBait module present",
+   "ok": true,
+   "detail": "bc-hero > bc-nx > gl-follow > bc-body > sh-lower"
+  },
+  {
+   "width": 390,
+   "name": "Facebook Page Plugin iframe present",
+   "ok": true,
+   "detail": "324x480 https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/gatorbaitmedia&tabs=timeline&width=324"
+  },
+  {
+   "width": 390,
+   "name": "YouTube strip: 3 videos with thumbnails and links",
+   "ok": true,
+   "detail": "https://www.youtube.com/watch?v=wwyroepoBXA https://www.youtube.com/watch?v=XKMbfJYa1sQ https://www.youtube.com/watch?v=FJ1pMdYJNCw | saved"
+  },
+  {
+   "width": 390,
+   "name": "More stories row present",
+   "ok": true,
+   "detail": "4"
+  },
+  {
+   "width": 390,
+   "name": "text contrast AA (99 tested, 0 on photo/gradient skipped)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "width": 430,
+   "name": "HTTP 200",
+   "ok": true,
+   "detail": "200"
+  },
+  {
+   "width": 430,
+   "name": "candidate file intercepted and served",
+   "ok": true,
+   "detail": "served=1"
+  },
+  {
+   "width": 430,
+   "name": "no uncaught page errors from the skin",
+   "ok": true,
+   "detail": "wixTagManager is not defined | wixTagManager is not defined"
+  },
+  {
+   "width": 430,
+   "name": "no horizontal overflow",
+   "ok": true,
+   "detail": "scrollW=430 vw=430 "
+  },
+  {
+   "width": 430,
+   "name": "no broken images",
+   "ok": true,
+   "detail": "16 imgs "
+  },
+  {
+   "width": 430,
+   "name": "game-day band present and visible",
+   "ok": true,
+   "detail": "rgb(0, 33, 165)"
+  },
+  {
+   "width": 430,
+   "name": "countdown present (kickoff still ahead)",
+   "ok": true,
+   "detail": "00Days03Hrs58Min"
+  },
+  {
+   "width": 430,
+   "name": "Barlow loaded",
+   "ok": true,
+   "detail": "Barlow / Barlow Condensed"
+  },
+  {
+   "width": 430,
+   "name": "light surface (body bg)",
+   "ok": true,
+   "detail": "rgb(244, 246, 250)"
+  },
+  {
+   "width": 430,
+   "name": "Follow GatorBait module present",
+   "ok": true,
+   "detail": "bc-hero > bc-nx > gl-follow > bc-body > sh-lower"
+  },
+  {
+   "width": 430,
+   "name": "Facebook Page Plugin iframe present",
+   "ok": true,
+   "detail": "364x480 https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/gatorbaitmedia&tabs=timeline&width=364"
+  },
+  {
+   "width": 430,
+   "name": "YouTube strip: 3 videos with thumbnails and links",
+   "ok": true,
+   "detail": "https://www.youtube.com/watch?v=wwyroepoBXA https://www.youtube.com/watch?v=XKMbfJYa1sQ https://www.youtube.com/watch?v=FJ1pMdYJNCw | saved"
+  },
+  {
+   "width": 430,
+   "name": "More stories row present",
+   "ok": true,
+   "detail": "4"
+  },
+  {
+   "width": 430,
+   "name": "text contrast AA (99 tested, 0 on photo/gradient skipped)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "width": 1366,
+   "name": "HTTP 200",
+   "ok": true,
+   "detail": "200"
+  },
+  {
+   "width": 1366,
+   "name": "candidate file intercepted and served",
+   "ok": true,
+   "detail": "served=1"
+  },
+  {
+   "width": 1366,
+   "name": "no uncaught page errors from the skin",
+   "ok": true,
+   "detail": "wixTagManager is not defined | wixTagManager is not defined"
+  },
+  {
+   "width": 1366,
+   "name": "no horizontal overflow",
+   "ok": true,
+   "detail": "scrollW=1366 vw=1366 "
+  },
+  {
+   "width": 1366,
+   "name": "no broken images",
+   "ok": true,
+   "detail": "16 imgs "
+  },
+  {
+   "width": 1366,
+   "name": "game-day band present and visible",
+   "ok": true,
+   "detail": "rgb(0, 33, 165)"
+  },
+  {
+   "width": 1366,
+   "name": "countdown present (kickoff still ahead)",
+   "ok": true,
+   "detail": "00Days03Hrs57Min"
+  },
+  {
+   "width": 1366,
+   "name": "Barlow loaded",
+   "ok": true,
+   "detail": "Barlow / Barlow Condensed"
+  },
+  {
+   "width": 1366,
+   "name": "light surface (body bg)",
+   "ok": true,
+   "detail": "rgb(244, 246, 250)"
+  },
+  {
+   "width": 1366,
+   "name": "Follow GatorBait module present",
+   "ok": true,
+   "detail": "bc-hero > bc-nx > gl-follow > bc-body > sh-lower"
+  },
+  {
+   "width": 1366,
+   "name": "Facebook Page Plugin iframe present",
+   "ok": true,
+   "detail": "458x640 https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/gatorbaitmedia&tabs=timeline&width=458"
+  },
+  {
+   "width": 1366,
+   "name": "YouTube strip: 3 videos with thumbnails and links",
+   "ok": true,
+   "detail": "https://www.youtube.com/watch?v=wwyroepoBXA https://www.youtube.com/watch?v=XKMbfJYa1sQ https://www.youtube.com/watch?v=FJ1pMdYJNCw | saved"
+  },
+  {
+   "width": 1366,
+   "name": "More stories row present",
+   "ok": true,
+   "detail": "4"
+  },
+  {
+   "width": 1366,
+   "name": "text contrast AA (149 tested, 0 on photo/gradient skipped)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "width": 1920,
+   "name": "HTTP 200",
+   "ok": true,
+   "detail": "200"
+  },
+  {
+   "width": 1920,
+   "name": "candidate file intercepted and served",
+   "ok": true,
+   "detail": "served=1"
+  },
+  {
+   "width": 1920,
+   "name": "no uncaught page errors from the skin",
+   "ok": true,
+   "detail": "wixTagManager is not defined | wixTagManager is not defined"
+  },
+  {
+   "width": 1920,
+   "name": "no horizontal overflow",
+   "ok": true,
+   "detail": "scrollW=1920 vw=1920 "
+  },
+  {
+   "width": 1920,
+   "name": "no broken images",
+   "ok": true,
+   "detail": "16 imgs "
+  },
+  {
+   "width": 1920,
+   "name": "game-day band present and visible",
+   "ok": true,
+   "detail": "rgb(0, 33, 165)"
+  },
+  {
+   "width": 1920,
+   "name": "countdown present (kickoff still ahead)",
+   "ok": true,
+   "detail": "00Days03Hrs57Min"
+  },
+  {
+   "width": 1920,
+   "name": "Barlow loaded",
+   "ok": true,
+   "detail": "Barlow / Barlow Condensed"
+  },
+  {
+   "width": 1920,
+   "name": "light surface (body bg)",
+   "ok": true,
+   "detail": "rgb(244, 246, 250)"
+  },
+  {
+   "width": 1920,
+   "name": "Follow GatorBait module present",
+   "ok": true,
+   "detail": "bc-hero > bc-nx > gl-follow > bc-body > sh-lower"
+  },
+  {
+   "width": 1920,
+   "name": "Facebook Page Plugin iframe present",
+   "ok": true,
+   "detail": "458x640 https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/gatorbaitmedia&tabs=timeline&width=458"
+  },
+  {
+   "width": 1920,
+   "name": "YouTube strip: 3 videos with thumbnails and links",
+   "ok": true,
+   "detail": "https://www.youtube.com/watch?v=wwyroepoBXA https://www.youtube.com/watch?v=XKMbfJYa1sQ https://www.youtube.com/watch?v=FJ1pMdYJNCw | saved"
+  },
+  {
+   "width": 1920,
+   "name": "More stories row present",
+   "ok": true,
+   "detail": "4"
+  },
+  {
+   "width": 1920,
+   "name": "text contrast AA (149 tested, 0 on photo/gradient skipped)",
+   "ok": true,
+   "detail": ""
+  }
+ ]
+}

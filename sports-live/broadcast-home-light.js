@@ -587,7 +587,7 @@ function loadCfg(){return get(CFG+'?t='+Math.floor(Date.now()/36e5)).then(functi
 function graphic(root){var im=root.querySelector('.bc-hero .sh-lead img'),u=im&&(im.currentSrc||im.src)||'',id=(/\/media\/([0-9a-f]+_[0-9a-f]+)/.exec(u)||[])[1];return!!u&&(/~mv2\.png(\/|$|\?)/i.test(u)||!!(id&&D.covers&&D.covers.indexOf(id)>=0));}
 function loadSB(){return get(SB+'?t='+minute()).then(function(d){if(d&&d.team&&('next' in d))D.sb=d;}).catch(function(){});}
 function ymd(t){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date(t)).replace(/-/g,'');}
-function window_(){var n=D.sb&&(D.sb.live||D.sb.next);if(!n)return null;var k=Date.parse(n.kickoffIso||n.date);return isFinite(k)&&Date.now()>k-HR&&Date.now()<k+6*HR?{id:String(n.eventId),k:k}:null;}
+function window_(){var sb=D.sb;if(!sb)return null;var lv=sb.live,n=sb.next,s=lv||n;if(!s)return null;var k=Date.parse(s.kickoffIso||s.date);if(!isFinite(k)&&lv&&n&&String(n.eventId)===String(lv.eventId))k=Date.parse(n.kickoffIso||n.date);if(!isFinite(k)&&lv)k=Date.now();return isFinite(k)&&Date.now()>k-HR&&Date.now()<k+6*HR?{id:String(s.eventId),k:k}:null;}
 function loadLive(){var w=window_();if(!w){D.live=null;return Promise.resolve();}
 return get(ESPN+ymd(w.k)).then(function(d){var e=(d.events||[]).find(function(e){return String(e.id)===w.id;});if(!e)return;var c=e.competitions[0],
 us=c.competitors.find(function(t){return String(t.id||t.team.id)==='57';}),th=c.competitors.find(function(t){return t!==us;});if(!us||!th)return;
@@ -604,6 +604,8 @@ function post(h){return/^\/post\//.test(h||'');}
 /* One model for the ticker, the scoreboard panel and the next-up bar. */
 function model(root){var sb=D.sb,lv=D.live,g=window.__GBM_GAMEDAY__,now=Date.now(),M={last:null,live:null,next:null};
 var fr=sb&&sb.team&&sb.team.rank;
+/* Pages feed fallback: when ESPN is unreachable but scoreboard.json carries a live record for the next game, show it. */
+if(!lv&&sb&&sb.live&&sb.live.score&&sb.next&&String(sb.live.eventId)===String(sb.next.eventId)&&now-Date.parse(sb.next.kickoffIso)<6*HR){var pl=sb.live,PQ=['1st','2nd','3rd','4th'];lv={id:String(pl.eventId),state:'in',done:false,detail:(pl.clock||'')+(pl.period?' - '+(PQ[pl.period-1]||'OT'):''),fla:Number(pl.score.fla),opp:Number(pl.score.opp),oppName:sb.next.opponent,oppRank:sb.next.opponentRank,flaRank:fr,home:!!sb.next.home,neutral:!!sb.next.neutral,date:sb.next.kickoffIso};}
 if(lv&&lv.state==='in')M.live={opp:lv.oppName,oppRank:lv.oppRank,flaRank:lv.flaRank,fla:lv.fla,oppS:lv.opp,home:lv.home,neutral:lv.neutral,detail:lv.detail,date:lv.date};
 if(lv&&lv.state==='post'&&lv.done)M.last={opp:lv.oppName,oppRank:lv.oppRank,fla:lv.fla,oppS:lv.opp,home:lv.home,neutral:lv.neutral,date:lv.date,links:[]};
 else if(sb&&sb.last&&sb.last.score)M.last={opp:sb.last.opponent,oppRank:sb.last.opponentRank,fla:sb.last.score.fla,oppS:sb.last.score.opp,home:sb.last.home,neutral:sb.last.neutral,date:sb.last.date,links:[sb.last.recapUrl,sb.last.galleryUrl].filter(post)};

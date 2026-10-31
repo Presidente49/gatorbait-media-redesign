@@ -1,75 +1,75 @@
 {
- "updatedAt": "2026-10-31T22:59:53Z",
+ "updatedAt": "2026-10-31T23:12:16Z",
  "season": 2026,
  "team": {
   "name": "Florida",
   "rank": 17,
-  "record": "5-2",
-  "conf": "3-2"
+  "record": "5-3",
+  "conf": "3-3"
  },
  "last": {
-  "eventId": "401856724",
-  "opponent": "Texas",
-  "opponentRank": 7,
+  "eventId": "401856734",
+  "opponent": "Georgia",
+  "opponentRank": 3,
   "home": false,
-  "neutral": false,
-  "date": "2026-10-17T16:00:00Z",
+  "neutral": true,
+  "date": "2026-10-31T19:30:00Z",
   "status": "final",
   "score": {
-   "fla": 27,
-   "opp": 24
+   "fla": 8,
+   "opp": 27
   },
   "quarters": {
    "fla": [
     0,
-    10,
-    7,
-    10
+    0,
+    0,
+    8
    ],
    "opp": [
-    10,
     7,
+    17,
     0,
-    7
+    3
    ]
   },
-  "venue": "DKR-Texas Memorial Stadium",
-  "recapUrl": null,
+  "venue": "Mercedes-Benz Stadium",
+  "recapUrl": "https://www.gatorbaitmedia.com/post/gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia",
   "galleryUrl": null,
   "tape": {
-   "totalYards": 313,
-   "rushingYards": 158,
-   "firstDowns": 21,
-   "attendance": 103989
+   "totalYards": 246,
+   "rushingYards": 48,
+   "firstDowns": 15,
+   "attendance": null
   },
   "leaders": [
    [
     "Passing Yards",
     "Tramell Jones Jr.",
-    "22/35, 155 YDS, 2 TD"
+    "18/25, 172 YDS, 1 INT"
    ],
    [
     "Rushing Yards",
     "Jadan Baugh",
-    "25 CAR, 91 YDS, 1 TD"
+    "17 CAR, 38 YDS"
    ],
    [
     "Receiving Yards",
-    "Eric Singleton Jr.",
-    "6 REC, 32 YDS"
+    "Bailey Stockton",
+    "8 REC, 76 YDS"
    ]
   ]
  },
  "next": {
-  "eventId": "401856734",
-  "opponent": "Georgia",
-  "opponentRank": 3,
-  "opponentRecord": "6-1",
-  "home": false,
-  "neutral": true,
-  "kickoffIso": "2026-10-31T19:30:00Z",
-  "tv": "ABC",
-  "venue": "Mercedes-Benz Stadium",
+  "eventId": "401856739",
+  "opponent": "Oklahoma",
+  "opponentRank": null,
+  "opponentRecord": "4-3",
+  "home": true,
+  "neutral": false,
+  "kickoffIso": "2026-11-08T00:45:00Z",
+  "tv": "SEC Network",
+  "venue": "Ben Hill Griffin Stadium",
   "previewUrl": null
  },
  "schedule": [
@@ -183,19 +183,22 @@
    "date": "2026-10-31T19:30:00Z",
    "opponent": "Georgia",
    "opponentRank": 3,
-   "opponentRecord": "6-1",
+   "opponentRecord": "7-1",
    "home": false,
-   "status": "in-progress",
-   "score": null,
+   "status": "final",
+   "score": {
+    "fla": 8,
+    "opp": 27
+   },
    "tv": "ABC",
-   "storyUrl": null
+   "storyUrl": "https://www.gatorbaitmedia.com/post/gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia"
   },
   {
    "eventId": "401856739",
    "date": "2026-11-08T00:45:00Z",
    "opponent": "Oklahoma",
    "opponentRank": null,
-   "opponentRecord": null,
+   "opponentRecord": "4-3",
    "home": true,
    "status": "scheduled",
    "score": null,
@@ -241,14 +244,14 @@
  ],
  "standings": [
   {
-   "team": "Kentucky",
+   "team": "Georgia",
    "confRecord": "5-1",
    "overall": "7-1"
   },
   {
-   "team": "Georgia",
-   "confRecord": "4-1",
-   "overall": "6-1"
+   "team": "Kentucky",
+   "confRecord": "5-1",
+   "overall": "7-1"
   },
   {
    "team": "Alabama",
@@ -272,8 +275,8 @@
   },
   {
    "team": "Florida",
-   "confRecord": "3-2",
-   "overall": "5-2"
+   "confRecord": "3-3",
+   "overall": "5-3"
   },
   {
    "team": "Missouri",
@@ -321,15 +324,5 @@
    "overall": "3-5"
   }
  ],
- "live": {
-  "eventId": "401856734",
-  "clock": "1:52",
-  "period": 4,
-  "score": {
-   "fla": 8,
-   "opp": 27
-  },
-  "possession": "opp",
-  "lastPlay": "Timeout Georgia, clock 02:00"
- }
+ "live": null
 }

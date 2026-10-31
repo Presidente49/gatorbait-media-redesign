@@ -1,5 +1,5 @@
 {
- "confRecord": "3-2",
+ "confRecord": "3-3",
  "finals": [
   "401856637",
   "401856672",
@@ -7,7 +7,8 @@
   "401856699",
   "401856708",
   "401856714",
-  "401856724"
+  "401856724",
+  "401856734"
  ],
  "games": [
   {
@@ -86,8 +87,9 @@
    "k": "2026-10-31T19:30Z",
    "n": true,
    "o": "vs. No. 3 Georgia",
-   "t": "3:30 p.m.",
-   "tv": "ABC"
+   "r": "L",
+   "rec": "5-3",
+   "s": "8-27"
   },
   {
    "d": "Sat., Nov. 7",
@@ -130,7 +132,7 @@
   "def": [
    [
     "Myles Graham",
-    "48",
+    "55",
     "3.5",
     "3.5",
     "0",
@@ -138,19 +140,35 @@
    ],
    [
     "Aaron Chiles",
-    "37",
-    "3",
+    "43",
+    "4",
     "0",
     "0",
     "2"
    ],
    [
     "Jayden Woods",
-    "28",
-    "7",
+    "32",
+    "8",
     "4.5",
     "0",
     "0"
+   ],
+   [
+    "DJ Coleman",
+    "32",
+    "1",
+    "0",
+    "2",
+    "3"
+   ],
+   [
+    "Cormani McClain",
+    "27",
+    "2",
+    "0",
+    "1",
+    "2"
    ],
    [
     "Jaden Robinson",
@@ -159,22 +177,6 @@
     "1.5",
     "0",
     "2"
-   ],
-   [
-    "Kanye Clark",
-    "25",
-    "2.5",
-    "0",
-    "0",
-    "1"
-   ],
-   [
-    "Cormani McClain",
-    "25",
-    "2",
-    "0",
-    "1",
-    "1"
    ]
   ],
   "defBest": {
@@ -183,12 +185,12 @@
     "2"
    ],
    "SACKS": [
-    "Jayden Woods",
+    "Emmanuel Oyebadejo, Jayden Woods",
     "4.5"
    ],
    "TFL": [
     "Jayden Woods",
-    "7"
+    "8"
    ]
   },
   "kick": [
@@ -210,17 +212,17 @@
   "pass": [
    [
     "Aaron Philo",
-    "105-149",
-    "1,341",
+    "110-156",
+    "1,367",
     "9",
-    "3"
+    "5"
    ],
    [
     "Tramell Jones Jr.",
-    "45-64",
-    "407",
+    "63-89",
+    "579",
     "4",
-    "2"
+    "3"
    ],
    [
     "Kahleil Jackson",
@@ -233,17 +235,17 @@
   "rec": [
    [
     "Dallas Wilson",
-    "29",
-    "403",
-    "13.9",
+    "31",
+    "417",
+    "13.5",
     "3",
     "40"
    ],
    [
     "Bailey Stockton",
-    "27",
-    "289",
-    "10.7",
+    "35",
+    "365",
+    "10.4",
     "2",
     "59"
    ],
@@ -257,25 +259,25 @@
    ],
    [
     "TJ Abrams",
-    "10",
-    "180",
-    "18.0",
+    "11",
+    "189",
+    "17.2",
     "1",
     "63"
    ],
    [
     "Luke Harpring",
-    "13",
-    "142",
-    "10.9",
+    "14",
+    "165",
+    "11.8",
     "0",
-    "22"
+    "23"
    ],
    [
     "Amir Jackson",
-    "5",
-    "106",
-    "21.2",
+    "7",
+    "133",
+    "19.0",
     "1",
     "48"
    ]
@@ -283,9 +285,9 @@
   "rush": [
    [
     "Jadan Baugh",
-    "135",
-    "763",
-    "5.7",
+    "152",
+    "801",
+    "5.3",
     "13",
     "75"
    ],
@@ -307,10 +309,10 @@
    ],
    [
     "Tramell Jones Jr.",
-    "15",
-    "66",
-    "4.4",
-    "0",
+    "24",
+    "77",
+    "3.2",
+    "1",
     "14"
    ],
    [
@@ -323,9 +325,9 @@
    ],
    [
     "Evan Pryor",
-    "18",
-    "44",
-    "2.4",
+    "19",
+    "41",
+    "2.2",
     "0",
     "11"
    ]
@@ -336,37 +338,46 @@
    {
     "PD": 2,
     "SACKS": 0,
-    "SOLO": 16,
-    "TFL": 3,
-    "TOT": 37,
-    "g": 7,
+    "SOLO": 20,
+    "TFL": 4,
+    "TOT": 43,
+    "g": 8,
     "name": "Aaron Chiles"
    },
    {
     "PD": 0,
     "SACKS": 0,
-    "SOLO": 11,
+    "SOLO": 14,
     "TFL": 0,
-    "TOT": 22,
-    "g": 7,
+    "TOT": 25,
+    "g": 8,
     "name": "Alfonzo Allen Jr."
+   },
+   {
+    "PD": 0,
+    "SACKS": 0,
+    "SOLO": 1,
+    "TFL": 0,
+    "TOT": 1,
+    "g": 1,
+    "name": "Bailey Stockton"
    },
    {
     "PD": 2,
     "SACKS": 0.5,
     "SOLO": 16,
     "TFL": 1.5,
-    "TOT": 21,
-    "g": 7,
+    "TOT": 22,
+    "g": 8,
     "name": "Ben Hanks III"
    },
    {
-    "PD": 0,
+    "PD": 2,
     "SACKS": 0.5,
-    "SOLO": 6,
+    "SOLO": 9,
     "TFL": 4.5,
-    "TOT": 19,
-    "g": 7,
+    "TOT": 23,
+    "g": 8,
     "name": "Brendan Bett"
    },
    {
@@ -390,10 +401,10 @@
    {
     "PD": 3,
     "SACKS": 0,
-    "SOLO": 13,
+    "SOLO": 18,
     "TFL": 0,
-    "TOT": 21,
-    "g": 6,
+    "TOT": 26,
+    "g": 7,
     "name": "Bryce Thornton"
    },
    {
@@ -407,22 +418,22 @@
    },
    {
     "INT": 1,
-    "PD": 1,
+    "PD": 2,
     "SACKS": 0,
-    "SOLO": 20,
+    "SOLO": 21,
     "TFL": 2,
-    "TOT": 25,
-    "g": 7,
+    "TOT": 27,
+    "g": 8,
     "name": "Cormani McClain"
    },
    {
     "INT": 2,
     "PD": 3,
     "SACKS": 0,
-    "SOLO": 8,
+    "SOLO": 14,
     "TFL": 1,
-    "TOT": 24,
-    "g": 7,
+    "TOT": 32,
+    "g": 8,
     "name": "DJ Coleman"
    },
    {
@@ -463,12 +474,12 @@
     "name": "Duke Clark"
    },
    {
-    "PD": 2,
-    "SACKS": 3.5,
-    "SOLO": 6,
-    "TFL": 4.5,
-    "TOT": 12,
-    "g": 6,
+    "PD": 3,
+    "SACKS": 4.5,
+    "SOLO": 8,
+    "TFL": 5.5,
+    "TOT": 14,
+    "g": 7,
     "name": "Emmanuel Oyebadejo"
    },
    {
@@ -510,19 +521,19 @@
    {
     "PD": 0,
     "SACKS": 4.5,
-    "SOLO": 16,
-    "TFL": 7.0,
-    "TOT": 28,
-    "g": 7,
+    "SOLO": 20,
+    "TFL": 8.0,
+    "TOT": 32,
+    "g": 8,
     "name": "Jayden Woods"
    },
    {
     "PD": 3,
     "SACKS": 0.5,
-    "SOLO": 8,
+    "SOLO": 9,
     "TFL": 1.5,
-    "TOT": 21,
-    "g": 7,
+    "TOT": 22,
+    "g": 8,
     "name": "Jeramiah McCloud"
    },
    {
@@ -537,10 +548,10 @@
    {
     "PD": 0,
     "SACKS": 0,
-    "SOLO": 2,
+    "SOLO": 3,
     "TFL": 0.5,
-    "TOT": 5,
-    "g": 4,
+    "TOT": 6,
+    "g": 5,
     "name": "Joseph Mbatchou"
    },
    {
@@ -564,10 +575,10 @@
    {
     "PD": 0,
     "SACKS": 2,
-    "SOLO": 7,
+    "SOLO": 10,
     "TFL": 3,
-    "TOT": 15,
-    "g": 6,
+    "TOT": 18,
+    "g": 7,
     "name": "Kamran James"
    },
    {
@@ -600,19 +611,19 @@
    {
     "PD": 3,
     "SACKS": 0,
-    "SOLO": 11,
-    "TFL": 2,
-    "TOT": 22,
-    "g": 7,
+    "SOLO": 13,
+    "TFL": 3,
+    "TOT": 24,
+    "g": 8,
     "name": "Lagonza Hayward"
    },
    {
     "PD": 0,
     "SACKS": 3.5,
-    "SOLO": 23,
+    "SOLO": 29,
     "TFL": 3.5,
-    "TOT": 48,
-    "g": 7,
+    "TOT": 55,
+    "g": 8,
     "name": "Myles Graham"
    },
    {
@@ -644,11 +655,20 @@
    },
    {
     "PD": 0,
+    "SACKS": 0,
+    "SOLO": 1,
+    "TFL": 0,
+    "TOT": 1,
+    "g": 1,
+    "name": "TJ Shanahan Jr."
+   },
+   {
+    "PD": 0,
     "SACKS": 1,
-    "SOLO": 5,
+    "SOLO": 10,
     "TFL": 2,
-    "TOT": 7,
-    "g": 3,
+    "TOT": 14,
+    "g": 4,
     "name": "Ty Jackson"
    },
    {
@@ -684,12 +704,12 @@
   ],
   "passing": [
    {
-    "INT": 3,
+    "INT": 5,
     "TD": 9,
-    "YDS": 1341,
-    "att": 149,
-    "c": 105,
-    "g": 6,
+    "YDS": 1367,
+    "att": 156,
+    "c": 110,
+    "g": 7,
     "name": "Aaron Philo"
    },
    {
@@ -702,30 +722,30 @@
     "name": "Kahleil Jackson"
    },
    {
-    "INT": 2,
+    "INT": 3,
     "TD": 4,
-    "YDS": 407,
-    "att": 64,
-    "c": 45,
-    "g": 5,
+    "YDS": 579,
+    "att": 89,
+    "c": 63,
+    "g": 6,
     "name": "Tramell Jones Jr."
    }
   ],
   "receiving": [
    {
     "LONG": 48,
-    "REC": 5,
+    "REC": 7,
     "TD": 1,
-    "YDS": 106,
-    "g": 4,
+    "YDS": 133,
+    "g": 5,
     "name": "Amir Jackson"
    },
    {
     "LONG": 59,
-    "REC": 27,
+    "REC": 35,
     "TD": 2,
-    "YDS": 289,
-    "g": 7,
+    "YDS": 365,
+    "g": 8,
     "name": "Bailey Stockton"
    },
    {
@@ -738,10 +758,10 @@
    },
    {
     "LONG": 40,
-    "REC": 29,
+    "REC": 31,
     "TD": 3,
-    "YDS": 403,
-    "g": 7,
+    "YDS": 417,
+    "g": 8,
     "name": "Dallas Wilson"
    },
    {
@@ -754,10 +774,10 @@
    },
    {
     "LONG": 38,
-    "REC": 9,
+    "REC": 13,
     "TD": 0,
-    "YDS": 82,
-    "g": 4,
+    "YDS": 101,
+    "g": 5,
     "name": "Eric Singleton Jr."
    },
    {
@@ -786,10 +806,10 @@
    },
    {
     "LONG": 14,
-    "REC": 2,
+    "REC": 4,
     "TD": 0,
-    "YDS": 21,
-    "g": 1,
+    "YDS": 30,
+    "g": 2,
     "name": "Justin Williams"
    },
    {
@@ -802,26 +822,26 @@
    },
    {
     "LONG": 10,
-    "REC": 4,
+    "REC": 6,
     "TD": 2,
-    "YDS": 34,
-    "g": 3,
+    "YDS": 49,
+    "g": 4,
     "name": "Lacota Dippre"
    },
    {
     "LONG": 8,
-    "REC": 1,
+    "REC": 2,
     "TD": 0,
-    "YDS": 8,
-    "g": 1,
+    "YDS": 14,
+    "g": 2,
     "name": "London Montgomery"
    },
    {
-    "LONG": 22,
-    "REC": 13,
+    "LONG": 23,
+    "REC": 14,
     "TD": 0,
-    "YDS": 142,
-    "g": 7,
+    "YDS": 165,
+    "g": 8,
     "name": "Luke Harpring"
    },
    {
@@ -842,10 +862,10 @@
    },
    {
     "LONG": 63,
-    "REC": 10,
+    "REC": 11,
     "TD": 1,
-    "YDS": 180,
-    "g": 5,
+    "YDS": 189,
+    "g": 6,
     "name": "TJ Abrams"
    },
    {
@@ -915,27 +935,27 @@
     "name": "Duke Clark"
    },
    {
-    "CAR": 4,
+    "CAR": 5,
     "LONG": 8,
     "TD": 0,
-    "YDS": 8,
-    "g": 3,
+    "YDS": 10,
+    "g": 4,
     "name": "Eric Singleton Jr."
    },
    {
-    "CAR": 18,
+    "CAR": 19,
     "LONG": 11,
     "TD": 0,
-    "YDS": 44,
-    "g": 6,
+    "YDS": 41,
+    "g": 7,
     "name": "Evan Pryor"
    },
    {
-    "CAR": 135,
+    "CAR": 152,
     "LONG": 75,
     "TD": 13,
-    "YDS": 763,
-    "g": 7,
+    "YDS": 801,
+    "g": 8,
     "name": "Jadan Baugh"
    },
    {
@@ -947,11 +967,11 @@
     "name": "London Montgomery"
    },
    {
-    "CAR": 15,
+    "CAR": 24,
     "LONG": 14,
-    "TD": 0,
-    "YDS": 66,
-    "g": 4,
+    "TD": 1,
+    "YDS": 77,
+    "g": 5,
     "name": "Tramell Jones Jr."
    },
    {
@@ -964,90 +984,90 @@
    }
   ]
  },
- "record": "5-2",
+ "record": "5-3",
  "season": 2026,
  "team": "Florida",
  "teamRows": [
   [
    "Points per game",
-   "39.6",
-   "28.3"
+   "35.6",
+   "28.1"
   ],
   [
    "Total yards per game",
-   "450.9",
-   "376.6"
+   "425.2",
+   "369.2"
   ],
   [
    "Rushing yards per game",
-   "194.3",
-   "121.6"
+   "176.0",
+   "133.5"
   ],
   [
    "Yards per carry",
-   "4.8",
-   "3.8"
+   "4.5",
+   "4.0"
   ],
   [
    "Passing yards per game",
-   "256.6",
-   "255.0"
+   "249.2",
+   "235.8"
   ],
   [
    "Completions-attempts",
-   "151-214 (71%)",
-   "160-245 (65%)"
+   "174-246 (71%)",
+   "173-268 (65%)"
   ],
   [
    "First downs per game",
-   "23.6",
-   "20.3"
+   "22.5",
+   "20.1"
   ],
   [
    "Third-down conversions",
-   "41-91 (45%)",
-   "45-102 (44%)"
+   "45-103 (44%)",
+   "51-117 (44%)"
   ],
   [
    "Turnovers",
-   "7",
-   "9"
+   "11",
+   "10"
   ],
   [
    "Penalties-yards",
-   "55-522",
-   "41-395"
+   "63-600",
+   "45-427"
   ],
   [
    "Time of possession (avg.)",
-   "33:10",
-   "26:50"
+   "32:30",
+   "27:30"
   ]
  ],
- "through": "Oct. 17 at Texas",
+ "through": "Oct. 31 vs. Georgia",
  "tiles": [
   [
    "Record",
-   "5-2",
-   "3-2 SEC"
+   "5-3",
+   "3-3 SEC"
   ],
   [
    "Points per game",
-   "39.6",
-   "28.3 allowed"
+   "35.6",
+   "28.1 allowed"
   ],
   [
    "Yards per game",
-   "450.9",
-   "376.6 allowed"
+   "425.2",
+   "369.2 allowed"
   ],
   [
    "Turnover margin",
-   "+2",
-   "7 games"
+   "-1",
+   "8 games"
   ]
  ],
- "updated": "2026-10-27T18:08:54Z",
- "updatedLabel": "Oct. 27, 2026, 2:08 p.m. ET",
+ "updated": "2026-10-31T23:12:43Z",
+ "updatedLabel": "Oct. 31, 2026, 7:12 p.m. ET",
  "v": 1
 }

@@ -13,20 +13,21 @@
  },
  "asOf": "Roundup updated Saturday morning, Oct. 31, 2026, with Buddy Martin's availability-report update and Loren Meadows' pregame analysis and the latest verified Florida-Georgia coverage. Game facts rechecked Oct. 31, 2026, against FloridaGators.com; each linked story retains its publication date.",
  "cover": {
-  "kicker": "Franz Beard · Oct. 28",
-  "headline": "Why I despise the Georgia Bulldogs and why you should too",
-  "dek": "Franz Beard's annual rivalry column. Florida faces Georgia in Atlanta on Saturday.",
-  "byline": "By Franz Beard",
-  "url": "/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+  "kicker": "Rivalry Edition · Oct. 31",
+  "headline": "New Address. Same Rivalry.",
+  "dek": "The world's largest indoor cocktail party.",
+  "byline": "GatorBait Magazine",
+  "url": "/post/pregame-analysis-florida-gators-5-2-3-2-vs-georgia-bulldogs-6-1-4-1",
   "image": {
-   "id": "16b519_2abae31d268b4849be2ed775dd1b7e0a",
+   "id": "d3cfa5_384cb0ff6b7643ebad63e7ad44b867ba",
    "ext": "jpg",
-   "width": 3000,
-   "height": 2000,
-   "alt": "Archive photo: A Florida running back (No. 24) carries the ball past Georgia defenders during the Nov. 2, 2024 game in Jacksonville.",
-   "credit": "Archive photo by Chris Spears, GatorBait Media."
+   "width": 1086,
+   "height": 1448,
+   "alt": "GatorBait Magazine Rivalry Edition cover, Oct. 31, 2026: Mercedes-Benz Stadium in Atlanta under the headline New Address. Same Rivalry. Florida vs. Georgia, the world's largest indoor cocktail party.",
+   "credit": "Cover art: GatorBait Media."
   },
-  "directLink": true
+  "directLink": true,
+  "poster": true
  },
  "game": {
   "label": "Florida vs. Georgia",

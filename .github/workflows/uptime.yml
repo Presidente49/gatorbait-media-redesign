@@ -1,0 +1,71 @@
+name: GatorBait uptime probe
+
+# Measures the homepage, /blog-feed.xml, /magazine and the newest /post/ every 10 minutes and keeps a rolling
+# 7-day record in sports-live/uptime.json (served from GitHub Pages). Read-only against the live site: plain GETs.
+# Between commits the running record lives in the Actions cache, so the hourly commit still reflects every check.
+# Same bot identity, push-retry loop and Pages-build request as refresh-newsroom-feed.yml. Default GITHUB_TOKEN only.
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/uptime/**'
+      - '.github/workflows/uptime.yml'
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: uptime-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Unit tests
+        run: node --test automation/uptime/probe.test.mjs
+      - name: Restore the running record (uncommitted checks since the last hourly commit)
+        uses: actions/cache/restore@v4
+        with:
+          path: .uptime-state
+          key: uptime-state-${{ github.run_id }}
+          restore-keys: uptime-state-
+      - name: Probe the site
+        id: probe
+        run: node automation/uptime/probe.mjs
+      - name: Save the running record
+        if: ${{ always() }}
+        uses: actions/cache/save@v4
+        with:
+          path: .uptime-state
+          key: uptime-state-${{ github.run_id }}
+      - name: Commit sports-live/uptime.json when it changed meaningfully or hourly, and request the existing Pages publisher
+        if: ${{ steps.probe.outputs.commit == 'true' }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git config user.name 'gatorbait-newsroom-bot'
+          git config user.email 'brenden@gatorbaitmedia.com'
+          git add sports-live/uptime.json
+          git commit -m 'data: refresh site uptime record'
+          pushed=false
+          for i in 1 2 3; do
+            if git push; then pushed=true; break; fi
+            git pull --rebase --autostash origin "$GITHUB_REF_NAME"
+          done
+          [ "$pushed" = true ] || { echo 'push failed after 3 tries; uptime record not published' >&2; exit 1; }
+          gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"

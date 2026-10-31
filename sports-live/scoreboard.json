@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-27T11:01:29Z",
+ "updatedAt": "2026-10-31T19:58:08Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -185,7 +185,7 @@
    "opponentRank": 3,
    "opponentRecord": "6-1",
    "home": false,
-   "status": "scheduled",
+   "status": "in-progress",
    "score": null,
    "tv": "ABC",
    "storyUrl": null
@@ -321,5 +321,15 @@
    "overall": "3-5"
   }
  ],
- "live": null
+ "live": {
+  "eventId": "401856734",
+  "clock": "8:18",
+  "period": 1,
+  "score": {
+   "fla": 0,
+   "opp": 0
+  },
+  "possession": "fla",
+  "lastPlay": "(09:03) Shotgun #13 J.Baugh rush middle for 3 yards gain to the UF 28 (#9 C.Cole)"
+ }
 }

@@ -389,6 +389,10 @@ C+=`
 @ .bc-tw:focus-within .bc-trk{animation:none;transform:none}
 @media(prefers-reduced-motion:reduce){@ .bc-pause{display:none}}
 @media(max-width:820px){@ .bc-sc .bc-nm{display:block!important;position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}}
+/* Live scoreboard: readable on phones (names, ranks, clock), no empty Next-up bar while live; desktop card keeps rows together. */
+@ .bc-nx:empty,@ .bc-nx:not(:has(*)){display:none!important}
+@media(min-width:821px){@ .bc-sc{align-content:start!important;gap:14px!important}}
+@media(max-width:820px){@ .bc-sc{grid-template-columns:minmax(0,1fr)!important;gap:8px!important;padding:12px 14px 14px!important}@ .bc-sc .bc-lbl{width:100%;font-size:12px}@ .bc-sc .bc-lbl span{display:inline!important;font-size:12px!important;color:#4B5563}@ .bc-sc .bc-tm{display:grid!important;grid-template-columns:44px minmax(0,1fr) auto!important;align-items:center;gap:10px!important;padding:8px 10px;border-radius:8px;background:#F4F6FA;min-width:0}@ .bc-sc .bc-ab{width:44px;height:36px;font-size:15px!important;display:grid;place-items:center;border-radius:6px}@ .bc-sc .bc-nm{position:static!important;width:auto!important;height:auto!important;margin:0!important;padding:0!important;clip:auto!important;clip-path:none!important;overflow:visible!important;white-space:normal!important;font-size:20px!important;line-height:1.05;font-weight:800}@ .bc-sc .bc-nm small{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}@ .bc-sc .bc-pt{font-size:30px!important;width:auto!important;min-width:36px;text-align:right;line-height:1}}
 `;
 /* Light layer: scoped under html.gb-light, appended after every dark rule. */
 var L=`
@@ -583,7 +587,7 @@ function loadCfg(){return get(CFG+'?t='+Math.floor(Date.now()/36e5)).then(functi
 function graphic(root){var im=root.querySelector('.bc-hero .sh-lead img'),u=im&&(im.currentSrc||im.src)||'',id=(/\/media\/([0-9a-f]+_[0-9a-f]+)/.exec(u)||[])[1];return!!u&&(/~mv2\.png(\/|$|\?)/i.test(u)||!!(id&&D.covers&&D.covers.indexOf(id)>=0));}
 function loadSB(){return get(SB+'?t='+minute()).then(function(d){if(d&&d.team&&('next' in d))D.sb=d;}).catch(function(){});}
 function ymd(t){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date(t)).replace(/-/g,'');}
-function window_(){var n=D.sb&&(D.sb.live||D.sb.next);if(!n)return null;var k=Date.parse(n.kickoffIso||n.date);return isFinite(k)&&Date.now()>k-HR&&Date.now()<k+6*HR?{id:String(n.eventId),k:k}:null;}
+function window_(){var sb=D.sb;if(!sb)return null;var lv=sb.live,n=sb.next,s=lv||n;if(!s)return null;var k=Date.parse(s.kickoffIso||s.date);if(!isFinite(k)&&lv&&n&&String(n.eventId)===String(lv.eventId))k=Date.parse(n.kickoffIso||n.date);if(!isFinite(k)&&lv)k=Date.now();return isFinite(k)&&Date.now()>k-HR&&Date.now()<k+6*HR?{id:String(s.eventId),k:k}:null;}
 function loadLive(){var w=window_();if(!w){D.live=null;return Promise.resolve();}
 return get(ESPN+ymd(w.k)).then(function(d){var e=(d.events||[]).find(function(e){return String(e.id)===w.id;});if(!e)return;var c=e.competitions[0],
 us=c.competitors.find(function(t){return String(t.id||t.team.id)==='57';}),th=c.competitors.find(function(t){return t!==us;});if(!us||!th)return;
@@ -600,6 +604,8 @@ function post(h){return/^\/post\//.test(h||'');}
 /* One model for the ticker, the scoreboard panel and the next-up bar. */
 function model(root){var sb=D.sb,lv=D.live,g=window.__GBM_GAMEDAY__,now=Date.now(),M={last:null,live:null,next:null};
 var fr=sb&&sb.team&&sb.team.rank;
+/* Pages feed fallback: when ESPN is unreachable but scoreboard.json carries a live record for the next game, show it. */
+if(!lv&&sb&&sb.live&&sb.live.score&&sb.next&&String(sb.live.eventId)===String(sb.next.eventId)&&now-Date.parse(sb.next.kickoffIso)<6*HR){var pl=sb.live,PQ=['1st','2nd','3rd','4th'];lv={id:String(pl.eventId),state:'in',done:false,detail:(pl.clock||'')+(pl.period?' - '+(PQ[pl.period-1]||'OT'):''),fla:Number(pl.score.fla),opp:Number(pl.score.opp),oppName:sb.next.opponent,oppRank:sb.next.opponentRank,flaRank:fr,home:!!sb.next.home,neutral:!!sb.next.neutral,date:sb.next.kickoffIso};}
 if(lv&&lv.state==='in')M.live={opp:lv.oppName,oppRank:lv.oppRank,flaRank:lv.flaRank,fla:lv.fla,oppS:lv.opp,home:lv.home,neutral:lv.neutral,detail:lv.detail,date:lv.date};
 if(lv&&lv.state==='post'&&lv.done)M.last={opp:lv.oppName,oppRank:lv.oppRank,fla:lv.fla,oppS:lv.opp,home:lv.home,neutral:lv.neutral,date:lv.date,links:[]};
 else if(sb&&sb.last&&sb.last.score)M.last={opp:sb.last.opponent,oppRank:sb.last.opponentRank,fla:sb.last.score.fla,oppS:sb.last.score.opp,home:sb.last.home,neutral:sb.last.neutral,date:sb.last.date,links:[sb.last.recapUrl,sb.last.galleryUrl].filter(post)};

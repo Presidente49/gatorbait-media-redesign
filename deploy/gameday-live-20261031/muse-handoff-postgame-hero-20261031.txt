@@ -1,0 +1,127 @@
+MUSE HANDOFF BRIEF: POSTGAME HERO ART
+Florida vs. Georgia, Saturday, Oct. 31, 2026 (ESPN event 401856734)
+
+STAGE: PREPARED. NOT SENT. NOT ACCEPTED. NO ART MADE.
+This file is a packet for the controller. It has not been delivered to Muse or posted anywhere.
+A saved file or an issue comment is not a Muse connection and not acceptance (skills/gatorbait-muse-handoff).
+Tracking states, each separate: PREPARED (done) > SENT (no) > ACCEPTED (no) > COMPLETED (no) > VERIFIED (no).
+
+Prepared by: Graphics worker, Oct. 31, 2026, for the controller (Jarvis).
+Dedupe key: gameday-georgia-20261031-postgame-hero-v1
+Route: GitHub issue #34 is the owner-designated transport. The controller sends and records
+acceptance. Do not paste private identifiers, signed links or Wix URLs into public git or issues.
+
+---------------------------------------------------------------------
+1. THE RULE (standing art source, Brenden, Oct. 28, 2026)
+---------------------------------------------------------------------
+Final artwork comes ONLY from regular ChatGPT Pro in NORMAL CHAT mode, using AP Mode.
+Not Work, not Codex, not Symphony (retired), not TinyFish, not any other image generator.
+Before anyone says art was sent or made, verify the actual connection: the regular browser,
+the signed-in ChatGPT Pro account and normal Chat (not Work). If that is unavailable, say so
+precisely and keep the brief ready. Never call a substitute "ChatGPT".
+
+Authentic photographs stay authentic: do not regenerate them, keep the real photographer
+credit, never claim ChatGPT provenance for a real photo. Technical workers only resize,
+optimize and integrate an approved master. New creative variations go back to ChatGPT Pro.
+
+---------------------------------------------------------------------
+2. FINAL SCORE PLACEHOLDERS (fill only after the final is confirmed)
+---------------------------------------------------------------------
+Result line:      [[WINNER]] [[WIN SCORE]], [[LOSER]] [[LOSE SCORE]]
+Overtime:         [[NONE / OT / 2 OT]]
+Florida record:   [[FLORIDA RECORD AFTER THE GAME]]   (ESPN, after the final)
+Georgia record:   [[GEORGIA RECORD AFTER THE GAME]]   (ESPN, after the final)
+Headline on art:  [[POSTGAME HEADLINE, set by the controller after the result]]
+Deciding player:  [[PLAYER NAME, only if the box score supports it]]
+
+Source rule: numbers come from the ESPN box score (event 401856734), cross-checked on
+FloridaGators.com. If the two disagree, hold the number. Put only confirmed copy on the art:
+no score on the art until it is confirmed, and no ranking or record that is not fresh.
+No betting lines. Nothing from or crediting any outside blog or tip source.
+
+Confirmed pregame facts (label them pregame if used): No. 17 Florida 5-2 vs. No. 3 Georgia 6-1,
+3:30 p.m. ET, ABC, Mercedes-Benz Stadium, Atlanta. Next game for Florida: Oklahoma at Florida,
+Saturday, Nov. 7, 7:45 p.m. ET, SEC Network (add Oklahoma's ranking only after the Nov. 1 polls).
+
+---------------------------------------------------------------------
+3. APPROVED SOURCE PHOTO CANDIDATES (Wix Media Manager, names only)
+---------------------------------------------------------------------
+Read from the production Media Manager on Oct. 31, 2026 (read-only; nothing was changed).
+All four are READY. Listed by display name exactly as stored.
+
+Primary (Florida-Georgia rivalry game, Nov. 2, 2024, Jacksonville; large masters):
+  1. 11.2.24 Florida Football vs Georgia (csp4)-2024-52.jpg
+  2. 11.2.24 Florida Football vs Georgia (csp4)-2024-8.jpg
+
+Secondary (owned, credited, not from a Georgia game):
+  3. cover-brown-iii-student-section.jpg
+  4. 9.26.26 Florida vs Ole Miss (17 of 27)-XL.jpg   (small master; reference only for a 1920 hero)
+
+What "approved" means here: owned GatorBait photography already used on Georgia-week posts with a
+credit on record, per sports-live/magazine-issue-georgia-postgame.json and
+skills/master-control/references/CURRENT-STATE.md. The credit text comes from those repo records,
+not from file metadata. The controller makes the final pick and confirms the credit before use.
+
+NOT listed: the 20211030_Florida vs Georgia (w34-7)_*.jpg set and other older Georgia files in the
+library. No photographer credit or permission is recorded in the repo for them. Do not use any of
+them until a credit is confirmed. No photo from today's game exists in the library yet. If GatorBait
+staff photos from today arrive, they must be in the Media Manager and credited "Photo by [[NAME]],
+GatorBait Media." before they join this list.
+
+Credit lines on record:
+  Archive photo by Chris Spears, GatorBait Media.   (Nov. 2, 2024 Georgia photos)
+  Photo by Chris Spears, GatorBait Media.           (items 3 and 4)
+The credit must stay visible and unaltered anywhere the photo is used.
+
+---------------------------------------------------------------------
+4. DESTINATIONS AND SPECS (suggested; the controller can change them)
+---------------------------------------------------------------------
+Primary hero master:   1920 x 1080, 16:9 (Broadcast Graphics default; must survive at 10-15% size).
+Magazine cover crop:   1320 x 880, 3:2 (postgame magazine cover slot). Keep key content inside a
+                       crop-safe center area so one master serves both.
+Social variant:        1080 x 1350, 4:5, only if the controller asks for one.
+Phone check:           the art must read at 390 px wide. Test before approval.
+Typeset graphics stay whole; real photographs stay proportional with verified focal points.
+
+---------------------------------------------------------------------
+5. DESIGN DIRECTION
+---------------------------------------------------------------------
+Type: Barlow Condensed hierarchy only, oversized and phone-readable.
+Palette: Gator blue #0021A5, orange #FA4616, white, small touches of green #22884C. No navy.
+Brenden liked the supplied blue/orange architectural thumbnail style with oversized cream or
+metallic type (CURRENT-STATE, Oct. 28). Carry the visual direction only; do not copy its subjects or
+words. Do not make it the same template as the other shows.
+Hierarchy: 1) matchup and result, 2) one story hook, 3) GatorBait identity.
+Use the approved current GatorBait logo file if one is supplied. Never redraw it from memory; omit
+it rather than approximate it. No UF or Georgia marks unless an authentic approved asset is supplied.
+No invented slogans, sponsor marks or fabricated stadium signage.
+
+---------------------------------------------------------------------
+6. COPY ON THE ART (only what is confirmed)
+---------------------------------------------------------------------
+Kicker:   FLORIDA-GEORGIA   (plain; no date needed if the platform supplies it)
+Label:    FINAL
+Result:   [[WINNER]] [[WIN SCORE]], [[LOSER]] [[LOSE SCORE]]
+Line:     [[ONE SHORT PHRASE, from the controller]]
+Dates and times in AP style: "Oct. 31", "3:30 p.m. ET".
+
+---------------------------------------------------------------------
+7. WHAT COMES BACK (provenance to retain)
+---------------------------------------------------------------------
+- The actual ChatGPT conversation link.
+- The prompt and the reference inputs (named photo files above, copy block above).
+- The downloaded original master, unchanged, with its hash.
+- Approval evidence from the controller.
+- Derivative files (crops, optimized copies) listed as derivatives of that master.
+Upload only after approval and authorization, and only to the production Wix Media Manager. No
+hotlinks to temporary files. Uploading the art is not attaching it to a story.
+
+---------------------------------------------------------------------
+8. OPEN DEPENDENCIES
+---------------------------------------------------------------------
+- The final score, records and headline (section 2) do not exist yet.
+- Live ChatGPT Pro normal Chat access is unverified. This worker did not open or test it.
+- The photo pick and credit confirmation belong to the controller.
+- No Muse route has been verified from this session.
+Next bounded action: after the final, the controller fills section 2 from the ESPN box score,
+picks a photo, verifies the Chat route, then sends this packet and records the acceptance.

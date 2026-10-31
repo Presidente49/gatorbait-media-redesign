@@ -86,6 +86,7 @@
     '§ #gbm-mobile-drawer-root .gbm-ms-foot{color:#4B5563!important}§ #gbm-mobile-drawer-root .gbm-ms-foot a{color:#0021A5!important;-webkit-text-fill-color:#0021A5!important}',
     '}',
 
+    '@media(max-width:820px){§ #SITE_PAGES [data-hook=plan] :is(p,li),§ #gbm-renew-card p,§ #gbm-renew-card li,§ .gbm-perks li,§ .gbm-perks p,§ .gbc p,§ .gbc .gbc-v{font-size:16px!important;line-height:1.45!important}}',
     /* ---------- cookie banner (Wix) and the game-day bar ---------- */
     '§ .consent-banner-root,§ .consent-banner-root *{background-color:transparent}',
     '§ .consent-banner-root{background:#fff!important;COLOR:#111827!important;border-top:3px solid #FA4616!important;box-shadow:0 -6px 24px rgba(17,24,39,.14)!important}',

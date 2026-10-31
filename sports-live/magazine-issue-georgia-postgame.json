@@ -7,29 +7,29 @@
   "date": "Saturday, October 31, 2026",
   "week": "Week 9 · Florida vs. Georgia · Atlanta",
   "home": "GatorBait Media",
-  "pageTitle": "GatorBait Magazine | Postgame: [[WINNER]] [[WIN SCORE]], [[LOSER]] [[LOSE SCORE]]"
+  "pageTitle": "GatorBait Magazine | Postgame: Georgia 27, Florida 8"
  },
  "cover": {
-  "kicker": "[[COVER KICKER: Cover story · writer name]]",
-  "headline": "[[POSTGAME COVER HEADLINE]]",
-  "dek": "[[ONE-SENTENCE DEK from the published story]]",
-  "byline": "[[By WRITER NAME]]",
-  "cta": "[[Read the story]]",
-  "url": "/post/[[POSTGAME-STORY-SLUG]]",
+  "kicker": "Postgame · GatorBait Staff",
+  "headline": "Gators Bitten in Atlanta: Four Turnovers Sink Florida in 27-8 Loss to No. 3 Georgia",
+  "dek": "No. 3 Georgia beat Florida 27-8 in Atlanta, turning four Gators turnovers into a 24-0 halftime lead.",
+  "byline": "By GatorBait Staff",
+  "cta": "Read the story",
+  "url": "/post/gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia",
   "image": {
-   "id": "[[WIX_MEDIA_ID_COVER]]",
+   "id": "d3cfa5_7b333596b8f440c1b6dc318ac39083b8",
    "ext": "jpg",
-   "width": 1320,
-   "height": 880,
-   "alt": "[[ALT TEXT: who, what, where, Oct. 31, 2026. Photo credit]]",
-   "credit": "[[PHOTO CREDIT, e.g. Photo by Chris Spears, GatorBait Media.]]"
+   "width": 1600,
+   "height": 900,
+   "alt": "File photo: Florida players celebrate a touchdown against South Carolina on Oct. 10, 2026.",
+   "credit": "File photo by Chris Spears, GatorBait Media."
   },
   "linesLabel": "Also inside",
   "lines": [
-   "[[Second postgame story: writer: headline]]",
    "Score by score, box score and leaders",
-   "Georgia week: every column before kickoff",
-   "Final: [[SCORE LINE]]"
+   "Today's columns: Buddy Martin and Loren Meadows",
+   "Georgia week: every story around kickoff",
+   "Final: Georgia 27, Florida 8"
   ]
  },
  "final": {
@@ -37,17 +37,17 @@
   "teams": [
    {
     "name": "Florida",
-    "score": -1
+    "score": 8
    },
    {
     "name": "Georgia",
-    "score": -1
+    "score": 27
    }
   ],
   "meta": [
    "Saturday, Oct. 31",
    "Mercedes-Benz Stadium, Atlanta",
-   "[[Florida record and SEC record AFTER the game, from ESPN]]"
+   "Florida 5-3, 3-3 SEC after the game (ESPN)"
   ]
  },
  "contents": {
@@ -55,7 +55,7 @@
   "items": [
    {
     "id": "columns",
-    "label": "Postgame columns"
+    "label": "Today's columns"
    },
    {
     "id": "coverage",
@@ -74,10 +74,6 @@
     "label": "Box score"
    },
    {
-    "id": "quotes",
-    "label": "In their words"
-   },
-   {
     "id": "next",
     "label": "Up next"
    }
@@ -85,44 +81,44 @@
  },
  "damage": {
   "kicker": "By the numbers",
-  "title": "[[Section headline, e.g. How it was decided]]",
-  "dek": "[[One sentence from the ESPN box score]]",
+  "title": "Four turnovers and a run game that never started",
+  "dek": "Florida threw for 198 net yards to Georgia's 101, but turned the ball over four times and ran for 48 yards while Georgia ran for 217.",
   "yards": {
    "label": "Total yards",
    "rows": [
     {
      "name": "Florida",
-     "value": -1,
+     "value": 246,
      "us": true
     },
     {
      "name": "Georgia",
-     "value": -1
+     "value": 318
     }
    ]
   },
   "stats": [
    {
-    "value": "[[ESPN stat]]",
-    "label": "[[label]]",
-    "detail": "[[ESPN detail]]"
+    "value": "4",
+    "label": "Florida turnovers",
+    "detail": "Three interceptions and a lost fumble. Georgia had one turnover, a lost fumble."
    },
    {
-    "value": "[[ESPN stat]]",
-    "label": "[[label]]",
-    "detail": "[[ESPN detail]]"
+    "value": "217",
+    "label": "Georgia rushing yards",
+    "detail": "42 carries at 5.2 yards each. Florida had 48 yards on 28 carries."
    },
    {
-    "value": "[[ESPN stat]]",
-    "label": "[[label]]",
-    "detail": "[[ESPN detail]]"
+    "value": "4-12",
+    "label": "Florida third downs",
+    "detail": "Georgia converted 6 of 15 and held the ball 32:11 to Florida's 27:50."
    }
   ]
  },
  "scoring": {
   "kicker": "Score by score",
   "title": "How the points came",
-  "dek": "[[One sentence on the shape of the game, from the line score]]",
+  "dek": "Georgia led 24-0 at halftime. Florida's only points came in the fourth quarter, a touchdown and a two-point conversion, before a Georgia field goal made it 27-8.",
   "cols": [
    "1",
    "2",
@@ -134,31 +130,61 @@
    {
     "team": "Florida",
     "q": [
-     -1,
-     -1,
-     -1,
-     -1
+     0,
+     0,
+     0,
+     8
     ],
-    "f": -1,
+    "f": 8,
     "us": true
    },
    {
     "team": "Georgia",
     "q": [
-     -1,
-     -1,
-     -1,
-     -1
+     7,
+     17,
+     0,
+     3
     ],
-    "f": -1
+    "f": 27
    }
   ],
   "plays": [
    {
-    "when": "Q[[#]] [[MM:SS]]",
-    "play": "[[ESPN scoring play, copy exactly]]",
-    "score": "[[UF/UGA running score]]",
+    "when": "Q1 1:50",
+    "play": "N. Frazier run for 1 yd, for a TD (P. Woodring KICK)",
+    "score": "UF 0, UGA 7",
+    "uf": false
+   },
+   {
+    "when": "Q2 8:55",
+    "play": "P. Woodring 28 yd FG GOOD",
+    "score": "UF 0, UGA 10",
+    "uf": false
+   },
+   {
+    "when": "Q2 1:55",
+    "play": "Bo Walker run for 1 yd, for a TD (P. Woodring KICK)",
+    "score": "UF 0, UGA 17",
+    "uf": false
+   },
+   {
+    "when": "Q2 0:29",
+    "play": "T. Jones Jr. sacked  by Q. Johnson for -3 yds, C. Cole fumbled,  return  for 66 yds for a TD (P. Woodring KICK)",
+    "score": "UF 0, UGA 24",
+    "uf": false
+   },
+   {
+    "when": "Q4 6:59",
+    "play": "T. Jones Jr. run for 2 yds, for a TD (J. Baugh pass to D. Wilson GOOD for Two-Point Conversion)",
+    "score": "UF 8, UGA 24",
     "uf": true
+   },
+   {
+    "when": "Q4 3:34",
+    "play": "P. Woodring 21 yd FG GOOD",
+    "score": "UF 8, UGA 27",
+    "uf": false
    }
   ],
   "source": "Scoring plays and line score: ESPN. Times are game clock."
@@ -174,43 +200,43 @@
   "rows": [
    [
     "First downs",
-    "[[ESPN]]",
-    "[[ESPN]]"
+    "15",
+    "19"
    ],
    [
     "Total yards",
-    "[[ESPN]]",
-    "[[ESPN]]"
+    "246",
+    "318"
    ],
    [
     "Passing",
-    "[[ESPN]]",
-    "[[ESPN]]"
+    "23/32, 198 yds",
+    "13/23, 101 yds"
    ],
    [
     "Rushing",
-    "[[ESPN]]",
-    "[[ESPN]]"
+    "28 for 48 yds",
+    "42 for 217 yds"
    ],
    [
     "Third down",
-    "[[ESPN]]",
-    "[[ESPN]]"
+    "4-12",
+    "6-15"
    ],
    [
     "Penalties",
-    "[[ESPN]]",
-    "[[ESPN]]"
+    "8 for 78 yds",
+    "4 for 32 yds"
    ],
    [
     "Turnovers",
-    "[[ESPN]]",
-    "[[ESPN]]"
+    "4",
+    "1"
    ],
    [
     "Possession",
-    "[[ESPN]]",
-    "[[ESPN]]"
+    "27:50",
+    "32:11"
    ]
   ],
   "leaders": [
@@ -219,15 +245,15 @@
     "items": [
      [
       "Passing",
-      "[[ESPN leader line]]"
+      "Tramell Jones Jr.: 18/25, 172 YDS, 1 INT"
      ],
      [
       "Rushing",
-      "[[ESPN leader line]]"
+      "Jadan Baugh: 17 CAR, 38 YDS"
      ],
      [
       "Receiving",
-      "[[ESPN leader line]]"
+      "Bailey Stockton: 8 REC, 76 YDS"
      ]
     ]
    },
@@ -236,67 +262,54 @@
     "items": [
      [
       "Passing",
-      "[[ESPN leader line]]"
+      "Gunner Stockton: 13/23, 101 YDS"
      ],
      [
       "Rushing",
-      "[[ESPN leader line]]"
+      "Nate Frazier: 12 CAR, 67 YDS, 1 TD"
      ],
      [
       "Receiving",
-      "[[ESPN leader line]]"
+      "Craig Dandridge: 3 REC, 39 YDS"
      ]
     ]
    }
   ],
   "source": "Team stats and leaders: ESPN box score (event 401856734)."
  },
- "quotes": {
-  "kicker": "In their words",
-  "title": "[[Who is quoted]] on the game",
-  "items": [
-   {
-    "text": "[[Verbatim quote from the FULL transcript or the linked published column]]",
-    "who": "[[Name]]",
-    "role": "[[Title, source: e.g. postgame news conference, full transcript / as reported by WRITER]]",
-    "url": "/post/[[SLUG-OF-PUBLISHED-STORY-CARRYING-THE-QUOTE]]",
-    "link": "[[Writer's column]]"
-   }
-  ]
- },
  "columns": {
   "kicker": "Columns",
-  "title": "[[Postgame columns]]",
-  "dek": "[[Only columns that are PUBLISHED when this is built. Delete this whole section if none.]]",
+  "title": "Today's columns",
+  "dek": "Published on GatorBait Saturday.",
   "items": [
    {
-    "rubric": "[[Postgame column]]",
-    "author": "[[Writer]]",
-    "title": "[[Published headline]]",
-    "dek": "[[Published dek]]",
-    "url": "/post/[[SLUG]]",
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "The Receiver Who Caught Everything",
+    "dek": "Steve Spurrier remembers Charlie Casey, the Gators' first great pass-catcher.",
+    "url": "/post/the-receiver-who-caught-everything",
     "image": {
-     "id": "[[WIX_MEDIA_ID_COL1]]",
+     "id": "d3cfa5_7190c4f828974605979767e386e43663",
      "ext": "jpg",
-     "width": 1320,
-     "height": 880,
-     "alt": "[[ALT TEXT: who, what, where, Oct. 31, 2026. Photo credit]]",
-     "credit": "[[PHOTO CREDIT, e.g. Photo by Chris Spears, GatorBait Media.]]"
+     "width": 1600,
+     "height": 900,
+     "alt": "Archive portrait of Charlie Casey, Florida Gators receiver.",
+     "credit": "Photo courtesy University of Florida archives."
     }
    },
    {
-    "rubric": "[[Postgame column]]",
-    "author": "[[Writer]]",
-    "title": "[[Published headline]]",
-    "dek": "[[Published dek]]",
-    "url": "/post/[[SLUG]]",
+    "rubric": "Pregame analysis",
+    "author": "Loren Meadows",
+    "title": "Pregame Analysis: Florida Gators (5-2, 3-2) vs. Georgia Bulldogs (6-1, 4-1)",
+    "dek": "Loren Meadows breaks down the matchups and the quarterback and health questions facing Florida in Atlanta.",
+    "url": "/post/pregame-analysis-florida-gators-5-2-3-2-vs-georgia-bulldogs-6-1-4-1",
     "image": {
-     "id": "[[WIX_MEDIA_ID_COL2]]",
+     "id": "16b519_3be8a7a2180e4c72ae2bb30ca29ae084",
      "ext": "jpg",
-     "width": 1320,
-     "height": 880,
-     "alt": "[[ALT TEXT: who, what, where, Oct. 31, 2026. Photo credit]]",
-     "credit": "[[PHOTO CREDIT, e.g. Photo by Chris Spears, GatorBait Media.]]"
+     "width": 3000,
+     "height": 2000,
+     "alt": "Archive photo: Florida's offensive line sets up in front of the quarterback during the Nov. 2, 2024, game against Georgia in Jacksonville.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
     }
    }
   ]
@@ -304,8 +317,53 @@
  "coverage": {
   "kicker": "Georgia week",
   "title": "The road to Atlanta",
-  "dek": "In case you missed them: the GatorBait coverage before kickoff, newest first.",
+  "dek": "In case you missed them: GatorBait coverage around kickoff, newest first.",
   "items": [
+   {
+    "rubric": "Roundup",
+    "author": "GatorBait Staff",
+    "title": "Halloween Saturday: 21 Ranked Teams Have Fallen in Three Weeks, and Miami and Ohio State Take Road Tests",
+    "dek": "ESPN counts 21 ranked teams beaten over the past three weeks. Saturday brings Miami at North Carolina, Ohio State at USC and Utah at Cincinnati.",
+    "url": "/post/halloween-saturday-21-ranked-teams-have-fallen-in-three-weeks-and-miami-and-ohio-state-take-road-t",
+    "image": {
+     "id": "d3cfa5_d213a8cf37914b0c953358bc350a9547",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 626,
+     "alt": "Florida ball carrier No. 13 is wrapped up by Ole Miss defenders in Gainesville on Sept. 26, 2026.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Report",
+    "author": "GatorBait Staff",
+    "title": "Pouncey, Emmitt Smith Inducted Into Florida-Georgia Hall of Fame",
+    "dek": "Two Florida legends joined the rivalry's Hall of Fame Friday in Atlanta, one day before Florida played Georgia at Mercedes-Benz Stadium.",
+    "url": "/post/pouncey-emmitt-smith-inducted-florida-georgia-hall-of-fame",
+    "image": {
+     "id": "16b519_6699a52a1b0d4ec1b517a24f3476ff9c",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 1670,
+     "alt": "Florida and Georgia players meet at the line of scrimmage during the teams' game in Jacksonville on Nov. 2, 2024.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Roundup",
+    "author": "GatorBait Staff",
+    "title": "SEC Saturday: Kentucky Leads at 5-1, Nine Teams Hold AP Spots and Next Week Is Loaded",
+    "dek": "Five SEC games were on the board Saturday, and Florida at Georgia was the only ranked-versus-ranked game, with the first CFP rankings due Tuesday.",
+    "url": "/post/sec-saturday-kentucky-leads-at-5-1-nine-teams-hold-ap-spots-and-next-week-is-loaded",
+    "image": {
+     "id": "d3cfa5_a597dd50c5af41429ec2c77cebff4735",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 683,
+     "alt": "Florida running back No. 13 carries the ball toward the goal line against Ole Miss in Gainesville on Sept. 26, 2026.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
    {
     "rubric": "Report",
     "author": "GatorBait Staff",
@@ -376,7 +434,7 @@
    "7:45 p.m. ET · SEC Network",
    "Ben Hill Griffin Stadium, Gainesville"
   ],
-  "note": "Source: ESPN schedule and SEC Network listing, checked Oct. 31. [[Add Oklahoma ranking/record ONLY after the Sunday, Nov. 1 polls post; otherwise delete this line.]]"
+  "note": "Source: ESPN schedule and SEC Network listing, checked Oct. 31."
  },
  "reference": {
   "label": "More GatorBait",
@@ -405,7 +463,8 @@
   "uaa": false,
   "other": [
    "Photo by Chris Spears, GatorBait Media.",
-   "[[Add every other credit used in this issue, e.g. Photo courtesy UAA, or delete]]"
+   "File photo by Chris Spears, GatorBait Media.",
+   "Photo courtesy University of Florida archives."
   ]
  },
  "asOf": "Score, line score, scoring plays, box score and leaders: ESPN (event 401856734). Quotes are as reported in the linked columns or from full transcripts. Rankings and records as of the latest release at the time of publishing."

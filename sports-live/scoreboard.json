@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-31T19:58:08Z",
+ "updatedAt": "2026-10-31T22:59:53Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -256,6 +256,11 @@
    "overall": "6-2"
   },
   {
+   "team": "Ole Miss",
+   "confRecord": "4-2",
+   "overall": "6-2"
+  },
+  {
    "team": "LSU",
    "confRecord": "3-2",
    "overall": "6-2"
@@ -267,11 +272,6 @@
   },
   {
    "team": "Florida",
-   "confRecord": "3-2",
-   "overall": "5-2"
-  },
-  {
-   "team": "Ole Miss",
    "confRecord": "3-2",
    "overall": "5-2"
   },
@@ -291,11 +291,6 @@
    "overall": "4-3"
   },
   {
-   "team": "Auburn",
-   "confRecord": "2-3",
-   "overall": "4-3"
-  },
-  {
    "team": "Mississippi State",
    "confRecord": "2-3",
    "overall": "4-3"
@@ -304,6 +299,11 @@
    "team": "South Carolina",
    "confRecord": "2-3",
    "overall": "4-3"
+  },
+  {
+   "team": "Auburn",
+   "confRecord": "2-4",
+   "overall": "4-4"
   },
   {
    "team": "Arkansas",
@@ -323,13 +323,13 @@
  ],
  "live": {
   "eventId": "401856734",
-  "clock": "8:18",
-  "period": 1,
+  "clock": "1:52",
+  "period": 4,
   "score": {
-   "fla": 0,
-   "opp": 0
+   "fla": 8,
+   "opp": 27
   },
-  "possession": "fla",
-  "lastPlay": "(09:03) Shotgun #13 J.Baugh rush middle for 3 yards gain to the UF 28 (#9 C.Cole)"
+  "possession": "opp",
+  "lastPlay": "Timeout Georgia, clock 02:00"
  }
 }

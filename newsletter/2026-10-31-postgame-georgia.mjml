@@ -1,0 +1,137 @@
+<!--
+  FLORIDA-GEORGIA POSTGAME EMAIL, Oct. 31, 2026. DRAFT SOURCE ONLY. NOT SENT. NO WIX CAMPAIGN EXISTS.
+  Every [[...]] mark and every PLACEHOLDER_ / POSTGAME_ token below must be replaced before this is built as a Wix draft.
+  Gate: node deploy/postgame-georgia-20261031/check-no-placeholders.mjs newsletter/2026-10-31-postgame-georgia.mjml
+  Rules: score and stats from ESPN or FloridaGators.com only; links go only to published GatorBait posts (Lesson 95 asks for six distinct article links on a full magazine email; this lighter postgame email links the posts that are published at send time, each once);
+  distinct permanent Wix Media Manager images, none repeated; no betting lines; never cite or credit Gator Country; fresh rankings only.
+  A list email needs Brenden's explicit yes, the send governor passing, and no other list email in the same 24 hours.
+-->
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>[[EMAIL TITLE: e.g. Gators-Bulldogs final: headline]]</mj-title>
+    <mj-preview>[[PREVIEW TEXT, about 90 characters: score and the one thing to know]]</mj-preview>
+    <mj-font name="Barlow" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Barlow, Arial, Helvetica, sans-serif" />
+      <mj-text color="#33404F" font-size="17px" line-height="1.5" padding="0 0 14px" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="16px 30px" font-size="18px" font-weight="800" letter-spacing="0.8px" align="center" padding="0" />
+    </mj-attributes>
+    <mj-style>
+      :root { color-scheme: light; supported-color-schemes: light; }
+      @media only screen and (max-width: 480px) {
+        .gb-pad { padding-left: 16px !important; padding-right: 16px !important; }
+        .gb-h1 div { font-size: 30px !important; }
+        .gb-mast div { font-size: 44px !important; }
+        .gb-card { padding-left: 0 !important; padding-right: 0 !important; }
+        .gb-pad0 { padding-left: 16px !important; padding-right: 16px !important; }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#FFFFFF" width="600px">
+    <mj-section background-color="#FA4616" padding="9px 24px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#FFFFFF" font-size="13px" font-weight="800" letter-spacing="2px">FINAL &#183; FLORIDA VS. GEORGIA &#183; ATLANTA</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#0B1F4B" padding="26px 24px 18px" css-class="gb-pad">
+      <mj-column>
+        <mj-text css-class="gb-mast" align="center" padding="0" color="#FFFFFF" font-size="54px" font-weight="800" letter-spacing="1px" line-height="1">GATOR<span style="color:#FA4616;">BAIT</span></mj-text>
+        <mj-text align="center" padding="6px 0 12px" color="#B8C4DA" font-size="18px" font-weight="700" letter-spacing="9px">MAGAZINE</mj-text>
+        <mj-divider border-width="3px" border-color="#FA4616" padding="0 0 12px" />
+        <mj-text align="center" padding="0" color="#B8C4DA" font-size="13px" font-weight="700" letter-spacing="2px">POSTGAME EDITION &#183; SATURDAY, OCT. 31, 2026 &#183; ATLANTA</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F2F5FB" padding="22px 24px 6px" css-class="gb-pad">
+      <mj-group>
+      <mj-column width="40%">
+        <mj-text align="center" padding="0" color="#0021A5" font-size="26px" font-weight="800" line-height="1.1">FLORIDA</mj-text>
+        <mj-text align="center" padding="0" color="#0B1F4B" font-size="54px" font-weight="800" line-height="1.05">[[UF SCORE]]</mj-text>
+      </mj-column>
+      <mj-column width="20%" vertical-align="middle">
+        <mj-text align="center" padding="0" color="#FA4616" font-size="16px" font-weight="800" letter-spacing="1.5px">FINAL</mj-text>
+      </mj-column>
+      <mj-column width="40%">
+        <mj-text align="center" padding="0" color="#B3001B" font-size="26px" font-weight="800" line-height="1.1">GEORGIA</mj-text>
+        <mj-text align="center" padding="0" color="#0B1F4B" font-size="54px" font-weight="800" line-height="1.05">[[UGA SCORE]]</mj-text>
+      </mj-column>
+      </mj-group>
+    </mj-section>
+    <mj-section background-color="#F2F5FB" padding="0 24px 20px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#33404F" font-size="15px">Mercedes-Benz Stadium, Atlanta &#183; [[Florida record and SEC record after the game, from ESPN]]</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#0B1F4B" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/PLACEHOLDER_COVER_IMAGE_ID~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_80/file.jpg" alt="[[ALT TEXT: who, what, where, Oct. 31, 2026]]" href="https://www.gatorbaitmedia.com/post/POSTGAME_STORY_SLUG?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=cover_photo" padding="0" fluid-on-mobile="true" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#0B1F4B" padding="20px 24px 26px" border-left="6px solid #FA4616" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" padding="0 0 6px" color="#FF8A5C" font-size="13px" font-weight="800" letter-spacing="2px">[[THE GAME STORY &#183; WRITER NAME]]</mj-text>
+        <mj-text css-class="gb-h1" align="left" padding="0 0 10px" color="#FFFFFF" font-size="36px" font-weight="800" line-height="1.08"><a href="https://www.gatorbaitmedia.com/post/POSTGAME_STORY_SLUG?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=cover_headline" style="color:#FFFFFF;text-decoration:none;">[[POSTGAME HEADLINE, UPPERCASE LIKE THE GAME-DAY EMAIL]]</a></mj-text>
+        <mj-text align="left" padding="0 0 16px" color="#D5DBE4" font-size="17px">[[ONE- OR TWO-SENTENCE DEK taken from the published story]]</mj-text>
+        <mj-button align="left" href="https://www.gatorbaitmedia.com/post/POSTGAME_STORY_SLUG?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=cover_button">READ THE STORY</mj-button>
+        <mj-text align="left" padding="14px 0 0" color="#8FA0BE" font-size="11px">[[Cover photo credit, exactly as on the published story]]</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#0B1F4B" padding="12px 24px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" padding="0" color="#FFFFFF" font-size="14px" font-weight="800" letter-spacing="3px">MORE POSTGAME</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="14px 0 0"><mj-column><mj-spacer height="2px" /></mj-column></mj-section>
+    <mj-section background-color="#FFFFFF" padding="0 16px" css-class="gb-pad0">
+      <mj-column padding="0 8px 18px" css-class="gb-card">
+        <mj-image src="https://static.wixstatic.com/media/PLACEHOLDER_COLUMN_ONE_IMAGE_ID~mv2.jpg/v1/fill/w_560,h_373,al_c,q_80/file.jpg" alt="[[ALT TEXT]]" href="https://www.gatorbaitmedia.com/post/POSTGAME_COLUMN_ONE_SLUG?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=col1_photo" padding="0 0 4px" fluid-on-mobile="true" />
+        <mj-text padding="0 0 8px" color="#6B7280" font-size="11px" line-height="1.3">[[Photo credit]]</mj-text>
+        <mj-text padding="0 0 4px" color="#C23A0E" font-size="12px" font-weight="800" letter-spacing="1.6px">[[WRITER NAME]] &#183; OCT. [[DAY]]</mj-text>
+        <mj-text padding="0 0 6px" color="#101820" font-size="21px" font-weight="800" line-height="1.15"><a href="https://www.gatorbaitmedia.com/post/POSTGAME_COLUMN_ONE_SLUG?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=col1_headline" style="color:#101820;text-decoration:none;">[[Published headline]]</a></mj-text>
+        <mj-text padding="0 0 8px" color="#33404F" font-size="15px" line-height="1.45">[[One sentence from the published dek]]</mj-text>
+        <mj-text padding="0" font-size="14px" font-weight="800" letter-spacing="0.6px"><a href="https://www.gatorbaitmedia.com/post/POSTGAME_COLUMN_ONE_SLUG?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=col1_read" style="color:#0021A5;text-decoration:none;">READ THE COLUMN &rsaquo;</a></mj-text>
+      </mj-column>
+      <mj-column padding="0 8px 18px" css-class="gb-card">
+        <mj-image src="https://static.wixstatic.com/media/PLACEHOLDER_COLUMN_TWO_IMAGE_ID~mv2.jpg/v1/fill/w_560,h_373,al_c,q_80/file.jpg" alt="[[ALT TEXT]]" href="https://www.gatorbaitmedia.com/post/POSTGAME_COLUMN_TWO_SLUG?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=col2_photo" padding="0 0 4px" fluid-on-mobile="true" />
+        <mj-text padding="0 0 8px" color="#6B7280" font-size="11px" line-height="1.3">[[Photo credit]]</mj-text>
+        <mj-text padding="0 0 4px" color="#C23A0E" font-size="12px" font-weight="800" letter-spacing="1.6px">[[WRITER NAME]] &#183; OCT. [[DAY]]</mj-text>
+        <mj-text padding="0 0 6px" color="#101820" font-size="21px" font-weight="800" line-height="1.15"><a href="https://www.gatorbaitmedia.com/post/POSTGAME_COLUMN_TWO_SLUG?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=col2_headline" style="color:#101820;text-decoration:none;">[[Published headline]]</a></mj-text>
+        <mj-text padding="0 0 8px" color="#33404F" font-size="15px" line-height="1.45">[[One sentence from the published dek]]</mj-text>
+        <mj-text padding="0" font-size="14px" font-weight="800" letter-spacing="0.6px"><a href="https://www.gatorbaitmedia.com/post/POSTGAME_COLUMN_TWO_SLUG?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=col2_read" style="color:#0021A5;text-decoration:none;">READ THE COLUMN &rsaquo;</a></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F2F5FB" padding="24px 24px 10px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" padding="0 0 14px" color="#0B1F4B" font-size="14px" font-weight="800" letter-spacing="3px">BY THE NUMBERS (ESPN BOX SCORE)</mj-text>
+        <mj-text padding="0 0 6px" color="#101820" font-size="18px" font-weight="700" line-height="1.3">[[Total yards: Florida X, Georgia Y]]</mj-text>
+        <mj-text padding="0 0 6px" color="#101820" font-size="18px" font-weight="700" line-height="1.3">[[Turnovers: Florida X, Georgia Y]]</mj-text>
+        <mj-text padding="0 0 14px" color="#101820" font-size="18px" font-weight="700" line-height="1.3">[[Third down: Florida X-of-Y, Georgia X-of-Y]]</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#0B1F4B" padding="26px 24px 28px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="center" padding="0 0 6px" color="#FF8A5C" font-size="13px" font-weight="800" letter-spacing="2px">UP NEXT</mj-text>
+        <mj-text align="center" padding="0 0 14px" color="#FFFFFF" font-size="17px" line-height="1.7">Oklahoma at Florida<br />Saturday, Nov. 7, 7:45 p.m. ET &#183; SEC Network<br />Ben Hill Griffin Stadium, Gainesville</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/magazine?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=read_magazine">READ THE POSTGAME MAGAZINE</mj-button>
+        <mj-text align="center" padding="14px 0 0" color="#8FA0BE" font-size="13px">gatorbaitmedia.com/magazine</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="26px 24px 28px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" padding="0 0 6px" color="#101820" font-size="22px" font-weight="800" line-height="1.3">Old-school journalism + new tech.</mj-text>
+        <mj-text align="left" padding="0 0 16px" font-size="16px">Join GatorBait for every column and the Magazine.</mj-text>
+        <mj-button align="left" href="https://www.gatorbaitmedia.com/pricing-plans?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=join_cta">JOIN GATORBAIT</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F5F6F8" padding="16px 24px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0" color="#4B5563" font-size="12px" line-height="1.5"><b>Photo credits.</b> [[List every credit used above, exactly as on the published posts]]</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#EEF0F3" padding="20px 24px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" color="#4B5563" font-size="14px" padding="0 0 8px">GatorBait Media &#183; <a href="https://www.gatorbaitmedia.com/?utm_source=newsletter&utm_medium=email&utm_campaign=postgame_fl_ga_2026_10_31&utm_content=footer_site" style="color:#0021A5;">GatorBaitMedia.com</a><br />1524 SE 22nd Ave, Ocala, FL 34471<br />Reply to brenden@gatorbaitmedia.com</mj-text>
+        <mj-text align="left" color="#4B5563" font-size="13px" padding="0">You&#8217;re receiving this because you subscribed to GatorBait Media. Manage your preferences or unsubscribe using the controls below.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

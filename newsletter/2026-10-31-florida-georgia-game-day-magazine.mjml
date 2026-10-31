@@ -1,0 +1,118 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>GatorBait Magazine: Florida vs. Georgia Game-Day Edition</mj-title>
+    <mj-preview>Buddy Martin’s availability update, the Florida–Georgia game file and the complete GatorBait Magazine.</mj-preview>
+    <mj-font name="Barlow" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Barlow, Arial, Helvetica, sans-serif" />
+      <mj-text color="#33404F" font-size="16px" line-height="1.5" padding="0 0 14px" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="14px 24px" font-size="14px" font-weight="800" />
+    </mj-attributes>
+    <mj-style>
+      :root { color-scheme: light; supported-color-schemes: light; }
+      @media only screen and (max-width: 480px) {
+        .gb-pad { padding-left: 16px !important; padding-right: 16px !important; }
+        .gb-headline div { font-size: 28px !important; }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#F2F0EB" width="620px">
+    <mj-section background-color="#0B1F4B" padding="20px 24px 14px" border-top="6px solid #FA4616">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#FFFFFF" font-size="31px" font-weight="900" letter-spacing="0.4px">GATOR<span style="color:#FA4616;">BAIT</span></mj-text>
+        <mj-text align="center" padding="3px 0 0" color="#D5DFEC" font-size="11px" font-weight="800" letter-spacing="3px">MAGAZINE NEWSLETTER</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="18px 26px 7px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="center" padding="0 0 6px" color="#C23A0E" font-size="11px" font-weight="800" letter-spacing="1.8px">FLORIDA–GEORGIA GAME-DAY EDITION · OCT. 31, 2026</mj-text>
+        <mj-text css-class="gb-headline" align="center" padding="0 0 11px" color="#101820" font-size="31px" font-weight="800" line-height="1.12">Your Florida–Georgia Magazine is ready for Atlanta.</mj-text>
+        <mj-text align="center" padding="0 0 16px" color="#465365" font-size="16px">Buddy Martin’s Friday availability report leads the latest GatorBait coverage, followed by the matchup analysis, prediction and rivalry columns you need before kickoff.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#081B35" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_6335563003f04dc7a195a56ec12b6f1a~mv2.jpg" alt="Vernell Brown III earlier in the 2026 season. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/florida-s-vernell-brown-iii-questionable-against-georgia-after-friday-downgrade?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=florida_georgia_game_day_2026_10_31&#38;utm_content=buddy_lead_image" padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="22px 28px 26px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 7px" color="#FF9A73" font-size="10px" font-weight="900" letter-spacing="1.7px">BUDDY MARTIN · GAME-DAY UPDATE</mj-text>
+        <mj-text padding="0 0 10px" color="#FFFFFF" font-size="29px" font-weight="800" line-height="1.12">Vernell Brown III questionable against Georgia after Friday downgrade</mj-text>
+        <mj-text padding="0 0 12px" color="#D5DFEC" font-size="16px">Florida’s Friday SEC availability report changed Brown’s status before the rivalry game in Atlanta. Buddy has the latest.</mj-text>
+        <mj-text padding="0 0 14px" color="#AEBBD0" font-size="10px">Photo by Chris Spears, GatorBait Media.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-s-vernell-brown-iii-questionable-against-georgia-after-friday-downgrade?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=florida_georgia_game_day_2026_10_31&#38;utm_content=buddy_lead_button" align="left" padding="0">READ BUDDY’S UPDATE →</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="24px 26px 8px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 7px" color="#0B1F4B" font-size="22px" font-weight="800">THE GAME-DAY FILE</mj-text>
+        <mj-divider border-color="#FA4616" border-width="3px" padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="8px 20px 22px" css-class="gb-pad">
+      <mj-column width="50%" padding="0 8px">
+        <mj-text padding="7px 0 5px" color="#C23A0E" font-size="10px" font-weight="800" letter-spacing="1.4px">GATORBAIT STAFF</mj-text>
+        <mj-text padding="0 0 7px" color="#101820" font-size="20px" font-weight="800" line-height="1.15">Georgia-Born Gator: Aaron Philo expected to start</mj-text>
+        <mj-text padding="0 0 10px" color="#536174" font-size="13px">The current quarterback report and what the Gators had—or had not—made official.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/florida-philo-jones-questionable-georgia-sec-availability-report?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=florida_georgia_game_day_2026_10_31&#38;utm_content=philo_report" align="left" padding="0">READ THE REPORT →</mj-button>
+      </mj-column>
+      <mj-column width="50%" padding="0 8px">
+        <mj-text padding="7px 0 5px" color="#C23A0E" font-size="10px" font-weight="800" letter-spacing="1.4px">EDDIE GILLEY</mj-text>
+        <mj-text padding="0 0 7px" color="#101820" font-size="20px" font-weight="800" line-height="1.15">Key to a Win in Atlanta</mj-text>
+        <mj-text padding="0 0 10px" color="#536174" font-size="13px">Eddie Gilley makes third down Florida’s clearest path to a rivalry upset.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/key-to-a-win-in-atlanta?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=florida_georgia_game_day_2026_10_31&#38;utm_content=eddie_key" align="left" padding="0">READ EDDIE →</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#E9EEF5" padding="0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_4b8894d8f5414225af1e01dfe4a028d5~mv2.jpg" alt="Florida quarterback Aaron Philo with teammates after Florida beat Ole Miss at Ben Hill Griffin Stadium. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/post/florida-philo-jones-questionable-georgia-sec-availability-report?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=florida_georgia_game_day_2026_10_31&#38;utm_content=philo_image" padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#E9EEF5" padding="18px 28px 23px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 6px" color="#C23A0E" font-size="10px" font-weight="800" letter-spacing="1.6px">FRANZ BEARD · THE SOOTHSAYER</mj-text>
+        <mj-text padding="0 0 7px" color="#101820" font-size="23px" font-weight="800" line-height="1.15">Georgia in a heart stopper</mj-text>
+        <mj-text padding="0 0 10px" color="#536174">Franz Beard sizes up Florida’s route to an upset and makes his calls across the SEC.</mj-text>
+        <mj-text padding="0 0 12px" color="#6B7888" font-size="10px">Photo by Chris Spears, GatorBait Media.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/the-soothsayer-georgia-in-a-heart-stopper?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=florida_georgia_game_day_2026_10_31&#38;utm_content=soothsayer" align="left" padding="0">READ THE SOOTHSAYER →</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="23px 26px 8px" css-class="gb-pad">
+      <mj-column>
+        <mj-text padding="0 0 7px" color="#0B1F4B" font-size="22px" font-weight="800">MORE FROM THE ISSUE</mj-text>
+        <mj-divider border-color="#FA4616" border-width="3px" padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="8px 20px 12px" css-class="gb-pad">
+      <mj-column width="50%" padding="0 8px">
+        <mj-text padding="8px 0 5px" color="#6A7483" font-size="10px" font-weight="800" letter-spacing="1.4px">BUDDY MARTIN</mj-text>
+        <mj-text padding="0 0 7px" color="#101820" font-size="18px" font-weight="800" line-height="1.16">The Spooks Are 4-0. Georgia is laying 12.5.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/buddy-martin-spooks-halloween-florida-georgia?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=florida_georgia_game_day_2026_10_31&#38;utm_content=buddy_spooks" align="left" padding="0">READ BUDDY →</mj-button>
+      </mj-column>
+      <mj-column width="50%" padding="0 8px">
+        <mj-text padding="8px 0 5px" color="#6A7483" font-size="10px" font-weight="800" letter-spacing="1.4px">FRANZ BEARD</mj-text>
+        <mj-text padding="0 0 7px" color="#101820" font-size="18px" font-weight="800" line-height="1.16">Will lightning strike twice for the Gators?</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/post/will-lightning-strike-twice-for-the-gators?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=florida_georgia_game_day_2026_10_31&#38;utm_content=franz_lightning" align="left" padding="0">READ FRANZ →</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#003B7A" padding="21px 24px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="center" padding="0 0 11px" color="#FFFFFF" font-size="18px" font-weight="800">Take the complete Florida–Georgia issue with you.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_magazine_newsletter&#38;utm_medium=email&#38;utm_campaign=florida_georgia_game_day_2026_10_31&#38;utm_content=open_magazine" align="center" padding="0">OPEN GATORBAIT MAGAZINE →</mj-button>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#FFFFFF" padding="18px 26px 23px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="center" padding="0" color="#667386" font-size="12px" line-height="1.6">GatorBait Media · Florida football, all the time.<br/>You’re receiving this because you subscribed to GatorBait Media. Manage your preferences or unsubscribe using the links below.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

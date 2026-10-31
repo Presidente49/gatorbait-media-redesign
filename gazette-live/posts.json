@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Pregame Analysis: Florida Gators (5-2, 3-2) vs. Georgia Bulldogs (6-1, 4-1)",
+      "excerpt": "The Cocktail Party moves inside for what could be a defining moment for Sumrall and the Gators. However, quarterback questions and health may make things tough in Atlanta.",
+      "url": "https://www.gatorbaitmedia.com/post/pregame-analysis-florida-gators-5-2-3-2-vs-georgia-bulldogs-6-1-4-1",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-10-31T14:50:20Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_3be8a7a2180e4c72ae2bb30ca29ae084~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Pregame Analysis: Florida Gators (5-2, 3-2) vs. Georgia Bulldogs (6-1, 4-1)"
+      }
+    },
+    {
       "title": "Florida's Vernell Brown III Questionable Against Georgia After Friday Downgrade",
       "excerpt": "GatorBaitMedia.com photo by Chris Spears. ATLANTA— Florida's hopes of getting one of its most explosive offensive weapons back for Saturday's showdown with Georgia have taken a significant hit. Sophomore wide receiver Vernell Brown III, who had been listed as probable on Wednesday and Thursday, was downgraded to questionable on Friday's SEC availability…",
       "url": "https://www.gatorbaitmedia.com/post/florida-s-vernell-brown-iii-questionable-against-georgia-after-friday-downgrade",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Four medals, one golden week for Florida's Skye Blakely"
-      }
-    },
-    {
-      "title": "Gators make it four straight with sweep of Ole Miss",
-      "excerpt": "No. 5 Florida swept Ole Miss for its fourth straight win, with Kamryn Chaney and Alec Rothe leading the attack. The Gators head to Auburn next.",
-      "url": "https://www.gatorbaitmedia.com/post/gators-four-straight-sweep-ole-miss-volleyball",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-10-25T22:56:22Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_4eae063419cb4265b7cbb6684d9dc574~mv2.jpg/v1/fit/w_1000,h_800,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators make it four straight with sweep of Ole Miss"
       }
     }
   ]

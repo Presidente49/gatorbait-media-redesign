@@ -310,8 +310,8 @@
    [
     "Tramell Jones Jr.",
     "24",
-    "77",
-    "3.2",
+    "83",
+    "3.5",
     "1",
     "14"
    ],
@@ -970,7 +970,7 @@
     "CAR": 24,
     "LONG": 14,
     "TD": 1,
-    "YDS": 77,
+    "YDS": 83,
     "g": 5,
     "name": "Tramell Jones Jr."
    },
@@ -995,12 +995,12 @@
   ],
   [
    "Total yards per game",
-   "425.2",
+   "426.0",
    "369.2"
   ],
   [
    "Rushing yards per game",
-   "176.0",
+   "176.8",
    "133.5"
   ],
   [
@@ -1058,7 +1058,7 @@
   ],
   [
    "Yards per game",
-   "425.2",
+   "426.0",
    "369.2 allowed"
   ],
   [
@@ -1067,7 +1067,7 @@
    "8 games"
   ]
  ],
- "updated": "2026-10-31T23:12:43Z",
- "updatedLabel": "Oct. 31, 2026, 7:12 p.m. ET",
+ "updated": "2026-11-01T01:21:03Z",
+ "updatedLabel": "Oct. 31, 2026, 9:21 p.m. ET",
  "v": 1
 }

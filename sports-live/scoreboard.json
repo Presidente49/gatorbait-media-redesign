@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-10-31T23:12:16Z",
+ "updatedAt": "2026-11-01T01:20:41Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -37,10 +37,10 @@
   "recapUrl": "https://www.gatorbaitmedia.com/post/gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia",
   "galleryUrl": null,
   "tape": {
-   "totalYards": 246,
-   "rushingYards": 48,
+   "totalYards": 252,
+   "rushingYards": 54,
    "firstDowns": 15,
-   "attendance": null
+   "attendance": 72541
   },
   "leaders": [
    [
@@ -64,7 +64,7 @@
   "eventId": "401856739",
   "opponent": "Oklahoma",
   "opponentRank": null,
-  "opponentRecord": "4-3",
+  "opponentRecord": "4-4",
   "home": true,
   "neutral": false,
   "kickoffIso": "2026-11-08T00:45:00Z",
@@ -198,7 +198,7 @@
    "date": "2026-11-08T00:45:00Z",
    "opponent": "Oklahoma",
    "opponentRank": null,
-   "opponentRecord": "4-3",
+   "opponentRecord": "4-4",
    "home": true,
    "status": "scheduled",
    "score": null,
@@ -279,6 +279,11 @@
    "overall": "5-3"
   },
   {
+   "team": "South Carolina",
+   "confRecord": "3-3",
+   "overall": "5-3"
+  },
+  {
    "team": "Missouri",
    "confRecord": "2-2",
    "overall": "5-2"
@@ -289,19 +294,14 @@
    "overall": "5-2"
   },
   {
-   "team": "Oklahoma",
-   "confRecord": "2-2",
-   "overall": "4-3"
-  },
-  {
    "team": "Mississippi State",
    "confRecord": "2-3",
    "overall": "4-3"
   },
   {
-   "team": "South Carolina",
+   "team": "Oklahoma",
    "confRecord": "2-3",
-   "overall": "4-3"
+   "overall": "4-4"
   },
   {
    "team": "Auburn",

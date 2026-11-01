@@ -537,6 +537,8 @@ html.gb-light:has(@) #gbm-footer .gbf-btn{background:#fa4616!important}
 @ .gl-fbframe{position:relative;min-height:var(--glh,640px);background:#F4F6FA;border-radius:10px;overflow:hidden;display:flex;justify-content:center}
 @ .gl-fbbtn{display:flex;align-items:center;justify-content:center;min-height:48px;margin-top:14px;background:var(--o);color:#111827!important;font:800 17px/1 var(--dc);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:8px}
 @ .gl-fbframe iframe{border:0;display:block;max-width:100%}
+@ .gl-fbframe{display:none!important}
+@ .gl-fbtxt{margin:0 0 14px;font:500 17px/1.4 Barlow,sans-serif;color:var(--mu,#4b5563)}
 @ .gl-fbframe:empty:before,@ .gl-fbframe.gl-wait:before{content:'Loading our Facebook posts';align-self:center;font:600 14px Barlow,sans-serif;color:var(--mu)}
 @ .gl-more .gl-chead{margin-bottom:16px}
 @ .gl-srow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
@@ -775,7 +777,7 @@ function glLoadVids(root){glRenderVids(root,glPick(GL.VIDS),'saved');
 fetch(GL.YT_FEED,{cache:'no-store',credentials:'omit'}).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(x){var l=glPick(glParseFeed(x));if(!l)throw 0;glRenderVids(root,l,'youtube-feed');})
 .catch(function(){return get(GL.PAGES+'buddy-videos.json?t='+Math.floor(Date.now()/36e5)).then(function(j){var l=glPick((j.videos||[]).map(function(v){return{id:v.id,title:v.title,t:v.published};}));if(!l)throw 0;glRenderVids(root,l,'buddy-videos.json');});})
 .catch(function(){return get(GL.PAGES+'episodes.json?t='+Math.floor(Date.now()/36e5)).then(function(j){var l=glPick((j.episodes||[]).map(function(v){return{id:v.id,title:v.title,t:v.publishedAt};}));if(l&&!(root.querySelector('.gl-vrow').getAttribute('data-k')))glRenderVids(root,l,'episodes.json');});}).catch(function(){});}
-function glFbLoad(root){var box=root.querySelector('.gl-fbframe');if(!box||box.__gl)return;box.__gl=1;
+function glFbLoad(root){return;var box=root.querySelector('.gl-fbframe');if(!box||box.__gl)return;box.__gl=1;
 var w=Math.max(180,Math.min(500,Math.floor(box.clientWidth||340))),h=Math.round(parseFloat(getComputedStyle(box).minHeight))||640;
 var f=document.createElement('iframe');f.title='GatorBait Media on Facebook';f.width=String(w);f.height=String(h);f.loading='lazy';f.referrerPolicy='origin-when-cross-origin';f.setAttribute('allow','encrypted-media');f.setAttribute('scrolling','no');
 f.src='https://www.facebook.com/plugins/page.php?href='+encodeURIComponent(GL.FB_PAGE)+'&tabs=timeline&width='+w+'&height='+h+'&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false';
@@ -785,7 +787,7 @@ function glFollow(root){var main=root.querySelector('#sh-main'),bx=root.querySel
 var s=document.createElement('section');s.className='gl-follow';s.setAttribute('aria-label','Follow GatorBait');
 s.innerHTML='<div class="gl-fhead"><h2>Follow GatorBait</h2><p>The latest shows, posts and stories from the newsroom.</p></div>'+
 '<div class="gl-grid"><div class="gl-card gl-yt"><div class="gl-chead"><h3>Latest from The Buddy Martin Show</h3><a href="'+esc(GL.YT_URL)+'" target="_blank" rel="noopener">All episodes <span aria-hidden="true">→</span></a></div><div class="gl-vrow"></div><p class="gl-vsrc" hidden></p></div>'+
-'<div class="gl-card gl-fb"><div class="gl-chead"><h3>GatorBait on Facebook</h3><a class="gl-fblink" href="'+esc(GL.FB_PAGE)+'" target="_blank" rel="noopener">Open page <span aria-hidden="true">→</span></a></div><div class="gl-fbframe"></div><a class="gl-fbbtn" href="'+esc(GL.FB_PAGE)+'" target="_blank" rel="noopener">Follow GatorBait on Facebook</a></div></div>'+
+'<div class="gl-card gl-fb"><div class="gl-chead"><h3>GatorBait on Facebook</h3><a class="gl-fblink" href="'+esc(GL.FB_PAGE)+'" target="_blank" rel="noopener">Open page <span aria-hidden="true">→</span></a></div><div class="gl-fbframe" hidden></div><p class="gl-fbtxt">Posts, photos and live updates from the GatorBait newsroom.</p><a class="gl-fbbtn" href="'+esc(GL.FB_PAGE)+'" target="_blank" rel="noopener">Follow GatorBait on Facebook</a></div></div>'+
 '<div class="gl-card gl-more"><div class="gl-chead"><h3>More stories</h3><a href="/gatorbait-media-blogs">All stories <span aria-hidden="true">→</span></a></div><div class="gl-srow"></div></div>';
 bx.insertAdjacentElement('afterend',s);glLoadVids(root);
 var go=function(){s.__near=1;glFbLoad(root);glEager(s);};if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){if(e.some(function(x){return x.isIntersecting;})){io.disconnect();go();}},{rootMargin:'700px 0px'});io.observe(s.querySelector('.gl-fbframe'));}else setTimeout(go,3000);}

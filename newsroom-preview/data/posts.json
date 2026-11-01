@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "\"Coach Dumbass\" Owns Up To All His Team's Mistakes – Including The One He Made.",
+      "excerpt": "By Buddy Martin. After the 27-8 loss to Georgia, Jon Sumrall owned his mistake. Buddy sees a team that kept swinging and makes his case for Tramell Jones Jr. Photo by Chris Spears, GatorBait Media.",
+      "url": "https://www.gatorbaitmedia.com/post/coach-dumbass-owns-up-to-all-his-team-s-mistakes-including-the-one-he-made",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-01T02:11:47Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_8f5c0a6bfd8548a9b5dc1ff9cb1c5ff3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for \"Coach Dumbass\" Owns Up To All His Team's Mistakes – Including The One He Made."
+      }
+    },
+    {
       "title": "Gators Bitten in Atlanta: Four Turnovers Sink Florida in 27-8 Loss to No. 3 Georgia",
       "excerpt": "By GatorBait Staff. No. 3 Georgia beat Florida 27-8 in Atlanta, turning four Gators turnovers into a 24-0 halftime lead.",
       "url": "https://www.gatorbaitmedia.com/post/gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Tonight on The Buddy Martin Show: The Name Game"
-      }
-    },
-    {
-      "title": "The Spooks Are 4-0. Georgia Is Laying 12.5. Isn't That Scary Enough On Halloween?",
-      "excerpt": "Buddy Martin revisits Florida's four Halloween wins since 1931 as the Gators prepare to face Georgia at Mercedes-Benz Stadium in Atlanta. Photo by Chris Spears, GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/buddy-martin-spooks-halloween-florida-georgia",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-29T14:37:01Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e1904a8d956c4c56b021aa44d4a376e2~mv2.jpg/v1/fit/w_960,h_640,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Spooks Are 4-0. Georgia Is Laying 12.5. Isn't That Scary Enough On Halloween?"
       }
     }
   ]

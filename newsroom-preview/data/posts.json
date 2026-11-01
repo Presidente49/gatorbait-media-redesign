@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Georgia Lived on Third-and-1. Florida Rented Third-and-Long.",
+      "excerpt": "Georgia averaged 5.8 yards on first down to Florida's 3.0, lived on third-and-1 and got three 15-yard gifts on scoring drives. Inside the numbers behind the 27-8 loss.",
+      "url": "https://www.gatorbaitmedia.com/post/georgia-lived-on-third-and-1-florida-rented-third-and-long",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-01T18:04:20Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Georgia Lived on Third-and-1. Florida Rented Third-and-Long."
+      }
+    },
+    {
       "title": "Autopsy Cause of Gators Defeat: Self-Inflicted Wounds",
       "excerpt": "Franz Beard: Of Georgia’s 27 points, 24 were a direct result of Florida mistakes. Sumrall on the quarterback decision, the penalties and an apology to the fans.",
       "url": "https://www.gatorbaitmedia.com/post/autopsy-cause-of-gators-defeat-self-inflicted-wounds",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Key to a Win in Atlanta"
-      }
-    },
-    {
-      "title": "The Soothsayer: Georgia in a heart stopper",
-      "excerpt": "Franz Beard sizes up Florida's route to an upset of Georgia in Atlanta and makes his calls across the SEC. Archive photo by Chris Spears, GatorBait Media.",
-      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-georgia-in-a-heart-stopper",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-10-30T12:44:33Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_d03e2d3ca3b34a9f863a7e55157ec1d1~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Soothsayer: Georgia in a heart stopper"
       }
     }
   ]

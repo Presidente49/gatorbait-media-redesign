@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Postgame Analysis: Florida Gators (5-3, 3-3) v. Georgia Bulldogs (7-1, 5-1)",
+      "excerpt": "Loren Meadows: Florida needs to make Georgia earn wins in the series, not give it away as turnovers, penalties and poor execution doom the Gators in Atlanta.",
+      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-5-3-3-3-v-georgia-bulldogs-7-1-5-1",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-11-01T18:27:12Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_a2949ebdaa14453e9be5ba9777111910~mv2.jpg/v1/fit/w_1000,h_684,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Postgame Analysis: Florida Gators (5-3, 3-3) v. Georgia Bulldogs (7-1, 5-1)"
+      }
+    },
+    {
       "title": "Georgia Lived on Third-and-1. Florida Rented Third-and-Long.",
       "excerpt": "Georgia averaged 5.8 yards on first down to Florida's 3.0, lived on third-and-1 and got three 15-yard gifts on scoring drives. Inside the numbers behind the 27-8 loss.",
       "url": "https://www.gatorbaitmedia.com/post/georgia-lived-on-third-and-1-florida-rented-third-and-long",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Georgia-Born Gator: Reports Say Aaron Philo Will Start Against Georgia"
-      }
-    },
-    {
-      "title": "Key to a Win in Atlanta",
-      "excerpt": "Archive photo: A Florida quarterback prepares to throw as a Georgia defender closes during the Nov. 2, 2024 rivalry game in Jacksonville. Photo by Chris Spears, GatorBait Media. The Gators will look to accomplish something that they haven’t done in the last five seasons, beat the Georgia Bulldogs on Saturday. Maybe the change of scenery will do the Gators…",
-      "url": "https://www.gatorbaitmedia.com/post/key-to-a-win-in-atlanta",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-10-30T16:21:53Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_d03e2d3ca3b34a9f863a7e55157ec1d1~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Key to a Win in Atlanta"
       }
     }
   ]

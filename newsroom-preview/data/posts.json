@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Autopsy Cause of Gators Defeat: Self-Inflicted Wounds",
+      "excerpt": "Franz Beard: Of Georgia’s 27 points, 24 were a direct result of Florida mistakes. Sumrall on the quarterback decision, the penalties and an apology to the fans.",
+      "url": "https://www.gatorbaitmedia.com/post/autopsy-cause-of-gators-defeat-self-inflicted-wounds",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-01T15:20:41Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_d70b863951b744e185ec2952d8e6846e~mv2.jpg/v1/fit/w_1000,h_636,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Autopsy Cause of Gators Defeat: Self-Inflicted Wounds"
+      }
+    },
+    {
       "title": "\"Coach Dumbass\" Owns Up To All His Team's Mistakes – Including The One He Made.",
       "excerpt": "After the 27-8 loss to Georgia, Jon Sumrall owned his mistake. Buddy sees a team that kept swinging and makes his case for Tramell Jones Jr.",
       "url": "https://www.gatorbaitmedia.com/post/coach-dumbass-owns-up-to-all-his-team-s-mistakes-including-the-one-he-made",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Soothsayer: Georgia in a heart stopper"
-      }
-    },
-    {
-      "title": "Tonight on The Buddy Martin Show: The Name Game",
-      "excerpt": "Tonight on The Buddy Martin Show: What do we call Florida-Georgia now? Franz Beard, Ben Troupe, Paul Wilson Jr. and Chris Spears join Buddy to discuss the name, the money and Saturday's matchup. Archive photo: Chris Spears, GatorBait Media. AI-assisted design.",
-      "url": "https://www.gatorbaitmedia.com/post/the-whatchamacallit-game-buddy-martin-show-florida-georgia",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-29T23:05:18Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_502dcc994f0d403aa335cca992379a45~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Tonight on The Buddy Martin Show: The Name Game"
       }
     }
   ]

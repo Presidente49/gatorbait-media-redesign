@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-10-31T23:17:02.267Z",
+ "generatedAt": "2026-11-01T05:48:56.275Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-10-31T23:17:02.267Z",
+  "checkedAt": "2026-11-01T05:48:56.275Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Gators Bitten in Atlanta: Four Turnovers Sink Florida in 27-8 Loss to No. 3 Georgia",
-   "link": "https://www.gatorbaitmedia.com/post/gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia",
-   "publishedAt": "2026-10-31T23:10:05.000Z"
+   "title": "\"Coach Dumbass\" Owns Up To All His Team's Mistakes – Including The One He Made.",
+   "link": "https://www.gatorbaitmedia.com/post/coach-dumbass-owns-up-to-all-his-team-s-mistakes-including-the-one-he-made",
+   "publishedAt": "2026-11-01T02:11:47.000Z"
   },
   "problems": []
  },

@@ -1,5 +1,5 @@
 {
-  "commit": "ebc6578b8f6e859a5a4c51a491cd3b2ebf70aec2",
-  "updated": "2026-10-15T16:20:04.000Z",
-  "note": "Oct. 15: story-kit links only in Florida sentences (PR #289) on top of the homepage emergency fix (PR #287). Rollback: 1514ed77ed987dec653290e26952b3f9b776dbc9."
+  "commit": "6b4a13006bf82108c7d23b34156f523898a52afd",
+  "updated": "2026-11-01T01:35:00.000Z",
+  "note": "Nov. 1: front page snapshot leads with the Georgia recap and its Georgia cover (PR #479). Rollback: ebc6578b8f6e859a5a4c51a491cd3b2ebf70aec2."
 }

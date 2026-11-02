@@ -2,6 +2,7 @@
 
 ## Standing order: publish writer stories without asking — owner direction, Nov. 2, 2026
 
+- Brenden, Nov. 2, photo rule: a game story always runs a current photo from that game; if none exists, make a graphic. Pull from floridagators.com only when we must, with proper attribution. Chris Spears's SmugMug is ours to use (he is credentialed and works for GatorBait; Brenden owns those photos). A new media ID of the same photograph is still a reused photo; compare the pictures, not the IDs. Open: the SmugMug gallery link has not been supplied.
 - Brenden, Nov. 2: "If you get emails today for stories just post them, don't ask me... you have approval for everything... do whatever you think is best." Stories from Buddy, Franz, Loren, Eddie, Carlton and Chris (email or Writer Portal) go through the copy desk and are published under the writer's byline without asking. GatorBait Staff stories still wait for Buddy's "Approved". The Newsroom desk routine carries this order.
 - Unchanged: no subscriber email campaigns, automation toggles, payments, memberships, pricing, DNS or live-content deletion without his explicit yes.
 - No-refund wording is on the plan terms; see `docs/REFUND-AND-TRIAL-POLICY-2026-11-02.md`.

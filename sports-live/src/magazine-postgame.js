@@ -4,6 +4,14 @@
    * obj, safeUrl, media, frame) come from src/magazine.js. Bundled only into sports-live/magazine-postgame.js
    * (MAG_VARIANT=postgame), together with src/capture.js for the signup. No timers, no feed swap: the lead is curated
    * (Buddy Martin) and stays put. The portrait entrance animates only after activation. */
+  function pmScoreChip(S) {
+    S = obj(S); if (!S) return '';
+    return '<p class="pm-scorechip"><span>' + esc(text(S.away, 20)) + ' <b>' + esc(text(S.awayScore, 4)) + '</b></span><span>' + esc(text(S.home, 20)) + ' <b>' + esc(text(S.homeScore, 4)) + '</b></span><em>' + esc(text(S.label, 20)) + '</em></p>';
+  }
+  function pmTeasers(T) {
+    var t = list(T, 4).map(function (x) { return text(x, 60); }).filter(Boolean);
+    return t.length ? '<ul class="pm-teasers">' + t.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '';
+  }
   function pmEntrance(D) {
     var C = obj(D.cover) || {}, I = obj(D.issue) || {}, P = obj(C.poster), b = pmReelBase();
     // The finished portrait cover is a committed static file next to the bundle (like the reel posters); without it the photo-and-type poster below renders as before.
@@ -13,7 +21,7 @@
     return '<section class="pm-entrance" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
       frame(C.image, { eager: true, main: 1600, sizes: '(max-width: 699px) 280vw, 1200px' }) +
       '<div class="pm-poster-ink"><div><p class="pm-covermark">Gator<span>Bait</span></p><p class="pm-covermag">Magazine</p><p class="pm-coverdate">' + esc(text(I.date, 60)) + '</p></div>' +
-      '<div class="pm-poster-bottom"><p class="pm-edition">' + esc(text(I.number, 60)) + '</p><p class="pm-coverwriter">' + esc(text(C.kicker, 80)) + '</p><h1>' + esc(text(C.headline, 200)) + '</h1>' +
+      '<div class="pm-poster-bottom"><p class="pm-edition">' + esc(text(I.number, 60)) + '</p><p class="pm-coverwriter">' + esc(text(C.kicker, 80)) + '</p>' + (text(C.coverTitle, 40) ? '<h1 class="pm-hot">' + esc(text(C.coverTitle, 40)) + '</h1>' + pmScoreChip(C.score) + '<p class="pm-coversub">' + esc(text(C.headline, 200)) + '</p>' : '<h1>' + esc(text(C.headline, 200)) + '</h1>') + pmTeasers(C.teasers) +
       '<p class="pm-coverweek">' + esc(text(I.week, 120)) + '</p><p class="pm-covercredit">' + esc(text(C.image && C.image.credit, 120)) + '</p><span class="pm-open-label">Open this issue <span aria-hidden="true">↗</span></span></div></div>' +
       '<button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Tap the cover. Get the whole picture.</p></section>';
   }

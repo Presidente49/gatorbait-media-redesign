@@ -590,3 +590,6 @@ html #gbm-magazine-page.pm .gbc .gbc-p,html #gbm-magazine-page.pm .gbc .gbc-m{co
 #gbm-magazine-page.pm .pm-poster-ink{background:linear-gradient(180deg,#071439e0 0%,#07143900 22%,#07143900 28%,#071439b8 42%,#071439f0 62%,#071439 100%)}
 #gbm-magazine-page.pm .pm-coverwriter{color:#fff;text-shadow:0 1px 8px #000c}
 }
+@media screen{
+#gbm-magazine-page.pm .pm-art .pm-open-label{background:#ff4a0a;color:#fff;margin:0;padding:0 16px;border-top:0}
+}

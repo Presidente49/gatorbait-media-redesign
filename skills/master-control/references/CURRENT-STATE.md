@@ -1,5 +1,12 @@
 # Master Control Current State
 
+## Codex out of tokens; Jarvis is sole controller — owner direction, Nov. 2, 2026
+
+- Brenden, Nov. 2: "The Codex is out of the picture right now. I'm out of tokens. You gotta take over." Until he says Codex is back, Jarvis (this Claude controller) holds Codex's lane as well as the copy desk: Wix articles, writing, review, publication, web design, email, app-push copy, QC and PR merges within the existing hard lines. One controller, one production writer per object still applies.
+- Codex-authored work left open (not abandoned, not auto-merged): PR #460 (Oct. 31 magazine refresh, with #463 and #464 stacked on it), #433, #432 and #425 (drafts), plus its `codex/*` branches. Pick them up only when a task needs them; re-read live state first.
+- Unchanged hard lines: no subscriber email send, automation toggle, payment, membership, pricing, DNS or live-content deletion without Brenden's explicit yes. Taking over does not lift them.
+- Muse (Marlowe) handoffs still arrive by email and issue #34; the Writer Portal is readable from brenden@gatorbaitmedia.com, so the desk reads filings directly.
+
 ## Standing rule: every email send gets a Spaces push — owner direction, Nov. 2, 2026
 
 - Brenden, Nov. 2: "If we send an email we send a Spaces push. That is standard." Every list email (campaign, magazine, story alert) is paired with one Spaces app push to the same audience. Treat the pair as one release: the release is not complete until both are done.

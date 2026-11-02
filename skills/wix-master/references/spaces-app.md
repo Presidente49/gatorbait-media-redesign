@@ -19,6 +19,8 @@ Sources: https://support.wix.com/en/article/inviting-people-to-join-your-site-on
    Sources: https://support.wix.com/en/article/wix-mobile-apps-sending-an-announcement-as-a-push-notification-in-your-app , https://support.wix.com/en/article/wix-mobile-apps-creating-and-managing-announcements
 3. **Automatic push:** new blog posts notify members "who use the Spaces by Wix app ... and have enabled notifications". The owner chooses which notification types are sent, and each member can turn them off (see blog.md).
 
+**Standing rule (Brenden, Nov. 2, 2026): every email we send gets a matching Spaces push to the same audience.** Hand-built campaigns have no automatic push, so after any list email the controller drafts the push (copy, segment, link) and tracks it open until Brenden confirms it was sent. Native new-post automation `e4ff0da9` pairs push and email already.
+
 Every push is an outbound send to readers. It needs Brenden's yes, one sender, and no test pushes to the whole list.
 
 ## Why members don't get push

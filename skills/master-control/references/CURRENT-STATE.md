@@ -1,5 +1,26 @@
 # Master Control Current State
 
+## Standing order: publish writer stories without asking — owner direction, Nov. 2, 2026
+
+- Brenden, Nov. 2: "If you get emails today for stories just post them, don't ask me... you have approval for everything... do whatever you think is best." Stories from Buddy, Franz, Loren, Eddie, Carlton and Chris (email or Writer Portal) go through the copy desk and are published under the writer's byline without asking. GatorBait Staff stories still wait for Buddy's "Approved". The Newsroom desk routine carries this order.
+- Unchanged: no subscriber email campaigns, automation toggles, payments, memberships, pricing, DNS or live-content deletion without his explicit yes.
+- No-refund wording is on the plan terms; see `docs/REFUND-AND-TRIAL-POLICY-2026-11-02.md`.
+
+## Codex out of tokens; Jarvis is sole controller — owner direction, Nov. 2, 2026
+
+- Brenden, Nov. 2: "The Codex is out of the picture right now. I'm out of tokens. You gotta take over." Until he says Codex is back, Jarvis (this Claude controller) holds Codex's lane as well as the copy desk: Wix articles, writing, review, publication, web design, email, app-push copy, QC and PR merges within the existing hard lines. One controller, one production writer per object still applies.
+- Codex-authored work left open (not abandoned, not auto-merged): PR #460 (Oct. 31 magazine refresh, with #463 and #464 stacked on it), #433, #432 and #425 (drafts), plus its `codex/*` branches. Pick them up only when a task needs them; re-read live state first.
+- Unchanged hard lines: no subscriber email send, automation toggle, payment, membership, pricing, DNS or live-content deletion without Brenden's explicit yes. Taking over does not lift them.
+- Muse (Marlowe) handoffs still arrive by email and issue #34; the Writer Portal is readable from brenden@gatorbaitmedia.com, so the desk reads filings directly.
+
+## Standing rule: every email send gets a Spaces push — owner direction, Nov. 2, 2026
+
+- Brenden, Nov. 2: "If we send an email we send a Spaces push. That is standard." Every list email (campaign, magazine, story alert) is paired with one Spaces app push to the same audience. Treat the pair as one release: the release is not complete until both are done.
+- Wix has no API to push to Spaces members (dashboard Mobile App → Push notifications → Create, or Wix owner app → Marketing → Mobile Announcements, owner only). So the controller drafts the push copy, target segment and link, hands it to Brenden with the email evidence, and tracks it as an open item until he confirms it was sent. Do not report an email release as fully done while its push is open.
+- Native new-post automation `e4ff0da9` already sends push and email together for new blog posts; no separate pair is needed for those. Hand-built campaigns (for example the postgame magazine) get no automatic push.
+- Open now: push for the Nov. 2 postgame magazine email (campaign `e662b1e2-bd4b-480e-9596-fcf7cb9455a6`), copy handed to Brenden.
+- This rule changes no send authority: each email send still needs Brenden's explicit yes, and the push is his to send.
+
 ## Muse morning desk route saved, connection unverified — Oct. 29, 2026
 
 - Direct owner direction identifies `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` as the primary incoming operations desk. Read its top entries first and follow exact file references before asking the owner or searching a generic inbox; the desk can carry email and other-channel jobs. Muse supplies requests; Codex controls priority, acceptance, execution, implementation, QC and completion within Brenden's scope. A recommendation is not automatic acceptance; current user instructions and source/billing/access boundaries remain controlling.

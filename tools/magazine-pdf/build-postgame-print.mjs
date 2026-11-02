@@ -2,7 +2,8 @@
 // White-and-orange print edition of the Georgia postgame magazine (US Letter), whole articles, no outbound links.
 // Usage: node tools/magazine-pdf/build-postgame-print.mjs <issue.json> <posts.json> <out.html>
 import fs from 'node:fs';
-const [issuePath, postsPath, outPath] = process.argv.slice(2);
+const PHONE = process.argv.includes('--phone');
+const [issuePath, postsPath, outPath] = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 if (!outPath) { console.error('usage: build-postgame-print.mjs <issue.json> <posts.json> <out.html>'); process.exit(2); }
 const I = JSON.parse(fs.readFileSync(issuePath, 'utf8'));
 const P = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
@@ -67,9 +68,29 @@ table{width:100%;border-collapse:collapse;margin:4pt 0 6pt;font-size:9.5pt}th,td
 .roundup .story{page-break-before:auto;margin-top:18pt;padding-top:12pt;border-top:3pt solid #fa4616}.roundup .story h2{font-size:20pt}.roundup .hero img{max-height:2.4in}
 .next{page-break-before:always}.next h2{font-size:26pt;margin:0 0 6pt}.credits{margin-top:16pt;font-size:8.5pt;color:#526075;border-top:2pt solid #10264b;padding-top:8pt}
 `;
+
+const phoneCss = `
+@page{size:5in 8.9in;margin:.3in .3in .38in}
+body{font-size:10.2pt;line-height:1.5}
+.mast{font-size:40pt}.mag{font-size:10pt}.date{font-size:8.5pt}
+.cover{min-height:0;padding-top:12pt}.cover img{height:3.3in}.cover h1{font-size:23pt}.cover .dek{font-size:10.5pt}
+.inside{display:block}.inside li{font-size:8.5pt}.inside li b{font-size:9.5pt}.inside>div{margin-bottom:8pt}
+.teams span{font-size:15pt}.teams b{font-size:40pt}.teams{gap:12pt}
+.numbers h2,.box h2{font-size:17pt}table{font-size:8.8pt}
+.story,.roundup .story{page-break-before:auto;margin-top:18pt;padding-top:12pt;border-top:4pt solid #fa4616}
+.story h2,.roundup .story h2{font-size:19pt}.hero img,.roundup .hero img{max-height:2.4in}
+.text h2,.text h3,.text h4{font-size:12.5pt}.text p{margin-bottom:7pt}
+.sec{page-break-before:always;margin:0 0 4pt;font:800 11pt "Barlow Condensed";letter-spacing:.2em;text-transform:uppercase;color:#b93a0e}
+.ad{break-inside:avoid;margin:18pt 0 4pt;padding:14pt 12pt;background:#fa4616;color:#fff;text-align:center;border-radius:2pt}
+.ad b{display:block;font:800 18pt/1.05 "Barlow Condensed";text-transform:uppercase}.ad span{display:block;margin-top:4pt;font-size:9pt}
+.ad.light{background:#f6f4ef;color:#10264b;border:2pt solid #fa4616}
+.next{page-break-before:auto;margin-top:18pt}
+`;
 const nextS = I.next || {};
+const ad1 = '<aside class="ad"><b>Get GatorBait Magazine free</b><span>Buddy Martin, the game-week package and Chris Spears\' photos. gatorbaitmedia.com/magazine</span></aside>';
+const ad2 = '<aside class="ad light"><b>The Buddy Martin Show</b><span>New episodes all week. Search \'The Buddy Martin Show\' on YouTube.</span></aside>';
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>GatorBait Magazine | Postgame: Georgia 27, Florida 8</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet"><style>${css}</style></head><body>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet"><style>${css}${PHONE ? phoneCss : ''}</style></head><body>
 <section class="cover"><p class="mast">Gator<span>Bait</span></p><p class="mag">Magazine</p><p class="date">${esc(I.issue.date)} · ${esc(I.issue.number)} · ${esc(I.issue.week)}</p>
 <figure><img src="${img(cover.image, 1600)}" alt="${esc(cover.image.alt)}"><figcaption>${esc(cover.image.credit)}</figcaption></figure>
 <p class="kick" style="margin-top:12pt">${esc(cover.kicker)}</p><h1>${esc(cover.headline)}</h1><p class="dek">${esc(cover.dek)}</p>
@@ -80,8 +101,8 @@ ${finalHtml}
 <section class="box"><p class="kick">${esc(I.box.kicker)}</p><h2>${esc(I.box.title)}</h2><table><thead><tr><th></th><td>${esc(I.box.cols[0])}</td><td>${esc(I.box.cols[1])}</td></tr></thead><tbody>${tbl(I.box.rows)}</tbody></table>
 ${I.box.leaders.map((t) => `<p class="kick">${esc(t.team)} leaders</p><p>${t.items.map((x) => `<b>${esc(x[0])}</b> ${esc(x[1])}`).join('<br>')}</p>`).join('')}<p class="src">${esc(I.box.source)}</p></section>
 ${story({ rubric: 'Postgame', author: 'GatorBait Staff', title: cover.headline, url: cover.url, image: null })}
-${tocCols.map((it) => story(it)).join('')}
-<div class="roundup">${tocCov.map((it) => story(it)).join('')}</div>
+${PHONE ? '<p class="sec">Columns</p>' : ''}${tocCols.map((it) => story(it)).join('')}${PHONE ? ad1 : ''}
+${PHONE ? '<p class="sec">Georgia week</p>' : ''}<div class="roundup">${tocCov.map((it) => story(it)).join('')}</div>${PHONE ? ad2 : ''}
 <section class="next"><p class="kick">Up next</p><h2>${esc(nextS.title || 'Oklahoma at Florida')}</h2><p>${esc((nextS.chips || []).join(' · '))}</p>
 <div class="credits"><b>Photo credits.</b> ${esc((I.credits.other || []).join(' '))}<br>Score, line score, scoring plays, box score and leaders: ESPN (event 401856734). Quotes are as reported in the linked columns or from full transcripts. Records and rankings as of the latest release at the time of publishing.</div></section>
 </body></html>`;

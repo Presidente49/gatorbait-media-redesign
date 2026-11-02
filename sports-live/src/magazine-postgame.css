@@ -593,3 +593,9 @@ html #gbm-magazine-page.pm .gbc .gbc-p,html #gbm-magazine-page.pm .gbc .gbc-m{co
 @media screen{
 #gbm-magazine-page.pm .pm-art .pm-open-label{background:#ff4a0a;color:#fff;margin:0;padding:0 16px;border-top:0}
 }
+/* Nov. 2: no flip or tilt. The cover is just the top of the page. */
+@media screen{
+#gbm-magazine-page.pm .pm-book{transform:none!important;perspective:none;box-shadow:0 8px 30px #10264b26}
+#gbm-magazine-page.pm .pm-poster{transition:none}
+#gbm-magazine-page.pm .pm-entrance{min-height:0;padding-bottom:28px}
+}

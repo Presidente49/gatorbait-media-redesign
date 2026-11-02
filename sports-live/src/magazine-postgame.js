@@ -15,11 +15,11 @@
   function pmEntrance(D) {
     var C = obj(D.cover) || {}, I = obj(D.issue) || {}, P = obj(C.poster), b = pmReelBase();
     // The finished portrait cover is a committed static file next to the bundle (like the reel posters); without it the photo-and-type poster below renders as before.
-    if (P && b && /^[\w-]+\.jpg$/.test(String(P.file))) return '<section class="pm-entrance pm-art" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
+    if (P && b && !text(C.coverTitle, 40) && /^[\w-]+\.jpg$/.test(String(P.file))) return '<section class="pm-entrance pm-art" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
       '<img src="' + esc(b + P.file) + '" width="1200" height="1600" alt="' + esc(text(P.alt, 300)) + '" fetchpriority="high" decoding="async"><h1 class="pm-vh">' + esc(text(C.headline, 200)) + '</h1>' +
       '<span class="pm-open-label">Read this issue <span aria-hidden="true">↓</span></span><button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Scroll for the full issue.</p></section>';
     return '<section class="pm-entrance" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
-      frame(C.image, { eager: true, main: 1600, sizes: '(max-width: 699px) 280vw, 1200px' }) +
+      (obj(C.pdfPhoto) && b && /^[\w-]+\.jpg$/.test(String(C.pdfPhoto.file)) ? '<img class="pm-photo" src="' + esc(b + C.pdfPhoto.file) + '" width="808" height="1164" alt="' + esc(text(C.pdfPhoto.alt, 300)) + '" fetchpriority="high" decoding="async">' : frame(C.image, { eager: true, main: 1600, sizes: '(max-width: 699px) 280vw, 1200px' })) +
       '<div class="pm-poster-ink"><div><p class="pm-covermark">Gator<span>Bait</span></p><p class="pm-covermag">Magazine</p><p class="pm-coverdate">' + esc(text(I.date, 60)) + '</p></div>' +
       '<div class="pm-poster-bottom"><p class="pm-edition">' + esc(text(I.number, 60)) + '</p><p class="pm-coverwriter">' + esc(text(C.kicker, 80)) + '</p>' + (text(C.coverTitle, 40) ? '<h1 class="pm-hot">' + esc(text(C.coverTitle, 40)) + '</h1>' + pmScoreChip(C.score) + '<p class="pm-coversub">' + esc(text(C.headline, 200)) + '</p>' : '<h1>' + esc(text(C.headline, 200)) + '</h1>') + pmTeasers(C.teasers) +
       '<p class="pm-coverweek">' + esc(text(I.week, 120)) + '</p><p class="pm-covercredit">' + esc(text(C.image && C.image.credit, 120)) + '</p><span class="pm-open-label">Read this issue <span aria-hidden="true">↓</span></span></div></div>' +

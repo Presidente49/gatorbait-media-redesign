@@ -599,3 +599,21 @@ html #gbm-magazine-page.pm .gbc .gbc-p,html #gbm-magazine-page.pm .gbc .gbc-m{co
 #gbm-magazine-page.pm .pm-poster{transition:none}
 #gbm-magazine-page.pm .pm-entrance{min-height:0;padding-bottom:28px}
 }
+
+/* Nov. 2: web cover matches the PDF cover (navy masthead band, Sumrall photo, big title). Less blue. */
+@media screen{
+#gbm-magazine-page.pm{--pm-blue:#10264b}
+#gbm-magazine-page.pm .pm-poster{background:#071439;aspect-ratio:9/16}
+#gbm-magazine-page.pm .pm-poster .pm-photo{position:absolute;left:0;right:0;top:21%;width:100%;height:79%;object-fit:cover;object-position:50% 0}
+#gbm-magazine-page.pm .pm-poster-ink{background:linear-gradient(180deg,#071439 0%,#071439 20%,#07143900 31%,#07143900 36%,#071439c8 52%,#071439f2 70%,#071439 100%)}
+#gbm-magazine-page.pm .pm-covermark{font-size:14cqw}
+#gbm-magazine-page.pm .pm-book{background:#071439}
+}
+@media screen{
+#gbm-magazine-page.pm .pm-poster .pm-photo{top:17%;height:83%}
+#gbm-magazine-page.pm .pm-poster-ink{background:linear-gradient(180deg,#071439 0%,#071439 16%,#07143900 27%,#07143900 44%,#071439cc 60%,#071439f4 76%,#071439 100%)}
+#gbm-magazine-page.pm .pm-poster-ink h1.pm-hot{font-size:14.5cqw;margin:2px 0 8px}
+#gbm-magazine-page.pm .pm-poster-ink .pm-coversub,#gbm-magazine-page.pm .pm-poster-ink .pm-coverwriter,#gbm-magazine-page.pm .pm-poster-ink .pm-coverweek{display:none}
+#gbm-magazine-page.pm .pm-poster-ink .pm-covercredit{font-size:max(11px,2.8cqw);margin-top:2px}
+#gbm-magazine-page.pm .pm-teasers li{font-size:max(12px,3.4cqw)}
+}

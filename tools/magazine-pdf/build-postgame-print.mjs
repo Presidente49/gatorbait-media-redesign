@@ -14,7 +14,8 @@ const byUrl = new Map(P.posts.map((p) => [p.url, p]));
 const norm = (u) => (u.startsWith('/post/') ? u : '/post/' + u.replace(/^\//, ''));
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const CDN = 'https://static.wixstatic.com/media/';
-const img = (im, w = 1200) => im && im.id ? `${CDN}${im.id}~mv2.${im.ext || 'jpg'}/v1/fit/w_${w},h_${Math.round(w * (im.height / im.width))},q_85/x.${im.ext || 'jpg'}` : '';
+const LITE = process.argv.includes('--lite'); // smaller file: 70% width, q70
+const img = (im, w0 = 1200) => { const w = LITE ? Math.round(w0 * 0.7) : w0; return im && im.id ? `${CDN}${im.id}~mv2.${im.ext || 'jpg'}/v1/fit/w_${w},h_${Math.round(w * (im.height / im.width))},q_${LITE ? 70 : 85}/x.${im.ext || 'jpg'}` : ''; };
 // Strip links (keep the words), the web credit line, "By X" line and bare URL paragraphs from a story body.
 function body(html) {
   let h = html.replace(/<a [^>]*>(.*?)<\/a>/gs, '$1').replace(/<figure>.*?<\/figure>/gs, '');
@@ -49,6 +50,20 @@ h1,h2,h3,.kick,.mast,.by,li b{font-family:"Barlow Condensed","Barlow",Arial,sans
 .mast{font-size:54pt;font-weight:800;line-height:.9;letter-spacing:-.02em;text-transform:uppercase;margin:0}.mast span{color:#fa4616}
 .mag{font:700 12pt "Barlow Condensed";letter-spacing:.5em;color:#b93a0e;text-transform:uppercase;margin:4pt 0 2pt}
 .date{color:#42506a;font-size:10pt;margin:0 0 12pt;border-bottom:2pt solid #fa4616;padding-bottom:8pt}
+.cover.hot{position:relative;border-top:10pt solid #fa4616;padding:0;min-height:9.3in;color:#fff;background:#071439;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cover.hot .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:48% 30%}
+.cover.hot .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,20,57,.88) 0%,rgba(7,20,57,0) 24%,rgba(7,20,57,0) 32%,rgba(7,20,57,.82) 52%,rgba(7,20,57,.97) 76%,#071439 100%)}
+.cover.hot .in{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:9.3in;padding:18pt 20pt 18pt;box-sizing:border-box}
+.cover.hot .mast{color:#fff;text-align:center;font-size:62pt}.cover.hot .mag{color:#ffd9c7;text-align:center;border-bottom:2.5pt solid #fa4616;padding-bottom:6pt}
+.cover.hot .date{color:#fff;border:0;margin:6pt 0 0;padding:0}
+.cover.hot .ed{display:inline-block;background:#ff4a0a;color:#fff;font:800 11pt "Barlow Condensed";letter-spacing:.07em;text-transform:uppercase;padding:5pt 9pt;margin:0 0 8pt}
+.cover.hot h1{color:#fff;font-size:70pt;line-height:.88;text-transform:uppercase;margin:0 0 10pt;letter-spacing:-.01em}
+.cover.hot .chip{display:inline-flex;font:700 15pt "Barlow Condensed";text-transform:uppercase;letter-spacing:.05em;border:1pt solid rgba(255,255,255,.6);margin:0 0 10pt}
+.cover.hot .chip span{padding:6pt 10pt;border-right:1pt solid rgba(255,255,255,.6)}.cover.hot .chip b{font-size:1.25em;margin-left:4pt}.cover.hot .chip span+span b{color:#ffb27a}.cover.hot .chip em{font-style:normal;background:#ff4a0a;padding:6pt 10pt}
+.cover.hot .sub{font-size:12pt;line-height:1.35;color:#eef2ff;margin:0 0 9pt}
+.cover.hot ul.tz{list-style:none;margin:0 0 6pt;padding:0}.cover.hot ul.tz li{font:700 13pt "Barlow Condensed";text-transform:uppercase;letter-spacing:.05em;padding-left:12pt;position:relative;margin:0 0 4pt}.cover.hot ul.tz li:before{content:"";position:absolute;left:0;top:4pt;width:6pt;height:6pt;background:#ff4a0a}
+.cover.hot .cr{font-size:8pt;color:#c8d1e7;margin:6pt 0 0}
+
 .cover figure{margin:0}.cover img{width:100%;height:3.7in;object-fit:cover;display:block}
 .cover figcaption,figcaption{font-size:8pt;color:#526075;margin-top:3pt}
 .cover h1{font-size:31pt;line-height:1.02;margin:12pt 0 6pt;color:#10264b}.cover .dek{font-size:13.5pt;color:#33405e;margin:0 0 12pt}
@@ -73,6 +88,7 @@ table{width:100%;border-collapse:collapse;margin:4pt 0 6pt;font-size:9.5pt}th,td
 `;
 
 const phoneCss = `
+.cover.hot,.cover.hot .in{min-height:8.05in;max-height:8.3in}.cover.hot .in{padding:12pt 14pt}.cover.hot .mast{font-size:44pt}.cover.hot h1{font-size:50pt}.cover.hot .sub{display:none}.cover.hot .chip{font-size:13pt}.cover.hot ul.tz li{font-size:11.5pt;margin:0 0 3pt}.cover.hot .cr{margin-top:3pt}
 @page{size:5in 8.9in;margin:.3in .3in .38in}
 body{font-size:10.2pt;line-height:1.5}
 .mast{font-size:40pt}.mag{font-size:10pt}.date{font-size:8.5pt}
@@ -107,10 +123,10 @@ const ad1 = '<aside class="ad"><b>Get GatorBait Magazine free</b><span>Buddy Mar
 const ad2 = '<aside class="ad light"><b>The Buddy Martin Show</b><span>New episodes all week. Search \'The Buddy Martin Show\' on YouTube.</span></aside>';
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>GatorBait Magazine | Postgame: Georgia 27, Florida 8</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet"><style>${css}${PHONE ? phoneCss : ''}</style></head><body>
-<section class="cover"><p class="mast">Gator<span>Bait</span></p><p class="mag">Magazine</p><p class="date">${esc(I.issue.date)} · ${esc(I.issue.number)} · ${esc(I.issue.week)}</p>
+${cover.coverTitle ? `<section class="cover hot"><img class="bg" src="${img(cover.image, 1600)}" alt="${esc(cover.image.alt)}"><div class="shade"></div><div class="in"><div><p class="mast">Gator<span>Bait</span></p><p class="mag">Magazine</p><p class="date">${esc(I.issue.date)} · ${esc(I.issue.week)}</p></div><div><p class="ed">${esc(I.issue.number)}</p><h1>${esc(cover.coverTitle)}</h1><p class="chip"><span>${esc(cover.score.away)} <b>${esc(cover.score.awayScore)}</b></span><span>${esc(cover.score.home)} <b>${esc(cover.score.homeScore)}</b></span><em>${esc(cover.score.label)}</em></p><p class="sub">${esc(cover.headline)}</p><ul class="tz">${(cover.teasers || []).map((t) => `<li>${esc(t)}</li>`).join('')}</ul><p class="cr">${esc(cover.image.credit)}</p></div></div></section>` : `<section class="cover"><p class="mast">Gator<span>Bait</span></p><p class="mag">Magazine</p><p class="date">${esc(I.issue.date)} · ${esc(I.issue.number)} · ${esc(I.issue.week)}</p>
 <figure><img src="${img(cover.image, 1600)}" alt="${esc(cover.image.alt)}"><figcaption>${esc(cover.image.credit)}</figcaption></figure>
 <p class="kick" style="margin-top:12pt">${esc(cover.kicker)}</p><h1>${esc(cover.headline)}</h1><p class="dek">${esc(cover.dek)}</p>
-</section>
+</section>`}
 <section class="toc"><p class="kick">In this issue</p><div class="inside"><div><h3>${esc(I.columns.title)}</h3><ul>${toc(tocCols)}</ul></div><div><h3>Georgia week</h3><ul>${toc(tocCov)}</ul></div></div></section>
 ${finalHtml}
 <section class="numbers"><p class="kick">${esc(I.damage.kicker || 'By the numbers')}</p><h2>${esc(I.damage.title)}</h2><p>${esc(I.damage.dek)}</p></section>

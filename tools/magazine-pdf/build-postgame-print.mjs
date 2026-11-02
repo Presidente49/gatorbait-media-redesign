@@ -21,8 +21,6 @@ function body(html) {
   let h = html.replace(/<a [^>]*>(.*?)<\/a>/gs, '$1').replace(/<figure>.*?<\/figure>/gs, '');
   h = h.replace(/<p>\s*(Photo[^<]{0,120}|By [A-Z][^<]{0,60}|Charlie Casey\. Photo[^<]{0,80})<\/p>/i, '');
   h = h.replace(/<p>\s*(From The Buddy Martin Show on YouTube:[^<]*|https?:\/\/[^<\s]+)\s*<\/p>/gi, '').replace(/<h2>\s*Watch:[^<]*<\/h2>/gi, '');
-  // ESPN final (event 401856734) corrections for a page that may still be served from cache.
-  h = h.replace(/Florida(?:&#x27;|')s 246\./g, "Florida's 252.").replace('48 rushing yards on 28 carries, 1.7 per attempt', '54 rushing yards on 28 carries, 1.9 per attempt');
   h = h.replace(/<p>\s*<\/p>/g, '');
   return h;
 }

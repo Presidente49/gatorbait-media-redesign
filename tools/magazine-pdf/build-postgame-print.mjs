@@ -3,7 +3,10 @@
 // Usage: node tools/magazine-pdf/build-postgame-print.mjs <issue.json> <posts.json> <out.html>
 import fs from 'node:fs';
 const PHONE = process.argv.includes('--phone');
-const [issuePath, postsPath, outPath] = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+const adsArg = process.argv.indexOf('--ads');
+const ADS = adsArg > 0 ? JSON.parse(fs.readFileSync(process.argv[adsArg + 1], 'utf8')) : [];
+const argsRest = process.argv.slice(2).filter((a, i, arr) => !a.startsWith('--') && arr[i - 1] !== '--ads');
+const [issuePath, postsPath, outPath] = argsRest;
 if (!outPath) { console.error('usage: build-postgame-print.mjs <issue.json> <posts.json> <out.html>'); process.exit(2); }
 const I = JSON.parse(fs.readFileSync(issuePath, 'utf8'));
 const P = JSON.parse(fs.readFileSync(postsPath, 'utf8'));
@@ -83,10 +86,23 @@ body{font-size:10.2pt;line-height:1.5}
 .sec{page-break-before:always;margin:0 0 4pt;font:800 11pt "Barlow Condensed";letter-spacing:.2em;text-transform:uppercase;color:#b93a0e}
 .ad{break-inside:avoid;margin:18pt 0 4pt;padding:14pt 12pt;background:#fa4616;color:#fff;text-align:center;border-radius:2pt}
 .ad b{display:block;font:800 18pt/1.05 "Barlow Condensed";text-transform:uppercase}.ad span{display:block;margin-top:4pt;font-size:9pt}
+.adx{break-inside:avoid;margin:18pt 0 4pt;padding:6pt 0;border-top:1pt solid #d9dce6;border-bottom:1pt solid #d9dce6}.adl{margin:0 0 4pt;font:700 7.5pt "Barlow Condensed";letter-spacing:.2em;text-transform:uppercase;color:#6b7894}.adrow{display:flex;gap:10pt;align-items:center}.adimg{flex:1;max-width:100%;height:auto}.adqr{width:.9in;height:.9in}
 .ad.light{background:#f6f4ef;color:#10264b;border:2pt solid #fa4616}
 .next{page-break-before:auto;margin-top:18pt}
 `;
 const nextS = I.next || {};
+// Paid or partner ad slots. Dormant unless --ads <json> supplies real creative.
+// Each: {id, label:'Advertisement', image:'https://...', link:'https://...', qr?:'https://...', alt, after:'columns'|'coverage'}
+// Refuses a placeholder link, a direct polymarket.com link (must be our tracking link) and any creative without a label.
+function adBlock(a) {
+  if (!a.image || !a.link) throw new Error('Ad ' + a.id + ' needs image and link');
+  if (/POLYMARKET_LINK|TBD|\{\{/.test(a.link)) throw new Error('Ad ' + a.id + ' still has a placeholder link');
+  if (/^https?:\/\/(www\.)?polymarket\.com/i.test(a.link)) throw new Error('Ad ' + a.id + ' must use our tracking link, not polymarket.com directly');
+  if (a.label !== 'Advertisement') throw new Error('Ad ' + a.id + ' must be labeled Advertisement');
+  return `<aside class="adx"><p class="adl">Advertisement</p><div class="adrow"><img class="adimg" src="${esc(a.image)}" alt="${esc(a.alt || 'Advertisement')}">${a.qr ? `<img class="adqr" src="${esc(a.qr)}" alt="QR code">` : ''}</div></aside>`;
+}
+const adsAfter = (where) => ADS.filter((a) => a.after === where).map(adBlock).join('');
+
 const ad1 = '<aside class="ad"><b>Get GatorBait Magazine free</b><span>Buddy Martin, the game-week package and Chris Spears\' photos. gatorbaitmedia.com/magazine</span></aside>';
 const ad2 = '<aside class="ad light"><b>The Buddy Martin Show</b><span>New episodes all week. Search \'The Buddy Martin Show\' on YouTube.</span></aside>';
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>GatorBait Magazine | Postgame: Georgia 27, Florida 8</title>
@@ -101,8 +117,8 @@ ${finalHtml}
 <section class="box"><p class="kick">${esc(I.box.kicker)}</p><h2>${esc(I.box.title)}</h2><table><thead><tr><th></th><td>${esc(I.box.cols[0])}</td><td>${esc(I.box.cols[1])}</td></tr></thead><tbody>${tbl(I.box.rows)}</tbody></table>
 ${I.box.leaders.map((t) => `<p class="kick">${esc(t.team)} leaders</p><p>${t.items.map((x) => `<b>${esc(x[0])}</b> ${esc(x[1])}`).join('<br>')}</p>`).join('')}<p class="src">${esc(I.box.source)}</p></section>
 ${story({ rubric: 'Postgame', author: 'GatorBait Staff', title: cover.headline, url: cover.url, image: null })}
-${PHONE ? '<p class="sec">Columns</p>' : ''}${tocCols.map((it) => story(it)).join('')}${PHONE ? ad1 : ''}
-${PHONE ? '<p class="sec">Georgia week</p>' : ''}<div class="roundup">${tocCov.map((it) => story(it)).join('')}</div>${PHONE ? ad2 : ''}
+${PHONE ? '<p class="sec">Columns</p>' : ''}${tocCols.map((it) => story(it)).join('')}${PHONE ? ad1 : ''}${adsAfter('columns')}
+${PHONE ? '<p class="sec">Georgia week</p>' : ''}<div class="roundup">${tocCov.map((it) => story(it)).join('')}</div>${PHONE ? ad2 : ''}${adsAfter('coverage')}
 <section class="next"><p class="kick">Up next</p><h2>${esc(nextS.title || 'Oklahoma at Florida')}</h2><p>${esc((nextS.chips || []).join(' · '))}</p>
 <div class="credits"><b>Photo credits.</b> ${esc((I.credits.other || []).join(' '))}<br>Score, line score, scoring plays, box score and leaders: ESPN (event 401856734). Quotes are as reported in the linked columns or from full transcripts. Records and rankings as of the latest release at the time of publishing.</div></section>
 </body></html>`;

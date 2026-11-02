@@ -105,13 +105,13 @@
   "damage": {
     "kicker": "By the numbers",
     "title": "Four turnovers and a run game that never started",
-    "dek": "Florida threw for 198 net yards to Georgia's 101, but turned the ball over four times and ran for 54 yards while Georgia ran for 217.",
+    "dek": "Florida threw for 198 net yards to Georgia's 101, but turned the ball over four times and ran for 48 yards while Georgia ran for 217.",
     "yards": {
       "label": "Total yards",
       "rows": [
         {
           "name": "Florida",
-          "value": 252,
+          "value": 246,
           "us": true
         },
         {
@@ -129,12 +129,12 @@
       {
         "value": "217",
         "label": "Georgia rushing yards",
-        "detail": "42 carries at 5.2 yards each. Florida had 54 yards on 28 carries."
+        "detail": "42 carries at 5.2 yards each. Florida had 48 yards on 28 carries."
       },
       {
         "value": "4-12",
         "label": "Florida third downs",
-        "detail": "Georgia converted 6 of 15 and held the ball 32:10 to Florida's 27:50."
+        "detail": "Georgia converted 6 of 15 and held the ball 32:11 to Florida's 27:50."
       }
     ]
   },
@@ -228,7 +228,7 @@
       ],
       [
         "Total yards",
-        "252",
+        "246",
         "318"
       ],
       [
@@ -238,7 +238,7 @@
       ],
       [
         "Rushing",
-        "28 for 54 yds",
+        "28 for 48 yds",
         "42 for 217 yds"
       ],
       [
@@ -259,7 +259,7 @@
       [
         "Possession",
         "27:50",
-        "32:10"
+        "32:11"
       ]
     ],
     "leaders": [

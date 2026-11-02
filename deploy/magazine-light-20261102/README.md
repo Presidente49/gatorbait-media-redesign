@@ -15,7 +15,7 @@ Re-patch the embed (current revision, category ESSENTIAL) with the live body whe
 
 ## Also shipped
 - Staff story `59ee1b7c`: Florida total yards 252 and rushing 54 on 28 carries (1.9), per ESPN event 401856734 (text-only update-publish).
-- Magazine PDF (Letter 5.3 MB; phone size 79 pages, 5.3 MB; 22 full stories incl. Eddie Gilley's "Nightmare in Atlanta"; no outbound links), built by `tools/magazine-pdf/build-postgame-print.mjs`; v2 uploaded to the Media Manager as `d3cfa5_6b5ad358cb5b436091f74fbe290a40fc.pdf` (Letter) and `d3cfa5_d99264c82e184c539e728058c824d8ef.pdf` (phone size, 5.3 MB); compressed phone PDF (2.2 MB, same pages) `d3cfa5_cb7aecc78fca415c9ca94e8ea9070ef0.pdf` is what the email uses. Superseded v1: `d3cfa5_9fcf7b87...` and `d3cfa5_500dfbc7...` (left in place; no deletes).
+- Magazine PDF (Letter 5.3 MB; phone size 79 pages, 5.3 MB; 22 full stories incl. Eddie Gilley's "Nightmare in Atlanta"; no outbound links), built by `tools/magazine-pdf/build-postgame-print.mjs`; v2 uploaded to the Media Manager as `d3cfa5_6b5ad358cb5b436091f74fbe290a40fc.pdf` (Letter) and `d3cfa5_d99264c82e184c539e728058c824d8ef.pdf` (phone size, 5.3 MB); compressed phone PDF (2.2 MB, same pages) `d3cfa5_cb7aecc78fca415c9ca94e8ea9070ef0.pdf`; new-cover phone PDF (2.6 MB, 79 pages) `d3cfa5_ab5f4b1a20194e99a58409e357328aec.pdf` is what the email uses (cover live at embed rev 133, pin 42f61638). Superseded v1: `d3cfa5_9fcf7b87...` and `d3cfa5_500dfbc7...` (left in place; no deletes).
 - Email source `newsletter/2026-11-02-postgame-magazine-v2.mjml/.html` (white and orange, PDF button). Draft only: not created as a campaign, not sent. One list email already went Nov. 2, so any send needs Brenden's yes and a paired Spaces push.
 
 ## Build and checks

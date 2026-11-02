@@ -147,7 +147,7 @@
         <mj-text align="center" padding="0 0 14px" color="#0B1F4B" font-size="16px" line-height="1.7">Basketball: No. 1 Florida vs. No. 14 Miami, Monday, Nov. 2, 6 p.m. ET, ESPN2, Tampa<br />Football: Oklahoma at Florida, Saturday, Nov. 7, 7:45 p.m. ET, SEC Network</mj-text>
         <mj-button href="https://www.gatorbaitmedia.com/magazine?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_postgame_2026_11_02_v2&utm_content=read_magazine">READ THE WHOLE MAGAZINE</mj-button>
         <mj-spacer height="12px" />
-        <mj-button background-color="#FFFFFF" color="#0B1F4B" border="2px solid #FA4616" href="https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_ab5f4b1a20194e99a58409e357328aec.pdf?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_postgame_2026_11_02_v2&utm_content=download_pdf">DOWNLOAD THE PDF</mj-button>
+        <mj-button background-color="#FFFFFF" color="#0B1F4B" border="2px solid #FA4616" href="https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_0d2a55d3c9f14694828a487002d2a7b0.pdf?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_postgame_2026_11_02_v2&utm_content=download_pdf">DOWNLOAD THE PDF</mj-button>
         <mj-text align="center" padding="14px 0 0" color="#6B7280" font-size="13px"><a href="https://www.gatorbaitmedia.com/post/no-1-at-tipoff-florida-opens-against-no-14-miami-in-tampa?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_postgame_2026_11_02_v2&utm_content=miami_preview" style="color:#0B1F4B;">Basketball opener: the Miami preview</a></mj-text>
       </mj-column>
     </mj-section>

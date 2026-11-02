@@ -40,7 +40,7 @@
   function picture(img, o) {
     var file = media(img); if (!file) return '';
     var W = num(img.width) || o.w || 1600, H = num(img.height) || o.h || 900, r = H / W;
-    var widths = [480, 800, 1200, 1600].filter(function (x) { return x <= Math.max(W, 480); });
+    var widths = [480, 800, 1200, 1600, 2400].filter(function (x) { return x <= Math.max(W, 480); });
     var main = o.main || 1200, set = widths.map(function (x) { return cut(file, x, Math.round(x * r)) + ' ' + x + 'w'; }).join(', ');
     return '<img src="' + esc(cut(file, Math.min(main, W), Math.round(Math.min(main, W) * r))) + '" srcset="' + esc(set) + '" sizes="' + esc(o.sizes || '(max-width: 820px) 100vw, 60vw') + '" alt="' + esc(text(img.alt, 200)) + '" width="' + W + '" height="' + H + '" loading="' + (o.eager ? 'eager' : 'lazy') + '" decoding="async"' + (o.eager ? ' fetchpriority="high"' : '') + '>';
   }

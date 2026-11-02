@@ -1,0 +1,26 @@
+# Magazine overhaul, Nov. 2, 2026 (white and orange, calmer phone type)
+
+Owner order (Brenden, Nov. 2): fonts too big on mobile; use the white-and-orange look of the site; add posts that were not in the issue; PDF edition; better email.
+
+## Live changes (embed `1dd74333-ee02-40da-9c93-cf8fd787c129`, Magazine Live Issue v9)
+| Rev | Change | Source commit pinned |
+| --- | --- | --- |
+| 129 | before: dark navy skin | `bd5866dd240eda4b8d4f6da34957bf0c70fb3744` |
+| 130 | white and orange skin, smaller phone type, 11 added stories, ESPN corrections (PR #485) | `a32a03c369e05b6f1f0d655a2f177fd69c5ae3dd` |
+
+Only the jsDelivr pin (marker comment `src=` and the script URL) changes between revs; the shell CSS, splash and route sync are otherwise byte-identical. Bundle bytes at the pinned commit were hash-verified against the local build (sha256 `a2808b54...e4c0`).
+
+## Rollback
+Re-patch the embed (current revision, category ESSENTIAL) with the live body where the newer pin is replaced by `bd5866dd240eda4b8d4f6da34957bf0c70fb3744` in both places. No publish needed for a custom-embed patch; verify `/magazine` at 390, 430 and 1366 with a cache-busting query.
+
+## Also shipped
+- Staff story `59ee1b7c`: Florida total yards 252 and rushing 54 on 28 carries (1.9), per ESPN event 401856734 (text-only update-publish).
+- Magazine PDF (56 pages, 21 full stories, no outbound links), built by `tools/magazine-pdf/build-postgame-print.mjs`; uploaded to the Media Manager as `d3cfa5_9fcf7b872c1c4dfdb285bd2de433706f.pdf`.
+- Email source `newsletter/2026-11-02-postgame-magazine-v2.mjml/.html` (white and orange, PDF button). Draft only: not created as a campaign, not sent. One list email already went Nov. 2, so any send needs Brenden's yes and a paired Spaces push.
+
+## Build and checks
+```
+MAG_VARIANT=georgia-postgame node sports-live/build-magazine.mjs
+node deploy/postgame-georgia-20261031/qa-georgia-postgame.mjs
+```
+Postgame bundle cap raised 200 to 212 KB (Nov. 2). The cover now requests up to 2400 px so the portrait crop stays sharp on high-density phones.

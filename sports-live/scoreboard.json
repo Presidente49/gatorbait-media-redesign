@@ -1,9 +1,9 @@
 {
- "updatedAt": "2026-11-01T15:22:51Z",
+ "updatedAt": "2026-11-02T10:06:01Z",
  "season": 2026,
  "team": {
   "name": "Florida",
-  "rank": 17,
+  "rank": 25,
   "record": "5-3",
   "conf": "3-3"
  },
@@ -34,7 +34,7 @@
    ]
   },
   "venue": "Mercedes-Benz Stadium",
-  "recapUrl": "https://www.gatorbaitmedia.com/post/gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia",
+  "recapUrl": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-5-3-3-3-v-georgia-bulldogs-7-1-5-1",
   "galleryUrl": null,
   "tape": {
    "totalYards": 252,
@@ -191,7 +191,7 @@
     "opp": 27
    },
    "tv": "ABC",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia"
+   "storyUrl": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-5-3-3-3-v-georgia-bulldogs-7-1-5-1"
   },
   {
    "eventId": "401856739",
@@ -209,7 +209,7 @@
    "eventId": "401856884",
    "date": "2026-11-14T05:00:00Z",
    "opponent": "Kentucky",
-   "opponentRank": 9,
+   "opponentRank": 8,
    "opponentRecord": null,
    "home": false,
    "status": "scheduled",

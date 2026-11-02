@@ -27,7 +27,7 @@
   "linesLabel": "Also inside",
   "lines": [
    "Score by score, box score and leaders",
-   "Columns: Buddy Martin, Franz Beard and Loren Meadows",
+   "Columns: Buddy Martin, Franz Beard, Eddie Gilley and Loren Meadows",
    "Georgia week: every story from before kickoff through Monday",
    "Final: Georgia 27, Florida 8"
   ]
@@ -282,6 +282,21 @@
   "title": "Columns",
   "dek": "Buddy Martin, Franz Beard and Loren Meadows on the Georgia loss and what comes next.",
   "items": [
+   {
+    "rubric": "Column",
+    "author": "Eddie Gilley",
+    "title": "Nightmare in Atlanta",
+    "dek": "Eddie Gilley on the dumb decisions that turned Halloween in Atlanta into a nightmare: the punt block, the turnovers and a 24-0 halftime hole.",
+    "url": "/post/nightmare-in-atlanta",
+    "image": {
+     "id": "d3cfa5_a04e12751ec94f1a8a99b69fd537c8a4",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 726,
+     "alt": "Florida coach Jon Sumrall walks the sideline with an official during the Georgia game at Mercedes-Benz Stadium in Atlanta.",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
    {
     "rubric": "Column",
     "author": "Franz Beard",

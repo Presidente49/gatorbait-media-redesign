@@ -17,13 +17,13 @@
     // The finished portrait cover is a committed static file next to the bundle (like the reel posters); without it the photo-and-type poster below renders as before.
     if (P && b && /^[\w-]+\.jpg$/.test(String(P.file))) return '<section class="pm-entrance pm-art" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
       '<img src="' + esc(b + P.file) + '" width="1200" height="1600" alt="' + esc(text(P.alt, 300)) + '" fetchpriority="high" decoding="async"><h1 class="pm-vh">' + esc(text(C.headline, 200)) + '</h1>' +
-      '<span class="pm-open-label">Open this issue <span aria-hidden="true">↗</span></span><button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Tap the cover. Get the whole picture.</p></section>';
+      '<span class="pm-open-label">Read this issue <span aria-hidden="true">↓</span></span><button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Scroll for the full issue.</p></section>';
     return '<section class="pm-entrance" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
       frame(C.image, { eager: true, main: 1600, sizes: '(max-width: 699px) 280vw, 1200px' }) +
       '<div class="pm-poster-ink"><div><p class="pm-covermark">Gator<span>Bait</span></p><p class="pm-covermag">Magazine</p><p class="pm-coverdate">' + esc(text(I.date, 60)) + '</p></div>' +
       '<div class="pm-poster-bottom"><p class="pm-edition">' + esc(text(I.number, 60)) + '</p><p class="pm-coverwriter">' + esc(text(C.kicker, 80)) + '</p>' + (text(C.coverTitle, 40) ? '<h1 class="pm-hot">' + esc(text(C.coverTitle, 40)) + '</h1>' + pmScoreChip(C.score) + '<p class="pm-coversub">' + esc(text(C.headline, 200)) + '</p>' : '<h1>' + esc(text(C.headline, 200)) + '</h1>') + pmTeasers(C.teasers) +
-      '<p class="pm-coverweek">' + esc(text(I.week, 120)) + '</p><p class="pm-covercredit">' + esc(text(C.image && C.image.credit, 120)) + '</p><span class="pm-open-label">Open this issue <span aria-hidden="true">↗</span></span></div></div>' +
-      '<button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Tap the cover. Get the whole picture.</p></section>';
+      '<p class="pm-coverweek">' + esc(text(I.week, 120)) + '</p><p class="pm-covercredit">' + esc(text(C.image && C.image.credit, 120)) + '</p><span class="pm-open-label">Read this issue <span aria-hidden="true">↓</span></span></div></div>' +
+      '<button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Scroll for the full issue.</p></section>';
   }
   function pmPdfLink(D, cls) {
     var P = obj(D.pdf); if (!P || !safeUrl(P.url) || !text(P.label, 50)) return '';
@@ -37,30 +37,16 @@
     if (!entry || !cover || !contents) return;
     var opening = false;
     function open() {
-      if (opening) return; opening = true;
+      // No flip animation: the cover is simply the top of the page. Tapping it scrolls to the issue.
+      if (!m.isConnected) return;
       var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      function finish() {
-        m.classList.remove('pm-opening'); m.classList.add('pm-opened'); opening = false;
-        if (!m.isConnected) return;
-        // The entrance is removed from layout at this point. Force the reader to the
-        // actual start of the issue instead of asking scrollIntoView() to resolve a
-        // target whose position just changed during the cover transition.
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
-            catch (_) { window.scrollTo(0, 0); }
-            contents.focus({preventScroll:true});
-          });
-        });
-      }
-      if (reduced) { finish(); return; }
-      m.classList.add('pm-opening');
-      setTimeout(finish, 480);
+      try { contents.scrollIntoView({block:'start',behavior:reduced?'instant':'smooth'}); } catch (_) { contents.scrollIntoView(); }
+      contents.focus({preventScroll:true});
     }
     cover.addEventListener('click', open);
     m.addEventListener('click', function(e) {
       if (e.target.closest('[data-pm-cover]')) {
-        m.classList.remove('pm-opened'); entry.scrollIntoView({block:'start',behavior:'instant'}); cover.focus({preventScroll:true});
+        entry.scrollIntoView({block:'start',behavior:'instant'}); cover.focus({preventScroll:true});
       }
       var a = e.target.closest('a[href^="#pm-"]');
       if (a) {

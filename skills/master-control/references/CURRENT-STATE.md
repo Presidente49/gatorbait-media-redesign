@@ -1,5 +1,11 @@
 # Master Control Current State
 
+## Standing order: publish writer stories without asking — owner direction, Nov. 2, 2026
+
+- Brenden, Nov. 2: "If you get emails today for stories just post them, don't ask me... you have approval for everything... do whatever you think is best." Stories from Buddy, Franz, Loren, Eddie, Carlton and Chris (email or Writer Portal) go through the copy desk and are published under the writer's byline without asking. GatorBait Staff stories still wait for Buddy's "Approved". The Newsroom desk routine carries this order.
+- Unchanged: no subscriber email campaigns, automation toggles, payments, memberships, pricing, DNS or live-content deletion without his explicit yes.
+- No-refund wording is on the plan terms; see `docs/REFUND-AND-TRIAL-POLICY-2026-11-02.md`.
+
 ## Codex out of tokens; Jarvis is sole controller — owner direction, Nov. 2, 2026
 
 - Brenden, Nov. 2: "The Codex is out of the picture right now. I'm out of tokens. You gotta take over." Until he says Codex is back, Jarvis (this Claude controller) holds Codex's lane as well as the copy desk: Wix articles, writing, review, publication, web design, email, app-push copy, QC and PR merges within the existing hard lines. One controller, one production writer per object still applies.

@@ -1,5 +1,13 @@
 # Master Control Current State
 
+## Standing rule: every email send gets a Spaces push — owner direction, Nov. 2, 2026
+
+- Brenden, Nov. 2: "If we send an email we send a Spaces push. That is standard." Every list email (campaign, magazine, story alert) is paired with one Spaces app push to the same audience. Treat the pair as one release: the release is not complete until both are done.
+- Wix has no API to push to Spaces members (dashboard Mobile App → Push notifications → Create, or Wix owner app → Marketing → Mobile Announcements, owner only). So the controller drafts the push copy, target segment and link, hands it to Brenden with the email evidence, and tracks it as an open item until he confirms it was sent. Do not report an email release as fully done while its push is open.
+- Native new-post automation `e4ff0da9` already sends push and email together for new blog posts; no separate pair is needed for those. Hand-built campaigns (for example the postgame magazine) get no automatic push.
+- Open now: push for the Nov. 2 postgame magazine email (campaign `e662b1e2-bd4b-480e-9596-fcf7cb9455a6`), copy handed to Brenden.
+- This rule changes no send authority: each email send still needs Brenden's explicit yes, and the push is his to send.
+
 ## Muse morning desk route saved, connection unverified — Oct. 29, 2026
 
 - Direct owner direction identifies `~/workspace/gatorbait-agency/team-handoff/TEAM-STATUS.md` as the primary incoming operations desk. Read its top entries first and follow exact file references before asking the owner or searching a generic inbox; the desk can carry email and other-channel jobs. Muse supplies requests; Codex controls priority, acceptance, execution, implementation, QC and completion within Brenden's scope. A recommendation is not automatic acceptance; current user instructions and source/billing/access boundaries remain controlling.

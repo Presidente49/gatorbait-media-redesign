@@ -4,7 +4,7 @@
  "layout": "postgame",
  "issue": {
   "number": "Postgame edition",
-  "date": "Saturday, October 31, 2026",
+  "date": "Saturday, October 31, 2026 · updated Monday, Nov. 2",
   "week": "Week 9 · Florida vs. Georgia · Atlanta",
   "home": "GatorBait Media",
   "pageTitle": "GatorBait Magazine | Postgame: Georgia 27, Florida 8"
@@ -27,8 +27,8 @@
   "linesLabel": "Also inside",
   "lines": [
    "Score by score, box score and leaders",
-   "Today's columns: Buddy Martin and Loren Meadows",
-   "Georgia week: every story around kickoff",
+   "Columns: Buddy Martin, Franz Beard and Loren Meadows",
+   "Georgia week: every story from before kickoff through Monday",
    "Final: Georgia 27, Florida 8"
   ]
  },
@@ -55,7 +55,7 @@
   "items": [
    {
     "id": "columns",
-    "label": "Today's columns"
+    "label": "Columns"
    },
    {
     "id": "coverage",
@@ -82,13 +82,13 @@
  "damage": {
   "kicker": "By the numbers",
   "title": "Four turnovers and a run game that never started",
-  "dek": "Florida threw for 198 net yards to Georgia's 101, but turned the ball over four times and ran for 48 yards while Georgia ran for 217.",
+  "dek": "Florida threw for 198 net yards to Georgia's 101, but turned the ball over four times and ran for 54 yards while Georgia ran for 217.",
   "yards": {
    "label": "Total yards",
    "rows": [
     {
      "name": "Florida",
-     "value": 246,
+     "value": 252,
      "us": true
     },
     {
@@ -106,12 +106,12 @@
    {
     "value": "217",
     "label": "Georgia rushing yards",
-    "detail": "42 carries at 5.2 yards each. Florida had 48 yards on 28 carries."
+    "detail": "42 carries at 5.2 yards each. Florida had 54 yards on 28 carries."
    },
    {
     "value": "4-12",
     "label": "Florida third downs",
-    "detail": "Georgia converted 6 of 15 and held the ball 32:11 to Florida's 27:50."
+    "detail": "Georgia converted 6 of 15 and held the ball 32:10 to Florida's 27:50."
    }
   ]
  },
@@ -205,7 +205,7 @@
    ],
    [
     "Total yards",
-    "246",
+    "252",
     "318"
    ],
    [
@@ -215,7 +215,7 @@
    ],
    [
     "Rushing",
-    "28 for 48 yds",
+    "28 for 54 yds",
     "42 for 217 yds"
    ],
    [
@@ -236,7 +236,7 @@
    [
     "Possession",
     "27:50",
-    "32:11"
+    "32:10"
    ]
   ],
   "leaders": [
@@ -279,9 +279,99 @@
  },
  "columns": {
   "kicker": "Columns",
-  "title": "Today's columns",
-  "dek": "Published on GatorBait Saturday.",
+  "title": "Columns",
+  "dek": "Buddy Martin, Franz Beard and Loren Meadows on the Georgia loss and what comes next.",
   "items": [
+   {
+    "rubric": "Column",
+    "author": "Franz Beard",
+    "title": "For the UF offense, it was an October to forget",
+    "dek": "Florida went 1-3 in October, and Franz Beard says the offensive line is why the running game disappeared.",
+    "url": "/post/for-the-uf-offense-it-was-an-october-to-forget",
+    "image": {
+     "id": "d3cfa5_23a80f2eb6b448149eccbcd0165d872c",
+     "ext": "jpg",
+     "width": 1136,
+     "height": 800,
+     "alt": "Photo with the story: For the UF offense, it was an October to forget",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Franz Beard",
+    "title": "Florida basketball: Gators start season with sky high expectations",
+    "dek": "Franz Beard on No. 1 Florida's opener against No. 14 Miami in Tampa and the 3-point and bench questions.",
+    "url": "/post/florida-basketball-gators-start-season-with-sky-high-expectations",
+    "image": {
+     "id": "ae876a_370e5a794d734a7ba77d081540849fdb",
+     "ext": "jpg",
+     "width": 1467,
+     "height": 1100,
+     "alt": "Photo with the story: Florida basketball: Gators start season with sky high expectations",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "Take a Deep Breath. It's Basketball Season.",
+    "dek": "Buddy Martin on Florida football staying in the AP Top 25 and the Gators opening hoops at No. 1.",
+    "url": "/post/take-a-deep-breath-it-s-basketball-season-or-wait-a-minute-they-didn-t-drop-out-of-the-top-25-yet",
+    "image": {
+     "id": "ae876a_345cba459db34a7a8a56876b1824a4cf",
+     "ext": "jpeg",
+     "width": 1024,
+     "height": 685,
+     "alt": "Photo with the story: Take a Deep Breath. It's Basketball Season.",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Franz Beard",
+    "title": "Autopsy Cause of Gators Defeat: Self-Inflicted Wounds",
+    "dek": "Of Georgia's 27 points, 24 were a direct result of Florida mistakes. Sumrall on the quarterback decision and the penalties.",
+    "url": "/post/autopsy-cause-of-gators-defeat-self-inflicted-wounds",
+    "image": {
+     "id": "d3cfa5_d70b863951b744e185ec2952d8e6846e",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 636,
+     "alt": "Photo with the story: Autopsy Cause of Gators Defeat: Self-Inflicted Wounds",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Loren Meadows",
+    "title": "Postgame Analysis: Florida Gators (5-3, 3-3) v. Georgia Bulldogs (7-1, 5-1)",
+    "dek": "Loren Meadows: Florida needs to make Georgia earn wins, not give them away through turnovers and penalties.",
+    "url": "/post/postgame-analysis-florida-gators-5-3-3-3-v-georgia-bulldogs-7-1-5-1",
+    "image": {
+     "id": "d3cfa5_a2949ebdaa14453e9be5ba9777111910",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 684,
+     "alt": "Photo with the story: Postgame Analysis: Florida Gators v. Georgia Bulldogs",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "“Coach Dumbass” Owns Up To All His Team’s Mistakes",
+    "dek": "After the 27-8 loss, Jon Sumrall owned his mistake. Buddy sees a team that kept swinging.",
+    "url": "/post/coach-dumbass-owns-up-to-all-his-team-s-mistakes-including-the-one-he-made",
+    "image": {
+     "id": "d3cfa5_2dcb23c4521c4d84a21ebdbaed38518d",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 608,
+     "alt": "Photo with the story: Coach Dumbass Owns Up To All His Team's Mistakes",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
    {
     "rubric": "Column",
     "author": "Buddy Martin",
@@ -316,9 +406,84 @@
  },
  "coverage": {
   "kicker": "Georgia week",
-  "title": "The road to Atlanta",
-  "dek": "In case you missed them: GatorBait coverage around kickoff, newest first.",
+  "title": "After Atlanta, and the road there",
+  "dek": "In case you missed them: GatorBait coverage from before kickoff through Monday, newest first.",
   "items": [
+   {
+    "rubric": "Analysis",
+    "author": "GatorBait Staff",
+    "title": "Sumrall: Tom Brady Would Have Been ‘Under Too Much Duress’ Against Georgia",
+    "dek": "Jon Sumrall's Monday press conference, in his own words, with the full video.",
+    "url": "/post/sumrall-not-even-tom-brady-could-have-performed-against-georgia",
+    "image": {
+     "id": "d3cfa5_e8c6580b794942ca9296ea0fe8961bd8",
+     "ext": "jpg",
+     "width": 800,
+     "height": 534,
+     "alt": "Photo with the story: Jon Sumrall at the podium",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Preview",
+    "author": "GatorBait Staff",
+    "title": "No. 1 at Tipoff: Florida Opens Against No. 14 Miami in Tampa",
+    "dek": "Florida starts the season at No. 1 in the AP poll and meets No. 14 Miami on Monday at 6 p.m. ET on ESPN2.",
+    "url": "/post/no-1-at-tipoff-florida-opens-against-no-14-miami-in-tampa",
+    "image": {
+     "id": "ae876a_1349d968de5b4cc39a5b562383345713",
+     "ext": "jpeg",
+     "width": 1600,
+     "height": 1166,
+     "alt": "Photo with the story: No. 1 at Tipoff",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Analysis",
+    "author": "GatorBait Staff",
+    "title": "Florida Won the Punting Battle and Still Lost the Field",
+    "dek": "The Bulldogs started drives at their own 37.3 to Florida's 27.5. Three 15-yard flags and four giveaways explain the gap.",
+    "url": "/post/florida-won-the-punting-battle-and-still-lost-the-field",
+    "image": {
+     "id": "d3cfa5_5d3bd7905b144085893f332e19aa66b1",
+     "ext": "jpg",
+     "width": 1280,
+     "height": 853,
+     "alt": "Photo with the story: Florida Won the Punting Battle and Still Lost the Field",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Analysis",
+    "author": "GatorBait Staff",
+    "title": "Florida’s Offense Dug the Hole on First Down, Then Kept Digging",
+    "dek": "The down-and-distance sheet from the 27-8 loss shows how the hole got dug.",
+    "url": "/post/florida-s-offense-dug-the-hole-on-first-down-then-kept-digging",
+    "image": {
+     "id": "d3cfa5_48249aa0b854486088522875917a772e",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 782,
+     "alt": "Photo with the story: Florida's Offense Dug the Hole on First Down",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Analysis",
+    "author": "GatorBait Staff",
+    "title": "Georgia Lived on Third-and-1. Florida Rented Third-and-Long.",
+    "dek": "Georgia averaged 5.8 yards on first down to Florida's 3.0 and got three 15-yard gifts on scoring drives.",
+    "url": "/post/georgia-lived-on-third-and-1-florida-rented-third-and-long",
+    "image": {
+     "id": "d3cfa5_25bc0e7f13f54912a31a59649ae37dae",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 764,
+     "alt": "Photo with the story: Georgia Lived on Third-and-1. Florida Rented Third-and-Long.",
+     "credit": "Photo: GatorBait Media."
+    }
+   },
    {
     "rubric": "Roundup",
     "author": "GatorBait Staff",
@@ -463,8 +628,8 @@
   "uaa": false,
   "other": [
    "Photo by Chris Spears, GatorBait Media.",
-   "Photo: GatorBait Media.",
-   "Photo courtesy University of Florida archives."
+   "Photo courtesy University of Florida archives.",
+   "Photo: GatorBait Media."
   ]
  },
  "asOf": "Score, line score, scoring plays, box score and leaders: ESPN (event 401856734). Quotes are as reported in the linked columns or from full transcripts. Rankings and records as of the latest release at the time of publishing."

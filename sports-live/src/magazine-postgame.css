@@ -499,3 +499,67 @@ html #gbm-magazine-page.pm{
 .pm-list{column-gap:96px}
 }
 }
+
+/* Nov. 2 overhaul: white and orange to match the site, calmer type on phones. */
+@media screen{
+html:has(#gbm-magazine-page.pm),html:has(#gbm-magazine-page.pm) body,#gbm-magazine-page.mz26.pm{background:#fff;color:#10264b}
+#gbm-magazine-page.pm .pm-entrance{background:#fff;color:#10264b}
+#gbm-magazine-page.pm .pm-exit{color:#42506a}
+#gbm-magazine-page.pm .pm-book{background:#fff;box-shadow:0 10px 36px #10264b24;border-top:6px solid var(--pm-orange)}
+#gbm-magazine-page.pm .pm-poster{background:#fff}
+#gbm-magazine-page.pm .pm-poster-ink{background:linear-gradient(180deg,#ffffffe6,#fff0 24%,#fff0 36%,#fffffff0 64%,#fff 100%)}
+#gbm-magazine-page.pm .pm-covermark{color:#10264b;font-size:12cqw}
+#gbm-magazine-page.pm .pm-covermag{color:var(--pm-orange-ink);-webkit-text-stroke:0;text-shadow:none}
+#gbm-magazine-page.pm .pm-coverdate{display:inline-block;background:#ffffffd9;padding:2px 8px}
+#gbm-magazine-page.pm .pm-coverdate,#gbm-magazine-page.pm .pm-coverweek,#gbm-magazine-page.pm .pm-covercredit,#gbm-magazine-page.pm .pm-entry-hint{color:#42506a}
+#gbm-magazine-page.pm .pm-edition{color:#fff;background:#d63d0a}
+#gbm-magazine-page.pm .pm-coverwriter{color:var(--pm-orange-ink)}
+#gbm-magazine-page.pm .pm-poster-ink h1{color:#10264b;text-shadow:none;font-size:clamp(24px,7.2cqw,34px);line-height:1.04}
+#gbm-magazine-page.pm .pm-open-label{color:#10264b;border-top:3px solid var(--pm-orange)}
+#gbm-magazine-page.pm .pm-readerbar{background:#fff;color:#10264b;border-bottom:4px solid var(--pm-orange)}
+#gbm-magazine-page.pm .pm-readerbar button,#gbm-magazine-page.pm .pm-readerbar summary{color:#10264b}
+#gbm-magazine-page.pm.pm-opened .pm-readerbar::before{background:#fff}
+#gbm-magazine-page.pm .pm-final{background:#f6f4ef;color:#10264b;border-top:6px solid var(--pm-orange)}
+#gbm-magazine-page.pm .pm-team{border-bottom-color:#c9ced9}
+#gbm-magazine-page.pm .pm-team span,#gbm-magazine-page.pm .pm-team b{color:#6b7894}
+#gbm-magazine-page.pm .pm-team small,#gbm-magazine-page.pm .pm-final-m{color:#42506a}
+#gbm-magazine-page.pm .pm-team.pm-won span,#gbm-magazine-page.pm .pm-team.pm-won b{color:#10264b}
+#gbm-magazine-page.pm .pm-team.pm-won{border-bottom-color:var(--pm-orange)}
+#gbm-magazine-page.pm .pm-final .pm-final-l{color:var(--pm-orange-ink)}
+#gbm-magazine-page.pm .pm-damage{background:#d63d0a;--pm-orange-lt:#fff;--pm-on-blue:#fff}
+#gbm-magazine-page.pm .pm-q,#gbm-magazine-page.pm .pm-q1{background:#fff;color:#10264b;border-top:6px solid var(--pm-orange);--pm-on-blue:#42506a}
+#gbm-magazine-page.pm .pm-q figcaption b,#gbm-magazine-page.pm .pm-q figcaption a{color:#10264b}
+#gbm-magazine-page.pm .pm-q2{color:#fff}
+#gbm-magazine-page.pm .pm-watch,#gbm-magazine-page.pm .pm-foot{background:#f6f4ef;color:#10264b;--pm-on-blue:#42506a;--pm-orange-lt:var(--pm-orange-ink);border-top:6px solid var(--pm-orange)}
+#gbm-magazine-page.pm .pm-foot li a,#gbm-magazine-page.pm .pm-foot a{color:#10264b}
+#gbm-magazine-page.pm .pm-foot *{color:inherit}
+#gbm-magazine-page.pm .pm-foot .pm-kick{color:var(--pm-orange-ink)}
+#gbm-magazine-page.pm .pm-dl-btn{background:#d63d0a}
+#gbm-magazine-page.pm .mz-frame{background:#f6f4ef}
+#gbm-magazine-page.pm .pm-cover-fig figcaption{background:#fff;color:#10264b}
+html #gbm-magazine-page.pm .gbc{background:#fff!important;border-top:6px solid var(--pm-orange);box-shadow:0 6px 26px #10264b1f}
+html #gbm-magazine-page.pm .gbc .gbc-h{color:#10264b!important}
+html #gbm-magazine-page.pm .gbc .gbc-v,html #gbm-magazine-page.pm .gbc .gbc-c,html #gbm-magazine-page.pm .gbc .gbc-c span,html #gbm-magazine-page.pm .gbc .gbc-l{color:#42506a!important}
+}
+@media screen and (max-width:640px){
+#gbm-magazine-page.pm{font-size:16px;line-height:1.5}
+#gbm-magazine-page.pm .pm-sh h2{font-size:clamp(24px,7vw,30px)}
+#gbm-magazine-page.pm .pm-dek,#gbm-magazine-page.pm .pm-cover-dek{font-size:16px;line-height:1.45}
+#gbm-magazine-page.pm .pm-cover-type h2{font-size:clamp(26px,7.4vw,32px)}
+#gbm-magazine-page.pm .pm-lead h3{font-size:clamp(22px,6.4vw,27px)}
+#gbm-magazine-page.pm .pm-it h3{font-size:clamp(18px,5.2vw,21px)}
+#gbm-magazine-page.pm .pm-it-d{font-size:15px}
+#gbm-magazine-page.pm .pm-game h2{font-size:clamp(26px,7.4vw,32px)}
+#gbm-magazine-page.pm .pm-pick h3{font-size:21px}
+#gbm-magazine-page.pm .pm-n{font-size:26px}
+#gbm-magazine-page.pm .pm-stats b,#gbm-magazine-page.pm .pm-damage b{font-size:clamp(48px,14vw,60px)}
+#gbm-magazine-page.pm .pm-q blockquote p{font-size:clamp(20px,5.6vw,24px)}
+#gbm-magazine-page.pm .pm-line td.pm-fin{font-size:24px}
+#gbm-magazine-page.pm .pm-leaders h3{font-size:21px}
+#gbm-magazine-page.pm .pm-btn{font-size:17px;min-height:46px}
+html #gbm-magazine-page.pm .gbc .gbc-h{font-size:21px}
+}
+@media screen{
+html #gbm-magazine-page.pm .gbc .gbc-k{color:var(--pm-orange-ink)!important}
+html #gbm-magazine-page.pm .gbc .gbc-p,html #gbm-magazine-page.pm .gbc .gbc-m{color:#42506a!important}
+}

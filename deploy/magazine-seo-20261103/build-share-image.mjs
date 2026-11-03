@@ -16,8 +16,8 @@ const cfg = JSON.parse(readFileSync(cfgPath, 'utf8'));
 const asset = (f) => pathToFileURL(resolve(here, 'assets', f)).href;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-const titleLines = cfg.titleLines.map((l) => `<span>${esc(l)}</span>`).join('');
-const html = `<!doctype html><html><head><meta charset="utf-8"><style>
+const titleLines = (cfg.titleLines || []).map((l) => `<span>${esc(l)}</span>`).join('');
+const issueHtml = () => `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:Barlow;font-weight:400;src:url(${asset('Barlow-400.woff2')}) format('woff2')}
 @font-face{font-family:Barlow;font-weight:700;src:url(${asset('Barlow-700.woff2')}) format('woff2')}
 @font-face{font-family:Barlow;font-weight:800;src:url(${asset('Barlow-800.woff2')}) format('woff2')}
@@ -53,8 +53,25 @@ h1 span{display:block}
 </div>
 </body></html>`;
 
+// Evergreen brand card (no game photo, so it never goes stale): used for the site default and homepage proposal.
+const brandHtml = cfg.layout === 'brand' ? `<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Barlow;font-weight:400;src:url(${asset('Barlow-400.woff2')}) format('woff2')}
+@font-face{font-family:Barlow;font-weight:700;src:url(${asset('Barlow-700.woff2')}) format('woff2')}
+@font-face{font-family:Barlow;font-weight:800;src:url(${asset('Barlow-800.woff2')}) format('woff2')}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1200px;height:630px;background:#071439;overflow:hidden;font-family:Barlow,sans-serif;color:#fff}
+.in{position:absolute;left:88px;right:88px;top:64px;bottom:64px;display:flex;flex-direction:column;justify-content:center}
+.mark{font-weight:800;font-size:176px;line-height:.9;text-transform:uppercase;letter-spacing:.005em}
+.mark b{color:#fa4616;font-weight:800}
+.media{margin-top:10px;font-weight:700;font-size:40px;letter-spacing:.42em;text-transform:uppercase;color:#ffffffd9}
+.rule{width:132px;height:6px;background:#fa4616;margin:40px 0 34px}
+.tag{font-weight:800;font-size:54px;line-height:1.05;text-transform:uppercase}
+.sub{margin-top:22px;font-weight:700;font-size:28px;letter-spacing:.12em;text-transform:uppercase;color:#ffffffb3}
+</style></head><body><div class="in"><div class="mark">Gator<b>Bait</b></div><div class="media">Media</div><div class="rule"></div>
+<div class="tag">${esc(cfg.tagline)}</div><div class="sub">${esc(cfg.sub)}</div></div></body></html>` : null;
+
 const htmlPath = resolve(here, '.share-render.html');
-writeFileSync(htmlPath, html);
+writeFileSync(htmlPath, brandHtml || issueHtml());
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 await page.goto(pathToFileURL(htmlPath).href);

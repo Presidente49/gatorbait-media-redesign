@@ -18,7 +18,7 @@ export const HUBS = {
       espn: { path: 'football/college-football', sport: 'football', league: 'college-football', web: 'college-football' },
       minGames: 8, rosterClip: 24, seasonLabel: '2026 season', schedHeading: 'Florida football schedule, results and TV', schedSource: 'ESPN. TV listings are ESPN’s current data and can change.',
       statsHeading: 'Florida football season stats', rosterHeading: '2026 Florida football roster', rosterUrl: 'https://floridagators.com/sports/football/roster', rosterLink: '/roster', storiesHeading: 'Latest Florida football coverage',
-      feedCategory: 'Gator Football', liveFiles: [{ file: 'florida-roster.json', kind: 'roster' }, { file: 'florida-stats.json', kind: 'stats' }],
+      feedCategory: 'Gator Football', liveFiles: [{ file: 'florida-roster.json', kind: 'roster' }, { file: 'hub-data/football-uf-stats.json', kind: 'stats' }],
       posNames: { QB: 'quarterback', RB: 'running back', WR: 'wide receiver', TE: 'tight end', OL: 'offensive lineman', DL: 'defensive lineman', ILB: 'inside linebacker', JACK: 'jack linebacker', CB: 'cornerback', S: 'safety', STAR: 'star', K: 'kicker', P: 'punter', LS: 'long snapper' },
       ldName: 'Florida Gators football', ldSport: 'American football', ldDesc: 'Florida Gators football schedule, TV, season stats, roster and news from GatorBait Media.',
       seoHeading: 'Florida Gators football coverage',
@@ -28,12 +28,12 @@ export const HUBS = {
     },
     snapshot() {
       const sched = readJson('sports-live/hub-data/football-espn-schedule.json'), rank = readJson('sports-live/hub-data/football-espn-rankings.json');
-      const r = readJson('sports-live/florida-roster.json'), s = readJson('sports-live/florida-stats.json');
+      const r = readJson('sports-live/florida-roster.json'), s = readJson('sports-live/hub-data/football-uf-stats.json');
       return {
         sched, rank, hasConf: true, team: { coach: 'Jon Sumrall' },
         roster: r.players.map((p) => ({ no: p.no, name: p.name, pos: p.pos, cls: p.yr, ht: p.ht, wt: p.wt, home: p.home, school: p.school, prev: String(p.prev || '').replace(/^Previous School:\s*/, ''), img: p.img, url: p.url })),
         status: r.status || {}, availability: r.availability || {}, rosterStamp: r.updated, rosterUpdated: r.updatedLabel,
-        stats: { tiles: s.tiles, teamRows: s.teamRows, lead: s.lead, through: s.through, updatedLabel: s.updatedLabel, updated: s.updated, src: s.src },
+        stats: { tiles: s.tiles, teamRows: s.teamRows, lead: s.lead, through: s.through, updatedLabel: s.updatedLabel, updated: s.updated, src: s.src, source: s.source },
       };
     },
   },
@@ -42,7 +42,7 @@ export const HUBS = {
       ...common, key: 'womens-basketball', route: CAT + 'gator-womens-basketball', title: 'Florida Gators women’s basketball', shortName: 'women’s basketball', kicker: 'Gator women’s basketball hub', nameHtml: 'Florida Gators<br>Women’s Basketball', coachWord: 'Head coach',
       lede: 'Live score, schedule and TV, season stats and the full roster for Tammi Reiss’s Florida Gators, with GatorBait’s coverage below.',
       espn: { path: 'basketball/womens-college-basketball', sport: 'basketball', league: 'womens-college-basketball', web: 'womens-college-basketball' },
-      minGames: 10, boxStats: true, anchors: true, seasonLabel: '2026-27 season', schedHeading: 'Florida women’s basketball schedule, results and TV', schedSource: 'ESPN. TV listings are ESPN’s current data and can change.',
+      minGames: 10, anchors: true, liveFiles: [{ file: 'hub-data/womens-basketball-uf-stats.json', kind: 'bb' }], seasonLabel: '2026-27 season', schedHeading: 'Florida women’s basketball schedule, results and TV', schedSource: 'ESPN. TV listings are ESPN’s current data and can change.',
       statsHeading: 'Florida women’s basketball season stats', rosterHeading: '2026-27 Florida women’s basketball roster', rosterUrl: 'https://floridagators.com/sports/womens-basketball/roster', storiesHeading: 'Latest Florida women’s basketball coverage',
       feedCategory: 'Gator Women\'s Basketball', posNames: { G: 'guard', F: 'forward', C: 'center' },
       ldName: 'Florida Gators women’s basketball', ldSport: 'Basketball', ldDesc: 'Florida Gators women’s basketball schedule, TV, season stats, roster and news from GatorBait Media.',
@@ -53,9 +53,9 @@ export const HUBS = {
     },
     snapshot() {
       const sched = readJson('sports-live/hub-data/womens-basketball-espn-schedule.json'), rank = readJson('sports-live/hub-data/womens-basketball-espn-rankings.json');
-      const r = readJson('sports-live/hub-data/womens-basketball-roster.json');
+      const r = readJson('sports-live/hub-data/womens-basketball-roster.json'), uf = readJson('sports-live/hub-data/womens-basketball-uf-stats.json');
       return {
-        sched, rank, hasConf: true, team: { coach: (r.coaches.filter((c) => /Head .*Coach$/i.test(c.title))[0] || {}).name || '' }, coaches: r.coaches.slice(0, 4),
+        sched, rank, bb: uf.bb, hasConf: true, team: { coach: (r.coaches.filter((c) => /Head .*Coach$/i.test(c.title))[0] || {}).name || '' }, coaches: r.coaches.slice(0, 4),
         roster: r.players.map((p) => ({ no: p.no, name: p.name, pos: p.pos, cls: p.cls, ht: p.ht, wt: p.wt, home: p.home, school: p.school, prev: p.prev, img: p.img, url: p.url })), rosterUpdated: 'Nov. 3, 2026',
       };
     },

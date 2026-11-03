@@ -45,10 +45,17 @@ if (cfg.boxStats) {
 const wl = (g) => g.filter((x) => x.state === 'post' && x.score);
 if (hub === 'football' && snap.stats) {
   const w = wl(snap.games).filter((g) => g.score.win).length, l = wl(snap.games).filter((g) => !g.score.win).length;
-  const st = JSON.parse(fs.readFileSync('sports-live/florida-stats.json', 'utf8'));
+  const st = JSON.parse(fs.readFileSync('sports-live/hub-data/football-uf-stats.json', 'utf8'));
+  if (st.record !== w + '-' + l) console.warn('WARNING: UF stats record', st.record, 'differs from ESPN', w + '-' + l, '; re-run tools/sport-hub/fetch-uf-football-stats.mjs');
   console.log('ESPN record', w + '-' + l, 'stats file record', st.record, 'conf', st.confRecord);
 }
-if (snap.bb) {
+if (snap.bb && snap.bb.source) {
+  // FloridaGators.com is the source of record for stats; ESPN only cross-checks the final scores and game count. Warn (do not block) when UF's cached page is behind.
+  const fin = wl(snap.games);
+  console.log('final games on ESPN schedule', fin.length, 'UF games cached', snap.bb.games.length);
+  if (fin.length !== snap.bb.games.length) console.warn('WARNING: re-scrape the FloridaGators.com stats page; ESPN lists a different number of final games');
+  snap.bb.games.forEach((u) => { const e = fin.find((g) => String(g.score.fl) === String(u.fl) && String(g.score.opp) === String(u.op)); if (!e) console.warn('WARNING: UF game', u.opp, u.fl + '-' + u.op, 'has no matching ESPN final score'); });
+} else if (snap.bb) {
   const fin = wl(snap.games);
   console.log('final games on schedule', fin.length, 'box scores counted', snap.bb.ids.length);
   if (fin.length !== snap.bb.ids.length) throw new Error('final games and counted box scores differ; run with --fetch');

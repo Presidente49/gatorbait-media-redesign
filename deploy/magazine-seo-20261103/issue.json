@@ -1,0 +1,9 @@
+{
+  "_comment": "Weekly input for build-share-image.mjs. Keep in step with sports-live/magazine-issue-*.json (issue.pageTitle, cover.coverTitle, cover.score).",
+  "photo": "postgame-cover-sumrall-20261102.jpg",
+  "credit": "Photo: GatorBait Media",
+  "edition": "Postgame edition",
+  "titleLines": ["Bitten in", "Atlanta"],
+  "score": { "label": "Final", "text": "Georgia 27, Florida 8" },
+  "url": "GatorBaitMedia.com/magazine"
+}

@@ -1,0 +1,20 @@
+{
+  "_comment": "Exact own tags of STATIC_PAGE nh0hy (/magazine) read via GET /promote/seo/v1/item-seo-tags/STATIC_PAGE/nh0hy on Nov. 3, 2026, before any write. Rollback: PATCH the same URL with {\"itemSeoTags\":{\"tags\":<this tags array>},\"fieldMask\":\"tags\",\"publish\":true}.",
+  "itemId": "nh0hy",
+  "itemType": "STATIC_PAGE",
+  "focusKeywords": [],
+  "tags": [
+    { "type": "title", "children": "GatorBait Magazine | Florida Gators Columns & Features", "custom": false, "disabled": false },
+    { "type": "meta", "props": { "name": "description", "content": "GatorBait Magazine has covered Florida Gators sports since 1979: columns from Buddy Martin and Franz Beard, features, and photography by Chris Spears." }, "children": "", "custom": false, "disabled": false },
+    { "type": "meta", "props": { "property": "og:image", "content": "https://static.wixstatic.com/media/16b519_c22fd77f129044609b6ee3cbdc134817~mv2.jpg" }, "meta": { "width": 3000, "height": 1590 }, "children": "", "custom": false, "disabled": false },
+    { "type": "meta", "props": { "property": "og:image:alt", "content": "Florida Gators touchdown against Ole Miss. Photo by Chris Spears, GatorBait Media" }, "children": "", "custom": false, "disabled": false },
+    { "type": "meta", "props": { "name": "twitter:card", "content": "summary_large_image" }, "children": "", "custom": false, "disabled": false }
+  ],
+  "resolved_before_summary": {
+    "og:title": "GatorBait Magazine | Florida Gators Columns & Features (HOST_PAGE)",
+    "og:image": "https://static.wixstatic.com/media/16b519_c22fd77f129044609b6ee3cbdc134817~mv2.jpg/v1/fill/w_2500,h_1325,al_c/16b519_c22fd77f129044609b6ee3cbdc134817~mv2.jpg (HOST_PAGE)",
+    "twitter:image": "same as og:image (HOST_PAGE)",
+    "canonical": "https://www.gatorbaitmedia.com/magazine (DEFAULT_PATTERN)",
+    "site tags": "google-site-verification, fb_admins_meta_tag (SITE); fb:admins (DEFAULT_PATTERN)"
+  }
+}

@@ -73,7 +73,7 @@
   var CSS = '' +
     '#gbm-bb{--navy:#10264b;--or:#fa4616;--or-ink:#b93a0e;--line:#e3e7ee;--soft:#f6f7fa;--mute:#4b5a73;position:relative;z-index:3;display:block;width:var(--bb-vw,100vw);max-width:100vw;margin:0 0 8px calc(50% - var(--bb-vw,100vw)/2);background:#fff;color:var(--navy);font:400 16px/1.5 Barlow,Arial,sans-serif;text-align:left;text-transform:none;letter-spacing:0}' +
     '#gbm-bb *{box-sizing:border-box}#gbm-bb a{color:var(--navy)}#gbm-bb a:focus-visible,#gbm-bb button:focus-visible{outline:3px solid var(--or);outline-offset:2px}' +
-    '#gbm-bb .b-wrap{max-width:1240px;margin:0 auto;padding:0 20px}' +
+    '#gbm-bb .b-wrap{max-width:1240px;margin:0 auto;padding:0 20px}#gbm-bb .vh{position:absolute;left:-9999px}' +
     '#gbm-bb .b-top{background:#f3f5f9;color:var(--navy);border-top:6px solid var(--or);padding:30px 0 26px}' +
     '#gbm-bb .b-top .b-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:stretch}' +
     '#gbm-bb .b-kick{font:700 13px/1.3 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--or-ink)}' +
@@ -100,7 +100,8 @@
     '#gbm-bb .g-o{display:flex;align-items:center;gap:10px;font-weight:700}#gbm-bb .g-o img{width:26px;height:26px;object-fit:contain;flex:none}#gbm-bb .g-o small{display:block;font-weight:400;color:var(--mute);font-size:14px}' +
     '#gbm-bb .chip{display:inline-block;margin-left:6px;padding:0 6px;border:1px solid var(--navy);font:800 12px/18px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.1em;text-transform:uppercase;vertical-align:2px}' +
     '#gbm-bb .res.w{color:#116a3a;font-weight:800}#gbm-bb .res.l{color:#9b1c1c;font-weight:800}' +
-    '#gbm-bb .p-av{width:38px;height:38px;border-radius:50%;object-fit:cover;object-position:top;background:var(--soft);flex:none}#gbm-bb td.p-n{font-weight:700}#gbm-bb td.p-n .g-o small{font-weight:400}' +
+    '#gbm-bb table.ros{table-layout:fixed}#gbm-bb .ros th.ph,#gbm-bb .ros td.ph{width:72px}#gbm-bb .ros th.no{width:52px}#gbm-bb .ros th.ps{width:68px}#gbm-bb .ros th.cl{width:64px}#gbm-bb .ros th.ht{width:68px}#gbm-bb .ros th.wt{width:56px}#gbm-bb .ros th.hm{width:24%}#gbm-bb .ros th.pv{width:20%}#gbm-bb .ros td.ht,#gbm-bb .ros td.ps,#gbm-bb .ros td.cl,#gbm-bb .ros td.wt{white-space:nowrap}' +
+    '#gbm-bb .ros td.ph{padding:6px 10px}#gbm-bb .ros td.ph img,#gbm-bb .ros .p-ni{display:block;width:56px;height:56px;max-width:none;background:#eef1f6;object-fit:cover;object-position:top center}#gbm-bb .ros td.no{font:800 22px "Barlow Condensed",Barlow,sans-serif}#gbm-bb .ros td.nm{font-weight:700}#gbm-bb .ros td.nm small.m{display:none}#gbm-bb .ros td.hm small{display:block;color:var(--mute);font-size:14px}#gbm-bb .ros td.pv{color:var(--mute)}#gbm-bb .b-anc{display:block;height:0;scroll-margin-top:92px}' +
     '#gbm-bb .b-tabs{display:flex;gap:8px;margin:0 0 12px}#gbm-bb .b-tabs button{min-height:44px;padding:0 18px;background:#fff;color:var(--navy);border:2px solid var(--navy);font:800 16px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}#gbm-bb .b-tabs button[aria-pressed=true]{background:var(--or);border-color:var(--or);color:#10264b}' +
     '#gbm-bb ol.poll{margin:0;padding:0;list-style:none;column-count:2;column-gap:28px}#gbm-bb ol.poll li{break-inside:avoid;display:grid;grid-template-columns:32px 26px 1fr auto;gap:10px;align-items:center;padding:7px 4px;border-bottom:1px solid var(--line)}' +
     '#gbm-bb ol.poll li.fl{background:#fff4ef;box-shadow:inset 4px 0 0 var(--or)}#gbm-bb ol.poll .n{font:800 22px "Barlow Condensed",Barlow,sans-serif;text-align:right}#gbm-bb ol.poll img{width:26px;height:26px;object-fit:contain}#gbm-bb ol.poll .r{color:var(--mute);font-size:14px;text-align:right}' +
@@ -112,7 +113,7 @@
     '#gbm-bb .b-src{margin:10px 0 0;font-size:13px;color:var(--mute)}' +
     '@media(max-width:860px){#gbm-bb .b-top .b-wrap,#gbm-bb .b-two{grid-template-columns:1fr}#gbm-bb .b-wrap{padding:0 16px}#gbm-bb .b-top{padding:24px 0 22px}#gbm-bb ol.poll{column-count:1}#gbm-bb .b-nav a{flex:1 1 40%;justify-content:center}}' +
     '@media(max-width:700px){#gbm-bb .sch,#gbm-bb .sch tbody{display:block;width:100%}#gbm-bb .sch thead{display:none}#gbm-bb .sch tr{display:grid;grid-template-columns:78px 1fr auto;grid-template-areas:"d o t" "d o v";gap:0 10px;padding:8px 0;border-bottom:1px solid var(--line)}#gbm-bb .sch td{border:0;padding:1px 0;width:auto}#gbm-bb .sch td.d{grid-area:d;width:auto;font:800 15px/1.2 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase}#gbm-bb .sch td.o{grid-area:o}#gbm-bb .sch .vn{display:none}#gbm-bb .sch .g-o img{display:none}#gbm-bb .sch td.t{grid-area:t;text-align:right;white-space:nowrap}#gbm-bb .sch td.v{grid-area:v;text-align:right;font-size:14px;color:var(--mute)}#gbm-bb .sch tr.nx td{background:none}#gbm-bb .sch tr.nx{background:#fff4ef}#gbm-bb .sch tr.rk{box-shadow:inset 4px 0 0 var(--or);padding-left:8px}#gbm-bb .sch tr.rk td:first-child{box-shadow:none}' +
-    '#gbm-bb .ros .x{display:none}#gbm-bb .ros td:nth-child(4){white-space:nowrap}#gbm-bb .ros th,#gbm-bb .ros td{padding:8px 6px}}';
+    '#gbm-bb .ros,#gbm-bb .ros tbody{display:block;width:100%}#gbm-bb .ros thead{display:none}#gbm-bb .ros tr{display:grid;grid-template-columns:56px 40px 1fr;grid-template-areas:"ph no nm" "ph no hm" "ph no pv";gap:0 10px;padding:8px 0;border-bottom:1px solid var(--line)}#gbm-bb .ros td{border:0;padding:0}#gbm-bb .ros td.ph{grid-area:ph;width:56px;padding:0}#gbm-bb .ros td.no{grid-area:no;width:auto;text-align:right}#gbm-bb .ros td.nm{grid-area:nm}#gbm-bb .ros td.nm small.m{display:block;font-weight:400;color:var(--mute);font-size:14px}#gbm-bb .ros td.hm{grid-area:hm;font-size:14px;color:var(--mute)}#gbm-bb .ros td.hm small{display:inline;margin-left:4px}#gbm-bb .ros td.hm small:before{content:"· "}#gbm-bb .ros td.pv{grid-area:pv;font-size:14px}#gbm-bb .ros td.pv:empty{display:none}#gbm-bb .ros td.ps,#gbm-bb .ros td.cl,#gbm-bb .ros td.ht,#gbm-bb .ros td.wt{display:none}}';
 
   function styles() { if (document.getElementById('gbm-bb-css')) return; var s = document.createElement('style'); s.id = 'gbm-bb-css'; s.textContent = CSS; document.head.appendChild(s); }
   function fonts() { if (document.getElementById('gbm-bb-font')) return; var l = document.createElement('link'); l.id = 'gbm-bb-font'; l.rel = 'stylesheet'; l.href = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap'; document.head.appendChild(l); }
@@ -181,11 +182,17 @@
   }
   function roster(d) {
     if (!d.roster || !d.roster.length) return '';
+    var okImg = function (u) { return /^https:\/\/dxbhsrqyrr690\.cloudfront\.net\//.test(u || ''); }, okUrl = function (u) { return /^https:\/\/floridagators\.com\//.test(u || ''); };
     var rows = d.roster.map(function (p) {
-      return '<tr><td>' + esc(p.jersey) + '</td><td class="p-n"><span class="g-o">' + (p.img ? '<img class="p-av" loading="lazy" decoding="async" width="38" height="38" alt="" src="' + esc(p.img) + '">' : '<span class="p-av"></span>') + '<span>' + (p.url ? '<a href="' + esc(p.url) + '">' + esc(p.name) + '</a>' : esc(p.name)) + '<small class="mh">' + esc(p.from) + '</small></span></span></td><td>' + esc(p.pos) + '</td><td>' + esc(p.ht) + '</td><td class="x">' + esc(p.wt) + '</td><td>' + esc(p.cls) + '</td><td class="x">' + esc(p.from) + '</td></tr>';
+      return '<tr><td class="ph">' + (okImg(p.img) ? '<img loading="lazy" decoding="async" width="56" height="56" alt="' + esc(p.name + ', Florida ' + ({ G: 'guard', F: 'forward', C: 'center', 'F/C': 'forward-center', 'G/F': 'guard-forward' }[p.pos] || p.pos)) + '" src="' + esc(p.img) + '">' : '<span class="p-ni"></span>') + '</td>' +
+        '<td class="no">' + esc(p.jersey) + '</td><td class="nm">' + (okUrl(p.url) ? '<a href="' + esc(p.url) + '">' + esc(p.name) + '</a>' : esc(p.name)) + '<small class="m">' + esc([p.pos, p.cls, p.ht, p.wt ? p.wt + ' lbs' : ''].filter(Boolean).join(' · ')) + '</small></td>' +
+        '<td class="ps">' + esc(p.pos) + '</td><td class="cl">' + esc(p.cls) + '</td><td class="ht">' + esc(p.ht) + '</td><td class="wt">' + esc(p.wt) + '</td>' +
+        '<td class="hm">' + esc(p.home) + (p.school ? '<small>' + esc(p.school) + '</small>' : '') + '</td><td class="pv">' + esc(p.prev) + '</td></tr>';
     }).join('');
-    return '<section class="b-sec" id="gbm-bb-roster" aria-labelledby="gbm-bb-h-roster"><h2 class="b-h" id="gbm-bb-h-roster">2026-27 roster</h2><p class="b-sub">Head coach ' + esc(d.team.coach) + '. ' + d.roster.length + ' players.</p>' +
-      '<table class="ros"><caption>Florida Gators men’s basketball roster</caption><thead><tr><th>#</th><th>Player</th><th>Pos.</th><th>Ht.</th><th class="x">Wt.</th><th>Class</th><th class="x">Hometown</th></tr></thead><tbody>' + rows + '</tbody></table><p class="b-src">Source: ESPN roster. Weight in pounds.</p></section>';
+    var coaches = (d.coaches || []).length ? '<p class="b-sub">' + d.coaches.slice(0, 4).map(function (c) { return esc(c.title) + ' <b>' + esc(c.name) + '</b>'; }).join(' &middot; ') + '.</p>' : '<p class="b-sub">Head coach ' + esc(d.team.coach) + '.</p>';
+    return '<section class="b-sec" id="gbm-bb-roster" aria-labelledby="gbm-bb-h-roster"><span class="b-anc" id="roster"></span><h2 class="b-h" id="gbm-bb-h-roster">2026-27 roster</h2>' + coaches + '<p class="b-sub">' + d.roster.length + ' players, copied from <a href="https://floridagators.com/sports/mens-basketball/roster">the official roster on FloridaGators.com</a>' + (d.rosterUpdated ? ', pulled ' + esc(d.rosterUpdated) : '') + '.</p>' +
+      '<table class="ros"><caption>Florida Gators men’s basketball roster</caption><thead><tr><th class="ph"><span class="vh">Photo</span></th><th class="no">No.</th><th>Name</th><th class="ps">Pos.</th><th class="cl">Class</th><th class="ht">Ht.</th><th class="wt">Wt.</th><th class="hm">Hometown / Last school</th><th class="pv">Previous school</th></tr></thead><tbody>' + rows + '</tbody></table>' +
+      '<p class="b-src">Headshots and roster data: <a href="https://floridagators.com/sports/mens-basketball/roster">FloridaGators.com</a>. Photos courtesy UAA (University Athletic Association) and the photographers credited there; images load from FloridaGators.com and are not re-hosted. See the official <a href="https://floridagators.com/galleries">Florida Gators photo galleries</a>.</p></section>';
   }
   function pollList(p) {
     if (!p) return '';
@@ -244,12 +251,18 @@
     var s = document.getElementById('gbm-bb-ldata'); if (!s) { s = document.createElement('script'); s.id = 'gbm-bb-ldata'; s.type = 'application/ld+json'; document.head.appendChild(s); } s.textContent = ld(D);
   }
   function setVw() { var w = document.documentElement.clientWidth; if (w > 300) document.documentElement.style.setProperty('--bb-vw', w + 'px'); }
+  var HUBEL = null;
   function mount() {
     if (!onRoute() || !D) return false;
     setVw();
     var el = document.getElementById('gbm-bb');
-    if (!el) { el = document.createElement('section'); el.id = 'gbm-bb'; el.setAttribute('data-build', BUILD); el.setAttribute('aria-label', 'Gator Basketball hub'); if (!place(el)) return false; styles(); fonts(); paint(); window.__GBM_BB__.ready = true; return true; }
-    place(el); return true;
+    if (el && !el.getAttribute('data-ph')) { HUBEL = el; place(el); return true; }
+    if (!el && HUBEL) { if (place(HUBEL)) return true; return false; }
+    // The loader may have reserved a full-screen placeholder (data-ph) where the hub goes; adopt it so the fill moves nothing.
+    if (!el) { el = document.createElement('section'); el.id = 'gbm-bb'; if (!place(el)) return false; }
+    styles(); fonts();
+    el.removeAttribute('data-ph'); el.removeAttribute('style'); el.setAttribute('data-build', BUILD); el.setAttribute('aria-label', 'Gator Basketball hub');
+    HUBEL = el; paint(); window.__GBM_BB__.ready = true; return true;
   }
   function repaintHero() { var c = document.getElementById('gbm-bb-top-card'); if (c && D) c.innerHTML = heroCard(D); }
 
@@ -260,7 +273,7 @@
       if (!r[0] || !onRoute()) return;
       var nd = normalize({ sched: r[0], rank: r[1], stand: r[2] }, D);
       if (nd.games.length < 10) return;
-      D = nd; paint();
+      nd.coaches = D.coaches; nd.rosterUpdated = D.rosterUpdated; D = nd; paint();
     }).catch(function () {});
   }
   var polls_n = 0, pollTimer = 0;
@@ -322,16 +335,22 @@
   function start() {
     if (!onRoute() || !SNAP) return;
     if (!D) D = SNAP;
-    // Bounded keep-alive (480 ticks, 2 min): Wix replaces the page container about 12-15 s after load, and the News Wire may place itself later.
-    var ticks = 0, iv = setInterval(function () { ticks++; if (!onRoute() || ticks > 480) { clearInterval(iv); return; } mount(); }, 250);
+    // Mount in the same task the native list appears (MutationObserver) so the hub is in place before the browser paints that list. A bounded backup tick re-attaches the SAME element if Wix replaces the page container.
+    var mo = null;
+    if (window.MutationObserver) {
+      mo = new MutationObserver(function () { if (!onRoute()) return; var el = document.getElementById('gbm-bb'); if (!el || el.getAttribute('data-ph') || !el.isConnected || el.nextSibling !== anchorEl()) mount(); });
+      mo.observe(document.documentElement, { childList: true, subtree: true });
+      setTimeout(function () { if (mo) mo.disconnect(); mo = null; }, 120000);
+    }
+    var ticks = 0, iv = setInterval(function () { ticks++; if (!onRoute() || ticks > 120) { clearInterval(iv); return; } mount(); }, 1000);
     mount();
     var first = true;
     function go() { if (!first) return; first = false; refreshEspn(); readHeader().then(scheduleHeader).catch(function () {}); setTimeout(function () { loadStories().catch(function () {}); }, 1200); setTimeout(function () { loadStories().catch(function () {}); }, 6000); }
     setTimeout(go, 400);
   }
   function sync() {
-    if (onRoute()) { if (!document.getElementById('gbm-bb')) { if (D || SNAP) { D = D || SNAP; mount(); } } else { place(document.getElementById('gbm-bb')); } return; }
-    var el = document.getElementById('gbm-bb'); if (el) el.remove(); var s = document.getElementById('gbm-bb-ldata'); if (s) s.remove();
+    if (onRoute()) { var e0 = document.getElementById('gbm-bb'); if (!e0 || e0.getAttribute('data-ph')) { if (D || SNAP) { D = D || SNAP; mount(); } } else { place(e0); } return; }
+    HUBEL = null; var el = document.getElementById('gbm-bb'); if (el) el.remove(); var s = document.getElementById('gbm-bb-ldata'); if (s) s.remove();
     window.__GBM_BB__.ready = false; if (pollTimer) { clearTimeout(pollTimer); pollTimer = 0; }
   }
   window.__GBM_BB__ = { sync: sync, ready: false, build: BUILD };

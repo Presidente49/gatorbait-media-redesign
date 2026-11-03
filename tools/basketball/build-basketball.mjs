@@ -23,7 +23,13 @@ if (process.argv.includes('--fetch')) {
   console.log('wrote', JSON_PATH, 'games', d.games.length, 'roster', d.roster.length, 'ap', d.ap.ranks.length, 'sec', d.sec.length);
 }
 
-const snap = JSON.stringify(JSON.parse(fs.readFileSync(JSON_PATH, 'utf8')));
+// Roster: copied from FloridaGators.com (one cached Firecrawl scrape, tools/sport-hub/parse-roster-md.mjs). ESPN stays the source for schedule, polls and standings.
+const base = JSON.parse(fs.readFileSync(JSON_PATH, 'utf8'));
+const fg = JSON.parse(fs.readFileSync('sports-live/hub-data/mens-basketball-roster.json', 'utf8'));
+base.roster = fg.players.map((p) => ({ jersey: p.no, name: p.name, pos: p.pos, cls: p.cls, ht: p.ht, wt: p.wt, home: p.home, school: p.school, prev: p.prev, img: p.img, url: p.url }));
+base.coaches = fg.coaches.slice(0, 4);
+base.rosterUpdated = 'Nov. 3, 2026';
+const snap = JSON.stringify(base);
 const build = crypto.createHash('sha256').update(src + snap).digest('hex').slice(0, 8);
 const out = src.replace('/*BB*/null/*BB-END*/', '/*BB*/' + snap + '/*BB-END*/').replace('__BUILD__', build);
 // ASCII-only output so the bundle renders the same whatever charset the host page declares.

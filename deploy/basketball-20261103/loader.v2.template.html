@@ -1,0 +1,22 @@
+<!-- GBM_BB_V2 src=__SHA__ immutable=1 bundle=sports-live/basketball-widget.js route=/gatorbait-media-blogs/categories/gator-basketball -->
+<script id="gbm-bb-loader">(function(){
+if(window.__GBMBB_LOADER__)return;window.__GBMBB_LOADER__=1;
+var loaded=false,R=/^\/gatorbait-media-blogs\/categories\/gator-basketball\/?$/,ID='gbm-bb',mo=null;
+function on(){return R.test(location.pathname||'')}
+function g(){return window.__GBM_BB__}
+function anchor(){return document.getElementById('gbm-np')||document.getElementById('gbm-lf')||document.querySelector('[data-hook=feed-page-root]')}
+/* Reserve a full screen for the hub in the same task the native list appears, so the list is below the fold before and after the hub fills: nothing visible is pushed. Removed if the bundle never loads. */
+function hold(){if(document.getElementById(ID)||!on())return !!document.getElementById(ID);var a=anchor();if(!a||!a.parentNode)return false;
+var w=document.documentElement.clientWidth;if(w>300)document.documentElement.style.setProperty('--bb-vw',w+'px');
+var e=document.createElement('section');e.id=ID;e.setAttribute('data-ph','1');e.setAttribute('aria-label','Gator Basketball hub');
+e.style.cssText='display:block;position:relative;z-index:3;min-height:100vh;width:var(--bb-vw,100vw);max-width:100vw;margin:0 0 8px calc(50% - var(--bb-vw,100vw)/2);background:#f3f5f9;border-top:6px solid #fa4616';
+a.parentNode.insertBefore(e,a);return true}
+function drop(){var e=document.getElementById(ID);if(e&&e.getAttribute('data-ph'))e.remove()}
+function watch(){if(mo||!window.MutationObserver||!on())return;mo=new MutationObserver(function(){if(hold()){mo.disconnect();mo=null}});mo.observe(document,{childList:true,subtree:true});setTimeout(function(){if(mo){mo.disconnect();mo=null}},20000)}
+function sync(){if(!on()){drop();if(g())g().sync();return}
+hold();watch();
+if(g()&&g().ready){g().sync();return}
+if(loaded){if(g())g().sync();return}loaded=true;
+var s=document.createElement('script');s.id='gbm-bb-bundle';s.async=true;s.src='https://fastly.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@__SHA__/sports-live/basketball-widget.js';s.onerror=function(){loaded=false;drop()};document.head.appendChild(s);setTimeout(drop,7000)}
+sync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

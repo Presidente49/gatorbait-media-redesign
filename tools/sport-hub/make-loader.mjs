@@ -8,7 +8,7 @@ const c = HUBS[hub].cfg;
 const keyU = c.key.toUpperCase().replace(/[^A-Z0-9]/g, '_');
 const html = fs.readFileSync('deploy/sport-hub-20261103/loader.template.html', 'utf8')
   .replace(/__KEYU__/g, keyU).replace(/__KEY__/g, c.key).replace(/__SHA__/g, sha).replace(/__FILE__/g, 'sport-hub-' + c.key + '.js')
-  .replace(/__ROUTE_RE__/g, c.route.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&')).replace(/__ROUTE__/g, c.route);
+  .replace(/__ROUTE_RE__/g, c.route.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&')).replace(/__ROUTE__/g, c.route).replace(/__LABEL__/g, c.title + ' hub');
 if (html.length >= 15000) throw new Error('loader too long');
 const n = (html.match(new RegExp(sha, 'g')) || []).length;
 console.error('loader chars', html.length, 'sha occurrences', n);

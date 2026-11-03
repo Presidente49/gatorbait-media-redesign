@@ -25,7 +25,7 @@
       var r = op.curatedRank && op.curatedRank.current && op.curatedRank.current < 99 ? op.curatedRank.current : null;
       return { id: e.id, date: e.date, tbd: c.timeValid === false, opp: { id: op.team.id, name: op.team.shortDisplayName || op.team.location, full: op.team.displayName, rank: r, logo: LOGO + op.team.id + '.png' },
         where: c.neutralSite ? 'neutral' : fl.homeAway, venue: c.venue ? c.venue.fullName : '', city: c.venue && c.venue.address ? [c.venue.address.city, c.venue.address.state].filter(Boolean).join(', ') : '',
-        tv: (c.broadcasts || []).map(function (b) { return b.media && b.media.shortName; }).filter(Boolean), note: ((c.notes || [])[0] || {}).headline || '',
+        tv: (c.broadcasts || []).filter(function (b) { return !(b.type && b.type.shortName === 'Radio'); }).map(function (b) { return b.media && b.media.shortName; }).filter(Boolean), note: ((c.notes || [])[0] || {}).headline || '',
         conf: !!c.conferenceCompetition, state: t.state, score: t.state === 'post' ? { fl: sc(fl), opp: sc(op), win: !!fl.winner } : null };
     }).filter(Boolean);
     if (!games.length && prev) return prev;
@@ -269,7 +269,7 @@
     '#R .s-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:0;padding:0;list-style:none}#R .s-st .im{display:block;aspect-ratio:16/9;background:#e3e7ee;overflow:hidden}#R .s-st .im img{width:100%;height:100%;object-fit:cover;display:block}#R .s-st h3{margin:8px 0 2px;font:800 21px/1.12 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase;min-height:3.36em}#R .s-st h3 a{text-decoration:none}#R .s-ph .im{background:#f1f3f7}#R .s-st .m{font:600 13px Barlow,sans-serif;color:var(--mute);letter-spacing:.04em;text-transform:uppercase;min-height:1.4em}' +
     '#R .s-seo{margin:34px 0 0;padding:26px 0 36px;border-top:1px solid var(--line);color:var(--mute);max-width:62em}#R .s-seo h2{margin:0 0 8px;font:800 26px/1.1 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase;color:var(--navy)}#R .s-seo h3{margin:16px 0 4px;font:800 19px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--navy)}#R .s-seo p{margin:0 0 8px}' +
     '@media(max-width:860px){#R .s-top .s-wrap,#R .s-statgrid{grid-template-columns:1fr}#R .s-wrap{padding:0 16px}#R .s-top{padding:22px 0 20px}#R .s-nav a{flex:1 1 40%;justify-content:center}#R .s-tiles{grid-template-columns:repeat(2,1fr)}#R .s-card{min-height:250px}}' +
-    '@media(max-width:700px){#R .sch,#R .sch tbody{display:block;width:100%}#R .sch thead{display:none}#R .sch tr{display:grid;grid-template-columns:78px 1fr auto;grid-template-areas:"d o t" "d o v";gap:0 10px;padding:8px 0;border-bottom:1px solid var(--line)}#R .sch td{border:0;padding:1px 0;width:auto}#R .sch td.d{grid-area:d;width:auto;font:800 15px/1.2 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase}#R .sch td.o{grid-area:o}#R .sch .vn{display:none}#R .sch .g-o img,#R .sch .g-o .lg{display:none}#R .sch td.t{grid-area:t;text-align:right;white-space:nowrap}#R .sch td.v{grid-area:v;text-align:right;font-size:14px;color:var(--mute)}#R .sch tr.nx td{background:none}#R .sch tr.nx{background:#f3f5f9}#R .sch tr.rk,#R .sch tr.nx{box-shadow:inset 3px 0 0 var(--or);padding-left:8px}#R .sch tr.rk td:first-child,#R .sch tr.nx td:first-child{box-shadow:none}' +
+    '@media(max-width:700px){#R .sch,#R .sch tbody{display:block;width:100%}#R .sch thead{display:none}#R .sch tr{display:grid;grid-template-columns:78px 1fr auto;grid-template-areas:"d o t" "d o v";gap:0 10px;padding:8px 0 8px 8px;border-bottom:1px solid var(--line)}#R .sch td{border:0;padding:1px 0;width:auto}#R .sch td.d{grid-area:d;width:auto;font:800 15px/1.2 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase}#R .sch td.o{grid-area:o}#R .sch .vn{display:none}#R .sch .g-o img,#R .sch .g-o .lg{display:none}#R .sch td.t{grid-area:t;text-align:right;white-space:nowrap}#R .sch td.v{grid-area:v;text-align:right;font-size:14px;color:var(--mute)}#R .sch tr.nx td{background:none}#R .sch tr.nx{background:#f3f5f9}#R .sch tr.rk,#R .sch tr.nx{box-shadow:inset 3px 0 0 var(--or)}#R .sch tr.rk td:first-child,#R .sch tr.nx td:first-child{box-shadow:none}' +
     '#R .ros,#R .ros tbody{display:block;width:100%}#R .ros thead{display:none}#R .ros tr{display:grid;grid-template-columns:56px 40px 1fr;grid-template-areas:"ph no nm" "ph no hm" "ph no pv";gap:0 10px;padding:8px 0;border-bottom:1px solid var(--line)}#R .ros tr[hidden]{display:none}#R .ros td{border:0;padding:0}#R .ros td.ph{grid-area:ph;width:56px;padding:0}#R .ros td.no{grid-area:no;width:auto;text-align:right}#R .ros td.nm{grid-area:nm}#R .ros td.nm small.m{display:block;font-weight:400;color:var(--mute);font-size:14px}#R .ros td.hm{grid-area:hm;font-size:14px;color:var(--mute)}#R .ros td.hm small{display:inline;margin-left:4px}#R .ros td.hm small:before{content:"· "}#R .ros td.pv{grid-area:pv;font-size:14px}#R .ros td.pv:empty{display:none}#R .ros td.ps,#R .ros td.cl,#R .ros td.ht,#R .ros td.wt{display:none}' +
     '#R .s-statgrid .s-tm{font-size:14px}#R .s-leaders table{font-size:14px}#R .s-lt td,#R .s-lt th{padding:5px 6px}}';
 
@@ -293,10 +293,14 @@
     if (!onRoute() || !D) return false;
     setVw();
     if (!HUB) {
-      var el = document.createElement('section'); el.id = ROOT; el.setAttribute('data-build', BUILD); el.setAttribute('aria-label', CFG.title + ' hub');
+      // The loader may already have reserved a full-screen placeholder (data-ph) where the hub goes; adopt it so the fill moves nothing.
+      var ph = document.getElementById(ROOT), el = ph || document.createElement('section');
+      if (ph && !ph.getAttribute('data-ph')) { HUB = ph; window[GLOBAL].ready = true; return true; }
+      if (!ph) { el.id = ROOT; if (!place(el)) return false; }
+      styles(); fonts();
+      el.removeAttribute('data-ph'); el.removeAttribute('style'); el.setAttribute('data-build', BUILD); el.setAttribute('aria-label', CFG.title + ' hub');
       el.innerHTML = render(D);
-      if (!place(el)) return false;
-      HUB = el; styles(); fonts(); paintLd(); window[GLOBAL].ready = true; return true;
+      HUB = el; paintLd(); window[GLOBAL].ready = true; return true;
     }
     place(HUB); return true;
   }

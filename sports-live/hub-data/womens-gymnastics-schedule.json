@@ -1,0 +1,14 @@
+{"sport":"womens-gymnastics","source":"FloridaGators.com","sourceUrl":"https://floridagators.com/sports/womens-gymnastics/schedule","title":"2027 Gymnastics Schedule","scrapedAt":"2026-11-03","season":"2027","note":"Transcribed from one Firecrawl scrape of the official schedule page. Times are shown as FloridaGators.com lists them (no time zone is stated on the page); a blank time means none was listed. SEC flags follow the SEC logo shown on the official page.","games":[
+{"date":"2026-12-13","time":"2 p.m.","opp":"Chalk & Chomp Preview","where":"home","city":"Gainesville, Fla.","venue":"Stephen C. O'Connell Center","tv":"","sec":false,"kind":"preview","link":"https://floridagators.com/news/2026/11/2/gators-gymnastics-chalk-chomp-preview-set-for-dec-13"},
+{"date":"2027-01-09","time":"2 p.m.","opp":"UCLA, LSU, Oklahoma","event":"Sprouts Farmers Market Collegiate Quad","where":"neutral","city":"Greenville, S.C.","venue":"","tv":"ABC","sec":false,"kind":"quad","link":"https://www.bonsecoursarena.com/events/detail/sprouts-farmers-market-collegiate-quad-greenville-sc-tickets-2027"},
+{"date":"2027-01-15","time":"","opp":"Arkansas","where":"away","city":"Fayetteville, Ark.","venue":"","tv":"","sec":true},
+{"date":"2027-01-22","time":"5:45 p.m.","opp":"Missouri","where":"home","city":"Gainesville, Fla.","venue":"Stephen C. O'Connell Center","tv":"","sec":true},
+{"date":"2027-01-29","time":"5:45 p.m.","opp":"Auburn","where":"home","city":"Gainesville, Fla.","venue":"Stephen C. O'Connell Center","tv":"","sec":true},
+{"date":"2027-02-05","time":"9 p.m.","opp":"Alabama","where":"away","city":"Tuscaloosa, Ala.","venue":"","tv":"","sec":true},
+{"date":"2027-02-12","time":"6:45 p.m.","opp":"Georgia","where":"home","city":"Gainesville, Fla.","venue":"Stephen C. O'Connell Center","tv":"","sec":true},
+{"date":"2027-02-19","time":"6:45 p.m.","opp":"North Carolina","where":"home","city":"Gainesville, Fla.","venue":"Stephen C. O'Connell Center","tv":"","sec":false},
+{"date":"2027-02-26","time":"9 p.m.","opp":"LSU","where":"away","city":"Baton Rouge, La.","venue":"","tv":"","sec":true},
+{"date":"2027-03-05","time":"6:45 p.m.","opp":"Kentucky","where":"home","city":"Gainesville, Fla.","venue":"Stephen C. O'Connell Center","tv":"","sec":true},
+{"date":"2027-03-12","time":"","opp":"Oklahoma","where":"away","city":"Norman, Okla.","venue":"","tv":"","sec":true},
+{"date":"2027-03-20","time":"","opp":"SEC Championship","where":"neutral","city":"Tampa","venue":"","tv":"","sec":false,"kind":"champ"}
+]}

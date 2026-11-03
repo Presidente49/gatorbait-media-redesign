@@ -149,7 +149,7 @@
       return h;
     }
     if (!ng) return '<span class="s-pill"><i></i>Season complete</span><h3 class="s-vs">Thanks for following the Gators</h3><p class="s-meta">The ' + esc(CFG.seasonLabel) + ' schedule is complete. The next season’s dates post on FloridaGators.com.</p>';
-    var cd = countdown(ng), nm = ng.event ? esc(ng.event) : site(ng) + ' ' + rankName(ng.opp.name, ng.opp.rank);
+    var cd = countdown(ng), nm = ng.event ? esc(ng.event) : ng.kind ? esc(ng.opp.name) : site(ng) + ' ' + rankName(ng.opp.name, ng.opp.rank);
     if (ng.event) nm += '<small>' + site(ng) + ' ' + esc(ng.opp.name) + '</small>';
     return '<span class="s-pill' + (ng.state === 'in' ? ' live' : '') + '"><i></i>' + (ng.state === 'in' ? 'Live now' : 'Next ' + esc(CFG.eventWord)) + '</span>' +
       '<h3 class="s-vs">' + nm + '</h3>' +
@@ -179,6 +179,7 @@
       var res = g.state === 'post' && g.score ? '<span class="res ' + (g.score.win ? 'w' : 'l') + '">' + (g.score.win ? 'W' : 'L') + ' ' + esc(g.score.fl) + '-' + esc(g.score.opp) + '</span>' : g.state === 'in' ? '<b class="s-rk">Live</b>' : past ? 'Played' : esc(timeLabel(g));
       var name = g.event ? esc(g.event) + '<small class="ev">' + site(g) + ' ' + esc(g.opp.name) + '</small>' : site(g) + ' ' + rankName(g.opp.name, g.opp.rank) + (g.conf && CFG.chipConf ? '<span class="chip">' + esc(CFG.confName) + '</span>' : '');
       if (g.link && !g.event && /Preview/.test(g.opp.name)) name = '<a href="' + esc(safeUrl(g.link)) + '">' + esc(g.opp.name) + '</a>';
+      else if (g.kind && !g.event) name = esc(g.opp.name);
       return '<tr class="' + cls + '"><td class="d"><time datetime="' + (g.fgDay || iso(g.date)) + '">' + esc(g.fgDay ? dayLabel(g.date) : dayLabel(g.date)) + '</time></td>' +
         '<td class="o"><span class="g-o">' + (g.opp.logo ? '<img loading="lazy" decoding="async" width="26" height="26" alt="" src="' + esc(g.opp.logo) + '">' : '<span class="lg"></span>') + '<span><span>' + name + '</span><small>' + esc(siteWord(g)) + '<span class="vn">' + esc((g.venue ? ' · ' + g.venue : '') + (g.city ? ', ' + g.city : '')) + '</span>' + (g.note ? '<span class="nt">' + esc(' · ' + g.note) + '</span>' : '') + '</small></span></span></td>' +
         '<td class="t">' + res + '</td><td class="v">' + esc(tvOf(g)) + '</td></tr>';

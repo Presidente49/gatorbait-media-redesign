@@ -1,0 +1,11 @@
+<!-- GBM_BB_V1 src=__SHA__ immutable=1 bundle=sports-live/basketball-widget.js route=/gatorbait-media-blogs/categories/gator-basketball -->
+<script id="gbm-bb-loader">(function(){
+if(window.__GBMBB_LOADER__)return;window.__GBMBB_LOADER__=1;
+var loaded=false,R=/^\/gatorbait-media-blogs\/categories\/gator-basketball\/?$/;
+function on(){return R.test(location.pathname||'')}
+function sync(){if(!on()){if(window.__GBM_BB__)window.__GBM_BB__.sync();return}
+if(window.__GBM_BB__&&window.__GBM_BB__.ready){window.__GBM_BB__.sync();return}
+if(loaded){if(window.__GBM_BB__)window.__GBM_BB__.sync();return}loaded=true;
+var s=document.createElement('script');s.id='gbm-bb-bundle';s.async=true;s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@__SHA__/sports-live/basketball-widget.js';s.onerror=function(){loaded=false};document.head.appendChild(s)}
+sync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

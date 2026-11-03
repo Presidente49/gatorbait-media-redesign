@@ -64,7 +64,7 @@ export const HUBS = {
     cfg: {
       ...common, key: 'gymnastics', route: CAT + 'gator-gymnastics', title: 'Florida Gators gymnastics', shortName: 'gymnastics', kicker: 'Gator gymnastics hub', nameHtml: 'Florida Gators<br>Gymnastics', coachWord: 'Head coach',
       lede: 'The 2027 Florida gymnastics schedule and TV, the full roster and GatorBait’s coverage in one place, from Skye Blakely’s world medals to the first meet of the season.',
-      espn: null, seasonLabel: '2027 season', eventWord: 'meet', eventPlural: 'meets', oppHead: 'Meet', timeNote: 'Dates, times and TV as listed by FloridaGators.com. A blank time means none is posted yet.', schedHeading: 'Florida gymnastics schedule', schedSource: 'FloridaGators.com. The official schedule can change; check it before you travel.',
+      espn: null, anchors: true, seasonLabel: '2027 season', eventWord: 'meet', eventPlural: 'meets', oppHead: 'Meet', timeNote: 'Dates, times and TV as listed by FloridaGators.com. A blank time means none is posted yet.', schedHeading: 'Florida gymnastics schedule', schedSource: 'FloridaGators.com. The official schedule can change; check it before you travel.',
       rosterHeading: '2027 Florida gymnastics roster', rosterUrl: 'https://floridagators.com/sports/womens-gymnastics/roster', schoolHead: 'Club', storiesHeading: 'Latest Florida gymnastics coverage', feedCategory: 'Gator Gymnastics',
       posNames: { AA: 'all-around gymnast' }, chipConf: false, ldName: 'Florida Gators gymnastics', ldSport: 'Gymnastics', ldDesc: 'Florida Gators gymnastics schedule, roster and news from GatorBait Media.',
       seoHeading: 'Florida Gators gymnastics coverage',

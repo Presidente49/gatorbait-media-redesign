@@ -37,6 +37,29 @@ export const HUBS = {
       };
     },
   },
+  'womens-basketball': {
+    cfg: {
+      ...common, key: 'womens-basketball', route: CAT + 'gator-womens-basketball', title: 'Florida Gators women’s basketball', shortName: 'women’s basketball', kicker: 'Gator women’s basketball hub', nameHtml: 'Florida Gators<br>Women’s Basketball', coachWord: 'Head coach',
+      lede: 'Live score, schedule and TV, season stats and the full roster for Tammi Reiss’s Florida Gators, with GatorBait’s coverage below.',
+      espn: { path: 'basketball/womens-college-basketball', sport: 'basketball', league: 'womens-college-basketball', web: 'womens-college-basketball' },
+      minGames: 10, boxStats: true, anchors: true, seasonLabel: '2026-27 season', schedHeading: 'Florida women’s basketball schedule, results and TV', schedSource: 'ESPN. TV listings are ESPN’s current data and can change.',
+      statsHeading: 'Florida women’s basketball season stats', rosterHeading: '2026-27 Florida women’s basketball roster', rosterUrl: 'https://floridagators.com/sports/womens-basketball/roster', storiesHeading: 'Latest Florida women’s basketball coverage',
+      feedCategory: 'Gator Women\'s Basketball', posNames: { G: 'guard', F: 'forward', C: 'center' },
+      ldName: 'Florida Gators women’s basketball', ldSport: 'Basketball', ldDesc: 'Florida Gators women’s basketball schedule, TV, season stats, roster and news from GatorBait Media.',
+      seoHeading: 'Florida Gators women’s basketball coverage',
+      seoHtml: '<p>GatorBait Media covers Florida women’s basketball: game stories, analysis and the road through the SEC. This page keeps the Florida women’s basketball schedule, TV channels, season stats compiled from final box scores and the full roster in one place, with every women’s basketball story below.</p>' +
+        '<h3>Florida women’s basketball schedule and how to watch</h3><p>Each game lists its date, tipoff time in Eastern, TV network and site from ESPN. A game still marked TV TBA will be filled in as networks are chosen.</p>' +
+        '<h3>Florida women’s basketball roster</h3><p>The roster is copied from FloridaGators.com with each player’s number, position, class, height, hometown, high school and previous school. For the men’s team, see <a href="/gatorbait-media-blogs/categories/gator-basketball">Gator basketball</a>.</p>',
+    },
+    snapshot() {
+      const sched = readJson('sports-live/hub-data/womens-basketball-espn-schedule.json'), rank = readJson('sports-live/hub-data/womens-basketball-espn-rankings.json');
+      const r = readJson('sports-live/hub-data/womens-basketball-roster.json');
+      return {
+        sched, rank, hasConf: true, team: { coach: (r.coaches.filter((c) => /Head .*Coach$/i.test(c.title))[0] || {}).name || '' }, coaches: r.coaches.slice(0, 4),
+        roster: r.players.map((p) => ({ no: p.no, name: p.name, pos: p.pos, cls: p.cls, ht: p.ht, wt: p.wt, home: p.home, school: p.school, prev: p.prev, img: p.img, url: p.url })), rosterUpdated: 'Nov. 3, 2026',
+      };
+    },
+  },
   'womens-gymnastics': {
     cfg: {
       ...common, key: 'gymnastics', route: CAT + 'gator-gymnastics', title: 'Florida Gators gymnastics', shortName: 'gymnastics', kicker: 'Gator gymnastics hub', nameHtml: 'Florida Gators<br>Gymnastics', coachWord: 'Head coach',

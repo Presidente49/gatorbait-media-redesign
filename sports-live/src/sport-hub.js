@@ -42,6 +42,42 @@
   }
   /*NORM-END*/
 
+  /*STATS*/
+  function bbNew() { return { ids: [], games: [], tm: {}, op: {}, pl: {} }; }
+  function bbNum(x) { var n = parseFloat(x); return isNaN(n) ? 0 : n; }
+  function bbMA(v) { var p = String(v || '').split('-'); return [bbNum(p[0]), bbNum(p[1])]; }
+  function bbSum(o, k, v) { o[k] = (o[k] || 0) + v; }
+  function bbTeamLine(o, stat, pts) {
+    var m = {}; (stat || []).forEach(function (x) { m[x.name] = x.displayValue; });
+    var fg = bbMA(m['fieldGoalsMade-fieldGoalsAttempted']), tp = bbMA(m['threePointFieldGoalsMade-threePointFieldGoalsAttempted']), ft = bbMA(m['freeThrowsMade-freeThrowsAttempted']);
+    bbSum(o, 'pts', pts); bbSum(o, 'fgm', fg[0]); bbSum(o, 'fga', fg[1]); bbSum(o, 'tpm', tp[0]); bbSum(o, 'tpa', tp[1]); bbSum(o, 'ftm', ft[0]); bbSum(o, 'fta', ft[1]);
+    bbSum(o, 'reb', bbNum(m.totalRebounds)); bbSum(o, 'ast', bbNum(m.assists)); bbSum(o, 'stl', bbNum(m.steals)); bbSum(o, 'blk', bbNum(m.blocks)); bbSum(o, 'to', bbNum(m.totalTurnovers || m.turnovers)); bbSum(o, 'pf', bbNum(m.fouls));
+  }
+  /* Adds one FINAL box score (ESPN summary JSON) to acc. Returns false when the game is not final, already counted, or not Florida's. */
+  function bbAdd(acc, sum) {
+    var comp = sum && sum.header && sum.header.competitions && sum.header.competitions[0], bs = sum && sum.boxscore; if (!comp || !bs) return false;
+    var id = String(sum.header.id), t = comp.status && comp.status.type; if (!t || t.state !== 'post' || acc.ids.indexOf(id) > -1) return false;
+    var fl = null, op = null; comp.competitors.forEach(function (c) { if (c.team.id === '57') fl = c; else op = c; }); if (!fl || !op) return false;
+    var ft = null, ot = null; (bs.teams || []).forEach(function (x) { if (x.team.id === '57') ft = x; else ot = x; }); if (!ft || !ot) return false;
+    bbTeamLine(acc.tm, ft.statistics, bbNum(fl.score)); bbTeamLine(acc.op, ot.statistics, bbNum(op.score));
+    var pg = null; (bs.players || []).forEach(function (x) { if (x.team.id === '57') pg = x; });
+    var st = pg && pg.statistics && pg.statistics[0];
+    if (st) {
+      var L = st.labels || []; (st.athletes || []).forEach(function (a) {
+        if (a.didNotPlay || !a.stats || !a.stats.length) return;
+        var g = {}; L.forEach(function (lab, i) { g[lab] = a.stats[i]; });
+        var p = acc.pl[a.athlete.id] || (acc.pl[a.athlete.id] = { name: a.athlete.displayName, no: a.athlete.jersey || '', gp: 0 });
+        var fg = bbMA(g.FG), tp = bbMA(g['3PT']), ft2 = bbMA(g.FT);
+        p.gp += 1; bbSum(p, 'min', bbNum(g.MIN)); bbSum(p, 'pts', bbNum(g.PTS)); bbSum(p, 'fgm', fg[0]); bbSum(p, 'fga', fg[1]); bbSum(p, 'tpm', tp[0]); bbSum(p, 'tpa', tp[1]); bbSum(p, 'ftm', ft2[0]); bbSum(p, 'fta', ft2[1]);
+        bbSum(p, 'reb', bbNum(g.REB)); bbSum(p, 'ast', bbNum(g.AST)); bbSum(p, 'stl', bbNum(g.STL)); bbSum(p, 'blk', bbNum(g.BLK)); bbSum(p, 'to', bbNum(g.TO));
+      });
+    }
+    acc.ids.push(id); acc.games.push({ id: id, date: comp.date, opp: op.team.shortDisplayName || op.team.location, home: fl.homeAway, fl: bbNum(fl.score), op: bbNum(op.score) });
+    return true;
+  }
+  /*STATS-END*/
+
+  function anc(id) { return CFG.anchors ? '<span class="s-anc" id="' + id + '"></span>' : ''; }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function safeUrl(u) { return /^https:\/\/(floridagators\.com|www\.espn\.com|www\.gatorbaitmedia\.com|dxbhsrqyrr690\.cloudfront\.net|a\.espncdn\.com)\//.test(u || '') ? u : ''; }
   function onRoute() { return ROUTE.test(location.pathname || ''); }
@@ -74,7 +110,7 @@
   function tvOf(g) { return g.tv && g.tv.length ? g.tv.join(', ') : 'TV TBA'; }
   function rankName(name, rank) { return (rank ? '<b class="s-rk">No. ' + rank + '</b> ' : '') + esc(name); }
 
-  var D = null, LIVE = null, STORIES = [], HUB = null, RPOS = 'All', RQ = '';
+  var D = null, LIVE = null, STORIES = [], DONE = false, HUB = null, RPOS = 'All', RQ = '';
 
   function recordOf(games, confOnly) {
     var w = 0, l = 0;
@@ -131,7 +167,7 @@
     return b;
   }
   function hero(d) {
-    var nav = '<a href="#' + ROOT + '-sched">Schedule</a>' + (d.stats ? '<a href="#' + ROOT + '-stats">Stats</a>' : '') + '<a href="#' + ROOT + '-roster">Roster</a><a href="#' + ROOT + '-stories">Stories</a>';
+    var nav = '<a href="#' + ROOT + '-sched">Schedule</a>' + ((d.stats || d.bb) ? '<a href="#' + ROOT + '-stats">Stats</a>' : '') + '<a href="#' + ROOT + '-roster">Roster</a><a href="#' + ROOT + '-stories">Stories</a>';
     return '<div class="s-top"><div class="s-wrap"><div><div class="s-kick">GatorBait Media &middot; ' + esc(CFG.kicker) + '</div><h2 class="s-name">' + CFG.nameHtml + '</h2><ul class="s-badges">' + badges(d) + '</ul><p class="s-lede">' + esc(CFG.lede) + '</p>' +
       '<nav class="s-nav" aria-label="' + esc(CFG.title) + ' sections">' + nav + '</nav></div><div class="s-card" id="' + ROOT + '-card" aria-live="polite">' + heroCard(d) + '</div></div></div>';
   }
@@ -148,12 +184,31 @@
         '<td class="t">' + res + '</td><td class="v">' + esc(tvOf(g)) + '</td></tr>';
     }).join('');
     var nconf = d.games.filter(function (g) { return g.conf; }).length;
-    return '<section class="s-sec" id="' + ROOT + '-sched" aria-labelledby="' + ROOT + '-h-sched"><h2 class="s-h" id="' + ROOT + '-h-sched">' + esc(CFG.schedHeading) + '</h2><p class="s-sub">' + d.games.length + ' ' + esc(CFG.eventPlural) + (nconf ? ', ' + nconf + ' in ' + esc(CFG.confName) + ' play' : '') + '. ' + esc(CFG.timeNote) + '</p>' +
+    return '<section class="s-sec" id="' + ROOT + '-sched" aria-labelledby="' + ROOT + '-h-sched">' + anc('schedule') + '<h2 class="s-h" id="' + ROOT + '-h-sched">' + esc(CFG.schedHeading) + '</h2><p class="s-sub">' + d.games.length + ' ' + esc(CFG.eventPlural) + (nconf ? ', ' + nconf + ' in ' + esc(CFG.confName) + ' play' : '') + '. ' + esc(CFG.timeNote) + '</p>' +
       '<table class="sch"><caption>' + esc(CFG.title) + ' schedule</caption><thead><tr><th>Date</th><th>' + esc(CFG.oppHead) + '</th><th>Time / result</th><th>TV</th></tr></thead><tbody>' + rows + '</tbody></table><p class="s-src">Source: ' + esc(CFG.schedSource) + (d.fetchedAt && CFG.espn ? ' Updated ' + esc(stamp(d.fetchedAt)) + '.' : '') + '</p></section>';
   }
 
   /* ---------- season stats (sports whose snapshot carries them) ---------- */
+
+  function bbPct(m, a) { return a ? (m / a * 100).toFixed(1) + '%' : '–'; }
+  function bbAvg(v, g) { return g ? (v / g).toFixed(1) : '–'; }
+  function bbStatsSec(d) {
+    var b = d.bb; if (!b || !b.games.length) return '';
+    var g = b.games.length, T = b.tm, O = b.op, last = b.games.slice().sort(function (x, y) { return Date.parse(x.date) - Date.parse(y.date); }).pop(), p = et(last.date);
+    var w = b.games.filter(function (x) { return x.fl > x.op; }).length;
+    var tiles = [[w + '-' + (g - w), 'Record, games counted', ''], [bbAvg(T.pts, g), 'Points per game', bbAvg(O.pts, g) + ' allowed'], [bbPct(T.fgm, T.fga), 'Field goal %', bbPct(O.fgm, O.fga) + ' opp.'], [bbAvg(T.reb, g), 'Rebounds per game', bbAvg(O.reb, g) + ' opp.']];
+    var tl = tiles.map(function (t) { return '<li><b>' + esc(t[0]) + '</b><span>' + esc(t[1]) + '</span><small>' + esc(t[2]) + '</small></li>'; }).join('');
+    var rows = [['Points per game', bbAvg(T.pts, g), bbAvg(O.pts, g)], ['Field goal %', bbPct(T.fgm, T.fga), bbPct(O.fgm, O.fga)], ['3-point %', bbPct(T.tpm, T.tpa), bbPct(O.tpm, O.tpa)], ['Free throw %', bbPct(T.ftm, T.fta), bbPct(O.ftm, O.fta)], ['Rebounds per game', bbAvg(T.reb, g), bbAvg(O.reb, g)], ['Assists per game', bbAvg(T.ast, g), bbAvg(O.ast, g)], ['Steals per game', bbAvg(T.stl, g), bbAvg(O.stl, g)], ['Blocks per game', bbAvg(T.blk, g), bbAvg(O.blk, g)], ['Turnovers per game', bbAvg(T.to, g), bbAvg(O.to, g)]];
+    var trs = rows.map(function (r) { return '<tr><th scope="row">' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>'; }).join('');
+    var pl = Object.keys(b.pl).map(function (k) { return b.pl[k]; }).sort(function (x, y) { return y.pts / y.gp - x.pts / x.gp || y.min - x.min; });
+    var prs = pl.map(function (x) { return '<tr><th scope="row">' + esc(x.name) + '</th><td class="n">' + x.gp + '</td><td class="n">' + bbAvg(x.min, x.gp) + '</td><td class="n">' + bbAvg(x.pts, x.gp) + '</td><td class="n">' + bbAvg(x.reb, x.gp) + '</td><td class="n">' + bbAvg(x.ast, x.gp) + '</td><td class="n">' + bbAvg(x.stl, x.gp) + '</td><td class="n">' + bbAvg(x.blk, x.gp) + '</td><td class="n">' + bbPct(x.fgm, x.fga) + '</td><td class="n">' + bbPct(x.tpm, x.tpa) + '</td><td class="n">' + bbPct(x.ftm, x.fta) + '</td></tr>'; }).join('');
+    return '<section class="s-sec" id="' + ROOT + '-stats" aria-labelledby="' + ROOT + '-h-stats">' + anc('stats') + '<h2 class="s-h" id="' + ROOT + '-h-stats">' + esc(CFG.statsHeading) + '</h2><p class="s-sub">' + g + (g === 1 ? ' game' : ' games') + ' counted, through ' + esc(MON[p.m] + ' ' + p.d) + ' ' + esc(last.home === 'away' ? 'at' : 'vs.') + ' ' + esc(last.opp) + '. Final box scores from ESPN only; averages update as each game ends.</p>' +
+      '<ul class="s-tiles">' + tl + '</ul><div class="s-statgrid"><div class="s-lt"><h3>Team, Florida vs. opponents</h3><table class="s-tm"><thead><tr><th>Per game</th><th class="n">Florida</th><th class="n">Opp.</th></tr></thead><tbody>' + trs + '</tbody></table></div>' +
+      '<div class="s-lt s-pl"><h3>Players, per game</h3><div class="s-scroll"><table><thead><tr><th>Player</th><th class="n">GP</th><th class="n">MIN</th><th class="n">PTS</th><th class="n">REB</th><th class="n">AST</th><th class="n">STL</th><th class="n">BLK</th><th class="n">FG%</th><th class="n">3P%</th><th class="n">FT%</th></tr></thead><tbody>' + prs + '</tbody></table></div></div></div>' +
+      '<p class="s-src">Source: <a href="https://www.espn.com/womens-college-basketball/team/stats/_/id/57/florida-gators">ESPN box scores</a>, compiled by GatorBait Media from final games. Percentages are totals made over attempted.</p></section>';
+  }
   function statsSec(d) {
+    if (d.bb) return bbStatsSec(d);
     var s = d.stats; if (!s) return '';
     var tiles = (s.tiles || []).map(function (t) { return '<li><b>' + esc(t[1]) + '</b><span>' + esc(t[0]) + '</span><small>' + esc(t[2] || '') + '</small></li>'; }).join('');
     var trs = (s.teamRows || []).map(function (r) { return '<tr><th scope="row">' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>'; }).join('');
@@ -162,7 +217,7 @@
       return '<div class="s-lt"><h3>' + esc(title) + '</h3><table><thead><tr>' + head.map(function (x, i) { return '<th' + (i ? ' class="n"' : '') + '>' + esc(x) + '</th>'; }).join('') + '</tr></thead><tbody>' +
         rows.slice(0, n || 5).map(function (r) { return '<tr>' + r.map(function (x, i) { return i ? '<td class="n">' + esc(x) + '</td>' : '<th scope="row">' + esc(x) + '</th>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
     };
-    return '<section class="s-sec" id="' + ROOT + '-stats" aria-labelledby="' + ROOT + '-h-stats"><h2 class="s-h" id="' + ROOT + '-h-stats">' + esc(CFG.statsHeading) + '</h2><p class="s-sub">Through ' + esc(s.through) + '. Updated ' + esc(s.updatedLabel) + '. Final box scores only.</p>' +
+    return '<section class="s-sec" id="' + ROOT + '-stats" aria-labelledby="' + ROOT + '-h-stats">' + anc('stats') + '<h2 class="s-h" id="' + ROOT + '-h-stats">' + esc(CFG.statsHeading) + '</h2><p class="s-sub">Through ' + esc(s.through) + '. Updated ' + esc(s.updatedLabel) + '. Final box scores only.</p>' +
       '<ul class="s-tiles">' + tiles + '</ul><div class="s-statgrid"><div class="s-lt"><h3>Team, Florida vs. opponents</h3><table class="s-tm"><thead><tr><th>Stat</th><th class="n">Florida</th><th class="n">Opp.</th></tr></thead><tbody>' + trs + '</tbody></table></div>' +
       '<div class="s-leaders">' + tbl('Passing', ['Player', 'C-A', 'Yds', 'TD', 'INT'], L.pass, 3) + tbl('Rushing', ['Player', 'Att', 'Yds', 'Avg', 'TD', 'Lng'], L.rush, 5) + tbl('Receiving', ['Player', 'Rec', 'Yds', 'Avg', 'TD', 'Lng'], L.rec, 5) + tbl('Defense', ['Player', 'Tkl', 'TFL', 'Sk', 'INT', 'PBU'], L.def, 5) + '</div></div>' +
       '<p class="s-src">Sources: ' + (s.src || []).map(function (x) { return '<a href="' + esc(safeUrl(x[1])) + '">' + esc(x[0]) + '</a>'; }).join(', ') + '.</p></section>';
@@ -186,9 +241,9 @@
     if (!d.roster || !d.roster.length) return '';
     var chips = posList(d).length < 2 ? '' : ['All'].concat(posList(d)).map(function (x) { return '<button type="button" data-pos="' + esc(x) + '" aria-pressed="' + (x === RPOS) + '">' + esc(x) + '</button>'; }).join('');
     var coaches = (d.coaches || []).length ? '<p class="s-sub">' + (d.coaches || []).slice(0, 4).map(function (c) { return esc(c.title) + ' <b>' + esc(c.name) + '</b>'; }).join(' &middot; ') + '.</p>' : '';
-    return '<section class="s-sec" id="' + ROOT + '-roster" aria-labelledby="' + ROOT + '-h-roster"><h2 class="s-h" id="' + ROOT + '-h-roster">' + esc(CFG.rosterHeading) + '</h2>' + coaches + '<p class="s-sub">' + d.roster.length + ' players, copied from <a href="' + esc(CFG.rosterUrl) + '">the official roster on FloridaGators.com</a>' + (d.rosterUpdated ? ', pulled ' + esc(d.rosterUpdated) : '') + '.' + (CFG.rosterLink ? ' For injury and availability detail see the <a href="' + esc(CFG.rosterLink) + '">Gators roster page</a>.' : '') + '</p>' +
+    return '<section class="s-sec" id="' + ROOT + '-roster" aria-labelledby="' + ROOT + '-h-roster">' + anc('roster') + '<h2 class="s-h" id="' + ROOT + '-h-roster">' + esc(CFG.rosterHeading) + '</h2>' + coaches + '<p class="s-sub">' + d.roster.length + ' players, copied from <a href="' + esc(CFG.rosterUrl) + '">the official roster on FloridaGators.com</a>' + (d.rosterUpdated ? ', pulled ' + esc(d.rosterUpdated) : '') + '.' + (CFG.rosterLink ? ' For injury and availability detail see the <a href="' + esc(CFG.rosterLink) + '">Gators roster page</a>.' : '') + '</p>' +
       '<div class="s-filter"><div class="s-chips" role="group" aria-label="Filter roster by position">' + chips + '</div><label class="s-find"><span>Find a player</span><input type="search" id="' + ROOT + '-q" placeholder="Name, hometown or school" value="' + esc(RQ) + '" autocomplete="off"></label></div>' +
-      '<div class="s-clip' + (d.roster.length > (CFG.rosterClip || 999) ? ' on' : '') + '" id="' + ROOT + '-clip"><table class="ros"><caption>' + esc(CFG.title) + ' roster</caption><thead><tr><th class="ph"><span class="vh">Photo</span></th><th class="no">No.</th><th>Name</th><th class="ps">Pos.</th><th class="cl">Class</th><th class="ht">Ht.</th><th class="wt">Wt.</th><th class="hm">Hometown / ' + esc(CFG.schoolHead) + '</th><th class="pv">Previous school</th></tr></thead><tbody id="' + ROOT + '-rb">' + rosterRows(d) + '</tbody></table></div>' + (d.roster.length > (CFG.rosterClip || 999) ? '<button type="button" class="s-more" data-more="1" aria-expanded="false" aria-controls="' + ROOT + '-clip">Show all ' + d.roster.length + ' players</button>' : '') +
+      '<div class="s-clip' + (d.roster.length > (CFG.rosterClip || 999) ? ' on' : '') + '" id="' + ROOT + '-clip"><table class="ros' + (d.roster.some(function (p) { return p.wt; }) ? '' : ' nowt') + '"><caption>' + esc(CFG.title) + ' roster</caption><thead><tr><th class="ph"><span class="vh">Photo</span></th><th class="no">No.</th><th>Name</th><th class="ps">Pos.</th><th class="cl">Class</th><th class="ht">Ht.</th><th class="wt">Wt.</th><th class="hm">Hometown / ' + esc(CFG.schoolHead) + '</th><th class="pv">Previous school</th></tr></thead><tbody id="' + ROOT + '-rb">' + rosterRows(d) + '</tbody></table></div>' + (d.roster.length > (CFG.rosterClip || 999) ? '<button type="button" class="s-more" data-more="1" aria-expanded="false" aria-controls="' + ROOT + '-clip">Show all ' + d.roster.length + ' players</button>' : '') +
       '<p class="s-src s-credit">Headshots and roster data: <a href="' + esc(CFG.rosterUrl) + '">FloridaGators.com</a>. Photos courtesy UAA (University Athletic Association) and the photographers credited there; images load from FloridaGators.com and are not re-hosted. See the official <a href="https://floridagators.com/galleries">Florida Gators photo galleries</a>.</p></section>';
   }
   function availSec(d) {
@@ -202,6 +257,7 @@
 
   /* ---------- stories ---------- */
   function storyCards() {
+    if (DONE && !STORIES.length) return '<p class="s-sub">New ' + esc(CFG.shortName) + ' stories post here as they publish.</p>';
     var out = '';
     for (var i = 0; i < 6; i++) {
       var s = STORIES[i];
@@ -211,7 +267,7 @@
     return '<ul class="s-cards">' + out + '</ul>';
   }
   function storiesSec() {
-    return '<section class="s-sec" id="' + ROOT + '-stories" aria-labelledby="' + ROOT + '-h-st"><h2 class="s-h" id="' + ROOT + '-h-st">' + esc(CFG.storiesHeading) + '</h2><p class="s-sub">Independent reporting and analysis from GatorBait Media. <a href="#gbm-np">Every ' + esc(CFG.shortName) + ' story is listed below</a>.</p><div id="' + ROOT + '-cards">' + storyCards() + '</div></section>';
+    return '<section class="s-sec" id="' + ROOT + '-stories" aria-labelledby="' + ROOT + '-h-st">' + anc('stories') + '<h2 class="s-h" id="' + ROOT + '-h-st">' + esc(CFG.storiesHeading) + '</h2><p class="s-sub">Independent reporting and analysis from GatorBait Media. <a href="#gbm-np">Every ' + esc(CFG.shortName) + ' story is listed below</a>.</p><div id="' + ROOT + '-cards">' + storyCards() + '</div></section>';
   }
   function seoSec(d) {
     return '<div class="s-seo"><h2>' + esc(CFG.seoHeading) + '</h2>' + CFG.seoHtml + '</div>';
@@ -235,7 +291,7 @@
 
   var CSS = '' +
     '#R{--navy:#10264b;--or:#fa4616;--or-ink:#b93a0e;--line:#e3e7ee;--soft:#f6f7fa;--mute:#4b5a73;position:relative;z-index:3;display:block;width:var(--sh-vw,100vw);max-width:100vw;margin:0 0 8px calc(50% - var(--sh-vw,100vw)/2);background:#fff;color:var(--navy);font:400 16px/1.5 Barlow,Arial,sans-serif;text-align:left;text-transform:none;letter-spacing:0;overflow-anchor:none}' +
-    '#R *{box-sizing:border-box}#R a{color:var(--navy)}#R a:focus-visible,#R button:focus-visible,#R input:focus-visible{outline:3px solid var(--navy);outline-offset:2px}#R .vh{position:absolute;left:-9999px}' +
+    '#R *{box-sizing:border-box}#R a{color:var(--navy)}#R a:focus-visible,#R button:focus-visible,#R input:focus-visible{outline:3px solid var(--navy);outline-offset:2px}#R .vh{position:absolute;left:-9999px}#R .s-anc{display:block;height:0;scroll-margin-top:92px}' +
     '#R .s-wrap{max-width:1240px;margin:0 auto;padding:0 20px}' +
     '#R .s-top{background:#f3f5f9;border-top:3px solid var(--or);padding:28px 0 26px}#R .s-top .s-wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:stretch}' +
     '#R .s-kick{font:700 13px/1.3 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}' +
@@ -259,11 +315,11 @@
     '#R .chip{display:inline-block;margin-left:6px;padding:0 6px;border:1px solid var(--navy);font:800 12px/18px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.1em;text-transform:uppercase;vertical-align:2px}' +
     '#R .res.w{color:#116a3a;font-weight:800}#R .res.l{color:#9b1c1c;font-weight:800}' +
     '#R .s-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 18px;padding:0;list-style:none}#R .s-tiles li{border:1px solid var(--line);border-top:3px solid var(--or);padding:10px 12px;background:#fff}#R .s-tiles b{display:block;font:800 clamp(28px,3.6vw,38px)/1 "Barlow Condensed",Barlow,sans-serif}#R .s-tiles span{display:block;font:700 13px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}#R .s-tiles small{color:var(--mute);font-size:14px}' +
-    '#R .s-statgrid{display:grid;grid-template-columns:1fr 1.4fr;gap:30px;align-items:start}#R .s-lt h3{margin:0 0 6px;font:800 19px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.06em;text-transform:uppercase}#R .s-lt{margin:0 0 18px}#R .s-lt td,#R .s-lt th{padding:6px 8px;font-size:15px}#R .s-lt tbody th{font:600 15px Barlow,sans-serif;letter-spacing:0;text-transform:none;color:var(--navy);border-bottom:1px solid var(--line);white-space:normal}#R .n{text-align:right;font-variant-numeric:tabular-nums}' +
+    '#R .s-statgrid{display:grid;grid-template-columns:1fr 1.4fr;gap:30px;align-items:start}#R .s-lt h3{margin:0 0 6px;font:800 19px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.06em;text-transform:uppercase}#R .s-lt{margin:0 0 18px}#R .s-lt td,#R .s-lt th{padding:6px 8px;font-size:15px}#R .s-lt tbody th{font:600 15px Barlow,sans-serif;letter-spacing:0;text-transform:none;color:var(--navy);border-bottom:1px solid var(--line);white-space:normal}#R .n{text-align:right;font-variant-numeric:tabular-nums}#R .s-scroll{overflow-x:auto}#R .s-pl table{min-width:520px}#R .s-pl th.n,#R .s-pl td.n{padding:6px 7px}' +
     '#R .s-filter{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-end;margin:0 0 12px}#R .s-chips{display:flex;flex-wrap:wrap;gap:6px}#R .s-chips button{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 auto!important;width:auto!important;max-width:none!important;margin:0!important;min-height:40px;min-width:44px;padding:0 12px;background:#fff;color:var(--navy);border:2px solid var(--navy);font:800 15px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}#R .s-chips button[aria-pressed=true]{box-shadow:inset 0 -3px 0 var(--or);background:#f3f5f9}' +
     '#R .s-find{display:flex;flex-direction:column;font:700 12px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}#R .s-find input{min-height:44px;width:min(280px,100%);padding:0 10px;border:2px solid var(--navy);font:500 16px Barlow,sans-serif;color:var(--navy);background:#fff}' +
     '#R .s-clip.on{max-height:820px;overflow:hidden;position:relative}#R .s-clip.on:after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(rgba(255,255,255,0),#fff);pointer-events:none}#R .s-more{display:block;margin:10px auto 0;min-height:44px;padding:0 22px;background:#fff;border:2px solid var(--navy);box-shadow:inset 0 -3px 0 var(--or);color:var(--navy);font:800 16px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}' +
-    '#R table.ros{table-layout:fixed}#R .ros th.ph,#R .ros td.ph{width:72px}#R .ros th.no{width:52px}#R .ros th.ps{width:68px}#R .ros th.cl{width:64px}#R .ros th.ht{width:68px}#R .ros th.wt{width:56px}#R .ros th.hm{width:24%}#R .ros th.pv{width:20%}#R .ros td.ht,#R .ros td.ps,#R .ros td.cl,#R .ros td.wt{white-space:nowrap}#R .ros td.ph{width:72px;padding:6px 10px}#R .ros td.ph img,#R .ros .p-ni{max-width:none;display:block;width:56px;height:56px;background:#eef1f6;object-fit:cover;object-position:top center}#R .ros td.no{width:46px;font:800 22px "Barlow Condensed",Barlow,sans-serif}#R .ros td.nm{font-weight:700}#R .ros td.nm small.m{display:none}#R .ros td.hm small{display:block;color:var(--mute);font-size:14px}#R .ros td.pv{color:var(--mute)}' +
+    '#R table.ros{table-layout:fixed}#R .ros.nowt .wt{display:none}#R .ros th.ph,#R .ros td.ph{width:72px}#R .ros th.no{width:52px}#R .ros th.ps{width:68px}#R .ros th.cl{width:64px}#R .ros th.ht{width:68px}#R .ros th.wt{width:56px}#R .ros th.hm{width:24%}#R .ros th.pv{width:20%}#R .ros td.ht,#R .ros td.ps,#R .ros td.cl,#R .ros td.wt{white-space:nowrap}#R .ros td.ph{width:72px;padding:6px 10px}#R .ros td.ph img,#R .ros .p-ni{max-width:none;display:block;width:56px;height:56px;background:#eef1f6;object-fit:cover;object-position:top center}#R .ros td.no{width:46px;font:800 22px "Barlow Condensed",Barlow,sans-serif}#R .ros td.nm{font-weight:700}#R .ros td.nm small.m{display:none}#R .ros td.hm small{display:block;color:var(--mute);font-size:14px}#R .ros td.pv{color:var(--mute)}' +
     '#R .stt{display:inline-block;margin-left:8px;padding:0 6px;border:1px solid var(--navy);font:800 12px/18px "Barlow Condensed",Barlow,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;vertical-align:2px}' +
     '#R .s-ail{margin:0;padding:0;list-style:none}#R .s-ail li{padding:8px 0;border-bottom:1px solid var(--line)}' +
     '#R .s-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin:0;padding:0;list-style:none}#R .s-st .im{display:block;aspect-ratio:16/9;background:#e3e7ee;overflow:hidden}#R .s-st .im img{width:100%;height:100%;object-fit:cover;display:block}#R .s-st h3{margin:8px 0 2px;font:800 21px/1.12 "Barlow Condensed",Barlow,sans-serif;text-transform:uppercase;min-height:3.36em}#R .s-st h3 a{text-decoration:none}#R .s-ph .im{background:#f1f3f7}#R .s-st .m{font:600 13px Barlow,sans-serif;color:var(--mute);letter-spacing:.04em;text-transform:uppercase;min-height:1.4em}' +
@@ -323,8 +379,18 @@
       if (!r[0] || !onRoute()) return;
       var g = normSchedule(r[0], D.games);
       if (g.length < CFG.minGames) return;
-      D.games = g; D.rank = normRank(r[1], D.rank); D.fetchedAt = new Date().toISOString(); repaintAll();
+      D.games = g; D.rank = normRank(r[1], D.rank); D.fetchedAt = new Date().toISOString(); repaintAll(); bbCatchUp();
     }).catch(function () {});
+  }
+  function bbCatchUp() {
+    if (!D || !D.bb || !ESPN || !CFG.boxStats) return Promise.resolve();
+    var todo = D.games.filter(function (g) { return g.state === 'post' && D.bb.ids.indexOf(g.id) < 0; }).slice(0, 40), changed = false;
+    return todo.reduce(function (pr, g) {
+      return pr.then(function () { return getJson(ESPN.map(function (b) { return b + '/summary?event=' + g.id; })).then(function (sum) { if (bbAdd(D.bb, sum)) changed = true; }).catch(function () {}); });
+    }, Promise.resolve()).then(function () {
+      if (!changed || !onRoute()) return;
+      var a = document.getElementById(ROOT + '-stats'), t = document.createElement('div'); t.innerHTML = bbStatsSec(D); if (a && t.firstChild) a.replaceWith(t.firstChild);
+    });
   }
   var polls_n = 0, pollTimer = 0;
   function readHeader() {
@@ -390,7 +456,7 @@
       var seen = {}, list = [];
       rss.filter(function (r) { return r.ok; }).sort(function (a, b) { return b.ts - a.ts; }).forEach(function (r) { if (!seen[r.url]) { seen[r.url] = 1; list.push(r); } });
       nat.forEach(function (n) { if (seen[n.url]) return; seen[n.url] = 1; var r = byPath[n.url]; list.push({ url: n.url, title: n.title, img: (r && r.img) || n.img, by: r ? r.by : '', ts: r ? r.ts : 0 }); });
-      if (!list.length) return;
+      if (!list.length) { DONE = true; var c0 = document.getElementById(ROOT + '-cards'); if (c0) c0.innerHTML = storyCards(); return; }
       STORIES = list.slice(0, 6).map(function (s) { s.when = s.ts ? ago(s.ts) : ''; if (s.img && s.img.indexOf('static.wixstatic.com/media/') > -1) s.img = s.img.replace(/\/v1\/(?:fill|fit)\/[^/]+\//, '/v1/fit/w_480,h_270,al_c,q_75/').replace(/\/file\.(png|jpe?g)$/i, '/file.webp'); return s; });
       var c = document.getElementById(ROOT + '-cards'); if (c) { var h = storyCards(); if (c.innerHTML !== h) c.innerHTML = h; }
       paintLd();

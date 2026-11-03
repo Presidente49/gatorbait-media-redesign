@@ -1,0 +1,124 @@
+{
+  "about": "Staff and About directory data (Nov. 3, 2026). Every field comes from the live GatorBait site: the Wix Members profiles (nickname, title, photo, slug), the existing /about page copy and photos, the site RSS description, and each author's published posts from the Wix Blog API (posts query by memberId). Nothing here is invented. A null means the site has no verified value; see deploy/staff-20261103/README.md for the missing-bio list.",
+  "fetchedAt": "2026-11-03T03:30:00Z",
+  "org": {
+    "name": "GatorBait Media",
+    "id": "https://www.gatorbaitmedia.com/#organization",
+    "url": "https://www.gatorbaitmedia.com",
+    "logo": "https://static.wixstatic.com/media/ae876a_33367cf1645c43d18b0d930a68ca747b~mv2.png"
+  },
+  "people": [
+    {
+      "id": "buddy-martin", "name": "Buddy Martin", "by": "Buddy Martin", "group": "lead",
+      "role": "Editor-in-Chief and CEO",
+      "ld": "Editor-in-Chief and CEO",
+      "line": "Emmy-winning journalist and New York Times best-selling author. Hosts The Buddy Martin Show, live Monday through Thursday at 9 p.m. ET.",
+      "photo": { "id": "ae876a_e16c7b4ace814386964d2f892f85b470~mv2.jpg", "pos": "72% 18%", "alt": "Buddy Martin, editor-in-chief of GatorBait Media" },
+      "profile": "/profile/buddymartinshow/profile",
+      "read": { "href": "/gatorbait-media-blogs/categories/buddy-s-blog", "label": "Read Buddy’s stories" },
+      "stories": [
+        { "t": "Take a Deep Breath. It’s Basketball Season. Or Wait a Minute! They Didn’t Drop Out Of The Top 25 Yet!", "p": "/post/take-a-deep-breath-it-s-basketball-season-or-wait-a-minute-they-didn-t-drop-out-of-the-top-25-yet", "d": "2026-11-01T22:33:59Z" },
+        { "t": "\"Coach Dumbass\" Owns Up To All His Team's Mistakes – Including The One He Made.", "p": "/post/coach-dumbass-owns-up-to-all-his-team-s-mistakes-including-the-one-he-made", "d": "2026-11-01T02:11:47Z" },
+        { "t": "The Receiver Who Caught Everything", "p": "/post/the-receiver-who-caught-everything", "d": "2026-10-31T16:26:15Z" }
+      ]
+    },
+    {
+      "id": "brenden-martin", "name": "Brenden Martin", "by": "Brenden Martin", "group": "lead",
+      "role": "Owner and Executive Producer",
+      "ld": "Owner and Executive Producer",
+      "line": "Co-owner of GatorBait Media and executive producer of GatorBait TV. Produces The Buddy Martin Show.",
+      "photo": { "id": "5b5b65_ce8e69216614447788b3d623da32d059~mv2_d_2013_2015_s_2.jpeg", "pos": "50% 35%", "alt": "Brenden Martin, owner and executive producer of GatorBait Media" },
+      "profile": "/profile/brenden/profile",
+      "read": { "href": "/profile/brenden/profile", "label": "See Brenden’s author page" },
+      "stories": [
+        { "t": "Snubbed in Atlanta: GameDay passed, Kirby shrugged, Florida noticed", "p": "/post/snubbed-in-atlanta-gameday-kirby-florida-1", "d": "2026-10-27T04:00:00Z" },
+        { "t": "We're live: Florida-Georgia talk on The Buddy Martin Show", "p": "/post/buddy-martin-show-live-florida-georgia-october-26-2026", "d": "2026-10-27T01:18:53Z" },
+        { "t": "Four medals, one golden week for Florida's Skye Blakely", "p": "/post/four-medals-one-golden-week-florida-skye-blakely", "d": "2026-10-25T22:56:22Z" }
+      ]
+    },
+    {
+      "id": "franz-beard", "name": "Franz Beard", "by": "Franz Beard", "group": "writer",
+      "role": "Senior Columnist",
+      "ld": "Senior Columnist",
+      "line": "Writes the Thoughts of the Day column. Author of The Golden Season, sold in the GatorBait store.",
+      "photo": { "id": "5b5b65_791f6948393c4058be4afcdc0b717af2~mv2_d_2320_3088_s_2.jpeg", "pos": "50% 30%", "alt": "Franz Beard, senior columnist at GatorBait Media" },
+      "profile": "/profile/franz/profile",
+      "read": { "href": "/gatorbait-media-blogs/categories/franz-beard-blog", "label": "Read Franz’s stories" },
+      "stories": [
+        { "t": "Florida basketball: Gators start season with sky high expectations", "p": "/post/florida-basketball-gators-start-season-with-sky-high-expectations", "d": "2026-11-02T14:16:49Z" },
+        { "t": "For the UF offense, it was an October to forget", "p": "/post/for-the-uf-offense-it-was-an-october-to-forget", "d": "2026-11-02T13:38:50Z" },
+        { "t": "Autopsy Cause of Gators Defeat: Self-Inflicted Wounds", "p": "/post/autopsy-cause-of-gators-defeat-self-inflicted-wounds", "d": "2026-11-01T15:20:41Z" }
+      ]
+    },
+    {
+      "id": "loren-meadows", "name": "Loren Meadows", "by": "Loren Meadows", "group": "writer",
+      "role": "Writer",
+      "ld": null,
+      "line": "Writes pregame and postgame analysis of Florida football.",
+      "photo": { "id": "70130b_d73c231f61fe4ab89c6be6cd67fb91ac~mv2.jpg", "pos": "50% 22%", "alt": "Loren Meadows, writer at GatorBait Media" },
+      "profile": "/profile/coachmeadows/profile",
+      "read": { "href": "/gatorbait-media-blogs/categories/loren-meadows-blogs", "label": "Read Loren’s stories" },
+      "stories": [
+        { "t": "Postgame Analysis: Florida Gators (5-3, 3-3) v. Georgia Bulldogs (7-1, 5-1)", "p": "/post/postgame-analysis-florida-gators-5-3-3-3-v-georgia-bulldogs-7-1-5-1", "d": "2026-11-01T18:27:12Z" },
+        { "t": "Pregame Analysis: Florida Gators (5-2, 3-2) vs. Georgia Bulldogs (6-1, 4-1)", "p": "/post/pregame-analysis-florida-gators-5-2-3-2-vs-georgia-bulldogs-6-1-4-1", "d": "2026-10-31T14:50:20Z" },
+        { "t": "Postgame Thoughts: Florida (5-2, 3-2) v. Texas (4-2, 1-2)", "p": "/post/postgame-thoughts-florida-5-2-3-2-v-texas-4-2-1-2", "d": "2026-10-18T16:29:42Z" }
+      ]
+    },
+    {
+      "id": "eddie-gilley", "name": "Eddie Gilley", "by": "Eddie Gilley", "group": "writer",
+      "role": "Special Contributor",
+      "ld": "Special Contributor",
+      "line": "Writes columns on Florida football games and the Gators’ season.",
+      "photo": null,
+      "profile": "/profile/9322e920-3989-4e86-bfad-6a714ff21fd5/profile",
+      "read": { "href": "/gatorbait-media-blogs/categories/eddie-gilley-blog", "label": "Read Eddie’s stories" },
+      "stories": [
+        { "t": "Nightmare in Atlanta", "p": "/post/nightmare-in-atlanta", "d": "2026-11-02T21:48:22Z" },
+        { "t": "Key to a Win in Atlanta", "p": "/post/key-to-a-win-in-atlanta", "d": "2026-10-30T16:21:53Z" },
+        { "t": "Gators find a spark in Austin", "p": "/post/gators-find-a-spark-in-austin", "d": "2026-10-19T21:27:49Z" }
+      ]
+    },
+    {
+      "id": "carlton-reese", "name": "Carlton Reese", "by": "Carlton Reese", "group": "writer",
+      "role": "Writer",
+      "ld": null,
+      "line": "Writes Gators columns for GatorBait Media.",
+      "photo": null,
+      "profile": "/profile/28879c23-51ea-47d3-ac02-a41cd5376fcd/profile",
+      "read": { "href": "/gatorbait-media-blogs/categories/carlton-reese", "label": "Read Carlton’s stories" },
+      "stories": [
+        { "t": "Contenders, Not Hopefuls: Florida’s Rout of No. 4 Ole Miss Puts the SEC on Notice", "p": "/post/carlton-reese-florida-contenders-not-hopefuls-ole-miss", "d": "2026-09-27T00:40:27Z" },
+        { "t": "Personal Recollections Of “14 Days In Gainesville” And The ESPN Documentary", "p": "/post/personal-recollections-of-14-days-in-gainesville-and-the-espn-documentary", "d": "2026-09-16T21:51:00Z" },
+        { "t": "Did This Season Spell The Death Of The Iconic Football Brand?", "p": "/post/dis-this-season-spell-the-death-of-the-iconic-football-brand", "d": "2026-02-03T22:46:26Z" }
+      ]
+    },
+    {
+      "id": "chris-spears", "name": "Chris Spears", "by": "Chris Spears", "group": "writer",
+      "role": "Photographer",
+      "ld": "Photographer",
+      "line": "Photographs Gators games for GatorBait Media and files sideline notes.",
+      "photo": null,
+      "profile": null,
+      "read": { "href": "/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp", "label": "Read Chris’s latest" },
+      "stories": [
+        { "t": "Three Things From Courtside: Two Nays and a Yay in Florida's Rocky Start Against Baylor", "p": "/post/three-things-from-courtside-florida-baylor-exhibition", "d": "2026-10-19T03:26:08Z" },
+        { "t": "From the Sideline: Chris Spears on the 500th Game in The Swamp", "p": "/post/from-the-sideline-chris-spears-on-the-500th-game-in-the-swamp", "d": "2026-10-11T16:22:47Z" },
+        { "t": "Chris Spears' Best Shots: South Carolina 38, Florida 19", "p": "/post/chris-spears-best-shots-south-carolina-38-florida-19", "d": "2026-10-11T04:44:19Z" }
+      ]
+    },
+    {
+      "id": "gatorbait-staff", "name": "GatorBait Staff", "by": "GatorBait Staff", "group": "writer", "org": true,
+      "role": "Newsroom byline",
+      "ld": null,
+      "line": "News, previews, game-day updates and show notices published under the staff byline.",
+      "photo": null,
+      "profile": "/profile/bfd9ebdd-4d13-4c29-bfe5-efff0560141c20793/profile",
+      "read": { "href": "/gatorbait-media-blogs", "label": "Read the latest news" },
+      "stories": [
+        { "t": "LIVE NOW: The Buddy Martin Show with Shane Matthews, Franz Beard and Kevin Brockway", "p": "/post/live-now-the-buddy-martin-show-with-shane-matthews-franz-beard-and-kevin-brockway", "d": "2026-11-03T02:34:15Z" },
+        { "t": "Haugh Stuff: No. 1 Gators Open With 77-67 Win Over No. 14 Miami", "p": "/post/haugh-stuff-no-1-gators-open-with-77-67-win-over-no-14-miami", "d": "2026-11-03T01:48:42Z" },
+        { "t": "Sumrall: Tom Brady Would Have Been ‘Under Too Much Duress’ Against Georgia", "p": "/post/sumrall-not-even-tom-brady-could-have-performed-against-georgia", "d": "2026-11-02T18:25:46Z" }
+      ]
+    }
+  ]
+}

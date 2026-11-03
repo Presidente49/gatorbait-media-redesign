@@ -1,0 +1,11 @@
+<!-- GBM_STAFF_V1 src=__SHA__ immutable=1 bundle=sports-live/staff-widget.js routes=/about,/writers -->
+<script id="gbm-staff-loader">(function(){
+if(window.__GBMT_LOADER__)return;window.__GBMT_LOADER__=1;
+var loaded=false,R=/^\/(about|writers)\/?$/;
+function on(){return R.test(location.pathname||'')}
+function sync(){if(!on()){if(window.__GBM_TEAM__)window.__GBM_TEAM__.sync();return}
+if(window.__GBM_TEAM__&&window.__GBM_TEAM__.ready){window.__GBM_TEAM__.sync();return}
+if(loaded){if(window.__GBM_TEAM__)window.__GBM_TEAM__.sync();return}loaded=true;
+var s=document.createElement('script');s.id='gbm-team-bundle';s.async=true;s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@__SHA__/sports-live/staff-widget.js';s.onerror=function(){loaded=false};document.head.appendChild(s)}
+sync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

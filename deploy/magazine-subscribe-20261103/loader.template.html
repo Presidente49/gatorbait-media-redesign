@@ -1,0 +1,10 @@
+<!-- GBM_MAGSUB_V1 src=__SHA__ immutable=1 bundle=sports-live/magazine-subscribe-prompt.js route=/magazine -->
+<script id="gbm-magsub-loader">(function(){
+if(window.__GBMMS_LOADER__)return;window.__GBMMS_LOADER__=1;
+var loaded=false,R=/^\/magazine\/?$/i;
+function on(){return R.test(location.pathname||'')}
+function sync(){var a=window.__gbmMagSub;if(a&&a.ready){a.sync();return}
+if(!on()||loaded)return;loaded=true;
+var s=document.createElement('script');s.id='gbm-magsub-bundle';s.async=true;s.src='https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@__SHA__/sports-live/magazine-subscribe-prompt.js';s.onerror=function(){loaded=false};document.head.appendChild(s)}
+sync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

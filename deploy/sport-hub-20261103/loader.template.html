@@ -1,0 +1,12 @@
+<!-- GBM_SH___KEYU___V1 src=__SHA__ immutable=1 bundle=sports-live/__FILE__ route=__ROUTE__ -->
+<script id="gbm-sh-__KEY__-loader">(function(){
+if(window.__GBMSH___KEYU___LOADER__)return;window.__GBMSH___KEYU___LOADER__=1;
+var loaded=false,R=/^__ROUTE_RE__\/?$/;
+function on(){return R.test(location.pathname||'')}
+function g(){return window.__GBM_SH___KEYU____}
+function sync(){if(!on()){if(g())g().sync();return}
+if(g()&&g().ready){g().sync();return}
+if(loaded){if(g())g().sync();return}loaded=true;
+var s=document.createElement('script');s.id='gbm-sh-__KEY__-bundle';s.async=true;s.src='https://fastly.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@__SHA__/sports-live/__FILE__';s.onerror=function(){loaded=false};document.head.appendChild(s)}
+sync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
+})();</script>

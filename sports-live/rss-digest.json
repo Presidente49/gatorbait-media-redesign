@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-03T18:23:10.533Z",
+ "generatedAt": "2026-11-03T23:56:53.955Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-03T18:23:10.533Z",
+  "checkedAt": "2026-11-03T23:56:53.955Z",
   "ok": false,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Oklahoma Fires Offensive Coordinator Ben Arbuckle Before Florida Game",
-   "link": "https://www.gatorbaitmedia.com/post/oklahoma-fires-offensive-coordinator-ben-arbuckle-before-florida-game",
-   "publishedAt": "2026-11-03T14:16:26.000Z"
+   "title": "Florida vs. Jacksonville: Gators Host Dolphins Thursday Night",
+   "link": "https://www.gatorbaitmedia.com/post/florida-vs-jacksonville-gators-host-dolphins-thursday-night",
+   "publishedAt": "2026-11-03T21:14:14.000Z"
   },
   "problems": [
    "1 of 20 items have no cover image (first: https://www.gatorbaitmedia.com/post/georgia-lived-on-third-and-1-florida-rented-third-and-long)"

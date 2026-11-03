@@ -45,7 +45,8 @@ if (cfg.boxStats) {
 const wl = (g) => g.filter((x) => x.state === 'post' && x.score);
 if (hub === 'football' && snap.stats) {
   const w = wl(snap.games).filter((g) => g.score.win).length, l = wl(snap.games).filter((g) => !g.score.win).length;
-  const st = JSON.parse(fs.readFileSync('sports-live/florida-stats.json', 'utf8'));
+  const st = JSON.parse(fs.readFileSync('sports-live/hub-data/football-uf-stats.json', 'utf8'));
+  if (st.record !== w + '-' + l) console.warn('WARNING: UF stats record', st.record, 'differs from ESPN', w + '-' + l, '; re-run tools/sport-hub/fetch-uf-football-stats.mjs');
   console.log('ESPN record', w + '-' + l, 'stats file record', st.record, 'conf', st.confRecord);
 }
 if (snap.bb && snap.bb.source) {

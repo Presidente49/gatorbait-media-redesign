@@ -219,10 +219,10 @@
       return '<div class="s-lt"><h3>' + esc(title) + '</h3><table><thead><tr>' + head.map(function (x, i) { return '<th' + (i ? ' class="n"' : '') + '>' + esc(x) + '</th>'; }).join('') + '</tr></thead><tbody>' +
         rows.slice(0, n || 5).map(function (r) { return '<tr>' + r.map(function (x, i) { return i ? '<td class="n">' + esc(x) + '</td>' : '<th scope="row">' + esc(x) + '</th>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
     };
-    return '<section class="s-sec" id="' + ROOT + '-stats" aria-labelledby="' + ROOT + '-h-stats">' + anc('stats') + '<h2 class="s-h" id="' + ROOT + '-h-stats">' + esc(CFG.statsHeading) + '</h2><p class="s-sub">Through ' + esc(s.through) + '. Updated ' + esc(s.updatedLabel) + '. Final box scores only.</p>' +
+    return '<section class="s-sec" id="' + ROOT + '-stats" aria-labelledby="' + ROOT + '-h-stats">' + anc('stats') + '<h2 class="s-h" id="' + ROOT + '-h-stats">' + esc(CFG.statsHeading) + '</h2><p class="s-sub">Through ' + esc(s.through) + '. Updated ' + esc(s.updatedLabel) + '. ' + (s.source ? 'Official statistics from FloridaGators.com.' : 'Final box scores only.') + '</p>' +
       '<ul class="s-tiles">' + tiles + '</ul><div class="s-statgrid"><div class="s-lt"><h3>Team, Florida vs. opponents</h3><table class="s-tm"><thead><tr><th>Stat</th><th class="n">Florida</th><th class="n">Opp.</th></tr></thead><tbody>' + trs + '</tbody></table></div>' +
       '<div class="s-leaders">' + tbl('Passing', ['Player', 'C-A', 'Yds', 'TD', 'INT'], L.pass, 3) + tbl('Rushing', ['Player', 'Att', 'Yds', 'Avg', 'TD', 'Lng'], L.rush, 5) + tbl('Receiving', ['Player', 'Rec', 'Yds', 'Avg', 'TD', 'Lng'], L.rec, 5) + tbl('Defense', ['Player', 'Tkl', 'TFL', 'Sk', 'INT', 'PBU'], L.def, 5) + '</div></div>' +
-      '<p class="s-src">Sources: ' + (s.src || []).map(function (x) { return '<a href="' + esc(safeUrl(x[1])) + '">' + esc(x[0]) + '</a>'; }).join(', ') + '.</p></section>';
+      '<p class="s-src">' + (s.source ? 'Statistics' : 'Sources') + ': ' + (s.src || []).map(function (x) { return '<a href="' + esc(safeUrl(x[1])) + '">' + esc(x[0]) + '</a>'; }).join(', ') + '.</p></section>';
   }
 
   /* ---------- roster (FloridaGators.com layout) ---------- */
@@ -428,7 +428,7 @@
           D.bb = j.bb; var sb = document.getElementById(ROOT + '-stats'), t3 = document.createElement('div'); t3.innerHTML = bbStatsSec(D); if (sb && t3.firstChild) sb.replaceWith(t3.firstChild);
         }
         if (f.kind === 'stats' && j.tiles && j.updated && D.stats && j.updated !== D.stats.updated) {
-          D.stats = { tiles: j.tiles, teamRows: j.teamRows, lead: j.lead, through: j.through, updatedLabel: j.updatedLabel, updated: j.updated, src: j.src };
+          D.stats = { tiles: j.tiles, teamRows: j.teamRows, lead: j.lead, through: j.through, updatedLabel: j.updatedLabel, updated: j.updated, src: j.src, source: j.source };
           var s = document.getElementById(ROOT + '-stats'), t2 = document.createElement('div'); t2.innerHTML = statsSec(D); if (s && t2.firstChild) s.replaceWith(t2.firstChild);
         }
       }).catch(function () {});

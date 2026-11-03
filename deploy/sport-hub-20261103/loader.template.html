@@ -17,6 +17,6 @@ function sync(){if(!on()){drop();if(g())g().sync();return}
 hold();watch();
 if(g()&&g().ready){g().sync();return}
 if(loaded){if(g())g().sync();return}loaded=true;
-var s=document.createElement('script');s.id='gbm-sh-__KEY__-bundle';s.async=true;s.src='https://fastly.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@__SHA__/sports-live/__FILE__';s.onerror=function(){loaded=false;drop()};document.head.appendChild(s);setTimeout(drop,7000)}
+var H=['cdn','gcore','fastly'],hi=0;function get(){var s=document.createElement('script');s.id='gbm-sh-__KEY__-bundle';s.async=true;s.src='https://'+H[hi]+'.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@__SHA__/sports-live/__FILE__';s.onerror=function(){s.remove();hi++;if(hi<H.length)get();else{loaded=false;drop()}};document.head.appendChild(s)}get();setTimeout(drop,7000)}
 sync();window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);
 })();</script>

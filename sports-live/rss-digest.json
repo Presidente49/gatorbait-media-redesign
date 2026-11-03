@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-02T20:43:26.819Z",
+ "generatedAt": "2026-11-03T02:52:47.559Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-02T20:43:26.819Z",
+  "checkedAt": "2026-11-03T02:52:47.559Z",
   "ok": false,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Sumrall: Tom Brady Would Have Been ‘Under Too Much Duress’ Against Georgia",
-   "link": "https://www.gatorbaitmedia.com/post/sumrall-not-even-tom-brady-could-have-performed-against-georgia",
-   "publishedAt": "2026-11-02T18:25:46.000Z"
+   "title": "LIVE NOW: The Buddy Martin Show with Shane Matthews, Franz Beard and Kevin Brockway",
+   "link": "https://www.gatorbaitmedia.com/post/live-now-the-buddy-martin-show-with-shane-matthews-franz-beard-and-kevin-brockway",
+   "publishedAt": "2026-11-03T02:34:15.000Z"
   },
   "problems": [
    "1 of 20 items have no cover image (first: https://www.gatorbaitmedia.com/post/georgia-lived-on-third-and-1-florida-rented-third-and-long)"

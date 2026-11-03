@@ -1,0 +1,13 @@
+{
+  "_comment": "Before Nov. 3: only these own tags changed on each page; all other own tags were re-sent unchanged. Rollback: Get the page, restore these values, PATCH with publish:true.",
+  "eabx0": {
+    "og:image": "https://static.wixstatic.com/media/16b519_4d80d39e264c45009a3abeba5beee4c1~mv2.jpg (meta 3000x1755)",
+    "og:image:alt": "Florida Gators celebrate a touchdown in The Swamp. Photo by Chris Spears, GatorBait Media",
+    "twitter:image": "none of its own (resolved from og:image)"
+  },
+  "nu3pj": {
+    "og:image": "https://static.wixstatic.com/media/16b519_4d80d39e264c45009a3abeba5beee4c1~mv2.jpg (meta 3000x1755)",
+    "og:image:alt": "Florida Gators celebrate a touchdown in The Swamp. Photo by Chris Spears, GatorBait Media",
+    "twitter:image": "none of its own (resolved from og:image)"
+  }
+}

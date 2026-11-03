@@ -1,0 +1,83 @@
+{
+ "http": "200",
+ "bytes": 2071352,
+ "title": [
+  "GatorBait Magazine | Postgame: Georgia 27, Florida 8"
+ ],
+ "meta": [
+  [
+   "description",
+   "Postgame edition on Georgia 27, Florida 8: columns from Buddy Martin, Franz Beard, Eddie Gilley and Loren Meadows, plus the game story and box score."
+  ],
+  [
+   "og:title",
+   "GatorBait Magazine | Postgame: Georgia 27, Florida 8"
+  ],
+  [
+   "og:description",
+   "Postgame edition on Georgia 27, Florida 8: columns from Buddy Martin, Franz Beard, Eddie Gilley and Loren Meadows, plus the game story and box score."
+  ],
+  [
+   "og:image",
+   "https://static.wixstatic.com/media/d3cfa5_a91a5b6f1bb345748348c55534113854~mv2.jpg/v1/fill/w_1200,h_630,al_c/d3cfa5_a91a5b6f1bb345748348c55534113854~mv2.jpg"
+  ],
+  [
+   "og:image:width",
+   "1200"
+  ],
+  [
+   "og:image:height",
+   "630"
+  ],
+  [
+   "og:url",
+   "https://www.gatorbaitmedia.com/magazine"
+  ],
+  [
+   "og:site_name",
+   "GatorBait Media | Florida Gator News"
+  ],
+  [
+   "og:type",
+   "website"
+  ],
+  [
+   "og:image:alt",
+   "GatorBait Magazine postgame edition: Bitten in Atlanta, Georgia 27, Florida 8, with Florida coach Jon Sumrall on the sideline. Photo: GatorBait Media"
+  ],
+  [
+   "twitter:card",
+   "summary_large_image"
+  ],
+  [
+   "twitter:title",
+   "GatorBait Magazine | Postgame: Georgia 27, Florida 8"
+  ],
+  [
+   "twitter:description",
+   "Postgame edition on Georgia 27, Florida 8: columns from Buddy Martin, Franz Beard, Eddie Gilley and Loren Meadows, plus the game story and box score."
+  ],
+  [
+   "twitter:image",
+   "https://static.wixstatic.com/media/d3cfa5_a91a5b6f1bb345748348c55534113854~mv2.jpg/v1/fill/w_1200,h_630,al_c/d3cfa5_a91a5b6f1bb345748348c55534113854~mv2.jpg"
+  ],
+  [
+   "twitter:image:alt",
+   "GatorBait Magazine postgame edition: Bitten in Atlanta, Georgia 27, Florida 8, with Florida coach Jon Sumrall on the sideline. Photo: GatorBait Media"
+  ]
+ ],
+ "canonical": [
+  "https://www.gatorbaitmedia.com/magazine"
+ ],
+ "jsonld_blocks": [
+  [
+   "CollectionPage",
+   "Periodical",
+   "WebSite"
+  ],
+  [
+   "NewsMediaOrganization"
+  ]
+ ],
+ "h1_in_server_html": 0
+}

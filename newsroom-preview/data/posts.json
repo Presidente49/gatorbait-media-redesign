@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Reiss Era Tips Off: McMiller, Harris Combine for 57 in 83-60 Win Over Bucknell",
+      "excerpt": "Loren Meadows previews the Tammi Reiss era for Florida women's basketball after an 83-60 opening win over Bucknell, led by Kiyomi McMiller (31 points) and Vanessa Harris (26).",
+      "url": "https://www.gatorbaitmedia.com/post/reiss-era-tips-off-mcmiller-harris-combine-for-57-in-83-60-win-over-bucknell",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-11-03T03:46:05Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_4772cbfcd57f4034bc26e3b22790bcd3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Reiss Era Tips Off: McMiller, Harris Combine for 57 in 83-60 Win Over Bucknell"
+      }
+    },
+    {
+      "title": "LIVE NOW: The Buddy Martin Show with Shane Matthews, Franz Beard and Kevin Brockway",
+      "excerpt": "The Buddy Martin Show is live now with Shane Matthews, Franz Beard and Kevin Brockway. Watch live on YouTube.",
+      "url": "https://www.gatorbaitmedia.com/post/live-now-the-buddy-martin-show-with-shane-matthews-franz-beard-and-kevin-brockway",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-03T02:34:15Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_db06a79d17c64cdc8613af61c86ce1ed~mv2.jpg/v1/fit/w_1000,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for LIVE NOW: The Buddy Martin Show with Shane Matthews, Franz Beard and Kevin Brockway"
+      }
+    },
+    {
       "title": "Haugh Stuff: No. 1 Gators Open With 77-67 Win Over No. 14 Miami",
       "excerpt": "No. 1 Florida beat No. 14 Miami 77-67 in Tampa behind Thomas Haugh's 19 points and 10 rebounds. Here is the box score story and what comes next.",
       "url": "https://www.gatorbaitmedia.com/post/haugh-stuff-no-1-gators-open-with-77-67-win-over-no-14-miami",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Postgame Analysis: Florida Gators (5-3, 3-3) v. Georgia Bulldogs (7-1, 5-1)"
-      }
-    },
-    {
-      "title": "Georgia Lived on Third-and-1. Florida Rented Third-and-Long.",
-      "excerpt": "Georgia averaged 5.8 yards on first down to Florida's 3.0, lived on third-and-1 and got three 15-yard gifts on scoring drives. Inside the numbers behind the 27-8 loss.",
-      "url": "https://www.gatorbaitmedia.com/post/georgia-lived-on-third-and-1-florida-rented-third-and-long",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-01T18:04:20Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Georgia Lived on Third-and-1. Florida Rented Third-and-Long."
-      }
-    },
-    {
-      "title": "Autopsy Cause of Gators Defeat: Self-Inflicted Wounds",
-      "excerpt": "Franz Beard: Of Georgia’s 27 points, 24 were a direct result of Florida mistakes. Sumrall on the quarterback decision, the penalties and an apology to the fans.",
-      "url": "https://www.gatorbaitmedia.com/post/autopsy-cause-of-gators-defeat-self-inflicted-wounds",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-01T15:20:41Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_d70b863951b744e185ec2952d8e6846e~mv2.jpg/v1/fit/w_1000,h_636,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Autopsy Cause of Gators Defeat: Self-Inflicted Wounds"
       }
     }
   ]

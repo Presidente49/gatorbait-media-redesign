@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Reiss Era Tips Off: McMiller, Harris Combine for 57 in 83-60 Win Over Bucknell",
+      "excerpt": "Loren Meadows previews the Tammi Reiss era for Florida women's basketball after an 83-60 opening win over Bucknell, led by Kiyomi McMiller (31 points) and Vanessa Harris (26).",
+      "url": "https://www.gatorbaitmedia.com/post/reiss-era-tips-off-mcmiller-harris-combine-for-57-in-83-60-win-over-bucknell",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-11-03T03:46:05Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_4772cbfcd57f4034bc26e3b22790bcd3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Reiss Era Tips Off: McMiller, Harris Combine for 57 in 83-60 Win Over Bucknell"
+      }
+    },
+    {
+      "title": "LIVE NOW: The Buddy Martin Show with Shane Matthews, Franz Beard and Kevin Brockway",
+      "excerpt": "The Buddy Martin Show is live now with Shane Matthews, Franz Beard and Kevin Brockway. Watch live on YouTube.",
+      "url": "https://www.gatorbaitmedia.com/post/live-now-the-buddy-martin-show-with-shane-matthews-franz-beard-and-kevin-brockway",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-03T02:34:15Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_db06a79d17c64cdc8613af61c86ce1ed~mv2.jpg/v1/fit/w_1000,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for LIVE NOW: The Buddy Martin Show with Shane Matthews, Franz Beard and Kevin Brockway"
+      }
+    },
+    {
       "title": "Haugh Stuff: No. 1 Gators Open With 77-67 Win Over No. 14 Miami",
       "excerpt": "No. 1 Florida beat No. 14 Miami 77-67 in Tampa behind Thomas Haugh's 19 points and 10 rebounds. Here is the box score story and what comes next.",
       "url": "https://www.gatorbaitmedia.com/post/haugh-stuff-no-1-gators-open-with-77-67-win-over-no-14-miami",
@@ -9,7 +37,7 @@
       "firstPublishedDate": "2026-11-03T01:48:42Z",
       "section": "GatorBait",
       "image": {
-        "src": "",
+        "src": "https://static.wixstatic.com/media/d3cfa5_a4b698f2c48b4b8896771ccb0c4d89e0~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Haugh Stuff: No. 1 Gators Open With 77-67 Win Over No. 14 Miami"
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Receiver Who Caught Everything"
-      }
-    },
-    {
-      "title": "Pregame Analysis: Florida Gators (5-2, 3-2) vs. Georgia Bulldogs (6-1, 4-1)",
-      "excerpt": "The Cocktail Party moves inside for what could be a defining moment for Sumrall and the Gators. However, quarterback questions and health may make things tough in Atlanta.",
-      "url": "https://www.gatorbaitmedia.com/post/pregame-analysis-florida-gators-5-2-3-2-vs-georgia-bulldogs-6-1-4-1",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-10-31T14:50:20Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_3be8a7a2180e4c72ae2bb30ca29ae084~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Pregame Analysis: Florida Gators (5-2, 3-2) vs. Georgia Bulldogs (6-1, 4-1)"
-      }
-    },
-    {
-      "title": "Florida's Vernell Brown III Questionable Against Georgia After Friday Downgrade",
-      "excerpt": "GatorBaitMedia.com photo by Chris Spears. ATLANTA— Florida's hopes of getting one of its most explosive offensive weapons back for Saturday's showdown with Georgia have taken a significant hit. Sophomore wide receiver Vernell Brown III, who had been listed as probable on Wednesday and Thursday, was downgraded to questionable on Friday's SEC availability…",
-      "url": "https://www.gatorbaitmedia.com/post/florida-s-vernell-brown-iii-questionable-against-georgia-after-friday-downgrade",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-10-31T09:02:50Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6335563003f04dc7a195a56ec12b6f1a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida's Vernell Brown III Questionable Against Georgia After Friday Downgrade"
       }
     }
   ]

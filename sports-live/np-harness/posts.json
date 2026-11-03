@@ -1,0 +1,658 @@
+{
+ "note": "Real GatorBait posts read via Wix Blog API on Nov. 3, 2026 (descriptions trimmed). Category labels mapped to the RSS category names used by sports-live/src/latest-feed.js.",
+ "posts": [
+  {
+   "date": "2026-11-02T21:48:22Z",
+   "slug": "nightmare-in-atlanta",
+   "by": "Eddie Gilley",
+   "cats": [
+    "Eddie Gilley - Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_a04e12751ec94f1a8a99b69fd537c8a4~mv2.jpg",
+   "title": "Nightmare in Atlanta",
+   "desc": "Eddie Gilley on the dumb decisions that turned Halloween in Atlanta into a nightmare for the Gators: the punt block, the turnovers and a 24-0 halftime hole.",
+   "min": 3
+  },
+  {
+   "date": "2026-11-02T18:25:46Z",
+   "slug": "sumrall-not-even-tom-brady-could-have-performed-against-georgia",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg",
+   "title": "Sumrall: Tom Brady Would Have Been ‘Under Too Much Duress’ Against Georgia",
+   "desc": "Jon Sumrall said Monday that Tom Brady “would have been under too much duress and pressure to operate” in Florida’s 27-8 loss at Georgia. Watch the full press conference.",
+   "min": 2
+  },
+  {
+   "date": "2026-11-02T14:16:49Z",
+   "slug": "florida-basketball-gators-start-season-with-sky-high-expectations",
+   "by": "Franz Beard",
+   "cats": [
+    "Gator Basketball",
+    "Franz Beard - Blog"
+   ],
+   "img": "ae876a_370e5a794d734a7ba77d081540849fdb~mv2.jpg",
+   "title": "Florida basketball: Gators start season with sky high expectations",
+   "desc": "Franz Beard on No. 1 Florida’s opener against No. 14 Miami in Tampa, the 3-point and bench questions, and the NCAA’s fifth-year eligibility fight.",
+   "min": 7
+  },
+  {
+   "date": "2026-11-02T13:38:50Z",
+   "slug": "for-the-uf-offense-it-was-an-october-to-forget",
+   "by": "Franz Beard",
+   "cats": [
+    "Gator Football",
+    "Franz Beard - Blog",
+    "Thoughts Of The Day"
+   ],
+   "img": "d3cfa5_23a80f2eb6b448149eccbcd0165d872c~mv2.jpg",
+   "title": "For the UF offense, it was an October to forget",
+   "desc": "Florida went 1-3 in October, and Franz Beard says the offensive line is why the running game disappeared. Plus this week’s AP poll, Around the SEC and the Countdown to Firing Day.",
+   "min": 9
+  },
+  {
+   "date": "2026-11-02T13:04:04Z",
+   "slug": "no-1-at-tipoff-florida-opens-against-no-14-miami-in-tampa",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Basketball"
+   ],
+   "img": "ae876a_1349d968de5b4cc39a5b562383345713~mv2.jpeg",
+   "title": "No. 1 at Tipoff: Florida Opens Against No. 14 Miami in Tampa",
+   "desc": "Florida starts the season at No. 1 in the AP poll and meets No. 14 Miami in Tampa on Monday at 6 p.m. ET on ESPN2. Here is what to know about the rosters and the November schedule.",
+   "min": 2
+  },
+  {
+   "date": "2026-11-01T23:21:48Z",
+   "slug": "florida-won-the-punting-battle-and-still-lost-the-field",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_5d3bd7905b144085893f332e19aa66b1~mv2.jpg",
+   "title": "Florida Won the Punting Battle and Still Lost the Field",
+   "desc": "Florida had the better punting day against Georgia, yet the Bulldogs started drives at their own 37.3 to Florida’s 27.5. Three 15-yard flags and four giveaways explain the gap.",
+   "min": 4
+  },
+  {
+   "date": "2026-11-01T23:21:48Z",
+   "slug": "florida-s-offense-dug-the-hole-on-first-down-then-kept-digging",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_48249aa0b854486088522875917a772e~mv2.jpg",
+   "title": "Florida’s Offense Dug the Hole on First Down, Then Kept Digging",
+   "desc": "Florida’s offense lost the argument on first down, then spent every series behind the chains. The down-and-distance sheet from the 27-8 loss to Georgia shows how the hole got dug.",
+   "min": 4
+  },
+  {
+   "date": "2026-11-01T22:33:59Z",
+   "slug": "take-a-deep-breath-it-s-basketball-season",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog"
+   ],
+   "img": "ae876a_345cba459db34a7a8a56876b1824a4cf~mv2.jpeg",
+   "title": "Take a Deep Breath. It’s Basketball Season. Or Wait a Minute! They Didn’t Drop Out Of The Top 25 Yet!",
+   "desc": "Buddy Martin on Florida football staying in the AP Top 25 and the Gators opening hoops at No. 1 against Miami: “Well, we’re a basketball school anyway.”",
+   "min": 4
+  },
+  {
+   "date": "2026-11-01T18:27:12Z",
+   "slug": "postgame-analysis-florida-gators-5-3-3-3-v-georgia-bulldogs-7-1-5-1",
+   "by": "Loren Meadows",
+   "cats": [
+    "Loren Meadows - Blogs",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_a2949ebdaa14453e9be5ba9777111910~mv2.jpg",
+   "title": "Postgame Analysis: Florida Gators (5-3, 3-3) v. Georgia Bulldogs (7-1, 5-1)",
+   "desc": "Loren Meadows: Florida needs to make Georgia earn wins in the series, not give it away as turnovers, penalties and poor execution doom the Gators in Atlanta.",
+   "min": 3
+  },
+  {
+   "date": "2026-11-01T18:04:20Z",
+   "slug": "georgia-lived-on-third-and-1-florida-rented-third-and-long",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "",
+   "title": "Georgia Lived on Third-and-1. Florida Rented Third-and-Long.",
+   "desc": "Georgia averaged 5.8 yards on first down to Florida's 3.0, lived on third-and-1 and got three 15-yard gifts on scoring drives. Inside the numbers behind the 27-8 loss.",
+   "min": 3
+  },
+  {
+   "date": "2026-11-01T15:20:41Z",
+   "slug": "autopsy-cause-of-gators-defeat-self-inflicted-wounds",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_d70b863951b744e185ec2952d8e6846e~mv2.jpg",
+   "title": "Autopsy Cause of Gators Defeat: Self-Inflicted Wounds",
+   "desc": "Franz Beard: Of Georgia’s 27 points, 24 were a direct result of Florida mistakes. Sumrall on the quarterback decision, the penalties and an apology to the fans.",
+   "min": 8
+  },
+  {
+   "date": "2026-11-01T02:11:47Z",
+   "slug": "coach-dumbass-owns-up-to-all-his-team-s-mistakes",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog"
+   ],
+   "img": "d3cfa5_2dcb23c4521c4d84a21ebdbaed38518d~mv2.jpg",
+   "title": "“Coach Dumbass” Owns Up To All His Team's Mistakes – Including The One He Made.",
+   "desc": "After the 27-8 loss to Georgia, Jon Sumrall owned his mistake. Buddy sees a team that kept swinging and makes his case for Tramell Jones Jr.",
+   "min": 3
+  },
+  {
+   "date": "2026-10-31T23:10:05Z",
+   "slug": "gators-bitten-in-atlanta-four-turnovers-sink-florida-in-27-8-loss-to-no-3-georgia",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_e20372ca1b0f48acbe5977c688ca422b~mv2.jpg",
+   "title": "Gators Bitten in Atlanta: Four Turnovers Sink Florida in 27-8 Loss to No. 3 Georgia",
+   "desc": "No. 3 Georgia beat Florida 27-8 in Atlanta, turning four Gators turnovers into a 24-0 halftime lead.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-31T18:56:55Z",
+   "slug": "halloween-saturday-21-ranked-teams-have-fallen-in-three-weeks",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_d213a8cf37914b0c953358bc350a9547~mv2.jpg",
+   "title": "Halloween Saturday: 21 Ranked Teams Have Fallen in Three Weeks, and Miami and Ohio State Take Road Tests",
+   "desc": "ESPN counts 21 ranked teams beaten over the past three weeks. Saturday brings Miami at North Carolina, Ohio State at USC and Utah at Cincinnati.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-31T18:56:55Z",
+   "slug": "sec-saturday-kentucky-leads-at-5-1-nine-teams-hold-ap-spots",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_a597dd50c5af41429ec2c77cebff4735~mv2.jpg",
+   "title": "SEC Saturday: Kentucky Leads at 5-1, Nine Teams Hold AP Spots and Next Week Is Loaded",
+   "desc": "Five SEC games are on the board Saturday and six teams are off. Florida at Georgia is the only ranked-versus-ranked game.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-31T18:56:54Z",
+   "slug": "pouncey-emmitt-smith-inducted-florida-georgia-hall-of-fame",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "16b519_6699a52a1b0d4ec1b517a24f3476ff9c~mv2.jpg",
+   "title": "Pouncey, Emmitt Smith Inducted Into Florida-Georgia Hall of Fame",
+   "desc": "Two Florida legends joined the rivalry's Hall of Fame Friday in Atlanta, one day before No. 17 Florida plays No. 3 Georgia at Mercedes-Benz Stadium.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-31T16:26:15Z",
+   "slug": "the-receiver-who-caught-everything",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog"
+   ],
+   "img": "d3cfa5_7190c4f828974605979767e386e43663~mv2.jpg",
+   "title": "The Receiver Who Caught Everything",
+   "desc": "Steve Spurrier remembers Charlie Casey, the Gators’ first great pass-catcher.",
+   "min": 4
+  },
+  {
+   "date": "2026-10-31T14:50:20Z",
+   "slug": "pregame-analysis-florida-gators-5-2-3-2-vs-georgia-bulldogs-6-1-4-1",
+   "by": "Loren Meadows",
+   "cats": [
+    "Loren Meadows - Blogs",
+    "Gator Football"
+   ],
+   "img": "16b519_3be8a7a2180e4c72ae2bb30ca29ae084~mv2.jpg",
+   "title": "Pregame Analysis: Florida Gators (5-2, 3-2) vs. Georgia Bulldogs (6-1, 4-1)",
+   "desc": "The Cocktail Party moves inside for what could be a defining moment for Sumrall and the Gators. However, quarterback questions and health may make things tough in Atlanta.",
+   "min": 5
+  },
+  {
+   "date": "2026-10-31T09:02:50Z",
+   "slug": "florida-s-vernell-brown-iii-questionable-against-georgia-after-friday-downgrade",
+   "by": "Buddy Martin",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_6335563003f04dc7a195a56ec12b6f1a~mv2.jpg",
+   "title": "Florida's Vernell Brown III Questionable Against Georgia After Friday Downgrade",
+   "desc": "ATLANTA— Florida's hopes of getting one of its most explosive offensive weapons back for Saturday's showdown with Georgia have taken a significant hit.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-30T18:52:45Z",
+   "slug": "florida-philo-jones-questionable-georgia-sec-availability-report",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_4b8894d8f5414225af1e01dfe4a028d5~mv2.jpg",
+   "title": "Georgia-Born Gator: Reports Say Aaron Philo Will Start Against Georgia",
+   "desc": "CBS Sports and The Associated Press report that Florida plans to start Aaron Philo against Georgia in Atlanta, though the Gators had not made a formal public announcement as of Friday.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-30T16:21:53Z",
+   "slug": "key-to-a-win-in-atlanta",
+   "by": "Eddie Gilley",
+   "cats": [
+    "Eddie Gilley - Blog",
+    "Gator Football"
+   ],
+   "img": "16b519_d03e2d3ca3b34a9f863a7e55157ec1d1~mv2.jpg",
+   "title": "Key to a Win in Atlanta",
+   "desc": "The Gators will look to accomplish something in Atlanta that has been elusive against the Bulldogs.",
+   "min": 3
+  },
+  {
+   "date": "2026-10-30T12:44:33Z",
+   "slug": "the-soothsayer-georgia-in-a-heart-stopper",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_03ca10fd162c4563b5a920b57378aa1d~mv2.jpg",
+   "title": "The Soothsayer: Georgia in a heart stopper",
+   "desc": "Franz Beard sizes up Florida's route to an upset of Georgia in Atlanta and makes his calls across the SEC.",
+   "min": 7
+  },
+  {
+   "date": "2026-10-29T23:05:18Z",
+   "slug": "the-whatchamacallit-game-buddy-martin-show-florida-georgia",
+   "by": "Buddy Martin",
+   "cats": [
+    "The Buddy Martin Show",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_059530a0ae894440ae88ec316579c64f~mv2.jpg",
+   "title": "Tonight on The Buddy Martin Show: The Name Game",
+   "desc": "What do we call Florida-Georgia now? Franz Beard, Ben Troupe, Paul Wilson Jr. and Chris Spears join Buddy to discuss the name, the money and Saturday's matchup.",
+   "min": 1
+  },
+  {
+   "date": "2026-10-29T14:37:01Z",
+   "slug": "buddy-martin-spooks-halloween-florida-georgia",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_e1904a8d956c4c56b021aa44d4a376e2~mv2.jpg",
+   "title": "The Spooks Are 4-0. Georgia Is Laying 12.5. Isn't That Scary Enough On Halloween?",
+   "desc": "Buddy Martin revisits Florida's four Halloween wins since 1931 as the Gators prepare to face Georgia at Mercedes-Benz Stadium in Atlanta.",
+   "min": 4
+  },
+  {
+   "date": "2026-10-29T14:37:00Z",
+   "slug": "will-lightning-strike-twice-for-the-gators",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Gator Football"
+   ],
+   "img": "16b519_04f230dd243d411799e0998a9b6963c7~mv2.jpg",
+   "title": "Will lightning strike twice for the Gators?",
+   "desc": "Franz Beard examines why Florida can challenge Georgia in Atlanta after the Gators and Auburn each pulled off a 27-24 upset on Oct. 17.",
+   "min": 6
+  },
+  {
+   "date": "2026-10-28T16:27:25Z",
+   "slug": "buddy-martin-rays-unlikely-hero-ted-lasso-world-series-game-4",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog",
+    "Gator Baseball"
+   ],
+   "img": "d3cfa5_e33f2a2ea014478c821a7a1acfb06383~mv2.jpg",
+   "title": "An Unlikely Hero at the Unlikeliest of Times",
+   "desc": "Buddy Martin on the Rays' 12-inning escape in World Series Game 4, an unlikely hero named Ben Williamson and what Jon Sumrall might borrow from Ted Lasso.",
+   "min": 3
+  },
+  {
+   "date": "2026-10-28T12:36:55Z",
+   "slug": "why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_6a1d264c48f242608ae7bfe4e90c3deb~mv2.jpg",
+   "title": "Why I despise the Georgia Bulldogs and why you should too",
+   "desc": "Franz Beard revisits the games, grievances and history behind his annual Florida-Georgia rivalry ritual as the Gators prepare to face the Bulldogs in Atlanta.",
+   "min": 12
+  },
+  {
+   "date": "2026-10-28T11:50:39Z",
+   "slug": "golden-still-looking-to-solidify-his-bench-rotation-florida-basketball",
+   "by": "Franz Beard",
+   "cats": [
+    "Gator Basketball",
+    "Franz Beard - Blog"
+   ],
+   "img": "16b519_3bed0fd607d146ffb23884af421e2eb4~mv2.jpg",
+   "title": "Golden still looking to solidify his bench rotation",
+   "desc": "Franz Beard on the bench questions Todd Golden still has to answer before No. 1 Florida opens the season Monday against No. 14 Miami in Tampa.",
+   "min": 6
+  },
+  {
+   "date": "2026-10-28T04:53:16Z",
+   "slug": "rays-baseball-world-series-game-4-brewers-gators-ties",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Baseball"
+   ],
+   "img": "d3cfa5_97d2cb5dc22c481c97ea6fbf085412ee~mv2.jpg",
+   "title": "Trop 'Til You Drop: Rays Outlast Brewers in 12 Innings, Force World Series Game 5",
+   "desc": "Tampa Bay scored twice in the bottom of the 12th to beat Milwaukee 4-3 in Game 4 of the World Series and avoid a sweep.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-28T04:36:01Z",
+   "slug": "florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Basketball"
+   ],
+   "img": "d3cfa5_394ab2f58207493a800fece21c8b7897~mv2.jpg",
+   "title": "Urban Renewal: Klavzar, Aberdeen Find Their Shot as No. 1 Gators Put Away Stetson",
+   "desc": "Urban Klavzar and Denzel Aberdeen combined for 46 points and 10 3-pointers as No. 1 Florida beat Stetson 85-68 in its exhibition finale.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-27T12:48:24Z",
+   "slug": "thoughts-of-the-day-october-27-2026",
+   "by": "Franz Beard",
+   "cats": [
+    "Gator Football",
+    "Thoughts Of The Day"
+   ],
+   "img": "16b519_fb9b6535ba3046ab86e7d0d05b6579bc~mv2.jpg",
+   "title": "Thoughts of the Day: October 27, 2026",
+   "desc": "Franz Beard on Jon Sumrall's first Florida-Georgia game and the work needed to close the rivalry gap.",
+   "min": 6
+  },
+  {
+   "date": "2026-10-27T12:48:23Z",
+   "slug": "florida-georgia-a-chance-to-build-on-the-texas-win",
+   "by": "GatorBait Staff",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "16b519_e1f8990a67f049c68d5b4da1e5fd17e9~mv2.jpg",
+   "title": "Florida-Georgia: A chance to build on the Texas win",
+   "desc": "Florida's quarterback decision, Kirby Smart's assessment and the opportunity ahead in Atlanta.",
+   "min": 1
+  },
+  {
+   "date": "2026-10-27T04:00:00Z",
+   "slug": "snubbed-in-atlanta-gameday-kirby-florida-1",
+   "by": "Brenden Martin",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_2cc1f5bd37224ea880f89c85a8700b7c~mv2.jpg",
+   "title": "Snubbed in Atlanta: GameDay passed, Kirby shrugged, Florida noticed",
+   "desc": "I am not a detective. I read college football press conference transcripts for a living, which is a worse job and, this week, nearly the same one.",
+   "min": 4
+  },
+  {
+   "date": "2026-10-27T01:18:53Z",
+   "slug": "buddy-martin-show-live-florida-georgia-october-26-2026",
+   "by": "Brenden Martin",
+   "cats": [
+    "The Buddy Martin Show",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg",
+   "title": "We're live: Florida-Georgia talk on The Buddy Martin Show",
+   "desc": "Watch The Buddy Martin Show live tonight as Buddy talks Jon Sumrall's quarterback decision and Florida-Georgia week. Tap through to the broadcast.",
+   "min": 1
+  },
+  {
+   "date": "2026-10-27T00:03:22Z",
+   "slug": "florida-georgia-sumrall-knows-the-math",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_712da939ff25435886f64d82c25674a7~mv2.jpg",
+   "title": "Florida-Georgia: Sumrall Knows the Math. He’s Just Not Telling Georgia Who Takes the Snap.",
+   "desc": "You can’t buy what Georgia has. You have to grow it.",
+   "min": 5
+  },
+  {
+   "date": "2026-10-26T12:12:11Z",
+   "slug": "thoughts-of-the-day-october-26-2026",
+   "by": "Franz Beard",
+   "cats": [
+    "Gator Football",
+    "Thoughts Of The Day"
+   ],
+   "img": "d3cfa5_6a7cde2e9a71485b89faa934285c5f0e~mv2.jpg",
+   "title": "Thoughts of the Day: October 26, 2026",
+   "desc": "A few thoughts to jump start your Monday morning: That the Georgia Bulldogs are favored to beat the Florida Gators when the rivalry takes the first of a two-year vacation.",
+   "min": 7
+  },
+  {
+   "date": "2026-10-25T22:56:22Z",
+   "slug": "four-medals-one-golden-week-florida-skye-blakely",
+   "by": "Brenden Martin",
+   "cats": [
+    "Gator Gymnastics"
+   ],
+   "img": "d3cfa5_0351930afd8e49df8f04cca01a622222~mv2.jpg",
+   "title": "Four medals, one golden week for Florida's Skye Blakely",
+   "desc": "Brenden Martin on Florida junior Skye Blakely's four-medal World Championships, led by all-around gold.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-25T22:56:22Z",
+   "slug": "gators-four-straight-sweep-ole-miss-volleyball",
+   "by": "Brenden Martin",
+   "cats": [
+    "Gator Breaking News"
+   ],
+   "img": "d3cfa5_4eae063419cb4265b7cbb6684d9dc574~mv2.jpg",
+   "title": "Gators make it four straight with sweep of Ole Miss",
+   "desc": "No. 5 Florida swept Ole Miss for its fourth straight win, with Kamryn Chaney and Alec Rothe leading the attack. The Gators head to Auburn next.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-25T22:14:41Z",
+   "slug": "florida-georgia-week-atlanta-kickoff-quarterback-watch-and-fan-plans",
+   "by": "Brenden Martin",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_22e0015707214783949e6a1887a9641e~mv2.jpg",
+   "title": "Florida-Georgia week: Atlanta kickoff, quarterback watch and fan plans",
+   "desc": "The Gators return from their open date for a 3:30 p.m. ET Saturday kickoff on ABC. Monday Gator Talk and Atlanta pregame shows fill the week.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-25T21:06:18Z",
+   "slug": "the-ninth-game-is-collecting-its-toll-one-body-at-a-time",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg",
+   "title": "The Ninth Game Is Collecting Its Toll, One Body at a Time",
+   "desc": "Buddy Martin on the physical toll of the SEC schedule as Florida and Georgia approach their Oct. 31 meeting.",
+   "min": 4
+  },
+  {
+   "date": "2026-10-25T21:00:36Z",
+   "slug": "a-podcast-tribute-david-moulton",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog"
+   ],
+   "img": "d3cfa5_8b84554d81c84875aef8f8d12e43544f~mv2.jpg",
+   "title": "A Podcast Tribute: David Moulton",
+   "desc": "Buddy Martin remembers his longtime friend David Moulton and a life spent informing sports fans.",
+   "min": 2
+  },
+  {
+   "date": "2026-10-25T15:06:00Z",
+   "slug": "the-gators-still-have-a-pulse-after-saturdays-chaos",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Thoughts Of The Day"
+   ],
+   "img": "d3cfa5_9211723882ad4d0bb44a05383761cff9~mv2.png",
+   "title": "The Gators still have a pulse after Saturday's chaos",
+   "desc": "Franz Beard on Florida's revived SEC and playoff hopes after Saturday's upheaval, with the contenders, pretenders and six SEC game recaps.",
+   "min": 6
+  },
+  {
+   "date": "2026-10-24T14:44:51Z",
+   "slug": "thoughts-of-the-day-october-24-2026",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Thoughts Of The Day"
+   ],
+   "img": "d3cfa5_e23da70ac8cf4fb387592bbc95e4e5c0~mv2.jpg",
+   "title": "Sumrall restores hope as Texas faces a reckoning",
+   "desc": "Franz Beard on Florida's renewed hope under Jon Sumrall, Urban Meyer's playoff concerns and the pressure on Texas.",
+   "min": 6
+  },
+  {
+   "date": "2026-10-23T11:13:08Z",
+   "slug": "thoughts-of-the-day-october-23-2026",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Thoughts Of The Day"
+   ],
+   "img": "d3cfa5_f51d42eaf631433485fbf86d44f340ef~mv2.png",
+   "title": "Gators heal for Georgia as the SEC Soothsayer makes his picks",
+   "desc": "Franz Beard on Florida’s bye-week recovery before Georgia, six SEC matchups and the NCAA’s latest eligibility fight.",
+   "min": 8
+  },
+  {
+   "date": "2026-10-23T00:23:07Z",
+   "slug": "from-the-scout-team-to-atlanta-chris-doering-finally-gets-his-due",
+   "by": "Buddy Martin",
+   "cats": [
+    "Gator Football"
+   ],
+   "img": "d3cfa5_29cf2a14d2d24b1387bd60638b380ead~mv2.jpeg",
+   "title": "From The Scout Team To Atlanta: Chris Doering Finally Gets His Due",
+   "desc": "He left in 1995 with 31 touchdown catches, still the school record and second in SEC history.",
+   "min": 6
+  },
+  {
+   "date": "2026-10-22T13:02:22Z",
+   "slug": "thoughts-of-the-day-october-22-2026",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Thoughts Of The Day"
+   ],
+   "img": "d3cfa5_a5eb3abb3338476dba7f259739f50c22~mv2.png",
+   "title": "Haugh's honor, coaching hot seats and the playoff debate",
+   "desc": "Franz Beard on Tommy Haugh's preseason All-America recognition, college football's coaching hot seats and the College Football Playoff debate.",
+   "min": 8
+  },
+  {
+   "date": "2026-10-21T18:34:06Z",
+   "slug": "gator-football-feel-good-the-open-date-is-sweet-music",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_90425d069f7d49ac9a55f5dedba27f93~mv2.jpg",
+   "title": "Gator Football Feel-Good: The Open Date Is Sweet Music, But Check the Lyrics",
+   "desc": "Buddy Martin on Florida's open date, the lessons of past bye weeks and the Oct. 31 Georgia matchup in Atlanta.",
+   "min": 4
+  },
+  {
+   "date": "2026-10-21T11:24:47Z",
+   "slug": "jones-vs-philo-and-other-qb-perceptions-realities",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_d0c4fd8ad08c4ec8bd70221064f3bdb8~mv2.jpg",
+   "title": "Jones vs. Philo and other QB perceptions, realities",
+   "desc": "Franz Beard examines quarterback recruiting hype, Florida's Aaron Philo–Tramell Jones Jr. decision and the history of the Gators' five-star quarterbacks.",
+   "min": 8
+  },
+  {
+   "date": "2026-10-20T15:05:18Z",
+   "slug": "thoughts-of-the-day-october-20-2026",
+   "by": "Franz Beard",
+   "cats": [
+    "Franz Beard - Blog",
+    "Thoughts Of The Day"
+   ],
+   "img": "d3cfa5_c02758730b3941e39694492c7bc555a5~mv2.png",
+   "title": "No. 1 expectations, SEC crossroads and the playoff picture",
+   "desc": "Franz Beard's Tuesday column: Florida basketball's preseason expectations, college football rankings, the outlook for all 16 SEC teams.",
+   "min": 8
+  },
+  {
+   "date": "2026-10-19T21:27:49Z",
+   "slug": "gators-find-a-spark-in-austin",
+   "by": "Eddie Gilley",
+   "cats": [
+    "Eddie Gilley - Blog",
+    "Gator Football"
+   ],
+   "img": "d3cfa5_a38ad2951a7848bdb538476b28eb76c2~mv2.jpg",
+   "title": "Gators find a spark in Austin",
+   "desc": "Eddie Gilley on Florida's 27-24 win at Texas: improved defense, third-down execution and the spark that helped the Gators fight back.",
+   "min": 4
+  },
+  {
+   "date": "2026-10-19T21:25:03Z",
+   "slug": "a-big-thank-you-to-gator-fans-for-their-juice-and-their-loyalty",
+   "by": "Buddy Martin",
+   "cats": [
+    "Buddy's Blog"
+   ],
+   "img": "d3cfa5_6537648f5b15470ea4aea6703c77ed59~mv2.jpg",
+   "title": "A Big Thank You to Gator Fans For Their Juice — And Their Loyalty!",
+   "desc": "Buddy Martin thanks Gator fans for their loyalty after Florida's 27-24 win at Texas and looks ahead to the open date.",
+   "min": 4
+  },
+  {
+   "date": "2026-10-19T20:03:31Z",
+   "slug": "an-exhibition-loss-gives-golden-plenty-to-correct",
+   "by": "Franz Beard",
+   "cats": [
+    "Gator Basketball",
+    "Franz Beard - Blog"
+   ],
+   "img": "16b519_53d0441a7d5f4c26ac3e9adb3f6e85a0~mv2.jpg",
+   "title": "An Exhibition Loss Gives Golden Plenty Of Material To “Coach ‘Em Up”",
+   "desc": "Franz Beard on Florida's 82-76 overtime exhibition loss to Baylor and the fixes Todd Golden faces before the regular season.",
+   "min": 6
+  }
+ ]
+}

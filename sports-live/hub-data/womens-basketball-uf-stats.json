@@ -1,0 +1,20 @@
+{"sport":"womens-basketball","source":"FloridaGators.com","sourceUrl":"https://floridagators.com/sports/womens-basketball/stats","scrapedAt":"2026-11-03","updated":"2026-11-03T04:30:00Z","updatedLabel":"Nov. 3, 2026","note":"Transcribed from one Firecrawl scrape of the official 2026-27 cumulative statistics page (Overall Totals, Overall Team Stats, Team Game-by-Game). Player names follow the roster page spelling. To refresh after a game: re-scrape that page, update this file, merge; the hub re-reads it from GitHub Pages on every load.","bb":{
+"source":"FloridaGators.com","sourceUrl":"https://floridagators.com/sports/womens-basketball/stats","updated":"2026-11-03T04:30:00Z","updatedLabel":"Nov. 3, 2026",
+"ids":["28086"],
+"games":[{"id":"28086","date":"2026-11-02T23:00Z","opp":"Bucknell","home":"home","fl":83,"op":60,"box":"https://floridagators.com/sports/womens-basketball/stats/2026/bucknell/boxscore/28086"}],
+"tm":{"pts":83,"fgm":34,"fga":62,"tpm":5,"tpa":19,"ftm":10,"fta":14,"off":11,"def":31,"reb":42,"pf":14,"ast":10,"to":12,"stl":7,"blk":0},
+"op":{"pts":60,"fgm":22,"fga":59,"tpm":7,"tpa":18,"ftm":9,"fta":13,"off":8,"def":18,"reb":26,"pf":15,"ast":13,"to":9,"stl":8,"blk":1},
+"pl":{
+"18403":{"name":"Kiyomi McMiller","no":"32","gp":1,"gs":1,"min":36,"pts":31,"fgm":14,"fga":25,"tpm":0,"tpa":4,"ftm":3,"fta":4,"off":2,"def":4,"reb":6,"pf":1,"ast":5,"to":1,"stl":2,"blk":0},
+"18396":{"name":"Vanessa Harris","no":"23","gp":1,"gs":1,"min":33,"pts":26,"fgm":11,"fga":16,"tpm":3,"tpa":5,"ftm":1,"fta":1,"off":0,"def":6,"reb":6,"pf":2,"ast":1,"to":4,"stl":1,"blk":0},
+"18402":{"name":"Vivian Iwuchukwu","no":"22","gp":1,"gs":1,"min":19,"pts":7,"fgm":2,"fga":5,"tpm":0,"tpa":0,"ftm":3,"fta":6,"off":1,"def":1,"reb":2,"pf":2,"ast":0,"to":2,"stl":1,"blk":0},
+"18397":{"name":"Taliyah Parker","no":"21","gp":1,"gs":0,"min":8,"pts":6,"fgm":2,"fga":2,"tpm":2,"tpa":2,"ftm":0,"fta":0,"off":0,"def":2,"reb":2,"pf":1,"ast":0,"to":0,"stl":1,"blk":0},
+"18393":{"name":"Jade Weathersby","no":"1","gp":1,"gs":0,"min":15,"pts":6,"fgm":2,"fga":3,"tpm":0,"tpa":1,"ftm":2,"fta":2,"off":1,"def":4,"reb":5,"pf":0,"ast":0,"to":0,"stl":0,"blk":0},
+"18400":{"name":"Aurora Almón","no":"0","gp":1,"gs":0,"min":22,"pts":4,"fgm":2,"fga":2,"tpm":0,"tpa":0,"ftm":0,"fta":0,"off":3,"def":7,"reb":10,"pf":3,"ast":1,"to":3,"stl":1,"blk":0},
+"18399":{"name":"Jordan Jones","no":"4","gp":1,"gs":1,"min":22,"pts":3,"fgm":1,"fga":4,"tpm":0,"tpa":3,"ftm":1,"fta":1,"off":3,"def":3,"reb":6,"pf":0,"ast":1,"to":1,"stl":0,"blk":0},
+"18398":{"name":"Moriah Murray","no":"3","gp":1,"gs":1,"min":30,"pts":0,"fgm":0,"fga":2,"tpm":0,"tpa":2,"ftm":0,"fta":0,"off":1,"def":2,"reb":3,"pf":3,"ast":1,"to":0,"stl":0,"blk":0},
+"18417":{"name":"Ja'Niya Broome","no":"2","gp":1,"gs":0,"min":9,"pts":0,"fgm":0,"fga":2,"tpm":0,"tpa":1,"ftm":0,"fta":0,"off":0,"def":0,"reb":0,"pf":0,"ast":1,"to":1,"stl":1,"blk":0},
+"18401":{"name":"Bailey Harris","no":"11","gp":1,"gs":0,"min":2,"pts":0,"fgm":0,"fga":0,"tpm":0,"tpa":0,"ftm":0,"fta":0,"off":0,"def":0,"reb":0,"pf":1,"ast":0,"to":0,"stl":0,"blk":0},
+"18395":{"name":"Mallory Miller","no":"24","gp":1,"gs":0,"min":2,"pts":0,"fgm":0,"fga":0,"tpm":0,"tpa":0,"ftm":0,"fta":0,"off":0,"def":0,"reb":0,"pf":0,"ast":0,"to":0,"stl":0,"blk":0},
+"18404":{"name":"Skye Owen","no":"5","gp":1,"gs":0,"min":2,"pts":0,"fgm":0,"fga":1,"tpm":0,"tpa":1,"ftm":0,"fta":0,"off":0,"def":0,"reb":0,"pf":1,"ast":0,"to":0,"stl":0,"blk":0}
+}}}

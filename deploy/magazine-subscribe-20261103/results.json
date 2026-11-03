@@ -1,0 +1,1773 @@
+{
+ "ran": "2026-11-03T01:31:25.483Z",
+ "pass": 353,
+ "total": 353,
+ "failed": [],
+ "results": [
+  {
+   "name": "static: no network / popup / cookie-write APIs",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "static: ASCII only",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "static: no font other than Barlow named",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "static: route guard matches /magazine and /magazine/ only",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "static: bundle size",
+   "pass": true,
+   "extra": "20610"
+  },
+  {
+   "name": "390 plain: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 plain: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 plain: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 plain: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 plain: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 plain: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":603,\"b\":844,\"h\":241}"
+  },
+  {
+   "name": "390 plain: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 plain: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "390 plain: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "390 plain: copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 plain: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 plain: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 plain: no stats claim in copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 plain: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "390 plain: phone = bottom sheet",
+   "pass": true,
+   "extra": "ms-sheet ms-on"
+  },
+  {
+   "name": "390 plain: covers <=60% of screen",
+   "pass": true,
+   "extra": "241/844"
+  },
+  {
+   "name": "320 plain: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 plain: sheet does not overlap the live strip",
+   "pass": true,
+   "extra": "{\"strip\":{\"top\":0,\"bottom\":57},\"card\":{\"l\":0,\"r\":390,\"t\":603,\"b\":844,\"h\":241}}"
+  },
+  {
+   "name": "390 plain: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "390 plain: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 plain: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 plain: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 plain: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "320 plain: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":320,\"t\":357,\"b\":640,\"h\":283}"
+  },
+  {
+   "name": "320 plain: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "320 plain: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "320 plain: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "320 plain: copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 plain: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 plain: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 plain: no stats claim in copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 plain: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "320 plain: phone = bottom sheet",
+   "pass": true,
+   "extra": "ms-sheet ms-on"
+  },
+  {
+   "name": "320 plain: covers <=60% of screen",
+   "pass": true,
+   "extra": "283/640"
+  },
+  {
+   "name": "320 plain: sheet does not overlap the live strip",
+   "pass": true,
+   "extra": "{\"strip\":{\"top\":0,\"bottom\":57},\"card\":{\"l\":0,\"r\":320,\"t\":357,\"b\":640,\"h\":283}}"
+  },
+  {
+   "name": "320 plain: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "320 plain: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 plain: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 plain: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 plain: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 plain: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 plain: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 plain: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 plain: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 facebook: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":603,\"b\":844,\"h\":241}"
+  },
+  {
+   "name": "390 facebook: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 facebook: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "390 facebook: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "390 facebook: copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 facebook: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 facebook: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 facebook: no stats claim in copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 facebook: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "390 facebook: phone = bottom sheet",
+   "pass": true,
+   "extra": "ms-sheet ms-on"
+  },
+  {
+   "name": "390 facebook: covers <=60% of screen",
+   "pass": true,
+   "extra": "241/844"
+  },
+  {
+   "name": "390 facebook: sheet does not overlap the live strip",
+   "pass": true,
+   "extra": "{\"strip\":{\"top\":0,\"bottom\":57},\"card\":{\"l\":0,\"r\":390,\"t\":603,\"b\":844,\"h\":241}}"
+  },
+  {
+   "name": "390 facebook: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "390 facebook: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "320 facebook: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":320,\"t\":357,\"b\":640,\"h\":283}"
+  },
+  {
+   "name": "320 facebook: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "320 facebook: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "320 facebook: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "320 facebook: copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 facebook: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 facebook: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 facebook: no stats claim in copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 facebook: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "320 facebook: phone = bottom sheet",
+   "pass": true,
+   "extra": "ms-sheet ms-on"
+  },
+  {
+   "name": "320 facebook: covers <=60% of screen",
+   "pass": true,
+   "extra": "283/640"
+  },
+  {
+   "name": "320 facebook: sheet does not overlap the live strip",
+   "pass": true,
+   "extra": "{\"strip\":{\"top\":0,\"bottom\":57},\"card\":{\"l\":0,\"r\":320,\"t\":357,\"b\":640,\"h\":283}}"
+  },
+  {
+   "name": "320 facebook: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "320 facebook: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":603,\"b\":844,\"h\":241}"
+  },
+  {
+   "name": "390 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 storage-blocked: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "390 storage-blocked: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "390 storage-blocked: copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 storage-blocked: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 storage-blocked: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 storage-blocked: no stats claim in copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "390 storage-blocked: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "320 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: phone = bottom sheet",
+   "pass": true,
+   "extra": "ms-sheet ms-on"
+  },
+  {
+   "name": "390 storage-blocked: covers <=60% of screen",
+   "pass": true,
+   "extra": "241/844"
+  },
+  {
+   "name": "390 storage-blocked: sheet does not overlap the live strip",
+   "pass": true,
+   "extra": "{\"strip\":{\"top\":0,\"bottom\":57},\"card\":{\"l\":0,\"r\":390,\"t\":603,\"b\":844,\"h\":241}}"
+  },
+  {
+   "name": "390 storage-blocked: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "390 storage-blocked: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "320 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":320,\"t\":357,\"b\":640,\"h\":283}"
+  },
+  {
+   "name": "320 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "320 storage-blocked: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "320 storage-blocked: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "320 storage-blocked: copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 storage-blocked: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 storage-blocked: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 storage-blocked: no stats claim in copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "320 storage-blocked: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "320 storage-blocked: phone = bottom sheet",
+   "pass": true,
+   "extra": "ms-sheet ms-on"
+  },
+  {
+   "name": "320 storage-blocked: covers <=60% of screen",
+   "pass": true,
+   "extra": "283/640"
+  },
+  {
+   "name": "320 storage-blocked: sheet does not overlap the live strip",
+   "pass": true,
+   "extra": "{\"strip\":{\"top\":0,\"bottom\":57},\"card\":{\"l\":0,\"r\":320,\"t\":357,\"b\":640,\"h\":283}}"
+  },
+  {
+   "name": "320 storage-blocked: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "320 storage-blocked: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 with cookie banner: real cookie banner is showing",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 with cookie banner: real cookie banner is showing",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 with cookie banner: appears with the banner up",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 with cookie banner: card is above the banner, no overlap",
+   "pass": true,
+   "extra": "{\"bannerTop\":756.40625,\"cardBottom\":756.40625,\"cardTop\":515.125,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":844}"
+  },
+  {
+   "name": "390 with cookie banner: every banner control is still reached by a tap (nothing of ours on top)",
+   "pass": true,
+   "extra": "[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}]"
+  },
+  {
+   "name": "390 with cookie banner: prompt z-index below the banner",
+   "pass": true,
+   "extra": "2147482000 vs 2147483647"
+  },
+  {
+   "name": "390 with cookie banner: card still on screen",
+   "pass": true,
+   "extra": "{\"bannerTop\":756.40625,\"cardBottom\":756.40625,\"cardTop\":515.125,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":844}"
+  },
+  {
+   "name": "320 with cookie banner: appears with the banner up",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 with cookie banner: card is above the banner, no overlap",
+   "pass": true,
+   "extra": "{\"bannerTop\":522.8125,\"cardBottom\":522.8125,\"cardTop\":239.796875,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":640}"
+  },
+  {
+   "name": "320 with cookie banner: every banner control is still reached by a tap (nothing of ours on top)",
+   "pass": true,
+   "extra": "[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}]"
+  },
+  {
+   "name": "320 with cookie banner: prompt z-index below the banner",
+   "pass": true,
+   "extra": "2147482000 vs 2147483647"
+  },
+  {
+   "name": "320 with cookie banner: card still on screen",
+   "pass": true,
+   "extra": "{\"bannerTop\":522.8125,\"cardBottom\":522.8125,\"cardTop\":239.796875,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":640}"
+  },
+  {
+   "name": "1366 plain: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 plain: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 plain: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 plain: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 plain: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 plain: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1366 plain: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":453,\"r\":913,\"t\":236,\"b\":532,\"h\":297}"
+  },
+  {
+   "name": "1366 plain: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1366 plain: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "1366 plain: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "1366 plain: copy",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1366 plain: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1366 plain: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1366 plain: no stats claim in copy",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1366 plain: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "1366 plain: desktop = centered dialog",
+   "pass": true,
+   "extra": "ms-center ms-on"
+  },
+  {
+   "name": "1366 plain: centered horizontally",
+   "pass": true,
+   "extra": "{\"l\":453,\"r\":913,\"t\":236,\"b\":532,\"h\":297}"
+  },
+  {
+   "name": "1366 plain: focus trapped (9 Tab, 9 Shift+Tab)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 plain: aria-modal dialog labelled",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 plain: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "1366 plain: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 plain: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 plain: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 plain: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "430 plain: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":430,\"t\":691,\"b\":932,\"h\":241}"
+  },
+  {
+   "name": "430 plain: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "430 plain: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "430 plain: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "430 plain: copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "430 plain: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "430 plain: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "430 plain: no stats claim in copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "430 plain: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "430 plain: phone = bottom sheet",
+   "pass": true,
+   "extra": "ms-sheet ms-on"
+  },
+  {
+   "name": "430 plain: covers <=60% of screen",
+   "pass": true,
+   "extra": "241/932"
+  },
+  {
+   "name": "430 plain: sheet does not overlap the live strip",
+   "pass": true,
+   "extra": "{\"strip\":{\"top\":0,\"bottom\":57},\"card\":{\"l\":0,\"r\":430,\"t\":691,\"b\":932,\"h\":241}}"
+  },
+  {
+   "name": "430 plain: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "430 plain: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 plain: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 plain: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 plain: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 plain: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 plain: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 plain: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 plain: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1366 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":453,\"r\":913,\"t\":236,\"b\":532,\"h\":297}"
+  },
+  {
+   "name": "1366 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1366 storage-blocked: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "1366 storage-blocked: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "1366 storage-blocked: copy",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1366 storage-blocked: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1366 storage-blocked: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1366 storage-blocked: no stats claim in copy",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1366 storage-blocked: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "1366 storage-blocked: desktop = centered dialog",
+   "pass": true,
+   "extra": "ms-center ms-on"
+  },
+  {
+   "name": "1366 storage-blocked: centered horizontally",
+   "pass": true,
+   "extra": "{\"l\":453,\"r\":913,\"t\":236,\"b\":532,\"h\":297}"
+  },
+  {
+   "name": "1366 storage-blocked: focus trapped (9 Tab, 9 Shift+Tab)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: aria-modal dialog labelled",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "1366 storage-blocked: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "430 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":430,\"t\":691,\"b\":932,\"h\":241}"
+  },
+  {
+   "name": "430 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "430 storage-blocked: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "430 storage-blocked: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "430 storage-blocked: copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "430 storage-blocked: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "430 storage-blocked: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "430 storage-blocked: no stats claim in copy",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "430 storage-blocked: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "430 storage-blocked: phone = bottom sheet",
+   "pass": true,
+   "extra": "ms-sheet ms-on"
+  },
+  {
+   "name": "430 storage-blocked: covers <=60% of screen",
+   "pass": true,
+   "extra": "241/932"
+  },
+  {
+   "name": "430 storage-blocked: sheet does not overlap the live strip",
+   "pass": true,
+   "extra": "{\"strip\":{\"top\":0,\"bottom\":57},\"card\":{\"l\":0,\"r\":430,\"t\":691,\"b\":932,\"h\":241}}"
+  },
+  {
+   "name": "430 storage-blocked: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "430 storage-blocked: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 with cookie banner: real cookie banner is showing",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 with cookie banner: appears with the banner up",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 with cookie banner: card is above the banner, no overlap",
+   "pass": true,
+   "extra": "{\"bannerTop\":704,\"cardBottom\":500.4375,\"cardTop\":203.5625,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":768}"
+  },
+  {
+   "name": "1366 with cookie banner: every banner control is still reached by a tap (nothing of ours on top)",
+   "pass": true,
+   "extra": "[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}]"
+  },
+  {
+   "name": "1366 with cookie banner: prompt z-index below the banner",
+   "pass": true,
+   "extra": "2147482000 vs 2147483647"
+  },
+  {
+   "name": "1366 with cookie banner: card still on screen",
+   "pass": true,
+   "extra": "{\"bannerTop\":704,\"cardBottom\":500.4375,\"cardTop\":203.5625,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":768}"
+  },
+  {
+   "name": "430 with cookie banner: real cookie banner is showing",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 with cookie banner: appears with the banner up",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 with cookie banner: card is above the banner, no overlap",
+   "pass": true,
+   "extra": "{\"bannerTop\":844.40625,\"cardBottom\":844.40625,\"cardTop\":603.125,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":932}"
+  },
+  {
+   "name": "430 with cookie banner: every banner control is still reached by a tap (nothing of ours on top)",
+   "pass": true,
+   "extra": "[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}]"
+  },
+  {
+   "name": "430 with cookie banner: prompt z-index below the banner",
+   "pass": true,
+   "extra": "2147482000 vs 2147483647"
+  },
+  {
+   "name": "430 with cookie banner: card still on screen",
+   "pass": true,
+   "extra": "{\"bannerTop\":844.40625,\"cardBottom\":844.40625,\"cardTop\":603.125,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":932}"
+  },
+  {
+   "name": "1920 plain: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 plain: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 plain: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 plain: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1920 plain: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":730,\"r\":1190,\"t\":392,\"b\":688,\"h\":297}"
+  },
+  {
+   "name": "1920 plain: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1920 plain: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "1920 plain: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "1920 plain: copy",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1920 plain: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1920 plain: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1920 plain: no stats claim in copy",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1920 plain: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "1920 plain: desktop = centered dialog",
+   "pass": true,
+   "extra": "ms-center ms-on"
+  },
+  {
+   "name": "1920 plain: centered horizontally",
+   "pass": true,
+   "extra": "{\"l\":730,\"r\":1190,\"t\":392,\"b\":688,\"h\":297}"
+  },
+  {
+   "name": "1920 plain: focus trapped (9 Tab, 9 Shift+Tab)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 plain: aria-modal dialog labelled",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 plain: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "1920 plain: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 plain: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 plain: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 plain: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 plain: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: real /magazine loaded (no Cloudflare interstitial)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1920 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":730,\"r\":1190,\"t\":392,\"b\":688,\"h\":297}"
+  },
+  {
+   "name": "1920 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1920 storage-blocked: Barlow only",
+   "pass": true,
+   "extra": "Barlow, sans-serif"
+  },
+  {
+   "name": "1920 storage-blocked: orange only as the 4px top rule",
+   "pass": true,
+   "extra": "borderTop:ms-card"
+  },
+  {
+   "name": "1920 storage-blocked: copy",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1920 storage-blocked: copy avoids the words the live newsletter-popup suppressors hide (newsletter, subscribe, gatorbait magazine ...)",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1920 storage-blocked: current issue named from the page",
+   "pass": true,
+   "extra": "Bitten in Atlanta | GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1920 storage-blocked: no stats claim in copy",
+   "pass": true,
+   "extra": "GATORBAIT MEDIA × Never miss a magazine issue Current issue: Bitten in Atlanta. Join GatorBait to read every issue. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "1920 storage-blocked: links are plain same-tab",
+   "pass": true,
+   "extra": "[\"/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt\",\"/account/my-account\"]"
+  },
+  {
+   "name": "1920 storage-blocked: desktop = centered dialog",
+   "pass": true,
+   "extra": "ms-center ms-on"
+  },
+  {
+   "name": "1920 storage-blocked: centered horizontally",
+   "pass": true,
+   "extra": "{\"l\":730,\"r\":1190,\"t\":392,\"b\":688,\"h\":297}"
+  },
+  {
+   "name": "1920 storage-blocked: focus trapped (9 Tab, 9 Shift+Tab)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: aria-modal dialog labelled",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: magazine widget intact",
+   "pass": true,
+   "extra": "{\"widget\":{\"main\":true,\"h1\":\"Bitten in Atlanta\",\"n\":580},\"after\":{\"main\":true,\"n\":580}}"
+  },
+  {
+   "name": "1920 storage-blocked: no script errors",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: no popups / window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 with cookie banner: real cookie banner is showing",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 with cookie banner: appears with the banner up",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 with cookie banner: card is above the banner, no overlap",
+   "pass": true,
+   "extra": "{\"bannerTop\":1016,\"cardBottom\":656.4375,\"cardTop\":359.5625,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":1080}"
+  },
+  {
+   "name": "1920 with cookie banner: every banner control is still reached by a tap (nothing of ours on top)",
+   "pass": true,
+   "extra": "[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}]"
+  },
+  {
+   "name": "1920 with cookie banner: prompt z-index below the banner",
+   "pass": true,
+   "extra": "2147482000 vs 2147483647"
+  },
+  {
+   "name": "1920 with cookie banner: card still on screen",
+   "pass": true,
+   "extra": "{\"bannerTop\":1016,\"cardBottom\":656.4375,\"cardTop\":359.5625,\"btns\":[{\"t\":\"Privacy Policy\",\"hit\":true},{\"t\":\"Settings\",\"hit\":true},{\"t\":\"Decline All\",\"hit\":true},{\"t\":\"Accept All\",\"hit\":true},{\"t\":\"\",\"hit\":true}],\"root\":\"2147482000\",\"bz\":\"2147483647\",\"vh\":1080}"
+  },
+  {
+   "name": "390 default timing: not at 2.5 s",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 default timing: appears once settled (about 8-15 s)",
+   "pass": true,
+   "extra": "8.4 s"
+  },
+  {
+   "name": "1366 default timing: not at 2.5 s",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 default timing: appears once settled (about 8-15 s)",
+   "pass": true,
+   "extra": "8.4 s"
+  },
+  {
+   "name": "390 Not now: shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 Not now: remembered (own key) and free-email invitation quieted",
+   "pass": true,
+   "extra": "{\"d\":\"1793668857688\",\"c\":\"1793668857688\"}"
+  },
+  {
+   "name": "390 Not now: no cookie written",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 Not now: stays away after reload",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 Not now: returns after 8 days",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 X: closes and holds one day",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 Subscribe: native same-tab navigation to /pricing-plans",
+   "pass": true,
+   "extra": "https://www.gatorbaitmedia.com/pricing-plans?utm_source=site&utm_medium=lightbox&utm_campaign=magazine_prompt"
+  },
+  {
+   "name": "390 Subscribe: no popup, no window.open, platform link handler not reached",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 Sign in: native same-tab navigation to the account page",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked (Instagram UA): shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: Not now honoured in this load, no cookie written",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 visitor (login bar says Log In) is read as visitor and sees it",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 simulated member (login bar shows a name, even with ?gbm_msub=1): never shows",
+   "pass": true,
+   "extra": "{\"version\":\"magazine-subscribe-1\",\"path\":\"/magazine\",\"routeOk\":true,\"member\":\"member\",\"loginBar\":{\"present\":true,\"text\":\"Brenden M.\",\"aria\":\"\",\"img\":false},\"sessionHint\":\"\",\"cookieNames\":[\"XSRF-TOKEN\",\"ssr-caching\",\"_ga\",\"bSession\",\"_fbp\",\"_ga_9LPC2VVC0V\",\"_ga_9CZZ218BYL\"],\"suppressed\":\"member\",\"banner\":false,\"busy\":false,\"issueTitle\":\"Bitten in Atlanta\",\"visibleMs\":1000,\"settled\":0,\"mode\":\"\",\"open\":false,\"shownThisLoad\":false}"
+  },
+  {
+   "name": "390 simulated member: remembered, still nothing after reload",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 no login bar (unknown): never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 empty login bar (hydrating): never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 server-rendered member hint present: never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 simulated member, storage blocked, Instagram UA: never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member state appears while open: closes at once",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member state appears while open: gone",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member state appears while open: stays gone",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 visitor (login bar says Log In) is read as visitor and sees it",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 simulated member (login bar shows a name, even with ?gbm_msub=1): never shows",
+   "pass": true,
+   "extra": "{\"version\":\"magazine-subscribe-1\",\"path\":\"/magazine\",\"routeOk\":true,\"member\":\"member\",\"loginBar\":{\"present\":true,\"text\":\"Brenden M.\",\"aria\":\"\",\"img\":false},\"sessionHint\":\"\",\"cookieNames\":[\"XSRF-TOKEN\",\"ssr-caching\",\"_ga\",\"bSession\",\"_fbp\",\"_ga_9LPC2VVC0V\",\"_ga_9CZZ218BYL\"],\"suppressed\":\"member\",\"banner\":false,\"busy\":false,\"issueTitle\":\"Bitten in Atlanta\",\"visibleMs\":1000,\"settled\":0,\"mode\":\"\",\"open\":false,\"shownThisLoad\":false}"
+  },
+  {
+   "name": "1366 simulated member: remembered, still nothing after reload",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 no login bar (unknown): never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 empty login bar (hydrating): never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 server-rendered member hint present: never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 simulated member, storage blocked, Instagram UA: never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member state appears while open: closes at once",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member state appears while open: gone",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member state appears while open: stays gone",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "fallback copy (no issue headline): shows and is not hidden by the site's own scripts",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "fallback copy (no issue headline): generic line, no suppressed words",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Join GatorBait to read every issue of the magazine. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "fallback copy (headline with a suppressed word): shows and is not hidden by the site's own scripts",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "fallback copy (headline with a suppressed word): generic line, no suppressed words",
+   "pass": true,
+   "extra": "× Never miss a magazine issue Join GatorBait to read every issue of the magazine. Start your 7-day free trial $0 today, then $99 per year or $9.99 per month. Renews until canceled. Cancel in My Account, My Subscriptions. Already a member? Sign in Not now"
+  },
+  {
+   "name": "route /: never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "route /pricing-plans: never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "route /gatorbait-media-blogs: never shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "coexist A (control, no lightbox): the live capture invitation appears on /magazine",
+   "pass": true,
+   "extra": "3"
+  },
+  {
+   "name": "coexist B: lightbox shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "coexist B: capture invitation held back while the lightbox is open",
+   "pass": true,
+   "extra": "{\"both\":0,\"ours\":147,\"theirs\":0}"
+  },
+  {
+   "name": "coexist B: capture stays quiet after Not now (shared dismissal key)",
+   "pass": true,
+   "extra": "{\"both\":0,\"ours\":147,\"theirs\":0}"
+  },
+  {
+   "name": "coexist C: capture invitation up first",
+   "pass": true,
+   "extra": "{\"s\":{\"both\":0,\"ours\":0,\"theirs\":3},\"ours\":false}"
+  },
+  {
+   "name": "coexist C: lightbox does not open on top of the capture invitation",
+   "pass": true,
+   "extra": "{\"s\":{\"both\":0,\"ours\":0,\"theirs\":123},\"ours\":false}"
+  },
+  {
+   "name": "coexist C: lightbox waits a beat after the capture invitation closes",
+   "pass": true,
+   "extra": "{\"s\":{\"both\":0,\"ours\":0,\"theirs\":124},\"ours\":false}"
+  },
+  {
+   "name": "coexist C: never both at once through the whole run",
+   "pass": true,
+   "extra": "{\"s\":{\"both\":0,\"ours\":75,\"theirs\":124},\"ours\":true}"
+  }
+ ]
+}

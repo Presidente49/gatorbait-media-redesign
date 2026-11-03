@@ -42,7 +42,7 @@ export const HUBS = {
       ...common, key: 'womens-basketball', route: CAT + 'gator-womens-basketball', title: 'Florida Gators women’s basketball', shortName: 'women’s basketball', kicker: 'Gator women’s basketball hub', nameHtml: 'Florida Gators<br>Women’s Basketball', coachWord: 'Head coach',
       lede: 'Live score, schedule and TV, season stats and the full roster for Tammi Reiss’s Florida Gators, with GatorBait’s coverage below.',
       espn: { path: 'basketball/womens-college-basketball', sport: 'basketball', league: 'womens-college-basketball', web: 'womens-college-basketball' },
-      minGames: 10, boxStats: true, anchors: true, seasonLabel: '2026-27 season', schedHeading: 'Florida women’s basketball schedule, results and TV', schedSource: 'ESPN. TV listings are ESPN’s current data and can change.',
+      minGames: 10, anchors: true, liveFiles: [{ file: 'hub-data/womens-basketball-uf-stats.json', kind: 'bb' }], seasonLabel: '2026-27 season', schedHeading: 'Florida women’s basketball schedule, results and TV', schedSource: 'ESPN. TV listings are ESPN’s current data and can change.',
       statsHeading: 'Florida women’s basketball season stats', rosterHeading: '2026-27 Florida women’s basketball roster', rosterUrl: 'https://floridagators.com/sports/womens-basketball/roster', storiesHeading: 'Latest Florida women’s basketball coverage',
       feedCategory: 'Gator Women\'s Basketball', posNames: { G: 'guard', F: 'forward', C: 'center' },
       ldName: 'Florida Gators women’s basketball', ldSport: 'Basketball', ldDesc: 'Florida Gators women’s basketball schedule, TV, season stats, roster and news from GatorBait Media.',
@@ -53,9 +53,9 @@ export const HUBS = {
     },
     snapshot() {
       const sched = readJson('sports-live/hub-data/womens-basketball-espn-schedule.json'), rank = readJson('sports-live/hub-data/womens-basketball-espn-rankings.json');
-      const r = readJson('sports-live/hub-data/womens-basketball-roster.json');
+      const r = readJson('sports-live/hub-data/womens-basketball-roster.json'), uf = readJson('sports-live/hub-data/womens-basketball-uf-stats.json');
       return {
-        sched, rank, hasConf: true, team: { coach: (r.coaches.filter((c) => /Head .*Coach$/i.test(c.title))[0] || {}).name || '' }, coaches: r.coaches.slice(0, 4),
+        sched, rank, bb: uf.bb, hasConf: true, team: { coach: (r.coaches.filter((c) => /Head .*Coach$/i.test(c.title))[0] || {}).name || '' }, coaches: r.coaches.slice(0, 4),
         roster: r.players.map((p) => ({ no: p.no, name: p.name, pos: p.pos, cls: p.cls, ht: p.ht, wt: p.wt, home: p.home, school: p.school, prev: p.prev, img: p.img, url: p.url })), rosterUpdated: 'Nov. 3, 2026',
       };
     },

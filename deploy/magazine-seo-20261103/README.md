@@ -48,3 +48,7 @@ Read-only crawler view of other pages found the same Ole Miss photo (`16b519_4d8
 Proposed fix, needs the controller to assign the objects: upload `brand-share-1200x630.jpg` (evergreen, no game photo so it cannot go stale), then (1) Site SEO Tags: Get, replace only the `og:image` value, PATCH `/promote/seo/v1/site-seo-tags` with `fieldMask: "tags"` (it replaces all tags in full, so keep description, google-site-verification, fb_admins_meta_tag, keywords); (2) Item SEO Tags `eabx0` and `nu3pj`: replace og:image, og:image:alt, `meta` width/height and add twitter:image, with `publish: true`.
 
 Server-rendered HTML of /magazine has no `<h1>`; the loader embed (`1dd74333`, other owner) injects it in JavaScript from the issue data (`cover.headline`). SEO tags cannot add one. Google renders JavaScript; social crawlers do not need it.
+
+## Applied Nov. 3 (controller-authorized, Brenden "approve all"): site default, homepage, Latest
+
+New media `d3cfa5_c10f152e80fd4bb89f533b8dc8c36c1e~mv2.jpg` (= `brand-share-1200x630.jpg`). Changed: Site SEO Tags og:image (the other four site tags re-sent unchanged; before/after sets identical except the image; `site-before.json`), and on `eabx0` (home) and `nu3pj` (Latest) only og:image (+1200x630 meta), og:image:alt and an explicit twitter:image (`page-images-before.json`). Crawler view (no JS): /, /gatorbait-media-blogs, /news-3, /pricing-plans/subscribe, /contact now serve the new card; /about, /the-buddy-martin-show, /magazine and article posts keep their own images. No design, embed or site publish.

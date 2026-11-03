@@ -75,8 +75,9 @@ def main():
     for key in ('cover', 'lead', 'feature'):
         u = (issue.get(key) or {}).get('url')
         if u: urls.append(u)
-    for c in (issue.get('cards') or {}).get('items') or []:
-        if c.get('url'): urls.append(c['url'])
+    for key in ('cards', 'columns', 'coverage'):   # weekly cards and the postgame columns / coverage packages
+        for c in (issue.get(key) or {}).get('items') or []:
+            if c.get('url'): urls.append(c['url'])
     seen, posts = set(), []
     for u in urls:
         if u in seen: continue

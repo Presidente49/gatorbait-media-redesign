@@ -210,7 +210,10 @@
   // Facebook and YouTube reels: tap-to-play. The poster is a committed static file next to this bundle (fbcdn URLs are signed and expire);
   // the Facebook or youtube-nocookie player iframe is injected only on tap, so nothing from either loads with the page.
   function pmReelBase() {
-    var s = document.currentScript || document.querySelector('script[src*="magazine-postgame.js"]'), u = s && s.src || '';
+    // document.currentScript is null once mount is deferred (DOMContentLoaded or a route retry), which dropped the cover photo and reel
+    // posters on some loads. Resolve the bundle by the loader's script id first, then any *postgame.js tag (the Georgia file is
+    // magazine-georgia-postgame.js), and use currentScript only when it is this bundle.
+    var c = document.currentScript, s = document.getElementById('gbm-mag26-bundle') || document.querySelector('script[src*="postgame.js"]') || (c && /postgame\.js/.test(c.src || '') ? c : null), u = s && s.src || '';
     return /^(https?|file):/.test(u) ? u.replace(/[^\/]*$/, '') + 'reels/' : '';
   }
   function pmWatch(D) {

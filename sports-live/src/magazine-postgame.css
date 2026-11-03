@@ -617,3 +617,33 @@ html #gbm-magazine-page.pm .gbc .gbc-p,html #gbm-magazine-page.pm .gbc .gbc-m{co
 #gbm-magazine-page.pm .pm-poster-ink .pm-covercredit{font-size:max(11px,2.8cqw);margin-top:2px}
 #gbm-magazine-page.pm .pm-teasers li{font-size:max(12px,3.4cqw)}
 }
+
+/* Nov. 3: restrained accent (owner: "way too orange"). Navy and white lead, Gator blue carries structure. Orange stays only on the
+   logo BAIT, one thin rule under the cover masthead and the conversion buttons (sign-up, PDF download). Every orange token now resolves to blue, so a new
+   rule or bullet cannot bring orange back by accident; the three allowed uses read --pm-cta. */
+@media screen{
+#gbm-magazine-page.pm.mz26{--pm-orange:#0021a5;--pm-orange-ink:#10264b;--pm-orange-lt:#c3d0ff;--mz-orange:#0021a5;--mz-orange-ink:#10264b;--mz-orange-soft:#c3d0ff;--pm-cta:#fa4616}
+#gbm-magazine-page.pm .pm-covermark span,#gbm-magazine-page.pm .pm-readerbrand span{color:var(--pm-cta)}
+#gbm-magazine-page.pm .pm-covermag{color:#dbe4ff;border-bottom:2px solid var(--pm-cta)}
+#gbm-magazine-page.pm .pm-coverwriter{color:#dbe4ff}
+#gbm-magazine-page.pm .pm-book{border-top:6px solid #0021a5}
+#gbm-magazine-page.pm .pm-edition{background:transparent;color:#fff;border:2px solid #fff;transform:none;box-shadow:none}
+#gbm-magazine-page.pm .pm-scorechip span:nth-child(2) b{color:#fff}
+#gbm-magazine-page.pm .pm-scorechip em{background:#fff;color:#10264b}
+#gbm-magazine-page.pm .pm-teasers li:before{background:#c3d0ff}
+#gbm-magazine-page.pm .pm-open-label{border-top:2px solid #ffffff66}
+#gbm-magazine-page.pm .pm-art .pm-open-label{background:#0021a5;border-top:0}
+#gbm-magazine-page.pm .pm-readerbar .pm-pdf{background:#10264b;color:#fff}
+#gbm-magazine-page.pm .pm-btn{background:#10264b;color:#fff}
+#gbm-magazine-page.pm .pm-btn:hover{background:#0021a5}
+#gbm-magazine-page.pm .pm-dl-btn{background:var(--pm-cta);color:#fff}
+#gbm-magazine-page.pm .pm-dl-btn:hover{background:#10264b}
+#gbm-magazine-page.pm .pm-damage,#gbm-magazine-page.pm .pm-dl,#gbm-magazine-page.pm .pm-q2{background:#10264b}
+#gbm-magazine-page.pm .pm-dl .pm-kick,#gbm-magazine-page.pm .pm-dl-note{color:#fff}
+#gbm-magazine-page.pm .pm-damage .pm-us .pm-yb i{background:#8fa8ff}
+#gbm-magazine-page.pm .pm-damage .pm-stats li{border-top-color:#8fa8ff}
+#gbm-magazine-page.pm .pm-badge{background:#10264b;color:#fff}
+#gbm-magazine-page.pm .pm-play{background:#0021a5}
+#gbm-magazine-page.pm .pm-play::after{border-left-color:#fff}
+#gbm-magazine-page.pm .pm-foot{--pm-on-blue-2:#42506a}
+}

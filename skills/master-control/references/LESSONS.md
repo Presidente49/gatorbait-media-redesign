@@ -844,3 +844,9 @@ When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Mi
 **What happened:** both Oct. 24 and Oct. 25 Franz pages lacked the established drop cap because the active template omitted its existing layer. The Oct. 25 post also repeated its cover in the opening body. Native rich-text/content checks did not establish the intended visible treatment. One shared template restoration and a separate content correction were independently verified on the ordinary public URL, preserving the full manuscript and publication identity.
 
 **The rule:** before declaring formatting complete, inspect one intended lead image without repeated opening art, the visible large opening letter wrapping prose, readable headings/paragraphs, full ending and credits. A saved CSS class, source file or node count is insufficient. Route missing shared treatment to its owning site layer and preserve unresolved mobile/runtime checks. Record the failure and update the existing newsroom job so the next run checks it; never replay alerts to diagnose presentation. See `docs/loops/newsroom.md` and issue #34.
+
+## Lesson 106: a bundle must not find its own URL with document.currentScript (Nov. 3, 2026)
+
+**What happened:** Brenden said the phone showed a different cover than the PDF. The Magazine bundle built its photo URLs from `document.currentScript`, null once mount is deferred (DOMContentLoaded or a route retry); its fallback selector missed `magazine-georgia-postgame.js`. About half of cache-busted loads at every width dropped the Sumrall cover photo and reel posters. Server HTML and loader pin were identical for every device, so it was not a stale cache.
+
+**The rule:** resolve a bundle base URL from the loader script id (`#gbm-mag26-bundle`), never only from `currentScript`. Diagnose "phone differs" by loading the live page repeatedly with cache-busters and diffing the DOM, not by assuming a cache. Fixed in PR #507 (embed 1dd74333 rev 138).

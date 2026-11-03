@@ -24,3 +24,7 @@ MAG_VARIANT=georgia-postgame node sports-live/build-magazine.mjs
 node deploy/postgame-georgia-20261031/qa-georgia-postgame.mjs
 ```
 Postgame bundle cap raised 200 to 212 KB (Nov. 2). The cover now requests up to 2400 px so the portrait crop stays sharp on high-density phones.
+
+## Nov. 3: calm accent and stable cover photo (embed rev 138)
+- Rev 137 pin `25725a26837741022a10ec092402ddcc2fe98415` -> rev 138 pin `549add30bae4e0e2336a8a341243bee175d562fc` (PR #507). Orange now only on the BAIT logo, one thin cover rule and the sign-up button; everything else navy, white or Gator blue. Rollback: re-patch with the rev 137 pin in both places.
+- Cover photo bug: the bundle found its own URL through `document.currentScript` (null when mount is deferred), so about half of loads dropped the Sumrall cover photo and reel posters and showed the crowd photo. It now resolves `#gbm-mag26-bundle` first.

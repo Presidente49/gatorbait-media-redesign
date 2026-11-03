@@ -189,7 +189,7 @@
         '<td class="ps">' + esc(p.pos) + '</td><td class="cl">' + esc(p.cls) + '</td><td class="ht">' + esc(p.ht) + '</td><td class="wt">' + esc(p.wt) + '</td>' +
         '<td class="hm">' + esc(p.home) + (p.school ? '<small>' + esc(p.school) + '</small>' : '') + '</td><td class="pv">' + esc(p.prev) + '</td></tr>';
     }).join('');
-    var coaches = (d.coaches || []).length ? '<p class="b-sub">' + d.coaches.slice(0, 4).map(function (c) { return esc(c.title) + ' <b>' + esc(c.name) + '</b>'; }).join(' &middot; ') + '.</p>' : '<p class="b-sub">Head coach ' + esc(d.team.coach) + '.</p>';
+    var coaches = (d.staff || []).length ? '<p class="b-sub">' + d.staff.slice(0, 4).map(function (c) { return esc(c.title) + ' <b>' + esc(c.name) + '</b>'; }).join(' &middot; ') + '.</p>' : '<p class="b-sub">Head coach ' + esc(d.team.coach) + '.</p>';
     return '<section class="b-sec" id="gbm-bb-roster" aria-labelledby="gbm-bb-h-roster"><span class="b-anc" id="roster"></span><h2 class="b-h" id="gbm-bb-h-roster">2026-27 roster</h2>' + coaches + '<p class="b-sub">' + d.roster.length + ' players, copied from <a href="https://floridagators.com/sports/mens-basketball/roster">the official roster on FloridaGators.com</a>' + (d.rosterUpdated ? ', pulled ' + esc(d.rosterUpdated) : '') + '.</p>' +
       '<table class="ros"><caption>Florida Gators men’s basketball roster</caption><thead><tr><th class="ph"><span class="vh">Photo</span></th><th class="no">No.</th><th>Name</th><th class="ps">Pos.</th><th class="cl">Class</th><th class="ht">Ht.</th><th class="wt">Wt.</th><th class="hm">Hometown / Last school</th><th class="pv">Previous school</th></tr></thead><tbody>' + rows + '</tbody></table>' +
       '<p class="b-src">Headshots and roster data: <a href="https://floridagators.com/sports/mens-basketball/roster">FloridaGators.com</a>. Photos courtesy UAA (University Athletic Association) and the photographers credited there; images load from FloridaGators.com and are not re-hosted. See the official <a href="https://floridagators.com/galleries">Florida Gators photo galleries</a>.</p></section>';
@@ -273,7 +273,7 @@
       if (!r[0] || !onRoute()) return;
       var nd = normalize({ sched: r[0], rank: r[1], stand: r[2] }, D);
       if (nd.games.length < 10) return;
-      nd.coaches = D.coaches; nd.rosterUpdated = D.rosterUpdated; D = nd; paint();
+      nd.staff = D.staff; nd.rosterUpdated = D.rosterUpdated; D = nd; paint();
     }).catch(function () {});
   }
   var polls_n = 0, pollTimer = 0;

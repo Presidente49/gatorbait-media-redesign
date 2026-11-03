@@ -563,7 +563,14 @@ position:relative;display:block;width:var(--np-vw,100vw);max-width:100vw;margin:
     var st = D.createElement('style'); st.id = 'gbm-np-style'; st.textContent = CSS.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '');
     if (!D.getElementById('gbm-np-style')) (D.head || H).appendChild(st);
     var rss = getRss().then(parseRss).catch(function () { return []; });
-    var tasks = [fonts(), new Promise(function (r) { waitNative(r, 2000); }), rss];
+    // Buddy Martin Show videos load before the first paint so the video block never pops in later.
+    var vp = !isRoot ? Promise.resolve() : Promise.race([
+      fetch(VIDEOS, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (j) {
+        videos = (j.videos || []).filter(function (v) { return v && v.id; }).sort(function (a, b) { return Date.parse(b.published) - Date.parse(a.published); });
+      }).catch(function () {}),
+      new Promise(function (r) { setTimeout(r, 1500); })
+    ]);
+    var tasks = [fonts(), new Promise(function (r) { waitNative(r, 2000); }), rss, vp];
     Promise.all(tasks).then(function (res) {
       if (W.__GBM_NP_FAIL__) return;
       var nat = res[1], feed = res[2], items;

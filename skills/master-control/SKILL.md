@@ -33,6 +33,7 @@ Start with this file. Then load references selectively:
 - [references/CURRENT-STATE.md](references/CURRENT-STATE.md) when current IDs, connections, traffic, campaigns, integrations, or production status matter.
 - [references/DOCTRINE.md](references/DOCTRINE.md) when the task changes product strategy, UX, editorial routing, monetization, distribution, membership, community, TV, or brand behavior.
 - [references/LESSONS.md](references/LESSONS.md) before production changes, automation work, migrations, email/social publishing, or anything that resembles a prior failure.
+- [references/SPORT-HUBS-PLAYBOOK.md](references/SPORT-HUBS-PLAYBOOK.md) before building or changing a section/sport hub, roster, writers or About page, an API-created post, or any widget-plus-loader embed; it holds the fast-shipping steps and Brenden's design rules.
 - [references/team-handoff.md](references/team-handoff.md) for the owner-provided three-arm organization, cross-arm handoffs and the single social claim registry; verify the named host files before relying on access.
 - `automation/ops-hub/playbooks/controller-communications-qc.md` before recurring automation work, cross-chat handoffs, persistent incident routing, repeated alerts, or recursive QC.
 

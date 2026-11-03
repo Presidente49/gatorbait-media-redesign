@@ -850,3 +850,45 @@ When the Oct. 9 issue went live, the `/magazine` link still shared an old Ole Mi
 **What happened:** Brenden said the phone showed a different cover than the PDF. The Magazine bundle built its photo URLs from `document.currentScript`, null once mount is deferred (DOMContentLoaded or a route retry); its fallback selector missed `magazine-georgia-postgame.js`. About half of cache-busted loads at every width dropped the Sumrall cover photo and reel posters. Server HTML and loader pin were identical for every device, so it was not a stale cache.
 
 **The rule:** resolve a bundle base URL from the loader script id (`#gbm-mag26-bundle`), never only from `currentScript`. Diagnose "phone differs" by loading the live page repeatedly with cache-busters and diffing the DOM, not by assuming a cache. Fixed in PR #507 (embed 1dd74333 rev 138).
+
+## Lesson 108: an API-created post needs its cover media id, not only a url (Nov. 3, 2026)
+
+**What happened:** two posts created through `POST /blog/v3/draft-posts` with `media.wixMedia.image.url` only (no id) published with no `og:image`, no twitter image and no `image` in the article schema. Share links showed no picture and Google News could not use the article. Re-PATCHing the media with the id (plus url, size, altText) fixed both.
+
+**The rule:** attach covers with `{id,url,width,height}` and `altText`; after publishing, fetch the post as Googlebot and confirm `og:image`. See `references/SPORT-HUBS-PLAYBOOK.md` section 5.
+
+## Lesson 109: timers that remove and re-add page chrome read as "shaking" (Nov. 3, 2026)
+
+**What happened:** the live-score ticker item was removed and re-inserted every 30 seconds and the Show Live strip was torn down and rebuilt every minute and polled in while pages rearranged; the News Wire unhid its video block after first paint. Brenden: the bar "goes up, down, up, down" on phones. A layout-shift trace at 390 measured 0.2 to 0.96 on pages that should be near zero.
+
+**The rule:** update text in place, insert once after the header settles, preload data before the first render, and measure with a `layout-shift` PerformanceObserver before saying a page is stable. After the fix the magazine and show pages measured about 0.08.
+
+## Lesson 110: custom bars sit above the Wix dialog layer (Nov. 3, 2026)
+
+**What happened:** the Wix Log In dialog (`SM_ROOT_COMP`, z-index 100002) opened beneath our sticky mobile header (z-index 2147481500) and the Show Live strip, hiding its title on phones.
+
+**The rule:** hide custom fixed/sticky chrome with `html:has([id^="SM_ROOT_COMP"][role="dialog"]) ... {visibility:hidden!important}` (visibility, not display, so nothing reflows).
+
+## Lesson 111: do not ship pop-ups for membership; measure Brenden's reaction first (Nov. 3, 2026)
+
+**What happened:** a /magazine subscribe lightbox (PR #510) passed 353 of 353 harness checks and shipped; Brenden called it flashy, oversized on mobile and competing with another prompt, and it was disabled within the hour. It also repeated the 7-day trial, which Brenden did not choose.
+
+**The rule:** member prompts are a thin, dismissible bar at most; trial length and price copy are the owner's decisions; member detection from the browser is unverifiable without a member login, so ask the owner to test signed in before shipping.
+
+## Lesson 112: a routine wake can arrive while the session is busy (Nov. 3, 2026)
+
+**What happened:** the 8:58 p.m. show-post routine reached the session at 8:58 but was only read at about 9:33 and published at 9:35.
+
+**The rule:** call `ReadNotifications` between tool bursts; time-boxed routines run first. Prompt updated to say so.
+
+## Lesson 113: jsDelivr `cdn` host can refuse a fresh commit (Nov. 3, 2026)
+
+**What happened:** `cdn.jsdelivr.net` returned 403 "Package size exceeded 50 MB" for a fresh repo commit while `fastly.jsdelivr.net` and `gcore.jsdelivr.net` served the identical file.
+
+**The rule:** verify the sha256 on the host the loader uses; a loader may use `fastly.jsdelivr.net` when `cdn` refuses.
+
+## Lesson 114: browsers here can read only `site.web.api.espn.com` (Nov. 3, 2026)
+
+**What happened:** `site.api.espn.com` works from curl but fails from Chromium in this container; `https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=...&league=...` works with CORS `*` and carries scores, status, ranks and records.
+
+**The rule:** use the header feed for any browser-side live score and `site.api.espn.com` only from the shell or GitHub Actions.

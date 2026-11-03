@@ -18,7 +18,7 @@ export const HUBS = {
       espn: { path: 'football/college-football', sport: 'football', league: 'college-football', web: 'college-football' },
       minGames: 8, rosterClip: 24, seasonLabel: '2026 season', schedHeading: 'Florida football schedule, results and TV', schedSource: 'ESPN. TV listings are ESPN’s current data and can change.',
       statsHeading: 'Florida football season stats', rosterHeading: '2026 Florida football roster', rosterUrl: 'https://floridagators.com/sports/football/roster', rosterLink: '/roster', storiesHeading: 'Latest Florida football coverage',
-      feedCategory: 'Gator Football', liveFiles: [{ file: 'florida-roster.json', kind: 'roster' }, { file: 'florida-stats.json', kind: 'stats' }],
+      feedCategory: 'Gator Football', liveFiles: [{ file: 'florida-roster.json', kind: 'roster' }, { file: 'hub-data/football-uf-stats.json', kind: 'stats' }],
       posNames: { QB: 'quarterback', RB: 'running back', WR: 'wide receiver', TE: 'tight end', OL: 'offensive lineman', DL: 'defensive lineman', ILB: 'inside linebacker', JACK: 'jack linebacker', CB: 'cornerback', S: 'safety', STAR: 'star', K: 'kicker', P: 'punter', LS: 'long snapper' },
       ldName: 'Florida Gators football', ldSport: 'American football', ldDesc: 'Florida Gators football schedule, TV, season stats, roster and news from GatorBait Media.',
       seoHeading: 'Florida Gators football coverage',
@@ -28,12 +28,12 @@ export const HUBS = {
     },
     snapshot() {
       const sched = readJson('sports-live/hub-data/football-espn-schedule.json'), rank = readJson('sports-live/hub-data/football-espn-rankings.json');
-      const r = readJson('sports-live/florida-roster.json'), s = readJson('sports-live/florida-stats.json');
+      const r = readJson('sports-live/florida-roster.json'), s = readJson('sports-live/hub-data/football-uf-stats.json');
       return {
         sched, rank, hasConf: true, team: { coach: 'Jon Sumrall' },
         roster: r.players.map((p) => ({ no: p.no, name: p.name, pos: p.pos, cls: p.yr, ht: p.ht, wt: p.wt, home: p.home, school: p.school, prev: String(p.prev || '').replace(/^Previous School:\s*/, ''), img: p.img, url: p.url })),
         status: r.status || {}, availability: r.availability || {}, rosterStamp: r.updated, rosterUpdated: r.updatedLabel,
-        stats: { tiles: s.tiles, teamRows: s.teamRows, lead: s.lead, through: s.through, updatedLabel: s.updatedLabel, updated: s.updated, src: s.src },
+        stats: { tiles: s.tiles, teamRows: s.teamRows, lead: s.lead, through: s.through, updatedLabel: s.updatedLabel, updated: s.updated, src: s.src, source: s.source },
       };
     },
   },

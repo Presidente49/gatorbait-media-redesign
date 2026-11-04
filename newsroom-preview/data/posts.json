@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Georgia at Ole Miss, Alabama at LSU Lead Four Ranked SEC Matchups Saturday",
+      "excerpt": "Ten SEC teams are in the first College Football Playoff Top 25, and four of Saturday's eight SEC games pair ranked teams. Kickoff times, TV, rankings and standings.",
+      "url": "https://www.gatorbaitmedia.com/post/georgia-at-ole-miss-alabama-at-lsu-lead-four-ranked-sec-matchups-saturday",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-04T02:04:36Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_0668e9c507374764ae11ee014fefbd9c~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Georgia at Ole Miss, Alabama at LSU Lead Four Ranked SEC Matchups Saturday"
+      }
+    },
+    {
+      "title": "Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way",
+      "excerpt": "Florida (5-3) is No. 24 in the first College Football Playoff rankings, one of 10 SEC teams in the Top 25. Miami, Georgia, Utah and Indiana hold the top four spots.",
+      "url": "https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-04T01:45:36Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_724965479d3d4cf6a51054271a5e1ae2~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way"
+      }
+    },
+    {
       "title": "Florida vs. Jacksonville: Gators Host Dolphins Thursday Night",
       "excerpt": "No. 1 Florida hosts Jacksonville on Thursday, Nov. 5, at 8 p.m. ET at the O'Connell Center. Records, key players from both teams' openers and the schedule ahead.",
       "url": "https://www.gatorbaitmedia.com/post/florida-vs-jacksonville-gators-host-dolphins-thursday-night",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Nightmare in Atlanta"
-      }
-    },
-    {
-      "title": "Sumrall: Tom Brady Would Have Been ‘Under Too Much Duress’ Against Georgia",
-      "excerpt": "Jon Sumrall said Monday that Tom Brady “would have been under too much duress and pressure to operate” in Florida’s 27-8 loss at Georgia. Watch the full press conference.",
-      "url": "https://www.gatorbaitmedia.com/post/sumrall-not-even-tom-brady-could-have-performed-against-georgia",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-02T18:25:46Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e8c6580b794942ca9296ea0fe8961bd8~mv2.jpg/v1/fit/w_800,h_534,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Sumrall: Tom Brady Would Have Been ‘Under Too Much Duress’ Against Georgia"
-      }
-    },
-    {
-      "title": "Florida basketball: Gators start season with sky high expectations",
-      "excerpt": "Franz Beard on No. 1 Florida’s opener against No. 14 Miami in Tampa, the 3-point and bench questions, and the NCAA’s fifth-year eligibility fight.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-basketball-gators-start-season-with-sky-high-expectations",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-02T14:16:49Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_370e5a794d734a7ba77d081540849fdb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida basketball: Gators start season with sky high expectations"
       }
     }
   ]

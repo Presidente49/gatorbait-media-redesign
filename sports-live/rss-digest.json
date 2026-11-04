@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-04T14:19:27.906Z",
+ "generatedAt": "2026-11-04T21:14:25.204Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-04T14:19:27.906Z",
+  "checkedAt": "2026-11-04T21:14:25.204Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Georgia at Ole Miss, Alabama at LSU Lead Four Ranked SEC Matchups Saturday",
-   "link": "https://www.gatorbaitmedia.com/post/georgia-at-ole-miss-alabama-at-lsu-lead-four-ranked-sec-matchups-saturday",
-   "publishedAt": "2026-11-04T02:04:36.000Z"
+   "title": "Apples, Oranges and Fielding Yost",
+   "link": "https://www.gatorbaitmedia.com/post/apples-oranges-and-fielding-yost",
+   "publishedAt": "2026-11-04T16:02:56.000Z"
   },
   "problems": []
  },

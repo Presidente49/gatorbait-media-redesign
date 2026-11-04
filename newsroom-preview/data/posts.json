@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Apples, Oranges and Fielding Yost",
+      "excerpt": "Buddy Martin on Sports Illustrated's all-time coaches list: Saban at No. 1 is right, but ranking Fielding Yost against the modern game is apples and oranges.",
+      "url": "https://www.gatorbaitmedia.com/post/apples-oranges-and-fielding-yost",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-04T16:02:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_652901d932b54de6b64e0ddc8b601a7e~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Apples, Oranges and Fielding Yost"
+      }
+    },
+    {
       "title": "Georgia at Ole Miss, Alabama at LSU Lead Four Ranked SEC Matchups Saturday",
       "excerpt": "Ten SEC teams are in the first College Football Playoff Top 25, and four of Saturday's eight SEC games pair ranked teams. Kickoff times, TV, rankings and standings.",
       "url": "https://www.gatorbaitmedia.com/post/georgia-at-ole-miss-alabama-at-lsu-lead-four-ranked-sec-matchups-saturday",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Haugh Stuff: No. 1 Gators Open With 77-67 Win Over No. 14 Miami"
-      }
-    },
-    {
-      "title": "Nightmare in Atlanta",
-      "excerpt": "Eddie Gilley on the dumb decisions that turned Halloween in Atlanta into a nightmare for the Gators: the punt block, the turnovers and a 24-0 halftime hole.",
-      "url": "https://www.gatorbaitmedia.com/post/nightmare-in-atlanta",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-11-02T21:48:22Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a04e12751ec94f1a8a99b69fd537c8a4~mv2.jpg/v1/fit/w_1000,h_726,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Nightmare in Atlanta"
       }
     }
   ]

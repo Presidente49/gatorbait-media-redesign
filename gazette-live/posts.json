@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Apples, Oranges and Fielding Yost",
+      "excerpt": "Buddy Martin on Sports Illustrated's all-time coaches list: Saban at No. 1 is right, but ranking Fielding Yost against the modern game is apples and oranges.",
+      "url": "https://www.gatorbaitmedia.com/post/apples-oranges-and-fielding-yost",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-04T16:02:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_652901d932b54de6b64e0ddc8b601a7e~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Apples, Oranges and Fielding Yost"
+      }
+    },
+    {
       "title": "Georgia at Ole Miss, Alabama at LSU Lead Four Ranked SEC Matchups Saturday",
       "excerpt": "Ten SEC teams are in the first College Football Playoff Top 25, and four of Saturday's eight SEC games pair ranked teams. Kickoff times, TV, rankings and standings.",
       "url": "https://www.gatorbaitmedia.com/post/georgia-at-ole-miss-alabama-at-lsu-lead-four-ranked-sec-matchups-saturday",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Take a Deep Breath. It’s Basketball Season. Or Wait a Minute! They Didn’t Drop Out Of The Top 25 Yet!"
-      }
-    },
-    {
-      "title": "Postgame Analysis: Florida Gators (5-3, 3-3) v. Georgia Bulldogs (7-1, 5-1)",
-      "excerpt": "Loren Meadows: Florida needs to make Georgia earn wins in the series, not give it away as turnovers, penalties and poor execution doom the Gators in Atlanta.",
-      "url": "https://www.gatorbaitmedia.com/post/postgame-analysis-florida-gators-5-3-3-3-v-georgia-bulldogs-7-1-5-1",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-11-01T18:27:12Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a2949ebdaa14453e9be5ba9777111910~mv2.jpg/v1/fit/w_1000,h_684,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Postgame Analysis: Florida Gators (5-3, 3-3) v. Georgia Bulldogs (7-1, 5-1)"
       }
     }
   ]

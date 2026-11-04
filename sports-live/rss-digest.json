@@ -1,26 +1,24 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-03T23:56:53.955Z",
+ "generatedAt": "2026-11-04T06:00:31.910Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-03T23:56:53.955Z",
-  "ok": false,
+  "checkedAt": "2026-11-04T06:00:31.910Z",
+  "ok": true,
   "checks": {
    "wellFormed": true,
    "newestFirst": true,
    "itemsChecked": 20,
-   "withCoverImage": 19,
+   "withCoverImage": 20,
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Florida vs. Jacksonville: Gators Host Dolphins Thursday Night",
-   "link": "https://www.gatorbaitmedia.com/post/florida-vs-jacksonville-gators-host-dolphins-thursday-night",
-   "publishedAt": "2026-11-03T21:14:14.000Z"
+   "title": "Georgia at Ole Miss, Alabama at LSU Lead Four Ranked SEC Matchups Saturday",
+   "link": "https://www.gatorbaitmedia.com/post/georgia-at-ole-miss-alabama-at-lsu-lead-four-ranked-sec-matchups-saturday",
+   "publishedAt": "2026-11-04T02:04:36.000Z"
   },
-  "problems": [
-   "1 of 20 items have no cover image (first: https://www.gatorbaitmedia.com/post/georgia-lived-on-third-and-1-florida-rented-third-and-long)"
-  ]
+  "problems": []
  },
  "feeds": [
   {

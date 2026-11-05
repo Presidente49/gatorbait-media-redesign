@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-05T10:42:38.211Z",
+ "generatedAt": "2026-11-05T18:39:59.614Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-05T10:42:38.211Z",
+  "checkedAt": "2026-11-05T18:39:59.614Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Apples, Oranges and Fielding Yost",
-   "link": "https://www.gatorbaitmedia.com/post/apples-oranges-and-fielding-yost",
-   "publishedAt": "2026-11-04T16:02:56.000Z"
+   "title": "The Golden Goose Needs A Checkup — And The Schooner Stays Home",
+   "link": "https://www.gatorbaitmedia.com/post/the-golden-goose-needs-a-checkup-and-the-schooner-stays-home",
+   "publishedAt": "2026-11-05T18:39:04.000Z"
   },
   "problems": []
  },

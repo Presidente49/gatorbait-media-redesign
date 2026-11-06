@@ -1,0 +1,179 @@
+{
+ "$comment": "Oklahoma-week web edition (Friday, Nov. 6, 2026). CANDIDATE, NOT LIVE: built as MAG_VARIANT=oklahoma-week (postgame skin and layout), pinned by a loader that does not exist on the site yet. Every title, dek and read time is copied from the live post (title, custom excerpt, minutesToRead); no statistic is added. The two [[...]] download URLs are filled after the PDFs are uploaded (deploy/oklahoma-week-20261106/set-pdf-urls.mjs); until then the download section renders nothing. Gate: node deploy/oklahoma-week-20261106/check-no-placeholders.mjs. Section keys follow the shared postgame layout: 'columns' holds the show recap and the two Buddy Martin columns, 'coverage' holds the two basketball gamers; the cover story is the first story in the owner's reading order.",
+ "id": "2026-11-06-oklahoma-week",
+ "layout": "postgame",
+ "issue": {
+  "number": "Oklahoma week edition",
+  "date": "Friday, Nov. 6, 2026",
+  "week": "Week 10 · Oklahoma at Florida · Saturday, Nov. 7",
+  "home": "GatorBait Media",
+  "pageTitle": "GatorBait Magazine | Oklahoma Week"
+ },
+ "cover": {
+  "kicker": "First CFP rankings · GatorBait Staff",
+  "headline": "Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way",
+  "dek": "Florida (5-3) is No. 24 in the first College Football Playoff rankings, one of 10 SEC teams in the Top 25. Miami, Georgia, Utah and Indiana hold the top four spots.",
+  "byline": "By GatorBait Staff",
+  "cta": "Read the story",
+  "url": "/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way",
+  "image": {
+   "id": "d3cfa5_91591597fa63490993a23e4874d5da53",
+   "ext": "png",
+   "width": 2160,
+   "height": 2700,
+   "alt": "Graphic: Gators No. 24 in the first College Football Playoff Top 25, Nov. 3, 2026. Florida is 5-3 and one of 10 SEC teams ranked; Oklahoma visits Saturday at 7:45 p.m. ET on SEC Network.",
+   "credit": "Graphic: GatorBait Media."
+  },
+  "linesLabel": "Also inside",
+  "lines": [
+   "Tramell Jones Gets the Call: the Buddy Martin Show panel",
+   "Buddy Martin: The Golden Goose Needs A Checkup",
+   "Buddy Martin: Apples, Oranges and Fielding Yost",
+   "McMiller’s career-high 42 powers Florida past UCF",
+   "Condon flirts with triple-double as Gators smack JU"
+  ],
+  "poster": {
+   "file": "oklahoma-week-cover-20261106.jpg",
+   "alt": "GatorBait Magazine, Nov. 6, 2026, Oklahoma week. Urban Meyer, Ring of Honor: a lasting place in The Swamp. Inside: Franz Beard's Oklahoma Soothsayer, Condon's near triple-double, the first CFP Top 25. Urban Meyer photo: GatorBait archive. The Swamp: Chris Spears."
+  }
+ },
+ "contents": {
+  "label": "In this issue",
+  "items": [
+   {
+    "id": "columns",
+    "label": "The show and the columns"
+   },
+   {
+    "id": "coverage",
+    "label": "Basketball"
+   }
+  ]
+ },
+ "columns": {
+  "kicker": "Oklahoma week",
+  "title": "The show and the columns",
+  "dek": "The Buddy Martin Show panel on the quarterback call, and two columns from Buddy Martin.",
+  "items": [
+   {
+    "rubric": "The Buddy Martin Show",
+    "author": "Brenden Martin",
+    "title": "Tramell Jones Gets the Call: Buddy Martin Show Panel Backs Sumrall's QB Decision Before Oklahoma",
+    "dek": "The quarterback question that hung over Gainesville all week was the focus of Thursday night's Buddy Martin Show, where the panel backed what it viewed as Jon Sumrall's call.",
+    "url": "/post/tramell-jones-gets-the-call-buddy-martin-show-panel-backs-sumrall-before-oklahoma",
+    "read": "2 min read",
+    "image": {
+     "id": "d3cfa5_886c22d32224408e933692539abaa54c",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 1687,
+     "alt": "Aaron Philo, No. 12, and Tramell Jones Jr., No. 9, on Florida's sideline against South Carolina on Oct. 10, 2026.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "The Golden Goose Needs A Checkup — And The Schooner Stays Home",
+    "dek": "Buddy Martin examines college football's television economy, the SEC's ratings power, Florida's Playoff ranking and why the Sooner Schooner will not be in The Swamp.",
+    "url": "/post/the-golden-goose-needs-a-checkup-and-the-schooner-stays-home",
+    "read": "5 min read"
+   },
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "Apples, Oranges and Fielding Yost",
+    "dek": "Buddy Martin on Sports Illustrated's all-time coaches list: Saban at No. 1 is right, but ranking Fielding Yost against the modern game is apples and oranges.",
+    "url": "/post/apples-oranges-and-fielding-yost",
+    "read": "4 min read"
+   }
+  ]
+ },
+ "coverage": {
+  "kicker": "Basketball",
+  "title": "Two wins at the O’Dome",
+  "dek": "The Florida women beat UCF and the men beat Jacksonville on Thursday.",
+  "items": [
+   {
+    "rubric": "Women's basketball",
+    "author": "Loren Meadows",
+    "title": "Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65",
+    "dek": "Kiyomi McMiller scored a career-high 42 points and Vivian Iwuchukwu added 20 as Florida rolled past UCF 95-65 in Gainesville.",
+    "url": "/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65",
+    "read": "3 min read"
+   },
+   {
+    "rubric": "Men's basketball",
+    "author": "Franz Beard",
+    "title": "Condon flirts with triple-double as Gators smack JU",
+    "dek": "Franz Beard on Alex Condon's near triple-double, Rueben Chinyelu's career-high 21 points and No. 1 Florida's 88-57 win over Jacksonville.",
+    "url": "/post/condon-flirts-with-triple-double-as-gators-smack-ju",
+    "read": "5 min read",
+    "image": {
+     "id": "16b519_ace94c11ce5d4031a20650525c423bf3",
+     "ext": "jpg",
+     "width": 2263,
+     "height": 3000,
+     "alt": "Florida's Alex Condon (21) drives against Stetson in an exhibition at the O'Connell Center in October.",
+     "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+   }
+  ]
+ },
+ "next": {
+  "kicker": "Up next",
+  "title": "Oklahoma at Florida",
+  "meta": [
+   "Saturday, Nov. 7",
+   "7:45 p.m. ET · SEC Network",
+   "Ben Hill Griffin Stadium, Gainesville",
+   "Women: at Chattanooga, Sunday, 2 p.m. ET, SEC Network+"
+  ],
+  "note": "Kickoff and network as reported in GatorBait’s first CFP Top 25 story. Women’s basketball time as reported in Loren Meadows’ story."
+ },
+ "reference": {
+  "label": "More GatorBait",
+  "links": [
+   {
+    "label": "Schedule and results",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+   },
+   {
+    "label": "Roster",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   },
+   {
+    "label": "GatorBait home",
+    "url": "/"
+   }
+  ],
+  "top": "Back to the cover"
+ },
+ "credits": {
+  "label": "Photo credits",
+  "uaa": false,
+  "other": [
+   "Cover: Urban Meyer, GatorBait archive; The Swamp, Chris Spears.",
+   "Show recap and Condon: Chris Spears, GatorBait Media.",
+   "First CFP Top 25 graphic: GatorBait Media."
+  ]
+ },
+ "download": {
+  "kicker": "Keep the whole issue",
+  "label": "Download for your phone (PDF)",
+  "note": "[[PHONE_PDF_NOTE]]",
+  "file": "GatorBait-Magazine-Oklahoma-Week-Phone.pdf",
+  "url": "[[PHONE_PDF_URL]]",
+  "print": {
+   "label": "Print edition (US Letter PDF)",
+   "note": "[[PRINT_PDF_NOTE]]",
+   "file": "GatorBait-Magazine-Oklahoma-Week-Print.pdf",
+   "url": "[[PRINT_PDF_URL]]"
+  }
+ },
+ "asOf": "Rankings, scores and times are as reported in the linked GatorBait stories at the time of publishing. Quotes are as reported by the writers."
+}

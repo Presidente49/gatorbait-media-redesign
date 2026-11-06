@@ -397,6 +397,28 @@
         }
       ]
     },
+    "correctionsAfterReread": {
+      "when": "Nov. 6, 2026, 23:15Z, two single-post UPDATE_PUBLISH patches by the fact desk (Jarvis), each a one-phrase find and replace on the published body; the new-post automation did not re-fire (update-publish)",
+      "posts": [
+        {
+          "key": "condon",
+          "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",
+          "change": "'2-3 shooting from the field including 1-2 from three' became '3-6 shooting from the field including 1-2 from three' (ESPN box score 3-6; his 12 points only add up with 3-6)",
+          "lastPublishedDate": "2026-11-06T23:15:54.552Z",
+          "firstPublishedDate": "2026-11-06T13:02:24.150Z",
+          "readBack": "GET /blog/v3/posts/{id}: new phrase present, old phrase absent, title, excerpt, member, categories, hero unchanged, hasUnpublishedChanges false"
+        },
+        {
+          "key": "mcmiller",
+          "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
+          "change": "'Silver Springs, Maryland' became 'Silver Spring, Maryland' (ESPN roster)",
+          "lastPublishedDate": "2026-11-06T23:15:55.015Z",
+          "firstPublishedDate": "2026-11-06T04:52:15.454Z",
+          "readBack": "GET /blog/v3/posts/{id}: new phrase present, old phrase absent, title, excerpt, member, categories, hero unchanged, hasUnpublishedChanges false"
+        }
+      ],
+      "sourceUpdate": "source/27b79db1-f0e7-40eb-9639-49a60420ac00.json and source/e0e37d66-2592-443d-8a5e-0058bc507802.json carry the same two phrase swaps (two places each: the block text and its run). The saved raw API copy of Condon (source/raw/) is the 21:32Z read and is left as read. Not re-fetched in full after the patch; the phrase-level read-back above is the evidence."
+    },
     "addedPosts": [
       {
         "key": "fridays",
@@ -487,8 +509,8 @@
       "Bylines: Best Fridays and the Thursday show recap both sit under the owner account (Brenden Martin). A show or staff byline may be intended; the magazine uses the post author.",
       "Captions: the live captions of both new heroes begin 'Cover: '. That label is dropped in the magazine (it would read as a claim about this magazine's cover); the rest of each caption is verbatim.",
       "Best Fridays carries three link-only paragraphs, their section heading and a two-line web promo; all dropped (no outbound links in the PDFs). The words 'The complete Urban Meyer interview is available here:' and the other lead-ins go with them.",
-      "Condon (republished 21:32Z): see rereadAfterFirstReceipt. The two ESPN differences (2-3 vs 3-6 field goals; 51-25 vs 52-25 rebounds) are still in the live copy and in the magazine.",
-      "Up next card and the email repeat 'Women's basketball: at Chattanooga, Sunday, 2 p.m. ET, SEC Network+' as reported in Loren Meadows' story. The Nov. 6 fact desk says ESPN lists that game on ESPN+. Left as is; the card attributes it to the story. Also from the desk: Loren's story says 'Silver Springs, Maryland' where ESPN's roster has 'Silver Spring'.",
+      "Condon (republished 21:32Z): see rereadAfterFirstReceipt. The field-goal line was corrected on the live post at 23:15Z (2-3 became 3-6, per ESPN) and the magazine carries the corrected line; see correctionsAfterReread. The rebound line (51-25; ESPN shows 52-25, and ESPN totals include team rebounds) is unchanged and unresolved.",
+      "Up next card and the email repeat 'Women's basketball: at Chattanooga, Sunday, 2 p.m. ET, SEC Network+' as reported in Loren Meadows' story. UF's official Oct. 7 women's basketball TV release (FloridaGators.com, first source) lists that game on SEC+ at 2:00 p.m. ET; ESPN's schedule shows ESPN+. The earlier fact-desk note that it should read ESPN+ is withdrawn. Left as the writer's text; the card attributes it to the story. Loren's 'Silver Springs, Maryland' was corrected to 'Silver Spring, Maryland' on the live post at 23:15Z (ESPN roster); the magazine carries the corrected spelling.",
       "Cover type: the supplied cover is set in Impact, Georgia and Arial; everything built here is Barlow. The cover art was not changed.",
       "Web cover 'Also inside' shows at most six lines (shared renderer); the two Buddy Martin columns share the sixth line. All eight stories are listed in the sections below it."
     ]

@@ -1,5 +1,5 @@
 {
- "$comment": "Oklahoma-week web edition (Friday, Nov. 6, 2026). CANDIDATE, NOT LIVE: built as MAG_VARIANT=oklahoma-week (postgame skin and layout), pinned by a loader that does not exist on the site yet. Every title, dek and read time is copied from the live post (title, custom excerpt, minutesToRead); no statistic is added. The two [[...]] download URLs are filled after the PDFs are uploaded (deploy/oklahoma-week-20261106/set-pdf-urls.mjs); until then the download section renders nothing. Gate: node deploy/oklahoma-week-20261106/check-no-placeholders.mjs. Section keys follow the shared postgame layout: 'columns' holds the show recap and the two Buddy Martin columns, 'coverage' holds the two basketball gamers; the cover story is the first story in the owner's reading order.",
+ "$comment": "Oklahoma-week web edition (Friday, Nov. 6, 2026), eight stories. CANDIDATE, NOT LIVE: built as MAG_VARIANT=oklahoma-week (postgame skin and layout), pinned by a loader that does not exist on the site yet. Every title, dek and read time is copied from the live post (title, custom excerpt, minutesToRead); no statistic is added. The two [[...]] download URLs are filled after the PDFs are uploaded (deploy/oklahoma-week-20261106/set-pdf-urls.mjs); until then the download section renders nothing. Gate: node deploy/oklahoma-week-20261106/check-no-placeholders.mjs. Reading order, top to bottom: the cover story is Best Fridays (matches the supplied cover); the 'columns' section holds 2 the Thursday show recap, 3 Franz Beard's Soothsayer, 4 Condon (men's gamer, lead style) and 5 McMiller; the 'coverage' section holds 6 the first CFP Top 25, 7 the Golden Goose column and 8 the Yost column. The shared renderer shows at most six 'Also inside' lines, so the two Buddy Martin columns share the last line.",
  "id": "2026-11-06-oklahoma-week",
  "layout": "postgame",
  "issue": {
@@ -10,27 +10,28 @@
   "pageTitle": "GatorBait Magazine | Oklahoma Week"
  },
  "cover": {
-  "kicker": "First CFP rankings · GatorBait Staff",
-  "headline": "Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way",
-  "dek": "Florida (5-3) is No. 24 in the first College Football Playoff rankings, one of 10 SEC teams in the Top 25. Miami, Georgia, Utah and Indiana hold the top four spots.",
-  "byline": "By GatorBait Staff",
+  "kicker": "Best Fridays · The Buddy Martin Show",
+  "headline": "Best Fridays: Urban Meyer Looks Back as Florida Turns Toward Oklahoma",
+  "dek": "Urban Meyer reflects on Florida's championship years and the current Gators; Edgar Thompson and Rob Dotson discuss Oklahoma and a strong basketball week on Best Fridays.",
+  "byline": "By Brenden Martin",
   "cta": "Read the story",
-  "url": "/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way",
+  "url": "/post/best-fridays-urban-meyer-looks-back-as-florida-turns-toward-oklahoma",
   "image": {
-   "id": "d3cfa5_91591597fa63490993a23e4874d5da53",
-   "ext": "png",
-   "width": 2160,
-   "height": 2700,
-   "alt": "Graphic: Gators No. 24 in the first College Football Playoff Top 25, Nov. 3, 2026. Florida is 5-3 and one of 10 SEC teams ranked; Oklahoma visits Saturday at 7:45 p.m. ET on SEC Network.",
-   "credit": "Graphic: GatorBait Media."
+   "id": "d3cfa5_9d5c633efb33434689e9162eab270f7c",
+   "ext": "jpg",
+   "width": 1920,
+   "height": 1080,
+   "alt": "Buddy Martin, left, interviews Urban Meyer in the taped conversation featured on Best Fridays.",
+   "credit": "Video still: The Buddy Martin Show / Gator Bait Media."
   },
   "linesLabel": "Also inside",
   "lines": [
    "Tramell Jones Gets the Call: the Buddy Martin Show panel",
-   "Buddy Martin: The Golden Goose Needs A Checkup",
-   "Buddy Martin: Apples, Oranges and Fielding Yost",
+   "Franz Beard: The Soothsayer likes the Gators in a white knuckler",
+   "Condon flirts with triple-double as Gators smack JU",
    "McMiller’s career-high 42 powers Florida past UCF",
-   "Condon flirts with triple-double as Gators smack JU"
+   "Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way",
+   "Buddy Martin’s two columns: the Golden Goose and Fielding Yost"
   ],
   "poster": {
    "file": "oklahoma-week-cover-20261106.jpg",
@@ -42,18 +43,18 @@
   "items": [
    {
     "id": "columns",
-    "label": "The show and the columns"
+    "label": "Show, picks and basketball"
    },
    {
     "id": "coverage",
-    "label": "Basketball"
+    "label": "Rankings and columns"
    }
   ]
  },
  "columns": {
   "kicker": "Oklahoma week",
-  "title": "The show and the columns",
-  "dek": "The Buddy Martin Show panel on the quarterback call, and two columns from Buddy Martin.",
+  "title": "The show, the picks and two basketball wins",
+  "dek": "The Buddy Martin Show panel on the quarterback call, Franz Beard's Soothsayer picks for Saturday, and Thursday night's two wins at the O’Dome.",
   "items": [
    {
     "rubric": "The Buddy Martin Show",
@@ -72,37 +73,23 @@
     }
    },
    {
-    "rubric": "Column",
-    "author": "Buddy Martin",
-    "title": "The Golden Goose Needs A Checkup — And The Schooner Stays Home",
-    "dek": "Buddy Martin examines college football's television economy, the SEC's ratings power, Florida's Playoff ranking and why the Sooner Schooner will not be in The Swamp.",
-    "url": "/post/the-golden-goose-needs-a-checkup-and-the-schooner-stays-home",
-    "read": "5 min read"
+    "rubric": "The Soothsayer",
+    "author": "Franz Beard",
+    "title": "The Soothsayer likes the Gators in a white knuckler",
+    "dek": "Franz Beard likes Florida in a white knuckler against Oklahoma, with The Swamp making the difference. Plus his picks across the SEC.",
+    "url": "/post/the-soothsayer-likes-the-gators-in-a-white-knuckler",
+    "read": "6 min read",
+    "image": {
+     "id": "d3cfa5_026d2a4d2be04a91b8c32317fed5f623",
+     "ext": "jpg",
+     "width": 1471,
+     "height": 838,
+     "alt": "Jadan Baugh (13) dives into the end zone against Ole Miss in The Swamp on Sept. 26, 2026.",
+     "credit": "Archival photo by Chris Spears, GatorBait Media."
+    }
    },
    {
-    "rubric": "Column",
-    "author": "Buddy Martin",
-    "title": "Apples, Oranges and Fielding Yost",
-    "dek": "Buddy Martin on Sports Illustrated's all-time coaches list: Saban at No. 1 is right, but ranking Fielding Yost against the modern game is apples and oranges.",
-    "url": "/post/apples-oranges-and-fielding-yost",
-    "read": "4 min read"
-   }
-  ]
- },
- "coverage": {
-  "kicker": "Basketball",
-  "title": "Two wins at the O’Dome",
-  "dek": "The Florida women beat UCF and the men beat Jacksonville on Thursday.",
-  "items": [
-   {
-    "rubric": "Women's basketball",
-    "author": "Loren Meadows",
-    "title": "Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65",
-    "dek": "Kiyomi McMiller scored a career-high 42 points and Vivian Iwuchukwu added 20 as Florida rolled past UCF 95-65 in Gainesville.",
-    "url": "/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65",
-    "read": "3 min read"
-   },
-   {
+    "lead": true,
     "rubric": "Men's basketball",
     "author": "Franz Beard",
     "title": "Condon flirts with triple-double as Gators smack JU",
@@ -117,6 +104,53 @@
      "alt": "Florida's Alex Condon (21) drives against Stetson in an exhibition at the O'Connell Center in October.",
      "credit": "Photo by Chris Spears, GatorBait Media."
     }
+   },
+   {
+    "rubric": "Women's basketball",
+    "author": "Loren Meadows",
+    "title": "Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65",
+    "dek": "Kiyomi McMiller scored a career-high 42 points and Vivian Iwuchukwu added 20 as Florida rolled past UCF 95-65 in Gainesville.",
+    "url": "/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65",
+    "read": "3 min read"
+   }
+  ]
+ },
+ "coverage": {
+  "kicker": "Rankings and columns",
+  "title": "The rankings and two columns",
+  "dek": "The first College Football Playoff Top 25, and two columns from Buddy Martin.",
+  "items": [
+   {
+    "rubric": "First CFP rankings",
+    "author": "GatorBait Staff",
+    "title": "Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way",
+    "dek": "Florida (5-3) is No. 24 in the first College Football Playoff rankings, one of 10 SEC teams in the Top 25. Miami, Georgia, Utah and Indiana hold the top four spots.",
+    "url": "/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way",
+    "read": "2 min read",
+    "image": {
+     "id": "d3cfa5_91591597fa63490993a23e4874d5da53",
+     "ext": "png",
+     "width": 2160,
+     "height": 2700,
+     "alt": "Graphic: Gators No. 24 in the first College Football Playoff Top 25, Nov. 3, 2026. Florida is 5-3 and one of 10 SEC teams ranked; Oklahoma visits Saturday at 7:45 p.m. ET on SEC Network.",
+     "credit": "Graphic: GatorBait Media."
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "The Golden Goose Needs A Checkup — And The Schooner Stays Home",
+    "dek": "Buddy Martin examines college football's television economy, the SEC's ratings power, Florida's Playoff ranking and why the Sooner Schooner will not be in The Swamp.",
+    "url": "/post/the-golden-goose-needs-a-checkup-and-the-schooner-stays-home",
+    "read": "5 min read"
+   },
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "Apples, Oranges and Fielding Yost",
+    "dek": "Buddy Martin on Sports Illustrated's all-time coaches list: Saban at No. 1 is right, but ranking Fielding Yost against the modern game is apples and oranges.",
+    "url": "/post/apples-oranges-and-fielding-yost",
+    "read": "4 min read"
    }
   ]
  },
@@ -158,7 +192,8 @@
   "uaa": false,
   "other": [
    "Cover: Urban Meyer, GatorBait archive; The Swamp, Chris Spears.",
-   "Show recap and Condon: Chris Spears, GatorBait Media.",
+   "Show recap, Soothsayer and Condon: Chris Spears, GatorBait Media.",
+   "Best Fridays: video still, The Buddy Martin Show / Gator Bait Media.",
    "First CFP Top 25 graphic: GatorBait Media."
   ]
  },

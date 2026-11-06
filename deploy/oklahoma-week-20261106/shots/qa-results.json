@@ -15,6 +15,8 @@
    1,
    1,
    1,
+   1,
+   1,
    1
   ],
   "badStoryLinks": 0,
@@ -22,11 +24,11 @@
   "leftover": false,
   "bannedCredit": false,
   "betting": false,
-  "imgsTotal": 4,
+  "imgsTotal": 6,
   "imgsBroken": [],
   "repeatedAssets": [],
   "barlow": true,
-  "captions": 3,
+  "captions": 5,
   "errors": []
  },
  {
@@ -45,6 +47,8 @@
    1,
    1,
    1,
+   1,
+   1,
    1
   ],
   "badStoryLinks": 0,
@@ -52,11 +56,11 @@
   "leftover": false,
   "bannedCredit": false,
   "betting": false,
-  "imgsTotal": 4,
+  "imgsTotal": 6,
   "imgsBroken": [],
   "repeatedAssets": [],
   "barlow": true,
-  "captions": 3,
+  "captions": 5,
   "errors": []
  },
  {
@@ -75,6 +79,8 @@
    1,
    1,
    1,
+   1,
+   1,
    1
   ],
   "badStoryLinks": 0,
@@ -82,11 +88,11 @@
   "leftover": false,
   "bannedCredit": false,
   "betting": false,
-  "imgsTotal": 4,
+  "imgsTotal": 6,
   "imgsBroken": [],
   "repeatedAssets": [],
   "barlow": true,
-  "captions": 3,
+  "captions": 5,
   "errors": []
  },
  {
@@ -105,6 +111,8 @@
    1,
    1,
    1,
+   1,
+   1,
    1
   ],
   "badStoryLinks": 0,
@@ -112,11 +120,11 @@
   "leftover": false,
   "bannedCredit": false,
   "betting": false,
-  "imgsTotal": 4,
+  "imgsTotal": 6,
   "imgsBroken": [],
   "repeatedAssets": [],
   "barlow": true,
-  "captions": 3,
+  "captions": 5,
   "errors": []
  }
 ]

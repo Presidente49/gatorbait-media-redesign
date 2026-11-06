@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-06T00:04:44.719Z",
+ "generatedAt": "2026-11-06T06:28:11.409Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-06T00:04:44.719Z",
+  "checkedAt": "2026-11-06T06:28:11.409Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Florida Suspends DT Jeramiah McCloud One Game for Oklahoma",
-   "link": "https://www.gatorbaitmedia.com/post/florida-suspends-dt-jeramiah-mccloud-one-game-for-oklahoma",
-   "publishedAt": "2026-11-05T21:28:30.000Z"
+   "title": "Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65",
+   "link": "https://www.gatorbaitmedia.com/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65",
+   "publishedAt": "2026-11-06T04:52:15.000Z"
   },
   "problems": []
  },

@@ -1,0 +1,316 @@
+{
+ "issue": "2026-11-06-oklahoma-week",
+ "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+ "source": "Wix Blog API, published version, read-only",
+ "posts": [
+  {
+   "id": "afe70819-bc8a-4c89-abf6-bd4749038259",
+   "key": "cfp",
+   "title": "Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way",
+   "url": "https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way",
+   "author": "GatorBait Staff",
+   "lastPublishedDate": "2026-11-04T13:41:39.717Z",
+   "firstPublishedDate": "2026-11-04T01:45:36.823Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 339,
+   "bodyWordsAfter": 324,
+   "emptyParagraphsDropped": 0,
+   "whitespaceTrimmedBlocks": [],
+   "changes": [
+    {
+     "op": "drop-id",
+     "block": "cfpimg",
+     "kind": "img",
+     "text": "Graphic: Gators No. 24 in the first College Football Playoff Top 25, Nov. 3, 2026. Florida is 5-3 and one of 10 SEC teams ranked; Oklahoma v",
+     "reason": "Graphic is the story hero in the magazine (used once); not repeated inline."
+    },
+    {
+     "op": "drop-id",
+     "block": "nadlbl",
+     "kind": "p",
+     "text": "ADVERTISEMENT",
+     "reason": "Sponsor label (web ad slot)."
+    },
+    {
+     "op": "drop-id",
+     "block": "nadimg",
+     "kind": "img",
+     "text": "Advertisement: Meldon Law, Gainesville, Florida. Visit MeldonLaw.com",
+     "reason": "Sponsor banner (Meldon Law ad, carries an outbound sponsor link); ads are not part of this edition."
+    },
+    {
+     "op": "drop-id",
+     "block": "cmore",
+     "kind": "p",
+     "text": "More from GatorBait: our Florida football coverage, schedule and the Florida vs. Oklahoma preview.",
+     "reason": "Web furniture: 'More from GatorBait' link list (words are link labels only)."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/afe70819-bc8a-4c89-abf6-bd4749038259?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "b907cfa6-7a31-4d16-a687-7a39e9f15cc3",
+   "key": "show",
+   "title": "Tramell Jones Gets the Call: Buddy Martin Show Panel Backs Sumrall's QB Decision Before Oklahoma",
+   "url": "https://www.gatorbaitmedia.com/post/tramell-jones-gets-the-call-buddy-martin-show-panel-backs-sumrall-before-oklahoma",
+   "author": "Brenden Martin",
+   "lastPublishedDate": "2026-11-06T17:32:12.552Z",
+   "firstPublishedDate": "2026-11-06T14:33:33.103Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 539,
+   "bodyWordsAfter": 408,
+   "emptyParagraphsDropped": 6,
+   "whitespaceTrimmedBlocks": [],
+   "changes": [
+    {
+     "op": "caption-from-id",
+     "block": "pcredit",
+     "text": "Aaron Philo, No. 12, at left, and Tramell Jones Jr., No. 9, at right, on Florida's sideline against South Carolina on Oct. 10, 2026. Photo by Chris Spears, GatorBait Media.",
+     "reason": "Lead paragraph is the photo credit and caption; it becomes the hero caption."
+    },
+    {
+     "op": "drop-id",
+     "block": "p6",
+     "kind": "p",
+     "text": "WATCH THE FULL SHOW: https://www.youtube.com/watch?v=czm4gnJPE4w",
+     "reason": "Link-only paragraph: 'WATCH THE FULL SHOW:' plus a bare YouTube URL (no outbound links in the PDF)."
+    },
+    {
+     "op": "drop-id",
+     "block": "h14",
+     "kind": "h",
+     "text": "PIECES FROM THIS SHOW (YouTube links added as each posts)",
+     "reason": "Heading of a list that is only YouTube links ('YouTube links added as each posts')."
+    },
+    {
+     "op": "drop-id",
+     "block": "li0",
+     "kind": "li",
+     "text": "Full show: https://www.youtube.com/watch?v=czm4gnJPE4w",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li1",
+     "kind": "li",
+     "text": "Loren Meadows on the Tramell Jones decision (standalone interview cut): https://www.youtube.com/watch?v=_VRPwt7xnwg",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li2",
+     "kind": "li",
+     "text": "Ben Troupe: SEC weekend and CFP preview (standalone interview cut): https://www.youtube.com/watch?v=ho-MIbdyWAg",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li3",
+     "kind": "li",
+     "text": "Paul Wilson Jr.: the playoff picture (standalone interview cut): https://www.youtube.com/watch?v=n_QFbB_yMuQ",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li4",
+     "kind": "li",
+     "text": "Segment: Urban Meyer Ring of Honor: https://www.youtube.com/watch?v=ZcDpF0jCPGU",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li5",
+     "kind": "li",
+     "text": "Segment: the 24-team playoff debate: https://www.youtube.com/watch?v=Us_Nc7LIbtg",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li6",
+     "kind": "li",
+     "text": "Shorts: \"daddy ball,\" dynasties are over, Notre Dame playing for its life, and more Watch: daddy ball · Notre Dame",
+     "reason": "Link-only list item (YouTube Shorts links)."
+    },
+    {
+     "op": "keep-prefix",
+     "block": "p15",
+     "removedText": " Catch The Buddy Martin Show live all season: https://youtube.com/@TheBuddyMartinShow/live — and read Gator Bait Media daily at https://www.gatorbaitmedia.com.",
+     "reason": "Closing promo sentences after the first one are two bare URLs (YouTube live page and the site); removed with their lead-in words."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/b907cfa6-7a31-4d16-a687-7a39e9f15cc3?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "ee624c8a-268c-4f94-889e-6cd3de939f6f",
+   "key": "goose",
+   "title": "The Golden Goose Needs A Checkup — And The Schooner Stays Home",
+   "url": "https://www.gatorbaitmedia.com/post/the-golden-goose-needs-a-checkup-and-the-schooner-stays-home",
+   "author": "Buddy Martin",
+   "lastPublishedDate": "2026-11-05T20:09:57.248Z",
+   "firstPublishedDate": "2026-11-05T18:39:04Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 1329,
+   "bodyWordsAfter": 1321,
+   "emptyParagraphsDropped": 2,
+   "whitespaceTrimmedBlocks": [
+    "1pc1e87",
+    "k9s08233"
+   ],
+   "changes": [
+    {
+     "op": "drop-id",
+     "block": "creditp",
+     "kind": "p",
+     "text": "Photo: Spatms, CC BY-SA 4.0, via Wikimedia Commons",
+     "reason": "Credit line for the web lead art (Wikimedia, CC BY-SA). That art is not carried into this edition, so its credit is dropped with it."
+    }
+   ],
+   "quoteMarkAudit": [
+    {
+     "block": "cbu1340",
+     "open": 1,
+     "close": 0,
+     "straight": 0,
+     "starts": "He proudly told me, “You know, Nicki, my oldest daughter, lived with u"
+    },
+    {
+     "block": "1pc1e87",
+     "open": 1,
+     "close": 0,
+     "straight": 0,
+     "starts": "“I used to always tell our players that this was my goal really at eve"
+    },
+    {
+     "block": "eo8ne183",
+     "open": 2,
+     "close": 0,
+     "straight": 0,
+     "starts": "“James Bates, etc. That whole team, you saw a lot of them. “And then t"
+    },
+    {
+     "block": "k9s08233",
+     "open": 1,
+     "close": 0,
+     "straight": 0,
+     "starts": "“I got to see so many of coach Spurrier's players because they would l"
+    },
+    {
+     "block": "ukkzu284",
+     "open": 2,
+     "close": 1,
+     "straight": 0,
+     "starts": "“And I would tell our players that all the time. “It’s kind of funny. "
+    }
+   ],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/ee624c8a-268c-4f94-889e-6cd3de939f6f?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "bd815138-7f0c-4f97-a642-1cb5862e3f5a",
+   "key": "yost",
+   "title": "Apples, Oranges and Fielding Yost",
+   "url": "https://www.gatorbaitmedia.com/post/apples-oranges-and-fielding-yost",
+   "author": "Buddy Martin",
+   "lastPublishedDate": "2026-11-04T17:13:08.525Z",
+   "firstPublishedDate": "2026-11-04T16:02:56.043Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 1071,
+   "bodyWordsAfter": 1052,
+   "emptyParagraphsDropped": 23,
+   "whitespaceTrimmedBlocks": [
+    "pmky7969",
+    "y05",
+    "y13"
+   ],
+   "changes": [
+    {
+     "op": "drop-id",
+     "block": "yimg",
+     "kind": "img",
+     "text": "Michigan vs. Minnesota football game, 1902 — leather-helmet era players in a cross-buck play as coach Fielding Yost watches from the sidelin",
+     "reason": "Public-domain Wikimedia archive photo of the 1902 game; not carried into this edition (owner direction, #34 comment 6690264123: owned photo, owned portrait or pull-quote treatment). The column carries a pull quote instead."
+    },
+    {
+     "op": "drop-id",
+     "block": "ycap",
+     "kind": "p",
+     "text": "Top photo: Michigan vs. Minnesota, 1902, by Benham and Allen. Public domain, via Wikimedia Commons.",
+     "reason": "Credit line for the dropped archive photo."
+    },
+    {
+     "op": "drop-id",
+     "block": "d33ep51",
+     "kind": "p",
+     "text": "By Buddy Mattin",
+     "reason": "Display byline line in the body reads 'By Buddy Mattin' (typo). The magazine byline comes from the post author, Buddy Martin. The live post still has the typo."
+    },
+    {
+     "op": "drop-id",
+     "block": "r5ik2743",
+     "kind": "p",
+     "text": "gatorbaitmedia.com ",
+     "reason": "Display line 'gatorbaitmedia.com' (a link in the web body)."
+    },
+    {
+     "op": "replace",
+     "block": "xjww84668",
+     "from": "saying ‘I don’t know — I wasn’t born yet!”",
+     "to": "saying “I don’t know — I wasn’t born yet!”",
+     "reason": "Mechanical quote pairing: opening single quote closed by a double quote; made a matched double pair. No wording change."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/bd815138-7f0c-4f97-a642-1cb5862e3f5a?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
+   "key": "mcmiller",
+   "title": "Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65",
+   "url": "https://www.gatorbaitmedia.com/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65",
+   "author": "Loren Meadows",
+   "lastPublishedDate": "2026-11-06T04:52:15.454Z",
+   "firstPublishedDate": "2026-11-06T04:52:15.454Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 622,
+   "bodyWordsAfter": 609,
+   "emptyParagraphsDropped": 0,
+   "whitespaceTrimmedBlocks": [],
+   "changes": [
+    {
+     "op": "drop-id",
+     "block": "byline",
+     "kind": "p",
+     "text": "By Loren Meadows, GatorBaitMedia.com and host of The Gator Lowdown with Loren Meadows",
+     "reason": "Body byline line; shown as the story byline instead."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/e0e37d66-2592-443d-8a5e-0058bc507802?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",
+   "key": "condon",
+   "title": "Condon flirts with triple-double as Gators smack JU",
+   "url": "https://www.gatorbaitmedia.com/post/condon-flirts-with-triple-double-as-gators-smack-ju",
+   "author": "Franz Beard",
+   "lastPublishedDate": "2026-11-06T13:02:24.150Z",
+   "firstPublishedDate": "2026-11-06T13:02:24.150Z",
+   "hasUnpublishedChanges": true,
+   "bodyWordsBefore": 1208,
+   "bodyWordsAfter": 1208,
+   "emptyParagraphsDropped": 0,
+   "whitespaceTrimmedBlocks": [],
+   "changes": [
+    {
+     "op": "split-newline",
+     "block": "p017",
+     "parts": 2,
+     "reason": "A literal line break inside one paragraph (between a closing quote and the next sentence) is rendered as two paragraphs."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/27b79db1-f0e7-40eb-9639-49a60420ac00?fieldsets=URL&fieldsets=RICH_CONTENT"
+  }
+ ]
+}

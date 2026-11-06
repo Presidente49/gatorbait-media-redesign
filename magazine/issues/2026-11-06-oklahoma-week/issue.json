@@ -1,0 +1,241 @@
+{
+  "$comment": "Nov. 6, 2026 Oklahoma-week issue: the six live posts in the owner's reading order, plus the editorial rules prepare.py applies to each body. Nothing here is a live Wix object. Bodies come from GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT (published version only), normalized by magazine/normalize_wix_post.py. Every rule below is reported in receipt.json. Wording is never rewritten: rules only drop web furniture, empty paragraphs and link-only text, move a credit into a caption, split a paragraph at a literal newline, or pair a mismatched quote mark. Global rules (all posts): empty paragraphs are dropped and leading/trailing whitespace is trimmed; both are counted per post in receipt.json.",
+  "id": "2026-11-06-oklahoma-week",
+  "title": "GatorBait Magazine | Oklahoma Week",
+  "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+  "posts": [
+    {
+      "id": "afe70819-bc8a-4c89-abf6-bd4749038259",
+      "key": "cfp",
+      "rubric": "First CFP rankings",
+      "author": "GatorBait Staff",
+      "byline": "By GatorBait Staff",
+      "hero": "cfp-graphic",
+      "rules": [
+        {
+          "op": "drop-id",
+          "id": "cfpimg",
+          "reason": "Graphic is the story hero in the magazine (used once); not repeated inline."
+        },
+        {
+          "op": "drop-id",
+          "id": "nadlbl",
+          "reason": "Sponsor label (web ad slot)."
+        },
+        {
+          "op": "drop-id",
+          "id": "nadimg",
+          "reason": "Sponsor banner (Meldon Law ad, carries an outbound sponsor link); ads are not part of this edition."
+        },
+        {
+          "op": "drop-id",
+          "id": "cmore",
+          "reason": "Web furniture: 'More from GatorBait' link list (words are link labels only)."
+        }
+      ]
+    },
+    {
+      "id": "b907cfa6-7a31-4d16-a687-7a39e9f15cc3",
+      "key": "show",
+      "rubric": "The Buddy Martin Show",
+      "author": "Brenden Martin",
+      "byline": "By Brenden Martin",
+      "hero": "show-photo",
+      "rules": [
+        {
+          "op": "caption-from-id",
+          "id": "pcredit",
+          "reason": "Lead paragraph is the photo credit and caption; it becomes the hero caption."
+        },
+        {
+          "op": "drop-id",
+          "id": "p6",
+          "reason": "Link-only paragraph: 'WATCH THE FULL SHOW:' plus a bare YouTube URL (no outbound links in the PDF)."
+        },
+        {
+          "op": "drop-id",
+          "id": "h14",
+          "reason": "Heading of a list that is only YouTube links ('YouTube links added as each posts')."
+        },
+        {
+          "op": "drop-id",
+          "id": "li0",
+          "reason": "Link-only list item (bare YouTube URL)."
+        },
+        {
+          "op": "drop-id",
+          "id": "li1",
+          "reason": "Link-only list item (bare YouTube URL)."
+        },
+        {
+          "op": "drop-id",
+          "id": "li2",
+          "reason": "Link-only list item (bare YouTube URL)."
+        },
+        {
+          "op": "drop-id",
+          "id": "li3",
+          "reason": "Link-only list item (bare YouTube URL)."
+        },
+        {
+          "op": "drop-id",
+          "id": "li4",
+          "reason": "Link-only list item (bare YouTube URL)."
+        },
+        {
+          "op": "drop-id",
+          "id": "li5",
+          "reason": "Link-only list item (bare YouTube URL)."
+        },
+        {
+          "op": "drop-id",
+          "id": "li6",
+          "reason": "Link-only list item (YouTube Shorts links)."
+        },
+        {
+          "op": "keep-prefix",
+          "id": "p15",
+          "keep": "Florida hosts Oklahoma on Saturday night at The Swamp.",
+          "reason": "Closing promo sentences after the first one are two bare URLs (YouTube live page and the site); removed with their lead-in words."
+        }
+      ]
+    },
+    {
+      "id": "ee624c8a-268c-4f94-889e-6cd3de939f6f",
+      "key": "goose",
+      "rubric": "Column",
+      "author": "Buddy Martin",
+      "byline": "By Buddy Martin",
+      "hero": "pullquote",
+      "pullquote": {
+        "id": "p5",
+        "who": "Buddy Martin"
+      },
+      "rules": [
+        {
+          "op": "drop-id",
+          "id": "creditp",
+          "reason": "Credit line for the web lead art (Wikimedia, CC BY-SA). That art is not carried into this edition, so its credit is dropped with it."
+        }
+      ]
+    },
+    {
+      "id": "bd815138-7f0c-4f97-a642-1cb5862e3f5a",
+      "key": "yost",
+      "rubric": "Column",
+      "author": "Buddy Martin",
+      "byline": "By Buddy Martin",
+      "hero": "pullquote",
+      "rules": [
+        {
+          "op": "drop-id",
+          "id": "yimg",
+          "reason": "Public-domain Wikimedia archive photo of the 1902 game; not carried into this edition (owner direction, #34 comment 6690264123: owned photo, owned portrait or pull-quote treatment). The column carries a pull quote instead."
+        },
+        {
+          "op": "drop-id",
+          "id": "ycap",
+          "reason": "Credit line for the dropped archive photo."
+        },
+        {
+          "op": "drop-id",
+          "id": "d33ep51",
+          "reason": "Display byline line in the body reads 'By Buddy Mattin' (typo). The magazine byline comes from the post author, Buddy Martin. The live post still has the typo."
+        },
+        {
+          "op": "drop-id",
+          "id": "r5ik2743",
+          "reason": "Display line 'gatorbaitmedia.com' (a link in the web body)."
+        },
+        {
+          "op": "replace",
+          "id": "xjww84668",
+          "from": "saying ‘I don’t know — I wasn’t born yet!”",
+          "to": "saying “I don’t know — I wasn’t born yet!”",
+          "reason": "Mechanical quote pairing: opening single quote closed by a double quote; made a matched double pair. No wording change."
+        }
+      ],
+      "pullquote": {
+        "id": "y07",
+        "from": "You cannot rank coaches across eras any more than you can rank fruit across the produce aisle.",
+        "who": "Buddy Martin"
+      }
+    },
+    {
+      "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
+      "key": "mcmiller",
+      "rubric": "Women's basketball",
+      "author": "Loren Meadows",
+      "byline": "By Loren Meadows, GatorBaitMedia.com and host of The Gator Lowdown with Loren Meadows",
+      "hero": "pullquote",
+      "pullquote": {
+        "id": "q1",
+        "from": "Just keep going until they stop me. It just feels like you can’t miss. Anything you put up is going in.",
+        "who": "Kiyomi McMiller"
+      },
+      "rules": [
+        {
+          "op": "drop-id",
+          "id": "byline",
+          "reason": "Body byline line; shown as the story byline instead."
+        }
+      ]
+    },
+    {
+      "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",
+      "key": "condon",
+      "rubric": "Men's basketball",
+      "author": "Franz Beard",
+      "byline": "By Franz Beard",
+      "hero": "condon-photo",
+      "rules": [
+        {
+          "op": "split-newline",
+          "id": "p017",
+          "reason": "A literal line break inside one paragraph (between a closing quote and the next sentence) is rendered as two paragraphs."
+        }
+      ]
+    }
+  ],
+  "heroes": {
+    "cfp-graphic": {
+      "id": "d3cfa5_91591597fa63490993a23e4874d5da53",
+      "ext": "png",
+      "width": 2160,
+      "height": 2700,
+      "alt": "Graphic: Gators No. 24 in the first College Football Playoff Top 25, Nov. 3, 2026. Florida is 5-3 and one of 10 SEC teams ranked; Oklahoma visits Saturday at 7:45 p.m. ET on SEC Network.",
+      "credit": "Graphic: GatorBait Media."
+    },
+    "show-photo": {
+      "id": "d3cfa5_886c22d32224408e933692539abaa54c",
+      "ext": "jpg",
+      "width": 3000,
+      "height": 1687,
+      "alt": "Aaron Philo, No. 12, and Tramell Jones Jr., No. 9, on Florida's sideline against South Carolina on Oct. 10, 2026.",
+      "credit": "Photo by Chris Spears, GatorBait Media."
+    },
+    "condon-photo": {
+      "id": "16b519_ace94c11ce5d4031a20650525c423bf3",
+      "ext": "jpg",
+      "width": 2263,
+      "height": 3000,
+      "alt": "Florida's Alex Condon (21) drives against Stetson in an exhibition at the O'Connell Center in October.",
+      "credit": "Photo by Chris Spears, GatorBait Media."
+    }
+  },
+  "cover": {
+    "source": "Codex print cover, #34 comment 6690264123 (Media ID d3cfa5_672df0d97bf64db9bd8b599c4b11c35b.pdf)",
+    "photos": [
+      {
+        "id": "ae876a_4ea1277b27d143cbb903195dcde1bf71",
+        "use": "Urban Meyer, cover panel",
+        "credit": "GatorBait Photo (GatorBait archive)"
+      },
+      {
+        "id": "16b519_bd4db014e3cb488f82927284dbf7f9c2",
+        "use": "The Swamp panorama, cover base",
+        "credit": "Chris Spears, GatorBait Media"
+      }
+    ]
+  }
+}

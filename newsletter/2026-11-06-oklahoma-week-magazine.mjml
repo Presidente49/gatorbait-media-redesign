@@ -1,7 +1,7 @@
 <mjml lang="en" dir="ltr">
   <mj-head>
     <mj-title>GatorBait Magazine: Oklahoma Week</mj-title>
-    <mj-preview>Six stories for Oklahoma week: the first CFP Top 25, the Buddy Martin Show panel, two Buddy Martin columns, McMiller's 42 and Condon's near triple-double.</mj-preview>
+    <mj-preview>Eight stories for Oklahoma week: Best Fridays with Urban Meyer, the Buddy Martin Show panel, Franz Beard's Soothsayer, both basketball wins, the first CFP Top 25 and two Buddy Martin columns.</mj-preview>
     <mj-font name="Barlow" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;display=swap" />
     <mj-attributes>
       <mj-all font-family="Barlow, Arial, Helvetica, sans-serif" />
@@ -45,26 +45,26 @@
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="18px 24px 8px" css-class="gb-pad" border-left="6px solid #FA4616">
       <mj-column>
-        <mj-text align="left" padding="0 0 6px" color="#B93A0E" font-size="13px" font-weight="800" letter-spacing="2px">SIX COMPLETE STORIES &#183; OKLAHOMA AT FLORIDA, SATURDAY, NOV. 7</mj-text>
-        <mj-text css-class="gb-body" align="left" padding="0 0 6px" color="#33404F" font-size="16px">The first College Football Playoff rankings, the Buddy Martin Show panel on the quarterback call, two Buddy Martin columns, and both basketball wins at the O&#8217;Dome. Read them here or keep the whole issue in the PDF.</mj-text>
+        <mj-text align="left" padding="0 0 6px" color="#B93A0E" font-size="13px" font-weight="800" letter-spacing="2px">EIGHT COMPLETE STORIES &#183; OKLAHOMA AT FLORIDA, SATURDAY, NOV. 7</mj-text>
+        <mj-text css-class="gb-body" align="left" padding="0 0 6px" color="#33404F" font-size="16px">Best Fridays with Urban Meyer, the Buddy Martin Show panel on the quarterback call, Franz Beard&#8217;s Soothsayer picks, both basketball wins at the O&#8217;Dome, the first College Football Playoff rankings and two Buddy Martin columns. Read them here or keep the whole issue in the PDF.</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="26px 24px 8px" css-class="gb-pad">
       <mj-column>
-        <mj-text align="left" padding="0" color="#FA4616" font-size="13px" font-weight="800" letter-spacing="2.5px">THE COVER STORY &#183; GATORBAIT STAFF</mj-text>
+        <mj-text align="left" padding="0" color="#FA4616" font-size="13px" font-weight="800" letter-spacing="2.5px">THE COVER STORY &#183; BEST FRIDAYS</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="0 24px" css-class="gb-pad0">
       <mj-column>
-        <mj-image src="https://static.wixstatic.com/media/d3cfa5_91591597fa63490993a23e4874d5da53~mv2.png/v1/fill/w_1080,h_1350,al_c,q_85/file.jpg" alt="Rankings card: Gators No. 24 in the first College Football Playoff Top 25, Nov. 3, 2026. Florida is 5-3 and one of 10 SEC teams ranked; Oklahoma visits Saturday at 7:45 p.m. ET on SEC Network. GatorBait Media." href="https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=cfp_photo" padding="0" fluid-on-mobile="true" />
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_9d5c633efb33434689e9162eab270f7c~mv2.jpg/v1/fill/w_1200,h_675,al_c,q_80/file.jpg" alt="Buddy Martin, left, interviews Urban Meyer in the taped conversation featured on Best Fridays. Video still: The Buddy Martin Show / Gator Bait Media." href="https://www.gatorbaitmedia.com/post/best-fridays-urban-meyer-looks-back-as-florida-turns-toward-oklahoma?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=fridays_photo" padding="0" fluid-on-mobile="true" />
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="12px 24px 28px" css-class="gb-pad">
       <mj-column>
-        <mj-text align="left" padding="0 0 10px" color="#6B7280" font-size="11px">Graphic: GatorBait Media</mj-text>
-        <mj-text align="left" padding="0 0 8px" color="#101820" font-size="28px" font-weight="800" line-height="1.15" css-class="gb-h1"><a href="https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=cfp_headline" style="color:#101820;text-decoration:none;">Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way</a></mj-text>
-        <mj-text align="left" padding="0 0 14px" font-size="16px">Florida (5-3) is No. 24 in the first College Football Playoff rankings, one of 10 SEC teams in the Top 25. Miami, Georgia, Utah and Indiana hold the top four spots.</mj-text>
-        <mj-button align="left" href="https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=cfp_button">READ THE STORY</mj-button>
+        <mj-text align="left" padding="0 0 10px" color="#6B7280" font-size="11px">Video still: The Buddy Martin Show / Gator Bait Media.</mj-text>
+        <mj-text align="left" padding="0 0 8px" color="#101820" font-size="28px" font-weight="800" line-height="1.15" css-class="gb-h1"><a href="https://www.gatorbaitmedia.com/post/best-fridays-urban-meyer-looks-back-as-florida-turns-toward-oklahoma?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=fridays_headline" style="color:#101820;text-decoration:none;">Best Fridays: Urban Meyer Looks Back as Florida Turns Toward Oklahoma</a></mj-text>
+        <mj-text align="left" padding="0 0 14px" font-size="16px">Urban Meyer reflects on Florida's championship years and the current Gators; Edgar Thompson and Rob Dotson discuss Oklahoma and a strong basketball week on Best Fridays.</mj-text>
+        <mj-button align="left" href="https://www.gatorbaitmedia.com/post/best-fridays-urban-meyer-looks-back-as-florida-turns-toward-oklahoma?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=fridays_button">READ THE STORY</mj-button>
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="14px 24px 4px" css-class="gb-pad" border-top="3px solid #0B1F4B">
@@ -83,6 +83,70 @@
         <mj-text align="left" padding="0 0 8px" color="#101820" font-size="26px" font-weight="800" line-height="1.15" css-class="gb-h1"><a href="https://www.gatorbaitmedia.com/post/tramell-jones-gets-the-call-buddy-martin-show-panel-backs-sumrall-before-oklahoma?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=show_headline" style="color:#101820;text-decoration:none;">Tramell Jones Gets the Call: Buddy Martin Show Panel Backs Sumrall's QB Decision Before Oklahoma</a></mj-text>
         <mj-text align="left" padding="0 0 14px" font-size="16px">The quarterback question that hung over Gainesville all week was the focus of Thursday night's Buddy Martin Show, where the panel backed what it viewed as Jon Sumrall's call.</mj-text>
         <mj-button align="left" href="https://www.gatorbaitmedia.com/post/tramell-jones-gets-the-call-buddy-martin-show-panel-backs-sumrall-before-oklahoma?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=show_button">READ THE RECAP</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="14px 24px 4px" css-class="gb-pad" border-top="3px solid #0B1F4B">
+      <mj-column>
+        <mj-text align="left" padding="0" color="#B93A0E" font-size="14px" font-weight="800" letter-spacing="3px">THE PICKS &#183; THE SOOTHSAYER</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="12px 0 0" css-class="gb-pad0">
+      <mj-column>
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_026d2a4d2be04a91b8c32317fed5f623~mv2.jpg/v1/fill/w_1200,h_684,al_c,q_80/file.jpg" alt="Jadan Baugh (13) dives into the end zone against Ole Miss in The Swamp on Sept. 26, 2026." href="https://www.gatorbaitmedia.com/post/the-soothsayer-likes-the-gators-in-a-white-knuckler?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=soothsayer_photo" padding="0" fluid-on-mobile="true" />
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="12px 24px 28px" css-class="gb-pad">
+      <mj-column>
+        <mj-text align="left" padding="0 0 10px" color="#6B7280" font-size="11px">Archival photo by Chris Spears, GatorBait Media.</mj-text>
+        <mj-text align="left" padding="0 0 4px" color="#C23A0E" font-size="12px" font-weight="800" letter-spacing="1.6px">FRANZ BEARD &#183; THE SOOTHSAYER</mj-text>
+        <mj-text align="left" padding="0 0 8px" color="#101820" font-size="26px" font-weight="800" line-height="1.15" css-class="gb-h1"><a href="https://www.gatorbaitmedia.com/post/the-soothsayer-likes-the-gators-in-a-white-knuckler?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=soothsayer_headline" style="color:#101820;text-decoration:none;">The Soothsayer likes the Gators in a white knuckler</a></mj-text>
+        <mj-text align="left" padding="0 0 14px" font-size="16px">Franz Beard likes Florida in a white knuckler against Oklahoma, with The Swamp making the difference. Plus his picks across the SEC.</mj-text>
+        <mj-button align="left" href="https://www.gatorbaitmedia.com/post/the-soothsayer-likes-the-gators-in-a-white-knuckler?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=soothsayer_button">READ THE PICKS</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F6F4EF" padding="14px 24px 4px" css-class="gb-pad" border-top="3px solid #FA4616">
+      <mj-column>
+        <mj-text align="left" padding="0" color="#B93A0E" font-size="14px" font-weight="800" letter-spacing="3px">BASKETBALL &#183; TWO WINS AT THE O&#8217;DOME</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F6F4EF" padding="14px 0 0"><mj-column><mj-spacer height="2px" /></mj-column></mj-section>
+    <mj-section background-color="#F6F4EF" padding="0 16px" css-class="gb-pad0">
+      <mj-column width="42%" padding="0 8px 18px" css-class="gb-card">
+        <mj-image src="https://static.wixstatic.com/media/16b519_ace94c11ce5d4031a20650525c423bf3~mv2.jpg/v1/fill/w_480,h_636,al_c,q_80/file.jpg" alt="Florida&#8217;s Alex Condon (21) drives against Stetson in an exhibition at the O&#8217;Connell Center in October." href="https://www.gatorbaitmedia.com/post/condon-flirts-with-triple-double-as-gators-smack-ju?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=condon_photo" padding="0 0 4px" fluid-on-mobile="true" />
+        <mj-text padding="0" color="#6B7280" font-size="11px" line-height="1.3">Photo by Chris Spears, GatorBait Media.</mj-text>
+      </mj-column>
+      <mj-column width="58%" padding="0 8px 18px" css-class="gb-card">
+        <mj-text padding="0 0 4px" color="#C23A0E" font-size="12px" font-weight="800" letter-spacing="1.6px">FRANZ BEARD &#183; MEN'S BASKETBALL</mj-text>
+        <mj-text padding="0 0 8px" color="#101820" font-size="26px" font-weight="800" line-height="1.15" css-class="gb-h1"><a href="https://www.gatorbaitmedia.com/post/condon-flirts-with-triple-double-as-gators-smack-ju?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=condon_headline" style="color:#101820;text-decoration:none;">Condon flirts with triple-double as Gators smack JU</a></mj-text>
+        <mj-text padding="0 0 12px" color="#33404F" font-size="16px" line-height="1.45">Franz Beard on Alex Condon's near triple-double, Rueben Chinyelu's career-high 21 points and No. 1 Florida&#8217;s 88-57 win over Jacksonville.</mj-text>
+        <mj-button align="left" href="https://www.gatorbaitmedia.com/post/condon-flirts-with-triple-double-as-gators-smack-ju?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=condon_button">READ THE STORY</mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#F6F4EF" padding="0 16px 8px" css-class="gb-pad0">
+      <mj-column padding="0 8px 18px" css-class="gb-card">
+        <mj-text padding="0 0 12px" color="#0B1F4B" font-size="19px" font-weight="700" line-height="1.25"  css-class="gb-quote"><div style="border-left:4px solid #FA4616;padding-left:12px;">&#8220;Just keep going until they stop me. It just feels like you can&#8217;t miss. Anything you put up is going in.&#8221;<br /><span style="font-size:12px;letter-spacing:1.4px;color:#B93A0E;">KIYOMI McMILLER</span></div></mj-text>
+        <mj-text padding="0 0 4px" color="#C23A0E" font-size="12px" font-weight="800" letter-spacing="1.6px">LOREN MEADOWS &#183; WOMEN'S BASKETBALL</mj-text>
+        <mj-text padding="0 0 6px" color="#101820" font-size="21px" font-weight="800" line-height="1.15"><a href="https://www.gatorbaitmedia.com/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=mcmiller_headline" style="color:#101820;text-decoration:none;">Showtime at the O&#8217;Dome: McMiller&#8217;s Career-High 42 Powers Florida Past UCF, 95-65</a></mj-text>
+        <mj-text padding="0 0 8px" color="#33404F" font-size="15px" line-height="1.45">Kiyomi McMiller scored a career-high 42 points and Vivian Iwuchukwu added 20 as Florida rolled past UCF 95-65 in Gainesville.</mj-text>
+        <mj-text padding="0" font-size="14px" font-weight="800" letter-spacing="0.6px"><a href="https://www.gatorbaitmedia.com/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=mcmiller_read" style="color:#0021A5;text-decoration:none;">READ THE STORY &rsaquo;</a></mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="14px 24px 4px" css-class="gb-pad" border-top="3px solid #0B1F4B">
+      <mj-column>
+        <mj-text align="left" padding="0" color="#B93A0E" font-size="14px" font-weight="800" letter-spacing="3px">THE RANKINGS &#183; GATORBAIT STAFF</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="14px 0 0"><mj-column><mj-spacer height="2px" /></mj-column></mj-section>
+    <mj-section background-color="#FFFFFF" padding="0 16px 8px" css-class="gb-pad0">
+      <mj-column width="40%" padding="0 8px 18px" css-class="gb-card">
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_91591597fa63490993a23e4874d5da53~mv2.png/v1/fill/w_480,h_600,al_c,q_85/file.jpg" alt="Rankings card: Gators No. 24 in the first College Football Playoff Top 25, Nov. 3, 2026. Florida is 5-3 and one of 10 SEC teams ranked; Oklahoma visits Saturday at 7:45 p.m. ET on SEC Network. GatorBait Media." href="https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=cfp_photo" padding="0 0 4px" fluid-on-mobile="true" />
+        <mj-text padding="0" color="#6B7280" font-size="11px" line-height="1.3">Graphic: GatorBait Media</mj-text>
+      </mj-column>
+      <mj-column width="60%" padding="0 8px 18px" css-class="gb-card">
+        <mj-text padding="0 0 4px" color="#C23A0E" font-size="12px" font-weight="800" letter-spacing="1.6px">FIRST CFP RANKINGS &#183; GATORBAIT STAFF</mj-text>
+        <mj-text padding="0 0 8px" color="#101820" font-size="24px" font-weight="800" line-height="1.15" css-class="gb-h1"><a href="https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=cfp_headline" style="color:#101820;text-decoration:none;">Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way</a></mj-text>
+        <mj-text padding="0 0 12px" color="#33404F" font-size="16px" line-height="1.45">Florida (5-3) is No. 24 in the first College Football Playoff rankings, one of 10 SEC teams in the Top 25. Miami, Georgia, Utah and Indiana hold the top four spots.</mj-text>
+        <mj-button align="left" href="https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=cfp_button">READ THE STORY</mj-button>
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="14px 24px 4px" css-class="gb-pad" border-top="3px solid #0B1F4B">
@@ -107,29 +171,6 @@
         <mj-text padding="0" font-size="14px" font-weight="800" letter-spacing="0.6px"><a href="https://www.gatorbaitmedia.com/post/apples-oranges-and-fielding-yost?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=yost_read" style="color:#0021A5;text-decoration:none;">READ THE STORY &rsaquo;</a></mj-text>
       </mj-column>
     </mj-section>
-    <mj-section background-color="#F6F4EF" padding="14px 24px 4px" css-class="gb-pad" border-top="3px solid #FA4616">
-      <mj-column>
-        <mj-text align="left" padding="0" color="#B93A0E" font-size="14px" font-weight="800" letter-spacing="3px">BASKETBALL &#183; TWO WINS AT THE O&#8217;DOME</mj-text>
-      </mj-column>
-    </mj-section>
-    <mj-section background-color="#F6F4EF" padding="14px 0 0"><mj-column><mj-spacer height="2px" /></mj-column></mj-section>
-    <mj-section background-color="#F6F4EF" padding="0 16px" css-class="gb-pad0">
-      <mj-column padding="0 8px 18px" css-class="gb-card">
-        <mj-text padding="0 0 12px" color="#0B1F4B" font-size="19px" font-weight="700" line-height="1.25"  css-class="gb-quote"><div style="border-left:4px solid #FA4616;padding-left:12px;">&#8220;Just keep going until they stop me. It just feels like you can&#8217;t miss. Anything you put up is going in.&#8221;<br /><span style="font-size:12px;letter-spacing:1.4px;color:#B93A0E;">KIYOMI McMILLER</span></div></mj-text>
-        <mj-text padding="0 0 4px" color="#C23A0E" font-size="12px" font-weight="800" letter-spacing="1.6px">LOREN MEADOWS &#183; WOMEN'S BASKETBALL</mj-text>
-        <mj-text padding="0 0 6px" color="#101820" font-size="21px" font-weight="800" line-height="1.15"><a href="https://www.gatorbaitmedia.com/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=mcmiller_headline" style="color:#101820;text-decoration:none;">Showtime at the O&#8217;Dome: McMiller&#8217;s Career-High 42 Powers Florida Past UCF, 95-65</a></mj-text>
-        <mj-text padding="0 0 8px" color="#33404F" font-size="15px" line-height="1.45">Kiyomi McMiller scored a career-high 42 points and Vivian Iwuchukwu added 20 as Florida rolled past UCF 95-65 in Gainesville.</mj-text>
-        <mj-text padding="0" font-size="14px" font-weight="800" letter-spacing="0.6px"><a href="https://www.gatorbaitmedia.com/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=mcmiller_read" style="color:#0021A5;text-decoration:none;">READ THE STORY &rsaquo;</a></mj-text>
-      </mj-column>
-      <mj-column padding="0 8px 18px" css-class="gb-card">
-        <mj-image src="https://static.wixstatic.com/media/16b519_ace94c11ce5d4031a20650525c423bf3~mv2.jpg/v1/fill/w_560,h_373,al_t,q_80/file.jpg" alt="Florida&#8217;s Alex Condon (21) drives against Stetson in an exhibition at the O&#8217;Connell Center in October." href="https://www.gatorbaitmedia.com/post/condon-flirts-with-triple-double-as-gators-smack-ju?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=condon_photo" padding="0 0 4px" fluid-on-mobile="true" />
-        <mj-text padding="0 0 8px" color="#6B7280" font-size="11px" line-height="1.3">Photo by Chris Spears, GatorBait Media.</mj-text>
-        <mj-text padding="0 0 4px" color="#C23A0E" font-size="12px" font-weight="800" letter-spacing="1.6px">FRANZ BEARD &#183; MEN'S BASKETBALL</mj-text>
-        <mj-text padding="0 0 6px" color="#101820" font-size="21px" font-weight="800" line-height="1.15"><a href="https://www.gatorbaitmedia.com/post/condon-flirts-with-triple-double-as-gators-smack-ju?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=condon_headline" style="color:#101820;text-decoration:none;">Condon flirts with triple-double as Gators smack JU</a></mj-text>
-        <mj-text padding="0 0 8px" color="#33404F" font-size="15px" line-height="1.45">Franz Beard on Alex Condon's near triple-double, Rueben Chinyelu's career-high 21 points and No. 1 Florida&#8217;s 88-57 win over Jacksonville.</mj-text>
-        <mj-text padding="0" font-size="14px" font-weight="800" letter-spacing="0.6px"><a href="https://www.gatorbaitmedia.com/post/condon-flirts-with-triple-double-as-gators-smack-ju?utm_source=newsletter&utm_medium=email&utm_campaign=magazine_oklahoma_week_2026_11_06&utm_content=condon_read" style="color:#0021A5;text-decoration:none;">READ THE STORY &rsaquo;</a></mj-text>
-      </mj-column>
-    </mj-section>
     <mj-section background-color="#FFFFFF" padding="26px 24px 28px" css-class="gb-pad" border-top="6px solid #FA4616">
       <mj-column>
         <mj-text align="center" padding="0 0 6px" color="#B93A0E" font-size="13px" font-weight="800" letter-spacing="2px">UP NEXT</mj-text>
@@ -148,7 +189,7 @@
     </mj-section>
     <mj-section background-color="#F5F6F8" padding="16px 24px" css-class="gb-pad">
       <mj-column>
-        <mj-text padding="0" color="#4B5563" font-size="12px" line-height="1.5"><b>Photo credits.</b> Cover: Urban Meyer, GatorBait archive; The Swamp, Chris Spears, GatorBait Media. First CFP Top 25 graphic: GatorBait Media. Show recap and Condon photos: Chris Spears, GatorBait Media. The three stories without a photo carry a quote from the story.</mj-text>
+        <mj-text padding="0" color="#4B5563" font-size="12px" line-height="1.5"><b>Photo credits.</b> Cover: Urban Meyer, GatorBait archive; The Swamp, Chris Spears, GatorBait Media. Best Fridays: video still, The Buddy Martin Show / Gator Bait Media. Show recap, Soothsayer and Condon photos: Chris Spears, GatorBait Media. First CFP Top 25 graphic: GatorBait Media. The three stories without a photo carry a quote from the story.</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#EEF0F3" padding="20px 24px" css-class="gb-pad">

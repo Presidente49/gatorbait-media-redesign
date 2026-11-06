@@ -2,8 +2,9 @@
 """Apply the editorial rules in issue.json to the normalized Wix posts and write posts.json and receipt.json.
 
 Usage: python3 -I magazine/issues/2026-11-06-oklahoma-week/prepare.py [source-dir]
-  source-dir defaults to the committed source/ folder next to this script: the six normalized Blog API bodies
-  (output of magazine/normalize_wix_post.py, one <post-id>.json each, text exactly as published, lastPublishedDate inside).
+  source-dir defaults to the committed source/ folder next to this script: the normalized Blog API bodies, one per story in
+  issue.json (output of magazine/normalize_wix_post.py, one <post-id>.json each, text exactly as published, lastPublishedDate
+  inside). The raw API responses of the posts added or refreshed on Nov. 6 (evening) are kept in source/raw/.
 
 posts.json is the input the magazine PDF builder reads: {posts: [{url, title, author, byline, rubric, minutesToRead, html,
 caption, pullquote, words}]}. receipt.json lists, per post, the live post id, lastPublishedDate, word counts and every
@@ -39,7 +40,9 @@ def run_html(r):
 def block_html(b):
     inner = ''.join(run_html(r) for r in b['runs'])
     if b['k'] == 'h':
-        return '<h3>' + inner + '</h3>'
+        # Heading level is kept as a hierarchy (Wix level 3 and deeper is a sub-heading); only the Soothsayer column uses level 3.
+        tag = 'h4' if (b.get('level') or 2) >= 3 else 'h3'
+        return '<%s>%s</%s>' % (tag, inner, tag)
     if b['k'] == 'q':
         return '<blockquote>' + inner + '</blockquote>'
     return '<p>' + inner + '</p>'
@@ -73,7 +76,14 @@ for spec in cfg['posts']:
             del blocks[idx]
         elif op == 'caption-from-id':
             caption = b['text'].strip()
-            changes.append({'op': op, 'block': bid, 'text': caption, 'reason': rule['reason']})
+            entry = {'op': op, 'block': bid, 'text': caption, 'reason': rule['reason']}
+            if rule.get('stripPrefix'):
+                if not caption.startswith(rule['stripPrefix']):
+                    raise SystemExit('%s: caption of %s does not start with %r' % (spec['key'], bid, rule['stripPrefix']))
+                caption = caption[len(rule['stripPrefix']):].lstrip()
+                entry['strippedPrefix'] = rule['stripPrefix']
+                entry['captionUsed'] = caption
+            changes.append(entry)
             del blocks[idx]
         elif op == 'keep-prefix':
             if not b['text'].startswith(rule['keep']):
@@ -154,5 +164,7 @@ for spec in cfg['posts']:
     print('%-9s %5d -> %5d words, %2d empty dropped, %d rule changes, %d quote flags' % (spec['key'], before_words, out['words'], len(empties), len(changes), len(quote_flags)))
 
 (HERE / 'posts.json').write_text(json.dumps({'site': 'https://www.gatorbaitmedia.com', 'issue': cfg['id'], 'posts': posts}, ensure_ascii=False, indent=1), encoding='utf-8')
-(HERE / 'receipt.json').write_text(json.dumps({'issue': cfg['id'], 'siteId': cfg['siteId'], 'source': 'Wix Blog API, published version, read-only', 'posts': receipt_posts}, ensure_ascii=False, indent=1), encoding='utf-8')
+extras = cfg.get('receipt', {})
+(HERE / 'receipt.json').write_text(json.dumps({'issue': cfg['id'], 'siteId': cfg['siteId'], 'source': 'Wix Blog API, published version, read-only', 'order': extras.get('order'), 'orderNote': extras.get('orderNote'),
+    'rereadAfterFirstReceipt': extras.get('rereadAfterFirstReceipt'), 'addedPosts': extras.get('addedPosts'), 'images': extras.get('images'), 'flags': extras.get('flags'), 'posts': receipt_posts}, ensure_ascii=False, indent=1), encoding='utf-8')
 print('wrote posts.json and receipt.json')

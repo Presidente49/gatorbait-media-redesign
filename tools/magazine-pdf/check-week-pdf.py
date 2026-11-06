@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check a built week PDF against the prepared story bodies.
+"""Check a built week PDF against the prepared story bodies (every story in posts.json).
 
 Usage: python3 -I tools/magazine-pdf/check-week-pdf.py <posts.json> <file.pdf> [--expect-pages N]
 For every story in posts.json, every body paragraph must appear in the PDF's extracted text (smart quotes, dashes and whitespace
@@ -24,7 +24,7 @@ def main():
     pages = int(re.search(r'Pages:\s+(\d+)', info).group(1)); size = re.search(r'Page size:\s+(.*)', info).group(1).strip()
     bad = 0
     for p in posts:
-        paras = [fold(html.unescape(re.sub(r'<[^>]+>', '', m))) for m in re.findall(r'<(?:p|h3|blockquote)>(.*?)</(?:p|h3|blockquote)>', p['html'])]
+        paras = [fold(html.unescape(re.sub(r'<[^>]+>', '', m[1]))) for m in re.findall(r'<(p|h3|h4|blockquote)>(.*?)</\1>', p['html'])]
         paras = [x for x in paras if x]
         missing = [x for x in paras if compact(x) not in ctext]
         # Full-width pull quotes and headings are checked the same way; a paragraph split by a column or page break is
@@ -43,6 +43,6 @@ def main():
     print('pages=%d size=%s bytes=%d http_in_text=%s link_annotations=%s' % (pages, size, len(raw), bool(re.search(r'https?:', text, re.I)), b'/URI' in raw or b'/Annots' in raw))
     if problems or bad:
         print('FAIL:', problems or 'missing text'); sys.exit(1)
-    print('PASS: all six stories present in full, no http, no link annotations')
+    print('PASS: all %d stories present in full, no http, no link annotations' % len(posts))
 
 main()

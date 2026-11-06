@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-06T06:28:11.409Z",
+ "generatedAt": "2026-11-06T14:56:40.259Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-06T06:28:11.409Z",
+  "checkedAt": "2026-11-06T14:56:40.259Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65",
-   "link": "https://www.gatorbaitmedia.com/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65",
-   "publishedAt": "2026-11-06T04:52:15.000Z"
+   "title": "Tramell Jones Gets the Call: Buddy Martin Show Panel Backs Sumrall's QB Decision Before Oklahoma",
+   "link": "https://www.gatorbaitmedia.com/post/tramell-jones-gets-the-call-buddy-martin-show-panel-backs-sumrall-before-oklahoma",
+   "publishedAt": "2026-11-06T14:33:33.000Z"
   },
   "problems": []
  },

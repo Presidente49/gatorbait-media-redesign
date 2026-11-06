@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Witten Off? Oklahoma's New Play-Caller vs. the Gators' Pass Rush (Scouting Oklahoma, Part 1)",
+      "excerpt": "Oklahoma ranks 108th in scoring and 111th in total offense, and interim coordinator Jason Witten calls his first game at No. 24 Florida on Saturday. Part 1 of our scouting series: John Mateer, Rocky Beers and former Gator Hayden Hansen against a Gators defense with 23 sacks.",
+      "url": "https://www.gatorbaitmedia.com/post/witten-off-oklahoma-s-new-play-caller-vs-the-gators-pass-rush-scouting-oklahoma-part-1",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-06T22:00:33Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_cf457578f2f644d8ad819a988cd40684~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Witten Off? Oklahoma's New Play-Caller vs. the Gators' Pass Rush (Scouting Oklahoma, Part 1)"
+      }
+    },
+    {
       "title": "The Soothsayer likes the Gators in a white knuckler",
       "excerpt": "Franz Beard likes Florida in a white knuckler against Oklahoma, with The Swamp making the difference. Plus his picks across the SEC.",
       "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-likes-the-gators-in-a-white-knuckler",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way"
-      }
-    },
-    {
-      "title": "Florida vs. Jacksonville: Gators Host Dolphins Thursday Night",
-      "excerpt": "No. 1 Florida hosts Jacksonville on Thursday, Nov. 5, at 8 p.m. ET at the O'Connell Center. Records, key players from both teams' openers and the schedule ahead.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-vs-jacksonville-gators-host-dolphins-thursday-night",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-03T21:14:14Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_318b1aad706a4e56825a86d533841342~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida vs. Jacksonville: Gators Host Dolphins Thursday Night"
       }
     }
   ]

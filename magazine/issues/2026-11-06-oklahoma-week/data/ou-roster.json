@@ -1,0 +1,1400 @@
+{
+ "source": "OU Week 10 game notes (soonersports.com), PDF pp. 8-9 (numerical roster p. 8, cross-checked against alphabetical roster p. 9)",
+ "asOf": "week of Nov. 2, 2026",
+ "rows": [
+  {
+   "num": "0",
+   "name": "Manny Choice*",
+   "pos": "WR",
+   "ht": "6-4",
+   "wt": "211",
+   "cl": "So.",
+   "hometown": "Lancaster, Texas",
+   "school": "Lancaster HS"
+  },
+  {
+   "num": "0",
+   "name": "David Stone**",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "315",
+   "cl": "Jr.",
+   "hometown": "Del City, Okla.",
+   "school": "IMG Academy [Fla.]"
+  },
+  {
+   "num": "1",
+   "name": "Isaiah Sategna III*",
+   "pos": "WR",
+   "ht": "5-10",
+   "wt": "185",
+   "cl": "5th",
+   "hometown": "Austin, Texas",
+   "school": "University of Arkansas"
+  },
+  {
+   "num": "2",
+   "name": "Omarion Robinson*",
+   "pos": "DB",
+   "ht": "5-11",
+   "wt": "212",
+   "cl": "So.",
+   "hometown": "Little Rock, Ark.",
+   "school": "Parkview HS"
+  },
+  {
+   "num": "3",
+   "name": "Parker Livingstone",
+   "pos": "WR",
+   "ht": "6-3",
+   "wt": "202",
+   "cl": "Jr.",
+   "hometown": "Lucas, Texas",
+   "school": "University of Texas"
+  },
+  {
+   "num": "3",
+   "name": "Reggie Powers III**",
+   "pos": "DB",
+   "ht": "6-0",
+   "wt": "214",
+   "cl": "Jr.",
+   "hometown": "Centerville, Ohio",
+   "school": "Centerville HS"
+  },
+  {
+   "num": "4",
+   "name": "Courtland Guillory*",
+   "pos": "DB",
+   "ht": "6-0",
+   "wt": "190",
+   "cl": "So.",
+   "hometown": "Houston, Texas",
+   "school": "Klein Oak HS"
+  },
+  {
+   "num": "4",
+   "name": "Daniel Odom",
+   "pos": "WR",
+   "ht": "6-2",
+   "wt": "193",
+   "cl": "Fr.",
+   "hometown": "Los Angeles, Calif.",
+   "school": "St. John Bosco HS"
+  },
+  {
+   "num": "5",
+   "name": "Jer’Michael Carter*",
+   "pos": "WR",
+   "ht": "6-2",
+   "wt": "209",
+   "cl": "Sr.",
+   "hometown": "Kentwood, La.",
+   "school": "McNeese State University"
+  },
+  {
+   "num": "5",
+   "name": "Markel Ford",
+   "pos": "DB",
+   "ht": "6-1",
+   "wt": "204",
+   "cl": "Fr.",
+   "hometown": "Mesquite, Texas",
+   "school": "Horn HS"
+  },
+  {
+   "num": "6",
+   "name": "Tory Blaylock*",
+   "pos": "RB",
+   "ht": "5-11",
+   "wt": "212",
+   "cl": "So.",
+   "hometown": "Humble, Texas",
+   "school": "Atascocita HS"
+  },
+  {
+   "num": "6",
+   "name": "Nigel Smith II",
+   "pos": "DL",
+   "ht": "6-4",
+   "wt": "300",
+   "cl": "Jr.",
+   "hometown": "Melissa, Texas",
+   "school": "Melissa HS"
+  },
+  {
+   "num": "7",
+   "name": "Taylor Heim*",
+   "pos": "LB",
+   "ht": "6-5",
+   "wt": "226",
+   "cl": "Sr.",
+   "hometown": "Yukon, Okla.",
+   "school": "Bethany HS"
+  },
+  {
+   "num": "7",
+   "name": "Jacob Jordan**",
+   "pos": "WR",
+   "ht": "5-9",
+   "wt": "186",
+   "cl": "Jr.",
+   "hometown": "Southlake, Texas",
+   "school": "Carroll Senior HS"
+  },
+  {
+   "num": "8",
+   "name": "Bowe Bentley",
+   "pos": "QB",
+   "ht": "6-1",
+   "wt": "203",
+   "cl": "Fr.",
+   "hometown": "Celina, Texas",
+   "school": "Celina HS"
+  },
+  {
+   "num": "8",
+   "name": "Bishop Thomas",
+   "pos": "DL",
+   "ht": "6-1",
+   "wt": "297",
+   "cl": "5th",
+   "hometown": "New Orleans, La.",
+   "school": "Georgia State University"
+  },
+  {
+   "num": "9",
+   "name": "Lloyd Avant",
+   "pos": "RB",
+   "ht": "5-10",
+   "wt": "215",
+   "cl": "Jr.",
+   "hometown": "Humble, Texas",
+   "school": "Colorado State University"
+  },
+  {
+   "num": "9",
+   "name": "Dakoda Fields",
+   "pos": "DB",
+   "ht": "6-1",
+   "wt": "203",
+   "cl": "Jr.",
+   "hometown": "Compton, Calif.",
+   "school": "University of Oregon"
+  },
+  {
+   "num": "10",
+   "name": "Kip Lewis***",
+   "pos": "LB",
+   "ht": "6-1",
+   "wt": "230",
+   "cl": "5th",
+   "hometown": "Carthage, Texas",
+   "school": "Carthage HS"
+  },
+  {
+   "num": "10",
+   "name": "John Mateer*",
+   "pos": "QB",
+   "ht": "6-1",
+   "wt": "224",
+   "cl": "5th",
+   "hometown": "Little Elm, Texas",
+   "school": "Washington State Univ."
+  },
+  {
+   "num": "11",
+   "name": "Trell Harris",
+   "pos": "WR",
+   "ht": "6-0",
+   "wt": "203",
+   "cl": "5th",
+   "hometown": "La Grange, Ill.",
+   "school": "University of Virginia"
+  },
+  {
+   "num": "11",
+   "name": "Kristan Moore",
+   "pos": "LB",
+   "ht": "6-1",
+   "wt": "232",
+   "cl": "Fr.",
+   "hometown": "Selma, Ala.",
+   "school": "Selma HS"
+  },
+  {
+   "num": "12",
+   "name": "Derrick Johnson II",
+   "pos": "DB",
+   "ht": "6-0",
+   "wt": "189",
+   "cl": "Fr.",
+   "hometown": "Wildomar, Calif.",
+   "school": "Murrieta Valley HS"
+  },
+  {
+   "num": "12",
+   "name": "Ryder Mix",
+   "pos": "TE",
+   "ht": "6-3",
+   "wt": "244",
+   "cl": "Fr.",
+   "hometown": "Little Elm, Texas",
+   "school": "Lone Star HS"
+  },
+  {
+   "num": "13",
+   "name": "Niko Jandreau",
+   "pos": "DB",
+   "ht": "6-0",
+   "wt": "199",
+   "cl": "Fr.",
+   "hometown": "Chandler, Ariz.",
+   "school": "Hamilton HS"
+  },
+  {
+   "num": "13",
+   "name": "Jayden Petit",
+   "pos": "WR",
+   "ht": "6-4",
+   "wt": "217",
+   "cl": "Fr.",
+   "hometown": "Naples, Fla.",
+   "school": "St. John Neumann HS"
+  },
+  {
+   "num": "14",
+   "name": "Trystan Haynes",
+   "pos": "DB",
+   "ht": "6-2",
+   "wt": "188",
+   "cl": "So.",
+   "hometown": "Midwest City, Okla.",
+   "school": "Carl Albert HS"
+  },
+  {
+   "num": "14",
+   "name": "Elijah Thomas*",
+   "pos": "WR",
+   "ht": "6-1",
+   "wt": "198",
+   "cl": "So.",
+   "hometown": "Checotah, Okla.",
+   "school": "Checotah HS"
+  },
+  {
+   "num": "15",
+   "name": "Beau Jandreau",
+   "pos": "LB",
+   "ht": "6-0",
+   "wt": "220",
+   "cl": "Fr.",
+   "hometown": "Chandler, Ariz.",
+   "school": "Hamilton HS"
+  },
+  {
+   "num": "15",
+   "name": "Jett Niu",
+   "pos": "QB",
+   "ht": "6-2",
+   "wt": "208",
+   "cl": "So.",
+   "hometown": "Lindon, Utah",
+   "school": "Lehi HS"
+  },
+  {
+   "num": "16",
+   "name": "Danny Okoye*",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "257",
+   "cl": "Jr.",
+   "hometown": "Tulsa, Okla.",
+   "school": "NOAH Homeschool"
+  },
+  {
+   "num": "16",
+   "name": "Whitt Newbauer",
+   "pos": "QB",
+   "ht": "6-6",
+   "wt": "240",
+   "cl": "Jr.",
+   "hometown": "Raleigh, N.C.",
+   "school": "Mercer University"
+  },
+  {
+   "num": "17",
+   "name": "Mackenzie Alleyne",
+   "pos": "WR",
+   "ht": "5-11",
+   "wt": "184",
+   "cl": "Jr.",
+   "hometown": "Tustin, Calif.",
+   "school": "Washington State University"
+  },
+  {
+   "num": "17",
+   "name": "Jacob Curry",
+   "pos": "LB",
+   "ht": "6-0",
+   "wt": "214",
+   "cl": "Fr.",
+   "hometown": "St. Augustine, Fla.",
+   "school": "Nease HS"
+  },
+  {
+   "num": "18",
+   "name": "Tyler Ruxer",
+   "pos": "TE",
+   "ht": "6-4",
+   "wt": "233",
+   "cl": "Fr.",
+   "hometown": "Meinrad, Ind.",
+   "school": "Heritage Hills HS"
+  },
+  {
+   "num": "18",
+   "name": "Cole Sullivan",
+   "pos": "LB",
+   "ht": "6-4",
+   "wt": "231",
+   "cl": "Jr.",
+   "hometown": "Pittsburgh, Pa.",
+   "school": "University of Michigan"
+  },
+  {
+   "num": "19",
+   "name": "Brian Harris",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "291",
+   "cl": "Fr.",
+   "hometown": "Jacksonville, Fla.",
+   "school": "Creekside HS"
+  },
+  {
+   "num": "19",
+   "name": "Kade McIntyre**",
+   "pos": "TE",
+   "ht": "6-3",
+   "wt": "215",
+   "cl": "Sr.",
+   "hometown": "Fremont, Neb.",
+   "school": "Archbishop Bergan HS"
+  },
+  {
+   "num": "20",
+   "name": "Casen Calmus*",
+   "pos": "DB",
+   "ht": "5-10",
+   "wt": "205",
+   "cl": "Sr.",
+   "hometown": "Brentwood, Tenn.",
+   "school": "Brentwood Academy"
+  },
+  {
+   "num": "20",
+   "name": "Jonathan Hatton Jr.",
+   "pos": "RB",
+   "ht": "6-1",
+   "wt": "235",
+   "cl": "Fr.",
+   "hometown": "Cibolo, Texas",
+   "school": "Steele HS"
+  },
+  {
+   "num": "21",
+   "name": "Jeremiah Newcombe",
+   "pos": "DB",
+   "ht": "5-9",
+   "wt": "203",
+   "cl": "Jr.",
+   "hometown": "Gilbert, Ariz.",
+   "school": "Casteel HS"
+  },
+  {
+   "num": "21",
+   "name": "Xavier Robinson**",
+   "pos": "RB",
+   "ht": "6-0",
+   "wt": "232",
+   "cl": "Jr.",
+   "hometown": "Yukon, Okla.",
+   "school": "Carl Albert HS"
+  },
+  {
+   "num": "22",
+   "name": "Peyton Bowen***",
+   "pos": "DB",
+   "ht": "6-0",
+   "wt": "204",
+   "cl": "Sr.",
+   "hometown": "Corinth, Texas",
+   "school": "Guyer HS"
+  },
+  {
+   "num": "22",
+   "name": "Trynae Washington",
+   "pos": "TE",
+   "ht": "6-3",
+   "wt": "260",
+   "cl": "So.",
+   "hometown": "Midwest City, Okla.",
+   "school": "Carl Albert HS"
+  },
+  {
+   "num": "23",
+   "name": "Eli Bowen**",
+   "pos": "DB",
+   "ht": "5-9",
+   "wt": "189",
+   "cl": "Jr.",
+   "hometown": "Corinth, Texas",
+   "school": "Guyer HS"
+  },
+  {
+   "num": "23",
+   "name": "Ben McCreary",
+   "pos": "RB",
+   "ht": "5-9",
+   "wt": "212",
+   "cl": "5th",
+   "hometown": "San Antonio, Texas",
+   "school": "Univ. of the Incarnate Word"
+  },
+  {
+   "num": "24",
+   "name": "Jacobe Johnson***",
+   "pos": "DB",
+   "ht": "6-2",
+   "wt": "205",
+   "cl": "Sr.",
+   "hometown": "Mustang, Okla.",
+   "school": "Mustang HS"
+  },
+  {
+   "num": "25",
+   "name": "Andy Bass",
+   "pos": "RB",
+   "ht": "5-11",
+   "wt": "211",
+   "cl": "Jr.",
+   "hometown": "Oklahoma City, Okla.",
+   "school": "Heritage Hall School"
+  },
+  {
+   "num": "25",
+   "name": "Michael Boganowski**",
+   "pos": "DB",
+   "ht": "6-2",
+   "wt": "214",
+   "cl": "Jr.",
+   "hometown": "Junction City, Kan.",
+   "school": "Junction City HS"
+  },
+  {
+   "num": "26",
+   "name": "Elgee Webster",
+   "pos": "LB",
+   "ht": "5-11",
+   "wt": "217",
+   "cl": "So.",
+   "hometown": "Franklin, Tenn.",
+   "school": "Battle Ground Academy"
+  },
+  {
+   "num": "27",
+   "name": "Preston Mickens",
+   "pos": "DB",
+   "ht": "5-10",
+   "wt": "200",
+   "cl": "Jr.",
+   "hometown": "Southlake, Texas",
+   "school": "Carroll Senior HS"
+  },
+  {
+   "num": "27",
+   "name": "Trace Rudd",
+   "pos": "K",
+   "ht": "5-11",
+   "wt": "197",
+   "cl": "Fr.",
+   "hometown": "Overland Park, Kan.",
+   "school": "Blue Valley Northwest HS"
+  },
+  {
+   "num": "28",
+   "name": "Marcus James",
+   "pos": "LB",
+   "ht": "6-3",
+   "wt": "234",
+   "cl": "So.",
+   "hometown": "Oklahoma City, Okla.",
+   "school": "Carl Albert HS"
+  },
+  {
+   "num": "28",
+   "name": "DeZephen Walker",
+   "pos": "RB",
+   "ht": "5-10",
+   "wt": "216",
+   "cl": "Fr.",
+   "hometown": "Kansas City, Mo.",
+   "school": "Raymore-Peculiar HS"
+  },
+  {
+   "num": "29",
+   "name": "Tate Sandell*",
+   "pos": "K",
+   "ht": "5-9",
+   "wt": "180",
+   "cl": "5th",
+   "hometown": "Port Neches, Texas",
+   "school": "UTSA"
+  },
+  {
+   "num": "29",
+   "name": "Gabe Sawchuk",
+   "pos": "RB",
+   "ht": "5-10",
+   "wt": "205",
+   "cl": "Jr.",
+   "hometown": "Littleton, Colo.",
+   "school": "Valor Christian HS"
+  },
+  {
+   "num": "30",
+   "name": "Dane Bathurst",
+   "pos": "LB",
+   "ht": "6-4",
+   "wt": "231",
+   "cl": "Fr.",
+   "hometown": "Carmel, Ind.",
+   "school": "Carmel HS"
+  },
+  {
+   "num": "31",
+   "name": "Reed DeQuasie",
+   "pos": "DB",
+   "ht": "6-1",
+   "wt": "204",
+   "cl": "Sr.",
+   "hometown": "Choctaw, Okla.",
+   "school": "Carl Albert HS"
+  },
+  {
+   "num": "33",
+   "name": "LeBron Bauer",
+   "pos": "DB",
+   "ht": "6-0",
+   "wt": "184",
+   "cl": "Fr.",
+   "hometown": "Allen, Texas",
+   "school": "Allen HS"
+  },
+  {
+   "num": "33",
+   "name": "Preston Tarpley",
+   "pos": "K",
+   "ht": "6-0",
+   "wt": "189",
+   "cl": "So.",
+   "hometown": "Gunter, Texas",
+   "school": "Gunter HS"
+  },
+  {
+   "num": "34",
+   "name": "Adepoju Adebawore***",
+   "pos": "DL",
+   "ht": "6-4",
+   "wt": "265",
+   "cl": "Sr.",
+   "hometown": "Kansas City, Mo.",
+   "school": "North Kansas City HS"
+  },
+  {
+   "num": "35",
+   "name": "Liam Evans",
+   "pos": "K",
+   "ht": "5-7",
+   "wt": "177",
+   "cl": "Jr.",
+   "hometown": "Moore, Okla.",
+   "school": "Moore HS"
+  },
+  {
+   "num": "35",
+   "name": "D’Yoni Hill",
+   "pos": "DB",
+   "ht": "5-11",
+   "wt": "168",
+   "cl": "5th",
+   "hometown": "Gainesville, Fla.",
+   "school": "University of Wisconsin"
+  },
+  {
+   "num": "37",
+   "name": "Prince Ijioma",
+   "pos": "DB",
+   "ht": "6-2",
+   "wt": "200",
+   "cl": "Jr.",
+   "hometown": "Little Elm, Texas",
+   "school": "Mississippi Valley State Univ."
+  },
+  {
+   "num": "38",
+   "name": "Owen Heinecke***",
+   "pos": "LB",
+   "ht": "6-1",
+   "wt": "230",
+   "cl": "6th^",
+   "hometown": "Tulsa, Okla.",
+   "school": "Ohio State University"
+  },
+  {
+   "num": "40",
+   "name": "Matthew Nelson",
+   "pos": "DL",
+   "ht": "6-5",
+   "wt": "247",
+   "cl": "Fr.",
+   "hometown": "Bryant, Ark.",
+   "school": "Bryant HS"
+  },
+  {
+   "num": "41",
+   "name": "Barrett Travis",
+   "pos": "LB",
+   "ht": "6-0",
+   "wt": "221",
+   "cl": "So.",
+   "hometown": "Oklahoma City, Okla.",
+   "school": "Heritage Hall School"
+  },
+  {
+   "num": "42",
+   "name": "Wyatt Gilmore",
+   "pos": "DL",
+   "ht": "6-4",
+   "wt": "259",
+   "cl": "Jr.",
+   "hometown": "Rogers, Minn.",
+   "school": "Rogers HS"
+  },
+  {
+   "num": "43",
+   "name": "Grayson Miller*",
+   "pos": "K/P",
+   "ht": "5-9",
+   "wt": "193",
+   "cl": "5th",
+   "hometown": "Edmond, Okla.",
+   "school": "Univ. of Central Oklahoma"
+  },
+  {
+   "num": "44",
+   "name": "John Locke Jr.*",
+   "pos": "TE",
+   "ht": "6-4",
+   "wt": "250",
+   "cl": "5th^",
+   "hometown": "San Antonio, Texas",
+   "school": "Louisiana Tech University"
+  },
+  {
+   "num": "44",
+   "name": "Taylor Wein**",
+   "pos": "DL",
+   "ht": "6-4",
+   "wt": "265",
+   "cl": "Sr.",
+   "hometown": "Brentwood, Tenn.",
+   "school": "Nolensville HS"
+  },
+  {
+   "num": "47",
+   "name": "James Nesta*",
+   "pos": "LB",
+   "ht": "6-3",
+   "wt": "230",
+   "cl": "Jr.",
+   "hometown": "Huntersville, N.C.",
+   "school": "William Amos Hough HS"
+  },
+  {
+   "num": "50",
+   "name": "Ben Anderson***",
+   "pos": "LS",
+   "ht": "6-5",
+   "wt": "250",
+   "cl": "5th^",
+   "hometown": "Charlotte, N.C.",
+   "school": "Charlotte Latin School"
+  },
+  {
+   "num": "51",
+   "name": "Jaydon Southard",
+   "pos": "LB",
+   "ht": "6-0",
+   "wt": "220",
+   "cl": "5th^",
+   "hometown": "Wichita Falls, Texas",
+   "school": "Stephen F. Austin Univ."
+  },
+  {
+   "num": "52",
+   "name": "Noah Best",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "319",
+   "cl": "Fr.",
+   "hometown": "Midlothian, Texas",
+   "school": "Midlothian HS"
+  },
+  {
+   "num": "54",
+   "name": "Seth Freeman",
+   "pos": "LS",
+   "ht": "6-0",
+   "wt": "232",
+   "cl": "So.",
+   "hometown": "Moore, Okla.",
+   "school": "Moore HS"
+  },
+  {
+   "num": "55",
+   "name": "Eddy Pierre-Louis*",
+   "pos": "OL",
+   "ht": "6-3",
+   "wt": "318",
+   "cl": "Jr.",
+   "hometown": "Tampa, Fla.",
+   "school": "Tampa Catholic HS"
+  },
+  {
+   "num": "55",
+   "name": "Danny Saili",
+   "pos": "DL",
+   "ht": "6-1",
+   "wt": "280",
+   "cl": "5th",
+   "hometown": "Topeka, Kan.",
+   "school": "University of Arkansas"
+  },
+  {
+   "num": "56",
+   "name": "Michael Fasusi*",
+   "pos": "OL",
+   "ht": "6-5",
+   "wt": "319",
+   "cl": "So.",
+   "hometown": "Omuo-Ekiti, Nigeria",
+   "school": "Lewisville [TX] HS"
+  },
+  {
+   "num": "57",
+   "name": "Gunnar Allen*",
+   "pos": "OL",
+   "ht": "6-1",
+   "wt": "295",
+   "cl": "5th^",
+   "hometown": "Aledo, Texas",
+   "school": "Aledo HS"
+  },
+  {
+   "num": "58",
+   "name": "James Carrington",
+   "pos": "DL",
+   "ht": "6-2",
+   "wt": "295",
+   "cl": "Fr.",
+   "hometown": "Buena Park, Calif.",
+   "school": "Crean Lutheran HS"
+  },
+  {
+   "num": "60",
+   "name": "Caleb Nitta",
+   "pos": "OL",
+   "ht": "6-2",
+   "wt": "302",
+   "cl": "Sr.",
+   "hometown": "Leesburg, Va.",
+   "school": "Western Kentucky University"
+  },
+  {
+   "num": "61",
+   "name": "Kenny Wermy",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "312",
+   "cl": "Sr.",
+   "hometown": "Cache, Okla.",
+   "school": "Univ. of Central Oklahoma"
+  },
+  {
+   "num": "64",
+   "name": "Sean Hutton",
+   "pos": "OL",
+   "ht": "6-0",
+   "wt": "310",
+   "cl": "So.",
+   "hometown": "Lewisville, Texas",
+   "school": "Lewisville HS"
+  },
+  {
+   "num": "65",
+   "name": "Ace Hodges",
+   "pos": "OL",
+   "ht": "6-1",
+   "wt": "305",
+   "cl": "Jr.",
+   "hometown": "Oklahoma City, Okla.",
+   "school": "Casady School"
+  },
+  {
+   "num": "65",
+   "name": "Jayden Jackson**",
+   "pos": "DL",
+   "ht": "6-2",
+   "wt": "306",
+   "cl": "Jr.",
+   "hometown": "Indianapolis, Ind.",
+   "school": "IMG Academy [Fla.]"
+  },
+  {
+   "num": "68",
+   "name": "Owen Hollenbeck",
+   "pos": "OL",
+   "ht": "6-3",
+   "wt": "345",
+   "cl": "So.",
+   "hometown": "Melissa, Texas",
+   "school": "Melissa HS"
+  },
+  {
+   "num": "69",
+   "name": "Jake Maikkula*",
+   "pos": "OL",
+   "ht": "6-6",
+   "wt": "309",
+   "cl": "5th^",
+   "hometown": "Sedalia, Colo.",
+   "school": "Stanford University"
+  },
+  {
+   "num": "70",
+   "name": "Ryan Fodje*",
+   "pos": "OL",
+   "ht": "6-5",
+   "wt": "321",
+   "cl": "So.",
+   "hometown": "Cypress, Texas",
+   "school": "Bridgeland HS"
+  },
+  {
+   "num": "71",
+   "name": "Peyton Joseph",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "331",
+   "cl": "So.",
+   "hometown": "Fort Valley, Ga.",
+   "school": "Georgia Tech University"
+  },
+  {
+   "num": "72",
+   "name": "Fred Hinton",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "313",
+   "cl": "Jr.",
+   "hometown": "Miami, Fla.",
+   "school": "Eastern Kentucky University"
+  },
+  {
+   "num": "73",
+   "name": "Deacon Schmitt",
+   "pos": "OL",
+   "ht": "6-5",
+   "wt": "320",
+   "cl": "Fr.",
+   "hometown": "Windsor, Colo.",
+   "school": "Windsor HS"
+  },
+  {
+   "num": "74",
+   "name": "Darius Afalava",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "369",
+   "cl": "So.",
+   "hometown": "Hau’ula, Hawai’i",
+   "school": "Skyridge HS [Utah]"
+  },
+  {
+   "num": "75",
+   "name": "Daniel Akinkunmi",
+   "pos": "OL",
+   "ht": "6-6",
+   "wt": "327",
+   "cl": "Jr.",
+   "hometown": "East London, England",
+   "school": "NFL Academy"
+  },
+  {
+   "num": "76",
+   "name": "E’Marion Harris",
+   "pos": "OL",
+   "ht": "6-6",
+   "wt": "318",
+   "cl": "5th^",
+   "hometown": "Little Rock, Ark.",
+   "school": "University of Arkansas"
+  },
+  {
+   "num": "77",
+   "name": "Heath Ozaeta**",
+   "pos": "OL",
+   "ht": "6-5",
+   "wt": "315",
+   "cl": "Sr.",
+   "hometown": "Snoqualmie, Wash.",
+   "school": "Mount Si HS"
+  },
+  {
+   "num": "80",
+   "name": "Bergin Kysar",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "254",
+   "cl": "Jr.",
+   "hometown": "Edmond, Okla.",
+   "school": "Santa Fe HS"
+  },
+  {
+   "num": "80",
+   "name": "Eli Merck*",
+   "pos": "WR",
+   "ht": "5-11",
+   "wt": "206",
+   "cl": "Sr.",
+   "hometown": "Norris, S.C.",
+   "school": "D.W. Daniel HS"
+  },
+  {
+   "num": "81",
+   "name": "Rocky Beers",
+   "pos": "TE",
+   "ht": "6-5",
+   "wt": "240",
+   "cl": "6th^",
+   "hometown": "Littleton, Colo.",
+   "school": "Colorado State University"
+  },
+  {
+   "num": "82",
+   "name": "Ivan Carreon**",
+   "pos": "WR",
+   "ht": "6-6",
+   "wt": "238",
+   "cl": "Jr.",
+   "hometown": "Odessa, Texas",
+   "school": "Odessa HS"
+  },
+  {
+   "num": "84",
+   "name": "Xavier Okwufulueze",
+   "pos": "WR",
+   "ht": "6-5",
+   "wt": "216",
+   "cl": "Fr.",
+   "hometown": "Owasso, Okla.",
+   "school": "Rejoice Christian Academy"
+  },
+  {
+   "num": "85",
+   "name": "Trey Brown*",
+   "pos": "WR",
+   "ht": "5-9",
+   "wt": "181",
+   "cl": "Sr.",
+   "hometown": "Nashville, Tenn.",
+   "school": "Christ Presbyterian Academy"
+  },
+  {
+   "num": "86",
+   "name": "CJ Nickson",
+   "pos": "TE",
+   "ht": "6-4",
+   "wt": "275",
+   "cl": "So.",
+   "hometown": "Weatherford, Okla.",
+   "school": "Weatherford HS"
+  },
+  {
+   "num": "87",
+   "name": "Jacob Ulrich*",
+   "pos": "P",
+   "ht": "6-5",
+   "wt": "208",
+   "cl": "Sr.",
+   "hometown": "Dacula, Ga.",
+   "school": "Kennesaw State University"
+  },
+  {
+   "num": "88",
+   "name": "Jack Van Dorselaer",
+   "pos": "TE",
+   "ht": "6-4",
+   "wt": "253",
+   "cl": "So.",
+   "hometown": "Southlake, Texas",
+   "school": "Carroll Senior HS"
+  },
+  {
+   "num": "89",
+   "name": "Hayden Hansen",
+   "pos": "TE",
+   "ht": "6-8",
+   "wt": "266",
+   "cl": "5th^",
+   "hometown": "Weatherford, Texas",
+   "school": "University of Florida"
+  },
+  {
+   "num": "90",
+   "name": "Trent Wilson",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "305",
+   "cl": "So.",
+   "hometown": "Washington, D.C.",
+   "school": "Dr. Henry A. Wise Jr. HS"
+  },
+  {
+   "num": "92",
+   "name": "Jacob Henry",
+   "pos": "DL",
+   "ht": "6-0",
+   "wt": "297",
+   "cl": "Jr.",
+   "hometown": "Austin, Texas",
+   "school": "Vandergrift HS"
+  },
+  {
+   "num": "94",
+   "name": "Kenny Ozowalu",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "277",
+   "cl": "Jr.",
+   "hometown": "San Antonio, Texas",
+   "school": "UTSA"
+  },
+  {
+   "num": "95",
+   "name": "Daniel Norman",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "241",
+   "cl": "Fr.",
+   "hometown": "Hollywood, Fla.",
+   "school": "St. Thomas Aquinas HS"
+  },
+  {
+   "num": "97",
+   "name": "Alex Shieldnight",
+   "pos": "DL",
+   "ht": "6-2",
+   "wt": "255",
+   "cl": "So.",
+   "hometown": "Wagoner, Okla.",
+   "school": "Wagoner HS"
+  },
+  {
+   "num": "98",
+   "name": "Jake Kreul",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "246",
+   "cl": "Fr.",
+   "hometown": "Orlando, Fla.",
+   "school": "IMG Academy"
+  },
+  {
+   "num": "99",
+   "name": "Braxton Fely",
+   "pos": "DL",
+   "ht": "6-2",
+   "wt": "290",
+   "cl": "5th^",
+   "hometown": "Orem, Utah",
+   "school": "Boise State University"
+  }
+ ],
+ "notes": {
+  "pageHeaders": {
+   "p8": "GAME 9: OU AT FLORIDA NUMERICAL ROSTER",
+   "p9": "GAME 9: OU AT FLORIDA ALPHABETICAL ROSTER"
+  },
+  "pageFooters": {
+   "p8": "8 2026 OKLAHOMA FOOTBALL",
+   "p9": "@OU_FOOTBALL SOONERSPORTS.COM 9"
+  },
+  "columnHeader": "No. Player Pos. Ht. Wt. Yr. Hometown (Previous School)",
+  "columnHeaderNote": "Read from the rendered page; the text layer of this header row is font-encoded and not machine-readable.",
+  "legend": [
+   "* Indicates number of letters earned at OU",
+   "^ Has earned an undergraduate degree",
+   "Last updated Nov. 2, 2026",
+   "Weights as of Aug. 4, 2026"
+  ],
+  "pronunciationGuideTitle": "PRONUNCIATION GUIDE",
+  "pronunciationGuide": [
+   {
+    "name": "Adepoju Adebawore",
+    "say": "add-ee-PUH-joo add-ee-BAH-woh-reh"
+   },
+   {
+    "name": "Darius Afalava",
+    "say": "DAIR-ee-us ah-fah-LAH-vuh"
+   },
+   {
+    "name": "Daniel Akinkunmi",
+    "say": "a-KIN-koon-mee"
+   },
+   {
+    "name": "Mackenzie Alleyne",
+    "say": "al-LEAN"
+   },
+   {
+    "name": "Lloyd Avant",
+    "say": "ah-VAHNT"
+   },
+   {
+    "name": "Dane Bathurst",
+    "say": "BATH-urst"
+   },
+   {
+    "name": "Michael Boganowski",
+    "say": "bo-guh-NOW-skee"
+   },
+   {
+    "name": "Ivan Carreon",
+    "say": "EYE-vin carr-ee-OWN"
+   },
+   {
+    "name": "Reed DeQuasie",
+    "say": "deh-KWAY-zee"
+   },
+   {
+    "name": "Michael Fasusi",
+    "say": "fah-SOO-see"
+   },
+   {
+    "name": "Braxton Fely",
+    "say": "FEE-lee"
+   },
+   {
+    "name": "Ryan Fodje",
+    "say": "FO-jay"
+   },
+   {
+    "name": "Markel Ford",
+    "say": "mar-KELL"
+   },
+   {
+    "name": "Courtland Guillory",
+    "say": "GILL-or-ee"
+   },
+   {
+    "name": "E’Marion Harris",
+    "say": "ee-MARR-ee-on"
+   },
+   {
+    "name": "Taylor Heim",
+    "say": "HIME"
+   },
+   {
+    "name": "D’Yoni Hill",
+    "say": "dee-YAHN-ee"
+   },
+   {
+    "name": "Prince Ijioma",
+    "say": "ee-JAH-muh"
+   },
+   {
+    "name": "Beau and Niko Jandreau",
+    "say": "JAN-dro"
+   },
+   {
+    "name": "Jake Kreul",
+    "say": "KRELL"
+   },
+   {
+    "name": "Bergin Kysar",
+    "say": "BERG-in KY-zer"
+   },
+   {
+    "name": "Parker Livingstone",
+    "say": "LIV-ing-stin"
+   },
+   {
+    "name": "Jake Maikkula",
+    "say": "MIKE-uh-luh"
+   },
+   {
+    "name": "Ben McCreary",
+    "say": "mc-CRAIR-ee"
+   },
+   {
+    "name": "Kristan Moore",
+    "say": "KRISH-tin"
+   },
+   {
+    "name": "Caleb Nitta",
+    "say": "NEET-uh"
+   },
+   {
+    "name": "Jett Niu",
+    "say": "NEW"
+   },
+   {
+    "name": "Danny Okoye",
+    "say": "o-KOY-yay"
+   },
+   {
+    "name": "Xavier Okwufulueze",
+    "say": "ex-ZAY-vee-er oh-kuh-fuh-LAY-zay"
+   },
+   {
+    "name": "Heath Ozaeta",
+    "say": "o-ZY-tuh"
+   },
+   {
+    "name": "Kenny Ozowalu",
+    "say": "oh-zuh-WAH-loo"
+   },
+   {
+    "name": "Jayden Petit",
+    "say": "puh-TEET"
+   },
+   {
+    "name": "Eddy Pierre-Louis",
+    "say": "pee-AIR loo-WEE"
+   },
+   {
+    "name": "Omarion Robinson",
+    "say": "oh-MAR-ee-on"
+   },
+   {
+    "name": "Xavier Robinson",
+    "say": "ex-ZAY-vee-er"
+   },
+   {
+    "name": "Danny Saili",
+    "say": "sah-EEL-ee"
+   },
+   {
+    "name": "Tate Sandell",
+    "say": "san-DELL"
+   },
+   {
+    "name": "Isaiah Sategna",
+    "say": "suh-TAIN-yuh"
+   },
+   {
+    "name": "Jaydon Southard",
+    "say": "SUH-thurd"
+   },
+   {
+    "name": "Jacob Ulrich",
+    "say": "ULL-rick"
+   },
+   {
+    "name": "Jack Van Dorselaer",
+    "say": "van-DORE-suh-lair"
+   },
+   {
+    "name": "DeZephen Walker",
+    "say": "deh-ZEFF-in"
+   },
+   {
+    "name": "Trynae Washington",
+    "say": "trih-NAY"
+   },
+   {
+    "name": "Elgee Webster",
+    "say": "“LG”"
+   },
+   {
+    "name": "Taylor Wein",
+    "say": "WINE"
+   }
+  ],
+  "coachingStaffTitle": "COACHING STAFF",
+  "coachingStaff": [
+   {
+    "name": "Brent Venables",
+    "role": "Head Coach"
+   },
+   {
+    "name": "Todd Bates",
+    "role": "Associate Head Coach/Co-Def. Coord./Run Defense/Defensive Tackles"
+   },
+   {
+    "name": "Bill Bedenbaugh (BEE-din-bo)",
+    "role": "Offensive Line"
+   },
+   {
+    "name": "Xavier Brewer (ex-ZAY-vee-er)",
+    "role": "Assistant Secondary Coach"
+   },
+   {
+    "name": "Miguel Chavis (CHAY-viss)",
+    "role": "Defensive Ends"
+   },
+   {
+    "name": "Doug Deakin",
+    "role": "Special Teams Coordinator"
+   },
+   {
+    "name": "Nate Dreiling",
+    "role": "Inside Linebackers"
+   },
+   {
+    "name": "Wes Goodwin",
+    "role": "Assistant Linebackers/Outside Linebackers"
+   },
+   {
+    "name": "Brandon Hall",
+    "role": "Safeties"
+   },
+   {
+    "name": "Emmett Jones",
+    "role": "Passing Game Coordinator/Wide Receivers"
+   },
+   {
+    "name": "John Kuceyeski (koo-see-ESS-kee)",
+    "role": "Quarterbacks Coach"
+   },
+   {
+    "name": "Deland McCullough (DEE-lind)",
+    "role": "Running Backs"
+   },
+   {
+    "name": "LaMar Morgan",
+    "role": "Cornerbacks"
+   },
+   {
+    "name": "Kevin Wilson",
+    "role": "Assistant Head Coach for Offense"
+   },
+   {
+    "name": "Jason Witten",
+    "role": "Interim Offensive Coordinator/Tight Ends"
+   }
+  ]
+ }
+}

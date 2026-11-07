@@ -1,0 +1,15 @@
+Package snapshot, not a fresh Wix read.
+
+2d31ea6f-538f-4d40-8bca-e497943d80e1.api.json is the Wix native post object for "Witten Off? Oklahoma's New Play-Caller vs. the Gators' Pass Rush
+(Scouting Oklahoma, Part 1)" as supplied in the Claude Code handoff package
+(articles/oklahoma-scouting-part1.native.json; package manifest articles.json, entry acquired 2026-11-06 22:19:25 UTC,
+"Authenticated Wix Blog Get Post with URL, RICH_CONTENT, CONTENT_TEXT"). It is the published version: firstPublishedDate and
+lastPublishedDate are both 2026-11-06T22:00:33.325Z, hasUnpublishedChanges is false (never edited since publish).
+
+The package file is a bare post object. It was wrapped as {"post": ...} so magazine/normalize_wix_post.py can read it; no key or
+value was changed, added or removed (the package copy also carries contentText, which the other raw files do not). No Wix, GitHub
+or other connector was called to make this copy. The live post has not been re-read for this build.
+
+Post id 2d31ea6f-538f-4d40-8bca-e497943d80e1, member fade11f0-405c-4425-bbab-111e5350dcdb (GatorBait Staff).
+Hero photo (owned, Auburn Sept. 19, 2026; do not imply Oklahoma-game action): media 16b519_cf457578f2f644d8ad819a988cd40684~mv2.jpg,
+3000 x 1730; package copy articles/images/2d31ea6f-538f-4d40-8bca-e497943d80e1.jpg.

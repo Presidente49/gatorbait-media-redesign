@@ -1,0 +1,1382 @@
+{
+ "source": "UF Week 10 game notes (floridagators.com), PDF pp. 40-41",
+ "asOf": "week of Nov. 2, 2026",
+ "rows": [
+  {
+   "num": "0",
+   "name": "Woods, Jayden",
+   "pos": "JACK",
+   "ht": "6-3",
+   "wt": "245",
+   "cl": "So.",
+   "hometown": "Shawnee, Kan.",
+   "school": "Mill Valley"
+  },
+  {
+   "num": "1",
+   "name": "Brown III, Vernell",
+   "pos": "WR",
+   "ht": "5-11",
+   "wt": "178",
+   "cl": "So.",
+   "hometown": "Gainesville, Fla.",
+   "school": "Jones"
+  },
+  {
+   "num": "1",
+   "name": "Thornton, Bryce",
+   "pos": "S",
+   "ht": "5-10",
+   "wt": "211",
+   "cl": "Sr.",
+   "hometown": "College Park, Ga.",
+   "school": "Milton"
+  },
+  {
+   "num": "2",
+   "name": "Hayward, Lagonza",
+   "pos": "S",
+   "ht": "6-1",
+   "wt": "207",
+   "cl": "So.",
+   "hometown": "Lyons, Ga.",
+   "school": "Toombs County"
+  },
+  {
+   "num": "2",
+   "name": "Singleton Jr., Eric",
+   "pos": "WR",
+   "ht": "5-10",
+   "wt": "184",
+   "cl": "Sr.",
+   "hometown": "Atlanta, Ga.",
+   "school": "Alexander / Georgia Tech / Auburn"
+  },
+  {
+   "num": "3",
+   "name": "Konanbanny, Onis",
+   "pos": "CB",
+   "ht": "6-0",
+   "wt": "190",
+   "cl": "So.",
+   "hometown": "London, England",
+   "school": "Heathwood Hall Episcopal"
+  },
+  {
+   "num": "3",
+   "name": "Stockton, Bailey",
+   "pos": "WR",
+   "ht": "5-10",
+   "wt": "183",
+   "cl": "Sr.",
+   "hometown": "Bogart, Ga.",
+   "school": "Prince Avenue Christian / Georgia Tech"
+  },
+  {
+   "num": "4",
+   "name": "Abrams, TJ",
+   "pos": "WR",
+   "ht": "5-10",
+   "wt": "198",
+   "cl": "Jr.",
+   "hometown": "Fort Myers, Fla.",
+   "school": "Dunbar"
+  },
+  {
+   "num": "5",
+   "name": "Graham, Myles",
+   "pos": "ILB",
+   "ht": "6-1",
+   "wt": "228",
+   "cl": "Jr.",
+   "hometown": "Gainesville, Fla.",
+   "school": "Buchholz"
+  },
+  {
+   "num": "5",
+   "name": "Mays Jr., Micah",
+   "pos": "WR",
+   "ht": "6-1",
+   "wt": "197",
+   "cl": "Sr.",
+   "hometown": "West Palm Beach, Fla.",
+   "school": "The Benjamin School / Wake Forest"
+  },
+  {
+   "num": "6",
+   "name": "Flowers, J'Vari",
+   "pos": "CB",
+   "ht": "5-10",
+   "wt": "189",
+   "cl": "So.",
+   "hometown": "Miami, Fla.",
+   "school": "Northwestern"
+  },
+  {
+   "num": "6",
+   "name": "Wilson, Dallas",
+   "pos": "WR",
+   "ht": "6-3",
+   "wt": "212",
+   "cl": "So.",
+   "hometown": "Tampa, Fla.",
+   "school": "Tampa Bay Tech"
+  },
+  {
+   "num": "7",
+   "name": "Jackson, Amir",
+   "pos": "TE",
+   "ht": "6-5",
+   "wt": "232",
+   "cl": "Jr.",
+   "hometown": "Statesboro, Ga.",
+   "school": "Portal"
+  },
+  {
+   "num": "7",
+   "name": "Jackson, Ty",
+   "pos": "ILB",
+   "ht": "6-2",
+   "wt": "228",
+   "cl": "So.",
+   "hometown": "Fort Lauderdale, Fla.",
+   "school": "Seminole Ridge"
+  },
+  {
+   "num": "8",
+   "name": "Chiles, Aaron",
+   "pos": "ILB",
+   "ht": "6-3",
+   "wt": "238",
+   "cl": "Jr.",
+   "hometown": "Largo, Md.",
+   "school": "Our Lady of Good Counsel"
+  },
+  {
+   "num": "9",
+   "name": "Jones Jr., Tramell",
+   "pos": "QB",
+   "ht": "6-0",
+   "wt": "196",
+   "cl": "So.",
+   "hometown": "Jacksonville, Fla.",
+   "school": "Mandarin"
+  },
+  {
+   "num": "9",
+   "name": "Stubbs, Drake",
+   "pos": "S",
+   "ht": "6-1",
+   "wt": "203",
+   "cl": "So.",
+   "hometown": "Jacksonville, Fla.",
+   "school": "Mandarin"
+  },
+  {
+   "num": "10",
+   "name": "Dooley, Cam",
+   "pos": "S",
+   "ht": "6-2",
+   "wt": "207",
+   "cl": "Jr.",
+   "hometown": "Valley, Ala.",
+   "school": "Valley / Kentucky"
+  },
+  {
+   "num": "10",
+   "name": "Williams, Aaron",
+   "pos": "QB",
+   "ht": "6-1",
+   "wt": "206",
+   "cl": "Jr.",
+   "hometown": "Orlando, Fla.",
+   "school": "Winter Park"
+  },
+  {
+   "num": "11",
+   "name": "Griffin, Will",
+   "pos": "QB",
+   "ht": "6-3",
+   "wt": "219",
+   "cl": "Fr.",
+   "hometown": "Treasure Island, Fla.",
+   "school": "Jesuit"
+  },
+  {
+   "num": "11",
+   "name": "McCray, LJ",
+   "pos": "DL",
+   "ht": "6-6",
+   "wt": "277",
+   "cl": "Jr.",
+   "hometown": "Daytona, Fla.",
+   "school": "Mainland"
+  },
+  {
+   "num": "12",
+   "name": "Hanks III, Ben",
+   "pos": "CB",
+   "ht": "6-1",
+   "wt": "186",
+   "cl": "So.",
+   "hometown": "Overtown, Fla.",
+   "school": "Booker T. Washington"
+  },
+  {
+   "num": "12",
+   "name": "Philo, Aaron",
+   "pos": "QB",
+   "ht": "6-1",
+   "wt": "207",
+   "cl": "Jr.",
+   "hometown": "Bogart, Ga.",
+   "school": "Prince Avenue Christian / Georgia Tech"
+  },
+  {
+   "num": "13",
+   "name": "Baugh, Jadan",
+   "pos": "RB",
+   "ht": "6-1",
+   "wt": "225",
+   "cl": "Jr.",
+   "hometown": "Atlanta, Ga.",
+   "school": "Columbia"
+  },
+  {
+   "num": "14",
+   "name": "Ford, KJ",
+   "pos": "JACK",
+   "ht": "6-4",
+   "wt": "250",
+   "cl": "Fr.",
+   "hometown": "Dallas, Texas",
+   "school": "Duncanville"
+  },
+  {
+   "num": "15",
+   "name": "Bronaugh, CJ",
+   "pos": "CB",
+   "ht": "6-0",
+   "wt": "183",
+   "cl": "Fr.",
+   "hometown": "Orlando, Fla./",
+   "school": "Windermere"
+  },
+  {
+   "num": "15",
+   "name": "Harpring, Luke",
+   "pos": "TE",
+   "ht": "6-3",
+   "wt": "237",
+   "cl": "Jr.",
+   "hometown": "Atlanta, Ga.",
+   "school": "Marist School / Georgia Tech"
+  },
+  {
+   "num": "16",
+   "name": "Bullard, TJ",
+   "pos": "ILB",
+   "ht": "6-1",
+   "wt": "213",
+   "cl": "5th",
+   "hometown": "Tampa, Fla.",
+   "school": "Berkeley Prep / UCF"
+  },
+  {
+   "num": "16",
+   "name": "Warner, Aidan",
+   "pos": "QB",
+   "ht": "6-3",
+   "wt": "202",
+   "cl": "Sr.",
+   "hometown": "Winter Park, Fla.",
+   "school": "Winter Park / Yale"
+  },
+  {
+   "num": "17",
+   "name": "Bullard, Titus",
+   "pos": "JACK",
+   "ht": "6-4",
+   "wt": "239",
+   "cl": "Jr.",
+   "hometown": "Tampa, Fla.",
+   "school": "Berkeley Prep"
+  },
+  {
+   "num": "17",
+   "name": "Dippre, Lacota",
+   "pos": "TE",
+   "ht": "6-3",
+   "wt": "248",
+   "cl": "Sr.",
+   "hometown": "Scranton, Pa.",
+   "school": "Lakeland (Pa.) / Charlotte / James Madison"
+  },
+  {
+   "num": "18",
+   "name": "Groce, Davian",
+   "pos": "WR",
+   "ht": "6-2",
+   "wt": "199",
+   "cl": "Fr.",
+   "hometown": "Frisco, Texas",
+   "school": "Frisco Lone Star"
+  },
+  {
+   "num": "19",
+   "name": "Lloyd, Jaylen",
+   "pos": "WR",
+   "ht": "5-10",
+   "wt": "185",
+   "cl": "Sr.",
+   "hometown": "Omaha, Neb.",
+   "school": "Omaha Westside / Nebraska / Oklahoma State"
+  },
+  {
+   "num": "20",
+   "name": "Clark, Duke",
+   "pos": "RB",
+   "ht": "6-2",
+   "wt": "208",
+   "cl": "So.",
+   "hometown": "Tampa, Fla.",
+   "school": "Plant"
+  },
+  {
+   "num": "20",
+   "name": "Clark, Kanye",
+   "pos": "STAR",
+   "ht": "5-10",
+   "wt": "184",
+   "cl": "Sr.",
+   "hometown": "Sacramento, Calif.",
+   "school": "Capital Christian / UCLA"
+  },
+  {
+   "num": "21",
+   "name": "Hester, CJ",
+   "pos": "CB",
+   "ht": "6-0",
+   "wt": "192",
+   "cl": "Fr.",
+   "hometown": "Titusville, Fla.",
+   "school": "Cocoa"
+  },
+  {
+   "num": "21",
+   "name": "Pryor, Evan",
+   "pos": "RB",
+   "ht": "5-10",
+   "wt": "189",
+   "cl": "6th",
+   "hometown": "Cornelius, N.C.",
+   "school": "Williams Amos Hough / Ohio State / Cincinnati"
+  },
+  {
+   "num": "22",
+   "name": "Asare, Kofi",
+   "pos": "JACK",
+   "ht": "6-5",
+   "wt": "247",
+   "cl": "5th.",
+   "hometown": "Worcester, Mass.",
+   "school": "Doherty Memorial / UMass"
+  },
+  {
+   "num": "22",
+   "name": "Jackson, Kahleil",
+   "pos": "WR",
+   "ht": "6-3",
+   "wt": "214",
+   "cl": "7th",
+   "hometown": "Hawthorne, Fla.",
+   "school": "Hawthorne"
+  },
+  {
+   "num": "23",
+   "name": "Edgecombe, Jaden",
+   "pos": "WR",
+   "ht": "5-8",
+   "wt": "190",
+   "cl": "Sr.",
+   "hometown": "Cocoa, Fla.",
+   "school": "Cocoa"
+  },
+  {
+   "num": "23",
+   "name": "Jones, Javier",
+   "pos": "CB",
+   "ht": "6-1",
+   "wt": "182",
+   "cl": "Jr.",
+   "hometown": "Phoenix, Ariz.",
+   "school": "Mountain Pointe / Independence CC"
+  },
+  {
+   "num": "24",
+   "name": "James, Kamran",
+   "pos": "DL",
+   "ht": "6-6",
+   "wt": "278",
+   "cl": "Sr.",
+   "hometown": "Orlando, Fla.",
+   "school": "Olympia"
+  },
+  {
+   "num": "24",
+   "name": "Montgomery, London",
+   "pos": "RB",
+   "ht": "5-10",
+   "wt": "192",
+   "cl": "Sr.",
+   "hometown": "Scranton, Pa.",
+   "school": "Scranton Prep / Penn State / East Carolina"
+  },
+  {
+   "num": "25",
+   "name": "McClain, Cormani",
+   "pos": "CB",
+   "ht": "6-2",
+   "wt": "181",
+   "cl": "Sr.",
+   "hometown": "Lakeland, Fla.",
+   "school": "Lakeland / Colorado"
+  },
+  {
+   "num": "25",
+   "name": "Rubio, Anthony",
+   "pos": "RB",
+   "ht": "5-9",
+   "wt": "187",
+   "cl": "Sr.",
+   "hometown": "Miami, Fla.",
+   "school": "Belen Jesuit"
+  },
+  {
+   "num": "26",
+   "name": "Lowery, Jordy",
+   "pos": "CB",
+   "ht": "5-10",
+   "wt": "183",
+   "cl": "5th",
+   "hometown": "Bartow, Fla.",
+   "school": "Bartow / Western Carolina / East Carolina"
+  },
+  {
+   "num": "27",
+   "name": "Johnson, Dijon",
+   "pos": "CB",
+   "ht": "6-1",
+   "wt": "202",
+   "cl": "Sr.",
+   "hometown": "Tampa, Fla.",
+   "school": "Wharton"
+  },
+  {
+   "num": "27",
+   "name": "Louis, Byron",
+   "pos": "RB",
+   "ht": "6-0",
+   "wt": "195",
+   "cl": "So.",
+   "hometown": "Miramar, Fla.",
+   "school": "American Heritage"
+  },
+  {
+   "num": "28",
+   "name": "Owens, Elijah",
+   "pos": "STAR",
+   "ht": "6-2",
+   "wt": "209",
+   "cl": "So.",
+   "hometown": "Mobile, Ala.",
+   "school": "Citronelle / Mississippi Gulf Coast CC"
+  },
+  {
+   "num": "29",
+   "name": "Robinson, Jaden",
+   "pos": "ILB",
+   "ht": "6-0",
+   "wt": "227",
+   "cl": "Sr.",
+   "hometown": "Lake City, Fla.",
+   "school": "Columbia"
+  },
+  {
+   "num": "30",
+   "name": "Purter, Dylan",
+   "pos": "STAR",
+   "ht": "6-0",
+   "wt": "184",
+   "cl": "Fr.",
+   "hometown": "Tuskegee, Ala.",
+   "school": "Booker T. Washington"
+  },
+  {
+   "num": "32",
+   "name": "Parks, Eric",
+   "pos": "S",
+   "ht": "6-0",
+   "wt": "197",
+   "cl": "Fr.",
+   "hometown": "Tampa, Fla.",
+   "school": "Tampa Tech"
+  },
+  {
+   "num": "33",
+   "name": "Case, Brian",
+   "pos": "RB",
+   "ht": "6-0",
+   "wt": "212",
+   "cl": "So.",
+   "hometown": "Ponte Vedra Beach, Fla.",
+   "school": "Ponte Vedra"
+  },
+  {
+   "num": "33",
+   "name": "Coleman, DJ",
+   "pos": "S",
+   "ht": "6-0",
+   "wt": "206",
+   "cl": "Sr.",
+   "hometown": "Mesquite, Texas",
+   "school": "Horn / Baylor"
+  },
+  {
+   "num": "34",
+   "name": "Hall, Kaiden",
+   "pos": "S",
+   "ht": "6-2",
+   "wt": "210",
+   "cl": "Fr.",
+   "hometown": "Milton, Fla.",
+   "school": "Milton"
+  },
+  {
+   "num": "34",
+   "name": "Jimenez, Kelvin",
+   "pos": "RB",
+   "ht": "6-1",
+   "wt": "216",
+   "cl": "Jr.",
+   "hometown": "Cape Coral, Fla.",
+   "school": "Mariner"
+  },
+  {
+   "num": "35",
+   "name": "Slade, Brayden",
+   "pos": "S",
+   "ht": "6-1",
+   "wt": "193",
+   "cl": "Sr.",
+   "hometown": "Coconut Creek, Fla.",
+   "school": "Monarch"
+  },
+  {
+   "num": "36",
+   "name": "Brown Jr., Vincent",
+   "pos": "CB",
+   "ht": "5-7",
+   "wt": "168",
+   "cl": "Sr.",
+   "hometown": "Gainesville, Fla.",
+   "school": "Wildwood / Southeastern"
+  },
+  {
+   "num": "37",
+   "name": "Toombs, Javion",
+   "pos": "CB",
+   "ht": "5-11",
+   "wt": "188",
+   "cl": "5th",
+   "hometown": "Fort Pierce, Fla.",
+   "school": "Centennial"
+  },
+  {
+   "num": "38",
+   "name": "Clark, Alec",
+   "pos": "P",
+   "ht": "6-0",
+   "wt": "186",
+   "cl": "Sr.",
+   "hometown": "Perth, Australia",
+   "school": "Howard Scholar Academy / Marshall / Tulane"
+  },
+  {
+   "num": "39",
+   "name": "Milliron, Carter",
+   "pos": "LS",
+   "ht": "5-11",
+   "wt": "236",
+   "cl": "5th",
+   "hometown": "Hoover, Ala.",
+   "school": "Hoover / Louisiana"
+  },
+  {
+   "num": "40",
+   "name": "Gross, Jayden",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "246",
+   "cl": "Fr.",
+   "hometown": "Sarasota, Fla.",
+   "school": "Cardinal Mooney"
+  },
+  {
+   "num": "40",
+   "name": "Rabasco, Brandon",
+   "pos": "K",
+   "ht": "6-4",
+   "wt": "215",
+   "cl": "Jr.",
+   "hometown": "Hollywood, Fla.",
+   "school": "South Broward"
+  },
+  {
+   "num": "41",
+   "name": "Padron, Liam",
+   "pos": "K",
+   "ht": "5-9",
+   "wt": "191",
+   "cl": "Jr.",
+   "hometown": "St. Augustine, Fla.",
+   "school": "Bartram Trail / Texas A&M"
+  },
+  {
+   "num": "42",
+   "name": "Kade, Matthew",
+   "pos": "ILB",
+   "ht": "6-0",
+   "wt": "223",
+   "cl": "Jr.",
+   "hometown": "Gainesville, Fla.",
+   "school": "Buchholz"
+  },
+  {
+   "num": "43",
+   "name": "Allen Jr., Alfonzo",
+   "pos": "S",
+   "ht": "5-11",
+   "wt": "196",
+   "cl": "5th.",
+   "hometown": "Miami, Fla.",
+   "school": "Miami Central / Baylor"
+  },
+  {
+   "num": "44",
+   "name": "Johnson, Myles",
+   "pos": "ILB",
+   "ht": "6-1",
+   "wt": "232",
+   "cl": "So.",
+   "hometown": "Brewton, Ala.",
+   "school": "T.R. Miller"
+  },
+  {
+   "num": "47",
+   "name": "Fealy, Miller",
+   "pos": "P",
+   "ht": "6-1",
+   "wt": "208",
+   "cl": "Jr.",
+   "hometown": "Melbourne, Australia",
+   "school": "Marcellin College / Southwestern Oklahoma"
+  },
+  {
+   "num": "48",
+   "name": "Inglis, Nicholas",
+   "pos": "P",
+   "ht": "6-5",
+   "wt": "227",
+   "cl": "Jr.",
+   "hometown": "Dallas, Texas",
+   "school": "Episcopal"
+  },
+  {
+   "num": "48",
+   "name": "Seager, Erich",
+   "pos": "JACK",
+   "ht": "6-3",
+   "wt": "233",
+   "cl": "Sr.",
+   "hometown": "Lake Butler, Fla.",
+   "school": "Union County"
+  },
+  {
+   "num": "49",
+   "name": "Wiggins, Jalen",
+   "pos": "DL",
+   "ht": "6-5",
+   "wt": "271",
+   "cl": "So.",
+   "hometown": "Tallahassee, Fla.",
+   "school": "James Richards"
+  },
+  {
+   "num": "50",
+   "name": "Morris, Malik",
+   "pos": "ILB",
+   "ht": "6-0",
+   "wt": "246",
+   "cl": "Fr.",
+   "hometown": "Lakeland, Fla.",
+   "school": "Lakeland"
+  },
+  {
+   "num": "50",
+   "name": "Zandamela, Jason",
+   "pos": "OL",
+   "ht": "6-3",
+   "wt": "286",
+   "cl": "R-So.",
+   "hometown": "Clearwater, Fla.",
+   "school": "Clearwater Academy"
+  },
+  {
+   "num": "51",
+   "name": "Chukuyem, Tyler",
+   "pos": "OL",
+   "ht": "6-6",
+   "wt": "300",
+   "cl": "Fr.",
+   "hometown": "Douglasville, Ga.",
+   "school": "South Paulding"
+  },
+  {
+   "num": "52",
+   "name": "Leighton, Dylan",
+   "pos": "ILB",
+   "ht": "6-1",
+   "wt": "229",
+   "cl": "So.",
+   "hometown": "New Port Richey, Fla.",
+   "school": "J.W. Mitchell"
+  },
+  {
+   "num": "52",
+   "name": "Moore, Harrison",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "293",
+   "cl": "Jr.",
+   "hometown": "Southlake, Texas",
+   "school": "Carroll"
+  },
+  {
+   "num": "53",
+   "name": "Lovett, Bryce",
+   "pos": "OL",
+   "ht": "6-5",
+   "wt": "305",
+   "cl": "Sr.",
+   "hometown": "Rockledge, Fla.",
+   "school": "Rockledge"
+  },
+  {
+   "num": "54",
+   "name": "Anderson, Lincoln",
+   "pos": "LS",
+   "ht": "6-2",
+   "wt": "243",
+   "cl": "Fr.",
+   "hometown": "Hoover, Ala.",
+   "school": "Hoover"
+  },
+  {
+   "num": "54",
+   "name": "Luckas, Javarii",
+   "pos": "OL",
+   "ht": "6-6",
+   "wt": "313",
+   "cl": "Fr.",
+   "hometown": "Belle Glade, Fla.",
+   "school": "Glades Central / Rise Prep"
+  },
+  {
+   "num": "55",
+   "name": "Dice Jr., TJ",
+   "pos": "OL",
+   "ht": "6-3",
+   "wt": "298",
+   "cl": "So.",
+   "hometown": "College Park, Ga.",
+   "school": "Langston Hughes"
+  },
+  {
+   "num": "55",
+   "name": "Emanuel III, Charles",
+   "pos": "JACK",
+   "ht": "6-3",
+   "wt": "235",
+   "cl": "Jr.",
+   "hometown": "Orlando, Fla.",
+   "school": "Lake Nona"
+  },
+  {
+   "num": "56",
+   "name": "Keumajou-Yondui, Stive-Bentley",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "295",
+   "cl": "Fr.",
+   "hometown": "Miami, Fla.",
+   "school": "Coral Gables"
+  },
+  {
+   "num": "56",
+   "name": "Medlock, Jahari",
+   "pos": "OL",
+   "ht": "6-5",
+   "wt": "309",
+   "cl": "So.",
+   "hometown": "Atlanta, Ga.",
+   "school": "Charles Drew"
+  },
+  {
+   "num": "58",
+   "name": "Solwold, Hunter",
+   "pos": "LS",
+   "ht": "6-3",
+   "wt": "232",
+   "cl": "So.",
+   "hometown": "Fallston, Md. / Fallston",
+   "school": "Washington"
+  },
+  {
+   "num": "59",
+   "name": "Brown, Corey",
+   "pos": "OL",
+   "ht": "6-1",
+   "wt": "295",
+   "cl": "Fr.",
+   "hometown": "Gainesville, Fla.",
+   "school": "Jones"
+  },
+  {
+   "num": "61",
+   "name": "Carr, G'Nivre",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "311",
+   "cl": "Fr.",
+   "hometown": "Ocala, Fla.",
+   "school": "IMG Academy"
+  },
+  {
+   "num": "63",
+   "name": "Jones, Caden",
+   "pos": "OL",
+   "ht": "6-8",
+   "wt": "319",
+   "cl": "Sr.",
+   "hometown": "New Orleans, La.",
+   "school": "De La Salle"
+  },
+  {
+   "num": "64",
+   "name": "Boyer, Eagan",
+   "pos": "OL",
+   "ht": "6-8",
+   "wt": "306",
+   "cl": "Jr.",
+   "hometown": "Cornelius, N.C.",
+   "school": "Hough / Penn State"
+  },
+  {
+   "num": "66",
+   "name": "Ugorji, Emeka",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "308",
+   "cl": "So.",
+   "hometown": "Oak Cliff, Texas",
+   "school": "Oak Cliff / Stanford"
+  },
+  {
+   "num": "67",
+   "name": "Shanahan Jr., TJ",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "309",
+   "cl": "Sr.",
+   "hometown": "Orlando, Fla.",
+   "school": "Westlake / Texas A&M / Penn State"
+  },
+  {
+   "num": "68",
+   "name": "Westphal, Fletcher",
+   "pos": "OL",
+   "ht": "6-8",
+   "wt": "309",
+   "cl": "Jr.",
+   "hometown": "Leesburg, Va.",
+   "school": "Tuscarora"
+  },
+  {
+   "num": "71",
+   "name": "Kearney, Roderick",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "303",
+   "cl": "Sr.",
+   "hometown": "Jacksonville, Fla.",
+   "school": "Orange Park"
+  },
+  {
+   "num": "73",
+   "name": "Pierre Louis, Daniel",
+   "pos": "OL",
+   "ht": "6-4",
+   "wt": "327",
+   "cl": "So.",
+   "hometown": "Royal Palm Beach, Fla.",
+   "school": "Seminole Ridge"
+  },
+  {
+   "num": "76",
+   "name": "Faircloth, Mark",
+   "pos": "OL",
+   "ht": "6-5",
+   "wt": "312",
+   "cl": "Jr.",
+   "hometown": "Quincy, Fla.",
+   "school": "Florida State University School"
+  },
+  {
+   "num": "77",
+   "name": "Harris, Knijeah",
+   "pos": "OL",
+   "ht": "6-3",
+   "wt": "308",
+   "cl": "Sr.",
+   "hometown": "Pahokee, Fla.",
+   "school": "IMG Academy"
+  },
+  {
+   "num": "78",
+   "name": "Green, Desmond",
+   "pos": "OL",
+   "ht": "6-5",
+   "wt": "321",
+   "cl": "Fr.",
+   "hometown": "Alvin, S.C.",
+   "school": "Timberland"
+  },
+  {
+   "num": "79",
+   "name": "Campbell, Chancellor",
+   "pos": "OL",
+   "ht": "6-8",
+   "wt": "318",
+   "cl": "Fr.",
+   "hometown": "St. Petersburg, Fla.",
+   "school": "Lakewood"
+  },
+  {
+   "num": "80",
+   "name": "Jordon, Jaylen",
+   "pos": "TE",
+   "ht": "6-5",
+   "wt": "252",
+   "cl": "5th",
+   "hometown": "Hilliard, Fla.",
+   "school": "Hilliard / Georgia Southwestern State / Flagler / Jacksonville"
+  },
+  {
+   "num": "81",
+   "name": "Jordan, Mason",
+   "pos": "WR",
+   "ht": "5-9",
+   "wt": "173",
+   "cl": "Fr.",
+   "hometown": "Sarasota, Fla.",
+   "school": "Cardinal Mooney"
+  },
+  {
+   "num": "82",
+   "name": "Ciongoli, Ace",
+   "pos": "WR",
+   "ht": "5-10",
+   "wt": "181",
+   "cl": "So.",
+   "hometown": "Needham, Mass.",
+   "school": "St. Sebastian’s / Indiana"
+  },
+  {
+   "num": "83",
+   "name": "Williams, Justin",
+   "pos": "WR",
+   "ht": "5-11",
+   "wt": "199",
+   "cl": "Fr.",
+   "hometown": "Gainesville, Fla.",
+   "school": "Buchholz"
+  },
+  {
+   "num": "84",
+   "name": "Jones, Micah",
+   "pos": "TE",
+   "ht": "6-4",
+   "wt": "254",
+   "cl": "So.",
+   "hometown": "Madison, Miss.",
+   "school": "Madison Central"
+  },
+  {
+   "num": "85",
+   "name": "Chieca, Evan",
+   "pos": "TE",
+   "ht": "6-4",
+   "wt": "253",
+   "cl": "Sr.",
+   "hometown": "Lindenhurst, N.Y.",
+   "school": "Lindenhurst / New Haven"
+  },
+  {
+   "num": "86",
+   "name": "Kent, Heze",
+   "pos": "TE",
+   "ht": "6-6",
+   "wt": "288",
+   "cl": "Fr.",
+   "hometown": "Brunswick, Ga.",
+   "school": "Brunswick"
+  },
+  {
+   "num": "88",
+   "name": "Daniel, Marquez",
+   "pos": "WR",
+   "ht": "6-5",
+   "wt": "219",
+   "cl": "Fr.",
+   "hometown": "Tuskegee, Ala.",
+   "school": "Booker T. Washington"
+  },
+  {
+   "num": "89",
+   "name": "Brown Jr., Tripp",
+   "pos": "TE",
+   "ht": "6-5",
+   "wt": "240",
+   "cl": "Fr.",
+   "hometown": "Tampa, Fla.",
+   "school": "Plant"
+  },
+  {
+   "num": "90",
+   "name": "Bett, Brendan",
+   "pos": "DL",
+   "ht": "6-4",
+   "wt": "319",
+   "cl": "Sr.",
+   "hometown": "Gadsden, Ala.",
+   "school": "Ellison HS / Baylor"
+  },
+  {
+   "num": "91",
+   "name": "Durkin, Patrick",
+   "pos": "K",
+   "ht": "5-11",
+   "wt": "189",
+   "cl": "Jr.",
+   "hometown": "Chicago, Ill.",
+   "school": "Joliet Catholic Academy / Tulane"
+  },
+  {
+   "num": "91",
+   "name": "McCloud, Jeramiah",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "294",
+   "cl": "So.",
+   "hometown": "Sylvester, Ga.",
+   "school": "Lee County"
+  },
+  {
+   "num": "92",
+   "name": "Scott, Sebastian",
+   "pos": "DL",
+   "ht": "6-2",
+   "wt": "360",
+   "cl": "Sr.",
+   "hometown": "West Palm Beach, Fla.",
+   "school": "Cardinal Newman"
+  },
+  {
+   "num": "93",
+   "name": "Kalu, DK",
+   "pos": "DL",
+   "ht": "6-3",
+   "wt": "309",
+   "cl": "Sr.",
+   "hometown": "Missouri City, Texas",
+   "school": "Ridge Point / Baylor"
+  },
+  {
+   "num": "94",
+   "name": "Guervil, Kendall",
+   "pos": "DL",
+   "ht": "6-5",
+   "wt": "309",
+   "cl": "Fr.",
+   "hometown": "Fort Myers, Fla.",
+   "school": "Fort Myers"
+  },
+  {
+   "num": "95",
+   "name": "Lyons, Jamari",
+   "pos": "DL",
+   "ht": "6-4",
+   "wt": "312",
+   "cl": "Sr.",
+   "hometown": "Cocoa, Fla.",
+   "school": "Viera"
+  },
+  {
+   "num": "96",
+   "name": "McCoy, JaReylan",
+   "pos": "DL",
+   "ht": "6-7",
+   "wt": "268",
+   "cl": "Fr.",
+   "hometown": "Tupelo, Miss.",
+   "school": "Tupelo"
+  },
+  {
+   "num": "97",
+   "name": "Mbatchou, Joseph",
+   "pos": "DL",
+   "ht": "6-5",
+   "wt": "321",
+   "cl": "So.",
+   "hometown": "Loganville, Ga.",
+   "school": "Grayson"
+  },
+  {
+   "num": "98",
+   "name": "Clinton, Mason",
+   "pos": "DL",
+   "ht": "6-5",
+   "wt": "293",
+   "cl": "Sr.",
+   "hometown": "Hattiesburg, Miss.",
+   "school": "Petal / Louisiana / East Miss. CC / Southern Miss"
+  },
+  {
+   "num": "99",
+   "name": "Oyebadejo, Emmanuel",
+   "pos": "DL",
+   "ht": "6-6",
+   "wt": "299",
+   "cl": "5th",
+   "hometown": "Manchester, England",
+   "school": "Loreto College / Univ. of Exeter / Jacksonville St."
+  }
+ ],
+ "notes": {
+  "headers": [
+   "The football roster is subject to change",
+   "2026 FLORIDA GATORS ROSTER"
+  ],
+  "columnHeaderP1": "## Name Pos Ht Wt Cl Hometown High School/Previous School",
+  "columnHeaderP2": "## Name Pos Ht Wt Cl Hometown High School /Previous School",
+  "footnotes": [
+   "All listed numbers are subject to change ahead of UF's 2026 season opener."
+  ],
+  "pronunciationGuide": [
+   {
+    "name": "Kofi Asare",
+    "say": "CO-fee, UGH-sar-AYE"
+   },
+   {
+    "name": "CJ Bronaugh",
+    "say": "BRON-oh"
+   },
+   {
+    "name": "G'Nivre Carr",
+    "say": "JUH-nar-EE"
+   },
+   {
+    "name": "Evan Chieca",
+    "say": "CHEEK-uh"
+   },
+   {
+    "name": "Tyler Chukuyem",
+    "say": "CHOOK-ee-UM"
+   },
+   {
+    "name": "Ace Ciongoli",
+    "say": "SEE-in-GOALIE"
+   },
+   {
+    "name": "Lacota Dippre",
+    "say": "dih-PREE"
+   },
+   {
+    "name": "Davian Groce",
+    "say": "DAY-vee-UN, Gross"
+   },
+   {
+    "name": "Kendall Guervil",
+    "say": "GUR-ville"
+   },
+   {
+    "name": "Knijeah Harris",
+    "say": "NAH-jahy"
+   },
+   {
+    "name": "Nicholas Inglis",
+    "say": "N-glis"
+   },
+   {
+    "name": "Kahleil Jackson",
+    "say": "cuh-LEAL"
+   },
+   {
+    "name": "Kamran James",
+    "say": "Cameron"
+   },
+   {
+    "name": "Tramell Jones Jr",
+    "say": "TRUGH-mell"
+   },
+   {
+    "name": "Dijon Johnson",
+    "say": "Dee-ZHAAN"
+   },
+   {
+    "name": "DK Kalu",
+    "say": "CAL-loo"
+   },
+   {
+    "name": "Roderick Kearney",
+    "say": "ker-KNEE"
+   },
+   {
+    "name": "Byrce Lovett",
+    "say": "LOVE-it"
+   },
+   {
+    "name": "Carter Milliron",
+    "say": "MILL-iron"
+   },
+   {
+    "name": "Emanuel Oyebadejo",
+    "say": "OYA-bada-JOE"
+   },
+   {
+    "name": "Liam Padron",
+    "say": "puh-DRONE"
+   },
+   {
+    "name": "Aaron Philo",
+    "say": "FY-low"
+   },
+   {
+    "name": "Dylar Purter",
+    "say": "PURR-tur"
+   },
+   {
+    "name": "Hunter Solwold",
+    "say": "SO-wald"
+   },
+   {
+    "name": "Javion Toombs",
+    "say": "J-v-AHNN"
+   },
+   {
+    "name": "Emeka Ugorji",
+    "say": "EM-eh-kuh, you-GORE-jee"
+   }
+  ],
+  "pronunciationGuideTitle": "PRONUNCIATION GUIDE",
+  "pronunciationQrLine": "For pronunciation audio files scan the QR code:",
+  "coachingStaffTitle": "2026 COACHING STAFF",
+  "coachingStaff": [
+   {
+    "name": "Jon Sumrall",
+    "role": "Head Coach",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Buster Faulkner",
+    "role": "Offensive Coordinator",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Brad White",
+    "role": "Defensive Coordinator",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Gerald Chatman",
+    "role": "Assistant Head Coach / Defensive Line",
+    "season": "(3rd season)"
+   },
+   {
+    "name": "Chris Collins",
+    "role": "Safeties",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Joe Craddock",
+    "role": "Quarterbacks",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Marcus Davis",
+    "role": "Outside Wide Receivers",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Chris Foster",
+    "role": "Running Backs",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Johnathan Galante",
+    "role": "Special Teams Coordinator",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Greg Gasparato",
+    "role": "Linebackers",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Bam Hardmon",
+    "role": "Outside Linebackers",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Brandon Harris",
+    "role": "Cornerbacks",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Evan McKissack",
+    "role": "Tight Ends",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Trent McKnight",
+    "role": "Passing Game Coordinator / Inside Wide Receivers",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Phil Trautwein",
+    "role": "Offensive Line",
+    "season": "(1st season)"
+   },
+   {
+    "name": "Rusty Whitt",
+    "role": "Director of Football Performance",
+    "season": "(1st season)"
+   }
+  ],
+  "pageNumbers": [
+   "40",
+   "41"
+  ]
+ }
+}

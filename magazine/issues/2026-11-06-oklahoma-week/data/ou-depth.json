@@ -1,0 +1,899 @@
+{
+ "source": "OU Week 10 game notes (soonersports.com), PDF p. 7 (depth chart, \"GAME 9: OU AT FLORIDA\")",
+ "asOf": "week of Nov. 2, 2026",
+ "offense": [
+  {
+   "pos": "QB",
+   "entries": [
+    {
+     "num": "10",
+     "name": "John Mateer",
+     "ht": "6-1",
+     "wt": "224",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "16",
+     "name": "Whitt Newbauer",
+     "ht": "6-6",
+     "wt": "240",
+     "cl": "Jr.",
+     "or": true
+    },
+    {
+     "num": "8",
+     "name": "Bowe Bentley",
+     "ht": "6-1",
+     "wt": "203",
+     "cl": "Fr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "RB",
+   "entries": [
+    {
+     "num": "9",
+     "name": "Lloyd Avant",
+     "ht": "5-10",
+     "wt": "215",
+     "cl": "Jr.",
+     "or": true
+    },
+    {
+     "num": "21",
+     "name": "Xavier Robinson",
+     "ht": "6-0",
+     "wt": "232",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "6",
+     "name": "Tory Blaylock",
+     "ht": "5-11",
+     "wt": "212",
+     "cl": "So.",
+     "or": true
+    },
+    {
+     "num": "20",
+     "name": "Jonathan Hatton Jr.",
+     "ht": "6-1",
+     "wt": "235",
+     "cl": "Fr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "X",
+   "entries": [
+    {
+     "num": "3",
+     "name": "Parker Livingstone",
+     "ht": "6-3",
+     "wt": "202",
+     "cl": "Jr.",
+     "or": true
+    },
+    {
+     "num": "14",
+     "name": "Elijah Thomas",
+     "ht": "6-1",
+     "wt": "198",
+     "cl": "So.",
+     "or": false
+    },
+    {
+     "num": "5",
+     "name": "Jer’Michael Carter",
+     "ht": "6-2",
+     "wt": "209",
+     "cl": "Sr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "TE",
+   "entries": [
+    {
+     "num": "89",
+     "name": "Hayden Hansen",
+     "ht": "6-8",
+     "wt": "266",
+     "cl": "5th",
+     "or": true
+    },
+    {
+     "num": "81",
+     "name": "Rocky Beers",
+     "ht": "6-5",
+     "wt": "240",
+     "cl": "6th",
+     "or": false
+    },
+    {
+     "num": "88",
+     "name": "Jack Van Dorselaer",
+     "ht": "6-4",
+     "wt": "253",
+     "cl": "So.",
+     "or": false
+    },
+    {
+     "num": "22",
+     "name": "Trynae Washington",
+     "ht": "6-3",
+     "wt": "260",
+     "cl": "So.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "LT",
+   "entries": [
+    {
+     "num": "56",
+     "name": "Michael Fasusi",
+     "ht": "6-5",
+     "wt": "319",
+     "cl": "So.",
+     "or": true
+    },
+    {
+     "num": "70",
+     "name": "Ryan Fodje",
+     "ht": "6-5",
+     "wt": "321",
+     "cl": "So.",
+     "or": false
+    },
+    {
+     "num": "71",
+     "name": "Peyton Joseph",
+     "ht": "6-4",
+     "wt": "331",
+     "cl": "So.",
+     "or": false
+    },
+    {
+     "num": "72",
+     "name": "Fred Hinton",
+     "ht": "6-4",
+     "wt": "313",
+     "cl": "Jr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "LG",
+   "entries": [
+    {
+     "num": "55",
+     "name": "Eddy Pierre-Louis",
+     "ht": "6-3",
+     "wt": "318",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "77",
+     "name": "Heath Ozaeta",
+     "ht": "6-5",
+     "wt": "315",
+     "cl": "Sr.",
+     "or": false
+    },
+    {
+     "num": "64",
+     "name": "Sean Hutton",
+     "ht": "6-0",
+     "wt": "310",
+     "cl": "So.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "C",
+   "entries": [
+    {
+     "num": "69",
+     "name": "Jake Maikkula",
+     "ht": "6-6",
+     "wt": "309",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "60",
+     "name": "Caleb Nitta",
+     "ht": "6-2",
+     "wt": "302",
+     "cl": "Sr.",
+     "or": false
+    },
+    {
+     "num": "57",
+     "name": "Gunnar Allen",
+     "ht": "6-1",
+     "wt": "295",
+     "cl": "5th",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "RG",
+   "entries": [
+    {
+     "num": "70",
+     "name": "Ryan Fodje",
+     "ht": "6-5",
+     "wt": "321",
+     "cl": "So.",
+     "or": true
+    },
+    {
+     "num": "52",
+     "name": "Noah Best",
+     "ht": "6-4",
+     "wt": "319",
+     "cl": "Fr.",
+     "or": true
+    },
+    {
+     "num": "77",
+     "name": "Heath Ozaeta",
+     "ht": "6-5",
+     "wt": "315",
+     "cl": "Sr.",
+     "or": false
+    },
+    {
+     "num": "68",
+     "name": "Owen Hollenbeck",
+     "ht": "6-3",
+     "wt": "345",
+     "cl": "So.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "RT",
+   "entries": [
+    {
+     "num": "76",
+     "name": "E’Marion Harris",
+     "ht": "6-6",
+     "wt": "318",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "73",
+     "name": "Deacon Schmitt",
+     "ht": "6-5",
+     "wt": "320",
+     "cl": "Fr.",
+     "or": false
+    },
+    {
+     "num": "72",
+     "name": "Fred Hinton",
+     "ht": "6-4",
+     "wt": "313",
+     "cl": "Jr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "H",
+   "entries": [
+    {
+     "num": "1",
+     "name": "Isaiah Sategna III",
+     "ht": "5-10",
+     "wt": "185",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "17",
+     "name": "Mackenzie Alleyne",
+     "ht": "5-11",
+     "wt": "184",
+     "cl": "Jr.",
+     "or": true
+    },
+    {
+     "num": "7",
+     "name": "Jacob Jordan",
+     "ht": "5-9",
+     "wt": "186",
+     "cl": "Jr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "Z",
+   "entries": [
+    {
+     "num": "0",
+     "name": "Manny Choice",
+     "ht": "6-4",
+     "wt": "211",
+     "cl": "So.",
+     "or": false
+    },
+    {
+     "num": "11",
+     "name": "Trell Harris",
+     "ht": "6-0",
+     "wt": "203",
+     "cl": "5th",
+     "or": false
+    }
+   ]
+  }
+ ],
+ "defense": [
+  {
+   "pos": "LDE",
+   "entries": [
+    {
+     "num": "44",
+     "name": "Taylor Wein",
+     "ht": "6-4",
+     "wt": "265",
+     "cl": "Sr.",
+     "or": false
+    },
+    {
+     "num": "42",
+     "name": "Wyatt Gilmore",
+     "ht": "6-4",
+     "wt": "259",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "94",
+     "name": "Kenny Ozowalu",
+     "ht": "6-3",
+     "wt": "277",
+     "cl": "Jr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "DT",
+   "entries": [
+    {
+     "num": "0",
+     "name": "David Stone",
+     "ht": "6-3",
+     "wt": "315",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "8",
+     "name": "Bishop Thomas",
+     "ht": "6-1",
+     "wt": "297",
+     "cl": "5th",
+     "or": true
+    },
+    {
+     "num": "99",
+     "name": "Braxton Fely",
+     "ht": "6-2",
+     "wt": "290",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "58",
+     "name": "Tank Carrington",
+     "ht": "6-2",
+     "wt": "295",
+     "cl": "Fr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "DT",
+   "entries": [
+    {
+     "num": "65",
+     "name": "Jayden Jackson",
+     "ht": "6-2",
+     "wt": "306",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "90",
+     "name": "Trent Wilson",
+     "ht": "6-3",
+     "wt": "305",
+     "cl": "So.",
+     "or": true
+    },
+    {
+     "num": "6",
+     "name": "Nigel Smith II",
+     "ht": "6-4",
+     "wt": "300",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "55",
+     "name": "Danny Saili",
+     "ht": "6-1",
+     "wt": "280",
+     "cl": "5th",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "RDE",
+   "entries": [
+    {
+     "num": "34",
+     "name": "Adepoju Adebawore",
+     "ht": "6-4",
+     "wt": "265",
+     "cl": "Sr.",
+     "or": true
+    },
+    {
+     "num": "16",
+     "name": "Danny Okoye",
+     "ht": "6-3",
+     "wt": "257",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "98",
+     "name": "Jake Kreul",
+     "ht": "6-3",
+     "wt": "246",
+     "cl": "Fr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "MIKE",
+   "entries": [
+    {
+     "num": "38",
+     "name": "Owen Heinecke",
+     "ht": "6-1",
+     "wt": "230",
+     "cl": "6th",
+     "or": false
+    },
+    {
+     "num": "18",
+     "name": "Cole Sullivan",
+     "ht": "6-4",
+     "wt": "231",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "30",
+     "name": "Dane Bathurst",
+     "ht": "6-4",
+     "wt": "231",
+     "cl": "Fr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "WILL",
+   "entries": [
+    {
+     "num": "10",
+     "name": "Kip Lewis",
+     "ht": "6-1",
+     "wt": "230",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "47",
+     "name": "James Nesta",
+     "ht": "6-3",
+     "wt": "230",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "51",
+     "name": "Jaydon Southard",
+     "ht": "6-0",
+     "wt": "220",
+     "cl": "5th",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "SAM",
+   "entries": [
+    {
+     "num": "18",
+     "name": "Cole Sullivan",
+     "ht": "6-4",
+     "wt": "231",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "47",
+     "name": "James Nesta",
+     "ht": "6-3",
+     "wt": "230",
+     "cl": "Jr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "CHEETAH",
+   "entries": [
+    {
+     "num": "3",
+     "name": "Reggie Powers III",
+     "ht": "6-0",
+     "wt": "214",
+     "cl": "So.",
+     "or": false
+    },
+    {
+     "num": "21",
+     "name": "Jeremiah Newcombe",
+     "ht": "5-9",
+     "wt": "203",
+     "cl": "Jr.",
+     "or": true
+    },
+    {
+     "num": "33",
+     "name": "LeBron Bauer",
+     "ht": "6-0",
+     "wt": "184",
+     "cl": "Fr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "LCB",
+   "entries": [
+    {
+     "num": "4",
+     "name": "Courtland Guillory",
+     "ht": "6-0",
+     "wt": "190",
+     "cl": "So.",
+     "or": false
+    },
+    {
+     "num": "14",
+     "name": "Trystan Haynes",
+     "ht": "6-2",
+     "wt": "188",
+     "cl": "So.",
+     "or": true
+    },
+    {
+     "num": "9",
+     "name": "Dakoda Fields",
+     "ht": "6-1",
+     "wt": "203",
+     "cl": "Jr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "SS",
+   "entries": [
+    {
+     "num": "22",
+     "name": "Peyton Bowen",
+     "ht": "6-0",
+     "wt": "204",
+     "cl": "Sr.",
+     "or": false
+    },
+    {
+     "num": "2",
+     "name": "Omarion Robinson",
+     "ht": "5-11",
+     "wt": "212",
+     "cl": "So.",
+     "or": true
+    },
+    {
+     "num": "5",
+     "name": "Markel Ford",
+     "ht": "6-1",
+     "wt": "204",
+     "cl": "Fr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "FS",
+   "entries": [
+    {
+     "num": "25",
+     "name": "Michael Boganowski",
+     "ht": "6-2",
+     "wt": "214",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "2",
+     "name": "Omarion Robinson",
+     "ht": "5-11",
+     "wt": "212",
+     "cl": "So.",
+     "or": true
+    },
+    {
+     "num": "13",
+     "name": "Niko Jandreau",
+     "ht": "6-0",
+     "wt": "199",
+     "cl": "Fr.",
+     "or": false
+    },
+    {
+     "num": "31",
+     "name": "Reed DeQuasie",
+     "ht": "6-1",
+     "wt": "204",
+     "cl": "Sr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "RCB",
+   "entries": [
+    {
+     "num": "23",
+     "name": "Eli Bowen",
+     "ht": "5-9",
+     "wt": "189",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "24",
+     "name": "Jacobe Johnson",
+     "ht": "6-2",
+     "wt": "205",
+     "cl": "Sr.",
+     "or": true
+    },
+    {
+     "num": "9",
+     "name": "Dakoda Fields",
+     "ht": "6-1",
+     "wt": "203",
+     "cl": "Jr.",
+     "or": false
+    }
+   ]
+  }
+ ],
+ "specialists": [
+  {
+   "pos": "K",
+   "entries": [
+    {
+     "num": "29",
+     "name": "Tate Sandell",
+     "ht": "5-9",
+     "wt": "180",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "35",
+     "name": "Liam Evans",
+     "ht": "5-7",
+     "wt": "177",
+     "cl": "Jr.",
+     "or": true
+    },
+    {
+     "num": "27",
+     "name": "Trace Rudd",
+     "ht": "5-11",
+     "wt": "197",
+     "cl": "Fr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "P",
+   "entries": [
+    {
+     "num": "43",
+     "name": "Grayson Miller",
+     "ht": "5-9",
+     "wt": "193",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "87",
+     "name": "Jacob Ulrich",
+     "ht": "6-5",
+     "wt": "208",
+     "cl": "Sr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "KO",
+   "entries": [
+    {
+     "num": "29",
+     "name": "Tate Sandell",
+     "ht": "5-9",
+     "wt": "180",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "27",
+     "name": "Trace Rudd",
+     "ht": "5-11",
+     "wt": "197",
+     "cl": "Fr.",
+     "or": true
+    },
+    {
+     "num": "35",
+     "name": "Liam Evans",
+     "ht": "5-7",
+     "wt": "177",
+     "cl": "Jr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "KR",
+   "entries": [
+    {
+     "num": "9",
+     "name": "Lloyd Avant",
+     "ht": "5-10",
+     "wt": "215",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "20",
+     "name": "Jonathan Hatton Jr.",
+     "ht": "6-1",
+     "wt": "235",
+     "cl": "Fr.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "PR",
+   "entries": [
+    {
+     "num": "1",
+     "name": "Isaiah Sategna III",
+     "ht": "5-10",
+     "wt": "185",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "7",
+     "name": "Jacob Jordan",
+     "ht": "5-9",
+     "wt": "186",
+     "cl": "Jr.",
+     "or": false
+    },
+    {
+     "num": "11",
+     "name": "Trell Harris",
+     "ht": "6-0",
+     "wt": "203",
+     "cl": "5th",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "LS",
+   "entries": [
+    {
+     "num": "50",
+     "name": "Ben Anderson",
+     "ht": "6-5",
+     "wt": "250",
+     "cl": "5th",
+     "or": false
+    },
+    {
+     "num": "54",
+     "name": "Seth Freeman",
+     "ht": "6-0",
+     "wt": "232",
+     "cl": "So.",
+     "or": false
+    }
+   ]
+  },
+  {
+   "pos": "H",
+   "entries": [
+    {
+     "num": "87",
+     "name": "Jacob Ulrich",
+     "ht": "6-5",
+     "wt": "208",
+     "cl": "Sr.",
+     "or": false
+    },
+    {
+     "num": "43",
+     "name": "Grayson Miller",
+     "ht": "5-9",
+     "wt": "193",
+     "cl": "5th",
+     "or": false
+    }
+   ]
+  }
+ ],
+ "notes": [],
+ "pageText": {
+  "header": "GAME 9: OU AT FLORIDA DEPTH CHART",
+  "title": "DEPTH CHART",
+  "sectionTitles": [
+   "OFFENSE",
+   "DEFENSE",
+   "SPECIALISTS"
+  ],
+  "footer": "@OU_FOOTBALL SOONERSPORTS.COM 7"
+ }
+}

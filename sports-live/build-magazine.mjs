@@ -31,6 +31,9 @@ const runtimeBase = (POSTGAME ? read('sports-live/src/capture.js') + '\n;' : '')
   (POSTGAME ? '\n' + read('sports-live/src/magazine-postgame.js') : '');
 // The Wednesday Edition is a link-card issue: only the one hard-coded edition note differs from the weekly renderer.
 const runtime = VARIANT === 'wednesday' ? runtimeBase.replace('Six complete articles \u00b7 October 1 edition', 'Twelve stories \u00b7 Wednesday Edition, October 7') : runtimeBase;
+// Dependency-free compaction: these sources use ordinary single-line strings. Keep newlines (ASI),
+// remove only indentation and full-line comments. Fall back unchanged if multiline strings arrive.
+const compactRuntime = runtime.includes('`') || /\\\r?\n/.test(runtime) ? runtime : runtime.replace(/^[ \t]+/gm, '').replace(/^\/\/[^\r\n]*(?:\r?\n|$)/gm, '');
 // Photo credits the homepage already verified (front-page.config.json), so the live card refresh can credit a new card's photo.
 const credits = JSON.parse(read('sports-live/front-page.config.json')).credits || {};
 // Every edition repeats these page selectors hundreds of times. Store each as one character and
@@ -87,7 +90,7 @@ const js = minify(`(function () {
   var ISSUE = ${JSON.stringify(issue)};
   var BUILD = ${JSON.stringify(build)};
   var CREDITS = ${JSON.stringify(credits)};
-${runtime}})();
+${compactRuntime}})();
 `, banner);
 
 // Fixture: the Home Code loader's Barlow link (it is injected on every page, /magazine included), the mobile shell's
@@ -118,3 +121,4 @@ if (process.argv.includes('--check')) {
   for (const [p, s] of Object.entries(outputs)) writeFileSync(join(repo, p), s);
   console.log(`magazine.js ${js.length} chars (${Buffer.byteLength(js)} bytes), magazine-frame.html ${frame.length} chars; issue ${issue.id}; build ${build}`);
 }
+

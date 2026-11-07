@@ -10,7 +10,7 @@
   "pageTitle": "GatorBait Magazine | Oklahoma Week",
   "introTitle": "Oklahoma week",
   "introDek": "Buddy Martin and Franz Beard lead the issue. Plus Urban Meyer, the quarterback update and the complete Oklahoma scouting report.",
-  "introMeta": "27-page digital edition · 12 stories online"
+  "introMeta": "12 stories · Phone and print editions"
  },
  "cover": {
   "kicker": "Best Fridays · The Buddy Martin Show",
@@ -37,7 +37,7 @@
    "Buddy Martin: Monster, Golden Goose and Fielding Yost"
   ],
   "poster": {
-   "url": "https://static.wixstatic.com/media/d3cfa5_cbc409630dda4688ae28cdb26e40e600~mv2.png",
+   "url": "https://static.wixstatic.com/media/d3cfa5_4a8f307190354c3fb672f84c09e1dd36~mv2.png",
    "width": 1103,
    "height": 1426,
    "alt": "GatorBait Magazine, Florida vs. Oklahoma Pregame Edition: Urban Meyer, Ring of Honor."
@@ -290,15 +290,27 @@
  },
  "download": {
   "kicker": "Keep the whole issue",
-  "label": "Download the complete magazine (PDF)",
-  "note": "27 pages · 37.6 MB",
-  "file": "GATORBAIT-Florida-vs-Oklahoma-Pregame-2026-11-07-RELEASE.pdf",
-  "url": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_3e09b7df27c74b1e8818a6d2d07b543b.pdf"
+  "label": "Read on your phone (PDF)",
+  "note": "146 pages · 3.7 MB · Made for phones",
+  "file": "GATORBAIT-Florida-vs-Oklahoma-Pregame-2026-11-07-PHONE.pdf",
+  "url": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_67fbf5ef66e141aea4ac74ba0e9135b4.pdf",
+  "print": {
+   "url": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_92c104eb3c8745479e5fdff56a2f2ef2.pdf",
+   "label": "Print PDF",
+   "file": "GATORBAIT-Florida-vs-Oklahoma-Pregame-2026-11-07-PRINT.pdf",
+   "note": "42 pages · 3.6 MB · US Letter"
+  },
+  "mobile": {
+   "url": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_67fbf5ef66e141aea4ac74ba0e9135b4.pdf",
+   "label": "Phone PDF",
+   "file": "GATORBAIT-Florida-vs-Oklahoma-Pregame-2026-11-07-PHONE.pdf",
+   "note": "146 pages · 3.7 MB · Made for phones"
+  }
  },
  "asOf": "Rankings and scores are as reported in the linked GatorBait stories at the time of publishing; game times and TV are from FloridaGators.com and ESPN. Quotes are as reported by the writers.",
  "pdf": {
-  "label": "PDF",
-  "url": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_3e09b7df27c74b1e8818a6d2d07b543b.pdf"
+  "label": "Phone PDF",
+  "url": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_67fbf5ef66e141aea4ac74ba0e9135b4.pdf"
  },
  "readerStyle": "editorial"
 }

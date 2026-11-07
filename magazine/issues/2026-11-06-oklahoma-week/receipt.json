@@ -6,13 +6,14 @@
   "fridays",
   "show",
   "soothsayer",
+  "scouting1",
   "condon",
   "mcmiller",
   "cfp",
   "goose",
   "yost"
  ],
- "orderNote": "Suggested order kept as given by the coordinator. The web issue shows the same order top to bottom (cover story, then the 'columns' section for stories 2 to 5, then the 'coverage' section for 6 to 8).",
+ "orderNote": "Suggested order kept as given by the coordinator, with Scouting Oklahoma Part 1 placed directly after the Soothsayer (reading order 4 of 9). The web issue (sports-live bundle) and the email still carry the earlier eight stories in the earlier order (cover story, then the 'columns' section for the Thursday show recap, Soothsayer, Condon and McMiller, then the 'coverage' section for the CFP, Golden Goose and Yost); Part 1 is not in either yet, and the two built PDFs are also still the eight-story builds.",
  "rereadAfterFirstReceipt": {
   "when": "Nov. 6, 2026, evening (after the 21:32Z Condon republish), read-only GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT, published versions",
   "method": "lastPublishedDate compared with the first receipt, plus a text fingerprint (FNV-1a over all text runs, computed on the Wix side and again on the saved body) for all eight posts",
@@ -85,6 +86,16 @@
    "hasUnpublishedChanges": false,
    "author": "Franz Beard (per the 'By Franz Beard' line; Wix member c2d49068, the same member as the Condon post)",
    "raw": "source/raw/59a065eb-f45f-4e4b-a898-f53481bebf54.api.json"
+  },
+  {
+   "key": "scouting1",
+   "id": "2d31ea6f-538f-4d40-8bca-e497943d80e1",
+   "lastPublishedDate": "2026-11-06T22:00:33.325Z",
+   "firstPublishedDate": "2026-11-06T22:00:33.325Z",
+   "hasUnpublishedChanges": false,
+   "author": "GatorBait Staff (Wix member fade11f0, the same member as the first CFP Top 25 post)",
+   "raw": "source/raw/2d31ea6f-538f-4d40-8bca-e497943d80e1.api.json",
+   "acquired": "Handoff-package snapshot of the published version (acquired 2026-11-06 22:19:25 UTC), wrapped as {post: ...} and normalized; NOT a fresh Wix read. Never edited since publish per the snapshot (first and last published dates are equal). See source/raw/2d31ea6f-538f-4d40-8bca-e497943d80e1.NOTE.txt."
   }
  ],
  "images": [
@@ -116,33 +127,40 @@
    "seen": "Opened full size. Baugh (13) diving at the goal line against Ole Miss in The Swamp, scoreboard Ole Miss 0, Florida 0. Only in-stadium signage (SEC Champions banner, ribbon-board ad) is visible; no overlay watermark, no third-party credit. The frame has NO photographer signature, so the Chris Spears credit rests on the live body's credit line, the post's media alt text and the order that names it, not on the file itself (see flags)."
   },
   {
-   "use": "4 Condon hero",
+   "use": "4 Scouting Oklahoma Part 1 hero (NEW)",
+   "media": "16b519_cf457578f2f644d8ad819a988cd40684~mv2.jpg",
+   "size": "3000 x 1730",
+   "credit": "Photo by Chris Spears, GatorBait Media. (first paragraph of the live body: 'Florida's defense huddles during the game at Auburn on Sept. 19, 2026. Photo by Chris Spears, GatorBait Media.'; same text in the post media alt text; file name '9.19.26 Gator Football vs Auburn (82 of 178).jpg')",
+   "seen": "Opened (package copy articles/images/2d31ea6f-538f-4d40-8bca-e497943d80e1.jpg, sha256 66c8c850...77d1eb, 3000 x 1730, matches the package image manifest). Florida defenders in white jerseys and orange pants huddle on the field with a trainer carrying Gatorade bottles; a 'Chris Spears Photography' signature is in the bottom-right corner, so the credit is provable from the file. Only stadium signage and crowd are visible; no third-party watermark or credit overlay. Owned archival photo from Auburn, Sept. 19, 2026: the caption names Auburn and the date and must not be read as Oklahoma-game action."
+  },
+  {
+   "use": "5 Condon hero",
    "media": "16b519_ace94c11ce5d4031a20650525c423bf3~mv2.jpg",
    "size": "2263 x 3000",
    "credit": "Photo by Chris Spears, GatorBait Media.",
    "seen": "Unchanged. The live alt text now ends 'Photo by Chris Spears, GatorBaitMedia.com' (same photographer, site-name spelling)"
   },
   {
-   "use": "5 McMiller",
+   "use": "6 McMiller",
    "media": "none: pull quote (Kiyomi McMiller)",
    "credit": "n/a",
    "seen": "Live art is a UAA photo; not carried (owner direction)"
   },
   {
-   "use": "6 First CFP hero",
+   "use": "7 First CFP hero",
    "media": "d3cfa5_91591597fa63490993a23e4874d5da53~mv2.png",
    "size": "2160 x 2700",
    "credit": "Graphic: GatorBait Media.",
    "seen": "Unchanged; now an inside story instead of the web cover story"
   },
   {
-   "use": "7 Goose",
+   "use": "8 Goose",
    "media": "none: pull quote (Buddy Martin)",
    "credit": "n/a",
    "seen": "Shared lead art not carried (owner direction)"
   },
   {
-   "use": "8 Yost",
+   "use": "9 Yost",
    "media": "none: pull quote (Buddy Martin)",
    "credit": "n/a",
    "seen": "Public-domain archive photo not carried (owner direction)"
@@ -160,7 +178,12 @@
   "Condon (republished 21:32Z): see rereadAfterFirstReceipt. The field-goal line was corrected on the live post at 23:15Z (2-3 became 3-6, per ESPN) and the magazine carries the corrected line; see correctionsAfterReread. The rebound line (51-25; ESPN shows 52-25, and ESPN totals include team rebounds) is unchanged and unresolved.",
   "Up next card and the email repeat 'Women's basketball: at Chattanooga, Sunday, 2 p.m. ET, SEC Network+' as reported in Loren Meadows' story. UF's official Oct. 7 women's basketball TV release (FloridaGators.com, first source) lists that game on SEC+ at 2:00 p.m. ET; ESPN's schedule shows ESPN+. The earlier fact-desk note that it should read ESPN+ is withdrawn. Left as the writer's text; the card attributes it to the story. Loren's 'Silver Springs, Maryland' was corrected to 'Silver Spring, Maryland' on the live post at 23:15Z (ESPN roster); the magazine carries the corrected spelling.",
   "Cover type: the supplied cover is set in Impact, Georgia and Arial; everything built here is Barlow. The cover art was not changed.",
-  "Web cover 'Also inside' shows at most six lines (shared renderer); the two Buddy Martin columns share the sixth line. All eight stories are listed in the sections below it."
+  "Web cover 'Also inside' shows at most six lines (shared renderer); the two Buddy Martin columns share the sixth line. All eight web-issue stories are listed in the sections below it; the web issue does not carry Scouting Oklahoma Part 1 yet.",
+  "Scouting Oklahoma Part 1 (added to this source, nine stories now): the web bundle (sports-live), the email and the two built PDFs are still the eight-story builds and do not carry it; nothing in sports-live/, newsletter/ or print-stage/ was changed for it.",
+  "Part 1 body is the handoff-package snapshot (acquired 22:19Z Nov. 6) of the published version, not a fresh Wix read; it was never edited after publish (first and last published dates are both 2026-11-06T22:00:33.325Z). Re-read the live post before any build that ships it. The 'api' string on its receipt entry is the normalizer's standard endpoint text, not a call made in this build.",
+  "Part 1 hero: owned Chris Spears photo from the Auburn game on Sept. 19, 2026; the caption says so. The story is about the Oklahoma game, so the caption must not be shortened or reworded to imply Oklahoma-game action. Its credit is provable from the file (signature in the corner).",
+  "Part 1 'Key numbers' list: the nine list items (Rankings, Scoring, Rushing, Passing, Sacks, Third down, Red zone, Turnovers, Common opponents) are carried as nine paragraphs by prepare.py, which writes every list item as a paragraph (no bullet markup); wording unchanged. The statistics, rankings, depth-chart and availability statements are as published ('through Oct. 31' and 'SEC availability reports released this week') and were not verified by this build.",
+  "Part 1 title uses a straight apostrophe in 'Oklahoma's' and the body uses straight apostrophes and straight double quotes, unlike the other stories (curly); copied as published, no typographic change made."
  ],
  "posts": [
   {
@@ -366,6 +389,30 @@
    ],
    "quoteMarkAudit": [],
    "api": "GET https://www.wixapis.com/blog/v3/posts/59a065eb-f45f-4e4b-a898-f53481bebf54?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "2d31ea6f-538f-4d40-8bca-e497943d80e1",
+   "key": "scouting1",
+   "title": "Witten Off? Oklahoma's New Play-Caller vs. the Gators' Pass Rush (Scouting Oklahoma, Part 1)",
+   "url": "https://www.gatorbaitmedia.com/post/witten-off-oklahoma-s-new-play-caller-vs-the-gators-pass-rush-scouting-oklahoma-part-1",
+   "author": "GatorBait Staff",
+   "lastPublishedDate": "2026-11-06T22:00:33.325Z",
+   "firstPublishedDate": "2026-11-06T22:00:33.325Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 774,
+   "bodyWordsAfter": 756,
+   "emptyParagraphsDropped": 0,
+   "whitespaceTrimmedBlocks": [],
+   "changes": [
+    {
+     "op": "caption-from-id",
+     "block": "a1",
+     "text": "Florida's defense huddles during the game at Auburn on Sept. 19, 2026. Photo by Chris Spears, GatorBait Media.",
+     "reason": "First paragraph (italic) is the photo caption and credit; it becomes the hero caption. Unlike the other new heroes it sits at the top of the live body, and it carries no 'Cover: ' label, so no prefix is stripped."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/2d31ea6f-538f-4d40-8bca-e497943d80e1?fieldsets=URL&fieldsets=RICH_CONTENT"
   },
   {
    "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",

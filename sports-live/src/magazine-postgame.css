@@ -663,7 +663,7 @@ html:has(#gbm-magazine-page.pm .pm-editorial) #gbc-bar{display:none!important}
 #gbm-magazine-page.pm .pm-editorial .pm-edition-meta{font:700 14px/1.4 var(--mz-sans);margin-top:16px;color:#42506a}
 #gbm-magazine-page.pm .pm-editorial .pm-edition-actions{display:flex;flex-wrap:wrap;gap:10px}
 html #gbm-magazine-page.pm.mz26 .pm-btn,html #gbm-magazine-page.pm.mz26 .pm-dl-btn{color:#fff!important}
-#gbm-magazine-page.pm .pm-editorial .pm-edition-pdf{background:#fff;color:#10264b!important;border:1px solid #10264b}
+#gbm-magazine-page.pm .pm-editorial a.pm-btn.pm-edition-pdf{background:#fff;color:#10264b!important;border:1px solid #10264b}
 #gbm-magazine-page.pm .pm-editorial .pm-toc{padding:0;border-bottom:1px solid #d9dce6}
 #gbm-magazine-page.pm .pm-editorial .pm-issue-index summary{display:flex;justify-content:space-between;align-items:center;min-height:60px;font:700 18px/1.3 var(--mz-sans);color:#10264b;cursor:pointer;list-style:none}
 #gbm-magazine-page.pm .pm-editorial .pm-issue-index summary::-webkit-details-marker{display:none}

@@ -14,9 +14,11 @@
   }
   function pmEntrance(D) {
     var C = obj(D.cover) || {}, I = obj(D.issue) || {}, P = obj(C.poster), b = pmReelBase();
-    // The finished portrait cover is a committed static file next to the bundle (like the reel posters); without it the photo-and-type poster below renders as before.
-    if (P && b && !text(C.coverTitle, 40) && /^[\w-]+\.jpg$/.test(String(P.file))) return '<section class="pm-entrance pm-art" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
-      '<img src="' + esc(b + P.file) + '" width="1200" height="1600" alt="' + esc(text(P.alt, 300)) + '" fetchpriority="high" decoding="async"><h1 class="pm-vh">' + esc(text(C.headline, 200)) + '</h1>' +
+    // Prefer the finished permanent Wix cover; older editions retain their committed reel poster.
+    var posterUrl = P && /^https:\/\/static\.wixstatic\.com\/media\/[\w~.-]+$/.test(String(P.url || '')) ? P.url : P && b && /^[\w-]+\.jpg$/.test(String(P.file)) ? b + P.file : '';
+    if (D.readerStyle === 'editorial' && posterUrl) return '<section class="pm-entrance pm-art pm-editorial-entrance" aria-label="Magazine cover"><div class="pm-in pm-edition-grid"><div class="pm-book"><div class="pm-poster"><img src="' + esc(posterUrl) + '" width="' + (num(P.width) || 1103) + '" height="' + (num(P.height) || 1426) + '" alt="' + esc(text(P.alt, 300)) + '" fetchpriority="high" decoding="async"><button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><div class="pm-edition-intro"><p class="pm-kick">GatorBait Magazine · ' + esc(text(I.date, 60)) + '</p><h1>' + esc(text(I.introTitle, 100)) + '</h1><p class="pm-edition-dek">' + esc(text(I.introDek, 300)) + '</p><p class="pm-edition-meta">' + esc(text(I.introMeta, 80)) + '</p><div class="pm-edition-actions"><a class="pm-btn" href="#pm-columns">Read Buddy &amp; Franz ↓</a>' + pmPdfLink(D, 'pm-btn pm-edition-pdf') + '</div></div></div></section>';
+    if (posterUrl && !text(C.coverTitle, 40)) return '<section class="pm-entrance pm-art" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
+      '<img src="' + esc(posterUrl) + '" width="' + (num(P.width) || 1200) + '" height="' + (num(P.height) || 1600) + '" alt="' + esc(text(P.alt, 300)) + '" fetchpriority="high" decoding="async"><h1 class="pm-vh">' + esc(text(C.headline, 200)) + '</h1>' +
       '<span class="pm-open-label">Read this issue <span aria-hidden="true">↓</span></span><button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Scroll for the full issue.</p></section>';
     return '<section class="pm-entrance" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
       (obj(C.pdfPhoto) && b && /^[\w-]+\.jpg$/.test(String(C.pdfPhoto.file)) ? '<img class="pm-photo" src="' + esc(b + C.pdfPhoto.file) + '" width="808" height="1164" alt="' + esc(text(C.pdfPhoto.alt, 300)) + '" fetchpriority="high" decoding="async">' : frame(C.image, { eager: true, main: 1600, sizes: '(max-width: 699px) 280vw, 1200px' })) +
@@ -26,11 +28,11 @@
       '<button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Scroll for the full issue.</p></section>';
   }
   function pmPdfLink(D, cls) {
-    var P = obj(D.pdf); if (!P || !safeUrl(P.url) || !text(P.label, 50)) return '';
-    return '<a class="' + cls + '" href="' + esc(safeUrl(P.url)) + '">' + esc(text(P.label, 50)) + '</a>';
+    var P = obj(D.pdf); if (!P || !/^https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$/.test(String(P.url || '')) || !text(P.label, 50)) return '';
+    return '<a class="' + cls + '" href="' + esc(P.url) + '" aria-label="Download the complete magazine PDF">' + esc(text(P.label, 50)) + '</a>';
   }
   function pmReaderBar(D) {
-    return '<div class="pm-readerbar"><a class="pm-readerbrand" href="/">Gator<span>Bait</span></a><details class="pm-reader-menu"><summary>Contents</summary>' + pmContents(D).replace('id="pm-contents" tabindex="-1"', '') + '</details><button type="button" data-pm-cover>Cover ↑</button>' + pmPdfLink(D, 'pm-pdf') + '</div>';
+    return '<div class="pm-readerbar"><a class="pm-readerbrand" href="/">Gator<span>Bait</span></a><details class="pm-reader-menu"><summary>Contents</summary>' + pmContents(D, true).replace('id="pm-contents" tabindex="-1"', '') + '</details><button type="button" data-pm-cover>Cover ↑</button>' + pmPdfLink(D, 'pm-pdf') + '</div>';
   }
   function pmStart(m) {
     var entry = m.querySelector('.pm-entrance'), cover = m.querySelector('.pm-open'), contents = m.querySelector('#pm-contents');
@@ -102,7 +104,16 @@
         return '<p class="pm-team' + (t.won ? ' pm-won' : '') + '"><span>' + (text(t.rank, 12) ? '<small>' + esc(text(t.rank, 12)) + '</small>' : '') + esc(text(t.name, 30)) + '</span><b>' + t.score + '</b></p>';
       }).join('') + '</div>' + (meta.length ? '<p class="pm-final-m">' + meta.map(function (m) { return '<span>' + esc(m) + '</span>'; }).join('') + '</p>' : '') + '</div></section>';
   }
-  function pmContents(D) {
+  function pmStoryIndex(D) {
+    return [D.cover].concat(list(obj(D.columns) && D.columns.items, 12), list(obj(D.coverage) && D.coverage.items, 12));
+  }
+  function pmContents(D, menu) {
+    if (D.readerStyle === 'editorial') {
+      var stories = pmStoryIndex(D);
+      return '<nav class="pm-toc" id="pm-contents" tabindex="-1" aria-label="All articles in this issue"><div class="pm-in">' + (menu ? '' : '<details class="pm-issue-index"><summary>All ' + stories.length + ' articles in this issue <span aria-hidden="true">+</span></summary>') + '<ol>' + stories.map(function (s, n) {
+        return '<li><a href="#pm-story-' + (n + 1) + '"><b aria-hidden="true">' + (n + 1) + '</b><span><small>' + esc(text(s.author || s.byline, 80)) + '</small>' + esc(text(s.title || s.headline, 200)) + '</span></a></li>';
+      }).join('') + '</ol>' + (menu ? '' : '</details>') + '</div></nav>';
+    }
     var C = obj(D.contents), items = C ? list(C.items, 10).map(obj).filter(function (i) { return i && /^[a-z]+$/.test(text(i.id, 20)) && text(i.label, 40) && obj(D[i.id]); }) : [];
     if (!items.length) return '';
     return '<nav class="pm-toc" id="pm-contents" tabindex="-1" aria-label="' + esc(text(C.label, 40) || 'Contents') + '"><div class="pm-in">' + (text(C.label, 40) ? '<p class="pm-kick">' + esc(text(C.label, 40)) + '</p>' : '') + '<ol>' + items.map(function (i, n) {
@@ -164,9 +175,10 @@
     var P = obj(D[key]), items = P ? list(P.items, 12).map(obj).filter(function (s) { return s && safeUrl(s.url) && text(s.title, 200); }) : [];
     if (!items.length) return '';
     return '<section class="pm-pack" id="pm-' + key + '" aria-labelledby="pm-' + key + '-t"><div class="pm-in">' + pmHead(key, P) + '<ol class="pm-list">' + items.map(function (s, k) {
-      var fig = s.image ? frame(s.image, { main: 480, sizes: '(max-width: 699px) 112px, 200px' }) : '';
-      return '<li class="pm-it' + (s.lead ? ' pm-lead' : '') + (fig ? ' pm-has-img' : '') + '"><a href="' + esc(safeUrl(s.url)) + '"><span class="pm-n" aria-hidden="true">' + (k < 9 ? '0' : '') + (k + 1) + '</span><span class="pm-it-b"><span class="pm-kick">' + esc([text(s.rubric, 40), text(s.author, 60)].filter(Boolean).join(' · ')) + '</span>' +
-        '<h3>' + esc(text(s.title, 200)) + '</h3>' + (text(s.dek, 400) ? '<span class="pm-it-d">' + esc(text(s.dek, 400)) + '</span>' : '') + (text(s.read, 30) ? '<span class="pm-it-r">' + esc(text(s.read, 30)) + '</span>' : '') + (fig && text(s.image.credit, 120) ? '<span class="pm-it-cr">' + esc(text(s.image.credit, 120)) + '</span>' : '') + '</span>' +
+      var fig = s.image ? frame(s.image, { main: D.readerStyle === 'editorial' ? 1000 : 480, sizes: D.readerStyle === 'editorial' ? '(max-width: 699px) calc(100vw - 32px), (max-width: 1199px) 46vw, 640px' : '(max-width: 699px) 112px, 200px' }) : '';
+      var storyNumber = pmStoryIndex(D).indexOf(s) + 1;
+      return '<li' + (D.readerStyle === 'editorial' ? ' id="pm-story-' + storyNumber + '"' : '') + ' class="pm-it' + (s.lead ? ' pm-lead' : '') + (fig ? ' pm-has-img' : '') + '"><a href="' + esc(safeUrl(s.url)) + '"><span class="pm-n" aria-hidden="true">' + (k < 9 ? '0' : '') + (k + 1) + '</span><span class="pm-it-b"><span class="pm-kick">' + esc([text(s.rubric, 40), text(s.author, 60)].filter(Boolean).join(' · ')) + '</span>' +
+        '<h3>' + esc(text(s.title, 200)) + '</h3>' + (text(s.dek, 400) ? '<span class="pm-it-d">' + esc(text(s.dek, 400)) + '</span>' : '') + (text(s.read, 30) ? '<span class="pm-it-r">' + esc(text(s.read, 30)) + '</span>' : '') + (fig && text(s.image.credit, 120) ? '<span class="pm-it-cr">' + esc(text(s.image.credit, 120)) + '</span>' : '') + (D.readerStyle === 'editorial' ? '<span class="pm-read-link">Read full article <span aria-hidden="true">→</span></span>' : '') + '</span>' +
         (fig ? '<span class="pm-thumb">' + fig + '</span>' : '') + '</a></li>';
     }).join('') + '</ol></div></section>';
   }
@@ -271,5 +283,6 @@
       pmCredits(D) + pmSrc(D.asOf) + pmPdfLink(D, 'pm-print') + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
   }
   function renderPostgame(D) {
+    if (D.readerStyle === 'editorial') return '<div class="pm-wrap pm-editorial">' + pmReaderBar(D) + pmEntrance(D) + pmContents(D) + pmPackage(D, 'columns') + '<div id="pm-story-1" class="pm-story-anchor">' + pmCover(D) + '</div>' + pmPackage(D, 'coverage') + pmNext(D) + pmDownload(D) + pmFoot(D) + '</div>';
     return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmPackage(D, 'columns') + pmPackage(D, 'coverage') + pmDamage(D) + pmScoring(D) + pmBox(D) + pmFlow(D) + pmQuotes(D) + pmWatch(D) + pmNext(D) + pmDownload(D) + pmFoot(D) + '</div>';
   }

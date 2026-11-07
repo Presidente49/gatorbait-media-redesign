@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-07T13:54:14.322Z",
+ "generatedAt": "2026-11-07T18:39:23.662Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-07T13:54:14.322Z",
+  "checkedAt": "2026-11-07T18:39:23.662Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Florida Says Tramell Jones Jr. Will Start Against Oklahoma",
-   "link": "https://www.gatorbaitmedia.com/post/report-tramell-jones-jr-expected-to-start-at-qb-against-oklahoma",
-   "publishedAt": "2026-11-07T12:25:02.000Z"
+   "title": "Quick Reads for Today’s Game",
+   "link": "https://www.gatorbaitmedia.com/post/quick-reads-for-today-s-game",
+   "publishedAt": "2026-11-07T17:41:36.000Z"
   },
   "problems": []
  },

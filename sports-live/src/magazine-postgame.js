@@ -16,7 +16,7 @@
     var C = obj(D.cover) || {}, I = obj(D.issue) || {}, P = obj(C.poster), b = pmReelBase();
     // Prefer the finished permanent Wix cover; older editions retain their committed reel poster.
     var posterUrl = P && /^https:\/\/static\.wixstatic\.com\/media\/[\w~.-]+$/.test(String(P.url || '')) ? P.url : P && b && /^[\w-]+\.jpg$/.test(String(P.file)) ? b + P.file : '';
-    if (D.readerStyle === 'editorial' && posterUrl) return '<section class="pm-entrance pm-art pm-editorial-entrance" aria-label="Magazine cover"><div class="pm-in pm-edition-grid"><div class="pm-book"><div class="pm-poster"><img src="' + esc(posterUrl) + '" width="' + (num(P.width) || 1103) + '" height="' + (num(P.height) || 1426) + '" alt="' + esc(text(P.alt, 300)) + '" fetchpriority="high" decoding="async"><button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><div class="pm-edition-intro"><p class="pm-kick">GatorBait Magazine · ' + esc(text(I.date, 60)) + '</p><h1>' + esc(text(I.introTitle, 100)) + '</h1><p class="pm-edition-dek">' + esc(text(I.introDek, 300)) + '</p><p class="pm-edition-meta">' + esc(text(I.introMeta, 80)) + '</p><div class="pm-edition-actions"><a class="pm-btn" href="#pm-columns">Read Buddy &amp; Franz ↓</a>' + pmPdfLink(D, 'pm-btn pm-edition-pdf') + '</div></div></div></section>';
+    if (D.readerStyle === 'editorial' && posterUrl) return '<section id="pm-entrance" class="pm-entrance pm-art pm-editorial-entrance" aria-label="Magazine cover"><div class="pm-in pm-edition-grid"><div class="pm-book"><div class="pm-poster"><img src="' + esc(posterUrl) + '" width="' + (num(P.width) || 1103) + '" height="' + (num(P.height) || 1426) + '" alt="' + esc(text(P.alt, 300)) + '" fetchpriority="high" decoding="async"><span class="pm-cover-action">Explore all ' + pmStoryIndex(D).length + ' stories <span aria-hidden="true">↓</span></span><button type="button" class="pm-open" aria-label="Open the contents of this issue" aria-controls="pm-contents"></button></div></div><div class="pm-edition-intro"><p class="pm-kick">GatorBait Magazine · ' + esc(text(I.date, 60)) + '</p><h1>' + esc(text(I.introTitle, 100)) + '</h1><p class="pm-edition-dek">' + esc(text(I.introDek, 300)) + '</p><p class="pm-edition-meta">' + esc(text(I.introMeta, 80)) + '</p><div class="pm-edition-actions"><a class="pm-action pm-action-primary" href="#pm-columns">Read online <span aria-hidden="true">↓</span></a>' + pmPdfLink(D, 'pm-action') + pmDocLink(obj(D.download) && D.download.print, 'pm-action', 'Print PDF') + '</div><a class="pm-text-link" href="#pm-contents">Browse the contents <span aria-hidden="true">→</span></a></div></div></section>';
     if (posterUrl && !text(C.coverTitle, 40)) return '<section class="pm-entrance pm-art" aria-label="Magazine cover"><a class="pm-exit" href="/">← GatorBait Media</a><div class="pm-book"><div class="pm-poster">' +
       '<img src="' + esc(posterUrl) + '" width="' + (num(P.width) || 1200) + '" height="' + (num(P.height) || 1600) + '" alt="' + esc(text(P.alt, 300)) + '" fetchpriority="high" decoding="async"><h1 class="pm-vh">' + esc(text(C.headline, 200)) + '</h1>' +
       '<span class="pm-open-label">Read this issue <span aria-hidden="true">↓</span></span><button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Scroll for the full issue.</p></section>';
@@ -27,9 +27,15 @@
       '<p class="pm-coverweek">' + esc(text(I.week, 120)) + '</p><p class="pm-covercredit">' + esc(text(C.image && C.image.credit, 120)) + '</p><span class="pm-open-label">Read this issue <span aria-hidden="true">↓</span></span></div></div>' +
       '<button type="button" class="pm-open" aria-label="Open this issue" aria-controls="pm-contents"></button></div></div><p class="pm-entry-hint">Scroll for the full issue.</p></section>';
   }
+  function pmDocument(P) {
+    P = obj(P); return P && /^https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf(\?dn=[\w.-]+)?$/.test(String(P.url || '')) ? P : null;
+  }
+  function pmDocLink(P, cls, label) {
+    P = pmDocument(P); return P ? '<a class="' + cls + '" href="' + esc(P.url) + '">' + esc(text(label || P.label, 60)) + ' <span aria-hidden="true">↗</span></a>' : '';
+  }
   function pmPdfLink(D, cls) {
-    var P = obj(D.pdf); if (!P || !/^https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf$/.test(String(P.url || '')) || !text(P.label, 50)) return '';
-    return '<a class="' + cls + '" href="' + esc(P.url) + '" aria-label="Download the complete magazine PDF">' + esc(text(P.label, 50)) + '</a>';
+    var mobile = pmDocument(obj(D.download) && D.download.mobile), P = mobile || pmDocument(D.pdf);
+    return pmDocLink(P, cls, mobile ? 'Phone PDF' : P && P.label);
   }
   function pmReaderBar(D) {
     return '<div class="pm-readerbar"><a class="pm-readerbrand" href="/">Gator<span>Bait</span></a><details class="pm-reader-menu"><summary>Contents</summary>' + pmContents(D, true).replace('id="pm-contents" tabindex="-1"', '') + '</details><button type="button" data-pm-cover>Cover ↑</button>' + pmPdfLink(D, 'pm-pdf') + '</div>';
@@ -37,10 +43,10 @@
   function pmStart(m) {
     var entry = m.querySelector('.pm-entrance'), cover = m.querySelector('.pm-open'), contents = m.querySelector('#pm-contents');
     if (!entry || !cover || !contents) return;
-    var opening = false;
     function open() {
       // No flip animation: the cover is simply the top of the page. Tapping it scrolls to the issue.
       if (!m.isConnected) return;
+      var index = contents.querySelector('.pm-issue-index'); if (index) index.open = true;
       var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       try { contents.scrollIntoView({block:'start',behavior:reduced?'instant':'smooth'}); } catch (_) { contents.scrollIntoView(); }
       contents.focus({preventScroll:true});
@@ -54,6 +60,7 @@
       if (a) {
         var menu = m.querySelector('.pm-reader-menu'); if (menu) menu.open = false;
         var target = m.querySelector(a.getAttribute('href'));
+        if (target === contents) { var index = contents.querySelector('.pm-issue-index'); if (index) index.open = true; }
         if (target) { target.tabIndex = -1; target.focus({preventScroll:true}); }
       }
     });
@@ -62,7 +69,7 @@
       if (e.key === 'Escape' && menu && menu.open) { menu.open = false; menu.querySelector('summary').focus(); }
     });
     // Direct links into the issue bypass the entrance. Content is always present and scrollable.
-    if (/^#pm-/.test(location.hash)) m.classList.add('pm-opened');
+    if (location.hash === '#pm-contents') { var index = contents.querySelector('.pm-issue-index'); if (index) index.open = true; }
   }
   function pmHead(id, D) {
     var k = text(D.kicker, 60), t = text(D.title, 120), d = text(D.dek, 400);
@@ -105,7 +112,8 @@
       }).join('') + '</div>' + (meta.length ? '<p class="pm-final-m">' + meta.map(function (m) { return '<span>' + esc(m) + '</span>'; }).join('') + '</p>' : '') + '</div></section>';
   }
   function pmStoryIndex(D) {
-    return [D.cover].concat(list(obj(D.columns) && D.columns.items, 12), list(obj(D.coverage) && D.coverage.items, 12));
+    var columns = list(obj(D.columns) && D.columns.items, 12), coverage = list(obj(D.coverage) && D.coverage.items, 12);
+    return D.readerStyle === 'editorial' ? columns.concat([D.cover], coverage) : [D.cover].concat(columns, coverage);
   }
   function pmContents(D, menu) {
     if (D.readerStyle === 'editorial') {
@@ -257,6 +265,13 @@
     return '<p class="pm-dl-alt"><a href="' + esc(P.url) + '" download="' + esc(text(P.file, 80) || 'GatorBait-Magazine-Print.pdf') + '">' + esc(text(P.label, 60)) + '</a>' + (text(P.note, 40) ? ' <span>' + esc(text(P.note, 40)) + '</span>' : '') + '</p>';
   }
   function pmDownload(D) {
+    if (D.readerStyle === 'editorial') {
+      var A = obj(D.download) || {}, mobile = pmDocument(A.mobile), print = pmDocument(A.print), fallback = pmDocument(A);
+      if (!mobile && !print && !fallback) return '';
+      return '<section class="pm-downloads" id="pm-download" aria-labelledby="pm-download-t"><div class="pm-in"><p class="pm-kick">Your issue. Your way.</p><h2 id="pm-download-t">Take GatorBait with you.</h2><div class="pm-document-grid">' + [[mobile || fallback, mobile ? 'Read on your phone' : 'Digital edition', mobile ? 'Phone PDF' : 'Open PDF'], [print, 'The print edition', 'Print PDF']].map(function (item) {
+        var P = item[0]; return P ? '<a class="pm-document" href="' + esc(P.url) + '"><span class="pm-document-type">' + esc(item[2]) + '</span><h3>' + item[1] + '</h3><span class="pm-document-note">' + esc(text(P.note, 100)) + '</span><span class="pm-document-open">Open edition <span aria-hidden="true">↗</span></span></a>' : '';
+      }).join('') + '</div></div></section>';
+    }
     var X = obj(D.download); if (!X || !text(X.label, 60) || !/^https:\/\/18fb3a4e-d7f6-414a-aeb9-3047db3ea115\.usrfiles\.com\/ugd\/[\w.]+\.pdf(\?dn=[\w.-]+)?$/.test(String(X.url || ''))) return '';
     // A plain link with the download attribute: it saves the file, never opens a print dialog.
     return '<section class="pm-dl" id="pm-download" aria-label="Download the magazine"><div class="pm-in">' + (text(X.kicker, 40) ? '<p class="pm-kick">' + esc(text(X.kicker, 40)) + '</p>' : '') +
@@ -280,9 +295,10 @@
   function pmFoot(D) {
     var R = obj(D.reference), links = R ? list(R.links, 6).map(obj).filter(function (l) { return l && safeUrl(l.url) && text(l.label, 40); }) : [];
     return '<footer class="pm-foot"><div class="pm-in">' + (links.length ? '<nav aria-label="' + esc(text(R.label, 40) || 'More') + '"><p class="pm-kick">' + esc(text(R.label, 40)) + '</p><ul>' + links.map(function (l) { return '<li><a href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a></li>'; }).join('') + '</ul></nav>' : '') +
-      pmCredits(D) + pmSrc(D.asOf) + pmPdfLink(D, 'pm-print') + (R && text(R.top, 40) ? '<a class="pm-top" href="#pm-cover">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
+      pmCredits(D) + pmSrc(D.asOf) + (D.readerStyle === 'editorial' ? '' : pmPdfLink(D, 'pm-print')) + (R && text(R.top, 40) ? '<a class="pm-top" href="' + (D.readerStyle === 'editorial' ? '#pm-entrance' : '#pm-cover') + '">' + esc(text(R.top, 40)) + ' <span aria-hidden="true">↑</span></a>' : '') + '</div></footer>';
   }
   function renderPostgame(D) {
-    if (D.readerStyle === 'editorial') return '<div class="pm-wrap pm-editorial">' + pmReaderBar(D) + pmEntrance(D) + pmContents(D) + pmPackage(D, 'columns') + '<div id="pm-story-1" class="pm-story-anchor">' + pmCover(D) + '</div>' + pmPackage(D, 'coverage') + pmNext(D) + pmDownload(D) + pmFoot(D) + '</div>';
+    if (D.readerStyle === 'editorial') return '<div class="pm-wrap pm-editorial">' + pmReaderBar(D) + pmEntrance(D) + pmContents(D) + pmPackage(D, 'columns') + '<div id="pm-story-' + (pmStoryIndex(D).indexOf(D.cover) + 1) + '" class="pm-story-anchor">' + pmCover(D) + '</div>' + pmPackage(D, 'coverage') + pmNext(D) + pmDownload(D) + pmFoot(D) + '</div>';
     return '<div class="pm-wrap">' + pmEntrance(D) + pmReaderBar(D) + pmContents(D) + pmCover(D) + pmFinal(D) + pmPackage(D, 'columns') + pmPackage(D, 'coverage') + pmDamage(D) + pmScoring(D) + pmBox(D) + pmFlow(D) + pmQuotes(D) + pmWatch(D) + pmNext(D) + pmDownload(D) + pmFoot(D) + '</div>';
   }
+

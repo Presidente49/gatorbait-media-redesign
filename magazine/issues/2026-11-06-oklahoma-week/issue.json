@@ -138,6 +138,26 @@
       ]
     },
     {
+      "id": "TBD-loren-preview",
+      "key": "loren-preview",
+      "rubric": "Pregame preview",
+      "author": "Loren Meadows",
+      "byline": "By Loren Meadows, GatorBaitMedia.com Football Analyst, Host of The Gator Lowdown with Loren Meadows",
+      "hero": "loren-photo",
+      "rules": [
+        {
+          "op": "dek-from-id",
+          "id": "deck",
+          "reason": "Loren's own deck line (copy-desk cleaned text). It runs once, as the dek under the headline, and is not repeated in the body."
+        },
+        {
+          "op": "drop-id",
+          "id": "byline",
+          "reason": "Display byline line at the top of the body. The magazine byline (the same words) appears once, in the byline slot. Loren's byline wording is kept exactly."
+        }
+      ]
+    },
+    {
       "id": "2d31ea6f-538f-4d40-8bca-e497943d80e1",
       "key": "scouting1",
       "rubric": "Scouting Oklahoma",
@@ -322,6 +342,14 @@
       "height": 1350,
       "alt": "Navy watch dial with the headline The Monster That’s Never Fed, for Buddy Martin’s football coaches’ lament column.",
       "credit": "Graphic: GatorBait Media."
+    },
+    "loren-photo": {
+      "id": "TBD",
+      "ext": "jpg",
+      "width": 2400,
+      "height": 1350,
+      "alt": "Photo for the Oklahoma preview (see receipt)",
+      "credit": "PHOTO PLACEHOLDER: credit pending"
     }
   },
   "cover": {
@@ -344,13 +372,14 @@
       "fridays",
       "show",
       "soothsayer",
+      "loren-preview",
       "scouting1",
       "cfp",
       "monster",
       "goose",
       "yost"
     ],
-    "orderNote": "Order kept as given by the coordinator, with Scouting Oklahoma Part 1 directly after the Soothsayer. Nov. 7 additions and removals (Brenden): Buddy Martin's new column 'The Monster That's Never Fed. A Football Coaches' Lament.' (post 524998de, published Nov. 7, 2026 UTC) runs first in the Columns section, ahead of the Golden Goose and Yost columns, because it is the newest and longest of the three. The two basketball stories (Condon, McMiller) were taken out of the edition on the owner's order ('I do not want basketball stories in there'); the posts are untouched and stay live. The edition date label stays 'Nov. 6, 2026 pregame edition'. The web bundle (sports-live) and the email are not rebuilt by this tool and still carry their earlier story lists.",
+    "orderNote": "Order kept as given by the coordinator, with Scouting Oklahoma Part 1 directly after the Soothsayer. Nov. 7 additions and removals (Brenden): Buddy Martin's new column 'The Monster That's Never Fed. A Football Coaches' Lament.' (post 524998de, published Nov. 7, 2026 UTC) runs first in the Columns section, ahead of the Golden Goose and Yost columns, because it is the newest and longest of the three. The two basketball stories (Condon, McMiller) were taken out of the edition on the owner's order ('I do not want basketball stories in there'); the posts are untouched and stay live. The edition date label stays 'Nov. 6, 2026 pregame edition'. The web bundle (sports-live) and the email are not rebuilt by this tool and still carry their earlier story lists. Loren Meadows's Oklahoma pregame preview (not yet published; id TBD) was added on Nov. 7 and sits directly after the Soothsayer.",
     "rereadAfterFirstReceipt": {
       "when": "Nov. 6, 2026, evening (after the 21:32Z Condon republish), read-only GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT, published versions",
       "method": "lastPublishedDate compared with the first receipt, plus a text fingerprint (FNV-1a over all text runs, computed on the Wix side and again on the saved body) for all eight posts",
@@ -437,6 +466,16 @@
         "author": "Buddy Martin (member ae876af8, the same member as the Golden Goose and Yost columns)",
         "raw": "source/524998de-233f-4703-8bff-c12b0a44a8d1.json",
         "acquired": "Nov. 7, 2026, read-only: draft (GET /blog/v3/draft-posts/{id}?fieldsets=RICH_CONTENT) and published (GET /v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT) versions, identical block by block (62 top-level blocks, FNV-1a 32 fingerprints); draft editedDate 2026-11-07T04:15:18Z. The live post was being hand-edited by Brenden in the Wix editor at the time, so a later edit will not be in this edition until the source is re-read. The source file was rebuilt from the saved pre-reformat rollback nodes plus the live structure and fingerprint-checked block by block (see source.note in the file); there is no raw API file because the tool sandbox cannot save one."
+      },
+      {
+        "key": "loren-preview",
+        "id": "TBD (not yet published)",
+        "lastPublishedDate": "TBD",
+        "firstPublishedDate": "TBD",
+        "hasUnpublishedChanges": null,
+        "author": "Loren Meadows (member c6f7996f-a5f3-4b00-ac07-4e883fa9a4b4, per the copy desk)",
+        "raw": "source/TBD-loren-preview.json",
+        "acquired": "NOT FROM WIX: the copy desk's cleaned text of Loren's Nov. 7 email (Gmail thread 1a1b469cb83d656c), r5/newsroom/loren-preview-clean.md, corrections in changes.md (33 edit rows: typos, dropped words, name spellings, records and roster facts checked against ESPN and the official rosters). The post id, URL and dates are TBD until it is published; replace the id in issue.json, rename source/TBD-loren-preview.json to <id>.json and rerun prepare.py. The title is Loren's own corrected title; the controller may publish under a different headline, and then the magazine title must be updated to match."
       }
     ],
     "images": [
@@ -506,6 +545,13 @@
         "size": "495 x 470 (cropped to 390 x 448 for the magazine)",
         "credit": "Nick Saban photo courtesy of ESPN",
         "seen": "Opened full size. Studio-style head-and-shoulders portrait of Nick Saban, no overlay or watermark. Supplied by Brenden for this column and already live in the post (alt 'Nick Saban. Photo courtesy of ESPN.'). The credit line is the live caption, kept word for word. Cropped tight to head and shoulders and floated left at 1.5 in wide (260 ppi) in the Letter edition and the phone edition."
+      },
+      {
+        "use": "Loren preview opener photo",
+        "media": "TBD",
+        "size": "none",
+        "credit": "PHOTO PLACEHOLDER: credit pending",
+        "seen": "Placeholder only: no photograph has been placed."
       }
     ],
     "flags": [
@@ -526,7 +572,9 @@
       "Part 1 title uses a straight apostrophe in 'Oklahoma's' and the body uses straight apostrophes and straight double quotes, unlike the other stories (curly); copied as published, no typographic change made.",
       "Nov. 7 column in a Nov. 6-dated edition: the issue date label stays 'Nov. 6, 2026 pregame edition' (owner instruction). Brenden calls the Monster column a Nov. 7 column and Wix stamps it Nov. 7 UTC (first published 02:37Z, last published 03:42Z); on the Eastern clock (EST, UTC-5) that is Friday, Nov. 6 at 9:37 p.m. and 10:42 p.m. ET, inside the edition's date. The credits page line 'Complete stories ... as published through Friday, Nov. 6, 2026' is therefore true by the Eastern clock; it would need a change only if the owner republishes the column on Nov. 7 ET.",
       "Monster column subheads: the live post carries five level-2 subheads ('The quiet part out loud', 'The lament of almost every father', 'Two masters, one life', 'A weird drive home', 'An old man's prayer'). They are not in Buddy's original filing (the saved rollback nodes show dividers there); the Nov. 7 reformat added them in place of the dividers. The magazine keeps them as plain subheads with no rule or ornament, so there are no section-break dividers anywhere in the story. If the owner wants no subheads either, the builder plan entry has one switch (subs: 'none').",
-      "Monster column wording: every body paragraph is carried word for word and in order. The live reformat split the Terry Saban paragraph in two ('...Miss Terry told him.' / '\\u201cSo if you feel...'); the magazine keeps that split. The live post, not Buddy's first filing, is the source."
+      "Monster column wording: every body paragraph is carried word for word and in order. The live reformat split the Terry Saban paragraph in two ('...Miss Terry told him.' / '\\u201cSo if you feel...'); the magazine keeps that split. The live post, not Buddy's first filing, is the source.",
+      "Loren preview (copy-desk flags, all UNCHANGED in the magazine copy, from r5/newsroom/changes.md): 'Elijah Thomas ... upgraded to probable' needs the Friday SEC availability report; 'Vernell Brown III ... fifth straight week' needs the game-day status; 'the SEC's 14th ranked offense' matches no single ESPN metric (15th total and scoring, 14th rushing); 'Florida run defense 57th, 133 yards' is 58th and 133.5 on ESPN; 'One expert says that he loves Jones's moxie and that moxie but...' does not parse and the expert is unnamed. Loren's words stand as filed apart from the corrections in changes.md.",
+      "Loren preview picture: NO PHOTO YET: the opener carries a clearly marked placeholder slot (the lorenphoto folder had no README when this was built). It must not ship."
     ],
     "removedPosts": [
       {

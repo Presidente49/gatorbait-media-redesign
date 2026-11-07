@@ -1,0 +1,239 @@
+{
+ "id": "TBD-loren-preview",
+ "title": "Week 10 Preview: Florida Gators (5-3, 3-3) v. Oklahoma Sooners (4-4, 2-3)",
+ "excerpt": "Loren Meadows: Oklahoma makes their first visit to the Swamp as both teams look to set the tone for November.",
+ "slug": "tbd-loren-preview",
+ "url": "https://www.gatorbaitmedia.com/post/tbd-loren-preview",
+ "source": {
+  "endpoint": "NOT PUBLISHED: copy-desk cleaned text, r5/newsroom/loren-preview-clean.md (Gmail thread 1a1b469cb83d656c, from Loren Meadows, 2026-11-07T05:09:51Z; corrections listed in r5/newsroom/changes.md). No Wix post exists yet; id, url, slug and dates are placeholders to be replaced after publication.",
+  "firstPublishedDate": "TBD (not yet published)",
+  "lastPublishedDate": "TBD (not yet published)",
+  "hasUnpublishedChanges": null,
+  "memberId": "c6f7996f-a5f3-4b00-ac07-4e883fa9a4b4",
+  "minutesToRead": 6,
+  "pricingPlanIds": [],
+  "note": "Built by r5/tools/make_loren_source.py. The deck and byline are carried as blocks (ids deck, byline) so the prepare step can place them in the dek and byline slots once, the way the Monster column does."
+ },
+ "cover": {
+  "id": null,
+  "width": null,
+  "height": null,
+  "alt": "",
+  "filename": null
+ },
+ "blocks": [
+  {
+   "k": "p",
+   "id": "deck",
+   "text": "Oklahoma makes their first visit to the Swamp as both teams look to set the tone for November.",
+   "runs": [
+    {
+     "t": "Oklahoma makes their first visit to the Swamp as both teams look to set the tone for November."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "byline",
+   "text": "By Loren Meadows, GatorBaitMedia.com Football Analyst, Host of The Gator Lowdown with Loren Meadows",
+   "runs": [
+    {
+     "t": "By Loren Meadows, GatorBaitMedia.com Football Analyst, Host of The Gator Lowdown with Loren Meadows"
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "lp03",
+   "text": "Oklahoma offense",
+   "runs": [
+    {
+     "t": "Oklahoma offense"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "lp04",
+   "text": "Key players: #10 QB John Mateer (6-1, 224, 5th Yr.), #9 RB Lloyd Avant (5-10, 215, Jr./Colorado State), #6 RB Tory Blaylock (5-11, 212, So.), #1 WR Isaiah Sategna III (5-10, 185, 5th Yr.), #0 WR Manny Choice (6-4, 211, So.), #81 TE Rocky Beers (6-5, 240, 6th Yr./Colorado State), #89 TE Hayden Hansen (6-8, 266, 5th Yr./Florida)",
+   "runs": [
+    {
+     "t": "Key players:",
+     "b": true
+    },
+    {
+     "t": " #10 QB John Mateer (6-1, 224, 5th Yr.), #9 RB Lloyd Avant (5-10, 215, Jr./Colorado State), #6 RB Tory Blaylock (5-11, 212, So.), #1 WR Isaiah Sategna III (5-10, 185, 5th Yr.), #0 WR Manny Choice (6-4, 211, So.), #81 TE Rocky Beers (6-5, 240, 6th Yr./Colorado State), #89 TE Hayden Hansen (6-8, 266, 5th Yr./Florida)"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp05",
+   "text": "Matchups to watch: Brad White v. Jason Witten, Florida Secondary v. Oklahoma Receivers",
+   "runs": [
+    {
+     "t": "Matchups to watch:",
+     "b": true
+    },
+    {
+     "t": " Brad White v. Jason Witten, Florida Secondary v. Oklahoma Receivers"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp06",
+   "text": "The Oklahoma offense came in to the season with high hopes of a Heisman candidacy for quarterback John Mateer and an offense that was going to be explosive yet physical at every position. Unfortunately things have gone from bad to worse for the SEC’s 14th ranked offense. An inability to produce yardage on the ground has allowed teams to pin their ears back and get after Mateer who has been eerily inconsistent to the tune of 13 touchdowns coupled with seven interceptions. To make matters worse this week Oklahoma parted ways with OC Ben Arbuckle whom Mateer had the most experience with and handed playcalling duties over to tight ends coach and former NFL great Jason Witten. While Witten is not expected to change much from a schematical standpoint it could mean more targets for tight ends Rocky Beers and Florida transfer Hayden Hansen.",
+   "runs": [
+    {
+     "t": "The Oklahoma offense came in to the season with high hopes of a Heisman candidacy for quarterback John Mateer and an offense that was going to be explosive yet physical at every position. Unfortunately things have gone from bad to worse for the SEC’s 14th ranked offense. An inability to produce yardage on the ground has allowed teams to pin their ears back and get after Mateer who has been eerily inconsistent to the tune of 13 touchdowns coupled with seven interceptions. To make matters worse this week Oklahoma parted ways with OC Ben Arbuckle whom Mateer had the most experience with and handed playcalling duties over to tight ends coach and former NFL great Jason Witten. While Witten is not expected to change much from a schematical standpoint it could mean more targets for tight ends Rocky Beers and Florida transfer Hayden Hansen."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp07",
+   "text": "Beers and Hansen are second and sixth on the team in catches and what better way to get Mateer comfortable in the Swamp than finding easy throws early to both his tight ends. Witten will certainly look to establish the run to open up play action for Mateer and to find his playmakers. Unfortunately Oklahoma averages just over 106 yards per game while Florida boasts a solid run defense that is 57th nationally surrendering 133 yards per game so there will be very little wiggle room. No matter what Florida does Mateer’s inconsistency will most certainly mean serviceable carries for leading rushers Lloyd Avant and Tory Blaylock. Mateer also can be a factor in the run game as well.",
+   "runs": [
+    {
+     "t": "Beers and Hansen are second and sixth on the team in catches and what better way to get Mateer comfortable in the Swamp than finding easy throws early to both his tight ends. Witten will certainly look to establish the run to open up play action for Mateer and to find his playmakers. Unfortunately Oklahoma averages just over 106 yards per game while Florida boasts a solid run defense that is 57th nationally surrendering 133 yards per game so there will be very little wiggle room. No matter what Florida does Mateer’s inconsistency will most certainly mean serviceable carries for leading rushers Lloyd Avant and Tory Blaylock. Mateer also can be a factor in the run game as well."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp08",
+   "text": "Along with Beers and Hansen Oklahoma has a decent group of receivers that may find their footing against a Florida secondary that has been playing better but has been inconsistent particularly at corner. Isaiah Sategna leads the team with 45 catches and Manny Choice has been decent in an expanded role and Friday night receiver Elijah Thomas who could be Oklahoma’s best pass catcher was upgraded to probable after a two week absence.",
+   "runs": [
+    {
+     "t": "Along with Beers and Hansen Oklahoma has a decent group of receivers that may find their footing against a Florida secondary that has been playing better but has been inconsistent particularly at corner. Isaiah Sategna leads the team with 45 catches and Manny Choice has been decent in an expanded role and Friday night receiver Elijah Thomas who could be Oklahoma’s best pass catcher was upgraded to probable after a two week absence."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp09",
+   "text": "The Florida defense has been improved and actually played well enough to keep Florida in the game last week against Georgia. They have begun to generate pressure through increased six man pressures and have been decent enough on run downs that put the opposition in 3rd and long more frequently. Unfortunately the defense has had times where their poor play has been the spark plug for struggling offense to find their footing. Mateer and company are capable, could a new play caller be enough to make life tough on the Gators?",
+   "runs": [
+    {
+     "t": "The Florida defense has been improved and actually played well enough to keep Florida in the game last week against Georgia. They have begun to generate pressure through increased six man pressures and have been decent enough on run downs that put the opposition in 3rd and long more frequently. Unfortunately the defense has had times where their poor play has been the spark plug for struggling offense to find their footing. Mateer and company are capable, could a new play caller be enough to make life tough on the Gators?"
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "lp10",
+   "text": "Oklahoma defense",
+   "runs": [
+    {
+     "t": "Oklahoma defense"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "lp11",
+   "text": "Key players: #38 LB Owen Heinecke (6-1, 230, 6th Yr.), #22 DB Peyton Bowen (6-0, 204, Sr.), #3 DB Reggie Powers III (6-0, 214, Jr.), #4 DB Courtland Guillory (6-0, 190, So.), #2 DB Omarion Robinson (5-11, 212, So.), #0 DL David Stone (6-3, 315, Jr.)",
+   "runs": [
+    {
+     "t": "Key players:",
+     "b": true
+    },
+    {
+     "t": " #38 LB Owen Heinecke (6-1, 230, 6th Yr.), #22 DB Peyton Bowen (6-0, 204, Sr.), #3 DB Reggie Powers III (6-0, 214, Jr.), #4 DB Courtland Guillory (6-0, 190, So.), #2 DB Omarion Robinson (5-11, 212, So.), #0 DL David Stone (6-3, 315, Jr.)"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp12",
+   "text": "Matchups to watch: Florida Offensive Line v. Oklahoma Front Seven, Faulkner v. Venables",
+   "runs": [
+    {
+     "t": "Matchups to watch:",
+     "b": true
+    },
+    {
+     "t": " Florida Offensive Line v. Oklahoma Front Seven, Faulkner v. Venables"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp13",
+   "text": "Oklahoma boasts one of the nation’s best defensive units with an elite defensive mind at the head of it all. Brent Venables has a unit that has struggled at times but continues to be extremely opportunistic in creating turnovers and showing up best when their backs are against the wall. While the offense has put them in bad situations at times Oklahoma is still giving up just 20.8 points per game and just 174 yards per game through the air. Against the ground game they are just as stout giving up just 129 yards per game as well.",
+   "runs": [
+    {
+     "t": "Oklahoma boasts one of the nation’s best defensive units with an elite defensive mind at the head of it all. Brent Venables has a unit that has struggled at times but continues to be extremely opportunistic in creating turnovers and showing up best when their backs are against the wall. While the offense has put them in bad situations at times Oklahoma is still giving up just 20.8 points per game and just 174 yards per game through the air. Against the ground game they are just as stout giving up just 129 yards per game as well."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp14",
+   "text": "The defense is anchored by linebacker Owen Heinecke who once played lacrosse at Ohio State and is now a Butkus semifinalist. Heinecke leads the team in tackles and tackles for loss and is third on the team in sacks. Look for him to have eyes on Jadan Baugh at all times with the goal of meeting him with bad intentions.",
+   "runs": [
+    {
+     "t": "The defense is anchored by linebacker Owen Heinecke who once played lacrosse at Ohio State and is now a Butkus semifinalist. Heinecke leads the team in tackles and tackles for loss and is third on the team in sacks. Look for him to have eyes on Jadan Baugh at all times with the goal of meeting him with bad intentions."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp15",
+   "text": "Oklahoma also has one of the nation’s best secondaries as Peyton Bowen, Ohio native Reggie Powers III, Courtland Guillory and Omarion Robinson have done well in defending some of the nation’s top receiver units. Peyton Bowen is a big hitter who also flashes on special teams and had a 42-yard pick six in the Red River rivalry that turned the momentum in that game. Sophomore Courtland Guillory was an All-Freshman SEC selection last season and it was his interception of Arch Manning that helped their rival leave the nation’s top spot in a stunning upset in Dallas.",
+   "runs": [
+    {
+     "t": "Oklahoma also has one of the nation’s best secondaries as Peyton Bowen, Ohio native Reggie Powers III, Courtland Guillory and Omarion Robinson have done well in defending some of the nation’s top receiver units. Peyton Bowen is a big hitter who also flashes on special teams and had a 42-yard pick six in the Red River rivalry that turned the momentum in that game. Sophomore Courtland Guillory was an All-Freshman SEC selection last season and it was his interception of Arch Manning that helped their rival leave the nation’s top spot in a stunning upset in Dallas."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp16",
+   "text": "Up front Oklahoma is physical and well coached and their best player in defensive tackle David Stone who will be the first line of defense against a Gator offense that will look to find its running game with the added dimension of quarterback Tramell Jones making his second career start.",
+   "runs": [
+    {
+     "t": "Up front Oklahoma is physical and well coached and their best player in defensive tackle David Stone who will be the first line of defense against a Gator offense that will look to find its running game with the added dimension of quarterback Tramell Jones making his second career start."
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "lp17",
+   "text": "The skinny",
+   "runs": [
+    {
+     "t": "The skinny"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "lp18",
+   "text": "Many believe that Oklahoma has packed it in but the lack of availability for Spurries reservations would lead me to believe that the Sooner faithful believe otherwise. Witten calling plays since his days as a high school coach is not the best look for Venables and Oklahoma but the Florida defense certainly is not consistent enough that keeping Mateer and Co. at bay is a guarantee. Sumrall handing Tramell Jones the ball will provide Florida with another rusher that Oklahoma will have to account for and his presence seemed to open things up late for Jadan Baugh against Texas and he was effective with his legs at times against Georgia. The Buster Faulkner offense has always seemed to work best when the quarterback is uber involved in the run game and Tramell gives Florida a little more of that than Aaron Philo. One expert says that he loves Jones’s moxie and that moxie but the unavailability of Vernell Brown III for a fifth straight week will remove a much needed piece off the board. Regardless I look for Jones to play well enough to move the ball effectively in a low scoring physical affair. The return of Duke Clark should help matters a little as well. Oklahoma presses the Gators but Sumrall and Jones find a way.",
+   "runs": [
+    {
+     "t": "Many believe that Oklahoma has packed it in but the lack of availability for Spurries reservations would lead me to believe that the Sooner faithful believe otherwise. Witten calling plays since his days as a high school coach is not the best look for Venables and Oklahoma but the Florida defense certainly is not consistent enough that keeping Mateer and Co. at bay is a guarantee. Sumrall handing Tramell Jones the ball will provide Florida with another rusher that Oklahoma will have to account for and his presence seemed to open things up late for Jadan Baugh against Texas and he was effective with his legs at times against Georgia. The Buster Faulkner offense has always seemed to work best when the quarterback is uber involved in the run game and Tramell gives Florida a little more of that than Aaron Philo. One expert says that he loves Jones’s moxie and that moxie but the unavailability of Vernell Brown III for a fifth straight week will remove a much needed piece off the board. Regardless I look for Jones to play well enough to move the ball effectively in a low scoring physical affair. The return of Duke Clark should help matters a little as well. Oklahoma presses the Gators but Sumrall and Jones find a way."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "lp19",
+   "text": "Prediction: Florida 27, Oklahoma 21",
+   "runs": [
+    {
+     "t": "Prediction:",
+     "b": true
+    },
+    {
+     "t": " Florida 27, Oklahoma 21"
+    }
+   ]
+  }
+ ]
+}

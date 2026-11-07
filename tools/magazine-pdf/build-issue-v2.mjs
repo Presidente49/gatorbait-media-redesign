@@ -31,8 +31,8 @@ function phoneAsset(f) {
   if (!fs.existsSync(out)) {
     fs.mkdirSync(path.dirname(out), { recursive: true });
     const py = 'import sys\nfrom PIL import Image\nim=Image.open(sys.argv[1]).convert("RGB")\nmw=int(sys.argv[3])\nif im.width>mw: im=im.resize((mw,round(im.height*mw/im.width)),Image.LANCZOS)\nim.save(sys.argv[2],"JPEG",quality=int(sys.argv[4]),optimize=True,progressive=True)';
-    const cover = /^cover/.test(f);
-    execFileSync('/usr/bin/python3', ['-c', py, path.join(ASSET, f), out, cover ? '1103' : '1800', cover ? '90' : '82']);
+    const cover = /^cover/.test(f), art = /^monster-column-art/.test(f);   // the original-art openers keep their full 2400 px master in the phone PDF too
+    execFileSync('/usr/bin/python3', ['-c', py, path.join(ASSET, f), out, cover ? '1103' : art ? '2400' : '1800', cover || art ? '90' : '82']);
   }
   return out;
 }
@@ -572,9 +572,9 @@ a{color:inherit;text-decoration:none}
 .afq b{font:700 ${PHONE ? '7.6pt' : '9pt'} var(--cond);letter-spacing:.2em;text-transform:uppercase;color:var(--rust)}
 .afcredit{margin:${PHONE ? '8pt' : '10pt'} 0 0;font:700 ${PHONE ? '7.4pt' : '7.6pt'} var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 /* small portrait floated left in the story text */
-.body figure.fl{float:left;width:${PHONE ? '1.5in' : '1.5in'};margin:.03in .16in ${PHONE ? '.05in' : '.25in'} 0;break-inside:avoid;page-break-inside:avoid}
+.body figure.fl{float:left;width:${PHONE ? '1.5in' : '1.5in'};margin:.12in .16in ${PHONE ? '.05in' : '.25in'} 0;break-inside:avoid;page-break-inside:avoid}
 .body figure.fl img{display:block;width:100%;height:auto}
-.body figure.fl figcaption{font:500 ${PHONE ? '7.6pt' : '7.2pt'}/1.28 var(--sans);margin-top:3pt}.body figure.fl figcaption i{font-style:normal;font-weight:700;color:var(--rust)}
+.body figure.fl figcaption{font:500 ${PHONE ? '7.6pt' : '7.2pt'}/1.28 var(--sans);margin-top:3pt;text-wrap:balance}.body figure.fl figcaption i{font-style:normal;font-weight:700;color:var(--rust)}
 .body p.sub.quiet{border-top:0;padding-top:0;margin:${PHONE ? '11pt 0 3pt' : '12pt 0 3pt'}}
 
 /* editorial furniture */

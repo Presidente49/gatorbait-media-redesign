@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Quick Reads for Today’s Game",
+      "excerpt": "Eddie Gilley’s five questions for Florida against Oklahoma: pressure on Mateer, the offensive line, the run game, Tramell Jones Jr. and turnovers. Kickoff is 7:45 p.m. ET on SEC Network.",
+      "url": "https://www.gatorbaitmedia.com/post/quick-reads-for-today-s-game",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-11-07T17:41:36Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_9cef91324c1d4509b16eaeb4c5c1d492~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Quick Reads for Today’s Game"
+      }
+    },
+    {
       "title": "Florida Says Tramell Jones Jr. Will Start Against Oklahoma",
       "excerpt": "FloridaGators.com says Tramell Jones Jr. will make his second career start Saturday night against Oklahoma. The latest quarterback update and the numbers behind it.",
       "url": "https://www.gatorbaitmedia.com/post/report-tramell-jones-jr-expected-to-start-at-qb-against-oklahoma",
@@ -93,7 +107,7 @@
       "firstPublishedDate": "2026-11-06T15:50:45Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_026d2a4d2be04a91b8c32317fed5f623~mv2.jpg/v1/fit/w_1000,h_838,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_530fef5652ef460a8f6d24c5b2ae60ab~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Soothsayer likes the Gators in a white knuckler"
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Bumped by the Booth: ESPN Leaves Gators Fans Chasing Their Own Ballgame"
-      }
-    },
-    {
-      "title": "Florida vs. Oklahoma: Kickoff, TV, Quarterbacks and Key Numbers",
-      "excerpt": "No. 25 Florida hosts Oklahoma on Saturday, Nov. 7, at 7:45 p.m. ET on SEC Network. The quarterback plan, Vernell Brown III, Oklahoma's new play caller and the key numbers.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-vs-oklahoma-kickoff-tv-quarterbacks-and-key-numbers",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-03T18:46:11Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_00359caad82744778e7c387d8bf98777~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida vs. Oklahoma: Kickoff, TV, Quarterbacks and Key Numbers"
       }
     }
   ]

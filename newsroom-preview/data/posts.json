@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Quick Reads for Today’s Game",
+      "excerpt": "Eddie Gilley’s five questions for Florida against Oklahoma: pressure on Mateer, the offensive line, the run game, Tramell Jones Jr. and turnovers. Kickoff is 7:45 p.m. ET on SEC Network.",
+      "url": "https://www.gatorbaitmedia.com/post/quick-reads-for-today-s-game",
+      "author": "Eddie Gilley",
+      "firstPublishedDate": "2026-11-07T17:41:36Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_9cef91324c1d4509b16eaeb4c5c1d492~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Quick Reads for Today’s Game"
+      }
+    },
+    {
       "title": "Florida Says Tramell Jones Jr. Will Start Against Oklahoma",
       "excerpt": "FloridaGators.com says Tramell Jones Jr. will make his second career start Saturday night against Oklahoma. The latest quarterback update and the numbers behind it.",
       "url": "https://www.gatorbaitmedia.com/post/report-tramell-jones-jr-expected-to-start-at-qb-against-oklahoma",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65"
-      }
-    },
-    {
-      "title": "Florida Suspends DT Jeramiah McCloud One Game for Oklahoma",
-      "excerpt": "Starting defensive tackle Jeramiah McCloud will miss Saturday's game against Oklahoma, and right tackle Emeka Ugorji is out.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-suspends-dt-jeramiah-mccloud-one-game-for-oklahoma",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-05T21:28:30Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65da416fd88a4a60a2c65e8b8c467e16~mv2.jpg/v1/fit/w_1000,h_602,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida Suspends DT Jeramiah McCloud One Game for Oklahoma"
       }
     }
   ]

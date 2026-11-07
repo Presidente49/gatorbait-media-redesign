@@ -181,3 +181,6 @@ Source discrepancies are recorded, not corrected. Nothing was invented or guesse
 **Both teams**
 - **F15. Availability.** A roster or depth-chart listing does not establish game-day availability (as `OFFICIAL-SOURCES.md` states). The OU chart contains 19 OR listings. Preserve them exactly. They are not a confirmed lineup.
 - **F16. The UF Week 10 depth chart (UF p. 42) was not transcribed**, by design.
+
+**Magazine display (v2 revision, Nov. 7)**
+- **F17. Display tidy in the printed tables only; `uf-roster.json` and `ou-roster.json` still hold the source text exactly as printed.** The magazine builder (`tidyRow` in `tools/magazine-pdf/build-issue-v2.mjs`) shows `5th.` as `5th` (Asare, Kofi; Allen Jr., Alfonzo; F3), drops the dangling `/` from `Orlando, Fla./` (Bronaugh, CJ; F4), and re-splits #58 Solwold, Hunter's cells as hometown `Fallston, Md.` and school `Fallston / Washington` (F5), matching how every other UF row lists high school then transfer schools. Source wording is unchanged for everything else, including the letters-earned asterisks (F8): the OU table follows OU's numerical roster, which does not mark Southard or Fely; OU's alphabetical roster does. Re-checked against the OU game notes PDF on Nov. 7: the two lists disagree in the source itself.

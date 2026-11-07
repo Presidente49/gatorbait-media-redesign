@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Full-copy parity check: package article text vs the prepared story bodies (and, optionally, a built PDF).
 
-Usage: python3 -I tools/magazine-pdf/check-parity.py <posts.json> <package-articles-dir> [--pdf file.pdf]
+Usage: python3 -I tools/magazine-pdf/check-parity.py <posts.json> <package-articles-dir> [--pdf file.pdf] [--no-hero-pullquotes]
   posts.json            magazine/issues/<issue>/posts.json (output of prepare.py)
   package-articles-dir  the handoff package's articles/ folder; articles.json (the manifest) is read from that folder or from
                         its parent, and each story is matched to posts.json by post id
   --pdf file.pdf        also confirm, with pdftotext, that the first 8 and last 8 words of every prepared paragraph are in the PDF
+  --no-hero-pullquotes  with --pdf: do not expect each story's web pull quote to be reprinted (the v2 magazine picks its own pull quotes,
+                        so a body sentence only has to appear as often as the prepared body itself contains it)
 
 Writes a markdown report to stdout. Exit status: 0 = nothing UNEXPLAINED, 1 = at least one UNEXPLAINED item, 2 = usage or input error.
 The checker is read-only: it changes no file and calls no network service.
@@ -380,7 +382,7 @@ def pdf_key(s):
     return re.sub(r'[\W_]+', '', unicodedata.normalize('NFKC', s).casefold())
 
 
-def pdf_check(posts, preps, pdf_path):
+def pdf_check(posts, preps, pdf_path, hero_pullquotes=True):
     """-> per-story results for the first-8 / last-8 word test. preps: post id -> [(tag, text)]."""
     try:
         raw = subprocess.run(['pdftotext', '-raw', pdf_path, '-'], capture_output=True, text=True, check=True).stdout
@@ -390,7 +392,8 @@ def pdf_check(posts, preps, pdf_path):
     # What the prepared copy itself contains, per phrase: body paragraphs of every story plus every pull quote (the builder prints
     # a pull quote verbatim from the body, so it repeats a body sentence).
     corpus = [pdf_key(t) for p in posts for _, t in preps.get(p['id'], [])]
-    corpus += [pdf_key(p['pullquote']['text']) for p in posts if p.get('pullquote') and p.get('hero') == 'pullquote']
+    if hero_pullquotes:
+        corpus += [pdf_key(p['pullquote']['text']) for p in posts if p.get('pullquote') and p.get('hero') == 'pullquote']
 
     def need(k):
         return max(1, sum(c.count(k) for c in corpus))
@@ -421,6 +424,8 @@ def pdf_check(posts, preps, pdf_path):
 
 def main():
     args = sys.argv[1:]
+    hero_pq = '--no-hero-pullquotes' not in args
+    args = [a for a in args if a != '--no-hero-pullquotes']
     pdf_path = None
     if '--pdf' in args:
         k = args.index('--pdf')
@@ -488,7 +493,7 @@ def main():
 
     pdf_res = pdf_len = None
     if pdf_path:
-        pdf_res, pdf_len = pdf_check(posts, {r['post']['id']: r['prep'] for r in results}, pdf_path)
+        pdf_res, pdf_len = pdf_check(posts, {r['post']['id']: r['prep'] for r in results}, pdf_path, hero_pq)
 
     # ------------------------------------------------------------------ render
     un_total = len(problems)

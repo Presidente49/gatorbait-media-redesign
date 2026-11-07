@@ -1,5 +1,5 @@
 {
- "note": "Video and site links the writers' own posts carried (package snapshots of the published posts). Labels follow the source lines; URLs are the source URLs.",
+ "note": "Video and site links the writers' own posts carried (package snapshots of the published posts). Labels follow the source lines; URLs are the source URLs. Round 2 (Nov. 7): the source article's Shorts line and its two live links were restored.",
  "fridays": [
   {
    "label": "The complete Urban Meyer interview",
@@ -42,6 +42,17 @@
   {
    "label": "Segment: the 24-team playoff debate",
    "url": "https://www.youtube.com/watch?v=Us_Nc7LIbtg"
+  },
+  {
+   "label": "Shorts: “daddy ball,” dynasties are over, Notre Dame playing for its life, and more."
+  },
+  {
+   "label": "Watch the Short: daddy ball",
+   "url": "https://www.youtube.com/shorts/ORn5mTzbfl4"
+  },
+  {
+   "label": "Watch the Short: Notre Dame",
+   "url": "https://www.youtube.com/shorts/84x5wBt28J0"
   },
   {
    "label": "Catch The Buddy Martin Show live all season",

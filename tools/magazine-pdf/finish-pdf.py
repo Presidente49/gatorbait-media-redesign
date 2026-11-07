@@ -57,6 +57,14 @@ for page in writer.pages:
         holder[NameObject(field)] = ArrayObject([writer.pages[idx].indirect_reference, NameObject('/Fit')])
         fixed += 1
 
+# 2b. the catalog's named destinations (Chromium puts them mid-page) are no longer used by any link: drop them
+if '/Names' in writer._root_object:
+    nm = writer._root_object['/Names'].get_object()
+    if '/Dests' in nm:
+        del nm['/Dests']
+if '/Dests' in writer._root_object:
+    del writer._root_object['/Dests']
+
 # 3. document properties
 writer.add_metadata({'/Title': spec['title'], '/Author': spec['author'], '/Subject': spec['subject'], '/Creator': 'GatorBait Media magazine builder (Chromium)'})
 writer._root_object[NameObject('/PageMode')] = NameObject('/UseOutlines')

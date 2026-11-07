@@ -433,6 +433,14 @@
           "readBack": "GET /blog/v3/posts/{id}: new phrase present, old phrase absent, title, excerpt, member, categories, hero unchanged, hasUnpublishedChanges false"
         },
         {
+          "key": "goose",
+          "id": "ee624c8a-268c-4f94-889e-6cd3de939f6f",
+          "change": "MAGAZINE ONLY (the live post is NOT yet corrected): 'Urban Meyer enters the Ring of Honor at halftime,' became 'at the end of the first quarter,'. Florida's own Nov. 5 feature (FloridaGators.com, 'Urban Meyer's Florida Legacy Gets Permanent Place In The Swamp') says he is honored 'at the end of the first quarter on Saturday night'. Found by the independent QC pass on the Nov. 7 redesign. The live Wix post still says halftime and needs the same one-phrase UPDATE_PUBLISH by the fact desk once Wix access is available; Brenden's column, so tell Buddy.",
+          "lastPublishedDate": "2026-11-05T20:09:57.248Z (unchanged: no live write was made)",
+          "firstPublishedDate": "2026-11-05T18:39:04Z",
+          "readBack": "none: live post untouched"
+        },
+        {
           "key": "mcmiller",
           "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
           "change": "'Silver Springs, Maryland' became 'Silver Spring, Maryland' (ESPN roster)",

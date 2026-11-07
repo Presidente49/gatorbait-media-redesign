@@ -45,6 +45,8 @@ from pathlib import Path
 EXPECTED = [
     ('27b79db1-f0e7-40eb-9639-49a60420ac00', '2-3', '3-6', "Condon: '2-3 shooting from the field' became '3-6' (ESPN box score)"),
     ('e0e37d66-2592-443d-8a5e-0058bc507802', 'Springs', 'Spring', "McMiller: 'Silver Springs, Maryland' became 'Silver Spring' (ESPN roster)"),
+    ('bd815138-7f0c-4f97-a642-1cb5862e3f5a', '\u2018I', '\u201cI', "Yost: a mismatched opening quote mark (single, closed by a double) was paired (recorded desk rule in issue.json)"),
+    ('ee624c8a-268c-4f94-889e-6cd3de939f6f', 'halftime', 'the end of the first quarter', "Golden Goose: 'enters the Ring of Honor at halftime' became 'at the end of the first quarter' (UF's Nov. 5 Meyer feature; magazine-only until the live post is corrected)"),
 ]
 
 URL_RE = re.compile(r'(?:https?://|www\.)\S+', re.I)
@@ -284,6 +286,8 @@ class Rules:
         if CREDIT_LABEL_RE.match(text) or (words(text) <= 60 and CREDIT_INLINE_RE.search(text)) or any(c and c in text for c in self.credits):
             note = 'carried as the hero caption' if self.caption and self.caption in text else ''
             return ('photo-credit/caption line', note)
+        if re.fullmatch(r'[A-Za-z]', text.strip()):
+            return ('stray one-letter paragraph', 'a one-letter keystroke left in the filing (recorded desk rule in issue.json)')
         return None
 
 
@@ -364,6 +368,8 @@ def compare_story(post, header, src, prep, rules, multi_blocks):
 
 def subst_ok(old, new, want_old, want_new):
     """True when old -> new is want_old -> want_new with the same leading and trailing punctuation."""
+    if old == want_old and new == want_new:
+        return True
     mo, mn = re.match(r'^(\W*)(.*?)(\W*)$', old, re.S), re.match(r'^(\W*)(.*?)(\W*)$', new, re.S)
     return bool(mo and mn and mo.group(1) == mn.group(1) and mo.group(3) == mn.group(3) and mo.group(2) == want_old and mn.group(2) == want_new)
 

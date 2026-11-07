@@ -1,5 +1,7 @@
 # Receipt: Oklahoma week edition, Nov. 6, 2026 (eight stories)
 
+> **Superseded by v2 (Nov. 7, 2026):** nine stories, game guide, rosters and depth chart. See [V2-REVISION.md](V2-REVISION.md). This receipt covers the eight-story web bundle only.
+
 Read-only on every live object. Full per-block detail is in `magazine/issues/2026-11-06-oklahoma-week/receipt.json`; the rules that produced it are in `magazine/issues/2026-11-06-oklahoma-week/issue.json`.
 
 ## 1. The eight posts (Blog API, published versions), in reading order

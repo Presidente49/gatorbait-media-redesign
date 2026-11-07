@@ -65,7 +65,7 @@ const PLAN = [
     enote: "This is the panel's opinion, not a team announcement. Florida's Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr. at quarterback; see the Game Guide, page {qb}.",
     inlineLink: { text: 'watch the Urban Meyer Ring of Honor discussion', url: 'https://www.youtube.com/watch?v=ZcDpF0jCPGU' } },
   { key: 'scouting1', section: 'football', dekRepl: [['at No. 24 Florida', 'at CFP No. 24 Florida']], open: 'photo-full', photo: 'scouting-huddle.jpg', pos: '50% 40%', credit: 'Photo by Chris Spears, GatorBait Media.', cap: "Florida's defense huddles during the game at Auburn on Sept. 19, 2026.", pq: { after: 5, text: 'We need a change.', who: 'Brent Venables, Oklahoma coach, on the coordinator change' },
-    afterNote: "Part 2 of this series, on Florida's offense against Oklahoma's defense, had not been published when this edition's stories were collected on Friday, Nov. 6.", tune: { fs: '9.45pt', lh: '1.45', pfs: '10.4pt', plh: '1.42' } },
+    keep: 'Oklahoma rushes for 106.8', afterNote: "Part 2 of this series, on Florida's offense against Oklahoma's defense, had not been published when this edition's stories were collected on Friday, Nov. 6.", tune: { fs: '9.45pt', lh: '1.45', pfs: '10.6pt', plh: '1.44' } },
   { key: 'cfp', section: 'football', open: 'split-numeral', numeral: '24', numcap: 'Florida in the first College Football Playoff Top 25', pq: null },
   { key: 'soothsayer', section: 'football', open: 'photo-full', photo: 'soothsayer-baugh.jpg', pos: '50% 50%', credit: 'Archival photo by Chris Spears, GatorBait Media.', cap: 'Jadan Baugh dives into the end zone against Ole Miss in The Swamp on Sept. 26, 2026.', pq: null,
     enote: "This edition could not confirm a Florida starting quarterback. Its Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr.; see the Game Guide, page {qb}.", tune: { fs: '9.6pt', lh: '1.46' } },
@@ -115,6 +115,7 @@ const NBJ = (h) => h
   .replace(/([A-Za-z]) (Jr\.|Sr\.|III\b|II\b|IV\b)/g, '$1&nbsp;$2')
   .replace(/(p\.m\.|a\.m\.) (ET)\b/g, '$1&nbsp;$2')
   .replace(/\b(Jan\.|Feb\.|Aug\.|Sept\.|Oct\.|Nov\.|Dec\.) (\d)/g, '$1&nbsp;$2')
+  .replace(/\b((?:Jan\.|Feb\.|Aug\.|Sept\.|Oct\.|Nov\.|Dec\.|March|April|May|June|July)(?:&nbsp;| )\d{1,2}), (\d{4})\b/g, '$1,&nbsp;$2')
   .replace(/ — /g, '&nbsp;— ');
 const T = (s) => NBJ(esc(curl(String(s ?? ''))));                  // display text we set: smart quotes, no-break joins
 const nbTitle = (s) => T(s).replace(/\b([A-Za-z]{2,}-[A-Za-z]{2,})\b/g, '<span class="nb">$1</span>').replace(/\b(Buddy Martin Show|Pass Rush|Tramell Jones|QB Decision)\b/gi, '<span class="nb">$1</span>');
@@ -181,7 +182,8 @@ function bodyHtml(p, s) {
       n += 1;
       if (/^<p/.test(part)) {
         const short = n === 1 && plain(part).length < 90;
-        part = part.replace(/^<p/, n === 1 ? (short ? '<p class="lede short"' : '<p class="lede"') : '<p');
+        part = part.replace(/^<p/, n === 1 ? (short ? '<p class="lede short"' : (PHONE && s.key === 'soothsayer' ? '<p class="lede d2"' : '<p class="lede"')) : '<p');
+        if (!PHONE && s.keep && plain(part).startsWith(s.keep)) part = part.replace(/^<p/, '<p style="break-inside:avoid"');
         if (s.key === 'soothsayer') part = mapText(part, (t) => t.replace(/The Sayer Says Sooth!:/gi, '<span class="sayer">$&</span>'));
         if (/:\s*<\/p>\s*$/.test(part) || /:<\/p>$/.test(part)) part = part.replace(/^<p/, '<p class="lead-in"');
         if (s.inlineLink && part.includes(s.inlineLink.text)) part = part.replace(s.inlineLink.text, `<a class="vlink" href="${s.inlineLink.url}">${s.inlineLink.text}</a>`);
@@ -402,8 +404,8 @@ const backCover = () => `<section class="back" style="page:full"><p class="bw">G
 const css = (PHONE) => `
 :root{--navy:#10264b;--ink:#0b1a36;--blue:#0021a5;--orange:#fa4616;--rust:#b93a0e;--cream:#f8f3e8;--paper:#fcfaf4;--rule:#d9cfbc;--muted:#5d6577;--cond:"Barlow Condensed","Barlow",Arial,sans-serif;--sans:"Barlow",Arial,sans-serif}
 *{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-@page{size:${PHONE ? '480px 854px' : '8.5in 11in'};margin:${PHONE ? '.5in .34in .55in' : '.75in .68in .85in'};background:var(--cream);
- @bottom-left{content:"GATORBAIT MAGAZINE  \\00B7  PREGAME EDITION  \\00B7  NOV. 6, 2026";font:700 ${PHONE ? '6.4pt' : '6.6pt'} var(--cond);letter-spacing:.16em;color:var(--muted);vertical-align:top;padding-top:${PHONE ? '.13in' : '.2in'}}
+@page{size:${PHONE ? '480px 856px' : '8.5in 11in'};margin:${PHONE ? '.5in .34in .55in' : '.75in .68in .85in'};background:var(--cream);
+ @bottom-left{content:"GATORBAIT MAGAZINE  \\00B7  PREGAME EDITION  \\00B7  NOV. 6, 2026";font:700 ${PHONE ? '7pt' : '6.6pt'} var(--cond);letter-spacing:.16em;color:var(--muted);vertical-align:top;padding-top:${PHONE ? '.13in' : '.2in'}}
  @bottom-right{content:counter(page);font:800 ${PHONE ? '9pt' : '11pt'} var(--cond);color:var(--orange);vertical-align:top;padding-top:${PHONE ? '.1in' : '.15in'}}}
 @page full{margin:0;background:var(--navy);@bottom-left{content:none}@bottom-right{content:none}}
 ${[['p-front', 'GATORBAIT'], ['p-game', 'THE GAME'], ['p-honor', 'RING OF HONOR'], ['p-football', 'FOOTBALL'], ['p-hoops', 'BASKETBALL'], ['p-columns', 'COLUMNS'], ['p-uf', 'THE TEAMS  \\00B7  FLORIDA ROSTER'], ['p-oud', 'THE TEAMS  \\00B7  OKLAHOMA DEPTH CHART'], ['p-ou', 'THE TEAMS  \\00B7  OKLAHOMA ROSTER']].map(([n, t]) => `@page ${n}{@top-left{content:"${t}";font:800 ${PHONE ? '7.2pt' : '7.6pt'} var(--cond);letter-spacing:.24em;color:var(--rust);vertical-align:bottom;padding-bottom:.1in}@top-right{content:"OKLAHOMA WEEK";font:700 ${PHONE ? '6.4pt' : '6.6pt'} var(--cond);letter-spacing:.2em;color:var(--muted);vertical-align:bottom;padding-bottom:.1in}}`).join('\n')}
@@ -421,14 +423,14 @@ a{color:inherit;text-decoration:none}
 .by.lt{color:#ff8a5c}
 
 /* cover + back */
-.cover{width:${PHONE ? '480px' : '8.5in'};height:${PHONE ? '854px' : '11in'};background:var(--navy);break-after:page;position:relative;overflow:hidden}
+.cover{width:${PHONE ? '480px' : '8.5in'};height:${PHONE ? '856px' : '11in'};background:var(--navy);break-after:page;position:relative;overflow:hidden}
 .cover .curl{position:absolute;display:block;z-index:3}
 .cover img{display:block;width:${PHONE ? '5in' : '8.5in'};height:${PHONE ? '6.466in' : '11in'}}
 .cover .below{position:absolute;left:0;right:0;top:6.466in;bottom:0;padding:.24in .34in 0;color:#fff;border-top:3pt solid var(--orange);background:var(--navy)}
 .cover .below .ed{font:800 11pt var(--cond);letter-spacing:.16em;text-transform:uppercase;color:#ff8a5c;margin:0 0 6pt}
 .cover .below .six{font:800 26pt/1 var(--cond);text-transform:uppercase;margin:0 0 8pt}
 .cover .below .tag{font:600 10.5pt var(--sans);color:#c8d1e7;margin:0}
-.back{width:${PHONE ? '480px' : '8.5in'};height:${PHONE ? '854px' : '11in'};background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;break-before:page}
+.back{width:${PHONE ? '480px' : '8.5in'};height:${PHONE ? '856px' : '11in'};background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;break-before:page}
 .back .bw{font:800 ${PHONE ? '40pt' : '72pt'}/1 var(--cond);letter-spacing:.02em;font-style:italic;margin:0}.back .bw span{color:var(--orange)}
 .back .bt{font:700 ${PHONE ? '9pt' : '12pt'} var(--cond);letter-spacing:.42em;color:#ff8a5c;margin:12pt 0 22pt}
 .back .bu{font:600 ${PHONE ? '11pt' : '14pt'} var(--sans);color:#c8d1e7;margin:0}.back a{color:#c8d1e7;text-decoration:underline;text-decoration-thickness:.5pt;display:inline-block;padding:${PHONE ? '16pt 26pt' : '6pt 10pt'}}
@@ -440,9 +442,9 @@ a{color:inherit;text-decoration:none}
 .mdate{font:500 ${PHONE ? '8.4pt' : '9.6pt'} var(--sans);color:var(--muted);margin:0 0 ${PHONE ? '4pt' : '4pt'};padding-bottom:${PHONE ? '6pt' : '7pt'};border-bottom:3pt solid var(--orange)}
 .toc{list-style:none;margin:0;padding:0}
 .toc li{break-inside:avoid;border-bottom:.5pt solid var(--rule)}
-.toc li.sm .pgn{font-size:${PHONE ? '12pt' : '17pt'}}.toc li.sm .ct b{font-size:${PHONE ? '9.6pt' : '12.5pt'};margin:0}.toc li.sm a{padding:${PHONE ? '1pt 0' : '1.5pt 0'}}
+.toc li.sm .pgn{font-size:${PHONE ? '12pt' : '17pt'}}.toc li.sm .ct b{font-size:${PHONE ? '9.6pt' : '12.5pt'};margin:0}.toc li.sm a{padding:${PHONE ? '5.2pt 0' : '1.5pt 0'}}
 .toc li.grp{border:0;padding:${PHONE ? '3pt 0 0' : '5pt 0 0'}}.toc li.grp span{font:800 ${PHONE ? '7.5pt' : '8.6pt'} var(--cond);letter-spacing:.3em;text-transform:uppercase;color:var(--orange)}
-.toc a{display:flex;gap:${PHONE ? '9pt' : '16pt'};align-items:center;padding:${PHONE ? '1.3pt 0' : '2.2pt 0'}}
+.toc a{display:flex;gap:${PHONE ? '9pt' : '16pt'};align-items:center;padding:${PHONE ? '0.8pt 0' : '2.2pt 0'}}
 .pgn{font:800 ${PHONE ? '15pt' : '24pt'}/1 var(--cond);color:var(--blue);min-width:${PHONE ? '20pt' : '40pt'};text-align:right;font-variant-numeric:tabular-nums}
 .ct{display:block}.ck{display:block;font:800 ${PHONE ? '7.2pt' : '7.4pt'} var(--cond);letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
 .ct b{display:block;font:800 ${PHONE ? '10.6pt' : '15pt'}/1.04 var(--cond);color:var(--navy);margin:1pt 0 0}
@@ -455,7 +457,7 @@ a{color:inherit;text-decoration:none}
 .gplace{font:700 ${PHONE ? '8.4pt' : '10pt'} var(--cond);letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin:${PHONE ? '5pt 0 10pt' : '8pt 0 14pt'}}
 .gband{display:grid;grid-template-columns:repeat(4,1fr);background:var(--navy);color:#fff;border-top:4pt solid var(--orange);margin:0 0 ${PHONE ? '10pt' : '16pt'}}
 .gband span{white-space:nowrap}.gband div{padding:${PHONE ? '7pt 6pt' : '9pt 12pt'};border-right:.5pt solid #2d4676}.gband div:last-child{border:0}
-.gband b{display:block;font:800 ${PHONE ? '17pt' : '30pt'}/1 var(--cond)}.gband span{display:block;font:700 ${PHONE ? '7pt' : '8.2pt'} var(--cond);letter-spacing:.16em;text-transform:uppercase;color:#ff8a5c;margin-top:2pt}
+.gband b{display:block;font:800 ${PHONE ? '17pt' : '30pt'}/1 var(--cond)}.gband span{display:block;font:700 ${PHONE ? '7.8pt' : '8.2pt'} var(--cond);letter-spacing:.16em;text-transform:uppercase;color:#ff8a5c;margin-top:2pt}
 .gcols{display:grid;grid-template-columns:${PHONE ? '1fr' : 'repeat(3,1fr)'};gap:${PHONE ? '6pt' : '18pt'};margin-bottom:${PHONE ? '8pt' : '14pt'}}
 .gcols .gh,.gk{font:800 ${PHONE ? '8pt' : '9.4pt'} var(--cond);letter-spacing:.22em;text-transform:uppercase;color:var(--rust);margin:0 0 4pt;border-top:1.4pt solid var(--orange);padding-top:4pt}
 .gcols p{margin:0 0 4pt;font-size:${PHONE ? '9.6pt' : '9.4pt'};line-height:1.4}.gcols .small{font-size:7.6pt;color:var(--muted)}
@@ -468,7 +470,7 @@ a{color:inherit;text-decoration:none}
 
 .gpano{margin:${PHONE ? '10pt 0 0' : '14pt 0 0'}}.gpano img{display:block;width:100%;height:${PHONE ? '2.2in' : '1.9in'};object-fit:cover;object-position:50% 55%}.gpano figcaption{font:500 ${PHONE ? '7.6pt' : '7.4pt'}/1.3 var(--sans);color:var(--muted);margin-top:3pt}.gpano i{font-style:normal;font-weight:700;color:var(--rust)}
 /* full-bleed openers */
-.full{width:${PHONE ? '480px' : '8.5in'};height:${PHONE ? '854px' : '11in'};position:relative;overflow:hidden;break-before:page;break-after:page;background:var(--navy);color:#fff}
+.full{width:${PHONE ? '480px' : '8.5in'};height:${PHONE ? '856px' : '11in'};position:relative;overflow:hidden;break-before:page;break-after:page;background:var(--navy);color:#fff}
 .ofolio{position:absolute;right:${PHONE ? '.34in' : '.68in'};bottom:${PHONE ? '.2in' : '.32in'};font:800 ${PHONE ? '9pt' : '11pt'} var(--cond);color:var(--orange);z-index:5}
 .tribute .tphoto{margin:0;position:absolute;left:0;right:0;top:0;height:${PHONE ? '4.1in' : '6.1in'}}
 .tribute .tphoto img{width:100%;height:100%;object-fit:cover;display:block}
@@ -516,6 +518,7 @@ a{color:inherit;text-decoration:none}
 .body{column-count:${PHONE ? '1' : '2'};column-gap:.34in;column-rule:.5pt solid var(--rule);orphans:3;widows:3;column-fill:balance}
 .body p{margin:0 0 6.2pt;text-wrap:pretty}.body p:has(.endmark){text-wrap:wrap}
 .body p.lede::first-letter{font-family:var(--cond);font-weight:800;initial-letter:3;color:var(--orange);margin-right:${PHONE ? '5pt' : '6pt'}}
+.body p.lede.d2::first-letter{initial-letter:2}
 .body p.sub{font:800 ${PHONE ? '12pt' : '13.5pt'}/1.1 var(--cond);text-transform:uppercase;letter-spacing:.06em;color:var(--navy);margin:${PHONE ? '10pt 0 3pt' : '11pt 0 3pt'};padding-top:5pt;border-top:1.4pt solid var(--orange);break-after:avoid}
 .body p.sub2{font:800 ${PHONE ? '10.5pt' : '11.5pt'}/1.15 var(--cond);letter-spacing:.04em;color:var(--blue);margin:9pt 0 2pt;break-after:avoid}
 .body blockquote{margin:6pt 0;padding:1pt 0 1pt 10pt;border-left:3pt solid var(--orange);${PHONE ? '' : 'break-inside:avoid;'}font-style:italic;color:#243a64}.body blockquote p{margin:0 0 4pt}
@@ -539,6 +542,7 @@ a{color:inherit;text-decoration:none}
 .watch a{display:block;padding:${PHONE ? '7pt 0' : '3pt 0'};border-bottom:.5pt solid var(--rule);font:600 ${PHONE ? '9.4pt' : '9pt'}/1.28 var(--sans);color:var(--blue);text-decoration:underline;text-decoration-thickness:.4pt}
 .watch a{display:flex;justify-content:space-between;gap:12pt;align-items:baseline}.watch a .wu{flex:none;font:500 6.6pt var(--sans);font-style:normal;color:var(--muted);text-decoration:none}
 .vlink{color:var(--blue);text-decoration:underline;text-decoration-thickness:.5pt}
+${PHONE ? '' : '.watch a{text-decoration:none}.watch a>span{text-decoration:underline;text-decoration-thickness:.4pt}'}
 .keynums{background:var(--paper);border:.6pt solid var(--rule);border-left:5pt solid var(--orange);padding:6pt 9pt 3pt;margin:3pt 0 9pt}
 .keynums p{margin:0 0 3.4pt;font-size:${PHONE ? '9.8pt' : '8.9pt'};line-height:1.4}.keynums b{font:800 ${PHONE ? '9.6pt' : '9pt'} var(--cond);letter-spacing:.1em;text-transform:uppercase;color:var(--rust)}
 .sayer{font:800 ${PHONE ? '11pt' : '10pt'} var(--cond);letter-spacing:.05em;color:var(--orange);white-space:nowrap}
@@ -567,7 +571,7 @@ table.roster td.ht,table.roster td.cl{white-space:nowrap}table.roster td.n{font:
 
 /* credits */
 .credits{break-before:page;${PHONE ? '' : 'max-width:5.6in'}}.credits .ttitle{margin-bottom:${PHONE ? '12pt' : '8pt'}}.credits p.kick{color:var(--rust);margin:0 0 5pt}
-.credits p{margin:0 0 ${PHONE ? '3pt' : '6pt'};font-size:${PHONE ? '8.7pt' : '9.2pt'};line-height:1.42;color:#33405e}.credits b{color:var(--navy)}.credits .tag a{display:inline-block;padding:${PHONE ? '10pt 6pt' : '2pt 0'}}.credits .tag{margin-top:${PHONE ? '2pt' : '16pt'};font:800 14pt var(--cond);letter-spacing:.06em;color:var(--navy)}
+.credits p{margin:0 0 ${PHONE ? '3pt' : '6pt'};font-size:${PHONE ? '8.7pt' : '9.2pt'};line-height:1.42;color:#33405e}.credits b{color:var(--navy)}.credits .tag a{display:inline-block;padding:${PHONE ? '10pt 6pt' : '2pt 0'};${PHONE ? 'margin-left:-6pt' : ''}}.credits .tag{margin-top:${PHONE ? '2pt' : '16pt'};font:800 14pt var(--cond);letter-spacing:.06em;color:var(--navy)}
 `;
 
 // ---------------------------------------------------------------------------------------------------------------------

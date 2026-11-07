@@ -1,5 +1,7 @@
 # GatorBait Magazine, Oklahoma week edition (Friday, Nov. 6, 2026)
 
+> **v2 revision (Nov. 7, 2026):** the complete nine-story magazine with game guide, both rosters and the Oklahoma depth chart is described in [V2-REVISION.md](V2-REVISION.md) (artifact paths, SHA-256, page counts, credit manifest, QC results, rebuild commands). The v2 PDFs are `print-stage/gatorbait-magazine-oklahoma-week-2026-11-06-v2-letter.pdf` and `...-v2-phone.pdf`. They are held in the repo only; none is uploaded or linked from the web bundle, which still describes the eight-story set below.
+
 **No live Wix, email or embed changes in this package.** Nothing was written to Wix, no embed was patched, no site publish, no PDF upload, no email campaign, no send, no automation change. Wix was read only (`GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT`, published versions: the first six on the first pass, then all eight again after the Condon post was republished at 21:32Z) plus public page reads and public ESPN box-score reads.
 
 Owner order: #34 comment 6687539275 (Jarvis ack), 6687763254 (send authorization, relayed), 6689912504 and 6690264123 (Meyer and Swamp cover, print format, own photographs; 6689912504 also says the Soothsayer and the Best Fridays wrap belong in the issue). Builder: Claude Code worker under the Jarvis controller. Receipt, image provenance and copy flags: [RECEIPT.md](RECEIPT.md).

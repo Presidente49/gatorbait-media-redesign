@@ -32,7 +32,7 @@ function phoneAsset(f) {
     fs.mkdirSync(path.dirname(out), { recursive: true });
     const py = 'import sys\nfrom PIL import Image\nim=Image.open(sys.argv[1]).convert("RGB")\nmw=int(sys.argv[3])\nif im.width>mw: im=im.resize((mw,round(im.height*mw/im.width)),Image.LANCZOS)\nim.save(sys.argv[2],"JPEG",quality=int(sys.argv[4]),optimize=True,progressive=True)';
     const cover = /^cover/.test(f);
-    execFileSync('/usr/bin/python3', ['-c', py, path.join(ASSET, f), out, cover ? '1103' : '1300', cover ? '90' : '84']);
+    execFileSync('/usr/bin/python3', ['-c', py, path.join(ASSET, f), out, cover ? '1103' : '1800', cover ? '90' : '82']);
   }
   return out;
 }
@@ -62,17 +62,17 @@ const PLAN = [
   { key: 'fridays', section: 'honor', open: 'tribute', pq: { after: 11, pafter: 13, text: "I wish I would've enjoyed it more, buddy,", who: 'Urban Meyer' }, watch: 'fridays',
     dek: "Urban Meyer reflects on Florida's championship years and the current Gators. Edgar Thompson previews Oklahoma and the Jacksonville basketball win, and Rob Dotson joins from the Panhandle." },
   { key: 'show', section: 'football', toc: 'Panel opinion', open: 'split-photo', photo: 'qb-panel.jpg', pos: '50% 38%', credit: 'Photo by Chris Spears, GatorBait Media.', cap: 'Aaron Philo (12) and Tramell Jones Jr. (9) on the sideline against South Carolina on Oct. 10, 2026.', pq: { after: 3, text: 'The days of dynasties are over. There is no dynasty anymore.', who: 'Loren Meadows, Buddy Martin Show panel' }, watch: 'show',
-    enote: "This is the panel's opinion, not a team announcement. Florida's Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr. at quarterback; see the Game Guide, page {guide}.",
+    enote: "This is the panel's opinion, not a team announcement. Florida's Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr. at quarterback; see the Game Guide, page {qb}.",
     inlineLink: { text: 'watch the Urban Meyer Ring of Honor discussion', url: 'https://www.youtube.com/watch?v=ZcDpF0jCPGU' } },
   { key: 'scouting1', section: 'football', dekRepl: [['at No. 24 Florida', 'at CFP No. 24 Florida']], open: 'photo-full', photo: 'scouting-huddle.jpg', pos: '50% 40%', credit: 'Photo by Chris Spears, GatorBait Media.', cap: "Florida's defense huddles during the game at Auburn on Sept. 19, 2026.", pq: { after: 5, text: 'We need a change.', who: 'Brent Venables, Oklahoma coach, on the coordinator change' },
     afterNote: "Part 2 of this series, on Florida's offense against Oklahoma's defense, had not been published when this edition's stories were collected on Friday, Nov. 6.", tune: { fs: '9.45pt', lh: '1.45', pfs: '10.4pt', plh: '1.42' } },
   { key: 'cfp', section: 'football', open: 'split-numeral', numeral: '24', numcap: 'Florida in the first College Football Playoff Top 25', pq: null },
   { key: 'soothsayer', section: 'football', open: 'photo-full', photo: 'soothsayer-baugh.jpg', pos: '50% 50%', credit: 'Archival photo by Chris Spears, GatorBait Media.', cap: 'Jadan Baugh dives into the end zone against Ole Miss in The Swamp on Sept. 26, 2026.', pq: null,
-    enote: "This edition could not confirm a Florida starting quarterback. Its Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr.; see the Game Guide, page {guide}.", tune: { fs: '9.6pt', lh: '1.46' } },
+    enote: "This edition could not confirm a Florida starting quarterback. Its Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr.; see the Game Guide, page {qb}.", tune: { fs: '9.6pt', lh: '1.46' } },
   { key: 'condon', section: 'hoops', open: 'portrait-full', dek: "Franz Beard on Alex Condon's near triple-double, Rueben Chinyelu's career-high 21 points and Florida's 88-57 win over Jacksonville.", photo: 'condon.jpg', pos: '50% 22%', credit: 'Photo by Chris Spears, GatorBaitMedia.com', cap: 'Alex Condon drives against Stetson in an October exhibition.', pq: { after: 13, text: "They're both very capable decisionmakers", who: 'Todd Golden, Florida coach' } },
-  { key: 'mcmiller', section: 'hoops', open: 'split-numeral', numeral: '42', numcap: "Kiyomi McMiller's career-high against UCF", pq: null, tune: { fs: '10.5pt', lh: '1.56' } },
+  { key: 'mcmiller', section: 'hoops', open: 'split-numeral', numeral: '42', numcap: "Kiyomi McMiller's career-high against UCF", pq: null },
   { key: 'goose', section: 'columns', open: 'type-full', pq: 'story' },
-  { key: 'yost', section: 'columns', open: 'type-full', pq: 'story', tune: { fs: '10.3pt', lh: '1.54' } },
+  { key: 'yost', section: 'columns', open: 'type-full', pq: 'story' },
 ];
 // Archival art for the Ring of Honor tribute (official UF photographs; credits as supplied by UF).
 const TRIBUTE = {
@@ -112,11 +112,14 @@ const LEN = (t) => (t.length <= 42 ? 'xl' : t.length <= 66 ? 'lg' : t.length <= 
 const NBJ = (h) => h
   .replace(/\bNo\. (\d)/g, 'No.&nbsp;$1')
   .replace(/(\d) (a\.m\.|p\.m\.|noon)/g, '$1&nbsp;$2')
-  .replace(/([A-Za-z]) (Jr\.|Sr\.|III\b|II\b|IV\b)/g, '$1&nbsp;$2');
+  .replace(/([A-Za-z]) (Jr\.|Sr\.|III\b|II\b|IV\b)/g, '$1&nbsp;$2')
+  .replace(/(p\.m\.|a\.m\.) (ET)\b/g, '$1&nbsp;$2')
+  .replace(/\b(Jan\.|Feb\.|Aug\.|Sept\.|Oct\.|Nov\.|Dec\.) (\d)/g, '$1&nbsp;$2')
+  .replace(/ — /g, '&nbsp;— ');
 const T = (s) => NBJ(esc(curl(String(s ?? ''))));                  // display text we set: smart quotes, no-break joins
-const nbTitle = (s) => T(s).replace(/\b([A-Za-z]{2,}-[A-Za-z]{2,})\b/g, '<span class="nb">$1</span>');
-const fills = (t) => t.replace(/\{guide\}/g, PAGES.guide || '3');
-const guideLink = (h) => h.replace(/Game Guide, page (\d+)/, '<a class="vlink" href="#guide">Game Guide, page $1</a>');
+const nbTitle = (s) => T(s).replace(/\b([A-Za-z]{2,}-[A-Za-z]{2,})\b/g, '<span class="nb">$1</span>').replace(/\b(Buddy Martin Show|Pass Rush|Tramell Jones|QB Decision)\b/gi, '<span class="nb">$1</span>');
+const fills = (t) => t.replace(/\{guide\}/g, PAGES.guide || '3').replace(/\{qb\}/g, String((PAGES.guide || 3) + (PHONE ? 1 : 0)));
+const guideLink = (h) => h.replace(/Game Guide, page (\d+)/, '<a class="vlink" href="#qbwatch">Game Guide, page $1</a>');
 // Text-node-only transform of an html fragment.
 const mapText = (h, fn) => h.replace(/(<[^>]+>)|([^<]+)/g, (m, tag, txt) => (tag ? tag : fn(txt)));
 // Typographic quotes for story text (wording is never touched). Straight quotes become curly using the visible character before them,
@@ -147,6 +150,7 @@ const protect = (h) => NBJ(smartQuotes(mapText(h, (t) => t
   .replace(/\b\d{1,2}(?::\d{2})? (?:p\.m\.|a\.m\.|noon),? [A-Z][A-Za-z+]*(?: [A-Z][A-Za-z+]*)?:/g, nbw)           // 3:30 p.m., ABC: stays whole
   .replace(/\b\d{1,2}-of-\d{1,2}\b/g, nbw)
   .replace(/\bfree-throws?\b/gi, nbw)
+  .replace(/\b\d{1,2}-(?:foot|yard|point|year|game)(?:-\d{1,2})?\b/gi, nbw)
   .replace(/(?<![\w.\-])\d{1,3}(?:-\d{1,3}){1,2}(?![\w\-])/g, nbw))));                                             // 55-1-1, 42-25
 const dekFor = (p, s) => {
   if (s.dek) return s.dek;
@@ -284,10 +288,10 @@ function tributeBodyFigures(p) {
 // ---------------------------------------------------------------------------------------------------------------------
 // Front of book
 // ---------------------------------------------------------------------------------------------------------------------
-const coverLink = () => { const k = (PHONE ? 5 : 8.5) / 1103, f = (v) => (v * k).toFixed(3) + 'in'; return `<a class="curl" href="https://www.gatorbaitmedia.com/" style="left:${f(78)};top:${f(1350)};width:${f(270)};height:${f(44)}" aria-label="gatorbaitmedia.com"></a>`; };
+const coverLink = () => { const k = (PHONE ? 5 : 8.5) / 1103, f = (v) => (v * k).toFixed(3) + 'in'; return `<a class="curl" href="https://www.gatorbaitmedia.com/" style="left:${f(60)};top:${f(PHONE ? 1300 : 1340)};width:${f(310)};height:${f(PHONE ? 126 : 70)}" aria-label="gatorbaitmedia.com"></a>`; };
 const coverHtml = () => PHONE
-  ? `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover</h1><img src="${A('cover-v2.png')}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor.">${coverLink()}<div class="below"><p class="ed">Oklahoma week edition · Friday, Nov. 6, 2026</p><p class="six">Nine complete stories</p><p class="tag">Plus both rosters and Oklahoma's depth chart.</p></div></section>`
-  : `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover</h1><img src="${A('cover-v2.png')}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor.">${coverLink()}</section>`;
+  ? `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover: Urban Meyer, Ring of Honor</h1><img src="${A('cover-v2.png')}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. Condon's near triple-double. The first CFP Top 25. Photos: Florida Gators/UAA; Jay Metz; Jason Parkhurst.">${coverLink()}<div class="below"><p class="ed">Oklahoma week edition · Friday, Nov. 6, 2026</p><p class="six">Nine complete stories</p><p class="tag">Plus both rosters and Oklahoma's depth chart.</p></div></section>`
+  : `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover: Urban Meyer, Ring of Honor</h1><img src="${A('cover-v2.png')}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. Condon's near triple-double. The first CFP Top 25. Photos: Florida Gators/UAA; Jay Metz; Jason Parkhurst.">${coverLink()}</section>`;
 
 function contents(pages) {
   const pn = (id) => (pages && pages[id] ? pages[id] : '');
@@ -302,7 +306,10 @@ function contents(pages) {
     out += row(p.key, `${p.rubric}  ·  ${p.author}${s.toc ? '  ·  ' + s.toc : ''}`, p.title, p.excerpt);
   }
   group('Reference');
-  out += row('teams', 'Official rosters', "The Teams: both rosters and Oklahoma's depth chart", '');
+  const small = (id, title) => `<li class="sm"><a href="#${id}"><span class="pgn">${pn(id)}</span><span class="ct"><b>${T(title)}</b></span></a></li>`;
+  out += row('teams', 'Official rosters and depth chart', 'The Teams: Florida Gators 2026 roster', '');
+  out += small('depthOU', 'Oklahoma Sooners depth chart');
+  out += small('rosterOU', 'Oklahoma Sooners 2026 roster');
   out += row('credits', 'Credits and sources', 'Behind the pages', '');
   return `<section class="contents" style="page:p-front"><p class="mast">GATORBAIT<span>.</span></p><p class="mag">MAGAZINE  ·  OKLAHOMA WEEK  ·  THE PREGAME EDITION</p><p class="mdate">Friday, Nov. 6, 2026  ·  Week 10: Oklahoma at Florida, Saturday, Nov. 7, 7:45 p.m. ET, SEC Network</p><h1 class="sr">Contents</h1><ol class="toc">${out}</ol></section>`;
 }
@@ -330,7 +337,7 @@ function guide() {
 </div>
 <div class="gboxes">
  <aside class="gbox honor"><p class="gk">Ring of Honor</p><p>Urban Meyer will be inducted into the Florida Football Ring of Honor at the <b>end of the first quarter</b>. He coached Florida from 2005 to 2010, went 65–15 and won national championships for the 2006 and 2008 seasons. UF says he will become the Ring of Honor's seventh member.</p></aside>
- <aside class="gbox qb"><p class="gk">Quarterback watch</p><p>Florida's published Week 10 depth chart lists <b>Aaron Philo OR Tramell Jones Jr.</b> at quarterback. That is not a confirmed starter announcement. Depth charts do not establish game-day availability. For who plays, check the SEC's official availability reports and school updates; this edition did not retrieve a final game-day report.</p></aside>
+ <aside class="gbox qb" id="qbwatch"><p class="gk">Quarterback watch</p><p>Florida's published Week 10 depth chart lists <b>Aaron Philo OR Tramell Jones Jr.</b> at quarterback. That is not a confirmed starter announcement. Depth charts do not establish game-day availability. For who plays, check the SEC's official availability reports and school updates; this edition did not retrieve a final game-day report.</p></aside>
 </div>
 <figure class="gpano"><img src="${A('swamp-panorama.jpg')}" alt="Ben Hill Griffin Stadium, The Swamp, in a wide interior panorama."><figcaption>Ben Hill Griffin Stadium. <i>Archival photo by Chris Spears, GatorBait Media.</i></figcaption></figure>
 ${gsrc}
@@ -357,16 +364,16 @@ function rosterTable(rows0, withSchool = true) {
 function depthTable(D) {
   if (!D) return '';
   const grp = (g, tag) => `<div class="dpos"><p class="dh4"><span class="dsec">${tag}</span> ${esc(g.pos)}</p>${g.entries.map((e, i) => `<p><span class="dn">${esc(e.num)}</span> ${esc(e.name)} <span class="dm">${esc([e.ht, e.wt, e.cl].filter(Boolean).join(', '))}</span>${e.or ? ' <span class="or">OR</span>' : ''}</p>`).join('')}</div>`;
-  const sect = (name, tag, arr) => (arr && arr.length ? `<p class="dh">${name}</p><div class="dgrid">${arr.map((g) => grp(g, tag)).join('')}</div>` : '');
+  const sect = (name, tag, arr) => { if (!arr || !arr.length) return ''; const n = {}; arr.forEach((g) => { n[g.pos] = (n[g.pos] || 0) + 1; }); const seen = {}; return `<p class="dh">${name}</p><div class="dgrid">${arr.map((g) => { seen[g.pos] = (seen[g.pos] || 0) + 1; return grp(n[g.pos] > 1 ? { ...g, pos: `${g.pos} ${seen[g.pos]}` } : g, tag); }).join('')}</div>`; };
   return sect('Offense', 'OFF', D.offense) + sect('Defense', 'DEF', D.defense) + sect('Specialists', 'ST', D.specialists);
 }
 function teams() {
   if (!UF || !OU) { console.warn('WARN: roster data missing; The Teams section skipped'); return ''; }
   const hasSchool = (rows) => rows.some((r) => r.school);
-  const qb = `<div class="qbbox"><p class="gk">Florida at quarterback</p><p class="qbname">Aaron Philo <em>OR</em> Tramell Jones Jr.</p><p>Florida listed the two quarterbacks together on its Week 10 depth chart. UF's Nov. 2 report says the competition remained open and the team was preparing both to play. This is not a confirmed game-day starter announcement.</p><p class="qbsrc">Florida's official Week 10 depth chart is page 42 of its game notes, an image too blurry to print cleanly here, so it is linked rather than reproduced; no other position has been transcribed from it. The quarterback listing is also reported in UF's Nov. 2 update.</p><p class="qlinks"><a href="https://floridagators.com/documents/download/2026/11/2/WEEK_10_NOTES_-_MASTER_-_OKLAHOMA.pdf#page=42">Open Florida's official Week 10 depth chart</a><a href="https://floridagators.com/news/2026/11/2/football-gators-look-to-reignite-offense-amid-qb-battle-browns-injury">Read UF's quarterback update</a><a href="https://www.secsports.com/fbreports-archive">SEC football availability report archive</a></p><p class="qbsrc">Source check: Nov. 6, 2026. Weekly lineup information is subject to change.</p></div>`;
-  const uf = `<section class="teampage" style="page:p-teams"><p class="kick" id="teams">Official rosters</p><h1 class="ttitle">Florida Gators <small>2026 roster</small></h1><p class="tsrc">Official weekly roster from Florida's Week 10 game notes (floridagators.com), as published the week of Nov. 2, 2026. Subject to change. A roster listing does not establish that a player is healthy, dressed or available Saturday. The official notes' pronunciation guide and coaching staff list are not reproduced here.</p>${qb}${rosterTable(UF.rows, hasSchool(UF.rows))}</section>`;
-  const ouDepth = OUD ? `<section class="teampage" style="page:p-teams"><p class="kick">Official depth chart</p><h1 class="ttitle">Oklahoma Sooners depth chart <small>Game 9 · SEC Week 10</small></h1><p class="tsrc">Official depth chart from Oklahoma's game notes (soonersports.com), as published the week of Nov. 2, 2026. OR listings are shown as the school printed them; class years are as printed on the chart and can differ from OU's roster page. Subject to change; not an availability report.</p>${depthTable(OUD)}</section>` : '';
-  const ou = `<section class="teampage" style="page:p-teams"><p class="kick">Official roster</p><h1 class="ttitle">Oklahoma Sooners <small>2026 roster</small></h1><p class="tsrc">Official roster from Oklahoma's game notes (soonersports.com), as published the week of Nov. 2, 2026. Subject to change. * Indicates number of letters earned at OU. ^ Has earned an undergraduate degree. Last updated Nov. 2, 2026; weights as of Aug. 4, 2026. The official notes' pronunciation guide and coaching staff list are not reproduced here.</p>${rosterTable(OU.rows, hasSchool(OU.rows))}</section>`;
+  const qb = `<div class="qbbox"><p class="gk">Florida at quarterback</p><p class="qbname">Aaron Philo <em>OR</em> Tramell Jones Jr.</p><p>Florida listed the two quarterbacks together on its Week 10 depth chart. UF's Nov. 2 report says the competition remained open and the team was preparing both to play. This is not a confirmed game-day starter announcement.</p><p class="qbsrc">Florida publishes its Week 10 depth chart as an image on page 42 of its game notes, so it is linked rather than reproduced; no other position is transcribed here.</p><p class="qlinks"><a href="https://floridagators.com/documents/download/2026/11/2/WEEK_10_NOTES_-_MASTER_-_OKLAHOMA.pdf#page=42">Open Florida's official Week 10 depth chart</a><a href="https://floridagators.com/news/2026/11/2/football-gators-look-to-reignite-offense-amid-qb-battle-browns-injury">Read UF's quarterback update</a><a href="https://www.secsports.com/fbreports-archive">SEC football availability report archive</a></p><p class="qbsrc">Source check: Nov. 6, 2026. Weekly lineup information is subject to change.</p></div>`;
+  const uf = `<section class="teampage" style="page:p-uf"><p class="kick" id="teams">Official rosters</p><h1 class="ttitle">Florida Gators <small>2026 roster</small></h1><p class="tsrc">Official weekly roster from Florida's Week 10 game notes (floridagators.com), as published the week of Nov. 2, 2026. Subject to change. A roster listing does not establish that a player is healthy, dressed or available Saturday. The official notes' pronunciation guide and coaching staff list are not reproduced here.</p>${qb}${rosterTable(UF.rows, hasSchool(UF.rows))}</section>`;
+  const ouDepth = OUD ? `<section class="teampage" style="page:p-oud"><p class="kick" id="depthOU">Official depth chart</p><h1 class="ttitle">Oklahoma Sooners depth chart <small class="blk">Game 9 · SEC Week 10</small></h1><p class="tsrc">Official depth chart from Oklahoma's game notes (soonersports.com), as published the week of Nov. 2, 2026. OR listings are shown as the school printed them; names and class years are as printed on the chart and can differ from OU's roster page (for example, #58 is “Tank” Carrington here and James Carrington on the roster). Subject to change; not an availability report.</p>${depthTable(OUD)}</section>` : '';
+  const ou = `<section class="teampage" style="page:p-ou"><p class="kick" id="rosterOU">Official roster</p><h1 class="ttitle">Oklahoma Sooners <small>2026 roster</small></h1><p class="tsrc">Official roster from Oklahoma's game notes (soonersports.com), as published the week of Nov. 2, 2026. Subject to change. * Indicates number of letters earned at OU. ^ Has earned an undergraduate degree. Last updated Nov. 2, 2026; weights as of Aug. 4, 2026. The official notes' pronunciation guide and coaching staff list are not reproduced here.</p>${rosterTable(OU.rows, hasSchool(OU.rows))}</section>`;
   return uf + ouDepth + ou;
 }
 
@@ -381,9 +388,9 @@ function credits() {
     ['The Soothsayer', 'Archival photo by Chris Spears, GatorBait Media.'],
     ['Condon story', 'Photo by Chris Spears, GatorBaitMedia.com, from an October exhibition against Stetson (not from the Jacksonville game).'],
     ['Official rosters and depth charts', 'University Athletic Association (floridagators.com) and the University of Oklahoma (soonersports.com), Week 10 game notes.'],
-    ['Desk corrections carried', `Three small fact corrections, each checked against a published source: Condon's shooting line reads 3-6 (ESPN box score; the story first printed 2-3); McMiller's hometown reads Silver Spring, Maryland (ESPN roster; the story first printed Springs); and Buddy Martin's Golden Goose column (page ${PAGES.goose || ''}) says Urban Meyer enters the Ring of Honor at the end of the first quarter, as Florida announced (FloridaGators.com, Nov. 5); the column first said halftime.`],
+    ['Desk corrections carried', `Three small fact corrections, each checked against a published source: Condon's shooting line reads 3-6 (ESPN box score; the story first printed 2-3); McMiller's hometown reads Silver Spring, Maryland (ESPN roster; the story first printed Springs); and Buddy Martin's Golden Goose column (starting on page ${PAGES.goose || ''}) says Urban Meyer enters the Ring of Honor at the end of the first quarter, as Florida announced (FloridaGators.com, Nov. 5); the column first said halftime.`],
   ];
-  return `<section class="credits" style="page:p-front" id="credits"><p class="kick">Credits and sources</p><h1 class="ttitle">Behind the pages</h1>${rows.map(([a, b]) => `<p><b>${T(a)}.</b> ${T(b)}</p>`).join('')}
+  return `<section class="credits" style="page:p-front" id="credits"><p class="kick">Credits and sources</p><h1 class="ttitle">Behind the pages</h1>${rows.map(([a, b]) => `<p><b>${T(a)}.</b> ${T(b).replace(/\(starting on page (\d+)\)/, '(<a class="vlink" href="#goose">starting on page $1</a>)')}</p>`).join('')}
 <p>Complete stories from GatorBait Media as published through Friday, Nov. 6, 2026. Web navigation, sponsor banners and most video links are left out; the Best Fridays and Thursday panel stories keep their own watch links. Rankings, scores and times are as reported on each story's publication date. Depth charts and rosters do not establish game-day availability.</p>
 <p class="tag">Real Gator news for real Gators.  <a href="https://www.gatorbaitmedia.com/">GatorBaitMedia.com</a></p></section>`;
 }
@@ -395,11 +402,11 @@ const backCover = () => `<section class="back" style="page:full"><p class="bw">G
 const css = (PHONE) => `
 :root{--navy:#10264b;--ink:#0b1a36;--blue:#0021a5;--orange:#fa4616;--rust:#b93a0e;--cream:#f8f3e8;--paper:#fcfaf4;--rule:#d9cfbc;--muted:#5d6577;--cond:"Barlow Condensed","Barlow",Arial,sans-serif;--sans:"Barlow",Arial,sans-serif}
 *{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-@page{size:${PHONE ? '480px 854px' : '8.5in 11in'};margin:${PHONE ? '.42in .34in .55in' : '.75in .68in .85in'};background:var(--cream);
+@page{size:${PHONE ? '480px 854px' : '8.5in 11in'};margin:${PHONE ? '.5in .34in .55in' : '.75in .68in .85in'};background:var(--cream);
  @bottom-left{content:"GATORBAIT MAGAZINE  \\00B7  PREGAME EDITION  \\00B7  NOV. 6, 2026";font:700 ${PHONE ? '6.4pt' : '6.6pt'} var(--cond);letter-spacing:.16em;color:var(--muted);vertical-align:top;padding-top:${PHONE ? '.13in' : '.2in'}}
  @bottom-right{content:counter(page);font:800 ${PHONE ? '9pt' : '11pt'} var(--cond);color:var(--orange);vertical-align:top;padding-top:${PHONE ? '.1in' : '.15in'}}}
 @page full{margin:0;background:var(--navy);@bottom-left{content:none}@bottom-right{content:none}}
-${[['p-front', 'GATORBAIT'], ['p-game', 'THE GAME'], ['p-honor', 'RING OF HONOR'], ['p-football', 'FOOTBALL'], ['p-hoops', 'BASKETBALL'], ['p-columns', 'COLUMNS'], ['p-teams', 'THE TEAMS']].map(([n, t]) => `@page ${n}{@top-left{content:"${t}";font:800 ${PHONE ? '7.2pt' : '7.6pt'} var(--cond);letter-spacing:.24em;color:var(--rust);vertical-align:bottom;padding-bottom:.1in}@top-right{content:"OKLAHOMA WEEK";font:700 ${PHONE ? '6.4pt' : '6.6pt'} var(--cond);letter-spacing:.2em;color:var(--muted);vertical-align:bottom;padding-bottom:.1in}}`).join('\n')}
+${[['p-front', 'GATORBAIT'], ['p-game', 'THE GAME'], ['p-honor', 'RING OF HONOR'], ['p-football', 'FOOTBALL'], ['p-hoops', 'BASKETBALL'], ['p-columns', 'COLUMNS'], ['p-uf', 'THE TEAMS  \\00B7  FLORIDA ROSTER'], ['p-oud', 'THE TEAMS  \\00B7  OKLAHOMA DEPTH CHART'], ['p-ou', 'THE TEAMS  \\00B7  OKLAHOMA ROSTER']].map(([n, t]) => `@page ${n}{@top-left{content:"${t}";font:800 ${PHONE ? '7.2pt' : '7.6pt'} var(--cond);letter-spacing:.24em;color:var(--rust);vertical-align:bottom;padding-bottom:.1in}@top-right{content:"OKLAHOMA WEEK";font:700 ${PHONE ? '6.4pt' : '6.6pt'} var(--cond);letter-spacing:.2em;color:var(--muted);vertical-align:bottom;padding-bottom:.1in}}`).join('\n')}
 body{margin:0;font:400 ${PHONE ? '10.8pt/1.46' : '9.7pt/1.5'} var(--sans);color:var(--navy);background:var(--cream)}
 a{color:inherit;text-decoration:none}
 .sr{position:absolute;left:0;top:0;color:transparent;font-size:2px;line-height:2px;white-space:nowrap;pointer-events:none}
@@ -424,7 +431,7 @@ a{color:inherit;text-decoration:none}
 .back{width:${PHONE ? '480px' : '8.5in'};height:${PHONE ? '854px' : '11in'};background:var(--navy);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;break-before:page}
 .back .bw{font:800 ${PHONE ? '40pt' : '72pt'}/1 var(--cond);letter-spacing:.02em;font-style:italic;margin:0}.back .bw span{color:var(--orange)}
 .back .bt{font:700 ${PHONE ? '9pt' : '12pt'} var(--cond);letter-spacing:.42em;color:#ff8a5c;margin:12pt 0 22pt}
-.back .bu{font:600 ${PHONE ? '11pt' : '14pt'} var(--sans);color:#c8d1e7;margin:0}.back a{color:#c8d1e7;text-decoration:underline;text-decoration-thickness:.5pt}
+.back .bu{font:600 ${PHONE ? '11pt' : '14pt'} var(--sans);color:#c8d1e7;margin:0}.back a{color:#c8d1e7;text-decoration:underline;text-decoration-thickness:.5pt;display:inline-block;padding:${PHONE ? '16pt 26pt' : '6pt 10pt'}}
 
 /* contents */
 .contents{break-after:page;position:relative}
@@ -433,10 +440,11 @@ a{color:inherit;text-decoration:none}
 .mdate{font:500 ${PHONE ? '8.4pt' : '9.6pt'} var(--sans);color:var(--muted);margin:0 0 ${PHONE ? '4pt' : '4pt'};padding-bottom:${PHONE ? '6pt' : '7pt'};border-bottom:3pt solid var(--orange)}
 .toc{list-style:none;margin:0;padding:0}
 .toc li{break-inside:avoid;border-bottom:.5pt solid var(--rule)}
-.toc li.grp{border:0;padding:${PHONE ? '3.5pt 0 0' : '7pt 0 1pt'}}.toc li.grp span{font:800 ${PHONE ? '7.5pt' : '8.6pt'} var(--cond);letter-spacing:.3em;text-transform:uppercase;color:var(--orange)}
-.toc a{display:flex;gap:${PHONE ? '9pt' : '16pt'};align-items:center;padding:${PHONE ? '2pt 0' : '3.1pt 0'}}
-.pgn{font:800 ${PHONE ? '15pt' : '26pt'}/1 var(--cond);color:var(--blue);min-width:${PHONE ? '20pt' : '40pt'};text-align:right;font-variant-numeric:tabular-nums}
-.ct{display:block}.ck{display:block;font:800 ${PHONE ? '6.6pt' : '7.4pt'} var(--cond);letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
+.toc li.sm .pgn{font-size:${PHONE ? '12pt' : '17pt'}}.toc li.sm .ct b{font-size:${PHONE ? '9.6pt' : '12.5pt'};margin:0}.toc li.sm a{padding:${PHONE ? '1pt 0' : '1.5pt 0'}}
+.toc li.grp{border:0;padding:${PHONE ? '3pt 0 0' : '5pt 0 0'}}.toc li.grp span{font:800 ${PHONE ? '7.5pt' : '8.6pt'} var(--cond);letter-spacing:.3em;text-transform:uppercase;color:var(--orange)}
+.toc a{display:flex;gap:${PHONE ? '9pt' : '16pt'};align-items:center;padding:${PHONE ? '1.3pt 0' : '2.2pt 0'}}
+.pgn{font:800 ${PHONE ? '15pt' : '24pt'}/1 var(--cond);color:var(--blue);min-width:${PHONE ? '20pt' : '40pt'};text-align:right;font-variant-numeric:tabular-nums}
+.ct{display:block}.ck{display:block;font:800 ${PHONE ? '7.2pt' : '7.4pt'} var(--cond);letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
 .ct b{display:block;font:800 ${PHONE ? '10.6pt' : '15pt'}/1.04 var(--cond);color:var(--navy);margin:1pt 0 0}
 .cd{display:block;font-size:${PHONE ? '7.3pt' : '8.2pt'};line-height:1.3;color:var(--muted);${PHONE ? 'display:none;' : ''}}
 
@@ -447,7 +455,7 @@ a{color:inherit;text-decoration:none}
 .gplace{font:700 ${PHONE ? '8.4pt' : '10pt'} var(--cond);letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin:${PHONE ? '5pt 0 10pt' : '8pt 0 14pt'}}
 .gband{display:grid;grid-template-columns:repeat(4,1fr);background:var(--navy);color:#fff;border-top:4pt solid var(--orange);margin:0 0 ${PHONE ? '10pt' : '16pt'}}
 .gband span{white-space:nowrap}.gband div{padding:${PHONE ? '7pt 6pt' : '9pt 12pt'};border-right:.5pt solid #2d4676}.gband div:last-child{border:0}
-.gband b{display:block;font:800 ${PHONE ? '17pt' : '30pt'}/1 var(--cond)}.gband span{display:block;font:700 ${PHONE ? '5.9pt' : '8.2pt'} var(--cond);letter-spacing:.16em;text-transform:uppercase;color:#ff8a5c;margin-top:2pt}
+.gband b{display:block;font:800 ${PHONE ? '17pt' : '30pt'}/1 var(--cond)}.gband span{display:block;font:700 ${PHONE ? '7pt' : '8.2pt'} var(--cond);letter-spacing:.16em;text-transform:uppercase;color:#ff8a5c;margin-top:2pt}
 .gcols{display:grid;grid-template-columns:${PHONE ? '1fr' : 'repeat(3,1fr)'};gap:${PHONE ? '6pt' : '18pt'};margin-bottom:${PHONE ? '8pt' : '14pt'}}
 .gcols .gh,.gk{font:800 ${PHONE ? '8pt' : '9.4pt'} var(--cond);letter-spacing:.22em;text-transform:uppercase;color:var(--rust);margin:0 0 4pt;border-top:1.4pt solid var(--orange);padding-top:4pt}
 .gcols p{margin:0 0 4pt;font-size:${PHONE ? '9.6pt' : '9.4pt'};line-height:1.4}.gcols .small{font-size:7.6pt;color:var(--muted)}
@@ -456,9 +464,9 @@ a{color:inherit;text-decoration:none}
 .gbox{background:var(--paper);border:.6pt solid var(--rule);border-left:5pt solid var(--orange);padding:${PHONE ? '7pt 9pt' : '10pt 13pt'}}
 .gbox .gk{border:0;padding:0;color:var(--rust)}.gbox p{margin:0 0 3pt;font-size:${PHONE ? '9.6pt' : '9.4pt'};line-height:1.42}
 .gsrc{margin:${PHONE ? '8pt 0 0' : '14pt 0 0'};font-size:${PHONE ? '7pt' : '7.8pt'};line-height:1.4;color:var(--muted)}.gsrc a{color:var(--blue);text-decoration:underline;text-decoration-thickness:.4pt}
-.gsrc.stack .gk{margin-bottom:2pt}.gsrc.stack a{display:block;padding:4.2pt 0;border-bottom:.5pt solid var(--rule);font:600 9.2pt/1.25 var(--sans)}.gasof{margin:4pt 0 0;font-size:8pt;color:var(--muted)}
+.gsrc.stack .gk{margin-bottom:2pt}.gsrc.stack a{display:block;padding:8pt 0;border-bottom:.5pt solid var(--rule);font:600 9.2pt/1.25 var(--sans)}.gasof{margin:4pt 0 0;font-size:8pt;color:var(--muted)}
 
-.gpano{margin:${PHONE ? '10pt 0 0' : '14pt 0 0'}}.gpano img{display:block;width:100%;height:${PHONE ? '1.7in' : '1.9in'};object-fit:cover;object-position:50% 55%}.gpano figcaption{font:500 ${PHONE ? '6.4pt' : '7.4pt'}/1.3 var(--sans);color:var(--muted);margin-top:3pt}.gpano i{font-style:normal;font-weight:700;color:var(--rust)}
+.gpano{margin:${PHONE ? '10pt 0 0' : '14pt 0 0'}}.gpano img{display:block;width:100%;height:${PHONE ? '2.2in' : '1.9in'};object-fit:cover;object-position:50% 55%}.gpano figcaption{font:500 ${PHONE ? '7.6pt' : '7.4pt'}/1.3 var(--sans);color:var(--muted);margin-top:3pt}.gpano i{font-style:normal;font-weight:700;color:var(--rust)}
 /* full-bleed openers */
 .full{width:${PHONE ? '480px' : '8.5in'};height:${PHONE ? '854px' : '11in'};position:relative;overflow:hidden;break-before:page;break-after:page;background:var(--navy);color:#fff}
 .ofolio{position:absolute;right:${PHONE ? '.34in' : '.68in'};bottom:${PHONE ? '.2in' : '.32in'};font:800 ${PHONE ? '9pt' : '11pt'} var(--cond);color:var(--orange);z-index:5}
@@ -469,7 +477,7 @@ a{color:inherit;text-decoration:none}
 .tk{font:800 ${PHONE ? '11pt' : '17pt'} var(--cond);letter-spacing:.34em;color:#fff;text-shadow:0 1pt 10pt rgba(11,26,54,.95),0 0 3pt rgba(11,26,54,.8);margin:0 0 ${PHONE ? '0' : '2pt'};text-transform:uppercase}
 .tbig{font:800 ${PHONE ? '44pt' : '86pt'}/.9 var(--cond);text-transform:uppercase;margin:0 0 ${PHONE ? '8pt' : '14pt'};color:#fff;letter-spacing:-.005em;white-space:nowrap;text-shadow:0 2pt 14pt rgba(11,26,54,.7)}.tbig em{font-style:italic;color:var(--orange)}
 .tfacts{display:grid;grid-template-columns:repeat(4,1fr);gap:${PHONE ? '5pt' : '10pt'};border-top:1.4pt solid #31508a;padding-top:${PHONE ? '5pt' : '8pt'}}
-.tfacts b{display:block;font:800 ${PHONE ? '15pt' : '24pt'}/1 var(--cond);color:#fff}.tfacts span{display:block;font:600 ${PHONE ? '6.2pt' : '7.6pt'}/1.25 var(--sans);color:#b9c6e2;margin-top:2pt}
+.tfacts b{display:block;font:800 ${PHONE ? '15pt' : '24pt'}/1 var(--cond);color:#fff}.tfacts span{display:block;font:600 ${PHONE ? '7.2pt' : '7.6pt'}/1.25 var(--sans);color:#b9c6e2;margin-top:2pt}
 .tnote{font:600 ${PHONE ? '7.2pt' : '7.4pt'}/1.4 var(--sans);color:#a3b2d2;margin:${PHONE ? '4pt 0 8pt' : '6pt 0 14pt'}}.tnote i{font-style:normal;font-weight:700;color:#ffb089}
 .tstory{border-top:4pt solid var(--orange);padding-top:${PHONE ? '7pt' : '12pt'}}
 .tstory .title{font-size:${PHONE ? '17pt' : '27pt'};margin-bottom:5pt}.tstory .dek{font-size:${PHONE ? '8.4pt' : '11pt'}}.tstory .by{margin:0 0 6pt}
@@ -501,16 +509,16 @@ a{color:inherit;text-decoration:none}
 .splitstory .splithead{margin:0 0 ${PHONE ? '8pt' : '10pt'}}
 .sphoto{margin:0 0 ${PHONE ? '10pt' : '14pt'}}.sphoto img{display:block;width:100%;height:${PHONE ? '1.75in' : '3.5in'};object-fit:cover}
 .sphoto figcaption,.wide figcaption{font:500 ${PHONE ? '7.8pt' : '7.8pt'}/1.35 var(--sans);color:var(--muted);margin-top:3pt}
-.sphoto figcaption i,.wide figcaption i{font-style:normal;font-weight:700;color:var(--rust)}
+.sphoto figcaption i,.wide figcaption i{font-style:normal;font-weight:700;color:var(--rust);white-space:nowrap}
 .snum{margin:0 0 ${PHONE ? '10pt' : '14pt'};background:var(--navy);color:#fff;display:flex;align-items:center;gap:${PHONE ? '10pt' : '20pt'};padding:${PHONE ? '8pt 12pt' : '12pt 22pt'};border-left:8pt solid var(--orange)}
 .snum b{font:800 ${PHONE ? '64pt' : '110pt'}/.85 var(--cond);color:#fff}.snum span{font:800 ${PHONE ? '13pt' : '22pt'}/1.1 var(--cond);text-transform:uppercase;color:#ff8a5c;letter-spacing:.04em}
-.wide{margin:0 0 ${PHONE ? '10pt' : '14pt'}}.wide img{display:block;width:100%;height:auto}.wide.closer{margin-top:${PHONE ? '12pt' : '18pt'};break-inside:avoid}.wide.closer img{height:${PHONE ? '2.4in' : '3.05in'};object-fit:cover}
+.wide{margin:0 0 ${PHONE ? '10pt' : '14pt'}}.wide img{display:block;width:100%;height:auto}.wide.closer{margin-top:${PHONE ? '12pt' : '18pt'};break-inside:avoid}.wide.closer img{height:${PHONE ? '1.95in' : '3.05in'};object-fit:cover}
 .body{column-count:${PHONE ? '1' : '2'};column-gap:.34in;column-rule:.5pt solid var(--rule);orphans:3;widows:3;column-fill:balance}
-.body p{margin:0 0 6.2pt;text-wrap:pretty}
+.body p{margin:0 0 6.2pt;text-wrap:pretty}.body p:has(.endmark){text-wrap:wrap}
 .body p.lede::first-letter{font-family:var(--cond);font-weight:800;initial-letter:3;color:var(--orange);margin-right:${PHONE ? '5pt' : '6pt'}}
 .body p.sub{font:800 ${PHONE ? '12pt' : '13.5pt'}/1.1 var(--cond);text-transform:uppercase;letter-spacing:.06em;color:var(--navy);margin:${PHONE ? '10pt 0 3pt' : '11pt 0 3pt'};padding-top:5pt;border-top:1.4pt solid var(--orange);break-after:avoid}
 .body p.sub2{font:800 ${PHONE ? '10.5pt' : '11.5pt'}/1.15 var(--cond);letter-spacing:.04em;color:var(--blue);margin:9pt 0 2pt;break-after:avoid}
-.body blockquote{margin:6pt 0;padding:1pt 0 1pt 10pt;border-left:3pt solid var(--orange);break-inside:avoid;font-style:italic;color:#243a64}.body blockquote p{margin:0 0 4pt}
+.body blockquote{margin:6pt 0;padding:1pt 0 1pt 10pt;border-left:3pt solid var(--orange);${PHONE ? '' : 'break-inside:avoid;'}font-style:italic;color:#243a64}.body blockquote p{margin:0 0 4pt}
 .body strong{font-weight:700}
 .pull{margin:${PHONE ? '8pt 0 10pt' : '8pt 0 12pt'};padding:${PHONE ? '9pt 0' : '10pt 0 9pt'};border-top:3pt solid var(--orange);break-inside:avoid}
 .pull p{margin:0 0 5pt;font:800 ${PHONE ? '16pt' : '20.5pt'}/1.08 var(--cond);text-transform:uppercase;color:var(--navy);text-wrap:balance;letter-spacing:.005em}
@@ -528,7 +536,7 @@ a{color:inherit;text-decoration:none}
 .watch{margin:${PHONE ? '10pt 0' : '12pt 0 10pt'};border-top:3pt solid var(--orange);padding-top:5pt;break-inside:avoid}
 .watch .wk{font:800 ${PHONE ? '8pt' : '9pt'} var(--cond);letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin:0 0 3pt}
 .wnote{margin:4pt 0 1pt;font:600 ${PHONE ? '9pt' : '9pt'}/1.3 var(--sans);color:var(--navy)}
-.watch a{display:block;padding:${PHONE ? '4pt 0' : '3pt 0'};border-bottom:.5pt solid var(--rule);font:600 ${PHONE ? '9.4pt' : '9pt'}/1.28 var(--sans);color:var(--blue);text-decoration:underline;text-decoration-thickness:.4pt}
+.watch a{display:block;padding:${PHONE ? '7pt 0' : '3pt 0'};border-bottom:.5pt solid var(--rule);font:600 ${PHONE ? '9.4pt' : '9pt'}/1.28 var(--sans);color:var(--blue);text-decoration:underline;text-decoration-thickness:.4pt}
 .watch a{display:flex;justify-content:space-between;gap:12pt;align-items:baseline}.watch a .wu{flex:none;font:500 6.6pt var(--sans);font-style:normal;color:var(--muted);text-decoration:none}
 .vlink{color:var(--blue);text-decoration:underline;text-decoration-thickness:.5pt}
 .keynums{background:var(--paper);border:.6pt solid var(--rule);border-left:5pt solid var(--orange);padding:6pt 9pt 3pt;margin:3pt 0 9pt}
@@ -537,17 +545,17 @@ a{color:inherit;text-decoration:none}
 .body p.lead-in{break-after:avoid}
 .body p.lede.short::first-letter{font:inherit;initial-letter:normal;color:inherit;margin:0}.body p.lede.short{font-weight:700;font-size:${PHONE ? '12pt' : '11.5pt'}}
 .qlinks{display:flex;flex-direction:column;margin:6pt 0 4pt}
-.qlinks a{display:block;padding:${PHONE ? '4.2pt 0' : '2.6pt 0'};font:700 ${PHONE ? '9.6pt' : '9pt'}/1.25 var(--sans);color:#fff;text-decoration:underline;text-decoration-thickness:.4pt}
+.qlinks a{display:block;padding:${PHONE ? '6.5pt 0' : '2.6pt 0'};font:700 ${PHONE ? '9.6pt' : '9pt'}/1.25 var(--sans);color:#fff;text-decoration:underline;text-decoration-thickness:.4pt}
 
 /* teams */
 .teampage{break-before:page}
-.ttitle{font:800 ${PHONE ? '24pt' : '36pt'}/.95 var(--cond);text-transform:uppercase;margin:0 0 4pt;color:var(--navy)}.ttitle small{font:800 ${PHONE ? '10pt' : '14pt'} var(--cond);letter-spacing:.2em;color:var(--orange);margin-left:6pt;vertical-align:middle;white-space:nowrap}
+.ttitle{font:800 ${PHONE ? '24pt' : '36pt'}/.95 var(--cond);text-transform:uppercase;margin:0 0 4pt;color:var(--navy)}.ttitle small.blk{display:block;margin:4pt 0 0}.ttitle small{font:800 ${PHONE ? '10pt' : '14pt'} var(--cond);letter-spacing:.2em;color:var(--orange);margin-left:6pt;vertical-align:middle;white-space:nowrap}
 .tcont{font:800 11pt var(--cond);letter-spacing:.22em;text-transform:uppercase;color:var(--rust);margin:0 0 6pt}
 .tsrc{font-size:${PHONE ? '7.2pt' : '8pt'};line-height:1.4;color:var(--muted);margin:0 0 8pt}.tsrc a{color:var(--blue);text-decoration:underline;text-decoration-thickness:.4pt}
 table.roster thead{display:table-header-group}table.roster tr{break-inside:avoid}.qbbox .qbsrc{font-size:${PHONE ? '6.8pt' : '7.4pt'};color:#b9c6e2}.qbbox .qbsrc a{color:#fff;text-decoration:underline;text-decoration-thickness:.4pt}
 table.roster{width:100%;border-collapse:collapse;font-size:${PHONE ? '6.9pt' : '7.2pt'};line-height:1.22;${PHONE ? 'table-layout:fixed' : ''}}
 ${PHONE ? 'table.roster th:nth-child(1){width:14pt}table.roster th:nth-child(2){width:62pt}table.roster th:nth-child(3){width:22pt}table.roster th:nth-child(4){width:19pt}table.roster th:nth-child(5){width:18pt}table.roster th:nth-child(6){width:20pt}table.roster th:nth-child(7){width:72pt}table.roster td{overflow-wrap:anywhere}' : ''}
-table.roster th{font:800 ${PHONE ? '6pt' : '6.6pt'} var(--cond);letter-spacing:${PHONE ? '.08em' : '.14em'};text-transform:uppercase;text-align:left;background:var(--navy);color:#fff;padding:3pt 4pt}
+table.roster th:first-child{text-align:right}table.roster th{font:800 ${PHONE ? '6pt' : '6.6pt'} var(--cond);letter-spacing:${PHONE ? '.08em' : '.14em'};text-transform:uppercase;text-align:left;background:var(--navy);color:#fff;padding:3pt 4pt}
 table.roster td{padding:${PHONE ? '.95pt 2pt' : '1.45pt 4pt'};border-bottom:.4pt solid var(--rule)}table.roster tr:nth-child(even) td{background:#f3eddf}
 table.roster td.ht,table.roster td.cl{white-space:nowrap}table.roster td.n{font:800 ${PHONE ? '8pt' : '9pt'} var(--cond);color:var(--blue);text-align:right;width:${PHONE ? '.2in' : '.3in'}}table.roster td.nm{font-weight:700;color:var(--navy);${PHONE ? '' : 'white-space:nowrap'}}
 .qbbox{background:var(--navy);color:#fff;padding:${PHONE ? '8pt 10pt' : '10pt 16pt'};border-left:8pt solid var(--orange);margin:0 0 10pt}
@@ -558,7 +566,8 @@ table.roster td.ht,table.roster td.cl{white-space:nowrap}table.roster td.n{font:
 .dpos p{white-space:nowrap;margin:0;font-size:${PHONE ? '8pt' : '6.9pt'};line-height:1.24}.dn{font:800 ${PHONE ? '8.6pt' : '8.4pt'} var(--cond);color:var(--rust)}.dm{color:var(--muted)}.dsec{font:700 .68em var(--cond);letter-spacing:.14em;color:var(--muted);margin-right:3pt}.or{font:800 ${PHONE ? '6.8pt' : '6.6pt'} var(--cond);letter-spacing:.1em;color:var(--orange)}
 
 /* credits */
-.credits{break-before:page;${PHONE ? '' : 'max-width:5.6in'}}.credits .ttitle{margin-bottom:${PHONE ? '12pt' : '8pt'}}.credits p{margin:0 0 ${PHONE ? '4pt' : '6pt'};font-size:${PHONE ? '9.2pt' : '9.2pt'};line-height:1.42;color:#33405e}.credits b{color:var(--navy)}.credits .tag{margin-top:${PHONE ? '8pt' : '16pt'};font:800 14pt var(--cond);letter-spacing:.06em;color:var(--navy)}
+.credits{break-before:page;${PHONE ? '' : 'max-width:5.6in'}}.credits .ttitle{margin-bottom:${PHONE ? '12pt' : '8pt'}}.credits p.kick{color:var(--rust);margin:0 0 5pt}
+.credits p{margin:0 0 ${PHONE ? '3pt' : '6pt'};font-size:${PHONE ? '8.7pt' : '9.2pt'};line-height:1.42;color:#33405e}.credits b{color:var(--navy)}.credits .tag a{display:inline-block;padding:${PHONE ? '10pt 6pt' : '2pt 0'}}.credits .tag{margin-top:${PHONE ? '2pt' : '16pt'};font:800 14pt var(--cond);letter-spacing:.06em;color:var(--navy)}
 `;
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -568,7 +577,7 @@ function assemble(pages) {
   PAGES = pages || {};
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>GatorBait Magazine | Florida vs. Oklahoma Pregame Edition | Nov. 6, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet"><style>${css(PHONE)}</style></head><body>
-${smartQuotes([coverHtml(), contents(pages), guide(), live.map((s) => story(byKey[s.key], s)).join('\n'), teams(), credits(), backCover()].join('\n'))}
+${smartQuotes(mapText([coverHtml(), contents(pages), guide(), live.map((s) => story(byKey[s.key], s)).join('\n'), teams(), credits(), backCover()].join('\n'), NBJ))}
 </body></html>`;
 }
 
@@ -650,7 +659,7 @@ console.log('pass 2: pages', o2.pages, 'bytes', fs.statSync(pdfPath).size, 'font
 if (moved.length) console.warn('WARN: page numbers moved between passes; rerun');
 
 // Finish: clean bookmarks and top-of-page internal links (Chromium's own outline fuses wrapped words and lands mid-page).
-const sec = (name, keys) => { const kids = keys.filter((k) => pageOf2[k]).map((k) => ({ title: byKey[k].title, page: pageOf2[k] })); return kids.length ? { title: name, page: kids[0].page, children: kids } : null; };
+const sec = (name, keys) => { const kids = keys.filter((k) => pageOf2[k]).map((k) => ({ title: curl(byKey[k].title), page: pageOf2[k] })); return kids.length ? { title: name, page: kids[0].page, children: kids } : null; };
 const outline = [
   { title: 'Cover', page: 1 },
   { title: 'Contents', page: 2 },
@@ -663,7 +672,7 @@ const outline = [
   { title: 'Credits and sources', page: pageOf2.credits },
   { title: 'Back cover', page: o2.pages },
 ].filter((x) => x && x.page);
-const spec = { outline, title: 'GatorBait Magazine | Florida vs. Oklahoma Pregame Edition | Nov. 6, 2026 (' + (PHONE ? 'Phone edition' : 'Letter edition') + ')', author: 'GatorBait Media', subject: 'Oklahoma week: nine complete stories, the game guide, both official rosters and Oklahoma\'s depth chart. Friday, Nov. 6, 2026.' };
+const spec = { outline, title: 'GatorBait Magazine | Florida vs. Oklahoma Pregame Edition | Nov. 6, 2026 (' + (PHONE ? 'Phone edition' : 'Letter edition') + ')', author: 'GatorBait Media', subject: 'Oklahoma week: nine complete stories, the game guide, both official rosters and Oklahoma’s depth chart. Friday, Nov. 6, 2026.' };
 const specPath = path.join(OUT, tag + '.spec.json');
 fs.writeFileSync(specPath, JSON.stringify(spec, null, 1));
 execFileSync('/usr/bin/python3', [path.join(HERE, 'finish-pdf.py'), pdfPath, specPath], { stdio: 'inherit' });

@@ -65,6 +65,16 @@ if '/Names' in writer._root_object:
 if '/Dests' in writer._root_object:
     del writer._root_object['/Dests']
 
+# 2c. tagged-PDF roles: Chromium emits /Em and /Strong; map them to the standard /Span so accessibility checkers accept the structure tree
+root = writer._root_object
+if '/StructTreeRoot' in root:
+    st = root['/StructTreeRoot'].get_object()
+    rm = st.get('/RoleMap')
+    rm = rm.get_object() if rm is not None else DictionaryObject()
+    for role in ('Em', 'Strong'):
+        rm[NameObject('/' + role)] = NameObject('/Span')
+    st[NameObject('/RoleMap')] = rm
+
 # 3. document properties
 writer.add_metadata({'/Title': spec['title'], '/Author': spec['author'], '/Subject': spec['subject'], '/Creator': 'GatorBait Media magazine builder (Chromium)'})
 writer._root_object[NameObject('/PageMode')] = NameObject('/UseOutlines')

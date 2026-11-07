@@ -1,5 +1,5 @@
 {
- "$comment": "Oklahoma-week web edition (Friday, Nov. 6, 2026), ten stories. CANDIDATE, NOT LIVE: built as MAG_VARIANT=oklahoma-week (postgame skin and layout), pinned by a loader that does not exist on the site yet. Every title, dek and read time is copied from the live post (title, custom excerpt, minutesToRead, read-only Wix Blog read on Nov. 7, 2026); no statistic is added. The two [[...]] download URLs and notes are filled after the PDFs are uploaded (deploy/oklahoma-week-20261106/set-pdf-urls.mjs); until then the download section renders nothing. Gate: node deploy/oklahoma-week-20261106/check-no-placeholders.mjs. Reading order, top to bottom (the same order as the v2 PDFs): 1 the cover story is Best Fridays (matches the cover art); the 'columns' section holds 2 the Thursday show recap, 3 Franz Beard's Soothsayer, 4 Scouting Oklahoma Part 1, 5 Condon (men's gamer, lead style) and 6 McMiller; the 'coverage' section holds 7 the first CFP Top 25, 8 Buddy Martin's Monster column, 9 the Golden Goose column and 10 the Yost column. Loren Meadows's Oklahoma preview is added later by the controller: put it in columns.items directly after Scouting Oklahoma, Part 1 (it goes with the football analysis, and the web order must match the PDF order). The shared renderer shows at most six 'Also inside' lines (80 characters each) and four photo-credit lines (80 characters each; longer text is cut off), so the basketball stories share one cover line and the three Buddy Martin columns share another. Game facts (kickoff, TV, stadium) are as listed on FloridaGators.com and ESPN; see the 'next' note.",
+ "$comment": "Oklahoma-week web edition (Friday, Nov. 6, 2026), football only, eight stories (owner order Nov. 7: no basketball stories). CANDIDATE, NOT LIVE: built as MAG_VARIANT=oklahoma-week (postgame skin and layout), pinned by a loader that does not exist on the site yet. Every title, dek and read time is copied from the live post (title, custom excerpt, minutesToRead; read-only Wix Blog read on Nov. 7, 2026) except the cover dek, which drops the live excerpt's closing basketball clause; no statistic is added. The two [[...]] download URLs and notes are filled after the PDFs are uploaded (deploy/oklahoma-week-20261106/set-pdf-urls.mjs); until then the download section renders nothing. Gate: node deploy/oklahoma-week-20261106/check-no-placeholders.mjs. Reading order, top to bottom: 1 the cover story is Best Fridays (matches the cover art); the 'columns' section holds 2 the Thursday show recap, 3 Franz Beard's Soothsayer and 4 Scouting Oklahoma Part 1; the 'coverage' section holds 5 the first CFP Top 25, 6 Buddy Martin's Monster column, 7 the Golden Goose column and 8 the Yost column. SLOT FOR LOREN MEADOWS'S OKLAHOMA PREVIEW (added later by the controller): columns.items, directly after the Soothsayer and before Scouting Oklahoma, Part 1 (reading order: Fridays, show, Soothsayer, Loren preview, Scouting Part 1, CFP, then the Buddy Martin columns); add its line to cover.lines (six lines are allowed, five are used, 80 characters each) and its photo credit to credits.other if it has a photo. The Condon (27b79db1) and McMiller (e0e37d66) basketball posts are not in this edition. The shared renderer shows at most six 'Also inside' lines and four photo-credit lines (80 characters each; longer text is cut off), so the three Buddy Martin columns share one cover line. Game facts (kickoff, TV, stadium) are as listed on FloridaGators.com and ESPN; see the 'next' note.",
  "id": "2026-11-06-oklahoma-week",
  "layout": "postgame",
  "issue": {
@@ -12,7 +12,7 @@
  "cover": {
   "kicker": "Best Fridays · The Buddy Martin Show",
   "headline": "Best Fridays: Urban Meyer Looks Back as Florida Turns Toward Oklahoma",
-  "dek": "Urban Meyer reflects on Florida's championship years and the current Gators; Edgar Thompson and Rob Dotson discuss Oklahoma and a strong basketball week on Best Fridays.",
+  "dek": "Urban Meyer reflects on Florida's championship years and the current Gators; Edgar Thompson and Rob Dotson discuss Oklahoma on Best Fridays.",
   "byline": "By Brenden Martin",
   "cta": "Read the story",
   "url": "/post/best-fridays-urban-meyer-looks-back-as-florida-turns-toward-oklahoma",
@@ -29,13 +29,12 @@
    "Tramell Jones Gets the Call: the Buddy Martin Show panel",
    "Franz Beard: The Soothsayer likes the Gators in a white knuckler",
    "Scouting Oklahoma, Part 1: the new play-caller vs. the Gators’ pass rush",
-   "Basketball: Condon’s near triple-double, McMiller’s career-high 42",
    "Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way",
    "Buddy Martin: The Monster That’s Never Fed, the Golden Goose, Yost"
   ],
   "poster": {
-   "file": "oklahoma-week-cover-v2-20261107.jpg",
-   "alt": "GatorBait Magazine cover, Nov. 6, 2026, Oklahoma Week. Urban Meyer, Ring of Honor: a lasting place in The Swamp. Meyer, in a Florida jacket and headset, looks up above a celebrating Gators huddle. Cover lines: Franz Beard's Oklahoma Soothsayer; Condon's near triple-double; the first CFP Top 25."
+   "file": "oklahoma-week-cover-v2b-20261107.jpg",
+   "alt": "GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. The first CFP Top 25."
   }
  },
  "contents": {
@@ -43,7 +42,7 @@
   "items": [
    {
     "id": "columns",
-    "label": "Show, scouting, picks, basketball"
+    "label": "Show, picks and scouting"
    },
    {
     "id": "coverage",
@@ -53,8 +52,8 @@
  },
  "columns": {
   "kicker": "Oklahoma week",
-  "title": "The show, the scouting report, the picks and two basketball wins",
-  "dek": "The Buddy Martin Show panel on the quarterback call, Part 1 of GatorBait’s Oklahoma scouting series, Franz Beard’s Soothsayer picks for Saturday, and Thursday night’s two wins at the O’Dome.",
+  "title": "The show, the picks and the scouting report",
+  "dek": "The Buddy Martin Show panel on the quarterback call, Franz Beard’s Soothsayer picks for Saturday, and Part 1 of GatorBait’s Oklahoma scouting series.",
   "items": [
    {
     "rubric": "The Buddy Martin Show",
@@ -103,31 +102,6 @@
      "alt": "Florida's defense huddles during the game at Auburn on Sept. 19, 2026.",
      "credit": "Photo by Chris Spears, GatorBait Media."
     }
-   },
-   {
-    "lead": true,
-    "rubric": "Men's basketball",
-    "author": "Franz Beard",
-    "title": "Condon flirts with triple-double as Gators smack JU",
-    "dek": "Franz Beard on Alex Condon's near triple-double, Rueben Chinyelu's career-high 21 points and No. 1 Florida's 88-57 win over Jacksonville.",
-    "url": "/post/condon-flirts-with-triple-double-as-gators-smack-ju",
-    "read": "5 min read",
-    "image": {
-     "id": "16b519_ace94c11ce5d4031a20650525c423bf3",
-     "ext": "jpg",
-     "width": 2263,
-     "height": 3000,
-     "alt": "Florida's Alex Condon (21) drives against Stetson in an exhibition at the O'Connell Center in October.",
-     "credit": "Photo by Chris Spears, GatorBait Media."
-    }
-   },
-   {
-    "rubric": "Women's basketball",
-    "author": "Loren Meadows",
-    "title": "Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65",
-    "dek": "Kiyomi McMiller scored a career-high 42 points and Vivian Iwuchukwu added 20 as Florida rolled past UCF 95-65 in Gainesville.",
-    "url": "/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65",
-    "read": "3 min read"
    }
   ]
  },
@@ -192,10 +166,9 @@
   "meta": [
    "Saturday, Nov. 7",
    "7:45 p.m. ET · SEC Network",
-   "Ben Hill Griffin Stadium, Gainesville",
-   "Women: at Chattanooga, Sunday, 2 p.m. ET, SEC Network+"
+   "Ben Hill Griffin Stadium, Gainesville"
   ],
-  "note": "Football kickoff, network and stadium as listed on FloridaGators.com and ESPN. Women’s basketball time and stream (SECN+) as listed on FloridaGators.com."
+  "note": "Kickoff, network and stadium as listed on FloridaGators.com and ESPN."
  },
  "reference": {
   "label": "More GatorBait",
@@ -225,7 +198,7 @@
   "other": [
    "Cover: digital composite (AI-assisted) of official Florida Gators/UAA photos.",
    "Cover photos: Florida Gators/UAA; Jay Metz, Jason Parkhurst/UAA Communications.",
-   "Show, Scouting, Soothsayer and Condon photos: Chris Spears, GatorBait Media.",
+   "Show, Soothsayer and Scouting photos: Chris Spears, GatorBait Media.",
    "Best Fridays: video still, The Buddy Martin Show. Graphics: GatorBait Media."
   ]
  },

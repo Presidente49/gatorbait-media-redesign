@@ -26,8 +26,8 @@ What is compared, per story (matched by post id):
         - a deck line that prepare.py carried as the story's own dek (posts.json 'dek': the italic standfirst lines at the top of a
           post, printed once under the headline and not repeated in the body).
       Anything else is UNEXPLAINED. Prepared paragraphs with no source counterpart are UNEXPLAINED too.
-  (b) text differences inside matched paragraphs. The only expected ones are Condon '2-3' to '3-6' and McMiller 'Springs' to
-      'Spring' (the two verified live corrections); each must be present. A paragraph whose end was trimmed is judged like a
+  (b) text differences inside matched paragraphs. The only expected ones are the recorded desk corrections listed in EXPECTED below
+      (Yost's paired quote mark and Golden Goose's 'halftime'); each must be present. A paragraph whose end was trimmed is judged like a
       dropped paragraph (a promo or link tail is 'dropped by rule'). Every other difference is UNEXPLAINED.
   (c) the story's final source paragraph (its ending) must be in the prepared copy or in the dropped-by-rule list.
 With --pdf: for every prepared paragraph the first 8 words and the last 8 words must be in the PDF text. Case, whitespace,
@@ -45,10 +45,8 @@ import sys
 import unicodedata
 from pathlib import Path
 
-# The two verified live corrections the prepared copy must carry: (post id, word in the source, word in the prepared copy).
+# The recorded desk corrections the prepared copy must carry: (post id, word in the source, word in the prepared copy, label).
 EXPECTED = [
-    ('27b79db1-f0e7-40eb-9639-49a60420ac00', '2-3', '3-6', "Condon: '2-3 shooting from the field' became '3-6' (ESPN box score)"),
-    ('e0e37d66-2592-443d-8a5e-0058bc507802', 'Springs', 'Spring', "McMiller: 'Silver Springs, Maryland' became 'Silver Spring' (ESPN roster)"),
     ('bd815138-7f0c-4f97-a642-1cb5862e3f5a', '\u2018I', '\u201cI', "Yost: a mismatched opening quote mark (single, closed by a double) was paired (recorded desk rule in issue.json)"),
     ('ee624c8a-268c-4f94-889e-6cd3de939f6f', 'halftime', 'the end of the first quarter', "Golden Goose: 'enters the Ring of Honor at halftime' became 'at the end of the first quarter' (UF's Nov. 5 Meyer feature; magazine-only until the live post is corrected)"),
 ]

@@ -41,14 +41,14 @@ def _walk(o):
 
 
 CREDITS = {
-    'cover-v2.png': ('Cover', 'Digital composite (AI-assisted) built from official Florida Gators/UAA photographs: Urban Meyer (2006 vs. South Carolina), Florida Gators/UAA; Tim Tebow (2006 vs. LSU), Jay Metz/UAA Communications; 2008-season championship celebration, Jason Parkhurst/UAA Communications. 130 ppi at Letter size; digital only.'),
+    'cover-v2-football.png': ('Cover', 'Retouched football-only cover (Nov. 7); digital composite (AI-assisted) built from official Florida Gators/UAA photographs: Urban Meyer (2006 vs. South Carolina), Florida Gators/UAA; Tim Tebow (2006 vs. LSU), Jay Metz/UAA Communications; 2008-season championship celebration, Jason Parkhurst/UAA Communications. 130 ppi at Letter size; digital only.'),
+    'cover-v2.png': ('Cover (superseded, not printed)', 'Earlier cover raster; it carries a basketball line that the owner ordered out. Not used by either build.'),
     'champ-2008-celebration.jpg': ('Ring of Honor opener', 'Jason Parkhurst/UAA Communications (official UF photograph; game played Jan. 8, 2009)'),
     'tebow-2006-lsu.jpg': ('Best Fridays closer', 'Jay Metz/UAA Communications (official UF photograph; 2006 game against LSU)'),
     'fridays-still.jpg': ('Best Fridays', 'Video still: The Buddy Martin Show / Gator Bait Media'),
     'qb-panel.jpg': ('Tramell Jones Gets the Call', 'Photo by Chris Spears, GatorBait Media'),
     'scouting-huddle.jpg': ('Scouting Oklahoma, Part 1', 'Photo by Chris Spears, GatorBait Media'),
     'soothsayer-baugh.jpg': ('The Soothsayer', 'Archival photo by Chris Spears, GatorBait Media'),
-    'condon.jpg': ('Condon story', 'Photo by Chris Spears, GatorBaitMedia.com (October exhibition against Stetson, not the Jacksonville game)'),
     'swamp-panorama.jpg': ('Game guide', 'Archival photo by Chris Spears, GatorBait Media'),
     'monster-column-art.png': ('The Monster That\u2019s Never Fed (opener)', 'Graphic: GatorBait Media. Original typographic and vector graphic by the graphic desk (HTML, CSS and inline SVG rendered with Playwright; Barlow). No photograph, no person, no AI image. Full 2400 x 1350 master; the opener shows a center crop above the art\u2019s baked-in byline.'),
     'saban-espn-courtesy-crop.jpg': ('The Monster That\u2019s Never Fed (floated portrait)', 'Nick Saban photo courtesy of ESPN. Tight head-and-shoulders crop (390 x 448 px of the 495 x 470 supplied portrait), printed 1.5 in wide (260 ppi). Supplied by Brenden Martin; no other source.'),

@@ -1,5 +1,5 @@
 {
-  "$comment": "Nov. 6, 2026 Oklahoma-week issue: the ten live posts in reading order, plus the editorial rules prepare.py applies to each body. Nothing here is a live Wix object. Bodies come from GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT (published version only), normalized by magazine/normalize_wix_post.py; the body of Scouting Oklahoma Part 1 (2d31ea6f) is the handoff-package snapshot of the published version acquired 22:19Z Nov. 6, not a fresh Wix read (see source/raw/2d31ea6f-538f-4d40-8bca-e497943d80e1.NOTE.txt). Every rule below is reported in receipt.json. Wording is never rewritten: rules only drop web furniture, empty paragraphs, display byline lines, stray one-letter paragraphs and link-only text, move a credit into a caption (dropping a 'Cover:' label), split a paragraph at a literal newline, or pair a mismatched quote mark. Global rules (all posts): empty paragraphs are dropped and leading/trailing whitespace is trimmed; both are counted per post in receipt.json. Order: 1 Best Fridays (leads, matches the supplied cover), 2 Thursday show recap, 3 Soothsayer, 4 Scouting Oklahoma Part 1 (feature), 5 Condon (men's gamer, kept prominent), 6 McMiller, 7 first CFP Top 25, 8 Buddy Martin's Nov. 7 column 'The Monster That's Never Fed' (first in the Columns section; a Nov. 7 story in a Nov. 6-dated edition, added on Brenden's direction), 9 Golden Goose, 10 Yost.",
+  "$comment": "Nov. 6, 2026 Oklahoma-week issue: the live posts in reading order (eight after the Nov. 7 owner order below), plus the editorial rules prepare.py applies to each body. Nothing here is a live Wix object. Bodies come from GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT (published version only), normalized by magazine/normalize_wix_post.py; the body of Scouting Oklahoma Part 1 (2d31ea6f) is the handoff-package snapshot of the published version acquired 22:19Z Nov. 6, not a fresh Wix read (see source/raw/2d31ea6f-538f-4d40-8bca-e497943d80e1.NOTE.txt). Every rule below is reported in receipt.json. Wording is never rewritten: rules only drop web furniture, empty paragraphs, display byline lines, stray one-letter paragraphs and link-only text, move a credit into a caption (dropping a 'Cover:' label), split a paragraph at a literal newline, or pair a mismatched quote mark. Global rules (all posts): empty paragraphs are dropped and leading/trailing whitespace is trimmed; both are counted per post in receipt.json. Order: 1 Best Fridays (leads, matches the supplied cover), 2 Thursday show recap, 3 Soothsayer, 4 Scouting Oklahoma Part 1 (feature), 5 first CFP Top 25, 6 Buddy Martin's Nov. 7 column 'The Monster That's Never Fed' (first in the Columns section), 7 Golden Goose, 8 Yost. Nov. 7 owner order (Brenden): no basketball stories in the magazine, so Condon (27b79db1) and McMiller (e0e37d66) are out of the edition and the Basketball section is gone; the two posts stay live on the site.",
   "id": "2026-11-06-oklahoma-week",
   "title": "GatorBait Magazine | Oklahoma Week",
   "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
@@ -149,51 +149,6 @@
           "op": "caption-from-id",
           "id": "a1",
           "reason": "First paragraph (italic) is the photo caption and credit; it becomes the hero caption. Unlike the other new heroes it sits at the top of the live body, and it carries no 'Cover: ' label, so no prefix is stripped."
-        }
-      ]
-    },
-    {
-      "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",
-      "key": "condon",
-      "rubric": "Men's basketball",
-      "author": "Franz Beard",
-      "byline": "By Franz Beard",
-      "hero": "condon-photo",
-      "rules": [
-        {
-          "op": "drop-id",
-          "id": "1385a19",
-          "reason": "Display byline line in the body ('By Franz Beard'); added to the live post in the 21:32Z republish. The magazine byline comes from the post author."
-        },
-        {
-          "op": "drop-id",
-          "id": "21yil129",
-          "reason": "Display line 'gator bait media.com' whose second half is a link to http://media.com (added in the 21:32Z republish); web furniture and an outbound link."
-        },
-        {
-          "op": "split-newline",
-          "id": "p017",
-          "reason": "A literal line break inside one paragraph (between a closing quote and the next sentence) is rendered as two paragraphs."
-        }
-      ]
-    },
-    {
-      "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
-      "key": "mcmiller",
-      "rubric": "Women's basketball",
-      "author": "Loren Meadows",
-      "byline": "By Loren Meadows, GatorBaitMedia.com and host of The Gator Lowdown with Loren Meadows",
-      "hero": "pullquote",
-      "pullquote": {
-        "id": "q1",
-        "from": "Just keep going until they stop me. It just feels like you can’t miss. Anything you put up is going in.",
-        "who": "Kiyomi McMiller"
-      },
-      "rules": [
-        {
-          "op": "drop-id",
-          "id": "byline",
-          "reason": "Body byline line; shown as the story byline instead."
         }
       ]
     },
@@ -352,14 +307,6 @@
       "alt": "Florida's defense huddles during the game at Auburn on Sept. 19, 2026.",
       "credit": "Photo by Chris Spears, GatorBait Media."
     },
-    "condon-photo": {
-      "id": "16b519_ace94c11ce5d4031a20650525c423bf3",
-      "ext": "jpg",
-      "width": 2263,
-      "height": 3000,
-      "alt": "Florida's Alex Condon (21) drives against Stetson in an exhibition at the O'Connell Center in October.",
-      "credit": "Photo by Chris Spears, GatorBait Media."
-    },
     "cfp-graphic": {
       "id": "d3cfa5_91591597fa63490993a23e4874d5da53",
       "ext": "png",
@@ -398,14 +345,12 @@
       "show",
       "soothsayer",
       "scouting1",
-      "condon",
-      "mcmiller",
       "cfp",
       "monster",
       "goose",
       "yost"
     ],
-    "orderNote": "Suggested order kept as given by the coordinator, with Scouting Oklahoma Part 1 placed directly after the Soothsayer (reading order 4 of 9). The web issue (sports-live bundle) and the email still carry the earlier eight stories in the earlier order (cover story, then the 'columns' section for the Thursday show recap, Soothsayer, Condon and McMiller, then the 'coverage' section for the CFP, Golden Goose and Yost); Part 1 is not in either yet, and the two built PDFs are also still the eight-story builds. Nov. 7 addition (Brenden, voice dictation, Nov. 7): Buddy Martin's new column 'The Monster That's Never Fed. A Football Coaches' Lament.' (post 524998de, published Nov. 7, 2026) is the tenth story and runs first in the Columns section, ahead of the Golden Goose and Yost columns, because it is the newest and longest of the three. The edition date label stays 'Nov. 6, 2026 pregame edition', so a Nov. 7 column sits in a Nov. 6-dated edition.",
+    "orderNote": "Order kept as given by the coordinator, with Scouting Oklahoma Part 1 directly after the Soothsayer. Nov. 7 additions and removals (Brenden): Buddy Martin's new column 'The Monster That's Never Fed. A Football Coaches' Lament.' (post 524998de, published Nov. 7, 2026 UTC) runs first in the Columns section, ahead of the Golden Goose and Yost columns, because it is the newest and longest of the three. The two basketball stories (Condon, McMiller) were taken out of the edition on the owner's order ('I do not want basketball stories in there'); the posts are untouched and stay live. The edition date label stays 'Nov. 6, 2026 pregame edition'. The web bundle (sports-live) and the email are not rebuilt by this tool and still carry their earlier story lists.",
     "rereadAfterFirstReceipt": {
       "when": "Nov. 6, 2026, evening (after the 21:32Z Condon republish), read-only GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT, published versions",
       "method": "lastPublishedDate compared with the first receipt, plus a text fingerprint (FNV-1a over all text runs, computed on the Wix side and again on the saved body) for all eight posts",
@@ -437,26 +382,6 @@
           "firstReceipt": "2026-11-04T17:13:08.525Z",
           "now": "2026-11-04T17:13:08.525Z",
           "changed": false
-        },
-        {
-          "key": "mcmiller",
-          "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
-          "firstReceipt": "2026-11-06T04:52:15.454Z",
-          "now": "2026-11-06T04:52:15.454Z",
-          "changed": false
-        },
-        {
-          "key": "condon",
-          "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",
-          "firstReceipt": "2026-11-06T13:02:24.150Z",
-          "now": "2026-11-06T21:32:10.136Z",
-          "changed": true,
-          "hasUnpublishedChanges": {
-            "firstReceipt": true,
-            "now": false
-          },
-          "whatChanged": "The post was republished at 21:32Z (the draft edits went live; the live post's most recent contributor is Wix member ae876af8, not the author member). All 18 non-empty article paragraphs are word for word the same as in the 13:02Z version. The only body difference: two display lines were added at the top, 'By Franz Beard' and 'gator bait media.com' (its second half links to http://media.com). Both are dropped by rule; the magazine byline still comes from the post author. The cover photo's alt text on the live post now ends 'Photo by Chris Spears, GatorBaitMedia.com'. The 2-3 field-goal line (p006) and the 51-25 rebound line (p015) are unchanged and still differ from ESPN (3-6 and 52-25).",
-          "regenerated": "source/raw/27b79db1-f0e7-40eb-9639-49a60420ac00.api.json and source/27b79db1-f0e7-40eb-9639-49a60420ac00.json replaced; posts.json html for Condon is identical to the previous build"
         }
       ]
     },
@@ -464,31 +389,15 @@
       "when": "Nov. 6, 2026, 23:15Z, two single-post UPDATE_PUBLISH patches by the fact desk (Jarvis), each a one-phrase find and replace on the published body; the new-post automation did not re-fire (update-publish)",
       "posts": [
         {
-          "key": "condon",
-          "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",
-          "change": "'2-3 shooting from the field including 1-2 from three' became '3-6 shooting from the field including 1-2 from three' (ESPN box score 3-6; his 12 points only add up with 3-6)",
-          "lastPublishedDate": "2026-11-06T23:15:54.552Z",
-          "firstPublishedDate": "2026-11-06T13:02:24.150Z",
-          "readBack": "GET /blog/v3/posts/{id}: new phrase present, old phrase absent, title, excerpt, member, categories, hero unchanged, hasUnpublishedChanges false"
-        },
-        {
           "key": "goose",
           "id": "ee624c8a-268c-4f94-889e-6cd3de939f6f",
           "change": "MAGAZINE ONLY (the live post is NOT yet corrected): 'Urban Meyer enters the Ring of Honor at halftime,' became 'at the end of the first quarter,'. Florida's own Nov. 5 feature (FloridaGators.com, 'Urban Meyer's Florida Legacy Gets Permanent Place In The Swamp') says he is honored 'at the end of the first quarter on Saturday night'. Found by the independent QC pass on the Nov. 7 redesign. The live Wix post still says halftime and needs the same one-phrase UPDATE_PUBLISH by the fact desk once Wix access is available; Brenden's column, so tell Buddy.",
           "lastPublishedDate": "2026-11-05T20:09:57.248Z (unchanged: no live write was made)",
           "firstPublishedDate": "2026-11-05T18:39:04Z",
           "readBack": "none: live post untouched"
-        },
-        {
-          "key": "mcmiller",
-          "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
-          "change": "'Silver Springs, Maryland' became 'Silver Spring, Maryland' (ESPN roster)",
-          "lastPublishedDate": "2026-11-06T23:15:55.015Z",
-          "firstPublishedDate": "2026-11-06T04:52:15.454Z",
-          "readBack": "GET /blog/v3/posts/{id}: new phrase present, old phrase absent, title, excerpt, member, categories, hero unchanged, hasUnpublishedChanges false"
         }
       ],
-      "sourceUpdate": "source/27b79db1-f0e7-40eb-9639-49a60420ac00.json and source/e0e37d66-2592-443d-8a5e-0058bc507802.json carry the same two phrase swaps (two places each: the block text and its run). The saved raw API copy of Condon (source/raw/) is the 21:32Z read and is left as read. Not re-fetched in full after the patch; the phrase-level read-back above is the evidence."
+      "sourceUpdate": "Not applicable to this edition after the Nov. 7 basketball removal; the Golden Goose correction above is magazine-only."
     },
     "addedPosts": [
       {
@@ -506,7 +415,7 @@
         "lastPublishedDate": "2026-11-06T16:06:05.184Z",
         "firstPublishedDate": "2026-11-06T15:50:45.364Z",
         "hasUnpublishedChanges": false,
-        "author": "Franz Beard (per the 'By Franz Beard' line; Wix member c2d49068, the same member as the Condon post)",
+        "author": "Franz Beard (per the 'By Franz Beard' line; Wix member c2d49068, the same member as the Franz Beard column on the live site)",
         "raw": "source/raw/59a065eb-f45f-4e4b-a898-f53481bebf54.api.json"
       },
       {
@@ -566,19 +475,6 @@
         "seen": "Opened (package copy articles/images/2d31ea6f-538f-4d40-8bca-e497943d80e1.jpg, sha256 66c8c850...77d1eb, 3000 x 1730, matches the package image manifest). Florida defenders in white jerseys and orange pants huddle on the field with a trainer carrying Gatorade bottles; a 'Chris Spears Photography' signature is in the bottom-right corner, so the credit is provable from the file. Only stadium signage and crowd are visible; no third-party watermark or credit overlay. Owned archival photo from Auburn, Sept. 19, 2026: the caption names Auburn and the date and must not be read as Oklahoma-game action."
       },
       {
-        "use": "5 Condon hero",
-        "media": "16b519_ace94c11ce5d4031a20650525c423bf3~mv2.jpg",
-        "size": "2263 x 3000",
-        "credit": "Photo by Chris Spears, GatorBait Media.",
-        "seen": "Unchanged. The live alt text now ends 'Photo by Chris Spears, GatorBaitMedia.com' (same photographer, site-name spelling)"
-      },
-      {
-        "use": "6 McMiller",
-        "media": "none: pull quote (Kiyomi McMiller)",
-        "credit": "n/a",
-        "seen": "Live art is a UAA photo; not carried (owner direction)"
-      },
-      {
         "use": "7 First CFP hero",
         "media": "d3cfa5_91591597fa63490993a23e4874d5da53~mv2.png",
         "size": "2160 x 2700",
@@ -621,8 +517,6 @@
       "Bylines: Best Fridays and the Thursday show recap both sit under the owner account (Brenden Martin). A show or staff byline may be intended; the magazine uses the post author.",
       "Captions: the live captions of both new heroes begin 'Cover: '. That label is dropped in the magazine (it would read as a claim about this magazine's cover); the rest of each caption is verbatim.",
       "Best Fridays carries three link-only paragraphs, their section heading and a two-line web promo; all dropped (no outbound links in the PDFs). The words 'The complete Urban Meyer interview is available here:' and the other lead-ins go with them.",
-      "Condon (republished 21:32Z): see rereadAfterFirstReceipt. The field-goal line was corrected on the live post at 23:15Z (2-3 became 3-6, per ESPN) and the magazine carries the corrected line; see correctionsAfterReread. The rebound line (51-25; ESPN shows 52-25, and ESPN totals include team rebounds) is unchanged and unresolved.",
-      "Up next card and the email repeat 'Women's basketball: at Chattanooga, Sunday, 2 p.m. ET, SEC Network+' as reported in Loren Meadows' story. UF's official Oct. 7 women's basketball TV release (FloridaGators.com, first source) lists that game on SEC+ at 2:00 p.m. ET; ESPN's schedule shows ESPN+. The earlier fact-desk note that it should read ESPN+ is withdrawn. Left as the writer's text; the card attributes it to the story. Loren's 'Silver Springs, Maryland' was corrected to 'Silver Spring, Maryland' on the live post at 23:15Z (ESPN roster); the magazine carries the corrected spelling.",
       "Cover type: the supplied cover is set in Impact, Georgia and Arial; everything built here is Barlow. The cover art was not changed.",
       "Web cover 'Also inside' shows at most six lines (shared renderer); the two Buddy Martin columns share the sixth line. All eight web-issue stories are listed in the sections below it; the web issue does not carry Scouting Oklahoma Part 1 yet.",
       "Scouting Oklahoma Part 1 (added to this source, nine stories now): the web bundle (sports-live), the email and the two built PDFs are still the eight-story builds and do not carry it; nothing in sports-live/, newsletter/ or print-stage/ was changed for it.",
@@ -633,6 +527,18 @@
       "Nov. 7 column in a Nov. 6-dated edition: the issue date label stays 'Nov. 6, 2026 pregame edition' (owner instruction). Brenden calls the Monster column a Nov. 7 column and Wix stamps it Nov. 7 UTC (first published 02:37Z, last published 03:42Z); on the Eastern clock (EST, UTC-5) that is Friday, Nov. 6 at 9:37 p.m. and 10:42 p.m. ET, inside the edition's date. The credits page line 'Complete stories ... as published through Friday, Nov. 6, 2026' is therefore true by the Eastern clock; it would need a change only if the owner republishes the column on Nov. 7 ET.",
       "Monster column subheads: the live post carries five level-2 subheads ('The quiet part out loud', 'The lament of almost every father', 'Two masters, one life', 'A weird drive home', 'An old man's prayer'). They are not in Buddy's original filing (the saved rollback nodes show dividers there); the Nov. 7 reformat added them in place of the dividers. The magazine keeps them as plain subheads with no rule or ornament, so there are no section-break dividers anywhere in the story. If the owner wants no subheads either, the builder plan entry has one switch (subs: 'none').",
       "Monster column wording: every body paragraph is carried word for word and in order. The live reformat split the Terry Saban paragraph in two ('...Miss Terry told him.' / '\\u201cSo if you feel...'); the magazine keeps that split. The live post, not Buddy's first filing, is the source."
+    ],
+    "removedPosts": [
+      {
+        "key": "condon",
+        "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",
+        "reason": "Owner order, Nov. 7, 2026 (Brenden): no basketball stories in the magazine. The live post is untouched."
+      },
+      {
+        "key": "mcmiller",
+        "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
+        "reason": "Owner order, Nov. 7, 2026 (Brenden): no basketball stories in the magazine. The live post is untouched."
+      }
     ]
   }
 }

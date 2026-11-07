@@ -3,13 +3,14 @@
 // inside the real loader fixture (sports-live/magazine-oklahoma-week-frame.html). Real Wix photos and Barlow load through the
 // network (set --offline for stand-in photos). The cover poster is served from the committed file next to the bundle.
 // Checks at 320/390/430/1366/1920: one #gbm-magazine-page.pm, exactly one h1, no horizontal overflow, every section the issue defines,
-// at least MIN_STORIES (10) distinct story links, all taken from the issue JSON (the cover story from its photo, headline and button; each
+// at least MIN_STORIES (8) distinct story links, all taken from the issue JSON (the cover story from its photo, headline and button; each
 // other story exactly once), one card per story item, the exact image count the JSON defines (poster + cover photo + every item image,
-// 8 today), every link site-relative or on the small allow-list, no "[[" or "-1" text, no banned-credit text, no betting terms, every
+// 7 today), every link site-relative or on the small allow-list, no "[[" or "-1" text, no banned-credit text, no betting terms, every
 // image loaded, no repeated image asset, Barlow applied, no page errors. The shared renderer silently cuts strings at fixed lengths
 // (cover lines 80, credit lines 80, titles 200 ...), so the rendered cover lines, credit lines, card titles and decks, section heads,
 // "up next" lines and the poster alt text must equal the JSON text; the verified game facts (7:45 p.m. ET, SEC Network, Ben Hill Griffin
-// Stadium) must be on the page.
+// Stadium) must be on the page. Owner order Nov. 7: no basketball in this edition, so no basketball story link and none of the words
+// basketball, Condon, McMiller, Chattanooga or O'Dome anywhere in the rendered text, image alt text or bundle.
 // Placeholder mode (default): the two PDF URLs are still [[...]], so #pm-download must be ABSENT. --final: #pm-download must exist,
 // point at the usrfiles PDF host, and no "[[" may remain in the bundle.
 // Usage: node deploy/oklahoma-week-20261106/qa-oklahoma-week.mjs [outdir] [--final] [--offline]
@@ -27,7 +28,8 @@ const ISSUE = JSON.parse(readFileSync('sports-live/magazine-issue-oklahoma-week.
 const poster = existsSync('sports-live/reels/' + ISSUE.cover.poster.file) ? readFileSync('sports-live/reels/' + ISSUE.cover.poster.file) : null;
 const ITEMS = [...ISSUE.columns.items, ...ISSUE.coverage.items];
 const STORIES = [ISSUE.cover.url, ...ITEMS.map((i) => i.url)];
-const MIN_STORIES = 10;
+const MIN_STORIES = 8; // football edition: Best Fridays, show recap, Soothsayer, Scouting Part 1, CFP, Monster, Golden Goose, Yost (Loren Meadows's preview makes 9)
+const NO_BASKETBALL = /basketball|condon|mcmiller|chattanooga|o.dome|\/post\/condon-flirts|showtime-at-the-o-dome/i;
 if (STORIES.length < MIN_STORIES || new Set(STORIES).size !== STORIES.length) { console.error(`Issue JSON must list at least ${MIN_STORIES} distinct story URLs (found ${STORIES.length}, ${new Set(STORIES).size} distinct)`); process.exit(1); }
 // Image slots the page must render: the poster, the cover photo and every item photo.
 const EXPECT_IMGS = (ISSUE.cover.poster ? 1 : 0) + (ISSUE.cover.image ? 1 : 0) + ITEMS.filter((i) => i.image).length;
@@ -67,7 +69,8 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
     for (let n = 0; n < 60 && [...document.images].some((i) => !i.complete || !i.naturalWidth); n++) await new Promise((r) => setTimeout(r, 250));
     window.scrollTo(0, 0); await new Promise((r) => setTimeout(r, 400));
   });
-  const info = await page.evaluate(({ SECTIONS, STORIES, SAME, FACTS }) => {
+  const info = await page.evaluate(({ SECTIONS, STORIES, SAME, FACTS, NO_BASKETBALL: NB }) => {
+    const NO_BASKETBALL = new RegExp(NB, 'i');
     const root = document.getElementById('gbm-magazine-page'), doc = document.documentElement, t = root.innerText;
     const hrefs = [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href'));
     const storyCounts = STORIES.map((s) => hrefs.filter((h) => h === s).length);
@@ -94,15 +97,17 @@ for (const [name, width, height] of [['320', 320, 720], ['390', 390, 844], ['430
         return miss;
       })(),
       factsMissing: FACTS.filter((f) => !t.includes(f)),
+      basketball: [t, ...[...root.querySelectorAll('img')].map((i) => i.getAttribute('alt') || ''), ...hrefs].filter((x) => NO_BASKETBALL.test(x)).map((x) => x.slice(0, 60)),
     };
-  }, { SECTIONS, STORIES, SAME, FACTS });
-  const fail = info.roots !== 1 || info.h1 !== 1 || info.overflow || info.rootOverflow || info.missing.length || info.badStoryLinks || info.badLinks.length || errors.length || info.bannedCredit || info.betting || info.leftover || info.imgsBroken.length || info.repeatedAssets.length || info.imgsTotal !== EXPECT_IMGS || info.cards !== ITEMS.length || info.notRendered.length || info.factsMissing.length || !info.barlow || (!FINAL && info.downloadPresent) || (FINAL && !info.downloadPresent);
+  }, { SECTIONS, STORIES, SAME, FACTS, NO_BASKETBALL: NO_BASKETBALL.source });
+  const fail = info.roots !== 1 || info.h1 !== 1 || info.overflow || info.rootOverflow || info.missing.length || info.badStoryLinks || info.badLinks.length || errors.length || info.bannedCredit || info.betting || info.leftover || info.imgsBroken.length || info.repeatedAssets.length || info.imgsTotal !== EXPECT_IMGS || info.cards !== ITEMS.length || info.notRendered.length || info.factsMissing.length || info.basketball.length || !info.barlow || (!FINAL && info.downloadPresent) || (FINAL && !info.downloadPresent);
   results.push({ name, fail, ...info, errors }); await page.screenshot({ path: `${out}/oklahoma-week-${name}.jpg`, type: "jpeg", quality: 78, fullPage: true }); await ctx.close();
 }
 await browser.close(); console.log(JSON.stringify(results, null, 1)); writeFileSync(`${out}/qa-results${FINAL ? '-final' : ''}.json`, JSON.stringify(results, null, 1) + '\n');
 const bad = results.filter((r) => r.fail);
 const bytes = Buffer.byteLength(bundle), cap = 212 * 1024;
 console.log(`bundle ${bytes} bytes (cap ${cap}); placeholders in bundle: ${(bundle.match(/\[\[[A-Z_]+\]\]/g) || []).length}`);
+if (NO_BASKETBALL.test(bundle)) { console.error('Bundle still mentions the removed basketball stories'); process.exit(1); }
 if (bytes > cap) { console.error('Bundle is over the byte cap'); process.exit(1); }
 if (FINAL && /\[\[[A-Z_]+\]\]/.test(bundle)) { console.error('--final: placeholders remain in the bundle'); process.exit(1); }
 if (bad.length) { console.error('FAIL at', bad.map((b) => b.name).join(', ')); process.exit(1); }

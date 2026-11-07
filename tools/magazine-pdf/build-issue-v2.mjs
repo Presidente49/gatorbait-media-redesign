@@ -4,7 +4,7 @@
 //
 // Usage:
 //   node tools/magazine-pdf/build-issue-v2.mjs --out <dir> [--phone] [--html-only]
-// Reads:  magazine/issues/2026-11-06-oklahoma-week/posts.json (prepared story copy, ten stories)
+// Reads:  magazine/issues/2026-11-06-oklahoma-week/posts.json (prepared story copy; the story count is taken from the PLAN below)
 //         magazine/issues/2026-11-06-oklahoma-week/data/{uf-roster,ou-roster,ou-depth}.json (official roster text layers)
 //         tools/magazine-pdf/assets/week2/* (cover and photographs)
 // Writes: <dir>/issue-v2[-phone].html and, unless --html-only, <dir>/issue-v2[-phone].pdf with bookmarks, tagged structure,
@@ -55,22 +55,19 @@ const curl = (s) => s.replace(/(^|[\s(\[—-])"/g, '$1“').replace(/"/g, '”')
 const SECTIONS = {
   honor: { name: 'Ring of Honor', page: 'p-honor' },
   football: { name: 'Football', page: 'p-football' },
-  hoops: { name: 'Basketball', page: 'p-hoops' },
   columns: { name: 'Columns', page: 'p-columns' },
 };
 const PLAN = [
   { key: 'fridays', section: 'honor', open: 'tribute', pq: { after: 11, pafter: 13, text: "I wish I would've enjoyed it more, buddy,", who: 'Urban Meyer' }, watch: 'fridays',
-    dek: "Urban Meyer reflects on Florida's championship years and the current Gators. Edgar Thompson previews Oklahoma and the Jacksonville basketball win, and Rob Dotson joins from the Panhandle." },
+    dek: "Urban Meyer reflects on Florida's championship years and the current Gators. Edgar Thompson previews Oklahoma, and Rob Dotson joins from the Panhandle." },
   { key: 'show', section: 'football', toc: 'Panel opinion', open: 'split-photo', photo: 'qb-panel.jpg', pos: '50% 38%', credit: 'Photo by Chris Spears, GatorBait Media.', cap: 'Aaron Philo (12) and Tramell Jones Jr. (9) on the sideline against South Carolina on Oct. 10, 2026.', pq: { after: 3, text: 'The days of dynasties are over. There is no dynasty anymore.', who: 'Loren Meadows, Buddy Martin Show panel' }, watch: 'show',
     enote: "This is the panel's opinion, not a team announcement. Florida's Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr. at quarterback; see the Game Guide, page {qb}.",
     inlineLink: { text: 'watch the Urban Meyer Ring of Honor discussion', url: 'https://www.youtube.com/watch?v=ZcDpF0jCPGU' } },
+  { key: 'soothsayer', section: 'football', open: 'photo-full', photo: 'soothsayer-baugh.jpg', pos: '50% 50%', credit: 'Archival photo by Chris Spears, GatorBait Media.', cap: 'Jadan Baugh dives into the end zone against Ole Miss in The Swamp on Sept. 26, 2026.', pq: null,
+    enote: "This edition could not confirm a Florida starting quarterback. Its Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr.; see the Game Guide, page {qb}.", tune: { fs: '9.6pt', lh: '1.46' } },
   { key: 'scouting1', section: 'football', dekRepl: [['at No. 24 Florida', 'at CFP No. 24 Florida']], open: 'photo-full', photo: 'scouting-huddle.jpg', pos: '50% 40%', credit: 'Photo by Chris Spears, GatorBait Media.', cap: "Florida's defense huddles during the game at Auburn on Sept. 19, 2026.", pq: { after: 5, text: 'We need a change.', who: 'Brent Venables, Oklahoma coach, on the coordinator change' },
     keep: 'Oklahoma rushes for 106.8', afterNote: "Part 2 of this series, on Florida's offense against Oklahoma's defense, had not been published when this edition's stories were collected on Friday, Nov. 6.", tune: { fs: '9.45pt', lh: '1.45', pfs: '10.6pt', plh: '1.44' } },
   { key: 'cfp', section: 'football', open: 'split-numeral', numeral: '24', numcap: 'Florida in the first College Football Playoff Top 25', pq: null },
-  { key: 'soothsayer', section: 'football', open: 'photo-full', photo: 'soothsayer-baugh.jpg', pos: '50% 50%', credit: 'Archival photo by Chris Spears, GatorBait Media.', cap: 'Jadan Baugh dives into the end zone against Ole Miss in The Swamp on Sept. 26, 2026.', pq: null,
-    enote: "This edition could not confirm a Florida starting quarterback. Its Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr.; see the Game Guide, page {qb}.", tune: { fs: '9.6pt', lh: '1.46' } },
-  { key: 'condon', section: 'hoops', open: 'portrait-full', dek: "Franz Beard on Alex Condon's near triple-double, Rueben Chinyelu's career-high 21 points and Florida's 88-57 win over Jacksonville.", photo: 'condon.jpg', pos: '50% 22%', credit: 'Photo by Chris Spears, GatorBaitMedia.com', cap: 'Alex Condon drives against Stetson in an October exhibition.', pq: { after: 13, text: "They're both very capable decisionmakers", who: 'Todd Golden, Florida coach' } },
-  { key: 'mcmiller', section: 'hoops', open: 'split-numeral', numeral: '42', numcap: "Kiyomi McMiller's career-high against UCF", pq: null },
   // Buddy Martin's Nov. 7 column leads the Columns section (newest and longest). Opener: the graphic desk's original art (no photograph) over a cream panel; the real h1 is
   // visually hidden because the art carries the headline (the cover does the same). The ESPN portrait is cropped to head and shoulders and floated left inside the body text.
   // subs: 'quiet' keeps the live post's five subheads as plain type with no rule or ornament (no section-break dividers in this story); subs: 'none' drops them.
@@ -96,8 +93,11 @@ const MEYER_FACTS = [
 let PAGES = {}; // story key -> physical page, filled by the first render pass
 const WATCH = readJson('watch-links.json') || {};
 
+const NUMBER_WORDS = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
+let COUNT_WORD = '';
 const live = PLAN.filter((s) => { if (!byKey[s.key]) { console.warn('WARN: story missing from posts.json, skipped: ' + s.key); return false; } return true; });
 const paraTexts = (p) => (p.html.match(/<p[^>]*>[\s\S]*?<\/p>/g) || []).map((x) => norm(plain(x)));
+COUNT_WORD = NUMBER_WORDS[live.length] || String(live.length);
 for (const s of live) {
   const p = byKey[s.key];
   const body = norm(plain(p.html));
@@ -316,10 +316,13 @@ function tributeBodyFigures(p) {
 // ---------------------------------------------------------------------------------------------------------------------
 // Front of book
 // ---------------------------------------------------------------------------------------------------------------------
+// Cover raster: the retouched football-only cover, supplied Nov. 7. The old cover-v2.png still carries a basketball line and is not printed; fail loudly rather than fall back to it.
+const COVER_FILE = 'cover-v2-football.png';
+if (!fs.existsSync(path.join(ASSET, COVER_FILE))) throw new Error('Cover missing: ' + COVER_FILE + ' (the old cover-v2.png has a basketball line and must not be used)');
 const coverLink = () => { const k = (PHONE ? 5 : 8.5) / 1103, f = (v) => (v * k).toFixed(3) + 'in'; return `<a class="curl" href="https://www.gatorbaitmedia.com/" style="left:${f(60)};top:${f(PHONE ? 1300 : 1340)};width:${f(310)};height:${f(PHONE ? 126 : 70)}" aria-label="gatorbaitmedia.com"></a>`; };
 const coverHtml = () => PHONE
-  ? `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover: Urban Meyer, Ring of Honor</h1><img src="${A('cover-v2.png')}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. Condon's near triple-double. The first CFP Top 25. Photos: Florida Gators/UAA; Jay Metz; Jason Parkhurst.">${coverLink()}<div class="below"><p class="ed">Oklahoma week edition · Friday, Nov. 6, 2026</p><p class="six">Ten complete stories</p><p class="tag">Plus both rosters and Oklahoma's depth chart.</p></div></section>`
-  : `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover: Urban Meyer, Ring of Honor</h1><img src="${A('cover-v2.png')}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. Condon's near triple-double. The first CFP Top 25. Photos: Florida Gators/UAA; Jay Metz; Jason Parkhurst.">${coverLink()}</section>`;
+  ? `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover: Urban Meyer, Ring of Honor</h1><img src="${A(COVER_FILE)}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. The first CFP Top 25. Photos: Florida Gators/UAA; Jay Metz; Jason Parkhurst.">${coverLink()}<div class="below"><p class="ed">Oklahoma week edition · Friday, Nov. 6, 2026</p><p class="six">${COUNT_WORD} complete stories</p><p class="tag">Plus both rosters and Oklahoma's depth chart.</p></div></section>`
+  : `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover: Urban Meyer, Ring of Honor</h1><img src="${A(COVER_FILE)}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. The first CFP Top 25. Photos: Florida Gators/UAA; Jay Metz; Jason Parkhurst.">${coverLink()}</section>`;
 
 function contents(pages) {
   const pn = (id) => (pages && pages[id] ? pages[id] : '');
@@ -414,10 +417,9 @@ function credits() {
     ['Tramell Jones Gets the Call', 'Photo by Chris Spears, GatorBait Media.'],
     ['Scouting Oklahoma, Part 1', 'Photo by Chris Spears, GatorBait Media.'],
     ['The Soothsayer', 'Archival photo by Chris Spears, GatorBait Media.'],
-    ['Condon story', 'Photo by Chris Spears, GatorBaitMedia.com, from an October exhibition against Stetson (not from the Jacksonville game).'],
     ['The Monster That’s Never Fed', 'Opener graphic: GatorBait Media (original typographic art; no photograph). Nick Saban photo courtesy of ESPN, cropped for this edition.'],
     ['Official rosters and depth charts', 'University Athletic Association (floridagators.com) and the University of Oklahoma (soonersports.com), Week 10 game notes.'],
-    ['Desk corrections carried', `Three small fact corrections, each checked against a published source: Condon's shooting line reads 3-6 (ESPN box score; the story first printed 2-3); McMiller's hometown reads Silver Spring, Maryland (ESPN roster; the story first printed Springs); and Buddy Martin's Golden Goose column (starting on page ${PAGES.goose || ''}) says Urban Meyer enters the Ring of Honor at the end of the first quarter, as Florida announced (FloridaGators.com, Nov. 5); the column first said halftime.`],
+    ['Desk correction carried', `One small fact correction, checked against a published source: Buddy Martin's Golden Goose column (starting on page ${PAGES.goose || ''}) says Urban Meyer enters the Ring of Honor at the end of the first quarter, as Florida announced (FloridaGators.com, Nov. 5); the column first said halftime.`],
   ];
   return `<section class="credits" style="page:p-front" id="credits"><p class="kick">Credits and sources</p><h1 class="ttitle">Behind the pages</h1>${rows.map(([a, b]) => `<p><b>${T(a)}.</b> ${T(b).replace(/\(starting on page (\d+)\)/, '(<a class="vlink" href="#goose">starting on page $1</a>)')}</p>`).join('')}
 <p>Complete stories from GatorBait Media as published through Friday, Nov. 6, 2026. Web navigation, sponsor banners and most video links are left out; the Best Fridays and Thursday panel stories keep their own watch links. Rankings, scores and times are as reported on each story's publication date. Depth charts and rosters do not establish game-day availability.</p>
@@ -435,7 +437,7 @@ const css = (PHONE) => `
  @bottom-left{content:"GATORBAIT MAGAZINE  \\00B7  PREGAME EDITION  \\00B7  NOV. 6, 2026";font:700 ${PHONE ? '7pt' : '6.6pt'} var(--cond);letter-spacing:.16em;color:var(--muted);vertical-align:top;padding-top:${PHONE ? '.13in' : '.2in'}}
  @bottom-right{content:counter(page);font:800 ${PHONE ? '9pt' : '11pt'} var(--cond);color:var(--orange);vertical-align:top;padding-top:${PHONE ? '.1in' : '.15in'}}}
 @page full{margin:0;background:var(--navy);@bottom-left{content:none}@bottom-right{content:none}}
-${[['p-front', 'GATORBAIT'], ['p-game', 'THE GAME'], ['p-honor', 'RING OF HONOR'], ['p-football', 'FOOTBALL'], ['p-hoops', 'BASKETBALL'], ['p-columns', 'COLUMNS'], ['p-uf', 'THE TEAMS  \\00B7  FLORIDA ROSTER'], ['p-oud', 'THE TEAMS  \\00B7  OKLAHOMA DEPTH CHART'], ['p-ou', 'THE TEAMS  \\00B7  OKLAHOMA ROSTER']].map(([n, t]) => `@page ${n}{@top-left{content:"${t}";font:800 ${PHONE ? '7.2pt' : '7.6pt'} var(--cond);letter-spacing:.24em;color:var(--rust);vertical-align:bottom;padding-bottom:.1in}@top-right{content:"OKLAHOMA WEEK";font:700 ${PHONE ? '6.4pt' : '6.6pt'} var(--cond);letter-spacing:.2em;color:var(--muted);vertical-align:bottom;padding-bottom:.1in}}`).join('\n')}
+${[['p-front', 'GATORBAIT'], ['p-game', 'THE GAME'], ['p-honor', 'RING OF HONOR'], ['p-football', 'FOOTBALL'], ['p-columns', 'COLUMNS'], ['p-uf', 'THE TEAMS  \\00B7  FLORIDA ROSTER'], ['p-oud', 'THE TEAMS  \\00B7  OKLAHOMA DEPTH CHART'], ['p-ou', 'THE TEAMS  \\00B7  OKLAHOMA ROSTER']].map(([n, t]) => `@page ${n}{@top-left{content:"${t}";font:800 ${PHONE ? '7.2pt' : '7.6pt'} var(--cond);letter-spacing:.24em;color:var(--rust);vertical-align:bottom;padding-bottom:.1in}@top-right{content:"OKLAHOMA WEEK";font:700 ${PHONE ? '6.4pt' : '6.6pt'} var(--cond);letter-spacing:.2em;color:var(--muted);vertical-align:bottom;padding-bottom:.1in}}`).join('\n')}
 body{margin:0;font:400 ${PHONE ? '10.8pt/1.46' : '9.7pt/1.5'} var(--sans);color:var(--navy);background:var(--cream)}
 a{color:inherit;text-decoration:none}
 .sr{position:absolute;left:0;top:0;color:transparent;font-size:2px;line-height:2px;white-space:nowrap;pointer-events:none}
@@ -721,7 +723,7 @@ const outline = [
   { title: 'Credits and sources', page: pageOf2.credits },
   { title: 'Back cover', page: o2.pages },
 ].filter((x) => x && x.page);
-const spec = { outline, title: 'GatorBait Magazine | Florida vs. Oklahoma Pregame Edition | Nov. 6, 2026 (' + (PHONE ? 'Phone edition' : 'Letter edition') + ')', author: 'GatorBait Media', subject: 'Oklahoma week: ten complete stories, the game guide, both official rosters and Oklahoma’s depth chart. Friday, Nov. 6, 2026.' };
+const spec = { outline, title: 'GatorBait Magazine | Florida vs. Oklahoma Pregame Edition | Nov. 6, 2026 (' + (PHONE ? 'Phone edition' : 'Letter edition') + ')', author: 'GatorBait Media', subject: 'Oklahoma week: ' + COUNT_WORD.toLowerCase() + ' complete stories, the game guide, both official rosters and Oklahoma’s depth chart. Friday, Nov. 6, 2026.' };
 const specPath = path.join(OUT, tag + '.spec.json');
 fs.writeFileSync(specPath, JSON.stringify(spec, null, 1));
 execFileSync('/usr/bin/python3', [path.join(HERE, 'finish-pdf.py'), pdfPath, specPath], { stdio: 'inherit' });

@@ -7,14 +7,12 @@
   "show",
   "soothsayer",
   "scouting1",
-  "condon",
-  "mcmiller",
   "cfp",
   "monster",
   "goose",
   "yost"
  ],
- "orderNote": "Suggested order kept as given by the coordinator, with Scouting Oklahoma Part 1 placed directly after the Soothsayer (reading order 4 of 9). The web issue (sports-live bundle) and the email still carry the earlier eight stories in the earlier order (cover story, then the 'columns' section for the Thursday show recap, Soothsayer, Condon and McMiller, then the 'coverage' section for the CFP, Golden Goose and Yost); Part 1 is not in either yet, and the two built PDFs are also still the eight-story builds. Nov. 7 addition (Brenden, voice dictation, Nov. 7): Buddy Martin's new column 'The Monster That's Never Fed. A Football Coaches' Lament.' (post 524998de, published Nov. 7, 2026) is the tenth story and runs first in the Columns section, ahead of the Golden Goose and Yost columns, because it is the newest and longest of the three. The edition date label stays 'Nov. 6, 2026 pregame edition', so a Nov. 7 column sits in a Nov. 6-dated edition.",
+ "orderNote": "Order kept as given by the coordinator, with Scouting Oklahoma Part 1 directly after the Soothsayer. Nov. 7 additions and removals (Brenden): Buddy Martin's new column 'The Monster That's Never Fed. A Football Coaches' Lament.' (post 524998de, published Nov. 7, 2026 UTC) runs first in the Columns section, ahead of the Golden Goose and Yost columns, because it is the newest and longest of the three. The two basketball stories (Condon, McMiller) were taken out of the edition on the owner's order ('I do not want basketball stories in there'); the posts are untouched and stay live. The edition date label stays 'Nov. 6, 2026 pregame edition'. The web bundle (sports-live) and the email are not rebuilt by this tool and still carry their earlier story lists.",
  "rereadAfterFirstReceipt": {
   "when": "Nov. 6, 2026, evening (after the 21:32Z Condon republish), read-only GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT, published versions",
   "method": "lastPublishedDate compared with the first receipt, plus a text fingerprint (FNV-1a over all text runs, computed on the Wix side and again on the saved body) for all eight posts",
@@ -46,26 +44,6 @@
     "firstReceipt": "2026-11-04T17:13:08.525Z",
     "now": "2026-11-04T17:13:08.525Z",
     "changed": false
-   },
-   {
-    "key": "mcmiller",
-    "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
-    "firstReceipt": "2026-11-06T04:52:15.454Z",
-    "now": "2026-11-06T04:52:15.454Z",
-    "changed": false
-   },
-   {
-    "key": "condon",
-    "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",
-    "firstReceipt": "2026-11-06T13:02:24.150Z",
-    "now": "2026-11-06T21:32:10.136Z",
-    "changed": true,
-    "hasUnpublishedChanges": {
-     "firstReceipt": true,
-     "now": false
-    },
-    "whatChanged": "The post was republished at 21:32Z (the draft edits went live; the live post's most recent contributor is Wix member ae876af8, not the author member). All 18 non-empty article paragraphs are word for word the same as in the 13:02Z version. The only body difference: two display lines were added at the top, 'By Franz Beard' and 'gator bait media.com' (its second half links to http://media.com). Both are dropped by rule; the magazine byline still comes from the post author. The cover photo's alt text on the live post now ends 'Photo by Chris Spears, GatorBaitMedia.com'. The 2-3 field-goal line (p006) and the 51-25 rebound line (p015) are unchanged and still differ from ESPN (3-6 and 52-25).",
-    "regenerated": "source/raw/27b79db1-f0e7-40eb-9639-49a60420ac00.api.json and source/27b79db1-f0e7-40eb-9639-49a60420ac00.json replaced; posts.json html for Condon is identical to the previous build"
    }
   ]
  },
@@ -85,7 +63,7 @@
    "lastPublishedDate": "2026-11-06T16:06:05.184Z",
    "firstPublishedDate": "2026-11-06T15:50:45.364Z",
    "hasUnpublishedChanges": false,
-   "author": "Franz Beard (per the 'By Franz Beard' line; Wix member c2d49068, the same member as the Condon post)",
+   "author": "Franz Beard (per the 'By Franz Beard' line; Wix member c2d49068, the same member as the Franz Beard column on the live site)",
    "raw": "source/raw/59a065eb-f45f-4e4b-a898-f53481bebf54.api.json"
   },
   {
@@ -145,19 +123,6 @@
    "seen": "Opened (package copy articles/images/2d31ea6f-538f-4d40-8bca-e497943d80e1.jpg, sha256 66c8c850...77d1eb, 3000 x 1730, matches the package image manifest). Florida defenders in white jerseys and orange pants huddle on the field with a trainer carrying Gatorade bottles; a 'Chris Spears Photography' signature is in the bottom-right corner, so the credit is provable from the file. Only stadium signage and crowd are visible; no third-party watermark or credit overlay. Owned archival photo from Auburn, Sept. 19, 2026: the caption names Auburn and the date and must not be read as Oklahoma-game action."
   },
   {
-   "use": "5 Condon hero",
-   "media": "16b519_ace94c11ce5d4031a20650525c423bf3~mv2.jpg",
-   "size": "2263 x 3000",
-   "credit": "Photo by Chris Spears, GatorBait Media.",
-   "seen": "Unchanged. The live alt text now ends 'Photo by Chris Spears, GatorBaitMedia.com' (same photographer, site-name spelling)"
-  },
-  {
-   "use": "6 McMiller",
-   "media": "none: pull quote (Kiyomi McMiller)",
-   "credit": "n/a",
-   "seen": "Live art is a UAA photo; not carried (owner direction)"
-  },
-  {
    "use": "7 First CFP hero",
    "media": "d3cfa5_91591597fa63490993a23e4874d5da53~mv2.png",
    "size": "2160 x 2700",
@@ -200,8 +165,6 @@
   "Bylines: Best Fridays and the Thursday show recap both sit under the owner account (Brenden Martin). A show or staff byline may be intended; the magazine uses the post author.",
   "Captions: the live captions of both new heroes begin 'Cover: '. That label is dropped in the magazine (it would read as a claim about this magazine's cover); the rest of each caption is verbatim.",
   "Best Fridays carries three link-only paragraphs, their section heading and a two-line web promo; all dropped (no outbound links in the PDFs). The words 'The complete Urban Meyer interview is available here:' and the other lead-ins go with them.",
-  "Condon (republished 21:32Z): see rereadAfterFirstReceipt. The field-goal line was corrected on the live post at 23:15Z (2-3 became 3-6, per ESPN) and the magazine carries the corrected line; see correctionsAfterReread. The rebound line (51-25; ESPN shows 52-25, and ESPN totals include team rebounds) is unchanged and unresolved.",
-  "Up next card and the email repeat 'Women's basketball: at Chattanooga, Sunday, 2 p.m. ET, SEC Network+' as reported in Loren Meadows' story. UF's official Oct. 7 women's basketball TV release (FloridaGators.com, first source) lists that game on SEC+ at 2:00 p.m. ET; ESPN's schedule shows ESPN+. The earlier fact-desk note that it should read ESPN+ is withdrawn. Left as the writer's text; the card attributes it to the story. Loren's 'Silver Springs, Maryland' was corrected to 'Silver Spring, Maryland' on the live post at 23:15Z (ESPN roster); the magazine carries the corrected spelling.",
   "Cover type: the supplied cover is set in Impact, Georgia and Arial; everything built here is Barlow. The cover art was not changed.",
   "Web cover 'Also inside' shows at most six lines (shared renderer); the two Buddy Martin columns share the sixth line. All eight web-issue stories are listed in the sections below it; the web issue does not carry Scouting Oklahoma Part 1 yet.",
   "Scouting Oklahoma Part 1 (added to this source, nine stories now): the web bundle (sports-live), the email and the two built PDFs are still the eight-story builds and do not carry it; nothing in sports-live/, newsletter/ or print-stage/ was changed for it.",
@@ -441,69 +404,6 @@
    ],
    "quoteMarkAudit": [],
    "api": "GET https://www.wixapis.com/blog/v3/posts/2d31ea6f-538f-4d40-8bca-e497943d80e1?fieldsets=URL&fieldsets=RICH_CONTENT"
-  },
-  {
-   "id": "27b79db1-f0e7-40eb-9639-49a60420ac00",
-   "key": "condon",
-   "title": "Condon flirts with triple-double as Gators smack JU",
-   "url": "https://www.gatorbaitmedia.com/post/condon-flirts-with-triple-double-as-gators-smack-ju",
-   "author": "Franz Beard",
-   "lastPublishedDate": "2026-11-06T21:32:10.136Z",
-   "firstPublishedDate": "2026-11-06T13:02:24.150Z",
-   "hasUnpublishedChanges": false,
-   "bodyWordsBefore": 1214,
-   "bodyWordsAfter": 1208,
-   "emptyParagraphsDropped": 3,
-   "whitespaceTrimmedBlocks": [],
-   "changes": [
-    {
-     "op": "drop-id",
-     "block": "1385a19",
-     "kind": "p",
-     "text": "By Franz Beard ",
-     "reason": "Display byline line in the body ('By Franz Beard'); added to the live post in the 21:32Z republish. The magazine byline comes from the post author."
-    },
-    {
-     "op": "drop-id",
-     "block": "21yil129",
-     "kind": "p",
-     "text": "gator bait media.com ",
-     "reason": "Display line 'gator bait media.com' whose second half is a link to http://media.com (added in the 21:32Z republish); web furniture and an outbound link."
-    },
-    {
-     "op": "split-newline",
-     "block": "p017",
-     "parts": 2,
-     "reason": "A literal line break inside one paragraph (between a closing quote and the next sentence) is rendered as two paragraphs."
-    }
-   ],
-   "quoteMarkAudit": [],
-   "api": "GET https://www.wixapis.com/blog/v3/posts/27b79db1-f0e7-40eb-9639-49a60420ac00?fieldsets=URL&fieldsets=RICH_CONTENT"
-  },
-  {
-   "id": "e0e37d66-2592-443d-8a5e-0058bc507802",
-   "key": "mcmiller",
-   "title": "Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65",
-   "url": "https://www.gatorbaitmedia.com/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65",
-   "author": "Loren Meadows",
-   "lastPublishedDate": "2026-11-06T04:52:15.454Z",
-   "firstPublishedDate": "2026-11-06T04:52:15.454Z",
-   "hasUnpublishedChanges": false,
-   "bodyWordsBefore": 622,
-   "bodyWordsAfter": 609,
-   "emptyParagraphsDropped": 0,
-   "whitespaceTrimmedBlocks": [],
-   "changes": [
-    {
-     "op": "drop-id",
-     "block": "byline",
-     "kind": "p",
-     "text": "By Loren Meadows, GatorBaitMedia.com and host of The Gator Lowdown with Loren Meadows",
-     "reason": "Body byline line; shown as the story byline instead."
-    }
-   ],
-   "quoteMarkAudit": [],
-   "api": "GET https://www.wixapis.com/blog/v3/posts/e0e37d66-2592-443d-8a5e-0058bc507802?fieldsets=URL&fieldsets=RICH_CONTENT"
   },
   {
    "id": "afe70819-bc8a-4c89-abf6-bd4749038259",

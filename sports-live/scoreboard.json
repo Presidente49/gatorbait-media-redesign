@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-05T18:07:26Z",
+ "updatedAt": "2026-11-07T23:06:06Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -70,7 +70,7 @@
   "kickoffIso": "2026-11-08T00:45:00Z",
   "tv": "SEC Network",
   "venue": "Ben Hill Griffin Stadium",
-  "previewUrl": null
+  "previewUrl": "https://www.gatorbaitmedia.com/post/week-9-preview-florida-gators-5-3-2-3-v-oklahoma-sooners-4-4-2-3"
  },
  "schedule": [
   {
@@ -203,7 +203,7 @@
    "status": "scheduled",
    "score": null,
    "tv": "SEC Network",
-   "storyUrl": null
+   "storyUrl": "https://www.gatorbaitmedia.com/post/week-9-preview-florida-gators-5-3-2-3-v-oklahoma-sooners-4-4-2-3"
   },
   {
    "eventId": "401856884",
@@ -254,6 +254,11 @@
    "overall": "7-1"
   },
   {
+   "team": "Texas",
+   "confRecord": "4-2",
+   "overall": "7-2"
+  },
+  {
    "team": "Alabama",
    "confRecord": "4-2",
    "overall": "6-2"
@@ -269,19 +274,14 @@
    "overall": "6-2"
   },
   {
-   "team": "Missouri",
-   "confRecord": "3-2",
-   "overall": "6-2"
-  },
-  {
    "team": "Tennessee",
    "confRecord": "3-2",
    "overall": "6-2"
   },
   {
-   "team": "Texas",
-   "confRecord": "3-2",
-   "overall": "6-2"
+   "team": "Missouri",
+   "confRecord": "3-3",
+   "overall": "6-3"
   },
   {
    "team": "Florida",
@@ -294,13 +294,13 @@
    "overall": "5-3"
   },
   {
-   "team": "Oklahoma",
-   "confRecord": "2-3",
-   "overall": "4-4"
+   "team": "Auburn",
+   "confRecord": "3-4",
+   "overall": "5-4"
   },
   {
-   "team": "Auburn",
-   "confRecord": "2-4",
+   "team": "Oklahoma",
+   "confRecord": "2-3",
    "overall": "4-4"
   },
   {
@@ -315,8 +315,8 @@
   },
   {
    "team": "Arkansas",
-   "confRecord": "1-4",
-   "overall": "3-5"
+   "confRecord": "1-5",
+   "overall": "3-6"
   },
   {
    "team": "Vanderbilt",

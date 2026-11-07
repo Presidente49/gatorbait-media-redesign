@@ -10,10 +10,11 @@
   "condon",
   "mcmiller",
   "cfp",
+  "monster",
   "goose",
   "yost"
  ],
- "orderNote": "Suggested order kept as given by the coordinator, with Scouting Oklahoma Part 1 placed directly after the Soothsayer (reading order 4 of 9). The web issue (sports-live bundle) and the email still carry the earlier eight stories in the earlier order (cover story, then the 'columns' section for the Thursday show recap, Soothsayer, Condon and McMiller, then the 'coverage' section for the CFP, Golden Goose and Yost); Part 1 is not in either yet, and the two built PDFs are also still the eight-story builds.",
+ "orderNote": "Suggested order kept as given by the coordinator, with Scouting Oklahoma Part 1 placed directly after the Soothsayer (reading order 4 of 9). The web issue (sports-live bundle) and the email still carry the earlier eight stories in the earlier order (cover story, then the 'columns' section for the Thursday show recap, Soothsayer, Condon and McMiller, then the 'coverage' section for the CFP, Golden Goose and Yost); Part 1 is not in either yet, and the two built PDFs are also still the eight-story builds. Nov. 7 addition (Brenden, voice dictation, Nov. 7): Buddy Martin's new column 'The Monster That's Never Fed. A Football Coaches' Lament.' (post 524998de, published Nov. 7, 2026) is the tenth story and runs first in the Columns section, ahead of the Golden Goose and Yost columns, because it is the newest and longest of the three. The edition date label stays 'Nov. 6, 2026 pregame edition', so a Nov. 7 column sits in a Nov. 6-dated edition.",
  "rereadAfterFirstReceipt": {
   "when": "Nov. 6, 2026, evening (after the 21:32Z Condon republish), read-only GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT, published versions",
   "method": "lastPublishedDate compared with the first receipt, plus a text fingerprint (FNV-1a over all text runs, computed on the Wix side and again on the saved body) for all eight posts",
@@ -96,6 +97,16 @@
    "author": "GatorBait Staff (Wix member fade11f0, the same member as the first CFP Top 25 post)",
    "raw": "source/raw/2d31ea6f-538f-4d40-8bca-e497943d80e1.api.json",
    "acquired": "Handoff-package snapshot of the published version (acquired 2026-11-06 22:19:25 UTC), wrapped as {post: ...} and normalized; NOT a fresh Wix read. Never edited since publish per the snapshot (first and last published dates are equal). See source/raw/2d31ea6f-538f-4d40-8bca-e497943d80e1.NOTE.txt."
+  },
+  {
+   "key": "monster",
+   "id": "524998de-233f-4703-8bff-c12b0a44a8d1",
+   "lastPublishedDate": "2026-11-07T03:42:41.578Z",
+   "firstPublishedDate": "2026-11-07T02:37:15.015Z",
+   "hasUnpublishedChanges": false,
+   "author": "Buddy Martin (member ae876af8, the same member as the Golden Goose and Yost columns)",
+   "raw": "source/524998de-233f-4703-8bff-c12b0a44a8d1.json",
+   "acquired": "Nov. 7, 2026, read-only: draft (GET /blog/v3/draft-posts/{id}?fieldsets=RICH_CONTENT) and published (GET /v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT) versions, identical block by block (62 top-level blocks, FNV-1a 32 fingerprints); draft editedDate 2026-11-07T04:15:18Z. The live post was being hand-edited by Brenden in the Wix editor at the time, so a later edit will not be in this edition until the source is re-read. The source file was rebuilt from the saved pre-reformat rollback nodes plus the live structure and fingerprint-checked block by block (see source.note in the file); there is no raw API file because the tool sandbox cannot save one."
   }
  ],
  "images": [
@@ -164,6 +175,20 @@
    "media": "none: pull quote (Buddy Martin)",
    "credit": "n/a",
    "seen": "Public-domain archive photo not carried (owner direction)"
+  },
+  {
+   "use": "10 Monster column opener art (NEW)",
+   "media": "d3cfa5_56a45329d0904884b84bfe7d7adabfe7~mv2.png",
+   "size": "2400 x 1350",
+   "credit": "Graphic: GatorBait Media.",
+   "seen": "Opened full size. Original typographic and vector graphic by the graphic desk (navy watch dial, the column's own phrase 'recruiting starts now' on the rim, headline, deck and byline). No photograph, no person, no AI image, no third-party mark. Carried in the magazine as assets/week2/monster-column-art.png. It carries no ChatGPT Pro provenance; the standing art-source rule (final artwork from regular ChatGPT Pro) is a decision for the controller."
+  },
+  {
+   "use": "10 Monster column, floated portrait (NEW)",
+   "media": "d3cfa5_e70f5fa452e74c02add48f9f1e26f69c~mv2.jpg",
+   "size": "495 x 470 (cropped to 390 x 448 for the magazine)",
+   "credit": "Nick Saban photo courtesy of ESPN",
+   "seen": "Opened full size. Studio-style head-and-shoulders portrait of Nick Saban, no overlay or watermark. Supplied by Brenden for this column and already live in the post (alt 'Nick Saban. Photo courtesy of ESPN.'). The credit line is the live caption, kept word for word. Cropped tight to head and shoulders and floated left at 1.5 in wide (260 ppi) in the Letter edition and the phone edition."
   }
  ],
  "flags": [
@@ -183,7 +208,10 @@
   "Part 1 body is the handoff-package snapshot (acquired 22:19Z Nov. 6) of the published version, not a fresh Wix read; it was never edited after publish (first and last published dates are both 2026-11-06T22:00:33.325Z). Re-read the live post before any build that ships it. The 'api' string on its receipt entry is the normalizer's standard endpoint text, not a call made in this build.",
   "Part 1 hero: owned Chris Spears photo from the Auburn game on Sept. 19, 2026; the caption says so. The story is about the Oklahoma game, so the caption must not be shortened or reworded to imply Oklahoma-game action. Its credit is provable from the file (signature in the corner).",
   "Part 1 'Key numbers' list: the nine list items (Rankings, Scoring, Rushing, Passing, Sacks, Third down, Red zone, Turnovers, Common opponents) are carried as nine paragraphs by prepare.py, which writes every list item as a paragraph (no bullet markup); wording unchanged. The statistics, rankings, depth-chart and availability statements are as published ('through Oct. 31' and 'SEC availability reports released this week') and were not verified by this build.",
-  "Part 1 title uses a straight apostrophe in 'Oklahoma's' and the body uses straight apostrophes and straight double quotes, unlike the other stories (curly); copied as published, no typographic change made."
+  "Part 1 title uses a straight apostrophe in 'Oklahoma's' and the body uses straight apostrophes and straight double quotes, unlike the other stories (curly); copied as published, no typographic change made.",
+  "Nov. 7 column in a Nov. 6-dated edition: the issue date label stays 'Nov. 6, 2026 pregame edition' (owner instruction). Brenden calls the Monster column a Nov. 7 column and Wix stamps it Nov. 7 UTC (first published 02:37Z, last published 03:42Z); on the Eastern clock (EST, UTC-5) that is Friday, Nov. 6 at 9:37 p.m. and 10:42 p.m. ET, inside the edition's date. The credits page line 'Complete stories ... as published through Friday, Nov. 6, 2026' is therefore true by the Eastern clock; it would need a change only if the owner republishes the column on Nov. 7 ET.",
+  "Monster column subheads: the live post carries five level-2 subheads ('The quiet part out loud', 'The lament of almost every father', 'Two masters, one life', 'A weird drive home', 'An old man's prayer'). They are not in Buddy's original filing (the saved rollback nodes show dividers there); the Nov. 7 reformat added them in place of the dividers. The magazine keeps them as plain subheads with no rule or ornament, so there are no section-break dividers anywhere in the story. If the owner wants no subheads either, the builder plan entry has one switch (subs: 'none').",
+  "Monster column wording: every body paragraph is carried word for word and in order. The live reformat split the Terry Saban paragraph in two ('...Miss Terry told him.' / '\\u201cSo if you feel...'); the magazine keeps that split. The live post, not Buddy's first filing, is the source."
  ],
  "posts": [
   {
@@ -522,6 +550,55 @@
    ],
    "quoteMarkAudit": [],
    "api": "GET https://www.wixapis.com/blog/v3/posts/afe70819-bc8a-4c89-abf6-bd4749038259?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "524998de-233f-4703-8bff-c12b0a44a8d1",
+   "key": "monster",
+   "title": "The Monster That’s Never Fed. A Football Coaches’ Lament.",
+   "url": "https://www.gatorbaitmedia.com/post/the-monster-that-s-never-fed-a-football-coaches-lament",
+   "author": "Buddy Martin",
+   "lastPublishedDate": "2026-11-07T03:42:41.578Z",
+   "firstPublishedDate": "2026-11-07T02:37:15.015Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 1478,
+   "bodyWordsAfter": 1443,
+   "emptyParagraphsDropped": 10,
+   "whitespaceTrimmedBlocks": [
+    "p17",
+    "p72"
+   ],
+   "changes": [
+    {
+     "op": "dek-from-id",
+     "block": "deck",
+     "kind": "q",
+     "text": "Nobody made these men do it. (Including Nick Saban) That’s the thing. They were built for it, and blessed by it, and eaten alive by it, all at the same time.",
+     "reason": "The two italic lines at the top of the live post are the story's deck. They run once, as the dek (standfirst) under the headline, and are not repeated in the body. Wording untouched; the literal line break between the two lines becomes a space."
+    },
+    {
+     "op": "caption-from-img",
+     "block": "saban",
+     "media": "d3cfa5_e70f5fa452e74c02add48f9f1e26f69c~mv2.jpg",
+     "text": "Nick Saban photo courtesy of ESPN",
+     "reason": "The live post floats an ESPN portrait of Nick Saban at the left with its caption. The magazine floats the same portrait (cropped tight to head and shoulders) at the left of the body with this caption as its credit. The image block is not carried as a body block."
+    },
+    {
+     "op": "drop-id",
+     "block": "7nmlf107",
+     "kind": "p",
+     "text": "By Buddy Martin",
+     "reason": "Display byline line in the body ('By Buddy Martin'). The magazine byline comes from the post author and appears once, in the byline slot (owner direction, Nov. 7)."
+    },
+    {
+     "op": "drop-id",
+     "block": "dylu4568",
+     "kind": "p",
+     "text": "gatorbaitmedia.com",
+     "reason": "Display line 'gatorbaitmedia.com' (a link in the web body), page furniture."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/v3/posts/524998de-233f-4703-8bff-c12b0a44a8d1?fieldsets=URL&fieldsets=RICH_CONTENT (published) and GET https://www.wixapis.com/blog/v3/draft-posts/524998de-233f-4703-8bff-c12b0a44a8d1?fieldsets=RICH_CONTENT (draft); both read-only, identical block by block (62 top-level nodes, same ids, lengths and FNV-1a 32 hashes) at draft editedDate 2026-11-07T04:15:18Z"
   },
   {
    "id": "ee624c8a-268c-4f94-889e-6cd3de939f6f",

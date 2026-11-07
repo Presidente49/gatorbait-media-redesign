@@ -4,7 +4,7 @@
 //
 // Usage:
 //   node tools/magazine-pdf/build-issue-v2.mjs --out <dir> [--phone] [--html-only]
-// Reads:  magazine/issues/2026-11-06-oklahoma-week/posts.json (prepared story copy, nine stories)
+// Reads:  magazine/issues/2026-11-06-oklahoma-week/posts.json (prepared story copy, ten stories)
 //         magazine/issues/2026-11-06-oklahoma-week/data/{uf-roster,ou-roster,ou-depth}.json (official roster text layers)
 //         tools/magazine-pdf/assets/week2/* (cover and photographs)
 // Writes: <dir>/issue-v2[-phone].html and, unless --html-only, <dir>/issue-v2[-phone].pdf with bookmarks, tagged structure,
@@ -71,6 +71,14 @@ const PLAN = [
     enote: "This edition could not confirm a Florida starting quarterback. Its Week 10 depth chart lists Aaron Philo OR Tramell Jones Jr.; see the Game Guide, page {qb}.", tune: { fs: '9.6pt', lh: '1.46' } },
   { key: 'condon', section: 'hoops', open: 'portrait-full', dek: "Franz Beard on Alex Condon's near triple-double, Rueben Chinyelu's career-high 21 points and Florida's 88-57 win over Jacksonville.", photo: 'condon.jpg', pos: '50% 22%', credit: 'Photo by Chris Spears, GatorBaitMedia.com', cap: 'Alex Condon drives against Stetson in an October exhibition.', pq: { after: 13, text: "They're both very capable decisionmakers", who: 'Todd Golden, Florida coach' } },
   { key: 'mcmiller', section: 'hoops', open: 'split-numeral', numeral: '42', numcap: "Kiyomi McMiller's career-high against UCF", pq: null },
+  // Buddy Martin's Nov. 7 column leads the Columns section (newest and longest). Opener: the graphic desk's original art (no photograph) over a cream panel; the real h1 is
+  // visually hidden because the art carries the headline (the cover does the same). The ESPN portrait is cropped to head and shoulders and floated left inside the body text.
+  // subs: 'quiet' keeps the live post's five subheads as plain type with no rule or ornament (no section-break dividers in this story); subs: 'none' drops them.
+  { key: 'monster', section: 'columns', open: 'art-full', art: 'monster-column-art.png', pos: '50% 50%', credit: 'Graphic: GatorBait Media.',
+    alt: 'Navy watch dial with the headline The Monster That’s Never Fed, for Buddy Martin’s football coaches’ lament column.',
+    open_pq: { text: 'The job that ate his family is also the family he can’t replace.', who: 'Buddy Martin, column' },
+    float: { at: 2, photo: 'saban-espn-courtesy-crop.jpg', alt: 'Nick Saban, head and shoulders', credit: 'Nick Saban photo courtesy of ESPN' }, subs: 'quiet',
+    tune: { fs: '9.5pt', lh: '1.46' } },
   { key: 'goose', section: 'columns', open: 'type-full', pq: 'story' },
   { key: 'yost', section: 'columns', open: 'type-full', pq: 'story' },
 ];
@@ -95,6 +103,8 @@ for (const s of live) {
   const body = norm(plain(p.html));
   if (s.pq === 'story') { if (!p.pullquote) throw new Error('no story pullquote for ' + s.key); s.open_pq = { text: p.pullquote.text, who: p.pullquote.who === p.author ? p.author + ', column' : p.pullquote.who }; s.pq = null; }
   if (s.open_pq && !body.includes(norm(s.open_pq.text).replace(/,$/, ''))) throw new Error(`Opener quote is not verbatim in ${s.key}`);
+  if (s.float && norm(p.caption || '') !== norm(s.float.credit)) throw new Error(`Floated photo credit differs from the story caption in ${s.key}: ${p.caption}`);
+  if (s.open === 'art-full' && !p.dek) throw new Error(`No dek prepared for ${s.key}`);
   if (s.pq) {
     const needle = norm(s.pq.text).replace(/,$/, '');
     if (!body.includes(needle)) throw new Error(`Pull quote is not verbatim in ${s.key}: ${s.pq.text}`);
@@ -155,6 +165,7 @@ const protect = (h) => NBJ(smartQuotes(mapText(h, (t) => t
   .replace(/(?<![\w.\-])\d{1,3}(?:-\d{1,3}){1,2}(?![\w\-])/g, nbw))));                                             // 55-1-1, 42-25
 const dekFor = (p, s) => {
   if (s.dek) return s.dek;
+  if (p.dek) return p.dek;                                           // the story's own deck, carried by prepare.py (kept once, never repeated in the body)
   const first = paraTexts(p).find((t) => t) || '';
   if (norm(first).startsWith(norm(p.excerpt))) return '';              // a deck that only repeats the lede is dropped
   return (s.dekRepl || []).reduce((d, [a, b]) => d.replace(a, b), p.excerpt);
@@ -170,7 +181,8 @@ function bodyHtml(p, s) {
     let part = protect(part0);
     if (/^<h3/.test(part)) {
       flush();
-      part = part.replace(/^<h3/, '<p class="sub"').replace(/<\/h3>$/, '</p>');
+      if (s.subs === 'none') continue;
+      part = part.replace(/^<h3/, s.subs === 'quiet' ? '<p class="sub quiet"' : '<p class="sub"').replace(/<\/h3>$/, '</p>');
       if (/key numbers/i.test(plain(part))) keynums = [];
       out += part;
     } else if (/^<h4/.test(part)) {
@@ -180,6 +192,7 @@ function bodyHtml(p, s) {
     } else {
       flush();
       n += 1;
+      if (s.float && n === s.float.at) out += floatFig(s.float);
       if (/^<p/.test(part)) {
         const short = n === 1 && plain(part).length < 90;
         part = part.replace(/^<p/, n === 1 ? (short ? '<p class="lede short"' : (PHONE && s.key === 'soothsayer' ? '<p class="lede d2"' : '<p class="lede"')) : '<p');
@@ -195,6 +208,8 @@ function bodyHtml(p, s) {
   flush();
   return out;
 }
+// A small portrait floated left inside the body text, with its credit attached (one figure: never split from its caption, never broken across a column or page).
+const floatFig = (f) => `<figure class="fl"><img src="${A(f.photo)}" alt="${esc(f.alt)}"><figcaption><i>${T(f.credit)}</i></figcaption></figure>`;
 const tuneStyle = (s) => { const t = s.tune; if (!t) return ''; const fs = PHONE ? t.pfs : t.fs, lh = PHONE ? t.plh : t.lh; return fs ? ` style="font-size:${fs};line-height:${lh || '1.48'}"` : ''; };
 const endMark = (h) => {
   const i = h.lastIndexOf('</p>');
@@ -249,6 +264,17 @@ function openPortraitFull(p, s) {
 <div class="shade"></div>
 <div class="ptext">${lightHead(p, s, `<p class="pcredit">${T(s.cap)} <i>${T(s.credit)}</i></p>`)}</div>${folio(s)}</section>`;
 }
+function openArtFull(p, s) {
+  const q = s.open_pq;
+  return `<section class="full artfull" id="open-${p.key}" style="page:full">
+<h1 class="sr" id="${p.key}">${nbTitle(p.title)}</h1>
+<figure class="af"><img src="${A(s.art)}" alt="${esc(s.alt)}" style="object-position:${s.pos}"></figure>
+<div class="afp"><p class="kick">${T(p.rubric)}</p>
+${dekFor(p, s) ? `<p class="dek">${T(dekFor(p, s))}</p>` : ''}
+<p class="by">${T(p.byline)}</p>
+${q ? `<div class="afq"><p>${esc(curl('"' + q.text.replace(/,$/, '') + '"'))}</p><b>${T(q.who)}</b></div>` : ''}
+<p class="afcredit">${T(s.credit)}</p></div>${folio(s)}</section>`;
+}
 function openTypeFull(p, s) {
   return `<section class="full typefull" id="open-${p.key}" style="page:full">
 <div class="tfin"><div class="thead"><p class="kick lt">${T(p.rubric)}</p>
@@ -264,7 +290,7 @@ function openSplit(p, s) {
 }
 
 function story(p, s) {
-  const open = { tribute: openTribute, 'photo-full': openPhotoFull, 'portrait-full': openPortraitFull, 'type-full': openTypeFull }[s.open];
+  const open = { tribute: openTribute, 'photo-full': openPhotoFull, 'portrait-full': openPortraitFull, 'type-full': openTypeFull, 'art-full': openArtFull }[s.open];
   const sec = SECTIONS[s.section];
   const split = s.open.startsWith('split');
   const fridaysFigs = p.key === 'fridays' ? tributeBodyFigures(p) : '';
@@ -292,7 +318,7 @@ function tributeBodyFigures(p) {
 // ---------------------------------------------------------------------------------------------------------------------
 const coverLink = () => { const k = (PHONE ? 5 : 8.5) / 1103, f = (v) => (v * k).toFixed(3) + 'in'; return `<a class="curl" href="https://www.gatorbaitmedia.com/" style="left:${f(60)};top:${f(PHONE ? 1300 : 1340)};width:${f(310)};height:${f(PHONE ? 126 : 70)}" aria-label="gatorbaitmedia.com"></a>`; };
 const coverHtml = () => PHONE
-  ? `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover: Urban Meyer, Ring of Honor</h1><img src="${A('cover-v2.png')}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. Condon's near triple-double. The first CFP Top 25. Photos: Florida Gators/UAA; Jay Metz; Jason Parkhurst.">${coverLink()}<div class="below"><p class="ed">Oklahoma week edition · Friday, Nov. 6, 2026</p><p class="six">Nine complete stories</p><p class="tag">Plus both rosters and Oklahoma's depth chart.</p></div></section>`
+  ? `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover: Urban Meyer, Ring of Honor</h1><img src="${A('cover-v2.png')}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. Condon's near triple-double. The first CFP Top 25. Photos: Florida Gators/UAA; Jay Metz; Jason Parkhurst.">${coverLink()}<div class="below"><p class="ed">Oklahoma week edition · Friday, Nov. 6, 2026</p><p class="six">Ten complete stories</p><p class="tag">Plus both rosters and Oklahoma's depth chart.</p></div></section>`
   : `<section class="cover" style="page:full"><h1 class="sr">GatorBait Magazine, Oklahoma week cover: Urban Meyer, Ring of Honor</h1><img src="${A('cover-v2.png')}" alt="GatorBait Magazine cover, Nov. 6, 2026, Oklahoma week: Urban Meyer, Ring of Honor. A lasting place in The Swamp. Franz Beard's Oklahoma Soothsayer. Condon's near triple-double. The first CFP Top 25. Photos: Florida Gators/UAA; Jay Metz; Jason Parkhurst.">${coverLink()}</section>`;
 
 function contents(pages) {
@@ -389,6 +415,7 @@ function credits() {
     ['Scouting Oklahoma, Part 1', 'Photo by Chris Spears, GatorBait Media.'],
     ['The Soothsayer', 'Archival photo by Chris Spears, GatorBait Media.'],
     ['Condon story', 'Photo by Chris Spears, GatorBaitMedia.com, from an October exhibition against Stetson (not from the Jacksonville game).'],
+    ['The Monster That’s Never Fed', 'Opener graphic: GatorBait Media (original typographic art; no photograph). Nick Saban photo courtesy of ESPN, cropped for this edition.'],
     ['Official rosters and depth charts', 'University Athletic Association (floridagators.com) and the University of Oklahoma (soonersports.com), Week 10 game notes.'],
     ['Desk corrections carried', `Three small fact corrections, each checked against a published source: Condon's shooting line reads 3-6 (ESPN box score; the story first printed 2-3); McMiller's hometown reads Silver Spring, Maryland (ESPN roster; the story first printed Springs); and Buddy Martin's Golden Goose column (starting on page ${PAGES.goose || ''}) says Urban Meyer enters the Ring of Honor at the end of the first quarter, as Florida announced (FloridaGators.com, Nov. 5); the column first said halftime.`],
   ];
@@ -442,9 +469,9 @@ a{color:inherit;text-decoration:none}
 .mdate{font:500 ${PHONE ? '8.4pt' : '9.6pt'} var(--sans);color:var(--muted);margin:0 0 ${PHONE ? '4pt' : '4pt'};padding-bottom:${PHONE ? '6pt' : '7pt'};border-bottom:3pt solid var(--orange)}
 .toc{list-style:none;margin:0;padding:0}
 .toc li{break-inside:avoid;border-bottom:.5pt solid var(--rule)}
-.toc li.sm .pgn{font-size:${PHONE ? '12pt' : '17pt'}}.toc li.sm .ct b{font-size:${PHONE ? '9.6pt' : '12.5pt'};margin:0}.toc li.sm a{padding:${PHONE ? '5.2pt 0' : '1.5pt 0'}}
-.toc li.grp{border:0;padding:${PHONE ? '3pt 0 0' : '5pt 0 0'}}.toc li.grp span{font:800 ${PHONE ? '7.5pt' : '8.6pt'} var(--cond);letter-spacing:.3em;text-transform:uppercase;color:var(--orange)}
-.toc a{display:flex;gap:${PHONE ? '9pt' : '16pt'};align-items:center;padding:${PHONE ? '0.8pt 0' : '2.2pt 0'}}
+.toc li.sm .pgn{font-size:${PHONE ? '12pt' : '17pt'}}.toc li.sm .ct b{font-size:${PHONE ? '9.6pt' : '12.5pt'};margin:0}.toc li.sm a{padding:${PHONE ? '4.4pt 0' : '1.5pt 0'}}
+.toc li.grp{border:0;padding:${PHONE ? '2pt 0 0' : '5pt 0 0'}}.toc li.grp span{font:800 ${PHONE ? '7.5pt' : '8.6pt'} var(--cond);letter-spacing:.3em;text-transform:uppercase;color:var(--orange)}
+.toc a{display:flex;gap:${PHONE ? '9pt' : '16pt'};align-items:center;padding:${PHONE ? '0.4pt 0' : '1.6pt 0'}}
 .pgn{font:800 ${PHONE ? '15pt' : '24pt'}/1 var(--cond);color:var(--blue);min-width:${PHONE ? '20pt' : '40pt'};text-align:right;font-variant-numeric:tabular-nums}
 .ct{display:block}.ck{display:block;font:800 ${PHONE ? '7.2pt' : '7.4pt'} var(--cond);letter-spacing:.18em;text-transform:uppercase;color:var(--rust)}
 .ct b{display:block;font:800 ${PHONE ? '10.6pt' : '15pt'}/1.04 var(--cond);color:var(--navy);margin:1pt 0 0}
@@ -529,6 +556,24 @@ a{color:inherit;text-decoration:none}
 .end{margin:8pt 0 0;font:800 7.4pt var(--cond);letter-spacing:.34em;color:var(--rust);text-align:right;break-inside:avoid}.endmark{font:800 7.4pt var(--cond);letter-spacing:.34em;color:var(--rust);white-space:nowrap;margin-left:6pt}
 .body + *{break-before:auto}
 .story + .story{break-before:page}
+
+/* Buddy Martin column opener: original art over a cream panel; the art carries the headline (the real h1 is the visually hidden .sr) */
+/* phone: the art box is fixed at 5 in tall so the headline keeps about 10% of side margin in the 5 in wide page; Letter: the art takes the page above the panel */
+.artfull{display:grid;grid-template-rows:${PHONE ? '5in 1fr' : '1fr auto'};background:var(--cream)}
+.artfull .af{margin:0;position:relative;min-height:0;background:var(--navy);overflow:hidden}
+/* the image box is 111.8% tall and top-anchored, so the art's baked-in 'By Buddy Martin' (y 1232-1277 of 1350) falls below the clip and the byline shows once, in the panel */
+.artfull .af img{position:absolute;left:0;top:0;width:100%;height:111.8%;object-fit:cover;object-position:50% 0;display:block}
+.afp{position:relative;background:var(--cream);color:var(--navy);padding:${PHONE ? '.18in .34in .5in' : '.28in .68in .62in'};border-top:6pt solid var(--orange)}
+.afp .dek{margin:0 0 6pt;max-width:100%;${PHONE ? 'font-size:12pt' : ''}}.afp .by{margin:0 0 ${PHONE ? '8pt' : '12pt'}}
+.afq{border-top:1pt solid var(--rule);padding-top:${PHONE ? '7pt' : '10pt'}}
+.afq p{margin:0 0 4pt;font:800 ${PHONE ? '19pt' : '21pt'}/1.08 var(--cond);text-transform:uppercase;color:var(--navy);text-wrap:balance}
+.afq b{font:700 ${PHONE ? '7.6pt' : '9pt'} var(--cond);letter-spacing:.2em;text-transform:uppercase;color:var(--rust)}
+.afcredit{margin:${PHONE ? '8pt' : '10pt'} 0 0;font:700 ${PHONE ? '7.4pt' : '7.6pt'} var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* small portrait floated left in the story text */
+.body figure.fl{float:left;width:${PHONE ? '1.5in' : '1.5in'};margin:.03in .16in ${PHONE ? '.05in' : '.25in'} 0;break-inside:avoid;page-break-inside:avoid}
+.body figure.fl img{display:block;width:100%;height:auto}
+.body figure.fl figcaption{font:500 ${PHONE ? '7.6pt' : '7.2pt'}/1.28 var(--sans);margin-top:3pt}.body figure.fl figcaption i{font-style:normal;font-weight:700;color:var(--rust)}
+.body p.sub.quiet{border-top:0;padding-top:0;margin:${PHONE ? '11pt 0 3pt' : '12pt 0 3pt'}}
 
 /* editorial furniture */
 .nb{white-space:nowrap}
@@ -676,7 +721,7 @@ const outline = [
   { title: 'Credits and sources', page: pageOf2.credits },
   { title: 'Back cover', page: o2.pages },
 ].filter((x) => x && x.page);
-const spec = { outline, title: 'GatorBait Magazine | Florida vs. Oklahoma Pregame Edition | Nov. 6, 2026 (' + (PHONE ? 'Phone edition' : 'Letter edition') + ')', author: 'GatorBait Media', subject: 'Oklahoma week: nine complete stories, the game guide, both official rosters and Oklahoma’s depth chart. Friday, Nov. 6, 2026.' };
+const spec = { outline, title: 'GatorBait Magazine | Florida vs. Oklahoma Pregame Edition | Nov. 6, 2026 (' + (PHONE ? 'Phone edition' : 'Letter edition') + ')', author: 'GatorBait Media', subject: 'Oklahoma week: ten complete stories, the game guide, both official rosters and Oklahoma’s depth chart. Friday, Nov. 6, 2026.' };
 const specPath = path.join(OUT, tag + '.spec.json');
 fs.writeFileSync(specPath, JSON.stringify(spec, null, 1));
 execFileSync('/usr/bin/python3', [path.join(HERE, 'finish-pdf.py'), pdfPath, specPath], { stdio: 'inherit' });

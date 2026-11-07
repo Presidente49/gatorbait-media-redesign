@@ -22,7 +22,9 @@ What is compared, per story (matched by post id):
         - an empty line,
         - a heading that repeats the story title,
         - a photo-credit or caption line ('Cover: ...', 'Photo by ...', 'Photo: ...', 'Top photo: ...', the package's image credit
-          or caption).
+          or caption),
+        - a deck line that prepare.py carried as the story's own dek (posts.json 'dek': the italic standfirst lines at the top of a
+          post, printed once under the headline and not repeated in the body).
       Anything else is UNEXPLAINED. Prepared paragraphs with no source counterpart are UNEXPLAINED too.
   (b) text differences inside matched paragraphs. The only expected ones are Condon '2-3' to '3-6' and McMiller 'Springs' to
       'Spring' (the two verified live corrections); each must be present. A paragraph whose end was trimmed is judged like a
@@ -237,6 +239,7 @@ class Rules:
         self.author = post.get('author', '')
         self.credits = [ws(manifest_entry.get(k, '')) for k in ('image_credit', 'image_caption') if manifest_entry.get(k)]
         self.caption = ws(post.get('caption') or '')
+        self.dek = ws(post.get('dek') or '')
 
     def kind(self, text):
         info = self.native.get(text)
@@ -274,6 +277,8 @@ class Rules:
         """-> (category, note) for a paragraph that may be dropped by rule, else None."""
         if not text.strip():
             return ('empty line', '')
+        if self.dek and words(text) >= 4 and text in self.dek:
+            return ('story deck', "carried as the story's dek (posts.json 'dek'), printed once under the headline and not repeated in the body")
         if text in self.bylines or BYLINE_RE.match(text):
             name = re.sub(r'^by\s+', '', text, flags=re.I)
             note = ''
@@ -663,7 +668,7 @@ def main():
     if not n:
         w('- none')
     w('')
-    w('Rules used, so the lists above can be audited: a missing paragraph is "dropped by rule" only if it is a bare byline line (`By Name`, or the story byline), a link-only/promo line (bare URL or domain, a short lead-in plus URL, an ADVERTISEMENT label, a `More from ...:` line, a short line of link labels per the package native snapshot, or the heading of a section that holds only such lines), an empty line, a heading that repeats the story title, or a photo-credit/caption line. Everything else is UNEXPLAINED. This tool does not read `issue.json`: an UNEXPLAINED item may still be a recorded editorial rule in `receipt.json`; it is listed so a person can confirm it.')
+    w('Rules used, so the lists above can be audited: a missing paragraph is "dropped by rule" only if it is a bare byline line (`By Name`, or the story byline), a link-only/promo line (bare URL or domain, a short lead-in plus URL, an ADVERTISEMENT label, a `More from ...:` line, a short line of link labels per the package native snapshot, or the heading of a section that holds only such lines), an empty line, a heading that repeats the story title, a photo-credit/caption line, or a deck line carried as the story dek. Everything else is UNEXPLAINED. This tool does not read `issue.json`: an UNEXPLAINED item may still be a recorded editorial rule in `receipt.json`; it is listed so a person can confirm it.')
     sys.stdout.write('\n'.join(lines) + '\n')
     sys.exit(1 if fail_total else 0)
 

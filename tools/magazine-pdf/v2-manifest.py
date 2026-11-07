@@ -50,6 +50,9 @@ CREDITS = {
     'soothsayer-baugh.jpg': ('The Soothsayer', 'Archival photo by Chris Spears, GatorBait Media'),
     'condon.jpg': ('Condon story', 'Photo by Chris Spears, GatorBaitMedia.com (October exhibition against Stetson, not the Jacksonville game)'),
     'swamp-panorama.jpg': ('Game guide', 'Archival photo by Chris Spears, GatorBait Media'),
+    'monster-column-art.png': ('The Monster That\u2019s Never Fed (opener)', 'Graphic: GatorBait Media. Original typographic and vector graphic by the graphic desk (HTML, CSS and inline SVG rendered with Playwright; Barlow). No photograph, no person, no AI image. Full 2400 x 1350 master; the opener shows a center crop above the art\u2019s baked-in byline.'),
+    'saban-espn-courtesy-crop.jpg': ('The Monster That\u2019s Never Fed (floated portrait)', 'Nick Saban photo courtesy of ESPN. Tight head-and-shoulders crop (390 x 448 px of the 495 x 470 supplied portrait), printed 1.5 in wide (260 ppi). Supplied by Brenden Martin; no other source.'),
+    'saban-espn-courtesy-original.jpg': ('The Monster That\u2019s Never Fed (provenance copy, not printed)', 'Nick Saban photo courtesy of ESPN. The portrait as supplied (495 x 470 px); the printed crop is saban-espn-courtesy-crop.jpg.'),
 }
 credit_rows = []
 for f in sorted(os.listdir(assets)):

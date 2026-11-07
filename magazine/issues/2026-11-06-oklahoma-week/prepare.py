@@ -64,6 +64,7 @@ for spec in cfg['posts']:
     blocks = [dict(b) for b in src['blocks']]
     changes = []
     caption = None
+    dek = None
     before_words = wordcount([b for b in blocks if b['k'] in ('p', 'h', 'q', 'li')])
     for rule in spec['rules']:
         op, bid = rule['op'], rule.get('id')
@@ -84,6 +85,18 @@ for spec in cfg['posts']:
                 entry['strippedPrefix'] = rule['stripPrefix']
                 entry['captionUsed'] = caption
             changes.append(entry)
+            del blocks[idx]
+        elif op == 'caption-from-img':
+            # An image block that carries its own caption (the Nov. 7 Buddy Martin column): the caption becomes the story caption and the image block is dropped.
+            if b['k'] != 'img' or not b.get('caption'):
+                raise SystemExit('%s: caption-from-img needs an image block with a caption (%s)' % (spec['key'], bid))
+            caption = b['caption'].strip()
+            changes.append({'op': op, 'block': bid, 'media': b.get('media'), 'text': caption, 'reason': rule['reason']})
+            del blocks[idx]
+        elif op == 'dek-from-id':
+            # The story's own deck (kept once, as the dek; never repeated in the body). A literal newline between deck lines becomes one space.
+            dek = ' '.join(x.strip() for x in b['text'].split('\n') if x.strip())
+            changes.append({'op': op, 'block': bid, 'kind': b['k'], 'text': dek, 'reason': rule['reason']})
             del blocks[idx]
         elif op == 'keep-prefix':
             if not b['text'].startswith(rule['keep']):
@@ -150,7 +163,7 @@ for spec in cfg['posts']:
     out = {
         'id': spec['id'], 'key': spec['key'], 'url': path, 'title': src['title'], 'rubric': spec['rubric'],
         'author': spec['author'], 'byline': spec['byline'], 'minutesToRead': src['source']['minutesToRead'],
-        'excerpt': src['excerpt'], 'hero': spec['hero'], 'caption': caption, 'pullquote': pq,
+        'excerpt': src['excerpt'], 'hero': spec['hero'], 'caption': caption, **({'dek': dek} if dek else {}), 'pullquote': pq,
         'html': ''.join(block_html(b) for b in blocks), 'words': wordcount(blocks),
     }
     posts.append(out)

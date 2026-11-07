@@ -1,0 +1,625 @@
+{
+ "id": "524998de-233f-4703-8bff-c12b0a44a8d1",
+ "title": "The Monster That’s Never Fed. A Football Coaches’ Lament.",
+ "excerpt": "Nobody made these men do it. (Including Nick Saban) That’s the thing. They were built for it, and blessed by it, and eaten alive by it, all at the same time.",
+ "slug": "the-monster-that-s-never-fed-a-football-coaches-lament",
+ "url": "https://www.gatorbaitmedia.com/post/the-monster-that-s-never-fed-a-football-coaches-lament",
+ "source": {
+  "endpoint": "GET https://www.wixapis.com/v3/posts/524998de-233f-4703-8bff-c12b0a44a8d1?fieldsets=URL&fieldsets=RICH_CONTENT (published) and GET https://www.wixapis.com/blog/v3/draft-posts/524998de-233f-4703-8bff-c12b0a44a8d1?fieldsets=RICH_CONTENT (draft); both read-only, identical block by block (62 top-level nodes, same ids, lengths and FNV-1a 32 hashes) at draft editedDate 2026-11-07T04:15:18Z",
+  "firstPublishedDate": "2026-11-07T02:37:15.015Z",
+  "lastPublishedDate": "2026-11-07T03:42:41.578Z",
+  "hasUnpublishedChanges": false,
+  "memberId": "ae876af8-9478-4613-8f0b-5218ad33fdc9",
+  "minutesToRead": 6,
+  "pricingPlanIds": [],
+  "note": "Built by r5/tools/make_source.py, not by magazine/normalize_wix_post.py: the Wix response could not be saved to a file from the tool sandbox. Paragraph text comes from deploy/buddy-column-20261107/rollback-draft-nodes-before-reformat.json (Buddy's paragraphs as filed) and every block is fingerprint-checked against the live post. The image block carries its caption (normalize_wix_post.py does not record captions). Live reformat differences from the rollback file: dividers replaced by five level-2 subheads; the Terry Saban paragraph split in two; the two italic deck lines merged into one block quote; the ESPN credit line became the image caption."
+ },
+ "cover": {
+  "id": "d3cfa5_56a45329d0904884b84bfe7d7adabfe7~mv2.png",
+  "width": 2400,
+  "height": 1350,
+  "alt": "Navy watch dial with the headline The Monster That’s Never Fed, for Buddy Martin’s football coaches’ lament column.",
+  "filename": "2026-11-07 The Monster That's Never Fed - column graphic (Buddy Martin).png"
+ },
+ "blocks": [
+  {
+   "k": "q",
+   "id": "deck",
+   "text": "Nobody made these men do it. (Including Nick Saban)\nThat’s the thing. They were built for it, and blessed by it, and eaten alive by it, all at the same time.",
+   "runs": [
+    {
+     "t": "Nobody made these men do it. (Including Nick Saban)"
+    },
+    {
+     "t": "\n"
+    },
+    {
+     "t": "That’s the thing. They were built for it, and blessed by it, and eaten alive by it, all at the same time."
+    }
+   ]
+  },
+  {
+   "k": "img",
+   "id": "saban",
+   "media": "d3cfa5_e70f5fa452e74c02add48f9f1e26f69c~mv2.jpg",
+   "alt": "Nick Saban. Photo courtesy of ESPN.",
+   "width": 495,
+   "height": 470,
+   "caption": "Nick Saban photo courtesy of ESPN",
+   "containerData": {
+    "width": {
+     "custom": "220"
+    },
+    "alignment": "LEFT",
+    "textWrap": true
+   }
+  },
+  {
+   "k": "p",
+   "id": "p11",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "p",
+   "id": "7nmlf107",
+   "text": "By Buddy Martin",
+   "runs": [
+    {
+     "t": "By Buddy Martin"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "dylu4568",
+   "text": "gatorbaitmedia.com",
+   "runs": [
+    {
+     "t": "gatorbaitmedia.com",
+     "link": "https://www.gatorbaitmedia.com"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "847kt1095",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "p",
+   "id": "v50rg1149",
+   "text": "Ten minutes before four o’clock, Nick Saban sat in his office at Alabama with two speeches in front of him.",
+   "runs": [
+    {
+     "t": "Ten minutes before four o’clock, Nick Saban sat in his office at Alabama with two speeches in front of him."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "qszyu1204",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "p",
+   "id": "p13",
+   "text": "One said: I’m staying, and here’s what we have to do. The other said: I’m retiring. A team meeting was waiting.",
+   "runs": [
+    {
+     "t": "One said: I’m staying, and here’s what we have to do. The other said: I’m retiring. A team meeting was waiting."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "fbm0c1259",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "p",
+   "id": "p15",
+   "text": "The winningest coach of his era — the man who had seven rings and had made the rest of college football miserable for two decades — did not know which speech he was going to give. He had to call his wife to find out.",
+   "runs": [
+    {
+     "t": "The winningest coach of his era — the man who had seven rings and had made the rest of college football miserable for two decades — did not know which speech he was going to give. He had to call his wife to find out."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "vkj8j1314",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "p",
+   "id": "p17",
+   "text": "“You know, if you’re that stressed out about it and there’s that much turmoil, you have to do this at some point in time, whether it’s this year, next year, or the next year,” Miss Terry told him. ",
+   "runs": [
+    {
+     "t": "“You know, if you’re that stressed out about it and there’s that much turmoil, you have to do this at some point in time, whether it’s this year, next year, or the next year,” Miss Terry told him. "
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a45991369",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "p",
+   "id": "2t8x71424",
+   "text": "“So if you feel that much anxiety about making the decision, maybe now’s the time to do it while you still have your health and quality of life is good enough that we can do other things.”",
+   "runs": [
+    {
+     "t": "“So if you feel that much anxiety about making the decision, maybe now’s the time to do it while you still have your health and quality of life is good enough that we can do other things.”"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "pg82y1480",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "p",
+   "id": "p19",
+   "text": "That’s what it took. Not a championship, not a contract, not a farewell tour. A phone call to Terry Saban, because the strongest man in the sport couldn’t make the decision alone.",
+   "runs": [
+    {
+     "t": "That’s what it took. Not a championship, not a contract, not a farewell tour. A phone call to Terry Saban, because the strongest man in the sport couldn’t make the decision alone."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p21",
+   "text": "If that doesn’t break your heart a little, you haven’t been paying attention.",
+   "runs": [
+    {
+     "t": "If that doesn’t break your heart a little, you haven’t been paying attention."
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "h2-13",
+   "text": "The quiet part out loud",
+   "runs": [
+    {
+     "t": "The quiet part out loud"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "p24",
+   "text": "Saban has been saying the quiet part out loud lately, and it ought to be required listening for every young coach drawing up his first game plan: He missed his kids growing up. All of it. The games, the recitals, the fights in the back seat, the whole golden blur of it, traded away one recruiting cycle at a time. He wasn’t bitter about it. He was just honest.",
+   "runs": [
+    {
+     "t": "Saban has been saying the quiet part out loud lately, and it ought to be required listening for every young coach drawing up his first game plan: He missed his kids growing up. All of it. The games, the recitals, the fights in the back seat, the whole golden blur of it, traded away one recruiting cycle at a time. He wasn’t bitter about it. He was just honest."
+    }
+   ]
+  },
+  {
+   "k": "q",
+   "id": "bq-14",
+   "text": "“I missed my kids growing up,” he said. “I didn’t really want to miss my grandkids growing up. So this has given me a little bit more time to have those relationships.”",
+   "runs": [
+    {
+     "t": "“I missed my kids growing up,” he said. “I didn’t really want to miss my grandkids growing up. So this has given me a little bit more time to have those relationships.”"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p28",
+   "text": "Read that again. The man who never lost a grip on anything on a football field had to admit, at 72, that the grip he never got on his children’s childhoods is the one that won’t come back. There are no do-overs in that league. No transfer portal for time.",
+   "runs": [
+    {
+     "t": "Read that again. The man who never lost a grip on anything on a football field had to admit, at 72, that the grip he never got on his children’s childhoods is the one that won’t come back. There are no do-overs in that league. No transfer portal for time."
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "h2-17",
+   "text": "The lament of almost every father",
+   "runs": [
+    {
+     "t": "The lament of almost every father"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "p31",
+   "text": "This is the lament of almost every father I have ever known who was dedicated to his profession — trying to win for himself and for his family at the same time, and never quite sure which master he was serving.",
+   "runs": [
+    {
+     "t": "This is the lament of almost every father I have ever known who was dedicated to his profession — trying to win for himself and for his family at the same time, and never quite sure which master he was serving."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p33",
+   "text": "My moment of truth was the airport. I was in my early 30s, an up-and-coming sports columnist at a very good paper, and the job required me to be on the plane for almost any big event. I could see the kids’ eyes filling up as I hugged them goodbye at the door, one more trip, one more game, one more town. A sad song, that one. And a conflict that never does get resolved.",
+   "runs": [
+    {
+     "t": "My moment of truth was the airport. I was in my early 30s, an up-and-coming sports columnist at a very good paper, and the job required me to be on the plane for almost any big event. I could see the kids’ eyes filling up as I hugged them goodbye at the door, one more trip, one more game, one more town. A sad song, that one. And a conflict that never does get resolved."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p35",
+   "text": "You just learn to live with the ache, and you hope they forgive you later.",
+   "runs": [
+    {
+     "t": "You just learn to live with the ache, and you hope they forgive you later."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p37",
+   "text": "Coaches don’t get the luxury of even that much ambiguity. The profession is a monster that devours your life, eats up your time, and is never satisfied.",
+   "runs": [
+    {
+     "t": "Coaches don’t get the luxury of even that much ambiguity. The profession is a monster that devours your life, eats up your time, and is never satisfied."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p39",
+   "text": "There is no finish line. You win a championship on a Monday night, and by Tuesday morning the monster is tapping its watch: recruiting starts now.",
+   "runs": [
+    {
+     "t": "There is no finish line. You win a championship on a Monday night, and by Tuesday morning the monster is tapping its watch: recruiting starts now."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p41",
+   "text": "I’ve seen it up close, all my life, from the press box and the sideline and the living rooms of the men who coach this game.",
+   "runs": [
+    {
+     "t": "I’ve seen it up close, all my life, from the press box and the sideline and the living rooms of the men who coach this game."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p43",
+   "text": "And I’ve come to believe we should honor, respect and cherish the fathers who do NOT chase the gold watch — the ones who quietly fulfill their responsibilities as husbands and dads while the parade goes by without them. They don’t get statues. Maybe they should.",
+   "runs": [
+    {
+     "t": "And I’ve come to believe we should honor, respect and cherish the fathers who do NOT chase the gold watch — the ones who quietly fulfill their responsibilities as husbands and dads while the parade goes by without them. They don’t get statues. Maybe they should."
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "h2-25",
+   "text": "Two masters, one life",
+   "runs": [
+    {
+     "t": "Two masters, one life"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "p46",
+   "text": "Take the two men who put the shine back on Florida football.",
+   "runs": [
+    {
+     "t": "Take the two men who put the shine back on Florida football."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p48",
+   "text": "Urban Meyer won two national championships in Gainesville, and if you think the trophies filled the hole, think again.",
+   "runs": [
+    {
+     "t": "Urban Meyer won two national championships in Gainesville, and if you think the trophies filled the hole, think again."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p50",
+   "text": "Not long ago I asked Coach Meyer about his regrets from his time at Florida. He didn’t talk about the loss at Auburn or the game he should have won. He said: “I wish I would’ve had more fun and could’ve enjoyed it.”",
+   "runs": [
+    {
+     "t": "Not long ago I asked Coach Meyer about his regrets from his time at Florida. He didn’t talk about the loss at Auburn or the game he should have won. He said: “I wish I would’ve had more fun and could’ve enjoyed it.”"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p52",
+   "text": "Think about that. Two titles in three years, a quarterback for the ages, a program elevated to the top of the sport — and his honest answer is that he couldn’t enjoy any of it. He couldn’t find a way to get off the horse.",
+   "runs": [
+    {
+     "t": "Think about that. Two titles in three years, a quarterback for the ages, a program elevated to the top of the sport — and his honest answer is that he couldn’t enjoy any of it. He couldn’t find a way to get off the horse."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p54",
+   "text": "The story I remember: moments after winning his second national championship, with everybody celebrating around him, he was sitting in his office, suddenly realized he had to go recruit. Because it’s never ending. That’s the monster at work. It doesn’t let you stand still long enough to feel the sunshine.",
+   "runs": [
+    {
+     "t": "The story I remember: moments after winning his second national championship, with everybody celebrating around him, he was sitting in his office, suddenly realized he had to go recruit. Because it’s never ending. That’s the monster at work. It doesn’t let you stand still long enough to feel the sunshine."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p56",
+   "text": "And Steve Spurrier? The Head Ball Coach won a Heisman as a quarterback, a national title as a coach, and six SEC championships, and the machine never stopped to ask him what it was costing.",
+   "runs": [
+    {
+     "t": "And Steve Spurrier? The Head Ball Coach won a Heisman as a quarterback, a national title as a coach, and six SEC championships, and the machine never stopped to ask him what it was costing."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p58",
+   "text": "But somehow he staved off the monster, always leaving time for life in between games and trying to breathe a little bit without having football consume his life.",
+   "runs": [
+    {
+     "t": "But somehow he staved off the monster, always leaving time for life in between games and trying to breathe a little bit without having football consume his life."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p60",
+   "text": "Various versions of this story are out there, but they all point to the same thing: the nonchalant coaching style of Steve Spurrier.",
+   "runs": [
+    {
+     "t": "Various versions of this story are out there, but they all point to the same thing: the nonchalant coaching style of Steve Spurrier."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p62",
+   "text": "In September 1996 during a Gators bye week, just seven days before a massive, top-10 showdown against Peyton Manning and Tennessee, Steve Spurrier took some of his assistants to Crescent Beach, Florida.",
+   "runs": [
+    {
+     "t": "In September 1996 during a Gators bye week, just seven days before a massive, top-10 showdown against Peyton Manning and Tennessee, Steve Spurrier took some of his assistants to Crescent Beach, Florida."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p64",
+   "text": "As they were floating out in the Atlantic, Spurrier turned to his defensive coordinator, Bob Stoops, who had just arrived from a notoriously rigid, workaholic program at Kansas State, and casually asked:",
+   "runs": [
+    {
+     "t": "As they were floating out in the Atlantic, Spurrier turned to his defensive coordinator, Bob Stoops, who had just arrived from a notoriously rigid, workaholic program at Kansas State, and casually asked:"
+    }
+   ]
+  },
+  {
+   "k": "q",
+   "id": "bq-35",
+   "text": "“Bobby, you think those Tennessee boys are body-surfing right now?”",
+   "runs": [
+    {
+     "t": "“Bobby, you think those Tennessee boys are body-surfing right now?”"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p68",
+   "text": "So did Spurrier defeat the dragon? Well, let’s just say he may have fought him to a tie that day.",
+   "runs": [
+    {
+     "t": "So did Spurrier defeat the dragon? Well, let’s just say he may have fought him to a tie that day."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p70",
+   "text": "From the playing field to the tee box to the next job to the next comeback, the engine just kept running — because that’s what the engine does. These guys were born with a competitive pilot light that never goes out, and the sport is only too happy to keep feeding it.",
+   "runs": [
+    {
+     "t": "From the playing field to the tee box to the next job to the next comeback, the engine just kept running — because that’s what the engine does. These guys were born with a competitive pilot light that never goes out, and the sport is only too happy to keep feeding it."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p72",
+   "text": "Nobody made these men do it. That’s the thing. They were built for it, and blessed by it, and eaten alive by it, all at the same time. Two masters, one life, and the ledger never balances. ",
+   "runs": [
+    {
+     "t": "Nobody made these men do it. That’s the thing. They were built for it, and blessed by it, and eaten alive by it, all at the same time. Two masters, one life, and the ledger never balances. "
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "etvnt1835",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "h",
+   "id": "h2-40",
+   "text": "A weird drive home",
+   "runs": [
+    {
+     "t": "A weird drive home"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "p75",
+   "text": "Saban’s drive home from that final team meeting — the one where he gave the retirement speech — was, in his words, “a weird drive home.” But it was also, he said, “a relief in a lot of ways that you didn’t have the stress of continuing or worrying about making the correct decision.”",
+   "runs": [
+    {
+     "t": "Saban’s drive home from that final team meeting — the one where he gave the retirement speech — was, in his words, “a weird drive home.” But it was also, he said, “a relief in a lot of ways that you didn’t have the stress of continuing or worrying about making the correct decision.”"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p77",
+   "text": "The hardest part, he said, wasn’t leaving. It was knowing what he was about to blow up: the kids who came to Alabama because of him, the generations of families, the staffs, the whole little world he’d built. “I knew all that was going to get blown up,” he said.",
+   "runs": [
+    {
+     "t": "The hardest part, he said, wasn’t leaving. It was knowing what he was about to blow up: the kids who came to Alabama because of him, the generations of families, the staffs, the whole little world he’d built. “I knew all that was going to get blown up,” he said."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p79",
+   "text": "“And that was the hardest thing, the changes it created for everyone else.”",
+   "runs": [
+    {
+     "t": "“And that was the hardest thing, the changes it created for everyone else.”"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p81",
+   "text": "Notice what a coach’s grief sounds like. He grieves the relationships. The team meetings, the players, the guys. Forty-some years in the profession, and what Nick Saban misses is being “part of a team for so long.”",
+   "runs": [
+    {
+     "t": "Notice what a coach’s grief sounds like. He grieves the relationships. The team meetings, the players, the guys. Forty-some years in the profession, and what Nick Saban misses is being “part of a team for so long.”"
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p83",
+   "text": "The job that ate his family is also the family he can’t replace.",
+   "runs": [
+    {
+     "t": "The job that ate his family is also the family he can’t replace."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p85",
+   "text": "That’s the horns of the dilemma, sharpened to a point. The thing that takes you away from your children is the very thing that makes you somebody, and the day you finally let go of it, you mourn it like a death — even as you know, finally, that it was killing you.",
+   "runs": [
+    {
+     "t": "That’s the horns of the dilemma, sharpened to a point. The thing that takes you away from your children is the very thing that makes you somebody, and the day you finally let go of it, you mourn it like a death — even as you know, finally, that it was killing you."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "58lat1897",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "h",
+   "id": "h2-47",
+   "text": "An old man’s prayer",
+   "runs": [
+    {
+     "t": "An old man’s prayer"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "p88",
+   "text": "So here’s my verdict, and it’s not a hot take. It’s an old man’s prayer.",
+   "runs": [
+    {
+     "t": "So here’s my verdict, and it’s not a hot take. It’s an old man’s prayer."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p90",
+   "text": "We keep score of these coaches in rings and wins and statues, and Lord knows they’ve earned the ledger.",
+   "runs": [
+    {
+     "t": "We keep score of these coaches in rings and wins and statues, and Lord knows they’ve earned the ledger."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p92",
+   "text": "But somewhere in the standings there ought to be a column for what it cost — the missed birthdays, the little eyes at the door, the childhoods that happened while Dad was in a film room making sure the nickel coverage was sound.",
+   "runs": [
+    {
+     "t": "But somewhere in the standings there ought to be a column for what it cost — the missed birthdays, the little eyes at the door, the childhoods that happened while Dad was in a film room making sure the nickel coverage was sound."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "tc8gv1956",
+   "text": "",
+   "runs": []
+  },
+  {
+   "k": "p",
+   "id": "p94",
+   "text": "The next time a Nick Saban or an Urban Meyer tells you the truth about that, don’t call it weakness. Call it wisdom, arriving late, the way it usually does.",
+   "runs": [
+    {
+     "t": "The next time a Nick Saban or an Urban Meyer tells you the truth about that, don’t call it weakness. Call it wisdom, arriving late, the way it usually does."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p96",
+   "text": "And if you’re a young coach reading this with a baby asleep down the hall, take it from a father who logged a thousand departure gates: the monster will always be hungry, and it will always want more.",
+   "runs": [
+    {
+     "t": "And if you’re a young coach reading this with a baby asleep down the hall, take it from a father who logged a thousand departure gates: the monster will always be hungry, and it will always want more."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "p98",
+   "text": "Feed your family first.",
+   "runs": [
+    {
+     "t": "Feed your family first.",
+     "b": true
+    }
+   ]
+  }
+ ]
+}

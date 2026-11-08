@@ -1,76 +1,76 @@
 {
- "updatedAt": "2026-11-08T02:22:58Z",
+ "updatedAt": "2026-11-08T09:16:40Z",
  "season": 2026,
  "team": {
   "name": "Florida",
   "rank": 24,
-  "record": "5-3",
-  "conf": "3-3"
+  "record": "5-4",
+  "conf": "3-4"
  },
  "last": {
-  "eventId": "401856734",
-  "opponent": "Georgia",
-  "opponentRank": 3,
-  "home": false,
-  "neutral": true,
-  "date": "2026-10-31T19:30:00Z",
+  "eventId": "401856739",
+  "opponent": "Oklahoma",
+  "opponentRank": null,
+  "home": true,
+  "neutral": false,
+  "date": "2026-11-08T00:45:00Z",
   "status": "final",
   "score": {
-   "fla": 8,
-   "opp": 27
+   "fla": 7,
+   "opp": 23
   },
   "quarters": {
    "fla": [
     0,
+    7,
     0,
-    0,
-    8
+    0
    ],
    "opp": [
-    7,
-    17,
+    3,
+    10,
     0,
-    3
+    10
    ]
   },
-  "venue": "Mercedes-Benz Stadium",
-  "recapUrl": "https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way",
+  "venue": "Ben Hill Griffin Stadium",
+  "recapUrl": null,
   "galleryUrl": null,
   "tape": {
-   "totalYards": 252,
-   "rushingYards": 54,
-   "firstDowns": 15,
-   "attendance": 72541
+   "totalYards": 203,
+   "rushingYards": 70,
+   "firstDowns": 11,
+   "attendance": 90442
   },
   "leaders": [
    [
     "Passing Yards",
     "Tramell Jones Jr.",
-    "18/25, 172 YDS, 1 INT"
+    "10/22, 133 YDS, 2 INT"
    ],
    [
     "Rushing Yards",
     "Jadan Baugh",
-    "17 CAR, 38 YDS"
+    "8 CAR, 35 YDS, 1 TD"
    ],
    [
     "Receiving Yards",
-    "Bailey Stockton",
-    "8 REC, 76 YDS"
+    "Duke Clark",
+    "4 REC, 70 YDS"
    ]
   ]
  },
  "next": {
-  "eventId": "401856739",
-  "opponent": "Oklahoma",
-  "opponentRank": null,
-  "opponentRecord": "4-4",
-  "home": true,
+  "eventId": "401856884",
+  "opponent": "Kentucky",
+  "opponentRank": 6,
+  "opponentRecord": "7-2",
+  "home": false,
   "neutral": false,
-  "kickoffIso": "2026-11-08T00:45:00Z",
-  "tv": "SEC Network",
-  "venue": "Ben Hill Griffin Stadium",
-  "previewUrl": "https://www.gatorbaitmedia.com/post/week-9-preview-florida-gators-5-3-2-3-v-oklahoma-sooners-4-4-2-3"
+  "kickoffIso": "2026-11-14T05:00:00Z",
+  "tv": "ESPN",
+  "venue": "Kroger Field",
+  "previewUrl": null
  },
  "schedule": [
   {
@@ -198,12 +198,12 @@
    "date": "2026-11-08T00:45:00Z",
    "opponent": "Oklahoma",
    "opponentRank": null,
-   "opponentRecord": "4-4",
+   "opponentRecord": "5-4",
    "home": true,
-   "status": "in-progress",
+   "status": "final",
    "score": {
     "fla": 7,
-    "opp": 13
+    "opp": 23
    },
    "tv": "SEC Network",
    "storyUrl": null
@@ -213,7 +213,7 @@
    "date": "2026-11-14T05:00:00Z",
    "opponent": "Kentucky",
    "opponentRank": 6,
-   "opponentRecord": null,
+   "opponentRecord": "7-2",
    "home": false,
    "status": "scheduled",
    "score": null,
@@ -248,17 +248,22 @@
  "standings": [
   {
    "team": "Georgia",
-   "confRecord": "5-1",
-   "overall": "7-1"
-  },
-  {
-   "team": "Kentucky",
-   "confRecord": "5-1",
-   "overall": "7-1"
+   "confRecord": "6-1",
+   "overall": "8-1"
   },
   {
    "team": "Alabama",
    "confRecord": "5-2",
+   "overall": "7-2"
+  },
+  {
+   "team": "Kentucky",
+   "confRecord": "5-2",
+   "overall": "7-2"
+  },
+  {
+   "team": "Tennessee",
+   "confRecord": "4-2",
    "overall": "7-2"
   },
   {
@@ -268,13 +273,8 @@
   },
   {
    "team": "Ole Miss",
-   "confRecord": "4-2",
-   "overall": "6-2"
-  },
-  {
-   "team": "Tennessee",
-   "confRecord": "3-2",
-   "overall": "6-2"
+   "confRecord": "4-3",
+   "overall": "6-3"
   },
   {
    "team": "South Carolina",
@@ -292,9 +292,9 @@
    "overall": "6-3"
   },
   {
-   "team": "Florida",
+   "team": "Oklahoma",
    "confRecord": "3-3",
-   "overall": "5-3"
+   "overall": "5-4"
   },
   {
    "team": "Auburn",
@@ -302,9 +302,9 @@
    "overall": "5-4"
   },
   {
-   "team": "Oklahoma",
-   "confRecord": "2-3",
-   "overall": "4-4"
+   "team": "Florida",
+   "confRecord": "3-4",
+   "overall": "5-4"
   },
   {
    "team": "Mississippi State",
@@ -327,15 +327,5 @@
    "overall": "3-6"
   }
  ],
- "live": {
-  "eventId": "401856739",
-  "clock": "0:00",
-  "period": 2,
-  "score": {
-   "fla": 7,
-   "opp": 13
-  },
-  "possession": "fla",
-  "lastPlay": "End of Half."
- }
+ "live": null
 }

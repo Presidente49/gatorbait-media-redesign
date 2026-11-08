@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-08T16:03:54Z",
+ "updatedAt": "2026-11-08T18:48:33Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -67,7 +67,7 @@
   "opponentRecord": "7-2",
   "home": false,
   "neutral": false,
-  "kickoffIso": "2026-11-14T05:00:00Z",
+  "kickoffIso": "2026-11-14T23:15:00Z",
   "tv": "ESPN",
   "venue": "Kroger Field",
   "previewUrl": null
@@ -210,7 +210,7 @@
   },
   {
    "eventId": "401856884",
-   "date": "2026-11-14T05:00:00Z",
+   "date": "2026-11-14T23:15:00Z",
    "opponent": "Kentucky",
    "opponentRank": 6,
    "opponentRecord": "7-2",

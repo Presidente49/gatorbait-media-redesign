@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "HALFTIME: No. 24 Florida trails Oklahoma 13-7",
+      "excerpt": "The Gators cut a 10-point deficit to three before Oklahoma added a late field goal, leaving Florida down 13-7 at halftime in The Swamp.",
+      "url": "https://www.gatorbaitmedia.com/post/halftime-florida-trails-oklahoma-13-7",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-08T02:16:27Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_9cef91324c1d4509b16eaeb4c5c1d492~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for HALFTIME: No. 24 Florida trails Oklahoma 13-7"
+      }
+    },
+    {
       "title": "Quick Reads for Today’s Game",
       "excerpt": "Eddie Gilley’s five questions for Florida against Oklahoma: pressure on Mateer, the offensive line, the run game, Tramell Jones Jr. and turnovers. Kickoff is 7:45 p.m. ET on SEC Network.",
       "url": "https://www.gatorbaitmedia.com/post/quick-reads-for-today-s-game",
@@ -58,7 +72,7 @@
       }
     },
     {
-      "title": "Week 9 Preview: Florida Gators (5-3, 2-3) v. Oklahoma Sooners (4-4, 2-3)",
+      "title": "Week 9 Preview: Florida Gators (5-3, 3-3) v. Oklahoma Sooners (4-4, 2-3)",
       "excerpt": "Oklahoma makes their first visit to the Swamp as both teams look to set the tone for November.",
       "url": "https://www.gatorbaitmedia.com/post/week-9-preview-florida-gators-5-3-2-3-v-oklahoma-sooners-4-4-2-3",
       "author": "Loren Meadows",
@@ -68,7 +82,7 @@
         "src": "https://static.wixstatic.com/media/d3cfa5_da6d16c6f8ab464c9f2d7d493bd66050~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
-        "alt": "Featured image for Week 9 Preview: Florida Gators (5-3, 2-3) v. Oklahoma Sooners (4-4, 2-3)"
+        "alt": "Featured image for Week 9 Preview: Florida Gators (5-3, 3-3) v. Oklahoma Sooners (4-4, 2-3)"
       }
     },
     {
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida vs. Jacksonville: Gators Host Dolphins Thursday Night"
-      }
-    },
-    {
-      "title": "Bumped by the Booth: ESPN Leaves Gators Fans Chasing Their Own Ballgame",
-      "excerpt": "Buddy Martin on ESPN bumping No. 1 Florida's opener against Miami to ESPNEWS in the final minutes so the ManningCast could start on time.",
-      "url": "https://www.gatorbaitmedia.com/post/bumped-by-the-booth-espn-leaves-gators-fans-chasing-their-own-ballgame",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-03T18:55:14Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_ace94c11ce5d4031a20650525c423bf3~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Bumped by the Booth: ESPN Leaves Gators Fans Chasing Their Own Ballgame"
       }
     }
   ]

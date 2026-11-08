@@ -393,6 +393,11 @@ for(const profile of PROFILES){
         await page.waitForFunction(()=>[...document.querySelectorAll('#gbm-live .fp-frame[href*="/post/"] img,#gbm-live .fp-story-photo img,#gbm-live.gbm-gazette .sh-lead figure img,#gbm-live.gbm-gazette .sh-coverage article img')].filter(i=>i.getClientRects().length).every(i=>i.complete&&i.naturalWidth>0),null,{timeout:15000}).catch(()=>{});
         await page.evaluate(()=>scrollTo(0,0));
       }
+      // Every target: scroll through the first two screens so lazy images request, then wait (up to 15 s) for each
+      // visible image in that range to finish. A genuinely broken image still fails the audit after the wait.
+      await page.evaluate(async()=>{const h=innerHeight*2,step=Math.max(200,Math.round(innerHeight/2));for(let y=0;y<=h;y+=step){scrollTo(0,y);await new Promise(r=>setTimeout(r,250));}});
+      await page.waitForFunction(()=>[...document.images].filter(i=>{const r=i.getBoundingClientRect(),s=getComputedStyle(i);return r.width>0&&r.height>0&&s.display!=='none'&&s.visibility!=='hidden'&&(r.top+scrollY)<innerHeight*2;}).every(i=>i.complete&&i.naturalWidth>0),null,{timeout:15000}).catch(()=>{});
+      await page.evaluate(()=>scrollTo(0,0));
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';
       await page.screenshot({path:shot,type:'jpeg',quality:70,fullPage:false});
       const result=await page.evaluate(audit,{target,requestedWidth:profile.expectedWidth});

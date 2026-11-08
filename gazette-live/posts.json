@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Ground Down: Oklahoma Drains Florida, 23-7",
+      "excerpt": "Oklahoma controlled the clock and held Florida to 203 yards in a 23-7 win at The Swamp, dropping the Gators to 5-4.",
+      "url": "https://www.gatorbaitmedia.com/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-08T04:04:03Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_dd3d4b0d9c6f45e7aa9ffcb945d66f03~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Ground Down: Oklahoma Drains Florida, 23-7"
+      }
+    },
+    {
       "title": "HALFTIME: No. 24 Florida trails Oklahoma 13-7",
       "excerpt": "The Gators cut a 10-point deficit to three before Oklahoma added a late field goal, leaving Florida down 13-7 at halftime in The Swamp.",
       "url": "https://www.gatorbaitmedia.com/post/halftime-florida-trails-oklahoma-13-7",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way"
-      }
-    },
-    {
-      "title": "Florida vs. Jacksonville: Gators Host Dolphins Thursday Night",
-      "excerpt": "No. 1 Florida hosts Jacksonville on Thursday, Nov. 5, at 8 p.m. ET at the O'Connell Center. Records, key players from both teams' openers and the schedule ahead.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-vs-jacksonville-gators-host-dolphins-thursday-night",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-03T21:14:14Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_318b1aad706a4e56825a86d533841342~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida vs. Jacksonville: Gators Host Dolphins Thursday Night"
       }
     }
   ]

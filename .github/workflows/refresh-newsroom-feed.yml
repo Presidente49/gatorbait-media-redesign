@@ -159,3 +159,33 @@ jobs:
           done
           [ "$pushed" = true ] || { echo 'push failed after 3 tries; episodes not published' >&2; exit 1; }
           gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"
+
+  # Buddy Martin Show videos for the front-page row. Same workflow and tick, no second scheduler. Runs after
+  # `scoreboard` so pushes to main stay one at a time, and never fails the newsroom feed.
+  buddy-videos:
+    needs: scoreboard
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Refresh sports-live/buddy-videos.json from the show's public YouTube feed
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python automation/buddy_videos_feed.py
+          if ! git diff --quiet -- sports-live/buddy-videos.json; then
+            git config user.name 'gatorbait-newsroom-bot'
+            git config user.email 'brenden@gatorbaitmedia.com'
+            git add sports-live/buddy-videos.json
+            git commit -m 'data: refresh Buddy Martin Show videos'
+            git pull --rebase origin main
+            git push
+            gh api --method POST -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2026-03-10' "repos/$GITHUB_REPOSITORY/pages/builds"
+          fi

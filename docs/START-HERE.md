@@ -83,6 +83,7 @@ Claude (Jarvis) and Codex cannot message each other directly. Issue #34 is the s
 - Writer-published posts get copy-desk fixes only (format, spacing, alt text, cover, category, tags, meta); never a rewrite of a writer's voice.
 - **Fresh news only (Brenden, Oct. 11).** Everything we publish, send or put on a page must be current: rankings, records, odds and kickoff times come from the latest release at the moment of publishing. Never reuse last week's poll, an old ranking line or an old stat as a stand-in. If the fresh number is not out yet, leave the line out (or say it is coming) and add it the moment it posts.
 - Media permanence: no live article references an image until it is in the production Wix Media Manager. No hotlinks to temporary assets.
+- **No Ole Miss game photos (Brenden, Nov. 8, 2026):** never use a photo from the Sept. 26, 2026 Florida-Ole Miss game as a cover, inline image, social image or magazine photo, anywhere. Check the image's media folder and alt text before using any photo from that date.
 - **Feed/app cover:** an inline photograph does not establish a Spaces card image. Follow [the publishing cover gate](GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md#1b-feed-and-spaces-cover-gate): intended permanent Wix image/hero, `media.displayed` enabled and native readback, one visible website lead, then actual Spaces list/card proof. Never disable feed cover display to hide duplicate body art; fix the duplicate at its layer. Missing device proof stays unverified. Presentation repair never replays email or push.
 
 ## 5. Game-day procedure

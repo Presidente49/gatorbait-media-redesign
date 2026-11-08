@@ -1,4 +1,4 @@
-<!-- GBM_FLORIDA_STATS_V1 route=/florida-football-stats built by automation/florida_stats.py --><style id="gbm-flstats-css">
+<!-- GBM_FLORIDA_STATS_V1 route=/florida-football-stats,/groups built by automation/florida_stats.py --><style id="gbm-flstats-css">
 html.gbm-fs #SITE_PAGES{display:none!important}
 html.gbm-fs:not(:has(#gbm-stats)) #gbm-footer{visibility:hidden}
 html:has(#gbm-stats) #BACKGROUND_GROUP{display:none!important}
@@ -46,7 +46,8 @@ html:has(#gbm-stats) #SITE_CONTAINER,html:has(#gbm-stats) #masterPage,html:has(#
 (function(){
 if(window.__GBM_FLSTATS_UI__)return;window.__GBM_FLSTATS_UI__=1;
 var H=document.documentElement.classList,BOX='https://www.espn.com/college-football/game/_/gameId/',FEED='https://presidente49.github.io/gatorbait-media-redesign/sports-live/florida-stats.json',API='https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=';
-function on(){return /^\/florida-football-stats\/?$/.test(location.pathname||'')&&!!window.__GBM_FLSTATS__}
+function on(){return /^\/(florida-football-stats|groups)\/?$/.test(location.pathname||'')&&!!window.__GBM_FLSTATS__}
+var T0,D0;function meta(x){var s=window.__GBM_FLSTATS__,d=document.querySelector('meta[name=description]');if(x){if(T0==null)T0=document.title;document.title='Florida Gators Football Stats '+s.season+' | GatorBait Media';if(d){if(D0==null)D0=d.content;d.content='Florida Gators football stats: game-by-game results, team stats and season leaders, updated after every game.'}}else if(T0!=null){document.title=T0;if(d&&D0!=null)d.content=D0;T0=D0=null}}
 function e(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function table(cls,cap,head,rows){return'<div class="fs-x"><table class="'+cls+'"><caption class="fs-sr">'+e(cap)+'</caption><thead><tr>'+head.map(function(h){return'<th scope="col">'+e(h)+'</th>'}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table></div>'}
 function lines(rows){return rows.map(function(r){return'<tr><th scope="row">'+e(r[0])+'</th>'+r.slice(1).map(function(c){return'<td>'+e(c)+'</td>'}).join('')+'</tr>'})}
@@ -72,7 +73,7 @@ function mount(){if(!on()||document.getElementById('gbm-stats'))return;
 try{var m=document.createElement('main');m.id='gbm-stats';m.setAttribute('aria-labelledby','fs-h');m.innerHTML=html();
 var a=document.getElementById('gbm-mobile-shell-host')||document.getElementById('gbm-site-header');
 if(a&&a.parentNode===document.body)document.body.insertBefore(m,a.nextSibling);else document.body.insertBefore(m,document.body.firstChild);
-document.title='Florida Gators Football Stats '+window.__GBM_FLSTATS__.season+' | GatorBait Media';pull()}
+meta(1);setTimeout(function(){if(on())meta(1)},2500);pull()}
 catch(err){H.remove('gbm-fs');console.warn('[GatorBait] stats page',err)}}
 /* In a game window, each minute: live score from ESPN, newer checked totals from the Pages feed. */
 function hot(g){var k=Date.parse(g.k),n=Date.now();return!g.r&&g.live!==2&&n>k&&n<k+288e5}
@@ -84,7 +85,7 @@ if(c&&(t=c.status.type)&&(t.state==='in'||t.completed)){c.competitors.forEach(fu
 S.games.forEach(function(y){if(y.id===g.id&&!y.r&&u!=null){y.live=t.completed?2:1;y.s=u+'-'+o;y.st=t.completed?'Final':(t.shortDetail||'').replace(/^\s*\d+:\d+\s*-\s*/,'').replace(/^[1-4](st|nd|rd|th)$/,'$& quarter')}})}
 if(m&&html()!==w)m.innerHTML=html();
 if(!pull.t&&S.games.some(hot))pull.t=setInterval(function(){if(!on()||!window.__GBM_FLSTATS__.games.some(hot)){clearInterval(pull.t);pull.t=0}else if(document.visibilityState==='visible')pull()},6e4)})}
-function sync(){if(on()){H.add('gbm-fs');if(document.body)mount();return}H.remove('gbm-fs');var m=document.getElementById('gbm-stats');if(m)m.remove()}
+function sync(){if(on()){H.add('gbm-fs');if(document.body)mount();return}H.remove('gbm-fs');meta(0);var m=document.getElementById('gbm-stats');if(m)m.remove()}
 if(on())H.add('gbm-fs');
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync,{once:true});else sync();
 window.addEventListener('popstate',sync);window.addEventListener('gbmroutechange',sync);

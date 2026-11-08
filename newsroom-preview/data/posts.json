@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "From No. 8 to no votes: Florida falls out of both polls",
+      "excerpt": "Florida got zero votes in the AP Top 25 and the Coaches Poll after a fourth loss in five games. Full AP list and the Nov. 14 trip to No. 13 Kentucky.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-drops-out-of-ap-and-coaches-polls",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-08T23:47:33Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_ed56e485ea4649d6a20cd83c18c1d473~mv2.png/v1/fit/w_1000,h_630,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for From No. 8 to no votes: Florida falls out of both polls"
+      }
+    },
+    {
+      "title": "Behind the Sticks",
+      "excerpt": "Florida scored 4.44 points a drive while it was 4-0 and 1.34 in the five games since. Nine games say the offense stopped winning early downs, and three remain to find out if it can again.",
+      "url": "https://www.gatorbaitmedia.com/post/behind-the-sticks",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-08T21:00:40Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_18d418f77f054dad94c6cf4e1ca03648~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Behind the Sticks"
+      }
+    },
+    {
       "title": "The Aftermath: The Bitter Taste Lingers",
       "excerpt": "As Tony Bennett sang, I want to be around to pick up the pieces…",
       "url": "https://www.gatorbaitmedia.com/post/the-aftermath-the-bitter-taste-lingers",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Urban Meyer by the Numbers: Six Seasons That Changed The Swamp"
-      }
-    },
-    {
-      "title": "Week 9 Preview: Florida Gators (5-3, 3-3) v. Oklahoma Sooners (4-4, 2-3)",
-      "excerpt": "Oklahoma makes their first visit to the Swamp as both teams look to set the tone for November.",
-      "url": "https://www.gatorbaitmedia.com/post/week-9-preview-florida-gators-5-3-2-3-v-oklahoma-sooners-4-4-2-3",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-11-07T11:57:01Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_da6d16c6f8ab464c9f2d7d493bd66050~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Week 9 Preview: Florida Gators (5-3, 2-3) v. Oklahoma Sooners (4-4, 2-3)"
-      }
-    },
-    {
-      "title": "The Monster That’s Never Fed. A Football Coaches’ Lament.",
-      "excerpt": "Nobody made these men do it. (Including Nick Saban) That’s the thing. They were built for it, and blessed by it, and eaten alive by it, all at the same time.",
-      "url": "https://www.gatorbaitmedia.com/post/the-monster-that-s-never-fed-a-football-coaches-lament",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-07T02:37:15Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Monster That’s Never Fed. A Football Coaches’ Lament."
       }
     }
   ]

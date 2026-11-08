@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "From No. 8 to no votes: Florida falls out of both polls",
+      "excerpt": "Florida got zero votes in the AP Top 25 and the Coaches Poll after a fourth loss in five games. Full AP list and the Nov. 14 trip to No. 13 Kentucky.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-drops-out-of-ap-and-coaches-polls",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-08T23:47:33Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_ed56e485ea4649d6a20cd83c18c1d473~mv2.png/v1/fit/w_1000,h_630,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for From No. 8 to no votes: Florida falls out of both polls"
+      }
+    },
+    {
+      "title": "Behind the Sticks",
+      "excerpt": "Florida scored 4.44 points a drive while it was 4-0 and 1.34 in the five games since. Nine games say the offense stopped winning early downs, and three remain to find out if it can again.",
+      "url": "https://www.gatorbaitmedia.com/post/behind-the-sticks",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-08T21:00:40Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_18d418f77f054dad94c6cf4e1ca03648~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Behind the Sticks"
+      }
+    },
+    {
       "title": "The Aftermath: The Bitter Taste Lingers",
       "excerpt": "As Tony Bennett sang, I want to be around to pick up the pieces…",
       "url": "https://www.gatorbaitmedia.com/post/the-aftermath-the-bitter-taste-lingers",
@@ -23,7 +51,7 @@
       "firstPublishedDate": "2026-11-08T15:13:47Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_560d36d08e0d48f0b5544b37b5b63c27~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_4dab71ecd4eb4c279278bde55f02141f~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida vs. Oklahoma: Box Score, Stats and Key Takeaways"
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65"
-      }
-    },
-    {
-      "title": "Florida Suspends DT Jeramiah McCloud One Game for Oklahoma",
-      "excerpt": "Starting defensive tackle Jeramiah McCloud will miss Saturday's game against Oklahoma, and right tackle Emeka Ugorji is out.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-suspends-dt-jeramiah-mccloud-one-game-for-oklahoma",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-05T21:28:30Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_15d88c9e626440cfab72bee90cfb208a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida Suspends DT Jeramiah McCloud One Game for Oklahoma"
-      }
-    },
-    {
-      "title": "Florida Hires Syracuse's Jordie Kindervater to Lead Gator Boosters",
-      "excerpt": "Athletic director Scott Stricklin named Jordie Kindervater executive director of Gator Boosters Inc. on Wednesday. He comes from Syracuse, where he helped lead a record $50 million fundraising year.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-hires-syracuse-s-jordie-kindervater-to-lead-gator-boosters",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-05T21:28:30Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_19357baebdf943afb34eb6defcf2d6f9~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida Hires Syracuse's Jordie Kindervater to Lead Gator Boosters"
       }
     }
   ]

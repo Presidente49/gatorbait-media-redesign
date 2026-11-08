@@ -102,7 +102,7 @@ Postgame (target: within 45 minutes of the final)
 1. Quick final story with score and stats from ESPN.
 2. Writers' postgame columns published as they arrive, newest first.
 3. Press-conference quotes added from full transcripts, one UPDATE_PUBLISH per post.
-4. GatorBait's own photos, credited "Photo by <name>, GatorBait Media", as covers.
+4. GatorBait's own photos, credited "Photo by <name>, GatorBait Media", as covers. **Current-game/week art only for current coverage, covers, OG/Twitter and promos; prior-opponent photos are banned. If no fresh still exists, use an authentic current-video frame. Verify identity, game/date and credit, then verify the public article and preview.** See [Photo attribution and current-game art gate](PHOTO-ATTRIBUTION.md).
 5. Stats page refreshed only after ESPN box scores pass the consistency checks.
 6. One line to Brenden when the package is live.
 

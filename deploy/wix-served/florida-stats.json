@@ -95,8 +95,11 @@
    "d": "Sat., Nov. 7",
    "id": "401856739",
    "k": "2026-11-08T00:45Z",
+   "live": 1,
    "n": false,
    "o": "vs. Oklahoma",
+   "s": "7-13",
+   "st": "Halftime",
    "t": "7:45 p.m.",
    "tv": "SEC Network"
   },
@@ -1067,7 +1070,7 @@
    "8 games"
   ]
  ],
- "updated": "2026-11-04T02:34:04Z",
- "updatedLabel": "Nov. 3, 2026, 9:34 p.m. ET",
+ "updated": "2026-11-08T02:23:23Z",
+ "updatedLabel": "Nov. 7, 2026, 9:23 p.m. ET",
  "v": 1
 }

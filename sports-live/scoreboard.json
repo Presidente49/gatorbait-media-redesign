@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-07T23:06:06Z",
+ "updatedAt": "2026-11-08T02:22:58Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -200,10 +200,13 @@
    "opponentRank": null,
    "opponentRecord": "4-4",
    "home": true,
-   "status": "scheduled",
-   "score": null,
+   "status": "in-progress",
+   "score": {
+    "fla": 7,
+    "opp": 13
+   },
    "tv": "SEC Network",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/week-9-preview-florida-gators-5-3-2-3-v-oklahoma-sooners-4-4-2-3"
+   "storyUrl": null
   },
   {
    "eventId": "401856884",
@@ -254,23 +257,18 @@
    "overall": "7-1"
   },
   {
+   "team": "Alabama",
+   "confRecord": "5-2",
+   "overall": "7-2"
+  },
+  {
    "team": "Texas",
    "confRecord": "4-2",
    "overall": "7-2"
   },
   {
-   "team": "Alabama",
-   "confRecord": "4-2",
-   "overall": "6-2"
-  },
-  {
    "team": "Ole Miss",
    "confRecord": "4-2",
-   "overall": "6-2"
-  },
-  {
-   "team": "LSU",
-   "confRecord": "3-2",
    "overall": "6-2"
   },
   {
@@ -279,17 +277,22 @@
    "overall": "6-2"
   },
   {
+   "team": "South Carolina",
+   "confRecord": "4-3",
+   "overall": "6-3"
+  },
+  {
+   "team": "LSU",
+   "confRecord": "3-3",
+   "overall": "6-3"
+  },
+  {
    "team": "Missouri",
    "confRecord": "3-3",
    "overall": "6-3"
   },
   {
    "team": "Florida",
-   "confRecord": "3-3",
-   "overall": "5-3"
-  },
-  {
-   "team": "South Carolina",
    "confRecord": "3-3",
    "overall": "5-3"
   },
@@ -305,24 +308,34 @@
   },
   {
    "team": "Mississippi State",
-   "confRecord": "2-4",
-   "overall": "4-4"
+   "confRecord": "2-5",
+   "overall": "4-5"
   },
   {
    "team": "Texas A&M",
-   "confRecord": "1-4",
-   "overall": "4-4"
+   "confRecord": "1-5",
+   "overall": "4-5"
+  },
+  {
+   "team": "Vanderbilt",
+   "confRecord": "1-5",
+   "overall": "4-5"
   },
   {
    "team": "Arkansas",
    "confRecord": "1-5",
    "overall": "3-6"
-  },
-  {
-   "team": "Vanderbilt",
-   "confRecord": "0-5",
-   "overall": "3-5"
   }
  ],
- "live": null
+ "live": {
+  "eventId": "401856739",
+  "clock": "0:00",
+  "period": 2,
+  "score": {
+   "fla": 7,
+   "opp": 13
+  },
+  "possession": "fla",
+  "lastPlay": "End of Half."
+ }
 }

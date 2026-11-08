@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-08T02:18:37.007Z",
+ "generatedAt": "2026-11-08T10:09:12.571Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-08T02:18:37.007Z",
+  "checkedAt": "2026-11-08T10:09:12.571Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "HALFTIME: No. 24 Florida trails Oklahoma 13-7",
-   "link": "https://www.gatorbaitmedia.com/post/halftime-florida-trails-oklahoma-13-7",
-   "publishedAt": "2026-11-08T02:16:27.000Z"
+   "title": "Ground Down: Oklahoma Drains Florida, 23-7",
+   "link": "https://www.gatorbaitmedia.com/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss",
+   "publishedAt": "2026-11-08T04:04:03.000Z"
   },
   "problems": []
  },

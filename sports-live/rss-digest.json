@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-08T10:09:12.571Z",
+ "generatedAt": "2026-11-08T16:59:55.600Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-08T10:09:12.571Z",
+  "checkedAt": "2026-11-08T16:59:55.600Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Ground Down: Oklahoma Drains Florida, 23-7",
-   "link": "https://www.gatorbaitmedia.com/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss",
-   "publishedAt": "2026-11-08T04:04:03.000Z"
+   "title": "Florida vs. Oklahoma: Box Score, Stats and Key Takeaways",
+   "link": "https://www.gatorbaitmedia.com/post/florida-vs-oklahoma-box-score-stats-and-key-takeaways",
+   "publishedAt": "2026-11-08T15:13:47.000Z"
   },
   "problems": []
  },

@@ -173,7 +173,11 @@ function audit(input){
   const textMatch=want.some(w=>lowerBody.includes(String(w).toLowerCase()));
   if(!textMatch)hard.push('expected current story text missing');
 
-  if(visibleImages.length&&visibleImages.some(i=>!i.loaded))hard.push('visible image failed to load in first two screens');
+  {const own=src=>/^(https?:)?\/\/([^/]+\.)?(gatorbaitmedia\.com|wixstatic\.com|wixmp\.com|presidente49\.github\.io)\//i.test(src)||!/^(https?:)?\/\//i.test(src);
+  const bad=visibleImages.filter(i=>!i.loaded),ownBad=bad.filter(i=>own(i.src)),extBad=bad.filter(i=>!own(i.src));
+  // Our own images must load. Third-party CDNs (for example YouTube thumbnails) can refuse the CI runner, so they are warnings.
+  if(ownBad.length)hard.push('visible image failed to load in first two screens: '+ownBad.slice(0,3).map(i=>i.src).join(' | '));
+  if(extBad.length)warnings.push('third-party image did not load in CI (not counted as a failure): '+extBad.slice(0,3).map(i=>i.src).join(' | '));}
   if(!visibleImages.length)warnings.push('no visible image detected in first two screens');
   // Inspect reserved story-photo boxes, including hidden/fpFailed images and lower lazy cards.
   // Filtering by image visibility previously let the destructive seven-second fallback pass QC.
@@ -393,6 +397,11 @@ for(const profile of PROFILES){
         await page.waitForFunction(()=>[...document.querySelectorAll('#gbm-live .fp-frame[href*="/post/"] img,#gbm-live .fp-story-photo img,#gbm-live.gbm-gazette .sh-lead figure img,#gbm-live.gbm-gazette .sh-coverage article img')].filter(i=>i.getClientRects().length).every(i=>i.complete&&i.naturalWidth>0),null,{timeout:15000}).catch(()=>{});
         await page.evaluate(()=>scrollTo(0,0));
       }
+      // Every target: scroll through the first two screens so lazy images request, then wait (up to 15 s) for each
+      // visible image in that range to finish. A genuinely broken image still fails the audit after the wait.
+      await page.evaluate(async()=>{const h=innerHeight*2,step=Math.max(200,Math.round(innerHeight/2));for(let y=0;y<=h;y+=step){scrollTo(0,y);await new Promise(r=>setTimeout(r,250));}});
+      await page.waitForFunction(()=>[...document.images].filter(i=>{const r=i.getBoundingClientRect(),s=getComputedStyle(i);return r.width>0&&r.height>0&&s.display!=='none'&&s.visibility!=='hidden'&&(r.top+scrollY)<innerHeight*2;}).every(i=>i.complete&&i.naturalWidth>0),null,{timeout:15000}).catch(()=>{});
+      await page.evaluate(()=>scrollTo(0,0));
       const shot=OUT+'/'+target.name+'-'+profile.name+'.jpg';
       await page.screenshot({path:shot,type:'jpeg',quality:70,fullPage:false});
       const result=await page.evaluate(audit,{target,requestedWidth:profile.expectedWidth});

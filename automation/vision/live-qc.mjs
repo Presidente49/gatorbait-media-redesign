@@ -173,7 +173,7 @@ function audit(input){
   const textMatch=want.some(w=>lowerBody.includes(String(w).toLowerCase()));
   if(!textMatch)hard.push('expected current story text missing');
 
-  if(visibleImages.length&&visibleImages.some(i=>!i.loaded))hard.push('visible image failed to load in first two screens');
+  if(visibleImages.length&&visibleImages.some(i=>!i.loaded))hard.push('visible image failed to load in first two screens: '+visibleImages.filter(i=>!i.loaded).slice(0,3).map(i=>i.src).join(' | '));
   if(!visibleImages.length)warnings.push('no visible image detected in first two screens');
   // Inspect reserved story-photo boxes, including hidden/fpFailed images and lower lazy cards.
   // Filtering by image visibility previously let the destructive seven-second fallback pass QC.

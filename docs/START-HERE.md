@@ -21,6 +21,10 @@ All final artwork still comes from **regular ChatGPT Pro, normal Chat mode**. Mu
 > Stack redesign (Oct. 9): fewer agents, stateless jobs, one rulebook. Plan and migration in `docs/STACK-V2.md`. Social and Marketing run as their own automatic lanes: `docs/jobs/social.md`, `docs/jobs/marketing.md`, `docs/SOCIAL-RULES.md`.
 
 
+## No paid scraping — owner direction, Nov. 8, 2026
+
+Do not use **Firecrawl** (Brenden: "I'm not paying"), and keep avoiding TinyFish. Read the web with Exa fetch, WebSearch, WebFetch, `curl` (ESPN's JSON at site.api.espn.com and sports.core.api.espn.com is reachable), the Wix and GitHub connectors and Playwright Chromium. College Football Data (free key in the environment settings) is an approved third stats source after ESPN and FloridaGators.com. See [Tools and connectors](TOOLS-AND-CONNECTORS.md) for what is connected and what to avoid.
+
 ## Regular browser and AP Mode — owner direction, Oct. 29, 2026
 
 Do not use **TinyFish** for this GatorBait workflow. Brenden has authorized regular **ChatGPT Pro in the regular browser** whenever needed for the requested work, and wants its existing **AP Mode skill set** activated for article artwork and thumbnails across all shows. Use the current show profile, verified copy, authentic approved assets and phone-readable design; do not turn every show's thumbnail into the same Florida template. See [Broadcast Graphics](../skills/gatorbait-broadcast-graphics/SKILL.md) and [Muse Handoff](../skills/gatorbait-muse-handoff/SKILL.md).

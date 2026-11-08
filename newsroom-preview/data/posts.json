@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Aftermath: The Bitter Taste Lingers",
+      "excerpt": "As Tony Bennett sang, I want to be around to pick up the pieces…",
+      "url": "https://www.gatorbaitmedia.com/post/the-aftermath-the-bitter-taste-lingers",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-08T19:51:36Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_cff45e31d1924bcaa2f9d6cc08bf46cf~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Aftermath: The Bitter Taste Lingers"
+      }
+    },
+    {
       "title": "Florida vs. Oklahoma: Box Score, Stats and Key Takeaways",
       "excerpt": "Oklahoma beat Florida 23-7 on Nov. 7 at Ben Hill Griffin Stadium. Read the full box score, scoring summary, team stats, top performers and key takeaways, plus a look at the Gators’ trip to Kentucky.",
       "url": "https://www.gatorbaitmedia.com/post/florida-vs-oklahoma-box-score-stats-and-key-takeaways",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Monster That’s Never Fed. A Football Coaches’ Lament."
-      }
-    },
-    {
-      "title": "Witten Off? Oklahoma's New Play-Caller vs. the Gators' Pass Rush (Scouting Oklahoma, Part 1)",
-      "excerpt": "Oklahoma ranks 108th in scoring and 111th in total offense, and interim coordinator Jason Witten calls his first game at No. 24 Florida on Saturday. Part 1 of our scouting series: John Mateer, Rocky Beers and former Gator Hayden Hansen against a Gators defense with 23 sacks.",
-      "url": "https://www.gatorbaitmedia.com/post/witten-off-oklahoma-s-new-play-caller-vs-the-gators-pass-rush-scouting-oklahoma-part-1",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-06T22:00:33Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_cf457578f2f644d8ad819a988cd40684~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Witten Off? Oklahoma's New Play-Caller vs. the Gators' Pass Rush (Scouting Oklahoma, Part 1)"
       }
     }
   ]

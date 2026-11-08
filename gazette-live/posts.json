@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Aftermath: The Bitter Taste Lingers",
+      "excerpt": "As Tony Bennett sang, I want to be around to pick up the pieces…",
+      "url": "https://www.gatorbaitmedia.com/post/the-aftermath-the-bitter-taste-lingers",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-08T19:51:36Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_cff45e31d1924bcaa2f9d6cc08bf46cf~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Aftermath: The Bitter Taste Lingers"
+      }
+    },
+    {
       "title": "Florida vs. Oklahoma: Box Score, Stats and Key Takeaways",
       "excerpt": "Oklahoma beat Florida 23-7 on Nov. 7 at Ben Hill Griffin Stadium. Read the full box score, scoring summary, team stats, top performers and key takeaways, plus a look at the Gators’ trip to Kentucky.",
       "url": "https://www.gatorbaitmedia.com/post/florida-vs-oklahoma-box-score-stats-and-key-takeaways",
@@ -23,7 +37,7 @@
       "firstPublishedDate": "2026-11-08T14:36:28Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6be771f169354abbbc002e764e9ce75d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_b9607d3e07e6446999fdc55f08b41858~mv2.jpg/v1/fit/w_1000,h_882,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Frustration boils over; Sumrall has more questions than answers"
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida Hires Syracuse's Jordie Kindervater to Lead Gator Boosters"
-      }
-    },
-    {
-      "title": "The Golden Goose Needs A Checkup — And The Schooner Stays Home",
-      "excerpt": "Buddy Martin examines college football's television economy, the SEC's ratings power, Florida's Playoff ranking and why the Sooner Schooner will not be in The Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/the-golden-goose-needs-a-checkup-and-the-schooner-stays-home",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-05T18:39:04Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e2df469fee3f4a35ba131d3457bbb745~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Golden Goose Needs A Checkup — And The Schooner Stays Home"
       }
     }
   ]

@@ -234,6 +234,28 @@ class OpponentRecordTests(unittest.TestCase):
             self.assertEqual(vs.load_and_validate(out), [])
 
 
+class ApRankTests(unittest.TestCase):
+    """T16: unplayed games show today's AP rank (None if unranked), not ESPN's curated CFP rank."""
+    def tearDown(self):
+        sf.AP_RANKS = None
+
+    def test_ap_ranks_from_reads_only_the_ap_poll(self):
+        doc = {'rankings': [{'name': 'AFCA Coaches Poll', 'ranks': [{'current': 1, 'team': {'id': '9'}}]},
+                            {'name': 'AP Top 25', 'ranks': [{'current': 13, 'team': {'id': '96'}}, {'current': 0, 'team': {'id': '57'}}]}]}
+        self.assertEqual(sf.ap_ranks_from(doc), {'96': 13})
+        self.assertIsNone(sf.ap_ranks_from({'rankings': []}))
+
+    def test_next_game_uses_ap_rank_and_unranked_florida_is_none(self):
+        sch = load('schedule.json')
+        ev = next(e for e in sch['events'] if e['competitions'][0]['status']['type']['state'] == 'pre')
+        them = next(c for c in ev['competitions'][0]['competitors'] if str(c['team']['id']) != sf.TEAM_ID)
+        sf.AP_RANKS = {str(them['team']['id']): 13}
+        g = sf.parse_event(ev)
+        self.assertEqual((g['opponentRank'], g['flaRank']), (13, None))
+        sf.AP_RANKS = None
+        self.assertEqual(sf.parse_event(ev)['opponentRank'], sf.rank_of(them))
+
+
 class ValidatorTests(unittest.TestCase):
     def setUp(self):
         self.good = build()

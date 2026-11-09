@@ -48,6 +48,10 @@ def fetch_json(url, tries=3):
     raise ScoreError(f'fetch failed: {url}: {last}')
 
 
+# {ESPN team id: AP Top 25 rank} for unplayed games; None keeps ESPN's curated (CFP) ranks, as the fixture tests expect.
+AP_RANKS = None
+
+
 class Source:
     """ESPN reader. Live by default; --from-dir reads schedule.json, standings.json and summary-<id>.json."""
     def __init__(self, season, folder=None):
@@ -68,6 +72,11 @@ class Source:
         if self.folder:
             return self._file('standings.json')
         return fetch_json(STANDINGS_URL.format(season=self.season))
+
+    def rankings(self):
+        if self.folder:
+            return None
+        return fetch_json(f'{SITE_API}/rankings')
 
     def summary(self, event_id):
         if self.folder:
@@ -133,7 +142,8 @@ def parse_event(ev):
         'eventId': str(ev['id']),
         'date': iso(comp.get('date') or ev['date']),
         'opponent': them['team'].get('location') or them['team'].get('shortDisplayName') or them['team'].get('displayName'),
-        'opponentRank': rank_of(them), 'flaRank': rank_of(us),
+        'opponentRank': AP_RANKS.get(str(them['team']['id'])) if AP_RANKS is not None and status != 'final' else rank_of(them),
+        'flaRank': AP_RANKS.get(TEAM_ID) if AP_RANKS is not None and status != 'final' else rank_of(us),
         'home': us.get('homeAway') == 'home' and not comp.get('neutralSite'),
         'neutral': bool(comp.get('neutralSite')),
         'status': status, 'score': {'fla': a, 'opp': b} if a is not None and b is not None else None,
@@ -143,6 +153,14 @@ def parse_event(ev):
         # for the next game it comes from the pregame summary instead (see build()).
         'opponentRecord': overall_of(them),
     }
+
+
+def ap_ranks_from(doc):
+    """{team id: rank} from ESPN's current AP Top 25 (T16: the band must show today's poll, not a stale CFP rank)."""
+    for r in (doc or {}).get('rankings', []):
+        if str(r.get('name', '')).startswith('AP'):
+            return {str(x['team']['id']): int(x['current']) for x in r.get('ranks', []) if x.get('team') and 1 <= int(x.get('current') or 0) <= 25}
+    return None
 
 
 def parse_standings(sd):
@@ -280,7 +298,7 @@ def build(schedule, standings, summaries, posts_doc, prev, now):
     conf = (fl or {}).get('confRecord') or (finals[-1]['flaConf'] if finals else None)
     out = {
         'updatedAt': now.strftime('%Y-%m-%dT%H:%M:%SZ'), 'season': int(schedule.get('season', {}).get('year') or now.year),
-        'team': {'name': 'Florida', 'rank': (ref or {}).get('flaRank') or (fl or {}).get('rank'),
+        'team': {'name': 'Florida', 'rank': (ref or {}).get('flaRank') if AP_RANKS is not None and (ref or {}).get('status') != 'final' else (ref or {}).get('flaRank') or (fl or {}).get('rank'),
                  'record': f'{m.group(1)}-{m.group(2)}', 'conf': conf},
     }
 
@@ -403,6 +421,12 @@ def main(argv=None):
         return 0
     season = a.season or (prev or {}).get('season') or (now.year if now.month >= 3 else now.year - 1)
     src = Source(season, a.from_dir)
+    global AP_RANKS
+    try:
+        AP_RANKS = ap_ranks_from(src.rankings())
+    except (ScoreError, KeyError, ValueError, TypeError) as e:
+        AP_RANKS = None
+        print(f'scoreboard: AP rankings unavailable, keeping ESPN curated ranks: {e}', file=sys.stderr)
     try:
         sch = src.schedule()
         try:

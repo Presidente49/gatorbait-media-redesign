@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-09T07:51:48.899Z",
+ "generatedAt": "2026-11-09T18:40:35.664Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-09T07:51:48.899Z",
+  "checkedAt": "2026-11-09T18:40:35.664Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "From No. 8 to no votes: Florida falls out of both polls",
-   "link": "https://www.gatorbaitmedia.com/post/florida-drops-out-of-ap-and-coaches-polls",
-   "publishedAt": "2026-11-08T23:47:33.000Z"
+   "title": "Top-ranked Gators take five-game win streak over Florida State into Tallahassee",
+   "link": "https://www.gatorbaitmedia.com/post/top-ranked-gators-take-five-game-win-streak-over-florida-state-into-tallahassee",
+   "publishedAt": "2026-11-09T16:07:44.000Z"
   },
   "problems": []
  },

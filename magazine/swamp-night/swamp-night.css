@@ -42,3 +42,36 @@
 .hoops-stats{list-style:none;margin:0 0 14px;padding:0;display:flex;gap:26px;flex-wrap:wrap}.hoops-stats li{display:flex;flex-direction:column;min-width:0}.hoops-stats b{font:800 38px/1 'Barlow Condensed',sans-serif;color:#9fc0ff}.hoops-stats span{font-size:14px;color:var(--muted)}
 .join-band{margin-top:44px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:#111b2c;border:1px solid var(--rule);border-top:4px solid var(--orange);padding:26px}.join-band h2{font-size:clamp(28px,3vw,38px)}.join-band .eyebrow{margin-bottom:8px}
 @media(max-width:680px){.hoops-card{grid-template-columns:minmax(0,1fr);padding:18px}.hoops-photo img{aspect-ratio:16/9;object-position:center 30%}.join-band{padding:20px}.join-band .button{width:100%}}
+/* Articles-first edition, Nov. 9, 2026: live list, season tracker, countdown. */
+[hidden]{display:none!important}
+.stories{margin-top:44px}
+.live-feed{margin-top:44px}
+.live-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--orange);margin-right:10px;animation:mzpulse 1.6s ease-in-out infinite}
+@keyframes mzpulse{50%{opacity:.25}}
+.live-list{list-style:none;margin:0 0 12px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.live-list li{border-bottom:1px solid var(--rule);min-width:0}
+.live-list a{display:grid;gap:4px;padding:16px 0;min-height:44px}
+.live-list small{font:700 12px/1.3 Barlow,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:#ff875f}
+.live-list strong{font:800 24px/1.12 'Barlow Condensed',Impact,sans-serif;overflow-wrap:anywhere}
+.live-list em{font-style:normal;font-size:14px;color:var(--muted)}
+.season-card{background:var(--panel);border:1px solid var(--rule);border-top:4px solid var(--orange);padding:26px;min-width:0}
+.season-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.season-head .eyebrow{margin-bottom:8px}
+.bowl-meter{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.bowl-meter span{width:30px;height:14px;border:2px solid var(--blue);border-radius:2px}
+.bowl-meter span.on{background:var(--blue)}
+.bowl-meter b{margin-left:8px;font:700 13px/1 Barlow,sans-serif;letter-spacing:1.4px;text-transform:uppercase}
+.season-strip{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:8px}
+.season-strip li{display:flex;flex-direction:column;gap:4px;padding:10px 8px;background:#0c1626;border:1px solid var(--rule);border-top:3px solid var(--rule);min-width:0}
+.season-strip li.w{border-top-color:var(--blue)}.season-strip li.l{border-top-color:var(--orange)}.season-strip li.up{border-style:dashed;background:transparent}
+.season-strip b{font:800 22px/1 'Barlow Condensed',Impact,sans-serif}.season-strip li.w b{color:#7fb0ff}.season-strip li.l b{color:#ff875f}.season-strip li.up b{font-size:15px;color:var(--cream)}
+.season-strip span{font:700 14px/1.2 Barlow,sans-serif;font-variant-numeric:tabular-nums}
+.season-strip em{font-style:normal;font-size:12px;line-height:1.25;color:var(--muted);overflow-wrap:anywhere}
+.countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:4px 0 18px}
+.countdown span{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 4px;background:#0c1626;border:1px solid var(--rule);font:700 11px/1 Barlow,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+.countdown b{font:800 38px/1 'Barlow Condensed',Impact,sans-serif;color:var(--cream);font-variant-numeric:tabular-nums}
+.hoops-body .text-link+.text-link{margin-top:0}
+@media(max-width:1000px){.season-strip{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(max-width:680px){.live-list{grid-template-columns:1fr}.season-strip{grid-template-columns:repeat(3,minmax(0,1fr))}.countdown b{font-size:30px}}
+@media(prefers-reduced-motion:reduce){.live-dot{animation:none}}
+.story-card.lead{grid-column:1/-1}.story-card.lead strong{font-size:clamp(28px,3.4vw,44px)}

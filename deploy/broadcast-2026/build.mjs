@@ -37,6 +37,17 @@ if (cand.length > 15000) throw new Error(`candidate is ${cand.length} chars`);
 fs.writeFileSync(`${D}602fb362/rev17-candidate.html`, cand);
 console.log('602fb362 rev17 candidate', cand.length, djb2(cand));
 
+// Phone fill candidate (c4b41f6a live rev3 -> rev4): on All News page 1, when Wix's phone list renders fewer than
+// the page's 12 stories, append the missing ones from the site's own /blog-feed.xml (same order, deduped by path).
+const fillJs = fs.readFileSync(D + 'c4b41f6a/phone-fill.js', 'utf8').trim();
+const c3 = apply(fs.readFileSync(D + 'c4b41f6a/rev3.html', 'utf8'), [
+  ['\nfunction tick(){\n', '\n' + fillJs + '\nfunction tick(){\n'],
+  ["\nvar k=s+'|'", "\nfill(lp);\nvar k=s+'|'"],
+]);
+if (c3.length > 15000) throw new Error(`c4b41f6a rev4 is ${c3.length} chars`);
+fs.writeFileSync(`${D}c4b41f6a/rev4-candidate.html`, c3);
+console.log('c4b41f6a rev4 candidate', c3.length, djb2(c3));
+
 for (const [id, html] of Object.entries(out)) {
   if (html.length > 15000) throw new Error(`${id} is ${html.length} chars`);
   fs.writeFileSync(`${D}${id}/proposed.html`, html);

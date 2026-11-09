@@ -61,9 +61,9 @@
     styles();
     var my = ++seq;
     var m = document.createElement('main'); m.id = 'gbm-magazine-page'; m.className = 'mz26 sn26';
-    m.setAttribute('aria-label', 'GatorBait Magazine: Swamp Night'); m.setAttribute('data-mz-build', BUILD); m.setAttribute('data-mz-version', VERSION);
+    m.setAttribute('aria-label', 'GatorBait Magazine: Digital edition'); m.setAttribute('data-mz-build', BUILD); m.setAttribute('data-mz-version', VERSION);
     var f = document.createElement('iframe');
-    f.title = 'GatorBait Magazine, Florida vs. Oklahoma pregame edition'; f.setAttribute('scrolling', 'no'); f.style.height = '3200px';
+    f.title = 'GatorBait Magazine, current digital edition'; f.setAttribute('scrolling', 'no'); f.style.height = '3200px';
     m.appendChild(f); place(m); doc.classList.add('gbm-mq', 'gbm-magazine-live');
     fetch(BASE + 'index.html', { credentials: 'omit' }).then(function (r) {
       if (!r.ok) throw new Error('page ' + r.status); return r.text();

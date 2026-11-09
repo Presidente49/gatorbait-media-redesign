@@ -1,0 +1,489 @@
+{
+  "pointer": "ebc6578b8f6e859a5a4c51a491cd3b2ebf70aec2",
+  "results": [
+    {
+      "width": 390,
+      "height": 844,
+      "checks": [
+        {
+          "pass": true,
+          "label": "time trap: nothing rendered before a real input event and the dwell time"
+        },
+        {
+          "pass": true,
+          "label": "time trap: still nothing after 2 s with no human input"
+        },
+        {
+          "pass": true,
+          "label": "prompt renders after human input"
+        },
+        {
+          "pass": true,
+          "label": "in the page flow, not fixed or sticky (static)"
+        },
+        {
+          "pass": true,
+          "label": "height 75px is <= 12% of the 844px phone screen (8.9%)"
+        },
+        {
+          "pass": true,
+          "label": "covers 1.3% of the first screen (limit 12%)"
+        },
+        {
+          "pass": true,
+          "label": "Barlow only (Barlow, sans-serif)"
+        },
+        {
+          "pass": true,
+          "label": "link goes to the form page, set only at reveal"
+        },
+        {
+          "pass": true,
+          "label": "44 px tap targets (button 73x44, close 44x44)"
+        },
+        {
+          "pass": true,
+          "label": "no sideways scroll (0)"
+        },
+        {
+          "pass": true,
+          "label": "headline text"
+        },
+        {
+          "pass": true,
+          "label": "sits right after the 3rd paragraph (I have watched Florida teams l)"
+        },
+        {
+          "pass": true,
+          "label": "old slide-up is hidden by the embed"
+        },
+        {
+          "pass": true,
+          "label": "no fixed bottom overlay at 60% scroll (none)"
+        },
+        {
+          "pass": true,
+          "label": "close removes the prompt"
+        },
+        {
+          "pass": true,
+          "label": "no calls to Wix APIs or OAuth from the prompt (0)"
+        },
+        {
+          "pass": true,
+          "label": "no page errors ()"
+        },
+        {
+          "pass": true,
+          "label": "dismissal remembered after reload (localStorage)"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: prompt still works, no exception"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: close still closes for this page view"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: no page errors ()"
+        },
+        {
+          "pass": true,
+          "label": "logged-in member (simulated): prompt never renders"
+        },
+        {
+          "pass": true,
+          "label": "header heuristic (member name button): prompt hidden"
+        },
+        {
+          "pass": true,
+          "label": "header heuristic (log-in button): prompt shown"
+        },
+        {
+          "pass": true,
+          "label": "reduced motion: no transitions or animations on the prompt"
+        }
+      ],
+      "before": {
+        "slideUpPx": 228,
+        "viewportPx": 844,
+        "coverPct": 27,
+        "shown": true
+      },
+      "after": {
+        "promptPx": 75,
+        "viewportPx": 844,
+        "heightPct": 8.9,
+        "firstScreenCoverPct": 1.3,
+        "topPx": 833
+      }
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "checks": [
+        {
+          "pass": true,
+          "label": "time trap: nothing rendered before a real input event and the dwell time"
+        },
+        {
+          "pass": true,
+          "label": "time trap: still nothing after 2 s with no human input"
+        },
+        {
+          "pass": true,
+          "label": "prompt renders after human input"
+        },
+        {
+          "pass": true,
+          "label": "in the page flow, not fixed or sticky (static)"
+        },
+        {
+          "pass": true,
+          "label": "height 62px is <= 12% of the 932px phone screen (6.7%)"
+        },
+        {
+          "pass": true,
+          "label": "covers 6.7% of the first screen (limit 12%)"
+        },
+        {
+          "pass": true,
+          "label": "Barlow only (Barlow, sans-serif)"
+        },
+        {
+          "pass": true,
+          "label": "link goes to the form page, set only at reveal"
+        },
+        {
+          "pass": true,
+          "label": "44 px tap targets (button 73x44, close 44x44)"
+        },
+        {
+          "pass": true,
+          "label": "no sideways scroll (0)"
+        },
+        {
+          "pass": true,
+          "label": "headline text"
+        },
+        {
+          "pass": true,
+          "label": "sits right after the 3rd paragraph (I have watched Florida teams l)"
+        },
+        {
+          "pass": true,
+          "label": "old slide-up is hidden by the embed"
+        },
+        {
+          "pass": true,
+          "label": "no fixed bottom overlay at 60% scroll (none)"
+        },
+        {
+          "pass": true,
+          "label": "close removes the prompt"
+        },
+        {
+          "pass": true,
+          "label": "no calls to Wix APIs or OAuth from the prompt (0)"
+        },
+        {
+          "pass": true,
+          "label": "no page errors ()"
+        },
+        {
+          "pass": true,
+          "label": "dismissal remembered after reload (localStorage)"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: prompt still works, no exception"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: close still closes for this page view"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: no page errors ()"
+        },
+        {
+          "pass": true,
+          "label": "logged-in member (simulated): prompt never renders"
+        },
+        {
+          "pass": true,
+          "label": "header heuristic (member name button): prompt hidden"
+        },
+        {
+          "pass": true,
+          "label": "header heuristic (log-in button): prompt shown"
+        },
+        {
+          "pass": true,
+          "label": "reduced motion: no transitions or animations on the prompt"
+        }
+      ],
+      "before": {
+        "slideUpPx": 209,
+        "viewportPx": 932,
+        "coverPct": 22.4,
+        "shown": true
+      },
+      "after": {
+        "promptPx": 62,
+        "viewportPx": 932,
+        "heightPct": 6.7,
+        "firstScreenCoverPct": 6.7,
+        "topPx": 775
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "checks": [
+        {
+          "pass": true,
+          "label": "time trap: nothing rendered before a real input event and the dwell time"
+        },
+        {
+          "pass": true,
+          "label": "time trap: still nothing after 2 s with no human input"
+        },
+        {
+          "pass": true,
+          "label": "prompt renders after human input"
+        },
+        {
+          "pass": true,
+          "label": "in the page flow, not fixed or sticky (static)"
+        },
+        {
+          "pass": true,
+          "label": "height 68px is <= 12% of the 768px phone screen (8.9%)"
+        },
+        {
+          "pass": true,
+          "label": "desktop strip stays slim (68px)"
+        },
+        {
+          "pass": true,
+          "label": "covers 0.0% of the first screen (limit 12%)"
+        },
+        {
+          "pass": true,
+          "label": "Barlow only (Barlow, sans-serif)"
+        },
+        {
+          "pass": true,
+          "label": "link goes to the form page, set only at reveal"
+        },
+        {
+          "pass": true,
+          "label": "44 px tap targets (button 80x44, close 44x44)"
+        },
+        {
+          "pass": true,
+          "label": "no sideways scroll (0)"
+        },
+        {
+          "pass": true,
+          "label": "headline text"
+        },
+        {
+          "pass": true,
+          "label": "sits right after the 3rd paragraph (I have watched Florida teams l)"
+        },
+        {
+          "pass": true,
+          "label": "old slide-up is hidden by the embed"
+        },
+        {
+          "pass": true,
+          "label": "no fixed bottom overlay at 60% scroll (none)"
+        },
+        {
+          "pass": true,
+          "label": "close removes the prompt"
+        },
+        {
+          "pass": true,
+          "label": "no calls to Wix APIs or OAuth from the prompt (0)"
+        },
+        {
+          "pass": true,
+          "label": "no page errors ()"
+        },
+        {
+          "pass": true,
+          "label": "dismissal remembered after reload (localStorage)"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: prompt still works, no exception"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: close still closes for this page view"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: no page errors ()"
+        },
+        {
+          "pass": true,
+          "label": "logged-in member (simulated): prompt never renders"
+        },
+        {
+          "pass": true,
+          "label": "header heuristic (member name button): prompt hidden"
+        },
+        {
+          "pass": true,
+          "label": "header heuristic (log-in button): prompt shown"
+        },
+        {
+          "pass": true,
+          "label": "reduced motion: no transitions or animations on the prompt"
+        }
+      ],
+      "before": {
+        "slideUpPx": 209,
+        "viewportPx": 768,
+        "coverPct": 27.2,
+        "shown": true
+      },
+      "after": {
+        "promptPx": 68,
+        "viewportPx": 768,
+        "heightPct": 8.9,
+        "firstScreenCoverPct": 0,
+        "topPx": 838
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "checks": [
+        {
+          "pass": true,
+          "label": "time trap: nothing rendered before a real input event and the dwell time"
+        },
+        {
+          "pass": true,
+          "label": "time trap: still nothing after 2 s with no human input"
+        },
+        {
+          "pass": true,
+          "label": "prompt renders after human input"
+        },
+        {
+          "pass": true,
+          "label": "in the page flow, not fixed or sticky (static)"
+        },
+        {
+          "pass": true,
+          "label": "height 68px is <= 12% of the 1080px phone screen (6.3%)"
+        },
+        {
+          "pass": true,
+          "label": "desktop strip stays slim (68px)"
+        },
+        {
+          "pass": true,
+          "label": "covers 6.3% of the first screen (limit 12%)"
+        },
+        {
+          "pass": true,
+          "label": "Barlow only (Barlow, sans-serif)"
+        },
+        {
+          "pass": true,
+          "label": "link goes to the form page, set only at reveal"
+        },
+        {
+          "pass": true,
+          "label": "44 px tap targets (button 80x44, close 44x44)"
+        },
+        {
+          "pass": true,
+          "label": "no sideways scroll (0)"
+        },
+        {
+          "pass": true,
+          "label": "headline text"
+        },
+        {
+          "pass": true,
+          "label": "sits right after the 3rd paragraph (I have watched Florida teams l)"
+        },
+        {
+          "pass": true,
+          "label": "old slide-up is hidden by the embed"
+        },
+        {
+          "pass": true,
+          "label": "no fixed bottom overlay at 60% scroll (none)"
+        },
+        {
+          "pass": true,
+          "label": "close removes the prompt"
+        },
+        {
+          "pass": true,
+          "label": "no calls to Wix APIs or OAuth from the prompt (0)"
+        },
+        {
+          "pass": true,
+          "label": "no page errors ()"
+        },
+        {
+          "pass": true,
+          "label": "dismissal remembered after reload (localStorage)"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: prompt still works, no exception"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: close still closes for this page view"
+        },
+        {
+          "pass": true,
+          "label": "storage blocked: no page errors ()"
+        },
+        {
+          "pass": true,
+          "label": "logged-in member (simulated): prompt never renders"
+        },
+        {
+          "pass": true,
+          "label": "header heuristic (member name button): prompt hidden"
+        },
+        {
+          "pass": true,
+          "label": "header heuristic (log-in button): prompt shown"
+        },
+        {
+          "pass": true,
+          "label": "reduced motion: no transitions or animations on the prompt"
+        }
+      ],
+      "before": {
+        "slideUpPx": 209,
+        "viewportPx": 1080,
+        "coverPct": 19.4,
+        "shown": true
+      },
+      "after": {
+        "promptPx": 68,
+        "viewportPx": 1080,
+        "heightPct": 6.3,
+        "firstScreenCoverPct": 6.3,
+        "topPx": 838
+      }
+    }
+  ]
+}

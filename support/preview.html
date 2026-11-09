@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light">
+  <title>Support GatorBait · Design preview</title>
+  <meta name="description" content="A design preview for supporting GatorBait's reporting, writers and shows. Payments are not open.">
+  <link rel="preload" href="assets/barlow-400.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="support.css">
+  <script src="support.js" defer></script>
+</head>
+<body class="gb-support-preview">
+  <a class="gb-skip" href="#main">Skip to content</a>
+  <div class="gb-preview-notice"><span class="gb-preview-dot" aria-hidden="true"></span><strong>Design preview</strong><span>Payments are not open</span></div>
+  <header class="gb-header">
+    <div class="gb-header-inner">
+      <a class="gb-brand" href="https://www.gatorbaitmedia.com/" aria-label="GatorBait home"><img src="assets/gatorbait-logo.webp" width="560" height="150" alt="GatorBait"></a>
+      <nav class="gb-desktop-nav" aria-label="Main navigation">
+        <a href="https://www.gatorbaitmedia.com/">Front Page</a>
+        <a href="https://www.gatorbaitmedia.com/magazine">Magazine</a>
+        <a href="https://www.gatorbaitmedia.com/the-buddy-martin-show">GatorBait TV</a>
+        <a href="https://gatorbait2026.itemorder.com/shop/home/">Store</a>
+      </nav>
+      <div class="gb-header-actions">
+        <a class="gb-sign-in" href="https://www.gatorbaitmedia.com/account/my-account">Sign in</a>
+        <a class="gb-support-button" href="#support-choice" aria-current="page" aria-label="Support GatorBait"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2c1 6-5 7-4 12 0 0-2-1-2-4-4 4-3 11 4 12 8 1 12-9 5-15 0 4-2 4-2 4 1-4 0-7-1-9Z"/></svg><span class="gb-label-full">Support GatorBait</span><span class="gb-label-short" aria-hidden="true">Support</span></a>
+        <button class="gb-menu-toggle" type="button" aria-expanded="false" aria-controls="gb-mobile-nav" aria-label="Open navigation"><span></span><span></span></button>
+      </div>
+    </div>
+    <nav id="gb-mobile-nav" class="gb-mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="https://www.gatorbaitmedia.com/">Front Page <span aria-hidden="true">↗</span></a>
+      <a href="https://www.gatorbaitmedia.com/gatorbait-media-blogs">Latest stories <span aria-hidden="true">↗</span></a>
+      <a href="https://www.gatorbaitmedia.com/magazine">Magazine <span aria-hidden="true">↗</span></a>
+      <a href="https://www.gatorbaitmedia.com/the-buddy-martin-show">GatorBait TV <span aria-hidden="true">↗</span></a>
+      <a href="https://www.gatorbaitmedia.com/the-buddy-martin-show#podcasts">Podcasts <span aria-hidden="true">↗</span></a>
+      <a href="https://gatorbait2026.itemorder.com/shop/home/">Store <span aria-hidden="true">↗</span></a>
+      <a href="https://www.gatorbaitmedia.com/account/my-account">Sign in <span aria-hidden="true">↗</span></a>
+      <a class="gb-mobile-support" href="#support-choice">Support GatorBait <span aria-hidden="true">↓</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="gb-hero gb-wrap" aria-labelledby="support-title">
+      <div class="gb-story">
+        <p class="gb-eyebrow"><span aria-hidden="true"></span>For the love of GatorBait</p>
+        <h1 id="support-title">Keep the <br>GatorBait<br><em>flame alive.</em></h1>
+        <p class="gb-hero-deck">We kept the flame alive.<br>Help us carry it forward.</p>
+        <p class="gb-intro">The stories. The voices. The conversations that connect Gator Nation. If GatorBait matters to you, here’s a simple way to support the work.</p>
+        <div class="gb-flame-line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2c1 6-5 7-4 12 0 0-2-1-2-4-4 4-3 11 4 12 8 1 12-9 5-15 0 4-2 4-2 4 1-4 0-7-1-9Z"/></svg><span>Independent voices. Unmistakably GatorBait.</span></div>
+      </div>
+
+      <section id="support-choice" class="gb-support-card" aria-labelledby="card-title" tabindex="-1">
+        <div class="gb-card-top"><span class="gb-eyebrow">Reader support</span><span class="gb-one-time">One time</span></div>
+        <h2 id="card-title">Make it possible.</h2>
+        <p class="gb-card-deck">Choose an amount that feels right for you.</p>
+        <fieldset class="gb-amounts">
+          <legend>Choose your support amount in US dollars</legend>
+          <div class="gb-amount-grid">
+            <button type="button" class="gb-amount" data-amount="10" aria-pressed="false">$10</button>
+            <button type="button" class="gb-amount" data-amount="25" aria-pressed="true">$25</button>
+            <button type="button" class="gb-amount" data-amount="50" aria-pressed="false">$50</button>
+            <button type="button" class="gb-amount" data-amount="100" aria-pressed="false">$100</button>
+            <button type="button" class="gb-amount gb-amount-other" data-amount="other" aria-pressed="false">Other</button>
+          </div>
+        </fieldset>
+        <div id="gb-custom-amount" class="gb-custom-amount" hidden>
+          <label for="gb-amount-input">Your amount <span>USD</span></label>
+          <div><span aria-hidden="true">$</span><input id="gb-amount-input" type="number" min="1" max="10000" step="0.01" inputmode="decimal" autocomplete="off" aria-describedby="gb-amount-feedback" placeholder="Enter amount"></div>
+          <p id="gb-amount-feedback" class="gb-input-feedback">Preview only. No payment will be taken.</p>
+        </div>
+        <div class="gb-benefit" id="gb-benefit" aria-live="polite">
+          <span class="gb-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h14v17l-7-4-7 4V4Z"/><path d="m9 9 2 2 4-4"/></svg></span>
+          <div><span class="gb-benefit-label">Proposed member benefit</span><h3 id="gb-benefit-title">Give $100+. Get a year of GatorBait.</h3><p id="gb-benefit-copy">12 months of All Access membership included. No automatic renewal.</p></div>
+        </div>
+        <div class="gb-member-question">
+          <label for="gb-current-member"><input type="checkbox" id="gb-current-member"><span>I’m already a GatorBait member</span></label>
+        </div>
+        <p class="gb-member-note" id="gb-member-note" hidden>Your membership would be reviewed before any payment. No automatic extension or duplicate membership is promised.</p>
+        <div class="gb-total" aria-live="polite"><span>One-time support</span><strong id="gb-support-total">$25<span>.00</span></strong></div>
+        <button class="gb-checkout" type="button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Checkout not open</button>
+        <p class="gb-preview-card-note">Design preview · No payments or personal details collected.</p>
+        <p class="gb-payment-terms"><strong>Voluntary reader support for GatorBait Media.</strong> GatorBait is a media business. This is not a charitable donation and does not qualify for a charitable tax deduction.</p>
+        <p class="gb-offer-note">The $100 minimum and membership offer shown here are proposed and subject to payment-provider review before launch.</p>
+      </section>
+    </section>
+
+    <section class="gb-purpose gb-wrap" aria-labelledby="purpose-title">
+      <div class="gb-purpose-heading"><p class="gb-eyebrow">Your support. Our work.</p><h2 id="purpose-title">More GatorBait. <br>For all of us.</h2></div>
+      <div class="gb-purpose-items">
+        <article><span class="gb-item-number">01</span><h3>Keep the stories coming</h3><p>Support the reporting, writing and photography that bring Gator sports to life.</p></article>
+        <article><span class="gb-item-number">02</span><h3>Keep the voices heard</h3><p>Help sustain Buddy Martin and the GatorBait voices you turn to for perspective.</p></article>
+        <article><span class="gb-item-number">03</span><h3>Keep us connected</h3><p>Help us keep the conversation going, from the daily coverage to the next show.</p></article>
+      </div>
+    </section>
+
+    <section class="gb-faq gb-wrap" aria-labelledby="faq-title">
+      <div><p class="gb-eyebrow">A few clear answers</p><h2 id="faq-title">Before you support.</h2></div>
+      <div class="gb-faq-items">
+        <details><summary>Is this a charitable donation?<span aria-hidden="true">+</span></summary><p>No. This is voluntary reader support for GatorBait Media, a media business. It is not a charitable donation and does not qualify for a charitable tax deduction.</p></details>
+        <details><summary>How would the one-year membership work?<span aria-hidden="true">+</span></summary><p>The proposed offer includes 12 months of All Access membership with a one-time payment of $100 or more. The included year would not automatically renew. The offer and payment process must be reviewed before payments open.</p></details>
+        <details><summary>What if I’m already a member?<span aria-hidden="true">+</span></summary><p>We would review your existing membership before any payment. This preview does not promise an extension, cancel an existing renewal or create a second membership.</p></details>
+        <details><summary>Can I make a payment here today?<span aria-hidden="true">+</span></summary><p>No. This is a design preview. You can explore the amount options, but no payment is taken and no personal information is collected.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="gb-footer">
+    <div class="gb-wrap gb-footer-inner"><div><a href="https://www.gatorbaitmedia.com/" aria-label="GatorBait home"><img src="assets/gatorbait-logo.webp" width="560" height="150" alt="GatorBait" loading="lazy"></a><p>Old school journalism. A future we build together.</p></div><div class="gb-footer-end"><a href="https://www.gatorbaitmedia.com/">Back to GatorBait <span aria-hidden="true">↗</span></a><p>© 2026 GatorBait Media · Design preview</p></div></div>
+  </footer>
+</body>
+</html>

@@ -1,5 +1,5 @@
-/* GatorBait Magazine, Swamp Night loader (Nov. 8, 2026).
- * Mounts the frozen Swamp Night page (magazine/swamp-night/index.html, same commit as this file) inside a same-origin
+/* GatorBait Magazine, digital edition loader (Nov. 9, 2026; was the Swamp Night loader).
+ * Mounts the digital-edition page (magazine/swamp-night/index.html; the Nov. 7 pregame page is kept as pregame-20261107.html, same commit as this file) inside a same-origin
  * blob-URL iframe on /magazine only. Contract is the existing one: one root #gbm-magazine-page, html.gbm-magazine-live
  * while mounted, window.__GBM_MAG26__ {sync, ready, build, version}; removed on every other route.
  * Resources resolve against the pinned jsDelivr directory this script itself was loaded from (document.currentScript),
@@ -7,7 +7,7 @@
  * 8-second fallback restores the native page. */
 (function () {
   'use strict';
-  var BUILD = 'swamp-night-widgets-20261108', VERSION = '2';
+  var BUILD = 'digital-edition-20261109', VERSION = '3';
   if (window.__GBM_MAG26__) { window.__GBM_MAG26__.sync(); return; }
   var cs = document.currentScript, SRC = (cs && cs.src) || '';
   var BASE = SRC.replace(/sports-live\/[^\/?#]*(?:[?#].*)?$/, 'magazine/swamp-night/');
@@ -61,9 +61,9 @@
     styles();
     var my = ++seq;
     var m = document.createElement('main'); m.id = 'gbm-magazine-page'; m.className = 'mz26 sn26';
-    m.setAttribute('aria-label', 'GatorBait Magazine: Swamp Night'); m.setAttribute('data-mz-build', BUILD); m.setAttribute('data-mz-version', VERSION);
+    m.setAttribute('aria-label', 'GatorBait Magazine: Digital edition'); m.setAttribute('data-mz-build', BUILD); m.setAttribute('data-mz-version', VERSION);
     var f = document.createElement('iframe');
-    f.title = 'GatorBait Magazine, Florida vs. Oklahoma pregame edition'; f.setAttribute('scrolling', 'no'); f.style.height = '3200px';
+    f.title = 'GatorBait Magazine, current digital edition'; f.setAttribute('scrolling', 'no'); f.style.height = '3200px';
     m.appendChild(f); place(m); doc.classList.add('gbm-mq', 'gbm-magazine-live');
     fetch(BASE + 'index.html', { credentials: 'omit' }).then(function (r) {
       if (!r.ok) throw new Error('page ' + r.status); return r.text();

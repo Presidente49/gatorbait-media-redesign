@@ -700,9 +700,10 @@ root.__bcLeadReconciled=true;
 var mediaId=function(h){return(/\/media\/([^/]+~mv2\.(?:jpe?g|png|webp))(?:\/|$|\?)/i.exec(h||'')||[])[1]||'';};
 if(current&&storyPath(current.href)===url&&currentImage&&mediaId(currentImage.currentSrc||currentImage.src)===mediaId(p[4])&&currentTitle&&currentTitle.textContent.trim()===p[1]&&(author?currentAuthor&&currentAuthor.textContent.trim()==='By '+author:!currentAuthor))return;
 var id=(/\/media\/([^/~]+)/.exec(p[4])||[])[1],native=COVER_META[id]||{},credit=native.credit||(D.credits||{})[id]||p[6]||'',alt=native.alt||(D.imageAlts||{})[id]||p[5]||p[1];
-var photo=wixPhoto(p[4]).replace('w_480,h_320','w_1200,h_800');
+var leadPhoto=function(w){return wixPhoto(p[4]).replace('w_480,h_320','w_'+w+',h_'+Math.round(w*2/3)).replace(',q_80/',',q_80,enc_auto/');};
+var photo=leadPhoto(1200),srcset=leadPhoto(480)+' 480w, '+leadPhoto(800)+' 800w, '+photo+' 1200w';
 var date=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',month:'long',day:'numeric',year:'numeric'}).format(new Date(p[0]));
-lead.innerHTML='<figure><a href="'+esc(url)+'"><img src="'+esc(photo)+'" alt="'+esc(alt)+'" width="1200" height="800" loading="eager" decoding="async" fetchpriority="high"></a>'+(credit?'<figcaption>'+esc(credit)+'</figcaption>':'')+'</figure><div class="sh-lead-copy"><p class="sh-kicker">'+esc(p[3])+'</p><a href="'+esc(url)+'"><h1>'+esc(p[1])+'</h1></a>'+homepageByline(p[3],'p')+(p[7]?'<p class="sh-deck">'+esc(p[7])+'</p>':'')+'<p class="sh-meta">'+esc(p[3])+' · '+esc(date)+'</p><a class="sh-read" href="'+esc(url)+'">Read the story <span aria-hidden="true">→</span></a></div>';
+lead.innerHTML='<figure><a href="'+esc(url)+'"><img src="'+esc(photo)+'" srcset="'+esc(srcset)+'" sizes="(max-width: 700px) 100vw, (max-width: 1099px) 60vw, 800px" alt="'+esc(alt)+'" width="1200" height="800" loading="eager" decoding="async" fetchpriority="high"></a>'+(credit?'<figcaption>'+esc(credit)+'</figcaption>':'')+'</figure><div class="sh-lead-copy"><p class="sh-kicker">'+esc(p[3])+'</p><a href="'+esc(url)+'"><h1>'+esc(p[1])+'</h1></a>'+homepageByline(p[3],'p')+(p[7]?'<p class="sh-deck">'+esc(p[7])+'</p>':'')+'<p class="sh-meta">'+esc(p[3])+' · '+esc(date)+'</p><a class="sh-read" href="'+esc(url)+'">Read the story <span aria-hidden="true">→</span></a></div>';
 root.setAttribute('data-gazette-newest',new Date(p[0]).toISOString());
 root.setAttribute('data-gazette-source','current-feed');
 var notice=root.querySelector('#sh-freshness');if(notice)notice.textContent='';
@@ -818,7 +819,11 @@ render();}
 function sync(){if(document.querySelector(R+':not([data-bc])'))build();}
 /* Refresh: feed every 3 min, scoreboard every 5 min, ESPN every 30 s inside the game window; all again when the tab comes back. */
 function refresh(all){var j=[loadLive()];if(all){j.push(loadFeed(),loadSB());}return Promise.all(j).then(function(){return window_()&&!D.live?loadLive():0;}).then(render);}
-loadSB().then(function(){return Promise.all([loadFeed(),loadLive(),loadCfg()]);}).then(render);
+/* Independent story/config requests must not wait on the scoreboard.
+   Each completed source updates the existing root; the live-game request still depends on scoreboard data. */
+loadFeed().then(render);
+loadCfg().then(render);
+loadSB().then(function(){render();return loadLive();}).then(render);
 var n=0;setInterval(function(){n++;if(document.hidden)return;if(n%6===0)refresh(1);else if(window_())refresh(0);},3e4);
 setInterval(function(){if(!document.hidden)cdTick();},3e4);
 document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh(1);});

@@ -24,7 +24,7 @@ const read = (p) => readFileSync(join(repo, p), 'utf8');
 // 'postgame' (the postgame issue) swaps the pregame skin for src/magazine-postgame.css and adds src/magazine-postgame.js plus the
 // site's existing signup component (src/capture.js, guarded by window.GBM_CAPTURE, so a page that already loaded it keeps one copy).
 // The weekly and pregame bundles are built exactly as before.
-const POSTGAME = VARIANT === 'postgame' || /-postgame$/.test(VARIANT); // 'georgia-postgame' etc. use the postgame skin and loader fixture, built to sports-live/magazine-<variant>.js
+const POSTGAME = VARIANT === 'postgame' || /-postgame$/.test(VARIANT) || VARIANT === 'oklahoma-week'; // 'georgia-postgame' and 'oklahoma-week' (Nov. 6 six-story edition) use the postgame skin and loader fixture, built to sports-live/magazine-<variant>.js
 const css = (read('sports-live/src/magazine.css') + read(POSTGAME ? 'sports-live/src/magazine-postgame.css' : 'sports-live/src/magazine-pregame.css')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
 // capture.js goes first: magazine.js mounts synchronously at its end, and the postgame signup needs window.GBM_CAPTURE by then.
 const runtimeBase = (POSTGAME ? read('sports-live/src/capture.js') + '\n;' : '') + read('sports-live/src/magazine.js') + read('sports-live/src/magazine-feed.js') + read('sports-live/src/magazine-pregame.js') +

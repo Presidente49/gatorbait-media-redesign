@@ -1,0 +1,625 @@
+{
+ "issue": "2026-11-06-oklahoma-week",
+ "siteId": "18fb3a4e-d7f6-414a-aeb9-3047db3ea115",
+ "source": "Wix Blog API, published version, read-only",
+ "order": [
+  "fridays",
+  "show",
+  "soothsayer",
+  "scouting1",
+  "cfp",
+  "monster",
+  "goose",
+  "yost"
+ ],
+ "orderNote": "Order kept as given by the coordinator, with Scouting Oklahoma Part 1 directly after the Soothsayer. Nov. 7 additions and removals (Brenden): Buddy Martin's new column 'The Monster That's Never Fed. A Football Coaches' Lament.' (post 524998de, published Nov. 7, 2026 UTC) runs first in the Columns section, ahead of the Golden Goose and Yost columns, because it is the newest and longest of the three. The two basketball stories (Condon, McMiller) were taken out of the edition on the owner's order ('I do not want basketball stories in there'); the posts are untouched and stay live. The edition date label stays 'Nov. 6, 2026 pregame edition'. The web bundle (sports-live) and the email are not rebuilt by this tool and still carry their earlier story lists.",
+ "rereadAfterFirstReceipt": {
+  "when": "Nov. 6, 2026, evening (after the 21:32Z Condon republish), read-only GET /blog/v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT, published versions",
+  "method": "lastPublishedDate compared with the first receipt, plus a text fingerprint (FNV-1a over all text runs, computed on the Wix side and again on the saved body) for all eight posts",
+  "posts": [
+   {
+    "key": "cfp",
+    "id": "afe70819-bc8a-4c89-abf6-bd4749038259",
+    "firstReceipt": "2026-11-04T13:41:39.717Z",
+    "now": "2026-11-04T13:41:39.717Z",
+    "changed": false
+   },
+   {
+    "key": "show",
+    "id": "b907cfa6-7a31-4d16-a687-7a39e9f15cc3",
+    "firstReceipt": "2026-11-06T17:32:12.552Z",
+    "now": "2026-11-06T17:32:12.552Z",
+    "changed": false
+   },
+   {
+    "key": "goose",
+    "id": "ee624c8a-268c-4f94-889e-6cd3de939f6f",
+    "firstReceipt": "2026-11-05T20:09:57.248Z",
+    "now": "2026-11-05T20:09:57.248Z",
+    "changed": false
+   },
+   {
+    "key": "yost",
+    "id": "bd815138-7f0c-4f97-a642-1cb5862e3f5a",
+    "firstReceipt": "2026-11-04T17:13:08.525Z",
+    "now": "2026-11-04T17:13:08.525Z",
+    "changed": false
+   }
+  ]
+ },
+ "addedPosts": [
+  {
+   "key": "fridays",
+   "id": "5aa23ca4-73b9-4747-a58b-b0d862a15ce3",
+   "lastPublishedDate": "2026-11-06T17:18:56.502Z",
+   "firstPublishedDate": "2026-11-06T15:19:53.597Z",
+   "hasUnpublishedChanges": false,
+   "author": "Brenden Martin (owner account; same author as the Thursday show recap)",
+   "raw": "source/raw/5aa23ca4-73b9-4747-a58b-b0d862a15ce3.api.json"
+  },
+  {
+   "key": "soothsayer",
+   "id": "59a065eb-f45f-4e4b-a898-f53481bebf54",
+   "lastPublishedDate": "2026-11-06T16:06:05.184Z",
+   "firstPublishedDate": "2026-11-06T15:50:45.364Z",
+   "hasUnpublishedChanges": false,
+   "author": "Franz Beard (per the 'By Franz Beard' line; Wix member c2d49068, the same member as the Franz Beard column on the live site)",
+   "raw": "source/raw/59a065eb-f45f-4e4b-a898-f53481bebf54.api.json"
+  },
+  {
+   "key": "scouting1",
+   "id": "2d31ea6f-538f-4d40-8bca-e497943d80e1",
+   "lastPublishedDate": "2026-11-06T22:00:33.325Z",
+   "firstPublishedDate": "2026-11-06T22:00:33.325Z",
+   "hasUnpublishedChanges": false,
+   "author": "GatorBait Staff (Wix member fade11f0, the same member as the first CFP Top 25 post)",
+   "raw": "source/raw/2d31ea6f-538f-4d40-8bca-e497943d80e1.api.json",
+   "acquired": "Handoff-package snapshot of the published version (acquired 2026-11-06 22:19:25 UTC), wrapped as {post: ...} and normalized; NOT a fresh Wix read. Never edited since publish per the snapshot (first and last published dates are equal). See source/raw/2d31ea6f-538f-4d40-8bca-e497943d80e1.NOTE.txt."
+  },
+  {
+   "key": "monster",
+   "id": "524998de-233f-4703-8bff-c12b0a44a8d1",
+   "lastPublishedDate": "2026-11-07T03:42:41.578Z",
+   "firstPublishedDate": "2026-11-07T02:37:15.015Z",
+   "hasUnpublishedChanges": false,
+   "author": "Buddy Martin (member ae876af8, the same member as the Golden Goose and Yost columns)",
+   "raw": "source/524998de-233f-4703-8bff-c12b0a44a8d1.json",
+   "acquired": "Nov. 7, 2026, read-only: draft (GET /blog/v3/draft-posts/{id}?fieldsets=RICH_CONTENT) and published (GET /v3/posts/{id}?fieldsets=URL&fieldsets=RICH_CONTENT) versions, identical block by block (62 top-level blocks, FNV-1a 32 fingerprints); draft editedDate 2026-11-07T04:15:18Z. The live post was being hand-edited by Brenden in the Wix editor at the time, so a later edit will not be in this edition until the source is re-read. The source file was rebuilt from the saved pre-reformat rollback nodes plus the live structure and fingerprint-checked block by block (see source.note in the file); there is no raw API file because the tool sandbox cannot save one."
+  }
+ ],
+ "images": [
+  {
+   "use": "Cover (supplied by Codex)",
+   "media": "d3cfa5_672df0d97bf64db9bd8b599c4b11c35b.pdf; email proof d3cfa5_7a38b34f125b4ec9b91f1932bc28b70e~mv2.png; photos ae876a_4ea1277b27d143cbb903195dcde1bf71~mv2.png (Meyer) and 16b519_bd4db014e3cb488f82927284dbf7f9c2~mv2.jpg (Swamp)",
+   "credit": "Meyer: GatorBait Photo (GatorBait archive); The Swamp: Chris Spears, GatorBait Media",
+   "seen": "Used unchanged, as in the first receipt"
+  },
+  {
+   "use": "1 Best Fridays hero (NEW)",
+   "media": "d3cfa5_9d5c633efb33434689e9162eab270f7c~mv2.jpg",
+   "size": "1920 x 1080",
+   "credit": "Video still: The Buddy Martin Show / Gator Bait Media. (last paragraph of the live body, and the post media alt text)",
+   "seen": "Opened full size. A produced video-call still: 'URBAN MEYER - BUDDY MARTIN' and 'BEST FRIDAYS' title art behind two call tiles. Left tile: Buddy Martin in a GatorBait cap with a 'Buddy Martin, GATORBAITMEDIA.COM' name tag (our own mark). Right tile: a man in a cap and pink shirt, tile letter 'M'; the post and its caption name him as Urban Meyer (not verified from the frame). No third-party watermark, logo or credit anywhere in the frame."
+  },
+  {
+   "use": "2 Show hero",
+   "media": "d3cfa5_886c22d32224408e933692539abaa54c~mv2.jpg",
+   "size": "3000 x 1687",
+   "credit": "Photo by Chris Spears, GatorBait Media.",
+   "seen": "Unchanged from the first receipt (sideline huddle, 'Chris Spears' signature)"
+  },
+  {
+   "use": "3 Soothsayer hero (NEW)",
+   "media": "d3cfa5_026d2a4d2be04a91b8c32317fed5f623~mv2.jpg",
+   "size": "1471 x 838",
+   "credit": "Archival photo by Chris Spears, GatorBait Media. (last paragraph of the live body: 'Jadan Baugh dives into the end zone against Ole Miss in The Swamp on September 26, 2026.'; same credit in the post media alt text; file name 'Baugh first TD dive - Florida vs Ole Miss 2026-09-26.jpg')",
+   "seen": "Opened full size. Baugh (13) diving at the goal line against Ole Miss in The Swamp, scoreboard Ole Miss 0, Florida 0. Only in-stadium signage (SEC Champions banner, ribbon-board ad) is visible; no overlay watermark, no third-party credit. The frame has NO photographer signature, so the Chris Spears credit rests on the live body's credit line, the post's media alt text and the order that names it, not on the file itself (see flags)."
+  },
+  {
+   "use": "4 Scouting Oklahoma Part 1 hero (NEW)",
+   "media": "16b519_cf457578f2f644d8ad819a988cd40684~mv2.jpg",
+   "size": "3000 x 1730",
+   "credit": "Photo by Chris Spears, GatorBait Media. (first paragraph of the live body: 'Florida's defense huddles during the game at Auburn on Sept. 19, 2026. Photo by Chris Spears, GatorBait Media.'; same text in the post media alt text; file name '9.19.26 Gator Football vs Auburn (82 of 178).jpg')",
+   "seen": "Opened (package copy articles/images/2d31ea6f-538f-4d40-8bca-e497943d80e1.jpg, sha256 66c8c850...77d1eb, 3000 x 1730, matches the package image manifest). Florida defenders in white jerseys and orange pants huddle on the field with a trainer carrying Gatorade bottles; a 'Chris Spears Photography' signature is in the bottom-right corner, so the credit is provable from the file. Only stadium signage and crowd are visible; no third-party watermark or credit overlay. Owned archival photo from Auburn, Sept. 19, 2026: the caption names Auburn and the date and must not be read as Oklahoma-game action."
+  },
+  {
+   "use": "7 First CFP hero",
+   "media": "d3cfa5_91591597fa63490993a23e4874d5da53~mv2.png",
+   "size": "2160 x 2700",
+   "credit": "Graphic: GatorBait Media.",
+   "seen": "Unchanged; now an inside story instead of the web cover story"
+  },
+  {
+   "use": "8 Goose",
+   "media": "none: pull quote (Buddy Martin)",
+   "credit": "n/a",
+   "seen": "Shared lead art not carried (owner direction)"
+  },
+  {
+   "use": "9 Yost",
+   "media": "none: pull quote (Buddy Martin)",
+   "credit": "n/a",
+   "seen": "Public-domain archive photo not carried (owner direction)"
+  },
+  {
+   "use": "10 Monster column opener art (NEW)",
+   "media": "d3cfa5_56a45329d0904884b84bfe7d7adabfe7~mv2.png",
+   "size": "2400 x 1350",
+   "credit": "Graphic: GatorBait Media.",
+   "seen": "Opened full size. Original typographic and vector graphic by the graphic desk (navy watch dial, the column's own phrase 'recruiting starts now' on the rim, headline, deck and byline). No photograph, no person, no AI image, no third-party mark. Carried in the magazine as assets/week2/monster-column-art.png. It carries no ChatGPT Pro provenance; the standing art-source rule (final artwork from regular ChatGPT Pro) is a decision for the controller."
+  },
+  {
+   "use": "10 Monster column, floated portrait (NEW)",
+   "media": "d3cfa5_e70f5fa452e74c02add48f9f1e26f69c~mv2.jpg",
+   "size": "495 x 470 (cropped to 390 x 448 for the magazine)",
+   "credit": "Nick Saban photo courtesy of ESPN",
+   "seen": "Opened full size. Studio-style head-and-shoulders portrait of Nick Saban, no overlay or watermark. Supplied by Brenden for this column and already live in the post (alt 'Nick Saban. Photo courtesy of ESPN.'). The credit line is the live caption, kept word for word. Cropped tight to head and shoulders and floated left at 1.5 in wide (260 ppi) in the Letter edition and the phone edition."
+  }
+ ],
+ "flags": [
+  "PROFANITY, owner decision: the Soothsayer column says 'Oklahoma (4-4, 2-3 SEC) got bitch-slapped into submission by South Carolina' (2nd paragraph). Kept exactly as written. It appears in the two PDFs only; the web bundle and the email carry the title and excerpt, not the body.",
+  "Soothsayer: the stray one-letter paragraph 'K' (between '...hit hard by the injury bug?' and 'Venables, who got a contract extension...') and one whitespace-only paragraph were removed with the 22 other empty paragraphs. Nothing else in the column was changed.",
+  "Soothsayer copy left as published (from the Nov. 6 fact desk, comment 6692229038, ESPN checked): 'three weeks ago' for Oklahoma's win over Texas is almost four (Oct. 10); the spreads (Florida 6.5, Texas 2.5) have moved on ESPN to 6 and 3. Records, rankings, kickoff times and TV for the seven SEC games match ESPN. Not checked by anyone: Oklahoma 336.9 yards per game, Florida 13th in the SEC on defense, Stockton 35 catches for 365 yards, Tennessee 35 sacks. This build verifies none of it.",
+  "Soothsayer hero credit: the Baugh frame carries no signature in the file; the Chris Spears credit comes from the live body and the order. If the owner wants the bar the first receipt used for the rejected Spurrier frame (credit provable from the file), swap this story to a pull quote.",
+  "Best Fridays hero is a video-call composite, not a photograph, and the guest tile is small. It is the owner-named hero and it is our own show footage.",
+  "Bylines: Best Fridays and the Thursday show recap both sit under the owner account (Brenden Martin). A show or staff byline may be intended; the magazine uses the post author.",
+  "Captions: the live captions of both new heroes begin 'Cover: '. That label is dropped in the magazine (it would read as a claim about this magazine's cover); the rest of each caption is verbatim.",
+  "Best Fridays carries three link-only paragraphs, their section heading and a two-line web promo; all dropped (no outbound links in the PDFs). The words 'The complete Urban Meyer interview is available here:' and the other lead-ins go with them.",
+  "Cover type: the supplied cover is set in Impact, Georgia and Arial; everything built here is Barlow. The cover art was not changed.",
+  "Web cover 'Also inside' shows at most six lines (shared renderer); the two Buddy Martin columns share the sixth line. All eight web-issue stories are listed in the sections below it; the web issue does not carry Scouting Oklahoma Part 1 yet.",
+  "Scouting Oklahoma Part 1 (added to this source, nine stories now): the web bundle (sports-live), the email and the two built PDFs are still the eight-story builds and do not carry it; nothing in sports-live/, newsletter/ or print-stage/ was changed for it.",
+  "Part 1 body is the handoff-package snapshot (acquired 22:19Z Nov. 6) of the published version, not a fresh Wix read; it was never edited after publish (first and last published dates are both 2026-11-06T22:00:33.325Z). Re-read the live post before any build that ships it. The 'api' string on its receipt entry is the normalizer's standard endpoint text, not a call made in this build.",
+  "Part 1 hero: owned Chris Spears photo from the Auburn game on Sept. 19, 2026; the caption says so. The story is about the Oklahoma game, so the caption must not be shortened or reworded to imply Oklahoma-game action. Its credit is provable from the file (signature in the corner).",
+  "Part 1 'Key numbers' list: the nine list items (Rankings, Scoring, Rushing, Passing, Sacks, Third down, Red zone, Turnovers, Common opponents) are carried as nine paragraphs by prepare.py, which writes every list item as a paragraph (no bullet markup); wording unchanged. The statistics, rankings, depth-chart and availability statements are as published ('through Oct. 31' and 'SEC availability reports released this week') and were not verified by this build.",
+  "Part 1 title uses a straight apostrophe in 'Oklahoma's' and the body uses straight apostrophes and straight double quotes, unlike the other stories (curly); copied as published, no typographic change made.",
+  "Nov. 7 column in a Nov. 6-dated edition: the issue date label stays 'Nov. 6, 2026 pregame edition' (owner instruction). Brenden calls the Monster column a Nov. 7 column and Wix stamps it Nov. 7 UTC (first published 02:37Z, last published 03:42Z); on the Eastern clock (EST, UTC-5) that is Friday, Nov. 6 at 9:37 p.m. and 10:42 p.m. ET, inside the edition's date. The credits page line 'Complete stories ... as published through Friday, Nov. 6, 2026' is therefore true by the Eastern clock; it would need a change only if the owner republishes the column on Nov. 7 ET.",
+  "Monster column subheads: the live post carries five level-2 subheads ('The quiet part out loud', 'The lament of almost every father', 'Two masters, one life', 'A weird drive home', 'An old man's prayer'). They are not in Buddy's original filing (the saved rollback nodes show dividers there); the Nov. 7 reformat added them in place of the dividers. The magazine keeps them as plain subheads with no rule or ornament, so there are no section-break dividers anywhere in the story. If the owner wants no subheads either, the builder plan entry has one switch (subs: 'none').",
+  "Monster column wording: every body paragraph is carried word for word and in order. The live reformat split the Terry Saban paragraph in two ('...Miss Terry told him.' / '\\u201cSo if you feel...'); the magazine keeps that split. The live post, not Buddy's first filing, is the source."
+ ],
+ "posts": [
+  {
+   "id": "5aa23ca4-73b9-4747-a58b-b0d862a15ce3",
+   "key": "fridays",
+   "title": "Best Fridays: Urban Meyer Looks Back as Florida Turns Toward Oklahoma",
+   "url": "https://www.gatorbaitmedia.com/post/best-fridays-urban-meyer-looks-back-as-florida-turns-toward-oklahoma",
+   "author": "Brenden Martin",
+   "lastPublishedDate": "2026-11-06T17:18:56.502Z",
+   "firstPublishedDate": "2026-11-06T15:19:53.597Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 569,
+   "bodyWordsAfter": 496,
+   "emptyParagraphsDropped": 0,
+   "whitespaceTrimmedBlocks": [],
+   "changes": [
+    {
+     "op": "caption-from-id",
+     "block": "fri-p-38",
+     "text": "Cover: Buddy Martin, left, interviews Urban Meyer in the taped conversation featured on Best Fridays. Video still: The Buddy Martin Show / Gator Bait Media.",
+     "reason": "Last paragraph is the photo caption and credit; it becomes the hero caption. The post-cover label 'Cover: ' is dropped from the caption because this magazine has its own cover and the label would read as a claim about it.",
+     "strippedPrefix": "Cover: ",
+     "captionUsed": "Buddy Martin, left, interviews Urban Meyer in the taped conversation featured on Best Fridays. Video still: The Buddy Martin Show / Gator Bait Media."
+    },
+    {
+     "op": "drop-id",
+     "block": "fri-p-25",
+     "kind": "h",
+     "text": "Watch the full interview and Friday's show",
+     "reason": "Heading of a closing section that is only video links ('Watch the full interview and Friday's show'); the links are not carried (no outbound links in the PDF), so the heading would be orphaned."
+    },
+    {
+     "op": "drop-id",
+     "block": "fri-p-28",
+     "kind": "p",
+     "text": "The complete Urban Meyer interview is available here: https://www.youtube.com/watch?v=Z9C_z-4MoSQ",
+     "reason": "Link-only paragraph: 'The complete Urban Meyer interview is available here:' plus a bare YouTube URL (no outbound links in the PDF)."
+    },
+    {
+     "op": "drop-id",
+     "block": "fri-p-31",
+     "kind": "p",
+     "text": "Friday's Best Fridays show, including the Edgar Thompson conversation and the morning's football and basketball lineup, is available here: h",
+     "reason": "Link-only paragraph: lead-in words plus a bare YouTube URL for the Friday show (no outbound links in the PDF)."
+    },
+    {
+     "op": "drop-id",
+     "block": "fri-p-36",
+     "kind": "p",
+     "text": "Read Gator Bait Media daily: https://www.gatorbaitmedia.com\nWatch The Buddy Martin Show: https://youtube.com/@TheBuddyMartinShow/live",
+     "reason": "Web promo lines: 'Read Gator Bait Media daily:' and 'Watch The Buddy Martin Show:' each followed by a bare URL (no outbound links in the PDF)."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/5aa23ca4-73b9-4747-a58b-b0d862a15ce3?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "b907cfa6-7a31-4d16-a687-7a39e9f15cc3",
+   "key": "show",
+   "title": "Tramell Jones Gets the Call: Buddy Martin Show Panel Backs Sumrall's QB Decision Before Oklahoma",
+   "url": "https://www.gatorbaitmedia.com/post/tramell-jones-gets-the-call-buddy-martin-show-panel-backs-sumrall-before-oklahoma",
+   "author": "Brenden Martin",
+   "lastPublishedDate": "2026-11-06T17:32:12.552Z",
+   "firstPublishedDate": "2026-11-06T14:33:33.103Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 539,
+   "bodyWordsAfter": 408,
+   "emptyParagraphsDropped": 6,
+   "whitespaceTrimmedBlocks": [],
+   "changes": [
+    {
+     "op": "caption-from-id",
+     "block": "pcredit",
+     "text": "Aaron Philo, No. 12, at left, and Tramell Jones Jr., No. 9, at right, on Florida's sideline against South Carolina on Oct. 10, 2026. Photo by Chris Spears, GatorBait Media.",
+     "reason": "Lead paragraph is the photo credit and caption; it becomes the hero caption."
+    },
+    {
+     "op": "drop-id",
+     "block": "p6",
+     "kind": "p",
+     "text": "WATCH THE FULL SHOW: https://www.youtube.com/watch?v=czm4gnJPE4w",
+     "reason": "Link-only paragraph: 'WATCH THE FULL SHOW:' plus a bare YouTube URL (no outbound links in the PDF)."
+    },
+    {
+     "op": "drop-id",
+     "block": "h14",
+     "kind": "h",
+     "text": "PIECES FROM THIS SHOW (YouTube links added as each posts)",
+     "reason": "Heading of a list that is only YouTube links ('YouTube links added as each posts')."
+    },
+    {
+     "op": "drop-id",
+     "block": "li0",
+     "kind": "li",
+     "text": "Full show: https://www.youtube.com/watch?v=czm4gnJPE4w",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li1",
+     "kind": "li",
+     "text": "Loren Meadows on the Tramell Jones decision (standalone interview cut): https://www.youtube.com/watch?v=_VRPwt7xnwg",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li2",
+     "kind": "li",
+     "text": "Ben Troupe: SEC weekend and CFP preview (standalone interview cut): https://www.youtube.com/watch?v=ho-MIbdyWAg",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li3",
+     "kind": "li",
+     "text": "Paul Wilson Jr.: the playoff picture (standalone interview cut): https://www.youtube.com/watch?v=n_QFbB_yMuQ",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li4",
+     "kind": "li",
+     "text": "Segment: Urban Meyer Ring of Honor: https://www.youtube.com/watch?v=ZcDpF0jCPGU",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li5",
+     "kind": "li",
+     "text": "Segment: the 24-team playoff debate: https://www.youtube.com/watch?v=Us_Nc7LIbtg",
+     "reason": "Link-only list item (bare YouTube URL)."
+    },
+    {
+     "op": "drop-id",
+     "block": "li6",
+     "kind": "li",
+     "text": "Shorts: \"daddy ball,\" dynasties are over, Notre Dame playing for its life, and more Watch: daddy ball · Notre Dame",
+     "reason": "Link-only list item (YouTube Shorts links)."
+    },
+    {
+     "op": "keep-prefix",
+     "block": "p15",
+     "removedText": " Catch The Buddy Martin Show live all season: https://youtube.com/@TheBuddyMartinShow/live — and read Gator Bait Media daily at https://www.gatorbaitmedia.com.",
+     "reason": "Closing promo sentences after the first one are two bare URLs (YouTube live page and the site); removed with their lead-in words."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/b907cfa6-7a31-4d16-a687-7a39e9f15cc3?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "59a065eb-f45f-4e4b-a898-f53481bebf54",
+   "key": "soothsayer",
+   "title": "The Soothsayer likes the Gators in a white knuckler",
+   "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-likes-the-gators-in-a-white-knuckler",
+   "author": "Franz Beard",
+   "lastPublishedDate": "2026-11-06T16:06:05.184Z",
+   "firstPublishedDate": "2026-11-06T15:50:45.364Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 1629,
+   "bodyWordsAfter": 1599,
+   "emptyParagraphsDropped": 24,
+   "whitespaceTrimmedBlocks": [
+    "ycssh130",
+    "sooth-p-2",
+    "sooth-p-4",
+    "sooth-p-6",
+    "t9ngm1590",
+    "sooth-p-30",
+    "sooth-p-34",
+    "oybi52024",
+    "sooth-p-46"
+   ],
+   "changes": [
+    {
+     "op": "drop-id",
+     "block": "ytom61",
+     "kind": "p",
+     "text": "By Franz Beard ",
+     "reason": "Display byline line in the body ('By Franz Beard'). The magazine byline comes from the post author."
+    },
+    {
+     "op": "drop-id",
+     "block": "31l5j103",
+     "kind": "p",
+     "text": "gatorbaitmedia.com",
+     "reason": "Display line 'gatorbaitmedia.com' (a link in the web body)."
+    },
+    {
+     "op": "drop-id",
+     "block": "b05mh1255",
+     "kind": "p",
+     "text": "K",
+     "reason": "Stray one-letter paragraph 'K' in the middle of the column (between the paragraph ending 'the injury bug?' and the Venables paragraph). Removed as ordered; nothing else in that paragraph area was touched."
+    },
+    {
+     "op": "caption-from-id",
+     "block": "sooth-p-48",
+     "text": "Cover: Jadan Baugh dives into the end zone against Ole Miss in The Swamp on September 26, 2026. Archival photo by Chris Spears, GatorBait Media.",
+     "reason": "Last paragraph is the photo caption and credit; it becomes the hero caption. The post-cover label 'Cover: ' is dropped from the caption because this magazine has its own cover.",
+     "strippedPrefix": "Cover: ",
+     "captionUsed": "Jadan Baugh dives into the end zone against Ole Miss in The Swamp on September 26, 2026. Archival photo by Chris Spears, GatorBait Media."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/59a065eb-f45f-4e4b-a898-f53481bebf54?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "2d31ea6f-538f-4d40-8bca-e497943d80e1",
+   "key": "scouting1",
+   "title": "Witten Off? Oklahoma's New Play-Caller vs. the Gators' Pass Rush (Scouting Oklahoma, Part 1)",
+   "url": "https://www.gatorbaitmedia.com/post/witten-off-oklahoma-s-new-play-caller-vs-the-gators-pass-rush-scouting-oklahoma-part-1",
+   "author": "GatorBait Staff",
+   "lastPublishedDate": "2026-11-06T22:00:33.325Z",
+   "firstPublishedDate": "2026-11-06T22:00:33.325Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 774,
+   "bodyWordsAfter": 756,
+   "emptyParagraphsDropped": 0,
+   "whitespaceTrimmedBlocks": [],
+   "changes": [
+    {
+     "op": "caption-from-id",
+     "block": "a1",
+     "text": "Florida's defense huddles during the game at Auburn on Sept. 19, 2026. Photo by Chris Spears, GatorBait Media.",
+     "reason": "First paragraph (italic) is the photo caption and credit; it becomes the hero caption. Unlike the other new heroes it sits at the top of the live body, and it carries no 'Cover: ' label, so no prefix is stripped."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/2d31ea6f-538f-4d40-8bca-e497943d80e1?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "afe70819-bc8a-4c89-abf6-bd4749038259",
+   "key": "cfp",
+   "title": "Gators No. 24 in First CFP Top 25 as Miami, Georgia Lead the Way",
+   "url": "https://www.gatorbaitmedia.com/post/gators-no-24-in-first-cfp-top-25-as-miami-georgia-lead-the-way",
+   "author": "GatorBait Staff",
+   "lastPublishedDate": "2026-11-04T13:41:39.717Z",
+   "firstPublishedDate": "2026-11-04T01:45:36.823Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 339,
+   "bodyWordsAfter": 324,
+   "emptyParagraphsDropped": 0,
+   "whitespaceTrimmedBlocks": [],
+   "changes": [
+    {
+     "op": "drop-id",
+     "block": "cfpimg",
+     "kind": "img",
+     "text": "Graphic: Gators No. 24 in the first College Football Playoff Top 25, Nov. 3, 2026. Florida is 5-3 and one of 10 SEC teams ranked; Oklahoma v",
+     "reason": "Graphic is the story hero in the magazine (used once); not repeated inline."
+    },
+    {
+     "op": "drop-id",
+     "block": "nadlbl",
+     "kind": "p",
+     "text": "ADVERTISEMENT",
+     "reason": "Sponsor label (web ad slot)."
+    },
+    {
+     "op": "drop-id",
+     "block": "nadimg",
+     "kind": "img",
+     "text": "Advertisement: Meldon Law, Gainesville, Florida. Visit MeldonLaw.com",
+     "reason": "Sponsor banner (Meldon Law ad, carries an outbound sponsor link); ads are not part of this edition."
+    },
+    {
+     "op": "drop-id",
+     "block": "cmore",
+     "kind": "p",
+     "text": "More from GatorBait: our Florida football coverage, schedule and the Florida vs. Oklahoma preview.",
+     "reason": "Web furniture: 'More from GatorBait' link list (words are link labels only)."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/afe70819-bc8a-4c89-abf6-bd4749038259?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "524998de-233f-4703-8bff-c12b0a44a8d1",
+   "key": "monster",
+   "title": "The Monster That’s Never Fed. A Football Coaches’ Lament.",
+   "url": "https://www.gatorbaitmedia.com/post/the-monster-that-s-never-fed-a-football-coaches-lament",
+   "author": "Buddy Martin",
+   "lastPublishedDate": "2026-11-07T03:42:41.578Z",
+   "firstPublishedDate": "2026-11-07T02:37:15.015Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 1478,
+   "bodyWordsAfter": 1443,
+   "emptyParagraphsDropped": 10,
+   "whitespaceTrimmedBlocks": [
+    "p17",
+    "p72"
+   ],
+   "changes": [
+    {
+     "op": "dek-from-id",
+     "block": "deck",
+     "kind": "q",
+     "text": "Nobody made these men do it. (Including Nick Saban) That’s the thing. They were built for it, and blessed by it, and eaten alive by it, all at the same time.",
+     "reason": "The two italic lines at the top of the live post are the story's deck. They run once, as the dek (standfirst) under the headline, and are not repeated in the body. Wording untouched; the literal line break between the two lines becomes a space."
+    },
+    {
+     "op": "caption-from-img",
+     "block": "saban",
+     "media": "d3cfa5_e70f5fa452e74c02add48f9f1e26f69c~mv2.jpg",
+     "text": "Nick Saban photo courtesy of ESPN",
+     "reason": "The live post floats an ESPN portrait of Nick Saban at the left with its caption. The magazine floats the same portrait (cropped tight to head and shoulders) at the left of the body with this caption as its credit. The image block is not carried as a body block."
+    },
+    {
+     "op": "drop-id",
+     "block": "7nmlf107",
+     "kind": "p",
+     "text": "By Buddy Martin",
+     "reason": "Display byline line in the body ('By Buddy Martin'). The magazine byline comes from the post author and appears once, in the byline slot (owner direction, Nov. 7)."
+    },
+    {
+     "op": "drop-id",
+     "block": "dylu4568",
+     "kind": "p",
+     "text": "gatorbaitmedia.com",
+     "reason": "Display line 'gatorbaitmedia.com' (a link in the web body), page furniture."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/v3/posts/524998de-233f-4703-8bff-c12b0a44a8d1?fieldsets=URL&fieldsets=RICH_CONTENT (published) and GET https://www.wixapis.com/blog/v3/draft-posts/524998de-233f-4703-8bff-c12b0a44a8d1?fieldsets=RICH_CONTENT (draft); both read-only, identical block by block (62 top-level nodes, same ids, lengths and FNV-1a 32 hashes) at draft editedDate 2026-11-07T04:15:18Z"
+  },
+  {
+   "id": "ee624c8a-268c-4f94-889e-6cd3de939f6f",
+   "key": "goose",
+   "title": "The Golden Goose Needs A Checkup — And The Schooner Stays Home",
+   "url": "https://www.gatorbaitmedia.com/post/the-golden-goose-needs-a-checkup-and-the-schooner-stays-home",
+   "author": "Buddy Martin",
+   "lastPublishedDate": "2026-11-05T20:09:57.248Z",
+   "firstPublishedDate": "2026-11-05T18:39:04Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 1334,
+   "bodyWordsAfter": 1326,
+   "emptyParagraphsDropped": 2,
+   "whitespaceTrimmedBlocks": [
+    "1pc1e87",
+    "k9s08233"
+   ],
+   "changes": [
+    {
+     "op": "drop-id",
+     "block": "creditp",
+     "kind": "p",
+     "text": "Photo: Spatms, CC BY-SA 4.0, via Wikimedia Commons",
+     "reason": "Credit line for the web lead art (Wikimedia, CC BY-SA). That art is not carried into this edition, so its credit is dropped with it."
+    }
+   ],
+   "quoteMarkAudit": [
+    {
+     "block": "cbu1340",
+     "open": 1,
+     "close": 0,
+     "straight": 0,
+     "starts": "He proudly told me, “You know, Nicki, my oldest daughter, lived with u"
+    },
+    {
+     "block": "1pc1e87",
+     "open": 1,
+     "close": 0,
+     "straight": 0,
+     "starts": "“I used to always tell our players that this was my goal really at eve"
+    },
+    {
+     "block": "eo8ne183",
+     "open": 2,
+     "close": 0,
+     "straight": 0,
+     "starts": "“James Bates, etc. That whole team, you saw a lot of them. “And then t"
+    },
+    {
+     "block": "k9s08233",
+     "open": 1,
+     "close": 0,
+     "straight": 0,
+     "starts": "“I got to see so many of coach Spurrier's players because they would l"
+    },
+    {
+     "block": "ukkzu284",
+     "open": 2,
+     "close": 1,
+     "straight": 0,
+     "starts": "“And I would tell our players that all the time. “It’s kind of funny. "
+    }
+   ],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/ee624c8a-268c-4f94-889e-6cd3de939f6f?fieldsets=URL&fieldsets=RICH_CONTENT"
+  },
+  {
+   "id": "bd815138-7f0c-4f97-a642-1cb5862e3f5a",
+   "key": "yost",
+   "title": "Apples, Oranges and Fielding Yost",
+   "url": "https://www.gatorbaitmedia.com/post/apples-oranges-and-fielding-yost",
+   "author": "Buddy Martin",
+   "lastPublishedDate": "2026-11-04T17:13:08.525Z",
+   "firstPublishedDate": "2026-11-04T16:02:56.043Z",
+   "hasUnpublishedChanges": false,
+   "bodyWordsBefore": 1071,
+   "bodyWordsAfter": 1052,
+   "emptyParagraphsDropped": 23,
+   "whitespaceTrimmedBlocks": [
+    "pmky7969",
+    "y05",
+    "y13"
+   ],
+   "changes": [
+    {
+     "op": "drop-id",
+     "block": "yimg",
+     "kind": "img",
+     "text": "Michigan vs. Minnesota football game, 1902 — leather-helmet era players in a cross-buck play as coach Fielding Yost watches from the sidelin",
+     "reason": "Public-domain Wikimedia archive photo of the 1902 game; not carried into this edition (owner direction, #34 comment 6690264123: owned photo, owned portrait or pull-quote treatment). The column carries a pull quote instead."
+    },
+    {
+     "op": "drop-id",
+     "block": "ycap",
+     "kind": "p",
+     "text": "Top photo: Michigan vs. Minnesota, 1902, by Benham and Allen. Public domain, via Wikimedia Commons.",
+     "reason": "Credit line for the dropped archive photo."
+    },
+    {
+     "op": "drop-id",
+     "block": "d33ep51",
+     "kind": "p",
+     "text": "By Buddy Mattin",
+     "reason": "Display byline line in the body reads 'By Buddy Mattin' (typo). The magazine byline comes from the post author, Buddy Martin. The live post still has the typo."
+    },
+    {
+     "op": "drop-id",
+     "block": "r5ik2743",
+     "kind": "p",
+     "text": "gatorbaitmedia.com ",
+     "reason": "Display line 'gatorbaitmedia.com' (a link in the web body)."
+    },
+    {
+     "op": "replace",
+     "block": "xjww84668",
+     "from": "saying ‘I don’t know — I wasn’t born yet!”",
+     "to": "saying “I don’t know — I wasn’t born yet!”",
+     "reason": "Mechanical quote pairing: opening single quote closed by a double quote; made a matched double pair. No wording change."
+    }
+   ],
+   "quoteMarkAudit": [],
+   "api": "GET https://www.wixapis.com/blog/v3/posts/bd815138-7f0c-4f97-a642-1cb5862e3f5a?fieldsets=URL&fieldsets=RICH_CONTENT"
+  }
+ ]
+}

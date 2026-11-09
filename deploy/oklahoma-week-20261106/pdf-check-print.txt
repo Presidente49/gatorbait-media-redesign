@@ -1,0 +1,10 @@
+fridays   19 paragraphs,  0 split across a column or page break, 0 missing   Best Fridays: Urban Meyer Looks Back as Florida Tu
+show      14 paragraphs,  0 split across a column or page break, 0 missing   Tramell Jones Gets the Call: Buddy Martin Show Pan
+soothsayer 33 paragraphs,  0 split across a column or page break, 0 missing   The Soothsayer likes the Gators in a white knuckle
+condon    19 paragraphs,  0 split across a column or page break, 0 missing   Condon flirts with triple-double as Gators smack J
+mcmiller   8 paragraphs,  0 split across a column or page break, 0 missing   Showtime at the O’Dome: McMiller’s Career-High 42 
+cfp        8 paragraphs,  0 split across a column or page break, 0 missing   Gators No. 24 in First CFP Top 25 as Miami, Georgi
+goose     49 paragraphs,  0 split across a column or page break, 0 missing   The Golden Goose Needs A Checkup — And The Schoone
+yost      26 paragraphs,  0 split across a column or page break, 0 missing   Apples, Oranges and Fielding Yost
+pages=22 size=612 x 792 pts (letter) bytes=3625719 http_in_text=False link_annotations=False
+PASS: all 8 stories present in full, no http, no link annotations

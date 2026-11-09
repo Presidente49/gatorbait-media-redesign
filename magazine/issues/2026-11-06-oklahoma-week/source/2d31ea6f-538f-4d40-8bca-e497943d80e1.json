@@ -1,0 +1,387 @@
+{
+ "id": "2d31ea6f-538f-4d40-8bca-e497943d80e1",
+ "title": "Witten Off? Oklahoma's New Play-Caller vs. the Gators' Pass Rush (Scouting Oklahoma, Part 1)",
+ "excerpt": "Oklahoma ranks 108th in scoring and 111th in total offense, and interim coordinator Jason Witten calls his first game at No. 24 Florida on Saturday. Part 1 of our scouting series: John Mateer, Rocky Beers and former Gator Hayden Hansen against a Gators defense with 23 sacks.",
+ "slug": "witten-off-oklahoma-s-new-play-caller-vs-the-gators-pass-rush-scouting-oklahoma-part-1",
+ "url": "https://www.gatorbaitmedia.com/post/witten-off-oklahoma-s-new-play-caller-vs-the-gators-pass-rush-scouting-oklahoma-part-1",
+ "source": {
+  "endpoint": "GET https://www.wixapis.com/blog/v3/posts/2d31ea6f-538f-4d40-8bca-e497943d80e1?fieldsets=URL&fieldsets=RICH_CONTENT",
+  "firstPublishedDate": "2026-11-06T22:00:33.325Z",
+  "lastPublishedDate": "2026-11-06T22:00:33.325Z",
+  "hasUnpublishedChanges": false,
+  "memberId": "fade11f0-405c-4425-bbab-111e5350dcdb",
+  "minutesToRead": 3,
+  "pricingPlanIds": []
+ },
+ "cover": {
+  "id": "16b519_cf457578f2f644d8ad819a988cd40684~mv2.jpg",
+  "width": 3000,
+  "height": 1730,
+  "alt": "Florida's defense huddles during the game at Auburn on Sept. 19, 2026. Photo by Chris Spears, GatorBait Media.",
+  "filename": "9.19.26 Gator Football vs Auburn (82 of 178).jpg"
+ },
+ "blocks": [
+  {
+   "k": "p",
+   "id": "a1",
+   "text": "Florida's defense huddles during the game at Auburn on Sept. 19, 2026. Photo by Chris Spears, GatorBait Media.",
+   "runs": [
+    {
+     "t": "Florida's defense huddles during the game at Auburn on Sept. 19, 2026. Photo by Chris Spears, GatorBait Media.",
+     "i": true
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a2",
+   "text": "Oklahoma's offense is 108th in the nation in scoring and 111th in total yards, and on Saturday it gets a new voice. Jason Witten, the tight ends coach who became interim offensive coordinator Monday, calls his first game when the Sooners (4-4, 2-3 SEC) visit No. 24 Florida (5-3, 3-3) at 7:45 p.m. ET on SEC Network.",
+   "runs": [
+    {
+     "t": "Oklahoma's offense is 108th in the nation in scoring and 111th in total yards, and on Saturday it gets a new voice. Jason Witten, the tight ends coach who became interim offensive coordinator Monday, calls his first game when the Sooners (4-4, 2-3 SEC) visit No. 24 Florida (5-3, 3-3) at 7:45 p.m. ET on SEC Network."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a3",
+   "text": "This is Part 1 of GatorBait's scouting series on Oklahoma: the Sooners' offense against Florida's defense. Part 2 turns to Florida's offense against Oklahoma's defense.",
+   "runs": [
+    {
+     "t": "This is Part 1 of GatorBait's scouting series on Oklahoma: the Sooners' offense against Florida's defense. Part 2 turns to Florida's offense against Oklahoma's defense."
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "a4",
+   "text": "Key numbers",
+   "runs": [
+    {
+     "t": "Key numbers"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "li",
+   "id": "a5-li0",
+   "text": "Rankings: Florida is No. 24 in the College Football Playoff rankings and No. 25 in the AP poll. Oklahoma is unranked.",
+   "runs": [
+    {
+     "t": "Rankings: ",
+     "b": true
+    },
+    {
+     "t": "Florida is No. 24 in the College Football Playoff rankings and No. 25 in the AP poll. Oklahoma is unranked."
+    }
+   ],
+   "list": "ul"
+  },
+  {
+   "k": "li",
+   "id": "a5-li1",
+   "text": "Scoring: Oklahoma scores 22.0 points per game (108th nationally). Florida allows 28.1 (103rd).",
+   "runs": [
+    {
+     "t": "Scoring: ",
+     "b": true
+    },
+    {
+     "t": "Oklahoma scores 22.0 points per game (108th nationally). Florida allows 28.1 (103rd)."
+    }
+   ],
+   "list": "ul"
+  },
+  {
+   "k": "li",
+   "id": "a5-li2",
+   "text": "Rushing: Oklahoma gains 106.8 yards per game (128th). Florida allows about 133 (57th).",
+   "runs": [
+    {
+     "t": "Rushing: ",
+     "b": true
+    },
+    {
+     "t": "Oklahoma gains 106.8 yards per game (128th). Florida allows about 133 (57th)."
+    }
+   ],
+   "list": "ul"
+  },
+  {
+   "k": "li",
+   "id": "a5-li3",
+   "text": "Passing: Oklahoma gains 230.1 yards per game (66th). Florida allows 235.8 (104th).",
+   "runs": [
+    {
+     "t": "Passing: ",
+     "b": true
+    },
+    {
+     "t": "Oklahoma gains 230.1 yards per game (66th). Florida allows 235.8 (104th)."
+    }
+   ],
+   "list": "ul"
+  },
+  {
+   "k": "li",
+   "id": "a5-li4",
+   "text": "Sacks: Oklahoma has allowed 21, or 2.6 per game (112th). Florida has 23.",
+   "runs": [
+    {
+     "t": "Sacks: ",
+     "b": true
+    },
+    {
+     "t": "Oklahoma has allowed 21, or 2.6 per game (112th). Florida has 23."
+    }
+   ],
+   "list": "ul"
+  },
+  {
+   "k": "li",
+   "id": "a5-li5",
+   "text": "Third down: Oklahoma converts 36.5% (96th). Florida allows about 43% (119th).",
+   "runs": [
+    {
+     "t": "Third down: ",
+     "b": true
+    },
+    {
+     "t": "Oklahoma converts 36.5% (96th). Florida allows about 43% (119th)."
+    }
+   ],
+   "list": "ul"
+  },
+  {
+   "k": "li",
+   "id": "a5-li6",
+   "text": "Red zone: Oklahoma scores on 75.0% of trips (124th). Florida allows scores on 86.2% (91st).",
+   "runs": [
+    {
+     "t": "Red zone: ",
+     "b": true
+    },
+    {
+     "t": "Oklahoma scores on 75.0% of trips (124th). Florida allows scores on 86.2% (91st)."
+    }
+   ],
+   "list": "ul"
+  },
+  {
+   "k": "li",
+   "id": "a5-li7",
+   "text": "Turnovers: Oklahoma has given the ball away 15 times, the most in the SEC. Florida has 11 giveaways.",
+   "runs": [
+    {
+     "t": "Turnovers: ",
+     "b": true
+    },
+    {
+     "t": "Oklahoma has given the ball away 15 times, the most in the SEC. Florida has 11 giveaways."
+    }
+   ],
+   "list": "ul"
+  },
+  {
+   "k": "li",
+   "id": "a5-li8",
+   "text": "Common opponents: Texas, Georgia and South Carolina. Results are below.",
+   "runs": [
+    {
+     "t": "Common opponents: ",
+     "b": true
+    },
+    {
+     "t": "Texas, Georgia and South Carolina. Results are below."
+    }
+   ],
+   "list": "ul"
+  },
+  {
+   "k": "p",
+   "id": "a6",
+   "text": "Sources: Oklahoma's game notes (NCAA rankings through Oct. 31), FloridaGators.com statistics and ESPN.",
+   "runs": [
+    {
+     "t": "Sources: Oklahoma's game notes (NCAA rankings through Oct. 31), FloridaGators.com statistics and ESPN."
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "a7",
+   "text": "Mateer, the deep ball and a former Gator",
+   "runs": [
+    {
+     "t": "Mateer, the deep ball and a former Gator"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "a8",
+   "text": "Quarterback John Mateer is more big plays than steady plays. He has completed 162 of 247 passes (65.6%) for 1,835 yards, 13 touchdowns and seven interceptions. Ten of his touchdown passes have covered at least 20 yards, tied for the most in the SEC, according to Oklahoma.",
+   "runs": [
+    {
+     "t": "Quarterback John Mateer is more big plays than steady plays. He has completed 162 of 247 passes (65.6%) for 1,835 yards, 13 touchdowns and seven interceptions. Ten of his touchdown passes have covered at least 20 yards, tied for the most in the SEC, according to Oklahoma."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a9",
+   "text": "Fifth-year receiver Isaiah Sategna III leads the Sooners with 45 catches for 591 yards. Tight end Rocky Beers, a Colorado State transfer, averages 55.8 receiving yards per game, the best among SEC tight ends, and has four touchdowns.",
+   "runs": [
+    {
+     "t": "Fifth-year receiver Isaiah Sategna III leads the Sooners with 45 catches for 591 yards. Tight end Rocky Beers, a Colorado State transfer, averages 55.8 receiving yards per game, the best among SEC tight ends, and has four touchdowns."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a10",
+   "text": "The other tight end knows the building. Hayden Hansen, a 6-foot-8 transfer from Weatherford, Texas, started 34 of 37 games at Florida over four seasons and caught 57 passes for 611 yards. Oklahoma's depth chart lists him first at tight end, with Beers on the same line.",
+   "runs": [
+    {
+     "t": "The other tight end knows the building. Hayden Hansen, a 6-foot-8 transfer from Weatherford, Texas, started 34 of 37 games at Florida over four seasons and caught 57 passes for 611 yards. Oklahoma's depth chart lists him first at tight end, with Beers on the same line."
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "a11",
+   "text": "Pocket pressure",
+   "runs": [
+    {
+     "t": "Pocket pressure"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "a12",
+   "text": "The matchup to watch is Oklahoma's line against Florida's front. The Sooners have allowed 21 sacks, 2.6 per game. Florida has 23 sacks and 7.1 tackles for loss per game (14th nationally), and its 10 forced fumbles are tied for third in the FBS.",
+   "runs": [
+    {
+     "t": "The matchup to watch is Oklahoma's line against Florida's front. The Sooners have allowed 21 sacks, 2.6 per game. Florida has 23 sacks and 7.1 tackles for loss per game (14th nationally), and its 10 forced fumbles are tied for third in the FBS."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a13",
+   "text": "Jayden Woods, who plays the JACK edge spot, and defensive lineman Emmanuel Oyebadejo each have 4.5 sacks. Oyebadejo, a fifth-year transfer from Jacksonville State by way of Manchester, England, is questionable, according to the SEC availability report.",
+   "runs": [
+    {
+     "t": "Jayden Woods, who plays the JACK edge spot, and defensive lineman Emmanuel Oyebadejo each have 4.5 sacks. Oyebadejo, a fifth-year transfer from Jacksonville State by way of Manchester, England, is questionable, according to the SEC availability report."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a14",
+   "text": "Oklahoma's line is unsettled. Its depth chart lists Michael Fasusi or Ryan Fodje at left tackle and three players joined by \"or\" at right guard. Center Jake Maikkula is listed first, with Caleb Nitta, who made his first Oklahoma start at center against South Carolina, behind him.",
+   "runs": [
+    {
+     "t": "Oklahoma's line is unsettled. Its depth chart lists Michael Fasusi or Ryan Fodje at left tackle and three players joined by \"or\" at right guard. Center Jake Maikkula is listed first, with Caleb Nitta, who made his first Oklahoma start at center against South Carolina, behind him."
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "a15",
+   "text": "Florida without McCloud",
+   "runs": [
+    {
+     "t": "Florida without McCloud"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "a16",
+   "text": "Florida's front will be thinner. Defensive tackle Jeramiah McCloud, who leads the Gators with six quarterback hurries, is suspended for the game, and linebacker Jaden Robinson is out, according to the SEC availability report. Junior linebacker Myles Graham, a Gainesville native, has 55 tackles and anchors the middle.",
+   "runs": [
+    {
+     "t": "Florida's front will be thinner. Defensive tackle Jeramiah McCloud, who leads the Gators with six quarterback hurries, is suspended for the game, and linebacker Jaden Robinson is out, according to the SEC availability report. Junior linebacker Myles Graham, a Gainesville native, has 55 tackles and anchors the middle."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a17",
+   "text": "In the secondary, safety Bryce Thornton headlines the group, with transfer DJ Coleman alongside him. Florida allows 235.8 passing yards per game, but it held Georgia to a season-low 101 passing yards and no touchdown pass on Oct. 31.",
+   "runs": [
+    {
+     "t": "In the secondary, safety Bryce Thornton headlines the group, with transfer DJ Coleman alongside him. Florida allows 235.8 passing yards per game, but it held Georgia to a season-low 101 passing yards and no touchdown pass on Oct. 31."
+    }
+   ]
+  },
+  {
+   "k": "h",
+   "id": "a18",
+   "text": "No run game, and a pattern",
+   "runs": [
+    {
+     "t": "No run game, and a pattern"
+    }
+   ],
+   "level": 2
+  },
+  {
+   "k": "p",
+   "id": "a19",
+   "text": "Oklahoma rushes for 106.8 yards per game and has three rushing touchdowns all season. Junior Lloyd Avant leads the Sooners with 347 yards on 79 carries. Florida allows about 133 rushing yards per game.",
+   "runs": [
+    {
+     "t": "Oklahoma rushes for 106.8 yards per game and has three rushing touchdowns all season. Junior Lloyd Avant leads the Sooners with 347 yards on 79 carries. Florida allows about 133 rushing yards per game."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a20",
+   "text": "Oklahoma has followed every win with a loss and every loss with a win this season, according to its own notes, and its last game was a 42-25 loss to South Carolina. Florida would like to be the team that breaks the pattern.",
+   "runs": [
+    {
+     "t": "Oklahoma has followed every win with a loss and every loss with a win this season, according to its own notes, and its last game was a 42-25 loss to South Carolina. Florida would like to be the team that breaks the pattern."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a21",
+   "text": "The two teams share three opponents. Both beat Texas 27-24, Oklahoma on Oct. 10 in Dallas and Florida on Oct. 17 in Austin. Both lost to Georgia (Oklahoma 41-13, Florida 27-8) and to South Carolina (Oklahoma 42-25, Florida 38-19).",
+   "runs": [
+    {
+     "t": "The two teams share three opponents. Both beat Texas 27-24, Oklahoma on Oct. 10 in Dallas and Florida on Oct. 17 in Austin. Both lost to Georgia (Oklahoma 41-13, Florida 27-8) and to South Carolina (Oklahoma 42-25, Florida 38-19)."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a22",
+   "text": "Oklahoma coach Brent Venables said in the statement announcing the coordinator change, \"We need a change.\" Saturday night in The Swamp is the first look at what that change looks like.",
+   "runs": [
+    {
+     "t": "Oklahoma coach Brent Venables said in the statement announcing the coordinator change, \"We need a change.\" Saturday night in The Swamp is the first look at what that change looks like."
+    }
+   ]
+  },
+  {
+   "k": "p",
+   "id": "a23",
+   "text": "Sources: FloridaGators.com, SoonerSports.com and ESPN. Statistics are through Oct. 31. Availability is per the SEC availability reports released this week.",
+   "runs": [
+    {
+     "t": "Sources: FloridaGators.com, SoonerSports.com and ESPN. Statistics are through Oct. 31. Availability is per the SEC availability reports released this week.",
+     "i": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mobile speed fixes, proposal</title>
+<style>
+@font-face{font-family:Barlow;font-weight:400;src:local("Barlow")}
+body{margin:0;padding:20px 16px;max-width:720px;font:400 16px/1.5 Barlow,sans-serif;color:#08132f;background:#fff}
+h1{font:800 26px/1.15 Barlow,sans-serif;margin:0 0 6px}h2{font:800 18px/1.2 Barlow,sans-serif;margin:26px 0 6px;color:#fa4616}
+code,pre{font-family:Barlow,sans-serif;font-weight:600;background:#eef1f6;word-break:break-word;white-space:pre-wrap}pre{padding:10px;border-radius:4px}
+img{max-width:100%;height:auto;border:1px solid #dfe4ec}
+</style>
+</head>
+<body>
+<h1>Mobile speed fixes, proposal only</h1>
+<p>Nothing here is applied to the live site. Prototype is a local stub of the phone header in embed <code>fdc2127a</code>. Brenden OK'd a different logo look. Barlow only; orange #fa4616 and navy #08132f.</p>
+<img src="logo-before-after.png" alt="Before: script logo image. After: Barlow wordmark.">
+<h2>Patch 1: phone header logo (embed fdc2127a, rev 90, fp 5cbae9f9)</h2>
+<p>Replace the image markup (appears twice in the file: header and drawer) and add the CSS from <code>logo-stub.html</code> (<code>.gbm-ms-wm</code>).</p>
+<pre>old: &lt;a class="gbm-ms-logo" href="/"&gt;&lt;img src="'+L+'" alt="GatorBait Media"&gt;&lt;/a&gt;
+new: &lt;a class="gbm-ms-logo is-wm" href="/" aria-label="GatorBait Media home"&gt;&lt;span class="gbm-ms-wm" aria-hidden="true"&gt;Gator&lt;b&gt;Bait&lt;/b&gt;&lt;small&gt;Media&lt;/small&gt;&lt;/span&gt;&lt;/a&gt;</pre>
+<p>Also drop the <code>var L='...'</code> constant. Rollback: re-PATCH rev 90 text.</p>
+<h2>Patch 2: stop the hidden 200 KB logo download (embed 622d8ece, rev 60, fp 29072fec)</h2>
+<pre>old: &lt;img width="900" height="241" src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp" alt="GatorBait Media"&gt;
+new: &lt;img width="900" height="241" loading="lazy" decoding="async" src="https://static.wixstatic.com/media/d3cfa5_95dd8a25863b4556b7ba6398fcfd0316~mv2.webp/v1/fill/w_500,h_134,al_c,q_85,enc_auto/gatorbait.webp" alt="GatorBait Media"&gt;</pre>
+<h2>Patch 3: lead photo (embed 622d8ece), the big one</h2>
+<p>The feed hands back <code>/v1/fit/w_1000,h_880,al_c,q_80/file.png</code>, which Wix serves as a 1.74 MB PNG. Re-cut it as the repo already did in <code>sports-live/src/front-page.js</code> (<code>wixCut</code>).</p>
+<pre>old: function photo(p, eager) { return p.image ? '&lt;img src="' + esc(p.image) + '" alt="' + esc(p.alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + '&gt;' : ''; }
+new: function wc(s, w) { var m = /^(https:\/\/static\.wixstatic\.com\/media\/[^\/?#]+)(?:\/v1\/[^?#]*)?$/.exec(String(s || '')); return m ? m[1] + '/v1/fit/w_' + w + ',h_' + Math.round(w * 2 / 3) + ',al_c,q_80,enc_auto/gatorbait.jpg' : s; }
+function photo(p, eager) { return p.image ? '&lt;img src="' + esc(wc(p.image, 800)) + '" srcset="' + esc(wc(p.image, 480)) + ' 480w, ' + esc(wc(p.image, 800)) + ' 800w, ' + esc(wc(p.image, 1200)) + ' 1200w" sizes="(max-width: 700px) 100vw, 60vw" alt="' + esc(p.alt) + '" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async"' + (eager ? ' fetchpriority="high"' : '') + '&gt;' : ''; }</pre>
+<p>Patches 2 and 3 together add 488 characters: 14,469 becomes 14,957, under the 15,000 limit (checked). Fingerprint check and ESSENTIAL category re-send apply as usual.</p>
+</body>
+</html>

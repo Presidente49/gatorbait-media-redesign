@@ -1,0 +1,158 @@
+{
+ "issue": "GatorBait Magazine, Oklahoma week (Pregame edition), Friday, Nov. 6, 2026",
+ "editions": {
+  "letter": {
+   "file": "print-stage/gatorbait-magazine-oklahoma-week-2026-11-06-v2-letter.pdf",
+   "sha256": "af038526695a0091834256dbc2e7cf7c68ab5c03023d12e6a844f9ad871ad3cf",
+   "bytes": 10429557,
+   "pages": 35,
+   "pageSizePt": [
+    612.0,
+    792.0
+   ],
+   "title": "GatorBait Magazine | Florida vs. Oklahoma Pregame Edition | Nov. 6, 2026 (Letter edition)",
+   "author": "GatorBait Media",
+   "bookmarks": 22,
+   "externalLinks": 27,
+   "internalLinks": 17,
+   "fontFamilies": [
+    "AAAAAA+Barlow-Bold",
+    "BAAAAA+BarlowCondensed-ExtraBoldItalic",
+    "CAAAAA+BarlowCondensed-ExtraBold",
+    "DAAAAA+BarlowCondensed-Bold",
+    "EAAAAA+Barlow-Medium",
+    "FAAAAA+BarlowCondensed-BoldItalic",
+    "GAAAAA+Barlow-Regular",
+    "HAAAAA+Barlow-SemiBold",
+    "IAAAAA+Barlow-Italic"
+   ]
+  },
+  "phone": {
+   "file": "print-stage/gatorbait-magazine-oklahoma-week-2026-11-06-v2-phone.pdf",
+   "sha256": "b784e238155428b4cf2e00853e83187611b7f32adc306e1e4052843e5e4838d0",
+   "bytes": 4562539,
+   "pages": 53,
+   "pageSizePt": [
+    360.0,
+    642.0
+   ],
+   "title": "GatorBait Magazine | Florida vs. Oklahoma Pregame Edition | Nov. 6, 2026 (Phone edition)",
+   "author": "GatorBait Media",
+   "bookmarks": 22,
+   "externalLinks": 27,
+   "internalLinks": 18,
+   "fontFamilies": [
+    "AAAAAA+Barlow-Bold",
+    "BAAAAA+BarlowCondensed-ExtraBold",
+    "CAAAAA+Barlow-SemiBold",
+    "DAAAAA+BarlowCondensed-ExtraBoldItalic",
+    "EAAAAA+BarlowCondensed-Bold",
+    "FAAAAA+Barlow-Medium",
+    "GAAAAA+BarlowCondensed-BoldItalic",
+    "HAAAAA+Barlow-Regular",
+    "IAAAAA+Barlow-Italic"
+   ]
+  }
+ },
+ "creditManifest": [
+  {
+   "asset": "champ-2008-celebration.jpg",
+   "sha256": "807135c99b87931f97f065e095870b102191fd8624ac683f21775f8f2ae68bb1",
+   "bytes": 497620,
+   "pixels": [
+    1920,
+    1080
+   ],
+   "usedFor": "Ring of Honor opener",
+   "credit": "Jason Parkhurst/UAA Communications (official UF photograph; game played Jan. 8, 2009)"
+  },
+  {
+   "asset": "condon.jpg",
+   "sha256": "6ddfb5c8b371fe9df7927e23d5c07a3e1161aa6a586603e0691355f6e7b93f6a",
+   "bytes": 1025663,
+   "pixels": [
+    2000,
+    2651
+   ],
+   "usedFor": "Condon story",
+   "credit": "Photo by Chris Spears, GatorBaitMedia.com (October exhibition against Stetson, not the Jacksonville game)"
+  },
+  {
+   "asset": "cover-v2.png",
+   "sha256": "6b4c5a85b7132335489c67268884ecd8c111542f6ca8b0e7759126885e745404",
+   "bytes": 2414210,
+   "pixels": [
+    1103,
+    1426
+   ],
+   "usedFor": "Cover",
+   "credit": "Digital composite (AI-assisted) built from official Florida Gators/UAA photographs: Urban Meyer (2006 vs. South Carolina), Florida Gators/UAA; Tim Tebow (2006 vs. LSU), Jay Metz/UAA Communications; 2008-season championship celebration, Jason Parkhurst/UAA Communications. 130 ppi at Letter size; digital only."
+  },
+  {
+   "asset": "fridays-still.jpg",
+   "sha256": "0eed0ba52ea53c086db3d9ab85c198daa3175f98d3fc9265b82398158075446f",
+   "bytes": 458124,
+   "pixels": [
+    1920,
+    1080
+   ],
+   "usedFor": "Best Fridays",
+   "credit": "Video still: The Buddy Martin Show / Gator Bait Media"
+  },
+  {
+   "asset": "qb-panel.jpg",
+   "sha256": "8629eadbc9f18de83a2ce8621b2d097f3daf218342db20cc12b96074fa62e57c",
+   "bytes": 1127840,
+   "pixels": [
+    2400,
+    1350
+   ],
+   "usedFor": "Tramell Jones Gets the Call",
+   "credit": "Photo by Chris Spears, GatorBait Media"
+  },
+  {
+   "asset": "scouting-huddle.jpg",
+   "sha256": "ee9be65d1db6dc456eae5ff3b58b4d1b25e99584b75360a3c915a67b3c64a2ab",
+   "bytes": 996561,
+   "pixels": [
+    2400,
+    1384
+   ],
+   "usedFor": "Scouting Oklahoma, Part 1",
+   "credit": "Photo by Chris Spears, GatorBait Media"
+  },
+  {
+   "asset": "soothsayer-baugh.jpg",
+   "sha256": "c35f57e7908001b91fe794fe6404f692e70b14255368c1132a6d40ffd7fbbc1c",
+   "bytes": 599677,
+   "pixels": [
+    1471,
+    838
+   ],
+   "usedFor": "The Soothsayer",
+   "credit": "Archival photo by Chris Spears, GatorBait Media"
+  },
+  {
+   "asset": "swamp-panorama.jpg",
+   "sha256": "7b22a87033b3edaeab6589b47763a5537b3740618b4f52cb6656d90a98b0ff3f",
+   "bytes": 1019271,
+   "pixels": [
+    2400,
+    775
+   ],
+   "usedFor": "Game guide",
+   "credit": "Archival photo by Chris Spears, GatorBait Media"
+  },
+  {
+   "asset": "tebow-2006-lsu.jpg",
+   "sha256": "df701d5c48776427e39b7d0672bb151dc39a606c7356c7f969a2fa415d47cfa6",
+   "bytes": 402085,
+   "pixels": [
+    1920,
+    1080
+   ],
+   "usedFor": "Best Fridays closer",
+   "credit": "Jay Metz/UAA Communications (official UF photograph; 2006 game against LSU)"
+  }
+ ]
+}

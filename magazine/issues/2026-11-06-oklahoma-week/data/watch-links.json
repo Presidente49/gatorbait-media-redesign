@@ -1,0 +1,66 @@
+{
+ "note": "Video and site links the writers' own posts carried (package snapshots of the published posts). Labels follow the source lines; URLs are the source URLs. Round 2 (Nov. 7): the source article's Shorts line and its two live links were restored.",
+ "fridays": [
+  {
+   "label": "The complete Urban Meyer interview",
+   "url": "https://www.youtube.com/watch?v=Z9C_z-4MoSQ"
+  },
+  {
+   "label": "Friday's Best Fridays show, with the Edgar Thompson conversation and the morning's football and basketball lineup",
+   "url": "https://www.youtube.com/watch?v=lGjwmeFCJ1I"
+  },
+  {
+   "label": "Watch The Buddy Martin Show",
+   "url": "https://youtube.com/@TheBuddyMartinShow/live"
+  },
+  {
+   "label": "Read Gator Bait Media daily",
+   "url": "https://www.gatorbaitmedia.com"
+  }
+ ],
+ "show": [
+  {
+   "label": "Watch the full show",
+   "url": "https://www.youtube.com/watch?v=czm4gnJPE4w"
+  },
+  {
+   "label": "Loren Meadows on the Tramell Jones decision (standalone interview cut)",
+   "url": "https://www.youtube.com/watch?v=_VRPwt7xnwg"
+  },
+  {
+   "label": "Ben Troupe: SEC weekend and CFP preview (standalone interview cut)",
+   "url": "https://www.youtube.com/watch?v=ho-MIbdyWAg"
+  },
+  {
+   "label": "Paul Wilson Jr.: the playoff picture (standalone interview cut)",
+   "url": "https://www.youtube.com/watch?v=n_QFbB_yMuQ"
+  },
+  {
+   "label": "Segment: Urban Meyer Ring of Honor",
+   "url": "https://www.youtube.com/watch?v=ZcDpF0jCPGU"
+  },
+  {
+   "label": "Segment: the 24-team playoff debate",
+   "url": "https://www.youtube.com/watch?v=Us_Nc7LIbtg"
+  },
+  {
+   "label": "Shorts: “daddy ball,” dynasties are over, Notre Dame playing for its life, and more."
+  },
+  {
+   "label": "Watch the Short: daddy ball",
+   "url": "https://www.youtube.com/shorts/ORn5mTzbfl4"
+  },
+  {
+   "label": "Watch the Short: Notre Dame",
+   "url": "https://www.youtube.com/shorts/84x5wBt28J0"
+  },
+  {
+   "label": "Catch The Buddy Martin Show live all season",
+   "url": "https://youtube.com/@TheBuddyMartinShow/live"
+  },
+  {
+   "label": "Read Gator Bait Media daily",
+   "url": "https://www.gatorbaitmedia.com"
+  }
+ ]
+}

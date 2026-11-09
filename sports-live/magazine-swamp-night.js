@@ -1,5 +1,5 @@
-/* GatorBait Magazine, Swamp Night loader (Nov. 8, 2026).
- * Mounts the frozen Swamp Night page (magazine/swamp-night/index.html, same commit as this file) inside a same-origin
+/* GatorBait Magazine, digital edition loader (Nov. 9, 2026; was the Swamp Night loader).
+ * Mounts the digital-edition page (magazine/swamp-night/index.html; the Nov. 7 pregame page is kept as pregame-20261107.html, same commit as this file) inside a same-origin
  * blob-URL iframe on /magazine only. Contract is the existing one: one root #gbm-magazine-page, html.gbm-magazine-live
  * while mounted, window.__GBM_MAG26__ {sync, ready, build, version}; removed on every other route.
  * Resources resolve against the pinned jsDelivr directory this script itself was loaded from (document.currentScript),
@@ -7,7 +7,7 @@
  * 8-second fallback restores the native page. */
 (function () {
   'use strict';
-  var BUILD = 'swamp-night-widgets-20261108', VERSION = '2';
+  var BUILD = 'digital-edition-20261109', VERSION = '3';
   if (window.__GBM_MAG26__) { window.__GBM_MAG26__.sync(); return; }
   var cs = document.currentScript, SRC = (cs && cs.src) || '';
   var BASE = SRC.replace(/sports-live\/[^\/?#]*(?:[?#].*)?$/, 'magazine/swamp-night/');

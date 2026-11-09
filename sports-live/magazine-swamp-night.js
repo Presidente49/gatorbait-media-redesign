@@ -7,7 +7,7 @@
  * 8-second fallback restores the native page. */
 (function () {
   'use strict';
-  var BUILD = 'digital-edition-20261109', VERSION = '3';
+  var BUILD = 'digital-edition-20261109b', VERSION = '4';
   if (window.__GBM_MAG26__) { window.__GBM_MAG26__.sync(); return; }
   var cs = document.currentScript, SRC = (cs && cs.src) || '';
   var BASE = SRC.replace(/sports-live\/[^\/?#]*(?:[?#].*)?$/, 'magazine/swamp-night/');

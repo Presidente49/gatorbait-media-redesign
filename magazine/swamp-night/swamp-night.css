@@ -34,3 +34,5 @@
 .archive-box{margin-top:48px}
 @media(max-width:1000px){.story-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.story-cards{grid-template-columns:minmax(0,1fr)}.final-card,.next-card,.standings-widget{padding:20px}.next-card dl>div,.rest-sched li{grid-template-columns:72px 1fr}.sc-body strong{font-size:22px}}
+.writer-widget-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:1100px){.writer-widget-grid{grid-template-columns:minmax(0,1fr)}}

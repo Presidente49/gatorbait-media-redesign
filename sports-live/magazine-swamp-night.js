@@ -7,7 +7,7 @@
  * 8-second fallback restores the native page. */
 (function () {
   'use strict';
-  var BUILD = 'swamp-night-20261108', VERSION = '1';
+  var BUILD = 'swamp-night-widgets-20261108', VERSION = '2';
   if (window.__GBM_MAG26__) { window.__GBM_MAG26__.sync(); return; }
   var cs = document.currentScript, SRC = (cs && cs.src) || '';
   var BASE = SRC.replace(/sports-live\/[^\/?#]*(?:[?#].*)?$/, 'magazine/swamp-night/');
@@ -95,3 +95,4 @@
   window.addEventListener('gbmroutechange', sync);
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true }); else start();
 })();
+

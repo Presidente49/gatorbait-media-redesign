@@ -1,7 +1,12 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-08T15:33:40.044Z",
+  "fetchedAt": "2026-11-10T12:21:30.147Z",
   "videos": [
+    {
+      "id": "1m6nKpneZbs",
+      "title": "Oklahoma Stuns Florida | Playoff Jumps to 24 Teams",
+      "published": "2026-11-10T02:05:50+00:00"
+    },
     {
       "id": "lGjwmeFCJ1I",
       "title": "Best Fridays: Urban Meyer, Edgar Thompson and Gators Basketball | Buddy Martin",
@@ -71,11 +76,6 @@
       "id": "_VRPwt7xnwg",
       "title": "Tramell Jones QB Decision: Loren Meadows Backs Sumrall's Call",
       "published": "2026-11-06T15:11:46+00:00"
-    },
-    {
-      "id": "Z9C_z-4MoSQ",
-      "title": "Urban Meyer Interview: Florida's Ring of Honor, Biggest Regret and Gators' Future",
-      "published": "2026-11-05T23:28:58+00:00"
     }
   ]
 }

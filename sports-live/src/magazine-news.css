@@ -1,0 +1,3 @@
+/* GatorBait News (MAG_VARIANT=gatorbait-news): the only styles the news edition adds to the postgame skin. */
+#gbm-magazine-page.pm .nw-cd{font-weight:800;color:var(--pm-orange-ink)}
+#gbm-magazine-page.pm .nw-cd:empty{display:none}

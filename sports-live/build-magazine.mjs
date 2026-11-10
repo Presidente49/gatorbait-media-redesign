@@ -24,13 +24,23 @@ const read = (p) => readFileSync(join(repo, p), 'utf8');
 // 'postgame' (the postgame issue) swaps the pregame skin for src/magazine-postgame.css and adds src/magazine-postgame.js plus the
 // site's existing signup component (src/capture.js, guarded by window.GBM_CAPTURE, so a page that already loaded it keeps one copy).
 // The weekly and pregame bundles are built exactly as before.
-const POSTGAME = VARIANT === 'postgame' || /-postgame$/.test(VARIANT); // 'georgia-postgame' etc. use the postgame skin and loader fixture, built to sports-live/magazine-<variant>.js
-const css = (read('sports-live/src/magazine.css') + read(POSTGAME ? 'sports-live/src/magazine-postgame.css' : 'sports-live/src/magazine-pregame.css')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
+const NEWS = VARIANT === 'gatorbait-news'; // GatorBait News, the midweek news edition: the postgame skin and blocks plus src/magazine-news.{js,css}
+const POSTGAME = VARIANT === 'postgame' || /-postgame$/.test(VARIANT) || NEWS; // 'georgia-postgame' etc. use the postgame skin and loader fixture, built to sports-live/magazine-<variant>.js
+const css = (read('sports-live/src/magazine.css') + read(POSTGAME ? 'sports-live/src/magazine-postgame.css' : 'sports-live/src/magazine-pregame.css') + (NEWS ? read('sports-live/src/magazine-news.css') : '')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
 // capture.js goes first: magazine.js mounts synchronously at its end, and the postgame signup needs window.GBM_CAPTURE by then.
 const runtimeBase = (POSTGAME ? read('sports-live/src/capture.js') + '\n;' : '') + read('sports-live/src/magazine.js') + read('sports-live/src/magazine-feed.js') + read('sports-live/src/magazine-pregame.js') +
   (POSTGAME ? '\n' + read('sports-live/src/magazine-postgame.js') : '');
 // The Wednesday Edition is a link-card issue: only the one hard-coded edition note differs from the weekly renderer.
-const runtime = VARIANT === 'wednesday' ? runtimeBase.replace('Six complete articles \u00b7 October 1 edition', 'Twelve stories \u00b7 Wednesday Edition, October 7') : runtimeBase;
+const runtime = VARIANT === 'wednesday' ? runtimeBase.replace('Six complete articles \u00b7 October 1 edition', 'Twelve stories \u00b7 Wednesday Edition, October 7') :
+  // GatorBait News: route the postgame render and start hooks to src/magazine-news.js when the issue sets "news": true. That file reuses the
+  // postgame blocks under new section ids (nwAs(pmBox, D, 'schedule', 'box') reads D.schedule and emits #pm-schedule) and adds the matchup card,
+  // its kickoff countdown (the only timer: one tick a minute, cleared on remount, blank after kickoff) and the membership block.
+  NEWS ? newsRuntime(runtimeBase + '\n' + read('sports-live/src/magazine-news.js')) : runtimeBase;
+function newsRuntime(code) {
+  const swaps = [['return renderPostgame(D); //', 'return (D.news ? renderNews : renderPostgame)(D); //'], ["if (D.layout === 'postgame') pmStart(m);", "if (D.layout === 'postgame') { pmStart(m); if (D.news) nwStart(m); }"]];
+  for (const [from, to] of swaps) { if (code.split(from).length !== 2) throw new Error('GatorBait News hook not found exactly once: ' + from); code = code.replace(from, to); }
+  return code;
+}
 // Photo credits the homepage already verified (front-page.config.json), so the live card refresh can credit a new card's photo.
 const credits = JSON.parse(read('sports-live/front-page.config.json')).credits || {};
 // Every edition repeats these page selectors hundreds of times. Store each as one character and

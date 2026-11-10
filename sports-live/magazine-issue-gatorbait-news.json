@@ -1,0 +1,614 @@
+{
+ "$comment": "GatorBait News, midweek edition for Tuesday, Nov. 10, 2026 (Kentucky week). A news front built only from posts that are live on gatorbaitmedia.com: titles and bylines are the live posts' own (desk stories GatorBait Staff; Behind the Sticks by Brenden Martin). Records, rankings, schedule, results and tip/kickoff times: ESPN JSON pulled Nov. 10 (football team 57 schedule, event 401856884; AP Top 25 and Coaches Poll of Nov. 8 for football and Nov. 9 for men's basketball; men's and women's basketball team 57 schedules). Oklahoma numbers: ESPN box score, event 401856739. Quotes are verbatim from Jon Sumrall's Monday, Nov. 9 press conference transcript. Photos are each post's own cover image with the credit printed on that post; posts whose cover is a graphic or carries no credit run without art. No photo from the Sept. 26 Ole Miss game. Never name, link or credit Gator Country. The unpublished Buddy Martin Show recap and the LIVE NOW / HALFTIME posts are left out.",
+ "id": "2026-11-10-gatorbait-news",
+ "layout": "postgame",
+ "news": true,
+ "issue": {
+  "word": "News",
+  "number": "Kentucky week",
+  "date": "Tuesday, Nov. 10, 2026",
+  "week": "Florida at No. 13 Kentucky · Saturday, 6:15 p.m. ET, ESPN",
+  "home": "GatorBait Media",
+  "pageTitle": "GatorBait News | Kentucky Week | Nov. 10, 2026"
+ },
+ "cover": {
+  "kicker": "Buddy Martin · Kentucky week",
+  "coverTitle": "Kentucky Week",
+  "headline": "Sumrall's My Old Kentucky Home",
+  "dek": "Jon Sumrall played at Kentucky and coached there. He takes Florida (5-4, 3-4 SEC) to No. 13 Kentucky (7-2) on Saturday needing one more win for bowl eligibility. “This game's got very little to do about my ties to the place,” he said Monday.",
+  "byline": "By Buddy Martin",
+  "cta": "Read Buddy Martin's column",
+  "url": "/post/sumrall-s-my-old-kentucky-home",
+  "image": {
+   "id": "d3cfa5_8fd32f1dc4654c8dae6eed1f8508893d",
+   "ext": "jpg",
+   "width": 960,
+   "height": 1200,
+   "alt": "A fan in Kentucky blue stands in a crowd of fans dressed in orange and black. Photo courtesy University of Kentucky.",
+   "credit": "Photo courtesy University of Kentucky",
+   "uaa": false
+  },
+  "teasers": [
+   "Florida at No. 13 Kentucky: Saturday, 6:15 p.m. ET, ESPN",
+   "Sumrall: “They don't beat themselves”",
+   "No. 1 Florida at Florida State, Gators women 3-0",
+   "Oklahoma 23, Florida 7: the wrap"
+  ],
+  "linesLabel": "Also inside",
+  "lines": [
+   "Football: Franz Beard, Eddie Gilley and Behind the Sticks",
+   "The playoff goes to 24 teams: Buddy Martin",
+   "Schedule, results and the bowl count",
+   "Basketball: No. 1 Florida at Florida State",
+   "Gators women are 3-0",
+   "Watch: The Buddy Martin Show"
+  ]
+ },
+ "contents": {
+  "label": "In this edition",
+  "items": [
+   {
+    "id": "matchup",
+    "label": "Florida at Kentucky"
+   },
+   {
+    "id": "quotes",
+    "label": "Sumrall on Monday"
+   },
+   {
+    "id": "football",
+    "label": "Football"
+   },
+   {
+    "id": "schedule",
+    "label": "Schedule and results"
+   },
+   {
+    "id": "bowl",
+    "label": "Bowl count"
+   },
+   {
+    "id": "wrap",
+    "label": "Oklahoma wrap"
+   },
+   {
+    "id": "basketball",
+    "label": "Basketball"
+   },
+   {
+    "id": "watch",
+    "label": "Watch"
+   },
+   {
+    "id": "writers",
+    "label": "The writers"
+   },
+   {
+    "id": "join",
+    "label": "Membership"
+   }
+  ]
+ },
+ "matchup": {
+  "label": "Saturday",
+  "kickoffISO": "2026-11-14T23:15:00Z",
+  "teams": [
+   {
+    "name": "Florida",
+    "side": "Away",
+    "record": "5-4",
+    "note": "3-4 SEC"
+   },
+   {
+    "name": "Kentucky",
+    "rank": "No. 13",
+    "record": "7-2",
+    "note": "5-2 SEC"
+   }
+  ],
+  "meta": [
+   "Saturday, Nov. 14",
+   "6:15 p.m. ET · ESPN",
+   "Kroger Field, Lexington"
+  ]
+ },
+ "quotes": {
+  "kicker": "Monday press conference",
+  "title": "Sumrall on Kentucky week",
+  "dek": "Jon Sumrall played at Kentucky and later coached there. From his Monday, Nov. 9, press conference.",
+  "items": [
+   {
+    "text": "This game's got very little to do about my ties to the place. It's about how do I get our team ready to play better and match really how they're playing, to be quite honest with you.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, Monday press conference, Nov. 9"
+   },
+   {
+    "text": "I wouldn't be where I'm at today if it weren't for the University of Kentucky.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, on his time at Kentucky, Monday press conference, Nov. 9"
+   },
+   {
+    "text": "It's maybe the best offensive line we've seen all year, and that's not just coach-speak; they're really good upfront offensively.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, on Kentucky's offense, Monday press conference, Nov. 9"
+   },
+   {
+    "text": "They're just sound. I think they play with a really high football IQ. They don't beat themselves.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, on Kentucky's defense, Monday press conference, Nov. 9"
+   },
+   {
+    "text": "Both practiced today. There'll be one guy that starts and one guy doesn't.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, on his quarterbacks, Monday press conference, Nov. 9"
+   },
+   {
+    "text": "I say this a lot to our guys: most games aren't won; they're lost.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, Monday press conference, Nov. 9"
+   }
+  ]
+ },
+ "football": {
+  "kicker": "Football",
+  "title": "Kentucky week, the playoff and the polls",
+  "dek": "What GatorBait has published since the Oklahoma game, with Kentucky week first.",
+  "items": [
+   {
+    "lead": true,
+    "rubric": "Kentucky week",
+    "author": "Franz Beard",
+    "title": "Football relevance at stake for both Florida and Kentucky",
+    "dek": "Franz Beard on Florida at Kentucky: two basketball schools, two first-year coaches, plus the polls and a team-by-team look at the SEC.",
+    "url": "/post/football-relevance-at-stake-for-both-florida-and-kentucky"
+   },
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "The Day The Music Died, Again",
+    "dek": "Buddy Martin on the College Football Playoff's expansion to 24 teams, beginning with the 2027-28 season.",
+    "url": "/post/the-day-the-music-died-again",
+    "image": {
+     "id": "ae876a_d38311e78cf246a4b6f6efddabf07deb",
+     "ext": "jpg",
+     "width": 1920,
+     "height": 1080,
+     "alt": "Official CFP expansion graphic: a gold 24 with the championship trophy. Photo: College Football Playoff.",
+     "credit": "Photo: College Football Playoff",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Polls",
+    "author": "GatorBait Staff",
+    "title": "From No. 8 to no votes: Florida falls out of both polls",
+    "dek": "Florida received no votes in the AP Top 25 or the Coaches Poll released Sunday, Nov. 8. No. 13 Kentucky is next.",
+    "url": "/post/florida-drops-out-of-ap-and-coaches-polls"
+   },
+   {
+    "rubric": "Analysis",
+    "author": "Brenden Martin",
+    "title": "Behind the Sticks",
+    "dek": "Florida scored 4.44 points a drive while it was 4-0 and 1.34 in the five games since.",
+    "url": "/post/behind-the-sticks",
+    "image": {
+     "id": "d3cfa5_18d418f77f054dad94c6cf4e1ca03648",
+     "ext": "png",
+     "width": 1920,
+     "height": 1080,
+     "alt": "Jon Sumrall addresses reporters after Florida's game against Oklahoma on Nov. 7, 2026. Frame from Florida Gators/UAA video.",
+     "credit": "Frame from Florida Gators/UAA video.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Eddie Gilley",
+    "title": "Reviewing the Reads After the Loss",
+    "dek": "Eddie Gilley grades the five reads he set before the Oklahoma game: pass rush, offensive line, running game, Tramell Jones Jr. and penalties.",
+    "url": "/post/reviewing-the-reads-after-the-loss",
+    "image": {
+     "id": "d3cfa5_791928c7bf6c4d0096665ecb1e7daab5",
+     "ext": "jpg",
+     "width": 1440,
+     "height": 960,
+     "alt": "A Florida ball carrier runs past an Oklahoma defender during the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA.",
+     "credit": "Photo courtesy UAA.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Franz Beard",
+    "title": "Frustration boils over; Sumrall has more questions than answers",
+    "dek": "Franz Beard on Florida's 23-7 loss to Oklahoma: a season-low 203 yards and a fourth-down gamble.",
+    "url": "/post/frustration-boils-over-sumrall-has-more-questions-than-answers",
+    "image": {
+     "id": "d3cfa5_b9607d3e07e6446999fdc55f08b41858",
+     "ext": "jpg",
+     "width": 1320,
+     "height": 882,
+     "alt": "Jon Sumrall on the sideline vs. Oklahoma, Nov. 7. Photo courtesy UAA.",
+     "credit": "Photo courtesy UAA.",
+     "uaa": false
+    }
+   }
+  ]
+ },
+ "schedule": {
+  "kicker": "Schedule",
+  "title": "Nine played, three to go",
+  "caption": "Florida's 2026 schedule and results",
+  "dek": "Florida is 5-4 overall and 3-4 in the SEC. The Gators won their first four games and have lost four of the last five.",
+  "cols": [
+   "Opponent",
+   "Result"
+  ],
+  "rows": [
+   [
+    "Sept. 5",
+    "Florida Atlantic",
+    "W, 66-21"
+   ],
+   [
+    "Sept. 12",
+    "Campbell",
+    "W, 52-3"
+   ],
+   [
+    "Sept. 19",
+    "at Auburn",
+    "W, 44-39"
+   ],
+   [
+    "Sept. 26",
+    "Ole Miss",
+    "W, 52-28"
+   ],
+   [
+    "Oct. 3",
+    "at Missouri",
+    "L, 45-17"
+   ],
+   [
+    "Oct. 10",
+    "South Carolina",
+    "L, 38-19"
+   ],
+   [
+    "Oct. 17",
+    "at Texas",
+    "W, 27-24"
+   ],
+   [
+    "Oct. 31",
+    "Georgia (Atlanta)",
+    "L, 27-8"
+   ],
+   [
+    "Nov. 7",
+    "Oklahoma",
+    "L, 23-7"
+   ],
+   [
+    "Nov. 14",
+    "at No. 13 Kentucky",
+    "6:15 p.m. ET, ESPN"
+   ],
+   [
+    "Nov. 21",
+    "Vanderbilt",
+    "Noon ET"
+   ],
+   [
+    "Nov. 27",
+    "at Florida State",
+    "3:30 p.m. ET, ABC"
+   ]
+  ],
+  "source": "Results, dates, times and networks: ESPN, Nov. 10. Kentucky's ranking: AP Top 25 and Coaches Poll, Nov. 8."
+ },
+ "bowl": {
+  "kicker": "Bowl count",
+  "title": "One win from a bowl",
+  "dek": "Florida has five wins. A sixth makes the Gators bowl eligible, and three regular-season games remain.",
+  "yards": {
+   "label": "Wins toward bowl eligibility",
+   "rows": [
+    {
+     "name": "Florida wins",
+     "value": 5,
+     "us": true
+    },
+    {
+     "name": "Wins needed",
+     "value": 6
+    }
+   ]
+  },
+  "stats": [
+   {
+    "value": "1",
+    "label": "Win needed",
+    "detail": "Florida is 5-4. Six wins make a team bowl eligible."
+   },
+   {
+    "value": "3",
+    "label": "Games left",
+    "detail": "At Kentucky, home to Vanderbilt, at Florida State."
+   },
+   {
+    "value": "3-4",
+    "label": "Florida in the SEC",
+    "detail": "Kentucky is 5-2 in the league and 7-2 overall."
+   }
+  ],
+  "source": "Records: ESPN, Nov. 10."
+ },
+ "final": {
+  "label": "Final · Nov. 7",
+  "teams": [
+   {
+    "name": "Oklahoma",
+    "score": 23,
+    "won": true
+   },
+   {
+    "name": "Florida",
+    "score": 7
+   }
+  ],
+  "meta": [
+   "Saturday, Nov. 7",
+   "Ben Hill Griffin Stadium, Gainesville",
+   "Florida is 5-4, 3-4 SEC"
+  ]
+ },
+ "wrap": {
+  "kicker": "Oklahoma wrap",
+  "title": "Oklahoma 23, Florida 7",
+  "dek": "Florida finished with 203 total yards to Oklahoma's 351 and did not score in the second half.",
+  "stats": [
+   {
+    "value": "70",
+    "label": "Florida rushing yards",
+    "detail": "25 carries at 2.8 yards each. Oklahoma ran for 144 on 40 carries."
+   },
+   {
+    "value": "2-9",
+    "label": "Florida third downs",
+    "detail": "Oklahoma converted 10 of 18 and held the ball 37:50 to Florida's 22:10."
+   },
+   {
+    "value": "2",
+    "label": "Florida turnovers",
+    "detail": "Both were interceptions by Tramell Jones Jr. Oklahoma had none."
+   }
+  ],
+  "more": {
+   "label": "Read the game story: Ground Down, by GatorBait Staff",
+   "url": "/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss"
+  },
+  "source": "Source: ESPN box score (event 401856739)."
+ },
+ "download": {
+  "kicker": "The Oklahoma postgame edition",
+  "label": "Download for your phone (PDF)",
+  "note": "PDF, 21 pages, 1.5 MB",
+  "file": "GatorBait-Magazine-Oklahoma-Postgame-Phone.pdf",
+  "url": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_58c4edbae8c3490eb278d3e71ea5f091.pdf?dn=GatorBait-Magazine-Oklahoma-Postgame-Phone.pdf"
+ },
+ "basketball": {
+  "kicker": "Basketball",
+  "title": "No. 1 Florida goes to Tallahassee; the women are 3-0",
+  "dek": "The men are 2-0 and No. 1 in the AP Top 25 and the Coaches Poll. The women are 3-0.",
+  "items": [
+   {
+    "lead": true,
+    "rubric": "Men · Preview",
+    "author": "Franz Beard",
+    "title": "Florida basketball: FSU a tall challenge for the Gators",
+    "dek": "No. 1 Florida visits Florida State on Tuesday, Nov. 10, at 6 p.m. ET on ESPN2. Franz Beard on the Seminoles' size and the Gators' front line.",
+    "url": "/post/florida-basketball-fsu-a-tall-challenge-for-the-gators",
+    "image": {
+     "id": "d3cfa5_65ef9aa8f64845bfa7751d6048b7a976",
+     "ext": "jpg",
+     "width": 1600,
+     "height": 1600,
+     "alt": "Florida against Jacksonville on Nov. 5, 2026. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Men · Preview",
+    "author": "GatorBait Staff",
+    "title": "Top-ranked Gators take five-game win streak over Florida State into Tallahassee",
+    "dek": "Florida opened with a 77-67 win over Miami and an 88-57 win over Jacksonville. Tuesday is its first true road game.",
+    "url": "/post/top-ranked-gators-take-five-game-win-streak-over-florida-state-into-tallahassee",
+    "image": {
+     "id": "d3cfa5_a4b698f2c48b4b8896771ccb0c4d89e0",
+     "ext": "jpg",
+     "width": 2000,
+     "height": 1125,
+     "alt": "A Florida player dunks during a home game against Alabama. Photo by Hannah White, UAA Communications.",
+     "credit": "Photo by Hannah White, UAA Communications.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Men · Game story",
+    "author": "Franz Beard",
+    "title": "Condon flirts with triple-double as Gators smack JU",
+    "dek": "Alex Condon had 12 points, 12 rebounds and eight assists in No. 1 Florida's 88-57 win over Jacksonville.",
+    "url": "/post/condon-flirts-with-triple-double-as-gators-smack-ju",
+    "image": {
+     "id": "16b519_142d78dd16be4f939504b38a0604d881",
+     "ext": "jpg",
+     "width": 2503,
+     "height": 3000,
+     "alt": "Florida in action against Jacksonville, Nov. 5, 2026. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Women · Game story",
+    "author": "GatorBait Staff",
+    "title": "Gators women stay unbeaten, hold off Chattanooga 64-58",
+    "dek": "Vivian Iwuchukwu scored 19 and Florida won the fourth quarter 23-18 to improve to 3-0.",
+    "url": "/post/gators-women-stay-unbeaten-hold-off-chattanooga-64-58",
+    "image": {
+     "id": "d3cfa5_20d8586b52f84238a0fa5a50e4c1ae62",
+     "ext": "jpg",
+     "width": 1800,
+     "height": 669,
+     "alt": "Kiyomi McMiller in a Florida home game (file photo). Photo courtesy UAA.",
+     "credit": "Photo courtesy UAA.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Women · Game story",
+    "author": "Loren Meadows",
+    "title": "Showtime at the O’Dome: McMiller’s Career-High 42 Powers Florida Past UCF, 95-65",
+    "dek": "Kiyomi McMiller scored a career-high 42 points and Vivian Iwuchukwu added 20 as Florida beat UCF 95-65 in Gainesville.",
+    "url": "/post/showtime-at-the-o-dome-mcmiller-s-career-high-42-powers-florida-past-ucf-95-65"
+   }
+  ]
+ },
+ "hoops": {
+  "kicker": "On deck",
+  "title": "The next games",
+  "caption": "Florida basketball: next games",
+  "dek": "Men's and women's basketball, next two games each. All times Eastern.",
+  "cols": [
+   "Opponent",
+   "Tip"
+  ],
+  "rows": [
+   [
+    "Men (No. 1, 2-0)",
+    "at Florida State",
+    "Nov. 10, 6 p.m., ESPN2"
+   ],
+   [
+    "Men",
+    "Merrimack",
+    "Nov. 13, 7 p.m., SEC Network"
+   ],
+   [
+    "Women (3-0)",
+    "South Florida",
+    "Nov. 12, 6 p.m., SECN+"
+   ],
+   [
+    "Women",
+    "at Florida State",
+    "Nov. 15, 2 p.m., ACCNX"
+   ]
+  ],
+  "source": "Records, rankings, dates, times and networks: ESPN, Nov. 10. Rankings: AP Top 25 and Coaches Poll, Nov. 9."
+ },
+ "watch": {
+  "kicker": "Watch",
+  "title": "The Buddy Martin Show",
+  "dek": "The Monday, Nov. 9, show. Tap to play.",
+  "items": [
+   {
+    "title": "Oklahoma Stuns Florida | Playoff Jumps to 24 Teams",
+    "caption": "The Monday, Nov. 9, show.",
+    "url": "https://www.youtube.com/watch?v=1m6nKpneZbs",
+    "poster": "buddy-show-yt-1m6nkpnezbs.jpg",
+    "meta": "YouTube · The Buddy Martin Show",
+    "credit": "Video: The Buddy Martin Show"
+   }
+  ]
+ },
+ "writers": {
+  "kicker": "The writers",
+  "title": "Who is in this edition",
+  "dek": "Every story in GatorBait News carries the byline that is on the post.",
+  "items": [
+   {
+    "rubric": "Editor-in-Chief",
+    "title": "Buddy Martin",
+    "dek": "In this edition: Sumrall's My Old Kentucky Home and The Day The Music Died, Again.",
+    "url": "/gatorbait-media-blogs/categories/buddy-s-blog"
+   },
+   {
+    "rubric": "Senior Columnist",
+    "title": "Franz Beard",
+    "dek": "In this edition: Florida and Kentucky, the Oklahoma column, the Florida State preview and the Jacksonville game story.",
+    "url": "/gatorbait-media-blogs/categories/franz-beard-blog"
+   },
+   {
+    "rubric": "Special Contributor",
+    "title": "Eddie Gilley",
+    "dek": "In this edition: Reviewing the Reads After the Loss.",
+    "url": "/gatorbait-media-blogs/categories/eddie-gilley-blog"
+   },
+   {
+    "rubric": "Writer",
+    "title": "Loren Meadows",
+    "dek": "In this edition: Kiyomi McMiller's 42-point game against UCF.",
+    "url": "/gatorbait-media-blogs/categories/loren-meadows-blogs"
+   },
+   {
+    "rubric": "Owner and Executive Producer",
+    "title": "Brenden Martin",
+    "dek": "In this edition: Behind the Sticks.",
+    "url": "/profile/brenden/profile"
+   }
+  ]
+ },
+ "join": {
+  "kicker": "Membership",
+  "title": "Read every story in this edition",
+  "meta": [
+   "Columns",
+   "Game coverage",
+   "The Buddy Martin Show"
+  ],
+  "note": "GatorBait is independent Florida Gators coverage from Buddy Martin, Franz Beard and the GatorBait staff. See the membership plans.",
+  "cta": "See membership plans",
+  "url": "/pricing-plans/list"
+ },
+ "reference": {
+  "label": "More GatorBait",
+  "links": [
+   {
+    "label": "Schedule and results",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+   },
+   {
+    "label": "Roster",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   },
+   {
+    "label": "Membership plans",
+    "url": "/pricing-plans/list"
+   },
+   {
+    "label": "GatorBait home",
+    "url": "/"
+   }
+  ],
+  "top": "Back to the cover"
+ },
+ "credits": {
+  "label": "Photo credits",
+  "uaa": false,
+  "other": [
+   "Photo courtesy University of Kentucky.",
+   "Photos courtesy UAA and Hannah White, UAA Communications.",
+   "Photos by Chris Spears, GatorBait Media.",
+   "Photo: College Football Playoff. Frame from Florida Gators/UAA video."
+  ]
+ },
+ "asOf": "Records, rankings, schedule and results: ESPN, checked Nov. 10, 2026. Polls: AP Top 25 and Coaches Poll. Oklahoma numbers: ESPN (event 401856739). Quotes: Jon Sumrall's Nov. 9 press conference."
+}

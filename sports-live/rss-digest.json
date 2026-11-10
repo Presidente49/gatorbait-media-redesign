@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-10T09:38:10.929Z",
+ "generatedAt": "2026-11-10T17:39:35.789Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-10T09:38:10.929Z",
+  "checkedAt": "2026-11-10T17:39:35.789Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "LIVE NOW: The Buddy Martin Show, Monday, Nov. 9",
-   "link": "https://www.gatorbaitmedia.com/post/live-now-the-buddy-martin-show-monday-nov-9",
-   "publishedAt": "2026-11-10T01:59:34.000Z"
+   "title": "Florida basketball: FSU a tall challenge for the Gators",
+   "link": "https://www.gatorbaitmedia.com/post/florida-basketball-fsu-a-tall-challenge-for-the-gators",
+   "publishedAt": "2026-11-10T12:02:38.000Z"
   },
   "problems": []
  },

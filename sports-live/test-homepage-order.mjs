@@ -42,33 +42,39 @@ function harness(records, fixedNow) {
   return { context, root, lead, link, list, order: () => Array.from(context.homepageStories(records), f => f[2]) };
 }
 
-test('current named writers lead, Buddy precedes Brenden, staff finishes the same nine-story window', () => {
+test('the front page is strictly newest-first: lead is the newest story, rows follow by first-published time', () => {
   const records = [story('brenden', 'Brenden Martin'), story('franz', 'Franz Beard', 1000), story('buddy', 'Buddy Martin', 2000),
     ...Array.from({ length: 5 }, (_, i) => story(`writer-${i}`, 'Loren Meadows', 3000 + i)), story('staff', 'GatorBait Staff', 4000)];
   const before = JSON.stringify(records), h = harness(records);
   h.context.freshLead(h.root);
   h.context.freshRows(h.root);
   const rows = Array.from(h.list.innerHTML.matchAll(/<li\b[^>]*><a href="([^"]+)"/g), m => m[1]);
-  assert.equal(h.link.href, '/post/franz');
-  assert.deepEqual(rows, ['/post/buddy', ...Array.from({ length: 5 }, (_, i) => `/post/writer-${i}`), '/post/staff', '/post/brenden']);
+  assert.equal(h.link.href, '/post/brenden');
+  assert.deepEqual(rows, ['/post/franz', '/post/buddy', ...Array.from({ length: 5 }, (_, i) => `/post/writer-${i}`), '/post/staff']);
   assert.equal(new Set([h.link.href, ...rows]).size, 9);
   assert.equal(JSON.stringify(records), before, 'Publication timestamps and source records must not change');
 });
 
-test('selects current nine before partitioning so old writers cannot crowd out current staff', () => {
-  const records = [story('current-staff', 'GatorBait Staff'), ...Array.from({ length: 12 }, (_, i) => story(`writer-${i}`, 'Franz Beard', 1000 + i))];
-  assert.deepEqual(harness(records).order(), [...Array.from({ length: 8 }, (_, i) => `/post/writer-${i}`), '/post/current-staff']);
+test('a newer staff story is not placed below older writer stories', () => {
+  const records = [story('new-staff', 'GatorBait Staff'), story('old-writer-a', 'Buddy Martin', 5000), story('old-writer-b', 'Franz Beard', 6000),
+    story('mid-brenden', 'Brenden Martin', 2000)];
+  assert.deepEqual(harness(records).order(), ['/post/new-staff', '/post/mid-brenden', '/post/old-writer-a', '/post/old-writer-b']);
 });
 
-test('newest staff column is the final item even when four older staff stories share the window', () => {
+test('selects the newest nine in order, so an older writer post never displaces a newer staff post', () => {
+  const records = [story('current-staff', 'GatorBait Staff'), ...Array.from({ length: 12 }, (_, i) => story(`writer-${i}`, 'Franz Beard', 1000 + i))];
+  assert.deepEqual(harness(records).order(), ['/post/current-staff', ...Array.from({ length: 8 }, (_, i) => `/post/writer-${i}`)]);
+});
+
+test('staff and Brenden items interleave with writers by publication time', () => {
   const records = [story('current-staff', 'GatorBait Staff'), story('franz', 'Franz Beard', 1), story('buddy', 'Buddy Martin', 2),
     ...Array.from({ length: 4 }, (_, i) => story(`older-staff-${i}`, i % 2 ? 'Brenden Martin' : 'GatorBait Staff', 3 + i))];
   const h = harness(records);
   h.context.freshLead(h.root);
   h.context.freshRows(h.root);
-  assert.equal(h.link.href, '/post/franz');
+  assert.equal(h.link.href, '/post/current-staff');
   assert.deepEqual(Array.from(h.list.innerHTML.matchAll(/<li\b[^>]*><a href="([^"]+)"/g), m => m[1]),
-    ['/post/buddy', '/post/older-staff-3', '/post/older-staff-2', '/post/older-staff-1', '/post/older-staff-0', '/post/current-staff']);
+    ['/post/franz', '/post/buddy', '/post/older-staff-0', '/post/older-staff-1', '/post/older-staff-2', '/post/older-staff-3']);
 });
 
 test('deduplicates canonical paths and skips invalid or far-future dates before filling nine slots', () => {
@@ -78,9 +84,9 @@ test('deduplicates canonical paths and skips invalid or far-future dates before 
   assert.deepEqual(harness(records).order(), ['/post/duplicate', ...Array.from({ length: 8 }, (_, i) => `/post/current-${i}`)]);
 });
 
-test('recognizes case and whitespace variants without demoting other named writers', () => {
+test('byline case and whitespace variants never change the newest-first order', () => {
   const records = [story('staff', ' gAtOrBaIt   StAfF '), story('brenden', ' BRENDEN MARTIN ', 1), story('buddy', 'Buddy Martin', 2)];
-  assert.deepEqual(harness(records).order(), ['/post/buddy', '/post/brenden', '/post/staff']);
+  assert.deepEqual(harness(records).order(), ['/post/staff', '/post/brenden', '/post/buddy']);
 });
 
 test('all-staff fallback and empty feeds remain safe', () => {
@@ -96,8 +102,8 @@ test('later feed refresh preserves the already reconciled lead and excludes it f
   h.context.D.all = [story('new-writer', 'Loren Meadows'), ...records];
   h.context.freshLead(h.root);
   h.context.freshRows(h.root);
-  assert.equal(h.link.href, '/post/franz');
-  assert.deepEqual(Array.from(h.list.innerHTML.matchAll(/<li\b[^>]*><a href="([^"]+)"/g), m => m[1]), ['/post/new-writer', '/post/buddy', '/post/staff']);
+  assert.equal(h.link.href, '/post/staff');
+  assert.deepEqual(Array.from(h.list.innerHTML.matchAll(/<li\b[^>]*><a href="([^"]+)"/g), m => m[1]), ['/post/new-writer', '/post/franz', '/post/buddy']);
 });
 
 const packageNow = Date.parse('2026-10-28T12:00:00Z');
@@ -124,9 +130,9 @@ function packageRecords() {
   ];
 }
 const expectedPackage = [packagePaths.lead, packagePaths.basketball, packagePaths.buddy, packagePaths.rays,
-  '/post/other-writer-a', '/post/other-writer-b', '/post/oldest-staff', '/post/older-staff', packagePaths.brenden];
-const expectedDefault = [packagePaths.basketball, packagePaths.lead, '/post/other-writer-a', packagePaths.buddy,
-  '/post/other-writer-b', '/post/oldest-staff', '/post/older-staff', packagePaths.brenden, packagePaths.rays];
+  '/post/other-writer-a', '/post/other-writer-b', '/post/older-staff', '/post/oldest-staff', packagePaths.brenden];
+const expectedDefault = [packagePaths.rays, packagePaths.basketball, packagePaths.lead, '/post/other-writer-a', packagePaths.brenden,
+  packagePaths.buddy, '/post/other-writer-b', '/post/older-staff', '/post/oldest-staff'];
 
 test('Oct28 package shares exact lead/row order, leaves remaining default order intact and preserves source values', () => {
   const records = packageRecords(), before = JSON.stringify(records), h = harness(records, packageNow);
@@ -237,7 +243,7 @@ test('hero and all eight current cards show their actual RSS writers separately 
   assert.ok(h.lead.html.includes('<p class="bc-author">By Franz Beard</p>'));
   const bylines = Array.from(h.list.innerHTML.matchAll(/<span class="bc-author">([^<]+)<\/span>/g), m => m[1]);
   assert.deepEqual(bylines, ['By Franz Beard', 'By Buddy Martin', 'By GatorBait Staff', 'By Loren Meadows',
-    'By Eddie Gilley', 'By GatorBait Staff', 'By Brenden Martin', 'By GatorBait Staff']);
+    'By Eddie Gilley', 'By Brenden Martin', 'By GatorBait Staff', 'By GatorBait Staff']);
   assert.ok(h.list.innerHTML.includes('<span class="bc-credit">Photo by Chris Spears, GatorBait Media.</span>'));
   assert.ok(!bylines.some(name => name.includes('Chris Spears')), 'Photographer never becomes writer');
   assert.equal(bylines.length, 8);

@@ -547,13 +547,11 @@ paths.forEach(function(path){path=storyPath(path);if(byPath[path]&&!used[path]){
 var last=storyPath(p.last),tail=byPath[last];
 return front.concat(ordered.filter(function(f){var path=storyPath(f[2]);return!used[path]&&path!==last;}),tail&&!used[last]?[tail]:[]);
 }
-/* Owner order, Oct. 27: named writers first; newest Brenden/staff item last within the current nine stories.
-   Select the chronological window before partitioning, so older writer posts cannot displace current staff news. */
+/* Owner order, Nov. 10: the front page is strictly newest-first by first-published date. No writer or staff grouping.
+   (Replaces the Oct. 27 "named writers first" rule.) The current nine are chosen newest-first, then ordered the same way. */
 function homepageStories(records){
 var seen={},t=Date.now(),current=(records||[]).slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||f[0]>t+DAY||!h||seen[h])return false;seen[h]=true;return true;}).slice(0,9);
-function staff(f){return /^(?:brenden martin|gator\s*bait\s+staff)$/i.test(String(f[3]||'').trim().replace(/\s+/g,' '));}
-var writers=current.filter(function(f){return!staff(f);}),staffStories=current.filter(staff);
-return homepagePackageOrder(writers.length?writers.concat(staffStories.reverse()):staffStories,t);
+return homepagePackageOrder(current,t);
 }
 /* The Rays recap remains a compact brief even when another package story is absent. */
 function homepageFeature(f,index){return index<2&&storyPath(f[2])!=='/post/rays-baseball-world-series-game-4-brewers-gators-ties';}

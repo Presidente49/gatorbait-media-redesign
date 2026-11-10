@@ -647,3 +647,8 @@ html #gbm-magazine-page.pm .gbc .gbc-p,html #gbm-magazine-page.pm .gbc .gbc-m{co
 #gbm-magazine-page.pm .pm-play::after{border-left-color:#fff}
 #gbm-magazine-page.pm .pm-foot{--pm-on-blue-2:#42506a}
 }
+/* Light skin, Nov. 10 (Oklahoma postgame): text left white-on-light or navy-on-navy by the Nov. 2 overhaul in sections the Georgia issue did not use. */
+#gbm-magazine-page.pm .pm-q2 figcaption,#gbm-magazine-page.pm .pm-q2 figcaption b{color:#fff}
+#gbm-magazine-page.pm .pm-watch{--pm-on-blue-2:#42506a}
+#gbm-magazine-page.pm .pm-rl,#gbm-magazine-page.pm .pm-credits .pm-crl a{color:#10264b}
+#gbm-magazine-page.pm .pm-mk,#gbm-magazine-page.pm .pm-key li::before{color:#fff}

@@ -1,0 +1,1567 @@
+{
+ "ranAt": "2026-10-31T17:01:57.758Z",
+ "total": 312,
+ "failed": 1,
+ "results": [
+  {
+   "name": "static: script has no network/popup APIs",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 none: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 none: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 none: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 none: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":540,\"b\":746,\"h\":206}"
+  },
+  {
+   "name": "390 none: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 none: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "390 none: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "390 none: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/844"
+  },
+  {
+   "name": "390 none: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":745.5,\"cardBottom\":745.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "390 none: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 none: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 none: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 none: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "430 none: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":430,\"t\":628,\"b\":834,\"h\":206}"
+  },
+  {
+   "name": "430 none: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "430 none: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "430 none: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "430 none: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/932"
+  },
+  {
+   "name": "430 none: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":833.5,\"cardBottom\":833.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "430 none: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 none: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 none: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 none: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 none: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 none: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 none: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 facebook: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":540,\"b\":746,\"h\":206}"
+  },
+  {
+   "name": "390 facebook: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 facebook: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "390 facebook: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "390 facebook: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/844"
+  },
+  {
+   "name": "390 facebook: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":745.5,\"cardBottom\":745.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "390 facebook: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 facebook: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 facebook: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 facebook: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "430 facebook: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":430,\"t\":628,\"b\":834,\"h\":206}"
+  },
+  {
+   "name": "430 facebook: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "430 facebook: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "430 facebook: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "430 facebook: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/932"
+  },
+  {
+   "name": "430 facebook: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":833.5,\"cardBottom\":833.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "430 facebook: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 facebook: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 facebook: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 facebook: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 facebook: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 instagram: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 instagram: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 instagram: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 instagram: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":540,\"b\":746,\"h\":206}"
+  },
+  {
+   "name": "390 instagram: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 instagram: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "390 instagram: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "390 instagram: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/844"
+  },
+  {
+   "name": "390 instagram: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":745.5,\"cardBottom\":745.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "390 instagram: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 instagram: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 instagram: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 instagram: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "430 instagram: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":430,\"t\":628,\"b\":834,\"h\":206}"
+  },
+  {
+   "name": "430 instagram: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "430 instagram: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "430 instagram: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "430 instagram: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/932"
+  },
+  {
+   "name": "430 instagram: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":833.5,\"cardBottom\":833.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "430 instagram: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 instagram: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 instagram: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 instagram: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 instagram: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 instagram: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 instagram: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 x: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 x: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 x: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 x: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":540,\"b\":746,\"h\":206}"
+  },
+  {
+   "name": "390 x: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 x: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "390 x: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "390 x: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/844"
+  },
+  {
+   "name": "390 x: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":745.5,\"cardBottom\":745.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "390 x: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "430 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":430,\"t\":628,\"b\":834,\"h\":206}"
+  },
+  {
+   "name": "430 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "430 storage-blocked: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "430 storage-blocked: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "430 storage-blocked: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/932"
+  },
+  {
+   "name": "430 storage-blocked: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":833.5,\"cardBottom\":833.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "430 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 x: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 x: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 x: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 storage-blocked: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":540,\"b\":746,\"h\":206}"
+  },
+  {
+   "name": "390 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 storage-blocked: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "390 storage-blocked: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "390 storage-blocked: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/844"
+  },
+  {
+   "name": "390 storage-blocked: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":745.5,\"cardBottom\":745.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "390 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 google-referrer sheet: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 google-referrer sheet: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 google-referrer sheet: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "430 google-referrer sheet: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":430,\"t\":628,\"b\":834,\"h\":206}"
+  },
+  {
+   "name": "430 google-referrer sheet: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "430 google-referrer sheet: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "430 google-referrer sheet: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "430 google-referrer sheet: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/932"
+  },
+  {
+   "name": "430 google-referrer sheet: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":833.5,\"cardBottom\":833.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "430 google-referrer sheet: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage-blocked: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 google-referrer sheet: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 google-referrer sheet: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "430 google-referrer sheet: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage+cookies-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage+cookies-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage+cookies-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 storage+cookies-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":540,\"b\":746,\"h\":206}"
+  },
+  {
+   "name": "390 storage+cookies-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 storage+cookies-blocked: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "390 storage+cookies-blocked: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "390 storage+cookies-blocked: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/844"
+  },
+  {
+   "name": "390 storage+cookies-blocked: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":745.5,\"cardBottom\":745.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "390 storage+cookies-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage+cookies-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage+cookies-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 storage+cookies-blocked: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 google-referrer sheet: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 google-referrer sheet: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 google-referrer sheet: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "390 google-referrer sheet: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":390,\"t\":540,\"b\":746,\"h\":206}"
+  },
+  {
+   "name": "390 google-referrer sheet: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "390 google-referrer sheet: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "390 google-referrer sheet: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "390 google-referrer sheet: covers <=60% of screen",
+   "pass": true,
+   "extra": "206/844"
+  },
+  {
+   "name": "390 google-referrer sheet: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":745.5,\"cardBottom\":745.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "390 google-referrer sheet: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 google-referrer sheet: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 google-referrer sheet: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 google-referrer sheet: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 none: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 none: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 none: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "320 none: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":320,\"t\":256,\"b\":542,\"h\":286}"
+  },
+  {
+   "name": "320 none: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "320 none: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "320 none: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "320 none: covers <=60% of screen",
+   "pass": true,
+   "extra": "286/640"
+  },
+  {
+   "name": "320 none: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":541.5,\"cardBottom\":541.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "320 none: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 none: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 none: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 none: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 none: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 none: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 none: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1366 none: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":463,\"r\":903,\"t\":219,\"b\":549,\"h\":329}"
+  },
+  {
+   "name": "1366 none: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1366 none: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "1366 none: focus trapped",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 none: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 none: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 none: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 none: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "320 facebook: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":320,\"t\":256,\"b\":542,\"h\":286}"
+  },
+  {
+   "name": "320 facebook: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "320 facebook: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "320 facebook: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "320 facebook: covers <=60% of screen",
+   "pass": true,
+   "extra": "286/640"
+  },
+  {
+   "name": "320 facebook: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":541.5,\"cardBottom\":541.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "320 facebook: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 facebook: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1366 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":463,\"r\":903,\"t\":219,\"b\":549,\"h\":329}"
+  },
+  {
+   "name": "1366 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1366 storage-blocked: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "1366 storage-blocked: focus trapped",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage-blocked: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "320 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":0,\"r\":320,\"t\":256,\"b\":542,\"h\":286}"
+  },
+  {
+   "name": "320 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "320 storage-blocked: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "320 storage-blocked: phone = bottom sheet",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "320 storage-blocked: covers <=60% of screen",
+   "pass": true,
+   "extra": "286/640"
+  },
+  {
+   "name": "320 storage-blocked: clear of orange game-day bar",
+   "pass": true,
+   "extra": "{\"top\":541.5,\"cardBottom\":541.5,\"pos\":\"fixed\"}"
+  },
+  {
+   "name": "320 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 storage-blocked: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage+cookies-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage+cookies-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage+cookies-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1366 storage+cookies-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":463,\"r\":903,\"t\":219,\"b\":549,\"h\":329}"
+  },
+  {
+   "name": "1366 storage+cookies-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1366 storage+cookies-blocked: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "1366 storage+cookies-blocked: focus trapped",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage+cookies-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage+cookies-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage+cookies-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 storage+cookies-blocked: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 google-referrer sheet: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 google-referrer sheet: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 google-referrer sheet: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1366 google-referrer sheet: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":403,\"r\":963,\"t\":519,\"b\":704,\"h\":185}"
+  },
+  {
+   "name": "1366 google-referrer sheet: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1366 google-referrer sheet: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "1366 google-referrer sheet: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 google-referrer sheet: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 google-referrer sheet: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 google-referrer sheet: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "320 google-referrer sheet: appears",
+   "pass": false,
+   "extra": ""
+  },
+  {
+   "name": "1920 none: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 none: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 none: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1920 none: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":740,\"r\":1180,\"t\":375,\"b\":705,\"h\":329}"
+  },
+  {
+   "name": "1920 none: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1920 none: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "1920 none: focus trapped",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 none: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 none: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 none: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 none: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1920 storage-blocked: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":740,\"r\":1180,\"t\":375,\"b\":705,\"h\":329}"
+  },
+  {
+   "name": "1920 storage-blocked: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1920 storage-blocked: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "1920 storage-blocked: focus trapped",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 storage-blocked: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 google-referrer sheet: appears",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 google-referrer sheet: exactly one",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 google-referrer sheet: no horizontal overflow",
+   "pass": true,
+   "extra": "0"
+  },
+  {
+   "name": "1920 google-referrer sheet: card inside viewport",
+   "pass": true,
+   "extra": "{\"l\":680,\"r\":1240,\"t\":831,\"b\":1016,\"h\":185}"
+  },
+  {
+   "name": "1920 google-referrer sheet: >=44px targets",
+   "pass": true,
+   "extra": "[]"
+  },
+  {
+   "name": "1920 google-referrer sheet: Barlow",
+   "pass": true,
+   "extra": "Barlow, Arial, sans-serif"
+  },
+  {
+   "name": "1920 google-referrer sheet: Esc closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 google-referrer sheet: stays closed",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 google-referrer sheet: no new host contacted",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1920 google-referrer sheet: no popups/window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "storage-blocked: shows",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "storage-blocked: Not now honoured after reload via cookie fallback",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "close X is 44px",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "X closes",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "X does not write the 7-day key",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "once per session (X close, reload same session)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "Not now suppresses for 7 days",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "returns after 7 days",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "free-email link is the existing hosted form, no target",
+   "pass": true,
+   "extra": "https://buddymartinshow.wixforms.com/f/7517931185469654016 null"
+  },
+  {
+   "name": "CTA navigates the same tab (main frame): no popup, no window.open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "waits while cookie banner is up",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "sheet sits above banner after the wait",
+   "pass": true,
+   "extra": "{\"bt\":704.40625,\"cb\":605.5,\"mode\":\"su-sheet su-on\"}"
+  },
+  {
+   "name": "box appears once the banner is answered",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "not shown on /pricing-plans",
+   "pass": true,
+   "extra": "/pricing-plans"
+  },
+  {
+   "name": "not shown on /signin",
+   "pass": true,
+   "extra": "/account/my-account"
+  },
+  {
+   "name": "not shown on /checkout",
+   "pass": true,
+   "extra": "/checkout"
+  },
+  {
+   "name": "not shown on /account/my-account",
+   "pass": true,
+   "extra": "/account/my-account"
+  },
+  {
+   "name": "390 member gate: logged-out visitor read as visitor",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member gate: logged-out visitor sees it",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member gate: member DOM state read as member",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member gate: simulated member NEVER sees it",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member gate: still never after reload (remembered)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member gate: unknown signal (no login bar) -> not shown",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member gate: login bar still hydrating -> not shown",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member gate: ?gbm_su=1 does not bypass member gate",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member gate: closes if member state appears while open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "390 member gate: member in storage-blocked in-app browser never sees it",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: logged-out visitor read as visitor",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: logged-out visitor sees it",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: member DOM state read as member",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: simulated member NEVER sees it",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: still never after reload (remembered)",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: unknown signal (no login bar) -> not shown",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: login bar still hydrating -> not shown",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: ?gbm_su=1 does not bypass member gate",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: closes if member state appears while open",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "1366 member gate: member in storage-blocked in-app browser never sees it",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "live game: compact sheet, not a center box",
+   "pass": true,
+   "extra": "su-sheet su-on"
+  },
+  {
+   "name": "default timing: not shown in first seconds",
+   "pass": true,
+   "extra": ""
+  },
+  {
+   "name": "default timing: shown by ~10s dwell",
+   "pass": true,
+   "extra": ""
+  }
+ ]
+}

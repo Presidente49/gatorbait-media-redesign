@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-09T18:40:35.664Z",
+ "generatedAt": "2026-11-10T01:58:56.703Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-09T18:40:35.664Z",
+  "checkedAt": "2026-11-10T01:58:56.703Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Top-ranked Gators take five-game win streak over Florida State into Tallahassee",
-   "link": "https://www.gatorbaitmedia.com/post/top-ranked-gators-take-five-game-win-streak-over-florida-state-into-tallahassee",
-   "publishedAt": "2026-11-09T16:07:44.000Z"
+   "title": "Gators women stay unbeaten, hold off Chattanooga 64-58",
+   "link": "https://www.gatorbaitmedia.com/post/gators-women-stay-unbeaten-hold-off-chattanooga-64-58",
+   "publishedAt": "2026-11-09T21:46:10.000Z"
   },
   "problems": []
  },

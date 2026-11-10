@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida basketball: FSU a tall challenge for the Gators",
+      "excerpt": "No. 1 Florida visits Florida State tonight at 6 p.m. on ESPN2. Franz Beard on the Seminoles' size, the Gators' front line, the polls and SEC basketball news.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-basketball-fsu-a-tall-challenge-for-the-gators",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-10T12:02:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_65ef9aa8f64845bfa7751d6048b7a976~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida basketball: FSU a tall challenge for the Gators"
+      }
+    },
+    {
       "title": "LIVE NOW: The Buddy Martin Show, Monday, Nov. 9",
       "excerpt": "The Buddy Martin Show is live now. Watch live on YouTube.",
       "url": "https://www.gatorbaitmedia.com/post/live-now-the-buddy-martin-show-monday-nov-9",
@@ -23,7 +37,7 @@
       "firstPublishedDate": "2026-11-09T21:46:10Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_7226a504d16f4eacbc61ac3f95fad251~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_20d8586b52f84238a0fa5a50e4c1ae62~mv2.jpg/v1/fit/w_1000,h_669,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators women stay unbeaten, hold off Chattanooga 64-58"
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Week 9 Preview: Florida Gators (5-3, 3-3) v. Oklahoma Sooners (4-4, 2-3)"
-      }
-    },
-    {
-      "title": "The Monster That’s Never Fed. A Football Coaches’ Lament.",
-      "excerpt": "Nobody made these men do it. (Including Nick Saban) That’s the thing. They were built for it, and blessed by it, and eaten alive by it, all at the same time.",
-      "url": "https://www.gatorbaitmedia.com/post/the-monster-that-s-never-fed-a-football-coaches-lament",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-07T02:37:15Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_56a45329d0904884b84bfe7d7adabfe7~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Monster That’s Never Fed. A Football Coaches’ Lament."
       }
     }
   ]

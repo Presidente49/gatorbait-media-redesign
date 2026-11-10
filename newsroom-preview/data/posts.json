@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida basketball: FSU a tall challenge for the Gators",
+      "excerpt": "No. 1 Florida visits Florida State tonight at 6 p.m. on ESPN2. Franz Beard on the Seminoles' size, the Gators' front line, the polls and SEC basketball news.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-basketball-fsu-a-tall-challenge-for-the-gators",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-10T12:02:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_65ef9aa8f64845bfa7751d6048b7a976~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida basketball: FSU a tall challenge for the Gators"
+      }
+    },
+    {
       "title": "LIVE NOW: The Buddy Martin Show, Monday, Nov. 9",
       "excerpt": "The Buddy Martin Show is live now. Watch live on YouTube.",
       "url": "https://www.gatorbaitmedia.com/post/live-now-the-buddy-martin-show-monday-nov-9",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Frustration boils over; Sumrall has more questions than answers"
-      }
-    },
-    {
-      "title": "How To Screw Up A Perfectly Good Night. If Not A Season.",
-      "excerpt": "This was supposed to be a happy night for Urban MeyerGatorBaitMedia. Photo by Brenden Martin. Sorry, Urban — you deserved better than this. By Buddy Martin gatorbaitmedia.com Just when it seemed like things were getting better, they got worse. Just when it looked like the season was turning the corner, it didn't. Just when the stage was set for a night to…",
-      "url": "https://www.gatorbaitmedia.com/post/how-to-screw-up-a-perfectly-good-night-if-not-a-season",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-08T11:46:54Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_c8f8ed6d4e6c4cc69ef659282756a18a~mv2.jpg/v1/fit/w_960,h_540,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for How To Screw Up A Perfectly Good Night. If Not A Season."
       }
     }
   ]

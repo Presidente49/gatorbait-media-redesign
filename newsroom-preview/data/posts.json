@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Day The Music Died, Again",
+      "excerpt": "The music of college football officially died this week.",
+      "url": "https://www.gatorbaitmedia.com/post/the-day-the-music-died-again",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-10T19:35:44Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_d38311e78cf246a4b6f6efddabf07deb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Day The Music Died, Again"
+      }
+    },
+    {
       "title": "Florida basketball: FSU a tall challenge for the Gators",
       "excerpt": "No. 1 Florida visits Florida State tonight at 6 p.m. on ESPN2. Franz Beard on the Seminoles' size, the Gators' front line, the polls and SEC basketball news.",
       "url": "https://www.gatorbaitmedia.com/post/florida-basketball-fsu-a-tall-challenge-for-the-gators",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida vs. Oklahoma: Box Score, Stats and Key Takeaways"
-      }
-    },
-    {
-      "title": "Frustration boils over; Sumrall has more questions than answers",
-      "excerpt": "Franz Beard on Florida’s 23-7 loss to Oklahoma: a season-low 203 yards, a fourth-down gamble and a coach who says he is frustrated, hungry and not backing down. Plus the rest of the SEC.",
-      "url": "https://www.gatorbaitmedia.com/post/frustration-boils-over-sumrall-has-more-questions-than-answers",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-08T14:36:28Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_791928c7bf6c4d0096665ecb1e7daab5~mv2.jpg/v1/fit/w_1000,h_960,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Frustration boils over; Sumrall has more questions than answers"
       }
     }
   ]

@@ -1,793 +1,800 @@
 {
- "$comment": "Oklahoma postgame web edition (built Nov. 10, 2026): Oklahoma 23, Florida 7, Sat. Nov. 7, Ben Hill Griffin Stadium (ESPN event 401856739). Every number is from the ESPN pull (ok-pack stats.json / part1.json); every quote is verbatim from the UF/ASAP postgame transcripts or the Monday, Nov. 9 press conference transcript. No Florida pregame ranking anywhere (poll unverified). The Jones drive that ended in the third-quarter interception was 9 plays, 52 yards (ESPN), not 10. Desk stories are bylined GatorBait Staff; Behind the Sticks is by Brenden Martin. Photos: Nov. 7 UAA game files only, credited as filed; no player named unless the file name names him. Never cite, link or credit Gator Country. No PDF exists yet, so there is no download block (the renderer needs a usrfiles.com PDF URL).",
- "id": "2026-11-10-postgame-oklahoma",
- "layout": "postgame",
- "issue": {
-  "number": "Postgame edition",
-  "date": "Tuesday, Nov. 10, 2026",
-  "week": "Oklahoma at Florida · Gainesville",
-  "home": "GatorBait Media",
-  "pageTitle": "GatorBait Magazine | Postgame: Oklahoma 23, Florida 7"
- },
- "cover": {
-  "kicker": "Postgame · GatorBait Staff",
-  "coverTitle": "Ground Down",
-  "score": {
-   "away": "Oklahoma",
-   "awayScore": "23",
-   "home": "Florida",
-   "homeScore": "7",
-   "label": "Final"
+  "$comment": "Oklahoma postgame web edition (built Nov. 10, 2026): Oklahoma 23, Florida 7, Sat. Nov. 7, Ben Hill Griffin Stadium (ESPN event 401856739). Every number is from the ESPN pull (ok-pack stats.json / part1.json); every quote is verbatim from the UF/ASAP postgame transcripts or the Monday, Nov. 9 press conference transcript. No Florida pregame ranking anywhere (poll unverified). The Jones drive that ended in the third-quarter interception was 9 plays, 52 yards (ESPN), not 10. Desk stories are bylined GatorBait Staff; Behind the Sticks is by Brenden Martin. Photos: Nov. 7 UAA game files only, credited as filed; no player named unless the file name names him. Never cite, link or credit Gator Country. No PDF exists yet, so there is no download block (the renderer needs a usrfiles.com PDF URL).",
+  "id": "2026-11-10-postgame-oklahoma",
+  "layout": "postgame",
+  "issue": {
+    "number": "Postgame edition",
+    "date": "Tuesday, Nov. 10, 2026",
+    "week": "Oklahoma at Florida · Gainesville",
+    "home": "GatorBait Media",
+    "pageTitle": "GatorBait Magazine | Postgame: Oklahoma 23, Florida 7"
   },
-  "headline": "Ground Down: Oklahoma Drains Florida, 23-7",
-  "dek": "Oklahoma held Florida to 203 total yards and shut out the Gators in the second half of a 23-7 win at Ben Hill Griffin Stadium.",
-  "byline": "By GatorBait Staff",
-  "cta": "Read the game story",
-  "url": "/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss",
-  "image": {
-   "id": "d3cfa5_44380e7cef204f2580492d7f49a44a0d",
-   "ext": "jpg",
-   "width": 1920,
-   "height": 1280,
-   "alt": "Florida's DJ Coleman and the Gators defense bring down an Oklahoma ball carrier at Ben Hill Griffin Stadium, Nov. 7, 2026. Photo courtesy UAA and Victoria Riccobono.",
-   "credit": "Photo courtesy UAA and Victoria Riccobono.",
-   "uaa": false
-  },
-  "teasers": [
-   "Sumrall: “Right now, we feel a little bit lost”",
-   "20 plays, 89 yards, 12:45: the drive that ended it",
-   "Buddy Martin, Franz Beard and Eddie Gilley",
-   "Up next: Florida at No. 13 Kentucky"
-  ],
-  "linesLabel": "Also inside",
-  "lines": [
-   "Columns: Buddy Martin, Franz Beard and Eddie Gilley",
-   "Behind the Sticks, by Brenden Martin",
-   "Score by score, box score and game flow",
-   "In their words: Sumrall, Jones and Graham",
-   "Up next: Florida at Kentucky, Saturday, Nov. 14"
-  ]
- },
- "final": {
-  "label": "Final",
-  "teams": [
-   {
-    "name": "Oklahoma",
-    "score": 23,
-    "won": true
-   },
-   {
-    "name": "Florida",
-    "score": 7
-   }
-  ],
-  "meta": [
-   "Saturday, Nov. 7",
-   "Ben Hill Griffin Stadium, Gainesville",
-   "Attendance: 90,442",
-   "Florida is 5-4, 3-4 SEC"
-  ]
- },
- "contents": {
-  "label": "In this issue",
-  "items": [
-   {
-    "id": "columns",
-    "label": "Columns"
-   },
-   {
-    "id": "coverage",
-    "label": "More coverage"
-   },
-   {
-    "id": "damage",
-    "label": "By the numbers"
-   },
-   {
-    "id": "scoring",
-    "label": "Score by score"
-   },
-   {
-    "id": "box",
-    "label": "Box score"
-   },
-   {
-    "id": "flow",
-    "label": "Game flow"
-   },
-   {
-    "id": "quotes",
-    "label": "In their words"
-   },
-   {
-    "id": "watch",
-    "label": "Watch"
-   },
-   {
-    "id": "next",
-    "label": "Up next"
-   }
-  ]
- },
- "columns": {
-  "kicker": "Columns",
-  "title": "The columnists on Oklahoma and what comes next",
-  "dek": "Buddy Martin, Franz Beard and Eddie Gilley, newest first.",
-  "items": [
-   {
-    "rubric": "Column",
-    "author": "Buddy Martin",
-    "title": "Sumrall's My Old Kentucky Home",
-    "dek": "Jon Sumrall played at Kentucky and coached there. He says Saturday's game has very little to do with those ties.",
-    "url": "/post/sumrall-s-my-old-kentucky-home",
-    "image": {
-     "id": "d3cfa5_6be771f169354abbbc002e764e9ce75d",
-     "ext": "jpg",
-     "width": 1920,
-     "height": 1280,
-     "alt": "Florida coach Jon Sumrall reaches out to touch an alligator statue as fans look on before the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA and Victoria Riccobono.",
-     "credit": "Photo courtesy UAA and Victoria Riccobono.",
-     "uaa": false
-    }
-   },
-   {
-    "rubric": "Column",
-    "author": "Franz Beard",
-    "title": "Football relevance at stake for both Florida and Kentucky",
-    "dek": "Franz Beard on what Saturday in Lexington means for the Gators and the Wildcats.",
-    "url": "/post/football-relevance-at-stake-for-both-florida-and-kentucky"
-   },
-   {
-    "rubric": "Column",
-    "author": "Eddie Gilley",
-    "title": "Reviewing the Reads After the Loss",
-    "dek": "Eddie Gilley grades his five pregame reads, from a B for the pass rush to an F for the offensive line.",
-    "url": "/post/reviewing-the-reads-after-the-loss",
-    "image": {
-     "id": "d3cfa5_cd3c24f00a774183a8f7371e837229ac",
-     "ext": "jpg",
-     "width": 1920,
-     "height": 1280,
-     "alt": "Florida students cheer in the stands at Ben Hill Griffin Stadium during the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA and Emma Brugna.",
-     "credit": "Photo courtesy UAA and Emma Brugna.",
-     "uaa": false
-    }
-   },
-   {
-    "rubric": "Column",
-    "author": "Buddy Martin",
-    "title": "The Aftermath: The Bitter Taste Lingers",
-    "dek": "As Tony Bennett sang, I want to be around to pick up the pieces…",
-    "url": "/post/the-aftermath-the-bitter-taste-lingers",
-    "image": {
-     "id": "d3cfa5_7cc99c954a6b4224bac7e5d76f0ed3ca",
-     "ext": "jpg",
-     "width": 1440,
-     "height": 960,
-     "alt": "Florida players stand together on the field at Ben Hill Griffin Stadium after the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA.",
-     "credit": "Photo courtesy UAA.",
-     "uaa": false
-    }
-   },
-   {
-    "rubric": "Column",
-    "author": "Franz Beard",
-    "title": "Frustration boils over; Sumrall has more questions than answers",
-    "dek": "Franz Beard on a coach searching for answers after Florida managed 203 yards and one touchdown.",
-    "url": "/post/frustration-boils-over-sumrall-has-more-questions-than-answers",
-    "image": {
-     "id": "d3cfa5_9c7d45364e5347feb191b2fb6e9f0ab7",
-     "ext": "jpg",
-     "width": 1440,
-     "height": 960,
-     "alt": "A Florida coach in a brown hooded sweatshirt gestures from the sideline during the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA.",
-     "credit": "Photo courtesy UAA.",
-     "uaa": false
-    }
-   },
-   {
-    "rubric": "Column",
-    "author": "Buddy Martin",
-    "title": "How To Screw Up A Perfectly Good Night. If Not A Season.",
-    "dek": "Just when it seemed like things were getting better, they got worse.",
-    "url": "/post/how-to-screw-up-a-perfectly-good-night-if-not-a-season",
-    "image": {
-     "id": "d3cfa5_80f1877415184e748f536eda85d9a982",
-     "ext": "jpg",
-     "width": 1920,
-     "height": 1280,
-     "alt": "Fireworks rise over Ben Hill Griffin Stadium before the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA and Emma Brugna.",
-     "credit": "Photo courtesy UAA and Emma Brugna.",
-     "uaa": false
-    }
-   }
-  ]
- },
- "coverage": {
-  "kicker": "More coverage",
-  "title": "The rest of the package",
-  "dek": "Analysis, the polls and the full box score, newest first.",
-  "items": [
-   {
-    "rubric": "Polls",
-    "author": "GatorBait Staff",
-    "title": "From No. 8 to no votes: Florida falls out of both polls",
-    "dek": "Florida received no votes in the AP Top 25 or the Coaches Poll released Sunday, Nov. 8. No. 13 Kentucky is next.",
-    "url": "/post/florida-drops-out-of-ap-and-coaches-polls"
-   },
-   {
-    "rubric": "Analysis",
-    "author": "Brenden Martin",
-    "title": "Behind the Sticks",
-    "dek": "Why the offense stopped winning early downs, and what Oklahoma's 20-play, 89-yard drive showed.",
-    "url": "/post/behind-the-sticks"
-   },
-   {
-    "rubric": "Box score",
-    "author": "GatorBait Staff",
-    "title": "Florida vs. Oklahoma: Box Score, Stats and Key Takeaways",
-    "dek": "The score by quarter, team stats and the takeaways from Oklahoma's 23-7 win.",
-    "url": "/post/florida-vs-oklahoma-box-score-stats-and-key-takeaways",
-    "image": {
-     "id": "d3cfa5_08012e3980db454eb15e06aa28b7943c",
-     "ext": "jpg",
-     "width": 1920,
-     "height": 1280,
-     "alt": "Florida's Lacota Dippre, left, and Jadan Baugh celebrate during the Oklahoma game at Ben Hill Griffin Stadium, Nov. 7, 2026. Photo courtesy UAA and Hannah White.",
-     "credit": "Photo courtesy UAA and Hannah White.",
-     "uaa": true
-    }
-   }
-  ]
- },
- "damage": {
-  "kicker": "By the numbers",
-  "title": "203 yards and a game that never turned",
-  "dek": "Florida finished with 203 total yards to Oklahoma's 351, converted 2 of 9 third downs and turned the ball over twice. Oklahoma held the ball for 37:50.",
-  "yards": {
-   "label": "Total yards",
-   "rows": [
-    {
-     "name": "Florida",
-     "value": 203,
-     "us": true
+  "cover": {
+    "kicker": "Postgame · GatorBait Staff",
+    "coverTitle": "Ground Down",
+    "score": {
+      "away": "Oklahoma",
+      "awayScore": "23",
+      "home": "Florida",
+      "homeScore": "7",
+      "label": "Final"
     },
-    {
-     "name": "Oklahoma",
-     "value": 351
-    }
-   ]
+    "headline": "Ground Down: Oklahoma Drains Florida, 23-7",
+    "dek": "Oklahoma held Florida to 203 total yards and shut out the Gators in the second half of a 23-7 win at Ben Hill Griffin Stadium.",
+    "byline": "By GatorBait Staff",
+    "cta": "Read the game story",
+    "url": "/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss",
+    "image": {
+      "id": "d3cfa5_44380e7cef204f2580492d7f49a44a0d",
+      "ext": "jpg",
+      "width": 1920,
+      "height": 1280,
+      "alt": "Florida's DJ Coleman and the Gators defense bring down an Oklahoma ball carrier at Ben Hill Griffin Stadium, Nov. 7, 2026. Photo courtesy UAA and Victoria Riccobono.",
+      "credit": "Photo courtesy UAA and Victoria Riccobono.",
+      "uaa": false
+    },
+    "teasers": [
+      "Sumrall: “Right now, we feel a little bit lost”",
+      "20 plays, 89 yards, 12:45: the drive that ended it",
+      "Buddy Martin, Franz Beard and Eddie Gilley",
+      "Up next: Florida at No. 13 Kentucky"
+    ],
+    "linesLabel": "Also inside",
+    "lines": [
+      "Columns: Buddy Martin, Franz Beard and Eddie Gilley",
+      "Behind the Sticks, by Brenden Martin",
+      "Score by score, box score and game flow",
+      "In their words: Sumrall, Jones and Graham",
+      "Up next: Florida at Kentucky, Saturday, Nov. 14"
+    ]
   },
-  "stats": [
-   {
-    "value": "70",
-    "label": "Florida rushing yards",
-    "detail": "25 carries at 2.8 yards each. Oklahoma ran for 144 on 40 carries."
-   },
-   {
-    "value": "2-9",
-    "label": "Florida third downs",
-    "detail": "Oklahoma converted 10 of 18 and held the ball 37:50 to Florida's 22:10."
-   },
-   {
-    "value": "2",
-    "label": "Florida turnovers",
-    "detail": "Both were interceptions by Tramell Jones Jr. Oklahoma had none."
-   },
-   {
-    "value": "20",
-    "label": "Plays on Oklahoma's clinching drive",
-    "detail": "89 yards and 12:45 off the clock, ending in a touchdown with 4:56 left."
-   },
-   {
-    "value": "9",
-    "label": "Plays on Florida's longest second-half drive",
-    "detail": "52 yards in 4:17. It ended with an interception."
-   },
-   {
-    "value": "90,442",
-    "label": "Attendance",
-    "detail": "Ben Hill Griffin Stadium, Nov. 7."
-   }
-  ],
-  "source": "Source: ESPN box score (event 401856739). Attendance: ESPN."
- },
- "scoring": {
-  "kicker": "Score by score",
-  "title": "How the points came",
-  "dek": "Oklahoma led 13-7 at halftime. Neither team scored in the third quarter, and Oklahoma added a touchdown and a field goal in the fourth. Florida's only points came on Jadan Baugh's 15-yard run late in the second quarter.",
-  "cols": [
-   "1",
-   "2",
-   "3",
-   "4",
-   "F"
-  ],
-  "rows": [
-   {
-    "team": "Florida",
-    "q": [
-     0,
-     7,
-     0,
-     0
+  "final": {
+    "label": "Final",
+    "teams": [
+      {
+        "name": "Oklahoma",
+        "score": 23,
+        "won": true
+      },
+      {
+        "name": "Florida",
+        "score": 7
+      }
     ],
-    "f": 7,
-    "us": true
-   },
-   {
-    "team": "Oklahoma",
-    "q": [
-     3,
-     10,
-     0,
-     10
+    "meta": [
+      "Saturday, Nov. 7",
+      "Ben Hill Griffin Stadium, Gainesville",
+      "Attendance: 90,442",
+      "Florida is 5-4, 3-4 SEC"
+    ]
+  },
+  "contents": {
+    "label": "In this issue",
+    "items": [
+      {
+        "id": "columns",
+        "label": "Columns"
+      },
+      {
+        "id": "coverage",
+        "label": "More coverage"
+      },
+      {
+        "id": "damage",
+        "label": "By the numbers"
+      },
+      {
+        "id": "scoring",
+        "label": "Score by score"
+      },
+      {
+        "id": "box",
+        "label": "Box score"
+      },
+      {
+        "id": "flow",
+        "label": "Game flow"
+      },
+      {
+        "id": "quotes",
+        "label": "In their words"
+      },
+      {
+        "id": "watch",
+        "label": "Watch"
+      },
+      {
+        "id": "next",
+        "label": "Up next"
+      }
+    ]
+  },
+  "columns": {
+    "kicker": "Columns",
+    "title": "The columnists on Oklahoma and what comes next",
+    "dek": "Buddy Martin, Franz Beard and Eddie Gilley, newest first.",
+    "items": [
+      {
+        "rubric": "Column",
+        "author": "Buddy Martin",
+        "title": "Sumrall's My Old Kentucky Home",
+        "dek": "Jon Sumrall played at Kentucky and coached there. He says Saturday's game has very little to do with those ties.",
+        "url": "/post/sumrall-s-my-old-kentucky-home",
+        "image": {
+          "id": "d3cfa5_6be771f169354abbbc002e764e9ce75d",
+          "ext": "jpg",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Florida coach Jon Sumrall reaches out to touch an alligator statue as fans look on before the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA and Victoria Riccobono.",
+          "credit": "Photo courtesy UAA and Victoria Riccobono.",
+          "uaa": false
+        }
+      },
+      {
+        "rubric": "Column",
+        "author": "Franz Beard",
+        "title": "Football relevance at stake for both Florida and Kentucky",
+        "dek": "Franz Beard on what Saturday in Lexington means for the Gators and the Wildcats.",
+        "url": "/post/football-relevance-at-stake-for-both-florida-and-kentucky"
+      },
+      {
+        "rubric": "Column",
+        "author": "Eddie Gilley",
+        "title": "Reviewing the Reads After the Loss",
+        "dek": "Eddie Gilley grades his five pregame reads, from a B for the pass rush to an F for the offensive line.",
+        "url": "/post/reviewing-the-reads-after-the-loss",
+        "image": {
+          "id": "d3cfa5_cd3c24f00a774183a8f7371e837229ac",
+          "ext": "jpg",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Florida students cheer in the stands at Ben Hill Griffin Stadium during the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA and Emma Brugna.",
+          "credit": "Photo courtesy UAA and Emma Brugna.",
+          "uaa": false
+        }
+      },
+      {
+        "rubric": "Column",
+        "author": "Buddy Martin",
+        "title": "The Aftermath: The Bitter Taste Lingers",
+        "dek": "As Tony Bennett sang, I want to be around to pick up the pieces…",
+        "url": "/post/the-aftermath-the-bitter-taste-lingers",
+        "image": {
+          "id": "d3cfa5_7cc99c954a6b4224bac7e5d76f0ed3ca",
+          "ext": "jpg",
+          "width": 1440,
+          "height": 960,
+          "alt": "Florida players stand together on the field at Ben Hill Griffin Stadium after the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA.",
+          "credit": "Photo courtesy UAA.",
+          "uaa": false
+        }
+      },
+      {
+        "rubric": "Column",
+        "author": "Franz Beard",
+        "title": "Frustration boils over; Sumrall has more questions than answers",
+        "dek": "Franz Beard on a coach searching for answers after Florida managed 203 yards and one touchdown.",
+        "url": "/post/frustration-boils-over-sumrall-has-more-questions-than-answers",
+        "image": {
+          "id": "d3cfa5_9c7d45364e5347feb191b2fb6e9f0ab7",
+          "ext": "jpg",
+          "width": 1440,
+          "height": 960,
+          "alt": "A Florida coach in a brown hooded sweatshirt gestures from the sideline during the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA.",
+          "credit": "Photo courtesy UAA.",
+          "uaa": false
+        }
+      },
+      {
+        "rubric": "Column",
+        "author": "Buddy Martin",
+        "title": "How To Screw Up A Perfectly Good Night. If Not A Season.",
+        "dek": "Just when it seemed like things were getting better, they got worse.",
+        "url": "/post/how-to-screw-up-a-perfectly-good-night-if-not-a-season",
+        "image": {
+          "id": "d3cfa5_80f1877415184e748f536eda85d9a982",
+          "ext": "jpg",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Fireworks rise over Ben Hill Griffin Stadium before the Oklahoma game, Nov. 7, 2026. Photo courtesy UAA and Emma Brugna.",
+          "credit": "Photo courtesy UAA and Emma Brugna.",
+          "uaa": false
+        }
+      }
+    ]
+  },
+  "coverage": {
+    "kicker": "More coverage",
+    "title": "The rest of the package",
+    "dek": "Analysis, the polls and the full box score, newest first.",
+    "items": [
+      {
+        "rubric": "Polls",
+        "author": "GatorBait Staff",
+        "title": "From No. 8 to no votes: Florida falls out of both polls",
+        "dek": "Florida received no votes in the AP Top 25 or the Coaches Poll released Sunday, Nov. 8. No. 13 Kentucky is next.",
+        "url": "/post/florida-drops-out-of-ap-and-coaches-polls"
+      },
+      {
+        "rubric": "Analysis",
+        "author": "Brenden Martin",
+        "title": "Behind the Sticks",
+        "dek": "Why the offense stopped winning early downs, and what Oklahoma's 20-play, 89-yard drive showed.",
+        "url": "/post/behind-the-sticks"
+      },
+      {
+        "rubric": "Box score",
+        "author": "GatorBait Staff",
+        "title": "Florida vs. Oklahoma: Box Score, Stats and Key Takeaways",
+        "dek": "The score by quarter, team stats and the takeaways from Oklahoma's 23-7 win.",
+        "url": "/post/florida-vs-oklahoma-box-score-stats-and-key-takeaways",
+        "image": {
+          "id": "d3cfa5_08012e3980db454eb15e06aa28b7943c",
+          "ext": "jpg",
+          "width": 1920,
+          "height": 1280,
+          "alt": "Florida's Lacota Dippre, left, and Jadan Baugh celebrate during the Oklahoma game at Ben Hill Griffin Stadium, Nov. 7, 2026. Photo courtesy UAA and Hannah White.",
+          "credit": "Photo courtesy UAA and Hannah White.",
+          "uaa": true
+        }
+      }
+    ]
+  },
+  "damage": {
+    "kicker": "By the numbers",
+    "title": "203 yards and a game that never turned",
+    "dek": "Florida finished with 203 total yards to Oklahoma's 351, converted 2 of 9 third downs and turned the ball over twice. Oklahoma held the ball for 37:50.",
+    "yards": {
+      "label": "Total yards",
+      "rows": [
+        {
+          "name": "Florida",
+          "value": 203,
+          "us": true
+        },
+        {
+          "name": "Oklahoma",
+          "value": 351
+        }
+      ]
+    },
+    "stats": [
+      {
+        "value": "70",
+        "label": "Florida rushing yards",
+        "detail": "25 carries at 2.8 yards each. Oklahoma ran for 144 on 40 carries."
+      },
+      {
+        "value": "2-9",
+        "label": "Florida third downs",
+        "detail": "Oklahoma converted 10 of 18 and held the ball 37:50 to Florida's 22:10."
+      },
+      {
+        "value": "2",
+        "label": "Florida turnovers",
+        "detail": "Both were interceptions by Tramell Jones Jr. Oklahoma had none."
+      },
+      {
+        "value": "20",
+        "label": "Plays on Oklahoma's clinching drive",
+        "detail": "89 yards and 12:45 off the clock, ending in a touchdown with 4:56 left."
+      },
+      {
+        "value": "9",
+        "label": "Plays on Florida's longest second-half drive",
+        "detail": "52 yards in 4:17. It ended with an interception."
+      },
+      {
+        "value": "90,442",
+        "label": "Attendance",
+        "detail": "Ben Hill Griffin Stadium, Nov. 7."
+      }
     ],
-    "f": 23
-   }
-  ],
-  "plays": [
-   {
-    "when": "Q1 7:36",
-    "play": "Tate Sandell 41 yd Field Goal",
-    "score": "UF 0, OU 3",
-    "uf": false
-   },
-   {
-    "when": "Q2 9:42",
-    "play": "Hayden Hansen 3 yd pass from John Mateer (Tate Sandell Kick)",
-    "score": "UF 0, OU 10",
-    "uf": false
-   },
-   {
-    "when": "Q2 3:00",
-    "play": "Jadan Baugh 15 yd Run (Patrick Durkin Kick)",
-    "score": "UF 7, OU 10",
-    "uf": true
-   },
-   {
-    "when": "Q2 0:36",
-    "play": "Tate Sandell 48 yd Field Goal",
-    "score": "UF 7, OU 13",
-    "uf": false
-   },
-   {
-    "when": "Q4 4:56",
-    "play": "Isaiah Sategna III 6 yd pass from John Mateer (Tate Sandell Kick)",
-    "score": "UF 7, OU 20",
-    "uf": false
-   },
-   {
-    "when": "Q4 1:56",
-    "play": "Tate Sandell 31 yd Field Goal",
-    "score": "UF 7, OU 23",
-    "uf": false
-   }
-  ],
-  "source": "Scoring plays and line score: ESPN. Times are game clock."
- },
- "box": {
-  "kicker": "Box score",
-  "title": "The full box score",
-  "dek": "Team stats and the leaders for both teams.",
-  "cols": [
-   "Florida",
-   "Oklahoma"
-  ],
-  "rows": [
-   [
-    "First downs",
-    "11",
-    "20"
-   ],
-   [
-    "Total yards",
-    "203",
-    "351"
-   ],
-   [
-    "Passing",
-    "10/22, 133 yds",
-    "21/33, 207 yds"
-   ],
-   [
-    "Rushing",
-    "70 yds on 25 carries",
-    "144 yds on 40 carries"
-   ],
-   [
-    "Yards per rush",
-    "2.8",
-    "3.6"
-   ],
-   [
-    "Third downs",
-    "2-9",
-    "10-18"
-   ],
-   [
-    "Fourth downs",
-    "0-2",
-    "1-1"
-   ],
-   [
-    "Penalties",
-    "4-40",
-    "9-70"
-   ],
-   [
-    "Turnovers",
-    "2",
-    "0"
-   ],
-   [
-    "Time of possession",
-    "22:10",
-    "37:50"
-   ]
-  ],
-  "leaders": [
-   {
-    "team": "Florida",
+    "source": "Source: ESPN box score (event 401856739). Attendance: ESPN."
+  },
+  "scoring": {
+    "kicker": "Score by score",
+    "title": "How the points came",
+    "dek": "Oklahoma led 13-7 at halftime. Neither team scored in the third quarter, and Oklahoma added a touchdown and a field goal in the fourth. Florida's only points came on Jadan Baugh's 15-yard run late in the second quarter.",
+    "cols": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "F"
+    ],
+    "rows": [
+      {
+        "team": "Florida",
+        "q": [
+          0,
+          7,
+          0,
+          0
+        ],
+        "f": 7,
+        "us": true
+      },
+      {
+        "team": "Oklahoma",
+        "q": [
+          3,
+          10,
+          0,
+          10
+        ],
+        "f": 23
+      }
+    ],
+    "plays": [
+      {
+        "when": "Q1 7:36",
+        "play": "Tate Sandell 41 yd Field Goal",
+        "score": "UF 0, OU 3",
+        "uf": false
+      },
+      {
+        "when": "Q2 9:42",
+        "play": "Hayden Hansen 3 yd pass from John Mateer (Tate Sandell Kick)",
+        "score": "UF 0, OU 10",
+        "uf": false
+      },
+      {
+        "when": "Q2 3:00",
+        "play": "Jadan Baugh 15 yd Run (Patrick Durkin Kick)",
+        "score": "UF 7, OU 10",
+        "uf": true
+      },
+      {
+        "when": "Q2 0:36",
+        "play": "Tate Sandell 48 yd Field Goal",
+        "score": "UF 7, OU 13",
+        "uf": false
+      },
+      {
+        "when": "Q4 4:56",
+        "play": "Isaiah Sategna III 6 yd pass from John Mateer (Tate Sandell Kick)",
+        "score": "UF 7, OU 20",
+        "uf": false
+      },
+      {
+        "when": "Q4 1:56",
+        "play": "Tate Sandell 31 yd Field Goal",
+        "score": "UF 7, OU 23",
+        "uf": false
+      }
+    ],
+    "source": "Scoring plays and line score: ESPN. Times are game clock."
+  },
+  "box": {
+    "kicker": "Box score",
+    "title": "The full box score",
+    "dek": "Team stats and the leaders for both teams.",
+    "cols": [
+      "Florida",
+      "Oklahoma"
+    ],
+    "rows": [
+      [
+        "First downs",
+        "11",
+        "20"
+      ],
+      [
+        "Total yards",
+        "203",
+        "351"
+      ],
+      [
+        "Passing",
+        "10/22, 133 yds",
+        "21/33, 207 yds"
+      ],
+      [
+        "Rushing",
+        "70 yds on 25 carries",
+        "144 yds on 40 carries"
+      ],
+      [
+        "Yards per rush",
+        "2.8",
+        "3.6"
+      ],
+      [
+        "Third downs",
+        "2-9",
+        "10-18"
+      ],
+      [
+        "Fourth downs",
+        "0-2",
+        "1-1"
+      ],
+      [
+        "Penalties",
+        "4-40",
+        "9-70"
+      ],
+      [
+        "Turnovers",
+        "2",
+        "0"
+      ],
+      [
+        "Time of possession",
+        "22:10",
+        "37:50"
+      ]
+    ],
+    "leaders": [
+      {
+        "team": "Florida",
+        "items": [
+          [
+            "Passing",
+            "Tramell Jones Jr.: 10/22, 133 YDS, 0 TD, 2 INT"
+          ],
+          [
+            "Rushing",
+            "Jadan Baugh: 8 CAR, 35 YDS, 1 TD"
+          ],
+          [
+            "Receiving",
+            "Duke Clark: 4 REC, 70 YDS, 0 TD"
+          ],
+          [
+            "Defense",
+            "Myles Graham: 15 tackles, 0.5 sacks"
+          ]
+        ]
+      },
+      {
+        "team": "Oklahoma",
+        "items": [
+          [
+            "Passing",
+            "John Mateer: 21/33, 207 YDS, 2 TD, 0 INT"
+          ],
+          [
+            "Rushing",
+            "John Mateer: 14 CAR, 56 YDS, 0 TD"
+          ],
+          [
+            "Receiving",
+            "Rocky Beers: 4 REC, 72 YDS, 0 TD"
+          ],
+          [
+            "Defense",
+            "Owen Heinecke: 10 tackles, 0.5 sacks"
+          ]
+        ]
+      }
+    ],
+    "source": "Team stats and leaders: ESPN box score (event 401856739)."
+  },
+  "flow": {
+    "kicker": "Game flow",
+    "title": "How the game got away",
+    "dek": "Florida's chance to win, play by play. The Gators started at 66%, never had the lead and were at 50% after Baugh's touchdown made it 10-7 late in the second quarter. Oklahoma scored the next 13 points.",
+    "axis": [
+      "100%",
+      "50%",
+      "0%"
+    ],
+    "quarters": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4"
+    ],
+    "quarterStarts": [
+      0,
+      34,
+      78,
+      119
+    ],
+    "points": [
+      65.7,
+      67.3,
+      66.1,
+      65.1,
+      62.7,
+      63.4,
+      64.8,
+      64.1,
+      62.0,
+      62.5,
+      63.1,
+      55.2,
+      54.6,
+      59.6,
+      60.7,
+      57.4,
+      57.6,
+      58.5,
+      57.1,
+      58.5,
+      58.4,
+      60.9,
+      59.5,
+      59.0,
+      56.3,
+      54.8,
+      53.8,
+      54.2,
+      53.1,
+      52.2,
+      50.1,
+      50.1,
+      49.6,
+      49.5,
+      55.1,
+      47.9,
+      48.1,
+      49.8,
+      50.0,
+      45.8,
+      44.5,
+      45.0,
+      42.9,
+      39.4,
+      38.9,
+      35.1,
+      33.5,
+      35.6,
+      34.5,
+      32.7,
+      29.2,
+      30.8,
+      30.0,
+      29.0,
+      30.2,
+      29.5,
+      30.4,
+      32.0,
+      34.4,
+      37.5,
+      40.9,
+      42.3,
+      50.1,
+      50.3,
+      48.2,
+      48.6,
+      48.9,
+      46.0,
+      43.2,
+      42.5,
+      44.2,
+      46.7,
+      40.8,
+      39.9,
+      40.2,
+      40.0,
+      40.2,
+      37.9,
+      37.2,
+      35.9,
+      33.0,
+      35.5,
+      35.8,
+      39.7,
+      39.3,
+      39.4,
+      37.3,
+      32.9,
+      33.2,
+      33.8,
+      35.4,
+      37.2,
+      39.7,
+      34.3,
+      42.1,
+      41.4,
+      43.1,
+      40.3,
+      37.8,
+      48.7,
+      47.6,
+      48.5,
+      41.4,
+      33.0,
+      38.2,
+      37.8,
+      36.8,
+      39.6,
+      38.3,
+      38.7,
+      37.6,
+      30.4,
+      32.3,
+      33.0,
+      29.0,
+      29.8,
+      30.2,
+      24.9,
+      24.6,
+      26.4,
+      23.9,
+      21.1,
+      25.2,
+      25.0,
+      21.0,
+      16.7,
+      18.1,
+      13.9,
+      10.4,
+      10.1,
+      11.2,
+      4.5,
+      4.1,
+      4.6,
+      1.7,
+      1.4,
+      1.1,
+      0.7,
+      0.6,
+      0.2,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "marks": [
+      {
+        "i": 15,
+        "title": "3-0",
+        "note": "Tate Sandell's 41-yard field goal with 7:36 left in the first quarter; Florida is at 57%"
+      },
+      {
+        "i": 45,
+        "title": "10-0",
+        "note": "John Mateer finds Hayden Hansen from 3 yards with 9:42 left in the half; Florida is at 35%"
+      },
+      {
+        "i": 62,
+        "title": "10-7",
+        "note": "Jadan Baugh's 15-yard run with 3:00 left in the half is Florida's only touchdown; Florida is at 50%"
+      },
+      {
+        "i": 72,
+        "title": "13-7",
+        "note": "Sandell kicks a 48-yard field goal with 36 seconds left in the half; Florida is at 41%"
+      },
+      {
+        "i": 134,
+        "title": "20-7",
+        "note": "Mateer to Isaiah Sategna III from 6 yards with 4:56 left in the game; Florida is at 2%"
+      },
+      {
+        "i": 150,
+        "title": "23-7",
+        "note": "Sandell's 31-yard field goal with 1:56 left; Florida is at 0.1%"
+      }
+    ],
+    "summary": "Line chart of Florida's win probability against Oklahoma. It starts near 66%, falls to 35% when Oklahoma goes up 10-0 in the second quarter, rises to 50% when Baugh's touchdown makes it 10-7, drops to 41% after Oklahoma's field goal before halftime, slides through the third quarter, falls below 2% when Oklahoma goes up 20-7 in the fourth and ends at 0%.",
+    "source": "Win probability: ESPN. GatorBait Media graphic."
+  },
+  "quotes": {
+    "kicker": "In their words",
+    "title": "Sumrall, Jones and Graham",
+    "dek": "From the postgame news conferences on Saturday, Nov. 7, and Jon Sumrall's Monday, Nov. 9, press conference.",
     "items": [
-     [
-      "Passing",
-      "Tramell Jones Jr.: 10/22, 133 YDS, 0 TD, 2 INT"
-     ],
-     [
-      "Rushing",
-      "Jadan Baugh: 8 CAR, 35 YDS, 1 TD"
-     ],
-     [
-      "Receiving",
-      "Duke Clark: 4 REC, 70 YDS, 0 TD"
-     ],
-     [
-      "Defense",
-      "Myles Graham: 15 tackles, 0.5 sacks"
-     ]
+      {
+        "text": "Right now, we feel a little bit lost. I don't really know that I can pinpoint what I know that we're good at day in day out.",
+        "who": "Jon Sumrall",
+        "role": "Florida coach, postgame news conference, Nov. 7"
+      },
+      {
+        "text": "The Gators can't beat the Gators.",
+        "who": "Jon Sumrall",
+        "role": "Florida coach, on the holding penalties, postgame news conference, Nov. 7"
+      },
+      {
+        "text": "It was really already four-minute drill in their mind which means they're trying to run the clock out to some degree.",
+        "who": "Jon Sumrall",
+        "role": "Florida coach, on Oklahoma's 20-play drive, postgame news conference, Nov. 7"
+      },
+      {
+        "text": "Corner made a great play. It fell off. We can't have those interceptions.",
+        "who": "Tramell Jones Jr.",
+        "role": "Florida quarterback, postgame news conference, Nov. 7"
+      },
+      {
+        "text": "The game is just as much on us as it is the offense, so.",
+        "who": "Myles Graham",
+        "role": "Florida linebacker, postgame news conference, Nov. 7"
+      },
+      {
+        "text": "Both practiced today. There'll be one guy that starts and one guy doesn't.",
+        "who": "Jon Sumrall",
+        "role": "Florida coach, on his quarterbacks, Monday press conference, Nov. 9"
+      }
     ]
-   },
-   {
-    "team": "Oklahoma",
+  },
+  "watch": {
+    "kicker": "Watch",
+    "title": "The Buddy Martin Show",
+    "dek": "Monday's show on the Oklahoma loss. Tap to play.",
     "items": [
-     [
-      "Passing",
-      "John Mateer: 21/33, 207 YDS, 2 TD, 0 INT"
-     ],
-     [
-      "Rushing",
-      "John Mateer: 14 CAR, 56 YDS, 0 TD"
-     ],
-     [
-      "Receiving",
-      "Rocky Beers: 4 REC, 72 YDS, 0 TD"
-     ],
-     [
-      "Defense",
-      "Owen Heinecke: 10 tackles, 0.5 sacks"
-     ]
+      {
+        "title": "Oklahoma Stuns Florida | Playoff Jumps to 24 Teams",
+        "caption": "The Monday, Nov. 9, show.",
+        "url": "https://www.youtube.com/watch?v=1m6nKpneZbs",
+        "poster": "buddy-show-yt-1m6nkpnezbs.jpg",
+        "meta": "YouTube · The Buddy Martin Show",
+        "credit": "Video: The Buddy Martin Show"
+      }
     ]
-   }
-  ],
-  "source": "Team stats and leaders: ESPN box score (event 401856739)."
- },
- "flow": {
-  "kicker": "Game flow",
-  "title": "How the game got away",
-  "dek": "Florida's chance to win, play by play. The Gators started at 66%, never had the lead and were at 50% after Baugh's touchdown made it 10-7 late in the second quarter. Oklahoma scored the next 13 points.",
-  "axis": [
-   "100%",
-   "50%",
-   "0%"
-  ],
-  "quarters": [
-   "Q1",
-   "Q2",
-   "Q3",
-   "Q4"
-  ],
-  "quarterStarts": [
-   0,
-   34,
-   78,
-   119
-  ],
-  "points": [
-   65.7,
-   67.3,
-   66.1,
-   65.1,
-   62.7,
-   63.4,
-   64.8,
-   64.1,
-   62.0,
-   62.5,
-   63.1,
-   55.2,
-   54.6,
-   59.6,
-   60.7,
-   57.4,
-   57.6,
-   58.5,
-   57.1,
-   58.5,
-   58.4,
-   60.9,
-   59.5,
-   59.0,
-   56.3,
-   54.8,
-   53.8,
-   54.2,
-   53.1,
-   52.2,
-   50.1,
-   50.1,
-   49.6,
-   49.5,
-   55.1,
-   47.9,
-   48.1,
-   49.8,
-   50.0,
-   45.8,
-   44.5,
-   45.0,
-   42.9,
-   39.4,
-   38.9,
-   35.1,
-   33.5,
-   35.6,
-   34.5,
-   32.7,
-   29.2,
-   30.8,
-   30.0,
-   29.0,
-   30.2,
-   29.5,
-   30.4,
-   32.0,
-   34.4,
-   37.5,
-   40.9,
-   42.3,
-   50.1,
-   50.3,
-   48.2,
-   48.6,
-   48.9,
-   46.0,
-   43.2,
-   42.5,
-   44.2,
-   46.7,
-   40.8,
-   39.9,
-   40.2,
-   40.0,
-   40.2,
-   37.9,
-   37.2,
-   35.9,
-   33.0,
-   35.5,
-   35.8,
-   39.7,
-   39.3,
-   39.4,
-   37.3,
-   32.9,
-   33.2,
-   33.8,
-   35.4,
-   37.2,
-   39.7,
-   34.3,
-   42.1,
-   41.4,
-   43.1,
-   40.3,
-   37.8,
-   48.7,
-   47.6,
-   48.5,
-   41.4,
-   33.0,
-   38.2,
-   37.8,
-   36.8,
-   39.6,
-   38.3,
-   38.7,
-   37.6,
-   30.4,
-   32.3,
-   33.0,
-   29.0,
-   29.8,
-   30.2,
-   24.9,
-   24.6,
-   26.4,
-   23.9,
-   21.1,
-   25.2,
-   25.0,
-   21.0,
-   16.7,
-   18.1,
-   13.9,
-   10.4,
-   10.1,
-   11.2,
-   4.5,
-   4.1,
-   4.6,
-   1.7,
-   1.4,
-   1.1,
-   0.7,
-   0.6,
-   0.2,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.1,
-   0.0,
-   0.0,
-   0.0
-  ],
-  "marks": [
-   {
-    "i": 15,
-    "title": "3-0",
-    "note": "Tate Sandell's 41-yard field goal with 7:36 left in the first quarter; Florida is at 57%"
-   },
-   {
-    "i": 45,
-    "title": "10-0",
-    "note": "John Mateer finds Hayden Hansen from 3 yards with 9:42 left in the half; Florida is at 35%"
-   },
-   {
-    "i": 62,
-    "title": "10-7",
-    "note": "Jadan Baugh's 15-yard run with 3:00 left in the half is Florida's only touchdown; Florida is at 50%"
-   },
-   {
-    "i": 72,
-    "title": "13-7",
-    "note": "Sandell kicks a 48-yard field goal with 36 seconds left in the half; Florida is at 41%"
-   },
-   {
-    "i": 134,
-    "title": "20-7",
-    "note": "Mateer to Isaiah Sategna III from 6 yards with 4:56 left in the game; Florida is at 2%"
-   },
-   {
-    "i": 150,
-    "title": "23-7",
-    "note": "Sandell's 31-yard field goal with 1:56 left; Florida is at 0.1%"
-   }
-  ],
-  "summary": "Line chart of Florida's win probability against Oklahoma. It starts near 66%, falls to 35% when Oklahoma goes up 10-0 in the second quarter, rises to 50% when Baugh's touchdown makes it 10-7, drops to 41% after Oklahoma's field goal before halftime, slides through the third quarter, falls below 2% when Oklahoma goes up 20-7 in the fourth and ends at 0%.",
-  "source": "Win probability: ESPN. GatorBait Media graphic."
- },
- "quotes": {
-  "kicker": "In their words",
-  "title": "Sumrall, Jones and Graham",
-  "dek": "From the postgame news conferences on Saturday, Nov. 7, and Jon Sumrall's Monday, Nov. 9, press conference.",
-  "items": [
-   {
-    "text": "Right now, we feel a little bit lost. I don't really know that I can pinpoint what I know that we're good at day in day out.",
-    "who": "Jon Sumrall",
-    "role": "Florida coach, postgame news conference, Nov. 7"
-   },
-   {
-    "text": "The Gators can't beat the Gators.",
-    "who": "Jon Sumrall",
-    "role": "Florida coach, on the holding penalties, postgame news conference, Nov. 7"
-   },
-   {
-    "text": "It was really already four-minute drill in their mind which means they're trying to run the clock out to some degree.",
-    "who": "Jon Sumrall",
-    "role": "Florida coach, on Oklahoma's 20-play drive, postgame news conference, Nov. 7"
-   },
-   {
-    "text": "Corner made a great play. It fell off. We can't have those interceptions.",
-    "who": "Tramell Jones Jr.",
-    "role": "Florida quarterback, postgame news conference, Nov. 7"
-   },
-   {
-    "text": "The game is just as much on us as it is the offense, so.",
-    "who": "Myles Graham",
-    "role": "Florida linebacker, postgame news conference, Nov. 7"
-   },
-   {
-    "text": "Both practiced today. There'll be one guy that starts and one guy doesn't.",
-    "who": "Jon Sumrall",
-    "role": "Florida coach, on his quarterbacks, Monday press conference, Nov. 9"
-   }
-  ]
- },
- "watch": {
-  "kicker": "Watch",
-  "title": "The Buddy Martin Show",
-  "dek": "Monday's show on the Oklahoma loss. Tap to play.",
-  "items": [
-   {
-    "title": "Oklahoma Stuns Florida | Playoff Jumps to 24 Teams",
-    "caption": "The Monday, Nov. 9, show.",
-    "url": "https://www.youtube.com/watch?v=1m6nKpneZbs",
-    "poster": "buddy-show-yt-1m6nkpnezbs.jpg",
-    "meta": "YouTube · The Buddy Martin Show",
-    "credit": "Video: The Buddy Martin Show"
-   }
-  ]
- },
- "next": {
-  "kicker": "Up next",
-  "title": "Florida at Kentucky",
-  "meta": [
-   "Saturday, Nov. 14",
-   "6:15 p.m. ET · ESPN",
-   "Kroger Field, Lexington"
-  ],
-  "note": "Florida is 5-4 overall and 3-4 in the SEC. Kentucky is 7-2 and No. 13 in the AP Top 25 and the Coaches Poll. The Wildcats lost 34-6 at Tennessee on Nov. 7.",
-  "pickem": {
-   "badge": "Monday press conference",
-   "title": "Sumrall on Kentucky",
-   "text": "Jon Sumrall on Monday, Nov. 9: “This game's got very little to do about my ties to the place.” On the Wildcats: “It's maybe the best offensive line we've seen all year, and that's not just coach-speak.”"
+  },
+  "next": {
+    "kicker": "Up next",
+    "title": "Florida at Kentucky",
+    "meta": [
+      "Saturday, Nov. 14",
+      "6:15 p.m. ET · ESPN",
+      "Kroger Field, Lexington"
+    ],
+    "note": "Florida is 5-4 overall and 3-4 in the SEC. Kentucky is 7-2 and No. 13 in the AP Top 25 and the Coaches Poll. The Wildcats lost 34-6 at Tennessee on Nov. 7.",
+    "pickem": {
+      "badge": "Monday press conference",
+      "title": "Sumrall on Kentucky",
+      "text": "Jon Sumrall on Monday, Nov. 9: “This game's got very little to do about my ties to the place.” On the Wildcats: “It's maybe the best offensive line we've seen all year, and that's not just coach-speak.”"
+    }
+  },
+  "reference": {
+    "label": "More GatorBait",
+    "links": [
+      {
+        "label": "Schedule and results",
+        "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+      },
+      {
+        "label": "Roster",
+        "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+      },
+      {
+        "label": "The Buddy Martin Show",
+        "url": "/the-buddy-martin-show"
+      },
+      {
+        "label": "GatorBait home",
+        "url": "/"
+      }
+    ],
+    "top": "Back to the cover"
+  },
+  "credits": {
+    "label": "Photo credits",
+    "uaa": true,
+    "other": [
+      "Photo courtesy UAA and Victoria Riccobono.",
+      "Photo courtesy UAA and Emma Brugna.",
+      "Photo courtesy UAA (University Athletic Association, FloridaGators.com)."
+    ]
+  },
+  "asOf": "Score, scoring plays, drives, box score, leaders and win probability: ESPN (event 401856739). Polls: AP Top 25 and Coaches Poll, Nov. 8. Quotes: UF/ASAP Sports transcripts, Nov. 7, and Jon Sumrall's Nov. 9 press conference.",
+  "download": {
+    "kicker": "Keep the whole issue",
+    "label": "Download for your phone (PDF)",
+    "note": "PDF, 21 pages, 1.5 MB",
+    "file": "GatorBait-Magazine-Oklahoma-Postgame-Phone.pdf",
+    "url": "https://18fb3a4e-d7f6-414a-aeb9-3047db3ea115.usrfiles.com/ugd/d3cfa5_58c4edbae8c3490eb278d3e71ea5f091.pdf?dn=GatorBait-Magazine-Oklahoma-Postgame-Phone.pdf"
   }
- },
- "reference": {
-  "label": "More GatorBait",
-  "links": [
-   {
-    "label": "Schedule and results",
-    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
-   },
-   {
-    "label": "Roster",
-    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
-   },
-   {
-    "label": "The Buddy Martin Show",
-    "url": "/the-buddy-martin-show"
-   },
-   {
-    "label": "GatorBait home",
-    "url": "/"
-   }
-  ],
-  "top": "Back to the cover"
- },
- "credits": {
-  "label": "Photo credits",
-  "uaa": true,
-  "other": [
-   "Photo courtesy UAA and Victoria Riccobono.",
-   "Photo courtesy UAA and Emma Brugna.",
-   "Photo courtesy UAA (University Athletic Association, FloridaGators.com)."
-  ]
- },
- "asOf": "Score, scoring plays, drives, box score, leaders and win probability: ESPN (event 401856739). Polls: AP Top 25 and Coaches Poll, Nov. 8. Quotes: UF/ASAP Sports transcripts, Nov. 7, and Jon Sumrall's Nov. 9 press conference."
 }

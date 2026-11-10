@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "LIVE NOW: The Buddy Martin Show, Monday, Nov. 9",
+      "excerpt": "The Buddy Martin Show is live now. Watch live on YouTube.",
+      "url": "https://www.gatorbaitmedia.com/post/live-now-the-buddy-martin-show-monday-nov-9",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-10T01:59:34Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_db06a79d17c64cdc8613af61c86ce1ed~mv2.jpg/v1/fit/w_1000,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for LIVE NOW: The Buddy Martin Show, Monday, Nov. 9"
+      }
+    },
+    {
       "title": "Gators women stay unbeaten, hold off Chattanooga 64-58",
       "excerpt": "Vivian Iwuchukwu scored 19 and Florida won the fourth quarter 23-18 to improve to 3-0.",
       "url": "https://www.gatorbaitmedia.com/post/gators-women-stay-unbeaten-hold-off-chattanooga-64-58",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for How To Screw Up A Perfectly Good Night. If Not A Season."
-      }
-    },
-    {
-      "title": "Ground Down: Oklahoma Drains Florida, 23-7",
-      "excerpt": "Oklahoma controlled the clock and held Florida to 203 yards in a 23-7 win at The Swamp, dropping the Gators to 5-4.",
-      "url": "https://www.gatorbaitmedia.com/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-11-08T04:04:03Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_dd3d4b0d9c6f45e7aa9ffcb945d66f03~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Ground Down: Oklahoma Drains Florida, 23-7"
       }
     }
   ]

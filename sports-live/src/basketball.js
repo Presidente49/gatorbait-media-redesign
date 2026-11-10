@@ -166,7 +166,7 @@
     var lede = 'Schedule, TV, roster, the AP and Coaches polls and the SEC picture for Todd Golden’s Florida Gators, with GatorBait’s coverage below.';
     if (ap && ap.fpv) lede = 'Florida opened the season No. 1 in the AP poll with ' + ap.fpv + ' first-place votes. Schedule, TV, roster, polls and the SEC picture for Todd Golden’s Gators, with GatorBait’s coverage below.';
     return '<div class="b-top"><div class="b-wrap"><div><div class="b-kick">GatorBait Media &middot; Gator basketball hub</div><h2 class="b-name">Florida Gators<br>Basketball</h2><ul class="b-badges">' + b + '</ul><p class="b-lede">' + esc(lede) + '</p>' +
-      '<nav class="b-nav" aria-label="Basketball hub sections"><a href="#gbm-bb-sched">Schedule</a><a href="#gbm-bb-roster">Roster</a><a href="#gbm-bb-polls">Polls</a><a href="#gbm-bb-sec">SEC</a><a href="#gbm-bb-stories">Stories</a></nav></div>' +
+      '<nav class="b-nav" aria-label="Basketball hub sections"><a href="#gbm-bb-stories">Stories</a><a href="#gbm-bb-sched">Schedule</a><a href="#gbm-bb-roster">Roster</a><a href="#gbm-bb-polls">Polls</a><a href="#gbm-bb-sec">SEC</a></nav></div>' +
       '<div class="b-card" id="gbm-bb-top-card" aria-live="polite">' + heroCard(d) + '</div></div></div>';
   }
   function schedule(d) {
@@ -237,7 +237,7 @@
       athlete: (d.roster || []).map(function (p) { return { '@type': 'Person', name: p.name }; }), description: 'Florida Gators men’s basketball schedule, TV, roster, polls and news from GatorBait Media.' + (ap ? ' Ranked No. ' + ap.rank + ' in the AP Top 25.' : '') };
     return JSON.stringify(o).replace(/</g, '\\u003c');
   }
-  function render(d) { return hero(d) + '<div class="b-wrap">' + schedule(d) + roster(d) + '<div class="b-two"><div id="gbm-bb-pollbox">' + polls(d) + '</div><div>' + secBlock(d) + '</div></div>' + stories() + seo(d) + '</div>'; }
+  function render(d) { return hero(d) + '<div class="b-wrap">' + stories() + schedule(d) + roster(d) + '<div class="b-two"><div id="gbm-bb-pollbox">' + polls(d) + '</div><div>' + secBlock(d) + '</div></div>' + seo(d) + '</div>'; }
 
   function anchorEl() { return document.getElementById('gbm-np') || document.getElementById('gbm-lf') || document.querySelector('[data-hook=feed-page-root]'); }
   function place(el) {

@@ -167,7 +167,7 @@
     return b;
   }
   function hero(d) {
-    var nav = '<a href="#' + ROOT + '-sched">Schedule</a>' + ((d.stats || d.bb) ? '<a href="#' + ROOT + '-stats">Stats</a>' : '') + '<a href="#' + ROOT + '-roster">Roster</a><a href="#' + ROOT + '-stories">Stories</a>';
+    var nav = '<a href="#' + ROOT + '-stories">Stories</a><a href="#' + ROOT + '-sched">Schedule</a>' + ((d.stats || d.bb) ? '<a href="#' + ROOT + '-stats">Stats</a>' : '') + '<a href="#' + ROOT + '-roster">Roster</a>';
     return '<div class="s-top"><div class="s-wrap"><div><div class="s-kick">GatorBait Media &middot; ' + esc(CFG.kicker) + '</div><h2 class="s-name">' + CFG.nameHtml + '</h2><ul class="s-badges">' + badges(d) + '</ul><p class="s-lede">' + esc(CFG.lede) + '</p>' +
       '<nav class="s-nav" aria-label="' + esc(CFG.title) + ' sections">' + nav + '</nav></div><div class="s-card" id="' + ROOT + '-card" aria-live="polite">' + heroCard(d) + '</div></div></div>';
   }
@@ -335,7 +335,7 @@
   function styles() { if (document.getElementById(ROOT + '-css')) return; var s = document.createElement('style'); s.id = ROOT + '-css'; s.textContent = CSS.replace(/#R/g, '#' + ROOT); document.head.appendChild(s); }
   function fonts() { if (document.getElementById('gbm-sh-font')) return; var l = document.createElement('link'); l.id = 'gbm-sh-font'; l.rel = 'stylesheet'; l.href = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800&display=swap'; document.head.appendChild(l); }
 
-  function render(d) { return hero(d) + '<div class="s-wrap">' + schedule(d) + statsSec(d) + rosterSec(d) + availSec(d) + storiesSec() + seoSec(d) + '</div>'; }
+  function render(d) { return hero(d) + '<div class="s-wrap">' + storiesSec() + schedule(d) + statsSec(d) + rosterSec(d) + availSec(d) + seoSec(d) + '</div>'; }
 
   function anchorEl() { return document.getElementById('gbm-np') || document.getElementById('gbm-lf') || document.querySelector('[data-hook=feed-page-root]'); }
   function place(el) {

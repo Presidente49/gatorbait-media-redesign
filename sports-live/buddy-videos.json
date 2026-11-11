@@ -1,11 +1,16 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-10T12:21:30.147Z",
+  "fetchedAt": "2026-11-11T14:44:44.610Z",
   "videos": [
+    {
+      "id": "geNktLoJivs",
+      "title": "Florida Gators Oklahoma Fallout Kentucky Next | Lowdown",
+      "published": "2026-11-11T00:45:32+00:00"
+    },
     {
       "id": "1m6nKpneZbs",
       "title": "Oklahoma Stuns Florida | Playoff Jumps to 24 Teams",
-      "published": "2026-11-10T02:05:50+00:00"
+      "published": "2026-11-10T15:36:42+00:00"
     },
     {
       "id": "lGjwmeFCJ1I",
@@ -71,11 +76,6 @@
       "id": "ORn5mTzbfl4",
       "title": "\"If This Is Daddy Ball, Then Every Coach in America Does Daddy Ball\" — Loren Meadows",
       "published": "2026-11-06T15:36:09+00:00"
-    },
-    {
-      "id": "_VRPwt7xnwg",
-      "title": "Tramell Jones QB Decision: Loren Meadows Backs Sumrall's Call",
-      "published": "2026-11-06T15:11:46+00:00"
     }
   ]
 }

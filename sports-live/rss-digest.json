@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-10T23:09:51.152Z",
+ "generatedAt": "2026-11-11T05:56:15.968Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-10T23:09:51.152Z",
+  "checkedAt": "2026-11-11T05:56:15.968Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "McCloud Reinstated After One-Game Suspension, Expected to Play at Kentucky",
-   "link": "https://www.gatorbaitmedia.com/post/mccloud-reinstated-after-one-game-suspension-expected-to-play-at-kentucky",
-   "publishedAt": "2026-11-10T22:36:56.000Z"
+   "title": "Haugh, Klavzar and the foul line lift Gators past FSU, 81-72",
+   "link": "https://www.gatorbaitmedia.com/post/florida-fsu-81-72-haugh-klavzar-postgame",
+   "publishedAt": "2026-11-11T01:38:36.000Z"
   },
   "problems": []
  },

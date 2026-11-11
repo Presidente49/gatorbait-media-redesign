@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "It was ugly but No. 1 Florida took down FSU, 81-72",
+      "excerpt": "Franz Beard on No. 1 Florida's 81-72 win at Florida State: 18 straight free throws, a 41-29 rebounding edge and a bench that outscored the Seminoles 22-6.",
+      "url": "https://www.gatorbaitmedia.com/post/it-was-ugly-but-no-1-florida-took-down-fsu-81-72",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-11T12:40:09Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_ceb91deb102841e6948dd7638003cff8~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for It was ugly but No. 1 Florida took down FSU, 81-72"
+      }
+    },
+    {
+      "title": "Some Disgruntled Ghosts In The Press Box",
+      "excerpt": "Shock And Awe For Some Of My Deceased Sports Writer Pals.",
+      "url": "https://www.gatorbaitmedia.com/post/some-disgruntled-ghosts-in-the-press-box",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-11T12:06:49Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_7113ed48e2b740d6bdcbe07273c30578~mv2.jpg/v1/fit/w_645,h_802,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Some Disgruntled Ghosts In The Press Box"
+      }
+    },
+    {
       "title": "Haugh, Klavzar and the foul line lift Gators past FSU, 81-72",
       "excerpt": "Florida beat Florida State 81-72 behind Thomas Haugh's 21 points and 10 rebounds, Urban Klavzar's late scoring and 30 made free throws. Lowdown with Loren Meadows follows tonight at 9 p.m. ET.",
       "url": "https://www.gatorbaitmedia.com/post/florida-fsu-81-72-haugh-klavzar-postgame",
@@ -37,7 +65,7 @@
       "firstPublishedDate": "2026-11-10T22:36:56Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6be771f169354abbbc002e764e9ce75d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_5c2db3d684f243b0b6969642edac6408~mv2.jpg/v1/fit/w_1000,h_900,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for McCloud Reinstated After One-Game Suspension, Expected to Play at Kentucky"
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for How To Screw Up A Perfectly Good Night. If Not A Season."
-      }
-    },
-    {
-      "title": "Ground Down: Oklahoma Drains Florida, 23-7",
-      "excerpt": "Oklahoma controlled the clock and held Florida to 203 yards in a 23-7 win at The Swamp, dropping the Gators to 5-4.",
-      "url": "https://www.gatorbaitmedia.com/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-08T04:04:03Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_00a6be67251c49fb8354cc5658490c41~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Ground Down: Oklahoma Drains Florida, 23-7"
-      }
-    },
-    {
-      "title": "HALFTIME: No. 24 Florida trails Oklahoma 13-7",
-      "excerpt": "The Gators cut a 10-point deficit to three before Oklahoma added a late field goal, leaving Florida down 13-7 at halftime in The Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/halftime-florida-trails-oklahoma-13-7",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-08T02:16:27Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_c87d792fe1394663b546881f590bdf87~mv2.jpg/v1/fit/w_1000,h_960,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for HALFTIME: No. 24 Florida trails Oklahoma 13-7"
       }
     }
   ]

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "It was ugly but No. 1 Florida took down FSU, 81-72",
+      "excerpt": "Franz Beard on No. 1 Florida's 81-72 win at Florida State: 18 straight free throws, a 41-29 rebounding edge and a bench that outscored the Seminoles 22-6.",
+      "url": "https://www.gatorbaitmedia.com/post/it-was-ugly-but-no-1-florida-took-down-fsu-81-72",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-11T12:40:09Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_ceb91deb102841e6948dd7638003cff8~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for It was ugly but No. 1 Florida took down FSU, 81-72"
+      }
+    },
+    {
+      "title": "Some Disgruntled Ghosts In The Press Box",
+      "excerpt": "Shock And Awe For Some Of My Deceased Sports Writer Pals.",
+      "url": "https://www.gatorbaitmedia.com/post/some-disgruntled-ghosts-in-the-press-box",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-11T12:06:49Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_7113ed48e2b740d6bdcbe07273c30578~mv2.jpg/v1/fit/w_645,h_802,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Some Disgruntled Ghosts In The Press Box"
+      }
+    },
+    {
       "title": "Haugh, Klavzar and the foul line lift Gators past FSU, 81-72",
       "excerpt": "Florida beat Florida State 81-72 behind Thomas Haugh's 21 points and 10 rebounds, Urban Klavzar's late scoring and 30 made free throws. Lowdown with Loren Meadows follows tonight at 9 p.m. ET.",
       "url": "https://www.gatorbaitmedia.com/post/florida-fsu-81-72-haugh-klavzar-postgame",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Top-ranked Gators take five-game win streak over Florida State into Tallahassee"
-      }
-    },
-    {
-      "title": "Football relevance at stake for both Florida and Kentucky",
-      "excerpt": "Franz Beard on Florida vs. Kentucky: two first-year coaches, two basketball schools and a football Saturday that tests relevance. Includes the AP and Coaches polls and an SEC team-by-team look.",
-      "url": "https://www.gatorbaitmedia.com/post/football-relevance-at-stake-for-both-florida-and-kentucky",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-09T13:32:04Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_b5ee34cfd4f444cd90519872cb35d8ec~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Football relevance at stake for both Florida and Kentucky"
-      }
-    },
-    {
-      "title": "Reviewing the Reads After the Loss",
-      "excerpt": "Eddie Gilley grades the five reads he set before Florida’s 23-7 loss to Oklahoma, from the pass rush and offensive line to Tramell Jones Jr. and penalties.",
-      "url": "https://www.gatorbaitmedia.com/post/reviewing-the-reads-after-the-loss",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-11-09T13:31:30Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_791928c7bf6c4d0096665ecb1e7daab5~mv2.jpg/v1/fit/w_1000,h_960,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Reviewing the Reads After the Loss"
       }
     }
   ]

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Haugh, Klavzar and the foul line lift Gators past FSU, 81-72",
+      "excerpt": "Florida beat Florida State 81-72 behind Thomas Haugh's 21 points and 10 rebounds, Urban Klavzar's late scoring and 30 made free throws. Lowdown with Loren Meadows follows tonight at 9 p.m. ET.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-fsu-81-72-haugh-klavzar-postgame",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-11T01:38:36Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_65ef9aa8f64845bfa7751d6048b7a976~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Haugh, Klavzar and the foul line lift Gators past FSU, 81-72"
+      }
+    },
+    {
+      "title": "Florida-FSU live updates: Haugh sparks Gators in Tallahassee",
+      "excerpt": "Archived game coverage from Florida-FSU, with a link to the complete 81-72 postgame report and final statistics.",
+      "url": "https://www.gatorbaitmedia.com/post/haugh-helps-gators-hold-slim-second-half-lead-at-fsu",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-11T00:31:50Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_65ef9aa8f64845bfa7751d6048b7a976~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida-FSU live updates: Haugh sparks Gators in Tallahassee"
+      }
+    },
+    {
       "title": "McCloud Reinstated After One-Game Suspension, Expected to Play at Kentucky",
       "excerpt": "Jon Sumrall said defensive lineman Jeramiah McCloud is back with the team after missing the Oklahoma game and is expected to play Saturday at Kentucky.",
       "url": "https://www.gatorbaitmedia.com/post/mccloud-reinstated-after-one-game-suspension-expected-to-play-at-kentucky",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for HALFTIME: No. 24 Florida trails Oklahoma 13-7"
-      }
-    },
-    {
-      "title": "Quick Reads Before Kickoff: Florida vs. Oklahoma",
-      "excerpt": "Eddie Gilley’s five questions for Florida against Oklahoma: pressure on Mateer, the offensive line, the run game, Tramell Jones Jr. and turnovers. Kickoff is 7:45 p.m. ET on SEC Network.",
-      "url": "https://www.gatorbaitmedia.com/post/quick-reads-for-today-s-game",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-11-07T17:41:36Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_25b7c7ee5818473c8f37671c2de44bf8~mv2.jpg/v1/fit/w_1000,h_960,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Quick Reads Before Kickoff: Florida vs. Oklahoma"
-      }
-    },
-    {
-      "title": "FloridaGators.com Says Tramell Jones Jr. Will Start Against Oklahoma",
-      "excerpt": "FloridaGators.com says Tramell Jones Jr. will make his second career start Saturday night against Oklahoma. The latest quarterback update and the numbers behind it.",
-      "url": "https://www.gatorbaitmedia.com/post/report-tramell-jones-jr-expected-to-start-at-qb-against-oklahoma",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-07T12:25:02Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_ba023e60eb5b4a9f8ad722e32fc14108~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for FloridaGators.com Says Tramell Jones Jr. Will Start Against Oklahoma"
       }
     }
   ]

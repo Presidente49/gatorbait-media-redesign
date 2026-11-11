@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-11T14:02:10.105Z",
+ "generatedAt": "2026-11-11T21:15:57.283Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-11T14:02:10.105Z",
+  "checkedAt": "2026-11-11T21:15:57.283Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "It was ugly but No. 1 Florida took down FSU, 81-72",
-   "link": "https://www.gatorbaitmedia.com/post/it-was-ugly-but-no-1-florida-took-down-fsu-81-72",
-   "publishedAt": "2026-11-11T12:40:09.000Z"
+   "title": "Florida football: The deficiencies have been there all along",
+   "link": "https://www.gatorbaitmedia.com/post/florida-football-the-deficiencies-have-been-there-all-along",
+   "publishedAt": "2026-11-11T17:11:38.000Z"
   },
   "problems": []
  },

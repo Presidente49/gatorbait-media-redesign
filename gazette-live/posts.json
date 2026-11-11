@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "McCloud Reinstated After One-Game Suspension, Expected to Play at Kentucky",
+      "excerpt": "Jon Sumrall said defensive lineman Jeramiah McCloud is back with the team after missing the Oklahoma game and is expected to play Saturday at Kentucky.",
+      "url": "https://www.gatorbaitmedia.com/post/mccloud-reinstated-after-one-game-suspension-expected-to-play-at-kentucky",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-10T22:36:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6be771f169354abbbc002e764e9ce75d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for McCloud Reinstated After One-Game Suspension, Expected to Play at Kentucky"
+      }
+    },
+    {
+      "title": "Florida Cancels 2031-32 Home-and-Home Series With Notre Dame",
+      "excerpt": "Florida used a contract clause tied to the SEC's nine-game schedule to cancel its 2031 and 2032 games with Notre Dame, The Associated Press reported Tuesday.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-cancels-2031-32-home-and-home-series-with-notre-dame",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-10T22:36:55Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_80f1877415184e748f536eda85d9a982~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida Cancels 2031-32 Home-and-Home Series With Notre Dame"
+      }
+    },
+    {
       "title": "The Day The Music Died, Again",
       "excerpt": "The music of college football officially died this week.",
       "url": "https://www.gatorbaitmedia.com/post/the-day-the-music-died-again",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for FloridaGators.com Says Tramell Jones Jr. Will Start Against Oklahoma"
-      }
-    },
-    {
-      "title": "Baugh Meets the Stone Wall: Florida's Offense vs. Oklahoma's Defense (Scouting Oklahoma, Part 2)",
-      "excerpt": "Florida averaged 53.5 points in its first four games and 17.8 in its last four. Part 2 of our Oklahoma scouting series: Jadan Baugh, a quarterback decision and a reshuffled offensive line against a Sooners defense that ranks seventh nationally on third down.",
-      "url": "https://www.gatorbaitmedia.com/post/baugh-meets-the-stone-wall-florida-s-offense-vs-oklahoma-s-defense-scouting-oklahoma-part-2",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-07T12:25:01Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6fab414f03c84fbc9c56d40a5f8d49e4~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Baugh Meets the Stone Wall: Florida's Offense vs. Oklahoma's Defense (Scouting Oklahoma, Part 2)"
-      }
-    },
-    {
-      "title": "Urban Meyer by the Numbers: Six Seasons That Changed The Swamp",
-      "excerpt": "A 65-15 record, two national titles and a 22-game winning streak: the numbers behind Urban Meyer’s six Florida seasons as he enters the Ring of Honor.",
-      "url": "https://www.gatorbaitmedia.com/post/urban-meyer-by-the-numbers-florida-ring-of-honor",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-07T12:25:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_b43e1618a9834218a5a98c710e34d425~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Urban Meyer by the Numbers: Six Seasons That Changed The Swamp"
       }
     }
   ]

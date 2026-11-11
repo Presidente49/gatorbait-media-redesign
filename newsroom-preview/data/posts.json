@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "McCloud Reinstated After One-Game Suspension, Expected to Play at Kentucky",
+      "excerpt": "Jon Sumrall said defensive lineman Jeramiah McCloud is back with the team after missing the Oklahoma game and is expected to play Saturday at Kentucky.",
+      "url": "https://www.gatorbaitmedia.com/post/mccloud-reinstated-after-one-game-suspension-expected-to-play-at-kentucky",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-10T22:36:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6be771f169354abbbc002e764e9ce75d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for McCloud Reinstated After One-Game Suspension, Expected to Play at Kentucky"
+      }
+    },
+    {
+      "title": "Florida Cancels 2031-32 Home-and-Home Series With Notre Dame",
+      "excerpt": "Florida used a contract clause tied to the SEC's nine-game schedule to cancel its 2031 and 2032 games with Notre Dame, The Associated Press reported Tuesday.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-cancels-2031-32-home-and-home-series-with-notre-dame",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-10T22:36:55Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_80f1877415184e748f536eda85d9a982~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida Cancels 2031-32 Home-and-Home Series With Notre Dame"
+      }
+    },
+    {
       "title": "The Day The Music Died, Again",
       "excerpt": "The music of college football officially died this week.",
       "url": "https://www.gatorbaitmedia.com/post/the-day-the-music-died-again",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Behind the Sticks"
-      }
-    },
-    {
-      "title": "The Aftermath: The Bitter Taste Lingers",
-      "excerpt": "As Tony Bennett sang, I want to be around to pick up the pieces…",
-      "url": "https://www.gatorbaitmedia.com/post/the-aftermath-the-bitter-taste-lingers",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-08T19:51:36Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_cff45e31d1924bcaa2f9d6cc08bf46cf~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Aftermath: The Bitter Taste Lingers"
-      }
-    },
-    {
-      "title": "Florida vs. Oklahoma: Box Score, Stats and Key Takeaways",
-      "excerpt": "Oklahoma beat Florida 23-7 on Nov. 7 at Ben Hill Griffin Stadium. Read the full box score, scoring summary, team stats, top performers and key takeaways, plus a look at the Gators’ trip to Kentucky.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-vs-oklahoma-box-score-stats-and-key-takeaways",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-08T15:13:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_560d36d08e0d48f0b5544b37b5b63c27~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida vs. Oklahoma: Box Score, Stats and Key Takeaways"
       }
     }
   ]

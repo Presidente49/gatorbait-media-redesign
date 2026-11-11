@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida football: The deficiencies have been there all along",
+      "excerpt": "Franz Beard on how Florida's September start covered up problems that October exposed, six things the Gators must fix in the offseason, the CFP top 25 and the coaching hot seat.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-football-the-deficiencies-have-been-there-all-along",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-11T17:11:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6fab414f03c84fbc9c56d40a5f8d49e4~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida football: The deficiencies have been there all along"
+      }
+    },
+    {
       "title": "It was ugly but No. 1 Florida took down FSU, 81-72",
       "excerpt": "Franz Beard on No. 1 Florida's 81-72 win at Florida State: 18 straight free throws, a 41-29 rebounding edge and a bench that outscored the Seminoles 22-6.",
       "url": "https://www.gatorbaitmedia.com/post/it-was-ugly-but-no-1-florida-took-down-fsu-81-72",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Sumrall's My Old Kentucky Home"
-      }
-    },
-    {
-      "title": "Top-ranked Gators take five-game win streak over Florida State into Tallahassee",
-      "excerpt": "No. 1 Florida's first true road test of the season is the loudest one on the schedule — a 2-0 Florida State team, on its home floor, that took the Gators to the final possession a year ago.",
-      "url": "https://www.gatorbaitmedia.com/post/top-ranked-gators-take-five-game-win-streak-over-florida-state-into-tallahassee",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-09T16:07:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a4b698f2c48b4b8896771ccb0c4d89e0~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Top-ranked Gators take five-game win streak over Florida State into Tallahassee"
       }
     }
   ]

@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida football: The deficiencies have been there all along",
+      "excerpt": "Franz Beard on how Florida's September start covered up problems that October exposed, six things the Gators must fix in the offseason, the CFP top 25 and the coaching hot seat.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-football-the-deficiencies-have-been-there-all-along",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-11T17:11:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6fab414f03c84fbc9c56d40a5f8d49e4~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida football: The deficiencies have been there all along"
+      }
+    },
+    {
       "title": "It was ugly but No. 1 Florida took down FSU, 81-72",
       "excerpt": "Franz Beard on No. 1 Florida's 81-72 win at Florida State: 18 straight free throws, a 41-29 rebounding edge and a bench that outscored the Seminoles 22-6.",
       "url": "https://www.gatorbaitmedia.com/post/it-was-ugly-but-no-1-florida-took-down-fsu-81-72",
@@ -9,7 +23,7 @@
       "firstPublishedDate": "2026-11-11T12:40:09Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/16b519_ceb91deb102841e6948dd7638003cff8~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_5ac35a25f1b9463880b28cfbee23d568~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for It was ugly but No. 1 Florida took down FSU, 81-72"
@@ -23,7 +37,7 @@
       "firstPublishedDate": "2026-11-11T12:06:49Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_7113ed48e2b740d6bdcbe07273c30578~mv2.jpg/v1/fit/w_645,h_802,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_6411927e396647ccaaf76f2f2b3b4385~mv2.jpg/v1/fit/w_1000,h_726,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Some Disgruntled Ghosts In The Press Box"
@@ -51,7 +65,7 @@
       "firstPublishedDate": "2026-11-11T00:31:50Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65ef9aa8f64845bfa7751d6048b7a976~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_cadf90fc6f024cb1a78e4f589168c728~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida-FSU live updates: Haugh sparks Gators in Tallahassee"
@@ -107,7 +121,7 @@
       "firstPublishedDate": "2026-11-10T12:02:38Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65ef9aa8f64845bfa7751d6048b7a976~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_44ec48e1ebc54313aa88a0331366ce66~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida basketball: FSU a tall challenge for the Gators"
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Frustration boils over; Sumrall has more questions than answers"
-      }
-    },
-    {
-      "title": "How To Screw Up A Perfectly Good Night. If Not A Season.",
-      "excerpt": "Just when it seemed like things were getting better, they got worse.",
-      "url": "https://www.gatorbaitmedia.com/post/how-to-screw-up-a-perfectly-good-night-if-not-a-season",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-08T11:46:54Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_c8f8ed6d4e6c4cc69ef659282756a18a~mv2.jpg/v1/fit/w_960,h_540,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for How To Screw Up A Perfectly Good Night. If Not A Season."
       }
     }
   ]

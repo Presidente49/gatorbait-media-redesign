@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-12T10:54:13.522Z",
+ "generatedAt": "2026-11-12T18:48:28.360Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-12T10:54:13.522Z",
+  "checkedAt": "2026-11-12T18:48:28.360Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Florida football: The deficiencies have been there all along",
-   "link": "https://www.gatorbaitmedia.com/post/florida-football-the-deficiencies-have-been-there-all-along",
-   "publishedAt": "2026-11-11T17:11:38.000Z"
+   "title": "The Quarterback Carousel Spins Again — and It Stops on Aaron Philo",
+   "link": "https://www.gatorbaitmedia.com/post/the-quarterback-carousel-spins-again-and-it-stops-on-aaron-philo",
+   "publishedAt": "2026-11-12T16:14:46.000Z"
   },
   "problems": []
  },

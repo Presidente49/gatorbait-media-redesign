@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-09T04:17:42Z",
+ "updatedAt": "2026-11-12T10:09:52Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -34,7 +34,7 @@
    ]
   },
   "venue": "Ben Hill Griffin Stadium",
-  "recapUrl": "https://www.gatorbaitmedia.com/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss",
+  "recapUrl": null,
   "galleryUrl": null,
   "tape": {
    "totalYards": 203,
@@ -206,7 +206,7 @@
     "opp": 23
    },
    "tv": "SEC Network",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/oklahoma-23-florida-7-gators-held-to-203-yards-in-home-loss"
+   "storyUrl": null
   },
   {
    "eventId": "401856884",
@@ -222,7 +222,7 @@
   },
   {
    "eventId": "401856748",
-   "date": "2026-11-21T05:00:00Z",
+   "date": "2026-11-21T17:00:00Z",
    "opponent": "Vanderbilt",
    "opponentRank": null,
    "opponentRecord": null,

@@ -1,11 +1,16 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-11T14:44:44.610Z",
+  "fetchedAt": "2026-11-12T02:29:49.812Z",
   "videos": [
+    {
+      "id": "JEThe4D8Ge4",
+      "title": "Tony Barnhart: Gators a 3.5-Point Underdog at Kentucky?",
+      "published": "2026-11-12T02:00:24+00:00"
+    },
     {
       "id": "geNktLoJivs",
       "title": "Florida Gators Oklahoma Fallout Kentucky Next | Lowdown",
-      "published": "2026-11-11T00:45:32+00:00"
+      "published": "2026-11-11T15:57:44+00:00"
     },
     {
       "id": "1m6nKpneZbs",
@@ -71,11 +76,6 @@
       "id": "ho-MIbdyWAg",
       "title": "Ben Troupe: SEC Weekend, CFP Picture and Florida-Oklahoma",
       "published": "2026-11-06T15:48:24+00:00"
-    },
-    {
-      "id": "ORn5mTzbfl4",
-      "title": "\"If This Is Daddy Ball, Then Every Coach in America Does Daddy Ball\" — Loren Meadows",
-      "published": "2026-11-06T15:36:09+00:00"
     }
   ]
 }

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Quarterback Carousel Spins Again — and It Stops on Aaron Philo",
+      "excerpt": "The quarterback carousel in Gainesville is spinning again, and this time it stops on Aaron Philo. Thursday morning's report — Matt Zenitz, Zach Goodall and Graham Hall — holds up under independent confirmation from ESPN, the Sentinel, the Sun and On3. Real story. Real plan. The timeline tells you everything. Philo started six games, hurt his shoulder, and…",
+      "url": "https://www.gatorbaitmedia.com/post/the-quarterback-carousel-spins-again-and-it-stops-on-aaron-philo",
+      "author": "gatorbaitmedia.com",
+      "firstPublishedDate": "2026-11-12T16:14:46Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_4e496d688a5d4daf9f42adabf984fab9~mv2.jpg/v1/fit/w_480,h_349,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Quarterback Carousel Spins Again — and It Stops on Aaron Philo"
+      }
+    },
+    {
+      "title": "Boom, Redux: Will Muschamp Finally Gets Life Right — in Texas",
+      "excerpt": "The man who should have been the perfect head coach of Florida? Buddy Martin on Will Muschamp, the kid from 22nd Street, and his second act running the Texas defense.",
+      "url": "https://www.gatorbaitmedia.com/post/boom-redux-will-muschamp-finally-gets-life-right-in-texas",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-12T13:15:55Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_b2ee0d32d4cd47ab8253f7756a9b3e58~mv2.jpg/v1/fit/w_960,h_540,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Boom, Redux: Will Muschamp Finally Gets Life Right — in Texas"
+      }
+    },
+    {
       "title": "Florida football: The deficiencies have been there all along",
       "excerpt": "Franz Beard on how Florida's September start covered up problems that October exposed, six things the Gators must fix in the offseason, the CFP top 25 and the coaching hot seat.",
       "url": "https://www.gatorbaitmedia.com/post/florida-football-the-deficiencies-have-been-there-all-along",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Aftermath: The Bitter Taste Lingers"
-      }
-    },
-    {
-      "title": "Florida vs. Oklahoma: Box Score, Stats and Key Takeaways",
-      "excerpt": "Oklahoma beat Florida 23-7 on Nov. 7 at Ben Hill Griffin Stadium. Read the full box score, scoring summary, team stats, top performers and key takeaways, plus a look at the Gators’ trip to Kentucky.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-vs-oklahoma-box-score-stats-and-key-takeaways",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-08T15:13:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_99124de36c49495680cfa1b90a04ecce~mv2.jpg/v1/fit/w_571,h_593,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida vs. Oklahoma: Box Score, Stats and Key Takeaways"
-      }
-    },
-    {
-      "title": "Frustration boils over; Sumrall has more questions than answers",
-      "excerpt": "Franz Beard on Florida’s 23-7 loss to Oklahoma: a season-low 203 yards, a fourth-down gamble and a coach who says he is frustrated, hungry and not backing down. Plus the rest of the SEC.",
-      "url": "https://www.gatorbaitmedia.com/post/frustration-boils-over-sumrall-has-more-questions-than-answers",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-08T14:36:28Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_b9607d3e07e6446999fdc55f08b41858~mv2.jpg/v1/fit/w_1000,h_882,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Frustration boils over; Sumrall has more questions than answers"
       }
     }
   ]

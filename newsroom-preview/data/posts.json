@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Soothsayer: Kentucky no longer fears the Gators",
+      "excerpt": "Franz Beard's SEC Soothsayer: the fear factor that died in 2018, why Kentucky no longer fears the Gators, and picks for all eight Saturday matchups.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-kentucky-no-longer-fears-the-gators",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-13T13:26:24Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_bb403ee551db4d92a76ce3bbcc13ef70~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: Kentucky no longer fears the Gators"
+      }
+    },
+    {
+      "title": "No. 1 Gators 37.5-point favorites vs. Merrimack",
+      "excerpt": "Franz Beard on tonight's Merrimack visit: the zone the Warriors bring, good bench minutes before Las Vegas, and where No. 1 Florida stands in the analytics.",
+      "url": "https://www.gatorbaitmedia.com/post/no-1-gators-37-5-point-favorites-vs-merrimack",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-13T13:25:14Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2328837121f74eefbc4166b001e3504d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for No. 1 Gators 37.5-point favorites vs. Merrimack"
+      }
+    },
+    {
       "title": "My Life in a Press Box",
       "excerpt": "The Joy of Sitting in the Sacred Presence of Dan Jenkins, Edwin Pope and Furman Bisher As If I Belonged There",
       "url": "https://www.gatorbaitmedia.com/post/my-life-in-a-press-box",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for McCloud Reinstated After One-Game Suspension, Expected to Play at Kentucky"
-      }
-    },
-    {
-      "title": "Florida Cancels 2031-32 Home-and-Home Series With Notre Dame",
-      "excerpt": "Florida used a contract clause tied to the SEC's nine-game schedule to cancel its 2031 and 2032 games with Notre Dame, The Associated Press reported Tuesday.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-cancels-2031-32-home-and-home-series-with-notre-dame",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-10T22:36:55Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_80f1877415184e748f536eda85d9a982~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida Cancels 2031-32 Home-and-Home Series With Notre Dame"
-      }
-    },
-    {
-      "title": "The Day The Music Died, Again",
-      "excerpt": "The music of college football officially died this week.",
-      "url": "https://www.gatorbaitmedia.com/post/the-day-the-music-died-again",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-10T19:35:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_d38311e78cf246a4b6f6efddabf07deb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Day The Music Died, Again"
       }
     }
   ]

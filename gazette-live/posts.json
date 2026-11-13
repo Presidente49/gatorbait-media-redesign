@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Soothsayer: Kentucky no longer fears the Gators",
+      "excerpt": "Franz Beard's SEC Soothsayer: the fear factor that died in 2018, why Kentucky no longer fears the Gators, and picks for all eight Saturday matchups.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-kentucky-no-longer-fears-the-gators",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-13T13:26:24Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_bb403ee551db4d92a76ce3bbcc13ef70~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: Kentucky no longer fears the Gators"
+      }
+    },
+    {
+      "title": "No. 1 Gators 37.5-point favorites vs. Merrimack",
+      "excerpt": "Franz Beard on tonight's Merrimack visit: the zone the Warriors bring, good bench minutes before Las Vegas, and where No. 1 Florida stands in the analytics.",
+      "url": "https://www.gatorbaitmedia.com/post/no-1-gators-37-5-point-favorites-vs-merrimack",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-13T13:25:14Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2328837121f74eefbc4166b001e3504d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for No. 1 Gators 37.5-point favorites vs. Merrimack"
+      }
+    },
+    {
       "title": "My Life in a Press Box",
       "excerpt": "The Joy of Sitting in the Sacred Presence of Dan Jenkins, Edwin Pope and Furman Bisher As If I Belonged There",
       "url": "https://www.gatorbaitmedia.com/post/my-life-in-a-press-box",
@@ -23,7 +51,7 @@
       "firstPublishedDate": "2026-11-12T21:15:36Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_f04a10f965084f1599c4b1286166587a~mv2.jpg/v1/fit/w_1000,h_972,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/d3cfa5_56aced269a3d4dc58da9d4a6838a4d01~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Sumrall goes back to Kentucky with Florida's season on the line: the Thursday notebook"
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Football relevance at stake for both Florida and Kentucky"
-      }
-    },
-    {
-      "title": "Reviewing the Reads After the Loss",
-      "excerpt": "Eddie Gilley grades the five reads he set before Florida’s 23-7 loss to Oklahoma, from the pass rush and offensive line to Tramell Jones Jr. and penalties.",
-      "url": "https://www.gatorbaitmedia.com/post/reviewing-the-reads-after-the-loss",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-11-09T13:31:30Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_791928c7bf6c4d0096665ecb1e7daab5~mv2.jpg/v1/fit/w_1000,h_960,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Reviewing the Reads After the Loss"
-      }
-    },
-    {
-      "title": "From No. 8 to no votes: Florida falls out of both polls",
-      "excerpt": "Florida got zero votes in the AP Top 25 and the Coaches Poll after a fourth loss in five games. Full AP list and the Nov. 14 trip to No. 13 Kentucky.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-drops-out-of-ap-and-coaches-polls",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-08T23:47:33Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_ed56e485ea4649d6a20cd83c18c1d473~mv2.png/v1/fit/w_1000,h_630,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for From No. 8 to no votes: Florida falls out of both polls"
       }
     }
   ]

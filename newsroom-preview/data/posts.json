@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "My Life in a Press Box",
+      "excerpt": "The Joy of Sitting in the Sacred Presence of Dan Jenkins, Edwin Pope and Furman Bisher As If I Belonged There",
+      "url": "https://www.gatorbaitmedia.com/post/my-life-in-a-press-box",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-13T05:13:20Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_a4616509d4634bbbb770da274ca41a11~mv2.jpg/v1/fit/w_960,h_664,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for My Life in a Press Box"
+      }
+    },
+    {
       "title": "Sumrall goes back to Kentucky with Florida's season on the line: the Thursday notebook",
       "excerpt": "Jon Sumrall takes Florida back to his alma mater Saturday night, with Aaron Philo expected at quarterback, four Gators ruled out and a season down to three games.",
       "url": "https://www.gatorbaitmedia.com/post/sumrall-goes-back-to-kentucky-with-florida-s-season-on-the-line-the-thursday-notebook",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Day The Music Died, Again"
-      }
-    },
-    {
-      "title": "Florida basketball: FSU a tall challenge for the Gators",
-      "excerpt": "No. 1 Florida visits Florida State tonight at 6 p.m. on ESPN2. Franz Beard on the Seminoles' size, the Gators' front line, the polls and SEC basketball news.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-basketball-fsu-a-tall-challenge-for-the-gators",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-10T12:02:38Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65ef9aa8f64845bfa7751d6048b7a976~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida basketball: FSU a tall challenge for the Gators"
       }
     }
   ]

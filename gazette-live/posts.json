@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "My Life in a Press Box",
+      "excerpt": "The Joy of Sitting in the Sacred Presence of Dan Jenkins, Edwin Pope and Furman Bisher As If I Belonged There",
+      "url": "https://www.gatorbaitmedia.com/post/my-life-in-a-press-box",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-13T05:13:20Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_a4616509d4634bbbb770da274ca41a11~mv2.jpg/v1/fit/w_960,h_664,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for My Life in a Press Box"
+      }
+    },
+    {
       "title": "Sumrall goes back to Kentucky with Florida's season on the line: the Thursday notebook",
       "excerpt": "Jon Sumrall takes Florida back to his alma mater Saturday night, with Aaron Philo expected at quarterback, four Gators ruled out and a season down to three games.",
       "url": "https://www.gatorbaitmedia.com/post/sumrall-goes-back-to-kentucky-with-florida-s-season-on-the-line-the-thursday-notebook",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for From No. 8 to no votes: Florida falls out of both polls"
-      }
-    },
-    {
-      "title": "Behind the Sticks",
-      "excerpt": "Florida scored 4.44 points a drive while it was 4-0 and 1.34 in the five games since. Nine games say the offense stopped winning early downs, and three remain to find out if it can again.",
-      "url": "https://www.gatorbaitmedia.com/post/behind-the-sticks",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-11-08T21:00:40Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_18d418f77f054dad94c6cf4e1ca03648~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Behind the Sticks"
       }
     }
   ]

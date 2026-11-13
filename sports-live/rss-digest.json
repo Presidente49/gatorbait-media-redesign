@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-13T00:07:06.976Z",
+ "generatedAt": "2026-11-13T06:32:29.922Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-13T00:07:06.976Z",
+  "checkedAt": "2026-11-13T06:32:29.922Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Sumrall goes back to Kentucky with Florida's season on the line: the Thursday notebook",
-   "link": "https://www.gatorbaitmedia.com/post/sumrall-goes-back-to-kentucky-with-florida-s-season-on-the-line-the-thursday-notebook",
-   "publishedAt": "2026-11-12T21:15:36.000Z"
+   "title": "My Life in a Press Box",
+   "link": "https://www.gatorbaitmedia.com/post/my-life-in-a-press-box",
+   "publishedAt": "2026-11-13T05:13:20.000Z"
   },
   "problems": []
  },

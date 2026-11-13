@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida flips 6-foot-7 tackle Moreno Fisher from Virginia",
+      "excerpt": "Florida flipped 6-foot-7 offensive tackle Moreno Fisher from Virginia on Thursday — the Gators' 27th commitment and fourth offensive lineman in the 2027 class.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-flips-6-foot-7-tackle-moreno-fisher-from-virginia",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-13T18:54:57Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_5efb780678724ea0ab148f8eb34d7093~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida flips 6-foot-7 tackle Moreno Fisher from Virginia"
+      }
+    },
+    {
+      "title": "Keys To The Game",
+      "excerpt": "Eddie Gilley's five keys for Florida at Kentucky: Jaden Baugh, the offensive line, Eric Singleton, Aaron Philo and a defense that has to force takeaways.",
+      "url": "https://www.gatorbaitmedia.com/post/keys-to-the-game",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-13T18:54:51Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_018216883f42463bb3f0a791a23f6829~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Keys To The Game"
+      }
+    },
+    {
       "title": "The Soothsayer: Kentucky no longer fears the Gators",
       "excerpt": "Franz Beard's SEC Soothsayer: the fear factor that died in 2018, why Kentucky no longer fears the Gators, and picks for all eight Saturday matchups.",
       "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-kentucky-no-longer-fears-the-gators",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Sumrall's My Old Kentucky Home"
-      }
-    },
-    {
-      "title": "Top-ranked Gators take five-game win streak over Florida State into Tallahassee",
-      "excerpt": "No. 1 Florida's first true road test of the season is the loudest one on the schedule — a 2-0 Florida State team, on its home floor, that took the Gators to the final possession a year ago.",
-      "url": "https://www.gatorbaitmedia.com/post/top-ranked-gators-take-five-game-win-streak-over-florida-state-into-tallahassee",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-09T16:07:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a4b698f2c48b4b8896771ccb0c4d89e0~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Top-ranked Gators take five-game win streak over Florida State into Tallahassee"
-      }
-    },
-    {
-      "title": "Football relevance at stake for both Florida and Kentucky",
-      "excerpt": "Franz Beard on Florida vs. Kentucky: two first-year coaches, two basketball schools and a football Saturday that tests relevance. Includes the AP and Coaches polls and an SEC team-by-team look.",
-      "url": "https://www.gatorbaitmedia.com/post/football-relevance-at-stake-for-both-florida-and-kentucky",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-09T13:32:04Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_b5ee34cfd4f444cd90519872cb35d8ec~mv2.png/v1/fit/w_1000,h_941,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Football relevance at stake for both Florida and Kentucky"
       }
     }
   ]

@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-13T15:17:31.001Z",
+ "generatedAt": "2026-11-13T21:54:53.586Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-13T15:17:31.001Z",
+  "checkedAt": "2026-11-13T21:54:53.586Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "The Soothsayer: Kentucky no longer fears the Gators",
-   "link": "https://www.gatorbaitmedia.com/post/the-soothsayer-kentucky-no-longer-fears-the-gators",
-   "publishedAt": "2026-11-13T13:26:24.000Z"
+   "title": "Florida flips 6-foot-7 tackle Moreno Fisher from Virginia",
+   "link": "https://www.gatorbaitmedia.com/post/florida-flips-6-foot-7-tackle-moreno-fisher-from-virginia",
+   "publishedAt": "2026-11-13T18:54:57.000Z"
   },
   "problems": []
  },

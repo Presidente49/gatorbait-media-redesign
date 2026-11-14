@@ -1,0 +1,129 @@
+{
+  "itemType": "STATIC_PAGE",
+  "itemId": "nh0hy",
+  "itemSeoTags": {
+    "tags": [
+      {
+        "type": "title",
+        "children": "GatorBait Magazine | Florida vs. Oklahoma Pregame Edition",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "description",
+          "content": "Florida vs. Oklahoma pregame coverage: Urban Meyer's Ring of Honor, Buddy Martin and Franz Beard, scouting reports and Loren Meadows' preview."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:title",
+          "content": "GatorBait Magazine | Florida vs. Oklahoma Pregame Edition"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:description",
+          "content": "Florida vs. Oklahoma pregame coverage: Urban Meyer's Ring of Honor, Buddy Martin and Franz Beard, scouting reports and Loren Meadows' preview."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:image",
+          "content": "https://static.wixstatic.com/media/d3cfa5_4a8f307190354c3fb672f84c09e1dd36~mv2.png"
+        },
+        "meta": {
+          "width": 1103,
+          "height": 1426
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "property": "og:image:alt",
+          "content": "GatorBait Magazine: Urban Meyer Ring of Honor, Florida vs. Oklahoma Pregame Edition."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:card",
+          "content": "summary_large_image"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:title",
+          "content": "GatorBait Magazine | Florida vs. Oklahoma Pregame Edition"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:description",
+          "content": "Florida vs. Oklahoma pregame coverage: Urban Meyer's Ring of Honor, Buddy Martin and Franz Beard, scouting reports and Loren Meadows' preview."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:image",
+          "content": "https://static.wixstatic.com/media/d3cfa5_4a8f307190354c3fb672f84c09e1dd36~mv2.png"
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "meta",
+        "props": {
+          "name": "twitter:image:alt",
+          "content": "GatorBait Magazine: Urban Meyer Ring of Honor, Florida vs. Oklahoma Pregame Edition."
+        },
+        "children": "",
+        "custom": false,
+        "disabled": false
+      },
+      {
+        "type": "script",
+        "props": {
+          "type": "application/ld+json"
+        },
+        "children": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://www.gatorbaitmedia.com/magazine#webpage\",\"url\":\"https://www.gatorbaitmedia.com/magazine\",\"name\":\"GatorBait Magazine | Florida vs. Oklahoma Pregame Edition\",\"description\":\"Florida vs. Oklahoma pregame coverage: Urban Meyer's Ring of Honor, Buddy Martin and Franz Beard, scouting reports and Loren Meadows' preview.\",\"inLanguage\":\"en-US\",\"isPartOf\":{\"@id\":\"https://www.gatorbaitmedia.com/#website\"},\"about\":{\"@id\":\"https://www.gatorbaitmedia.com/magazine#periodical\"},\"publisher\":{\"@id\":\"https://www.gatorbaitmedia.com/#organization\"},\"primaryImageOfPage\":{\"@type\":\"ImageObject\",\"url\":\"https://static.wixstatic.com/media/d3cfa5_4a8f307190354c3fb672f84c09e1dd36~mv2.png\",\"width\":1103,\"height\":1426,\"caption\":\"GatorBait Magazine: Urban Meyer Ring of Honor, Florida vs. Oklahoma Pregame Edition.\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"GatorBait Media\",\"item\":\"https://www.gatorbaitmedia.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Magazine\",\"item\":\"https://www.gatorbaitmedia.com/magazine\"}]}},{\"@type\":\"Periodical\",\"@id\":\"https://www.gatorbaitmedia.com/magazine#periodical\",\"name\":\"GatorBait Magazine\",\"url\":\"https://www.gatorbaitmedia.com/magazine\",\"about\":\"Florida Gators football and athletics\",\"inLanguage\":\"en-US\",\"publisher\":{\"@id\":\"https://www.gatorbaitmedia.com/#organization\"}},{\"@type\":\"WebSite\",\"@id\":\"https://www.gatorbaitmedia.com/#website\",\"url\":\"https://www.gatorbaitmedia.com/\",\"name\":\"GatorBait Media\",\"publisher\":{\"@id\":\"https://www.gatorbaitmedia.com/#organization\"}}]}",
+        "custom": false,
+        "disabled": false
+      }
+    ]
+  },
+  "fieldMask": "tags",
+  "publish": true
+}

@@ -295,7 +295,7 @@
   },
   "injuries": {
     "label": "Availability",
-    "asOf": "GatorBait reporting. The official SEC availability report posts Friday; ESPN lists no injuries for either team.",
+    "asOf": "SEC student-athlete availability report, Friday report posted 8:10 p.m. ET on Nov. 13. The SEC updates it on game day.",
     "teams": [
       {
         "name": "Florida",
@@ -303,13 +303,67 @@
           {
             "pos": "WR",
             "name": "Vernell Brown III",
-            "status": "Out",
-            "detail": "Sixth straight game, per Franz Beard"
+            "status": "Out"
+          },
+          {
+            "pos": "S",
+            "name": "Bryce Thornton",
+            "status": "Out"
+          },
+          {
+            "pos": "CB",
+            "name": "Dijon Johnson",
+            "status": "Out"
+          },
+          {
+            "pos": "ILB",
+            "name": "Jaden Robinson",
+            "status": "Out"
+          },
+          {
+            "pos": "TE",
+            "name": "Evan Chieca",
+            "status": "Out"
+          },
+          {
+            "pos": "JACK",
+            "name": "Kofi Asare",
+            "status": "Questionable"
+          },
+          {
+            "pos": "DL",
+            "name": "DK Kalu",
+            "status": "Probable"
+          }
+        ]
+      },
+      {
+        "name": "Kentucky",
+        "items": [
+          {
+            "pos": "WR",
+            "name": "Nic Anderson",
+            "status": "Out"
+          },
+          {
+            "pos": "ILB",
+            "name": "Antwan Smith",
+            "status": "Out"
+          },
+          {
+            "pos": "DB",
+            "name": "Jaden Smith",
+            "status": "Out"
+          },
+          {
+            "pos": "DB",
+            "name": "Grant Grayton",
+            "status": "Out"
           }
         ]
       }
     ],
-    "source": "GatorBait reporting (Franz Beard, Nov. 13)"
+    "source": "SEC availability report (secsports.com)"
   },
   "lead": {
     "label": "The Soothsayer",
@@ -475,6 +529,21 @@
           "height": 720,
           "alt": "Florida running back Duke Clark speaks at a podium during a media availability.",
           "credit": "Frame from Florida Gators/UAA video posted Nov. 10."
+        }
+      },
+      {
+        "kicker": "GatorBait Staff · Availability",
+        "date": "Nov. 14",
+        "title": "Availability report: Five Gators out at Kentucky, Asare questionable",
+        "url": "/post/availability-report-five-gators-out-at-kentucky-asare-questionable",
+        "excerpt": "The SEC report lists five Gators out and Kofi Asare questionable. Kentucky lists four out.",
+        "image": {
+          "id": "d3cfa5_f88febc849204c1497c39504abb0b19b",
+          "ext": "jpg",
+          "width": 1280,
+          "height": 720,
+          "alt": "Florida edge rusher Kofi Asare speaks at a podium during a media availability.",
+          "credit": "Frame from Florida Gators/UAA video posted Nov. 9."
         }
       },
       {

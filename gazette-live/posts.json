@@ -2,6 +2,48 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Availability report: Five Gators out at Kentucky, Asare questionable",
+      "excerpt": "The SEC availability report lists Vernell Brown III, Bryce Thornton, Dijon Johnson, Jaden Robinson and Evan Chieca out for Florida at Kentucky. Kofi Asare is questionable. Kentucky lists four out.",
+      "url": "https://www.gatorbaitmedia.com/post/availability-report-five-gators-out-at-kentucky-asare-questionable",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-14T17:41:13Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_f88febc849204c1497c39504abb0b19b~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Availability report: Five Gators out at Kentucky, Asare questionable"
+      }
+    },
+    {
+      "title": "Game day in Lexington: What to know before Florida kicks off at Kentucky",
+      "excerpt": "Florida at No. 13 Kentucky kicks off at 6:15 p.m. ET on ESPN as scheduled. Here is the line, the quarterback, the forecast, what is at stake and what changed around the SEC after Friday’s FAA ground stop.",
+      "url": "https://www.gatorbaitmedia.com/post/game-day-in-lexington-what-to-know-before-florida-kicks-off-at-kentucky",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-14T17:35:45Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6cfff968c5bf41ad8b95897cf353d5c6~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Game day in Lexington: What to know before Florida kicks off at Kentucky"
+      }
+    },
+    {
+      "title": "Grounded: How Friday’s FAA stop pushed Ole Miss-Oklahoma to Sunday and shuffled the SEC",
+      "excerpt": "A nationwide FAA ground stop Friday moved Ole Miss at Oklahoma to Sunday, put Auburn on buses and changed kickoff times across college football. Florida was already in Lexington.",
+      "url": "https://www.gatorbaitmedia.com/post/grounded-how-friday-s-faa-stop-pushed-ole-miss-oklahoma-to-sunday-and-shuffled-the-sec",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-14T17:35:45Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Grounded: How Friday’s FAA stop pushed Ole Miss-Oklahoma to Sunday and shuffled the SEC"
+      }
+    },
+    {
       "title": "Given a start, Alex Lloyd showed he belonged against Merrimack",
       "excerpt": "Starting for the first time in a Florida uniform, Alex Lloyd hit three threes and scored 11 points in the No. 1 Gators' 83-54 win over Merrimack.",
       "url": "https://www.gatorbaitmedia.com/post/given-a-start-alex-lloyd-showed-he-belonged-against-merrimack",
@@ -237,48 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida Cancels 2031-32 Home-and-Home Series With Notre Dame"
-      }
-    },
-    {
-      "title": "The Day The Music Died, Again",
-      "excerpt": "The music of college football officially died this week.",
-      "url": "https://www.gatorbaitmedia.com/post/the-day-the-music-died-again",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-10T19:35:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_d38311e78cf246a4b6f6efddabf07deb~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Day The Music Died, Again"
-      }
-    },
-    {
-      "title": "The Buddy Martin Show: Oklahoma Stuns Florida, and the Playoff Jumps to 24 Teams",
-      "excerpt": "Buddy Martin, Shane Matthews, Franz Beard and Kevin Brockway on Florida's 23-7 loss to Oklahoma, Jon Sumrall's Monday press conference, the trip to Kentucky and the 24-team playoff.",
-      "url": "https://www.gatorbaitmedia.com/post/the-buddy-martin-show-oklahoma-stuns-florida-and-the-playoff-jumps-to-24-teams",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-10T13:21:13Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_1b0ead2b6b3149b39d6e8d78b1c0ff99~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Buddy Martin Show: Oklahoma Stuns Florida, and the Playoff Jumps to 24 Teams"
-      }
-    },
-    {
-      "title": "Florida basketball: FSU a tall challenge for the Gators",
-      "excerpt": "No. 1 Florida visits Florida State tonight at 6 p.m. on ESPN2. Franz Beard on the Seminoles' size, the Gators' front line, the polls and SEC basketball news.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-basketball-fsu-a-tall-challenge-for-the-gators",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-10T12:02:38Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_44ec48e1ebc54313aa88a0331366ce66~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida basketball: FSU a tall challenge for the Gators"
       }
     }
   ]

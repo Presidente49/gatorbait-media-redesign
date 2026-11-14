@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Given a start, Alex Lloyd showed he belonged against Merrimack",
+      "excerpt": "Starting for the first time in a Florida uniform, Alex Lloyd hit three threes and scored 11 points in the No. 1 Gators' 83-54 win over Merrimack.",
+      "url": "https://www.gatorbaitmedia.com/post/given-a-start-alex-lloyd-showed-he-belonged-against-merrimack",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-14T16:15:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_fcc37b3b15c3407597dc91b28c87c283~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Given a start, Alex Lloyd showed he belonged against Merrimack"
+      }
+    },
+    {
+      "title": "Gators Are Safely In Kentucky, But Now For The Task: How To Beat Kentucky",
+      "excerpt": "Gators a three-point underdog at Kroger Field",
+      "url": "https://www.gatorbaitmedia.com/post/gators-are-safely-in-kentucky-but-now-for-the-task-how-to-beat-kentucky",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-14T14:22:46Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_c96312563ae1474bbc134b0407de2ccd~mv2.jpg/v1/fit/w_960,h_641,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gators Are Safely In Kentucky, But Now For The Task: How To Beat Kentucky"
+      }
+    },
+    {
       "title": "Florida flips 6-foot-7 tackle Moreno Fisher from Virginia",
       "excerpt": "Florida flipped 6-foot-7 offensive tackle Moreno Fisher from Virginia on Thursday — the Gators' 27th commitment and fourth offensive lineman in the 2027 class.",
       "url": "https://www.gatorbaitmedia.com/post/florida-flips-6-foot-7-tackle-moreno-fisher-from-virginia",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for It was ugly but No. 1 Florida took down FSU, 81-72"
-      }
-    },
-    {
-      "title": "Some Disgruntled Ghosts In The Press Box",
-      "excerpt": "Shock And Awe For Some Of My Deceased Sports Writer Pals.",
-      "url": "https://www.gatorbaitmedia.com/post/some-disgruntled-ghosts-in-the-press-box",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-11T12:06:49Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_7113ed48e2b740d6bdcbe07273c30578~mv2.jpg/v1/fit/w_645,h_802,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Some Disgruntled Ghosts In The Press Box"
-      }
-    },
-    {
-      "title": "Haugh, Klavzar and the foul line lift Gators past FSU, 81-72",
-      "excerpt": "Florida beat Florida State 81-72 behind Thomas Haugh's 21 points and 10 rebounds, Urban Klavzar's late scoring and 30 made free throws. Lowdown with Loren Meadows follows tonight at 9 p.m. ET.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-fsu-81-72-haugh-klavzar-postgame",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-11-11T01:38:36Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65ef9aa8f64845bfa7751d6048b7a976~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Haugh, Klavzar and the foul line lift Gators past FSU, 81-72"
       }
     }
   ]

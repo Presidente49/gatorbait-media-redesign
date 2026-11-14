@@ -1,5 +1,14 @@
 # Master Control Current State
 
+## Kentucky pregame release and Franz posts — owner direction, Nov. 14, 2026
+
+- Brenden, Nov. 14: approved routine fixes, wants speed. Magazine embed `1dd74333` patched rev 152 to 153, pinned to commit `9a6142eb` (Florida at Kentucky pregame). Rollback file `deploy/magazine-2026/pregame-kentucky/rollback-live-rev152.html` (PR #560, file-only loader); PR #559 merged. Live check at 390 and 1366: renders, countdown live, images load, no overflow.
+- Franz posts published as filed at the owner's order: Alex Lloyd basketball `6cb749da` (floridagators.com UAA photo by Senay Kennon) and the Football relevance column `47b69a40` (existing artwork). Both post-page heroes were empty; a heroImage-only PATCH (same image, existing alt) fixed both and both verified at 390 and 1366. `47b69a40` is a same-title duplicate at the `-1` slug of the Nov. 9 post `710374ce`, and the homepage links to it. Open for the controller.
+- Kentucky pregame magazine email campaign `ab50fd4d` sent to label `e345fa8e` at the owner's explicit order (governor clear; daily cap now used). Read-only check: SENT and DISTRIBUTED, published 16:18:55Z; delivered 891, opened 91, clicked 25, bounced 3, complained 0, notSent 0. No resend. The Spaces push was left to Wix's own automatic push per the owner. No manual push was made and an automatic one is not verified; the Nov. 2 rule says hand-built campaigns get none, so keep the push open until Brenden confirms.
+- Closing italic photo credits appended by richContent-only patches (covers untouched, 200, public check at 390): `98838318` (Merrimack favorites), `4eda3a8d` (The Soothsayer), `4140c546` (Sumrall notebook). Writer opening captions left as written, including the stale "Frame from Florida Gators/UAA video." on the Soothsayer and Sumrall posts. The Soothsayer has the same empty post-page hero; media-only fixes do not repair it.
+- Running: a background front-page photo and crop agent, media-only.
+- Held: the free sign-up gate; Franz's stale Nov. 2 file "For the UF offense, it was an October to forget"; the Kentucky score missing in Franz's SEC basketball roundup.
+
 ## Standing order: publish writer stories without asking — owner direction, Nov. 2, 2026
 
 - Brenden, Nov. 2, photo rule: a game story always runs a current photo from that game; if none exists, make a graphic. Pull from floridagators.com only when we must, with proper attribution. Chris Spears's SmugMug is ours to use (he is credentialed and works for GatorBait; Brenden owns those photos). A new media ID of the same photograph is still a reused photo; compare the pictures, not the IDs. Open: the SmugMug gallery link has not been supplied.

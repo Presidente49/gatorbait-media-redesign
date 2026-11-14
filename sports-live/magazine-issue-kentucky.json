@@ -463,6 +463,36 @@
     "label": "More from Kentucky week",
     "items": [
       {
+        "kicker": "GatorBait Staff · Game day",
+        "date": "Nov. 14",
+        "title": "Game day in Lexington: What to know before Florida kicks off at Kentucky",
+        "url": "/post/game-day-in-lexington-what-to-know-before-florida-kicks-off-at-kentucky",
+        "excerpt": "Kickoff, the line, the quarterback, the forecast, what is at stake and what changed around the SEC after Friday’s FAA ground stop.",
+        "image": {
+          "id": "d3cfa5_6cfff968c5bf41ad8b95897cf353d5c6",
+          "ext": "jpg",
+          "width": 1280,
+          "height": 720,
+          "alt": "Florida running back Duke Clark speaks at a podium during a media availability.",
+          "credit": "Frame from Florida Gators/UAA video posted Nov. 10."
+        }
+      },
+      {
+        "kicker": "GatorBait Staff · News",
+        "date": "Nov. 14",
+        "title": "Grounded: How Friday’s FAA stop pushed Ole Miss-Oklahoma to Sunday and shuffled the SEC",
+        "url": "/post/grounded-how-friday-s-faa-stop-pushed-ole-miss-oklahoma-to-sunday-and-shuffled-the-sec",
+        "excerpt": "A nationwide FAA ground stop moved Ole Miss at Oklahoma to Sunday, put Auburn on buses and changed kickoff times across college football.",
+        "image": {
+          "id": "d3cfa5_966cd6f4a3694ef3a2d2900087e9d786",
+          "ext": "jpg",
+          "width": 1280,
+          "height": 720,
+          "alt": "Florida linebacker Ty Jackson speaks at a podium during a media availability.",
+          "credit": "Frame from Florida Gators/UAA video posted Nov. 9."
+        }
+      },
+      {
         "kicker": "Buddy Martin · Column",
         "date": "Nov. 14",
         "title": "Gators Are Safely In Kentucky, But Now For The Task: How To Beat Kentucky",

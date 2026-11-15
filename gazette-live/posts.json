@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14",
+      "excerpt": "Old Dogs, New Tricks: Gators Crash Kentucky's Blackout Party",
+      "url": "https://www.gatorbaitmedia.com/post/blackout-funeral-philo-runs-gators-past-kentucky-21-14",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-15T16:12:03Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_93ffb4fa4f24421d8e65a421b14bd42f~mv2.jpg/v1/fit/w_720,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14"
+      }
+    },
+    {
       "title": "Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap",
       "excerpt": "It was the legs of No. 12, Aaron Philo, which carried the Gators to victory. (Photo Courtesy University of Florida (UAA)) What a night, and oh, what a way to get there — a freezing night in the Bluegrass, a third win over a top-11 ranked team this season. Florida 21, No. 11 Kentucky 14. Six wins. Bowl eligible. And the quarterback did it with his legs…",
       "url": "https://www.gatorbaitmedia.com/post/let-s-go-bowling-baby-after-falling-short-by-inches-the-gators-made-a-mile-long-quantum-leap",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Some Disgruntled Ghosts In The Press Box"
-      }
-    },
-    {
-      "title": "Haugh, Klavzar and the foul line lift Gators past FSU, 81-72",
-      "excerpt": "Florida beat Florida State 81-72 behind Thomas Haugh's 21 points and 10 rebounds, Urban Klavzar's late scoring and 30 made free throws. Lowdown with Loren Meadows follows tonight at 9 p.m. ET.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-fsu-81-72-haugh-klavzar-postgame",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-11-11T01:38:36Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_65ef9aa8f64845bfa7751d6048b7a976~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Haugh, Klavzar and the foul line lift Gators past FSU, 81-72"
       }
     }
   ]

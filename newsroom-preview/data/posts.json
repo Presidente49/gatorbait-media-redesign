@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14",
+      "excerpt": "Old Dogs, New Tricks: Gators Crash Kentucky's Blackout Party",
+      "url": "https://www.gatorbaitmedia.com/post/blackout-funeral-philo-runs-gators-past-kentucky-21-14",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-15T16:12:03Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_93ffb4fa4f24421d8e65a421b14bd42f~mv2.jpg/v1/fit/w_720,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14"
+      }
+    },
+    {
       "title": "Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap",
       "excerpt": "It was the legs of No. 12, Aaron Philo, which carried the Gators to victory. (Photo Courtesy University of Florida (UAA)) What a night, and oh, what a way to get there — a freezing night in the Bluegrass, a third win over a top-11 ranked team this season. Florida 21, No. 11 Kentucky 14. Six wins. Bowl eligible. And the quarterback did it with his legs…",
       "url": "https://www.gatorbaitmedia.com/post/let-s-go-bowling-baby-after-falling-short-by-inches-the-gators-made-a-mile-long-quantum-leap",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Soothsayer: Kentucky no longer fears the Gators"
-      }
-    },
-    {
-      "title": "No. 1 Gators 37.5-point favorites vs. Merrimack",
-      "excerpt": "Franz Beard on tonight's Merrimack visit: the zone the Warriors bring, good bench minutes before Las Vegas, and where No. 1 Florida stands in the analytics.",
-      "url": "https://www.gatorbaitmedia.com/post/no-1-gators-37-5-point-favorites-vs-merrimack",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-13T13:25:14Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_2328837121f74eefbc4166b001e3504d~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for No. 1 Gators 37.5-point favorites vs. Merrimack"
       }
     }
   ]

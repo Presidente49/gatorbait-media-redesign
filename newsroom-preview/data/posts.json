@@ -2,17 +2,45 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
-      "title": "HALFTIME: Kentucky 7, Florida 2 as Gators' offense punts five times",
-      "excerpt": "Florida's defense forced a safety and has allowed one touchdown, but the Gators have 121 yards and five punts on five possessions at Kroger Field.",
-      "url": "https://www.gatorbaitmedia.com/post/halftime-kentucky-7-florida-2-as-gators-offense-punts-five-times",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-11-15T00:50:40Z",
+      "title": "Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap",
+      "excerpt": "It was the legs of No. 12, Aaron Philo, which carried the Gators to victory. (Photo Courtesy University of Florida (UAA)) What a night, and oh, what a way to get there — a freezing night in the Bluegrass, a third win over a top-11 ranked team this season. Florida 21, No. 11 Kentucky 14. Six wins. Bowl eligible. And the quarterback did it with his legs…",
+      "url": "https://www.gatorbaitmedia.com/post/let-s-go-bowling-baby-after-falling-short-by-inches-the-gators-made-a-mile-long-quantum-leap",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-15T04:51:44Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_966cd6f4a3694ef3a2d2900087e9d786~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/ae876a_bb52ae6e52ea458c89c9844843ed96c0~mv2.jpg/v1/fit/w_960,h_640,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
-        "alt": "Featured image for HALFTIME: Kentucky 7, Florida 2 as Gators' offense punts five times"
+        "alt": "Featured image for Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap"
+      }
+    },
+    {
+      "title": "Florida redefines its identity as Philo's legs pull off the upset in Lexington",
+      "excerpt": "Postgame Thoughts: The defense kept Florida in it, and Aaron Philo's legs gave the offense the dimension it had been missing in a 21-14 win at Kentucky.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-redefines-its-identity-as-philo-s-legs-pull-off-the-upset-in-lexington",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-11-15T04:45:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_6b2a36561f014208a9c65242ab3793e1~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida redefines its identity as Philo's legs pull off the upset in Lexington"
+      }
+    },
+    {
+      "title": "Florida 21, No. 11 Kentucky 14: Philo runs for 102 yards and the Gators' defense closes it out",
+      "excerpt": "Aaron Philo ran for 102 yards and the go-ahead touchdown, and Florida stopped Kentucky on fourth down twice in the final six minutes to win 21-14 at Kroger Field.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-21-no-11-kentucky-14-philo-runs-for-102-yards-and-the-gators-defense-closes-it-out",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-15T04:31:35Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_fa57aa84912b434281d9e92a148acc44~mv2.jpg/v1/fit/w_1000,h_775,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida 21, No. 11 Kentucky 14: Philo runs for 102 yards and the Gators' defense closes it out"
       }
     },
     {
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for No. 1 Gators 37.5-point favorites vs. Merrimack"
-      }
-    },
-    {
-      "title": "My Life in a Press Box",
-      "excerpt": "The Joy of Sitting in the Sacred Presence of Dan Jenkins, Edwin Pope and Furman Bisher As If I Belonged There",
-      "url": "https://www.gatorbaitmedia.com/post/my-life-in-a-press-box",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-13T05:13:20Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_a4616509d4634bbbb770da274ca41a11~mv2.jpg/v1/fit/w_960,h_664,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for My Life in a Press Box"
-      }
-    },
-    {
-      "title": "Sumrall goes back to Kentucky with Florida's season on the line: the Thursday notebook",
-      "excerpt": "Jon Sumrall takes Florida back to his alma mater Saturday night, with Aaron Philo expected at quarterback, four Gators ruled out and a season down to three games.",
-      "url": "https://www.gatorbaitmedia.com/post/sumrall-goes-back-to-kentucky-with-florida-s-season-on-the-line-the-thursday-notebook",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-12T21:15:36Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_f04a10f965084f1599c4b1286166587a~mv2.jpg/v1/fit/w_1000,h_972,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Sumrall goes back to Kentucky with Florida's season on the line: the Thursday notebook"
       }
     }
   ]

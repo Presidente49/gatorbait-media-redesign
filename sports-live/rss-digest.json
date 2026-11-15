@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-15T01:45:11.093Z",
+ "generatedAt": "2026-11-15T09:10:19.296Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-15T01:45:11.093Z",
+  "checkedAt": "2026-11-15T09:10:19.296Z",
   "ok": false,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Florida at No. 11 Kentucky: Wildcats answer Baugh's touchdown to retake the lead in the third quarter",
-   "link": "https://www.gatorbaitmedia.com/post/halftime-kentucky-7-florida-2-as-gators-offense-punts-five-times",
-   "publishedAt": "2026-11-15T00:50:40.000Z"
+   "title": "Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap",
+   "link": "https://www.gatorbaitmedia.com/post/let-s-go-bowling-baby-after-falling-short-by-inches-the-gators-made-a-mile-long-quantum-leap",
+   "publishedAt": "2026-11-15T04:51:44.000Z"
   },
   "problems": [
    "1 of 20 items have no cover image (first: https://www.gatorbaitmedia.com/post/grounded-how-friday-s-faa-stop-pushed-ole-miss-oklahoma-to-sunday-and-shuffled-the-sec)"

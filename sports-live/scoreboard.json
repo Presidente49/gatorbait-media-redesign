@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-12T10:09:52Z",
+ "updatedAt": "2026-11-15T01:17:14Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -215,7 +215,7 @@
    "opponentRank": 13,
    "opponentRecord": "7-2",
    "home": false,
-   "status": "scheduled",
+   "status": "in-progress",
    "score": null,
    "tv": "ESPN",
    "storyUrl": null
@@ -248,22 +248,22 @@
  "standings": [
   {
    "team": "Georgia",
-   "confRecord": "6-1",
-   "overall": "8-1"
+   "confRecord": "7-1",
+   "overall": "9-1"
   },
   {
    "team": "Alabama",
+   "confRecord": "6-2",
+   "overall": "8-2"
+  },
+  {
+   "team": "Tennessee",
    "confRecord": "5-2",
-   "overall": "7-2"
+   "overall": "8-2"
   },
   {
    "team": "Kentucky",
    "confRecord": "5-2",
-   "overall": "7-2"
-  },
-  {
-   "team": "Tennessee",
-   "confRecord": "4-2",
    "overall": "7-2"
   },
   {
@@ -282,12 +282,12 @@
    "overall": "6-3"
   },
   {
-   "team": "LSU",
-   "confRecord": "3-3",
-   "overall": "6-3"
+   "team": "Auburn",
+   "confRecord": "4-4",
+   "overall": "6-4"
   },
   {
-   "team": "Missouri",
+   "team": "LSU",
    "confRecord": "3-3",
    "overall": "6-3"
   },
@@ -297,9 +297,9 @@
    "overall": "5-4"
   },
   {
-   "team": "Auburn",
+   "team": "Missouri",
    "confRecord": "3-4",
-   "overall": "5-4"
+   "overall": "6-4"
   },
   {
    "team": "Florida",
@@ -308,24 +308,34 @@
   },
   {
    "team": "Mississippi State",
-   "confRecord": "2-5",
-   "overall": "4-5"
-  },
-  {
-   "team": "Texas A&M",
-   "confRecord": "1-5",
-   "overall": "4-5"
-  },
-  {
-   "team": "Vanderbilt",
-   "confRecord": "1-5",
-   "overall": "4-5"
+   "confRecord": "2-6",
+   "overall": "4-6"
   },
   {
    "team": "Arkansas",
    "confRecord": "1-5",
    "overall": "3-6"
+  },
+  {
+   "team": "Texas A&M",
+   "confRecord": "1-6",
+   "overall": "4-6"
+  },
+  {
+   "team": "Vanderbilt",
+   "confRecord": "1-6",
+   "overall": "4-6"
   }
  ],
- "live": null
+ "live": {
+  "eventId": "401856884",
+  "clock": "10:06",
+  "period": 3,
+  "score": {
+   "fla": 8,
+   "opp": 7
+  },
+  "possession": "fla",
+  "lastPlay": "(10:10) #13 J.Baugh rush middle for 1 yard gain to the UK00 TOUCHDOWN, clock 10:06"
+ }
 }

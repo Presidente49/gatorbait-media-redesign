@@ -1,75 +1,75 @@
 {
- "updatedAt": "2026-11-12T10:09:52Z",
+ "updatedAt": "2026-11-15T03:08:45Z",
  "season": 2026,
  "team": {
   "name": "Florida",
   "rank": null,
-  "record": "5-4",
-  "conf": "3-4"
+  "record": "6-4",
+  "conf": "4-4"
  },
  "last": {
-  "eventId": "401856739",
-  "opponent": "Oklahoma",
-  "opponentRank": null,
-  "home": true,
+  "eventId": "401856884",
+  "opponent": "Kentucky",
+  "opponentRank": 11,
+  "home": false,
   "neutral": false,
-  "date": "2026-11-08T00:45:00Z",
+  "date": "2026-11-14T23:15:00Z",
   "status": "final",
   "score": {
-   "fla": 7,
-   "opp": 23
+   "fla": 21,
+   "opp": 14
   },
   "quarters": {
    "fla": [
     0,
-    7,
-    0,
-    0
+    2,
+    11,
+    8
    ],
    "opp": [
-    3,
-    10,
+    7,
     0,
-    10
+    7,
+    0
    ]
   },
-  "venue": "Ben Hill Griffin Stadium",
+  "venue": "Kroger Field",
   "recapUrl": null,
   "galleryUrl": null,
   "tape": {
-   "totalYards": 203,
-   "rushingYards": 70,
-   "firstDowns": 11,
-   "attendance": 90442
+   "totalYards": 330,
+   "rushingYards": 211,
+   "firstDowns": 19,
+   "attendance": 61866
   },
   "leaders": [
    [
     "Passing Yards",
-    "Tramell Jones Jr.",
-    "10/22, 133 YDS, 2 INT"
+    "Aaron Philo",
+    "16/24, 119 YDS"
    ],
    [
     "Rushing Yards",
-    "Jadan Baugh",
-    "8 CAR, 35 YDS, 1 TD"
+    "Aaron Philo",
+    "15 CAR, 102 YDS, 1 TD"
    ],
    [
     "Receiving Yards",
-    "Duke Clark",
-    "4 REC, 70 YDS"
+    "Bailey Stockton",
+    "4 REC, 34 YDS"
    ]
   ]
  },
  "next": {
-  "eventId": "401856884",
-  "opponent": "Kentucky",
-  "opponentRank": 13,
-  "opponentRecord": "7-2",
-  "home": false,
+  "eventId": "401856748",
+  "opponent": "Vanderbilt",
+  "opponentRank": null,
+  "opponentRecord": "4-6",
+  "home": true,
   "neutral": false,
-  "kickoffIso": "2026-11-14T23:15:00Z",
-  "tv": "ESPN",
-  "venue": "Kroger Field",
+  "kickoffIso": "2026-11-21T17:00:00Z",
+  "tv": null,
+  "venue": "Ben Hill Griffin Stadium",
   "previewUrl": null
  },
  "schedule": [
@@ -212,11 +212,14 @@
    "eventId": "401856884",
    "date": "2026-11-14T23:15:00Z",
    "opponent": "Kentucky",
-   "opponentRank": 13,
-   "opponentRecord": "7-2",
+   "opponentRank": 11,
+   "opponentRecord": "7-3",
    "home": false,
-   "status": "scheduled",
-   "score": null,
+   "status": "final",
+   "score": {
+    "fla": 21,
+    "opp": 14
+   },
    "tv": "ESPN",
    "storyUrl": null
   },
@@ -225,7 +228,7 @@
    "date": "2026-11-21T17:00:00Z",
    "opponent": "Vanderbilt",
    "opponentRank": null,
-   "opponentRecord": null,
+   "opponentRecord": "4-6",
    "home": true,
    "status": "scheduled",
    "score": null,
@@ -248,28 +251,28 @@
  "standings": [
   {
    "team": "Georgia",
-   "confRecord": "6-1",
-   "overall": "8-1"
+   "confRecord": "7-1",
+   "overall": "9-1"
   },
   {
    "team": "Alabama",
-   "confRecord": "5-2",
-   "overall": "7-2"
-  },
-  {
-   "team": "Kentucky",
-   "confRecord": "5-2",
-   "overall": "7-2"
+   "confRecord": "6-2",
+   "overall": "8-2"
   },
   {
    "team": "Tennessee",
-   "confRecord": "4-2",
-   "overall": "7-2"
+   "confRecord": "5-2",
+   "overall": "8-2"
   },
   {
    "team": "Texas",
    "confRecord": "4-2",
    "overall": "7-2"
+  },
+  {
+   "team": "Kentucky",
+   "confRecord": "5-3",
+   "overall": "7-3"
   },
   {
    "team": "Ole Miss",
@@ -282,12 +285,17 @@
    "overall": "6-3"
   },
   {
-   "team": "LSU",
-   "confRecord": "3-3",
-   "overall": "6-3"
+   "team": "Auburn",
+   "confRecord": "4-4",
+   "overall": "6-4"
   },
   {
-   "team": "Missouri",
+   "team": "Florida",
+   "confRecord": "4-4",
+   "overall": "6-4"
+  },
+  {
+   "team": "LSU",
    "confRecord": "3-3",
    "overall": "6-3"
   },
@@ -297,34 +305,29 @@
    "overall": "5-4"
   },
   {
-   "team": "Auburn",
+   "team": "Missouri",
    "confRecord": "3-4",
-   "overall": "5-4"
-  },
-  {
-   "team": "Florida",
-   "confRecord": "3-4",
-   "overall": "5-4"
+   "overall": "6-4"
   },
   {
    "team": "Mississippi State",
-   "confRecord": "2-5",
-   "overall": "4-5"
-  },
-  {
-   "team": "Texas A&M",
-   "confRecord": "1-5",
-   "overall": "4-5"
-  },
-  {
-   "team": "Vanderbilt",
-   "confRecord": "1-5",
-   "overall": "4-5"
+   "confRecord": "2-6",
+   "overall": "4-6"
   },
   {
    "team": "Arkansas",
    "confRecord": "1-5",
    "overall": "3-6"
+  },
+  {
+   "team": "Texas A&M",
+   "confRecord": "1-6",
+   "overall": "4-6"
+  },
+  {
+   "team": "Vanderbilt",
+   "confRecord": "1-6",
+   "overall": "4-6"
   }
  ],
  "live": null

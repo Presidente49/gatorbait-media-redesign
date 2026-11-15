@@ -571,7 +571,7 @@ function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){retur
    kickoff to six hours after, because the Pages file can lag a game by an hour or more. Everything refreshes while the
    page is open; the page's own content (Up next card, __GBM_GAMEDAY__) is only a fallback when a source fails. */
 var SB='https://presidente49.github.io/gatorbait-media-redesign/sports-live/scoreboard.json',
-ESPN='https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=',
+ESPN='https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=8&dates=',
 D={feed:null,sb:null,live:null},HR=36e5,DAY=864e5;
 /* Native cover metadata verified from the existing published posts, Oct. 23.
    Match by immutable Wix media ID, never by writer or headline. Missing metadata must not suppress an actual story cover. */

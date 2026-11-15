@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "HALFTIME: Kentucky 7, Florida 2 as Gators' offense punts five times",
+      "excerpt": "Florida's defense forced a safety and has allowed one touchdown, but the Gators have 121 yards and five punts on five possessions at Kroger Field.",
+      "url": "https://www.gatorbaitmedia.com/post/halftime-kentucky-7-florida-2-as-gators-offense-punts-five-times",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-15T00:50:40Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_966cd6f4a3694ef3a2d2900087e9d786~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for HALFTIME: Kentucky 7, Florida 2 as Gators' offense punts five times"
+      }
+    },
+    {
       "title": "Availability report: Five Gators out at Kentucky, Asare questionable",
       "excerpt": "The SEC availability report lists Vernell Brown III, Bryce Thornton, Dijon Johnson, Jaden Robinson and Evan Chieca out for Florida at Kentucky. Kofi Asare is questionable. Kentucky lists four out.",
       "url": "https://www.gatorbaitmedia.com/post/availability-report-five-gators-out-at-kentucky-asare-questionable",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for McCloud Reinstated After One-Game Suspension, Expected to Play at Kentucky"
-      }
-    },
-    {
-      "title": "Florida Cancels 2031-32 Home-and-Home Series With Notre Dame",
-      "excerpt": "Florida used a contract clause tied to the SEC's nine-game schedule to cancel its 2031 and 2032 games with Notre Dame, The Associated Press reported Tuesday.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-cancels-2031-32-home-and-home-series-with-notre-dame",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-10T22:36:55Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_80f1877415184e748f536eda85d9a982~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida Cancels 2031-32 Home-and-Home Series With Notre Dame"
       }
     }
   ]

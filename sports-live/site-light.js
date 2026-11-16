@@ -124,10 +124,18 @@
     '§ #gbm-gate .gg-h,§ #gbm-gate .gg-p{color:#fff!important;text-shadow:none!important}',
     '§ #gbm-gate a.gg-go,§ #gbm-gate a.gg-go span{background:#FA4616!important;color:#111827!important}§ #gbm-gate a.gg-go span{background:none!important}§ #gbm-gate a.gg-go:hover,§ #gbm-gate a.gg-go:hover span{background:#fff!important;color:#0021A5!important}',
     '§ #gbm-gate a.gg-in{color:#fff!important;text-decoration-color:#FA4616!important}§ #gbm-gate a:focus-visible{outline-color:#fff!important}',
-    '§ .gbc{background:#0021A5!important}§ .gbc :is(.gbc-h,.gbc-c,.gbc-c span,.gbc-p,.gbc-m,a){color:#fff!important}§ .gbc .gbc-p{opacity:1!important}',
+    '§ .gbc{background:#0021A5!important}§ .gbc .gbc-h{color:#fff!important}',
     '§ .gbc :is(.gbc-k,.gbc-v){color:#fff!important}',
+    // White card-on-blue sub-panel for the form itself (same pattern as the magazine's white boxes on navy):
+    // breaks up the solid blue and keeps the kicker/heading/intro readable on blue above it.
+    '§ .gbc .gbc-f{background:#fff!important;border-radius:10px!important;padding:16px!important;margin-top:2px!important;box-shadow:0 1px 2px rgba(17,24,39,.08)!important}',
+    '§ .gbc .gbc-f :is(.gbc-c,.gbc-c span){color:#111827!important}',
+    '§ .gbc .gbc-f .gbc-p{color:#4B5563!important;opacity:1!important}',
+    '§ .gbc .gbc-f a{color:#0021A5!important}',
+    '§ .gbc .gbc-f .gbc-m{color:#111827!important}',
+    '§ .gbc .gbc-f .gbc-m[data-tone=err]{color:#B8360F!important}',
     '§ .gbc .gbc-b,§ .gbc button{background:#FA4616!important;color:#111827!important;border:0!important}',
-    '§ .gbc input[type=email],§ .gbc input{background:#fff!important;color:#111827!important;border:1px solid #fff!important}',
+    '§ .gbc input[type=email],§ .gbc input{background:#fff!important;color:#111827!important;border:1px solid #D1D5DB!important}',
     '§ #SITE_PAGES [data-hook=post-page] .gbm-writer-alerts,§ #SITE_PAGES [data-hook=post-page] article[data-hook=post]>div>header .gbm-writer-alerts{background:#FA4616!important;border-color:#FA4616!important;color:#111827!important}',
     /* keep reading module */
     '§ #gbm-kr,§ #gbm-kr .kr-x{background:#fff!important;COLOR:#111827!important;border:1px solid #E1E5EC}',

@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-15T21:39:54.376Z",
+ "generatedAt": "2026-11-16T01:50:56.459Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-15T21:39:54.376Z",
+  "checkedAt": "2026-11-16T01:50:56.459Z",
   "ok": false,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14",
-   "link": "https://www.gatorbaitmedia.com/post/blackout-funeral-philo-runs-gators-past-kentucky-21-14",
-   "publishedAt": "2026-11-15T16:12:03.000Z"
+   "title": "Did Gator Football Just Turn The Corner With Sumrall's Statement Win?",
+   "link": "https://www.gatorbaitmedia.com/post/did-gator-football-just-turn-the-corner-with-sumrall-s-statement-win",
+   "publishedAt": "2026-11-15T22:41:50.000Z"
   },
   "problems": [
    "1 of 20 items have no cover image (first: https://www.gatorbaitmedia.com/post/grounded-how-friday-s-faa-stop-pushed-ole-miss-oklahoma-to-sunday-and-shuffled-the-sec)"

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Gators, football, Sumrall and Newton's theory",
+      "excerpt": "Franz Beard on how Florida’s hiring of Jon Sumrall rippled through four SEC games this weekend, plus the coaches poll and a team-by-team SEC roundup.",
+      "url": "https://www.gatorbaitmedia.com/post/the-gators-football-sumrall-and-newton-s-theory",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-16T12:50:50Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_5917eb4e36404c5daba6ddb47d5e9ef2~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Gators, football, Sumrall and Newton's theory"
+      }
+    },
+    {
+      "title": "Florida's 2027 recruiting class sits No. 6 nationally with 27 commitments",
+      "excerpt": "Two of On3's top five players in the country lead a Florida class that ranks No. 6 nationally and No. 2 in the SEC. Here is where it stands after the Kentucky win.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-s-2027-recruiting-class-sits-no-6-nationally-with-27-commitments",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-16T12:40:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_cfeef451e90e46e0a5411c5ba74ade9c~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida's 2027 recruiting class sits No. 6 nationally with 27 commitments"
+      }
+    },
+    {
       "title": "Did Gator Football Just Turn The Corner With Sumrall's Statement Win?",
       "excerpt": "Even Tim Tebow appeared to jump off the bandwagon.",
       "url": "https://www.gatorbaitmedia.com/post/did-gator-football-just-turn-the-corner-with-sumrall-s-statement-win",
@@ -17,7 +45,7 @@
     },
     {
       "title": "Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14",
-      "excerpt": "Old Dogs, New Tricks: Gators Crash Kentucky's Blackout Party",
+      "excerpt": "A late-second-quarter swap on the offensive line and Aaron Philo's 102 rushing yards carried Florida past No. 11 Kentucky, 21-14, and made the Gators bowl-eligible.",
       "url": "https://www.gatorbaitmedia.com/post/blackout-funeral-philo-runs-gators-past-kentucky-21-14",
       "author": "Franz Beard",
       "firstPublishedDate": "2026-11-15T16:12:03Z",
@@ -31,7 +59,7 @@
     },
     {
       "title": "Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap",
-      "excerpt": "It was the legs of No. 12, Aaron Philo, which carried the Gators to victory. (Photo Courtesy University of Florida (UAA)) What a night, and oh, what a way to get there — a freezing night in the Bluegrass, a third win over a top-11 ranked team this season. Florida 21, No. 11 Kentucky 14. Six wins. Bowl eligible. And the quarterback did it with his legs…",
+      "excerpt": "Buddy Martin on the 21-14 win at Kentucky that made Florida bowl-eligible.",
       "url": "https://www.gatorbaitmedia.com/post/let-s-go-bowling-baby-after-falling-short-by-inches-the-gators-made-a-mile-long-quantum-leap",
       "author": "Buddy Martin",
       "firstPublishedDate": "2026-11-15T04:51:44Z",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Boom, Redux: Will Muschamp Finally Gets Life Right — in Texas"
-      }
-    },
-    {
-      "title": "Florida football: The deficiencies have been there all along",
-      "excerpt": "Franz Beard on how Florida's September start covered up problems that October exposed, six things the Gators must fix in the offseason, the CFP top 25 and the coaching hot seat.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-football-the-deficiencies-have-been-there-all-along",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-11T17:11:38Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6fab414f03c84fbc9c56d40a5f8d49e4~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida football: The deficiencies have been there all along"
-      }
-    },
-    {
-      "title": "It was ugly but No. 1 Florida took down FSU, 81-72",
-      "excerpt": "Franz Beard on No. 1 Florida's 81-72 win at Florida State: 18 straight free throws, a 41-29 rebounding edge and a bench that outscored the Seminoles 22-6.",
-      "url": "https://www.gatorbaitmedia.com/post/it-was-ugly-but-no-1-florida-took-down-fsu-81-72",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-11T12:40:09Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_5ac35a25f1b9463880b28cfbee23d568~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for It was ugly but No. 1 Florida took down FSU, 81-72"
       }
     }
   ]

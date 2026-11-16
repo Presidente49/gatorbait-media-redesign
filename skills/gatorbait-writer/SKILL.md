@@ -7,6 +7,8 @@ description: "Use when writing a GatorBait Media article — a game recap, quick
 
 Turns research and/or rough notes into a publish-ready GatorBait Media article: a game recap, a quick postgame update, a pregame scouting piece, or a news item. Applies to all GatorBait content: football, basketball, the Buddy Martin Show and the site's expansion. It operates under Master Control; it never authorizes a live write, a subscriber email or an automation change by itself.
 
+Recruiting, transfer portal and NIL coverage follows [references/RECRUITING-DESK.md](references/RECRUITING-DESK.md), which records the owner's Nov. 16 sourcing change for that lane.
+
 This file is the committed copy of the skill. The running log of what the desks have learned is [references/LEARNINGS.md](references/LEARNINGS.md). Add a dated line there (by pull request) whenever a desk catches a new kind of error or the owner gives a new rule.
 
 ## Hard rules (these win over everything below)

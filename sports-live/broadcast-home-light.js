@@ -540,6 +540,21 @@ html.gb-light:has(@) #gbm-footer .gbf-btn{background:#fa4616!important}
 @ .gl-fbframe{display:none!important}
 @ .gl-fbtxt{margin:0 0 14px;font:500 17px/1.4 Barlow,sans-serif;color:var(--mu,#4b5563)}
 @ .gl-fbframe:empty:before,@ .gl-fbframe.gl-wait:before{content:'Loading our Facebook posts';align-self:center;font:600 14px Barlow,sans-serif;color:var(--mu)}
+@ .gl-email{border-top-color:#0021A5}
+@ .gl-email form{margin:0}
+@ .gl-email .gl-erow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+@ .gl-email input[type=email]{flex:1 1 180px;min-width:0;height:48px;margin:0;padding:0 12px;border:2px solid var(--ln);border-radius:8px;background:#fff;color:#0b1a44;font:500 17px/1 Barlow,sans-serif}
+@ .gl-email input[type=email]::placeholder{color:#6b7686}
+@ .gl-email button[type=submit]{min-height:48px;padding:0 20px;border:0;border-radius:8px;background:var(--o);color:#111827!important;font:800 15px/1 var(--dc);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+@ .gl-email button[type=submit]:disabled{opacity:.6;cursor:default}
+@ .gl-econsent{display:flex;align-items:flex-start;gap:8px;margin:0 0 12px;font:500 14px/1.4 Barlow,sans-serif;color:var(--mu,#4b5563)}
+@ .gl-econsent input{margin-top:3px;width:18px;height:18px;flex:0 0 auto}
+@ .gl-ehp{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@ .gl-emsg{margin:0;font:600 14px/1.4 Barlow,sans-serif;min-height:1.4em}
+@ .gl-emsg[data-tone=err]{color:#b42318}
+@ .gl-email.gl-ejoined .gl-erow,@ .gl-email.gl-ejoined .gl-econsent{display:none}
+@ .gl-fine{margin:10px 0 0;font:500 12px/1.4 Barlow,sans-serif;color:var(--mu,#6b7686)}
+@ .gl-fine a{text-decoration:underline}
 @ .gl-more .gl-chead{margin-bottom:16px}
 @ .gl-srow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 @ .gl-sc{display:flex;flex-direction:column;gap:8px;min-width:0;text-decoration:none;color:var(--tx)!important}
@@ -760,6 +775,55 @@ var rows=[].slice.call(st.querySelectorAll('li:not(.bc-th)'));rows.forEach(funct
 var end=function(el){var l=el.lastElementChild;return l?l.getBoundingClientRect().bottom-el.getBoundingClientRect().top:0;};
 for(var i=rows.length-1;i>=0&&end(sd)>end(run)+8;i--){if(!rows[i].classList.contains('bc-fl'))rows[i].hidden=true;}
 if(rows.filter(function(r){return!r.hidden;}).length<4)st.hidden=true;}
+/* ---- Homepage email signup (Nov. 16, 2026) ----
+   Same mechanism as sports-live/src/capture.js (story pages): a visitor token from the site's headless
+   OAuth client, then a Create Submission call to the existing "GatorBait Email List" Wix form. Wix sends its
+   own confirmation email; nobody is subscribed until they click it. Tagged signup_source:"home"; the form
+   may not carry that field yet, so a rejection drops it and resends once (same tolerance as capture.js).
+   Shares the gbm-capture-joined/-token localStorage/sessionStorage keys so a reader who already joined via
+   a story page is not asked again here, and vice versa. */
+var EC={API:'https://www.wixapis.com',clientId:'1565816d-bbbc-45c1-b82a-31f10d3e2c71',formId:'6babfee8-147f-428a-9e14-6b72f6225835',
+emailField:'email_gatorbait',consentField:'subscribe_gatorbait',sourceField:'signup_source',
+K_JOINED:'gbm-capture-joined',K_TOKEN:'gbm-capture-token'};
+var ecSourceOk=true;
+function ecGet(store,k){try{return window[store].getItem(k);}catch(e){return null;}}
+function ecPut(store,k,v){try{window[store].setItem(k,v);}catch(e){}}
+function ecJoined(){return!!ecGet('localStorage',EC.K_JOINED);}
+function ecToken(){try{var c=JSON.parse(ecGet('sessionStorage',EC.K_TOKEN)||'null');if(c&&c.t&&c.x>Date.now()+6e4)return Promise.resolve(c.t);}catch(e){}
+return fetch(EC.API+'/oauth2/token',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},body:JSON.stringify({clientId:EC.clientId,grantType:'anonymous'})})
+.then(function(r){if(!r.ok)throw new Error('token '+r.status);return r.json();})
+.then(function(j){if(!j||!j.access_token)throw new Error('token');ecPut('sessionStorage',EC.K_TOKEN,JSON.stringify({t:j.access_token,x:Date.now()+(Number(j.expires_in)||14400)*1000}));return j.access_token;});}
+function ecSubmitOnce(tok,email,withSource){var v={};v[EC.emailField]=email;v[EC.consentField]=true;if(withSource)v[EC.sourceField]='home';
+return fetch(EC.API+'/form-submission-service/v4/submissions',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json',Authorization:tok},body:JSON.stringify({submission:{formId:EC.formId,submissions:v}})})
+.then(function(r){return r.text().then(function(t){return{ok:r.ok,status:r.status,text:t};});});}
+function ecSubmit(email){return ecToken().then(function(tok){var tagged=ecSourceOk;return ecSubmitOnce(tok,email,tagged).then(function(res){
+if(!res.ok&&tagged&&/UNKNOWN_VALUE_ERROR|signup_source/.test(res.text)&&res.status<500){ecSourceOk=false;return ecSubmitOnce(tok,email,false);}
+if(!res.ok&&res.status===401)ecPut('sessionStorage',EC.K_TOKEN,'');
+return res;});});}
+function glEmailHtml(){var joined=ecJoined();
+return'<div class="gl-card gl-email'+(joined?' gl-ejoined':'')+'" id="gl-email"><div class="gl-chead"><h3>Free GatorBait Email Updates</h3></div>'+
+'<p class="gl-fbtxt">'+(joined?'You’re on the GatorBait Magazine list. Thanks for signing up.':'Florida reporting, Buddy Martin’s columns and the stories on this page, in your inbox.')+'</p>'+
+'<form novalidate><label class="gl-fine" for="gl-email-e">Email address</label>'+
+'<div class="gl-erow"><input type="email" id="gl-email-e" name="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com" required><button type="submit">Sign up</button></div>'+
+'<label class="gl-econsent"><input type="checkbox" name="consent" value="yes"><span>Yes, email me GatorBait Magazine and GatorBait Media news. I can unsubscribe anytime.</span></label>'+
+'<div class="gl-ehp" aria-hidden="true"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>'+
+'<p class="gl-emsg" role="status" aria-live="polite"></p>'+
+'<p class="gl-fine">We’ll email you a link to confirm. <a href="/policies">Privacy policy</a></p></form></div>';}
+function glEmailWire(root){var card=root.querySelector('#gl-email');if(!card||card.__ec)return;card.__ec=1;
+var form=card.querySelector('form'),msg=card.querySelector('.gl-emsg'),busy=false;
+if(!form)return;
+form.addEventListener('submit',function(ev){ev.preventDefault();if(busy||card.classList.contains('gl-ejoined'))return;
+var email=String(form.email.value||'').trim(),hp=form.company&&form.company.value;
+if(hp){return;}
+if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){msg.textContent='Enter a valid email address.';msg.setAttribute('data-tone','err');return;}
+if(!form.consent.checked){msg.textContent='Check the box to say yes to GatorBait emails.';msg.setAttribute('data-tone','err');return;}
+busy=true;var btn=form.querySelector('button[type=submit]');if(btn)btn.disabled=true;msg.removeAttribute('data-tone');msg.textContent='Sending…';
+ecSubmit(email).then(function(res){busy=false;if(btn)btn.disabled=false;
+if(res.ok||res.status===409){ecPut('localStorage',EC.K_JOINED,String(Date.now()));card.classList.add('gl-ejoined');
+var t=card.querySelector('.gl-fbtxt');if(t)t.textContent='Almost done: check your inbox to confirm.';msg.textContent='';return;}
+msg.setAttribute('data-tone','err');msg.textContent='That didn’t go through. Try again in a minute.';
+}).catch(function(){busy=false;if(btn)btn.disabled=false;msg.setAttribute('data-tone','err');msg.textContent='That didn’t go through. Try again in a minute.';});
+});}
 /* ---- Follow GatorBait (Oct. 31, 2026): Buddy Martin Show videos, Facebook Page Plugin, more stories ----
    One constant block. The Facebook module is a public Page Plugin iframe: it connects no Meta account and posts nothing. */
 var GL={FB_PAGE:'https://www.facebook.com/gatorbaitmedia',YT_CHANNEL_ID:'UCtR8b1sKFuwaRjKy5BiXRvA',YT_URL:'https://www.youtube.com/@TheBuddyMartinShow',
@@ -789,8 +853,9 @@ var s=document.createElement('section');s.className='gl-follow';s.setAttribute('
 s.innerHTML='<div class="gl-fhead"><h2>Follow GatorBait</h2><p>The latest shows, posts and stories from the newsroom.</p></div>'+
 '<div class="gl-grid"><div class="gl-card gl-yt"><div class="gl-chead"><h3>Latest from The Buddy Martin Show</h3><a href="'+esc(GL.YT_URL)+'" target="_blank" rel="noopener">All episodes <span aria-hidden="true">→</span></a></div><div class="gl-vrow"></div><p class="gl-vsrc" hidden></p></div>'+
 '<div class="gl-card gl-fb"><div class="gl-chead"><h3>GatorBait on Facebook</h3><a class="gl-fblink" href="'+esc(GL.FB_PAGE)+'" target="_blank" rel="noopener">Open page <span aria-hidden="true">→</span></a></div><div class="gl-fbframe" hidden></div><p class="gl-fbtxt">Posts, photos and live updates from the GatorBait newsroom.</p><a class="gl-fbbtn" href="'+esc(GL.FB_PAGE)+'" target="_blank" rel="noopener">Follow GatorBait on Facebook</a></div></div>'+
+glEmailHtml()+
 '<div class="gl-card gl-more"><div class="gl-chead"><h3>More stories</h3><a href="/gatorbait-media-blogs">All stories <span aria-hidden="true">→</span></a></div><div class="gl-srow"></div></div>';
-bx.insertAdjacentElement('afterend',s);glLoadVids(root);
+bx.insertAdjacentElement('afterend',s);glLoadVids(root);glEmailWire(s);
 var go=function(){s.__near=1;glFbLoad(root);glEager(s);};if('IntersectionObserver' in window){var io=new IntersectionObserver(function(e){if(e.some(function(x){return x.isIntersecting;})){io.disconnect();go();}},{rootMargin:'700px 0px'});io.observe(s.querySelector('.gl-fbframe'));}else setTimeout(go,3000);}
 function glMore(root){var row=root.querySelector('.gl-srow');if(!row||!D.all)return;var shown={};homepageStories(D.all).forEach(function(f){shown[storyPath(f[2])]=1;});
 var rest=D.all.filter(function(f){return!shown[storyPath(f[2])]&&wixPhoto(f[4]);}).slice(0,4);if(rest.length<3)return;

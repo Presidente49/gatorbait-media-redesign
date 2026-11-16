@@ -1,781 +1,364 @@
 {
-  "$comment": "GatorBait Magazine, Friday Pregame edition (Nov. 14, 2026: Florida at Kentucky). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js. Numbers: ESPN event 401856884 and ESPN team statistics, fetched Nov. 14. No email or campaign send.",
-  "id": "2026-11-14-florida-at-kentucky",
-  "layout": "pregame",
-  "liveFeed": false,
-  "issue": {
-    "number": "Kentucky Game Day",
-    "name": "Florida at Kentucky",
-    "date": "Saturday, November 14, 2026",
-    "week": "Week 11 · 6:15 p.m. ET · ESPN · Kroger Field",
-    "tagline": "Independent Florida Gators coverage",
-    "pageTitle": "GatorBait Magazine | Pregame: Florida at Kentucky | Nov. 14, 2026"
-  },
-  "asOf": "ESPN data as of Nov. 14, 2026. Kickoff, line and forecast can move before kickoff; each linked story keeps its own publication date.",
-  "cover": {
-    "kicker": "The Soothsayer · Franz Beard",
-    "headline": "Kentucky no longer fears the Gators",
-    "dek": "Thirty-one straight wins, then one fateful night in 2018. Franz Beard on why Florida goes to Lexington tonight as an underdog, with his picks for every SEC game.",
-    "byline": "By Franz Beard",
-    "url": "/post/the-soothsayer-kentucky-no-longer-fears-the-gators",
-    "directLink": false,
-    "image": {
-      "id": "d3cfa5_bb403ee551db4d92a76ce3bbcc13ef70",
-      "ext": "jpg",
-      "width": 1920,
-      "height": 1080,
-      "alt": "Florida defenders tackle an Oklahoma receiver on Nov. 7, 2026.",
-      "credit": "Photo courtesy UAA and Cassie Baker."
-    }
-  },
-  "game": {
-    "label": "The game",
-    "kickoffISO": "2026-11-14T23:15:00Z",
-    "kickoff": "Saturday, Nov. 14 · 6:15 p.m. ET",
-    "tv": "ESPN",
-    "venue": "Kroger Field, Lexington, Ky.",
-    "forecast": "41°, 0% chance of rain, gusts to 7 mph (ESPN forecast)",
-    "teams": [
-      {
-        "name": "Florida",
-        "record": "5-4",
-        "conf": "3-4 SEC"
-      },
-      {
-        "rank": "No. 13",
-        "name": "Kentucky",
-        "record": "7-2",
-        "conf": "5-2 SEC"
-      }
-    ],
-    "separator": "at",
-    "chips": [
-      {
-        "k": "Line",
-        "v": "UK -3"
-      },
-      {
-        "k": "Total",
-        "v": "52.5"
-      },
-      {
-        "k": "Moneyline",
-        "v": "UK -155 · FLA +130"
-      }
-    ],
-    "predictor": {
-      "label": "ESPN matchup predictor",
-      "florida": 46.2,
-      "missouri": 53.8
-    },
-    "source": "ESPN game summary and pickcenter (DraftKings), event 401856884. Kentucky is No. 13 in the AP Top 25 and No. 11 in the College Football Playoff rankings."
-  },
-  "series": {
-    "label": "The series",
-    "headline": "Florida 9-5 since 2012, Kentucky 5 of the last 8",
-    "line": "Florida has won nine of the 14 meetings since 2012, and is 4-3 in Lexington over that stretch. Kentucky has won five of the last eight, including 38-7 in Lexington last year.",
-    "games": [
-      {
-        "year": 2012,
-        "site": "H",
-        "fla": 38,
-        "mizz": 0
-      },
-      {
-        "year": 2013,
-        "site": "A",
-        "fla": 24,
-        "mizz": 7
-      },
-      {
-        "year": 2014,
-        "site": "H",
-        "fla": 36,
-        "mizz": 30
-      },
-      {
-        "year": 2015,
-        "site": "A",
-        "fla": 14,
-        "mizz": 9
-      },
-      {
-        "year": 2016,
-        "site": "H",
-        "fla": 45,
-        "mizz": 7
-      },
-      {
-        "year": 2017,
-        "site": "A",
-        "fla": 28,
-        "mizz": 27
-      },
-      {
-        "year": 2018,
-        "site": "H",
-        "fla": 16,
-        "mizz": 27
-      },
-      {
-        "year": 2019,
-        "site": "A",
-        "fla": 29,
-        "mizz": 21
-      },
-      {
-        "year": 2020,
-        "site": "H",
-        "fla": 34,
-        "mizz": 10
-      },
-      {
-        "year": 2021,
-        "site": "A",
-        "fla": 13,
-        "mizz": 20
-      },
-      {
-        "year": 2022,
-        "site": "H",
-        "fla": 16,
-        "mizz": 26
-      },
-      {
-        "year": 2023,
-        "site": "A",
-        "fla": 14,
-        "mizz": 33
-      },
-      {
-        "year": 2024,
-        "site": "H",
-        "fla": 48,
-        "mizz": 20
-      },
-      {
-        "year": 2025,
-        "site": "A",
-        "fla": 7,
-        "mizz": 38
-      }
-    ],
-    "source": "ESPN team schedules, 2012-2025 (Florida score first; H = Gainesville, A = Lexington)"
-  },
-  "numbers": {
-    "label": "By the numbers",
-    "note": "Six figures that frame Saturday",
-    "items": [
-      {
-        "value": "UK -3",
-        "label": "Kentucky, the line",
-        "note": "Total 52.5. DraftKings line via ESPN pickcenter, Nov. 14."
-      },
-      {
-        "value": "53.8%",
-        "label": "ESPN predictor, Kentucky",
-        "note": "Florida at 46.2% in the ESPN matchup predictor."
-      },
-      {
-        "value": "9-5",
-        "label": "Florida since 2012",
-        "note": "Last meeting: Kentucky 38, Florida 7 in Lexington, Nov. 8, 2025."
-      },
-      {
-        "value": "+5",
-        "label": "Florida turnover margin",
-        "note": "Florida has 18 takeaways and 13 giveaways; Kentucky has 9 and 8."
-      },
-      {
-        "value": "71.1",
-        "label": "Florida penalty yards a game",
-        "note": "Kentucky averages 42.8."
-      },
-      {
-        "value": "32.4",
-        "label": "Florida points a game",
-        "note": "Kentucky scores 29.9 a game."
-      }
-    ],
-    "source": "ESPN game summary, pickcenter and 2026 team statistics, Nov. 14."
-  },
-  "tape": {
-    "label": "Tale of the tape",
-    "note": "Season, per game: nine games each (defensive per-game figures are not in ESPN’s team feed)",
-    "source": "ESPN 2026 team statistics, Nov. 14 (penalty yards a game figured from season penalty yards over games played)",
-    "rows": [
-      {
-        "label": "Points scored",
-        "fla": 32.4,
-        "miz": 29.9,
-        "unit": "",
-        "lower": false
-      },
-      {
-        "label": "Total yards",
-        "fla": 400.6,
-        "miz": 383.6,
-        "unit": "",
-        "lower": false
-      },
-      {
-        "label": "Rushing yards",
-        "fla": 164.2,
-        "miz": 163.7,
-        "unit": "",
-        "lower": false
-      },
-      {
-        "label": "Passing yards",
-        "fla": 236.3,
-        "miz": 219.9,
-        "unit": "",
-        "lower": false
-      },
-      {
-        "label": "Yards a carry",
-        "fla": 4.4,
-        "miz": 4.7,
-        "unit": "",
-        "lower": false
-      },
-      {
-        "label": "Takeaways (season)",
-        "fla": 18,
-        "miz": 9,
-        "unit": "",
-        "lower": false
-      },
-      {
-        "label": "Giveaways (season)",
-        "fla": 13,
-        "miz": 8,
-        "unit": "",
-        "lower": true
-      },
-      {
-        "label": "Penalty yards",
-        "fla": 71.1,
-        "miz": 42.8,
-        "unit": "",
-        "lower": true
-      }
-    ]
-  },
-  "keys": {
-    "label": "Five keys",
-    "items": [
-      {
-        "h": "Jadan Baugh has to be Superman",
-        "p": "Eddie Gilley’s first key: the back hailed as the best in the country and a Heisman contender has to charge the hole instead of dancing, if Florida is going to win in the Bluegrass state.",
-        "url": "/post/keys-to-the-game"
-      },
-      {
-        "h": "The offensive line has to move the Wildcats",
-        "p": "Gilley wants better than the last two weeks: movement in the run game, no defensive linemen living in the backfield, and a center and quarterback on the same page on protections.",
-        "url": "/post/keys-to-the-game"
-      },
-      {
-        "h": "Eric Singleton has to be the playmaker",
-        "p": "Injuries have slowed the receiver promised as the dynamic playmaker. Gilley says offensive coordinator Buster Faulkner has to find ways to get him the ball in space.",
-        "url": "/post/keys-to-the-game"
-      },
-      {
-        "h": "Aaron Philo has to be boring",
-        "p": "Philo takes back the starting job. Gilley’s ask: the solid decision maker he was early in the season, a game manager who cannot give the game away.",
-        "url": "/post/keys-to-the-game"
-      },
-      {
-        "h": "The defense needs a takeaway or two",
-        "p": "Stingy in the second half of the last two games, Gilley says, but Kentucky does not give it up often. One or two takeaways and a short field could send the Gators home with a win.",
-        "url": "/post/keys-to-the-game"
-      }
-    ],
-    "source": "Eddie Gilley, Keys To The Game (GatorBait Media, Nov. 13)."
-  },
-  "injuries": {
-    "label": "Availability",
-    "asOf": "SEC student-athlete availability report, Friday report posted 8:10 p.m. ET on Nov. 13. The SEC updates it on game day.",
-    "teams": [
-      {
-        "name": "Florida",
-        "items": [
-          {
-            "pos": "WR",
-            "name": "Vernell Brown III",
-            "status": "Out"
-          },
-          {
-            "pos": "S",
-            "name": "Bryce Thornton",
-            "status": "Out"
-          },
-          {
-            "pos": "CB",
-            "name": "Dijon Johnson",
-            "status": "Out"
-          },
-          {
-            "pos": "ILB",
-            "name": "Jaden Robinson",
-            "status": "Out"
-          },
-          {
-            "pos": "TE",
-            "name": "Evan Chieca",
-            "status": "Out"
-          },
-          {
-            "pos": "JACK",
-            "name": "Kofi Asare",
-            "status": "Questionable"
-          },
-          {
-            "pos": "DL",
-            "name": "DK Kalu",
-            "status": "Probable"
-          }
-        ]
-      },
-      {
-        "name": "Kentucky",
-        "items": [
-          {
-            "pos": "WR",
-            "name": "Nic Anderson",
-            "status": "Out"
-          },
-          {
-            "pos": "ILB",
-            "name": "Antwan Smith",
-            "status": "Out"
-          },
-          {
-            "pos": "DB",
-            "name": "Jaden Smith",
-            "status": "Out"
-          },
-          {
-            "pos": "DB",
-            "name": "Grant Grayton",
-            "status": "Out"
-          }
-        ]
-      }
-    ],
-    "source": "SEC availability report (secsports.com)"
-  },
-  "lead": {
-    "label": "The Soothsayer",
-    "kicker": "Franz Beard · Senior Columnist",
-    "title": "Kentucky no longer fears the Gators",
-    "url": "/post/the-soothsayer-kentucky-no-longer-fears-the-gators",
-    "html": "<p>There was a time and not all that long ago when Florida football fans measured the Kentucky game by “how much.” Never was it “will we beat Kentucky” because they were the “Mildcats” and an automatic cure for whatever ailed the Gators. A win was assured so the only question was by how much.</p><p>From 1986 until a fateful night in The Swamp in 2018, Kentucky was a mortal lock to lose to the Florida Gators. Thirty-one straight years the Gators inflicted pain on UK. Yes, there were some close calls but they were like teasers. There was the “Doering’s got a touchdown! Doering’s got a touchdown!” game that immortalized Mick Huber in the minds and hearts of Gator fans everywhere. That night in 1993 was the night the legend of Danny Wuerffel was born, but it was also the coming out party for former walk-on wide receiver Chris Doering, who would go on to set an SEC record for career touchdown receptions that stood for nearly 30 years.</p><p>We call that game a teaser because the next year, almost as if he felt the need to atone for a close call win over UK in Lexington, Steve Spurrier and the Gators wore out the Wildcats to the tune of 73-7. For years, it seemed that every time Kentucky made Florida hearts skip a beat, the Wildcats were in for a severe beating the next year.</p><p>Then came the night that will live forever in infamy. The Swamp, September 8, 2018, Dan Mullen’s second game as Florida’s head coach. The unthinkable happened. Kentucky ran for 303 yards. On the last play of the game came the ultimate insult. Feleipe Franks fumbled and Kentucky’s Davonte Robinson scooped up the loose ball, ran it in 30 yards for a TD. Kentucky 27, Florida 16.</p><p>The fear factor went poof in the humid Florida night and it has never returned. Kentucky no longer fears the Florida Gators. The Wildcats have won five of the last eight meetings with the Gators. Jon Sumrall was the defensive coordinator when Kentucky beat the Gators 20-13 in Lexington in 2021. Brad White was the defensive coordinator at UK when the Wildcats scored wins in 2022, 2023 and last year when Kentucky picked off DJ Lagway three times en route to a 38-7 humiliation of the Gators in Lexington.</p><p>Sumrall is Florida’s head coach now and White is his defensive coordinator. Tonight (6:15 p.m., ESPN) they find out if you can indeed go home again. Kentucky (7-2, 5-2 SEC) is ranked 13th nationally and very much in contention for a berth in the College Football Playoff. If the Wildcats win out in their last three games they are almost assured of the playoff. Who would have ever thought Kentucky would make the playoff much less do it before the Florida Gators?</p><p>But it could happen unless the Gators pull one out of the wazzoo. To do it they’ll be without Vernell Brown III for a sixth straight game and with Aaron Philo returning as the starting QB after Tramell Jones Jr.’s bad day at the office last week against Oklahoma.</p><p>Kentucky is a 3.5-point favorite. It seems like it should be a wider spread considering the way UK has played all year and the way the Gators have cratered since September. For Kentucky this isn’t the Super Bowl but it’s close because winning is one step closer to college football’s promised land. For Florida, a win could reverse the trend of four losses in five games and would assure the Gators of bowl eligibility.</p><p>High stakes drama in Lexington in which the team that commits the fewest turnovers is likely to pull out a win.</p><p class=\"pg-sooth\"><strong>The Sayer Says Sooth!:</strong> The SEC Soothsayer knows all too well what a win would mean for Sumrall and White, not to mention the shot of feel good the Gators need so desperately. He is also keenly aware that Kentucky fans are ready to say screw the SEC and it’s big fines, it’s time to storm the field if the Wildcats are ahead when the clock flatlines at zero. Thirty-two years of Florida fear factor are relics of a past that Sumrall wants to resurrect. If you gamble, bet the ranch that Sumrall will restore Florida’s dignity, just not this night. The Soothsayer thinks it’s a chest clutcher Kentucky win. It’s still hard to fathom.</p>",
-    "continue": "Read the full column: Franz’s picks for all eight SEC games",
-    "date": "November 13, 2026"
-  },
-  "slate": {
-    "label": "The Sooth Board",
-    "note": "This weekend’s SEC games with Franz Beard’s picks",
-    "source": "Kickoffs, TV and lines: ESPN, updated Saturday afternoon after the SEC moved two games following Friday’s FAA ground stop. Picks: Franz Beard, The Soothsayer. Rankings: College Football Playoff.",
-    "games": [
-      {
-        "time": "12:45 p.m.",
-        "tv": "SEC Network",
-        "away": {
-          "name": "Alabama",
-          "rec": "7-2",
-          "rank": 3
-        },
-        "home": {
-          "name": "Vanderbilt",
-          "rec": "4-5"
-        },
-        "line": "ALA -14",
-        "pick": "Alabama",
-        "ou": 48.5
-      },
-      {
-        "time": "3 p.m.",
-        "tv": "ESPN",
-        "away": {
-          "name": "Tennessee",
-          "rec": "7-2",
-          "rank": 8
-        },
-        "home": {
-          "name": "Texas A&M",
-          "rec": "4-5"
-        },
-        "line": "TENN -1.5",
-        "pick": "Tennessee",
-        "ou": 43.5
-      },
-      {
-        "time": "3:30 p.m.",
-        "tv": "ABC",
-        "away": {
-          "name": "Missouri",
-          "rec": "6-3",
-          "rank": 22
-        },
-        "home": {
-          "name": "Georgia",
-          "rec": "8-1",
-          "rank": 1
-        },
-        "line": "UGA -16.5",
-        "pick": "Georgia",
-        "ou": 48.5
-      },
-      {
-        "time": "4:15 p.m.",
-        "tv": "SEC Network",
-        "away": {
-          "name": "Auburn",
-          "rec": "5-4"
-        },
-        "home": {
-          "name": "Mississippi State",
-          "rec": "4-5"
-        },
-        "line": "AUB -2.5",
-        "pick": "Auburn",
-        "ou": 51.5,
-        "note": "Auburn moves within one game of its first winning season since 2020."
-      },
-      {
-        "time": "6:15 p.m.",
-        "tv": "ESPN",
-        "away": {
-          "name": "Florida",
-          "rec": "5-4"
-        },
-        "home": {
-          "name": "Kentucky",
-          "rec": "7-2",
-          "rank": 11
-        },
-        "line": "UK -3",
-        "pick": "Kentucky",
-        "ou": 52.5,
-        "note": "Florida at Kentucky",
-        "hero": true
-      },
-      {
-        "time": "7:30 p.m.",
-        "tv": "ABC",
-        "away": {
-          "name": "Texas",
-          "rec": "7-2",
-          "rank": 6
-        },
-        "home": {
-          "name": "LSU",
-          "rec": "6-3",
-          "rank": 21
-        },
-        "line": "LSU -4.5",
-        "pick": "Texas",
-        "ou": 46.5
-      },
-      {
-        "time": "7:45 p.m.",
-        "tv": "SEC Network",
-        "away": {
-          "name": "South Carolina",
-          "rec": "6-3",
-          "rank": 17
-        },
-        "home": {
-          "name": "Arkansas",
-          "rec": "3-6"
-        },
-        "line": "SC -7.5",
-        "pick": "South Carolina",
-        "ou": 52.5
-      },
-      {
-        "time": "Sun., 1 p.m.",
-        "tv": "SEC Network",
-        "away": {
-          "name": "Ole Miss",
-          "rec": "6-3",
-          "rank": 19
-        },
-        "home": {
-          "name": "Oklahoma",
-          "rec": "5-4"
-        },
-        "line": "OU -2.5",
-        "pick": "Oklahoma",
-        "ou": 49.5
-      }
-    ]
-  },
-  "cards": {
-    "label": "More from Kentucky week",
-    "items": [
-      {
-        "kicker": "GatorBait Staff · Game day",
-        "date": "Nov. 14",
-        "title": "Game day in Lexington: What to know before Florida kicks off at Kentucky",
-        "url": "/post/game-day-in-lexington-what-to-know-before-florida-kicks-off-at-kentucky",
-        "excerpt": "Kickoff, the line, the quarterback, the forecast, what is at stake and what changed around the SEC after Friday’s FAA ground stop.",
-        "image": {
-          "id": "d3cfa5_6cfff968c5bf41ad8b95897cf353d5c6",
-          "ext": "jpg",
-          "width": 1280,
-          "height": 720,
-          "alt": "Florida running back Duke Clark speaks at a podium during a media availability.",
-          "credit": "Frame from Florida Gators/UAA video posted Nov. 10."
-        }
-      },
-      {
-        "kicker": "GatorBait Staff · Availability",
-        "date": "Nov. 14",
-        "title": "Availability report: Five Gators out at Kentucky, Asare questionable",
-        "url": "/post/availability-report-five-gators-out-at-kentucky-asare-questionable",
-        "excerpt": "The SEC report lists five Gators out and Kofi Asare questionable. Kentucky lists four out.",
-        "image": {
-          "id": "d3cfa5_f88febc849204c1497c39504abb0b19b",
-          "ext": "jpg",
-          "width": 1280,
-          "height": 720,
-          "alt": "Florida edge rusher Kofi Asare speaks at a podium during a media availability.",
-          "credit": "Frame from Florida Gators/UAA video posted Nov. 9."
-        }
-      },
-      {
-        "kicker": "GatorBait Staff · News",
-        "date": "Nov. 14",
-        "title": "Grounded: How Friday’s FAA stop pushed Ole Miss-Oklahoma to Sunday and shuffled the SEC",
-        "url": "/post/grounded-how-friday-s-faa-stop-pushed-ole-miss-oklahoma-to-sunday-and-shuffled-the-sec",
-        "excerpt": "A nationwide FAA ground stop moved Ole Miss at Oklahoma to Sunday, put Auburn on buses and changed kickoff times across college football.",
-        "image": {
-          "id": "d3cfa5_966cd6f4a3694ef3a2d2900087e9d786",
-          "ext": "jpg",
-          "width": 1280,
-          "height": 720,
-          "alt": "Florida linebacker Ty Jackson speaks at a podium during a media availability.",
-          "credit": "Frame from Florida Gators/UAA video posted Nov. 9."
-        }
-      },
-      {
-        "kicker": "Buddy Martin · Column",
-        "date": "Nov. 14",
-        "title": "Gators Are Safely In Kentucky, But Now For The Task: How To Beat Kentucky",
-        "url": "/post/gators-are-safely-in-kentucky-but-now-for-the-task-how-to-beat-kentucky",
-        "excerpt": "Gators a three-point underdog at Kroger Field.",
-        "image": {
-          "id": "ae876a_c96312563ae1474bbc134b0407de2ccd",
-          "ext": "jpg",
-          "width": 960,
-          "height": 641,
-          "alt": "Kentucky’s stadium on game day.",
-          "credit": "Photo courtesy of University of Kentucky."
-        }
-      },
-      {
-        "kicker": "Eddie Gilley · Keys",
-        "date": "Nov. 13",
-        "title": "Keys To The Game",
-        "url": "/post/keys-to-the-game",
-        "excerpt": "Eddie Gilley’s five keys for Florida at Kentucky: Jadan Baugh, the offensive line, Eric Singleton, Aaron Philo and a defense that has to force takeaways.",
-        "image": {
-          "id": "d3cfa5_b546b94712024f87b3039fcbb6fcc8a1",
-          "ext": "jpg",
-          "width": 1920,
-          "height": 1080,
-          "alt": "A Florida ball carrier runs past a diving Oklahoma defender on Nov. 7, 2026.",
-          "credit": "Photo courtesy UAA and Emma Brugna."
-        }
-      },
-      {
-        "kicker": "GatorBait Staff · Notebook",
-        "date": "Nov. 12",
-        "title": "Sumrall goes back to Kentucky with Florida’s season on the line: the Thursday notebook",
-        "url": "/post/sumrall-goes-back-to-kentucky-with-florida-s-season-on-the-line-the-thursday-notebook",
-        "excerpt": "Jon Sumrall takes Florida back to his alma mater Saturday night, with Aaron Philo expected at quarterback, four Gators ruled out and a season down to three games.",
-        "image": {
-          "id": "d3cfa5_56aced269a3d4dc58da9d4a6838a4d01",
-          "ext": "jpg",
-          "width": 1920,
-          "height": 1080,
-          "alt": "Florida head coach Jon Sumrall greets the gator statue on game day.",
-          "credit": "Photo courtesy UAA and Victoria Riccobono."
-        }
-      },
-      {
-        "kicker": "Buddy Martin · Column",
-        "date": "Nov. 9",
-        "title": "Sumrall’s My Old Kentucky Home",
-        "url": "/post/sumrall-s-my-old-kentucky-home",
-        "excerpt": "Buddy Martin on Jon Sumrall’s return to Kentucky, the two former Gators now starting for the Wildcats, a note from Dr. Pete Indelicato and more.",
-        "image": {
-          "id": "d3cfa5_8fd32f1dc4654c8dae6eed1f8508893d",
-          "ext": "jpg",
-          "width": 960,
-          "height": 1200,
-          "alt": "A Kentucky fan on game day.",
-          "credit": "Photo courtesy University of Kentucky."
-        }
-      },
-      {
-        "kicker": "Franz Beard · Column",
-        "date": "Nov. 9",
-        "title": "Football relevance at stake for both Florida and Kentucky",
-        "url": "/post/football-relevance-at-stake-for-both-florida-and-kentucky",
-        "excerpt": "Two first-year coaches, two basketball schools and a football Saturday that tests relevance. Includes the AP and Coaches polls and an SEC team-by-team look.",
-        "image": {
-          "id": "d3cfa5_b5ee34cfd4f444cd90519872cb35d8ec",
-          "ext": "png",
-          "width": 1672,
-          "height": 941,
-          "alt": "GatorBait graphic: Football relevance at stake for both schools.",
-          "credit": "Graphic by GatorBait Media."
-        }
-      },
-      {
-        "kicker": "Franz Beard · Column",
-        "date": "Nov. 11",
-        "title": "Florida football: The deficiencies have been there all along",
-        "url": "/post/florida-football-the-deficiencies-have-been-there-all-along",
-        "excerpt": "How Florida’s September start covered up problems that October exposed, six things the Gators must fix in the offseason and the coaching hot seat.",
-        "image": {
-          "id": "d3cfa5_6fab414f03c84fbc9c56d40a5f8d49e4",
-          "ext": "jpg",
-          "width": 1920,
-          "height": 1280,
-          "alt": "A Florida ball carrier dives toward the pylon against Oklahoma on Nov. 7, 2026.",
-          "credit": "Photo courtesy UAA and Ethan Caruso."
-        }
-      },
-      {
-        "kicker": "Buddy Martin · Column",
-        "date": "Nov. 12",
-        "title": "The Quarterback Carousel Spins Again — and It Stops on Aaron Philo",
-        "url": "/post/the-quarterback-carousel-spins-again-and-it-stops-on-aaron-philo",
-        "excerpt": "Philo started six games, hurt his shoulder, and watched Tramell Jones Jr. steal a 27-24 upset at Texas. Now the carousel stops on Philo again.",
-        "image": {
-          "id": "ae876a_4e496d688a5d4daf9f42adabf984fab9",
-          "ext": "jpg",
-          "width": 480,
-          "height": 349,
-          "alt": "Aaron Philo in a cowboy hat and blue Gators jersey.",
-          "credit": "Photo supplied with the column."
-        }
-      },
-      {
-        "kicker": "Eddie Gilley · Grades",
-        "date": "Nov. 9",
-        "title": "Reviewing the Reads After the Loss",
-        "url": "/post/reviewing-the-reads-after-the-loss",
-        "excerpt": "Eddie Gilley grades the five reads he set before Florida’s 23-7 loss to Oklahoma, from the pass rush and offensive line to Tramell Jones Jr. and penalties.",
-        "image": {
-          "id": "d3cfa5_791928c7bf6c4d0096665ecb1e7daab5",
-          "ext": "jpg",
-          "width": 1440,
-          "height": 960,
-          "alt": "A Florida ball carrier runs past an Oklahoma defender at Ben Hill Griffin Stadium on Nov. 7, 2026.",
-          "credit": "Photo courtesy UAA."
-        }
-      },
-      {
-        "kicker": "Buddy Martin · Column",
-        "date": "Nov. 12",
-        "title": "Boom, Redux: Will Muschamp Finally Gets Life Right — in Texas",
-        "url": "/post/boom-redux-will-muschamp-finally-gets-life-right-in-texas",
-        "excerpt": "The man who should have been the perfect head coach of Florida? Buddy Martin on Will Muschamp and his second act running the Texas defense.",
-        "image": {
-          "id": "d3cfa5_b2ee0d32d4cd47ab8253f7756a9b3e58",
-          "ext": "jpg",
-          "width": 960,
-          "height": 540,
-          "alt": "Texas defensive coordinator Will Muschamp on the sideline.",
-          "credit": "Photo courtesy University of Texas."
-        }
-      },
-      {
-        "kicker": "Recruiting · GatorBait Staff",
-        "date": "Nov. 13",
-        "title": "Florida flips 6-foot-7 tackle Moreno Fisher from Virginia",
-        "url": "/post/florida-flips-6-foot-7-tackle-moreno-fisher-from-virginia",
-        "excerpt": "Florida flipped 6-foot-7 offensive tackle Moreno Fisher from Virginia on Thursday, the Gators’ 27th commitment and fourth offensive lineman in the 2027 class.",
-        "image": {
-          "id": "d3cfa5_2503400ea63241218aeba9371e09b857",
-          "ext": "jpg",
-          "width": 1920,
-          "height": 1080,
-          "alt": "Florida and Oklahoma players tangle in a pile on Nov. 7, 2026.",
-          "credit": "Photo courtesy UAA and Victoria Riccobono."
-        }
-      }
-    ]
-  },
-  "shots": {
-    "label": "Best shots",
-    "note": "From Oklahoma 23, Florida 7 (Nov. 7)",
-    "credit": "Photos courtesy UAA and Victoria Riccobono, Hannah White and Ethan Caruso.",
-    "photos": [
-      {
-        "id": "d3cfa5_b6f9c3a88335442994b2dd37db2daaf0",
-        "ext": "jpg",
-        "width": 1920,
-        "height": 1280,
-        "alt": "Florida defenders bring down an Oklahoma ball carrier.",
-        "caption": "The defense swarms"
-      },
-      {
-        "id": "d3cfa5_385aeb94c2644c688ca48f2ae58903de",
-        "ext": "jpg",
-        "width": 1920,
-        "height": 1280,
-        "alt": "A Florida runner breaks through the Oklahoma defense.",
-        "caption": "Breaking loose"
-      },
-      {
-        "id": "d3cfa5_44380e7cef204f2580492d7f49a44a0d",
-        "ext": "jpg",
-        "width": 1920,
-        "height": 1280,
-        "alt": "Florida and Oklahoma players collide near the sideline.",
-        "caption": "Sideline collision"
-      },
-      {
-        "id": "d3cfa5_15d88c9e626440cfab72bee90cfb208a",
-        "ext": "jpg",
-        "width": 1920,
-        "height": 1280,
-        "alt": "Florida defenders close in on an Oklahoma player.",
-        "caption": "Closing in"
-      },
-      {
-        "id": "d3cfa5_87521f9dcf454870b5deff7ed6e7c900",
-        "ext": "jpg",
-        "width": 1920,
-        "height": 1280,
-        "alt": "Ben Hill Griffin Stadium under the lights.",
-        "caption": "The Swamp at night"
-      }
-    ]
-  },
-  "reference": {
-    "label": "Reference desk",
-    "links": [
-      {
-        "label": "All current stories",
-        "url": "/gatorbait-media-blogs"
-      },
-      {
-        "label": "The Buddy Martin Show",
-        "url": "/the-buddy-martin-show"
-      },
-      {
-        "label": "ESPN Gamecast",
-        "url": "https://www.espn.com/college-football/game/_/gameId/401856884/florida-kentucky"
-      }
-    ],
-    "next": "Next up: back in The Swamp. Check the schedule for the next kickoff."
+ "$comment": "GatorBait Magazine, Postgame edition (Nov. 16, 2026: Florida 21, Kentucky 14). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; sections that do not apply after a final are omitted. Numbers: ESPN final summary, event 401856884; program notes from FloridaGators.com. No email or campaign send.",
+ "id": "2026-11-16-florida-kentucky-postgame",
+ "layout": "pregame",
+ "liveFeed": false,
+ "issue": {
+  "number": "Kentucky Postgame",
+  "name": "Florida 21, Kentucky 14",
+  "date": "Monday, November 16, 2026",
+  "week": "Week 11 · Final · Kroger Field, Lexington, Ky.",
+  "tagline": "Independent Florida Gators coverage",
+  "pageTitle": "GatorBait Magazine | Postgame: Florida 21, Kentucky 14 | Nov. 16, 2026"
+ },
+ "asOf": "Final statistics from ESPN, event 401856884. Program notes from FloridaGators.com. Each linked story keeps its own publication date.",
+ "cover": {
+  "kicker": "Franz Beard · From Lexington",
+  "headline": "Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14",
+  "dek": "A late-second-quarter swap on the offensive line and Aaron Philo’s 102 rushing yards carried Florida past No. 11 Kentucky and made the Gators bowl-eligible.",
+  "byline": "By Franz Beard",
+  "url": "/post/blackout-funeral-philo-runs-gators-past-kentucky-21-14",
+  "directLink": true,
+  "image": {
+   "id": "d3cfa5_fa57aa84912b434281d9e92a148acc44",
+   "ext": "jpg",
+   "width": 1284,
+   "height": 775,
+   "alt": "Florida quarterback Aaron Philo, wearing No. 12, runs with the ball.",
+   "credit": "Image via All Gators."
   }
+ },
+ "game": {
+  "label": "The final",
+  "kickoff": "Final · Saturday, Nov. 14",
+  "tv": "ESPN",
+  "venue": "Kroger Field, Lexington, Ky.",
+  "teams": [
+   {
+    "name": "Florida",
+    "record": "6-4",
+    "conf": "4-4 SEC"
+   },
+   {
+    "rank": "No. 11",
+    "name": "Kentucky",
+    "record": "7-3",
+    "conf": "5-3 SEC"
+   }
+  ],
+  "separator": "at",
+  "chips": [
+   {
+    "k": "Final",
+    "v": "Florida 21, Kentucky 14"
+   },
+   {
+    "k": "Halftime",
+    "v": "Kentucky 7, Florida 2"
+   },
+   {
+    "k": "Attendance",
+    "v": "61,866"
+   }
+  ],
+  "source": "ESPN final summary, event 401856884. Kentucky was No. 11 in the College Football Playoff rankings and No. 13 in the AP Top 25."
+ },
+ "series": {
+  "label": "The series",
+  "headline": "Florida 10-5 since 2012",
+  "line": "Florida has won 10 of the 15 meetings since 2012 and is 5-3 in Lexington over that stretch. Saturday’s 21-14 win was the Gators’ first at Kentucky since 2019, according to FloridaGators.com.",
+  "games": [
+   {
+    "year": 2012,
+    "site": "H",
+    "fla": 38,
+    "mizz": 0
+   },
+   {
+    "year": 2013,
+    "site": "A",
+    "fla": 24,
+    "mizz": 7
+   },
+   {
+    "year": 2014,
+    "site": "H",
+    "fla": 36,
+    "mizz": 30
+   },
+   {
+    "year": 2015,
+    "site": "A",
+    "fla": 14,
+    "mizz": 9
+   },
+   {
+    "year": 2016,
+    "site": "H",
+    "fla": 45,
+    "mizz": 7
+   },
+   {
+    "year": 2017,
+    "site": "A",
+    "fla": 28,
+    "mizz": 27
+   },
+   {
+    "year": 2018,
+    "site": "H",
+    "fla": 16,
+    "mizz": 27
+   },
+   {
+    "year": 2019,
+    "site": "A",
+    "fla": 29,
+    "mizz": 21
+   },
+   {
+    "year": 2020,
+    "site": "H",
+    "fla": 34,
+    "mizz": 10
+   },
+   {
+    "year": 2021,
+    "site": "A",
+    "fla": 13,
+    "mizz": 20
+   },
+   {
+    "year": 2022,
+    "site": "H",
+    "fla": 16,
+    "mizz": 26
+   },
+   {
+    "year": 2023,
+    "site": "A",
+    "fla": 14,
+    "mizz": 33
+   },
+   {
+    "year": 2024,
+    "site": "H",
+    "fla": 48,
+    "mizz": 20
+   },
+   {
+    "year": 2025,
+    "site": "A",
+    "fla": 7,
+    "mizz": 38
+   },
+   {
+    "year": 2026,
+    "site": "A",
+    "fla": 21,
+    "mizz": 14
+   }
+  ],
+  "source": "ESPN team schedules, 2012-2026 (Florida score first; H = Gainesville, A = Lexington)"
+ },
+ "numbers": {
+  "label": "By the numbers",
+  "note": "Six figures from Saturday night",
+  "items": [
+   {
+    "value": "21-14",
+    "label": "Florida over No. 11 Kentucky",
+    "note": "Florida outscored Kentucky 19-7 after halftime."
+   },
+   {
+    "value": "102",
+    "label": "Aaron Philo rushing yards",
+    "note": "On 15 carries, plus 16 of 24 passing for 119 yards."
+   },
+   {
+    "value": "211",
+    "label": "Florida rushing yards",
+    "note": "On 48 carries. Kentucky ran for 61 on 27."
+   },
+   {
+    "value": "0",
+    "label": "Florida turnovers",
+    "note": "Kentucky lost one fumble, forced by Jayden Woods on a sack."
+   },
+   {
+    "value": "9:08",
+    "label": "Left when Philo scored to go ahead",
+    "note": "A 14-play, 67-yard drive that took 7:30."
+   },
+   {
+    "value": "6-4",
+    "label": "Florida’s record",
+    "note": "Bowl-eligible and 4-4 in the SEC."
+   }
+  ],
+  "source": "ESPN final summary, event 401856884."
+ },
+ "tape": {
+  "label": "Final team statistics",
+  "note": "Florida at Kentucky, Nov. 14",
+  "source": "ESPN final summary, event 401856884. Possession is in minutes (Florida 34:07, Kentucky 25:53).",
+  "rows": [
+   {
+    "label": "Total yards",
+    "fla": 330,
+    "miz": 242,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Rushing yards",
+    "fla": 211,
+    "miz": 61,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Passing yards",
+    "fla": 119,
+    "miz": 181,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "First downs",
+    "fla": 19,
+    "miz": 14,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Third downs converted",
+    "fla": 9,
+    "miz": 5,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Turnovers",
+    "fla": 0,
+    "miz": 1,
+    "unit": "",
+    "lower": true
+   },
+   {
+    "label": "Penalty yards",
+    "fla": 45,
+    "miz": 23,
+    "unit": "",
+    "lower": true
+   },
+   {
+    "label": "Possession (minutes)",
+    "fla": 34.1,
+    "miz": 25.9,
+    "unit": "",
+    "lower": false
+   }
+  ]
+ },
+ "lead": {
+  "label": "The game story",
+  "kicker": "GatorBait Media · Final",
+  "title": "Florida 21, No. 11 Kentucky 14: Philo runs for 102 yards and the Gators’ defense closes it out",
+  "author": "Brenden Martin",
+  "url": "/post/florida-21-no-11-kentucky-14-philo-runs-for-102-yards-and-the-gators-defense-closes-it-out",
+  "html": "<p>LEXINGTON, Ky. — Florida did not score an offensive point in the first half. It left Kroger Field with a win over the No. 11 team in the country.</p><p>Aaron Philo ran for 102 yards and the go-ahead touchdown, Florida’s defense stopped Kentucky on fourth down twice in the final six minutes, and the Gators beat the Wildcats 21-14 on Saturday night before an announced crowd of 61,866.</p><p>Florida (6-4, 4-4 SEC) outscored Kentucky 19-7 after halftime. Kentucky (7-3, 5-3) did not score in the fourth quarter.</p><p>The win made Florida bowl-eligible and was the Gators’ first at Kentucky since 2019, according to FloridaGators.com.</p><p>Philo’s 2-yard touchdown run with 9:08 left put Florida ahead for good. It finished a 14-play, 67-yard drive that took 7:30 off the clock. Kahleil Jackson threw to Dallas Wilson for the two-point conversion to make it 21-14.</p><p>The game turned on the second play of the third quarter. Jayden Woods sacked Kenny Minchey for a 7-yard loss and forced a fumble, and Brendan Bett recovered at the Kentucky 30. Seven plays later Jadan Baugh scored from the 1, and Philo ran in the two-point conversion for a 10-7 lead.</p><p>Kentucky had two chances to tie. Minchey’s fourth-down pass from the Florida 25 fell incomplete with 5:29 left, and Ben Hanks III broke up the Wildcats’ last fourth-down throw with 1:28 to play.</p>",
+  "continue": "Read the full game story",
+  "date": "November 14, 2026"
+ },
+ "cards": {
+  "label": "The postgame read",
+  "items": [
+   {
+    "kicker": "Franz Beard · Column",
+    "date": "Nov. 16",
+    "title": "The Gators, football, Sumrall and Newton’s theory",
+    "url": "/post/the-gators-football-sumrall-and-newton-s-theory",
+    "excerpt": "Franz Beard’s Monday column on Florida, Jon Sumrall and equal and opposite reactions."
+   },
+   {
+    "kicker": "Buddy Martin · Column",
+    "date": "Nov. 15",
+    "title": "Did Gator Football Just Turn The Corner With Sumrall’s Statement Win?",
+    "url": "/post/did-gator-football-just-turn-the-corner-with-sumrall-s-statement-win",
+    "excerpt": "Even Tim Tebow appeared to jump off the bandwagon.",
+    "image": {
+     "id": "ae876a_d5fa38d9c98c4bfeb982f4831abbce73",
+     "ext": "jpg",
+     "width": 720,
+     "height": 480,
+     "alt": "A football coach in an orange pullover gestures on the sideline during a night game.",
+     "credit": "Photo courtesy of UAA."
+    }
+   },
+   {
+    "kicker": "Franz Beard · From Lexington",
+    "date": "Nov. 15",
+    "title": "Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14",
+    "url": "/post/blackout-funeral-philo-runs-gators-past-kentucky-21-14",
+    "excerpt": "A late-second-quarter swap on the offensive line and Aaron Philo’s 102 rushing yards carried Florida past No. 11 Kentucky.",
+    "image": {
+     "id": "ae876a_93ffb4fa4f24421d8e65a421b14bd42f",
+     "ext": "jpg",
+     "width": 720,
+     "height": 480,
+     "alt": "Two Florida football players celebrate during the game at Kentucky.",
+     "credit": "Photo courtesy of UAA."
+    }
+   },
+   {
+    "kicker": "Buddy Martin · Column",
+    "date": "Nov. 14",
+    "title": "Let’s Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap",
+    "url": "/post/let-s-go-bowling-baby-after-falling-short-by-inches-the-gators-made-a-mile-long-quantum-leap",
+    "excerpt": "Buddy Martin on the 21-14 win at Kentucky that made Florida bowl-eligible.",
+    "image": {
+     "id": "ae876a_bb52ae6e52ea458c89c9844843ed96c0",
+     "ext": "jpg",
+     "width": 960,
+     "height": 640,
+     "alt": "Florida’s No. 12 jogs across the field with teammates during the game at Kentucky.",
+     "credit": "Photo courtesy University of Florida (UAA)."
+    }
+   },
+   {
+    "kicker": "Loren Meadows · Postgame Thoughts",
+    "date": "Nov. 14",
+    "title": "Florida redefines its identity as Philo’s legs pull off the upset in Lexington",
+    "url": "/post/florida-redefines-its-identity-as-philo-s-legs-pull-off-the-upset-in-lexington",
+    "excerpt": "The defense kept Florida in it, and Aaron Philo’s legs gave the offense the dimension it had been missing.",
+    "image": {
+     "id": "d3cfa5_6b2a36561f014208a9c65242ab3793e1",
+     "ext": "jpg",
+     "width": 1920,
+     "height": 1080,
+     "alt": "GatorBait Media series graphic reading Postgame Thoughts with Loren Meadows.",
+     "credit": "Graphic: GatorBait Media."
+    }
+   }
+  ]
+ },
+ "reference": {
+  "label": "Reference desk",
+  "links": [
+   {
+    "label": "All current stories",
+    "url": "/gatorbait-media-blogs"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   },
+   {
+    "label": "ESPN Gamecast",
+    "url": "https://www.espn.com/college-football/game/_/gameId/401856884/florida-kentucky"
+   }
+  ],
+  "next": "Next up: Vanderbilt at Florida, Saturday, Nov. 21, noon ET, Ben Hill Griffin Stadium."
+ }
 }

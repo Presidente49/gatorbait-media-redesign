@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Did Gator Football Just Turn The Corner With Sumrall's Statement Win?",
+      "excerpt": "Even Tim Tebow appeared to jump off the bandwagon.",
+      "url": "https://www.gatorbaitmedia.com/post/did-gator-football-just-turn-the-corner-with-sumrall-s-statement-win",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-15T22:41:50Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_d5fa38d9c98c4bfeb982f4831abbce73~mv2.jpg/v1/fit/w_720,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Did Gator Football Just Turn The Corner With Sumrall's Statement Win?"
+      }
+    },
+    {
       "title": "Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14",
       "excerpt": "Old Dogs, New Tricks: Gators Crash Kentucky's Blackout Party",
       "url": "https://www.gatorbaitmedia.com/post/blackout-funeral-philo-runs-gators-past-kentucky-21-14",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Keys To The Game"
-      }
-    },
-    {
-      "title": "The Soothsayer: Kentucky no longer fears the Gators",
-      "excerpt": "Franz Beard's SEC Soothsayer: the fear factor that died in 2018, why Kentucky no longer fears the Gators, and picks for all eight Saturday matchups.",
-      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-kentucky-no-longer-fears-the-gators",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-13T13:26:24Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_bb403ee551db4d92a76ce3bbcc13ef70~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Soothsayer: Kentucky no longer fears the Gators"
       }
     }
   ]

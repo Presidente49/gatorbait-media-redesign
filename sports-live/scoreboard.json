@@ -1,9 +1,9 @@
 {
- "updatedAt": "2026-11-15T03:09:59Z",
+ "updatedAt": "2026-11-17T08:08:00Z",
  "season": 2026,
  "team": {
   "name": "Florida",
-  "rank": null,
+  "rank": 23,
   "record": "6-4",
   "conf": "4-4"
  },
@@ -34,7 +34,7 @@
    ]
   },
   "venue": "Kroger Field",
-  "recapUrl": null,
+  "recapUrl": "https://www.gatorbaitmedia.com/post/gatorbait-magazine-florida-21-kentucky-14-the-postgame-issue",
   "galleryUrl": null,
   "tape": {
    "totalYards": 330,
@@ -68,7 +68,7 @@
   "home": true,
   "neutral": false,
   "kickoffIso": "2026-11-21T17:00:00Z",
-  "tv": null,
+  "tv": "SEC Network",
   "venue": "Ben Hill Griffin Stadium",
   "previewUrl": null
  },
@@ -221,7 +221,7 @@
     "opp": 14
    },
    "tv": "ESPN",
-   "storyUrl": null
+   "storyUrl": "https://www.gatorbaitmedia.com/post/gatorbait-magazine-florida-21-kentucky-14-the-postgame-issue"
   },
   {
    "eventId": "401856748",
@@ -232,7 +232,7 @@
    "home": true,
    "status": "scheduled",
    "score": null,
-   "tv": null,
+   "tv": "SEC Network",
    "storyUrl": null
   },
   {
@@ -266,8 +266,8 @@
   },
   {
    "team": "Texas",
-   "confRecord": "4-2",
-   "overall": "7-2"
+   "confRecord": "5-2",
+   "overall": "8-2"
   },
   {
    "team": "Kentucky",
@@ -275,14 +275,9 @@
    "overall": "7-3"
   },
   {
-   "team": "Ole Miss",
+   "team": "Oklahoma",
    "confRecord": "4-3",
-   "overall": "6-3"
-  },
-  {
-   "team": "South Carolina",
-   "confRecord": "4-3",
-   "overall": "6-3"
+   "overall": "6-4"
   },
   {
    "team": "Auburn",
@@ -295,14 +290,19 @@
    "overall": "6-4"
   },
   {
-   "team": "LSU",
-   "confRecord": "3-3",
-   "overall": "6-3"
+   "team": "Ole Miss",
+   "confRecord": "4-4",
+   "overall": "6-4"
   },
   {
-   "team": "Oklahoma",
-   "confRecord": "3-3",
-   "overall": "5-4"
+   "team": "South Carolina",
+   "confRecord": "4-4",
+   "overall": "6-4"
+  },
+  {
+   "team": "LSU",
+   "confRecord": "3-4",
+   "overall": "6-4"
   },
   {
    "team": "Missouri",
@@ -310,14 +310,14 @@
    "overall": "6-4"
   },
   {
-   "team": "Mississippi State",
-   "confRecord": "2-6",
+   "team": "Arkansas",
+   "confRecord": "2-5",
    "overall": "4-6"
   },
   {
-   "team": "Arkansas",
-   "confRecord": "1-5",
-   "overall": "3-6"
+   "team": "Mississippi State",
+   "confRecord": "2-6",
+   "overall": "4-6"
   },
   {
    "team": "Texas A&M",

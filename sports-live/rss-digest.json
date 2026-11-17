@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-17T13:06:06.564Z",
+ "generatedAt": "2026-11-17T21:43:25.435Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-17T13:06:06.564Z",
+  "checkedAt": "2026-11-17T21:43:25.435Z",
   "ok": false,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Perimeter defense key for No. 1 Gators vs. Notre Dame",
-   "link": "https://www.gatorbaitmedia.com/post/perimeter-defense-key-for-no-1-gators-vs-notre-dame",
-   "publishedAt": "2026-11-17T12:35:42.000Z"
+   "title": "Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came",
+   "link": "https://www.gatorbaitmedia.com/post/philo-took-a-kick-to-the-head-from-kentucky-s-gadson-after-his-go-ahead-td-and-no-flag-ever-came",
+   "publishedAt": "2026-11-17T14:58:04.000Z"
   },
   "problems": [
    "1 of 20 items have no cover image (first: https://www.gatorbaitmedia.com/post/grounded-how-friday-s-faa-stop-pushed-ole-miss-oklahoma-to-sunday-and-shuffled-the-sec)"

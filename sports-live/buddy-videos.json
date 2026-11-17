@@ -1,7 +1,12 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-17T00:18:42.849Z",
+  "fetchedAt": "2026-11-17T08:08:29.260Z",
   "videos": [
+    {
+      "id": "m1blGIOO_84",
+      "title": "Florida Gators: Can Vandy Be Win #7?",
+      "published": "2026-11-17T02:01:07+00:00"
+    },
     {
       "id": "ty-ZhSViYaE",
       "title": "SUMRALL: \"GIVE US $50 MILLION. WATCH OUT.\"",
@@ -71,11 +76,6 @@
       "id": "47PUMUYgEmI",
       "title": "Urban Meyer Sees a 2005 Parallel in Florida's Rebuild",
       "published": "2026-11-06T20:34:03+00:00"
-    },
-    {
-      "id": "P1s35GJCzsY",
-      "title": "Urban Meyer on His Florida Regrets and the Cost of Winning",
-      "published": "2026-11-06T20:31:51+00:00"
     }
   ]
 }

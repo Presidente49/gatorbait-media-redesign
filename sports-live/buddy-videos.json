@@ -1,11 +1,16 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-17T08:08:29.260Z",
+  "fetchedAt": "2026-11-17T17:36:21.591Z",
   "videos": [
+    {
+      "id": "z4ckGnTrXhQ",
+      "title": "Player Kicked QB in Head, No Flag",
+      "published": "2026-11-17T16:12:34+00:00"
+    },
     {
       "id": "m1blGIOO_84",
       "title": "Florida Gators: Can Vandy Be Win #7?",
-      "published": "2026-11-17T02:01:07+00:00"
+      "published": "2026-11-17T15:35:00+00:00"
     },
     {
       "id": "ty-ZhSViYaE",
@@ -71,11 +76,6 @@
       "id": "lGjwmeFCJ1I",
       "title": "Best Fridays: Urban Meyer, Edgar Thompson and Gators Basketball | Buddy Martin",
       "published": "2026-11-07T03:04:20+00:00"
-    },
-    {
-      "id": "47PUMUYgEmI",
-      "title": "Urban Meyer Sees a 2005 Parallel in Florida's Rebuild",
-      "published": "2026-11-06T20:34:03+00:00"
     }
   ]
 }

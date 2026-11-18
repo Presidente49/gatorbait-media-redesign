@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: November 18, 2026",
+      "excerpt": "Franz Beard on Florida's No. 24 CFP ranking and bowl outlook, the coaching carousel, and a few pithy thoughts on where college sports are headed.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-november-18-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-18T13:11:05Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_f594e14f969a4fd8af37275bca63cf58~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: November 18, 2026"
+      }
+    },
+    {
+      "title": "When Boogie Went Down, Klavzar Became Florida's Next Man Up",
+      "excerpt": "Franz Beard: Urban Klavzar scored a career-high 24 points after Boogie Fland left with a reaggravated shoulder, and No. 1 Florida held off Notre Dame 86-78.",
+      "url": "https://www.gatorbaitmedia.com/post/when-boogie-went-down-klavzar-became-florida-s-next-man-up",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-18T13:08:41Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_3f663cab4e5544a6be4d551927427fc2~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for When Boogie Went Down, Klavzar Became Florida's Next Man Up"
+      }
+    },
+    {
       "title": "Gator Hoops: It's Not Always Easy Being The Hunted",
       "excerpt": "Florida took Notre Dame's best shot in Las Vegas. Now comes Houston, which has had two seasons to think about the last time it saw the Gators.",
       "url": "https://www.gatorbaitmedia.com/post/gator-hoops-it-s-not-always-easy-being-the-hunted",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Grounded: How Friday’s FAA stop pushed Ole Miss-Oklahoma to Sunday and shuffled the SEC"
-      }
-    },
-    {
-      "title": "Given a start, Alex Lloyd showed he belonged against Merrimack",
-      "excerpt": "Starting for the first time in a Florida uniform, Alex Lloyd hit three threes and scored 11 points in the No. 1 Gators' 83-54 win over Merrimack.",
-      "url": "https://www.gatorbaitmedia.com/post/given-a-start-alex-lloyd-showed-he-belonged-against-merrimack",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-14T16:15:38Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_fcc37b3b15c3407597dc91b28c87c283~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Given a start, Alex Lloyd showed he belonged against Merrimack"
-      }
-    },
-    {
-      "title": "Gators Are Safely In Kentucky, But Now For The Task: How To Beat Kentucky",
-      "excerpt": "Gators a three-point underdog at Kroger Field",
-      "url": "https://www.gatorbaitmedia.com/post/gators-are-safely-in-kentucky-but-now-for-the-task-how-to-beat-kentucky",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-14T14:22:46Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_c96312563ae1474bbc134b0407de2ccd~mv2.jpg/v1/fit/w_960,h_641,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gators Are Safely In Kentucky, But Now For The Task: How To Beat Kentucky"
       }
     }
   ]

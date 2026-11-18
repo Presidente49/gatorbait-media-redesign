@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: November 18, 2026",
+      "excerpt": "Franz Beard on Florida's No. 24 CFP ranking and bowl outlook, the coaching carousel, and a few pithy thoughts on where college sports are headed.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-november-18-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-18T13:11:05Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_f594e14f969a4fd8af37275bca63cf58~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: November 18, 2026"
+      }
+    },
+    {
+      "title": "When Boogie Went Down, Klavzar Became Florida's Next Man Up",
+      "excerpt": "Franz Beard: Urban Klavzar scored a career-high 24 points after Boogie Fland left with a reaggravated shoulder, and No. 1 Florida held off Notre Dame 86-78.",
+      "url": "https://www.gatorbaitmedia.com/post/when-boogie-went-down-klavzar-became-florida-s-next-man-up",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-18T13:08:41Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_3f663cab4e5544a6be4d551927427fc2~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for When Boogie Went Down, Klavzar Became Florida's Next Man Up"
+      }
+    },
+    {
       "title": "Gator Hoops: It's Not Always Easy Being The Hunted",
       "excerpt": "Florida took Notre Dame's best shot in Las Vegas. Now comes Houston, which has had two seasons to think about the last time it saw the Gators.",
       "url": "https://www.gatorbaitmedia.com/post/gator-hoops-it-s-not-always-easy-being-the-hunted",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida's 2027 recruiting class sits No. 6 nationally with 27 commitments"
-      }
-    },
-    {
-      "title": "Did Gator Football Just Turn The Corner With Sumrall's Statement Win?",
-      "excerpt": "Even Tim Tebow appeared to jump off the bandwagon.",
-      "url": "https://www.gatorbaitmedia.com/post/did-gator-football-just-turn-the-corner-with-sumrall-s-statement-win",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-15T22:41:50Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_d5fa38d9c98c4bfeb982f4831abbce73~mv2.jpg/v1/fit/w_720,h_480,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Did Gator Football Just Turn The Corner With Sumrall's Statement Win?"
-      }
-    },
-    {
-      "title": "Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14",
-      "excerpt": "A late-second-quarter swap on the offensive line and Aaron Philo's 102 rushing yards carried Florida past No. 11 Kentucky, 21-14, and made the Gators bowl-eligible.",
-      "url": "https://www.gatorbaitmedia.com/post/blackout-funeral-philo-runs-gators-past-kentucky-21-14",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-15T16:12:03Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_93ffb4fa4f24421d8e65a421b14bd42f~mv2.jpg/v1/fit/w_720,h_480,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14"
       }
     }
   ]

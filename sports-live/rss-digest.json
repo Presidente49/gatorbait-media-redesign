@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-18T03:37:05.227Z",
+ "generatedAt": "2026-11-18T12:56:04.661Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-18T03:37:05.227Z",
+  "checkedAt": "2026-11-18T12:56:04.661Z",
   "ok": false,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78",
-   "link": "https://www.gatorbaitmedia.com/post/florida-86-notre-dame-78-klavzar-s-24-points-send-gators-into-players-era-semifinal",
-   "publishedAt": "2026-11-18T01:40:40.000Z"
+   "title": "Gator Hoops: It's Not Always Easy Being The Hunted",
+   "link": "https://www.gatorbaitmedia.com/post/gator-hoops-it-s-not-always-easy-being-the-hunted",
+   "publishedAt": "2026-11-18T04:22:12.000Z"
   },
   "problems": [
    "1 of 20 items have no cover image (first: https://www.gatorbaitmedia.com/post/grounded-how-friday-s-faa-stop-pushed-ole-miss-oklahoma-to-sunday-and-shuffled-the-sec)"
@@ -27,19 +27,17 @@
    "id": "espn-ncf",
    "source": "ESPN",
    "label": "ESPN college football headlines",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 12
   },
   {
    "id": "espn-sec",
    "source": "ESPN",
    "label": "ESPN college football headlines that name an SEC team",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 3
   },
   {
    "id": "floridagators",
@@ -51,5 +49,97 @@
    "items": 0
   }
  ],
- "headlines": []
+ "headlines": [
+  {
+   "title": "Who's on the CFP bubble after the committee's third ranking?",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50503628/cfp-playoff-2026-bubble-watch-week-third-ranking",
+   "publishedAt": "2026-11-18T12:49:43.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Reid's midseason NFL mock draft: 32 prospect landing spots, four QBs and one big trade",
+   "source": "ESPN",
+   "link": "https://www.espn.com/nfl/draft2027/story/_/id/50502243/2027-nfl-mock-draft-reid-midseason-32-first-round-predictions",
+   "publishedAt": "2026-11-18T12:38:30.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Which team will land the No. 1 draft pick? Our look at a five-franchise race",
+   "source": "ESPN",
+   "link": "https://www.espn.com/nfl/draft2027/story/_/id/50510863/2027-nfl-draft-top-pick-dolphins-titans-eagles-jets-chargers",
+   "publishedAt": "2026-11-18T12:38:30.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Week 12 conference title game scenarios for every conference",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50512475/conference-title-game-clinching-scenarios-week-12",
+   "publishedAt": "2026-11-18T12:29:18.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "QB rankings for all 68 Power 4 teams",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50510847/ranking-power-4-qbs",
+   "publishedAt": "2026-11-18T12:29:10.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "CFP committee releases its third top 25 and bracket",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50514170/cfp-2026-third-committee-top-25-bracket",
+   "publishedAt": "2026-11-18T04:34:25.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Wake Forest surges into CFP top 12; Bama stands pat as top 4 unchanged",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50515993/wake-forest-surges-cfp-top-12-texas-jumps-notre-dame",
+   "publishedAt": "2026-11-18T04:02:34.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Sources: Michigan to hire Texas A&M's Alberts as athletic director",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-sports/story/_/id/50516550/michigan-hire-texas-trev-alberts-athletic-director",
+   "publishedAt": "2026-11-18T04:02:34.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "No doubts from Dabo: 'Coach Swinney's gonna win another national championship'",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50512833/defiant-dabo-swinney-says-clemson-gonna-win-bunch-more",
+   "publishedAt": "2026-11-18T04:02:34.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Arkansas State fires Jones, names Ortiz interim head coach",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50514281/arkansas-state-moves-butch-jones-nearly-6-seasons",
+   "publishedAt": "2026-11-18T04:02:34.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Arch will participate in Texas senior day, says he's not thinking about future",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50503997/texas-arch-manning-participate-senior-day",
+   "publishedAt": "2026-11-18T04:02:34.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Rivers on NC State: 'There was no other college job that was coming for me'",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50504530/rivers-says-nc-state-only-college-job-taken",
+   "publishedAt": "2026-11-18T04:02:34.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Oklahoma HC Venables shouts out Love's as top travel stop after Buc-ee's comment",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50513199/oklahoma-brent-venables-loves-travel-stop",
+   "publishedAt": "2026-11-17T22:31:35.000Z",
+   "feed": "espn-sec"
+  }
+ ]
 }

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gator Hoops: It's Not Always Easy Being The Hunted",
+      "excerpt": "Florida took Notre Dame's best shot in Las Vegas. Now comes Houston, which has had two seasons to think about the last time it saw the Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/gator-hoops-it-s-not-always-easy-being-the-hunted",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-18T04:22:12Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_de14a9fa3fca4e09af46813cf8e10160~mv2.jpg/v1/fit/w_689,h_919,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gator Hoops: It's Not Always Easy Being The Hunted"
+      }
+    },
+    {
+      "title": "Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78",
+      "excerpt": "Fland left in the first half after reaggravating a shoulder injury; Florida is 5-0 and faces Houston in Wednesday's Players Era semifinal.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-86-notre-dame-78-klavzar-s-24-points-send-gators-into-players-era-semifinal",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-18T01:40:40Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_71d76f9e0cec44efa61285320c390d30~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78"
+      }
+    },
+    {
       "title": "Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came",
       "excerpt": "Video still: Gator Bait Media. LEXINGTON, Ky. — Aaron Philo had just scored the touchdown that beat No. 11 Kentucky. Florida's quarterback was still on the ground in the end zone, teammates celebrating around him, when video of the play appears to show a Kentucky player making a kicking motion toward his head. No flag was thrown. Nobody in stripes appeared…",
       "url": "https://www.gatorbaitmedia.com/post/philo-took-a-kick-to-the-head-from-kentucky-s-gadson-after-his-go-ahead-td-and-no-flag-ever-came",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14"
-      }
-    },
-    {
-      "title": "Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap",
-      "excerpt": "Buddy Martin on the 21-14 win at Kentucky that made Florida bowl-eligible.",
-      "url": "https://www.gatorbaitmedia.com/post/let-s-go-bowling-baby-after-falling-short-by-inches-the-gators-made-a-mile-long-quantum-leap",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-15T04:51:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_bb52ae6e52ea458c89c9844843ed96c0~mv2.jpg/v1/fit/w_960,h_640,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap"
-      }
-    },
-    {
-      "title": "Florida redefines its identity as Philo's legs pull off the upset in Lexington",
-      "excerpt": "Postgame Thoughts: The defense kept Florida in it, and Aaron Philo's legs gave the offense the dimension it had been missing in a 21-14 win at Kentucky.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-redefines-its-identity-as-philo-s-legs-pull-off-the-upset-in-lexington",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-11-15T04:45:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_6b2a36561f014208a9c65242ab3793e1~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida redefines its identity as Philo's legs pull off the upset in Lexington"
       }
     }
   ]

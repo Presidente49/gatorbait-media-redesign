@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Gator Hoops: It's Not Always Easy Being The Hunted",
+      "excerpt": "Florida took Notre Dame's best shot in Las Vegas. Now comes Houston, which has had two seasons to think about the last time it saw the Gators.",
+      "url": "https://www.gatorbaitmedia.com/post/gator-hoops-it-s-not-always-easy-being-the-hunted",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-18T04:22:12Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_de14a9fa3fca4e09af46813cf8e10160~mv2.jpg/v1/fit/w_689,h_919,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Gator Hoops: It's Not Always Easy Being The Hunted"
+      }
+    },
+    {
+      "title": "Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78",
+      "excerpt": "Fland left in the first half after reaggravating a shoulder injury; Florida is 5-0 and faces Houston in Wednesday's Players Era semifinal.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-86-notre-dame-78-klavzar-s-24-points-send-gators-into-players-era-semifinal",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-18T01:40:40Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_71d76f9e0cec44efa61285320c390d30~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78"
+      }
+    },
+    {
       "title": "Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came",
       "excerpt": "Video still: Gator Bait Media. LEXINGTON, Ky. — Aaron Philo had just scored the touchdown that beat No. 11 Kentucky. Florida's quarterback was still on the ground in the end zone, teammates celebrating around him, when video of the play appears to show a Kentucky player making a kicking motion toward his head. No flag was thrown. Nobody in stripes appeared…",
       "url": "https://www.gatorbaitmedia.com/post/philo-took-a-kick-to-the-head-from-kentucky-s-gadson-after-his-go-ahead-td-and-no-flag-ever-came",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Gators Are Safely In Kentucky, But Now For The Task: How To Beat Kentucky"
-      }
-    },
-    {
-      "title": "Florida flips 6-foot-7 tackle Moreno Fisher from Virginia",
-      "excerpt": "Florida flipped 6-foot-7 offensive tackle Moreno Fisher from Virginia on Thursday — the Gators' 27th commitment and fourth offensive lineman in the 2027 class.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-flips-6-foot-7-tackle-moreno-fisher-from-virginia",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-13T18:54:57Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_bedacef4484f4fbf89ff8bfba59dbaf7~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida flips 6-foot-7 tackle Moreno Fisher from Virginia"
-      }
-    },
-    {
-      "title": "Keys To The Game",
-      "excerpt": "Eddie Gilley's five keys for Florida at Kentucky: Jaden Baugh, the offensive line, Eric Singleton, Aaron Philo and a defense that has to force takeaways.",
-      "url": "https://www.gatorbaitmedia.com/post/keys-to-the-game",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-11-13T18:54:51Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e763ca6648c14d839675e969e22908c7~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Keys To The Game"
       }
     }
   ]

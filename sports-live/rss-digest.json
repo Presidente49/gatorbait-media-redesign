@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-17T21:43:25.435Z",
+ "generatedAt": "2026-11-18T03:37:05.227Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-17T21:43:25.435Z",
+  "checkedAt": "2026-11-18T03:37:05.227Z",
   "ok": false,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came",
-   "link": "https://www.gatorbaitmedia.com/post/philo-took-a-kick-to-the-head-from-kentucky-s-gadson-after-his-go-ahead-td-and-no-flag-ever-came",
-   "publishedAt": "2026-11-17T14:58:04.000Z"
+   "title": "Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78",
+   "link": "https://www.gatorbaitmedia.com/post/florida-86-notre-dame-78-klavzar-s-24-points-send-gators-into-players-era-semifinal",
+   "publishedAt": "2026-11-18T01:40:40.000Z"
   },
   "problems": [
    "1 of 20 items have no cover image (first: https://www.gatorbaitmedia.com/post/grounded-how-friday-s-faa-stop-pushed-ole-miss-oklahoma-to-sunday-and-shuffled-the-sec)"

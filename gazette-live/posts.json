@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Houston Beats No. 1 Florida 86-76 as Dedan Thomas Jr. Scores 30",
+      "excerpt": "Florida led by three at halftime, then Houston scored 49 points in the second half to win the Players Era rematch in Las Vegas.",
+      "url": "https://www.gatorbaitmedia.com/post/houston-beats-no-1-florida-86-76-as-dedan-thomas-jr-scores-30",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-19T02:11:42Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_815fb50964964716925980fd66fe279b~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Houston Beats No. 1 Florida 86-76 as Dedan Thomas Jr. Scores 30"
+      }
+    },
+    {
       "title": "The Week Gator Nation Couldn't Stop Watching",
       "excerpt": "153,000 views on one clip. The kick. Philo in his own words. The six clips and the Lowdown episode Gator Nation couldn't stop watching — all in one place.",
       "url": "https://www.gatorbaitmedia.com/post/the-week-gator-nation-couldn-t-stop-watching",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Blackout Funeral: Philo Runs Gators Past Kentucky, 21-14"
-      }
-    },
-    {
-      "title": "Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap",
-      "excerpt": "Buddy Martin on the 21-14 win at Kentucky that made Florida bowl-eligible.",
-      "url": "https://www.gatorbaitmedia.com/post/let-s-go-bowling-baby-after-falling-short-by-inches-the-gators-made-a-mile-long-quantum-leap",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-15T04:51:44Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_bb52ae6e52ea458c89c9844843ed96c0~mv2.jpg/v1/fit/w_960,h_640,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Let's Go Bowling Baby! After Falling Short By Inches, The Gators Made A Mile-Long Quantum Leap"
       }
     }
   ]

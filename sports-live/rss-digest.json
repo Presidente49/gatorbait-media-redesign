@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-18T21:19:53.054Z",
+ "generatedAt": "2026-11-19T03:10:23.055Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-18T21:19:53.054Z",
+  "checkedAt": "2026-11-19T03:10:23.055Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "The Week Gator Nation Couldn't Stop Watching",
-   "link": "https://www.gatorbaitmedia.com/post/the-week-gator-nation-couldn-t-stop-watching",
-   "publishedAt": "2026-11-18T17:39:07.000Z"
+   "title": "Houston Beats No. 1 Florida 86-76 as Dedan Thomas Jr. Scores 30",
+   "link": "https://www.gatorbaitmedia.com/post/houston-beats-no-1-florida-86-76-as-dedan-thomas-jr-scores-30",
+   "publishedAt": "2026-11-19T02:11:42.000Z"
   },
   "problems": []
  },

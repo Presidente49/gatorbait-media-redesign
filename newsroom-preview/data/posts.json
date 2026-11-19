@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Gators scored enough points but couldn't defend the paint",
+      "excerpt": "Photo courtesy of the University of Florida (UAA) Points were not the problem Wednesday night in Las Vegas. The No. 1-ranked Florida Gators put 76 on the scoreboard by hitting 50 percent of their shots from the field (27-54) and 57.7 percent of their three-points attempts (15-26), more than enough to win a basketball game, particularly against a Houston…",
+      "url": "https://www.gatorbaitmedia.com/post/the-gators-scored-enough-points-but-couldn-t-defend-the-paint",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-19T11:36:46Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_42538d3cc2c84bc9ae385e3dc6126d67~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Gators scored enough points but couldn't defend the paint"
+      }
+    },
+    {
       "title": "Houston Beats No. 1 Florida 86-76 as Dedan Thomas Jr. Scores 30",
       "excerpt": "Florida led by three at halftime, then Houston scored 49 points in the second half to win the Players Era rematch in Las Vegas.",
       "url": "https://www.gatorbaitmedia.com/post/houston-beats-no-1-florida-86-76-as-dedan-thomas-jr-scores-30",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came"
-      }
-    },
-    {
-      "title": "WHAT IT IS, WHAT IT WAS, AND WHAT IT SHALL BE!",
-      "excerpt": "Photo courtesy of UAA Aaron Philo showed us the importance of winning one big game Some of you Gator fans wouldn’t recognize a feast if it slapped the bib on you. Two weeks ago you were jumping off the bandwagon with such urgency that the ankle injuries set a record at Shands. You booed a quarterback, you booed a play call, you were pricing moving vans for…",
-      "url": "https://www.gatorbaitmedia.com/post/what-it-is-what-it-was-and-what-it-shall-be",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-17T14:25:04Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_102fed508bdf4239be1ebad84c99a7e3~mv2.jpg/v1/fit/w_450,h_300,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for WHAT IT IS, WHAT IT WAS, AND WHAT IT SHALL BE!"
       }
     }
   ]

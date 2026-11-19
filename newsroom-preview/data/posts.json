@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Senior Day at Florida: A Goodbye We're Not Quite Ready To Say Yet",
+      "excerpt": "\"The Doaker\" was a great player and great person. Photo Courtesy of Doak Walker Award By Buddy Martin gatorbaitmedia.com The seniors get their names called Saturday at The Swamp. The rest of us have to figure out when to say goodbye. Florida will honor 16 players on Senior Day against Vanderbilt. They'll get their moment, and they've earned it. There are a…",
+      "url": "https://www.gatorbaitmedia.com/post/senior-day-at-florida-a-goodbye-we-re-not-quite-ready-to-say-goodbye-to-yet",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-19T17:43:58Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_b592a7d28a984e12858c09a4b0ebb45e~mv2.jpg/v1/fit/w_812,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Senior Day at Florida: A Goodbye We're Not Quite Ready To Say Yet"
+      }
+    },
+    {
       "title": "The Gators scored enough points but couldn't defend the paint",
       "excerpt": "Photo courtesy of the University of Florida (UAA) Points were not the problem Wednesday night in Las Vegas. The No. 1-ranked Florida Gators put 76 on the scoreboard by hitting 50 percent of their shots from the field (27-54) and 57.7 percent of their three-points attempts (15-26), more than enough to win a basketball game, particularly against a Houston…",
       "url": "https://www.gatorbaitmedia.com/post/the-gators-scored-enough-points-but-couldn-t-defend-the-paint",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78"
-      }
-    },
-    {
-      "title": "Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came",
-      "excerpt": "Video still: Gator Bait Media. LEXINGTON, Ky. — Aaron Philo had just scored the touchdown that beat No. 11 Kentucky. Florida's quarterback was still on the ground in the end zone, teammates celebrating around him, when video of the play appears to show a Kentucky player making a kicking motion toward his head. No flag was thrown. Nobody in stripes appeared…",
-      "url": "https://www.gatorbaitmedia.com/post/philo-took-a-kick-to-the-head-from-kentucky-s-gadson-after-his-go-ahead-td-and-no-flag-ever-came",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-17T14:58:04Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_1405792ee9554757831da298cb710590~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came"
       }
     }
   ]

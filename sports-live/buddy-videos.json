@@ -1,11 +1,21 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-19T03:52:28.041Z",
+  "fetchedAt": "2026-11-19T20:47:51.270Z",
   "videos": [
+    {
+      "id": "YEWn5c3UF2I",
+      "title": "BRAD WHITE: \"GOOD EXECUTION ALL AROUND\"",
+      "published": "2026-11-19T19:00:30+00:00"
+    },
     {
       "id": "4ZJue5P4D9U",
       "title": "No longer unbeaten and will get knocked off No. 1.",
-      "published": "2026-11-19T02:01:07+00:00"
+      "published": "2026-11-19T18:05:04+00:00"
+    },
+    {
+      "id": "WmhzoZH93pc",
+      "title": "BEN HANKS: \"I JUST SAT ON IT AND TRIED TO TAKE THE BALL AWAY\"",
+      "published": "2026-11-19T16:30:36+00:00"
     },
     {
       "id": "6gygrlpjVA0",
@@ -66,16 +76,6 @@
       "id": "NCAHp3QJ5uE",
       "title": "SUMRALL: \"I'M GONNA LOSE MY MIND\"",
       "published": "2026-11-16T17:20:41+00:00"
-    },
-    {
-      "id": "KGz9pAg93A8",
-      "title": "SUMRALL: \"WE'RE GONNA MOVE FORWARD WITH AARON\"",
-      "published": "2026-11-16T17:18:25+00:00"
-    },
-    {
-      "id": "M-4A9-lDK_M",
-      "title": "SUMRALL: \"I THOUGHT ABOUT TAKING A TIMEOUT TO YELL AT THEM\"",
-      "published": "2026-11-16T17:16:08+00:00"
     }
   ]
 }

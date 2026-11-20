@@ -1,11 +1,21 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-20T09:35:34.115Z",
+  "fetchedAt": "2026-11-20T18:00:40.134Z",
   "videos": [
+    {
+      "id": "c2zQLJ7zBn0",
+      "title": "ALFONZO ALLEN JR.: \"YOU CAN'T GO IN A FIGHT WITH ONE CHAIN\"",
+      "published": "2026-11-20T16:30:12+00:00"
+    },
     {
       "id": "8sTs8lHX4xw",
       "title": "Why College Basketball Officiating Is Hurting the Game",
-      "published": "2026-11-20T02:01:31+00:00"
+      "published": "2026-11-20T15:51:41+00:00"
+    },
+    {
+      "id": "rD6fbYUW1pg",
+      "title": "Why College Basketball Officiating Is Hurting the Game",
+      "published": "2026-11-20T14:00:37+00:00"
     },
     {
       "id": "YEWn5c3UF2I",
@@ -66,16 +76,6 @@
       "id": "z4ckGnTrXhQ",
       "title": "Player Kicked QB in Head, No Flag",
       "published": "2026-11-17T16:12:34+00:00"
-    },
-    {
-      "id": "m1blGIOO_84",
-      "title": "Florida Gators: Can Vandy Be Win #7?",
-      "published": "2026-11-17T15:35:00+00:00"
-    },
-    {
-      "id": "ty-ZhSViYaE",
-      "title": "SUMRALL: \"GIVE US $50 MILLION. WATCH OUT.\"",
-      "published": "2026-11-16T17:22:38+00:00"
     }
   ]
 }

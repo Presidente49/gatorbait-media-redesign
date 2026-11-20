@@ -1,0 +1,71 @@
+
+/* ================= Pregame standards: both teams' schedules and rosters =================
+   Bundled only when the issue carries teamSchedules or teamRosters (sports-live/build-magazine.mjs). Open tables, never collapsed.
+   Barlow and Barlow Condensed only, the pregame skin's own colors. */
+#gbm-magazine-page.pg .pg-jump{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+#gbm-magazine-page.pg .pg-jump b{flex:1 0 100%;font:700 11px/1.3 var(--mz-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #2a4aa8;border-radius:999px;background:var(--pg-card);font:800 14px/1 var(--mz-cond);letter-spacing:.1em;text-transform:uppercase;color:#fff}
+#gbm-magazine-page.pg .pg-jump a::after{content:"\2193";margin-left:6px;color:var(--pg-orange-2)}
+#gbm-magazine-page.pg .pg-std-grid{display:grid;gap:16px}
+#gbm-magazine-page.pg .pg-std-team{min-width:0;border-radius:var(--pg-r);background:var(--pg-card);border:1px solid #2a4aa8;box-shadow:0 10px 30px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.08);overflow:hidden;scroll-margin-top:70px}
+#gbm-magazine-page.pg .pg-std-team h3{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 12px;padding:14px 12px 10px;border-bottom:3px solid var(--pg-orange);font:800 clamp(24px,6.6vw,32px)/1 var(--mz-cond);letter-spacing:.04em;text-transform:uppercase;color:#fff}
+#gbm-magazine-page.pg .pg-std-team h3 small{font:600 13px/1.3 var(--mz-sans);letter-spacing:.02em;text-transform:none;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-std-t{width:100%;border-collapse:collapse;font:500 13px/1.3 var(--mz-sans);font-variant-numeric:tabular-nums;color:var(--pg-text)}
+#gbm-magazine-page.pg .pg-std-t th,#gbm-magazine-page.pg .pg-std-t td{padding:6px;text-align:left;font-weight:500;vertical-align:baseline;min-width:0;overflow-wrap:anywhere}
+#gbm-magazine-page.pg .pg-std-t thead th{font:700 10px/1.3 var(--mz-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-std-t tbody tr{border-top:1px solid var(--pg-line)}
+#gbm-magazine-page.pg .pg-std-t tbody th{font-weight:700;color:#fff}
+#gbm-magazine-page.pg .pg-std-t small{font:600 11px/1.3 var(--mz-sans);color:var(--pg-mute)}
+
+/* schedules: a three-column table at every width */
+#gbm-magazine-page.pg .pg-sc th:first-child,#gbm-magazine-page.pg .pg-sc td:first-child{padding-left:12px}
+#gbm-magazine-page.pg .pg-sc .pg-sc-d{width:1%;white-space:nowrap;font-weight:600;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-sc .pg-sc-r{padding-right:12px;text-align:right}
+#gbm-magazine-page.pg .pg-sc td.pg-sc-r{font:800 16px/1.1 var(--mz-cond);letter-spacing:.02em;white-space:nowrap;color:#fff}
+#gbm-magazine-page.pg .pg-sc td.pg-sc-r small{display:block;margin-top:2px}
+#gbm-magazine-page.pg .pg-sc .pg-sc-w{color:var(--pg-green)}
+#gbm-magazine-page.pg .pg-sc .pg-sc-l{color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-sc .pg-sc-now{background:linear-gradient(90deg,#4b1a0d,#0f1c4a 80%)}
+#gbm-magazine-page.pg .pg-sc .pg-sc-now td:first-child{box-shadow:inset 4px 0 0 var(--pg-orange);color:#fff}
+
+/* rosters: on phones each player is a two-line grid row (hometown under the name); real table columns from 700px */
+#gbm-magazine-page.pg .pg-rt,#gbm-magazine-page.pg .pg-rt thead,#gbm-magazine-page.pg .pg-rt tbody{display:block}
+#gbm-magazine-page.pg .pg-rt tr{display:grid;grid-template-columns:26px minmax(0,1fr) 40px 28px 34px 32px;align-items:baseline;padding:4px}
+#gbm-magazine-page.pg .pg-rt th,#gbm-magazine-page.pg .pg-rt td{padding:0 3px}
+#gbm-magazine-page.pg .pg-rt .pg-rt-n{text-align:right}
+#gbm-magazine-page.pg .pg-rt td.pg-rt-n{font:800 15px/1.1 var(--mz-cond);color:var(--pg-orange-2)}
+#gbm-magazine-page.pg .pg-rt .pg-rt-h{grid-column:2/-1;padding-top:1px}
+#gbm-magazine-page.pg .pg-rt td.pg-rt-h{font-size:12px;color:var(--pg-mute)}
+#gbm-magazine-page.pg .pg-rt td.pg-rt-h:empty{display:none}
+#gbm-magazine-page.pg .pg-rt .pg-rt-g{background:#06102f;border-top:2px solid #2a4aa8}
+#gbm-magazine-page.pg .pg-rt .pg-rt-g th{grid-column:1/-1;padding:5px 3px 4px;font:800 14px/1 var(--mz-cond);letter-spacing:.14em;text-transform:uppercase;color:var(--pg-orange-2)}
+
+/* The game card sizes both team names to their own panel, so a long name (Vanderbilt, Tennessee) stays on one line on a phone.
+   From tablet width up the size is what it was (46px); a browser without container units keeps the shared rule. */
+#gbm-magazine-page.pg .pg-teams .pg-team{container-type:inline-size}
+#gbm-magazine-page.pg .pg-teams .pg-team b{font-size:clamp(16px,19cqi,46px)}
+
+@media (min-width:700px){
+  #gbm-magazine-page.pg .pg-sched .pg-std-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  #gbm-magazine-page.pg .pg-std-team h3{padding:16px 16px 12px}
+  #gbm-magazine-page.pg .pg-sc th:first-child,#gbm-magazine-page.pg .pg-sc td:first-child{padding-left:16px}
+  #gbm-magazine-page.pg .pg-sc .pg-sc-r{padding-right:16px}
+  #gbm-magazine-page.pg .pg-rt{display:table}
+  #gbm-magazine-page.pg .pg-rt thead{display:table-header-group}
+  #gbm-magazine-page.pg .pg-rt tbody{display:table-row-group}
+  #gbm-magazine-page.pg .pg-rt tr{display:table-row}
+  #gbm-magazine-page.pg .pg-rt th,#gbm-magazine-page.pg .pg-rt td,#gbm-magazine-page.pg .pg-rt .pg-rt-h{padding:5px 6px}
+  #gbm-magazine-page.pg .pg-rt th:first-child,#gbm-magazine-page.pg .pg-rt td:first-child{padding-left:16px}
+  #gbm-magazine-page.pg .pg-rt th:last-child,#gbm-magazine-page.pg .pg-rt td:last-child{padding-right:16px}
+  #gbm-magazine-page.pg .pg-rt td.pg-rt-h{font-size:13px}
+  #gbm-magazine-page.pg .pg-rt td.pg-rt-h:empty{display:table-cell}
+  #gbm-magazine-page.pg .pg-rt .pg-rt-g th{padding:8px 16px 7px}
+}
+@media (min-width:1000px){
+  #gbm-magazine-page.pg .pg-rost .pg-std-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px 28px}
+}
+@media print{
+  #gbm-magazine-page.pg .pg-jump{display:none}
+  #gbm-magazine-page.pg .pg-std{break-inside:auto;page-break-inside:auto}
+  #gbm-magazine-page.pg .pg-std-t tr{break-inside:avoid;page-break-inside:avoid}
+}

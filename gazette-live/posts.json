@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Soothsayer: Improved defense will carry Gators to 7th win",
+      "excerpt": "Franz Beard: Florida's defense has found a formula over the last four games, and that is why the Soothsayer sees a seventh win Saturday against Vanderbilt.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-20T15:20:03Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: Improved defense will carry Gators to 7th win"
+      }
+    },
+    {
       "title": "Taking Care of Business: Florida Women Rout Florida Atlantic 82-39",
       "excerpt": "Loren Meadows: Kiyomi McMiller scored 26 points and Florida held Florida Atlantic to 23.1 percent shooting in an 82-39 win that ended a two-game skid.",
       "url": "https://www.gatorbaitmedia.com/post/taking-care-of-business-florida-women-rout-florida-atlantic-82-39",
@@ -255,7 +269,7 @@
     },
     {
       "title": "WHAT IT IS, WHAT IT WAS, AND WHAT IT SHALL BE!",
-      "excerpt": "Photo courtesy of UAA Aaron Philo showed us the importance of winning one big game Some of you Gator fans wouldn’t recognize a feast if it slapped the bib on you. Two weeks ago you were jumping off the bandwagon with such urgency that the ankle injuries set a record at Shands. You booed a quarterback, you booed a play call, you were pricing moving vans for…",
+      "excerpt": "Photo courtesy of UAA Aaron Philo showed us the importance of winning one big game Some of you Gator fans wouldn’t recognize a feast if it slapped th bib on you. Two weeks ago you were jumping off the bandwagon with such urgency that the ankle injuries set a record at Shands. You booed a quarterback, you booed a play call, you were pricing moving vans for…",
       "url": "https://www.gatorbaitmedia.com/post/what-it-is-what-it-was-and-what-it-shall-be",
       "author": "Buddy Martin",
       "firstPublishedDate": "2026-11-17T14:25:04Z",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for WHAT IT IS, WHAT IT WAS, AND WHAT IT SHALL BE!"
-      }
-    },
-    {
-      "title": "Perimeter defense key for No. 1 Gators vs. Notre Dame",
-      "excerpt": "Photo courtesy of the University of Florida (UAA) Three games against quality opponents in three days. That’s the format of the Players Era Eight tournament in Las Vegas, unlike anything No. 1-ranked Florida will see again until the Southeastern Conference Tournament in Nashville three months from now. The Gators face Notre Dame (4-0) in the first round…",
-      "url": "https://www.gatorbaitmedia.com/post/perimeter-defense-key-for-no-1-gators-vs-notre-dame",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-17T12:35:42Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_94c23d0947014cebafa1a4d8a6e51144~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Perimeter defense key for No. 1 Gators vs. Notre Dame"
       }
     }
   ]

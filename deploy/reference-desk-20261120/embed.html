@@ -40,7 +40,7 @@ if(Date.now()-D.q>3e5){D.q=Date.now();get('s',E+T+'/schedule')}
 var a=document.getElementById('gbm-sched');
 if(!a||a.getAttribute('data-t')!==String(D.st)){a=sec('gbm-sched',sched());a.setAttribute('data-t',D.st);if(a.nextElementSibling!==rp)rp.parentNode.insertBefore(a,rp);if(!D.went){D.went=1;setTimeout(go,60)}}
 if(!D.nx)return;
-if(!D.r||D.rid!==D.nx.id){if(D.rid!==D.nx.id){D.r=null;D.rid=D.nx.id}get('r',E+D.nx.id+'/roster');return}
+if(!D.r||D.rid!==D.nx.id){if(D.rid!==D.nx.id){D.r=null;D.rid=D.nx.id}get('r',E+D.nx.id+'/roster?limit=300');return}
 var o=document.getElementById('gbm-opp');
 if(!o||o.getAttribute('data-id')!==D.rid){o=sec('gbm-opp',opp());o.setAttribute('data-id',D.rid);if(rp.nextElementSibling!==o)rp.parentNode.insertBefore(o,rp.nextSibling);if(location.hash==='#gbm-opp')setTimeout(go,60)}}
 addEventListener('hashchange',go);

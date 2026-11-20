@@ -203,8 +203,9 @@ def pic(i, ext, w, h, alt, credit):
     return {'id': i, 'ext': ext, 'width': w, 'height': h, 'alt': alt, 'credit': credit}
 UAA = 'Photo courtesy UAA (University Athletic Association, FloridaGators.com)'
 FRANZ = '/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win'
-# Cover: the owner's pick for this magazine (Florida's sideline at Kentucky, Nov. 14). The alt text names no player.
-cover_img = pic('d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9', 'png', 2000, 1061, 'A Florida player holds the football overhead on the sideline as teammates and staff celebrate behind him at Kentucky on Nov. 14, 2026.', UAA)
+# Cover: the owner's pick for this magazine, the photo he sent on Nov. 20 (Aaron Philo, No. 12, in the win at Kentucky). It is the
+# same file the Kentucky game story runs (Wix media uf-at-kentucky-2026-11-14-philo.jpg) and carries the same credit as that story.
+cover_img = pic('d3cfa5_fa57aa84912b434281d9e92a148acc44', 'jpg', 1284, 775, 'Florida quarterback Aaron Philo, wearing No. 12, runs with the ball in the win at Kentucky.', 'Image via All Gators')
 
 # ---- Franz Beard, The Soothsayer (published Nov. 20). His words exactly as published: the epigraph, the Florida-Vanderbilt section and
 # his pick, in full. check_column() below compares every line here with the public post before the issue is written. ----

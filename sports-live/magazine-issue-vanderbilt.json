@@ -20,12 +20,12 @@
   "url": "/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
   "directLink": false,
   "image": {
-   "id": "d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9",
-   "ext": "png",
-   "width": 2000,
-   "height": 1061,
-   "alt": "A Florida player holds the football overhead on the sideline as teammates and staff celebrate behind him at Kentucky on Nov. 14, 2026.",
-   "credit": "Photo courtesy UAA (University Athletic Association, FloridaGators.com)"
+   "id": "d3cfa5_fa57aa84912b434281d9e92a148acc44",
+   "ext": "jpg",
+   "width": 1284,
+   "height": 775,
+   "alt": "Florida quarterback Aaron Philo, wearing No. 12, runs with the ball in the win at Kentucky.",
+   "credit": "Image via All Gators"
   }
  },
  "game": {
@@ -69,7 +69,7 @@
    "missouri": 15.3
   },
   "source": "ESPN summary and pickcenter (DraftKings), event 401856748. Florida is No. 24 in the CFP rankings, No. 23 in the AP Top 25. Senior Day: Buddy Martin, Nov. 19.",
-  "forecast": "71°, 24% chance of rain, gusts to 12 mph (ESPN forecast)"
+  "forecast": "71°, 25% chance of rain, gusts to 12 mph (ESPN forecast)"
  },
  "series": {
   "label": "The series",
@@ -358,7 +358,7 @@
     "line": "MISS -49.5",
     "pick": "Ole Miss",
     "note": "The Grove will be rocking",
-    "ou": 60.5
+    "ou": 59.5
    },
    {
     "time": "2 p.m.",
@@ -372,7 +372,7 @@
      "rec": "8-2",
      "rank": 3
     },
-    "line": "ALA -49.5",
+    "line": "ALA -48.5",
     "pick": "Alabama",
     "note": "Dial-a-score",
     "ou": 58.5
@@ -442,7 +442,7 @@
     "line": "OU -7.5",
     "pick": "Oklahoma",
     "note": "Sooners in a white knuckles affair",
-    "ou": 38.5
+    "ou": 37.5
    },
    {
     "time": "7:30 p.m.",

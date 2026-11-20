@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Why I Am Starting To Hate 'The Mother Ship' Yet I Hate Nothing Else.",
+      "excerpt": "Apparently I am not alone, according to these latest figures. How much do we hate them? Let us count the ways! (I want you to comment below or send me an email to buddy@gatorbaitmedia.com and tell me how much and why.) ESPN cut its people. Now the people are cutting ESPN.",
+      "url": "https://www.gatorbaitmedia.com/post/why-i-am-starting-to-hate-the-mother-ship-yet-i-hate-nothing-else",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-19T23:42:10Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_da29ef6aef6b4ff58eb038a135b5b8fa~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Why I Am Starting To Hate 'The Mother Ship' Yet I Hate Nothing Else."
+      }
+    },
+    {
+      "title": "No. 1 Florida Beats West Virginia 85-72 as Thomas Haugh Scores 22",
+      "excerpt": "Thomas Haugh scored 22 points on 7-of-9 shooting, and Florida never trailed in an 85-72 win over West Virginia to close the Players Era in Las Vegas.",
+      "url": "https://www.gatorbaitmedia.com/post/no-1-florida-beats-west-virginia-85-72-as-thomas-haugh-scores-22",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-19T22:01:39Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_5edd0228b85541e590d15c82bef85485~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for No. 1 Florida Beats West Virginia 85-72 as Thomas Haugh Scores 22"
+      }
+    },
+    {
       "title": "Senior Day at Florida: A Goodbye We're Not Quite Ready To Say Yet",
       "excerpt": "\"The Doaker\" was a great player and great person. Photo Courtesy of Doak Walker Award By Buddy Martin gatorbaitmedia.com The seniors get their names called Saturday at The Swamp. The rest of us have to figure out when to say goodbye. Florida will honor 16 players on Senior Day against Vanderbilt. They'll get their moment, and they've earned it. There are a…",
       "url": "https://www.gatorbaitmedia.com/post/senior-day-at-florida-a-goodbye-we-re-not-quite-ready-to-say-goodbye-to-yet",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for When Boogie Went Down, Klavzar Became Florida's Next Man Up"
-      }
-    },
-    {
-      "title": "Gator Hoops: It's Not Always Easy Being the Hunted",
-      "excerpt": "Buddy Martin: Florida took Notre Dame's best shot in Las Vegas and won anyway. Now comes Houston, which has had two years to think about the last time it saw the Gators.",
-      "url": "https://www.gatorbaitmedia.com/post/gator-hoops-it-s-not-always-easy-being-the-hunted",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-18T04:22:12Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_de14a9fa3fca4e09af46813cf8e10160~mv2.jpg/v1/fit/w_689,h_919,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Gator Hoops: It's Not Always Easy Being The Hunted"
-      }
-    },
-    {
-      "title": "Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78",
-      "excerpt": "Fland left in the first half after reaggravating a shoulder injury; Florida is 5-0 and faces Houston in Wednesday's Players Era semifinal.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-86-notre-dame-78-klavzar-s-24-points-send-gators-into-players-era-semifinal",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-18T01:40:40Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_71d76f9e0cec44efa61285320c390d30~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78"
       }
     }
   ]

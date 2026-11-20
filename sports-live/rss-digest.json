@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-20T11:19:27.703Z",
+ "generatedAt": "2026-11-20T19:58:48.589Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-20T11:19:27.703Z",
+  "checkedAt": "2026-11-20T19:58:48.589Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Taking Care of Business: Florida Women Rout Florida Atlantic 82-39",
-   "link": "https://www.gatorbaitmedia.com/post/taking-care-of-business-florida-women-rout-florida-atlantic-82-39",
-   "publishedAt": "2026-11-20T04:13:12.000Z"
+   "title": "The Soothsayer: Improved defense will carry Gators to 7th win",
+   "link": "https://www.gatorbaitmedia.com/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
+   "publishedAt": "2026-11-20T15:20:03.000Z"
   },
   "problems": []
  },

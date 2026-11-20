@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida lists five players out for Vanderbilt on SEC availability report",
+      "excerpt": "Wide receiver Vernell Brown III and tight end Lacota Dippre are among five Gators out for Saturday's home finale. Vanderbilt lists nine players out, including quarterback Blaze Berlowitz.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-lists-five-players-out-for-vanderbilt-on-sec-availability-report",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-20T21:54:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2503400ea63241218aeba9371e09b857~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida lists five players out for Vanderbilt on SEC availability report"
+      }
+    },
+    {
       "title": "The Soothsayer: Improved defense will carry Gators to 7th win",
       "excerpt": "Franz Beard: Florida's defense has found a formula over the last four games, and that is why the Soothsayer sees a seventh win Saturday against Vanderbilt.",
       "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came"
-      }
-    },
-    {
-      "title": "WHAT IT IS, WHAT IT WAS, AND WHAT IT SHALL BE!",
-      "excerpt": "Photo courtesy of UAA Aaron Philo showed us the importance of winning one big game Some of you Gator fans wouldn’t recognize a feast if it slapped th bib on you. Two weeks ago you were jumping off the bandwagon with such urgency that the ankle injuries set a record at Shands. You booed a quarterback, you booed a play call, you were pricing moving vans for…",
-      "url": "https://www.gatorbaitmedia.com/post/what-it-is-what-it-was-and-what-it-shall-be",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-17T14:25:04Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_102fed508bdf4239be1ebad84c99a7e3~mv2.jpg/v1/fit/w_450,h_300,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for WHAT IT IS, WHAT IT WAS, AND WHAT IT SHALL BE!"
       }
     }
   ]

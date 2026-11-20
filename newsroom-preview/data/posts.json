@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Florida lists five players out for Vanderbilt on SEC availability report",
+      "excerpt": "Wide receiver Vernell Brown III and tight end Lacota Dippre are among five Gators out for Saturday's home finale. Vanderbilt lists nine players out, including quarterback Blaze Berlowitz.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-lists-five-players-out-for-vanderbilt-on-sec-availability-report",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-20T21:54:56Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2503400ea63241218aeba9371e09b857~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida lists five players out for Vanderbilt on SEC availability report"
+      }
+    },
+    {
       "title": "The Soothsayer: Improved defense will carry Gators to 7th win",
       "excerpt": "Franz Beard: Florida's defense has found a formula over the last four games, and that is why the Soothsayer sees a seventh win Saturday against Vanderbilt.",
       "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida flips running back Terrance Grant Jr. from Maryland, loses Cain Van Norden"
-      }
-    },
-    {
-      "title": "Florida men's basketball signs Ian Condon and Kamsi Awaka",
-      "excerpt": "Ian Condon and Kamsi Awaka are Florida's two 2027 signees as the early signing period ends Wednesday, Nov. 18, according to ESPN.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-men-s-basketball-signs-ian-condon-and-kamsi-awaka",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-18T17:27:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_7f3b9705e7724c9399a61abcaa460209~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida men's basketball signs Ian Condon and Kamsi Awaka"
       }
     }
   ]

@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-19T21:22:27.841Z",
+ "generatedAt": "2026-11-20T02:59:01.065Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-19T21:22:27.841Z",
+  "checkedAt": "2026-11-20T02:59:01.065Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Senior Day at Florida: A Goodbye We're Not Quite Ready To Say Yet",
-   "link": "https://www.gatorbaitmedia.com/post/senior-day-at-florida-a-goodbye-we-re-not-quite-ready-to-say-goodbye-to-yet",
-   "publishedAt": "2026-11-19T17:43:58.000Z"
+   "title": "Opportunity knocks, Gators answer against West Virginia",
+   "link": "https://www.gatorbaitmedia.com/post/opportunity-knocks-gators-answer-against-west-virginia",
+   "publishedAt": "2026-11-20T02:54:28.000Z"
   },
   "problems": []
  },
@@ -25,19 +25,17 @@
    "id": "espn-ncf",
    "source": "ESPN",
    "label": "ESPN college football headlines",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 12
   },
   {
    "id": "espn-sec",
    "source": "ESPN",
    "label": "ESPN college football headlines that name an SEC team",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 4
   },
   {
    "id": "floridagators",
@@ -49,5 +47,97 @@
    "items": 0
   }
  ],
- "headlines": []
+ "headlines": [
+  {
+   "title": "Game Day Kickoff: Buying into Week 12 and appreciating Jeremiah Smith's greatness",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/page/gamedaykickoff111926/week-12-top-games-upsets-preview",
+   "publishedAt": "2026-11-20T00:59:35.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Conference title race, bowl game slots and one last CFP shot: Best bets for Week 12",
+   "source": "ESPN",
+   "link": "https://www.espn.com/espn/betting/story/_/id/50513003/college-football-odds-best-bets-week-12-spreads-lines-2026",
+   "publishedAt": "2026-11-20T00:59:35.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Georgia AG encourages SEC to take 'action' vs. LSU, 'including expulsion'",
+   "source": "ESPN",
+   "link": "https://www.espn.com/mens-college-basketball/story/_/id/50524054/georgia-ag-asks-sec-take-action-vs-lsu-expulsion",
+   "publishedAt": "2026-11-20T00:38:44.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Michigan WR Marsh facing misdemeanor indecent exposure charge",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50533990/michigan-wr-marsh-facing-misdemeanor-indecent-exposure-charge",
+   "publishedAt": "2026-11-20T00:38:43.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Agents push back against 'fundamentally unfair' SEC standardized player contracts",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50535591/sec-standardized-nil-contracts-unfair-players-agents-say",
+   "publishedAt": "2026-11-20T00:38:43.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Waiver grants Army, Navy a 13th game in '27",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50535192/waiver-approved-army-navy-13th-game-2027",
+   "publishedAt": "2026-11-20T00:38:43.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Belichick, Kraft finalists once again for Pro Football Hall of Fame",
+   "source": "ESPN",
+   "link": "https://www.espn.com/nfl/story/_/id/50532254/belichick-kraft-finalists-again-pro-football-hall-fame",
+   "publishedAt": "2026-11-20T00:38:43.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Hall of Famer Ham returning to broadcast booth after health scare",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50532925/jack-ham-returning-broadcast-booth-health-scare",
+   "publishedAt": "2026-11-20T00:38:43.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "James Madison moves up timeline for switch from Sun Belt to American to '27",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50534149/james-madison-moving-american-conference-2027",
+   "publishedAt": "2026-11-20T00:38:43.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "New blood test has potential to detect CTE in the living, studies find",
+   "source": "ESPN",
+   "link": "https://www.espn.com/nfl/story/_/id/50532686/studies-blood-test-potential-detect-cte-living",
+   "publishedAt": "2026-11-20T00:38:43.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "🙃 Things go south in Carolina -- and we salute a Bottom 10 legend",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50519786/bottom-10-week-11-clemson-steve-harvey",
+   "publishedAt": "2026-11-20T00:38:43.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "What will Philip Rivers be like as a coach? A small Alabama high school holds the answers",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50514617/philip-rivers-nc-state-fairhope-alabama",
+   "publishedAt": "2026-11-20T00:29:09.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Anger Index: Why Texas Tech, Tennessee and the Group of 6 should be mad",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50510905/cfp-ranking-2026-anger-index-texas-tech",
+   "publishedAt": "2026-11-19T18:00:27.000Z",
+   "feed": "espn-sec"
+  }
+ ]
 }

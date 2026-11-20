@@ -1,7 +1,12 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-19T20:47:51.270Z",
+  "fetchedAt": "2026-11-20T09:35:34.115Z",
   "videos": [
+    {
+      "id": "8sTs8lHX4xw",
+      "title": "Why College Basketball Officiating Is Hurting the Game",
+      "published": "2026-11-20T02:01:31+00:00"
+    },
     {
       "id": "YEWn5c3UF2I",
       "title": "BRAD WHITE: \"GOOD EXECUTION ALL AROUND\"",
@@ -71,11 +76,6 @@
       "id": "ty-ZhSViYaE",
       "title": "SUMRALL: \"GIVE US $50 MILLION. WATCH OUT.\"",
       "published": "2026-11-16T17:22:38+00:00"
-    },
-    {
-      "id": "NCAHp3QJ5uE",
-      "title": "SUMRALL: \"I'M GONNA LOSE MY MIND\"",
-      "published": "2026-11-16T17:20:41+00:00"
     }
   ]
 }

@@ -23,7 +23,7 @@ const expected = {
   teams: ['Florida', 'Vanderbilt'],
   schedule: S.teams.map((t) => ({ name: t.name, rows: t.games.length, opponents: t.games.map((g) => g[2]), results: t.games.map((g) => g[4]) })),
   roster: R.teams.map((t) => ({ name: t.name, groups: t.groups.map((g) => g[0]), rows: t.groups.reduce((n, g) => n + g[1].length, 0), players: t.groups.flatMap((g) => g[1].map((p) => p[1])) })),
-  sections: ['#pg-cover', '#pg-game', '#pg-series', '#pg-numbers', '#pg-team-schedules', '#pg-tape', '#pg-injuries', '#pg-lead', '#pg-slate', '#pg-exclusives', '#pg-excl-1', '#pg-excl-2', '#pg-excl-3', '#pg-excl-4', '#pg-more', '#pg-team-rosters'],
+  sections: ['#pg-cover', '#pg-game', '#pg-series', '#pg-numbers', '#pg-team-schedules', '#pg-tape', '#pg-injuries', '#pg-lead', '#pg-slate', '#pg-features', '#pg-feat-1', '#pg-feat-2', '#pg-feat-3', '#pg-feat-4', '#pg-exclusives', '#pg-excl-1', '#pg-excl-2', '#pg-excl-3', '#pg-excl-4', '#pg-more', '#pg-team-rosters'],
   absent: ['#pg-keys', '#pg-shots', '#pg-rosters'], // no Keys piece for this game, no photo mosaic, no collapsed roster (the availability report and the four issue stories were added Nov. 20)
   picks: issue.slate.games.length, cards: issue.cards.items.length,
 };
@@ -91,10 +91,10 @@ for (const [name, width, height] of [['320', 320, 800], ['390', 390, 844], ['430
     const jump = [...root.querySelectorAll('.pg-jump a')].map((a) => a.getAttribute('href'));
     return { scrollW: doc.scrollWidth, clientW: doc.clientWidth, over: wide(root).slice(0, 5).map(tag), sections: expected.sections.map((id) => !!root.querySelector(id)), absent: expected.absent.map((id) => !root.querySelector(id)),
       order: [...root.querySelectorAll('.pg-wrap > *, .pg-grid > *')].map((e) => e.id || e.className.split(' ')[0]).filter((x) => x !== 'pg-grid'),
-      sched, rost, schedMissing, rostMissing, jump, jumpOk: jump.length === 5 && jump.every((h) => !!root.querySelector(h)), jumpTop: root.querySelector('.pg-jump') ? Math.round(root.querySelector('.pg-jump').getBoundingClientRect().top + window.scrollY) : null,
+      sched, rost, schedMissing, rostMissing, jump, jumpOk: jump.length === 6 && jump.every((h) => !!root.querySelector(h)), jumpTop: root.querySelector('.pg-jump') ? Math.round(root.querySelector('.pg-jump').getBoundingClientRect().top + window.scrollY) : null,
       fonts, brokenNames, imgs: imgs.length, brokenImgs: imgs.filter((i) => !i.naturalWidth).length, noAlt: imgs.filter((i) => !(i.getAttribute('alt') || '').trim()).length, credits: root.querySelectorAll('.pg-cr').length,
       picks: root.querySelectorAll('#pg-slate .pg-pick').length, cards: root.querySelectorAll('#pg-more .pg-card').length, links: root.querySelectorAll('a[href]').length, count: root.querySelector('[data-pg-count]').textContent, h1: root.querySelectorAll('h1').length, height: root.scrollHeight,
-      bad: [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')).filter((h) => !/^(\/|#|https:\/\/www\.youtube\.com\/)/.test(h)), banned: /gator\s*-?\s*country/i.test(root.textContent), emDash: [...root.querySelectorAll('.pg-std, .pg-jump, .pg-game, .pg-series, .pg-numbers, .pg-tape, .pg-cover, .pg-inj, .pg-excl')].filter((e) => e.textContent.indexOf('—') >= 0).length };
+      bad: [...root.querySelectorAll('a[href]')].map((a) => a.getAttribute('href')).filter((h) => !/^(\/|#|https:\/\/www\.youtube\.com\/)/.test(h)), banned: /gator\s*-?\s*country/i.test(root.textContent), emDash: [...root.querySelectorAll('.pg-std, .pg-jump, .pg-game, .pg-series, .pg-numbers, .pg-tape, .pg-cover, .pg-inj, #pg-exclusives')].filter((e) => e.textContent.indexOf('—') >= 0).length };
   }, expected);
   // Screenshots: the top of the issue, each standard on its own, and the whole page in slices (one tall image would be unreadable).
   const shots = [];

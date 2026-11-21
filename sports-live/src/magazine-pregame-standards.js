@@ -29,6 +29,7 @@
     if (pgStdSchedTeams(D).length && text(S.jump, 30)) links.push('<a href="#pg-team-schedules">' + esc(text(S.jump, 30)) + '</a>');
     // Page order: the schedules, the availability report, the magazine-only stories, then the rosters.
     if (text((obj(D.injuries) || {}).jump, 30)) links.push('<a href="#pg-injuries">' + esc(text(D.injuries.jump, 30)) + '</a>');
+    if (pgStoryItems(D.features).length && text(D.features.jump, 30)) links.push('<a href="#pg-features">' + esc(text(D.features.jump, 30)) + '</a>');
     if (pgExclItems(D).length && text(D.exclusives.jump, 30)) links.push('<a href="#pg-exclusives">' + esc(text(D.exclusives.jump, 30)) + '</a>');
     pgStdRosterTeams(D).forEach(function (t) { if (text(t.jump, 30)) links.push('<a href="#' + pgStdId('pg-rt-', t.name) + '">' + esc(text(t.jump, 30)) + '</a>'); });
     return links.length ? '<nav class="pg-jump" aria-label="' + esc(label) + '"><b>' + esc(label) + '</b>' + links.join('') + '</nav>' : '';
@@ -67,15 +68,20 @@
    * not posts on the site, laid out like the lead column. Opt-in by data, same as the standards above:
    *   exclusives = { label, note, jump, items: [{ kicker, title, dek, author, date, html, image, caption }] }
    * html is issue copy and keeps only the tags the lead column keeps (p, a, strong, em, blockquote, h3), with site-relative links. */
-  function pgExclItems(D) {
-    var X = obj(D.exclusives);
+  // Two blocks of full stories share one shape and one renderer: issue.features (the writers' own pieces, word for word as
+  // published, ids pg-feat-N) and issue.exclusives (stories written for the issue, ids pg-excl-N). A story may run without a photo.
+  function pgStoryItems(X) {
+    X = obj(X);
     return X ? list(X.items, 6).map(obj).filter(function (s) { return s && text(s.title, 200) && text(s.html, 20000); }) : [];
   }
-  function pgExclusives(D) {
-    var X = obj(D.exclusives), items = pgExclItems(D);
+  function pgExclItems(D) { return pgStoryItems(D.exclusives); }
+  function pgExclusives(D) { return pgStories(D.exclusives, 'pg-exclusives', 'pg-excl-'); }
+  function pgFeatures(D) { return pgStories(D.features, 'pg-features', 'pg-feat-'); }
+  function pgStories(X, secId, prefix) {
+    X = obj(X); var items = pgStoryItems(X);
     if (!items.length) return '';
-    return '<section class="pg-excl" id="pg-exclusives" aria-labelledby="pg-exclusives-t">' + pgHeadSec('pg-exclusives', text(X.label, 40), text(X.note, 160)) + items.map(function (s, i) {
-      var id = 'pg-excl-' + (i + 1), fig = frame(s.image, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' });
+    return '<section class="pg-excl" id="' + secId + '" aria-labelledby="' + secId + '-t">' + pgHeadSec(secId, text(X.label, 40), text(X.note, 160)) + items.map(function (s, i) {
+      var id = prefix + (i + 1), fig = frame(s.image, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' });
       var clean = String(s.html).replace(/<(?!\/?(?:p|a|strong|em|blockquote|h3)\b)[^>]*>/gi, '').replace(/<a\b(?![^>]*href="\/)[^>]*>/gi, '<a>');
       return '<article class="pg-lead pg-feature" id="' + id + '" aria-labelledby="' + id + '-h"><header><span class="pg-kick">' + esc(text(s.kicker, 80)) + '</span><h2 id="' + id + '-h">' + esc(text(s.title, 200)) + '</h2>' +
         (text(s.dek, 300) ? '<p class="pg-dek">' + esc(text(s.dek, 300)) + '</p>' : '') + '<p class="pg-by">By ' + esc(text(s.author, 60)) + (text(s.date, 40) ? ' \u00b7 ' + esc(text(s.date, 40)) : '') + '</p></header>' +

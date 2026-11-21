@@ -1,11 +1,11 @@
 {
   "season": 2026,
   "team": "Florida",
-  "updated": "2026-11-21T01:00:00Z",
-  "updatedLabel": "Nov. 20, 2026, 8 p.m. ET",
+  "updated": "2026-11-21T14:30:00Z",
+  "updatedLabel": "Nov. 21, 2026, 9:30 a.m. ET",
   "availability": {
-    "label": "SEC availability report for Vanderbilt at Florida (Nov. 21, noon ET, SEC Network), Thursday update: five Gators out, Dijon Johnson doubtful, Bailey Stockton and Bryce Thornton questionable. The report updates again Friday night and 90 minutes before kickoff.",
-    "asOf": "Nov. 19, 2026"
+    "label": "SEC availability report for Vanderbilt at Florida (Nov. 21, noon ET, SEC Network), Friday update: six Gators out; Bailey Stockton and Bryce Thornton probable. The final report is due 90 minutes before kickoff.",
+    "asOf": "Nov. 20, 2026"
   },
   "status": {
     "Vernell Brown III": {
@@ -44,25 +44,25 @@
       "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
     },
     "Dijon Johnson": {
-      "status": "doubtful",
-      "label": "Doubtful",
-      "note": "Listed doubtful for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
-      "date": "Nov. 19",
-      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+      "status": "out",
+      "label": "Out",
+      "note": "Listed out for Vanderbilt on the SEC availability report as updated Friday, Nov. 20, after being listed doubtful on Thursday, as published by Hail Florida Hail.",
+      "date": "Nov. 20",
+      "src": "https://hailfloridahail.com/florida-vs-vanderbilt-how-to-watch-weather-injuries-odds-announcers-and-more"
     },
     "Bailey Stockton": {
-      "status": "questionable",
-      "label": "Questionable",
-      "note": "Listed questionable for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire. Sumrall: \"I'd be shocked if he doesn't play,\" Gators Wire reported.",
-      "date": "Nov. 19",
-      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+      "status": "probable",
+      "label": "Probable",
+      "note": "Listed probable for Vanderbilt on the SEC availability report as updated Friday, Nov. 20, up from questionable, as published by Hail Florida Hail. Sumrall earlier in the week: \"I'd be shocked if he doesn't play,\" Gators Wire reported.",
+      "date": "Nov. 20",
+      "src": "https://hailfloridahail.com/florida-vs-vanderbilt-how-to-watch-weather-injuries-odds-announcers-and-more"
     },
     "Bryce Thornton": {
-      "status": "questionable",
-      "label": "Questionable",
-      "note": "Listed questionable for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
-      "date": "Nov. 19",
-      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+      "status": "probable",
+      "label": "Probable",
+      "note": "Listed probable for Vanderbilt on the SEC availability report as updated Friday, Nov. 20, up from questionable, as published by Hail Florida Hail.",
+      "date": "Nov. 20",
+      "src": "https://hailfloridahail.com/florida-vs-vanderbilt-how-to-watch-weather-injuries-odds-announcers-and-more"
     },
     "Tramell Jones Jr.": {
       "status": "limited",

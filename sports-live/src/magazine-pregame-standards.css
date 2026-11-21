@@ -75,3 +75,4 @@
 #gbm-magazine-page.pg .pg-excl .pg-sh+.pg-lead{margin-top:18px}
 #gbm-magazine-page.pg .pg-excl .pg-lead h2{font-size:clamp(28px,7vw,46px)}
 #gbm-magazine-page.pg .pg-st[data-s="doubtful"]{background:#7a4310;color:#ffdcae}
+#gbm-magazine-page.pg .pg-st[data-s="probable"]{background:#14532d;color:#c9f7d5}

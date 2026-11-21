@@ -56,7 +56,7 @@ function newsRuntime(code) {
 // Pregame standards: a jump strip under the cover, the schedules ahead of the tale of the tape, the rosters after the story cards.
 function standardsRuntime(code) {
   const swaps = [["pgCover(D) + '<div class=\"pg-grid\">'", "pgCover(D) + pgStdNav(D) + '<div class=\"pg-grid\">'"], ['pgWatch(D) + pgTape(D)', 'pgWatch(D) + pgTeamSchedules(D) + pgTape(D)'], ['pgCards(D) + pgShots(D)', 'pgCards(D) + pgTeamRosters(D) + pgShots(D)'],
-    ['pgSlate(D) + pgCards(D)', 'pgSlate(D) + pgExclusives(D) + pgCards(D)']]; // magazine-only stories (issue.exclusives) between the Sooth Board and the story cards
+    ['pgSlate(D) + pgCards(D)', 'pgSlate(D) + pgFeatures(D) + pgExclusives(D) + pgCards(D)']]; // the writers' pieces in full (issue.features), then the magazine-only stories (issue.exclusives), between the Sooth Board and the story cards
   for (const [from, to] of swaps) { if (code.split(from).length !== 2) throw new Error('Pregame standards hook not found exactly once: ' + from); code = code.replace(from, to); }
   return code;
 }
@@ -69,7 +69,7 @@ const PM_SEL = '#gbm-magazine-page.pm';
 const MZ_SEL = '#gbm-magazine-page.mz26 '; // second token (tilde, absent from the CSS): 290 more repeats, ~6 KB
 const cssExpression = css.includes('`') || css.includes('~') ? JSON.stringify(css) :
   JSON.stringify(css.split(PM_SEL).join('`').split(MZ_SEL).join('~')) + '.split("~").join("' + MZ_SEL + '").split("`").join("' + PM_SEL + '")';
-const MAX_JS = (POSTGAME ? 212 : 192) * 1024; // pregame cap 184 -> 192 KB on Nov. 20 for the Vanderbilt edition: the availability report, four issue stories and their art, on top of both rosters and schedules (owner direction) // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
+const MAX_JS = (POSTGAME ? 212 : 216) * 1024; // pregame cap 192 -> 216 KB on Nov. 21 for the Vanderbilt game-day edition: four writers' pregame pieces in full (owner direction: "add all the pregame articles to that magazine") // pregame cap 184 -> 192 KB on Nov. 20 for the Vanderbilt edition: the availability report, four issue stories and their art, on top of both rosters and schedules (owner direction) // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
 
 // A Magazine edition gets one visual treatment for each source asset. Repeated art makes a
 // roundup feel accidentally templated, even when the same file arrives by a different Wix cut.

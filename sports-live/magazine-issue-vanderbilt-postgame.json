@@ -1,5 +1,5 @@
 {
- "$comment": "Vanderbilt postgame web edition (built Nov. 21, 2026): Florida 34, Vanderbilt 27, Senior Day, Ben Hill Griffin Stadium (ESPN event 401856748). Written by deploy/magazine-2026/postgame-vanderbilt/build_issue.py; every number is from ESPN at build time. No quotes: no transcript had arrived when this was built. Photos: Chris Spears, GatorBait Media, sent by the owner on Nov. 21; no player is named in alt text.",
+ "$comment": "Vanderbilt postgame web edition (built Nov. 21, 2026): Florida 34, Vanderbilt 27, Senior Day, Ben Hill Griffin Stadium (ESPN event 401856748). Written by deploy/magazine-2026/postgame-vanderbilt/build_issue.py; every number is from ESPN at build time. Quotes are verbatim from the UF/ASAP Sports transcripts of Nov. 21 (Jon Sumrall 172992, Myles Graham 172993, Aaron Philo 172994), forwarded by UF communications. Photos: Chris Spears, GatorBait Media, sent by the owner on Nov. 21; no player is named in alt text.",
  "id": "2026-11-21-postgame-vanderbilt",
  "layout": "postgame",
  "issue": {
@@ -37,7 +37,7 @@
    "Baugh's 10-yard run with 2:18 left wins it",
    "Graham's 57-yard fumble return",
    "Philo: 241 yards passing, two rushing touchdowns",
-   "Chris Spears' best shots from The Swamp"
+   "Sumrall: 'We are a train wreck at times'"
   ],
   "linesLabel": "Also inside",
   "lines": [
@@ -45,6 +45,7 @@
    "The halftime story and the quarter-by-quarter record",
    "By the numbers, score by score and the box score",
    "Game flow: how the lead changed hands",
+   "In their words: Sumrall, Philo and Graham",
    "Up next: Florida at Florida State, Friday, Nov. 27"
   ]
  },
@@ -93,6 +94,10 @@
     "label": "Game flow"
    },
    {
+    "id": "quotes",
+    "label": "In their words"
+   },
+   {
     "id": "next",
     "label": "Up next"
    }
@@ -116,6 +121,22 @@
      "width": 1280,
      "height": 854,
      "alt": "A close view of a Florida player in a blue No. 5 jersey shouting in celebration as a smiling teammate grabs his shoulder. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Reaction",
+    "author": "GatorBait Staff",
+    "title": "Sumrall after the comeback: 'We are a train wreck at times'",
+    "dek": "What Jon Sumrall, Aaron Philo and Myles Graham said after the 34-27 win.",
+    "url": "/post/sumrall-after-the-comeback-we-are-a-train-wreck-at-times",
+    "image": {
+     "id": "d3cfa5_e0ca5a0e7f14497998f30fde911a7f34",
+     "ext": "jpg",
+     "width": 1620,
+     "height": 1080,
+     "alt": "Florida coaches in headsets, one in an orange polo and white visor and one in a white Gators hoodie and blue cap, watch from the sideline with players and staff around them. Photo by Chris Spears, GatorBait Media.",
      "credit": "Photo by Chris Spears, GatorBait Media.",
      "uaa": false
     }
@@ -658,6 +679,43 @@
   "summary": "Line chart of Florida's win probability against Vanderbilt. It starts near 84%, is at 55% at halftime, falls as low as 46% in the third quarter and ends at 100% after Jadan Baugh's touchdown with 2:18 left and a fourth-down sack with 30 seconds left.",
   "source": "Win probability: ESPN. GatorBait Media graphic."
  },
+ "quotes": {
+  "kicker": "In their words",
+  "title": "Sumrall, Philo and Graham",
+  "dek": "From the postgame news conferences on Saturday, Nov. 21.",
+  "items": [
+   {
+    "text": "But we are a train wreck at times, but I love what we're trying to get done, and we're going to keep fighting, keep scratching, keep clawing until we get this thing right.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, postgame news conference, Nov. 21"
+   },
+   {
+    "text": "We won today, so it's not all wrong, but it ain't all right either.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, postgame news conference, Nov. 21"
+   },
+   {
+    "text": "If you tell that dude, hey, we need 10 yards, he's going to go get 10 yards.",
+    "who": "Jon Sumrall",
+    "role": "Florida coach, on Aaron Philo"
+   },
+   {
+    "text": "I told the guys at halftime, this isn't anything new to us.",
+    "who": "Aaron Philo",
+    "role": "Florida quarterback, postgame news conference, Nov. 21"
+   },
+   {
+    "text": "Yeah, he lying on me. I still got it at running back.",
+    "who": "Myles Graham",
+    "role": "Florida linebacker, on Sumrall's review of his touchdown return"
+   },
+   {
+    "text": "My mom was always telling me I need to get her one, I need to get her one, so I got her one.",
+    "who": "Myles Graham",
+    "role": "Florida linebacker, on his touchdown"
+   }
+  ]
+ },
  "next": {
   "kicker": "Up next",
   "title": "Florida at Florida State",
@@ -702,5 +760,5 @@
    "Photos by Chris Spears, GatorBait Media."
   ]
  },
- "asOf": "Score, scoring plays, box score, leaders and win probability: ESPN (event 401856748), final."
+ "asOf": "Score, scoring plays, box score, leaders and win probability: ESPN (event 401856748), final. Quotes: UF/ASAP Sports transcripts, Nov. 21."
 }

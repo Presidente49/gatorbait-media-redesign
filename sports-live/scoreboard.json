@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-17T08:08:00Z",
+ "updatedAt": "2026-11-21T20:15:06Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -34,7 +34,7 @@
    ]
   },
   "venue": "Kroger Field",
-  "recapUrl": "https://www.gatorbaitmedia.com/post/gatorbait-magazine-florida-21-kentucky-14-the-postgame-issue",
+  "recapUrl": null,
   "galleryUrl": null,
   "tape": {
    "totalYards": 330,
@@ -221,7 +221,7 @@
     "opp": 14
    },
    "tv": "ESPN",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/gatorbait-magazine-florida-21-kentucky-14-the-postgame-issue"
+   "storyUrl": null
   },
   {
    "eventId": "401856748",
@@ -230,7 +230,7 @@
    "opponentRank": null,
    "opponentRecord": "4-6",
    "home": true,
-   "status": "scheduled",
+   "status": "in-progress",
    "score": null,
    "tv": "SEC Network",
    "storyUrl": null
@@ -330,5 +330,15 @@
    "overall": "4-6"
   }
  ],
- "live": null
+ "live": {
+  "eventId": "401856748",
+  "clock": "1:55",
+  "period": 4,
+  "score": {
+   "fla": 34,
+   "opp": 27
+  },
+  "possession": "opp",
+  "lastPlay": "Timeout Vanderbilt, clock 01:55"
+ }
 }

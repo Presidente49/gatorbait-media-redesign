@@ -1,5 +1,5 @@
 {
- "$comment": "GatorBait Magazine, Pregame edition (Nov. 21, 2026: Vanderbilt at Florida). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; teamSchedules and teamRosters are the pregame standards (owner rule, Nov. 20), rendered by src/magazine-pregame-standards.js, which the bundler adds only when those keys are present. Numbers: ESPN event 401856748, ESPN team statistics, schedules and rosters, fetched Nov. 20. injuries is the SEC availability report (updated Nov. 19, as published by Gators Wire); exclusives are four GatorBait Staff stories written for this issue, rendered by pgExclusives in the standards file. No keys block (no Keys piece for this game on the site). No email or campaign send.",
+ "$comment": "GatorBait Magazine, Pregame edition (Nov. 21, 2026: Vanderbilt at Florida). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; teamSchedules and teamRosters are the pregame standards (owner rule, Nov. 20), rendered by src/magazine-pregame-standards.js, which the bundler adds only when those keys are present. Numbers: ESPN event 401856748, ESPN team statistics, schedules and rosters, fetched Nov. 21. injuries is the SEC availability report (Friday update, Nov. 20, as published by Hail Florida Hail); exclusives are four GatorBait Staff stories written for this issue, rendered by pgExclusives in the standards file. No keys block (no Keys piece for this game on the site). No email or campaign send.",
  "id": "2026-11-21-vanderbilt-at-florida",
  "layout": "pregame",
  "liveFeed": false,
@@ -11,7 +11,7 @@
   "tagline": "Independent Florida Gators coverage",
   "pageTitle": "GatorBait Magazine | Pregame: Vanderbilt at Florida | Nov. 21, 2026"
  },
- "asOf": "ESPN data as of Nov. 20, 2026. Kickoff, line and forecast can move before kickoff; each linked story keeps its own publication date.",
+ "asOf": "ESPN data as of Nov. 21, 2026. Kickoff, line and forecast can move before kickoff; each linked story keeps its own publication date.",
  "cover": {
   "kicker": "The Soothsayer · Franz Beard",
   "headline": "Improved defense will carry Gators to 7th win",
@@ -56,7 +56,7 @@
    },
    {
     "k": "Total",
-    "v": "45.5"
+    "v": "46.5"
    },
    {
     "k": "Moneyline",
@@ -65,11 +65,11 @@
   ],
   "predictor": {
    "label": "ESPN matchup predictor",
-   "florida": 84.7,
-   "missouri": 15.3
+   "florida": 84.6,
+   "missouri": 15.4
   },
   "source": "ESPN summary and pickcenter (DraftKings), event 401856748. Florida is No. 24 in the CFP rankings, No. 23 in the AP Top 25. Senior Day: Buddy Martin, Nov. 19.",
-  "forecast": "72°, 24% chance of rain, gusts to 12 mph (ESPN forecast)"
+  "forecast": "72°, 37% chance of rain, gusts to 9 mph (ESPN forecast)"
  },
  "series": {
   "label": "The series",
@@ -158,12 +158,12 @@
    {
     "value": "FLA -13.5",
     "label": "Florida, the line",
-    "note": "Total 45.5. DraftKings line via ESPN pickcenter, Nov. 20."
+    "note": "Total 46.5. DraftKings line via ESPN pickcenter, Nov. 21."
    },
    {
-    "value": "84.7%",
+    "value": "84.6%",
     "label": "ESPN predictor, Florida",
-    "note": "Vanderbilt at 15.3% in the ESPN matchup predictor."
+    "note": "Vanderbilt at 15.4% in the ESPN matchup predictor."
    },
    {
     "value": "10-2",
@@ -186,7 +186,7 @@
     "note": "Florida allows 127.3 on the ground."
    }
   ],
-  "source": "ESPN game summary, pickcenter, schedules and 2026 team statistics, Nov. 20."
+  "source": "ESPN game summary, pickcenter, schedules and 2026 team statistics, Nov. 21."
  },
  "teamSchedules": {
   "label": "The schedules",
@@ -232,12 +232,12 @@
     ]
    }
   ],
-  "source": "ESPN team schedules, Nov. 20, 2026. A ranking is the opponent's on game day, as ESPN lists it. Kickoffs are Eastern."
+  "source": "ESPN team schedules, Nov. 21, 2026. A ranking is the opponent's on game day, as ESPN lists it. Kickoffs are Eastern."
  },
  "tape": {
   "label": "Tale of the tape",
   "note": "Season, per game: 10 games each",
-  "source": "ESPN 2026 team statistics and game summary, Nov. 20 (penalty yards a game: season penalty yards over games played).",
+  "source": "ESPN 2026 team statistics and game summary, Nov. 21 (penalty yards a game: season penalty yards over games played).",
   "rows": [
    {
     "label": "Points scored",
@@ -314,7 +314,7 @@
  "injuries": {
   "label": "Availability report",
   "jump": "Injury report",
-  "asOf": "SEC availability report as updated Thursday, Nov. 19. The report updates again Friday night, with a final version 90 minutes before kickoff.",
+  "asOf": "SEC availability report as updated Friday, Nov. 20. The final version is due 90 minutes before kickoff.",
   "teams": [
    {
     "name": "Florida",
@@ -348,18 +348,20 @@
      {
       "pos": "CB",
       "name": "Dijon Johnson",
-      "status": "Doubtful"
+      "status": "Out",
+      "detail": "Moved from doubtful to out on Friday."
      },
      {
       "pos": "WR",
       "name": "Bailey Stockton",
-      "status": "Questionable",
-      "detail": "Sumrall: “I’d be shocked if he doesn’t play,” Gators Wire reported."
+      "status": "Probable",
+      "detail": "Up from questionable. Sumrall: “I’d be shocked if he doesn’t play,” Gators Wire reported."
      },
      {
       "pos": "S",
       "name": "Bryce Thornton",
-      "status": "Questionable"
+      "status": "Probable",
+      "detail": "Up from questionable."
      }
     ]
    },
@@ -414,7 +416,7 @@
     ]
    }
   ],
-  "source": "SEC availability report, updated Nov. 19, as published by Gators Wire on Nov. 20. Positions: ESPN rosters."
+  "source": "SEC availability report: Friday update as published by Hail Florida Hail on Nov. 21; earlier statuses per Gators Wire. Positions: ESPN rosters."
  },
  "exclusives": {
   "label": "Inside this issue",
@@ -426,7 +428,7 @@
     "title": "Home finale: Florida gets Vanderbilt with a seventh win in reach",
     "dek": "Senior Day, noon ET on SEC Network. Florida is a 13.5-point favorite, and both teams come in short-handed.",
     "author": "GatorBait Staff",
-    "date": "Nov. 20, 2026",
+    "date": "Nov. 21, 2026",
     "image": {
      "id": "ae876a_d5fa38d9c98c4bfeb982f4831abbce73",
      "ext": "jpg",
@@ -436,14 +438,14 @@
      "credit": "Photo courtesy of UAA."
     },
     "caption": "Jon Sumrall on the sideline during the 21-14 win at Kentucky on Nov. 14.",
-    "html": "<p>Florida (6-4, 4-4 SEC) plays its final home game of the season Saturday against Vanderbilt (4-6, 1-6), a noon ET kickoff on SEC Network. It is Senior Day at Ben Hill Griffin Stadium, and a win would be the Gators' seventh.</p><p>Florida is No. 24 in the College Football Playoff rankings and a 13.5-point favorite, with the total at 45.5, according to the DraftKings line listed by ESPN. ESPN's matchup predictor gives the Gators a 84.7% chance to win.</p><p>Florida's defense has tightened. The Gators have allowed 22.0 points a game over their last four after giving up 37.5 a game over the four before that.</p><p>Quarterback Aaron Philo has completed 126 of 180 passes for 1,486 yards with nine touchdowns and five interceptions. Jadan Baugh has run 178 times for 905 yards and 15 touchdowns, and Dallas Wilson has 38 catches for 483 yards and three scores. Jayden Woods leads the defense with six sacks, Myles Graham with 76 tackles.</p><p>Vanderbilt averages 21.3 points a game and allows 28.6; Florida averages 31.3 and allows 26.2. Freshman quarterback Jared Curtis has thrown for 1,880 yards with eight touchdowns and eight interceptions, and Junior Sherrill has 63 catches for 847 yards and four touchdowns. Bryan Longwell leads the Commodores with 73 tackles and Issa Ouattara with four sacks.</p><p>Both teams are short-handed. Florida listed five players out on the SEC availability report as updated Thursday, among them wide receiver Vernell Brown III and tight end Lacota Dippre, and Vanderbilt listed nine. The full lists are in the availability report in this issue.</p><p>Florida has won 10 of the 12 meetings since 2012, including the last one, 38-14 in Gainesville on Oct. 7, 2023.</p><p>After Saturday: Florida at Florida State, Friday, Nov. 27, 3:30 p.m. ET on ABC.</p><p><em>Records, statistics, line and predictor: ESPN, Nov. 20. Availability: SEC report, updated Nov. 19, as published by Gators Wire.</em></p>"
+    "html": "<p>Florida (6-4, 4-4 SEC) plays its final home game of the season Saturday against Vanderbilt (4-6, 1-6), a noon ET kickoff on SEC Network. It is Senior Day at Ben Hill Griffin Stadium, and a win would be the Gators' seventh.</p><p>Florida is No. 24 in the College Football Playoff rankings and a 13.5-point favorite, with the total at 46.5, according to the DraftKings line listed by ESPN. ESPN's matchup predictor gives the Gators a 84.6% chance to win.</p><p>Florida's defense has tightened. The Gators have allowed 22.0 points a game over their last four after giving up 37.5 a game over the four before that.</p><p>Quarterback Aaron Philo has completed 126 of 180 passes for 1,486 yards with nine touchdowns and five interceptions. Jadan Baugh has run 178 times for 905 yards and 15 touchdowns, and Dallas Wilson has 38 catches for 483 yards and three scores. Jayden Woods leads the defense with six sacks, Myles Graham with 76 tackles.</p><p>Vanderbilt averages 21.3 points a game and allows 28.6; Florida averages 31.3 and allows 26.2. Freshman quarterback Jared Curtis has thrown for 1,880 yards with eight touchdowns and eight interceptions, and Junior Sherrill has 63 catches for 847 yards and four touchdowns. Bryan Longwell leads the Commodores with 73 tackles and Issa Ouattara with four sacks.</p><p>Both teams are short-handed. Florida listed six players out on the SEC availability report as updated Friday, among them wide receiver Vernell Brown III and tight end Lacota Dippre, and Vanderbilt listed nine. The full lists are in the availability report in this issue.</p><p>Florida has won 10 of the 12 meetings since 2012, including the last one, 38-14 in Gainesville on Oct. 7, 2023.</p><p>After Saturday: Florida at Florida State, Friday, Nov. 27, 3:30 p.m. ET on ABC.</p><p><em>Records, statistics, line and predictor: ESPN, Nov. 21. Availability: SEC report, updated Nov. 20, as published by Hail Florida Hail.</em></p>"
    },
    {
     "kicker": "Availability report",
-    "title": "Five Gators out, nine Commodores out for the home finale",
-    "dek": "Vernell Brown III and Lacota Dippre are among the Florida players listed out. Vanderbilt will be without nine.",
+    "title": "Six Gators out, nine Commodores out for the home finale",
+    "dek": "Vernell Brown III, Lacota Dippre and Dijon Johnson are among the Florida players listed out. Vanderbilt will be without nine.",
     "author": "GatorBait Staff",
-    "date": "Nov. 20, 2026",
+    "date": "Nov. 21, 2026",
     "image": {
      "id": "ae876a_93ffb4fa4f24421d8e65a421b14bd42f",
      "ext": "jpg",
@@ -453,14 +455,14 @@
      "credit": "Photo courtesy of UAA."
     },
     "caption": "Dallas Wilson (6), Florida's leading receiver, celebrates with quarterback Aaron Philo at Kentucky.",
-    "html": "<p>Florida will be without five players Saturday against Vanderbilt, including wide receiver Vernell Brown III and tight end Lacota Dippre, according to the SEC availability report as updated Thursday night.</p><p>Offensive lineman Emeka Ugorji, linebacker Jaden Robinson and safety DJ Coleman are also listed out. Cornerback Dijon Johnson is doubtful, and wide receiver Bailey Stockton and safety Bryce Thornton are questionable.</p><p>Coach Jon Sumrall called Dippre's injury “pretty substantial” on Monday, Gators Wire reported. Of Stockton, Sumrall said, “I’d be shocked if he doesn’t play.”</p><p>Dallas Wilson leads Florida with 38 catches for 483 yards and three touchdowns, according to ESPN.</p><p>Vanderbilt listed nine players out: quarterback Blaze Berlowitz, cornerback Cobey Sellers, edge rusher Edwin Kolenge, linebackers Josiah Broxton and Daniel Vollmer Jr., running back Evan Hampton, defensive lineman Aaron Bryant and offensive linemen Gunner Givens and Ted Gregoire. Edge rusher Miles Capers came off the list Thursday, a sign he is cleared to play, Gators Wire reported.</p><p>The SEC updates the report again Friday night and posts a final version 90 minutes before kickoff. The full lists are in the availability report in this issue.</p><p><em>Player statuses: SEC availability report, updated Nov. 19, as published by Gators Wire on Nov. 20. Positions and statistics: ESPN.</em></p>"
+    "html": "<p>Florida will be without six players Saturday against Vanderbilt, including wide receiver Vernell Brown III and tight end Lacota Dippre, according to the SEC availability report as updated Friday night.</p><p>Offensive lineman Emeka Ugorji, linebacker Jaden Robinson and safety DJ Coleman are also listed out, and cornerback Dijon Johnson moved from doubtful to out on Friday. Wide receiver Bailey Stockton and safety Bryce Thornton moved from questionable to probable.</p><p>Coach Jon Sumrall called Dippre's injury “pretty substantial” on Monday, Gators Wire reported. Of Stockton, Sumrall said, “I’d be shocked if he doesn’t play.”</p><p>Dallas Wilson leads Florida with 38 catches for 483 yards and three touchdowns, according to ESPN.</p><p>Vanderbilt listed nine players out: quarterback Blaze Berlowitz, cornerback Cobey Sellers, edge rusher Edwin Kolenge, linebackers Josiah Broxton and Daniel Vollmer Jr., running back Evan Hampton, defensive lineman Aaron Bryant and offensive linemen Gunner Givens and Ted Gregoire. Edge rusher Miles Capers came off the list Thursday, a sign he is cleared to play, Gators Wire reported.</p><p>The SEC posts a final version of the report 90 minutes before kickoff. The full lists are in the availability report in this issue.</p><p><em>Player statuses: SEC availability report, Friday update as published by Hail Florida Hail on Nov. 21; earlier statuses and quotes as published by Gators Wire. Positions and statistics: ESPN.</em></p>"
    },
    {
     "kicker": "Basketball · Wooden Award",
     "title": "Three Gators make the Wooden Award preseason Top 50",
     "dek": "Thomas Haugh, Alex Condon and Rueben Chinyelu are on the men's watch list. Kiyomi McMiller is on the women's.",
     "author": "GatorBait Staff",
-    "date": "Nov. 20, 2026",
+    "date": "Nov. 21, 2026",
     "image": {
      "id": "d3cfa5_00121cc44e254a40a9a887b5d0d1351e",
      "ext": "jpg",
@@ -477,7 +479,7 @@
     "title": "Early bowl projections keep Florida in the state",
     "dek": "Sports Illustrated has the Gators against Nebraska in Tampa. CBS Sports has them against SMU in the Gator Bowl.",
     "author": "GatorBait Staff",
-    "date": "Nov. 20, 2026",
+    "date": "Nov. 21, 2026",
     "image": {
      "id": "ae876a_5917eb4e36404c5daba6ddb47d5e9ef2",
      "ext": "jpg",
@@ -512,7 +514,7 @@
  "slate": {
   "label": "The Sooth Board",
   "note": "Nine of Saturday's SEC games with Franz Beard's picks",
-  "source": "Kickoffs (Eastern), TV, records and lines: ESPN, Nov. 20. Rankings: College Football Playoff. Picks and the words beside them: Franz Beard.",
+  "source": "Kickoffs (Eastern), TV, records and lines: ESPN, Nov. 21. Rankings: College Football Playoff. Picks and the words beside them: Franz Beard.",
   "games": [
    {
     "time": "Noon",
@@ -529,7 +531,7 @@
     "line": "FLA -13.5",
     "pick": "Florida",
     "note": "Three touchdowns should get the job done",
-    "ou": 45.5,
+    "ou": 46.5,
     "hero": true
    },
    {
@@ -564,7 +566,7 @@
     "line": "ALA -48.5",
     "pick": "Alabama",
     "note": "Dial-a-score",
-    "ou": 58.5
+    "ou": 57.5
    },
    {
     "time": "3:30 p.m.",
@@ -1040,7 +1042,7 @@
     ]
    }
   ],
-  "source": "ESPN team rosters, Nov. 20, 2026. Class, height, weight and hometown are ESPN's listings, with place names in AP style."
+  "source": "ESPN team rosters, Nov. 21, 2026. Class, height, weight and hometown are ESPN's listings, with place names in AP style."
  },
  "reference": {
   "label": "Reference desk",

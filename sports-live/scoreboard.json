@@ -1,75 +1,75 @@
 {
- "updatedAt": "2026-11-21T20:15:06Z",
+ "updatedAt": "2026-11-21T22:55:56Z",
  "season": 2026,
  "team": {
   "name": "Florida",
   "rank": 23,
-  "record": "6-4",
-  "conf": "4-4"
+  "record": "7-4",
+  "conf": "5-4"
  },
  "last": {
-  "eventId": "401856884",
-  "opponent": "Kentucky",
-  "opponentRank": 11,
-  "home": false,
+  "eventId": "401856748",
+  "opponent": "Vanderbilt",
+  "opponentRank": null,
+  "home": true,
   "neutral": false,
-  "date": "2026-11-14T23:15:00Z",
+  "date": "2026-11-21T17:00:00Z",
   "status": "final",
   "score": {
-   "fla": 21,
-   "opp": 14
+   "fla": 34,
+   "opp": 27
   },
   "quarters": {
    "fla": [
-    0,
-    2,
-    11,
-    8
+    3,
+    14,
+    7,
+    10
    ],
    "opp": [
-    7,
+    3,
+    21,
     0,
-    7,
-    0
+    3
    ]
   },
-  "venue": "Kroger Field",
+  "venue": "Ben Hill Griffin Stadium",
   "recapUrl": null,
   "galleryUrl": null,
   "tape": {
-   "totalYards": 330,
-   "rushingYards": 211,
-   "firstDowns": 19,
-   "attendance": 61866
+   "totalYards": 411,
+   "rushingYards": 170,
+   "firstDowns": 23,
+   "attendance": 88025
   },
   "leaders": [
    [
     "Passing Yards",
     "Aaron Philo",
-    "16/24, 119 YDS"
+    "20/26, 241 YDS"
    ],
    [
     "Rushing Yards",
-    "Aaron Philo",
-    "15 CAR, 102 YDS, 1 TD"
+    "Jadan Baugh",
+    "19 CAR, 76 YDS, 1 TD"
    ],
    [
     "Receiving Yards",
-    "Bailey Stockton",
-    "4 REC, 34 YDS"
+    "Eric Singleton Jr.",
+    "6 REC, 117 YDS"
    ]
   ]
  },
  "next": {
-  "eventId": "401856748",
-  "opponent": "Vanderbilt",
+  "eventId": "401856759",
+  "opponent": "Florida State",
   "opponentRank": null,
-  "opponentRecord": "4-6",
-  "home": true,
+  "opponentRecord": "5-5",
+  "home": false,
   "neutral": false,
-  "kickoffIso": "2026-11-21T17:00:00Z",
-  "tv": "SEC Network",
-  "venue": "Ben Hill Griffin Stadium",
+  "kickoffIso": "2026-11-27T20:30:00Z",
+  "tv": "ABC",
+  "venue": "Doak Campbell Stadium",
   "previewUrl": null
  },
  "schedule": [
@@ -228,10 +228,13 @@
    "date": "2026-11-21T17:00:00Z",
    "opponent": "Vanderbilt",
    "opponentRank": null,
-   "opponentRecord": "4-6",
+   "opponentRecord": "4-7",
    "home": true,
-   "status": "in-progress",
-   "score": null,
+   "status": "final",
+   "score": {
+    "fla": 34,
+    "opp": 27
+   },
    "tv": "SEC Network",
    "storyUrl": null
   },
@@ -240,7 +243,7 @@
    "date": "2026-11-27T20:30:00Z",
    "opponent": "Florida State",
    "opponentRank": null,
-   "opponentRecord": null,
+   "opponentRecord": "5-5",
    "home": false,
    "status": "scheduled",
    "score": null,
@@ -257,7 +260,7 @@
   {
    "team": "Alabama",
    "confRecord": "6-2",
-   "overall": "8-2"
+   "overall": "9-2"
   },
   {
    "team": "Tennessee",
@@ -280,17 +283,17 @@
    "overall": "6-4"
   },
   {
-   "team": "Auburn",
-   "confRecord": "4-4",
-   "overall": "6-4"
-  },
-  {
    "team": "Florida",
-   "confRecord": "4-4",
-   "overall": "6-4"
+   "confRecord": "5-4",
+   "overall": "7-4"
   },
   {
    "team": "Ole Miss",
+   "confRecord": "4-4",
+   "overall": "7-4"
+  },
+  {
+   "team": "Auburn",
    "confRecord": "4-4",
    "overall": "6-4"
   },
@@ -317,7 +320,7 @@
   {
    "team": "Mississippi State",
    "confRecord": "2-6",
-   "overall": "4-6"
+   "overall": "5-6"
   },
   {
    "team": "Texas A&M",
@@ -326,19 +329,9 @@
   },
   {
    "team": "Vanderbilt",
-   "confRecord": "1-6",
-   "overall": "4-6"
+   "confRecord": "1-7",
+   "overall": "4-7"
   }
  ],
- "live": {
-  "eventId": "401856748",
-  "clock": "1:55",
-  "period": 4,
-  "score": {
-   "fla": 34,
-   "opp": 27
-  },
-  "possession": "opp",
-  "lastPlay": "Timeout Vanderbilt, clock 01:55"
- }
+ "live": null
 }

@@ -301,6 +301,13 @@ def card(k, d, title, url, ex, img=None):
 # stories (Oklahoma-game file photos), Buddy Martin's Nov. 17 column (its cover looks like the Sept. 26 Ole Miss game, which is
 # banned), the Philo video-still story and the Thoughts of the Day (a basketball photo) run as text cards.
 cards = [
+ # Game-day pieces published Nov. 21 and late Nov. 20. Text cards: their covers already run elsewhere in this issue.
+ card('Loren Meadows · Analysis', 'Nov. 21', 'Pregame Analysis: No. 24 Florida Gators (6-4, 4-4) vs. Vanderbilt Commodores (4-6, 1-6)', '/post/pregame-analysis-no-24-florida-gators-6-4-4-4-vs-vanderbilt-commodores-4-6-1-6',
+      "Jon Sumrall looks to lead the Gators to their first winning record in the SEC since 2020. Loren Meadows on Vanderbilt's offense and defense, the matchups to watch and his prediction."),
+ card('Eddie Gilley · Game day', 'Nov. 21', '4 Crucial Areas To Watch: Florida vs. Vanderbilt', '/post/4-crucial-areas-to-watch-florida-vs-vanderbilt',
+      "Eddie Gilley's four things to watch before Florida hosts Vanderbilt at noon: the weather, the turf, the cleats and the atmosphere in the Swamp."),
+ card('Buddy Martin · Column', 'Nov. 20', 'Two Games To Change the Story. One Saturday Is Not A Turnaround.', '/post/two-games-to-change-the-story',
+      "Beat Vanderbilt. Then beat Florida State. Do that, and Jon Sumrall's first Florida team might be remembered less for where it stumbled than for where it found its footing."),
  card('Buddy Martin · Column', 'Nov. 19', "Senior Day at Florida: A Goodbye We're Not Quite Ready To Say Yet", '/post/senior-day-at-florida-a-goodbye-we-re-not-quite-ready-to-say-goodbye-to-yet',
       'The seniors get their names called Saturday at The Swamp. The rest of us have to figure out when to say goodbye.',
       pic('ae876a_b592a7d28a984e12858c09a4b0ebb45e', 'jpg', 812, 1000, 'A vintage black-and-white photo of a football player in a No. 37 jersey running with the ball.', 'Photo courtesy of Doak Walker Award.')),

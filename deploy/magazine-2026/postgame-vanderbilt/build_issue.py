@@ -204,7 +204,7 @@ issue = {
   'source': 'Win probability: ESPN. GatorBait Media graphic.'},
  'quotes': {
   'kicker': 'In their words', 'title': 'Sumrall, Philo and Graham', 'dek': 'From the postgame news conferences on Saturday, Nov. 21.',
-  'items': [{'text': t, 'who': w_, 'role': r, 'url': REACTION, 'link': 'Read the reaction story'} for t, w_, r in QUOTES]},
+  'items': [{'text': t, 'who': w_, 'role': r} for t, w_, r in QUOTES]},  # no per-quote link: on the dark quote card the link text is navy on navy, and the reaction story is already in the game package
  'next': {
   'kicker': 'Up next', 'title': 'Florida at Florida State',
   'meta': ['Friday, Nov. 27', '3:30 p.m. ET', 'Doak Campbell Stadium, Tallahassee'],
@@ -232,7 +232,7 @@ for p in issue['scoring']['plays']: chk(p['when'], 16, 'when'); chk(p['play'], 1
 for r in issue['box']['rows']: [chk(x, 30, 'box row') for x in r]
 for t in issue['box']['leaders']: [chk(i[1], 160, 'leader') for i in t['items']]
 for m in issue['flow']['marks']: chk(m['title'], 20, 'mark title'); chk(m['note'], 160, 'mark note')
-for qi in issue['quotes']['items']: chk(qi['text'], 400, 'quote'); chk(qi['who'], 60, 'who'); chk(qi['role'], 120, 'role'); chk(qi['link'], 60, 'link')
+for qi in issue['quotes']['items']: chk(qi['text'], 400, 'quote'); chk(qi['who'], 60, 'who'); chk(qi['role'], 120, 'role')
 chk(issue['flow']['summary'], 600, 'flow summary'); chk(issue['next']['note'], 300, 'next note'); chk(issue['next']['pickem']['text'], 300, 'pickem')
 for it in issue['coverage']['items']: chk(it['title'], 200, 'title'); chk(it['dek'], 400, 'dek')
 ids = [issue['cover']['image']['id']] + [it['image']['id'] for it in issue['coverage']['items']]

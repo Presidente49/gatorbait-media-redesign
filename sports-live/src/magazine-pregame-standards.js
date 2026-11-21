@@ -26,6 +26,7 @@
   function pgStdNav(D) {
     var S = obj(D.teamSchedules) || {}, R = obj(D.teamRosters) || {}, label = text(S.navLabel, 30) || text(R.navLabel, 30), links = [];
     if (!label) return '';
+    if (pgShotsTop(D) && text(D.shots.jump, 30)) links.push('<a href="#pg-shots">' + esc(text(D.shots.jump, 30)) + '</a>');
     if (pgStdSchedTeams(D).length && text(S.jump, 30)) links.push('<a href="#pg-team-schedules">' + esc(text(S.jump, 30)) + '</a>');
     // Page order: the schedules, the availability report, the magazine-only stories, then the rosters.
     if (text((obj(D.injuries) || {}).jump, 30)) links.push('<a href="#pg-injuries">' + esc(text(D.injuries.jump, 30)) + '</a>');
@@ -68,6 +69,10 @@
    * not posts on the site, laid out like the lead column. Opt-in by data, same as the standards above:
    *   exclusives = { label, note, jump, items: [{ kicker, title, dek, author, date, html, image, caption }] }
    * html is issue copy and keeps only the tags the lead column keeps (p, a, strong, em, blockquote, h3), with site-relative links. */
+  // Game day (Nov. 21, 2026): an issue whose shots block says top: true runs the photo mosaic right under the jump strip instead of at
+  // the end of the page. The mosaic itself is the layout's own pgShots; these two only choose where it goes.
+  function pgShotsTop(D) { var B = obj(D.shots); return B && B.top ? pgShots(D) : ''; }
+  function pgShotsEnd(D) { var B = obj(D.shots); return B && B.top ? '' : pgShots(D); }
   // Two blocks of full stories share one shape and one renderer: issue.features (the writers' own pieces, word for word as
   // published, ids pg-feat-N) and issue.exclusives (stories written for the issue, ids pg-excl-N). A story may run without a photo.
   function pgStoryItems(X) {

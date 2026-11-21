@@ -55,7 +55,8 @@ function newsRuntime(code) {
 }
 // Pregame standards: a jump strip under the cover, the schedules ahead of the tale of the tape, the rosters after the story cards.
 function standardsRuntime(code) {
-  const swaps = [["pgCover(D) + '<div class=\"pg-grid\">'", "pgCover(D) + pgStdNav(D) + '<div class=\"pg-grid\">'"], ['pgWatch(D) + pgTape(D)', 'pgWatch(D) + pgTeamSchedules(D) + pgTape(D)'], ['pgCards(D) + pgShots(D)', 'pgCards(D) + pgTeamRosters(D) + pgShots(D)'],
+  const swaps = [["pgCover(D) + '<div class=\"pg-grid\">'", "pgCover(D) + pgStdNav(D) + pgShotsTop(D) + '<div class=\"pg-grid\">'"], ['pgWatch(D) + pgTape(D)', 'pgWatch(D) + pgTeamSchedules(D) + pgTape(D)'], ['pgCards(D) + pgShots(D)', 'pgCards(D) + pgTeamRosters(D) + pgShotsEnd(D)'],
+    ["'\">Read the column</a></div>'", "'\">' + esc(text(C.cta, 30) || 'Read the column') + '</a></div>'"], // the cover button can carry its own label (cover.cta), e.g. "Live updates" on game day
     ['pgSlate(D) + pgCards(D)', 'pgSlate(D) + pgFeatures(D) + pgExclusives(D) + pgCards(D)']]; // the writers' pieces in full (issue.features), then the magazine-only stories (issue.exclusives), between the Sooth Board and the story cards
   for (const [from, to] of swaps) { if (code.split(from).length !== 2) throw new Error('Pregame standards hook not found exactly once: ' + from); code = code.replace(from, to); }
   return code;

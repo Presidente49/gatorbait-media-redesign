@@ -1,31 +1,32 @@
 {
- "$comment": "GatorBait Magazine, Pregame edition (Nov. 21, 2026: Vanderbilt at Florida). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; teamSchedules and teamRosters are the pregame standards (owner rule, Nov. 20), rendered by src/magazine-pregame-standards.js, which the bundler adds only when those keys are present. Numbers: ESPN event 401856748, ESPN team statistics, schedules and rosters, fetched Nov. 21. injuries is the SEC availability report (Friday update, Nov. 20, as published by Hail Florida Hail); features are the pregame pieces by the writers in full, read from their public posts at build time (pgFeatures); exclusives are four GatorBait Staff stories written for this issue (pgExclusives), both in the standards file. No keys block (no Keys piece for this game on the site). The build never sends mail.",
+ "$comment": "GatorBait Magazine, Pregame edition (Nov. 21, 2026: Vanderbilt at Florida). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; teamSchedules and teamRosters are the pregame standards (owner rule, Nov. 20), rendered by src/magazine-pregame-standards.js, which the bundler adds only when those keys are present. Numbers: ESPN event 401856748, ESPN team statistics, schedules and rosters, fetched Nov. 21. injuries is the SEC availability report (Friday update, Nov. 20, as published by Hail Florida Hail); features are the pregame pieces by the writers in full, read from their public posts at build time (pgFeatures); exclusives are four GatorBait Staff stories written for this issue (pgExclusives), both in the standards file. No keys block (no Keys piece for this game on the site). The build never sends mail. Game day edition: cover, shots and one card added by deploy/magazine-2026/pregame-vanderbilt/gameday_patch.py during the game (Nov. 21).",
  "id": "2026-11-21-vanderbilt-at-florida",
  "layout": "pregame",
  "liveFeed": false,
  "issue": {
-  "number": "Vanderbilt Pregame",
+  "number": "Vanderbilt Game Day",
   "name": "Vanderbilt at Florida",
   "date": "Saturday, Nov. 21, 2026",
   "week": "Week 12 · Noon ET · SEC Network · Ben Hill Griffin Stadium",
   "tagline": "Independent Florida Gators coverage",
-  "pageTitle": "GatorBait Magazine | Pregame: Vanderbilt at Florida | Nov. 21, 2026"
+  "pageTitle": "GatorBait Magazine | Game Day: Vanderbilt at Florida | Nov. 21, 2026"
  },
  "asOf": "ESPN data as of Nov. 21, 2026. Kickoff, line and forecast can move before kickoff; each linked story keeps its own publication date.",
  "cover": {
-  "kicker": "The Soothsayer · Franz Beard",
-  "headline": "Improved defense will carry Gators to 7th win",
-  "dek": "Florida has held its last four opponents to 22 points a game, and the Gators are 13.5-point favorites over Vanderbilt in the home finale. Franz Beard on the patience behind the defense's turnaround, with his picks across the SEC.",
-  "byline": "By Franz Beard",
-  "url": "/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
-  "directLink": false,
+  "kicker": "Game day · Live from the Swamp",
+  "headline": "Vanderbilt at Florida",
+  "dek": "The live score, Chris Spears' photos from the sideline, updates after every quarter, and the pregame reads from Franz Beard, Loren Meadows, Eddie Gilley and Buddy Martin.",
+  "byline": "By GatorBait Staff · Photos by Chris Spears",
+  "url": "/post/live-updates-vanderbilt-at-no-24-florida",
+  "directLink": true,
+  "cta": "Live updates",
   "image": {
-   "id": "ae876a_bb52ae6e52ea458c89c9844843ed96c0",
+   "id": "d3cfa5_a1369c76e7d548a5bb876f0db6aa4964",
    "ext": "jpg",
-   "width": 960,
-   "height": 640,
-   "alt": "Florida quarterback Aaron Philo (12) jogs across the field with teammates during the Nov. 14, 2026, win at Kentucky.",
-   "credit": "Photo courtesy University of Florida (UAA)."
+   "width": 1024,
+   "height": 684,
+   "alt": "A Florida player in a blue No. 16 jersey jumps with both arms raised near the goal line at Ben Hill Griffin Stadium on Nov. 21, 2026.",
+   "credit": "Photo by Chris Spears, GatorBait Media."
   }
  },
  "game": {
@@ -733,6 +734,13 @@
   "label": "More from Vanderbilt week",
   "items": [
    {
+    "kicker": "GatorBait Staff · Live",
+    "date": "Nov. 21",
+    "title": "Live updates: Vanderbilt at No. 24 Florida",
+    "url": "/post/live-updates-vanderbilt-at-no-24-florida",
+    "excerpt": "Every score, quarter by quarter, with photos by Chris Spears. Updated through the game."
+   },
+   {
     "kicker": "GatorBait Staff · Video",
     "date": "Nov. 18",
     "title": "The Week Gator Nation Couldn't Stop Watching",
@@ -1120,5 +1128,60 @@
    }
   ],
   "next": "Next up: Florida at Florida State, Friday, Nov. 27, 3:30 p.m. ET on ABC."
+ },
+ "shots": {
+  "label": "Game day in photos",
+  "note": "Chris Spears' pictures from the Swamp. Tap a photo for the live updates.",
+  "jump": "Photos",
+  "top": true,
+  "url": "/post/live-updates-vanderbilt-at-no-24-florida",
+  "credit": "Photos by Chris Spears, GatorBait Media.",
+  "photos": [
+   {
+    "id": "d3cfa5_6493cd82f7644858a7e27bc3b2d7ff34",
+    "ext": "jpg",
+    "width": 1024,
+    "height": 678,
+    "alt": "A Florida player in a blue No. 20 jersey, holding the ball, leaps over Vanderbilt defenders who are on the ground.",
+    "credit": "Photo by Chris Spears, GatorBait Media.",
+    "caption": "A Florida ball carrier leaps over Vanderbilt defenders."
+   },
+   {
+    "id": "d3cfa5_44f25c74ac5d4d889e0d38ecb35554ad",
+    "ext": "jpg",
+    "width": 1024,
+    "height": 648,
+    "alt": "Florida defenders in blue stand near a pile of Vanderbilt players at the line of scrimmage while one Florida player points a finger in the air.",
+    "credit": "Photo by Chris Spears, GatorBait Media.",
+    "caption": "Florida's defense at the line of scrimmage."
+   },
+   {
+    "id": "d3cfa5_1a44d3d034b54dda9c5e95423cad0585",
+    "ext": "jpg",
+    "width": 1620,
+    "height": 1080,
+    "alt": "A Florida player in a blue No. 12 jersey runs with the ball as a Vanderbilt defender in a white No. 24 jersey dives at him.",
+    "credit": "Photo by Chris Spears, GatorBait Media.",
+    "caption": "Florida's No. 12 runs as a Vanderbilt defender dives at him."
+   },
+   {
+    "id": "d3cfa5_ca8d11d57ffb4666bae9fbf448c89b79",
+    "ext": "jpg",
+    "width": 1112,
+    "height": 704,
+    "alt": "A Florida player in a blue No. 6 jersey runs with the ball past Vanderbilt defenders in white while an official looks on.",
+    "credit": "Photo by Chris Spears, GatorBait Media.",
+    "caption": "A Florida ball carrier runs past Vanderbilt defenders."
+   },
+   {
+    "id": "d3cfa5_0e90b67f0a844dbfa66be7bb2cda10d8",
+    "ext": "jpg",
+    "width": 1620,
+    "height": 1080,
+    "alt": "A Florida player in a blue No. 12 jersey carries the ball as a Vanderbilt defender dives at his feet, with the Swamp tunnel banner behind them.",
+    "credit": "Photo by Chris Spears, GatorBait Media.",
+    "caption": "Florida's No. 12 on the run in the Swamp."
+   }
+  ]
  }
 }

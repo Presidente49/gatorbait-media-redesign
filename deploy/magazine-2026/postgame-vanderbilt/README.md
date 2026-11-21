@@ -11,8 +11,12 @@ around the game story and the photo gallery. No list email.
   writes `sports-live/magazine-vanderbilt-postgame.js` (208,841 bytes against the 212 KB postgame cap) and the QA frame.
 - **Sections:** cover on the game story ("Baugh Control"), the final, the game package (Chris Spears' photo gallery, the halftime
   story, the quarter-by-quarter post), by the numbers, score by score, box score, the win-probability chart with six marks, and
-  the Florida State game. No columns, quotes, video or PDF sections: nothing had been filed and no transcript had arrived when
-  this was built. Add them by adding `columns`, `quotes` or `watch` to the issue and rebuilding.
+  the Florida State game. No columns, video or PDF sections: nothing had been filed. Add them by adding `columns` or `watch` to the issue and
+  rebuilding.
+- **Quotes (third build, Nov. 21 evening):** "In their words" carries six passages from the UF/ASAP Sports transcripts that UF
+  communications forwarded after the game (Jon Sumrall 172992, Myles Graham 172993, Aaron Philo 172994). Each was checked as an
+  exact substring of its transcript when it was added to `QUOTES` in the build script; the transcripts are not in the repo.
+  The reaction story built from the same transcripts joins the game package, and its Sumrall line replaces one cover teaser.
 - **Photos:** all Chris Spears, GatorBait Media, sent by the owner on Nov. 21. Cover `d3cfa5_a0d70648...` (the close-up of No. 5
   celebrating with a teammate; owner, Nov. 21: "This great picture should be the cover") is a crop of `d3cfa5_c51939d6...` made so
   the player stays centered on the 9:16 phone poster, and is not the cover of any story on the site. The first build ran

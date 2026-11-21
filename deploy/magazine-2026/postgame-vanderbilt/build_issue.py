@@ -100,10 +100,23 @@ assert low_q in ORD, low_q
 CR = 'Photo by Chris Spears, GatorBait Media.'
 def img(i, w, h, alt): return {'id': i, 'ext': 'jpg', 'width': w, 'height': h, 'alt': alt + ' ' + CR, 'credit': CR, 'uaa': False}
 STORY = '/post/baugh-control-no-24-florida-rallies-past-vanderbilt-34-27-on-senior-day'
+REACTION = '/post/sumrall-after-the-comeback-we-are-a-train-wreck-at-times'
+# Verbatim from the UF/ASAP Sports transcripts of Nov. 21, 2026, forwarded by UF communications: Jon Sumrall (172992),
+# Myles Graham (172993), Aaron Philo (172994). Checked as exact substrings of the transcripts when this list was written;
+# do not edit a word. The same passages run in the reaction story.
+PRESSER = 'postgame news conference, Nov. 21'
+QUOTES = [
+ ("But we are a train wreck at times, but I love what we're trying to get done, and we're going to keep fighting, keep scratching, keep clawing until we get this thing right.", 'Jon Sumrall', 'Florida coach, ' + PRESSER),
+ ("We won today, so it's not all wrong, but it ain't all right either.", 'Jon Sumrall', 'Florida coach, ' + PRESSER),
+ ("If you tell that dude, hey, we need 10 yards, he's going to go get 10 yards.", 'Jon Sumrall', 'Florida coach, on Aaron Philo'),
+ ("I told the guys at halftime, this isn't anything new to us.", 'Aaron Philo', 'Florida quarterback, ' + PRESSER),
+ ("Yeah, he lying on me. I still got it at running back.", 'Myles Graham', "Florida linebacker, on Sumrall's review of his touchdown return"),
+ ("My mom was always telling me I need to get her one, I need to get her one, so I got her one.", 'Myles Graham', 'Florida linebacker, on his touchdown'),
+]
 def of(s): return s.replace('/', ' of ').replace('-', ' of ')
 f2, v2 = fq[2] + fq[3], vq[2] + vq[3]
 issue = {
- '$comment': 'Vanderbilt postgame web edition (built Nov. 21, 2026): Florida 34, Vanderbilt 27, Senior Day, Ben Hill Griffin Stadium (ESPN event 401856748). Written by deploy/magazine-2026/postgame-vanderbilt/build_issue.py; every number is from ESPN at build time. No quotes: no transcript had arrived when this was built. Photos: Chris Spears, GatorBait Media, sent by the owner on Nov. 21; no player is named in alt text.',
+ '$comment': 'Vanderbilt postgame web edition (built Nov. 21, 2026): Florida 34, Vanderbilt 27, Senior Day, Ben Hill Griffin Stadium (ESPN event 401856748). Written by deploy/magazine-2026/postgame-vanderbilt/build_issue.py; every number is from ESPN at build time. Quotes are verbatim from the UF/ASAP Sports transcripts of Nov. 21 (Jon Sumrall 172992, Myles Graham 172993, Aaron Philo 172994), forwarded by UF communications. Photos: Chris Spears, GatorBait Media, sent by the owner on Nov. 21; no player is named in alt text.',
  'id': '2026-11-21-postgame-vanderbilt',
  'layout': 'postgame',
  'issue': {'number': 'Postgame edition', 'date': 'Saturday, Nov. 21, 2026', 'week': 'Vanderbilt at Florida · Gainesville', 'home': 'GatorBait Media', 'pageTitle': 'GatorBait Magazine | Postgame: Florida %d, Vanderbilt %d' % (F, V)},
@@ -117,18 +130,20 @@ issue = {
   'cta': 'Read the game story',
   'url': STORY,
   'image': img('d3cfa5_a0d706482da646dd9b0272531c6adf7e', 970, 854, 'A close view of a Florida player in a blue No. 5 jersey smiling wide as a teammate wraps an arm around his shoulders, with the crowd behind them at Ben Hill Griffin Stadium, Nov. 21, 2026.'),  # owner, Nov. 21: "This great picture should be the cover"; a crop of d3cfa5_c51939d6 that keeps the player centered on the 9:16 phone poster
-  'teasers': ["Baugh's 10-yard run with 2:18 left wins it", "Graham's %d-yard fumble return" % ret, 'Philo: %s yards passing, two rushing touchdowns' % philo['YDS'], "Chris Spears' best shots from The Swamp"],
+  'teasers': ["Baugh's 10-yard run with 2:18 left wins it", "Graham's %d-yard fumble return" % ret, 'Philo: %s yards passing, two rushing touchdowns' % philo['YDS'], "Sumrall: 'We are a train wreck at times'"],
   'linesLabel': 'Also inside',
-  'lines': ["Chris Spears' Best Shots: the photo gallery", 'The halftime story and the quarter-by-quarter record', 'By the numbers, score by score and the box score', 'Game flow: how the lead changed hands', 'Up next: Florida at Florida State, Friday, Nov. 27'],
+  'lines': ["Chris Spears' Best Shots: the photo gallery", 'The halftime story and the quarter-by-quarter record', 'By the numbers, score by score and the box score', 'Game flow: how the lead changed hands', 'In their words: Sumrall, Philo and Graham', 'Up next: Florida at Florida State, Friday, Nov. 27'],
  },
  'final': {'label': 'Final', 'teams': [{'name': 'Vanderbilt', 'score': V}, {'name': 'Florida', 'rank': 'No. %d' % rank, 'score': F, 'won': True}],
            'meta': ['Saturday, Nov. 21', 'Ben Hill Griffin Stadium, Gainesville', 'Senior Day', 'Florida is %s, %s SEC' % (rec['FLA']['total'], rec['FLA']['vsconf'])]},
- 'contents': {'label': 'In this issue', 'items': [{'id': 'coverage', 'label': 'The game package'}, {'id': 'damage', 'label': 'By the numbers'}, {'id': 'scoring', 'label': 'Score by score'}, {'id': 'box', 'label': 'Box score'}, {'id': 'flow', 'label': 'Game flow'}, {'id': 'next', 'label': 'Up next'}]},
+ 'contents': {'label': 'In this issue', 'items': [{'id': 'coverage', 'label': 'The game package'}, {'id': 'damage', 'label': 'By the numbers'}, {'id': 'scoring', 'label': 'Score by score'}, {'id': 'box', 'label': 'Box score'}, {'id': 'flow', 'label': 'Game flow'}, {'id': 'quotes', 'label': 'In their words'}, {'id': 'next', 'label': 'Up next'}]},
  'coverage': {
   'kicker': 'The game package', 'title': 'Photos, the halftime story and every score', 'dek': 'Everything GatorBait published from The Swamp on Saturday.',
   'items': [
    {'rubric': 'Photos', 'author': 'Chris Spears', 'title': "Chris Spears' Best Shots: Florida 34, Vanderbilt 27", 'dek': 'Chris Spears had the sideline for the comeback. His best photos from The Swamp on Senior Day.', 'url': '/post/chris-spears-best-shots-florida-34-vanderbilt-27', 'lead': True,
     'image': img('d3cfa5_4b7988a0bd9c44bf9ed3765aac05f5c1', 1280, 854, 'A close view of a Florida player in a blue No. 5 jersey shouting in celebration as a smiling teammate grabs his shoulder.')},
+   {'rubric': 'Reaction', 'author': 'GatorBait Staff', 'title': "Sumrall after the comeback: 'We are a train wreck at times'", 'dek': 'What Jon Sumrall, Aaron Philo and Myles Graham said after the 34-27 win.', 'url': REACTION,
+    'image': img('d3cfa5_e0ca5a0e7f14497998f30fde911a7f34', 1620, 1080, 'Florida coaches in headsets, one in an orange polo and white visor and one in a white Gators hoodie and blue cap, watch from the sideline with players and staff around them.')},
    {'rubric': 'Halftime', 'author': 'GatorBait Staff', 'title': 'Flag Day in The Swamp: Vanderbilt leads No. 24 Florida 24-17 at halftime', 'dek': 'Vanderbilt scored 15 points in the final 1:46 of the half. Florida was flagged six times, three in the last two minutes.', 'url': '/post/flag-day-in-the-swamp-vanderbilt-leads-no-24-florida-24-17-at-halftime',
     'image': img('d3cfa5_1a44d3d034b54dda9c5e95423cad0585', 1620, 1080, 'A Florida player in a blue No. 12 jersey runs with the ball as a Vanderbilt defender in a white No. 24 jersey dives at him while officials look on.')},
    {'rubric': 'Quarter by quarter', 'author': 'GatorBait Staff', 'title': 'Live updates: Vanderbilt at No. 24 Florida', 'dek': 'Every score as it happened, the halftime and final team numbers, and 10 photos from the game.', 'url': '/post/live-updates-vanderbilt-at-no-24-florida',
@@ -187,6 +202,9 @@ issue = {
   'axis': ['100%', '50%', '0%'], 'quarters': ['Q1', 'Q2', 'Q3', 'Q4'], 'quarterStarts': qstarts, 'points': pts, 'marks': marks,
   'summary': "Line chart of Florida's win probability against Vanderbilt. It starts near %d%%, is at %d%% at halftime, falls as low as %d%% in the %s quarter and ends at 100%% after Jadan Baugh's touchdown with 2:18 left and a fourth-down sack with 30 seconds left." % (start, half, low, ORD[low_q]),
   'source': 'Win probability: ESPN. GatorBait Media graphic.'},
+ 'quotes': {
+  'kicker': 'In their words', 'title': 'Sumrall, Philo and Graham', 'dek': 'From the postgame news conferences on Saturday, Nov. 21.',
+  'items': [{'text': t, 'who': w_, 'role': r, 'url': REACTION, 'link': 'Read the reaction story'} for t, w_, r in QUOTES]},
  'next': {
   'kicker': 'Up next', 'title': 'Florida at Florida State',
   'meta': ['Friday, Nov. 27', '3:30 p.m. ET', 'Doak Campbell Stadium, Tallahassee'],
@@ -198,7 +216,7 @@ issue = {
    {'label': 'The Buddy Martin Show', 'url': '/the-buddy-martin-show'},
    {'label': 'GatorBait home', 'url': '/'}], 'top': 'Back to the cover'},
  'credits': {'label': 'Photo credits', 'uaa': False, 'other': ['Photos by Chris Spears, GatorBait Media.']},
- 'asOf': 'Score, scoring plays, box score, leaders and win probability: ESPN (event %s), final.' % EVENT,
+ 'asOf': 'Score, scoring plays, box score, leaders and win probability: ESPN (event %s), final. Quotes: UF/ASAP Sports transcripts, Nov. 21.' % EVENT,
 }
 # Florida State's schedule entry, read from ESPN so the date and site are not typed from memory
 ev = [e for e in get('https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule')['events'] if e['date'] > '2026-11-22']
@@ -214,6 +232,7 @@ for p in issue['scoring']['plays']: chk(p['when'], 16, 'when'); chk(p['play'], 1
 for r in issue['box']['rows']: [chk(x, 30, 'box row') for x in r]
 for t in issue['box']['leaders']: [chk(i[1], 160, 'leader') for i in t['items']]
 for m in issue['flow']['marks']: chk(m['title'], 20, 'mark title'); chk(m['note'], 160, 'mark note')
+for qi in issue['quotes']['items']: chk(qi['text'], 400, 'quote'); chk(qi['who'], 60, 'who'); chk(qi['role'], 120, 'role'); chk(qi['link'], 60, 'link')
 chk(issue['flow']['summary'], 600, 'flow summary'); chk(issue['next']['note'], 300, 'next note'); chk(issue['next']['pickem']['text'], 300, 'pickem')
 for it in issue['coverage']['items']: chk(it['title'], 200, 'title'); chk(it['dek'], 400, 'dek')
 ids = [issue['cover']['image']['id']] + [it['image']['id'] for it in issue['coverage']['items']]

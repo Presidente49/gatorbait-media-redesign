@@ -1,0 +1,706 @@
+{
+ "$comment": "Vanderbilt postgame web edition (built Nov. 21, 2026): Florida 34, Vanderbilt 27, Senior Day, Ben Hill Griffin Stadium (ESPN event 401856748). Written by deploy/magazine-2026/postgame-vanderbilt/build_issue.py; every number is from ESPN at build time. No quotes: no transcript had arrived when this was built. Photos: Chris Spears, GatorBait Media, sent by the owner on Nov. 21; no player is named in alt text.",
+ "id": "2026-11-21-postgame-vanderbilt",
+ "layout": "postgame",
+ "issue": {
+  "number": "Postgame edition",
+  "date": "Saturday, Nov. 21, 2026",
+  "week": "Vanderbilt at Florida · Gainesville",
+  "home": "GatorBait Media",
+  "pageTitle": "GatorBait Magazine | Postgame: Florida 34, Vanderbilt 27"
+ },
+ "cover": {
+  "kicker": "Postgame · Senior Day",
+  "coverTitle": "Baugh Control",
+  "score": {
+   "away": "Vanderbilt",
+   "awayScore": "27",
+   "home": "Florida",
+   "homeScore": "34",
+   "label": "Final"
+  },
+  "headline": "Baugh Control: No. 24 Florida rallies past Vanderbilt 34-27 on Senior Day",
+  "dek": "Jadan Baugh's 10-yard touchdown run with 2:18 left finished Florida's comeback from a 24-17 halftime deficit. The Gators outscored Vanderbilt 17-3 after halftime.",
+  "byline": "By GatorBait Staff · Photos by Chris Spears",
+  "cta": "Read the game story",
+  "url": "/post/baugh-control-no-24-florida-rallies-past-vanderbilt-34-27-on-senior-day",
+  "image": {
+   "id": "d3cfa5_855dd60738654761930f7c15196fb74e",
+   "ext": "jpg",
+   "width": 1024,
+   "height": 684,
+   "alt": "A Florida player in a blue No. 5 jersey holds the ball up in his right hand as he crosses into the end zone at Ben Hill Griffin Stadium, Nov. 21, 2026. Photo by Chris Spears, GatorBait Media.",
+   "credit": "Photo by Chris Spears, GatorBait Media.",
+   "uaa": false
+  },
+  "teasers": [
+   "Baugh's 10-yard run with 2:18 left wins it",
+   "Graham's 57-yard fumble return",
+   "Philo: 241 yards passing, two rushing touchdowns",
+   "Chris Spears' best shots from The Swamp"
+  ],
+  "linesLabel": "Also inside",
+  "lines": [
+   "Chris Spears' Best Shots: the photo gallery",
+   "The halftime story and the quarter-by-quarter record",
+   "By the numbers, score by score and the box score",
+   "Game flow: how the lead changed hands",
+   "Up next: Florida at Florida State, Friday, Nov. 27"
+  ]
+ },
+ "final": {
+  "label": "Final",
+  "teams": [
+   {
+    "name": "Vanderbilt",
+    "score": 27
+   },
+   {
+    "name": "Florida",
+    "rank": "No. 24",
+    "score": 34,
+    "won": true
+   }
+  ],
+  "meta": [
+   "Saturday, Nov. 21",
+   "Ben Hill Griffin Stadium, Gainesville",
+   "Senior Day",
+   "Florida is 7-4, 5-4 SEC"
+  ]
+ },
+ "contents": {
+  "label": "In this issue",
+  "items": [
+   {
+    "id": "coverage",
+    "label": "The game package"
+   },
+   {
+    "id": "damage",
+    "label": "By the numbers"
+   },
+   {
+    "id": "scoring",
+    "label": "Score by score"
+   },
+   {
+    "id": "box",
+    "label": "Box score"
+   },
+   {
+    "id": "flow",
+    "label": "Game flow"
+   },
+   {
+    "id": "next",
+    "label": "Up next"
+   }
+  ]
+ },
+ "coverage": {
+  "kicker": "The game package",
+  "title": "Photos, the halftime story and every score",
+  "dek": "Everything GatorBait published from The Swamp on Saturday.",
+  "items": [
+   {
+    "rubric": "Photos",
+    "author": "Chris Spears",
+    "title": "Chris Spears' Best Shots: Florida 34, Vanderbilt 27",
+    "dek": "Chris Spears had the sideline for the comeback. His best photos from The Swamp on Senior Day.",
+    "url": "/post/chris-spears-best-shots-florida-34-vanderbilt-27",
+    "lead": true,
+    "image": {
+     "id": "d3cfa5_4b7988a0bd9c44bf9ed3765aac05f5c1",
+     "ext": "jpg",
+     "width": 1280,
+     "height": 854,
+     "alt": "A close view of a Florida player in a blue No. 5 jersey shouting in celebration as a smiling teammate grabs his shoulder. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Halftime",
+    "author": "GatorBait Staff",
+    "title": "Flag Day in The Swamp: Vanderbilt leads No. 24 Florida 24-17 at halftime",
+    "dek": "Vanderbilt scored 15 points in the final 1:46 of the half. Florida was flagged six times, three in the last two minutes.",
+    "url": "/post/flag-day-in-the-swamp-vanderbilt-leads-no-24-florida-24-17-at-halftime",
+    "image": {
+     "id": "d3cfa5_1a44d3d034b54dda9c5e95423cad0585",
+     "ext": "jpg",
+     "width": 1620,
+     "height": 1080,
+     "alt": "A Florida player in a blue No. 12 jersey runs with the ball as a Vanderbilt defender in a white No. 24 jersey dives at him while officials look on. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Quarter by quarter",
+    "author": "GatorBait Staff",
+    "title": "Live updates: Vanderbilt at No. 24 Florida",
+    "dek": "Every score as it happened, the halftime and final team numbers, and 10 photos from the game.",
+    "url": "/post/live-updates-vanderbilt-at-no-24-florida",
+    "image": {
+     "id": "d3cfa5_44f25c74ac5d4d889e0d38ecb35554ad",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 648,
+     "alt": "Florida defenders in blue jerseys stand near a pile of Vanderbilt players in white at the line of scrimmage while one Florida player points a finger in the air. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   }
+  ]
+ },
+ "damage": {
+  "kicker": "By the numbers",
+  "title": "17-3 after halftime",
+  "dek": "Florida trailed 24-17 at the half and gave up one field goal the rest of the way. The Gators finished with 411 yards to Vanderbilt's 378 and converted 11 of 16 third downs.",
+  "yards": {
+   "label": "Total yards",
+   "rows": [
+    {
+     "name": "Florida",
+     "value": 411,
+     "us": true
+    },
+    {
+     "name": "Vanderbilt",
+     "value": 378
+    }
+   ]
+  },
+  "stats": [
+   {
+    "value": "11-16",
+    "label": "Florida third downs",
+    "detail": "Vanderbilt converted 7 of 15."
+   },
+   {
+    "value": "241",
+    "label": "Aaron Philo passing yards",
+    "detail": "20 of 26 passing, plus 73 rushing yards and two touchdowns."
+   },
+   {
+    "value": "57",
+    "label": "Yards on Myles Graham's fumble return",
+    "detail": "The touchdown put Florida ahead 17-9. Graham also had 10 tackles."
+   },
+   {
+    "value": "981",
+    "label": "Jadan Baugh's season rushing yards",
+    "detail": "76 on Saturday. He needs 19 at Florida State for 1,000."
+   },
+   {
+    "value": "4-4",
+    "label": "Brock Taylor field goals",
+    "detail": "From 53, 52, 42 and 51 yards for Vanderbilt."
+   },
+   {
+    "value": "7-42",
+    "label": "Florida penalties",
+    "detail": "Six for 37 yards in the first half. Vanderbilt: 3-20."
+   }
+  ],
+  "source": "Source: ESPN box score (event 401856748)."
+ },
+ "scoring": {
+  "kicker": "Score by score",
+  "title": "How the points came",
+  "dek": "Vanderbilt led 24-17 at halftime after scoring 15 points in the final 1:46 of the second quarter. Florida scored the next 10, Vanderbilt tied it at 27 with 5:52 left, and Jadan Baugh scored with 2:18 to play.",
+  "cols": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "F"
+  ],
+  "rows": [
+   {
+    "team": "Vanderbilt",
+    "q": [
+     3,
+     21,
+     0,
+     3
+    ],
+    "f": 27
+   },
+   {
+    "team": "Florida",
+    "rank": "No. 24",
+    "q": [
+     3,
+     14,
+     7,
+     10
+    ],
+    "f": 34,
+    "us": true
+   }
+  ],
+  "plays": [
+   {
+    "when": "Q1 10:24",
+    "play": "Brock Taylor 53-yard field goal",
+    "score": "UF 0, VU 3",
+    "uf": false
+   },
+   {
+    "when": "Q1 4:22",
+    "play": "Patrick Durkin 40-yard field goal",
+    "score": "UF 3, VU 3",
+    "uf": true
+   },
+   {
+    "when": "Q2 14:17",
+    "play": "Brock Taylor 52-yard field goal",
+    "score": "UF 3, VU 6",
+    "uf": false
+   },
+   {
+    "when": "Q2 12:43",
+    "play": "Brock Taylor 42-yard field goal",
+    "score": "UF 3, VU 9",
+    "uf": false
+   },
+   {
+    "when": "Q2 7:23",
+    "play": "Aaron Philo touchdown run (Patrick Durkin kick)",
+    "score": "UF 10, VU 9",
+    "uf": true
+   },
+   {
+    "when": "Q2 5:27",
+    "play": "Myles Graham 57-yard fumble return (Patrick Durkin kick)",
+    "score": "UF 17, VU 9",
+    "uf": true
+   },
+   {
+    "when": "Q2 1:46",
+    "play": "Sedrick Alexander 9-yard pass from Jared Curtis (Curtis pass to Cole Spence for two)",
+    "score": "UF 17, VU 17",
+    "uf": false
+   },
+   {
+    "when": "Q2 0:39",
+    "play": "Junior Sherrill 75-yard pass from Jared Curtis (Brock Taylor kick)",
+    "score": "UF 17, VU 24",
+    "uf": false
+   },
+   {
+    "when": "Q3 4:07",
+    "play": "Aaron Philo 1-yard touchdown run (Patrick Durkin kick)",
+    "score": "UF 24, VU 24",
+    "uf": true
+   },
+   {
+    "when": "Q4 8:27",
+    "play": "Patrick Durkin 20-yard field goal",
+    "score": "UF 27, VU 24",
+    "uf": true
+   },
+   {
+    "when": "Q4 5:52",
+    "play": "Brock Taylor 51-yard field goal",
+    "score": "UF 27, VU 27",
+    "uf": false
+   },
+   {
+    "when": "Q4 2:18",
+    "play": "Jadan Baugh 10-yard touchdown run (Patrick Durkin kick)",
+    "score": "UF 34, VU 27",
+    "uf": true
+   }
+  ],
+  "source": "Scoring plays and line score: ESPN. Times are game clock."
+ },
+ "box": {
+  "kicker": "Box score",
+  "title": "The full box score",
+  "dek": "Team stats and the leaders for both teams.",
+  "cols": [
+   "Florida",
+   "Vanderbilt"
+  ],
+  "rows": [
+   [
+    "First downs",
+    "23",
+    "18"
+   ],
+   [
+    "Total yards",
+    "411",
+    "378"
+   ],
+   [
+    "Passing",
+    "20/28, 241 yds",
+    "12/25, 200 yds"
+   ],
+   [
+    "Rushing",
+    "170 yds on 44 carries",
+    "178 yds on 38 carries"
+   ],
+   [
+    "Yards per rush",
+    "3.9",
+    "4.7"
+   ],
+   [
+    "Third downs",
+    "11-16",
+    "7-15"
+   ],
+   [
+    "Fourth downs",
+    "1-2",
+    "1-3"
+   ],
+   [
+    "Penalties",
+    "7-42",
+    "3-20"
+   ],
+   [
+    "Turnovers",
+    "1",
+    "1"
+   ],
+   [
+    "Time of possession",
+    "33:16",
+    "26:44"
+   ]
+  ],
+  "leaders": [
+   {
+    "team": "Florida",
+    "items": [
+     [
+      "Passing",
+      "Aaron Philo: 20 of 26, 241 yards"
+     ],
+     [
+      "Rushing",
+      "Jadan Baugh: 19 carries, 76 yards, 1 TD. Aaron Philo: 17 carries, 73 yards, 2 TD"
+     ],
+     [
+      "Receiving",
+      "Eric Singleton Jr.: 6 catches, 117 yards"
+     ],
+     [
+      "Defense",
+      "Myles Graham: 10 tackles, 57-yard fumble return for a touchdown"
+     ]
+    ]
+   },
+   {
+    "team": "Vanderbilt",
+    "items": [
+     [
+      "Passing",
+      "Jared Curtis: 12 of 25, 200 yards, 2 TD"
+     ],
+     [
+      "Rushing",
+      "Sedrick Alexander: 15 carries, 129 yards"
+     ],
+     [
+      "Receiving",
+      "Junior Sherrill: 6 catches, 149 yards, 1 TD"
+     ],
+     [
+      "Kicking",
+      "Brock Taylor: 4 of 4 on field goals (53, 52, 42, 51)"
+     ]
+    ]
+   }
+  ],
+  "source": "Team stats and leaders: ESPN box score (event 401856748)."
+ },
+ "flow": {
+  "kicker": "Game flow",
+  "title": "How the lead changed hands",
+  "dek": "Florida's chance to win, play by play. The Gators started at 84%, were at 55% at halftime and fell as low as 46% in the third quarter before the comeback.",
+  "axis": [
+   "100%",
+   "50%",
+   "0%"
+  ],
+  "quarters": [
+   "Q1",
+   "Q2",
+   "Q3",
+   "Q4"
+  ],
+  "quarterStarts": [
+   0,
+   34,
+   94,
+   128
+  ],
+  "points": [
+   83.8,
+   82.7,
+   83.0,
+   82.4,
+   80.9,
+   81.0,
+   76.2,
+   83.8,
+   80.4,
+   80.4,
+   79.6,
+   78.5,
+   81.6,
+   80.3,
+   80.2,
+   82.5,
+   81.9,
+   80.9,
+   83.9,
+   83.2,
+   82.1,
+   79.9,
+   79.9,
+   81.4,
+   81.4,
+   81.2,
+   81.3,
+   83.4,
+   79.4,
+   77.2,
+   78.4,
+   80.2,
+   79.9,
+   79.1,
+   80.8,
+   77.0,
+   77.1,
+   78.1,
+   69.6,
+   69.5,
+   68.7,
+   72.4,
+   69.7,
+   69.4,
+   67.6,
+   67.9,
+   65.0,
+   69.7,
+   76.7,
+   77.0,
+   77.0,
+   78.5,
+   80.2,
+   80.3,
+   81.2,
+   82.0,
+   81.0,
+   78.0,
+   77.1,
+   90.5,
+   90.8,
+   91.2,
+   91.5,
+   88.7,
+   89.1,
+   87.0,
+   86.7,
+   85.5,
+   85.6,
+   85.2,
+   85.3,
+   85.5,
+   85.6,
+   78.0,
+   77.3,
+   77.7,
+   77.0,
+   75.9,
+   74.7,
+   74.0,
+   77.9,
+   77.5,
+   77.7,
+   56.5,
+   54.7,
+   55.0,
+   55.4,
+   55.1,
+   55.2,
+   56.3,
+   56.9,
+   58.4,
+   56.8,
+   54.7,
+   57.2,
+   58.8,
+   59.9,
+   63.1,
+   63.1,
+   63.1,
+   64.7,
+   68.3,
+   65.1,
+   61.1,
+   58.6,
+   51.6,
+   45.5,
+   46.5,
+   45.8,
+   49.9,
+   56.8,
+   55.1,
+   62.0,
+   65.2,
+   64.5,
+   68.4,
+   69.8,
+   69.2,
+   71.9,
+   67.1,
+   64.8,
+   66.0,
+   66.4,
+   68.7,
+   72.8,
+   72.5,
+   71.2,
+   69.2,
+   75.3,
+   76.9,
+   77.7,
+   77.9,
+   76.3,
+   82.0,
+   82.2,
+   81.9,
+   85.7,
+   83.4,
+   80.6,
+   77.6,
+   77.6,
+   78.0,
+   80.3,
+   63.6,
+   64.0,
+   65.8,
+   78.5,
+   68.1,
+   67.9,
+   62.5,
+   67.8,
+   72.2,
+   67.8,
+   66.5,
+   91.1,
+   95.3,
+   95.8,
+   96.1,
+   97.1,
+   95.0,
+   95.2,
+   95.5,
+   97.0,
+   92.8,
+   90.2,
+   91.1,
+   89.7,
+   89.9,
+   90.0,
+   92.2,
+   95.8,
+   98.2,
+   98.2,
+   98.3,
+   99.9,
+   99.9,
+   100.0
+  ],
+  "marks": [
+   {
+    "i": 59,
+    "title": "17-9",
+    "note": "Myles Graham's 57-yard fumble return with 5:27 left in the half; Florida is at 90%"
+   },
+   {
+    "i": 83,
+    "title": "24-17",
+    "note": "Jared Curtis hits Junior Sherrill for 75 yards with 39 seconds left in the half; Florida is at 56%"
+   },
+   {
+    "i": 116,
+    "title": "24-24",
+    "note": "Aaron Philo scores from the 1 with 4:07 left in the third quarter; Florida is at 70%"
+   },
+   {
+    "i": 140,
+    "title": "27-24",
+    "note": "Patrick Durkin's 20-yard field goal with 8:27 to play; Florida is at 78%"
+   },
+   {
+    "i": 147,
+    "title": "27-27",
+    "note": "Brock Taylor's 51-yard field goal with 5:52 left; Florida is at 68%"
+   },
+   {
+    "i": 155,
+    "title": "34-27",
+    "note": "Jadan Baugh's 10-yard run with 2:18 left; Florida is at 95%"
+   }
+  ],
+  "summary": "Line chart of Florida's win probability against Vanderbilt. It starts near 84%, is at 55% at halftime, falls as low as 46% in the third quarter and ends at 100% after Jadan Baugh's touchdown with 2:18 left and a fourth-down sack with 30 seconds left.",
+  "source": "Win probability: ESPN. GatorBait Media graphic."
+ },
+ "next": {
+  "kicker": "Up next",
+  "title": "Florida at Florida State",
+  "meta": [
+   "Friday, Nov. 27",
+   "3:30 p.m. ET",
+   "Doak Campbell Stadium, Tallahassee"
+  ],
+  "note": "Florida is 7-4 overall and 5-4 in the SEC. The trip to Tallahassee closes the regular season.",
+  "pickem": {
+   "badge": "Milestone watch",
+   "title": "Baugh at 981",
+   "text": "Jadan Baugh ran for 76 yards and the winning touchdown against Vanderbilt. He has 981 for the season and needs 19 at Florida State to reach 1,000."
+  }
+ },
+ "reference": {
+  "label": "More GatorBait",
+  "links": [
+   {
+    "label": "Schedule and results",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+   },
+   {
+    "label": "Roster",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   },
+   {
+    "label": "GatorBait home",
+    "url": "/"
+   }
+  ],
+  "top": "Back to the cover"
+ },
+ "credits": {
+  "label": "Photo credits",
+  "uaa": false,
+  "other": [
+   "Photos by Chris Spears, GatorBait Media."
+  ]
+ },
+ "asOf": "Score, scoring plays, box score, leaders and win probability: ESPN (event 401856748), final."
+}

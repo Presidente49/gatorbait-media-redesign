@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Two Games To Change the Story. One Saturday Is Not A Turnaround.",
+      "excerpt": "Photo credit: Riddell But don't sleep on this V By Buddy Martin gatorbaitmedia.com Beat Vanderbilt. Then beat Florida State. Do that, and Jon Sumrall's first Florida team might be remembered less for where it stumbled than for where it found its footing. Aaron Philo found his against Kentucky. When the throws he normally lives on weren't there, Florida's…",
+      "url": "https://www.gatorbaitmedia.com/post/two-games-to-change-the-story",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-21T02:18:30Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_2b633b0e71b64be2bc95275e3c26b484~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Two Games To Change the Story. One Saturday Is Not A Turnaround."
+      }
+    },
+    {
       "title": "Florida lists five players out for Vanderbilt on SEC availability report",
       "excerpt": "Wide receiver Vernell Brown III and tight end Lacota Dippre are among five Gators out for Saturday's home finale. Vanderbilt lists nine players out, including quarterback Blaze Berlowitz.",
       "url": "https://www.gatorbaitmedia.com/post/florida-lists-five-players-out-for-vanderbilt-on-sec-availability-report",
@@ -9,7 +23,7 @@
       "firstPublishedDate": "2026-11-20T21:54:56Z",
       "section": "GatorBait",
       "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_2503400ea63241218aeba9371e09b857~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "src": "https://static.wixstatic.com/media/ae876a_bb52ae6e52ea458c89c9844843ed96c0~mv2.jpg/v1/fit/w_960,h_640,al_c,q_80/file.png",
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida lists five players out for Vanderbilt on SEC availability report"
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Boogie Fland Reaggravates Shoulder as Florida Beats Notre Dame 86-78"
-      }
-    },
-    {
-      "title": "Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came",
-      "excerpt": "Video still: Gator Bait Media. LEXINGTON, Ky. — Aaron Philo had just scored the touchdown that beat No. 11 Kentucky. Florida's quarterback was still on the ground in the end zone, teammates celebrating around him, when video of the play appears to show a Kentucky player making a kicking motion toward his head. No flag was thrown. Nobody in stripes appeared…",
-      "url": "https://www.gatorbaitmedia.com/post/philo-took-a-kick-to-the-head-from-kentucky-s-gadson-after-his-go-ahead-td-and-no-flag-ever-came",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-17T14:58:04Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_e23750b76f9e4a3bb9de218ac4ff32a0~mv2.jpg/v1/fit/w_1000,h_608,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came"
       }
     }
   ]

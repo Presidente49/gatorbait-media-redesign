@@ -34,7 +34,8 @@ if (!issue.id || !issue.cover || !issue.cover.url) { console.error('magazine-iss
 
 // Pregame standards (owner rule, Nov. 20, 2026: both teams' rosters and a schedule, up and visible). Opt-in by data: the two
 // sections' renderer and skin (src/magazine-pregame-standards.{js,css}) are bundled, and hooked into renderPregame, only when the
-// issue carries teamSchedules or teamRosters. An edition without those keys builds byte-identical to before.
+// issue carries teamSchedules or teamRosters. An edition without those keys builds byte-identical to before. The same file renders
+// issue.exclusives (stories written for the issue), so an edition that wants those carries the standards too.
 const STANDARDS = !POSTGAME && issue.layout === 'pregame' && Boolean(issue.teamSchedules || issue.teamRosters);
 const css = (read('sports-live/src/magazine.css') + read(POSTGAME ? 'sports-live/src/magazine-postgame.css' : 'sports-live/src/magazine-pregame.css') + (NEWS ? read('sports-live/src/magazine-news.css') : '') + (STANDARDS ? read('sports-live/src/magazine-pregame-standards.css') : '')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
 // capture.js goes first: magazine.js mounts synchronously at its end, and the postgame signup needs window.GBM_CAPTURE by then.
@@ -54,7 +55,8 @@ function newsRuntime(code) {
 }
 // Pregame standards: a jump strip under the cover, the schedules ahead of the tale of the tape, the rosters after the story cards.
 function standardsRuntime(code) {
-  const swaps = [["pgCover(D) + '<div class=\"pg-grid\">'", "pgCover(D) + pgStdNav(D) + '<div class=\"pg-grid\">'"], ['pgWatch(D) + pgTape(D)', 'pgWatch(D) + pgTeamSchedules(D) + pgTape(D)'], ['pgCards(D) + pgShots(D)', 'pgCards(D) + pgTeamRosters(D) + pgShots(D)']];
+  const swaps = [["pgCover(D) + '<div class=\"pg-grid\">'", "pgCover(D) + pgStdNav(D) + '<div class=\"pg-grid\">'"], ['pgWatch(D) + pgTape(D)', 'pgWatch(D) + pgTeamSchedules(D) + pgTape(D)'], ['pgCards(D) + pgShots(D)', 'pgCards(D) + pgTeamRosters(D) + pgShots(D)'],
+    ['pgSlate(D) + pgCards(D)', 'pgSlate(D) + pgExclusives(D) + pgCards(D)']]; // magazine-only stories (issue.exclusives) between the Sooth Board and the story cards
   for (const [from, to] of swaps) { if (code.split(from).length !== 2) throw new Error('Pregame standards hook not found exactly once: ' + from); code = code.replace(from, to); }
   return code;
 }
@@ -67,7 +69,7 @@ const PM_SEL = '#gbm-magazine-page.pm';
 const MZ_SEL = '#gbm-magazine-page.mz26 '; // second token (tilde, absent from the CSS): 290 more repeats, ~6 KB
 const cssExpression = css.includes('`') || css.includes('~') ? JSON.stringify(css) :
   JSON.stringify(css.split(PM_SEL).join('`').split(MZ_SEL).join('~')) + '.split("~").join("' + MZ_SEL + '").split("`").join("' + PM_SEL + '")';
-const MAX_JS = (POSTGAME ? 212 : 184) * 1024; // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
+const MAX_JS = (POSTGAME ? 212 : 192) * 1024; // pregame cap 184 -> 192 KB on Nov. 20 for the Vanderbilt edition: the availability report, four issue stories and their art, on top of both rosters and schedules (owner direction) // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
 
 // A Magazine edition gets one visual treatment for each source asset. Repeated art makes a
 // roundup feel accidentally templated, even when the same file arrives by a different Wix cut.

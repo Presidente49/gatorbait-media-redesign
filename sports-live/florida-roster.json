@@ -1,19 +1,68 @@
 {
   "season": 2026,
   "team": "Florida",
-  "updated": "2026-11-14T18:00:00Z",
-  "updatedLabel": "Nov. 14, 2026, 1 p.m. ET",
+  "updated": "2026-11-21T01:00:00Z",
+  "updatedLabel": "Nov. 20, 2026, 8 p.m. ET",
   "availability": {
-    "label": "SEC availability report for Florida at Kentucky (Nov. 14, 6:15 p.m. ET, ESPN), Friday report: five Gators out, Kofi Asare questionable, DK Kalu probable. Aaron Philo is expected to start at quarterback, ESPN reported.",
-    "asOf": "Nov. 13, 2026"
+    "label": "SEC availability report for Vanderbilt at Florida (Nov. 21, noon ET, SEC Network), Thursday update: five Gators out, Dijon Johnson doubtful, Bailey Stockton and Bryce Thornton questionable. The report updates again Friday night and 90 minutes before kickoff.",
+    "asOf": "Nov. 19, 2026"
   },
   "status": {
     "Vernell Brown III": {
       "status": "out",
       "label": "Out",
-      "note": "Listed out for Kentucky on the SEC availability report posted Friday, Nov. 13.",
-      "date": "Nov. 13",
-      "src": "https://www.secsports.com/fbreports"
+      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
+      "date": "Nov. 19",
+      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+    },
+    "Lacota Dippre": {
+      "status": "out",
+      "label": "Out",
+      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire. Jon Sumrall called the injury \"pretty substantial\" on Monday, Gators Wire reported.",
+      "date": "Nov. 19",
+      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+    },
+    "Emeka Ugorji": {
+      "status": "out",
+      "label": "Out",
+      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
+      "date": "Nov. 19",
+      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+    },
+    "Jaden Robinson": {
+      "status": "out",
+      "label": "Out",
+      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
+      "date": "Nov. 19",
+      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+    },
+    "DJ Coleman": {
+      "status": "out",
+      "label": "Out",
+      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
+      "date": "Nov. 19",
+      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+    },
+    "Dijon Johnson": {
+      "status": "doubtful",
+      "label": "Doubtful",
+      "note": "Listed doubtful for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
+      "date": "Nov. 19",
+      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+    },
+    "Bailey Stockton": {
+      "status": "questionable",
+      "label": "Questionable",
+      "note": "Listed questionable for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire. Sumrall: \"I'd be shocked if he doesn't play,\" Gators Wire reported.",
+      "date": "Nov. 19",
+      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+    },
+    "Bryce Thornton": {
+      "status": "questionable",
+      "label": "Questionable",
+      "note": "Listed questionable for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
+      "date": "Nov. 19",
+      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
     },
     "Tramell Jones Jr.": {
       "status": "limited",
@@ -21,48 +70,6 @@
       "note": "Sumrall said Monday he is not fully healthy and will likely need surgery after the season.",
       "date": "Nov. 2",
       "src": "https://floridagators.com/news/2026/11/2/football-gators-look-to-reignite-offense-amid-qb-battle-browns-injury"
-    },
-    "Bryce Thornton": {
-      "status": "out",
-      "label": "Out",
-      "note": "Listed out for Kentucky on the SEC availability report posted Friday, Nov. 13.",
-      "date": "Nov. 13",
-      "src": "https://www.secsports.com/fbreports"
-    },
-    "Dijon Johnson": {
-      "status": "out",
-      "label": "Out",
-      "note": "Listed out for Kentucky on the SEC availability report posted Friday, Nov. 13.",
-      "date": "Nov. 13",
-      "src": "https://www.secsports.com/fbreports"
-    },
-    "Jaden Robinson": {
-      "status": "out",
-      "label": "Out",
-      "note": "Listed out for Kentucky on the SEC availability report posted Friday, Nov. 13.",
-      "date": "Nov. 13",
-      "src": "https://www.secsports.com/fbreports"
-    },
-    "Evan Chieca": {
-      "status": "out",
-      "label": "Out",
-      "note": "Listed out for Kentucky on the SEC availability report posted Friday, Nov. 13.",
-      "date": "Nov. 13",
-      "src": "https://www.secsports.com/fbreports"
-    },
-    "Kofi Asare": {
-      "status": "questionable",
-      "label": "Questionable",
-      "note": "Listed questionable for Kentucky on the SEC availability report posted Friday, Nov. 13.",
-      "date": "Nov. 13",
-      "src": "https://www.secsports.com/fbreports"
-    },
-    "DK Kalu": {
-      "status": "probable",
-      "label": "Probable",
-      "note": "Listed probable for Kentucky on the SEC availability report posted Friday, Nov. 13.",
-      "date": "Nov. 13",
-      "src": "https://www.secsports.com/fbreports"
     }
   },
   "players": [

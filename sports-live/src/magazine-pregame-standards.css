@@ -69,3 +69,9 @@
   #gbm-magazine-page.pg .pg-std{break-inside:auto;page-break-inside:auto}
   #gbm-magazine-page.pg .pg-std-t tr{break-inside:avoid;page-break-inside:avoid}
 }
+/* Magazine-only stories (the exclusives section) and the "doubtful" badge the availability report uses. */
+#gbm-magazine-page.pg .pg-excl{margin-top:44px;scroll-margin-top:70px}
+#gbm-magazine-page.pg .pg-excl .pg-lead{margin-top:26px}
+#gbm-magazine-page.pg .pg-excl .pg-sh+.pg-lead{margin-top:18px}
+#gbm-magazine-page.pg .pg-excl .pg-lead h2{font-size:clamp(28px,7vw,46px)}
+#gbm-magazine-page.pg .pg-st[data-s="doubtful"]{background:#7a4310;color:#ffdcae}

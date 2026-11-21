@@ -203,9 +203,22 @@ def pic(i, ext, w, h, alt, credit):
     return {'id': i, 'ext': ext, 'width': w, 'height': h, 'alt': alt, 'credit': credit}
 UAA = 'Photo courtesy UAA (University Athletic Association, FloridaGators.com)'
 FRANZ = '/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win'
-# Cover: the owner's pick for this magazine, the photo he sent on Nov. 20 (Aaron Philo, No. 12, in the win at Kentucky). It is the
-# same file the Kentucky game story runs (Wix media uf-at-kentucky-2026-11-14-philo.jpg) and carries the same credit as that story.
-cover_img = pic('d3cfa5_fa57aa84912b434281d9e92a148acc44', 'jpg', 1284, 775, 'Florida quarterback Aaron Philo, wearing No. 12, runs with the ball in the win at Kentucky.', 'Image via All Gators')
+# Photos (owner direction, Nov. 20: "a bunch of different pictures", and "use anything from the last game at Kentucky", not Oklahoma).
+# Every football picture in the issue is from the Nov. 14 win at Kentucky, each a different file, each with the credit its own story on
+# the site carries. A player is named only where the jersey number shows and matches the ESPN roster (Philo 12, Wilson 6, Condon 21).
+# The second build ran an All Gators image the owner sent; he then asked for a different picture, "another tight shot".
+cover_img = pic('ae876a_bb52ae6e52ea458c89c9844843ed96c0', 'jpg', 960, 640, 'Florida quarterback Aaron Philo (12) jogs across the field with teammates during the Nov. 14, 2026, win at Kentucky.', 'Photo courtesy University of Florida (UAA).')
+lead_img = pic('d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9', 'png', 2000, 1061, "A Florida player in a white road jersey raises the football in celebration on the Gators' sideline during the Nov. 14, 2026, win at Kentucky.", UAA + '.')
+PHOTO = {
+ 'preview': (pic('ae876a_d5fa38d9c98c4bfeb982f4831abbce73', 'jpg', 720, 480, 'Florida coach Jon Sumrall, in an orange hooded sweatshirt and a headset, gives a thumbs-up on the sideline at Kentucky.', 'Photo courtesy of UAA.'),
+             'Jon Sumrall on the sideline during the 21-14 win at Kentucky on Nov. 14.'),
+ 'injury': (pic('ae876a_93ffb4fa4f24421d8e65a421b14bd42f', 'jpg', 720, 480, "Florida's Dallas Wilson (6) and Aaron Philo (12) leap into a chest bump during the Nov. 14, 2026, win at Kentucky.", 'Photo courtesy of UAA.'),
+            'Dallas Wilson (6), Florida\'s leading receiver, celebrates with quarterback Aaron Philo at Kentucky.'),
+ 'bowl': (pic('ae876a_5917eb4e36404c5daba6ddb47d5e9ef2', 'jpg', 1920, 1080, 'Florida coach Jon Sumrall sits at the podium after the 21-14 win at Kentucky on Nov. 14, 2026.', 'Photo courtesy University of Florida (UAA).'),
+          'Jon Sumrall after the win at Kentucky, Florida\'s sixth of the season.'),
+ 'wooden': (pic('d3cfa5_00121cc44e254a40a9a887b5d0d1351e', 'jpg', 2000, 1333, 'Florida forward Alex Condon (21) shoots a 3-pointer over a Houston defender in Las Vegas on Nov. 18, 2026.', UAA + '.'),
+            'Alex Condon shoots a 3-pointer against Houston in Las Vegas on Nov. 18.'),
+}
 
 # ---- Franz Beard, The Soothsayer (published Nov. 20). His words exactly as published: the epigraph, the Florida-Vanderbilt section and
 # his pick, in full. check_column() below compares every line here with the public post before the issue is written. ----
@@ -309,9 +322,97 @@ cards = [
       "Video of Aaron Philo's go-ahead touchdown at Kentucky appears to show a Kentucky player making a kicking motion toward his head. No flag was thrown."),
 ]
 
+# ---- Availability report (owner direction, Nov. 20: update the rosters, point everything at Vanderbilt) ----
+# The SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire on Nov. 20 (the league's own page is not
+# reachable from the build host). Every name is checked against the ESPN roster fetched above, which also supplies the position.
+def roster_pos(team, name):
+    key = lambda s: re.sub(r'[^a-z]', '', s.lower())
+    hit = [p for _, rows in team['groups'] for p in rows if key(p[1]) == key(name)]
+    assert len(hit) == 1, ('availability name not found exactly once on the ESPN roster', team['name'], name, [p[1] for _, rows in team['groups'] for p in rows if key(name.split()[-1 if not name.endswith(('Jr.', 'III')) else -2]) in key(p[1])])
+    return hit[0]
+def avail(team, rows):
+    return [dict({'pos': roster_pos(team, n)[2], 'name': roster_pos(team, n)[1], 'status': st}, **({'detail': d} if d else {})) for n, st, d in rows]
+FLA_AVAIL = [('Vernell Brown III', 'Out', ''), ('Lacota Dippre', 'Out', 'Jon Sumrall called the injury “pretty substantial” on Monday, Gators Wire reported.'), ('Emeka Ugorji', 'Out', ''),
+             ('Jaden Robinson', 'Out', ''), ('DJ Coleman', 'Out', ''), ('Dijon Johnson', 'Doubtful', ''),
+             ('Bailey Stockton', 'Questionable', 'Sumrall: “I’d be shocked if he doesn’t play,” Gators Wire reported.'), ('Bryce Thornton', 'Questionable', '')]
+VAN_AVAIL = [(n, 'Out', '') for n in ('Blaze Berlowitz', 'Cobey Sellers', 'Edwin Kolenge', 'Josiah Broxton', 'Daniel Vollmer Jr.', 'Evan Hampton', 'Aaron Bryant', 'Gunner Givens', 'Ted Gregoire')]
+injuries_block = {'label': 'Availability report', 'jump': 'Injury report',
+ 'asOf': 'SEC availability report as updated Thursday, Nov. 19. The report updates again Friday night, with a final version 90 minutes before kickoff.',
+ 'teams': [{'name': 'Florida', 'items': avail(fla_roster, FLA_AVAIL)}, {'name': 'Vanderbilt', 'items': avail(van_roster, VAN_AVAIL)}],
+ 'source': 'SEC availability report, updated Nov. 19, as published by Gators Wire on Nov. 20. Positions: ESPN rosters.'}
+
+# ---- Magazine-only stories (owner direction, Nov. 20: "add them as magazine only") ----
+# Four GatorBait Staff pieces written for this issue (the availability story also runs as a post on the site). Every football number is either computed above
+# from ESPN or checked here against the ESPN summary, so the build stops if a leader line, a class or last season's record changed.
+# Basketball: watch lists as reported by WRUF (Nov. 19) and FloridaGators.com; averages computed from ESPN box scores through Nov. 19.
+# Bowl projections: Sports Illustrated and CBS Sports as reported by Gators Wire (Nov. 19); they are labelled as projections.
+LEAD = {t['team']['id']: {c['name']: (c['leaders'][0]['athlete']['displayName'], c['leaders'][0]['displayValue']) for c in t['leaders']} for t in summ['leaders']}
+EXPECT = {FLA: {'passingYards': ('Aaron Philo', '126/180, 1,486 YDS, 9 TD, 5 INT'), 'rushingYards': ('Jadan Baugh', '178 CAR, 905 YDS, 15 TD'), 'receivingYards': ('Dallas Wilson', '38 REC, 483 YDS, 3 TD'),
+                'sacks': ('Jayden Woods', '6'), 'totalTackles': ('Myles Graham', '76')},
+          VAN: {'passingYards': ('Jared Curtis', '170/264, 1,880 YDS, 8 TD, 8 INT'), 'receivingYards': ('Junior Sherrill', '63 REC, 847 YDS, 4 TD'), 'sacks': ('Issa Ouattara', '4'), 'totalTackles': ('Bryan Longwell', '73')}}
+for tid, cats in EXPECT.items():
+    for cat, want in cats.items(): assert LEAD[tid][cat] == want, ('the preview quotes this ESPN leader line and it changed', tid, cat, LEAD[tid][cat], want)
+assert roster_pos(van_roster, 'Jared Curtis')[3] == 'Fr.', 'the preview calls Jared Curtis a freshman'
+assert cfp and upcoming and len(FLA_AVAIL) == 8 and sum(1 for r in FLA_AVAIL if r[1] == 'Out') == 5 and len(VAN_AVAIL) == 9
+prior = [e['competitions'][0] for e in g(B + 'teams/%s/schedule?season=%d' % (FLA, SEASON - 1))['events']]
+prior_w = sum(1 for c in prior for t in c['competitors'] if t['team']['id'] == FLA and t.get('winner'))
+assert (prior_w, len(prior) - prior_w) == (4, 8), ('the bowl story says Florida went 4-8 last season', prior_w, len(prior))
+def P(*ps): return ''.join('<p>%s</p>' % p for p in ps)
+fav = spread.split('-')[-1]
+preview_html = P(
+ "Florida (%s, %s SEC) plays its final home game of the season Saturday against Vanderbilt (%s, %s), a %s ET kickoff on %s. It is Senior Day at %s, and a win would be the Gators' seventh."
+   % (rec['home']['total'], rec['home']['vsconf'], rec['away']['total'], rec['away']['vsconf'], ap_time(kick), tv, venue['fullName']),
+ "Florida is No. %d in the College Football Playoff rankings and a %s-point favorite, with the total at %g, according to the %s line listed by ESPN. ESPN's matchup predictor gives the Gators a %.1f%% chance to win." % (cfp, fav, total, book, flaP),
+ "Florida's defense has tightened. The Gators have allowed %.1f points a game over their last four after giving up %.1f a game over the four before that." % (last4, prev4),
+ 'Quarterback Aaron Philo has completed 126 of 180 passes for 1,486 yards with nine touchdowns and five interceptions. Jadan Baugh has run 178 times for 905 yards and 15 touchdowns, and Dallas Wilson has 38 catches for 483 yards and three scores. Jayden Woods leads the defense with six sacks, Myles Graham with 76 tackles.',
+ 'Vanderbilt averages %s points a game and allows %s; Florida averages %s and allows %s. Freshman quarterback Jared Curtis has thrown for 1,880 yards with eight touchdowns and eight interceptions, and Junior Sherrill has 63 catches for 847 yards and four touchdowns. Bryan Longwell leads the Commodores with 73 tackles and Issa Ouattara with four sacks.'
+   % (tape[0]['miz'], tape[1]['miz'], tape[0]['fla'], tape[1]['fla']),
+ 'Both teams are short-handed. Florida listed five players out on the SEC availability report as updated Thursday, among them wide receiver Vernell Brown III and tight end Lacota Dippre, and Vanderbilt listed nine. The full lists are in the availability report in this issue.',
+ 'Florida has won %d of the %d meetings since %d, including the last one, %d-%d in %s on %s, %d.' % (wins, wins + losses, FIRST, last['fla'], last['van'], last['city'], ap_date(last['date']), last['year']),
+ 'After Saturday: ' + next_line(upcoming[0])[len('Next up: '):],
+ '<em>Records, statistics, line and predictor: ESPN, %s. Availability: SEC report, updated Nov. 19, as published by Gators Wire.</em>' % TODAY)
+wooden_html = P(
+ "Florida has three players on the John R. Wooden Award men's preseason Top 50 watch list, announced Wednesday, Nov. 18: Thomas Haugh, Alex Condon and Rueben Chinyelu.",
+ 'The SEC has 17 players on the list, WRUF reported, and any of the three would be the first Gator to win the award, which has been given since 1977.',
+ 'Haugh leads the three through seven games at 17.6 points and 6.9 rebounds a game, shooting 57.6% from the field and 18 of 35 on 3-pointers. Condon averages 12.9 points, 8.0 rebounds and 4.1 assists and has blocked 11 shots. Chinyelu averages 8.7 points and 6.9 rebounds and has made 20 of 32 shots, 62.5%.',
+ 'Florida is 6-1. The Gators host Milwaukee on Tuesday, Nov. 24, at 7 p.m. ET on SEC Network+ and Duke on Dec. 1 at 9:30 p.m. ET on ESPN.',
+ "On the women's side, Kiyomi McMiller is on the Wooden Award preseason Top 50, according to FloridaGators.com. She averages 24.0 points, 4.3 rebounds and 3.5 assists through six games for Florida (4-2), which plays West Virginia on Nov. 24 and Davidson on Nov. 26 in the Battle 4 Atlantis.",
+ "<em>Watch lists: Wooden Award announcements as reported by WRUF, Nov. 19, and FloridaGators.com. Averages are computed from ESPN box scores through Nov. 19; schedules are ESPN's.</em>")
+bowl_html = P(
+ 'Florida is bowl eligible at %s, and two early projections have the Gators playing their postseason game in Florida.' % rec['home']['total'],
+ 'Sports Illustrated projects Florida against Nebraska in the ReliaQuest Bowl in Tampa on Dec. 31, Gators Wire reported Thursday. CBS Sports projects Florida against SMU in the Gator Bowl in Jacksonville, according to the same report.',
+ 'Projections are forecasts, not invitations. Bowl pairings are set after the conference championship games, and where Florida lands depends on how it finishes: Vanderbilt on Saturday, then ' + next_line(upcoming[0])[len('Next up: Florida at '):].split(',')[0] + ' on ' + ap_date(et(upcoming[0]['date'])) + '.',
+ 'Florida went %d-%d last season.' % (prior_w, len(prior) - prior_w),
+ 'Franz Beard looked at the bowl picture and Florida\'s No. %d CFP ranking in his <a href="/post/thoughts-of-the-day-november-18-2026">Thoughts of the Day for Nov. 18</a>.' % cfp,
+ '<em>Projections: Sports Illustrated and CBS Sports, as reported by Gators Wire on Nov. 19. Records: ESPN.</em>')
+injury_html = P(
+ 'Florida will be without five players Saturday against Vanderbilt, including wide receiver Vernell Brown III and tight end Lacota Dippre, according to the SEC availability report as updated Thursday night.',
+ 'Offensive lineman Emeka Ugorji, linebacker Jaden Robinson and safety DJ Coleman are also listed out. Cornerback Dijon Johnson is doubtful, and wide receiver Bailey Stockton and safety Bryce Thornton are questionable.',
+ "Coach Jon Sumrall called Dippre's injury “pretty substantial” on Monday, Gators Wire reported. Of Stockton, Sumrall said, “I’d be shocked if he doesn’t play.”",
+ 'Dallas Wilson leads Florida with 38 catches for 483 yards and three touchdowns, according to ESPN.',
+ 'Vanderbilt listed nine players out: quarterback Blaze Berlowitz, cornerback Cobey Sellers, edge rusher Edwin Kolenge, linebackers Josiah Broxton and Daniel Vollmer Jr., running back Evan Hampton, defensive lineman Aaron Bryant and offensive linemen Gunner Givens and Ted Gregoire. Edge rusher Miles Capers came off the list Thursday, a sign he is cleared to play, Gators Wire reported.',
+ 'The SEC updates the report again Friday night and posts a final version 90 minutes before kickoff. The full lists are in the availability report in this issue.',
+ '<em>Player statuses: SEC availability report, updated Nov. 19, as published by Gators Wire on Nov. 20. Positions and statistics: ESPN.</em>')
+for nm, pos in (('Vernell Brown III', 'WR'), ('Lacota Dippre', 'TE'), ('Emeka Ugorji', 'OL'), ('Jaden Robinson', 'LB'), ('DJ Coleman', 'S'), ('Dijon Johnson', 'CB'), ('Bailey Stockton', 'WR'), ('Bryce Thornton', 'S')):
+    assert roster_pos(fla_roster, nm)[2] == pos, ('the injury story names this position', nm, roster_pos(fla_roster, nm)[2])
+for nm, pos in (('Blaze Berlowitz', 'QB'), ('Cobey Sellers', 'CB'), ('Edwin Kolenge', 'EDGE'), ('Josiah Broxton', 'LB'), ('Daniel Vollmer Jr.', 'LB'), ('Evan Hampton', 'RB'), ('Aaron Bryant', 'DL'), ('Gunner Givens', 'OL'), ('Ted Gregoire', 'OL')):
+    assert roster_pos(van_roster, nm)[2] == pos, ('the injury story names this position', nm, roster_pos(van_roster, nm)[2])
+def STORY(key, kicker, title, dek, html):
+    img, caption = PHOTO[key]
+    return {'kicker': kicker, 'title': title, 'dek': dek, 'author': 'GatorBait Staff', 'date': 'Nov. 20, 2026', 'image': img, 'caption': caption, 'html': html}
+exclusives_block = {'label': 'Inside this issue', 'note': 'Four GatorBait Staff stories for Vanderbilt week', 'jump': 'Stories', 'items': [
+ STORY('preview', 'Game preview · Vanderbilt at Florida', 'Home finale: Florida gets Vanderbilt with a seventh win in reach',
+       'Senior Day, %s ET on %s. Florida is a %s-point favorite, and both teams come in short-handed.' % (ap_time(kick), tv, fav), preview_html),
+ STORY('injury', 'Availability report', 'Five Gators out, nine Commodores out for the home finale',
+       'Vernell Brown III and Lacota Dippre are among the Florida players listed out. Vanderbilt will be without nine.', injury_html),
+ STORY('wooden', 'Basketball · Wooden Award', 'Three Gators make the Wooden Award preseason Top 50',
+       "Thomas Haugh, Alex Condon and Rueben Chinyelu are on the men's watch list. Kiyomi McMiller is on the women's.", wooden_html),
+ STORY('bowl', 'Bowl outlook', 'Early bowl projections keep Florida in the state',
+       'Sports Illustrated has the Gators against Nebraska in Tampa. CBS Sports has them against SMU in the Gator Bowl.', bowl_html)]}
+
 margin = int(F['totalTakeaways']) - int(F['totalGiveaways'])
 issue = {
- '$comment': 'GatorBait Magazine, Pregame edition (Nov. 21, 2026: Vanderbilt at Florida). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; teamSchedules and teamRosters are the pregame standards (owner rule, Nov. 20), rendered by src/magazine-pregame-standards.js, which the bundler adds only when those keys are present. Numbers: ESPN event %s, ESPN team statistics, schedules and rosters, fetched %s. No keys block (no Keys piece for this game on the site) and no availability block (ESPN lists none). No email or campaign send.' % (EVENT, TODAY),
+ '$comment': 'GatorBait Magazine, Pregame edition (Nov. 21, 2026: Vanderbilt at Florida). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; teamSchedules and teamRosters are the pregame standards (owner rule, Nov. 20), rendered by src/magazine-pregame-standards.js, which the bundler adds only when those keys are present. Numbers: ESPN event %s, ESPN team statistics, schedules and rosters, fetched %s. injuries is the SEC availability report (updated Nov. 19, as published by Gators Wire); exclusives are four GatorBait Staff stories written for this issue, rendered by pgExclusives in the standards file. No keys block (no Keys piece for this game on the site). No email or campaign send.' % (EVENT, TODAY),
  'id': '2026-11-21-vanderbilt-at-florida', 'layout': 'pregame', 'liveFeed': False,
  'issue': {'number': 'Vanderbilt Pregame', 'name': 'Vanderbilt at Florida', 'date': '%s, %s, %d' % (kick.strftime('%A'), ap_date(kick), kick.year),
            'week': 'Week %d · %s ET · %s · %s' % (week, cap(ap_time(kick)), tv, venue['fullName']),
@@ -340,7 +441,9 @@ issue = {
    'source': "ESPN team schedules, %s, %d. A ranking is the opponent's on game day, as ESPN lists it. Kickoffs are Eastern." % (TODAY, now.year)},
  'tape': {'label': 'Tale of the tape', 'note': 'Season, per game: %s games each' % ap_num(gpF) if gpF == gpV else 'Season, per game: Florida %d games, Vanderbilt %d' % (gpF, gpV),
           'source': 'ESPN %d team statistics and game summary, %s (penalty yards a game: season penalty yards over games played).' % (SEASON, TODAY), 'rows': tape},
- 'lead': {'label': 'The Soothsayer', 'kicker': 'Franz Beard · Senior Columnist', 'title': 'Improved defense will carry Gators to 7th win', 'url': FRANZ, 'html': lead_html,
+ 'injuries': injuries_block,
+ 'exclusives': exclusives_block,
+ 'lead': {'label': 'The Soothsayer', 'kicker': 'Franz Beard · Senior Columnist', 'title': 'Improved defense will carry Gators to 7th win', 'url': FRANZ, 'image': lead_img, 'caption': 'Florida celebrates on the sideline at Kentucky on Nov. 14.', 'html': lead_html,
           'continue': 'Read the full column: Franz on every SEC game', 'date': 'Nov. 20, 2026'},
  'slate': {'label': 'The Sooth Board', 'note': '%s of Saturday\'s SEC games with Franz Beard\'s picks' % cap(ap_num(len(slate))),
            'source': 'Kickoffs (Eastern), TV, records and lines: ESPN, %s. Rankings: College Football Playoff. Picks and the words beside them: Franz Beard.' % TODAY, 'games': slate},
@@ -385,11 +488,18 @@ for t in issue['teamRosters']['teams']:
     lim(t['note'], 80, 'roster note'); assert len(t['groups']) <= 6 and all(len(rows) <= 90 for _, rows in t['groups'])
     for _, rows in t['groups']:
         for p in rows: assert len(p) == 7 and len(str(p[0])) <= 3 and len(p[1]) <= 60 and len(p[2]) <= 6 and len(p[3]) <= 6 and len(p[4]) <= 6 and len(str(p[5])) <= 4 and len(p[6]) <= 40, p
+J = issue['injuries']; lim(J['label'], 40, 'injuries.label'); lim(J['jump'], 30, 'injuries.jump'); lim(J['asOf'], 200, 'injuries.asOf'); lim(J['source'], 160, 'injuries.source')
+for t in J['teams']:
+    assert len(t['items']) <= 20
+    for x in t['items']: lim(x['pos'], 8, 'availability pos'); lim(x['name'], 60, 'availability name'); lim(x['status'], 24, 'availability status'); lim(x.get('detail', ''), 120, 'availability detail')
+X = issue['exclusives']; lim(X['label'], 40, 'exclusives.label'); lim(X['note'], 160, 'exclusives.note'); lim(X['jump'], 30, 'exclusives.jump'); assert len(X['items']) <= 6
+for x in X['items']: lim(x['kicker'], 80, 'story kicker'); lim(x['title'], 200, 'story title'); lim(x['dek'], 300, 'story dek'); lim(x['author'], 60, 'story author'); lim(x['date'], 40, 'story date'); lim(x['html'], 20000, 'story html'); lim(x['caption'], 200, 'story caption'); lim(x['image']['alt'], 200, 'story alt'); lim(x['image']['credit'], 160, 'story credit')
 # house rules: no em dash in our own copy (a published headline keeps its own punctuation), one outlet is never named
 flat = json.dumps({k: v for k, v in issue.items() if k not in ('lead', 'cards')}, ensure_ascii=False) + json.dumps([[c['kicker'], c['excerpt'], (c.get('image') or {}).get('alt', ''), (c.get('image') or {}).get('credit', '')] for c in cards], ensure_ascii=False)
 assert '—' not in flat, 'em dash in copy written for this issue'
 assert not re.search(r'gator\s*-?\s*country', json.dumps(issue), re.I)
-ids = [issue['cover']['image']['id']] + [c['image']['id'] for c in cards if c.get('image')]
+lim(L['caption'], 200, 'lead.caption'); lim(L['image']['alt'], 200, 'lead alt'); lim(L['image']['credit'], 160, 'lead credit')
+ids = [issue['cover']['image']['id'], L['image']['id']] + [x['image']['id'] for x in X['items']] + [c['image']['id'] for c in cards if c.get('image')]
 assert len(ids) == len(set(ids)), 'every photo is a distinct file'
 
 def dump(obj):

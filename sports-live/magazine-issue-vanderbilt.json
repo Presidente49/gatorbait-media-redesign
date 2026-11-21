@@ -1,5 +1,5 @@
 {
- "$comment": "GatorBait Magazine, Pregame edition (Nov. 21, 2026: Vanderbilt at Florida). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; teamSchedules and teamRosters are the pregame standards (owner rule, Nov. 20), rendered by src/magazine-pregame-standards.js, which the bundler adds only when those keys are present. Numbers: ESPN event 401856748, ESPN team statistics, schedules and rosters, fetched Nov. 20. No keys block (no Keys piece for this game on the site) and no availability block (ESPN lists none). No email or campaign send.",
+ "$comment": "GatorBait Magazine, Pregame edition (Nov. 21, 2026: Vanderbilt at Florida). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; teamSchedules and teamRosters are the pregame standards (owner rule, Nov. 20), rendered by src/magazine-pregame-standards.js, which the bundler adds only when those keys are present. Numbers: ESPN event 401856748, ESPN team statistics, schedules and rosters, fetched Nov. 20. injuries is the SEC availability report (updated Nov. 19, as published by Gators Wire); exclusives are four GatorBait Staff stories written for this issue, rendered by pgExclusives in the standards file. No keys block (no Keys piece for this game on the site). No email or campaign send.",
  "id": "2026-11-21-vanderbilt-at-florida",
  "layout": "pregame",
  "liveFeed": false,
@@ -20,12 +20,12 @@
   "url": "/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
   "directLink": false,
   "image": {
-   "id": "d3cfa5_fa57aa84912b434281d9e92a148acc44",
+   "id": "ae876a_bb52ae6e52ea458c89c9844843ed96c0",
    "ext": "jpg",
-   "width": 1284,
-   "height": 775,
-   "alt": "Florida quarterback Aaron Philo, wearing No. 12, runs with the ball in the win at Kentucky.",
-   "credit": "Image via All Gators"
+   "width": 960,
+   "height": 640,
+   "alt": "Florida quarterback Aaron Philo (12) jogs across the field with teammates during the Nov. 14, 2026, win at Kentucky.",
+   "credit": "Photo courtesy University of Florida (UAA)."
   }
  },
  "game": {
@@ -69,7 +69,7 @@
    "missouri": 15.3
   },
   "source": "ESPN summary and pickcenter (DraftKings), event 401856748. Florida is No. 24 in the CFP rankings, No. 23 in the AP Top 25. Senior Day: Buddy Martin, Nov. 19.",
-  "forecast": "71°, 25% chance of rain, gusts to 12 mph (ESPN forecast)"
+  "forecast": "72°, 24% chance of rain, gusts to 12 mph (ESPN forecast)"
  },
  "series": {
   "label": "The series",
@@ -311,11 +311,200 @@
    }
   ]
  },
+ "injuries": {
+  "label": "Availability report",
+  "jump": "Injury report",
+  "asOf": "SEC availability report as updated Thursday, Nov. 19. The report updates again Friday night, with a final version 90 minutes before kickoff.",
+  "teams": [
+   {
+    "name": "Florida",
+    "items": [
+     {
+      "pos": "WR",
+      "name": "Vernell Brown III",
+      "status": "Out"
+     },
+     {
+      "pos": "TE",
+      "name": "Lacota Dippre",
+      "status": "Out",
+      "detail": "Jon Sumrall called the injury “pretty substantial” on Monday, Gators Wire reported."
+     },
+     {
+      "pos": "OL",
+      "name": "Emeka Ugorji",
+      "status": "Out"
+     },
+     {
+      "pos": "LB",
+      "name": "Jaden Robinson",
+      "status": "Out"
+     },
+     {
+      "pos": "S",
+      "name": "DJ Coleman",
+      "status": "Out"
+     },
+     {
+      "pos": "CB",
+      "name": "Dijon Johnson",
+      "status": "Doubtful"
+     },
+     {
+      "pos": "WR",
+      "name": "Bailey Stockton",
+      "status": "Questionable",
+      "detail": "Sumrall: “I’d be shocked if he doesn’t play,” Gators Wire reported."
+     },
+     {
+      "pos": "S",
+      "name": "Bryce Thornton",
+      "status": "Questionable"
+     }
+    ]
+   },
+   {
+    "name": "Vanderbilt",
+    "items": [
+     {
+      "pos": "QB",
+      "name": "Blaze Berlowitz",
+      "status": "Out"
+     },
+     {
+      "pos": "CB",
+      "name": "Cobey Sellers",
+      "status": "Out"
+     },
+     {
+      "pos": "EDGE",
+      "name": "Edwin Kolenge",
+      "status": "Out"
+     },
+     {
+      "pos": "LB",
+      "name": "Josiah Broxton",
+      "status": "Out"
+     },
+     {
+      "pos": "LB",
+      "name": "Daniel Vollmer Jr.",
+      "status": "Out"
+     },
+     {
+      "pos": "RB",
+      "name": "Evan Hampton",
+      "status": "Out"
+     },
+     {
+      "pos": "DL",
+      "name": "Aaron Bryant",
+      "status": "Out"
+     },
+     {
+      "pos": "OL",
+      "name": "Gunner Givens",
+      "status": "Out"
+     },
+     {
+      "pos": "OL",
+      "name": "Ted Gregoire",
+      "status": "Out"
+     }
+    ]
+   }
+  ],
+  "source": "SEC availability report, updated Nov. 19, as published by Gators Wire on Nov. 20. Positions: ESPN rosters."
+ },
+ "exclusives": {
+  "label": "Inside this issue",
+  "note": "Four GatorBait Staff stories for Vanderbilt week",
+  "jump": "Stories",
+  "items": [
+   {
+    "kicker": "Game preview · Vanderbilt at Florida",
+    "title": "Home finale: Florida gets Vanderbilt with a seventh win in reach",
+    "dek": "Senior Day, noon ET on SEC Network. Florida is a 13.5-point favorite, and both teams come in short-handed.",
+    "author": "GatorBait Staff",
+    "date": "Nov. 20, 2026",
+    "image": {
+     "id": "ae876a_d5fa38d9c98c4bfeb982f4831abbce73",
+     "ext": "jpg",
+     "width": 720,
+     "height": 480,
+     "alt": "Florida coach Jon Sumrall, in an orange hooded sweatshirt and a headset, gives a thumbs-up on the sideline at Kentucky.",
+     "credit": "Photo courtesy of UAA."
+    },
+    "caption": "Jon Sumrall on the sideline during the 21-14 win at Kentucky on Nov. 14.",
+    "html": "<p>Florida (6-4, 4-4 SEC) plays its final home game of the season Saturday against Vanderbilt (4-6, 1-6), a noon ET kickoff on SEC Network. It is Senior Day at Ben Hill Griffin Stadium, and a win would be the Gators' seventh.</p><p>Florida is No. 24 in the College Football Playoff rankings and a 13.5-point favorite, with the total at 45.5, according to the DraftKings line listed by ESPN. ESPN's matchup predictor gives the Gators a 84.7% chance to win.</p><p>Florida's defense has tightened. The Gators have allowed 22.0 points a game over their last four after giving up 37.5 a game over the four before that.</p><p>Quarterback Aaron Philo has completed 126 of 180 passes for 1,486 yards with nine touchdowns and five interceptions. Jadan Baugh has run 178 times for 905 yards and 15 touchdowns, and Dallas Wilson has 38 catches for 483 yards and three scores. Jayden Woods leads the defense with six sacks, Myles Graham with 76 tackles.</p><p>Vanderbilt averages 21.3 points a game and allows 28.6; Florida averages 31.3 and allows 26.2. Freshman quarterback Jared Curtis has thrown for 1,880 yards with eight touchdowns and eight interceptions, and Junior Sherrill has 63 catches for 847 yards and four touchdowns. Bryan Longwell leads the Commodores with 73 tackles and Issa Ouattara with four sacks.</p><p>Both teams are short-handed. Florida listed five players out on the SEC availability report as updated Thursday, among them wide receiver Vernell Brown III and tight end Lacota Dippre, and Vanderbilt listed nine. The full lists are in the availability report in this issue.</p><p>Florida has won 10 of the 12 meetings since 2012, including the last one, 38-14 in Gainesville on Oct. 7, 2023.</p><p>After Saturday: Florida at Florida State, Friday, Nov. 27, 3:30 p.m. ET on ABC.</p><p><em>Records, statistics, line and predictor: ESPN, Nov. 20. Availability: SEC report, updated Nov. 19, as published by Gators Wire.</em></p>"
+   },
+   {
+    "kicker": "Availability report",
+    "title": "Five Gators out, nine Commodores out for the home finale",
+    "dek": "Vernell Brown III and Lacota Dippre are among the Florida players listed out. Vanderbilt will be without nine.",
+    "author": "GatorBait Staff",
+    "date": "Nov. 20, 2026",
+    "image": {
+     "id": "ae876a_93ffb4fa4f24421d8e65a421b14bd42f",
+     "ext": "jpg",
+     "width": 720,
+     "height": 480,
+     "alt": "Florida's Dallas Wilson (6) and Aaron Philo (12) leap into a chest bump during the Nov. 14, 2026, win at Kentucky.",
+     "credit": "Photo courtesy of UAA."
+    },
+    "caption": "Dallas Wilson (6), Florida's leading receiver, celebrates with quarterback Aaron Philo at Kentucky.",
+    "html": "<p>Florida will be without five players Saturday against Vanderbilt, including wide receiver Vernell Brown III and tight end Lacota Dippre, according to the SEC availability report as updated Thursday night.</p><p>Offensive lineman Emeka Ugorji, linebacker Jaden Robinson and safety DJ Coleman are also listed out. Cornerback Dijon Johnson is doubtful, and wide receiver Bailey Stockton and safety Bryce Thornton are questionable.</p><p>Coach Jon Sumrall called Dippre's injury “pretty substantial” on Monday, Gators Wire reported. Of Stockton, Sumrall said, “I’d be shocked if he doesn’t play.”</p><p>Dallas Wilson leads Florida with 38 catches for 483 yards and three touchdowns, according to ESPN.</p><p>Vanderbilt listed nine players out: quarterback Blaze Berlowitz, cornerback Cobey Sellers, edge rusher Edwin Kolenge, linebackers Josiah Broxton and Daniel Vollmer Jr., running back Evan Hampton, defensive lineman Aaron Bryant and offensive linemen Gunner Givens and Ted Gregoire. Edge rusher Miles Capers came off the list Thursday, a sign he is cleared to play, Gators Wire reported.</p><p>The SEC updates the report again Friday night and posts a final version 90 minutes before kickoff. The full lists are in the availability report in this issue.</p><p><em>Player statuses: SEC availability report, updated Nov. 19, as published by Gators Wire on Nov. 20. Positions and statistics: ESPN.</em></p>"
+   },
+   {
+    "kicker": "Basketball · Wooden Award",
+    "title": "Three Gators make the Wooden Award preseason Top 50",
+    "dek": "Thomas Haugh, Alex Condon and Rueben Chinyelu are on the men's watch list. Kiyomi McMiller is on the women's.",
+    "author": "GatorBait Staff",
+    "date": "Nov. 20, 2026",
+    "image": {
+     "id": "d3cfa5_00121cc44e254a40a9a887b5d0d1351e",
+     "ext": "jpg",
+     "width": 2000,
+     "height": 1333,
+     "alt": "Florida forward Alex Condon (21) shoots a 3-pointer over a Houston defender in Las Vegas on Nov. 18, 2026.",
+     "credit": "Photo courtesy UAA (University Athletic Association, FloridaGators.com)."
+    },
+    "caption": "Alex Condon shoots a 3-pointer against Houston in Las Vegas on Nov. 18.",
+    "html": "<p>Florida has three players on the John R. Wooden Award men's preseason Top 50 watch list, announced Wednesday, Nov. 18: Thomas Haugh, Alex Condon and Rueben Chinyelu.</p><p>The SEC has 17 players on the list, WRUF reported, and any of the three would be the first Gator to win the award, which has been given since 1977.</p><p>Haugh leads the three through seven games at 17.6 points and 6.9 rebounds a game, shooting 57.6% from the field and 18 of 35 on 3-pointers. Condon averages 12.9 points, 8.0 rebounds and 4.1 assists and has blocked 11 shots. Chinyelu averages 8.7 points and 6.9 rebounds and has made 20 of 32 shots, 62.5%.</p><p>Florida is 6-1. The Gators host Milwaukee on Tuesday, Nov. 24, at 7 p.m. ET on SEC Network+ and Duke on Dec. 1 at 9:30 p.m. ET on ESPN.</p><p>On the women's side, Kiyomi McMiller is on the Wooden Award preseason Top 50, according to FloridaGators.com. She averages 24.0 points, 4.3 rebounds and 3.5 assists through six games for Florida (4-2), which plays West Virginia on Nov. 24 and Davidson on Nov. 26 in the Battle 4 Atlantis.</p><p><em>Watch lists: Wooden Award announcements as reported by WRUF, Nov. 19, and FloridaGators.com. Averages are computed from ESPN box scores through Nov. 19; schedules are ESPN's.</em></p>"
+   },
+   {
+    "kicker": "Bowl outlook",
+    "title": "Early bowl projections keep Florida in the state",
+    "dek": "Sports Illustrated has the Gators against Nebraska in Tampa. CBS Sports has them against SMU in the Gator Bowl.",
+    "author": "GatorBait Staff",
+    "date": "Nov. 20, 2026",
+    "image": {
+     "id": "ae876a_5917eb4e36404c5daba6ddb47d5e9ef2",
+     "ext": "jpg",
+     "width": 1920,
+     "height": 1080,
+     "alt": "Florida coach Jon Sumrall sits at the podium after the 21-14 win at Kentucky on Nov. 14, 2026.",
+     "credit": "Photo courtesy University of Florida (UAA)."
+    },
+    "caption": "Jon Sumrall after the win at Kentucky, Florida's sixth of the season.",
+    "html": "<p>Florida is bowl eligible at 6-4, and two early projections have the Gators playing their postseason game in Florida.</p><p>Sports Illustrated projects Florida against Nebraska in the ReliaQuest Bowl in Tampa on Dec. 31, Gators Wire reported Thursday. CBS Sports projects Florida against SMU in the Gator Bowl in Jacksonville, according to the same report.</p><p>Projections are forecasts, not invitations. Bowl pairings are set after the conference championship games, and where Florida lands depends on how it finishes: Vanderbilt on Saturday, then Florida State on Nov. 27.</p><p>Florida went 4-8 last season.</p><p>Franz Beard looked at the bowl picture and Florida's No. 24 CFP ranking in his <a href=\"/post/thoughts-of-the-day-november-18-2026\">Thoughts of the Day for Nov. 18</a>.</p><p><em>Projections: Sports Illustrated and CBS Sports, as reported by Gators Wire on Nov. 19. Records: ESPN.</em></p>"
+   }
+  ]
+ },
  "lead": {
   "label": "The Soothsayer",
   "kicker": "Franz Beard · Senior Columnist",
   "title": "Improved defense will carry Gators to 7th win",
   "url": "/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
+  "image": {
+   "id": "d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9",
+   "ext": "png",
+   "width": 2000,
+   "height": 1061,
+   "alt": "A Florida player in a white road jersey raises the football in celebration on the Gators' sideline during the Nov. 14, 2026, win at Kentucky.",
+   "credit": "Photo courtesy UAA (University Athletic Association, FloridaGators.com)."
+  },
+  "caption": "Florida celebrates on the sideline at Kentucky on Nov. 14.",
   "html": "<blockquote><p>“Patience young Grasshopper” – Master Po to young Kwai Chang Caine from the 1970s television series “Kung Fu”</p></blockquote><p>When it comes to defense, patience was in rather short supply during Florida’s first six games of the season, particularly after a four-game stretch against Auburn, Ole Miss, Missouri and South Carolina. The Gators gave up a collective 150 points in those four games – two wins and two losses – an average of 438 total yards, 297 of which came through the air. Florida’s beleaguered secondary surrendered 10 touchdown passes while giving up 297 air yards.</p><p>A funny thing happened on the way to a defensive clone of 2020 when the Third and Grantham Gators gave up 428 yards and 30.8 points per game. Midway through the season, the same Brad White whom many in the Gator Nation wanted to see exiled to Akron or UMass began finding a formula that would work. In the four games since the South Carolina disaster, the Gators have held opponents to a very respectable 297.25 yards and 22 points per game.</p><p>After half a season of life with the defensive bottom feeders of the Southeastern Conference the Gators have moved up the ranks to 11th in the SEC and 64th nationally. To put it in better perspective, the Gators are giving up only 354.7 yards per game now, which, if it stands will be the best Florida defense since 2019.</p><p>The improvement has been mostly subtle but occasionally spectacular. What the Gators did last week especially in the in the fourth quarter turned Kentucky’s playoff dreams into a nightmare finish. The Gators gave up a 15-play, 86-yard touchdown drive on UK’s first possession then held the Wildcats to a short-field touchdown and just 156 yards after that.</p><p>On Kentucky’s last two possessions, the Gators got a fourth down stop when Aaron Chiles blitzed up the middle and planted Kenny Minchey just as he was throwing and a four-and-out that was all incompletions. That wouldn’t have happened prior to mid-October.</p><p>The key word here has been patience. Head ball coach Jon Sumrall trusted White to bring the defensive troops along. A couple of tweaks that included some fairly exotic blitz packages significantly shortened the time opposing QBs have to throw the ball, lessening the time the young corners have to cover.</p><p>It is a formula that has worked well and a reason why the Gators (6-4, 4-4 SEC) are favored by 13.5 points to take down Vanderbilt in the final home game of the season Saturday (12 noon, SEC Network). The Commodores don’t run the ball well at all (102 yards per game) and without the run threat to worry about the Gators should make life miserable for true freshman QB Jared Curtis.</p><p>The way The Soothsayer views this one, it won’t take a lot of points to send Vandy packing back to Nashville but it will take another strong effort out of a defense that has matured to secure a seventh win and assure the Gators of just their second regular season winning record since 2020.</p><p class=\"pg-sooth\"><strong>The Sayer Says Sooth!:</strong> Three touchdowns should get the job done for Florida which will move one step closer to an 8-win regular season.</p>",
   "continue": "Read the full column: Franz on every SEC game",
   "date": "Nov. 20, 2026"
@@ -439,7 +628,7 @@
      "rec": "6-4",
      "rank": 22
     },
-    "line": "OU -7.5",
+    "line": "OU -7",
     "pick": "Oklahoma",
     "note": "Sooners in a white knuckles affair",
     "ou": 37.5

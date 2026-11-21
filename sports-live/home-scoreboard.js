@@ -10,6 +10,9 @@
  *      minutes otherwise; it pauses in a hidden tab and catches up the moment the tab is back.
  * Interaction: tabs (All, Live, Final), tap a game for the line, TV, venue and the ESPN link, a flash on every score change.
  * Style: Barlow only, scoped under #gbm-lsb, no images except ESPN team logos (hidden if they fail).
+ * No jump (Nov. 21, 2026): the panel is inserted in the same frame in which #sh-main first appears, from ESPN's answer (the fetch starts the
+ * moment this file loads) or, failing that, from the last slate saved in localStorage, so nothing already on screen is pushed down. Only a first
+ * visit on which ESPN answers later than the page builds still moves content once (and then the scroll position is kept for a reader who scrolled).
  * Failure is quiet: if ESPN cannot be reached the last good scores stay up with a "reconnecting" note, and if nothing was ever
  * read the panel is not drawn. Rankings are the College Football Playoff rankings as ESPN lists them. Stats: ESPN only. */
 (function () {
@@ -21,6 +24,23 @@
   var PATH = '/apis/v2/scoreboard/header?sport=football&league=college-football&limit=100';
   var FLA = '57', ID = 'gbm-lsb', HOUR = 3600000;
   var S = { events: [], tab: 'all', more: 0, open: {}, last: {}, flash: {}, fail: 0, at: 0, root: null, html: '', timer: 0, busy: 0, seen: 0 };
+
+  var CK = 'gbm_lsb_v1';
+  function trim(e) {
+    var f = e.fullStatus && e.fullStatus.type || {}, o = e.odds || {};
+    return { id: e.id, date: e.date, status: e.status, broadcast: e.broadcast, location: e.location, link: e.link, odds: { details: o.details, overUnder: o.overUnder },
+      fullStatus: { type: { shortDetail: f.shortDetail, detail: f.detail } },
+      competitors: (e.competitors || []).map(function (c) { return { id: c.id, homeAway: c.homeAway, rank: c.rank, location: c.location, displayName: c.displayName, score: c.score, winner: c.winner }; }) };
+  }
+  function saveCache(events) {
+    try { localStorage.setItem(CK, JSON.stringify({ at: Date.now(), events: events.filter(function (e) { return inWindow(e, Date.now()); }).map(trim) })); } catch (_) {}
+  }
+  function loadCache() {
+    try {
+      var c = JSON.parse(localStorage.getItem(CK) || 'null');
+      if (c && Array.isArray(c.events) && c.events.length && Date.now() - c.at < 12 * HOUR) { S.events = c.events; S.cacheAt = c.at; }
+    } catch (_) {}
+  }
 
   function esc(v) { return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function onHome() { return /^\/?$/.test(location.pathname || '/'); }
@@ -119,7 +139,7 @@
     var CAP = window.innerWidth < 700 ? 3 : 6, shown = S.more ? match : match.slice(0, CAP);
     var anyLive = all.some(function (e) { return e.status === 'in'; });
     var upd = S.at ? new Date(S.at).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', second: '2-digit' }) : '';
-    var note = S.fail >= 2 ? 'Reconnecting to ESPN. Showing the last scores we have.' : 'Updates by itself. Last checked ' + esc(upd) + ' ET.';
+    var note = S.fail >= 2 ? 'Reconnecting to ESPN. Showing the last scores we have.' : (!S.at && S.cacheAt ? 'Checking ESPN for the latest scores.' : 'Updates by itself. Last checked ' + esc(upd) + ' ET.');
     var tabs = [['all', 'All ranked games', n.all], ['live', 'Live now', n.live], ['final', 'Final', n.final]].map(function (t) {
       return '<button type="button" class="tb" data-tab="' + t[0] + '" aria-pressed="' + (S.tab === t[0]) + '">' + t[1] + ' <i>' + t[2] + '</i></button>';
     }).join('');
@@ -223,7 +243,13 @@
         paint();
       });
     }
-    if (!S.root.isConnected || S.root.nextElementSibling !== main) main.parentNode.insertBefore(S.root, main);
+    if (!S.root.isConnected || S.root.nextElementSibling !== main) {
+      var y0 = window.pageYOffset || 0, was = main.getBoundingClientRect().top;
+      main.parentNode.insertBefore(S.root, main);
+      paint();
+      if (y0 > 40) { var moved = main.getBoundingClientRect().top - was; if (moved > 0) window.scrollBy(0, moved); }
+      return;
+    }
     paint();
   }
 
@@ -269,13 +295,20 @@
     S.busy = 1;
     get(0).then(function (events) {
       S.busy = 0; S.seen = 1;
-      if (events) { S.fail = 0; S.at = Date.now(); remember(events); S.events = events; }
+      if (events) { S.fail = 0; S.at = Date.now(); remember(events); S.events = events; saveCache(events); }
       else S.fail++;
       ensure();
       S.timer = setTimeout(poll, events ? delay() : Math.min(120000, 20000 * (S.fail + 1)));
     });
   }
 
+  loadCache();
+  try {
+    var mo = new MutationObserver(function () { if (!S.root || !S.root.isConnected) ensure(); });
+    mo.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(function () { mo.disconnect(); }, 60000);
+  } catch (_) {}
+  ensure();
   document.addEventListener('visibilitychange', function () { if (!document.hidden) { clearTimeout(S.timer); poll(); } });
   setInterval(function () { ensure(); }, 1500);
   setInterval(function () { if (S.root && S.root.isConnected) { S.html = ''; paint(); } }, 30000);

@@ -26,7 +26,18 @@ const read = (p) => readFileSync(join(repo, p), 'utf8');
 // The weekly and pregame bundles are built exactly as before.
 const NEWS = VARIANT === 'gatorbait-news'; // GatorBait News, the midweek news edition: the postgame skin and blocks plus src/magazine-news.{js,css}
 const POSTGAME = VARIANT === 'postgame' || /-postgame$/.test(VARIANT) || NEWS; // 'georgia-postgame' etc. use the postgame skin and loader fixture, built to sports-live/magazine-<variant>.js
-const css = (read('sports-live/src/magazine.css') + read(POSTGAME ? 'sports-live/src/magazine-postgame.css' : 'sports-live/src/magazine-pregame.css') + (NEWS ? read('sports-live/src/magazine-news.css') : '')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
+// Strip editorial meta (notes to the compiler) so the bundle carries only what renders; everything else goes through untouched.
+const META = new Set(['$comment', 'todo']);
+const strip = (v) => Array.isArray(v) ? v.map(strip) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).filter(([k]) => !META.has(k)).map(([k, x]) => [k, strip(x)])) : v;
+const issue = strip(JSON.parse(read(VARIANT ? 'sports-live/magazine-issue-' + VARIANT + '.json' : 'sports-live/magazine-issue.json')));
+if (!issue.id || !issue.cover || !issue.cover.url) { console.error('magazine-issue.json needs an id and a cover with a url'); process.exit(1); }
+
+// Pregame standards (owner rule, Nov. 20, 2026: both teams' rosters and a schedule, up and visible). Opt-in by data: the two
+// sections' renderer and skin (src/magazine-pregame-standards.{js,css}) are bundled, and hooked into renderPregame, only when the
+// issue carries teamSchedules or teamRosters. An edition without those keys builds byte-identical to before. The same file renders
+// issue.exclusives (stories written for the issue), so an edition that wants those carries the standards too.
+const STANDARDS = !POSTGAME && issue.layout === 'pregame' && Boolean(issue.teamSchedules || issue.teamRosters);
+const css = (read('sports-live/src/magazine.css') + read(POSTGAME ? 'sports-live/src/magazine-postgame.css' : 'sports-live/src/magazine-pregame.css') + (NEWS ? read('sports-live/src/magazine-news.css') : '') + (STANDARDS ? read('sports-live/src/magazine-pregame-standards.css') : '')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
 // capture.js goes first: magazine.js mounts synchronously at its end, and the postgame signup needs window.GBM_CAPTURE by then.
 const runtimeBase = (POSTGAME ? read('sports-live/src/capture.js') + '\n;' : '') + read('sports-live/src/magazine.js') + read('sports-live/src/magazine-feed.js') + read('sports-live/src/magazine-pregame.js') +
   (POSTGAME ? '\n' + read('sports-live/src/magazine-postgame.js') : '');
@@ -35,10 +46,18 @@ const runtime = VARIANT === 'wednesday' ? runtimeBase.replace('Six complete arti
   // GatorBait News: route the postgame render and start hooks to src/magazine-news.js when the issue sets "news": true. That file reuses the
   // postgame blocks under new section ids (nwAs(pmBox, D, 'schedule', 'box') reads D.schedule and emits #pm-schedule) and adds the matchup card,
   // its kickoff countdown (the only timer: one tick a minute, cleared on remount, blank after kickoff) and the membership block.
-  NEWS ? newsRuntime(runtimeBase + '\n' + read('sports-live/src/magazine-news.js')) : runtimeBase;
+  NEWS ? newsRuntime(runtimeBase + '\n' + read('sports-live/src/magazine-news.js')) :
+  STANDARDS ? standardsRuntime(runtimeBase + read('sports-live/src/magazine-pregame-standards.js')) : runtimeBase;
 function newsRuntime(code) {
   const swaps = [['return renderPostgame(D); //', 'return (D.news ? renderNews : renderPostgame)(D); //'], ["if (D.layout === 'postgame') pmStart(m);", "if (D.layout === 'postgame') { pmStart(m); if (D.news) nwStart(m); }"]];
   for (const [from, to] of swaps) { if (code.split(from).length !== 2) throw new Error('GatorBait News hook not found exactly once: ' + from); code = code.replace(from, to); }
+  return code;
+}
+// Pregame standards: a jump strip under the cover, the schedules ahead of the tale of the tape, the rosters after the story cards.
+function standardsRuntime(code) {
+  const swaps = [["pgCover(D) + '<div class=\"pg-grid\">'", "pgCover(D) + pgStdNav(D) + '<div class=\"pg-grid\">'"], ['pgWatch(D) + pgTape(D)', 'pgWatch(D) + pgTeamSchedules(D) + pgTape(D)'], ['pgCards(D) + pgShots(D)', 'pgCards(D) + pgTeamRosters(D) + pgShots(D)'],
+    ['pgSlate(D) + pgCards(D)', 'pgSlate(D) + pgExclusives(D) + pgCards(D)']]; // magazine-only stories (issue.exclusives) between the Sooth Board and the story cards
+  for (const [from, to] of swaps) { if (code.split(from).length !== 2) throw new Error('Pregame standards hook not found exactly once: ' + from); code = code.replace(from, to); }
   return code;
 }
 // Photo credits the homepage already verified (front-page.config.json), so the live card refresh can credit a new card's photo.
@@ -50,13 +69,7 @@ const PM_SEL = '#gbm-magazine-page.pm';
 const MZ_SEL = '#gbm-magazine-page.mz26 '; // second token (tilde, absent from the CSS): 290 more repeats, ~6 KB
 const cssExpression = css.includes('`') || css.includes('~') ? JSON.stringify(css) :
   JSON.stringify(css.split(PM_SEL).join('`').split(MZ_SEL).join('~')) + '.split("~").join("' + MZ_SEL + '").split("`").join("' + PM_SEL + '")';
-const MAX_JS = (POSTGAME ? 212 : 184) * 1024; // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
-
-// Strip editorial meta (notes to the compiler) so the bundle carries only what renders; everything else goes through untouched.
-const META = new Set(['$comment', 'todo']);
-const strip = (v) => Array.isArray(v) ? v.map(strip) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).filter(([k]) => !META.has(k)).map(([k, x]) => [k, strip(x)])) : v;
-const issue = strip(JSON.parse(read(VARIANT ? 'sports-live/magazine-issue-' + VARIANT + '.json' : 'sports-live/magazine-issue.json')));
-if (!issue.id || !issue.cover || !issue.cover.url) { console.error('magazine-issue.json needs an id and a cover with a url'); process.exit(1); }
+const MAX_JS = (POSTGAME ? 212 : 192) * 1024; // pregame cap 184 -> 192 KB on Nov. 20 for the Vanderbilt edition: the availability report, four issue stories and their art, on top of both rosters and schedules (owner direction) // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
 
 // A Magazine edition gets one visual treatment for each source asset. Repeated art makes a
 // roundup feel accidentally templated, even when the same file arrives by a different Wix cut.

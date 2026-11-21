@@ -1,0 +1,49 @@
+<style id="gbm-ref-css">.gbm-ref{box-sizing:border-box;max-width:1240px;margin:0 auto;padding:22px 16px 18px;background:#fff;font-family:Barlow,Arial,sans-serif;color:#14243d;scroll-margin-top:120px;text-align:left}.gbm-ref *{box-sizing:border-box}.gbm-ref .k{margin:0 0 4px;font:800 13px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#d8450c}.gbm-ref h2{margin:0 0 8px;padding:0;font:800 34px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:0;text-transform:uppercase;color:#081b35}.gbm-ref h3{margin:22px 0 4px;padding:0 0 6px;border-bottom:3px solid #fa4616;font:800 20px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#081b35}.gbm-ref p{margin:0 0 8px;font-size:16px;line-height:1.45;color:#14243d}.gbm-ref .nx{padding:10px 12px;background:#fff4ee;border-left:4px solid #fa4616}.gbm-ref a{color:#0021a5;font-weight:700;text-decoration:underline}.gbm-ref table{width:100%;border-collapse:collapse;margin:10px 0 8px;font-size:16px;line-height:1.3}.gbm-ref td,.gbm-ref th{padding:10px 6px;border-bottom:1px solid #d5dce6;text-align:left;vertical-align:top}.gbm-ref th{font:800 12px/1 "Barlow Condensed",Barlow,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#5f6b7a}.gbm-ref td:first-child{white-space:nowrap;color:#5f6b7a;font-weight:600}.gbm-ref td:last-child,.gbm-ref th:last-child{text-align:right;font-weight:700}.gbm-ref tr.w td:last-child{color:#0a7a3b}.gbm-ref tr.l td:last-child{color:#b3261e}.gbm-ref tr.n td{background:#fff4ee;font-weight:700;color:#081b35}.gbm-ref .src{font-size:13px;color:#5f6b7a}.gbm-ref ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:0 22px}.gbm-ref li{margin:0;padding:9px 0;border-bottom:1px solid #e3e8ef;font-size:16px;line-height:1.3;color:#081b35;font-weight:700}.gbm-ref li b{display:inline-block;min-width:40px;color:#d8450c;font:800 18px/1 "Barlow Condensed",Barlow,sans-serif}.gbm-ref li span{display:block;padding-left:40px;font-size:14px;font-weight:500;color:#5f6b7a}#gbm-opp{scroll-margin-top:96px}@media(min-width:700px){.gbm-ref{padding-left:20px;padding-right:20px}}</style><script id="gbm-ref-v1">(function(){
+if(window.__gbmRef)return;window.__gbmRef=1;
+var E='https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/teams/',T='57',D={f:0,q:Date.now()},busy=0;
+var MO=['Jan.','Feb.','March','April','May','June','July','Aug.','Sept.','Oct.','Nov.','Dec.'];
+var ST={AL:'Ala.',AK:'Alaska',AZ:'Ariz.',AR:'Ark.',CA:'Calif.',CO:'Colo.',CT:'Conn.',DE:'Del.',DC:'D.C.',FL:'Fla.',GA:'Ga.',HI:'Hawaii',ID:'Idaho',IL:'Ill.',IN:'Ind.',IA:'Iowa',KS:'Kan.',KY:'Ky.',LA:'La.',ME:'Maine',MD:'Md.',MA:'Mass.',MI:'Mich.',MN:'Minn.',MS:'Miss.',MO:'Mo.',MT:'Mont.',NE:'Neb.',NV:'Nev.',NH:'N.H.',NJ:'N.J.',NM:'N.M.',NY:'N.Y.',NC:'N.C.',ND:'N.D.',OH:'Ohio',OK:'Okla.',OR:'Ore.',PA:'Pa.',RI:'R.I.',SC:'S.C.',SD:'S.D.',TN:'Tenn.',TX:'Texas',UT:'Utah',VT:'Vt.',VA:'Va.',WA:'Wash.',WV:'W.Va.',WI:'Wis.',WY:'Wyo.'};
+var YR={Freshman:'Fr.',Sophomore:'So.',Junior:'Jr.',Senior:'Sr.'};
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function et(iso){var p={};new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'long',month:'numeric',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true}).formatToParts(new Date(iso)).forEach(function(x){p[x.type]=x.value});
+var h=+p.hour,m=p.minute,ap=/a/i.test(p.dayPeriod)?'a.m.':'p.m.';
+return{d:MO[+p.month-1]+' '+p.day,w:p.weekday,t:(h===12&&m==='00'?(ap==='p.m.'?'noon':'midnight'):h+(m==='00'?'':':'+m)+' '+ap)+' ET'}}
+function games(){return(D.s.events||[]).map(function(e){var c=e.competitions[0],me,op;c.competitors.forEach(function(x){x.team.id===T?me=x:op=x});
+var x=et(e.date),s=c.status.type,nm=op.team.location||op.team.displayName,rk=(op.curatedRank||{}).current,ms=(me.score||{}).displayValue,os=(op.score||{}).displayValue;
+var g={d:x.d,w:x.w,t:x.t,id:op.team.id,nm:nm,pre:s.state==='pre',cls:'',ven:(c.venue||{}).fullName||'',tv:(c.broadcasts||[]).map(function(b){return b.media&&b.media.shortName}).filter(Boolean)[0]||''};
+g.opp=(c.neutralSite||me.homeAway==='home'?'vs. ':'at ')+(rk&&rk<=25?'No. '+rk+' ':'')+nm+(c.neutralSite&&c.venue&&c.venue.address?' ('+c.venue.address.city+')':'');
+if(s.completed){g.res=(me.winner?'W ':'L ')+ms+'-'+os;g.cls=me.winner?'w':'l'}
+else if(s.state==='in')g.res='Live '+ms+'-'+os;
+else g.res=(e.timeValid===false?'Time TBA':x.t)+(g.tv?' · '+g.tv:'');
+return g})}
+function sched(){var G=games(),nx=null,t=D.s.team||{},h='<p class="k">Florida football</p><h2>2026 Schedule &amp; Results</h2>';
+G.forEach(function(g){if(!nx&&g.pre){nx=g;g.cls='n'}});D.nx=nx;
+if(t.recordSummary)h+='<p><b>'+esc(t.recordSummary)+'</b>'+(t.standingSummary?' · '+esc(t.standingSummary):'')+'</p>';
+if(nx)h+='<p class="nx"><b>Next:</b> '+esc(nx.opp)+' · '+nx.w+', '+nx.d+' · '+esc(nx.res)+' · <a href="#gbm-opp">'+esc(nx.nm)+' roster ↓</a></p>';
+h+='<table><thead><tr><th>Date</th><th>Opponent</th><th>Result / kickoff</th></tr></thead><tbody>'+G.map(function(g){return'<tr class="'+g.cls+'"><td>'+g.d+'</td><td>'+esc(g.opp)+'</td><td>'+esc(g.res)+'</td></tr>'}).join('')+'</tbody></table><p class="src">Schedule and results from ESPN. All times Eastern.</p>';
+return h}
+function opp(){var nx=D.nx,h='<p class="k">Next opponent</p><h2>'+esc(nx.nm)+' Roster</h2><p>'+nx.w+', '+nx.d+' · '+esc(nx.res)+(nx.ven?' · '+esc(nx.ven):'')+'</p>',L={offense:'Offense',defense:'Defense',specialTeam:'Special teams'};
+(D.r.athletes||[]).forEach(function(gr){var it=(gr.items||[]).slice();if(!it.length||!L[gr.position])return;
+it.sort(function(a,b){return(+a.jersey||999)-(+b.jersey||999)});
+h+='<h3>'+L[gr.position]+'</h3><ul>'+it.map(function(a){var b=a.birthPlace||{},ex=(a.experience||{}).displayValue||'',ht=(a.displayHeight||'').replace(/'\s+/,"'"),
+home=b.city?b.city+(b.state?', '+(ST[b.state]||b.state):b.country&&b.country!=='USA'?', '+b.country:''):'',
+m=[(a.position||{}).abbreviation,YR[ex]||ex,[ht,a.displayWeight].filter(Boolean).join(', '),home].filter(Boolean).join(' · ');
+return'<li><b>'+(a.jersey?'#'+esc(a.jersey):'')+'</b>'+esc(a.displayName)+'<span>'+esc(m)+'</span></li>'}).join('')+'</ul>'});
+return h+'<p class="src">Roster from ESPN.</p>'}
+function sec(id,html){var s=document.getElementById(id)||document.createElement('section');s.id=id;s.className='gbm-ref';s.innerHTML=html;return s}
+function go(){var m={'#schedule':'gbm-sched','#roster':'gbm-rosterpage','#gbm-opp':'gbm-opp'}[location.hash],el=m&&document.getElementById(m);el&&el.scrollIntoView({block:'start'})}
+function get(k,u){if(busy||D.f>4)return;busy=1;fetch(u).then(function(r){return r.json()}).then(function(j){D[k]=j;D[k+'t']=Date.now();busy=0;tick()}).catch(function(){busy=0;D.f++})}
+function tick(){var rp=document.getElementById('gbm-rosterpage');
+if(!rp){['gbm-sched','gbm-opp'].forEach(function(i){var e=document.getElementById(i);e&&e.remove()});return}
+if(!D.s){get('s',E+T+'/schedule');return}
+if(Date.now()-D.q>3e5){D.q=Date.now();get('s',E+T+'/schedule')}
+var a=document.getElementById('gbm-sched');
+if(!a||a.getAttribute('data-t')!==String(D.st)){a=sec('gbm-sched',sched());a.setAttribute('data-t',D.st);if(a.nextElementSibling!==rp)rp.parentNode.insertBefore(a,rp);if(!D.went){D.went=1;setTimeout(go,60)}}
+if(!D.nx)return;
+if(!D.r||D.rid!==D.nx.id){if(D.rid!==D.nx.id){D.r=null;D.rid=D.nx.id}get('r',E+D.nx.id+'/roster?limit=300');return}
+var o=document.getElementById('gbm-opp');
+if(!o||o.getAttribute('data-id')!==D.rid){o=sec('gbm-opp',opp());o.setAttribute('data-id',D.rid);if(rp.nextElementSibling!==o)rp.parentNode.insertBefore(o,rp.nextSibling);if(location.hash==='#gbm-opp')setTimeout(go,60)}}
+addEventListener('hashchange',go);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(a&&document.getElementById('gbm-rosterpage')&&/#(schedule|roster|gbm-opp)$/.test(a.getAttribute('href')||''))setTimeout(function(){if(a.hash)try{history.replaceState(null,'',a.hash)}catch(x){}go()},350)},true);
+tick();setInterval(tick,900);
+})();</script>

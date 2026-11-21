@@ -1,0 +1,1059 @@
+{
+ "$comment": "GatorBait Magazine, Pregame edition (Nov. 21, 2026: Vanderbilt at Florida). layout=pregame renders with renderPregame() in sports-live/src/magazine-pregame.js; teamSchedules and teamRosters are the pregame standards (owner rule, Nov. 20), rendered by src/magazine-pregame-standards.js, which the bundler adds only when those keys are present. Numbers: ESPN event 401856748, ESPN team statistics, schedules and rosters, fetched Nov. 20. injuries is the SEC availability report (updated Nov. 19, as published by Gators Wire); exclusives are four GatorBait Staff stories written for this issue, rendered by pgExclusives in the standards file. No keys block (no Keys piece for this game on the site). No email or campaign send.",
+ "id": "2026-11-21-vanderbilt-at-florida",
+ "layout": "pregame",
+ "liveFeed": false,
+ "issue": {
+  "number": "Vanderbilt Pregame",
+  "name": "Vanderbilt at Florida",
+  "date": "Saturday, Nov. 21, 2026",
+  "week": "Week 12 · Noon ET · SEC Network · Ben Hill Griffin Stadium",
+  "tagline": "Independent Florida Gators coverage",
+  "pageTitle": "GatorBait Magazine | Pregame: Vanderbilt at Florida | Nov. 21, 2026"
+ },
+ "asOf": "ESPN data as of Nov. 20, 2026. Kickoff, line and forecast can move before kickoff; each linked story keeps its own publication date.",
+ "cover": {
+  "kicker": "The Soothsayer · Franz Beard",
+  "headline": "Improved defense will carry Gators to 7th win",
+  "dek": "Florida has held its last four opponents to 22 points a game, and the Gators are 13.5-point favorites over Vanderbilt in the home finale. Franz Beard on the patience behind the defense's turnaround, with his picks across the SEC.",
+  "byline": "By Franz Beard",
+  "url": "/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
+  "directLink": false,
+  "image": {
+   "id": "ae876a_bb52ae6e52ea458c89c9844843ed96c0",
+   "ext": "jpg",
+   "width": 960,
+   "height": 640,
+   "alt": "Florida quarterback Aaron Philo (12) jogs across the field with teammates during the Nov. 14, 2026, win at Kentucky.",
+   "credit": "Photo courtesy University of Florida (UAA)."
+  }
+ },
+ "game": {
+  "label": "The game",
+  "kickoffISO": "2026-11-21T17:00:00Z",
+  "espnEvent": "401856748",
+  "kickoff": "Saturday, Nov. 21 · Noon ET",
+  "tv": "SEC Network",
+  "venue": "Ben Hill Griffin Stadium, Gainesville, Fla. · Senior Day",
+  "teams": [
+   {
+    "name": "Vanderbilt",
+    "record": "4-6",
+    "conf": "1-6 SEC"
+   },
+   {
+    "rank": "No. 24",
+    "name": "Florida",
+    "record": "6-4",
+    "conf": "4-4 SEC"
+   }
+  ],
+  "separator": "at",
+  "chips": [
+   {
+    "k": "Line",
+    "v": "FLA -13.5"
+   },
+   {
+    "k": "Total",
+    "v": "45.5"
+   },
+   {
+    "k": "Moneyline",
+    "v": "FLA -535 · VAN +400"
+   }
+  ],
+  "predictor": {
+   "label": "ESPN matchup predictor",
+   "florida": 84.7,
+   "missouri": 15.3
+  },
+  "source": "ESPN summary and pickcenter (DraftKings), event 401856748. Florida is No. 24 in the CFP rankings, No. 23 in the AP Top 25. Senior Day: Buddy Martin, Nov. 19.",
+  "forecast": "72°, 24% chance of rain, gusts to 12 mph (ESPN forecast)"
+ },
+ "series": {
+  "label": "The series",
+  "headline": "Florida 10-2 since 2012, first meeting since 2023",
+  "line": "Florida has won 10 of the 12 meetings since 2012 and is 5-1 in Gainesville over that stretch. The teams last met in 2023, a 38-14 Florida win in Gainesville. Vanderbilt's last win was 31-24 in Nashville in 2022.",
+  "games": [
+   {
+    "year": 2012,
+    "site": "A",
+    "fla": 31,
+    "mizz": 17
+   },
+   {
+    "year": 2013,
+    "site": "H",
+    "fla": 17,
+    "mizz": 34
+   },
+   {
+    "year": 2014,
+    "site": "A",
+    "fla": 34,
+    "mizz": 10
+   },
+   {
+    "year": 2015,
+    "site": "H",
+    "fla": 9,
+    "mizz": 7
+   },
+   {
+    "year": 2016,
+    "site": "A",
+    "fla": 13,
+    "mizz": 6
+   },
+   {
+    "year": 2017,
+    "site": "H",
+    "fla": 38,
+    "mizz": 24
+   },
+   {
+    "year": 2018,
+    "site": "A",
+    "fla": 37,
+    "mizz": 27
+   },
+   {
+    "year": 2019,
+    "site": "H",
+    "fla": 56,
+    "mizz": 0
+   },
+   {
+    "year": 2020,
+    "site": "A",
+    "fla": 38,
+    "mizz": 17
+   },
+   {
+    "year": 2021,
+    "site": "H",
+    "fla": 42,
+    "mizz": 0
+   },
+   {
+    "year": 2022,
+    "site": "A",
+    "fla": 24,
+    "mizz": 31
+   },
+   {
+    "year": 2023,
+    "site": "H",
+    "fla": 38,
+    "mizz": 14
+   }
+  ],
+  "source": "ESPN team schedules, 2012-2025 (Florida score first; H = Gainesville, A = Nashville). No meeting in 2024 or 2025."
+ },
+ "numbers": {
+  "label": "By the numbers",
+  "note": "Six figures that frame Saturday",
+  "items": [
+   {
+    "value": "FLA -13.5",
+    "label": "Florida, the line",
+    "note": "Total 45.5. DraftKings line via ESPN pickcenter, Nov. 20."
+   },
+   {
+    "value": "84.7%",
+    "label": "ESPN predictor, Florida",
+    "note": "Vanderbilt at 15.3% in the ESPN matchup predictor."
+   },
+   {
+    "value": "10-2",
+    "label": "Florida since 2012",
+    "note": "Last meeting: Florida 38, Vanderbilt 14 in Gainesville, Oct. 7, 2023."
+   },
+   {
+    "value": "22.0",
+    "label": "Points allowed, last four games",
+    "note": "Florida gave up 37.5 a game over the four before that."
+   },
+   {
+    "value": "+6",
+    "label": "Florida turnover margin",
+    "note": "Florida has 19 takeaways and 13 giveaways; Vanderbilt has 12 and 15."
+   },
+   {
+    "value": "102.1",
+    "label": "Vanderbilt rushing yards a game",
+    "note": "Florida allows 127.3 on the ground."
+   }
+  ],
+  "source": "ESPN game summary, pickcenter, schedules and 2026 team statistics, Nov. 20."
+ },
+ "teamSchedules": {
+  "label": "The schedules",
+  "note": "Florida's full 2026 schedule and Vanderbilt's, with every result so far",
+  "navLabel": "Also in this issue",
+  "jump": "Schedules",
+  "cols": ["Date", "Opponent", "Result"],
+  "teams": [
+   {
+    "name": "Florida",
+    "record": "6-4, 4-4 SEC",
+    "games": [
+     ["Sept. 5", "", "Florida Atlantic", "W", "66-21", "", 0],
+     ["Sept. 12", "", "Campbell", "W", "52-3", "", 0],
+     ["Sept. 19", "at", "Auburn", "W", "44-39", "", 0],
+     ["Sept. 26", "", "No. 4 Ole Miss", "W", "52-28", "", 0],
+     ["Oct. 3", "at", "No. 25 Missouri", "L", "45-17", "", 0],
+     ["Oct. 10", "", "South Carolina", "L", "38-19", "", 0],
+     ["Oct. 17", "at", "No. 7 Texas", "W", "27-24", "", 0],
+     ["Oct. 31", "vs.", "No. 3 Georgia (Atlanta)", "L", "27-8", "", 0],
+     ["Nov. 7", "", "Oklahoma", "L", "23-7", "", 0],
+     ["Nov. 14", "at", "No. 11 Kentucky", "W", "21-14", "", 0],
+     ["Nov. 21", "", "Vanderbilt", "", "Noon", "SEC Network", 1],
+     ["Nov. 27", "at", "Florida State", "", "3:30 p.m.", "ABC", 0]
+    ]
+   },
+   {
+    "name": "Vanderbilt",
+    "record": "4-6, 1-6 SEC",
+    "games": [
+     ["Sept. 5", "", "Austin Peay", "W", "28-9", "", 0],
+     ["Sept. 12", "", "Delaware", "W", "35-26", "", 0],
+     ["Sept. 19", "", "N.C. State", "W", "35-31", "", 0],
+     ["Sept. 26", "at", "Auburn", "L", "21-15", "", 0],
+     ["Oct. 3", "at", "No. 2 Georgia", "L", "38-14", "", 0],
+     ["Oct. 10", "", "No. 9 Ole Miss", "L", "52-17", "", 0],
+     ["Oct. 17", "", "Arkansas", "L", "31-21", "", 0],
+     ["Oct. 24", "at", "No. 12 Kentucky", "L", "34-17", "", 0],
+     ["Nov. 7", "at", "Mississippi State", "W", "25-23", "", 0],
+     ["Nov. 14", "", "No. 3 Alabama", "L", "21-6", "", 0],
+     ["Nov. 21", "at", "No. 24 Florida", "", "Noon", "SEC Network", 1],
+     ["Nov. 28", "", "No. 9 Tennessee", "", "TBA", "", 0]
+    ]
+   }
+  ],
+  "source": "ESPN team schedules, Nov. 20, 2026. A ranking is the opponent's on game day, as ESPN lists it. Kickoffs are Eastern."
+ },
+ "tape": {
+  "label": "Tale of the tape",
+  "note": "Season, per game: 10 games each",
+  "source": "ESPN 2026 team statistics and game summary, Nov. 20 (penalty yards a game: season penalty yards over games played).",
+  "rows": [
+   {
+    "label": "Points scored",
+    "fla": 31.3,
+    "miz": 21.3,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Points allowed",
+    "fla": 26.2,
+    "miz": 28.6,
+    "unit": "",
+    "lower": true
+   },
+   {
+    "label": "Total yards",
+    "fla": 393.5,
+    "miz": 330.5,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Yards allowed",
+    "fla": 354.7,
+    "miz": 354.1,
+    "unit": "",
+    "lower": true
+   },
+   {
+    "label": "Rushing yards",
+    "fla": 168.9,
+    "miz": 102.1,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Passing yards",
+    "fla": 224.6,
+    "miz": 228.4,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Yards a carry",
+    "fla": 4.4,
+    "miz": 3.1,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Takeaways (season)",
+    "fla": 19,
+    "miz": 12,
+    "unit": "",
+    "lower": false
+   },
+   {
+    "label": "Giveaways (season)",
+    "fla": 13,
+    "miz": 15,
+    "unit": "",
+    "lower": true
+   },
+   {
+    "label": "Penalty yards",
+    "fla": 68.5,
+    "miz": 64.7,
+    "unit": "",
+    "lower": true
+   }
+  ]
+ },
+ "injuries": {
+  "label": "Availability report",
+  "jump": "Injury report",
+  "asOf": "SEC availability report as updated Thursday, Nov. 19. The report updates again Friday night, with a final version 90 minutes before kickoff.",
+  "teams": [
+   {
+    "name": "Florida",
+    "items": [
+     {
+      "pos": "WR",
+      "name": "Vernell Brown III",
+      "status": "Out"
+     },
+     {
+      "pos": "TE",
+      "name": "Lacota Dippre",
+      "status": "Out",
+      "detail": "Jon Sumrall called the injury “pretty substantial” on Monday, Gators Wire reported."
+     },
+     {
+      "pos": "OL",
+      "name": "Emeka Ugorji",
+      "status": "Out"
+     },
+     {
+      "pos": "LB",
+      "name": "Jaden Robinson",
+      "status": "Out"
+     },
+     {
+      "pos": "S",
+      "name": "DJ Coleman",
+      "status": "Out"
+     },
+     {
+      "pos": "CB",
+      "name": "Dijon Johnson",
+      "status": "Doubtful"
+     },
+     {
+      "pos": "WR",
+      "name": "Bailey Stockton",
+      "status": "Questionable",
+      "detail": "Sumrall: “I’d be shocked if he doesn’t play,” Gators Wire reported."
+     },
+     {
+      "pos": "S",
+      "name": "Bryce Thornton",
+      "status": "Questionable"
+     }
+    ]
+   },
+   {
+    "name": "Vanderbilt",
+    "items": [
+     {
+      "pos": "QB",
+      "name": "Blaze Berlowitz",
+      "status": "Out"
+     },
+     {
+      "pos": "CB",
+      "name": "Cobey Sellers",
+      "status": "Out"
+     },
+     {
+      "pos": "EDGE",
+      "name": "Edwin Kolenge",
+      "status": "Out"
+     },
+     {
+      "pos": "LB",
+      "name": "Josiah Broxton",
+      "status": "Out"
+     },
+     {
+      "pos": "LB",
+      "name": "Daniel Vollmer Jr.",
+      "status": "Out"
+     },
+     {
+      "pos": "RB",
+      "name": "Evan Hampton",
+      "status": "Out"
+     },
+     {
+      "pos": "DL",
+      "name": "Aaron Bryant",
+      "status": "Out"
+     },
+     {
+      "pos": "OL",
+      "name": "Gunner Givens",
+      "status": "Out"
+     },
+     {
+      "pos": "OL",
+      "name": "Ted Gregoire",
+      "status": "Out"
+     }
+    ]
+   }
+  ],
+  "source": "SEC availability report, updated Nov. 19, as published by Gators Wire on Nov. 20. Positions: ESPN rosters."
+ },
+ "exclusives": {
+  "label": "Inside this issue",
+  "note": "Four GatorBait Staff stories for Vanderbilt week",
+  "jump": "Stories",
+  "items": [
+   {
+    "kicker": "Game preview · Vanderbilt at Florida",
+    "title": "Home finale: Florida gets Vanderbilt with a seventh win in reach",
+    "dek": "Senior Day, noon ET on SEC Network. Florida is a 13.5-point favorite, and both teams come in short-handed.",
+    "author": "GatorBait Staff",
+    "date": "Nov. 20, 2026",
+    "image": {
+     "id": "ae876a_d5fa38d9c98c4bfeb982f4831abbce73",
+     "ext": "jpg",
+     "width": 720,
+     "height": 480,
+     "alt": "Florida coach Jon Sumrall, in an orange hooded sweatshirt and a headset, gives a thumbs-up on the sideline at Kentucky.",
+     "credit": "Photo courtesy of UAA."
+    },
+    "caption": "Jon Sumrall on the sideline during the 21-14 win at Kentucky on Nov. 14.",
+    "html": "<p>Florida (6-4, 4-4 SEC) plays its final home game of the season Saturday against Vanderbilt (4-6, 1-6), a noon ET kickoff on SEC Network. It is Senior Day at Ben Hill Griffin Stadium, and a win would be the Gators' seventh.</p><p>Florida is No. 24 in the College Football Playoff rankings and a 13.5-point favorite, with the total at 45.5, according to the DraftKings line listed by ESPN. ESPN's matchup predictor gives the Gators a 84.7% chance to win.</p><p>Florida's defense has tightened. The Gators have allowed 22.0 points a game over their last four after giving up 37.5 a game over the four before that.</p><p>Quarterback Aaron Philo has completed 126 of 180 passes for 1,486 yards with nine touchdowns and five interceptions. Jadan Baugh has run 178 times for 905 yards and 15 touchdowns, and Dallas Wilson has 38 catches for 483 yards and three scores. Jayden Woods leads the defense with six sacks, Myles Graham with 76 tackles.</p><p>Vanderbilt averages 21.3 points a game and allows 28.6; Florida averages 31.3 and allows 26.2. Freshman quarterback Jared Curtis has thrown for 1,880 yards with eight touchdowns and eight interceptions, and Junior Sherrill has 63 catches for 847 yards and four touchdowns. Bryan Longwell leads the Commodores with 73 tackles and Issa Ouattara with four sacks.</p><p>Both teams are short-handed. Florida listed five players out on the SEC availability report as updated Thursday, among them wide receiver Vernell Brown III and tight end Lacota Dippre, and Vanderbilt listed nine. The full lists are in the availability report in this issue.</p><p>Florida has won 10 of the 12 meetings since 2012, including the last one, 38-14 in Gainesville on Oct. 7, 2023.</p><p>After Saturday: Florida at Florida State, Friday, Nov. 27, 3:30 p.m. ET on ABC.</p><p><em>Records, statistics, line and predictor: ESPN, Nov. 20. Availability: SEC report, updated Nov. 19, as published by Gators Wire.</em></p>"
+   },
+   {
+    "kicker": "Availability report",
+    "title": "Five Gators out, nine Commodores out for the home finale",
+    "dek": "Vernell Brown III and Lacota Dippre are among the Florida players listed out. Vanderbilt will be without nine.",
+    "author": "GatorBait Staff",
+    "date": "Nov. 20, 2026",
+    "image": {
+     "id": "ae876a_93ffb4fa4f24421d8e65a421b14bd42f",
+     "ext": "jpg",
+     "width": 720,
+     "height": 480,
+     "alt": "Florida's Dallas Wilson (6) and Aaron Philo (12) leap into a chest bump during the Nov. 14, 2026, win at Kentucky.",
+     "credit": "Photo courtesy of UAA."
+    },
+    "caption": "Dallas Wilson (6), Florida's leading receiver, celebrates with quarterback Aaron Philo at Kentucky.",
+    "html": "<p>Florida will be without five players Saturday against Vanderbilt, including wide receiver Vernell Brown III and tight end Lacota Dippre, according to the SEC availability report as updated Thursday night.</p><p>Offensive lineman Emeka Ugorji, linebacker Jaden Robinson and safety DJ Coleman are also listed out. Cornerback Dijon Johnson is doubtful, and wide receiver Bailey Stockton and safety Bryce Thornton are questionable.</p><p>Coach Jon Sumrall called Dippre's injury “pretty substantial” on Monday, Gators Wire reported. Of Stockton, Sumrall said, “I’d be shocked if he doesn’t play.”</p><p>Dallas Wilson leads Florida with 38 catches for 483 yards and three touchdowns, according to ESPN.</p><p>Vanderbilt listed nine players out: quarterback Blaze Berlowitz, cornerback Cobey Sellers, edge rusher Edwin Kolenge, linebackers Josiah Broxton and Daniel Vollmer Jr., running back Evan Hampton, defensive lineman Aaron Bryant and offensive linemen Gunner Givens and Ted Gregoire. Edge rusher Miles Capers came off the list Thursday, a sign he is cleared to play, Gators Wire reported.</p><p>The SEC updates the report again Friday night and posts a final version 90 minutes before kickoff. The full lists are in the availability report in this issue.</p><p><em>Player statuses: SEC availability report, updated Nov. 19, as published by Gators Wire on Nov. 20. Positions and statistics: ESPN.</em></p>"
+   },
+   {
+    "kicker": "Basketball · Wooden Award",
+    "title": "Three Gators make the Wooden Award preseason Top 50",
+    "dek": "Thomas Haugh, Alex Condon and Rueben Chinyelu are on the men's watch list. Kiyomi McMiller is on the women's.",
+    "author": "GatorBait Staff",
+    "date": "Nov. 20, 2026",
+    "image": {
+     "id": "d3cfa5_00121cc44e254a40a9a887b5d0d1351e",
+     "ext": "jpg",
+     "width": 2000,
+     "height": 1333,
+     "alt": "Florida forward Alex Condon (21) shoots a 3-pointer over a Houston defender in Las Vegas on Nov. 18, 2026.",
+     "credit": "Photo courtesy UAA (University Athletic Association, FloridaGators.com)."
+    },
+    "caption": "Alex Condon shoots a 3-pointer against Houston in Las Vegas on Nov. 18.",
+    "html": "<p>Florida has three players on the John R. Wooden Award men's preseason Top 50 watch list, announced Wednesday, Nov. 18: Thomas Haugh, Alex Condon and Rueben Chinyelu.</p><p>The SEC has 17 players on the list, WRUF reported, and any of the three would be the first Gator to win the award, which has been given since 1977.</p><p>Haugh leads the three through seven games at 17.6 points and 6.9 rebounds a game, shooting 57.6% from the field and 18 of 35 on 3-pointers. Condon averages 12.9 points, 8.0 rebounds and 4.1 assists and has blocked 11 shots. Chinyelu averages 8.7 points and 6.9 rebounds and has made 20 of 32 shots, 62.5%.</p><p>Florida is 6-1. The Gators host Milwaukee on Tuesday, Nov. 24, at 7 p.m. ET on SEC Network+ and Duke on Dec. 1 at 9:30 p.m. ET on ESPN.</p><p>On the women's side, Kiyomi McMiller is on the Wooden Award preseason Top 50, according to FloridaGators.com. She averages 24.0 points, 4.3 rebounds and 3.5 assists through six games for Florida (4-2), which plays West Virginia on Nov. 24 and Davidson on Nov. 26 in the Battle 4 Atlantis.</p><p><em>Watch lists: Wooden Award announcements as reported by WRUF, Nov. 19, and FloridaGators.com. Averages are computed from ESPN box scores through Nov. 19; schedules are ESPN's.</em></p>"
+   },
+   {
+    "kicker": "Bowl outlook",
+    "title": "Early bowl projections keep Florida in the state",
+    "dek": "Sports Illustrated has the Gators against Nebraska in Tampa. CBS Sports has them against SMU in the Gator Bowl.",
+    "author": "GatorBait Staff",
+    "date": "Nov. 20, 2026",
+    "image": {
+     "id": "ae876a_5917eb4e36404c5daba6ddb47d5e9ef2",
+     "ext": "jpg",
+     "width": 1920,
+     "height": 1080,
+     "alt": "Florida coach Jon Sumrall sits at the podium after the 21-14 win at Kentucky on Nov. 14, 2026.",
+     "credit": "Photo courtesy University of Florida (UAA)."
+    },
+    "caption": "Jon Sumrall after the win at Kentucky, Florida's sixth of the season.",
+    "html": "<p>Florida is bowl eligible at 6-4, and two early projections have the Gators playing their postseason game in Florida.</p><p>Sports Illustrated projects Florida against Nebraska in the ReliaQuest Bowl in Tampa on Dec. 31, Gators Wire reported Thursday. CBS Sports projects Florida against SMU in the Gator Bowl in Jacksonville, according to the same report.</p><p>Projections are forecasts, not invitations. Bowl pairings are set after the conference championship games, and where Florida lands depends on how it finishes: Vanderbilt on Saturday, then Florida State on Nov. 27.</p><p>Florida went 4-8 last season.</p><p>Franz Beard looked at the bowl picture and Florida's No. 24 CFP ranking in his <a href=\"/post/thoughts-of-the-day-november-18-2026\">Thoughts of the Day for Nov. 18</a>.</p><p><em>Projections: Sports Illustrated and CBS Sports, as reported by Gators Wire on Nov. 19. Records: ESPN.</em></p>"
+   }
+  ]
+ },
+ "lead": {
+  "label": "The Soothsayer",
+  "kicker": "Franz Beard · Senior Columnist",
+  "title": "Improved defense will carry Gators to 7th win",
+  "url": "/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
+  "image": {
+   "id": "d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9",
+   "ext": "png",
+   "width": 2000,
+   "height": 1061,
+   "alt": "A Florida player in a white road jersey raises the football in celebration on the Gators' sideline during the Nov. 14, 2026, win at Kentucky.",
+   "credit": "Photo courtesy UAA (University Athletic Association, FloridaGators.com)."
+  },
+  "caption": "Florida celebrates on the sideline at Kentucky on Nov. 14.",
+  "html": "<blockquote><p>“Patience young Grasshopper” – Master Po to young Kwai Chang Caine from the 1970s television series “Kung Fu”</p></blockquote><p>When it comes to defense, patience was in rather short supply during Florida’s first six games of the season, particularly after a four-game stretch against Auburn, Ole Miss, Missouri and South Carolina. The Gators gave up a collective 150 points in those four games – two wins and two losses – an average of 438 total yards, 297 of which came through the air. Florida’s beleaguered secondary surrendered 10 touchdown passes while giving up 297 air yards.</p><p>A funny thing happened on the way to a defensive clone of 2020 when the Third and Grantham Gators gave up 428 yards and 30.8 points per game. Midway through the season, the same Brad White whom many in the Gator Nation wanted to see exiled to Akron or UMass began finding a formula that would work. In the four games since the South Carolina disaster, the Gators have held opponents to a very respectable 297.25 yards and 22 points per game.</p><p>After half a season of life with the defensive bottom feeders of the Southeastern Conference the Gators have moved up the ranks to 11th in the SEC and 64th nationally. To put it in better perspective, the Gators are giving up only 354.7 yards per game now, which, if it stands will be the best Florida defense since 2019.</p><p>The improvement has been mostly subtle but occasionally spectacular. What the Gators did last week especially in the in the fourth quarter turned Kentucky’s playoff dreams into a nightmare finish. The Gators gave up a 15-play, 86-yard touchdown drive on UK’s first possession then held the Wildcats to a short-field touchdown and just 156 yards after that.</p><p>On Kentucky’s last two possessions, the Gators got a fourth down stop when Aaron Chiles blitzed up the middle and planted Kenny Minchey just as he was throwing and a four-and-out that was all incompletions. That wouldn’t have happened prior to mid-October.</p><p>The key word here has been patience. Head ball coach Jon Sumrall trusted White to bring the defensive troops along. A couple of tweaks that included some fairly exotic blitz packages significantly shortened the time opposing QBs have to throw the ball, lessening the time the young corners have to cover.</p><p>It is a formula that has worked well and a reason why the Gators (6-4, 4-4 SEC) are favored by 13.5 points to take down Vanderbilt in the final home game of the season Saturday (12 noon, SEC Network). The Commodores don’t run the ball well at all (102 yards per game) and without the run threat to worry about the Gators should make life miserable for true freshman QB Jared Curtis.</p><p>The way The Soothsayer views this one, it won’t take a lot of points to send Vandy packing back to Nashville but it will take another strong effort out of a defense that has matured to secure a seventh win and assure the Gators of just their second regular season winning record since 2020.</p><p class=\"pg-sooth\"><strong>The Sayer Says Sooth!:</strong> Three touchdowns should get the job done for Florida which will move one step closer to an 8-win regular season.</p>",
+  "continue": "Read the full column: Franz on every SEC game",
+  "date": "Nov. 20, 2026"
+ },
+ "slate": {
+  "label": "The Sooth Board",
+  "note": "Nine of Saturday's SEC games with Franz Beard's picks",
+  "source": "Kickoffs (Eastern), TV, records and lines: ESPN, Nov. 20. Rankings: College Football Playoff. Picks and the words beside them: Franz Beard.",
+  "games": [
+   {
+    "time": "Noon",
+    "tv": "SEC Network",
+    "away": {
+     "name": "Vanderbilt",
+     "rec": "4-6"
+    },
+    "home": {
+     "name": "Florida",
+     "rec": "6-4",
+     "rank": 24
+    },
+    "line": "FLA -13.5",
+    "pick": "Florida",
+    "note": "Three touchdowns should get the job done",
+    "ou": 45.5,
+    "hero": true
+   },
+   {
+    "time": "Noon",
+    "tv": "SEC Network+",
+    "away": {
+     "name": "Wofford",
+     "rec": "5-6"
+    },
+    "home": {
+     "name": "Ole Miss",
+     "rec": "6-4",
+     "rank": 25
+    },
+    "line": "MISS -49.5",
+    "pick": "Ole Miss",
+    "note": "The Grove will be rocking",
+    "ou": 59.5
+   },
+   {
+    "time": "2 p.m.",
+    "tv": "SEC Network+",
+    "away": {
+     "name": "Chattanooga",
+     "rec": "7-4"
+    },
+    "home": {
+     "name": "Alabama",
+     "rec": "8-2",
+     "rank": 3
+    },
+    "line": "ALA -48.5",
+    "pick": "Alabama",
+    "note": "Dial-a-score",
+    "ou": 58.5
+   },
+   {
+    "time": "3:30 p.m.",
+    "tv": "ESPN",
+    "away": {
+     "name": "Arkansas",
+     "rec": "4-6"
+    },
+    "home": {
+     "name": "Texas",
+     "rec": "8-2",
+     "rank": 5
+    },
+    "line": "TEX -20.5",
+    "pick": "Texas",
+    "note": "The cows win it",
+    "ou": 47.5
+   },
+   {
+    "time": "3:30 p.m.",
+    "tv": "ABC",
+    "away": {
+     "name": "LSU",
+     "rec": "6-4"
+    },
+    "home": {
+     "name": "Tennessee",
+     "rec": "8-2",
+     "rank": 9
+    },
+    "line": "LSU -1.5",
+    "pick": "LSU",
+    "note": "LSU knocks the Vols out of the playoff",
+    "ou": 45.5
+   },
+   {
+    "time": "3:30 p.m.",
+    "tv": "SEC Network",
+    "away": {
+     "name": "Samford",
+     "rec": "4-7"
+    },
+    "home": {
+     "name": "Auburn",
+     "rec": "6-4"
+    },
+    "line": "AUB -48.5",
+    "pick": "Auburn",
+    "note": "It won’t be that close",
+    "ou": 59.5
+   },
+   {
+    "time": "3:45 p.m.",
+    "tv": "ESPN2",
+    "away": {
+     "name": "Texas A&M",
+     "rec": "4-6"
+    },
+    "home": {
+     "name": "Oklahoma",
+     "rec": "6-4",
+     "rank": 22
+    },
+    "line": "OU -7",
+    "pick": "Oklahoma",
+    "note": "Sooners in a white knuckles affair",
+    "ou": 37.5
+   },
+   {
+    "time": "7:30 p.m.",
+    "tv": "ABC",
+    "away": {
+     "name": "Georgia",
+     "rec": "9-1",
+     "rank": 1
+    },
+    "home": {
+     "name": "South Carolina",
+     "rec": "6-4",
+     "rank": 21
+    },
+    "line": "UGA -14.5",
+    "pick": "Georgia",
+    "note": "South Carolina can dream",
+    "ou": 51.5
+   },
+   {
+    "time": "7:30 p.m.",
+    "tv": "SEC Network",
+    "away": {
+     "name": "Kentucky",
+     "rec": "7-3",
+     "rank": 16
+    },
+    "home": {
+     "name": "Missouri",
+     "rec": "6-4"
+    },
+    "line": "MIZ -4.5",
+    "pick": "Missouri",
+    "note": "This one is all Mizzou all the time",
+    "ou": 48.5
+   }
+  ]
+ },
+ "cards": {
+  "label": "More from Vanderbilt week",
+  "items": [
+   {
+    "kicker": "Buddy Martin · Column",
+    "date": "Nov. 19",
+    "title": "Senior Day at Florida: A Goodbye We're Not Quite Ready To Say Yet",
+    "url": "/post/senior-day-at-florida-a-goodbye-we-re-not-quite-ready-to-say-goodbye-to-yet",
+    "excerpt": "The seniors get their names called Saturday at The Swamp. The rest of us have to figure out when to say goodbye.",
+    "image": {
+     "id": "ae876a_b592a7d28a984e12858c09a4b0ebb45e",
+     "ext": "jpg",
+     "width": 812,
+     "height": 1000,
+     "alt": "A vintage black-and-white photo of a football player in a No. 37 jersey running with the ball.",
+     "credit": "Photo courtesy of Doak Walker Award."
+    }
+   },
+   {
+    "kicker": "GatorBait Staff · Video",
+    "date": "Nov. 18",
+    "title": "The Week Gator Nation Couldn't Stop Watching",
+    "url": "/post/the-week-gator-nation-couldn-t-stop-watching",
+    "excerpt": "The six clips and the Florida Gator Lowdown episode Gator Nation kept watching after the win at Kentucky, all in one place.",
+    "image": {
+     "id": "d3cfa5_8891d99ac9b543d984fe88962cc75cb0",
+     "ext": "jpg",
+     "width": 1080,
+     "height": 608,
+     "alt": "A man in a blue Gators cap and hooded sweatshirt smiles during a news conference in front of a Florida Gators backdrop.",
+     "credit": "Video still: GatorBait Media."
+    }
+   },
+   {
+    "kicker": "FloridaGators.com · Honors",
+    "date": "Nov. 16",
+    "title": "Philo Earns SEC and Davey O'Brien Weekly Honors Following Performance at Kentucky",
+    "url": "/post/philo-earns-sec-and-davey-o-brien-weekly-honors-following-performance-at-kentucky",
+    "excerpt": "Aaron Philo was named SEC Offensive Player of the Week and to the Davey O'Brien Great 8 after Florida's 21-14 win over No. 11 Kentucky.",
+    "image": {
+     "id": "ae876a_df90455b00354189ac0e203add707a0b",
+     "ext": "jpg",
+     "width": 1920,
+     "height": 1080,
+     "alt": "Two men in blue Florida pullovers sit at a table with microphones during a news conference.",
+     "credit": "Photo courtesy University of Florida (UAA)."
+    }
+   },
+   {
+    "kicker": "Franz Beard · Column",
+    "date": "Nov. 18",
+    "title": "Thoughts of the Day: November 18, 2026",
+    "url": "/post/thoughts-of-the-day-november-18-2026",
+    "excerpt": "Franz Beard on Florida's No. 24 CFP ranking and bowl outlook, the coaching carousel and where college sports are headed."
+   },
+   {
+    "kicker": "Buddy Martin · Column",
+    "date": "Nov. 17",
+    "title": "WHAT IT IS, WHAT IT WAS, AND WHAT IT SHALL BE!",
+    "url": "/post/what-it-is-what-it-was-and-what-it-shall-be",
+    "excerpt": "Two weeks ago you were jumping off the bandwagon with such urgency that the ankle injuries set a record at Shands."
+   },
+   {
+    "kicker": "GatorBait Staff · Recruiting",
+    "date": "Nov. 18",
+    "title": "Florida flips running back Terrance Grant Jr. from Maryland, loses Cain Van Norden",
+    "url": "/post/florida-flips-running-back-terrance-grant-jr-from-maryland-loses-cain-van-norden",
+    "excerpt": "Running back Terrance Grant Jr. flipped from Maryland to Florida on Nov. 17, the same day lineman Cain Van Norden decommitted from the Gators."
+   },
+   {
+    "kicker": "GatorBait Staff · Recruiting",
+    "date": "Nov. 18",
+    "title": "Maxwell Hiller, Easton Royal and the state of Florida Gators recruiting: the 2027 class is almost home, and 2028 is already rolling",
+    "url": "/post/maxwell-hiller-easton-royal-and-the-state-of-florida-gators-recruiting-the-2027-class-is-almost-ho",
+    "excerpt": "Two top-five players in America, two flips in five days and a 2028 class already rolling: the first Gator Bait Recruiting Report on where Florida's classes stand."
+   },
+   {
+    "kicker": "GatorBait Staff · News",
+    "date": "Nov. 17",
+    "title": "Philo Took a Kick to the Head From Kentucky's Gadson After His Go-Ahead TD — and No Flag Ever Came",
+    "url": "/post/philo-took-a-kick-to-the-head-from-kentucky-s-gadson-after-his-go-ahead-td-and-no-flag-ever-came",
+    "excerpt": "Video of Aaron Philo's go-ahead touchdown at Kentucky appears to show a Kentucky player making a kicking motion toward his head. No flag was thrown."
+   }
+  ]
+ },
+ "teamRosters": {
+  "label": "The rosters",
+  "note": "Every player ESPN lists for both teams, by number",
+  "navLabel": "Also in this issue",
+  "cols": ["No.", "Name", "Pos.", "Cl.", "Ht.", "Wt.", "Hometown"],
+  "teams": [
+   {
+    "name": "Florida",
+    "jump": "Florida roster",
+    "note": "117 players · Head coach Jon Sumrall",
+    "groups": [
+     [
+      "Offense",
+      [
+       [1, "Vernell Brown III", "WR", "So.", "5-11", 178, "Gainesville, Fla."],
+       [2, "Eric Singleton Jr.", "WR", "Sr.", "5-10", 184, "Atlanta, Ga."],
+       [3, "Bailey Stockton", "WR", "Sr.", "5-10", 183, "Bogart, Ga."],
+       [4, "TJ Abrams", "WR", "Jr.", "5-10", 198, "Fort Myers, Fla."],
+       [5, "Micah Mays Jr.", "WR", "Sr.", "6-1", 197, "West Palm Beach, Fla."],
+       [6, "Dallas Wilson", "WR", "So.", "6-3", 212, "Tampa, Fla."],
+       [7, "Amir Jackson", "TE", "Jr.", "6-5", 232, "Statesboro, Ga."],
+       [9, "Tramell Jones Jr.", "QB", "So.", "6-0", 196, "Jacksonville, Fla."],
+       [10, "Aaron Williams", "QB", "Jr.", "6-1", 206, "Orlando, Fla."],
+       [11, "Will Griffin", "QB", "Fr.", "6-3", 219, "Treasure Island, Fla."],
+       [12, "Aaron Philo", "QB", "Jr.", "6-1", 207, "Bogart, Ga."],
+       [13, "Jadan Baugh", "RB", "Jr.", "6-1", 225, "Atlanta, Ga."],
+       [14, "Jaden Edgecombe", "WR", "Sr.", "5-8", 190, "Cocoa, Fla."],
+       [15, "Luke Harpring", "TE", "Jr.", "6-3", 237, "Atlanta, Ga."],
+       [16, "Aidan Warner", "QB", "Sr.", "6-3", 202, "Winter Park, Fla."],
+       [17, "Lacota Dippre", "TE", "Sr.", "6-3", 248, "Scranton, Pa."],
+       [18, "Davian Groce", "WR", "Fr.", "6-2", 199, "Frisco, Texas"],
+       [19, "Jaylen Lloyd", "WR", "Sr.", "5-10", 185, "Omaha, Neb."],
+       [20, "Duke Clark", "RB", "So.", "6-2", 208, "Tampa, Fla."],
+       [21, "Evan Pryor", "RB", "Sr.", "5-10", 189, "Cornelius, N.C."],
+       [22, "Kahleil Jackson", "WR", "Sr.", "6-3", 214, "Hawthorne, Fla."],
+       [24, "London Montgomery", "RB", "Sr.", "5-10", 192, "Scranton, Pa."],
+       [25, "Anthony Rubio", "RB", "Sr.", "5-9", 187, "Miami, Fla."],
+       [27, "Byron Louis", "RB", "So.", "6-0", 195, "Miramar, Fla."],
+       [33, "Brian Case", "RB", "So.", "6-0", 212, "Ponte Vedra Beach, Fla."],
+       [34, "Kelvin Jimenez", "RB", "Jr.", "6-1", 216, "Cape Coral, Fla."],
+       [50, "Jason Zandamela", "OL", "Jr.", "6-3", 286, "Clearwater, Fla."],
+       [51, "Tyler Chukuyem", "OL", "Fr.", "6-6", 300, "Douglasville, Ga."],
+       [52, "Harrison Moore", "OL", "Jr.", "6-4", 293, "Southlake, Texas"],
+       [53, "Bryce Lovett", "OL", "Sr.", "6-5", 305, "Rockledge, Fla."],
+       [54, "Javarii Luckas", "OL", "Fr.", "6-6", 313, "Belle Glade, Fla."],
+       [55, "TJ Dice Jr.", "OL", "So.", "6-3", 298, "College Park, Ga."],
+       [56, "Jahari Medlock", "OL", "So.", "6-5", 309, "Atlanta, Ga."],
+       [59, "Corey Brown", "OL", "Fr.", "6-1", 295, "Gainesville, Fla."],
+       [61, "G'Nivre Carr", "OL", "Fr.", "6-4", 311, "Ocala, Fla."],
+       [63, "Caden Jones", "OL", "Sr.", "6-8", 319, "New Orleans, La."],
+       [64, "Eagan Boyer", "OL", "Jr.", "6-8", 306, "Cornelius, N.C."],
+       [66, "Emeka Ugorji", "OL", "So.", "6-4", 308, "Oak Cliff, Texas"],
+       [67, "TJ Shanahan Jr.", "OL", "Sr.", "6-4", 309, "Orlando, Fla."],
+       [68, "Fletcher Westphal", "OL", "Jr.", "6-8", 309, "Leesburg, Va."],
+       [71, "Roderick Kearney", "OL", "Sr.", "6-4", 303, "Jacksonville, Fla."],
+       [73, "Daniel Pierre Louis", "OL", "So.", "6-4", 327, "Royal Palm Beach, Fla."],
+       [76, "Mark Faircloth", "OL", "Jr.", "6-5", 312, "Quincy, Fla."],
+       [77, "Knijeah Harris", "OL", "Sr.", "6-3", 308, "Pahokee, Fla."],
+       [78, "Desmond Green", "OL", "Fr.", "6-5", 321, "Alvin, S.C."],
+       [79, "Chancellor Campbell", "OL", "Fr.", "6-8", 318, "St. Petersburg, Fla."],
+       [80, "Jaylen Jordon", "TE", "Sr.", "6-5", 247, "Hilliard, Fla."],
+       [81, "Mason Jordan", "WR", "Fr.", "5-9", 173, "Sarasota, Fla."],
+       [82, "Ace Ciongoli", "WR", "So.", "5-10", 181, "Needham, Mass."],
+       [83, "Justin Williams", "WR", "Fr.", "5-11", 199, "Gainesville, Fla."],
+       [84, "Micah Jones", "TE", "So.", "6-4", 254, "Madison, Miss."],
+       [85, "Evan Chieca", "TE", "Sr.", "6-4", 253, "Lindenhurst, N.Y."],
+       [86, "Heze Kent", "TE", "Fr.", "6-6", 288, "Brunswick, Ga."],
+       [88, "Marquez Daniel", "WR", "Fr.", "6-5", 219, "Tuskegee, Ala."],
+       [89, "Tripp Brown Jr.", "TE", "Fr.", "6-5", 240, "Tampa, Fla."]
+      ]
+     ],
+     [
+      "Defense",
+      [
+       [0, "Jayden Woods", "LB", "So.", "6-3", 245, "Shawnee, Kan."],
+       [1, "Bryce Thornton", "S", "Sr.", "5-10", 211, "College Park, Ga."],
+       [2, "Lagonza Hayward", "S", "So.", "6-1", 207, "Lyons, Ga."],
+       [3, "Onis Konanbanny", "CB", "So.", "6-0", 190, "London, England"],
+       [5, "Myles Graham", "LB", "Jr.", "6-1", 228, "Gainesville, Fla."],
+       [6, "J'Vari Flowers", "CB", "So.", "5-10", 189, "Miami, Fla."],
+       [7, "Ty Jackson", "LB", "So.", "6-2", 228, "Fort Lauderdale, Fla."],
+       [8, "Aaron Chiles", "LB", "Jr.", "6-3", 238, "Largo, Md."],
+       [9, "Drake Stubbs", "S", "So.", "6-1", 203, "Jacksonville, Fla."],
+       [10, "Cam Dooley", "S", "Jr.", "6-2", 207, "Valley, Ala."],
+       [11, "LJ McCray", "DL", "Jr.", "6-6", 277, "Daytona Beach, Fla."],
+       [12, "Ben Hanks III", "CB", "So.", "6-1", 186, "Overtown, Fla."],
+       [13, "Jordy Lowery", "CB", "Sr.", "5-10", 183, "Bartow, Fla."],
+       [14, "KJ Ford", "LB", "Fr.", "6-4", 250, "Dallas, Texas"],
+       [15, "CJ Bronaugh", "CB", "Fr.", "6-0", 183, "Orlando, Fla."],
+       [16, "TJ Bullard", "LB", "Sr.", "6-1", 213, "Tampa, Fla."],
+       [17, "Titus Bullard", "LB", "Jr.", "6-4", 239, "Tampa, Fla."],
+       [20, "Kanye Clark", "DB", "Sr.", "5-10", 184, "Sacramento, Calif."],
+       [21, "CJ Hester", "CB", "Fr.", "6-0", 192, "Titusville, Fla."],
+       [22, "Kofi Asare", "LB", "Sr.", "6-5", 247, "Worcester, Mass."],
+       [23, "Javier Jones", "CB", "Jr.", "6-1", 181, "Phoenix, Ariz."],
+       [24, "Kamran James", "DL", "Sr.", "6-6", 278, "Orlando, Fla."],
+       [25, "Cormani McClain", "CB", "Sr.", "6-2", 181, "Lakeland, Fla."],
+       [27, "Dijon Johnson", "CB", "Sr.", "6-1", 202, "Tampa, Fla."],
+       [28, "Elijah Owens", "DB", "So.", "6-2", 209, "Mobile, Ala."],
+       [29, "Jaden Robinson", "LB", "Sr.", "6-0", 227, "Lake City, Fla."],
+       [30, "Dylan Purter", "DB", "Fr.", "6-0", 184, "Tuskegee, Ala."],
+       [32, "Eric Parks", "S", "Fr.", "6-0", 193, "Tampa, Fla."],
+       [33, "DJ Coleman", "S", "Sr.", "6-0", 206, "Mesquite, Texas"],
+       [34, "Kaiden Hall", "S", "Fr.", "6-2", 210, "Milton, Fla."],
+       [35, "Brayden Slade", "S", "Sr.", "6-1", 193, "Coconut Creek, Fla."],
+       [36, "Vincent Brown Jr.", "CB", "Sr.", "5-7", 168, "Gainesville, Fla."],
+       [37, "Javion Toombs", "CB", "Sr.", "5-11", 188, "Fort Pierce, Fla."],
+       [40, "Jayden Gross", "DL", "Fr.", "6-3", 246, "Madison, Miss."],
+       [42, "Matthew Kade", "LB", "Jr.", "6-0", 223, "Gainesville, Fla."],
+       [43, "Alfonzo Allen Jr.", "S", "Sr.", "5-11", 196, "Miami, Fla."],
+       [44, "Myles Johnson", "LB", "So.", "6-1", 232, "Brewton, Ala."],
+       [48, "Erich Seager", "LB", "Jr.", "6-3", 233, "Lake Butler, Fla."],
+       [49, "Jalen Wiggins", "DL", "So.", "6-5", 271, "Tallahassee, Fla."],
+       [50, "Malik Morris", "LB", "Fr.", "6-0", 246, "Lakeland, Fla."],
+       [52, "Dylan Leighton", "LB", "So.", "6-1", 229, "New Port Richey, Fla."],
+       [55, "Charles Emanuel III", "LB", "Jr.", "6-3", 235, "Orlando, Fla."],
+       [56, "Stive-Bentley Keumajou-Yondui", "DL", "Fr.", "6-3", 295, "Hackney, England"],
+       [90, "Brendan Bett", "DL", "Sr.", "6-4", 319, "Gadsden, Ala."],
+       [91, "Jeramiah McCloud", "DL", "So.", "6-3", 294, "Sylvester, Ga."],
+       [92, "Sebastian Scott", "DL", "Sr.", "6-2", 360, "West Palm Beach, Fla."],
+       [93, "DK Kalu", "DL", "Sr.", "6-3", 309, "Missouri City, Texas"],
+       [94, "Kendall Guervil", "DL", "Fr.", "6-5", 309, "Fort Myers, Fla."],
+       [95, "Jamari Lyons", "DL", "Sr.", "6-4", 312, "Cocoa, Fla."],
+       [96, "JaReylan McCoy", "DL", "Fr.", "6-7", 268, "Tupelo, Miss."],
+       [97, "Joseph Mbatchou", "DL", "So.", "6-5", 321, "Loganville, Ga."],
+       [98, "Mason Clinton", "DL", "Sr.", "6-5", 293, "Hattiesburg, Miss."],
+       [99, "Emmanuel Oyebadejo", "DL", "Sr.", "6-6", 299, "Manchester, England"]
+      ]
+     ],
+     [
+      "Special teams",
+      [
+       [38, "Alec Clark", "P", "Sr.", "6-0", 186, "Perth, Australia"],
+       [39, "Carter Milliron", "LS", "Sr.", "5-11", 236, "Hoover, Ala."],
+       [40, "Brandon Rabasco", "PK", "Jr.", "6-4", 215, "Hollywood, Fla."],
+       [41, "Liam Padron", "PK", "Jr.", "5-9", 191, "St. Augustine, Fla."],
+       [47, "Miller Fealy", "P", "Jr.", "6-1", 208, "Melbourne, Australia"],
+       [48, "Nicholas Inglis", "P", "Jr.", "6-5", 227, "Dallas, Texas"],
+       [54, "Lincoln Anderson", "LS", "Fr.", "6-2", 243, "Hoover, Ala."],
+       [58, "Hunter Solwold", "LS", "So.", "6-3", 232, "Fallston, Md."],
+       [91, "Patrick Durkin", "PK", "Jr.", "5-11", 189, "Chicago, Ill."]
+      ]
+     ]
+    ]
+   },
+   {
+    "name": "Vanderbilt",
+    "jump": "Vanderbilt roster",
+    "note": "117 players · Head coach Clark Lea",
+    "groups": [
+     [
+      "Offense",
+      [
+       [0, "Junior Sherrill", "WR", "Sr.", "5-11", 200, "Nashville, Tenn."],
+       [1, "Blaze Berlowitz", "QB", "Sr.", "6-3", 200, "Cushing, Okla."],
+       [2, "Jared Curtis", "QB", "Fr.", "6-3", 230, "Nashville, Tenn."],
+       [3, "Jamezell Lassiter", "RB", "Jr.", "5-8", 192, "Providence, R.I."],
+       [5, "Tristen Brown", "WR", "Jr.", "5-10", 185, "Houston, Texas"],
+       [6, "Ja'Cory Thomas", "WR", "Jr.", "6-3", 215, "Walker, La."],
+       [7, "Cole Adams", "WR", "Sr.", "5-10", 183, "Owasso, Okla."],
+       [8, "Jayvontay Conner", "TE", "Jr.", "6-4", 235, "Winston-Salem, N.C."],
+       [9, "Brycen Coleman", "WR", "Jr.", "6-5", 215, "Ocean City, Md."],
+       [10, "Whit Muschamp", "QB", "Jr.", "6-1", 195, "Columbia, S.C."],
+       [11, "Jack Elliott", "QB", "So.", "6-0", 205, "Orland Park, Ill."],
+       [12, "Walter Taylor", "TE", "Sr.", "6-7", 235, "Jackson, Ala."],
+       [13, "Kayleb Barnett", "WR", "So.", "5-8", 155, "Tulsa, Okla."],
+       [14, "Drew Cowart", "QB", "So.", "6-2", 208, "Queen Creek, Ariz."],
+       [15, "Joseph McVay", "WR", "Jr.", "6-1", 200, "Earle, Ark."],
+       [16, "Cole Spence", "TE", "Sr.", "6-7", 255, "Roswell, Ga."],
+       [19, "Maurice Veney", "TE", "Jr.", "6-4", 270, "Philadelphia, Pa."],
+       [20, "Izayah Lee", "RB", "Fr.", "5-11", 215, "Lancaster, Texas"],
+       [22, "Makhilyn Young", "RB", "Sr.", "5-10", 210, "Midland, Texas"],
+       [23, "Evan Hampton", "RB", "Fr.", "6-0", 215, "Owensboro, Ky."],
+       [24, "Gabe Fields", "RB", "So.", "6-0", 217, "St. Joseph, Mo."],
+       [28, "Sedrick Alexander", "RB", "Sr.", "5-9", 207, "Austin, Texas"],
+       [42, "Jake Balis", "RB", "Jr.", "5-9", 200, "Granger, Ind."],
+       [44, "Gabe Fisher", "FB", "Sr.", "6-1", 245, "Nashville, Tenn."],
+       [46, "Palmer Riley", "TE", "Fr.", "6-5", 250, "Atherton, Calif."],
+       [49, "Elijah Rooney", "TE", "Jr.", "6-5", 230, "New Smyrna Beach, Fla."],
+       [50, "Gunner Givens", "OL", "Sr.", "6-5", 325, "Covington, Va."],
+       [51, "Clinton Azubuike", "OL", "Jr.", "6-8", 310, "Lagos, Nigeria"],
+       [52, "Kevo Wesley", "OL", "Sr.", "6-4", 317, "Chicago, Ill."],
+       [54, "Tripp Skewes", "OL", "Fr.", "6-7", 285, "Denver, Colo."],
+       [55, "George Williams-Haseotes", "OL", "Fr.", "6-3", 295, "Naples, Fla."],
+       [56, "Lyndon Cooper", "OL", "Sr.", "6-2", 310, "Atlanta, Ga."],
+       [57, "Max Fisher", "OL", "Sr.", "6-2", 270, "Nashville, Tenn."],
+       [58, "Orion Irving", "OL", "Sr.", "6-6", 310, "Houston, Texas"],
+       [60, "Nate Fleming", "OL", "Fr.", "6-3", 285, "Franklin, Tenn."],
+       [62, "CJ Williams", "OL", "Jr.", "6-6", 331, "Amityville, N.Y."],
+       [65, "Micah DeBose", "OL", "So.", "6-5", 335, "Mobile, Ala."],
+       [70, "Cade McConnell", "OL", "Sr.", "6-5", 323, "Choctaw, Okla."],
+       [71, "Ted Gregoire", "OL", "Sr.", "6-3", 330, "Roselle, N.J."],
+       [72, "Mitchell Smith", "OL", "Fr.", "6-6", 320, "Picayune, Miss."],
+       [73, "Pulelei'ite Primus", "OL", "Fr.", "6-4", 355, "Midland, Texas"],
+       [75, "Beau Johnson", "OL", "Jr.", "6-6", 305, "Spring Lake Park, Minn."],
+       [77, "Michael Smith", "OL", "Jr.", "6-6", 330, "Picayune, Miss."],
+       [78, "Keegan Wechsler", "OL", "Sr.", "6-2", 295, "Frisco, Texas"],
+       [80, "Claiborne Richards", "WR", "Sr.", "5-11", 186, "Nashville, Tenn."],
+       [81, "Kahden Smith", "WR", "Fr.", "6-2", 195, "Moundville, Ala."],
+       [82, "Adam Gehm", "TE", "Fr.", "6-6", 235, "Harmony, Pa."],
+       [84, "Owen Cabell", "WR", "Fr.", "6-2", 201, "Nashville, Tenn."],
+       [85, "Lebron Hill", "WR", "So.", "6-5", 190, "Hammond, Ind."],
+       [86, "Tilden Riley", "TE", "Fr.", "6-5", 217, "Orangeburg, S.C."],
+       [87, "Ty Burd", "WR", "Sr.", "6-1", 165, "Nashville, Tenn."],
+       [88, "Wils Jackson", "WR", "So.", "6-5", 205, "Franklin, Tenn."],
+       [89, "Cameran Dickson", "WR", "So.", "6-0", 185, "Corpus Christi, Texas"]
+      ]
+     ],
+     [
+      "Defense",
+      [
+       [0, "Cobey Sellers", "CB", "So.", "5-11", 178, "Houston, Texas"],
+       [1, "Dontae Carter", "S", "Jr.", "6-1", 196, "Cibolo, Texas"],
+       [2, "Jaylin Lackey", "CB", "Jr.", "6-0", 195, "Monroe, Ga."],
+       [3, "Carson Lawrence", "S", "So.", "6-2", 212, "Chattanooga, Tenn."],
+       [4, "Martel Hight", "CB", "Sr.", "6-0", 188, "Rome, Ga."],
+       [5, "Issa Ouattara", "DL", "Sr.", "6-7", 315, "Cologne, Germany"],
+       [6, "Jordan Matthews", "CB", "Sr.", "6-2", 192, "Baton Rouge, La."],
+       [7, "Ricardo Jones", "S", "Jr.", "6-2", 200, "Warner Robins, Ga."],
+       [8, "CJ Heard", "S", "Jr.", "5-11", 210, "Atlanta, Ga."],
+       [9, "Jalen Gilbert", "S", "Sr.", "6-0", 208, "Round Rock, Texas"],
+       [10, "Brian Allen Jr.", "EDGE", "Sr.", "6-3", 264, "Lake In The H, Ill."],
+       [11, "Bryan Longwell", "LB", "Sr.", "6-1", 240, "Nashville, Tenn."],
+       [12, "Vanzale Hinton", "S", "So.", "6-0", 196, "Chattanooga, Tenn."],
+       [13, "Tate Hamby", "LB", "Jr.", "6-2", 208, "West Monroe, La."],
+       [14, "Jailen Ruth", "S", "Jr.", "6-3", 225, "Hawthorne, Fla."],
+       [15, "Mike Diatta", "DT", "Sr.", "6-5", 295, "Antioch, Tenn."],
+       [16, "Jaylin Davies", "CB", "Sr.", "5-11", 180, "Rancho Cucamonga, Calif."],
+       [17, "Edwin Kolenge", "EDGE", "Sr.", "6-3", 260, "Montreal, Canada"],
+       [18, "Josiah Broxton", "LB", "So.", "5-10", 220, "Tallahassee, Fla."],
+       [19, "CJ Jackson", "EDGE", "Jr.", "6-4", 250, "Tucker, Ga."],
+       [20, "Jamison Curtis", "LB", "Jr.", "6-1", 238, "Mobile, Ala."],
+       [21, "Davin Chandler", "S", "So.", "6-0", 190, "Berlin, Md."],
+       [22, "Bryce Cowan", "LB", "Sr.", "6-4", 235, "Tallahassee, Fla."],
+       [23, "Bishop Starling", "CB", "Fr.", "5-9", 170, "Nashville, Tenn."],
+       [24, "Nick Rinaldi", "LB", "Sr.", "6-3", 240, "Dover, Mass."],
+       [25, "Mason Lewis", "S", "Fr.", "6-0", 195, "Queen Creek, Ariz."],
+       [26, "Cayden Daniels", "CB", "So.", "6-1", 189, "Cordele, Ga."],
+       [27, "Bradley Brown", "S", "Fr.", "6-0", 185, "Plano, Texas"],
+       [28, "Thomas Jones", "S", "So.", "5-11", 195, "Smyrna, Tenn."],
+       [29, "Miles Capers", "EDGE", "Sr.", "6-4", 249, "Sumter, S.C."],
+       [30, "Austin Howard", "LB", "So.", "6-2", 245, "Memphis, Tenn."],
+       [31, "Jeremy Garner II", "CB", "Fr.", "6-2", 155, "Rosharon, Texas"],
+       [32, "Mason Carter", "EDGE", "Jr.", "6-5", 251, "Jacksonville, Fla."],
+       [33, "Myles Miller", "EDGE", "So.", "6-1", 255, "Madison, Miss."],
+       [35, "Payne Daniel", "S", "Sr.", "5-11", 185, "Nashville, Tenn."],
+       [37, "Jack Wanzung", "CB", "So.", "6-0", 184, "Chicago, Ill."],
+       [42, "Blaine McClure", "CB", "Jr.", "6-1", 185, "Greenwich, Conn."],
+       [43, "Luke D'Alise", "LB", "Jr.", "6-0", 204, "Oak Park, Ill."],
+       [44, "Daniel Vollmer Jr.", "LB", "Fr.", "6-2", 215, "Cincinnati, Ohio"],
+       [45, "Ty Bartholomew", "LB", "Sr.", "6-1", 235, "Nashville, Tenn."],
+       [46, "Mustafa Dannett", "CB", "Sr.", "6-0", 175, "New London, Conn."],
+       [49, "Simeon Boulware", "DL", "Jr.", "6-5", 258, "Dacula, Ga."],
+       [50, "Kene Obi", "LB", "Fr.", "6-1", 221, "Gates Mills, Ohio"],
+       [51, "Cameron Stepp", "DT", "Fr.", "6-3", 296, "Bel Air, Md."],
+       [53, "Glenn Seabrooks III", "DL", "Jr.", "6-3", 340, "Nashville, Tenn."],
+       [55, "Aaron Bryant", "DL", "Sr.", "6-2", 320, "Southaven, Miss."],
+       [59, "Jiaming Cao", "DT", "So.", "6-0", 262, ""],
+       [90, "Jake Stanish", "EDGE", "So.", "6-3", 270, "Chicago, Ill."],
+       [91, "Noah Sigda", "DL", "So.", "6-4", 245, "Freehold, N.Y."],
+       [92, "Jaylon Stone", "DL", "Sr.", "6-2", 306, "Decatur, Ga."],
+       [93, "Nikhil Jefferson", "DL", "So.", "6-1", 330, "Tampa, Fla."],
+       [94, "Bradley Mann", "DL", "Sr.", "6-6", 308, "Jacksonville, Fla."],
+       [95, "Jace McCallum", "EDGE", "Fr.", "6-2", 243, "Concord, N.C."],
+       [96, "Khalil Poteat", "EDGE", "Sr.", "6-5", 275, "Bronx, N.Y."],
+       [97, "Hayden Bray", "DL", "Sr.", "6-4", 277, "Austin, Texas"],
+       [98, "Daryl Campbell", "DT", "Fr.", "6-1", 280, "Katy, Texas"],
+       [99, "Talan Carter", "DL", "So.", "6-1", 280, "Ocean Springs, Miss."]
+      ]
+     ],
+     [
+      "Special teams",
+      [
+       [37, "Tyler Ebel", "P", "Sr.", "6-4", 252, "DeForest, Wis."],
+       [39, "Joe Daniel", "PK", "Fr.", "6-4", 225, "Auburn, Ala."],
+       [47, "Justin Dewers", "PK", "So.", "6-2", 195, "Plano, Texas"],
+       [53, "Stone Owens", "LS", "So.", "6-0", 200, "Tampa, Fla."],
+       [54, "Kaden Schickel", "LS", "Sr.", "6-2", 210, "Fredericksburg, Va."],
+       [79, "Conor Weasler", "P", "Sr.", "6-0", 187, "Kentfield, Calif."],
+       [88, "Brock Taylor", "PK", "Sr.", "6-1", 165, "Knoxville, Tenn."]
+      ]
+     ]
+    ]
+   }
+  ],
+  "source": "ESPN team rosters, Nov. 20, 2026. Class, height, weight and hometown are ESPN's listings, with place names in AP style."
+ },
+ "reference": {
+  "label": "Reference desk",
+  "links": [
+   {
+    "label": "All current stories",
+    "url": "/gatorbait-media-blogs"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   }
+  ],
+  "next": "Next up: Florida at Florida State, Friday, Nov. 27, 3:30 p.m. ET on ABC."
+ }
+}

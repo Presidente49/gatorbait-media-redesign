@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-21T09:36:15.592Z",
+ "generatedAt": "2026-11-21T17:20:24.349Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-21T09:36:15.592Z",
+  "checkedAt": "2026-11-21T17:20:24.349Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Two Games To Change the Story. One Saturday Is Not A Turnaround.",
-   "link": "https://www.gatorbaitmedia.com/post/two-games-to-change-the-story",
-   "publishedAt": "2026-11-21T02:18:30.000Z"
+   "title": "4 Crucial Areas To Watch: Florida vs. Vanderbilt",
+   "link": "https://www.gatorbaitmedia.com/post/4-crucial-areas-to-watch-florida-vs-vanderbilt",
+   "publishedAt": "2026-11-21T14:04:47.000Z"
   },
   "problems": []
  },

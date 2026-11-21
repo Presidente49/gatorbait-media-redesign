@@ -116,7 +116,7 @@ issue = {
   'byline': 'By GatorBait Staff · Photos by Chris Spears',
   'cta': 'Read the game story',
   'url': STORY,
-  'image': img('d3cfa5_855dd60738654761930f7c15196fb74e', 1024, 684, 'A Florida player in a blue No. 5 jersey holds the ball up in his right hand as he crosses into the end zone at Ben Hill Griffin Stadium, Nov. 21, 2026.'),
+  'image': img('d3cfa5_a0d706482da646dd9b0272531c6adf7e', 970, 854, 'A close view of a Florida player in a blue No. 5 jersey smiling wide as a teammate wraps an arm around his shoulders, with the crowd behind them at Ben Hill Griffin Stadium, Nov. 21, 2026.'),  # owner, Nov. 21: "This great picture should be the cover"; a crop of d3cfa5_c51939d6 that keeps the player centered on the 9:16 phone poster
   'teasers': ["Baugh's 10-yard run with 2:18 left wins it", "Graham's %d-yard fumble return" % ret, 'Philo: %s yards passing, two rushing touchdowns' % philo['YDS'], "Chris Spears' best shots from The Swamp"],
   'linesLabel': 'Also inside',
   'lines': ["Chris Spears' Best Shots: the photo gallery", 'The halftime story and the quarter-by-quarter record', 'By the numbers, score by score and the box score', 'Game flow: how the lead changed hands', 'Up next: Florida at Florida State, Friday, Nov. 27'],

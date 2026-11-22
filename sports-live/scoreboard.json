@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T00:23:08Z",
+ "updatedAt": "2026-11-22T00:44:55Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -34,8 +34,8 @@
    ]
   },
   "venue": "Ben Hill Griffin Stadium",
-  "recapUrl": null,
-  "galleryUrl": null,
+  "recapUrl": "https://www.gatorbaitmedia.com/post/live-updates-vanderbilt-at-no-24-florida",
+  "galleryUrl": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-florida-34-vanderbilt-27",
   "tape": {
    "totalYards": 411,
    "rushingYards": 170,
@@ -236,7 +236,7 @@
     "opp": 27
    },
    "tv": "SEC Network",
-   "storyUrl": null
+   "storyUrl": "https://www.gatorbaitmedia.com/post/live-updates-vanderbilt-at-no-24-florida"
   },
   {
    "eventId": "401856759",
@@ -263,14 +263,14 @@
    "overall": "9-2"
   },
   {
-   "team": "Texas",
+   "team": "Tennessee",
    "confRecord": "6-2",
    "overall": "9-2"
   },
   {
-   "team": "Tennessee",
-   "confRecord": "5-2",
-   "overall": "8-2"
+   "team": "Texas",
+   "confRecord": "6-2",
+   "overall": "9-2"
   },
   {
    "team": "Kentucky",
@@ -303,14 +303,14 @@
    "overall": "6-4"
   },
   {
-   "team": "LSU",
+   "team": "Missouri",
    "confRecord": "3-4",
    "overall": "6-4"
   },
   {
-   "team": "Missouri",
-   "confRecord": "3-4",
-   "overall": "6-4"
+   "team": "LSU",
+   "confRecord": "3-5",
+   "overall": "6-5"
   },
   {
    "team": "Mississippi State",

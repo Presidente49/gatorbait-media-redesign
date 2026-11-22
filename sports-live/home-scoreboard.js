@@ -154,7 +154,7 @@
   var CSS = '#gbm-lsb{max-width:1240px;margin:0 auto;padding:14px 16px 4px;box-sizing:border-box;font:500 15px/1.35 Barlow,Arial,sans-serif;color:#10233f}' +
     '@media(min-width:900px){#gbm-lsb{padding:18px 28px 6px}}' +
     '#gbm-lsb *{box-sizing:border-box;font-family:Barlow,Arial,sans-serif}' +
-    '#gbm-lsb .w{background:#fff;border-radius:14px;box-shadow:0 8px 24px rgba(11,31,75,.08);overflow:hidden}' +
+    '#gbm-lsb div.w{background:#fff;border-radius:14px;box-shadow:0 8px 24px rgba(11,31,75,.08);overflow:hidden}' +
     '#gbm-lsb .hd{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:12px 16px;background:#081b35;border-bottom:3px solid #fa4616}' +
     '#gbm-lsb .hd h2{margin:0;padding:0;font:800 20px/1 "Barlow Condensed",Barlow,Arial,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#fff!important;-webkit-text-fill-color:#fff!important;background:none!important}' +
     '#gbm-lsb .tag{display:inline-flex;align-items:center;gap:6px;background:#fa4616;color:#fff;padding:4px 8px;font:800 12px/1 Barlow,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase}' +

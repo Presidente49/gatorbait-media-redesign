@@ -37,3 +37,12 @@ around the game story and the photo gallery. No list email.
   win-probability point, so the chart starts at 85% instead of 84% and one mark reads 77% instead of 78%. Bundle: 215,228 bytes
   against the 217,088-byte postgame cap. QA from the renamed copy: same profile as the third build (the one shared "Privacy
   policy" contrast flag; no overflow, missing section, bad link or console error at 320/390/430/1366/1920).
+- **Email and phone PDF (built Nov. 22, not sent):** owner direction: build the magazine email with a PDF button at the bottom
+  and wait for Loren Meadows' story before sending. `email/build_email.py <out.mjml> [DATELINE] [PDF_URL] [PDF_NOTE]` writes the
+  MJML: the Nov. 21 game day email's layout with eight story links and a navy "DOWNLOAD THE PDF" button above the footer.
+  `{{PDF_URL}}` stays as a token in `email/email.mjml` until the PDF is uploaded. The phone PDF comes from
+  `tools/magazine-pdf/phone-edition/` run on this issue: 22 pages, 2.1 MB, Barlow only, 14 links, no overflow; parity is clean
+  apart from the two `lead` flags, which are not text. The generator now takes Barlow from the pinned Fontsource packages on
+  jsDelivr with curl's own User-Agent instead of asking Google Fonts with a browser User-Agent. To release: add Loren's story to
+  the issue and the email, rebuild the PDF, upload it to Wix Media, put its URL in the email and in a `download` block on the
+  issue, then send only on the owner's explicit yes (one list email a day, paired with a Spaces push).

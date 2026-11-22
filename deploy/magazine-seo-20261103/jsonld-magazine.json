@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.gatorbaitmedia.com/magazine#webpage",
+      "url": "https://www.gatorbaitmedia.com/magazine",
+      "name": "GatorBait Magazine | Postgame: Georgia 27, Florida 8",
+      "description": "Postgame edition on Georgia 27, Florida 8: columns from Buddy Martin, Franz Beard, Eddie Gilley and Loren Meadows, plus the game story and box score.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://www.gatorbaitmedia.com/#website" },
+      "about": { "@id": "https://www.gatorbaitmedia.com/magazine#periodical" },
+      "publisher": { "@id": "https://www.gatorbaitmedia.com/#organization" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://static.wixstatic.com/media/d3cfa5_a91a5b6f1bb345748348c55534113854~mv2.jpg",
+        "width": 1200,
+        "height": 630,
+        "caption": "GatorBait Magazine postgame edition: Bitten in Atlanta, Georgia 27, Florida 8. Photo: GatorBait Media"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "GatorBait Media", "item": "https://www.gatorbaitmedia.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Magazine", "item": "https://www.gatorbaitmedia.com/magazine" }
+        ]
+      }
+    },
+    {
+      "@type": "Periodical",
+      "@id": "https://www.gatorbaitmedia.com/magazine#periodical",
+      "name": "GatorBait Magazine",
+      "url": "https://www.gatorbaitmedia.com/magazine",
+      "about": "Florida Gators football and athletics",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://www.gatorbaitmedia.com/#organization" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.gatorbaitmedia.com/#website",
+      "url": "https://www.gatorbaitmedia.com/",
+      "name": "GatorBait Media",
+      "publisher": { "@id": "https://www.gatorbaitmedia.com/#organization" }
+    }
+  ]
+}

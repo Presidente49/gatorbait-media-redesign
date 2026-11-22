@@ -1,0 +1,10 @@
+{
+  "_comment": "Site SEO Tags before the Nov. 3 write. Rollback: PATCH /promote/seo/v1/site-seo-tags with {siteSeoTags:{tags:<tags>},fieldMask:'tags'}. After: identical except og:image content = d3cfa5_c10f152e80fd4bb89f533b8dc8c36c1e~mv2.jpg",
+  "tags": [
+    { "type": "meta", "props": { "name": "description", "content": "Independent Florida Gators news, recruiting and analysis, GatorBait Magazine and The Buddy Martin Show from GatorBait Media." } },
+    { "type": "meta", "props": { "name": "google-site-verification", "content": "MOlfZ6G_RjbtyRwr2vmPc9zmeAvtaEKWReL5RmqclxA" } },
+    { "type": "meta", "props": { "name": "fb_admins_meta_tag", "content": "BrendenSharpMartin" } },
+    { "type": "meta", "props": { "name": "keywords", "content": "" } },
+    { "type": "meta", "props": { "property": "og:image", "content": "16b519_4d80d39e264c45009a3abeba5beee4c1~mv2.jpg" } }
+  ]
+}

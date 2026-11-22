@@ -25,6 +25,19 @@ Injected into the live pages in a private headless browser (nothing sent to the 
 
 Not exercised: a logged-in member, Safari on a real phone, the Spaces app (custom code does not run there), and browsers older than Safari 15.4 (they ignore the layer and keep the previous design).
 
+## Live
+
+- Custom embed **"GBM - Story front v1 (magazine order, deck, date, email signup first at story end)"**, id `ed872869-b4e1-47fc-9026-12787d85ac95`, revision 1, HEAD, `loadOnce: false`, ESSENTIAL, 5,386 characters. Source: [`embed.html`](embed.html), built with `build.py 90d96bee6a45aacc3d49a19a0d35629ac765c6fb`.
+- Stylesheet: `https://cdn.jsdelivr.net/gh/Presidente49/gatorbait-media-redesign@90d96bee6a45aacc3d49a19a0d35629ac765c6fb/sports-live/story-front.css` (checked byte for byte against the repo file).
+- Created Nov. 22, about 1:35 a.m. ET. No site publish. Wix refreshed its cached copy of each story page over the next two to three minutes.
+- Live check with nothing injected, phone and desktop, on the Buddy Martin column and the Sumrall story: new order in place, date and deck showing, caption lines tagged, no script errors, no sideways scroll, layout shift 0.04 (phone) and 0.01 or less (desktop). The other story pages sampled carry the embed in their page source.
+
+## To change it later
+
+- Styles: edit `sports-live/story-front.css`, merge, run `build.py <new main sha>`, then PATCH the embed with the new `embed.html` (current revision, category ESSENTIAL).
+- Script: edit `story-front.inline.js`, rebuild, PATCH the same way.
+- Keep the embed plain ASCII. The Wix tool's file upload turns `\uXXXX` escapes into the real characters, which changes the length and hash of what is sent.
+
 ## Rollback
 
-Disable the embed (`enabled: false`). The site returns to the previous story page at once. Nothing else to undo.
+Disable embed `ed872869` (`enabled: false`). The site returns to the previous story page as Wix refreshes each page. Nothing else to undo.

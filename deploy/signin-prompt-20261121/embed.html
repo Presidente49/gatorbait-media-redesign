@@ -1,0 +1,10 @@
+<!-- GBM_SIGNIN_PROMPT_V1: logged-out readers who tap Sign in get Wix's own login box. The account page it used to open answers 403 to logged-out visitors. Rollback: disable this embed. -->
+<script id="gbm-signin-prompt">(function(){if(window.__GBM_SIGNIN__)return;window.__GBM_SIGNIN__=1;
+function out(){var b=document.querySelector('.wixui-login-social-bar');return!!b&&/^\s*log in\s*$/i.test(b.textContent||'');}
+function ask(){var a=window.wixEmbedsAPI;if(!a||typeof a.promptLogin!=='function')return false;try{a.promptLogin({mode:'login'});return true;}catch(e){return false;}}
+function shut(){var r=document.getElementById('gbm-mobile-drawer-root'),t=document.getElementById('gbm-mobile-menu-toggle');if(r&&t&&t.getAttribute('aria-expanded')==='true')t.click();}
+document.addEventListener('click',function(e){if(e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+var t=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!t)return;var u;try{u=new URL(t.getAttribute('href'),location.href);}catch(x){return;}
+if(u.origin!==location.origin||u.pathname.replace(/\/+$/,'')!=='/account/my-account')return;
+if(!out())return;if(ask()){e.preventDefault();e.stopPropagation();shut();}},true);
+})();</script>

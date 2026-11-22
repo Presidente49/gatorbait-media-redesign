@@ -1,7 +1,12 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-22T07:11:17.434Z",
+  "fetchedAt": "2026-11-22T21:06:55.474Z",
   "videos": [
+    {
+      "id": "r_jaDjAt0nI",
+      "title": "FRANZ BEARD: \"WILL WADE IS ONE STEP REMOVED FROM POND SCUM\"",
+      "published": "2026-11-22T17:00:27+00:00"
+    },
     {
       "id": "cBob3z3Dyus",
       "title": "SUMRALL: \"WALKS OFF A WINNER\" — Florida 34, Vanderbilt 27",
@@ -71,11 +76,6 @@
       "id": "3-KTqR5qLhY",
       "title": "TODD GOLDEN: \"I LOVE HAVING AN INCREDIBLE PLAYER IN A SIXTH MAN ROLE\"",
       "published": "2026-11-18T18:38:11+00:00"
-    },
-    {
-      "id": "6g9fiCpMawY",
-      "title": "SUMRALL: \"SMART TOUGH. NOT DUMB TOUGH.\"",
-      "published": "2026-11-18T17:33:57+00:00"
     }
   ]
 }

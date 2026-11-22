@@ -102,7 +102,7 @@
     if (e.status === 'in' && f.detail) bits.push('<span><em>Now</em> ' + esc(f.detail) + '</span>');
     var links = '';
     if (/^https:\/\/www\.espn\.com\//.test(e.link || '')) links += '<a href="' + esc(e.link) + '" target="_blank" rel="noopener">Gamecast on ESPN</a>';
-    if (isFla(e)) links += '<a href="/magazine">Game day magazine</a><a href="/roster">Roster</a>';
+    if (isFla(e)) links += '<a href="/magazine">' + (e.status === 'post' ? 'Postgame magazine' : 'Game day magazine') + '</a><a href="/roster">Roster</a>';
     return '<div class="dt">' + bits.join('') + '<span class="lk">' + links + '</span></div>';
   }
 

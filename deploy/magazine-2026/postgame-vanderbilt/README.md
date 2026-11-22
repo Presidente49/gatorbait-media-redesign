@@ -29,3 +29,11 @@ around the game story and the photo gallery. No list email.
   edition: a "Privacy policy" link measured at 1.00. Wix photos are stand-ins in the container.
 - **Release:** embed `1dd74333-ee02-40da-9c93-cf8fd787c129`, loader from `make-loader.py <sha>` (the postgame loader with the
   dark splash). First release: rev 167, pin `2d1c2a9aaf86fe7ead9f5bda5f66d7b8b105cb06`. The cover change is the next revision. Rollback: the game day loader, `deploy/magazine-2026/pregame-vanderbilt/make-loader.py d04e79280926c3410459d665a3d8648729b7231b`.
+- **Columns and the receivers story (fourth build, Nov. 22):** owner direction, Nov. 22: every postgame article goes in the
+  Magazine. Adds a `columns` package ahead of the game package (Buddy Martin's two columns, Franz Beard, Eddie Gilley) and the
+  receivers story to the game package. Each thumbnail is its story's cover, except Buddy Martin's first column, which runs a
+  different Nov. 21 Chris Spears frame because that story's cover is a near-twin of the Magazine cover. The build script's
+  scoring-play checks now match ESPN's current wording ("Brock Taylor 53 Yd Field Goal"). ESPN also added an opening
+  win-probability point, so the chart starts at 85% instead of 84% and one mark reads 77% instead of 78%. Bundle: 215,228 bytes
+  against the 217,088-byte postgame cap. QA from the renamed copy: same profile as the third build (the one shared "Privacy
+  policy" contrast flag; no overflow, missing section, bad link or console error at 320/390/430/1366/1920).

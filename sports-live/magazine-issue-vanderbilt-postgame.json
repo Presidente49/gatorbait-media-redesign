@@ -74,6 +74,10 @@
   "label": "In this issue",
   "items": [
    {
+    "id": "columns",
+    "label": "The columns"
+   },
+   {
     "id": "coverage",
     "label": "The game package"
    },
@@ -103,6 +107,78 @@
    }
   ]
  },
+ "columns": {
+  "kicker": "The columns",
+  "title": "Buddy Martin, Franz Beard and Eddie Gilley on the win",
+  "dek": "What GatorBait's writers made of Saturday in The Swamp.",
+  "items": [
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did.",
+    "dek": "Two breaks, a helmet on the turf and a tipped ball. Buddy Martin on win No. 7 and Florida's first winning SEC record since 2020.",
+    "url": "/post/some-days-you-need-your-gator-fortune-cookie-to-crumble-your-way-it-did",
+    "lead": true,
+    "image": {
+     "id": "16b519_b2fd9da675e7436cb3867dda1222d69d",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 1929,
+     "alt": "Florida defenders in blue jerseys celebrate on the field, one flexing both arms, in front of fans and a wall with Florida Gators lettering. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Franz Beard",
+    "title": "No logic, no reason, just a bizarre Florida win",
+    "dek": "Florida needed a lucky bounce, a helmet on the turf and a last-minute sack. Franz Beard on a win that defied logic, plus the SEC scoreboard.",
+    "url": "/post/no-logic-no-reason-just-a-bizarre-florida-win",
+    "image": {
+     "id": "d3cfa5_1578415e2450441faa3777c215803eb6",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 684,
+     "alt": "A Vanderbilt quarterback in a white No. 2 jersey throws as Florida defenders in blue jerseys, including No. 7 with an arm raised, close in on him in front of a full stadium. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "Jon Sumrall Says It's Time for Gator Football to Say Thanks.",
+    "dek": "Jon Sumrall says the fans have held up their end of the bargain. Buddy Martin on gratitude, barbecue and a 7-4 team headed to Tallahassee.",
+    "url": "/post/jon-sumrall-says-it-s-time-for-gator-football-to-say-thanks",
+    "image": {
+     "id": "ae876a_e84bc8e610dc4995b7cfcc1cd43a4ba2",
+     "ext": "jpg",
+     "width": 480,
+     "height": 270,
+     "alt": "Buddy Martin, Chris Spears and Franz Beard sit at a table at Sonny's BBQ after Florida's win over Vanderbilt. Photo by Zooey.",
+     "credit": "Photo by Zooey.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Area Evaluations",
+    "author": "Eddie Gilley",
+    "title": "Area Evaluations: Florida vs. Vanderbilt",
+    "dek": "Eddie Gilley grades the four areas he flagged before the game: the weather, the turf, the cleats and the atmosphere in the Swamp.",
+    "url": "/post/area-evaluations-florida-vs-vanderbilt",
+    "image": {
+     "id": "16b519_d327d7c93d0d40f1aa39061be070878c",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 1902,
+     "alt": "Florida fans behind the end zone raise their arms and an official signals touchdown as a Gators player in a No. 13 jersey scores against Vanderbilt. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   }
+  ]
+ },
  "coverage": {
   "kicker": "The game package",
   "title": "Photos, the halftime story and every score",
@@ -112,7 +188,7 @@
     "rubric": "Photos",
     "author": "Chris Spears",
     "title": "Chris Spears' Best Shots: Florida 34, Vanderbilt 27",
-    "dek": "Chris Spears had the sideline for the comeback. His best photos from The Swamp on Senior Day.",
+    "dek": "Chris Spears had the sideline for the comeback. His best shots, plus the full gallery of 126 photos from Senior Day.",
     "url": "/post/chris-spears-best-shots-florida-34-vanderbilt-27",
     "lead": true,
     "image": {
@@ -169,6 +245,22 @@
      "width": 1024,
      "height": 648,
      "alt": "Florida defenders in blue jerseys stand near a pile of Vanderbilt players in white at the line of scrimmage while one Florida player points a finger in the air. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Receivers",
+    "author": "GatorBait Staff",
+    "title": "The Receiving Room Keeps Answering",
+    "dek": "Seven games without Vernell Brown III, Florida's receivers keep producing. Eric Singleton Jr. had 117 yards against Vanderbilt.",
+    "url": "/post/seven-games-without-vb3-and-still-no-word-on-a-return",
+    "image": {
+     "id": "16b519_be58f30318924145beef95bc145a87c5",
+     "ext": "jpg",
+     "width": 3000,
+     "height": 2065,
+     "alt": "A Florida player wearing No. 2 steadies himself on the Florida sideline as staff members reach toward him and a Vanderbilt defender kneels on the turf. Photo by Chris Spears, GatorBait Media.",
      "credit": "Photo by Chris Spears, GatorBait Media.",
      "uaa": false
     }
@@ -447,7 +539,7 @@
  "flow": {
   "kicker": "Game flow",
   "title": "How the lead changed hands",
-  "dek": "Florida's chance to win, play by play. The Gators started at 84%, were at 55% at halftime and fell as low as 46% in the third quarter before the comeback.",
+  "dek": "Florida's chance to win, play by play. The Gators started at 85%, were at 55% at halftime and fell as low as 46% in the third quarter before the comeback.",
   "axis": [
    "100%",
    "50%",
@@ -461,11 +553,12 @@
   ],
   "quarterStarts": [
    0,
-   34,
-   94,
-   128
+   35,
+   95,
+   129
   ],
   "points": [
+   84.6,
    83.8,
    82.7,
    83.0,
@@ -558,7 +651,7 @@
    56.3,
    56.9,
    58.4,
-   56.8,
+   56.7,
    54.7,
    57.2,
    58.8,
@@ -606,14 +699,14 @@
    83.4,
    80.6,
    77.6,
-   77.6,
+   77.2,
    78.0,
    80.3,
    63.6,
    64.0,
    65.8,
    78.5,
-   68.1,
+   67.8,
    67.9,
    62.5,
    67.8,
@@ -621,7 +714,7 @@
    67.8,
    66.5,
    91.1,
-   95.3,
+   95.0,
    95.8,
    96.1,
    97.1,
@@ -640,43 +733,43 @@
    98.2,
    98.2,
    98.3,
-   99.9,
-   99.9,
+   100.0,
+   100.0,
    100.0
   ],
   "marks": [
    {
-    "i": 59,
+    "i": 60,
     "title": "17-9",
     "note": "Myles Graham's 57-yard fumble return with 5:27 left in the half; Florida is at 90%"
    },
    {
-    "i": 83,
+    "i": 84,
     "title": "24-17",
     "note": "Jared Curtis hits Junior Sherrill for 75 yards with 39 seconds left in the half; Florida is at 56%"
    },
    {
-    "i": 116,
+    "i": 117,
     "title": "24-24",
     "note": "Aaron Philo scores from the 1 with 4:07 left in the third quarter; Florida is at 70%"
    },
    {
-    "i": 140,
+    "i": 141,
     "title": "27-24",
-    "note": "Patrick Durkin's 20-yard field goal with 8:27 to play; Florida is at 78%"
+    "note": "Patrick Durkin's 20-yard field goal with 8:27 to play; Florida is at 77%"
    },
    {
-    "i": 147,
+    "i": 148,
     "title": "27-27",
     "note": "Brock Taylor's 51-yard field goal with 5:52 left; Florida is at 68%"
    },
    {
-    "i": 155,
+    "i": 156,
     "title": "34-27",
     "note": "Jadan Baugh's 10-yard run with 2:18 left; Florida is at 95%"
    }
   ],
-  "summary": "Line chart of Florida's win probability against Vanderbilt. It starts near 84%, is at 55% at halftime, falls as low as 46% in the third quarter and ends at 100% after Jadan Baugh's touchdown with 2:18 left and a fourth-down sack with 30 seconds left.",
+  "summary": "Line chart of Florida's win probability against Vanderbilt. It starts near 85%, is at 55% at halftime, falls as low as 46% in the third quarter and ends at 100% after Jadan Baugh's touchdown with 2:18 left and a fourth-down sack with 30 seconds left.",
   "source": "Win probability: ESPN. GatorBait Media graphic."
  },
  "quotes": {

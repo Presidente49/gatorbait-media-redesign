@@ -22,25 +22,22 @@ const CACHE = path.resolve(cacheArg || path.join(path.dirname(outHtml), 'cache')
 fs.mkdirSync(CACHE, { recursive: true });
 const I = JSON.parse(fs.readFileSync(issuePath, 'utf8'));
 const SITE = 'https://www.gatorbaitmedia.com';
-const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const abs = (u) => (/^https?:\/\//.test(u) ? u : SITE + (u.startsWith('/') ? u : '/' + u));
 const shown = (u) => abs(u).replace(/^https?:\/\/(www\.)?/, '');
 const curl = (url, file) => {
-  if (!fs.existsSync(file) || !fs.statSync(file).size) execFileSync('curl', ['-sS', '--fail', '-L', '-A', UA, '-o', file, url], { stdio: 'inherit' });
+  if (!fs.existsSync(file) || !fs.statSync(file).size) execFileSync('curl', ['-sS', '--fail', '-L', '-o', file, url], { stdio: 'inherit' });
   return file;
 };
 const dataUri = (file, mime) => `data:${mime};base64,${fs.readFileSync(file).toString('base64')}`;
 
 // ---- fonts: Barlow + Barlow Condensed only (latin subset), embedded --------------------------------------------
-const FONT_CSS_URL = 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap';
-const gcss = fs.readFileSync(curl(FONT_CSS_URL, path.join(CACHE, 'fonts.css')), 'utf8');
+// Fontsource builds of Barlow on jsDelivr (pinned, latin subset), fetched with curl's own User-Agent.
+const FONTS = [['Barlow', 'barlow', [400, 500, 600, 700]], ['Barlow Condensed', 'barlow-condensed', [600, 700, 800]]];
 let fontCss = '';
-for (const m of gcss.matchAll(/\/\* ([\w-]+) \*\/\s*@font-face \{([^}]*)\}/g)) {
-  if (m[1] !== 'latin') continue;
-  const fam = /font-family: '([^']+)'/.exec(m[2])[1], w = /font-weight: (\d+)/.exec(m[2])[1], url = /url\((https[^)]+)\)/.exec(m[2])[1];
-  const f = curl(url, path.join(CACHE, `${fam.replace(/ /g, '')}-${w}.woff2`));
+for (const [fam, pkg, weights] of FONTS) for (const w of weights) {
+  const f = curl(`https://cdn.jsdelivr.net/npm/@fontsource/${pkg}@5.3.0/files/${pkg}-latin-${w}-normal.woff2`, path.join(CACHE, `${fam.replace(/ /g, '')}-${w}.woff2`));
   fontCss += `@font-face{font-family:'${fam}';font-style:normal;font-weight:${w};src:url(${dataUri(f, 'font/woff2')}) format('woff2')}\n`;
 }
 if ((fontCss.match(/@font-face/g) || []).length !== 7) { console.error('expected 7 font faces'); process.exit(1); }

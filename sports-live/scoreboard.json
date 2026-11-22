@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T22:55:56Z",
+ "updatedAt": "2026-11-22T00:44:55Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -34,8 +34,8 @@
    ]
   },
   "venue": "Ben Hill Griffin Stadium",
-  "recapUrl": null,
-  "galleryUrl": null,
+  "recapUrl": "https://www.gatorbaitmedia.com/post/live-updates-vanderbilt-at-no-24-florida",
+  "galleryUrl": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-florida-34-vanderbilt-27",
   "tape": {
    "totalYards": 411,
    "rushingYards": 170,
@@ -64,7 +64,7 @@
   "eventId": "401856759",
   "opponent": "Florida State",
   "opponentRank": null,
-  "opponentRecord": "5-5",
+  "opponentRecord": "5-6",
   "home": false,
   "neutral": false,
   "kickoffIso": "2026-11-27T20:30:00Z",
@@ -236,14 +236,14 @@
     "opp": 27
    },
    "tv": "SEC Network",
-   "storyUrl": null
+   "storyUrl": "https://www.gatorbaitmedia.com/post/live-updates-vanderbilt-at-no-24-florida"
   },
   {
    "eventId": "401856759",
    "date": "2026-11-27T20:30:00Z",
    "opponent": "Florida State",
    "opponentRank": null,
-   "opponentRecord": "5-5",
+   "opponentRecord": "5-6",
    "home": false,
    "status": "scheduled",
    "score": null,
@@ -264,13 +264,13 @@
   },
   {
    "team": "Tennessee",
-   "confRecord": "5-2",
-   "overall": "8-2"
+   "confRecord": "6-2",
+   "overall": "9-2"
   },
   {
    "team": "Texas",
-   "confRecord": "5-2",
-   "overall": "8-2"
+   "confRecord": "6-2",
+   "overall": "9-2"
   },
   {
    "team": "Kentucky",
@@ -279,12 +279,17 @@
   },
   {
    "team": "Oklahoma",
-   "confRecord": "4-3",
-   "overall": "6-4"
+   "confRecord": "5-3",
+   "overall": "7-4"
   },
   {
    "team": "Florida",
    "confRecord": "5-4",
+   "overall": "7-4"
+  },
+  {
+   "team": "Auburn",
+   "confRecord": "4-4",
    "overall": "7-4"
   },
   {
@@ -293,18 +298,8 @@
    "overall": "7-4"
   },
   {
-   "team": "Auburn",
-   "confRecord": "4-4",
-   "overall": "6-4"
-  },
-  {
    "team": "South Carolina",
    "confRecord": "4-4",
-   "overall": "6-4"
-  },
-  {
-   "team": "LSU",
-   "confRecord": "3-4",
    "overall": "6-4"
   },
   {
@@ -313,9 +308,9 @@
    "overall": "6-4"
   },
   {
-   "team": "Arkansas",
-   "confRecord": "2-5",
-   "overall": "4-6"
+   "team": "LSU",
+   "confRecord": "3-5",
+   "overall": "6-5"
   },
   {
    "team": "Mississippi State",
@@ -323,9 +318,14 @@
    "overall": "5-6"
   },
   {
+   "team": "Arkansas",
+   "confRecord": "2-6",
+   "overall": "4-7"
+  },
+  {
    "team": "Texas A&M",
-   "confRecord": "1-6",
-   "overall": "4-6"
+   "confRecord": "1-7",
+   "overall": "4-7"
   },
   {
    "team": "Vanderbilt",

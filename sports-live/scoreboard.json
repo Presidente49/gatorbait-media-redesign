@@ -1,9 +1,9 @@
 {
- "updatedAt": "2026-11-22T00:44:55Z",
+ "updatedAt": "2026-11-22T21:06:29Z",
  "season": 2026,
  "team": {
   "name": "Florida",
-  "rank": 23,
+  "rank": 20,
   "record": "7-4",
   "conf": "5-4"
  },
@@ -254,8 +254,8 @@
  "standings": [
   {
    "team": "Georgia",
-   "confRecord": "7-1",
-   "overall": "9-1"
+   "confRecord": "8-1",
+   "overall": "10-1"
   },
   {
    "team": "Alabama",
@@ -273,11 +273,6 @@
    "overall": "9-2"
   },
   {
-   "team": "Kentucky",
-   "confRecord": "5-3",
-   "overall": "7-3"
-  },
-  {
    "team": "Oklahoma",
    "confRecord": "5-3",
    "overall": "7-4"
@@ -288,7 +283,17 @@
    "overall": "7-4"
   },
   {
+   "team": "Kentucky",
+   "confRecord": "5-4",
+   "overall": "7-4"
+  },
+  {
    "team": "Auburn",
+   "confRecord": "4-4",
+   "overall": "7-4"
+  },
+  {
+   "team": "Missouri",
    "confRecord": "4-4",
    "overall": "7-4"
   },
@@ -299,13 +304,8 @@
   },
   {
    "team": "South Carolina",
-   "confRecord": "4-4",
-   "overall": "6-4"
-  },
-  {
-   "team": "Missouri",
-   "confRecord": "3-4",
-   "overall": "6-4"
+   "confRecord": "4-5",
+   "overall": "6-5"
   },
   {
    "team": "LSU",

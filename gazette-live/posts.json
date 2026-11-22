@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did.",
+      "excerpt": "That's victory No. 7, a guaranteed winning season and, at 5-4, the Gators' first winning SEC record since 2020.",
+      "url": "https://www.gatorbaitmedia.com/post/some-days-you-need-your-gator-fortune-cookie-to-crumble-your-way-it-did",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-22T01:15:40Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_cf34c8f5b06e48e29de7f39f76ed6b21~mv2.jpg/v1/fit/w_960,h_641,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did."
+      }
+    },
+    {
+      "title": "The Receiving Room Keeps Answering",
+      "excerpt": "Seven games without Vernell Brown III, Florida's receivers keep producing. Eric Singleton Jr. tied his career high with 117 yards in the 34-27 win over Vanderbilt.",
+      "url": "https://www.gatorbaitmedia.com/post/seven-games-without-vb3-and-still-no-word-on-a-return",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-22T00:41:45Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Receiving Room Keeps Answering"
+      }
+    },
+    {
       "title": "Sumrall after the comeback: 'We are a train wreck at times'",
       "excerpt": "Jon Sumrall said Florida beat Vanderbilt 'maybe at times in spite of ourselves.' What the coach, Aaron Philo and Myles Graham said after the 34-27 win.",
       "url": "https://www.gatorbaitmedia.com/post/sumrall-after-the-comeback-we-are-a-train-wreck-at-times",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Houston Beats No. 1 Florida 86-76 as Dedan Thomas Jr. Scores 30"
-      }
-    },
-    {
-      "title": "The Week Gator Nation Couldn't Stop Watching",
-      "excerpt": "153,000 views on one clip. The kick. Philo in his own words. The six clips and the Lowdown episode Gator Nation couldn't stop watching — all in one place.",
-      "url": "https://www.gatorbaitmedia.com/post/the-week-gator-nation-couldn-t-stop-watching",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-18T17:39:07Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_8891d99ac9b543d984fe88962cc75cb0~mv2.jpg/v1/fit/w_1000,h_608,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Week Gator Nation Couldn't Stop Watching"
-      }
-    },
-    {
-      "title": "Florida flips running back Terrance Grant Jr. from Maryland, loses Cain Van Norden",
-      "excerpt": "Running back Terrance Grant Jr. flipped from Maryland to Florida on Tuesday, the same day lineman Cain Van Norden decommitted from the Gators.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-flips-running-back-terrance-grant-jr-from-maryland-loses-cain-van-norden",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-18T17:31:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_ab05a7a6282f45498245f06c49a85121~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida flips running back Terrance Grant Jr. from Maryland, loses Cain Van Norden"
       }
     }
   ]

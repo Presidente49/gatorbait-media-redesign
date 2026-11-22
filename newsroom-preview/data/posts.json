@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did.",
+      "excerpt": "That's victory No. 7, a guaranteed winning season and, at 5-4, the Gators' first winning SEC record since 2020.",
+      "url": "https://www.gatorbaitmedia.com/post/some-days-you-need-your-gator-fortune-cookie-to-crumble-your-way-it-did",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-22T01:15:40Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_cf34c8f5b06e48e29de7f39f76ed6b21~mv2.jpg/v1/fit/w_960,h_641,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did."
+      }
+    },
+    {
+      "title": "The Receiving Room Keeps Answering",
+      "excerpt": "Seven games without Vernell Brown III, Florida's receivers keep producing. Eric Singleton Jr. tied his career high with 117 yards in the 34-27 win over Vanderbilt.",
+      "url": "https://www.gatorbaitmedia.com/post/seven-games-without-vb3-and-still-no-word-on-a-return",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-22T00:41:45Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_8d0397e1196a48089a3084f1a003b292~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Receiving Room Keeps Answering"
+      }
+    },
+    {
       "title": "Sumrall after the comeback: 'We are a train wreck at times'",
       "excerpt": "Jon Sumrall said Florida beat Vanderbilt 'maybe at times in spite of ourselves.' What the coach, Aaron Philo and Myles Graham said after the 34-27 win.",
       "url": "https://www.gatorbaitmedia.com/post/sumrall-after-the-comeback-we-are-a-train-wreck-at-times",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for The Soothsayer: Improved defense will carry Gators to 7th win"
-      }
-    },
-    {
-      "title": "Taking Care of Business: Florida Women Rout Florida Atlantic 82-39",
-      "excerpt": "Loren Meadows: Kiyomi McMiller scored 26 points and Florida held Florida Atlantic to 23.1 percent shooting in an 82-39 win that ended a two-game skid.",
-      "url": "https://www.gatorbaitmedia.com/post/taking-care-of-business-florida-women-rout-florida-atlantic-82-39",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-11-20T04:13:12Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_51307dc126d04b7c98d902ac2a6e7c42~mv2.jpg/v1/fit/w_1000,h_720,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Taking Care of Business: Florida Women Rout Florida Atlantic 82-39"
-      }
-    },
-    {
-      "title": "Opportunity knocks, Gators answer against West Virginia",
-      "excerpt": "Franz Beard: Without Boogie Fland and with Rueben Chinyelu in foul trouble, Todd Golden went 10 deep in Las Vegas and found some answers in an 85-72 win over West Virginia.",
-      "url": "https://www.gatorbaitmedia.com/post/opportunity-knocks-gators-answer-against-west-virginia",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-20T02:54:28Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_a71a303b2f6e4729bacf458a70c7b6f8~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Opportunity knocks, Gators answer against West Virginia"
       }
     }
   ]

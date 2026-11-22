@@ -19,7 +19,7 @@ if(!/media\/[^\/?]+/.test(meta('meta[property="og:image"]')))R.removeAttribute('
 function deck(sec){
 if(R.hasAttribute('data-gbm-sf-deckdone'))return;R.setAttribute('data-gbm-sf-deckdone','');
 var k=meta('meta[name="description"]'),h=D.querySelector('h1[data-hook="post-title"]'),b=txt(sec).slice(0,320).toLowerCase();
-if(k.length<40||k.length>230||/(\.\.\.|…)$/.test(k)||(h&&txt(h).toLowerCase()===k.toLowerCase())||b.indexOf(k.slice(0,48).toLowerCase())>-1)return;
+if(k.length<40||k.length>230||k.slice(-3)==='...'||k.charCodeAt(k.length-1)===8230||(h&&txt(h).toLowerCase()===k.toLowerCase())||b.indexOf(k.slice(0,48).toLowerCase())>-1)return;
 R.style.setProperty('--gbm-sf-deck',q(k));R.setAttribute('data-gbm-sf-deck','');
 }
 function ital(p){var w=D.createTreeWalker(p,4),n,any=0;while((n=w.nextNode())){if(!/\S/.test(n.nodeValue))continue;any=1;if(getComputedStyle(n.parentElement).fontStyle!=='italic')return 0;}return any;}
@@ -34,15 +34,16 @@ if(last)last.setAttribute('data-gbm-sf-cap','last');
 }
 /* the cover block is created with fixed inline margins; close the gap above and below it */
 function size(g){var h=g.offsetHeight;if(h>150&&h!==HH){HH=h;R.style.setProperty('--gbm-sf-heroh',h+'px');}}
-function hero(){var g=D.getElementById('gbm-hero');if(!g||!g.parentElement||getComputedStyle(g.parentElement).display!=='grid')return;if(g.style.marginTop!=='0px'){g.style.setProperty('margin-top','0','important');g.style.setProperty('margin-bottom','0','important');}
-if(!g.__sf){g.__sf=1;try{new ResizeObserver(function(){size(g);}).observe(g);}catch(e){}}size(g);}
+function hero(){var g=D.getElementById('gbm-hero');if(!g||g.__sf||!g.parentElement||getComputedStyle(g.parentElement).display!=='grid')return;g.__sf=1;
+g.style.setProperty('margin-top','0','important');g.style.setProperty('margin-bottom','0','important');
+try{new ResizeObserver(function(){size(g);}).observe(g);}catch(e){}size(g);}
 /* a reader who already signed up on this device still sees the email block, as a confirmation */
 function joined(){
 var m=D.querySelector('article[data-hook="post"] aside.gbm-kit-more');if(!m||m.querySelector('.gbc'))return;
 var s='';try{s=localStorage.getItem('gbm-capture-joined')?'j':localStorage.getItem('gbm-capture-pending')?'p':'';}catch(e){}
 if(!s)return;
 var a=D.createElement('aside');a.className='gbc gbc-v2 gbc-end gbm-sf-joined';a.setAttribute('aria-label','GatorBait email updates');
-a.innerHTML='<div class="gbc-k">GatorBait email updates</div><h3 class="gbc-h">'+(s==='j'?'You’re on the list.':'Check your inbox.')+'</h3><div class="gbc-v">'+(s==='j'?'GatorBait stories and columns are headed to your inbox.':'Confirm your signup with the link in the GatorBait email we sent you.')+' <a href="https://buddymartinshow.wixforms.com/f/7517931185469654016" target="_blank" rel="noopener">Sign up another email</a></div>';
+a.innerHTML='<div class="gbc-k">GatorBait email updates</div><h3 class="gbc-h">'+(s==='j'?'You are on the list.':'Check your inbox.')+'</h3><div class="gbc-v">'+(s==='j'?'GatorBait stories and columns are headed to your inbox.':'Confirm your signup with the link in the GatorBait email we sent you.')+' <a href="https://buddymartinshow.wixforms.com/f/7517931185469654016" target="_blank" rel="noopener">Sign up another email</a></div>';
 m.appendChild(a);
 }
 function sect(){return D.querySelector('article[data-hook="post"] section[data-hook="post-description"]');}

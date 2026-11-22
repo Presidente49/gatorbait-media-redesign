@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Jon Sumrall Says It's Time for Gator Football to Say Thanks.",
+      "excerpt": "A fine way to finish another season together (photo by Zooey)",
+      "url": "https://www.gatorbaitmedia.com/post/jon-sumrall-says-it-s-time-for-gator-football-to-say-thanks",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-22T14:44:57Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_e84bc8e610dc4995b7cfcc1cd43a4ba2~mv2.jpg/v1/fit/w_480,h_270,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Jon Sumrall Says It's Time for Gator Football to Say Thanks."
+      }
+    },
+    {
+      "title": "No logic, no reason, just a bizarre Florida win",
+      "excerpt": "Florida needed a lucky bounce, a helmet on the turf and a last-minute sack to beat Vanderbilt 34-27. Franz Beard on a win that defied logic, plus the SEC scoreboard.",
+      "url": "https://www.gatorbaitmedia.com/post/no-logic-no-reason-just-a-bizarre-florida-win",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-22T13:03:20Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_1578415e2450441faa3777c215803eb6~mv2.jpg/v1/fit/w_1000,h_684,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for No logic, no reason, just a bizarre Florida win"
+      }
+    },
+    {
       "title": "Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did.",
       "excerpt": "That's victory No. 7, a guaranteed winning season and, at 5-4, the Gators' first winning SEC record since 2020.",
       "url": "https://www.gatorbaitmedia.com/post/some-days-you-need-your-gator-fortune-cookie-to-crumble-your-way-it-did",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Two Games To Change the Story. One Saturday Is Not A Turnaround."
-      }
-    },
-    {
-      "title": "Florida lists six players out for Vanderbilt on SEC availability report",
-      "excerpt": "Wide receiver Vernell Brown III, tight end Lacota Dippre and cornerback Dijon Johnson are among six Gators out for Saturday's home finale. Vanderbilt lists nine players out.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-lists-five-players-out-for-vanderbilt-on-sec-availability-report",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-20T21:54:56Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_2503400ea63241218aeba9371e09b857~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida lists five players out for Vanderbilt on SEC availability report"
-      }
-    },
-    {
-      "title": "The Soothsayer: Improved defense will carry Gators to 7th win",
-      "excerpt": "Franz Beard: Florida's defense has found a formula over the last four games, and that is why the Soothsayer sees a seventh win Saturday against Vanderbilt.",
-      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-20T15:20:03Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Soothsayer: Improved defense will carry Gators to 7th win"
       }
     }
   ]

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Jon Sumrall Says It's Time for Gator Football to Say Thanks.",
+      "excerpt": "A fine way to finish another season together (photo by Zooey)",
+      "url": "https://www.gatorbaitmedia.com/post/jon-sumrall-says-it-s-time-for-gator-football-to-say-thanks",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-22T14:44:57Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_e84bc8e610dc4995b7cfcc1cd43a4ba2~mv2.jpg/v1/fit/w_480,h_270,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Jon Sumrall Says It's Time for Gator Football to Say Thanks."
+      }
+    },
+    {
+      "title": "No logic, no reason, just a bizarre Florida win",
+      "excerpt": "Florida needed a lucky bounce, a helmet on the turf and a last-minute sack to beat Vanderbilt 34-27. Franz Beard on a win that defied logic, plus the SEC scoreboard.",
+      "url": "https://www.gatorbaitmedia.com/post/no-logic-no-reason-just-a-bizarre-florida-win",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-22T13:03:20Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_1578415e2450441faa3777c215803eb6~mv2.jpg/v1/fit/w_1000,h_684,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for No logic, no reason, just a bizarre Florida win"
+      }
+    },
+    {
       "title": "Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did.",
       "excerpt": "That's victory No. 7, a guaranteed winning season and, at 5-4, the Gators' first winning SEC record since 2020.",
       "url": "https://www.gatorbaitmedia.com/post/some-days-you-need-your-gator-fortune-cookie-to-crumble-your-way-it-did",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Senior Day at Florida: A Goodbye We're Not Quite Ready To Say Yet"
-      }
-    },
-    {
-      "title": "The Gators scored enough points but couldn't defend the paint",
-      "excerpt": "Photo courtesy of the University of Florida (UAA) Points were not the problem Wednesday night in Las Vegas. The No. 1-ranked Florida Gators put 76 on the scoreboard by hitting 50 percent of their shots from the field (27-54) and 57.7 percent of their three-points attempts (15-26), more than enough to win a basketball game, particularly against a Houston…",
-      "url": "https://www.gatorbaitmedia.com/post/the-gators-scored-enough-points-but-couldn-t-defend-the-paint",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-19T11:36:46Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_42538d3cc2c84bc9ae385e3dc6126d67~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Gators scored enough points but couldn't defend the paint"
-      }
-    },
-    {
-      "title": "Houston Beats No. 1 Florida 86-76 as Dedan Thomas Jr. Scores 30",
-      "excerpt": "Florida led by three at halftime, then Houston scored 49 points in the second half to win the Players Era rematch in Las Vegas.",
-      "url": "https://www.gatorbaitmedia.com/post/houston-beats-no-1-florida-86-76-as-dedan-thomas-jr-scores-30",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-19T02:11:42Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_00121cc44e254a40a9a887b5d0d1351e~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Houston Beats No. 1 Florida 86-76 as Dedan Thomas Jr. Scores 30"
       }
     }
   ]

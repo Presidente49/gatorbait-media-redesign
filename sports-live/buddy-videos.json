@@ -1,7 +1,12 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-21T20:15:52.944Z",
+  "fetchedAt": "2026-11-22T07:11:17.434Z",
   "videos": [
+    {
+      "id": "cBob3z3Dyus",
+      "title": "SUMRALL: \"WALKS OFF A WINNER\" — Florida 34, Vanderbilt 27",
+      "published": "2026-11-22T00:37:11+00:00"
+    },
     {
       "id": "j49BJ8vb_Hg",
       "title": "BEN TROUPE: \"ZOOK MADE HIS WIFE RUN THE FIELD IN A WHITE DRESS\"",
@@ -71,11 +76,6 @@
       "id": "6g9fiCpMawY",
       "title": "SUMRALL: \"SMART TOUGH. NOT DUMB TOUGH.\"",
       "published": "2026-11-18T17:33:57+00:00"
-    },
-    {
-      "id": "M3lA_aAP_Vg",
-      "title": "BUSTER FAULKNER: \"RUB SOME DIRT ON IT\"",
-      "published": "2026-11-18T17:32:17+00:00"
     }
   ]
 }

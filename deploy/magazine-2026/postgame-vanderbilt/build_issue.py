@@ -48,22 +48,22 @@ assert 0 < bneed < 60, bneed
 # scoring plays: the twelve the copy describes, in AP style, checked against ESPN's text
 sp = d['scoringPlays']
 PLAYS = [
- (1, '10:24', 'VAN', 'B. Taylor 53 yd FG', 'Brock Taylor 53-yard field goal'),
- (1, '4:22', 'FLA', 'P. Durkin 40 yd FG', 'Patrick Durkin 40-yard field goal'),
- (2, '14:17', 'VAN', 'B. Taylor 52 yd FG', 'Brock Taylor 52-yard field goal'),
- (2, '12:43', 'VAN', 'B. Taylor 42 yd FG', 'Brock Taylor 42-yard field goal'),
- (2, '7:23', 'FLA', 'A. Philo run', 'Aaron Philo touchdown run (Patrick Durkin kick)'),
- (2, '5:27', 'FLA', 'recovered by M. Graham', 'Myles Graham %RET%-yard fumble return (Patrick Durkin kick)'),
- (2, '1:46', 'VAN', 'S. Alexander for 9 yds', 'Sedrick Alexander 9-yard pass from Jared Curtis (Curtis pass to Cole Spence for two)'),
- (2, '0:39', 'VAN', 'J. Sherrill for 75 yds', 'Junior Sherrill 75-yard pass from Jared Curtis (Brock Taylor kick)'),
- (3, '4:07', 'FLA', 'A. Philo run for 1 yd', 'Aaron Philo 1-yard touchdown run (Patrick Durkin kick)'),
- (4, '8:27', 'FLA', 'P. Durkin 20 yd FG', 'Patrick Durkin 20-yard field goal'),
- (4, '5:52', 'VAN', 'B. Taylor 51 yd FG', 'Brock Taylor 51-yard field goal'),
- (4, '2:18', 'FLA', 'J. Baugh run for 10 yds', 'Jadan Baugh 10-yard touchdown run (Patrick Durkin kick)'),
+ (1, '10:24', 'VAN', 'Brock Taylor 53 Yd Field Goal', 'Brock Taylor 53-yard field goal'),
+ (1, '4:22', 'FLA', 'Patrick Durkin 40 Yd Field Goal', 'Patrick Durkin 40-yard field goal'),
+ (2, '14:17', 'VAN', 'Brock Taylor 52 Yd Field Goal', 'Brock Taylor 52-yard field goal'),
+ (2, '12:43', 'VAN', 'Brock Taylor 42 Yd Field Goal', 'Brock Taylor 42-yard field goal'),
+ (2, '7:23', 'FLA', 'Aaron Philo 0 Yd Run', 'Aaron Philo touchdown run (Patrick Durkin kick)'),
+ (2, '5:27', 'FLA', 'Yd Fumble Return', 'Myles Graham %RET%-yard fumble return (Patrick Durkin kick)'),
+ (2, '1:46', 'VAN', 'Sedrick Alexander 9 Yd pass from Jared Curtis', 'Sedrick Alexander 9-yard pass from Jared Curtis (Curtis pass to Cole Spence for two)'),
+ (2, '0:39', 'VAN', 'Junior Sherrill 75 Yd pass from Jared Curtis', 'Junior Sherrill 75-yard pass from Jared Curtis (Brock Taylor kick)'),
+ (3, '4:07', 'FLA', 'Aaron Philo 1 Yd Run', 'Aaron Philo 1-yard touchdown run (Patrick Durkin kick)'),
+ (4, '8:27', 'FLA', 'Patrick Durkin 20 Yd Field Goal', 'Patrick Durkin 20-yard field goal'),
+ (4, '5:52', 'VAN', 'Brock Taylor 51 Yd Field Goal', 'Brock Taylor 51-yard field goal'),
+ (4, '2:18', 'FLA', 'Jadan Baugh 10 Yd Run', 'Jadan Baugh 10-yard touchdown run (Patrick Durkin kick)'),
 ]
 assert len(sp) == len(PLAYS) == 12, len(sp)
 import re
-ret = int(re.search(r'recovered by M\. Graham,\s+return\s+for (\d+) y', sp[5]['text']).group(1))
+ret = int(re.search(r'Myles Graham (\d+) Yd Fumble Return', sp[5]['text']).group(1))
 ABBR = {T['FLA']['team']['id']: 'FLA', T['VAN']['team']['id']: 'VAN'}
 plays = []
 for p, (q, clock, team, needle, text) in zip(sp, PLAYS):
@@ -136,11 +136,23 @@ issue = {
  },
  'final': {'label': 'Final', 'teams': [{'name': 'Vanderbilt', 'score': V}, {'name': 'Florida', 'rank': 'No. %d' % rank, 'score': F, 'won': True}],
            'meta': ['Saturday, Nov. 21', 'Ben Hill Griffin Stadium, Gainesville', 'Senior Day', 'Florida is %s, %s SEC' % (rec['FLA']['total'], rec['FLA']['vsconf'])]},
- 'contents': {'label': 'In this issue', 'items': [{'id': 'coverage', 'label': 'The game package'}, {'id': 'damage', 'label': 'By the numbers'}, {'id': 'scoring', 'label': 'Score by score'}, {'id': 'box', 'label': 'Box score'}, {'id': 'flow', 'label': 'Game flow'}, {'id': 'quotes', 'label': 'In their words'}, {'id': 'next', 'label': 'Up next'}]},
+ 'contents': {'label': 'In this issue', 'items': [{'id': 'columns', 'label': 'The columns'}, {'id': 'coverage', 'label': 'The game package'}, {'id': 'damage', 'label': 'By the numbers'}, {'id': 'scoring', 'label': 'Score by score'}, {'id': 'box', 'label': 'Box score'}, {'id': 'flow', 'label': 'Game flow'}, {'id': 'quotes', 'label': 'In their words'}, {'id': 'next', 'label': 'Up next'}]},
+ 'columns': {
+  'kicker': 'The columns', 'title': 'Buddy Martin, Franz Beard and Eddie Gilley on the win', 'dek': "What GatorBait's writers made of Saturday in The Swamp.",
+  'items': [
+   {'rubric': 'Column', 'author': 'Buddy Martin', 'title': 'Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did.', 'dek': "Two breaks, a helmet on the turf and a tipped ball. Buddy Martin on win No. 7 and Florida's first winning SEC record since 2020.", 'url': '/post/some-days-you-need-your-gator-fortune-cookie-to-crumble-your-way-it-did', 'lead': True,
+    'image': img('16b519_b2fd9da675e7436cb3867dda1222d69d', 3000, 1929, 'Florida defenders in blue jerseys celebrate on the field, one flexing both arms, in front of fans and a wall with Florida Gators lettering.')},
+   {'rubric': 'Column', 'author': 'Franz Beard', 'title': 'No logic, no reason, just a bizarre Florida win', 'dek': 'Florida needed a lucky bounce, a helmet on the turf and a last-minute sack. Franz Beard on a win that defied logic, plus the SEC scoreboard.', 'url': '/post/no-logic-no-reason-just-a-bizarre-florida-win',
+    'image': img('d3cfa5_1578415e2450441faa3777c215803eb6', 1024, 684, 'A Vanderbilt quarterback in a white No. 2 jersey throws as Florida defenders in blue jerseys, including No. 7 with an arm raised, close in on him in front of a full stadium.')},
+   {'rubric': 'Column', 'author': 'Buddy Martin', 'title': "Jon Sumrall Says It's Time for Gator Football to Say Thanks.", 'dek': 'Jon Sumrall says the fans have held up their end of the bargain. Buddy Martin on gratitude, barbecue and a 7-4 team headed to Tallahassee.', 'url': '/post/jon-sumrall-says-it-s-time-for-gator-football-to-say-thanks',
+    'image': {'id': 'ae876a_e84bc8e610dc4995b7cfcc1cd43a4ba2', 'ext': 'jpg', 'width': 480, 'height': 270, 'alt': "Buddy Martin, Chris Spears and Franz Beard sit at a table at Sonny's BBQ after Florida's win over Vanderbilt. Photo by Zooey.", 'credit': 'Photo by Zooey.', 'uaa': False}},
+   {'rubric': 'Area Evaluations', 'author': 'Eddie Gilley', 'title': 'Area Evaluations: Florida vs. Vanderbilt', 'dek': 'Eddie Gilley grades the four areas he flagged before the game: the weather, the turf, the cleats and the atmosphere in the Swamp.', 'url': '/post/area-evaluations-florida-vs-vanderbilt',
+    'image': img('16b519_d327d7c93d0d40f1aa39061be070878c', 3000, 1902, 'Florida fans behind the end zone raise their arms and an official signals touchdown as a Gators player in a No. 13 jersey scores against Vanderbilt.')},
+  ]},
  'coverage': {
   'kicker': 'The game package', 'title': 'Photos, the halftime story and every score', 'dek': 'Everything GatorBait published from The Swamp on Saturday.',
   'items': [
-   {'rubric': 'Photos', 'author': 'Chris Spears', 'title': "Chris Spears' Best Shots: Florida 34, Vanderbilt 27", 'dek': 'Chris Spears had the sideline for the comeback. His best photos from The Swamp on Senior Day.', 'url': '/post/chris-spears-best-shots-florida-34-vanderbilt-27', 'lead': True,
+   {'rubric': 'Photos', 'author': 'Chris Spears', 'title': "Chris Spears' Best Shots: Florida 34, Vanderbilt 27", 'dek': 'Chris Spears had the sideline for the comeback. His best shots, plus the full gallery of 126 photos from Senior Day.', 'url': '/post/chris-spears-best-shots-florida-34-vanderbilt-27', 'lead': True,
     'image': img('d3cfa5_4b7988a0bd9c44bf9ed3765aac05f5c1', 1280, 854, 'A close view of a Florida player in a blue No. 5 jersey shouting in celebration as a smiling teammate grabs his shoulder.')},
    {'rubric': 'Reaction', 'author': 'GatorBait Staff', 'title': "Sumrall after the comeback: 'We are a train wreck at times'", 'dek': 'What Jon Sumrall, Aaron Philo and Myles Graham said after the 34-27 win.', 'url': REACTION,
     'image': img('d3cfa5_e0ca5a0e7f14497998f30fde911a7f34', 1620, 1080, 'Florida coaches in headsets, one in an orange polo and white visor and one in a white Gators hoodie and blue cap, watch from the sideline with players and staff around them.')},
@@ -148,6 +160,8 @@ issue = {
     'image': img('d3cfa5_1a44d3d034b54dda9c5e95423cad0585', 1620, 1080, 'A Florida player in a blue No. 12 jersey runs with the ball as a Vanderbilt defender in a white No. 24 jersey dives at him while officials look on.')},
    {'rubric': 'Quarter by quarter', 'author': 'GatorBait Staff', 'title': 'Live updates: Vanderbilt at No. 24 Florida', 'dek': 'Every score as it happened, the halftime and final team numbers, and 10 photos from the game.', 'url': '/post/live-updates-vanderbilt-at-no-24-florida',
     'image': img('d3cfa5_44f25c74ac5d4d889e0d38ecb35554ad', 1024, 648, 'Florida defenders in blue jerseys stand near a pile of Vanderbilt players in white at the line of scrimmage while one Florida player points a finger in the air.')},
+   {'rubric': 'Receivers', 'author': 'GatorBait Staff', 'title': 'The Receiving Room Keeps Answering', 'dek': "Seven games without Vernell Brown III, Florida's receivers keep producing. Eric Singleton Jr. had 117 yards against Vanderbilt.", 'url': '/post/seven-games-without-vb3-and-still-no-word-on-a-return',
+    'image': img('16b519_be58f30318924145beef95bc145a87c5', 3000, 2065, 'A Florida player wearing No. 2 steadies himself on the Florida sideline as staff members reach toward him and a Vanderbilt defender kneels on the turf.')},
   ]},
  'damage': {
   'kicker': 'By the numbers', 'title': '%d-%d after halftime' % (f2, v2),
@@ -234,8 +248,8 @@ for t in issue['box']['leaders']: [chk(i[1], 160, 'leader') for i in t['items']]
 for m in issue['flow']['marks']: chk(m['title'], 20, 'mark title'); chk(m['note'], 160, 'mark note')
 for qi in issue['quotes']['items']: chk(qi['text'], 400, 'quote'); chk(qi['who'], 60, 'who'); chk(qi['role'], 120, 'role')
 chk(issue['flow']['summary'], 600, 'flow summary'); chk(issue['next']['note'], 300, 'next note'); chk(issue['next']['pickem']['text'], 300, 'pickem')
-for it in issue['coverage']['items']: chk(it['title'], 200, 'title'); chk(it['dek'], 400, 'dek')
-ids = [issue['cover']['image']['id']] + [it['image']['id'] for it in issue['coverage']['items']]
+for it in issue['columns']['items'] + issue['coverage']['items']: chk(it['title'], 200, 'title'); chk(it['dek'], 400, 'dek')
+ids = [issue['cover']['image']['id']] + [it['image']['id'] for it in issue['columns']['items'] + issue['coverage']['items']]
 assert len(set(ids)) == len(ids), 'a photo is used twice'
 txt = json.dumps(issue, ensure_ascii=False)
 assert not re.search(r'gator\s*-?\s*country', txt, re.I) and not re.search('[—‘’“”]', txt), 'house style'

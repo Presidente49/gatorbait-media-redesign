@@ -52,7 +52,7 @@ PLAYS = [
  (1, '4:22', 'FLA', 'Patrick Durkin 40 Yd Field Goal', 'Patrick Durkin 40-yard field goal'),
  (2, '14:17', 'VAN', 'Brock Taylor 52 Yd Field Goal', 'Brock Taylor 52-yard field goal'),
  (2, '12:43', 'VAN', 'Brock Taylor 42 Yd Field Goal', 'Brock Taylor 42-yard field goal'),
- (2, '7:23', 'FLA', 'Aaron Philo 0 Yd Run', 'Aaron Philo touchdown run (Patrick Durkin kick)'),
+ (2, '7:23', 'FLA', 'Aaron Philo 1 Yd Run', 'Aaron Philo 1-yard touchdown run (Patrick Durkin kick)'),
  (2, '5:27', 'FLA', 'Yd Fumble Return', 'Myles Graham %RET%-yard fumble return (Patrick Durkin kick)'),
  (2, '1:46', 'VAN', 'Sedrick Alexander 9 Yd pass from Jared Curtis', 'Sedrick Alexander 9-yard pass from Jared Curtis (Curtis pass to Cole Spence for two)'),
  (2, '0:39', 'VAN', 'Junior Sherrill 75 Yd pass from Jared Curtis', 'Junior Sherrill 75-yard pass from Jared Curtis (Brock Taylor kick)'),
@@ -129,7 +129,7 @@ issue = {
   'byline': 'By GatorBait Staff · Photos by Chris Spears',
   'cta': 'Read the game story',
   'url': STORY,
-  'image': img('d3cfa5_a0d706482da646dd9b0272531c6adf7e', 970, 854, 'A close view of a Florida player in a blue No. 5 jersey smiling wide as a teammate wraps an arm around his shoulders, with the crowd behind them at Ben Hill Griffin Stadium, Nov. 21, 2026.'),  # owner, Nov. 21: "This great picture should be the cover"; a crop of d3cfa5_c51939d6 that keeps the player centered on the 9:16 phone poster
+  'image': img('d3cfa5_3379423180ca4b8d9e937998d84fa338', 2169, 1908, 'A Florida player in a blue No. 13 jersey stands in the end zone as fans behind him cheer and raise their arms at Ben Hill Griffin Stadium, Nov. 21, 2026.'),  # Nov. 23: replaces the No. 5 close-up under "Baugh Control"; crop of Chris Spears frame 16b519_bda1d910 (No. 13 in the end zone)
   'teasers': ["Baugh's 10-yard run with 2:18 left wins it", "Graham's %d-yard fumble return" % ret, 'Philo: %s yards passing, two rushing touchdowns' % philo['YDS'], "Sumrall: 'We are a train wreck at times'"],
   'linesLabel': 'Also inside',
   'lines': ["Chris Spears' Best Shots: the photo gallery", 'The halftime story and the quarter-by-quarter record', 'By the numbers, score by score and the box score', 'Game flow: how the lead changed hands', 'In their words: Sumrall, Philo and Graham', 'Up next: Florida at Florida State, Friday, Nov. 27'],

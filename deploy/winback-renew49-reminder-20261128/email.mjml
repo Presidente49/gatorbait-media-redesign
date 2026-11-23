@@ -1,0 +1,60 @@
+<mjml lang="en" dir="ltr">
+  <mj-head>
+    <mj-title>Last chance: come back to GatorBait for $49</mj-title>
+    <mj-preview>Your $49 first-year offer ends Monday night, Nov. 30. Use code RENEW49 at checkout.</mj-preview>
+    <mj-font name="Barlow" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Barlow, Arial, Helvetica, sans-serif" />
+      <mj-text color="#27364F" font-size="17px" line-height="1.5" align="left" padding="0 0 16px" />
+      <mj-button background-color="#FA4616" color="#FFFFFF" border-radius="0" inner-padding="16px 30px" font-size="16px" font-weight="800" letter-spacing="1px" align="left" />
+    </mj-attributes>
+    <mj-style>
+      :root { color-scheme: light; supported-color-schemes: light; }
+      @media only screen and (max-width: 480px) {
+        .gz-wordmark div { font-size: 34px !important; }
+        .gz-headline div { font-size: 30px !important; line-height: 1.08 !important; }
+        .gz-pad { padding-left: 18px !important; padding-right: 18px !important; }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#E9EDF3" width="600px">
+    <mj-section background-color="#081B35" padding="22px 28px 18px" css-class="gz-pad">
+      <mj-column>
+        <mj-text css-class="gz-wordmark" padding="0" color="#FFFFFF" font-size="40px" font-weight="800" letter-spacing="1px" line-height="1">GATOR<span style="color:#FA4616;">BAIT</span></mj-text>
+        <mj-text padding="8px 0 0" color="#A9B8D0" font-size="11px" font-weight="700" letter-spacing="1.8px" line-height="1.4">A NOTE FOR FORMER MEMBERS</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="28px 28px 8px" css-class="gz-pad">
+      <mj-column>
+        <mj-text css-class="gz-headline" padding="0 0 16px" color="#081B35" font-size="36px" font-weight="800" line-height="1.08">Last chance: your $49 offer ends Monday.</mj-text>
+        <mj-text>Last week we wrote to say we&#8217;d like you back. The offer in that note, $49 for your first year of All Access, ends Monday night, Nov. 30.</mj-text>
+        <mj-text>Your GatorBait membership ended when a payment didn&#8217;t go through. That usually means an expired or replaced card. Rejoining with your new card takes about a minute.</mj-text>
+        <mj-text>A lot has changed. GatorBait has a redesigned website that is faster and easier to read on your phone. A new app and new features are on the way, and our biweekly magazine is coming back as a downloadable edition.</mj-text>
+        <mj-text>All Access includes The Buddy Martin Show live Monday through Thursday at 9 p.m. ET, Franz Beard&#8217;s Thoughts of the Day, recruiting coverage across all sports, the subscriber chat room and the full archive.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="0 28px 8px" css-class="gz-pad">
+      <mj-column background-color="#F3F6FA" border-left="4px solid #FA4616" padding="16px 18px">
+        <mj-text padding="0 0 8px" color="#081B35" font-size="19px" font-weight="800" line-height="1.3">Your offer: code RENEW49</mj-text>
+        <mj-text padding="0" font-size="16px">7 days free, then $49 for your first year of All Access Annual. After that it renews at the regular $99 a year. Cancel anytime. Offer ends Monday, Nov. 30, at 11:59 p.m. ET.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF" padding="18px 28px 6px" css-class="gz-pad">
+      <mj-column>
+        <mj-text padding="0 0 6px" color="#081B35" font-weight="800">How to rejoin</mj-text>
+        <mj-text padding="0 0 4px">1. Tap the button below.</mj-text>
+        <mj-text padding="0 0 4px">2. Choose <strong>All Access Annual</strong>.</mj-text>
+        <mj-text padding="0 0 18px">3. At checkout, tap &#8220;Enter a promo code&#8221; and type <strong>RENEW49</strong>.</mj-text>
+        <mj-button href="https://www.gatorbaitmedia.com/pricing-plans/subscribe?utm_source=gatorbait_winback&#38;utm_medium=email&#38;utm_campaign=renew49_reminder_20261128&#38;utm_content=button" padding="0 0 18px">REJOIN FOR $49 &#8594;</mj-button>
+        <mj-text padding="0 0 18px" font-size="15px" color="#5F6B7A">You don&#8217;t need your old password. You can check out without logging in.</mj-text>
+        <mj-text padding="0 0 22px">Thank you for reading GatorBait.<br />The GatorBait team</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#081B35" padding="20px 28px" css-class="gz-pad">
+      <mj-column>
+        <mj-text padding="0 0 6px" color="#FFFFFF" font-size="16px" font-weight="800" letter-spacing="1px">GATOR<span style="color:#FA4616;">BAIT</span> MEDIA</mj-text>
+        <mj-text padding="0" color="#C9D4E4" font-size="13px">You&#8217;re getting this because you were a GatorBait member. <a href="https://www.gatorbaitmedia.com?utm_source=gatorbait_winback&#38;utm_medium=email&#38;utm_campaign=renew49_reminder_20261128&#38;utm_content=footer_home" style="color:#FFFFFF;font-weight:700;">GatorBaitMedia.com</a></mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

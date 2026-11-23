@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Glory days are gone but no lack of incentive for Florida-FSU",
+      "excerpt": "Eight wins, bowl scouts in the stands and a Florida State team one win from bowl eligibility. Franz Beard on Friday in Tallahassee, the polls and Rivalry Week in the SEC.",
+      "url": "https://www.gatorbaitmedia.com/post/glory-days-are-gone-but-no-lack-of-incentive-for-florida-fsu",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-23T14:12:54Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_43ddbac7d4ff45fea097a2667a320a5a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Glory days are gone but no lack of incentive for Florida-FSU"
+      }
+    },
+    {
       "title": "Area Evaluations: Florida vs. Vanderbilt",
       "excerpt": "Eddie Gilley grades the four areas he flagged before Florida's 34-27 win over Vanderbilt: the weather, the turf, the cleats and the atmosphere in the Swamp.",
       "url": "https://www.gatorbaitmedia.com/post/area-evaluations-florida-vs-vanderbilt",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for 4 Crucial Areas To Watch: Florida vs. Vanderbilt"
-      }
-    },
-    {
-      "title": "Pregame Analysis: No. 24 Florida Gators (6-4, 4-4) vs. Vanderbilt Commodores (4-6, 1-6)",
-      "excerpt": "Jon Sumrall looks to lead the Gators to their first winning record in the SEC since 2020. Loren Meadows on Vanderbilt's offense and defense, the matchups to watch and his prediction.",
-      "url": "https://www.gatorbaitmedia.com/post/pregame-analysis-no-24-florida-gators-6-4-4-4-vs-vanderbilt-commodores-4-6-1-6",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-11-21T13:45:15Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_93ffb4fa4f24421d8e65a421b14bd42f~mv2.jpg/v1/fit/w_720,h_480,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Pregame Analysis: No. 24 Florida Gators (6-4, 4-4) vs. Vanderbilt Commodores (4-6, 1-6)"
       }
     }
   ]

@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Glory days are gone but no lack of incentive for Florida-FSU",
+      "excerpt": "Eight wins, bowl scouts in the stands and a Florida State team one win from bowl eligibility. Franz Beard on Friday in Tallahassee, the polls and Rivalry Week in the SEC.",
+      "url": "https://www.gatorbaitmedia.com/post/glory-days-are-gone-but-no-lack-of-incentive-for-florida-fsu",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-23T14:12:54Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_43ddbac7d4ff45fea097a2667a320a5a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Glory days are gone but no lack of incentive for Florida-FSU"
+      }
+    },
+    {
       "title": "Area Evaluations: Florida vs. Vanderbilt",
       "excerpt": "Eddie Gilley grades the four areas he flagged before Florida's 34-27 win over Vanderbilt: the weather, the turf, the cleats and the atmosphere in the Swamp.",
       "url": "https://www.gatorbaitmedia.com/post/area-evaluations-florida-vs-vanderbilt",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Why I Am Starting To Hate 'The Mother Ship' Yet I Hate Nothing Else."
-      }
-    },
-    {
-      "title": "No. 1 Florida Beats West Virginia 85-72 as Thomas Haugh Scores 22",
-      "excerpt": "Thomas Haugh scored 22 points on 7-of-9 shooting, and Florida never trailed in an 85-72 win over West Virginia to close the Players Era in Las Vegas.",
-      "url": "https://www.gatorbaitmedia.com/post/no-1-florida-beats-west-virginia-85-72-as-thomas-haugh-scores-22",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-19T22:01:39Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_5edd0228b85541e590d15c82bef85485~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for No. 1 Florida Beats West Virginia 85-72 as Thomas Haugh Scores 22"
       }
     }
   ]

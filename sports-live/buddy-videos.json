@@ -1,7 +1,12 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-22T21:06:55.474Z",
+  "fetchedAt": "2026-11-23T01:36:57.625Z",
   "videos": [
+    {
+      "id": "pB9eSJMR8yQ",
+      "title": "FRANZ BEARD: \"SIX GAMES IN, STILL WAITING ON AN NCAA WAIVER\"",
+      "published": "2026-11-22T22:00:33+00:00"
+    },
     {
       "id": "r_jaDjAt0nI",
       "title": "FRANZ BEARD: \"WILL WADE IS ONE STEP REMOVED FROM POND SCUM\"",
@@ -71,11 +76,6 @@
       "id": "M9LjYWecM6Y",
       "title": "TODD GOLDEN: \"SEE WHO THE TOUGHER TEAM IS GOING TO BE\"",
       "published": "2026-11-18T19:45:37+00:00"
-    },
-    {
-      "id": "3-KTqR5qLhY",
-      "title": "TODD GOLDEN: \"I LOVE HAVING AN INCREDIBLE PLAYER IN A SIXTH MAN ROLE\"",
-      "published": "2026-11-18T18:38:11+00:00"
     }
   ]
 }

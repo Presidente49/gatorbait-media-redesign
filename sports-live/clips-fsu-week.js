@@ -24,7 +24,7 @@ var h='<div class="w"><div class="top"><span class="mark">GATOR<b>BAIT</b></span
 +'<p>Florida plays at Florida State on Friday, Nov. 27, at 3:30 p.m. ET on ABC.</p>';
 CLIPS.forEach(function(c){h+='<article id="'+c.a+'"><h2>'+c.t+'<span>'+c.len+'</span></h2><video controls playsinline preload="metadata" poster="https://static.wixstatic.com/media/'+c.p+'~mv2.jpg/v1/fit/w_1280,h_720,q_85/poster.jpg" src="'+V+c.id+'/file" aria-label="'+c.t+', '+c.len+'"></video></article>'});
 h+='<p class="sm" style="margin-top:14px">Video courtesy of Florida Gators Football / University Athletic Association. <a href="https://www.youtube.com/watch?v=3BPiF6o7kQI" target="_blank" rel="noopener" style="color:#fff;font-weight:700">Watch the full press conference</a>.</p>'
-+'<div class="nav"><a class="o" href="/magazine">Read the magazine</a><a href="/?book=sumrall-year-one">Free book: Sumrall, Year One</a></div></div>';
++'<div class="nav"><a class="o" href="/magazine">Read the magazine</a><a href="/pricing-plans/subscribe">Join GatorBait</a></div></div>';
 d.innerHTML=h;document.body.appendChild(d);document.documentElement.style.overflow='hidden';
 var vs=d.querySelectorAll('video');for(var i=0;i<vs.length;i++)(function(v){v.addEventListener('play',function(){for(var j=0;j<vs.length;j++)if(vs[j]!==v)vs[j].pause()})})(vs[i]);
 var a=(location.hash||'').slice(1);if(a){var el=document.getElementById(a);if(el&&d.contains(el))setTimeout(function(){el.scrollIntoView()},300)}}

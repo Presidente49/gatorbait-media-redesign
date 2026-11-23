@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T08:53:27.685Z",
+ "generatedAt": "2026-11-23T21:12:05.669Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-23T08:53:27.685Z",
+  "checkedAt": "2026-11-23T21:12:05.669Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Area Evaluations: Florida vs. Vanderbilt",
-   "link": "https://www.gatorbaitmedia.com/post/area-evaluations-florida-vs-vanderbilt",
-   "publishedAt": "2026-11-22T15:55:45.000Z"
+   "title": "Glory days are gone but no lack of incentive for Florida-FSU",
+   "link": "https://www.gatorbaitmedia.com/post/glory-days-are-gone-but-no-lack-of-incentive-for-florida-fsu",
+   "publishedAt": "2026-11-23T14:12:54.000Z"
   },
   "problems": []
  },
@@ -25,17 +25,19 @@
    "id": "espn-ncf",
    "source": "ESPN",
    "label": "ESPN college football headlines",
-   "ok": true,
-   "status": 200,
-   "items": 12
+   "ok": false,
+   "status": 202,
+   "reason": "HTTP 202",
+   "items": 0
   },
   {
    "id": "espn-sec",
    "source": "ESPN",
    "label": "ESPN college football headlines that name an SEC team",
-   "ok": true,
-   "status": 200,
-   "items": 3
+   "ok": false,
+   "status": 202,
+   "reason": "HTTP 202",
+   "items": 0
   },
   {
    "id": "floridagators",
@@ -47,90 +49,5 @@
    "items": 0
   }
  ],
- "headlines": [
-  {
-   "title": "CFP top 12 projection: What we learned in the regular season's penultimate week",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50552244/projecting-2026-playoff-top-12-week-12-cfp",
-   "publishedAt": "2026-11-23T07:08:50.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "Big Ten tumbles out of AP top 5 for first time since '21; Georgia, Utah remain 1-2",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50563638/no-big-ten-football-teams-ap-top-5-first-21",
-   "publishedAt": "2026-11-23T01:28:39.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "SEC tees off on Vols with $250K fine for fans throwing golf balls on field",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50568028/tennessee-fined-sec-fans-throw-golf-balls-field",
-   "publishedAt": "2026-11-23T01:28:39.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "TCU fires coach Dykes just months after multiyear extension",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50563619/tcu-fires-coach-sonny-dykes-sources-say",
-   "publishedAt": "2026-11-23T01:28:39.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "Sources: Florida State's coaching search focused on Georgia DC Schumann",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50562506/sources-florida-st-coaching-search-focused-schumann",
-   "publishedAt": "2026-11-23T01:28:39.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "Sources: Irish lose Talich to torn Achilles",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50566676/notre-dame-loses-safety-luke-talich-torn-achilles",
-   "publishedAt": "2026-11-23T01:28:39.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "Wake Forest rewards DC Hazelton with contract extension",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50564902/wake-forest-rewards-dc-scottie-hazelton-extension",
-   "publishedAt": "2026-11-23T01:28:39.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "Montana State top seed for FCS playoffs; 5-7 LIU sneaks in as conference champ",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50564910/montana-state-grabs-top-seed-24-team-fcs-playoff-bracket",
-   "publishedAt": "2026-11-23T01:28:39.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "Pac-12 reveals unique flex schedule for season's final week",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50564960/pac-12-reveals-unique-flex-schedule-season-final-week",
-   "publishedAt": "2026-11-23T01:28:39.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "😈 'Won THE day': Nebraska's jab at Ohio State leads top trolls of Week 12",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50554531/nebraska-ohio-state-trolls-college-football-week-12",
-   "publishedAt": "2026-11-23T01:28:39.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "Picking up the pieces after Week 12 and what it all means for Rivalry Week",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50563018/week-12-results-rivalry-week",
-   "publishedAt": "2026-11-22T22:53:45.000Z",
-   "feed": "espn-ncf"
-  },
-  {
-   "title": "Week 12 AP poll reaction: What's next for each Top 25 team",
-   "source": "ESPN",
-   "link": "https://www.espn.com/college-football/story/_/id/50562947/week-12-ap-college-football-poll-reaction-next-top-25",
-   "publishedAt": "2026-11-22T22:53:45.000Z",
-   "feed": "espn-ncf"
-  }
- ]
+ "headlines": []
 }

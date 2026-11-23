@@ -25,11 +25,11 @@
   "cta": "Read the game story",
   "url": "/post/baugh-control-no-24-florida-rallies-past-vanderbilt-34-27-on-senior-day",
   "image": {
-   "id": "d3cfa5_a0d706482da646dd9b0272531c6adf7e",
+   "id": "d3cfa5_3379423180ca4b8d9e937998d84fa338",
    "ext": "jpg",
-   "width": 970,
-   "height": 854,
-   "alt": "A close view of a Florida player in a blue No. 5 jersey smiling wide as a teammate wraps an arm around his shoulders, with the crowd behind them at Ben Hill Griffin Stadium, Nov. 21, 2026. Photo by Chris Spears, GatorBait Media.",
+   "width": 2169,
+   "height": 1908,
+   "alt": "A Florida player in a blue No. 13 jersey stands in the end zone as fans behind him cheer and raise their arms at Ben Hill Griffin Stadium, Nov. 21, 2026. Photo by Chris Spears, GatorBait Media.",
    "credit": "Photo by Chris Spears, GatorBait Media.",
    "uaa": false
   },
@@ -294,7 +294,7 @@
    {
     "value": "241",
     "label": "Aaron Philo passing yards",
-    "detail": "20 of 26 passing, plus 73 rushing yards and two touchdowns."
+    "detail": "20 of 26 passing, plus 74 rushing yards and two touchdowns."
    },
    {
     "value": "57",
@@ -302,9 +302,9 @@
     "detail": "The touchdown put Florida ahead 17-9. Graham also had 10 tackles."
    },
    {
-    "value": "981",
+    "value": "980",
     "label": "Jadan Baugh's season rushing yards",
-    "detail": "76 on Saturday. He needs 19 at Florida State for 1,000."
+    "detail": "75 on Saturday. He needs 20 at Florida State for 1,000."
    },
    {
     "value": "4-4",
@@ -381,7 +381,7 @@
    },
    {
     "when": "Q2 7:23",
-    "play": "Aaron Philo touchdown run (Patrick Durkin kick)",
+    "play": "Aaron Philo 1-yard touchdown run (Patrick Durkin kick)",
     "score": "UF 10, VU 9",
     "uf": true
    },
@@ -500,7 +500,7 @@
      ],
      [
       "Rushing",
-      "Jadan Baugh: 19 carries, 76 yards, 1 TD. Aaron Philo: 17 carries, 73 yards, 2 TD"
+      "Jadan Baugh: 19 carries, 75 yards, 1 TD. Aaron Philo: 17 carries, 74 yards, 2 TD"
      ],
      [
       "Receiving",
@@ -820,8 +820,8 @@
   "note": "Florida is 7-4 overall and 5-4 in the SEC. The trip to Tallahassee closes the regular season.",
   "pickem": {
    "badge": "Milestone watch",
-   "title": "Baugh at 981",
-   "text": "Jadan Baugh ran for 76 yards and the winning touchdown against Vanderbilt. He has 981 for the season and needs 19 at Florida State to reach 1,000."
+   "title": "Baugh at 980",
+   "text": "Jadan Baugh ran for 75 yards and the winning touchdown against Vanderbilt. He has 980 for the season and needs 20 at Florida State to reach 1,000."
   }
  },
  "reference": {

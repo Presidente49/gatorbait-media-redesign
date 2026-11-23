@@ -1,5 +1,23 @@
 # Postgame edition, Nov. 21, 2026 (Florida 34, Vanderbilt 27)
 
+### Verify the public cover before distributing the email
+
+After Jarvis updates the Wix embed, use the full Git commit from that release.
+Run this from the repository with Playwright and Chrome available.
+
+```sh
+node sports-live/qa-magazine-cover.mjs --release --variant vanderbilt-postgame --commit "$RELEASE_COMMIT"
+```
+
+The command opens the ordinary magazine URL at phone width and checks the
+loaded bundle, decoded cover image, headline, alt text and photo credit against
+the committed issue. It writes a screenshot and `metrics.json` under
+`build/live-shots/release`. A mismatch exits nonzero. Keep the existing email
+in draft while the public page shows the previous cover. Recheck that same
+URL after propagation. The email builder reads its photo and credit from the
+issue JSON. Check the Wix campaign preview and cover tap destination before
+using the existing audience and one-send checks.
+
 Owner direction, Nov. 21 after the game: "Go" on switching the Magazine from the game day edition to a postgame edition built
 around the game story and the photo gallery. No list email.
 

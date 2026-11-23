@@ -1,6 +1,14 @@
-// Same-build browser QA for the portrait Magazine entrance. No site writes.
-import { chromium, devices } from 'playwright';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+// Same-build browser QA for the portrait Magazine entrance. No site writes.
+import { createRequire } from 'node:module';
+const { chromium, devices } = createRequire(import.meta.url)('playwright');
+if (process.argv.includes('--release')) {
+  const { verifyPublicCover } = await import('./verify-public-magazine-cover.mjs');
+  if (!(await verifyPublicCover(process.argv.slice(2), chromium, devices))) process.exitCode = 1;
+} else {
+  await checkLayouts();
+}
+async function checkLayouts() {
 const out='build/live-shots'; mkdirSync(out,{recursive:true});
 const fixture=process.argv.includes('--fixture');
 const candidate=process.argv.includes('--candidate');
@@ -50,3 +58,5 @@ for(const [width,reduced] of [[320,false],[390,false],[430,false],[1366,false],[
 }
 await browser.close();writeFileSync(`${out}/metrics.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 // Preserve screenshots even if a check fails; inspect metrics before promoting the build.
+if (report.checks.some(check => !check.pass)) process.exitCode = 1;
+}

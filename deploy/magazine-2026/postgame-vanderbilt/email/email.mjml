@@ -55,12 +55,12 @@
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="0">
       <mj-column>
-        <mj-image src="https://static.wixstatic.com/media/d3cfa5_c51939d6eaf4481db91730dc369442d4~mv2.jpg" alt="Florida's No. 5 and a teammate celebrate Saturday in The Swamp. Photo by Chris Spears, GatorBait Media" href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_gazette_alert&#38;utm_medium=email&#38;utm_campaign=postgame_magazine&#38;utm_content=cover" padding="0" fluid-on-mobile="true" />
+        <mj-image src="https://static.wixstatic.com/media/d3cfa5_3379423180ca4b8d9e937998d84fa338~mv2.jpg" alt="A Florida player in a blue No. 13 jersey stands in the end zone as fans behind him cheer and raise their arms at Ben Hill Griffin Stadium, Nov. 21, 2026. Photo by Chris Spears, GatorBait Media." href="https://www.gatorbaitmedia.com/magazine?utm_source=gatorbait_gazette_alert&#38;utm_medium=email&#38;utm_campaign=postgame_magazine&#38;utm_content=cover" padding="0" fluid-on-mobile="true" />
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="7px 28px 0" css-class="gz-pad">
       <mj-column>
-        <mj-text padding="0" color="#6B7686" font-size="12px" line-height="1.35" css-class="gz-credit">Florida's No. 5 and a teammate celebrate Saturday in The Swamp. Photo by Chris Spears, GatorBait Media</mj-text>
+        <mj-text padding="0" color="#6B7686" font-size="12px" line-height="1.35" css-class="gz-credit">A Florida player in a blue No. 13 jersey stands in the end zone as fans behind him cheer and raise their arms at Ben Hill Griffin Stadium, Nov. 21, 2026. Photo by Chris Spears, GatorBait Media.</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="18px 28px 6px" css-class="gz-pad">

@@ -1,4 +1,8 @@
-import sys,html
+import html
+import json
+import re
+import sys
+from pathlib import Path
 SITE='https://www.gatorbaitmedia.com'
 def u(path,content): return SITE+path+'?utm_source=gatorbait_gazette_alert&#38;utm_medium=email&#38;utm_campaign=postgame_magazine&#38;utm_content='+content
 MAG=lambda c: u('/magazine',c)
@@ -27,8 +31,22 @@ def story(lab,title,dek,path,c):
       </mj-column>
     </mj-section>
 '''
-HERO='https://static.wixstatic.com/media/d3cfa5_c51939d6eaf4481db91730dc369442d4~mv2.jpg'
-CAP="Florida's No. 5 and a teammate celebrate Saturday in The Swamp. Photo by Chris Spears, GatorBait Media"
+# Keep the mailed photo in sync with the source used by the Vanderbilt reader.
+issue_path = Path(__file__).resolve().parents[4] / 'sports-live/magazine-issue-vanderbilt-postgame.json'
+issue = json.loads(issue_path.read_text(encoding='utf-8'))
+cover = issue['cover']
+image = cover['image']
+media_id = image['id']
+extension = (image.get('ext') or 'jpg').lower()
+if not re.fullmatch(r'[0-9a-f]+_[0-9a-f]{32}', media_id) or extension not in ('jpg', 'jpeg', 'png', 'webp', 'avif'):
+    raise ValueError('Invalid Wix media ID or extension in magazine cover')
+alt = image['alt'].strip()
+credit = image['credit'].strip()
+if not alt or not credit:
+    raise ValueError('Magazine cover needs descriptive alt text and a photo credit')
+HERO = f'https://static.wixstatic.com/media/{media_id}~mv2.{extension}'
+ALT = html.escape(alt, quote=True)
+CAP = html.escape(alt if alt.endswith(credit) else f'{alt} {credit}', quote=False)
 out=f'''<mjml lang="en" dir="ltr">
   <mj-head>
     <mj-title>{TITLE}</mj-title>
@@ -86,7 +104,7 @@ out=f'''<mjml lang="en" dir="ltr">
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="0">
       <mj-column>
-        <mj-image src="{HERO}" alt="{CAP}" href="{MAG('cover')}" padding="0" fluid-on-mobile="true" />
+        <mj-image src="{HERO}" alt="{ALT}" href="{MAG('cover')}" padding="0" fluid-on-mobile="true" />
       </mj-column>
     </mj-section>
     <mj-section background-color="#FFFFFF" padding="7px 28px 0" css-class="gz-pad">

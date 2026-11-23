@@ -66,6 +66,23 @@ Native save and public cache propagation are separate. Inspect which actual sour
 
 For externally served code, verify the immutable URL returns JavaScript with the expected exact bytes/hash and content type, then verify the browser actually loads it under the site's policy. A new CDN reference can fail even when an older cached reference works. Treat a repository package-size rejection as a delivery constraint; use an approved immutable delivery route after validation rather than retrying the same rejected reference. Keep volatile CDN URLs and commit pins in dated release receipts, not this skill.
 
+## Verify magazine and clip releases
+
+For a photo-led postgame magazine release, use the public phone check from
+the repository root. Set `MAG_VARIANT` to the built edition and `RELEASE_COMMIT`
+to the full Git commit that the Wix loader should serve.
+
+```sh
+node sports-live/qa-magazine-cover.mjs --release --variant "$MAG_VARIANT" --commit "$RELEASE_COMMIT"
+```
+
+For social clips, copy only the audience caption from the publishing desk.
+On the Mac, the GitKraken repository terminal can run
+`python3 tools/check-public-caption.py < caption.txt` for a second read using
+the local FCC model. Verify the published ID, account, public playback and
+visible caption before closing that platform's item. Correct errors on the
+existing post and keep its receipt.
+
 ## Output contract
 
 Return a compact receipt with:

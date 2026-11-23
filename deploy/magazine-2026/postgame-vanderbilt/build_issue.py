@@ -225,6 +225,7 @@ issue = {
   'note': 'Florida is %s overall and %s in the SEC. The trip to Tallahassee closes the regular season.' % (rec['FLA']['total'], rec['FLA']['vsconf']),
   'pickem': {'badge': 'Milestone watch', 'title': 'Baugh at %d' % btotal, 'text': 'Jadan Baugh ran for %s yards and the winning touchdown against Vanderbilt. He has %d for the season and needs %d at Florida State to reach 1,000.' % (baugh['YDS'], btotal, bneed)}},
  'reference': {'label': 'More GatorBait', 'links': [
+   {'label': 'FSU week: Sumrall press clips (Nov. 23)', 'url': '/?watch=fsu-week'},
    {'label': 'Schedule and results', 'url': '/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule'},
    {'label': 'Roster', 'url': '/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster'},
    {'label': 'The Buddy Martin Show', 'url': '/the-buddy-martin-show'},

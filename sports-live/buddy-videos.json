@@ -1,7 +1,17 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-23T21:42:46.424Z",
+  "fetchedAt": "2026-11-24T05:34:16.289Z",
   "videos": [
+    {
+      "id": "JjQQhlfp64I",
+      "title": "Why College Basketball Officiating Is Hurting the Game",
+      "published": "2026-11-24T02:01:28+00:00"
+    },
+    {
+      "id": "IP2CA3sSZ7Q",
+      "title": "Jon Sumrall’s blunt message to Florida’s offensive line #Shorts",
+      "published": "2026-11-24T00:27:30+00:00"
+    },
     {
       "id": "tcLhaB81gcc",
       "title": "Jon Sumrall on Florida–FSU and what seven wins mean for the Gators",
@@ -66,16 +76,6 @@
       "id": "c2zQLJ7zBn0",
       "title": "ALFONZO ALLEN JR.: \"YOU CAN'T GO IN A FIGHT WITH ONE CHAIN\"",
       "published": "2026-11-20T16:30:12+00:00"
-    },
-    {
-      "id": "8sTs8lHX4xw",
-      "title": "Why College Basketball Officiating Is Hurting the Game",
-      "published": "2026-11-20T15:51:41+00:00"
-    },
-    {
-      "id": "YEWn5c3UF2I",
-      "title": "BRAD WHITE: \"GOOD EXECUTION ALL AROUND\"",
-      "published": "2026-11-19T19:00:30+00:00"
     }
   ]
 }

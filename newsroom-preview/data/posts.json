@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "When Football Matters Again in Tallahassee and Gainesville, the Turkey Tastes Better",
+      "excerpt": "Thanksgiving week is Florida-Florida State week, and both teams are playing for something. Buddy Martin on Jon Sumrall’s seven-win realism, Jadan Baugh’s 1,000-yard chase and what Steve Spurrier told him about Errict Rhett.",
+      "url": "https://www.gatorbaitmedia.com/post/when-football-matters-again-in-tallahassee-and-gainesville-the-turkey-tastes-better",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-24T02:07:31Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_e3297b881ff64cc9a67c533b178cd570~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for When Football Matters Again in Tallahassee and Gainesville, the Turkey Tastes Better"
+      }
+    },
+    {
+      "title": "Florida State Hires Georgia Defensive Coordinator Glenn Schumann as Head Coach",
+      "excerpt": "Florida State hired Georgia defensive coordinator Glenn Schumann as its head football coach on Monday, four days before the Seminoles host Florida.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-state-hires-georgia-defensive-coordinator-glenn-schumann-as-head-coach",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-24T02:04:31Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_39ee02f2fdd84890ac3b714fd6501041~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Florida State Hires Georgia Defensive Coordinator Glenn Schumann as Head Coach"
+      }
+    },
+    {
       "title": "Glory days are gone but no lack of incentive for Florida-FSU",
       "excerpt": "Eight wins, bowl scouts in the stands and a Florida State team one win from bowl eligibility. Franz Beard on Friday in Tallahassee, the polls and Rivalry Week in the SEC.",
       "url": "https://www.gatorbaitmedia.com/post/glory-days-are-gone-but-no-lack-of-incentive-for-florida-fsu",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Flag Day in The Swamp: Vanderbilt leads No. 24 Florida 24-17 at halftime"
-      }
-    },
-    {
-      "title": "Live updates: Vanderbilt at No. 24 Florida (final: Florida 34, Vanderbilt 27)",
-      "excerpt": "Final: Florida 34, Vanderbilt 27. The quarter-by-quarter record of Vanderbilt at No. 24 Florida, with photos from the game.",
-      "url": "https://www.gatorbaitmedia.com/post/live-updates-vanderbilt-at-no-24-florida",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-21T17:43:41Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_44f25c74ac5d4d889e0d38ecb35554ad~mv2.jpg/v1/fit/w_1000,h_648,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Live updates: Vanderbilt at No. 24 Florida"
-      }
-    },
-    {
-      "title": "4 Crucial Areas To Watch: Florida vs. Vanderbilt",
-      "excerpt": "Eddie Gilley's four things to watch before Florida hosts Vanderbilt at noon: the weather, the turf, the cleats and the atmosphere in the Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/4-crucial-areas-to-watch-florida-vs-vanderbilt",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-11-21T14:04:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_d5fa38d9c98c4bfeb982f4831abbce73~mv2.jpg/v1/fit/w_720,h_480,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for 4 Crucial Areas To Watch: Florida vs. Vanderbilt"
       }
     }
   ]

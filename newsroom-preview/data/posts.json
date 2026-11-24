@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Thoughts of the Day: November 24, 2026",
+      "excerpt": "Franz Beard on Jon Sumrall’s view of the Florida-Florida State rivalry, the offensive line, the SEC’s Dec. 3 meeting on LSU and his memories of Bill Peterson.",
+      "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-november-24-2026",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-24T14:42:29Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_c6ab949e6814496daf4c984a2ddc81d0~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Thoughts of the Day: November 24, 2026"
+      }
+    },
+    {
+      "title": "Boogie will rest as No. 3 Gators host Milwaukee",
+      "excerpt": "Boogie Fland will sit out Tuesday night’s game against Milwaukee, and Urban Klavzar will start again. Franz Beard has the preview, the lineups and the SEC schedule.",
+      "url": "https://www.gatorbaitmedia.com/post/boogie-will-rest-as-no-3-gators-host-milwaukee",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-24T14:42:28Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/16b519_f797db4cc7ca47f58442be531e24e80c~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Boogie will rest as No. 3 Gators host Milwaukee"
+      }
+    },
+    {
       "title": "When Football Matters Again in Tallahassee and Gainesville, the Turkey Tastes Better",
       "excerpt": "Thanksgiving week is Florida-Florida State week, and both teams are playing for something. Buddy Martin on Jon Sumrall’s seven-win realism, Jadan Baugh’s 1,000-yard chase and what Steve Spurrier told him about Errict Rhett.",
       "url": "https://www.gatorbaitmedia.com/post/when-football-matters-again-in-tallahassee-and-gainesville-the-turkey-tastes-better",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Chris Spears' Best Shots: Florida 34, Vanderbilt 27"
-      }
-    },
-    {
-      "title": "Baugh Control: No. 24 Florida rallies past Vanderbilt 34-27 on Senior Day",
-      "excerpt": "Jadan Baugh's 10-yard touchdown run with 2:18 left finished Florida's comeback from a 24-17 halftime deficit.",
-      "url": "https://www.gatorbaitmedia.com/post/baugh-control-no-24-florida-rallies-past-vanderbilt-34-27-on-senior-day",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-11-21T20:32:46Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_b7691153bc7f4b839d14e02d47a22c9d~mv2.jpg/v1/fit/w_1000,h_676,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Baugh Control: No. 24 Florida rallies past Vanderbilt 34-27 on Senior Day"
-      }
-    },
-    {
-      "title": "Flag Day in The Swamp: Vanderbilt leads No. 24 Florida 24-17 at halftime",
-      "excerpt": "Vanderbilt scored 15 points in the final 1:46 of the half to erase a 17-9 Florida lead. Florida was flagged six times, three in the last two minutes.",
-      "url": "https://www.gatorbaitmedia.com/post/flag-day-in-the-swamp-vanderbilt-leads-no-24-florida-24-17-at-halftime",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-11-21T18:43:30Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_1a44d3d034b54dda9c5e95423cad0585~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Flag Day in The Swamp: Vanderbilt leads No. 24 Florida 24-17 at halftime"
       }
     }
   ]

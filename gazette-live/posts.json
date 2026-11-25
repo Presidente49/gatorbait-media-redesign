@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "A win is a win, but No. 3 Gators lacked intensity against Milwaukee",
+      "excerpt": "Rueben Chinyelu scored 25 points and grabbed 16 rebounds as No. 3 Florida beat Milwaukee 76-67. Franz Beard reports on Todd Golden's concerns ahead of Duke.",
+      "url": "https://www.gatorbaitmedia.com/post/florida-gators-milwaukee-basketball-recap-chinyelu",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-25T13:46:10Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_07d86b58f9b54adda7a53c31a6eb546f~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for A win is a win, but No. 3 Gators lacked intensity against Milwaukee"
+      }
+    },
+    {
       "title": "Sure, The SEC Can Throw Out LSU. So They Want To Be Outlaws? At What Price?",
       "excerpt": "Buddy Martin weighs LSU's possible SEC expulsion, the RJ Luis Jr. dispute and what Florida-LSU rivalries could lose ahead of the Dec. 3 meeting.",
       "url": "https://www.gatorbaitmedia.com/post/lsu-sec-expulsion-buddy-martin",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Two Games To Change the Story. One Saturday Is Not A Turnaround."
-      }
-    },
-    {
-      "title": "Florida lists six players out for Vanderbilt on SEC availability report",
-      "excerpt": "Wide receiver Vernell Brown III, tight end Lacota Dippre and cornerback Dijon Johnson are among six Gators out for Saturday's home finale. Vanderbilt lists nine players out.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-lists-five-players-out-for-vanderbilt-on-sec-availability-report",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-20T21:54:56Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_bb52ae6e52ea458c89c9844843ed96c0~mv2.jpg/v1/fit/w_960,h_640,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida lists six players out for Vanderbilt on SEC availability report"
       }
     }
   ]

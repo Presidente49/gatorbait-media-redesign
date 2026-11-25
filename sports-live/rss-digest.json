@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-25T12:21:42.077Z",
+ "generatedAt": "2026-11-25T14:15:59.957Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-25T12:21:42.077Z",
+  "checkedAt": "2026-11-25T14:15:59.957Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Sure, The SEC Can Throw Out LSU. So They Want To Be Outlaws? At What Price?",
-   "link": "https://www.gatorbaitmedia.com/post/lsu-sec-expulsion-buddy-martin",
-   "publishedAt": "2026-11-25T01:27:22.000Z"
+   "title": "A win is a win, but No. 3 Gators lacked intensity against Milwaukee",
+   "link": "https://www.gatorbaitmedia.com/post/florida-gators-milwaukee-basketball-recap-chinyelu",
+   "publishedAt": "2026-11-25T13:46:10.000Z"
   },
   "problems": []
  },

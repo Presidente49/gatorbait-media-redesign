@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Sure, The SEC Can Throw Out LSU. So They Want To Be Outlaws? At What Price?",
+      "excerpt": "Buddy Martin weighs LSU's possible SEC expulsion, the RJ Luis Jr. dispute and what Florida-LSU rivalries could lose ahead of the Dec. 3 meeting.",
+      "url": "https://www.gatorbaitmedia.com/post/lsu-sec-expulsion-buddy-martin",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-25T01:27:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_ec4f30599d11431fae7f39c171b33d54~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Sure, The SEC Can Throw Out LSU. So They Want To Be Outlaws? At What Price?"
+      }
+    },
+    {
       "title": "Thoughts of the Day: November 24, 2026",
       "excerpt": "Franz Beard on Jon Sumrall’s view of the Florida-Florida State rivalry, the offensive line, the SEC’s Dec. 3 meeting on LSU and his memories of Bill Peterson.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-november-24-2026",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Sumrall after the comeback: 'We are a train wreck at times'"
-      }
-    },
-    {
-      "title": "Chris Spears' Best Shots: Florida 34, Vanderbilt 27",
-      "excerpt": "Chris Spears had the sideline for the comeback. His best photos from The Swamp as Florida rallied past Vanderbilt, 34-27, on Senior Day.",
-      "url": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-florida-34-vanderbilt-27",
-      "author": "Chris Spears",
-      "firstPublishedDate": "2026-11-21T21:13:15Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_4b7988a0bd9c44bf9ed3765aac05f5c1~mv2.jpg/v1/fit/w_1000,h_854,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Chris Spears' Best Shots: Florida 34, Vanderbilt 27"
       }
     }
   ]

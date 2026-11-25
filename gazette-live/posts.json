@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Sure, The SEC Can Throw Out LSU. So They Want To Be Outlaws? At What Price?",
+      "excerpt": "Buddy Martin weighs LSU's possible SEC expulsion, the RJ Luis Jr. dispute and what Florida-LSU rivalries could lose ahead of the Dec. 3 meeting.",
+      "url": "https://www.gatorbaitmedia.com/post/lsu-sec-expulsion-buddy-martin",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-25T01:27:22Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_ec4f30599d11431fae7f39c171b33d54~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Sure, The SEC Can Throw Out LSU. So They Want To Be Outlaws? At What Price?"
+      }
+    },
+    {
       "title": "Thoughts of the Day: November 24, 2026",
       "excerpt": "Franz Beard on Jon Sumrall’s view of the Florida-Florida State rivalry, the offensive line, the SEC’s Dec. 3 meeting on LSU and his memories of Bill Peterson.",
       "url": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-november-24-2026",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida lists six players out for Vanderbilt on SEC availability report"
-      }
-    },
-    {
-      "title": "The Soothsayer: Improved defense will carry Gators to 7th win",
-      "excerpt": "Franz Beard: Florida's defense has found a formula over the last four games, and that is why the Soothsayer sees a seventh win Saturday against Vanderbilt.",
-      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-improved-defense-will-carry-gators-to-7th-win",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-20T15:20:03Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Soothsayer: Improved defense will carry Gators to 7th win"
       }
     }
   ]

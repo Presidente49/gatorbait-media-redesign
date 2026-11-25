@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-24T17:29:09.940Z",
+ "generatedAt": "2026-11-25T02:15:07.661Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-24T17:29:09.940Z",
+  "checkedAt": "2026-11-25T02:15:07.661Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Thoughts of the Day: November 24, 2026",
-   "link": "https://www.gatorbaitmedia.com/post/thoughts-of-the-day-november-24-2026",
-   "publishedAt": "2026-11-24T14:42:29.000Z"
+   "title": "Sure, The SEC Can Throw Out LSU. So They Want To Be Outlaws? At What Price?",
+   "link": "https://www.gatorbaitmedia.com/post/lsu-sec-expulsion-buddy-martin",
+   "publishedAt": "2026-11-25T01:27:22.000Z"
   },
   "problems": []
  },
@@ -25,19 +25,17 @@
    "id": "espn-ncf",
    "source": "ESPN",
    "label": "ESPN college football headlines",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 12
   },
   {
    "id": "espn-sec",
    "source": "ESPN",
    "label": "ESPN college football headlines that name an SEC team",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 3
   },
   {
    "id": "floridagators",
@@ -49,5 +47,97 @@
    "items": 0
   }
  ],
- "headlines": []
+ "headlines": [
+  {
+   "title": "'Shocked' Alberts told he won't be AD after Michigan flip; owed $17.2M, lawyers say",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50583155/attorney-trev-alberts-told-next-ad-michigan",
+   "publishedAt": "2026-11-25T02:09:00.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Indiana falls from 12-team field in 4th CFP rankings; Horns, Vols leap Bama",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50588082/indiana-top-12-cfp-rankings-texas-tennessee-leap-alabama",
+   "publishedAt": "2026-11-25T02:06:24.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Who's on the CFP bubble after the committee's fourth ranking?",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50575185/cfp-playoff-2026-bubble-watch-week-fourth-ranking",
+   "publishedAt": "2026-11-25T02:06:24.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Game of the Century? Why UTEP-NIU has stakes not seen this side of 2000",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50587546/utep-niu-college-football-game-century",
+   "publishedAt": "2026-11-25T01:28:27.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Like father, like son: Eugene Hilton Jr. does his dad's 'T-Y' touchdown celebration",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50553909/eugene-hilton-jr-wisconsin-ty-celebration",
+   "publishedAt": "2026-11-25T01:28:27.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "LSU asks judge to throw out 'unwarranted' lawsuit by SEC",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50588015/lsu-asks-judge-throw-sec-unwarranted-suit-tigers",
+   "publishedAt": "2026-11-25T01:17:24.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Colorado's Sanders shrugs off hot-seat chatter before UCF",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50585728/colorado-sanders-shrugs-hot-seat-chatter-ucf",
+   "publishedAt": "2026-11-25T01:17:24.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Sources: Stanford QB Warren returning in '27",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50588012/stanford-quarterback-davis-warren-returning-2027",
+   "publishedAt": "2026-11-25T01:17:24.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "No. 20 Florida shuts down receiver Brown, to have surgery",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50586755/no-20-florida-shuts-wr-vernell-brown-season-ending-knee-surgery",
+   "publishedAt": "2026-11-25T01:17:24.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Notre Dame gets commitment from 5-star OT Lincoln Fa'alafi for 2028 class",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50584881/notre-dame-gets-2028-commitment-ot-lincoln-faalafi",
+   "publishedAt": "2026-11-25T01:17:24.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Wyoming gives Sawvel self-imposed 1-game ban over tampering violations",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50586972/wyoming-coach-jay-sawvel-gets-self-imposed-1-game-suspension",
+   "publishedAt": "2026-11-25T01:17:24.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "NCAA sanctions Liberty over portal tampering, includes show-cause penalties",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50585093/ncaa-sanctions-liberty-transfer-portal-tampering",
+   "publishedAt": "2026-11-25T01:17:24.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Top 25 betting lines: USC favored at UCLA, Texas double-digit faves at Texas A&M",
+   "source": "ESPN",
+   "link": "https://www.espn.com/espn/betting/story/_/id/50571004/2026-college-football-week-13-top-25-betting-lines-odds",
+   "publishedAt": "2026-11-24T12:38:47.000Z",
+   "feed": "espn-sec"
+  }
+ ]
 }

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "LIVE NOW: The Lowdown with Loren Meadows and Ben Troupe",
+      "excerpt": "Loren Meadows is live now with former Florida tight end Ben Troupe on The Lowdown. Watch on The Buddy Martin Show's YouTube channel.",
+      "url": "https://www.gatorbaitmedia.com/post/live-now-the-lowdown-with-loren-meadows-and-ben-troupe",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-26T02:40:02Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_db06a79d17c64cdc8613af61c86ce1ed~mv2.jpg/v1/fit/w_1000,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for LIVE NOW: The Lowdown with Loren Meadows and Ben Troupe"
+      }
+    },
+    {
+      "title": "Will Heartburn Over the Seminoles Ruin Our Turkey and Dressing?",
+      "excerpt": "Every Thanksgiving table has a fourth-and-goal moment. Florida’s football season is that sliver of pie, and Buddy Martin is reaching for the fork Friday in Tallahassee.",
+      "url": "https://www.gatorbaitmedia.com/post/will-heartburn-over-the-seminoles-ruin-our-turkey-and-dressing",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-26T02:37:30Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_046b4d8754b04f89b8930c9521410e4b~mv2.jpg/v1/fit/w_960,h_614,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Will Heartburn Over the Seminoles Ruin Our Turkey and Dressing?"
+      }
+    },
+    {
       "title": "A win is a win, but No. 3 Gators lacked intensity against Milwaukee",
       "excerpt": "Rueben Chinyelu scored 25 points and grabbed 16 rebounds as No. 3 Florida beat Milwaukee 76-67. Franz Beard reports on Todd Golden's concerns ahead of Duke.",
       "url": "https://www.gatorbaitmedia.com/post/florida-gators-milwaukee-basketball-recap-chinyelu",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for 4 Crucial Areas To Watch: Florida vs. Vanderbilt"
-      }
-    },
-    {
-      "title": "Pregame Analysis: No. 24 Florida Gators (6-4, 4-4) vs. Vanderbilt Commodores (4-6, 1-6)",
-      "excerpt": "Jon Sumrall looks to lead the Gators to their first winning record in the SEC since 2020. Loren Meadows on Vanderbilt's offense and defense, the matchups to watch and his prediction.",
-      "url": "https://www.gatorbaitmedia.com/post/pregame-analysis-no-24-florida-gators-6-4-4-4-vs-vanderbilt-commodores-4-6-1-6",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-11-21T13:45:15Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_93ffb4fa4f24421d8e65a421b14bd42f~mv2.jpg/v1/fit/w_720,h_480,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Pregame Analysis: No. 24 Florida Gators (6-4, 4-4) vs. Vanderbilt Commodores (4-6, 1-6)"
-      }
-    },
-    {
-      "title": "Two Games To Change the Story. One Saturday Is Not A Turnaround.",
-      "excerpt": "Beat Vanderbilt. Then beat Florida State. Do that, and Jon Sumrall's first Florida team might be remembered less for where it stumbled than for where it found its footing.",
-      "url": "https://www.gatorbaitmedia.com/post/two-games-to-change-the-story",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-21T02:18:30Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_2b633b0e71b64be2bc95275e3c26b484~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Two Games To Change the Story. One Saturday Is Not A Turnaround."
       }
     }
   ]

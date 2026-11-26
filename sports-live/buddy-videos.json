@@ -1,11 +1,16 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-25T02:17:50.509Z",
+  "fetchedAt": "2026-11-26T02:25:54.187Z",
   "videos": [
+    {
+      "id": "4__NPe2N84Q",
+      "title": "Florida vs. Florida State | Preview & Predictions",
+      "published": "2026-11-26T02:04:50+00:00"
+    },
     {
       "id": "NDki_wxpgmQ",
       "title": "Can the SEC Really Afford to Banish LSU? | The Buddy Martin Show",
-      "published": "2026-11-25T02:00:54+00:00"
+      "published": "2026-11-25T15:33:10+00:00"
     },
     {
       "id": "JjQQhlfp64I",
@@ -71,11 +76,6 @@
       "id": "eZnoMWREa-c",
       "title": "LSU put a two-time Pro Bowler back in the game. What happened next? 🏈⚖️",
       "published": "2026-11-20T20:17:06+00:00"
-    },
-    {
-      "id": "t1hSsgiC930",
-      "title": "BRAD WHITE: \"THEY'VE JUST BEEN HUGE GAME CHANGERS\"",
-      "published": "2026-11-20T19:00:06+00:00"
     }
   ]
 }

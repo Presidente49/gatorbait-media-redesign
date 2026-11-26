@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "A time to give thanks and a Florida-FSU memory",
+      "excerpt": "On Thanksgiving eve, Franz Beard remembers a Cambodian refugee family's gratitude, a lifetime of Gator memories, and the 2005 Florida-FSU week when Urban and Shelley Meyer called his mother in the hospital.",
+      "url": "https://www.gatorbaitmedia.com/post/a-time-to-give-thanks-and-a-florida-fsu-memory",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-26T12:07:54Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_af359cf3d7224e058fa99c6e3a24fec2~mv2.jpg/v1/fit/w_1000,h_854,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for A time to give thanks and a Florida-FSU memory"
+      }
+    },
+    {
       "title": "LIVE NOW: The Lowdown with Loren Meadows and Ben Troupe",
       "excerpt": "Loren Meadows is live now with former Florida tight end Ben Troupe on The Lowdown. Watch on The Buddy Martin Show's YouTube channel.",
       "url": "https://www.gatorbaitmedia.com/post/live-now-the-lowdown-with-loren-meadows-and-ben-troupe",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Live updates: Vanderbilt at No. 24 Florida (final: Florida 34, Vanderbilt 27)"
-      }
-    },
-    {
-      "title": "4 Crucial Areas To Watch: Florida vs. Vanderbilt",
-      "excerpt": "Eddie Gilley's four things to watch before Florida hosts Vanderbilt at noon: the weather, the turf, the cleats and the atmosphere in the Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/4-crucial-areas-to-watch-florida-vs-vanderbilt",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-11-21T14:04:47Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_d5fa38d9c98c4bfeb982f4831abbce73~mv2.jpg/v1/fit/w_720,h_480,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for 4 Crucial Areas To Watch: Florida vs. Vanderbilt"
       }
     }
   ]

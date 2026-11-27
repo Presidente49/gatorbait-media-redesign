@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#05070d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Truck">
+<title>GatorBait Truck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05070d;--panel:#0c111d;--panel2:#10172a;--line:#1d2740;--line2:#2a3858;
+  --fg:#eef2fb;--mut:#8b98b8;--dim:#56638a;
+  --org:#fa4616;--gold:#f5c542;--live:#ff2d3d;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;--sig:#38bdf8;
+  --font:'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --cond:'Barlow Condensed','Barlow',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:500 15px/1.35 var(--font);-webkit-text-size-adjust:100%}
+body{padding-bottom:calc(40px + env(safe-area-inset-bottom))}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.bar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:calc(8px + env(safe-area-inset-top)) 12px 8px;background:rgba(5,7,13,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:9px;font:700 21px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.brand b{color:var(--org);font-weight:700}
+.tally{width:12px;height:12px;border-radius:50%;background:var(--dim);box-shadow:0 0 0 2px #0007}
+.tally.live{background:var(--live);animation:pulse 1.2s ease-in-out infinite}
+.tally.pre{background:var(--warn)}
+.tally.post{background:var(--ok)}
+.feeds{display:flex;gap:10px;font:600 11px/1 var(--cond);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.feeds span{display:flex;align-items:center;gap:5px}
+.feeds i{width:7px;height:7px;border-radius:50%;background:var(--dim)}
+.feeds i.ok{background:var(--ok)}.feeds i.bad{background:var(--bad)}
+.bar-r{margin-left:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.btn{appearance:none;border:1px solid var(--line2);background:#121a30;border-radius:5px;padding:7px 11px;font:700 13px/1 var(--cond);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.btn:hover{border-color:#4a5d8f}
+.btn.on{background:#14381f;border-color:#2c7a49;color:#c9f7d8}
+.btn.yt{background:#7a0d12;border-color:#b3161d}
+.btn.go{background:var(--org);border-color:var(--org);color:#fff}
+.clock{font:700 22px/1 var(--cond);letter-spacing:.06em;font-variant-numeric:tabular-nums;min-width:112px;text-align:right}
+.talk{display:flex;align-items:baseline;gap:10px;padding:8px 12px;background:#0a1020;border-bottom:1px solid var(--line);font-size:15px}
+.talk b{font:700 12px/1 var(--cond);letter-spacing:.2em;color:var(--org);flex:0 0 auto}
+.talk span{flex:1 1 auto;min-width:0}
+.talk i{font-style:normal;color:var(--dim);font-size:12px;flex:0 0 auto}
+.wall{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:10px;padding:10px 12px;grid-auto-flow:dense}
+.mon{grid-column:1/-1;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;min-width:0}
+.mon.flash{animation:flash 1.1s ease-out 8}
+.bug{display:flex;align-items:center;gap:8px;padding:7px 10px;border-bottom:1px solid var(--line);font:700 12px/1 var(--cond);letter-spacing:.18em;text-transform:uppercase;color:var(--mut);background:var(--panel2)}
+.bug .lt{width:8px;height:8px;border-radius:50%;background:var(--dim);flex:0 0 auto}
+.bug .lt.ok{background:var(--ok)}.bug .lt.bad{background:var(--bad)}.bug .lt.warn{background:var(--warn)}
+.bug .r{margin-left:auto;font-weight:500;letter-spacing:.05em;color:var(--dim);text-transform:none;font-family:var(--font);font-size:12px;text-align:right}
+.body{padding:10px 12px}
+.scroll{max-height:360px;overflow:auto;-webkit-overflow-scrolling:touch}
+.amber{border-color:#6b4a0a}.amber .bug{background:#2a1d05;color:#ffd47a}
+.nos{padding:28px 12px;text-align:center;font:700 22px/1.2 var(--cond);letter-spacing:.22em;color:#8896b9;background:repeating-linear-gradient(0deg,#0c111d 0 3px,#0f1626 3px 6px)}
+.nos small{display:block;margin-top:6px;font:500 13px/1.3 var(--font);letter-spacing:0;color:var(--dim)}
+/* scorebug */
+.sb{display:grid;grid-template-columns:1fr minmax(122px,1.05fr) 1fr;gap:8px;align-items:start}
+.tm{display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;border-top:3px solid var(--tc,#888);padding-top:8px;min-width:0}
+.logo{width:clamp(44px,9vw,78px);height:clamp(44px,9vw,78px);object-fit:contain}
+.tn{font:700 clamp(16px,2.6vw,25px)/1.05 var(--cond);letter-spacing:.05em;text-transform:uppercase;overflow-wrap:anywhere}
+.rk{color:var(--org)}
+.tr{font:500 12px/1 var(--font);color:var(--mut);min-height:12px}
+.sc{font:700 clamp(58px,12vw,104px)/.95 var(--cond);font-variant-numeric:tabular-nums}
+.poss{display:inline-block;width:13px;height:8px;border-radius:50%;background:var(--org);transform:rotate(-24deg);margin-left:7px;vertical-align:middle;box-shadow:0 0 0 1px #000a}
+.to{display:flex;gap:4px;margin-top:3px}.to i{width:16px;height:5px;border-radius:2px;background:#26324f}.to i.on{background:var(--gold)}
+.mid{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding-top:10px}
+.chip{display:inline-block;font:700 12px/1 var(--cond);letter-spacing:.18em;padding:5px 9px;border-radius:3px;background:#1a2440;color:#cfd8f2}
+.chip.live{background:var(--live);color:#fff}.chip.post{background:#14532d;color:#bbf7d0}.chip.pre{background:#3b2f0b;color:var(--gold)}.chip.warn{background:#5a3a05;color:#ffd47a}
+.clk{font:700 clamp(34px,6vw,56px)/1 var(--cond);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.per{font:600 13px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.dd{font:700 19px/1.1 var(--cond);color:var(--org);letter-spacing:.03em}
+.rz{background:#5b1017;color:#ffb3b8}
+.lp{margin-top:10px;padding:8px 10px;background:#0a1020;border-left:3px solid var(--org);border-radius:3px;font-size:14px;color:#cfd8f2}
+.lp b{font:700 11px/1 var(--cond);letter-spacing:.18em;color:var(--mut);display:block;margin-bottom:3px}
+.ls{width:100%;border-collapse:collapse;margin-top:10px;font:600 15px/1 var(--cond);letter-spacing:.04em}
+.ls th,.ls td{padding:6px 8px;text-align:center;border-bottom:1px solid #ffffff10}
+.ls thead th{color:var(--dim);font-size:12px;letter-spacing:.14em}
+.ls tbody th{text-align:left;color:var(--fg)}
+.ls td.tot{font-size:18px;color:var(--fg)}
+.sub{margin-top:8px;color:var(--mut);font-size:13px}
+/* lists */
+.lst{list-style:none;margin:0;padding:0}
+.lst li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #ffffff0d;align-items:flex-start}
+.lst li:last-child{border-bottom:0}
+.lst .t{flex:0 0 auto;min-width:62px;font:700 12px/1.4 var(--cond);color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
+.lst .x{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
+.lst li.sc .x{color:#ffd9cc}
+.lst li.sc .t{color:var(--org)}
+.lst .lg{width:22px;height:22px;object-fit:contain;flex:0 0 auto}
+.lst small{display:block;color:var(--mut);font-size:12.5px}
+.dot{width:11px;height:11px;border-radius:50%;margin-top:5px;flex:0 0 auto;background:var(--dim)}
+.dot.live{background:var(--live);animation:pulse 1.2s ease-in-out infinite}.dot.done{background:var(--ok)}.dot.next{background:var(--warn)}.dot.hold{background:var(--sig)}.dot.fail{background:var(--bad)}
+.kind{flex:0 0 auto;font:700 11px/1 var(--cond);letter-spacing:.14em;padding:4px 6px;border-radius:3px;background:#1a2440;color:#cfd8f2;text-transform:uppercase;margin-top:2px}
+.kind.ship{background:#14381f;color:#9ff0bd}.kind.fly{background:#3b2f0b;color:var(--gold)}.kind.note{background:#112a40;color:#9bd6ff}
+.need{padding:9px 0;border-bottom:1px solid #ffffff12}.need:last-child{border-bottom:0}
+.need b{display:block;color:#ffd47a;font:700 16px/1.2 var(--cond);letter-spacing:.04em;text-transform:uppercase}
+.need span{color:#e8d9b8;font-size:14.5px}
+.dep{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tile{border:1px solid var(--line2);background:#0a1020;border-radius:5px;padding:8px 9px;text-decoration:none;min-width:0}
+.tile h4{margin:0 0 3px;font:700 14px/1.1 var(--cond);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:7px}
+.tile h4 i{width:9px;height:9px;border-radius:50%;background:var(--dim);flex:0 0 auto}
+.tile.ok h4 i{background:var(--ok)}.tile.live h4 i{background:var(--live);animation:pulse 1.2s infinite}.tile.warn h4 i{background:var(--warn)}.tile.bad h4 i{background:var(--bad)}.tile.nosignal h4 i{background:#8896b9}
+.tile p{margin:0;font-size:13px;color:#b7c2de;overflow-wrap:anywhere}
+/* wp + stats */
+.wpn{display:flex;justify-content:space-between;font:700 26px/1 var(--cond);letter-spacing:.03em;font-variant-numeric:tabular-nums;margin-bottom:6px}
+.wpn small{display:block;font:600 11px/1 var(--cond);letter-spacing:.16em;color:var(--mut);margin-top:3px}
+svg.wp{display:block;width:100%;height:84px;background:#0a1020;border-radius:4px}
+.line{margin-top:8px;color:var(--mut);font-size:13.5px}
+.srow{padding:6px 0;border-bottom:1px solid #ffffff0d}.srow:last-child{border-bottom:0}
+.srow .v{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:baseline;font:700 17px/1 var(--cond);font-variant-numeric:tabular-nums}
+.srow .v em{font:600 11px/1 var(--cond);letter-spacing:.14em;color:var(--mut);text-transform:uppercase;font-style:normal;text-align:center}
+.srow .v span:last-child{text-align:right}
+.bar2{display:flex;gap:3px;height:5px;margin-top:5px}.bar2 i{display:block;height:100%;border-radius:2px;min-width:2px}
+.lead{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lead h5{margin:0 0 4px;font:700 13px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase}
+.lead p{margin:0 0 5px;font-size:13.5px}.lead p small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.mw{margin-bottom:12px;padding:9px 11px;background:#0a1020;border-left:3px solid var(--gold);border-radius:3px}
+.mt{font:600 14px/1.2 var(--font);color:var(--mut)}.mt b{font:700 17px/1.2 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--fg)}
+.mb{height:8px;background:#1a2440;border-radius:4px;margin:8px 0;overflow:hidden}.mb i{display:block;height:100%;background:linear-gradient(90deg,#fa4616,#f5c542);border-radius:4px}
+.mn{font-size:14px;color:#cfd8f2}.mn small{display:block;color:var(--mut);font-size:12px;margin-top:2px}
+.ar{display:flex;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid #ffffff0d;text-decoration:none}
+.ar:last-child{border-bottom:0}
+.ar .m{flex:1 1 auto;min-width:0;font:600 16px/1.15 var(--cond);letter-spacing:.03em}
+.ar .m b{font-weight:700}
+.ar .s{flex:0 0 auto;font:700 12px/1.2 var(--cond);letter-spacing:.08em;color:var(--mut);text-transform:uppercase;text-align:right}
+.ar .s.live{color:var(--live)}
+/* youtube tv */
+.yt{display:flex;flex-direction:column;gap:10px}
+.screen{position:relative;height:150px;border-radius:5px;overflow:hidden;background:linear-gradient(90deg,#c0c0c0 0 14.28%,#c0c000 0 28.56%,#00c0c0 0 42.84%,#00c000 0 57.12%,#c000c0 0 71.4%,#c00000 0 85.68%,#0000c0 0)}
+.screen::after{content:"";position:absolute;inset:0;background:rgba(5,7,13,.78)}
+.screen div{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;gap:6px}
+.screen b{font:700 20px/1.1 var(--cond);letter-spacing:.2em;text-transform:uppercase}
+.screen span{font-size:13px;color:#cfd8f2;max-width:30ch}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+/* site monitors */
+.site .stage{position:relative;height:430px;background:#000;overflow:hidden}
+.site iframe{position:absolute;left:0;top:0;border:0;background:#fff;transform-origin:0 0;width:390px;height:844px;display:none}
+.site.on iframe{display:block}
+.site .off{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:14px;background:repeating-linear-gradient(0deg,#0b0f1b 0 3px,#0e1424 3px 6px)}
+.site.on .off{display:none}
+.site .off small{color:var(--dim);max-width:34ch}
+/* ticker */
+.tick{position:fixed;left:0;right:0;bottom:0;z-index:25;height:calc(32px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:#070b14;border-top:1px solid var(--line);overflow:hidden;display:flex;align-items:center}
+.tick .lab{flex:0 0 auto;background:var(--org);color:#fff;font:700 13px/1 var(--cond);letter-spacing:.18em;padding:9px 12px;height:100%;display:flex;align-items:center}
+.tick .tw{flex:1 1 auto;overflow:hidden;white-space:nowrap}
+.tick .ti{display:inline-block;padding-left:100%;animation:tick var(--d,70s) linear infinite;font:600 15px/1 var(--cond);letter-spacing:.06em}
+.tick .ti span{margin-right:42px}
+.tick .ti b{color:var(--gold)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@keyframes pulse{50%{opacity:.35}}
+@keyframes flash{0%{box-shadow:0 0 0 0 rgba(250,70,22,.9),inset 0 0 40px rgba(250,70,22,.35)}100%{box-shadow:0 0 0 14px rgba(250,70,22,0),inset 0 0 0 rgba(250,70,22,0)}}
+@media(min-width:760px){
+  .g-yt,.g-needs,.g-run,.g-dep,.g-plays,.g-feed,.g-score,.g-wp,.g-stats,.g-lead,.g-around{grid-column:span 6}
+  .g-site{grid-column:span 6}
+}
+@media(min-width:1100px){
+  .g-game{grid-column:span 8}.g-yt{grid-column:span 4}
+  .g-needs,.g-run,.g-dep{grid-column:span 4}
+  .g-feed,.g-plays{grid-column:span 6}
+  .g-score,.g-wp,.g-stats{grid-column:span 4}
+  .g-lead,.g-around{grid-column:span 6}
+  .g-site{grid-column:span 4}
+  .scroll{max-height:330px}
+}
+@media(max-width:560px){
+  .feeds{display:none}
+  .clock{font-size:18px;min-width:0}
+  .btn{padding:7px 9px;font-size:12px}
+  .lead{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="brand"><span class="tally" id="tally"></span><span><b>GatorBait</b> Truck</span></div>
+  <div class="feeds" id="feeds"><span><i id="f-espn"></i>ESPN</span><span><i id="f-gh"></i>GitHub</span><span><i id="f-board"></i>Board</span></div>
+  <div class="bar-r">
+    <button class="btn" id="btnVoice" type="button">Voice off</button>
+    <a class="btn yt" id="btnYT" href="https://tv.youtube.com/" target="_blank" rel="noopener">YouTube TV</a>
+    <button class="btn" id="btnPop" type="button">Pop out</button>
+    <div class="clock" id="clock">--:--:--</div>
+  </div>
+</header>
+<div class="talk" id="vhint" hidden style="background:#10200f;color:#c9f7d8"><b style="color:#86efac">VOICE</b><span>Voice is on. If you hear nothing: switch the ringer on, turn the volume up, and open this page in Safari, not inside another app. Scores will chime.</span></div>
+<div class="talk"><b>JARVIS</b><span id="talkText">Standing by.</span><i id="talkAgo"></i></div>
+
+<main class="wall">
+  <section class="mon g-game" id="m-game">
+    <div class="bug"><i class="lt" id="lt-game"></i>PGM &middot; Game<span class="r" id="gameMeta"></span></div>
+    <div class="body" id="game"><div class="nos">NO SIGNAL<small>Waiting for ESPN&hellip;</small></div></div>
+  </section>
+
+  <section class="mon g-needs amber" id="m-needs">
+    <div class="bug"><i class="lt warn"></i>Needs you<span class="r" id="needsMeta"></span></div>
+    <div class="body" id="needs"><div class="sub">Loading&hellip;</div></div>
+  </section>
+
+  <section class="mon g-run" id="m-run">
+    <div class="bug"><i class="lt" id="lt-run"></i>Rundown &middot; today<span class="r" id="boardAge"></span></div>
+    <div class="body"><ul class="lst" id="run"></ul></div>
+  </section>
+
+  <section class="mon g-yt" id="m-yt">
+    <div class="bug"><i class="lt warn"></i>SRC &middot; YouTube TV<span class="r">no embed allowed</span></div>
+    <div class="body yt">
+      <div class="screen"><div><b>YouTube blocks this</b><span>YouTube TV can't play inside another page. Open it beside the Truck.</span></div></div>
+      <div class="row"><a class="btn yt" href="https://tv.youtube.com/" target="_blank" rel="noopener">Open YouTube TV</a><button class="btn" id="btnPop2" type="button">Pop out window</button></div>
+      <div class="sub">iPad: Split View. Mac or PC: put the pop-out beside this page. iPhone: picture-in-picture from the YouTube TV app.</div>
+    </div>
+  </section>
+
+  <section class="mon g-dep" id="m-dep">
+    <div class="bug"><i class="lt" id="lt-dep"></i>Departments</div>
+    <div class="body"><div class="dep" id="dep"></div></div>
+  </section>
+
+  <section class="mon g-feed" id="m-feed">
+    <div class="bug"><i class="lt" id="lt-feed"></i>Team feed &middot; GitHub<span class="r" id="feedMeta"></span></div>
+    <div class="body scroll"><ul class="lst" id="feed"><li><span class="x">Loading&hellip;</span></li></ul></div>
+  </section>
+
+  <section class="mon g-plays" id="m-plays">
+    <div class="bug"><i class="lt" id="lt-plays"></i>Play by play<span class="r" id="playsMeta"></span></div>
+    <div class="body scroll"><ul class="lst" id="plays"><li><span class="x">No plays yet.</span></li></ul></div>
+  </section>
+
+  <section class="mon g-score" id="m-score">
+    <div class="bug"><i class="lt" id="lt-score"></i>Scoring summary</div>
+    <div class="body scroll"><ul class="lst" id="score"><li><span class="x">No scores yet.</span></li></ul></div>
+  </section>
+
+  <section class="mon g-wp" id="m-wp">
+    <div class="bug"><i class="lt" id="lt-wp"></i>Win probability &amp; line</div>
+    <div class="body" id="wp"><div class="sub">Starts with the first snap.</div></div>
+  </section>
+
+  <section class="mon g-stats" id="m-stats">
+    <div class="bug"><i class="lt" id="lt-stats"></i>Team stats</div>
+    <div class="body scroll" id="stats"><div class="sub">Stats start with the first snap.</div></div>
+  </section>
+
+  <section class="mon g-lead" id="m-lead">
+    <div class="bug"><i class="lt" id="lt-lead"></i>Game leaders</div>
+    <div class="body" id="lead"><div class="sub">Leaders start with the first snap.</div></div>
+  </section>
+
+  <section class="mon g-around" id="m-around">
+    <div class="bug"><i class="lt" id="lt-around"></i>Around the country<span class="r">Top 25 and live games</span></div>
+    <div class="body scroll" id="around"><div class="sub">Loading&hellip;</div></div>
+  </section>
+
+  <section class="mon g-site site" id="s-home" data-url="https://www.gatorbaitmedia.com/">
+    <div class="bug"><i class="lt"></i>SITE &middot; Homepage<span class="r"><a href="https://www.gatorbaitmedia.com/" target="_blank" rel="noopener">open</a> &middot; <a href="#" data-reload>reload</a></span></div>
+    <div class="stage"><iframe title="Homepage" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe><div class="off"><button class="btn go" data-power type="button">Power on</button><small>Loads the live page. It counts as one visit in site analytics, so it stays off until you tap.</small></div></div>
+  </section>
+  <section class="mon g-site site" id="s-mag" data-url="https://www.gatorbaitmedia.com/magazine">
+    <div class="bug"><i class="lt"></i>SITE &middot; Magazine<span class="r"><a href="https://www.gatorbaitmedia.com/magazine" target="_blank" rel="noopener">open</a> &middot; <a href="#" data-reload>reload</a></span></div>
+    <div class="stage"><iframe title="Magazine" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe><div class="off"><button class="btn go" data-power type="button">Power on</button><small>Loads the live Magazine page. Counts as one visit, so it stays off until you tap.</small></div></div>
+  </section>
+  <section class="mon g-site site" id="s-live" data-url="https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state">
+    <div class="bug"><i class="lt"></i>SITE &middot; Live post &amp; comments<span class="r"><a href="https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state" target="_blank" rel="noopener">open</a> &middot; <a href="#" data-reload>reload</a></span></div>
+    <div class="stage"><iframe title="Live updates post" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms"></iframe><div class="off"><button class="btn go" data-power type="button">Power on</button><small>Loads the live-updates post with its comments. Counts as one visit, so it stays off until you tap.</small></div></div>
+  </section>
+</main>
+
+<div class="tick"><div class="lab">LIVE WIRE</div><div class="tw"><div class="ti" id="tickin"><span>Starting up&hellip;</span></div></div></div>
+
+<script>
+(function () {
+'use strict';
+var Q = new URLSearchParams(location.search);
+var EV = Q.get('event') || '401856759';
+var EHOSTS = ['https://site.web.api.espn.com', 'https://site.api.espn.com'];
+var EPATH = '/apis/site/v2/sports/football/college-football';
+var REPO = 'Presidente49/gatorbait-media-redesign';
+var GH = 'https://api.github.com/repos/' + REPO;
+var BOARD_URL = Q.get('board') || (GH + '/contents/truck/board.json?ref=truck-data');
+var ORD = ['', '1st', '2nd', '3rd', '4th'];
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+var S = { sb: null, sum: null, around: null, board: null, prs: null, cmts: null, sig: {}, prevKey: null, prevState: null, prevPeriod: null };
+
+/* ---------- helpers ---------- */
+async function J(url, opt) {
+  opt = opt || {};
+  var ctl = new AbortController(); var to = setTimeout(function () { ctl.abort(); }, opt.ms || 12000);
+  try {
+    var r = await fetch(url, { cache: opt.cache || 'no-store', signal: ctl.signal, headers: opt.headers });
+    if (!r.ok) { var e = new Error('HTTP ' + r.status); e.status = r.status; e.remaining = r.headers.get('x-ratelimit-remaining'); throw e; }
+    return await r.json();
+  } finally { clearTimeout(to); }
+}
+/* ESPN: two hosts serve the same data; if one refuses, rotate to the other and stay there */
+async function E(path, opt) {
+  var err;
+  for (var i = 0; i < EHOSTS.length; i++) {
+    try { return await J(EHOSTS[0] + EPATH + path, opt); } catch (e) { err = e; EHOSTS.push(EHOSTS.shift()); }
+  }
+  throw err;
+}
+function fmtET(d, secs) {
+  var o = { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }; if (secs) o.second = '2-digit';
+  return new Date(d).toLocaleTimeString('en-US', o).replace(' AM', ' a.m.').replace(' PM', ' p.m.');
+}
+function ago(d) {
+  var s = Math.max(0, ((Date.now() - new Date(d).getTime()) / 1000) | 0);
+  if (s < 60) return s + 's ago'; var m = (s / 60) | 0; if (m < 60) return m + ' min ago';
+  var h = (m / 60) | 0; if (h < 24) return h + ' hr ago'; return ((h / 24) | 0) + ' d ago';
+}
+function lum(hex) { var n = parseInt(hex, 16), f = function (c) { c /= 255; return c <= .03928 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); }; return .2126 * f(n >> 16 & 255) + .7152 * f(n >> 8 & 255) + .0722 * f(n & 255); }
+function tcol(T) { var c = T.color || '888888', a = T.alternateColor || '888888'; if (lum(c) > .1) return '#' + c; if (lum(a) > .1) return '#' + a; return '#9aa6c4'; }
+function rankOf(c) { var r = c.curatedRank && c.curatedRank.current; return r && r > 0 && r <= 25 ? 'No. ' + r : ''; }
+function rec(c) { var r = (c.records || [])[0]; return r && r.summary ? r.summary : ''; }
+function clean(t) { return String(t || '').replace(/^\(\d{1,2}:\d{2}\)\s*/, '').replace(/\s+/g, ' ').trim(); }
+function setLt(id, state) { var e = $('#lt-' + id); if (e) e.className = 'lt' + (state ? ' ' + state : ''); }
+function safe(fn) { try { fn(); } catch (e) { if (window.console) console.warn(fn.name, e); } }
+function mmss(s) { var m = /^(\d+):(\d{2})$/.exec(String(s || '')); return m ? (+m[1]) * 60 + (+m[2]) : 0; }
+function sig(name, ok, e) {
+  S.sig[name] = { ok: ok, at: Date.now() };
+  var id = { sb: 'espn', sum: 'espn', gh: 'gh', board: 'board' }[name]; if (!id) return;
+  var bad = Object.keys(S.sig).some(function (k) { return ({ sb: 'espn', sum: 'espn', gh: 'gh', board: 'board' }[k] === id) && !S.sig[k].ok; });
+  var el = $('#f-' + id); if (el) el.className = bad ? 'bad' : 'ok';
+}
+function loop(name, fn, delay) {
+  var busy = false;
+  var run = async function () {
+    if (!busy) { busy = true; try { await fn(); sig(name, true); } catch (e) { sig(name, false, e); if (window.console) console.warn(name, e && e.message); } busy = false; }
+    setTimeout(run, delay());
+  };
+  run();
+}
+var vis = function () { return document.visibilityState === 'visible'; };
+var gstate = function () { return S.sb ? S.sb.competitions[0].status.type.state : 'pre'; };
+
+/* ---------- voice ---------- */
+var V = { on: false };
+function pickVoice() {
+  var vs = window.speechSynthesis ? speechSynthesis.getVoices() : [];
+  return vs.find(function (v) { return /en-GB/i.test(v.lang) && /daniel|arthur|oliver|male/i.test(v.name); }) ||
+    vs.find(function (v) { return /^en-(US|GB|AU)/i.test(v.lang) && /alex|daniel|aaron|fred|evan|male/i.test(v.name); }) ||
+    vs.find(function (v) { return /^en/i.test(v.lang); }) || null;
+}
+/* iPhones mute web speech when the ringer switch is off unless a media element is playing: a looping silent track keeps the audio session in playback mode */
+var AU = {};
+function wav(samples, rate) {
+  var n = samples.length, b = new ArrayBuffer(44 + n * 2), v = new DataView(b), w = function (o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+  w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
+  for (var i = 0; i < n; i++) v.setInt16(44 + i * 2, samples[i], true);
+  return new Blob([b], { type: 'audio/wav' });
+}
+function initAudio() {
+  if (AU.sil) return;
+  try {
+    var rate = 8000, sil = new Int16Array(rate), m = Math.floor(rate * .4), ch = new Int16Array(m);
+    for (var i = 0; i < m; i++) { var t = i / rate, f = i < m / 2 ? 660 : 880, env = Math.min(1, i / 200) * Math.min(1, (m - i) / (m * .35)); ch[i] = Math.sin(2 * Math.PI * f * t) * 9000 * env; }
+    AU.sil = new Audio(URL.createObjectURL(wav(sil, rate))); AU.sil.loop = true; AU.sil.setAttribute('playsinline', '');
+    AU.chime = URL.createObjectURL(wav(ch, rate));
+  } catch (e) { }
+}
+function chime() { try { if (AU.chime) { var a = new Audio(AU.chime); a.setAttribute('playsinline', ''); var p = a.play(); if (p && p.catch) p.catch(function () { }); } } catch (e) { } }
+function vstat(t, cls) { var b = $('#btnVoice'); b.textContent = t; b.className = 'btn' + (cls ? ' ' + cls : ''); }
+function speak(text) {
+  if (!V.on || !('speechSynthesis' in window) || !text) return;
+  try {
+    if (speechSynthesis.paused) speechSynthesis.resume();
+    var u = new SpeechSynthesisUtterance(text), v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang; } u.rate = 1.02; u.pitch = .95; u.volume = 1;
+    u.onstart = function () { vstat('Speaking', 'on'); }; u.onend = function () { vstat('Voice on', 'on'); };
+    u.onerror = function (e) { vstat('Voice blocked', 'warn'); if (window.console) console.warn('speech', e && e.error); };
+    speechSynthesis.speak(u);
+  } catch (e) { vstat('Voice blocked', 'warn'); }
+}
+function setVoice(on) {
+  V.on = on; var b = $('#btnVoice'); b.textContent = on ? 'Voice on' : 'Voice off'; b.className = 'btn' + (on ? ' on' : '');
+  try { localStorage.setItem('truckVoice', on ? '1' : '0'); } catch (e) { }
+}
+$('#btnVoice').addEventListener('click', function () {
+  if (!('speechSynthesis' in window)) { vstat('No voice here', 'warn'); return; }
+  setVoice(!V.on);
+  if (V.on) {
+    initAudio(); try { var p = AU.sil && AU.sil.play(); if (p && p.catch) p.catch(function () { }); } catch (e) { }
+    try { speechSynthesis.cancel(); } catch (e) { }
+    chime(); speak('Jarvis here. If you can hear this, the voice works.');
+    var hint = $('#vhint'); hint.hidden = false; setTimeout(function () { hint.hidden = true; }, 25000);
+  } else { try { speechSynthesis.cancel(); if (AU.sil) AU.sil.pause(); } catch (e) { } }
+});
+try { if (window.speechSynthesis) speechSynthesis.onvoiceschanged = function () { }; } catch (e) { }
+try { if (localStorage.getItem('truckVoice') === '1') { $('#btnVoice').textContent = 'Tap for voice'; } } catch (e) { }
+
+/* ---------- buttons ---------- */
+function pop() { var w = window.open('https://tv.youtube.com/', 'ytv', 'popup=yes,width=1040,height=640,left=' + Math.max(0, screen.width - 1060) + ',top=80'); if (!w) location.href = 'https://tv.youtube.com/'; }
+$('#btnPop').addEventListener('click', pop); $('#btnPop2').addEventListener('click', pop);
+$$('.site').forEach(function (m) {
+  var f = $('iframe', m);
+  var on = function () { var u = m.dataset.url; f.src = u + (u.indexOf('?') < 0 ? '?' : '&') + 'truck=' + Date.now(); m.classList.add('on'); fit(m); };
+  $('[data-power]', m).addEventListener('click', on);
+  $('[data-reload]', m).addEventListener('click', function (e) { e.preventDefault(); on(); });
+});
+function fit(m) { var st = $('.stage', m), f = $('iframe', m); var s = st.clientWidth / 390; f.style.transform = 'scale(' + s + ')'; f.style.height = Math.ceil(st.clientHeight / s) + 'px'; }
+window.addEventListener('resize', function () { $$('.site').forEach(fit); });
+if (window.ResizeObserver) { var ro = new ResizeObserver(function () { $$('.site').forEach(fit); }); $$('.site .stage').forEach(function (s) { ro.observe(s); }); }
+if (Q.get('mon') === '1') $$('.site [data-power]').forEach(function (b) { b.click(); });
+var wl = null;
+async function lock() { try { if ('wakeLock' in navigator && !wl) { wl = await navigator.wakeLock.request('screen'); wl.addEventListener('release', function () { wl = null; }); } } catch (e) { } }
+document.addEventListener('click', lock, { once: true }); lock();
+document.addEventListener('visibilitychange', function () { if (vis()) lock(); });
+
+/* ---------- game ---------- */
+function statusInfo(sb, c) {
+  var st = c.status, ty = st.type, p = st.period | 0, bc = ((c.broadcasts || [])[0] || {}).names;
+  if (ty.state === 'pre') return { tag: 'PREGAME', cls: 'pre', clock: fmtET(sb.date).replace(' p.m.', '').replace(' a.m.', '') + ' ET', sub: 'Kickoff' + (bc ? ' &middot; ' + esc(bc.join('/')) : '') };
+  if (ty.state === 'post') return { tag: 'FINAL', cls: 'post', clock: 'FINAL' + (p > 4 ? (p > 5 ? '/' + (p - 4) + 'OT' : '/OT') : ''), sub: '' };
+  if (/DELAY|POSTPON|SUSPEND|CANCEL/i.test(ty.name || '')) return { tag: 'DELAY', cls: 'warn', clock: 'DELAY', sub: esc(ty.detail || ty.description || '') };
+  if (ty.name === 'STATUS_HALFTIME') return { tag: 'HALFTIME', cls: 'live', clock: 'HALF', sub: 'Halftime' };
+  if (ty.name === 'STATUS_END_PERIOD') return { tag: 'LIVE', cls: 'live', clock: 'END ' + (p > 4 ? 'OT' : 'Q' + p), sub: p > 4 ? 'Overtime' : ORD[p] + ' quarter' };
+  return { tag: 'LIVE', cls: 'live', clock: st.displayClock || '', sub: p > 4 ? 'Overtime' + (p > 5 ? ' ' + (p - 4) : '') : (ORD[p] || '') + ' quarter' };
+}
+function dots(n) { n = +n || 0; return '<i class="' + (n > 0 ? 'on' : '') + '"></i><i class="' + (n > 1 ? 'on' : '') + '"></i><i class="' + (n > 2 ? 'on' : '') + '"></i>'; }
+function lineTable(a, h) {
+  var n = Math.max(4, (a.linescores || []).length, (h.linescores || []).length);
+  var hd = ''; for (var i = 0; i < n; i++) hd += '<th>' + (i < 4 ? i + 1 : (n - 4 > 1 ? 'OT' + (i - 3) : 'OT')) + '</th>';
+  var row = function (t) { var ls = t.linescores || [], r = '<tr><th>' + esc(t.team.abbreviation) + '</th>'; for (var i = 0; i < n; i++) r += '<td>' + (ls[i] ? esc(ls[i].displayValue) : '&ndash;') + '</td>'; return r + '<td class="tot">' + esc(t.score || '0') + '</td></tr>'; };
+  return '<table class="ls"><thead><tr><th></th>' + hd + '<th>T</th></tr></thead><tbody>' + row(a) + row(h) + '</tbody></table>';
+}
+function renderGame() {
+  var sb = S.sb; if (!sb) return;
+  var c = sb.competitions[0], ty = c.status.type, sit = c.situation || null;
+  var away = c.competitors.find(function (x) { return x.homeAway === 'away'; }), home = c.competitors.find(function (x) { return x.homeAway === 'home'; });
+  var info = statusInfo(sb, c), poss = sit && sit.possession ? String(sit.possession) : '';
+  var team = function (t, side) {
+    var T = t.team, rk = rankOf(t), to = sit ? (side === 'away' ? sit.awayTimeouts : sit.homeTimeouts) : null;
+    return '<div class="tm" style="--tc:' + tcol(T) + '"><img class="logo" src="' + esc(T.logoDark || T.logo || '') + '" alt="">' +
+      '<div class="tn">' + (rk ? '<span class="rk">' + esc(rk) + '</span> ' : '') + esc(T.location || T.shortDisplayName || T.displayName) + (poss && String(T.id) === poss ? '<i class="poss" title="Has the ball"></i>' : '') + '</div>' +
+      '<div class="tr">' + esc(rec(t)) + '</div><div class="sc">' + esc(t.score || '0') + '</div>' + (to != null && ty.state === 'in' ? '<div class="to">' + dots(to) + '</div>' : '') + '</div>';
+  };
+  var dd = '';
+  if (ty.state === 'in' && sit && sit.downDistanceText) dd = '<div class="dd">' + esc(sit.downDistanceText) + '</div>' + (sit.isRedZone ? '<span class="chip rz">RED ZONE</span>' : '');
+  var lp = sit && sit.lastPlay && sit.lastPlay.text ? '<div class="lp"><b>LAST PLAY</b>' + esc(clean(sit.lastPlay.text)) + '</div>' : '';
+  var last = '';
+  if (S.sum && S.sum.scoringPlays && S.sum.scoringPlays.length) { var p = S.sum.scoringPlays[S.sum.scoringPlays.length - 1]; last = '<div class="sub"><b>Last score:</b> Q' + esc(p.period.number) + ' ' + esc(p.clock.displayValue) + ' &middot; ' + esc(clean(p.text)) + '</div>'; }
+  $('#game').innerHTML = '<div class="sb">' + team(away, 'away') +
+    '<div class="mid"><span class="chip ' + info.cls + '">' + info.tag + '</span><div class="clk">' + esc(info.clock) + '</div><div class="per">' + info.sub + '</div>' + dd + '</div>' +
+    team(home, 'home') + '</div>' + lp + lineTable(away, home) + last;
+  var ven = c.venue && c.venue.fullName, bc = ((c.broadcasts || [])[0] || {}).names;
+  $('#gameMeta').textContent = [bc ? bc.join('/') : '', ven || ''].filter(Boolean).join(' · ');
+  setLt('game', S.sig.sb && S.sig.sb.ok ? 'ok' : 'bad');
+  var tl = $('#tally'); tl.className = 'tally ' + (ty.state === 'in' ? 'live' : ty.state === 'post' ? 'post' : 'pre');
+  var key = away.score + '-' + home.score, st = ty.state + ':' + ty.name + ':' + c.status.period;
+  if (S.prevKey !== null && S.prevKey !== key) onScore(away, home, key);
+  if (S.prevState !== null && S.prevState !== st) onState(away, home, ty, c.status.period);
+  S.prevKey = key; S.prevState = st;
+  var sc = ty.state === 'pre' ? '' : away.team.abbreviation + ' ' + (away.score || 0) + ' · ' + home.team.abbreviation + ' ' + (home.score || 0) + ' · ' + (ty.state === 'post' ? 'FINAL' : (info.clock + ' ' + (c.status.period ? 'Q' + c.status.period : ''))) + ' — ';
+  document.title = sc + 'Truck';
+  safe(renderTicker);
+}
+function onScore(a, h, key) {
+  var m = $('#m-game'); m.classList.remove('flash'); void m.offsetWidth; m.classList.add('flash'); setTimeout(function () { m.classList.remove('flash'); }, 9500);
+  var p = (S.prevKey || '0-0').split('-').map(Number), n = key.split('-').map(Number), da = n[0] - p[0], dh = n[1] - p[1];
+  var who = da > 0 ? a.team.location : h.team.location, d = da > 0 ? da : dh;
+  var what = d >= 6 ? 'Touchdown' : d === 3 ? 'Field goal' : d === 2 ? 'Two points' : d === 1 ? 'Extra point' : 'Score';
+  chime();
+  speak(what + ', ' + who + '. ' + a.team.location + ' ' + n[0] + ', ' + h.team.location + ' ' + n[1] + '.');
+  loadSum();
+}
+function onState(a, h, ty, p) {
+  var line = a.team.location + ' ' + (a.score || 0) + ', ' + h.team.location + ' ' + (h.score || 0) + '.';
+  if (ty.state === 'in' && S.prevState && /^pre/.test(S.prevState)) speak('Kickoff. ' + a.team.location + ' at ' + h.team.location + '.');
+  else if (ty.name === 'STATUS_HALFTIME') speak('Halftime. ' + line);
+  else if (ty.name === 'STATUS_END_PERIOD') speak('End of the ' + (ORD[p] || '') + ' quarter. ' + line);
+  else if (ty.state === 'post') speak('Final. ' + line);
+  loadSum();
+}
+
+/* ---------- summary panels ---------- */
+function plays() {
+  var d = S.sum && S.sum.drives, out = [], seen = {}; if (!d) return out;
+  var add = function (dr) { (dr.plays || []).forEach(function (p) { if (!seen[p.id]) { seen[p.id] = 1; out.push(p); } }); };
+  (d.previous || []).forEach(add); if (d.current) add(d.current);
+  return out;
+}
+function renderPlays() {
+  var pl = plays().slice(-16).reverse(); setLt('plays', S.sig.sum && S.sig.sum.ok ? 'ok' : 'bad');
+  $('#playsMeta').textContent = pl.length ? 'last ' + pl.length : '';
+  $('#plays').innerHTML = pl.length ? pl.map(function (p) { return '<li class="' + (p.scoringPlay ? 'sc' : '') + '"><span class="t">Q' + esc(p.period && p.period.number) + ' ' + esc(p.clock && p.clock.displayValue) + '</span><span class="x">' + esc(clean(p.text)) + '</span></li>'; }).join('') : '<li><span class="x">No plays yet.</span></li>';
+}
+function renderScoring() {
+  var sp = (S.sum && S.sum.scoringPlays || []).slice().reverse(), c = S.sb && S.sb.competitions[0]; setLt('score', S.sig.sum && S.sig.sum.ok ? 'ok' : 'bad');
+  if (!sp.length) { $('#score').innerHTML = '<li><span class="x">No scores yet.</span></li>'; return; }
+  var a = c && c.competitors.find(function (x) { return x.homeAway === 'away'; }), h = c && c.competitors.find(function (x) { return x.homeAway === 'home'; });
+  $('#score').innerHTML = sp.map(function (p) {
+    var sc = a && h ? esc(a.team.abbreviation) + ' ' + esc(p.awayScore) + ', ' + esc(h.team.abbreviation) + ' ' + esc(p.homeScore) : '';
+    return '<li class="sc">' + (p.team && p.team.logo ? '<img class="lg" src="' + esc(p.team.logo) + '" alt="">' : '') + '<span class="t">Q' + esc(p.period.number) + ' ' + esc(p.clock.displayValue) + '</span><span class="x">' + esc(clean(p.text)) + '<small>' + esc((p.type && p.type.text) || '') + (sc ? ' &middot; ' + sc : '') + '</small></span></li>';
+  }).join('');
+}
+function wpSvg(vals, col) {
+  var n = vals.length; if (n < 2) return ''; var max = 280; var step = Math.max(1, Math.ceil(n / max)), pts = [];
+  for (var i = 0; i < n; i += step) pts.push(vals[i]); pts.push(vals[n - 1]);
+  var W = 300, H = 84, d = pts.map(function (v, i) { return (i ? 'L' : 'M') + (i / (pts.length - 1) * W).toFixed(1) + ' ' + (H - v / 100 * H).toFixed(1); }).join('');
+  return '<svg class="wp" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="' + H / 2 + '" x2="' + W + '" y2="' + H / 2 + '" stroke="#2a3858" stroke-dasharray="4 4"/><path d="' + d + 'L' + W + ' ' + H + 'L0 ' + H + 'Z" fill="' + col + '" opacity=".18"/><path d="' + d + '" fill="none" stroke="' + col + '" stroke-width="2.2" vector-effect="non-scaling-stroke"/></svg>';
+}
+function renderWP() {
+  var c = S.sb && S.sb.competitions[0]; if (!c) return; setLt('wp', S.sig.sb && S.sig.sb.ok ? 'ok' : 'bad');
+  var a = c.competitors.find(function (x) { return x.homeAway === 'away'; }), h = c.competitors.find(function (x) { return x.homeAway === 'home'; });
+  var wp = (S.sum && S.sum.winprobability) || [], cur = null;
+  if (wp.length) { var l = wp[wp.length - 1]; cur = { h: 100 * (+l.homeWinPercentage || 0), t: 100 * (+l.tiePercentage || 0) }; }
+  else if (c.situation && c.situation.lastPlay && c.situation.lastPlay.probability) { var q = c.situation.lastPlay.probability; cur = { h: 100 * (+q.homeWinPercentage || 0), t: 100 * (+q.tiePercentage || 0) }; }
+  var o = (c.odds || [])[0], line = o ? esc((o.provider && o.provider.name) || 'Line') + ': ' + esc(o.details || '') + (o.overUnder ? ' &middot; O/U ' + esc(o.overUnder) : '') : '';
+  var html = '';
+  if (cur) {
+    var av = Math.max(0, 100 - cur.h - cur.t);
+    html += '<div class="wpn"><div>' + av.toFixed(0) + '%<small>' + esc(a.team.abbreviation) + ' WIN</small></div><div style="text-align:right">' + cur.h.toFixed(0) + '%<small>' + esc(h.team.abbreviation) + ' WIN</small></div></div>';
+    html += wpSvg(wp.map(function (x) { return 100 * (1 - (+x.homeWinPercentage || 0) - (+x.tiePercentage || 0)); }), tcol(a.team));
+  } else html += '<div class="sub">Win probability starts with the first snap.</div>';
+  if (line) html += '<div class="line">' + line + '</div>';
+  $('#wp').innerHTML = html;
+}
+var STAT_ROWS = [['firstDowns', 'First downs'], ['totalYards', 'Total yards'], ['rushingYards', 'Rushing'], ['netPassingYards', 'Passing'], ['thirdDownEff', '3rd down'], ['turnovers', 'Turnovers'], ['totalPenaltiesYards', 'Penalties'], ['possessionTime', 'Possession']];
+function renderStats() {
+  var c = S.sb && S.sb.competitions[0], bt = S.sum && S.sum.boxscore && S.sum.boxscore.teams; setLt('stats', S.sig.sum && S.sig.sum.ok ? 'ok' : 'bad');
+  if (!c || !bt || !bt.length) return;
+  var a = c.competitors.find(function (x) { return x.homeAway === 'away'; }), h = c.competitors.find(function (x) { return x.homeAway === 'home'; });
+  var ta = bt.find(function (t) { return String(t.team.id) === String(a.team.id); }), th = bt.find(function (t) { return String(t.team.id) === String(h.team.id); });
+  if (!ta || !th) return;
+  var g = function (t, n) { var s = (t.statistics || []).find(function (x) { return x.name === n; }); return s ? s.displayValue : null; };
+  var ca = tcol(a.team), ch = tcol(h.team), out = '';
+  STAT_ROWS.forEach(function (r) {
+    var va = g(ta, r[0]), vh = g(th, r[0]); if (va == null && vh == null) return;
+    var na = r[0] === 'possessionTime' ? mmss(va) : parseFloat(va), nh = r[0] === 'possessionTime' ? mmss(vh) : parseFloat(vh), bar = '';
+    if (!isNaN(na) && !isNaN(nh) && r[0] !== 'thirdDownEff' && r[0] !== 'totalPenaltiesYards') { na = Math.max(0, na); nh = Math.max(0, nh); var tot = na + nh; var pa = tot ? na / tot * 100 : 50; bar = '<div class="bar2"><i style="width:' + pa.toFixed(0) + '%;background:' + ca + '"></i><i style="width:' + (100 - pa).toFixed(0) + '%;background:' + ch + '"></i></div>'; }
+    out += '<div class="srow"><div class="v"><span>' + esc(va == null ? '–' : va) + '</span><em>' + esc(r[1]) + '</em><span>' + esc(vh == null ? '–' : vh) + '</span></div>' + bar + '</div>';
+  });
+  $('#stats').innerHTML = '<div class="srow"><div class="v"><span style="color:' + ca + '">' + esc(a.team.abbreviation) + '</span><em></em><span style="color:' + ch + '">' + esc(h.team.abbreviation) + '</span></div></div>' + (out || '<div class="sub">Stats start with the first snap.</div>');
+}
+/* milestone watch: the board names a player, a season base and a target; tonight's yards come live from ESPN's box score */
+function watchHtml() {
+  var w = S.board && S.board.watch, bt = S.sum && S.sum.boxscore && S.sum.boxscore.players; if (!w) return '';
+  var y = 0, found = false;
+  (bt || []).forEach(function (t) {
+    (t.statistics || []).forEach(function (cat) {
+      if (cat.name !== (w.cat || 'rushing')) return; var i = (cat.labels || []).indexOf(w.stat || 'YDS');
+      (cat.athletes || []).forEach(function (a) { if (i > -1 && a.athlete && a.athlete.displayName === w.who) { y = parseInt(a.stats[i], 10) || 0; found = true; } });
+    });
+  });
+  var f = function (n) { return Number(n).toLocaleString('en-US'); }, base = +w.base || 0, tot = base + y, to = +w.target || 1000, left = to - tot, pct = Math.max(0, Math.min(100, tot / to * 100));
+  if (left > 0) S.wPend = true; else if (S.wPend && !S.wDone) { S.wDone = true; speak(w.who + ' has reached ' + f(to) + ' ' + (w.label || '') + '.'); }
+  return '<div class="mw"><div class="mt"><b>' + esc(w.who) + '</b> &middot; ' + esc(w.label || '') + '</div><div class="mb"><i style="width:' + pct.toFixed(1) + '%"></i></div><div class="mn">' + f(base) + ' entering' + (found ? ' + ' + y + ' tonight = <b>' + f(tot) + '</b>' : '') + ' &middot; ' + (left > 0 ? f(left) + ' to go for ' + f(to) : '<b>reached ' + f(to) + '</b>') + (w.note ? '<small>' + esc(w.note) + '</small>' : '') + '</div></div>';
+}
+function renderLeaders() {
+  var L = S.sum && S.sum.leaders, c = S.sb && S.sb.competitions[0]; setLt('lead', S.sig.sum && S.sig.sum.ok ? 'ok' : 'bad');
+  var mw = watchHtml();
+  if (!L || !L.length || !c) { if (mw) $('#lead').innerHTML = mw; return; }
+  var cats = [['passingYards', 'Passing'], ['rushingYards', 'Rushing'], ['receivingYards', 'Receiving']], html = '', any = false;
+  ['away', 'home'].forEach(function (side) {
+    var comp = c.competitors.find(function (x) { return x.homeAway === side; }), e = L.find(function (x) { return String(x.team.id) === String(comp.team.id); });
+    html += '<div><h5 style="color:' + tcol(comp.team) + '">' + esc(comp.team.location) + '</h5>';
+    cats.forEach(function (k) {
+      var cat = e && (e.leaders || []).find(function (x) { return x.name === k[0]; }), l = cat && cat.leaders && cat.leaders[0];
+      if (l && l.athlete && !/^team$/i.test(l.athlete.shortName || l.athlete.displayName || '')) { any = true; html += '<p><small>' + k[1] + '</small>' + esc(l.athlete.shortName || l.athlete.displayName) + ' &middot; ' + esc(l.displayValue) + '</p>'; }
+    });
+    html += '</div>';
+  });
+  if (any || mw) $('#lead').innerHTML = mw + (any ? '<div class="lead">' + html + '</div>' : '');
+}
+function renderAround() {
+  var ev = S.around; setLt('around', S.sig.around && S.sig.around.ok ? 'ok' : 'bad'); if (!ev) return;
+  var rows = ev.filter(function (e) {
+    var c = e.competitions[0], t = c.status.type;
+    var rk = c.competitors.some(function (x) { var r = x.curatedRank && x.curatedRank.current; return r > 0 && r <= 25; });
+    return String(e.id) !== String(EV) && (t.state === 'in' || rk);
+  }).map(function (e) {
+    var c = e.competitions[0], t = c.status.type, a = c.competitors.find(function (x) { return x.homeAway === 'away'; }), h = c.competitors.find(function (x) { return x.homeAway === 'home'; });
+    return { id: e.id, a: a, h: h, state: t.state, detail: t.shortDetail || t.detail, date: e.date };
+  }).sort(function (x, y) { var o = { in: 0, pre: 1, post: 2 }; return (o[x.state] - o[y.state]) || (new Date(x.date) - new Date(y.date)); }).slice(0, 18);
+  var nm = function (t) { var r = rankOf(t); return (r ? '<span class="rk">' + r.replace('No. ', '#') + '</span> ' : '') + esc(t.team.abbreviation); };
+  var sc = function (t) { return esc(t.score || '0'); };
+  $('#around').innerHTML = rows.length ? rows.map(function (r) {
+    var pre = r.state === 'pre';
+    return '<a class="ar" href="https://www.espn.com/college-football/game/_/gameId/' + esc(r.id) + '" target="_blank" rel="noopener"><div class="m">' + nm(r.a) + (pre ? '' : ' <b>' + sc(r.a) + '</b>') + ' &nbsp;at&nbsp; ' + nm(r.h) + (pre ? '' : ' <b>' + sc(r.h) + '</b>') + '</div><div class="s ' + (r.state === 'in' ? 'live' : '') + '">' + esc(r.detail) + '</div></a>';
+  }).join('') : '<div class="sub">No ranked or live games right now.</div>';
+}
+function renderTicker() {
+  var parts = [], c = S.sb && S.sb.competitions[0];
+  if (c && c.situation && c.situation.lastPlay && c.situation.lastPlay.text) parts.push('<span><b>LAST PLAY</b> ' + esc(clean(c.situation.lastPlay.text)) + '</span>');
+  if (S.around) S.around.forEach(function (e) { var cc = e.competitions[0], t = cc.status.type; if (t.state !== 'in' || String(e.id) === String(EV)) return; var a = cc.competitors.find(function (x) { return x.homeAway === 'away'; }), h = cc.competitors.find(function (x) { return x.homeAway === 'home'; }); parts.push('<span><b>' + esc(a.team.abbreviation) + '</b> ' + esc(a.score) + ' &nbsp;<b>' + esc(h.team.abbreviation) + '</b> ' + esc(h.score) + ' &middot; ' + esc(t.shortDetail) + '</span>'); });
+  if (S.board && S.board.say && S.board.say[0]) parts.push('<span><b>JARVIS</b> ' + esc(S.board.say[0].text) + '</span>');
+  if (!parts.length) parts.push('<span>GatorBait Truck &middot; scores from ESPN &middot; coverage from our own desk</span>');
+  var el = $('#tickin'), h = parts.join('');
+  if (el.dataset.h !== h) { el.dataset.h = h; el.innerHTML = h; var w = el.scrollWidth + el.parentNode.clientWidth; el.style.setProperty('--d', Math.max(40, Math.round(w / 70)) + 's'); }
+}
+
+/* ---------- board + github ---------- */
+function renderBoard() {
+  var b = S.board; if (!b) return;
+  /* the board can point the wall at a different game without a redeploy (an explicit ?event= still wins) */
+  if (!Q.get('event') && b.event && String(b.event) !== String(EV)) {
+    EV = String(b.event); S.sb = S.sum = null; S.prevKey = S.prevState = null;
+    loadSb().catch(function () { }); loadSum().catch(function () { });
+  }
+  var say = (b.say || []).slice().sort(function (x, y) { return new Date(y.at) - new Date(x.at); })[0];
+  if (say) { $('#talkText').textContent = say.text; var ta = $('#talkAgo'); ta.dataset.ago = say.at; ta.textContent = ago(say.at); speakNew(b.say || []); }
+  var needs = b.needs || [];
+  $('#needsMeta').textContent = needs.length ? needs.length + ' open' : 'clear';
+  $('#needs').innerHTML = needs.length ? needs.map(function (n) { return '<div class="need"><b>' + esc(n.title) + '</b><span>' + esc(n.text) + '</span></div>'; }).join('') : '<div class="sub">Nothing is waiting on you.</div>';
+  $('#run').innerHTML = (b.rundown || []).map(function (r) {
+    var lab = r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.label) + '</a>' : esc(r.label);
+    return '<li><i class="dot ' + esc(r.state) + '"></i><span class="x"><b>' + lab + '</b><small>' + esc(r.note || '') + '</small></span></li>';
+  }).join('');
+  $('#dep').innerHTML = (b.depts || []).map(function (d) {
+    var inner = '<h4><i></i>' + esc(d.name) + '</h4><p>' + esc(d.line) + '</p>';
+    return d.url ? '<a class="tile ' + esc(d.state) + '" href="' + esc(d.url) + '" target="_blank" rel="noopener">' + inner + '</a>' : '<div class="tile ' + esc(d.state) + '">' + inner + '</div>';
+  }).join('');
+  tickBoardAge(); safe(renderTicker); safe(renderLeaders);
+}
+function tickBoardAge() {
+  var b = S.board; if (!b || !b.updated) return; var m = (Date.now() - new Date(b.updated).getTime()) / 60000;
+  var el = $('#boardAge'); el.textContent = 'board ' + ago(b.updated); el.style.color = m > 40 ? 'var(--bad)' : m > 20 ? 'var(--warn)' : '';
+  setLt('run', S.sig.board && S.sig.board.ok ? (m > 40 ? 'bad' : m > 20 ? 'warn' : 'ok') : 'bad'); setLt('dep', S.sig.board && S.sig.board.ok ? 'ok' : 'bad');
+}
+function speakNew(say) {
+  var seen = {}; try { seen = JSON.parse(localStorage.getItem('truckSpoken') || '{}'); } catch (e) { }
+  var first = !S.spokeOnce; S.spokeOnce = true;
+  say.slice().sort(function (x, y) { return new Date(x.at) - new Date(y.at); }).forEach(function (m) {
+    if (seen[m.id]) return; seen[m.id] = 1;
+    if (!first || Date.now() - new Date(m.at).getTime() < 5 * 60000) speak(m.text);
+  });
+  try { localStorage.setItem('truckSpoken', JSON.stringify(seen)); } catch (e) { }
+}
+function mdLine(t) {
+  var lines = String(t || '').split('\n').map(function (x) { return x.trim(); }).filter(function (x) { return x && !/^[-|:= ]+$/.test(x) && !/^---$/.test(x) && !/Generated by \[Claude Code\]/.test(x); });
+  var s = (lines[0] || '').replace(/^#+\s*/, '').replace(/\*\*|__|`/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/<[^>]+>/g, '');
+  return s.length > 170 ? s.slice(0, 167) + '…' : s;
+}
+function renderFeed() {
+  var rows = [];
+  (S.prs || []).forEach(function (p) {
+    if (p.merged_at) rows.push({ at: p.merged_at, k: 'ship', kl: 'Shipped', x: '#' + p.number + ' ' + p.title, u: p.html_url });
+    else if (p.state === 'open') rows.push({ at: p.updated_at, k: 'fly', kl: p.draft ? 'Draft' : 'In flight', x: '#' + p.number + ' ' + p.title, u: p.html_url });
+  });
+  (S.cmts || []).forEach(function (cm) { var n = (cm.issue_url || '').split('/').pop(); rows.push({ at: cm.created_at, k: 'note', kl: '#' + n, x: mdLine(cm.body), u: cm.html_url }); });
+  rows.sort(function (a, b) { return new Date(b.at) - new Date(a.at); });
+  rows = rows.slice(0, 18); setLt('feed', S.sig.gh && S.sig.gh.ok ? 'ok' : 'bad');
+  $('#feedMeta').textContent = rows.length ? 'newest ' + ago(rows[0].at) : '';
+  $('#feed').innerHTML = rows.length ? rows.map(function (r) { return '<li><span class="kind ' + r.k + '">' + esc(r.kl) + '</span><span class="x"><a href="' + esc(r.u) + '" target="_blank" rel="noopener" style="text-decoration:none">' + esc(r.x) + '</a><small data-ago="' + esc(r.at) + '">' + ago(r.at) + '</small></span></li>'; }).join('') : '<li><span class="x">Nothing yet.</span></li>';
+}
+
+/* ---------- pollers ---------- */
+async function loadSb() { S.sb = await E('/scoreboard/' + EV); safe(renderGame); safe(renderWP); safe(renderTicker); }
+async function loadSum() {
+  var j = await E('/summary?event=' + EV, { ms: 20000 }); S.sum = j; sig('sum', true);
+  safe(renderPlays); safe(renderScoring); safe(renderWP); safe(renderStats); safe(renderLeaders); safe(renderGame);
+}
+async function loadAround() { var j = await E('/scoreboard?groups=80&limit=300', { ms: 20000 }); S.around = j.events || []; sig('around', true); safe(renderAround); safe(renderTicker); }
+async function loadBoard() {
+  var j; try { j = await J(BOARD_URL, { cache: 'no-cache', headers: { Accept: 'application/vnd.github.raw+json' } }); }
+  catch (e) { j = await J('./board.json', { cache: 'no-store' }); }
+  S.board = j; safe(renderBoard);
+}
+async function loadGH() {
+  var h = { Accept: 'application/vnd.github+json' };
+  var r = await Promise.all([J(GH + '/pulls?state=all&sort=updated&direction=desc&per_page=20', { cache: 'no-cache', headers: h }), J(GH + '/issues/comments?sort=created&direction=desc&per_page=15', { cache: 'no-cache', headers: h })]);
+  S.prs = r[0]; S.cmts = r[1]; safe(renderFeed);
+}
+loop('sb', loadSb, function () { var s = gstate(); return s === 'in' ? (vis() ? 8000 : 30000) : s === 'post' ? 60000 : (vis() ? 15000 : 45000); });
+loop('sum', loadSum, function () { return gstate() === 'in' ? (vis() ? 30000 : 90000) : 60000; });
+loop('around', loadAround, function () { return vis() ? 90000 : 300000; });
+loop('board', loadBoard, function () { return vis() ? 30000 : 120000; });
+loop('gh', loadGH, function () { var e = S.sig.gh; return e && !e.ok ? 600000 : (vis() ? 150000 : 600000); });
+
+/* ---------- clocks ---------- */
+setInterval(function () {
+  $('#clock').textContent = fmtET(Date.now(), true).replace(' a.m.', ' AM').replace(' p.m.', ' PM');
+  $$('[data-ago]').forEach(function (e) { e.textContent = ago(e.dataset.ago); });
+  tickBoardAge();
+}, 1000);
+})();
+</script>
+</body>
+</html>

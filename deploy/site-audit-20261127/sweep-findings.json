@@ -1,0 +1,988 @@
+{
+ "note": "Read-only sweep, Nov. 27, 2026. Two of six finders finished (core pages at phone and desktop/tablet widths). No verifier ran: every item is UNVERIFIED by a second pass.",
+ "findings": [
+  {
+   "id": "core-phone-1",
+   "finder": "core-phone",
+   "title": "Phones prefetch 10-20 MB of extra pages on every page view (Wix eager speculation rules) - known-open item, exact source + working fix",
+   "kind": "speed",
+   "severity": "high",
+   "pages": [
+    "/",
+    "/magazine",
+    "/the-buddy-martin-show",
+    "/about",
+    "/contact",
+    "/policies",
+    "/gatorbait-media-blogs",
+    "/search?q=gators",
+    "/search?q=zzzzqqq",
+    "/groups",
+    "/members (redirects to /)",
+    "/event-list (redirects to show page)",
+    "/magazine/2022 and /2021-gatorbait-magazine (redirect to /magazine)"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "Every core page that carries the rule transferred 10.9-23.3 MB per phone load (e.g. / 23,883 KB @320 and 17,731 KB @390; /contact 11,626 KB @390; /about 12.9-16.8 MB; an EMPTY search page 11.8-12.3 MB). 83% of /contact (9,644 of 11,626 KB, 45 requests) is other pages' HTML being prefetched, ~450-500 KB compressed each. The same URL is fetched 3-8 times in one view (on /: 8x roster post, 8x /gatorbait-media-blogs, 6x /the-buddy-martin-show, 4x /magazine, 4x /policies). The three pages without the rule weigh 2.4-3.8 MB (/pricing-plans/subscribe 2,630 KB, /tags 2,489 KB). This answers the /contact question: desktop only prefetches on hover, phones prefetch every link that scrolls into view.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/contact-390.json (hosts: gatorbaitmedia.com 45req/9644KB; biggest = ten 'Prefetch' docs of 491-499 KB); /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/home-320.json (gatorbaitmedia.com 79req/19711KB, duplicates list); rule text + injecting script captured in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d3/contact-390.json (custom.specCtxBefore); link churn in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d2/contact-390.json (custom.ancInserted: /the-buddy-martin-show anchors removed 10x, /magazine 6x); staged fix results in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d14/contact-390.json and /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d14/home-390.json",
+   "cause": "It is Wix's own platform script, not a GBM embed: an inline <script> in <head> placed right after Wix's isSamePageAnchor script and before <style id=css_masterPage> (i.e. before the 'pageHtmlEmbeds.head start' custom-code region). Text: if(!/instagram|FBAN|FBAV|FB_IAB/i.test(navigator.userAgent)){var s=document.createElement('script');s.type='speculationrules';s.textContent=JSON.stringify({\"prefetch\":[{\"tag\":\"mpa-prefetch-eager\",\"where\":{\"and\":[{\"href_matches\":\"/*\"},{\"not\":{\"href_matches\":\"<current path>\"}}]},\"eagerness\":\"eager\"}]});document.head.appendChild(s)}. It is inserted ~1.7-2.3 s into load. In the checker's Chromium 158 with phone emulation, 'eager' fires for each same-origin link that enters the viewport (header ticker stories, footer menu, story cards); the off-canvas drawer links and the hidden Wix menu were not fetched. Each HTML document is 465-503 KB compressed (see separate HTML-weight finding), so every link costs about half a megabyte. Repeats come from #fragment variants of the same page (#roster, #schedule, #podcasts, #gbm-lp-search, /#community) and from the custom header/ticker removing and re-inserting its links during startup. The rule is absent on /pricing-plans/subscribe, /tags and the 404 page.",
+   "fixType": "embed-js",
+   "fixDetail": "Add to a HEAD custom embed (first thing in embed 9c457b7a 'GBM - Readability and speed fixes v1', or its own small embed), 700 characters:\n<script id=\"gbm-spec-calm-v1\">(function(){try{if(!matchMedia('(max-width:820px),(pointer:coarse)').matches)return;function calm(s){if(!s||s.type!=='speculationrules'||s.getAttribute('data-gbm'))return;var t=s.textContent;if(t.indexOf('\"eagerness\":\"eager\"')<0)return;var n=document.createElement('script');n.type='speculationrules';n.setAttribute('data-gbm','1');n.textContent=t.replace(/\"eagerness\":\"eager\"/g,'\"eagerness\":\"conservative\"');s.replaceWith(n);}document.querySelectorAll('script[type=speculationrules]').forEach(calm);new MutationObserver(function(m){m.forEach(function(r){r.addedNodes.forEach(function(x){if(x.nodeType===1&&x.tagName==='SCRIPT')calm(x);});});}).observe(document,{childList:true,subtree:true});}catch(e){}})();</script>\nIt swaps Wix's rule for the same rule with eagerness 'conservative' (prefetch starts when the reader touches a link), on phones/touch devices only; desktop keeps Wix's hover behaviour. Rollback = delete the script.",
+   "fixRisk": "Low. Taps lose the head start of an already-prefetched page (they still get a prefetch from touch-down). Depends on Wix keeping the literal \"eagerness\":\"eager\" string; if Wix changes it the script does nothing (fails safe). The matchMedia guard was not in the staged run (the staged script ran unconditionally in touch emulation). Real iPhone Safari may not act on speculation rules at all, so the measured waste applies for certain to Chrome/Android/Edge/Samsung browsers.",
+   "stagedResult": "Staged with GB_INIT (same replace-after-insert logic, MutationObserver on document): /contact @390 11,626 KB/200 req -> 2,506 KB/159 req, 0 prefetched documents; / @390 17,731 KB/293 req -> 4,737 KB/221 req, 0 prefetched documents. A second variant (rewriting before insertion) gave the same: 2,501 KB and 4,735 KB. LCP unchanged (contact 1.65 s -> 2.0 s within run-to-run noise; home 2.80 s -> 2.75 s).",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-2",
+   "finder": "core-phone",
+   "title": "Roster page downloads about 377 MB of player headshots (5-6 MB PNG each, shown 33-64 px wide)",
+   "kind": "speed",
+   "severity": "high",
+   "pages": [
+    "/roster",
+    "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play"
+   ],
+   "widths": [
+    390
+   ],
+   "symptom": "Outside my page list but linked from the homepage scoreboard ('Roster' -> /roster), the header, the menu drawer and the footer ('Roster', 'Scores & Schedule'). One phone visit that scrolls the roster transferred 391,924 KB in 361 requests: 117 images from dxbhsrqyrr690.cloudfront.net = 377,269 KB. Largest single files 6,016 KB (Miller_F.png), 5,917 KB, 5,560 KB. The images are 1500 px wide originals displayed at 33 px and 64 px (11.7x to 22.7x oversized). They are lazy-loaded, so a reader pays as they scroll, but every screenful is tens of MB on cellular.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d3/roster-390.json (kb 391924; hosts; biggest; oversized list nat 1500 / shown 33 and 64); staged result /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d13/roster-390.json",
+   "cause": "The roster renderer (container #gbm-rosterpage, images img.r-ph, 240 img elements; loaded by embed 72b6a528 'GBM - Football Roster v1 (live roster page, /roster)', head comment GBM_ROSTER_V1 src=16df2e794b1df12a9c10319277f65f671aec0d95) hot-links the official athletics site's full-resolution PNG headshots (https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/gatorzone.com/images/...png) with no resizing.",
+   "fixType": "embed-js",
+   "fixDetail": "Best fix (in the roster data/bundle that embed 72b6a528 loads): emit thumbnail URLs instead of originals, e.g. 'https://images.sidearmdev.com/resize?url='+encodeURIComponent(originalUrl)+'&width=160&type=webp', or copy the headshots into Wix Media and use /v1/fill/w_160,h_213,q_80 URLs.\nStopgap that was staged and works, as a HEAD embed limited to the roster page:\n<script id=\"gbm-roster-thumbs-v1\">(function(){if(!/^\\/(roster|post\\/florida-gators-2026-roster)/.test(location.pathname))return;var RX=/^https:\\/\\/dxbhsrqyrr690\\.cloudfront\\.net\\//;function c(u){return'https://images.sidearmdev.com/resize?url='+encodeURIComponent(u)+'&width=160&type=webp'}var sa=Element.prototype.setAttribute;Element.prototype.setAttribute=function(n,v){if(this.tagName==='IMG'&&n==='src'&&RX.test(String(v)))v=c(String(v));return sa.call(this,n,v)};var d=Object.getOwnPropertyDescriptor(HTMLImageElement.prototype,'src');Object.defineProperty(HTMLImageElement.prototype,'src',{configurable:true,enumerable:true,get:function(){return d.get.call(this)},set:function(v){d.set.call(this,RX.test(String(v))?c(String(v)):v)}});function f(i){var u=i.getAttribute('src');if(u&&RX.test(u))i.setAttribute('src',u)}new MutationObserver(function(m){m.forEach(function(r){r.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(n.tagName==='IMG')f(n);if(n.querySelectorAll)n.querySelectorAll('img').forEach(f)})})}).observe(document,{childList:true,subtree:true})})();</script>",
+   "fixRisk": "The stopgap patches img.src handling on that one page and depends on a third-party resize endpoint (images.sidearmdev.com) staying available; if it stops answering, headshots break (cards still render). The path guard was not in the staged run (staged script ran unguarded on /roster). Using another organisation's headshots at all is an owner/rights decision; the bundle fix with images in Wix Media removes that dependency.",
+   "stagedResult": "Staged with GB_INIT on /roster @390: 391,924 KB -> 13,743 KB total; the 117 headshot requests went 377,269 KB -> 467 KB (images.sidearmdev.com), 240 src rewrites, 0 broken images, thumbnails arrive 160x213 for 33-64 px slots. Most of the remaining 13.7 MB is the prefetch problem (9,663 KB).",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-3",
+   "finder": "core-phone",
+   "title": "Homepage jumps hard about 3 s after load on phones (CLS 0.80-1.20) - known-open item, new source facts",
+   "kind": "speed",
+   "severity": "high",
+   "pages": [
+    "/",
+    "/members (redirects to /)"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "Layout-shift score on the first visit: / 0.942 @320, 0.829 @390, 0.800 @430; /members -> / 1.002 @320 and 1.006 @430 (0 on one @390 run); later runs 1.013 @390, 1.2 and 0.862 @320. Google's 'poor' line is 0.25. Seen in 9 of 10 homepage loads.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/members-320.json (custom.shifts with source nodes and before/after rectangles); cls values in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/home-320.json, home-390.json, home-430.json and /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d10/home-320.json (1.2)",
+   "cause": "Two separate events, both inside #gbm-live, about 100 ms apart. (1) t=3035 ms, value 0.146: div.sh-lead-copy moves from y=121 to y=273 (152 px down) and section.bc-nx from 463 to 615 when section#gbm-lsb (Top 25 scoreboard) is inserted above the lead story. (2) t=3131 ms, value 0.844: main#sh-main itself goes from y=120,h=724 to a 0x0 rectangle and article.sh-lead from y=92,h=576 to 0x0, i.e. the whole story column is removed/hidden and painted again (a full re-render), not just pushed. (3) 0.012 as #gbm-lsb .hero.pre settles 15 px. So the scoreboard arrival is only 15% of the score; 85% is the #sh-main swap.",
+   "fixType": "needs-coordination",
+   "fixDetail": "For the session that owns the homepage broadcast loader and the scoreboard embed (ca1267d3 'GBM - Front page Top 25 scoreboard v1'): (a) do not detach/replace main#sh-main after first paint: update the story nodes in place, or build the new tree off-DOM and swap with replaceChildren in the same frame at the same height; (b) reserve the scoreboard slot before data arrives so the lead does not move 152 px (render #gbm-lsb as a fixed-height skeleton from the start, or insert it below the lead story on phones). I did not stage this because it is another session's object and changes homepage structure.",
+   "fixRisk": "Touches the approved homepage and objects owned by another session; needs their change and Brenden's sign-off if order/height changes visibly.",
+   "confidence": 0.85,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-4",
+   "finder": "core-phone",
+   "title": "Search results: the word you searched for is unreadable (navy text on a blue highlight)",
+   "kind": "readability",
+   "severity": "medium",
+   "pages": [
+    "/search?q=gators"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "In every result the matched term ('Gators', 'GatorBait') is a solid blue block: title marks are rgb(16,38,75) text on rgb(0,33,165) background (contrast 1.26:1), description marks rgb(59,74,102) on the same blue (1.34:1). The empty-search page (/search?q=zzzzqqq) is fine. Note: a 'View All' button was also flagged at 1.26:1 in my first six loads and was fine in later loads, so someone changed the live CSS during the audit; the rule below sets it explicitly anyway.",
+   "evidence": "Before/after image /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d6/search-compare.png (left live, right staged); computed colours and the winning CSS rules in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d1/search-320.json (custom.hl)",
+   "cause": "Side effect of today's fix. <style id=gbm-fixes-v1> (embed 9c457b7a) forces color and -webkit-text-fill-color with !important on search titles and on '[data-hook=\"item-description\"] *', which also hits the <mark> elements. Wix Search still paints the mark background from its own variable (.s__0ygxuP mark {background-color: rgb(var(--resultsHighlightColor))} = rgb(0,33,165)), so dark text lands on a dark highlight.",
+   "fixType": "embed-css",
+   "fixDetail": "Append to <style id=\"gbm-fixes-v1\"> in embed 9c457b7a:\n#SITE_PAGES#SITE_PAGES#SITE_PAGES [data-hook=\"search-results-root\"] mark{background:#ffe9a8!important;color:#10264b!important;-webkit-text-fill-color:#10264b!important;border-radius:2px}\n#SITE_PAGES#SITE_PAGES#SITE_PAGES [data-hook=\"search-results-root\"] a[data-hook=\"sample-layout-group-view-all\"]{color:#fff!important;-webkit-text-fill-color:#fff!important}\n(Three #SITE_PAGES are needed to out-rank the existing two-ID rule.)",
+   "fixRisk": "Very low; search page only. Pale-yellow highlight is a colour choice; to keep the blue highlight use color:#fff and -webkit-text-fill-color:#fff on mark instead of the background change.",
+   "stagedResult": "Staged with GB_CSS at 320: marks compute to rgb(16,38,75) on rgb(255,233,168) (about 12:1), checker low-contrast list empty, screenshot shows readable highlights (right half of search-compare.png).",
+   "confidence": 0.95,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-5",
+   "finder": "core-phone",
+   "title": "Closed phone menu drawer casts a grey shadow down the right edge of every page",
+   "kind": "mobile-layout",
+   "severity": "medium",
+   "pages": [
+    "/",
+    "/the-buddy-martin-show",
+    "/about",
+    "/contact",
+    "/policies",
+    "/gatorbait-media-blogs",
+    "/search",
+    "/pricing-plans/subscribe",
+    "/groups",
+    "/tags"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "A grey gradient about 50 px wide darkens the right edge of the screen on every page that uses the phone shell (text and cards near the right edge look dirty/faded). Not present on /magazine or the 404 page.",
+   "evidence": "Before/after /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d6/contact-compare.png (left live, right staged); also visible in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/policies-320-top.png and tags-320-gap2.png; measurements in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d2/contact-320.json (custom.drawer, custom.shades) and rules in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d3/contact-390.json (custom.drawerRules)",
+   "cause": "<style id=gbm-mobile-shell-critical-v2>: '#gbm-mobile-drawer-root .gbm-ms-panel{width:min(88vw,350px);transform:translateX(104%);box-shadow:-18px 0 48px rgba(8,19,47,.22)}' (re-declared with !important in gbm-sl-css as rgba(17,24,39,.22)). Closed, the panel sits only 11-14 px outside the viewport (left edge at x=331 in a 320 viewport, x=404 in a 390 viewport) while its shadow reaches 66 px to the left, so the shadow is always on screen. Open state is html.gbm-mobile-menu-open.",
+   "fixType": "embed-css",
+   "fixDetail": "Add to embed 9c457b7a:\n@media (max-width:820px){html:not(.gbm-mobile-menu-open):is(html,#gbx1):is(html,#gbx2):is(html,#gbx3) #gbm-mobile-drawer-root .gbm-ms-panel{box-shadow:none!important}}\n(the :is(html,#id) parts only raise specificity above the existing gbm-sl-css rule, which has three IDs and !important).",
+   "fixRisk": "Very low. The shadow still appears when the menu is open; it switches on at the start of the slide-in rather than fading.",
+   "stagedResult": "Staged with GB_CSS on /contact @320: panel box-shadow computes to none, shade scan empty, right edge clean in the screenshot (right half of contact-compare.png).",
+   "confidence": 0.92,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-6",
+   "finder": "core-phone",
+   "title": "/tags is a leftover Wix 'Item List' page: 12 cards with 187 px of blank space each, raw slugs, and 'Read More' buttons that are invisible and go nowhere",
+   "kind": "broken-widget",
+   "severity": "medium",
+   "pages": [
+    "/tags"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "Page heading reads 'ITEM LIST'. It shows 12 tag cards (first 12 alphabetically, no pager), each 320 px tall with the title pushed down by a 187 px empty top area (the checker logged 8+ blank bands of 188 px), then the raw slug as text (e.g. '24-team-playoff'), then a 'Read More' label in rgb(230,234,245) on a near-white card (1.11:1). The 'Read More' is a <div class=wixui-button> with no href, so nothing on the page is tappable. The page is indexable (robots 'index', canonical /tags, title 'Browse Stories by Topic'). 5,528 px of scrolling for 12 words.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/tags-320-top.png and /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/tags-320-gap2.png; structure in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d1/tags-320.json (custom.item0, readMore, links=[]) and margins in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d8/tags-320.json (custom.tagKids); staged view /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d10/tags-fix-view.png",
+   "cause": "Untouched Wix CMS dynamic list template: repeater #comp-lpko32x32, item container [id^=comp-lpko32x44__] with grid rows 233px/40px/47px; title box [id^=comp-lpko32x57__] has margin-top 187 px (space meant for an image that was never connected); slug text [id^=comp-lpko32x71__]; button [id^=comp-lpko32xb__] has no link connected; heading #comp-lpko32x25 still says 'Item List'.",
+   "fixType": "embed-js",
+   "fixDetail": "Cleanest: in the Wix Editor either delete/hide this dynamic list page (and set it to noindex) or rebuild it; that is the owner's call. If the page stays, this embed fix was staged and works.\nCSS (embed 9c457b7a):\n#comp-lpko32x32 [id^=\"comp-lpko32x57__\"]{margin-top:20px!important}\n#comp-lpko32x32 [data-testid=\"mesh-container-content\"]{grid-template-rows:auto auto auto!important}\n#comp-lpko32x32 [id^=\"comp-lpko32x44__\"],#comp-lpko32x32 [id^=\"comp-lpko32x44__\"]>[data-testid=\"inline-content\"],#comp-lpko32x32 ._FiCX{height:auto!important;min-height:0!important}\n#comp-lpko32x32 [id^=\"comp-lpko32xb__\"],#comp-lpko32x32 [id^=\"comp-lpko32x71__\"],#comp-lpko32x25{display:none!important}\n#comp-lpko32x32 h2 a{color:inherit!important;-webkit-text-fill-color:currentColor!important;text-decoration:underline!important}\nJS (same embed) turning each title into a link to the real blog tag page:\n<script>(function(){if(location.pathname.replace(/\\/$/,'')!=='/tags')return;function go(){document.querySelectorAll('#comp-lpko32x32 [id^=\"comp-lpko32x44__\"]').forEach(function(it){var s=it.querySelector('[id^=\"comp-lpko32x71__\"]'),h=it.querySelector('[id^=\"comp-lpko32x57__\"] h2');if(!s||!h||h.querySelector('a'))return;var slug=s.textContent.trim();if(!/^[a-z0-9-]+$/.test(slug))return;var a=document.createElement('a');a.href='/gatorbait-media-blogs/tags/'+slug;a.textContent=h.textContent.trim();h.textContent='';h.appendChild(a);});}var t;function later(){clearTimeout(t);t=setTimeout(go,150);}document.addEventListener('DOMContentLoaded',go);window.addEventListener('load',go);new MutationObserver(later).observe(document,{childList:true,subtree:true});})();</script>",
+   "fixRisk": "Low; only /tags. The page would still list just 12 of the site's tags, so removing it may be the better product decision. The '#comp-lpko32x25{display:none}' (hide the 'Item List' heading) was added after staging and is not in the staged run. ._FiCX is a hashed Wix class and may change on a Wix update (the other selectors are component IDs).",
+   "stagedResult": "Staged with GB_CSS + GB_INIT at 320: page height 5,528 -> 2,475 px, cards 320 -> 68 px, no blank bands, 12 of 12 titles became links (/gatorbait-media-blogs/tags/24-team-playoff etc.); I loaded /gatorbait-media-blogs/tags/24-team-playoff and it returns 200 with title '24-team playoff | GatorBait Media'.",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-7",
+   "finder": "core-phone",
+   "title": "Every page ships a 2.1-2.4 MB HTML document (465-503 KB compressed); about a third of it is custom-embed code sent to every page twice",
+   "kind": "speed",
+   "severity": "medium",
+   "pages": [
+    "all pages (measured on /contact, / and /tags)"
+   ],
+   "widths": [
+    320,
+    390
+   ],
+   "symptom": "The HTML document is the largest single download on every page and is what each prefetch repeats: /contact 465,209 bytes transferred, 2,148,613 bytes decoded; / 503,099 transferred, 2,378,276 decoded. Time to first byte 1,446 ms (/contact) and 1,585 ms (/); DOM ready at 1.9-2.2 s. The 404 page, which has none of this, is 2 KB.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d5/contact-390.json and /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d5/home-390.json (custom.nav, custom.top = largest inline blocks); viewer-model breakdown in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d8/contact-320.json (custom.levels); all 52 embeds with sizes, ids and names in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d9/contact-390.json (custom.items)",
+   "cause": "<script id=wix-viewer-model> is 1,302,096 characters on every page. Inside it: siteFeaturesConfigs.codeEmbed.htmlEmbeds = 395,314 chars = the full text of all 52 site custom embeds; tpaCommons 286,649; platform 281,081; seo 97,411; ooi 59,618. The same embeds are also rendered inline: 93 gbm style/script blocks = 369,492 chars on /contact (95 blocks / 428,680 on /). So roughly 765-825 KB of each page's HTML is custom code, most of it for other pages: on /contact the reader receives Home Styles (1255a4cf, 15,373), Home Code (622d8ece, 15,340), Sports Home v4 core (fdc2127a, 15,520), homepage Game Graph JSON-LD (1261f2b9, 15,054), Post template (14a887e3, 15,590), Post header compact (fce181f6, 14,686), Florida Football Stats incl. data (756655cf, 16,115), Policies & Compliance (fb8963cc, 10,576), Show Live Strip (79372d76, 8,980 - the band that is now hidden), Renewal clarity (74c4487f, 8,547), Keep Reading (59e31550, 6,644), Pricing Terms Note (78528a4b, 6,568), FSU week clips (d2f71c9e, 5,975), retired book link (02d248f8, 998). 15 embeds sit at the 15,000-character cap.",
+   "fixType": "needs-coordination",
+   "fixDetail": "No single safe edit; this needs one owner to do an embed diet: (1) disable embeds whose feature is retired or hidden (candidates: 79372d76 Show Live Strip, 02d248f8 retired book link, d2f71c9e FSU-week clips after this week); (2) in Wix Dashboard > Settings > Custom Code set page-specific embeds to 'Choose specific pages' instead of 'All pages' (homepage-only: 1255a4cf, 622d8ece, fdc2127a, 1261f2b9, c92e5aaf, ca1267d3; post-only: 14a887e3, fce181f6, c91ad133, 59e31550, a689dfef, ed872869; policies-only: fb8963cc; plans-only: 78528a4b, 74c4487f) - verify on one embed first that Wix then drops it from other pages' viewer model; (3) move large static CSS/JS out of embeds into the versioned files already served from cdn.jsdelivr.net (as site-shell.css and sitewide-type.css are) so it is downloaded once and cached, leaving a one-line loader in the embed. Embeds 96ef5a04 and 756655cf belong to other sessions: flag only.",
+   "fixRisk": "Medium: page-scoping an embed that another embed depends on, or that must survive Wix's in-site navigation, can break a feature; do one at a time with a rollback. Savings are not staged; I could not test whether page scoping removes an embed from the viewer model.",
+   "confidence": 0.8,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-8",
+   "finder": "core-phone",
+   "title": "404 page is Wix's bare default: no GatorBait header, menu or search, and half a screen of blank white",
+   "kind": "dead-space",
+   "severity": "medium",
+   "pages": [
+    "/this-page-does-not-exist",
+    "/florida-football-stats",
+    "any mistyped or retired URL"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "Black-on-white 'ERROR: PAGE NOT FOUND / 404 / This page isn't available. / Go to Homepage' in a non-site font, then 516 px (320), 454 px (390) and 420 px (430) of empty white to the bottom of the screen. No logo, no menu, no search, no latest stories. 12 requests, 205 KB, so it is not the site shell at all.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/this-page-does-not-exist-390-top.png; /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/this-page-does-not-exist-320.json (gap y=328 h=516, pixelsUniform true, chain div.ECJ82r h=760)",
+   "cause": "No custom 404 page exists in the Wix site, so Wix serves its platform error page, which does not load custom embeds (html class empty, no gbm styles).",
+   "fixType": "wix-editor",
+   "fixDetail": "Wix Editor > Pages & Menu > add the '404 Error Page' (Wix's customisable error page) and design it with the site header: heading 'We could not find that page', a search box, and three buttons to / , /gatorbait-media-blogs and /magazine; publish. Custom embeds set to 'All pages' should then load on it, giving it the normal phone shell. Cannot be done from an embed because the default error page loads no embeds.",
+   "fixRisk": "Low. Needs Editor access and a publish; check after publishing that the status code is still 404.",
+   "confidence": 0.85,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-9",
+   "finder": "core-phone",
+   "title": "/florida-football-stats returns 404; the stats page actually lives at /groups",
+   "kind": "content-data",
+   "severity": "medium",
+   "pages": [
+    "/florida-football-stats",
+    "/groups"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "/florida-football-stats (in the work list and named as a route by the stats embed) answers 404 with the bare Wix error page at all three widths. The Football Stats page renders at /groups instead (URL stays /groups, title 'Florida Gators Football Stats 2026 | GatorBait Media', H1 'Florida Gators stats', html class gbm-fs). The roster post also requests /florida-football-stats in the background and gets a 404 on every load. Header and drawer links point at /groups, so readers do reach the page; the broken part is the public URL.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/florida-football-stats-390.json (status 404); /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/groups-320-top.png and groups-390.json; head comment 'GBM_FLORIDA_STATS_V1 route=/florida-football-stats,/groups' in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d3/contact-390.json (custom.headComments); failed fetch in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d3/roster-390.json (failed: 404 /florida-football-stats)",
+   "cause": "The stats embed (756655cf, owned by another session) takes over the Wix Groups page at /groups; no Wix page or redirect exists for the /florida-football-stats path it advertises, and an embed cannot run on a URL Wix answers with its 404 page.",
+   "fixType": "needs-coordination",
+   "fixDetail": "Flag to the stats-embed owner. Smallest fix is a 301 in Wix Dashboard > SEO > URL Redirect Manager: old URL /florida-football-stats -> new URL /groups (reversible, no code). Better long term: a real Wix page with the slug florida-football-stats for the embed to mount on, then redirect /groups to it if Groups is no longer used at that URL. Also have the roster bundle stop fetching /florida-football-stats.",
+   "fixRisk": "Low for the redirect. Changing which page hosts the stats is the other session's decision; /groups is also the Wix Groups app entry, so check Groups is not needed there.",
+   "confidence": 0.85,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-10",
+   "finder": "core-phone",
+   "title": "Buddy Martin Show page loads a hidden YouTube live player (about 0.8-1.0 MB) on every visit",
+   "kind": "speed",
+   "severity": "medium",
+   "pages": [
+    "/the-buddy-martin-show",
+    "/event-list (redirects there)"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "A 0x0 iframe https://www.youtube.com/embed/live_stream?channel=UCtR8b1sKFuwaRjKy5BiXRvA is created on load; youtube.com accounts for 10 requests / 1,015 KB (5 requests / 783 KB on a run where the frame had already been removed again). Nothing is shown for it. Without prefetch the whole page is about 3 MB, so this is roughly a third of the page.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/the-buddy-martin-show-390.json and event-list-390.json (frames: hidden true, w 0, h 0; hosts youtube.com:10req/1015KB); /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d4/the-buddy-martin-show-390.json (youtube.com 5req/783KB)",
+   "cause": "A live-status probe: the show page script (gbm-show-loader, embed 390d4907 'GBM - Buddy Martin Show Page v1') or the still-installed live strip script (gbm-liveband-js, embed 79372d76) inserts a full YouTube live_stream embed off-screen to find out whether the channel is live. I did not determine which of the two creates it.",
+   "fixType": "needs-coordination",
+   "fixDetail": "Owner of the show bundle: replace the hidden iframe with a data check the site already has (https://presidente49.github.io/gatorbait-media-redesign/sports-live/buddy-videos.json is fetched on these pages) or only create the player when the reader taps 'Watch live on YouTube'. If the probe comes from the retired live strip (79372d76), disabling that embed removes it and 8,980 characters from every page.",
+   "fixRisk": "If the probe drives the 'live now' state on the show page, removing it without a replacement loses that indicator.",
+   "confidence": 0.7,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-11",
+   "finder": "core-phone",
+   "title": "Google and Facebook tags cost about 830 KB on every page (four Google tag files; one GA4 property loaded twice) - known-open item, new facts",
+   "kind": "speed",
+   "severity": "medium",
+   "pages": [
+    "all pages except the 404"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "googletagmanager.com: 4 requests / 606-617 KB on every page (5 requests / 786 KB on some loads); the three gtag/js files are 179 KB, 179 KB and 169 KB compressed. connect.facebook.net: 3 requests / 221 KB (fbevents.js 100 KB + signals/config/387220995516628 121 KB). On a page with prefetch removed (/contact 2,501 KB) that is 33% of everything downloaded.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d3/contact-390.json (hosts, biggest); script URLs in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/pricing-plans-subscribe-390.json (custom.gtag, custom.fb)",
+   "cause": "Four Google loaders in <head>: gtm.js?id=GTM-MMLR5KL, gtag/js?id=G-9LPC2VVC0V, gtag/js?id=G-9CZZ218BYL, and a second gtag/js for G-9CZZ218BYL (or on some loads G-9LPC2VVC0V) with '&cx=c&gtm=...', which is the copy one Google tag pulls in for the other property. So two GA4 properties plus a GTM container are all installed, and one property is fetched twice. Facebook pixel 387220995516628 loads alongside. A request to https://connect.facebook.net/login/ also 404s on every page (initiator not identified).",
+   "fixType": "needs-owner-decision",
+   "fixDetail": "Brenden decides which measurement is real: keep ONE of GA4 G-9CZZ218BYL / G-9LPC2VVC0V and deliver it one way only (either the Wix Google Analytics integration or the GTM container GTM-MMLR5KL, not both); remove the other property's connection in Wix Marketing Integrations or delete its tag inside GTM. That drops 2 of the 3 gtag files (about 350 KB per page). Decide whether the Facebook pixel is still used for ads; if not, disconnect it (221 KB).",
+   "fixRisk": "Removing a property stops its reporting; anything (Google Ads conversions, audiences) tied to the removed ID must be moved first. Owner-only: these are Google/Meta account connections.",
+   "confidence": 0.8,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-12",
+   "finder": "core-phone",
+   "title": "Contact form: Code and Phone fields are wider than the others and get cut off at the card edge",
+   "kind": "mobile-layout",
+   "severity": "low",
+   "pages": [
+    "/contact"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "First name, Last name, Email, Message and the Send button are 232 px wide (right edge x=277). The country-code dropdown and Phone field are 260 px wide (right edge x=305) while the form container ends at x=300 with overflow hidden, so their right borders are sliced off. They are also 38 px tall against 52 px for the other fields.",
+   "evidence": "Before/after /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d8/contact-fields-compare.png; measurements in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d3/contact-390.json (custom.contactComps, custom.formComp)",
+   "cause": "In the Wix mobile layout of form #comp-lii7mqe42 the two components #comp-lii7mqfb3 (dropdown) and #comp-lii7mqfl1 (phone input) kept a 260 px width and have no grid placement (grid-area auto), unlike the other fields (232 px, explicit rows).",
+   "fixType": "embed-css",
+   "fixDetail": "Add to embed 9c457b7a:\n#comp-lii7mqfb3 *,#comp-lii7mqfl1 *{max-width:232px!important}\n#comp-lii7mqfb3 select,#comp-lii7mqfl1 input{width:232px!important;box-sizing:border-box!important}\nProper fix when someone is next in the Editor: mobile view > Contact page > resize the Code and Phone fields to match the others (width 232, height 52).",
+   "fixRisk": "Very low; two component IDs on one page. If the form is rebuilt in Wix the IDs change and the rule simply stops applying.",
+   "stagedResult": "Staged with GB_CSS at 320: both inner fields measure 232 px wide (right edge 277), aligned with the others and fully inside the card (right half of contact-fields-compare.png).",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-13",
+   "finder": "core-phone",
+   "title": "Membership page: 'JOIN NOW' sits in the top half of an over-tall button",
+   "kind": "mobile-layout",
+   "severity": "low",
+   "pages": [
+    "/pricing-plans/subscribe",
+    "/pricing-plans/list (redirects there)"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "Each of the four plan buttons is 76 px tall with the label 14 px from the top and about 38 px of empty orange below it, so the label looks misplaced.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/pricing-plans-subscribe-320-top.png; rules in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d11/pricing-plans-subscribe-320.json (custom.labRules, custom.kids); staged /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d12/pricing-plans-subscribe-320.json",
+   "cause": "The rule 'html.gbm-bc #SITE_PAGES [data-hook=\"plan-cta\"], html.gbm-bc #SITE_PAGES [data-hook=\"plan-cta\"] span{min-height:48px;line-height:1.2!important}' (in gbm-broadcast-skin-v1 and gbm-swamp-night-shell-v1) gives the 48 px minimum to the inner <span> as well as the button, so the 24 px line of text sits at the top of a 48 px block span.",
+   "fixType": "embed-css",
+   "fixDetail": "Add to embed 9c457b7a:\nhtml.gbm-bc #SITE_PAGES [data-hook=\"plan-cta\"] span{min-height:0!important}",
+   "fixRisk": "Very low; plan buttons only. Button stays 76 px tall (tap target unchanged).",
+   "stagedResult": "Staged with GB_CSS at 320: label box 48 -> 24 px, label offset from top 14 -> 26 px in a 76 px button, i.e. exactly centred.",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-14",
+   "finder": "core-phone",
+   "title": "Homepage scoreboard at 320 px: second link is cut off and team names shrink to 'Neb...'",
+   "kind": "mobile-layout",
+   "severity": "low",
+   "pages": [
+    "/"
+   ],
+   "widths": [
+    320
+   ],
+   "symptom": "Only at 320 px wide (small iPhones, zoomed displays). In the Gators game card the link row shows 'Gamecast on ESPN' then 'Game day magazi' sliced at the card edge. In the ranked-games list team names are ellipsised although there is room for a second line: 'Mississippi S...' (needs 120 px, has 108) and 'Neb...' (needs 68 px, has 47). Fine at 390 and 430.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/home-320-top.png (live); box chain in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d12/home-320.json (custom.chain) and /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d10/home-320.json (custom.lsbLinks, lsbTeams); staged team names in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d11/home-320-top.png",
+   "cause": "In section#gbm-lsb .hero the grid div.hb has one column sized to its content (282 px) inside a 224 px content box, so flex row div.dt and link row span.lk are 282 px wide (x=48 to 330 in a 320 viewport) and wrap too late; span.nm team names have nowrap + ellipsis. Scoreboard bundle is loaded by embed ca1267d3 'GBM - Front page Top 25 scoreboard v1'.",
+   "fixType": "embed-css",
+   "fixDetail": "Add to embed 9c457b7a (only applies below 360 px, so the approved look at normal phone widths does not change):\n@media (max-width:359px){#gbm-lsb .hero .lk{width:auto!important;max-width:calc(100vw - 96px)!important;min-width:0!important}#gbm-lsb button.gb .nm{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;max-width:none!important}}\nCleaner fix in the scoreboard bundle itself: .hb{grid-template-columns:minmax(0,1fr)} (not staged).",
+   "fixRisk": "Low. Long team names take two lines at 320, making those rows about 20 px taller. Homepage element: tell the homepage owner even though the change is invisible above 359 px.",
+   "stagedResult": "Staged with GB_CSS at 320: link row narrows to 224 px (x=48-272); 'Gamecast on ESPN' on one line, 'Game day magazine' and 'Roster' on the next, nothing clipped; 'Mississippi State' and 'Nebraska' show in full.",
+   "confidence": 0.85,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-15",
+   "finder": "core-phone",
+   "title": "Search result titles are cut to one line on phones",
+   "kind": "readability",
+   "severity": "low",
+   "pages": [
+    "/search?q=gators"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "Result titles are single-line with an ellipsis in a 280 px column: 'There's A Party Going On In Hogtown U...' needs 404 px, 'Same old story, Gators come close aga...' needs 473 px. Several 'Other Pages' results read identically ('GatorBait Media | Florida Gators News, ...') so they cannot be told apart.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/sg/search-320-top.png; widths in /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d1/search-320.json (custom.titles: white-space nowrap, text-overflow ellipsis, scrollWidth 404/473 vs clientWidth 280)",
+   "cause": "Wix Search mobile layout sets a[data-hook=\"item-title\"] to white-space:nowrap; text-overflow:ellipsis.",
+   "fixType": "embed-css",
+   "fixDetail": "Add to embed 9c457b7a (NOT staged):\n#SITE_PAGES#SITE_PAGES [data-hook=\"search-results-root\"] a[data-hook=\"item-title\"]{white-space:normal!important;display:-webkit-box!important;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden!important}",
+   "fixRisk": "Low, but untested: check the 'Blog Posts (4485)' group headings, which share the item-title hook, still look right.",
+   "confidence": 0.6,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-phone-16",
+   "finder": "core-phone",
+   "title": "Homepage makes requests that always fail or repeat (YouTube feed blocked, feeds fetched three times)",
+   "kind": "other",
+   "severity": "low",
+   "pages": [
+    "/"
+   ],
+   "widths": [
+    320,
+    390,
+    430
+   ],
+   "symptom": "On every homepage load: a fetch of https://www.youtube.com/feeds/videos.xml?channel_id=UCtR8b1sKFuwaRjKy5BiXRvA is blocked by the browser (CORS) and logs an error; /blog-feed.xml is fetched 3 times and ESPN's scoreboard/header API 3 times (72 KB) in one view; jsDelivr site-shell.css is requested twice on every page; Wix logs 'Controller loading error'. The line 'Gator conversation, from people who know the program.' in the Buddy Martin Show promo (.sh-watch.bc-tv p) is 10 px text.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/home-390.json (errors, duplicates) and /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/d10/home-320.json (custom.tiny)",
+   "cause": "Homepage bundles each fetch their own copy of the same feeds (story list, ticker, scoreboard) instead of sharing one response, and one of them still tries the YouTube RSS feed directly from the browser, which YouTube does not allow cross-origin. I did not trace which bundle makes each call.",
+   "fixType": "needs-coordination",
+   "fixDetail": "Homepage loader owner: remove the direct YouTube RSS fetch (the page already reads presidente49.github.io/.../buddy-videos.json), and share one in-memory promise for /blog-feed.xml and for the ESPN scoreboard call. Optional type fix: #sh-main .sh-watch.bc-tv p{font-size:12px} (not staged; homepage look).",
+   "fixRisk": "Low; no visible change except the 2 px type bump, which needs the homepage owner's OK.",
+   "confidence": 0.7,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-1",
+   "finder": "core-desktop",
+   "title": "STATS page (/groups) scrolls itself to the bottom 2-5 s after it loads",
+   "kind": "broken-widget",
+   "severity": "high",
+   "pages": [
+    "/groups"
+   ],
+   "widths": [
+    768,
+    1366,
+    1920
+   ],
+   "symptom": "The header STATS link goes to /groups. The page paints at the top, then 2.3-4.6 s after load it animates down by itself (about 0.8 s) and parks on the footer. At 1366x900 it ends at scrollY 1734 of a possible 1734 (page 2634 px); in phone emulation it heads for y=3530 (max 4008). No user input involved.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/spy2/groups-1366.json (custom.snaps, custom.calls, custom.scrolls: load at t=6169 ms, first scroll t=9154, y=1734 at t=9913, then nothing until the checker scrolls at 15330). Screenshot taken 9 s after load with nothing touched shows the footer: .../out-core-desktop/spy2/groups-1366-top.png and .../out-core-desktop/spy2/groups-768-top.png. First pass also caught it mid-scroll: .../out-core-desktop/groups-1920-top.png. Call stack: 37+ window.scrollTo calls from Wix Thunderbolt group_6.d2a279cc.chunk.min.js (Object.scrollToComponent), ramping 0 -> 2214.3.",
+   "cause": "The stats embed (head comment 'GBM_FLORIDA_STATS_V1 route=/florida-football-stats,/groups', owned by another session as 756655cf) renders main#gbm-stats as a child of body above the native Wix Groups page and collapses #SITE_CONTAINER to height 0 at y=2215 (desktop) / 3530 (phone), i.e. underneath the stats. The native Groups app still runs on that page and calls Wix scrollToComponent on load; its target is the collapsed native container, which now sits at the bottom, so Wix scrolls the window there.",
+   "fixType": "needs-coordination",
+   "fixDetail": "One CSS rule, present in <head> from first paint (in the stats embed's own CSS, or in 'GBM - Readability and speed fixes v1' 9c457b7a without touching 756655cf):\nhtml.gbm-sp-app:has(body > #gbm-stats) #SITE_CONTAINER{position:absolute!important;top:0!important;left:0!important;right:0!important}\nThis parks the hidden zero-height native container at the top, so Wix's scroll target becomes y=0. Longer term: give stats its own Wix page (the embed already lists /florida-football-stats, which is a 404 today) so the Groups app is not loaded at all.",
+   "fixRisk": "Staged with the unscoped selector 'html.gbm-sp-app #SITE_CONTAINER'; the :has() scope was added afterwards for safety and was not itself staged. Class gbm-sp-app appeared only on /groups among the 19 core pages; other app pages were not checked, so keep the scope. Must load before about 2 s after page load.",
+   "stagedResult": "With the rule injected at DOMContentLoaded (GB_INIT .../out-core-desktop/init-stage-statsfix.js) Wix's calls became window.scrollTo(0,0) only (4 on desktop, 26 in phone emulation), zero scroll events in 9 s, page stayed at y=0, page height unchanged (2634 / 4435). Proof: .../out-core-desktop/stage-stats/groups-1366.json, .../stage-stats/groups-1366-top.png, .../stage-stats/groups-768-top.png.",
+   "confidence": 0.92,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-2",
+   "finder": "core-desktop",
+   "title": "Latest page: three large empty blocks on desktop (beside the wire list, under More Episodes, half-empty More Stories row)",
+   "kind": "dead-space",
+   "severity": "high",
+   "pages": [
+    "/gatorbait-media-blogs"
+   ],
+   "widths": [
+    1366,
+    1920
+   ],
+   "symptom": "On the Latest page (top-nav LATEST) at desktop widths: (a) right of the LATEST wire list, under the two column cards, a blank block 689 px wide x 581 px tall; (b) under the 3-item MORE EPISODES list, 447 x 309 px blank next to the big video; (c) MORE STORIES shows 2 cards in a 4-column row, leaving 660 x 410 px blank.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/np-base/gatorbait-media-blogs-1366.json (custom.midBottomGap=581, tvListGap=309, gridRightGap=660, custom.wire/col/card rects). Pictures of the untouched layout: .../out-core-desktop/stage/blog-1366-mid.png and .../out-core-desktop/stage/blog-1366-low.png.",
+   "cause": "Custom newspaper layout #gbm-np (inline script#gbm-np-boot + style#gbm-np-style in head; bundle not located in the repo checkout). div.np-mid is a 3-column grid (573 + 327 + 327 px): section.np-wire is 961 px tall, the two article.np-col cards are 366 and 414 px. #np-tv is 815 + 447 px with a 251 px list beside a 575 px video block. ul#np-grid is fixed at 4 x 306 px and currently receives only 2 items (20 stories loaded, 18 used higher up).",
+   "fixType": "embed-css",
+   "fixDetail": "Desktop-only CSS (saved in .../out-core-desktop/fix-all2.css, section E; put in 9c457b7a or the np embed):\n@media (min-width:1000px){\n#gbm-np .np-mid{grid-template-columns:repeat(2,minmax(0,1fr))!important}\n#gbm-np .np-mid>.np-wire{grid-column:1/-1;column-count:2;column-gap:34px}\n#gbm-np .np-mid>.np-wire>h2{column-span:all}\n#gbm-np .np-mid>.np-wire li{break-inside:avoid}\n#gbm-np .np-mid>.np-wire .np-day{break-inside:avoid;break-after:avoid}\n#gbm-np #np-tv .np-vl>li{grid-template-columns:200px minmax(0,1fr)!important;column-gap:14px}\n#gbm-np #np-tv .np-vl>li>a.np-vid{width:200px!important;height:auto!important;aspect-ratio:16/9}\n#gbm-np #np-grid:has(>li:nth-child(1):last-child){grid-template-columns:minmax(0,1fr)!important}\n#gbm-np #np-grid:has(>li:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))!important}\n#gbm-np #np-grid:has(>li:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))!important}\n#gbm-np #np-grid:has(>li:nth-child(-n+2):last-child) .np-card{display:grid!important;grid-template-columns:306px minmax(0,1fr);column-gap:20px;row-gap:8px;align-content:start}\n#gbm-np #np-grid:has(>li:nth-child(-n+2):last-child) .np-card>:first-child{grid-row:1/span 6}\n}",
+   "fixRisk": "Visible layout change on the Latest page: the wire becomes two columns and the two column cards move below it (a day group can split across the columns). Show the owner the two staged pictures first. The grid rules only cover a grid holding 1-3 cards in total; after 'Load more stories' a short last row can still occur. Needs :has() (all current browsers).",
+   "stagedResult": "Staged at 1366, 1920 and 1024: gap (a) 581 -> 33 px, (b) 309 -> 153 px, (c) 660 -> 0 px; page 4169 -> 3845 px at 1366; no horizontal overflow. Pictures: .../out-core-desktop/np-fix/npfix-1366-mid.png and .../out-core-desktop/st2/st2-blog-low.png; data .../out-core-desktop/st2/gatorbait-media-blogs-1366.json.",
+   "confidence": 0.85,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-3",
+   "finder": "core-desktop",
+   "title": "Known item, new numbers: eager link prefetch pulls about 17-18 MB of other pages per page view in phone/tablet Chrome; staged mitigation cuts it to about 1 MB",
+   "kind": "speed",
+   "severity": "medium",
+   "pages": [
+    "/about",
+    "/gatorbait-media-blogs",
+    "/",
+    "/magazine",
+    "/the-buddy-martin-show",
+    "sitewide"
+   ],
+   "widths": [
+    768
+   ],
+   "symptom": "In phone/tablet emulation every page view transfers 18-21 MB instead of 2.5-4 MB: /about 20,893 KB, /gatorbait-media-blogs 21,348 KB, / 18,372 KB, /magazine 20,224 KB. The extra is 55-60 prefetched HTML documents of 450-527 KB each (e.g. /groups 527 KB, /magazine 500 KB), some fetched 3-4 times.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/spec-base/about-768.json (kb 20893; hosts: gatorbaitmedia.com 60 req / 18,793 KB; biggest[] all type Prefetch; custom.spec holds the rule text; 71 distinct internal links). .../out-core-desktop/scrolltest/gatorbait-media-blogs-768.json (kb 21348; 56 req / 17,886 KB). Same pages in desktop mode: 2,566 KB (.../out-core-desktop/about-1366.json).",
+   "cause": "Wix-injected <script type=\"speculationrules\"> in <head> (no id): {\"prefetch\":[{\"tag\":\"mpa-prefetch-eager\",\"where\":{\"and\":[{\"href_matches\":\"/*\"},{\"not\":{\"href_matches\":\"/<current path>\"}}]},\"eagerness\":\"eager\"}]}. With touch emulation Chrome prefetches each internal link as it scrolls into view (cap about 50); in desktop mode it only prefetches on hover. Every page's HTML is 450-530 KB compressed, so each prefetch is expensive.",
+   "fixType": "embed-js",
+   "fixDetail": "Head embed (must be in <head>, before links exist) that downgrades the rule to hover/touch-down prefetch; saved as .../out-core-desktop/init-spec.js:\n<script>(function(){function f(s){try{if(s.__gb)return;var j=JSON.parse(s.textContent),c=0;(j.prefetch||[]).concat(j.prerender||[]).forEach(function(r){if(r.eagerness==='eager'){r.eagerness='moderate';c=1}});if(c){var n=document.createElement('script');n.type='speculationrules';n.__gb=1;n.textContent=JSON.stringify(j);s.replaceWith(n)}}catch(e){}}function scan(){document.querySelectorAll('script[type=\"speculationrules\"]').forEach(f)}scan();var mo=new MutationObserver(scan);mo.observe(document,{childList:true,subtree:true});addEventListener('load',function(){scan();setTimeout(function(){mo.disconnect()},5000)})})();</script>",
+   "fixRisk": "Numbers come from the checker scrolling the whole page (worst case); a reader who does not scroll prefetches fewer pages. Not confirmed on a physical Android phone; Safari ignores these rules. After the change the next page no longer opens instantly from cache in Chrome unless hovered/pressed first.",
+   "stagedResult": "Same script run before page scripts: /about 20,893 -> 3,553 KB (gatorbaitmedia.com 60 req / 18,793 KB -> 9 req / 1,452 KB, 2 prefetches left); /gatorbait-media-blogs 21,348 -> 4,025 KB. The rule was replaced while 0 links existed. Proof: .../out-core-desktop/spec-fix/about-768.json and .../out-core-desktop/spec-fix/gatorbait-media-blogs-768.json.",
+   "confidence": 0.75,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-4",
+   "finder": "core-desktop",
+   "title": "Membership page: fourth plan card orphaned on its own row, and JOIN NOW buttons 76 px tall with the label stuck at the top",
+   "kind": "dead-space",
+   "severity": "medium",
+   "pages": [
+    "/pricing-plans/list",
+    "/pricing-plans/subscribe"
+   ],
+   "widths": [
+    1366,
+    1920
+   ],
+   "symptom": "Four plans sit in a 3-column grid, so MAGAZINE MONTHLY drops to a second row alone with a 652 x 306 px blank area beside it; at 1366x900 the fourth plan is below the fold. The orange JOIN NOW buttons are 76 px tall and the label sits in the top third.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/pricing-plans-list-1920-top.png and .../out-core-desktop/pricing-plans-list-1920-bottom.png; DOM facts in .../out-core-desktop/deep/pricing-plans-list-1366.json (custom.pp: ul grid '294px 294px 294px', gap 32px, 4th li at x=211 y=790; button h=76, padding 14px 16px, label span h=48 with 24 px of text).",
+   "cause": "Wix Pricing Plans widget: [data-hook=PackagePicker-wrapper] > ul is a fixed 3 x 294 px grid inside the 978 px column and there are 4 li[data-hook=plan]. Buttons: button[data-hook=plan-cta] is content-box 48 px + 28 px padding, and its inner label spans carry min-height:48px (source of that min-height not identified).",
+   "fixType": "embed-css",
+   "fixDetail": "(.../out-core-desktop/fix-all2.css sections A and F)\n@media (min-width:1200px){[data-hook=\"PackagePicker-wrapper\"] ul:has(> li[data-hook=\"plan\"]:nth-child(4):last-child){grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:24px!important;width:1128px!important;max-width:none!important;margin-left:-75px!important;box-sizing:border-box!important}}\n@media (min-width:981px) and (max-width:1199px){[data-hook=\"PackagePicker-wrapper\"] ul:has(> li[data-hook=\"plan\"]:nth-child(4):last-child){grid-template-columns:repeat(2,294px)!important;justify-content:center!important}}\n[data-hook=\"plan-cta\"]{box-sizing:border-box!important;min-height:48px!important;height:auto!important;padding:10px 16px!important}\n[data-hook=\"plan-cta\"] span{min-height:0!important;height:auto!important}",
+   "fixRisk": "Applies only while there are exactly 4 plans. margin-left:-75px assumes the 978 px Wix column. Staged on /pricing-plans/list only (/subscribe is the same widget and height). Checkout itself not touched or tested. Phone layout not affected by the grid rules; the button rule is global and was only looked at on desktop.",
+   "stagedResult": "1366 and 1920: all four cards on one row (4 x 256 px), page 1864 -> 1498 px, buttons 48 px with centred label, no overflow. 1024: clean 2 x 2. Pictures: .../out-core-desktop/st2/st2-plans-1366.png, .../out-core-desktop/st2/st2-plans-1024.png; data .../out-core-desktop/st2/pricing-plans-list-1366.json.",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-5",
+   "finder": "core-desktop",
+   "title": "Homepage header: 'Free email' wraps onto a second line under SIGN IN at 1280-1536 px wide",
+   "kind": "other",
+   "severity": "medium",
+   "pages": [
+    "/"
+   ],
+   "widths": [
+    1280,
+    1366,
+    1440,
+    1536
+   ],
+   "symptom": "On laptop widths the homepage nav breaks: the 'Free email' chip drops to a second row by itself, touching the header's bottom border; the header grows from 84 to 90 px. At 1920 it fits on one row.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/home2/home-1366-top.png; measurements .../out-core-desktop/hdr/home-1366.json (custom.navRows=2, a#gbm-free-email-utility 46 px below the other links), same in hdr/home-1280.json, home-1440.json, home-1536.json.",
+   "cause": "header.sh-header nav is a 660 px flex row with flex-wrap:wrap and column-gap 16 px. Eight links (481 px) plus the injected a#gbm-free-email-utility (77 px) need 686 px, 26 px too many. This wrap is also one of the layout-shift sources on the homepage at 1366 (nav 44 -> 90 px).",
+   "fixType": "embed-css",
+   "fixDetail": "@media (min-width:1101px) and (max-width:1700px){#gbm-live header.sh-header nav{column-gap:12px!important}}\n(saved as .../out-core-desktop/fix-hdr.css). Put it in 9c457b7a, not in the header embed 7fee4de6 (issue #3 notes that one has about 80 characters of headroom).",
+   "fixRisk": "Only 6 px to spare; any extra nav item wraps again. Tiny change to the approved homepage (link spacing 16 -> 12 px) that restores the one-row header already seen at 1920.",
+   "stagedResult": "1280, 1366 and 1680: one row, header 84 px, no overflow. .../out-core-desktop/hdrfix/home-1366.json and .../out-core-desktop/hdrfix/hdr-1366-crop.png.",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-6",
+   "finder": "core-desktop",
+   "title": "Search results: the matched word is unreadable (dark navy text on a royal-blue highlight)",
+   "kind": "readability",
+   "severity": "medium",
+   "pages": [
+    "/search?q=gators"
+   ],
+   "widths": [
+    1366,
+    1920
+   ],
+   "symptom": "Every occurrence of the search term in result titles and snippets shows as a solid blue block; the word cannot be read (contrast 1.26:1 in titles, 1.34:1 in snippets). This is separate from the result text colour fixed earlier today.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/sg/search-1366-top.png; computed styles in .../out-core-desktop/deep/search-1366.json (custom.search.marks: <mark> background rgb(0,33,165), color rgb(16,38,75) in a[data-hook=item-title] and rgb(59,74,102) in p[data-hook=item-description]).",
+   "cause": "Wix Site Search wraps matches in <mark>; the highlight background resolves to the brand blue while the text colour is inherited dark navy/grey.",
+   "fixType": "embed-css",
+   "fixDetail": "[data-hook=\"item-title\"] mark,[data-hook=\"item-description\"] mark{background:rgba(250,70,22,.18)!important;color:inherit!important;-webkit-text-fill-color:currentColor!important;font-weight:700;padding:0 2px;border-radius:2px}",
+   "fixRisk": "Low. Only evaluated at 1366 (plus the 1920 screenshot); phone layout of the search page not checked for this.",
+   "stagedResult": "Matches render as bold dark text on a light orange tint: .../out-core-desktop/st2-sg/search-mid.png, .../out-core-desktop/st2-sg/search-1366.json.",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-7",
+   "finder": "core-desktop",
+   "title": "Magazine: empty right half beside THE GAME card on desktop",
+   "kind": "dead-space",
+   "severity": "medium",
+   "pages": [
+    "/magazine",
+    "/magazine/2022",
+    "/2021-gatorbait-magazine"
+   ],
+   "widths": [
+    1366,
+    1920
+   ],
+   "symptom": "Just below the cover and the 'Also in this issue' chips, THE GAME card fills only the left 589 px of a two-column row; the right 535 px (563 with the gap) x 568 px is empty blue.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/mag/magazine-1920-top.png (view shifted to y=1280) and .../out-core-desktop/mag/magazine-1920.json (custom.pgGameParent: div.pg-grid grid-template-columns 588.75px 535.25px; custom.sameRow=[]). .../out-core-desktop/magfix/magazine-1920.json confirms div.pg-grid has exactly one child, section#pg-game.",
+   "cause": "Magazine layout (#gbm-magazine-page): div.pg-grid is a two-column grid but only #pg-game is rendered into it this issue.",
+   "fixType": "embed-css",
+   "fixDetail": "#gbm-magazine-page .pg-grid > #pg-game:only-child{grid-column:1 / -1!important}\nPut it in 9c457b7a; issue #3 notes the Magazine embed 1dd74333 has only about 54 characters of headroom.",
+   "fixRisk": "The game card becomes a full-width banner (team boxes and predictor bar stretch). If a second card is added to the grid later the rule stops applying on its own.",
+   "stagedResult": "Card spans the 1152 px row, no empty half, page 44,507 -> 44,452 px: .../out-core-desktop/magfix/magazine-1920-top.png.",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-8",
+   "finder": "core-desktop",
+   "title": "Show page loads a hidden 0x0 YouTube live player: about 1.17 MB wasted on every visit",
+   "kind": "speed",
+   "severity": "medium",
+   "pages": [
+    "/the-buddy-martin-show",
+    "/event-list"
+   ],
+   "widths": [
+    768,
+    1366,
+    1920
+   ],
+   "symptom": "/the-buddy-martin-show transfers 4,119 KB; 1,099 KB of that (10 requests, including the 533 KB YouTube base.js) belongs to an invisible 0x0 iframe. /event-list redirects to the same page. The homepage's six hidden players are already blanked; this one is not.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/misc/the-buddy-martin-show-1366.json (hosts: youtube.com 10 req / 1099 KB; custom.iframes: src https://www.youtube.com/embed/live_stream?channel=UCtR8b1sKFuwaRjKy5BiXRvA, title 'The Buddy Martin Show', chain wix-iframe > div#comp-mmz3dfxv > section#comp-lmf3ofo8, all 0x0). Phone emulation: 1,015 KB (.../out-core-desktop/the-buddy-martin-show-768.json).",
+   "cause": "The original Wix page under the custom show layout still contains a native HTML-iframe element (#comp-mmz3dfxv in section #comp-lmf3ofo8) pointing at the YouTube live_stream embed. The section is collapsed to 0x0 but the iframe still loads.",
+   "fixType": "embed-js",
+   "fixDetail": "Add to the head script of 9c457b7a (same idea as its homepage blanking); saved as .../out-core-desktop/init-blank-showyt.js:\n(function(){var K=function(){var f=document.querySelector('#comp-mmz3dfxv iframe');if(f&&f.getAttribute('src')&&f.getAttribute('src').indexOf('about:blank')<0){f.setAttribute('src','about:blank');return true}return false};if(!K()){var mo=new MutationObserver(function(){if(K())mo.disconnect()});mo.observe(document,{childList:true,subtree:true});setTimeout(function(){mo.disconnect()},15000)}})();\nPermanent alternative (Wix Editor): open The Buddy Martin Show page and delete the HTML iframe element comp-mmz3dfxv.",
+   "fixRisk": "None seen: the frame is 0x0 and cross-origin, so the custom show layout cannot be using it. The dead thumbnail i.ytimg.com/vi/EwF0KOj-fEI still 404s after the change (separate known item; it was not an <img> in the DOM when checked).",
+   "stagedResult": "4,119 -> 2,951 KB (-1,168 KB, -28%), requests 209 -> 190, youtube.com host gone, layout identical: .../out-core-desktop/showfix/the-buddy-martin-show-1366.json.",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-9",
+   "finder": "core-desktop",
+   "title": "Latest page lead photo is a 635-933 KB lossless WebP; the same picture as AVIF is 51-57 KB",
+   "kind": "speed",
+   "severity": "medium",
+   "pages": [
+    "/gatorbait-media-blogs"
+   ],
+   "widths": [
+    768,
+    1366,
+    1920
+   ],
+   "symptom": "The largest image on the Latest page (the lead story photo) costs 621 KB on desktop and 911 KB in phone/tablet emulation, and a second 120 KB copy (w_480) is also downloaded.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/gatorbait-media-blogs-1920.json (biggest[0] 621KB ...d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9~mv2.png/v1/fit/w_1280,h_1280,al_c,q_80/file.webp) and .../out-core-desktop/scrolltest/gatorbait-media-blogs-768.json (911KB at w_1600). Direct size check of that CDN file: w_1280 file.webp 634,818 bytes; file.jpg 142,427; with ',enc_avif,quality_auto/file.jpg' 50,860. w_1600: 932,590 vs 57,407 bytes.",
+   "cause": "The newspaper layout (#gbm-np, loaded by inline script#gbm-np-boot) builds image URLs as '/v1/fit/w_N,h_N,al_c,q_80/file.webp'. When the post cover is a PNG (today's lead is), Wix returns a lossless WebP.",
+   "fixType": "embed-js",
+   "fixDetail": "In the np bundle change the URL template from '/v1/fit/w_N,h_N,al_c,q_80/file.webp' to '/v1/fit/w_N,h_N,al_c,q_80,enc_avif,quality_auto/file.jpg' (the form Wix's own feed uses) for the lead image and the cards. Stop-gap that needs no code (post-content): re-upload this cover as a JPEG.",
+   "fixRisk": "Low. The cost only appears when a cover is a PNG, so it comes and goes with the lead story. I could not find the np bundle source in the local checkout, so the exact line is not quoted; the embed id was not looked up.",
+   "stagedResult": "Not staged in the page; the replacement URLs were fetched directly and returned 200 with the sizes above.",
+   "confidence": 0.85,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-10",
+   "finder": "core-desktop",
+   "title": "Latest page: the window itself cannot scroll (body is the scroll box) because html has overflow-x:clip",
+   "kind": "mobile-layout",
+   "severity": "medium",
+   "pages": [
+    "/gatorbait-media-blogs"
+   ],
+   "widths": [
+    768,
+    1366,
+    1920
+   ],
+   "symptom": "On the Latest page document height equals the viewport (900 of 4169 px at 1366; 1024 of 5195 at 768), window.scrollY is always 0 and window.scrollTo does nothing; the page scrolls inside <body>. Anything tied to window scroll (browser scroll restoration on Back, the phone address bar collapsing, tap-status-bar-to-top, Wix back-to-top) does not behave as on the other pages.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/scrolltest/gatorbait-media-blogs-1366.json and .../scrolltest/gatorbait-media-blogs-768.json (custom.html overflow-x clip, scrollHeight = viewport; custom.afterWindowScrollTo600 sy=0; custom.afterBodyScrollTop600 bodyST=600; custom.rules lists the source rules). Control: .../scrolltest/about-1366.json scrolls normally (sy=600).",
+   "cause": "<style id=\"gbm-np-hold\"> in head: 'html.gbm-np-on, html.gbm-np-on body{overflow-x:clip!important;max-width:100vw}' and 'html:has([data-hook=\"feed-page-root\"]), html:has([data-hook=\"feed-page-root\"]) body{overflow-x:clip!important;max-width:100vw}'. A non-visible overflow on <html> stops body's overflow propagating to the viewport, so body (height 100%) becomes its own scroller. The second rule would do the same on any page with a native feed root (category pages not verified).",
+   "fixType": "embed-css",
+   "fixDetail": "html.gbm-np-on:not(#gbx),html:has([data-hook=\"feed-page-root\"]):not(#gbx){overflow-x:visible!important}\n(body keeps overflow-x:clip, which then applies to the viewport). Better still: drop 'html' from the two selectors in style#gbm-np-hold.",
+   "fixRisk": "Staged only with the first selector and only at 1366 and 1024. The clip may have been added to stop sideways scrolling on phones, so check 320-430 px before shipping. I could not test Back-button restoration or the mobile address bar, so the reader-facing impact is inferred from the measured scroll facts.",
+   "stagedResult": "documentElement.scrollHeight became the full page (3845 at 1366, 4881 at 1024), window.scrollY moved to the bottom, horizontal overflow stayed 0: .../out-core-desktop/st2/gatorbait-media-blogs-1366.json (custom.np.scroll) and .../out-core-desktop/st2/gatorbait-media-blogs-1024.json.",
+   "confidence": 0.6,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-11",
+   "finder": "core-desktop",
+   "title": "/tags is an unfinished Wix 'Item List' page: 12 near-empty cards with invisible, dead 'Read More' buttons, and it is indexable",
+   "kind": "broken-widget",
+   "severity": "medium",
+   "pages": [
+    "/tags"
+   ],
+   "widths": [
+    768,
+    1366,
+    1920
+   ],
+   "symptom": "Title bar says TAGS, the page heading is the Wix default 'ITEM LIST', then 12 boxes 754 x 265 px each holding only a tag name and its slug (24-team playoff ... AP Top 25). 'Read More' is nearly invisible (rgb(230,234,245) on rgb(244,246,250), 1.11:1) and has no link. Page is 4,747 px tall on desktop; in phone emulation each card has a 188 px empty band.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/tags-1366-top.png, .../out-core-desktop/tags-768-gap1.png, .../out-core-desktop/deep/tags-1366.json (custom.tags: n=12, every item href=null, h1 'Item List', robots index, canonical /tags; repeater #comp-lpko32x32 in section #comp-lpko34z0).",
+   "cause": "A Wix CMS dynamic list page left on its default template (repeater comp-lpko32x32). It is in pages-sitemap.xml and in site-search results ('Browse Stories by Topic') but nothing in the header or footer links to it.",
+   "fixType": "wix-editor",
+   "fixDetail": "Owner call between two Editor actions: (1) hide it: Pages > Tags (Item List) > SEO basics > turn off 'Let search engines index this page' and untick it from site search; or (2) delete the dynamic list page and add a 301 from /tags to /gatorbait-media-blogs in SEO > URL Redirect Manager. A CSS embed cannot make this page useful.",
+   "fixRisk": "Deleting a CMS page is content removal, so it needs the owner's OK. Individual tag item pages were not checked.",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-12",
+   "finder": "core-desktop",
+   "title": "Cyber Weekend promo says All Access Annual is $49, but the membership page it links to shows $99 and never mentions the code",
+   "kind": "content-data",
+   "severity": "medium",
+   "pages": [
+    "/pricing-plans/subscribe",
+    "/pricing-plans/list",
+    "/post/cyber-weekend-gator-bait-all-access-annual-is-49-and-stays-49"
+   ],
+   "widths": [
+    1366
+   ],
+   "symptom": "The site-wide ticker and the post headline read 'Gator Bait All Access Annual is $49 - and stays $49'. The post's deck says the price needs code GATOR49, Nov 27-30. Its 'Subscribe Now' link lands on the plan page, where the card says $99 and the 'How billing works' box says 'All Access is $99 per year'; the code is not mentioned anywhere there. The post body itself is behind the 'Want to read more? Subscribe' wall.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/misc/post-crop1.png (deck with GATOR49 and the paywall box), .../out-core-desktop/misc/post-cyber-weekend-gator-bait-all-access-annual-is-49-and-stays-49-1366.json (custom.planLinks), .../out-core-desktop/pricing-plans-list-1920-top.png and .../out-core-desktop/pricing-plans-list-1920-bottom.png ($99 card and billing box).",
+   "cause": "The offer exists only as a coupon mentioned in the post deck; the plan page copy (custom 'How billing works' box) was written for the regular price.",
+   "fixType": "needs-owner-decision",
+   "fixDetail": "Owner to choose: add one line to the 'How billing works' box for Nov 27-30 ('Cyber Weekend: enter code GATOR49 at checkout - All Access Annual $49'), and/or make the promo post free to read. This is membership/payment copy, so no change is proposed without approval.",
+   "fixRisk": "I did not open checkout, so whether GATOR49 is active and what it charges is unverified.",
+   "confidence": 0.8,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-13",
+   "finder": "core-desktop",
+   "title": "Policies page: legal card is only 539 px wide and sits 33 px left of centre on desktop",
+   "kind": "other",
+   "severity": "low",
+   "pages": [
+    "/policies"
+   ],
+   "widths": [
+    1366,
+    1920
+   ],
+   "symptom": "The policies text runs in a 481 px column inside a 539 px card (x 381-920 at 1366, 659-1196 at 1920; centre 927 vs 960), making the page 4,893 px tall with wide empty margins.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/policies-1920-top.png, .../out-core-desktop/deep/policies-1366.json (custom.chains: main#gbm-legal max-width 920px inside div#comp-k16hhn48 x=381 w=539, margin-left 193px).",
+   "cause": "main#gbm-legal is injected into a Wix text element (#comp-k16hhn48) that the classic editor fixed at 539 px wide, 188 px from the left of the 980 px column.",
+   "fixType": "embed-css",
+   "fixDetail": "@media (min-width:981px){#comp-k16hhn48{left:0!important;width:min(860px,calc(100% - 48px))!important;margin-left:calc((100% - min(860px,calc(100% - 48px)))/2)!important;margin-right:0!important}}",
+   "fixRisk": "Staged without the media query; the wrapper is added so the 320 px phone layout is untouched (that wrapped form was not re-run).",
+   "stagedResult": "Card 860 px and centred (253-1113 at 1366, 530-1390 at 1920); page 4,893 -> 3,698 px: .../out-core-desktop/stage/policies-1920-top.png, .../out-core-desktop/stage/policies-1920.json.",
+   "confidence": 0.85,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-14",
+   "finder": "core-desktop",
+   "title": "No-results search page: 215-395 px empty band below the footer",
+   "kind": "dead-space",
+   "severity": "low",
+   "pages": [
+    "/search?q=zzzzqqq"
+   ],
+   "widths": [
+    1366,
+    1920
+   ],
+   "symptom": "When a search finds nothing the footer ends at y=973 but the page keeps scrolling to 1188 (1366x900) or 1368 (1920x1080): a blank grey band under the footer.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/sz/search-1920-gap1.png and .../out-core-desktop/sz/search-1920.json (gaps[0].chain: div#pageBackground_ayun1 h=1080 minH=1080px; #SITE_CONTAINER h=265 at y=288).",
+   "cause": "Wix's page background (#pageBackground_ayun1, position:absolute, min-height:100vh) hangs from #SITE_CONTAINER, which starts 288 px down under the custom header, so the document is always at least 288 px + 100vh tall. Same mechanism the existing gap guard embed 15302fb2 already removes for pageBackground_rf27d and pageBackground_c7tja (docs/SITEWIDE-DESIGN-AUDIT-2026-09-23.md).",
+   "fixType": "embed-css",
+   "fixDetail": "Extend the existing gap guard (15302fb2) to this page: #pageBackground_ayun1{min-height:0!important}, or generalise it: @media (min-width:981px){[id^=\"pageBackground_\"]{min-height:0!important}}",
+   "fixRisk": "Staged as the general selector without the media query, desktop only. Body background is the same colour, so nothing visible changes on taller pages. Phone layout not staged.",
+   "stagedResult": "Page height 1188 -> 973 (1366) and 1368 -> 1080 (1920); no gap reported: .../out-core-desktop/st2-sz/search-1366.json, .../out-core-desktop/st2-sz/search-1920.json.",
+   "confidence": 0.85,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-15",
+   "finder": "core-desktop",
+   "title": "404 pages are the bare Wix default, and /florida-football-stats (a route the stats embed claims) is one of them",
+   "kind": "other",
+   "severity": "low",
+   "pages": [
+    "/this-page-does-not-exist",
+    "/florida-football-stats"
+   ],
+   "widths": [
+    768,
+    1366,
+    1920
+   ],
+   "symptom": "Unknown URLs return HTTP 404 with Wix's stock black-on-white 'ERROR: PAGE NOT FOUND / 404 / Go to Homepage' page: no GatorBait header, footer, search or Barlow type (12 requests, 205 KB). /florida-football-stats returns the same page although the stats embed's head comment reads 'route=/florida-football-stats,/groups'.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/this-page-does-not-exist-1366-top.png, .../out-core-desktop/florida-football-stats-1366.json (status 404, title '404 Error: Page Not Found'), head comments in .../out-core-desktop/src/gatorbait-media-blogs-1366.json.",
+   "cause": "No custom 404 page is set up in Wix (site embeds do not run on the default error app), and no Wix page or redirect exists for /florida-football-stats; the header STATS link uses /groups.",
+   "fixType": "wix-editor",
+   "fixDetail": "Editor: Pages & Menu > add a custom '404 Error Page' with the site header/footer and links to Front Page, Latest and Search. Dashboard: SEO > URL Redirect Manager > 301 /florida-football-stats -> /groups (or create that page and move stats there, see the STATS finding).",
+   "fixRisk": "None for readers. /florida-football-stats is not linked from the header, footer or sitemap, so current traffic to it is probably small.",
+   "confidence": 0.9,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-16",
+   "finder": "core-desktop",
+   "title": "Homepage (known shift/duplicate-load items): exact sources measured",
+   "kind": "speed",
+   "severity": "medium",
+   "pages": [
+    "/"
+   ],
+   "widths": [
+    1366,
+    1920
+   ],
+   "symptom": "Layout shift on first view: CLS 0.31 at 1920 in two runs; 0.64, 0.44 and 0.09 at 1366 across three runs. Every view also makes one request that always fails and fetches the same feed three times.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/home2/home-1920.json and .../out-core-desktop/home2/home-1366.json (custom.shifts with elements and before/after boxes; custom.fetches with call stacks; duplicates[]).",
+   "cause": "Shifts at 1920: t=2.57 s, 0.149: article.sh-lead re-laid out (y 152 -> 128, height 474 -> 801) and section.gl-follow pushed from y=610 to 1049 when the broadcast layout replaces the first story block; t=3.27 s, 0.162: section#gbm-lsb (the 478 px scoreboard) is inserted and main#sh-main moves from y=156 to 634. At 1366 also the header nav growing 44 -> 90 px (see the header finding). Requests: broadcast-home-light.js@16df2e79 line 847 (glLoadVids, called from glFollow) fetches https://www.youtube.com/feeds/videos.xml?channel_id=UCtR8b1sKFuwaRjKy5BiXRvA, which is blocked by CORS on every load; /blog-feed.xml is fetched 3 times (inline script near document line 830 'start', broadcast-home-light.js loadFeed lines 595-598, inline 'feed' near line 315 at about 5.2-5.7 s); the ESPN scoreboard header is fetched 3 times (inline getLive/tick near lines 1496-1502 for basketball and football, plus home-scoreboard.js@90fc7f02 poll).",
+   "fixType": "needs-coordination",
+   "fixDetail": "All of this lives in objects other sessions own (homepage broadcast loader, scoreboard / game-day band). For them: reserve the scoreboard's 478 px (plus its 28 px gap) before it arrives, with a time-limited class so an ESPN outage cannot leave a permanent blank band; render the lead block in its final layout first time; drop or proxy the YouTube RSS fetch; share one /blog-feed.xml response between the three callers.",
+   "fixRisk": "Not staged; the objects are outside this slice.",
+   "confidence": 0.8,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-17",
+   "finder": "core-desktop",
+   "title": "Hidden native homepage still downloads its widgets and images (about 300 KB plus script work) and logs a broken-widget error on every view",
+   "kind": "speed",
+   "severity": "low",
+   "pages": [
+    "/"
+   ],
+   "widths": [
+    768,
+    1366,
+    1920
+   ],
+   "symptom": "#SITE_PAGES is display:none on the homepage, yet the browser still loads the native post-list bundle PostListViewerWidgetNoCss.bundle.min.js (176 KB), a 980x582 hero image (105 KB, 16b519_dd4759f7...), six 303x227 thumbnails marked loading=eager and six (blanked) iframes. Console on every desktop view: 'Component loader for tpaWidgetNative_c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939 is not defined' / 'not registered in ooiComponentsData'; in phone emulation 'Controller loading error'.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/home2/home-1366.json (custom.native, custom.hiddenImgs, biggest[], errors[]) and .../out-core-desktop/home-768.json (errors[]).",
+   "cause": "The original Wix Home page still carries its blog post-list widget, hero image, HTML iframes and an app widget (id c8e6cca8-...) that no longer registers; hiding the page with CSS does not stop them loading.",
+   "fixType": "needs-coordination",
+   "fixDetail": "In the Wix Editor remove the unused native elements from the hidden Home page (post list widget, the 980 px image, the HTML iframes, the widget with id c8e6cca8-3a46-4dd5-8ae4-9a809e2d2939). Needs the homepage controller and the owner: that native page is what shows if the custom homepage ever fails, and the baseline lock covers the homepage.",
+   "fixRisk": "Removes the native fallback content. Which Wix app c8e6cca8 belongs to was not identified.",
+   "confidence": 0.75,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-18",
+   "finder": "core-desktop",
+   "title": "Phone-UA at tablet width: inner pages are the 320 px layout magnified 2.4x, while Home, Magazine and (since mid-audit) Latest use the real width",
+   "kind": "mobile-layout",
+   "severity": "low",
+   "pages": [
+    "/about",
+    "/contact",
+    "/policies",
+    "/groups",
+    "/the-buddy-martin-show",
+    "/pricing-plans/list",
+    "/tags",
+    "/search?q=gators"
+   ],
+   "widths": [
+    768
+   ],
+   "symptom": "At 768 px with a phone user agent, About/Contact/Policies/Stats/Show/Membership/Tags/Search render a 320 px wide layout scaled 2.4x: the page title fills a third of the screen and About is 9,554 px tall. Home and Magazine render a proper 768 px layout.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/about-768-top.png vs .../out-core-desktop/home-768-top.png; viewport meta in .../out-core-desktop/spy2/groups-768.json ('width=320, user-scalable=yes', visual scale 2.4) vs .../out-core-desktop/spy2/home-768.json ('width=device-width, initial-scale=1, viewport-fit=cover').",
+   "cause": "Wix's mobile viewport (width=320) is still in force on native inner pages; a scoped override exists only for /, /magazine and /post/* (issue #3 closing summary lists the rest as a deliberate open item). /gatorbait-media-blogs gained class gbm-wide and the real-width viewport between my 13:05 and 13:14 runs, so someone is extending it now.",
+   "fixType": "needs-coordination",
+   "fixDetail": "Flag only: when the override is extended, the custom-rendered pages /groups (stats) and /the-buddy-martin-show are the safest next candidates; native forms and checkout need device testing first.",
+   "fixRisk": "Real iPads send a desktop user agent and get the desktop layout, so this affects landscape phones, foldables and small Android tablets; portrait phones only see a 1.1-1.3x enlargement.",
+   "confidence": 0.8,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-19",
+   "finder": "core-desktop",
+   "title": "About page still shows the old Wix staff block above the new team section (duplicate people, stray decoration lines, misaligned columns)",
+   "kind": "other",
+   "severity": "low",
+   "pages": [
+    "/about"
+   ],
+   "widths": [
+    1366,
+    1920
+   ],
+   "symptom": "Below Buddy's letter the original 'GATORBAIT MEDIA STAFF' block shows Brenden Martin and Franz Beard with small photos, a floating orange/green rule attached to nothing and a lone 'Buddy Martin' caption; directly under it the new 'The people behind GatorBait Media / Writers and staff' section lists the same people again. The intro heading starts at x=418, the letter at x=253 and the page title at x=51 (1366).",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/misc/about-crop1.png; element list in .../out-core-desktop/deep/about-1366.json (custom.chains.comps: comp-jiy4fkzj heading, comp-jje8afp5 and comp-jyq3zqb1 photos, comp-jiy7mbsy, comp-k2w32728, comp-jyq4560s, comp-jyq48si4 captions, comp-jiy7rh8j stray caption).",
+   "cause": "The native Wix section #comp-l9drh78s keeps its 2019 staff elements at fixed positions; the custom #gbm-team section (GBM_STAFF_V1) was added underneath.",
+   "fixType": "wix-editor",
+   "fixDetail": "Wix Editor > About: delete the old staff heading, two photos, their captions and the stray lines from section comp-l9drh78s, then shorten the section to end under the BUDDY MARTIN signature. Hiding them with CSS would reopen an empty band in this fixed-height section (the gap closed earlier today).",
+   "fixRisk": "Deletes page content, so owner sign-off is needed. Today's gap fix on #comp-l9drh78s holds: no blank band at 1366 or 1920 (section 1248 px, content ends 17 px above its bottom).",
+   "confidence": 0.8,
+   "verdicts": {},
+   "status": "unverified"
+  },
+  {
+   "id": "core-desktop-20",
+   "finder": "core-desktop",
+   "title": "Site search 'Other Pages' results expose hidden old-shell text and utility pages",
+   "kind": "content-data",
+   "severity": "low",
+   "pages": [
+    "/search?q=gators&type=pages"
+   ],
+   "widths": [
+    1366
+   ],
+   "symptom": "Searching shows 12 'Other Pages' hits: the homepage twice (/home and blank href) with snippets from the hidden native page ('Welcome to GatorBait Media Hey Gator! Read More HOME Latest SHOP JOIN SIGN IN Groups More...' and 'Today's Edition Dive into today's edition...'), plus 'Paywall - You don't have permissions to access this page', 'Members', the broken /tags page and the 2021/2022 magazine archive pages that now redirect to /magazine.",
+   "evidence": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/misc-s/search-1366.json (custom.results) and .../out-core-desktop/st2-sg/search-mid.png.",
+   "cause": "Wix Site Search indexes the text of the native pages that the custom layouts hide, and system pages are not excluded from site search.",
+   "fixType": "wix-editor",
+   "fixDetail": "Wix dashboard > Site Search settings: remove 'Other Pages' from the results, or per page (Home, Paywall, Members, Tags, the two magazine archive pages) switch off 'show this page in site search results'.",
+   "fixRisk": "None for layout. Owner may want About/Contact/Policies to stay searchable, so per-page exclusion is the gentler option.",
+   "confidence": 0.8,
+   "verdicts": {},
+   "status": "unverified"
+  }
+ ],
+ "coverage": [
+  {
+   "key": "core-phone",
+   "checked": [
+    "All 19 core paths loaded at 320, 390 and 430 (57 loads) plus 36 detail/staging loads; no horizontal overflow on any page at any width (overflowPx 0 everywhere); no broken images on any core page",
+    "/ (320/390/430): 23.3/17.3/17.3 MB with prefetch, 4.7 MB without; no dead space (checked full-page capture at 390); issues = prefetch, CLS 0.80-0.94, drawer shadow, 320-only scoreboard clipping",
+    "/magazine (and /magazine/2022, /2021-gatorbait-magazine which both redirect to it): 17.7-20.1 MB with prefetch; page is 88,736 px tall at 320 (74,643 at 390, 69,644 at 430), DOM 3,802 nodes; no blank bands detected, CLS 0-0.006, top and bottom screenshots clean, no drawer shadow",
+    "/the-buddy-martin-show (and /event-list which redirects to it): 12.8-13.5 MB with prefetch; full-page view at 390 clean, no dead space; issues = hidden YouTube frame, known dead thumbnail EwF0KOj-fEI still 404",
+    "/about: 12.9-16.8 MB with prefetch (30.5 MB on one run), 2.6 MB without; 9,554 px tall, full-page view clean, no dead space; desktop gap fix has no phone equivalent problem",
+    "/contact: 10.9-11.4 MB with prefetch, 2.5 MB without; no dead space; issues = Code/Phone field width, drawer shadow",
+    "/policies: 11.3 MB with prefetch; clean layout, no dead space (LCP read 5.7-6.3 s on two of three loads, 1.7 s on the third; not explained)",
+    "/gatorbait-media-blogs: 5.8-5.9 MB; top and bottom views clean, no dead space above footer (checked by scrolling the body scroller to 4,793 px); the three 'low contrast' items the checker listed are native Wix feed items hidden behind the custom wire layout, not visible to readers",
+    "/search?q=gators: 13.8-16.6 MB with prefetch, 3.0 MB without; issues = unreadable highlight, one-line titles",
+    "/search?q=zzzzqqq: 11.8-12.3 MB with prefetch; empty state is clear and compact, no dead space",
+    "/pricing-plans/subscribe (and /pricing-plans/list which redirects to it): 2.6-3.8 MB, no speculation rule; four plan cards fine, about 95 px between billing box and footer (acceptable); issue = JOIN NOW label position",
+    "/members: redirects to / at all widths (weights and CLS as homepage)",
+    "/groups: 11.8-12.3 MB with prefetch; shows the Football Stats page, layout clean at all widths, no dead space",
+    "/tags: 2.4 MB; broken Item List page (finding)",
+    "/florida-football-stats: 404 at all widths (finding)",
+    "/this-page-does-not-exist: 404, 205 KB, bare Wix error page (finding)",
+    "Native Wix pages use <meta viewport width=320>: at 390 and 430 they are the 320 layout zoomed 1.22x and 1.34x (confirmed by visualViewport scale); homepage and magazine use the real device width",
+    "Extra checks made while proving fixes: /roster (redirects to roster post, 392 MB), /gatorbait-media-blogs/tags/24-team-playoff (200, valid target for tag links)"
+   ],
+   "notChecked": [
+    "Real iPhone Safari: all loads were Chromium 158 with iPhone emulation, so the prefetch weight is proven for Chrome-family browsers only; Safari may ignore speculation rules",
+    "Opening the menu drawer, tapping links, submitting the contact form, newsletter sign-up, search typing, cookie-banner choices (no interaction was performed)",
+    "Logged-in states and member pages (/account/my-account, /my-wallet, /profile-1 etc.), checkout and payment steps behind JOIN NOW",
+    "The middle of the /magazine page by eye (74,643 px long; only top and bottom screenshots viewed, automated blank-band scan found nothing)",
+    "/about typography: body copy looks heavier than other pages and staff names in the directory cards look like a serif face in the screenshot; I did not confirm the computed fonts",
+    "Whether page-scoping custom embeds in Wix removes them from the viewer-model JSON on other pages (the HTML-weight fix depends on it)",
+    "Which script creates the hidden YouTube live_stream iframe and which makes the connect.facebook.net/login/ request that 404s on every page",
+    "Wix API was not queried; embed ids and names come from the live page's own embed list (52 embeds in the viewer model)",
+    "The first /search?q=gators JSON and screenshots were overwritten by the /search?q=zzzzqqq run (same file slug); re-run into the sg/ subfolder, so numbers quoted for gators come from the second run",
+    "Landscape orientation and tablet widths (768/820)"
+   ],
+   "notes": "All files are under /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-phone/ (first-pass JSON/PNG in the root; detail and staging runs in d1 to d14 and sg). Nothing was written to Wix, GitHub or the repo.\n\nBiggest wins, in order: (1) the prefetch script: one 700-character head embed cut phone page weight by 73-78% in staging; (2) roster headshots: 377 MB on one page; (3) the homepage 3-second re-render (other session's object); (4) five small CSS rules for embed 9c457b7a (search highlight, drawer shadow, contact fields, plan button, 320 scoreboard), all staged and all well under the 15,000-character cap together (about 1,400 characters; the embed's style block was 795 characters when measured).\n\nCorrection to the known-open list: the eager speculation rules ARE Wix's own script (confirmed by its position in the head, before the custom-embed region), but they can be neutralised from a custom embed; staged both ways.\n\nThe live site changed while I was auditing: a search 'View All' button measured 1.26:1 contrast in my first six loads and was fine afterwards, so another session edited CSS mid-audit. Re-verify the search page after applying fixes.\n\nRedirect facts (not problems): /members -> /, /event-list -> /the-buddy-martin-show, /magazine/2022 and /2021-gatorbait-magazine -> /magazine, /pricing-plans/list -> /pricing-plans/subscribe, /roster -> the roster post.\n\nPage weight without prefetch (staged): /contact 2.5 MB, /about 2.6 MB, /pricing-plans/subscribe 2.6 MB, /tags 2.4 MB, /search 3.0 MB, / 4.7 MB. In each, the HTML document (about 0.5 MB) and analytics tags (about 0.83 MB) are the largest parts.\n\nNo dead white space of 150 px or more was found on any core phone page except inside the /tags cards and under the 404 page."
+  },
+  {
+   "key": "core-desktop",
+   "checked": [
+    "All 19 core paths loaded through the shared checker at 768 (phone UA), 1366 and 1920; extra loads at 1024 (/gatorbait-media-blogs, /pricing-plans/list) and 1280/1440/1536/1680 (homepage header). Output folder: /tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-core-desktop/",
+    "/ (home): no blank band of 200 px or more at 1366/1920; 768 renders a true 768 px two-column layout; no auto-scroll (spy run). Issues found: header wrap, shift sources, hidden native widgets.",
+    "/magazine at 3 widths: 44,507 px on desktop is full-text magazine content, not dead space; one empty half-row (reported). /magazine/2022 and /2021-gatorbait-magazine both end on /magazine (same page, same height).",
+    "/the-buddy-martin-show at 3 widths: layout clean, sections end at the footer, 1920 content centred (360-1560). Only the hidden YouTube frame (reported). /event-list redirects to this page.",
+    "/about at 3 widths: today's fix holds - section #comp-l9drh78s is 1248 px with content ending 17 px above its bottom at 1366 and 1920; no band above the footer.",
+    "/contact at 3 widths: no problems; form card centred, page ends at the footer (only cosmetic: Code and Phone fields are 437 px vs 535 px for the others).",
+    "/policies at 3 widths: readable, no gaps; narrow off-centre card on desktop (reported).",
+    "/gatorbait-media-blogs: desktop dead blocks, body scroller, heavy lead image (reported); header handles 1024 by stacking the nav on a second row cleanly.",
+    "/search?q=gators: result titles and snippets readable, tabs readable; only the <mark> highlight is broken. 'View All' was dark-on-blue in my first pass (12:55) and white-on-blue in two later passes.",
+    "/search?q=zzzzqqq: 'No results' message readable; band below footer on desktop (reported); no band in phone emulation.",
+    "/pricing-plans/list and /pricing-plans/subscribe: same widget and height (1864 px); prices and billing box readable; orphan card and tall buttons (reported).",
+    "/members: logged-out visit ends on the homepage (final URL /). /groups: shows the football stats page (by design of the stats embed).",
+    "/tags, /florida-football-stats (404), /this-page-does-not-exist (404): reported.",
+    "Horizontal overflow: 0 px on every page and width tested. Broken images: none found by the checker on core pages. No overlapping elements seen in the screenshots reviewed.",
+    "Staged (not saved) and measured: stats scroll fix, Latest layout CSS, plan grid + buttons, header gap, search highlight, magazine game card, policies card, no-results band, show-page iframe blanking, prefetch downgrade, Latest window-scroll fix. Staged CSS/JS files: fix-all2.css, fix-hdr.css, fix-mag.css, init-stage-statsfix.js, init-blank-showyt.js, init-spec.js in the output folder.",
+    "Project check required by CLAUDE.md done read-only: cwd /home/user/gatorbait-media-redesign, remote Presidente49/gatorbait-media-redesign (canonical), branch fix-native-flash-20260926, HEAD bcf5f5b, clean tree, origin/main c0fb4e4; read issue #3 opening and latest comments, docs/SITEWIDE-DESIGN-AUDIT-2026-09-23.md and the start of AGENTS.md."
+   ],
+   "notChecked": [
+    "Logged-in views, sign-in, checkout and whether code GATOR49 works; contact form submission.",
+    "A real iPad (desktop user agent with touch): the checker's 768 is a phone user agent. Desktop-UA widths between 821 and 1023 were not run.",
+    "Physical phones: the prefetch volume without a full-page scroll, and Safari/Firefox behaviour.",
+    "Back/forward scroll restoration and address-bar behaviour on the Latest page (the checker cannot navigate back), so that finding's reader impact is inferred.",
+    "Most of /magazine below the first 2,300 px was judged from DOM measurements only (44,507 px page); no screenshots of the middle sections.",
+    "Category pages for the overflow-x:clip rule, individual /tags item pages, and other pages that might carry class gbm-sp-app.",
+    "Wix API reads were not used, so embed ids for the Latest layout (gbm-np), the 'How billing works' box and the min-height:48px button rule are not resolved; the np bundle source was not found in the local checkout (branch fix-native-flash-20260926).",
+    "Staged CSS was looked at on desktop (and 1024 for two pages); the global rules (search highlight, plan buttons, pageBackground) were not re-checked on the 320 px phone layout.",
+    "Hover, focus and keyboard states; dark mode; field data for Core Web Vitals (single lab runs only).",
+    "Whether the hidden native feed under the Latest layout (BlogViewerWidget bundle 151 KB plus 12 or more eager thumbnails) can be removed: the custom layout may read it."
+   ],
+   "notes": "The site changed while I was auditing: /gatorbait-media-blogs gained class gbm-wide and a real-width viewport at 768 between my 13:05 and 13:14 runs (container clock), and the search 'View All' colour differed between my first pass and later passes. Re-read live state before applying anything.\n\nPlacement: issue #3's latest comment says the Magazine embed 1dd74333 has about 54 characters of headroom and the header embed 7fee4de6 about 80, so every CSS/JS proposal here is meant for 'GBM - Readability and speed fixes v1' (9c457b7a) or a new small embed. All rules together are roughly 3.3 KB.\n\nSmaller things seen and not filed as findings: (1) homepage header and inner-page header use different menus (home: Front Page, Latest, Magazine, GatorBait TV, Podcasts, Search, Store, Sign in, Free email; inner: Front Page, Latest, Recruiting, Magazine, TV & Podcasts, Scores & Schedule, Roster, Stats) - owner decision under the homepage lock; (2) homepage right-rail white card has about 115 px of empty space under the Buddy Martin Show promo at 1366/1920; (3) three 10 px texts on the homepage, including the Watch card description; (4) /groups carries three H1s (stats title, 'GATORBAIT MEDIA', hidden 'Groups Feed'); (5) the 2021 and 2022 magazine archive URLs now land on the current magazine, so those archives are unreachable - owner call; (6) head still carries the live-band embed's script and style (GBM_LIVEBAND_V1, 5.7 KB + 2.8 KB) although the band is not rendered, because the script also sets the gbm-at-home class; (7) every page's HTML is 450-530 KB compressed, which is why each prefetch is so expensive.\n\nChecker caveats: on /groups the first-pass 'top' screenshots show a white band above the content; that is a capture artefact of screenshotting during Wix's animated scroll, not something readers see. On the Latest page the checker's gap detection was unreliable until window scrolling was restored, so its dead-space numbers come from my own measurements (np-base run). Desktop transfer sizes exclude speculation prefetches because desktop Chrome only prefetches on hover.\n\nNo writes were made anywhere: no Wix mutations, no GitHub comments, no repository edits; files exist only under the out-core-desktop scratch folder."
+  }
+ ]
+}

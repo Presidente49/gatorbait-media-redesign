@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Live updates: No. 20 Florida at Florida State",
+      "excerpt": "Live scoreboard and quarter-by-quarter game log for No. 20 Florida at Florida State, with every score from ESPN.",
+      "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-27T20:16:20Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_b9f46e74f9b940e9affc080bf4fac029~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Live updates: No. 20 Florida at Florida State"
+      }
+    },
+    {
       "title": "The Florida-Florida State Edition of GatorBait Magazine Is Out",
       "excerpt": "The Florida-Florida State pregame edition of GatorBait Magazine is live: 12 stories, Franz Beard's Soothsayer up front and Eddie Gilley closing, plus game time, TV, odds, rosters, schedules and the reference desk.",
       "url": "https://www.gatorbaitmedia.com/post/the-florida-florida-state-edition-of-gatorbait-magazine-is-out",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Jon Sumrall Says It's Time for Gator Football to Say Thanks."
-      }
-    },
-    {
-      "title": "No logic, no reason, just a bizarre Florida win",
-      "excerpt": "Florida needed a lucky bounce, a helmet on the turf and a last-minute sack to beat Vanderbilt 34-27. Franz Beard on a win that defied logic, plus the SEC scoreboard.",
-      "url": "https://www.gatorbaitmedia.com/post/no-logic-no-reason-just-a-bizarre-florida-win",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-22T13:03:20Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_1578415e2450441faa3777c215803eb6~mv2.jpg/v1/fit/w_1000,h_684,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for No logic, no reason, just a bizarre Florida win"
       }
     }
   ]

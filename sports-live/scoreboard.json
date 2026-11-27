@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T21:37:51Z",
+ "updatedAt": "2026-11-27T21:45:03Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "10:08",
+  "clock": "7:53",
   "period": 2,
   "score": {
    "fla": 7,
    "opp": 3
   },
-  "possession": "opp",
-  "lastPlay": "(10:49) No Huddle-Shotgun #14 A.Daniels pass complete short right to #21 Z.Parks caught at FLA16, for 2 yards to the FLA09 (#5 M.Graham)"
+  "possession": "fla",
+  "lastPlay": "(07:57) No Huddle-Shotgun #20 D.Clark rush right for 3 yards gain to the FSU24 (#29 C.LaVallee)"
  }
 }

@@ -1,11 +1,16 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-26T02:25:54.187Z",
+  "fetchedAt": "2026-11-27T14:14:17.297Z",
   "videos": [
+    {
+      "id": "xWU2vo_ysaU",
+      "title": "Florida vs Florida State: The Matchups That Matter",
+      "published": "2026-11-27T14:01:59+00:00"
+    },
     {
       "id": "4__NPe2N84Q",
       "title": "Florida vs. Florida State | Preview & Predictions",
-      "published": "2026-11-26T02:04:50+00:00"
+      "published": "2026-11-26T16:12:15+00:00"
     },
     {
       "id": "NDki_wxpgmQ",
@@ -71,11 +76,6 @@
       "id": "rD6fbYUW1pg",
       "title": "Why College Basketball Officiating Is Hurting the Game",
       "published": "2026-11-21T03:07:15+00:00"
-    },
-    {
-      "id": "eZnoMWREa-c",
-      "title": "LSU put a two-time Pro Bowler back in the game. What happened next? 🏈⚖️",
-      "published": "2026-11-20T20:17:06+00:00"
     }
   ]
 }

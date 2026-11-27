@@ -1,0 +1,10 @@
+{
+  "sourceCommit": "81414e5f30be4a62f728f35eafcef207825dab3b",
+  "pullRequest": 611,
+  "purpose": "Byte-exact public release assets, isolated from the full repository package for reliable immutable delivery.",
+  "files": {
+    "sports-live/broadcast-home-light.js": "658cbe60239173a94fa0c57b73b015688fe6017396c33890059cfc71f49fb280",
+    "sports-live/magazine-fsu.js": "d6b80c75416d578d32bdc7aa93eca11e3b9f5c6e926ae3b606a420e04f4d0ce3",
+    "sports-live/roster-widget.js": "5a59fceb28c5c46fc1f7ca9c3b7c22314892c43354118f12f5547c786dcb826d"
+  }
+}

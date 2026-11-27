@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-26T19:11:58.744Z",
+ "generatedAt": "2026-11-27T01:15:44.565Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-26T19:11:58.744Z",
+  "checkedAt": "2026-11-27T01:15:44.565Z",
   "ok": true,
   "checks": {
    "wellFormed": true,

@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Florida-Florida State Edition of GatorBait Magazine Is Out",
+      "excerpt": "The Florida-Florida State pregame edition of GatorBait Magazine is live: 12 stories, Franz Beard's Soothsayer up front and Eddie Gilley closing, plus game time, TV, odds, rosters, schedules and the reference desk.",
+      "url": "https://www.gatorbaitmedia.com/post/the-florida-florida-state-edition-of-gatorbait-magazine-is-out",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-27T17:25:58Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_e7497df48c1c41218d4c0413d26f0d1a~mv2.jpg/v1/fit/w_1000,h_630,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Florida-Florida State Edition of GatorBait Magazine Is Out"
+      }
+    },
+    {
       "title": "Fourth and The Game",
       "excerpt": "Jadan Baugh will be the focal point of today's game at Tallahassee. His quest to be the first Florida Gator running back to have back-to-back 1000-yard rushing seasons is a great talking point for the broadcast.",
       "url": "https://www.gatorbaitmedia.com/post/fourth-and-the-game",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for No logic, no reason, just a bizarre Florida win"
-      }
-    },
-    {
-      "title": "Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did.",
-      "excerpt": "That's victory No. 7, a guaranteed winning season and, at 5-4, the Gators' first winning SEC record since 2020.",
-      "url": "https://www.gatorbaitmedia.com/post/some-days-you-need-your-gator-fortune-cookie-to-crumble-your-way-it-did",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-22T01:15:40Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_cf34c8f5b06e48e29de7f39f76ed6b21~mv2.jpg/v1/fit/w_960,h_641,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Some Days You Need Your Gator Fortune Cookie to Crumble Your Way. It Did."
       }
     }
   ]

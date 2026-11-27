@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T11:07:11Z",
+ "updatedAt": "2026-11-27T12:04:18Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -34,8 +34,8 @@
    ]
   },
   "venue": "Ben Hill Griffin Stadium",
-  "recapUrl": "https://www.gatorbaitmedia.com/post/baugh-control-no-24-florida-rallies-past-vanderbilt-34-27-on-senior-day",
-  "galleryUrl": "https://www.gatorbaitmedia.com/post/chris-spears-best-shots-florida-34-vanderbilt-27",
+  "recapUrl": null,
+  "galleryUrl": null,
   "tape": {
    "totalYards": 411,
    "rushingYards": 170,
@@ -236,7 +236,7 @@
     "opp": 27
    },
    "tv": "SEC Network",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/baugh-control-no-24-florida-rallies-past-vanderbilt-34-27-on-senior-day"
+   "storyUrl": null
   },
   {
    "eventId": "401856759",

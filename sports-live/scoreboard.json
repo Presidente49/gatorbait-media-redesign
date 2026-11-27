@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T23:49:45Z",
+ "updatedAt": "2026-11-27T23:57:35Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "3:44",
+  "clock": "1:55",
   "period": 4,
   "score": {
-   "fla": 29,
+   "fla": 26,
    "opp": 10
   },
-  "possession": "opp",
-  "lastPlay": "(04:01) No Huddle-Shotgun #14 A.Daniels pass intercepted by #6 J.Flowers at FSU49 QB hurried by #8 A.Chiles #6 J.Flowers return 49 yards to the FSU00 TOUCHDOWN, clock 03:44. The previous play is under automatic review - \"Short of the goal line\". CALL OVERTURNED. (Original Play: (04:01) No Huddle-Shotgun #14 A.Daniels pass intercepted by #6 J.Flowers at FSU49 QB hurried by #8 A.Chiles #6 J.Flowers return 49 yards to the FSU00 TOUCHDOWN, clock 03:44)"
+  "possession": "fla",
+  "lastPlay": "(01:55) #91 P.Durkin field goal attempt from 25 yards GOOD (H: #38 A.Clark, LS: #54 L.Anderson), clock 01:56"
  }
 }

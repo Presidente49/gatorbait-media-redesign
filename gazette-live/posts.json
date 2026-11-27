@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Behind the Sticks: Florida at Florida State",
+      "excerpt": "The line moved from 5.5 to 6.5, the total never budged, and Jadan Baugh needs 19 yards to make Florida history. Behind the Sticks breaks down Florida at Florida State by the numbers.",
+      "url": "https://www.gatorbaitmedia.com/post/behind-the-sticks-florida-at-florida-state",
+      "author": "Brenden Martin",
+      "firstPublishedDate": "2026-11-27T11:34:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_352f9f9fecb542bf8ec92038ceb369b5~mv2.jpg/v1/fit/w_1000,h_743,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Behind the Sticks: Florida at Florida State"
+      }
+    },
+    {
       "title": "Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)",
       "excerpt": "Despite the Seminoles’ coaching transition, there is always something to play for in the Sunshine Showdown. Loren Meadows breaks down the matchups and predicts Florida 28, FSU 17.",
       "url": "https://www.gatorbaitmedia.com/post/pregame-analysis-no-20-florida-gators-7-4-5-4-vs-florida-state-seminoles-5-6-3-5",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Chris Spears' Best Shots: Florida 34, Vanderbilt 27"
-      }
-    },
-    {
-      "title": "Baugh Control: No. 24 Florida rallies past Vanderbilt 34-27 on Senior Day",
-      "excerpt": "Jadan Baugh's 10-yard touchdown run with 2:18 left finished Florida's comeback from a 24-17 halftime deficit.",
-      "url": "https://www.gatorbaitmedia.com/post/baugh-control-no-24-florida-rallies-past-vanderbilt-34-27-on-senior-day",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-11-21T20:32:46Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_b7691153bc7f4b839d14e02d47a22c9d~mv2.jpg/v1/fit/w_1000,h_676,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Baugh Control: No. 24 Florida rallies past Vanderbilt 34-27 on Senior Day"
       }
     }
   ]

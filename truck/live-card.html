@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Live scoreboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a1020;--line:#1d2a4d;--fg:#f3f6fd;--mut:#8b98b8;--org:#fa4616;--gold:#f5c542;--live:#ff2d3d;--ok:#22c55e;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:var(--bg);color:var(--fg);font:500 14px/1.35 'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-text-size-adjust:100%}
+body{overflow:auto;padding:10px 12px 8px;border-top:3px solid var(--org)}
+.top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.chip{display:inline-block;font:700 12px/1 'Barlow Condensed';letter-spacing:.18em;padding:4px 8px;border-radius:3px;background:#1a2440;color:#cfd8f2}
+.chip.live{background:var(--live);color:#fff;animation:pulse 1.6s ease-in-out infinite}.chip.post{background:#14532d;color:#bbf7d0}.chip.pre{background:#3b2f0b;color:var(--gold)}.chip.warn{background:#5a3a05;color:#ffd47a}
+.st{font:700 15px/1 'Barlow Condensed';letter-spacing:.1em;text-transform:uppercase;color:#cfd8f2}
+.src{margin-left:auto;font:600 11px/1 'Barlow Condensed';letter-spacing:.14em;color:var(--mut);text-transform:uppercase}
+.sb{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tm{display:flex;align-items:center;gap:8px;min-width:0;border-left:3px solid var(--tc,#888);padding-left:8px}
+.tm.r{flex-direction:row-reverse;border-left:0;border-right:3px solid var(--tc,#888);padding-left:0;padding-right:8px;text-align:right}
+.lg{width:38px;height:38px;object-fit:contain;flex:0 0 auto}
+.nm{min-width:0;flex:1 1 auto}
+.n{font:700 clamp(13px,3.9vw,20px)/1.05 'Barlow Condensed';letter-spacing:.04em;text-transform:uppercase;overflow-wrap:break-word}
+.n .rk{color:var(--org)}
+.r2{font-size:11.5px;color:var(--mut)}
+.sc{font:700 clamp(40px,11vw,58px)/.9 'Barlow Condensed';font-variant-numeric:tabular-nums;flex:0 0 auto}
+.poss{display:inline-block;width:11px;height:7px;border-radius:50%;background:var(--org);transform:rotate(-24deg);margin-left:6px;vertical-align:middle}
+.dd{margin:7px 0 0;font:700 17px/1.1 'Barlow Condensed';letter-spacing:.04em;color:var(--org)}
+.lp{margin-top:6px;padding:6px 9px;background:#0d1530;border-left:3px solid var(--org);border-radius:3px;font-size:13px;color:#cfd8f2}
+.lp b{font:700 10.5px/1 'Barlow Condensed';letter-spacing:.18em;color:var(--mut);margin-right:6px}
+table{width:100%;border-collapse:collapse;margin-top:7px;font:600 14px/1 'Barlow Condensed';letter-spacing:.04em}
+th,td{padding:4px 6px;text-align:center;border-bottom:1px solid #ffffff12}
+thead th{color:var(--mut);font-size:11px;letter-spacing:.14em}tbody th{text-align:left}td.t{font-size:16px}
+.sp{margin-top:8px}
+.sp h3{font:700 11px/1 'Barlow Condensed';letter-spacing:.18em;color:var(--mut);text-transform:uppercase;margin-bottom:3px}
+.sp li{list-style:none;display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #ffffff0d;font-size:12.5px}
+.sp li:last-child{border:0}.sp .w{flex:0 0 auto;min-width:56px;font:700 11.5px/1.4 'Barlow Condensed';letter-spacing:.06em;color:var(--org);text-transform:uppercase}
+.foot{margin-top:8px;font-size:11px;color:var(--mut);display:flex;justify-content:space-between;gap:8px}
+.foot i{font-style:normal}.err{color:#ffb3b8}
+@keyframes pulse{50%{opacity:.7}}
+@media(max-width:430px){.lg{display:none}.tm{padding-left:7px}.tm.r{padding-right:7px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div id="app"><div class="st" style="padding:30px 0;text-align:center;color:var(--mut)">Loading the scoreboard&hellip;</div></div>
+<script>
+(function () {
+'use strict';
+var Q = new URLSearchParams(location.search), EV = Q.get('event') || '401856759';
+var HOSTS = ['https://site.web.api.espn.com', 'https://site.api.espn.com'], PATH = '/apis/site/v2/sports/football/college-football';
+var ORD = ['', '1st', '2nd', '3rd', '4th'];
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+var clean = function (t) { return String(t || '').replace(/^\(\d{1,2}:\d{2}\)\s*/, '').replace(/\s+/g, ' ').trim(); };
+/* ESPN scoring text to AP style (same rules as the game desk's generator) */
+var ap = function (s) { return clean(s).replace(/(\d+) Yd /g, '$1-yard ').replace(/\b(Rushing|Passing|Receiving) Touchdown\b/g, function (m) { return m.toLowerCase(); }).replace(/\b(Field Goal|Interception Return|Fumble Return|Punt Return|Kickoff Return|Blocked Punt|Blocked Field Goal|Run|Pass|Rush|Kick|Safety|Return|Recovery|Reception)\b/g, function (m) { return m.toLowerCase(); }).replace(/\bKICK\b/g, 'kick').replace(/\bPASS\b/g, 'pass').replace(/\bRUN\b/g, 'run').replace(/Two-Point Conversion/g, 'two-point conversion').replace(/\(Two-Point/gi, '(two-point').replace(/\s+\)/g, ')'); };
+var lum = function (hex) { var n = parseInt(hex, 16), f = function (c) { c /= 255; return c <= .03928 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); }; return .2126 * f(n >> 16 & 255) + .7152 * f(n >> 8 & 255) + .0722 * f(n & 255); };
+var tcol = function (T) { var c = T.color || '888888', a = T.alternateColor || '888888'; return lum(c) > .1 ? '#' + c : lum(a) > .1 ? '#' + a : '#9aa6c4'; };
+var etTime = function (d) { return new Date(d).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', second: '2-digit' }).replace(' AM', ' a.m.').replace(' PM', ' p.m.'); };
+var S = { sb: null, sum: null, key: '', ok: 0, fail: 0 };
+async function J(url) { var c = new AbortController(), t = setTimeout(function () { c.abort(); }, 12000); try { var r = await fetch(url, { cache: 'no-store', signal: c.signal }); if (!r.ok) throw new Error(r.status); return await r.json(); } finally { clearTimeout(t); } }
+async function E(p) { var err; for (var i = 0; i < HOSTS.length; i++) { try { return await J(HOSTS[0] + PATH + p); } catch (e) { err = e; HOSTS.push(HOSTS.shift()); } } throw err; }
+function info(sb, c) {
+  var st = c.status, ty = st.type, p = st.period | 0;
+  if (ty.state === 'pre') return { tag: 'PREGAME', cls: 'pre', line: 'Kickoff ' + new Date(sb.date).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).replace(' PM', ' p.m.').replace(' AM', ' a.m.') + ' ET' };
+  if (ty.state === 'post') return { tag: 'FINAL', cls: 'post', line: p > 4 ? (p > 5 ? (p - 4) + ' overtimes' : 'Overtime') : '' };
+  if (/DELAY|POSTPON|SUSPEND/i.test(ty.name || '')) return { tag: 'DELAY', cls: 'warn', line: ty.detail || ty.description || 'Delay' };
+  if (ty.name === 'STATUS_HALFTIME') return { tag: 'HALFTIME', cls: 'live', line: 'Halftime' };
+  if (ty.name === 'STATUS_END_PERIOD') return { tag: 'LIVE', cls: 'live', line: 'End of the ' + (p > 4 ? 'overtime' : ORD[p] + ' quarter') };
+  return { tag: 'LIVE', cls: 'live', line: (p > 4 ? 'Overtime' : ORD[p] + ' quarter') + ' · ' + (st.displayClock || '') };
+}
+function render() {
+  var sb = S.sb; if (!sb) return; var c = sb.competitions[0], ty = c.status.type, sit = c.situation || null;
+  var a = c.competitors.find(function (x) { return x.homeAway === 'away'; }), h = c.competitors.find(function (x) { return x.homeAway === 'home'; });
+  var i = info(sb, c), poss = sit && sit.possession ? String(sit.possession) : '';
+  var rk = function (t) { var r = t.curatedRank && t.curatedRank.current; return r > 0 && r <= 25 ? '<span class="rk">No. ' + r + '</span> ' : ''; };
+  var rec = function (t) { var r = (t.records || [])[0]; return r && r.summary ? r.summary : ''; };
+  var tm = function (t, right) { var T = t.team; return '<div class="tm' + (right ? ' r' : '') + '" style="--tc:' + tcol(T) + '"><img class="lg" src="' + esc(T.logoDark || T.logo || '') + '" alt="">' + '<div class="nm"><div class="n">' + rk(t) + esc(T.location || T.shortDisplayName) + (poss && String(T.id) === poss ? '<i class="poss"></i>' : '') + '</div><div class="r2">' + esc(rec(t)) + '</div></div><div class="sc">' + esc(t.score || '0') + '</div></div>'; };
+  var dd = ty.state === 'in' && sit && sit.downDistanceText ? '<div class="dd">' + esc(sit.downDistanceText) + (sit.isRedZone ? ' · RED ZONE' : '') + '</div>' : '';
+  var lp = sit && sit.lastPlay && sit.lastPlay.text ? '<div class="lp"><b>LAST PLAY</b>' + esc(clean(sit.lastPlay.text)) + '</div>' : '';
+  var n = Math.max(4, (a.linescores || []).length, (h.linescores || []).length), hd = '';
+  for (var k = 0; k < n; k++) hd += '<th>' + (k < 4 ? k + 1 : (n - 4 > 1 ? 'OT' + (k - 3) : 'OT')) + '</th>';
+  var row = function (t) { var ls = t.linescores || [], r = '<tr><th>' + esc(t.team.abbreviation) + '</th>'; for (var k = 0; k < n; k++) r += '<td>' + (ls[k] ? esc(ls[k].displayValue) : '&ndash;') + '</td>'; return r + '<td class="t">' + esc(t.score || '0') + '</td></tr>'; };
+  var line = '<table><thead><tr><th></th>' + hd + '<th>T</th></tr></thead><tbody>' + row(a) + row(h) + '</tbody></table>';
+  var sp = '', plays = (S.sum && S.sum.scoringPlays || []).slice().reverse().slice(0, 3);
+  if (plays.length) sp = '<div class="sp"><h3>Latest scores</h3><ul>' + plays.map(function (p) { return '<li><span class="w">Q' + esc(p.period.number) + ' ' + esc(p.clock.displayValue) + '</span><span>' + esc(ap(p.text)) + ' (' + esc(a.team.abbreviation) + ' ' + esc(p.awayScore) + ', ' + esc(h.team.abbreviation) + ' ' + esc(p.homeScore) + ')</span></li>'; }).join('') + '</ul></div>';
+  var upd = S.fail > 2 ? '<i class="err">Reconnecting&hellip;</i>' : '<i>Updated ' + esc(etTime(Date.now())) + ' ET</i>';
+  document.getElementById('app').innerHTML = '<div class="top"><span class="chip ' + i.cls + '">' + i.tag + '</span>' + (i.line ? '<span class="st">' + esc(i.line) + '</span>' : '') + '<span class="src">Live from ESPN</span></div>' +
+    '<div class="sb">' + tm(a, false) + tm(h, true) + '</div>' + dd + lp + line + sp +
+    '<div class="foot">' + upd + '<i>Refreshes by itself. Full game log below.</i></div>';
+  var key = (a.score || 0) + '-' + (h.score || 0) + ty.state + ty.name;
+  if (key !== S.key) { S.key = key; loadSum(); }
+}
+async function loadSum() { try { S.sum = await E('/summary?event=' + EV); render(); } catch (e) { } }
+function delay() { var s = S.sb ? S.sb.competitions[0].status.type.state : 'pre'; return s === 'in' ? (document.visibilityState === 'visible' ? 10000 : 30000) : s === 'post' ? 120000 : 30000; }
+async function tick() { try { S.sb = await E('/scoreboard/' + EV); S.fail = 0; render(); } catch (e) { S.fail++; if (S.sb) render(); else document.getElementById('app').innerHTML = '<div class="st err" style="padding:24px 0;text-align:center">Scoreboard unavailable. Retrying&hellip;</div>'; } setTimeout(tick, S.fail ? 15000 : delay()); }
+tick();
+})();
+</script>
+</body>
+</html>

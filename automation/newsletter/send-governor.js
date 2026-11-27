@@ -3,14 +3,9 @@ async () => {
   // 18fb3a4e-d7f6-414a-aeb9-3047db3ea115, hasMutations false) before ANY list
   // email: a campaign, a breaking email, a newsletter, or switching an email
   // automation on. Send only when it returns ok: true.
-  // Why these limits: docs/GATORBAIT-PUBLISHING-EMAIL-PLAYBOOK.md, "Send governor".
-  // One roundup a day (Brenden, Sept. 28, 2026); the week limit is 7.
-  const MAX_SENDS_PER_DAY = 1;
-  const MAX_SENDS_PER_WEEK = 7;
-  // Sends before this ISO time don't count toward either cap. null counts every
-  // send. The controller (Jarvis) sets it; "2026-09-28T07:35:00Z" is when the
-  // one-a-day policy started.
-  const COUNT_FROM = null;
+  // Brenden removed daily/weekly volume caps on Nov. 27, 2026. Counts below are
+  // telemetry only; account, automation and list-health gates remain in force.
+  // Scope and exact owner quote: docs/EMAIL-VOLUME-POLICY-2026-11-27.md.
   const MAX_BOUNCE_RATE = 0.02;
   const MAX_COMPLAINT_RATE = 0.001;
   const DAY_MS = 24 * 60 * 60 * 1000;
@@ -67,7 +62,7 @@ async () => {
     reasons.push(`Blog story-alert automation is ACTIVE (decision 4 says off): ${activeAlerts.join(", ")}`);
   }
 
-  // 3. Frequency caps and list health, from published campaigns.
+  // 3. Recent volume telemetry and list health, from published campaigns.
   const listRes = await wix.request({
     method: "GET",
     url: "https://www.wixapis.com/email-marketing/v1/campaigns?visibilityStatuses=PUBLISHED&optionIncludeStatistics=true&paging.limit=100"
@@ -87,21 +82,9 @@ async () => {
         complained: stats.complained || 0
       };
     });
-  // A scheduled campaign counts against the window it is about to send in.
+  // Retain scheduled campaigns in the recent-activity report as before.
   const within = ms => sends.filter(s => s.state === "SCHEDULED" || now - Date.parse(s.sentAt) < ms);
-  // Caps count only sends from COUNT_FROM on; rates below always use the full week.
-  const countFrom = COUNT_FROM ? Date.parse(COUNT_FROM) : -Infinity;
-  const counted = ms => within(ms).filter(s => s.state === "SCHEDULED" || Date.parse(s.sentAt) >= countFrom);
   const lastWeek = within(7 * DAY_MS);
-  const dayCount = counted(DAY_MS).length;
-  const weekCount = counted(7 * DAY_MS).length;
-  const since = COUNT_FROM ? ` counted since ${COUNT_FROM}` : "";
-  if (dayCount >= MAX_SENDS_PER_DAY) {
-    reasons.push(`${dayCount} list send(s) in the last 24 hours${since}; the cap is ${MAX_SENDS_PER_DAY}.`);
-  }
-  if (weekCount >= MAX_SENDS_PER_WEEK) {
-    reasons.push(`${weekCount} list send(s) in the last 7 days${since}; the cap is ${MAX_SENDS_PER_WEEK}.`);
-  }
   const totals = lastWeek.reduce((t, s) => {
     t.delivered += s.delivered;
     t.bounced += s.bounced;
@@ -122,6 +105,13 @@ async () => {
     ok: reasons.length === 0,
     reasons,
     account: summary,
+    volume: {
+      policyAsOf: "2026-11-27",
+      perDayCap: null,
+      perWeekCap: null,
+      last24h: within(DAY_MS).length,
+      last7d: lastWeek.length
+    },
     lastWeek: lastWeek.map(s => `${s.sentAt} ${s.state} "${s.subject}" delivered ${s.delivered}, bounced ${s.bounced}, complained ${s.complained}`),
     rates: {
       bounce: Number(bounceRate.toFixed(4)),

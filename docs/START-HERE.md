@@ -2,6 +2,10 @@
 
 This is the project rulebook. Every Claude, Codex or ChatGPT session reads it first. Current instructions from Brenden set the scope and can revise this document; dated playbooks are evidence, not authority over the owner. Live provider state establishes facts about what exists, never permission.
 
+## Email volume override — owner direction, Nov. 27, 2026
+
+Brenden removed daily/weekly list-send caps and the extra approval boundary for exceeding them. Apply the [dated policy and exact owner quote](EMAIL-VOLUME-POLICY-2026-11-27.md); older one-per-day/seven-per-week assertions are historical. Keep current send authorization, consent, suppression, account, sender, list-health and deduplication gates. No automation or account settings change follows from this override.
+
 ## Current routing — owner directive, Oct. 29, 2026
 
 **Symphony is retired for GatorBait work.** Do not call, wake, restart or route a handoff through it. Retain its dated receipts as historical evidence; an unfinished task or credit-limit pause is not completed work.
@@ -65,7 +69,7 @@ Claude (Jarvis) and Codex cannot message each other directly. Issue #34 is the s
 
 ## 3. Hard lines (Brenden's explicit yes, every time)
 
-- Subscriber email sends. At most one list email a day.
+- Subscriber email sends beyond the current owner-authorized scope. Daily/weekly volume alone requires no new exception approval under the [Nov. 27 direction](EMAIL-VOLUME-POLICY-2026-11-27.md).
 - Switching any automation on or off. Both blog alerts (`5006baf5…`, `824714d4…`) stay INACTIVE and are checked before every publish.
 - Payments, pricing, refunds, memberships, plan changes.
 - DNS, Meta or Google account connections.
@@ -126,7 +130,7 @@ Nothing is written for a writer who has not filed; a missing promised piece is f
 
 ## 7. Email
 
-- One list email a day, maximum. The audience is verified before the send: SUBSCRIBED consent, VALID or NOT_SET deliverability, no hold label, no Do Not Market (`docs/EMAIL-HYGIENE-2026-09-23.md`).
+- [Daily/weekly volume caps are removed (Nov. 27)](EMAIL-VOLUME-POLICY-2026-11-27.md). The audience is verified before each authorized send: SUBSCRIBED consent, VALID or NOT_SET deliverability, no hold label, no Do Not Market (`docs/EMAIL-HYGIENE-2026-09-23.md`).
 - Delivery is proven from the provider's statistics, never from an active workflow or a preview.
 - Writer emails are drafted by Jarvis in Gmail and sent by Brenden.
 

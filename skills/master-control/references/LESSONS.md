@@ -483,6 +483,8 @@ Four of the Ole Miss covers came from the same diagonal-plane template, and thre
 
 ## 48. The email account went WARNED after 18 list-wide sends in a week (Sept. 28, 2026)
 
+**Dated supersession, Nov. 27, 2026:** [Brenden removed daily/weekly volume caps and extra approval solely to exceed them](../../../docs/EMAIL-VOLUME-POLICY-2026-11-27.md). The incident and then-current rule below remain historical evidence. Account, consent/suppression, sender, hygiene and duplicate-send safeguards remain in force; current provider state establishes automation status.
+
 **What happened:** From Sept. 22 to 27 the list got 18 full sends, each to about 1,810 people. Ten of them landed in the 46 hours around the Ole Miss game: the pregame emails, two breaking emails, columns, the postgame, the postgame wrap and the Sunday Edition. The account's `rank` had read `BAD` since at least Sept. 23. Campaign stats still read at 23:25Z Sept. 27. By 02:25Z every `email-marketing/v1/campaigns` call returned 401 "Account authorization error - site owner action required", and the 401 was first taken for an app that needed reconnecting. `GET /email-marketing/v1/account-details`, which works in any status, showed `WARNED`. Brenden accepted the terms at about 07:50Z Sept. 28, and the account is `ACTIVE` again. The rank is still `BAD`.
 
 **The rule:**

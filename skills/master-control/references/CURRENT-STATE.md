@@ -1,5 +1,9 @@
 # Master Control Current State
 
+## Email volume caps removed — owner direction, Nov. 27, 2026
+
+Apply [the current policy and exact owner quote](../../../docs/EMAIL-VOLUME-POLICY-2026-11-27.md), recorded in [issue #34](https://github.com/Presidente49/gatorbait-media-redesign/issues/34#issuecomment-7220181198). The former one-list-send-per-24-hours/seven-per-seven-days caps and extra approval solely to exceed them are superseded. Retain dated incidents and earlier cap holds below as historical facts. Current authorization scope, consent/suppression, account/provider status, verified sender, list health and duplicate prevention remain controlling; no provider or automation change is made by recording this policy.
+
 ## Standing order: publish writer stories without asking — owner direction, Nov. 2, 2026
 
 - Brenden, Nov. 2, photo rule: a game story always runs a current photo from that game; if none exists, make a graphic. Pull from floridagators.com only when we must, with proper attribution. Chris Spears's SmugMug is ours to use (he is credentialed and works for GatorBait; Brenden owns those photos). A new media ID of the same photograph is still a reused photo; compare the pictures, not the IDs. Open: the SmugMug gallery link has not been supplied.

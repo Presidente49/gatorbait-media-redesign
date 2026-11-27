@@ -203,9 +203,12 @@
     var P = obj(D.pdf); if (!P || !safeUrl(P.url) || !text(P.label, 50)) return '';
     return '<a class="pg-pdf" href="' + esc(safeUrl(P.url)) + '"><b>' + esc(text(P.label, 50)) + '</b>' + (text(P.note, 120) ? '<span>' + esc(text(P.note, 120)) + '</span>' : '') + '</a>';
   }
+  function pgReferenceUrl(u) {
+    return safeUrl(u) || (/^https:\/\/(?:floridagators\.com|seminoles\.com)\//.test(u || '') ? u : '');
+  }
   function pgFoot(D) {
-    var R = obj(D.reference), links = R ? list(R.links, 5).map(obj).filter(function (l) { return l && safeUrl(l.url) && text(l.label, 40); }) : [];
-    return '<footer class="pg-foot"><h2>' + esc(text(R && R.label, 40)) + '</h2><nav aria-label="' + esc(text(R && R.label, 40)) + '">' + links.map(function (l) { return '<a href="' + esc(safeUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a>'; }).join('') + '<a href="https://www.youtube.com/@TheBuddyMartinShow/live">Watch The Buddy Martin Show live</a></nav>' + pgPdf(D) + (R && text(R.next, 200) ? '<p>' + esc(text(R.next, 200)) + '</p>' : '') + '<p class="pg-src">' + esc(text(D.asOf, 240)) + '</p><a class="pg-top" href="#pg-cover">Back to top ↑</a></footer>';
+    var R = obj(D.reference), links = R ? list(R.links, 5).map(obj).filter(function (l) { return l && pgReferenceUrl(l.url) && text(l.label, 40); }) : [];
+    return '<footer class="pg-foot"><h2>' + esc(text(R && R.label, 40)) + '</h2><nav aria-label="' + esc(text(R && R.label, 40)) + '">' + links.map(function (l) { return '<a href="' + esc(pgReferenceUrl(l.url)) + '">' + esc(text(l.label, 40)) + '</a>'; }).join('') + '<a href="https://www.youtube.com/@TheBuddyMartinShow/live">Watch The Buddy Martin Show live</a></nav>' + pgPdf(D) + (R && text(R.next, 200) ? '<p>' + esc(text(R.next, 200)) + '</p>' : '') + '<p class="pg-src">' + esc(text(D.asOf, 240)) + '</p><a class="pg-top" href="#pg-cover">Back to top ↑</a></footer>';
   }
   function renderPregame(D) {
     return '<div class="pg-wrap">' + pgTop(D) + pgMast(D) + pgCover(D) + '<div class="pg-grid">' + pgGame(D) + pgSeries(D) + '</div>' + pgNumbers(D) + pgWatch(D) + pgTape(D) + pgKeys(D) + pgWatching(D) + pgInjuries(D) + pgRosters(D) + pgLead(D) + pgFeature(D) + pgSlate(D) + pgCards(D) + pgShots(D) + pgFoot(D) + '</div>';

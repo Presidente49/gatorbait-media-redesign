@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T20:55:56Z",
+ "updatedAt": "2026-11-27T21:06:44Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "12:01",
+  "clock": "5:41",
   "period": 1,
   "score": {
    "fla": 0,
    "opp": 0
   },
-  "possession": "opp",
-  "lastPlay": "(12:43) No Huddle-Shotgun #21 Z.Parks rush right for 5 yards gain to the FSU14 (#8 A.Chiles)"
+  "possession": "fla",
+  "lastPlay": "(05:44) #13 J.Baugh rush middle for 0 yards to the FSU01 (#24 K.Kirkland), TURNOVER ON DOWNS"
  }
 }

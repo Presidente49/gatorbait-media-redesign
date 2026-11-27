@@ -26,6 +26,14 @@
   var S = { events: [], tab: 'all', more: 0, open: {}, last: {}, flash: {}, fail: 0, at: 0, root: null, html: '', timer: 0, busy: 0, seen: 0 };
 
   var CK = 'gbm_lsb_v1';
+  /* Reserved height (Nov. 27, 2026): the space the panel takes is saved here so the loader embed can hold it open before this file
+   * arrives. The value is the distance from where the panel starts to where #sh-main starts, so the loader's rule
+   * html:not(.gbm-lsb-off) #gbm-live.gbm-sports-home:not(:has(#gbm-lsb)) #sh-main{margin-top:<h>px} puts the stories exactly where they end up. */
+  var HK = 'gbm_lsb_h';
+  function saveH(h) { try { if (h > 40 && h < 2400) localStorage.setItem(HK, JSON.stringify({ w: window.innerWidth, h: Math.round(h), t: Date.now() })); } catch (_) {} }
+  function reserveOff(off) { try { document.documentElement.classList[off ? 'add' : 'remove']('gbm-lsb-off'); if (off) localStorage.removeItem(HK); } catch (_) {} }
+  function room(main) { try { return main.getBoundingClientRect().top - (S.root.getBoundingClientRect().top - (parseFloat(getComputedStyle(S.root).marginTop) || 0)); } catch (_) { return 0; } }
+  function plain() { if (S.more || S.tab !== 'all') return false; for (var k in S.open) { if (S.open[k]) return false; } return true; }
   function trim(e) {
     var f = e.fullStatus && e.fullStatus.type || {}, o = e.odds || {};
     return { id: e.id, date: e.date, status: e.status, broadcast: e.broadcast, location: e.location, link: e.link, odds: { details: o.details, overUnder: o.overUnder },
@@ -229,7 +237,8 @@
     if (!onHome()) { if (S.root && S.root.parentNode) S.root.parentNode.removeChild(S.root); return; }
     var main = document.getElementById('sh-main');
     if (!main || !main.parentNode) return;
-    if (!visible()) { if (S.root && S.root.parentNode) S.root.parentNode.removeChild(S.root); return; }
+    if (!visible()) { if (S.root && S.root.parentNode) S.root.parentNode.removeChild(S.root); reserveOff(1); return; }
+    reserveOff(0);
     if (!S.root) {
       S.root = document.createElement('section');
       S.root.id = ID;
@@ -247,10 +256,13 @@
       var y0 = window.pageYOffset || 0, was = main.getBoundingClientRect().top;
       main.parentNode.insertBefore(S.root, main);
       paint();
-      if (y0 > 40) { var moved = main.getBoundingClientRect().top - was; if (moved > 0) window.scrollBy(0, moved); }
+      var moved = main.getBoundingClientRect().top - was;
+      if (plain()) saveH(room(main));
+      if (y0 > 40 && moved > 0) window.scrollBy(0, moved);
       return;
     }
     paint();
+    if (plain()) saveH(room(main));
   }
 
   function remember(events) {

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T20:48:16Z",
+ "updatedAt": "2026-11-27T20:55:56Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "14:53",
+  "clock": "12:01",
   "period": 1,
   "score": {
    "fla": 0,
    "opp": 0
   },
   "possession": "opp",
-  "lastPlay": "(14:58) No Huddle-Shotgun #14 A.Daniels pass incomplete deep left to #8 M.Danzy thrown to FLA40 broken up by #25 C.McClain"
+  "lastPlay": "(12:43) No Huddle-Shotgun #21 Z.Parks rush right for 5 yards gain to the FSU14 (#8 A.Chiles)"
  }
 }

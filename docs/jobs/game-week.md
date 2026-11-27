@@ -93,7 +93,20 @@ Game Week Card (Brenden, Oct. 3: full control of the automations). Build this we
 
 ## Standing rule: members download on every magazine issue (Brenden, Oct. 15)
 
-Every Friday Pregame and postgame issue carries a download at the bottom of the magazine: the `pdf` slot in the issue JSON links to a members-only post (All Access plans) that holds the print-edition PDF. Build it with `tools/magazine-pdf/` from the same issue JSON after the stories are approved and published, upload the PDF to Wix Media, create the members post with the file link, then set `pdf.url` to that post. The regular edition is what the email links; the PDF is members-only.
+Every Friday Pregame and postgame issue carries a download at the bottom of the magazine: the `pdf` slot in the issue JSON links to the existing members-only utility post holding the print-edition PDF. Build it with `tools/magazine-pdf/` from the same frozen issue JSON after the final article is included. Upload and verify the final PDF in the canonical Wix Media issue folder, then update the utility attachment and page count while preserving its existing paid reader profiles, cover, byline and first publication date. Reuse the utility; an attachment replacement does not require a new blog announcement or a replay of distribution. The regular edition is what the email links; the PDF is members-only.
+
+## Native issue source gate — every issue ship (owner direction, Nov. 27)
+
+The client reader and native/indexable page must describe the same current issue. A correct browser-rendered reader or metadata-only fix is not proof that Wix has removed the old native issue.
+
+1. Freeze the final issue JSON after every writer is included. Preserve complete source text, bylines, original dates, owner-directed order and dated factual corrections. Build the web reader and matching PDF from that same freeze.
+2. Generate the native Editor handoff with `node tools/magazine-native-snapshot.mjs --issue ISSUE.json --seo-json APPROVED-SEO.json --out-dir OUTPUT`. It produces a complete document, body fragment and source manifest; generated files are prepared, not published. Use an approved share image, not an inferred crop of a portrait cover.
+3. Replace the old native page component through a supported native page/Editor route. Use indexable native text, images and links. Do not conceal old article text with JavaScript/CSS, use an iframe as the snapshot, or retag/pin/change publication dates on current articles to satisfy a historical widget filter. Preserve the live reader loader.
+4. Publish only the current page SEO tags and scoped native page changes. Then run `node tools/check-magazine-native-source.mjs --issue ISSUE.json --seo-json APPROVED-SEO.json --url https://www.gatorbaitmedia.com/magazine --out RECEIPT.json --save-html SERVED.html`. This gate excludes JavaScript, JSON, templates and textareas. Every current title must occur once in native story order with its correct byline/canonical link; old native article headings must be gone and current cover/date/title/OG metadata must match. Only an ordinary public HTTP pass may report `releaseReady:true`; `--html` captures are offline diagnostics.
+5. Before a new issue announcement, require this source gate, ordinary responsive reader/links/widgets checks and exact matching PDF proof. If the native Editor route is unavailable, keep the working reader and record the precise native-source blocker; do not announce that the old source is fixed.
+6. After native source passes, request the exact `/magazine` URL in Search Console and re-scrape it in Facebook Sharing Debugger through verified supported access. A sitemap submission or homepage-only indexing method does not prove either requested action. Record actual receipts and do not retry a send to compensate for indexing lag.
+
+The Nov. 27 current artifacts and remaining native UI work are in [the issue status](../../deploy/magazine-2026/pregame-fsu/NATIVE-SOURCE-STATUS.md). No new announcement or magazine email is authorized by that handoff; the owner paused further distribution during the overhaul.
 
 ## Postgame magazine (added Oct. 11)
 

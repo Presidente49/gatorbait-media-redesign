@@ -1,7 +1,17 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-27T14:46:39.539Z",
+  "fetchedAt": "2026-11-27T16:25:38.635Z",
   "videos": [
+    {
+      "id": "scRi_l7BkJo",
+      "title": "Loren Meadows: \"Forget the Records\" | Florida vs Florida State",
+      "published": "2026-11-27T16:17:53+00:00"
+    },
+    {
+      "id": "PW5nSGmSgfs",
+      "title": "Buddy Martin: 8 Wins Is the Last Piece of Pie",
+      "published": "2026-11-27T16:12:24+00:00"
+    },
     {
       "id": "5No31RcO2yw",
       "title": "Jon Sumrall: \"It's Not Just Another Game\" | Florida vs Florida State",
@@ -66,16 +76,6 @@
       "id": "cBob3z3Dyus",
       "title": "SUMRALL: \"WALKS OFF A WINNER\" — Florida 34, Vanderbilt 27",
       "published": "2026-11-22T00:37:11+00:00"
-    },
-    {
-      "id": "j49BJ8vb_Hg",
-      "title": "BEN TROUPE: \"ZOOK MADE HIS WIFE RUN THE FIELD IN A WHITE DRESS\"",
-      "published": "2026-11-21T15:00:23+00:00"
-    },
-    {
-      "id": "CYr1FCIQ0wU",
-      "title": "BRAD WHITE: \"HE REMINDS ME OF WILL LEVIS IN 2021\"",
-      "published": "2026-11-21T14:30:27+00:00"
     }
   ]
 }

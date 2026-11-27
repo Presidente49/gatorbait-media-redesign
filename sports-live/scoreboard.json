@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T23:34:53Z",
+ "updatedAt": "2026-11-27T23:42:24Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "5:48",
+  "clock": "4:27",
   "period": 4,
   "score": {
    "fla": 20,
    "opp": 10
   },
   "possession": "fla",
-  "lastPlay": "(05:54) #38 A.Clark punt 51 yards to the FSU25 fair catch by #7 J.Lopez at FSU25"
+  "lastPlay": "Timeout Florida State, clock 04:34"
  }
 }

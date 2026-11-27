@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T22:36:55Z",
+ "updatedAt": "2026-11-27T22:44:08Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "11:41",
+  "clock": "9:36",
   "period": 3,
   "score": {
-   "fla": 10,
+   "fla": 17,
    "opp": 3
   },
-  "possession": "fla",
-  "lastPlay": "(12:20) Shotgun #13 J.Baugh rush right for 10 yards gain to the FSU03 (#14 M.Jones; #7 A.Barker), 1ST DOWN"
+  "possession": "opp",
+  "lastPlay": "(09:41) No Huddle-Shotgun #14 A.Daniels pass incomplete deep left to #7 J.Lopez thrown to FLA40 PENALTY FLA Pass Interference (#25 C.McClain) 15 yards from FSU24 to FSU39, 1ST DOWN. NO PLAY"
  }
 }

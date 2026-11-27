@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T21:52:30Z",
+ "updatedAt": "2026-11-27T21:59:33Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "4:14",
+  "clock": "2:00",
   "period": 2,
   "score": {
    "fla": 10,
    "opp": 3
   },
-  "possession": "fla",
-  "lastPlay": "(04:18) #91 P.Durkin field goal attempt from 33 yards GOOD (H: #38 A.Clark, LS: #54 L.Anderson), clock 04:15"
+  "possession": "opp",
+  "lastPlay": "Timeout Florida State, clock 02:00"
  }
 }

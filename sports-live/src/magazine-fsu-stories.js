@@ -1,97 +1,69 @@
-  /* Nov. 27 FSU story-first edition. Function-only: the shared runtime mounts before appended statements run. */
-  function pgFsuStoryItems(X) {
-    X = obj(X);
-    return X ? list(X.items, 24).map(obj).filter(function (s) { return s && text(s.title, 200) && typeof s.html === 'string' && s.html.trim(); }) : [];
-  }
+
+  /* Florida–Florida State digital edition. This renderer keeps coverage links next to their game-day references. */
   function pgFsuStorySlots(D) {
-    var slots = [];
-    if (obj(D.lead)) slots.push({ id: 'pg-lead', story: D.lead });
-    if (obj(D.feature)) slots.push({ id: 'pg-feature', story: D.feature });
-    pgFsuStoryItems(D.features).forEach(function (s, i) { slots.push({ id: 'pg-feat-' + (i + 1), story: s }); });
-    pgFsuStoryItems(D.exclusives).forEach(function (s, i) { slots.push({ id: 'pg-excl-' + (i + 1), story: s }); });
-    return slots;
-  }
-  function pgFsuProseUrl(value) {
-    try {
-      var raw = String(value || '').trim(); if (!raw) return '';
-      var u = new URL(raw, SITE);
-      if (u.protocol !== 'https:' || u.username || u.password) return '';
-      if (raw.charAt(0) === '#') return u.hash;
-      return safeUrl(raw) || u.href;
-    } catch (_) { return ''; }
-  }
-  function pgFsuProse(value) {
-    var box = document.createElement('div'); box.innerHTML = String(value || '');
-    box.querySelectorAll('script,style,iframe,video,audio,object,embed,template,noscript').forEach(function (n) { n.remove(); });
-    function clean(parent) {
-      Array.from(parent.childNodes).forEach(function (n) {
-        if (n.nodeType === 8) { n.remove(); return; }
-        if (n.nodeType !== 1) return;
-        var tag = n.tagName.toLowerCase(), href = tag === 'a' ? pgFsuProseUrl(n.getAttribute('href')) : '', blank = n.getAttribute('target') === '_blank';
-        clean(n);
-        if (!/^(p|a|strong|em|b|i|blockquote|h2|h3|h4|ul|ol|li|br)$/.test(tag) || (tag === 'a' && !href)) {
-          while (n.firstChild) parent.insertBefore(n.firstChild, n);
-          n.remove(); return;
-        }
-        Array.from(n.attributes).forEach(function (a) { n.removeAttribute(a.name); });
-        if (tag === 'a') { n.setAttribute('href', href); if (blank) { n.setAttribute('target', '_blank'); n.setAttribute('rel', 'noopener noreferrer'); } }
+    var slots = [{ id: 'pg-lead', story: D.lead }, { id: 'pg-feature', story: D.feature }];
+    [['pg-feat-', D.features], ['pg-excl-', D.exclusives]].forEach(function (group) {
+      list((obj(group[1]) || {}).items, 24).forEach(function (story, i) {
+        slots.push({ id: group[0] + (i + 1), story: story });
       });
-    }
-    clean(box);
-    var first = box.firstElementChild;
-    if (first && first.tagName === 'P' && /^(?:photo|illustration|cover(?: image| photo)?|image|artwork|graphic)(?:\s*:|\s+by\b|\s+courtesy\b)/i.test(first.textContent.trim())) first.className = 'fsu-native-credit';
-    return box.innerHTML;
+    });
+    return slots.filter(function (slot) { return obj(slot.story) && safeUrl(slot.story.url) && text(slot.story.title, 240); });
   }
-  function pgFsuStory(slot, widgets) {
-    var s = slot.story, id = slot.id, image = frame(s.image, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' }), figure = frame(s.figure, { main: 1200, sizes: '(max-width: 900px) 100vw, 780px' });
-    var prose = pgFsuProse(s.html), nativeCredit = prose.indexOf('class="fsu-native-credit"') !== -1;
-    function cap(im, note) { return '<figcaption>' + esc(text(note, 300)) + (!nativeCredit && im && text(im.credit, 240) ? ' <span>' + esc(text(im.credit, 240)) + '</span>' : '') + '</figcaption>'; }
-    var kicker = text(s.kicker, 120) || text(s.label, 80), url = pgFsuProseUrl(s.url);
-    var related = widgets.length ? '<nav class="fsu-related" aria-label="Game-day reference">' + pgFsuWidgetLinks(widgets) + '</nav>' : '';
-    return '<article class="pg-lead pg-feature fsu-story" id="' + id + '" aria-labelledby="' + id + '-h"><header>' + (kicker ? '<span class="pg-kick">' + esc(kicker) + '</span>' : '') + '<h2 id="' + id + '-h">' + esc(text(s.title, 240)) + '</h2>' + (text(s.dek, 600) ? '<p class="pg-dek">' + esc(text(s.dek, 600)) + '</p>' : '') + '<p class="pg-by">By ' + esc(text(s.author, 80)) + (text(s.date, 60) ? ' · ' + esc(text(s.date, 60)) : '') + '</p>' + related + '</header>' +
-      (image ? '<figure class="pg-fig">' + image + cap(s.image, s.caption) + '</figure>' : '') + '<div class="pg-prose">' + prose + '</div>' + (figure ? '<figure class="pg-fig">' + figure + cap(s.figure, s.figureCaption) + '</figure>' : '') + (url ? '<a class="pg-btn" href="' + esc(url) + '">' + esc(text(s.continue, 160) || 'Read the original article') + '</a>' : '') + '</article>';
+  function pgFsuMast(D) {
+    var I = obj(D.issue) || {};
+    return '<header class="fsu-mast"><a class="fsu-brand" href="/" aria-label="GatorBait Media home">GatorBait <span>Magazine</span></a>' +
+      '<p>' + esc(text(I.date, 60)) + '<span>' + esc(text(I.week, 120)) + '</span></p>' +
+      '<nav aria-label="Magazine"><a href="#fsu-contents">Articles</a><a href="#pg-game">Game-day guide</a></nav></header>';
+  }
+  function pgFsuCover(D, lead) {
+    var C = obj(D.cover) || {}, art = frame(C.image, { eager: true, main: 800, sizes: '(max-width: 520px) 94vw, 480px' });
+    return '<section class="pg-cover pg-poster fsu-cover" id="pg-cover" aria-labelledby="pg-cover-h"><h1 class="pg-hide" id="pg-cover-h">' + esc(text(C.headline, 200)) + '</h1>' +
+      '<a class="pg-cover-fig" href="' + esc(safeUrl(lead.story.url)) + '" aria-label="Read ' + esc(text(lead.story.title, 240)) + '">' + art + '</a></section>';
+  }
+  function pgFsuStory(slot, guide, front) {
+    var s = slot.story, id = slot.id, lead = id === 'pg-lead';
+    var image = frame(s.image, { main: 480, sizes: '(max-width: 520px) 90px, 108px' });
+    var photoCredit = s.image && text(s.image.credit, 160);
+    var dek = (lead || !front) && text(s.dek, 340);
+    var authorPrefix = text(s.author, 80) + ': ';
+    if (dek && dek.indexOf(authorPrefix) === 0) dek = dek.slice(authorPrefix.length);
+    var widgets = guide.filter(function (widget) { return widget.story === id || widget.alsoFor === id; });
+    var related = widgets.length ? '<nav class="fsu-related" aria-label="Related game-day widgets">' + widgets.map(function (widget) {
+      return '<a href="#' + widget.id + '">' + esc(widget.label) + '</a>';
+    }).join('') + '</nav>' : '';
+    return '<article class="fsu-story' + (lead ? ' fsu-lead' : '') + '" id="' + id + '"><a class="fsu-story-link" href="' + esc(safeUrl(s.url)) + '" aria-labelledby="' + id + '-h">' +
+      '<div class="fsu-story-copy"><h3 id="' + id + '-h">' + esc(text(s.title, 240)) + '</h3>' +
+      '<p class="fsu-by">' + esc(text(s.author, 80)) + (text(s.date, 60) ? ' <span>· ' + esc(text(s.date, 60)) + '</span>' : '') + '</p>' +
+      (dek ? '<p class="fsu-dek">' + esc(dek) + '</p>' : '') + '</div>' +
+      (image ? '<figure class="fsu-story-art">' + image + (photoCredit ? '<figcaption>' + esc(photoCredit) + '</figcaption>' : '') + '</figure>' : '') + '</a>' + related + '</article>';
   }
   function pgFsuGuide(D) {
     return [
-      { story: 'pg-lead', id: 'pg-slate', label: 'Rivalry Week picks', html: pgSlate(D), folded: true },
-      { story: 'pg-feature', id: 'pg-numbers', label: 'By the numbers', html: pgNumbers(D) },
-      { story: 'pg-feature', id: 'pg-tape', label: 'Tale of the tape', html: pgTape(D) },
-      { story: 'pg-feat-2', id: 'pg-keys', label: 'Keys to the game', html: pgKeys(D) },
-      { story: 'pg-feat-2', id: 'pg-injuries', label: 'Injury and availability', html: pgInjuries(D) },
-      { story: 'pg-feat-3', id: 'pg-game', label: 'Kickoff and TV', html: pgGame(D) },
-      { story: 'pg-feat-3', id: 'pg-series', label: 'The series', html: pgSeries(D) },
-      { story: 'pg-feat-3', id: 'pg-team-schedules', label: 'Both schedules', html: pgTeamSchedules(D) },
-      { story: 'pg-excl-4', alsoFor: 'pg-feat-2', id: 'pg-team-rosters', label: 'Both rosters', html: pgTeamRosters(D) }
+      { story: 'pg-feat-3', id: 'pg-game', label: 'Kickoff and TV', source: 'Read the game guide', html: pgGame(D), place: 'spread' },
+      { story: 'pg-feature', id: 'pg-numbers', label: 'By the numbers', source: 'Read Behind the Sticks', html: pgNumbers(D), place: 'rail' },
+      { story: 'pg-lead', id: 'pg-slate', label: 'Rivalry Week picks', source: 'Read the Soothsayer', html: pgSlate(D), folded: true },
+      { story: 'pg-feature', id: 'pg-tape', label: 'Tale of the tape', source: 'Read Behind the Sticks', html: pgTape(D), half: true },
+      { story: 'pg-feat-2', id: 'pg-injuries', label: 'Availability report', source: 'Read Loren Meadows’ analysis', html: pgInjuries(D), half: true },
+      { story: 'pg-feat-2', id: 'pg-keys', label: 'Keys to the game', source: 'Read Loren Meadows’ analysis', html: pgKeys(D) },
+      { story: 'pg-feat-3', id: 'pg-series', label: 'The series', source: 'Read the game guide', html: pgSeries(D) },
+      { story: 'pg-feat-3', id: 'pg-team-schedules', label: 'Both schedules', source: 'Read the game guide', html: pgTeamSchedules(D) },
+      { story: 'pg-excl-4', alsoFor: 'pg-feat-2', id: 'pg-team-rosters', label: 'Both rosters', source: 'Read Eddie Gilley’s column', html: pgTeamRosters(D) }
     ].filter(function (widget) { return widget.html; });
   }
-  function pgFsuWidgetLinks(widgets) {
-    return widgets.map(function (widget) {
-      return '<a href="#' + widget.id + '">' + esc(widget.label) + '</a>';
-    }).join('');
-  }
-  function pgFsuWidget(widget) {
-    return widget.folded ? '<details class="fsu-picks"><summary>' + esc(widget.label) + '</summary>' + widget.html + '</details>' : widget.html;
-  }
-  function pgFsuContents(D, stories, guide) {
-    var B = obj(D.blackFriday), target = B && text(B.target, 80), validOffer = target && stories.some(function (s) { return s.id === target; }), quick = [];
-    function add(id, label) { if (stories.some(function (s) { return s.id === id; })) quick.push({ id: id, label: label }); }
-    add('pg-lead', 'The Soothsayer');
-    add('pg-feature', 'Behind the Sticks');
-    add('pg-feat-1', 'Buddy Martin');
-    add('pg-feat-2', 'Pregame analysis');
-    add('pg-feat-3', 'Game time & TV');
-    return '<nav class="fsu-contents" id="fsu-contents" aria-labelledby="fsu-contents-t"><h2 id="fsu-contents-t">In this magazine</h2><div class="fsu-quick-links">' + quick.map(function (q) { return '<a href="#' + q.id + '">' + esc(q.label) + '</a>'; }).join('') + '</div>' +
-      (validOffer ? '<p class="fsu-offer-line"><a href="#' + esc(target) + '">' + esc(text(B.text, 600)) + '</a></p>' : '') +
-      '<details class="fsu-all-stories"><summary>All ' + stories.length + ' articles</summary><ol class="fsu-full-toc">' + stories.map(function (slot, i) {
-        return '<li><a href="#' + slot.id + '"><span class="fsu-toc-n" aria-hidden="true">' + (i < 9 ? '0' : '') + (i + 1) + '</span><span><b>' + esc(text(slot.story.author, 80)) + '</b><span>' + esc(text(slot.story.title, 240)) + '</span></span></a></li>';
-      }).join('') + '</ol></details><details class="fsu-guide-details"><summary>Game-day reference</summary><div class="fsu-guide-toc">' + pgFsuWidgetLinks(guide) + '</div></details></nav>';
+  function pgFsuWidget(widget, stories) {
+    var slot = stories.find(function (item) { return item.id === widget.story; });
+    var source = slot ? '<a class="fsu-widget-source" href="' + esc(safeUrl(slot.story.url)) + '">' + esc(widget.source) + ' <span aria-hidden="true">↗</span></a>' : '';
+    if (widget.folded) return '<details class="fsu-widget"><summary>' + esc(widget.label) + '</summary>' + widget.html + source + '</details>';
+    return '<div class="fsu-widget' + (widget.half ? ' fsu-widget-half' : '') + '">' + widget.html + source + '</div>';
   }
   function renderFsuStories(D) {
     var stories = pgFsuStorySlots(D), guide = pgFsuGuide(D);
-    var body = stories.map(function (slot) {
-      var widgets = guide.filter(function (widget) { return widget.story === slot.id; });
-      var links = guide.filter(function (widget) { return widget.story === slot.id || widget.alsoFor === slot.id; });
-      return pgFsuStory(slot, links) + widgets.map(pgFsuWidget).join('');
-    }).join('');
-    return '<div class="pg-wrap fsu-story-first">' + pgTop(D) + pgMast(D) + pgCover(D) + pgFsuContents(D, stories, guide) + '<div class="fsu-complete-stories">' + body + '</div><a class="fsu-back" href="#fsu-contents">Back to contents ↑</a>' + pgFoot(D) + '</div>';
+    function renderCards(slots, front) { return slots.map(function (slot) { return pgFsuStory(slot, guide, front); }).join(''); }
+    function renderGuide(place) { return guide.filter(function (w) { return (w.place || 'reference') === place; }).map(function (widget) { return pgFsuWidget(widget, stories); }).join(''); }
+    return '<div class="pg-wrap fsu-article-edition">' + pgFsuMast(D) +
+      '<div class="fsu-spread">' + pgFsuCover(D, stories[0]) + '<section class="fsu-paper fsu-contents" id="fsu-contents" aria-labelledby="fsu-contents-h"><h2 id="fsu-contents-h">In this issue</h2>' +
+      renderCards(stories.slice(0, 1), true) + '<div class="fsu-front-grid">' + renderCards(stories.slice(1, 5), true) + '</div></section>' + renderGuide('spread') + '</div>' +
+      '<div class="fsu-coverage"><section class="fsu-paper fsu-more" aria-labelledby="fsu-more-h"><h2 id="fsu-more-h">More in this issue</h2><div class="fsu-story-grid">' + renderCards(stories.slice(5), false) + '</div></section>' +
+      '<aside class="fsu-sidebar" aria-label="Matchup statistics">' + renderGuide('rail') + '</aside></div>' +
+      '<section class="fsu-reference" aria-labelledby="fsu-reference-h"><h2 id="fsu-reference-h">Game-day reference</h2><div class="fsu-reference-grid">' + renderGuide('reference') + '</div></section>' + pgFoot(D) + '</div>';
   }

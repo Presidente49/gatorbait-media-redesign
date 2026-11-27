@@ -51,6 +51,13 @@ const baseRuntime = VARIANT === 'wednesday' ? runtimeBase.replace('Six complete 
   NEWS ? newsRuntime(runtimeBase + '\n' + read('sports-live/src/magazine-news.js')) :
   STANDARDS ? standardsRuntime(runtimeBase + read('sports-live/src/magazine-pregame-standards.js')) : runtimeBase;
 const runtime = FSU_STORIES ? fsuStoriesRuntime(baseRuntime + read('sports-live/src/magazine-fsu-stories.js')) : VIDEOS ? videosRuntime(baseRuntime + read('sports-live/src/magazine-pregame-videos.js')) : baseRuntime;
+// The FSU web issue links to Wix for the articles. Keep the complete source manuscripts for print and editorial use.
+const readerIssue = FSU_STORIES ? fsuArticleIndex(issue) : issue;
+function fsuArticleIndex(data) {
+  function preview({ html, ...story }) { return story; }
+  function collection(group) { return group && { ...group, items: (group.items || []).map(preview) }; }
+  return { ...data, lead: preview(data.lead), feature: preview(data.feature), features: collection(data.features), exclusives: collection(data.exclusives) };
+}
 function fsuStoriesRuntime(code) {
   if (!STANDARDS || issue.liveFeed !== false || issue.videos || issue.cards) throw new Error('FSU story-first requires standards, liveFeed:false and no video/card blocks');
   const groups = [issue.features?.items || [], issue.exclusives?.items || []];
@@ -58,6 +65,7 @@ function fsuStoriesRuntime(code) {
   const stories = [issue.lead, issue.feature, ...groups.flat()];
   if (stories.some(s => !s || !String(s.title || '').trim() || !String(s.author || '').trim() || typeof s.html !== 'string' || !s.html.trim())) throw new Error('FSU requires a complete title/byline/body for every story slot');
   if (new Set(stories.map(s => s.title.trim())).size !== stories.length) throw new Error('FSU story titles must be unique');
+  if (stories.some(s => typeof s.url !== 'string' || !/^\/post\/[a-z0-9-]+$/.test(s.url)) || new Set(stories.map(s => s.url)).size !== stories.length) throw new Error('FSU requires a unique canonical post URL for every story');
   const ids = ['pg-lead', 'pg-feature', ...groups[0].map((_, i) => 'pg-feat-' + (i + 1)), ...groups[1].map((_, i) => 'pg-excl-' + (i + 1))];
   if (issue.blackFriday && !ids.includes(issue.blackFriday.target)) throw new Error('Black Friday target is not a rendered FSU story');
   const from = 'return renderPregame(D);';
@@ -93,8 +101,8 @@ const PM_SEL = '#gbm-magazine-page.pm';
 const MZ_SEL = '#gbm-magazine-page.mz26 '; // second token (tilde, absent from the CSS): 290 more repeats, ~6 KB
 const cssExpression = css.includes('`') || css.includes('~') ? JSON.stringify(css) :
   JSON.stringify(css.split(PM_SEL).join('`').split(MZ_SEL).join('~')) + '.split("~").join("' + MZ_SEL + '").split("`").join("' + PM_SEL + '")';
-// The story-first FSU issue alone has a 304 KiB budget for complete native articles and all reference widgets. Legacy FSU remains272 KiB.
-const MAX_JS = (FSU_STORIES ? 304 : VARIANT === 'fsu' ? 272 : POSTGAME ? 212 : 216) * 1024; // pregame cap 192 -> 216 KB on Nov. 21 for the Vanderbilt game-day edition: four writers' pregame pieces in full (owner direction: "add all the pregame articles to that magazine") // pregame cap 184 -> 192 KB on Nov. 20 for the Vanderbilt edition: the availability report, four issue stories and their art, on top of both rosters and schedules (owner direction) // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
+// The FSU web issue carries short previews and full game-day tables. Legacy FSU retains its original budget.
+const MAX_JS = (FSU_STORIES ? 224 : VARIANT === 'fsu' ? 272 : POSTGAME ? 212 : 216) * 1024; // pregame cap 192 -> 216 KB on Nov. 21 for the Vanderbilt game-day edition: four writers' pregame pieces in full (owner direction: "add all the pregame articles to that magazine") // pregame cap 184 -> 192 KB on Nov. 20 for the Vanderbilt edition: the availability report, four issue stories and their art, on top of both rosters and schedules (owner direction) // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
 
 // A Magazine edition gets one visual treatment for each source asset. Repeated art makes a
 // roundup feel accidentally templated, even when the same file arrives by a different Wix cut.
@@ -123,7 +131,7 @@ function assertUniqueRenderedImages(value, path = '$', seen = new Map()) {
 }
 assertUniqueRenderedImages(issue);
 
-const build = createHash('sha1').update(css + runtime + JSON.stringify(issue) + JSON.stringify(credits)).digest('hex').slice(0, 8);
+const build = createHash('sha1').update(css + runtime + JSON.stringify(readerIssue) + JSON.stringify(credits)).digest('hex').slice(0, 8);
 const banner = `/* GatorBait Magazine 2026: the weekly web issue on /magazine. Issue ${issue.id}, build ${build}.
  * BUILT, MINIFIED FILE: edit sports-live/src/magazine.{css,js} or sports-live/magazine-issue.json, then run:
  * NODE_PATH=<dir with esbuild> node sports-live/build-magazine.mjs
@@ -132,7 +140,7 @@ const banner = `/* GatorBait Magazine 2026: the weekly web issue on /magazine. I
 const js = minify(`(function () {
   'use strict';
   var CSS = ${cssExpression};
-  var ISSUE = ${JSON.stringify(issue)};
+  var ISSUE = ${JSON.stringify(readerIssue)};
   var BUILD = ${JSON.stringify(build)};
   var CREDITS = ${JSON.stringify(credits)};
 ${runtime}})();

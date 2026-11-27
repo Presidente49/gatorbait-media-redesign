@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)",
+      "excerpt": "Despite the Seminoles’ coaching transition, there is always something to play for in the Sunshine Showdown. Loren Meadows breaks down the matchups and predicts Florida 28, FSU 17.",
+      "url": "https://www.gatorbaitmedia.com/post/pregame-analysis-no-20-florida-gators-7-4-5-4-vs-florida-state-seminoles-5-6-3-5",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-11-27T10:08:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_db06a79d17c64cdc8613af61c86ce1ed~mv2.jpg/v1/fit/w_1000,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)"
+      }
+    },
+    {
+      "title": "The Soothsayer: The Gators have all the motivation they need",
+      "excerpt": "Franz Beard: From Jadan Baugh’s shot at history to a Citrus Bowl push, the Soothsayer says the Gators have every reason to run over Florida State, plus his full SEC picks.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-the-gators-have-all-the-motivation-they-need",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-27T10:07:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: The Gators have all the motivation they need"
+      }
+    },
+    {
       "title": "A time to give thanks and a Florida-FSU memory",
       "excerpt": "On Thanksgiving eve, Franz Beard remembers a Cambodian refugee family's gratitude, a lifetime of Gator memories, and the 2005 Florida-FSU week when Urban and Shelley Meyer called his mother in the hospital.",
       "url": "https://www.gatorbaitmedia.com/post/a-time-to-give-thanks-and-a-florida-fsu-memory",
@@ -251,34 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Baugh Control: No. 24 Florida rallies past Vanderbilt 34-27 on Senior Day"
-      }
-    },
-    {
-      "title": "Flag Day in The Swamp: Vanderbilt leads No. 24 Florida 24-17 at halftime",
-      "excerpt": "Vanderbilt scored 15 points in the final 1:46 of the half to erase a 17-9 Florida lead. Florida was flagged six times, three in the last two minutes.",
-      "url": "https://www.gatorbaitmedia.com/post/flag-day-in-the-swamp-vanderbilt-leads-no-24-florida-24-17-at-halftime",
-      "author": "Brenden Martin",
-      "firstPublishedDate": "2026-11-21T18:43:30Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_1a44d3d034b54dda9c5e95423cad0585~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Flag Day in The Swamp: Vanderbilt leads No. 24 Florida 24-17 at halftime"
-      }
-    },
-    {
-      "title": "Live updates: Vanderbilt at No. 24 Florida (final: Florida 34, Vanderbilt 27)",
-      "excerpt": "Final: Florida 34, Vanderbilt 27. The quarter-by-quarter record of Vanderbilt at No. 24 Florida, with photos from the game.",
-      "url": "https://www.gatorbaitmedia.com/post/live-updates-vanderbilt-at-no-24-florida",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-21T17:43:41Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_44f25c74ac5d4d889e0d38ecb35554ad~mv2.jpg/v1/fit/w_1000,h_648,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Live updates: Vanderbilt at No. 24 Florida (final: Florida 34, Vanderbilt 27)"
       }
     }
   ]

@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)",
+      "excerpt": "Despite the Seminoles’ coaching transition, there is always something to play for in the Sunshine Showdown. Loren Meadows breaks down the matchups and predicts Florida 28, FSU 17.",
+      "url": "https://www.gatorbaitmedia.com/post/pregame-analysis-no-20-florida-gators-7-4-5-4-vs-florida-state-seminoles-5-6-3-5",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-11-27T10:08:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_db06a79d17c64cdc8613af61c86ce1ed~mv2.jpg/v1/fit/w_1000,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)"
+      }
+    },
+    {
+      "title": "The Soothsayer: The Gators have all the motivation they need",
+      "excerpt": "Franz Beard: From Jadan Baugh’s shot at history to a Citrus Bowl push, the Soothsayer says the Gators have every reason to run over Florida State, plus his full SEC picks.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-the-gators-have-all-the-motivation-they-need",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-27T10:07:38Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: The Gators have all the motivation they need"
+      }
+    },
+    {
       "title": "A time to give thanks and a Florida-FSU memory",
       "excerpt": "On Thanksgiving eve, Franz Beard remembers a Cambodian refugee family's gratitude, a lifetime of Gator memories, and the 2005 Florida-FSU week when Urban and Shelley Meyer called his mother in the hospital.",
       "url": "https://www.gatorbaitmedia.com/post/a-time-to-give-thanks-and-a-florida-fsu-memory",
@@ -139,34 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Glory days are gone but no lack of incentive for Florida-FSU"
-      }
-    },
-    {
-      "title": "Area Evaluations: Florida vs. Vanderbilt",
-      "excerpt": "Eddie Gilley grades the four areas he flagged before Florida's 34-27 win over Vanderbilt: the weather, the turf, the cleats and the atmosphere in the Swamp.",
-      "url": "https://www.gatorbaitmedia.com/post/area-evaluations-florida-vs-vanderbilt",
-      "author": "Eddie Gilley",
-      "firstPublishedDate": "2026-11-22T15:55:45Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_d327d7c93d0d40f1aa39061be070878c~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Area Evaluations: Florida vs. Vanderbilt"
-      }
-    },
-    {
-      "title": "Jon Sumrall Says It's Time for Gator Football to Say Thanks.",
-      "excerpt": "Jon Sumrall says Florida's fans have held up their end of the bargain, and his team owes them more. Buddy Martin on gratitude, barbecue and a 7-4 team headed to Tallahassee.",
-      "url": "https://www.gatorbaitmedia.com/post/jon-sumrall-says-it-s-time-for-gator-football-to-say-thanks",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-22T14:44:57Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_e84bc8e610dc4995b7cfcc1cd43a4ba2~mv2.jpg/v1/fit/w_480,h_270,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Jon Sumrall Says It's Time for Gator Football to Say Thanks."
       }
     }
   ]

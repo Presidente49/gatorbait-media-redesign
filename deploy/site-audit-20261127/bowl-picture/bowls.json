@@ -1,0 +1,462 @@
+{
+ "ledger": "bowl-picture explainer (researcher B)",
+ "researchedAt": "2026-11-27, about 13:25-13:45 UTC (8:25-8:45 a.m. ET), before any Week 13 SEC game kicked off",
+ "game": "No. 20 Florida (7-4, 5-4 SEC) at Florida State (5-6), Fri. Nov. 27, 2026, 3:30 p.m. ET, ABC, Doak Campbell Stadium (ESPN event 401856759)",
+ "rulesObserved": [
+  "No publish, no Wix or GitHub writes, no email",
+  "The barred outlet named in the assignment is not cited, named, quoted or linked anywhere in this ledger",
+  "No paid research tools used",
+  "Quotes recorded only where read at a named source"
+ ],
+ "facts": [
+  {
+   "id": "A1",
+   "claim": "Non-playoff bowls keep their existing conference tie-ins for the 2026 postseason (one-year carryover).",
+   "value": "Bowl Season release dated April 17, 2026 (dateline San Antonio): its bowls \"will continue their existing conference-bowl agreements with the FBS Division I conferences for the 2026 postseason.\" Exact quote, Nick Carparelli, executive director of Bowl Season: \"We believe maintaining stability across the bowl system for 2026 is the most appropriate path forward given the CFP's decision to extend the current format through this upcoming season.\" Release adds that longer-term decisions on affiliations are expected \"for the 2027 season and beyond once the CFP finalizes its future format.\"",
+   "sourceName": "Bowl Season release, as posted by the Frisco Bowl (ESPN Events)",
+   "sourceUrl": "https://thefriscobowl.com/news/bowl-season-maintains-current-conference-bowl-structure-for-2026-season/",
+   "how": "curl of the page, read raw text; datePublished 2026-04-17T16:00:00Z",
+   "confidence": "verified"
+  },
+  {
+   "id": "A2",
+   "claim": "SEC selection order: playoff first, then the Citrus Bowl picks, then the conference assigns the six-bowl pool.",
+   "value": "SEC release of Dec. 7, 2025: \"the College Football Playoff committee first named the 12 teams to participate in the Playoff. Next, the Cheez-It Citrus Bowl in Orlando selected Texas from the SEC ...\" then the \"SEC Bowl Pool\" of six games is assigned by the league. Process language: pool participants \"are determined after conversations with bowl partners and discussions with school personnel in order to create a lineup of compelling bowl games\" and the process helps \"prevent repetitive postseason destinations when possible.\" 2025 was \"the 12th year\" of the pool, so 2026 is the 13th (derived).",
+   "sourceName": "Southeastern Conference (secsports.com)",
+   "sourceUrl": "https://www.secsports.com/news/2025/12/2025-26-sec-football-bowl-assignments-announced",
+   "how": "curl; article text extracted from the page data-page JSON. NOTE this is the 2025-26 release: no 2026-27 SEC release exists yet (assignments come Dec. 6).",
+   "confidence": "verified"
+  },
+  {
+   "id": "A3",
+   "claim": "Which six bowls are in the SEC pool for 2026: Texas, Music City, Liberty, Gator, ReliaQuest, plus Las Vegas (not Duke's Mayo) this year.",
+   "value": "SEC 2025 release: pool = Kinder's Texas Bowl, Liberty Mutual Music City Bowl, AutoZone Liberty Bowl, TaxSlayer Gator Bowl, ReliaQuest Bowl and Duke's Mayo Bowl; \"In alternating years, the SRS Distribution Las Vegas Bowl replaces the Duke's Mayo Bowl in the SEC Bowl Pool.\" 2025 was the Mayo year. Las Vegas Bowl release June 3, 2026: the 2026 game is \"a scheduled matchup featuring a team from the SEC vs. a representative from either the Big Ten, Big 12, ACC or Oregon State and Washington State (each featuring teams from the former Pac-12 Conference).\"",
+   "sourceName": "SEC (2025 release) + Las Vegas Bowl (lvbowl.com)",
+   "sourceUrl": "https://lvbowl.com/las-vegas-bowl-back-on-new-years-eve-in-2026/",
+   "how": "curl of both pages; two official sources agree. A FanSided table of \"2025 affiliations\" (Mayo ACC vs. SEC; Las Vegas Big Ten vs. Pac-12) describes LAST season and should not be used for 2026.",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "A4",
+   "claim": "The Citrus Bowl takes the top available SEC and Big Ten teams outside the playoff.",
+   "value": "Citrus Bowl site: the game \"will continue to host the top Big Ten and SEC teams from outside the CFP series of bowls.\" June 3, 2026 release: \"The 81st Citrus Bowl, featuring top teams from the Southeastern and Big Ten Conferences ...\" and this season \"marks 35 years since the bowl adopted its current SEC vs. Big Ten format.\"",
+   "sourceName": "Citrus Bowl / Florida Citrus Sports",
+   "sourceUrl": "https://www.citrusbowlorlando.com/citrus-bowl-set-for-saturday-jan-2-at-noon-et-on-abc/",
+   "how": "curl, raw text; datePublished 2026-06-03",
+   "confidence": "verified"
+  },
+  {
+   "id": "A5",
+   "claim": "The ReliaQuest Bowl describes its own place in the order differently from the SEC.",
+   "value": "ReliaQuest Bowl FAQ: \"The bowl generally gets the second selection after the CFP Bowls from the SEC and the Big Ten Conference. Factors such as the the number of SEC and Big Ten CFP playoff selections may adjust this selection order. The bowls Team Selection Committee makes a recommendation to the bowls Board of Directors which has the final decision. No decision will be made prior to the final regular season and conference championship games being played ...\" (page still carries 2025 dates). The SEC describes the ReliaQuest as one of six pool games the league assigns.",
+   "sourceName": "ReliaQuest Bowl (reliaquestbowl.com)",
+   "sourceUrl": "https://reliaquestbowl.com/sports/2024/8/5/fan-information-guide.aspx",
+   "how": "curl, raw text. Two official descriptions differ in emphasis: write \"the SEC, working with the bowls, assigns\" rather than a strict pick order after the Citrus.",
+   "confidence": "conflict"
+  },
+  {
+   "id": "A6",
+   "claim": "SEC also appears in the pools of two ESPN-owned lower-tier bowls.",
+   "value": "Birmingham Bowl release June 3, 2026: game \"will feature teams from the Southeastern Conference, the American Athletic Conference or Atlantic Coast Conference.\" Gasparilla Bowl June 3, 2026: \"two teams selected from a diverse pool, including teams from the Southeastern Conference (SEC), Atlantic Coast Conference (ACC), and American Conference.\"",
+   "sourceName": "JLab Birmingham Bowl; Union Home Mortgage Gasparilla Bowl",
+   "sourceUrl": "https://birminghambowl.com/wp-content/uploads/2026/06/2026-Press-Release-Game-Date6.2.pdf",
+   "how": "pdftotext of the Birmingham release; curl of https://www.gasparillabowl.com/news-updates/",
+   "confidence": "verified"
+  },
+  {
+   "id": "A7",
+   "claim": "What changed this year (bowl side).",
+   "value": "(1) Tie-ins carried over one year instead of a new cycle (A1). (2) Las Vegas replaces Duke's Mayo in the SEC pool (A3). (3) Citrus Bowl moves to Saturday, Jan. 2 at noon ET on ABC, \"the first Saturday Citrus Bowl since 2022\"; last season it was Dec. 31 at 3 p.m. ET and carried the Cheez-It name (SEC 2025 release); this season the bowl, ESPN and NCAA.com all list it simply as the \"Citrus Bowl\" (cheezitcitrusbowl.com now redirects to citrusbowlorlando.com). (4) Camping World Stadium \"will host the event at a reduced capacity as the venue undergoes a $400 million renovation set for completion in 2027.\" (5) Gator Bowl moves from Dec. 27 at 7:30 p.m. ET on ABC (2025, per SEC release) to Wednesday, Dec. 30 at 11:30 a.m. ET on ESPN. (6) Music City Bowl: \"expected to be one of the last major football games played in the current Nissan Stadium,\" new stadium \"projected to open next door in early 2027.\"",
+   "sourceName": "Citrus Bowl; SEC; Music City Bowl; ESPN",
+   "sourceUrl": "https://www.citrusbowlorlando.com/citrus-bowl-set-for-saturday-jan-2-at-noon-et-on-abc/",
+   "how": "curl of each bowl page plus SEC 2025 release. Do not state WHY the Citrus has no title sponsor in its name: no source read explains it.",
+   "confidence": "verified"
+  },
+  {
+   "id": "A8",
+   "claim": "What changed this year (playoff side).",
+   "value": "ESPN (Bonagura/Schlabach, Nov. 23): \"New to the 2026 season, the Power 4 conference champions will receive automatic bids to the College Football Playoff along with the highest-ranked Group of 6 team regardless of whether it is a league champ. The remaining slots in the 12-team field will go to the next seven highest-ranked teams. Notre Dame is guaranteed a spot in the field if it is among the top 12 teams.\" NCAA.com says the same and adds the four highest-ranked teams get byes. Still 12 teams in 2026-27.",
+   "sourceName": "ESPN; NCAA.com",
+   "sourceUrl": "https://www.espn.com/college-football/story/_/id/50564492/2026-week-12-college-football-playoff-bowl-projections",
+   "how": "ESPN content API (content.core.api.espn.com/v1/sports/news/50564492) + curl of https://www.ncaa.com/news/football/article/2026-08-11/how-college-football-playoff-works-schedule-selections-rankings-byes-and-more",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "A9",
+   "claim": "This is the last bowl season before the playoff doubles.",
+   "value": "ESPN, Heather Dinich, Nov. 9, 2026: \"The College Football Playoff has officially doubled in size, introducing a 24-team field that will start in time for the 2027 season,\" a change that will \"eliminate Power 4 conference championship games ... and have a trickle-down effect on bowl season.\" The CFP site links \"About the 24-Team CFP Format (Beginning 2027-28).\" Florida AD Scott Stricklin, quoted by ESPN in that story: \"I would say that bowls even more so are going to be like the NIT is now, which there's still teams that like playing, and they're excited for the opportunity, and some not as much, depending on where they are in their program.\"",
+   "sourceName": "ESPN (Heather Dinich)",
+   "sourceUrl": "https://www.espn.com/college-football/story/_/id/50433738/cfp-playoff-24-team-format-faq",
+   "how": "ESPN content API (id 50433738), full text read. Quote is usable only with attribution to ESPN.",
+   "confidence": "verified"
+  },
+  {
+   "id": "A10",
+   "claim": "The SEC plays nine conference games in 2026.",
+   "value": "ESPN standings show nine league games for teams that have finished SEC play: Georgia 8-1, Florida 5-4, Kentucky 5-4, South Carolina 4-5.",
+   "sourceName": "ESPN standings API",
+   "sourceUrl": "https://site.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season=2026",
+   "how": "curl, parsed JSON. Whether nine games is \"new this year\" was seen only in a CBS headline in search results, not read: do not call it new without checking.",
+   "confidence": "verified"
+  },
+  {
+   "id": "B1",
+   "claim": "Citrus Bowl (81st): date, time, site, TV, tie-in.",
+   "value": "Saturday, Jan. 2, 2027, noon ET, ABC, Camping World Stadium, Orlando. SEC vs. Big Ten. No title sponsor in the name this season.",
+   "sourceName": "ESPN bowl scoreboard API (event 401874432) + Citrus Bowl site",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API; curl citrusbowlorlando.com; also ESPN Press Room June 3 release and NCAA.com (updated Nov. 23)",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "B2",
+   "claim": "ReliaQuest Bowl: date, time, site, TV, tie-in.",
+   "value": "Thursday, Dec. 31, 2026, noon ET, ESPN, Raymond James Stadium, Tampa. SEC vs. Big Ten (\"features teams from ... the SEC and Big Ten Conference\"). Formerly the Hall of Fame Bowl (Dec. 1986-Jan. 1995) and Outback Bowl (April 1995-March 2022).",
+   "sourceName": "ESPN bowl scoreboard API (event 401874429) + ReliaQuest Bowl site",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API; ESPN Press Room; NCAA.com; tie-in and name history from https://reliaquestbowl.com/sports/2024/8/5/about-the-bowl.aspx. The bowl site itself still shows 2025 game details, so the 2026 date rests on ESPN/NCAA.",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "B3",
+   "claim": "TaxSlayer Gator Bowl (82nd): date, time, site, TV, tie-in.",
+   "value": "Wednesday, Dec. 30, 2026, 11:30 a.m. ET, ESPN, EverBank Stadium, Jacksonville. SEC vs. ACC. Bowl site: \"82nd Game: Wednesday, December 30, 2026 | 11:30 AM, Bill Gay Grounds at EverBank Stadium.\"",
+   "sourceName": "ESPN bowl scoreboard API (event 401874427) + Gator Bowl site",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API; curl taxslayergatorbowl.com homepage. ACC tie-in: bowl FAQ (SEC and ACC seating sides; FAQ page is stale, still about the 81st game) and CBS Sports hub label \"ACC/ND vs. SEC\".",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "B4",
+   "claim": "Liberty Mutual Music City Bowl (28th): date, time, site, TV, tie-in.",
+   "value": "Wednesday, Dec. 30, 2026, 3 p.m. ET (2 p.m. CT), ESPN, Nissan Stadium, Nashville. SEC vs. Big Ten (\"The SEC team will be seated on the East side of the stadium and the Big Ten team will be on the west\").",
+   "sourceName": "ESPN bowl scoreboard API (event 401874428) + Music City Bowl site",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API; curl https://www.musiccitybowl.com/blog/2026gamedate (June 3, 2026) and /faqs",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "B5",
+   "claim": "Kinder's Texas Bowl: date, time, site, TV, tie-in.",
+   "value": "Thursday, Dec. 31, 2026, 7:30 p.m. ET, ESPN, Houston. SEC vs. Big 12. STADIUM NAME: ESPN API and ESPN Press Room say \"Reliant Stadium\"; NCAA.com (updated Nov. 23) says \"NRG Stadium\". ABC13 Houston reported April 15, 2026 that NRG Energy said the building \"will change its name back to Reliant Stadium\" in August 2026, so Reliant Stadium is the current name.",
+   "sourceName": "ESPN bowl scoreboard API (event 401874431); NCAA.com; ABC13 Houston",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API and NCAA.com; WebFetch of abc13.com story. The Texas Bowl's own site would not load (connection failed, then 503). Big 12 tie-in from SEC 2025 release (\"LSU vs. Big 12\") and CBS hub label, carried over per A1. Safest copy: \"in Houston\".",
+   "confidence": "conflict"
+  },
+  {
+   "id": "B6",
+   "claim": "AutoZone Liberty Bowl (68th): date, time, site, TV, tie-in.",
+   "value": "Saturday, Jan. 2, 2027, 7:30 p.m. ET (6:30 p.m. CT), ABC, Simmons Bank Liberty Stadium, Memphis. SEC vs. Big 12.",
+   "sourceName": "ESPN bowl scoreboard API (event 401874395) + Liberty Bowl site",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API; curl libertybowl.org (\"Join us on January 2, 2027, 6:30 PM CT for the 68th AutoZone Liberty Bowl\"). Big 12 tie-in for 2026 not stated on the bowl site: rests on CBS hub label (\"Big 12 vs. SEC\") and the carryover in A1.",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "B7",
+   "claim": "Las Vegas Bowl (XXXV): date, time, site, TV, tie-in.",
+   "value": "Thursday, Dec. 31, 2026, 3:45 p.m. ET (12:45 p.m. PT), ESPN, Allegiant Stadium, Las Vegas. SEC vs. Big Ten, Big 12, ACC, Oregon State or Washington State (legacy Pac-12). No title sponsor in the name this season. The CFP title game is in the same building Jan. 25.",
+   "sourceName": "ESPN bowl scoreboard API (event 401874430) + Las Vegas Bowl site",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API; curl https://lvbowl.com/las-vegas-bowl-back-on-new-years-eve-in-2026/ (June 3, 2026)",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "B8",
+   "claim": "JLab Birmingham Bowl (20th): date, time, site, TV, tie-in.",
+   "value": "Tuesday, Dec. 29, 2026, 2 p.m. ET (1 p.m. CT), ESPN, Protective Stadium, Birmingham, Ala. Teams from the SEC, American or ACC.",
+   "sourceName": "ESPN bowl scoreboard API (event 401874424) + Birmingham Bowl release",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API; pdftotext of the bowl's June 3, 2026 release",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "B9",
+   "claim": "Union Home Mortgage Gasparilla Bowl: date, time, site, TV, tie-in.",
+   "value": "Friday, Dec. 18, 2026, 2:30 p.m. ET, ESPN, Raymond James Stadium, Tampa. Pool includes SEC, ACC and American. This is where 7-5 Florida landed in 2024 (see E5).",
+   "sourceName": "ESPN bowl scoreboard API (event 401874406) + Gasparilla Bowl site",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API; curl gasparillabowl.com news page (June 3, 2026 item)",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "B10",
+   "claim": "Duke's Mayo Bowl: date, time, site, TV; not an SEC pool game this year.",
+   "value": "Saturday, Dec. 26, 2026, 3:30 p.m. ET, ABC, Bank of America Stadium, Charlotte. Per A3 the SEC rotates to Las Vegas in 2026; ESPN, SI and DraftKings Network projections all slot ACC vs. Big Ten teams here. CBS hub labels it \"ACC/ND/Big Ten/SEC\".",
+   "sourceName": "ESPN bowl scoreboard API (event 401874419) + Charlotte Sports Foundation",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?seasontype=3&week=1&dates=2026&limit=300",
+   "how": "curl ESPN API; curl charlottesports.org/event/dukes-mayo-bowl/ (date and time only). The bowl site does not state its 2026 conference pairing, and the ACC release was blocked (403).",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "C1",
+   "claim": "SEC teams in the latest CFP committee ranking (fourth ranking, released Tuesday, Nov. 24).",
+   "value": "Top 12: four SEC teams: No. 1 Georgia (10-1), No. 3 Texas (9-2), No. 5 Tennessee (9-2), No. 6 Alabama (9-2). Top 25: eight SEC teams, adding No. 17 Oklahoma (7-4), No. 20 Florida (7-4), No. 22 Ole Miss (7-4), No. 23 Missouri (7-4). Florida moved up from No. 24. Kentucky and Auburn (both 7-4) are unranked by the committee.",
+   "sourceName": "ESPN rankings API (CFP Rankings, Week 13)",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings",
+   "how": "curl, parsed JSON; cross-checked against ESPN story id 50584328 (published 2026-11-25T02:02Z)",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "C2",
+   "claim": "All four SEC teams in the top 12 are in the projected bracket, and nobody else in the league is close.",
+   "value": "ESPN bracket off the Nov. 24 ranking: byes for No. 1 Georgia and No. 3 Texas; No. 5 Tennessee and No. 6 Alabama host first-round games. ESPN Bubble Watch (Dinich, Nov. 25): SEC \"Would be in: Georgia, Texas, Tennessee, Alabama ... First team out: None. After the aforementioned top four, every other team in the SEC has at least four losses\"; the top four \"all have at least an 89% chance to reach the playoff, but every other team in the league is at less than 1%, according to the Allstate Playoff Predictor.\" Florida is listed under \"Out\".",
+   "sourceName": "ESPN",
+   "sourceUrl": "https://www.espn.com/college-football/story/_/id/50575185/cfp-playoff-2026-bubble-watch-week-fourth-ranking",
+   "how": "ESPN content API, full text read (ids 50584328 and 50575185)",
+   "confidence": "verified"
+  },
+  {
+   "id": "C3",
+   "claim": "SEC standings today (overall, conference), ESPN order.",
+   "value": "Georgia 10-1, 8-1 | Texas 9-2, 6-2 | Tennessee 9-2, 6-2 | Alabama 9-2, 6-2 | Oklahoma 7-4, 5-3 | Florida 7-4, 5-4 | Kentucky 7-4, 5-4 | Ole Miss 7-4, 4-4 | Auburn 7-4, 4-4 | Missouri 7-4, 4-4 | South Carolina 6-5, 4-5 | LSU 6-5, 3-5 | Mississippi State 5-6, 2-6 | Arkansas 4-7, 2-6 | Texas A&M 4-7, 1-7 | Vanderbilt 4-7, 1-7. Florida's league schedule is finished at 5-4.",
+   "sourceName": "ESPN standings API",
+   "sourceUrl": "https://site.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season=2026",
+   "how": "curl, parsed JSON, about 8:30 a.m. ET Nov. 27, before any Week 13 SEC game kicked off. ESPN is inconsistent on Florida's \"place\" (team endpoint says \"5th in SEC\", schedule endpoint says \"6th in SEC\"): describe by record, not place.",
+   "confidence": "verified"
+  },
+  {
+   "id": "C4",
+   "claim": "Bowl math: how many SEC teams need a non-playoff bowl.",
+   "value": "Twelve SEC teams already have six wins (the 12 listed first in C3). Mississippi State (5-6) would be the 13th with a win at Ole Miss today. Arkansas, Texas A&M and Vanderbilt (all 4-7) cannot get to six. With four in the playoff, that leaves eight or nine SEC teams for the Citrus plus the six pool bowls (seven slots), so at least one eligible SEC team falls to Birmingham or Gasparilla. Six SEC teams are 7-4: Oklahoma, Florida, Kentucky, Ole Miss, Auburn, Missouri.",
+   "sourceName": "Derived from ESPN standings API + SEC process (A2, A3)",
+   "sourceUrl": "https://site.api.espn.com/apis/v2/sports/football/college-football/standings?group=8&season=2026",
+   "how": "Arithmetic on verified numbers. Last season the SEC put five teams in the playoff and filled the Citrus plus five pool bowls, 11 teams in all (SEC 2025 release).",
+   "confidence": "verified"
+  },
+  {
+   "id": "C5",
+   "claim": "This weekend's games for the teams Florida is competing with (all times ET).",
+   "value": "Fri. Nov. 27: Mississippi State at No. 22 Ole Miss, noon, ABC. Sat. Nov. 28: No. 19 Louisville at Kentucky, noon, ESPN2; LSU at Arkansas, 12:45 p.m., SEC Network; South Carolina at Clemson, 3 p.m., ESPN2; No. 17 Oklahoma at No. 23 Missouri, 4:15 p.m., SEC Network; Auburn at No. 6 Alabama, 7:30 p.m., ABC. Oklahoma-Missouri guarantees exactly one more 8-4 SEC team and one 7-5.",
+   "sourceName": "ESPN scoreboard API",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261128&groups=8",
+   "how": "curl for dates 20261127 and 20261128; UTC converted to ET (EST = UTC-5). Rankings shown are the CFP numbers from C1.",
+   "confidence": "verified"
+  },
+  {
+   "id": "C6",
+   "claim": "Florida's results against the SEC teams it is being compared with.",
+   "value": "Beat Auburn 44-39 (Sept. 19, away); beat Ole Miss 52-28 (Sept. 26, home); lost at Missouri 45-17 (Oct. 3); lost to South Carolina 38-19 (Oct. 10, home); beat Texas 27-24 (Oct. 17, away); lost to Georgia 27-8 (Oct. 31, Mercedes-Benz Stadium, Atlanta); lost to Oklahoma 23-7 (Nov. 7, home); beat Kentucky 21-14 (Nov. 14, away); beat Vanderbilt 34-27 (Nov. 21, home). Head-to-head: wins over Ole Miss, Kentucky, Auburn; losses to Oklahoma and Missouri.",
+   "sourceName": "ESPN team schedule API",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2026",
+   "how": "curl, parsed JSON. Oklahoma game start was 00:45 UTC Nov. 8 = Saturday night Nov. 7 ET. Florida has not played in Jacksonville this season (Georgia game was in Atlanta), so a Gator Bowl would be its only game there in 2026.",
+   "confidence": "verified"
+  },
+  {
+   "id": "C7",
+   "claim": "Florida's ranking and record going into today.",
+   "value": "No. 20 in the CFP ranking (Nov. 24), No. 20 AP (Nov. 22), No. 20 coaches (Nov. 22). 7-4 overall, 5-4 SEC, won two straight.",
+   "sourceName": "ESPN rankings API + team API",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings",
+   "how": "curl, parsed JSON",
+   "confidence": "verified"
+  },
+  {
+   "id": "C8",
+   "claim": "Remaining calendar before bowls are set.",
+   "value": "Fifth CFP ranking: Tuesday, Dec. 1, 7-7:30 p.m. ET, ESPN. SEC Championship Game: Saturday, Dec. 5, 4 p.m. ET, ABC, Mercedes-Benz Stadium, Atlanta; Georgia has clinched one spot (\"the Bulldogs' sixth consecutive appearance in the game,\" ESPN). Selection Day: Sunday, Dec. 6.",
+   "sourceName": "NCAA.com; ESPN scoreboard API; ESPN",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261205&groups=80",
+   "how": "curl NCAA.com explainer (rankings show schedule); curl ESPN scoreboard for Dec. 5 (event 401869545); ESPN story 50564492",
+   "confidence": "verified"
+  },
+  {
+   "id": "D1",
+   "claim": "ESPN projection for Florida.",
+   "value": "Both Kyle Bonagura and Mark Schlabach: TaxSlayer Gator Bowl, Dec. 30, 11:30 a.m. ET, ESPN: \"SMU vs. Florida\". Published Mon. Nov. 23, 2026, 12:28 UTC (7:28 a.m. ET): AFTER the Nov. 21 win over Vanderbilt, BEFORE the Nov. 24 committee ranking. Their Citrus picks: Bonagura Ohio State vs. LSU; Schlabach Indiana vs. Oklahoma. ReliaQuest: Bonagura Wisconsin vs. Ole Miss; Schlabach Ohio State vs. Ole Miss. Both put four SEC teams in the playoff (Georgia, Texas, Tennessee, Alabama).",
+   "sourceName": "ESPN, \"2026-27 Week 12 College Football Playoff, bowl projections,\" Kyle Bonagura and Mark Schlabach",
+   "sourceUrl": "https://www.espn.com/college-football/story/_/id/50564492/2026-week-12-college-football-playoff-bowl-projections",
+   "how": "ESPN content API (content.core.api.espn.com/v1/sports/news/50564492), full story text read",
+   "confidence": "verified"
+  },
+  {
+   "id": "D2",
+   "claim": "CBS Sports projection for Florida.",
+   "value": "Brad Crawford: Gator Bowl, \"Clemson vs. Florida\". Published Sun. Nov. 22, 2026, 12:12 p.m. ET: AFTER the Vanderbilt win, before the Nov. 24 ranking. His Citrus pick: Iowa vs. Oklahoma; ReliaQuest: Ohio State vs. South Carolina; Music City: Michigan vs. Kentucky; Las Vegas: Arizona vs. Missouri; Texas: Oklahoma State vs. Ole Miss; Liberty: Baylor vs. LSU; Birmingham: Auburn vs. Minnesota. CBS adds that Oregon and USC \"remain contractually tied to Pac-12 bowl games for one more season,\" which is why Iowa is its Big Ten pick for the Citrus.",
+   "sourceName": "CBS Sports, \"Bowl projections: Slotting all 47 games as Week 12 upsets provide massive shakeup to postseason picture,\" Brad Crawford",
+   "sourceUrl": "https://www.cbssports.com/college-football/news/college-football-bowl-projections-cfp-bracket-predictions-week-13-2026/",
+   "how": "curl, raw text; datePublished 2026-11-22T17:12:00Z. Same matchups on the CBS hub https://www.cbssports.com/college-football/bowls/predictions/ (\"Updated Nov 22, 2026\").",
+   "confidence": "verified"
+  },
+  {
+   "id": "D3",
+   "claim": "Sports Illustrated projection for Florida.",
+   "value": "Bryan Fischer: \"Gator Bowl | Dec. 30 | SMU vs. Florida\". Published Sun. Nov. 22, 2026, 20:23 UTC (3:23 p.m. ET): AFTER the Vanderbilt win. His Citrus pick: Ohio State vs. Mississippi (Ole Miss); ReliaQuest: Nebraska vs. Oklahoma; Music City: Iowa vs. LSU; Las Vegas: Arizona vs. Auburn; Texas: UCF vs. Missouri; Liberty: Houston vs. Kentucky.",
+   "sourceName": "Sports Illustrated, \"College Football Playoff and Bowl Projections After Week 12: Parsing the CFP Bubble,\" Bryan Fischer",
+   "sourceUrl": "https://www.si.com/college-football/cfp-and-bowl-projections-after-week-12-parsing-the-bubble",
+   "how": "curl, raw text; datePublished 2026-11-22T20:23:32Z",
+   "confidence": "verified"
+  },
+  {
+   "id": "D4",
+   "claim": "DraftKings Network projection for Florida.",
+   "value": "Sam Connon: \"TaxSlayer Gator Bowl: Florida vs. SMU\". Published Tue. Nov. 24, 2026, 8:34 p.m. ET (01:34 UTC Nov. 25): AFTER the Vanderbilt win and after the fourth committee ranking. His Citrus pick: Iowa vs. Kentucky; ReliaQuest: Indiana vs. South Carolina; Music City: Nebraska vs. Ole Miss; Las Vegas: Washington vs. Auburn; Texas: Oklahoma vs. Oklahoma State.",
+   "sourceName": "DraftKings Network, \"College Football Playoff Week 13 Rankings: 2026 Bowl Projections,\" Sam Connon",
+   "sourceUrl": "https://dknetwork.draftkings.com/2026/11/24/college-football-playoff-week-13-rankings-2026-bowl-projections/",
+   "how": "curl, raw text; datePublished 2026-11-25T01:34:51Z. This is a sportsbook's editorial arm: say so if cited.",
+   "confidence": "verified"
+  },
+  {
+   "id": "D5",
+   "claim": "On3 projection for Florida (not read at source).",
+   "value": "Brett McMurphy reportedly has Florida vs. Ohio State in the ReliaQuest Bowl, Dec. 31, noon. Reported by The Gainesville Sun (Kevin Brockway, Nov. 25, 2026) and earlier by Hail Florida Hail (Morgan Moriarty, Nov. 18). On3 returned 403 to every request, so the edition date is unknown and it cannot be cited as read.",
+   "sourceName": "The Gainesville Sun via Yahoo Sports syndication",
+   "sourceUrl": "https://sports.yahoo.com/college-football/articles/florida-football-bowl-projections-where-163207445.html",
+   "how": "WebFetch of the Yahoo-syndicated Gainesville Sun story; on3.com blocked (403) for curl and WebFetch",
+   "confidence": "single-secondary"
+  },
+  {
+   "id": "D6",
+   "claim": "USA Today projection for Florida (not read at source).",
+   "value": "Reportedly Gator Bowl vs. Louisville in the Nov. 24, 2026 edition, per The Gainesville Sun. An earlier edition (Erick Smith, Nov. 17, BEFORE the Vanderbilt win) reportedly had Florida vs. Arizona in the Las Vegas Bowl, per Hail Florida Hail. usatoday.com could not be fetched (402 / tool refusal).",
+   "sourceName": "The Gainesville Sun via Yahoo Sports; Hail Florida Hail (FanSided)",
+   "sourceUrl": "https://www.usatoday.com/story/sports/ncaaf/2026/11/24/college-football-bowl-projections-cfp-bracket-predictions-big-ten-big-12/92909567007/",
+   "how": "WebFetch of secondary stories only; original URL recorded but unread",
+   "confidence": "single-secondary"
+  },
+  {
+   "id": "D7",
+   "claim": "The Athletic projection for Florida (not read at source, pre-Vanderbilt).",
+   "value": "Scott Dochterman, Nov. 16, 2026 (BEFORE the Vanderbilt win): reportedly Gator Bowl vs. Duke, per Hail Florida Hail. Paywalled; not attempted.",
+   "sourceName": "Hail Florida Hail (FanSided), Morgan Moriarty, Nov. 18, 2026",
+   "sourceUrl": "https://hailfloridahail.com/a-look-at-florida-s-latest-bowl-projections-with-the-gators-officially-eligible-01m7nkpjk3xc",
+   "how": "WebFetch of the secondary story",
+   "confidence": "single-secondary"
+  },
+  {
+   "id": "D8",
+   "claim": "Projection summary.",
+   "value": "Every projection read at its source this week (ESPN x2, CBS Sports, SI, DraftKings Network) puts Florida in the Gator Bowl in Jacksonville on Dec. 30: four say SMU, one (CBS) says Clemson. None read at source puts Florida in the Citrus or ReliaQuest. All were written with Florida at 7-4; none spells out a 7-5 scenario. Opponent records today: SMU 7-4, Clemson 7-4, Louisville 8-3, Ohio State 7-4 (CFP No. 21), Iowa 9-2 (CFP No. 13).",
+   "sourceName": "Summary of D1-D4 + ESPN team API",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2567",
+   "how": "Synthesis; opponent records from curl of ESPN team endpoints (2567 SMU, 228 Clemson, 97 Louisville, 194 Ohio State, 2294 Iowa)",
+   "confidence": "verified"
+  },
+  {
+   "id": "E1",
+   "claim": "Florida's all-time bowl record.",
+   "value": "49 bowl appearances, 25-24.",
+   "sourceName": "University of Florida 2026 Football Media Guide, \"All-Time Bowl Results\" (p. 155-156)",
+   "sourceUrl": "https://floridagators.com/documents/download/2026/8/12/2026_Football_Media_Guide.pdf",
+   "how": "curl got 403; fetched once with a small Playwright request script (official domain), then pdftotext. Guide is dated Aug. 12, 2026, so it is current through the 2025 season (no bowl in 2025).",
+   "confidence": "verified"
+  },
+  {
+   "id": "E2",
+   "claim": "Florida's most recent Citrus Bowl.",
+   "value": "Jan. 1, 2016 (2015 season), Buffalo Wild Wings Citrus Bowl, Orlando: Michigan 41, Florida 7 (att. 63,113; coach Jim McElwain). In the Orlando game under all its names Florida is 2-4 and has lost three straight, all to Big Ten teams from Michigan: Michigan State 37-34 (Jan. 1, 2000), Michigan 41-35 (Jan. 1, 2008), Michigan 41-7 (Jan. 1, 2016). Wins: Maryland 35-20 (1980 Tangerine), Penn State 21-6 (Jan. 1, 1998).",
+   "sourceName": "Citrus Bowl game results page + ESPN (event 400852735) + UF media guide",
+   "sourceUrl": "https://www.citrusbowlorlando.com/game-results/",
+   "how": "curl of the bowl's results table; ESPN teams/57/schedule?season=2015&seasontype=3; media guide list. The media guide labels this game \"2015 BWW Citrus\" (season year) but labels the Jan. 2012 Gator Bowl \"2012\": its year column is inconsistent, so use full dates.",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "E3",
+   "claim": "Florida's most recent Gator Bowl.",
+   "value": "Jan. 2, 2012 (2011 season), Jacksonville: Florida 24, Ohio State 17 (att. 61,312; MVP Andre Debose). Florida is 7-2 in nine Gator Bowls. The bowl's own table lists only Clemson with more appearances (10, 5-5) and no program with more wins than Florida's seven (Florida State 6-0-1 is next).",
+   "sourceName": "UF media guide + ESPN (event 320020057) + Gator Bowl team records (\"Florida | 9 | 7-2-0\")",
+   "sourceUrl": "https://www.taxslayergatorbowl.com/media/team-records/",
+   "how": "pdftotext of media guide; ESPN teams/57/schedule?season=2011&seasontype=3; curl of the bowl's team-records page. Appearance and win ranks parsed from the bowl's By Team table (top rows: Clemson 10, Florida 9, Georgia Tech 8, Florida State 7, West Virginia 7, North Carolina 7); whether that table includes the December 2025 game was not checked.",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "E4",
+   "claim": "Florida's most recent ReliaQuest/Outback Bowl.",
+   "value": "Jan. 2, 2017 (2016 season), Outback Bowl, Tampa: Florida 30, Iowa 3 (att. 51,119; MVP Chauncey Gardner). Florida is 3-2 in the game, all under the Outback name: lost to Michigan 38-30 (Jan. 1, 2003) and Iowa 37-17 (Jan. 1, 2004); beat Iowa 31-24 (Jan. 2, 2006), Penn State 37-24 (Jan. 1, 2011) and Iowa 30-3. It has never played in it as the ReliaQuest Bowl. That 2017 game is also Florida's last bowl played in January.",
+   "sourceName": "ReliaQuest Bowl history page + ESPN (event 400876109) + UF media guide",
+   "sourceUrl": "https://reliaquestbowl.com/sports/2024/8/5/reliaquest-bowl-history.aspx",
+   "how": "curl of the bowl's year-by-year list; ESPN teams/57/schedule?season=2016&seasontype=3; media guide. \"Last January bowl\" is derived from the media guide dates (2018 Peach Dec. 29, 2019 Orange Dec. 30, 2020 Cotton Dec. 30, 2021 Gasparilla Dec. 23, 2022 Las Vegas Dec. 17, 2024 Gasparilla Dec. 20).",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "E5",
+   "claim": "Florida's most recent bowl of any kind, and the Sumrall wrinkle.",
+   "value": "Dec. 20, 2024, Union Home Mortgage Gasparilla Bowl, Raymond James Stadium, Tampa: Florida 33, Tulane 8 (att. 41,472; MVP DJ Lagway). Florida went in 7-5; Tulane (9-4) was coached by Jon Sumrall, now Florida's coach. Florida played no bowl after the 2023 (5-7) or 2025 (4-8) seasons. Its last three bowls were all before Christmas, and two of them were at Raymond James Stadium (2021, 2024), the ReliaQuest Bowl's home.",
+   "sourceName": "Gasparilla Bowl site + ESPN (event 401677084) + UF media guide",
+   "sourceUrl": "https://www.gasparillabowl.com/the-game/",
+   "how": "curl of the bowl's results table (lists losing coach Jon Sumrall) and its Dec. 8, 2024 release (\"Tulane Green Wave (9-4) ... University of Florida Gators (7-5)\"); ESPN postseason and regular-season schedules 2021-2025",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "E6",
+   "claim": "Recent regular-season win totals (context for \"first eight-win regular season since 2020\").",
+   "value": "2020: 8-2 regular season (8-3 with the SEC title game, then a Cotton Bowl loss). 2021: 6-6. 2022: 6-6. 2023: 5-7. 2024: 7-5. 2025: 4-8. 2026: 7-4 with one to play.",
+   "sourceName": "ESPN team schedule API, seasons 2020-2025",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2020&seasontype=2",
+   "how": "curl; wins and losses counted from completed events. 2020 count separates the SEC Championship Game note. Researcher A owns this claim; listed here only as a cross-check.",
+   "confidence": "verified"
+  },
+  {
+   "id": "F1",
+   "claim": "When bowl matchups are announced.",
+   "value": "Sunday, Dec. 6, 2026. The CFP final ranking and bracket are revealed in a selection show listed for noon-3 p.m. ET on ESPN; the non-playoff bowls announce the same day. Citrus Bowl: public ticket sales begin \"after teams are selected on Sunday, Dec. 6.\" Birmingham Bowl: \"Participating teams will be announced on Sunday, December 6.\" ESPN: projections run \"until the actual matchups are set Dec. 6.\"",
+   "sourceName": "NCAA.com; ESPN Press Room; Citrus Bowl; Birmingham Bowl",
+   "sourceUrl": "https://www.ncaa.com/news/football/article/2026-08-11/how-college-football-playoff-works-schedule-selections-rankings-byes-and-more",
+   "how": "curl NCAA.com (rankings schedule line \"Noon-3 p.m. ET | Sunday, Dec. 6\", \"announced on ESPN\"); WebFetch ESPN Press Room June 1, 2026 release (date only); bowl pages. The CFP's own pages returned 403, so the show time rests on NCAA.com alone. No source gives a clock time for the SEC's announcement; last year the SEC release came out the same Sunday.",
+   "confidence": "verified"
+  },
+  {
+   "id": "F2",
+   "claim": "How the SEC part is decided.",
+   "value": "After the committee names the playoff field, the Citrus Bowl picks its SEC team, then the league places teams in the six pool bowls after talking with the bowls and the schools (A2). The ReliaQuest Bowl says its own selection committee recommends a team to its board (A5).",
+   "sourceName": "SEC; ReliaQuest Bowl",
+   "sourceUrl": "https://www.secsports.com/news/2025/12/2025-26-sec-football-bowl-assignments-announced",
+   "how": "See A2, A5",
+   "confidence": "verified"
+  },
+  {
+   "id": "G1",
+   "claim": "What GatorBait has already printed about the bowl picture (link, do not restate).",
+   "value": "Franz Beard, Nov. 23: \"The Gator Bowl (Jacksonville), ReliaQuest Bowl (Tampa) and Citrus Bowl (Orlando) all had their scouts at Florida's 34-27 win over Vanderbilt\"; projections then had Florida against \"either Ohio State or Iowa in the ReliaQuest Bowl\" or \"Florida-Clemson in the Gator Bowl\"; \"The Citrus Bowl seems somewhat of a longshot.\" Franz Beard, Nov. 27 (Soothsayer): a win could help Florida \"elbow their way past Oklahoma and Ole Miss into the Citrus Bowl where the opponent could be Ohio State\"; notes Florida's two straight wins over Ohio State (2006 title game, 2011 Gator Bowl). Buddy Martin, Nov. 24: \"We can argue bowl geography after Friday.\" None of the seven stories explains the selection order, dates, sites or the 12-eligible-teams math.",
+   "sourceName": "GatorBait Media posts, read through the Wix Blog API",
+   "sourceUrl": "https://www.gatorbaitmedia.com/post/glory-days-are-gone-but-no-lack-of-incentive-for-florida-fsu",
+   "how": "Wix REST GET blog/v3/posts/slugs/{slug}?fieldsets=CONTENT_TEXT&fieldsets=URL for all seven slugs (read-only); bowl-related sentences extracted. The bowl-scout line is our own reporting and can be cited as such. Consistent with E3 and the media guide.",
+   "confidence": "verified"
+  },
+  {
+   "id": "G2",
+   "claim": "Betting line at time of research (researcher A owns this).",
+   "value": "DraftKings via ESPN scoreboard, about 8:30 a.m. ET Fri. Nov. 27: Florida -6.5, total 53.5.",
+   "sourceName": "ESPN scoreboard API (odds provider DraftKings)",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?dates=20261127&groups=8",
+   "how": "curl, parsed JSON",
+   "confidence": "verified"
+  }
+ ],
+ "tipSheetVerdicts": {
+  "eightWinRegularSeason": "Supported: Florida's last eight-win regular season was 2020 (8-2) per ESPN schedules (E6).",
+  "bowlProjectionsCitrusGatorReliaQuest": "Partly supported. Gator Bowl is the consensus of every projection read at its source (ESPN x2, CBS, SI, DraftKings Network). ReliaQuest appears only in On3's projection, which could not be read at source. No projection read at source has Florida in the Citrus; that idea comes from our own columnist and our report that Citrus scouts were at the Vanderbilt game.",
+  "fsuPursuingSchumann": "Stale, as the controller said. Our Nov. 24 story reports the hire. Not re-researched here.",
+  "baugh1000": "Not in this ledger (researcher A).",
+  "spreadAndTotal": "Consistent: DraftKings via ESPN showed Florida -6.5, total 53.5 at about 8:30 a.m. ET (G2)."
+ },
+ "conflicts": [
+  "Texas Bowl stadium: ESPN says Reliant Stadium, NCAA.com says NRG Stadium. The building reverted to the Reliant name in August 2026 per ABC13's report of NRG Energy's announcement. Use \"in Houston\" or Reliant Stadium.",
+  "SEC sixth pool bowl: a FanSided table of 2025 affiliations shows Mayo as the SEC game; the Las Vegas Bowl's own 2026 release and the SEC's alternating-years language make it Las Vegas this season.",
+  "ReliaQuest Bowl says it \"generally gets the second selection\" from the SEC; the SEC says it assigns six pool bowls after the Citrus picks. Do not print a strict 1-2-3 order beyond playoff, then Citrus, then the pool.",
+  "ESPN lists Florida as both \"5th in SEC\" and \"6th in SEC\" on different endpoints. By record it sits behind five teams (5-4, tied with Kentucky, whom it beat).",
+  "CBS Sports counts 47 postseason games; ESPN's schedule story slug says 46. Avoid a game count."
+ ],
+ "couldNotVerify": [
+  "An official SEC statement of the 2026-27 bowl lineup and order: none found on secsports.com (its search is script-driven; a bulk pull of its article feed was blocked by this session's permission system and not retried). The process described is the SEC's December 2025 wording.",
+  "On3 (Brett McMurphy), USA Today and The Athletic projections at their own pages: blocked or paywalled. They are recorded as single-secondary and should not be cited as read.",
+  "The Texas Bowl's own site (would not load) and the ACC's June 3, 2026 bowl release (403): so the 2026 opponent tie-ins for the Texas, Liberty and Duke's Mayo bowls rest on last year's SEC release, CBS Sports labels and the one-year carryover.",
+  "The selection show clock time at the CFP's own site (sub-pages returned 403): noon-3 p.m. ET comes from NCAA.com.",
+  "Any outlet's explicit statement of where a 7-5 Florida would go: none found. The only hard data point is 2024, when 7-5 Florida went to the Gasparilla Bowl.",
+  "CBS Sports' line that the January 2012 Gator Bowl was \"the third highest-attended matchup ... in the last 15 years\": attendance 61,312 is confirmed by the UF media guide, the ranking is not.",
+  "Whether the nine-game SEC schedule is new in 2026: the standings show nine games; \"new\" was seen only in a search-result headline.",
+  "Whether GatorBait already covered the 24-team playoff announcement of Nov. 9: only the seven listed stories were read."
+ ],
+ "storyNotes": {
+  "primaryStorySpine": "Who picks when (playoff, Citrus, then the league's pool of six: ReliaQuest, Gator, Music City, Texas, Liberty, Las Vegas); the math (12 SEC teams eligible, four headed to the playoff, eight for seven good seats, with Birmingham and Gasparilla below); the crowd at 7-4 (six teams) and what today plus Oklahoma-Missouri do to it; what the people paid to guess are guessing (Gator Bowl, five of five read); dates and sites; Florida's history in each; announcement Dec. 6.",
+  "inferencesToLabelAsAnalysis": [
+   "At 8-4 Florida would be level with the Oklahoma-Missouri winner and ahead of any 7-5 team; Oklahoma is ranked higher and won in Gainesville.",
+   "At 7-5 Florida would trail at least one 8-4 SEC team and could slide in the pool; 7-5 sent Florida to the Gasparilla Bowl in 2024.",
+   "A ReliaQuest assignment would be a third bowl at Raymond James Stadium in six seasons (2021, 2024); the SEC says it tries to avoid repeat destinations.",
+   "A Citrus Bowl on Jan. 2, 2027 would be Florida's first January bowl since the Outback Bowl on Jan. 2, 2017, 10 years to the day."
+  ],
+  "secondPieceCandidate": "Only one piece of ground none of the seven stories covers: this is the last bowl season before the 24-team playoff starts in 2027, with Florida AD Scott Stricklin telling ESPN bowls will be \"like the NIT is now.\" It reads better as the closing section of the explainer than as a separate story, and the controller should first check whether we covered the Nov. 9 announcement."
+ },
+ "rawFilesDir": "/tmp/claude-0/-home-user-gatorbait-media-redesign/cd3b0a89-2678-5856-96f6-cbc2d6d437c6/scratchpad/audit/out-stakes/raw/"
+}

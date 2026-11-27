@@ -1,0 +1,604 @@
+{
+ "meta": {
+  "role": "researcher A: game and history facts",
+  "builtAt": "2026-11-27 8:45 a.m. ET (13:45 UTC)",
+  "game": "No. 20 Florida (7-4, 5-4 SEC) at Florida State (5-6, 3-5 ACC), Friday, Nov. 27, 2026, 3:30 p.m. ET, ABC, Doak Campbell Stadium, Tallahassee. ESPN event 401856759.",
+  "rules": "Every value was read today from the URL beside it. Nothing here is from memory. Dates are Eastern. No quote appears unless it was read at the named source. The outlet [outlet we do not cite] was not used.",
+  "confidenceKey": {
+   "verified": "read at a primary or official source (ESPN API, NCAA.com, a school release, an AP or ESPN story for what it reports)",
+   "verified-two-sources": "two independent sources agree",
+   "single-secondary": "secondary sources only; attribute or confirm before printing as flat fact",
+   "conflict": "sources disagree; both recorded",
+   "not-found": "looked for, not found"
+  }
+ },
+ "facts": [
+  {
+   "id": "uf-record",
+   "claim": "Florida's 2026 record entering the Florida State game",
+   "value": "7-4 overall, 5-4 SEC (SEC schedule complete; nine league games). Home 4-2, true road 3-1, neutral 0-1. Points 347 for, 289 against. Won the last two (at Kentucky, Vanderbilt).",
+   "sourceName": "ESPN team and schedule API; AP recap of Vanderbilt game (ESPN)",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2026",
+   "how": "curl of teams/57, teams/57/schedule?season=2026 and summary?event=401856759; home/road split counted by hand from the schedule rows; AP recap text '(7-4, 5-4, SEC, No. 24 CFP)' read in summary?event=401856748",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "uf-rank",
+   "claim": "Florida's rankings this week",
+   "value": "No. 20 in all three: AP Top 25 (poll dated Nov. 22; was No. 23), AFCA Coaches Poll (Nov. 22; was No. 25), College Football Playoff committee (released Tuesday, Nov. 24; was No. 24).",
+   "sourceName": "ESPN rankings API",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings",
+   "how": "curl of /rankings (first try 403, second with a browser user-agent 200); read current and previous for Florida in each poll",
+   "confidence": "verified"
+  },
+  {
+   "id": "cfp-which-number",
+   "claim": "Which CFP ranking this week's is, and Florida's path through them",
+   "value": "The Nov. 24 release is the committee's FOURTH ranking of 2026 (Nov. 3, Nov. 10, Nov. 17, Nov. 24). Florida: No. 24 (Nov. 3, at 5-3), unranked (Nov. 10), No. 24 (Nov. 17, at 6-4), No. 20 (Nov. 24, at 7-4). AP path over the same stretch: 17 (Oct. 25), 25 (Nov. 1), unranked (Nov. 8), 23 (Nov. 16), 20 (Nov. 22).",
+   "sourceName": "ESPN rankings API by week; ESPN (Heather Dinich, Nov. 25) headline 'after committee's fourth ranking'",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings?seasons=2026&weeks=10&types=2",
+   "how": "curl of /rankings?seasons=2026&weeks=N&types=2 for N=9..13; week 9 has no CFP list, weeks 10-13 do; ESPN story id 50575185 headline confirms 'fourth ranking'",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "uf-results-2026",
+   "claim": "Florida's 2026 results by game (ET dates; rank is the one ESPN's schedule shows at game time)",
+   "value": "Sept. 5 W 66-21 vs Florida Atlantic | Sept. 12 W 52-3 vs Campbell | Sept. 19 W 44-39 at Auburn | Sept. 26 W 52-28 vs No. 4 Ole Miss (UF No. 21) | Oct. 3 L 17-45 at No. 25 Missouri (UF No. 8) | Oct. 10 L 19-38 vs South Carolina (UF No. 16) | Oct. 17 W 27-24 at No. 7 Texas | Oct. 31 L 8-27 vs No. 3 Georgia at Mercedes-Benz Stadium, Atlanta (UF No. 17) | Nov. 7 L 7-23 vs Oklahoma (UF No. 24 CFP; AP recap calls Florida No. 25) | Nov. 14 W 21-14 at Kentucky (No. 11 CFP; AP recap says No. 13) | Nov. 21 W 34-27 vs Vanderbilt (UF No. 23 AP, No. 24 CFP) | Nov. 27 at Florida State.",
+   "sourceName": "ESPN schedule API",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2026",
+   "how": "curl; UTC kickoff converted to America/New_York for each row; scores and winner flags read per competitor",
+   "confidence": "verified"
+  },
+  {
+   "id": "uf-ranked-wins",
+   "claim": "Florida's wins over teams ranked at kickoff",
+   "value": "Three: No. 4 Ole Miss 52-28 (Sept. 26, home), No. 7 Texas 27-24 (Oct. 17, road), Kentucky 21-14 (Nov. 14, road; No. 11 CFP, No. 13 AP). Florida is 3-2 against teams ranked at kickoff (losses: at No. 25 Missouri, vs No. 3 Georgia).",
+   "sourceName": "ESPN schedule API (curatedRank per game)",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2026",
+   "how": "read opponent curatedRank on each event; Kentucky's two ranks from ESPN schedule (11) and AP recap headline (13)",
+   "confidence": "verified"
+  },
+  {
+   "id": "sec-standings",
+   "claim": "Where Florida sits in the SEC standings today",
+   "value": "ESPN standings table (read this morning, before the weekend's games): Georgia 8-1; Texas, Tennessee, Alabama 6-2; Oklahoma 5-3; Florida 5-4; Kentucky 5-4; Ole Miss, Auburn, Missouri 4-4; South Carolina 4-5; LSU 3-5; Mississippi State, Arkansas 2-6; Texas A&M, Vanderbilt 1-7. Overall records: Oklahoma, Florida, Kentucky, Ole Miss, Auburn and Missouri are all 7-4. CONFLICT inside ESPN: the team endpoint labels Florida '5th in SEC', the schedule endpoint '6th in SEC'. Use the records, not the ordinal.",
+   "sourceName": "ESPN game summary standings block",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856759",
+   "how": "curl; read standings.groups[0] entries; ordinals read from teams/57 standingSummary and schedule team.standingSummary",
+   "confidence": "conflict"
+  },
+  {
+   "id": "uf-sec-winning",
+   "claim": "Florida's SEC record in context",
+   "value": "5-4 is Florida's first winning SEC record since 2020. SEC records by year: 2020 8-2, 2021 2-6, 2022 3-5, 2023 3-5, 2024 4-4, 2025 2-6, 2026 5-4.",
+   "sourceName": "ESPN schedule API (vsconf record on each season's last regular-season game); AP recap Nov. 21, 2026",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2024&seasontype=2",
+   "how": "curl for each season 2018-2026; read the 'vsconf' record after the final regular-season game; AP recap of Vanderbilt game says Florida 'finished above .500 in Southeastern Conference play for the first time since 2020'",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "game-basics",
+   "claim": "Kickoff, TV and venue",
+   "value": "Friday, Nov. 27, 2026, 3:30 p.m. ET, ABC. Doak Campbell Stadium, Tallahassee (grass). Not a neutral site, not a conference game. ESPN event 401856759.",
+   "sourceName": "ESPN game summary API; Seminoles.com schedule page",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856759",
+   "how": "curl: date 2026-11-27T20:30Z, broadcast ABC, venue Doak Campbell Stadium; Seminoles.com football page (Playwright) lists 'Football versus Florida on Nov 27, 2026 at 3:30 PM'",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "line-current",
+   "claim": "Current betting line and total",
+   "value": "DraftKings, as carried by ESPN, read at 8:42 a.m. ET Friday, Nov. 27: Florida -6.5 (-108), Florida State +6.5 (-112); total 53.5 (over -112, under -108); moneyline Florida -238, Florida State +195.",
+   "sourceName": "DraftKings via ESPN odds API",
+   "sourceUrl": "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856759/competitions/401856759/odds",
+   "how": "curl at 13:42 UTC Nov. 27 (also 13:24 and 13:37 UTC, unchanged); DraftKings is the only book ESPN lists for this game",
+   "confidence": "verified"
+  },
+  {
+   "id": "line-move",
+   "claim": "How the line has moved",
+   "value": "DraftKings opened Florida -4.5 (-110) with a total of 52.5 and moneylines Florida -218, Florida State +180. It now stands Florida -6.5 and 53.5: two points toward Florida, one point up on the total.",
+   "sourceName": "DraftKings via ESPN odds API (open vs current)",
+   "sourceUrl": "https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/events/401856759/competitions/401856759/odds",
+   "how": "curl; read awayTeamOdds.open/current pointSpread and open/current total; same open/close values in summary pickcenter",
+   "confidence": "verified"
+  },
+  {
+   "id": "line-other-books",
+   "claim": "Other numbers in circulation (not read by this researcher)",
+   "value": "The tip sheet's low-end numbers (5.5, 52.5) were not seen at a named book. 52.5 was DraftKings' OPENING total; DraftKings' opening spread was 4.5. Our own stories use three versions: Nov. 23 Franz Beard 'listed as 4.5-point favorites' (no book named); today's Behind the Sticks 'opened as a 5.5-point favorite' and total 53.5 (no book named); today's game-time story '6.5-point favorite, according to BetMGM. The total is 53.5.' BetMGM was not independently read.",
+   "sourceName": "GatorBait posts via Wix Blog API (read-only)",
+   "sourceUrl": "https://www.gatorbaitmedia.com/post/behind-the-sticks-florida-at-florida-state",
+   "how": "Wix GET blog/v3/posts/slugs/{slug}?fieldsets=CONTENT_TEXT for the seven slugs; sentences matched on spread/total keywords",
+   "confidence": "conflict"
+  },
+  {
+   "id": "espn-predictor",
+   "claim": "ESPN Matchup Predictor",
+   "value": "Florida 64.6%, Florida State 35.4%.",
+   "sourceName": "ESPN game summary API",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856759",
+   "how": "curl; predictor.awayTeam.gameProjection / homeTeam.gameProjection",
+   "confidence": "verified"
+  },
+  {
+   "id": "reg-season-table",
+   "claim": "Florida regular-season records 2019-2026, counted separately from the SEC title game and bowls",
+   "value": "2019: 10-2 regular season; Orange Bowl W; 11-2 final | 2020: 8-2 regular season (10-game, SEC-only schedule); SEC Championship L 46-52 Alabama; Cotton Bowl L; 8-4 final | 2021: 6-6; Gasparilla Bowl L; 6-7 | 2022: 6-6; Las Vegas Bowl L; 6-7 | 2023: 5-7; no bowl | 2024: 7-5; Gasparilla Bowl W; 8-5 | 2025: 4-8; no bowl | 2026: 7-4 with one game left.",
+   "sourceName": "ESPN schedule API, seasontype 2 and 3, seasons 2019-2026",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2020&seasontype=2",
+   "how": "curl for each season and season type; counted winner flags by hand; ESPN files the SEC Championship under seasontype 2 with the note 'SEC Championship Game', so it was subtracted (2020: ESPN shows 8-3 including the title game)",
+   "confidence": "verified"
+  },
+  {
+   "id": "eight-win-claim",
+   "claim": "Is 'first eight-win regular season since 2020' true?",
+   "value": "TRUE, with the word 'regular' doing the work. Florida went 8-2 in the 2020 regular season and has not won eight regular-season games since (6, 6, 5, 7, 4). Florida DID win eight games overall in 2024 (7-5 plus the Gasparilla Bowl), so 'first eight-win season since 2020' without 'regular' would be wrong.",
+   "sourceName": "ESPN schedule API 2020-2025",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2020&seasontype=2",
+   "how": "table above; our Nov. 23 story states the same distinction ('won eight in the regular season for Dan Mullen in 2020 and Napier got to eight with a Gasparilla Bowl win over Tulane in 2024')",
+   "confidence": "verified"
+  },
+  {
+   "id": "what-8-4-means",
+   "claim": "What 8-4 would be the first of",
+   "value": "First eight-win regular season since 2020 (8-2). Most regular-season wins since 2020, and the most in a 12-game regular season since 2019 (10-2). It would double last year's win total (4-8). It would leave Florida one bowl win from nine wins, which would be its most in a season since 2019 (11-2). It would also be a third straight win, Florida's longest streak since the 4-0 start.",
+   "sourceName": "ESPN schedule API 2019-2026",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2019&seasontype=2",
+   "how": "derived from the regular-season table and the 2026 results",
+   "confidence": "verified"
+  },
+  {
+   "id": "what-7-5-means",
+   "claim": "What 7-5 would be",
+   "value": "It would match 2024's 7-5 regular season, not better it. Florida would need a bowl win to reach eight, as it did in 2024 (8-5). Either way Florida has already clinched a non-losing season (7-6 at worst), only its second since 2020 (2024 was 8-5; 2021 and 2022 were 6-7, 2023 was 5-7, 2025 was 4-8).",
+   "sourceName": "ESPN schedule API 2020-2026",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2024&seasontype=2",
+   "how": "derived from the regular-season table",
+   "confidence": "verified"
+  },
+  {
+   "id": "sumrall-hire",
+   "claim": "Jon Sumrall: when and how he got the job",
+   "value": "Florida hired Tulane's Jon Sumrall on Sunday, Nov. 30, 2025. ESPN reported a six-year deal averaging nearly $7.5 million a year. He replaced Billy Napier, who was fired Oct. 19, 2025; Billy Gonzales was interim coach and Florida finished 4-8. Sumrall was 42-11 in four seasons as a head coach (two at Troy, two at Tulane) when hired.",
+   "sourceName": "ESPN, 'Florida hires Tulane's Jon Sumrall as new football coach' (published Nov. 30, 2025 ET)",
+   "sourceUrl": "https://www.espn.com/college-football/story/_/id/47151490/sources-florida-finalizing-deal-hire-tulane-jon-sumrall",
+   "how": "read full story text through ESPN content API (content.core.api.espn.com/v1/sports/news/47151490); ESPN roster API lists coach Jon Sumrall, experience 0",
+   "confidence": "verified"
+  },
+  {
+   "id": "first-year-context",
+   "claim": "First-year Florida coaches for comparison",
+   "value": "Sumrall has seven wins with a game and a bowl to play. Billy Napier's first team (2022) went 6-6 in the regular season and 6-7 overall. Dan Mullen's first team (2018) went 9-3 in the regular season and 10-3 overall. An eighth regular-season win would be the most by a first-year Florida coach since Mullen's nine. Regular-season records in other first years per ESPN's schedule data: 2015 10-2, 2011 6-6, 2005 8-3, 2002 8-4 (ESPN's API does not name the coach for those seasons; the names Jim McElwain, Will Muschamp, Urban Meyer and Ron Zook were NOT sourced here and need a check before use).",
+   "sourceName": "ESPN schedule API; AP recaps on ESPN (Peach Bowl Dec. 29, 2018: 'Dan Mullen's first season as coach'; Las Vegas Bowl Dec. 17, 2022: 'their first season under coach Billy Napier')",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401441999",
+   "how": "curl of schedules for 2002, 2005, 2011, 2015, 2018, 2022 and of the two bowl summaries; quoted phrases read in the AP recap text",
+   "confidence": "verified"
+  },
+  {
+   "id": "baugh-2025",
+   "claim": "Jadan Baugh's 2025 rushing total",
+   "value": "220 carries, 1,170 yards, 5.3 per carry, 8 touchdowns in 12 games. He finished with 266 yards and two touchdowns on 38 carries against Florida State on Nov. 29, 2025.",
+   "sourceName": "ESPN athlete stats and game log (athlete id 5079322)",
+   "sourceUrl": "https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5079322/stats",
+   "how": "curl of /stats and /gamelog?season=2025; game-log rows summed by hand to 220 and 1,170",
+   "confidence": "verified"
+  },
+  {
+   "id": "baugh-2026",
+   "claim": "Jadan Baugh's 2026 rushing total through 11 games",
+   "value": "197 carries, 980 yards, 5.0 per carry, 16 rushing touchdowns, long of 75. NCAA's official statistics list the same line (11 games, 197 rushes, 16 TD, 980 yards) and rank him 19th in FBS in rushing yards (through games of Nov. 24).",
+   "sourceName": "ESPN athlete stats and game log; NCAA.com official FBS statistics",
+   "sourceUrl": "https://www.ncaa.com/stats/football/fbs/current/individual/469",
+   "how": "curl of ESPN /athletes/5079322/stats and /gamelog?season=2026 (rows sum to 197 and 980); curl of NCAA.com rushing-yards table, 'Last updated Wednesday, November 25, 2026 8:11 am, Through games Tuesday, November 24, 2026'",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "baugh-needs",
+   "claim": "Yards Baugh needs for 1,000",
+   "value": "20. (1,000 minus 980.) CONFLICTS TO KNOW: our Nov. 24 Buddy Martin column says he 'needs 19 yards'; the AP recap of the Vanderbilt game says he ran for 73 yards, while ESPN's box score and game log say 19 carries for 75. ESPN and NCAA.com agree on 980, the Tampa Bay Times (Nov. 26) says 20, and our three stories today say 20.",
+   "sourceName": "ESPN athlete stats; NCAA.com; Tampa Bay Times",
+   "sourceUrl": "https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5079322/gamelog?season=2026",
+   "how": "arithmetic on the verified total; Buddy Martin sentence read via Wix API; AP sentence read in summary?event=401856748; box score rushing line read in the same summary",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "baugh-gamelog-2026",
+   "claim": "Baugh's 2026 game log (carries-yards, TD)",
+   "value": "FAU 14-160, 3 TD | Campbell 14-136, 2 | at Auburn 26-162, 3 | Ole Miss 29-142, 3 | at Missouri 12-13, 0 | South Carolina 15-59, 1 | at Texas 25-91, 1 | Georgia 17-38, 0 | Oklahoma 8-35, 1 | at Kentucky 18-69, 1 | Vanderbilt 19-75, 1. That is 600 yards in the first four games and 380 in the seven since (54.3 a game); he has not reached 100 since Ole Miss on Sept. 26, and has cleared 20 yards in 10 of 11 games (13 at Missouri).",
+   "sourceName": "ESPN athlete game log",
+   "sourceUrl": "https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5079322/gamelog?season=2026",
+   "how": "curl; split sums done by hand (160+136+162+142=600; 13+59+91+38+35+69+75=380)",
+   "confidence": "verified"
+  },
+  {
+   "id": "baugh-career",
+   "claim": "Baugh's career rushing totals",
+   "value": "ESPN: 2024 133-673, 7 TD; 2025 220-1,170, 8 TD; 2026 197-980, 16 TD; career 550 carries, 2,823 yards, 31 rushing touchdowns. CONFLICT: Wikipedia's Florida leaders page lists his career total as 2,824 (seventh in school history, behind Tim Tebow's 2,947). Our Soothsayer column today says he is 123 yards behind Tebow; ESPN's numbers make it 124 (Tebow 469+895+673+910 = 2,947). One yard is unresolved; do not print the gap to Tebow without the official Florida number.",
+   "sourceName": "ESPN athlete stats (Baugh 5079322, Tebow 183484); Wikipedia 'Florida Gators football statistical leaders'",
+   "sourceUrl": "https://site.web.api.espn.com/apis/common/v3/sports/football/college-football/athletes/5079322/stats",
+   "how": "curl of both athletes' /stats; WebFetch of the Wikipedia page ('updated through Week 12 of the 2026 season')",
+   "confidence": "conflict"
+  },
+  {
+   "id": "baugh-266",
+   "claim": "Baugh's 2025 game against Florida State",
+   "value": "266 yards and two touchdowns on 38 carries in Florida's 40-21 win, Nov. 29, 2025. AP: second-most rushing yards in school history, the most since Emmitt Smith's 316 against New Mexico in 1989, and the first 200-yard game by a Florida player against Florida State since 2004. That game put him over 1,000 for the season.",
+   "sourceName": "ESPN game log; AP recap (ESPN), 'Give him the Baugh! Jadan Baugh runs wild in Florida's 40-21 victory over rival FSU'",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401752785",
+   "how": "curl of summary; AP recap text read in the article block; yardage cross-checked with ESPN game log",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "baugh-first-claim",
+   "claim": "Is 'first in school history with back-to-back 1,000-yard rushing seasons' supported?",
+   "value": "LIKELY, not verified at an official Florida source. FloridaGators.com could not be read (HTTP 403 from its bot wall to curl and to Playwright; WebFetch returns only page titles), so no game notes or record book were seen. What supports it: (1) Tampa Bay Times, Nov. 26, 2026: 'needs 20 yards to become the first Gator with consecutive 1,000-yard rushing seasons'; Sept. 4, 2026: 'a second consecutive 1,000-yard season — something never achieved at Florida'. (2) The list of Florida's twelve 1,000-yard seasons has no player in consecutive years. (3) ESPN data for 2004-2025 shows only Fason 2004, Gillislee 2012, Kelvin Taylor 2015 and Baugh 2025. Safe wording: attribute it ('would be the first Gator with back-to-back 1,000-yard seasons, according to the Tampa Bay Times') or have the controller confirm against Florida's game notes.",
+   "sourceName": "Tampa Bay Times (bylines not shown to the fetch tool); SI 'Florida Gators on SI' (Cam Parker, Nov. 25, 2025); ESPN stats API",
+   "sourceUrl": "https://www.tampabay.com/sports/gators/2026/11/26/jadan-baugh-can-make-gators-history-what-likely-will-be-his-uf-finale/",
+   "how": "WebFetch of both Tampa Bay Times pages (sentences quoted verbatim by the tool); WebFetch of SI page; curl of ESPN core leaders endpoint for every season 2004-2025 and athlete stats for Fason, Gillislee, K. Taylor",
+   "confidence": "single-secondary"
+  },
+  {
+   "id": "uf-1000-seasons",
+   "claim": "Every Florida 1,000-yard rushing season that could be documented",
+   "value": "Twelve seasons by ten players: Jimmy DuBose 1975 (1,307); Neal Anderson 1985 (1,034); Emmitt Smith 1987 (1,341) and 1989 (1,599); Errict Rhett 1991 (1,109) and 1993 (1,289); Fred Taylor 1997 (1,292); Earnest Graham 2002 (1,085); Ciatrick Fason 2004 (1,267); Mike Gillislee 2012 (1,152); Kelvin Taylor 2015 (1,035); Jadan Baugh 2025 (1,170). Smith and Rhett each did it twice, a year apart, never back to back. The 2004, 2012, 2015 and 2025 totals are confirmed by ESPN; the eight seasons before 2004 come only from the SI table (which cites Florida's 2025 media guide for the count) and Wikipedia. Smith's 1988 and Rhett's 1992 totals were NOT sourced; do not print them from memory.",
+   "sourceName": "SI 'Florida RB Jadan Baugh Approaching History as Gators' Season Ends' (Cam Parker, Nov. 25, 2025); ESPN athlete stats; AP recap Nov. 29, 2025 ('10th player in school history'; 'first 1,000-yard rusher since Kelvin Taylor in 2015')",
+   "sourceUrl": "https://www.si.com/college/florida/football/florida-rb-jadan-baugh-approaching-history-gators-season-ends-01kay6px69xv",
+   "how": "WebFetch of SI table; curl of ESPN /athletes/134516, /480255, /546318 stats; Wikipedia single-season list matches for its top 10; official PDF floridagators.com/documents/2025/8/14/Florida_Football_Media_Guide_2025.pdf could not be read",
+   "confidence": "single-secondary"
+  },
+  {
+   "id": "fsu-record",
+   "claim": "Florida State's record",
+   "value": "5-6 overall, 3-5 ACC. Home 3-3, away 2-3. Lost last time out, 28-10 to NC State on Nov. 21. Points 302 for, 293 against.",
+   "sourceName": "ESPN team and schedule API; Seminoles.com schedule page",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/52/schedule?season=2026",
+   "how": "curl of teams/52 and its schedule; Seminoles.com schedule page (Playwright, HTTP 200) shows Overall 5-6, Conf 3-5, Home 3-3, Away 2-3, Streak L1",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "fsu-results-2026",
+   "claim": "Florida State's 2026 results (ET dates)",
+   "value": "Aug. 29 W 34-17 New Mexico State | Sept. 7 L 24-27 No. 19 SMU | Sept. 19 L 36-50 at No. 10 Alabama | Sept. 26 W 34-7 Central Arkansas | Oct. 3 W 38-7 Virginia | Oct. 9 L 20-44 at Louisville | Oct. 17 L 35-43 (2 OT) at No. 3 Miami | Oct. 31 L 24-36 Clemson | Nov. 7 W 31-24 at Boston College | Nov. 13 W 16-10 at Pittsburgh | Nov. 21 L 10-28 NC State.",
+   "sourceName": "ESPN schedule API; Seminoles.com football page (double overtime at Miami)",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/52/schedule?season=2026",
+   "how": "curl; UTC converted to ET; '2OT' read on Seminoles.com and in ESPN lastFiveGames",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "fsu-sixth-win",
+   "claim": "What a sixth win means for Florida State",
+   "value": "Bowl eligibility at 6-6. Florida State has not played in a bowl since the Orange Bowl on Dec. 30, 2023 (lost 63-3 to Georgia, finishing 13-1); it went 2-10 in 2024 and 5-7 in 2025. A loss makes it 5-7 again and a third straight losing season. NOTE: a win alone does not 'avoid a third straight losing season', as our game-time story says; at 6-6 that would depend on the bowl. By ESPN's schedule data FSU is 12-23 since the start of 2024; ESPN's prose says 12-24 'over the past three years', which matches only if the Orange Bowl loss is counted.",
+   "sourceName": "ESPN schedule API for FSU 2023-2026; ESPN (Andrea Adelson, Nov. 23, 2026)",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/52/schedule?season=2025&seasontype=2",
+   "how": "curl of FSU schedules 2023-2025, both season types, wins and losses counted; Adelson story text read via ESPN content API (id 50577665)",
+   "confidence": "verified"
+  },
+  {
+   "id": "fsu-same-spot-2025",
+   "claim": "Florida State was in the same spot a year ago",
+   "value": "Florida State came to Gainesville on Nov. 29, 2025 at 5-6 needing a win to be bowl-eligible and lost 40-21, finishing 5-7. AP wrote that Florida 'denied rival Florida State a chance to become bowl eligible'. Friday is the second straight year the Seminoles' bowl hopes run through Florida.",
+   "sourceName": "AP recap on ESPN (Nov. 29, 2025); ESPN schedule API",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401752785",
+   "how": "curl; AP recap text and final score read; FSU 2025 record 5-7 from schedule",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "norvell-dismissed",
+   "claim": "When and why Mike Norvell was dismissed",
+   "value": "Florida State fired Mike Norvell on Sunday, Nov. 1, 2026, the day after a 36-24 home loss to Clemson dropped the Seminoles to 3-5. He was 41-39 in seven seasons; ESPN reported a $50.3 million buyout. President Richard McCullough made the decision. Defensive coordinator Tony White and safeties coach Evan Cooper were also fired. CONFLICTS: our game-time story says 'fired on Nov. 2' (ESPN's UTC timestamp is Nov. 2; the firing was Sunday, Nov. 1 ET, and the school's release URL is dated 2026/11/1). Our Soothsayer column puts the money owed at $48.7 million; ESPN says $50.3 million.",
+   "sourceName": "ESPN (Andrea Adelson), 'Florida State fires Mike Norvell amid 3-5 football season'; Seminoles.com release URL",
+   "sourceUrl": "https://www.espn.com/college-football/story/_/id/50350481/florida-state-fires-mike-norvell-amid-3-5-football-season",
+   "how": "full story read via ESPN content API (published 2026-11-02T02:22Z = 9:22 p.m. ET Nov. 1); a second ESPN story (Eli Lederman, Nov. 7) says Stockstill 'stepped into the interim role last Sunday'; the official release at seminoles.com/news/2026/11/1/florida-state-makes-football-leadership-change returned 403 and was not read",
+   "confidence": "verified"
+  },
+  {
+   "id": "stockstill",
+   "claim": "The interim coach",
+   "value": "Rick Stockstill, 68, Florida State's director of scouting for offense, was named interim coach on Nov. 1, 2026. He played quarterback at Florida State under Bobby Bowden (1977-81), was head coach at Middle Tennessee for 18 seasons (2006-23) and joined the FSU staff in 2024. He is 2-1 as interim: W 31-24 at Boston College (Nov. 7), W 16-10 at Pittsburgh (Nov. 13), L 10-28 to NC State (Nov. 21). The Boston College win was FSU's first road win since November 2023. Offensive coordinator Tim Harris Jr. calls plays; linebackers coach Ernie Sims is interim defensive coordinator.",
+   "sourceName": "ESPN (Andrea Adelson Nov. 1 and Nov. 2; Eli Lederman Nov. 7); ESPN coach record",
+   "sourceUrl": "https://www.espn.com/college-football/story/_/id/50411545/interim-hc-stockstill-wins-debut-fsu-ends-3-year-road-skid",
+   "how": "three ESPN stories read via content API (ids 50350481, 50359717, 50411545); ESPN core API lists FSU's coach as Rick Stockstill; results from schedule",
+   "confidence": "verified"
+  },
+  {
+   "id": "schumann-hire",
+   "claim": "The Glenn Schumann hire",
+   "value": "Florida State named Georgia defensive coordinator Glenn Schumann its head coach on Monday, Nov. 23, 2026 (school release time-stamped 11/23/2026 6:47 p.m.). ESPN reported a five-year deal and that he is expected to stay with Georgia through the season and postseason, so he does not coach Friday. He has been part of six national championships at Alabama and Georgia. Athletic director Jeff Purinton (hired in November) worked with him at Alabama. ESPN had reported on Sunday, Nov. 22 that the search was 'focused on' Schumann, which is the stale version in the tip sheet. Minor source difference: Seminoles.com says he 'spent the 2023-26 seasons as Georgia's defensive coordinator' after three as co-coordinator; ESPN says he became 'the full-time defensive coordinator in 2024'.",
+   "sourceName": "Seminoles.com, 'Glenn Schumann Named Florida State Head Coach'; ESPN (Andrea Adelson, Nov. 23)",
+   "sourceUrl": "https://seminoles.com/news/2026/11/23/football-glenn-schumann-named-florida-state-head-coach",
+   "how": "official release read in full with a one-page Playwright script (HTTP 200); ESPN story id 50577665 and the Nov. 22 Thamel/Adelson story id 50562506 read via content API; our Nov. 24 story read via Wix API and agrees",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "schumann-grandfather",
+   "claim": "Schumann's Florida State family tie",
+   "value": "His grandfather, Jack Haskin, 'founded FSU's Flying High Circus and was the assistant coach for Florida State's inaugural football season in 1947'; his mother, Dr. Sherry Schumann, earned two degrees there. CONFLICT WITH OUR OWN COPY: the Nov. 23 Franz Beard story calls Schumann 'the grandson of Florida State's first football coach, Ed Williamson'. The school's release and ESPN both name Jack Haskin, an assistant in 1947. Do not repeat the Williamson line.",
+   "sourceName": "Seminoles.com release (Nov. 23, 2026); ESPN (Adelson)",
+   "sourceUrl": "https://seminoles.com/news/2026/11/23/football-glenn-schumann-named-florida-state-head-coach",
+   "how": "sentence read verbatim in the official release; Beard sentence read via Wix API",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "series-alltime",
+   "claim": "All-time series record",
+   "value": "Florida leads 39-28-2 in 69 meetings (first meeting Nov. 22, 1958). Two secondary sources agree and our own two stories today print the same number, but NO official source was read: FloridaGators.com is blocked and Seminoles.com's game notes could not be reached. Wikipedia's location table gives Florida 15-14-1 in Tallahassee, but its body text says 14-14-1, so do not print a Tallahassee split.",
+   "sourceName": "Winsipedia; Wikipedia 'Florida-Florida State football rivalry'",
+   "sourceUrl": "https://www.winsipedia.com/florida/vs/florida-state",
+   "how": "WebFetch of both pages; ESPN has no all-time series field; every game since 2001 checked against ESPN (Florida 13-11 from 2001 through 2025, no game in 2020)",
+   "confidence": "single-secondary"
+  },
+  {
+   "id": "series-last-three",
+   "claim": "Last three meetings",
+   "value": "Nov. 29, 2025, Gainesville: Florida 40, Florida State 21 (attendance 90,007). Nov. 30, 2024, Tallahassee: Florida 31, Florida State 11 (55,107). Nov. 25, 2023, Gainesville: No. 5 Florida State 24, Florida 15 (90,341). Before that: Nov. 25, 2022, Tallahassee: Florida State 45, Florida 38.",
+   "sourceName": "ESPN schedule and game summary API",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401628438",
+   "how": "curl of schedules 2022-2025 and summaries 401752785, 401628438, 401520429; UTC converted to ET",
+   "confidence": "verified"
+  },
+  {
+   "id": "series-trend",
+   "claim": "Recent run of the series",
+   "value": "Florida has won two straight and five of the last seven (2018, 2019, 2021, 2024, 2025; FSU won 2022 and 2023; no game in 2020). A win Friday would be three in a row, which Florida last managed with the 2018, 2019 and 2021 games. Florida's last four trips to Tallahassee: W 31-11 (2024), L 38-45 (2022), W 41-14 (2018), L 13-31 (2016).",
+   "sourceName": "ESPN schedule API 2001-2025; AP recap Nov. 29, 2025 ('lost to Florida for the fifth time in the last seven meetings')",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2018&seasontype=2",
+   "how": "curl of every Florida regular-season schedule 2001-2025; FSU rows extracted",
+   "confidence": "verified-two-sources"
+  },
+  {
+   "id": "uf-last-five-bowls",
+   "claim": "Florida's last five bowl appearances",
+   "value": "2024 season: Gasparilla Bowl, Dec. 20, 2024, Tampa: Florida 33, Tulane 8 (W). 2022: Las Vegas Bowl, Dec. 17, 2022: Oregon State 30, Florida 3 (L). 2021: Gasparilla Bowl, Dec. 23, 2021, Tampa: UCF 29, Florida 17 (L). 2020: Cotton Bowl, Dec. 30, 2020, Arlington, Texas: Oklahoma 55, Florida 20 (L). 2019: Orange Bowl, Dec. 30, 2019, Miami Gardens: Florida 36, Virginia 28 (W). That is 2-3, with no bowl in 2023 or 2025. Florida has lost three of its last four bowls.",
+   "sourceName": "ESPN schedule API, seasontype 3, seasons 2019-2025",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2024&seasontype=3",
+   "how": "curl for each season; bowl name from the competition note; UTC converted to ET",
+   "confidence": "verified"
+  },
+  {
+   "id": "uf-last-trips-named-bowls",
+   "claim": "Florida's last trip to each bowl in the tip sheet",
+   "value": "Gator Bowl: Jan. 2, 2012 (2011 season), Florida 24, Ohio State 17. Citrus Bowl: Jan. 1, 2016 (2015 season), Michigan 41, Florida 7. Tampa's New Year's bowl, then called the Outback Bowl: Jan. 2, 2017 (2016 season), Florida 30, Iowa 3. Whether the ReliaQuest Bowl is the renamed Outback Bowl was NOT sourced here; the bowl researcher should confirm on the bowl's own site before the story says so. Seasons 2012-2025 checked: Sugar (2012), none (2013), Birmingham (2014), Citrus (2015), Outback (2016), none (2017), Peach (2018), Orange (2019), Cotton (2020), Gasparilla (2021), Las Vegas (2022), none (2023), Gasparilla (2024), none (2025).",
+   "sourceName": "ESPN schedule API, seasontype 3, seasons 2011-2025",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/57/schedule?season=2015&seasontype=3",
+   "how": "curl for each season 2011-2025",
+   "confidence": "verified"
+  },
+  {
+   "id": "sumrall-tulane-bowl",
+   "claim": "Florida's last bowl win came against its current coach",
+   "value": "Florida's most recent bowl, the 33-8 Gasparilla Bowl win on Dec. 20, 2024, was against a Tulane team coached by Jon Sumrall. The AP recap carries a postgame line from 'Tulane coach Jon Sumrall'. Florida finished 8-5.",
+   "sourceName": "AP recap on ESPN, 'Lagway throws for 305 yards to help Florida trounce Tulane 33-8 in the Gasparilla Bowl'",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401677084",
+   "how": "curl; recap text read",
+   "confidence": "verified"
+  },
+  {
+   "id": "bowl-projections-seen",
+   "claim": "Bowl projections actually read (for the tip-sheet check; the bowl researcher owns the full picture)",
+   "value": "ESPN, Kyle Bonagura and Mark Schlabach, Nov. 23, 2026: BOTH project Florida to the TaxSlayer Gator Bowl against SMU (Wednesday, Dec. 30, 11:30 a.m. ET, ESPN, EverBank Stadium, Jacksonville). The same piece lists the ReliaQuest Bowl on Thursday, Dec. 31 (noon ET, ESPN, Raymond James Stadium, Tampa; Ole Miss projected) and the Citrus Bowl on Saturday, Jan. 2 (noon ET, ABC, Camping World Stadium, Orlando; LSU or Oklahoma projected). AP, Nov. 24: Florida 'will play in a bowl game — likely the Citrus Bowl in Orlando, the ReliaQuest Bowl in Tampa or the TaxSlayer Gator Bowl in Jacksonville'. Those projections predate this weekend's games.",
+   "sourceName": "ESPN bowl projections (Bonagura/Schlabach, Nov. 23, 2026); AP via ESPN (Nov. 24, 2026)",
+   "sourceUrl": "https://www.espn.com/college-football/story/_/id/50564492/2026-week-12-college-football-playoff-bowl-projections",
+   "how": "full text of both stories read via ESPN content API (ids 50564492 and 50586755)",
+   "confidence": "verified"
+  },
+  {
+   "id": "leaders",
+   "claim": "Stat leaders (ESPN)",
+   "value": "Florida: QB Aaron Philo 146 of 206, 1,727 yards, 9 TD, 5 INT; RB Jadan Baugh 197-980, 16 TD; WR Dallas Wilson 41 catches, 517 yards, 3 TD; Jayden Woods 7 sacks; Myles Graham 86 tackles. Florida State: QB Ashton Daniels 177 of 300, 2,515 yards, 14 TD, 14 INT; RB Ousmane Kromah 114-609, 5 TD; WR Micahi Danzy 35 catches, 584 yards, 3 TD; Rylan Kennedy 6 sacks; Chris Jones 85 tackles. ESPN's Bill Connelly (Nov. 27) writes FSU 'ranks 109th in yards allowed per carry (not counting sacks)'.",
+   "sourceName": "ESPN game summary API; ESPN (Bill Connelly, Nov. 27, 2026)",
+   "sourceUrl": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event=401856759",
+   "how": "curl; leaders block; Connelly story id 50595179 read via content API",
+   "confidence": "verified"
+  },
+  {
+   "id": "uf-injury",
+   "claim": "Florida roster note",
+   "value": "Florida announced Tuesday, Nov. 24 that receiver Vernell Brown III will have season-ending surgery on the posterior cruciate ligament in his right knee; he had missed seven games. He had 17 catches for 271 yards and two touchdowns and returned two punts for scores.",
+   "sourceName": "AP via ESPN, 'No. 20 Florida shuts down WR Vernell Brown for season-ending knee surgery'",
+   "sourceUrl": "https://www.espn.com/college-football/story/_/id/50586755/no-20-florida-shuts-wr-vernell-brown-season-ending-knee-surgery",
+   "how": "read via ESPN content API",
+   "confidence": "verified"
+  }
+ ],
+ "tables": {
+  "floridaRegularSeasons": [
+   {
+    "season": 2019,
+    "regularSeason": "10-2",
+    "secTitleGame": null,
+    "bowl": "Orange Bowl, W 36-28 Virginia, Dec. 30, 2019",
+    "final": "11-2"
+   },
+   {
+    "season": 2020,
+    "regularSeason": "8-2",
+    "secTitleGame": "L 46-52 Alabama, Dec. 19, 2020",
+    "bowl": "Cotton Bowl, L 20-55 Oklahoma, Dec. 30, 2020",
+    "final": "8-4"
+   },
+   {
+    "season": 2021,
+    "regularSeason": "6-6",
+    "secTitleGame": null,
+    "bowl": "Gasparilla Bowl, L 17-29 UCF, Dec. 23, 2021",
+    "final": "6-7"
+   },
+   {
+    "season": 2022,
+    "regularSeason": "6-6",
+    "secTitleGame": null,
+    "bowl": "Las Vegas Bowl, L 3-30 Oregon State, Dec. 17, 2022",
+    "final": "6-7"
+   },
+   {
+    "season": 2023,
+    "regularSeason": "5-7",
+    "secTitleGame": null,
+    "bowl": null,
+    "final": "5-7"
+   },
+   {
+    "season": 2024,
+    "regularSeason": "7-5",
+    "secTitleGame": null,
+    "bowl": "Gasparilla Bowl, W 33-8 Tulane, Dec. 20, 2024",
+    "final": "8-5"
+   },
+   {
+    "season": 2025,
+    "regularSeason": "4-8",
+    "secTitleGame": null,
+    "bowl": null,
+    "final": "4-8"
+   },
+   {
+    "season": 2026,
+    "regularSeason": "7-4, one game left",
+    "secTitleGame": null,
+    "bowl": "to be announced",
+    "final": null
+   }
+  ],
+  "floridaSecRecords": {
+   "2020": "8-2",
+   "2021": "2-6",
+   "2022": "3-5",
+   "2023": "3-5",
+   "2024": "4-4",
+   "2025": "2-6",
+   "2026": "5-4"
+  },
+  "florida1000YardSeasons": [
+   {
+    "player": "Jimmy DuBose",
+    "season": 1975,
+    "yards": 1307,
+    "source": "SI table / Wikipedia"
+   },
+   {
+    "player": "Neal Anderson",
+    "season": 1985,
+    "yards": 1034,
+    "source": "SI table"
+   },
+   {
+    "player": "Emmitt Smith",
+    "season": 1987,
+    "yards": 1341,
+    "source": "SI table / Wikipedia"
+   },
+   {
+    "player": "Emmitt Smith",
+    "season": 1989,
+    "yards": 1599,
+    "source": "SI table / Wikipedia"
+   },
+   {
+    "player": "Errict Rhett",
+    "season": 1991,
+    "yards": 1109,
+    "source": "SI table / Wikipedia"
+   },
+   {
+    "player": "Errict Rhett",
+    "season": 1993,
+    "yards": 1289,
+    "source": "SI table / Wikipedia"
+   },
+   {
+    "player": "Fred Taylor",
+    "season": 1997,
+    "yards": 1292,
+    "source": "SI table / Wikipedia"
+   },
+   {
+    "player": "Earnest Graham",
+    "season": 2002,
+    "yards": 1085,
+    "source": "SI table / Wikipedia"
+   },
+   {
+    "player": "Ciatrick Fason",
+    "season": 2004,
+    "yards": 1267,
+    "source": "ESPN athlete stats + SI table"
+   },
+   {
+    "player": "Mike Gillislee",
+    "season": 2012,
+    "yards": 1152,
+    "source": "ESPN athlete stats + SI table"
+   },
+   {
+    "player": "Kelvin Taylor",
+    "season": 2015,
+    "yards": 1035,
+    "source": "ESPN athlete stats + SI table"
+   },
+   {
+    "player": "Jadan Baugh",
+    "season": 2025,
+    "yards": 1170,
+    "source": "ESPN athlete stats + AP"
+   }
+  ],
+  "seriesSince2015": [
+   "2015 Gainesville: FSU 27, Florida 2",
+   "2016 Tallahassee: FSU 31, Florida 13",
+   "2017 Gainesville: FSU 38, Florida 22",
+   "2018 Tallahassee: Florida 41, FSU 14",
+   "2019 Gainesville: Florida 40, FSU 17",
+   "2020: not played",
+   "2021 Gainesville: Florida 24, FSU 21",
+   "2022 Tallahassee: FSU 45, Florida 38",
+   "2023 Gainesville: FSU 24, Florida 15",
+   "2024 Tallahassee: Florida 31, FSU 11",
+   "2025 Gainesville: Florida 40, FSU 21"
+  ]
+ },
+ "tipSheetVerdicts": [
+  {
+   "bullet": "Florida is after its first eight-win regular season since 2020; a win helps its bowl position, with projections mentioning the Citrus, Gator and ReliaQuest bowls.",
+   "verdict": "verified",
+   "note": "True as worded: 8-2 in the 2020 regular season, no eight-win regular season since. Keep the word 'regular'; Florida won eight overall in 2024 with a bowl. Citrus, ReliaQuest and Gator are named by AP (Nov. 24); ESPN's two projections (Nov. 23) both say Gator Bowl vs SMU. Whether a win 'helps its bowl position' is the bowl researcher's call."
+  },
+  {
+   "bullet": "Florida State needs a sixth win for bowl eligibility under interim coach Rick Stockstill; 'reportedly pursuing' Georgia defensive coordinator Glenn Schumann to replace fired coach Mike Norvell.",
+   "verdict": "corrected",
+   "note": "First half verified (FSU is 5-6; Stockstill has been interim since Nov. 1 and is 2-1). Second half is stale: Florida State named Schumann head coach on Monday, Nov. 23, 2026; ESPN reports a five-year deal and that he stays with Georgia through the postseason. Norvell was fired Sunday, Nov. 1."
+  },
+  {
+   "bullet": "Jadan Baugh needs about 20 yards to become the first player in school history with back-to-back 1,000-yard rushing seasons.",
+   "verdict": "verified for the yardage (exactly 20: 980 per ESPN and NCAA.com); 'first in school history' is likely but unverified at an official Florida source",
+   "note": "FloridaGators.com was blocked. Supported by the Tampa Bay Times (Nov. 26) and by the list of twelve 1,000-yard seasons, none consecutive. Attribute the 'first' or have the controller check Florida's game notes."
+  },
+  {
+   "bullet": "Spread Florida by 5.5 to 6.5; total 52.5 to 53.5.",
+   "verdict": "corrected",
+   "note": "DraftKings (via ESPN) at 8:42 a.m. ET Nov. 27: Florida -6.5, total 53.5. It opened Florida -4.5 and 52.5. The 5.5 was not seen at any named book."
+  }
+ ],
+ "deskFlagsInOurOwnPublishedStories": [
+  "Our Nov. 24 Buddy Martin column says Baugh 'needs 19 yards'. ESPN and NCAA.com have him at 980, so it is 20. Three of our stories today say 20.",
+  "Our Nov. 23 Franz Beard story calls Schumann 'the grandson of Florida State's first football coach, Ed Williamson'. Florida State's release and ESPN say his grandfather is Jack Haskin, an assistant coach on the 1947 team.",
+  "Our game-time story today says Norvell 'was fired on Nov. 2'. ESPN says Sunday, which was Nov. 1; the school's release URL is dated Nov. 1.",
+  "Our stories give three openers for the line: 4.5 (Nov. 23), 5.5 (Behind the Sticks, today), and the game-time story cites BetMGM at 6.5. DraftKings opened 4.5 and is 6.5 now. Name the book and time whenever a number is printed.",
+  "Our Soothsayer column says FSU owes Norvell $48.7 million; ESPN reported a $50.3 million buyout on Nov. 1.",
+  "Our Soothsayer column says Baugh is 123 yards behind Tim Tebow on the career list; ESPN's totals make it 124 (2,947 minus 2,823). Unresolved by one yard.",
+  "Our game-time story says a win lets FSU 'avoid a third straight losing season'. A win makes FSU 6-6; a bowl loss would still leave it 6-7.",
+  "AP's recap of the Vanderbilt game gives Baugh 73 yards; ESPN's box score and the NCAA season total imply 75."
+ ],
+ "couldNotVerify": [
+  "FloridaGators.com: every attempt blocked (curl HTTP 403 from the site's bot wall, Playwright HTTP 403 on two pages, WebFetch returns only page titles, media-guide PDF unreadable). No Florida game notes or record book were read.",
+  "'First in school history with back-to-back 1,000-yard seasons': not confirmed at an official Florida source; rests on the Tampa Bay Times and a secondary list of 1,000-yard seasons.",
+  "Florida's eight 1,000-yard seasons before 2004 (DuBose, Anderson, Smith twice, Rhett twice, F. Taylor, Graham): yardage comes from SI's table and Wikipedia only.",
+  "All-time series record 39-28-2: two secondary sources (Winsipedia, Wikipedia), no official source. Record in Tallahassee: Wikipedia contradicts itself (15-14-1 in its table, 14-14-1 in its text).",
+  "Seminoles.com game notes for the Florida game and the Nov. 1 Norvell release (seminoles.com/news/2026/11/1/florida-state-makes-football-leadership-change): the site answered 200 on three pages and 403 on six; these two were never read. Norvell's date rests on two ESPN stories.",
+  "Any sportsbook other than DraftKings. ESPN lists only DraftKings for this game; BetMGM's 6.5 in our game-time story was not independently read.",
+  "Tampa Bay Times bylines for the Nov. 26 and Sept. 4 Baugh stories: the fetch tool did not return an author.",
+  "Coach names for Florida's first-year seasons before 2018 (2015, 2011, 2005, 2002): ESPN's API does not carry them; only Mullen (2018) and Napier (2022) were confirmed in AP copy.",
+  "Whether the ReliaQuest Bowl is the renamed Outback Bowl: not sourced here.",
+  "Baugh's official Florida career total (ESPN 2,823 vs Wikipedia 2,824)."
+ ]
+}

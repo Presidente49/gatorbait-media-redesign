@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T22:44:08Z",
+ "updatedAt": "2026-11-27T22:51:28Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "9:36",
+  "clock": "6:27",
   "period": 3,
   "score": {
    "fla": 17,
    "opp": 3
   },
   "possession": "opp",
-  "lastPlay": "(09:41) No Huddle-Shotgun #14 A.Daniels pass incomplete deep left to #7 J.Lopez thrown to FLA40 PENALTY FLA Pass Interference (#25 C.McClain) 15 yards from FSU24 to FSU39, 1ST DOWN. NO PLAY"
+  "lastPlay": "(06:57) No Huddle-Shotgun #14 A.Daniels rush left for 18 yards gain to the FLA23 (#1 B.Thornton), 1ST DOWN. The previous play is under automatic review - \"Targeting\". CALL OVERTURNED. (Original Play: (06:57) No Huddle-Shotgun #14 A.Daniels rush left for 18 yards gain to the FLA23 (#1 B.Thornton), 1ST DOWN, PENALTY FLA Targeting (#25 C.McClain) 12 yards from FLA23 to FLA11, 1ST DOWN)"
  }
 }

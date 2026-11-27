@@ -2,6 +2,34 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "The Soothsayer: The Gators have all the motivation they need",
+      "excerpt": "Franz Beard: From Jadan Baugh’s shot at history to a Citrus Bowl push, the Soothsayer says the Gators have every reason to run over Florida State, plus his full SEC picks.",
+      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-the-gators-have-all-the-motivation-they-need",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-27T12:44:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for The Soothsayer: The Gators have all the motivation they need"
+      }
+    },
+    {
+      "title": "Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)",
+      "excerpt": "Despite the Seminoles’ coaching transition, there is always something to play for in the Sunshine Showdown. Loren Meadows breaks down the matchups and predicts Florida 28, FSU 17.",
+      "url": "https://www.gatorbaitmedia.com/post/pregame-analysis-no-20-florida-gators-7-4-5-4-vs-florida-state-seminoles-5-6-3-5",
+      "author": "Loren Meadows",
+      "firstPublishedDate": "2026-11-27T12:38:00Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_db06a79d17c64cdc8613af61c86ce1ed~mv2.jpg/v1/fit/w_1000,h_480,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)"
+      }
+    },
+    {
       "title": "Cyber Weekend: Gator Bait All Access Annual Is $49 — And Stays $49",
       "excerpt": "Gator Bait Media's Cyber Weekend offer: All Access Annual for $49 with code GATOR49 — and the $49 price holds at renewal, every year. Nov 27–30 only.",
       "url": "https://www.gatorbaitmedia.com/post/cyber-weekend-gator-bait-all-access-annual-is-49-and-stays-49",
@@ -27,34 +55,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Behind the Sticks: Florida at Florida State"
-      }
-    },
-    {
-      "title": "Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)",
-      "excerpt": "Despite the Seminoles’ coaching transition, there is always something to play for in the Sunshine Showdown. Loren Meadows breaks down the matchups and predicts Florida 28, FSU 17.",
-      "url": "https://www.gatorbaitmedia.com/post/pregame-analysis-no-20-florida-gators-7-4-5-4-vs-florida-state-seminoles-5-6-3-5",
-      "author": "Loren Meadows",
-      "firstPublishedDate": "2026-11-27T10:08:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_db06a79d17c64cdc8613af61c86ce1ed~mv2.jpg/v1/fit/w_1000,h_480,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)"
-      }
-    },
-    {
-      "title": "The Soothsayer: The Gators have all the motivation they need",
-      "excerpt": "Franz Beard: From Jadan Baugh’s shot at history to a Citrus Bowl push, the Soothsayer says the Gators have every reason to run over Florida State, plus his full SEC picks.",
-      "url": "https://www.gatorbaitmedia.com/post/the-soothsayer-the-gators-have-all-the-motivation-they-need",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-27T10:07:38Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_9d90bd2c81974bf39a13495fc5b8eaf9~mv2.png/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for The Soothsayer: The Gators have all the motivation they need"
       }
     },
     {

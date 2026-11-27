@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T23:11:31Z",
+ "updatedAt": "2026-11-27T23:19:10Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "14:50",
+  "clock": "10:50",
   "period": 4,
   "score": {
-   "fla": 17,
+   "fla": 20,
    "opp": 10
   },
-  "possession": "fla",
-  "lastPlay": "(14:58) Shotgun #9 T.Jones Jr. pass complete short middle to #7 A.Jackson caught at FSU28, for 10 yards to the FSU18 (#10 C.Jones)"
+  "possession": "opp",
+  "lastPlay": "(10:55) #85 E.Post punt 30 yards to the FLA31, out of bounds at FLA31"
  }
 }

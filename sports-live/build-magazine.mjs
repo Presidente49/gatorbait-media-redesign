@@ -37,8 +37,9 @@ if (!issue.id || !issue.cover || !issue.cover.url) { console.error('magazine-iss
 // issue carries teamSchedules or teamRosters. An edition without those keys builds byte-identical to before. The same file renders
 // issue.exclusives (stories written for the issue), so an edition that wants those carries the standards too.
 const STANDARDS = !POSTGAME && issue.layout === 'pregame' && Boolean(issue.teamSchedules || issue.teamRosters);
-const VIDEOS = !POSTGAME && issue.layout === 'pregame' && Boolean(issue.videos && Array.isArray(issue.videos.items) && issue.videos.items.length);
-const css = (read('sports-live/src/magazine.css') + read(POSTGAME ? 'sports-live/src/magazine-postgame.css' : 'sports-live/src/magazine-pregame.css') + (NEWS ? read('sports-live/src/magazine-news.css') : '') + (STANDARDS ? read('sports-live/src/magazine-pregame-standards.css') : '') + (VIDEOS ? read('sports-live/src/magazine-pregame-videos.css') : '')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
+const FSU_STORIES = !POSTGAME && VARIANT === 'fsu' && issue.id === '2026-11-27-florida-at-florida-state' && issue.storiesFirst === true;
+const VIDEOS = !FSU_STORIES && !POSTGAME && issue.layout === 'pregame' && Boolean(issue.videos && Array.isArray(issue.videos.items) && issue.videos.items.length);
+const css = (read('sports-live/src/magazine.css') + read(POSTGAME ? 'sports-live/src/magazine-postgame.css' : 'sports-live/src/magazine-pregame.css') + (NEWS ? read('sports-live/src/magazine-news.css') : '') + (STANDARDS ? read('sports-live/src/magazine-pregame-standards.css') : '') + (VIDEOS ? read('sports-live/src/magazine-pregame-videos.css') : '') + (FSU_STORIES ? read('sports-live/src/magazine-fsu-stories.css') : '')).replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*/g, '\n').trim();
 // capture.js goes first: magazine.js mounts synchronously at its end, and the postgame signup needs window.GBM_CAPTURE by then.
 const runtimeBase = (POSTGAME ? read('sports-live/src/capture.js') + '\n;' : '') + read('sports-live/src/magazine.js') + read('sports-live/src/magazine-feed.js') + read('sports-live/src/magazine-pregame.js') +
   (POSTGAME ? '\n' + read('sports-live/src/magazine-postgame.js') : '');
@@ -49,7 +50,20 @@ const baseRuntime = VARIANT === 'wednesday' ? runtimeBase.replace('Six complete 
   // its kickoff countdown (the only timer: one tick a minute, cleared on remount, blank after kickoff) and the membership block.
   NEWS ? newsRuntime(runtimeBase + '\n' + read('sports-live/src/magazine-news.js')) :
   STANDARDS ? standardsRuntime(runtimeBase + read('sports-live/src/magazine-pregame-standards.js')) : runtimeBase;
-const runtime = VIDEOS ? videosRuntime(baseRuntime + read('sports-live/src/magazine-pregame-videos.js')) : baseRuntime;
+const runtime = FSU_STORIES ? fsuStoriesRuntime(baseRuntime + read('sports-live/src/magazine-fsu-stories.js')) : VIDEOS ? videosRuntime(baseRuntime + read('sports-live/src/magazine-pregame-videos.js')) : baseRuntime;
+function fsuStoriesRuntime(code) {
+  if (!STANDARDS || issue.liveFeed !== false || issue.videos || issue.cards) throw new Error('FSU story-first requires standards, liveFeed:false and no video/card blocks');
+  const groups = [issue.features?.items || [], issue.exclusives?.items || []];
+  if (groups.some(items => !Array.isArray(items) || items.length > 24)) throw new Error('FSU story group exceeds its explicit 24-story limit');
+  const stories = [issue.lead, issue.feature, ...groups.flat()];
+  if (stories.some(s => !s || !String(s.title || '').trim() || !String(s.author || '').trim() || typeof s.html !== 'string' || !s.html.trim())) throw new Error('FSU requires a complete title/byline/body for every story slot');
+  if (new Set(stories.map(s => s.title.trim())).size !== stories.length) throw new Error('FSU story titles must be unique');
+  const ids = ['pg-lead', 'pg-feature', ...groups[0].map((_, i) => 'pg-feat-' + (i + 1)), ...groups[1].map((_, i) => 'pg-excl-' + (i + 1))];
+  if (issue.blackFriday && !ids.includes(issue.blackFriday.target)) throw new Error('Black Friday target is not a rendered FSU story');
+  const from = 'return renderPregame(D);';
+  if (code.split(from).length !== 2) throw new Error('FSU story-first dispatch not found exactly once');
+  return code.replace(from, 'return renderFsuStories(D);');
+}
 function videosRuntime(code) {
   const swaps = [['pgNumbers(D) + pgWatch(D)', 'pgNumbers(D) + pgVideos(D) + pgWatch(D)'], ['pgPrintInit(root); pgStop();', 'pgPrintInit(root); pgVideosStart(root); pgStop();']];
   if (STANDARDS) swaps.push(["if (!label) return '';\n    if (pgShotsTop(D)", "if (!label) return '';\n    if (pgVideoItems(D).length) links.push('<a href=\"#pg-videos\">Videos</a>');\n    if (pgShotsTop(D)"]);
@@ -79,8 +93,8 @@ const PM_SEL = '#gbm-magazine-page.pm';
 const MZ_SEL = '#gbm-magazine-page.mz26 '; // second token (tilde, absent from the CSS): 290 more repeats, ~6 KB
 const cssExpression = css.includes('`') || css.includes('~') ? JSON.stringify(css) :
   JSON.stringify(css.split(PM_SEL).join('`').split(MZ_SEL).join('~')) + '.split("~").join("' + MZ_SEL + '").split("`").join("' + PM_SEL + '")';
-// FSU alone has a 272 KiB budget for nine complete stories, both rosters and schedules, and the optional video desk.
-const MAX_JS = (VARIANT === 'fsu' ? 272 : POSTGAME ? 212 : 216) * 1024; // pregame cap 192 -> 216 KB on Nov. 21 for the Vanderbilt game-day edition: four writers' pregame pieces in full (owner direction: "add all the pregame articles to that magazine") // pregame cap 184 -> 192 KB on Nov. 20 for the Vanderbilt edition: the availability report, four issue stories and their art, on top of both rosters and schedules (owner direction) // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
+// The story-first FSU issue alone has a 304 KiB budget for complete native articles and all reference widgets. Legacy FSU remains272 KiB.
+const MAX_JS = (FSU_STORIES ? 304 : VARIANT === 'fsu' ? 272 : POSTGAME ? 212 : 216) * 1024; // pregame cap 192 -> 216 KB on Nov. 21 for the Vanderbilt game-day edition: four writers' pregame pieces in full (owner direction: "add all the pregame articles to that magazine") // pregame cap 184 -> 192 KB on Nov. 20 for the Vanderbilt edition: the availability report, four issue stories and their art, on top of both rosters and schedules (owner direction) // postgame cap 200 -> 212 KB on Nov. 2 for the white-and-orange overhaul and 11 added stories // postgame cap 190 -> 200 KB on Oct. 18 for the Texas web edition (score by score, box score, watch, download) // weekly cap raised 180 -> 184 KB on Oct. 16 for the pregame network skin; the weekly loader is retired, the cap guards the shared source // postgame bundle carries the weekly + pregame renderers plus the postgame layout (SC issue added a Texas look-ahead section)
 
 // A Magazine edition gets one visual treatment for each source asset. Repeated art makes a
 // roundup feel accidentally templated, even when the same file arrives by a different Wix cut.

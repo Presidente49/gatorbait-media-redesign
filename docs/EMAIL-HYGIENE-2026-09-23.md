@@ -58,7 +58,7 @@ Old Good Emails and Clean Email List display names now start LEGACY and point to
 - Before mutation, retain exact prior/next label membership privately and calculate a bounded diff. Use exact IDs, not broad cleanup filters. No customer emails or contact IDs in public GitHub.
 - Verify both completed bulk-job outcomes AND independent contact membership. A completed job is not sufficient: the new review label initially failed to appear despite success; one bounded add-only repair was independently verified with 55/55 assignments and no failures.
 - Update Label's current schema requires nested `{ label: { key, displayName } }`. The older top-level displayName example returned 400. Prefer schema over stale examples, and allow only one evidence-based contract correction.
-- Do not enlarge the pool or combine paid/free/former/review lists merely because they are email-eligible. Preserve current owner-approved audience, rolling-24h/7-day governor, verified sender and unsubscribe/footer checks.
+- Do not enlarge the pool or combine paid/free/former/review lists merely because they are email-eligible. Preserve current owner-approved audience, current governor, verified sender and unsubscribe/footer checks. [Nov. 27 owner direction](EMAIL-VOLUME-POLICY-2026-11-27.md) supersedes the former rolling-24h/7-day volume caps; consent, suppression and list-health checks remain.
 
 ### September 29 recovery record
 

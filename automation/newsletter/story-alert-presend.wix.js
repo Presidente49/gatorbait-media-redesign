@@ -4,7 +4,8 @@
 // or changes a contact. It returns counts and pass/fail only: no emails, no contact IDs.
 //
 // The send-governor (automation/newsletter/send-governor.js, run by Jarvis) is authoritative. Pass its verdict in
-// CFG.governorOk; the "governor mirror" below only cross-checks the 24h and 7-day send counts from Wix's own campaign list.
+// CFG.governorOk. Nov. 27 owner direction removes daily/weekly volume caps;
+// recent counts below are telemetry, not a pass/fail condition. All other gates remain.
 // Every check must pass. A single failed check means no publish call.
 async () => {
   const CFG = {
@@ -13,7 +14,6 @@ async () => {
     labelKey: 'custom.REPLACE-DAILY-NEWS-LABEL-KEY', // the verified GatorBait Daily News opt-in label (key, not display name)
     governorOk: false,                          // Jarvis sets true only after the send-governor returns ok:true
     sampleSize: 90,                             // consent re-check size; multiples of 30. Use 0 to re-check the whole label.
-    caps: { perDay: 1, perWeek: 7 },            // governor policy caps (Lesson 48; confirm against the governor)
     maxBounceRate: 0.02, maxComplaintRate: 0.001,
     holdLabelKeys: ['custom.gatorbait-do-not-market', 'custom.gatorbait-re-opt-in-candidates', 'custom.gatorbait-inactive-6mo-oh3AK', 'custom.bounced', 'custom.spam-complaints'],
     blogAlertAutomationIds: ['5006baf5-fbbf-440c-a012-a09bdbd95fc9', '824714d4-7e31-4b1d-95b2-ccec04d788af'],
@@ -87,15 +87,14 @@ async () => {
     add('consent re-check: every requested email returned a record and is SUBSCRIBED + VALID/NOT_SET', checked.length > 0 && returned === checked.length && bad === 0, { requested: checked.length, returned, ok, notEligible: bad, batchSize: 30, scope: CFG.sampleSize > 0 ? 'sample' : 'full label' });
   }
 
-  // 6. Campaign history: recent volume (governor mirror), bounce/complaint rate, duplicate for this post.
+  // 6. Campaign history: recent volume telemetry, bounce/complaint rate, duplicate for this post.
   const list = (await get(W + '/email-marketing/v1/campaigns?paging.limit=100')).campaigns || [];
   const now = Date.now();
   const sentLike = list.filter((c) => c.publishingData && c.publishingData.datePublished && ['SAMPLING', 'SENDING', 'DISTRIBUTED'].includes(c.distributionStatus));
   const within = (c, ms) => now - new Date(c.publishingData.datePublished).getTime() <= ms;
   const last24 = sentLike.filter((c) => within(c, 864e5)).length;
   const last7 = sentLike.filter((c) => within(c, 7 * 864e5)).length;
-  add('governor mirror: sends in last 24h below cap', last24 < CFG.caps.perDay, { last24h: last24, cap: CFG.caps.perDay });
-  add('governor mirror: sends in last 7 days below cap', last7 < CFG.caps.perWeek, { last7d: last7, cap: CFG.caps.perWeek });
+  const volume = { policyAsOf: '2026-11-27', perDayCap: null, perWeekCap: null, last24h: last24, last7d: last7 };
   let delivered = 0, bounced = 0, complained = 0;
   const recentIds = sentLike.filter((x) => within(x, 7 * 864e5)).map((x) => x.campaignId).slice(0, 100);
   if (recentIds.length) {
@@ -121,5 +120,5 @@ async () => {
   }
   add('duplicate check: no sent campaign already carries this post URL', dupes === 0 && unreadable === 0, { campaignsScanned: scanned, alreadySent: dupes, unreadable, draftsForThisPost: draftsForPost });
 
-  return { pass: checks.every((c) => c.pass), failed: checks.filter((c) => !c.pass).map((c) => c.name), checks, labelIdForPublish: labelIdForPublish ? '(present; read it from the label list when publishing)' : null };
+  return { pass: checks.every((c) => c.pass), failed: checks.filter((c) => !c.pass).map((c) => c.name), checks, volume, labelIdForPublish: labelIdForPublish ? '(present; read it from the label list when publishing)' : null };
 }

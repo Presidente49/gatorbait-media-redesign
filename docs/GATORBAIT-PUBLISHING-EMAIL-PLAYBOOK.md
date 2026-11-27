@@ -4,6 +4,10 @@
 
 Turn repeated publishing work into deterministic controller behavior. The controller should not rely on chat memory for rules that have already repeated.
 
+### Current email volume policy — Nov. 27, 2026
+
+Brenden removed daily/weekly list-send caps and extra approval solely for exceeding them. Follow the [dated owner directive](EMAIL-VOLUME-POLICY-2026-11-27.md), current authorization and all account, consent/suppression, verified-sender, content, list-health and duplicate-send gates. The send governor still runs before each authorized release; recent send counts are telemetry.
+
 ## 1. Article publishing gate
 
 Before a story is published:

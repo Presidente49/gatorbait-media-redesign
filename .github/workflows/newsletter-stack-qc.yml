@@ -44,6 +44,7 @@ jobs:
 
       - name: Run GatorBait Stack QC
         run: |
+          node --test automation/newsletter/send-governor.test.mjs
           node automation/newsletter/validate-unique-images.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
           node automation/newsletter/run-stack-qc.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml
           node automation/newsletter/check-links.mjs newsletter/templates/gatorbait-magazine-colorlib-v1.mjml

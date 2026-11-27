@@ -51,7 +51,7 @@ Findings Oct. 11, 2026 (counts only):
 
 ## 5. Pre-send checklist (run for every story)
 
-Edit `CFG` in `story-alert-presend.wix.js` (post URL, slug, label key, `governorOk`), paste into ExecuteWixAPI with `hasMutations: false`. It checks: both blog alert automations INACTIVE; email account ACTIVE and rank GOOD; send-governor verdict (Jarvis runs `send-governor.js` first and sets `governorOk`); label exists and is not the whole pool; label membership diff is zero; no hold labels; consent re-check in batches of 30; 24 hour and 7 day send counts under the caps (mirror of the governor); 7 day bounce and complaint rates under limits (via `GET /campaigns/statistics`); no already-sent campaign carries this post URL or `story_alert_<slug>`. Output is counts and pass/fail only. Any fail means no publish.
+Edit `CFG` in `story-alert-presend.wix.js` (post URL, slug, label key, `governorOk`), paste into ExecuteWixAPI with `hasMutations: false`. It checks: both blog alert automations INACTIVE; email account ACTIVE and rank GOOD; send-governor verdict (Jarvis runs `send-governor.js` first and sets `governorOk`); label exists and is not the whole pool; label membership diff is zero; no hold labels; consent re-check in batches of 30; 7 day bounce and complaint rates under limits (via `GET /campaigns/statistics`); no already-sent campaign carries this post URL or `story_alert_<slug>`. [Nov. 27 owner direction](EMAIL-VOLUME-POLICY-2026-11-27.md) removes daily/weekly volume caps; recent counts are telemetry. Output is counts and pass/fail only. Any failed safeguard means no publish.
 
 ## 6. Send (Jarvis only, after Brenden's explicit yes and a passing checklist)
 

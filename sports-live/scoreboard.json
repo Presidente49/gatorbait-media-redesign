@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T15:02:01Z",
+ "updatedAt": "2026-11-27T20:32:34Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -278,6 +278,11 @@
    "overall": "7-4"
   },
   {
+   "team": "Ole Miss",
+   "confRecord": "5-4",
+   "overall": "8-4"
+  },
+  {
    "team": "Florida",
    "confRecord": "5-4",
    "overall": "7-4"
@@ -298,11 +303,6 @@
    "overall": "7-4"
   },
   {
-   "team": "Ole Miss",
-   "confRecord": "4-4",
-   "overall": "7-4"
-  },
-  {
    "team": "South Carolina",
    "confRecord": "4-5",
    "overall": "6-5"
@@ -313,14 +313,14 @@
    "overall": "6-5"
   },
   {
-   "team": "Mississippi State",
-   "confRecord": "2-6",
-   "overall": "5-6"
-  },
-  {
    "team": "Arkansas",
    "confRecord": "2-6",
    "overall": "4-7"
+  },
+  {
+   "team": "Mississippi State",
+   "confRecord": "2-7",
+   "overall": "5-7"
   },
   {
    "team": "Texas A&M",

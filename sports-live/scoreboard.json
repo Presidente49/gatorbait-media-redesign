@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T23:26:15Z",
+ "updatedAt": "2026-11-27T23:34:53Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "8:47",
+  "clock": "5:48",
   "period": 4,
   "score": {
    "fla": 20,
    "opp": 10
   },
-  "possession": "opp",
-  "lastPlay": "(08:56) No Huddle-Shotgun #14 A.Daniels pass complete short right to #15 J.Boggs caught at FLA45, for 11 yards to the FLA37 (#43 A.Allen Jr.)"
+  "possession": "fla",
+  "lastPlay": "(05:54) #38 A.Clark punt 51 yards to the FSU25 fair catch by #7 J.Lopez at FSU25"
  }
 }

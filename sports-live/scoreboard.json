@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T22:58:56Z",
+ "updatedAt": "2026-11-27T23:11:31Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "3:01",
-  "period": 3,
+  "clock": "14:50",
+  "period": 4,
   "score": {
    "fla": 17,
    "opp": 10
   },
-  "possession": "opp",
-  "lastPlay": "(03:07) No Huddle-Shotgun #9 K.Sperry pass complete short middle to #18 L.Thomas caught at FLA00, for 9 yards to the FLA00 TOUCHDOWN, clock 03:01, 1ST DOWN #39 G.Panikowski kick attempt good (H: #87 C.Jula, LS: #48 C.Bowers)"
+  "possession": "fla",
+  "lastPlay": "(14:58) Shotgun #9 T.Jones Jr. pass complete short middle to #7 A.Jackson caught at FSU28, for 10 yards to the FSU18 (#10 C.Jones)"
  }
 }

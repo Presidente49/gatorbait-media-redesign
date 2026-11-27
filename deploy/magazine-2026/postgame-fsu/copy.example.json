@@ -1,0 +1,171 @@
+{
+  "_README": "Copy file for build_issue.py. Copy this file to copy.json and fill it in. Keys that start with an underscore are notes and are ignored. A value that is exactly [OPTIONAL ...] is ignored, so you can leave optional fields untouched. Any other bracketed ALL-CAPS placeholder ([REQUIRED ...], [HEADLINE]) stops the build until you replace it or delete the field. Everything not in this file (teams, scores, rank, records, line score, scoring plays, team stats, box score, leaders, damage tiles, win-probability chart, contents, date, venue) is computed from ESPN at build time. House style: AP style (Nov. 27, 3:30 p.m.), no em dashes, no curly quotes (curly quotes are straightened for you; em dashes stop the build), never the outlet name Gator Country, no player named in photo alt text unless the photographer or Brenden confirmed it. Character limits are the renderer's own: it cuts text silently past them, so the build stops instead. REQUIRED: cover (all fields except teasers, linesLabel, lines) and next.title. Everything else is OPTIONAL.",
+
+  "cover": {
+    "_notes": "The cover story: the game story. url is a site-relative post URL such as /post/slug. The photo is the cover photo (a Wix media id from the Media Manager). Give the photo's REAL pixel width and height (they set the frame's aspect ratio). alt is cut at 200 characters including the credit, which this script appends if it is missing.",
+    "kicker": "[REQUIRED kicker, 80 chars max, e.g. Postgame · Black Friday in Tallahassee]",
+    "coverTitle": "[REQUIRED big cover title, 40 chars max, e.g. Baugh Control]",
+    "headline": "[REQUIRED headline, 200 chars max, the game story headline]",
+    "dek": "[REQUIRED dek, 600 chars max, two sentences]",
+    "byline": "[REQUIRED byline, 80 chars max, e.g. By GatorBait Staff · Photos by Chris Spears]",
+    "cta": "[REQUIRED button label, 60 chars max, e.g. Read the game story]",
+    "url": "[REQUIRED /post/slug of the game story]",
+    "image": {
+      "id": "[REQUIRED Wix media id, d3cfa5_ then 32 hex characters, with or without ~mv2.jpg]",
+      "ext": "jpg",
+      "width": "[REQUIRED pixel width as a number, e.g. 2169]",
+      "height": "[REQUIRED pixel height as a number, e.g. 1908]",
+      "alt": "[REQUIRED what the photo shows, no names unless confirmed, about 150 chars]",
+      "credit": "[REQUIRED photo credit, 120 chars max, e.g. Photo by Chris Spears, GatorBait Media.]",
+      "uaa": false
+    },
+    "teasers": [
+      "[OPTIONAL cover teaser 1, 60 chars max, up to 4 teasers]",
+      "[OPTIONAL cover teaser 2]",
+      "[OPTIONAL cover teaser 3]",
+      "[OPTIONAL cover teaser 4]"
+    ],
+    "linesLabel": "[OPTIONAL label over the Also inside list, 40 chars max, e.g. Also inside]",
+    "lines": [
+      "[OPTIONAL Also inside line 1, 80 chars max, up to 6 lines]",
+      "[OPTIONAL Also inside line 2]",
+      "[OPTIONAL Also inside line 3]"
+    ]
+  },
+
+  "columns": {
+    "_notes": "OPTIONAL section (the writers' columns). Leave every field as [OPTIONAL ...] to omit it from the issue and from the contents. Up to 12 rows. The first row is the large lead card unless a row sets lead true or false itself. image is optional per row; each photo id may be used once in the whole issue. title is cut at 200 characters, dek at 400, rubric 40, author 60.",
+    "kicker": "[OPTIONAL section kicker, 60 chars max, default The columns]",
+    "title": "[OPTIONAL section title, 120 chars max, default What our writers made of the game]",
+    "dek": "[OPTIONAL section dek, 400 chars max]",
+    "items": [
+      {
+        "rubric": "[OPTIONAL e.g. Column]",
+        "author": "[OPTIONAL e.g. Buddy Martin]",
+        "title": "[OPTIONAL story headline, 200 chars max; required when the row is used]",
+        "dek": "[OPTIONAL two-sentence summary, 400 chars max]",
+        "url": "[OPTIONAL /post/slug; required when the row is used]",
+        "lead": "[OPTIONAL true or false]",
+        "image": {
+          "id": "[OPTIONAL Wix media id]",
+          "width": "[OPTIONAL pixel width as a number]",
+          "height": "[OPTIONAL pixel height as a number]",
+          "alt": "[OPTIONAL photo description]",
+          "credit": "[OPTIONAL photo credit]",
+          "uaa": "[OPTIONAL true only for UAA photos]"
+        }
+      }
+    ]
+  },
+
+  "coverage": {
+    "_notes": "OPTIONAL section (everything else GatorBait published: photo gallery, live updates, halftime, box score, reaction). Same row format as columns. One canonical article URL, one primary home: a URL may appear only once across cover, columns and coverage.",
+    "kicker": "[OPTIONAL section kicker, 60 chars max, default The game package]",
+    "title": "[OPTIONAL section title, 120 chars max, default Everything GatorBait published on the game]",
+    "dek": "[OPTIONAL section dek, 400 chars max]",
+    "items": [
+      {
+        "rubric": "[OPTIONAL e.g. Photos]",
+        "author": "[OPTIONAL e.g. Chris Spears]",
+        "title": "[OPTIONAL story headline, 200 chars max; required when the row is used]",
+        "dek": "[OPTIONAL two-sentence summary, 400 chars max]",
+        "url": "[OPTIONAL /post/slug; required when the row is used]",
+        "image": {
+          "id": "[OPTIONAL Wix media id]",
+          "width": "[OPTIONAL pixel width as a number]",
+          "height": "[OPTIONAL pixel height as a number]",
+          "alt": "[OPTIONAL photo description]",
+          "credit": "[OPTIONAL photo credit]"
+        }
+      }
+    ]
+  },
+
+  "quotes": {
+    "_notes": "OPTIONAL section. Leave as [OPTIONAL ...] to drop it from the issue and the contents. Only quotes read in a full transcript or heard on a recording, copied word for word. text is cut at 400 characters, who at 60, role at 120. Up to 6 quotes.",
+    "kicker": "[OPTIONAL e.g. In their words]",
+    "title": "[OPTIONAL e.g. Sumrall, Philo and Graham]",
+    "dek": "[OPTIONAL e.g. From the postgame news conferences on Friday, Nov. 27.]",
+    "items": [
+      {
+        "text": "[OPTIONAL verbatim quote, 400 chars max]",
+        "who": "[OPTIONAL speaker, e.g. Jon Sumrall]",
+        "role": "[OPTIONAL e.g. Florida coach, postgame news conference, Nov. 27]"
+      }
+    ]
+  },
+
+  "next": {
+    "_notes": "REQUIRED: title. This section also carries the email signup form, so the issue should always have it. kicker defaults to Up next. meta is up to 6 short lines (60 chars each). note is 300 chars max. pickem is an optional highlight box (badge 40, title 60, text 300).",
+    "kicker": "[OPTIONAL e.g. Up next]",
+    "title": "[REQUIRED title, 120 chars max, e.g. Selection Day]",
+    "meta": [
+      "[OPTIONAL e.g. Sunday, Dec. 6]",
+      "[OPTIONAL e.g. 12 p.m. ET]",
+      "[OPTIONAL e.g. ESPN]"
+    ],
+    "note": "[OPTIONAL one or two sentences, 300 chars max]",
+    "pickem": {
+      "badge": "[OPTIONAL e.g. Milestone watch]",
+      "title": "[OPTIONAL 60 chars max]",
+      "text": "[OPTIONAL 300 chars max]"
+    }
+  },
+
+  "reference": {
+    "_notes": "OPTIONAL footer links (up to 6, label 40 chars max, site links only). These are the standard evergreen links, used as is when this block is left out.",
+    "label": "More GatorBait",
+    "links": [
+      { "label": "Schedule and results", "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule" },
+      { "label": "Roster", "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster" },
+      { "label": "The Buddy Martin Show", "url": "/the-buddy-martin-show" },
+      { "label": "GatorBait home", "url": "/" }
+    ],
+    "top": "Back to the cover"
+  },
+
+  "credits": {
+    "_notes": "OPTIONAL. By default the credit lines are built from the photo credits above (and uaa becomes true when any photo has uaa true). Set a field here only to override that.",
+    "label": "[OPTIONAL e.g. Photo credits]",
+    "uaa": "[OPTIONAL true or false]",
+    "other": ["[OPTIONAL credit line, 80 chars max, up to 4]"]
+  },
+
+  "asOf": "[OPTIONAL sentence added to the ESPN source line at the bottom, e.g. Quotes: UF/ASAP Sports transcripts, Nov. 27.]",
+
+  "issue": {
+    "_notes": "OPTIONAL overrides of the computed masthead lines (date, week, pageTitle, number).",
+    "number": "[OPTIONAL default Postgame edition]",
+    "date": "[OPTIONAL default is built from the kickoff date]",
+    "week": "[OPTIONAL default is Florida at Florida State · Tallahassee]",
+    "pageTitle": "[OPTIONAL default is GatorBait Magazine | Postgame: <winner> <score>, <loser> <score>]"
+  },
+
+  "final": {
+    "_notes": "OPTIONAL. extraMeta adds lines to the Final block between ESPN's venue and the record (the block shows 4 lines in all).",
+    "extraMeta": ["[OPTIONAL e.g. Black Friday]"]
+  },
+
+  "sections": {
+    "_notes": "OPTIONAL heading overrides for the computed sections: damage, scoring, box, flow. Only kicker, title, dek and source can be set. The defaults are computed from the game (for example the damage title is who won the second half and by how much).",
+    "damage": { "title": "[OPTIONAL e.g. 17-3 after halftime]", "dek": "[OPTIONAL 400 chars max]" },
+    "scoring": { "dek": "[OPTIONAL 400 chars max]" },
+    "box": { "dek": "[OPTIONAL 400 chars max]" },
+    "flow": { "dek": "[OPTIONAL 400 chars max]" }
+  },
+
+  "teamNames": {
+    "_notes": "OPTIONAL display names by ESPN abbreviation when ESPN's name is too long (20 characters is the limit on the cover score).",
+    "FSU": "[OPTIONAL e.g. Florida State]"
+  },
+
+  "scoreAbbr": {
+    "_notes": "OPTIONAL short names used in the scoring-play score strings, by ESPN abbreviation. Florida is UF; any other team uses ESPN's abbreviation (FSU) unless set here.",
+    "FSU": "[OPTIONAL e.g. FSU]"
+  },
+
+  "set": {
+    "_notes": "LAST RESORT: set any single computed value by its dotted path in the finished issue, for example \"scoring.plays.3.play\": \"Brock Taylor 42-yard field goal\" or \"damage.stats.0.detail\": \"...\". Numbers set here are NOT from ESPN. Each use is printed in the build log and the result is validated like everything else.",
+    "scoring.plays.0.play": "[OPTIONAL]"
+  }
+}

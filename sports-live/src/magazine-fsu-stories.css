@@ -1,29 +1,72 @@
 /* FSU story-first edition only; all rules stay inside its private wrapper. */
-#gbm-magazine-page.pg .fsu-story-first .fsu-contents{margin-top:18px;padding:12px 14px;border:1px solid #2a4aa8;border-top:3px solid var(--pg-orange);border-radius:10px;background:var(--pg-card)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-contents>h2{font:800 18px/1.1 var(--mz-cond);text-transform:uppercase;color:#fff;margin:0 0 5px}
+#gbm-magazine-page.pg .fsu-story-first{--fsu-rule:#dedad0;--fsu-muted:#4e5a6c;--fsu-accent:#a83511;--fsu-warm:#faf8f2}
+#gbm-magazine-page.pg .fsu-story-first .fsu-contents{margin-top:18px;padding:12px 14px;border:1px solid var(--fsu-rule);border-top:3px solid var(--pg-orange);border-radius:10px;background:#fff;color:var(--pg-ink);scroll-margin-top:70px}
+#gbm-magazine-page.pg .fsu-story-first .fsu-contents>h2{font:800 18px/1.1 var(--mz-cond);text-transform:uppercase;margin:0 0 5px}
 #gbm-magazine-page.pg .fsu-story-first .fsu-quick-links{display:flex;flex-wrap:wrap;gap:0 15px}
-#gbm-magazine-page.pg .fsu-story-first .fsu-quick-links a{display:inline-flex;align-items:center;min-height:44px;color:#fff;font:800 18px/1.1 var(--mz-cond);text-decoration:underline;text-decoration-color:var(--pg-orange);text-underline-offset:4px}
-#gbm-magazine-page.pg .fsu-story-first .fsu-offer-line{margin:3px 0 8px;font:500 13px/1.35 var(--mz-sans);color:var(--pg-orange-2)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-quick-links a{display:inline-flex;align-items:center;min-height:44px;font:800 18px/1.1 var(--mz-cond);text-decoration:underline;text-decoration-color:var(--pg-orange);text-underline-offset:4px}
+#gbm-magazine-page.pg .fsu-story-first .fsu-offer-line{margin:3px 0 8px;font:600 13px/1.35 var(--mz-sans);color:var(--fsu-accent)}
 #gbm-magazine-page.pg .fsu-story-first .fsu-offer-line a{color:inherit;text-decoration:none}
-#gbm-magazine-page.pg .fsu-story-first .fsu-contents details{border-top:1px solid var(--pg-line)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-contents summary{cursor:pointer;min-height:44px;padding:12px 0;color:#fff;font:700 16px/1.2 var(--mz-sans)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-contents details{border-top:1px solid var(--fsu-rule)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-contents summary{cursor:pointer;min-height:44px;padding:12px 0;font:700 16px/1.2 var(--mz-sans)}
 #gbm-magazine-page.pg .fsu-story-first .fsu-full-toc{list-style:none;margin:0;padding:0;display:grid;gap:0 20px}
-#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc li{min-width:0;border-top:1px solid var(--pg-line)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc a{display:flex;gap:10px;align-items:baseline;min-height:44px;padding:10px 0;color:#fff;text-decoration:none;font:500 15px/1.35 var(--mz-sans)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-toc-n{flex:0 0 22px;color:var(--pg-orange-2);font:800 20px/1 var(--mz-cond)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc li{min-width:0;border-top:1px solid var(--fsu-rule)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc a{display:flex;gap:10px;align-items:baseline;min-height:44px;padding:10px 0;text-decoration:none;font:500 15px/1.35 var(--mz-sans)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-toc-n{flex:0 0 22px;color:var(--fsu-accent);font:800 20px/1 var(--mz-cond)}
 #gbm-magazine-page.pg .fsu-story-first .fsu-full-toc a>span:last-child{min-width:0}
-#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc b{display:block;color:var(--pg-orange-2);font:700 12px/1.4 var(--mz-sans)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc b{display:block;color:var(--fsu-accent);font:700 12px/1.4 var(--mz-sans)}
 #gbm-magazine-page.pg .fsu-story-first .fsu-full-toc a>span>span{display:block;overflow-wrap:anywhere}
 #gbm-magazine-page.pg .fsu-story-first .fsu-guide-toc{display:flex;flex-wrap:wrap;gap:0 15px;padding-bottom:8px}
-#gbm-magazine-page.pg .fsu-story-first .fsu-guide-toc a{display:inline-flex;align-items:center;min-height:44px;color:#fff;border-bottom:2px solid var(--pg-orange);font:700 16px/1.2 var(--mz-cond);text-decoration:none}
+#gbm-magazine-page.pg .fsu-story-first .fsu-guide-toc a{display:inline-flex;align-items:center;min-height:44px;border-bottom:2px solid var(--pg-orange);font:700 16px/1.2 var(--mz-cond);text-decoration:none}
 #gbm-magazine-page.pg .fsu-story-first .fsu-contents a:focus-visible,#gbm-magazine-page.pg .fsu-story-first .fsu-contents summary:focus-visible{outline:3px solid var(--pg-orange);outline-offset:3px}
 #gbm-magazine-page.pg .fsu-story-first .pg-prose h2{font:800 27px/1.15 var(--mz-cond);letter-spacing:0;text-transform:none;margin:1.3em 0 .6em;color:var(--pg-ink)}
 #gbm-magazine-page.pg .fsu-story-first .pg-prose h3,#gbm-magazine-page.pg .fsu-story-first .pg-prose h4{font:800 23px/1.2 var(--mz-cond);letter-spacing:0;text-transform:none;margin:1.2em 0 .5em;color:var(--pg-ink)}
 #gbm-magazine-page.pg .fsu-story-first .pg-prose ul,#gbm-magazine-page.pg .fsu-story-first .pg-prose ol{margin:.8em 0 1.2em;padding-left:1.5em}
 #gbm-magazine-page.pg .fsu-story-first .pg-prose li{margin:.35em 0}
-#gbm-magazine-page.pg .fsu-story-first .fsu-reference{margin-top:48px;padding-top:8px;border-top:4px solid var(--pg-orange)}
+#gbm-magazine-page.pg .fsu-story-first .pg-prose{overflow-wrap:anywhere}
+#gbm-magazine-page.pg .fsu-story-first .fsu-story{border:1px solid var(--fsu-rule);box-shadow:0 12px 28px #0003}
+#gbm-magazine-page.pg .fsu-story-first #pg-lead{border-top:3px solid var(--pg-orange)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-related{display:flex;flex-wrap:wrap;gap:0 16px;margin-top:2px}
+#gbm-magazine-page.pg .fsu-story-first .fsu-related a,#gbm-magazine-page.pg .fsu-story-first .fsu-back{display:inline-flex;align-items:center;min-height:44px;font:700 15px/1.25 var(--mz-sans);text-decoration:underline;text-underline-offset:3px}
+#gbm-magazine-page.pg .fsu-story-first .fsu-related a{color:var(--fsu-accent)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-back{margin-top:16px;color:#fff}
+#gbm-magazine-page.pg .fsu-story-first .fsu-picks{margin:26px auto 0;max-width:920px}
+#gbm-magazine-page.pg .fsu-story-first .fsu-picks summary{cursor:pointer;min-height:44px;padding:12px 14px;font:800 20px/1.2 var(--mz-cond)}
+#gbm-magazine-page.pg .fsu-story-first .fsu-picks summary:focus-visible{outline:3px solid var(--pg-orange);outline-offset:3px}
+#gbm-magazine-page.pg .fsu-story-first .fsu-picks .pg-slate{margin-top:0;padding:0 14px 14px}
+
+/* Bring the reference panels into the same paper palette as the articles. */
+#gbm-magazine-page.pg .fsu-complete-stories>section:not(.pg-rost){max-width:920px;margin-inline:auto}
+#gbm-magazine-page.pg .fsu-complete-stories :is(.pg-numbers,.pg-tape,.pg-inj,.pg-sched,.pg-rost,.fsu-picks){--pg-card:var(--fsu-warm);--pg-line:var(--fsu-rule);--pg-mute:var(--fsu-muted);--pg-orange-2:var(--fsu-accent);background:#fff;color:var(--pg-ink);border:1px solid var(--fsu-rule);border-radius:var(--pg-r)}
+#gbm-magazine-page.pg .fsu-complete-stories>section:is(.pg-numbers,.pg-tape,.pg-inj,.pg-sched,.pg-rost){padding:clamp(12px,2.2vw,24px)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-sh h2{background:none;color:inherit;filter:none}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-sh h2::before{display:none}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-sh::after{height:1px;background:var(--fsu-rule);box-shadow:none}
+#gbm-magazine-page.pg .fsu-complete-stories :is(.pg-std-team,.pg-numbers li,.pg-g){border-color:var(--fsu-rule);box-shadow:none}
+#gbm-magazine-page.pg .fsu-complete-stories :is(.pg-std-team h3,.pg-numbers b,.pg-inj b,.pg-sc td.pg-sc-r,.pg-std-t tbody th,.pg-sc .pg-sc-now td:first-child,.pg-v.pg-win,.pg-g li b,.pg-g li.pg-picked b){color:var(--pg-ink)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-std-team h3{border-bottom:2px solid var(--fsu-rule)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-std-t{color:var(--fsu-muted)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-sc .pg-sc-w{color:#19613b}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-sc .pg-sc-now{background:#fff0e6}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-rt .pg-rt-g{background:#f0ece4;border-color:var(--fsu-rule)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-inj i,#gbm-magazine-page.pg .fsu-complete-stories .pg-half{background:#eeebe4}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-lm{color:#2e4665}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-hf i{background:#ad7867}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-hm i{background:#8190a4}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-hf i.pg-win{background:var(--fsu-accent)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-hm i.pg-win{background:#2e4665}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-g li{border-color:var(--fsu-rule)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-rk{color:var(--fsu-accent)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-pick{background:#f0ece4;border-left:3px solid var(--pg-orange)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-pick :is(small,b,em){color:var(--pg-ink)}
+#gbm-magazine-page.pg .fsu-complete-stories .pg-game{background:#0c1836;box-shadow:none}
+#gbm-magazine-page.pg .gbm-football-tools nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+#gbm-magazine-page.pg .gbm-football-tools nav a{min-width:0;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:599px){#gbm-magazine-page.pg .fsu-complete-stories .pg-numbers b{font-size:clamp(26px,8.3vw,40px)}}
 @media(min-width:700px){#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media print{#gbm-magazine-page.pg .fsu-story-first .fsu-contents{display:none}}
+@media print{
+  #gbm-magazine-page.pg .fsu-story-first .fsu-contents,#gbm-magazine-page.pg .fsu-story-first .fsu-related,#gbm-magazine-page.pg .fsu-story-first .fsu-back,#gbm-magazine-page.pg .fsu-story-first .fsu-picks summary{display:none}
+  #gbm-magazine-page.pg .fsu-story-first .fsu-picks::details-content{content-visibility:visible}
+}
 
 /* Native source credits remain intact, without decorative initials or repeated derived image credit. */
 #gbm-magazine-page.pg .fsu-story-first .pg-prose>p:first-child{font:500 18px/1.65 var(--mz-sans);letter-spacing:normal;text-transform:none}

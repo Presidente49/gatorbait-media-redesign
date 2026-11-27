@@ -29,15 +29,18 @@ body{overflow:auto;padding:10px 12px 8px;border-top:3px solid var(--org)}
 .sc{font:700 clamp(40px,11vw,58px)/.9 'Barlow Condensed';font-variant-numeric:tabular-nums;flex:0 0 auto}
 .poss{display:inline-block;width:11px;height:7px;border-radius:50%;background:var(--org);transform:rotate(-24deg);margin-left:6px;vertical-align:middle}
 .dd{margin:7px 0 0;font:700 17px/1.1 'Barlow Condensed';letter-spacing:.04em;color:var(--org)}
-.lp{margin-top:6px;padding:6px 9px;background:#0d1530;border-left:3px solid var(--org);border-radius:3px;font-size:13px;color:#cfd8f2}
+.lp{margin-top:6px;padding:6px 9px;background:#0d1530;border-left:3px solid var(--org);border-radius:3px;font-size:13px;color:#cfd8f2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .lp b{font:700 10.5px/1 'Barlow Condensed';letter-spacing:.18em;color:var(--mut);margin-right:6px}
 table{width:100%;border-collapse:collapse;margin-top:7px;font:600 14px/1 'Barlow Condensed';letter-spacing:.04em}
 th,td{padding:4px 6px;text-align:center;border-bottom:1px solid #ffffff12}
 thead th{color:var(--mut);font-size:11px;letter-spacing:.14em}tbody th{text-align:left}td.t{font-size:16px}
 .sp{margin-top:8px}
+.sp ul{padding:0;margin:0}
 .sp h3{font:700 11px/1 'Barlow Condensed';letter-spacing:.18em;color:var(--mut);text-transform:uppercase;margin-bottom:3px}
 .sp li{list-style:none;display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #ffffff0d;font-size:12.5px}
 .sp li:last-child{border:0}.sp .w{flex:0 0 auto;min-width:56px;font:700 11.5px/1.4 'Barlow Condensed';letter-spacing:.06em;color:var(--org);text-transform:uppercase}
+.grid>div{min-width:0}
+@media(min-width:560px){.grid{display:grid;grid-template-columns:1.1fr 1fr;gap:18px}.grid .rt table{margin-top:2px}}
 .foot{margin-top:8px;font-size:11px;color:var(--mut);display:flex;justify-content:space-between;gap:8px}
 .foot i{font-style:normal}.err{color:#ffb3b8}
 @keyframes pulse{50%{opacity:.7}}
@@ -85,11 +88,13 @@ function render() {
   for (var k = 0; k < n; k++) hd += '<th>' + (k < 4 ? k + 1 : (n - 4 > 1 ? 'OT' + (k - 3) : 'OT')) + '</th>';
   var row = function (t) { var ls = t.linescores || [], r = '<tr><th>' + esc(t.team.abbreviation) + '</th>'; for (var k = 0; k < n; k++) r += '<td>' + (ls[k] ? esc(ls[k].displayValue) : '&ndash;') + '</td>'; return r + '<td class="t">' + esc(t.score || '0') + '</td></tr>'; };
   var line = '<table><thead><tr><th></th>' + hd + '<th>T</th></tr></thead><tbody>' + row(a) + row(h) + '</tbody></table>';
-  var sp = '', plays = (S.sum && S.sum.scoringPlays || []).slice().reverse().slice(0, 3);
+  var sp = '', plays = (S.sum && S.sum.scoringPlays || []).slice().reverse().slice(0, 2);
   if (plays.length) sp = '<div class="sp"><h3>Latest scores</h3><ul>' + plays.map(function (p) { return '<li><span class="w">Q' + esc(p.period.number) + ' ' + esc(p.clock.displayValue) + '</span><span>' + esc(ap(p.text)) + ' (' + esc(a.team.abbreviation) + ' ' + esc(p.awayScore) + ', ' + esc(h.team.abbreviation) + ' ' + esc(p.homeScore) + ')</span></li>'; }).join('') + '</ul></div>';
+  var lab = { passingYards: 'Passing', rushingYards: 'Rushing', receivingYards: 'Receiving' }, ld = (c.leaders || []).map(function (l) { var x = (l.leaders || [])[0]; if (!x || !x.athlete || !lab[l.name]) return ''; var ab = x.team ? (String(x.team.id) === String(a.team.id) ? a.team.abbreviation : h.team.abbreviation) : ''; return '<li><span class="w">' + lab[l.name] + '</span><span>' + esc(x.athlete.shortName) + (ab ? ' (' + esc(ab) + ')' : '') + ' ' + esc(x.displayValue) + '</span></li>'; }).join('');
+  var leaders = ld ? '<div class="sp"><h3>Game leaders</h3><ul>' + ld + '</ul></div>' : '';
   var upd = S.fail > 2 ? '<i class="err">Reconnecting&hellip;</i>' : '<i>Updated ' + esc(etTime(Date.now())) + ' ET</i>';
   document.getElementById('app').innerHTML = '<div class="top"><span class="chip ' + i.cls + '">' + i.tag + '</span>' + (i.line ? '<span class="st">' + esc(i.line) + '</span>' : '') + '<span class="src">Live from ESPN</span></div>' +
-    '<div class="sb">' + tm(a, false) + tm(h, true) + '</div>' + dd + lp + line + sp +
+    '<div class="grid"><div class="lf"><div class="sb">' + tm(a, false) + tm(h, true) + '</div>' + dd + lp + '</div><div class="rt">' + line + leaders + '</div></div>' + sp +
     '<div class="foot">' + upd + '<i>Refreshes by itself. Full game log below.</i></div>';
   var key = (a.score || 0) + '-' + (h.score || 0) + ty.state + ty.name;
   if (key !== S.key) { S.key = key; loadSum(); }

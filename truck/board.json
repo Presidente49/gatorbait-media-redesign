@@ -1,7 +1,12 @@
 {
-  "updated": "2026-11-27T20:56:57Z",
+  "updated": "2026-11-27T21:02:32Z",
   "event": "401856759",
   "say": [
+    {
+      "id": "s1795813352000",
+      "at": "2026-11-27T21:02:32Z",
+      "text": "First quarter is still scoreless. Jadan Baugh needs 20 yards tonight for 1,000 on the season. I will say so when he gets there."
+    },
     {
       "id": "wall-live",
       "at": "2026-11-27T20:52:30Z",
@@ -114,5 +119,14 @@
       "state": "live",
       "line": "On the game, running the live post, and building this wall."
     }
-  ]
+  ],
+  "watch": {
+    "who": "Jadan Baugh",
+    "label": "season rushing yards",
+    "base": 980,
+    "target": 1000,
+    "cat": "rushing",
+    "stat": "YDS",
+    "note": "980 through 11 games, from ESPN game log"
+  }
 }

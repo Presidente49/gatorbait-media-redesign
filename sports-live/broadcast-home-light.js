@@ -732,15 +732,20 @@ function wixPhoto(h){try{var u=new URL(h),m=/^\/media\/([^/]+~mv2\.(?:jpe?g|png|
    Canonical URLs rank only stories already in the newest-nine window; they never alter dates or bylines.
    A null lead means its complete native manuscript/canonical is still unresolved. */
 var HOMEPAGE_PACKAGE = {"from":"2026-10-28T04:00:00Z","until":"2026-10-29T04:00:00Z","lead":"/post/why-i-despise-the-georgia-bulldogs-and-why-you-should-too-2","next":["/post/golden-still-looking-to-solidify-his-bench-rotation-florida-basketball","/post/florida-georgia-sumrall-knows-the-math","/post/rays-baseball-world-series-game-4-brewers-gators-ties"],"last":"/post/florida-basketball-urban-renewal-klavzar-aberdeen-stetson-exhibition"};
+/* Owner order, Nov. 27: today's three pregame filings lead until kickoff.
+   Rank only their verified canonicals already in the current nine, published today;
+   ordinary chronology resumes at kickoff without a future or permanent pin. */
+var HOMEPAGE_FSU_PREGAME = {"from":"2026-11-27T05:00:00Z","until":"2026-11-27T20:30:00Z","publishedFrom":"2026-11-27T05:00:00Z","lead":"/post/the-soothsayer-the-gators-have-all-the-motivation-they-need","next":["/post/behind-the-sticks-florida-at-florida-state","/post/pregame-analysis-no-20-florida-gators-7-4-5-4-vs-florida-state-seminoles-5-6-3-5"]};
 function homepagePackageOrder(ordered,t){
-var p=HOMEPAGE_PACKAGE,from=Date.parse(p&&p.from),until=Date.parse(p&&p.until);if(!p||!isFinite(from)||!isFinite(until)||from>=until||t<from||t>=until)return ordered;
+var p=HOMEPAGE_PACKAGE,g=HOMEPAGE_FSU_PREGAME;if(t>=Date.parse(g.from)&&t<Date.parse(g.until))p=g;
+var from=Date.parse(p&&p.from),until=Date.parse(p&&p.until);if(!p||!isFinite(from)||!isFinite(until)||from>=until||t<from||t>=until)return ordered;
 var paths=[p.lead].concat(p.next||[]).filter(Boolean),byPath={},used={},front=[];
-ordered.forEach(function(f){byPath[storyPath(f[2])]=f;});
+ordered.forEach(function(f){if(!p.publishedFrom||f[0]>=Date.parse(p.publishedFrom))byPath[storyPath(f[2])]=f;});
 paths.forEach(function(path){path=storyPath(path);if(byPath[path]&&!used[path]){front.push(byPath[path]);used[path]=true;}});
 var last=storyPath(p.last),tail=byPath[last];
 return front.concat(ordered.filter(function(f){var path=storyPath(f[2]);return!used[path]&&path!==last;}),tail&&!used[last]?[tail]:[]);
 }
-/* Owner order, Nov. 10: the front page is strictly newest-first by first-published date. No writer or staff grouping.
+/* Default owner order, Nov. 10: newest-first by first-published date outside an active dated package. No writer or staff grouping.
    (Replaces the Oct. 27 "named writers first" rule.) The current nine are chosen newest-first, then ordered the same way. */
 function homepageStories(records){
 var seen={},t=Date.now(),current=(records||[]).slice().sort(function(a,b){return b[0]-a[0];}).filter(function(f){var h=storyPath(f[2]);if(!f[0]||f[0]>t+DAY||!h||seen[h])return false;seen[h]=true;return true;}).slice(0,9);

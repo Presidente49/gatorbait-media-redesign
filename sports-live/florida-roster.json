@@ -1,75 +1,54 @@
 {
   "season": 2026,
   "team": "Florida",
-  "updated": "2026-11-21T14:30:00Z",
-  "updatedLabel": "Nov. 21, 2026, 9:30 a.m. ET",
+  "updated": "2026-11-27T12:12:42Z",
+  "updatedLabel": "Nov. 27, 2026, 7:12 a.m. ET",
   "availability": {
-    "label": "SEC availability report for Vanderbilt at Florida (Nov. 21, noon ET, SEC Network), Friday update: six Gators out; Bailey Stockton and Bryce Thornton probable. The final report is due 90 minutes before kickoff.",
-    "asOf": "Nov. 20, 2026"
+    "label": "Florida at Florida State, Nov. 27, 3:30 p.m. ET on ABC. Latest accessible official availability: UF's Nov. 26 preview. This is not a final game-day participation list. A player not listed here is not confirmed available.",
+    "asOf": "Nov. 26, 2026"
   },
   "status": {
     "Vernell Brown III": {
       "status": "out",
       "label": "Out",
-      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
-      "date": "Nov. 19",
-      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
-    },
-    "Lacota Dippre": {
-      "status": "out",
-      "label": "Out",
-      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire. Jon Sumrall called the injury \"pretty substantial\" on Monday, Gators Wire reported.",
-      "date": "Nov. 19",
-      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
-    },
-    "Emeka Ugorji": {
-      "status": "out",
-      "label": "Out",
-      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
-      "date": "Nov. 19",
-      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+      "note": "Knee. Listed out for Florida State in UF's Nov. 26 Opening Kickoff report; not final game-day clearance.",
+      "date": "Nov. 26",
+      "src": "https://floridagators.com/news/2026/11/26/football-the-opening-kickoff-no-20-gators-at-florida-state-a-friday-afternoon-sunshine-showdown"
     },
     "Jaden Robinson": {
-      "status": "out",
-      "label": "Out",
-      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
-      "date": "Nov. 19",
-      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+      "status": "questionable",
+      "label": "Questionable",
+      "note": "Undisclosed. Listed questionable for Florida State in UF's Nov. 26 Opening Kickoff report; not final game-day clearance.",
+      "date": "Nov. 26",
+      "src": "https://floridagators.com/news/2026/11/26/football-the-opening-kickoff-no-20-gators-at-florida-state-a-friday-afternoon-sunshine-showdown"
+    },
+    "Lacota Dippre": {
+      "status": "questionable",
+      "label": "Questionable",
+      "note": "Ankle. Listed questionable for Florida State in UF's Nov. 26 Opening Kickoff report; not final game-day clearance.",
+      "date": "Nov. 26",
+      "src": "https://floridagators.com/news/2026/11/26/football-the-opening-kickoff-no-20-gators-at-florida-state-a-friday-afternoon-sunshine-showdown"
     },
     "DJ Coleman": {
-      "status": "out",
-      "label": "Out",
-      "note": "Listed out for Vanderbilt on the SEC availability report as updated Thursday, Nov. 19, as published by Gators Wire.",
-      "date": "Nov. 19",
-      "src": "https://sports.yahoo.com/articles/one-change-sec-availability-report-142054625.html"
+      "status": "questionable",
+      "label": "Questionable",
+      "note": "Ankle. Listed questionable for Florida State in UF's Nov. 26 Opening Kickoff report; not final game-day clearance.",
+      "date": "Nov. 26",
+      "src": "https://floridagators.com/news/2026/11/26/football-the-opening-kickoff-no-20-gators-at-florida-state-a-friday-afternoon-sunshine-showdown"
+    },
+    "Emeka Ugorji": {
+      "status": "questionable",
+      "label": "Questionable",
+      "note": "Ankle. Listed questionable for Florida State in UF's Nov. 26 Opening Kickoff report; not final game-day clearance.",
+      "date": "Nov. 26",
+      "src": "https://floridagators.com/news/2026/11/26/football-the-opening-kickoff-no-20-gators-at-florida-state-a-friday-afternoon-sunshine-showdown"
     },
     "Dijon Johnson": {
-      "status": "out",
-      "label": "Out",
-      "note": "Listed out for Vanderbilt on the SEC availability report as updated Friday, Nov. 20, after being listed doubtful on Thursday, as published by Hail Florida Hail.",
-      "date": "Nov. 20",
-      "src": "https://hailfloridahail.com/florida-vs-vanderbilt-how-to-watch-weather-injuries-odds-announcers-and-more"
-    },
-    "Bailey Stockton": {
-      "status": "probable",
-      "label": "Probable",
-      "note": "Listed probable for Vanderbilt on the SEC availability report as updated Friday, Nov. 20, up from questionable, as published by Hail Florida Hail. Sumrall earlier in the week: \"I'd be shocked if he doesn't play,\" Gators Wire reported.",
-      "date": "Nov. 20",
-      "src": "https://hailfloridahail.com/florida-vs-vanderbilt-how-to-watch-weather-injuries-odds-announcers-and-more"
-    },
-    "Bryce Thornton": {
-      "status": "probable",
-      "label": "Probable",
-      "note": "Listed probable for Vanderbilt on the SEC availability report as updated Friday, Nov. 20, up from questionable, as published by Hail Florida Hail.",
-      "date": "Nov. 20",
-      "src": "https://hailfloridahail.com/florida-vs-vanderbilt-how-to-watch-weather-injuries-odds-announcers-and-more"
-    },
-    "Tramell Jones Jr.": {
-      "status": "limited",
-      "label": "Not fully healthy",
-      "note": "Sumrall said Monday he is not fully healthy and will likely need surgery after the season.",
-      "date": "Nov. 2",
-      "src": "https://floridagators.com/news/2026/11/2/football-gators-look-to-reignite-offense-amid-qb-battle-browns-injury"
+      "status": "questionable",
+      "label": "Questionable",
+      "note": "Undisclosed. Listed questionable for Florida State in UF's Nov. 26 Opening Kickoff report; not final game-day clearance.",
+      "date": "Nov. 26",
+      "src": "https://floridagators.com/news/2026/11/26/football-the-opening-kickoff-no-20-gators-at-florida-state-a-friday-afternoon-sunshine-showdown"
     }
   },
   "players": [

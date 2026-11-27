@@ -1,7 +1,12 @@
 {
-  "updated": "2026-11-27T21:15:35Z",
+  "updated": "2026-11-27T21:24:00Z",
   "event": "401856759",
   "say": [
+    {
+      "id": "s1795814640111",
+      "at": "2026-11-27T21:24:00Z",
+      "text": "End of the first quarter: Florida 7, Florida State 0. Jadan Baugh is at 998 for the season, 2 yards from 1,000. Game log updated."
+    },
     {
       "id": "s1795814135295",
       "at": "2026-11-27T21:15:35Z",
@@ -45,7 +50,7 @@
       "id": "live",
       "label": "Live updates post",
       "state": "live",
-      "note": "Game log rewritten 4:15 p.m. (Florida 7, FSU 0). The scoreboard card updates by itself. Comments are on.",
+      "note": "Game log rewritten 4:23 p.m. (end of the first quarter). The scoreboard card updates by itself. Comments are on.",
       "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state"
     },
     {
@@ -78,7 +83,7 @@
       "id": "game",
       "name": "Game desk",
       "state": "live",
-      "line": "Florida 7, FSU 0 late in the first quarter. Scoreboard card is live inside the post.",
+      "line": "Second quarter. Florida 7, FSU 0. Log rewritten at each quarter and score.",
       "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state"
     },
     {

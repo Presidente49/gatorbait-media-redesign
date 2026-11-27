@@ -1,5 +1,0 @@
-[mcp_servers.restream]
-url = "https://mcp.restream.io/mcp"
-
-[mcp_servers.wix-mcp-remote]
-url = "https://mcp.wix.com/mcp"

@@ -100,3 +100,23 @@
   #gbm-magazine-page.pg .fsu-mast p span{display:none}
   #gbm-magazine-page.pg .fsu-spread{margin-top:16px}
 }
+
+/* QC, Nov. 27: whole-word wrapping in the roster and injury tables, no dead blocks beside the tall columns (cover and sidebar stay in view),
+   and the half-width reference widgets use the full row so the injury lists have room. Desktop only; phones are unchanged. */
+#gbm-magazine-page.pg .fsu-widget .pg-inj li :is(b,small){overflow-wrap:break-word;word-break:normal}
+#gbm-magazine-page.pg .fsu-widget .pg-inj .pg-st{white-space:nowrap;padding:4px 7px}
+@media(min-width:700px){
+#gbm-magazine-page.pg .fsu-widget .pg-rt :is(th,td){overflow-wrap:normal;word-break:normal}
+#gbm-magazine-page.pg .fsu-widget .pg-rt :is(thead th,tbody td:not(.pg-rt-h)){white-space:nowrap}
+#gbm-magazine-page.pg .fsu-widget .pg-rt tbody td.pg-rt-h{white-space:normal;overflow-wrap:break-word}
+}
+@media(min-width:900px){
+#gbm-magazine-page.pg .fsu-spread{grid-template-areas:"cover contents" "cover game"}
+#gbm-magazine-page.pg .fsu-spread .fsu-cover{position:sticky;top:16px;align-self:start}
+#gbm-magazine-page.pg .fsu-coverage .fsu-sidebar{position:sticky;top:16px;align-self:start}
+}
+@media(min-width:1120px){
+#gbm-magazine-page.pg .fsu-reference-grid>.fsu-widget-half{grid-column:1/-1}
+#gbm-magazine-page.pg .fsu-widget .pg-inj ul{columns:2;column-gap:28px}
+#gbm-magazine-page.pg .fsu-widget .pg-inj li{break-inside:avoid}
+}

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T21:15:01Z",
+ "updatedAt": "2026-11-27T21:23:20Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "1:41",
-  "period": 1,
+  "clock": "15:00",
+  "period": 2,
   "score": {
    "fla": 7,
    "opp": 0
   },
   "possession": "fla",
-  "lastPlay": "(01:44) Shotgun #13 J.Baugh rush right for 3 yards gain to the FSU00 TOUCHDOWN, clock 01:41 #91 P.Durkin kick attempt good (H: #38 A.Clark, LS: #54 L.Anderson)"
+  "lastPlay": "End of 1st quarter."
  }
 }

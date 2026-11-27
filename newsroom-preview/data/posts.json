@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Cyber Weekend: Gator Bait All Access Annual Is $49 — And Stays $49",
+      "excerpt": "Gator Bait Media's Cyber Weekend offer: All Access Annual for $49 with code GATOR49 — and the $49 price holds at renewal, every year. Nov 27–30 only.",
+      "url": "https://www.gatorbaitmedia.com/post/cyber-weekend-gator-bait-all-access-annual-is-49-and-stays-49",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-27T11:41:12Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_855dd60738654761930f7c15196fb74e~mv2.jpg/v1/fit/w_1000,h_684,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Cyber Weekend: Gator Bait All Access Annual Is $49 — And Stays $49"
+      }
+    },
+    {
       "title": "Behind the Sticks: Florida at Florida State",
       "excerpt": "The line moved from 5.5 to 6.5, the total never budged, and Jadan Baugh needs 19 yards to make Florida history. Behind the Sticks breaks down Florida at Florida State by the numbers.",
       "url": "https://www.gatorbaitmedia.com/post/behind-the-sticks-florida-at-florida-state",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for When Football Matters Again in Tallahassee and Gainesville, the Turkey Tastes Better"
-      }
-    },
-    {
-      "title": "Florida State Hires Georgia Defensive Coordinator Glenn Schumann as Head Coach",
-      "excerpt": "Florida State hired Georgia defensive coordinator Glenn Schumann as its head football coach on Monday, four days before the Seminoles host Florida.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-state-hires-georgia-defensive-coordinator-glenn-schumann-as-head-coach",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-24T02:04:31Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_39ee02f2fdd84890ac3b714fd6501041~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida State Hires Georgia Defensive Coordinator Glenn Schumann as Head Coach"
       }
     }
   ]

@@ -1,0 +1,1 @@
+{ "name": "gatorbait-chat", "private": true, "version": "1.0.0", "type": "module", "scripts": { "dev": "wrangler dev", "deploy": "wrangler deploy", "test": "node test-chat.mjs" }, "devDependencies": { "wrangler": "^4", "ws": "^8" } }

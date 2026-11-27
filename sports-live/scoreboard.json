@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T20:32:34Z",
+ "updatedAt": "2026-11-27T20:48:16Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -245,10 +245,10 @@
    "opponentRank": null,
    "opponentRecord": "5-6",
    "home": false,
-   "status": "scheduled",
+   "status": "in-progress",
    "score": null,
    "tv": "ABC",
-   "storyUrl": "https://www.gatorbaitmedia.com/post/florida-at-florida-state-game-time-tv-channel-streaming-odds-and-what-to-watch"
+   "storyUrl": null
   }
  ],
  "standings": [
@@ -333,5 +333,15 @@
    "overall": "4-7"
   }
  ],
- "live": null
+ "live": {
+  "eventId": "401856759",
+  "clock": "14:53",
+  "period": 1,
+  "score": {
+   "fla": 0,
+   "opp": 0
+  },
+  "possession": "opp",
+  "lastPlay": "(14:58) No Huddle-Shotgun #14 A.Daniels pass incomplete deep left to #8 M.Danzy thrown to FLA40 broken up by #25 C.McClain"
+ }
 }

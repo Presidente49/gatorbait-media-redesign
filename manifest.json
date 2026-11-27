@@ -1,0 +1,22 @@
+{
+  "sourceCommit": "11f63f4999de39994e30209ac905e0d6f4744ec1",
+  "pullRequest": 612,
+  "issue": "Florida-FSU Pregame, Nov. 27, 2026",
+  "build": "f300f425",
+  "frozenInputSha256": "4914fadcf432c1fe0d99574b7a005dbf4e49a9a74194501f6900756e9c677963",
+  "purpose": "Byte-exact final runtime assets in a small immutable tree; existing home/roster remain on their prior identical asset release.",
+  "artifacts": [
+    {
+      "path": "sports-live/broadcast-home-light.js",
+      "sha256": "658cbe60239173a94fa0c57b73b015688fe6017396c33890059cfc71f49fb280"
+    },
+    {
+      "path": "sports-live/magazine-fsu.js",
+      "sha256": "87da8d03b69fb0b6f84fc85a3569a9853f094e598a86c8964eb42a226ce922ea"
+    },
+    {
+      "path": "sports-live/roster-widget.js",
+      "sha256": "5a59fceb28c5c46fc1f7ca9c3b7c22314892c43354118f12f5547c786dcb826d"
+    }
+  ]
+}

@@ -497,7 +497,7 @@ function renderStats() {
   STAT_ROWS.forEach(function (r) {
     var va = g(ta, r[0]), vh = g(th, r[0]); if (va == null && vh == null) return;
     var na = r[0] === 'possessionTime' ? mmss(va) : parseFloat(va), nh = r[0] === 'possessionTime' ? mmss(vh) : parseFloat(vh), bar = '';
-    if (!isNaN(na) && !isNaN(nh) && r[0] !== 'thirdDownEff' && r[0] !== 'totalPenaltiesYards') { var tot = na + nh; var pa = tot ? na / tot * 100 : 50; bar = '<div class="bar2"><i style="width:' + pa.toFixed(0) + '%;background:' + ca + '"></i><i style="width:' + (100 - pa).toFixed(0) + '%;background:' + ch + '"></i></div>'; }
+    if (!isNaN(na) && !isNaN(nh) && r[0] !== 'thirdDownEff' && r[0] !== 'totalPenaltiesYards') { na = Math.max(0, na); nh = Math.max(0, nh); var tot = na + nh; var pa = tot ? na / tot * 100 : 50; bar = '<div class="bar2"><i style="width:' + pa.toFixed(0) + '%;background:' + ca + '"></i><i style="width:' + (100 - pa).toFixed(0) + '%;background:' + ch + '"></i></div>'; }
     out += '<div class="srow"><div class="v"><span>' + esc(va == null ? '–' : va) + '</span><em>' + esc(r[1]) + '</em><span>' + esc(vh == null ? '–' : vh) + '</span></div>' + bar + '</div>';
   });
   $('#stats').innerHTML = '<div class="srow"><div class="v"><span style="color:' + ca + '">' + esc(a.team.abbreviation) + '</span><em></em><span style="color:' + ch + '">' + esc(h.team.abbreviation) + '</span></div></div>' + (out || '<div class="sub">Stats start with the first snap.</div>');
@@ -511,7 +511,7 @@ function renderLeaders() {
     html += '<div><h5 style="color:' + tcol(comp.team) + '">' + esc(comp.team.location) + '</h5>';
     cats.forEach(function (k) {
       var cat = e && (e.leaders || []).find(function (x) { return x.name === k[0]; }), l = cat && cat.leaders && cat.leaders[0];
-      if (l && l.athlete) { any = true; html += '<p><small>' + k[1] + '</small>' + esc(l.athlete.shortName || l.athlete.displayName) + ' &middot; ' + esc(l.displayValue) + '</p>'; }
+      if (l && l.athlete && !/^team$/i.test(l.athlete.shortName || l.athlete.displayName || '')) { any = true; html += '<p><small>' + k[1] + '</small>' + esc(l.athlete.shortName || l.athlete.displayName) + ' &middot; ' + esc(l.displayValue) + '</p>'; }
     });
     html += '</div>';
   });

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T21:45:03Z",
+ "updatedAt": "2026-11-27T21:52:30Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "7:53",
+  "clock": "4:14",
   "period": 2,
   "score": {
-   "fla": 7,
+   "fla": 10,
    "opp": 3
   },
   "possession": "fla",
-  "lastPlay": "(07:57) No Huddle-Shotgun #20 D.Clark rush right for 3 yards gain to the FSU24 (#29 C.LaVallee)"
+  "lastPlay": "(04:18) #91 P.Durkin field goal attempt from 33 yards GOOD (H: #38 A.Clark, LS: #54 L.Anderson), clock 04:15"
  }
 }

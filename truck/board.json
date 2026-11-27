@@ -1,30 +1,118 @@
 {
-  "updated": "2026-11-27T20:52:30Z",
+  "updated": "2026-11-27T20:56:48Z",
   "event": "401856759",
   "say": [
-    { "id": "wall-live", "at": "2026-11-27T20:52:30Z", "text": "The Truck is live. Kickoff came at about 3:47 and it's scoreless in the first quarter. I'll update this line at every quarter, halftime and the final." },
-    { "id": "boot-1", "at": "2026-11-27T20:45:26Z", "text": "Truck is online. I'm watching the game, and I'll talk to you here." }
+    {
+      "id": "wall-live",
+      "at": "2026-11-27T20:52:30Z",
+      "text": "The Truck is live. Kickoff came at about 3:47 and it's scoreless in the first quarter. I'll update this line at every quarter, halftime and the final."
+    },
+    {
+      "id": "boot-1",
+      "at": "2026-11-27T20:45:26Z",
+      "text": "Truck is online. I'm watching the game, and I'll talk to you here."
+    }
   ],
   "needs": [
-    { "id": "firstvisit", "title": "First-time phone visitors", "text": "Show the stories above the scoreboard so the page stops jumping on a first visit? My call: yes. Say yes or no." },
-    { "id": "statspage", "title": "Stats page", "text": "Add a blank Wix page at /florida-football-stats so the season stats tracker can go live." },
-    { "id": "cover", "title": "Postgame Magazine cover", "text": "Send your cover art, or I'll use the best Chris Spears frame." }
+    {
+      "id": "firstvisit",
+      "title": "First-time phone visitors",
+      "text": "Show the stories above the scoreboard so the page stops jumping on a first visit? My call: yes. Say yes or no."
+    },
+    {
+      "id": "statspage",
+      "title": "Stats page",
+      "text": "Add a blank Wix page at /florida-football-stats so the season stats tracker can go live."
+    },
+    {
+      "id": "cover",
+      "title": "Postgame Magazine cover",
+      "text": "Send your cover art, or I'll use the best Chris Spears frame."
+    }
   ],
   "rundown": [
-    { "id": "live", "label": "Live updates post", "state": "live", "note": "Updated at kickoff (3:48 p.m.). Next: end of the first quarter. Comments are on.", "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state" },
-    { "id": "half", "label": "Halftime story", "state": "wait", "note": "Due about 12 minutes after halftime." },
-    { "id": "final", "label": "Final story", "state": "wait", "note": "Due about 25 minutes after the final." },
-    { "id": "box", "label": "Box score post", "state": "wait", "note": "After the final." },
-    { "id": "mag", "label": "Postgame Magazine", "state": "wait", "note": "After the final stories. Needs the cover." }
+    {
+      "id": "live",
+      "label": "Live updates post",
+      "state": "live",
+      "note": "Updated at kickoff (3:48 p.m.). Next: end of the first quarter. Comments are on.",
+      "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state"
+    },
+    {
+      "id": "half",
+      "label": "Halftime story",
+      "state": "wait",
+      "note": "Due about 12 minutes after halftime."
+    },
+    {
+      "id": "final",
+      "label": "Final story",
+      "state": "wait",
+      "note": "Due about 25 minutes after the final."
+    },
+    {
+      "id": "box",
+      "label": "Box score post",
+      "state": "wait",
+      "note": "After the final."
+    },
+    {
+      "id": "mag",
+      "label": "Postgame Magazine",
+      "state": "wait",
+      "note": "After the final stories. Needs the cover."
+    }
   ],
   "depts": [
-    { "id": "game", "name": "Game desk", "state": "live", "line": "Watching ESPN every 20 seconds. Kickoff came at about 3:47.", "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state" },
-    { "id": "news", "name": "News", "state": "ok", "line": "Live post is up. Postgame stories are queued." },
-    { "id": "mag", "name": "Magazine", "state": "ok", "line": "Pregame issue is live and fixed. Postgame issue is next.", "url": "https://www.gatorbaitmedia.com/magazine" },
-    { "id": "social", "name": "Social", "state": "nosignal", "line": "Not wired to the Truck yet. Nothing posts without your OK." },
-    { "id": "site", "name": "Site", "state": "warn", "line": "Phone pages are lighter (Magazine 22.6 MB down to 5.2 MB). One open item: first-visit scoreboard jump." },
-    { "id": "stats", "name": "Stats tracker", "state": "warn", "line": "Built. Waiting on your blank Wix page." },
-    { "id": "codex", "name": "Codex", "state": "nosignal", "line": "Shows up in the Team feed through pull requests and #34." },
-    { "id": "jarvis", "name": "Jarvis", "state": "live", "line": "On the game, running the live post, and building this wall." }
+    {
+      "id": "game",
+      "name": "Game desk",
+      "state": "live",
+      "line": "Watching ESPN every 20 seconds. Kickoff came at about 3:47.",
+      "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state"
+    },
+    {
+      "id": "news",
+      "name": "News",
+      "state": "ok",
+      "line": "Live post is up. Postgame stories are queued."
+    },
+    {
+      "id": "mag",
+      "name": "Magazine",
+      "state": "ok",
+      "line": "Pregame issue is live and fixed. Postgame issue is next.",
+      "url": "https://www.gatorbaitmedia.com/magazine"
+    },
+    {
+      "id": "social",
+      "name": "Social",
+      "state": "nosignal",
+      "line": "Not wired to the Truck yet. Nothing posts without your OK."
+    },
+    {
+      "id": "site",
+      "name": "Site",
+      "state": "warn",
+      "line": "Phone pages are lighter (Magazine 22.6 MB down to 5.2 MB). One open item: first-visit scoreboard jump."
+    },
+    {
+      "id": "stats",
+      "name": "Stats tracker",
+      "state": "warn",
+      "line": "Built. Waiting on your blank Wix page."
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "state": "nosignal",
+      "line": "Shows up in the Team feed through pull requests and #34."
+    },
+    {
+      "id": "jarvis",
+      "name": "Jarvis",
+      "state": "live",
+      "line": "On the game, running the live post, and building this wall."
+    }
   ]
 }

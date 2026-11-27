@@ -1,7 +1,12 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-27T14:14:17.297Z",
+  "fetchedAt": "2026-11-27T14:46:39.539Z",
   "videos": [
+    {
+      "id": "5No31RcO2yw",
+      "title": "Jon Sumrall: \"It's Not Just Another Game\" | Florida vs Florida State",
+      "published": "2026-11-27T14:39:24+00:00"
+    },
     {
       "id": "xWU2vo_ysaU",
       "title": "Florida vs Florida State: The Matchups That Matter",
@@ -71,11 +76,6 @@
       "id": "CYr1FCIQ0wU",
       "title": "BRAD WHITE: \"HE REMINDS ME OF WILL LEVIS IN 2021\"",
       "published": "2026-11-21T14:30:27+00:00"
-    },
-    {
-      "id": "rD6fbYUW1pg",
-      "title": "Why College Basketball Officiating Is Hurting the Game",
-      "published": "2026-11-21T03:07:15+00:00"
     }
   ]
 }

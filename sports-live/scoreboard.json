@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T22:51:28Z",
+ "updatedAt": "2026-11-27T22:58:56Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "6:27",
+  "clock": "3:01",
   "period": 3,
   "score": {
    "fla": 17,
-   "opp": 3
+   "opp": 10
   },
   "possession": "opp",
-  "lastPlay": "(06:57) No Huddle-Shotgun #14 A.Daniels rush left for 18 yards gain to the FLA23 (#1 B.Thornton), 1ST DOWN. The previous play is under automatic review - \"Targeting\". CALL OVERTURNED. (Original Play: (06:57) No Huddle-Shotgun #14 A.Daniels rush left for 18 yards gain to the FLA23 (#1 B.Thornton), 1ST DOWN, PENALTY FLA Targeting (#25 C.McClain) 12 yards from FLA23 to FLA11, 1ST DOWN)"
+  "lastPlay": "(03:07) No Huddle-Shotgun #9 K.Sperry pass complete short middle to #18 L.Thomas caught at FLA00, for 9 yards to the FLA00 TOUCHDOWN, clock 03:01, 1ST DOWN #39 G.Panikowski kick attempt good (H: #87 C.Jula, LS: #48 C.Bowers)"
  }
 }

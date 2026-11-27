@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-27T11:13:39.023Z",
+ "generatedAt": "2026-11-27T12:20:42.912Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-27T11:13:39.023Z",
+  "checkedAt": "2026-11-27T12:20:42.912Z",
   "ok": true,
   "checks": {
    "wellFormed": true,
@@ -14,9 +14,9 @@
    "noBlockedPublisher": true
   },
   "newest": {
-   "title": "Pregame Analysis: No. 20 Florida Gators (7-4, 5-4) vs. Florida State Seminoles (5-6, 3-5)",
-   "link": "https://www.gatorbaitmedia.com/post/pregame-analysis-no-20-florida-gators-7-4-5-4-vs-florida-state-seminoles-5-6-3-5",
-   "publishedAt": "2026-11-27T10:08:00.000Z"
+   "title": "Cyber Weekend: Gator Bait All Access Annual Is $49 — And Stays $49",
+   "link": "https://www.gatorbaitmedia.com/post/cyber-weekend-gator-bait-all-access-annual-is-49-and-stays-49",
+   "publishedAt": "2026-11-27T11:41:12.000Z"
   },
   "problems": []
  },

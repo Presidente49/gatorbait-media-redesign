@@ -1,7 +1,12 @@
 {
-  "updated": "2026-11-27T21:24:00Z",
+  "updated": "2026-11-27T21:40:42Z",
   "event": "401856759",
   "say": [
+    {
+      "id": "s1795815642224",
+      "at": "2026-11-27T21:40:42Z",
+      "text": "Florida State kicked a 27-yard field goal. Florida leads 7-3 in the second quarter. Game log updated. The chat server passes all my local tests and is waiting on the Cloudflare sign-in."
+    },
     {
       "id": "s1795814640111",
       "at": "2026-11-27T21:24:00Z",
@@ -43,6 +48,11 @@
       "id": "cover",
       "title": "Postgame Magazine cover",
       "text": "Send your cover art, or I'll use the best Chris Spears frame."
+    },
+    {
+      "id": "cloudflare",
+      "title": "Cloudflare sign-in",
+      "text": "The Claude app shows Cloudflare as connected, but my session was refused. Disconnect it and connect again, finish the login, then tell me. The fan chat is built and tested; it deploys in minutes after that."
     }
   ],
   "rundown": [
@@ -50,7 +60,7 @@
       "id": "live",
       "label": "Live updates post",
       "state": "live",
-      "note": "Game log rewritten 4:23 p.m. (end of the first quarter). The scoreboard card updates by itself. Comments are on.",
+      "note": "Game log rewritten 4:40 p.m. (Florida 7, FSU 3). The scoreboard card updates by itself. Comments are on.",
       "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state"
     },
     {

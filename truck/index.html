@@ -122,6 +122,10 @@ svg.wp{display:block;width:100%;height:84px;background:#0a1020;border-radius:4px
 .lead{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .lead h5{margin:0 0 4px;font:700 13px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase}
 .lead p{margin:0 0 5px;font-size:13.5px}.lead p small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.mw{margin-bottom:12px;padding:9px 11px;background:#0a1020;border-left:3px solid var(--gold);border-radius:3px}
+.mt{font:600 14px/1.2 var(--font);color:var(--mut)}.mt b{font:700 17px/1.2 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--fg)}
+.mb{height:8px;background:#1a2440;border-radius:4px;margin:8px 0;overflow:hidden}.mb i{display:block;height:100%;background:linear-gradient(90deg,#fa4616,#f5c542);border-radius:4px}
+.mn{font-size:14px;color:#cfd8f2}.mn small{display:block;color:var(--mut);font-size:12px;margin-top:2px}
 .ar{display:flex;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid #ffffff0d;text-decoration:none}
 .ar:last-child{border-bottom:0}
 .ar .m{flex:1 1 auto;min-width:0;font:600 16px/1.15 var(--cond);letter-spacing:.03em}
@@ -502,9 +506,24 @@ function renderStats() {
   });
   $('#stats').innerHTML = '<div class="srow"><div class="v"><span style="color:' + ca + '">' + esc(a.team.abbreviation) + '</span><em></em><span style="color:' + ch + '">' + esc(h.team.abbreviation) + '</span></div></div>' + (out || '<div class="sub">Stats start with the first snap.</div>');
 }
+/* milestone watch: the board names a player, a season base and a target; tonight's yards come live from ESPN's box score */
+function watchHtml() {
+  var w = S.board && S.board.watch, bt = S.sum && S.sum.boxscore && S.sum.boxscore.players; if (!w) return '';
+  var y = 0, found = false;
+  (bt || []).forEach(function (t) {
+    (t.statistics || []).forEach(function (cat) {
+      if (cat.name !== (w.cat || 'rushing')) return; var i = (cat.labels || []).indexOf(w.stat || 'YDS');
+      (cat.athletes || []).forEach(function (a) { if (i > -1 && a.athlete && a.athlete.displayName === w.who) { y = parseInt(a.stats[i], 10) || 0; found = true; } });
+    });
+  });
+  var f = function (n) { return Number(n).toLocaleString('en-US'); }, base = +w.base || 0, tot = base + y, to = +w.target || 1000, left = to - tot, pct = Math.max(0, Math.min(100, tot / to * 100));
+  if (left > 0) S.wPend = true; else if (S.wPend && !S.wDone) { S.wDone = true; speak(w.who + ' has reached ' + f(to) + ' ' + (w.label || '') + '.'); }
+  return '<div class="mw"><div class="mt"><b>' + esc(w.who) + '</b> &middot; ' + esc(w.label || '') + '</div><div class="mb"><i style="width:' + pct.toFixed(1) + '%"></i></div><div class="mn">' + f(base) + ' entering' + (found ? ' + ' + y + ' tonight = <b>' + f(tot) + '</b>' : '') + ' &middot; ' + (left > 0 ? f(left) + ' to go for ' + f(to) : '<b>reached ' + f(to) + '</b>') + (w.note ? '<small>' + esc(w.note) + '</small>' : '') + '</div></div>';
+}
 function renderLeaders() {
   var L = S.sum && S.sum.leaders, c = S.sb && S.sb.competitions[0]; setLt('lead', S.sig.sum && S.sig.sum.ok ? 'ok' : 'bad');
-  if (!L || !L.length || !c) return;
+  var mw = watchHtml();
+  if (!L || !L.length || !c) { if (mw) $('#lead').innerHTML = mw; return; }
   var cats = [['passingYards', 'Passing'], ['rushingYards', 'Rushing'], ['receivingYards', 'Receiving']], html = '', any = false;
   ['away', 'home'].forEach(function (side) {
     var comp = c.competitors.find(function (x) { return x.homeAway === side; }), e = L.find(function (x) { return String(x.team.id) === String(comp.team.id); });
@@ -515,7 +534,7 @@ function renderLeaders() {
     });
     html += '</div>';
   });
-  if (any) $('#lead').innerHTML = '<div class="lead">' + html + '</div>';
+  if (any || mw) $('#lead').innerHTML = mw + (any ? '<div class="lead">' + html + '</div>' : '');
 }
 function renderAround() {
   var ev = S.around; setLt('around', S.sig.around && S.sig.around.ok ? 'ok' : 'bad'); if (!ev) return;
@@ -565,7 +584,7 @@ function renderBoard() {
     var inner = '<h4><i></i>' + esc(d.name) + '</h4><p>' + esc(d.line) + '</p>';
     return d.url ? '<a class="tile ' + esc(d.state) + '" href="' + esc(d.url) + '" target="_blank" rel="noopener">' + inner + '</a>' : '<div class="tile ' + esc(d.state) + '">' + inner + '</div>';
   }).join('');
-  tickBoardAge(); safe(renderTicker);
+  tickBoardAge(); safe(renderTicker); safe(renderLeaders);
 }
 function tickBoardAge() {
   var b = S.board; if (!b || !b.updated) return; var m = (Date.now() - new Date(b.updated).getTime()) / 60000;

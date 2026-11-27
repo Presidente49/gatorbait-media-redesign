@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-27T21:30:33Z",
+ "updatedAt": "2026-11-27T21:37:51Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -335,13 +335,13 @@
  ],
  "live": {
   "eventId": "401856759",
-  "clock": "12:47",
+  "clock": "10:08",
   "period": 2,
   "score": {
    "fla": 7,
-   "opp": 0
+   "opp": 3
   },
   "possession": "opp",
-  "lastPlay": "(13:41) No Huddle-Shotgun #14 A.Daniels pass complete short right to #8 M.Danzy caught at FSU22, for 64 yards to the FLA23 (#12 B.Hanks III), out of bounds, 1ST DOWN"
+  "lastPlay": "(10:49) No Huddle-Shotgun #14 A.Daniels pass complete short right to #21 Z.Parks caught at FLA16, for 2 yards to the FLA09 (#5 M.Graham)"
  }
 }

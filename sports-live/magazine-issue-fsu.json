@@ -2519,9 +2519,17 @@
     "next": "Florida at Florida State · Friday, Nov. 27 · 3:30 p.m. ET · ABC."
   },
   "videos": {
-    "label": "The press room",
-    "note": "Original press-conference answers and Florida–Florida State coverage. Tap a video to play.",
+    "label": "The video room",
+    "note": "Start with the short rivalry sizzle, then watch the original press answers and pregame coverage.",
     "items": [
+      {
+        "title": "Florida-FSU: All the motivation",
+        "date": "Rivalry-week sizzle · Nov. 27, 2026 · 0:23",
+        "source": "Music: 'Legionnaire' by Scott Buckley, CC BY 4.0. scottbuckley.com.au/library/legionnaire-2022/; creativecommons.org/licenses/by/4.0/. Voices: GatorBait Media and Florida Gators/UAA. Photos: Chris Spears, Florida-Vanderbilt, Nov. 21, 2026.",
+        "note": "A 22.6-second cinematic cut with original voices, music and the animated GatorBait logo.",
+        "wixId": "d3cfa5_7f894d4a276040efa25012ae4b1486f9",
+        "poster": "d3cfa5_59508a37596f4a7f9c5d881764f926aa"
+      },
       {
         "title": "Florida-FSU press preview: Jon Sumrall on the rivalry and seven wins",
         "date": "Nov. 23 press conference · 1:47",
@@ -2974,5 +2982,10 @@
         ]
       }
     ]
+  },
+  "pdf": {
+    "label": "Download the magazine (PDF)",
+    "url": "/post/new-edition-gatorbait-magazine",
+    "note": "Print a copy or save this issue to read offline. For Magazine and All Access members."
   }
 }

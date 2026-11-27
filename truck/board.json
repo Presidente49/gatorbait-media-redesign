@@ -1,7 +1,12 @@
 {
-  "updated": "2026-11-27T21:02:32Z",
+  "updated": "2026-11-27T21:15:35Z",
   "event": "401856759",
   "say": [
+    {
+      "id": "s1795814135295",
+      "at": "2026-11-27T21:15:35Z",
+      "text": "Florida leads 7-0 on a Jadan Baugh 3-yard touchdown run with 1:41 left in the first quarter. Baugh has 18 yards tonight, 2 short of 1,000 for the season."
+    },
     {
       "id": "s1795813352000",
       "at": "2026-11-27T21:02:32Z",
@@ -40,7 +45,7 @@
       "id": "live",
       "label": "Live updates post",
       "state": "live",
-      "note": "Updated at kickoff (3:48 p.m.). Next: end of the first quarter. Comments are on.",
+      "note": "Game log rewritten 4:15 p.m. (Florida 7, FSU 0). The scoreboard card updates by itself. Comments are on.",
       "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state"
     },
     {
@@ -73,7 +78,7 @@
       "id": "game",
       "name": "Game desk",
       "state": "live",
-      "line": "Watching ESPN every 20 seconds. Kickoff came at about 3:47.",
+      "line": "Florida 7, FSU 0 late in the first quarter. Scoreboard card is live inside the post.",
       "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state"
     },
     {

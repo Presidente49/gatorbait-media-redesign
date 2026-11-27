@@ -1,0 +1,12 @@
+{
+  "sourceCommit": "5e9a7c977738c3ae4d7f59383bfb87cff3d081bb",
+  "pullRequests": [
+    614,
+    615
+  ],
+  "issue": "Florida-FSU pregame, Nov. 27, 2026",
+  "build": "2f5a6687",
+  "frozenInputSha256": "59704207f536a9d4fa0bf6abd226d113c91a60a20b3269fe784c32eb77397e5c",
+  "runtimeSha256": "71c96f855a1aa21273bbcf20414dd73811dee48eaed6066ae0852c0ca4decf29",
+  "purpose": "Small immutable runtime tree; native 36.7-second portrait sizzle plus today's matchup show. Home/roster stay on prior identical asset release."
+}

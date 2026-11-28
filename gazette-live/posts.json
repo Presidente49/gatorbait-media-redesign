@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Jeramiah McCloud Wore the Seminole Headdress at Doak",
+      "excerpt": "Florida's starting defensive tackle wore the Seminole headdress on Florida State's field after the Gators' 26-10 win, and the clip is everywhere.",
+      "url": "https://www.gatorbaitmedia.com/post/jeramiah-mccloud-wore-the-seminole-headdress-at-doak",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-28T02:30:06Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_e20dd433b38d4987baea6f8cd8890e2d~mv2.jpg/v1/fit/w_1000,h_684,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Jeramiah McCloud Wore the Seminole Headdress at Doak"
+      }
+    },
+    {
       "title": "Florida vs. Florida State: Box Score, Stats and Key Takeaways",
       "excerpt": "Box score, scoring summary, top performers and team stats from No. 20 Florida's 26-10 win at Florida State on Nov. 27, 2026, all from ESPN.",
       "url": "https://www.gatorbaitmedia.com/post/florida-vs-florida-state-box-score-stats-and-key-takeaways",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida State Hires Georgia Defensive Coordinator Glenn Schumann as Head Coach"
-      }
-    },
-    {
-      "title": "Glory days are gone but no lack of incentive for Florida-FSU",
-      "excerpt": "Eight wins, bowl scouts in the stands and a Florida State team one win from bowl eligibility. Franz Beard on Friday in Tallahassee, the polls and Rivalry Week in the SEC.",
-      "url": "https://www.gatorbaitmedia.com/post/glory-days-are-gone-but-no-lack-of-incentive-for-florida-fsu",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-23T14:12:54Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_43ddbac7d4ff45fea097a2667a320a5a~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Glory days are gone but no lack of incentive for Florida-FSU"
       }
     }
   ]

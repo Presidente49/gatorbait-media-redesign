@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "Jeramiah McCloud Wore the Seminole Headdress at Doak",
+      "excerpt": "Florida's starting defensive tackle wore the Seminole headdress on Florida State's field after the Gators' 26-10 win, and the clip is everywhere.",
+      "url": "https://www.gatorbaitmedia.com/post/jeramiah-mccloud-wore-the-seminole-headdress-at-doak",
+      "author": "GatorBait Staff",
+      "firstPublishedDate": "2026-11-28T02:30:06Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/ae876a_e20dd433b38d4987baea6f8cd8890e2d~mv2.jpg/v1/fit/w_1000,h_684,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for Jeramiah McCloud Wore the Seminole Headdress at Doak"
+      }
+    },
+    {
       "title": "Florida vs. Florida State: Box Score, Stats and Key Takeaways",
       "excerpt": "Box score, scoring summary, top performers and team stats from No. 20 Florida's 26-10 win at Florida State on Nov. 27, 2026, all from ESPN.",
       "url": "https://www.gatorbaitmedia.com/post/florida-vs-florida-state-box-score-stats-and-key-takeaways",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Cyber Weekend: Gator Bait All Access Annual Is $49 — And Stays $49"
-      }
-    },
-    {
-      "title": "A time to give thanks and a Florida-FSU memory",
-      "excerpt": "On Thanksgiving eve, Franz Beard remembers a Cambodian refugee family's gratitude, a lifetime of Gator memories, and the 2005 Florida-FSU week when Urban and Shelley Meyer called his mother in the hospital.",
-      "url": "https://www.gatorbaitmedia.com/post/a-time-to-give-thanks-and-a-florida-fsu-memory",
-      "author": "Franz Beard",
-      "firstPublishedDate": "2026-11-26T12:07:54Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_af359cf3d7224e058fa99c6e3a24fec2~mv2.jpg/v1/fit/w_1000,h_854,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for A time to give thanks and a Florida-FSU memory"
       }
     }
   ]

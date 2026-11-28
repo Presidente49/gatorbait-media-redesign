@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-28T06:21:46.805Z",
+ "generatedAt": "2026-11-28T11:12:08.550Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-28T06:21:46.805Z",
+  "checkedAt": "2026-11-28T11:12:08.550Z",
   "ok": false,
   "checks": {
    "wellFormed": true,
@@ -27,19 +27,17 @@
    "id": "espn-ncf",
    "source": "ESPN",
    "label": "ESPN college football headlines",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 12
   },
   {
    "id": "espn-sec",
    "source": "ESPN",
    "label": "ESPN college football headlines that name an SEC team",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 4
   },
   {
    "id": "floridagators",
@@ -51,5 +49,90 @@
    "items": 0
   }
  ],
- "headlines": []
+ "headlines": [
+  {
+   "title": "Rivalry Week: Playoff impact of Iowa, Texas and Utah wins",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50596213/rivalry-week-live-cfp-takeaways",
+   "publishedAt": "2026-11-28T07:03:39.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "A final regular-season feast with some uncharacteristically weighty rivalries",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50595179/connelly-rivalry-week-stakes-preview",
+   "publishedAt": "2026-11-28T07:03:39.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Texas 'not perfect' but finds way again at A&M, earns SEC title shot vs. UGA",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50619461/texas-not-perfect-finds-way-again-win-texas-am",
+   "publishedAt": "2026-11-28T06:25:19.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Baylor expected to hire UTSA's Traylor as Bears' next coach, sources say",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50617811/baylor-expected-hire-utsa-coach-jeff-traylor",
+   "publishedAt": "2026-11-28T06:25:19.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Akron coach Moorhead resigns to pursue other opportunities",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50614041/akron-coach-joe-moorhead-resigns-pursue-other-opportunities",
+   "publishedAt": "2026-11-28T06:25:19.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Florida QB Philo exits in third quarter of win over Florida State with injury",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50616023/injured-florida-quarterback-aaron-philo-exits-3rd-quarter",
+   "publishedAt": "2026-11-28T06:25:19.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Miami lands No. 2 recruit Jacobs hours after top DE decommitted from Ohio State",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50606746/top-de-recruit-dj-jacobs-commits-miami-hours-decommitting-ohio-state",
+   "publishedAt": "2026-11-28T06:25:19.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "USC band won't perform at UCLA game after members vandalized campus",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50600615/usc-band-perform-members-vandalized-ucla-campus",
+   "publishedAt": "2026-11-28T06:25:19.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Sources: Manuel to remain Michigan AD until school hires replacement",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50592920/sources-manuel-stay-job-new-michigan-ad-hired",
+   "publishedAt": "2026-11-28T06:25:19.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "😈 'Silenced the 12th man': Texas' jab tops best trolls of CFB rivalry week",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50613517/college-football-rivalry-week-trolls",
+   "publishedAt": "2026-11-28T06:25:19.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Sources: Michigan QB Underwood expected to start vs. rival Ohio State",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50606615/sources-michigan-qb-bryce-underwood-play-vs-ohio-state",
+   "publishedAt": "2026-11-28T06:25:18.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Wetzel: Michigan tailspin continues as payouts pile up",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-sports/story/_/id/50594079/michigan-tailspin-continues-payouts-pile-up",
+   "publishedAt": "2026-11-28T06:06:36.000Z",
+   "feed": "espn-ncf"
+  }
+ ]
 }

@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "FSU–Florida: Finding the Beauty on a White-Knuckle Night",
+      "excerpt": "Buddy Martin on Florida’s 26-10 win at Florida State: ugly in spots, beautiful where it counted, and a coach who says eight wins aren’t enough.",
+      "url": "https://www.gatorbaitmedia.com/post/fsu-florida-finding-the-beauty-on-a-white-knuckle-night",
+      "author": "Buddy Martin",
+      "firstPublishedDate": "2026-11-28T02:46:48Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_4eee8856ec8645bb97540cfd278d4af4~mv2.jpg/v1/fit/w_1000,h_642,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for FSU–Florida: Finding the Beauty on a White-Knuckle Night"
+      }
+    },
+    {
       "title": "Jeramiah McCloud Wore the Seminole Headdress at Doak",
       "excerpt": "Florida's starting defensive tackle wore the Seminole headdress on Florida State's field after the Gators' 26-10 win, and the clip is everywhere.",
       "url": "https://www.gatorbaitmedia.com/post/jeramiah-mccloud-wore-the-seminole-headdress-at-doak",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Florida at Florida State: Game Time, TV Channel, Streaming, Odds and What to Watch"
-      }
-    },
-    {
-      "title": "Cyber Weekend: Gator Bait All Access Annual Is $49 — And Stays $49",
-      "excerpt": "Gator Bait Media's Cyber Weekend offer: All Access Annual for $49 with code GATOR49 — and the $49 price holds at renewal, every year. Nov 27–30 only.",
-      "url": "https://www.gatorbaitmedia.com/post/cyber-weekend-gator-bait-all-access-annual-is-49-and-stays-49",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-27T11:41:12Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/d3cfa5_855dd60738654761930f7c15196fb74e~mv2.jpg/v1/fit/w_1000,h_684,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Cyber Weekend: Gator Bait All Access Annual Is $49 — And Stays $49"
       }
     }
   ]

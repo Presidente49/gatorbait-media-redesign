@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "For Sumrall, the reward of beating FSU is one day off",
+      "excerpt": "Franz Beard: Jon Sumrall will take one football-free Saturday after beating FSU, then dive into recruiting, exit interviews and bowl prep. His plan, in his own words.",
+      "url": "https://www.gatorbaitmedia.com/post/for-sumrall-the-reward-of-beating-fsu-is-one-day-off",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-28T13:30:53Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2a61983b075444e09cef9d31fa6080d0~mv2.jpg/v1/fit/w_800,h_618,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for For Sumrall, the reward of beating FSU is one day off"
+      }
+    },
+    {
       "title": "FSU–Florida: Finding the Beauty on a White-Knuckle Night",
       "excerpt": "Buddy Martin on Florida’s 26-10 win at Florida State: ugly in spots, beautiful where it counted, and a coach who says eight wins aren’t enough.",
       "url": "https://www.gatorbaitmedia.com/post/fsu-florida-finding-the-beauty-on-a-white-knuckle-night",
@@ -153,20 +167,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Behind the Sticks: Florida at Florida State"
-      }
-    },
-    {
-      "title": "Florida at Florida State: Game Time, TV Channel, Streaming, Odds and What to Watch",
-      "excerpt": "Kickoff time, TV channel, announcers, streaming, odds, weather and what to watch for No. 20 Florida at Florida State today in Tallahassee.",
-      "url": "https://www.gatorbaitmedia.com/post/florida-at-florida-state-game-time-tv-channel-streaming-odds-and-what-to-watch",
-      "author": "GatorBait Staff",
-      "firstPublishedDate": "2026-11-27T12:30:00Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/ae876a_1a3bb5af331944afb9066c9c346063d6~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for Florida at Florida State: Game Time, TV Channel, Streaming, Odds and What to Watch"
       }
     }
   ]

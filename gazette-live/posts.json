@@ -2,6 +2,20 @@
   "source": "Wix Blog RSS",
   "posts": [
     {
+      "title": "For Sumrall, the reward of beating FSU is one day off",
+      "excerpt": "Franz Beard: Jon Sumrall will take one football-free Saturday after beating FSU, then dive into recruiting, exit interviews and bowl prep. His plan, in his own words.",
+      "url": "https://www.gatorbaitmedia.com/post/for-sumrall-the-reward-of-beating-fsu-is-one-day-off",
+      "author": "Franz Beard",
+      "firstPublishedDate": "2026-11-28T13:30:53Z",
+      "section": "GatorBait",
+      "image": {
+        "src": "https://static.wixstatic.com/media/d3cfa5_2a61983b075444e09cef9d31fa6080d0~mv2.jpg/v1/fit/w_800,h_618,al_c,q_80/file.png",
+        "width": 1600,
+        "height": 900,
+        "alt": "Featured image for For Sumrall, the reward of beating FSU is one day off"
+      }
+    },
+    {
       "title": "FSU–Florida: Finding the Beauty on a White-Knuckle Night",
       "excerpt": "Buddy Martin on Florida’s 26-10 win at Florida State: ugly in spots, beautiful where it counted, and a coach who says eight wins aren’t enough.",
       "url": "https://www.gatorbaitmedia.com/post/fsu-florida-finding-the-beauty-on-a-white-knuckle-night",
@@ -265,20 +279,6 @@
         "width": 1600,
         "height": 900,
         "alt": "Featured image for Boogie will rest as No. 3 Gators host Milwaukee"
-      }
-    },
-    {
-      "title": "When Football Matters Again in Tallahassee and Gainesville, the Turkey Tastes Better",
-      "excerpt": "Thanksgiving week is Florida-Florida State week, and both teams are playing for something. Buddy Martin on Jon Sumrall’s seven-win realism, Jadan Baugh’s 1,000-yard chase and what Steve Spurrier told him about Errict Rhett.",
-      "url": "https://www.gatorbaitmedia.com/post/when-football-matters-again-in-tallahassee-and-gainesville-the-turkey-tastes-better",
-      "author": "Buddy Martin",
-      "firstPublishedDate": "2026-11-24T02:07:31Z",
-      "section": "GatorBait",
-      "image": {
-        "src": "https://static.wixstatic.com/media/16b519_e3297b881ff64cc9a67c533b178cd570~mv2.jpg/v1/fit/w_1000,h_1000,al_c,q_80/file.png",
-        "width": 1600,
-        "height": 900,
-        "alt": "Featured image for When Football Matters Again in Tallahassee and Gainesville, the Turkey Tastes Better"
       }
     }
   ]

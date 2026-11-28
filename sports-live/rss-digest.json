@@ -1,10 +1,10 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-28T03:15:52.754Z",
+ "generatedAt": "2026-11-28T05:13:49.852Z",
  "notice": "Headlines only. Title, source, link and time. Always link out to the source.",
  "selfFeed": {
   "url": "https://www.gatorbaitmedia.com/blog-feed.xml",
-  "checkedAt": "2026-11-28T03:15:52.754Z",
+  "checkedAt": "2026-11-28T05:13:49.852Z",
   "ok": false,
   "checks": {
    "wellFormed": true,
@@ -27,19 +27,17 @@
    "id": "espn-ncf",
    "source": "ESPN",
    "label": "ESPN college football headlines",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 12
   },
   {
    "id": "espn-sec",
    "source": "ESPN",
    "label": "ESPN college football headlines that name an SEC team",
-   "ok": false,
-   "status": 202,
-   "reason": "HTTP 202",
-   "items": 0
+   "ok": true,
+   "status": 200,
+   "items": 4
   },
   {
    "id": "floridagators",
@@ -51,5 +49,104 @@
    "items": 0
   }
  ],
- "headlines": []
+ "headlines": [
+  {
+   "title": "Baylor expected to hire UTSA's Traylor as Bears' next coach, sources say",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50617811/baylor-expected-hire-utsa-coach-jeff-traylor",
+   "publishedAt": "2026-11-28T04:55:03.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Akron coach Moorhead resigns to pursue other opportunities",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50614041/akron-coach-joe-moorhead-resigns-pursue-other-opportunities",
+   "publishedAt": "2026-11-28T04:55:03.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Sources: Michigan QB Underwood expected to start vs. rival Ohio State",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50606615/sources-michigan-qb-bryce-underwood-play-vs-ohio-state",
+   "publishedAt": "2026-11-28T04:55:03.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Florida QB Philo exits in third quarter of win over Florida State with injury",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50616023/injured-florida-quarterback-aaron-philo-exits-3rd-quarter",
+   "publishedAt": "2026-11-28T04:55:03.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Miami lands No. 2 recruit Jacobs hours after top DE decommitted from Ohio State",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50606746/top-de-recruit-dj-jacobs-commits-miami-hours-decommitting-ohio-state",
+   "publishedAt": "2026-11-28T04:55:03.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "USC band won't perform at UCLA game after members vandalized campus",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50600615/usc-band-perform-members-vandalized-ucla-campus",
+   "publishedAt": "2026-11-28T04:55:03.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Sources: Manuel to remain Michigan AD until school hires replacement",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50592920/sources-manuel-stay-job-new-michigan-ad-hired",
+   "publishedAt": "2026-11-28T04:55:03.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Sources: Oklahoma State rewards first-year coach Morris with new six-year deal",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50594432/sources-oklahoma-state-extends-morris-new-six-year-deal",
+   "publishedAt": "2026-11-28T04:55:03.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "😈 'Silenced the 12th man': Texas' jab tops best trolls of CFB rivalry week",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50613517/college-football-rivalry-week-trolls",
+   "publishedAt": "2026-11-28T04:55:03.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Houston's all-black threads top best uniforms of college football Week 13",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50598211/college-football-uniforms-week-13-houston",
+   "publishedAt": "2026-11-28T04:53:26.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "College football's ultimate rivalry trophy room",
+   "source": "ESPN",
+   "link": "https://www.espn.com/espn/feature/story/_/id/50371090/college-football-rivalry-trophies",
+   "publishedAt": "2026-11-28T04:53:12.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "The oldest grudge in football",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50427039/texas-tech-puf-cody-campbell",
+   "publishedAt": "2026-11-28T04:53:12.000Z",
+   "feed": "espn-ncf"
+  },
+  {
+   "title": "Rivalry Week live: Playoff impact of Texas Tech, Iowa and Texas wins",
+   "source": "ESPN",
+   "link": "https://www.espn.com/college-football/story/_/id/50596213/rivalry-week-live-cfp-takeaways",
+   "publishedAt": "2026-11-28T04:44:46.000Z",
+   "feed": "espn-sec"
+  },
+  {
+   "title": "Let's look ahead to the 2027 CFP: Oregon, Wake Forest, Tennessee continue to climb",
+   "source": "ESPN",
+   "link": "https://www.espn.com/espn/betting/story/_/id/47664633/2027-college-football-playoff-national-championship-odds-futures",
+   "publishedAt": "2026-11-25T19:56:51.000Z",
+   "feed": "espn-sec"
+  }
+ ]
 }

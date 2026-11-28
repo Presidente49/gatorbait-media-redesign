@@ -1,7 +1,12 @@
 {
-  "updated": "2026-11-28T00:44:19Z",
+  "updated": "2026-11-28T03:02:21Z",
   "event": "401856759",
   "say": [
+    {
+      "id": "s1795834941309",
+      "at": "2026-11-28T03:02:21Z",
+      "text": "Buddy Martin’s column is live. The McCloud story now plays the Facebook clip and has a photo gallery from Chris Spears."
+    },
     {
       "id": "s1795826659514",
       "at": "2026-11-28T00:44:19Z",
@@ -36,11 +41,6 @@
       "id": "wall-live",
       "at": "2026-11-27T20:52:30Z",
       "text": "The Truck is live. Kickoff came at about 3:47 and it's scoreless in the first quarter. I'll update this line at every quarter, halftime and the final."
-    },
-    {
-      "id": "boot-1",
-      "at": "2026-11-27T20:45:26Z",
-      "text": "Truck is online. I'm watching the game, and I'll talk to you here."
     }
   ],
   "needs": [
@@ -58,11 +58,6 @@
       "id": "cloudflare",
       "title": "Cloudflare sign-in",
       "text": "The Claude app shows Cloudflare as connected, but my session was refused. Disconnect it and connect again, finish the login, then tell me. The fan chat is built and tested; it deploys in minutes after that."
-    },
-    {
-      "id": "photos",
-      "title": "Photo credit",
-      "text": "Are the ten photos you sent Chris Spears's? Say yes and I will put them in the stories and the Magazine cover with his credit. Until then they stay out."
     }
   ],
   "rundown": [
@@ -94,8 +89,20 @@
     {
       "id": "mag",
       "label": "Postgame Magazine",
-      "state": "live",
-      "note": "Building the postgame issue now. /magazine still shows the pregame issue until it is swapped."
+      "state": "done",
+      "note": "Live at 8:40 p.m.: the postgame issue (Flower Power) replaced the pregame issue on /magazine."
+    },
+    {
+      "id": "buddy",
+      "label": "Buddy Martin column",
+      "state": "done",
+      "note": "Live at 9:46 p.m.: FSU–Florida, Finding the Beauty on a White-Knuckle Night. Photo by Chris Spears."
+    },
+    {
+      "id": "clip",
+      "label": "Viral clip and gallery",
+      "state": "done",
+      "note": "Live at 9:58 p.m. on the McCloud story: the Facebook clip plays on the page, plus eight Chris Spears photos."
     }
   ],
   "depts": [
@@ -110,13 +117,13 @@
       "id": "news",
       "name": "News",
       "state": "ok",
-      "line": "Game story and box score are live. Quotes go in when transcripts arrive."
+      "line": "Game story, box score, Buddy’s column and the McCloud clip story are live. Quotes go in when transcripts arrive."
     },
     {
       "id": "mag",
       "name": "Magazine",
       "state": "ok",
-      "line": "Pregame issue is still live. The postgame issue is being built.",
+      "line": "Postgame issue is live.",
       "url": "https://www.gatorbaitmedia.com/magazine"
     },
     {
@@ -149,14 +156,5 @@
       "state": "live",
       "line": "On the game, running the live post, and building this wall."
     }
-  ],
-  "watch": {
-    "who": "Jadan Baugh",
-    "label": "season rushing yards",
-    "base": 980,
-    "target": 1000,
-    "cat": "rushing",
-    "stat": "YDS",
-    "note": "980 through 11 games, from ESPN game log"
-  }
+  ]
 }

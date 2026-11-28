@@ -1,7 +1,12 @@
 {
-  "updated": "2026-11-27T21:48:54Z",
+  "updated": "2026-11-28T00:44:19Z",
   "event": "401856759",
   "say": [
+    {
+      "id": "s1795826659514",
+      "at": "2026-11-28T00:44:19Z",
+      "text": "Final: Florida 26, Florida State 10. The game story and box score are live, and the live post says final. The postgame Magazine is next. Are the photos Chris Spears's?"
+    },
     {
       "id": "s1795816134372",
       "at": "2026-11-27T21:48:54Z",
@@ -56,41 +61,41 @@
     },
     {
       "id": "photos",
-      "title": "Today's photos",
-      "text": "Thanks for the five photos. Tell me they are from today's game at Doak and who shot them, and I will use them for the story covers and the Magazine. I'm holding them until then."
+      "title": "Photo credit",
+      "text": "Are the ten photos you sent Chris Spears's? Say yes and I will put them in the stories and the Magazine cover with his credit. Until then they stay out."
     }
   ],
   "rundown": [
     {
       "id": "live",
       "label": "Live updates post",
-      "state": "live",
-      "note": "Game log rewritten 4:45 p.m. (Florida 7, FSU 3), now with Baugh's 1,000-yard milestone. The scoreboard card updates by itself. Comments are on.",
+      "state": "done",
+      "note": "Final. Game log rewritten at 7:40 p.m. with the final score and links to the game story and box score.",
       "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state"
     },
     {
       "id": "half",
       "label": "Halftime story",
-      "state": "wait",
-      "note": "Due about 12 minutes after halftime."
+      "state": "fail",
+      "note": "Missed. My session restarted after 4:50 p.m. and I was offline until 7:15 p.m."
     },
     {
       "id": "final",
       "label": "Final story",
-      "state": "wait",
-      "note": "Due about 25 minutes after the final."
+      "state": "done",
+      "note": "Live at 7:30 p.m.: Flower Power, No. 20 Florida beats Florida State 26-10. Quotes go in when transcripts arrive."
     },
     {
       "id": "box",
       "label": "Box score post",
-      "state": "wait",
-      "note": "After the final."
+      "state": "done",
+      "note": "Live at 7:40 p.m.: box score, stats and key takeaways, all from ESPN."
     },
     {
       "id": "mag",
       "label": "Postgame Magazine",
-      "state": "wait",
-      "note": "After the final stories. Cover: your photos, once you confirm who shot them."
+      "state": "live",
+      "note": "Building the postgame issue now. /magazine still shows the pregame issue until it is swapped."
     }
   ],
   "depts": [
@@ -98,20 +103,20 @@
       "id": "game",
       "name": "Game desk",
       "state": "live",
-      "line": "Second quarter. Florida 7, FSU 3. Log rewritten at each quarter and score.",
+      "line": "Final. Florida 26, FSU 10. Postgame stories are live.",
       "url": "https://www.gatorbaitmedia.com/post/live-updates-no-20-florida-at-florida-state"
     },
     {
       "id": "news",
       "name": "News",
       "state": "ok",
-      "line": "Live post is up. Postgame stories are queued."
+      "line": "Game story and box score are live. Quotes go in when transcripts arrive."
     },
     {
       "id": "mag",
       "name": "Magazine",
       "state": "ok",
-      "line": "Pregame issue is live and fixed. Your photos are in. Postgame issue is next.",
+      "line": "Pregame issue is still live. The postgame issue is being built.",
       "url": "https://www.gatorbaitmedia.com/magazine"
     },
     {

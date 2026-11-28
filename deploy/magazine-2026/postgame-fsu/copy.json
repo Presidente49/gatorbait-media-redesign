@@ -1,0 +1,72 @@
+{
+ "cover": {
+  "kicker": "Postgame \u00b7 Doak Campbell Stadium \u00b7 Nov. 27",
+  "coverTitle": "Flower Power",
+  "headline": "No. 20 Florida beats Florida State 26-10 behind six sacks, two interceptions and four field goals",
+  "dek": "Florida's defense sacked Florida State six times, intercepted two passes and stopped the Seminoles on downs twice in the final five minutes. Patrick Durkin made all four of his field goals, and Jadan Baugh went over 1,000 rushing yards for the season.",
+  "byline": "By Brenden Martin \u00b7 GatorBait Media",
+  "cta": "Read the game story",
+  "url": "/post/flower-power-no-20-florida-beats-florida-state-26-10",
+  "image": {
+   "id": "d3cfa5_e7a566090a024ca2b5b9ae135a960607",
+   "ext": "jpg",
+   "width": 1024,
+   "height": 646,
+   "alt": "A Florida ball carrier in a white No. 3 jersey runs past Florida State defenders at Doak Campbell Stadium.",
+   "credit": "Photo by Chris Spears, GatorBait Media.",
+   "uaa": false
+  },
+  "teasers": [
+   "Six sacks, two J'Vari Flowers interceptions",
+   "Patrick Durkin: 4 of 4 on field goals",
+   "Jadan Baugh passes 1,000 rushing yards",
+   "FSU's last four drives ended in turnovers"
+  ],
+  "linesLabel": "Also inside",
+  "lines": [
+   "The damage report: how Florida won the second half",
+   "Every scoring play, with the score after each",
+   "The full box score and team stats",
+   "How the win probability moved, play by play"
+  ]
+ },
+ "columns": "[OPTIONAL]",
+ "coverage": {
+  "kicker": "The game package",
+  "title": "Everything GatorBait published on the game",
+  "items": [
+   {
+    "rubric": "Stats",
+    "author": "GatorBait Staff",
+    "title": "Florida vs. Florida State: Box Score, Stats and Key Takeaways",
+    "dek": "Box score, scoring summary, top performers and team stats from No. 20 Florida's 26-10 win at Florida State on Nov. 27, 2026, all from ESPN.",
+    "url": "/post/florida-vs-florida-state-box-score-stats-and-key-takeaways"
+   },
+   {
+    "rubric": "Live",
+    "author": "GatorBait Staff",
+    "title": "Live updates: No. 20 Florida at Florida State (final: Florida 26, Florida State 10)",
+    "dek": "The quarter-by-quarter record of the game, with team numbers from ESPN.",
+    "url": "/post/live-updates-no-20-florida-at-florida-state"
+   }
+  ]
+ },
+ "quotes": "[OPTIONAL]",
+ "next": {
+  "kicker": "Up next",
+  "title": "Bowl watch",
+  "meta": [
+   "Bowl destination announced Dec. 6"
+  ],
+  "note": "Florida finished the regular season 8-4 (5-4 SEC) and will learn its bowl destination Dec. 6, the AP reported."
+ },
+ "reference": "[OPTIONAL]",
+ "credits": "[OPTIONAL]",
+ "asOf": "Checked Nov. 27, 2026, 7:50 p.m. ET.",
+ "issue": "[OPTIONAL]",
+ "final": "[OPTIONAL]",
+ "sections": "[OPTIONAL]",
+ "teamNames": "[OPTIONAL]",
+ "scoreAbbr": "[OPTIONAL]",
+ "set": "[OPTIONAL]"
+}

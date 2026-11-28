@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-28T00:30:29Z",
+ "updatedAt": "2026-11-28T01:09:44Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -34,7 +34,7 @@
    ]
   },
   "venue": "Doak Campbell Stadium",
-  "recapUrl": null,
+  "recapUrl": "https://www.gatorbaitmedia.com/post/flower-power-no-20-florida-beats-florida-state-26-10",
   "galleryUrl": null,
   "tape": {
    "totalYards": 282,
@@ -240,7 +240,7 @@
     "opp": 10
    },
    "tv": "ABC",
-   "storyUrl": null
+   "storyUrl": "https://www.gatorbaitmedia.com/post/flower-power-no-20-florida-beats-florida-state-26-10"
   }
  ],
  "standings": [

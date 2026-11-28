@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>GatorBait fan chat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a1020;--panel:#0d1530;--line:#1d2a4d;--fg:#f3f6fd;--mut:#8b98b8;--org:#fa4616;--gold:#f5c542;--ok:#22c55e;--bad:#ff8a8a;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:var(--bg);color:var(--fg);font:500 14px/1.35 'Barlow',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-text-size-adjust:100%}
+body{display:flex;flex-direction:column;border-top:3px solid var(--org)}
+.hd{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px solid var(--line)}
+.hd h1{font:700 15px/1 'Barlow Condensed';letter-spacing:.18em;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:#56638a}.dot.on{background:var(--ok)}
+.hd .n{margin-left:auto;font:600 12px/1 'Barlow Condensed';letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
+.rules{padding:6px 12px;background:#0d1530;border-bottom:1px solid var(--line);font-size:12px;color:var(--mut)}
+#list{flex:1 1 auto;min-height:0;overflow-y:auto;padding:8px 12px;-webkit-overflow-scrolling:touch}
+.m{display:flex;gap:8px;padding:4px 0;font-size:14px;overflow-wrap:anywhere}
+.m .t{flex:0 0 auto;min-width:50px;font:600 11px/1.6 'Barlow Condensed';letter-spacing:.06em;color:#56638a;text-transform:uppercase}
+.m b{font-weight:700;color:#cfd8f2;margin-right:6px}
+.m.staff b{color:var(--org)}.m.staff b::after{content:" STAFF";font:700 10px 'Barlow Condensed';letter-spacing:.14em;color:#fff;background:var(--org);border-radius:3px;padding:2px 4px;margin-left:5px}
+.m.me b{color:var(--gold)}
+.empty{color:var(--mut);padding:18px 0;text-align:center}
+.pill{position:absolute;left:50%;transform:translateX(-50%);bottom:64px;background:var(--org);color:#fff;font:700 12px/1 'Barlow Condensed';letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:14px;border:0;cursor:pointer}
+.ft{padding:8px 12px 10px;border-top:1px solid var(--line);background:#0b132b}
+form{display:flex;gap:8px}
+input[type=text]{flex:1 1 auto;min-width:0;background:#10193a;color:var(--fg);border:1px solid #2a3858;border-radius:6px;padding:10px 11px;font:500 15px 'Barlow',system-ui,sans-serif}
+input[type=text]:focus{outline:2px solid var(--org);outline-offset:0}
+button.go{flex:0 0 auto;background:var(--org);color:#fff;border:0;border-radius:6px;padding:0 16px;font:700 14px 'Barlow Condensed';letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+button.go:disabled{opacity:.5;cursor:default}
+.msg{min-height:16px;margin-top:5px;font-size:12px;color:var(--mut);display:flex;justify-content:space-between;gap:8px}
+.msg .e{color:var(--bad)}
+.join{padding:14px 12px;display:flex;flex-direction:column;gap:8px}
+.join p{color:var(--mut);font-size:13px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="hd"><span class="dot" id="dot"></span><h1>Fan chat</h1><span class="n" id="n"></span></div>
+<div class="rules">Be respectful. No links or contact info. Chat is moderated and can close at any time.</div>
+<div id="list" role="log" aria-live="polite"><div class="empty" id="empty">Loading the chat&hellip;</div></div>
+<button class="pill" id="pill" hidden type="button">New messages</button>
+<div class="ft" id="ft">
+  <div class="join" id="join" hidden>
+    <p>Pick a nickname to join. We never ask for your real name, email or number.</p>
+    <form id="jf"><input type="text" id="nick" maxlength="20" autocomplete="nickname" placeholder="Nickname" aria-label="Nickname"><button class="go" type="submit">Join</button></form>
+    <div class="msg"><span class="e" id="je"></span></div>
+  </div>
+  <div id="say" hidden>
+    <form id="sf"><input type="text" id="txt" maxlength="200" autocomplete="off" placeholder="Say something about the game" aria-label="Message"><button class="go" id="send" type="submit">Send</button></form>
+    <div class="msg"><span class="e" id="se"></span><span id="ct">0/200</span></div>
+  </div>
+  <div class="msg" id="closed" hidden><span>Chat is closed right now.</span></div>
+</div>
+<script>
+(function () {
+'use strict';
+var Q = new URLSearchParams(location.search);
+var ROOM = Q.get('room') || 'game-401856759';
+var API = (Q.get('api') || '%%API%%').replace(/\/+$/, '');
+var $ = function (id) { return document.getElementById(id); };
+var S = { ws: null, name: null, open: true, slow: 3, tries: 0, joined: false, atBottom: true, seen: {}, lastSend: 0 };
+function etTime(ms) { return new Date(ms).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).replace(' AM', '').replace(' PM', ''); }
+function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+function addMsg(m) {
+  if (S.seen[m.id]) return; S.seen[m.id] = 1;
+  var d = document.createElement('div'); d.className = 'm' + (m.staff ? ' staff' : '') + (S.name && m.name === S.name && !m.staff ? ' me' : ''); d.dataset.id = m.id;
+  var t = document.createElement('span'); t.className = 't'; t.textContent = etTime(m.at);
+  var b = document.createElement('b'); b.textContent = m.name; var x = document.createElement('span'); x.textContent = m.text;
+  var w = document.createElement('div'); w.appendChild(b); w.appendChild(x); d.appendChild(t); d.appendChild(w);
+  var list = $('list'); var empty = $('empty'); if (empty) empty.remove();
+  var stick = list.scrollHeight - list.scrollTop - list.clientHeight < 40; list.appendChild(d);
+  while (list.children.length > 200) list.removeChild(list.firstChild);
+  if (stick) list.scrollTop = list.scrollHeight; else $('pill').hidden = false;
+}
+function showEmpty(txt) { var list = $('list'); if (!list.children.length) { var e = document.createElement('div'); e.className = 'empty'; e.id = 'empty'; e.textContent = txt; list.appendChild(e); } }
+function setCount(n) { $('n').textContent = n ? n + ' here' : ''; }
+function stateJoinUI() { var j = S.joined, o = S.open; $('join').hidden = j || !o; $('say').hidden = !(j && o); $('closed').hidden = o; }
+$('pill').addEventListener('click', function () { var l = $('list'); l.scrollTop = l.scrollHeight; $('pill').hidden = true; });
+$('list').addEventListener('scroll', function () { var l = $('list'); if (l.scrollHeight - l.scrollTop - l.clientHeight < 40) $('pill').hidden = true; });
+async function preview() {
+  if (!API) { var e0 = $('empty'); if (e0) e0.textContent = 'The fan chat opens soon.'; return; }
+  try {
+    var r = await fetch(API + '/room/' + ROOM + '/history', { cache: 'no-store' }); if (!r.ok) throw new Error(r.status); var j = await r.json();
+    S.open = j.cfg.open; S.slow = j.cfg.slow; setCount(j.n); (j.msgs || []).forEach(addMsg); if (!j.msgs.length) showEmpty('No messages yet. Be the first.'); stateJoinUI();
+  } catch (e) { var e1 = $('empty'); if (e1) e1.textContent = 'Chat is not available right now.'; }
+}
+function connect() {
+  if (!API || !S.name) return;
+  var url = API.replace(/^http/, 'ws') + '/room/' + ROOM + '/ws'; var ws; try { ws = new WebSocket(url); } catch (e) { return; }
+  S.ws = ws; $('dot').className = 'dot';
+  ws.onopen = function () { S.tries = 0; ws.send(JSON.stringify({ t: 'hello', name: S.name })); };
+  ws.onmessage = function (ev) {
+    var d; try { d = JSON.parse(ev.data); } catch (e) { return; }
+    if (d.t === 'hist') { S.joined = true; store('gbChatName', S.name); $('dot').className = 'dot on'; S.open = d.cfg.open; S.slow = d.cfg.slow; setCount(d.n); var l = $('list'); l.innerHTML = ''; S.seen = {}; d.msgs.forEach(addMsg); if (!d.msgs.length) showEmpty('No messages yet. Be the first.'); l.scrollTop = l.scrollHeight; stateJoinUI(); $('txt').focus(); }
+    else if (d.t === 'msg') addMsg(d.m);
+    else if (d.t === 'del') { var el = document.querySelector('.m[data-id="' + d.id + '"]'); if (el) el.remove(); }
+    else if (d.t === 'clear') { $('list').innerHTML = ''; S.seen = {}; showEmpty('The chat was cleared.'); }
+    else if (d.t === 'n') setCount(d.n);
+    else if (d.t === 'cfg') { S.open = d.cfg.open; S.slow = d.cfg.slow; stateJoinUI(); }
+    else if (d.t === 'err') { if (d.code === 'name' || d.code === 'banned') { $('je').textContent = d.msg; if (d.code === 'name') { S.joined = false; S.name = null; try { ws.close(); } catch (e) { } stateJoinUI(); } } else { $('se').textContent = d.msg + (d.wait ? ' (' + Math.ceil(d.wait / 1000) + 's)' : ''); setTimeout(function () { if ($('se').textContent.indexOf(d.msg) === 0) $('se').textContent = ''; }, 3500); } }
+  };
+  ws.onclose = function (ev) {
+    $('dot').className = 'dot'; if (ev && ev.code === 4003) { S.joined = false; $('je').textContent = 'You can\'t post in this chat.'; stateJoinUI(); return; }
+    if (S.name && S.joined !== 'stop') { S.tries++; setTimeout(connect, Math.min(15000, 1000 * Math.pow(2, Math.min(S.tries, 4)))); }
+  };
+}
+$('jf').addEventListener('submit', function (e) { e.preventDefault(); var v = $('nick').value.trim(); if (v.length < 2) { $('je').textContent = 'Pick a nickname with at least 2 characters.'; return; } $('je').textContent = ''; S.name = v; if (S.ws) { try { S.ws.close(); } catch (x) { } } connect(); });
+$('sf').addEventListener('submit', function (e) { e.preventDefault(); var v = $('txt').value.trim(); if (!v || !S.ws || S.ws.readyState !== 1) return; $('se').textContent = ''; S.ws.send(JSON.stringify({ t: 'say', text: v })); $('txt').value = ''; $('ct').textContent = '0/200'; });
+$('txt').addEventListener('input', function () { $('ct').textContent = $('txt').value.length + '/200'; });
+setInterval(function () { if (S.ws && S.ws.readyState === 1) S.ws.send('{"t":"ping"}'); }, 25000);
+var saved = store('gbChatName'); if (saved) $('nick').value = saved;
+preview().then(function () { stateJoinUI(); if (saved && API) { S.name = saved; connect(); } });
+setInterval(function () { if (!S.joined) preview(); }, 20000);
+})();
+</script>
+</body>
+</html>

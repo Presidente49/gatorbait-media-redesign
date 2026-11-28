@@ -1,72 +1,112 @@
 {
- "cover": {
-  "kicker": "Postgame \u00b7 Doak Campbell Stadium \u00b7 Nov. 27",
-  "coverTitle": "Flower Power",
-  "headline": "No. 20 Florida beats Florida State 26-10 behind six sacks, two interceptions and four field goals",
-  "dek": "Florida's defense sacked Florida State six times, intercepted two passes and stopped the Seminoles on downs twice in the final five minutes. Patrick Durkin made all four of his field goals, and Jadan Baugh went over 1,000 rushing yards for the season.",
-  "byline": "By Brenden Martin \u00b7 GatorBait Media",
-  "cta": "Read the game story",
-  "url": "/post/flower-power-no-20-florida-beats-florida-state-26-10",
-  "image": {
-   "id": "d3cfa5_e7a566090a024ca2b5b9ae135a960607",
-   "ext": "jpg",
-   "width": 1024,
-   "height": 646,
-   "alt": "A Florida ball carrier in a white No. 3 jersey runs past Florida State defenders at Doak Campbell Stadium.",
-   "credit": "Photo by Chris Spears, GatorBait Media.",
-   "uaa": false
+  "cover": {
+    "kicker": "Postgame · Doak Campbell Stadium · Nov. 27",
+    "coverTitle": "Flower Power",
+    "headline": "No. 20 Florida beats Florida State 26-10 behind six sacks, two interceptions and four field goals",
+    "dek": "Florida's defense sacked Florida State six times, intercepted two passes and stopped the Seminoles on downs twice in the final five minutes. Patrick Durkin made all four of his field goals, and Jadan Baugh went over 1,000 rushing yards for the season.",
+    "byline": "By Brenden Martin · GatorBait Media",
+    "cta": "Read the game story",
+    "url": "/post/flower-power-no-20-florida-beats-florida-state-26-10",
+    "image": {
+      "id": "d3cfa5_e7a566090a024ca2b5b9ae135a960607",
+      "ext": "jpg",
+      "width": 1024,
+      "height": 646,
+      "alt": "A Florida ball carrier in a white No. 3 jersey runs past Florida State defenders at Doak Campbell Stadium.",
+      "credit": "Photo by Chris Spears, GatorBait Media.",
+      "uaa": false
+    },
+    "teasers": [
+      "Six sacks, two J'Vari Flowers interceptions",
+      "Patrick Durkin: 4 of 4 on field goals",
+      "Jadan Baugh passes 1,000 rushing yards",
+      "FSU's last four drives ended in turnovers"
+    ],
+    "linesLabel": "Also inside",
+    "lines": [
+      "The damage report: how Florida won the second half",
+      "Every scoring play, with the score after each",
+      "The full box score and team stats",
+      "How the win probability moved, play by play"
+    ]
   },
-  "teasers": [
-   "Six sacks, two J'Vari Flowers interceptions",
-   "Patrick Durkin: 4 of 4 on field goals",
-   "Jadan Baugh passes 1,000 rushing yards",
-   "FSU's last four drives ended in turnovers"
-  ],
-  "linesLabel": "Also inside",
-  "lines": [
-   "The damage report: how Florida won the second half",
-   "Every scoring play, with the score after each",
-   "The full box score and team stats",
-   "How the win probability moved, play by play"
-  ]
- },
- "columns": "[OPTIONAL]",
- "coverage": {
-  "kicker": "The game package",
-  "title": "Everything GatorBait published on the game",
-  "items": [
-   {
-    "rubric": "Stats",
-    "author": "GatorBait Staff",
-    "title": "Florida vs. Florida State: Box Score, Stats and Key Takeaways",
-    "dek": "Box score, scoring summary, top performers and team stats from No. 20 Florida's 26-10 win at Florida State on Nov. 27, 2026, all from ESPN.",
-    "url": "/post/florida-vs-florida-state-box-score-stats-and-key-takeaways"
-   },
-   {
-    "rubric": "Live",
-    "author": "GatorBait Staff",
-    "title": "Live updates: No. 20 Florida at Florida State (final: Florida 26, Florida State 10)",
-    "dek": "The quarter-by-quarter record of the game, with team numbers from ESPN.",
-    "url": "/post/live-updates-no-20-florida-at-florida-state"
-   }
-  ]
- },
- "quotes": "[OPTIONAL]",
- "next": {
-  "kicker": "Up next",
-  "title": "Bowl watch",
-  "meta": [
-   "Bowl destination announced Dec. 6"
-  ],
-  "note": "Florida finished the regular season 8-4 (5-4 SEC) and will learn its bowl destination Dec. 6, the AP reported."
- },
- "reference": "[OPTIONAL]",
- "credits": "[OPTIONAL]",
- "asOf": "Checked Nov. 27, 2026, 7:50 p.m. ET.",
- "issue": "[OPTIONAL]",
- "final": "[OPTIONAL]",
- "sections": "[OPTIONAL]",
- "teamNames": "[OPTIONAL]",
- "scoreAbbr": "[OPTIONAL]",
- "set": "[OPTIONAL]"
+  "columns": {
+    "kicker": "The columns",
+    "title": "What our writers made of the game",
+    "items": [
+      {
+        "rubric": "Column",
+        "author": "Buddy Martin",
+        "title": "FSU-Florida: Finding the Beauty on a White-Knuckle Night",
+        "dek": "Buddy Martin on Florida’s 26-10 win at Florida State: ugly in spots, beautiful where it counted, and a coach who says eight wins aren’t enough.",
+        "url": "/post/fsu-florida-finding-the-beauty-on-a-white-knuckle-night",
+        "image": {
+          "id": "d3cfa5_4eee8856ec8645bb97540cfd278d4af4",
+          "width": 1024,
+          "height": 642,
+          "alt": "Florida blockers drive a ball carrier through a Florida State tackler in the first half at Doak Campbell Stadium.",
+          "credit": "Photo by Chris Spears, GatorBait Media."
+        }
+      },
+      {
+        "rubric": "Column",
+        "author": "Franz Beard",
+        "title": "For Sumrall, the reward of beating FSU is one day off",
+        "dek": "Franz Beard: Jon Sumrall will take one football-free Saturday after beating FSU, then dive into recruiting, exit interviews and bowl prep. His plan, in his own words.",
+        "url": "/post/for-sumrall-the-reward-of-beating-fsu-is-one-day-off",
+        "image": {
+          "id": "d3cfa5_2a61983b075444e09cef9d31fa6080d0",
+          "width": 800,
+          "height": 618,
+          "alt": "Florida players pose on the field with the Albert and Alberta mascots and fans after the Gators’ 26-10 win at Florida State.",
+          "credit": "Photo by Chris Spears, GatorBait Media."
+        }
+      }
+    ]
+  },
+  "coverage": {
+    "kicker": "The game package",
+    "title": "Everything GatorBait published on the game",
+    "items": [
+      {
+        "rubric": "Stats",
+        "author": "GatorBait Staff",
+        "title": "Florida vs. Florida State: Box Score, Stats and Key Takeaways",
+        "dek": "Box score, scoring summary, top performers and team stats from No. 20 Florida's 26-10 win at Florida State on Nov. 27, 2026, all from ESPN.",
+        "url": "/post/florida-vs-florida-state-box-score-stats-and-key-takeaways"
+      },
+      {
+        "rubric": "Live",
+        "author": "GatorBait Staff",
+        "title": "Live updates: No. 20 Florida at Florida State (final: Florida 26, Florida State 10)",
+        "dek": "The quarter-by-quarter record of the game, with team numbers from ESPN.",
+        "url": "/post/live-updates-no-20-florida-at-florida-state"
+      },
+      {
+        "rubric": "Video",
+        "author": "GatorBait Staff",
+        "title": "Jeramiah McCloud Wore the Seminole Headdress at Doak",
+        "dek": "The clip from the field after the win, with a gallery of Chris Spears’s photos.",
+        "url": "/post/jeramiah-mccloud-wore-the-seminole-headdress-at-doak"
+      }
+    ]
+  },
+  "quotes": "[OPTIONAL]",
+  "next": {
+    "kicker": "Up next",
+    "title": "Bowl watch",
+    "meta": [
+      "Bowl destination announced Dec. 6"
+    ],
+    "note": "Florida finished the regular season 8-4 (5-4 SEC) and will learn its bowl destination Dec. 6, the AP reported."
+  },
+  "reference": "[OPTIONAL]",
+  "credits": "[OPTIONAL]",
+  "asOf": "Checked Nov. 28, 2026, 9:13 a.m. ET.",
+  "issue": "[OPTIONAL]",
+  "final": "[OPTIONAL]",
+  "sections": "[OPTIONAL]",
+  "teamNames": "[OPTIONAL]",
+  "scoreAbbr": "[OPTIONAL]",
+  "set": "[OPTIONAL]"
 }

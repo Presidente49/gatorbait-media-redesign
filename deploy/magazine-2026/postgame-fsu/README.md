@@ -44,6 +44,11 @@ MAG_VARIANT=fsu-postgame node sports-live/build-magazine.mjs
    once, the h1 is the cover title, the score chip reads Final, the chart is present, no overflow.
    `node sports-live/qa-magazine-cover.mjs --release --variant fsu-postgame --commit <sha>` also works but expects the
    `cdn.jsdelivr.net` bundle URL, so it flags a different `--host`.
+   Live loader history for embed `1dd74333`: rev 179 pregame (`rollback-pregame-rev179.html`); rev 180 this postgame issue (pin `06eb341b`);
+   rev 181 adds the cover-centering rule (`rollback-postgame-rev181.html`, the loader as it was before the columns update); rev 182 re-pins to
+   `0667bc89` (Buddy Martin and Franz Beard columns, McCloud clip). `make-loader.py` now prints the rev 182 shape: it adds `COVER_RULE`
+   (the Flower Power cover's focal point, 70% 38%), so a re-pin from the kit keeps the runner centered. Its output for `06eb341b` and `0667bc89`
+   is byte-identical to rev 181 and rev 182 (djb2xor 445823576 and 1981443288).
 
 ## The copy file (`copy.example.json` has every field with a placeholder and notes)
 

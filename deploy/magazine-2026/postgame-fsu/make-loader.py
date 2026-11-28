@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Write the Florida at Florida State postgame Magazine loader for embed 1dd74333: the postgame loader the build's QA frame uses
 (deploy/magazine-2026/postgame-texas-web/candidate-loader.html: dark splash while the bundle loads, eight-second fallback to the
-native page) with only its two commit pins, bundle file name and marker comment changed. The result is the same small loader as
+native page) with only its two commit pins, bundle file name and marker comment changed, plus one cover-centering style rule (COVER_RULE below). The result is the same small loader as
 the live one: one marker comment and one jsDelivr script URL, each carrying the commit SHA.
 Usage: make-loader.py <40-hex commit that contains sports-live/magazine-fsu-postgame.js> [--no-git-check] [--host HOST]
 HOST is cdn.jsdelivr.net (default, the live shape). If cdn.jsdelivr.net answers 403 "Package size exceeded 50 MB" for the new commit
@@ -34,6 +34,13 @@ pins = re.findall(r'[0-9a-f]{40}', src)
 assert len(pins) == 2 and pins[0] == pins[1], 'the base loader must carry exactly two identical commit pins (marker comment and script URL)'
 assert src.count('magazine-postgame.js') == 2 and src.count('postgame texas-web') == 1, 'unexpected base loader: %s' % BASE
 out = re.sub(r'[0-9a-f]{40}', sha, src).replace('magazine-postgame.js', 'magazine-fsu-postgame.js').replace('postgame texas-web', 'postgame florida-state')
+# The Flower Power cover photo is a wide frame shown in a tall box; the renderer's default focal point (48% 38%) cuts the runner off at the
+# right edge, so this issue's loader carries one extra rule that keeps him centered. It is what the live loader (embed 1dd74333, rev 181 on) has.
+COVER_RULE = ('/* Flower Power cover: keep the runner centered in the tall cover crop (Nov. 28) */\n'
+              '#gbm-magazine-page.pm .pm-poster img{object-position:70% 38%!important}\n')
+BOUNDARY = '</style><script id="gbm-magazine-2026-loader">'
+assert out.count(BOUNDARY) == 1 and out.count('}\n' + BOUNDARY) == 1, 'unexpected base loader: style/script boundary'
+out = out.replace(BOUNDARY, COVER_RULE + BOUNDARY)
 assert out.count(sha) == 2 and out.count('magazine-fsu-postgame.js') == 2 and 'magazine-postgame.js' not in out and 'texas' not in out.lower()
 assert 'src=%s immutable=1 bundle=%s' % (sha, BUNDLE) in out, 'marker comment is not in the live shape'
 assert "gh/Presidente49/gatorbait-media-redesign@%s/%s'" % (sha, BUNDLE) in out, 'script URL is not in the live shape'

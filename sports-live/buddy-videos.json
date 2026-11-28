@@ -1,7 +1,12 @@
 {
   "channelId": "UCtR8b1sKFuwaRjKy5BiXRvA",
-  "fetchedAt": "2026-11-27T16:25:38.635Z",
+  "fetchedAt": "2026-11-28T02:18:04.235Z",
   "videos": [
+    {
+      "id": "8WCNIX5XKNI",
+      "title": "Jeramiah McCloud Wears the Seminole Headdress After Beating FSU",
+      "published": "2026-11-28T02:08:02+00:00"
+    },
     {
       "id": "scRi_l7BkJo",
       "title": "Loren Meadows: \"Forget the Records\" | Florida vs Florida State",
@@ -71,11 +76,6 @@
       "id": "r_jaDjAt0nI",
       "title": "FRANZ BEARD: \"WILL WADE IS ONE STEP REMOVED FROM POND SCUM\"",
       "published": "2026-11-22T17:00:27+00:00"
-    },
-    {
-      "id": "cBob3z3Dyus",
-      "title": "SUMRALL: \"WALKS OFF A WINNER\" — Florida 34, Vanderbilt 27",
-      "published": "2026-11-22T00:37:11+00:00"
     }
   ]
 }

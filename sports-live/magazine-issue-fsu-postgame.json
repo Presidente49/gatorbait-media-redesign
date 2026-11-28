@@ -1,0 +1,685 @@
+{
+ "$comment": "Florida State postgame web edition (built 2026-11-28 09:15 ET from ESPN, ESPN event 401856759): Florida 26, Florida State 10. Written by deploy/magazine-2026/postgame-fsu/build_issue.py; every number is from ESPN at build time; hand-written copy from the copy file (sha256 b9b62d62e220).",
+ "id": "2026-11-27-postgame-florida-state",
+ "layout": "postgame",
+ "issue": {
+  "number": "Postgame edition",
+  "date": "Friday, Nov. 27, 2026",
+  "week": "Florida at Florida State · Tallahassee",
+  "home": "GatorBait Media",
+  "pageTitle": "GatorBait Magazine | Postgame: Florida 26, Florida State 10"
+ },
+ "cover": {
+  "score": {
+   "away": "Florida",
+   "awayScore": "26",
+   "home": "Florida State",
+   "homeScore": "10",
+   "label": "Final"
+  },
+  "kicker": "Postgame · Doak Campbell Stadium · Nov. 27",
+  "coverTitle": "Flower Power",
+  "headline": "No. 20 Florida beats Florida State 26-10 behind six sacks, two interceptions and four field goals",
+  "dek": "Florida's defense sacked Florida State six times, intercepted two passes and stopped the Seminoles on downs twice in the final five minutes. Patrick Durkin made all four of his field goals, and Jadan Baugh went over 1,000 rushing yards for the season.",
+  "byline": "By Brenden Martin · GatorBait Media",
+  "cta": "Read the game story",
+  "url": "/post/flower-power-no-20-florida-beats-florida-state-26-10",
+  "image": {
+   "id": "d3cfa5_e7a566090a024ca2b5b9ae135a960607",
+   "ext": "jpg",
+   "width": 1024,
+   "height": 646,
+   "alt": "A Florida ball carrier in a white No. 3 jersey runs past Florida State defenders at Doak Campbell Stadium. Photo by Chris Spears, GatorBait Media.",
+   "credit": "Photo by Chris Spears, GatorBait Media.",
+   "uaa": false
+  },
+  "teasers": [
+   "Six sacks, two J'Vari Flowers interceptions",
+   "Patrick Durkin: 4 of 4 on field goals",
+   "Jadan Baugh passes 1,000 rushing yards",
+   "FSU's last four drives ended in turnovers"
+  ],
+  "linesLabel": "Also inside",
+  "lines": [
+   "The damage report: how Florida won the second half",
+   "Every scoring play, with the score after each",
+   "The full box score and team stats",
+   "How the win probability moved, play by play"
+  ]
+ },
+ "final": {
+  "label": "Final",
+  "teams": [
+   {
+    "name": "Florida",
+    "rank": "No. 20",
+    "score": 26,
+    "won": true
+   },
+   {
+    "name": "Florida State",
+    "score": 10
+   }
+  ],
+  "meta": [
+   "Friday, Nov. 27",
+   "Doak Campbell Stadium, Tallahassee",
+   "Florida is 8-4, 5-4 SEC"
+  ]
+ },
+ "contents": {
+  "label": "In this issue",
+  "items": [
+   {
+    "id": "columns",
+    "label": "The columns"
+   },
+   {
+    "id": "coverage",
+    "label": "The game package"
+   },
+   {
+    "id": "damage",
+    "label": "By the numbers"
+   },
+   {
+    "id": "scoring",
+    "label": "Score by score"
+   },
+   {
+    "id": "box",
+    "label": "Box score"
+   },
+   {
+    "id": "flow",
+    "label": "Game flow"
+   },
+   {
+    "id": "next",
+    "label": "Up next"
+   }
+  ]
+ },
+ "columns": {
+  "kicker": "The columns",
+  "title": "What our writers made of the game",
+  "items": [
+   {
+    "rubric": "Column",
+    "author": "Buddy Martin",
+    "title": "FSU-Florida: Finding the Beauty on a White-Knuckle Night",
+    "dek": "Buddy Martin on Florida's 26-10 win at Florida State: ugly in spots, beautiful where it counted, and a coach who says eight wins aren't enough.",
+    "url": "/post/fsu-florida-finding-the-beauty-on-a-white-knuckle-night",
+    "lead": true,
+    "image": {
+     "id": "d3cfa5_4eee8856ec8645bb97540cfd278d4af4",
+     "ext": "jpg",
+     "width": 1024,
+     "height": 642,
+     "alt": "Florida blockers drive a ball carrier through a Florida State tackler in the first half at Doak Campbell Stadium. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   },
+   {
+    "rubric": "Column",
+    "author": "Franz Beard",
+    "title": "For Sumrall, the reward of beating FSU is one day off",
+    "dek": "Franz Beard: Jon Sumrall will take one football-free Saturday after beating FSU, then dive into recruiting, exit interviews and bowl prep. His plan, in his own words.",
+    "url": "/post/for-sumrall-the-reward-of-beating-fsu-is-one-day-off",
+    "image": {
+     "id": "d3cfa5_2a61983b075444e09cef9d31fa6080d0",
+     "ext": "jpg",
+     "width": 800,
+     "height": 618,
+     "alt": "Florida players pose on the field with the Albert and Alberta mascots and fans after the Gators' 26-10 win at Florida State. Photo by Chris Spears, GatorBait Media.",
+     "credit": "Photo by Chris Spears, GatorBait Media.",
+     "uaa": false
+    }
+   }
+  ]
+ },
+ "coverage": {
+  "kicker": "The game package",
+  "title": "Everything GatorBait published on the game",
+  "items": [
+   {
+    "rubric": "Stats",
+    "author": "GatorBait Staff",
+    "title": "Florida vs. Florida State: Box Score, Stats and Key Takeaways",
+    "dek": "Box score, scoring summary, top performers and team stats from No. 20 Florida's 26-10 win at Florida State on Nov. 27, 2026, all from ESPN.",
+    "url": "/post/florida-vs-florida-state-box-score-stats-and-key-takeaways",
+    "lead": true
+   },
+   {
+    "rubric": "Live",
+    "author": "GatorBait Staff",
+    "title": "Live updates: No. 20 Florida at Florida State (final: Florida 26, Florida State 10)",
+    "dek": "The quarter-by-quarter record of the game, with team numbers from ESPN.",
+    "url": "/post/live-updates-no-20-florida-at-florida-state"
+   },
+   {
+    "rubric": "Video",
+    "author": "GatorBait Staff",
+    "title": "Jeramiah McCloud Wore the Seminole Headdress at Doak",
+    "dek": "The clip from the field after the win, with a gallery of Chris Spears's photos.",
+    "url": "/post/jeramiah-mccloud-wore-the-seminole-headdress-at-doak"
+   }
+  ]
+ },
+ "damage": {
+  "kicker": "By the numbers",
+  "title": "Florida won the second half 16-7",
+  "dek": "Florida led 10-3 at the half. The Gators finished with 282 yards to Florida State's 290 and converted 3 of 12 third downs.",
+  "yards": {
+   "label": "Total yards",
+   "rows": [
+    {
+     "name": "Florida",
+     "value": 282,
+     "us": true
+    },
+    {
+     "name": "Florida State",
+     "value": 290
+    }
+   ]
+  },
+  "stats": [
+   {
+    "value": "127",
+    "label": "Aaron Philo passing yards",
+    "detail": "9 of 12 passing."
+   },
+   {
+    "value": "77",
+    "label": "Jadan Baugh rushing yards",
+    "detail": "19 carries, 4.1 per carry, 1 touchdown."
+   },
+   {
+    "value": "3-12",
+    "label": "Florida third downs",
+    "detail": "Florida State converted 5 of 17."
+   },
+   {
+    "value": "1",
+    "label": "Florida turnovers",
+    "detail": "Florida State had 2."
+   },
+   {
+    "value": "5 for 64",
+    "label": "Florida penalties",
+    "detail": "Florida State: 3 for 18 yards."
+   },
+   {
+    "value": "26:44",
+    "label": "Florida time of possession",
+    "detail": "Florida State held the ball for 33:16."
+   }
+  ],
+  "source": "Source: ESPN box score (event 401856759)."
+ },
+ "scoring": {
+  "kicker": "Score by score",
+  "title": "How the points came",
+  "dek": "Every scoring play, with the game clock. The lead never changed hands.",
+  "cols": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "F"
+  ],
+  "rows": [
+   {
+    "team": "Florida",
+    "q": [
+     7,
+     3,
+     7,
+     9
+    ],
+    "f": 26,
+    "rank": "No. 20",
+    "us": true
+   },
+   {
+    "team": "Florida State",
+    "q": [
+     0,
+     3,
+     7,
+     0
+    ],
+    "f": 10
+   }
+  ],
+  "plays": [
+   {
+    "when": "Q1 1:41",
+    "play": "Jadan Baugh 3-yard touchdown run (Patrick Durkin kick)",
+    "score": "UF 7, FSU 0",
+    "uf": true
+   },
+   {
+    "when": "Q2 10:09",
+    "play": "Gabe Panikowski 27-yard field goal",
+    "score": "UF 7, FSU 3",
+    "uf": false
+   },
+   {
+    "when": "Q2 4:15",
+    "play": "Patrick Durkin 33-yard field goal",
+    "score": "UF 10, FSU 3",
+    "uf": true
+   },
+   {
+    "when": "Q3 10:55",
+    "play": "Tramell Jones Jr. 1-yard touchdown run (Patrick Durkin kick)",
+    "score": "UF 17, FSU 3",
+    "uf": true
+   },
+   {
+    "when": "Q3 3:01",
+    "play": "Landen Thomas 9-yard pass from Kevin Sperry (Gabe Panikowski kick)",
+    "score": "UF 17, FSU 10",
+    "uf": false
+   },
+   {
+    "when": "Q4 13:37",
+    "play": "Patrick Durkin 37-yard field goal",
+    "score": "UF 20, FSU 10",
+    "uf": true
+   },
+   {
+    "when": "Q4 4:24",
+    "play": "Patrick Durkin 42-yard field goal",
+    "score": "UF 23, FSU 10",
+    "uf": true
+   },
+   {
+    "when": "Q4 1:56",
+    "play": "Patrick Durkin 25-yard field goal",
+    "score": "UF 26, FSU 10",
+    "uf": true
+   }
+  ],
+  "source": "Scoring plays and line score: ESPN. Times are game clock."
+ },
+ "box": {
+  "kicker": "Box score",
+  "title": "The full box score",
+  "dek": "Team stats and the leaders for both teams.",
+  "cols": [
+   "Florida",
+   "Florida State"
+  ],
+  "rows": [
+   [
+    "First downs",
+    "10",
+    "16"
+   ],
+   [
+    "Total yards",
+    "282",
+    "290"
+   ],
+   [
+    "Passing",
+    "11/16, 136 yds",
+    "20/34, 192 yds"
+   ],
+   [
+    "Rushing",
+    "146 yds on 39 carries",
+    "98 yds on 37 carries"
+   ],
+   [
+    "Yards per rush",
+    "3.7",
+    "2.6"
+   ],
+   [
+    "Third downs",
+    "3-12",
+    "5-17"
+   ],
+   [
+    "Fourth downs",
+    "0-1",
+    "1-4"
+   ],
+   [
+    "Penalties",
+    "5-64",
+    "3-18"
+   ],
+   [
+    "Turnovers",
+    "1",
+    "2"
+   ],
+   [
+    "Time of possession",
+    "26:44",
+    "33:16"
+   ]
+  ],
+  "leaders": [
+   {
+    "team": "Florida",
+    "items": [
+     [
+      "Passing",
+      "Aaron Philo: 9 of 12, 127 yards"
+     ],
+     [
+      "Rushing",
+      "Jadan Baugh: 19 carries, 77 yards, 1 TD"
+     ],
+     [
+      "Receiving",
+      "Eric Singleton Jr.: 4 catches, 71 yards"
+     ],
+     [
+      "Defense",
+      "Myles Graham: 12 tackles"
+     ],
+     [
+      "Kicking",
+      "Patrick Durkin: 4 of 4 on field goals (33, 37, 42, 25)"
+     ]
+    ]
+   },
+   {
+    "team": "Florida State",
+    "items": [
+     [
+      "Passing",
+      "Ashton Daniels: 18 of 32, 183 yards, 2 INT"
+     ],
+     [
+      "Rushing",
+      "Zay Parks: 14 carries, 55 yards"
+     ],
+     [
+      "Receiving",
+      "Micahi Danzy: 2 catches, 75 yards"
+     ],
+     [
+      "Defense",
+      "K.J. Kirkland: 8 tackles, 1 pass breakup"
+     ],
+     [
+      "Kicking",
+      "Gabe Panikowski: 1 of 1 on field goals (27)"
+     ]
+    ]
+   }
+  ],
+  "source": "Team stats and leaders: ESPN box score (event 401856759)."
+ },
+ "flow": {
+  "kicker": "Game flow",
+  "title": "How the game unfolded",
+  "dek": "Florida's chance to win, play by play. The Gators started at 65% and were at 79% at halftime, then peaked at 100% in the fourth quarter.",
+  "axis": [
+   "100%",
+   "50%",
+   "0%"
+  ],
+  "quarters": [
+   "Q1",
+   "Q2",
+   "Q3",
+   "Q4"
+  ],
+  "quarterStarts": [
+   0,
+   41,
+   85,
+   121
+  ],
+  "points": [
+   64.6,
+   63.1,
+   64.5,
+   64.0,
+   67.5,
+   68.8,
+   68.5,
+   67.0,
+   63.9,
+   64.6,
+   64.9,
+   61.6,
+   61.5,
+   61.6,
+   65.3,
+   64.7,
+   64.5,
+   63.5,
+   65.8,
+   74.9,
+   74.9,
+   74.2,
+   68.8,
+   64.4,
+   65.6,
+   62.9,
+   66.0,
+   67.2,
+   68.2,
+   69.0,
+   72.3,
+   75.0,
+   74.4,
+   77.5,
+   77.4,
+   77.5,
+   78.0,
+   80.5,
+   81.3,
+   80.2,
+   80.2,
+   80.3,
+   78.0,
+   79.0,
+   79.8,
+   71.2,
+   70.3,
+   68.5,
+   70.3,
+   70.5,
+   72.4,
+   74.8,
+   74.3,
+   74.4,
+   73.6,
+   75.7,
+   75.8,
+   79.7,
+   79.8,
+   80.8,
+   81.7,
+   82.0,
+   81.4,
+   77.5,
+   78.6,
+   81.3,
+   82.4,
+   81.1,
+   80.2,
+   80.8,
+   80.2,
+   80.5,
+   79.1,
+   77.5,
+   77.3,
+   76.5,
+   76.1,
+   78.5,
+   78.5,
+   79.4,
+   80.0,
+   80.1,
+   79.8,
+   79.9,
+   79.0,
+   81.3,
+   80.5,
+   83.6,
+   82.8,
+   83.5,
+   88.8,
+   91.0,
+   90.7,
+   92.2,
+   92.6,
+   94.0,
+   94.0,
+   92.0,
+   91.7,
+   91.3,
+   92.2,
+   91.6,
+   89.5,
+   88.8,
+   88.2,
+   88.8,
+   91.1,
+   92.8,
+   85.0,
+   85.3,
+   84.5,
+   83.7,
+   79.7,
+   82.0,
+   83.7,
+   85.5,
+   87.5,
+   87.9,
+   91.2,
+   89.4,
+   89.6,
+   91.6,
+   88.4,
+   90.8,
+   92.4,
+   89.7,
+   90.2,
+   92.7,
+   94.2,
+   95.2,
+   94.2,
+   89.1,
+   91.2,
+   93.9,
+   95.5,
+   96.5,
+   96.6,
+   96.2,
+   96.0,
+   95.7,
+   97.3,
+   97.6,
+   98.2,
+   98.8,
+   99.5,
+   99.0,
+   99.1,
+   99.1,
+   99.2,
+   98.7,
+   98.8,
+   99.0,
+   99.7,
+   99.4,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   99.9,
+   100.0,
+   100.0,
+   100.0
+  ],
+  "marks": [
+   {
+    "i": 33,
+    "title": "7-0",
+    "note": "Jadan Baugh's 3-yard touchdown run with 1:41 left in the first quarter; Florida is at 78%"
+   },
+   {
+    "i": 64,
+    "title": "10-3",
+    "note": "Patrick Durkin's 33-yard field goal with 4:15 left in the half; Florida is at 79%"
+   },
+   {
+    "i": 93,
+    "title": "17-3",
+    "note": "Tramell Jones Jr.'s 1-yard touchdown run with 10:55 left in the third quarter; Florida is at 92%"
+   },
+   {
+    "i": 108,
+    "title": "17-10",
+    "note": "Landen Thomas' 9-yard pass from Kevin Sperry with 3:01 left in the third quarter; Florida is at 85%"
+   },
+   {
+    "i": 151,
+    "title": "23-10",
+    "note": "Patrick Durkin's 42-yard field goal with 4:24 to play; Florida is at 99%"
+   }
+  ],
+  "summary": "Line chart of Florida's win probability against Florida State. It starts near 65%, is at 79% at halftime, peaks at 100% in the fourth quarter and ends at 100%.",
+  "source": "Win probability: ESPN. GatorBait Media graphic."
+ },
+ "next": {
+  "kicker": "Up next",
+  "title": "Bowl watch",
+  "meta": [
+   "Bowl destination announced Dec. 6"
+  ],
+  "note": "Florida finished the regular season 8-4 (5-4 SEC) and will learn its bowl destination Dec. 6, the AP reported."
+ },
+ "reference": {
+  "label": "More GatorBait",
+  "links": [
+   {
+    "label": "Schedule and results",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#schedule"
+   },
+   {
+    "label": "Roster",
+    "url": "/post/florida-gators-2026-roster-and-schedule-update-auburn-opens-sec-play#roster"
+   },
+   {
+    "label": "The Buddy Martin Show",
+    "url": "/the-buddy-martin-show"
+   },
+   {
+    "label": "GatorBait home",
+    "url": "/"
+   }
+  ],
+  "top": "Back to the cover"
+ },
+ "credits": {
+  "label": "Photo credits",
+  "uaa": false,
+  "other": [
+   "Photo by Chris Spears, GatorBait Media."
+  ]
+ },
+ "asOf": "Score, scoring plays, box score, leaders and win probability: ESPN (event 401856759), final. Checked Nov. 28, 2026, 9:13 a.m. ET."
+}

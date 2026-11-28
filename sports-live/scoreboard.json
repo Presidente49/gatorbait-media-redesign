@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-28T01:09:44Z",
+ "updatedAt": "2026-11-28T05:01:40Z",
  "season": 2026,
  "team": {
   "name": "Florida",
@@ -250,17 +250,17 @@
    "overall": "10-1"
   },
   {
+   "team": "Texas",
+   "confRecord": "7-2",
+   "overall": "10-2"
+  },
+  {
    "team": "Alabama",
    "confRecord": "6-2",
    "overall": "9-2"
   },
   {
    "team": "Tennessee",
-   "confRecord": "6-2",
-   "overall": "9-2"
-  },
-  {
-   "team": "Texas",
    "confRecord": "6-2",
    "overall": "9-2"
   },
@@ -315,14 +315,14 @@
    "overall": "5-7"
   },
   {
-   "team": "Texas A&M",
+   "team": "Vanderbilt",
    "confRecord": "1-7",
    "overall": "4-7"
   },
   {
-   "team": "Vanderbilt",
-   "confRecord": "1-7",
-   "overall": "4-7"
+   "team": "Texas A&M",
+   "confRecord": "1-8",
+   "overall": "4-8"
   }
  ],
  "live": null

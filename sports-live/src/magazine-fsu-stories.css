@@ -1,32 +1,122 @@
-/* FSU story-first edition only; all rules stay inside its private wrapper. */
-#gbm-magazine-page.pg .fsu-story-first .fsu-contents{margin-top:18px;padding:12px 14px;border:1px solid #2a4aa8;border-top:3px solid var(--pg-orange);border-radius:10px;background:var(--pg-card)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-contents>h2{font:800 18px/1.1 var(--mz-cond);text-transform:uppercase;color:#fff;margin:0 0 5px}
-#gbm-magazine-page.pg .fsu-story-first .fsu-quick-links{display:flex;flex-wrap:wrap;gap:0 15px}
-#gbm-magazine-page.pg .fsu-story-first .fsu-quick-links a{display:inline-flex;align-items:center;min-height:44px;color:#fff;font:800 18px/1.1 var(--mz-cond);text-decoration:underline;text-decoration-color:var(--pg-orange);text-underline-offset:4px}
-#gbm-magazine-page.pg .fsu-story-first .fsu-offer-line{margin:3px 0 8px;font:500 13px/1.35 var(--mz-sans);color:var(--pg-orange-2)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-offer-line a{color:inherit;text-decoration:none}
-#gbm-magazine-page.pg .fsu-story-first .fsu-contents details{border-top:1px solid var(--pg-line)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-contents summary{cursor:pointer;min-height:44px;padding:12px 0;color:#fff;font:700 16px/1.2 var(--mz-sans)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc{list-style:none;margin:0;padding:0;display:grid;gap:0 20px}
-#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc li{min-width:0;border-top:1px solid var(--pg-line)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc a{display:flex;gap:10px;align-items:baseline;min-height:44px;padding:10px 0;color:#fff;text-decoration:none;font:500 15px/1.35 var(--mz-sans)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-toc-n{flex:0 0 22px;color:var(--pg-orange-2);font:800 20px/1 var(--mz-cond)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc a>span:last-child{min-width:0}
-#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc b{display:block;color:var(--pg-orange-2);font:700 12px/1.4 var(--mz-sans)}
-#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc a>span>span{display:block;overflow-wrap:anywhere}
-#gbm-magazine-page.pg .fsu-story-first .fsu-guide-toc{display:flex;flex-wrap:wrap;gap:0 15px;padding-bottom:8px}
-#gbm-magazine-page.pg .fsu-story-first .fsu-guide-toc a{display:inline-flex;align-items:center;min-height:44px;color:#fff;border-bottom:2px solid var(--pg-orange);font:700 16px/1.2 var(--mz-cond);text-decoration:none}
-#gbm-magazine-page.pg .fsu-story-first .fsu-contents a:focus-visible,#gbm-magazine-page.pg .fsu-story-first .fsu-contents summary:focus-visible{outline:3px solid var(--pg-orange);outline-offset:3px}
-#gbm-magazine-page.pg .fsu-story-first .pg-prose h2{font:800 27px/1.15 var(--mz-cond);letter-spacing:0;text-transform:none;margin:1.3em 0 .6em;color:var(--pg-ink)}
-#gbm-magazine-page.pg .fsu-story-first .pg-prose h3,#gbm-magazine-page.pg .fsu-story-first .pg-prose h4{font:800 23px/1.2 var(--mz-cond);letter-spacing:0;text-transform:none;margin:1.2em 0 .5em;color:var(--pg-ink)}
-#gbm-magazine-page.pg .fsu-story-first .pg-prose ul,#gbm-magazine-page.pg .fsu-story-first .pg-prose ol{margin:.8em 0 1.2em;padding-left:1.5em}
-#gbm-magazine-page.pg .fsu-story-first .pg-prose li{margin:.35em 0}
-#gbm-magazine-page.pg .fsu-story-first .fsu-reference{margin-top:48px;padding-top:8px;border-top:4px solid var(--pg-orange)}
-@media(min-width:700px){#gbm-magazine-page.pg .fsu-story-first .fsu-full-toc{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media print{#gbm-magazine-page.pg .fsu-story-first .fsu-contents{display:none}}
+/* The Florida–Florida State digital spread uses the approved cover and Barlow family. */
+#gbm-magazine-page.pg:has(.fsu-article-edition){background:#f3f1eb;color:var(--pg-ink)}
+#gbm-magazine-page.pg .fsu-article-edition{--fsu-paper:#fff;--fsu-warm:#f8f6f0;--fsu-rule:#ddd8cd;--fsu-muted:#505c6e;--fsu-accent:#a83511;--pg-orange-2:var(--fsu-accent)}
+#gbm-magazine-page.pg .fsu-mast{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;padding:14px 0;border-bottom:1px solid var(--fsu-rule)}
+#gbm-magazine-page.pg .fsu-brand{font:800 25px/1 var(--mz-cond);text-transform:uppercase;letter-spacing:.03em}
+#gbm-magazine-page.pg .fsu-brand span{font-weight:600;color:var(--fsu-accent)}
+#gbm-magazine-page.pg .fsu-mast p{font:600 13px/1.35 var(--mz-sans);color:var(--fsu-muted)}
+#gbm-magazine-page.pg .fsu-mast p span{display:block}
+#gbm-magazine-page.pg .fsu-mast nav{display:flex;flex-wrap:wrap;gap:0 14px;margin-left:auto}
+#gbm-magazine-page.pg .fsu-mast nav a,#gbm-magazine-page.pg .fsu-related a,#gbm-magazine-page.pg .fsu-widget-source{display:inline-flex;align-items:center;min-height:44px;font:700 14px/1.12 var(--mz-sans);color:var(--fsu-accent);text-decoration:underline;text-underline-offset:3px}
+#gbm-magazine-page.pg .fsu-mast nav a{color:var(--pg-ink)}
+#gbm-magazine-page.pg .fsu-spread,#gbm-magazine-page.pg .fsu-coverage{display:grid;gap:clamp(16px,2.1vw,28px);margin-top:22px;align-items:start}
+#gbm-magazine-page.pg .fsu-spread .fsu-cover{width:100%;max-width:480px;margin:0 auto;border-radius:8px;box-shadow:0 12px 26px #13234926}
+#gbm-magazine-page.pg .fsu-cover .pg-cover-fig:focus-visible{outline-offset:-4px}
+#gbm-magazine-page.pg .fsu-paper,#gbm-magazine-page.pg .fsu-widget{border:1px solid var(--fsu-rule);border-radius:8px;background:var(--fsu-paper);padding:clamp(14px,2.2vw,27px)}
+#gbm-magazine-page.pg .fsu-spread .fsu-contents,#gbm-magazine-page.pg .fsu-coverage .fsu-more{margin-top:0}
+#gbm-magazine-page.pg .fsu-contents{border-top:3px solid var(--pg-orange)}
+#gbm-magazine-page.pg :is(.fsu-contents,.fsu-more,.fsu-sidebar,.fsu-reference)>h2{margin:0 0 13px;font:800 clamp(22px,3vw,36px)/1.1 var(--mz-cond);text-transform:uppercase;letter-spacing:.025em}
+#gbm-magazine-page.pg .fsu-story{padding:14px 0 8px;border-top:1px solid var(--fsu-rule);min-width:0;scroll-margin-top:70px}
+#gbm-magazine-page.pg .fsu-story-link{display:flex;align-items:flex-start;gap:12px}
+#gbm-magazine-page.pg .fsu-story-copy{min-width:0;flex:1}
+#gbm-magazine-page.pg .fsu-story h3{font:800 clamp(22px,3vw,29px)/1.04 var(--mz-cond);text-wrap:initial;letter-spacing:-.01em}
+#gbm-magazine-page.pg .fsu-story-link:hover h3,#gbm-magazine-page.pg .fsu-story-link:focus-visible h3{text-decoration:underline;text-underline-offset:3px}
+#gbm-magazine-page.pg .fsu-lead{padding:16px 0 10px}
+#gbm-magazine-page.pg .fsu-lead h3{font-size:clamp(31px,4.3vw,55px);line-height:.99;text-wrap:balance}
+#gbm-magazine-page.pg .fsu-by{margin-top:7px;font:700 13px/1.28 var(--mz-sans);color:var(--fsu-accent)}
+#gbm-magazine-page.pg .fsu-by span,#gbm-magazine-page.pg .fsu-dek{color:var(--fsu-muted)}
+#gbm-magazine-page.pg .fsu-dek{margin-top:8px;font:500 15px/1.42 var(--mz-sans)}
+#gbm-magazine-page.pg .fsu-lead .fsu-dek{font-size:17px;max-width:55ch}
+#gbm-magazine-page.pg .fsu-story-art{width:clamp(76px,9vw,108px);flex:none}
+#gbm-magazine-page.pg .fsu-story-art .mz-frame{overflow:hidden;border-radius:4px;background:var(--fsu-warm)}
+#gbm-magazine-page.pg .fsu-story-art figcaption{margin-top:3px;font:500 10px/1.25 var(--mz-sans);color:var(--fsu-muted)}
+#gbm-magazine-page.pg .fsu-related{display:flex;flex-wrap:wrap;gap:0 12px}
+#gbm-magazine-page.pg .fsu-related a{font-size:13px}
+#gbm-magazine-page.pg .fsu-front-grid,#gbm-magazine-page.pg .fsu-story-grid,#gbm-magazine-page.pg .fsu-reference-grid{display:grid;gap:0 20px;min-width:0}
+#gbm-magazine-page.pg .fsu-sidebar{scroll-margin-top:70px}
+#gbm-magazine-page.pg .fsu-sidebar .fsu-widget{margin-bottom:12px;padding:12px}
+#gbm-magazine-page.pg .fsu-sidebar .fsu-widget:last-child{margin-bottom:0}
+#gbm-magazine-page.pg .fsu-reference-grid{gap:16px;align-items:start}
+#gbm-magazine-page.pg .fsu-widget{min-width:0}
+#gbm-magazine-page.pg .fsu-widget section{margin:0}
+#gbm-magazine-page.pg .fsu-widget summary{cursor:pointer;min-height:44px;padding:10px 0;font:800 22px/1.1 var(--mz-cond)}
+#gbm-magazine-page.pg .fsu-widget summary:focus-visible{outline:3px solid var(--pg-orange);outline-offset:3px}
+#gbm-magazine-page.pg .fsu-widget[open] summary{margin-bottom:12px}
+#gbm-magazine-page.pg .fsu-widget-source{gap:5px;margin-top:4px}
+#gbm-magazine-page.pg .fsu-widget :is(.pg-numbers,.pg-tape,.pg-inj,.pg-sched,.pg-rost,.pg-slate){--pg-card:var(--fsu-warm);--pg-line:var(--fsu-rule);--pg-mute:var(--fsu-muted);--pg-text:var(--pg-ink)}
+#gbm-magazine-page.pg .fsu-widget .pg-sh h2{background:none;color:inherit;filter:none;font-size:clamp(24px,3.4vw,35px)}
+#gbm-magazine-page.pg .fsu-widget .pg-sh h2::before{display:none}
+#gbm-magazine-page.pg .fsu-widget .pg-sh::after{height:1px;background:var(--fsu-rule);box-shadow:none}
+#gbm-magazine-page.pg .fsu-widget :is(.pg-std-team,.pg-numbers li,.pg-g){border-color:var(--fsu-rule);box-shadow:none}
+#gbm-magazine-page.pg .fsu-widget :is(.pg-std-team h3,.pg-numbers b,.pg-inj b,.pg-sc td.pg-sc-r,.pg-std-t tbody th,.pg-sc .pg-sc-now td:first-child,.pg-v.pg-win,.pg-g li b,.pg-g li.pg-picked b){color:var(--pg-ink)}
+#gbm-magazine-page.pg .fsu-widget .pg-numbers ol{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#gbm-magazine-page.pg .fsu-widget .pg-numbers li{padding:12px}
+#gbm-magazine-page.pg .fsu-widget .pg-numbers b{font-size:clamp(26px,6vw,36px)}
+#gbm-magazine-page.pg .fsu-widget .pg-std-team h3{border-bottom:2px solid var(--fsu-rule)}
+#gbm-magazine-page.pg .fsu-widget .pg-std-t{color:var(--fsu-muted)}
+#gbm-magazine-page.pg .fsu-widget .pg-sc .pg-sc-w{color:#19613b}
+#gbm-magazine-page.pg .fsu-widget .pg-sc .pg-sc-now{background:#fff0e6}
+#gbm-magazine-page.pg .fsu-widget .pg-rt .pg-rt-g{background:#f0ece4;border-color:var(--fsu-rule)}
+#gbm-magazine-page.pg .fsu-widget .pg-inj i,#gbm-magazine-page.pg .fsu-widget .pg-half{background:#eeebe4}
+#gbm-magazine-page.pg .fsu-widget .pg-inj li{grid-template-columns:40px minmax(0,1fr) auto;gap:2px 7px}
+#gbm-magazine-page.pg .fsu-widget .pg-inj li :is(b,small){min-width:0;overflow-wrap:anywhere}
+#gbm-magazine-page.pg .fsu-widget .pg-lm{color:#2e4665}
+#gbm-magazine-page.pg .fsu-widget .pg-hf i{background:#ad7867}
+#gbm-magazine-page.pg .fsu-widget .pg-hm i{background:#8190a4}
+#gbm-magazine-page.pg .fsu-widget .pg-hf i.pg-win{background:var(--fsu-accent)}
+#gbm-magazine-page.pg .fsu-widget .pg-hm i.pg-win{background:#2e4665}
+#gbm-magazine-page.pg .fsu-widget .pg-g li{border-color:var(--fsu-rule)}
+#gbm-magazine-page.pg .fsu-widget .pg-g.pg-hero{background:#fff0e6}
+#gbm-magazine-page.pg .fsu-widget .pg-rk{color:var(--fsu-accent)}
+#gbm-magazine-page.pg .fsu-widget .pg-pick{background:#f0ece4;border-left:3px solid var(--pg-orange)}
+#gbm-magazine-page.pg .fsu-widget .pg-pick :is(small,b,em){color:var(--pg-ink)}
+#gbm-magazine-page.pg .fsu-widget .pg-game{--pg-orange-2:#ffb091;background:#10264b;box-shadow:none;color:#fff}
+#gbm-magazine-page.pg .fsu-widget .pg-game .pg-fla .pg-rec{color:#ffb091}
+#gbm-magazine-page.pg .fsu-article-edition .pg-foot::before{height:1px;background:var(--fsu-rule);box-shadow:none}
+#gbm-magazine-page.pg .fsu-article-edition .pg-foot :is(h2,nav a,p){color:var(--pg-ink)}
+#gbm-magazine-page.pg .fsu-article-edition .pg-foot nav a{border:0;text-decoration:underline;text-underline-offset:4px}
+#gbm-magazine-page.pg .fsu-article-edition .pg-pdf{display:inline-flex;margin-top:10px;padding:8px 0;background:none;border-radius:0;color:var(--fsu-accent)}
+#gbm-magazine-page.pg .fsu-article-edition .pg-pdf b{font:700 15px/1.2 var(--mz-sans);text-transform:none;letter-spacing:0;text-decoration:underline;text-underline-offset:3px}
+#gbm-magazine-page.pg .gbm-football-tools nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+#gbm-magazine-page.pg .gbm-football-tools nav a{min-width:0;white-space:normal;overflow-wrap:anywhere}
+@media(min-width:650px){#gbm-magazine-page.pg :is(.fsu-front-grid,.fsu-story-grid){grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:900px){
+  #gbm-magazine-page.pg .fsu-spread{grid-template-columns:minmax(0,2fr) minmax(0,3.2fr);grid-template-areas:"cover contents" "game contents";grid-template-rows:auto 1fr;row-gap:12px}
+  #gbm-magazine-page.pg .fsu-spread .fsu-cover{grid-area:cover}
+  #gbm-magazine-page.pg .fsu-spread .fsu-contents{grid-area:contents}
+  #gbm-magazine-page.pg .fsu-spread>.fsu-widget{grid-area:game;padding:10px 10px 0}
+  #gbm-magazine-page.pg .fsu-front-grid .fsu-story h3{font-size:clamp(22px,2.3vw,26px)}
+  #gbm-magazine-page.pg .fsu-front-grid .fsu-story-art{width:clamp(68px,6.6vw,90px)}
+  #gbm-magazine-page.pg .fsu-coverage{grid-template-columns:minmax(0,2.15fr) minmax(290px,1fr)}
+  #gbm-magazine-page.pg .fsu-story-grid .fsu-story:last-child{grid-column:1/-1}
+}
+@media(min-width:1120px){
+  #gbm-magazine-page.pg .fsu-reference-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #gbm-magazine-page.pg .fsu-reference-grid>.fsu-widget:not(.fsu-widget-half){grid-column:1/-1}
+}
+@media(max-width:599px){
+  #gbm-magazine-page.pg .fsu-mast{gap:7px 12px}
+  #gbm-magazine-page.pg .fsu-mast nav{width:100%;margin:0}
+  #gbm-magazine-page.pg .fsu-mast p span{display:none}
+  #gbm-magazine-page.pg .fsu-spread{margin-top:16px}
+}
 
-/* Native source credits remain intact, without decorative initials or repeated derived image credit. */
-#gbm-magazine-page.pg .fsu-story-first .pg-prose>p:first-child{font:500 18px/1.65 var(--mz-sans);letter-spacing:normal;text-transform:none}
-#gbm-magazine-page.pg .fsu-story-first .pg-prose>p:first-child::first-letter{float:none;font:inherit;padding:0;color:inherit}
-#gbm-magazine-page.pg .fsu-story-first .pg-prose>p.fsu-native-credit{font:500 13px/1.45 var(--mz-sans);color:#42506a;margin:0 0 12px}
-#gbm-magazine-page.pg .fsu-story-first .pg-prose>p.fsu-native-credit em{font:inherit;color:inherit}
+/* QC, Nov. 27: whole-word wrapping in the roster and injury tables, no dead blocks beside the tall columns (cover and sidebar stay in view),
+   and the half-width reference widgets use the full row so the injury lists have room. Desktop only; phones are unchanged. */
+#gbm-magazine-page.pg .fsu-widget .pg-inj li :is(b,small){overflow-wrap:break-word;word-break:normal}
+#gbm-magazine-page.pg .fsu-widget .pg-inj .pg-st{white-space:nowrap;padding:4px 7px}
+@media(min-width:700px){
+#gbm-magazine-page.pg .fsu-widget .pg-rt :is(th,td){overflow-wrap:normal;word-break:normal}
+#gbm-magazine-page.pg .fsu-widget .pg-rt :is(thead th,tbody td:not(.pg-rt-h)){white-space:nowrap}
+#gbm-magazine-page.pg .fsu-widget .pg-rt tbody td.pg-rt-h{white-space:normal;overflow-wrap:break-word}
+}
+@media(min-width:900px){
+#gbm-magazine-page.pg .fsu-spread{grid-template-areas:"cover contents" "cover game"}
+#gbm-magazine-page.pg .fsu-spread .fsu-cover{position:sticky;top:16px;align-self:start}
+#gbm-magazine-page.pg .fsu-coverage .fsu-sidebar{position:sticky;top:16px;align-self:start}
+}
+@media(min-width:1120px){
+#gbm-magazine-page.pg .fsu-reference-grid>.fsu-widget-half{grid-column:1/-1}
+#gbm-magazine-page.pg .fsu-widget .pg-inj ul{columns:2;column-gap:28px}
+#gbm-magazine-page.pg .fsu-widget .pg-inj li{break-inside:avoid}
+}

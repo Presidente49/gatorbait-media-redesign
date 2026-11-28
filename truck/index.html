@@ -122,6 +122,10 @@ svg.wp{display:block;width:100%;height:84px;background:#0a1020;border-radius:4px
 .lead{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .lead h5{margin:0 0 4px;font:700 13px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase}
 .lead p{margin:0 0 5px;font-size:13.5px}.lead p small{display:block;color:var(--mut);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.mw{margin-bottom:12px;padding:9px 11px;background:#0a1020;border-left:3px solid var(--gold);border-radius:3px}
+.mt{font:600 14px/1.2 var(--font);color:var(--mut)}.mt b{font:700 17px/1.2 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--fg)}
+.mb{height:8px;background:#1a2440;border-radius:4px;margin:8px 0;overflow:hidden}.mb i{display:block;height:100%;background:linear-gradient(90deg,#fa4616,#f5c542);border-radius:4px}
+.mn{font-size:14px;color:#cfd8f2}.mn small{display:block;color:var(--mut);font-size:12px;margin-top:2px}
 .ar{display:flex;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid #ffffff0d;text-decoration:none}
 .ar:last-child{border-bottom:0}
 .ar .m{flex:1 1 auto;min-width:0;font:600 16px/1.15 var(--cond);letter-spacing:.03em}
@@ -186,6 +190,7 @@ svg.wp{display:block;width:100%;height:84px;background:#0a1020;border-radius:4px
     <div class="clock" id="clock">--:--:--</div>
   </div>
 </header>
+<div class="talk" id="vhint" hidden style="background:#10200f;color:#c9f7d8"><b style="color:#86efac">VOICE</b><span>Voice is on. If you hear nothing: switch the ringer on, turn the volume up, and open this page in Safari, not inside another app. Scores will chime.</span></div>
 <div class="talk"><b>JARVIS</b><span id="talkText">Standing by.</span><i id="talkAgo"></i></div>
 
 <main class="wall">
@@ -345,18 +350,50 @@ function pickVoice() {
     vs.find(function (v) { return /^en-(US|GB|AU)/i.test(v.lang) && /alex|daniel|aaron|fred|evan|male/i.test(v.name); }) ||
     vs.find(function (v) { return /^en/i.test(v.lang); }) || null;
 }
+/* iPhones mute web speech when the ringer switch is off unless a media element is playing: a looping silent track keeps the audio session in playback mode */
+var AU = {};
+function wav(samples, rate) {
+  var n = samples.length, b = new ArrayBuffer(44 + n * 2), v = new DataView(b), w = function (o, s) { for (var i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+  w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
+  for (var i = 0; i < n; i++) v.setInt16(44 + i * 2, samples[i], true);
+  return new Blob([b], { type: 'audio/wav' });
+}
+function initAudio() {
+  if (AU.sil) return;
+  try {
+    var rate = 8000, sil = new Int16Array(rate), m = Math.floor(rate * .4), ch = new Int16Array(m);
+    for (var i = 0; i < m; i++) { var t = i / rate, f = i < m / 2 ? 660 : 880, env = Math.min(1, i / 200) * Math.min(1, (m - i) / (m * .35)); ch[i] = Math.sin(2 * Math.PI * f * t) * 9000 * env; }
+    AU.sil = new Audio(URL.createObjectURL(wav(sil, rate))); AU.sil.loop = true; AU.sil.setAttribute('playsinline', '');
+    AU.chime = URL.createObjectURL(wav(ch, rate));
+  } catch (e) { }
+}
+function chime() { try { if (AU.chime) { var a = new Audio(AU.chime); a.setAttribute('playsinline', ''); var p = a.play(); if (p && p.catch) p.catch(function () { }); } } catch (e) { } }
+function vstat(t, cls) { var b = $('#btnVoice'); b.textContent = t; b.className = 'btn' + (cls ? ' ' + cls : ''); }
 function speak(text) {
   if (!V.on || !('speechSynthesis' in window) || !text) return;
-  try { var u = new SpeechSynthesisUtterance(text); var v = pickVoice(); if (v) u.voice = v; u.rate = 1.02; u.pitch = .95; speechSynthesis.speak(u); } catch (e) { }
+  try {
+    if (speechSynthesis.paused) speechSynthesis.resume();
+    var u = new SpeechSynthesisUtterance(text), v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang; } u.rate = 1.02; u.pitch = .95; u.volume = 1;
+    u.onstart = function () { vstat('Speaking', 'on'); }; u.onend = function () { vstat('Voice on', 'on'); };
+    u.onerror = function (e) { vstat('Voice blocked', 'warn'); if (window.console) console.warn('speech', e && e.error); };
+    speechSynthesis.speak(u);
+  } catch (e) { vstat('Voice blocked', 'warn'); }
 }
 function setVoice(on) {
   V.on = on; var b = $('#btnVoice'); b.textContent = on ? 'Voice on' : 'Voice off'; b.className = 'btn' + (on ? ' on' : '');
   try { localStorage.setItem('truckVoice', on ? '1' : '0'); } catch (e) { }
 }
 $('#btnVoice').addEventListener('click', function () {
-  if (!('speechSynthesis' in window)) { $('#btnVoice').textContent = 'No voice here'; return; }
-  setVoice(!V.on); if (V.on) speak('Truck online. Voice is on.');
+  if (!('speechSynthesis' in window)) { vstat('No voice here', 'warn'); return; }
+  setVoice(!V.on);
+  if (V.on) {
+    initAudio(); try { var p = AU.sil && AU.sil.play(); if (p && p.catch) p.catch(function () { }); } catch (e) { }
+    try { speechSynthesis.cancel(); } catch (e) { }
+    chime(); speak('Jarvis here. If you can hear this, the voice works.');
+    var hint = $('#vhint'); hint.hidden = false; setTimeout(function () { hint.hidden = true; }, 25000);
+  } else { try { speechSynthesis.cancel(); if (AU.sil) AU.sil.pause(); } catch (e) { } }
 });
+try { if (window.speechSynthesis) speechSynthesis.onvoiceschanged = function () { }; } catch (e) { }
 try { if (localStorage.getItem('truckVoice') === '1') { $('#btnVoice').textContent = 'Tap for voice'; } } catch (e) { }
 
 /* ---------- buttons ---------- */
@@ -430,6 +467,7 @@ function onScore(a, h, key) {
   var p = (S.prevKey || '0-0').split('-').map(Number), n = key.split('-').map(Number), da = n[0] - p[0], dh = n[1] - p[1];
   var who = da > 0 ? a.team.location : h.team.location, d = da > 0 ? da : dh;
   var what = d >= 6 ? 'Touchdown' : d === 3 ? 'Field goal' : d === 2 ? 'Two points' : d === 1 ? 'Extra point' : 'Score';
+  chime();
   speak(what + ', ' + who + '. ' + a.team.location + ' ' + n[0] + ', ' + h.team.location + ' ' + n[1] + '.');
   loadSum();
 }
@@ -502,9 +540,24 @@ function renderStats() {
   });
   $('#stats').innerHTML = '<div class="srow"><div class="v"><span style="color:' + ca + '">' + esc(a.team.abbreviation) + '</span><em></em><span style="color:' + ch + '">' + esc(h.team.abbreviation) + '</span></div></div>' + (out || '<div class="sub">Stats start with the first snap.</div>');
 }
+/* milestone watch: the board names a player, a season base and a target; tonight's yards come live from ESPN's box score */
+function watchHtml() {
+  var w = S.board && S.board.watch, bt = S.sum && S.sum.boxscore && S.sum.boxscore.players; if (!w) return '';
+  var y = 0, found = false;
+  (bt || []).forEach(function (t) {
+    (t.statistics || []).forEach(function (cat) {
+      if (cat.name !== (w.cat || 'rushing')) return; var i = (cat.labels || []).indexOf(w.stat || 'YDS');
+      (cat.athletes || []).forEach(function (a) { if (i > -1 && a.athlete && a.athlete.displayName === w.who) { y = parseInt(a.stats[i], 10) || 0; found = true; } });
+    });
+  });
+  var f = function (n) { return Number(n).toLocaleString('en-US'); }, base = +w.base || 0, tot = base + y, to = +w.target || 1000, left = to - tot, pct = Math.max(0, Math.min(100, tot / to * 100));
+  if (left > 0) S.wPend = true; else if (S.wPend && !S.wDone) { S.wDone = true; speak(w.who + ' has reached ' + f(to) + ' ' + (w.label || '') + '.'); }
+  return '<div class="mw"><div class="mt"><b>' + esc(w.who) + '</b> &middot; ' + esc(w.label || '') + '</div><div class="mb"><i style="width:' + pct.toFixed(1) + '%"></i></div><div class="mn">' + f(base) + ' entering' + (found ? ' + ' + y + ' tonight = <b>' + f(tot) + '</b>' : '') + ' &middot; ' + (left > 0 ? f(left) + ' to go for ' + f(to) : '<b>reached ' + f(to) + '</b>') + (w.note ? '<small>' + esc(w.note) + '</small>' : '') + '</div></div>';
+}
 function renderLeaders() {
   var L = S.sum && S.sum.leaders, c = S.sb && S.sb.competitions[0]; setLt('lead', S.sig.sum && S.sig.sum.ok ? 'ok' : 'bad');
-  if (!L || !L.length || !c) return;
+  var mw = watchHtml();
+  if (!L || !L.length || !c) { if (mw) $('#lead').innerHTML = mw; return; }
   var cats = [['passingYards', 'Passing'], ['rushingYards', 'Rushing'], ['receivingYards', 'Receiving']], html = '', any = false;
   ['away', 'home'].forEach(function (side) {
     var comp = c.competitors.find(function (x) { return x.homeAway === side; }), e = L.find(function (x) { return String(x.team.id) === String(comp.team.id); });
@@ -515,7 +568,7 @@ function renderLeaders() {
     });
     html += '</div>';
   });
-  if (any) $('#lead').innerHTML = '<div class="lead">' + html + '</div>';
+  if (any || mw) $('#lead').innerHTML = mw + (any ? '<div class="lead">' + html + '</div>' : '');
 }
 function renderAround() {
   var ev = S.around; setLt('around', S.sig.around && S.sig.around.ok ? 'ok' : 'bad'); if (!ev) return;
@@ -565,7 +618,7 @@ function renderBoard() {
     var inner = '<h4><i></i>' + esc(d.name) + '</h4><p>' + esc(d.line) + '</p>';
     return d.url ? '<a class="tile ' + esc(d.state) + '" href="' + esc(d.url) + '" target="_blank" rel="noopener">' + inner + '</a>' : '<div class="tile ' + esc(d.state) + '">' + inner + '</div>';
   }).join('');
-  tickBoardAge(); safe(renderTicker);
+  tickBoardAge(); safe(renderTicker); safe(renderLeaders);
 }
 function tickBoardAge() {
   var b = S.board; if (!b || !b.updated) return; var m = (Date.now() - new Date(b.updated).getTime()) / 60000;
